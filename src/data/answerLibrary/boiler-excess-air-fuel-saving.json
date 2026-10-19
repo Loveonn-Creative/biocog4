@@ -1,0 +1,87 @@
+{
+  "slug": "boiler-excess-air-fuel-saving",
+  "q": "How much fuel and CO2 does cutting boiler excess air save, and how do I calculate it from flue gas O2?",
+  "title": "Boiler excess air: fuel and CO2 saved",
+  "short": "Convert flue gas O2 to excess air with O2 x 100 / (21 minus O2), work out the dry flue gas loss before and after tuning, and turn the efficiency gain into fuel saved: fuel used x (1 minus old efficiency / new efficiency). Multiply the fuel saved by its emission factor for CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler operators and energy auditors in MSME plants",
+  "sections": [
+    {
+      "h": "Why excess air costs fuel",
+      "p": [
+        "Every kg of air beyond what combustion needs is heated from ambient to stack temperature and thrown away. More air means more dry flue gas, and the dry flue gas loss rises in proportion. Too little air leaves unburnt fuel, shown as CO in the flue gas and smoke, which costs more than the air saved."
+      ]
+    },
+    {
+      "h": "From O2 reading to dry flue gas loss",
+      "ol": [
+        "Excess air (%) = O2 x 100 / (21 minus O2), with O2 as dry volume percent at the boiler exit.",
+        "Actual air supplied per kg of fuel = theoretical air x (1 + excess air / 100). Work out theoretical air from the fuel's ultimate analysis; BEE's worked example for furnace oil arrives at 14 kg of air per kg of oil.",
+        "Mass of dry flue gas per kg of fuel is, for a quick calculation, the actual air supplied plus 1 kg of fuel. Dry flue gas loss (%) = flue gas mass x specific heat of flue gas x (stack temperature minus ambient) / fuel GCV x 100, as in BEE Guide Book 4. The Siegert formula gives the same loss from flue CO2 and temperature with a fuel constant."
+      ]
+    },
+    {
+      "h": "How far to cut",
+      "ul": [
+        "Lower air in small steps and watch CO. Stop where CO starts to rise and set the damper or burner a little above that point.",
+        "Measure O2 before the economiser or air heater. Air leaking into the ducts raises O2 downstream without any change in the burner.",
+        "Recheck at low and high load. Many burners need more excess air at low fire, so an O2 trim control often pays where load swings."
+      ]
+    },
+    {
+      "h": "Showing the saving in your carbon figures",
+      "p": [
+        "The saving appears as lower fuel per tonne of steam on your invoices. Compare fuel per tonne of steam for the same months before and after tuning, rather than total fuel, so a change in production does not hide or inflate the result."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a furnace oil boiler",
+    "lines": [
+      "Fuel and flue gas inputs from BEE's furnace oil example: theoretical air 14 kg per kg of oil, GCV 10,200 kcal per kg, flue gas 220 C, ambient 27 C, specific heat 0.23 kcal per kg per C",
+      "Before: O2 6%, excess air = 6 x 100 / 15 = 40%; flue gas = 14 x 1.40 + 1 = 20.6 kg per kg of oil",
+      "Loss before = 20.6 x 0.23 x (220 minus 27) / 10,200 x 100 = 8.97%",
+      "After: O2 3%, excess air = 3 x 100 / 18 = 16.7%; flue gas = 14 x 1.167 + 1 = 17.33 kg; loss = 17.33 x 0.23 x 193 / 10,200 x 100 = 7.54%",
+      "Efficiency rises by 8.97 minus 7.54 = 1.43 points, from 82.0% to 83.43%",
+      "Fuel saved: 1 minus 82.0 / 83.43 = 1.71%",
+      "Furnace oil from invoices: 3,00,000 litres a year x 1.71% = 5,130 litres",
+      "CO2 saved: 5,130 x 2.97 kg CO2 per litre = 15,236 kg, about 15.2 t a year"
+    ],
+    "note": "Theoretical air, GCV, temperatures and specific heat are the values in BEE Guide Book 4's furnace oil example. The O2 readings, the 82.0% starting efficiency and the annual fuel are illustrative, and the stack temperature is assumed unchanged after tuning. Use your own fuel analysis, a calibrated flue gas analyser and your efficiency test."
+  },
+  "senseible": "Senseible reads boiler fuel invoices month by month and applies the IPCC 2006 factors, such as 2.97 kg CO2 per litre of furnace oil, so a tuning saving shows up as lower Scope 1 emissions. Flue gas readings come from your analyser and test records.",
+  "links": [
+    {
+      "label": "Boiler efficiency: direct and indirect method",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Boiler economiser fuel saving",
+      "to": "/answers/boiler-economiser-fuel-saving"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, Chapter 2 Boilers (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "BEE Guide Book 4, Energy Performance Assessment, Chapter 1 Boilers (indirect method and furnace oil worked example) (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

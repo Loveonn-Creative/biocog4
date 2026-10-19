@@ -1,0 +1,82 @@
+{
+  "slug": "induction-billet-heater-vs-oil-fired-forging-furnace",
+  "q": "Does replacing an oil-fired forging furnace with an induction billet heater cut CO2 in India?",
+  "title": "Induction billet heater vs oil-fired furnace",
+  "short": "Only if the induction heater uses less than about 4.2 kWh per tonne for every litre of furnace oil the old furnace burnt per tonne. On the Indian grid at 0.710 kg CO2 per kWh, a litre of furnace oil (2.97 kg CO2) equals 4.18 kWh, so measure both from your own bills.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Forge shop owners, lenders assessing energy-efficiency loans",
+  "sections": [
+    {
+      "h": "The break-even rule",
+      "p": [
+        "CO2 per tonne heated before = litres of furnace oil per tonne x 2.97. After = kWh per tonne x 0.710. Divide 2.97 by 0.710 and you get 4.18: each litre per tonne you stop burning is matched by 4.18 kWh per tonne of grid electricity.",
+        "So if your oil furnace used 60 litres per tonne, the induction heater must stay below about 251 kWh per tonne to cut CO2 on a location-based basis. Above that, Scope 1 falls but Scope 2 rises by more."
+      ]
+    },
+    {
+      "h": "Why small oil furnaces often lose",
+      "p": [
+        "Batch and pusher furnaces in small forges lose heat through the walls, the flue and open doors, and they burn fuel while idling between batches. An induction heater puts heat into the billet itself and draws little power when it stops. That difference, not the fuel type, is what usually decides the outcome, which is why measured litres per tonne matter more than any rated figure."
+      ]
+    },
+    {
+      "h": "Gains that do not show on the fuel bill",
+      "ul": [
+        "Scale loss: fast induction heating usually leaves less oxide scale on the billet, so you buy less steel per good forging. Steel bar carries far more CO2 per tonne than the heating, so even a small yield gain matters. Measure it from bar consumed per tonne despatched.",
+        "Rejects from uneven heating fall when billet temperature is controlled, which again saves steel and energy.",
+        "Market-based Scope 2: if part of the power comes from rooftop solar you consume or a green tariff, the induction side falls further. The location-based figure still uses 0.710."
+      ]
+    },
+    {
+      "h": "How to evidence the switch for a lender",
+      "ol": [
+        "Keep 12 months of furnace oil invoices and tonnes heated before the change.",
+        "After commissioning, record kWh for the heater from a sub-meter, or the change in the plant bill, against tonnes heated.",
+        "Report CO2 per tonne for both periods with named factors, so a change in output does not hide or inflate the saving.",
+        "Report the steel yield change separately, as a Scope 3 effect."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 1,000 tonnes heated a year",
+    "lines": [
+      "Oil furnace at 100 L per tonne (illustrative input): 100 x 2.97 = 297 kg CO2 per tonne",
+      "Break-even for induction: 297 / 0.710 = about 418 kWh per tonne",
+      "Induction heater at 380 kWh per tonne (illustrative input): 380 x 0.710 = 269.8 kg CO2 per tonne",
+      "Saving: 297 minus 269.8 = 27.2 kg CO2 per tonne, about 9 percent; 27.2 t CO2 a year at 1,000 t",
+      "Same plant at 450 kWh per tonne: 450 x 0.710 = 319.5 kg, so CO2 rises by 22.5 kg per tonne"
+    ],
+    "note": "Litres and kWh per tonne are illustrative inputs, not measured or published figures. Use your own furnace oil invoices and metered kWh; the figures are CO2 only and exclude the steel saved from lower scale loss."
+  },
+  "senseible": "Senseible reads furnace oil invoices at 2.97 kg CO2 per litre and electricity bills at 0.710 kg CO2 per kWh, so you can compare Scope 1 and 2 for the months before and after the change, and its green loan readiness check uses those records. Tonnes heated come from your production records.",
+  "links": [
+    {
+      "label": "Forging carbon footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Reheating furnace insulation savings",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (residual fuel oil 77.4 t CO2 per TJ)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

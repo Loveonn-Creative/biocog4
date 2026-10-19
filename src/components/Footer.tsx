@@ -51,6 +51,7 @@ const footerLinks = {
     { name: 'Careers', path: '/careers' },
     { name: 'Decarbonize India', path: '/decarbonize-india' },
     { name: 'Answers', path: '/answers' },
+    { name: 'Help Center', path: '/help' },
     { name: 'Contact', path: '/contact' },
   ],
   legal: [

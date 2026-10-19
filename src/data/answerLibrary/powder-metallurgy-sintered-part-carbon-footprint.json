@@ -1,0 +1,84 @@
+{
+  "slug": "powder-metallurgy-sintered-part-carbon-footprint",
+  "q": "How do I calculate the carbon footprint per kg of a powder metallurgy sintered part?",
+  "title": "Sintered part carbon footprint per kg",
+  "short": "Add three lines per kg of good sintered parts: iron powder issued times the powder maker's footprint, compacting and sintering electricity times the grid factor, and the LPG or natural gas cracked for the furnace atmosphere times its fuel factor. Then add sizing, steam treatment or machining if your route has them.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sintered component makers supplying auto OEMs",
+  "sections": [
+    {
+      "h": "Powder: issued, not bought",
+      "p": [
+        "Take powder issued to the presses in a month, including any copper, graphite and lubricant premix, and divide by kg of good parts out of the furnace and inspection. Sintering is near net shape, so the ratio is close to one, but green breakage, setting losses and rejects still belong in it.",
+        "Premix powders are blends. Ask the supplier for a figure for the exact grade, or build it from the share of iron, copper and graphite with a factor for each, and label any database figure as a proxy."
+      ]
+    },
+    {
+      "h": "Furnace electricity, allocated by weight",
+      "p": [
+        "Most mesh belt and pusher furnaces are electrically heated, and they draw power whether the belt is full or half empty. Use a sub-meter on the furnace if you have one; otherwise share the plant's monthly kWh by machine hours. Divide furnace kWh by kg sintered in the same month, so a lightly loaded month shows its true cost per kg.",
+        "Compacting presses, sizing presses, the furnace cooling water and the compressor are separate electricity lines. Put each in kWh per kg, then multiply the total by 0.710 kg CO2 per kWh for location-based Scope 2."
+      ]
+    },
+    {
+      "h": "The protective atmosphere",
+      "ul": [
+        "Endothermic gas is made by cracking LPG or natural gas with air. Its carbon leaves the furnace as CO and CO2 and is burnt at the vents, so count the gas fed to the generator as fuel: LPG at 2.98 kg CO2 per kg, PNG at 2.05 kg CO2 per scm.",
+        "Nitrogen and hydrogen bought in cylinders or tankers have no combustion at your site. Their production emissions are purchased goods in Scope 3 Category 1, from the gas supplier's figure.",
+        "Steam treatment for corrosion resistance needs a boiler or electric steam generator; add its fuel or power."
+      ]
+    },
+    {
+      "h": "What to send the OEM",
+      "p": [
+        "Give kg CO2e per part and per kg, cradle to gate, with the powder grade and its source, the powder per kg ratio, the electricity per kg and the grid factor edition, and the atmosphere gas per kg. Keep powder separate from your own plant energy, since the OEM may hold better powder data than you."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, per kg of good sintered parts",
+    "lines": [
+      "Powder issued: 1.03 kg per kg of good parts",
+      "Powder: 1.03 x 1.5 kg CO2e per kg (illustrative powder figure) = 1.545 kg CO2e",
+      "Electricity: compacting 0.3 kWh + sintering 1.2 kWh = 1.5 kWh x 0.710 = 1.065 kg CO2",
+      "Endothermic gas: 0.04 kg LPG x 2.98 = 0.119 kg CO2",
+      "Total: 1.545 + 1.065 + 0.119 = 2.729 kg CO2e per kg, so 0.546 kg for a 200 g part"
+    ],
+    "note": "The powder factor, kWh per kg and LPG per kg are illustrative. Use your supplier's figure and your own meter and gas records for the same month."
+  },
+  "senseible": "Senseible reads powder, LPG, PNG and electricity invoices, applying 0.710 kg CO2 per kWh and the IPCC 2006 factors for LPG and PNG, and keeps powder purchases in the Scope 3 evidence trail. Product reports are self-declared drafts built from your output figures.",
+  "links": [
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Forging footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Answer a Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

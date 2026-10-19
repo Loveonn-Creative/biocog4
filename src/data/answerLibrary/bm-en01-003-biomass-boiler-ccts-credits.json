@@ -1,0 +1,76 @@
+{
+  "slug": "bm-en01-003-biomass-boiler-ccts-credits",
+  "q": "Can a factory biomass boiler or cogeneration plant earn CCTS credits under BM EN01.003, and what biomass is allowed?",
+  "title": "Biomass boiler credits under BM EN01.003",
+  "short": "Possibly. BM EN01.003 is BEE's CCTS methodology for electricity and heat generation from biomass, so a factory biomass boiler or cogeneration plant is the kind of project it is written for. Which biomass qualifies, and what gets deducted, is set in the methodology and in BEE's biomass tool BM-T-010, so read both before you spend.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME owners, boiler operators, biomass suppliers",
+  "sections": [
+    {
+      "h": "What BM EN01.003 is",
+      "p": [
+        "BM EN01.003, electricity and heat generation from biomass, is one of the three energy methodologies on BEE's approved list for the CCTS offset mechanism. A plant that makes its own steam or power from biomass looks here; a coal or furnace oil boiler made more efficient, or switched to another fuel, looks at BM IN02.001 instead.",
+        "Credits come from the gap between baseline emissions and the project's own emissions, measured under the methodology's rules and verified before certificates are issued."
+      ]
+    },
+    {
+      "h": "Which biomass counts",
+      "p": [
+        "BEE's tool BM-T-010, project and leakage emissions from biomass, is written for projects that use biomass residues or biomass from dedicated plantations, as fuel or feedstock. Rice husk, bagasse, groundnut shell or saw dust are residues, but whether a given supply qualifies depends on the conditions in BM EN01.003 and BM-T-010, not on what the supplier calls it.",
+        "Plan for evidence from day one: for every load, the invoice, the residue type and where it came from. Briquettes and pellets are only as good as the raw material behind them."
+      ]
+    },
+    {
+      "h": "The BEE tools that shape the credit volume",
+      "ul": [
+        "BM-T-001: the combined tool to identify the baseline scenario and show additionality. It starts with a regulatory analysis, so check first whether any law or consent order already requires the project.",
+        "BM-T-002: emissions from fossil fuel still burned on site, such as coal co-firing or diesel for start-up.",
+        "BM-T-003: emissions from electricity the project uses.",
+        "BM-T-010: project and leakage emissions from the biomass itself.",
+        "The methodology says which of these apply to your project, and the version in force is the one that counts."
+      ]
+    },
+    {
+      "h": "How it sits in your own inventory",
+      "p": [
+        "CO2 from burning biomass is biogenic and is reported separately from Scope 1. The methane and nitrous oxide from the same combustion stay in Scope 1, as does any coal or diesel burned alongside. If you sell the reductions as credits, do not also count them toward your own public target without saying so, and never register them in two programmes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your biomass and coal purchase invoices into a dated, month by month fuel record, keeping biomass CO2 apart from fossil Scope 1, and shows carbon credit eligibility signals from that record. That record is the bill-backed baseline and monitoring data a BM EN01.003 project is built on.",
+  "links": [
+    {
+      "label": "BEE approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Coal to biomass boiler credits",
+      "to": "/answers/coal-to-biomass-boiler-carbon-credits"
+    },
+    {
+      "label": "Biomass in a boiler: Scope 1 or not",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Biomass supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Approved Methodologies under Offset Mechanism (CCTS): BM EN01.003 electricity and heat generation from biomass; tools BM-T-001, BM-T-002, BM-T-003 and BM-T-010 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026 against BEE's approved list (updated 7 July 2026). The BM EN01.003 and BM-T-010 texts could not be opened from here, so the page gives only method and tool names and stated scope; confirm eligible biomass, leakage and deduction rules in the versions in force.",
+  "reviewed": "2026-10-18"
+}

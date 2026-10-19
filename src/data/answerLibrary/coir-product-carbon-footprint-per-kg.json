@@ -1,0 +1,84 @@
+{
+  "slug": "coir-product-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of coir mats or coir pith for an EU buyer?",
+  "title": "Coir mat and pith footprint per kg",
+  "short": "Add the electricity and fuel used per kg for husk processing, drying, spinning and weaving, the latex, dyes and backing you buy, and methane from retting if the husks were soaked in ponds or backwaters. Report the carbon held in the coir fibre separately; it is not subtracted from the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Coir exporters (Alappuzha, Pollachi, Thanjavur)",
+  "sections": [
+    {
+      "h": "Energy per kg at each stage",
+      "ul": [
+        "Defibering and screening: kWh from the bill divided by kg of fibre and pith produced. Split between fibre and pith by mass or by value, and state which.",
+        "Drying: diesel or biomass for driers, divided by kg dried. Sun drying adds nothing.",
+        "Pith washing and block pressing: pump and press electricity divided by kg of blocks.",
+        "Spinning, weaving and tufting: kWh per kg of yarn or mat. Handlooms add almost nothing beyond lighting.",
+        "Multiply grid kWh by 0.710 kg CO2 per kWh and diesel by 2.68 kg CO2 per litre."
+      ]
+    },
+    {
+      "h": "Retting methane: when it applies and how to estimate it",
+      "p": [
+        "Traditional retting soaks husks for months in ponds or backwater pits with little oxygen. Bacteria break down the organic matter and release methane. Mechanical extraction from green or dry husks has no retting stage, so this line is zero.",
+        "The IPCC method for wastewater gives the structure: methane in kg = organic load released (kg COD) x 0.25 kg methane per kg COD x a methane correction factor for how anaerobic the water is. The 2006 IPCC defaults are 0.2 for a shallow anaerobic lagoon under 2 metres deep, 0.8 for a deep one over 2 metres, and 0.1 where the water is discharged to a sea, river or lake. You need a COD measurement of the retting water, or a labelled estimate. Convert methane with a stated GWP; for non-fossil methane the AR6 100-year value is 27.0."
+      ]
+    },
+    {
+      "h": "Rubberised coir, dyes and backing",
+      "p": [
+        "Rubberised coir adds natural rubber latex and steam or heat for curing. Coloured mats add dyes and the fuel used to boil them. PVC backed tufted mats add the PVC compound, which can outweigh everything else on a per kg basis. Take each input in kg per kg of finished product from your purchase and production records and apply a factor for each."
+      ]
+    },
+    {
+      "h": "Biogenic carbon in the fibre",
+      "p": [
+        "Coir fibre holds carbon the coconut took from the air. ISO 14067 asks you to report biogenic carbon content separately and not to net it off fossil emissions. Methane from retting is different: it is a greenhouse gas emission in its own right and goes into the CO2e total, even though its carbon is biogenic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of retted coir fibre at the mill gate (illustrative)",
+    "lines": [
+      "Electricity: 18,000 kWh / 60,000 kg fibre = 0.3 kWh per kg x 0.710 = 0.213 kg CO2",
+      "Diesel for the DG set and husk loading: 900 litres x 2.68 / 60,000 kg = 0.040 kg CO2",
+      "Retting methane: 0.05 kg COD per kg fibre (assumed) x 0.25 x 0.2 = 0.0025 kg methane x 27.0 = 0.068 kg CO2e",
+      "Total: 0.213 + 0.040 + 0.068 = 0.32 kg CO2e per kg of fibre"
+    ],
+    "note": "The COD figure is an assumption for illustration only; measure the retting water or leave the line out and say so. A mat adds weaving, dyeing, latex or backing on top of this."
+  },
+  "senseible": "Senseible reads electricity bills and diesel and other fuel invoices for defibering and drying, computes Scope 1 and 2 at IPCC 2006 defaults and 0.710 kg CO2 per kWh, and keeps latex, dye and backing purchases in the Scope 3 evidence trail, with biogenic CO2 kept apart from the fossil total.",
+  "links": [
+    {
+      "label": "Biogenic carbon for food and textile MSMEs",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    },
+    {
+      "label": "Methane from ETP wastewater",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 Waste, Chapter 6 Wastewater Treatment and Discharge",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

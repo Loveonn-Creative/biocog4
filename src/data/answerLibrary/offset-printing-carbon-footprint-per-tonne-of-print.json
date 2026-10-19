@@ -1,0 +1,89 @@
+{
+  "slug": "offset-printing-carbon-footprint-per-tonne-of-print",
+  "q": "How do I calculate the carbon footprint of offset printed cartons, books or labels?",
+  "title": "Offset print carbon footprint",
+  "short": "Follow ISO 16759: add paper or board consumed including makeready and spoilage, printing plates, inks and coatings, press and finishing energy, then divide by tonnes or by 1,000 copies delivered. Use the paper mill's own figure for paper, since paper is usually the largest line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Printers and carton makers exporting books and packaging",
+  "sections": [
+    {
+      "h": "The stages ISO 16759 asks for",
+      "ul": [
+        "Raw materials: paper or board, inks, varnishes, coatings, adhesives, foils and printing plates.",
+        "Production at the printer: prepress, platemaking, printing, drying, finishing such as cutting, folding, creasing, binding and gluing.",
+        "Inbound transport of paper and outbound delivery where the customer asks for it.",
+        "Overheads such as compressors, lighting and air conditioning, shared over all jobs by a stated rule."
+      ]
+    },
+    {
+      "h": "Paper: count what the press used",
+      "p": [
+        "Makeready sheets, waste at start-up, trims and rejects are paper you bought and printed on. Take board or paper issued for the job, or a month's issue divided by tonnes delivered, not the weight of the finished copies.",
+        "Ask each mill for its cradle-to-gate figure per tonne for the grade, with year and boundary. Virgin board, recycled board and coated art paper differ. If you borrow a European industry figure, name it and label it as a proxy for Indian or imported paper."
+      ]
+    },
+    {
+      "h": "Plates, inks and energy",
+      "ul": [
+        "Aluminium plates: kg of plates used times the plate supplier's figure. Used plates sold for recycling leave with no credit under the cut-off approach.",
+        "Inks and coatings: kg used times the supplier's figure; UV and water based coatings differ.",
+        "Electricity for presses, UV or IR dryers and finishing: kWh x 0.710 kg CO2 per kWh.",
+        "Gas fired dryers on heatset web presses: PNG scm x 2.05 kg CO2, or LPG kg x 2.98 kg CO2."
+      ]
+    },
+    {
+      "h": "Per tonne or per 1,000 copies",
+      "p": [
+        "Book publishers often want a figure per copy; carton buyers want it per 1,000 cartons. Work out the footprint per tonne of printed product first, then multiply by the weight of one copy or carton from the job sheet. Quote the paper grade and weight with the figure, because a heavier board changes the result more than the press does."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of printed books (illustrative inputs)",
+    "lines": [
+      "Paper issued: 1.10 t (10% makeready, trim and spoilage) x 1.0 t CO2e per t (illustrative mill figure) = 1.100 t CO2e",
+      "Plates: 12 kg x 10 kg CO2e per kg (illustrative) = 120 kg = 0.120 t CO2e",
+      "Inks: 20 kg x 3 kg CO2e per kg (illustrative) = 60 kg = 0.060 t CO2e",
+      "Electricity: 400 kWh x 0.710 = 284 kg = 0.284 t CO2",
+      "Dryer PNG: 30 scm x 2.05 = 61.5 kg = 0.0615 t CO2",
+      "Total: 1.100 + 0.120 + 0.060 + 0.284 + 0.0615 = 1.6255 t CO2e per tonne printed",
+      "Per 1,000 books of 0.5 kg each (0.5 t): 1.6255 x 0.5 = 0.813 t CO2e, about 0.81 kg per book"
+    ],
+    "note": "Every material factor here is illustrative. Paper is about two thirds of this total, so the mill's figure matters most."
+  },
+  "senseible": "Senseible reads paper, board, ink, plate, fuel and electricity invoices, calculates Scope 1 and 2 from the fuel and power lines, and lists purchased materials with quantities in the Scope 3 evidence trail. Product reports are self-declared drafts built from your job and output data.",
+  "links": [
+    {
+      "label": "Corrugated box footprint per kg",
+      "to": "/answers/corrugated-box-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Paper mill footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Paper and packaging carbon guide",
+      "to": "/industries/paper"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 16759:2013, Graphic technology, carbon footprint of print media products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

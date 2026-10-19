@@ -21,6 +21,14 @@ function AutoVerifyGate() {
   if (!AUTO_VERIFY_PATHS.has(pathname)) return null;
   return <Suspense fallback={null}><AutoVerifier /></Suspense>;
 }
+// The "?" help button and side panel on app pages; its code loads only there.
+const InAppHelp = lazy(() => import("./components/help/InAppHelp"));
+const IN_APP_HELP_PATHS = new Set(["/dashboard", "/history", "/verify", "/reports", "/mrv-dashboard", "/monetize", "/profile", "/settings", "/subscription", "/billing", "/team"]);
+function InAppHelpGate() {
+  const { pathname } = useLocation();
+  if (!IN_APP_HELP_PATHS.has(pathname)) return null;
+  return <Suspense fallback={null}><InAppHelp /></Suspense>;
+}
 import { RequireAuth } from "./components/RequireAuth";
 import { MACHINERY_BETA } from "./lib/betaFlags";
 import { RouteSEO } from "./components/RouteSEO";
@@ -55,6 +63,7 @@ const ClimateFinance = lazy(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazy(() => import("./pages/GreenLoan"));
 const GreenLoanCheck = lazy(() => import("./pages/GreenLoanCheck"));
 const WhitePaper = lazy(() => import("./pages/WhitePaper"));
+const Help = lazy(() => import("./pages/Help"));
 const EsgReportSample = lazy(() => import("./pages/lead/EsgReportSample"));
 const CaseStudies = lazy(() => import("./pages/stories/CaseStudies"));
 const CaseStudy = lazy(() => import("./pages/stories/CaseStudy"));
@@ -158,6 +167,7 @@ const App = () => (
           <ScrollManager />
           <AnalyticsTracker />
           <AutoVerifyGate />
+          <InAppHelpGate />
           <NewBuildReload />
           <RouteSEO />
           <TranslationScope />
@@ -195,6 +205,8 @@ const App = () => (
               <Route path="/green-loan" element={<GreenLoan />} />
               <Route path="/green-loan-check" element={<GreenLoanCheck />} />
               <Route path="/white-paper" element={<WhitePaper />} />
+              <Route path="/help" element={<Help />} />
+              <Route path="/help/:slug" element={<Help />} />
               <Route path="/esg-report-sample" element={<EsgReportSample />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/case-studies/share" element={<ShareStory />} />

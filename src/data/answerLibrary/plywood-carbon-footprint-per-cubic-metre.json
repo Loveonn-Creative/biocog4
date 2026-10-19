@@ -1,0 +1,84 @@
+{
+  "slug": "plywood-carbon-footprint-per-cubic-metre",
+  "q": "What is the carbon footprint of plywood per cubic metre, for a Yamunanagar-type mill?",
+  "title": "Plywood carbon footprint per cubic metre",
+  "short": "Work it out from one month of mill data: resin bought times its supplier factor, plus press and peeling electricity at 0.710 kg CO2 per kWh, plus diesel and the methane and nitrous oxide from the biomass boiler, all divided by cubic metres made. Report the carbon stored in the wood separately.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Plywood and veneer mills, furniture exporters",
+  "sections": [
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Resin: urea formaldehyde or phenol formaldehyde, usually the largest fossil input. Ask the resin supplier for a cradle to gate factor per kg, in writing.",
+        "Electricity for peeling, clipping, drying fans, hot press and sanding, from the discom bill.",
+        "Drying and press heat: most mills burn veneer waste, bark or other biomass in a boiler or thermic fluid heater.",
+        "Diesel for DG sets and forklifts, and inbound transport of logs and veneer.",
+        "Logs and face veneer: plantation poplar and eucalyptus carry harvest and transport emissions; imported face veneer carries its own."
+      ]
+    },
+    {
+      "h": "Biomass boiler: what counts",
+      "p": [
+        "Burning wood waste gives biogenic CO2, which sits on its own line outside the fossil total. Methane and nitrous oxide from the boiler do count. The IPCC 2006 Guidelines give defaults for wood burnt in manufacturing of 30 kg CH4 and 4 kg N2O per TJ, with a default heating value of 15.6 GJ per tonne."
+      ]
+    },
+    {
+      "h": "Carbon stored in the plywood",
+      "p": [
+        "Plywood holds carbon taken up by the tree. ISO 14067 and EN 16485, the product category rules for wood products under EN 15804, ask you to report this biogenic carbon content as a separate figure. Do not subtract it from the cradle to gate total, and do not claim it as a removal unless the wood comes from sustainably managed sources you can document."
+      ]
+    },
+    {
+      "h": "Data a buyer will check",
+      "ol": [
+        "Production in m3 for the same month as the bills.",
+        "Resin kg from purchase invoices and the supplier factor with its source.",
+        "Biomass tonnes burnt, from weighbridge slips or a storage count.",
+        "Log origin records, which also matter for EU deforestation rules on plywood."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, 300 m3, excluding resin",
+    "lines": [
+      "Electricity: 45,000 kWh x 0.710 = 31,950 kg CO2",
+      "Diesel: 1,500 litres x 2.68 = 4,020 kg CO2",
+      "Biomass boiler: 150 t x 15.6 GJ/t = 2.34 TJ; CH4 2.34 x 30 = 70.2 kg x 28 = 1,966 kg CO2e; N2O 2.34 x 4 = 9.36 kg x 265 = 2,480 kg CO2e",
+      "Total before resin: 31,950 + 4,020 + 4,446 = 40,416 kg, about 135 kg CO2e per m3",
+      "Add: resin kg x supplier factor, divided by 300 m3",
+      "Report separately: biogenic CO2 from the boiler, 2.34 TJ x 112,000 kg/TJ = about 262 t"
+    ],
+    "note": "Mill quantities are illustrative. GWPs are IPCC AR5 (CH4 28, N2O 265). Wet biomass has a lower heating value than the default, so measure moisture where you can."
+  },
+  "senseible": "Senseible reads the mill's resin, fuel and electricity invoices and calculates the fossil CO2, keeping biomass boiler CO2 as biogenic. Production volumes and the resin supplier's factor come from your records.",
+  "links": [
+    {
+      "label": "Biogenic carbon in timber materials",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    },
+    {
+      "label": "EUDR for wooden furniture and handicrafts",
+      "to": "/answers/eudr-wooden-handicrafts-furniture-india"
+    },
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy, Chapter 2, stationary combustion defaults for wood",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

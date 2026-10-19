@@ -1,0 +1,73 @@
+{
+  "slug": "ifc-ps3-ghg-quantification-threshold",
+  "q": "When does a lender funded by IFC or ADB require me to quantify GHG emissions?",
+  "title": "IFC and ADB GHG quantification thresholds",
+  "short": "Under IFC Performance Standard 3, a project expected to emit more than 25,000 tonnes CO2e a year must quantify its direct and energy-related emissions every year. ADB's framework, in force since January 2026, uses 20,000 tonnes, and Equator Principles banks add an alternatives analysis above 100,000 tonnes. Most MSME loans fall far below these.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Borrowers of banks and NBFCs with IFC, ADB or Equator Principles funding",
+  "sections": [
+    {
+      "h": "IFC Performance Standard 3",
+      "p": [
+        "Performance Standard 3 (2012), on resource efficiency and pollution prevention, asks every client to consider options to reduce project greenhouse gas emissions. For projects expected to produce, or already producing, more than 25,000 tonnes CO2e a year, the client must quantify direct emissions from facilities inside the project boundary and indirect emissions from energy produced off site and used by the project, such as grid electricity. Quantification is annual and follows an internationally recognised method, in practice the GHG Protocol."
+      ]
+    },
+    {
+      "h": "Equator Principles banks",
+      "ul": [
+        "Principle 2: projects with combined Scope 1 and 2 emissions expected above 100,000 tonnes CO2e a year need an alternatives analysis of lower-emission options.",
+        "Principle 10: such projects must report emission levels publicly each year during operation, and clients are encouraged to report above 25,000 tonnes.",
+        "A climate change risk assessment is part of the review for higher-risk projects and those above 100,000 tonnes."
+      ]
+    },
+    {
+      "h": "ADB-funded lending",
+      "p": [
+        "ADB's Environmental and Social Framework took effect on 1 January 2026 for projects whose concept note is approved after that date. Its climate standard, ESS9, asks borrowers to monitor and report greenhouse gas emissions above 20,000 tonnes CO2e a year, and to recalculate when absolute emissions move more than 5 percent from the original estimate. Older projects stay under the 2009 Safeguard Policy Statement, which used 100,000 tonnes. Ask your lender which ADB standard applies to the credit line your loan comes from."
+      ]
+    },
+    {
+      "h": "What this means for an MSME borrower",
+      "p": [
+        "A bank or NBFC that on-lends IFC or ADB money applies these standards through its own environmental and social management system. Your loan may sit far below the thresholds, yet the lender can still ask for an emissions estimate to screen the loan, to report its own portfolio, or because the credit line is tagged as climate finance. Having a year of Scope 1 and 2 figures traced to bills answers that request quickly."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how big is 25,000 tonnes?",
+    "lines": [
+      "Grid electricity alone to reach 25,000 t: 25,000,000 kg / 0.710 = about 3.52 crore kWh a year",
+      "A typical MSME plant: 30,00,000 kWh x 0.710 = 2,130 t CO2, plus 2,00,000 L diesel x 2.68 = 536 t CO2",
+      "Total: 2,130 + 536 = 2,666 t CO2, about a tenth of the IFC threshold and about 13 percent of ADB's 20,000 t"
+    ],
+    "note": "The plant figures are illustrative. The grid and diesel factors give CO2; the thresholds are in CO2e."
+  },
+  "senseible": "Senseible quantifies Scope 1 and 2 from your fuel invoices and electricity bills, with each figure traced to its source document, and its green loan readiness check shows what a lender is likely to ask for. It does not run a lender's environmental and social due diligence.",
+  "links": [
+    {
+      "label": "Green loans with carbon data",
+      "to": "/climate-intelligence/how-to-get-green-loans-india-carbon-data"
+    },
+    {
+      "label": "Financed emissions at Indian banks",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, the internationally recognised method used under IFC Performance Standard 3 (2012), paragraph 8 (ifc.org), and Equator Principles EP4 (2020), Principles 2 and 10 (equator-principles.com)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (energy-related indirect emissions; ADB Environmental and Social Framework, ESS9 Climate Change, on adb.org)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18: IFC PS3 25,000 t, EP4 100,000 t, ADB ESF effective 1 January 2026 with a 20,000 t ESS9 threshold. IFC is reviewing its Performance Standards; recheck the PS3 threshold."
+}

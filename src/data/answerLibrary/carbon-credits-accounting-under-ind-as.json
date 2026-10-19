@@ -1,0 +1,75 @@
+{
+  "slug": "carbon-credits-accounting-under-ind-as",
+  "q": "How should a company account for carbon credits it generates or buys under Ind AS?",
+  "title": "Accounting for carbon credits under Ind AS",
+  "short": "No Ind AS deals with carbon credits directly. Self-generated credits held for sale are usually treated as inventory, following the ICAI Guidance Note of 2012: recognised once certified and credited to your registry account, at the lower of cost and net realisable value. Credits bought to retire are often intangible assets under Ind AS 38.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "CFOs and accountants of project owners and buyers",
+  "sections": [
+    {
+      "h": "Credits you generate",
+      "ul": [
+        "The ICAI Guidance Note on Accounting for Self-generated Certified Emission Reductions (2012) treats credits held for sale in the ordinary course of business as inventory, not intangible assets.",
+        "They become an asset only when certified and credited to the generating entity's account (for CERs, by the UNFCCC), not while the project is running or under verification, because until then it is uncertain they will be issued.",
+        "Measure at the lower of cost and net realisable value. Under the Guidance Note, cost is the cost incurred to certify the credits, so project costs incurred before certification are not added to the credits' carrying amount.",
+        "The Guidance Note was written under the earlier Accounting Standards and for UN issued CERs. Companies on Ind AS commonly apply its approach by analogy, including for voluntary credits; agree this with your auditor."
+      ]
+    },
+    {
+      "h": "Credits you buy",
+      "ul": [
+        "Bought to retire against your own claims: commonly an intangible asset under Ind AS 38, at cost, expensed when retired.",
+        "Bought to trade: inventory under Ind AS 2, or as your trading policy sets.",
+        "Committed to deliver or retire on someone else's behalf: consider a provision or liability under Ind AS 37 for the obligation.",
+        "Where no standard applies directly, Ind AS 8 asks management to set a policy that gives relevant and reliable information, and to apply it consistently."
+      ]
+    },
+    {
+      "h": "Selling credits",
+      "p": [
+        "Revenue from selling credits held as inventory falls under Ind AS 115, recognised when control passes, usually on transfer in the registry. Income from transferring carbon credits is taxed under its own rules, so keep the accounting and tax workings side by side."
+      ]
+    },
+    {
+      "h": "Where the standards are heading",
+      "p": [
+        "The IASB has worked on pollutant pricing mechanisms, including emission allowances and credits, for several years. Until an IFRS is issued and adopted into Ind AS, policies differ between companies, so disclose the policy, the number of credits held, and how they are measured."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a project owner and a buyer (illustrative)",
+    "lines": [
+      "Owner: 10,000 credits issued; certification costs ₹12,00,000, so cost ₹120 each; market price ₹600",
+      "Carried at ₹120 each, the lower of cost and net realisable value: ₹12,00,000",
+      "Sells 6,000 at ₹600: revenue ₹36,00,000; cost of sales 6,000 x ₹120 = ₹7,20,000",
+      "Closing inventory: 4,000 x ₹120 = ₹4,80,000",
+      "Buyer: 1,000 credits at ₹900 = ₹9,00,000 held as an intangible asset, expensed when retired"
+    ],
+    "note": "Prices and costs are illustrative. Which costs count as certification costs follows the Guidance Note and the policy agreed with your auditor."
+  },
+  "senseible": "Senseible keeps the emission records and invoice evidence behind a credit project's activity data and shows carbon credit eligibility signals. The accounting treatment is set with your auditor.",
+  "links": [
+    {
+      "label": "How carbon credits are taxed in India",
+      "to": "/answers/how-are-carbon-credits-taxed-in-india"
+    },
+    {
+      "label": "Sell or retire your carbon credits",
+      "to": "/answers/should-i-sell-or-retire-my-carbon-credits"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS Foundation: IAS 2, IAS 38 and IAS 37 (the basis of Ind AS 2, 38 and 37) and the IASB pollutant pricing mechanisms project",
+      "url": "https://www.ifrs.org"
+    }
+  ],
+  "reviewNote": "Checked October 2026 against ICAI Guidance Note GN(A) 31 (2012) on self-generated CERs (inventory, recognised when certified and credited, cost limited to certification costs); ICAI and IASB work on carbon credit accounting is ongoing, so check for a new guidance note or standard before closing the books.",
+  "reviewed": "2026-10-18"
+}

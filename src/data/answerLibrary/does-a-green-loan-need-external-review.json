@@ -1,0 +1,68 @@
+{
+  "slug": "does-a-green-loan-need-external-review",
+  "q": "Does an MSME green loan need an external review or second-party opinion?",
+  "title": "Does a green loan need external review?",
+  "short": "Usually not. The Green Loan Principles recommend an external review, such as a second-party opinion, but do not require one, and most bilateral MSME green loans rely on the bank's own checks. Your bank may still ask for an energy audit, a vendor certificate or verified impact figures.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME borrowers and banks",
+  "sections": [
+    {
+      "h": "What the Green Loan Principles say",
+      "p": [
+        "The LMA, APLMA and LSTA Green Loan Principles, updated in March 2025, recommend external review but do not make it mandatory. A borrower may get a second-party opinion on its green loan framework before signing, and verification of its reporting after disbursement. Where there is no external review, the lender relies on its own assessment and the borrower's documents."
+      ]
+    },
+    {
+      "h": "Why your bank may still check more",
+      "p": [
+        "Under the RBI Framework for acceptance of Green Deposits (April 2023), banks and deposit-taking NBFCs that raise green deposits must have the allocation of those funds checked every year by an independent third-party verification or assurance, covering use of proceeds and their project selection controls. That review is of the lender, not of you, but it is why the lender asks for invoices, project reports and impact figures it can show its own verifier."
+      ]
+    },
+    {
+      "h": "When an external review makes sense",
+      "ul": [
+        "Large or syndicated loans, where several lenders want one shared view of eligibility.",
+        "Loans labelled green in a public announcement, where reputational risk is higher.",
+        "Projects with unclear eligibility, such as a partly energy saving machine or a fuel switch that still burns fossil fuel.",
+        "When your bank's product rules ask for it; check the sanction terms."
+      ]
+    },
+    {
+      "h": "What to prepare instead for a typical MSME loan",
+      "ol": [
+        "A short project note: what it is, which eligible category it fits, and the expected saving with method.",
+        "Quotations before sanction and supplier invoices after disbursement, matched to loan amounts.",
+        "Before and after energy data from bills, such as kWh or fuel litres per month.",
+        "An annual impact figure, with the factor named, such as 0.710 kg CO2 per kWh for grid electricity saved."
+      ]
+    }
+  ],
+  "senseible": "Senseible's green loan readiness check shows how a project and its records line up with lender expectations, and its invoice and bill records form the evidence trail for use of proceeds and impact reporting.",
+  "links": [
+    {
+      "label": "Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "Green loan reporting after disbursement",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LMA, APLMA and LSTA Green Loan Principles (March 2025), external review",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "RBI Framework for acceptance of Green Deposits, 11 April 2023, third-party verification (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Checked October 2026: GLP March 2025 edition (external review recommended) and RBI Green Deposits framework (annual third-party verification of allocation); check for later editions and RBI amendments.",
+  "reviewed": "2026-10-18"
+}

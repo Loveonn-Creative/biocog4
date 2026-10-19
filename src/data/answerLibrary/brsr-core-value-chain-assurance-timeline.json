@@ -1,0 +1,65 @@
+{
+  "slug": "brsr-core-value-chain-assurance-timeline",
+  "q": "When does BRSR Core value chain assessment become mandatory, and what does it mean for suppliers?",
+  "title": "BRSR Core value chain timeline",
+  "short": "Under SEBI's circular of 28 March 2025, it is not mandatory. Value chain disclosures are voluntary for the top 250 listed companies from FY 2025-26, and assessment or assurance of them is voluntary from FY 2026-27. For suppliers, requests can still come, through customers that choose to report or through contract terms.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Suppliers to the top 250 listed companies",
+  "sections": [
+    {
+      "h": "How the timeline has changed",
+      "ul": [
+        "July 2023: SEBI's BRSR Core circular asked the top 250 listed companies for value chain disclosures on a comply or explain basis from FY 2024-25, with limited assurance from FY 2025-26.",
+        "March 2025: SEBI made value chain disclosures voluntary for the top 250 from FY 2025-26, and made assessment or assurance of them voluntary from FY 2026-27.",
+        "The same circular allows 'assessment' as an alternative to 'assurance' for BRSR Core, and narrows the value chain to partners that each make up 2 percent or more of purchases or sales, and lets the company limit disclosure to partners covering 75 percent of purchases or sales."
+      ]
+    },
+    {
+      "h": "What could make it mandatory later",
+      "p": [
+        "Only a further SEBI circular. SEBI has revised these dates more than once, so treat any date as provisional until a new circular says otherwise. Watch for changes in the scope of companies covered, the 2 percent test, and whether assurance becomes required."
+      ]
+    },
+    {
+      "h": "What this means for a supplier now",
+      "ul": [
+        "A customer that reports voluntarily will send a data request, usually in the months after the financial year closes, since BRSR is filed with the annual report.",
+        "If the customer opts for assessment or assurance, the provider may sample your bills and invoices, not just your totals.",
+        "A supply contract or supplier code can make data sharing a condition even when SEBI does not.",
+        "Using April to March figures, the same factors each year and documents for every line keeps you ready either way."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your Scope 1 and 2 records for the financial year with each line tied to its bill or invoice, so you can send totals to a customer and show the documents if an assessor asks.",
+  "links": [
+    {
+      "label": "BRSR value chain data request for MSME suppliers",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "BRSR Core: assurance or assessment",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    },
+    {
+      "label": "BRSR Core's nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "BRSR requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on assurance or assessment of ESG disclosures for value chain, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "SEBI circular on BRSR Core and value chain disclosures, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026: the SEBI circular of 28 March 2025 is the current rule; no later SEBI circular changing value chain timelines was found. Recheck sebi.gov.in before each BRSR season."
+}

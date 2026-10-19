@@ -1,0 +1,70 @@
+{
+  "slug": "is-pas-2060-still-valid",
+  "q": "Is PAS 2060 still valid for carbon neutral claims, or must I use ISO 14068-1?",
+  "title": "Is PAS 2060 still valid?",
+  "short": "No, not for new claims. BSI withdrew PAS 2060 at the end of 2025, after a two-year transition to ISO 14068-1:2023, and stopped delivering PAS 2060 verification from 1 January 2025. Use ISO 14068-1 for any new carbon neutral claim. An old PAS 2060 declaration still describes its own past period, but cannot be renewed.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Exporters and brands making carbon neutral claims",
+  "sections": [
+    {
+      "h": "What happens to a claim you already hold",
+      "p": [
+        "BSI has said that opinions issued against PAS 2060 remain valid for the historical period they cover. The declaration does not become false, but you cannot extend it to a new period. Stop using wording or labels that imply an ongoing PAS 2060 status, and date any reference to the old claim."
+      ]
+    },
+    {
+      "h": "What changes when you move to ISO 14068-1",
+      "ul": [
+        "A carbon neutrality management plan with dated reduction targets is required, not optional.",
+        "Reductions must come first; offsetting covers only residual emissions.",
+        "The footprint must include significant Scope 3 emissions, which some PAS 2060 claims left out.",
+        "Credits must meet the quality criteria the standard sets out.",
+        "The claim must say how it was checked, from self-declaration to third-party verification."
+      ]
+    },
+    {
+      "h": "A transition plan in five steps",
+      "ol": [
+        "Note the end date of your last PAS 2060 period and keep its declaration and evidence on file.",
+        "Do a gap check of your footprint boundary against ISO 14068-1, especially Scope 3.",
+        "Write the management plan with targets before buying credits for the new period.",
+        "Review the credits you plan to retire against ISO 14068-1 criteria, such as additionality, permanence and no double counting.",
+        "Update every claim, label and web page to name ISO 14068-1, the subject and the period."
+      ]
+    },
+    {
+      "h": "Claims on goods sold to EU consumers",
+      "p": [
+        "The standard you use does not decide whether a claim is lawful. From 27 September 2026, EU consumer law bans product claims of neutral or reduced climate impact that rest on offsetting, whether made under PAS 2060 or ISO 14068-1. Business-to-business claims about your organisation are treated differently; check the market you sell into."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel invoices and electricity bills into the Scope 1 and 2 part of the footprint, holds Scope 3 purchase lines in a supplier evidence trail, and drafts self-declared reports from those records. The carbon neutral claim, credit retirement and any verification stay with you and your verifier.",
+  "links": [
+    {
+      "label": "ISO 14068-1 carbon neutral requirements",
+      "to": "/answers/iso-14068-carbon-neutral-requirements"
+    },
+    {
+      "label": "Can I call my export product carbon neutral?",
+      "to": "/answers/can-i-call-my-export-product-carbon-neutral"
+    },
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14068-1:2023, Climate change management, Transition to net zero, Part 1: Carbon neutrality, published 30 November 2023 (BSI notices on PAS 2060 withdrawal and the end of its PAS 2060 verification service from 1 January 2025 are on bsigroup.com)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Directive (EU) 2024/825, Empowering consumers for the green transition (applies from 27 September 2026)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18: PAS 2060 withdrawn at the end of 2025 (BSI's foreword to BS ISO 14068-1 gives 31 December 2025; some sources say 30 November 2025). Recheck BSI for any new edition of ISO 14068."
+}

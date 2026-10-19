@@ -1,0 +1,71 @@
+{
+  "slug": "are-carbon-credit-purchases-tax-deductible-india",
+  "q": "Can an Indian company deduct the cost of buying carbon credits from taxable income?",
+  "title": "Is buying carbon credits tax deductible?",
+  "short": "Often yes, but this is an interpretation: no provision deals with purchased carbon credits. The general business deduction, section 34 of the Income-tax Act, 2025 (section 37(1) of the 1961 Act for earlier years), allows it if spent wholly for the business and not capital, CSR or a penalty. CCTS compliance purchases have the strongest case.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Companies buying credits for offsetting or CCTS compliance",
+  "sections": [
+    {
+      "h": "The test a purchase must pass",
+      "p": [
+        "Our reading, not a ruling: the Income-tax Act has no section on buying carbon credits, and we found no CBDT circular or court ruling on the purchase side. So the general rule decides. For tax years from 2026-27 that is section 34 of the Income-tax Act, 2025; for earlier years it is section 37(1) of the Income-tax Act, 1961. Both allow expenditure that is not capital in nature, not personal, and laid out wholly and exclusively for the business. Both exclude spending on an offence or anything prohibited by law, and spending on corporate social responsibility under section 135 of the Companies Act, 2013."
+      ]
+    },
+    {
+      "h": "How common purchases are likely to be treated",
+      "ul": [
+        "Carbon credit certificates bought to meet a CCTS emission intensity target: a cost of complying with a legal obligation of the business, the clearest case for a deduction.",
+        "A penalty or environmental compensation for missing a CCTS target: likely disallowed, as a payment for breaching the law.",
+        "Voluntary credits retired because a buyer requires carbon neutral supply, or to back a product claim: arguable as a business expense; keep the contract, tender clause or buyer letter that shows the purpose.",
+        "Credits retired and booked as part of the CSR budget: not deductible, because CSR spending is excluded.",
+        "Credits held to trade later: stock in trade, deducted as cost of sale when sold, not on purchase."
+      ]
+    },
+    {
+      "h": "When the deduction falls",
+      "p": [
+        "No Ind AS deals specifically with purchased carbon credits. Companies commonly hold them as inventory or as an intangible asset and charge them to profit when they are surrendered or retired. The tax deduction then usually follows the year of retirement or sale, not the year of purchase. Agree the accounting policy and the tax position together, in writing, before year end."
+      ]
+    },
+    {
+      "h": "Which Act applies to your year",
+      "p": [
+        "The Income-tax Act, 2025 took effect on 1 April 2026, with 2026-27 as its first tax year. Purchases in that year or later fall under section 34 of the 2025 Act, where the CSR and illegal-payment exclusions sit in the section itself. Purchases in 2025-26 or earlier stay under section 37(1) of the 1961 Act and its Explanations. Quote the section that matches the year in your computation, and have your adviser confirm the position before you file."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: ₹10 lakh of credits for CCTS compliance",
+    "lines": [
+      "Credits surrendered for the compliance year: ₹10,00,000",
+      "If allowed, at the 25.168 percent effective rate under section 115BAA (22 percent plus 10 percent surcharge plus 4 percent cess): ₹10,00,000 x 0.25168 = ₹2,51,680 less tax",
+      "If the same ₹10,00,000 is booked as CSR spending: no deduction, so no tax saving"
+    ],
+    "note": "Illustration only, not tax advice. The rate depends on the regime your company has chosen, and the deduction itself is an interpretation of the general rule; confirm it with your adviser."
+  },
+  "senseible": "Senseible is not a tax adviser. It keeps the invoices and calculations behind your Scope 1 and 2 figures, which show why a CCTS compliance purchase was needed, and shows carbon credit eligibility signals from your own records.",
+  "links": [
+    {
+      "label": "How carbon credits are taxed in India",
+      "to": "/answers/how-are-carbon-credits-taxed-in-india"
+    },
+    {
+      "label": "Can a company buy CCTS credits voluntarily?",
+      "to": "/answers/can-a-company-buy-ccts-credits-voluntarily"
+    },
+    {
+      "label": "What to check before buying credits",
+      "to": "/answers/what-to-check-before-buying-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Carbon Credit Trading Scheme, 2023, notified by the Ministry of Power, as amended; read with section 34 of the Income-tax Act, 2025 and section 37(1) of the Income-tax Act, 1961 (incometaxindia.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18: Income-tax Act, 2025 in force from 1 April 2026, section 34 carries the general deduction. The treatment of purchased credits is an interpretation; recheck for any CBDT circular or ruling on carbon credit purchases."
+}

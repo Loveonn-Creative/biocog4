@@ -1,0 +1,94 @@
+{
+  "slug": "zinc-die-casting-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of zinc die-cast locks and hardware, as made in Aligarh?",
+  "title": "Carbon footprint per kg of zinc die casting",
+  "short": "Per kg of good casting, multiply the zinc alloy bought per kg of good casting by the alloy's cradle-to-gate footprint, then add melting fuel and press electricity divided by kg of good castings. Plating is a separate step, added per square metre of the part, so a buyer can see each part of the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Lock and hardware makers in Aligarh and Rajkot, export buyers' sourcing teams",
+  "sections": [
+    {
+      "h": "The formula for a zinc casting",
+      "p": [
+        "Footprint per kg good casting = (kg alloy bought / kg good castings) x alloy factor + (melting fuel emissions + electricity emissions) / kg good castings.",
+        "Work over a full month or year, so metal sitting in the pot and in the runner bin at the start and end evens out."
+      ]
+    },
+    {
+      "h": "How zinc differs from aluminium die casting",
+      "ul": [
+        "Zinc alloys such as Zamak melt at a much lower temperature than aluminium alloys, so the melting energy per kg is smaller. Take the melting range from your alloy supplier's data sheet if a buyer asks.",
+        "Most zinc parts are cast on hot-chamber machines, where the melt sits in a pot on the machine. If the pot is heated electrically, its energy is already in the press electricity; do not count it again as fuel.",
+        "Locks, handles and fittings are nearly always plated or finished after casting. Nickel, chrome or brass plating can add a lot per part, so work it out separately.",
+        "The alloy factor is different. Zinc smelting and aluminium smelting have very different footprints, so never borrow an aluminium figure."
+      ]
+    },
+    {
+      "h": "Runners, rejects and dross",
+      "p": [
+        "Sprues, runners, overflows and rejected castings go back into the pot. They cost energy each time, which the energy term already covers, but they do not add alloy. Only metal that leaves the plant as dross, oxidation loss or scrap sold to a dealer adds to the alloy term.",
+        "If you sell dross to a recycler, do not subtract a credit for its later use unless you follow and state an allocation method. ISO 14067 asks you to say how you treated recycling and co-products."
+      ]
+    },
+    {
+      "h": "Where the zinc alloy factor comes from",
+      "ul": [
+        "Best: a footprint from your alloy supplier for the grade you buy, with its boundary and year.",
+        "Next: the International Zinc Association's cradle-to-gate life cycle study of special high grade zinc, as a proxy for alloy made from primary zinc.",
+        "Alloy remelted from die-cast scrap has a lower footprint than primary-based alloy. Report the recycled share separately, because buyers ask for it."
+      ]
+    },
+    {
+      "h": "From per kg to per lock",
+      "p": [
+        "Per part = finished casting mass x footprint per kg + plated area x plating footprint per square metre + bought-in parts such as springs, brass cylinders and keys + packaging. Keep each line visible, since export buyers compare suppliers line by line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, 20 tonnes of good castings",
+    "lines": [
+      "Good castings: 20,000 kg; zinc alloy bought: 20,600 kg (600 kg lost as dross and melt loss)",
+      "Alloy at an illustrative 3.0 kg CO2e per kg: 20,600 x 3.0 = 61,800 kg CO2e",
+      "Holding furnace LPG: 1,800 kg x 2.98 = 5,364 kg CO2",
+      "Presses, trimming and compressors: 36,000 kWh x 0.710 = 25,560 kg CO2",
+      "Total: 61,800 + 5,364 + 25,560 = 92,724 kg; per kg good casting: 92,724 / 20,000 = 4.64 kg CO2e",
+      "A 350 g lock body: 0.35 x 4.64 = 1.62 kg CO2e before plating and bought-in parts"
+    ],
+    "note": "The 3.0 kg CO2e per kg alloy factor is illustrative, not a published figure. Use your supplier's figure or the current IZA study, and state which."
+  },
+  "senseible": "Senseible reads LPG, PNG and electricity bills into Scope 1 and 2 with IPCC 2006 fuel factors and the CEA grid factor, and sends zinc alloy invoices, with their kg, to the Scope 3 supplier evidence trail. The alloy footprint and plated areas come from your supplier and your drawings.",
+  "links": [
+    {
+      "label": "Aluminium die casting per kg",
+      "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Electroplating per square metre",
+      "to": "/answers/electroplating-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "How scrap rate changes carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (system boundary and allocation)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (LPG and natural gas factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "amfori-bepi-energy-and-emissions-questions",
+  "q": "What energy and emissions questions does amfori BEPI ask a factory, and what evidence works?",
+  "title": "amfori BEPI energy and emissions evidence",
+  "short": "amfori BEPI asks about energy and emissions in its Energy and Climate area, one of eight performance areas. The self-assessment asks for energy use by source, which the amfori platform converts to greenhouse gas emissions. Evidence that works: twelve months of electricity bills and fuel invoices, metering records, and dated records of reduction actions.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factories supplying European retailers that use amfori",
+  "sections": [
+    {
+      "h": "How BEPI is structured",
+      "p": [
+        "BEPI is amfori's environmental programme. A site starts with a self-assessment on the amfori platform covering eight environmental performance areas, Energy and Climate among them, and a buyer may then ask for an on-site assessment against the same Code of Conduct. Environmental monitoring is meant for business partners that have operated for at least twelve months, so records across months count for more than one annual total."
+      ]
+    },
+    {
+      "h": "What the Energy and Climate area looks at",
+      "ul": [
+        "Energy consumption by source: grid electricity, DG sets, rooftop solar, boiler fuels, LPG or PNG.",
+        "Greenhouse gas emissions from that energy. amfori says the platform calculates them with myclimate emission factors and reports biogenic CO2 from biomass separately.",
+        "How the site manages and cuts energy use. The BEPI Code of Conduct names ISO 50001, SBTi and ISO 14064 as reference points for this area.",
+        "The exact questions sit in the current self-assessment on the amfori platform; read that version before you answer."
+      ]
+    },
+    {
+      "h": "Evidence that holds up",
+      "ul": [
+        "Electricity bills for every connection, with kWh, and DG run hours with diesel invoices.",
+        "Boiler fuel purchase invoices, with stock records if fuel is stored. Keep biomass such as briquettes or husk on its own line, since its CO2 is reported apart.",
+        "Your own Scope 1 and Scope 2 calculation that names its factors, such as 0.710 kg CO2 per kWh from the CEA database and 2.68 kg CO2 per litre of diesel, to cross-check the platform's figure.",
+        "Solar generation meter readings, and any open access or green tariff invoices.",
+        "Before and after readings for each action, such as a compressor leak survey or LED retrofit."
+      ]
+    },
+    {
+      "h": "Where factories lose marks",
+      "p": [
+        "Energy recorded for the main building but not the jobwork unit or the ETP. A solar claim with no generation records. A reduction claim with no before and after readings. Fuel quantities entered in the wrong unit. Each is fixable before the assessment if the bills are already in one place."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices month by month, calculates Scope 1 and 2 with the factor shown on every line, and keeps each file with a SHA-256 fingerprint so the evidence behind a figure can be shown.",
+  "links": [
+    {
+      "label": "Sedex SMETA environment and carbon questions",
+      "to": "/answers/sedex-smeta-environment-carbon-questions"
+    },
+    {
+      "label": "Higg FEM energy and emissions data",
+      "to": "/answers/higg-fem-energy-and-emissions-data"
+    },
+    {
+      "label": "EcoVadis carbon questions and evidence",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Checked October 2026 against the amfori BEPI Code of Conduct (January 2024) and amfori's news item on BEPI climate and energy upgrades (myclimate factors, biogenic CO2); amfori updates the self-assessment, so check the current version on the platform before an assessment.",
+  "reviewed": "2026-10-18"
+}

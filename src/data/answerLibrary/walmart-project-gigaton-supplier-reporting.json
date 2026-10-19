@@ -1,0 +1,81 @@
+{
+  "slug": "walmart-project-gigaton-supplier-reporting",
+  "q": "What does a supplier report to Walmart under Project Gigaton?",
+  "title": "What to report to Walmart for Gigaton",
+  "short": "You report goals and results for actions that cut or avoid emissions, grouped under areas such as energy, packaging, waste and transportation, through Walmart's Sustainability Hub. Walmart's calculators turn your activity data, such as kWh saved or solar kWh generated, into avoided emissions. It is a reduction report, not a full inventory.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian suppliers to Walmart (apparel, home, food)",
+  "sections": [
+    {
+      "h": "How Project Gigaton works",
+      "p": [
+        "Walmart launched Project Gigaton in 2017 to cut or avoid one billion tonnes of emissions in its product supply chains by 2030. In February 2024 it said suppliers had reported reaching that figure, six years early, and the programme has kept collecting supplier reports since. Action areas have included energy, nature, waste, packaging, transportation, and product use and design. Suppliers sign up, set goals in one or more areas, and report progress each year in a reporting window on the Sustainability Hub. Walmart's reporting guidance for the year sets the areas, questions and deadlines, so download the current version before you start."
+      ]
+    },
+    {
+      "h": "The data behind an energy entry",
+      "ul": [
+        "A baseline year and the reporting year, with the same sites in both.",
+        "Grid electricity in kWh for each year, from bills, with kVAh converted to kWh.",
+        "Renewable electricity in kWh: rooftop solar generated and used on site, open access units adjusted, green tariff units.",
+        "Energy efficiency projects: what changed, when, and the measured kWh or fuel saved, with before and after readings.",
+        "Fuels by type and quantity: diesel in litres, LPG and coal in kg, PNG in scm."
+      ]
+    },
+    {
+      "h": "Reductions are not the same as your footprint",
+      "p": [
+        "Gigaton counts the change an action caused against a baseline, so a supplier whose total emissions rose because it grew can still report real avoided emissions from a solar plant or a boiler upgrade. Keep the inventory and the reduction claim separate. Do not count the same project in two areas, and do not claim a reduction you have not measured; an estimate should say it is one."
+      ]
+    },
+    {
+      "h": "Keeping the entry defensible",
+      "p": [
+        "Walmart may apply its own factors when its tools convert your inputs, so enter activity data where the form asks for it, and keep your own calculation alongside with the factor and source you used, such as 0.710 kg CO2 per kWh from the CEA database for Indian grid power. Keep the bills and meter readings for each figure in case the buyer or an auditor asks."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two energy actions at a garment unit",
+    "lines": [
+      "LED and motor upgrades: 1,20,000 kWh a year saved, from before and after sub-meter readings",
+      "Avoided: 1,20,000 x 0.710 = 85,200 kg, 85.2 t CO2",
+      "Rooftop solar: 2,00,000 kWh generated and used on site",
+      "Avoided grid power: 2,00,000 x 0.710 = 1,42,000 kg, 142 t CO2",
+      "Energy result: 85.2 + 142 = 227.2 t CO2 avoided in the year"
+    ],
+    "note": "Walmart's calculators may give a different figure if they use another grid factor; report the kWh, and keep this calculation as your own record."
+  },
+  "senseible": "Senseible supplies the energy and emissions figures behind a Gigaton entry: monthly kWh and fuel from your bills and invoices, year on year, each line tied to its source document. You enter those figures in Walmart's Sustainability Hub yourself.",
+  "links": [
+    {
+      "label": "How to calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    },
+    {
+      "label": "Measure savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Answering a CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "Your carbon number for buyers",
+      "to": "/msme-carbon-number"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026: Walmart announced the goal reached in February 2024 and still reports Gigaton results. Check the current Sustainability Hub guidance for areas, questions and the reporting window before each cycle."
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "multiple-air-compressors-sequencing-savings",
+  "q": "How should I run several air compressors together to cut electricity and CO2?",
+  "title": "Running several air compressors efficiently",
+  "short": "Run as few compressors as the demand needs: let one or more run fully loaded as base load, give one machine, ideally with a variable speed drive, the trim role, and switch off the rest. A sequencer does this automatically. The saving comes mostly from compressors that sit unloaded, drawing power while making no air.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineer, maintenance head",
+  "sections": [
+    {
+      "h": "Why partly loaded compressors waste power",
+      "p": [
+        "A screw compressor on load and unload control keeps its motor turning when it unloads. It makes no air but still draws a real share of its full-load power, so measure that figure on your own machines rather than assuming it. When three machines share a demand that two could meet, each spends hours unloaded, and that power is pure loss."
+      ]
+    },
+    {
+      "h": "Base load and trim roles",
+      "ul": [
+        "Base load machines run fully loaded most of the time, where their kW per unit of air is best.",
+        "One trim machine follows the swings in demand. A variable speed drive unit suits this role because its power falls with output.",
+        "Spare machines stay off and start only when pressure falls below a set point.",
+        "Do not put two variable speed units in trim together; they fight each other and both run at poor efficiency."
+      ]
+    },
+    {
+      "h": "Sequencer settings that matter",
+      "ol": [
+        "Set one narrow pressure band for the whole system instead of separate bands on each machine, which cascade upward and raise system pressure.",
+        "Rotate the base load role every week or month to even out running hours.",
+        "Add enough receiver storage near the compressors so short demand peaks do not start another machine.",
+        "Fix leaks first: a sequencer that keeps an extra compressor running to feed leaks only automates the waste."
+      ]
+    },
+    {
+      "h": "How to find the saving before you buy",
+      "ol": [
+        "Download loaded hours, unloaded hours and starts from each compressor's controller for a typical month.",
+        "Measure unloaded kW on each machine with a clamp meter, or take it from the maker's datasheet.",
+        "Unloaded kWh = unloaded hours x unloaded kW, for every machine.",
+        "Estimate how many of those hours a sequencer would turn into off time, and multiply the kWh by 0.710 kg CO2 per kWh."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative plant with three 55 kW screw compressors",
+    "lines": [
+      "Controller logs show the third machine unloaded for 2,500 hours a year",
+      "Measured unloaded power: 16 kW",
+      "With a sequencer it stays off: 16 x 2,500 = 40,000 kWh saved a year",
+      "CO2: 40,000 x 0.710 = 28,400 kg, about 28.4 t CO2 a year",
+      "At an assumed tariff of Rs 8 per kWh: 40,000 x 8 = Rs 3.2 lakh a year"
+    ],
+    "note": "Hours, unloaded power and tariff are illustrative. Use your own controller logs and bills."
+  },
+  "senseible": "Senseible reads your electricity bills and diesel invoices into a monthly record of kWh, litres and CO2, so the change after a new machine goes in shows up month by month against the same bills. Machine-level meter feeds can be set up with the Senseible team.",
+  "links": [
+    {
+      "label": "Compressed air leak cost and emissions",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Compressed air pressure reduction savings",
+      "to": "/answers/compressed-air-pressure-reduction-savings"
+    },
+    {
+      "label": "Air compressor heat recovery savings",
+      "to": "/answers/air-compressor-heat-recovery-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 3 Compressed Air System (capacity control)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

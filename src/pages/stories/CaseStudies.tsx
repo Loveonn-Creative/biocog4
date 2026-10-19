@@ -39,8 +39,8 @@ const CaseStudies = () => {
 
         {empty && (
           <div className="mt-12 rounded-3xl border border-dashed border-border p-8 text-center md:p-12">
-            <h2 className="text-2xl font-semibold tracking-tight">The first stories are with our editors.</h2>
-            <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-muted-foreground">Every story here comes from a real customer who approved every word. None are written by us. If Senseible changed something for you, yours could be the first.</p>
+            <h2 className="text-2xl font-semibold tracking-tight">Answered a buyer or a bank with Senseible?</h2>
+            <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-muted-foreground">Tell us what happened: eight questions, mostly taps. Once you approve it, you get a public link to send to the next buyer or lender who asks.</p>
             <Link to="/case-studies/share" className="mt-6 inline-flex h-12 items-center rounded-full bg-primary px-7 text-[15px] font-medium text-primary-foreground">Share your story</Link>
           </div>
         )}
@@ -66,7 +66,7 @@ const CaseStudies = () => {
         )}
 
         {!empty && stories !== null && (
-          <p className="mt-12 text-[14px] text-muted-foreground">Has Senseible changed something for you? <Link to="/case-studies/share" className="font-medium text-foreground underline underline-offset-2">Share your story</Link>.</p>
+          <p className="mt-12 text-[14px] text-muted-foreground">Answered a buyer or a bank with Senseible? <Link to="/case-studies/share" className="font-medium text-foreground underline underline-offset-2">Share your story</Link>.</p>
         )}
       </main>
       <Footer />

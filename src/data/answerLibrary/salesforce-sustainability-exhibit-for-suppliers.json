@@ -1,0 +1,68 @@
+{
+  "slug": "salesforce-sustainability-exhibit-for-suppliers",
+  "q": "What is the Salesforce Sustainability Exhibit and what must a supplier commit to?",
+  "title": "Salesforce Sustainability Exhibit explained",
+  "short": "The Salesforce Sustainability Exhibit is a set of climate terms in Salesforce supplier contracts, introduced in 2021. It asks suppliers to set a science-based target, publicly disclose Scope 1, 2 and 3 emissions, and deliver to Salesforce on a carbon neutral basis, with a climate positive remedy if they fall short.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian IT and services vendors to Salesforce",
+  "sections": [
+    {
+      "h": "What the Exhibit is",
+      "p": [
+        "It is a contract schedule, not a law or a certification. Salesforce added it to supplier contracts in 2021 and has revised it since; the published version on its legal pages is dated June 2024. Suppliers may have signed different versions, so read the exhibit attached to your own master agreement or purchase order before planning any work."
+      ]
+    },
+    {
+      "h": "The commitments in the published version",
+      "ul": [
+        "Set a science-based target and use good faith efforts to meet it through absolute emission reductions, on the timeline the Exhibit sets.",
+        "Publicly disclose corporate Scope 1, 2 and 3 emissions. Salesforce's supplier programme guide points suppliers to annual reporting through CDP.",
+        "Provide the goods and services sold to Salesforce on a carbon neutral basis: residual emissions from what you supply are compensated with high quality carbon credits, with documentation on request.",
+        "A climate positive remedy applies if you fall short. For a carbon neutral shortfall it is the cost of the credits needed to close the gap; for other shortfalls it is 0.5 percent of the amounts paid or invoiced over the previous twelve months, used to fund an activity that removes or avoids emissions. Salesforce's 2021 announcement called this a climate remediation fee."
+      ]
+    },
+    {
+      "h": "What an Indian IT or services vendor needs first",
+      "ol": [
+        "A Scope 1 and 2 baseline for every office and delivery centre: electricity bills, DG diesel, and refrigerant top-ups for air conditioning.",
+        "The main Scope 3 lines for a services firm: business travel, employee commuting, purchased cloud and IT services, and purchased goods.",
+        "A target with its base year, and a plan for renewable electricity, since offices in India usually have Scope 2 as their largest owned source.",
+        "A method note naming the factors used, such as 0.710 kg CO2 per kWh for Indian grid electricity from the CEA database."
+      ]
+    },
+    {
+      "h": "Points to settle with Salesforce",
+      "p": [
+        "Ask which version of the Exhibit you signed, the deadline for your SBTi commitment and validation, the reporting channel and date, and how the emissions behind your Salesforce work are to be measured for the carbon neutral basis, since public disclosure covers the whole company. Get the answers in writing, since they set the scope of your work."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates Scope 1 and 2 from electricity bills and fuel invoices, keeps a Scope 3 evidence trail, and prepares self-declared draft reports a supplier can share with a customer. Target validation is done by SBTi.",
+  "links": [
+    {
+      "label": "Supplier engagement targets for suppliers",
+      "to": "/answers/sbti-supplier-engagement-target-for-suppliers"
+    },
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "Cloud carbon footprint in India",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Science Based Targets initiative, target setting",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Checked October 2026 against the Salesforce Sustainability Exhibit (June 2024 version, salesforce.com legal pages) and Salesforce's general overview of the Exhibit; Salesforce revises its supplier terms, so quote only the version you signed.",
+  "reviewed": "2026-10-18"
+}

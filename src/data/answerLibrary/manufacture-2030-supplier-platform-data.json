@@ -1,0 +1,88 @@
+{
+  "slug": "manufacture-2030-supplier-platform-data",
+  "q": "My UK retail customer invited me to Manufacture 2030. What data do I enter?",
+  "title": "What to enter in Manufacture 2030",
+  "short": "Your customer's programme sets the exact questions, but the platform collects facility-level energy and emissions data. Have monthly grid electricity in kWh, renewable electricity, each fuel by quantity and production output ready, plus refrigerant top-ups if asked, and track the reduction actions you agree with your customer.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Suppliers to UK and EU retailers",
+  "sections": [
+    {
+      "h": "What the platform is for",
+      "p": [
+        "Manufacture 2030 is a supplier platform that retailers and brands use to collect facility-level energy and emissions data from their suppliers and to track reduction actions. Your customer invites you and decides which modules and questions you see, and some programmes need a facility licence, so ask your customer who pays. It is a buyer programme, separate from UK government procurement rules such as the Carbon Reduction Plan."
+      ]
+    },
+    {
+      "h": "Data to have ready before you log in",
+      "ul": [
+        "Site name, address, products and the reporting period your customer chose.",
+        "Production output for the period, in pieces, kg or metres, for intensity figures.",
+        "Grid electricity in kWh for each month, from bills. On kVAh bills use the printed kWh, or kVAh times the printed power factor.",
+        "Renewable electricity: solar generated and used on site, open access units adjusted on the bill, and any green tariff units, each with evidence.",
+        "Fuels by type: diesel in litres, LPG and coal in kg, PNG in scm, furnace oil in litres or kg.",
+        "Refrigerant top-ups by gas name and kg charged, and water or waste figures, if your customer's questions include them."
+      ]
+    },
+    {
+      "h": "Check any factor the platform applies",
+      "p": [
+        "Where the platform calculates emissions from your activity data, check which grid factor it uses for India and compare it with the CEA figure, 0.710 kg CO2 per kWh in version 21.0. If they differ, note it in a comment rather than changing your kWh. Enter fuels in the units printed on the invoice where the form allows, so nothing is converted twice."
+      ]
+    },
+    {
+      "h": "Common entry errors",
+      "ul": [
+        "Entering the net billed units on an open access bill instead of the units recorded at the meter.",
+        "Leaving out a DG set, a second meter or a warehouse inside the site boundary.",
+        "Mixing calendar months with Indian billing cycles that run mid-month to mid-month.",
+        "Entering fuel purchased in a month that was stocked and burnt later; enter fuel used where you can."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for a knitwear unit",
+    "lines": [
+      "Grid electricity: 85,000 kWh x 0.710 = 60,350 kg CO2 (Scope 2, location-based)",
+      "Rooftop solar used on site: 15,000 kWh, entered as renewable electricity, zero Scope 2",
+      "Diesel: 1,200 litres x 2.68 = 3,216 kg CO2; LPG: 300 kg x 2.98 = 894 kg CO2 (Scope 1)",
+      "Scope 1 and 2: 60,350 + 3,216 + 894 = 64,460 kg, about 64.5 t CO2 for the month"
+    ],
+    "note": "Use this as a cross-check on the platform's result. A gap usually means a different grid factor or a unit entered differently."
+  },
+  "senseible": "Senseible keeps monthly electricity, fuel and refrigerant data from your bills and invoices with Scope 1 and 2 totals, each line tied to its document, ready to copy into the platform's forms.",
+  "links": [
+    {
+      "label": "UK Carbon Reduction Plan for Indian suppliers",
+      "to": "/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+    },
+    {
+      "label": "Electricity bill details to share",
+      "to": "/answers/what-electricity-bill-details-to-share-for-carbon"
+    },
+    {
+      "label": "Convert a kVAh bill to kWh",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "Rooftop solar, net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Platform modules and questions change and are set by each customer; inputs here are kept general because the current Manufacture 2030 supplier documentation was not available to check on 18 October 2026. Check the supplier help centre or your customer's invitation."
+}

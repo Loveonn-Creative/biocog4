@@ -1,0 +1,86 @@
+{
+  "slug": "ccts-tool-bm-t-003-electricity-emission-factor",
+  "q": "Which grid emission factor does a CCTS offset project use for electricity saved or consumed under BM-T-003?",
+  "title": "Grid factor for CCTS projects under BM-T-003",
+  "short": "Use the grid factor that BEE tool BM-T-003 sets, not the 0.710 kg CO2 per kWh weighted average from your company footprint. BM-T-003 covers baseline, project and leakage emissions from electricity consumption, so read the version you register under for the factor and loss treatment it requires, and record its source and edition.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Energy consultants and plant engineers",
+  "sections": [
+    {
+      "h": "Why a project factor can differ from your inventory factor",
+      "p": [
+        "Your Scope 2 inventory uses the CEA weighted average, which describes the average power on the grid. A project asks which generation runs less, or more, because of the change. The CEA CO2 Baseline Database publishes operating margin, build margin and combined margin figures alongside the weighted average for that kind of question. Which one a CCTS project uses is set in BM-T-003, not chosen by the developer."
+      ]
+    },
+    {
+      "h": "Saved and consumed electricity",
+      "p": [
+        "BM-T-003 covers electricity on three sides: in the baseline (what the old system would have used), in the project (what the new system uses, for example a heat pump replacing a boiler) and as leakage. Check whether the tool sets a different factor or option for each side, and which conditions decide it. Do not borrow the rules of another programme's tool."
+      ]
+    },
+    {
+      "h": "Captive DG and mixed supply",
+      "ul": [
+        "If the plant draws from grid, captive DG and rooftop solar, split the kWh by source from meters first. That split is needed whatever factor the tool assigns to each source.",
+        "Diesel burnt in a captive DG set is fossil fuel combustion, the subject of BM-T-002. Check whether BM-T-003 sends captive power to that tool or gives its own option.",
+        "For on-site renewable power, keep generation and self-use meter readings so the kWh can be shown, and apply the treatment the tool sets."
+      ]
+    },
+    {
+      "h": "Transmission and distribution losses",
+      "p": [
+        "Grid kWh at your meter were more at the power station. Check whether BM-T-003 asks you to account for these losses, whether it gives a default or needs a documented figure, and record which one you used."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ol": [
+        "The BM-T-003 version and notice date.",
+        "The factor used, its source, database version and fiscal year.",
+        "The option chosen for baseline and project electricity, and why it fits.",
+        "Metered kWh by source for every monitoring period."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Same saving, two different figures",
+    "lines": [
+      "Metered saving: 2,00,000 kWh a year of grid electricity",
+      "Company footprint: 2,00,000 x 0.710 = 1,42,000 kg, so location-based Scope 2 falls by about 142 t CO2",
+      "CCTS project: 2,00,000 x the factor BM-T-003 requires, with any loss treatment it sets",
+      "The two results need not match; each is correct for its own purpose"
+    ]
+  },
+  "senseible": "Senseible applies the CEA weighted average of 0.710 kg CO2 per kWh (version 21.0) to the kWh on your bills for location-based Scope 2, and keeps a dated, bill-backed record of grid kWh before and after a project, the activity data a BM-T-003 calculation starts from.",
+  "links": [
+    {
+      "label": "CEA weighted average vs combined margin",
+      "to": "/answers/cea-weighted-average-vs-combined-margin"
+    },
+    {
+      "label": "BEE approved CCTS offset methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Efficiency projects and carbon credits",
+      "to": "/answers/energy-efficiency-carbon-credits-for-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE tool BM-T-003, baseline, project and/or leakage emissions from electricity consumption and monitoring of electricity generation (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "BM-T-003 text could not be read when checked on 18 October 2026, so the page names no margin option or loss default; add them from the tool version in force. CEA updates its database every year.",
+  "reviewed": "2026-10-18"
+}

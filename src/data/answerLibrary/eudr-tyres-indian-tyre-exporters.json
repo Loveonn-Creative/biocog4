@@ -1,0 +1,78 @@
+{
+  "slug": "eudr-tyres-indian-tyre-exporters",
+  "q": "What does EUDR require from an Indian tyre or rubber products exporter?",
+  "title": "EUDR for Indian tyre and rubber exporters",
+  "short": "If your tyres or rubber goods are listed in EUDR Annex I and contain natural rubber, the EU importer files a due diligence statement and you must trace every kilogram of natural rubber in each shipment to the plots where it was tapped, through dealers and processors, with proof the land was not deforested after 31 December 2020.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Tyre and rubber goods exporters",
+  "sections": [
+    {
+      "h": "Is your product in scope",
+      "p": [
+        "After Delegated Regulation (EU) 2026/2102, published in September 2026, Annex I still covers natural rubber (4001), compounded rubber (4005), other unvulcanised forms (4006), vulcanised thread and cord (4007), plates and sheets (4008), new pneumatic tyres (4011), inner tubes (4013), gloves and hygienic articles (4015) and hard rubber (4017). Conveyor and transmission belts (4010) and other vulcanised rubber articles (4016) are out, and heading 4012 now covers only tyre treads, so retreaded and used tyres are out.",
+        "The rubber in scope is natural rubber from Hevea brasiliensis. A product made only from synthetic rubber falls outside, but most tyres contain natural rubber. Check your exact CN code against the consolidated Annex I."
+      ]
+    },
+    {
+      "h": "Who does what, and from when",
+      "p": [
+        "The company that first places the product on the EU market, usually your importer, files the due diligence statement and assesses risk; traders further down the chain keep its reference number. Your importer cannot file without your data, so expect contracts to ask for geolocation of the source plots, quantities, production period and evidence of legal production for every batch.",
+        "Large and medium importers must comply from 30 December 2026, micro and small ones from 30 June 2027, under Regulation (EU) 2025/2650. EU buyers will want your plot data before then."
+      ]
+    },
+    {
+      "h": "Where tyre makers' chains break",
+      "ul": [
+        "Natural rubber reaches a factory through growers, collection dealers and processors of sheet, block or latex; each step must pass plot data along with the rubber.",
+        "Imported rubber from other countries needs the same plot data from that supplier, and its own country risk applies.",
+        "Rubber of unknown origin mixed into a compound batch means that batch cannot go into an EU order. EUDR does not allow mass balance, so segregation must hold from receipt through mixing to the finished tyre.",
+        "Retreaded tyres left Annex I in 2026, but tyre treads sold as such are still in scope."
+      ]
+    },
+    {
+      "h": "What to set up",
+      "ol": [
+        "Map every rubber supplier and ask each for plot lists with coordinates, or polygons for plots over 4 hectares.",
+        "Give each lot an ID at receipt and carry it through compounding, curing and dispatch records.",
+        "Keep a reconciliation per shipment: natural rubber in the tyres against traced kilograms received.",
+        "Hold EU-bound production in segregated batches until your traced supply covers full orders."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your purchase invoices for rubber and compounds with a SHA-256 fingerprint and date on each file, which supports the quantity reconciliation behind each lot. Plot geolocation comes from your suppliers and dealers.",
+  "links": [
+    {
+      "label": "EUDR data for rubber and coffee exporters",
+      "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide"
+    },
+    {
+      "label": "Does EUDR apply to my exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR geolocation: polygon or point",
+      "to": "/answers/eudr-geolocation-polygon-or-point"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Annex I and Articles 9 and 10, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/2650 amending the EUDR (application dates), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Delegated Regulation (EU) 2026/2102 amending Annex I to the EUDR, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: EUDR applies from 30 December 2026 (30 June 2027 for micro and small operators) under Regulation (EU) 2025/2650; rubber headings follow Delegated Regulation (EU) 2026/2102 as reported, since the Official Journal text could not be opened. Recheck the consolidated Annex I on EUR-Lex.",
+  "reviewed": "2026-10-18"
+}

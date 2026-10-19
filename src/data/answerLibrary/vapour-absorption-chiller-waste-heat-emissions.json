@@ -1,0 +1,80 @@
+{
+  "slug": "vapour-absorption-chiller-waste-heat-emissions",
+  "q": "Does a vapour absorption chiller run on waste heat cut emissions compared with an electric chiller?",
+  "title": "Absorption chiller on waste heat: CO2 gain",
+  "short": "Yes, when the heat is genuine waste that would otherwise be lost: you save most of the electric chiller's kWh and pay only for pumps and a bigger cooling tower. If a boiler burns fuel to make that heat, a good electric chiller usually emits less: absorption gives only 0.7 to 1.2 units of cooling per unit of heat.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Pharma, food and textile plant engineers",
+  "sections": [
+    {
+      "h": "Why the heat source decides everything",
+      "p": [
+        "An electric chiller at 0.65 kW per TR delivers about 5.4 units of cooling per unit of electricity (3.517 / 0.65). A vapour absorption machine (VAM) delivers about 0.65 to 0.7 units of cooling per unit of heat in a single effect machine and about 1.2 in a double effect one, which needs higher grade heat (CIBSE Datasheet 7, absorption cooling). That trade only pays in CO2 when the heat costs no extra fuel: DG or gas engine jacket water and exhaust, excess low pressure steam, hot condensate or process waste heat."
+      ]
+    },
+    {
+      "h": "The test for genuine waste heat",
+      "ul": [
+        "The heat was being vented, dumped to a cooling tower or lost before the VAM came in.",
+        "No boiler fires harder because of the VAM, in any season.",
+        "If the waste heat runs short and a backup burner tops it up, that fuel counts against the VAM."
+      ]
+    },
+    {
+      "h": "Costs people forget",
+      "ul": [
+        "The cooling tower rejects the cooling load plus the driving heat, so a VAM needs a larger tower, more pump power and more make-up water than an electric chiller of the same TR.",
+        "Solution pumps and vacuum pumps draw a few kW.",
+        "Part load COP falls, and a VAM needs steady heat to hold its rating."
+      ]
+    },
+    {
+      "h": "How to report the change",
+      "p": [
+        "Electricity avoided lowers location-based Scope 2 at 0.710 kg CO2 per kWh. Any fuel burned for the VAM is Scope 1. Report both lines rather than a single net saving, so a reviewer can see the heat source assumption."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 200 TR for 5,000 hours (1,000,000 TR hours)",
+    "lines": [
+      "Electric chiller at 0.65 kW per TR: 650,000 kWh; CO2: 650,000 x 0.710 = 461,500 kg",
+      "VAM auxiliaries, pumps and extra tower power at 0.15 kW per TR (assumed): 150,000 kWh; CO2: 106,500 kg",
+      "On genuine waste heat: saving = 461,500 minus 106,500 = 355,000 kg, about 355 t a year",
+      "On heat from a furnace oil boiler: cooling 1,000,000 x 3.517 = 3,517,000 kWh; heat at COP 1.2 = 2,930,833 kWh; fuel at 85% boiler efficiency = 3,448,039 kWh = 12.41 TJ",
+      "Fuel CO2 at 77.4 t per TJ (IPCC default, residual fuel oil): 12.41 x 77.4 = 961 t, plus 106.5 t for auxiliaries, against 461.5 t for the electric chiller"
+    ],
+    "note": "kW per TR, COP and boiler efficiency are assumptions; use your data sheets and measured hours."
+  },
+  "senseible": "Senseible reads electricity and fuel bills into one monthly record, so the shift from chiller kWh to heat, and any extra fuel, shows on the same page.",
+  "links": [
+    {
+      "label": "Chiller efficiency in kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Chiller plant emissions per TR hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (residual fuel oil default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

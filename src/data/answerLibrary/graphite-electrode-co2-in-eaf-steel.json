@@ -1,0 +1,89 @@
+{
+  "slug": "graphite-electrode-co2-in-eaf-steel",
+  "q": "How do I count CO2 from graphite electrodes and charge carbon in an electric arc furnace?",
+  "title": "CO2 from EAF electrodes and charge carbon",
+  "short": "Use a carbon mass balance: for each carbon input (electrodes, charge coal or coke, injected carbon, carbon in pig iron or DRI), multiply kg used by its carbon content and by 3.664. Subtract the carbon that leaves in the steel and slag. The result is the furnace's direct CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "EAF and ladle furnace steel makers exporting to the EU",
+  "sections": [
+    {
+      "h": "Why 3.664",
+      "p": [
+        "One tonne of carbon burnt to CO2 becomes 44.01 / 12.011 = 3.664 tonnes of CO2. In an arc furnace the carbon in electrodes, charge carbon and injected carbon ends up mostly as CO and then CO2 in the off-gas, so its mass times its carbon content times 3.664 gives the CO2. The same factor applies to carbon leaving in products, which is subtracted."
+      ]
+    },
+    {
+      "h": "Inputs to count, and where each number comes from",
+      "ul": [
+        "Graphite electrodes: kg consumed in the period, from stores issue records or the change in electrode stock, not purchases. Carbon content from the supplier's analysis certificate.",
+        "Charge carbon, coke or anthracite added with the scrap: kg from the charging log, carbon content from the analysis.",
+        "Injected carbon or carbon raiser: kg from the injection system or bags issued.",
+        "Pig iron, DRI or HBI: these carry carbon into the melt, so use their tonnage and carbon content from the analysis. Under CBAM, bought pig iron, DRI or HBI are also precursors, and their own embedded emissions are added to the steel separately.",
+        "Natural gas or oxy-fuel burners and limestone or dolomite flux: count these too, as combustion and process CO2."
+      ]
+    },
+    {
+      "h": "Outputs to subtract",
+      "p": [
+        "Carbon leaving in liquid steel: tonnes of steel times its carbon content from the heat analysis. Carbon in slag and dust, if measured. For low-carbon steel the steel term is small, but for high-carbon grades it is not, so use real heat analyses rather than a single average."
+      ]
+    },
+    {
+      "h": "How this fits CBAM and your inventory",
+      "p": [
+        "For iron and steel, CBAM embedded emissions currently cover direct emissions only, so this mass balance, plus burner fuel and flux, is the core of an EAF mill's CBAM figure. For the definitive period from 2026, Commission Implementing Regulation (EU) 2025/2547 sets the calculation methods, aligned with the EU ETS, and the mass balance approach for carbon inputs and outputs is one of them; Implementing Regulation 2023/1773 covered only the transitional period. In your GHG inventory the same CO2 is Scope 1 process emissions, while the arc furnace's electricity sits in Scope 2. Keep monthly totals with the analysis certificates behind each carbon content, because a verifier will ask for them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per tonne of liquid steel (illustrative)",
+    "lines": [
+      "Electrodes: 1.8 kg x 0.99 carbon x 3.664 = 6.5 kg CO2",
+      "Charge coke: 12 kg x 0.85 carbon x 3.664 = 37.4 kg CO2",
+      "Injected carbon: 8 kg x 0.85 carbon x 3.664 = 24.9 kg CO2",
+      "Less carbon in steel: 1,000 kg x 0.2% = 2 kg carbon x 3.664 = 7.3 kg CO2",
+      "Net from carbon inputs: 6.5 + 37.4 + 24.9 minus 7.3 = 61.5 kg CO2 per tonne, before burner fuel and flux"
+    ],
+    "note": "Consumption and carbon contents are assumptions for illustration. Use your own issue records and analysis certificates."
+  },
+  "senseible": "Senseible keeps electrode, carbon raiser and coke invoices as evidence with their printed quantities, and its CBAM cost calculator prices embedded emissions for iron and steel from 2026 to 2034. The mass balance itself uses your issue records, heat analyses and analysis certificates.",
+  "links": [
+    {
+      "label": "CBAM cost: blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated, Annex IV on embedded emissions",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/2547 of 10 December 2025, methods for calculating embedded emissions in the CBAM definitive period, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (implementing acts and guidance for installation operators)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "ISO 14404-2, Calculation method of CO2 emission intensity from iron and steel production, electric arc furnace route",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026 against Implementing Regulation (EU) 2025/2547 (definitive-period calculation methods). Recheck for amendments and for any extension of CBAM to indirect emissions for iron and steel."
+}

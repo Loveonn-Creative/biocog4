@@ -182,7 +182,7 @@ const ShareStory = () => {
             <div>
               <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-primary">Customer stories</p>
               <h1 className="mt-4 text-[2.1rem] font-semibold leading-[1.08] tracking-tight [text-wrap:balance] md:text-[3rem]">Your story could save the next owner weeks.</h1>
-              <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted-foreground">Eight short questions, mostly taps. Watch your story write itself as you answer. Nothing goes live until our editors read it and you have approved every word. Anonymous is fine.</p>
+              <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted-foreground">Eight questions, mostly taps. Your story writes itself as you answer. Nothing goes live until you approve it, and you can stay anonymous.</p>
               <ul className="mt-6 space-y-2 text-[15px]">
                 <li>✓ About three minutes</li>
                 <li>✓ You choose: named, company only, or anonymous</li>

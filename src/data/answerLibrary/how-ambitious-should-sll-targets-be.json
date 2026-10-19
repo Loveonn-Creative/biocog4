@@ -1,0 +1,86 @@
+{
+  "slug": "how-ambitious-should-sll-targets-be",
+  "q": "How ambitious must a sustainability-linked loan target be for an MSME?",
+  "title": "How ambitious should an SLL target be?",
+  "short": "Ambitious enough to beat business as usual. Under the Sustainability-Linked Loan Principles, each target must be a material improvement beyond your current trajectory, compared where possible with your past performance, peers or a science-based reference. A target that your recent trend already reaches will not pass a lender's review.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME CFOs negotiating sustainability-linked loans, bank credit teams",
+  "sections": [
+    {
+      "h": "The three benchmarks lenders use",
+      "ul": [
+        "Your own history: as many past years of the KPI as you have, measured the same way, with past performance referenced where possible.",
+        "Peers: how similar plants in your sector perform, where data exist.",
+        "Science: a pathway consistent with limiting warming, such as a sector pathway used by SBTi, or a national target that applies to your sector.",
+        "The principles allow a combination. An MSME with no peer data can rely on its own trend plus a published pathway."
+      ]
+    },
+    {
+      "h": "Testing a target against your trend",
+      "ol": [
+        "Work out the average yearly change in the KPI over the last three years.",
+        "Project that change to the target year. This is business as usual.",
+        "Set the target clearly below the projection, and link the gap to named actions such as a furnace upgrade or rooftop solar.",
+        "Set a value for each annual test date, not only the final year."
+      ]
+    },
+    {
+      "h": "Gains that do not count as ambition",
+      "ul": [
+        "A fall in Scope 2 that comes from a new, lower CEA grid factor rather than anything you did.",
+        "An intensity fall from spreading fixed energy over higher output.",
+        "A baseline picked from an unusually bad year, such as a year of long shutdowns.",
+        "Selling or closing a high-emission unit, unless the baseline is restated."
+      ]
+    },
+    {
+      "h": "When a lender will push back",
+      "p": [
+        "Expect questions if the target is already met at signing, if it relies on grid changes, or if it has no path between now and maturity. A verifier will check the KPI each year, so a target that cannot be traced to bills and production records is as weak as one that lacks ambition."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a forging unit's intensity trend",
+    "lines": [
+      "Scope 1 and 2 intensity: 1.00 t CO2 per tonne (2022), 0.97 (2023), 0.94 (2024), a fall of about 3% a year",
+      "Trend to 2027: 0.94 x 0.97 x 0.97 x 0.97 = 0.858 t per tonne",
+      "A 2027 target of 0.86 is business as usual",
+      "A target of 0.75, tied to an induction heater replacing a furnace oil furnace, goes beyond the trend",
+      "Check grid effects: if grid power is 40% of the footprint and the grid factor falls 5%, that alone cuts intensity 0.40 x 5% = 2%"
+    ],
+    "note": "Figures are illustrative. Use your own three-year data and keep the same factors when testing the trend."
+  },
+  "senseible": "Senseible shows Scope 1 and 2 from your bills year by year, with the factor on each line, so you and the lender can see the historic trend before a target is set. The KPI is then checked each year by an external reviewer the lender accepts.",
+  "links": [
+    {
+      "label": "SLL KPIs for an MSME",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "What a verifier checks on an SLL KPI",
+      "to": "/answers/sll-kpi-verification-what-verifier-checks"
+    },
+    {
+      "label": "SLL interest discount",
+      "to": "/answers/sustainability-linked-loan-interest-discount"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LMA, APLMA and LSTA Sustainability-Linked Loan Principles and Guidance (26 March 2025), calibration of SPTs",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Science Based Targets initiative, sector pathways and criteria",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026 against the Sustainability-Linked Loan Principles and Guidance of 26 March 2025 (lma.eu.com); recheck for a newer edition before quoting its calibration wording."
+}

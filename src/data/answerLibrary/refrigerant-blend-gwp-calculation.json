@@ -1,0 +1,94 @@
+{
+  "slug": "refrigerant-blend-gwp-calculation",
+  "q": "How do I calculate the GWP of a refrigerant blend like R-404A, R-407C or R-410A?",
+  "title": "GWP of a refrigerant blend",
+  "short": "Multiply each component's mass fraction by its GWP and add the results. R-404A is 44% R-125, 52% R-143a and 4% R-134a, so its AR6 GWP is 0.44 x 3,740 + 0.52 x 5,810 + 0.04 x 1,530 = 4,728. Use one IPCC report, AR5 or AR6, for every gas.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Facility and cold-chain managers converting refrigerant invoices to CO2e",
+  "sections": [
+    {
+      "h": "Compositions of common blends",
+      "p": [
+        "Use the nominal composition by mass from ASHRAE Standard 34 or the gas maker's safety data sheet. Fractions must add to 100 percent."
+      ],
+      "ul": [
+        "R-410A: R-32 50%, R-125 50%.",
+        "R-407C: R-32 23%, R-125 25%, R-134a 52%.",
+        "R-404A: R-125 44%, R-143a 52%, R-134a 4%."
+      ]
+    },
+    {
+      "h": "Component GWPs (100-year)",
+      "ul": [
+        "R-32 (HFC-32): 677 in AR5, 771 in AR6.",
+        "R-125 (HFC-125): 3,170 in AR5, 3,740 in AR6.",
+        "R-134a (HFC-134a): 1,300 in AR5, 1,530 in AR6.",
+        "R-143a (HFC-143a): 4,800 in AR5, 5,810 in AR6."
+      ],
+      "p": [
+        "AR5 values are from Working Group I Chapter 8, Table 8.A.1; AR6 values from Chapter 7, Table 7.SM.7."
+      ]
+    },
+    {
+      "h": "Results for the three blends",
+      "ul": [
+        "R-410A: AR5 0.5 x 677 + 0.5 x 3,170 = 1,923.5. AR6 2,255.5.",
+        "R-407C: AR5 0.23 x 677 + 0.25 x 3,170 + 0.52 x 1,300 = 155.7 + 792.5 + 676 = 1,624.2. AR6 0.23 x 771 + 0.25 x 3,740 + 0.52 x 1,530 = 177.3 + 935 + 795.6 = 1,907.9.",
+        "R-404A: AR5 0.44 x 3,170 + 0.52 x 4,800 + 0.04 x 1,300 = 1,394.8 + 2,496 + 52 = 3,942.8. AR6 0.44 x 3,740 + 0.52 x 5,810 + 0.04 x 1,530 = 1,645.6 + 3,021.2 + 61.2 = 4,728.0."
+      ]
+    },
+    {
+      "h": "Mistakes to avoid",
+      "ul": [
+        "Using mole fractions instead of mass fractions. Blend names give mass shares.",
+        "Mixing sets, such as AR4 values from an old label with AR6 values for other gases. Older AR4 based figures, such as 2,088 for R-410A, appear on many labels and quotes.",
+        "Treating a blend that contains R-22 or another HCFC as fully Scope 1. Split it: the HFC share goes in Scope 1 and the HCFC share is reported separately, outside the scope totals.",
+        "Taking a GWP printed on an invoice without checking which IPCC report it comes from."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of top-ups at a cold store",
+    "lines": [
+      "Top-ups: 20 kg of R-404A and 8 kg of R-407C",
+      "AR6: 20 x 4,728.0 + 8 x 1,907.9 = 94,560 + 15,263 = 109,823 kg CO2e, about 109.8 t",
+      "AR5: 20 x 3,942.8 + 8 x 1,624.2 = 78,856 + 12,994 = 91,850 kg CO2e, about 91.8 t",
+      "The AR6 total is about 20 percent higher for the same gas, so name the report you used"
+    ]
+  },
+  "senseible": "Senseible keeps refrigerant service and purchase invoices as evidence and calculates refrigerant CO2e when you give the gas and the kilograms charged into equipment; a gas purchase alone is not counted as leakage. The AR5 or AR6 choice changes only these gas figures, not its fuel and grid CO2 factors.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "AR5 or AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Does R-22 count in Scope 1?",
+      "to": "/answers/does-r22-count-in-scope-1"
+    },
+    {
+      "label": "HSN codes for refrigerant gases",
+      "to": "/answers/hsn-codes-for-refrigerant-gases"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "IPCC AR5 WG1, Chapter 8, Appendix 8.A, Table 8.A.1 (GWP100)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (HFCs in Scope 1; HCFCs reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

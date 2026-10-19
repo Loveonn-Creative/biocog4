@@ -1,0 +1,88 @@
+{
+  "slug": "secondary-lead-smelter-co2-per-tonne",
+  "q": "What is the carbon footprint of recycled lead from a secondary lead smelter per tonne?",
+  "title": "CO2 per tonne of recycled lead",
+  "short": "Add CO2 from the coke or anthracite used as reductant, the soda ash flux, furnace and kettle fuel, and electricity, then divide by tonnes of lead produced. Work it out from your own invoices and production register rather than a generic figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Lead recyclers and battery makers asking for recycled lead data",
+  "sections": [
+    {
+      "h": "The sources in a secondary smelter",
+      "ul": [
+        "Reductant: coke or anthracite in the rotary furnace; its carbon leaves as CO2, so CO2 = tonnes x carbon share x 44/12.",
+        "Flux and desulphurisation: soda ash releases about 0.415 t CO2 per tonne used, the IPCC carbonate factor for sodium carbonate.",
+        "Fuel for the furnace and refining kettles: furnace oil at 2.97 kg CO2 per litre or PNG at 2.05 kg per scm.",
+        "Electricity for battery breaking, fans and bag filters: kWh x 0.710 kg CO2, reported as Scope 2."
+      ]
+    },
+    {
+      "h": "What stays out of the lead figure",
+      "p": [
+        "Polypropylene chips from battery cases and any sodium sulphate sold are separate products. Either share the smelter's emissions with them by mass or value, stating the method, or keep breaking and plastics in a separate stage. Under the cut-off approach, a common choice for recycled inputs, spent batteries arrive with no upstream emissions and only collection transport is added if your buyer asks for it. State the approach you used."
+      ]
+    },
+    {
+      "h": "Why battery makers ask",
+      "p": [
+        "India's Battery Waste Management Rules, 2022 set recycled content and extended producer responsibility duties for battery producers, and the EU Battery Regulation adds recycled content documentation, including for lead. Buyers want a per tonne figure and proof that the lead is recycled, so keep the purchase records of spent batteries with your production register."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ol": [
+        "Purchase invoices for coke, soda ash, iron scrap, fuel and electricity.",
+        "Lab carbon content for each reductant lot.",
+        "A monthly production register of refined and alloyed lead, and of by-products sold.",
+        "CPCB registration and returns, which buyers may ask to see alongside the footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: 500 t of refined lead",
+    "lines": [
+      "Coke: 30 t at 85% carbon (assumed) = 25.5 t C; x 44/12 = 93.5 t CO2",
+      "Soda ash: 25 t x 0.415 = 10.4 t CO2",
+      "Furnace oil: 40,000 L x 2.97 = 118.8 t CO2",
+      "Direct total: 93.5 + 10.4 + 118.8 = 222.7 t CO2, so 0.445 t CO2 per tonne of lead",
+      "Electricity: 1,50,000 kWh x 0.710 = 106.5 t CO2",
+      "Including electricity: 329.2 t CO2, so 0.658 t CO2 per tonne of lead"
+    ],
+    "note": "All quantities are assumed for illustration."
+  },
+  "senseible": "Senseible reads furnace oil, PNG and electricity invoices into a dated monthly record for the smelter, with the factor and source on each line, and keeps coke and soda ash invoices on the same record for your mass balance, each file with a SHA-256 fingerprint.",
+  "links": [
+    {
+      "label": "Recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "EU battery passport for Indian exporters",
+      "to": "/answers/eu-battery-passport-indian-battery-exporters"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 4.6 (lead production) and Chapter 2 (soda ash use)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Battery Waste Management Rules, 2022 (CPCB)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Article 8, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewNote": "Recycled content duties under India's Battery Waste Management Rules and EU Article 8 are phased; check current dates before quoting them to buyers.",
+  "reviewed": "2026-10-18"
+}
