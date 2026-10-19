@@ -1,0 +1,81 @@
+{
+  "slug": "ceramic-frit-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of ceramic frit or glaze?",
+  "title": "Carbon footprint per kg of frit or glaze",
+  "short": "Add three parts for a period: fuel CO2 from the frit furnace, process CO2 released by carbonates in the batch (mass of each carbonate times its IPCC factor), and electricity at 0.710 kg CO2 per kWh. Divide by kg of frit made. Then add bought raw materials for a cradle-to-gate figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Frit and glaze makers supplying tile plants and exporters",
+  "sections": [
+    {
+      "h": "Process CO2 from carbonates",
+      "p": [
+        "When a frit batch melts, carbonates break down and release CO2. This is Scope 1 process CO2, separate from fuel, and it is easy to miss because no invoice shows it. IPCC 2006 Volume 3, Chapter 2 gives the CO2 per tonne of each carbonate, assuming it fully breaks down, which it does in a frit melt."
+      ],
+      "ul": [
+        "Calcite or limestone, CaCO3: 0.440 t CO2 per t",
+        "Dolomite, CaMg(CO3)2: 0.477 t CO2 per t",
+        "Soda ash, Na2CO3: 0.415 t CO2 per t",
+        "Magnesite, MgCO3: 0.522 t CO2 per t",
+        "Barium carbonate, BaCO3: 0.223 t CO2 per t"
+      ]
+    },
+    {
+      "h": "Fuel and electricity",
+      "ul": [
+        "Frit furnace fuel: PNG scm x 2.05, LPG kg x 2.98, or furnace oil litres x 2.97 kg CO2.",
+        "Electricity for ball mills, quenching, conveyors and compressors: kWh x 0.710 kg CO2.",
+        "Borax, boric acid, zircon, feldspar and quartz release no process CO2 in the melt."
+      ]
+    },
+    {
+      "h": "Frit versus raw glaze",
+      "p": [
+        "A frit maker melts the batch, so the carbonate CO2 is released at your plant. A glaze maker who only grinds and blends raw materials releases no carbonate CO2; the carbonates in a raw glaze give off their CO2 later, in the tile maker's kiln, as the tile maker's Scope 1. Say which you make, so the tile maker does not count the same CO2 twice."
+      ]
+    },
+    {
+      "h": "From gate-to-gate to cradle-to-gate",
+      "p": [
+        "The three parts above are your plant's own emissions per kg. A product footprint under ISO 14067 also adds the footprint of each bought material, such as zircon, borates and feldspar, and inbound transport. These come from suppliers or a database and are CO2e. Tile makers preparing an EPD under EN 17160, the CEN product category rules for ceramic tiles, treat frit and glaze as material inputs, so a per kg figure with its method lets them use your number instead of a generic one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of frit (illustrative batch and energy)",
+    "lines": [
+      "Carbonates per tonne of frit: 120 kg calcite, 60 kg dolomite, 40 kg soda ash",
+      "Process CO2: 120 x 0.43971 + 60 x 0.47732 + 40 x 0.41492 = 52.8 + 28.6 + 16.6 = 98.0 kg",
+      "Furnace fuel: 180 scm PNG x 2.05 = 369.0 kg CO2",
+      "Electricity: 120 kWh x 0.710 = 85.2 kg CO2",
+      "Plant total: 98.0 + 369.0 + 85.2 = 552.2 kg CO2 per tonne, or 0.55 kg CO2 per kg of frit"
+    ],
+    "note": "Batch recipe, gas and power use are assumptions for the arithmetic. Bought materials are not yet included."
+  },
+  "senseible": "Senseible reads furnace fuel invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh. Process CO2 from carbonates comes from your batch records, which you work out with the factors above.",
+  "links": [
+    {
+      "label": "Tile footprint per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 2, Table 2.1 and Section 2.5 (other process uses of carbonates)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

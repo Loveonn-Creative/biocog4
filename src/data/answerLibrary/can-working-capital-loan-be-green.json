@@ -1,0 +1,86 @@
+{
+  "slug": "can-working-capital-loan-be-green",
+  "q": "Can a working capital or cash credit limit be a green loan?",
+  "title": "Can a cash credit limit be a green loan?",
+  "short": "It can, but only when the money drawn can be shown to fund eligible green activity and is tracked separately, as with a solar installer buying panels for projects. An ordinary manufacturer's cash credit limit for raw material and wages is rarely labelled green. A sustainability-linked limit, priced on targets, often fits better.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs and bank relationship managers",
+  "sections": [
+    {
+      "h": "The facility type is not the test",
+      "p": [
+        "The Green Loan Principles (LMA, APLMA and LSTA) cover any loan instrument, and their Guidance has a part on revolving credit facilities. What decides it is use of proceeds: the money must go to eligible green projects, and the borrower must be able to show where it went. On a cash credit or overdraft, money moves in and out every day, which makes that tracking the hard part. Where only one tranche of a facility is green, its proceeds have to be kept apart."
+      ]
+    },
+    {
+      "h": "When a working capital line can qualify",
+      "ul": [
+        "The business itself is in an eligible activity, such as a solar EPC firm, a maker of energy-efficient motors or an EV component supplier, and the lender accepts that drawings fund that activity.",
+        "A separate green sub-limit or tranche, for example stock for a renewable energy contract, with drawings matched to those invoices.",
+        "Drawings documented against supplier invoices for eligible goods, so the green share can be shown on any date."
+      ]
+    },
+    {
+      "h": "When it does not",
+      "ul": [
+        "A general limit used for raw material, wages and rent, even if the plant has rooftop solar or a good reputation.",
+        "A limit where only part of the spend is green and nobody tracks which part. A lender may then tag only the share it can verify, or none."
+      ]
+    },
+    {
+      "h": "The alternative: a sustainability-linked limit",
+      "p": [
+        "Under the Sustainability-Linked Loan Principles, also from the LMA, APLMA and LSTA, the money can be used for general purposes, including working capital. The pricing is tied to targets on chosen KPIs, such as Scope 1 and 2 emissions intensity, checked every year. For a manufacturer whose daily spend is not green, this fits a cash credit limit better. Whether a bank offers it, and on what terms, is the bank's decision."
+      ]
+    },
+    {
+      "h": "What RBI's green deposit framework covers",
+      "p": [
+        "The RBI Framework for Acceptance of Green Deposits (11 April 2023) governs how banks use money raised as green deposits and lists eligible areas such as renewable energy, energy efficiency and clean transport. It does not create a green working capital product for borrowers. How your limit is tagged inside the bank is the bank's call."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: sizing a green share for a solar installer",
+    "lines": [
+      "Drawings on the cash credit limit over the year: Rs 6.5 crore",
+      "Against panel, inverter and cable invoices for solar projects: Rs 5.2 crore",
+      "Rent, salaries and other costs: Rs 1.3 crore",
+      "Eligible share: 5.2 / 6.5 = 80%",
+      "A lender might set a green sub-limit of Rs 1.6 crore within a Rs 2 crore limit, which is 80%"
+    ],
+    "note": "Figures are illustrative. The lender decides the treatment."
+  },
+  "senseible": "Senseible's green loan readiness check and finance application (signed-in) draw on dated records of your electricity and fuel use read from bills and invoices. Whether a limit is classed as green or sustainability-linked, and its terms, is for the lender.",
+  "links": [
+    {
+      "label": "The Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "Sustainability-linked loan KPIs",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "How drawing power is calculated",
+      "to": "/answers/how-drawing-power-is-calculated-cash-credit"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LMA, APLMA and LSTA Green Loan Principles, Sustainability-Linked Loan Principles and their Guidance (latest editions)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "RBI Framework for Acceptance of Green Deposits, 11 April 2023",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The loan principles are revised every few years and bank products vary; check the current editions and your lender's policy."
+}

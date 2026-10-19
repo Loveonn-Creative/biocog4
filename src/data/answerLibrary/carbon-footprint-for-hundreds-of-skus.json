@@ -1,0 +1,81 @@
+{
+  "slug": "carbon-footprint-for-hundreds-of-skus",
+  "q": "How do I give carbon footprints for hundreds of SKUs without a separate study for each?",
+  "title": "Carbon footprints for hundreds of SKUs",
+  "short": "Build one model per product family instead of one study per SKU. Work out factors per kg of each material and per machine-hour or per kg for each process from plant totals, then apply them to each SKU's bill of materials and routing. Check that all SKUs together add back to the plant total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Exporters of engineering parts, apparel, home goods and packaging",
+  "sections": [
+    {
+      "h": "Step 1: group SKUs by route",
+      "p": [
+        "Put SKUs in one family when they share materials and process steps, such as all turned brass fittings, all knitted cotton tops, or all corrugated boxes. Size and weight can differ; the route cannot. A SKU with an extra energy-heavy step, such as plating or heat treatment, belongs in a different family or gets that step added."
+      ]
+    },
+    {
+      "h": "Step 2: build rates from plant totals",
+      "ul": [
+        "Material factors: kg CO2e per kg for each material, from suppliers or a named database, separate for virgin and recycled.",
+        "Process rates: each shop's kWh and fuel from bills and sub-meters, converted to CO2 and divided by machine-hours or kg processed in the same period.",
+        "Overheads: lighting, compressors and offices spread by a stated key.",
+        "Packaging and outbound freight as their own lines, if the buyer wants them."
+      ]
+    },
+    {
+      "h": "Step 3: apply to each SKU",
+      "p": [
+        "SKU footprint = sum of (gross kg of each material x its factor) + sum of (hours or kg in each process x its rate) + packaging. Gross material includes scrap and yield loss, from the routing or bill of materials your ERP already holds. This is a spreadsheet join, not a new study."
+      ]
+    },
+    {
+      "h": "Step 4: reconcile and disclose",
+      "ul": [
+        "Multiply each SKU's footprint by units made and add up. The total should match the plant's emissions for the period within a stated tolerance.",
+        "Write the family rules, rates, period and data sources in one method note. No standard sets a SKU-family rule, so ISO 14067 transparency carries the weight here.",
+        "Do a full study for your top sellers or the SKUs a buyer looks at closely, and use it to test the model."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative SKU from a machined steel family",
+    "lines": [
+      "CNC shop rate: 50,000 kWh x 0.710 = 35,500 kg CO2 over 5,000 machine-hours = 7.1 kg CO2 per hour",
+      "Steel: 0.8 kg gross x 2.5 kg CO2e per kg = 2.0 kg CO2e",
+      "Machining: 0.25 hours x 7.1 = 1.775 kg CO2",
+      "Packaging: 0.05 kg CO2e",
+      "SKU footprint: 2.0 + 1.775 + 0.05 = 3.825 kg CO2e per piece"
+    ],
+    "note": "The steel factor and packaging figure are placeholders, not published values; machine-hours and kWh are illustrative."
+  },
+  "senseible": "Senseible reads the plant's electricity bills and fuel invoices for the totals you turn into process rates, and its product carbon footprint calculator works through materials and energy per product. Product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "How to disclose a product footprint",
+      "to": "/answers/how-to-disclose-a-product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (system boundary, allocation, reporting)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "WBCSD PACT Methodology for product footprint exchange",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

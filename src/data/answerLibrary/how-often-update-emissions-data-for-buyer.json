@@ -1,0 +1,87 @@
+{
+  "slug": "how-often-update-emissions-data-for-buyer",
+  "q": "How often should I update the emissions figures I give a buyer: every year, every order or every batch?",
+  "title": "How often to update emissions for a buyer",
+  "short": "Update company Scope 1 and 2 once a year, for a full twelve months. Update a product footprint when something significant changes, such as a new main supplier, process or power source, and otherwise refresh it with each year's data. Figures per order or per batch are rarely worth producing unless the buyer pays for them.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Suppliers answering repeat buyer requests",
+  "sections": [
+    {
+      "h": "Company figures: once a year",
+      "p": [
+        "The GHG Protocol Corporate Standard is built on annual inventories compared against a base year, and buyer questionnaires such as CDP and EcoVadis come once a year. Track monthly to manage your energy, but send the buyer a full twelve-month figure so it can be compared year on year."
+      ]
+    },
+    {
+      "h": "Product footprints: on significant change",
+      "p": [
+        "The GHG Protocol Product Standard ties updates to significant changes in the product's life cycle rather than to a calendar. Set your own significance threshold in your method note and apply it consistently."
+      ],
+      "ul": [
+        "A new main material supplier, or a change in recycled content.",
+        "A process change, such as a new furnace or a switch from diesel to PNG.",
+        "A change in electricity source: rooftop solar, green tariff, open access.",
+        "A new production site, or an error found in the old calculation."
+      ]
+    },
+    {
+      "h": "Validity periods in data exchange",
+      "p": [
+        "The PACT data model from WBCSD carries a reference period and a validity period with each product footprint, so a buyer knows which year the data describes and until when to rely on it. Fill both honestly. Check the current PACT Technical Specifications for any default period before relying on one."
+      ]
+    },
+    {
+      "h": "Per order or per batch",
+      "p": [
+        "Batch figures need energy metering and material tracing for each batch, which few MSMEs have. A per-order figure is usually the product footprint multiplied by quantity, not new data. If a buyer asks per shipment, send footprint x quantity and name the period the footprint is based on."
+      ]
+    },
+    {
+      "h": "Matching the buyer's year",
+      "p": [
+        "Indian companies work April to March, while many EU buyers ask for the calendar year. Monthly records let you add up January to December. Always say which twelve months you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a calendar-year figure from financial-year records",
+    "lines": [
+      "January to March 2025, from FY 2024-25 monthly records: 45 t CO2",
+      "April to December 2025, from FY 2025-26 monthly records: 138 t CO2",
+      "Calendar year 2025: 45 + 138 = 183 t CO2"
+    ],
+    "note": "Figures are illustrative. Use the same factors across both parts, or say where they differ."
+  },
+  "senseible": "Senseible builds records month by month from invoices and bills, so a financial-year or calendar-year total can be refreshed when new bills arrive without starting again.",
+  "links": [
+    {
+      "label": "PACT Pathfinder Framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    },
+    {
+      "label": "What to send for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Recalculate past years after a factor change",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 5, tracking emissions over time",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "WBCSD Partnership for Carbon Transparency (PACT) Methodology and Technical Specifications",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "PACT publishes new versions of its Technical Specifications; check the current version for validity period rules."
+}

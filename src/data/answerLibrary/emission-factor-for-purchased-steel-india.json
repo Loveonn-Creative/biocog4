@@ -1,0 +1,79 @@
+{
+  "slug": "emission-factor-for-purchased-steel-india",
+  "q": "What emission factor should I use for the steel I buy in my Scope 3?",
+  "title": "Emission factor for steel you buy",
+  "short": "Ask the mill first: a product footprint, EPD or verified CBAM figure for the grade you buy is the best factor. Without one, use a published average for the mill's production route, not one global figure. Spend-based factors are the last resort, labelled as rough.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Engineering, fabrication and auto-component MSMEs",
+  "sections": [
+    {
+      "h": "The order to try",
+      "ol": [
+        "Mill-specific data for the product: an EPD, a product carbon footprint, or embedded emissions the mill reports for CBAM.",
+        "The mill's own plant intensity, if it publishes one, adjusted for the product form you buy.",
+        "A route average: blast furnace, coal DRI, gas DRI or scrap electric arc furnace, from worldsteel or a Ministry of Steel publication, with its year.",
+        "A spend-based factor per rupee, only when you have no quantity."
+      ]
+    },
+    {
+      "h": "Know the route and the product form",
+      "p": [
+        "Route changes the factor more than anything else. Scrap-based electric arc furnace steel sits well below blast furnace steel, and coal-based DRI, common in India, can be higher than blast furnace. Ask your supplier or trader which mill and route the steel came from.",
+        "Product form adds to it. Crude steel averages stop before rolling. Hot-rolled coil, cold-rolled sheet, galvanised sheet and bright bars carry extra energy for each step, so check that the factor's boundary matches what you buy."
+      ]
+    },
+    {
+      "h": "Count what you buy, not what ends up in the product",
+      "p": [
+        "Scope 3 Category 1 covers the tonnes purchased in the year. Offcuts and scrap you sell are part of that purchase; their onward recycling is a separate question. Use the weight on the invoice, not the finished part weight."
+      ]
+    },
+    {
+      "h": "Using CBAM defaults with care",
+      "p": [
+        "EU CBAM default values, set in Implementing Regulation (EU) 2025/2621, add a mark-up on top of the underlying country figure, so they run high on purpose. Treat them as a conservative upper figure, not an average, and label them that way if you use them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 120 t of hot-rolled coil",
+    "lines": [
+      "Mill EPD for the coil: 2.40 t CO2e per tonne (illustrative value for the arithmetic)",
+      "Scope 3 Category 1: 120 x 2.40 = 288 t CO2e",
+      "If 15 t of offcuts are sold as scrap, Category 1 still uses the 120 t bought"
+    ],
+    "note": "Replace the illustrative value with the mill's published figure and keep the EPD with the invoices."
+  },
+  "senseible": "Senseible keeps steel purchase lines in a separate supplier evidence trail with the invoice quantity. Where only spend is available, it provides a spend-based estimate labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Emission factor for goods bought via a trader",
+      "to": "/answers/goods-bought-from-trader-scope-3"
+    },
+    {
+      "label": "Benchmarking a steel supplier's intensity",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "Scope 3 for steel in India",
+      "to": "/solutions/scope3-steel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Ch. 7 data collection and quality",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel Sustainability Indicators report (latest edition)",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621 (CBAM default values)",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Route averages differ by year and edition; cite the edition you use and check Ministry of Steel and worldsteel updates."
+}

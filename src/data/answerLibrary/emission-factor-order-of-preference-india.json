@@ -1,0 +1,80 @@
+{
+  "slug": "emission-factor-order-of-preference-india",
+  "q": "In what order should an Indian company choose emission factors: supplier-specific, Indian national or IPCC default?",
+  "title": "Which emission factor to choose first",
+  "short": "Use the most specific factor you can evidence: your own measured or supplier-specific data first, then an official Indian figure, then an IPCC default, then an international database. Spend-based factors come last. For grid power in India, the CEA factor is the national figure to use.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs and consultants building a first inventory",
+  "sections": [
+    {
+      "h": "The order, from best to fallback",
+      "ol": [
+        "Measured or supplier-specific: your fuel lab report, a supplier's verified product footprint, a mill EPD, your PPA generator's data.",
+        "Indian official: the CEA CO2 Baseline Database for grid electricity, or a factor an Indian regulator publishes for your sector.",
+        "IPCC 2006 default for the fuel or process, named by table.",
+        "An international database or another country's government factor, where nothing Indian exists and the activity is similar.",
+        "Spend-based: rupees x a factor per rupee, labelled as an estimate with wide uncertainty."
+      ]
+    },
+    {
+      "h": "How the order differs by scope",
+      "ul": [
+        "Scope 1 fuels: IPCC defaults are fine for diesel, petrol, LPG and gas. Coal and biomass deserve your own calorific value data, because quality varies.",
+        "Scope 2: location-based uses the CEA weighted average; market-based uses the instrument's own rate first, then the grid average where India has no residual mix.",
+        "Scope 3: supplier-specific, then hybrid, then average data per kg or per tonne-km, then spend-based, the order set in the GHG Protocol Scope 3 Standard."
+      ]
+    },
+    {
+      "h": "When to skip a step",
+      "p": [
+        "Move down the list when the better factor fails a quality test: wrong year, wrong boundary, no published method, or a value you cannot show an auditor. The Scope 3 Standard judges data on technology, time, geography, completeness and reliability. A supplier figure with no method is weaker than a well documented average.",
+        "Put the most effort into the sources that make up most of your total. The IPCC calls these key categories. Getting a coal factor right matters more than refining courier emissions."
+      ]
+    },
+    {
+      "h": "Write the choice down",
+      "p": [
+        "For each line, record the factor, unit, source, edition and why you chose it. Keep the same source for a line across years, or restate the base year when you switch."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one factory, three lines",
+    "lines": [
+      "Diesel for the DG set, 12,000 L: IPCC default 2.68 kg CO2/L, 12,000 x 2.68 = 32,160 kg CO2",
+      "Grid power, 3,00,000 kWh: CEA 0.710 kg CO2/kWh, 3,00,000 x 0.710 = 2,13,000 kg CO2",
+      "Bought aluminium, 20 t: supplier figure if it has a method; otherwise an average per tonne labelled with its source"
+    ]
+  },
+  "senseible": "Senseible uses the CEA factor (0.710 kg CO2 per kWh, version 21.0) for grid electricity and IPCC 2006 defaults for fuels, and shows the source on every line. Scope 3 lines go to a separate supplier evidence trail, and spend-based estimates are labelled as such.",
+  "links": [
+    {
+      "label": "Are IPCC Tier 1 default factors enough?",
+      "to": "/answers/ipcc-tier-1-default-factor-good-enough"
+    },
+    {
+      "label": "Emission factor selection guidance",
+      "to": "/climate-intelligence/emission-factors-selection-guidance"
+    },
+    {
+      "label": "No emission factor for a material",
+      "to": "/answers/no-emission-factor-for-material"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 1 Ch. 2 and Ch. 4 (data choice, key categories)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Ch. 7 data quality",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), factor hierarchy",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

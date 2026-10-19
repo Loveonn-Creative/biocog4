@@ -1,0 +1,93 @@
+{
+  "slug": "one-carbon-dataset-for-several-buyers",
+  "q": "Several buyers send different carbon questionnaires. Can I use one set of figures for all of them?",
+  "title": "One carbon dataset for several buyers",
+  "short": "Yes. Keep one master set of figures for each year, built from your invoices and bills, and map it into each questionnaire. What changes from buyer to buyer is presentation: period, units, boundary, factor source and detail. Recalculate only when a buyer insists on a different factor, and keep both versions with their sources.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Exporters with several EU and UK customers",
+  "sections": [
+    {
+      "h": "What goes in the master set",
+      "ul": [
+        "Period: April to March, held month by month.",
+        "Boundary: sites included and anything left out, with reasons.",
+        "Activity data: kWh, litres and kg by month and site.",
+        "Factors with their source and edition, such as CEA version 21.0 and IPCC 2006.",
+        "Results: Scope 1, Scope 2 location-based, and market-based where you hold instruments.",
+        "Energy in MWh with the renewable share, and intensity per rupee of turnover and per unit made.",
+        "An evidence index pointing to every bill."
+      ]
+    },
+    {
+      "h": "Where questionnaires differ",
+      "ul": [
+        "Period: financial year or calendar year.",
+        "Units: tonnes or kg; MWh or GJ (1 MWh = 3.6 GJ).",
+        "Gases: CO2-only factors or CO2e. Say which you used.",
+        "Boundary: one site or the whole company.",
+        "Factor source: some buyers name their own database. Recalculate with it, label it, and keep yours.",
+        "Intensity: per tonne, per piece or per euro of revenue."
+      ]
+    },
+    {
+      "h": "Build a mapping table once",
+      "ol": [
+        "List each buyer's questions with their IDs.",
+        "Map each question to a field in the master set and note any conversion.",
+        "Record the value sent and the date.",
+        "Next year, refresh the master set and reuse the table."
+      ]
+    },
+    {
+      "h": "Formats that cut the repeat work",
+      "p": [
+        "For EU buyers, a VSME Basic report works as a master answer that most questionnaires can draw on. A CDP supply chain response, once written, can be shared with every customer that requests it through CDP, and an EcoVadis scorecard is shared with the customers that subscribe to it. For product-level data, the PACT format lets one footprint go to several buyers in the same structure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one master figure, three formats",
+    "lines": [
+      "Master set, FY 2025-26: 2,40,000 kWh x 0.710 kg CO2 per kWh = 170.4 t CO2 (Scope 2)",
+      "Diesel: 8,000 L x 2.68 kg CO2 per litre = 21.44 t CO2 (Scope 1)",
+      "Buyer A wants tonnes: 191.84 t CO2; Buyer B wants kg: 191,840 kg CO2",
+      "Buyer C wants electricity in GJ: 240 MWh x 3.6 = 864 GJ"
+    ],
+    "note": "Factors: CEA CO2 Baseline Database version 21.0 and the IPCC 2006 default for diesel."
+  },
+  "senseible": "Senseible keeps one set of records from your invoices and bills and drafts reports in BRSR, GRI and GHG Protocol formats from the same data; the drafts are self-declared.",
+  "links": [
+    {
+      "label": "VSME standard for small suppliers",
+      "to": "/answers/vsme-standard-for-small-suppliers"
+    },
+    {
+      "label": "CDP supply chain request: what to do",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "EcoVadis carbon questions",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "PACT Pathfinder Framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "EFRAG Voluntary Sustainability Reporting Standard for non-listed SMEs (VSME), December 2024",
+      "url": "https://www.efrag.org"
+    },
+    {
+      "label": "WBCSD Partnership for Carbon Transparency (PACT) Methodology and Technical Specifications",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "product-footprint-grid-factor-india-or-eu",
+  "q": "My EU buyer wants my product footprint calculated with the EU grid factor. Is that right?",
+  "title": "EU or Indian grid factor for my product?",
+  "short": "No. Electricity used to make your product in India should carry an Indian grid factor, because ISO 14067, the GHG Protocol Product Standard and PACT all tie electricity to where it is consumed. Use the CEA factor, or your own contract's rate if you buy renewable power that meets the rules.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Indian exporters answering EU PCF requests",
+  "sections": [
+    {
+      "h": "Why the location of use decides",
+      "p": [
+        "A product footprint describes what happened in making the product. The electricity your machines drew came from the Indian grid, so its emissions follow Indian generation. An EU average, with a much larger share of nuclear and renewables, would understate your footprint, and a reviewer who checks the location of production would reject it."
+      ]
+    },
+    {
+      "h": "What the product standards say",
+      "ul": [
+        "ISO 14067 asks for electricity to be modelled with the supply mix of where it is consumed, or with a contractual instrument that meets its criteria.",
+        "The GHG Protocol Product Standard prefers site-specific data and regional factors for the process location.",
+        "PACT allows a contractual rate where you hold a valid instrument; otherwise the grid factor of the country or region of use."
+      ]
+    },
+    {
+      "h": "Where an EU factor does belong",
+      "p": [
+        "If the footprint runs past your factory gate, stages that happen in Europe, such as a warehouse, assembly or use by the end customer, take the EU or national factor for that country. Keep each stage on its own grid factor and show them separately."
+      ]
+    },
+    {
+      "h": "How to answer the buyer",
+      "ol": [
+        "Explain that manufacturing in India uses the CEA grid factor: 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0.",
+        "If you hold RECs, a green tariff or green open access for the period, report that rate as well, with evidence.",
+        "Ask whether they want transmission losses or upstream fuel added, and state it if you add them, since the CEA figure covers generation only."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 forged parts",
+    "lines": [
+      "Electricity for the batch: 25,000 kWh",
+      "Factor: 0.710 kg CO2 per kWh (CEA version 21.0)",
+      "25,000 x 0.710 = 17,750 kg CO2, so 1.775 kg CO2 per part from electricity",
+      "Materials, fuel and freight are added separately"
+    ]
+  },
+  "senseible": "Senseible applies the CEA India factor (0.710 kg CO2 per kWh) to the electricity on your Indian bills, and keeps those bills as evidence for the product report.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Is there a state-wise grid factor in India?",
+      "to": "/answers/state-wise-grid-emission-factor-india"
+    },
+    {
+      "label": "Splitting factory electricity by product",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (electricity modelling)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "PACT Methodology (WBCSD), electricity rules",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

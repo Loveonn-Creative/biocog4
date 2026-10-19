@@ -1,0 +1,92 @@
+{
+  "slug": "renewable-electricity-percentage-for-buyer",
+  "q": "How do I calculate the renewable electricity percentage my buyer asks for?",
+  "title": "Renewable electricity percentage for a buyer",
+  "short": "Divide the renewable electricity you consumed by the total electricity you consumed, in kWh, for the same period. Count self-consumed solar, green tariff or open access units with supply proof, and units covered by certificates retired in your name. Do not count the grid's average renewable share, exported solar units or attributes you sold.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters filling buyer questionnaires such as CDP, EcoVadis and retailer portals",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Renewable electricity % = renewable electricity consumed / total electricity consumed x 100.",
+        "Total consumed = grid units imported, from your bills, plus self-generated units used on site. It is electricity only: fuels and heat stay out. That is how RE100 and CDP frame the metric, and it is why the figure differs from the BRSR energy table, which includes fuels."
+      ]
+    },
+    {
+      "h": "What counts as renewable",
+      "ul": [
+        "Rooftop or captive solar used on site: generation minus units exported, from the solar meter and the net meter.",
+        "Units billed under a discom green tariff.",
+        "Green open access or group captive units, backed by the schedule or settlement statement.",
+        "Grid units matched by RECs or I-RECs retired in your name for the same period."
+      ]
+    },
+    {
+      "h": "What does not count",
+      "ul": [
+        "The renewable share of the grid mix. Every consumer has it; you cannot claim it.",
+        "Solar units exported under net metering. They left your site.",
+        "Units whose certificates you sold, or that were used toward someone else's obligation.",
+        "Certificates from another year, or bought but not retired."
+      ]
+    },
+    {
+      "h": "How a buyer checks the figure",
+      "ul": [
+        "Same period as the questionnaire, calendar year or April to March.",
+        "A document for every renewable source.",
+        "Consistency with your market-based Scope 2: renewable units carry zero there, while location-based Scope 2 stays at the grid factor.",
+        "For RE100 claims, certificates must also pass its plant age and market boundary tests."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a plant with solar, a green tariff and RECs",
+    "lines": [
+      "Grid units on bills: 850,000 kWh, of which 200,000 kWh billed under a green tariff",
+      "Rooftop solar generated 180,000 kWh and exported 30,000 kWh: 150,000 kWh used on site",
+      "Total consumed: 850,000 + 150,000 = 1,000,000 kWh",
+      "RECs retired in your name for the year: 100,000 kWh",
+      "Renewable: 150,000 + 200,000 + 100,000 = 450,000 kWh, so 45%; without the RECs, 35%",
+      "Location-based Scope 2 is unchanged: 850,000 x 0.710 kg CO2 per kWh = 603,500 kg CO2"
+    ],
+    "note": "0.710 kg CO2 per kWh is the CEA CO2 Baseline Database version 21.0 grid factor."
+  },
+  "senseible": "Senseible reads units from electricity bills, keeps net-metered units apart and does not treat exported units as consumption. Market-based Scope 2 needs your instrument data, such as green tariff bills or REC retirement records.",
+  "links": [
+    {
+      "label": "Do RE100 and CDP accept Indian RECs",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "BRSR renewable and non-renewable energy",
+      "to": "/answers/brsr-renewable-vs-non-renewable-energy"
+    },
+    {
+      "label": "Prove REC retirement to a buyer",
+      "to": "/answers/prove-rec-retirement-to-buyer"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP climate change questionnaire guidance on renewable electricity (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The GHG Protocol Scope 2 revision is a public-consultation draft as of October 2026, and RE100 updates its criteria; current rules apply until final texts are published."
+}

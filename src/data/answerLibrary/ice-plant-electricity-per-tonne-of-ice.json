@@ -1,0 +1,76 @@
+{
+  "slug": "ice-plant-electricity-per-tonne-of-ice",
+  "q": "How much electricity and CO2 goes into a tonne of ice for fish handling?",
+  "title": "Electricity and CO2 per tonne of ice",
+  "short": "Take the ice plant's metered kWh for a period, divide by tonnes of ice made in those days, and multiply by 0.710 kg CO2 per kWh. Then add generator diesel (2.68 kg CO2 per litre) and any HFC refrigerant top-ups. No Indian public benchmark exists, so your own meter and block count decide it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fishing harbours, seafood processors and ice plant owners",
+  "sections": [
+    {
+      "h": "Getting the two numbers right",
+      "ul": [
+        "kWh: the units on the ice plant's electricity bill, or a sub-meter if the plant shares a connection with a cold store or processing hall.",
+        "Tonnes: blocks made x the weight of each block, or crushed and flake ice weighed at dispatch. Use ice made, not ice sold, for the same days as the meter reading.",
+        "Ice that melts in storage before sale still used the power, so dividing by ice sold instead of ice made raises the figure; say which you used."
+      ]
+    },
+    {
+      "h": "A physics check on your figure",
+      "p": [
+        "Freezing water takes about 334 kJ per kg, plus about 4.19 kJ per kg for each degree the water is cooled to 0 C and about 2.1 kJ per kg for each degree the ice is chilled below it. From 30 C water to ice at minus 5 C that is about 470 kJ per kg, or 131 kWh of cooling per tonne. The compressor's electricity is that cooling divided by the system's coefficient of performance, plus brine pumps, agitators and losses. A figure several times the theoretical value points to losses worth chasing: poor insulation, a fouled condenser or a wrong refrigerant charge."
+      ]
+    },
+    {
+      "h": "Refrigerant and backup power",
+      "ul": [
+        "Ammonia plants: ammonia has no global warming potential, so leaks add no CO2e.",
+        "HFC plants: kg topped up x the gas's GWP, in CO2e. Name the GWP edition.",
+        "R-22 plants: R-22 is an ozone-depleting HCFC controlled under the Montreal Protocol. The GHG Protocol keeps it out of the scopes; report it separately if at all.",
+        "DG sets during outages: litres x 2.68 kg CO2."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "The ice plant owner reports its electricity as Scope 2 and diesel and HFC leaks as Scope 1. A seafood exporter or boat owner who buys ice reports it as Scope 3 Category 1. Give buyers your kg CO2 per tonne so they can multiply by the tonnes they bought."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a block ice plant (illustrative figures)",
+    "lines": [
+      "Ice made: 40 t a day x 30 days = 1,200 t",
+      "Electricity: 1,26,000 kWh, so 1,26,000 / 1,200 = 105 kWh per tonne",
+      "CO2 per tonne: 105 x 0.710 = 74.6 kg CO2",
+      "Physics check: 131 kWh of cooling per tonne / an assumed COP of 2.5 = 52 kWh per tonne before pumps and losses"
+    ],
+    "note": "Plant figures are illustrative. Add DG diesel and any HFC top-ups for the month."
+  },
+  "senseible": "Senseible reads the ice plant's electricity bills for units and tariff and applies 0.710 kg CO2 per kWh, and reads DG diesel and refrigerant invoices. Dividing by tonnes of ice uses your production log.",
+  "links": [
+    {
+      "label": "Fishing vessel fuel per tonne of catch",
+      "to": "/answers/fishing-vessel-fuel-emissions-per-tonne-catch"
+    },
+    {
+      "label": "Shrimp processing footprint per kg",
+      "to": "/answers/shrimp-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

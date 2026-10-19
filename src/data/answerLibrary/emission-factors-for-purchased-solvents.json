@@ -1,0 +1,83 @@
+{
+  "slug": "emission-factors-for-purchased-solvents",
+  "q": "What emission factors should I use for purchased solvents like methanol, toluene and acetone?",
+  "title": "Emission factors for purchased solvents",
+  "short": "Use your solvent supplier's cradle-to-gate product footprint per kg first. If they have none, use a named, licensed life cycle database value for the same solvent, and only then a labelled spend-based estimate. There is no free, authoritative set of Indian solvent factors, so name the source and year beside every figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "API and specialty chemical makers building Scope 3 Category 1",
+  "sections": [
+    {
+      "h": "The order of preference",
+      "ol": [
+        "Supplier-specific: a cradle-to-gate figure in kg CO2e per kg for that solvent from that plant, with method and year. Chemical buyers often ask for it in the Together for Sustainability (TfS) PCF Guideline format.",
+        "Database value for the same molecule: from a licensed life cycle database such as ecoinvent, matched to the region of production where possible. Record the dataset name, version and region.",
+        "Spend-based estimate: rupees spent x a spend factor, after removing GST. Use it only to size the line and label its wider uncertainty."
+      ]
+    },
+    {
+      "h": "Virgin and recovered solvent are different lines",
+      "ul": [
+        "Virgin solvent from a manufacturer or importer carries the full production footprint.",
+        "Solvent bought back from an outside recovery unit carries the recovery burden: the distillation energy and transport, not the original production.",
+        "Solvent you recover in house is not a purchase. Its distillation energy is already in your own fuel and electricity."
+      ]
+    },
+    {
+      "h": "Mistakes that inflate or hide the number",
+      "ul": [
+        "Using the combustion CO2 of the solvent, its carbon content x 44/12, as the purchase factor. That is what happens when it is burnt, not what it took to make.",
+        "Using gross solvent use instead of the fresh make-up you actually bought.",
+        "Mixing a European database value with a Chinese or Indian supplier without saying so; the grid behind the plant changes the result.",
+        "Counting freight twice: if the price includes delivery, do not add a separate Category 4 line for the same trip."
+      ]
+    },
+    {
+      "h": "What to record for an auditor",
+      "p": [
+        "For each solvent: kg bought in the year from invoices, the factor, its source and year, and whether it is supplier-specific, database or spend-based. Report the share of Category 1 solvent emissions that rests on supplier data; buyers look for that share rising."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative year of solvent purchases",
+    "lines": [
+      "Methanol: 40,000 kg x supplier figure 0.8 kg CO2e/kg = 32,000 kg CO2e",
+      "Toluene: 25,000 kg x database value 1.5 kg CO2e/kg = 37,500 kg CO2e",
+      "Acetone, no quantity on file, ₹10,00,000 spend x 0.002 kg CO2e per rupee = 2,000 kg CO2e (spend-based)",
+      "Total: 32,000 + 37,500 + 2,000 = 71,500 kg CO2e, about 71.5 t",
+      "Supplier-specific share: 32,000 / 71,500 = 45%"
+    ],
+    "note": "All three factors are placeholders to show the arithmetic, not published values. Replace each with your supplier's figure or a named database value."
+  },
+  "senseible": "Senseible reads solvent invoices into the Scope 3 supplier evidence trail with supplier, quantity and value. Where only spend is available it provides a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Imported KSM emission factors",
+      "to": "/answers/pharma-ksm-imports-from-china-emission-factor"
+    },
+    {
+      "label": "Solvent incineration emissions",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    },
+    {
+      "label": "Answering a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Chapter 7 Collecting data",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

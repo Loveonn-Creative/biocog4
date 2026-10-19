@@ -1,0 +1,89 @@
+{
+  "slug": "contractor-diesel-on-my-site-which-scope",
+  "q": "A contractor runs its own diesel machines or a rented DG set on my site. Is that fuel my Scope 1?",
+  "title": "Contractor machines on my site: which scope?",
+  "short": "Usually not. If the contractor runs the machines, maintains them and buys the diesel, the combustion is the contractor's Scope 1 and your Scope 3: purchased services, or capital goods when the work builds a plant asset. It becomes your Scope 1 when your own staff operate the equipment, or you hire it bare and fuel it yourself.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories and builders using contractors for earthmoving, construction or backup power",
+  "sections": [
+    {
+      "h": "The test is who operates the equipment",
+      "p": [
+        "The GHG Protocol Corporate Standard draws the boundary by control. Under operational control, which most companies use, you report the operations where you have full authority to set and apply operating policies. For a machine on your site, ask who employs the operator, who decides when it runs, who maintains it and who manages its fuel. The land being yours does not settle it."
+      ]
+    },
+    {
+      "h": "Common site arrangements",
+      "ul": [
+        "Earthmoving contractor with its own excavators, operators and diesel, billed per hour or per job: its Scope 1, your Scope 3.",
+        "Civil contractor building a new shed or plant: Scope 3 Category 2, capital goods, because the work creates a fixed asset. Repairs and routine site services go in Category 1.",
+        "Machine hired bare, run by your staff on diesel you buy: your Scope 1.",
+        "Generator hired with operator and fuel, billed per kWh: you are buying electricity, so it is your Scope 2.",
+        "Generator hired with an operator while you pay for the diesel: decide by who runs it day to day, and see the free-issue rule below."
+      ]
+    },
+    {
+      "h": "When you supply the diesel to the contractor",
+      "p": [
+        "Free-issue diesel is common on Indian sites: you buy the fuel and issue it to the contractor's machines. The invoice is in your name, but the burning happens in equipment the contractor operates. Read strictly by operational control, that combustion is the contractor's, so it sits in your Scope 3 and comes out of your Scope 1 diesel total.",
+        "The GHG Protocol has no clause written for free-issue fuel, and some companies keep it in Scope 1 because they buy, hold and control the fuel. Either treatment can be defended if it is written in your boundary note and applied every year. Counting the same litres in both scopes cannot.",
+        "Keep a diesel issue register by machine and date, so these litres can be separated from DG and vehicle diesel."
+      ]
+    },
+    {
+      "h": "How to put a number on the contractor share",
+      "ol": [
+        "Use your own issue register for free-issue diesel. That is activity data you already hold.",
+        "Otherwise ask the contractor for litres used on your job, from its log book or fuel slips.",
+        "Multiply litres by 2.68 kg CO2 per litre, the IPCC 2006 default for diesel.",
+        "If all you have is the contract value, use a spend-based factor for the service and label the line an estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: excavation for a new shed",
+    "lines": [
+      "Diesel bought by the factory over the quarter: 9,000 L",
+      "Issued to the contractor's two excavators (issue register): 2,400 L",
+      "2,400 x 2.68 kg CO2 per litre = 6,432 kg CO2, reported in Scope 3 Category 2",
+      "Remaining 6,600 L for the DG set and forklifts: 6,600 x 2.68 = 17,688 kg CO2, Scope 1",
+      "Check: 6,432 + 17,688 = 24,120 kg CO2 = 9,000 x 2.68"
+    ],
+    "note": "Under a policy that keeps free-issue diesel in Scope 1, all 24,120 kg would stay in Scope 1 and nothing would go in Category 2 for this fuel."
+  },
+  "senseible": "Senseible reads diesel invoices and fuel slips in litres and counts them as Scope 1 at 2.68 kg CO2 per litre, while contractor service invoices go to the separate Scope 3 supplier evidence trail. Which litres belong to a contractor follows your boundary note and diesel issue register.",
+  "links": [
+    {
+      "label": "Rented generator: Scope 1 or Scope 3",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "Hired trucks: Scope 1 or Scope 3",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    },
+    {
+      "label": "Machinery: Category 1 or Category 2",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "Excavator diesel use per hour",
+      "to": "/answers/excavator-diesel-consumption-per-hour"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapters 3 and 4 and Appendix F",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Categories 1, 2 and 8",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (default CO2 factors for fuels)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

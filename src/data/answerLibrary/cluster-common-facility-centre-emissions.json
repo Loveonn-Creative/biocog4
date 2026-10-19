@@ -1,0 +1,79 @@
+{
+  "slug": "cluster-common-facility-centre-emissions",
+  "q": "We use a cluster common facility centre for heat treatment or testing. Whose emissions are they?",
+  "title": "Whose emissions is a cluster CFC?",
+  "short": "They belong to whoever runs the common facility centre, usually the cluster's SPV. If your unit only sends parts for heat treatment or testing and pays a service charge, the CFC's fuel and power used on your jobs are your Scope 3 Category 1, purchased services, not your Scope 1 or 2.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs in MSE-CDP clusters",
+  "sections": [
+    {
+      "h": "Why the SPV, not each member, carries the CFC's Scope 1 and 2",
+      "p": [
+        "Under the Micro and Small Enterprises Cluster Development Programme, a common facility centre is set up by a special purpose vehicle formed by the cluster's units, and the land or lease has to be in the SPV's name. Where the SPV runs the centre and sets its operating rules, the GHG Protocol operational control approach makes the furnace fuel and the CFC's electricity the SPV's Scope 1 and Scope 2.",
+        "Being a member or shareholder of the SPV does not give one unit control of the facility. So a member unit does not put the CFC's meter reading into its own Scope 2. The same applies to non-members, who can also use the CFC on paying its charges."
+      ]
+    },
+    {
+      "h": "Which consolidation approach changes the answer",
+      "ul": [
+        "Operational control: the CFC's energy used on your jobs goes in Scope 3 Category 1. Your shareholding in the SPV does not add anything to Scope 1 or 2.",
+        "Equity share: if your group reports on equity share, your percentage of the SPV's Scope 1 and 2 goes into your own Scope 1 and 2. Then do not add the same CFC energy again in Category 1.",
+        "Your unit actually runs the CFC under a management contract with full authority over its operations: then it falls inside your operational control and its energy is your Scope 1 and 2. Read the operating agreement before you decide."
+      ]
+    },
+    {
+      "h": "How to get a quantity based figure from the CFC",
+      "ol": [
+        "Ask the CFC for its monthly fuel and electricity, from its PNG, LPG or diesel invoices and its electricity bill.",
+        "Ask for its throughput in the same month: tonnes heat treated, or tests run.",
+        "Divide emissions by throughput to get kg CO2 per tonne treated, and multiply by your tonnes from the job cards or service invoices.",
+        "If the CFC will not share energy data, use a spend-based estimate on the service charge, label it spend-based, and ask again next year."
+      ]
+    },
+    {
+      "h": "Testing labs and shared tool rooms",
+      "p": [
+        "A testing lab in the CFC uses little energy per test, so for most units it is a small Category 1 line and a spend-based estimate is reasonable. Heat treatment, galvanising, forging and painting in a CFC are energy heavy. For these, push for the quantity based figure, because a buyer who sees a forging or fastener supplier with no furnace emissions will ask where they went."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: heat treatment at a cluster CFC (illustrative figures)",
+    "lines": [
+      "CFC month: 1,20,000 kWh x 0.710 = 85,200 kg CO2",
+      "CFC month: 8,000 scm PNG x 2.05 = 16,400 kg CO2",
+      "CFC total: 85,200 + 16,400 = 1,01,600 kg CO2 for 400 tonnes treated",
+      "Per tonne: 1,01,600 / 400 = 254 kg CO2",
+      "Your 60 tonnes: 60 x 254 = 15,240 kg CO2, about 15.2 t in Scope 3 Category 1"
+    ],
+    "note": "Illustrative inputs. Use the CFC's own bills for the same month as your job cards."
+  },
+  "senseible": "Senseible reads the CFC's service invoices into your separate Scope 3 supplier evidence trail. Where there is no energy data, it provides a spend-based estimate, labelled as spend-based; the automatic reader does not apply it on its own. If the CFC shares its fuel invoices and electricity bills, those can be read into a quantity based figure.",
+  "links": [
+    {
+      "label": "Operational control or equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Job work emissions: which scope",
+      "to": "/answers/job-work-emissions-which-scope"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 3, setting organisational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Category 1, purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Ownership and land conditions follow the Ministry of MSME's MSE-CDP guidelines (dcmsme.gov.in, named in text only); check your SPV's operating agreement for who runs the CFC.",
+  "reviewed": "2026-10-18"
+}

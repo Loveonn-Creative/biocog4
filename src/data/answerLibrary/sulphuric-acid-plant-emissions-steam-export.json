@@ -1,0 +1,85 @@
+{
+  "slug": "sulphuric-acid-plant-emissions-steam-export",
+  "q": "Does a sulphur-burning sulphuric acid plant have Scope 1 emissions, and how do I report the steam it exports?",
+  "title": "Sulphuric acid plant: Scope 1 and steam",
+  "short": "Yes, but only from fuel. Burning sulphur makes SO2, not CO2, so the reaction adds no greenhouse gas. Scope 1 is the fuel for start-up and preheating, any auxiliary firing and DG diesel. Exported steam made from reaction heat carries only the share of that fuel you allocate to it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sulphuric acid and fertiliser intermediate producers",
+  "sections": [
+    {
+      "h": "What counts in Scope 1",
+      "ul": [
+        "Furnace oil or diesel to heat the sulphur burner and converter at start-up and after shutdowns: litres x 2.97 or 2.68 kg CO2.",
+        "Auxiliary burners on the waste heat boiler, if fitted: their fuel.",
+        "Fuel to melt and keep sulphur molten, if it is heated by a fired heater rather than by the plant's own steam.",
+        "DG sets and vehicles."
+      ],
+      "p": [
+        "SO2 and SO3 are air pollutants under your consent to operate, not greenhouse gases. Sulphuric acid is not among the chemical processes that IPCC 2006 Volume 3, Chapter 3 lists as greenhouse gas sources."
+      ]
+    },
+    {
+      "h": "Plants that are different",
+      "p": [
+        "Plants roasting pyrite or zinc concentrate, or regenerating spent acid by burning it with fuel, can have more fuel or carbon in the feed. Spent acid with organic content releases CO2 when decomposed. Count the fuel and any carbon in the feed for these plants; the near-zero answer applies to plants burning elemental sulphur."
+      ]
+    },
+    {
+      "h": "Reporting the exported steam",
+      "ol": [
+        "Keep all the plant's fuel in your Scope 1, whatever share of steam you sell. Selling steam does not reduce Scope 1.",
+        "Share the steam-related fuel by tonnes or energy of steam exported over steam generated, using the battery limit meter. State the method.",
+        "Give the buyer kg CO2 per tonne of steam from that share. The buyer reports it as Scope 2 at your rate, which will be far below steam from a coal boiler.",
+        "Optionally disclose the emissions attributable to exported steam beside your Scope 1."
+      ]
+    },
+    {
+      "h": "Steam used for your own power",
+      "p": [
+        "If the plant runs a turbine on its steam, that electricity is own generation with no Scope 2, and it adds no Scope 1 beyond the fuel already counted. The grid power you still buy is Scope 2 at 0.710 kg CO2 per kWh."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative figures)",
+    "lines": [
+      "Start-up and preheating furnace oil: 6,000 litres x 2.97 = 17,820 kg CO2",
+      "DG diesel: 1,000 litres x 2.68 = 2,680 kg CO2",
+      "Scope 1 reported: 17,820 + 2,680 = 20,500 kg CO2",
+      "Steam generated 30,000 t, exported 12,000 t, so 40 percent of the steam-related fuel: 17,820 x 0.40 = 7,128 kg CO2",
+      "Rate for the buyer: 7,128 / 12,000 = 0.59 kg CO2 per tonne of steam"
+    ],
+    "note": "The DG diesel is kept out of the steam share here because it does not make steam; say so in your method."
+  },
+  "senseible": "Senseible reads furnace oil and diesel invoices and electricity bills, applying IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh. The share for exported steam is a calculation you make from your steam meters and record.",
+  "links": [
+    {
+      "label": "Sold steam or power and Scope 1",
+      "to": "/answers/sold-steam-or-power-deduct-from-scope-1"
+    },
+    {
+      "label": "CHP emissions allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapters 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), purchased steam and heat",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 3, Chemical Industry Emissions",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

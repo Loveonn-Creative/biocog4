@@ -1,0 +1,65 @@
+{
+  "slug": "do-unlisted-companies-need-brsr",
+  "q": "Does an unlisted company have to file a BRSR?",
+  "title": "Do unlisted companies have to file BRSR?",
+  "short": "No. BRSR comes from SEBI's listing rules, which bind only the top 1,000 listed companies by market capitalisation. An unlisted company has no duty to file one, whatever its size. It may still be asked for BRSR-style figures by a listed customer, a lender or an investor, and it can publish a BRSR voluntarily.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Unlisted mid-sized companies and suppliers of listed companies",
+  "sections": [
+    {
+      "h": "Where the duty comes from",
+      "p": [
+        "Regulation 34(2)(f) of the SEBI Listing Obligations and Disclosure Requirements Regulations 2015 requires a BRSR in the annual report of the top 1,000 listed entities by market capitalisation. The format came with SEBI's circular of 10 May 2021. These regulations apply to listed entities, so a private limited company, or an unlisted public company, sits outside them."
+      ]
+    },
+    {
+      "h": "What the MCA committee proposed for unlisted companies",
+      "p": [
+        "In 2020 the Ministry of Corporate Affairs' Committee on Business Responsibility Reporting proposed the BRSR, a shorter Lite format for smaller companies, and said MCA could later extend reporting to unlisted companies above a turnover or paid-up capital threshold. MCA has not notified those thresholds or the Lite format. Treat it as a sign of where rules may go, not as a current duty."
+      ]
+    },
+    {
+      "h": "How an unlisted company still gets pulled in",
+      "ul": [
+        "A listed customer collects value chain data. Under SEBI's March 2025 circular, partners that each make up 2% or more of its purchases or sales are in scope, on a voluntary basis from FY 2025-26.",
+        "A listed parent asks its unlisted subsidiaries for figures for its own report.",
+        "Banks and investors reuse BRSR fields in their ESG questionnaires.",
+        "A planned listing: once listed and ranked in the top 1,000, BRSR applies, and a year or two of earlier data gives you a comparable previous year."
+      ]
+    },
+    {
+      "h": "Should you publish one voluntarily",
+      "p": [
+        "A full BRSR runs across nine principles, which is a lot for a mid-sized company with no duty to file. For most, a focused set answers customers: the Principle 6 environment figures on energy, Scope 1 and 2, water and waste for April to March. Use BRSR definitions and units, so customers can drop your numbers straight into their own reports, and say whether the figures are assured or self-declared."
+      ]
+    }
+  ],
+  "senseible": "Senseible drafts BRSR-format reports from your uploaded invoices and bills, so an unlisted company can answer a customer in the format it already uses. These drafts are self-declared, not assured.",
+  "links": [
+    {
+      "label": "BRSR reporting requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "Answering a BRSR value chain request",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Value chain assurance timeline",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Regulations 2015, Regulation 34(2)(f), and BRSR format circular of 10 May 2021",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "As of October 2026 MCA had not notified thresholds or a Lite BRSR for unlisted companies; check MCA (mca.gov.in) and SEBI notifications before relying on this."
+}

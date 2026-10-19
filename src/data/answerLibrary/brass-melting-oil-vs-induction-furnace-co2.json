@@ -1,0 +1,78 @@
+{
+  "slug": "brass-melting-oil-vs-induction-furnace-co2",
+  "q": "Oil-fired crucible or induction furnace for melting brass: which emits less per kg?",
+  "title": "Brass melting: oil crucible or induction?",
+  "short": "Usually induction, on Indian grid power. An induction furnace emits less whenever its kWh per kg melted is below 4.18 times the litres of furnace oil per kg the crucible burns, because 2.97 / 0.710 = 4.18. Crucibles waste much of their heat, so induction often wins; confirm it with your own logs.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Moradabad brass artware and Jamnagar brass parts makers",
+  "sections": [
+    {
+      "h": "The two formulas",
+      "ul": [
+        "Oil-fired crucible: litres of furnace oil per kg melted x 2.97 kg CO2 per litre, plus blower electricity x 0.710.",
+        "Coal or coke pit furnace: kg fuel per kg melted x its factor, for example 2.42 kg CO2 per kg of coal.",
+        "LPG crucible: kg LPG per kg melted x 2.98 kg CO2 per kg.",
+        "Induction: kWh per kg melted x 0.710 kg CO2 per kWh on grid power, or the lower market-based factor if you buy renewable power with evidence."
+      ]
+    },
+    {
+      "h": "The break-even rule",
+      "p": [
+        "Divide the oil factor by the grid factor: 2.97 / 0.710 = 4.18. If your induction furnace uses fewer than 4.18 kWh for every litre of oil the crucible burns per kg, induction emits less. The crucible's blower adds a little on the oil side, so the rule slightly favours oil. Get both numbers from your own logs: litres from oil purchase and stock records over a month, kWh from a sub-meter on the furnace, and kg of good metal poured."
+      ]
+    },
+    {
+      "h": "Why crucibles do badly",
+      "p": [
+        "A fuel-fired crucible heats the crucible, the furnace lining and a lot of flue gas; only a small share of the heat reaches the metal. Induction heats the charge directly. Lids, full charges and short holding times improve both, but the gap is usually wide."
+      ]
+    },
+    {
+      "h": "Count good metal, not metal melted",
+      "p": [
+        "Zinc in brass fumes off at melting temperature, and melt loss plus rejected castings mean more metal is melted than sold. Compare per kg of good castings or ingots. Induction often has lower melt loss, which adds to its advantage, but measure it rather than assume it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative comparison per kg of brass melted",
+    "lines": [
+      "Oil crucible: 0.15 L x 2.97 = 0.446 kg CO2; blower 0.02 kWh x 0.710 = 0.014 kg; total 0.460 kg CO2",
+      "Induction on grid: 0.40 kWh x 0.710 = 0.284 kg CO2",
+      "Break-even check: 0.40 kWh is below 4.18 x 0.15 = 0.63 kWh, so induction is lower",
+      "Saving: 0.460 minus 0.284 = 0.176 kg CO2 per kg, or 176 kg CO2 per tonne melted"
+    ],
+    "note": "Fuel and kWh per kg are illustrative assumptions, not cluster benchmarks. Use your own furnace logs."
+  },
+  "senseible": "Senseible applies 2.97 kg CO2 per litre to the furnace oil on your invoices and 0.710 kg CO2 per kWh to your electricity bills, so a furnace switch shows up in your own records, month against month.",
+  "links": [
+    {
+      "label": "Cupola or induction for iron",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "Brass component footprint per kg",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

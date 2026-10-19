@@ -1,0 +1,86 @@
+{
+  "slug": "personal-and-business-vehicle-fuel-split",
+  "q": "The owner's car is used for both business and personal trips. How much of its fuel goes in Scope 1?",
+  "title": "Owner's car used for business and personal",
+  "short": "If the business owns the car or pays all its fuel, the simplest defensible answer is to report all of that fuel in Scope 1. If you leave out private trips, split by a kilometre log, not a guess, and say so. A car the owner holds personally, with business trips reimbursed, belongs in Scope 3 Category 6.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Proprietors and family-run MSMEs",
+  "sections": [
+    {
+      "h": "Start with who controls the car",
+      "ul": [
+        "Car in the company's or firm's name, on its asset register, fuel paid by the business: Scope 1, mobile combustion.",
+        "Car owned personally by a director or partner, with the business paying mileage or fuel for work trips: Scope 3 Category 6, business travel. Home to work trips are Category 7, commuting.",
+        "Sole proprietorship: the owner and the business are one legal person, so decide by whether the car is treated as a business asset in your books."
+      ]
+    },
+    {
+      "h": "Can personal use be left out of Scope 1",
+      "p": [
+        "The GHG Protocol Corporate Standard sets the scope by control of the source, not by the purpose of each trip. If the business pays for the fuel and controls the car, reporting all of it is the cautious and simple choice.",
+        "Excluding a personal share is a boundary decision. Base it on a log, apply the same method every year and disclose it."
+      ]
+    },
+    {
+      "h": "How to split with a log",
+      "ol": [
+        "Keep a trip log: date, from, to, kilometres, business or personal. An odometer reading at the start and end of each month plus a list of business trips also works.",
+        "Business share = business km / total km for the period.",
+        "Apply the share to the litres bought in the same period, from fuel slips.",
+        "Work out the share again each year; it changes."
+      ]
+    },
+    {
+      "h": "Income tax treatment is a separate question",
+      "p": [
+        "The business-use share you claim for depreciation or fuel expenses is a tax judgement. Using the same log for both keeps the numbers consistent, but the carbon figure does not have to follow the tax return."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one car, two treatments",
+    "lines": [
+      "Company car: 1,200 L of petrol in the year; log shows 18,000 km, of which 13,500 km business (75%)",
+      "All fuel in Scope 1: 1,200 x 2.31 kg CO2 per litre = 2,772 kg CO2",
+      "Business share only: 1,200 x 75% = 900 L; 900 x 2.31 = 2,079 kg CO2, with 693 kg excluded and disclosed",
+      "Owner's own car instead: 6,000 business km at 15 km per litre (assumed from the car's fuel records) = 400 L",
+      "400 x 2.31 = 924 kg CO2, reported in Scope 3 Category 6"
+    ],
+    "note": "2.31 kg CO2 per litre is the IPCC 2006 default for petrol."
+  },
+  "senseible": "Senseible reads petrol and diesel slips in litres and counts them at 2.31 and 2.68 kg CO2 per litre. The business and personal split comes from your own trip or kilometre log.",
+  "links": [
+    {
+      "label": "Vehicle emissions from fuel spend",
+      "to": "/answers/vehicle-emissions-from-fuel-spend"
+    },
+    {
+      "label": "Telematics or fuel invoices for fleets",
+      "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions"
+    },
+    {
+      "label": "Night shift cabs: which scope",
+      "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3"
+    },
+    {
+      "label": "Petrol emission factor",
+      "to": "/emission-factors/petrol"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapters 3 and 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Categories 6 and 7",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (default CO2 factors for fuels)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

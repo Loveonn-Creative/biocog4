@@ -1,0 +1,81 @@
+{
+  "slug": "rice-bran-oil-extraction-carbon-per-tonne",
+  "q": "How do I calculate the carbon footprint of rice bran oil from a solvent extraction plant?",
+  "title": "Rice bran oil extraction: CO2 per tonne",
+  "short": "Add boiler fuel for stabilising, extraction, desolventising and miscella distillation, plus electricity and hexane make-up, per tonne of bran processed. Then split that total between crude rice bran oil and de-oiled bran by a stated rule, mass or economic value, and divide each share by its tonnes.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Rice bran oil extractors and refiners",
+  "sections": [
+    {
+      "h": "What goes into the plant total",
+      "ul": [
+        "Boiler fuel for steam: coal, furnace oil or PNG at their combustion factors. Rice husk CO2 is biogenic and reported separately; its methane and nitrous oxide stay in.",
+        "Electricity for pelletisers, conveyors, the extractor, pumps, vacuum and cooling: kWh x 0.710 kg CO2 per kWh.",
+        "Hexane make-up: the fresh hexane bought to replace losses, with its upstream factor from the supplier or a named database. Hexane lost to air is a VOC, not a greenhouse gas.",
+        "Bran: its upstream burden comes from the rice mill's own allocation. If you buy it, ask the mill or state that you used zero and why."
+      ]
+    },
+    {
+      "h": "Splitting between oil and de-oiled bran",
+      "p": [
+        "Extraction makes crude oil and de-oiled rice bran from the same input, so ISO 14067 asks for allocation once the process cannot be divided. Mass allocation puts most of the burden on de-oiled bran, because it is most of the weight. Economic allocation shifts it to the oil, which sells for much more per kg.",
+        "Pick one, state it beside the number, and keep it the same each year. Use average prices over a stated period, not one week's rate."
+      ]
+    },
+    {
+      "h": "Refining is a separate stage",
+      "p": [
+        "Degumming, dewaxing, deacidification, bleaching and deodorisation add steam, electricity and bleaching earth. Rice bran oil often has high free fatty acids, so refining loss can be large: if 1.2 tonnes of crude give 1 tonne of refined oil, carry 1.2 tonnes of the crude oil's footprint into each tonne refined. Report crude and refined figures separately so a buyer can compare."
+      ]
+    },
+    {
+      "h": "How this differs from an expeller mill",
+      "p": [
+        "Solvent plants add hexane and much more steam for desolventising, and work on bran with low oil content, so energy per tonne of oil is higher than pressing oilseeds. The allocation choice also matters more, because de-oiled bran is the bulk of the output."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example, per tonne of bran processed",
+    "lines": [
+      "Coal for steam: 50 kg x 2.42 = 121.0 kg CO2",
+      "Electricity: 40 kWh x 0.710 = 28.4 kg CO2",
+      "Plant total: 149.4 kg CO2 per tonne of bran",
+      "Outputs: 160 kg crude oil and 820 kg de-oiled bran",
+      "By mass: oil share 160 / 980 = 16.3%, so 24.4 kg CO2, or 152 kg CO2 per tonne of crude oil",
+      "By value at ₹90 per kg oil and ₹15 per kg bran: ₹14,400 and ₹12,300; oil share 53.9%, so 80.6 kg CO2, or 504 kg CO2 per tonne of crude oil"
+    ],
+    "note": "Fuel, power, yields and prices are illustrative assumptions. Hexane make-up and the bran's upstream burden are left out to keep the arithmetic short."
+  },
+  "senseible": "Senseible reads boiler fuel invoices and electricity bills at IPCC 2006 fuel factors and 0.710 kg CO2 per kWh, and keeps bran and hexane purchases in the Scope 3 supplier evidence trail. The allocation between oil and de-oiled bran is your documented choice.",
+  "links": [
+    {
+      "label": "Edible oil mill footprint per litre",
+      "to": "/answers/edible-oil-mill-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Rice mill footprint per tonne of paddy",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    },
+    {
+      "label": "Allocating between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (allocation)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

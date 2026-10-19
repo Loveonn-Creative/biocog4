@@ -1,0 +1,71 @@
+{
+  "slug": "emission-factor-for-purchased-stainless-steel",
+  "q": "What emission factor should I use for stainless steel sheet or coil I buy?",
+  "title": "Emission factor for stainless sheet or coil",
+  "short": "Use the mill's EPD or footprint for the exact grade, because nickel content drives the result. Without one, use a published grade average, such as worldstainless data for 304 or 316, and label it as a global average. Do not use a carbon steel factor for stainless.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Utensil, pipe and equipment fabricators",
+  "sections": [
+    {
+      "h": "Why grade matters so much",
+      "ul": [
+        "300 series, such as 304 and 316, contain about 8% to 14% nickel; 316 adds molybdenum. Nickel production is energy intensive, so these grades carry the highest footprints.",
+        "200 series, widely used in India for utensils, replace much of the nickel with manganese, which usually lowers the footprint, though manganese alloys add their own.",
+        "400 series ferritic grades, such as 430, have little or no nickel.",
+        "Scrap share: mills melting more stainless scrap in electric arc furnaces need less virgin nickel and chromium."
+      ]
+    },
+    {
+      "h": "Steps to pick the factor",
+      "ol": [
+        "Ask the mill or service centre for an EPD or product footprint for the grade and form, with its year and boundary.",
+        "If none, use a grade average published by worldstainless and record the edition.",
+        "Label it as a global average. We found no Indian public grade-level average; if your mill has one, it beats the global figure.",
+        "Add processing you buy in, such as cold rolling or polishing, only if the factor stops before it."
+      ]
+    },
+    {
+      "h": "Match units and weight",
+      "p": [
+        "Factors are per kg or per tonne of product. Use the weight on the invoice, including offcuts, for Scope 3 Category 1. A utensil maker's finished product footprint is a different calculation; this page covers only the purchased material."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a month of 304 and 202 coil (assumed factors)",
+    "lines": [
+      "304 coil: 8 t x 5.0 t CO2e per t (assumed for the arithmetic) = 40 t CO2e",
+      "202 coil: 12 t x 3.5 t CO2e per t (assumed for the arithmetic) = 42 t CO2e",
+      "Total Category 1 for stainless: 40 + 42 = 82 t CO2e"
+    ],
+    "note": "Both factors are placeholders to show the method. Replace them with the mill's EPD or a published grade average."
+  },
+  "senseible": "Senseible records stainless purchase lines with their invoice quantity in a separate supplier evidence trail, where a mill's EPD can sit beside the invoice.",
+  "links": [
+    {
+      "label": "Stainless utensils: carbon per kg",
+      "to": "/answers/stainless-steel-utensils-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Emission factor for steel you buy",
+      "to": "/answers/emission-factor-for-purchased-steel-india"
+    },
+    {
+      "label": "No emission factor for a material",
+      "to": "/answers/no-emission-factor-for-material"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Ch. 7 data collection and quality",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "No Indian public grade-level factor was found as of October 2026; check for mill EPDs and new worldstainless editions."
+}

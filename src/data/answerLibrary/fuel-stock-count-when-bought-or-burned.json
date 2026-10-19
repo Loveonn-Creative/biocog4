@@ -1,0 +1,79 @@
+{
+  "slug": "fuel-stock-count-when-bought-or-burned",
+  "q": "Do I count diesel or coal emissions when I buy it or when I burn it, if I keep stock?",
+  "title": "Count fuel when bought or when burned?",
+  "short": "Count it when you burn it. Scope 1 covers fuel consumed in the year, which is purchases plus opening stock minus closing stock. Fuel still in your tank or yard at year end, 31 March for most Indian companies, belongs to next year. Purchases alone are fine only if stock barely changes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories that buy fuel in bulk and hold stock",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Fuel burned = opening stock + purchases minus closing stock minus fuel sold or transferred out. The GHG Protocol stationary combustion guidance uses this stock-adjusted figure, and it is the same logic the IPCC uses at national level for apparent consumption.",
+        "Multiply the burned quantity, not the purchased quantity, by the emission factor."
+      ]
+    },
+    {
+      "h": "When purchases are close enough",
+      "ul": [
+        "You buy small lots often and carry little stock, such as diesel for a DG set topped up weekly.",
+        "Opening and closing stock are about the same, so the adjustment nets out.",
+        "Say in your method note that purchases were used as a proxy and why."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Fuel given to contractors or another site: it is their combustion unless you control the equipment. Take it out of your figure.",
+        "Fuel resold: exclude it.",
+        "Losses from evaporation or spills are small for diesel and are usually left in the consumed figure.",
+        "Coal stocked in the open loses moisture, so weight can change; use the stock register and weighbridge records."
+      ]
+    },
+    {
+      "h": "Evidence to keep",
+      "ol": [
+        "Purchase invoices with dates and quantities.",
+        "A stock register, with a dip reading or physical count at the start and end of the year.",
+        "Issue records if fuel goes to different equipment or sites."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of diesel and coal",
+    "lines": [
+      "Diesel: opening 5,000 L + purchases 40,000 L minus closing 8,000 L = 37,000 L burned",
+      "37,000 x 2.68 = 99,160 kg CO2, against 1,07,200 kg if purchases were used",
+      "Coal: opening 50 t + purchases 300 t minus closing 80 t = 270 t burned",
+      "2,70,000 kg x 2.42 = 6,53,400 kg CO2, about 653 t"
+    ],
+    "note": "Factors are IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, coal 2.42 kg CO2 per kg). For coal, a factor from your lab GCV is more precise."
+  },
+  "senseible": "Senseible reads the quantity and date on each fuel purchase invoice, calculates CO2 with IPCC 2006 defaults and keeps the invoice as evidence. Make the stock adjustment from your own stock register and keep the register with those invoices.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Scope 1 for manufacturing in India",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Ch. 6, and stationary combustion calculation tool",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1 (fuel consumption data)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

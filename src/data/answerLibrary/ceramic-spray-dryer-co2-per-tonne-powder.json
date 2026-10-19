@@ -1,0 +1,86 @@
+{
+  "slug": "ceramic-spray-dryer-co2-per-tonne-powder",
+  "q": "How much fuel and CO2 does a ceramic spray dryer use per tonne of powder?",
+  "title": "Spray dryer CO2 per tonne of powder",
+  "short": "Work it out from your own logs: fuel to the spray dryer's hot air generator times its factor, plus the dryer's electricity times 0.710 kg CO2 per kWh, divided by tonnes of powder made in the same period. For PNG that is scm x 2.05 kg CO2. Water evaporated per tonne explains most of the difference between plants.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Morbi and Thangadh tile makers",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Fuel to the hot air generator only: PNG scm from a sub-meter, or coal or LPG issued to it. If the kiln and dryer share one gas meter, fit a sub-meter or split by burner rating and running hours, and say which.",
+        "Electricity for the dryer fans, slip pumps and atomiser, from a sub-meter where you have one.",
+        "Powder output in tonnes from the silo or press feed records, for the same days.",
+        "Slip moisture going in and powder moisture coming out, from your lab log."
+      ]
+    },
+    {
+      "h": "Why moisture drives the figure",
+      "p": [
+        "A spray dryer's job is evaporating water. Water evaporated per tonne of powder = dry solids x (slip moisture / (1 minus slip moisture) minus powder moisture / (1 minus powder moisture)), with moisture as fractions. A thicker slip means less water to remove and less gas per tonne. Divide the fuel energy by kg of water evaporated to compare your dryer against itself month to month; the theoretical minimum is about 2.26 MJ per kg, the latent heat of water, and everything above it is losses."
+      ]
+    },
+    {
+      "h": "Factors to apply",
+      "ul": [
+        "PNG: 2.05 kg CO2 per scm",
+        "LPG: 2.98 kg CO2 per kg",
+        "Coal, where still used: 2.42 kg CO2 per kg",
+        "Grid electricity: 0.710 kg CO2 per kWh"
+      ],
+      "p": [
+        "These are CO2 only. If a supplier gives you a measured calorific value for its gas, use it to convert scm to GJ, but keep the CO2 per scm consistent with the factor source you name."
+      ]
+    },
+    {
+      "h": "Using cluster figures",
+      "p": [
+        "BEE's energy mapping of the Morbi cluster is useful to sense-check your result, not to replace it. A buyer or lender wants your own figure built from bills and logs. Keep the dryer and kiln figures separate, so the tile footprint per square metre can show which stage drives it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a spray dryer (illustrative figures)",
+    "lines": [
+      "Hot air generator: 1,50,000 scm PNG x 2.05 = 3,07,500 kg CO2",
+      "Dryer electricity: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "Total: 3,07,500 + 63,900 = 3,71,400 kg CO2 for 3,000 t of powder",
+      "Per tonne: 3,71,400 / 3,000 = 123.8 kg CO2, with 50 scm of gas per tonne",
+      "Water check at 35 percent slip and 6 percent powder moisture: 0.94 x (0.5385 minus 0.0638) = 0.446 t water per t of powder",
+      "Gas energy at 2.05 / 56.1 = 0.0365 GJ per scm: 50 x 36.5 MJ = 1,827 MJ, or 1,827 / 446 = 4.1 MJ per kg of water"
+    ],
+    "note": "Illustrative inputs, not a benchmark. Use your own sub-meter and lab data."
+  },
+  "senseible": "Senseible reads PNG, LPG and coal invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh, showing the factor on each line. Splitting fuel between dryer and kiln and dividing by tonnes of powder uses your sub-meter and production logs.",
+  "links": [
+    {
+      "label": "Tile footprint per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE SME Programme, energy mapping of the Morbi ceramic cluster",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "brsr-value-chain-downstream-partners",
+  "q": "What does BRSR value chain disclosure ask about downstream partners such as distributors and dealers?",
+  "title": "BRSR value chain: distributors and dealers",
+  "short": "The same as for suppliers: the BRSR Core indicators, such as emissions, energy and water, attributable to your business with each distributor, dealer or customer that alone makes up 2% or more of your sales by value. It is voluntary for the top 250 listed companies from FY 2025-26, and few distributors cross 2%.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Listed FMCG, auto and consumer goods companies and their distributors",
+  "sections": [
+    {
+      "h": "Which downstream partners count",
+      "p": [
+        "The test runs partner by partner on your sales: a customer counts if it alone accounts for 2% or more of sales by value. Distributors, dealer groups, retail chains, e-commerce marketplaces, OEM customers and export buyers can all qualify. Count the legal entity you invoice, so a dealer group billed through one company is one partner. You may stop once the partners covered reach 75% of sales."
+      ]
+    },
+    {
+      "h": "Why downstream coverage is often thin",
+      "ul": [
+        "FMCG: sales spread over hundreds of distributors, each under 1%, so none qualify; a modern trade chain or marketplace might.",
+        "Auto: large dealer groups invoiced through one entity can cross 2%.",
+        "Consumer durables: national retail chains are the likely partners.",
+        "Business-to-business sellers: a few OEM customers often take most of the sales and qualify easily."
+      ]
+    },
+    {
+      "h": "What this disclosure is not",
+      "ul": [
+        "It is not your Scope 3 Category 9 (downstream transport and storage) or Category 11 (use of sold products). Those are your own inventory figures.",
+        "It reports the partner's own BRSR Core indicators, collected from the partner and scaled to your business with it. Upstream and downstream partners can be reported separately or together.",
+        "Transporters and warehouses you pay are upstream partners, judged on purchases, even when they carry goods to your customers."
+      ]
+    },
+    {
+      "h": "What a distributor should prepare",
+      "ul": [
+        "Scope 1: diesel for delivery vehicles and DG sets, and refrigerant top-ups in cold rooms (in CO2e).",
+        "Scope 2: warehouse and cold room electricity in kWh.",
+        "Energy, water and waste for April to March.",
+        "The bills and invoices behind each figure, in case the listed company has the data assessed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: which customers are in scope",
+    "lines": [
+      "Annual sales: Rs 5,000 crore",
+      "Modern trade chain: Rs 160 crore = 3.2%, in scope",
+      "E-commerce marketplace: Rs 125 crore = 2.5%, in scope",
+      "Largest distributor: Rs 60 crore = 1.2%, out of scope",
+      "Downstream partners covered: two, together 5.7% of sales"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "A distributor can use Senseible to build Scope 1 and 2 from its own fuel and electricity bills, with the factor source on each line, and send those totals to the listed company. Which partners are covered is the listed company's choice.",
+  "links": [
+    {
+      "label": "Downstream warehousing in Category 9",
+      "to": "/answers/downstream-warehousing-category-9"
+    },
+    {
+      "label": "The supplier side of a value chain request",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Value chain assurance timeline",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    },
+    {
+      "label": "BRSR reporting requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on BRSR Core and value chain disclosures, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "SEBI rules on value chain scope change often; recheck the 2% test and voluntary status against the latest circular."
+}

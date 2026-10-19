@@ -1,0 +1,79 @@
+{
+  "slug": "green-steel-certificate-scope-3",
+  "q": "Can steel certified under India's Green Steel Taxonomy lower my Scope 3 emissions?",
+  "title": "Does green steel lower my Scope 3?",
+  "short": "Yes, if you use the certified intensity as a supplier-specific factor for the tonnes you actually bought from that plant, for the matching year. India's Green Steel Taxonomy classes steel below 2.2 t CO2e per tonne of finished steel as green. The certificate itself is not an offset.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Buyers of steel in India and exporters asked for low-carbon inputs",
+  "sections": [
+    {
+      "h": "What the taxonomy rates",
+      "p": [
+        "The Ministry of Steel launched the Green Steel Taxonomy on 12 December 2024. It rates steel by emission intensity per tonne of finished steel: below 2.2 t CO2e qualifies as green, with star ratings for lower intensities. The National Institute of Secondary Steel Technology (NISST) is the agency for measurement, reporting and verification, and issues the certificates on a financial-year basis."
+      ]
+    },
+    {
+      "h": "How it reduces your Scope 3",
+      "p": [
+        "The GHG Protocol Scope 3 Standard prefers supplier-specific data over averages. If you replace a route average with the certified intensity for the steel you bought, your Category 1 figure falls by the difference times the tonnes. The reduction is real only for tonnes delivered from the certified plant in the period the rating covers."
+      ]
+    },
+    {
+      "h": "Checks before you use the number",
+      "ul": [
+        "The certificate names the plant and product, and your invoices trace to that plant, not just to a trader.",
+        "The certificate's financial year and validity date match your reporting year.",
+        "The boundary is clear: the taxonomy counts the plant's Scope 1 and 2 and only some Scope 3 inputs, so check which inputs, such as pellets, coke or purchased power, are inside the figure.",
+        "The intensity is per tonne of finished steel; convert if your factor was per tonne of crude steel.",
+        "Ask for the certificate itself, with its number, and keep it with the invoices; a mill's own claim of a star rating is not enough."
+      ]
+    },
+    {
+      "h": "What it does not do",
+      "p": [
+        "Buying green steel does not cancel emissions elsewhere in your inventory. It changes the factor on the steel lines only. You cannot claim a green steel intensity for steel from other mills, even if you hold a certificate from one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: switching 200 t to a rated mill",
+    "lines": [
+      "Before: route average of 2.6 t CO2e per tonne (illustrative): 200 x 2.6 = 520 t CO2e",
+      "After: certified intensity of 2.0 t CO2e per tonne: 200 x 2.0 = 400 t CO2e",
+      "Reduction in Category 1: 520 minus 400 = 120 t CO2e"
+    ],
+    "note": "The before figure is illustrative. Use the supplier's certified value and keep the certificate with the invoices."
+  },
+  "senseible": "Senseible's supplier evidence trail can hold the green steel certificate and its stated intensity next to the purchase invoices for your Scope 3 steel lines.",
+  "links": [
+    {
+      "label": "Emission factor for steel you buy",
+      "to": "/answers/emission-factor-for-purchased-steel-india"
+    },
+    {
+      "label": "Benchmarking a steel supplier's intensity",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), supplier-specific data",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel Sustainability Indicators report (latest edition)",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Ministry of Steel Green Steel Taxonomy (12 December 2024): confirm the threshold, star bands and certificate validity on the Ministry of Steel site before each review."
+}

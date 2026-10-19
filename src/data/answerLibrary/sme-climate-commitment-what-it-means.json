@@ -1,0 +1,86 @@
+{
+  "slug": "sme-climate-commitment-what-it-means",
+  "q": "My UK buyer asked me to sign the SME Climate Commitment. What am I agreeing to?",
+  "title": "SME Climate Commitment: what you agree to",
+  "short": "You commit to halve your Scope 1 and 2 emissions before 2030, reach net zero across all scopes before 2050, and report progress every year. It is a public pledge on the SME Climate Hub, recognised by the UN Race to Zero campaign. The pledge is self-declared. The real work is a measured baseline and a yearly update.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Small suppliers to UK and EU companies",
+  "sections": [
+    {
+      "h": "The three promises",
+      "ul": [
+        "Halve your Scope 1 and 2 emissions before 2030.",
+        "Reach net zero across all scopes, Scope 3 included, before 2050.",
+        "Report your progress every year."
+      ],
+      "p": [
+        "So Scope 3 is not in the 2030 halving, but it is in the 2050 goal. Read the current wording on the Hub before you sign."
+      ]
+    },
+    {
+      "h": "What halving by 2030 means in practice",
+      "p": [
+        "You need a base year with a measured figure. From a 2025 base, halving by 2030 means cutting about a tenth of the base every year for five years. For most Indian MSMEs that only works with a change in electricity source, such as rooftop solar or a green tariff, plus fuel switching and efficiency. Run the numbers before you promise."
+      ]
+    },
+    {
+      "h": "What it does not involve",
+      "ul": [
+        "It is self-declared. That is different from the SBTi SME route, where SBTi checks the target before it is published.",
+        "No permission to call yourself carbon neutral.",
+        "No shortcut through carbon credits: the promise is to halve your own emissions, so check the Hub's rules before counting any credit toward it."
+      ]
+    },
+    {
+      "h": "Before you sign",
+      "ol": [
+        "Measure a baseline from a full year of electricity bills and fuel invoices.",
+        "Check whether a 50% cut by 2030 is realistic and what it would take.",
+        "Name who will put together the yearly progress figure.",
+        "Expect the buyer to ask for that figure each year, with evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the yearly path for a small plant",
+    "lines": [
+      "Base year 2025: Scope 1 and 2 = 240 t CO2",
+      "Target before 2030: 240 x 50% = 120 t CO2 or less",
+      "Straight-line path: (240 minus 120) / 5 years = 24 t CO2 less each year",
+      "Path: 216 t in 2026, 192 in 2027, 168 in 2028, 144 in 2029, 120 in 2030"
+    ],
+    "note": "Figures are illustrative. The pledge says before 2030, so 120 t in 2030 is the latest point on the path; aim to get there sooner."
+  },
+  "senseible": "Senseible gives you a measured Scope 1 and 2 baseline from your electricity bills and fuel invoices and keeps each year's records for the progress report. The pledge itself is made on the SME Climate Hub.",
+  "links": [
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    },
+    {
+      "label": "What an MSME transition plan includes",
+      "to": "/answers/msme-climate-transition-plan-what-to-include"
+    },
+    {
+      "label": "UK Carbon Reduction Plan for suppliers",
+      "to": "/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UN Race to Zero campaign and its criteria (unfccc.int)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 5, base year",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "SME Climate Hub wording and Race to Zero criteria can change; confirm the commitment text on smeclimatehub.org before signing."
+}
