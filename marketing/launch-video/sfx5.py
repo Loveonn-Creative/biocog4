@@ -1,6 +1,6 @@
-# Calm UI sound design for guide1.html (80 s): soft bed, taps, typing, success and error cues.
+# Calm UI sound design for guide2.html (96 s): soft bed, taps, typing, success and error cues.
 import numpy as np, wave, re
-SR = 48000; D = 93.0; n = int(SR*D); t = np.arange(n)/SR
+SR = 48000; D = 96.0; n = int(SR*D); t = np.arange(n)/SR
 L = np.zeros(n); R = np.zeros(n); rng = np.random.default_rng(3)
 def add(sig, at, pan=0.0, g=1.0):
     i = int(at*SR); sig = sig[:max(0, n-i)]
@@ -27,21 +27,21 @@ def pad(fs, d, g):
 
 src = open('guide2.html').read()
 # bed: two gentle chords alternating, warm and steady
-for k, at in enumerate(np.arange(0, 93, 10)):
+for k, at in enumerate(np.arange(0, 96, 10)):
     add(pad([130.81,196.0,261.63,329.63] if k % 2 == 0 else [146.83,220.0,293.66,349.23], 13, .22), at)
 # taps, read straight from the timeline
 taps = [float(x) for x in re.findall(r"\[(\d+\.?\d*), '[a-zA-Z0-9]+'\]", src.split('const TAPS')[1].split(';')[0])]
 for at in taps: add(tap(), at, .25, .5)
 # typing: email, password, name, GSTIN, phone, sector, size
-for s0, chars, cps in [(54.5,19,16),(55.9,10,9)]:
+for s0, chars, cps in [(54.8,19,16),(56.3,10,9)]:
     for c in range(chars): add(key(), s0 + c/cps + rng.uniform(-.01,.01), .25, .55)
 # step changes
-for at in [5.2, 14.2, 36.2, 52.2, 66.2]: add(whoosh(), at - .15, -.2, .25); add(chime([659.25]), at + .1, 0, .12)
+for at in [5.2, 14.2, 36.6, 52.6, 72.6]: add(whoosh(), at - .15, -.2, .25); add(chime([659.25]), at + .1, 0, .12)
 # error notes (soft, never alarming)
-for at in [10.2, 28.6, 60.6]: add(soft_err(), at, -.2, .35)
+for at in [10.2, 29.8, 66.6]: add(soft_err(), at, -.2, .35)
 # success toasts
-for at, fs in [(13.4,[523.25,659.25,783.99]),(42.6,[523.25,659.25]),(57.2,[523.25,659.25]),(59.9,[659.25,783.99])]: add(chime(fs), at, .1, .28)
-add(chime([523.25,659.25,783.99,1046.5]), 88.6, 0, .3)
+for at, fs in [(13.7,[523.25,659.25,783.99]),(41.7,[523.25,659.25]),(57.8,[523.25,659.25]),(61.0,[659.25,783.99]),(65.6,[523.25,659.25,783.99])]: add(chime(fs), at, .1, .28)
+add(chime([523.25,659.25,783.99,1046.5]), 93.0, 0, .3)
 mix = np.stack([L,R],1)*np.minimum(1,(D-t)/2.0)[:,None]*np.minimum(1, t/1.0)[:,None]
 mix /= np.abs(mix).max()/.7
 with wave.open('sfx5.wav','wb') as w:

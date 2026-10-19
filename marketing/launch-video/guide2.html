@@ -65,81 +65,97 @@ body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -
 .in { position: absolute; left: 0; top: 0; width: 390px; padding: 0 24px; }
 #notch { position: absolute; left: 50%; top: 10px; width: 110px; height: 30px; margin-left: -55px; background: #121316; border-radius: 20px; z-index: 40; }
 
-/* app look (matched to live senseible.earth) */
-.topbar { display: flex; justify-content: space-between; align-items: center; height: 70px; padding-top: 22px; }
-.wm { font-size: 11px; letter-spacing: .32em; }
-.circ { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #e3e3e3; display: inline-grid; place-items: center; }
-.circ i { display: block; width: 16px; height: 2px; background: #222; box-shadow: 0 -5px 0 #222, 0 5px 0 #222; }
-.lbl { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
-.inp { height: 48px; border: 1px solid #e3e3e3; border-radius: 14px; padding: 0 16px; display: flex; align-items: center; font-size: 15.5px; position: relative; background: #fff; }
-.inp.ph { color: #a3a3a3; }
-.inp.mono { font-size: 17px; letter-spacing: .04em; }
-.inp.bad { border-color: var(--red); box-shadow: 0 0 0 1px var(--red); }
-.inp.good { border-color: var(--green2); }
-.caret { display: inline-block; width: 2px; height: 20px; background: var(--ink); margin-left: 1px; vertical-align: middle; }
-.btn { height: 50px; border-radius: 999px; background: var(--green); color: #fff; display: grid; place-items: center; font-size: 17px; font-weight: 600; }
-.tabs { display: flex; background: #f4f5f5; border: 1px solid #ececec; border-radius: 999px; padding: 4px; margin-top: 18px; }
-.tabs div { flex: 1; text-align: center; padding: 11px 0; border-radius: 999px; font-size: 16px; color: #777; }
-.tabs .act { background: #fff; color: #111; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-.meter { display: flex; gap: 5px; margin-top: 10px; } .meter i { flex: 1; height: 5px; border-radius: 3px; background: #ececec; }
-.meter i.f { background: var(--green2); }
-.chk { font-size: 13px; color: #9a9a9a; margin-top: 5px; } .chk.ok { color: var(--green2); }
-.strength { font-size: 13px; color: var(--green2); font-weight: 600; margin-top: 6px; height: 16px; }
-.biz { border: 1px solid #e6e6e6; border-radius: 16px; padding: 4px 16px 16px; margin-top: 22px; overflow: hidden; }
-.biz .lg { font-size: 15px; font-weight: 600; margin-top: 12px; } .biz .lg span { font-weight: 400; color: #888; }
-.note { font-size: 12.5px; color: #777; margin-top: 7px; line-height: 1.35; }
-.note.bad { color: var(--red); }
-.idpanel { background: #f6f6f5; border-radius: 12px; padding: 10px 14px; margin-top: 8px; font-size: 13px; line-height: 1.7; }
-.idpanel span { color: #888; display: inline-block; width: 58px; }
-.consent { display: flex; gap: 12px; margin-top: 20px; font-size: 13px; color: #666; line-height: 1.45; }
-.box { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #333; flex-shrink: 0; position: relative; margin-top: 2px; }
-.box.on { background: var(--green); border-color: var(--green); }
-.gates { display: flex; gap: 8px; margin-top: 16px; } .gates div { flex: 1; font-size: 11px; color: #888; }
-.gates i { display: block; height: 4px; border-radius: 2px; background: #e8e8e8; margin-bottom: 5px; } .gates i.f { background: var(--green); }
-.foot { font-size: 12px; color: #888; text-align: center; margin-top: 14px; }
-.link { font-size: 15px; font-weight: 600; margin-top: 18px; } .link span { font-weight: 400; color: #888; }
-
-.h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+/* app look (matched to live senseible.earth, 18 Oct 2026, 390 px) */
 .sm { font-size: 14px; color: #777; }
-.card { border: 1px solid #e8e8e8; border-radius: 16px; padding: 16px; margin-top: 14px; background: #fff; }
-.badge { display: inline-block; font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: #f0f0f0; vertical-align: middle; }
-.badge.g { background: #e7f6ec; color: #18794e; }
-.badge.p { background: var(--green); color: #fff; }
-.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-size: 15px; font-weight: 600; }
-.qa { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-.qa div { border: 1px solid #ececec; border-radius: 12px; padding: 14px 12px; font-size: 13.5px; font-weight: 600; }
-.menu { position: absolute; right: 18px; top: 74px; width: 230px; background: #fff; border: 1px solid #e6e6e6; border-radius: 14px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.35); padding: 6px; z-index: 20; transform-origin: top right; }
-.menu .mh { padding: 10px 12px 8px; font-size: 13px; color: #777; border-bottom: 1px solid #f0f0f0; }
-.menu .mi { padding: 11px 12px; font-size: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
-.menu .mi.hl { background: #f4f5f5; }
-.sel { height: 48px; border: 1px solid #e3e3e3; border-radius: 14px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; font-size: 15.5px; }
-.ptabs { display: flex; gap: 6px; margin-top: 14px; } .ptabs div { flex: 1; text-align: center; padding: 10px 0; border-radius: 12px; font-size: 14px; border: 1px solid #e8e8e8; }
-.ptabs .act { background: var(--ink); color: #fff; border-color: var(--ink); }
-.cyc { display: flex; background: #f4f5f5; border-radius: 999px; padding: 4px; margin-top: 12px; font-size: 13px; }
-.cyc div { flex: 1; text-align: center; padding: 9px 0; border-radius: 999px; color: #777; } .cyc .act { background: #fff; color: #111; font-weight: 600; }
-.price { font-size: 44px; font-weight: 700; letter-spacing: -0.03em; }
-.feat { font-size: 13.5px; margin-top: 8px; color: #333; }
-.feat::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green2); margin-right: 10px; vertical-align: middle; }
-.bar { height: 7px; border-radius: 4px; background: #eee; margin-top: 8px; }
-.row { display: flex; justify-content: space-between; font-size: 14px; margin-top: 12px; }
+.h1 { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.card { border: 1px solid #e8e8e8; border-radius: 16px; padding: 18px; margin-top: 14px; background: #fff; }
+.btn { height: 50px; border-radius: 999px; background: var(--green); color: #fff; display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; }
+.btn.sq { border-radius: 10px; }
+.btn.ol { background: #fff; color: #111; border: 1px solid #e3e3e3; }
+.pill { height: 40px; border-radius: 999px; display: inline-flex; align-items: center; gap: 7px; padding: 0 14px; font-size: 15px; background: #f3f4f4; color: #222; }
+.pill.g { background: var(--green); color: #fff; font-weight: 500; }
+.circ { width: 40px; height: 40px; border-radius: 50%; display: inline-grid; place-items: center; background: #f3f4f4; }
+.circ.o { background: #fff; border: 1px solid #e3e3e3; }
+.gtop { display: flex; justify-content: flex-end; gap: 8px; align-items: center; height: 96px; padding-top: 44px; }
+.brand { text-align: center; font-size: 25px; font-weight: 600; letter-spacing: -0.01em; }
+.atop { display: flex; justify-content: space-between; align-items: center; height: 92px; padding-top: 38px; border-bottom: 1px solid #eee; margin: 0 -24px; padding-left: 16px; padding-right: 16px; }
+.wmb { background: #111; color: #fff; font-size: 9px; letter-spacing: .3em; padding: 8px 8px; }
+.avatar { width: 34px; height: 34px; border-radius: 50%; background: #eef0ef; color: #333; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
+svg.i { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-.toast { position: absolute; left: 14px; right: 14px; bottom: 22px; background: #fff; border: 1px solid #e6e6e6; border-radius: 12px; padding: 14px 16px; font-size: 14px; font-weight: 500;
+/* result */
+.dhead { display: flex; align-items: center; gap: 12px; margin-top: 44px; }
+.dico { width: 40px; height: 40px; border-radius: 12px; background: #eef3f0; color: var(--green); display: grid; place-items: center; flex-shrink: 0; }
+.dt { font-weight: 600; font-size: 15.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ds { font-size: 12px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.readok { color: #2e9e5b; font-size: 12.5px; font-weight: 500; display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
+.big { font-size: 40px; font-weight: 600; letter-spacing: -0.03em; margin-top: 6px; }
+.big span { font-size: 18px; font-weight: 500; color: #888; letter-spacing: 0; }
+.pend { display: inline-flex; gap: 7px; align-items: center; background: #f3f4f4; border-radius: 999px; padding: 4px 11px; font-size: 12.5px; font-weight: 500; margin-top: 8px; }
+.pend i { width: 6px; height: 6px; border-radius: 50%; background: #f0a020; }
+.fx { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #777; margin-top: 10px; }
+.inote { display: flex; gap: 8px; font-size: 14px; color: #777; line-height: 1.45; margin-top: 14px; }
+.rows { border-top: 1px solid #eee; margin-top: 18px; }
+.drow { border-bottom: 1px solid #eee; }
+.drow .s { display: flex; align-items: center; gap: 10px; height: 49px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.drow .s em { margin-left: auto; font-style: normal; font-size: 12px; color: #888; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.chev { width: 7px; height: 7px; border-right: 1.5px solid #888; border-bottom: 1.5px solid #888; transform: rotate(45deg); flex-shrink: 0; margin: 0 4px 3px 0; }
+.chev.up { transform: rotate(-135deg); margin: 3px 4px 0 0; }
+.dbody { font-size: 12px; color: #777; line-height: 1.45; overflow: hidden; }
+.dbody b { color: #111; font-weight: 600; }
+.share { display: flex; gap: 8px; align-items: center; font-size: 14px; color: #777; margin-top: 16px; }
+.rbar { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.96); border-top: 1px solid #eee; padding: 12px 16px 18px; z-index: 5; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.rbar .btn { width: 100%; height: 56px; background: #111; font-size: 16.5px; }
+
+/* verify, reports, dashboard */
+.vrow { display: flex; justify-content: space-between; align-items: center; background: #f7f8f8; border-radius: 10px; padding: 13px 14px; font-size: 15px; margin-top: 14px; }
+.vrow .w { color: #e0a020; display: flex; gap: 10px; align-items: center; }
+.vrow .w b { color: #111; font-weight: 500; }
+.tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 6; padding-top: 10px; }
+.tabbar div { flex: 1; text-align: center; font-size: 11.5px; color: #777; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.tabbar div.on { color: var(--green); }
+.tabbar svg.i { width: 21px; height: 21px; }
+.tiles { display: flex; gap: 8px; margin-top: 16px; }
+.tiles div { flex: 1; border-radius: 12px; padding: 12px 6px; text-align: center; font-size: 12px; color: #777; }
+.tiles b { display: block; font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; margin-bottom: 2px; }
+.kv { display: flex; justify-content: space-between; align-items: center; background: #f7f8f8; border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 14px; }
+.kv b { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+.mixr { margin-top: 12px; font-size: 13px; }
+.mixr .t { display: flex; justify-content: space-between; } .mixr .t span:last-child { color: #777; }
+.mixr .b { height: 5px; border-radius: 3px; background: #eee; margin-top: 6px; } .mixr .b i { display: block; height: 100%; border-radius: 3px; background: var(--green); }
+.sel { border: 1px solid #e3e3e3; border-radius: 8px; padding: 8px 12px; font-size: 14px; display: inline-flex; gap: 20px; align-items: center; }
+.seg { display: flex; background: #f3f4f4; border-radius: 12px; padding: 4px; margin-top: 18px; } .seg div { flex: 1; text-align: center; padding: 9px 0; border-radius: 9px; font-size: 14px; color: #777; } .seg .on { background: #fff; color: #111; }
+.mcard { display: flex; gap: 14px; }
+.mico { width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; }
+
+/* sign in */
+.lbl { font-size: 14px; font-weight: 600; margin: 20px 0 8px; display: flex; justify-content: space-between; } .lbl span { font-weight: 400; color: #777; }
+.inp { height: 48px; border: 1px solid #e3e3e3; border-radius: 12px; padding: 0 16px; display: flex; align-items: center; font-size: 15.5px; background: #fff; }
+.inp.ph { color: #a3a3a3; }
+.tabs { display: flex; background: #f4f5f5; border: 1px solid #ececec; border-radius: 999px; padding: 4px; margin-top: 26px; }
+.tabs div { flex: 1; text-align: center; padding: 11px 0; border-radius: 999px; font-size: 15px; color: #777; } .tabs .act { background: #fff; color: #111; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.meter { display: flex; gap: 6px; margin-top: 14px; } .meter div { flex: 1; font-size: 11px; color: #888; } .meter i { display: block; height: 5px; border-radius: 3px; background: #ececec; margin-bottom: 6px; } .meter i.f { background: var(--green2); }
+
+/* overlays */
+.toast { position: absolute; left: 14px; right: 14px; bottom: 22px; background: #fff; border: 1px solid #e6e6e6; border-radius: 12px; padding: 14px 16px; font-size: 13.5px; font-weight: 500; line-height: 1.4;
   box-shadow: 0 16px 34px -14px rgba(0,0,0,.35); z-index: 30; display: flex; gap: 10px; align-items: center; }
-.toast i { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
-.dim { position: absolute; inset: 0; background: rgba(10,12,16,.45); z-index: 24; }
-.sheet { position: absolute; left: 0; right: 0; bottom: 0; height: 600px; background: #fff; border-radius: 22px 22px 0 0; z-index: 25; padding: 22px 22px; }
-.sheet .sh { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid #eee; }
-.sheet .sh b { font-size: 18px; } .sheet .amt { font-size: 22px; font-weight: 700; }
-.pm { display: flex; justify-content: space-between; align-items: center; padding: 18px 14px; border: 1px solid #ececec; border-radius: 12px; margin-top: 12px; font-size: 16px; font-weight: 500; }
-.pm small { color: #888; font-weight: 400; font-size: 13px; }
-.pm.hl { border-color: var(--green2); background: #f2faf5; }
-.secured { position: absolute; left: 0; right: 0; bottom: 24px; text-align: center; font-size: 12.5px; color: #888; }
+.toast i { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: #111; color: #fff; font-style: normal; font-size: 11px; display: grid; place-items: center; font-weight: 700; }
+.dim { position: absolute; inset: 0; background: rgba(10,12,16,.55); z-index: 24; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; background: #fff; border-radius: 22px 22px 0 0; z-index: 25; padding: 22px; }
+.pm { padding: 17px 14px; border: 1px solid #ececec; border-radius: 12px; margin-top: 10px; font-size: 16px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+.pm small { color: #888; font-weight: 400; font-size: 12.5px; } .pm.hl { border-color: var(--green2); background: #f2faf5; }
+.dlg { position: absolute; left: 0; right: 0; top: 246px; background: #fff; z-index: 25; padding: 26px 24px 22px; text-align: center; }
+.more { position: absolute; right: 10px; bottom: 84px; width: 200px; background: #fff; border: 1px solid #e6e6e6; border-radius: 14px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.35); padding: 6px; z-index: 20; transform-origin: bottom right; }
+.more div { padding: 11px 12px; font-size: 15px; border-radius: 8px; display: flex; gap: 10px; align-items: center; }
 
 /* tap ring */
 #tap { position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; border: 5px solid var(--saffron); z-index: 35; pointer-events: none; }
 #tapDot { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--saffron); z-index: 35; }
+/* tap ring */
+#tap { position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; border: 5px solid var(--saffron); z-index: 35; pointer-events: none; }
+#tapDot { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--saffron); z-index: 35; }
 
-.scopes { display: flex; gap: 14px; margin-top: 18px; }
+.scopes { display: flex; gap: 14px; margin-top: 18px; width: 800px; }
 .scopes > div { flex: 1; border: 2.5px solid #b9b4a8; border-radius: 16px; padding: 14px 16px; background: rgba(255,255,255,.5); }
 .scopes b { display: block; font-size: 26px; font-weight: 600; } .scopes span { display: block; font-size: 22px; margin-top: 4px; }
 .scopes i { display: block; font-family: 'Hand', cursive; font-style: normal; font-size: 26px; color: #6f737b; margin-top: 8px; line-height: 1.05; }
@@ -175,142 +191,202 @@ body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -
   <div id="phoneWrap"><div id="phone"><div id="vp">
     <div id="notch"></div>
 
-    <!-- home (signed out) -->
+    <!-- home, signed out -->
     <div class="scr" id="home"><div class="in">
-      <div class="topbar" style="justify-content:flex-end;gap:8px"><span class="btn" style="height:40px;padding:0 18px;font-size:15px">Sign in</span><span class="circ" style="font-size:12px;font-weight:600">EN</span><span class="circ" style="font-size:15px">?</span></div>
-      <div style="text-align:center;font-size:26px;font-weight:600;margin-top:14px">senseible</div>
-      <div style="text-align:center;font-size:21px;font-weight:600;margin-top:190px;line-height:1.25">Turn invoices into<br>verified <span style="color:var(--green)">carbon data</span></div>
-      <div style="display:flex;justify-content:center;gap:34px;margin-top:40px"><div id="hDoc" style="width:110px;height:110px;border:2px dashed #e4e4e4;border-radius:18px;display:grid;place-items:center;font-size:30px;color:#777">↑</div><div style="width:110px;height:110px;border:2px solid #ececec;border-radius:18px"></div></div>
-      <div style="display:flex;justify-content:center;gap:90px;margin-top:14px;font-size:14px;color:#666;font-weight:600"><span>Document</span><span>Voice</span></div>
-      <div style="text-align:center;font-size:14px;color:#777;margin-top:30px">Upload an invoice, get an<br>audit-ready carbon report</div>
+      <div class="gtop"><span class="pill g"><i data-ic="signin"></i>Sign in</span><span class="pill"><i data-ic="globe"></i>EN</span><span class="circ"><i data-ic="help"></i></span><span class="circ" style="background:#e9efec;color:var(--green)"><i data-ic="spark"></i></span></div>
+      <div class="brand">senseible</div>
+      <div style="text-align:center;font-size:20px;font-weight:600;margin-top:166px;line-height:1.3">Turn invoices into<br>verified <span style="color:var(--green)">carbon data</span></div>
+      <div style="display:flex;justify-content:center;gap:34px;margin-top:40px"><div id="hDoc" style="width:110px;height:110px;border:2px dashed #e6e6e6;border-radius:18px;display:grid;place-items:center;color:#555"><i data-ic="upload" data-s="28"></i></div><div style="width:110px;height:110px;border:2px solid #ececec;border-radius:18px;display:grid;place-items:center;color:#555"><i data-ic="mic" data-s="28"></i></div></div>
+      <div style="display:flex;justify-content:center;gap:92px;margin-top:14px;font-size:14px;color:#555;font-weight:500"><span>Document</span><span>Voice</span></div>
+      <div style="text-align:center;font-size:14px;color:#777;margin-top:26px;line-height:1.45">Upload an invoice, get an<br>evidence-linked carbon report</div>
+      <div style="text-align:center;font-size:13.5px;color:#777;margin-top:84px;line-height:1.7">AI infrastructure for MSMEs <span style="color:#f08a24">from India.</span><br><b style="color:var(--green);font-weight:600">Empowering climate impact.</b></div>
     </div></div>
 
     <!-- processing -->
     <div class="scr" id="proc"><div class="in" style="text-align:center">
-      <div style="font-size:26px;font-weight:600;margin-top:60px">senseible</div>
-      <div id="spin" style="width:84px;height:84px;margin:230px auto 0;border-radius:50%;border:5px solid #eaeaea;border-top-color:var(--green)"></div>
-      <div id="procTxt" style="margin-top:28px;font-size:17px;font-weight:600">Analyzing document...</div>
-      <div class="sm" style="margin-top:8px">Electricity bill</div>
+      <div class="gtop"><span class="pill g"><i data-ic="signin"></i>Sign in</span><span class="pill"><i data-ic="globe"></i>EN</span><span class="circ"><i data-ic="help"></i></span><span class="circ" style="background:#e9efec;color:var(--green)"><i data-ic="spark"></i></span></div>
+      <div class="brand">senseible</div>
+      <div id="breath" style="position:relative;width:96px;height:96px;margin:290px auto 0">
+        <div style="position:absolute;inset:0;border-radius:50%;background:rgba(31,81,57,.06)"></div><div style="position:absolute;inset:8px;border-radius:50%;background:rgba(31,81,57,.10)"></div>
+        <div style="position:absolute;inset:16px;border-radius:50%;background:rgba(31,81,57,.15)"></div><div style="position:absolute;inset:24px;border-radius:50%;background:rgba(31,81,57,.2)"></div>
+        <div id="bdot" style="position:absolute;left:40px;top:40px;width:16px;height:16px;border-radius:50%;background:var(--green)"></div></div>
+      <div id="procTxt" style="margin-top:26px;font-size:14.5px;color:#666">Reading document...</div>
+      <div style="margin-top:10px;font-size:12px;color:#aaa">Analyzing document...</div>
+      <div id="pdots" style="display:flex;gap:6px;justify-content:center;margin-top:22px"><i></i><i></i><i></i><i></i></div>
     </div></div>
 
-    <!-- result (matches live senseible.earth, 15 Oct 2026) -->
+    <!-- result (live 18 Oct 2026) -->
     <div class="scr" id="res"><div class="in" id="resIn">
-      <div class="topbar" style="justify-content:flex-end;gap:8px"><span class="btn" style="height:40px;padding:0 18px;font-size:15px">Sign in</span><span class="circ" style="font-size:12px;font-weight:600">EN</span></div>
-      <div style="text-align:center;font-size:26px;font-weight:600;margin-top:4px">senseible</div>
-      <div style="width:76px;height:76px;border-radius:50%;background:#dcefe3;margin:20px auto 0;display:grid;place-items:center;color:#2e8b57;font-size:34px;font-weight:700">✓</div>
-      <div class="card" id="trustCard" style="background:#fdecec;border-color:#f3c3c3;margin-top:22px">
-        <div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:16px">Trust Index</b><span><b style="color:#d23b3b;font-size:24px">43</b><span class="sm">/100</span></span></div>
-        <div class="bar" style="background:#f4dada"><div style="width:43%;height:100%;background:#d23b3b;border-radius:4px"></div></div>
-        <div class="row" style="font-size:12.5px;color:#555"><span>✓ Document fields complete</span><span>30%</span></div>
-        <div class="row" style="font-size:12.5px;color:#555;margin-top:6px"><span>✕ Generic factor applied</span><span>25%</span></div>
-        <div class="row" style="font-size:12.5px;color:#555;margin-top:6px"><span>✕ Integrity review needed</span><span>25%</span></div>
-        <div class="row" style="font-size:12.5px;color:#555;margin-top:6px"><span>✕ Low extraction confidence</span><span>20%</span></div>
+      <div class="gtop"><span class="pill g"><i data-ic="signin"></i>Sign in</span><span class="pill"><i data-ic="globe"></i>EN</span><span class="circ"><i data-ic="help"></i></span><span class="circ" style="background:#e9efec;color:var(--green)"><i data-ic="spark"></i></span></div>
+      <div class="brand">senseible</div>
+      <div class="dhead"><div class="dico"><i data-ic="zap"></i></div><div style="min-width:0;flex:1"><div class="dt">Electricity bill · Demo Power Distribution Co. Ltd</div><div class="ds">LT-V Industrial · 1 Sept 2026 to 30 Sept 2026 · ₹41,970</div></div><span class="readok"><i data-ic="check" data-s="14"></i>Read</span></div>
+      <div id="emiBlock" style="margin-top:22px;padding:6px 8px;margin-left:-8px;margin-right:-8px;border-radius:14px">
+        <div class="sm">Emissions from this bill</div>
+        <div class="big">3.42 <span>t CO₂e</span></div>
+        <div class="pend"><i></i>Verification pending</div>
+        <div class="fx" id="fxLine">4,820 kWh × 0.71 · Scope 2</div>
       </div>
-      <div style="text-align:center;margin-top:20px" id="emiBlock"><div class="sm">Emissions recorded</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-top:6px">3412.56 kg CO₂e</div><div class="sm" style="font-size:12.5px">Not yet verified.</div></div>
-      <div class="card"><div style="display:flex;justify-content:space-between;font-size:13px"><span class="sm">Confidence Band</span><span style="color:#d23b3b;font-weight:600">40% <span class="sm">± 20%</span></span></div><div class="bar"></div></div>
-      <div class="card" style="background:#fff8ea;border-color:#f3dfb2"><b style="color:#c98300;font-size:14px">Data Extraction Warnings</b><div class="sm" style="font-size:12.5px;margin-top:6px;line-height:1.6">• Unclassified: Energy charges<br>• Unclassified: Fixed charges<br>• Missing explicit activity quantity: Electricity duty</div></div>
-      <div class="card"><b style="font-size:14px">Emissions Data Extracted</b>
-        <div class="row" style="font-size:12.5px"><span class="sm">Vendor<br><b style="color:#111;font-size:14px">Demo Power Distribu…</b></span><span class="sm" style="text-align:right">CO₂ Emissions<br><b style="color:#d23b3b;font-size:14px">3412.56 kg</b></span></div>
-        <div class="sm" style="font-size:12.5px;margin-top:8px">Amount<br><b style="color:#111;font-size:14px">₹41,970</b></div></div>
-      <div class="btn" id="bCont" style="margin-top:16px;background:#111">Continue to Verify →</div>
-      <div class="btn" style="margin-top:10px;background:#fff;color:#111;border:1px solid #e3e3e3">Share on WhatsApp</div>
-      <div style="height:120px"></div>
-    </div></div>
+      <div class="inote"><i data-ic="info" data-s="16" style="margin-top:2px"></i><span>3 bill charges (fixed charges, duty, FAC, rebates) are money, not energy, so they don't change emissions.</span></div>
+      <div class="rows">
+        <div class="drow"><div class="s">Bill details<em>Demo Power Distribution Co. Ltd · 1 Sept 2026 to 30 Sept 2026</em><span class="chev"></span></div></div>
+        <div class="drow" id="rCalc"><div class="s">How we calculated it<em>1 line counted</em><span class="chev" id="calcChev"></span></div>
+          <div class="dbody" id="calcBody" style="height:0">
+            <div style="padding-bottom:14px"><b>Electricity consumed</b><br>4,820 kWh × 0.71 kg CO₂e per kWh = <b>3,422.2 kg CO₂e</b> · Scope 2<br>Read from the bill<br>Factor source: BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG
+            <div style="margin-top:10px">3 bill charges (money, not energy): Energy charges (₹7.10 × 4,820), Fixed charges (45 kW × ₹120), Electricity duty.</div>
+            <div style="margin-top:10px">Total = sum of counted lines = 3,422.2 kg CO₂e. Calculated from the document; verification is a separate check.</div></div></div></div>
+        <div class="drow"><div class="s">Checks<em>3 on this document</em><span class="chev"></span></div></div>
+        <div class="drow"><div class="s">Read quality<em>Good</em><span class="chev"></span></div></div>
+      </div>
+      <div class="share"><i data-ic="share" data-s="16"></i>Share on WhatsApp</div>
+      <div style="height:200px"></div>
+    </div>
+      <div class="rbar"><div class="btn" id="bVerify">Verify this bill <i data-ic="arrow" data-s="16"></i></div><div class="sm">Upload next bill</div></div>
+    </div>
 
-    <!-- verify -->
+    <!-- verify, guest preview -->
     <div class="scr" id="ver"><div class="in" id="verIn">
-      <div class="topbar"><span class="wm" style="background:#111;color:#fff;padding:9px 10px">Senseible</span><span id="verTop" class="sm" style="border:1px solid #e3e3e3;border-radius:10px;padding:8px 12px;color:#111">Sign In</span></div>
-      <div class="h1" style="margin-top:18px;font-size:28px">Carbon Verification</div>
-      <div class="sm" style="margin-top:6px">AI-powered MRV to ensure accuracy and prevent greenwashing</div>
-      <div class="card" style="margin-top:18px"><b style="font-size:19px">Emissions to Verify</b>
-        <div class="sm" id="verSub" style="margin-top:8px;font-size:13px">1 record from 1 invoice, kept in this browser for 24 hours.</div>
-        <div class="row" style="background:#f7f7f7;border-radius:10px;padding:12px;font-size:15px;align-items:center"><span><b style="font-weight:600">Electricity</b> <span class="sm" style="font-size:12px">Scope 2</span></span><b class="mono" style="font-weight:600">3412.6 kg</b></div>
-        <div class="btn" id="bRun" style="margin-top:14px;border-radius:10px">Run the verification check →</div>
+      <div class="atop"><span class="wmb">Senseible</span><span class="pill" style="background:#fff;border:1px solid #e3e3e3;border-radius:10px"><i data-ic="user"></i>Sign In</span></div>
+      <div class="h1" style="margin-top:30px">Carbon Verification</div>
+      <div class="sm" style="margin-top:8px;font-size:15px;line-height:1.5">AI-powered MRV to ensure accuracy and prevent greenwashing</div>
+      <div class="card" style="margin-top:26px;padding:22px">
+        <div style="display:flex;gap:12px;align-items:center;font-size:21px;font-weight:600"><i data-ic="shield" style="color:#3b9bd6"></i>Emissions to Verify</div>
+        <div class="sm" style="margin-top:16px;font-size:13.5px;line-height:1.45">1 record from 1 invoice, kept in this browser for 24 hours.</div>
+        <div class="vrow"><span class="w"><i data-ic="alert" data-s="17"></i><b>Electricity</b> <span class="sm" style="font-size:12px">Scope 2</span></span><b class="mono" style="font-weight:500">3422.2 kg</b></div>
+        <div class="btn sq" id="bRun" style="margin-top:18px;height:44px;font-size:14.5px">Run the verification check <i data-ic="arrow" data-s="15"></i></div>
+        <div id="vRes" style="border:1px solid #e8e8e8;border-radius:12px;padding:16px;margin-top:24px">
+          <div style="display:flex;gap:8px;color:#e39a12;font-weight:500;font-size:16px;line-height:1.35"><i data-ic="info" data-s="17" style="margin-top:2px"></i>Most records pass; some need a closer look</div>
+          <div class="sm" style="margin-top:6px;font-size:13.5px;line-height:1.45">100% of records passed the evidence checks · 3,422.2 kg CO2e checked</div>
+          <div style="background:#f6f7f7;border-radius:10px;padding:12px 14px;margin-top:14px;font-size:13.5px;line-height:1.5">Preview only: nothing was recorded or marked verified. Sign in to record it, and to use reports, monetize, your dashboard and MRV.</div>
+          <div class="btn sq" id="bSave" style="margin-top:12px;height:44px;font-size:14.5px">Sign in to save and verify <i data-ic="arrow" data-s="15"></i></div>
+        </div>
       </div>
-      <div class="card" id="vRes" style="border-color:#f3dfb2">
-        <b style="color:#c98300;font-size:16px">Most records pass; some need a closer look</b>
-        <div class="sm" style="margin-top:8px;font-size:13px;color:#444">100% of records passed the evidence checks · 3,412.6 kg CO2e checked</div>
-        <div class="sm" style="margin-top:6px;font-size:12.5px">• Low OCR confidence on source document</div>
-        <div id="vPrev" style="background:#f6f6f6;border-radius:10px;padding:12px;margin-top:10px;font-size:13px;line-height:1.45">Preview only: nothing was recorded or marked verified. Sign in to record it, and to use reports, monetize, your dashboard and MRV.</div>
-        <div class="btn" id="bSave" style="margin-top:12px;border-radius:10px">Sign in to save and verify</div>
-      </div>
-      <div style="height:140px"></div>
-    </div></div>
+      <div style="height:160px"></div>
+    </div>
+      <div class="tabbar" data-tab="4"></div>
+    </div>
 
     <!-- sign in -->
     <div class="scr" id="auth"><div class="in">
-      <div class="topbar"><span class="wm">Senseible</span><span class="circ"><i></i></span></div>
-      <div class="sm" style="margin-top:18px">← Back</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;height:76px;padding-top:6px"><span style="font-size:9.5px;letter-spacing:.3em">Senseible</span><span style="display:flex;gap:8px"><span class="circ o"><i data-ic="globe"></i></span><span class="circ o"><i data-ic="menu"></i></span></span></div>
+      <div class="sm" style="margin-top:12px;display:flex;gap:8px;align-items:center;font-size:14.5px;color:#555"><i data-ic="back" data-s="16"></i>Back</div>
       <div class="tabs"><div class="act">Sign in</div><div>Create account</div></div>
       <div class="lbl">Email address</div><div class="inp" id="aEmail"></div>
-      <div class="lbl">Password</div><div class="inp" id="aPass"></div>
-      <div class="btn" id="bSignin" style="margin-top:28px">Sign in →</div>
+      <div class="lbl">Password<span>Forgot password?</span></div><div class="inp" id="aPass" style="justify-content:space-between"><span id="aPassT"></span><i data-ic="eye" style="color:#666"></i></div>
+      <div class="meter"><div><i id="m1"></i>Email</div><div><i id="m2"></i>Password</div></div>
+      <div class="btn" id="bSignin" style="margin-top:22px;height:48px">Sign in <i data-ic="arrow" data-s="16"></i></div>
+      <div class="sm" style="text-align:center;margin-top:18px;font-size:14px;color:#555">Email me a sign-in link instead</div>
+      <div style="text-align:center;margin-top:26px;font-size:11.5px;color:#666">Free to start · No card · <u>DPA</u> for India’s DPDP Act, 2023</div>
     </div></div>
+
+    <!-- verify, signed in -->
+    <div class="scr" id="sver"><div class="in">
+      <div class="atop"><span class="wmb">Senseible</span><span style="display:flex;gap:10px;align-items:center"><span class="pill" style="background:#fff;border:1px solid #e3e3e3;border-radius:10px;font-size:14px"><i data-ic="user" data-s="15"></i>Personal <i data-ic="down" data-s="14"></i></span><span class="avatar">DF</span></span></div>
+      <div class="h1" style="margin-top:30px">Carbon Verification</div>
+      <div class="sm" style="margin-top:8px;font-size:15px;line-height:1.5">AI-powered MRV to ensure accuracy and prevent greenwashing</div>
+      <div class="card" style="margin-top:26px;padding:22px">
+        <div style="display:flex;gap:12px;align-items:center;font-size:21px;font-weight:600"><i data-ic="shield" style="color:#3b9bd6"></i>Emissions to Verify</div>
+        <div class="sm" id="svSub" style="margin-top:16px;font-size:13.5px;line-height:1.45">Loading stored records...</div>
+        <div id="svPend"><div class="vrow"><span class="w"><i data-ic="alert" data-s="17"></i><b>Electricity</b> <span class="sm" style="font-size:12px">Scope 2</span></span><b class="mono" style="font-weight:500">3422.2 kg</b></div>
+          <div class="btn sq" id="bVerAll" style="margin-top:18px;height:44px;font-size:14.5px"><span id="verAllT">Verify All Emissions</span> <i data-ic="arrow" data-s="15"></i></div></div>
+        <div id="svDone" style="text-align:center;padding:26px 0 6px">
+          <div style="width:64px;height:64px;border-radius:50%;background:#e6f4ec;color:#2e9e5b;display:grid;place-items:center;margin:0 auto"><i data-ic="checkc" data-s="32"></i></div>
+          <div style="font-size:18px;font-weight:500;margin-top:16px">All emissions verified</div>
+          <div class="sm" style="margin-top:8px;line-height:1.45">Verified records are listed in History and the audit ledger</div>
+          <div class="btn sq" style="margin:16px auto 0;width:236px;height:44px;font-size:14.5px">Proceed to Monetize <i data-ic="arrow" data-s="15"></i></div>
+        </div>
+      </div>
+    </div>
+      <div class="tabbar" data-tab="4"></div>
+      <div class="dim" id="dim2"></div>
+      <div class="dlg" id="dlg">
+        <div style="font-size:18px;font-weight:600;line-height:1.4">Add 1 invoice from this device to your account?</div>
+        <div class="sm" style="margin-top:10px;font-size:13.5px;line-height:1.5">Someone uploaded 1 invoice on this device without signing in, in the last 24 hours. Add them only if that was you. If this device is shared, choose "Not mine": they stay out of your account.</div>
+        <div class="btn sq" id="bYes" style="margin-top:16px;height:40px;font-size:14px">Yes, add them</div>
+        <div class="btn sq ol" style="margin-top:8px;height:40px;font-size:14px">Not mine</div>
+        <div style="margin-top:12px;font-size:14px;font-weight:500">Later</div>
+      </div>
+    </div>
 
     <!-- dashboard -->
     <div class="scr" id="dash"><div class="in" id="dashIn">
-      <div class="topbar"><span class="wm">Senseible</span><span class="avatar">DF</span></div>
-      <div class="h1" style="margin-top:20px">Good morning</div>
-      <div style="margin-top:8px"><span class="badge p">Pro</span></div>
-      <div class="card" id="dEmi"><div style="font-weight:600">Emissions Overview</div>
-        <div class="row"><span>Scope 1 <span class="sm">· Direct emissions</span></span><span>0</span></div>
-        <div class="row" id="dS2" style="font-weight:600"><span>Scope 2 <span class="sm" style="font-weight:400">· Indirect (energy)</span></span><span>3,412.6 kg</span></div>
-        <div class="row"><span>Scope 3 <span class="sm">· Value chain</span></span><span>0</span></div></div>
-      <div class="card"><div style="font-weight:600">Quick Actions</div><div class="qa"><div>Upload Invoice</div><div id="qaRep">Generate Report</div></div></div>
-      <div class="card"><div style="font-weight:600">Recent Documents</div><div class="row"><span>Demo Power Distribution<br><span class="sm">Electricity · Sep 2026</span></span><span>₹41,970</span></div></div>
-    </div></div>
+      <div class="atop"><span class="wmb">Senseible</span><span style="display:flex;gap:10px;align-items:center"><span class="pill" style="background:#fff;border:1px solid #e3e3e3;border-radius:10px;font-size:14px"><i data-ic="user" data-s="15"></i>Personal <i data-ic="down" data-s="14"></i></span><span class="avatar">DF</span></span></div>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:28px"><span style="font-size:23px;font-weight:600;letter-spacing:-0.02em">Namaste, Devi Forgings</span><span style="background:#f1f2f2;border-radius:8px;padding:3px 8px;font-size:12px;font-weight:500">✨ Explorer</span></div>
+      <div class="sm" style="margin-top:8px;font-size:15px;line-height:1.5">Decision view over your verified records. Capture and verification happen in the MRV workspace.</div>
+      <div style="margin-top:14px"><span class="pill" style="background:#fff;border:1px solid #e3e3e3;border-radius:10px;height:36px;font-size:14px"><i data-ic="zap" data-s="15"></i>Upgrade</span></div>
+      <div class="card"><div style="display:flex;gap:10px;align-items:center;color:#777;font-size:14px"><i data-ic="filter" data-s="16"></i>View <span class="sel" style="color:#111">Last 90 days <i data-ic="down" data-s="14"></i></span></div>
+        <div style="display:flex;gap:8px;margin-top:12px"><span class="sel" style="font-size:13px">All scopes <i data-ic="down" data-s="13"></i></span><span class="sel" style="font-size:13px">Verified only <i data-ic="down" data-s="13"></i></span></div></div>
+      <div class="card" id="dMix"><div class="sm" style="color:#555;font-size:14.5px">Scope mix in view</div>
+        <div class="mixr"><div class="t"><span>Scope 1</span><span>0 kg · 0.0%</span></div><div class="b"></div></div>
+        <div class="mixr" id="dS2"><div class="t"><span>Scope 2</span><span>3,422 kg · 100.0%</span></div><div class="b"><i style="width:100%"></i></div></div>
+        <div class="mixr"><div class="t"><span>Scope 3</span><span>0 kg · 0.0%</span></div><div class="b"></div></div></div>
+      <div style="height:140px"></div>
+    </div>
+      <div class="tabbar" data-tab="1"></div>
+    </div>
 
     <!-- reports -->
     <div class="scr" id="rep"><div class="in" id="repIn">
-      <div class="topbar"><span class="wm">Senseible</span><span class="avatar">DF</span></div>
-      <div class="h1" style="margin-top:16px">Carbon Reports</div>
-      <div class="ptabs" style="margin-top:12px"><div class="act">Reports</div><div>Reviewed record</div></div>
-      <div class="card"><div style="font-weight:600;font-size:17px">Carbon Accounting Report</div>
-        <div class="row"><span>Scope 1</span><span>0</span></div><div class="row"><span>Scope 2</span><span>3,412.6 kg</span></div><div class="row"><span>Scope 3</span><span>0</span></div>
-        <div style="display:flex;gap:8px;margin-top:14px"><div class="btn" id="bPdf" style="flex:1;border-radius:10px;height:44px;font-size:14px">Download PDF</div><div class="btn" style="flex:1;border-radius:10px;height:44px;font-size:14px;background:#fff;color:#111;border:1px solid #e3e3e3">Download Excel</div></div></div>
-      <div class="card" id="bankCard"><div style="font-weight:600;font-size:17px">Bank Disclosure Report</div><div class="sm" style="font-size:12.5px">For green loan applications &amp; ESG financing</div>
-        <div class="row"><span class="sm">Total Emissions</span><span>3,412.6 kg CO₂e</span></div>
-        <div class="row"><span class="sm">Verification Status</span><span class="sm" style="font-weight:600">PENDING</span></div><div class="row"><span class="sm">Evidence records</span><span>1</span></div>
-        <div class="btn" id="bBank" style="margin-top:14px;border-radius:10px;height:44px;font-size:14px">Download Bank Report</div></div>
-      <div style="height:120px"></div>
-    </div></div>
+      <div class="atop"><span class="wmb">Senseible</span><span style="display:flex;gap:10px;align-items:center"><span class="pill" style="background:#fff;border:1px solid #e3e3e3;border-radius:10px;font-size:14px"><i data-ic="user" data-s="15"></i>Personal <i data-ic="down" data-s="14"></i></span><span class="avatar">DF</span></span></div>
+      <div class="h1" style="margin-top:30px">Carbon Reports</div>
+      <div class="sm" style="margin-top:8px;font-size:15px;line-height:1.5">Generate ESG compliance reports and certificates for banks, regulators, and carbon buyers</div>
+      <div class="seg"><div class="on">Reports</div><div>Reviewed record</div></div>
+      <div class="card" style="padding:20px">
+        <div style="display:flex;gap:12px"><i data-ic="file" style="color:var(--green);margin-top:14px"></i><div><div style="font-size:22px;font-weight:600;line-height:1.1">Carbon Accounting Report</div><div class="sm" style="margin-top:4px">Comprehensive ESG report for banks &amp; compliance</div></div></div>
+        <div class="tiles"><div style="background:#fdeee6"><b style="color:#e0702a">0.0kg</b>Scope 1</div><div style="background:#e8eefb"><b style="color:#3b66d6">3.42t</b>Scope 2</div><div style="background:#e3f5f1"><b style="color:#2a9d8a">0.0kg</b>Scope 3</div></div>
+        <div style="display:flex;gap:8px;margin-top:16px"><div class="btn sq" style="flex:1;height:42px;font-size:14px"><i data-ic="dl" data-s="15"></i>Download PDF</div><div class="btn sq ol" style="flex:1;height:42px;font-size:14px"><i data-ic="file" data-s="15"></i>Download Excel</div></div></div>
+      <div class="card"><div style="font-size:20px;font-weight:600">Framework Reports</div><div class="sm" style="margin-top:4px;font-size:13px">Each framework renders the same verified records in its own disclosure structure</div></div>
+      <div class="card" id="bankCard" style="padding:20px">
+        <div style="display:flex;gap:12px"><i data-ic="bank" style="color:#3b9bd6;margin-top:6px"></i><div><div style="font-size:22px;font-weight:600;line-height:1.1">Bank Disclosure Report</div><div class="sm" style="margin-top:4px;font-size:13px">For green loan applications &amp; ESG financing</div></div></div>
+        <div class="kv" style="margin-top:16px"><span>Total Emissions</span><b>3.42t</b></div>
+        <div class="kv"><span>Verification Status</span><b style="color:#2e9e5b;font-weight:600">VERIFIED</b></div>
+        <div class="kv"><span>Evidence records</span><b>1</b></div>
+        <div class="btn sq ol" id="bBank" style="margin-top:14px;height:44px;font-size:14.5px"><i data-ic="dl" data-s="15"></i>Download Bank Report</div></div>
+      <div style="height:160px"></div>
+    </div>
+      <div class="tabbar" data-tab="3"></div>
+      <div class="more" id="moreM"><div><i data-ic="chart"></i>MRV</div><div><i data-ic="spark"></i>Intelligence</div><div><i data-ic="shield"></i>Verify</div><div id="mMon" style="background:#f4f5f5"><i data-ic="coins"></i>Monetize</div></div>
+    </div>
 
     <!-- monetize -->
     <div class="scr" id="mon"><div class="in" id="monIn">
-      <div class="topbar"><span class="wm">Senseible</span><span class="avatar">DF</span></div>
-      <div class="h1" style="margin-top:16px">Monetize</div>
-      <div class="card" id="rupee" style="background:#f6f6f6"><div style="font-size:13.5px;line-height:1.5">No rupee value is shown. Carbon credits are issued for verified reductions, and none are recorded yet. A value also needs a dated, sourced market price.</div></div>
-      <div class="card"><b>Green Loans</b><div class="sm" style="font-size:12.5px">Lenders set their own terms for green loans. No saving is estimated here.</div></div>
-      <div class="card"><b>Govt Incentives</b><div class="sm" style="font-size:12.5px">Scheme benefits depend on each scheme's rules. No benefit is estimated here.</div></div>
-      <div class="card"><b>Green Invoice Factoring</b><div class="sm" style="font-size:12.5px">Advance terms are set by the financier. No advance is estimated here.</div></div>
-      <div class="card"><b>Carbon Credits</b><div class="sm" style="font-size:12.5px">Credits must first be issued under a recognised programme.</div></div>
-    </div></div>
+      <div class="atop"><span class="wmb">Senseible</span><span style="display:flex;gap:10px;align-items:center"><span class="pill" style="background:#fff;border:1px solid #e3e3e3;border-radius:10px;font-size:14px"><i data-ic="user" data-s="15"></i>Personal <i data-ic="down" data-s="14"></i></span><span class="avatar">DF</span></span></div>
+      <div class="h1" style="margin-top:30px">Monetize Your Carbon Data</div>
+      <div class="sm" style="margin-top:8px;font-size:15px">Turn verified emissions into real climate value</div>
+      <div class="card" id="rupee" style="background:#f2f8f5;border-color:#d6e8de;padding:20px">
+        <div class="sm" style="display:flex;gap:8px;align-items:center;color:#555"><i data-ic="trend" data-s="16"></i>Verified emissions</div>
+        <div class="mono" style="font-size:34px;color:#2e8b57;margin-top:8px">3.42 tCO₂e</div>
+        <div style="font-size:12.5px;color:#555;line-height:1.45;margin-top:6px">No rupee value is shown. Carbon credits are issued for verified reductions, and none are recorded yet. A value also needs a dated, sourced market price.</div>
+        <div style="display:flex;gap:8px;align-items:center;font-size:14px;margin-top:12px"><i data-ic="checkc" data-s="16" style="color:#2e9e5b"></i>1 verified emission record</div></div>
+      <div class="card mcard"><div class="mico" style="background:#fdf1e2;color:#e39a12"><i data-ic="coins" data-s="24"></i></div><div><div style="font-size:19px;font-weight:600">Carbon Credits</div><div class="sm" style="margin-top:4px;line-height:1.45">Credits must first be issued under a recognised programme.</div><div class="sm" style="margin-top:8px;font-size:12.5px">Withheld until reductions are verified</div></div></div>
+      <div class="card mcard"><div class="mico" style="background:#e8f3fb;color:#3b9bd6"><i data-ic="bank" data-s="24"></i></div><div><div style="font-size:19px;font-weight:600">Green Loans</div><div class="sm" style="margin-top:4px;line-height:1.45">Lenders set their own terms for green loans. No saving is estimated here.</div><div class="sm" style="margin-top:8px;font-size:12.5px">Not estimated</div></div></div>
+      <div style="height:160px"></div>
+    </div>
+      <div class="tabbar" data-tab="4"></div>
+    </div>
 
     <!-- overlays -->
     <div class="dim" id="dim"></div>
     <div class="sheet" id="pick" style="height:300px">
-      <div class="sm" style="text-align:center;padding-bottom:10px">Choose your bill</div>
+      <div class="sm" style="text-align:center;padding-bottom:6px">Choose your bill</div>
       <div class="pm">Take Photo</div><div class="pm" id="pmLib">Photo Library <small>bill_sep_2026.jpg</small></div><div class="pm">Choose File</div>
     </div>
-    <div class="sheet" id="dlg" style="height:330px;border-radius:22px;left:14px;right:14px;bottom:250px">
-      <div style="font-size:18px;font-weight:700;line-height:1.3">Add 1 invoice from this device to your account?</div>
-      <div class="sm" style="margin-top:10px;font-size:13.5px;line-height:1.45">Someone uploaded 1 invoice on this device without signing in, in the last 24 hours. Add them only if that was you. If this device is shared, choose "Not mine": they stay out of your account.</div>
-      <div style="display:flex;gap:10px;margin-top:20px"><div class="btn" style="flex:1;border-radius:10px;background:#fff;color:#111;border:1px solid #e3e3e3">Not mine</div><div class="btn" id="bYes" style="flex:1;border-radius:10px">Yes, add them</div></div>
-    </div>
-    <div class="toast" id="toast"><i id="toastDot"></i><span id="toastTxt"></span></div>
+    <div class="toast" id="toast"><i id="toastDot">✓</i><span id="toastTxt"></span></div>
     <div id="tap"></div><div id="tapDot"></div>
   </div></div></div>
 </div>
 
 <script>
-// Signed-in screens re-checked against live senseible.earth on 15 Oct 2026 (demo login, view only; partner names omitted).
-// Guide 2: first successful report. Steps 1–3 match the live senseible.earth flow run on 15 Oct 2026
-// with a fictional sample bill (result 3,412.56 kg CO2e, Trust Index 43/100, the same warnings, and the
-// guest verification text). Steps 4–5 are signed-in screens built from code: GuestImportPrompt.tsx,
-// dashboard/EmissionsSummary.tsx, QuickActions.tsx, Reports.tsx ("Carbon Accounting Report",
-// "Bank Disclosure Report", "Download Bank Report"), Monetize.tsx and lib/carbonValue.ts (rupee note).
-// Scope examples follow SCOPE_MAP in src/pages/Index.tsx (fuel 1, electricity 2, transport 3).
-// Error strings: Index.tsx (not a business document, already processed, monthly read limit).
+// Guide 2: your first carbon report. Rebuilt 18-19 Oct 2026 against live senseible.earth (390x844):
+// guest upload of the fictional sample bill (live/bill.html) gave "3.42 t CO₂e", "4,820 kWh × 0.71 · Scope 2",
+// "3 bill charges ...", rows Bill details / How we calculated it (1 line counted, 3,422.2 kg) / Checks (3) / Read quality (Good),
+// "Verify this bill" and "Upload next bill" (src/components/ResultState.tsx). Processing words: ProcessingState.tsx.
+// Guest Verify preview text: verify/GuestVerifyPreview.tsx (seen live). Sign-in screen and the guest-import prompt
+// (GuestImportPrompt.tsx: Yes, add them / Not mine / Later) seen live; no button in the prompt was pressed.
+// Not pressed live (from code): "Added 1 invoice to your account." toast, "Verify All Emissions" / "Analyzing with AI..."
+// (pages/Verify.tsx); the "All emissions verified" state and Dashboard, Reports, Monetize layouts were seen live on the
+// demo account and are shown here with the sample bill's values only. Greeting/badge: hooks/usePersonalization.ts.
+// Errors: extract-document/index.ts (not a business document; already processed on <date>) and _shared/planLimits.ts
+// (monthlyLimitMessage). Scope examples follow SCOPE_MAP in pages/Index.tsx (fuel 1, electricity 2, transport 3).
 const $ = id => document.getElementById(id);
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
@@ -320,7 +396,42 @@ const lerp = (a, b, k) => a + (b - a) * k;
 const between = (t, a, b) => t >= a && t < b;
 function typed(el, text, t, s, cps = 16, mask = false) {
   const n = Math.max(0, Math.min(text.length, Math.floor((t - s) * cps)));
-  el.textContent = t < s ? '' : (mask ? '•'.repeat(n) : text.slice(0, n)); }
+  el.textContent = t < s ? '' : (mask ? '•'.repeat(n) : text.slice(0, n)); return n; }
+
+const IC = {
+  signin: '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"/>',
+  help: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
+  spark: '<path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/>',
+  upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>',
+  mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/>',
+  zap: '<path d="M13 2L3 14h9l-1 8 10-12h-9z"/>', check: '<path d="M20 6L9 17l-5-5"/>',
+  checkc: '<circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/>',
+  info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+  share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  alert: '<path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>', menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>', back: '<path d="M19 12H5M11 6l-6 6 6 6"/>', down: '<path d="M6 9l6 6 6-6"/>',
+  grid: '<rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>',
+  clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>',
+  dots: '<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>',
+  dl: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>',
+  bank: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/>',
+  coins: '<circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.3 18"/><path d="M7 6h1v4"/>',
+  chart: '<path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/>', filter: '<path d="M22 3H2l8 9.5V19l4 2v-8.5z"/>',
+  trend: '<path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
+};
+document.querySelectorAll('.tabbar').forEach(tb => { const on = +tb.dataset.tab;
+  tb.innerHTML = [['upload', 'Upload'], ['grid', 'Dashboard'], ['clock', 'History'], ['file', 'Reports'], ['dots', 'More']]
+    .map(([ic, nm], i) => `<div class="${i === on ? 'on' : ''}" ${nm === 'Reports' || nm === 'More' ? `data-t="${nm}"` : ''}><i data-ic="${ic}"></i>${nm}</div>`).join(''); });
+$('dash').querySelector('[data-t="Reports"]').id = 'tabRep';
+$('rep').querySelector('[data-t="More"]').id = 'tabMore';
+document.querySelectorAll('[data-ic]').forEach(el => { const s = el.dataset.s || 18;
+  el.outerHTML = `<svg class="i" viewBox="0 0 24 24" style="width:${s}px;height:${s}px;${el.getAttribute('style') || ''}">${IC[el.dataset.ic]}</svg>`; });
+$('pdots').querySelectorAll('i').forEach(d => Object.assign(d.style, { width: '6px', height: '6px', borderRadius: '50%', display: 'block' }));
 
 const STOPS = [['Upload', 300], ['Read', 640], ['Check', 980], ['Save', 1320], ['Use', 1660]];
 const rail = $('rail');
@@ -328,31 +439,32 @@ STOPS.forEach(([nm, x], i) => { const d = document.createElement('div'); d.class
   d.innerHTML = `<div class="dot"><svg class="tk" width="20" height="18" style="opacity:0"><path d="M2 9 L8 15 L18 3" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="nm">${nm}</div>`; rail.appendChild(d); });
 (() => { let d = `M${STOPS[0][1]} 75`; for (let i = 1; i < STOPS.length; i++) { const a = STOPS[i - 1][1], b = STOPS[i][1]; d += ` C ${a + 110} ${i % 2 ? 52 : 98}, ${b - 110} ${i % 2 ? 98 : 52}, ${b} 75`; } $('railPath').setAttribute('d', d); })();
 
+const END = 92.6; // outro starts
 const STEPS = [
-  { at: 5.2, out: 14.0, k: 'STEP 1 OF 5', title: 'Upload one bill', lines: [
+  { at: 5.2, out: 14.2, k: 'STEP 1 OF 5', title: 'Upload one bill', lines: [
     [5.6, 'Tap <span class="tap">Document</span>.'],
     [7.0, 'Pick a photo or PDF of an electricity bill, fuel bill or invoice.'],
-    [9.0, 'Long PDFs are split for you, 10 pages at a time.', 'hint']],
-    err: [10.2, 13.7, "Hmm, this doesn't look like a business document.", 'Upload a bill or invoice, not a photo of something else.'] },
-  { at: 14.2, out: 36.0, k: 'STEP 2 OF 5', title: 'Read your result', lines: [
-    [14.6, "This is your bill's carbon: <b>3,412.56 kg CO₂e</b>."],
-    [16.6, 'Which bucket it lands in depends on the bill:', 'scopes'],
-    [22.6, '<b>Trust Index</b> shows how sure the reading is. A clear, original bill reads better.', 'hint']],
-    err: [28.6, 35.6, 'This invoice was already processed. Each invoice can only be counted once.', "It's already saved. Open <b>History</b> to see it."] },
-  { at: 36.2, out: 52.0, k: 'STEP 3 OF 5', title: 'Check it', lines: [
-    [36.6, 'Tap <span class="tap">Continue to Verify</span>, then <span class="tap">Run the verification check</span>.'],
-    [43.4, 'Amber means one thing needs a closer look. Here, the photo was hard to read.'],
-    [47.0, 'As a guest, results stay in this browser for 24 hours.', 'hint']] },
-  { at: 52.2, out: 66.0, k: 'STEP 4 OF 5', title: 'Save it', lines: [
-    [52.6, 'Tap <span class="tap">Sign in to save and verify</span>.'],
-    [55.0, 'Sign in, then tap <span class="tap">Yes, add them</span>.'],
-    [58.6, 'On a shared phone? Tap <b>Not mine</b>.', 'hint']],
-    err: [60.6, 65.6, "You have used this month's 10 invoice reads on your plan.", 'Upgrade on the <b>Subscription</b> page, or wait for the new month.'] },
-  { at: 66.2, out: 88.2, k: 'STEP 5 OF 5', title: 'Use it', lines: [
-    [66.6, '<b>Dashboard</b>: your Scope 1, 2 and 3 totals.'],
-    [70.6, '<b>Reports</b>: a PDF for your files, a <b>Bank Report</b> for your loan.'],
-    [79.6, "<b>Monetize</b>: what verified data can open up. No rupee value until reductions are verified."],
-    [84.2, 'Add every month’s bills. More bills, a narrower margin.', 'hint']] },
+    [9.0, 'No account needed for your first bill.', 'hint']],
+    err: [10.2, 13.8, "Hmm, this doesn't look like a business document.", 'Upload a bill or invoice, not a photo of something else.'] },
+  { at: 14.2, out: 36.4, k: 'STEP 2 OF 5', title: 'Read your result', lines: [
+    [14.6, 'This bill: <b>3.42 t CO₂e</b>, or 3,422 kg.'],
+    [16.8, 'This bill is Scope 2. The three buckets:', 'scopes'],
+    [23.0, 'Tap <span class="tap">How we calculated it</span>: units × factor. Fixed charges and duty are money, not carbon.', 'hint']],
+    err: [29.8, 36.0, 'This invoice was already processed on 12/10/2026. Each invoice can only be counted once.', "It's already counted. Tap <b>View History</b> to see it."] },
+  { at: 36.6, out: 52.4, k: 'STEP 3 OF 5', title: 'Check it', lines: [
+    [37.0, 'Tap <span class="tap">Verify this bill</span>, then <span class="tap">Run the verification check</span>.'],
+    [43.4, 'Amber: your bill passed the evidence checks. Nothing is recorded yet; this is a preview.'],
+    [47.4, 'As a guest, your result stays in this browser for 24 hours.', 'hint']] },
+  { at: 52.6, out: 72.4, k: 'STEP 4 OF 5', title: 'Save it', lines: [
+    [53.0, 'Tap <span class="tap">Sign in to save and verify</span>, and sign in.'],
+    [58.8, 'Tap <span class="tap">Yes, add them</span>, then <span class="tap">Verify All Emissions</span>.'],
+    [62.2, 'On a shared phone? Tap <b>Not mine</b>.', 'hint']],
+    err: [66.6, 72.0, 'Page limit reached. Upgrade, wait until next month, or top up credits now on your profile.', 'The free plan reads 10 pages a month. Top up on your <b>Profile</b>, or wait for the 1st.'] },
+  { at: 72.6, out: END, k: 'STEP 5 OF 5', title: 'Use it', lines: [
+    [73.0, '<b>Dashboard</b>: your Scope 1, 2 and 3 totals.'],
+    [77.4, '<b>Reports</b>: a PDF for your files, a <b>Bank Report</b> for your loan file.'],
+    [85.4, '<b>Monetize</b>, under More: what verified data can open up. No rupee value until reductions are verified.'],
+    [89.2, 'Every bill you add makes the record stronger.', 'hint']] },
 ];
 function stepAt(t) { for (let i = STEPS.length - 1; i >= 0; i--) if (t >= STEPS[i].at) return i; return -1; }
 let builtStep = -2;
@@ -367,34 +479,35 @@ function buildStep(i) {
   if (s.err) { $('errMsg').textContent = s.err[2]; $('errFix').innerHTML = s.err[3]; }
 }
 
-const SCREENS = ['home', 'proc', 'res', 'ver', 'auth', 'dash', 'rep', 'mon'];
-const NAV = [[0, 'home'], [8.5, 'proc'], [14.0, 'res'], [37.6, 'ver'], [54.0, 'auth'], [66.3, 'dash'], [72.4, 'rep'], [79.4, 'mon']];
+const SCREENS = ['home', 'proc', 'res', 'ver', 'auth', 'sver', 'dash', 'rep', 'mon'];
+const NAV = [[0, 'home'], [8.5, 'proc'], [13.6, 'res'], [38.2, 'ver'], [54.3, 'auth'], [58.2, 'sver'], [72.8, 'dash'], [77.5, 'rep'], [85.3, 'mon']];
 function screenAt(t) { let cur = NAV[0], prev = null; for (const n of NAV) if (t >= n[0]) { prev = cur; cur = n; } return { cur, prev }; }
-const TAPS = [[6.4, 'hDoc'], [8.0, 'pmLib'], [37.2, 'bCont'], [41.0, 'bRun'], [53.6, 'bSave'], [57.0, 'bSignin'], [59.8, 'bYes'], [72.0, 'qaRep'], [76.6, 'bBank']];
+const TAPS = [[6.4, 'hDoc'], [8.0, 'pmLib'], [25.4, 'rCalc'], [37.7, 'bVerify'], [41.6, 'bRun'], [53.8, 'bSave'], [57.6, 'bSignin'], [60.6, 'bYes'], [64.4, 'bVerAll'],
+  [77.0, 'tabRep'], [82.4, 'bBank'], [84.2, 'tabMore'], [84.9, 'mMon']];
 function offsetIn(el, root) { let x = 0, y = 0; while (el && el !== root) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; } return { x, y }; }
 
 function render(t) {
   const st = stepAt(t);
   $('railPath').style.clipPath = `inset(0 ${100 - p(t, .8, 1.6, E.io) * 100}% 0 0)`;
   STOPS.forEach((_, i) => { const el = $('st' + i); el.style.opacity = p(t, .9 + i * .18, .5);
-    el.className = 'stop' + (i === st ? ' on' : i < st || t > 88.2 ? ' done' : '');
-    el.querySelector('.tk').style.opacity = (i < st || t > 88.2) ? 1 : 0; });
-  $('rail').style.opacity = 1 - p(t, 89.0, .6);
+    el.className = 'stop' + (i === st && t < END ? ' on' : i < st || t > END ? ' done' : '');
+    el.querySelector('.tk').style.opacity = (i < st || t > END) ? 1 : 0; });
+  $('rail').style.opacity = 1 - p(t, END + .8, .6);
 
   const iOut = p(t, 4.7, .5, E.io);
   $('intro').style.visibility = t < 5.3 ? 'visible' : 'hidden';
   [['iBig', .2], ['iSub', 1.0], ['lg1', 1.9], ['lg2', 2.5]].forEach(([id, s]) => { const k = p(t, s, .7, E.o5); $(id).style.opacity = k * (1 - iOut); $(id).style.transform = `translateY(${(1 - k) * 30 - iOut * 20}px)`; });
-  $('outro').style.visibility = t > 88.4 ? 'visible' : 'hidden';
-  [['oBig', 88.6], ['oSub', 89.4], ['oMark', 90.4]].forEach(([id, s]) => { const k = p(t, s, .8, E.o5); $(id).style.opacity = k; $(id).style.transform = `translateY(${(1 - k) * 30}px)`; });
+  $('outro').style.visibility = t > END + .2 ? 'visible' : 'hidden';
+  [['oBig', END + .4], ['oSub', END + 1.2], ['oMark', END + 2.2]].forEach(([id, s]) => { const k = p(t, s, .8, E.o5); $(id).style.opacity = k; $(id).style.transform = `translateY(${(1 - k) * 30}px)`; });
 
-  $('col').style.visibility = st >= 0 && t < 88.4 ? 'visible' : 'hidden';
+  $('col').style.visibility = st >= 0 && t < END + .2 ? 'visible' : 'hidden';
   if (st >= 0 && st !== builtStep) { buildStep(st); builtStep = st; }
   if (st >= 0) {
     const S = STEPS[st], sin = p(t, S.at, .6, E.o5), sout = p(t, S.out - .45, .45, E.io);
     $('stepk').style.opacity = sin * (1 - sout);
     $('title').style.opacity = sin * (1 - sout); $('title').style.transform = `translateY(${(1 - sin) * 40 - sout * 20}px)`;
     $('lines').querySelectorAll('.ln').forEach((el, j) => { const k = p(t, S.lines[j][0], .55, E.o5); el.style.opacity = k * (1 - sout); el.style.transform = `translateX(${(1 - k) * -30}px)`; });
-    document.querySelectorAll('.scopes > div').forEach((d, i) => { const k = p(t, 17.2 + i * .7, .5, E.back); d.style.opacity = clamp(k * 2); d.style.transform = `translateY(${(1 - k) * 24}px) rotate(${[-2, 1.5, -1][i] * (1 - clamp(k))}deg)`; });
+    document.querySelectorAll('.scopes > div').forEach((d, i) => { const k = p(t, 17.4 + i * .7, .5, E.back); d.style.opacity = clamp(k * 2); d.style.transform = `translateY(${(1 - k) * 24}px) rotate(${[-2, 1.5, -1][i] * (1 - clamp(k))}deg)`; });
     const err = $('err');
     if (S.err) { const [a, b] = S.err; const k = p(t, a, .45, E.back), o = 1 - p(t, b - .35, .35);
       err.style.visibility = t >= a && t < b ? 'visible' : 'hidden'; err.style.opacity = clamp(k * 2) * o;
@@ -403,7 +516,7 @@ function render(t) {
     } else err.style.visibility = 'hidden';
   }
 
-  const ph = $('phone'), pin = p(t, .5, 1.4, E.o5), pout = p(t, 88.4, .9, E.io);
+  const ph = $('phone'), pin = p(t, .5, 1.4, E.o5), pout = p(t, END, .9, E.io);
   const swing = STEPS.reduce((acc, s) => acc + Math.sin(clamp((t - s.at + .1) / .9) * Math.PI) * 9, 0);
   ph.style.transform = `translateY(${(1 - pin) * 900 - 34}px) rotateY(${-13 + Math.sin(t * .45) * 2.5 + swing}deg) rotateX(${3 + Math.cos(t * .37) * 1.2}deg) rotateZ(${lerp(6, 0, pin)}deg) scale(1.08)`;
   ph.style.opacity = 1 - pout;
@@ -413,39 +526,60 @@ function render(t) {
   if (prev && k < 1) { const e = $(prev[1]); e.style.visibility = 'visible'; e.style.transform = `translateX(${-k * 120}px)`; e.style.filter = `brightness(${1 - k * .15})`; }
   const ce = $(cur[1]); ce.style.visibility = 'visible'; ce.style.zIndex = 2; ce.style.transform = `translateX(${(1 - k) * 390}px)`; ce.style.filter = '';
 
-  // processing
-  $('spin').style.transform = `rotate(${t * 400}deg)`;
-  const PT = ['Analyzing document...', 'Reading document...', 'Extracting carbon data...', 'Calculating emissions...'];
-  $('procTxt').textContent = PT[Math.min(3, Math.max(0, Math.floor((t - 8.6) / 1.3)))];
-  // result scroll: top → band/warnings → buttons
-  $('resIn').style.transform = `translateY(${-(lerp(0, 330, p(t, 26.3, .8, E.io)) + lerp(0, 330, p(t, 27.6, .8, E.io)))}px)`;
-  $('trustCard').style.boxShadow = between(t, 22.6, 26.2) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
-  $('emiBlock').style.background = between(t, 14.6, 16.4) ? 'rgba(240,138,36,.14)' : ''; $('emiBlock').style.borderRadius = '14px';
-  // verify
-  const vOn = t >= 42.6;
-  $('vRes').style.display = vOn ? 'block' : 'none'; $('vRes').style.opacity = p(t, 42.6, .5);
-  $('verIn').style.transform = `translateY(${-lerp(0, 300, p(t, 52.4, .7, E.io))}px)`;
-  $('vRes').style.boxShadow = between(t, 43.4, 46.6) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
-  // sign in
-  typed($('aEmail'), 'you@yourbusiness.in', t, 54.5, 16); typed($('aPass'), 'Forge@2026', t, 55.9, 9, true);
-  // dashboard / reports
-  $('dS2').style.background = between(t, 67.0, 70.4) ? 'rgba(240,138,36,.16)' : ''; $('dS2').style.borderRadius = '8px';
-  $('repIn').style.transform = `translateY(${-lerp(0, 230, p(t, 74.6, .7, E.io))}px)`;
-  $('bankCard').style.boxShadow = between(t, 75.2, 78.6) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
-  $('rupee').style.boxShadow = between(t, 80.2, 84.0) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
+  // processing (ProcessingState.tsx: four words, 0.6 s each, breathing rings)
+  const PT = ['Reading document...', 'Extracting carbon data...', 'Calculating emissions...', 'Identifying value...'];
+  const pi = Math.max(0, Math.floor((t - 8.5) / .6)) % 4;
+  $('procTxt').textContent = PT[pi];
+  $('pdots').querySelectorAll('i').forEach((d, i) => { d.style.background = i === pi ? 'var(--green)' : '#e3e3e3'; d.style.transform = i === pi ? 'scale(1.25)' : ''; });
+  $('breath').style.transform = `scale(${1 + Math.sin(t * 3) * .06})`; $('bdot').style.opacity = .6 + .4 * Math.sin(t * 5);
 
-  // overlays
-  const pk = between(t, 6.8, 8.5), dl = between(t, 57.6, 60.4);
-  $('dim').style.visibility = pk || dl ? 'visible' : 'hidden'; $('dim').style.opacity = pk ? p(t, 6.8, .3) : dl ? p(t, 57.6, .3) : 0;
+  // result: highlight figure, open "How we calculated it", scroll to it
+  $('emiBlock').style.background = between(t, 14.6, 16.6) ? 'rgba(240,138,36,.14)' : '';
+  $('fxLine').style.color = between(t, 16.8, 22.6) ? 'var(--saffron)' : '';
+  const open = p(t, 25.5, .5, E.io);
+  $('calcBody').style.height = (open * $('calcBody').firstElementChild.offsetHeight) + 'px';
+  $('calcChev').className = 'chev' + (t >= 25.5 ? ' up' : '');
+  $('resIn').style.transform = `translateY(${-lerp(0, 250, p(t, 26.1, .8, E.io)) + lerp(0, 250, p(t, 34.6, .8, E.io))}px)`;
+  $('rCalc').style.boxShadow = between(t, 26.4, 29.6) ? '0 0 0 3px rgba(240,138,36,.55)' : ''; $('rCalc').style.borderRadius = '8px';
+  // guest verify
+  $('vRes').style.display = t >= 41.7 ? 'block' : 'none'; $('vRes').style.opacity = p(t, 41.7, .5);
+  $('vRes').style.boxShadow = between(t, 43.4, 47.0) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
+  $('verIn').style.transform = `translateY(${-lerp(0, 190, p(t, 49.6, .8, E.io))}px)`;
+  // sign in
+  const ne = typed($('aEmail'), 'you@yourbusiness.in', t, 54.8, 16); if (t < 54.8) { $('aEmail').textContent = 'you@business.com'; $('aEmail').className = 'inp ph'; } else $('aEmail').className = 'inp';
+  const np = typed($('aPassT'), 'Forge@2026', t, 56.3, 9, true);
+  $('m1').className = ne >= 19 ? 'f' : ''; $('m2').className = np >= 10 ? 'f' : '';
+  // signed-in verify: prompt, import, verify all
+  const dl = between(t, 58.7, 61.0);
+  $('dim2').style.visibility = $('dlg').style.visibility = dl ? 'visible' : 'hidden';
+  $('dim2').style.opacity = p(t, 58.7, .3) * (1 - p(t, 60.7, .3)); $('dlg').style.opacity = p(t, 58.7, .3) * (1 - p(t, 60.7, .3));
+  $('dlg').style.transform = `scale(${lerp(.94, 1, p(t, 58.7, .35, E.o5))})`;
+  const imported = t >= 61.0, verified = t >= 65.6;
+  $('svSub').textContent = !imported ? 'Loading stored records...' : verified ? '0 records ready to check against the source evidence' : '1 record ready to check against the source evidence';
+  $('svPend').style.display = imported && !verified ? 'block' : 'none';
+  $('svDone').style.display = verified ? 'block' : 'none'; $('svDone').style.opacity = p(t, 65.6, .5);
+  $('verAllT').textContent = between(t, 64.4, 65.6) ? 'Analyzing with AI...' : 'Verify All Emissions';
+  // dashboard / reports / monetize
+  $('dS2').style.background = between(t, 73.4, 76.8) ? 'rgba(240,138,36,.16)' : ''; $('dS2').style.borderRadius = '8px'; $('dS2').style.padding = '4px 6px'; $('dS2').style.margin = '8px -6px 0';
+  $('repIn').style.transform = `translateY(${-lerp(0, 430, p(t, 79.2, .9, E.io))}px)`;
+  $('bankCard').style.boxShadow = between(t, 80.2, 83.6) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
+  const mm = between(t, 84.3, 85.6); $('moreM').style.visibility = mm ? 'visible' : 'hidden'; $('moreM').style.opacity = p(t, 84.3, .25); $('moreM').style.transform = `scale(${lerp(.92, 1, p(t, 84.3, .3, E.o5))})`;
+  $('rupee').style.boxShadow = between(t, 86.0, 89.6) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
+
+  // device picker
+  const pk = between(t, 6.8, 8.5);
+  $('dim').style.visibility = pk ? 'visible' : 'hidden'; $('dim').style.opacity = pk ? p(t, 6.8, .3) * .8 : 0;
   $('pick').style.visibility = pk ? 'visible' : 'hidden'; $('pick').style.transform = `translateY(${(1 - p(t, 6.8, .4, E.o5)) * 320}px)`;
   $('pmLib').className = 'pm' + (t >= 8.05 ? ' hl' : '');
-  $('dlg').style.visibility = dl ? 'visible' : 'hidden'; $('dlg').style.transform = `scale(${lerp(.92, 1, p(t, 57.6, .35, E.o5))})`; $('dlg').style.opacity = p(t, 57.6, .3);
-  const TOASTS = [[13.4, 16.0, 'Extracted 3412.56 kg CO₂ from invoice', 'var(--green2)'], [41.3, 42.8, 'Checking your result. It stays in this browser until you sign in.', '#bbb'],
-    [57.2, 57.6, 'Welcome back! Redirecting...', 'var(--green2)']];
+  const TOASTS = [[13.7, 16.6, 'Result ready. It stays in this browser for 24 hours; sign in to save it.', 'ok', 'res'],
+    [38.3, 41.2, 'Checking your result. It stays in this browser until you sign in.', 'i', 'ver'],
+    [57.8, 58.6, 'Welcome back! Redirecting...', 'ok'], [61.0, 63.6, 'Added 1 invoice to your account.', 'ok']];
   const to = TOASTS.find(([a, b]) => between(t, a, b));
   $('toast').style.visibility = to ? 'visible' : 'hidden';
-  if (to) { $('toastTxt').textContent = to[2]; $('toastDot').style.background = to[3]; const k2 = p(t, to[0], .3, E.o5), k3 = p(t, to[1] - .3, .3);
-    $('toast').style.transform = `translateY(${(1 - k2) * 90 + k3 * 90}px)`; $('toast').style.opacity = 1 - k3; }
+  if (to) { $('toastTxt').textContent = to[2]; $('toastDot').textContent = to[3] === 'ok' ? '✓' : 'i';
+    const k2 = p(t, to[0], .3, E.o5), k3 = p(t, to[1] - .3, .3);
+    $('toast').style.bottom = to[4] === 'res' ? '128px' : to[4] === 'ver' ? '86px' : '22px';
+    $('toast').style.transform = `translateY(${(1 - k2) * 60 + k3 * 60}px)`; $('toast').style.opacity = Math.min(k2, 1 - k3); }
 
   const tap = TAPS.find(([at]) => t >= at - .55 && t < at + .45), ring = $('tap'), dot = $('tapDot');
   if (tap) {
@@ -453,7 +587,8 @@ function render(t) {
     let tr = { x: 0, y: 0 }; const inner = el.closest('.in'); if (inner) { const m = new DOMMatrix(getComputedStyle(inner).transform); tr = { x: m.m41, y: m.m42 }; }
     const scrEl = el.closest('.scr'); if (scrEl) { const m = new DOMMatrix(getComputedStyle(scrEl).transform); tr.x += m.m41; tr.y += m.m42; }
     const sh = el.closest('.sheet'); if (sh) { const m = new DOMMatrix(getComputedStyle(sh).transform); tr.y += m.m42; }
-    const cx = o.x + el.offsetWidth / 2 + tr.x, cy = o.y + el.offsetHeight / 2 + tr.y;
+    const h = tap[1] === 'rCalc' ? 49 : el.offsetHeight;
+    const cx = o.x + el.offsetWidth / 2 + tr.x, cy = o.y + h / 2 + tr.y;
     const pre = p(t, tap[0] - .55, .4, E.o5), press = p(t, tap[0], .45, E.o3);
     ring.style.visibility = dot.style.visibility = 'visible';
     ring.style.transform = `translate(${cx}px, ${cy}px) scale(${lerp(1.6, 1, pre) + press * .9})`; ring.style.opacity = pre * (1 - press);
@@ -462,6 +597,5 @@ function render(t) {
 }
 window.render = render;
 render(Number(new URLSearchParams(location.search).get('t') || 0));
-
 </script>
 </body></html>
