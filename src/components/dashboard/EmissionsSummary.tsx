@@ -55,7 +55,7 @@ export function EmissionsSummary({ summary }: EmissionsSummaryProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
           {scopes.map(scope => (
             <div 
               key={scope.label}
@@ -63,7 +63,7 @@ export function EmissionsSummary({ summary }: EmissionsSummaryProps) {
             >
               <div className="flex items-center gap-2 mb-2">
                 <scope.icon className={`h-4 w-4 ${scope.color}`} />
-                <span className="text-sm font-medium text-foreground">{scope.label}</span>
+                <span className="whitespace-nowrap text-sm font-medium text-foreground">{scope.label}</span>
               </div>
               <div className="text-xl font-bold text-foreground mb-1">
                 {formatNumber(scope.value)}

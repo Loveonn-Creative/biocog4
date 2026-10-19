@@ -4,6 +4,9 @@ export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
+  // Hover styles apply only on devices with a real pointer, so a tapped
+  // button on a phone does not stay tinted as if it were selected.
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     container: {
       center: true,
