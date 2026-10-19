@@ -43,7 +43,7 @@ export function QuickPurchases({ planEnd }: { planEnd: string | null }) {
         <CardDescription>
           {allowance.used !== null
             ? `${allowance.used.toLocaleString('en-IN')} of ${allowance.limit.toLocaleString('en-IN')} invoices used this month · ${allowance.credits.toLocaleString('en-IN')} credits left`
-            : 'Buy invoice credits and services here. Prices include GST at checkout.'}
+            : 'Buy invoice credits and services here. Prices before GST.'}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
