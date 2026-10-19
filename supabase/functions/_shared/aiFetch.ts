@@ -99,14 +99,15 @@ async function tryGeminiCascade(keys: string[], body: Record<string, unknown>, h
   for (let i = 0; i < keys.length; i++) {
     if (hasGateway && Date.now() < (geminiSkipUntil.get(i) ?? 0)) continue;
     const res = await tryGemini(keys[i], body);
-    if (res?.ok) { geminiSkipUntil.delete(i); return res; }
-    last = res ?? last;
+    if (res?.ok) { geminiSkipUntil.delete(i); await last?.body?.cancel(); return res; }
+    // Keep the latest refusal unread: with no gateway it is returned as is,
+    // so the caller still sees why Gemini refused (429 busy, 402 no credit).
+    if (res) { await last?.body?.cancel(); last = res; }
     const status = res?.status ?? 0;
     if (hasGateway && (!res || status === 429 || status === 402 || status >= 500)) {
       geminiSkipUntil.set(i, Date.now() + GEMINI_COOLDOWN_MS);
     }
     console.info('AI fallback: trying next provider', i === 0 ? 'Gemini secondary' : 'Lovable AI', status || 'no response');
-    await res?.body?.cancel();
   }
   return last;
 }
@@ -124,6 +125,7 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
     // Without a gateway key, the caller still learns why Gemini refused
     // (429 busy, 402 no credit) instead of a generic failure.
     if (!lovable) return res ?? json(503, aiErrorMessage(0));
+    await res?.body?.cancel();
   }
   // Gemini-only options (reasoning effort) are not sent to the gateway.
   const { reasoning_effort: _effort, ...gatewayBody } = body;
