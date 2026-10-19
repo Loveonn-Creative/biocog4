@@ -1,13 +1,16 @@
 // Shared chat-completion client for every AI edge function.
-// Provider order: Google Gemini (GEMINI_API_KEY) first, then the Lovable AI
-// Gateway (LOVABLE_API_KEY) whenever Gemini is missing, unreachable, slow to
-// answer or returns an error. Either key alone is enough to run.
+// Provider order: GEMINI_API_KEY (primary) → Gemini_API_Key (secondary) →
+// the Lovable AI Gateway (LOVABLE_API_KEY). Each Gemini key is tried in
+// turn; the gateway is used only when every Gemini key is missing,
+// unreachable, slow to answer or returns an error. Any one key alone is
+// enough to run.
 // Callers keep the same OpenAI-compatible request and response shape, and the
 // Authorization header they pass is ignored: keys are only read here.
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
 const GATEWAY_URL = 'https://ai.gateway.lovable.dev/v1/chat/completions';
-// Time allowed for Gemini to start answering before we switch to the gateway.
-// Only the wait for response headers is bounded, so long streams still run.
+// Time allowed for Gemini to start answering before we switch to the next
+// provider. Only the wait for response headers is bounded, so long streams
+// still run.
 const GEMINI_HEADER_TIMEOUT_MS = 45_000;
 
 // Google retired gemini-2.5-* for new direct API keys; map to "latest" aliases.
@@ -27,13 +30,20 @@ export function toGatewayModel(model: unknown): string {
 }
 
 /**
- * The Gemini key from the edge-function secrets. The new key is stored as
- * "Gemini_API_Key" (owner, October 2026) and is used first; the older
- * GEMINI_API_KEY is only a fallback. Read here only; never logged, returned
- * or sent to a browser.
+ * The Gemini keys from the edge-function secrets, in failover order
+ * (owner, October 2026): GEMINI_API_KEY is primary, Gemini_API_Key the
+ * secondary tried when the primary is missing, refused or unreachable.
+ * Read here only; never logged, returned or sent to a browser.
  */
+export function geminiKeys(): string[] {
+  const primary = Deno.env.get('GEMINI_API_KEY')?.trim();
+  const secondary = Deno.env.get('Gemini_API_Key')?.trim();
+  return [primary, secondary].filter((k): k is string => Boolean(k));
+}
+
+/** The primary Gemini key (GEMINI_API_KEY), or the secondary when unset. */
 export function geminiKey(): string | undefined {
-  return Deno.env.get('Gemini_API_Key')?.trim() || Deno.env.get('GEMINI_API_KEY')?.trim() || undefined;
+  return geminiKeys()[0];
 }
 
 /** True when at least one AI provider key is set. */
@@ -71,33 +81,49 @@ async function tryGemini(key: string, body: Record<string, unknown>): Promise<Re
   }
 }
 
-// Fallback to the gateway is the designed path, not a fault: it is logged at
-// info level, once per cooldown. While Gemini is rate-limited or out of quota
-// (429/402) or unreachable, it is skipped for a short cooldown in this
-// instance instead of being retried (and logged) on every request.
+// Moving down the cascade is the designed path, not a fault: it is logged at
+// info level. While a Gemini key is rate-limited or out of quota (429/402),
+// refused (403) or unreachable, it is skipped for a short cooldown in this
+// instance instead of being retried (and logged) on every request. Cooldowns
+// are tracked per key position so the secondary key can still serve while
+// the primary cools down.
 const GEMINI_COOLDOWN_MS = 5 * 60_000;
-let geminiSkipUntil = 0;
+const geminiSkipUntil = new Map<number, number>();
 /** Test hook: forget any Gemini cooldown. */
-export function resetAiFallbackState(): void { geminiSkipUntil = 0; }
+export function resetAiFallbackState(): void { geminiSkipUntil.clear(); }
+
+// Try each Gemini key in order; returns the first usable response, or null
+// when every key is cooling down, unreachable or refused.
+async function tryGeminiCascade(keys: string[], body: Record<string, unknown>, hasGateway: boolean): Promise<Response | null> {
+  let last: Response | null = null;
+  for (let i = 0; i < keys.length; i++) {
+    if (hasGateway && Date.now() < (geminiSkipUntil.get(i) ?? 0)) continue;
+    const res = await tryGemini(keys[i], body);
+    if (res?.ok) { geminiSkipUntil.delete(i); return res; }
+    last = res ?? last;
+    const status = res?.status ?? 0;
+    if (hasGateway && (!res || status === 429 || status === 402 || status >= 500)) {
+      geminiSkipUntil.set(i, Date.now() + GEMINI_COOLDOWN_MS);
+    }
+    console.info('AI fallback: trying next provider', i === 0 ? 'Gemini secondary' : 'Lovable AI', status || 'no response');
+    await res?.body?.cancel();
+  }
+  return last;
+}
 
 export async function aiFetch(init: RequestInit): Promise<Response> {
   let body: Record<string, unknown>;
   try { body = JSON.parse(String(init.body ?? '{}')); } catch { return json(400, 'Invalid AI request'); }
-  const gemini = geminiKey();
+  const keys = geminiKeys();
   const lovable = Deno.env.get('LOVABLE_API_KEY');
-  if (!gemini && !lovable) return json(503, 'AI is not configured');
+  if (!keys.length && !lovable) return json(503, 'AI is not configured');
 
-  // Without a gateway key there is nothing to fall back to, so always try Gemini.
-  if (gemini && (!lovable || Date.now() >= geminiSkipUntil)) {
-    const res = await tryGemini(gemini, body);
-    if (res?.ok) { geminiSkipUntil = 0; return res; }
+  if (keys.length) {
+    const res = await tryGeminiCascade(keys, body, Boolean(lovable));
+    if (res?.ok) return res;
     // Without a gateway key, the caller still learns why Gemini refused
     // (429 busy, 402 no credit) instead of a generic failure.
     if (!lovable) return res ?? json(503, aiErrorMessage(0));
-    const status = res?.status ?? 0;
-    if (!res || status === 429 || status === 402 || status >= 500) geminiSkipUntil = Date.now() + GEMINI_COOLDOWN_MS;
-    console.info('AI fallback: using Lovable AI', status || 'no response');
-    await res?.body?.cancel();
   }
   // Gemini-only options (reasoning effort) are not sent to the gateway.
   const { reasoning_effort: _effort, ...gatewayBody } = body;

@@ -123,17 +123,59 @@ describe('aiFetch Gemini cooldown', () => {
   });
 });
 
-describe('Gemini key name', () => {
-  test('uses the new Gemini_API_Key first, GEMINI_API_KEY as fallback', async () => {
-    const { geminiKey } = await import('../supabase/functions/_shared/aiFetch');
+describe('Gemini key order', () => {
+  test('GEMINI_API_KEY is primary, Gemini_API_Key the secondary', async () => {
+    const { geminiKey, geminiKeys } = await import('../supabase/functions/_shared/aiFetch');
     const env = (globalThis as any).Deno.env;
     const orig = env.get;
     env.get = (k: string) => (k === 'Gemini_API_Key' ? ' new-key ' : undefined);
     expect(geminiKey()).toBe('new-key');
     env.get = (k: string) => (k === 'GEMINI_API_KEY' ? 'primary' : k === 'Gemini_API_Key' ? 'other' : undefined);
-    expect(geminiKey()).toBe('other');
-    env.get = (k: string) => (k === 'GEMINI_API_KEY' ? 'primary' : undefined);
     expect(geminiKey()).toBe('primary');
+    expect(geminiKeys()).toEqual(['primary', 'other']);
+    env.get = (k: string) => (k === 'GEMINI_API_KEY' ? 'primary' : undefined);
+    expect(geminiKeys()).toEqual(['primary']);
     env.get = orig;
+  });
+
+  test('primary 429: the secondary key answers before the gateway', async () => {
+    env.set('GEMINI_API_KEY', 'p'); env.set('Gemini_API_Key', 's'); env.set('LOVABLE_API_KEY', 'l');
+    let n = 0;
+    route(() => reply(++n === 1 ? 429 : 200));
+    expect((await ask()).status).toBe(200);
+    expect(calls).toHaveLength(2);
+    expect(calls[0].auth).toBe('Bearer p');
+    expect(calls[1].auth).toBe('Bearer s');
+    expect(calls[1].url).toContain('generativelanguage.googleapis.com');
+  });
+
+  test('primary unreachable: the secondary key is used', async () => {
+    env.set('GEMINI_API_KEY', 'p'); env.set('Gemini_API_Key', 's');
+    let n = 0;
+    route(() => { if (++n === 1) throw new TypeError('network'); return reply(200); });
+    expect((await ask()).status).toBe(200);
+    expect(calls[1].auth).toBe('Bearer s');
+  });
+
+  test('both Gemini keys fail: the gateway is the last resort', async () => {
+    env.set('GEMINI_API_KEY', 'p'); env.set('Gemini_API_Key', 's'); env.set('LOVABLE_API_KEY', 'l');
+    route((url) => reply(url.includes('googleapis') ? 429 : 200));
+    expect((await ask()).status).toBe(200);
+    expect(calls).toHaveLength(3);
+    expect(calls[2].url).toContain('ai.gateway.lovable.dev');
+    expect(calls[2].auth).toBe('Bearer l');
+  });
+
+  test('primary cooling down: the next request tries the secondary first', async () => {
+    env.set('GEMINI_API_KEY', 'p'); env.set('Gemini_API_Key', 's'); env.set('LOVABLE_API_KEY', 'l');
+    let first = true;
+    route((url) => {
+      if (url.includes('googleapis') && first) { first = false; return reply(429); }
+      return reply(200);
+    });
+    expect((await ask()).status).toBe(200);
+    calls = [];
+    expect((await ask()).status).toBe(200);
+    expect(calls[0].auth).toBe('Bearer s');
   });
 });

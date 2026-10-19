@@ -25,7 +25,7 @@ const field = 'w-full min-w-0 rounded-lg border border-border bg-background px-3
  * its original GPS position and date/time back in, so nothing is lost.
  */
 async function reducePhoto(bytes: Uint8Array, raw: RawPhotoTags): Promise<Uint8Array> {
-  const bmp = await createImageBitmap(new Blob([bytes], { type: 'image/jpeg' }));
+  const bmp = await createImageBitmap(new Blob([new Uint8Array(bytes)], { type: 'image/jpeg' }));
   const target = MAX_PHOTO_BYTES - 2048; // room for the tags
   let maxDim = Math.min(2000, Math.max(bmp.width, bmp.height));
   let quality = 0.82;
@@ -96,7 +96,7 @@ export default function MachineryBeta() {
   const showPhoto = (bytes: Uint8Array) => {
     setPhoto((old) => {
       if (old) URL.revokeObjectURL(old.url);
-      return { bytes, raw: readRawExif(bytes), tags: readExifGps(bytes, tzOffsetMin()), url: URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' })) };
+      return { bytes, raw: readRawExif(bytes), tags: readExifGps(bytes, tzOffsetMin()), url: URL.createObjectURL(new Blob([new Uint8Array(bytes)], { type: 'image/jpeg' })) };
     });
   };
   const onFile = async (file: File | undefined) => {
