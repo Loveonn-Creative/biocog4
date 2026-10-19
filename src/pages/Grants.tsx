@@ -61,7 +61,7 @@ const sectors = [
 ];
 
 const benefits = [
-  { value: "$13,000", label: "Platform Access", desc: "12-month premium tier" },
+  { value: "$13,000", label: "Platform access", desc: "12 months of the premium plan" },
   { value: "$150,000", label: "Cash Benefits", desc: "Matched funding pool" },
   { value: "100+", label: "Countries", desc: "Global cohort access" },
   { value: "1:1", label: "Advisory", desc: "Climate finance experts" },
@@ -69,7 +69,7 @@ const benefits = [
 
 const audiences = [
   { title: "AI & Climate Startups", desc: "Building technology for carbon measurement, reduction, or finance" },
-  { title: "MSMEs", desc: "Micro, small, and medium enterprises ready to quantify and monetize carbon impact" },
+  { title: "MSMEs", desc: "Small businesses ready to measure their emissions and earn from cutting them" },
   { title: "Emerging Markets", desc: "Priority for India, Southeast Asia, Africa, and Latin America" },
 ];
 
@@ -353,12 +353,11 @@ const Grants = () => {
                   Applications Open
                 </div>
                 <h1 className="mt-6 text-[2.6rem] leading-[1.04] md:text-6xl font-semibold tracking-tight">
-                  Accelerate Your
-                  <span className="block text-primary">Climate Impact</span>
+                  Get $13,000 of platform access
+                  <span className="block text-primary">and up to $150,000 in cash benefits</span>
                 </h1>
                 <p className="mt-6 max-w-xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  Unlock platform access worth $13,000 and cash benefits up to $150,000.
-                  Built for AI startups and MSMEs in India and emerging markets.
+                  For AI startups and MSMEs in India and emerging markets. Apply in under 5 minutes, no login.
                 </p>
                 <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
                   <Button size="lg" className="group h-12 rounded-full px-7 text-base" onClick={scrollToForm}>
@@ -413,7 +412,7 @@ const Grants = () => {
               <div className="md:col-span-2 max-w-2xl">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Who Should Apply</h2>
                 <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-                  We prioritize high-intent founders solving real climate problems
+                  We look first at founders already working on a real climate problem
                 </p>
               </div>
               <ul className="grid gap-3 sm:grid-cols-3 md:col-span-2">
@@ -496,7 +495,7 @@ const Grants = () => {
         {/* Trust Signals */}
         <section className="py-12 border-t border-border">
           <p className="container px-5 text-center text-muted-foreground text-sm">
-            Building infrastructure for MSMEs across emerging markets
+            Built in India for MSMEs across emerging markets
           </p>
         </section>
 

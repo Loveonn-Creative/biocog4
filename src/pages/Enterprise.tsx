@@ -71,7 +71,7 @@ const ScaleFit = ({ suppliers, interests, stack }: { suppliers: string; interest
   ];
   return (
     <div className="mt-8 rounded-2xl bg-secondary/50 p-4 sm:p-5">
-      <p className="text-sm font-medium">{t("ent.fit.title", "Scale, shaped around your programme")}</p>
+      <p className="text-sm font-medium">{t("ent.fit.title", "Your Scale quote starts here")}</p>
       <dl className="mt-3 grid gap-2 text-sm" aria-live="polite">
         {rows.map(r => (
           <div key={r.k} className="grid grid-cols-[7.5rem_1fr] gap-3">
@@ -225,17 +225,17 @@ const Enterprise = () => {
       </header>
 
       {/* 01 Scattered data to one decision: scroll-driven assembly */}
-      <Beat id="ent-d2d" n="01" title={t("ent.d2d.title", "Unstructured data in. The simplest next decision out.")} line={t("ent.d2d.line", "Supply chains and enterprise systems produce data in every shape. Senseible turns it into one ledger you can act on.")}>
+      <Beat id="ent-d2d" n="01" title={t("ent.d2d.title", "Messy supplier data in. A clear next step out.")} line={t("ent.d2d.line", "Suppliers send PDFs, photos, spreadsheets and exports. Senseible turns them into one record you can act on.")}>
         <DataToDecision />
       </Beat>
 
       {/* 02 The full suite: a working dashboard */}
-      <Beat id="ent-suite" n="02" title={t("ent.suite.title", "The full suite, on one verified ledger")} line={t("ent.suite.line", "Product footprints, life cycle studies, net-zero strategy, double materiality, Scope 3 and reporting. Pick a module to see what goes in and what comes out.")}>
+      <Beat id="ent-suite" n="02" title={t("ent.suite.title", "Every Scope 3 job, from one verified record")} line={t("ent.suite.line", "Product footprints, life cycle studies, net-zero strategy, double materiality, Scope 3 and reporting. Pick a module to see what goes in and what comes out.")}>
         <WhenNear minH={420}><LazySuiteDashboard onAsk={ask} /></WhenNear>
       </Beat>
 
       {/* 03 Scope 3: one click from collection to evidence-linked records */}
-      <Beat id="ent-agents" n="03" title={t("ent.b1.title3", "Custom-built for Scope 3: one click from collection to evidence-linked records")} line={t("ent.b1.line2", "Press run to watch a supplier wave move through each stage. Then tap a source in the ledger at the top of the page, or pick an input below, to see the record it becomes.")}>
+      <Beat id="ent-agents" n="03" title={t("ent.b1.title3", "Scope 3, built to your programme: one click from supplier documents to records tied to their source")} line={t("ent.b1.line2", "Press run to watch a batch of suppliers move through each stage. Then tap a source in the ledger at the top of the page, or pick an input below, to see the record it becomes.")}>
         <WhenNear minH={460}><LazyOneClickCollect onAsk={ask} /></WhenNear>
         <div className="mt-10"><RecordTransform index={example} onChange={setExample} /></div>
       </Beat>
@@ -254,12 +254,12 @@ const Enterprise = () => {
       </Beat>
 
       {/* 06 Liability to decision to profit: CBAM engine */}
-      <Beat id="ent-profit" n="06" title={t("ent.liab.title", "Emissions, from liability to decision to profit")} line={t("ent.liab.line", "The same steel, priced at EU default values and at what your verified data shows. Move the sliders.")}>
+      <Beat id="ent-profit" n="06" title={t("ent.liab.title", "Emissions: from a cost you carry to a number you can lower")} line={t("ent.liab.line", "The same steel, priced at EU default values and at what your verified data shows. Move the sliders.")}>
         <WhenNear minH={460}><LazyLiabilityToProfit /></WhenNear>
       </Beat>
 
       {/* 07 Biocog superintelligence */}
-      <Beat id="ent-mind" n="07" title={t("ent.mind.title", "Biocog superintelligence")} line={t("ent.mind.line", "Biocog reads the scope ledger as the single source of truth and answers from it. Ask a question.")}>
+      <Beat id="ent-mind" n="07" title={t("ent.mind.title", "Biocog superintelligence")} line={t("ent.mind.line", "Biocog answers from your supplier records and nothing else. Ask it a question.")}>
         <WhenNear minH={420}><LazyBiocogMind /></WhenNear>
       </Beat>
 

@@ -446,8 +446,7 @@ const Trust = () => {
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Supplier evidence enterprises can't gather alone</h2>
             <p className="text-muted-foreground max-w-3xl mb-8">
               In emerging markets, most suppliers don't publish PCFs. Enterprises fall back on sector averages and lose
-              defensibility under CBAM, ISSB, and CSRD. Senseible's cross-MSME footprint turns that gap into a primary-data
-              network: your suppliers' real numbers, benchmarked against thousands of peers.
+              defensibility under CBAM, ISSB, and CSRD. Senseible fills that gap with your suppliers' real numbers, compared against thousands of similar MSMEs.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -464,8 +463,7 @@ const Trust = () => {
                 <CardContent className="p-6">
                   <div className="text-sm font-medium mb-2">Cluster benchmarking no single enterprise can build</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Sector medians come from verified MSME activity across the network: peer-normalized scores instead of
-                    generic industry averages from outdated reports.
+                    Sector benchmarks come from verified MSME records, not generic industry averages from old reports.
                   </p>
                 </CardContent>
               </Card>
@@ -546,10 +544,9 @@ const Trust = () => {
               <span className="text-primary"><Glyph name="alert" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Greenwashing Prevention</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Structural defense, not a disclaimer</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Greenwashing is blocked by how the system works</h2>
             <p className="text-muted-foreground max-w-3xl mb-10">
-              Greenwashing is prevented by the architecture, not by policy. Six mechanisms work together so a claim cannot
-              be inflated, recycled, or quietly re-baselined after the fact.
+              Six checks work together so a claim cannot be inflated, reused or quietly reset after the fact.
             </p>
             <ClaimGauntlet
               mechanisms={[
@@ -592,7 +589,7 @@ const Trust = () => {
               <span className="text-primary"><Glyph name="arrow" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Where this ledger goes next</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Verification is the input. Finance and credits are downstream.</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Once verified, a record can go to a lender or a credit buyer</h2>
             <p className="text-muted-foreground max-w-3xl mb-10">
               The verified scope ledger described above is the primitive. Two of its downstream uses have their own dedicated
               pages, with the lender mechanics, the credit gates, and the regulatory grounding spelled out in full.
@@ -661,7 +658,7 @@ const Trust = () => {
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Governance &amp; Security</span>
             </div>
             <LockDoodle />
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Private by default. Access must be earned.</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Private by default</h2>
             <p className="text-muted-foreground max-w-3xl mb-8">
               Enterprise data paths follow zero-trust principles: explicit authorization, least-privilege access,
               tenant-scoped records and traceable actions. This describes the platform architecture, not a third-party certification.
@@ -713,7 +710,7 @@ const Trust = () => {
         {/* CTAs */}
         <section className="py-20">
           <div className="container max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Bring this trust layer to your team</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Use verified MSME data in your work</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               For climate-finance partners, carbon buyers, ESG consultants and auditors evaluating Senseible-verified data.
             </p>

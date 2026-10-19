@@ -97,7 +97,7 @@ export const CbamExposure = () => {
           : t("home.cbam.note_default", "Without your data the buyer uses a default value of {intensity} tCO2 per tonne plus a mark-up (10% in 2026, 20% in 2027, 30% from 2028)."))
           .replace("{intensity}", String(perTonne.intensity))
           .replace("{route}", perTonne.route)}{" "}
-        {t("home.cbam.price", "Certificate price €{price} (Q3 2026). Benchmarks indicative.").replace("{price}", String(DEFAULT_EU_ETS_PRICE))}
+        {t("home.cbam.price", "Certificate price €{price} (Q3 2026). Sector benchmarks are estimates.").replace("{price}", String(DEFAULT_EU_ETS_PRICE))}
       </p>
 
       <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between border-t border-border pt-5">

@@ -8,7 +8,7 @@ const useCasesMultilang: Record<string, string[]> = {
     "Track Scope 1, 2, 3 emissions",
     "Prepare for EU CBAM compliance",
     "Verify emissions instantly",
-    "Unlock climate finance today",
+    "Get your record ready for a green loan",
   ],
   'hi': [
     "चालान को सत्यापित कार्बन डेटा में बदलें",

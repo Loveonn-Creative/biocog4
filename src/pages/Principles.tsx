@@ -75,10 +75,10 @@ const Principles = () => {
               </div>
               <div className="pl-10 border-l-2 border-accent/30 group-hover:border-accent/50 transition-colors">
                 <p className="text-lg text-foreground/80 leading-relaxed mb-4">
-                  A financial bridge for those excluded from global systems.
+                  A way into finance for businesses that have been left out.
                 </p>
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  By converting everyday operational documents into verifiable signals, Senseible unlocks revenue, incentives, and climate finance that were previously inaccessible. This is how local businesses participate in trillion-dollar climate markets.
+                  Senseible turns your everyday bills into data others can check, so you can apply for incentives, climate finance and carbon revenue that were out of reach. That is how a local business takes part in trillion-dollar climate markets.
                 </p>
               </div>
             </section>
@@ -87,7 +87,7 @@ const Principles = () => {
         <aside className="hidden md:block" aria-hidden="true">
           <div className="sticky top-28 rounded-3xl border border-border bg-secondary/20 p-5">
             <PillarsVisual raised={reached} highlight={current} />
-            <p className="mt-3 text-[11px] text-muted-foreground">{reached < 3 ? `${reached} of 3 pillars standing` : "Three pillars, one structure"}</p>
+            <p className="mt-3 text-[11px] text-muted-foreground">{reached < 3 ? `${reached} of 3 pillars standing` : "All three in place"}</p>
           </div>
         </aside>
         </div>

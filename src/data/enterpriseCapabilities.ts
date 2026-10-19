@@ -64,7 +64,7 @@ export const scaleControls: Capability[] = [
   { key: 'reminders', label: 'Automatic supplier reminders', status: 'custom' },
   { key: 'dedupe', label: 'Duplicate documents caught by hash', status: 'live' },
   { key: 'idempotent', label: 'Idempotent verification (no double counting)', status: 'live' },
-  { key: 'queues', label: 'Queued, rate-limited ingestion for large uploads', status: 'custom' },
+  { key: 'queues', label: 'Large uploads queued and processed in order', status: 'custom' },
 ];
 
 export const controlAndSecurity: Capability[] = [

@@ -24,13 +24,13 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
     },
     {
       n: "02",
-      title: t("home.how.2.title", "Multiply"),
+      title: t("home.how.2.title", "Calculate"),
       body: t("home.how.2.body", "Every line is multiplied by a published emission factor. One kWh of Indian grid power is 0.710 kgCO2 (CEA CO2 Baseline Database v21.0)."),
     },
     {
       n: "03",
       title: t("home.how.3.title", "Verify"),
-      body: t("home.how.3.body", "Each document is hashed so it cannot be counted twice. More evidence narrows the uncertainty band, roughly with the square root of the number of records."),
+      body: t("home.how.3.body", "Each file gets a fingerprint, so it is never counted twice. The more bills you add, the tighter the range on your total (it narrows roughly with the square root of the number of records)."),
     },
     {
       n: "04",
@@ -129,7 +129,7 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
           {t("home.cbam.title", "Exporting to the EU? What CBAM costs your buyer")}
         </h2>
         <p className="mt-2 text-muted-foreground max-w-2xl">
-          {t("home.cbam.sub", "Since 1 January 2026, EU importers owe a certificate for each tonne of CO2 embedded in these goods, above a shrinking free allowance. Verified data from you is the cheapest way down.")}
+          {t("home.cbam.sub", "Since 1 January 2026, EU importers owe a certificate for each tonne of CO2 embedded in these goods, above a shrinking free allowance. Sending them your verified data is the cheapest way to cut that cost.")}
         </p>
         <div className="mt-6">
           <CbamExposure />
@@ -141,7 +141,7 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
         <div className="rounded-3xl bg-foreground text-background p-6 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.act.title", "Start with one bill.")}</h2>
-            <p className="mt-2 text-background/70">{t("home.act.body", "Free evidence-linked carbon report from your first bill.")}</p>
+            <p className="mt-2 text-background/70">{t("home.act.body", "Your first carbon report is free, with every evidence tied to the bill.")}</p>
           </div>
           <button onClick={onUpload} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
             <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
