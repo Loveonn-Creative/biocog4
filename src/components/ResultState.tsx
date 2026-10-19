@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { splitDocumentNotes } from "../../supabase/functions/_shared/documentChecks";
 import { createPortal } from "react-dom";
 import { Share2, Check, ArrowRight, Info, Zap, Fuel, FileText, Building2 } from "lucide-react";
 import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from "./GreenCategoryBadge";
@@ -104,7 +105,9 @@ export const ResultState = ({ type: _type, amount: _amount, extractedData, onCon
   const counted = lines.filter((li) => typeof li.co2Kg === "number" && typeof li.quantity === "number" && typeof li.emissionFactor === "number");
   const charges = lines.filter((li) => li.guidance?.status === "bill_charge");
   const others = lines.filter((li) => !counted.includes(li) && !charges.includes(li));
-  const flags = extractedData?.validationFlags ?? [];
+  // Checks count only what makes the document weaker; notes on how a value
+  // was read are listed under them but not counted.
+  const { checks: flags, info: readNotes } = splitDocumentNotes(extractedData?.validationFlags ?? []);
   const bill = extractedData?.electricityBill;
   const isElectricity = !!bill || extractedData?.emissionCategory === "electricity" || counted.some((l) => /kwh/i.test(l.unit ?? ""));
   const needsKwh = !hasRecords && guide?.blocker === "kvah_needs_kwh";
@@ -227,11 +230,21 @@ export const ResultState = ({ type: _type, amount: _amount, extractedData, onCon
       ),
     });
   }
-  if (flags.length) {
+  if (flags.length || readNotes.length) {
     details.push({
       title: "Checks",
-      summary: `${flags.length} on this document`,
-      body: <ul className="list-disc space-y-1 pl-5 text-muted-foreground">{flags.map((f, i) => <li key={i}>{f}</li>)}</ul>,
+      summary: flags.length ? `${flags.length} on this document` : "None",
+      body: (
+        <div className="space-y-3">
+          {flags.length > 0 && <ul className="list-disc space-y-1 pl-5 text-muted-foreground">{flags.map((f, i) => <li key={i}>{f}</li>)}</ul>}
+          {readNotes.length > 0 && (
+            <div>
+              <p className="text-xs font-medium text-foreground">How it was read</p>
+              <ul className="mt-1 list-disc space-y-1 pl-5 text-xs text-muted-foreground">{readNotes.map((f, i) => <li key={i}>{f}</li>)}</ul>
+            </div>
+          )}
+        </div>
+      ),
     });
   }
   if (extractedData) {

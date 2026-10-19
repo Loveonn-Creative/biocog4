@@ -368,6 +368,63 @@ describe('electricity bill reader: kVAh, charges, handwritten bills and meter ph
     expect(JSON.stringify(r.body.data)).not.toMatch(/HSN code/i);
   });
 
+  test('bill totals, arrears and the energy charge line are not counted as bill charges', async () => {
+    const lt = (energyLine: Row) => ({
+      documentType: 'Electricity Bill', vendor: 'MSEDCL', date: '2026-09-05', invoiceNumber: 'LT-5', amount: '38,700', currency: 'INR',
+      billingPeriodStart: '2026-08-01', billingPeriodEnd: '2026-08-31',
+      unitsConsumedKwh: 4200, unitsConsumedUnit: 'kWh', unitsConsumedText: 'Units Consumed: 4,200 kWh',
+      lineItems: [
+        { description: 'Units consumed', hsn_code: '2716', quantity: 4200, unit: 'kWh' }, energyLine,
+        { description: 'Fixed Charges', total: 4050 }, { description: 'Fuel Adjustment Charge', total: 1260 },
+        { description: 'Electricity Duty', total: 1890 }, { description: 'Arrears', total: 0 },
+        { description: 'Net Amount Payable', total: 38700 },
+      ],
+    });
+    ocr = lt({ description: 'Energy Charges', total: 31500 });
+    const a = await upload('lt-a');
+    // A fresh account state, so the second reading is read, not matched to the first.
+    for (const k of Object.keys(db)) delete db[k];
+    ocr = lt({ description: 'Energy Charges', total: 31500, quantity: 4200, unit: 'kWh' });
+    const b = await upload('lt-b');
+    expect(b.body.isDuplicate).toBeUndefined();
+    expect(b.body.data.lineItems.find((l: any) => l.description === 'Energy Charges')?.guidance?.status).not.toBe('bill_charge');
+    for (const r of [a, b]) {
+      expect(r.body.data.guidance.billCharges).toBe(3);
+      expect(r.body.data.totalCO2Kg).toBeCloseTo(2982, 6);
+    }
+  });
+
+  test('a second photo of a counted electricity bill with a misread amount and no bill number is counted once', async () => {
+    const bill = (extra: Row) => ({
+      documentType: 'Electricity Bill', vendor: 'MSEDCL', supplierGstin: '27AAECM2933K1ZB', date: '2026-09-05', currency: 'INR',
+      billingPeriodStart: '2026-08-01', billingPeriodEnd: '2026-08-31',
+      unitsConsumedKwh: 4200, unitsConsumedUnit: 'kWh', unitsConsumedText: 'Units Consumed: 4,200 kWh',
+      lineItems: [{ description: 'Units consumed', hsn_code: '2716', quantity: 4200, unit: 'kWh' }],
+      ...extra,
+    });
+    ocr = bill({ invoiceNumber: 'LT-5', amount: '38,700' });
+    const first = await upload('photo-1');
+    ocr = bill({ invoiceNumber: null, amount: '36,700' });
+    const r = await upload('photo-2');
+    expect(r.body).toMatchObject({ isDuplicate: true, duplicateReason: 'same_invoice', documentHash: first.body.documentHash });
+    expect(db.emissions).toHaveLength(1);
+  });
+
+  test('a different month from the same supplier is not taken for the counted bill', async () => {
+    const bill = (start: string, end: string) => ({
+      documentType: 'Electricity Bill', vendor: 'MSEDCL', supplierGstin: '27AAECM2933K1ZB', date: '2026-09-05', currency: 'INR', amount: '38,700',
+      billingPeriodStart: start, billingPeriodEnd: end,
+      unitsConsumedKwh: 4200, unitsConsumedUnit: 'kWh', unitsConsumedText: 'Units Consumed: 4,200 kWh',
+      lineItems: [{ description: 'Units consumed', hsn_code: '2716', quantity: 4200, unit: 'kWh' }],
+    });
+    ocr = bill('2026-08-01', '2026-08-31');
+    await upload('aug');
+    ocr = bill('2026-09-01', '2026-09-30');
+    const r = await upload('sep');
+    expect(r.body.isDuplicate).toBeUndefined();
+    expect(db.emissions).toHaveLength(2);
+  });
+
   test('handwritten bill: read normally, labelled, one data-quality level lower', async () => {
     ocr = { ...diesel('100', 'HW-1'), documentCapture: 'handwritten' };
     const r = await upload('hw');
