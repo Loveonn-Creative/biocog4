@@ -1,0 +1,64 @@
+{
+  "slug": "eu-battery-due-diligence-indian-suppliers",
+  "q": "Does the EU Battery Regulation's raw material due diligence apply to Indian battery suppliers, and when?",
+  "title": "EU battery due diligence for Indian suppliers",
+  "short": "Not directly. The duty falls on the company that places batteries on the EU market, usually the EU importer, and it now applies from 18 August 2027 after the 2025 postponement. Indian cell, pack and mineral suppliers will still be asked to prove where their cobalt, lithium, nickel and natural graphite come from.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Battery and cell makers, and cobalt, lithium, nickel and graphite traders",
+  "sections": [
+    {
+      "h": "Who carries the legal duty",
+      "ul": [
+        "Articles 47 to 53 of Regulation (EU) 2023/1542 put due diligence on the economic operator that places a battery on the EU market or puts it into service.",
+        "For a battery made in India, that is normally the EU importer, or an EU entity of the Indian maker that sells under its own name.",
+        "Operators with net turnover below EUR 40 million, and not part of a larger group above that, are exempt under the current text. A Commission proposal of May 2025, COM(2025) 501, would raise the threshold to EUR 150 million; check EUR-Lex for whether it has been adopted."
+      ]
+    },
+    {
+      "h": "When it applies",
+      "p": [
+        "Regulation (EU) 2025/1561 moved the start of the due diligence obligations from 18 August 2025 to 18 August 2027, and the Commission's guidelines to 26 July 2026. The obligations themselves did not change. From that date the operator's policy must be verified by a notified body, so buyers will ask suppliers for data before then. The battery passport, a separate duty, starts on 18 February 2027."
+      ]
+    },
+    {
+      "h": "Which materials are covered",
+      "p": [
+        "Cobalt, lithium, nickel and natural graphite, and chemical compounds based on them. The policy must address social and environmental risks such as child labour, forced labour, and harm to water, soil and biodiversity, in line with the OECD Due Diligence Guidance for responsible mineral supply chains."
+      ]
+    },
+    {
+      "h": "What an Indian supplier should get ready",
+      "ol": [
+        "A written supply chain policy that follows the OECD guidance.",
+        "A map of your mineral chain: which refiner, smelter or cell maker supplied each lot, with country of origin.",
+        "Purchase records and certificates of origin by lot.",
+        "A process to flag and act on risks found in the chain.",
+        "Readiness for the EU buyer's questionnaire and audits, since the operator's due diligence policy must be verified by a notified body."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your purchase invoices and keeps them as a dated, fingerprinted record by supplier, which helps answer an EU buyer's questions on what was bought, from whom and when.",
+  "links": [
+    {
+      "label": "EU battery passport for Indian exporters",
+      "to": "/answers/eu-battery-passport-indian-battery-exporters"
+    },
+    {
+      "label": "Does CSDDD still apply after the Omnibus",
+      "to": "/answers/does-csddd-still-apply-after-omnibus"
+    },
+    {
+      "label": "Product compliance",
+      "to": "/product-compliance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Articles 47 to 53, as amended by Regulation (EU) 2025/1561 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewNote": "Date per Regulation (EU) 2025/1561 (in force 31 July 2025). Turnover threshold EUR 40 million in force; COM(2025) 501 proposes EUR 150 million and was still in negotiation in 2026. Check EUR-Lex.",
+  "reviewed": "2026-10-18"
+}

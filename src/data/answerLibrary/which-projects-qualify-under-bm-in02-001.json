@@ -1,0 +1,85 @@
+{
+  "slug": "which-projects-qualify-under-bm-in02-001",
+  "q": "Which factory projects qualify under CCTS methodology BM IN02.001, and which are excluded?",
+  "title": "Which projects fit CCTS BM IN02.001?",
+  "short": "BM IN02.001 covers energy efficiency measures at industrial, mining and mineral production facilities, such as efficient motors, pumps and boilers, installed new or as retrofits, and projects that combine efficiency with fuel switching. Renewable power, biomass energy, hydrogen and biogas projects belong under other BEE methodologies.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owner, plant engineer, energy consultant",
+  "sections": [
+    {
+      "h": "Projects that usually fit",
+      "ul": [
+        "Efficient motors, pumps, fans, compressors and drives, where the saving shows up as lower grid or captive electricity use.",
+        "A more efficient boiler, thermic fluid heater or furnace, whether it replaces an old unit or goes into a new line.",
+        "Process changes that cut energy in one step or a series of steps, such as drying, heating or melting.",
+        "Recovering waste heat inside the plant to replace fuel or power.",
+        "Efficiency work combined with a switch to a lower-carbon fuel for the same duty, such as coal or furnace oil to PNG."
+      ]
+    },
+    {
+      "h": "Projects that belong under a different BEE methodology",
+      "ul": [
+        "Grid-connected solar, wind or other renewable electricity: BM EN01.001.",
+        "Electricity or heat from biomass, including a boiler that moves to biomass: check BM EN01.003 first.",
+        "Hydrogen from electrolysis (BM EN01.002) or from biogas methane (BM IN02.002).",
+        "Landfill gas and compressed biogas: the BM WA03 series."
+      ],
+      "p": [
+        "Match the project to the list before you pay anyone to draft a design document."
+      ]
+    },
+    {
+      "h": "Conditions to test before you go further",
+      "ol": [
+        "Can the saving be told apart from everything else? The methodology asks that the effect of the measures be clearly accounted for and separated from changes in energy use caused by other factors, such as output or product mix.",
+        "Is the facility existing or new? BM IN02.001 treats a facility as existing only if it has run for at least three years right before the project start date, which also gives you the history a baseline needs.",
+        "Can you show the before and after? You need fuel and electricity quantities and output for the same boundary, from bills, meters and production logs.",
+        "Does the fuel switch cut carbon per unit of heat? A switch to a fuel with more carbon per unit of energy produces no reduction to claim.",
+        "Is your company an obligated entity under CCTS compliance targets? The offset mechanism is meant for entities outside the compliance targets, so check with BEE first.",
+        "Is the same reduction already claimed elsewhere, for example under Verra or Gold Standard? Claiming it twice is double counting."
+      ]
+    },
+    {
+      "h": "What the methodology text decides",
+      "p": [
+        "BM IN02.001 is BEE's adaptation of the CDM small-scale methodology AMS-II.D. Size limits, how a capacity increase is treated, leakage and the monitored parameters are set in the BEE document itself, and in the tools it calls, such as BM-T-001 for the baseline and additionality. Read the version you register under on beeindia.gov.in before you size the project or promise anyone credits."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel and electricity bills into a dated monthly record of consumption, each figure calculated as activity times an IPCC 2006 or CEA factor and tied to its source file. That gives a BM IN02.001 project bill-backed baseline and monitoring data from the first month.",
+  "links": [
+    {
+      "label": "BEE approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Can an MSME earn CCTS offset credits?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Proving additionality for an efficiency project",
+      "to": "/answers/prove-additionality-energy-efficiency-project"
+    },
+    {
+      "label": "Leakage when old equipment is reused",
+      "to": "/answers/leakage-when-old-equipment-is-reused"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE methodology BM IN02.001, Energy efficiency and fuel switching measures for industrial facilities, version 1.0, and the approved list updated 7 July 2026 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "BEE Detailed Procedure for the Offset Mechanism under CCTS",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Carbon Credit Trading Scheme, 2023, S.O. 2825(E), as amended (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked against BM IN02.001 version 1.0 (BEE): scope, the three-year existing facility definition, the separability condition and its AMS-II.D basis. Size limits and capacity rules were not quoted because the full BEE text could not be read; BEE revises methodologies by notice, so confirm the version in force."
+}

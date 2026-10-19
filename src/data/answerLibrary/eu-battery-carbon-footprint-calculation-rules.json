@@ -1,0 +1,87 @@
+{
+  "slug": "eu-battery-carbon-footprint-calculation-rules",
+  "q": "How is the carbon footprint of a battery calculated under the EU Battery Regulation?",
+  "title": "EU Battery Regulation carbon footprint maths",
+  "short": "Under Article 7 and Annex II of Regulation (EU) 2023/1542, a battery's carbon footprint is its life cycle greenhouse gas emissions, leaving out the use stage, divided by the total energy it delivers over its service life, in kg CO2e per kWh. The detailed rules wait on a delegated act not yet adopted in October 2026.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian cell and pack makers, EV and e-rickshaw battery exporters",
+  "sections": [
+    {
+      "h": "The functional unit",
+      "p": [
+        "Annex II sets the functional unit as one kWh of total energy provided by the battery over its service life. Total energy is roughly usable energy per cycle times the number of cycles over the expected life. A long-life battery spreads the same manufacturing emissions over more kWh, so durability lowers the declared figure."
+      ]
+    },
+    {
+      "h": "Life cycle stages that count",
+      "ul": [
+        "Raw material acquisition and pre-processing: mining, refining and active material production, usually the largest share for lithium-ion cells.",
+        "Main product production: cell manufacture, module and pack assembly, including your plant's electricity and fuel.",
+        "Distribution to the point of sale.",
+        "End of life and recycling.",
+        "The use stage is left out, since charging emissions depend on where the battery is used, not on how the maker built it."
+      ]
+    },
+    {
+      "h": "Electricity is where Indian plants differ",
+      "p": [
+        "Cell formation, drying rooms and electrode coating use a lot of electricity. The delegated act will set how that electricity is modelled, including whether supplier-specific or contracted renewable power can replace the national grid mix. On the Indian grid, at 0.710 kg CO2 per kWh, this stage weighs more than in countries with cleaner grids, so a plant-level kWh record per batch or per kWh of cells made is worth building now."
+      ]
+    },
+    {
+      "h": "What is still open",
+      "ul": [
+        "The delegated act with the detailed method for EV batteries was due by February 2025 and had still not been adopted in October 2026. The declaration duty starts 12 months after it enters into force.",
+        "Later steps add performance classes and then maximum carbon footprint thresholds, each by a further act.",
+        "LMT and industrial batteries follow on their own timelines.",
+        "Until the act applies, use ISO 14067:2018 as a working method and record every assumption so you can recalculate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative footprint per kWh for an EV pack",
+    "lines": [
+      "Cradle-to-gate plus end of life, excluding use: 6,000 kg CO2e per pack (assumed)",
+      "Usable energy 60 kWh x 1,500 full cycles over expected life = 90,000 kWh",
+      "Carbon footprint: 6,000 / 90,000 = 0.0667 kg CO2e per kWh, about 67 g CO2e per kWh",
+      "Your plant's share: 6,00,000 kWh a month for 2,000 packs = 300 kWh per pack; 300 x 0.710 = 213 kg CO2 per pack from grid electricity"
+    ],
+    "note": "Pack emissions, cycles and plant energy are illustrative. The delegated act defines how service life and total energy are set, which may differ from a simple cycle count."
+  },
+  "senseible": "Senseible gives the plant's own electricity and fuel emissions from bills, by month, which is the main production stage input you control in a battery footprint. Cell and material footprints come from your suppliers and an LCA model.",
+  "links": [
+    {
+      "label": "EU battery passport for Indian exporters",
+      "to": "/answers/eu-battery-passport-indian-battery-exporters"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Cradle to gate or cradle to grave",
+      "to": "/answers/cradle-to-gate-or-cradle-to-grave"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Article 7 and Annex II, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Delegated act status checked 18 October 2026: not adopted. Check EUR-Lex for adoption and application dates before relying on any timeline."
+}

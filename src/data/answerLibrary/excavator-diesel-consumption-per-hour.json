@@ -1,0 +1,81 @@
+{
+  "slug": "excavator-diesel-consumption-per-hour",
+  "q": "How do I estimate diesel use and CO2 for an excavator or JCB from its hour meter?",
+  "title": "Excavator diesel and CO2 from hour meter",
+  "short": "Litres per hour = rated engine kW x load factor x specific fuel consumption in g per kWh / 1,000 / 0.835. Multiply by hour meter hours for litres, then by 2.68 kg CO2 per litre. Label it an estimate, and replace it with fuel slips or tank records as soon as you have them.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Contractors, quarry and construction MSMEs",
+  "sections": [
+    {
+      "h": "The three inputs",
+      "ul": [
+        "Rated engine power in kW, from the name plate or brochure (convert hp with 1 hp = 0.746 kW).",
+        "Load factor: the average share of rated power the engine actually uses. Digging and loading work runs higher than travel and idling. The US EPA NONROAD model publishes load factors by machine type; use the one for your machine or measure it.",
+        "Specific fuel consumption in g per kWh, from the engine data sheet. Diesel density of 0.835 kg per litre converts kg to litres."
+      ]
+    },
+    {
+      "h": "Why fuel records beat the estimate",
+      "p": [
+        "Idle time, operator habit, ground conditions and engine wear can move real use well away from the formula. If the machine is filled from a site tank or bowser, log litres per machine at each fill. If it is filled at a pump, keep the slips. Over a month, litres bought is the figure to report."
+      ]
+    },
+    {
+      "h": "Which scope it falls in",
+      "ul": [
+        "Machines you own or lease and fuel yourself: Scope 1, mobile combustion.",
+        "Machines hired with operator and fuel from the hire firm: Scope 3 for you, Scope 1 for the hire firm.",
+        "Hired dry, with your fuel: the fuel is your Scope 1."
+      ]
+    },
+    {
+      "h": "Sense checks",
+      "ul": [
+        "Compare estimated litres with diesel bought for the site in the same month.",
+        "Litres per hour should drop when the machine idles a lot; a figure that never changes means the load factor was guessed.",
+        "Methane and nitrous oxide from off-road diesel add a small amount; IPCC 2006 Volume 2 Chapter 3 gives factors if you report all gases as CO2e."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a 20 tonne excavator over 1,500 hours",
+    "lines": [
+      "Rated power 110 kW, load factor 0.5 and 230 g per kWh (all assumed for illustration)",
+      "Fuel: 110 x 0.5 x 230 / 1,000 = 12.65 kg per hour; 12.65 / 0.835 = 15.15 litres per hour",
+      "Year: 15.15 x 1,500 = 22,725 litres",
+      "CO2: 22,725 x 2.68 = 60,903 kg, about 60.9 t, labelled an estimate"
+    ],
+    "note": "Use the machine's rated kW, the load factor for its machine type and the engine's own fuel data."
+  },
+  "senseible": "Senseible reads diesel invoices and fuel slips and applies 2.68 kg CO2 per litre, keeping each slip as evidence. Hour based figures are recorded as estimates until fuel records replace them.",
+  "links": [
+    {
+      "label": "Estimate DG diesel from run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Diesel kg to litres",
+      "to": "/answers/diesel-kg-to-litres-conversion"
+    },
+    {
+      "label": "Construction sector",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 3.3 Off-road mobile combustion, and Chapter 2 default diesel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "US EPA NONROAD model technical reports, load factors and brake-specific fuel consumption by equipment type",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

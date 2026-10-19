@@ -1,0 +1,78 @@
+{
+  "slug": "cogged-or-synchronous-belt-energy-saving",
+  "q": "Do cogged or synchronous belts save energy over standard V-belts?",
+  "title": "Cogged or synchronous belts vs V-belts",
+  "short": "Yes, a little. The US Department of Energy's motor tip sheet puts cogged (notched) belts about 2 percent more efficient than standard V-belts, and synchronous belts at a steady 98 percent because they do not slip. On a motor running long hours, that is a cheap saving of a few thousand kWh a year.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Maintenance engineers, textile and rice mill owners",
+  "sections": [
+    {
+      "h": "Why the belt type changes power use",
+      "ul": [
+        "Standard wrapped V-belts lose energy by bending around the pulley and by slipping. The DOE tip sheet gives 95 to 98 percent peak efficiency when new, and the figure falls as they stretch and slip if tension is not kept.",
+        "Cogged belts have notches on the inside, so they bend more easily, run cooler and slip less.",
+        "Synchronous belts have teeth that mesh with toothed pulleys, so there is no slip at all."
+      ]
+    },
+    {
+      "h": "Which to choose",
+      "ul": [
+        "Cogged belt: drops into the existing V pulleys. The easy first step for fans, blowers, pumps and line shafts.",
+        "Synchronous belt: needs new toothed pulleys and good alignment. Best on steady, long running loads.",
+        "Avoid synchronous belts on shock loads, and expect more noise and vibration, which the DOE tip sheet also flags.",
+        "Cheapest moment to switch: when the old V-belt is due for replacement anyway, as the DOE tip sheet advises."
+      ]
+    },
+    {
+      "h": "The catch on fans and pumps",
+      "p": [
+        "A synchronous belt removes slip, so the driven fan or pump runs slightly faster. On a centrifugal fan or pump, power rises with the cube of speed, so a small speed gain can cancel the belt saving. Resize the pulley to keep the old speed, or confirm the flow is actually needed."
+      ]
+    },
+    {
+      "h": "How to work out the saving",
+      "ol": [
+        "Motor input kWh a year = average measured kW x running hours, or the sub meter reading.",
+        "kWh saved = motor input kWh x efficiency gain (about 2 percent for cogged, about 3 percent for synchronous against a worn V-belt; use your own estimate).",
+        "CO2 saved = kWh saved x 0.710 kg CO2 per kWh."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 30 kW blower in a rice mill",
+    "lines": [
+      "Measured average input: 25 kW x 6,000 hours = 1,50,000 kWh a year",
+      "Cogged belt at 2%: 1,50,000 x 0.02 = 3,000 kWh; CO2: 3,000 x 0.710 = 2,130 kg",
+      "Synchronous at 3%, pulley sized to keep blower speed: 4,500 kWh; CO2: 4,500 x 0.710 = 3,195 kg"
+    ],
+    "note": "Load, hours and the 3% synchronous gain are assumptions for illustration. Check the result against monthly kWh on the bill or a sub meter."
+  },
+  "senseible": "Senseible reads your electricity bills into a monthly record of kWh and CO2, so a set of belt and motor changes shows up in the plant total. Meter feeds for single drives are set up with the Senseible team for each customer.",
+  "links": [
+    {
+      "label": "IE2 to IE4 motor replacement savings",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, electric motors and drives chapter (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Belt efficiency figures from US DOE Advanced Manufacturing Office, Motor Systems Tip Sheet 5, Replace V-belts with notched or synchronous belt drives (checked 18 October 2026)."
+}

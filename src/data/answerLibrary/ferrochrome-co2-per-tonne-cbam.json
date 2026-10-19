@@ -1,0 +1,84 @@
+{
+  "slug": "ferrochrome-co2-per-tonne-cbam",
+  "q": "What are the embedded emissions of ferrochrome or ferromanganese per tonne under CBAM?",
+  "title": "Ferrochrome and ferromanganese CBAM CO2",
+  "short": "Ferrochrome and ferromanganese fall under CBAM as iron and steel goods, so only direct emissions count: mainly the CO2 from coke, coal and electrode paste used as reductants, worked out by carbon mass balance. Smelter electricity is not charged. Without your own verified data, the importer uses the default value for the CN code.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Ferroalloy producers (Odisha, Andhra Pradesh), EU importers",
+  "sections": [
+    {
+      "h": "Which ferroalloys are covered",
+      "p": [
+        "Annex I of Regulation (EU) 2023/956 lists CN heading 7202 under iron and steel, but excludes several subheadings by name. Ferromanganese (7202 11, 7202 19), ferrochromium (7202 41, 7202 49) and ferronickel (7202 60) are in. Ferrosilicon, ferro-silico-manganese and ferro-silico-chromium are among the exclusions, so a silicomanganese plant should check its exact 8-digit code before doing any CBAM work."
+      ]
+    },
+    {
+      "h": "The mass balance for direct emissions",
+      "p": [
+        "CO2 = (carbon in all reductants and electrode paste minus carbon leaving in the alloy, slag and dust) x 44/12. Each input is tonnes used in the period times its carbon content from the supplier analysis or your lab. Add CO2 from fuel burnt in preheaters, ladle heating or sinter and pellet plants inside the installation, and from carbonate fluxes if you use them."
+      ]
+    },
+    {
+      "h": "Why electricity is left out",
+      "p": [
+        "For iron and steel goods the definitive period counts direct emissions only. A submerged arc furnace uses a lot of electricity per tonne, but that indirect CO2 is not charged, even from a captive power plant. Keep the electricity figure anyway: EU buyers often want the full footprint, and the Commission is required to assess extending indirect emissions to more goods."
+      ]
+    },
+    {
+      "h": "Actual data or default value",
+      "ul": [
+        "Default values are set by CN code and country in Implementing Regulation (EU) 2025/2621, with a mark-up that rises each year.",
+        "Reported actual emissions, monitored by the installation operator and verified, usually cost the importer less than defaults when your reductant use is efficient.",
+        "Ferroalloys made with high-carbon reductants and little carbon in the product sit at the top of the range, so compare your mass balance with the default before choosing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative mass balance for one tonne of high-carbon ferrochrome",
+    "lines": [
+      "Metallurgical coke: 550 kg x 85% carbon = 467.5 kg C",
+      "Electrode paste: 25 kg x 85% carbon = 21.25 kg C",
+      "Carbon in the alloy: 1,000 kg x 7% = 70 kg C; carbon in slag assumed negligible",
+      "Net carbon: 467.5 + 21.25 minus 70 = 418.75 kg C",
+      "Direct CO2: 418.75 x 44/12 = 1,535 kg, about 1.54 t CO2 per tonne of alloy",
+      "Not counted for CBAM: 3,800 kWh x 0.710 = 2,698 kg CO2 from grid electricity"
+    ],
+    "note": "Inputs and carbon contents are assumed for illustration. Use measured consumption and analyses for your furnace, and add any fuel combustion inside the installation."
+  },
+  "senseible": "Senseible's CBAM cost calculator shows certificate cost from 2026 to 2034 with default value mark-ups, and it reads coke, coal and fuel invoices and electricity bills into a plant record. CBAM data reports it drafts are self-declared.",
+  "links": [
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "Where to find CBAM default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Graphite electrode CO2 in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated, Annex I (CN 7202) and Annex II",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values and mark-ups",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 4.3, Ferroalloy production",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CBAM default values, mark-ups and the goods list can be revised; check Annex I as amended and the current Implementing Regulation before relying on this page."
+}

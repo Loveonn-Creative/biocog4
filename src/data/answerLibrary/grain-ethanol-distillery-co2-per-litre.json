@@ -1,0 +1,82 @@
+{
+  "slug": "grain-ethanol-distillery-co2-per-litre",
+  "q": "What is the carbon intensity of grain ethanol from an Indian distillery per litre?",
+  "title": "Grain ethanol carbon intensity per litre",
+  "short": "It depends mostly on the boiler fuel and how you split emissions with DDGS. Add grain farming, boiler fuel and electricity, allocate between ethanol and DDGS by energy or value, and divide by litres. In our illustrative coal fired example, the plant's own energy adds about 1.1 kg CO2 per litre before farming.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Grain distilleries, oil marketing company suppliers and SAF developers",
+  "sections": [
+    {
+      "h": "The parts of the figure",
+      "ul": [
+        "Grain: broken rice or maize, with fertiliser N2O, field diesel and drying. Use the supplier or a documented regional estimate.",
+        "Boiler fuel: coal, rice husk or other biomass. Coal is fossil; biomass CO2 is biogenic and only its methane and nitrous oxide count.",
+        "Electricity: grid, or captive power from the boiler through a turbine.",
+        "Chemicals and enzymes, and transport of grain in and ethanol out."
+      ]
+    },
+    {
+      "h": "Splitting with DDGS",
+      "p": [
+        "Distillers dried grains with solubles are a real co-product sold as feed. ISO 14067 asks you to avoid allocation first, by system expansion, and otherwise split by a physical or economic basis. Energy content and economic value are both used for ethanol and DDGS; the choice can move the result by tens of percent, so state it and keep it."
+      ]
+    },
+    {
+      "h": "From kg per litre to grams per MJ",
+      "p": [
+        "Fuel programmes such as ICAO CORSIA express life cycle values in grams CO2e per MJ of fuel. Ethanol holds about 21.1 MJ per litre (26.8 MJ per kg x 0.789 kg per litre), so g CO2e per litre divided by 21.1 gives g per MJ. CORSIA default values cover SAF pathways, such as alcohol to jet, not ethanol sold for blending, and ICAO revises them."
+      ]
+    },
+    {
+      "h": "Levers a distillery controls",
+      "ul": [
+        "Moving the boiler from coal to biomass, which takes most fossil CO2 out of the plant share.",
+        "Heat integration and multi effect evaporation to cut steam per litre.",
+        "Measured coal heating value instead of a default, since Indian coal varies widely."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy share for one day",
+    "lines": [
+      "Output: 1,00,000 litres ethanol and 90 t DDGS",
+      "Coal: 50 t x 2.42 kg CO2 per kg = 1,21,000 kg; grid power: 20,000 kWh x 0.710 = 14,200 kg; total 1,35,200 kg",
+      "Economic split at Rs 70 a litre ethanol and Rs 20 a kg DDGS: 70 lakh / 88 lakh = 79.5% to ethanol",
+      "Ethanol share: 1,35,200 x 0.795 = about 1,07,545 kg; per litre: about 1.08 kg CO2",
+      "In g per MJ: 1,075 g / 21.1 MJ = about 51 g CO2 per MJ, before grain farming"
+    ],
+    "note": "Quantities and prices are illustrative. The 2.42 kg per kg coal factor is the IPCC 2006 default; a lower grade coal emits less per kg, so use measured heating value where you have it."
+  },
+  "senseible": "Senseible reads the distillery's coal or biomass and electricity invoices and calculates the plant's own fossil CO2, keeping biomass CO2 as biogenic. The DDGS split and grain data come from your records.",
+  "links": [
+    {
+      "label": "Sugar mill bagasse cogeneration",
+      "to": "/answers/sugar-mill-bagasse-cogeneration-emissions"
+    },
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "ICAO revises the CORSIA default life cycle values and methodology; check the current document before comparing with them.",
+  "reviewed": "2026-10-18"
+}

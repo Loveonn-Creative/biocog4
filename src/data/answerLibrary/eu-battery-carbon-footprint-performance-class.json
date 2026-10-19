@@ -1,0 +1,67 @@
+{
+  "slug": "eu-battery-carbon-footprint-performance-class",
+  "q": "What are carbon footprint performance classes and maximum thresholds under the EU Battery Regulation?",
+  "title": "EU battery footprint classes and thresholds",
+  "short": "Article 7 of the EU Battery Regulation brings carbon footprint rules in three steps: first a declared footprint, then a performance class on the label, then a maximum footprint above which the battery cannot be sold in the EU. The class boundaries and the threshold values are set later in delegated acts.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Battery exporters and Indian suppliers to EU importers",
+  "sections": [
+    {
+      "h": "Which batteries are covered",
+      "p": [
+        "Electric vehicle batteries, light means of transport batteries (e-bikes, e-scooters) and rechargeable industrial batteries above 2 kWh. Industrial batteries with exclusively external storage are left out. Portable consumer batteries and starter batteries are not covered by Article 7."
+      ]
+    },
+    {
+      "h": "The three steps",
+      "ol": [
+        "Declaration: the battery carries a carbon footprint figure for the model and plant, calculated by the method in Annex II and the delegated act, in kg CO2e per kWh of total energy the battery provides over its service life.",
+        "Performance class: the label shows which class the battery falls in, with the best performers in the top class. The number of classes and their limits come from a delegated act.",
+        "Maximum threshold: batteries with a footprint above a set limit cannot be placed on the EU market. That limit also comes from a delegated act."
+      ]
+    },
+    {
+      "h": "Why the dates are not fixed",
+      "p": [
+        "Each step applies from a date in the regulation or a set period after the relevant delegated act, whichever is later, and the steps start at different times for EV, industrial and LMT batteries. The calculation method act for EV batteries had not been adopted when we checked in October 2026, so the first step has not started and every later step moves with it. Check the current acts on EUR-Lex before you quote a date to a customer."
+      ]
+    },
+    {
+      "h": "What an Indian supplier should prepare now",
+      "ul": [
+        "Plant-level energy data per cell and module line: electricity by source, fuels and process gases, so footprint figures can be specific to your plant rather than defaults.",
+        "Material inputs per kWh of capacity, with supplier data for cathode, anode and electrolyte materials.",
+        "A stable boundary and allocation method, so a later class or threshold check uses the same numbers your declaration did.",
+        "The figure is CO2e, covering all greenhouse gases, not only CO2 from fuel and power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity, fuel and purchase invoices into a dated record of plant energy and materials, the activity data a battery footprint draws on. The footprint itself is calculated under the Annex II method and checked through the regulation's conformity assessment.",
+  "links": [
+    {
+      "label": "EU battery passport for Indian exporters",
+      "to": "/answers/eu-battery-passport-indian-battery-exporters"
+    },
+    {
+      "label": "EU rules besides CBAM asking for carbon data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    },
+    {
+      "label": "LCA vs product carbon footprint",
+      "to": "/answers/lca-vs-product-carbon-footprint"
+    },
+    {
+      "label": "What to send when a buyer asks for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Article 7 and Annex II, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: the Article 7 delegated act on the calculation method for EV batteries had not been adopted, and no class boundaries or thresholds exist yet. Recheck EUR-Lex before relying on any date.",
+  "reviewed": "2026-10-18"
+}

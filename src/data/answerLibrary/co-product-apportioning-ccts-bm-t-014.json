@@ -1,0 +1,83 @@
+{
+  "slug": "co-product-apportioning-ccts-bm-t-014",
+  "q": "How does BEE tool BM-T-014 split emissions between a main product and co-products in a CCTS project?",
+  "title": "Co-product split under CCTS tool BM-T-014",
+  "short": "BM-T-014 is BEE's tool for sharing a process's emissions between the main product a CCTS methodology credits and its co-products or by-products. You use it only when your methodology calls it. Its CDM counterpart allows a split by market price, substitution, or energy content when all outputs are fuels.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Process engineers and consultants in sugar, distillery, biogas and chemicals",
+  "sections": [
+    {
+      "h": "When the tool applies",
+      "p": [
+        "Apportioning matters when one process makes more than one useful output and only one of them is used or credited in the project. A plant that makes a single product does not need it, and you cannot invoke it on your own to shrink project emissions. The methodology text says whether apportioning is required, optional or not allowed, so start there."
+      ]
+    },
+    {
+      "h": "How the CDM counterpart splits emissions",
+      "p": [
+        "BM-T-014 (version 1.0, March 2025) has the same title as the CDM apportioning tool (Tool 25). Its rules could not be read for this page, so the points below are CDM practice that BEE's tool may differ from."
+      ],
+      "ul": [
+        "Main product: the output the project uses. Co-products earn similar revenue to it; by-products earn less; residues earn little or nothing.",
+        "Market price: emissions shared in proportion to the value of each output, which needs transparent, reliable price data.",
+        "Substitution: each co-product takes the emissions of the usual way of making it, which needs that route and its emissions to be clear.",
+        "Energy content: only when all the outputs are fuels, as in a refinery.",
+        "A residue that is dumped or left to rot gets no share. Putting all emissions on the main product is always the conservative choice."
+      ]
+    },
+    {
+      "h": "Steps for a price based split",
+      "ol": [
+        "List every output and its quantity from production records.",
+        "Take the ex works price of each from sales invoices for the same period.",
+        "Main product share = its value divided by the value of all outputs.",
+        "Apply that share to the process emissions the methodology names, and keep the basis for the whole crediting period."
+      ]
+    },
+    {
+      "h": "Why a footprint split will not do",
+      "p": [
+        "An ISO 14067 product footprint avoids allocation first and can split by mass. A CCTS project uses the rule its tool fixes, because the aim is a conservative, repeatable credit figure, not a product label. Do not reuse a footprint split in a project document without checking it against BM-T-014."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: why the basis matters",
+    "lines": [
+      "Process emissions to share: 1,000 t CO2",
+      "Main product: 400 t at Rs 50,000 a tonne = Rs 2 crore; co-product: 600 t at Rs 5,000 a tonne = Rs 30 lakh",
+      "By market price: 2 crore / 2.3 crore = 87%, so about 870 t CO2 on the main product",
+      "Conservative option, all on the main product: 1,000 t CO2",
+      "A mass split, used in some footprints, would give only 400 t, which is why it should not be carried into a project document unchecked"
+    ],
+    "note": "Figures are illustrative. Use the basis the tool and methodology allow."
+  },
+  "senseible": "Senseible reads the fuel and electricity bills behind the process emissions and keeps them as a dated record. Production quantities and prices come from your plant records.",
+  "links": [
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "CHP emissions: electricity and steam",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "BEE approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-014, apportioning emissions from production processes between main product and co- and by-product, version 1.0 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "UNFCCC CDM Methodological Tool 25, apportioning of emissions from production processes between main product and co- and by-product",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewNote": "BM-T-014 text could not be read on 18 October 2026; allocation options are given as CDM Tool 25 practice only. Check the BM-T-014 version in force and which methodologies call it.",
+  "reviewed": "2026-10-18"
+}

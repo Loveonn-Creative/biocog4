@@ -1,0 +1,81 @@
+{
+  "slug": "pump-efficiency-test-and-replacement-savings",
+  "q": "How do I test a pump's efficiency and work out the CO2 saved by replacing it?",
+  "title": "Pump efficiency test and replacement CO2",
+  "short": "Measure flow, total head and input power at the pump's normal duty. Hydraulic power in kW is flow (m3/s) x head (m) x 1,000 x 9.81 / 1,000; divide it by input power for wire-to-water efficiency. The saving from a new pump is the input power difference at the same duty x hours x 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers and utility managers",
+  "sections": [
+    {
+      "h": "Take the three measurements",
+      "ul": [
+        "Flow: an ultrasonic clamp-on meter or a calibrated flow meter, in m3 per hour.",
+        "Total head: discharge pressure minus suction pressure, converted to metres of water (1 bar is about 10.2 m), plus the height difference between the gauges.",
+        "Input power: a power analyser on the motor terminals, not the motor nameplate, since a pump rarely runs at rated load."
+      ]
+    },
+    {
+      "h": "Pump efficiency or wire-to-water efficiency",
+      "p": [
+        "Hydraulic power divided by electrical input gives the efficiency of motor and pump together. To isolate the pump, divide by input power times motor efficiency from the motor's data sheet at that load. Compare the pump figure with the manufacturer's curve at the same flow and head; a large drop points to wear, a damaged impeller or recirculation."
+      ]
+    },
+    {
+      "h": "Check the duty point before buying a new pump",
+      "p": [
+        "Many plant pumps are oversized and throttled with a valve. A new pump selected for the old rating repeats the waste. If the discharge valve is partly closed most of the time, trimming the impeller, fitting a smaller pump or adding speed control may save more than a like-for-like replacement. Select the new pump so the real duty sits near its best efficiency point, and check the BEE star label where one applies to that pump type."
+      ]
+    },
+    {
+      "h": "Work out the saving",
+      "ol": [
+        "New input power = hydraulic power at the same duty / new wire-to-water efficiency from the new pump curve and motor data sheet.",
+        "Annual kWh saved = (old input kW minus new input kW) x running hours.",
+        "CO2 saved = kWh saved x 0.710 kg per kWh for grid power.",
+        "Confirm it later with sub-meter readings or the bills, and say it is an estimate until then."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: cooling water pump",
+    "lines": [
+      "Measured: 50 m3 per hour (0.01389 m3/s), total head 40 m, input power 11.0 kW",
+      "Hydraulic power: 0.01389 x 40 x 1,000 x 9.81 / 1,000 = 5.45 kW",
+      "Wire-to-water efficiency: 5.45 / 11.0 = 49.5%; with a 90% efficient motor, pump efficiency = 5.45 / (11.0 x 0.90) = 55.1%",
+      "New pump and IE3 motor at the same duty, 68% wire-to-water (assumed from curves): 5.45 / 0.68 = 8.01 kW",
+      "Saving: (11.0 minus 8.01) x 6,000 hours = 17,940 kWh a year",
+      "CO2: 17,940 x 0.710 = 12,737 kg, about 12.7 t a year"
+    ]
+  },
+  "senseible": "Senseible turns your electricity bills into a monthly kWh and CO2 record, so a pump change shows up against the months before it. Meter feeds for individual machines can be set up with the Senseible team.",
+  "links": [
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Borewell pumping energy per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "IE2 to IE4 motor replacement",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, chapter on pumps and pumping systems (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

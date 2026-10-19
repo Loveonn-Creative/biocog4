@@ -1,0 +1,86 @@
+{
+  "slug": "natural-rubber-sheet-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of ribbed smoked sheet or block natural rubber per kg?",
+  "title": "Natural rubber footprint per kg (RSS, block)",
+  "short": "Add the plantation share and the processing share. Plantation: fertiliser nitrous oxide per hectare divided by dry rubber yield per hectare. Processing: smokehouse or dryer fuel, acid and electricity per kg. Include land use change only if the plantation replaced forest or other land in the last 20 years.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Rubber processors, dealers and tyre company procurement",
+  "sections": [
+    {
+      "h": "Plantation share",
+      "p": [
+        "Nitrogen fertiliser drives most of the field emissions. The IPCC 2006 Guidelines, Volume 4, Chapter 11, give direct N2O as 1 percent of nitrogen applied, plus indirect N2O from the 10 percent that volatilises (at 1 percent) and the 30 percent that leaches (at 0.75 percent). Convert N2O as N to N2O by multiplying by 44/28. Add the supplier's factor for making the fertiliser."
+      ]
+    },
+    {
+      "h": "Processing share",
+      "ul": [
+        "Ribbed smoked sheet: the smokehouse burns rubber wood or other biomass. That CO2 is biogenic and shown on its own line; the smokehouse's methane and nitrous oxide go into the total.",
+        "Block rubber (ISNR): crumbing, washing and drying use grid electricity and often diesel or oil fired dryers, which are fossil.",
+        "Formic or acetic acid for coagulation, and packaging, from supplier factors.",
+        "Transport of latex or sheet from smallholders to the processor."
+      ]
+    },
+    {
+      "h": "Land use change",
+      "p": [
+        "If the plantation was established on cleared forest or grassland within the last 20 years, the lost carbon stock is spread over 20 years and added. That 20 year look back is used by the GHG Protocol Product Standard and PAS 2050. Older plantations carry no land use change emissions. The carbon stored in rubber trees is not netted off the product footprint."
+      ]
+    },
+    {
+      "h": "What makes the figure credible",
+      "ol": [
+        "Yield and fertiliser use from estate records or a smallholder sample, not national averages, where possible.",
+        "Processing fuel and electricity for the same period as output.",
+        "Planting dates and land history, which also support EU deforestation regulation checks for rubber."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plantation N2O and block processing, per kg dry rubber",
+    "lines": [
+      "Fertiliser: 100 kg N per hectare; yield 1,500 kg dry rubber per hectare",
+      "N2O as N: direct 1.0 + volatilised 0.10 + leached 0.225 = 1.325 kg; x 44/28 = 2.08 kg N2O",
+      "2.08 x 265 = 552 kg CO2e per hectare; / 1,500 kg = 0.37 kg CO2e per kg",
+      "Processing: 0.25 kWh x 0.710 = 0.18 kg CO2; dryer diesel 0.03 litres x 2.68 = 0.08 kg CO2",
+      "Subtotal: about 0.63 kg CO2e per kg, before fertiliser manufacture, acid, packaging and transport"
+    ],
+    "note": "Fertiliser rate, yield and processing inputs are assumptions for illustration. GWP is IPCC AR5 (N2O 265)."
+  },
+  "senseible": "Senseible reads the processor's electricity and fuel invoices and converts them to CO2, giving the processing share from documents. Plantation data comes from estate or smallholder records.",
+  "links": [
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "EUDR for coffee and rubber exporters",
+      "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide"
+    },
+    {
+      "label": "Rubber moulded part footprint",
+      "to": "/answers/rubber-moulded-part-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 11, N2O emissions from managed soils",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard, land use change",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "GHG Protocol land sector and removals guidance is being finalised and updated; check how it treats plantation land use change before publishing a claim.",
+  "reviewed": "2026-10-18"
+}

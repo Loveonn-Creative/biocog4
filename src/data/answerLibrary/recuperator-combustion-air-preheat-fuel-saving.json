@@ -1,0 +1,82 @@
+{
+  "slug": "recuperator-combustion-air-preheat-fuel-saving",
+  "q": "How much fuel does a recuperator save on a reheating or forging furnace?",
+  "title": "Recuperator fuel saving on a furnace",
+  "short": "It depends on how hot the flue gas leaves and how hot the recuperator makes the combustion air. In the worked heat balance below, preheating air to 300 C on an oil-fired furnace with flue gas at 900 C saves about 17% of fuel. Work out your own figure, then confirm it with fuel per tonne before and after.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Forging and rolling MSMEs, furnace operators",
+  "sections": [
+    {
+      "h": "Why preheated air saves fuel",
+      "p": [
+        "In a reheating or forging furnace the flue gas leaves hot, often around 900 C or more. A recuperator passes that gas through a heat exchanger and warms the combustion air. Every kJ the air brings in is a kJ the burner does not have to supply, and the hotter the flue gas, the bigger the gain."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "Fuel saving share = Q air / (NCV minus Q flue plus Q air), all per kg of fuel.",
+        "Q air is air mass per kg fuel x specific heat x (preheat temperature minus ambient). Q flue is flue gas mass per kg fuel x specific heat x (flue temperature leaving the furnace minus ambient). NCV is the fuel's net calorific value. The formula assumes the excess air and furnace output stay the same."
+      ]
+    },
+    {
+      "h": "What to measure before and after",
+      "ul": [
+        "Fuel per tonne of stock, over at least a few weeks of similar product mix and furnace hours.",
+        "Flue gas temperature at the furnace exit and after the recuperator.",
+        "Combustion air temperature at the burner, and flue O2, since excess air often creeps up after a retrofit.",
+        "Extra fan power if the recuperator needs a bigger blower, which you subtract as kWh x 0.710."
+      ]
+    },
+    {
+      "h": "Practical limits",
+      "ul": [
+        "Metallic recuperators usually limit air preheat to a few hundred degrees; ceramic recuperators and regenerative burners go higher.",
+        "Burners must be rated for hot air, and hot air raises flame temperature and NOx.",
+        "Scale, dust and leaks in the recuperator cut the saving over time, so log air temperature every shift."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: furnace oil fired reheating furnace",
+    "lines": [
+      "Furnace oil NCV: 40,400 kJ per kg (IPCC 2006 default for residual fuel oil)",
+      "Flue gas per kg oil (about 20% excess air, assumed): 17.8 kg; leaving at 900 C, ambient 30 C, specific heat 1.15 kJ per kg K: Q flue = 17.8 x 1.15 x 870 = 17,809 kJ",
+      "Combustion air per kg oil: 16.8 kg, heated to 300 C, specific heat 1.02: Q air = 16.8 x 1.02 x 270 = 4,627 kJ",
+      "Saving share = 4,627 / (40,400 minus 17,809 plus 4,627) = 4,627 / 27,218 = 17.0%",
+      "On 300,000 litres a year: 51,000 litres saved; CO2: 51,000 x 2.97 = 151,470 kg, about 151 t a year"
+    ],
+    "note": "Air and flue masses, temperatures and specific heats are assumptions for illustration; measured fuel per tonne before and after is the figure to report."
+  },
+  "senseible": "Senseible reads your furnace oil, PNG or coal invoices and shows monthly fuel and CO2, so the change after a recuperator retrofit shows against the months before. Fuel per tonne needs your production figure alongside.",
+  "links": [
+    {
+      "label": "Reheating furnace insulation savings",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    },
+    {
+      "label": "Forging footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    },
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Energy Auditor Guide Book 2, Energy Efficiency in Thermal Utilities, furnaces and waste heat recovery chapters",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (default net calorific values and CO2 factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

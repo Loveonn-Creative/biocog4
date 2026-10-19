@@ -1,0 +1,85 @@
+{
+  "slug": "servo-vs-hydraulic-injection-moulding-energy",
+  "q": "How much electricity and CO2 does a servo injection moulding machine save over a fixed-pump hydraulic one?",
+  "title": "Servo vs hydraulic moulding machine energy",
+  "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh. Savings are biggest on long cycles with long cooling or holding times.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Plastics processors and MSME owners",
+  "sections": [
+    {
+      "h": "Where the saving comes from",
+      "p": [
+        "A fixed pump hydraulic machine runs its motor at full speed through the whole cycle. When the cycle needs little oil, during cooling, holding or mould open, the surplus goes over a relief valve and turns into heat. A servo pump slows down or stops when demand drops, so it draws power only for the work done, and the oil cooler needs less water.",
+        "The barrel heater bands are a separate load. A servo pump does not change them, so heater kWh stay about the same."
+      ]
+    },
+    {
+      "h": "How to measure it fairly",
+      "ol": [
+        "Fit a kWh meter on the machine supply, covering motor and heaters, or on the motor alone if you only compare pumps.",
+        "Run the same mould, material and cycle time on both machines, or before and after a servo retrofit.",
+        "Log kWh and the weight of good parts for at least a week each, so start ups and rejects are included.",
+        "Specific energy = kWh divided by kg of good parts. Compare the two figures."
+      ],
+      "p": [
+        "EUROMAP 60.1 rates machines on a standard test cycle, which helps when comparing quotes. EUROMAP 60.2 measures kWh per kg on a real part, which is the test above. Decide on your own mould data."
+      ]
+    },
+    {
+      "h": "When a servo pays back and when it does not",
+      "ul": [
+        "Strong case: long cooling or holding times, thick walled parts, machines running two or three shifts.",
+        "Weak case: fast thin walled cycles where the pump is busy most of the time, or machines that run a few hours a day.",
+        "Payback = retrofit or price difference divided by (kWh saved a year x your energy charge per kWh). Count demand charges only if the change also lets you lower your contract demand."
+      ]
+    },
+    {
+      "h": "Be careful with brochure percentages",
+      "p": [
+        "Machine makers quote savings measured on cycles that suit their machine. Do not put a brochure percentage in a carbon report or a loan application. Use your measured before and after kWh per kg, and keep the meter logs and production records together."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 250 t machine, measured figures",
+    "lines": [
+      "Hydraulic: 0.90 kWh per kg good parts; servo: 0.55 kWh per kg (one week each, same mould)",
+      "Saving: 0.35 kWh per kg x 3,00,000 kg a year = 1,05,000 kWh",
+      "CO2: 1,05,000 x 0.710 = 74,550 kg, about 74.6 t a year",
+      "Money at Rs 8 per kWh: 1,05,000 x 8 = Rs 8,40,000 a year",
+      "Payback on a Rs 6 lakh retrofit: 6,00,000 / 8,40,000 x 12 = about 8.6 months"
+    ],
+    "note": "The kWh per kg, output, tariff and retrofit price are illustrative. Use your own measurements."
+  },
+  "senseible": "Senseible reads your electricity bills into a monthly record of kWh and CO2 at 0.710 kg per kWh, so the drop after a retrofit shows in the plant total. Machine level meter feeds are set up with the Senseible team for each customer.",
+  "links": [
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Measure savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE SME programme, cluster energy profiles for plastics processing (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

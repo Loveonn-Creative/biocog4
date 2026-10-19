@@ -1,0 +1,78 @@
+{
+  "slug": "ccts-bm-in02-001-monitoring-records",
+  "q": "What must a factory measure and keep to monitor a BM IN02.001 energy efficiency or fuel switch project?",
+  "title": "Monitoring records for a BM IN02.001 project",
+  "short": "BM IN02.001 projects work out their reductions from measured fuel, electricity and, where heat is the saving, steam data, using BEE tools BM-T-002 for fuel and BM-T-003 for electricity. The exact parameter list, units and frequencies sit in the methodology's monitoring section, so read that first and set up meters and records to match.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Plant engineers and MSME owners preparing a CCTS offset project",
+  "sections": [
+    {
+      "h": "What the methodology and its tools point to",
+      "ul": [
+        "Fuel burnt by the equipment, per fuel type. Fossil fuel CO2 is worked out with BM-T-002, BEE's tool for project or leakage CO2 emissions from fossil fuel combustion.",
+        "Electricity used by the equipment, by source. BM-T-003 covers baseline, project and leakage emissions from electricity consumption and the monitoring of electricity generation.",
+        "Thermal energy, where the project saves heat. BM IN02.001 lets this be monitored through related parameters such as fuel consumed and the quantity, temperature and pressure of steam, instead of metering energy directly.",
+        "Anything else the monitoring section lists for your project type, with the unit, source and frequency it names."
+      ]
+    },
+    {
+      "h": "Records that sit behind each number",
+      "p": [
+        "A verifier checks each monitored value against a primary record. For fuel that means purchase invoices, stock registers and daily consumption logs. For electricity it means discom bills plus sub-meter readings for the equipment itself, since the main bill covers the whole plant. For steam or output it means the boiler log and production or dispatch registers.",
+        "Keep the calibration certificate for every meter you rely on, with the last and next calibration dates. If BM IN02.001 or the tools set a calibration frequency or a rule for out-of-calibration readings, follow that."
+      ]
+    },
+    {
+      "h": "Set this up before the project starts",
+      "ol": [
+        "Download the version of BM IN02.001 you will register under from beeindia.gov.in, with BM-T-002 and BM-T-003, and list every parameter with its unit, source and frequency.",
+        "Install and calibrate sub-meters on the equipment being replaced, so you have a measured period before the change.",
+        "Fix who records each reading and where it is stored; a monitoring report written from memory will not pass.",
+        "Keep the same method every period, and note any change to meters or lab procedures with its date."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: furnace oil to PNG switch",
+    "lines": [
+      "Specific consumption before the switch, from past records: 60 L furnace oil per tonne of product (assumed)",
+      "Output this month: 500 t, so fuel the old system would have used = 500 x 60 = 30,000 L",
+      "CO2 from that fuel: 30,000 x 2.97 kg per L = 89,100 kg",
+      "PNG metered this month: 30,000 scm x 2.05 kg per scm = 61,500 kg CO2",
+      "Difference: 89,100 minus 61,500 = 27,600 kg, about 27.6 t CO2"
+    ],
+    "note": "Simple arithmetic with IPCC 2006 default factors to show which records feed the figure. It is not the BM IN02.001 equation: the registered methodology sets its own baseline, defaults and deductions, which change the result."
+  },
+  "senseible": "Senseible reads your fuel invoices, fuel slips and electricity bills into a dated monthly record, with a SHA-256 fingerprint on every file, so the fuel and electricity figures in a BM IN02.001 monitoring report have a bill-backed trail. Meter calibration certificates and production registers come from your plant records.",
+  "links": [
+    {
+      "label": "BEE approved CCTS offset methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "CCTS monitoring and verification rules",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "Measuring savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "CCTS verification agencies",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM IN02.001 Energy efficiency and fuel switching measures for industrial facilities (version 1.0, 27 March 2025), tools BM-T-002 and BM-T-003 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "BM IN02.001 version 1.0 (27 March 2025) refers to BM-T-002 and BM-T-003 and allows thermal energy to be monitored through fuel and steam parameters; its data and parameters tables were not readable when checked on 18 October 2026, so no parameter list is quoted. BEE's approved list was last updated 7 July 2026. Confirm the version in force before registering.",
+  "reviewed": "2026-10-18"
+}
