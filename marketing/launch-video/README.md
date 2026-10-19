@@ -76,3 +76,6 @@ The KYC fact (an electricity bill is accepted as address proof) is sourced to th
 - **Upload, Read, Check:** match the live site on 15 Oct 2026 (sample bill: 3,412.56 kg, which uses the live factor 0.708).
 - **Save, Use:** built from code (guest import prompt, Dashboard, Reports, Monetize).
 - **When extract-document is redeployed with 0.710:** re-check the live site and re-render.
+
+## "One bill, both sides": two-buyer launch film (46 s, 16:9 and 9:16, `twosides.html`)
+Opens on the live result screen (18 Oct 2026, factor 0.710). The same bill is Scope 2 for the factory and Scope 3 evidence for its buyer (live result copy). There is a path and a call to action for each buyer. Sharing, portal and finance-application features are not shown (custom or switched off). Sources are in the HTML comments.

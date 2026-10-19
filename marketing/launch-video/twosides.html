@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>One bill, both sides</title>
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 600; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --ink: #15171c; --muted: #6c7079; --warm: #f5eee2; --cool: #e3eaf1; --green: #1f5139; --green2: #2e9e5b; --saffron: #ef8a25; --slate: #2f4a66; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #fbfaf7; }
+.abs { position: absolute; }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .05; mix-blend-mode: multiply; pointer-events: none; z-index: 90; }
+/* the two halves */
+#warm { background: var(--warm); } #cool { background: var(--cool); }
+#gate { width: 3px; background: var(--ink); z-index: 20; }
+.side { font-family: 'JetBrains Mono'; font-size: 20px; letter-spacing: .16em; font-weight: 600; z-index: 21; white-space: nowrap; }
+/* phone with the live screen */
+#phone { width: 418px; height: 872px; border-radius: 60px; background: #121316; padding: 14px; z-index: 30;
+  box-shadow: 0 70px 110px -50px rgba(30,25,10,.55); }
+#screen { width: 390px; height: 844px; border-radius: 46px; overflow: hidden; background: #fff; position: relative; }
+#screen img { width: 390px; display: block; }
+.call { z-index: 31; }
+.call b { display: block; font-size: 112px; font-weight: 700; letter-spacing: -0.05em; line-height: .95; }
+.call span { display: block; font-family: 'JetBrains Mono'; font-size: 26px; color: var(--muted); margin-top: 10px; }
+svg.ink { position: absolute; left: 0; top: 0; overflow: visible; z-index: 31; pointer-events: none; }
+svg.ink path { fill: none; stroke-linecap: round; }
+/* the record card (same layout as the live result) */
+#rec { width: 600px; background: #fff; border-radius: 22px; padding: 28px 30px; z-index: 40; box-shadow: 0 40px 70px -40px rgba(20,25,35,.5); border: 1px solid #eee; }
+#rec .k { font-size: 23px; color: var(--muted); }
+#rec .v { font-size: 104px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-top: 6px; }
+#rec .v small { font-size: 36px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+#rec .pill { display: inline-block; margin-top: 16px; font-size: 21px; background: #f3f1ec; border-radius: 999px; padding: 5px 14px 5px 26px; position: relative; }
+#rec .pill::before { content: ''; position: absolute; left: 11px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--saffron); }
+#rec .f { font-family: 'JetBrains Mono'; font-size: 25px; color: #444; margin-top: 14px; }
+#tag { z-index: 41; font-size: 44px; font-weight: 600; white-space: nowrap; padding: 10px 20px; border-radius: 14px; color: #fff; }
+#tag small { display: block; font-size: 24px; font-weight: 500; opacity: .85; }
+#seal { z-index: 45; width: 190px; height: 190px; border-radius: 50%; border: 6px solid var(--green); color: var(--green); display: grid; place-items: center;
+  text-align: center; font-family: 'JetBrains Mono'; font-weight: 600; font-size: 22px; letter-spacing: .12em; line-height: 1.3; background: rgba(255,255,255,.75); }
+/* captions */
+.cap { z-index: 60; font-size: 64px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; }
+.cap.sm { font-size: 38px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.2; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.cap .w > span { display: inline-block; }
+.eyebrow { z-index: 60; font-family: 'JetBrains Mono'; font-size: 22px; letter-spacing: .16em; font-weight: 600; }
+.quote { z-index: 60; font-family: 'Hand'; font-size: 56px; color: var(--green); }
+/* MSME scene */
+.ask { z-index: 50; background: #fff; border-radius: 22px; border-top-left-radius: 6px; padding: 22px 28px; width: 620px; box-shadow: 0 24px 40px -30px rgba(0,0,0,.4); }
+.ask i { font-style: normal; display: block; font-size: 18px; color: var(--muted); font-weight: 500; }
+.ask b { font-weight: 500; font-size: 27px; line-height: 1.25; }
+.step { z-index: 50; background: #fff; border-radius: 18px; padding: 26px 30px; width: 400px; box-shadow: 0 24px 40px -30px rgba(0,0,0,.35); }
+.step i { font-style: normal; font-family: 'JetBrains Mono'; font-size: 19px; letter-spacing: .12em; color: var(--saffron); display: block; }
+.step b { display: block; font-size: 34px; font-weight: 600; margin-top: 6px; }
+.step .bt { margin-top: 18px; height: 58px; border-radius: 999px; background: #111; color: #fff; display: grid; place-items: center; font-size: 22px; font-weight: 600; }
+.step .r { display: flex; justify-content: space-between; font-size: 21px; color: #555; margin-top: 9px; }
+.chip { z-index: 50; font-size: 26px; font-weight: 600; color: #fff; background: var(--green); border-radius: 999px; padding: 12px 24px; white-space: nowrap; }
+/* enterprise scene */
+#tbl { z-index: 50; width: 900px; background: #fff; border-radius: 18px; padding: 20px 26px; box-shadow: 0 30px 60px -40px rgba(20,30,50,.5); }
+.tr { display: grid; grid-template-columns: 1fr .8fr 1.7fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid #edf0f3; font-size: 28px; align-items: center; }
+.tr.h { font-family: 'JetBrains Mono'; font-size: 17px; letter-spacing: .1em; color: var(--muted); }
+.tr .st { font-family: 'JetBrains Mono'; font-size: 19px; }
+.tr .st.q { color: #b0b4ba; } .tr .st.ok { color: var(--green); font-weight: 600; }
+.tr .est { color: #9aa0a8; font-style: italic; }
+/* end */
+.cta { z-index: 60; }
+.cta i { font-style: normal; font-family: 'JetBrains Mono'; font-size: 22px; letter-spacing: .14em; font-weight: 600; display: block; }
+.cta b { display: block; font-size: 76px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; margin-top: 12px; }
+.cta span { display: block; font-family: 'JetBrains Mono'; font-size: 26px; margin-top: 18px; }
+#mark { z-index: 60; font-size: 34px; background: #fbfaf7; padding: 14px 28px 14px 40px; border-radius: 999px; letter-spacing: .34em; padding-left: .34em; }
+#hB { background: #fbfaf7; padding: 26px 40px; border-radius: 26px; box-shadow: 0 30px 60px -40px rgba(0,0,0,.35); }
+.quote { background: #fbfaf7; padding: 14px 34px; border-radius: 20px; }
+#rec .pill.ok { background: #e3f3e9; color: var(--green); font-weight: 600; } #rec .pill.ok::before { background: var(--green2); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="grain"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="3"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+  <div class="abs" id="warm"></div><div class="abs" id="cool"></div><div class="abs" id="gate"></div>
+  <div class="abs side" id="sideL">THE FACTORY THAT PAID IT</div>
+  <div class="abs side" id="sideR">THE COMPANY THAT BUYS FROM IT</div>
+
+  <div class="abs" id="phone"><div id="screen"><img id="shot" src="live-result.png"></div></div>
+  <div class="abs call" id="call"><b>3.42 t CO₂e</b><span>4,820 kWh × 0.71 · Scope 2</span></div>
+  <svg class="ink" id="ink" width="1920" height="1920"></svg>
+
+  <div class="abs" id="rec"><div class="k">Emissions from this bill</div><div class="v">3.42<small>t CO₂e</small></div><div class="pill" id="pill">Verification pending</div><div class="f">4,820 kWh × 0.71 · Scope 2</div></div>
+  <div class="abs" id="tag"><span id="tagT">Scope 2</span><small id="tagS">its own electricity</small></div>
+  <div class="abs quote" id="quote">"Your buyer can use this as Scope 3 evidence once it is verified."</div>
+  <div class="abs" id="seal">VERIFIED<br>ONCE</div>
+
+  <!-- MSME -->
+  <div class="abs eyebrow" id="eyM" style="color:var(--saffron)">IF YOU RUN THE FACTORY</div>
+  <div class="abs cap" id="hM">Your bank and buyers already ask for this number.</div>
+  <div class="abs ask" id="ask1"><i>Your bank</i><b>Add your emissions baseline to the green loan file.</b></div>
+  <div class="abs ask" id="ask2"><i>EU buyer</i><b>Please send CO₂ per tonne for your 2026 shipments.</b></div>
+  <div class="abs step" id="st1"><i>01 · UPLOAD</i><b>The bill you already have</b><div class="r"><span>Photo or PDF</span><span>✓ Read</span></div></div>
+  <div class="abs step" id="st2"><i>02 · CHECK</i><b>Verify this bill</b><div class="bt">Verify this bill →</div></div>
+  <div class="abs step" id="st3"><i>03 · SEND</i><b>Bank Disclosure Report</b><div class="r"><span>Total Emissions</span><span>3.42 t</span></div><div class="r"><span>Verification Status</span><span>✓</span></div><div class="r"><span>Evidence records</span><span>1</span></div></div>
+  <div class="abs cap sm" id="lM">From bills you already keep. We read the units, not your name or address.</div>
+  <div class="abs chip" id="chipM">First report free</div>
+
+  <!-- Enterprise -->
+  <div class="abs eyebrow" id="eyE" style="color:var(--slate)">IF YOU BUY FROM SMALL SUPPLIERS</div>
+  <div class="abs cap" id="hE">Most won't finish your questionnaire. They can forward a bill.</div>
+  <div class="abs" id="tbl">
+    <div class="tr h"><span>SUPPLIER</span><span>SCOPE 3 LINE</span><span>BASED ON</span></div>
+    <div class="tr" data-r="0"><span>Demo Forgings</span><span class="val">—</span><span class="st q">questionnaire · pending</span></div>
+    <div class="tr" data-r="1"><span>Supplier 0412</span><span class="val">—</span><span class="st q">questionnaire · "N/A"</span></div>
+    <div class="tr" data-r="2"><span>Supplier 0188</span><span class="val est">estimate</span><span class="st q">labelled until a bill replaces it</span></div>
+    <div class="tr" data-r="3"><span>Supplier 0731</span><span class="val est">estimate</span><span class="st q">labelled until a bill replaces it</span></div>
+  </div>
+  <div class="abs cap sm" id="lE">Each line keeps its method, factor, source and document. The same bill can't be counted twice.</div>
+
+  <!-- both -->
+  <div class="abs cap sm" id="useL" style="color:var(--saffron)">proof for its lender and buyers</div>
+  <div class="abs cap sm" id="useR" style="color:var(--slate)">its buyer's Scope 3 evidence</div>
+  <div class="abs cap" id="hB">One bill, verified once. It counts on both sides of the sale.</div>
+  <div class="abs cta" id="ctaL"><i style="color:var(--saffron)">RUN A FACTORY?</i><b>Upload one bill.</b><span>senseible.earth</span></div>
+  <div class="abs cta" id="ctaR"><i style="color:var(--slate)">BUY FROM FACTORIES?</i><b>Send your supplier list.</b><span>senseible.earth/enterprise</span></div>
+  <div class="abs" id="mark">Senseible</div>
+</div>
+<script>
+// FACTS (verified 18 Oct 2026):
+//  - Result screen is the live senseible.earth result for the fictional sample bill: "Emissions from this bill 3.42 t CO₂e",
+//    "Verification pending", "4,820 kWh × 0.71 · Scope 2", "Verify this bill" (live extract-document v1.1, factor 0.710).
+//  - "Your buyer can use this as Scope 3 evidence once it is verified." = ResultState.tsx copy (shown when the bill carries a buyer GSTIN).
+//  - Asks: src/components/home/AskCards.tsx. "First report free": HomeStory "Free evidence-linked carbon report from your first bill".
+//  - Bank Disclosure Report fields (Total Emissions, Verification Status, Evidence records): live Reports page, checked 15 Oct 2026.
+//  - Bills: only billing details are read, never name/address/consumer numbers (AGENTS.md; extract-document prompt).
+//  - "Small suppliers rarely finish questionnaires. They can forward an electricity bill." and "Method, factor, source and the
+//    document, for every supplier line. The same bill cannot be counted twice." = src/pages/lead/SupplierEvidence.tsx.
+//  - Estimates "labelled until real data replaces them" = Enterprise.tsx hero. Live today: documents to verified records; supplier
+//    portal/sharing is custom, so the film shows no portal and no automatic sharing. 2,982 kg = SupplierEvidence worked example.
+//  - Scope 2 (purchased electricity) for the supplier = upstream Scope 3 for its buyer: GHG Protocol logic used on the Enterprise page.
+const land = new URLSearchParams(location.search).get('o') !== 'portrait';
+const W = land ? 1920 : 1080, H = land ? 1080 : 1920;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c = 1.5; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); }, in2: x => x * x };
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+// place: x,y = centre (or top-left with tl), with opacity and transform
+function put(el, x, y, o = 1, tf = '', tl = false) { const w = el.offsetWidth, h = el.offsetHeight;
+  el.style.left = (tl ? x : x - w / 2) + 'px'; el.style.top = (tl ? y : y - h / 2) + 'px'; el.style.opacity = o; el.style.visibility = o > .002 ? 'visible' : 'hidden'; el.style.transform = tf; }
+function inOut(t, a, b, d = .5) { return p(t, a, d, E.o5) * (1 - p(t, b - .4, .4, E.io)); }
+// split words for kinetic captions
+document.querySelectorAll('.cap').forEach(el => { el.innerHTML = el.textContent.split(' ').map(w => `<span class="w"><span>${w}</span></span>`).join(' '); });
+function words(el, t, tin, st = .045) { el.querySelectorAll('.w > span').forEach((w, i) => { const k = p(t, tin + i * st, .5, E.o5); w.style.transform = `translateY(${(1 - k) * 112}%)`; }); }
+function cap(id, x, y, t, tin, tout, width) { const el = $(id); if (width) el.style.width = width + 'px'; words(el, t, tin); put(el, x, y, tout ? 1 - p(t, tout - .35, .35) : 1, '', true); if (t < tin - .02) el.style.visibility = 'hidden'; }
+// ink
+function inkPath(d, color, w) { const el = document.createElementNS('http://www.w3.org/2000/svg', 'path'); el.setAttribute('d', d); el.setAttribute('stroke', color);
+  el.setAttribute('stroke-width', w); el.setAttribute('pathLength', 1); el.style.strokeDasharray = 1; el.style.strokeDashoffset = 1; $('ink').appendChild(el); return el; }
+let lead1, lead2;
+
+// layout per orientation. Split: vertical gate (landscape) or horizontal gate (portrait).
+const G = land ? { // gate position as fraction along the split axis
+  half: W / 2 } : { half: H / 2 };
+function halves(frac, show) { // frac = position of the gate along the split axis (0..1)
+  const warm = $('warm'), cool = $('cool'), gate = $('gate');
+  if (land) { const x = W * frac; Object.assign(warm.style, { left: 0, top: 0, width: x + 'px', height: H + 'px' }); Object.assign(cool.style, { left: x + 'px', top: 0, width: (W - x) + 'px', height: H + 'px' });
+    Object.assign(gate.style, { left: (x - 1.5) + 'px', top: 0, width: '3px', height: (H * show) + 'px' }); }
+  else { const y = H * frac; Object.assign(warm.style, { left: 0, top: 0, width: W + 'px', height: y + 'px' }); Object.assign(cool.style, { left: 0, top: y + 'px', width: W + 'px', height: (H - y) + 'px' });
+    Object.assign(gate.style, { left: 0, top: (y - 1.5) + 'px', height: '3px', width: (W * show) + 'px' }); }
+}
+
+function render(t) {
+  // ---- background: plain → split (4.6) → warm fills (13) → cool fills (24) → split (35) ----
+  const show = p(t, 4.7, .7, E.io);
+  let frac = .5;
+  if (t >= 12.8 && t < 24) frac = lerp(.5, 1.0, p(t, 12.8, .9, E.io));
+  if (t >= 24 && t < 35) frac = lerp(1.0, 0.0, p(t, 24.0, 1.0, E.io));
+  if (t >= 35) frac = lerp(0.0, .5, p(t, 35.0, .9, E.io));
+  const bgOn = t >= 4.6 ? 1 : 0;
+  $('warm').style.opacity = $('cool').style.opacity = bgOn;
+  halves(frac, t < 4.6 ? 0 : (t >= 12.8 && t < 35.9 ? (t < 13.7 || t > 35 ? 1 : 0) : show));
+  $('gate').style.opacity = (t >= 4.6) ? ((t > 13.6 && t < 35.1) ? 0 : 1) : 0;
+  const sidesOn = inOut(t, 5.0, 12.9) + inOut(t, 35.6, 46.1);
+  if (land) { put($('sideL'), W * .25, 70, sidesOn); put($('sideR'), W * .75, 70, sidesOn); }
+  else { put($('sideL'), W / 2, 70, sidesOn); put($('sideR'), W / 2, H / 2 + 60, sidesOn); }
+
+  // ---- S1: the live result ----
+  const ph = $('phone'), phIn = p(t, .1, .9, E.o5), phOut = p(t, 4.4, .6, E.io);
+  const phX = land ? 1240 : W / 2, phY = land ? 560 : 1180;
+  put(ph, phX, phY + (1 - phIn) * 300, phIn * (1 - phOut), `scale(${(land ? 1 : 1.05) * lerp(1, .82, phOut)}) rotate(${lerp(4, 0, phIn)}deg)`);
+  $('shot').style.transform = `translateY(${-lerp(0, 120, p(t, 1.0, 1.4, E.io))}px)`;
+  const callX = land ? 140 : 80, callY = land ? 330 : 190;
+  put($('call'), callX, callY, inOut(t, 1.5, 4.5), `translateY(${(1 - p(t, 1.5, .6, E.o5)) * 30}px)`, true);
+  if (!lead1) { lead1 = inkPath('M0 0', 'var(--saffron)', 4); lead2 = inkPath('M0 0', 'var(--saffron)', 4); }
+  // leader lines from the callout to the number on the live screen (screen coords: 3.42 at ~y 257-120, formula ~y 324-120)
+  const scrTop = phY - 872 / 2 + 14, scrLeft = phX - 418 / 2 + 14;
+  const ty1 = scrTop + 257 - 120, ty2 = scrTop + 324 - 120, tx = scrLeft + 30;
+  if (land) { lead1.setAttribute('d', `M ${callX + 560} ${callY + 60} C ${callX + 700} ${callY + 50}, ${tx - 120} ${ty1}, ${tx - 6} ${ty1}`);
+    lead2.setAttribute('d', `M ${callX + 470} ${callY + 150} C ${callX + 620} ${callY + 170}, ${tx - 110} ${ty2}, ${tx - 6} ${ty2}`); }
+  else { lead1.setAttribute('d', `M ${callX + 90} ${callY + 130} C ${callX + 60} ${callY + 330}, ${tx - 90} ${ty1 - 40}, ${tx - 8} ${ty1}`);
+    lead2.setAttribute('d', `M ${callX + 420} ${callY + 175} C ${callX + 520} ${callY + 400}, ${tx + 360} ${ty2 - 20}, ${tx + 260} ${ty2}`); }
+  const ld = p(t, 2.0, .6, E.io) * (1 - p(t, 4.2, .3)); lead1.style.strokeDashoffset = 1 - ld; lead2.style.strokeDashoffset = 1 - p(t, 2.3, .6, E.io) * (1 - p(t, 4.2, .3));
+  $('ink').style.opacity = t < 4.6 ? 1 : 0;
+
+  // ---- S2: same bill, two sides ----
+  const rec = $('rec'), recIn = p(t, 4.6, .7, E.o5);
+  const cross = p(t, 8.2, 1.2, E.io);
+  const L = land ? [W * .25, 560] : [W / 2, 520], R = land ? [W * .75, 560] : [W / 2, 1400];
+  const recOut = p(t, 12.6, .4, E.io);
+  let rx = lerp(L[0], R[0], cross), ry = lerp(L[1], R[1], cross) - Math.sin(cross * Math.PI) * (land ? 60 : 0);
+  const recOn = (t >= 4.6 && t < 13) ? recIn * (1 - recOut) : 0;
+  // record returns at the centre for the finale
+  const fin = p(t, 35.4, .8, E.o5);
+  if (t >= 35) { rx = land ? W / 2 : W / 2; ry = land ? 520 : H / 2; }
+  put(rec, rx, ry, t >= 35 ? fin * (1 - p(t, 40.2, .4)) : recOn, `scale(${t >= 35 ? lerp(.9, 1, fin) : lerp(.9, 1, recIn)}) rotate(${Math.sin(cross * Math.PI) * -3}deg)`);
+  const vOk = t >= 36.6; $('pill').textContent = vOk ? 'Verified' : 'Verification pending'; $('pill').className = 'pill' + (vOk ? ' ok' : '');
+  const tag = $('tag'); const isS3 = cross > .5;
+  $('tagT').textContent = isS3 ? 'Scope 3' : 'Scope 2'; $('tagS').textContent = isS3 ? "its supplier's electricity" : 'its own electricity';
+  tag.style.background = isS3 ? 'var(--slate)' : 'var(--saffron)';
+  const flip = Math.abs(Math.cos(clamp((cross - .35) / .3) * Math.PI)) ;
+  put(tag, rx, ry + rec.offsetHeight / 2 + 50, recOn * p(t, 5.6, .4, E.back) * (t < 13 ? 1 : 0), `scaleY(${cross > .35 && cross < .65 ? flip : 1})`);
+  put($('quote'), land ? W / 2 : W / 2, land ? 960 : 1760, inOut(t, 10.2, 12.9), `translateY(${(1 - p(t, 10.2, .6, E.o5)) * 20}px)`);
+  $('quote').style.width = land ? '1500px' : '960px'; $('quote').style.textAlign = 'center';
+  cap('hB', land ? 210 : 60, land ? 820 : 1540, t, 38.0, 40.4, land ? 1500 : 960);
+  // ---- seal across the gate ----
+  const sk = p(t, 36.6, .3, E.in2);
+  put($('seal'), land ? W / 2 + 360 : W / 2 + 330, land ? 380 : H / 2 - 260, t >= 36.6 && t < 40.4 ? 1 - p(t, 40.0, .4) : 0, `scale(${lerp(2, 1, sk)}) rotate(-10deg)`);
+  put($('useL'), land ? W * .25 : W / 2, land ? 760 : H / 2 - 420, inOut(t, 37.0, 40.4), '', false); $('useL').style.width = '700px'; $('useL').style.textAlign = 'center';
+  put($('useR'), land ? W * .75 : W / 2, land ? 760 : H / 2 + 420, inOut(t, 37.3, 40.4), '', false); $('useR').style.width = '700px'; $('useR').style.textAlign = 'center';
+  words($('useL'), t, 37.0); words($('useR'), t, 37.3);
+  if (t >= 38.0) { $('useL').style.opacity = $('useR').style.opacity = 0; }
+
+  // ---- S3: MSME ----
+  const mx = land ? 140 : 70;
+  put($('eyM'), mx, land ? 120 : 150, inOut(t, 13.4, 24.0), '', true);
+  cap('hM', mx, land ? 165 : 200, t, 13.6, 24.0, land ? 900 : 940);
+  const ak = (id, s, x, y) => put($(id), x, y, inOut(t, s, 17.4), `translateY(${(1 - p(t, s, .5, E.o5)) * 30}px)`, true);
+  ak('ask1', 14.6, land ? 1180 : 120, land ? 200 : 560); ak('ask2', 15.4, land ? 1240 : 200, land ? 360 : 740);
+  const sx = land ? [140, 600, 1060] : [70, 70, 70], sy = land ? 440 : 960;
+  [['st1', 17.4], ['st2', 18.2], ['st3', 19.0]].forEach(([id, s], i) => put($(id), sx[i], land ? sy : [560, 760, 1000][i], inOut(t, s, 24.0), `translateY(${(1 - p(t, s, .5, E.o5)) * 40}px)`, true));
+  cap('lM', mx, land ? 820 : 1380, t, 20.0, 24.0, land ? 1100 : 940);
+  put($('chipM'), land ? 1520 : 70, land ? 520 : 1600, inOut(t, 21.6, 24.0) , `scale(${lerp(.8, 1, p(t, 21.6, .4, E.back))})`, true);
+
+  if (!land) ['st1','st2','st3'].forEach(id => $(id).style.width = '940px');
+  // ---- S4: Enterprise ----
+  const ex = land ? 140 : 70;
+  put($('eyE'), ex, land ? 120 : 150, inOut(t, 24.6, 35.0), '', true);
+  cap('hE', ex, land ? 165 : 200, t, 24.8, 35.0, land ? 1100 : 940);
+  const tbl = $('tbl'); tbl.style.width = land ? '1640px' : '940px';
+  put(tbl, land ? 140 : 70, land ? 360 : 640, inOut(t, 26.2, 35.0), `translateY(${(1 - p(t, 26.2, .6, E.o5)) * 40}px)`, true);
+  const rows = tbl.querySelectorAll('[data-r]');
+  [[0, 28.4, '3,422 kg', 'electricity bill · 0.710 · sha256 41d0…c3b8'], [1, 29.2, '2,982 kg', 'electricity bill · 0.710 · sha256 9f2c…a71e']].forEach(([i, at, v, b]) => {
+    const r = rows[i], on = t >= at; r.querySelector('.val').textContent = on ? v : '—';
+    const st = r.querySelector('.st'); st.className = 'st ' + (on ? 'ok' : 'q'); st.textContent = on ? b : (i === 0 ? 'questionnaire · pending' : 'questionnaire · "N/A"');
+    r.style.background = on ? `rgba(46,158,91,${.12 * (1 - p(t, at + .5, .8))})` : ''; });
+  cap('lE', ex, land ? 860 : 1500, t, 30.4, 35.0, land ? 1500 : 940);
+
+  // ---- S5/S6: end ----
+  const cl = inOut(t, 40.6, 99), cr = inOut(t, 41.0, 99);
+  if (land) { put($('ctaL'), 140, 330, cl, `translateY(${(1 - p(t, 40.6, .6, E.o5)) * 30}px)`, true); put($('ctaR'), W / 2 + 140, 330, cr, `translateY(${(1 - p(t, 41.0, .6, E.o5)) * 30}px)`, true); put($('mark'), W / 2, 960, p(t, 42.0, .8)); }
+  else { put($('ctaL'), 70, 520, cl, '', true); put($('ctaR'), 70, H / 2 + 300, cr, '', true); put($('mark'), W / 2, H - 140, p(t, 42.0, .8)); }
+  $('ctaL').style.width = $('ctaR').style.width = land ? '760px' : '940px';
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
