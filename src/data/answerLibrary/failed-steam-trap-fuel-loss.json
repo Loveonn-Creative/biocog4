@@ -1,0 +1,80 @@
+{
+  "slug": "failed-steam-trap-fuel-loss",
+  "q": "How much fuel and CO2 does one failed steam trap waste?",
+  "title": "Fuel and CO2 lost by a failed steam trap",
+  "short": "A trap that has failed open can waste a lot: a 1/8 inch orifice at 10 bar loses about 27 kg of live steam an hour, which over 8,000 hours is roughly 18,000 litres of furnace oil and 54 tonnes of CO2. Size your own loss from orifice size, pressure and hours.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler operators and plant engineers",
+  "sections": [
+    {
+      "h": "Estimate the steam lost",
+      "p": [
+        "For a trap stuck fully open, Napier's formula gives the steam flow through the orifice: steam lost in lb per hour = 24.24 x pressure in psia x orifice diameter in inches squared. Multiply by 0.4536 for kg per hour. Use the trap's orifice size from its data sheet and the line pressure in absolute terms (bar gauge plus 1.013, times 14.5 for psia).",
+        "This is the upper bound. A trap that leaks rather than blows fully open loses less, so many surveys apply a lower share for leaking traps and the full figure only for blow-through."
+      ]
+    },
+    {
+      "h": "Convert steam to fuel",
+      "p": [
+        "Energy to replace each kg of steam = steam enthalpy minus feed water enthalpy, from steam tables. Fuel energy = steam lost x that difference / boiler efficiency. Divide by the fuel's net calorific value for kg of fuel: about 40.4 MJ per kg for furnace oil, the IPCC 2006 default."
+      ]
+    },
+    {
+      "h": "Convert fuel to CO2",
+      "p": [
+        "Multiply fuel energy by the IPCC 2006 default CO2 factor for the fuel, 77.4 kg CO2 per GJ for residual fuel oil, or multiply litres by 2.97 kg CO2 per litre. For a coal or biomass boiler use that fuel's factor; biomass CO2 is reported separately as biogenic."
+      ]
+    },
+    {
+      "h": "Make the survey count",
+      "ul": [
+        "Test every trap at least once a year with ultrasound or temperature checks, and tag each one with an ID.",
+        "Record pressure, orifice size and status per trap so the loss can be summed for the plant.",
+        "After repairs, compare boiler fuel per tonne of output before and after rather than relying only on the formula."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one trap on a 10 bar g line",
+    "lines": [
+      "Pressure: 10 bar g = 11.013 bar abs = 159.7 psia; orifice 1/8 inch (0.125 in)",
+      "Steam lost: 24.24 x 159.7 x 0.125 x 0.125 = 60.5 lb per hour = 27.4 kg per hour",
+      "Energy: 27.4 x (2,781 minus 251) kJ per kg = 69.4 MJ per hour (saturated steam, feed water at 60 C)",
+      "Fuel energy at 80% boiler efficiency (assumed): 69.4 / 0.80 = 86.8 MJ per hour",
+      "Over 8,000 hours: 86.8 x 8,000 = 6,94,400 MJ = 694.4 GJ; furnace oil = 6,94,400 / 40.4 = 17,188 kg, about 18,090 L at 0.95 kg per L (assumed density)",
+      "CO2: 694.4 GJ x 77.4 kg per GJ = 53,747 kg, about 53.7 t a year"
+    ],
+    "note": "Assumes the trap blows fully open all year. Steam enthalpy values are from standard steam tables."
+  },
+  "senseible": "Senseible converts the boiler fuel on your invoices into CO2 with IPCC 2006 default factors (furnace oil 2.97 kg per litre, coal 2.42 kg per kg), so the fuel saved after a trap survey shows up in the monthly record. The trap survey itself comes from your plant team.",
+  "links": [
+    {
+      "label": "Condensate recovery fuel savings",
+      "to": "/answers/condensate-recovery-fuel-co2-savings"
+    },
+    {
+      "label": "Steam pipe insulation heat loss",
+      "to": "/answers/steam-pipe-insulation-heat-loss"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, chapter on steam systems (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

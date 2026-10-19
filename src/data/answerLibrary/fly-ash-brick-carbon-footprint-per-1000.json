@@ -1,0 +1,84 @@
+{
+  "slug": "fly-ash-brick-carbon-footprint-per-1000",
+  "q": "What is the carbon footprint of 1,000 fly ash bricks?",
+  "title": "Fly ash brick footprint per 1,000",
+  "short": "Calculate it from the binder, the press electricity and transport: cement or lime kg per 1,000 bricks times its factor, plus kWh times 0.710 kg CO2, plus tonne km of fly ash and sand. Fly ash carries little or none of the power plant's emissions, so cement or lime is most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fly ash brick makers and builders seeking green building points",
+  "sections": [
+    {
+      "h": "Where the emissions come from",
+      "ul": [
+        "Binder: cement, or lime with gypsum. This is usually the largest share. Use the cement supplier's EPD figure per tonne where you have it.",
+        "Lime made in a kiln releases process CO2; the IPCC 2006 default for high calcium lime is 0.75 t CO2 per tonne of lime, before kiln fuel.",
+        "Electricity for the pan mixer, hydraulic or vibro press and the curing water pump.",
+        "Transport of fly ash, sand or stone dust to the yard, and of bricks to site."
+      ]
+    },
+    {
+      "h": "How much of the power plant's emissions fly ash carries",
+      "p": [
+        "Under EN 15804+A2 it depends on how the fly ash is treated. As a waste, it carries none of the power plant's emissions, only its handling and transport after the point where it stops being waste. As a co-product with a market price, the plant's emissions are shared by economic value, and because fly ash is worth very little next to the electricity, its share is small.",
+        "EPD programmes and suppliers make different choices here. If your figure relies on a fly ash EPD or a buyer's rule, check which treatment it uses and say so."
+      ]
+    },
+    {
+      "h": "Curing makes a difference",
+      "p": [
+        "Most fly ash bricks are water cured in the open, which uses little energy. Steam or autoclave curing adds boiler fuel, which must then be counted. Bricks made with cement also absorb a little CO2 as they age, but this is not normally credited in a cradle to gate figure."
+      ]
+    },
+    {
+      "h": "Rules worth knowing",
+      "p": [
+        "The MoEFCC fly ash notification of 31 December 2021 puts utilisation duties on coal power plants and promotes fly ash products in construction. That makes supply cheap near power stations, but it does not change how the brick's footprint is calculated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 bricks with cement binder",
+    "lines": [
+      "Cement: 250 kg x 0.66 kg CO2 per kg (assumed PPC supplier EPD figure) = 165 kg CO2",
+      "Electricity: 15 kWh x 0.710 = 10.65 kg CO2",
+      "Subtotal: 175.65 kg CO2 per 1,000 bricks, before transport",
+      "Add: fly ash and sand tonne km x your freight factor"
+    ],
+    "note": "Cement dose, electricity and the cement factor are illustrative. Use your mix design, bills and your cement supplier's EPD."
+  },
+  "senseible": "Senseible reads cement, lime and electricity invoices and calculates the electricity CO2 at 0.710 kg per kWh, so a season's inputs per 1,000 bricks can be built from documents.",
+  "links": [
+    {
+      "label": "Brick kiln emissions per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "AAC block vs red brick footprint",
+      "to": "/answers/aac-block-vs-red-brick-carbon-footprint"
+    },
+    {
+      "label": "PPC vs OPC cement footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Construction",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 21930:2017, core rules for EPDs of construction products, the ISO counterpart of EN 15804+A2 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 2, cement and lime production",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "MoEFCC fly ash utilisation notification, 31 December 2021",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "EN 15804+A2 treatment of fly ash (waste with no burden, or co-product with economic allocation) varies between EPD programmes; check the programme's PCR before publishing a figure."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "inverter-welding-machine-vs-transformer-welder",
+  "q": "Does an inverter welding machine use less electricity than an old transformer welder?",
+  "title": "Inverter welder vs transformer welder power",
+  "short": "Yes, usually. An inverter welder turns more of its input power into arc power and draws far less while idling between welds, so the same welding work needs fewer kWh. How much you save depends on your old machine's efficiency and how long it sits switched on but not welding.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Fabrication MSME, workshop owner",
+  "sections": [
+    {
+      "h": "Where the saving comes from",
+      "ul": [
+        "Conversion losses while welding: a heavy 50 Hz transformer loses more energy as heat in its copper and core than an inverter power source of the same output.",
+        "Idle losses: a transformer welder left on draws magnetising current all shift, even with no arc. In many workshops machines are idle for most of the time they are switched on.",
+        "Power factor: inverter sets with power factor correction draw less reactive power, which can lower kVAh on bills billed in kVAh, though it does not change kWh."
+      ]
+    },
+    {
+      "h": "What the EU ecodesign rule sets for new welders",
+      "p": [
+        "Commission Regulation (EU) 2019/1784 sets a minimum power source efficiency and a maximum idle state power for mains-powered welding equipment sold in the EU, applying from 2023. Makers selling into the EU publish both figures in their product information, which makes the comparison easy. Most old transformer sets have no idle power figure at all, so measure it."
+      ]
+    },
+    {
+      "h": "How to measure your own machines",
+      "ol": [
+        "Clamp a power meter on the supply to the old welder for a full shift, or log kWh with a portable energy meter.",
+        "Note arc time from the operator or the machine counter, and idle time as switched-on time minus arc time.",
+        "Read idle power with the machine on and no arc.",
+        "Repeat with the inverter set on the same job, or use its datasheet efficiency and idle power.",
+        "Work out the yearly kWh difference and multiply by 0.710 kg CO2 per kWh for grid power."
+      ]
+    },
+    {
+      "h": "When the saving is small",
+      "p": [
+        "If welders are switched off between jobs and run long continuous welds, idle losses are small and the gain comes only from conversion efficiency. If the welder runs on a DG set, count the saving in litres of diesel at 2.68 kg CO2 per litre instead of grid kWh."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative yearly saving for one welding station",
+    "lines": [
+      "Arc energy delivered in a year: 2,000 kWh",
+      "Old transformer set at an assumed 60% efficiency: 2,000 / 0.60 = 3,333 kWh in; inverter at 85%: 2,000 / 0.85 = 2,353 kWh in",
+      "Conversion saving: 3,333 minus 2,353 = 980 kWh",
+      "Idle: old set 400 W, inverter 50 W, 1,500 idle hours: (0.40 minus 0.05) x 1,500 = 525 kWh",
+      "Total: 980 + 525 = 1,505 kWh a year",
+      "CO2: 1,505 x 0.710 = about 1,069 kg CO2, roughly 1.1 t a year"
+    ],
+    "note": "The 60% and 85% efficiencies, the 400 W and 50 W idle powers and the hours are assumptions for illustration; measure your old machine with a clamp meter and take the new one's figures from its datasheet."
+  },
+  "senseible": "Senseible reads your electricity bills and diesel invoices into a monthly record of kWh, litres and CO2, so the change after a new machine goes in shows up month by month against the same bills. Machine-level meter feeds can be set up with the Senseible team.",
+  "links": [
+    {
+      "label": "Does power factor correction cut emissions?",
+      "to": "/answers/does-power-factor-correction-reduce-emissions"
+    },
+    {
+      "label": "IE2 to IE4 motor replacement savings",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Commission Regulation (EU) 2019/1784, ecodesign requirements for welding equipment, Annex II (power source efficiency and idle state power), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "espr-steel-aluminium-carbon-data-indian-exporters",
+  "q": "Will the EU Ecodesign Regulation ask Indian steel and aluminium exporters for product carbon footprints?",
+  "title": "ESPR carbon data for steel and aluminium",
+  "short": "Probably, but not yet. The Ecodesign for Sustainable Products Regulation (EU) 2024/1781 lists carbon footprint among the product aspects its rules can cover, and the Commission's 2025 to 2030 working plan puts iron, steel and aluminium among the first product groups. Nothing applies until a delegated act for those products is adopted.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel and aluminium exporters",
+  "sections": [
+    {
+      "h": "How ESPR works",
+      "ul": [
+        "Article 4: the Commission sets requirements for each product group through delegated acts. The regulation itself places no duty on steel or aluminium today.",
+        "Article 5: the aspects those acts can cover include energy and resource use, recycled content, and the product's carbon and environmental footprint.",
+        "Article 9: products covered by a delegated act must carry a digital product passport holding the required information.",
+        "Rules apply to products placed on the EU market, whoever made them, so an Indian mill's coil or ingot is covered once the act applies."
+      ]
+    },
+    {
+      "h": "Why steel and aluminium are early",
+      "p": [
+        "The ESPR and Energy Labelling Working Plan 2025 to 2030, adopted on 16 April 2025, lists iron and steel and aluminium as priority intermediate products, alongside final products such as textiles and furniture. It gives 2026 as the indicative year for an iron and steel act and 2027 for aluminium. Those years are targets for adopting the acts, not dates when duties start, and none had been adopted in October 2026."
+      ]
+    },
+    {
+      "h": "How this differs from CBAM",
+      "ul": [
+        "CBAM charges a carbon price on embedded emissions of imported steel and aluminium, now in its definitive period from 1 January 2026.",
+        "ESPR would set product rules: information to disclose, and possibly performance requirements such as a carbon footprint limit or class.",
+        "The calculation methods need not match. CBAM counts direct emissions only for steel and aluminium; a product footprint rule may also count electricity and upstream materials.",
+        "Keep both views of your data: installation-level CBAM figures and a cradle-to-gate product figure."
+      ]
+    },
+    {
+      "h": "What to prepare now",
+      "ol": [
+        "Plant fuel and electricity records by month and by production line, traced to invoices and bills.",
+        "Production tonnage per product, so per tonne figures can be worked out for any method.",
+        "Scrap and recycled content records, a likely passport field.",
+        "Supplier data for purchased precursors such as pig iron, DRI or primary aluminium."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives plant fuel and electricity emissions from invoices and bills, by month and site, the base data both a CBAM report and a future product footprint start from. Its CBAM cost calculator shows certificate cost under current rules.",
+  "links": [
+    {
+      "label": "EU rules besides CBAM asking for carbon data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    },
+    {
+      "label": "Digital product passport for textile exporters",
+      "to": "/climate-intelligence/digital-product-passport-textile-exporters"
+    },
+    {
+      "label": "Steel and aluminium CBAM checklist",
+      "to": "/climate-intelligence/steel-aluminum-exporters-cbam-compliance-checklist"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2024/1781 (ESPR), Articles 4, 5 and 9, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, ESPR and Energy Labelling Working Plan 2025 to 2030, COM(2025) 187, 16 April 2025, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026: no ESPR delegated act for steel or aluminium adopted; working plan years (2026 steel, 2027 aluminium) are indicative. Recheck EUR-Lex for adopted acts."
+}

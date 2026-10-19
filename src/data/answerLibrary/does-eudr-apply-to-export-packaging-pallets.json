@@ -1,0 +1,67 @@
+{
+  "slug": "does-eudr-apply-to-export-packaging-pallets",
+  "q": "Does EUDR apply to the cartons, pallets and paper packaging I ship my goods in?",
+  "title": "EUDR and export packaging or pallets",
+  "short": "No, not when the cartons, pallets or paper are used only to support, protect or carry the goods you sell. The European Commission's EUDR guidance treats that packaging as outside scope, whatever its HS code. It does apply when the packaging is itself the product, such as cartons, paper bags or new pallets sold to an EU buyer.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to the EU",
+  "sections": [
+    {
+      "h": "The packaging rule",
+      "p": [
+        "Annex I of Regulation (EU) 2023/1115 lists the wood and paper products in scope, including cartons, boxes, paper and paperboard and wooden pallets. For wooden packing cases and pallets (HS 4415), Annex I leaves out packing material used only to support, protect or carry another product. The Commission's EUDR FAQ applies the same reading to all packaging, paper cartons (HS 4819) included, whatever the HS code.",
+        "This holds even when the goods inside are not EUDR products, such as engineering parts on a wooden pallet or garments in a carton."
+      ]
+    },
+    {
+      "h": "When your packaging is in scope",
+      "ul": [
+        "You sell the packaging itself: corrugated boxes, paper bags, kraft paper or new pallets exported to an EU customer.",
+        "The EU buyer imports empty packaging to fill later; the packaging is then the product being placed on the market.",
+        "You sell a box or crate as an item in its own right, such as an empty wooden gift box."
+      ]
+    },
+    {
+      "h": "Labels, manuals and dates",
+      "p": [
+        "Regulation (EU) 2025/2650 amended the EUDR in December 2025, narrowing the scope for printed products and moving the start to 30 December 2026 for large and medium operators and 30 June 2027 for micro and small ones. Annex I has been amended since, so for manuals, leaflets and labels that travel with your goods, check the current Annex I and FAQ, ask your EU importer how they read it, and note the answer with its date."
+      ]
+    },
+    {
+      "h": "What to keep even when exempt",
+      "ul": [
+        "Wood pallets and crates still need ISPM 15 heat treatment and marking for plant health; the EUDR exemption does not change that.",
+        "Write down that the packaging is used only to carry your goods, in case the importer or customs asks.",
+        "If you also sell packaging as a product, your EU buyer will need the plot geolocation for the wood or paper behind it, so ask your own suppliers now."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your packaging and material purchase invoices so you have a dated list of what you bought and from whom. Plot level geolocation for paper or wood comes from your suppliers.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR wooden handicrafts and furniture",
+      "to": "/answers/eudr-wooden-handicrafts-furniture-india"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Article 2 and Annex I, and amending Regulation (EU) 2025/2650, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Directive 94/62/EC on packaging and packaging waste (definition of packaging), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026. A 2026 delegated act amending Annex I is reported to restate the packaging exclusion (reported as Delegated Regulation (EU) 2026/2102); confirm its text and dates in the Official Journal, and check the current Commission FAQ.",
+  "reviewed": "2026-10-18"
+}

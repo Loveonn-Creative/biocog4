@@ -1,0 +1,87 @@
+{
+  "slug": "tyre-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of a tyre, and what data does an EU buyer expect from an Indian tyre maker?",
+  "title": "Tyre carbon footprint per unit",
+  "short": "A tyre's cradle to gate footprint is its raw materials (natural and synthetic rubber, carbon black, steel cord, textile, chemicals) plus the plant energy to mix, build and cure it, per tyre and per kg. Over the full life, fuel spent against rolling resistance is the largest part. For an EU buyer, follow ISO 14067.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tyre manufacturers and sustainability teams",
+  "sections": [
+    {
+      "h": "The calculation, step by step",
+      "ol": [
+        "Bill of materials per tyre size: kg of each compound ingredient, steel cord, bead wire and fabric.",
+        "Material factors: from your suppliers where they have product footprints, otherwise a named LCA database, recorded by edition.",
+        "Plant energy: electricity for mixers and presses, and fuel for the boiler that makes curing steam, allocated by tyre weight or curing time.",
+        "Inbound transport of materials and scrap or rejects.",
+        "Per tyre = sum of materials + energy share + transport; report per kg too so sizes can be compared."
+      ]
+    },
+    {
+      "h": "Follow the tyre industry rules",
+      "p": [
+        "The WBCSD Tire Industry Project publishes product category rules for tyre life cycle studies. Using them, with ISO 14067 for the carbon footprint, keeps your figure comparable with other makers. State the boundary: cradle to gate, or full life including use and end of life."
+      ]
+    },
+    {
+      "h": "Why rolling resistance matters to EU buyers",
+      "p": [
+        "Life cycle studies of car and truck tyres published by Tyres Europe find the use phase dominates, mainly through the fuel or electricity spent overcoming rolling resistance; raw materials come second. The EU tyre label under Regulation (EU) 2020/740 grades rolling resistance from A to E, so a buyer may value a better label class as much as a lower factory figure."
+      ]
+    },
+    {
+      "h": "What to prepare for a buyer",
+      "ul": [
+        "Cradle to gate CO2e per tyre and per kg, with method, boundary, year and data sources.",
+        "Plant Scope 1 and 2 for the same year, with grid factor and fuel factors named.",
+        "Share of natural rubber and, where your tyres are in EUDR scope, the plot origin data for that rubber; check the current EUDR Annex I.",
+        "Recycled or bio-based content, if claimed, with evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: the plant energy share for one month",
+    "lines": [
+      "Output: 100,000 tyres, total 900 t of tyre",
+      "Electricity: 2,000,000 kWh x 0.710 = 1,420,000 kg CO2",
+      "Coal for curing steam: 400 t = 400,000 kg x 2.42 = 968,000 kg CO2",
+      "Plant energy total: 2,388,000 kg CO2",
+      "Per tyre: 2,388,000 / 100,000 = 23.9 kg CO2; per kg of tyre: 2,388,000 / 900,000 = 2.65 kg CO2"
+    ],
+    "note": "Inputs are illustrative. This is only the gate to gate energy share; add materials and transport for a cradle to gate figure in CO2e."
+  },
+  "senseible": "Senseible gives the plant's Scope 1 and 2 from fuel and electricity bills, the gate to gate energy part of a tyre footprint, with each factor and bill shown. Its product footprint calculator helps combine that with material data.",
+  "links": [
+    {
+      "label": "Product footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "What to send for a buyer footprint request",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Rubber moulded part footprint",
+      "to": "/answers/rubber-moulded-part-carbon-footprint-per-kg"
+    },
+    {
+      "label": "EUDR for coffee and rubber exporters",
+      "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "WBCSD Tire Industry Project, product category rules for tyre life cycle assessment",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "Regulation (EU) 2020/740 on the labelling of tyres, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

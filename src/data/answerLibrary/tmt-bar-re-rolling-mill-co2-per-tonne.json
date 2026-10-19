@@ -1,0 +1,92 @@
+{
+  "slug": "tmt-bar-re-rolling-mill-co2-per-tonne",
+  "q": "What is the CO2 per tonne of TMT bars from a re-rolling mill?",
+  "title": "TMT bar CO2 per tonne at a re-rolling mill",
+  "short": "Add the embedded CO2 of the billets you bought, the reheating furnace fuel and the mill's electricity, then divide by tonnes of good bars. Billets usually dominate, so the supplier's billet figure matters more than anything in your mill. Count all billets charged, including what ends as crop ends and miss-rolls.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Re-rolling mills, builders asking for EPDs",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "CO2 per tonne of bars = (billet tonnes charged x supplier billet factor + reheating fuel x its factor + mill kWh x 0.710) / tonnes of bars produced.",
+        "Billet tonnes charged is more than bars made, because of scale loss, crop ends and miss-rolls. Using charged tonnes puts the yield loss into the figure, where it belongs."
+      ]
+    },
+    {
+      "h": "Getting the billet figure",
+      "ul": [
+        "Ask the billet or ingot supplier for CO2 per tonne, with route (induction furnace with sponge iron or scrap, or blast furnace), year and whether it covers direct only or direct plus electricity.",
+        "If you buy from several suppliers, weight each factor by tonnes bought.",
+        "If a supplier gives nothing, use a clearly labelled default for that route and say so; for CBAM, the EU default values in Implementing Regulation (EU) 2025/2621 apply to that precursor."
+      ]
+    },
+    {
+      "h": "What CBAM counts for bars",
+      "p": [
+        "TMT bars fall under CN 7214, iron and steel goods covered by EU CBAM. Annex II of the CBAM Regulation lists iron and steel among the goods where only direct emissions count, so the mill's electricity drops out of the CBAM figure but stays in a product footprint or EPD. The billet is a precursor: its embedded direct emissions are added in, under the calculation rules of Implementing Regulation (EU) 2025/2547. Report CBAM and EPD figures separately, because the boundaries differ."
+      ]
+    },
+    {
+      "h": "Mill side improvements that show in the figure",
+      "ul": [
+        "Hot charging billets straight from the caster cuts reheating fuel sharply.",
+        "Switching the reheating furnace from coal or furnace oil to PNG lowers the fuel factor.",
+        "Recuperators and better burner control cut fuel per tonne.",
+        "Higher mill yield cuts billet tonnes per tonne of bars, and since billets are most of the total, every point of yield shows."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month",
+    "lines": [
+      "Bars produced: 1,000 t from 1,050 t of billets charged (yield 95.2%)",
+      "Billets: 1,050 x 2.2 t CO2 per t (supplier figure, assumed) = 2,310 t CO2",
+      "Reheating furnace oil: 33,000 litres x 2.97 = 98,010 kg, about 98.0 t CO2",
+      "Mill electricity: 110,000 kWh x 0.710 = 78,100 kg, about 78.1 t CO2",
+      "Total 2,486.1 t; per tonne of bars: 2.49 t CO2",
+      "CBAM style direct figure (if the billet factor is direct only): (2,310 + 98.0) / 1,000 = 2.41 t CO2 per t"
+    ],
+    "note": "Billet factor, fuel and kWh are assumptions for illustration; use your supplier's figure and your own bills."
+  },
+  "senseible": "Senseible reads the mill's fuel and electricity bills and gives its own emissions each month with factors shown. Billet emissions come from your supplier, and Senseible's CBAM tools help put the two together.",
+  "links": [
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Green loan for a rolling mill in Jalna",
+      "to": "/climate-intelligence/green-loan-steel-rolling-mill-jalna"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    },
+    {
+      "label": "Induction furnace billets and CBAM",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Annexes I and II",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2547 (CBAM definitive-period calculation methods), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621 (CBAM default values)",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: iron and steel are direct-only under Annex II of Regulation (EU) 2023/956; calculation methods in Implementing Regulation (EU) 2025/2547 and default values in 2025/2621, both for the definitive period from 1 January 2026. Check for later revisions.",
+  "reviewed": "2026-10-18"
+}

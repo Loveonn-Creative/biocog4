@@ -1,0 +1,84 @@
+{
+  "slug": "soybean-meal-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of Indian soybean meal per tonne for EU feed buyers?",
+  "title": "Carbon footprint of soybean meal per tonne",
+  "short": "There is no single figure: it is your farm-stage emissions per tonne of beans plus your extraction plant's energy, shared between meal and oil by economic value, as FEFAC's PEFCR for feed does. Farm records and boiler fuel invoices are the two inputs to get right.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Solvent extraction plants and feed exporters",
+  "sections": [
+    {
+      "h": "The stages to count",
+      "ul": [
+        "Farm: fertiliser production and field nitrous oxide, diesel for tillage and harvest, seed. Soy fixes its own nitrogen, so fertiliser use is lower than for cereals.",
+        "Land use change: show that no source plot was converted in the last 20 years, or the footprint must include the conversion.",
+        "Transport of beans to the plant.",
+        "Extraction: steam for desolventising and drying (coal, briquettes or husk boilers), electricity, and hexane make-up, counted through hexane's own production footprint."
+      ]
+    },
+    {
+      "h": "Sharing between meal and oil",
+      "p": [
+        "Use your own yields from the production register: tonnes of meal and crude oil per tonne of beans crushed, which depend on bean oil content. FEFAC's PEFCR for feed and the GFLI database share upstream emissions by economic value, so meal carries the share of emissions equal to its share of revenue. Use average prices over several years so a single price spike does not swing the figure."
+      ]
+    },
+    {
+      "h": "Units and gases",
+      "p": [
+        "Report in kg CO2e per tonne of meal, because the farm stage includes nitrous oxide. Name the GWP set used. If your boiler burns soybean husk or other biomass, report that CO2 separately as biogenic and count only its methane and nitrous oxide in the total."
+      ]
+    },
+    {
+      "h": "Deforestation is a separate rule",
+      "p": [
+        "Soybean meal is also covered by the EU deforestation regulation. EU buyers will ask for plot geolocation for the beans, which is the same farm data you need for a land use change check, so collect it once."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: per tonne of beans processed",
+    "lines": [
+      "Farm stage: 300 kg CO2e (assumed, from farm records including N2O); bean transport: 20 kg CO2 (assumed)",
+      "Boiler coal: 60 kg x 2.42 kg CO2 per kg = 145.2 kg CO2",
+      "Electricity: 40 kWh x 0.710 = 28.4 kg CO2",
+      "Total: 300 + 20 + 145.2 + 28.4 = 493.6 kg CO2e per tonne of beans",
+      "Economic share of meal (assumed yields and prices): 0.80 t x Rs 40,000 = Rs 32,000 against oil 0.18 t x Rs 1,00,000 = Rs 18,000, so 32,000 / 50,000 = 64%",
+      "Meal: 493.6 x 0.64 / 0.80 = 394.9 kg CO2e per tonne of meal"
+    ],
+    "note": "Every input is assumed for illustration; hexane production is left out for simplicity."
+  },
+  "senseible": "Senseible reads your boiler fuel and electricity invoices into a dated record of the extraction plant's own emissions, with the IPCC 2006 fuel factor or CEA grid factor shown on each line, and keeps hexane purchase invoices on the same record. Farm-stage data comes from your bean suppliers.",
+  "links": [
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Does EUDR apply to my exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 4, Chapter 11 (N2O from managed soils)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

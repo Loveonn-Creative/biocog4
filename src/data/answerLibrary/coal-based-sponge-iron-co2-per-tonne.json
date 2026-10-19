@@ -1,0 +1,84 @@
+{
+  "slug": "coal-based-sponge-iron-co2-per-tonne",
+  "q": "How much CO2 does a coal-based sponge iron (DRI) kiln emit per tonne?",
+  "title": "CO2 per tonne of coal-based sponge iron",
+  "short": "Work it out by carbon mass balance: carbon in the coal and dolomite fed to the kiln, minus carbon leaving in the sponge iron and char, times 44/12, divided by tonnes of DRI. Use lab carbon analyses of your own coal and char, since Indian coal quality varies widely.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sponge iron plants and steel buyers",
+  "sections": [
+    {
+      "h": "The mass balance",
+      "p": [
+        "CO2 = (coal in x carbon share + other carbon inputs) minus (DRI out x carbon share + char out x carbon share), times 44/12. Add CO2 from dolomite or limestone at its carbonate factor, about 0.477 t CO2 per tonne for pure dolomite, unless the carbonate carbon is already in your carbon inputs. Use lab carbon analyses for each coal lot and for char, not a generic coal factor, because Indian non-coking coal varies widely in ash and carbon."
+      ]
+    },
+    {
+      "h": "What to do with dolochar",
+      "ul": [
+        "Sold to another firm: deduct its carbon, it leaves your boundary.",
+        "Burnt in your own fluidised bed boiler: its carbon becomes CO2 at your site, so it stays in your total, and the boiler's output carries it.",
+        "Dumped or stockpiled: deduct only what you can measure, and record the stock."
+      ]
+    },
+    {
+      "h": "Waste heat recovery power",
+      "p": [
+        "The kiln's carbon is counted once, at the kiln, whether or not the hot gas raises steam. Power from the waste heat boiler used on site means you buy fewer grid kWh, which lowers Scope 2. For power exported to the grid, follow the rules of the method you report under; for CBAM, the implementing rules on attributed emissions set how heat and electricity leaving the process are treated. Do not net it off the kiln figure on your own."
+      ]
+    },
+    {
+      "h": "CBAM and steel buyers",
+      "p": [
+        "Sponge iron (CN 7203) is a CBAM good in its own right and a precursor, and billet and rebar makers who buy it need your specific embedded emissions; without them they fall back to the default value in the CBAM implementing regulation, which includes a mark-up. In the definitive period, from 2026, CBAM counts only direct emissions for iron and steel, so give buyers the direct figure and keep electricity as a separate line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: 10,000 t of DRI",
+    "lines": [
+      "Coal fed: 15,000 t at 50% carbon (assumed, from lab) = 7,500 t C",
+      "Carbon out: DRI 10,000 t at 0.15% C = 15 t C; char sold 3,000 t at 30% C = 900 t C",
+      "Net carbon: 7,500 minus 15 minus 900 = 6,585 t C; x 44/12 = 24,145 t CO2",
+      "Dolomite: 500 t x 0.477 = 238.5 t CO2",
+      "Direct total: 24,145 + 238.5 = 24,383.5 t CO2, so 2.44 t CO2 per tonne of DRI",
+      "Grid power for inventory Scope 2: 9,00,000 kWh x 0.710 = 639 t CO2, reported separately"
+    ],
+    "note": "All inputs are assumed for illustration. Use measured coal, char and DRI analyses."
+  },
+  "senseible": "Senseible reads coal and electricity invoices into a dated plant record and prepares CBAM data as self-declared drafts. The mass balance uses your lab's carbon analyses alongside those invoices.",
+  "links": [
+    {
+      "label": "Billets from sponge iron under CBAM",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "CBAM cost: blast furnace, EAF or DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 4.2 (iron and steel, DRI carbon mass balance)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    }
+  ],
+  "reviewNote": "CBAM default values and precursor rules are revised by implementing act; check the current act before quoting a default.",
+  "reviewed": "2026-10-18"
+}

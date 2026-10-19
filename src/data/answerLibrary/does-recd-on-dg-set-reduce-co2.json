@@ -1,0 +1,80 @@
+{
+  "slug": "does-recd-on-dg-set-reduce-co2",
+  "q": "Does fitting a retrofit emission control device (RECD) on my DG set reduce CO2?",
+  "title": "Does an RECD on a DG set cut CO2?",
+  "short": "No. An RECD traps particulate matter from the exhaust; it does not change how much diesel the engine burns, so CO2 stays the same at 2.68 kg per litre. The extra exhaust back pressure can raise diesel use slightly. To cut CO2 you must burn less diesel.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME owners in Delhi NCR and facility managers",
+  "sections": [
+    {
+      "h": "What an RECD does",
+      "p": [
+        "A retrofit emission control device is a filter or capture unit fitted to the DG set exhaust. For in-use sets up to 800 kW, it must capture at least 70 percent of particulate matter, tested at a laboratory approved by the Central Pollution Control Board. Soot is a local air pollutant. It is not one of the greenhouse gases counted in a Scope 1 inventory."
+      ]
+    },
+    {
+      "h": "Why CO2 does not fall",
+      "ul": [
+        "Diesel CO2 depends only on the carbon in the fuel burnt, which is why the IPCC 2006 Guidelines give a factor per litre.",
+        "An RECD does not burn less fuel or capture CO2.",
+        "The device adds back pressure on the engine. A clogged or badly matched unit can push specific fuel consumption up, so check litres per kWh after fitting and clean the filter on schedule."
+      ]
+    },
+    {
+      "h": "Why NCR sites fit them anyway",
+      "p": [
+        "Since 2022 the Commission for Air Quality Management has limited diesel DG use in Delhi NCR. Industrial and commercial sets up to 800 kW are expected to run dual fuel where gas is available, and during GRAP stages only dual fuel sets with an RECD, or RECD sets where there is no gas, may run, for limited hours in a power cut. The rules are about air quality, not carbon. Check the current direction and its date before you plan."
+      ]
+    },
+    {
+      "h": "What does lower DG CO2",
+      "ul": [
+        "Fewer DG hours: better grid supply, a higher sanctioned load, or battery backup for short cuts.",
+        "Running the set in the load band where litres per kWh is lowest, from the maker's fuel curve, instead of long hours at light load.",
+        "A dual fuel or gas kit, for the share of diesel the gas replaces.",
+        "Solar with storage for daytime loads."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year of DG diesel",
+    "lines": [
+      "Diesel from invoices: 50,000 litres x 2.68 kg CO2 per litre = 1,34,000 kg, 134 t CO2",
+      "After the RECD, same running hours: still 134 t CO2",
+      "If back pressure raised diesel use by 1%: 500 extra litres x 2.68 = 1,340 kg more CO2"
+    ],
+    "note": "The 1% rise is an assumption to show the direction of the effect; measure litres per kWh before and after."
+  },
+  "senseible": "Senseible calculates DG emissions from your diesel invoices at 2.68 kg CO2 per litre, so any change in litres after an RECD, a gas kit or fewer running hours shows up directly in Scope 1.",
+  "links": [
+    {
+      "label": "Dual fuel DG set gas kit saving",
+      "to": "/answers/dual-fuel-dg-set-gas-kit-emissions-saving"
+    },
+    {
+      "label": "DG set specific fuel consumption",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CPCB, RECD system verification protocol and DG set emission norms (cpcb.nic.in)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy, Chapter 2, stationary combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "CAQM directions on DG sets in NCR (Directions 68, 71 and 73 and later) and GRAP stages change often; check the current direction and its date. RECD 70% PM capture per CPCB requirement for in-use sets up to 800 kW (checked 18 October 2026).",
+  "reviewed": "2026-10-18"
+}

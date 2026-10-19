@@ -1,0 +1,77 @@
+{
+  "slug": "refrigerated-vs-desiccant-air-dryer-energy",
+  "q": "Refrigerated or desiccant air dryer: how much energy does each waste, and which should a factory use?",
+  "title": "Refrigerated vs desiccant air dryer energy",
+  "short": "A refrigerated dryer uses a few kW of electricity and dries air to a pressure dew point of about 3 C, enough for most factory air. A heatless desiccant dryer reaches minus 40 C but vents about 15 to 20% of its rated air as purge, which costs far more power. Use desiccant only where the process needs it.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Plant engineers, maintenance heads",
+  "sections": [
+    {
+      "h": "Where the energy goes in each type",
+      "ul": [
+        "Refrigerated dryer: a small refrigeration compressor and fan. Its input kW is on the data sheet, and it runs whenever the air compressor runs unless it has a cycling control.",
+        "Heatless desiccant dryer: no heater, but it vents part of the dried air to regenerate the off-line tower. That purge air was made by your compressor, so its cost is compressor kW.",
+        "Heated or blower purge desiccant dryers: less purge air, but a heater and blower add their own kW."
+      ]
+    },
+    {
+      "h": "Which dew point your process needs",
+      "p": [
+        "Ask what the air touches. Pneumatic tools, cylinders and general blowing work well at a pressure dew point near 3 C (ISO 8573-1 class 4), provided the lines are not exposed to colder air. Instrument air in cold areas, pharma and food contact air, powder conveying and paint shops often need minus 20 to minus 40 C (class 3 or 2), which takes a desiccant or similar dryer.",
+        "Many plants dry all the air to minus 40 C because one user needs it. A small desiccant dryer at that point of use, with refrigerated drying for the rest, usually costs much less."
+      ]
+    },
+    {
+      "h": "How to work out the purge cost",
+      "ol": [
+        "Find the purge flow on the dryer data sheet. If it is not there, the Compressed Air Challenge puts a heatless unit at about 15 to 20% of its rated flow.",
+        "Find your compressor's specific power in kW per cfm from its data sheet or a flow test.",
+        "Purge kW = purge cfm x kW per cfm. Multiply by running hours for kWh.",
+        "Multiply kWh by your tariff for rupees and by 0.710 kg CO2 per kWh for CO2.",
+        "Fit a dew point dependent purge control. A fixed-cycle dryer purges on its rated flow even when the air demand is half that."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 300 cfm of air dried for 6,000 hours",
+    "lines": [
+      "Heatless desiccant purge at 15% of 300 cfm: 45 cfm",
+      "Compressor specific power (assumed): 0.20 kW per cfm, so 45 x 0.20 = 9 kW",
+      "Purge energy: 9 x 6,000 = 54,000 kWh a year; CO2: 54,000 x 0.710 = 38,340 kg, about 38.3 t",
+      "Refrigerated dryer input (assumed from a data sheet): 2.5 kW x 6,000 = 15,000 kWh; CO2: 10,650 kg, about 10.7 t",
+      "Difference: 39,000 kWh and about 27.7 t CO2 a year"
+    ],
+    "note": "Inputs are assumptions for illustration; use your own data sheets and measured hours."
+  },
+  "senseible": "Senseible reads your electricity and fuel bills into a monthly record, so the drop in kWh, rupees and CO2 after a dryer change shows up month on month. Machine-level meter feeds are set up with the Senseible team.",
+  "links": [
+    {
+      "label": "Compressed air leak cost",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Compressor pressure reduction savings",
+      "to": "/answers/compressed-air-pressure-reduction-savings"
+    },
+    {
+      "label": "Measure savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Energy Auditor Guide Book 3, Chapter 3, Compressed Air System (air dryers)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "ISO 8573-1:2010, compressed air purity classes (pressure dew point)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

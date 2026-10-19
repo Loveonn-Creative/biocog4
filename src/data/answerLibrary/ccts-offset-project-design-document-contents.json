@@ -1,0 +1,94 @@
+{
+  "slug": "ccts-offset-project-design-document-contents",
+  "q": "What goes in a CCTS offset project design document for a factory project?",
+  "title": "What goes in a CCTS project design document",
+  "short": "A CCTS project design document has to describe the project and its boundary, show that the chosen BEE methodology applies, set the baseline, show additionality, estimate the reductions and fix the monitoring plan. Section headings and extra parts come from BEE's current template in the Detailed Procedure, so draft in that template from records a validator can check.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Energy consultant, MSME owner",
+  "sections": [
+    {
+      "h": "What the document has to prove",
+      "ol": [
+        "What the project is: location, owner, technology, what changes and when it starts.",
+        "That the methodology fits: the BEE methodology and version, such as BM IN02.001, and how the project meets each applicability condition.",
+        "What is inside the boundary: which equipment, fuels and electricity connections are counted.",
+        "The baseline and additionality: what would have happened without the project, worked out with tool BM-T-001, which BEE lists for identifying the baseline scenario and showing additionality.",
+        "The expected reductions: baseline emissions minus project emissions minus any leakage, year by year, using the tools the methodology names, such as BM-T-002 for fossil fuel combustion and BM-T-003 for electricity.",
+        "The monitoring plan: every parameter, its unit, its source and how often it is recorded."
+      ],
+      "p": [
+        "The Detailed Procedure for the Offset Mechanism, issued on 27 March 2025, sets the rest through its Registration and Issuance, Project Standard, Validation and Verification, and SDG Standard parts. Check those parts for any stakeholder, environmental or SDG sections the template adds."
+      ]
+    },
+    {
+      "h": "What makes the baseline hold up",
+      "ul": [
+        "Fuel invoices and stock registers in litres, tonnes or scm for each year of history, with calorific values from supplier certificates or lab reports.",
+        "Electricity bills in kWh for every connection inside the boundary.",
+        "Output records in the unit the baseline uses, so energy per tonne or per piece can be worked out.",
+        "Dated notes on shutdowns, capacity changes or product mix shifts."
+      ]
+    },
+    {
+      "h": "The monitoring plan sets your paperwork for years",
+      "p": [
+        "Every parameter you list has to be recorded the way you said, every period, for as long as you claim credits. A short list with clear sources beats a long one you cannot keep up. For each parameter, name the meter, invoice or lab test it comes from, how meters are calibrated, and what you do when a reading is missing."
+      ]
+    },
+    {
+      "h": "Gaps a validator will spot",
+      "ul": [
+        "Baseline data from a wider boundary than the project, such as a whole-site bill for one boiler with no sub-meter.",
+        "Calorific values or factors with no stated source, or a different choice in the baseline and in the project.",
+        "No plan for the old equipment, so what happens to it is left open.",
+        "A methodology version that is not the one in force on the date you submit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative ex ante reduction line for a boiler fuel switch",
+    "lines": [
+      "Baseline: 1,000 t coal a year x 2.42 kg CO2 per kg (IPCC 2006 default) = 2,420 t CO2",
+      "Project: 4,90,000 scm PNG a year x 2.05 kg CO2 per scm = 1,004.5 t CO2",
+      "Leakage: none claimed, old boiler scrapped with a scrap invoice",
+      "Expected reduction: 2,420 minus 1,004.5 = 1,415.5 t CO2 a year, about 1,415 t"
+    ],
+    "note": "Quantities are illustrative and use IPCC 2006 default factors. The methodology and its tools decide whether measured calorific values are needed instead, which would change both lines."
+  },
+  "senseible": "Senseible reads past fuel invoices and electricity bills into a dated record, each file fingerprinted with SHA-256, which you can hand to the consultant drafting the baseline section. The same record keeps running after commissioning, so monitoring data builds up from bills you already receive.",
+  "links": [
+    {
+      "label": "Can an MSME earn CCTS offset credits?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Years of data for a project baseline",
+      "to": "/answers/how-many-years-of-data-for-carbon-project-baseline"
+    },
+    {
+      "label": "Which projects fit BM IN02.001",
+      "to": "/answers/which-projects-qualify-under-bm-in02-001"
+    },
+    {
+      "label": "Carbon project validation cost",
+      "to": "/answers/carbon-project-validation-cost"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Detailed Procedure for the Offset Mechanism under CCTS (27 March 2025) and its project design document template",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "BEE, Approved Methodologies and Tools under the Offset Mechanism (CCTS), list updated 7 July 2026 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Carbon Credit Trading Scheme, 2023, S.O. 2825(E), as amended (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Content kept to what BEE's tool list and the Detailed Procedure's structure confirm; the template's exact section list could not be read, so download the current PDD template from beeindia.gov.in before drafting. BEE revises the procedure, templates, methodologies and tools by notice."
+}

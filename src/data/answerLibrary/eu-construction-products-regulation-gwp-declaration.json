@@ -1,0 +1,70 @@
+{
+  "slug": "eu-construction-products-regulation-gwp-declaration",
+  "q": "Will EU buyers of tiles, sanitaryware or rebar need a GWP figure from me under the new Construction Products Regulation?",
+  "title": "CPR GWP declaration for Indian exporters",
+  "short": "Yes, once a harmonised technical specification for your product family brings it in. Regulation (EU) 2024/3110 applies from 8 January 2026 and puts global warming potential in the first set of environmental characteristics for the declaration of performance, but it reaches each product family only as its specification is adopted.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ceramic, sanitaryware, steel rebar and stone exporters",
+  "sections": [
+    {
+      "h": "Who issues the figure",
+      "p": [
+        "Under the CPR the manufacturer draws up the declaration of performance and affixes CE marking for products covered by a harmonised technical specification. If you make tiles, sanitaryware or rebar in India for the EU market, that is you, with your importer checking that you did. When GWP becomes a required characteristic for your family, the number goes into that declaration."
+      ]
+    },
+    {
+      "h": "How the GWP is calculated",
+      "p": [
+        "Construction product footprints in Europe follow EN 15804+A2, the core rules behind construction EPDs, and the product category rules for the material. The figure is a life cycle result in kg CO2e per declared unit, such as per square metre of tile or per tonne of rebar, covering at least raw materials, transport to the plant and manufacturing."
+      ]
+    },
+    {
+      "h": "How it differs from CBAM for rebar",
+      "ul": [
+        "CBAM covers iron and steel products, including rebar, and asks for embedded emissions under the CBAM rules for the installation and its precursors.",
+        "The CPR GWP is a product life cycle figure under EN 15804, with a different boundary and method.",
+        "A rebar exporter may need both figures, and they will not match. Keep both methods documented."
+      ]
+    },
+    {
+      "h": "What to do before the date reaches you",
+      "ol": [
+        "Find the harmonised standard your product is sold under and watch for its replacement under the new CPR; that is what sets your GWP date. Later tranches of environmental indicators follow from 2030 and 2032.",
+        "Collect a year of plant data: fuels, electricity, raw materials and their transport, and output by product.",
+        "Ask your EU buyers which figure they already use; some project specifiers ask for an EPD before the law does."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase invoices into a dated plant record, the activity data a GWP study for tiles, sanitaryware or rebar needs. It prepares CBAM data for rebar as a self-declared draft.",
+  "links": [
+    {
+      "label": "How to get an EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "How to read GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Which PCR to use for an EPD",
+      "to": "/answers/which-pcr-to-use-for-an-epd"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2024/3110 (Construction Products Regulation), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "EN 15804:2012+A2:2019, sustainability of construction works, core rules for EPDs (iso.org for the related ISO 14025)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: CPR applies from 8 January 2026, with GWP in the first tranche and further environmental indicators from 9 January 2030 and 9 January 2032; each applies to a product family only once its harmonised technical specification under the new CPR is cited. Check the family's status before quoting a date.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "stone-crusher-aggregate-co2-per-tonne",
+  "q": "What is the carbon footprint of crushed stone aggregate per tonne from a crusher?",
+  "title": "CO2 per tonne of crushed stone aggregate",
+  "short": "Add the crusher's electricity times 0.710 kg CO2 per kWh to the diesel burnt by loaders, excavators, dumpers and any DG set times 2.68 kg per litre, then divide by tonnes dispatched. Take power from the discom bill and diesel from invoices and issue slips.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Stone crusher and quarry owners, RMC and road contractors",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Grid electricity for crushers, screens and conveyors, from the discom bill.",
+        "Diesel for excavators, loaders, dumpers and drill rigs, from bowser issue slips and invoices.",
+        "Diesel for a DG set if the crusher runs on captive power.",
+        "Explosives used in blasting, if you blast, using your supplier's factor.",
+        "Leave out outbound haulage to the customer; it belongs to the delivery stage and the buyer's transport."
+      ]
+    },
+    {
+      "h": "Sharing between sizes",
+      "p": [
+        "A crusher makes several products at once: 40 mm, 20 mm, 10 mm, dust or manufactured sand. Unless your buyer's product rules say otherwise, share the total by mass, so every tonne carries the same figure. Do not load the whole footprint onto the size a customer happens to ask about."
+      ]
+    },
+    {
+      "h": "Getting the diesel right",
+      "p": [
+        "Diesel is often bought in bulk and issued from an on-site tank to several machines. Use the purchase invoices for the total and the issue register for the split, and reconcile the tank stock at month end. A gap between litres bought and litres issued is either stock or loss, and both need explaining before the figure goes to a buyer."
+      ]
+    },
+    {
+      "h": "When a buyer asks for an EPD",
+      "p": [
+        "Road and RMC buyers bidding on green projects may ask for an EPD under EN 15804. Your per tonne figure from bills is the core of the manufacturing stage, but an EPD adds a defined boundary, product rules and independent verification."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month",
+    "lines": [
+      "Dispatched: 30,000 t of mixed aggregate",
+      "Grid electricity: 45,000 kWh x 0.710 = 31,950 kg CO2",
+      "Diesel for loaders, excavators and dumpers: 9,000 L x 2.68 = 24,120 kg CO2",
+      "Total: 31,950 + 24,120 = 56,070 kg CO2",
+      "Per tonne: 56,070 / 30,000 = 1.87 kg CO2 per tonne"
+    ],
+    "note": "Inputs are illustrative. Add DG diesel and explosives if you use them."
+  },
+  "senseible": "Senseible reads your diesel invoices and electricity bills into a monthly record, applying 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh, which gives the crusher's own emissions for the per tonne figure.",
+  "links": [
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "How to get an EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

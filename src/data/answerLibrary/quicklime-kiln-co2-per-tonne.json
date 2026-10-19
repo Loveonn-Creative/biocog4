@@ -1,0 +1,79 @@
+{
+  "slug": "quicklime-kiln-co2-per-tonne",
+  "q": "How much CO2 does a lime kiln emit per tonne of quicklime, including fuel?",
+  "title": "Lime kiln CO2 per tonne of quicklime",
+  "short": "Add two parts. Process CO2 is 0.785 t per tonne of CaO in the product, so about 0.706 t for quicklime at 90 percent CaO. Fuel CO2 is the coal, petcoke or gas burnt per tonne of quicklime times its factor. A coal-fired kiln using 0.2 t of coal per tonne lands near 1.19 t CO2 per tonne.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Lime kiln owners (Katni, Jodhpur, Sojat), steel and sugar buyers",
+  "sections": [
+    {
+      "h": "Process CO2 per tonne of product",
+      "p": [
+        "Each tonne of CaO formed from limestone releases 44.01 / 56.08 = 0.785 t of CO2. Multiply by the CaO fraction of your quicklime from a lab assay, not the nominal grade. If the stone is dolomitic, add 44.01 / 40.30 = 1.092 t CO2 per tonne of MgO in the product. Unburnt core or residual CO2 in the lime lowers the figure; the assay shows it as loss on ignition."
+      ]
+    },
+    {
+      "h": "Fuel CO2 per tonne of product",
+      "ol": [
+        "Add up the fuel bought for the kiln in the month, adjusted for stock: tonnes of coal or petcoke, scm of gas, or tonnes of wood.",
+        "Divide by tonnes of quicklime produced in the same month to get fuel per tonne.",
+        "Multiply by the fuel's factor: coal 2.42 kg CO2 per kg at the IPCC 2006 default, or a factor from the measured calorific value of your coal.",
+        "Wood and other biomass: report the CO2 as biogenic, separately; only its CH4 and N2O count in Scope 1."
+      ]
+    },
+    {
+      "h": "What moves the fuel figure",
+      "ul": [
+        "Kiln type: shaft, parallel flow regenerative and rotary kilns use very different amounts of heat per tonne.",
+        "Stone size and moisture: wet or poorly sized stone needs more fuel.",
+        "Petcoke versus coal: petcoke carries more carbon per tonne, so the same heat input gives more CO2 per tonne of fuel.",
+        "Small electricity for crushers, fans and hydrators: kWh x 0.710 kg CO2, usually minor next to fuel and process CO2."
+      ]
+    },
+    {
+      "h": "Reporting it to a steel or sugar buyer",
+      "p": [
+        "Give the per tonne figure split into process CO2 and fuel CO2, with the CaO assay and the fuel factor named. Buyers use it in their own Scope 3, and the split shows them which part you can cut with fuel and kiln changes and which part comes with the chemistry."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative coal-fired shaft kiln, one month",
+    "lines": [
+      "Output: 600 t quicklime at 90% CaO",
+      "Process CO2: 0.785 x 0.90 = 0.7065 t CO2 per tonne",
+      "Coal: 120 t used, so 120 / 600 = 0.2 t coal per tonne of lime",
+      "Fuel CO2: 0.2 x 2.42 = 0.484 t CO2 per tonne",
+      "Total: 0.7065 + 0.484 = about 1.19 t CO2 per tonne of quicklime",
+      "Month: 600 x 1.19 = about 714 t CO2"
+    ],
+    "note": "Output, assay and coal use are illustrative. Use your own production log, lab results and invoices."
+  },
+  "senseible": "Senseible reads coal and petcoke invoices and calculates fuel CO2 at IPCC 2006 defaults. The process CO2 part is worked out from your production record and CaO assay, which you add alongside.",
+  "links": [
+    {
+      "label": "Process CO2 from limestone calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 2.3, Lime production",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

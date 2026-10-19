@@ -1,0 +1,80 @@
+{
+  "slug": "air-compressor-specific-power-kw-per-cfm",
+  "q": "What is a good specific power (kW per cfm) for an air compressor, and how do I test mine?",
+  "title": "Air compressor kW per cfm: test and compare",
+  "short": "A good specific power is the figure on your model's performance data sheet at the same discharge pressure; a unit running well above it is wasting energy. Test yours with a free air delivery pump-up test, divide the input kW by the measured cfm, and price the gap in kWh and CO2.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plant engineers and MSME owners",
+  "sections": [
+    {
+      "h": "Run the pump-up test",
+      "ol": [
+        "Isolate the compressor and its receiver from the plant and drain the receiver.",
+        "Note the total volume of receiver and connecting pipe, V, in cubic metres.",
+        "Start the compressor and time how long it takes to raise pressure from P1 to P2, close to its rated pressure.",
+        "Free air delivery Q in m3 per minute = (P2 minus P1) / P0 x V / T, with pressures in bar absolute, P0 the atmospheric pressure and T in minutes.",
+        "Measure input power with a power analyser while it loads. If the delivered air is much hotter than ambient, apply the temperature correction in the BEE guide book."
+      ]
+    },
+    {
+      "h": "Compare like with like",
+      "p": [
+        "Specific power rises with discharge pressure, so compare your result with the data sheet value at the same pressure. Many manufacturers publish standard performance data sheets that give kW per 100 cfm at rated pressure; use the sheet for your exact model and pressure. A clear gap at the same pressure is worth investigating: worn elements, dirty intake filters, poor cooling or a failing unloader are common causes."
+      ]
+    },
+    {
+      "h": "Turn the gap into kWh and CO2",
+      "p": [
+        "Annual kWh lost = (measured kW per cfm minus data sheet kW per cfm) x average cfm delivered x running hours. Multiply by 0.710 kg CO2 per kWh for grid electricity, or by your DG's kg per kWh if the compressor runs on captive power. Treat the result as an estimate until a before and after bill confirms it."
+      ]
+    },
+    {
+      "h": "Fix the system before replacing the machine",
+      "p": [
+        "A new compressor feeding a leaky, over-pressured network saves less than its data sheet suggests. Test leakage and set the lowest working pressure first, then size any replacement to the real demand."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 75 kW class screw compressor",
+    "lines": [
+      "Receiver and pipe volume: 10 m3; P1 1.0 bar abs, P2 8.0 bar abs, P0 1.0 bar abs; time 4.0 minutes",
+      "Q = (8.0 minus 1.0) / 1.0 x 10 / 4.0 = 17.5 m3 per minute = 618 cfm",
+      "Input power while loading: 125 kW, so 125 / 618 = 0.202 kW per cfm",
+      "Data sheet at the same pressure: 0.170 kW per cfm (assumed); gap 0.032 kW per cfm",
+      "Loss: 0.032 x 450 cfm average delivered x 6,000 hours = 86,400 kWh a year",
+      "CO2: 86,400 x 0.710 = 61,344 kg, about 61.3 t; cost at Rs 8 per kWh (assumed) = Rs 6,91,200"
+    ]
+  },
+  "senseible": "Senseible reads your electricity and fuel bills into a monthly record, so the change in kWh and CO2 after a compressor repair or replacement shows up against the months before. Machine-level meter feeds can be set up with the Senseible team.",
+  "links": [
+    {
+      "label": "Compressed air leak cost and CO2",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Savings from lower air pressure",
+      "to": "/answers/compressed-air-pressure-reduction-savings"
+    },
+    {
+      "label": "Compressor heat recovery savings",
+      "to": "/answers/air-compressor-heat-recovery-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, chapter on compressed air systems (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

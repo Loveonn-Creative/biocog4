@@ -1,0 +1,84 @@
+{
+  "slug": "ccts-additionality-common-practice-test",
+  "q": "How does the common practice test work in BEE's CCTS additionality tool BM-T-001?",
+  "title": "Common practice test in BM-T-001",
+  "short": "The common practice test in BM-T-001 asks whether the technology is already widespread among similar plants in your region. If it is, the project is not additional. BEE's tool sets the exact test; the CDM common practice tool most consultants start from fails a project when over 20 percent of similar plants, and more than three, already use it.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Energy consultants and plant engineers",
+  "sections": [
+    {
+      "h": "Where the test sits in BM-T-001",
+      "p": [
+        "BM-T-001 is BEE's combined tool for identifying the baseline and showing additionality (version 1.0, March 2025). A project developer works through its steps, starting with a check of what the law already requires, and ends with the common practice step: showing that the technology has low market penetration among comparable plants. Read the version in force for how BEE defines the region, the comparison group and the pass mark."
+      ]
+    },
+    {
+      "h": "How the CDM version works",
+      "p": [
+        "The CDM common practice tool (Tool 24) is the usual reference point. BEE's tool may define things differently, so treat these as CDM practice, not BEE rules."
+      ],
+      "ol": [
+        "Region: the whole host country by default; a narrower area needs a reason.",
+        "Similar plants: same output, capacity within plus or minus 50 percent, operating before your start date, excluding registered or validating carbon projects.",
+        "N all is the number of similar plants; N diff is how many use a different technology.",
+        "F = 1 minus N diff divided by N all.",
+        "Common practice if F is greater than 0.2 and N all minus N diff is greater than 3."
+      ]
+    },
+    {
+      "h": "Where the counts come from in India",
+      "p": [
+        "Few clusters have a register of who runs which boiler, kiln or motor. Build the list from BEE SME cluster energy profiles, equipment supplier sales lists, industry association surveys and state pollution control board consent records. Note the source and date of every count, because the verification agency will test the list, not just the ratio."
+      ]
+    },
+    {
+      "h": "If the technology is already common",
+      "p": [
+        "A project that fails this step is not additional on this route, however good the investment case. You can narrow the comparison only by a real technical difference, such as capacity or fuel, with evidence. Redrawing the region just to pass will not survive validation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example with the CDM thresholds: forging cluster heat recovery",
+    "lines": [
+      "Similar furnaces in the region: N all = 40",
+      "Without heat recovery: N diff = 31",
+      "F = 1 minus 31 / 40 = 0.225, greater than 0.2",
+      "N all minus N diff = 9, greater than 3",
+      "Under the CDM test: common practice, so the project fails this step"
+    ],
+    "note": "Counts are illustrative, and the thresholds are the CDM ones. Apply the definitions and pass mark in the BM-T-001 version you use."
+  },
+  "senseible": "Senseible keeps the plant's fuel and electricity bills as a dated, fingerprinted record for the baseline and monitoring side of a CCTS project. The common practice count comes from cluster and market data.",
+  "links": [
+    {
+      "label": "Prove additionality for an efficiency project",
+      "to": "/answers/prove-additionality-energy-efficiency-project"
+    },
+    {
+      "label": "What is additionality",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "Investment analysis for additionality",
+      "to": "/answers/cdm-additionality-investment-analysis-explained"
+    },
+    {
+      "label": "BEE approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-001, combined tool to identify the baseline scenario and demonstrate additionality, version 1.0 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "UNFCCC CDM Methodological Tool 24, Common practice",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewNote": "BM-T-001 text could not be read on 18 October 2026; region, comparison group and thresholds are given as CDM Tool 24 practice only. Check the BM-T-001 version in force and its notice date.",
+  "reviewed": "2026-10-18"
+}

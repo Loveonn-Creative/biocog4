@@ -1,0 +1,92 @@
+{
+  "slug": "cement-grinding-unit-co2-per-tonne",
+  "q": "How do I calculate CO2 per tonne of cement at a grinding unit that buys clinker?",
+  "title": "CO2 per tonne at a cement grinding unit",
+  "short": "Multiply the clinker share of your cement by the supplier's CO2 per tonne of clinker, then add grinding electricity, any fuel for drying slag or fly ash, and inbound transport. Clinker is nearly all of it, so the clinker supplier's figure and your clinker ratio decide the result.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Standalone grinding units, PPC and PSC producers, CBAM exporters",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "CO2 per tonne of cement = clinker ratio x supplier clinker CO2 per tonne + grinding kWh per tonne x 0.710 + drying fuel per tonne x its factor + gypsum, fly ash or slag share x their factors.",
+        "Clinker ratio = clinker consumed / cement produced in the same period, from your stock and production records, not the design mix."
+      ]
+    },
+    {
+      "h": "Getting the clinker figure",
+      "ul": [
+        "Ask the clinker supplier for CO2 per tonne of clinker, with year, method (such as the GCCA protocol) and whether it covers calcination and kiln fuel.",
+        "Weight several suppliers by tonnes bought.",
+        "If none is given, use a labelled default and say so; for CBAM, use the EU default for clinker until you have actual data."
+      ]
+    },
+    {
+      "h": "Fly ash, slag and gypsum",
+      "p": [
+        "Fly ash and granulated slag are by-products of power plants and steel plants. Most cement protocols give them little or no production burden, but count their transport and any drying. Gypsum is mined or a by-product; use the supplier's figure or a database value, and name it."
+      ]
+    },
+    {
+      "h": "What CBAM asks of a grinding unit",
+      "p": [
+        "Cement under CN 2523 is a CBAM good, and clinker (CN 2523 10) is both a CBAM good and the precursor of your cement. Cement is not on the CBAM Regulation's Annex II list of direct-only goods, so both direct and indirect emissions count and grinding electricity stays in. The clinker's embedded emissions come from the supplier's installation data or the default in Implementing Regulation (EU) 2025/2621. The electricity factor for indirect emissions follows the CBAM rules in Implementing Regulation (EU) 2025/2547, not automatically the CEA figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: PPC with 65% clinker",
+    "lines": [
+      "Clinker: 0.65 x 840 kg CO2 per t clinker (supplier figure, assumed) = 546 kg",
+      "Grinding: 35 kWh per t x 0.710 = 24.9 kg",
+      "Fly ash and gypsum transport and drying: assumed 5 kg",
+      "Total: 546 + 24.9 + 5 = 575.9 kg, about 0.58 t CO2 per t of PPC",
+      "Same unit making OPC at 95% clinker, with additives assumed at 2 kg: 0.95 x 840 = 798 kg + 24.9 + 2 = 824.9 kg, about 0.82 t"
+    ],
+    "note": "Clinker factor, kWh and additive figures are assumptions; use your supplier data and bills."
+  },
+  "senseible": "Senseible reads the unit's electricity bills and clinker purchase invoices, giving grinding emissions and clinker tonnes bought each month. Clinker emissions come from the supplier, and Senseible's CBAM cost tools cover cement.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "PPC vs OPC footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "CBAM cost for cement",
+      "to": "/cbam-cost/cement"
+    },
+    {
+      "label": "Cement industry",
+      "to": "/industries/cement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GCCA Cement CO2 and Energy Protocol (originally WBCSD CSI)",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Annexes I and II",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2547 (CBAM definitive-period calculation methods), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621 (CBAM default values)",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: cement counts direct and indirect emissions (not on Annex II of Regulation (EU) 2023/956); calculation rules in Implementing Regulation (EU) 2025/2547, default values in 2025/2621, from 1 January 2026. Check for revisions.",
+  "reviewed": "2026-10-18"
+}

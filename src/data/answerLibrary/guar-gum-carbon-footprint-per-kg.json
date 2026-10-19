@@ -1,0 +1,75 @@
+{
+  "slug": "guar-gum-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of guar gum powder per kg, and how do Jodhpur processors calculate it?",
+  "title": "Guar gum powder footprint per kg",
+  "short": "Add the farm emissions of the guar seed, the splitting plant's energy and the powder plant's energy, then allocate between guar splits, churi and korma, since one seed gives all three. The plant part is fuel and electricity per kg of powder; the farm part needs farm data or a named database figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Guar split and powder processors, food and oilfield buyers",
+  "sections": [
+    {
+      "h": "Three stages to add up",
+      "ol": [
+        "Farm: fertiliser, diesel for tillage and threshing, and nitrous oxide from soils, using IPCC 2006 Volume 4 Chapter 11. Guar fixes its own nitrogen, and the 2006 Guidelines do not count biological fixation as a direct N2O source.",
+        "Splitting: dehusking and splitting seed into splits (endosperm), churi (husk) and korma (germ), mostly electricity, plus transport of seed.",
+        "Powder: hydrating, flaking, grinding and drying the splits, with electricity for mills and fuel or steam for driers."
+      ]
+    },
+    {
+      "h": "Allocation between splits, churi and korma",
+      "p": [
+        "ISO 14044 asks you to avoid allocation where you can by splitting the process, then to allocate by a physical relation such as mass, and only then by another relation such as economic value. Churi and korma are sold as cattle feed, so they carry part of the farm and splitting burden.",
+        "Mass allocation gives splits a smaller share; economic allocation gives them a larger one, because splits are worth far more per kg. State which you used and show the other as a sensitivity, since buyers compare."
+      ]
+    },
+    {
+      "h": "What buyers usually ask for",
+      "ul": [
+        "CO2e per kg of powder, cradle to gate, with the allocation method named.",
+        "The plant's own Scope 1 and 2 for the year.",
+        "Whether farm data is primary (your contract farmers) or a database figure.",
+        "For food buyers, the grade and mesh, since finer grinding uses more power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: plant stages only, mass allocation",
+    "lines": [
+      "Splitting: 1,000 t seed gives 300 t splits (yield assumed); electricity 60,000 kWh x 0.710 = 42,600 kg CO2; splits' mass share 30% = 12,780 kg",
+      "Powder: 300 t splits gives 290 t powder; electricity 150,000 kWh x 0.710 = 106,500 kg; PNG for driers 30,000 scm x 2.05 = 61,500 kg",
+      "Plant total for powder: 12,780 + 106,500 + 61,500 = 180,780 kg CO2",
+      "Per kg of powder: 180,780 / 290,000 = 0.62 kg CO2, before farm and transport"
+    ],
+    "note": "Yields and energy use are assumptions for illustration. With economic allocation, if splits carry 75% of the splitting stage, the figure becomes (31,950 + 168,000) / 290,000 = 0.69 kg CO2 per kg."
+  },
+  "senseible": "Senseible reads the splitting and powder plants' electricity and fuel bills, giving the plant's share of the footprint month by month with factors shown. Farm data and allocation choices come from you.",
+  "links": [
+    {
+      "label": "Product footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Spice processing footprint per kg",
+      "to": "/answers/spice-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14044 clause 4.3.4 (allocation)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 11, N2O emissions from managed soils",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

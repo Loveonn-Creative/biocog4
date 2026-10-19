@@ -1,0 +1,83 @@
+{
+  "slug": "boiler-blowdown-heat-recovery-savings",
+  "q": "Is boiler blowdown heat recovery worth it, and how much CO2 does it save?",
+  "title": "Boiler blowdown heat recovery: worth it?",
+  "short": "Usually yes, if the boiler has continuous blowdown above 5 percent of its steam rate and runs most of the year. A flash tank and heat exchanger return most of the heat in that hot water to the feed water, and the fuel and CO2 saved follow from a simple heat balance.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Boiler operators, textile and food processors",
+  "sections": [
+    {
+      "h": "Cut blowdown before you recover it",
+      "p": [
+        "Blowdown removes dissolved solids so the boiler water stays within its TDS limit. Too much blowdown throws away hot water and treated make up. First fit automatic TDS control and improve feed water treatment or condensate return. Recover heat from whatever blowdown is left."
+      ]
+    },
+    {
+      "h": "When recovery is worth it",
+      "ul": [
+        "Continuous blowdown, not only short bottom blowdowns once a shift.",
+        "Continuous blowdown above 5 percent of the steam rate, the point at which the US Department of Energy's steam tip sheet calls a boiler a good candidate.",
+        "Higher pressure boilers, because hotter blowdown carries more heat per kg.",
+        "Long running hours and a use for low grade heat, such as a deaerator or make up water heating."
+      ]
+    },
+    {
+      "h": "How the system works",
+      "p": [
+        "Blowdown goes to a flash vessel at low pressure. Part of it flashes to steam, which goes to the deaerator or feed tank. The hot water left over passes through a heat exchanger to warm cold make up water before it drains."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "ol": [
+        "Heat available (kJ per hour) = blowdown kg per hour x (enthalpy of boiler water minus enthalpy of feed water).",
+        "Heat recovered = heat available x recovery share. The DOE tip sheet works its example at 90 percent recovery; use your exchanger supplier's figure.",
+        "Fuel saved = heat recovered divided by (boiler efficiency x fuel net calorific value).",
+        "CO2 saved = fuel saved a year x the IPCC 2006 factor, for example 2.97 kg CO2 per litre of furnace oil."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 5 TPH furnace oil boiler",
+    "lines": [
+      "Blowdown 300 kg per hour; boiler water at about 11 bar absolute: 781 kJ/kg; feed water at 60 C: 251 kJ/kg",
+      "Heat available: 300 x (781 minus 251) = 1,59,000 kJ per hour",
+      "Recovered at 80%: 1,27,200 kJ per hour",
+      "Fuel saved: 1,27,200 / (0.85 x 38,000 kJ per litre) = 3.94 litres per hour",
+      "Over 7,200 hours: 28,354 litres; CO2: 28,354 x 2.97 = 84,211 kg, about 84 t a year"
+    ],
+    "note": "Blowdown rate, 80% recovery (kept below DOE's 90% example to stay conservative), 85% efficiency, the 38,000 kJ per litre heating value and hours are assumptions. Use your boiler data and confirm the saving from fuel invoices at similar steam output."
+  },
+  "senseible": "Senseible reads boiler fuel invoices and converts them to CO2 with the IPCC 2006 defaults, such as 2.97 kg per litre of furnace oil, so fuel before and after the change can be compared month by month.",
+  "links": [
+    {
+      "label": "Boiler economiser fuel saving",
+      "to": "/answers/boiler-economiser-fuel-saving"
+    },
+    {
+      "label": "Boiler efficiency: direct and indirect",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, boilers chapter on blowdown and TDS control (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Threshold and recovery share from US DOE Advanced Manufacturing Office, Steam Tip Sheet 10, Recover heat from boiler blowdown (checked 18 October 2026)."
+}
