@@ -185,7 +185,7 @@
     "cancel-or-refund": {
       "q": "Puwede ba akong mag-cancel o mag-refund?",
       "a": "Walang refund. Kapag nag-cancel ka, hindi na magre-renew ang plan mo.",
-      "steps": ["Sa iyo pa rin ang nabayaran mo hanggang matapos ito.", "Hindi nire-refund ang serbisyong nabili mo na.", "Para mag-cancel, mag-message sa amin."],
+      "steps": ["Sa iyo pa rin ang nabayaran mo hanggang matapos ito.", "Hindi nire-refund ang serbisyong nabili mo na.", "Para mag-cancel, mag-message sa amin: impact@senseible.earth"],
       "cta": "Mag-message para mag-cancel",
       "keywords": ["refund", "ibalik ang pera", "cancel", "renew"]
     },

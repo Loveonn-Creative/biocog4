@@ -108,9 +108,15 @@ export function HelpArticleBody({ article, ui, compact = false }: { article: Hel
       ) : null}
 
       {article.cta && (
+        article.cta.to.startsWith('mailto:') ? (
+          <a href={article.cta.to} className="mt-2 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+            {article.cta.label} <ArrowRight className="h-4 w-4" />
+          </a>
+        ) : (
         <Link to={article.cta.to} className="mt-2 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
           {article.cta.label} <ArrowRight className="h-4 w-4" />
         </Link>
+        )
       )}
 
       <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-dashed border-border pt-4 text-sm text-muted-foreground">

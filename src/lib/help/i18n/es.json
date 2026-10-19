@@ -185,7 +185,7 @@
     "cancel-or-refund": {
       "q": "¿Puedo cancelar o pedir un reembolso?",
       "a": "No hay reembolsos. Si cancelas, tu plan no se renueva.",
-      "steps": ["Lo que ya pagaste sigue siendo tuyo hasta que termine.", "Un servicio que ya compraste no se reembolsa.", "Para cancelar, escríbenos."],
+      "steps": ["Lo que ya pagaste sigue siendo tuyo hasta que termine.", "Un servicio que ya compraste no se reembolsa.", "Para cancelar, escríbenos: impact@senseible.earth"],
       "cta": "Escríbenos para cancelar",
       "keywords": ["reembolso", "devolución", "cancelar", "renovación"]
     },

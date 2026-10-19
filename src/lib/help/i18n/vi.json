@@ -185,7 +185,7 @@
     "cancel-or-refund": {
       "q": "Tôi có thể hủy hoặc được hoàn tiền không?",
       "a": "Không có hoàn tiền. Nếu bạn hủy, gói sẽ không gia hạn.",
-      "steps": ["Những gì bạn đã trả vẫn thuộc về bạn cho đến khi hết hạn.", "Dịch vụ đã mua không được hoàn tiền.", "Để hủy, hãy nhắn cho chúng tôi."],
+      "steps": ["Những gì bạn đã trả vẫn thuộc về bạn cho đến khi hết hạn.", "Dịch vụ đã mua không được hoàn tiền.", "Để hủy, hãy nhắn cho chúng tôi: impact@senseible.earth"],
       "cta": "Nhắn để hủy",
       "keywords": ["hoàn tiền", "hủy", "gia hạn"]
     },

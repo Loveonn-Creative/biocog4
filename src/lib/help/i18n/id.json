@@ -185,7 +185,7 @@
     "cancel-or-refund": {
       "q": "Bisakah saya membatalkan atau meminta pengembalian dana?",
       "a": "Tidak ada pengembalian dana. Jika Anda membatalkan, paket Anda tidak diperpanjang.",
-      "steps": ["Apa yang sudah Anda bayar tetap milik Anda sampai masanya habis.", "Layanan yang sudah dibeli tidak dikembalikan dananya.", "Untuk membatalkan, kirim pesan ke kami."],
+      "steps": ["Apa yang sudah Anda bayar tetap milik Anda sampai masanya habis.", "Layanan yang sudah dibeli tidak dikembalikan dananya.", "Untuk membatalkan, kirim pesan ke kami: impact@senseible.earth"],
       "cta": "Kirim pesan untuk membatalkan",
       "keywords": ["refund", "uang kembali", "batal", "perpanjang"]
     },
