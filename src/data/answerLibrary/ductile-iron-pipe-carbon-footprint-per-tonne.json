@@ -1,0 +1,91 @@
+{
+  "slug": "ductile-iron-pipe-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of ductile iron pipe per tonne, and how do buyers compare it with steel or HDPE pipe?",
+  "title": "Ductile iron pipe carbon footprint",
+  "short": "Calculate it from your own route: iron or hot metal per tonne of good pipe times its factor, plus melting, annealing and finishing energy, zinc coating and cement lining. Buyers should then compare per metre of pipe at the same diameter and pressure class, not per tonne, because DI, steel and HDPE weigh very different amounts.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Ductile iron pipe makers and water-project suppliers exporting to the Middle East and Europe",
+  "sections": [
+    {
+      "h": "What goes into a tonne of DI pipe",
+      "ol": [
+        "Iron units: hot metal from your own mini blast furnace (coke and coal in your Scope 1), or purchased pig iron and scrap melted in induction or cupola furnaces.",
+        "Melting and treatment: furnace electricity or coke, plus magnesium treatment.",
+        "Centrifugal casting and annealing: annealing furnace fuel, often PNG, LPG or furnace oil.",
+        "Finishing: zinc spray, cement mortar lining, bitumen or epoxy coat, at the masses your EN 545 or ISO 2531 coating spec sets.",
+        "Divide by tonnes of good pipe dispatched, not tonnes melted."
+      ]
+    },
+    {
+      "h": "Why per tonne misleads in a comparison",
+      "p": [
+        "A DN 300 DI pipe weighs several times more per metre than an HDPE pipe of the same bore. Per tonne, plastic resin can look worse than iron; per metre, the ranking can flip. The fair unit is one metre of pipe of a stated diameter and pressure class, and better still one metre over the design life, because pipes replaced sooner carry their footprint again.",
+        "Mass per metre comes from your catalogue for DI and steel. For HDPE, mass per metre = pi x (outside diameter minus wall) x wall x density, about 955 kg per m3."
+      ]
+    },
+    {
+      "h": "What a fair comparison states",
+      "ul": [
+        "Same DN, pressure class and design life for every option.",
+        "Same boundary, usually cradle to gate (EN 15804 modules A1 to A3), with transport and laying added only for all options.",
+        "The source of each figure: your own calculation, a published EPD under EN 15804, or a database value.",
+        "Recycled iron counted the same way for every option, under one stated method."
+      ]
+    },
+    {
+      "h": "Europe and CBAM",
+      "p": [
+        "Cast iron pipes under CN 7303 are in the EU CBAM. The embedded emissions your EU importer declares follow CBAM rules and boundaries, which differ from a product footprint, so keep the two figures and their methods apart."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: induction route, per tonne of good pipe (illustrative inputs)",
+    "lines": [
+      "Pig iron: 0.70 t x 2.0 t CO2e per t (assumed supplier figure) = 1.400 t CO2e",
+      "Steel scrap: 0.40 t x 0.05 t CO2e per t (assumed processing burden) = 0.020 t CO2e",
+      "Melting power: 600 kWh x 0.710 = 426 kg, 0.426 t CO2",
+      "Annealing PNG: 40 scm x 2.05 = 82 kg, 0.082 t CO2",
+      "Other plant power: 150 kWh x 0.710 = 106.5 kg, 0.1065 t CO2",
+      "Zinc 2.5 kg x 3.0 (assumed) = 0.0075 t; lining cement 60 kg x 0.8 (assumed) = 0.048 t CO2e",
+      "Total: 1.400 + 0.020 + 0.426 + 0.082 + 0.1065 + 0.0075 + 0.048 = 2.090 t CO2e per t of pipe",
+      "Per metre, DN 300 at an assumed 65 kg per m: 0.065 x 2,090 = 135.9 kg CO2e per m"
+    ],
+    "note": "All factors and the pipe mass are assumptions for illustration. Use your supplier figures and catalogue weights."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices such as coke, PNG and furnace oil (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per tonne figure. Its CBAM cost calculator covers iron and steel goods in scope; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Are cast iron castings covered by CBAM?",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    },
+    {
+      "label": "PVC pipe carbon footprint per kg",
+      "to": "/answers/pvc-pipe-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Cupola vs induction furnace emissions",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "How to get an EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 2531, Ductile iron pipes, fittings and accessories for water applications (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

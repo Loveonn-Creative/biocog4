@@ -1,0 +1,82 @@
+{
+  "slug": "flight-emissions-from-travel-agent-invoice",
+  "q": "Our travel agent invoice shows only the fare, not the route. How do I calculate flight emissions?",
+  "title": "Flight emissions from a travel agent bill",
+  "short": "Get the route and cabin class first: ask the agent for a passenger sector report, or read them from the e-ticket or itinerary receipt that came with the booking. Then calculate by distance. Use a spend-based estimate on the fare only for trips you cannot trace, label it, and exclude GST and the agent's service fee.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance teams in IT, consulting and export firms",
+  "sections": [
+    {
+      "h": "Where the route is hiding",
+      "ul": [
+        "The e-ticket or itinerary receipt: origin and destination airports, flight numbers and booking class for every sector.",
+        "The agent's booking system: most corporate travel agents can export a monthly report with traveller, sectors, class and fare. Ask for it as a standing monthly file.",
+        "The airline's GST invoice, which some airlines issue per ticket and which often names the sector.",
+        "Expense claims, where travellers attach boarding passes."
+      ]
+    },
+    {
+      "h": "Clean the fare before any spend-based estimate",
+      "ul": [
+        "Use the base fare and fuel surcharge only.",
+        "Remove GST, the agent's service or convenience fee and the GST on it; these are not flights.",
+        "Remove cancellation charges and refunds, or net refunds against the original fare.",
+        "Hotels and visas billed on the same invoice belong elsewhere."
+      ]
+    },
+    {
+      "h": "Why distance beats spend for flights",
+      "p": [
+        "Fares swing with booking time, season and route demand. A last-minute Delhi to Mumbai ticket can cost several times an advance one for the same seat and the same fuel. A spend-based factor turns that price difference into an emissions difference that is not real. Distance and class track what was actually flown, so convert as many trips as you can and keep spend only for the rest."
+      ]
+    },
+    {
+      "h": "Writing it up",
+      "p": [
+        "Report the share of trips calculated by distance and the share by spend, with the factor source and edition for each. Report all of it as Scope 3 Category 6. Next year, the share by spend should fall as the agent's sector report becomes routine."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of agent invoices (illustrative)",
+    "lines": [
+      "12 trips invoiced; sector report recovered for 10 of them",
+      "10 traced trips: 18,400 passenger km in economy x 0.25 kg CO2e per passenger km = 4,600 kg CO2e",
+      "2 untraced trips: invoice total Rs 26,000, less GST and agent fee Rs 3,000 = Rs 23,000 of fare",
+      "Rs 23,000 x 0.02 kg CO2e per rupee = 460 kg CO2e, labelled spend-based",
+      "Month total: 4,600 + 460 = 5,060 kg CO2e, 91% by distance"
+    ],
+    "note": "Both factors (0.25 kg CO2e per passenger km and 0.02 kg CO2e per rupee) are illustrative, not official values. Take the distance factor from the DESNZ or ICAO source you use, and a spend factor from a named dataset adjusted for currency and inflation."
+  },
+  "senseible": "Senseible reads travel invoices like other invoices. Where the route and class are printed it can use distance-based factors; otherwise it gives a spend-based estimate labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Flight emissions from a route",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Should flights include radiative forcing",
+      "to": "/answers/should-flight-emissions-include-radiative-forcing"
+    },
+    {
+      "label": "Spend-based Scope 3: GST and inflation",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Travel reimbursed by a client",
+      "to": "/answers/who-reports-travel-reimbursed-by-client"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK Government GHG Conversion Factors for Company Reporting (DESNZ), business travel air",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

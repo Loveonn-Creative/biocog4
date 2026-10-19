@@ -1,0 +1,79 @@
+{
+  "slug": "residual-emissions-meaning-net-zero",
+  "q": "What are residual emissions, and how much can a company leave unreduced under net zero?",
+  "title": "Residual emissions under net zero",
+  "short": "Residual emissions are what is left after you have cut everything you feasibly can by your net-zero year. Under the SBTi Corporate Net-Zero Standard version 1.3, that means at least a 90 percent cut from the base year for most sectors, so residuals can be at most about 10 percent, neutralised with carbon removals.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Exporters asked about net-zero targets",
+  "sections": [
+    {
+      "h": "The cap in numbers",
+      "p": [
+        "Version 1.3 of the SBTi standard asks for a long-term target to cut Scope 1, 2 and 3 emissions by at least 90 percent from the base year by 2050 or earlier. Land-intensive (FLAG) emissions follow their own pathway with a lower minimum cut. Whatever remains in the target year is the residual."
+      ]
+    },
+    {
+      "h": "What can neutralise a residual",
+      "p": [
+        "Only carbon removals: CO2 taken out of the air and stored. Credits for avoided emissions, such as renewable energy or cookstove projects, do not neutralise residuals, and no credits count towards the reduction itself. Version 2.0, published in June 2026, adds a durability match: residuals of long-lived gases such as CO2 must be neutralised with long-lived removals."
+      ]
+    },
+    {
+      "h": "Residuals are not offsets for this year",
+      "p": [
+        "A carbon neutral claim under ISO 14068-1 lets you offset a period's remaining emissions with credits after cutting what you can. Net zero is stricter: removals are only for the small residual left in the target year, after the deep cut."
+      ]
+    },
+    {
+      "h": "How to state your residual",
+      "ol": [
+        "Base year and its total, by scope.",
+        "Target year and percentage cut.",
+        "Residual in tonnes CO2e.",
+        "The type of removals you plan to use for it, and their durability.",
+        "When the base year will be recalculated, such as after an acquisition."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 12,000 tonne base year",
+    "lines": [
+      "Base year: 12,000 t CO2e across Scope 1, 2 and 3",
+      "90 percent cut by 2050 under version 1.3: 12,000 x 0.10 = 1,200 t CO2e residual at most",
+      "Neutralise 1,200 t CO2e with carbon removals each year from 2050",
+      "If you only cut 80 percent, 2,400 t remain and the target is not net zero under the standard, whatever credits you buy"
+    ]
+  },
+  "senseible": "Senseible builds the base-year Scope 1 and 2 inventory from fuel invoices and electricity bills, with Scope 3 supplier lines in a separate evidence trail, which is the figure your 90 percent cut is measured from. Target validation sits with SBTi.",
+  "links": [
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    },
+    {
+      "label": "Durable or nature-based removals",
+      "to": "/answers/durable-removals-vs-nature-based-for-net-zero"
+    },
+    {
+      "label": "Can credits count toward an SBTi target?",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    },
+    {
+      "label": "Net zero",
+      "to": "/net-zero"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Corporate Net-Zero Standard, version 1.3, and version 2.0 (published 11 June 2026, effective 1 February 2027) (sciencebasedtargets.org)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "ISO 14068-1:2023, Carbon neutrality (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "SBTi Corporate Net-Zero Standard version 2.0 takes effect on 1 February 2027; version 1.3 stays open for new targets until the end of the transition (reported as 31 January 2028). Check the version you will validate against and its reduction levels for your sector (checked 2026-10-19)."
+}

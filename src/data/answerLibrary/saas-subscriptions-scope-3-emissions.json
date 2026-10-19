@@ -1,0 +1,83 @@
+{
+  "slug": "saas-subscriptions-scope-3-emissions",
+  "q": "How do I count SaaS subscriptions like CRM, email and design tools in Scope 3?",
+  "title": "SaaS subscriptions in Scope 3",
+  "short": "Put them in Scope 3 Category 1, purchased goods and services. Use the vendor's figure for your account if it gives one. Otherwise take the spend before tax, convert it to the factor's currency and year, and multiply by a spend-based factor for software or data processing. Label the result spend-based, with wide uncertainty.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "IT, BPO and professional services firms",
+  "sections": [
+    {
+      "h": "Why it is Category 1 and not Scope 2",
+      "p": [
+        "You do not run the servers or buy their electricity. The vendor's data centre power is the vendor's Scope 2, or its cloud provider's. For you it is a purchased service. Keep it apart from cloud infrastructure you rent by the hour, which is usually measured from usage."
+      ]
+    },
+    {
+      "h": "Build the list from payments",
+      "ul": [
+        "Pull every software charge from card statements, bank debits and vendor invoices for the year.",
+        "Vendors billing from abroad usually charge no GST. The IGST you pay yourself under reverse charge is a tax, not spend; leave it out.",
+        "Annual plans paid upfront: count them in the year they cover, or the year paid, and keep the same rule every year.",
+        "Group by vendor and tool type so the largest few stand out."
+      ]
+    },
+    {
+      "h": "The spend-based arithmetic",
+      "ol": [
+        "Take the amount before tax.",
+        "Convert rupees to the factor's currency at that year's average rate.",
+        "Deflate to the factor's base year.",
+        "Multiply by the factor for software publishers, or for data processing and hosting, from one named factor set such as the US EPA supply chain factors.",
+        "Label the result spend-based."
+      ]
+    },
+    {
+      "h": "When vendor data beats spend",
+      "p": [
+        "Some large vendors report emissions for each customer account. Use that figure only if it states the period, the boundary and whether it is location or market based, and record which. For most firms SaaS is a small line; a labelled estimate is fine. If you leave it out, say so and why."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 60-person services firm",
+    "lines": [
+      "Annual SaaS spend before GST: ₹18,00,000 across CRM, email, design and accounting tools",
+      "Converted at an assumed average ₹84 per USD: 18,00,000 / 84 = $21,429",
+      "Deflated to the factor's base year, assuming prices rose 10 percent since: 21,429 / 1.10 = $19,481",
+      "Factor: 0.10 kg CO2e per USD (illustrative; use the software factor from your chosen set)",
+      "19,481 x 0.10 = 1,948 kg CO2e, about 1.9 tonnes, labelled spend-based"
+    ],
+    "note": "The exchange rate, inflation and factor are assumptions for the arithmetic only."
+  },
+  "senseible": "Senseible reads SaaS invoices into its Scope 3 supplier evidence trail with taxable value and tax as separate fields, so the pre-tax amount is ready. Where only spend exists, Senseible provides a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Cloud footprint for AWS, Azure and Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard and Technical Guidance (2013), Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "US EPA Supply Chain GHG Emission Factors for US Commodities and Industries (USEEIO)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

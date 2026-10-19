@@ -1,0 +1,76 @@
+{
+  "slug": "staff-canteen-meals-scope-3",
+  "q": "How do I count catered staff meals and canteen food in our carbon footprint?",
+  "title": "Staff canteen meals in your footprint",
+  "short": "Food your caterer serves to staff is Scope 3 Category 1, purchased goods and services. Count meals served by menu type and multiply by a per meal factor, or, if you only have the caterer's invoices, multiply spend by a food services factor and label it spend-based. Meat and dairy dishes drive most of the result.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Offices and factories with outsourced canteens",
+  "sections": [
+    {
+      "h": "What sits where",
+      "ul": [
+        "Food and the caterer's service: Scope 3 Category 1.",
+        "Kitchen LPG or PNG: Scope 1 if your company buys the fuel and runs the kitchen; Category 1 inside the caterer's charge if the caterer buys it.",
+        "Kitchen electricity on your meter: Scope 2.",
+        "Food waste you send for disposal: Category 5, waste generated in operations.",
+        "Meals bought by staff with their own money in a food court: outside your inventory."
+      ]
+    },
+    {
+      "h": "Activity method: meals by menu type",
+      "p": [
+        "Ask the caterer for monthly counts of meals served, split at least into vegetarian and non-vegetarian, and ideally by dish type. Multiply each count by a per meal factor from a published food footprint dataset and name it. Dairy heavy meals such as paneer and ghee dishes sit between plain vegetarian and meat meals, so a two-way split is the minimum, not the ideal."
+      ]
+    },
+    {
+      "h": "Spend method: caterer invoices",
+      "p": [
+        "If meal counts are not available, multiply the caterer's invoice value, net of GST, by a food services spend factor in kg CO2e per rupee. Convert any factor published in another currency and year to rupees for the same year. Label the result spend-based: it cannot show a menu change, and it moves with prices rather than food."
+      ]
+    },
+    {
+      "h": "Is it worth counting at all",
+      "p": [
+        "Check it against your other categories with a quick spend estimate first. If it is material, move to meal counts so a menu change, such as more vegetarian days, shows in the number. In the example below, moving from 70% to 80% vegetarian meals cuts about 19 tonnes, which a spend figure would not show."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one office canteen for a year",
+    "lines": [
+      "Meals served: 500 a day x 250 working days = 125,000 meals; 70% vegetarian, 30% non-vegetarian",
+      "Vegetarian: 87,500 x 1.0 kg CO2e per meal (assumed) = 87,500 kg CO2e",
+      "Non-vegetarian: 37,500 x 2.5 kg CO2e per meal (assumed) = 93,750 kg CO2e",
+      "Total: 87,500 + 93,750 = 181,250 kg CO2e, about 181 tonnes in Category 1",
+      "Shifting to 80% vegetarian: 100,000 x 1.0 + 25,000 x 2.5 = 162,500 kg CO2e, about 19 tonnes lower"
+    ],
+    "note": "Per meal factors here are placeholders to show the method; use a named dataset and keep it fixed year to year."
+  },
+  "senseible": "Senseible reads caterer and food purchase invoices, uses printed quantities where they exist, and gives a spend-based estimate, labelled spend-based with wider uncertainty, where only spend is available. It also reads kitchen LPG invoices at 2.98 kg CO2 per kg (IPCC 2006 default) into Scope 1.",
+  "links": [
+    {
+      "label": "Induction vs LPG in a canteen kitchen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    },
+    {
+      "label": "Spend-based vs activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    },
+    {
+      "label": "Food waste: landfill, compost or biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 1",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

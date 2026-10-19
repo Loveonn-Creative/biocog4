@@ -1,0 +1,74 @@
+{
+  "slug": "griha-requirement-government-building-suppliers",
+  "q": "What does a GRIHA-rated government building ask from cement, steel and material suppliers?",
+  "title": "GRIHA asks for building material suppliers",
+  "short": "Mostly documents that prove content and performance: BIS test certificates, fly ash or slag content in cement and concrete, recycled content declarations, low VOC certificates for paints, and energy data such as U-values for glazing and insulation. The exact list depends on the GRIHA criteria the project team targets, so read the tender specification.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Building material suppliers and contractors bidding for CPWD and state projects",
+  "sections": [
+    {
+      "h": "Why the contractor asks you",
+      "p": [
+        "A GRIHA rating is earned with documents. The project team picks criteria from the GRIHA manual and must file proof for each one. Material criteria reward lower impact choices, so the contractor turns them into supplier asks in the purchase order or tender specification."
+      ]
+    },
+    {
+      "h": "Cement, concrete and blocks",
+      "ul": [
+        "Test certificates to the relevant BIS standard, such as IS 1489 for Portland pozzolana cement or IS 455 for Portland slag cement.",
+        "A declaration of fly ash or slag content per bag or per cubic metre of concrete.",
+        "For blocks and bricks, fly ash content and compressive strength test reports.",
+        "Separately, MoEFCC's ash utilisation notification of 31 December 2021 makes ash use mandatory for some construction within 300 km of a coal or lignite power plant, such as roads and embankments. Ask the project team whether it applies to the site."
+      ]
+    },
+    {
+      "h": "Steel, glazing, paints and insulation",
+      "ul": [
+        "Steel: mill test certificates and, where the team claims recycled content, a declaration of scrap share from the mill.",
+        "Glazing and insulation: U-value, solar heat gain coefficient and visible light transmission, because GRIHA makes the Energy Conservation Building Code's mandatory requirements a condition for a rating.",
+        "Paints, adhesives and sealants: VOC content certificates.",
+        "Some teams ask for an EPD or embodied carbon figure. It helps to have one, but check whether the tender requires it."
+      ]
+    },
+    {
+      "h": "How to be ready before the tender",
+      "ol": [
+        "Keep a folder per product: BIS licence, latest test reports, content declarations on letterhead.",
+        "State figures per unit the contractor uses: per bag, per tonne, per m3, per m2.",
+        "Ask the contractor which GRIHA criteria they are targeting, so you send what counts and nothing extra."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your plant's electricity bills and fuel invoices into Scope 1 and 2 records with the factor on each line, useful when a contractor or project team asks for your plant's energy or emissions figures.",
+  "links": [
+    {
+      "label": "Does ECBC apply to my building?",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    },
+    {
+      "label": "PPC vs OPC cement carbon footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Fly ash brick footprint per 1,000",
+      "to": "/answers/fly-ash-brick-carbon-footprint-per-1000"
+    },
+    {
+      "label": "What is embodied carbon A1 to A3?",
+      "to": "/answers/what-is-embodied-carbon-a1-a3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation Building Code 2017, Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "MoEFCC notification on fly ash utilisation, 31 December 2021",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "GRIHA criteria versions and CPWD or MoHUA directions on rating levels for government buildings change; confirm the current requirement in each tender."
+}

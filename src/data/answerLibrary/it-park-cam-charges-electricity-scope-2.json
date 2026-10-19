@@ -1,0 +1,83 @@
+{
+  "slug": "it-park-cam-charges-electricity-scope-2",
+  "q": "Our IT park bills electricity, DG power and chilled water through CAM charges. How do we report that?",
+  "title": "IT park CAM charges: which scope?",
+  "short": "Under operational control, report the grid power, the landlord's DG power and the chilled water billed to your leased space as Scope 2: all three are energy you buy and do not generate. Split the CAM bill into kWh, DG kWh and TR-hours, apply a factor to each, and treat any area-based split as an estimate.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "IT, BPO and GCC offices in leased IT parks and SEZs",
+  "sections": [
+    {
+      "h": "Why DG power from the landlord is Scope 2, not Scope 1",
+      "p": [
+        "Scope 1 covers fuel burnt in equipment you own or control. The park's DG sets belong to the developer or facility manager, who buys the diesel and runs them. You receive electricity from them, so it is purchased electricity, Scope 2. The same logic puts chilled water from a central plant in Scope 2 as purchased cooling. If your company runs its own DG set inside the floor, that diesel is Scope 1."
+      ]
+    },
+    {
+      "h": "Ask the facility manager for three numbers per month",
+      "ol": [
+        "Grid kWh on your floor's sub-meter, or your share of the park's grid kWh.",
+        "DG kWh supplied to you, and the park's DG output per litre of diesel for that month, from the DG log.",
+        "Chilled water TR-hours on your BTU meter, and the plant's kW per TR including chiller, pumps and cooling tower fans."
+      ]
+    },
+    {
+      "h": "Common areas and where only area is given",
+      "p": [
+        "Lobbies, lifts, basements and outdoor lighting sit outside your leased space and the landlord runs them, so under operational control they are not your Scope 2; they sit in the landlord's Scope 1 and 2. You can report your share as optional Scope 3 (many tenants use Category 8, upstream leased assets) or disclose it as excluded. Pick one and keep it every year. If you use financial control or equity share instead, the GHG Protocol puts an operating-leased space itself in Category 8, so say which approach you use. If the CAM bill only gives a rupee amount per square foot, allocate the park's metered energy by your leased area and label it an estimate."
+      ]
+    },
+    {
+      "h": "Converting each stream",
+      "ul": [
+        "Grid kWh x 0.710 kg CO2 per kWh, the CEA weighted average for India.",
+        "DG kWh x (2.68 kg CO2 per litre divided by the DG's kWh per litre). Without the DG log, a reasonable estimate needs the month's diesel litres and total DG units from the facility manager.",
+        "TR-hours x kW per TR x 0.710 for an electric chiller plant. A vapour absorption plant fired on gas or waste heat needs its own factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for a tenant floor",
+    "lines": [
+      "Grid: 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "DG: 1,200 kWh at 3.4 kWh per litre = 352.9 litres x 2.68 = 945.9 kg CO2",
+      "Chilled water: 30,000 TR-hours x 0.8 kW per TR (plant figure, assumed here) = 24,000 kWh x 0.710 = 17,040 kg CO2",
+      "Total Scope 2 for the floor: 12,780 + 945.9 + 17,040 = 30,765.9 kg CO2, about 30.8 tonnes"
+    ],
+    "note": "Chilled water is more than half of this tenant's Scope 2, and it is missed when only the electricity line of the CAM bill is counted. The kW per TR is an assumption; use your plant's figure."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. Ask the facility manager for the monthly kWh, DG units and diesel litres in writing, and keep them with the CAM invoices.",
+  "links": [
+    {
+      "label": "Rented warehouse electricity: which scope?",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    },
+    {
+      "label": "Chiller plant emissions per TR-hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    },
+    {
+      "label": "Diesel generator: Scope 1 or Scope 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Which Scope 3 categories matter for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

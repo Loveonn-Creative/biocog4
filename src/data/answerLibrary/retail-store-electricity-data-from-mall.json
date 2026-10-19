@@ -1,0 +1,87 @@
+{
+  "slug": "retail-store-electricity-data-from-mall",
+  "q": "Our stores are in malls and the landlord bills electricity. How do we get Scope 2 data?",
+  "title": "Mall store electricity for Scope 2",
+  "short": "Ask each mall landlord for the monthly sub-meter kWh behind your electricity charge, split into grid units and DG backup units, plus any chilled water billed to your store. Under operational control those are your Scope 2. For stores with no data, estimate from kWh per square foot at similar stores and label them estimated.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Retail chains and franchise brands",
+  "sections": [
+    {
+      "h": "Three lines to ask for on every landlord invoice",
+      "ul": [
+        "Grid units from your store's sub-meter, with opening and closing readings.",
+        "DG units, usually billed at a higher rate. The landlord generates this power from diesel; you report it as Scope 2 at the DG's emission rate, not the grid factor.",
+        "Chilled water for air conditioning, in TR-hours or by area. Purchased cooling is Scope 2 too; convert it with the mall chiller plant's kWh per TR-hour."
+      ]
+    },
+    {
+      "h": "Common area charges",
+      "p": [
+        "Electricity for corridors, escalators and parking inside the CAM charge is the landlord's to report. If you choose to include your share, it goes in Scope 3 Category 8, not Scope 2."
+      ]
+    },
+    {
+      "h": "Collecting it across many stores",
+      "ol": [
+        "One template per store per month: store code, landlord, period, grid kWh, DG kWh, chilled water.",
+        "Store teams upload the landlord invoice with the figures.",
+        "A central check flags invoices that show only rupees.",
+        "Ask the leasing team to add a kWh disclosure clause at each lease renewal.",
+        "Track the share of kWh that is metered, not estimated."
+      ]
+    },
+    {
+      "h": "Filling gaps honestly",
+      "p": [
+        "For a store with no data, use kWh per square foot from stores of the same format, city and air conditioning type, and label it estimated. Replace it when real data arrives. Dividing a rupee charge by an assumed tariff is weaker; if you must, say so."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three stores, one month",
+    "lines": [
+      "Store A: 2,100 sq ft, 4,200 kWh grid from the landlord sub-meter = 2.0 kWh per sq ft",
+      "Store B: 1,800 sq ft, 3,600 kWh grid = 2.0 kWh per sq ft",
+      "Store C: 2,000 sq ft, no data: 2,000 x 2.0 = 4,000 kWh, labelled estimated",
+      "Grid total: 11,800 kWh x 0.710 = 8,378 kg CO2",
+      "DG units at Store A: 300 kWh x 0.766 kg CO2 per kWh (2.68 kg per litre / 3.5 kWh per litre, assumed DG output) = 229.8 kg CO2",
+      "Month total: 8,378 + 229.8 = 8,607.8 kg CO2, about 8.6 tonnes, with 34 percent of grid kWh estimated"
+    ],
+    "note": "Ask the landlord for DG litres and units generated to replace the assumed 3.5 kWh per litre."
+  },
+  "senseible": "Senseible reads landlord invoices that print kWh and applies 0.710 kg CO2 per kWh to the grid units, keeping each invoice as evidence. A rupee-only invoice waits until you enter the kWh, and that line is marked Entered by you.",
+  "links": [
+    {
+      "label": "Sub-metered electricity in a rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "DG set emissions per kWh vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Chiller plant emissions per TR-hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    },
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Appendix F (leased assets)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

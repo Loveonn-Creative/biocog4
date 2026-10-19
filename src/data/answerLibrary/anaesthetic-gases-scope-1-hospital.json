@@ -1,0 +1,81 @@
+{
+  "slug": "anaesthetic-gases-scope-1-hospital",
+  "q": "Do anaesthetic gases like desflurane and nitrous oxide count in a hospital's Scope 1?",
+  "title": "Anaesthetic gases in hospital Scope 1",
+  "short": "Nitrous oxide, yes: it is one of the seven gases the GHG Protocol requires, and the hospital releases it on site, so it is Scope 1. Desflurane, isoflurane and sevoflurane are not on that list, so the GHG Protocol has them reported separately from the scopes. The NHS counts them in its direct footprint. Report them and say which way.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Hospital administrators and sustainability leads in India",
+  "sections": [
+    {
+      "h": "How much each gas warms",
+      "p": [
+        "IPCC AR6 gives 100-year global warming potentials of 2,590 for desflurane, 539 for isoflurane, 195 for sevoflurane and 273 for nitrous oxide. Per kg, desflurane is about 13 times sevoflurane. Use AR6 values for all four and say so; do not mix AR5 and AR6 in one total."
+      ]
+    },
+    {
+      "h": "Inside Scope 1 or beside it",
+      "p": [
+        "The GHG Protocol Corporate Standard lists emissions of gases outside its required seven as optional information, reported separately from the scopes. The volatile agents fall there. NHS trusts include them in the core NHS Carbon Footprint because they are released on NHS sites, and NHS England stopped routine desflurane use from early 2024. Either treatment is defensible if you show the volatile agents as their own line, so a reader can see the Scope 1 total with and without them."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "p": [
+        "Take kg of each gas purchased in the year from pharmacy and medical gas supplier invoices, adjusted for stock at the start and end of the year. Assume all of it is released: patients exhale almost all of the volatile agent unchanged, and most hospitals have no capture. Multiply kg by GWP. For volatile agents bought in bottles, convert millilitres to kg with the density on the product data sheet."
+      ]
+    },
+    {
+      "h": "Nitrous oxide can be the biggest line",
+      "p": [
+        "Piped nitrous oxide from a manifold leaks through valves and pipework even when no surgery is running, and that loss is still an emission. Counting cylinders bought, rather than gas used in theatres, captures the leaks. Entonox cylinders used in labour wards are half nitrous oxide by volume and belong in the same line."
+      ]
+    },
+    {
+      "h": "What to report beside the number",
+      "ul": [
+        "Gases included and the GWP source.",
+        "Whether the volatile agents are inside your Scope 1 total or shown separately from the scopes.",
+        "Purchase-based method and any stock adjustment.",
+        "Electricity, DG diesel and refrigerant top-ups as the hospital's other Scope 1 and 2 lines."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one hospital, one year",
+    "lines": [
+      "Desflurane: 20 bottles x 0.24 L x 1.465 kg/L = 7.032 kg x 2,590 = 18,213 kg CO2e",
+      "Sevoflurane: 60 bottles x 0.25 L x 1.52 kg/L = 22.8 kg x 195 = 4,446 kg CO2e",
+      "Nitrous oxide: 500 kg in cylinders x 273 = 136,500 kg CO2e",
+      "Total: 18,213 + 4,446 + 136,500 = 159,159 kg CO2e, about 159 tonnes, of which 22,659 kg is volatile agents to show as its own line"
+    ],
+    "note": "Quantities are invented for the arithmetic. Bottle sizes and densities are typical data sheet values; use the ones on your supplier's labels. GWPs are IPCC AR6."
+  },
+  "senseible": "Senseible keeps your pharmacy and medical gas invoices with a SHA-256 fingerprint as evidence of the kg purchased, and reads the hospital's electricity bills (0.710 kg CO2 per kWh, CEA version 21.0) and DG diesel invoices (2.68 kg CO2 per litre) into Scope 1 and 2.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Greenhouse gases beyond CO2",
+      "to": "/climate-intelligence/ghg-gases-warming-impact-beyond-co2"
+    },
+    {
+      "label": "Diesel generator: Scope 1 or Scope 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP-100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "GHG Protocol treatment of non-required gases and NHS practice (Greener NHS, NHS England desflurane guidance) checked October 2026; recheck if the GHG Protocol revision changes the required gas list."
+}

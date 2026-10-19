@@ -1,0 +1,87 @@
+{
+  "slug": "agrochemical-technical-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint per kg of an agrochemical technical for a multinational customer?",
+  "title": "Agrochemical technical footprint per kg",
+  "short": "Take one campaign's batch records: raw materials per kg of in-spec technical times their emission factors, plus steam, electricity, and fossil CO2 from incinerating spent solvent and waste, all divided by good output. Then see which lines are biggest in your own numbers and get supplier figures for those first.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Agrochemical manufacturers in Gujarat and Maharashtra",
+  "sections": [
+    {
+      "h": "Work from a campaign, not a year",
+      "p": [
+        "Multipurpose plants make several actives in the same reactors. Take one production campaign for the active the customer buys: its batch sheets, the steam and power metered or allocated to its block, and the waste and spent solvent it generated. Divide by kg of technical that passed QC, not kg produced. Off-spec batches that were reworked add their energy to the good output."
+      ]
+    },
+    {
+      "h": "Raw materials and intermediates",
+      "ul": [
+        "List every input above about 1% of mass: key starting materials, intermediates, reagents, catalysts and net solvent make-up (solvent bought, not solvent circulated).",
+        "For each, use a supplier footprint if you have one, then a named life cycle database value, and mark which is which.",
+        "Bought intermediates, from China or other Indian plants, can carry a large share. Ask those suppliers for their figures early."
+      ]
+    },
+    {
+      "h": "Utilities and waste",
+      "ul": [
+        "Steam: tonnes per batch x CO2 per tonne of steam from your own boiler fuel and steam records.",
+        "Electricity: kWh allocated to the block x 0.710 kg CO2 per kWh.",
+        "Spent solvent incinerated: fossil CO2 from its carbon content. Toluene, C7H8, is 91.2% carbon by mass, so each kg burnt gives 0.912 x 44/12 = 3.34 kg CO2.",
+        "Effluent treatment and hazardous waste sent to a TSDF: from the receiver's data, or labelled estimates."
+      ]
+    },
+    {
+      "h": "What the customer will look for",
+      "p": [
+        "Many chemical multinationals, including the members of Together for Sustainability (TfS), ask for figures under the TfS PCF Guideline: cradle to gate, with the share of primary data and its allocation rules for co-products. Check which edition your customer's request names. Send the per kg figure with the campaign period, the factor source for each large input and the share from supplier data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of in-spec technical (illustrative)",
+    "lines": [
+      "Intermediate A: 0.9 kg x 6.0 = 5.40 kg CO2e",
+      "Intermediate B: 0.6 kg x 4.0 = 2.40 kg CO2e",
+      "Solvent make-up: 0.5 kg x 1.5 = 0.75 kg CO2e",
+      "Steam: 20 kg x 0.32 kg CO2 per kg steam (assumption for a coal boiler) = 6.40 kg CO2",
+      "Electricity: 8 kWh x 0.710 = 5.68 kg CO2",
+      "Spent toluene incinerated: 0.4 kg x 3.34 = 1.34 kg CO2",
+      "Total: 5.40 + 2.40 + 0.75 + 6.40 + 5.68 + 1.34 = 21.97 kg CO2e per kg"
+    ],
+    "note": "Input quantities and the material factors (6.0, 4.0, 1.5) are illustrative assumptions, not published values. The 0.32 steam figure is an assumption for a coal boiler; use your own boiler fuel and steam records."
+  },
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input you divide into a per-unit figure. Its reports are self-declared drafts; a product footprint for a buyer still needs your material data and your own sign-off.",
+  "links": [
+    {
+      "label": "Answer a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "API carbon footprint per kg",
+      "to": "/answers/api-carbon-footprint-per-kg"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Solvent incineration emissions",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "WBCSD PACT Methodology, which the Together for Sustainability PCF Guideline aligns with",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

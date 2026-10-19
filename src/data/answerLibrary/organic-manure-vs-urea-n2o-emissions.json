@@ -1,0 +1,86 @@
+{
+  "slug": "organic-manure-vs-urea-n2o-emissions",
+  "q": "Does switching from urea to farmyard manure or compost cut N2O emissions?",
+  "title": "Manure or urea: which emits less N2O?",
+  "short": "Per kg of nitrogen, it depends on your climate. Under the IPCC 2019 Refinement, in wet climates manure or compost emits less direct N2O than urea, 0.006 against 0.016 kg N2O-N per kg N. In dry climates both use 0.005, so there is no saving. Dropping urea also removes its CO2.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Organic and residue-free produce exporters",
+  "sections": [
+    {
+      "h": "The factors side by side",
+      "ul": [
+        "Single default for all nitrogen inputs: 0.010 kg N2O-N per kg N, so switching makes no difference.",
+        "Wet climate: synthetic fertiliser 0.016, manure, compost and other organic inputs 0.006.",
+        "Dry climate: 0.005 for all inputs.",
+        "The climate class comes from long-term rainfall against evapotranspiration; in the tropics, under 1,000 mm of rain a year is dry. Irrigation does not change it, so an irrigated farm in a dry zone uses 0.005."
+      ]
+    },
+    {
+      "h": "What else changes when you switch",
+      "ul": [
+        "Urea's own CO2, 0.733 tonnes per tonne applied, goes away.",
+        "The emissions from making urea go away too; that is upstream of the farm.",
+        "IPCC assumes a larger share of organic nitrogen escapes as ammonia, which adds indirect N2O.",
+        "Composting on the farm releases methane and N2O during the process.",
+        "Manure stored in pits or heaps emits methane and N2O, counted wherever the manure is managed."
+      ]
+    },
+    {
+      "h": "The same yield may need more nitrogen",
+      "p": [
+        "Organic nitrogen becomes available to the crop slowly, so growers often apply more total nitrogen to get the same yield. Compare the kg of nitrogen you actually apply in each form, not the recommended dose. A higher rate eats into the saving."
+      ]
+    },
+    {
+      "h": "How to show it to a buyer",
+      "ol": [
+        "Compare a baseline season with the new season, using real kg of nitrogen by form.",
+        "Use the same factors, climate zone and GWP for both.",
+        "Show direct and indirect N2O and urea CO2 as separate lines.",
+        "Do not add soil carbon gains unless they were measured."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 120 kg N per hectare",
+    "lines": [
+      "Wet climate, urea: 120 x 0.016 x 44/28 x 273 = 823.7 kg CO2e of direct N2O",
+      "Plus urea CO2: 120 / 0.46 = 260.9 kg urea x 0.733 = 191.2 kg CO2, so 1,014.9 kg CO2e in total",
+      "Wet climate, manure: 120 x 0.006 x 44/28 x 273 = 308.9 kg CO2e",
+      "Saving in a wet climate: 1,014.9 minus 308.9 = 706.0 kg CO2e per hectare, before indirect N2O and composting",
+      "Dry climate: urea 120 x 0.005 x 44/28 x 273 = 257.4 + 191.2 = 448.6 kg CO2e; manure 257.4; the 191.2 kg saving is all urea CO2"
+    ],
+    "note": "N2O GWP of 273 is from IPCC AR6, 100 years. Urea is taken as 46 percent nitrogen, and both routes apply the same 120 kg N."
+  },
+  "senseible": "Senseible keeps fertiliser, manure and compost purchase invoices with their printed quantities in its Scope 3 evidence trail, so each season's nitrogen traces back to a bill. The N2O arithmetic above runs on those quantities.",
+  "links": [
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Urea application emissions per tonne",
+      "to": "/answers/urea-application-emissions-per-tonne"
+    },
+    {
+      "label": "Regenerative agriculture Scope 3 claims",
+      "to": "/answers/regenerative-agriculture-scope-3-claims"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11, Table 11.1 (ipcc.ch)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 10 (manure management) and Volume 5, Chapter 4 (composting)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, GWP100 of N2O",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

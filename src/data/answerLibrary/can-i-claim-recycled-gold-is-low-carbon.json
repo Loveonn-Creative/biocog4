@@ -1,0 +1,79 @@
+{
+  "slug": "can-i-claim-recycled-gold-is-low-carbon",
+  "q": "Can I tell buyers my jewellery is low carbon because it uses recycled gold?",
+  "title": "Recycled gold: can you say low carbon?",
+  "short": "Not with the words low carbon on their own. Say what you can prove: \"made with 100% recycled gold\", backed by your refiner's chain-of-custody records. Add a carbon figure only if you have measured the piece's footprint, and from 27 September 2026 avoid generic green wording on anything sold to EU consumers.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Jewellery exporters and brands",
+  "sections": [
+    {
+      "h": "Why recycled gold is a fair point but not a claim by itself",
+      "p": [
+        "Refining gold from scrap skips mining and ore processing, the energy-heavy part of producing new gold. That is a real advantage, but how big it is depends on the scrap and the refinery, so it is not a number you can print without your refiner's data.",
+        "But a piece of jewellery is more than its gold. Casting and polishing power, plating metals such as rhodium, stones, findings and packaging all add to it. Low carbon describes the whole piece, and recycled gold alone does not prove it."
+      ]
+    },
+    {
+      "h": "What the rules in your main markets say",
+      "ul": [
+        "EU: Directive (EU) 2024/825 applies from 27 September 2026. It bans generic environmental claims, such as climate friendly or eco, unless you can show recognised excellent environmental performance, and bans neutral or reduced impact claims based on offsets.",
+        "US: the FTC Green Guides (16 CFR Part 260) (section 260.13) allow a recycled content claim only for material recovered or otherwise diverted from the waste stream, during manufacturing or after consumer use, and expect any carbon claim to be specific and backed by reliable evidence.",
+        "UK: the CMA's Green Claims Code asks that a claim be true, clear, complete and backed by evidence.",
+        "India: the CCPA's 2024 greenwashing guidelines ask for specific, verifiable claims too."
+      ]
+    },
+    {
+      "h": "Proof to keep for a recycled gold claim",
+      "ol": [
+        "Refiner invoices and certificates stating the gold is recycled, batch by batch.",
+        "Chain-of-custody records from your refiner to your finished goods. The Responsible Jewellery Council Chain of Custody Standard is the scheme most buyers recognise.",
+        "Your own records showing the recycled gold went into the pieces you sell under the claim, not just into the factory."
+      ]
+    },
+    {
+      "h": "Wording that holds up",
+      "ul": [
+        "Use: \"Made with 100% recycled gold, chain of custody certified to the RJC standard.\"",
+        "Use, only with a footprint study: \"Cradle to gate footprint of [your figure] kg CO2e per ring, calculated to ISO 14067 for [year] production.\"",
+        "Avoid: \"low carbon\", \"climate friendly\", \"sustainable gold\" or \"carbon neutral\" with nothing behind them.",
+        "Comparisons such as \"lower carbon than mined gold\" need both figures on the same basis and the source of each."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your workshop's electricity bills and fuel invoices into Scope 1 and 2 records with the factor on each line, which can back the manufacturing part of a measured footprint. The recycled content proof comes from your refiner's chain-of-custody documents.",
+  "links": [
+    {
+      "label": "Can I call my export product carbon neutral?",
+      "to": "/answers/can-i-call-my-export-product-carbon-neutral"
+    },
+    {
+      "label": "Can lab-grown diamonds be called sustainable?",
+      "to": "/answers/can-lab-grown-diamonds-be-called-sustainable"
+    },
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Greenwashing self-audit checklist",
+      "to": "/climate-intelligence/msme-greenwashing-self-audit-checklist-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2024/825, empowering consumers for the green transition (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO 14021:2016, Self-declared environmental claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "EU green claims rules are moving: the 2024/825 bans apply from 27 September 2026 and the separate Green Claims Directive proposal stalled in 2025; check status before printing claims."
+}

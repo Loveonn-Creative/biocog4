@@ -1,0 +1,86 @@
+{
+  "slug": "it-company-carbon-footprint-per-employee",
+  "q": "What is a normal carbon footprint per employee for an Indian IT services company?",
+  "title": "IT company carbon footprint per employee",
+  "short": "There is no official benchmark. Work out your own Scope 1 and 2 per average employee, then compare it with listed IT peers, using the GHG table and headcount in each peer's BRSR for the same year. Offices on grid power with diesel backup sit higher than campuses buying renewable power.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "IT and BPO companies answering client and investor questionnaires",
+  "sections": [
+    {
+      "h": "How to calculate your figure",
+      "ol": [
+        "Scope 1: DG diesel, canteen LPG, company cars, and refrigerant topped up in office ACs and data room units.",
+        "Scope 2: office and data centre electricity from your bills, at 0.710 kg CO2 per kWh location-based. Report market-based separately if you buy renewable power or certificates.",
+        "Divide by average headcount for the year, the mean of the monthly figures, not the year-end count."
+      ]
+    },
+    {
+      "h": "How to build a peer range from BRSR",
+      "p": [
+        "Listed companies publish Scope 1 and Scope 2 in the GHG emissions table under Principle 6 of their BRSR, and employee numbers in Section A. Take five or six peers of similar size and delivery model, divide each one's Scope 1 plus 2 by its employees for the same financial year, and show the spread. Cite the reports and the year, because the figures change every year."
+      ]
+    },
+    {
+      "h": "Why two IT firms differ so much per head",
+      "ul": [
+        "Hybrid work: fewer people in the office means less power per employee on the books, and more home energy outside your Scope 2.",
+        "Own data centres or server rooms versus cloud. Cloud moves the power to Scope 3 Category 1.",
+        "Renewable power through open access, a green tariff or rooftop solar lowers market-based Scope 2.",
+        "Round the clock shifts, DG hours during outages, and contract staff counted or not in the headcount."
+      ]
+    },
+    {
+      "h": "What to send a client",
+      "p": [
+        "Give the figure, its scope (Scope 1 and 2, location-based or market-based), the headcount basis and the year. Clients increasingly ask for Scope 3 as well; for IT services, commuting, business travel, cloud and purchased hardware are usually larger than Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 1,200 person delivery centre (illustrative inputs)",
+    "lines": [
+      "Grid electricity: 2,400,000 kWh x 0.710 = 1,704,000 kg CO2",
+      "DG diesel: 20,000 L x 2.68 = 53,600 kg CO2",
+      "R-410A top-ups: 40 kg x 2,255.5 (IPCC AR6 GWP) = 90,220 kg CO2e",
+      "Scope 1 and 2: 1,704,000 + 53,600 + 90,220 = 1,847,820 kg, about 1,848 t CO2e",
+      "Per average employee: 1,848 / 1,200 = 1.54 t CO2e"
+    ],
+    "note": "Inputs are illustrative. Compare with peers only on the same scope, year and headcount basis."
+  },
+  "senseible": "Senseible reads office electricity bills (billing period, tariff, sanctioned load and units, at 0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices such as DG diesel and canteen LPG (IPCC 2006 defaults) into Scope 1 and 2. Headcount is your input.",
+  "links": [
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "BRSR intensity per rupee (PPP)",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    },
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI BRSR Core circular (July 2023), with the BRSR format",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 9 (ratio indicators)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Peer figures come from each year's BRSR; rebuild the range when FY 2025-26 reports are filed."
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "primary-data-share-meaning",
+  "q": "What does primary data share mean on a product carbon footprint, and how high should mine be?",
+  "title": "Primary data share, explained",
+  "short": "Primary data share is the percentage of your product footprint, in kg CO2e, calculated from data specific to your product's own processes and suppliers rather than industry averages. PACT asks for it but sets no pass mark. Buyers look for it to rise year by year, and supplier footprints for big materials raise it fastest.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Suppliers filling PACT or Catena-X PCF templates",
+  "sections": [
+    {
+      "h": "How it is calculated",
+      "p": [
+        "Add the emissions from every input calculated with primary data, divide by the total footprint, and multiply by 100. It is weighted by emissions, not by the number of data points, so one large input matters more than many small ones."
+      ]
+    },
+    {
+      "h": "What counts as primary",
+      "ul": [
+        "Your own measured activity: kWh from your electricity bills, litres or kg of fuel from invoices, even when multiplied by a published factor such as the CEA grid factor.",
+        "A supplier's own footprint for the material they sell you, calculated for their product.",
+        "Not primary: a database average for steel, resin or cotton, or a spend-based estimate."
+      ]
+    },
+    {
+      "h": "How high should it be",
+      "p": [
+        "PACT and the Catena-X PCF Rulebook ask you to report it, without a fixed minimum. For a converter, raw materials often make up most of the footprint, so your own energy data alone gives a low share. Getting your two or three biggest suppliers to send their own figures is what moves it past half."
+      ]
+    },
+    {
+      "h": "Mistakes that draw buyer queries",
+      "ul": [
+        "Counting database factors for purchased materials as primary.",
+        "Reporting 100% when only your own energy was measured and materials were left out.",
+        "Leaving the field blank. Buyers read a blank as zero."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one machined part (illustrative figures)",
+    "lines": [
+      "Own plant energy from bills: 1.2 kg CO2e; steel: 3.0 kg; paint 0.3 kg; packaging 0.1 kg; total 4.6 kg CO2e",
+      "Steel from a database average: primary share = 1.2 / 4.6 = 26%",
+      "Steel figure from the mill's own product footprint: (1.2 + 3.0) / 4.6 = 91%",
+      "Same total, but one supplier's data lifts the share from 26% to 91%"
+    ]
+  },
+  "senseible": "Senseible builds Scope 1 and 2 figures from your plant's own electricity bills and fuel invoices, which count as primary activity data for those inputs. Supplier invoices for materials go to a separate Scope 3 evidence trail.",
+  "links": [
+    {
+      "label": "PACT Pathfinder Framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    },
+    {
+      "label": "Answer a Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    },
+    {
+      "label": "Data quality rating on a PEF or EPD",
+      "to": "/answers/data-quality-rating-dqr-explained"
+    },
+    {
+      "label": "Tier 1 vs Tier 2 emission factors",
+      "to": "/climate-intelligence/msme-data-quality-tier-1-vs-tier-2-emission-factors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "WBCSD PACT Methodology v3.0 and Technical Specifications",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "PACT Methodology v3.0 and the Catena-X Rulebook are revised regularly; check the current definition of primary data before filling a template."
+}

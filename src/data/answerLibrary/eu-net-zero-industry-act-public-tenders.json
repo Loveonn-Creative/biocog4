@@ -1,0 +1,66 @@
+{
+  "slug": "eu-net-zero-industry-act-public-tenders",
+  "q": "What does the EU Net-Zero Industry Act require in public tenders for solar, batteries and heat pumps?",
+  "title": "EU Net-Zero Industry Act in public tenders",
+  "short": "It makes EU public buyers and renewable energy auctions look beyond price for net-zero technologies such as solar, batteries and heat pumps. Public tenders must set minimum environmental sustainability requirements and, where the EU depends on one non-EU country for over half of supply, a resilience condition. Auctions add non-price criteria.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian solar module, inverter, battery and heat pump exporters",
+  "sections": [
+    {
+      "h": "Which products are covered",
+      "p": [
+        "The Act, Regulation (EU) 2024/1735, lists net-zero technologies including solar photovoltaic and solar thermal, onshore wind and offshore renewables, batteries and energy storage, heat pumps and geothermal, electrolysers and fuel cells, biogas and biomethane, carbon capture and grid technologies, along with their main components."
+      ]
+    },
+    {
+      "h": "Public procurement, Article 25",
+      "p": [
+        "Public buyers purchasing these technologies must apply minimum mandatory requirements on environmental sustainability. A resilience condition applies once the Commission finds that more than half of the EU's supply of a technology or its main components comes from a single non-EU country: then no more than half of the contract's value for that technology may come from that country. Buyers can set these aside in limited cases, such as a disproportionate cost difference. Each tender spells out how it applies them."
+      ]
+    },
+    {
+      "h": "Renewable energy auctions, Article 26",
+      "p": [
+        "Member states must use non-price criteria for at least 30 percent of the volume they auction each year, or 6 GW a year, from 30 December 2025. Responsible business conduct, cybersecurity and ability to deliver are pre-qualification tests; a sustainability and resilience contribution is verified or scored. Commission Implementing Regulation (EU) 2025/1176 of 23 May 2025 sets out how they are applied, and Implementing Regulation (EU) 2025/1178 lists the final products and main components used for the resilience test."
+      ]
+    },
+    {
+      "h": "What an Indian exporter should have ready",
+      "ol": [
+        "A product carbon footprint to ISO 14067, with the method and data period stated.",
+        "Country of manufacture for the main components, such as cells, wafers and polysilicon for modules.",
+        "Cybersecurity documentation for inverters and other connected equipment.",
+        "Evidence of production capacity and delivery record.",
+        "Due diligence on labour and environment in your supply chain."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds your factory's Scope 1 and 2 figure from fuel invoices and electricity bills, a starting input for the product footprint a tender may ask for. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Solar panel embodied carbon per kWp",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    },
+    {
+      "label": "EU battery carbon footprint rules",
+      "to": "/answers/eu-battery-carbon-footprint-calculation-rules"
+    },
+    {
+      "label": "EU rules besides CBAM that ask for carbon data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2024/1735 (Net-Zero Industry Act), Articles 25 and 26, and Commission Implementing Regulations (EU) 2025/1176 and 2025/1178 (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Check the Commission's July 2026 guidance on Articles 25 and 26, the current list of technologies where the resilience condition is triggered, and the date from which Article 25 applies, on EUR-Lex and the Commission's energy pages (checked 2026-10-19)."
+}

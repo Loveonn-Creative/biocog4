@@ -1,0 +1,85 @@
+{
+  "slug": "leather-gloves-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of leather gloves for an EU buyer?",
+  "title": "Leather gloves carbon footprint per pair",
+  "short": "Work out the square feet of leather each pair really uses, including cutting waste, and multiply by your tannery's footprint per square foot. Add the lining by weight, your factory's electricity and diesel per pair, and the packaging. Leather area and cutting yield usually decide the answer.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Leather glove makers in Chennai, Kanpur and Kolkata",
+  "sections": [
+    {
+      "h": "Leather area per pair, from your cutting records",
+      "p": [
+        "Gloves are cut from small, thin skins, often goat or hair sheep for dress gloves and cow split for work gloves. Weigh or measure the skins issued for a production lot and divide by the pairs passed by QC. That gives area issued per pair, with cutting waste, stretching losses and rejects already inside.",
+        "Work gloves with cuffs and palm patches can use much more area than a dress glove, so calculate each style family separately."
+      ]
+    },
+    {
+      "h": "Which tannery figure to use",
+      "ul": [
+        "Get the tannery's figure per square foot of finished glove leather, and ask what boundary and year it covers.",
+        "Check whether it includes a share of the animal's emissions. The EU PEF category rules for leather set an allocation rule for hides; a figure without the animal share is not comparable with one that has it.",
+        "If you tan in-house, use your own tannery's bills and output, and do not count that energy again in the glove factory line."
+      ]
+    },
+    {
+      "h": "Linings, thread and trims",
+      "p": [
+        "Weigh the lining per pair, such as wool, acrylic fleece, cotton or silk, and multiply by a cited factor for that material. Thread, elastic, snaps and labels weigh a few grams and add little, but list them so the buyer sees nothing was dropped."
+      ]
+    },
+    {
+      "h": "Factory energy per pair",
+      "p": [
+        "Take the factory's electricity and DG diesel for the period, convert with 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre, and divide by pairs produced in the same period. Glove stitching is light work, so this line is usually small next to leather."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a lined dress glove (illustrative inputs)",
+    "lines": [
+      "Net leather 1.0 sq ft per pair; cutting yield 70%: 1.0 / 0.70 = 1.429 sq ft issued",
+      "Leather: 1.429 x 1.2 kg CO2e per sq ft (assumed tannery figure) = 1.714 kg CO2e",
+      "Fleece lining: 0.03 kg x 6.0 kg CO2e per kg (assumed) = 0.18 kg CO2e",
+      "Factory power: 15,000 kWh / 30,000 pairs = 0.5 kWh x 0.710 = 0.355 kg CO2",
+      "DG diesel: 600 L x 2.68 / 30,000 pairs = 0.054 kg CO2",
+      "Box and tissue: 0.02 kg x 1.0 kg CO2e per kg (assumed) = 0.02 kg CO2e",
+      "Total: 1.714 + 0.18 + 0.355 + 0.054 + 0.02 = 2.32 kg CO2e per pair"
+    ],
+    "note": "Tannery, lining and packaging factors are assumptions. Leather is about 74% of this total, so a better cutting yield moves the figure most."
+  },
+  "senseible": "Senseible reads the glove factory's electricity bills (0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the factory share of a per pair figure. The tannery figure and pairs produced come from you, and product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Leather footprint per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Leather footwear footprint per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Chrome vs vegetable tanned leather",
+      "to": "/answers/chrome-vs-vegetable-tanned-leather-carbon-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on the PEF method (EUR-Lex); the PEF Category Rules for Leather (2018) are published by the European Commission",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion, default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

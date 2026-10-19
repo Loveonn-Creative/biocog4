@@ -1,0 +1,84 @@
+{
+  "slug": "cotton-bed-sheet-carbon-footprint-per-set",
+  "q": "How do I calculate the carbon footprint of a cotton bed sheet set for a retail buyer?",
+  "title": "Cotton bed sheet set footprint",
+  "short": "Add up the fabric area of every piece in the set, multiply by GSM to get kg, divide by your cutting and hemming yield, then multiply by the fabric's footprint per kg. Add stitching and packing electricity per set and the packaging. State the set's size and pieces, because a king set carries far more fabric than a single.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Home textile exporters supplying US and EU retailers",
+  "sections": [
+    {
+      "h": "Define the set before you calculate anything",
+      "p": [
+        "The unit is one packed set of a named size: for example one flat sheet, one fitted sheet and two pillowcases, queen size, 100% cotton percale. Retailers compare SKUs, so a figure without the size and piece count is not usable. Write it as kg CO2e per set and keep a separate line per size."
+      ]
+    },
+    {
+      "h": "Get the fabric mass from GSM and cut sizes",
+      "ul": [
+        "Cut size of each piece in square metres, including hems, the fitted sheet's corner pockets and the pillowcase flap.",
+        "Finished fabric GSM from the mill's test report. Thread count does not tell you weight, so do not convert from it.",
+        "Weigh five finished sets without packaging and compare with your calculated mass. If they differ by more than a few percent, your cut sizes or GSM are wrong.",
+        "Cutting and hemming yield from the cutting register: fabric issued divided by fabric in the finished pieces."
+      ]
+    },
+    {
+      "h": "Where the per kg fabric figure comes from",
+      "p": [
+        "For woven cotton the fabric stages are fibre, spinning, weaving, and bleaching, dyeing or printing and finishing. Ask the processing house and weaving unit for their fuel and power per kg, or use a published dataset and name it. Wet processing on a coal or wood fired boiler can add more than the fibre itself, so a mill-specific figure is worth chasing."
+      ]
+    },
+    {
+      "h": "What the retailer will ask you to show",
+      "ol": [
+        "The boundary: cradle to your gate, packed set ready to ship.",
+        "Each factor with its source and year, and which ones are your own data.",
+        "How waste fabric is treated: sold as rags, sent to recycling or thrown away.",
+        "Electricity factor used for your unit and the period of the bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one queen set (fabric factor assumed)",
+    "lines": [
+      "Flat sheet 2.30 x 2.70 m = 6.21 m2; fitted sheet with 35 cm pockets 2.30 x 2.70 m = 6.21 m2; two pillowcases 0.85 m2 each = 1.70 m2",
+      "Fabric in the set: 14.12 m2 x 0.120 kg/m2 (120 GSM) = 1.694 kg",
+      "Cutting and hemming yield 92%: 1.694 / 0.92 = 1.842 kg fabric issued",
+      "Fabric footprint, assumed 12.0 kg CO2e per kg (replace with your mill's figure): 1.842 x 12.0 = 22.10 kg CO2e",
+      "Stitching and packing: 0.6 kWh per set x 0.710 kg CO2 per kWh = 0.43 kg CO2",
+      "Packaging, assumed factors: board insert 0.25 kg x 1.0 = 0.25; polybag 0.03 kg x 2.5 = 0.08 kg CO2e",
+      "Total: 22.10 + 0.43 + 0.25 + 0.08 = 22.86 kg CO2e per set"
+    ],
+    "note": "The fabric and packaging factors are placeholders to show the arithmetic. The fabric line is over 95% of the result, so that is where your data effort should go."
+  },
+  "senseible": "Senseible reads your unit's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, which gives you the stitching and packing energy per set. Reports are self-declared drafts, so present the set figure as your own calculation.",
+  "links": [
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Split factory electricity across products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

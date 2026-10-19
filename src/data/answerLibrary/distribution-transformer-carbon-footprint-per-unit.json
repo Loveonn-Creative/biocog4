@@ -1,0 +1,88 @@
+{
+  "slug": "distribution-transformer-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a distribution transformer for an export tender or EPD?",
+  "title": "Distribution transformer carbon footprint",
+  "short": "Weigh the materials in one unit, CRGO core steel, copper or aluminium windings, tank steel, oil and insulation, multiply each by a named factor, and add your factory's energy allocated per unit. That gives the cradle to gate figure. Report lifetime no-load and load losses separately; over 25 years they often outweigh manufacturing.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Transformer manufacturers exporting to the US, Middle East and Europe",
+  "sections": [
+    {
+      "h": "Start from the bill of materials",
+      "ul": [
+        "CRGO electrical steel for the core, including offcuts you buy and later sell as scrap.",
+        "Copper or aluminium for the windings.",
+        "Tank, radiator, frame and fastener steel.",
+        "Transformer oil, mineral or natural ester.",
+        "Insulating paper and pressboard, bushings, tap changer, gaskets, paint and the packing crate.",
+        "Use as-built weights from the design sheet or weighed parts, per unit of each rating."
+      ]
+    },
+    {
+      "h": "Factory energy per unit",
+      "p": [
+        "Core cutting, winding, welding, shot blasting and painting, oven drying of the core and coil assembly, vacuum oil filling and testing all draw power or fuel. Add up a month's electricity and fuel and allocate it by the mass of transformers dispatched, or by standard hours per rating if sizes vary a lot. State which method you used."
+      ]
+    },
+    {
+      "h": "Rules an EPD or tender will point to",
+      "p": [
+        "In Europe, an EPD for electrical equipment follows EN 50693:2019, the product category rules for electronic and electrical products, usually through the PEP ecopassport programme and its specific rules for transformers. Those rules fix the functional unit, the reference lifetime and the loading used for the use stage. The no-load and load losses come from your IEC 60076 type test report."
+      ]
+    },
+    {
+      "h": "Use stage: losses are the big number",
+      "p": [
+        "No-load loss runs every hour the transformer is energised. Load loss rises with the square of the loading. Over a 20 to 30 year life these losses usually add more emissions than making the unit, which is why buyers compare loss levels. Calculate them with the grid factor of the country where the unit will run, and show them apart from the cradle to gate figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 250 kVA unit weighing 1,200 kg",
+    "lines": [
+      "CRGO core: 380 kg x 3.0 = 1,140 kg CO2e",
+      "Copper windings: 160 kg x 4.0 = 640 kg CO2e",
+      "Tank, radiators and frame steel: 300 kg x 2.3 = 690 kg CO2e",
+      "Transformer oil: 250 kg x 1.0 = 250 kg CO2e",
+      "Materials: 2,720 kg CO2e (factors in kg CO2e per kg, assumed for illustration)",
+      "Factory month: 60,000 kWh x 0.710 = 42,600 kg CO2, plus DG diesel 1,500 L x 2.68 = 4,020 kg CO2; 46,620 kg CO2 over 48,000 kg dispatched = 0.971 kg CO2 per kg",
+      "This unit: 1,200 kg x 0.971 = 1,165 kg CO2, so about 2,720 + 1,165 = 3,885 kg CO2e cradle to gate, before paper, bushings, paint and inbound freight",
+      "Use stage, shown separately: 0.5 kW no-load loss x 8,760 h x 25 years = 109,500 kWh x 0.710 = 77,745 kg CO2 at the Indian grid factor"
+    ],
+    "note": "Weights, material factors and the 0.5 kW no-load loss are illustrative, and load losses would add more. For an export unit use the destination grid's factor and the lifetime the product rules set."
+  },
+  "senseible": "Senseible reads the factory's electricity bills at 0.710 kg CO2 per kWh and DG diesel invoices at 2.68 kg CO2 per litre into a fingerprinted Scope 1 and 2 record, the factory energy you allocate per unit. CRGO, copper and oil invoices go to the Scope 3 supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    },
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Which PCR to use for an EPD",
+      "to": "/answers/which-pcr-to-use-for-an-epd"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

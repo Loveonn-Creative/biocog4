@@ -1,0 +1,89 @@
+{
+  "slug": "buyer-says-my-carbon-footprint-is-too-low",
+  "q": "My buyer says our carbon footprint looks too low. How do I check it?",
+  "title": "Buyer says our footprint looks too low",
+  "short": "Check four things in order: missing sources (DG diesel, a second meter, missing months, refrigerants, fuel bought for cash), unit slips (kVAh, MWh, kilolitres), a boundary mismatch with what the buyer expected, and the denominator. Then compare your intensity per tonne with a published benchmark for your process. A big gap means keep looking.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Exporters and suppliers answering buyer queries",
+  "sections": [
+    {
+      "h": "Missing sources, the most common cause",
+      "ul": [
+        "Months without a bill, or a second connection, a colony meter or a godown left out.",
+        "DG diesel bought in drums or cans, often paid in cash and missing from purchase records.",
+        "LPG or PNG for a canteen, furnace or heat treatment.",
+        "Fuel for forklifts, owned trucks and staff vehicles.",
+        "Refrigerant top-ups on chillers and ACs.",
+        "Process emissions, such as CO2 from limestone or soda ash, if your process has them."
+      ]
+    },
+    {
+      "h": "Units and arithmetic",
+      "ul": [
+        "Units entered as MWh but treated as kWh, or the other way round: a 1,000 times error.",
+        "kVAh read as kWh, or units read from the wrong column of an HT bill.",
+        "Diesel in kilolitres entered as litres.",
+        "Net-metered rooftop solar subtracted from consumption when the import units were already net, or export units counted as savings twice."
+      ]
+    },
+    {
+      "h": "Boundary and denominator",
+      "p": [
+        "Many 'too low' complaints are a mismatch, not an error. The buyer often expects a cradle-to-gate product footprint that includes the steel, yarn or resin you bought, while you sent Scope 1 and 2 per unit. Scope 1 and 2 alone can be a small part of the product's footprint. Say clearly which one you sent.",
+        "Also check that you divided by what you made, not by what you sold including traded goods, and that the period of the emissions matches the period of the production."
+      ]
+    },
+    {
+      "h": "Compare with a benchmark",
+      "p": [
+        "Work out energy per tonne of output and compare it with a published figure for your process: BEE specific energy consumption data for your sector, published EPDs for similar products, or your own previous years. There is no fixed tolerance, but a figure well below every comparable plant, without a clear reason such as solar or a cleaner fuel, should be re-checked line by line before you reply."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a forging unit's corrected figure (illustrative)",
+    "lines": [
+      "Sent to buyer: 9 months of bills, 540,000 kWh x 0.710 = 383,400 kg CO2 for 1,800 t of forgings = 213 kg CO2 per t",
+      "Added: 3 missing months, 180,000 kWh x 0.710 = 127,800 kg CO2",
+      "Added: DG diesel 18,000 L x 2.68 = 48,240 kg CO2",
+      "Added: furnace oil for heating billets 60,000 L x 2.97 = 178,200 kg CO2",
+      "Corrected: 383,400 + 127,800 + 48,240 + 178,200 = 737,640 kg CO2, or 410 kg CO2 per t, nearly double"
+    ],
+    "note": "Figures are illustrative. The corrected figure is still Scope 1 and 2 only; the steel bought would be added for a product footprint."
+  },
+  "senseible": "Senseible's rule checks flag lines with a missing quantity, unit or factor and abnormal quantities, and every file is fingerprinted so the same bill is not counted twice. Upload every bill and fuel invoice for the year so those checks cover the whole footprint.",
+  "links": [
+    {
+      "label": "How to spot a wrong emission factor",
+      "to": "/answers/how-to-spot-a-wrong-emission-factor"
+    },
+    {
+      "label": "Benchmark plant energy against sector",
+      "to": "/answers/how-to-benchmark-plant-energy-against-sector"
+    },
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Fuel purchased vs fuel consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard, completeness principle",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, specific energy consumption data under PAT",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "outsourced-housekeeping-security-scope-3",
+  "q": "How do I count outsourced housekeeping, security and facility services in Scope 3?",
+  "title": "Outsourced housekeeping in Scope 3",
+  "short": "They go in Scope 3 Category 1, purchased services. Multiply the year's contract value before GST by a spend-based factor for building services, and label it an estimate. Where the contractor burns fuel for you, such as patrol vehicles, ask for litres and use activity data instead.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Offices, hospitals, hotels and IT parks",
+  "sections": [
+    {
+      "h": "What is already in your Scope 1 and 2",
+      "p": [
+        "Electricity the cleaners and guards use on your premises is on your bill, so it is your Scope 2. A DG set you own, and refrigerant your FM contractor tops up in your ACs, are your Scope 1, even if the contractor does the work. Do not count these again in Category 1."
+      ]
+    },
+    {
+      "h": "What goes in Category 1",
+      "ul": [
+        "The contractor's own emissions behind the service: their offices, vehicles, uniforms and overheads, captured through a spend-based factor.",
+        "Cleaning chemicals, garbage bags and tissue bought separately: purchased goods, also Category 1, by quantity if the invoice gives it.",
+        "Waste the housekeeping team collects goes to Category 5, waste generated in operations, not here."
+      ]
+    },
+    {
+      "h": "Doing the spend-based sum properly",
+      "ol": [
+        "Take the taxable value from each invoice, before GST.",
+        "Convert rupees to the factor's currency and adjust to its base year.",
+        "Pick the factor that matches the service, such as services to buildings or investigation and security services, from a named EEIO database.",
+        "Label the line spend-based and keep the factor source and edition beside it."
+      ]
+    },
+    {
+      "h": "When to ask the contractor for data",
+      "p": [
+        "For labour-heavy services, a spend-based figure is often good enough. Ask for activity data where the contractor runs vehicles or machines for you: patrol bikes, ride-on sweepers, garden equipment or a hired DG. Litres of fuel times the IPCC factor beats any spend estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an office campus (illustrative factors)",
+    "lines": [
+      "Housekeeping Rs 36,00,000 + security Rs 24,00,000 taxable value = Rs 60,00,000",
+      "Convert at an assumed Rs 85 per USD: 60,00,000 / 85 = USD 70,588",
+      "Assumed building services factor 0.2 kg CO2e per USD: 70,588 x 0.2 = 14,118 kg, about 14.1 t CO2e",
+      "Patrol bikes, activity data: 1,200 L petrol x 2.31 = 2,772 kg CO2",
+      "Swap that share out of the spend line if the contractor's invoice separates it, so it is not counted twice"
+    ],
+    "note": "Use a named EEIO factor and deflate to its base year; 0.2 is an assumption."
+  },
+  "senseible": "Senseible reads purchase invoices and, where only spend exists, gives a spend-based estimate labelled spend-based with wider uncertainty; lines with a printed quantity, such as litres of fuel, use activity data. Each invoice is kept with a SHA-256 fingerprint.",
+  "links": [
+    {
+      "label": "Scope 3 Category 1, spend-based",
+      "to": "/answers/scope-3-category-1-spend-based"
+    },
+    {
+      "label": "GST, inflation and currency in spend-based Scope 3",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Spend-based vs activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 1, spend-based method",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "US EPA Supply Chain GHG Emission Factors for US Commodities and Industries (USEEIO)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

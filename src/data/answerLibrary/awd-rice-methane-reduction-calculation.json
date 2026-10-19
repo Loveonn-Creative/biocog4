@@ -1,0 +1,81 @@
+{
+  "slug": "awd-rice-methane-reduction-calculation",
+  "q": "How much methane does alternate wetting and drying cut in rice, and how do I show it to a buyer?",
+  "title": "AWD rice methane cut: the calculation",
+  "short": "Under IPCC 2019 Refinement defaults, fields drained several times in a season emit 55% of the methane of continuously flooded fields, a 45% cut. A single drainage gives a 29% cut. Multiply your baseline methane per hectare by that cut and by verified AWD hectares, subtract any nitrous oxide increase, and back it with field water records.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Rice exporters and farmer programmes supplying EU and UK buyers",
+  "sections": [
+    {
+      "h": "The scaling factors",
+      "p": [
+        "Table 5.12 of the IPCC 2019 Refinement, Volume 4, Chapter 5, scales the continuously flooded methane rate by 1.00 for continuous flooding, 0.71 for a single drainage period and 0.55 for multiple drainage periods. Alternate wetting and drying, done properly, is the multiple drainage case. A field that is drained once at mid-season is the single drainage case, not AWD."
+      ]
+    },
+    {
+      "h": "The formula",
+      "ol": [
+        "Baseline methane per hectare = daily rate under continuous flooding x days of cultivation, using a regional IPCC default or measured data.",
+        "AWD methane = baseline x 0.55.",
+        "Reduction per hectare = baseline x 0.45, converted with a named GWP.",
+        "Subtract the extra nitrous oxide: drained soils emit more N2O, and the 2019 Refinement (Volume 4, Chapter 11) uses a direct N2O factor of 0.005 kg N2O-N per kg N for rice with single or multiple drainage against 0.003 for continuous flooding.",
+        "Multiply by hectares where AWD was actually practised, not hectares enrolled."
+      ]
+    },
+    {
+      "h": "Evidence a buyer can rely on",
+      "ul": [
+        "Field water tube readings with dates, showing water falling below the soil surface and re-flooding, for a sample of plots each season.",
+        "Drainage and irrigation logs by plot, and photos with location and date.",
+        "Farmer lists with plot areas and crop calendars.",
+        "Who checked the records, and how many plots were visited."
+      ]
+    },
+    {
+      "h": "How the buyer can use it",
+      "p": [
+        "A buyer can count the lower methane in its Scope 3 Category 1 for the rice it bought from those fields, if the reduction is traced to its supply. If the same reduction is sold as a carbon credit to someone else, the buyer should not also claim it, so agree in writing who claims what."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 500 hectares under AWD",
+    "lines": [
+      "Baseline: 0.85 kg CH4 per ha per day (IPCC 2019 Refinement default for South Asia, continuously flooded, no organic amendments) x 120 days (assumed season) = 102 kg CH4 per ha",
+      "AWD: 102 x 0.55 = 56.1 kg CH4 per ha; reduction 45.9 kg CH4 per ha",
+      "In CO2e at AR5 GWP 28: 45.9 x 28 = 1,285.2 kg CO2e per ha",
+      "Extra N2O: 120 kg N (assumed) x (0.005 minus 0.003) = 0.24 kg N2O-N x 44/28 = 0.377 kg N2O x 265 = 99.9 kg CO2e per ha",
+      "Net: 1,285.2 minus 99.9 = 1,185.3 kg CO2e per ha; x 500 ha = 592,650 kg, about 593 t CO2e",
+      "Per tonne of paddy at an assumed 4.0 t per ha: 1,185.3 / 4.0 = 296 kg CO2e less"
+    ],
+    "note": "Season length, nitrogen rate and yield are assumptions; measured baselines or organic amendments change the result. AR5 GWPs are used throughout."
+  },
+  "senseible": "Senseible reads the mill's own electricity bills and fuel invoices into a fingerprinted Scope 1 and 2 record, the processing part of the rice footprint. Field water records for AWD are kept by the farmer programme.",
+  "links": [
+    {
+      "label": "Rice procurement Scope 3 emissions",
+      "to": "/answers/rice-procurement-scope-3-emissions"
+    },
+    {
+      "label": "Sustainable Rice Platform GHG requirements",
+      "to": "/answers/sustainable-rice-platform-ghg-requirements"
+    },
+    {
+      "label": "Regenerative agriculture Scope 3 claims",
+      "to": "/answers/regenerative-agriculture-scope-3-claims"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4: Chapter 5, Tables 5.11 and 5.12 (rice methane); Chapter 11, Table 11.1 (direct N2O)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Buyer programmes may set their own evidence rules for AWD claims; check the buyer's current requirements."
+}

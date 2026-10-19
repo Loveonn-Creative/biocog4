@@ -1,0 +1,89 @@
+{
+  "slug": "electric-motor-carbon-footprint-per-unit",
+  "q": "How do I calculate the manufacturing carbon footprint of an electric motor, separate from its use phase?",
+  "title": "Electric motor manufacturing footprint",
+  "short": "Weigh the materials in one motor (cast iron or aluminium frame, electrical steel laminations including punching scrap, copper winding, aluminium rotor cage, shaft), multiply each by a material factor, then add your plant's winding, varnish curing, assembly and testing energy per motor. That cradle-to-gate figure excludes the electricity the motor uses in service.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Motor manufacturers supplying OEMs in the EU and US",
+  "sections": [
+    {
+      "h": "Build a bill of materials by weight",
+      "ul": [
+        "Frame and end shields: cast iron or die-cast aluminium.",
+        "Stator and rotor laminations: electrical steel bought, not steel in the motor. Punching leaves a lot of scrap, so use the kg of coil bought per motor.",
+        "Copper winding wire, including offcuts.",
+        "Rotor cage: die-cast aluminium, or copper in some high-efficiency designs.",
+        "Shaft, bearings, terminal box, varnish, insulation paper and packaging.",
+        "Check the total against the catalogue weight of the motor."
+      ]
+    },
+    {
+      "h": "Material factors",
+      "p": [
+        "Use your suppliers' product figures for electrical steel, copper and castings where they give them, and a named life cycle database for the rest. Copper and aluminium factors swing widely with recycled content and smelting power, so record the source and year for each one."
+      ]
+    },
+    {
+      "h": "Plant energy per motor",
+      "p": [
+        "Take a year of electricity and fuel bills, subtract any separately metered activity that is not motor making, and divide by motors produced. A better split weights by frame size or machine hours, because a 75 kW motor takes far more winding and curing time than a 1 kW one. Meter varnish ovens and impregnation plants separately if you can; they run long cycles."
+      ]
+    },
+    {
+      "h": "Keep it separate from use phase",
+      "p": [
+        "OEM customers, and product category rules for electrical products such as the PEP ecopassport rules and EN 50693, keep life cycle stages separate. Your manufacturing figure is the cradle-to-gate part. Use phase, which depends on efficiency class under IEC 60034-30-1, hours run and the grid, is a different calculation and is far larger for a motor that runs most of the year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 7.5 kW motor (illustrative)",
+    "lines": [
+      "Cast iron frame 30 kg x 1.8 = 54.0 kg CO2e",
+      "Electrical steel bought 28 kg (20 kg in the motor) x 2.5 = 70.0 kg CO2e",
+      "Copper 6 kg x 4.0 = 24.0 kg CO2e",
+      "Aluminium rotor cage 2 kg x 8.0 = 16.0 kg CO2e",
+      "Steel shaft 2 kg x 2.5 = 5.0 kg CO2e",
+      "Materials: 54.0 + 70.0 + 24.0 + 16.0 + 5.0 = 169.0 kg CO2e",
+      "Plant energy: 25 kWh per motor x 0.710 = 17.75 kg CO2",
+      "Manufacturing total: 169.0 + 17.75 = 186.75 kg CO2e, about 187 kg per motor",
+      "For scale, one year of use at 4,000 hours and 90% efficiency: 7.5 / 0.9 x 4,000 = 33,333 kWh x 0.710 = 23,667 kg CO2"
+    ],
+    "note": "Masses, material factors (1.8, 2.5, 4.0, 8.0 kg CO2e per kg), plant energy and efficiency are illustrative assumptions, not published values. Replace them with your bill of materials, supplier data and bills."
+  },
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input you divide into a per-unit figure. Its reports are self-declared drafts; a product footprint for a buyer still needs your material data and your own sign-off.",
+  "links": [
+    {
+      "label": "Use phase for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Cradle to gate or cradle to grave",
+      "to": "/answers/cradle-to-gate-or-cradle-to-grave"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

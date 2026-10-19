@@ -1,0 +1,78 @@
+{
+  "slug": "hotel-event-carbon-footprint-per-guest",
+  "q": "A corporate client wants the carbon footprint of their conference at our hotel. How do we calculate it?",
+  "title": "Conference footprint at a hotel",
+  "short": "Add three parts: meeting space used (square metres x hours x your footprint per square metre-hour), guest room nights x your footprint per occupied room night, and meals x a per-meal food factor. Divide by delegates for a per guest figure. Guests' travel to the venue is the client's to add.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hotels and banquet venues hosting corporate conferences and weddings",
+  "sections": [
+    {
+      "h": "Build your two hotel factors once a year",
+      "ol": [
+        "Total the hotel's Scope 1 and 2 for the year: electricity, DG diesel, kitchen LPG or PNG, boiler fuel and refrigerant top-ups.",
+        "Split it between guest rooms and meeting space by floor area. The Hotel Carbon Measurement Initiative (HCMI) uses this approach.",
+        "Rooms factor: the rooms share divided by occupied room nights.",
+        "Meeting factor: the meeting share divided by meeting area times the hours the space is available in the year."
+      ]
+    },
+    {
+      "h": "Apply them to the event",
+      "ul": [
+        "Meeting space: each hall's area x hours booked, including set-up.",
+        "Rooms: room nights booked for the event, not the number of guests.",
+        "Food: meals served x a per-meal factor for ingredients. Kitchen fuel is already in your hotel total, so use an ingredients-only factor to avoid counting it twice."
+      ]
+    },
+    {
+      "h": "What the client does with your figure",
+      "p": [
+        "For the client it is Scope 3: room nights in Category 6, business travel, and the event package in Category 1, purchased services. For you it is part of your own Scope 1 and 2, already counted. Delegates' flights and cars are the client's to calculate."
+      ]
+    },
+    {
+      "h": "If the client mentions ISO 20121",
+      "p": [
+        "ISO 20121:2024 is a management system standard for event sustainability. It asks the organiser to manage impacts, but it does not set a carbon formula. Give them your figure, the method and the year of your hotel data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a two day conference, 200 delegates (illustrative inputs)",
+    "lines": [
+      "Hotel year: 3,000,000 kWh x 0.710 = 2,130,000; diesel 30,000 L x 2.68 = 80,400; LPG 40,000 kg x 2.98 = 119,200; total 2,329,600 kg CO2",
+      "Floor split: meeting 15% = 349,440 kg; rooms 85% = 1,980,160 kg",
+      "Meeting factor: 349,440 / (2,000 m2 x 4,380 hours) = 0.0399 kg per m2-hour",
+      "Rooms factor: 1,980,160 / 60,000 occupied room nights = 33.0 kg per room night",
+      "Event: ballroom 600 m2 x 18 h x 0.0399 = 431 kg; 150 room nights x 33.0 = 4,950 kg; 600 meals x 1.5 kg CO2e (assumed, ingredients) = 900 kg",
+      "Total: 431 + 4,950 + 900 = 6,281 kg, about 31.4 kg per delegate"
+    ],
+    "note": "Energy lines are CO2; food is CO2e. The meal factor and floor split are assumptions for illustration."
+  },
+  "senseible": "Senseible reads the hotel's electricity bills (billing period, tariff, sanctioned load and units, at 0.710 kg CO2 per kWh, CEA version 21.0) and fuel invoices such as diesel and LPG (IPCC 2006 defaults) into Scope 1 and 2, the annual total these event factors start from. Floor areas, room nights and meals come from your records.",
+  "links": [
+    {
+      "label": "Hotel stay emissions per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Food waste: landfill, compost or biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 20121:2024, Event sustainability management systems (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 1 and 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

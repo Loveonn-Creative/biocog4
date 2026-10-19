@@ -1,0 +1,80 @@
+{
+  "slug": "does-neem-coated-urea-reduce-emissions",
+  "q": "Does neem-coated urea reduce N2O emissions, and can I claim a lower footprint for it?",
+  "title": "Does neem-coated urea cut emissions?",
+  "short": "Not in a way you can claim. All subsidised urea sold in India has been neem-coated since 2015, so it is the normal product, not an improvement. The IPCC methods give no reduction factor for coated urea, so at default factors your N2O and urea CO2 stay the same as for plain urea.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Agri exporters and FPOs",
+  "sections": [
+    {
+      "h": "Why neem coating is the baseline in India",
+      "p": [
+        "A Department of Fertilizers notification of 25 May 2015 required all subsidised urea made in India to be neem-coated, and imported urea followed from December 2015, mainly to slow nitrogen release and stop diversion of urea to industry. A buyer comparing farms in India will see every farm using it. A claim of lower emissions needs a difference from what others do, and here there is none."
+      ]
+    },
+    {
+      "h": "What the IPCC methods say",
+      "ul": [
+        "Direct N2O: 0.01 kg N2O-N per kg of nitrogen applied in the 2006 Guidelines. The 2019 Refinement splits this by climate, 0.016 for synthetic fertiliser in wet climates and 0.005 for nitrogen inputs in dry climates.",
+        "Neither version gives a lower default for coated urea or nitrification inhibitors. Lower values need country or field measurements, which is a Tier 2 or Tier 3 method.",
+        "CO2 from urea: 0.733 t CO2 per tonne, from its 20% carbon content. A coating does not change the carbon in the urea."
+      ]
+    },
+    {
+      "h": "When a reduction could be claimed",
+      "p": [
+        "Only with measured evidence: published field trials for your crop, soil and climate, or your own measurements, showing lower N2O per kg of nitrogen than plain urea. Even then, in India the comparison would be against neem-coated urea, since that is what farms already use."
+      ]
+    },
+    {
+      "h": "What actually lowers a fertiliser footprint",
+      "ul": [
+        "Applying less nitrogen per tonne of crop: soil testing, split doses, and the Soil Health Card recommendation.",
+        "Better timing and placement, so less nitrogen is lost.",
+        "Each of these shows up directly in the calculation, because the kg of nitrogen goes down."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 t of urea, plain or neem-coated",
+    "lines": [
+      "Nitrogen: 10,000 kg x 0.46 = 4,600 kg N",
+      "Direct N2O: 4,600 x 0.01 = 46 kg N2O-N x 44/28 = 72.3 kg N2O x 273 (IPCC AR6) = 19,734 kg CO2e",
+      "Urea CO2: 10,000 x 0.20 x 44/12 = 7,333 kg CO2",
+      "Total before indirect N2O: 19,734 + 7,333 = 27,067 kg CO2e",
+      "Neem-coated: the same 27,067 kg CO2e at default factors"
+    ],
+    "note": "Uses the 2006 default of 0.01; with the 2019 Refinement, pick the wet or dry climate value instead. Indirect N2O from volatilisation and leaching would add to both equally."
+  },
+  "senseible": "Senseible reads and keeps fertiliser purchase invoices with their quantities, the starting point for this calculation, each file with a SHA-256 fingerprint.",
+  "links": [
+    {
+      "label": "Fertiliser N2O emissions calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Urea application emissions per tonne",
+      "to": "/answers/urea-application-emissions-per-tonne"
+    },
+    {
+      "label": "Regenerative agriculture Scope 3 claims",
+      "to": "/answers/regenerative-agriculture-scope-3-claims"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 4 AFOLU, Ch. 11 (Equations 11.1 and 11.13, Table 11.1)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Vol. 4, Ch. 11, Table 11.1 (ipcc.ch)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, GWP100 of N2O",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

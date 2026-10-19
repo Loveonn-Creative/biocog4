@@ -1,0 +1,72 @@
+{
+  "slug": "declared-unit-vs-functional-unit",
+  "q": "What is the difference between a declared unit and a functional unit, and which should my footprint use?",
+  "title": "Declared unit vs functional unit",
+  "short": "A declared unit is a plain quantity of product, such as 1 kg of yarn. A functional unit is the job the product does, such as painting 1 m2 of wall for ten years. Use a declared unit for materials and parts reported cradle to gate, and a functional unit to compare finished products by use.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Exporters preparing a PCF or EPD",
+  "sections": [
+    {
+      "h": "The definitions",
+      "p": [
+        "ISO 14067 and ISO 14044 define the functional unit as the quantified performance of a product system, used as the reference for the whole study. A declared unit is used instead when the product's function is not known or not stated, typically because it becomes part of something else. EN 15804 for construction products allows a declared unit for EPDs that do not cover the full life cycle."
+      ]
+    },
+    {
+      "h": "When a declared unit is right",
+      "ul": [
+        "You make an intermediate: yarn, fabric, castings, resin, cement, steel coil.",
+        "Your buyer asks for kg CO2e per kg or per piece for their own Scope 3 or their product footprint.",
+        "The boundary is cradle to gate, because you cannot know the use or end of life."
+      ]
+    },
+    {
+      "h": "When a functional unit is needed",
+      "ul": [
+        "You compare products that do the same job with different amounts of material or lifetimes.",
+        "You publish a comparative claim, such as lower carbon than an alternative; both must use the same functional unit.",
+        "The product category rules for your EPD set one."
+      ]
+    },
+    {
+      "h": "How to write it",
+      "p": [
+        "State the unit in full, with the product specification: for example 1 kg of 30s combed cotton yarn, or 1 m2 of interior wall covered for 10 years at a stated coverage. A footprint without a clear unit cannot be compared or checked, and buyers reject it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: two paints, two answers",
+    "lines": [
+      "Declared unit, per litre: paint A 5.0 kg CO2e; paint B 4.0 kg CO2e. B looks better",
+      "Functional unit, 1 m2 of wall for 10 years, two coats each time:",
+      "A covers 10 m2 per litre and lasts 5 years: 0.2 L per painting x 2 paintings = 0.4 L x 5.0 = 2.0 kg CO2e",
+      "B covers 8 m2 per litre and lasts 3 years: 0.25 L per painting x 4 paintings = 1.0 L x 4.0 = 4.0 kg CO2e",
+      "Per functional unit A emits half as much as B"
+    ],
+    "note": "All figures are invented to show how the unit changes the ranking."
+  },
+  "senseible": "Senseible reads your plant's electricity bills and fuel invoices into a Scope 1 and 2 record that you divide by your declared unit, such as tonnes or pieces produced. The unit and boundary are yours to state in the report.",
+  "links": [
+    {
+      "label": "Cradle to gate or cradle to grave?",
+      "to": "/answers/cradle-to-gate-or-cradle-to-grave"
+    },
+    {
+      "label": "Getting an EPD for an export product",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "LCA vs product carbon footprint",
+      "to": "/answers/lca-vs-product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14044:2006 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

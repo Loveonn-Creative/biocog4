@@ -1,0 +1,83 @@
+{
+  "slug": "industrial-valve-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an industrial valve for a European buyer?",
+  "title": "Industrial valve footprint per unit",
+  "short": "Take the rough casting weight of the body and bonnet, multiply by a factor per kg of good casting for that metal, add trim, gaskets and paint by mass, then add your machining, testing and painting energy per valve. For a cast iron or steel valve the castings are usually most of the cradle to gate figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Valve manufacturers in Coimbatore, Ahmedabad and Rajkot",
+  "sections": [
+    {
+      "h": "Use rough casting weight, not finished weight",
+      "p": [
+        "The valve carries every kg the foundry poured into the body and bonnet castings you bought, including the metal you machine off. Take the rough weight from the foundry invoice or your incoming inspection, not the catalogue weight. If machining chips are sold as scrap, the usual cut-off approach still leaves the full casting with the valve and gives the chips no credit."
+      ]
+    },
+    {
+      "h": "Pick the casting factor that matches the metal and the foundry",
+      "ul": [
+        "Grey or ductile iron, cast steel and stainless castings have very different factors; stainless is several times cast iron per kg because of nickel and chromium.",
+        "If you run your own foundry, work out CO2 per tonne of good castings from your own melting power, coke and fuel, divided by good tonnes, not tonnes melted.",
+        "If you buy castings, ask the foundry for its figure per tonne of good castings and the metal charge it assumes, such as scrap share."
+      ]
+    },
+    {
+      "h": "Your plant energy per valve",
+      "p": [
+        "Machining, hydrostatic and seat testing, shot blasting and painting all draw on the same bills. Split a month's electricity and fuel by machine hours per size, or by valves made if the range is narrow. A DN 300 gate valve takes many times the machining of a DN 50 ball valve, so a plain average across sizes misleads the buyer."
+      ]
+    },
+    {
+      "h": "What a European buyer usually asks for",
+      "p": [
+        "Most want kg CO2e per valve, cradle to gate, with factors named, often in a PCF exchange format such as PACT. Valves (CN 8481) are not in Annex I of the CBAM Regulation today, so the request is about the buyer's Scope 3, not a CBAM declaration. A downstream extension of CBAM is being negotiated, so check the adopted list. Report each size separately or give a formula by weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one cast iron gate valve",
+    "lines": [
+      "Body and bonnet rough castings 30 kg x 1.5 kg CO2e per kg good casting (assumed) = 45.0 kg CO2e",
+      "Stainless stem and seat rings 2.0 kg x 6.0 (assumed) = 12.0; gaskets and packing 0.2 kg x 3.0 = 0.6; paint 0.3 kg x 3.0 = 0.9 kg CO2e",
+      "Plant electricity: 40,000 kWh for 2,000 valves = 20 kWh, x 0.710 = 14.2 kg CO2",
+      "Paint oven LPG: 600 kg for 2,000 valves = 0.3 kg, x 2.98 = 0.89 kg CO2",
+      "Total: 45.0 + 12.0 + 0.6 + 0.9 + 14.2 + 0.89 = 73.59 kg CO2e per valve"
+    ],
+    "note": "Material factors are placeholders to show the method; use your foundry's figure and a named dataset. The 4 kg of chips machined off stay inside the 30 kg casting line."
+  },
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults, such as LPG 2.98 kg CO2 per kg) into a fingerprinted Scope 1 and 2 record for the per valve energy share. Reports are self-declared drafts; casting and material factors come from your suppliers or a named dataset.",
+  "links": [
+    {
+      "label": "Foundry CO2 per tonne of good castings",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Submersible pump footprint per unit",
+      "to": "/answers/submersible-pump-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Are pumps and valves covered by CBAM?",
+      "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2, Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Recheck CBAM Annex I for CN 8481 once the downstream extension (COM(2025) 989) is adopted."
+}

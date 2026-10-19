@@ -1,0 +1,63 @@
+{
+  "slug": "does-gem-ask-for-carbon-footprint",
+  "q": "Do GeM tenders ask for a carbon footprint or green certificate?",
+  "title": "Do GeM tenders ask for a carbon footprint?",
+  "short": "Only if the bid says so. A GeM bid's requirements come from the category specification and any additional terms the buyer uploads. Those can call for a BEE star label, a BIS standard or, from some buyers, environmental conditions. Search both documents for carbon, footprint and certificate before you quote.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSME sellers on the Government e-Marketplace",
+  "sections": [
+    {
+      "h": "What GeM bids check today",
+      "ul": [
+        "The technical specification for the product category.",
+        "A BEE star label at the required level for appliances under mandatory labelling, such as room air conditioners, refrigerators and distribution transformers.",
+        "BIS certification where a quality control order applies.",
+        "Make in India local content declarations.",
+        "Additional terms and conditions the buyer uploads with the bid."
+      ]
+    },
+    {
+      "h": "Where carbon or green conditions can appear",
+      "p": [
+        "When they show up, they come from the buyer: a ministry, PSU or project with its own sustainability policy, a green building project, or an energy efficiency condition above the label minimum. They sit in the specification or the additional terms of that bid, so the bid document is the only reliable guide."
+      ]
+    },
+    {
+      "h": "If a bid does ask for one",
+      "ol": [
+        "Read the exact wording: a product footprint, a company footprint, or an environmental management certificate such as ISO 14001 are different things.",
+        "Check whether a self-declaration is accepted or a third-party document is required.",
+        "Raise a pre-bid query if the wording is unclear.",
+        "Give the method, the period and the boundary with any figure you submit."
+      ]
+    }
+  ],
+  "senseible": "If a buyer does ask for a company footprint, Senseible builds the Scope 1 and 2 figure from your fuel invoices and electricity bills as a self-declared draft, with each line traced to its source document.",
+  "links": [
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Carbon audit, energy audit or ESG audit",
+      "to": "/answers/carbon-audit-vs-energy-audit-vs-esg-audit"
+    },
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, Standards and Labelling Programme, mandatory appliances",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Energy Conservation Act, 2001, labelling provisions (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "GeM category specifications and buyer terms change often; check the current bid document and category page before quoting (checked 2026-10-19)."
+}

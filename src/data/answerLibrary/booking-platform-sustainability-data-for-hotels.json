@@ -1,0 +1,86 @@
+{
+  "slug": "booking-platform-sustainability-data-for-hotels",
+  "q": "What sustainability data do booking platforms and corporate travel buyers ask hotels for?",
+  "title": "Hotel sustainability data buyers ask for",
+  "short": "Booking platforms mostly want proof of a third-party sustainability certification: Booking.com now labels properties that hold one. Corporate travel buyers ask in their hotel RFPs for carbon per occupied room night, energy, water, waste, refrigerants and renewable share, often calculated with the Hotel Carbon Measurement Initiative (HCMI) method. Your bills and occupancy records feed both.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Independent hotels and small chains in India",
+  "sections": [
+    {
+      "h": "What booking platforms look at",
+      "p": [
+        "Booking.com dropped its own scored sustainability badge after the Dutch consumer regulator objected to it, and now shows a label for properties with a third-party sustainability certification. Other platforms set their own rules. Check the current criteria in each extranet, and keep the certificate number, scope and expiry date ready to upload."
+      ]
+    },
+    {
+      "h": "What corporate travel buyers ask in RFPs",
+      "ul": [
+        "Carbon per occupied room night, and per square metre of meeting space per hour, under HCMI.",
+        "Electricity in kWh and fuels in litres or kg.",
+        "Water per occupied room night.",
+        "Waste generated and the share diverted from landfill.",
+        "Refrigerant types and top-ups.",
+        "Renewable electricity share, with the contract or certificate behind it.",
+        "Certifications held and policies such as single-use plastics."
+      ]
+    },
+    {
+      "h": "How the room-night figure is built",
+      "p": [
+        "Add Scope 1 (DG diesel, kitchen LPG, boiler fuel, refrigerant leaks) and Scope 2 (grid electricity) for the whole property. HCMI then apportions the total between guest rooms, meeting space and the rest of the building, using their floor areas. Divide the rooms share by occupied room nights, not available room nights, from your property management system."
+      ]
+    },
+    {
+      "h": "Records to keep ready",
+      "ol": [
+        "Twelve months of electricity bills.",
+        "DG diesel, LPG and boiler fuel invoices.",
+        "Water bills and tanker invoices.",
+        "Refrigerant top-up invoices from your AC service vendor.",
+        "Monthly occupancy reports and floor areas for rooms and meeting space."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 100-room hotel, one month",
+    "lines": [
+      "Grid electricity: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "DG diesel: 1,500 L x 2.68 = 4,020 kg CO2",
+      "Kitchen LPG: 2,000 kg x 2.98 = 5,960 kg CO2",
+      "Total: 73,880 kg CO2 over 2,400 occupied room nights = 30.8 kg CO2 per occupied room night"
+    ],
+    "note": "This puts the whole property on rooms. Under HCMI, shares would go to meeting space and other areas, and refrigerant leaks would be added as CO2e."
+  },
+  "senseible": "Senseible reads the hotel's electricity bills and DG diesel and LPG invoices (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg) into a Scope 1 and 2 total, each figure traced to its bill. That total is the top line of a room-night figure; occupancy comes from your property management system.",
+  "links": [
+    {
+      "label": "Hotel stay emissions per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (Scope 1 and 2 boundaries)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Platform sustainability labels change; check each platform's current criteria, and HCMI version 3.0 (Sustainable Hospitality Alliance, April 2026) for the apportionment rules, before relying on this page (checked 2026-10-19)."
+}

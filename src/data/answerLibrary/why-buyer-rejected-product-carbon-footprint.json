@@ -1,0 +1,88 @@
+{
+  "slug": "why-buyer-rejected-product-carbon-footprint",
+  "q": "Why did my buyer reject my product carbon footprint, and how do I fix it?",
+  "title": "Why a buyer rejects your product footprint",
+  "short": "Usually because the figure cannot be checked, not because it is too high. The common reasons are an unclear declared unit or boundary, factors with no source or year, missing stages such as raw materials, offsets netted out, or a total that does not reconcile with your plant's emissions. Each has a direct fix.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Exporters who sent a PCF and got it back",
+  "sections": [
+    {
+      "h": "The reasons buyers give most often",
+      "ol": [
+        "Declared unit unclear: per piece, per kg or per metre not stated, or not the unit in their template.",
+        "Boundary unclear: cradle to gate or gate to gate not said, or raw materials left out without saying so.",
+        "Factors without a source: no database name, edition or year beside each factor.",
+        "Gases mixed: CO2 factors and CO2e factors added with no note, or no GWP basis named.",
+        "Offsets or certificates deducted: ISO 14067 and PACT report the footprint before any offsets.",
+        "Primary data share or data quality fields left blank.",
+        "Figure does not reconcile: your volume times the per unit figure is far below your plant's own Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "How to fix each one",
+      "ul": [
+        "State the declared unit, the product weight and the reference period at the top.",
+        "Draw the boundary as a list of stages included and excluded, with the reason for each exclusion.",
+        "Put the source, edition and unit next to every factor, such as 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "Report fossil CO2e, biogenic CO2 and any renewable electricity claim as separate lines.",
+        "Fill in the primary data share and say which inputs are your measured data."
+      ]
+    },
+    {
+      "h": "Run the reconciliation check before you resend",
+      "p": [
+        "Multiply your per unit figure, for the stages at your site, by units produced in the year. The result should be close to your site's Scope 1 and 2 for the same year, after any split with other products. A big gap tells you an energy line or an allocation is wrong, and a buyer's analyst will look for exactly that."
+      ]
+    },
+    {
+      "h": "When the problem is verification",
+      "p": [
+        "Some buyers accept self-declared figures; others need third-party verification for a programme or contract. Ask which they need before reworking the numbers, and read their template's guidance notes line by line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the reconciliation that exposed a gap",
+    "lines": [
+      "Plant Scope 1 and 2 for the year: 2,400 t CO2, one product line",
+      "Pieces produced: 1,200,000; plant share per piece = 2,400,000 kg / 1,200,000 = 2.0 kg",
+      "PCF sent to the buyer: 0.8 kg CO2e per piece, materials included",
+      "0.8 is below the 2.0 kg from the plant alone, so the PCF missed most of the plant energy"
+    ]
+  },
+  "senseible": "Senseible keeps each figure linked to its source invoice or bill, with a SHA-256 fingerprint and the factor and edition named, so a buyer's query can be traced to the document. Its Scope 1 and 2 totals are the site figure you reconcile a product footprint against.",
+  "links": [
+    {
+      "label": "Will a buyer accept a self-declared footprint?",
+      "to": "/answers/buyer-accept-self-declared-carbon-footprint"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "PACT Pathfinder Framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    },
+    {
+      "label": "What primary data share means",
+      "to": "/answers/primary-data-share-meaning"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), Chapter 13, Reporting",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "WBCSD PACT Methodology v3.0 and Technical Specifications",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

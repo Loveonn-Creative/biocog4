@@ -1,0 +1,85 @@
+{
+  "slug": "school-carbon-footprint-how-to-calculate",
+  "q": "How does a school or college calculate its carbon footprint?",
+  "title": "Carbon footprint for a school or college",
+  "short": "Add up a year of electricity bills, diesel for school buses and the DG set, and LPG for hostel kitchens, and multiply each by its emission factor. That gives Scope 1 and 2. Then add contracted buses, staff commuting and purchased goods as Scope 3 if you want the fuller picture, and divide by students for an intensity.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Private schools, colleges and university administrators in India",
+  "sections": [
+    {
+      "h": "Scope 1 and 2 on a campus",
+      "ul": [
+        "Scope 1: diesel in buses the school owns and runs, DG diesel, LPG or PNG in hostel and staff kitchens, and refrigerant top-ups in ACs.",
+        "Scope 2: electricity from the discom across every meter, including hostels and staff quarters the institution pays for.",
+        "Rooftop solar used on campus is not in the grid bill, so it lowers Scope 2 by itself; exported units under net metering are not your consumption."
+      ]
+    },
+    {
+      "h": "Buses: owned or contracted",
+      "p": [
+        "Buses the school owns, or leases and runs with its own drivers and fuel, are Scope 1. Buses run by a transport contractor who buys the diesel are Scope 3. Where parents pay the contractor directly, you can still report the trips as optional Scope 3 because you arrange the service; state your choice."
+      ]
+    },
+    {
+      "h": "Pick a year and keep to it",
+      "p": [
+        "Use the academic year or the financial year, but match every bill to the same twelve months. Exam and vacation months use much less power, so a partial year multiplied up will mislead. Keep the bill files, because a board, accreditation body or donor may ask how the figure was built."
+      ]
+    },
+    {
+      "h": "Useful Scope 3 lines for an institution",
+      "ul": [
+        "Contracted buses and staff commuting, from a simple survey of distance and mode.",
+        "Paper, furniture, computers and lab supplies, from purchase records.",
+        "Waste sent to landfill or composting.",
+        "Air travel by staff and student trips, if the institution pays for it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a day school with a hostel, one year",
+    "lines": [
+      "Electricity: 300,000 kWh x 0.710 = 213,000 kg CO2",
+      "Owned buses: 40,000 litres diesel x 2.68 = 107,200 kg CO2",
+      "DG set: 3,000 litres x 2.68 = 8,040 kg CO2; hostel LPG: 6,000 kg x 2.98 = 17,880 kg CO2",
+      "Scope 1 and 2: 213,000 + 107,200 + 8,040 + 17,880 = 346,120 kg CO2, about 346 tonnes",
+      "Per student, 2,000 enrolled: 346,120 / 2,000 = 173 kg CO2"
+    ],
+    "note": "Consumption figures are invented for the arithmetic; use your own bills."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. That covers the Scope 1 and 2 core of a campus footprint from the bills you already hold.",
+  "links": [
+    {
+      "label": "Staff bus: Scope 1 or Category 7?",
+      "to": "/answers/staff-bus-scope-1-or-category-7"
+    },
+    {
+      "label": "Rooftop solar with net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

@@ -75,6 +75,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "agrochemical-technical-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint per kg of an agrochemical technical for a multinational customer?",
+  "title": "Agrochemical technical footprint per kg",
+  "short": "Take one campaign's batch records: raw materials per kg of in-spec technical times their emission factors, plus steam, electricity, and fossil CO2 from incinerating spent solvent and waste, all divided by good output. Then see which lines are biggest in your own numbers and get supplier figures for those first.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "air-compressor-heat-recovery-savings",
   "q": "How much fuel can I save by recovering heat from an air compressor, and how do I calculate the CO2?",
   "title": "Compressor heat recovery: fuel and CO2",
@@ -153,6 +161,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Ammonia leaks add no CO2e, while every kilogram of R-404A that leaks adds about 4.7 tonnes of CO2e. A 500 kg R-404A charge losing 10% a year adds about 236 tonnes of CO2e a year. Electricity is the other half, so compare both systems' annual kWh before deciding.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "anaesthetic-gases-scope-1-hospital",
+  "q": "Do anaesthetic gases like desflurane and nitrous oxide count in a hospital's Scope 1?",
+  "title": "Anaesthetic gases in hospital Scope 1",
+  "short": "Nitrous oxide, yes: it is one of the seven gases the GHG Protocol requires, and the hospital releases it on site, so it is Scope 1. Desflurane, isoflurane and sevoflurane are not on that list, so the GHG Protocol has them reported separately from the scopes. The NHS counts them in its direct footprint. Report them and say which way.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "answer-a-catena-x-pcf-request-auto-parts",
@@ -323,6 +339,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "attributional-vs-consequential-footprint",
+  "q": "What is the difference between attributional and consequential carbon accounting, and which do buyers want?",
+  "title": "Attributional vs consequential accounting",
+  "short": "Attributional accounting gives your product or company its share of the emissions that actually happened, using average factors. Consequential accounting estimates how emissions change because of a decision, using marginal effects. Buyers asking for a product footprint or Scope 3 data want attributional figures; consequential thinking belongs to avoided emissions and project claims.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "australia-climate-disclosure-scope-3-suppliers",
   "q": "Will Australia's mandatory climate reporting reach Indian exporters through Scope 3?",
   "title": "Australia climate reporting and suppliers",
@@ -345,6 +369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the assessed units printed on the bill for those months, mark them as an estimate, and correct them when the discom revises the account after the meter is replaced. Put any revision back into the months it relates to, not the month the adjustment appears on your bill.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "awd-rice-methane-reduction-calculation",
+  "q": "How much methane does alternate wetting and drying cut in rice, and how do I show it to a buyer?",
+  "title": "AWD rice methane cut: the calculation",
+  "short": "Under IPCC 2019 Refinement defaults, fields drained several times in a season emit 55% of the methane of continuously flooded fields, a 45% cut. A single drainage gives a 29% cut. Multiply your baseline methane per hectare by that cut and by verified AWD hectares, subtract any nitrous oxide increase, and back it with field water records.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "bank-esg-exclusion-list-msme-loan",
@@ -475,6 +507,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "biomedical-waste-emissions-scope-3",
+  "q": "How do I calculate emissions from biomedical waste sent to a common treatment facility?",
+  "title": "Biomedical waste emissions from a CBWTF",
+  "short": "Take the kg by colour category from your CBWTF receipts or annual report, apply a factor for each treatment route, and report the total in Scope 3 Category 5. Yellow waste is incinerated, so its fossil carbon gives most of the emissions. Red, white and blue waste are disinfected, then shredded or recycled, which emits far less.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "bis-standard-for-carbon-footprint-india",
   "q": "Is there a BIS (Bureau of Indian Standards) standard for calculating a company's or product's carbon footprint?",
   "title": "Is there a BIS carbon footprint standard?",
@@ -545,6 +585,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Convert flue gas O2 to excess air with O2 x 100 / (21 minus O2), work out the dry flue gas loss before and after tuning, and turn the efficiency gain into fuel saved: fuel used x (1 minus old efficiency / new efficiency). Multiply the fuel saved by its emission factor for CO2.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "booking-platform-sustainability-data-for-hotels",
+  "q": "What sustainability data do booking platforms and corporate travel buyers ask hotels for?",
+  "title": "Hotel sustainability data buyers ask for",
+  "short": "Booking platforms mostly want proof of a third-party sustainability certification: Booking.com now labels properties that hold one. Corporate travel buyers ask in their hotel RFPs for carbon per occupied room night, energy, water, waste, refrigerants and renewable share, often calculated with the Hotel Carbon Measurement Initiative (HCMI) method. Your bills and occupancy records feed both.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "borewell-pumping-energy-per-kl",
@@ -715,6 +763,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "buyer-says-my-carbon-footprint-is-too-low",
+  "q": "My buyer says our carbon footprint looks too low. How do I check it?",
+  "title": "Buyer says our footprint looks too low",
+  "short": "Check four things in order: missing sources (DG diesel, a second meter, missing months, refrigerants, fuel bought for cash), unit slips (kVAh, MWh, kilolitres), a boundary mismatch with what the buyer expected, and the denominator. Then compare your intensity per tonne with a published benchmark for your process. A big gap means keep looking.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "buyer-sustainable-supply-chain-finance",
   "q": "How can a supplier qualify for a buyer's sustainable supply chain finance programme?",
   "title": "Qualify for sustainable supply chain finance",
@@ -841,6 +897,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not on anything sold to EU consumers. Directive (EU) 2024/825, applying from 27 September 2026, bans claims that a product has a neutral, reduced or positive climate impact because of offsetting. You can still state measured facts, such as a product footprint or a cut in emissions, and buy credits as a separate contribution.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "can-i-claim-recycled-gold-is-low-carbon",
+  "q": "Can I tell buyers my jewellery is low carbon because it uses recycled gold?",
+  "title": "Recycled gold: can you say low carbon?",
+  "short": "Not with the words low carbon on their own. Say what you can prove: \"made with 100% recycled gold\", backed by your refiner's chain-of-custody records. Add a carbon figure only if you have measured the piece's footprint, and from 27 September 2026 avoid generic green wording on anything sold to EU consumers.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "can-i-report-only-scope-1-and-2",
@@ -1419,6 +1483,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "co2-performance-ladder-for-indian-companies",
+  "q": "What is the Dutch CO2 Performance Ladder, and do Indian IT or engineering firms bidding in the Netherlands need it?",
+  "title": "CO2 Performance Ladder for Indian firms",
+  "short": "The CO2 Performance Ladder is a Dutch certification, run by the foundation SKAO, that rates how a company measures and cuts its carbon. It is not a legal requirement. Dutch public buyers such as ProRail and Rijkswaterstaat use it in tenders as an award advantage, so you need it only if the tenders you chase give one.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "coal-based-sponge-iron-co2-per-tonne",
   "q": "How much CO2 does a coal-based sponge iron (DRI) kiln emit per tonne?",
   "title": "CO2 per tonne of coal-based sponge iron",
@@ -1587,6 +1659,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "cotton-bed-sheet-carbon-footprint-per-set",
+  "q": "How do I calculate the carbon footprint of a cotton bed sheet set for a retail buyer?",
+  "title": "Cotton bed sheet set footprint",
+  "short": "Add up the fabric area of every piece in the set, multiply by GSM to get kg, divide by your cutting and hemming yield, then multiply by the fabric's footprint per kg. Add stitching and packing electricity per set and the packaging. State the set's size and pieces, because a king set carries far more fabric than a single.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "cotton-ginning-emissions-per-bale",
   "q": "How much CO2 does cotton ginning and pressing emit per bale?",
   "title": "Cotton ginning CO2 per bale",
@@ -1609,6 +1689,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "For each shipment on the courier invoice, multiply actual weight in tonnes by the distance and by a factor for the mode: road for surface services, air for express and international. Use the courier's own figures instead if they state the method, such as ISO 14083 or the GLEC Framework.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "coworking-space-emissions-scope-2-or-category-8",
+  "q": "We rent desks in a co-working space with no meter. Is that Scope 2 or Scope 3?",
+  "title": "Co-working desks: Scope 2 or Scope 3?",
+  "short": "For most desk members it is Scope 3. You buy a service and the operator controls the building, its meters and its power, so that electricity is the operator's Scope 2. Report your share in Category 8, upstream leased assets, using an allocation by seats or floor area, and label it estimated.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "cradle-to-gate-or-cradle-to-grave",
@@ -1673,6 +1761,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "data-quality-rating-dqr-explained",
+  "q": "What does the data quality rating (DQR) on a PEF or EPD mean?",
+  "title": "Data quality rating (DQR) explained",
+  "short": "The DQR is a score for how well the data behind a footprint fits the product. Under the EU PEF method it is the average of four ratings, technological, geographical and time representativeness and precision, each from 1 (best) to 5 (worst). Lower is better, and the category rules for your product set the maximum score they accept.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "declared-unit-vs-functional-unit",
+  "q": "What is the difference between a declared unit and a functional unit, and which should my footprint use?",
+  "title": "Declared unit vs functional unit",
+  "short": "A declared unit is a plain quantity of product, such as 1 kg of yarn. A functional unit is the job the product does, such as painting 1 m2 of wall for ten years. Use a declared unit for materials and parts reported cradle to gate, and a functional unit to compare finished products by use.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "dedicated-freight-corridor-emissions-saving",
@@ -1801,6 +1905,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "On India's grid average, an electric delivery van usually emits less CO2 per km than a diesel van: about 37% less in a typical worked case, and more when charged from rooftop solar. The saving depends on the diesel van's mileage and the EV's kWh per km, so use your own vehicles' figures.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "distribution-transformer-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a distribution transformer for an export tender or EPD?",
+  "title": "Distribution transformer carbon footprint",
+  "short": "Weigh the materials in one unit, CRGO core steel, copper or aluminium windings, tank steel, oil and insulation, multiply each by a named factor, and add your factory's energy allocated per unit. That gives the cradle to gate figure. Report lifetime no-load and load losses separately; over 25 years they often outweigh manufacturing.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "do-buyers-pay-more-for-low-carbon-suppliers",
@@ -2003,6 +2115,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "does-gem-ask-for-carbon-footprint",
+  "q": "Do GeM tenders ask for a carbon footprint or green certificate?",
+  "title": "Do GeM tenders ask for a carbon footprint?",
+  "short": "Only if the bid says so. A GeM bid's requirements come from the category specification and any additional terms the buyer uploads. Those can call for a BEE star label, a BIS standard or, from some buyers, environmental conditions. Search both documents for carbon, footprint and certificate before you quote.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "does-grs-certificate-prove-lower-carbon-footprint",
   "q": "Does a GRS or RCS certificate prove my recycled yarn has a lower carbon footprint?",
   "title": "Does GRS prove a lower carbon footprint?",
@@ -2041,6 +2161,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "You need an SBTi FLAG target if your company is in a sector the SBTi designates as FLAG, such as agricultural production, food processing, or forest and paper products, or if land-related emissions are 20% or more of your total emissions across scopes. Either trigger also requires a no-deforestation commitment.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "does-neem-coated-urea-reduce-emissions",
+  "q": "Does neem-coated urea reduce N2O emissions, and can I claim a lower footprint for it?",
+  "title": "Does neem-coated urea cut emissions?",
+  "short": "Not in a way you can claim. All subsidised urea sold in India has been neem-coated since 2015, so it is the normal product, not an improvement. The IPCC methods give no reduction factor for coated urea, so at default factors your N2O and urea CO2 stay the same as for plain urea.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "does-power-factor-correction-reduce-emissions",
@@ -2163,6 +2291,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "ductile-iron-pipe-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of ductile iron pipe per tonne, and how do buyers compare it with steel or HDPE pipe?",
+  "title": "Ductile iron pipe carbon footprint",
+  "short": "Calculate it from your own route: iron or hot metal per tonne of good pipe times its factor, plus melting, annealing and finishing energy, zinc coating and cement lining. Buyers should then compare per metre of pipe at the same diameter and pressure class, not per tonne, because DI, steel and HDPE weigh very different amounts.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "duplicate-invoices-double-counting-emissions",
   "q": "How do I stop the same purchase being counted twice in my carbon footprint?",
   "title": "Stop double counting in a footprint",
@@ -2219,6 +2355,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "electric-motor-carbon-footprint-per-unit",
+  "q": "How do I calculate the manufacturing carbon footprint of an electric motor, separate from its use phase?",
+  "title": "Electric motor manufacturing footprint",
+  "short": "Weigh the materials in one motor (cast iron or aluminium frame, electrical steel laminations including punching scrap, copper winding, aluminium rotor cage, shaft), multiply each by a material factor, then add your plant's winding, varnish curing, assembly and testing energy per motor. That cradle-to-gate figure excludes the electricity the motor uses in service.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "electric-or-lng-truck-vs-diesel-emissions",
   "q": "Is an electric or LNG truck lower carbon than a diesel truck for Indian freight, per tonne-km?",
   "title": "Electric or LNG truck vs diesel per tonne-km",
@@ -2241,6 +2385,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add a month's rectifier, bath heating, extraction and pump energy, convert with 0.710 kg CO2 per kWh and the fuel factors, and divide by square metres plated. Then add the anode metal consumed per square metre times the metal's footprint. Multiply by a part's plated area to get the figure per part.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "emission-factor-for-purchased-urea-and-dap",
+  "q": "What emission factor should I use for urea and DAP we buy, before they reach the field?",
+  "title": "Emission factor for bought urea and DAP",
+  "short": "Use a cradle to gate production factor per tonne of product, from the manufacturer or a named dataset, and report it in Scope 3 Category 1. For urea, take the plant's natural gas emissions and subtract the 0.733 t CO2 per tonne bound into the urea, because that CO2 is counted when the urea is applied.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "emissions-fell-but-intensity-rose",
@@ -2465,6 +2617,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The EU ETS puts a carbon price on emissions from plants inside the EU. CBAM puts the same price on the embedded emissions of certain imported goods. They are linked in two ways: the CBAM certificate price follows EU ETS auction prices, and CBAM charges grow as free ETS allowances for EU producers are phased out.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "eu-net-zero-industry-act-public-tenders",
+  "q": "What does the EU Net-Zero Industry Act require in public tenders for solar, batteries and heat pumps?",
+  "title": "EU Net-Zero Industry Act in public tenders",
+  "short": "It makes EU public buyers and renewable energy auctions look beyond price for net-zero technologies such as solar, batteries and heat pumps. Public tenders must set minimum environmental sustainability requirements and, where the EU depends on one non-EU country for over half of supply, a resilience condition. Auctions add non-price criteria.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "eu-ppwr-requirements-for-indian-exporters",
@@ -2715,6 +2875,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "flight-emissions-from-travel-agent-invoice",
+  "q": "Our travel agent invoice shows only the fare, not the route. How do I calculate flight emissions?",
+  "title": "Flight emissions from a travel agent bill",
+  "short": "Get the route and cabin class first: ask the agent for a passenger sector report, or read them from the e-ticket or itinerary receipt that came with the booking. Then calculate by distance. Use a spend-based estimate on the fare only for trips you cannot trace, label it, and exclude GST and the agent's service fee.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "fly-ash-brick-carbon-footprint-per-1000",
   "q": "What is the carbon footprint of 1,000 fly ash bricks?",
   "title": "Fly ash brick footprint per 1,000",
@@ -2801,6 +2969,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if the report states its method (ISO 14083 or the GLEC Framework), the weight and distance basis, the factors used and which shipments it covers, and a sample of shipments recomputes close to its figures. Then it is better data than your own default estimate. Put each shipment in Category 4 or 9 by who paid for it.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "fresh-grapes-export-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of table grapes exported from Nashik to the EU per kg?",
+  "title": "Nashik grapes to the EU: carbon per kg",
+  "short": "There is no single published figure; you build it from your own records. Add farm emissions per kg (fertiliser nitrous oxide, diesel, pump electricity), pack-house pre-cooling and cold store power, packaging, and reefer road and sea freight to the EU port. A worked example with stated assumptions comes to about 0.64 kg CO2e per kg.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "frozen-vegetables-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of IQF frozen vegetables per kg?",
+  "title": "IQF frozen vegetables footprint per kg",
+  "short": "Per kg of packed frozen product, add the raw vegetables bought (including trimming and blanching loss) times a farm factor, blanching steam fuel, electricity for the IQF tunnel and cold store, refrigerant topped up times its GWP, and packaging. Freezing and storage power is often the largest plant line.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "fuel-purchased-vs-fuel-consumed",
@@ -2935,6 +3119,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Glass jar or retort pouch for pickles and sauces: how much carbon does the switch change per unit shipped?",
   "title": "Glass jar or retort pouch: carbon per unit",
   "short": "Switching from a glass jar to a retort pouch usually cuts packaging carbon per unit by most of the jar's footprint, because a pouch weighs a few grams against a jar's few hundred. Work it out as pack mass x material factor, plus the pack's own share of road and sea freight, for each option.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "gold-jewellery-carbon-footprint-per-gram",
+  "q": "What is the carbon footprint of gold jewellery per gram, and how much depends on mined versus recycled gold?",
+  "title": "Gold jewellery carbon footprint per gram",
+  "short": "Multiply grams of fine gold by a mined or recycled gold factor from a named dataset, then add casting, refining and polishing energy per gram. For mined gold the metal is almost the whole figure. For recycled gold, which carries only collection and refining, your workshop energy can be the bigger part.",
   "topic": "product",
   "reviewed": "2026-10-19"
  },
@@ -3131,6 +3323,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "griha-requirement-government-building-suppliers",
+  "q": "What does a GRIHA-rated government building ask from cement, steel and material suppliers?",
+  "title": "GRIHA asks for building material suppliers",
+  "short": "Mostly documents that prove content and performance: BIS test certificates, fly ash or slag content in cement and concrete, recycled content declarations, low VOC certificates for paints, and energy data such as U-values for glazing and insulation. The exact list depends on the GRIHA criteria the project team targets, so read the tender specification.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "gross-metering-solar-scope-2-claim",
   "q": "Can I claim solar under gross metering in my Scope 2?",
   "title": "Gross-metered solar and Scope 2",
@@ -3203,6 +3403,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "gujarat-energy-audit-assistance-msme",
+  "q": "Does Gujarat reimburse MSMEs for energy and water audits, and what does it cover?",
+  "title": "Gujarat energy audit help for MSMEs",
+  "short": "Yes. Under the Aatmanirbhar Gujarat Scheme for Assistance to MSMEs, the state reimburses 75% of the cost of an energy or water audit, up to Rs 50,000, and offers 25% of the cost of equipment the audit recommends, up to Rs 20 lakh. Confirm the current terms with your District Industries Centre before you book the audit.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "hand-knotted-carpet-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of a hand-knotted carpet per square metre?",
   "title": "Hand-knotted carpet footprint per m2",
@@ -3267,6 +3475,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "hospital-carbon-footprint-per-bed",
+  "q": "How do I calculate a hospital's carbon footprint per bed, and what drives it?",
+  "title": "Hospital carbon footprint per bed",
+  "short": "Add Scope 1 (DG diesel, boiler and kitchen fuel, anaesthetic gases, refrigerant leaks) and Scope 2 (grid electricity from your bills) for a year, then divide by beds and by occupied bed-days. Report both. Start with the electricity bills: air conditioning, operating theatres and imaging run day and night.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "hospital-scope-3-medicines-and-supplies",
+  "q": "How do hospitals estimate Scope 3 from medicines, consumables and medical equipment?",
+  "title": "Hospital Scope 3: medicines and supplies",
+  "short": "Start spend-based: group the year's purchases into medicines, consumables and equipment, take values before GST, and multiply each group by a matching EEIO factor. Medicines and consumables go in Category 1, equipment in Category 2. Then replace the biggest suppliers' lines with their own emissions data.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "hot-dip-galvanizing-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of hot-dip galvanizing per tonne of steel?",
   "title": "Galvanizing carbon footprint per tonne",
@@ -3287,6 +3511,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How much fuel and CO2 do I save for every kilolitre of hot process water I stop using?",
   "title": "Fuel and CO2 saved per kL of hot water",
   "short": "Each kilolitre heated by 45 degrees C needs about 188 MJ of heat. On an LPG boiler at 85 percent efficiency that is about 4.7 kg of LPG and 14 kg of CO2 saved per kL. Work it out from kL x 4.186 x temperature rise, divided by boiler efficiency and the fuel's energy content.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "hotel-carbon-per-occupied-room-hcmi",
+  "q": "How does a hotel calculate carbon per occupied room night for corporate clients?",
+  "title": "Hotel carbon per occupied room night",
+  "short": "Total the hotel's Scope 1 and 2 emissions for the year, take out the share that belongs to meeting and event space by floor area, and divide what is left by occupied room nights. That is the Hotel Carbon Measurement Initiative (HCMI) approach corporate travel buyers ask for, and it lets clients compare hotels on one basis.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "hotel-event-carbon-footprint-per-guest",
+  "q": "A corporate client wants the carbon footprint of their conference at our hotel. How do we calculate it?",
+  "title": "Conference footprint at a hotel",
+  "short": "Add three parts: meeting space used (square metres x hours x your footprint per square metre-hour), guest room nights x your footprint per occupied room night, and meals x a per-meal food factor. Divide by delegates for a per guest figure. Guests' travel to the venue is the client's to add.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
  },
@@ -3979,6 +4219,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "indian-sandstone-paving-carbon-footprint-per-square-metre",
+  "q": "What is the carbon footprint of Indian sandstone paving per square metre for UK buyers?",
+  "title": "Sandstone paving footprint per m2",
+  "short": "Work it out per tonne of finished paving, then convert to square metres using the stone's thickness and density. Add quarry diesel, block transport and cutting power (modules A1 to A3), then road freight to the Indian port and sea freight to the UK (A4). Check transport carefully: in the worked example below, sea freight is the largest single part.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "indian-truck-diesel-mileage-by-size",
   "q": "How many km per litre should a loaded Indian truck give by size, and how do I check a transporter's diesel claim?",
   "title": "Check a transporter's truck diesel claim",
@@ -4035,6 +4283,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "industrial-valve-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an industrial valve for a European buyer?",
+  "title": "Industrial valve footprint per unit",
+  "short": "Take the rough casting weight of the body and bonnet, multiply by a factor per kg of good casting for that metal, add trim, gaskets and paint by mass, then add your machining, testing and painting energy per valve. For a cast iron or steel valve the castings are usually most of the cradle to gate figure.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "injection-moulding-carbon-footprint-per-kg",
   "q": "What is the carbon footprint per kg of an injection moulded plastic part, and how do I calculate it?",
   "title": "Carbon per kg of a moulded plastic part",
@@ -4081,6 +4337,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The line can still be classified, but only from its description and unit. If the description clearly names a fuel or energy item and the unit matches a published factor, it gets a figure. If not, the honest result is no factor and a flag for review, not a guess from the amount.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ipcc-tier-1-default-factor-good-enough",
+  "q": "My report says IPCC Tier 1 default factors. Will a buyer or verifier accept that?",
+  "title": "Are IPCC Tier 1 default factors enough?",
+  "short": "Usually yes for diesel, petrol, LPG and natural gas, because their carbon content barely varies, so a named IPCC default is hard to fault. Expect questions for coal, biomass and other fuels whose quality varies, and for large process emissions. There, a factor from your own fuel analysis (Tier 2) is safer.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "is-a-glass-unit-covered-by-ccts",
@@ -4235,12 +4499,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "it-company-carbon-footprint-per-employee",
+  "q": "What is a normal carbon footprint per employee for an Indian IT services company?",
+  "title": "IT company carbon footprint per employee",
+  "short": "There is no official benchmark. Work out your own Scope 1 and 2 per average employee, then compare it with listed IT peers, using the GHG table and headcount in each peer's BRSR for the same year. Offices on grid power with diesel backup sit higher than campuses buying renewable power.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "it-hardware-laptops-category-2-emissions",
   "q": "How do I estimate Category 2 emissions for laptops, servers and other IT hardware we buy?",
   "title": "Category 2 emissions for laptops and servers",
   "short": "Take the manufacturing share of each model's product carbon footprint sheet, multiply by the units you capitalised this year, and report the total in Category 2 for the year of purchase. Where no sheet exists, use a labelled spend-based estimate on the GST-exclusive invoice value.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "it-park-cam-charges-electricity-scope-2",
+  "q": "Our IT park bills electricity, DG power and chilled water through CAM charges. How do we report that?",
+  "title": "IT park CAM charges: which scope?",
+  "short": "Under operational control, report the grid power, the landlord's DG power and the chilled water billed to your leased space as Scope 2: all three are energy you buy and do not generate. Split the CAM bill into kWh, DG kWh and TR-hours, apply a factor to each, and treat any area-based split as an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "japan-carbon-footprint-guideline-supplier-request",
@@ -4379,6 +4659,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "leased-laptops-and-servers-scope-3",
+  "q": "We lease laptops and servers instead of buying them. Which Scope 3 category do they go in?",
+  "title": "Leased laptops and servers: which category",
+  "short": "The electricity leased laptops and servers use is usually already in your Scope 2, because they run on your office meter. Making them is not Category 2, which covers capital goods you buy. The GHG Protocol lists manufacturing of leased assets as optional in Category 8; if you count rental spend in Category 1 instead, say so.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "leather-bag-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a leather bag, including cutting waste?",
   "title": "Leather bag footprint per piece",
@@ -4393,6 +4681,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the leather area each pair really uses, including cutting waste, times the tannery's footprint per square foot, then soles, linings, adhesives, factory energy per pair and the shoe box. Leather usually dominates, so the cutting yield and the tannery's figure matter most.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "leather-gloves-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of leather gloves for an EU buyer?",
+  "title": "Leather gloves carbon footprint per pair",
+  "short": "Work out the square feet of leather each pair really uses, including cutting waste, and multiply by your tannery's footprint per square foot. Add the lining by weight, your factory's electricity and diesel per pair, and the packaging. Leather area and cutting yield usually decide the answer.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "leather-jacket-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of a leather jacket per piece, and which part should I measure first?",
+  "title": "Leather jacket footprint per piece",
+  "short": "There is no single figure: it depends mostly on how much leather the jacket consumes and the tannery's footprint per square foot. Measure that first, as leather area issued per jacket times the tannery figure with its hide allocation rule. Lining, zips, trims, factory power and packaging come after and are usually a small share.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "leather-tannery-carbon-footprint-per-square-foot",
@@ -4497,6 +4801,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Calcining pure magnesite releases 0.522 tonnes of CO2 per tonne of magnesium carbonate, about 1.09 tonnes per tonne of magnesia formed. Multiply tonnes calcined by the MgCO3 share and the fraction actually calcined, add any calcium carbonate at 0.440, then add kiln fuel separately.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "maharashtra-meda-energy-conservation-subsidy",
+  "q": "What energy audit and efficiency subsidy does MEDA give Maharashtra industries, and how do I apply?",
+  "title": "MEDA energy conservation support",
+  "short": "MEDA, Maharashtra's designated agency under the Energy Conservation Act, has run schemes that pay towards energy audits for industries, such as a walk-through audit scheme for SMEs from 2010 to 2013. The current cover, ceiling, eligible units and window are set by the Government Resolution in force, so read that before you spend.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "malaysia-nsrf-supplier-emissions",
@@ -4803,6 +5115,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "organic-manure-vs-urea-n2o-emissions",
+  "q": "Does switching from urea to farmyard manure or compost cut N2O emissions?",
+  "title": "Manure or urea: which emits less N2O?",
+  "short": "Per kg of nitrogen, it depends on your climate. Under the IPCC 2019 Refinement, in wet climates manure or compost emits less direct N2O than urea, 0.006 against 0.016 kg N2O-N per kg N. In dry climates both use 0.005, so there is no saving. Dropping urea also removes its CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "outsourced-hotel-laundry-emissions",
+  "q": "Our hotel outsources laundry. Does it go in Scope 3, and how do we estimate it?",
+  "title": "Outsourced hotel laundry emissions",
+  "short": "Yes. Laundry done by an outside vendor is a purchased service, Scope 3 Category 1. Estimate it from the kg of linen you send, multiplied by the vendor's energy emissions per kg, which you work out from their electricity and fuel bills. If the vendor will not share data, use a labelled spend-based estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "outsourced-housekeeping-security-scope-3",
+  "q": "How do I count outsourced housekeeping, security and facility services in Scope 3?",
+  "title": "Outsourced housekeeping in Scope 3",
+  "short": "They go in Scope 3 Category 1, purchased services. Multiply the year's contract value before GST by a spend-based factor for building services, and label it an estimate. Where the contractor burns fuel for you, such as patrol vehicles, ask for litres and use activity data instead.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "packaging-carbon-footprint-export-shipment",
   "q": "How do I calculate the carbon footprint of the packaging on my exports?",
   "title": "Packaging footprint on export shipments",
@@ -5075,6 +5411,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "primary-data-share-meaning",
+  "q": "What does primary data share mean on a product carbon footprint, and how high should mine be?",
+  "title": "Primary data share, explained",
+  "short": "Primary data share is the percentage of your product footprint, in kg CO2e, calculated from data specific to your product's own processes and suppliers rather than industry averages. PACT asks for it but sets no pass mark. Buyers look for it to rise year by year, and supplier footprints for big materials raise it fastest.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "process-co2-from-limestone-calcination",
   "q": "How do I calculate process CO2 from limestone or dolomite calcination?",
   "title": "Process CO2 from limestone calcination",
@@ -5177,6 +5521,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply each ingredient's share of the compound by its factor (PVC resin, calcium carbonate filler, stabiliser, lubricants, pigment), adjust for materials lost as scrap you do not regrind, then add extrusion and mixing electricity per kg of good pipe times the grid factor. Resin is usually the largest line.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "quartz-engineered-stone-carbon-footprint-per-square-metre",
+  "q": "What is the carbon footprint of an engineered quartz slab per square metre, and what does a US buyer expect to see?",
+  "title": "Engineered quartz slab footprint per m2",
+  "short": "Work it out from your batch recipe and plant bills: kg of quartz grit and polyester resin per square metre times their factors, plus press, curing and polishing energy per square metre dispatched. Resin weighs little but carries a high factor. A US buyer will want the figure as an independently verified EPD under ISO 21930.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "quicklime-kiln-co2-per-tonne",
@@ -5395,6 +5747,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "residual-emissions-meaning-net-zero",
+  "q": "What are residual emissions, and how much can a company leave unreduced under net zero?",
+  "title": "Residual emissions under net zero",
+  "short": "Residual emissions are what is left after you have cut everything you feasibly can by your net-zero year. Under the SBTi Corporate Net-Zero Standard version 1.3, that means at least a 90 percent cut from the base year for most sectors, so residuals can be at most about 10 percent, neutralised with carbon removals.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "residual-mix-factor-india-market-based-scope-2",
   "q": "What residual mix factor should I use for market-based Scope 2 in India?",
   "title": "Residual mix factor for India",
@@ -5417,6 +5777,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Restate it if the error is significant against the threshold you set, often 5 percent of the affected total, or if several small errors add up to that much. Below the threshold, correct it in the current year and note it. Either way, tell anyone who received the old figure.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "retail-store-electricity-data-from-mall",
+  "q": "Our stores are in malls and the landlord bills electricity. How do we get Scope 2 data?",
+  "title": "Mall store electricity for Scope 2",
+  "short": "Ask each mall landlord for the monthly sub-meter kWh behind your electricity charge, split into grid units and DG backup units, plus any chilled water billed to your store. Under operational control those are your Scope 2. For stores with no data, estimate from kWh per square foot at similar stores and label them estimated.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "returnable-packaging-scope-3",
@@ -5489,6 +5857,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply each ingredient in the compound recipe by its share and its emission factor, scale up for flash and scrap, then add mixing, moulding and curing energy per kg of good parts. Carbon black and synthetic rubber usually carry the highest factors, so the recipe decides most of the answer.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "saas-subscriptions-scope-3-emissions",
+  "q": "How do I count SaaS subscriptions like CRM, email and design tools in Scope 3?",
+  "title": "SaaS subscriptions in Scope 3",
+  "short": "Put them in Scope 3 Category 1, purchased goods and services. Use the vendor's figure for your account if it gives one. Otherwise take the spend before tax, convert it to the factor's currency and year, and multiply by a spend-based factor for software or data processing. Label the result spend-based, with wide uncertainty.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "sac-codes-to-scope-3-categories",
@@ -5569,6 +5945,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Schneider Electric's Zero Carbon Project, launched in 2021, asked its top 1,000 suppliers to halve operational CO2 by 2025; Schneider reported an average cut of 56%. Its successor, The Zero Carbon Pathway, aims for 1,500 suppliers by 2030 that measure Scope 1 and 2, set reduction targets and calculate Scope 3 or product footprints.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "school-carbon-footprint-how-to-calculate",
+  "q": "How does a school or college calculate its carbon footprint?",
+  "title": "Carbon footprint for a school or college",
+  "short": "Add up a year of electricity bills, diesel for school buses and the DG set, and LPG for hostel kitchens, and multiply each by its emission factor. That gives Scope 1 and 2. Then add contracted buses, staff commuting and purchased goods as Scope 3 if you want the fuller picture, and divide by students for an intensity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "scope-3-category-3-transmission-losses",
@@ -5811,6 +6195,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "silk-fabric-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint of silk fabric per kg, from cocoon to woven fabric?",
+  "title": "Silk fabric carbon footprint per kg",
+  "short": "Work backwards from 1 kg of fabric. Find how much raw silk it takes after degumming and weaving waste, how many kg of cocoons that raw silk took, then add farm, reeling, twisting, weaving and dyeing emissions at each step. Report firewood CO2 from reeling separately as biogenic, and label the result an estimate.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "silver-jewellery-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint of silver jewellery when most silver is a by-product of lead, zinc and copper mining?",
+  "title": "Silver jewellery footprint per kg",
+  "short": "Multiply the silver in your jewellery by a per kg silver factor whose allocation method is stated, then add workshop electricity and casting fuel per kg. Because most mined silver comes out alongside lead, zinc, copper or gold, mass allocation gives silver a tiny share and economic allocation a large one. Name the method next to the number.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "singapore-climate-reporting-indian-subsidiaries",
   "q": "Does Singapore's mandatory climate reporting apply to my Indian group's Singapore company?",
   "title": "Singapore climate reporting for Indian groups",
@@ -5979,12 +6379,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "staff-canteen-meals-scope-3",
+  "q": "How do I count catered staff meals and canteen food in our carbon footprint?",
+  "title": "Staff canteen meals in your footprint",
+  "short": "Food your caterer serves to staff is Scope 3 Category 1, purchased goods and services. Count meals served by menu type and multiply by a per meal factor, or, if you only have the caterer's invoices, multiply spend by a food services factor and label it spend-based. Meat and dairy dishes drive most of the result.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "staff-quarters-electricity-in-carbon-footprint",
   "q": "Should electricity used in staff quarters and the factory canteen be in my carbon footprint?",
   "title": "Staff quarters and canteen electricity",
   "short": "Yes, in your company footprint, if you operate the colony or canteen and the power comes through your meter: it is Scope 2. In a product footprint you can leave colony power out, because it does not make the product, but keep the canteen and say what you excluded.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "stainless-steel-utensils-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of stainless steel kitchen utensils per kg?",
+  "title": "Stainless steel utensils footprint per kg",
+  "short": "Multiply the kg of stainless sheet bought per kg of finished utensils by a footprint factor for that grade, then add your own pressing, annealing and polishing energy per kg. The sheet usually dominates, so the grade, its nickel content and your mill's own figure matter more than anything in your factory.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "state-designated-agency-energy-conservation",
+  "q": "What is a State Designated Agency for energy conservation, and when should my factory contact it?",
+  "title": "What a State Designated Agency does",
+  "short": "A State Designated Agency is the body your state government names under Section 15 of the Energy Conservation Act, 2001 to coordinate, regulate and enforce the Act in the state. Contact it if you are a designated consumer, if your building must meet the state energy code, or if you want a state energy efficiency programme.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "state-subsidies-msme-energy-efficiency",
@@ -6043,6 +6467,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "student-commuting-scope-3-school",
+  "q": "Do school buses and student commuting count in a school's carbon footprint?",
+  "title": "School buses and student commuting",
+  "short": "School buses the school owns or runs with its own fuel are Scope 1, and must be counted. Buses run by a contractor the school pays are Scope 3, a purchased service. Students' own travel by parents' cars, vans or public transport is not a required category, because Category 7 covers employees only; report it as an optional extra line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "sub-metered-electricity-rented-unit",
   "q": "I pay my landlord for sub-metered electricity: is that still my Scope 2?",
   "title": "Sub-metered power in a rented unit",
@@ -6065,6 +6497,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not fully. The CO2 from burning bagasse is biogenic and is reported outside the scopes, but the methane and nitrous oxide from the boiler count in Scope 1, and so does any coal or diesel burnt. Power exported to the grid does not reduce the mill's Scope 1.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "supermarket-refrigerant-leak-rate",
+  "q": "How much refrigerant does a supermarket's display cases leak each year, and how do I report it?",
+  "title": "Supermarket refrigerant leak rate",
+  "short": "Supermarket systems with central racks feeding display cases are among the leakiest refrigeration equipment: IPCC 2006 gives 10% to 35% of the charge a year for medium and large commercial refrigeration. Report the kg of gas topped up each year times its GWP as Scope 1, and use the default rate only when you have no service records.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "supplier-price-includes-delivery-category-4",
@@ -6163,6 +6603,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "terry-towel-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of a cotton terry towel per kg, and how do I calculate it for a UK or EU buyer?",
+  "title": "Terry towel carbon footprint per kg",
+  "short": "There is no official figure per kg of terry towel; you calculate your own. Add the cotton yarn issued per kg of good towels times the yarn's footprint, then your mill's electricity, boiler fuel and packaging per kg. Yarn and wet processing usually make up most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "textile-printing-emissions-per-metre",
   "q": "How do I calculate CO2 per metre of printed fabric for rotary screen versus digital printing?",
   "title": "CO2 per metre: rotary vs digital printing",
@@ -6208,6 +6656,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Toyota green purchasing: CO2 for suppliers",
   "short": "They ask suppliers to cut CO2 towards carbon neutrality, report it, and run a certified environmental management system such as ISO 14001. Toyota's global guidelines were revised in January 2026; the reduction figure is set by each Toyota region and your contract, so ask Toyota Kirloskar Motor which one applies to you.",
   "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "tractor-diesel-emissions-per-acre",
+  "q": "How do I calculate tractor and harvester diesel emissions per acre for a farm footprint?",
+  "title": "Tractor diesel emissions per acre",
+  "short": "Total the diesel used for field work in a season, from fuel invoices or litres per acre for each operation, multiply by 2.68 kg CO2 per litre, and divide by acres worked. Add methane and nitrous oxide at the IPCC off-road defaults, which add roughly a tenth for farm machinery.",
+  "topic": "accounting",
   "reviewed": "2026-10-19"
  },
  {
@@ -6321,6 +6777,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Applying one tonne of urea on a field emits about 0.73 t CO2 from the urea itself plus about 1.97 t CO2e of direct nitrous oxide, using IPCC defaults and the AR6 GWP. Adding indirect nitrous oxide takes it to about 3.35 t CO2e. Making the urea is extra.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "us-federal-supplier-climate-rule-status",
+  "q": "Will US federal contracts require Indian suppliers to disclose emissions?",
+  "title": "US federal supplier climate rule status",
+  "short": "Not under any rule in force. The proposed Federal Acquisition Regulation rule that would have made large US federal contractors disclose emissions and set targets was withdrawn on 13 January 2025, and the case was closed. Indian subcontractors may still get emissions requests from US primes for their own targets or CDP reporting.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "us-ftc-green-guides-carbon-claims",
@@ -6843,12 +7307,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "why-buyer-rejected-product-carbon-footprint",
+  "q": "Why did my buyer reject my product carbon footprint, and how do I fix it?",
+  "title": "Why a buyer rejects your product footprint",
+  "short": "Usually because the figure cannot be checked, not because it is too high. The common reasons are an unclear declared unit or boundary, factors with no source or year, missing stages such as raw materials, offsets netted out, or a total that does not reconcile with your plant's emissions. Each has a direct fix.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "why-eu-fund-asks-for-sfdr-pai-data",
   "q": "Why is an EU investor asking my company for SFDR principal adverse impact data?",
   "title": "Why EU funds ask for SFDR PAI data",
   "short": "An EU fund asks for principal adverse impact (PAI) data because SFDR makes the fund report the harm its investments cause, such as emissions, using figures from each company it holds. Without your numbers it must use estimates and say so. The fund carries the legal duty; you supply the inputs.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "why-eu-importer-rejected-cbam-emissions-data",
+  "q": "Why did my EU importer reject our CBAM emissions data?",
+  "title": "Why EU importers reject CBAM data",
+  "short": "Usually because the data is at company level instead of per installation and good, covers the wrong period, leaves out precursors such as purchased billets or coil, has no monitoring method behind it, or has not been verified. From 2026 an importer can only use actual emissions that an accredited verifier has checked; otherwise it falls back on default values.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "why-icvcm-rejected-renewable-energy-credits",
