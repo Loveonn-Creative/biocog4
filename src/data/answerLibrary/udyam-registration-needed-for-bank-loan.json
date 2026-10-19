@@ -1,0 +1,67 @@
+{
+  "slug": "udyam-registration-needed-for-bank-loan",
+  "q": "Do I need Udyam registration to get MSME benefits on a bank loan?",
+  "title": "Udyam registration for MSME loan benefits",
+  "short": "Yes. A bank can lend to you without it, but to classify your loan as an MSME loan, and so give you MSME benefits such as priority sector treatment and credit guarantee cover, it needs your Udyam Registration Certificate. Registration is free and online, using Aadhaar, PAN and GST details.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Micro and small business owners, including traders",
+  "sections": [
+    {
+      "h": "Why the bank asks for it",
+      "p": [
+        "Since the MSME Ministry notification of 26 June 2020, an enterprise is classified as micro, small or medium through Udyam registration. RBI's priority sector lending directions tell banks to use the Udyam Registration Certificate to classify MSME borrowers. Without it, the bank books your loan as an ordinary commercial loan."
+      ]
+    },
+    {
+      "h": "What depends on MSME classification",
+      "ul": [
+        "Priority sector lending, which makes banks more willing to lend to the segment.",
+        "RBI's rule that micro and small enterprise loans up to Rs 20 lakh need no collateral, for loans sanctioned or renewed from 1 April 2026.",
+        "Credit guarantee cover under CGTMSE, at the lender's choice.",
+        "MSME schemes from SIDBI and the government, and the bank's published timelines for deciding MSME loan applications."
+      ]
+    },
+    {
+      "h": "Who can register",
+      "ul": [
+        "Manufacturing and service enterprises, by investment in plant and machinery or equipment and by turnover.",
+        "Retail and wholesale traders, for priority sector lending purposes.",
+        "Informal micro enterprises without GST or PAN can get a certificate through the Udyam Assist Platform, which banks treat as micro for priority sector lending."
+      ]
+    },
+    {
+      "h": "Thresholds and updating",
+      "p": [
+        "The MSME Ministry's notification S.O. 1364(E) of 21 March 2025 set these limits from 1 April 2025: micro, investment up to Rs 2.5 crore and turnover up to Rs 10 crore; small, up to Rs 25 crore and Rs 100 crore; medium, up to Rs 125 crore and Rs 500 crore. Investment and turnover are taken from your income tax return and GST data, so keep the registration in step with your filings. Crossing either limit moves you up a category; you move down only when you are below both."
+      ]
+    }
+  ],
+  "senseible": "For green or energy loans, Senseible's green loan readiness check organises the energy and carbon records a lender asks for. Udyam registration itself is done free on the government portal.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Are MSME solar loans priority sector",
+      "to": "/answers/is-renewable-energy-loan-priority-sector"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Master Directions, Priority Sector Lending, Targets and Classification (as updated) (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, and MSME Sector (Amendment) Directions, 2026, 9 February 2026 (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Thresholds from MSME Ministry notification S.O. 1364(E), 21 March 2025, effective 1 April 2025; collateral-free limit from RBI's amendment of 9 February 2026, effective 1 April 2026; Udyam Assist treatment from RBI circular of 9 May 2023. Checked 2026-10-19; check udyamregistration.gov.in and rbi.org.in for later changes."
+}

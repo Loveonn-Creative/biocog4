@@ -1,0 +1,70 @@
+{
+  "slug": "msme-working-capital-20-percent-turnover",
+  "q": "How much working capital can an MSME get from a bank: is it 20 percent of turnover?",
+  "title": "MSME working capital: 20% of turnover?",
+  "short": "Often, yes. For micro and small enterprises needing fund-based working capital up to Rs 5 crore, banks assess the limit at a minimum of 20 percent of projected annual turnover, with you bringing 5 percent as margin. Above that, or if your operating cycle needs more, banks use other methods.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSE owners applying for cash credit",
+  "sections": [
+    {
+      "h": "Where the 20 percent comes from",
+      "p": [
+        "The Nayak Committee method puts working capital need at 25 percent of projected annual turnover. Of that, the bank finances at least 20 percent and the borrower brings 5 percent as net working capital. RBI raised the ceiling for this simplified method to Rs 5 crore of fund-based limits in 1999, and RBI's FAQ on MSME lending still describes limits computed at a minimum of 20 percent of estimated turnover up to Rs 5 crore. Bank policies note that the 20 percent assumes an operating cycle of about three months."
+      ]
+    },
+    {
+      "h": "What projected turnover means to the bank",
+      "ul": [
+        "It is next year's sales, not last year's, but the bank will test it against GST returns, past growth and orders in hand.",
+        "Turnover through GST returns and bank credits is believed more than a figure only in the projections.",
+        "Inflating it to get a bigger limit backfires: drawing power is later set from your stock and debtors statements."
+      ]
+    },
+    {
+      "h": "When the limit is different",
+      "ul": [
+        "Above Rs 5 crore, banks assess by the cash budget or the traditional method based on your operating cycle and drawing power.",
+        "If your operating cycle is long, say large stocks of raw material, RBI guidance lets the bank sanction the higher figure from the traditional method.",
+        "Seasonal businesses may get a peak and non-peak limit.",
+        "Whatever the method, the bank decides the final limit after appraisal; 20 percent is a floor for assessment, not a promise."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: projected turnover of Rs 3 crore",
+    "lines": [
+      "Working capital need: 25 percent x Rs 3 crore = Rs 75 lakh",
+      "Bank finance at the 20 percent minimum: Rs 60 lakh",
+      "Your margin at 5 percent: Rs 15 lakh, from your own funds or long-term sources"
+    ],
+    "note": "The bank can sanction more if your operating cycle justifies it, and less if the projection is not believed."
+  },
+  "senseible": "Senseible keeps your purchase invoices, electricity bills and fuel slips as a fingerprinted record with monthly energy and emissions totals, useful when a lender also asks about energy use or climate data alongside your working capital application.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Buyer-led sustainable supply chain finance",
+      "to": "/answers/buyer-sustainable-supply-chain-finance"
+    },
+    {
+      "label": "Documents for a machinery term loan",
+      "to": "/answers/documents-for-msme-machinery-term-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, and RBI FAQs on MSME lending (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "RBI, Credit control and other measures, May 1999: simplified 20 percent of projected turnover method raised to Rs 5 crore (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "20 percent minimum up to Rs 5 crore confirmed in RBI's MSME FAQ and current bank MSME lending policies (2025); some banks report an IBA suggestion to raise the floor to 25 percent, not confirmed by RBI. Recheck the Master Direction text (checked 19 October 2026).",
+  "reviewed": "2026-10-19"
+}

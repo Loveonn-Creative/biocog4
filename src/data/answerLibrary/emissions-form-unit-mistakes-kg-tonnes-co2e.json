@@ -1,0 +1,85 @@
+{
+  "slug": "emissions-form-unit-mistakes-kg-tonnes-co2e",
+  "q": "My buyer's emissions form wants metric tonnes CO2e. What unit mistakes should I avoid?",
+  "title": "Unit mistakes on a buyer's emissions form",
+  "short": "Divide kilograms by 1,000 to get metric tonnes, never enter kg in a tonnes field, and check whether the form means metric tonnes or US short tons. Say whether your figure is CO2 or CO2e. Watch for lakh-style commas, MtCO2e meaning million tonnes, and a reporting year that differs from yours.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME suppliers filling CDP, EcoVadis or customer spreadsheets",
+  "sections": [
+    {
+      "h": "Mass units",
+      "ul": [
+        "1 metric tonne (t) = 1,000 kg. Most mistakes on supplier forms are a kg figure typed into a tonnes field, which makes you look 1,000 times bigger.",
+        "1 US short ton = 0.9072 t. US-built forms sometimes say tons; ask, or convert and state the unit you used.",
+        "1 long ton = 1.016 t. Rare, but it still appears in some shipping documents.",
+        "Mt means megatonne, a million tonnes. tCO2e or t CO2e is the safe way to write metric tonnes."
+      ]
+    },
+    {
+      "h": "CO2 or CO2e",
+      "p": [
+        "CO2e adds methane, nitrous oxide and fluorinated gases using global warming potentials. Grid electricity and fuel factors are often CO2-only. If the form asks for CO2e and your figure is CO2, either add the other gases or state plainly that the figure is CO2 only. Refrigerant leaks must be in CO2e, with the GWP set named, such as IPCC AR5 or AR6.",
+        "Biogenic CO2 from biomass fuel goes in a separate field if the form has one, not inside Scope 1."
+      ]
+    },
+    {
+      "h": "Number formats and periods",
+      "ul": [
+        "Indian grouping: 1,42,000 is 142,000. Some spreadsheets read the lakh comma as text; type plain numbers.",
+        "Decimal commas: European forms may show 142,5 for 142.5.",
+        "Energy: 1 MWh = 1,000 kWh. Forms asking for energy in MWh often get kWh.",
+        "Period: Indian accounts run April to March; many buyers ask for a calendar year. Say which twelve months you used.",
+        "Intensity: check the denominator, such as per tonne of product, per ₹ crore or per US$ million of revenue."
+      ]
+    },
+    {
+      "h": "A two-minute check before you submit",
+      "ol": [
+        "Is every total in t, with no kg left over?",
+        "Is your number within reason for your size? A small workshop reporting thousands of tonnes from a few bills has a unit error.",
+        "Does Scope 1 plus Scope 2 equal the total you entered?",
+        "Have you named the gases, the factor sources and the period in the comments box?"
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: converting one year's figure",
+    "lines": [
+      "Your records: 1,42,000 kg CO2 from electricity and diesel",
+      "Metric tonnes: 1,42,000 / 1,000 = 142 t CO2",
+      "If the form wants US short tons: 142 / 0.9072 = 156.5 short tons CO2",
+      "Typed as 142,000 in a tonnes field: 1,000 times the real figure"
+    ]
+  },
+  "senseible": "Senseible reports emissions in kg and tonnes of CO2 from published factors, with the factor source on each line, so you can see whether a figure is CO2 only before you type it into a buyer's form.",
+  "links": [
+    {
+      "label": "Common carbon accounting mistakes",
+      "to": "/answers/common-carbon-accounting-mistakes-smes"
+    },
+    {
+      "label": "EcoVadis carbon questions: what evidence",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "Greenhouse gases beyond CO2",
+      "to": "/climate-intelligence/ghg-gases-warming-impact-beyond-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (report in metric tonnes of CO2e)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CDP climate change questionnaire reporting guidance (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "US EPA Center for Corporate Climate Leadership, GHG emission factors hub (unit conversions)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

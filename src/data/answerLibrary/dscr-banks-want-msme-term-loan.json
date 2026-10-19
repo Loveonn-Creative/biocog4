@@ -1,0 +1,74 @@
+{
+  "slug": "dscr-banks-want-msme-term-loan",
+  "q": "What debt service coverage ratio does a bank want for an MSME term loan?",
+  "title": "DSCR a bank wants for an MSME term loan",
+  "short": "Most Indian banks look for an average debt service coverage ratio of about 1.25 to 1.5 over the loan period. That is lender practice, not an RBI rule: each bank sets its own threshold in its credit policy and may ask more of a new unit or a volatile sector.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners preparing project reports",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "DSCR = (profit after tax + depreciation + interest on term loans) / (interest on term loans + principal repayments due in the year).",
+        "The top line is the cash your business earns that is available to pay lenders; the bottom line is what lenders are due that year. Include every term loan and vehicle loan, not only the new one."
+      ]
+    },
+    {
+      "h": "Average and minimum",
+      "ul": [
+        "Average DSCR: the sum of the top line over all repayment years divided by the sum of the bottom line. Banks quote thresholds on this.",
+        "Minimum DSCR: the weakest single year, often the first full year of repayment when interest is highest. A low year may lead the bank to add a moratorium or stretch the tenure.",
+        "Year one with the new machine still ramping up is where projections usually break. Use a realistic ramp, not full capacity."
+      ]
+    },
+    {
+      "h": "What moves the number",
+      "ul": [
+        "Longer tenure lowers yearly principal and raises DSCR, at more total interest.",
+        "A moratorium of a few months during installation keeps year one from failing.",
+        "Higher promoter margin means a smaller loan.",
+        "For an efficiency machine, a measured saving from bills adds to profit, and lenders trust it more than a vendor claim."
+      ]
+    },
+    {
+      "h": "No RBI number, so ask",
+      "p": [
+        "RBI's MSME lending directions do not set a DSCR figure. Banks and SIDBI set it in their own lending policies and may want more for new units, volatile sectors or weak collateral. Ask the branch which threshold it will apply before you finalise the project report; the lending decision stays with the bank."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Rs 60 lakh machinery loan, year one (illustrative)",
+    "lines": [
+      "Loan Rs 60 lakh over 5 years: principal Rs 12 lakh a year; interest at an assumed 9 percent on Rs 60 lakh = Rs 5.4 lakh",
+      "Projected profit after tax Rs 14 lakh; depreciation Rs 8 lakh",
+      "DSCR = (14 + 8 + 5.4) / (5.4 + 12) = 27.4 / 17.4 = 1.57",
+      "Stress test, profit 30 percent lower at Rs 9.8 lakh: (9.8 + 8 + 5.4) / 17.4 = 23.2 / 17.4 = 1.33"
+    ],
+    "note": "Interest is shown on the full opening balance for year one; on a reducing balance it falls each year and DSCR rises. Use your own projections."
+  },
+  "senseible": "For an energy-saving machine, Senseible gives you a bill-backed record of kWh and fuel before and after the change, which supports the savings line in the projections your banker uses to work out DSCR.",
+  "links": [
+    {
+      "label": "Will energy savings pay the loan EMI",
+      "to": "/answers/energy-efficiency-loan-emi-vs-savings"
+    },
+    {
+      "label": "DPR for an energy efficiency loan",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI directions on lending to the Micro, Small and Medium Enterprises sector (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "The 1.25 to 1.5 range is an industry norm, not a regulation; each bank's credit policy sets its own threshold (checked 19 October 2026).",
+  "reviewed": "2026-10-19"
+}

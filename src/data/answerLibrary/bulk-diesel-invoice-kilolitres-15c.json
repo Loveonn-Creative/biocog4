@@ -1,0 +1,76 @@
+{
+  "slug": "bulk-diesel-invoice-kilolitres-15c",
+  "q": "My bulk diesel invoice is in kilolitres at 15 C. How do I get the right litres and CO2?",
+  "title": "Bulk diesel invoice in kL at 15 C",
+  "short": "Multiply the kilolitres by 1,000 to get litres, and use that 15 C volume as printed. Then multiply by 2.68 kg CO2 per litre, or for more precision multiply litres by the printed density to get kg and use 3.19 kg CO2 per kg. Do not swap in your tank dip at ambient temperature.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories, mines and fleets buying HSD in bulk tankers",
+  "sections": [
+    {
+      "h": "Why bulk invoices say 15 C",
+      "p": [
+        "Diesel expands as it warms, by roughly 0.08 percent per degree C. Public sector oil companies therefore transact HSD on its volume at 15 C, and bulk tanker challans and invoices print the density at 15 C, worked out with the petroleum measurement tables (ASTM 53B and 54B). The same tanker measured at 32 C in your yard shows about 1.4 percent more litres, with no extra fuel in it."
+      ]
+    },
+    {
+      "h": "The mistakes that matter more than temperature",
+      "ul": [
+        "Reading 12 kL as 12 litres. This understates diesel a thousand times and is the most common error on bulk invoices.",
+        "Using the ambient dip reading for purchases while the invoice is at 15 C. Mixing the two gives a 1 to 2 percent error, and a mismatch with the paid quantity.",
+        "Counting the same delivery twice from the invoice and the delivery challan or the tank dip log.",
+        "Using kg per litre from a datasheet when the invoice prints the density for that load. The printed density wins."
+      ]
+    },
+    {
+      "h": "Per litre or per kg",
+      "p": [
+        "2.68 kg CO2 per litre assumes an average density of about 0.84 kg per litre. If your invoice prints density at 15 C, the mass route is more exact: kg = litres x density, then kg x 3.19 kg CO2 per kg (IPCC 2006 defaults: 74,100 kg CO2 per TJ x 43.0 GJ per tonne). Pick one route for the year and say which."
+      ]
+    },
+    {
+      "h": "When the temperature correction is worth doing yourself",
+      "p": [
+        "Only when you have ambient volumes and no 15 C figure, for example from a flow meter at the dispensing point. Then either use the meter totals consistently for consumption, or correct them to 15 C with the supplier's table. For Scope 1 the difference is rarely material, but the kL slip is."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tanker of 12 kL at 15 C, density 0.830",
+    "lines": [
+      "Litres: 12 x 1,000 = 12,000 L at 15 C",
+      "Per-litre route: 12,000 x 2.68 = 32,160 kg CO2",
+      "Mass route: 12,000 x 0.830 = 9,960 kg x 3.186 = 31,733 kg CO2, about 1.3 percent lower because this load is lighter than the average",
+      "Same load read by dip at 32 C: about 12,000 x 1.0136 = 12,163 L; using it adds 163 x 2.68 = 437 kg CO2 that was never burned",
+      "Read as 12 litres by mistake: 12 x 2.68 = 32.2 kg CO2"
+    ],
+    "note": "The 0.08 percent per degree expansion is an approximation; the supplier's correction table gives the exact figure for each density."
+  },
+  "senseible": "When a fuel invoice prints the quantity in kL, Senseible converts it to litres (x 1,000) and applies 2.68 kg CO2 per litre to the volume as printed. A quantity that does not fit the line, such as kL read as litres, can trigger the abnormal quantity check and keep the line from passing verification.",
+  "links": [
+    {
+      "label": "Convert diesel kg to litres",
+      "to": "/answers/diesel-kg-to-litres-conversion"
+    },
+    {
+      "label": "Fuel purchased vs fuel consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2, default CO2 factors and net calorific values",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 91:2017, Petroleum and related products, temperature and pressure volume correction factors (petroleum measurement tables)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "15 C basis for HSD transactions per the Ministry of Petroleum's reply in Parliament and oil company dealer manuals; check whether your own supplier's invoice states natural or 15 C volume (checked 19 October 2026)."
+}

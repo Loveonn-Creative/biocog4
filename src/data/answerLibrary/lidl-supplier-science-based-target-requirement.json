@@ -1,0 +1,73 @@
+{
+  "slug": "lidl-supplier-science-based-target-requirement",
+  "q": "Lidl wants its suppliers to set science-based targets. Does that apply to an Indian food or textile supplier?",
+  "title": "Lidl's supplier climate targets and India",
+  "short": "It applies if Lidl, its buying office or your importer asks you. Lidl expects the suppliers behind 75% of its product-related Scope 3 emissions to have SBTi-aligned targets by the end of its 2026 financial year, so the largest emitters are asked first. Small suppliers can usually use SBTi's SME route, starting from a Scope 1 and 2 baseline.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian suppliers to Lidl and Schwarz Group (rice, spices, garments, non-food)",
+  "sections": [
+    {
+      "h": "Why the request reaches you",
+      "p": [
+        "Most of a retailer's emissions sit in the products it buys. Lidl's published goal is that by the end of its 2026 financial year, the suppliers responsible for 75% of its product-related Scope 3 emissions have set climate targets in line with SBTi. It supports them through a supplier engagement programme with training. The suppliers that move that share most, by volume and emission intensity, are asked first. If you sell to Lidl through an importer or agent, the request may come from them.",
+        "Read the request itself: it should say what is asked, by when, and through which platform. Retailer programmes are revised, so go by Lidl's current published wording, not by a past press note."
+      ]
+    },
+    {
+      "h": "What you would actually commit to",
+      "ul": [
+        "A base year inventory of your Scope 1 and 2 emissions, from fuel and electricity records.",
+        "A target submitted to SBTi and validated, then published.",
+        "Yearly reporting of progress, often through a supplier platform the retailer names.",
+        "Carbon credits do not count towards the target itself."
+      ]
+    },
+    {
+      "h": "Food and textile suppliers face different rules",
+      "p": [
+        "A garment or home textile unit with fewer than 250 employees may fit SBTi's SME route, where you pick from set targets on a short form. Rice millers and spice processors work with agricultural raw materials, so check first whether SBTi's forest, land and agriculture (FLAG) rules apply to you; they can change the target you need."
+      ]
+    },
+    {
+      "h": "What to do this quarter",
+      "ol": [
+        "Ask your Lidl buyer or importer for the exact requirement and deadline in writing.",
+        "Build twelve months of Scope 1 and 2 from your electricity bills and fuel invoices.",
+        "Check SME route and FLAG eligibility on SBTi's current criteria.",
+        "Pick a base year you have full bills for, then submit."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the Scope 1 and 2 baseline a target starts from, out of your electricity bills and fuel invoices, with the factor and source on every line. Target validation is done by SBTi.",
+  "links": [
+    {
+      "label": "A buyer's SBTi supplier engagement target",
+      "to": "/answers/sbti-supplier-engagement-target-for-suppliers"
+    },
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "Do carbon credits count toward SBTi?",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    },
+    {
+      "label": "Does my company need an SBTi FLAG target?",
+      "to": "/answers/does-my-company-need-sbti-flag-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi SME target validation route and Corporate Near-Term Criteria (supplier engagement targets)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "SBTi Forest, Land and Agriculture (FLAG) Guidance",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Lidl's 75% supplier goal and 2026 financial year deadline are from Lidl's own climate pages (info.lidl, Scope 3); SBTi is revising its SME and corporate criteria. Recheck both before advising a supplier (checked 19 October 2026)."
+}

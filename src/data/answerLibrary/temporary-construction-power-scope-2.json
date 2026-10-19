@@ -1,0 +1,75 @@
+{
+  "slug": "temporary-construction-power-scope-2",
+  "q": "Does electricity on a temporary connection for building our new plant count in our Scope 2?",
+  "title": "Temporary construction power and Scope 2",
+  "short": "Yes, if the temporary connection is in your name, or you pay the bill and control the site. That electricity is purchased power you consume, so it is Scope 2 like any other bill. If your EPC contractor holds the connection and pays for it, it falls in your Scope 3 instead.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs expanding or building a new factory",
+  "sections": [
+    {
+      "h": "The test: whose connection, whose control",
+      "ul": [
+        "Connection in your company's name, bill paid by you: Scope 2.",
+        "Connection in your name, cost recharged to the contractor: still Scope 2 for you, because you buy and control the supply.",
+        "Connection in the contractor's name and paid by the contractor within its lump-sum price: the contractor's Scope 2, and part of your Scope 3 Category 2, capital goods."
+      ]
+    },
+    {
+      "h": "Capitalising the bill does not move it",
+      "p": [
+        "Your accountant may add construction-period power to capital work in progress. That is a financial treatment. In your inventory the kWh stays in Scope 2 for the year it was consumed, not spread over the plant's life."
+      ]
+    },
+    {
+      "h": "Diesel on site",
+      "p": [
+        "DG sets running cranes, welding sets and site lighting before the connection arrives burn diesel. If you buy that diesel, it is Scope 1 at 2.68 kg CO2 per litre. If the contractor buys it, it is Scope 3 for you."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ol": [
+        "Keep the temporary connection bills with the tariff category showing temporary supply.",
+        "Report the kWh in Scope 2 at the grid factor for the months consumed.",
+        "Note it in your methodology, because a plant that produces nothing yet will distort any intensity per tonne or per rupee of revenue.",
+        "When the permanent connection starts, no base year recalculation is needed; it is the same organisation growing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: six months of construction power",
+    "lines": [
+      "Temporary connection in your name: 18,000 kWh a month for 6 months",
+      "Total: 18,000 x 6 = 1,08,000 kWh",
+      "Scope 2: 1,08,000 x 0.710 = 76,680 kg CO2, about 76.7 t",
+      "Site DG diesel you bought: 2,000 litres x 2.68 = 5,360 kg CO2 in Scope 1"
+    ]
+  },
+  "senseible": "Senseible reads a temporary connection bill like any other electricity bill, taking billing period, tariff category, sanctioned load and units, and applies 0.710 kg CO2 per kWh for location-based Scope 2. Site diesel invoices you hold are read at 2.68 kg CO2 per litre.",
+  "links": [
+    {
+      "label": "Manufacturing Scope 2 emissions in India",
+      "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
+    },
+    {
+      "label": "Diesel generator: Scope 1 or Scope 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Sub-metered electricity in a rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (operational control, Scope 2)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 2 Capital Goods",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

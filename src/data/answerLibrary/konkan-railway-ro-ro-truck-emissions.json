@@ -1,0 +1,82 @@
+{
+  "slug": "konkan-railway-ro-ro-truck-emissions",
+  "q": "Does putting loaded trucks on Konkan Railway's Ro-Ro train cut freight emissions, and by how much?",
+  "title": "Konkan Railway Ro-Ro: CO2 saved per truck",
+  "short": "Yes. On the rail section the truck's engine is off, and the Konkan route is fully electrified, so you swap diesel for a share of grid electricity. The saving per trip is the diesel the truck would have burnt on that stretch x 2.68 kg CO2 per litre, minus its share of the train's electricity x 0.710.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Transporters and shippers on the Mumbai to Mangaluru corridor",
+  "sections": [
+    {
+      "h": "How the service works",
+      "p": [
+        "Konkan Railway's Roll on Roll off service carries loaded trucks on flat wagons from Kolad in Maharashtra to Verna in Goa (417 km by rail) and Suratkal in Karnataka (721 km), among other routes. The driver travels with the truck, the engine stays off, and the truck drives on and off at each end. Electrification of the whole Roha to Thokur line was completed in March 2022, so most trains now run on electric traction; ask which locomotive hauled your rake."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "ol": [
+        "Diesel avoided: road distance the train replaces / your truck's loaded mileage in km per litre.",
+        "Truck CO2 avoided: litres x 2.68 kg CO2 per litre (IPCC 2006 default for diesel).",
+        "Train CO2 added: the train's energy for the trip in kWh / number of trucks on it x 0.710 kg CO2 per kWh.",
+        "Net saving: step 2 minus step 3. Road legs to Kolad and from the destination terminal count in both options if the route differs."
+      ]
+    },
+    {
+      "h": "Data you need and where to get it",
+      "ul": [
+        "Road distance replaced: the highway distance between the two terminals, which is not the same as the rail distance.",
+        "Truck mileage: your own fuel and trip records for that vehicle class, loaded.",
+        "Train energy per truck: ask Konkan Railway for the traction kWh for a typical rake and the number of trucks it carried; the railway has reported about 50 trucks per rake on average. If you cannot get the energy figure, say so and treat the rail share as an estimate.",
+        "If a diesel locomotive hauled your train, use its diesel share instead of electricity."
+      ]
+    },
+    {
+      "h": "Which scope gets the saving",
+      "p": [
+        "If you own the trucks, the diesel you do not burn lowers your Scope 1. The Ro-Ro freight charge is a transport service you buy, so its share of train emissions sits in your Scope 3 Category 4. If you are a shipper using a transporter, both parts are in your Category 4."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one loaded truck, illustrative inputs",
+    "lines": [
+      "Road distance replaced: 400 km (illustrative)",
+      "Loaded mileage: 3.5 km per litre (assumed): 400 / 3.5 = 114.3 litres",
+      "Truck CO2 avoided: 114.3 x 2.68 = 306.3 kg CO2",
+      "Train share: 150 kWh per truck (assumed): 150 x 0.710 = 106.5 kg CO2",
+      "Net saving: 306.3 minus 106.5 = 199.8 kg CO2 per trip, about 65 percent"
+    ],
+    "note": "Distance, mileage and train energy are assumptions for the arithmetic; replace them with your records and the railway's figures."
+  },
+  "senseible": "Senseible reads diesel invoices and freight records into dated Scope 1 and Category 4 entries, using 2.68 kg CO2 per litre for diesel and 0.710 kg CO2 per kWh for grid power.",
+  "links": [
+    {
+      "label": "Rail vs road freight emissions in India",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework v3, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 3, Mobile combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

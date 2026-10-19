@@ -1,0 +1,76 @@
+{
+  "slug": "ikea-supplier-climate-requirements-renewable-electricity",
+  "q": "What does IKEA require from suppliers on renewable electricity and coal, and what do I need to show?",
+  "title": "IKEA supplier renewable electricity and coal",
+  "short": "IKEA's supplier code, IWAY, sets 100 percent renewable electricity as an Advanced criterion, which IKEA said in 2021 would become a minimum later. For Indian textile suppliers it has also called for coal and oil fuels on site to go by 2030 at the latest. Be ready to show electricity, fuel use and renewable supply evidence.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian textile, home furnishing, wood and metal suppliers to IKEA",
+  "sections": [
+    {
+      "h": "How IWAY sets requirements",
+      "p": [
+        "IWAY is IKEA's supplier code of conduct; edition 6.0 was published in September 2019. Suppliers must meet every IWAY Must requirement from the first delivery and the Basic requirements within 12 months. Higher criteria, such as Advanced, are expectations IKEA works towards with each supplier.",
+        "IKEA said in 2021 that 100 percent renewable electricity was among the Advanced criteria of the new IWAY, not yet mandatory, and that it would become a minimum requirement in future. Check the edition and section you are audited against."
+      ]
+    },
+    {
+      "h": "Coal and other fossil fuels on site",
+      "p": [
+        "In 2018 IKEA called for coal and oil based fuels to be phased out at its direct textile suppliers in India, Indonesia, Pakistan and Turkey by 2030 at the latest, aiming for 2025. IKEA reports the share of coal and fossil oil fuels used on site in producing its products falling, to 7 percent in FY24. Expect questions about boilers, thermic fluid heaters and kilns burning coal, furnace oil or diesel, and a request for a dated plan to switch them."
+      ]
+    },
+    {
+      "h": "Evidence IKEA's team will expect",
+      "ul": [
+        "Monthly electricity in kWh per site, from discom bills, and the share used for IKEA production if you serve other buyers.",
+        "Fuel use by type, from invoices, with a Scope 1 total.",
+        "Renewable supply documents: rooftop solar generation records, open access or group captive energy accounts, green tariff bills, or certificates retired for you.",
+        "Location-based and market-based Scope 2 shown separately, so the renewable claim is traceable."
+      ]
+    },
+    {
+      "h": "Help IKEA offers",
+      "p": [
+        "In 2021 IKEA launched a renewable electricity programme for direct suppliers in China, India and Poland, offering pre-negotiated power purchase and framework agreements, and later added more countries. Ask your IKEA contact what it offers for your state and site before you sign your own contract."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what a supplier shows for one year (illustrative)",
+    "lines": [
+      "Grid electricity: 12,00,000 kWh x 0.710 = 8,52,000 kg CO2 location-based",
+      "Rooftop solar used on site: 3,00,000 kWh, not drawn from the grid",
+      "Renewable share: 3,00,000 / (12,00,000 + 3,00,000) = 20 percent",
+      "Coal boiler: 800 t x 2.42 kg CO2 per kg = 19,36,000 kg CO2 Scope 1, the item to plan out"
+    ],
+    "note": "Figures are illustrative. Use your own bills, generation meter and fuel invoices."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices into Scope 1 and 2 records, with location-based and market-based Scope 2 where you add renewable instrument data, each line traceable to its file.",
+  "links": [
+    {
+      "label": "Apple's supplier clean energy requirement",
+      "to": "/answers/apple-supplier-clean-energy-requirement"
+    },
+    {
+      "label": "Will fashion brands drop coal-fired mills",
+      "to": "/answers/fashion-brands-coal-boiler-phase-out-suppliers"
+    },
+    {
+      "label": "Does a green tariff make Scope 2 zero",
+      "to": "/answers/green-tariff-zero-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Based on the IWAY 6.0 Standard (September 2019), IKEA's 2018 climate commitment (textile supplier coal and oil phase-out), its June 2021 supplier renewable electricity announcements and FY24 climate reporting; IWAY editions change, so confirm the current requirement level with the IWAY Standard you are audited against (checked 19 October 2026).",
+  "reviewed": "2026-10-19"
+}

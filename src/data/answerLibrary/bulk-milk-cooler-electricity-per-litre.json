@@ -1,0 +1,79 @@
+{
+  "slug": "bulk-milk-cooler-electricity-per-litre",
+  "q": "How much electricity does a bulk milk cooler use per litre chilled, and what CO2 is that?",
+  "title": "Bulk milk cooler power and CO2 per litre",
+  "short": "Work it out from the heat removed: litres x 1.03 kg per litre x 3.93 kJ per kg per degree x the temperature drop, divided by the COP and by 3,600 for kWh. Chilling 1,000 litres from 35 C to 4 C at a COP of 2.5 takes about 14 kWh, or about 9.9 kg CO2 on grid power.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dairy cooperatives, milk procurement teams and private dairies",
+  "sections": [
+    {
+      "h": "The physics in three steps",
+      "ol": [
+        "Mass of milk = litres x 1.03 kg per litre.",
+        "Heat to remove (kJ) = mass x 3.93 kJ per kg per degree C x (milk in temperature minus target temperature).",
+        "Electricity (kWh) = heat / COP / 3,600, where COP is the cooling delivered per unit of electricity, from the maker's data at your ambient temperature."
+      ]
+    },
+    {
+      "h": "Why the meter reads more than the formula",
+      "ul": [
+        "Heat leaking into the tank through the walls and lid between collections.",
+        "The agitator motor, which runs during chilling and at intervals after.",
+        "Lower COP on hot afternoons, when the condenser struggles.",
+        "Partly filled tanks: fixed losses spread over fewer litres.",
+        "Fit a sub-meter on the cooler and divide monthly kWh by litres chilled. That measured figure beats the formula."
+      ]
+    },
+    {
+      "h": "When power cuts bring in the DG set",
+      "p": [
+        "Village chilling centres often run on a diesel generator during outages. Split the month's kWh into grid and DG. Grid kWh x 0.710 kg CO2. DG kWh / the generator's kWh per litre x 2.68 kg CO2 per litre of diesel. A small DG set at part load gives few kWh per litre, so DG hours can lift CO2 per litre sharply."
+      ]
+    },
+    {
+      "h": "Where it sits in a dairy's footprint",
+      "p": [
+        "If the cooperative or dairy owns and runs the cooler, its electricity is Scope 2 and its DG diesel is Scope 1. If a village society or a contractor runs it and charges you, it is Scope 3 for you. Refrigerant top-ups on the cooler add kg x GWP as CO2e."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 litres a day, 25 percent of chilling on DG",
+    "lines": [
+      "Mass: 1,000 x 1.03 = 1,030 kg",
+      "Heat: 1,030 x 3.93 x (35 minus 4) = 1,25,485 kJ, so 34.86 kWh of cooling",
+      "Electricity at an assumed COP of 2.5: 34.86 / 2.5 = 13.94 kWh",
+      "Grid share: 13.94 x 0.75 = 10.46 kWh x 0.710 = 7.42 kg CO2",
+      "DG share: 13.94 x 0.25 = 3.49 kWh / 3 kWh per litre (assumed) = 1.16 L x 2.68 = 3.11 kg CO2",
+      "Total: 10.54 kg CO2 per 1,000 litres, about 10.5 g per litre"
+    ],
+    "note": "COP, DG efficiency and the DG share are assumptions; heat leaks and the agitator come on top. Replace with metered kWh and DG diesel."
+  },
+  "senseible": "Senseible reads electricity bills and diesel invoices and applies 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre, so a chilling centre with its own bill and fuel invoices gets a monthly Scope 1 and 2 record you can divide by litres collected.",
+  "links": [
+    {
+      "label": "Dairy plant emissions per litre of milk",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Diesel generator fuel consumption",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Ammonia or HFC for cold storage",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2, default CO2 factors and net calorific values",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

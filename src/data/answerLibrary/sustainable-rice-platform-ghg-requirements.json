@@ -1,0 +1,67 @@
+{
+  "slug": "sustainable-rice-platform-ghg-requirements",
+  "q": "What does the Sustainable Rice Platform standard ask basmati exporters on methane and emissions?",
+  "title": "SRP standard: rice methane rules",
+  "short": "The SRP standard scores farm practices that drive methane and nitrous oxide: water management such as mid-season drainage or alternate wetting and drying, handling straw and stubble instead of burning it, and fertiliser use. Its greenhouse gas performance indicator then estimates methane from those practices, adding nitrous oxide at its advanced level.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Basmati and non-basmati rice exporters supplying EU and UK brands",
+  "sections": [
+    {
+      "h": "Two documents, two jobs",
+      "ul": [
+        "The SRP Standard for Sustainable Rice Cultivation lists requirements farmers are scored on, grouped by theme, including water use and climate related practices.",
+        "The SRP Performance Indicators (version 2.1) measure outcomes. The greenhouse gas indicator estimates CH4 in CO2e with IPCC default values at its intermediate level, and adds N2O with country-specific values at its advanced level."
+      ]
+    },
+    {
+      "h": "Practices that move the score",
+      "ul": [
+        "Water management: mid-season drainage, or alternate wetting and drying where the farm controls irrigation.",
+        "Straw and stubble: incorporating, removing or using it rather than burning.",
+        "Fertiliser: rates based on need, and timing that reduces nitrogen loss.",
+        "Records: what was done on each plot and when, kept by the farmer or the producer group."
+      ]
+    },
+    {
+      "h": "What the exporter is expected to do",
+      "p": [
+        "Exporters often act as the group manager or work with one. That means training farmers, collecting farm records, running internal inspections and arranging the third-party verification an SRP claim needs. Brands that buy SRP-verified rice often also ask for the GHG indicator results, since paddy methane is the largest item in rice's footprint.",
+        "For climate claims, SRP has a Low Carbon Assurance Module (L-CAM), and it is revising the GHG indicator to line up with it."
+      ]
+    },
+    {
+      "h": "Where the mill's own emissions fit",
+      "p": [
+        "SRP covers cultivation. Parboiling, drying and milling use boiler fuel and electricity, and brands ask for these separately as the processor's Scope 1 and 2. They are calculated from your own fuel and power bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your mill's fuel invoices and electricity bills into Scope 1 and 2 records for the processing stage. Farm methane is estimated from SRP farm records with the IPCC rice method.",
+  "links": [
+    {
+      "label": "Scope 3 emissions from paddy you buy",
+      "to": "/answers/rice-procurement-scope-3-emissions"
+    },
+    {
+      "label": "Rice mill carbon footprint per tonne",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 5.5, Rice cultivation (ipcc.ch)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Based on SRP Standard version 2.2 and Performance Indicators version 2.1, both under revision (Standard v3.0 consultation draft; revised GHG indicator aligned with L-CAM); checked 2026-10-19. Check sustainablerice.org for the version in force."
+}

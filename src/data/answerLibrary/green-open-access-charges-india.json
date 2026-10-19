@@ -1,0 +1,107 @@
+{
+  "slug": "green-open-access-charges-india",
+  "q": "What charges do I pay on green energy open access power: wheeling, cross-subsidy surcharge, additional surcharge and banking?",
+  "title": "Green open access charges, line by line",
+  "short": "On green open access power you pay the generator's tariff plus transmission and wheeling charges, losses deducted in units, the cross-subsidy surcharge, an additional surcharge unless you already pay the discom's fixed charges, and a banking charge on units you bank. Your state commission sets each value, usually in its yearly tariff order.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "C&I consumers above 100 kW comparing green open access with a green tariff",
+  "sections": [
+    {
+      "h": "The charges and who sets them",
+      "ul": [
+        "Generator tariff: the price in your power purchase agreement, per kWh injected at the plant.",
+        "Transmission charges: for the state network and, if the plant is in another state, the inter-state network.",
+        "Wheeling charges: for carrying power over the discom's distribution lines to your meter.",
+        "Transmission and wheeling losses: deducted in units, so fewer kWh reach you than the plant injected.",
+        "Cross-subsidy surcharge: compensates the discom for the cross-subsidy it loses when an industrial consumer buys elsewhere.",
+        "Additional surcharge: compensates the discom for power it contracted for you and now cannot sell.",
+        "Banking charge: for storing surplus units with the discom and drawing them later, set by your state commission either in rupees per kWh or in kind as a share of the banked units.",
+        "Smaller items: scheduling and SLDC charges, deviation settlement, electricity duty and any standby charge."
+      ],
+      "p": [
+        "The Green Energy Open Access Rules, 2022 set the national framework. The rupee value of every line comes from your state electricity regulatory commission's open access regulations and tariff orders."
+      ]
+    },
+    {
+      "h": "What the 2022 Rules cap",
+      "ul": [
+        "Cross-subsidy surcharge: may not rise by more than 50% over the surcharge fixed for the year in which open access is granted, for twelve years from the renewable plant's commissioning.",
+        "Additional surcharge: does not apply if you are already paying fixed charges to the discom.",
+        "No cross-subsidy surcharge or additional surcharge on green power used to make green hydrogen or green ammonia, or on power from a waste-to-energy plant (the waste-to-energy exemption came with the January 2023 amendment).",
+        "Captive users: under the Electricity Act, 2003, a captive user does not pay the cross-subsidy surcharge.",
+        "Banking: allowed at least monthly, for at least 30% of the power you buy from the discom each month, with the charge set by the state commission."
+      ]
+    },
+    {
+      "h": "Losses change the real price per unit",
+      "p": [
+        "Losses are taken in kind, so your PPA tariff is paid on injected units but you receive fewer. Divide the tariff by the share of units that arrive. At ₹3.60 per kWh and 8% losses, each unit delivered costs 3.60 / 0.92 = ₹3.91 before any other charge.",
+        "Inter-state plants also depend on the Ministry of Power's waiver of inter-state transmission charges for solar and wind, which was full for plants commissioned by 30 June 2025. Plants commissioned from 1 July 2025 pay 25% of the charges in the first year band, 50% in the second and 75% in the third, and full charges from 1 July 2028. Ask the developer which band the plant you are contracting falls in."
+      ]
+    },
+    {
+      "h": "Comparing with the discom's green tariff",
+      "p": [
+        "The same Rules let discoms offer a green tariff: the average cost of renewable power the discom buys, plus the cross-subsidy surcharge and a service charge, as fixed by the state commission. It needs no PPA, no scheduling and no banking. Compare the landed open access cost per delivered kWh against the green tariff premium on your bill, for the same months and the same load profile."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: landed cost per delivered kWh (illustrative rates)",
+    "lines": [
+      "PPA tariff: ₹3.60 per kWh injected; losses 8%, so ₹3.60 / 0.92 = ₹3.91 per kWh delivered",
+      "Transmission and wheeling charges: ₹0.90 per kWh",
+      "Cross-subsidy surcharge: ₹1.20 per kWh",
+      "Additional surcharge: nil, because fixed charges are paid to the discom",
+      "Banking charge averaged over all units: ₹0.10 per kWh",
+      "Landed cost: 3.91 + 0.90 + 1.20 + 0.10 = ₹6.11 per kWh, against a discom energy charge of, say, ₹7.50",
+      "Saving: ₹1.39 per kWh; on 1,00,000 kWh a month, ₹1,39,000 before duty and scheduling costs",
+      "Carbon: market-based Scope 2 falls by 1,00,000 x 0.710 = 71,000 kg CO2 if the renewable attributes are yours; location-based does not change"
+    ],
+    "note": "Every rate here is assumed for the arithmetic. Take the real values from your state commission's current order and the developer's offer."
+  },
+  "senseible": "Senseible reads open access units on your HT bill as billed units and keeps them separate from discom units, so location-based and market-based Scope 2 can both be traced. The market-based claim needs the generator's attribute evidence, which you record against those units.",
+  "links": [
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "ISTS charge waiver for green open access",
+      "to": "/answers/ists-charge-waiver-green-open-access"
+    },
+    {
+      "label": "Open access losses: which units count",
+      "to": "/answers/open-access-transmission-losses-which-units"
+    },
+    {
+      "label": "Banked wind or solar units in Scope 2",
+      "to": "/answers/renewable-banking-units-which-month-scope-2"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, G.S.R. 435(E), 6 June 2022, and Amendment Rules of 27 January 2023 (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Electricity Act, 2003, Section 42 (open access, cross-subsidy and additional surcharge)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Ministry of Power orders on waiver of inter-state transmission charges for solar and wind, with the phase-down from 1 July 2025",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Charges come from each state's open access regulations and yearly tariff order; the central Rules were last amended on 27 January 2023 and the ISTS waiver steps up each 1 July until 2028. Recheck all three before signing (checked 19 October 2026)."
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "ists-charge-waiver-green-open-access",
+  "q": "Is the ISTS charge waiver still available if I buy renewable power from another state?",
+  "title": "ISTS charge waiver for inter-state green power",
+  "short": "Only in part. Solar and wind projects commissioned by 30 June 2025 keep the full waiver of inter-state transmission (ISTS) charges for 25 years. Projects commissioned from 1 July 2025 pay a rising share: 25 percent in the first year, 50 percent in the second, 75 percent in the third, and full charges from 1 July 2028.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Large C&I buyers and group captive investors sourcing inter-state renewables",
+  "sections": [
+    {
+      "h": "What decides your charge: the project's commissioning date",
+      "p": [
+        "The waiver attaches to the generating project, not to you as the buyer. If the solar or wind plant you buy from was commissioned on or before 30 June 2025, the waiver runs for 25 years from its commissioning. If it was commissioned later, the share of ISTS charges payable depends on the year it came on line."
+      ],
+      "ul": [
+        "Commissioned 1 July 2025 to 30 June 2026: 25 percent of ISTS charges",
+        "1 July 2026 to 30 June 2027: 50 percent",
+        "1 July 2027 to 30 June 2028: 75 percent",
+        "From 1 July 2028: full charges"
+      ]
+    },
+    {
+      "h": "What the waiver does not cover",
+      "ul": [
+        "Transmission losses on the inter-state network are still applied to your scheduled energy.",
+        "State charges at your end, such as intra-state transmission and wheeling charges, cross-subsidy surcharge, additional surcharge and banking charges, are set by your state commission and are not waived by the Ministry of Power order.",
+        "Separate waivers exist for some other technologies, such as storage and hydro, with their own dates and conditions. Read the order for the technology you are buying."
+      ]
+    },
+    {
+      "h": "Questions to put to the developer before you sign",
+      "ol": [
+        "The project's actual or scheduled commissioning date, and what happens to your price if it slips into the next band.",
+        "Whether the project qualifies for the Ministry of Power's March 2026 relief for transmission delays: a project with a firm connectivity start date between 1 July 2025 and 30 June 2028 and a firm PPA as of 31 March 2026 keeps its waiver band even if commissioning slips because the grid link was not ready.",
+        "Whether the tariff you are quoted assumes the waiver, and who bears ISTS charges if the band changes.",
+        "The connectivity and GNA status of the project with the central transmission utility.",
+        "Who pays state-side charges at your drawal point."
+      ]
+    },
+    {
+      "h": "Why this matters for your Scope 2 claim",
+      "p": [
+        "The transmission charge is a cost item. It does not change how you account for the power. Your market-based Scope 2 can show the contracted renewable units at zero only if the contract or certificates convey the attributes to you and they are not claimed twice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the open access units on your discom bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh, with market-based Scope 2 when you record the contract and energy account evidence.",
+  "links": [
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Open access losses: which units to count",
+      "to": "/answers/open-access-transmission-losses-which-units"
+    },
+    {
+      "label": "Open access green power on an HT bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power orders on waiver of inter-state transmission charges for solar and wind projects (2021, as amended) and office memorandum on transmission-delayed projects, March 2026 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Bands from the Ministry of Power waiver orders and the March 2026 office memorandum on transmission delays; checked 2026-10-19. The Ministry has changed dates before, so check powermin.gov.in and the CERC Sharing Regulations, 2020 before signing."
+}

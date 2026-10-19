@@ -1,0 +1,83 @@
+{
+  "slug": "marketplace-logistics-order-emissions",
+  "q": "How do I estimate emissions for orders shipped through Amazon, Flipkart or a 3PL marketplace logistics service?",
+  "title": "Emissions from marketplace-shipped orders",
+  "short": "Multiply each order's weight in tonnes by the distance for its delivery zone and by a road freight factor per tonne-km, then add up the month. Take weight and zone from the marketplace settlement report. If you only have the fees, use a spend-based estimate and label it, because it is much less precise.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "D2C and marketplace sellers, small exporters using e-commerce export",
+  "sections": [
+    {
+      "h": "Which Scope 3 category it goes in",
+      "ul": [
+        "You pay the marketplace or 3PL for shipping or fulfilment: Category 4, upstream transportation and distribution, even though the goods are going to your customer.",
+        "Inbound shipments you send to a fulfilment centre and the warehouse storage you pay for: also Category 4.",
+        "The customer pays the carrier directly and you pay nothing for delivery: Category 9, downstream transportation."
+      ]
+    },
+    {
+      "h": "Where to find weight and distance",
+      "p": [
+        "Marketplace settlement or fee reports usually list each order's billed weight slab and delivery zone, such as local, regional or national. The billed slab is rounded up and may use volumetric weight, so the product's packed weight from your listing is a better basis where you have it.",
+        "The report will not give kilometres. Set one assumed distance per zone, write the assumptions down and use them every month. Where you know the fulfilment centre and the customer's PIN code, road distance between them is better."
+      ]
+    },
+    {
+      "h": "Which factor to use",
+      "p": [
+        "Parcels travel in mixed loads on light and medium trucks, then vans for the last mile. The India default for a light truck (3 to 5 t), 0.2222 kg CO2e per tonne-km well-to-wheel, is a workable single factor for the trip; last-mile pickups run higher, 0.3795 for a small diesel one. Express or air-shipped orders need an air factor for that leg. If the logistics provider gives you an emissions report built on ISO 14083 or the GLEC Framework, use it instead."
+      ]
+    },
+    {
+      "h": "When you only have the fee",
+      "p": [
+        "Multiply the shipping and fulfilment fees, excluding GST, by a spend-based factor for road freight or courier services. Label the result spend-based, name the factor source and year, and move to weight and distance when you can. Spend figures rise with fee hikes even when nothing physical changes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 orders in a month (zone distances assumed)",
+    "lines": [
+      "Average packed weight: 0.8 kg = 0.0008 t",
+      "Local: 300 orders x 50 km = 15,000 km; regional: 400 x 500 km = 2,00,000 km; national: 300 x 1,500 km = 4,50,000 km",
+      "Order-km: 15,000 + 2,00,000 + 4,50,000 = 6,65,000",
+      "Tonne-km: 6,65,000 x 0.0008 = 532",
+      "Emissions: 532 x 0.2222 = 118.2 kg CO2e for the month, about 0.12 kg CO2e per order"
+    ],
+    "note": "Zone distances are assumptions for this example; the factor is the Smart Freight Centre India default for a light truck. Air-shipped orders would add a separate air leg."
+  },
+  "senseible": "Senseible's freight calculator applies default intensities per tonne-km by mode and Indian truck class to the weights and distances you enter. Where only marketplace fees are known, Senseible provides a spend-based estimate labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Courier parcel emissions from invoices",
+      "to": "/answers/courier-shipment-emissions-from-invoices"
+    },
+    {
+      "label": "Freight: Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Truck freight factor per tonne-km, India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 1, 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions arising from transport chain operations (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Smart Freight Centre, India Default GHG Emission Values V1.0 (May 2025), road table, well-to-wheel",
+      "url": "https://www.smartfreightcentre.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

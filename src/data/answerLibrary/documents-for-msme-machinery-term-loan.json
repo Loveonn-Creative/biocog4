@@ -1,0 +1,73 @@
+{
+  "slug": "documents-for-msme-machinery-term-loan",
+  "q": "What documents will a bank ask for an MSME term loan to buy new machinery?",
+  "title": "Documents for an MSME machinery loan",
+  "short": "Expect four sets: identity and registration papers (KYC, Udyam, GST), financial records (audited accounts, tax returns and bank statements for two to three years), the project file (machinery quotations, project report, projected financials) and security papers if the bank asks for them. Each bank's checklist decides the final list.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners planning a machinery or energy-efficient equipment purchase",
+  "sections": [
+    {
+      "h": "Identity and registration",
+      "ul": [
+        "KYC of the business and of each partner, director or proprietor: PAN, address proof, photographs.",
+        "Udyam registration certificate, which also decides whether the loan can be covered under CGTMSE.",
+        "GST registration and recent GST returns.",
+        "Partnership deed, or memorandum and articles with a board resolution to borrow.",
+        "Factory licence, pollution control board consent to operate, and the rent or lease deed if the premises are not owned."
+      ]
+    },
+    {
+      "h": "Financial records",
+      "ul": [
+        "Audited balance sheet and profit and loss account for the last two or three years, and provisional figures for the current year.",
+        "Income tax returns for the same years.",
+        "Bank statements for six to twelve months for all accounts.",
+        "Sanction letters and repayment schedules of existing loans.",
+        "Debtors and creditors ageing, if the bank also reviews your working capital."
+      ]
+    },
+    {
+      "h": "The project file for the machine",
+      "ul": [
+        "Quotations or proforma invoices from the supplier, with GST, delivery and installation terms.",
+        "A project report: why the machine, capacity added, cost, means of finance, and your margin money.",
+        "Projected profit and loss, balance sheet and repayment capacity for the loan period, often in the bank's CMA format.",
+        "For an energy-efficient machine: a baseline from past electricity bills and fuel invoices and the expected kWh or fuel saving, which supports green or energy efficiency loan schemes."
+      ]
+    },
+    {
+      "h": "Security, and what is the bank's call",
+      "p": [
+        "The machine itself is the primary security. For loans to micro and small enterprises up to Rs 20 lakh sanctioned or renewed from 1 April 2026 (Rs 10 lakh before that), RBI directions say banks should not take collateral, and above that the bank may cover the loan under CGTMSE instead. Whether to lend, at what rate, and with what margin and collateral are the bank's decisions after appraisal; a complete file only speeds the appraisal."
+      ]
+    }
+  ],
+  "senseible": "For an energy-efficient machine, Senseible turns your electricity bills and fuel invoices into a dated before-and-after energy and emissions record that a lender can trace to each bill, ready to attach to the project file your CA or banker prepares.",
+  "links": [
+    {
+      "label": "DPR for an energy efficiency loan",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    },
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI directions on lending to the Micro, Small and Medium Enterprises sector (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Bank checklists and RBI's MSME lending directions change; confirm the list with your branch (checked 19 October 2026).",
+  "reviewed": "2026-10-19"
+}

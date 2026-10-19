@@ -1,0 +1,76 @@
+{
+  "slug": "section-43b-h-msme-payment-45-days",
+  "q": "Under Section 43B(h), when must my buyer pay my MSME invoice, and what happens if they are late?",
+  "title": "Section 43B(h): the 45-day MSME rule",
+  "short": "Within the agreed credit period, which cannot exceed 45 days from acceptance, or within 15 days if there is no written agreement. If a buyer still owes a registered micro or small supplier past that date at its year end, Section 43B(h), now section 37(2)(g), stops it deducting the expense until it pays, and the MSMED Act adds interest.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Micro and small suppliers and their buyers' finance teams",
+  "sections": [
+    {
+      "h": "The payment deadline",
+      "ul": [
+        "Written agreement: pay by the agreed date, but no later than 45 days from the day of acceptance (MSMED Act, Section 15).",
+        "No written agreement: pay within 15 days of acceptance.",
+        "Day of acceptance: the day the goods or services are delivered, or, if the buyer objects in writing within 15 days, the day the objection is resolved. With no objection in that window, the goods count as accepted on delivery."
+      ]
+    },
+    {
+      "h": "What Section 43B(h) does to the buyer",
+      "p": [
+        "Clause (h), added by the Finance Act 2023 and applying from assessment year 2024-25, says an amount owed to a micro or small enterprise beyond the Section 15 deadline is deductible only in the year it is actually paid. The usual relief for paying before the return due date does not apply to this clause. The Income-tax Act, 2025, in force from 1 April 2026, carries the same rule in section 37(2)(g), so it applies from tax year 2026-27 under the new number.",
+        "So a late invoice still unpaid on 31 March pushes the buyer's deduction into the next year and raises this year's tax. If the buyer pays late but within the same financial year, the deduction stays in that year; the interest liability still applies."
+      ]
+    },
+    {
+      "h": "Who is covered",
+      "ul": [
+        "Suppliers registered on Udyam as micro or small enterprises, for goods and services. Medium enterprises are not covered.",
+        "Traders: the MSME Ministry let retail and wholesale traders register on Udyam in 2021 with benefits limited to priority sector lending, so most advisers treat them as outside these payment rules. There is no CBDT circular on it; check with your CA.",
+        "Every buyer who claims the purchase as a business expense, whatever its own size. Buyers taxed on a presumptive basis do not claim expenses, so the clause has little effect on them."
+      ]
+    },
+    {
+      "h": "What a supplier can do when paid late",
+      "ol": [
+        "Put your Udyam number and the payment terms on every invoice and in the purchase order.",
+        "Claim interest: compound interest with monthly rests at three times the RBI bank rate, from the due date (MSMED Act, Section 16). The buyer cannot deduct this interest for tax.",
+        "File on the MSME Samadhaan portal. The state's MSE Facilitation Council tries conciliation, then arbitration. A buyer who appeals an award must first deposit 75% of it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an invoice that crosses 31 March (rates assumed)",
+    "lines": [
+      "Invoice: ₹5,00,000; goods delivered and accepted on 1 February 2026; agreed credit 45 days",
+      "Due date: 1 February + 45 days = 18 March 2026",
+      "Unpaid on 31 March 2026: the buyer cannot deduct ₹5,00,000 in FY 2025-26 under Section 43B(h); it deducts it in tax year 2026-27 when paid",
+      "At an assumed 25% tax rate, ₹1,25,000 of tax falls due a year earlier",
+      "Interest owed to the supplier, if the bank rate were 6%: 18% a year with monthly rests, 1.5% a month; one full month late = 5,00,000 x 1.5% = ₹7,500"
+    ],
+    "note": "Tax rate and bank rate are assumptions for the arithmetic. The actual bank rate is published by RBI."
+  },
+  "senseible": "Senseible reads tax invoices for carbon accounting and keeps each file with its date. For payment terms and their tax treatment, work from your books and your CA.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Climate finance for MSMEs",
+      "to": "/climate-finance"
+    },
+    {
+      "label": "How long to keep invoices",
+      "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI bank rate, the reference rate for interest under the MSMED Act, 2006, Section 16",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Law: MSMED Act, 2006, sections 2(b), 15, 16, 19 and 23; Income-tax Act, 1961, section 43B(h) up to FY 2025-26; Income-tax Act, 2025, section 37(2)(g) from 1 April 2026 (confirmed in a Rajya Sabha reply of 21 July 2026). Recheck after each Finance Act and for any CBDT word on traders (checked 19 October 2026)."
+}

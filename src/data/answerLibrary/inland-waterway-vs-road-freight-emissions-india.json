@@ -1,0 +1,78 @@
+{
+  "slug": "inland-waterway-vs-road-freight-emissions-india",
+  "q": "Is moving cargo on National Waterway 1 lower carbon than trucking it, and how do I calculate it?",
+  "title": "National Waterway 1 or road: which emits less?",
+  "short": "Usually yes for full bulk loads, but check your lane. A barge emits far less per tonne-km than a truck, while the river route on the Ganga is longer than the highway and trucks still run to and from the terminals. Add up every leg in tonne-km x factor and compare.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Shippers on the Kolkata, Haldia, Patna and Varanasi corridor, fertiliser, cement and coal movers",
+  "sections": [
+    {
+      "h": "What is special about NW-1",
+      "ul": [
+        "National Waterway 1 runs on the Ganga, Bhagirathi and Hooghly from Haldia to Prayagraj, with Inland Waterways Authority of India terminals at places such as Haldia, Kolkata, Sahibganj and Varanasi.",
+        "The river winds, so river kilometres between two terminals are usually more than road kilometres between the same towns. Use the distance in the vessel operator's voyage record, not the highway figure.",
+        "Water depth falls in the dry season on the upper stretches. Barges then sail part loaded, which raises emissions per tonne-km. Use the actual cargo on board, not the barge's rated capacity."
+      ]
+    },
+    {
+      "h": "Add up every leg, plant to customer",
+      "ol": [
+        "Trucking the whole way: cargo tonnes x highway km x the factor for the truck class you would hire.",
+        "By river: the truck run from your plant to the loading terminal, the barge voyage in river km with the inland vessel factor, and the truck run from the unloading terminal to your customer, each as tonnes x km x factor.",
+        "Terminal handling: include cranes and conveyors at both ends when the operator gives you a figure, since ISO 14083 treats terminals as part of the transport chain.",
+        "Compare like with like: well-to-wheel CO2e for every leg under the GLEC Framework, with the edition of the defaults stated."
+      ]
+    },
+    {
+      "h": "Where the inland vessel factor comes from",
+      "p": [
+        "Best is the operator's own fuel use for your voyages divided by the tonne-km carried, with diesel at 2.68 kg CO2 per litre for a tank-to-wheel figure. Next best is the GLEC default intensity for inland waterway vessels of your type and size. Do not use a coastal or deep-sea ship figure for a river barge: small river vessels, running against the current upstream, behave differently."
+      ]
+    },
+    {
+      "h": "When the waterway wins clearly",
+      "p": [
+        "Large, regular bulk lots such as fertiliser, cement, coal or foodgrains, with plant and customer close to terminals, and sailings timed for good water depth. Short lanes, long truck legs at both ends, or small part loads cut the gain, and can erase it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 t of fertiliser (illustrative distances and barge factor)",
+    "lines": [
+      "Road only: 1,000 t x 700 km = 7,00,000 tonne-km x 0.0551 (tractor-trailer) = 38,570 kg CO2e",
+      "Truck to terminal: 1,000 x 20 km x 0.0551 = 1,102 kg CO2e",
+      "River: 1,000 x 1,300 km = 13,00,000 tonne-km x 0.020 (assumed barge factor) = 26,000 kg CO2e",
+      "Truck from terminal: 1,000 x 30 km x 0.0551 = 1,653 kg CO2e",
+      "Waterway total: 1,102 + 26,000 + 1,653 = 28,755 kg CO2e, about 25 percent below road",
+      "Break-even barge factor: (38,570 minus 2,755) / 13,00,000 = 0.0276 kg CO2e per tonne-km"
+    ],
+    "note": "The tractor-trailer factor (0.0551, 30 to 60 t GVW) is the India road default. The 0.020 barge figure is assumed only to show the method; replace it with the GLEC default for your vessel or the operator's fuel data."
+  },
+  "senseible": "Senseible reads freight bills that carry weight and distance as Scope 3 evidence, and its logistics calculator applies default intensities per tonne-km by mode and Indian truck class, or the carrier's factor as given.",
+  "links": [
+    {
+      "label": "Coastal shipping or road freight",
+      "to": "/answers/coastal-shipping-vs-road-emissions-india"
+    },
+    {
+      "label": "Truck freight factor per tonne-km",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

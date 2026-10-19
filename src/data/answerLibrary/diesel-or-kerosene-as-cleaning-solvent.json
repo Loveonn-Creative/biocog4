@@ -1,0 +1,81 @@
+{
+  "slug": "diesel-or-kerosene-as-cleaning-solvent",
+  "q": "We use diesel or kerosene to wash parts, not to burn. Does it count in Scope 1?",
+  "title": "Diesel or kerosene used to wash parts",
+  "short": "No combustion emissions arise if you never burn it, so diesel or kerosene used only to wash parts is not Scope 1 fuel combustion. Take it out of your fuel total. The part that evaporates oxidises to CO2 later; most inventories leave that out of Scope 1 or show it as a separate memo line.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Engineering workshops, foundries, auto repair and forging units",
+  "sections": [
+    {
+      "h": "Why it is not combustion",
+      "p": [
+        "Scope 1 under the GHG Protocol Corporate Standard covers greenhouse gases released from sources you own or control: burning fuel, process reactions and leaks. A wash tank releases hydrocarbon vapour, a volatile organic compound, not CO2. The IPCC 2006 Guidelines, Volume 3 Chapter 5, treat fuels used this way under solvent use and non-energy products, not energy combustion."
+      ]
+    },
+    {
+      "h": "Track where the solvent goes",
+      "ul": [
+        "Bought: litres on the invoice.",
+        "Sent out: spent solvent and sludge handed to an authorised recycler or hazardous waste facility, from the manifest.",
+        "Burned on site: any used solvent you burn in a furnace, boiler or heater. That is fuel combustion and belongs in Scope 1 at the full fuel factor.",
+        "Evaporated: what is left after the three above."
+      ]
+    },
+    {
+      "h": "The optional indirect CO2 line",
+      "p": [
+        "Evaporated hydrocarbons oxidise in the air over days, so you can estimate indirect CO2 = kg evaporated x carbon fraction x 44/12. For kerosene, the IPCC 2006 defaults (71,900 kg CO2 per TJ x 43.8 GJ per tonne) work out to about 3.15 kg CO2 per kg, the same as the carbon content times 44/12. Report this as a memo item with its basis, not mixed into fuel combustion."
+      ]
+    },
+    {
+      "h": "Cases that change the answer",
+      "ul": [
+        "Spent solvent sent for incineration is Scope 3 Category 5, waste, not your Scope 1.",
+        "Diesel used for washing and also for a forklift or DG from the same drum: split by issue records, and count the burned part as fuel.",
+        "If you switch to aqueous cleaners, the solvent line disappears; the extra heating energy for the wash water is then your new emission."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year of kerosene in parts washers (illustrative)",
+    "lines": [
+      "Bought: 1,200 L; booked as fuel this would be 1,200 x 2.52 = 3,024 kg CO2 in Scope 1, which is wrong",
+      "Sent to an authorised recycler: 700 L; burned on site: none",
+      "Evaporated: 1,200 minus 700 = 500 L x 0.80 kg per litre (assumed density) = 400 kg",
+      "Optional indirect CO2: 400 x 3.149 = 1,259.6 kg, about 1.3 t, as a memo line",
+      "Scope 1 from this solvent: zero"
+    ],
+    "note": "Use the density on the supplier's invoice or datasheet. Keep the recycler's manifest as evidence of the 700 L."
+  },
+  "senseible": "Senseible classifies a diesel or kerosene invoice line by its HSN code as Scope 1 fuel and applies the combustion factor; the invoice does not say the fuel went into a wash tank. Record that use against the line and move it out of your fuel total before you report.",
+  "links": [
+    {
+      "label": "Do lubricating oils count in Scope 1",
+      "to": "/answers/do-lubricants-count-in-scope-1"
+    },
+    {
+      "label": "Solvent incineration emissions",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    },
+    {
+      "label": "HSN codes that mean Scope 1 fuel",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3 IPPU, Chapter 5 Non-energy products from fuels and solvent use",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2, default CO2 factors and net calorific values",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

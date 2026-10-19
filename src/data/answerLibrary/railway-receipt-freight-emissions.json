@@ -1,0 +1,79 @@
+{
+  "slug": "railway-receipt-freight-emissions",
+  "q": "How do I calculate emissions from an Indian Railways Railway Receipt for a rake or wagon load?",
+  "title": "Freight emissions from a Railway Receipt",
+  "short": "Take the weight and the distance from the Railway Receipt, multiply them for tonne-km, then multiply by a rail factor per tonne-km. Use actual weight rather than chargeable weight where the RR shows both, and add the road legs to and from the siding as separate lines.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bulk shippers of coal, cement, steel, fertiliser and foodgrain",
+  "sections": [
+    {
+      "h": "Which RR fields to use",
+      "ul": [
+        "Weight: the RR can show actual weight and chargeable weight. Chargeable weight may be raised to a minimum or the wagon's carrying capacity for billing, so it can overstate what moved. Use actual weight.",
+        "Distance: the RR shows chargeable distance between the forwarding and destination stations. Use it when you have nothing better, and note that the route actually run can differ.",
+        "Number of wagons and wagon type, commodity, and the station codes, so each RR can be traced later."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "p": [
+        "Tonne-km = actual weight in tonnes x distance in km. Emissions = tonne-km x rail factor. The default factor for rail in India used on our rail and road comparison is 0.0106 kg CO2e per tonne-km, well-to-wheel.",
+        "If your logistics team or Indian Railways gives you a traction-specific figure, electric or diesel, use it and name the source. Do not mix a tank-to-wheel figure with well-to-wheel road factors in one total."
+      ]
+    },
+    {
+      "h": "Do not forget the road legs",
+      "p": [
+        "A rake rarely starts at your gate. Add the truck movement from plant to the loading siding and from the destination goods shed to the customer, each as weight x km x the truck factor for that class. On short rail hauls these legs can be a large share of the total."
+      ]
+    },
+    {
+      "h": "Which scope it goes in",
+      "p": [
+        "Rail freight you pay for on inbound material is Scope 3 Category 4. Outbound freight you pay for is also Category 4; outbound freight your customer pays for is Category 9. A private siding with your own shunting loco burning diesel is Scope 1 for that fuel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one cement rake",
+    "lines": [
+      "RR actual weight: 3,800 t; chargeable distance: 650 km",
+      "Rail tonne-km: 3,800 x 650 = 24,70,000 tkm",
+      "Rail emissions: 24,70,000 x 0.0106 = 26,182 kg CO2e",
+      "Road leg plant to siding, 30 km in tractor-trailers: 3,800 x 30 = 1,14,000 tkm x 0.0551 = 6,281 kg CO2e",
+      "Total: 26,182 + 6,281 = 32,463 kg CO2e, about 32.5 t"
+    ],
+    "note": "Both factors are well-to-wheel defaults for India. If the RR shows only chargeable weight, use it and label the result as possibly overstated."
+  },
+  "senseible": "Senseible reads freight records into the Scope 3 evidence trail; a line gets a figure only when weight, distance and mode are present, otherwise it shows Needs Data. Its logistics calculator works per tonne-km by mode, so a rail leg and its road legs can be compared side by side.",
+  "links": [
+    {
+      "label": "Rail vs road freight emissions in India",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Emissions from a freight bill or LR",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

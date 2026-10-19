@@ -1,0 +1,84 @@
+{
+  "slug": "dedicated-freight-corridor-emissions-saving",
+  "q": "Does shifting freight to the Dedicated Freight Corridor cut emissions, and how do I calculate the saving?",
+  "title": "Dedicated Freight Corridor: the CO2 saving",
+  "short": "Yes. Trains on the Dedicated Freight Corridors run on electric traction, so the corridor leg emits roughly the electricity it uses times the grid factor, well below a truck per tonne-km. Calculate it as corridor tonne-km x kWh per tonne-km x 0.710, plus the truck legs, and compare with all-road.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and container shippers via JNPA, Mundra and Pipavav",
+  "sections": [
+    {
+      "h": "What the corridors change",
+      "ul": [
+        "The Western DFC runs from Dadri in the National Capital Region towards JNPA on the west coast, and the Eastern DFC from Punjab to Sonnagar in Bihar. DFCCIL runs both, on electric traction.",
+        "The Western DFC carries double-stack container trains, so one train moves many more boxes for similar traction energy than a single-stack train.",
+        "Heavier axle loads and fewer stops than the mixed-use network also cut energy per tonne-km."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "ol": [
+        "Corridor leg: net tonnes x rail km x kWh per net tonne-km x 0.710 kg CO2 per kWh.",
+        "Truck legs: tonnes x km from factory to inland container depot or siding, and from the terminal to the port gate if not by rail, x the truck class factor.",
+        "All-road option: tonnes x road km x the truck class factor.",
+        "Saving = all-road minus (corridor leg + truck legs)."
+      ]
+    },
+    {
+      "h": "The energy figure is the weak point",
+      "p": [
+        "DFCCIL does not publish traction energy per net tonne-km for the corridors. Ask your rail operator for kWh drawn by the trains carrying your boxes and the net tonne-km, or use a labelled estimate. If you need a published basis, the GLEC default for rail freight in India, 0.0106 kg CO2e per tonne-km, blends electric and diesel traction across the whole network and is the safer figure to show a buyer."
+      ]
+    },
+    {
+      "h": "Keep the bases consistent",
+      "p": [
+        "kWh x 0.710 gives CO2 from electricity generation. The truck defaults are well-to-wheel CO2e, which includes producing the fuel. Mixing them flatters neither option much, but say which basis each leg uses, or use the GLEC rail default for the corridor leg so all legs are well-to-wheel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 2,000 t of containerised cargo to a western port (illustrative)",
+    "lines": [
+      "Corridor leg: 2,000 t x 1,500 km = 30,00,000 net tonne-km x 0.02 kWh (assumed estimate) = 60,000 kWh",
+      "60,000 x 0.710 = 42,600 kg CO2",
+      "Truck to depot: 2,000 x 40 km x 0.0551 = 4,408 kg CO2e",
+      "Rail option: 42,600 + 4,408 = 47,008 kg",
+      "All road: 2,000 x 1,400 km x 0.0551 = 1,54,280 kg CO2e",
+      "Saving: 1,54,280 minus 47,008 = 1,07,272 kg, about 70 percent",
+      "Cross-check with the GLEC rail default: 30,00,000 x 0.0106 = 31,800 kg CO2e for the corridor leg"
+    ],
+    "note": "0.02 kWh per net tonne-km is an assumption, not a DFCCIL figure. Distances are illustrative; use the railway receipt and actual road distance."
+  },
+  "senseible": "Senseible reads rail and road freight bills that carry weight and distance as Scope 3 evidence, and applies 0.710 kg CO2 per kWh where electricity is the activity. The corridor's traction energy has to come from your operator.",
+  "links": [
+    {
+      "label": "Rail vs road freight emissions in India",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Truck, rail and ship container chains",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "No published per tonne-km energy figure exists for the DFC; replace the labelled estimate if DFCCIL or your operator publishes one, and recheck the India rail default each reporting year.",
+  "reviewed": "2026-10-19"
+}

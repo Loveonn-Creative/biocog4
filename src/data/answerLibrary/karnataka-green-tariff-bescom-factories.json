@@ -1,0 +1,75 @@
+{
+  "slug": "karnataka-green-tariff-bescom-factories",
+  "q": "Can a factory on BESCOM or another Karnataka discom buy power at the green tariff, and what does it add to the bill?",
+  "title": "Karnataka green tariff for factories",
+  "short": "Yes, if you are an HT industrial or HT commercial consumer. KERC lets HT consumers of BESCOM, MESCOM, HESCOM, GESCOM and CESC opt for green power at an extra charge per kWh over the normal tariff, 50 paise in its orders up to FY2024-25. The extra cost is green units times that charge.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Bengaluru and Karnataka industrial and commercial consumers",
+  "sections": [
+    {
+      "h": "Who can opt in",
+      "p": [
+        "KERC introduced the green tariff for HT industrial and HT commercial consumers who choose to buy renewable power from their discom. The same charge applies across all five Karnataka discoms, so a plant on BESCOM and one on HESCOM pay the same premium.",
+        "On an LT connection, check the current tariff order for your category before you apply."
+      ]
+    },
+    {
+      "h": "What it costs and where the rule sits",
+      "p": [
+        "KERC's tariff orders up to FY2024-25 kept the green tariff at Rs 0.50 per kWh over the normal tariff. Its multi-year order of 27 March 2025 sets tariffs for FY2025-26 to FY2027-28, so read the green tariff in that order, and in any later review order, before you budget.",
+        "In Karnataka the green tariff rests on KERC's own tariff orders. In December 2024 the Karnataka High Court struck down the central Green Energy Open Access Rules, 2022 and KERC's 2022 green open access regulations, so do not rely on those Rules for terms here."
+      ]
+    },
+    {
+      "h": "Applying with BESCOM or another discom",
+      "ol": [
+        "Write to the office that handles your HT account, giving your RR number and the share of units you want as green.",
+        "Ask for the conditions in writing: start date, minimum period, how the green units appear on the bill, and how to exit.",
+        "Ask for a yearly written statement of the units supplied to you as green, and confirmation that their renewable attributes are not sold or claimed by anyone else. You need it for a market-based Scope 2 claim.",
+        "Check the first bill: the green charge should equal green units times the premium."
+      ]
+    },
+    {
+      "h": "What changes in your Scope 2",
+      "p": [
+        "Location-based Scope 2 does not change. Every kWh you use still takes the CEA grid factor of 0.710 kg CO2 per kWh.",
+        "Market-based Scope 2 can count the green units at zero only when the discom's statement shows the renewable attributes went to you and were not counted again elsewhere. Without that document, report them at the grid factor and keep asking."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a BESCOM HT factory opting for 100 percent green",
+    "lines": [
+      "Monthly consumption: 1,00,000 kWh, all opted as green",
+      "Green tariff: Rs 0.50 per kWh, the figure in KERC orders up to FY2024-25 (confirm it in the current order)",
+      "Extra on the bill: 1,00,000 x 0.50 = Rs 50,000 a month, Rs 6,00,000 a year, before any tax on it",
+      "Location-based Scope 2: 1,00,000 x 0.710 = 71,000 kg CO2 a month, unchanged",
+      "Market-based Scope 2 with the discom's green statement: 0 kg CO2 for the covered units"
+    ],
+    "note": "If the premium in the current order differs, scale the rupee figures; the Scope 2 figures do not depend on it."
+  },
+  "senseible": "Senseible reads your BESCOM or other Karnataka bill for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh. It reports market-based Scope 2 alongside when you record the green units with the discom's statement.",
+  "links": [
+    {
+      "label": "Green tariff or RECs: which costs less?",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Green tariff and zero Scope 2",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewNote": "Source: KERC retail tariff orders for the Karnataka ESCOMs (kerc.karnataka.gov.in). Green tariff Rs 0.50/kWh for HT consumers confirmed for orders up to FY2024-25 only; check the 27 March 2025 MYT order and any review order for the current figure. Karnataka HC (December 2024) struck down the GEOA Rules 2022 and KERC GEOA Regulations 2022; check appeal status. Checked 2026-10-19.",
+  "reviewed": "2026-10-19"
+}

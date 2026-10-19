@@ -1,0 +1,65 @@
+{
+  "slug": "prepayment-charges-msme-floating-rate-loan",
+  "q": "Can a bank charge me for closing my MSME floating rate loan early?",
+  "title": "Prepayment charges on MSME floating loans",
+  "short": "For floating rate business loans to micro and small enterprises sanctioned or renewed from 1 January 2026, most commercial banks cannot charge for prepayment, full or partial. Small finance banks, regional rural banks, some co-operative banks and mid-layer NBFCs cannot charge on loans up to Rs 50 lakh.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSE borrowers refinancing or prepaying",
+  "sections": [
+    {
+      "h": "The 2025 Directions in brief",
+      "p": [
+        "RBI's Pre-payment Charges on Loans Directions, 2025, issued in July 2025, apply to loans sanctioned or renewed on or after 1 January 2026. For floating rate loans to individuals and micro and small enterprises for business purposes, the rule depends on the type of lender."
+      ]
+    },
+    {
+      "h": "Which lender, which rule",
+      "ul": [
+        "Commercial banks (other than small finance, regional rural and local area banks), Tier 4 urban co-operative banks, upper-layer NBFCs and all-India financial institutions: no prepayment charge.",
+        "Small finance banks, regional rural banks, Tier 3 urban co-operative banks, state and central co-operative banks and middle-layer NBFCs: no charge on a sanctioned amount up to Rs 50 lakh.",
+        "Other lenders and larger loans: the charge in your sanction letter and Key Facts Statement applies."
+      ]
+    },
+    {
+      "h": "What else the rule says",
+      "ul": [
+        "It applies whatever the source of the money used to prepay, your own funds or a refinance from another lender.",
+        "No minimum lock-in period can be imposed before you prepay these loans.",
+        "Any charge that does apply must be disclosed in the sanction letter, the loan agreement and the KFS. A charge that was not disclosed cannot be levied.",
+        "Fixed rate loans, and loans sanctioned before 2026, follow the terms you signed."
+      ]
+    },
+    {
+      "h": "Before you prepay",
+      "ol": [
+        "Check the sanction date and whether the loan is floating or fixed.",
+        "Find your lender's category on its website or in RBI's lists.",
+        "Ask for a written foreclosure statement showing principal, interest to date and any charge, and challenge a charge the rules do not allow."
+      ]
+    }
+  ],
+  "senseible": "For a green or energy loan you might refinance into, Senseible's green loan readiness check organises the bill-backed evidence a lender reviews. The new lender sets its own terms.",
+  "links": [
+    {
+      "label": "Key Facts Statement for an MSME loan",
+      "to": "/answers/key-facts-statement-msme-loan"
+    },
+    {
+      "label": "Energy efficiency loan: EMI vs savings",
+      "to": "/answers/energy-efficiency-loan-emi-vs-savings"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI (Pre-payment Charges on Loans) Directions, 2025, issued 2 July 2025",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Lender categories, the Rs 50 lakh limit, no lock-in and the 1 January 2026 start are from the RBI (Pre-payment Charges on Loans) Directions, 2025 of 2 July 2025; RBI has been consolidating directions, so check the current reference. Checked 2026-10-19.",
+  "reviewed": "2026-10-19"
+}

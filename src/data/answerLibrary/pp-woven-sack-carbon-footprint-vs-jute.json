@@ -1,0 +1,84 @@
+{
+  "slug": "pp-woven-sack-carbon-footprint-vs-jute",
+  "q": "What is the carbon footprint of a PP woven sack, and is a jute sack lower for rice, sugar or fertiliser?",
+  "title": "PP woven sack vs jute sack footprint",
+  "short": "Work it out per tonne packed, not per sack. PP sack footprint = sack mass x PP factor + tape line and loom electricity. A jute sack weighs several times more, so it comes out lower only if jute's per kg factor is small enough to cover that extra mass, or the sack is reused.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Rice millers, sugar mills, fertiliser and cement packers",
+  "sections": [
+    {
+      "h": "Compare per tonne of product packed",
+      "p": [
+        "Sacks per tonne = 1,000 / fill weight, so 20 sacks for 50 kg bags and 40 for 25 kg bags. Footprint per tonne packed = sacks per tonne x footprint per sack / trips per sack.",
+        "Weigh ten empty sacks of each type from your own supply. Sack weights vary with fabric GSM, lamination, liners and size, so a borrowed figure can easily be off by a third."
+      ]
+    },
+    {
+      "h": "Building the PP sack figure",
+      "ul": [
+        "PP granules and filler masterbatch per sack x their factors, using kg bought per good sack so tape and cutting waste is included.",
+        "Tape line, circular loom, lamination and printing electricity per sack x 0.710 kg CO2 per kWh.",
+        "A BOPP laminate or LDPE liner adds its own mass and factor."
+      ]
+    },
+    {
+      "h": "The break-even rule",
+      "p": [
+        "If the jute sack weighs k times the PP sack and both make one trip, jute is lower only when its per kg factor is below 1/k of the PP figure. With 600 g jute against 80 g PP, k is 7.5, so jute needs a per kg footprint under about 13 percent of PP's.",
+        "Reuse changes the result. Gunny bags often make more than one trip; divide by the trips you can show, not the trips you hope for."
+      ]
+    },
+    {
+      "h": "End of life",
+      "p": [
+        "PP is about 85.7 percent carbon by mass, so burning 1 kg releases about 3.14 kg of fossil CO2 (0.857 x 44/12). CO2 from burning or rotting jute is biogenic and is reported separately. If your study is cradle to grave, include both."
+      ]
+    },
+    {
+      "h": "The jute packaging rule for foodgrains and sugar",
+      "p": [
+        "The Jute Packaging Materials (Compulsory Use in Packing Commodities) Act, 1987 lets the government reserve a share of foodgrain and sugar packing for jute. The orders have reserved 100 percent of foodgrain and 20 percent of sugar packing for several years, and the government can relax them in a shortage. Fertiliser and cement packers choose freely unless a buyer specifies. If your product is covered, the choice is a legal one before it is a carbon one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: material mass per tonne of rice in 50 kg sacks",
+    "lines": [
+      "Sacks per tonne: 1,000 / 50 = 20",
+      "PP woven sack, 80 g (weigh your own): 20 x 0.08 = 1.6 kg PP per tonne",
+      "Jute sack, 600 g (weigh your own): 20 x 0.6 = 12 kg jute per tonne",
+      "Ratio: 12 / 1.6 = 7.5",
+      "PP burnt at end of life: 1.6 x 3.14 = 5.0 kg fossil CO2 per tonne packed",
+      "Jute reused for 3 trips: 12 / 3 = 4 kg jute per tonne, so the break-even ratio falls to 2.5"
+    ],
+    "note": "Sack weights are illustrative. Multiply each mass by a sourced material factor before you compare totals."
+  },
+  "senseible": "Senseible keeps sack purchase invoices in the Scope 3 evidence trail by HSN code and quantity, and turns your tape line and loom electricity bills into Scope 2 at 0.710 kg CO2 per kWh. Material factors for PP and jute need a named source before a sack figure is produced.",
+  "links": [
+    {
+      "label": "Jute bag vs plastic bag: carbon and claims",
+      "to": "/answers/jute-bag-carbon-footprint-vs-plastic"
+    },
+    {
+      "label": "HSN codes for packaging in Scope 3",
+      "to": "/answers/hsn-codes-for-packaging-materials-scope-3"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "Jute reservation (100 percent foodgrains, 20 percent sugar) per Ministry of Textiles orders and a December 2024 Lok Sabha answer; an Amendment Order, 2026 (S.O. 3585(E)) exists, so check the current order. Checked 2026-10-19.",
+  "reviewed": "2026-10-19"
+}

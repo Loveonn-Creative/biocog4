@@ -1,0 +1,82 @@
+{
+  "slug": "ro-plant-electricity-per-kl-process-water",
+  "q": "How much electricity does an RO plant use per kilolitre of process water, and how do I check mine?",
+  "title": "RO plant electricity per kL of permeate",
+  "short": "Divide the RO skid's electricity by the permeate it produced. An RO on borewell or municipal water running at 15 bar and 75% recovery, with pumps about 65% efficient, uses about 1 kWh per kL of permeate, or about 0.74 kg CO2 per kL on the Indian grid. Feed pressure, recovery and pump efficiency set the number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pharma, food, textile and boiler-feed water users",
+  "sections": [
+    {
+      "h": "The formula from pump physics",
+      "p": [
+        "Pump power in kW = flow in m3 per hour x pressure in bar / (36 x pump and motor efficiency). Per kL of feed that is pressure / (36 x efficiency) kWh. You pay for feed, but you keep permeate, so divide by the recovery ratio.",
+        "kWh per kL of permeate = feed pressure in bar / (36 x efficiency x recovery). Add the feed and pretreatment pumps the same way, at their own pressure."
+      ]
+    },
+    {
+      "h": "What pushes the number up",
+      "ul": [
+        "Higher feed pressure: hard or saline borewell water needs more pressure than soft municipal water.",
+        "Lower recovery: at 50% recovery you pump two kL of feed for every kL of permeate; at 75%, only 1.33.",
+        "Fouled or scaled membranes: the operator raises pressure to hold output. A steady rise in feed pressure for the same flow is the sign to clean.",
+        "Throttled valves on an oversized pump: the pump makes pressure that the valve then wastes.",
+        "Old motors and worn impellers lower efficiency."
+      ]
+    },
+    {
+      "h": "How to check your own plant",
+      "ol": [
+        "Put an energy meter on the RO skid feeder, or log the high-pressure and feed pump currents and run hours.",
+        "Read the permeate flow meter for the same period, in kL.",
+        "Divide kWh by permeate kL. Use a month, not a shift.",
+        "Cross-check with the formula using the panel's feed pressure and the recovery your operator logs. A big gap points to a faulty meter or a pump running far from its best efficiency point.",
+        "Compare with the membrane maker's design projection for your feed water, which states the expected pressure and recovery."
+      ]
+    },
+    {
+      "h": "What the figure leaves out",
+      "p": [
+        "Raw water pumping from the borewell, the reject stream and any ZLD system after it use their own energy and are worked out separately. Seawater desalination runs at much higher pressure and is a different case."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: borewell RO for boiler feed (operating values assumed)",
+    "lines": [
+      "High-pressure pump: 15 bar, efficiency 0.65, recovery 0.75",
+      "15 / (36 x 0.65 x 0.75) = 15 / 17.55 = 0.85 kWh per kL of permeate",
+      "Feed pump: 3 bar, efficiency 0.60: 3 / (36 x 0.60 x 0.75) = 0.19 kWh per kL",
+      "Total: 0.85 + 0.19 = 1.04 kWh per kL of permeate",
+      "CO2: 1.04 x 0.710 = 0.74 kg CO2 per kL",
+      "At 50 kL a day for 300 days: 15,000 kL x 0.74 = 11,100 kg CO2 a year"
+    ],
+    "note": "Pressure, efficiency and recovery are assumptions. Use the values from your panel and logbook."
+  },
+  "senseible": "Senseible reads the kWh on your electricity bill and applies 0.710 kg CO2 per kWh, so the RO plant's power is already in your Scope 2. A sub-meter reading on the RO skid lets you report its share per kL next to that total.",
+  "links": [
+    {
+      "label": "Desalinated water carbon footprint",
+      "to": "/answers/desalinated-water-carbon-footprint"
+    },
+    {
+      "label": "Borewell pumping energy per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "ZLD plant energy and CO2 per kL",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Pumps and Pumping Systems",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

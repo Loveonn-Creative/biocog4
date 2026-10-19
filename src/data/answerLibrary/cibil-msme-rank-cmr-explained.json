@@ -1,0 +1,63 @@
+{
+  "slug": "cibil-msme-rank-cmr-explained",
+  "q": "What is the CIBIL MSME Rank (CMR), and what score do banks look for?",
+  "title": "CIBIL MSME Rank (CMR) explained",
+  "short": "The CIBIL MSME Rank is a rating from CMR-1 to CMR-10 that TransUnion CIBIL gives a business from its credit record. CMR-1 is the least risky, CMR-10 the most likely to turn into a bad loan within a year. No single cut-off applies: each bank sets its own, usually alongside the promoter's personal CIBIL score.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners preparing to borrow",
+  "sections": [
+    {
+      "h": "How the rank works",
+      "p": [
+        "The rank appears in the company credit report that a bank pulls when you apply. It is built from the business's credit history reported by lenders: loans and limits taken, how they were repaid, overdues, defaults and how much of the sanctioned limits you use. TransUnion CIBIL ranks businesses with total commercial borrowings of up to ₹50 crore, including those under ₹10 lakh since its 2020 update. Outside that range the report may show the rank as not applicable.",
+        "The rank estimates how likely the business is to become a non-performing asset in the next 12 months, compared with other MSMEs. TransUnion CIBIL defines the ten steps, not the bands: where one lender draws the line between acceptable and risky is its own policy."
+      ]
+    },
+    {
+      "h": "What banks look for",
+      "p": [
+        "Lenders do not publish a minimum CMR, and cut-offs differ by bank, product and loan size. Most check two things together: the business's CMR and the personal CIBIL score of the proprietor, partners or directors, which runs from 300 to 900. For a proprietorship or a young company, the personal score often carries more weight. A good rank helps; the approval, rate and terms remain the lender's decision."
+      ]
+    },
+    {
+      "h": "No rank yet",
+      "p": [
+        "A business that has never borrowed in its own name may have no rank. That is not a bad rank. Lenders then lean on the promoter's score, bank statements, GST returns and collateral or a CGTMSE guarantee."
+      ]
+    },
+    {
+      "h": "How to improve it",
+      "ul": [
+        "Pay every EMI and interest instalment by the due date; even short overdues are reported.",
+        "Keep cash credit and overdraft use below the full limit where you can.",
+        "Avoid applying to many lenders at once; each application adds an enquiry.",
+        "Close or regularise old overdue accounts and get a closure letter.",
+        "Get your company credit report and dispute any wrong entry through CIBIL; under RBI rules, credit information companies must resolve complaints within a set time."
+      ]
+    }
+  ],
+  "senseible": "The rank comes from your repayment record, not from carbon data. For a green loan, Senseible's readiness check and bill-backed emission records give the lender evidence about the project itself.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Why green loans get rejected",
+      "to": "/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Credit Information Companies (Regulation) Act, 2005 and RBI directions to credit information companies on complaint redress",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "The ₹50 crore coverage and the 12-month horizon are from TransUnion CIBIL's published CMR material; lender cut-offs are internal and not published. Recheck TransUnion CIBIL's product page before quoting the range (checked 19 October 2026)."
+}

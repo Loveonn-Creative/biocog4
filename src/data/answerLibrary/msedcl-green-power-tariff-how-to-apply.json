@@ -1,0 +1,85 @@
+{
+  "slug": "msedcl-green-power-tariff-how-to-apply",
+  "q": "How do I opt for MSEDCL's green power tariff, and what extra do I pay per unit?",
+  "title": "MSEDCL green power tariff: how to opt in",
+  "short": "Apply on MSEDCL's online green power portal, choosing 25, 50, 75 or 100 percent of your consumption for at least a year. You pay a premium per kWh on top of your normal tariff. MERC's 2025 tariff order cut it from Rs 0.66 to Rs 0.25 per kWh; confirm the rate on your bill.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "HT and LT industrial consumers of MSEDCL in Maharashtra",
+  "sections": [
+    {
+      "h": "What the premium is today",
+      "p": [
+        "The Maharashtra Electricity Regulatory Commission (MERC) sets the green power tariff, not MSEDCL. From 2021 it was Rs 0.66 per kWh over the normal tariff of your category (MSEDCL Commercial Circular No. 333). MERC's multi-year tariff order of 28 March 2025 for MSEDCL (Case 217 of 2024) reduced it to Rs 0.25 per kWh.",
+        "That order then went through review: MERC's review order of June 2025 was set aside by the Bombay High Court, the Supreme Court sent the matter back, and MERC decided it again on 25 March 2026 (Case 75 of 2025). Before you budget, check the green tariff paragraph of the order in force on mahadiscom.in, or simply the premium printed on a current green tariff bill."
+      ]
+    },
+    {
+      "h": "Steps to opt in",
+      "ol": [
+        "Apply through MSEDCL's online green power application portal. Under MSEDCL's RE Circular No. 4 (April 2022), applications go through the portal only, emailed requests are not taken, and a submitted application cannot be revised, so get the figures right first.",
+        "Choose the share of your consumption to cover. MSEDCL's Commercial Circular No. 341 (April 2023, applying MERC's green energy open access regulations) allows steps of 25 percent up to 100 percent, for a minimum period of one year.",
+        "MSEDCL is to process the request within 30 days or by the next billing cycle, whichever is earlier.",
+        "Check the first bill under the scheme: the green tariff line, the units it covers, the premium, and the green energy certificate MSEDCL issues with the monthly bill. Keep that certificate for each month."
+      ]
+    },
+    {
+      "h": "What the premium buys, and what it does not",
+      "ul": [
+        "Your energy charge, demand charge and other lines stay as they are; the premium is added on top.",
+        "Location-based Scope 2 does not fall. Every kWh at your meter still counts at the grid factor.",
+        "Market-based Scope 2 can fall, but only for the units covered and only with MSEDCL's monthly certificates showing the renewable attribute is yours.",
+        "Some buyers accept a discom green tariff and some want power from a named generator. Ask your main customer before you sign up for a year."
+      ]
+    },
+    {
+      "h": "Budgeting the cost",
+      "p": [
+        "Annual extra cost = units you will cover in a year x the premium in the order in force. Recheck every April, because MERC can reset the premium in any tariff order or review."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an HT unit covering 50 percent of its units",
+    "lines": [
+      "Monthly consumption: 2,00,000 kWh; share opted: 50 percent = 1,00,000 kWh",
+      "Premium at Rs 0.25 per kWh (2025 order): 1,00,000 x 0.25 = Rs 25,000 a month",
+      "Year: Rs 25,000 x 12 = Rs 3,00,000 extra",
+      "At the old Rs 0.66 rate the same cover cost Rs 7,92,000 a year",
+      "Location-based Scope 2 for the year: 24,00,000 kWh x 0.710 = 17,04,000 kg CO2, unchanged",
+      "Market-based Scope 2: 12,00,000 uncovered kWh x 0.710 = 8,52,000 kg CO2, if the certificates meet the quality criteria"
+    ],
+    "note": "Use the premium on your own bill or in the tariff order in force. Market-based reporting may call for a residual mix factor instead of the grid average for uncovered units; say which you used."
+  },
+  "senseible": "Senseible reads your MSEDCL bill for the billing period, tariff category and units, and applies the CEA grid factor of 0.710 kg CO2 per kWh for location-based Scope 2. Green tariff units count in your market-based figure once you add MSEDCL's renewable attribution document as the instrument.",
+  "links": [
+    {
+      "label": "Does a green tariff make Scope 2 zero",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Green tariff or RECs: which costs less",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, green energy supply by distribution licensees (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Premium: Rs 0.66 per kWh (Commercial Circular 333, 2021) cut to Rs 0.25 per kWh in the MERC MYT order of 28 March 2025 (Case 217 of 2024); review decided again on 25 March 2026 (Case 75 of 2025). Application route from MSEDCL RE Circular No. 4 (12 April 2022) and Commercial Circular No. 341 (28 April 2023). Recheck the premium and terms each April (checked 19 October 2026).",
+  "reviewed": "2026-10-19"
+}

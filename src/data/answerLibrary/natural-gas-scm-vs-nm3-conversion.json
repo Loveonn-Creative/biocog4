@@ -1,0 +1,76 @@
+{
+  "slug": "natural-gas-scm-vs-nm3-conversion",
+  "q": "My gas invoice says SCM but the factor is per Nm3. Does the difference matter?",
+  "title": "Gas bill in SCM, factor per Nm3",
+  "short": "Yes, by about 5.5 percent. Indian gas bills state SCM at about 15 degrees C, while Nm3 is at 0 degrees C, so one SCM is about 0.947 Nm3. Convert the volume, or convert the factor, before you multiply. Using a per Nm3 factor on SCM volumes overstates CO2 by 5.5 to 5.7 percent.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories on PNG or CNG cascades",
+  "sections": [
+    {
+      "h": "Why the two volumes differ",
+      "p": [
+        "Gas expands as it warms, so a volume means nothing without its reference temperature and pressure. A normal cubic metre (Nm3) is usually defined at 0 degrees C and 101.325 kPa. In India, PNGRB's regulations define a standard cubic metre (SCM) at 15.56 degrees C (60 F) and 1013.25 millibar, and some suppliers' terms, such as GAIL Gas's, use 15 degrees C, the ISO 13443 reference, at the same pressure.",
+        "At the same pressure, one SCM is 273.15 / 288.15 = 0.948 Nm3 at 15 degrees C, or 273.15 / 288.71 = 0.946 Nm3 at 15.56 degrees C."
+      ]
+    },
+    {
+      "h": "How to convert",
+      "ul": [
+        "Nm3 = SCM x 0.948 (SCM at 15 degrees C) or x 0.946 (SCM at 15.56 degrees C)",
+        "SCM = Nm3 x 1.055 or x 1.057",
+        "Factor per Nm3 = factor per SCM x 1.055 (or 1.057); factor per SCM = factor per Nm3 x 0.948 (or 0.946)",
+        "If the pressure reference also differs, multiply by the ratio of the pressures as well."
+      ]
+    },
+    {
+      "h": "Check the definition before converting",
+      "p": [
+        "Read the definition on your bill or gas sales agreement. Some contracts state 15.5 degrees C, 20 degrees C or a different pressure. If the bill also prints energy in MMBtu or a GCV in kcal per SCM, calculate from energy as a cross-check; it does not depend on the volume reference."
+      ]
+    },
+    {
+      "h": "What to write in the methodology note",
+      "p": [
+        "State the unit on the invoice, its reference conditions, the factor's unit and source, and any conversion applied. An auditor checking a 5 percent gap will look for exactly this line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 SCM in a month",
+    "lines": [
+      "Per SCM factor: 10,000 x 2.05 = 20,500 kg CO2",
+      "Volume in Nm3: 10,000 x 273.15 / 288.15 = 9,479 Nm3",
+      "Equivalent per Nm3 factor: 2.05 x 288.15 / 273.15 = 2.163 kg CO2 per Nm3; 9,479 x 2.163 = 20,503 kg CO2, the same answer within rounding",
+      "Mistake: 10,000 SCM x 2.163 = 21,630 kg CO2, 5.5 percent too high"
+    ],
+    "note": "The example uses SCM at 15 degrees C; at 15.56 degrees C the mistake is 21,668 kg, 5.7 percent too high. 2.05 kg CO2 per scm is the IPCC 2006 based PNG factor Senseible uses."
+  },
+  "senseible": "Senseible applies its PNG factor of 2.05 kg CO2 per scm to the SCM volume printed on your gas bill, and shows the factor and unit on each line.",
+  "links": [
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "PNG bill in MMBtu to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Invoice in kg, factor in litres",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 13443:1996, Natural gas, Standard reference conditions (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2, Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "SCM definitions from PNGRB regulations (15.56 degrees C, 1013.25 mbar) and GAIL Gas PNG terms (15 degrees C, 760 mm Hg); checked 2026-10-19. Check your own supplier's terms."
+}
