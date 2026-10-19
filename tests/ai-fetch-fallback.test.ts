@@ -168,13 +168,11 @@ describe('Gemini key order', () => {
 
   test('primary cooling down: the next request tries the secondary first', async () => {
     env.set('GEMINI_API_KEY', 'p'); env.set('Gemini_API_Key', 's'); env.set('LOVABLE_API_KEY', 'l');
-    route((url, ) => reply(200));
     let first = true;
-    globalThis.fetch = (async (url: string, init: RequestInit) => {
-      calls.push({ url, body: JSON.parse(String(init.body)), auth: new Headers(init.headers).get('Authorization') });
+    route((url) => {
       if (url.includes('googleapis') && first) { first = false; return reply(429); }
       return reply(200);
-    }) as typeof fetch;
+    });
     expect((await ask()).status).toBe(200);
     calls = [];
     expect((await ask()).status).toBe(200);
