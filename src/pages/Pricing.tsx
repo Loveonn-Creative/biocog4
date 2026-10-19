@@ -102,7 +102,7 @@ const Pricing = () => {
       id: 'pay-as-you-go',
       name: 'Pay As You Go',
       icon: Briefcase,
-      tagline: 'Flexible Access',
+      tagline: 'Pay per credit',
       priceLabel: 'Per transaction',
       cta: 'Get Started',
       ctaVariant: 'outline',
@@ -119,7 +119,7 @@ const Pricing = () => {
       id: 'enterprise',
       name: 'Enterprise',
       icon: Building2,
-      tagline: 'Custom Solutions',
+      tagline: 'Built around your team',
       priceLabel: 'Custom pricing',
       cta: 'Contact Sales',
       ctaVariant: 'default',
@@ -310,11 +310,11 @@ const Pricing = () => {
       subtext: billingCycle === 'yearly'
         ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
         : `Switch to yearly to save ${yearlySaving('pro').percent}%.`,
-      cta: 'Start Earning',
+      cta: 'Get finance-ready',
       ctaVariant: 'default',
       popular: true,
       features: [
-        'Everything in Basic',
+        'Everything in Essential',
         'Monetization Signal',
         'Government Incentives Finder',
         'Automated ESG Reports (PDF)',
@@ -371,23 +371,23 @@ const Pricing = () => {
   const faqs = [
     {
       q: 'Do I need climate knowledge to use this?',
-      a: 'No. Our AI handles all carbon calculations, compliance mapping, and report generation automatically. Just upload invoices.',
+      a: 'No. Upload your invoices; Senseible works out the emissions, maps them to each framework and drafts the report.',
     },
     {
       q: 'Is this built for small businesses?',
-      a: 'Yes! Senseible is designed specifically for MSMEs. No consultants, no complex setups, just simple, affordable climate action.',
+      a: 'Yes. Senseible is built for MSMEs: upload your bills, no consultant or setup needed.',
     },
     {
       q: 'Can I actually earn money from this?',
-      a: 'Pro and Scale help you use verified carbon data with lenders, buyers and government schemes, for example a green loan application. Senseible does not issue carbon credits, and any loan, scheme or price is decided by the lender, scheme or buyer.',
+      a: 'Pro shows financing readiness signals from your verified data. Scale adds financing ecosystem access and monetization setup with our team. Lenders, schemes and buyers decide; financing is never guaranteed.',
     },
     {
       q: 'Can I switch plans anytime?',
-      a: 'Absolutely. Upgrade or downgrade whenever you need. Your data stays safe across plan changes.',
+      a: 'Yes. Upgrade or downgrade whenever you like. Your records stay saved when you change plans.',
     },
     {
       q: 'What happens if I stay on the free plan?',
-      a: 'Snapshot is free forever. You get basic emission tracking and ESG scores. Upgrade for financing readiness on Pro, or monetization setup on Scale.',
+      a: 'Snapshot is free forever, with basic emission tracking and an ESG score. Pro gets your records ready for green finance; Scale adds credit monetization setup.',
     },
     {
       q: 'How is this different from hiring ESG consultants?',
@@ -398,7 +398,7 @@ const Pricing = () => {
   const partnerFaqs = [
     {
       q: 'How do I access verified MSME carbon data?',
-      a: 'Our marketplace provides access to aggregated, anonymized carbon verification data from thousands of MSMEs. All data is verified through our AI-powered MRV system.',
+      a: 'The marketplace gives you anonymised, combined carbon data from thousands of MSMEs. Every record has passed Senseible\'s verification checks.',
     },
     {
       q: 'What compliance standards do you support?',
@@ -410,7 +410,7 @@ const Pricing = () => {
     },
     {
       q: 'How is pricing calculated for pay-as-you-go?',
-      a: 'Transaction fees are based on credit volume and verification depth. Contact us for volume discounts on larger purchases.',
+      a: 'Fees depend on how many credits you buy and how much checking each one needs. Ask us about discounts on larger purchases.',
     },
     {
       q: 'Do you provide audit packs for due diligence?',
@@ -456,7 +456,7 @@ const Pricing = () => {
             <p className="text-lg text-muted-foreground mb-8">
               {isPartnerContext 
                 ? 'Access verified MSME carbon data, compliance signals, and credits. Flexible pricing for banks, buyers, and platforms.'
-                : 'AI for MSMEs. Start free. Grow as you grow. No consultants. No delays.'
+                : 'Start free with 10 invoice scans a month. Upgrade when you need more. No consultant needed.'
               }
             </p>
             <Button size="lg" asChild>
@@ -894,7 +894,7 @@ const Pricing = () => {
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <Link to="/mission">
-                      Learn More
+                      Why we built Senseible
                     </Link>
                   </Button>
                 </div>

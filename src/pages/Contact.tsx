@@ -105,7 +105,7 @@ const Contact = () => {
           <div className="text-center animate-fade-in">
             <PlaneFlight />
             <h1 className="text-3xl font-semibold text-foreground mb-4">{scopeInput ? 'Scope review saved' : 'Message Sent'}</h1>
-            <p className="text-muted-foreground mb-8">{notificationPending ? 'Your request is saved, but the email notification could not be confirmed. You can also contact impact@senseible.earth.' : 'We will get back to you within 24 hours.'}</p>
+            <p className="text-muted-foreground mb-8">{notificationPending ? 'Your request is saved, but the email notification could not be confirmed. You can also contact impact@senseible.earth.' : 'We respond within 24-72 hours.'}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/">
                 <Button>Back to Home</Button>
@@ -145,7 +145,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              {scopeInput ? 'Review the scope and your contact details before sending.' : 'We respond within 24 hours.'}
+              {scopeInput ? 'Review the scope and your contact details before sending.' : 'We respond within 24-72 hours.'}
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-6">

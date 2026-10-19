@@ -963,7 +963,7 @@ const Index = () => {
             <div className="flex flex-col items-center gap-2 mt-4">
               <IndiaAIBadge size={48} />
               <p className="text-sm sm:text-base text-center leading-relaxed font-medium max-w-xs [text-wrap:balance]">
-                <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
+                <span className="text-muted-foreground">AI verification infrastructure for MSMEs </span>
                 <span style={{ color: '#FF9933' }} className="font-semibold">from India.</span>
                 <br />
                 <span className="text-primary font-semibold">Empowering climate impact.</span>
