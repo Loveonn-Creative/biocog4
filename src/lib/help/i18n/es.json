@@ -1,0 +1,219 @@
+{
+  "ui": {
+    "hubTitle": "¿En qué podemos ayudarte?",
+    "hubLead": "Pregunta como lo dirías, o elige un tema.",
+    "askPlaceholder": "p. ej. pagué pero el plan no está activo",
+    "askLabel": "Pregunta o busca",
+    "speak": "Haz tu pregunta en voz alta",
+    "listening": "Escuchando…",
+    "ask": "Preguntar",
+    "answer": "Respuesta",
+    "fromArticle": "De",
+    "related": "Ver también",
+    "noMatch": "Todavía no tenemos respuesta para esto. Escríbenos y te ayudamos.",
+    "aiThinking": "Buscando tu respuesta…",
+    "aiNotCovered": "Nuestros artículos de ayuda no cubren esto. Escríbenos y te ayudamos.",
+    "aiLimit": "Ya usaste las preguntas de ayuda de hoy. Busca en los artículos o escríbenos.",
+    "aiError": "Las respuestas no están disponibles ahora. Busca en los artículos o escríbenos.",
+    "askAnswerCta": "Obtener una respuesta directa",
+    "messageUs": "Escríbenos",
+    "stillStuck": "¿Sigues con dudas?",
+    "stillStuckLead": "Envíanos un mensaje. El tema ya va rellenado.",
+    "fixTitle": "Pega el mensaje que viste",
+    "fixLead": "Copia la línea de tu pantalla y te decimos qué hacer.",
+    "fixPlaceholder": "p. ej. Page limit reached",
+    "fixLabel": "Pega un mensaje",
+    "whatToDo": "Qué hacer",
+    "more": "Más",
+    "fixUnknown": "Aún no conocemos este mensaje. Envíanoslo y lo revisamos.",
+    "sendIt": "Envíanoslo",
+    "somethingWrong": "Algo salió mal",
+    "somethingWrongBlurb": "Pega el mensaje y obtén la solución",
+    "allTopics": "Todos los temas",
+    "helpful": "¿Te sirvió?",
+    "yes": "Sí",
+    "no": "No, escríbenos",
+    "thanks": "Gracias. Nos alegra que te sirviera.",
+    "forThisPage": "Para esta página",
+    "openHelp": "Ayuda",
+    "close": "Cerrar",
+    "back": "Volver",
+    "helpCenter": "Centro de ayuda",
+    "example": "Ejemplo: 100 créditos de factura (₹79)",
+    "upi": "UPI",
+    "card": "Tarjeta, banca en línea o billetera",
+    "price": "Precio",
+    "fee": "Comisión de pago 4%",
+    "gst": "GST 18%",
+    "total": "Total",
+    "quantity": "Cantidad en tu factura",
+    "factor": "Factor de emisión",
+    "result": "kg CO₂",
+    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "scoreStart": "Empieza en 100",
+    "scorePass": "Aprueba con 80",
+    "scoreGaps": "Los vacíos restan puntos",
+    "splitWhole": "PDF completo",
+    "splitParts": "Se lee por partes"
+  },
+  "sections": {
+    "start": { "title": "Primeros pasos", "blurb": "Pruébalo, planes, voz, tus datos" },
+    "upload": { "title": "Subir una factura", "blurb": "Archivos, PDF largos, repetidos" },
+    "numbers": { "title": "Mis cifras y Verify", "blurb": "Cómo se calcula una cifra" },
+    "billing": { "title": "Planes y pagos", "blurb": "Lecturas, créditos, GST, recibos" }
+  },
+  "articles": {
+    "try-without-an-account": {
+      "q": "¿Puedo probarlo sin una cuenta?",
+      "a": "Sí. Sube una factura en la página de inicio y ve el resultado al momento.",
+      "facts": [["Sin cuenta", "30 facturas al día en un dispositivo"], ["Tus resultados", "Se guardan en este navegador 24 horas"]],
+      "steps": ["Inicia sesión gratis para guardar tus resultados. Volvemos a leer tus archivos en tu cuenta."],
+      "cta": "Subir una factura",
+      "keywords": ["sin cuenta", "gratis", "prueba", "registrarse"]
+    },
+    "is-senseible-free": {
+      "q": "¿Senseible es gratis?",
+      "a": "Sí. El plan Snapshot es gratis, para siempre.",
+      "facts": [["Lecturas de facturas", "10 al mes"], ["Puestos de equipo", "1"]],
+      "steps": ["Los planes de pago te dan más lecturas y más funciones."],
+      "cta": "Ver planes",
+      "keywords": ["gratis", "precio", "costo"]
+    },
+    "ask-by-voice": {
+      "q": "¿Puedo preguntar por voz?",
+      "a": "Sí. Toca el micrófono en la página de inicio, haz tu pregunta y escucha la respuesta.",
+      "steps": ["La voz funciona en Chrome o Edge. Permite el micrófono cuando el navegador lo pida.", "Los planes Pro y Scale también tienen conversaciones de voz en vivo en Biocog Intelligence."],
+      "cta": "Ir a la página de inicio",
+      "keywords": ["voz", "micrófono", "hablar"]
+    },
+    "how-long-is-my-data-kept": {
+      "q": "¿Cuánto tiempo se guardan mis datos?",
+      "a": "Hasta 3 meses sin cuenta, y hasta 18 meses en cuentas con sesión iniciada o de pago.",
+      "steps": ["Son los plazos habituales de nuestra Política de privacidad.", "Pueden ser más largos cuando la ley, una auditoría o una disputa lo requieran."],
+      "cta": "Leer la Política de privacidad",
+      "keywords": ["datos", "privacidad", "borrar", "cuánto tiempo"]
+    },
+    "what-can-i-upload": {
+      "q": "¿Qué puedo subir?",
+      "a": "Un PDF o una foto de tu factura.",
+      "facts": [["Tipos de archivo", "PDF, JPG, PNG, WEBP, HEIC"], ["Tamaño", "10 MB sin cuenta, 15 MB con sesión iniciada"], ["A la vez", "Hasta 10 archivos"]],
+      "steps": ["Se leen facturas fiscales, recibos de luz, comprobantes de combustible y registros de transporte.", "Cualquier otro documento recibe un mensaje y no gasta ninguna lectura."],
+      "cta": "Subir una factura",
+      "keywords": ["archivo", "foto", "tamaño", "formato"]
+    },
+    "long-pdfs": {
+      "q": "¿Cómo se leen los PDF largos?",
+      "a": "Sube el archivo completo. Tu navegador lo divide en partes y las leemos una por una.",
+      "facts": [["El conteo por página empieza", "el 1 de noviembre de 2026 en planes anuales y gratuitos"], ["Planes mensuales", "En la próxima fecha de cobro, a más tardar el 1 de diciembre de 2026"]],
+      "steps": ["Cada parte se guarda por separado, así que una página poco clara no frena al resto.", "Desde tu fecha de conteo por página, cada página de PDF y cada foto cuenta como una lectura."],
+      "keywords": ["páginas", "PDF largo", "archivo grande"]
+    },
+    "same-invoice-twice": {
+      "q": "¿Y si subo la misma factura dos veces?",
+      "a": "Se cuenta una sola vez.",
+      "steps": ["Reconocemos el mismo archivo y te mostramos el resultado de la primera vez.", "También detectamos la misma factura guardada en otro archivo.", "Una factura que ya está en tus registros no gasta ninguna lectura."],
+      "keywords": ["duplicada", "dos veces", "repetida"]
+    },
+    "blurry-or-handwritten-bill": {
+      "q": "Mi factura está borrosa o escrita a mano",
+      "a": "Las cifras poco claras se marcan, nunca se adivinan.",
+      "steps": ["Toma la foto de nuevo con buena luz y la página completa a la vista, o sube el PDF original.", "Las cantidades escritas a mano se marcan y puntúan menos en Verify."],
+      "cta": "Volver a subir",
+      "keywords": ["borrosa", "a mano", "ilegible"]
+    },
+    "electricity-bill": {
+      "q": "¿Qué lees de mi recibo de luz?",
+      "a": "Solo los datos de facturación: el periodo, la categoría de tarifa, la carga contratada y las unidades.",
+      "steps": ["Nunca tomamos tu nombre, dirección, teléfono ni tus números de cliente, cuenta o medidor.", "Si el recibo solo muestra kVAh, usamos el kWh impreso, o kVAh × el factor de potencia impreso (marcado como estimación), o el kWh que escribas."],
+      "keywords": ["luz", "electricidad", "unidades", "medidor", "tarifa"]
+    },
+    "how-is-my-number-worked-out": {
+      "q": "¿Cómo se calcula mi cifra?",
+      "a": "La cantidad de tu factura × un factor de emisión publicado.",
+      "facts": [["Electricidad de red, India", "0.710 kg CO₂ por kWh (CEA)"]],
+      "steps": ["Cada línea muestra el factor usado, para que puedas comprobarlo.", "Sin cantidad en la factura no hay cifra. Los vacíos nunca se rellenan con suposiciones."],
+      "keywords": ["cálculo", "fórmula", "carbono", "emisiones"]
+    },
+    "needs-data": {
+      "q": "¿Qué significa \"Needs Data\"?",
+      "a": "Falta algo necesario para la cifra: una cantidad, una unidad, el modo de transporte o un factor.",
+      "steps": ["La línea se queda en tus registros, pero no se suma a tu total.", "La pantalla te dice qué falta. Añádelo o sube una copia más clara."],
+      "keywords": ["falta", "incompleto", "no se suma"]
+    },
+    "what-verified-means": {
+      "q": "¿Qué significa \"Verified\"?",
+      "a": "Tu registro pasó nuestras comprobaciones: revisado de forma independiente por Senseible, con orientación experta.",
+      "steps": ["Cada registro empieza con 100 puntos y pierde puntos por vacíos: falta de cantidad, unidad o factor, una cantidad inusual, una lectura poco clara, o un valor estimado o escrito a mano.", "Un registro aprueba con 80.", "Los registros verificados se quedan en tu historial de auditoría y no se pueden borrar."],
+      "cta": "Abrir Verify",
+      "keywords": ["verificado", "verificación", "puntuación", "auditoría"]
+    },
+    "monthly-reads": {
+      "q": "¿Cuántas lecturas tengo al mes?",
+      "a": "Depende de tu plan. Las lecturas se renuevan el día 1 de cada mes, hora de India.",
+      "facts": [["Snapshot (gratis)", "10"], ["Essential", "100"], ["Pro", "1,000"], ["Scale", "10,000"]],
+      "steps": ["Una factura que ya está en tus registros no gasta ninguna lectura."],
+      "cta": "Ver planes",
+      "keywords": ["lecturas", "límite", "mensual", "cuántas"]
+    },
+    "hit-my-limit": {
+      "q": "Llegué a mi límite. ¿Y ahora?",
+      "a": "Recarga créditos, espera al día 1 o pasa a un plan mayor.",
+      "facts": [["Créditos de factura", "₹79 por 100 facturas"], ["Duración de los créditos", "12 meses en un plan anual, 30 días en los demás"]],
+      "steps": ["Compra créditos en tu perfil. Se usan cuando se acaban tus lecturas del mes.", "O espera al día 1 del mes siguiente, cuando se renuevan tus lecturas."],
+      "cta": "Recargar ahora",
+      "keywords": ["límite", "recargar", "créditos", "agotado"]
+    },
+    "do-prices-include-gst": {
+      "q": "¿Los precios incluyen GST?",
+      "a": "No. Los precios del sitio son antes de GST.",
+      "facts": [["UPI", "Precio + 18% GST"], ["Tarjeta, banca en línea o billetera", "Precio + 4% de comisión de pago, luego 18% GST"]],
+      "keywords": ["impuesto", "comisión", "total", "IVA"]
+    },
+    "paid-but-plan-not-active": {
+      "q": "Pagué, pero mi plan no está activo",
+      "a": "Por favor, no vuelvas a pagar. Tu plan se activa en cuanto se confirma el pago.",
+      "steps": ["Actualiza tu perfil en unos minutos.", "Si el dinero salió de tu cuenta y el plan sigue inactivo, escríbenos con la referencia de pago que aparece en la pantalla de pago."],
+      "cta": "Escríbenos sobre un pago",
+      "keywords": ["pago", "cobrado", "no activo"]
+    },
+    "where-are-my-receipts": {
+      "q": "¿Dónde están mis recibos?",
+      "a": "En la página Billing, en \"Download your payment receipts\".",
+      "cta": "Abrir Billing",
+      "keywords": ["recibo", "factura", "descargar"]
+    },
+    "cancel-or-refund": {
+      "q": "¿Puedo cancelar o pedir un reembolso?",
+      "a": "No hay reembolsos. Si cancelas, tu plan no se renueva.",
+      "steps": ["Lo que ya pagaste sigue siendo tuyo hasta que termine.", "Un servicio que ya compraste no se reembolsa.", "Para cancelar, escríbenos: impact@senseible.earth"],
+      "cta": "Escríbenos para cancelar",
+      "keywords": ["reembolso", "devolución", "cancelar", "renovación"]
+    },
+    "feature-not-in-the-app": {
+      "q": "Vi una función en Pricing que no encuentro en la app",
+      "a": "Algunas funciones de Pricing y de nuestros términos se crean para ti bajo pedido, con un costo adicional.",
+      "steps": ["Cuéntanos qué necesitas.", "Te diremos qué hace falta y cuánto cuesta."],
+      "cta": "Cuéntanos qué necesitas",
+      "keywords": ["función", "a medida", "no encuentro"]
+    }
+  },
+  "fixes": {
+    "page limit reached": "Se acabaron tus lecturas del mes. Compra créditos en tu perfil (₹79 por 100 facturas), espera al día 1 o pasa a un plan mayor.",
+    "busy right now": "La lectura está ocupada de nuestro lado. Espera un minuto y vuelve a intentarlo. No se contó nada.",
+    "paused on our side": "La lectura está en pausa de nuestro lado. Tu cuenta está bien. Inténtalo más tarde. No se contó nada.",
+    "taking too long": "Vuelve a intentarlo o sube una foto solo de la página con los totales. No se contó nada.",
+    "could not read this file": "Toma una foto más nítida con la página completa a la vista, o sube el PDF original.",
+    "not supported for carbon accounting": "Sube una factura, un recibo de luz, un comprobante de combustible o un registro de transporte.",
+    "invoices today without an account": "Es el límite diario sin cuenta. Inicia sesión gratis para seguir y guardar tus resultados.",
+    "the limit is 10 mb": "Sin cuenta, los archivos pueden pesar hasta 10 MB. Toma una foto de la página o inicia sesión para 15 MB.",
+    "the limit is 15 mb": "Toma una foto de la página o guarda el PDF con menos calidad.",
+    "already in your records": "No tienes que hacer nada. Esa factura ya está guardada y se cuenta una sola vez.",
+    "session has expired": "Vuelve a iniciar sesión y prueba otra vez.",
+    "team role cannot add invoices": "Tu rol en este equipo no puede añadir facturas. Pide al propietario o a un administrador que lo cambie.",
+    "payment gateway could not load": "Puede que un bloqueador de anuncios esté frenando el pago. Permite checkout.razorpay.com y vuelve a intentarlo.",
+    "could not confirm it yet": "No vuelvas a pagar. Tu plan se activa en cuanto se confirma el pago.",
+    "microphone access": "Permite el micrófono para este sitio en la configuración del navegador y vuelve a intentarlo.",
+    "not supported in your browser": "La voz necesita Chrome o Edge.",
+    "cannot be deleted": "Es normal. Los registros verificados se quedan en tu historial de auditoría."
+  }
+}
