@@ -1,0 +1,79 @@
+{
+  "slug": "diesel-pump-to-solar-pump-co2-saving",
+  "q": "How much CO2 does replacing a diesel pump set with a solar pump save under PM-KUSUM?",
+  "title": "Diesel to solar pump: CO2 saved",
+  "short": "Replacing a diesel pump set with a standalone solar pump saves the diesel it used to burn: litres a year x 2.68 kg CO2 per litre. A pump using 800 litres a year saves about 2.1 tonnes of CO2. Without fuel records, estimate litres from pumping hours and the engine's litres per hour.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Farmer producer organisations, agri businesses and lenders",
+  "sections": [
+    {
+      "h": "Where the saving comes from",
+      "p": [
+        "A standalone solar pump, the kind supported under Component B of the PM-KUSUM scheme of the Ministry of New and Renewable Energy, runs on its own panels with no diesel and no grid supply. So the whole diesel CO2 of the old pump set goes away, provided the diesel engine is retired and not moved to another field."
+      ]
+    },
+    {
+      "h": "How to get the litres",
+      "ol": [
+        "Best: a year of diesel purchase bills or a logbook for the pump.",
+        "Next best: pumping hours a year x litres per hour. Hours come from the irrigation schedule or crop calendar; litres per hour from a timed fill test of the tank.",
+        "Last resort: litres per hour from the engine rating and typical load, labelled as an estimate."
+      ]
+    },
+    {
+      "h": "Edge cases that change the number",
+      "ul": [
+        "Solar pumps deliver water only in daylight and less on cloudy days. If the farmer keeps the diesel set for night or monsoon pumping, count only the litres actually avoided.",
+        "Replacing a grid powered pump (solarisation under Component C) saves grid electricity, valued at 0.710 kg CO2 per kWh, not diesel.",
+        "The panels and pump have embodied emissions. These sit in the manufacturer's footprint and are not netted against the diesel saving in an inventory."
+      ]
+    },
+    {
+      "h": "Who can count the saving",
+      "p": [
+        "The diesel CO2 is the farmer's own Scope 1. A company buying the farm's produce sees it as a lower Scope 3 purchased goods figure only if it uses farm level data rather than averages. A lender can report the avoided diesel as the impact of a solar pump loan. Each party should use the same litres figure and say how it was estimated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 5 HP pump set",
+    "lines": [
+      "Diesel use: 0.8 litres per hour x 1,000 pumping hours = 800 litres a year",
+      "CO2 avoided: 800 x 2.68 = 2,144 kg, about 2.1 t a year",
+      "For an FPO switching 200 such pumps: 200 x 2.144 = about 429 t a year"
+    ],
+    "note": "Litres per hour and hours are assumptions for illustration. Use fill test or purchase data where you have it."
+  },
+  "senseible": "Senseible calculates diesel CO2 from fuel bills at 2.68 kg per litre and keeps the bills as a dated record, so the diesel bought before the switch is documented for a baseline.",
+  "links": [
+    {
+      "label": "Borewell pumping energy per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Rice procurement Scope 3",
+      "to": "/answers/rice-procurement-scope-3-emissions"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy, diesel default factor",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE star labelling programme for agricultural pump sets (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "PM-KUSUM component sizes, subsidy shares and deadlines are revised by MNRE (completion deadline reported extended to 31 March 2027 for sanctioned projects; a second phase is proposed). Check the current guidelines and their date.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "california-ab-1305-indian-carbon-credit-sellers",
+  "q": "Does California's AB 1305 apply to Indian carbon credit sellers or projects?",
+  "title": "California AB 1305 and Indian credit sellers",
+  "short": "It can. AB 1305 applies to anyone marketing or selling voluntary carbon offsets within California, wherever the seller or project is based. An Indian developer or trader selling credits to California buyers must publish project details on its website. Buyers there who use those credits for net zero claims carry their own disclosure duty.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian project developers, credit traders and exporters making net zero claims in California",
+  "sections": [
+    {
+      "h": "The three groups the law covers",
+      "p": [
+        "The Voluntary Carbon Market Disclosures Act (AB 1305, 2023) added sections 44475 to 44475.3 to the California Health and Safety Code. It took effect on 1 January 2024."
+      ],
+      "ul": [
+        "Entities marketing or selling voluntary carbon offsets within California.",
+        "Entities that buy or use offsets and make carbon neutral, net zero or significant reduction claims in California.",
+        "Entities making those claims in California, whether or not they use offsets."
+      ]
+    },
+    {
+      "h": "What a seller must publish",
+      "ul": [
+        "The seller's name, the offset registry or programme, and the project ID.",
+        "Project name, type, location, timeline and start date, and whether it reduces or removes emissions.",
+        "The protocol used to estimate reductions or removals.",
+        "Emissions reduced or removed each year, and whether the project data has been verified by an independent third party.",
+        "What the seller will do if the project is not completed or does not deliver the projected reductions."
+      ]
+    },
+    {
+      "h": "How it reaches Indian businesses",
+      "ul": [
+        "An Indian developer selling directly to a California company is marketing or selling within the state.",
+        "Selling through a broker: the broker who markets in California has the duty, but will ask you for the project data.",
+        "An Indian exporter calling its product carbon neutral or net zero to California buyers falls under the claims sections, and must show how the claim was worked out and whether it was verified."
+      ]
+    },
+    {
+      "h": "Penalties and upkeep",
+      "p": [
+        "Disclosures must be posted on your website and updated at least once a year. The penalty is up to USD 2,500 for each day the information is missing or inaccurate, for each violation, up to USD 500,000, in actions brought by the state Attorney General or local prosecutors. A 2024 bill to delay and clarify the law, AB 2331, did not pass. Check the current statute text for later changes."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the bills and invoices behind a project's activity data as a dated, fingerprinted record, and it gives carbon credit eligibility signals. The disclosures on your website are yours to publish.",
+  "links": [
+    {
+      "label": "US FTC Green Guides and carbon claims",
+      "to": "/answers/us-ftc-green-guides-carbon-claims"
+    },
+    {
+      "label": "Who must report under SB 253",
+      "to": "/answers/sb-253-who-must-report"
+    },
+    {
+      "label": "California SB 253 supplier data",
+      "to": "/answers/california-sb-253-indian-suppliers-data"
+    },
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    }
+  ],
+  "sources": [
+    {
+      "label": "VCMI Claims Code of Practice, for structuring credit-backed claims (vcmintegrity.org)",
+      "url": "https://vcmintegrity.org"
+    },
+    {
+      "label": "ISO 14068-1:2023, Carbon neutrality (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "AB 1305 (California Health and Safety Code sections 44475 to 44475.3, in force 1 January 2024) checked 18 October 2026 against published legal summaries; summaries differ on the exact penalty wording. Check the chaptered text on leginfo.legislature.ca.gov.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "solar-concentrator-process-heat-msme",
+  "q": "Can solar concentrators replace boiler fuel for process heat in an Indian factory?",
+  "title": "Solar concentrators for factory process heat",
+  "short": "Partly. Concentrating solar collectors can supply hot water, pressurised water or steam up to about 250 C, depending on collector type, during sunny hours, so they cut boiler fuel but rarely replace the boiler. They suit plants with a steady daytime heat load, shade-free roof or land, and good direct sunlight.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Dairy, food, textile and pharma MSMEs",
+  "sections": [
+    {
+      "h": "Where they fit and where they do not",
+      "ul": [
+        "Good fit: pasteurisation, CIP washing, dyeing and process water, cooking, and low-pressure steam used mostly in day shifts.",
+        "Weaker fit: night-heavy loads, high-pressure steam above what the collector delivers, or plants that would need large heat storage to match demand.",
+        "The boiler stays as backup for cloudy days, monsoon months and night shifts, so plan for both systems."
+      ]
+    },
+    {
+      "h": "Direct sunlight decides the output",
+      "p": [
+        "Concentrators use only direct beam sunlight (direct normal irradiance, DNI), not the diffuse light a flat plate collector can use. Output falls sharply under haze and monsoon cloud. Western and north-western India generally see higher DNI than the humid east and coast, but use site data for your location, not a regional average."
+      ]
+    },
+    {
+      "h": "How to estimate fuel displaced",
+      "p": [
+        "Fuel energy displaced = collector yield (kWh thermal per m2 per year at your site) x collector area x 3.6 MJ per kWh / boiler efficiency. Divide by the fuel's calorific value for quantity, and multiply by the fuel's CO2 factor. Ask the supplier for a yield estimate tied to your DNI data and your load profile, and treat it as an estimate until metered."
+      ]
+    },
+    {
+      "h": "Decision rule",
+      "ol": [
+        "List hourly heat demand by temperature for a typical day.",
+        "Keep only the daytime demand below about 250 C; that is the share solar can serve.",
+        "Compare the yearly fuel saving in rupees with the installed cost after any support you can confirm under current MNRE schemes.",
+        "Fit a heat meter on the solar loop so the saving can be shown, not just claimed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative estimate: 500 m2 of concentrators",
+    "lines": [
+      "Yield at site: 600 kWh thermal per m2 per year (assumed, from supplier and DNI data)",
+      "Heat delivered: 500 x 600 = 3,00,000 kWh = 1,080 GJ",
+      "Fuel energy displaced at 80% boiler efficiency: 1,080 / 0.80 = 1,350 GJ",
+      "Furnace oil saved: 13,50,000 MJ / 40.4 MJ per kg = 33,416 kg",
+      "CO2 avoided: 1,350 GJ x 77.4 kg per GJ = 1,04,490 kg, about 104.5 t a year"
+    ],
+    "note": "Factors are IPCC 2006 defaults for residual fuel oil. Real yield depends on site DNI, load match and cleaning."
+  },
+  "senseible": "Senseible turns your boiler fuel invoices into a monthly record of quantity and CO2, so the fuel displaced after a solar thermal installation is visible against the months before.",
+  "links": [
+    {
+      "label": "Solar water heaters for factories",
+      "to": "/answers/solar-water-heater-factory-co2-savings"
+    },
+    {
+      "label": "Heat pumps for process heat",
+      "to": "/answers/heat-pump-for-process-heat-india"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "Support under MNRE solar thermal programmes changes; check current scheme terms before relying on any subsidy.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "eudr-vs-carbon-footprint-request-difference",
+  "q": "Is EUDR due diligence the same as a carbon footprint request from my EU buyer?",
+  "title": "EUDR data vs a carbon footprint request",
+  "short": "No. EUDR due diligence proves your coffee, rubber, wood or soy came from land not deforested after 31 December 2020 and was produced legally, using plot geolocation. A carbon footprint request asks how much greenhouse gas your product or company emits. They are separate duties, though the same plot data can feed both.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Coffee, rubber, wood and soy exporters",
+  "sections": [
+    {
+      "h": "What each request is for",
+      "ul": [
+        "EUDR (Regulation (EU) 2023/1115): a legal condition for placing listed goods on the EU market. The buyer files a due diligence statement; the answer is yes or no for each lot.",
+        "Carbon footprint: a number, in kg CO2e per kg of product or tonnes CO2e per year, that the buyer uses for its own Scope 3 reporting, targets or product claims. No single EU law sets its format for coffee or rubber."
+      ]
+    },
+    {
+      "h": "What data each one needs",
+      "ul": [
+        "EUDR: product and HS code, quantity, country of production, geolocation of every plot, production date range, and evidence of deforestation-free and legal production.",
+        "Carbon: fuel and electricity used in processing, fertiliser and other farm inputs, transport, and, for some buyers, land use change emissions.",
+        "EUDR has no tonnage of CO2 in it. A carbon footprint has no legality check in it."
+      ]
+    },
+    {
+      "h": "Where the two overlap",
+      "p": [
+        "Land use change emissions in a footprint depend on whether forest was cleared to grow the crop, and when. The GHG Protocol Land Sector and Removals Standard covers how companies account for them. Plot geolocation and clearance evidence gathered for EUDR is the same evidence a footprint uses to show no recent land conversion, so collect it once and reuse it."
+      ]
+    },
+    {
+      "h": "Answering both without doing the work twice",
+      "ol": [
+        "Build one plot register with geolocation, area, grower and harvest dates; it serves EUDR and the farm part of a footprint.",
+        "Keep processing energy records, electricity bills and fuel invoices for your curing works, factory or sawmill, by season or year.",
+        "Record quantities shipped per lot, which links plot data to shipments for EUDR and turns annual emissions into a per kg figure.",
+        "Tell the buyer which file answers which request, so a footprint is not mistaken for EUDR evidence or the reverse."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates the exporter's own fuel and electricity emissions from invoices and bills, the processing part of a carbon footprint. EUDR geolocation and due diligence statements sit with your plot register and your EU buyer's filing.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my Indian exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR due diligence data for suppliers",
+      "to": "/answers/eudr-due-diligence-statement-supplier-data"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Articles 2, 3 and 9, as amended by Regulation (EU) 2025/2650, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "GHG Protocol Land Sector and Removals Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "EUDR application dates and Annex I were amended in 2025 and 2026 (now from 30 December 2026 for large and medium operators); recheck EUR-Lex before relying on dates."
+}

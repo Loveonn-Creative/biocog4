@@ -1,0 +1,78 @@
+{
+  "slug": "graphite-electrode-manufacturing-co2-per-tonne",
+  "q": "What is the carbon footprint of manufacturing graphite electrodes per tonne?",
+  "title": "Graphite electrode footprint per tonne",
+  "short": "Work it out cradle to gate: graphitisation and other plant electricity times the grid factor, plus fuel for baking, plus the footprints of needle coke and pitch from your suppliers, all divided by tonnes of finished electrode. Graphitisation is the most electricity-hungry step, so measure its kWh per tonne with care.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Electrode makers, EAF steel buyers",
+  "sections": [
+    {
+      "h": "Stages to include",
+      "ol": [
+        "Raw materials: calcined needle coke and coal tar pitch binder, with their cradle-to-gate footprints from suppliers or a database.",
+        "Mixing and extrusion of the green electrode: mostly electricity.",
+        "Baking, and re-baking after pitch impregnation: fuel gas or oil burnt in the furnaces, plus CO2 from pitch volatiles burnt in the furnace or incinerator.",
+        "Graphitisation in Acheson or lengthwise furnaces: large amounts of electricity, plus packing coke consumed.",
+        "Machining, testing and packing: electricity and packaging materials."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "p": [
+        "Per tonne = (plant kWh x 0.710 + each fuel x its factor + process CO2 from pitch volatiles and packing coke + needle coke x its factor + pitch x its factor) / tonnes of finished electrode. Divide by good output, not by green tonnage, so machining losses and rejects stay inside the figure."
+      ]
+    },
+    {
+      "h": "Data quality issues to settle",
+      "ul": [
+        "Needle coke footprints vary widely between petroleum and coal-based routes; ask the supplier for an ISO 14067 figure rather than using a generic value.",
+        "Separate grid and captive power, since a captive plant's fuel is Scope 1 and its own emission rate applies.",
+        "Count carbon from pitch volatiles and packing coke as process CO2 by mass balance; do not leave them out because no invoice line shows them burning.",
+        "Keep a method note naming ISO 14067:2018 and each factor's source, since EAF steel buyers may use your figure in their CBAM or product claims."
+      ]
+    },
+    {
+      "h": "How this links to the steel plant's figure",
+      "p": [
+        "Your cradle-to-gate footprint is a Scope 3 input for the EAF steelmaker. The carbon in the electrode itself becomes direct CO2 in the steel plant when the electrode is consumed, and is counted there by mass balance. Do not include that end-of-life oxidation in a cradle-to-gate figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative plant-controlled emissions per tonne of finished electrode",
+    "lines": [
+      "Electricity: graphitisation 4,000 kWh + other 800 kWh = 4,800 kWh x 0.710 = 3,408 kg CO2",
+      "Baking fuel: 300 scm PNG x 2.05 = 615 kg CO2",
+      "Plant energy subtotal: 3,408 + 615 = 4,023 kg, about 4.0 t CO2 per tonne",
+      "Then add process CO2 from pitch volatiles and packing coke by mass balance, and needle coke and pitch at supplier factors"
+    ],
+    "note": "Energy figures are assumptions for illustration. Measure your own kWh and gas per tonne of good output."
+  },
+  "senseible": "Senseible reads the plant's electricity bills and fuel invoices into monthly emissions, the gate-to-gate energy part of an electrode footprint. Needle coke and pitch footprints come from your suppliers.",
+  "links": [
+    {
+      "label": "Graphite electrode CO2 in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

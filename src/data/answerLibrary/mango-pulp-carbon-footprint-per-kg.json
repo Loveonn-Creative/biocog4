@@ -1,0 +1,86 @@
+{
+  "slug": "mango-pulp-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of aseptic mango pulp per kg?",
+  "title": "Aseptic mango pulp carbon footprint per kg",
+  "short": "Calculate it per kg of pulp as orchard emissions per kg of fruit divided by pulp yield, plus boiler fuel and electricity per kg, plus the aseptic bag and drum. Processing energy is easy to get from bills; the orchard share and packaging need supplier or farm data, so state how you got each.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Mango pulp processors in Chittoor and Krishnagiri, and juice brand buyers",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Fruit per kg pulp = 1 divided by pulp yield (kg pulp per kg fruit).",
+        "Orchard share = orchard emissions per kg fruit x fruit per kg pulp. Fertiliser N2O, diesel for spraying and irrigation pumping make most of it.",
+        "Processing share = (boiler fuel CO2 + electricity CO2) for the season divided by kg of pulp made.",
+        "Packaging = aseptic bag and drum emissions divided by kg of pulp per drum.",
+        "Add transport to port if the buyer asks for delivered rather than ex works."
+      ]
+    },
+    {
+      "h": "Season and shared lines",
+      "p": [
+        "Mango pulp lines run hard for a few months and then switch to guava, papaya or tomato, or stand idle. Use the bills for the mango months only, and split shared loads such as cold rooms and the ETP by output. If idle months carry fixed loads, either spread them over the year's total output or state that they are left out."
+      ]
+    },
+    {
+      "h": "Peel and stones",
+      "p": [
+        "Peel and stones that go to compost or waste are not co-products; all emissions stay on the pulp, plus any disposal emissions. If you sell them, for example as cattle feed or for pectin, you can allocate a small share to them, using the same basis every year."
+      ]
+    },
+    {
+      "h": "What the processor controls",
+      "ul": [
+        "Steam: boiler efficiency, condensate return and insulation on the sterilisers.",
+        "Electricity: pulper and finisher motors, the aseptic filler and refrigeration.",
+        "Yield: better grading and pulping raise kg pulp per kg fruit, which also cuts the orchard share per kg."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: processing share per tonne of pulp",
+    "lines": [
+      "Pulp yield 55%: 1,000 / 0.55 = 1,818 kg fruit per tonne of pulp",
+      "Boiler: 20 litres furnace oil x 2.97 = 59.4 kg CO2",
+      "Electricity: 100 kWh x 0.710 = 71.0 kg CO2",
+      "Processing share: 130.4 kg CO2 per tonne, 0.13 kg per kg pulp",
+      "Add: orchard emissions for 1,818 kg fruit, and bag and drum from supplier factors"
+    ],
+    "note": "Yield, fuel and electricity per tonne are illustrative. Use your season's bills and production register."
+  },
+  "senseible": "Senseible reads boiler fuel, electricity and packaging invoices, converting fuel and power to CO2, so the processing share of a season can be built from documents. Orchard data and packaging factors come from growers and suppliers.",
+  "links": [
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Packaging end of life for food exporters",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    },
+    {
+      "label": "Food processing",
+      "to": "/industries/food-processing"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy (boiler fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

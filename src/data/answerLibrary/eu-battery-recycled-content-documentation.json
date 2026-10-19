@@ -1,0 +1,73 @@
+{
+  "slug": "eu-battery-recycled-content-documentation",
+  "q": "What recycled content will EU battery buyers ask Indian suppliers to document, and from when?",
+  "title": "EU battery recycled content: what to record",
+  "short": "Under Article 8 of the EU Batteries Regulation, EV, SLI and industrial batteries above 2 kWh will need documented shares of cobalt, lead, lithium and nickel recovered from waste, per battery model and plant, from 18 August 2028 or later once the calculation rules are adopted. Minimum shares follow from 2031 and rise in 2036.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Battery makers, secondary lead and lithium recyclers",
+  "sections": [
+    {
+      "h": "Which batteries and metals are covered",
+      "ul": [
+        "Industrial batteries with capacity above 2 kWh, except those with only external storage, electric vehicle batteries and SLI (starter) batteries.",
+        "Only where the battery contains cobalt, lead, lithium or nickel in its active materials.",
+        "Recycled means recovered from battery manufacturing waste or from post-consumer waste.",
+        "Batteries for light means of transport, such as e-bikes and e-scooters, follow later dates; check Article 8 for them."
+      ]
+    },
+    {
+      "h": "The dates and minimum shares in Article 8",
+      "ul": [
+        "Documentation of recycled content: from 18 August 2028, or 24 months after the Commission's delegated act on the calculation and verification method enters into force, whichever is later. The Commission published a draft of that act for feedback in August 2026.",
+        "From 18 August 2031: at least 16% cobalt, 85% lead, 6% lithium and 6% nickel from recycled sources.",
+        "From 18 August 2036: at least 26% cobalt, 85% lead, 12% lithium and 15% nickel."
+      ],
+      "p": [
+        "The Commission reviews the targets and can amend the 2036 shares, so check the consolidated text before you commit to a supply plan."
+      ]
+    },
+    {
+      "h": "What an Indian supplier should start keeping",
+      "ol": [
+        "For each battery model and each plant, the mass of cobalt, lead, lithium and nickel in the active materials.",
+        "For each lot of recycled input, the recycler, the waste source (manufacturing scrap or post-consumer) and the metal content.",
+        "Chain of custody records linking recycled lots to production batches, in the form the delegated act sets once adopted.",
+        "Purchase invoices and certificates from recyclers, including authorisation under India's Battery Waste Management Rules 2022 where they apply."
+      ]
+    },
+    {
+      "h": "How this links to the battery passport and footprint",
+      "p": [
+        "Recycled content is one of the data points the battery passport will carry, and recycled metal also tends to lower the battery's carbon footprint. Keep one set of lot level records so the same numbers feed both, rather than separate spreadsheets for each buyer request."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices for metals, recycled inputs and plant energy into one dated record per site, which helps when a buyer asks for input data. The recycled content share itself comes from your material and chain of custody records.",
+  "links": [
+    {
+      "label": "EU battery passport for exporters",
+      "to": "/answers/eu-battery-passport-indian-battery-exporters"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "EU rules besides CBAM",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Article 8, recycled content, consolidated text on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Battery Waste Management Rules 2022, MoEFCC",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: Article 8 dates and 2031 and 2036 shares confirmed; the delegated act on calculation and verification was at draft stage (feedback closed 9 September 2026). Recheck once it is adopted, since a late adoption moves the documentation date.",
+  "reviewed": "2026-10-18"
+}

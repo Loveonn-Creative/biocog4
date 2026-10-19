@@ -1,0 +1,81 @@
+{
+  "slug": "cotton-ginning-emissions-per-bale",
+  "q": "How much CO2 does cotton ginning and pressing emit per bale?",
+  "title": "Cotton ginning CO2 per bale",
+  "short": "Divide the season's ginning and pressing emissions by the bales produced: grid kWh times 0.710 kg CO2, plus DG diesel times 2.68 kg per litre. Then split the result between lint and cottonseed, by mass or by value. The split method can double the lint figure, so always state which one you used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ginning factories (Gujarat, Maharashtra, Telangana), spinning mills",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Grid electricity for gins, cleaners, conveyors, pneumatic lines and the bale press, from the season's bills.",
+        "Diesel for DG sets during power cuts, and for loaders or tractors inside the yard.",
+        "Any fuel for seed cotton dryers.",
+        "Leave out growing the cotton and transport to the gin unless the buyer asks for a cradle-to-gate lint figure; those come from farm data."
+      ]
+    },
+    {
+      "h": "Per bale before allocation",
+      "p": [
+        "Total CO2 for the season / bales pressed. Use the Cotton Corporation of India bale of 170 kg lint as the unit, and count only bales from the same season as the bills. If the factory also does oil expelling or other work on the same meter, separate that load first with a sub-meter or a clear estimate."
+      ]
+    },
+    {
+      "h": "Splitting between lint and cottonseed",
+      "p": [
+        "Ginning produces two saleable products, so ISO 14044 clause 4.3.4 applies: avoid allocation where you can, otherwise split by a physical relationship such as mass, and use economic value only where a physical basis does not reflect the process. Seed cotton typically gives about one third lint and most of the rest as seed, so mass allocation gives lint a small share and value allocation a larger one. State which you used; buyers compare figures."
+      ]
+    },
+    {
+      "h": "Ways to bring the figure down",
+      "ul": [
+        "Run gins at full feed rather than part loaded across long shifts.",
+        "Fix air leaks and right-size fans on pneumatic conveying, often the largest electrical load.",
+        "Cut DG hours by scheduling around supply hours or adding storage for critical loads."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative ginning factory, one season",
+    "lines": [
+      "Electricity: 3,00,000 kWh x 0.710 = 2,13,000 kg CO2",
+      "DG diesel: 6,000 litres x 2.68 = 16,080 kg CO2",
+      "Total: 2,29,080 kg CO2 for 15,000 bales = 15.27 kg CO2 per bale before allocation",
+      "Per bale of lint (170 kg) there is about 320 kg of seed, so lint's mass share is 170 / 490 = 34.7%: 15.27 x 0.347 = 5.30 kg CO2 per bale",
+      "By value, at an assumed Rs 150 per kg lint and Rs 35 per kg seed: 25,500 / (25,500 + 11,200) = 69.5%, so 15.27 x 0.695 = 10.61 kg CO2 per bale"
+    ],
+    "note": "Energy use, outturn and prices are illustrative. Use your own bills, bale count, ginning outturn and season prices."
+  },
+  "senseible": "Senseible reads ginning electricity bills and diesel invoices into the season's CO2, with every figure tied to its source bill. You add the bale count and choose the allocation for lint and seed.",
+  "links": [
+    {
+      "label": "Recycled cotton yarn footprint per kg",
+      "to": "/answers/recycled-cotton-yarn-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14044:2006, clause 4.3.4 Allocation, and ISO 14067:2018",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

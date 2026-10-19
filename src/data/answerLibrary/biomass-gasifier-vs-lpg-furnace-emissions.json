@@ -1,0 +1,90 @@
+{
+  "slug": "biomass-gasifier-vs-lpg-furnace-emissions",
+  "q": "Biomass gasifier or LPG for a small furnace or dryer: which has lower emissions?",
+  "title": "Biomass gasifier or LPG: which emits less?",
+  "short": "A biomass gasifier usually has far lower reported Scope 1 emissions than LPG, because the CO2 from burning biomass is biogenic and reported outside the scopes. Only its methane and nitrous oxide count, a small fraction of LPG's CO2. The claim holds only if the biomass is residue or sustainably sourced, and the gasifier's blower power still counts.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "MSME owner in food, ceramics, metal heat treatment",
+  "sections": [
+    {
+      "h": "How each fuel is counted",
+      "ul": [
+        "LPG: 2.98 kg CO2 per kg burnt (IPCC 2006 default), all fossil Scope 1, plus very small CH4 and N2O.",
+        "Biomass through a gasifier: the CO2 from the producer gas flame is biogenic. The GHG Protocol asks you to report it separately, outside Scopes 1, 2 and 3.",
+        "CH4 and N2O from biomass combustion are counted in Scope 1, using IPCC 2006 stationary combustion factors and a named GWP set.",
+        "Electricity for the gasifier blower, feeder and gas cleaning is Scope 2; diesel for a backup DG is Scope 1."
+      ]
+    },
+    {
+      "h": "Compare per unit of useful heat, not per kg",
+      "p": [
+        "A gasifier system loses more energy between fuel and product than an LPG burner: char, tar and sensible heat in the gas. Work out the biomass needed for the same useful heat using the efficiency of each system, then apply the factors. A lower efficiency raises the biomass tonnage and the CH4 and N2O, but rarely enough to close the gap with LPG."
+      ]
+    },
+    {
+      "h": "When the biomass claim weakens",
+      "ul": [
+        "Wood cut from land that is not regrowing: buyers and assurers may question a zero fossil figure without evidence of sustainable sourcing.",
+        "Biomass carried long distances by truck: transport diesel belongs in Scope 3 and grows with distance.",
+        "A gasifier running poorly, with high tar and unburnt gas venting, which raises methane.",
+        "A dryer where product quality needs clean heat and LPG is kept as backup; count the LPG you still buy."
+      ]
+    },
+    {
+      "h": "What to keep as evidence",
+      "ul": [
+        "Biomass purchase invoices with tonnage and type, such as rice husk, wood chips or briquettes.",
+        "Supplier declarations on where the residue or wood came from.",
+        "Moisture content tests, since wet biomass carries less energy per tonne.",
+        "Any LPG still bought, and electricity bills for the gasifier connection."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative dryer using 20,000 kg LPG a year",
+    "lines": [
+      "LPG CO2: 20,000 x 2.98 = 59,600 kg CO2; its CH4 and N2O add about 52 kg CO2e",
+      "LPG energy: 20,000 kg x 47.3 GJ per t = 946 GJ; useful heat at 80% burner efficiency = 757 GJ",
+      "Gasifier at an assumed 60% system efficiency: 757 / 0.60 = 1,261 GJ of biomass, about 81 t of wood at 15.6 GJ per t",
+      "CH4: 1.261 TJ x 30 kg per TJ = 37.8 kg x 28 (AR5 GWP) = 1,060 kg CO2e",
+      "N2O: 1.261 TJ x 4 kg per TJ = 5.0 kg x 265 (AR5 GWP) = 1,337 kg CO2e",
+      "Gasifier Scope 1: about 2,400 kg CO2e, against about 59,650 kg CO2e for LPG; biogenic CO2 of about 141 t reported separately"
+    ],
+    "note": "System efficiencies are assumptions. Calorific values (LPG 47.3 GJ per t, wood 15.6 GJ per t), the wood CO2 factor (112 t per TJ) and CH4 and N2O factors are IPCC 2006 defaults; the wood factors for manufacturing combustion stand in for producer gas. Add Scope 2 for the gasifier's electricity."
+  },
+  "senseible": "Senseible calculates LPG CO2 at 2.98 kg per kg from your purchase invoices and keeps each invoice as the source, so a switch shows up month by month as LPG tonnage falling. Keep the biomass invoices, supplier declarations and the gasifier's electricity bills with the same record.",
+  "links": [
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Morbi coal gasifier vs natural gas",
+      "to": "/answers/morbi-coal-gasifier-vs-natural-gas-emissions"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2, Tables 2.2 to 2.5 (stationary combustion CH4 and N2O factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported outside the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC Fifth Assessment Report, 100-year GWP values (CH4 28, N2O 265)",
+      "url": "https://www.ipcc.ch"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

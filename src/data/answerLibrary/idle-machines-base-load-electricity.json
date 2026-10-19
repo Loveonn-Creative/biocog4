@@ -1,0 +1,83 @@
+{
+  "slug": "idle-machines-base-load-electricity",
+  "q": "How much electricity do idle machines use overnight, and how do I find it from my bills?",
+  "title": "Idle machine base load from your bills",
+  "short": "Find your base load: the kW the plant still draws when nothing is being made. On an HT connection, read the night and Sunday kW from the meter's interval data; on an LT connection, note the meter reading at shutdown and at start. Base load kW times idle hours gives the wasted kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners, plant engineers",
+  "sections": [
+    {
+      "h": "What usually runs when production stops",
+      "ul": [
+        "Air compressors topping up leaks, often the biggest single load at night.",
+        "Machine controls, hydraulic power packs and spindle coolers left on standby.",
+        "Furnace and oven holding burners or heaters, chillers and cooling towers.",
+        "Transformer no-load loss, lighting, exhaust fans and office AC."
+      ]
+    },
+    {
+      "h": "Reading base load from an HT bill",
+      "p": [
+        "HT meters usually record demand in 15 or 30 minute blocks for maximum demand and time of day billing. Ask your discom for the load survey or interval data, or download it from the consumer portal where one exists.",
+        "Look at the hours you know the plant was shut: nights after the last shift, Sundays and holidays. The lowest steady kW in those hours is your base load. A spike at 2 am usually means something cycling on, such as a compressor."
+      ]
+    },
+    {
+      "h": "Reading it on an LT connection",
+      "ol": [
+        "Write down the main meter kWh reading when the last shift stops.",
+        "Write it down again before the first shift starts.",
+        "Divide the difference by the hours between the two readings to get average idle kW.",
+        "Repeat on a Sunday to see the full day figure, and once more after you switch things off, to see what you saved."
+      ]
+    },
+    {
+      "h": "Turning base load into kWh, rupees and CO2",
+      "p": [
+        "Idle kWh = base load kW x idle hours in the month. Multiply by your energy charge for rupees and by 0.710 kg CO2 per kWh for location-based Scope 2. Then compare base load with your average running load: the bigger the share, the more there is to switch off."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month at a plant running 14 hours a day",
+    "lines": [
+      "Base load from interval data: 40 kW",
+      "Idle hours: 10 hours a night x 26 working days = 260 hours, plus 4 Sundays x 24 = 96 hours, total 356 hours",
+      "Idle energy: 40 x 356 = 14,240 kWh",
+      "Cost at an assumed energy charge of Rs 8 per kWh: Rs 1,13,920",
+      "CO2: 14,240 x 0.710 = 10,110 kg, about 10.1 t a month"
+    ],
+    "note": "The 40 kW and Rs 8 per kWh are assumptions; use your own interval data and tariff."
+  },
+  "senseible": "Senseible reads the monthly kWh, billing period and tariff from each electricity bill and keeps them as one record, so a drop after you cut base load shows in both kWh and CO2. Base load itself comes from interval data or meter readings you record; meter feeds are set up with the Senseible team.",
+  "links": [
+    {
+      "label": "Hourly grid factors in India",
+      "to": "/answers/hourly-grid-emission-factors-india"
+    },
+    {
+      "label": "Compressed air leak cost",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 50006:2023, Energy management systems, energy baselines and energy performance indicators",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE Energy Auditor Guide Book 1, General Aspects of Energy Management and Energy Audit",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

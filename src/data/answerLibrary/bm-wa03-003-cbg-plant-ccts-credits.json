@@ -1,0 +1,87 @@
+{
+  "slug": "bm-wa03-003-cbg-plant-ccts-credits",
+  "q": "How does a compressed biogas (CBG) plant earn CCTS credits under BM WA03.003?",
+  "title": "CBG plant credits under BM WA03.003",
+  "short": "A CBG plant earns CCTS credits under BM WA03.003 for methane that no longer escapes from the feedstock's old disposal route and for fossil fuel its CBG replaces. The plant's own emissions, such as methane leaks and grid power, come off the total. The approved text sets the exact equations, so read it first.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "CBG plant developers, sugar mill and dairy promoters, SATAT suppliers",
+  "sections": [
+    {
+      "h": "The two reductions the plant claims",
+      "ul": [
+        "Methane avoided: press mud, cattle dung, crop residue or the organic part of municipal waste that would otherwise rot in heaps, pits, lagoons or dumps. For your own estimate before you read the method, the IPCC 2006 Guidelines, Volume 5 (waste) give the methane correction factors for each disposal route.",
+        "Fossil fuel displaced: the CNG, natural gas or other fossil fuel that buyers would have burnt instead of your CBG.",
+        "If the feedstock was already going to a digester, a compost yard or a cattle feed market, the methane claim shrinks or disappears. Keep dated evidence of where it went before the plant."
+      ]
+    },
+    {
+      "h": "What comes off the total",
+      "p": [
+        "Expect to deduct the plant's own emissions: methane that leaks from the digester, gas holder, upgrading unit or flare, the grid electricity for shredders, pumps and compressors, and any diesel used on site. BEE's tool list has separate tools for fossil fuel (BM-T-002) and electricity (BM-T-003) emissions. Which terms and tools apply, and any default values, are set in the BM WA03.003 version you register under, so take the list from that text, not from older CDM or voluntary market methods."
+      ]
+    },
+    {
+      "h": "Records to keep from day one",
+      "ol": [
+        "Raw biogas flow from a calibrated meter.",
+        "Methane content of raw biogas and of CBG, from an analyser.",
+        "CBG dispatched in kg, matched to sales invoices, for example to oil marketing companies under the SATAT initiative.",
+        "Gas sent to the flare and flare running hours.",
+        "Electricity and fuel bills, with sub meter readings where you have them.",
+        "Feedstock received, by type, tonnes and source.",
+        "Check this list against the monitoring tables of the methodology, which decide the measuring frequency and calibration."
+      ]
+    },
+    {
+      "h": "Common ways CBG claims go wrong",
+      "ul": [
+        "Claiming methane avoided for feedstock that was already composted, digested or sold as cattle feed.",
+        "Counting CBG that the buyer also claims as a lower Scope 1 fuel, or that is registered in a second programme.",
+        "Gaps in the biogas flow or methane analyser record, which leave months with nothing a verifier can test.",
+        "Using an approved methodology as if it were a registration: the project still needs its design document, validation, verification and registration with BEE before any certificate is issued."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: displaced fuel and grid power only",
+    "lines": [
+      "CBG sold: 5 tonnes a day x 330 days = 1,650 tonnes a year",
+      "Fossil fuel displaced, using the CNG factor of 2.69 kg CO2 per kg: 16,50,000 x 2.69 = 44,38,500 kg, about 4,439 t CO2",
+      "Grid electricity: 12,00,000 kWh x 0.710 kg CO2 per kWh = 8,52,000 kg, 852 t CO2",
+      "Before methane avoided and leakage: 4,439 minus 852 = 3,587 t CO2 a year"
+    ],
+    "note": "All plant figures are assumptions. The methodology and its tools set the factors to use in a real project, and the methane avoided and leakage terms usually change the result a lot."
+  },
+  "senseible": "Senseible reads the plant's electricity bills and fuel invoices into a dated, fingerprinted monthly record, the consumption data behind the electricity and fuel terms of a monitoring report.",
+  "links": [
+    {
+      "label": "BEE approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Dairy biogas plant carbon credits",
+      "to": "/answers/dairy-biogas-plant-carbon-credits"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "Does CBG blended PNG lower Scope 1",
+      "to": "/answers/does-cbg-blended-png-lower-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM WA03.003 Compressed biogas (CBG), with tools BM-T-002 and BM-T-003 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5: Waste (methane from solid waste disposal)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewNote": "BEE's own methodology text could not be read on 18 October 2026; the page gives the structure only (avoided methane and displaced fossil fuel, minus project emissions). Checked against the approved list updated 7 July 2026. Confirm the BM WA03.003 version, its project emission terms and tools before relying on it.",
+  "reviewed": "2026-10-18"
+}

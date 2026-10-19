@@ -1,0 +1,87 @@
+{
+  "slug": "baseline-boiler-efficiency-ccts-bm-t-006",
+  "q": "How do I set the baseline efficiency of an old boiler or furnace for a CCTS offset project (BM-T-006)?",
+  "title": "Baseline boiler efficiency under BM-T-006",
+  "short": "Use BEE tool BM-T-006, the tool BEE lists for determining the baseline efficiency of thermal and electricity systems, and follow the options in the version in force. Whatever route it allows, the safe answer for an efficiency or fuel switch project is the higher efficiency figure, because it gives fewer baseline emissions.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Plant engineers, energy auditors",
+  "sections": [
+    {
+      "h": "Why the baseline efficiency decides the credits",
+      "p": [
+        "Baseline emissions are worked back from the heat or power the plant delivers: heat output divided by baseline efficiency gives the fuel the old unit would have burned. A low efficiency figure inflates that fuel and the credits, so it is the number a validator will push on first."
+      ]
+    },
+    {
+      "h": "What BM-T-006 covers, and the CDM precedent",
+      "p": [
+        "BEE lists BM-T-006 among the tools approved under the CCTS offset mechanism, for determining the baseline efficiency of thermal and electricity systems such as boilers and furnaces. The routes it allows, any default values and how to choose between them are in the tool text, so read the version in force before you plan any test.",
+        "For background only: the CDM's Methodological Tool 09 on the same subject lets a project either build efficiency as a function of load from tests, or take a conservative default value. That is CDM practice, not a BEE rule. Do not assume BM-T-006 matches it."
+      ]
+    },
+    {
+      "h": "If you test the old unit, test it properly",
+      "ol": [
+        "Use a recognised method: IS 8753 or BS 845 for boilers, direct or indirect, with calibrated instruments.",
+        "Test at the loads the plant really runs, not only at full load.",
+        "Test on the fuel the baseline assumes. A coal boiler tested on good coal gives a different figure from daily mixed coal.",
+        "Record the date, instrument certificates and the agency or engineer who did it."
+      ]
+    },
+    {
+      "h": "Before you scrap anything",
+      "ul": [
+        "Once the old unit is dismantled you cannot test it. Check which routes BM-T-006 allows without a test before the new boiler goes in.",
+        "Several old boilers on one steam header: keep a record per unit, with fuel and output metered separately where you can.",
+        "Keep the name plate, data sheet and past fuel and steam logs in one file, whichever route you end up using."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: why the higher figure is conservative",
+    "lines": [
+      "Steam heat delivered in a year: 30,000 GJ",
+      "Baseline fuel at 70% efficiency: 30,000 / 0.70 = 42,857 GJ",
+      "Baseline fuel at 78% efficiency: 30,000 / 0.78 = 38,462 GJ",
+      "Coal at 94.6 kg CO2 per GJ, the IPCC 2006 default for other bituminous coal: 42,857 x 0.0946 = 4,054 t CO2 against 38,462 x 0.0946 = 3,638 t CO2",
+      "Choosing 78% gives about 416 t CO2 fewer baseline emissions a year: fewer credits, but a figure that holds up at validation"
+    ],
+    "note": "The 70% and 78% figures are illustrative; use the coal factor your methodology and coal analysis give."
+  },
+  "senseible": "Senseible keeps your fuel invoices as a dated, bill-backed record month by month, the fuel side of any historical efficiency estimate and of the monitoring record after the change. Steam or product output comes from your plant logs.",
+  "links": [
+    {
+      "label": "Boiler efficiency: direct and indirect method",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "BEE approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Years of data for a project baseline",
+      "to": "/answers/how-many-years-of-data-for-carbon-project-baseline"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Approved Methodologies and Tools under Offset Mechanism (CCTS): BM-T-006, baseline efficiency of thermal and electricity systems (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "UNFCCC CDM Methodological Tool 09, determining the baseline efficiency of thermal or electric energy generation systems (precedent only)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "BEE Energy Auditor Guide Book 4, Chapter 1 Boilers (IS 8753 and BS 845 test methods)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 1, default CO2 factor for other bituminous coal",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "Checked 18 October 2026: BM-T-006 is on BEE's approved tools list (updated 7 July 2026), but its text could not be opened from here; the page states only its name and scope. Confirm its allowed routes and defaults in the version in force.",
+  "reviewed": "2026-10-18"
+}
