@@ -1,0 +1,85 @@
+{
+  "slug": "credit-note-returned-fuel-emissions",
+  "q": "How do credit notes and returned goods change emissions counted from invoices?",
+  "title": "Credit notes and returns in carbon data",
+  "short": "Take the returned quantity off the original purchase, because goods you sent back were never burnt or used by you. A credit note that only changes the price, such as a discount, leaves an activity-based figure as it was. A debit note for extra quantity adds to it. Match every note to the invoice it corrects.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Accounts teams preparing carbon data from GST invoices",
+  "sections": [
+    {
+      "h": "What a credit note or debit note records",
+      "p": [
+        "Under Section 34 of the CGST Act 2017, a supplier issues a credit note when the taxable value or tax on an earlier invoice was too high, when goods come back, or when goods or services supplied are found deficient. A debit note covers the opposite case, when the taxable value or tax charged was too low.",
+        "Both point to an invoice that already exists. Neither is a new purchase, so neither should appear in your inventory as a fresh line."
+      ]
+    },
+    {
+      "h": "Which notes change your emissions",
+      "ul": [
+        "Goods returned, with the quantity printed: subtract that quantity from the original invoice line.",
+        "Short supply billed in full and credited later: subtract the quantity you never received.",
+        "Rate difference, trade discount or price correction: litres, kWh and kg stay the same, so an activity-based figure does not move.",
+        "Debit note for extra quantity supplied: add it. Debit note for a price rise: no change.",
+        "Spend-based lines: every note changes the rupee value, so recompute them from the net amount before GST."
+      ]
+    },
+    {
+      "h": "Which period the correction belongs to",
+      "p": [
+        "Book the correction against the period of the original purchase if the note reaches you before that period is closed. Since the Finance Act 2022 amendment to Section 34(2), the supplier must declare a credit note in its GST return by 30 November after the financial year ends, or by its annual return date if earlier. So most notes for April to March purchases reach you before BRSR or buyer figures are final.",
+        "If a note turns up after you have reported, record it in the period it arrives with a short explanation, or restate the earlier year if the change crosses your recalculation threshold."
+      ]
+    },
+    {
+      "h": "Fuel credit notes are mostly not returns",
+      "p": [
+        "Fuel is rarely taken back. A credit note from a diesel supplier is more often a rate correction, a discount, or a volume correction after a dip check or temperature adjustment on a bulk load. Only the volume corrections change litres.",
+        "If you work out fuel burnt from stock (opening stock plus purchases minus closing stock), the credited litres come out of purchases. Your closing dip reading already reflects what was really delivered."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a short bulk diesel delivery",
+    "lines": [
+      "Tanker invoice: 12,000 L of diesel",
+      "Dip check finds 400 L short; supplier issues a credit note for 400 L",
+      "Net diesel received: 12,000 minus 400 = 11,600 L",
+      "11,600 x 2.68 kg CO2 per litre (IPCC 2006 default) = 31,088 kg CO2",
+      "Without netting: 12,000 x 2.68 = 32,160 kg CO2, overstated by 1,072 kg, about 3.3%",
+      "A second credit note for a rate difference of Rs 0.90 per litre changes nothing in this figure"
+    ],
+    "note": "If the same purchase is also in a spend-based line, reduce its rupee value by both notes."
+  },
+  "senseible": "Senseible recognises a credit note by its printed heading and keeps it as evidence alongside the original invoice it corrects, so the paper trail stays complete. You record the netting of returned quantities against that invoice as a reconciliation step.",
+  "links": [
+    {
+      "label": "Stop duplicate invoices double counting",
+      "to": "/answers/duplicate-invoices-double-counting-emissions"
+    },
+    {
+      "label": "Fuel purchased or fuel consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    },
+    {
+      "label": "Bulk diesel invoices in kilolitres",
+      "to": "/answers/bulk-diesel-invoice-kilolitres-15c"
+    },
+    {
+      "label": "Trace emission data to its source",
+      "to": "/climate-intelligence/how-to-trace-emission-data-to-source"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), accuracy and completeness principles",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (default CO2 factors for fuels)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The 30 November deadline is Section 34(2) of the CGST Act 2017 as amended by the Finance Act 2022 (in force 1 October 2022); check for later amendments."
+}

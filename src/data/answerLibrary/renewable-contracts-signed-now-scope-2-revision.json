@@ -1,0 +1,76 @@
+{
+  "slug": "renewable-contracts-signed-now-scope-2-revision",
+  "q": "If I sign a solar or wind power contract now, will it still count after the GHG Protocol revises Scope 2?",
+  "title": "Will a PPA signed now still count later?",
+  "short": "Probably, if it delivers renewable power on the Indian grid with the attributes kept in your name. The draft revision adds hourly matching and deliverability tests, and its legacy clause for existing contracts is still open. Sign now, but write hourly generation data and attribute ownership into the contract.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Factories negotiating group captive, open access or rooftop PPAs",
+  "sections": [
+    {
+      "h": "It counts under today's rules",
+      "p": [
+        "Under the 2015 Scope 2 Guidance a PPA lowers market-based Scope 2 when it conveys the renewable attributes to you, nobody else claims them, the generation falls in your reporting period and the plant is in the same market. A group captive, green open access or rooftop contract in India can meet all four. Until a revised standard takes effect, reports are prepared on this basis."
+      ]
+    },
+    {
+      "h": "What the draft would add",
+      "ul": [
+        "Hourly matching: generation would need to line up with your consumption hour by hour, not over the year, with an exemption threshold for smaller users.",
+        "Deliverability: the plant would need to sit in the same market boundary as your factory. How that boundary is drawn for India is not settled.",
+        "Transition: the draft includes a legacy clause for existing contracts, but which contracts qualify and for how long were left open. The final rule is not set, so do not assume an old contract is protected."
+      ]
+    },
+    {
+      "h": "Clauses that protect the claim either way",
+      "ol": [
+        "Generation data by hour or 15 minutes, from the plant's meter, shared every month.",
+        "A clause that all environmental attributes, including RECs or green certificates, pass to you and are not sold elsewhere.",
+        "No carbon credits issued on the same MWh.",
+        "Your consumption interval data kept from your own meter, so the two series can be matched.",
+        "A review clause if the reporting rules change, without forcing a price reset."
+      ]
+    },
+    {
+      "h": "Rooftop solar is the safest case",
+      "p": [
+        "Solar on your own roof that you consume behind the meter cuts the grid units you buy. That lowers location-based and market-based Scope 2 under any version of the rules, as long as you do not sell the attributes. Off-site contracts are where the draft could bite, especially solar-only supply to a factory that runs at night."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each electricity bill and generation statement dated and fingerprinted, with kWh by billing period, so the records behind a claim stay intact if a time-matched test is adopted later. Market-based Scope 2 is reported once you add the contract details.",
+  "links": [
+    {
+      "label": "What to put in a PPA for a carbon claim",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    },
+    {
+      "label": "Group captive solar PPA and Scope 2",
+      "to": "/answers/group-captive-solar-ppa-scope-2-claim"
+    },
+    {
+      "label": "Hourly grid emission factors in India",
+      "to": "/answers/hourly-grid-emission-factors-india"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol, Scope 2 public consultation draft (20 October 2025 to 31 January 2026) and summary of consultation feedback (2026)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Legacy clause terms, the hourly matching threshold and market boundaries are unsettled as of October 2026; check the next consultation draft or final Scope 2 text and its effective date on ghgprotocol.org."
+}

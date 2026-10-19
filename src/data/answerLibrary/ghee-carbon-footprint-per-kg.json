@@ -1,0 +1,81 @@
+{
+  "slug": "ghee-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of ghee per kg?",
+  "title": "Carbon footprint of ghee per kg",
+  "short": "Take the farm footprint of the milk that goes into the ghee, allocated to it by the milk solids it contains, and add your plant's fuel and electricity per kg of ghee. Because ghee is almost pure milk fat, the farm milk dominates, and the allocation method you choose moves the answer more than anything else.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ghee makers and exporters to the Gulf, UK and US",
+  "sections": [
+    {
+      "h": "Why allocation decides the number",
+      "p": [
+        "Ghee is made from cream or butter, and the skim milk left over becomes another product, such as powder, paneer or toned milk. The raw milk's farm footprint must be shared between them. The IDF Global Carbon Footprint Standard for the Dairy Sector describes how. On a milk solids basis, ghee takes the kg of solids it contains, nearly all fat, and the skim products take the rest. Allocating by fat alone would load almost all of the farm footprint onto ghee and give a figure about three times higher."
+      ]
+    },
+    {
+      "h": "The plant stage",
+      "ul": [
+        "Cream separation and pasteurisation, shared with the other products by litres processed.",
+        "Clarification kettles: LPG kg x 2.98, PNG scm x 2.05, or steam from a boiler with its own fuel.",
+        "Electricity for separators, chilling and packing: kWh x 0.710 kg CO2.",
+        "Packaging: tins, jars and cartons, from supplier footprints, in CO2e."
+      ]
+    },
+    {
+      "h": "If you buy butter or cream",
+      "p": [
+        "Many ghee makers buy white butter or cream instead of milk. Then the input footprint is the supplier's figure per kg of butter or cream. Ask the supplier how they allocated their milk, so your method stays the same as theirs, and add your own plant energy."
+      ]
+    },
+    {
+      "h": "What to state to a buyer",
+      "p": [
+        "Give the figure per kg of ghee, the allocation basis, the source of the farm milk footprint, and the boundary: cradle-to-gate, or including shipping. The farm part is CO2e, because it includes methane and nitrous oxide; your plant energy part is CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ghee from milk at 4.0 percent fat and 8.5 percent SNF (illustrative)",
+    "lines": [
+      "Milk solids: 4.0 + 8.5 = 12.5 percent",
+      "Ghee at 99.5 percent fat holds 0.995 kg solids per kg, so 0.995 / 0.125 = 7.96 kg of milk equivalent",
+      "Farm milk footprint assumed for the arithmetic: 2.0 kg CO2e per kg of milk",
+      "Farm share: 7.96 x 2.0 = 15.92 kg CO2e per kg of ghee",
+      "Plant month: 2,000 kg LPG x 2.98 = 5,960 kg CO2 and 6,000 kWh x 0.710 = 4,260 kg CO2, total 10,220 kg CO2 for 20,000 kg of ghee",
+      "Plant share: 10,220 / 20,000 = 0.51 kg CO2 per kg",
+      "Total before packaging: 15.92 + 0.51 = 16.43 kg CO2e per kg of ghee"
+    ],
+    "note": "The farm milk figure is an assumption, not a benchmark; use your supplier's or a published study's figure and name it. On a fat-only basis the milk equivalent would be 0.995 / 0.04 = 24.9 kg."
+  },
+  "senseible": "Senseible reads LPG, gas and boiler fuel invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh for the plant stage. The farm milk footprint and the allocation are inputs you provide and document.",
+  "links": [
+    {
+      "label": "Dairy plant emissions per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), allocation",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

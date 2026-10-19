@@ -1,0 +1,75 @@
+{
+  "slug": "covid-year-as-carbon-base-year",
+  "q": "Can I use FY 2020-21 as my base year if production was disrupted?",
+  "title": "FY 2020-21 as a base year?",
+  "short": "Usually not. FY 2020-21 began in a national lockdown, so for most units output and emissions were unusually low. A base year must be representative under the GHG Protocol. Choose FY 2019-20, a later normal year, or an average of several years, and say why you skipped 2020-21.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies with incomplete or unusual pandemic-year data",
+  "sections": [
+    {
+      "h": "Why a low year makes a bad base",
+      "p": [
+        "With an absolute target, a year of low output makes recovery look like growth in emissions, so you appear to miss the target while doing nothing wrong. With an intensity target the problem flips: fixed loads such as lighting, compressors and idle furnaces were spread over fewer units, so intensity was high, and a return to normal looks like a reduction you did not earn."
+      ]
+    },
+    {
+      "h": "Your options",
+      "ol": [
+        "FY 2019-20, if its records are complete. Only its last week fell in the lockdown.",
+        "A later year with normal production, such as FY 2022-23 or after.",
+        "An average of consecutive years, which the GHG Protocol Corporate Standard, Chapter 5, allows to smooth unusual swings. The years must run in a row, so an average that spans FY 2020-21 still contains it; FY 2021-22 to 2023-24, for example, avoids it."
+      ]
+    },
+    {
+      "h": "When FY 2020-21 can still work",
+      "p": [
+        "Some units ran close to normal: essential goods, pharma, food processing, or exporters that caught up later in the year. If your monthly output and energy for the year sit within your usual range, the year can be representative. Show the monthly figures against a normal year as evidence."
+      ]
+    },
+    {
+      "h": "Targets and loans add their own rules",
+      "p": [
+        "During the pandemic the SBTi recommended that companies hit hard by COVID-19 choose a base year such as 2019 instead of 2020 or 2021, or use a multi-year average, while still accepting 2020 base years where the company judged them representative. Its criteria accept any base year from 2015 on. Check its current FAQ before you submit.",
+        "A sustainability-linked loan's baseline is in the facility agreement, and a lender will question a baseline taken from an unusually bad year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative intensity distortion",
+    "lines": [
+      "FY 2020-21: 3,000 t CO2 for 6,000 t of output = 0.50 t CO2 per tonne",
+      "Normal year: 4,000 t CO2 for 10,000 t of output = 0.40 t CO2 per tonne",
+      "Against 2020-21, the normal year shows a 20% intensity cut with no change at the plant",
+      "In absolute terms the same normal year looks 33% higher: 4,000 / 3,000 = 1.33"
+    ],
+    "note": "Figures are illustrative to show the effect in both directions."
+  },
+  "senseible": "Senseible can read invoices and bills from earlier years, so you can lay FY 2019-20, 2020-21 and later years side by side, month by month, before choosing.",
+  "links": [
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    },
+    {
+      "label": "How ambitious SLL targets should be",
+      "to": "/answers/how-ambitious-should-sll-targets-be"
+    },
+    {
+      "label": "Recalculating when the grid factor changes",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 5 Tracking emissions over time",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SBTi FAQ on COVID-19 and base years, and Corporate Near-Term Criteria",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewNote": "SBTi pandemic base year recommendation and 2015 earliest base year checked 2026-10-19; recheck the SBTi FAQ before using a pandemic year for a validated target.",
+  "reviewed": "2026-10-18"
+}

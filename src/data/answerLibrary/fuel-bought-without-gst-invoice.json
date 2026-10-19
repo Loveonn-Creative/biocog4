@@ -1,0 +1,96 @@
+{
+  "slug": "fuel-bought-without-gst-invoice",
+  "q": "Can fuel bought on cash memos or without a GST invoice count in my carbon footprint?",
+  "title": "Fuel on cash memos: does it count?",
+  "short": "Yes, it has to. Your footprint covers every fuel you burn, whatever paper came with it. A cash memo, pump bill or handwritten receipt works as evidence if it shows date, seller, fuel, quantity and amount. Where a receipt is missing, record the purchase from your cash book or stock register and mark it as weaker evidence.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Small units that buy diesel or firewood on cash bills",
+  "sections": [
+    {
+      "h": "Completeness comes before paperwork",
+      "p": [
+        "The GHG Protocol completeness principle asks you to account for every emission source inside your boundary and to explain any exclusion. Leaving out cash fuel to keep the file tidy understates Scope 1. In a small unit, cash diesel for the DG set or firewood for a furnace can be a large share of the total."
+      ]
+    },
+    {
+      "h": "Why there is often no GST invoice",
+      "ul": [
+        "Petrol, diesel and natural gas are outside GST, so a pump gives a bill or cash memo, not a GST tax invoice. That is normal.",
+        "Sellers below the GST registration threshold, such as many firewood and biomass vendors, cannot issue a tax invoice at all.",
+        "A registered seller need not issue a tax invoice for a supply under Rs 200 to an unregistered buyer who does not ask for one (Section 31(3)(b), CGST Act 2017)."
+      ]
+    },
+    {
+      "h": "What makes a cash bill usable evidence",
+      "ul": [
+        "Date, seller name and place.",
+        "Fuel type and quantity in litres or kg, with rate and amount.",
+        "A payment record: cash voucher or UPI reference.",
+        "A matching entry in your own records: DG log, boiler log or stock register."
+      ],
+      "p": [
+        "ISO 14064-3 asks a verifier to gather sufficient, appropriate evidence and test it against other records. A cash bill backed by a payment entry and a log entry holds up far better than any one of them alone."
+      ]
+    },
+    {
+      "h": "When there is no paper at all",
+      "ol": [
+        "Record the purchase from the cash book or UPI statement: date and amount.",
+        "Convert to quantity using the seller's rate for that date, and label it an estimate. The rupee to litre method is set out in the page on amount-only fuel bills.",
+        "Cross-check against use: DG run hours, boiler hours or production.",
+        "From now on ask the vendor for a dated bill with quantity, even a handwritten one."
+      ]
+    },
+    {
+      "h": "Firewood and other biomass",
+      "p": [
+        "CO2 from burning firewood is biogenic: report it separately, outside the scopes. The methane and nitrous oxide from burning it are Scope 1, in CO2e. Record the quantity in kg from the cash bill or a weighbridge slip."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a month with two lost pump bills",
+    "lines": [
+      "Pump bills kept: 9 bills, 1,150 L of diesel",
+      "Two bills lost; cash book shows Rs 18,000, at Rs 90 per litre (illustrative) = 200 L",
+      "Total: 1,150 + 200 = 1,350 L x 2.68 kg CO2 per litre = 3,618 kg CO2",
+      "Estimated part: 200 x 2.68 = 536 kg CO2, about 15% of the month, labelled as an estimate"
+    ],
+    "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel."
+  },
+  "senseible": "Senseible reads pump bills, fuel slips and photographed paper receipts, and gives every file a SHA-256 fingerprint so the same photo uploaded twice is not counted twice. A purchase with no document at all is recorded from your own cash book or stock register.",
+  "links": [
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Estimate DG diesel from run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    },
+    {
+      "label": "How long to keep invoices",
+      "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    },
+    {
+      "label": "Fuel bill shows only rupees",
+      "to": "/answers/fuel-invoice-amount-only-no-litres"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), completeness principle",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3:2019, verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (default CO2 factors for fuels)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

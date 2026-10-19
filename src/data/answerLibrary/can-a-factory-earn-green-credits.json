@@ -1,0 +1,74 @@
+{
+  "slug": "can-a-factory-earn-green-credits",
+  "q": "Can my factory earn Green Credits for water saving or waste management, not just tree planting?",
+  "title": "Can a factory earn Green Credits?",
+  "short": "Not yet, as of this review. The Green Credit Rules, 2023 list water management and waste management among eight eligible activities, but Green Credits are only awarded once the ministry notifies a methodology for an activity, and the methodology in use is for tree plantation on degraded land.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Manufacturers exploring India's Green Credit Programme",
+  "sections": [
+    {
+      "h": "The eight activities the rules name",
+      "ul": [
+        "Tree plantation",
+        "Water management, such as water conservation, harvesting and reuse",
+        "Sustainable agriculture",
+        "Waste management",
+        "Air pollution reduction",
+        "Mangrove conservation and restoration",
+        "Ecomark label development",
+        "Sustainable building and infrastructure"
+      ],
+      "p": [
+        "Being on this list does not mean credits are available. Each activity needs its own methodology, with thresholds and benchmarks, notified by the Ministry of Environment, Forest and Climate Change, before the Indian Council of Forestry Research and Education can register projects and award credits."
+      ]
+    },
+    {
+      "h": "What a factory can do today",
+      "ul": [
+        "Fund tree plantation on degraded land allotted by a state forest department, under the notified methodology. Credits come only after the restoration period and depend on survival and canopy density.",
+        "Keep records of water saving and waste recovery projects now: metered water drawn per tonne of output, waste quantities by stream, and the date each project started. If a methodology is notified later, a dated baseline helps.",
+        "Report what you hold in the voluntary Green Credit line of BRSR, if you are a listed company or in a listed company's value chain."
+      ]
+    },
+    {
+      "h": "When a carbon credit is the better route",
+      "p": [
+        "If your waste project cuts greenhouse gases, such as capturing biogas from effluent or making compressed biogas from organic waste, look at the carbon market instead. The CCTS offset mechanism has BEE approved methodologies for waste, including BM WA03.003 for compressed biogas, and BM IN02.001 covers energy efficiency and fuel switching in factories. Water saving alone cuts no tonnes of CO2 unless it saves pumping or heating energy, so it rarely earns a carbon credit on its own."
+      ]
+    },
+    {
+      "h": "How to check for a new methodology",
+      "p": [
+        "Methodologies are published as gazette notifications by MoEFCC and listed on the Green Credit Programme portal run by ICFRE. Look for the activity name and a notification date. A draft put out for comments is not yet a basis for registering a project."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your fuel, electricity and waste invoices as dated records, which can serve as a baseline for a future project. It shows carbon credit eligibility signals for carbon projects, a separate track from the Green Credit Programme.",
+  "links": [
+    {
+      "label": "Green Credit or carbon credit",
+      "to": "/answers/green-credit-vs-carbon-credit-india"
+    },
+    {
+      "label": "Green Credits in BRSR",
+      "to": "/answers/brsr-green-credits-disclosure"
+    },
+    {
+      "label": "CCTS approved methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MoEFCC, Green Credit Rules, 2023 (G.S.R. 761(E), 12 October 2023), and tree plantation methodology as revised in 2025",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "BEE, approved methodologies for the CCTS offset mechanism",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "Methodologies for further Green Credit activities may be notified at any time; check moef.gov.in before relying on this.",
+  "reviewed": "2026-10-18"
+}

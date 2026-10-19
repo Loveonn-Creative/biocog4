@@ -1,0 +1,80 @@
+{
+  "slug": "rtc-renewable-power-with-thermal-scope-2",
+  "q": "My round-the-clock renewable supply contract includes some thermal power. How much can I count as renewable?",
+  "title": "RTC power with thermal: what is green?",
+  "short": "Count as renewable only the units your supplier's monthly statement shows came from renewable plants, with the green attributes passed to you, as adjusted at your meter. The thermal share is not renewable: in market-based Scope 2 give it the thermal plant's emission rate if the supplier provides one, otherwise the grid average.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Large MSMEs and industrial buyers on RTC or FDRE open access contracts",
+  "sections": [
+    {
+      "h": "Why the contract name is not enough",
+      "p": [
+        "Round-the-clock supply under the Ministry of Power's 2020 guidelines bundles renewable power with thermal power, and since a November 2020 amendment with power from any other source or storage, so that delivery stays firm through the night. The guidelines set a minimum renewable share over the year, and your contract may promise more. A contract headline such as RTC green power does not make every unit renewable. Market-based Scope 2 under the GHG Protocol follows the source of each unit, so the thermal share keeps its emissions."
+      ]
+    },
+    {
+      "h": "Documents to ask the supplier for every month",
+      "ul": [
+        "Energy account: total units delivered and adjusted at your meter, split into renewable and thermal.",
+        "Green energy certificate or statement for the renewable units, under the Green Energy Open Access Rules, 2022, and the contract clause that passes the attributes to you.",
+        "Emission rate of the thermal portion in kg CO2 per kWh, from the thermal plant's fuel and generation data.",
+        "Confirmation that no RECs were sold on the renewable units you claim."
+      ]
+    },
+    {
+      "h": "Annual share versus monthly claims",
+      "p": [
+        "The renewable share in the guidelines and in most contracts is measured over a year, so one month can be 50 percent green and another 80 percent. Report the actual split month by month and add it up, rather than applying the contract's annual minimum to every month. If the supplier falls short of the promised share, your claim falls with it."
+      ]
+    },
+    {
+      "h": "Firm and dispatchable renewable contracts",
+      "p": [
+        "Contracts under the 2023 FDRE guidelines firm up renewable power with storage rather than coal, so the delivered units can all be renewable. Energy stored from grid or other non-renewable power is not renewable energy. Check the statement: units from such storage, or any shortfall met with grid or market power, take the grid average, not zero."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of RTC supply (illustrative figures)",
+    "lines": [
+      "Delivered at your meter: 10,00,000 kWh, of which 6,40,000 renewable and 3,60,000 thermal per the supplier statement",
+      "Location-based: 10,00,000 x 0.710 = 7,10,000 kg CO2",
+      "Market-based, renewable part: 6,40,000 x 0 = 0",
+      "Market-based, thermal part with a supplier rate of 0.95 kg CO2 per kWh (assumed for this example): 3,60,000 x 0.95 = 3,42,000 kg CO2",
+      "Market-based, thermal part with no supplier rate, at the grid average: 3,60,000 x 0.710 = 2,55,600 kg CO2"
+    ],
+    "note": "A coal plant's own rate is usually above the grid average, so using 0.710 for the thermal share understates market-based Scope 2; say which you used."
+  },
+  "senseible": "Senseible gives location-based Scope 2 from the metered units on your bill at 0.710 kg CO2 per kWh. The market-based split uses the renewable and thermal units and any supplier rate from your supplier's statement, which you provide.",
+  "links": [
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Ministry of Power, guidelines for procurement of Round-The-Clock power from RE projects complemented with thermal (2020) and FDRE guidelines (2023)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "RTC and FDRE guidelines are amended by the Ministry of Power, and the GHG Protocol Scope 2 revision is still a consultation draft; recheck both.",
+  "reviewed": "2026-10-18"
+}

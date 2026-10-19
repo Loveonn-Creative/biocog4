@@ -1,0 +1,75 @@
+{
+  "slug": "same-product-two-plants-footprint",
+  "q": "We make the same product in two plants. Do we give the buyer a weighted average or plant-specific footprint?",
+  "title": "Same product, two plants: which footprint?",
+  "short": "Give the plant-specific footprint whenever you can tell which plant supplied the buyer's goods. Use a production-weighted average only when shipments genuinely mix output from both plants, and then name the plants, their weights and the period. For EU CBAM goods, embedded emissions are reported per installation, not averaged.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Multi-plant MSMEs and mid-sized exporters",
+  "sections": [
+    {
+      "h": "Why plant-specific is better",
+      "p": [
+        "Two plants on different fuels, grids or machines can differ a lot for the same product. ISO 14067 asks for data that represent the product as supplied. If invoices or batch numbers show the buyer's goods came from Plant B, an average with Plant A misstates them."
+      ]
+    },
+    {
+      "h": "When a weighted average is fair",
+      "ul": [
+        "Stock from both plants goes into one warehouse and is despatched without tracing.",
+        "The buyer asks for one figure for the product across your supply.",
+        "You weight by the quantity each plant produced or shipped in the same period, not a simple average of the two figures."
+      ]
+    },
+    {
+      "h": "What to disclose with an average",
+      "ol": [
+        "Each plant's footprint and its share of volume.",
+        "The period both figures cover.",
+        "The method, which must be the same at both plants: same boundary, same factor sources, same allocation."
+      ]
+    },
+    {
+      "h": "CBAM is installation-specific",
+      "p": [
+        "Under the EU CBAM Regulation (EU) 2023/956, Annex IV, embedded emissions are determined for the installation that produced the goods. A cement, steel, aluminium, fertiliser or hydrogen exporter with two plants reports each one's data for the goods it made. Averaging is a product footprint convenience, not a CBAM method."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative effect of averaging",
+    "lines": [
+      "Plant A: 1.8 kg CO2e per kg, 600 t produced",
+      "Plant B: 2.6 kg CO2e per kg, 400 t produced",
+      "Weighted average: (1.8 x 600 + 2.6 x 400) / 1,000 = 2.12 kg CO2e per kg",
+      "A buyer supplied only from Plant B would be told 2.12 instead of 2.6, about 18% too low"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible can keep invoices and bills for each plant or GSTIN, so each plant's energy total, and the footprint built from it, comes from that plant's own documents.",
+  "links": [
+    {
+      "label": "Several plants or GSTINs in Senseible",
+      "to": "/answers/senseible-multiple-plants-or-gstins"
+    },
+    {
+      "label": "How to disclose a product footprint",
+      "to": "/answers/how-to-disclose-a-product-carbon-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (data representativeness)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

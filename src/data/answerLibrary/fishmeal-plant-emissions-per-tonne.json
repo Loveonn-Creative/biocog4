@@ -1,0 +1,81 @@
+{
+  "slug": "fishmeal-plant-emissions-per-tonne",
+  "q": "How do I calculate emissions per tonne of fishmeal and fish oil?",
+  "title": "Emissions per tonne of fishmeal and oil",
+  "short": "Add the plant's boiler or dryer fuel, electricity and DG diesel for a period, then share the total between fishmeal and fish oil by mass or by economic value, and divide each share by tonnes produced. State the allocation method; it changes the fish oil figure a lot.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fishmeal plants in Gujarat, Karnataka and Kerala supplying feed makers",
+  "sections": [
+    {
+      "h": "The plant's emission sources",
+      "ul": [
+        "Boiler fuel for the cooker, steam dryers and stickwater evaporator: coal kg x 2.42, furnace oil litres x 2.97, or PNG scm x 2.05 kg CO2.",
+        "Direct-fired dryers: the burner fuel with the same factors.",
+        "Firewood or briquettes: biogenic CO2, reported separately from the scopes.",
+        "Electricity for presses, decanters, grinders and pumps: kWh x 0.710 kg CO2.",
+        "DG diesel: litres x 2.68 kg CO2."
+      ]
+    },
+    {
+      "h": "Mass or economic allocation",
+      "p": [
+        "Fishmeal and fish oil come out of the same cooking and pressing, so the energy is shared. ISO 14067 and the GHG Protocol Product Standard prefer avoiding allocation, which is not possible here, then a physical basis such as mass, and allow economic allocation where mass does not reflect why the product is made. Fish oil usually sells for more per tonne than meal, so economic allocation moves emissions from meal to oil. Pick one, state it, and keep it each year."
+      ]
+    },
+    {
+      "h": "The raw material",
+      "p": [
+        "If the plant buys whole fish caught for reduction, the fishing fuel belongs in the footprint, through the boat's diesel per tonne landed. If it uses trimmings and heads from processing plants, some footprint studies treat these as waste that carries no fishing burden, or allocate a small share by value. Say which raw material you used, in what share, and how you treated it."
+      ]
+    },
+    {
+      "h": "What a feed maker will ask for",
+      "p": [
+        "Feed mills supplying certified shrimp or fish farms need a footprint per tonne of fishmeal and of fish oil, with the boundary, the allocation basis and the share of trimmings. A plant-only figure is useful, but say clearly that it leaves out fishing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative figures)",
+    "lines": [
+      "Coal: 260 t x 2.42 kg CO2 per kg = 6,29,200 kg CO2",
+      "Electricity: 1,50,000 kWh x 0.710 = 1,06,500 kg CO2",
+      "DG diesel: 4,000 litres x 2.68 = 10,720 kg CO2",
+      "Total: 7,46,420 kg CO2 for 440 t of meal and 80 t of oil",
+      "Mass allocation: 7,46,420 / 520 = 1,435 kg CO2 per tonne for both",
+      "Economic allocation, oil assumed at 1.5 times the meal price per tonne: meal 7,46,420 x 440 / 560 = 5,86,473 kg, or 1,333 kg CO2 per t; oil 7,46,420 x 120 / 560 = 1,59,947 kg, or 1,999 kg CO2 per t"
+    ],
+    "note": "Plant stage only. Yields and the price ratio are assumptions for the arithmetic."
+  },
+  "senseible": "Senseible reads coal, furnace oil and diesel invoices and electricity bills and applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh. The allocation between meal and oil uses your production and sales figures.",
+  "links": [
+    {
+      "label": "Fishing vessel fuel per tonne of catch",
+      "to": "/answers/fishing-vessel-fuel-emissions-per-tonne-catch"
+    },
+    {
+      "label": "Shrimp farm emissions from feed",
+      "to": "/answers/shrimp-farm-emissions-feed-and-aerators"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

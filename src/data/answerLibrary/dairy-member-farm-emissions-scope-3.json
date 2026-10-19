@@ -1,0 +1,89 @@
+{
+  "slug": "dairy-member-farm-emissions-scope-3",
+  "q": "How does a dairy cooperative or brand count member farmers' emissions in its Scope 3?",
+  "title": "Member farm emissions in dairy Scope 3",
+  "short": "Member farms are outside the dairy's control, so their emissions go in Scope 3 Category 1, purchased goods, even in a cooperative the farmers own. Estimate them from a sample of member farms: herd numbers, milk yield and feed, converted with IPCC methods, then scale to total milk procured.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dairy cooperatives and private dairies sourcing from village collection centres",
+  "sections": [
+    {
+      "h": "Where the boundary sits in a cooperative",
+      "ul": [
+        "Union or brand plants, chilling centres and tankers it owns: Scope 1 and 2.",
+        "Bulk milk coolers at village societies: Scope 2 of whoever has operational control of the cooler. If the society runs it, its power is part of the purchased milk footprint; if the union runs it, it is the union's Scope 2.",
+        "Member farms: Scope 3 Category 1. Farmers owning shares in the cooperative does not bring their farms into its control.",
+        "Cattle feed from the union's own feed plant: the plant's energy is the union's Scope 1 and 2. Do not count the same feed plant energy again inside the farm footprint."
+      ]
+    },
+    {
+      "h": "What to collect from a member sample",
+      "ol": [
+        "Pick a sample of farms across villages and herd sizes, weighted by the milk each group supplies.",
+        "Record animals by type: milking cows, dry cows, buffalo, young stock.",
+        "Record milk supplied per farm from the society's collection records, which you already hold.",
+        "Record feed: concentrate, green and dry fodder, and how manure is handled.",
+        "Repeat each year with the same method so trends mean something."
+      ]
+    },
+    {
+      "h": "The sources to include",
+      "ul": [
+        "Enteric methane from each animal type, from IPCC Tier 1 factors or Tier 2 if you have feed and yield data.",
+        "Manure methane and nitrous oxide, from how dung is stored or used.",
+        "Feed production, including fertiliser and diesel for fodder.",
+        "Farm electricity for pumps and chaff cutters, and diesel."
+      ],
+      "p": [
+        "All of these are CO2e. State the GWP edition you used, for example AR6, and keep it."
+      ]
+    },
+    {
+      "h": "Scaling and reporting",
+      "p": [
+        "Divide the sample's emissions by its milk to get kg CO2e per litre, then multiply by total milk procured in the year. Report it as a separate Category 1 line, labelled as an estimate from a sample, with the sample size. Where only milk payments are known for a group of suppliers, a spend-based estimate fills the gap, labelled with its wider uncertainty."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: enteric methane only, from a sample (illustrative)",
+    "lines": [
+      "Sample: 1,000 dairy cows supplying 20,00,000 litres a year",
+      "Enteric methane: 1,000 x 58 kg CH4 (IPCC 2006 Tier 1, dairy cattle, Indian subcontinent) = 58,000 kg CH4",
+      "In CO2e at AR6 GWP 27: 58,000 x 27 = 15,66,000 kg CO2e",
+      "Per litre: 15,66,000 / 20,00,000 = 0.783 kg CO2e",
+      "Scaled to 10 crore litres procured: 0.783 x 10,00,00,000 = 78,300 t CO2e"
+    ],
+    "note": "Enteric methane from cows only. Buffalo, manure, feed and farm energy are added the same way."
+  },
+  "senseible": "Senseible puts purchased milk and other Scope 3 lines in a separate supplier evidence trail and gives spend-based estimates, labelled as spend-based, where only payments are known. The member sample survey and herd calculation are done by the dairy.",
+  "links": [
+    {
+      "label": "Dairy enteric methane in India",
+      "to": "/answers/dairy-enteric-methane-emissions-india"
+    },
+    {
+      "label": "Bulk milk cooler electricity",
+      "to": "/answers/bulk-milk-cooler-electricity-per-litre"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Category 1, purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 4, Chapter 10, Table 10.11; IPCC 2019 Refinement, Volume 4, Chapter 10",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (methane GWP)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

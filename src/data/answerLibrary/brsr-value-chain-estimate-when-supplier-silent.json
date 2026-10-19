@@ -1,0 +1,87 @@
+{
+  "slug": "brsr-value-chain-estimate-when-supplier-silent",
+  "q": "How does a listed company report BRSR value chain emissions when an MSME supplier gives no data?",
+  "title": "Value chain BRSR when a supplier is silent",
+  "short": "Report what partners actually sent, state the coverage you reached, and either leave silent suppliers out with that gap named or add a clearly labelled estimate with its method. Never fold estimates into partner-reported totals without saying so. The disclosure is voluntary from FY 2025-26, so partial, clearly stated coverage is a legitimate answer.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Sustainability teams at listed companies",
+  "sections": [
+    {
+      "h": "Who is on the partner list",
+      "p": [
+        "The list is set by value. Since SEBI's March 2025 circular, a supplier or customer is a value chain partner if it alone is 2% or more of your purchases or sales, and you may stop adding partners once those covered reach 75%. For the top 250 listed companies the whole disclosure is voluntary from FY 2025-26, and its assessment or assurance is voluntary from FY 2026-27."
+      ]
+    },
+    {
+      "h": "Three ways to handle a silent supplier",
+      "ol": [
+        "Make it easy to answer: send a one-page template with only the indicators you need, the April to March period and the units, and offer a call. Many MSMEs can work out Scope 1 and 2 from a year of fuel invoices and electricity bills once they know what is wanted.",
+        "Disclose with coverage: report the partners that responded and state their share of purchases. Name the gap rather than hide it.",
+        "Estimate, clearly labelled: from the supplier's own proxies, such as known output or sanctioned load, from the intensity of responding peers making similar goods, or from a spend-based factor. Show the method and the data used."
+      ]
+    },
+    {
+      "h": "How estimates fit the GHG Protocol",
+      "p": [
+        "SEBI asks for the BRSR Core indicators of each partner to the extent they are attributable to your business with that partner. Chapter 7 of the GHG Protocol Scope 3 Standard allows secondary data and estimates where primary data is not available, provided the method and data quality are disclosed. A reader of the BRSR value chain section expects figures supplied by partners, so keep estimates on a separate line or in a footnote and never present them as partner data.",
+        "Agree with your assessment or assurance provider, before the season, how estimates should be shown."
+      ]
+    },
+    {
+      "h": "What to keep for the assessor",
+      "ul": [
+        "The partner list with each partner's share of purchases or sales.",
+        "Requests sent and follow-up dates.",
+        "Responses as received, with the factor sources the partner gave.",
+        "For each estimate: method, inputs, source and date."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: coverage and one estimate",
+    "lines": [
+      "Annual purchases: Rs 3,000 crore; suppliers at 2% or more: 10, together Rs 2,160 crore (72%)",
+      "7 responded, covering Rs 1,500 crore: 50% of purchases, and 1,500 / 2,160 = 69% of the partner group",
+      "Silent supplier: Rs 90 crore of your purchases (3%)",
+      "Two responding suppliers of similar castings report 1.8 and 2.2 t CO2 per crore of revenue; average 2.0 (illustrative)",
+      "Estimate attributable to your purchases: 90 x 2.0 = 180 t CO2, shown separately as a peer-intensity estimate"
+    ],
+    "note": "SEBI asks for the share attributable to your business with the partner, so scale a partner's whole footprint by your share of its sales, and do it the same way for every partner."
+  },
+  "senseible": "A supplier using Senseible can build its Scope 1 and 2 from its own fuel invoices and electricity bills and share the totals with factor sources; where only spend exists, Senseible provides a spend-based estimate labelled with wider uncertainty. How estimates appear in the BRSR is the listed company's decision.",
+  "links": [
+    {
+      "label": "The supplier side of a value chain request",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Value chain assurance timeline",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    },
+    {
+      "label": "How to fill gaps in Scope 3 data",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    },
+    {
+      "label": "Supplier data collection playbook",
+      "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "SEBI circular on BRSR Core and value chain disclosures, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Chapter 7, collecting data",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "SEBI revises value chain rules often and the format gives no explicit guidance on marking estimates; recheck the latest circular before each BRSR season."
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "absolute-or-intensity-reduction-target",
+  "q": "Should a growing MSME set an absolute or an intensity emissions target?",
+  "title": "Absolute or intensity emissions target?",
+  "short": "Set an absolute target if a buyer, the SBTi or a programme asks for one; the SBTi SME route uses an absolute Scope 1 and 2 target. Track intensity alongside it, because a growing unit can cut emissions per tonne and still see total emissions rise. Many MSMEs publish both.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs answering buyers and lenders on targets",
+  "sections": [
+    {
+      "h": "What each target tells a reader",
+      "ul": [
+        "Absolute: total tonnes of CO2e in the target year against the base year. It is what the climate sees, and what science-based routes ask for.",
+        "Intensity: tonnes per unit of output, such as t CO2e per tonne of castings or per lakh pieces. It shows efficiency and is fair to a unit that is growing.",
+        "The GHG Protocol Corporate Standard, Chapter 11, describes both and notes that an intensity target can be met while absolute emissions rise."
+      ]
+    },
+    {
+      "h": "Who asks for which",
+      "ul": [
+        "SBTi SME route: an absolute Scope 1 and 2 reduction target under the Corporate Near-Term Criteria. The minimum cut depends on your base and target years; check it on the SBTi site.",
+        "India's CCTS: GHG emission intensity targets, per tonne of product, notified by sector for obligated entities.",
+        "Sustainability-linked loans: either, as written in the facility agreement; intensity is common for growing borrowers.",
+        "Buyers: often absolute for their own Scope 3, but many accept supplier intensity with production data."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "If someone sets the type for you, use it.",
+        "If you plan to grow output fast, set an intensity target for operations and report absolute emissions next to it every year.",
+        "If you can cut absolute emissions through solar, fuel switching or electrification while growing, set an absolute target; it is the stronger claim."
+      ]
+    },
+    {
+      "h": "Pick the right denominator",
+      "p": [
+        "Use a physical unit that tracks the energy you use: tonnes, pieces or kWh delivered. Avoid revenue, which moves with prices and inflation. Keep the same unit and production definition every year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative three years of growth",
+    "lines": [
+      "Base year: 1,000 t CO2; output grows 15% a year; intensity falls 5% a year",
+      "Each year total emissions change by 1.15 x 0.95 = 1.0925, a 9.25% rise",
+      "After three years: 1,000 x 1.0925 x 1.0925 x 1.0925 = 1,304 t CO2",
+      "Intensity after three years: 0.95 x 0.95 x 0.95 = 0.857, about 14.3% lower",
+      "An intensity target is met; an absolute target is missed by a wide margin"
+    ],
+    "note": "Growth and efficiency rates are illustrative."
+  },
+  "senseible": "Senseible tracks absolute Scope 1 and 2 emissions from your monthly bills and invoices and shows intensity per unit of output, so both figures come from the same records.",
+  "links": [
+    {
+      "label": "How ambitious SLL targets should be",
+      "to": "/answers/how-ambitious-should-sll-targets-be"
+    },
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "What 42% by 2030 means",
+      "to": "/answers/what-does-42-percent-by-2030-mean"
+    },
+    {
+      "label": "CCTS intensity targets",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 11 Setting a GHG target",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SBTi SME target validation route (current criteria)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "BEE, Carbon Credit Trading Scheme, GHG emission intensity targets (2025)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "SME route absolute Scope 1 and 2 target checked 2026-10-19 (Near-Term Criteria); SBTi SME wording and CCTS sector targets change, so check both before quoting a percentage or year.",
+  "reviewed": "2026-10-18"
+}

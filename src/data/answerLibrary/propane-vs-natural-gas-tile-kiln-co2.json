@@ -1,0 +1,71 @@
+{
+  "slug": "propane-vs-natural-gas-tile-kiln-co2",
+  "q": "Is propane lower carbon than natural gas for a ceramic tile kiln?",
+  "title": "Propane or natural gas for a tile kiln?",
+  "short": "No. For the same kiln heat, propane emits about 12.5 percent more CO2 than natural gas. IPCC 2006 gives 63.1 kg CO2 per GJ for LPG, which covers propane, and 56.1 kg per GJ for natural gas. A switch to propane to save on gas prices raises your Scope 1 per square metre.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Morbi units that switched fuels when gas prices rose",
+  "sections": [
+    {
+      "h": "Compare per GJ, not per kg or per scm",
+      "p": [
+        "A kg of propane and a scm of natural gas carry different amounts of heat, so comparing CO2 per kg against CO2 per scm misleads. The kiln needs a fixed amount of heat per square metre of tile. Compare CO2 per GJ of fuel energy: 63.1 / 56.1 = 1.125, so propane gives about 12.5 percent more CO2 for the same heat, assuming the burners fire both fuels equally well."
+      ]
+    },
+    {
+      "h": "Why propane is higher",
+      "p": [
+        "Natural gas is mostly methane, with four hydrogen atoms per carbon atom; propane has eight hydrogens for three carbons. More of methane's energy comes from burning hydrogen to water, so propane carries more carbon per GJ. The reverse case, a factory moving from LPG to piped gas, is worked through on the LPG to PNG page."
+      ]
+    },
+    {
+      "h": "Factors to use from your invoices",
+      "ul": [
+        "Propane or LPG, billed in kg: 2.98 kg CO2 per kg (IPCC 2006 LPG default, 63.1 kg per GJ at 47.3 GJ per tonne).",
+        "Natural gas, billed in scm: 2.05 kg CO2 per scm.",
+        "If the propane supplier gives a measured calorific value, the CO2 per kg changes little: propane's own carbon content gives about 2.99 kg CO2 per kg by stoichiometry."
+      ]
+    },
+    {
+      "h": "When the switch is temporary",
+      "p": [
+        "Many units moved to propane for months when gas prices rose, then back. Keep the months separate in your records, with the fuel invoices for each. A buyer or lender reading a year with a propane spell will see Scope 1 per square metre rise and fall; a note with the dates explains it. A kiln efficiency upgrade made in the same period changes the comparison, so record it too."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 GJ of kiln heat in a month",
+    "lines": [
+      "Natural gas: 10,000 GJ x 56.1 kg per GJ = 5,61,000 kg CO2",
+      "That is about 2,73,700 scm (10,000 / 0.03654 GJ per scm), and 2,73,700 x 2.05 = 5,61,000 kg CO2",
+      "Propane: 10,000 GJ x 63.1 kg per GJ = 6,31,000 kg CO2",
+      "That is about 2,11,400 kg of propane (10,000 / 0.0473 GJ per kg), and 2,11,400 x 2.98 = 6,30,000 kg CO2",
+      "Extra CO2 from propane: about 70 t a month, 12.5 percent",
+      "Per square metre, at an illustrative 4,00,000 m2 fired that month: gas 5,61,000 / 4,00,000 = 1.40 kg CO2, propane 6,31,000 / 4,00,000 = 1.58 kg CO2"
+    ],
+    "note": "Assumes equal burner efficiency on both fuels; heat demand and output are illustrative. Use your own gas bills and production log."
+  },
+  "senseible": "Senseible reads propane or LPG invoices in kg and PNG bills in scm and applies 2.98 kg CO2 per kg and 2.05 kg CO2 per scm, so the months on each fuel show separately in Scope 1.",
+  "links": [
+    {
+      "label": "Coal gasifier vs natural gas in Morbi",
+      "to": "/answers/morbi-coal-gasifier-vs-natural-gas-emissions"
+    },
+    {
+      "label": "LPG to PNG switch: CO2 saved",
+      "to": "/answers/lpg-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 1, Tables 1.2 and 1.4 (net calorific values and CO2 factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

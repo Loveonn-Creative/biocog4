@@ -1,0 +1,77 @@
+{
+  "slug": "can-indian-company-use-defra-factors",
+  "q": "Can an Indian company use the UK government's DESNZ (formerly DEFRA) conversion factors?",
+  "title": "Can Indian firms use UK DESNZ factors?",
+  "short": "Yes for some lines, no for others. DESNZ factors are free and well documented, so they suit Scope 3 activities with no Indian figure, such as hotel nights or flights. Never use the UK electricity factor for Indian power, and avoid UK fuel rows that assume British biofuel blends.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Indian companies and consultants who found the UK factor spreadsheet",
+  "sections": [
+    {
+      "h": "Where DESNZ factors do not fit",
+      "ul": [
+        "UK grid electricity: it describes the UK generation mix. For power used in India, the Scope 2 Guidance points to the grid of the location of consumption, which is the CEA factor.",
+        "UK road fuel rows labelled average biofuel blend: they build in the biofuel share sold at UK pumps. If you use DESNZ for fuel at all, the 100% mineral rows are the closer match for Indian diesel.",
+        "UK-specific averages such as UK car fleet, UK homes or UK water supply, which reflect British vehicles and infrastructure."
+      ]
+    },
+    {
+      "h": "Where they are a reasonable fallback",
+      "ul": [
+        "Business travel by air, where the factor depends on the aircraft and distance more than the country.",
+        "Hotel stays, freight modes and materials, when you find no Indian or supplier figure and say so.",
+        "Well-to-tank factors for fuels, which DESNZ publishes separately and India does not publish."
+      ]
+    },
+    {
+      "h": "How to cite them properly",
+      "ol": [
+        "Name the edition year. DESNZ publishes a new set every year, usually in June, and values change.",
+        "Say which row you used, for example 100% mineral diesel, and whether it is per litre or per kWh.",
+        "If you use per kWh fuel rows, check whether the value is on a gross or net calorific basis; the tables give both.",
+        "Note that DESNZ fuel factors are in kg CO2e and include methane and nitrous oxide, unlike CO2-only factors."
+      ]
+    },
+    {
+      "h": "Do not mix sources within one line",
+      "p": [
+        "Pick one source for each activity and keep it every year. A diesel line on IPCC 2006 one year and DESNZ the next will move for reasons that have nothing to do with your fuel use."
+      ]
+    }
+  ],
+  "senseible": "Senseible uses the CEA factor for Indian grid electricity and IPCC 2006 defaults for fuels, named on each line. It applies these Indian and IPCC factors to Indian activity, not UK grid or UK blended-fuel factors.",
+  "links": [
+    {
+      "label": "Which emission factor to choose first",
+      "to": "/answers/emission-factor-order-of-preference-india"
+    },
+    {
+      "label": "Free grid emission factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Well-to-tank emissions from diesel invoices",
+      "to": "/answers/well-to-tank-emissions-from-diesel-invoices"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UK Government GHG Conversion Factors for Company Reporting (DESNZ, annual edition and methodology paper)",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "DESNZ republishes its factors every June; quote any DESNZ value with its edition year."
+}

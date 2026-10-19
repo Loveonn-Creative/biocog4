@@ -1,0 +1,82 @@
+{
+  "slug": "fermentation-api-carbon-footprint",
+  "q": "How is the carbon footprint of a fermentation-made API different from a synthetic one?",
+  "title": "Fermentation API carbon footprint",
+  "short": "A fermentation API's footprint is driven by utilities: electricity for aeration and agitation, steam for sterilisation, and chilling, run for days per batch. A synthetic API's footprint is driven more by solvents, reagents and starting materials. Fermentation also releases biogenic CO2 from the microbes, which is reported separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "API makers under the PLI scheme for KSMs and APIs, and their buyers",
+  "sections": [
+    {
+      "h": "Where the emissions sit in a fermentation route",
+      "ul": [
+        "Aeration and agitation: air compressors or blowers and fermenter agitators run around the clock for the whole batch. This is often the largest electricity load.",
+        "Sterilisation: steam to sterilise the medium, fermenters and lines before each batch, from a coal, furnace oil, PNG or biomass boiler.",
+        "Cooling: chillers and cooling towers remove the heat the microbes give off.",
+        "Downstream processing: filtration, extraction, ion exchange, crystallisation and drying. Solvent use here is real but usually smaller per kg than in multi-step synthesis.",
+        "Media: sugar or glucose, soybean meal, corn steep liquor and other nutrients, each with an agricultural footprint."
+      ]
+    },
+    {
+      "h": "Biogenic CO2 from the fermenter",
+      "p": [
+        "Microbes convert sugar to biomass, product and CO2. The CO2 in the exhaust air comes from plant-based carbon, so it is biogenic. Report it as a separate figure, outside the fossil total, and do not leave it out silently.",
+        "The fossil carbon in the medium, if any, and the energy used to run the fermenter stay in the main result."
+      ]
+    },
+    {
+      "h": "Waste is a bigger line than in synthesis",
+      "p": [
+        "Fermentation leaves large volumes of spent broth and mycelium. If they go to anaerobic treatment, methane can escape; if they go to land or a biogas plant, say so. Effluent treatment electricity also scales with broth volume.",
+        "Include the route you actually use and keep the disposal manifests or contracts as evidence."
+      ]
+    },
+    {
+      "h": "Why the PLI scheme makes this question common",
+      "p": [
+        "The Department of Pharmaceuticals' PLI scheme for KSMs, drug intermediates and APIs (2020) has a separate category for fermentation-based products such as Penicillin G. New domestic plants supplying formulators that answer to EU buyers get asked for a per kg footprint early. The method is the same cradle-to-gate approach under ISO 14067 or the GHG Protocol Product Standard; what changes is which lines dominate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative fermentation campaign of 1,000 kg API",
+    "lines": [
+      "Electricity for aeration, agitation, chilling and recovery: 3,00,000 kWh x 0.710 = 2,13,000 kg CO2",
+      "Coal for sterilisation and process steam: 1,50,000 kg x 2.42 = 3,63,000 kg CO2",
+      "Energy per kg API: (2,13,000 + 3,63,000) / 1,000 = 576 kg CO2",
+      "Add media, solvents and waste treatment with their own factors per kg",
+      "Fermenter exhaust CO2 from sugar: reported as a separate biogenic figure"
+    ],
+    "note": "Quantities are illustrative assumptions for one campaign. Allocate plant utilities to the campaign with a documented key such as fermenter hours."
+  },
+  "senseible": "Senseible reads electricity bills and boiler fuel invoices and applies 0.710 kg CO2 per kWh and IPCC 2006 fuel factors, giving the utility totals that dominate a fermentation route. Media and solvent purchases go to the Scope 3 supplier evidence trail with their quantities.",
+  "links": [
+    {
+      "label": "API carbon footprint per kg (synthetic)",
+      "to": "/answers/api-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

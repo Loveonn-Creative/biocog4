@@ -1,0 +1,83 @@
+{
+  "slug": "fuel-invoice-amount-only-no-litres",
+  "q": "My fuel invoice shows only a rupee amount, no litres. How do I get an emissions figure?",
+  "title": "Fuel bill shows only rupees: get the litres",
+  "short": "Divide the rupee amount by the price per litre on the purchase date, then multiply the litres by the fuel's emission factor, 2.68 kg CO2 per litre for diesel. Compare like with like: a tax-inclusive amount with a tax-inclusive price. Label the result an estimate until the supplier confirms the litres.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with lump-sum fuel bills for DG sets, boilers and sites",
+  "sections": [
+    {
+      "h": "First, ask the supplier for the quantity",
+      "p": [
+        "The dealer knows how many litres it sold you: it is on its dispensing record, delivery challan or rate statement. A short letter asking for quantity and rate per invoice can fix a whole year of lump-sum bills and turns an estimate into activity data. For DG and boiler fuel this is worth the effort, because those lines are often most of Scope 1."
+      ]
+    },
+    {
+      "h": "Which price to divide by",
+      "ul": [
+        "Retail diesel or petrol from a pump: the pump price in that city on the purchase date. These fuels are outside GST, so the bill and the pump price both already include excise and VAT; divide the full amount.",
+        "Bulk diesel delivered by tanker: bulk prices are set separately from retail and can be higher or lower, so a retail price can be wrong. Use the supplier's rate per kilolitre for that date.",
+        "Fuels charged with GST, such as furnace oil or commercial LPG: divide the taxable value before GST by the price before GST.",
+        "Take out anything that is not fuel first: delivery, tanker hire, additives, service charges."
+      ]
+    },
+    {
+      "h": "Where to find a price",
+      "p": [
+        "The Petroleum Planning and Analysis Cell (PPAC) publishes retail selling prices of petrol and diesel for the metro cities. Prices elsewhere differ mainly by state VAT, so a dealer quote or price list for your town and month is closer. Use the price for the invoice date, not a yearly average, because prices can change during the year."
+      ]
+    },
+    {
+      "h": "How to record the estimate",
+      "ul": [
+        "Amount used, and whether it includes tax.",
+        "Price per litre, with its source and date.",
+        "Litres derived, the factor used and the result.",
+        "A clear label: estimated from spend. Replace it with the supplier figure when it comes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a month of DG diesel billed as one amount",
+    "lines": [
+      "Dealer bill: Rs 4,50,000 for diesel delivered to the DG set",
+      "Price on the bill date: Rs 90 per litre (illustrative; use your dealer price)",
+      "Litres: 4,50,000 / 90 = 5,000 L",
+      "Emissions: 5,000 x 2.68 kg CO2 per litre = 13,400 kg CO2, about 13.4 t",
+      "If the real price was Rs 85: 4,50,000 / 85 = 5,294 L, and 5,294 x 2.68 = 14,188 kg CO2",
+      "A Rs 5 price error moves the result by about 6%"
+    ],
+    "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel. The price is the weakest input, so confirm it before reporting."
+  },
+  "senseible": "Senseible reads litres when they are printed; a fuel line with only a rupee amount shows Needs Data rather than a guessed figure. Where only spend is available, Senseible provides a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Vehicle emissions from fuel spend",
+      "to": "/answers/vehicle-emissions-from-fuel-spend"
+    },
+    {
+      "label": "What Needs Data on a line means",
+      "to": "/answers/senseible-needs-data-on-invoice-line"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Fuel bought on cash memos",
+      "to": "/answers/fuel-bought-without-gst-invoice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (default CO2 factors for fuels)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011) and Technical Guidance (2013), spend-based method",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "rec-vintage-which-year-can-it-cover",
+  "q": "Can RECs generated last year cover this year's electricity in my Scope 2?",
+  "title": "Can last year's RECs cover this year?",
+  "short": "Usually not for a claim buyers will accept. The GHG Protocol asks for certificates issued and redeemed as close as possible to the period of consumption, and RE100 and many buyers set their own vintage window. Match the generation date to your reporting year. An Indian REC staying valid until sold does not change that.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Companies buying RECs on IEX or PXIL, or I-RECs",
+  "sections": [
+    {
+      "h": "Two different clocks",
+      "ul": [
+        "Validity: under the CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022 an Indian REC does not expire until it is sold. That only tells you the certificate can still be traded.",
+        "Vintage: the month the renewable MWh was generated, printed on the certificate. This is what a Scope 2 claim is judged on.",
+        "A REC bought this year can carry a generation date from last year. Check the vintage on the registry record before you bid or sign."
+      ]
+    },
+    {
+      "h": "The decision rule to use",
+      "ol": [
+        "Match generation to your reporting year: for April 2026 to March 2027, use RECs generated in that period.",
+        "If a buyer, CDP or RE100 applies its own vintage window, follow theirs and quote it. For RE100, read the vintage clause in the current RE100 Technical Criteria on there100.org rather than an older summary.",
+        "If you still use older vintage certificates, disclose the vintage and the volume, and expect a reviewer to discount them.",
+        "Never use the same certificates for two reporting years, or for a renewable obligation and a voluntary claim."
+      ]
+    },
+    {
+      "h": "What happens to the uncovered units",
+      "p": [
+        "Electricity not covered by a valid instrument takes the residual mix in market-based Scope 2. India publishes no residual mix, so use the CEA grid average of 0.710 kg CO2 per kWh and say why. Location-based Scope 2 stays the same whatever certificates you hold."
+      ]
+    },
+    {
+      "h": "The Scope 2 revision may tighten this",
+      "p": [
+        "The GHG Protocol's proposed revision of the Scope 2 Guidance, still a public-consultation draft as of October 2026, would move market-based claims towards hourly matching of generation and consumption. Nothing in it is final. If adopted, a year-old certificate would fit even less well, so plan purchases on same-year vintage now."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,200 MWh with mixed vintages",
+    "lines": [
+      "Consumption, April 2026 to March 2027: 1,200 MWh",
+      "RECs held: 800 with generation in that year, 400 generated in 2025",
+      "Location-based: 12,00,000 kWh x 0.710 = 8,52,000 kg CO2, about 852 t",
+      "Market-based with same-year RECs only: 400 MWh uncovered x 1,000 x 0.710 = 2,84,000 kg CO2, about 284 t",
+      "If you count the 400 older RECs too, market-based shows zero, but you must disclose the 2025 vintage and a reviewer may reject it"
+    ]
+  },
+  "senseible": "Senseible reports location-based Scope 2 from your bills at 0.710 kg CO2 per kWh, and market-based Scope 2 from the certificate data you supply, including volume and vintage. It does not buy, hold or redeem RECs.",
+  "links": [
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "Do RE100 and CDP accept Indian RECs",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewNote": "The Scope 2 revision is a consultation draft as of October 2026. CERC REC Regulations 2022 (cercind.gov.in) and RE100 Technical Criteria (there100.org) are named in text only, with no approved URL; recheck the RE100 vintage clause before each reporting year.",
+  "reviewed": "2026-10-18"
+}

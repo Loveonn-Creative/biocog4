@@ -1,0 +1,70 @@
+{
+  "slug": "ipcc-2006-or-2019-refinement-fuel-factors",
+  "q": "Should I use the IPCC 2006 Guidelines or the 2019 Refinement for fuel emission factors?",
+  "title": "IPCC 2006 or the 2019 Refinement for fuels?",
+  "short": "For burning fuels, use the 2006 IPCC Guidelines. The 2019 Refinement does not replace them, and it made no methodological change to stationary or mobile combustion. Its energy updates are in fugitive emissions. Turn to it only where it refined the source you are calculating, and name the chapter.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Inventory preparers and verifiers in India",
+  "sections": [
+    {
+      "h": "How the two documents fit together",
+      "p": [
+        "The IPCC adopted the 2019 Refinement in May 2019 as an update to the 2006 Guidelines, not a new edition. Each chapter of the Refinement says whether it updates, adds to or leaves unchanged the matching 2006 chapter. Where a chapter is not refined, the 2006 text and its default factors still stand.",
+        "So the question is not which book to use, but whether the 2019 Refinement changed the part you need."
+      ]
+    },
+    {
+      "h": "Fuel combustion: stay with the 2006 tables",
+      "p": [
+        "The 2019 Refinement's Volume 2 marks most of the stationary combustion chapter as no refinement; the one change clarifies how biomass is treated, with no new tables or factors. The mobile combustion chapter is not refined at all. So for diesel, petrol, LPG, natural gas, fuel oil and coal burned in boilers, furnaces, generators and vehicles, the defaults are still the 2006 Volume 2 tables: calorific values in Table 1.2, CO2 per TJ in Table 1.4, and CH4 and N2O by sector in Chapters 2 and 3."
+      ]
+    },
+    {
+      "h": "Where the 2019 Refinement matters more",
+      "ul": [
+        "Fugitive emissions in the Energy volume: new guidance for coal mine exploration and abandoned surface mines, updated oil and gas factors, and a new section on fuel transformation.",
+        "Industrial processes in Volume 3, where it added or revised methods, for example for hydrogen production.",
+        "Waste, agriculture and land use, where several defaults were revised.",
+        "If your inventory has these sources, read the refined chapter before choosing a factor."
+      ]
+    },
+    {
+      "h": "What national inventories use",
+      "p": [
+        "Under the Paris Agreement transparency rules (decision 18/CMA.1), countries must use the 2006 Guidelines, and later IPCC versions or refinements only once the Parties agree to them. A company inventory that cites 2006 defaults for combustion is therefore consistent with how national inventories are built. Whatever you choose, cite the volume, chapter and table, and do not mix 2006 and 2019 values for the same source."
+      ]
+    }
+  ],
+  "senseible": "Senseible's fuel factors are IPCC 2006 defaults, such as diesel 2.68 kg CO2 per litre and coal 2.42 kg CO2 per kg, and the source is named on each line.",
+  "links": [
+    {
+      "label": "Are IPCC Tier 1 default factors enough?",
+      "to": "/answers/ipcc-tier-1-default-factor-good-enough"
+    },
+    {
+      "label": "Which emission factor to choose first",
+      "to": "/answers/emission-factor-order-of-preference-india"
+    },
+    {
+      "label": "Fuel emission factors",
+      "to": "/emission-factors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 Energy, Ch. 1 to 3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines (adopted May 2019)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "UNFCCC, modalities, procedures and guidelines for the Paris Agreement transparency framework (decision 18/CMA.1)",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked October 2026: 2019 Refinement Vol. 2 Ch. 2 changes only biomass treatment text, Ch. 3 is not refined, Ch. 4 (fugitive) has the substantive updates. Recheck if the CMA adopts the 2019 Refinement for national reporting."
+}

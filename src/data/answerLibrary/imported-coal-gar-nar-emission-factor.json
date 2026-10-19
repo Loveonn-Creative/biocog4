@@ -1,0 +1,79 @@
+{
+  "slug": "imported-coal-gar-nar-emission-factor",
+  "q": "My imported coal certificate gives GCV on a GAR or NAR basis. How do I convert it to CO2?",
+  "title": "Imported coal GAR or NAR to CO2",
+  "short": "Use the NAR figure if the certificate gives one: it is the net calorific value as received, which matches the net basis of IPCC factors and the wet tonnes on your invoice. Convert kcal/kg to MJ/kg, multiply by tonnes for energy, then by the IPCC CO2 factor per TJ for the coal's rank.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories burning Indonesian, South African or Australian coal",
+  "sections": [
+    {
+      "h": "What the bases on a certificate mean",
+      "ul": [
+        "GAR, gross as received: gross calorific value of the coal as delivered, moisture included.",
+        "NAR, net as received: the same coal, net of the heat lost to water vapour. IPCC factors are on a net calorific basis.",
+        "ADB or GAD, air dried basis: measured after the sample loses surface moisture, so it reads higher than as received.",
+        "DB, dry basis: no moisture at all, higher again."
+      ]
+    },
+    {
+      "h": "Match the basis to your tonnes",
+      "p": [
+        "Invoices and weighbridge slips give tonnes as received, wet. Pair them with an as-received calorific value. Applying an air dried or dry figure to wet tonnes overstates energy and CO2.",
+        "To move an air dried GCV to as received: GCV(ar) = GCV(adb) x (100 minus total moisture) / (100 minus inherent moisture), using the moisture figures on the same certificate."
+      ]
+    },
+    {
+      "h": "If you only have GAR",
+      "p": [
+        "The IPCC notes that coal NCV is roughly 5% below GCV. For wet, low-rank coal such as many Indonesian grades, the gap is often wider, because more heat goes into evaporating moisture. Ask the supplier for NAR or the full analysis. If you must estimate, use GAR x 0.95 and label it."
+      ]
+    },
+    {
+      "h": "Pick the IPCC factor by rank",
+      "ul": [
+        "Sub-bituminous coal: 96.1 t CO2 per TJ.",
+        "Other bituminous coal: 94.6 t CO2 per TJ.",
+        "Anthracite: 98.3 t CO2 per TJ.",
+        "Lignite: 101.0 t CO2 per TJ.",
+        "Many Indonesian thermal coals are sub-bituminous, while South African and Australian thermal coals are usually bituminous. Check the rank with the supplier."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 t of Indonesian coal, NAR 3,900 kcal/kg",
+    "lines": [
+      "NCV: 3,900 x 4.1868 / 1,000 = 16.33 MJ/kg",
+      "Energy: 1,000 t x 16.33 MJ/kg = 16,330 GJ = 16.33 TJ",
+      "CO2: 16.33 x 96.1 = 1,569 t CO2, about 1.57 kg CO2 per kg of coal",
+      "Air dried case: GCV(adb) 5,000 kcal/kg, inherent moisture 15%, total moisture 30%: 5,000 x 70 / 85 = 4,118 kcal/kg GAR, about 3,912 kcal/kg NAR at the 5% rule, and likely lower for wet coal"
+    ],
+    "note": "Certificate values are illustrative. Factors are IPCC 2006 Vol. 2 Table 1.4 defaults for sub-bituminous coal."
+  },
+  "senseible": "Senseible reads tonnes from your coal invoices and applies its IPCC 2006 coal default of 2.42 kg CO2 per kg. Keep the certificate of analysis with each invoice, so a factor from the coal's own calorific value can be shown against it.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "GCV vs NCV in fuel calculations",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1 Tables 1.2 (NCV) and 1.4 (CO2 per TJ)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "recalculate-base-year-after-selling-a-unit",
+  "q": "Do I recalculate my base year if I sell, close or buy a unit?",
+  "title": "Base year after selling or buying a unit",
+  "short": "Selling or buying a unit that existed in the base year is a structural change: recalculate the base year if the change passes your significance threshold. Closing a unit or opening a new one is organic decline or growth under the GHG Protocol, so the base year stays as it is.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Growing MSMEs and groups",
+  "sections": [
+    {
+      "h": "Which events trigger it",
+      "ul": [
+        "Sell a unit: remove its base year emissions from the base year.",
+        "Buy a unit that operated in the base year: add its base year emissions.",
+        "Move an activity in or out, such as handing forging to a vendor or taking packing back in house: adjust the base year for that activity.",
+        "Close a unit: no recalculation. The fall in emissions is real.",
+        "Build or open a new unit: no recalculation. Its emissions are growth.",
+        "Buy a unit that did not exist in the base year: no recalculation."
+      ]
+    },
+    {
+      "h": "The significance test",
+      "p": [
+        "The GHG Protocol Corporate Standard, Chapter 5, asks you to set a threshold in advance and apply it every time. For validated targets, the SBTi's Corporate Near-Term Criteria require a recalculation policy with a threshold of 5% or less. Test each change on its own and all of a year's changes together against base year emissions."
+      ]
+    },
+    {
+      "h": "How to do it",
+      "ol": [
+        "Get the unit's emissions for the base year, built with the same method and factors as yours: its bills and invoices if the seller hands them over, or a clearly labelled estimate.",
+        "Recalculate the base year for the full year, as if the new structure had applied all along.",
+        "Restate every year shown in your trend the same way, so the series compares like with like.",
+        "Keep the original figures and disclose the reason, the threshold and both totals."
+      ]
+    },
+    {
+      "h": "What a deal file should include",
+      "p": [
+        "Ask the seller for twelve months of electricity bills and fuel invoices for the base year as part of due diligence. Without them, you will estimate a figure you then have to defend to buyers and lenders for years."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative year with a sale, a closure and a purchase",
+    "lines": [
+      "Base year: 2,000 t CO2, of which Unit A 400 t and Unit B 100 t",
+      "Unit A sold: 400 / 2,000 = 20%, above 5%, so remove it",
+      "Unit B closed: organic decline, no change",
+      "Unit C bought, operating in the base year at 150 t: 150 / 2,000 = 7.5%, so add it",
+      "Restated base year: 2,000 minus 400 plus 150 = 1,750 t CO2"
+    ],
+    "note": "Figures are illustrative. 5% is the SBTi's ceiling; your written policy can set a lower threshold."
+  },
+  "senseible": "Senseible keeps each unit's invoices and bills with their dates and factors, so base year emissions for a unit can be taken out or added from documents rather than estimates. Records can be kept per plant or GSTIN.",
+  "links": [
+    {
+      "label": "Recalculating when the grid factor changes",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "SLL baseline after growth",
+      "to": "/answers/sll-baseline-recalculation-after-growth"
+    },
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 5 Tracking emissions over time",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SBTi Corporate Near-Term Criteria, base year recalculation",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewNote": "SBTi 5%-or-less recalculation threshold checked 2026-10-19 against Near-Term Criteria; recheck when the Corporate Net-Zero Standard V2 criteria take effect.",
+  "reviewed": "2026-10-18"
+}

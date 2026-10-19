@@ -1,0 +1,86 @@
+{
+  "slug": "rice-husk-sold-to-power-plant-who-claims",
+  "q": "We sell rice husk to a power plant. Can our mill claim the avoided emissions?",
+  "title": "Rice husk sold to a power plant: who claims?",
+  "short": "Not in your inventory. Your mill cannot subtract the coal or grid power the husk replaces from its Scope 1 and 2. You can report an avoided emissions estimate separately, beside the inventory, with your role stated as supplying the fuel. If the power plant earns carbon credits for that reduction, the claim is theirs.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Rice millers",
+  "sections": [
+    {
+      "h": "What stays in your inventory",
+      "ul": [
+        "Your own fuel and electricity for milling, as Scope 1 and 2, unchanged by the husk sale.",
+        "Husk burnt in your own boiler or parboiling unit: put the methane and nitrous oxide from burning it in Scope 1, and show the CO2 as a biogenic figure outside the scopes.",
+        "Husk you sell as fuel: it burns at the buyer. The Scope 3 Standard puts the use-phase emissions of fuels you sell in Category 11, so the methane and nitrous oxide from that burning belong there, and its biogenic CO2 is shown separately, outside the scopes."
+      ]
+    },
+    {
+      "h": "Why you cannot deduct it",
+      "p": [
+        "The GHG Protocol keeps avoided emissions out of the inventory: the Scope 3 Standard says they are reported separately and never deducted from Scope 1, 2 or 3. Deducting them would mix a measured inventory with a hypothetical reference case. The WBCSD Guidance on Avoided Emissions (2023) says the same: report them separately, never netted."
+      ]
+    },
+    {
+      "h": "If you want to report it anyway",
+      "ol": [
+        "Set the reference: what the power plant would have burnt or bought without your husk, based on its real alternative, not the dirtiest option.",
+        "Use the plant's data for heat value and efficiency, or label your assumptions.",
+        "State your role as an enabler: you supplied fuel; the plant did the substitution.",
+        "Disclose the method and keep it beside, not inside, your footprint."
+      ]
+    },
+    {
+      "h": "Carbon credits and double claims",
+      "p": [
+        "If the biomass power plant is a registered carbon project, it claims the reduction and sells it as credits. Your mill must not claim the same tonnes. Your supply contract may already say who owns any environmental attributes; read it before you write anything public."
+      ]
+    },
+    {
+      "h": "Effect on a rice product footprint",
+      "p": [
+        "Husk with a sale value is a co-product. In a product footprint under ISO 14067, it can take a share of the mill's emissions by mass or value, which lowers the share on rice. That is allocation, not an avoided emissions claim, and you cannot use both on the same husk."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative avoided estimate, reported separately",
+    "lines": [
+      "Husk sold in the year: 2,000 t x 11.6 GJ per t = 23,200 GJ",
+      "Power generated at an assumed 25% efficiency: 5,800 GJ, or 1,611 MWh",
+      "Reference of grid power at 0.710 t CO2 per MWh: 1,611 x 0.710 = 1,144 t CO2 avoided",
+      "Your mill's Scope 1 and 2 stay exactly as calculated from your bills"
+    ],
+    "note": "11.6 GJ per tonne is the IPCC 2006 default for other primary solid biomass. The efficiency is an assumption, and carbon credit methods use a different grid reference (the combined margin)."
+  },
+  "senseible": "Senseible keeps husk sales and purchase invoices with the record and reports biogenic CO2 from husk you burn separately. Your inventory figures stay gross, with any avoided estimate held beside them.",
+  "links": [
+    {
+      "label": "How to calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    },
+    {
+      "label": "Allocating between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Rice mill footprint per tonne of paddy",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004) and Scope 3 Standard (2011), Category 11",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "WBCSD Guidance on Avoided Emissions (2023)",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

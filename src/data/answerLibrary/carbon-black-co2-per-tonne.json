@@ -1,0 +1,88 @@
+{
+  "slug": "carbon-black-co2-per-tonne",
+  "q": "How do I calculate CO2 per tonne of carbon black?",
+  "title": "CO2 per tonne of carbon black",
+  "short": "Use a carbon balance: take the carbon in all feedstock oil and gas fed to the reactors, subtract the carbon leaving in carbon black and any other sold stream, and multiply by 44/12. Divide by tonnes produced. Compare it with the IPCC 2006 default for the furnace black process, 2.62 t CO2 per tonne.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Carbon black producers, tyre and rubber buyers asking for input footprints",
+  "sections": [
+    {
+      "h": "The carbon balance formula",
+      "p": [
+        "The 2006 IPCC Guidelines, Volume 3, Chapter 3, Section 3.9, cover petrochemical and carbon black production. The mass balance method there tracks carbon in and carbon out.",
+        "CO2 = (feedstock oil x its carbon fraction + gas x its carbon fraction) minus (carbon black x its carbon fraction + carbon in any other sold product) x 44/12.",
+        "The 44/12 converts a mass of carbon to the mass of CO2 it forms. Carbon that is not in a sold product ends up as CO2 when tail gas is burnt in your dryers, boilers, power plant or flare.",
+        "If you cannot run a balance yet, the same section gives a Tier 1 default for the furnace black process of 2.62 t CO2 per tonne of carbon black (Table 3.23, primary and secondary feedstock together). It is a fallback for a national inventory, not a substitute for your own figure in a buyer's footprint."
+      ]
+    },
+    {
+      "h": "Where each number comes from",
+      "ul": [
+        "Feedstock oil and natural gas: tonnes or scm from purchase invoices, tank dips and gas meter readings for the period.",
+        "Carbon fraction of feedstock: from your lab or the supplier's certificate of analysis for each lot, not a generic value.",
+        "Carbon black output: tonnes from production records, with its carbon content from your own quality tests.",
+        "Tail gas sent to another company, such as a neighbour's boiler: measure it and record its carbon separately, and state how you treat it."
+      ]
+    },
+    {
+      "h": "Count feedstock oil once",
+      "p": [
+        "Feedstock oil is a raw material, not boiler fuel. If its invoices are also entered as fuel burnt, its carbon is counted twice. Keep feedstock in the carbon balance and put only fuels burnt for other purposes, such as diesel for a DG set or a forklift, in the fuel lines.",
+        "Grid electricity is separate: kWh x 0.710 kg CO2 per kWh for location-based Scope 2."
+      ]
+    },
+    {
+      "h": "Turning it into a product footprint for a tyre buyer",
+      "ul": [
+        "Add the upstream footprint of the feedstock oil and gas, which is Scope 3 for you, from the supplier or a named database.",
+        "Add purchased electricity and any other inputs, then divide by tonnes of carbon black.",
+        "If the plant exports power or steam made from tail gas, that is a co-product. State how you allocate between carbon black and energy, following ISO 14067, and keep the method fixed year to year.",
+        "Report in kg CO2e per kg if you include methane or other gases; a carbon balance alone gives CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month, per tonne of carbon black",
+    "lines": [
+      "Feedstock oil: 1,700 kg x 0.90 carbon = 1,530 kg carbon",
+      "Natural gas: 100 kg x 0.75 carbon = 75 kg carbon",
+      "Carbon in: 1,530 + 75 = 1,605 kg",
+      "Carbon out in product: 1,000 kg x 0.97 = 970 kg",
+      "Carbon emitted: 1,605 minus 970 = 635 kg; 635 x 44/12 = 2,328 kg CO2 per tonne",
+      "IPCC Tier 1 default for furnace black: 2.62 t CO2 per tonne. The plant figure is lower here; find out why before you report"
+    ],
+    "note": "Oil and gas quantities and all carbon fractions are illustrative assumptions. Use your own lot analyses and production records."
+  },
+  "senseible": "Senseible reads the invoices for feedstock oil, natural gas, diesel and electricity, so the quantities in your carbon balance trace back to dated documents. Grid electricity is converted at 0.710 kg CO2 per kWh, and the carbon balance itself uses your lab carbon fractions.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Tyre carbon footprint per unit",
+      "to": "/answers/tyre-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Allocating between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3 Industrial Processes, Chapter 3, Section 3.9 Petrochemical and carbon black production",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "IPCC 2006 Volume 3, Table 3.23 furnace black default (2.62 t CO2/t) checked 2026-10-19 via the IPCC Emission Factor Database; recheck if the 2019 Refinement is cited instead.",
+  "reviewed": "2026-10-18"
+}

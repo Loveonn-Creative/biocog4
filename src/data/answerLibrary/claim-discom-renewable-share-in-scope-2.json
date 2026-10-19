@@ -1,0 +1,75 @@
+{
+  "slug": "claim-discom-renewable-share-in-scope-2",
+  "q": "Can I claim my discom's renewable purchase share as renewable electricity in my Scope 2?",
+  "title": "Claiming your discom's renewable share",
+  "short": "No, not today. Your discom buys renewable power to meet its own obligation, and that share is its compliance, not your claim. On ordinary grid supply your market-based Scope 2 uses the grid factor. A draft GHG Protocol rule would let customers claim a pro rata share of mandated clean power, but it is not final.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSMEs on ordinary grid supply asked for a renewable share by buyers",
+  "sections": [
+    {
+      "h": "Why the discom's share is not your claim",
+      "ul": [
+        "The Scope 2 Guidance lets you count renewable power only through an instrument that carries the renewable attribute and is retired or allocated to you: a certificate, a contract, or a supplier emission rate that meets its Quality Criteria.",
+        "A discom's renewable purchase or consumption obligation is met in its own name. It does not issue you a certificate for a share of it.",
+        "Indian discoms do not publish a supplier emission rate for ordinary supply that would meet those criteria. Without one, your market-based figure falls back to the grid average."
+      ]
+    },
+    {
+      "h": "What the draft calls standard supply service",
+      "p": [
+        "The Scope 2 consultation draft (20 October 2025 to 31 January 2026) proposes a category called standard supply service: clean power that is publicly funded, mandated by policy or part of default utility service. Each customer could claim no more than its pro rata share of it, and certificates from any share left unclaimed could not be used by anyone else.",
+        "The same draft proposes a fossil-based emission factor where no residual mix factor exists, instead of the grid average. India publishes no residual mix, so under the draft a factory on ordinary supply could see its market-based figure rise above its location-based one, unless it can show its share or buy instruments.",
+        "These are proposals. Claiming a share would also need your discom to publish its renewable share in a form you can rely on, which Indian discoms do not do today."
+      ]
+    },
+    {
+      "h": "What you can say to a buyer now",
+      "ol": [
+        "Give location-based Scope 2: units on your bills x 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "Give market-based Scope 2 at the same grid factor, and say India publishes no residual mix, which is what the 2015 Guidance allows.",
+        "Report 0% renewable electricity unless you hold a green tariff, green open access, RECs, or your own solar.",
+        "If the buyer needs a renewable share, a green tariff from your discom is often the simplest route for a small factory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 2,00,000 kWh of ordinary grid supply",
+    "lines": [
+      "Location-based: 2,00,000 x 0.710 = 1,42,000 kg, 142 t CO2",
+      "Market-based today: same 142 t CO2; the discom's renewable purchases do not reduce it",
+      "With a green tariff for 50,000 kWh, backed by a discom statement: 1,50,000 x 0.710 = 1,06,500 kg, 106.5 t CO2 market-based"
+    ]
+  },
+  "senseible": "Senseible calculates location-based Scope 2 from the kWh on your bills at 0.710 kg CO2 per kWh (CEA version 21.0). Market-based Scope 2 changes only when you add instrument or supplier data, such as a green tariff statement or retired certificates.",
+  "links": [
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Does the RCO apply to my factory?",
+      "to": "/answers/renewable-consumption-obligation-who-must-comply"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Table 6.3 market-based hierarchy and Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol, Scope 2 revision public consultation draft (20 October 2025 to 31 January 2026), standard supply service and residual mix proposals",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Ministry of Power, renewable consumption obligation notification under the Energy Conservation Act, 2001 (as amended 2022)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Standard supply service and the fossil-based factor for markets without a residual mix are draft proposals as of October 2026; recheck against the next draft or final Scope 2 standard on ghgprotocol.org."
+}

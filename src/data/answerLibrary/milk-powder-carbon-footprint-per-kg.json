@@ -1,0 +1,78 @@
+{
+  "slug": "milk-powder-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint per kg of milk powder at an Indian dairy plant?",
+  "title": "Milk powder carbon footprint per kg",
+  "short": "At the plant, add the steam fuel and electricity used by the evaporator and spray dryer, plus the powder's share of receiving and pasteurising, and divide by kg of powder. Then add the raw milk's farm footprint, allocated to the powder by milk solids. The farm part is usually far larger than the plant part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dairy processors and exporters of SMP and WMP",
+  "sections": [
+    {
+      "h": "The plant stage, section by section",
+      "ul": [
+        "Evaporator: steam from the boiler, so boiler fuel shared by steam use, or by a steam flow meter on the evaporator line. Mechanical vapour recompression evaporators shift this load to electricity.",
+        "Spray dryer: steam or direct gas for the air heater, plus fan and atomiser electricity.",
+        "Shared steps: reception, separation, pasteurisation, CIP and refrigeration. Share these between powder and other products by litres of milk processed for each.",
+        "Factors: coal 2.42 kg CO2 per kg, furnace oil 2.97 per litre, PNG 2.05 per scm, grid electricity 0.710 per kWh. Briquettes or other biomass are reported as biogenic CO2, separately."
+      ]
+    },
+    {
+      "h": "Adding the farm milk",
+      "p": [
+        "The raw milk going into the powder carries its own farm footprint, mostly methane from cows and buffalo, which is Scope 3 for the dairy and CO2e. The IDF Global Carbon Footprint Standard for the Dairy Sector (Bulletin of the IDF 520/2022) recommends splitting raw milk between food products by milk solids, so each kg of powder takes the milk solids it contains. A co-product sold as animal feed is handled differently, by economic value. Skim milk powder made alongside butter or ghee takes only the solids-not-fat, while the fat goes with the butter or ghee."
+      ]
+    },
+    {
+      "h": "SMP and WMP give different figures",
+      "p": [
+        "Whole milk powder keeps the fat, so it carries more milk solids per kg from the farm than skim milk powder does, and a higher farm share. Plant energy per kg also differs, because skim milk holds less solids than whole milk and more water must be removed for each kg of powder. Report each product separately and state the allocation basis."
+      ]
+    },
+    {
+      "h": "What a buyer will check",
+      "p": [
+        "The period for energy and production must match. Opening and closing powder stocks do not matter, because you divide by powder made, not sold. Say whether the figure is plant only or includes farm milk, and whether packaging and dispatch are in."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant stage for a month of SMP (illustrative figures)",
+    "lines": [
+      "Boiler coal to evaporator and dryer: 60 t x 2.42 kg CO2 per kg = 1,45,200 kg CO2",
+      "Powder section electricity: 1,80,000 kWh x 0.710 = 1,27,800 kg CO2",
+      "Plant stage total: 1,45,200 + 1,27,800 = 2,73,000 kg CO2 for 300 t of powder",
+      "Per kg: 2,73,000 / 3,00,000 = 0.91 kg CO2 per kg of SMP, plant stage only"
+    ],
+    "note": "Illustrative inputs. Add the allocated farm milk footprint, in kg CO2e, before quoting a cradle-to-gate figure."
+  },
+  "senseible": "Senseible reads coal, furnace oil and gas invoices and electricity bills, applies IPCC 2006 CO2 factors and 0.710 kg CO2 per kWh, and shows the factor on each line. The split by plant section and the farm milk allocation use your meters and production records.",
+  "links": [
+    {
+      "label": "Dairy plant emissions per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

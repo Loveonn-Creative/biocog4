@@ -1,0 +1,75 @@
+{
+  "slug": "product-footprint-one-month-or-full-year",
+  "q": "Can a product footprint be based on one month's data, or does it need a full year?",
+  "title": "Product footprint: one month or a year?",
+  "short": "One month is allowed only if you can show it represents the product, and you must state the period. A full year is safer and usually expected, because power use, boiler fuel, product mix and yields change with seasons and orders. Use a month as a labelled provisional figure and replace it when twelve months are in.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Exporters asked for a quick product carbon footprint",
+  "sections": [
+    {
+      "h": "What the standards ask",
+      "p": [
+        "ISO 14067 asks you to state the time period your data cover and to justify that it is representative. The GHG Protocol Product Standard rates data quality on several indicators, including how well the period fits. Neither sets a minimum of one year, but a short period is harder to defend."
+      ]
+    },
+    {
+      "h": "Why one month can mislead",
+      "ul": [
+        "Summer cooling and chiller loads raise kWh per unit; monsoon months can change drying and boiler fuel.",
+        "Low-order months spread fixed loads over fewer units, so the footprint per unit rises.",
+        "Product mix shifts move shared energy between products.",
+        "A one-off event, such as a breakdown or a long DG run during grid cuts, can dominate a single month."
+      ]
+    },
+    {
+      "h": "When one month is acceptable",
+      "ol": [
+        "New product or new plant with no longer history: use what you have and label it provisional.",
+        "Stable, continuous process with little seasonal swing: show two or three other months to prove it.",
+        "A buyer deadline: send the month with its dates, mark it provisional, and commit to an annual update."
+      ]
+    },
+    {
+      "h": "Building the annual figure",
+      "p": [
+        "Add twelve months of energy and divide by twelve months of output; do not average twelve monthly footprints, which gives a slow month the same weight as a busy one. Keep the monthly figures too, so you can show the range."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month against the year",
+    "lines": [
+      "Year: 10,00,000 kWh for 15,00,000 kg of output; 0.667 kWh per kg x 0.710 = 0.473 kg CO2 per kg",
+      "June: 1,00,000 kWh for 1,10,000 kg; 0.909 kWh per kg x 0.710 = 0.645 kg CO2 per kg",
+      "June alone overstates the annual figure by about 36%"
+    ],
+    "note": "Figures are illustrative and cover electricity only."
+  },
+  "senseible": "Senseible builds records month by month from invoices and bills, so a provisional figure from the first months turns into a twelve-month total as bills come in, with each month's data kept.",
+  "links": [
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Why a buyer rejected a footprint",
+      "to": "/answers/why-buyer-rejected-product-carbon-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (time boundary and data quality)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011), data quality indicators",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

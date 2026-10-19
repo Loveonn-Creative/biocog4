@@ -1,0 +1,92 @@
+{
+  "slug": "how-to-choose-base-year-carbon-inventory",
+  "q": "How should an MSME choose the base year for its carbon footprint?",
+  "title": "Choosing a base year for your footprint",
+  "short": "Pick the most recent financial year for which you have complete, checkable data: twelve months of electricity bills and fuel invoices, and normal production. If no single year is typical, use an average of two or three years. Write down the year and a rule for when you will recalculate it.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs setting a first reduction target",
+  "sections": [
+    {
+      "h": "Three tests for a good base year",
+      "ol": [
+        "Complete: every month's electricity bill and every fuel purchase for the year can be found. Gaps you fill with estimates weaken every comparison you make later.",
+        "Representative: production, shifts and product mix look like a normal year. No long shutdown, fire, strike or one-off export order.",
+        "Checkable: an auditor, buyer or lender can trace the total back to documents. A year rebuilt from memory does not pass."
+      ]
+    },
+    {
+      "h": "Single year or an average",
+      "p": [
+        "The GHG Protocol Corporate Standard, Chapter 5, allows either a single year or an average of several consecutive years. An average smooths a year that was unusual in one direction. It also means you need complete data for every year in it, so it suits units with good records."
+      ]
+    },
+    {
+      "h": "Use the Indian financial year",
+      "p": [
+        "Bills, GST returns, audited accounts and BRSR all run April to March. A base year of FY 2024-25 lines up with the documents you already file, so production and energy figures reconcile without splitting months."
+      ]
+    },
+    {
+      "h": "Rules set by someone else come first",
+      "ul": [
+        "SBTi targets, standard or SME route: the Corporate Near-Term Criteria accept no base year earlier than 2015. Check the current version before you submit.",
+        "Sustainability-linked loans: the facility agreement fixes the baseline year.",
+        "CCTS obligated entities: the baseline year is set in the notified targets for your sector.",
+        "A buyer programme may name a year; follow it for that buyer."
+      ]
+    },
+    {
+      "h": "Write a recalculation policy on day one",
+      "p": [
+        "Before any result is known, write down the threshold that will make you restate the base year and the events that trigger it. The SBTi requires a threshold of 5% or less for validated targets. How to handle a sale, purchase or closure is covered in the base year recalculation answer linked below."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative choice between two years",
+    "lines": [
+      "FY 2023-24: 12 of 12 electricity bills, but diesel invoices for only 7 months; not complete",
+      "FY 2024-25: all bills and invoices found; production normal; chosen",
+      "Diesel: 18,000 L x 2.68 = 48,240 kg CO2",
+      "Electricity: 6,00,000 kWh x 0.710 = 4,26,000 kg CO2",
+      "Base year Scope 1 and 2: 48,240 + 4,26,000 = 4,74,240 kg CO2, about 474 t"
+    ],
+    "note": "Quantities are illustrative. Keep the bills behind each line with the base year file."
+  },
+  "senseible": "Senseible can read past years' invoices and bills, so an earlier base year is built from the same kind of documents as this year's, with the factor and source on each line.",
+  "links": [
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "Base year after selling or buying a unit",
+      "to": "/answers/recalculate-base-year-after-selling-a-unit"
+    },
+    {
+      "label": "FY 2020-21 as a base year",
+      "to": "/answers/covid-year-as-carbon-base-year"
+    },
+    {
+      "label": "Recalculating when the grid factor changes",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (2004), Chapter 5 Tracking emissions over time",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SBTi Corporate Near-Term Criteria, base year and recalculation criteria",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewNote": "SBTi base year (no earlier than 2015) and 5% recalculation threshold checked 2026-10-19 against Near-Term Criteria; recheck when the SBTi Corporate Net-Zero Standard V2 criteria take effect.",
+  "reviewed": "2026-10-18"
+}

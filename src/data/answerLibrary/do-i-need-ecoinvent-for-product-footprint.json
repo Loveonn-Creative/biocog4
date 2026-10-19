@@ -1,0 +1,81 @@
+{
+  "slug": "do-i-need-ecoinvent-for-product-footprint",
+  "q": "Do I need a paid database like ecoinvent to calculate a product carbon footprint for an export buyer?",
+  "title": "Do I need ecoinvent for a product footprint?",
+  "short": "Not always. If your buyer's request does not name a database, you can build a credible footprint from your own energy and fuel data, supplier figures and free published factors. A paid database like ecoinvent helps when many materials have no free factor, or when the buyer asks for it.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Indian exporters asked for a PCF for the first time",
+  "sections": [
+    {
+      "h": "What the standards actually require",
+      "p": [
+        "ISO 14067 and the GHG Protocol Product Standard ask for site-specific data for processes you control and for inputs that drive most of the result. Secondary data is allowed for the rest, as long as you state its source, year and geography and judge its quality. Neither standard names a database. The PACT Methodology adds that buyers should see how much of the footprint rests on primary data."
+      ]
+    },
+    {
+      "h": "What you can do with free data",
+      "ul": [
+        "Your own electricity and fuel: kWh x the CEA grid factor, litres or kg x IPCC 2006 defaults.",
+        "Main materials: a supplier's own footprint or EPD, which beats any database average.",
+        "Free industry figures where they exist, such as worldsteel's published CO2 intensity for steel, labelled as a global average.",
+        "Freight: tonne-km x a published mode factor."
+      ]
+    },
+    {
+      "h": "When a paid database earns its cost",
+      "ul": [
+        "Your bill of materials has many chemicals, polymers or components with no supplier figure and no free factor.",
+        "The buyer names ecoinvent or the EU Environmental Footprint datasets, so results compare across its suppliers.",
+        "You need a full life cycle model, not only a carbon number."
+      ]
+    },
+    {
+      "h": "Check the licence before you share",
+      "p": [
+        "Licensed databases restrict how values can be passed on. Send your buyer the result and the dataset names, not tables of licensed factors, unless the licence allows it. Read the publisher's current terms; they change."
+      ]
+    },
+    {
+      "h": "A simple decision rule",
+      "p": [
+        "List your inputs by weight and cost. If the top few materials and your energy make up most of the footprint and you can get factors for them, start without a paid database. If many large inputs have no factor, or the buyer specifies one, budget for the licence."
+      ]
+    }
+  ],
+  "senseible": "Senseible multiplies activity read from your invoices and bills by named public factors for energy and fuels, and drafts product and framework reports from that data as self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PACT Pathfinder framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    },
+    {
+      "label": "What primary data share means",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "ISO 14067 vs GHG Protocol Product Standard",
+      "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), Ch. 7 and 8",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "PACT Methodology (WBCSD)",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Database licence terms change; check the publisher's current terms before sharing licensed values."
+}

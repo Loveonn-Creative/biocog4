@@ -1,0 +1,80 @@
+{
+  "slug": "is-cea-grid-factor-co2-or-co2e",
+  "q": "Is the CEA grid emission factor CO2 only, and should I add methane and nitrous oxide?",
+  "title": "Is the CEA grid factor CO2 or CO2e?",
+  "short": "The CEA grid factor is CO2 only. Adding methane and nitrous oxide from coal-fired generation raises it by roughly half a percent, an estimate from IPCC defaults. Most companies report it as CO2 and say so; add the other gases only if your buyer or method asks for full CO2e.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Inventory preparers using the CEA factor",
+  "sections": [
+    {
+      "h": "What the CEA database covers",
+      "p": [
+        "The CEA CO2 Baseline Database is, as its name says, a CO2 baseline. CEA calculates each station's emissions from the fuel it burns and the electricity it sends out, and publishes the factors in tonnes of CO2 per MWh. It gives no methane or nitrous oxide figure. That is why the weighted average reads 0.710 kg CO2 per kWh in version 21.0, not kg CO2e."
+      ]
+    },
+    {
+      "h": "How big the missing gases are",
+      "p": [
+        "IPCC 2006 Volume 2 Table 2.2 gives defaults for coal burned in power plants: 1 kg CH4 and 1.5 kg N2O per TJ, against 94,600 kg CO2 for other bituminous coal. With AR5 GWPs that is 28 + 397.5 = 425.5 kg CO2e per TJ, about 0.45% of the CO2. With AR6 values (fossil CH4 29.8, N2O 273) it is about 0.46%. Coal makes up most of Indian grid emissions, so the uplift on the whole factor is in the same range."
+      ]
+    },
+    {
+      "h": "Report it as CO2 or adjust it",
+      "ul": [
+        "BRSR, buyer questionnaires and most Indian inventories: report the CEA factor as CO2 and note that CH4 and N2O are excluded as immaterial.",
+        "A buyer or standard that requires all gases: apply your own uplift, say it is an estimate from IPCC defaults, and name the GWP set.",
+        "Do not label 0.710 as kg CO2e. Auditors look for that mismatch."
+      ]
+    },
+    {
+      "h": "Other things the factor leaves out",
+      "p": [
+        "The CEA factor counts generation only. Transmission and distribution losses and upstream fuel extraction are not in it. Those belong in Scope 3 Category 3, not in your Scope 2 figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: one year of a 5,00,000 kWh factory",
+    "lines": [
+      "Scope 2 as published: 5,00,000 x 0.710 = 3,55,000 kg CO2",
+      "Uplift for CH4 and N2O, about 0.45%: 0.710 x 1.0045 = about 0.713 kg CO2e per kWh",
+      "With uplift: 5,00,000 x 0.713 = 3,56,500 kg CO2e, about 1.5 t more"
+    ],
+    "note": "Estimate from IPCC 2006 Table 2.2 coal defaults and AR5 GWPs, applied to the whole factor as if all fossil generation were coal."
+  },
+  "senseible": "Senseible applies 0.710 kg CO2 per kWh from CEA version 21.0 for location-based Scope 2 and labels it as CO2 on every line.",
+  "links": [
+    {
+      "label": "Which CEA factor version for which year?",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    },
+    {
+      "label": "CEA weighted average vs combined margin",
+      "to": "/answers/cea-weighted-average-vs-combined-margin"
+    },
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0 and user guide",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

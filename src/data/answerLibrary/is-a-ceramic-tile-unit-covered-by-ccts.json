@@ -1,0 +1,68 @@
+{
+  "slug": "is-a-ceramic-tile-unit-covered-by-ccts",
+  "q": "Is a ceramic tile or sanitaryware unit an obligated entity under India's Carbon Credit Trading Scheme?",
+  "title": "Is a ceramic tile unit covered by CCTS?",
+  "short": "No, not as of this review. Ceramics, including tiles and sanitaryware, is not among the sectors with notified greenhouse gas emission intensity targets, so a Morbi or Thangadh unit has no CCTS target to meet. It can still earn credits through the CCTS offset mechanism if an approved methodology fits its project.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Morbi and Thangadh owners",
+  "sections": [
+    {
+      "h": "Who is obligated today",
+      "p": [
+        "Obligation under CCTS comes from the Greenhouse Gases Emission Intensity Target Rules, 2025. Its first list covered aluminium, cement, chlor-alkali and pulp and paper plants; an amendment effective 13 January 2026 brought in secondary aluminium, refineries, petrochemical crackers and textile units. Iron and steel targets were put out as a draft in June 2026. Each notification lists plants by name with a baseline year and target intensity. No ceramic plant is listed."
+      ]
+    },
+    {
+      "h": "How you would know if ceramics is added",
+      "p": [
+        "Coverage arrives as a gazette notification under the target rules, naming each obligated plant with its baseline year and target intensity for the coming years. Watch MoEFCC notifications and BEE's CCTS pages for ceramics. Until your plant is named in one, it has no obligation, whatever its size or energy use."
+      ]
+    },
+    {
+      "h": "Earning credits as a non-obligated unit",
+      "ul": [
+        "BM IN02.001 covers energy efficiency and fuel switching in industrial facilities, such as kiln upgrades, waste heat recovery from kilns to spray dryers, or a fuel switch.",
+        "BM EN01.001 covers grid-connected renewable electricity, such as a large rooftop or ground-mounted solar plant.",
+        "Each project needs a design document, validation and verification by an accredited agency, and registration with BEE before certificates are issued."
+      ]
+    },
+    {
+      "h": "Records worth keeping now",
+      "p": [
+        "A dated baseline of fuel and power per square metre, from invoices, bills and production logs, helps with both a future target and an offset project. EU buyers may also ask for kiln CO2 per square metre, even though ceramic tiles are not a CBAM good."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds Scope 1 and 2 from your gas, coal and electricity bills, giving a bill-backed, dated baseline for an offset project or a buyer. Square metres produced come from your own production records.",
+  "links": [
+    {
+      "label": "Is a glass unit covered by CCTS",
+      "to": "/answers/is-a-glass-unit-covered-by-ccts"
+    },
+    {
+      "label": "Are ceramic tiles covered by CBAM",
+      "to": "/answers/are-ceramic-tiles-covered-by-cbam"
+    },
+    {
+      "label": "CCTS approved methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets notified for more industrial sectors, January 2026",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, and amendments, MoEFCC",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Carbon Credit Trading Scheme, 2023 (S.O. 2825(E)) and amendments, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "The obligated sector list grows by notification; check the latest MoEFCC target rules for ceramics before relying on this.",
+  "reviewed": "2026-10-18"
+}

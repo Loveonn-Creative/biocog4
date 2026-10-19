@@ -1,0 +1,88 @@
+{
+  "slug": "recycled-plastic-granules-carbon-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of recycled plastic granules I sell?",
+  "title": "Recycled plastic granules: CO2 per kg",
+  "short": "Add the emissions from collecting and transporting the waste plastic, sorting, washing, shredding and extruding it, plus additives and packaging, then divide by kg of granules sold. Under the cut-off method the waste arrives with no burden from its first life, and you claim no credit for virgin resin avoided.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Plastic recyclers selling to brands with EPR recycled-content targets",
+  "sections": [
+    {
+      "h": "The boundary under the cut-off method",
+      "p": [
+        "ISO 14067 and the GHG Protocol Product Standard both describe the recycled content (cut-off) approach. Your granules start the day waste plastic is collected. Everything before that belongs to the first product's life.",
+        "The stages: collection and transport of bales, sorting, washing and drying, shredding or grinding, extrusion and pelletising, additives or masterbatch, bagging, and disposal of rejects."
+      ]
+    },
+    {
+      "h": "Data you already have",
+      "ul": [
+        "Electricity bills for the washing line, extruders, chillers and compressors: kWh x 0.710 kg CO2 per kWh.",
+        "Diesel for your own collection trucks and DG set: litres x 2.68 kg CO2 per litre. LPG or other fuel for hot wash water: quantity x its factor.",
+        "Bales bought from aggregators who deliver: their transport is a purchased service; ask for distance and truck type or estimate it.",
+        "Rejects, labels and sludge: tonnes and where they go, from manifests or co-processing receipts."
+      ]
+    },
+    {
+      "h": "Divide by output, not input",
+      "p": [
+        "Waste plastic loses weight through moisture, dirt, labels and rejects. If 1.25 kg of bales give 1 kg of granules, the energy for the whole 1.25 kg is carried by the 1 kg you sell. Use the month's granules despatched or produced, and match the period to the bills."
+      ]
+    },
+    {
+      "h": "What your buyer will ask",
+      "ul": [
+        "Method: cut-off, stated in words, so they do not apply an end-of-life credit on top.",
+        "Recycled share and source: post-consumer or pre-consumer, backed by your CPCB registration as a recycler and the certificates you issue under the Plastic Waste Management Rules.",
+        "Period, plant and grid factor used, so their auditor can follow the number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month at a PP and HDPE recycling unit",
+    "lines": [
+      "Granules produced: 2,00,000 kg",
+      "Electricity: 1,20,000 kWh x 0.710 = 85,200 kg CO2",
+      "Own collection trucks: 3,000 L diesel x 2.68 = 8,040 kg CO2",
+      "Hot wash: 2,000 kg LPG x 2.98 = 5,960 kg CO2",
+      "Total: 85,200 + 8,040 + 5,960 = 99,200 kg CO2",
+      "Per kg of granules: 99,200 / 2,00,000 = 0.496 kg CO2, before additives, bought-in transport and rejects"
+    ],
+    "note": "Quantities are illustrative. Add masterbatch, packaging and outside freight with their own factors when you have them."
+  },
+  "senseible": "Senseible reads electricity bills, diesel and LPG invoices and freight records, applying 0.710 kg CO2 per kWh and IPCC 2006 fuel factors, so the plant total behind your per kg figure traces to source documents. Its product carbon footprint calculator offers a gate-to-gate boundary, which matches the processing you do yourself.",
+  "links": [
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    },
+    {
+      "label": "Plastic EPR recycled content targets",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14044:2006 allocation for recycling",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011), recycled content method",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Plastic Waste Management Rules, 2016, as amended (EPR Guidelines 2022)",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewNote": "Recycled content rules for plastic packaging have been amended since 2022; check the current Schedule II before quoting them.",
+  "reviewed": "2026-10-18"
+}

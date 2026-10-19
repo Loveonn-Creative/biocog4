@@ -1,0 +1,86 @@
+{
+  "slug": "fuel-emission-factors-co2-only-or-co2e",
+  "q": "Which fuels need methane and nitrous oxide counted, and when is a CO2-only factor enough?",
+  "title": "Which fuels need CH4 and N2O counted?",
+  "short": "For coal, natural gas, LPG and fuel oil burned in factories, CO2 alone is usually close enough: methane and nitrous oxide add under 1% at IPCC defaults. For wood, husk and other biomass they are the whole Scope 1 figure, so a factory burning any biomass must count them.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs reading a carbon report that lists kg CO2 per litre",
+  "sections": [
+    {
+      "h": "The size of the gap by fuel",
+      "p": [
+        "IPCC 2006 Volume 2 Table 2.3 gives CO2, CH4 and N2O defaults per TJ for fuel burned in manufacturing industries. Converted with AR5 GWPs (CH4 28, N2O 265), CH4 and N2O add to the CO2:"
+      ],
+      "ul": [
+        "Natural gas: 1 kg CH4 and 0.1 kg N2O per TJ, 54.5 kg CO2e against 56,100 kg CO2, about 0.1%.",
+        "LPG: same CH4 and N2O, against 63,100 kg CO2, about 0.09%.",
+        "Residual fuel oil: 3 kg CH4 and 0.6 kg N2O, 243 kg CO2e against 77,400 kg CO2, about 0.3%.",
+        "Other bituminous coal: 10 kg CH4 and 1.5 kg N2O, 677.5 kg CO2e against 94,600 kg CO2, about 0.7%.",
+        "Wood and wood waste: 30 kg CH4 and 4 kg N2O, 1,900 kg CO2e per TJ, with the CO2 counted as biogenic."
+      ]
+    },
+    {
+      "h": "Why biomass is different",
+      "p": [
+        "The GHG Protocol asks you to report CO2 from burning biomass separately, outside the scopes. What stays in Scope 1 is the CH4 and N2O. A boiler on rice husk or briquettes with a CO2-only factor would show zero, which is wrong."
+      ]
+    },
+    {
+      "h": "When CO2 only is acceptable",
+      "ul": [
+        "Your fuels are fossil, used in stationary equipment, and you state that CH4 and N2O are excluded as immaterial.",
+        "You label the figure kg CO2, not kg CO2e.",
+        "Vehicles are a small share; for road transport the gap is larger, about 1.5% for diesel, as set out on the diesel page."
+      ]
+    },
+    {
+      "h": "What to write in the method note",
+      "p": [
+        "Name the gases covered, the factor table and the GWP set, for example IPCC 2006 Table 2.3 with AR5 GWPs. Use the same basis for every site in one total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a boiler house on coal and rice husk",
+    "lines": [
+      "Fuel energy in the year (illustrative): 10 TJ of other bituminous coal and 2 TJ of rice husk",
+      "Coal CO2: 10 x 94,600 = 9,46,000 kg, 946 t CO2",
+      "Coal CH4 and N2O: 10 x 677.5 = 6,775 kg, about 6.8 t CO2e",
+      "Husk CH4 and N2O (IPCC other primary solid biomass, 30 kg CH4 and 4 kg N2O per TJ): 2 x 1,900 = 3,800 kg, 3.8 t CO2e",
+      "Scope 1 with a CO2-only method: 946 t. With all three gases: 946 + 6.8 + 3.8 = 956.6 t, about 1.1% more",
+      "Husk biogenic CO2, reported separately: 2 x 100,000 = 2,00,000 kg, 200 t CO2"
+    ],
+    "note": "Energy inputs are illustrative. Factors are IPCC 2006 Vol. 2 Tables 1.4 and 2.3 defaults with AR5 GWPs (CH4 28, N2O 265)."
+  },
+  "senseible": "Senseible's fuel factors are kg CO2 per unit from IPCC 2006 defaults, such as LPG 2.98 kg CO2 per kg, so its fuel figures cover CO2. Name the gases covered in your report and add CH4 and N2O in your working where they matter, as for biomass.",
+  "links": [
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "AR5 vs AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1 Tables 1.2 and 1.4, Ch. 2 Table 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC Fifth Assessment Report, WG1 Ch. 8 global warming potentials",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}
