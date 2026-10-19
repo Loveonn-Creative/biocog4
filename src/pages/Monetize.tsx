@@ -300,19 +300,19 @@ const Monetize = () => {
     switch (status) {
       case 'applied':
         return (
-          <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
+          <span className="flex shrink-0 items-center gap-1 whitespace-nowrap px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
             <Clock className="h-3 w-3" /> Applied
           </span>
         );
       case 'processing':
         return (
-          <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-warning/10 text-warning text-xs font-medium">
+          <span className="flex shrink-0 items-center gap-1 whitespace-nowrap px-3 py-1 rounded-full bg-warning/10 text-warning text-xs font-medium">
             <Loader2 className="h-3 w-3 animate-spin" /> Processing
           </span>
         );
       case 'completed':
         return (
-          <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-medium">
+          <span className="flex shrink-0 items-center gap-1 whitespace-nowrap px-3 py-1 rounded-full bg-success/10 text-success text-xs font-medium">
             <CheckCircle className="h-3 w-3" /> Completed
           </span>
         );
@@ -415,7 +415,7 @@ const Monetize = () => {
                           <p.icon className={`h-8 w-8 ${p.color}`} />
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
+                          <div className="flex flex-wrap items-center gap-2 mb-1">
                             <h3 className="text-xl font-semibold">{p.title}</h3>
                             {!canAccessFeature('carbonMonetization') && <PremiumBadge tier="pro" />}
                             {getStatusBadge(p.status)}

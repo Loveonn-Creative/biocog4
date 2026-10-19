@@ -79,7 +79,7 @@ export function GuestImportPrompt() {
           </AlertDialogDescription>
         </AlertDialogHeader>
         {error && <p className="text-sm text-destructive" role="alert">{error}</p>}
-        <AlertDialogFooter>
+        <AlertDialogFooter className="gap-2 sm:gap-0">
           <Button variant="ghost" onClick={later} disabled={busy}>Later</Button>
           <Button variant="outline" onClick={decline} disabled={busy}>Not mine</Button>
           <Button onClick={accept} disabled={busy}>{busy ? "Adding..." : "Yes, add them"}</Button>

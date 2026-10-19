@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, ArrowRight, CheckCircle, Info, Loader2, Shield } from 'lucide-react';
+import { AlertTriangle, ArrowRight, CheckCircle, Circle, Info, Loader2, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { listGuestResults, rowsForPreview, type GuestResult } from '@/lib/guestResults';
-import { previewVerification } from '../../../supabase/functions/_shared/verifyGate';
+import { evidenceGaps, previewVerification, validateEmission } from '../../../supabase/functions/_shared/verifyGate';
 
 interface PreviewResult {
   outcome: 'would_verify' | 'needs_review' | 'would_reject' | 'needs_inputs';
@@ -37,6 +37,19 @@ export function GuestVerifyPreview() {
   useEffect(() => { void listGuestResults().then(setResults); }, []);
   const rows = results ? rowsForPreview(results) : [];
   const label = (id: string) => rows.find((r) => r.id === id)?.category ?? 'record';
+  // Per-record result of the same checks, shown once the check has run:
+  // green passes, amber needs a closer look, with the reason under it.
+  const rowStatus = (e: (typeof rows)[number]): { pass: boolean; reason: string | null } => {
+    const gaps = evidenceGaps(e, false);
+    if (gaps.length) return { pass: false, reason: `Needs ${gaps.join(', ')}` };
+    const v = validateEmission(e);
+    if (!v.valid) return { pass: false, reason: v.flags[0] ?? 'Needs a closer look' };
+    if (!e.documents?.invoice_number) return { pass: false, reason: 'No invoice or bill number found on the document' };
+    if (preview && preview.outcome !== 'would_verify') return { pass: false, reason: 'Record checks pass; see the notes below' };
+    return { pass: true, reason: null };
+  };
+  const riskNotes = preview?.outcome === 'would_verify' ? [] : (preview?.riskFactors ?? [])
+    .filter((f) => f !== 'No specific risk triggers identified').map((f) => f.replace(' — ', ': '));
 
   // The same evidence gate and scoring as a stored verification
   // (_shared/verifyGate.ts), run here on the records in this browser. Nothing
@@ -73,16 +86,25 @@ export function GuestVerifyPreview() {
           <>
             <p className="mb-4 text-sm text-muted-foreground">{rows.length} {rows.length === 1 ? 'record' : 'records'} from {results.length} {results.length === 1 ? 'invoice' : 'invoices'}, kept in this browser for 24 hours.</p>
             <div className="mb-6 max-h-48 space-y-2 overflow-y-auto">
-              {rows.map((e) => (
-                <div key={e.id} className="flex items-center justify-between rounded-lg bg-secondary/30 p-3">
-                  <div className="flex items-center gap-3">
-                    <AlertTriangle className="h-4 w-4 text-warning" />
-                    <div><span className="font-medium capitalize">{e.category}</span><span className="ml-2 text-xs text-muted-foreground">Scope {e.scope}</span></div>
+              {rows.map((e) => {
+                const status = preview ? rowStatus(e) : null;
+                return (
+                  <div key={e.id} className="flex items-center justify-between gap-3 rounded-lg bg-secondary/30 p-3">
+                    <div className="flex min-w-0 items-start gap-3">
+                      {!status ? <Circle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-label="Not checked yet" />
+                        : status.pass ? <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-label="Passes" />
+                        : <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-warning" aria-label="Needs a closer look" />}
+                      <div className="min-w-0">
+                        <span className="font-medium capitalize">{e.category}</span><span className="ml-2 text-xs text-muted-foreground">Scope {e.scope}</span>
+                        {status?.reason && <p className="mt-0.5 text-xs text-muted-foreground">{status.reason}</p>}
+                      </div>
+                    </div>
+                    <span className="shrink-0 font-mono font-medium">{e.co2_kg.toFixed(1)} kg</span>
                   </div>
-                  <span className="font-mono font-medium">{e.co2_kg.toFixed(1)} kg</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
+            {!preview && <p className="-mt-4 mb-4 text-xs text-muted-foreground">Not checked yet. Run the check to see which records pass.</p>}
             <Button className="w-full glow-primary" size="lg" onClick={run} disabled={running}>
               {running ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Checking the evidence...</> : <>Run the verification check<ArrowRight className="ml-2 h-4 w-4" /></>}
             </Button>
@@ -102,6 +124,11 @@ export function GuestVerifyPreview() {
                     {preview.missingInputs.slice(0, 8).map((m) => (
                       <li key={m.emissionId}><span className="capitalize text-foreground">{label(m.emissionId)}</span>: needs {m.fields.join(', ')}</li>
                     ))}
+                  </ul>
+                )}
+                {riskNotes.length > 0 && (
+                  <ul className="mt-3 list-disc space-y-1 pl-5 text-xs text-muted-foreground">
+                    {riskNotes.slice(0, 4).map((f) => <li key={f}>{f}</li>)}
                   </ul>
                 )}
                 {preview.flags.length > 0 && (
