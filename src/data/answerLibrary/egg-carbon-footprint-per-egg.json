@@ -1,0 +1,80 @@
+{
+  "slug": "egg-carbon-footprint-per-egg",
+  "q": "How do I calculate the carbon footprint of an egg at a layer poultry farm?",
+  "title": "Egg carbon footprint at a layer farm",
+  "short": "Feed is usually the largest part: kilograms of feed per dozen eggs times the feed's footprint. Add manure methane and nitrous oxide, estimated with IPCC methods, and the farm's electricity and diesel. Divide by eggs sold, or by kilograms of eggs if the buyer prefers mass.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Layer farms and egg traders in Namakkal, Andhra Pradesh, Telangana and Maharashtra",
+  "sections": [
+    {
+      "h": "The parts of an egg's footprint",
+      "ul": [
+        "Feed: maize, soybean meal, other grains and premix. Feed conversion ratio from farm records decides how much feed each egg carries.",
+        "Manure management: methane and nitrous oxide from droppings, depending on whether manure is dried, stored in heaps or sold fresh.",
+        "Farm energy: electricity for lighting, fans, water pumps and egg graders; diesel for generators and vehicles.",
+        "Pullets: the emissions of raising the hens before they lay, spread over their laying life.",
+        "Trays and transport to the buyer, if inside the boundary."
+      ]
+    },
+    {
+      "h": "Feed factor: where to get it",
+      "p": [
+        "Ask the feed mill for a footprint per tonne of feed. If you mix your own, multiply each ingredient's kilograms by a published factor and cite the dataset. Soybean meal can carry land use change emissions depending on origin, so record where it came from."
+      ]
+    },
+    {
+      "h": "Manure emissions",
+      "p": [
+        "The IPCC 2006 Guidelines, updated by the 2019 Refinement, give methods for methane and nitrous oxide from poultry manure by management system. Use bird numbers, the system you run and the default values, and state that these are Tier 1 estimates."
+      ]
+    },
+    {
+      "h": "Per egg or per kg",
+      "p": [
+        "Eggs are sold by count in India, but buyers comparing proteins use kilograms. Give both: divide by eggs sold, and by total egg mass using your average egg weight from grading records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: farm energy per egg (one month)",
+    "lines": [
+      "Flock: 50,000 layers; eggs collected: 1,200,000",
+      "Electricity: 9,000 kWh x 0.710 = 6,390 kg CO2",
+      "Diesel for the generator: 400 litres x 2.68 = 1,072 kg CO2",
+      "Farm energy: (6,390 + 1,072) / 1,200,000 = 0.0062 kg, about 6 g CO2 per egg",
+      "Feed and manure come on top and are normally much larger"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the farm's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and diesel invoices (IPCC 2006 defaults) into a fingerprinted record of farm energy. Feed bought goes to the supplier evidence trail; product figures are self-declared drafts.",
+  "links": [
+    {
+      "label": "Dairy plant emissions per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Agriculture Scope 1 in India",
+      "to": "/climate-intelligence/agriculture-scope-1-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 4, and 2019 Refinement",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

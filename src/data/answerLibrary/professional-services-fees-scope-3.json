@@ -1,0 +1,60 @@
+{
+  "slug": "professional-services-fees-scope-3",
+  "q": "Do fees for our CA, lawyers, consultants and auditors count in Scope 3?",
+  "title": "Professional fees in Scope 3",
+  "short": "Yes. Professional fees are purchased services and belong in Scope 3 Category 1. They are usually estimated spend-based, because the firm's invoice shows fees, not energy. Expenses the firm bills you for, such as travel, are part of the same purchased service. They rarely move the total, so many MSMEs estimate them once and justify the method.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME finance teams and founders",
+  "sections": [
+    {
+      "h": "What counts as professional services",
+      "ul": [
+        "Statutory and tax audit, accounting and GST filing services.",
+        "Legal, company secretarial and trademark fees.",
+        "Consultants, including energy auditors and the people preparing your carbon report.",
+        "Outsourced IT support, payroll and recruitment services."
+      ]
+    },
+    {
+      "h": "How to estimate",
+      "p": [
+        "Take the fees net of GST from the ledger, apply a factor for professional or business services from the spend-based dataset you use elsewhere, and adjust for currency and price year. If a firm can give you its own emissions per rupee of revenue, that is better supplier-specific data; use it and say so."
+      ]
+    },
+    {
+      "h": "Travel billed by the firm",
+      "p": [
+        "When a consultant bills flights or hotels to you as reimbursable expenses, those trips are part of the service you bought. Count them in Category 1 with the service, using the actual trip data if the invoice shows it. Do not also count them in your own Category 6, which is for your employees' travel."
+      ]
+    },
+    {
+      "h": "People working at your site",
+      "p": [
+        "A consultant working from your office uses your electricity and your canteen, which are already in your Scope 2 and Category 1. Do not add an extra allowance for them."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads service invoices; where only spend is available it gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Travel reimbursed by a client",
+      "to": "/answers/who-reports-travel-reimbursed-by-client"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

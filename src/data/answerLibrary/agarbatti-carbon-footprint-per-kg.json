@@ -1,0 +1,86 @@
+{
+  "slug": "agarbatti-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of agarbatti per kg?",
+  "title": "Agarbatti carbon footprint per kg",
+  "short": "Add the raw materials (bamboo sticks, charcoal and wood powder, jigat binder, perfume compounds and solvents), the energy for drying and perfuming, and the packaging, then divide by kilograms packed. Most of the carbon in the stick and masala is biogenic, but perfume solvents and fossil fuels for drying count in full.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Agarbatti makers and exporters in Bengaluru, Mysuru, Gaya and Ahmedabad",
+  "sections": [
+    {
+      "h": "What goes into the footprint",
+      "ul": [
+        "Bamboo sticks and wood-based masala: biogenic carbon, plus the energy used to make them.",
+        "Charcoal powder: biogenic if made from wood or shells, but charcoal kilns emit methane, which counts.",
+        "Perfume compounds and solvents such as diethyl phthalate: fossil-based ingredients from the supplier.",
+        "Drying: sun drying uses none; drying rooms with heaters use electricity or LPG.",
+        "Packaging: paper boxes, pouches and outer cartons."
+      ]
+    },
+    {
+      "h": "Raw battis bought in",
+      "p": [
+        "Many units buy raw, unperfumed battis and only dip, dry and pack. Then the raw batti is a bought-in input: ask the supplier for a figure per kg or estimate it from its materials, and keep your own plant energy separate."
+      ]
+    },
+    {
+      "h": "Burning in use",
+      "p": [
+        "When a customer burns the stick, the bamboo and wood carbon return as biogenic CO2, and the perfume's fossil carbon is released too. A cradle-to-gate footprint stops at your gate; if a buyer asks about use, report it separately and state what share of carbon is fossil."
+      ]
+    },
+    {
+      "h": "What buyers ask for",
+      "ol": [
+        "kg CO2e per kg of finished agarbatti, cradle to gate.",
+        "Packaging weight and material per pack.",
+        "Whether drying uses fossil fuel or sun and electricity."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg (one month)",
+    "lines": [
+      "Electricity for mixing, perfuming and packing: 2,000 kWh x 0.710 = 1,420 kg CO2",
+      "LPG for drying rooms: 5 cylinders x 19 kg = 95 kg; 95 x 2.98 = 283.1 kg CO2",
+      "Agarbatti packed: 20,000 kg",
+      "Plant energy: (1,420 + 283.1) / 20,000 = 0.085 kg CO2 per kg",
+      "Add raw materials, perfume compounds and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Biogenic carbon for MSMEs",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    },
+    {
+      "label": "Handicraft exporter footprint",
+      "to": "/answers/handicraft-exporter-carbon-footprint-artisan-supply-chain"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

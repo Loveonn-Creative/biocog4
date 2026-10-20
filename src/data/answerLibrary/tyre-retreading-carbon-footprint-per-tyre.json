@@ -1,0 +1,81 @@
+{
+  "slug": "tyre-retreading-carbon-footprint-per-tyre",
+  "q": "How do I calculate the carbon footprint of a retreaded tyre?",
+  "title": "Retreaded tyre carbon footprint",
+  "short": "Add the tread rubber and cushion compound used per tyre, from the supplier's factor, the plant's electricity and fuel for buffing and curing, and any transport you pay for. Divide by tyres retreaded. The reused casing is the reason a retread's footprint is lower than a new tyre's; count only the new materials and energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tyre retreaders serving truck, bus and fleet operators",
+  "sections": [
+    {
+      "h": "What is in a retread's footprint",
+      "ul": [
+        "Precured tread or camelback rubber, by kilograms per tyre.",
+        "Cushion gum, bonding solution and repair patches.",
+        "Buffing, building and curing: electricity, or steam from a boiler for some chambers.",
+        "Inspection, repairs and painting.",
+        "Collection and delivery of tyres if you pay for transport."
+      ]
+    },
+    {
+      "h": "The casing",
+      "p": [
+        "The casing came from a tyre already made and used. Under a cut-off approach its manufacturing emissions stay with the first life, and the retread carries only what you add. State that you used this approach. Buffing dust removed from the old tread is waste; record how it is disposed of."
+      ]
+    },
+    {
+      "h": "Comparing with a new tyre",
+      "p": [
+        "Fleets ask whether retreading saves carbon. Compare your figure per retread with the footprint of a new tyre of the same size from the tyre maker, and adjust for the expected life of each. Do not quote a percentage saving unless you have both figures."
+      ]
+    },
+    {
+      "h": "Records that make the number credible",
+      "ul": [
+        "Tread rubber issued per tyre size, from stores records.",
+        "Monthly electricity and fuel bills.",
+        "Tyres retreaded and rejected each month."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per truck tyre (one month)",
+    "lines": [
+      "Electricity for buffing and curing chambers: 9,000 kWh x 0.710 = 6,390 kg CO2",
+      "Tyres retreaded: 600",
+      "Plant energy: 6,390 / 600 = 10.65 kg CO2 per tyre",
+      "Tread rubber: kilograms per tyre x the compound supplier's factor gives the larger part"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "New tyre footprint per unit",
+      "to": "/answers/tyre-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Rubber moulded part footprint",
+      "to": "/answers/rubber-moulded-part-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

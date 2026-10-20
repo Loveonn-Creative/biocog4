@@ -1,0 +1,75 @@
+{
+  "slug": "employee-own-car-business-mileage-emissions",
+  "q": "Employees use their own cars for work trips and claim mileage. How do I count those emissions?",
+  "title": "Mileage claims in your own car",
+  "short": "Trips in an employee's own car for company work go in Scope 3 Category 6, business travel, because the company does not own or operate the car. Use the kilometres from the mileage claims times a per-km factor for that kind of car, or the litres if you reimburse fuel. Commuting to the usual workplace belongs in Category 7.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HR, finance and admin teams processing travel claims",
+  "sections": [
+    {
+      "h": "Which scope",
+      "ul": [
+        "Employee's own car, used for a client visit, site visit or bank trip, paid by mileage: Scope 3 Category 6.",
+        "Company-owned or leased car the company runs: Scope 1, from the fuel bought.",
+        "Daily travel between home and the usual workplace: Scope 3 Category 7, employee commuting, even if the company pays an allowance."
+      ]
+    },
+    {
+      "h": "Two ways to calculate",
+      "ol": [
+        "Distance-based: kilometres claimed times a per-km factor for the car's fuel and size. This is the usual method because claims already record kilometres.",
+        "Fuel-based: if you reimburse fuel bills, litres times the fuel factor, such as 2.31 kg CO2 per litre of petrol or 2.68 for diesel (IPCC 2006 defaults)."
+      ]
+    },
+    {
+      "h": "Getting a per-km factor you can defend",
+      "p": [
+        "Divide the fuel factor by a realistic mileage. A petrol car doing 15 km per litre emits about 2.31 / 15 = 0.154 kg CO2 per km. State the mileage you assumed. If claims record the car model, use the model's fuel economy; if not, use one assumption for small cars and one for SUVs and say so."
+      ]
+    },
+    {
+      "h": "What to collect from claims",
+      "ul": [
+        "Date, purpose and kilometres for each trip.",
+        "Fuel type: petrol, diesel, CNG or electric. For an electric car, use kWh per km times the grid factor.",
+        "Whether the trip was already counted elsewhere, such as a taxi on the same route."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year of mileage claims",
+    "lines": [
+      "Kilometres claimed for work trips: 18,000 km, all petrol cars",
+      "Assumed mileage: 15 km per litre, so 18,000 / 15 = 1,200 litres",
+      "Emissions: 1,200 x 2.31 = 2,772 kg CO2, about 2.8 tonnes in Category 6"
+    ],
+    "note": "The 15 km per litre is an assumption; replace it with the actual fuel economy where you know it."
+  },
+  "senseible": "Senseible reads fuel bills and invoices and applies IPCC 2006 factors per litre. Mileage claims are spreadsheets rather than invoices, so keep the kilometre log as the evidence for Category 6 and use Senseible for the fuel bills you reimburse.",
+  "links": [
+    {
+      "label": "Personal and business vehicle fuel",
+      "to": "/answers/personal-and-business-vehicle-fuel-split"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Petrol emission factor",
+      "to": "/emission-factors/petrol"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 6 business travel",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

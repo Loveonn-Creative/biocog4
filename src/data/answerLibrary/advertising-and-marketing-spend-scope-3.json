@@ -1,0 +1,62 @@
+{
+  "slug": "advertising-and-marketing-spend-scope-3",
+  "q": "How do I count advertising, trade fairs and marketing spend in our Scope 3?",
+  "title": "Marketing and trade fair spend in Scope 3",
+  "short": "Marketing spend is a purchased service, so it sits in Scope 3 Category 1. Use activity data where you have it, such as paper for catalogues and materials for stalls, and a spend-based estimate for agency fees and digital ads. Staff travel to trade fairs goes in Category 6, not with the marketing spend.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and consumer brands with marketing budgets",
+  "sections": [
+    {
+      "h": "Split the marketing ledger by what was bought",
+      "ul": [
+        "Printed material: catalogues, brochures, packaging inserts. Activity data is the paper and print weight from the printer's invoice.",
+        "Trade fair stalls: fabrication, carpet, lighting and freight. Ask the stall builder for materials and electricity; otherwise use spend.",
+        "Giveaways and merchandise: goods bought, so Category 1 by quantity and material where known.",
+        "Agency fees, digital advertising and design work: spend-based."
+      ]
+    },
+    {
+      "h": "Keep these out of the marketing line",
+      "ul": [
+        "Flights and hotels for your team at a fair: Category 6, business travel.",
+        "Samples you make and ship: their materials and energy are already in your production footprint; freight you pay for is Category 4.",
+        "GST on the invoices."
+      ]
+    },
+    {
+      "h": "When it matters",
+      "p": [
+        "For a manufacturer, marketing is usually a small share of Scope 3. For a consumer brand that outsources manufacturing, it can be one of the larger service categories. Estimate it once to see which case you are in, then decide how much effort it deserves."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Keep the invoices with a note of the method used for each line: activity-based with the quantity, or spend-based with the factor source and its price year. That lets a reviewer follow the number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads service and purchase invoices and uses printed quantities where they exist; where only spend is available it gives a spend-based estimate labelled with wider uncertainty.",
+  "links": [
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    },
+    {
+      "label": "Offset printing footprint per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 1 and 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

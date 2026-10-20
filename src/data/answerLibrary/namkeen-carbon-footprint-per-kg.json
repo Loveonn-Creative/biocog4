@@ -1,0 +1,90 @@
+{
+  "slug": "namkeen-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of namkeen or fried snacks per kg?",
+  "title": "Namkeen carbon footprint per kg",
+  "short": "Add the ingredients (besan, potatoes, dal, nuts and frying oil absorbed) from supplier or database factors, the fuel that heats the fryer, the plant's electricity and the packaging. Divide by kilograms packed. If the thermic fluid heater burns wood or briquettes, report that CO2 as biogenic, separately from Scope 1.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Namkeen and snack makers in Indore, Bikaner, Nagpur, Delhi and Gujarat",
+  "sections": [
+    {
+      "h": "Where the emissions come from",
+      "ul": [
+        "Frying: thermic fluid heaters or direct-fired fryers on diesel, PNG, LPG, briquettes or wood.",
+        "Frying oil: the oil absorbed by the product is an ingredient; oil discarded is waste.",
+        "Other ingredients: besan, potatoes, dal, peanuts and spices.",
+        "Electricity: mixers, extruders, seasoning drums, conveyors and packing machines.",
+        "Packaging: metallised laminates, nitrogen for flushing, cartons."
+      ]
+    },
+    {
+      "h": "Biomass heaters change the reporting",
+      "p": [
+        "Many snack units fire heaters with wood, briquettes or husk. The CO2 from burning biomass is biogenic: report it outside the scopes as a separate figure. The small methane and nitrous oxide from combustion stay in Scope 1. Keep the purchase records for the biomass, because a buyer may ask whether it came from waste residues."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "Divide by product packed and sold, after rejects. Oil absorption varies by product, so if you report several products, use the oil consumption per product from your production records rather than an average."
+      ]
+    },
+    {
+      "h": "Common reductions",
+      "ul": [
+        "Insulating fryers and thermic fluid lines, and fixing burner tuning.",
+        "Oil filtration that extends oil life and reduces waste.",
+        "Switching diesel heaters to PNG, or to biomass briquettes with documented sourcing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg of namkeen (one month)",
+    "lines": [
+      "Diesel for the thermic fluid heater: 3,000 litres x 2.68 = 8,040 kg CO2",
+      "Electricity: 12,000 kWh x 0.710 = 8,520 kg CO2",
+      "Product packed: 60,000 kg",
+      "Plant energy: (8,040 + 8,520) / 60,000 = 0.276 kg CO2 per kg",
+      "Add besan, oil absorbed, other ingredients and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

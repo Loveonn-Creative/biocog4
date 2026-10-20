@@ -1,0 +1,82 @@
+{
+  "slug": "are-steel-pipes-and-tubes-covered-by-cbam",
+  "q": "Are steel pipes, tubes and pipe fittings covered by EU CBAM?",
+  "title": "Are steel pipes covered by CBAM?",
+  "short": "Yes. Cast iron pipes (7303), pipes made without a weld (7304), large welded pipes (7305), other welded and hollow profiles (7306) and pipe fittings such as flanges, elbows and couplings (7307) are all in Annex I of the CBAM Regulation. Valves and hoses are classified elsewhere and are not covered today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel pipe, tube and fitting makers exporting to the EU",
+  "sections": [
+    {
+      "h": "Covered pipe headings",
+      "ul": [
+        "7303: tubes, pipes and hollow profiles of cast iron, including ductile iron pipe.",
+        "7304: tubes and pipes made without a weld, of iron or steel, including stainless.",
+        "7305: welded pipes with an external diameter over 406.4 mm.",
+        "7306: other tubes, pipes and hollow profiles, such as ERW pipe and square or rectangular hollow sections.",
+        "7307: tube or pipe fittings of iron or steel, cast or forged."
+      ]
+    },
+    {
+      "h": "Not covered today",
+      "ul": [
+        "Valves, taps and cocks under 8481.",
+        "Flexible tubing and hoses of plastics or rubber.",
+        "Pipes of copper, which sit in chapter 74, outside Annex I."
+      ]
+    },
+    {
+      "h": "Precursors decide the figure",
+      "p": [
+        "ERW and welded pipe makers buy hot-rolled coil, and makers of pipe without a weld buy rounds or billets. These are precursors, so their embedded emissions are added to your own direct emissions from reheating, annealing and galvanising. Get the coil or billet supplier's embedded emissions per tonne for the same period. Electricity is not counted for steel goods in the definitive period."
+      ]
+    },
+    {
+      "h": "Galvanising and coating",
+      "p": [
+        "Zinc is not a CBAM precursor, but the fuel your galvanising bath and drying ovens burn is part of your direct emissions. Meter or estimate it per tonne of pipe."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM emissions for pipes from purchased coil",
+      "to": "/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+    },
+    {
+      "label": "Ductile iron pipe footprint per tonne",
+      "to": "/answers/ductile-iron-pipe-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification (50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "are-iron-ore-pellets-covered-by-cbam",
+  "q": "Are iron ore pellets and iron ore fines covered by EU CBAM?",
+  "title": "Are iron ore pellets covered by CBAM?",
+  "short": "Pellets are covered, fines and lump ore are not. Agglomerated iron ores and concentrates, which include pellets and sinter, fall under CN 2601 12 00, which is listed in Annex I of the CBAM Regulation. Non-agglomerated iron ore, such as fines and lumps under 2601 11, is not covered.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Pellet plants and iron ore exporters in Odisha, Chhattisgarh, Karnataka and Goa",
+  "sections": [
+    {
+      "h": "Where the line falls",
+      "ul": [
+        "2601 12 00, agglomerated iron ores and concentrates, other than roasted iron pyrites: covered. This includes pellets and sinter.",
+        "2601 11, non-agglomerated iron ores and concentrates, such as fines, lumps and beneficiated concentrate: not covered.",
+        "2601 20, roasted iron pyrites: not covered."
+      ]
+    },
+    {
+      "h": "Which emissions count for pellets",
+      "p": [
+        "CBAM counts the direct emissions of making the pellets: fuel burnt in the induration furnace or travelling grate, such as coal, coke breeze, furnace oil or gas, and process CO2 from carbonate additives like limestone and dolomite. Electricity for grinding and balling is not counted for iron and steel goods in the definitive period."
+      ]
+    },
+    {
+      "h": "Pellets as a precursor",
+      "p": [
+        "Pellets are often a precursor for DRI and blast furnace iron. If you also make sponge iron or pig iron from your own pellets and export those, the pellets' embedded emissions are carried into the downstream product's figure, so the same data serves twice."
+      ]
+    },
+    {
+      "h": "What to keep ready",
+      "ol": [
+        "Calendar-year fuel and additive consumption for the pellet plant.",
+        "Pellet production and moisture basis, so the importer can work per dry tonne if asked.",
+        "Carbon content of coal, coke breeze or other fuels from supplier analyses."
+      ]
+    },
+    {
+      "h": "Small importers",
+      "p": [
+        "Under the 2025 simplification, an EU importer bringing in less than 50 tonnes a year of covered goods is exempt. Pellet cargoes are far larger, so in practice every pellet importer is in scope."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Coal-based sponge iron CO2 per tonne",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Process CO2 from limestone",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification (50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

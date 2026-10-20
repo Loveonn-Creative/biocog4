@@ -1,0 +1,75 @@
+{
+  "slug": "is-silico-manganese-covered-by-cbam",
+  "q": "Are ferro alloys such as silico-manganese and ferro-silicon covered by EU CBAM?",
+  "title": "Is silico-manganese covered by CBAM?",
+  "short": "Only some ferro alloys are. Annex I of the CBAM Regulation lists ferro-manganese (7202 1), ferro-chromium (7202 4) and ferro-nickel (7202 6). Silico-manganese (7202 30), ferro-silicon (7202 2) and other ferro alloys under 7202 are not in Annex I today, so EU imports of them carry no CBAM obligation.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferro alloy producers in Odisha, Chhattisgarh, Meghalaya, Andhra Pradesh and Karnataka",
+  "sections": [
+    {
+      "h": "Covered and not covered",
+      "ul": [
+        "Covered: ferro-manganese, high and low carbon (7202 11 and 7202 19).",
+        "Covered: ferro-chromium, including high carbon charge chrome (7202 41 and 7202 49).",
+        "Covered: ferro-nickel (7202 60).",
+        "Not covered today: silico-manganese (7202 30), ferro-silicon (7202 21 and 7202 29), ferro-silico-chromium, ferro-molybdenum, ferro-vanadium, ferro-titanium and other 7202 subheadings."
+      ]
+    },
+    {
+      "h": "Why your EU customer may still ask",
+      "p": [
+        "Your silico-manganese goes into steel made in the EU, and EU steelmakers report under the EU Emissions Trading System, not CBAM, for their own plants. Some still ask suppliers for a footprint for their product carbon footprints or customer requests. That is a commercial request, not a CBAM duty, and you can answer it with an ordinary product footprint."
+      ]
+    },
+    {
+      "h": "If you make a covered alloy",
+      "p": [
+        "For ferro-manganese, ferro-chromium and ferro-nickel, CBAM counts direct emissions only: carbon from reductants such as coke and coal, electrode paste and fuels. The large electricity use of submerged arc furnaces is not counted for iron and steel goods in the definitive period, though it matters for any product footprint you give."
+      ]
+    },
+    {
+      "h": "One plant, mixed products",
+      "p": [
+        "Plants that switch furnaces between silico-manganese and ferro-manganese need production records per campaign, so the covered product's emissions can be shown separately. Record reductant, paste and output for each campaign."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "Annex I can be amended, and the Commission has reviewed the scope of CBAM goods. Check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne for CBAM",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Renewable power for a ferrochrome smelter",
+      "to": "/climate-intelligence/renewable-power-ferrochrome-smelter-south-africa"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I scope for ferro alloys may be reviewed; recheck before each contract season."
+}

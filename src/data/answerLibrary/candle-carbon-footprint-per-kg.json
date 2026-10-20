@@ -1,0 +1,83 @@
+{
+  "slug": "candle-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of candles per kg, including when they burn?",
+  "title": "Candle carbon footprint per kg",
+  "short": "Add the wax from the supplier's factor, wicks, fragrance and containers, your melting and moulding energy, and the packaging, then divide by kilograms of candles. Burning is separate: paraffin wax is about 85% carbon, so each kilogram burnt releases about 3.1 kg of fossil CO2. Soy or palm wax releases biogenic CO2 instead.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Candle makers and home decor exporters",
+  "sections": [
+    {
+      "h": "Cradle to gate",
+      "ul": [
+        "Wax: paraffin from petroleum refining, or soy, palm or beeswax.",
+        "Wicks, fragrance oils and dyes.",
+        "Containers: glass jars, tins or terracotta, often heavier than the wax.",
+        "Melting and pouring: electricity or LPG.",
+        "Packaging: boxes, wrap and shippers."
+      ]
+    },
+    {
+      "h": "Burning in use",
+      "p": [
+        "Paraffin is a hydrocarbon of roughly 85% carbon by mass. Fully burnt, each kilogram gives 0.85 x 44 / 12 = about 3.1 kg of CO2. This is a stoichiometric estimate, not a measured value. For a candle maker it sits in Scope 3 Category 11, use of sold products, if you report use-phase emissions; buyers of home fragrance products sometimes ask for it."
+      ]
+    },
+    {
+      "h": "Plant wax and claims",
+      "p": [
+        "Soy and palm wax carbon is biogenic, so burning it does not add fossil CO2, but the crops carry farm and possibly land use emissions upstream. Calling soy candles carbon neutral is not supported by the chemistry alone; show the figures."
+      ]
+    },
+    {
+      "h": "Containers change the picture",
+      "p": [
+        "A heavy glass jar can carry more emissions than the wax in it. Weigh each container style and include it, and say whether the jar is designed for reuse."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy and use for 10 t of paraffin candles",
+    "lines": [
+      "LPG for melting: 8 cylinders x 19 kg = 152 kg; 152 x 2.98 = 453 kg CO2",
+      "Electricity: 1,500 kWh x 0.710 = 1,065 kg CO2",
+      "Plant energy: (453 + 1,065) / 10,000 = 0.152 kg CO2 per kg of candles",
+      "Use phase if fully burnt: 10,000 x 0.85 x 44 / 12 = 31,167 kg, about 31 t of fossil CO2, reported separately"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Glass container furnace emissions",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Indirect use-phase emissions",
+      "to": "/answers/indirect-use-phase-emissions-optional"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

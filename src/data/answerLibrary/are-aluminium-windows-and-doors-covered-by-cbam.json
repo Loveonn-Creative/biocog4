@@ -1,0 +1,76 @@
+{
+  "slug": "are-aluminium-windows-and-doors-covered-by-cbam",
+  "q": "Are aluminium windows, doors, facades and other aluminium structures covered by EU CBAM?",
+  "title": "Are aluminium windows covered by CBAM?",
+  "short": "Yes. Aluminium structures and parts of structures, including doors, windows and their frames, thresholds, balustrades, pillars and curtain wall frames, fall under heading 7610, which is in Annex I of the CBAM Regulation. Aluminium profiles prepared for use in structures are covered too.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium fenestration, facade and extrusion exporters",
+  "sections": [
+    {
+      "h": "What heading 7610 includes",
+      "ul": [
+        "Doors, windows and their frames and thresholds for doors.",
+        "Balustrades, pillars, columns and curtain wall and facade frames.",
+        "Plates, rods, profiles and tubes prepared for use in structures."
+      ]
+    },
+    {
+      "h": "Parts of the unit that are not aluminium",
+      "p": [
+        "A window often ships with glass, gaskets, hinges and locks. The importer declares the window under the heading that classifies the whole article. For the embedded emissions figure, CBAM looks at the aluminium production route and your processes, so keep the aluminium mass per unit and the supplier of each profile on record."
+      ]
+    },
+    {
+      "h": "Related headings",
+      "ul": [
+        "Plain aluminium extrusions and profiles not prepared for structures: 7604, also covered.",
+        "Steel doors and windows: 7308, covered as iron and steel goods.",
+        "uPVC and timber windows: outside CBAM."
+      ]
+    },
+    {
+      "h": "What to send the importer",
+      "p": [
+        "Embedded emissions per tonne of finished product: the embedded emissions of the billets or profiles you bought, from your supplier, plus direct emissions from the fuel in your own billet heating furnaces, ageing ovens and powder coating ovens if you extrude or coat in-house. Default values apply where you cannot provide actual data, and they carry mark-ups."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Aluminium extrusion footprint per kg",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Are steel structures covered by CBAM",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

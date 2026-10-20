@@ -1,0 +1,90 @@
+{
+  "slug": "biscuit-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of biscuits per kg?",
+  "title": "Biscuit carbon footprint per kg",
+  "short": "Add the ingredients (flour, sugar, fat and milk solids) from supplier or database factors, your plant's fuel and electricity, mainly the tunnel oven, and the packaging laminate and cartons. Divide by kilograms of biscuits packed, after breakage. Report packaging separately as well, because buyers often ask about it on its own.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Biscuit and cookie makers supplying brands, retailers and export markets",
+  "sections": [
+    {
+      "h": "The parts of the footprint",
+      "ul": [
+        "Ingredients: wheat flour, sugar, vegetable fat or palm oil, milk solids, cocoa and others, each with its own factor.",
+        "Baking: tunnel ovens on PNG, LPG, diesel or electricity.",
+        "Mixing, sheeting, cooling, conveying and packing machines: electricity.",
+        "Packaging: printed laminates, trays, cartons and shrink film.",
+        "Breakage and rejects that are sold as feed or scrapped."
+      ]
+    },
+    {
+      "h": "Fat and sugar need attention",
+      "p": [
+        "Palm oil and other fats can carry large land use emissions depending on origin, and sugar's footprint depends on how the cane was grown and how the mill made its power. Ask suppliers for figures, and if you use database values, cite the dataset and the country it represents."
+      ]
+    },
+    {
+      "h": "Splitting a multi-product plant",
+      "p": [
+        "If one oven bakes several products, split oven fuel by oven hours or tonnes baked and packaging by the actual pack bill of materials. Keep a single method for all products so that a cream biscuit and a plain biscuit can be compared fairly."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "ol": [
+        "kg CO2e per kg of product, cradle to factory gate, with the boundary stated.",
+        "The split: ingredients, plant energy and packaging.",
+        "The year of data and the factor sources."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg of biscuits (one month)",
+    "lines": [
+      "Tunnel oven on PNG: 6,000 scm x 2.05 = 12,300 kg CO2",
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Biscuits packed: 200 t, so 200,000 kg",
+      "Plant energy: (12,300 + 28,400) / 200,000 = 0.204 kg CO2 per kg",
+      "Add ingredients and packaging per kg for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Glass jar vs pouch for food exports",
+      "to": "/answers/glass-jar-vs-pouch-food-export-carbon"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "cosmetics-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a cosmetic product such as a cream or lotion per unit?",
+  "title": "Cosmetic product footprint per unit",
+  "short": "Add the formula's ingredients by weight per unit, the primary packaging (jar or tube, cap, label), the carton, and your plant's energy per unit for heating, mixing and filling. Divide by units filled. For small units, packaging can be as large as or larger than the formula, so weigh each component.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cosmetic, personal care and Ayurvedic product makers and contract manufacturers",
+  "sections": [
+    {
+      "h": "Bill of materials per unit",
+      "ul": [
+        "Formula: water, oils, emollients, emulsifiers, actives, preservatives and fragrance, by grams per unit.",
+        "Primary pack: glass jar, plastic tube or bottle, pump or cap.",
+        "Secondary pack: carton, leaflet and shrink film.",
+        "Shipper cartons, shared across units."
+      ]
+    },
+    {
+      "h": "Plant energy per unit",
+      "p": [
+        "Creams and lotions are heated and emulsified, often with steam or electric jackets, then cooled and filled. Divide the plant's electricity and boiler fuel by units filled in the same month, or split by batch size if you make many products."
+      ]
+    },
+    {
+      "h": "Ingredient factors",
+      "p": [
+        "Plant oils and natural extracts carry farming emissions, and some carry land use change. Synthetic ingredients carry petrochemical emissions. Ask suppliers for figures, and cite the dataset for the rest. Water has a very small footprint compared with other ingredients."
+      ]
+    },
+    {
+      "h": "Claims to avoid",
+      "p": [
+        "Do not call a product carbon neutral or low carbon without a full footprint and, for neutrality, a recognised standard. EU rules on environmental claims tighten from September 2026; keep claims specific and backed by the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per 50 g jar (one month)",
+    "lines": [
+      "Electricity: 8,000 kWh x 0.710 = 5,680 kg CO2",
+      "LPG for the boiler: 10 cylinders x 19 kg = 190 kg; 190 x 2.98 = 566.2 kg CO2",
+      "Units filled: 200,000",
+      "Plant energy: (5,680 + 566.2) / 200,000 = 0.031 kg, about 31 g CO2 per jar",
+      "Add the formula, jar, cap and carton per unit for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Glass jar vs pouch",
+      "to": "/answers/glass-jar-vs-pouch-food-export-carbon"
+    },
+    {
+      "label": "Can I call my product carbon neutral",
+      "to": "/answers/can-i-call-my-export-product-carbon-neutral"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "EU rules on generic environmental claims apply from 27 September 2026; recheck claim wording for EU markets."
+}

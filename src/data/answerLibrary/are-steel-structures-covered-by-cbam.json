@@ -1,0 +1,82 @@
+{
+  "slug": "are-steel-structures-covered-by-cbam",
+  "q": "Are fabricated steel structures, towers and steel doors and windows covered by EU CBAM?",
+  "title": "Are steel structures covered by CBAM?",
+  "short": "Yes. Structures and parts of structures of iron or steel, such as bridges, towers, lattice masts, roof frames, columns, and steel doors, windows and frames, fall under heading 7308, which is in Annex I of the CBAM Regulation. Prefabricated buildings classified under 9406 are not covered today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Structural fabricators, tower makers and pre-engineered building suppliers exporting to the EU",
+  "sections": [
+    {
+      "h": "What heading 7308 includes",
+      "ul": [
+        "Bridges and bridge sections, lock gates, towers and lattice masts.",
+        "Roofs, roof frames, columns, pillars, scaffolding and shuttering props.",
+        "Doors, windows and their frames, and thresholds, of steel.",
+        "Plates, rods, angles, sections and tubes prepared for use in structures."
+      ]
+    },
+    {
+      "h": "Where the line falls",
+      "ul": [
+        "Prefabricated buildings shipped as a complete building, under 9406: not in Annex I today.",
+        "Plain sections, plates and beams not yet worked into structural parts: chapter 72, also covered.",
+        "Machinery frames classified with the machine under chapter 84: not covered.",
+        "Aluminium structures, doors and windows: heading 7610, covered as aluminium goods."
+      ]
+    },
+    {
+      "h": "Why the precursor steel dominates",
+      "p": [
+        "A fabricator cuts, drills, welds and paints steel bought from a mill. CBAM counts direct emissions of your own processes plus the embedded emissions of the steel you used as precursors. Cutting gases and paint shop ovens add a little; the mill's emissions per tonne decide most of your number. Ask each mill for its embedded emissions data now, by grade and route."
+      ]
+    },
+    {
+      "h": "What to send the importer",
+      "p": [
+        "Embedded emissions per tonne of fabricated steel for the reporting period, the tonnes of each steel input and its supplier's figure, and your own fuel use. Without supplier data the importer falls back on default values, which include mark-ups from 2026."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Fabricated structural steel per tonne",
+      "to": "/answers/fabricated-structural-steel-carbon-per-tonne"
+    },
+    {
+      "label": "Where to find CBAM default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification (50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

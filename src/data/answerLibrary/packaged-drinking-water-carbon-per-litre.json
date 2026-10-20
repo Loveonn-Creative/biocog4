@@ -1,0 +1,86 @@
+{
+  "slug": "packaged-drinking-water-carbon-per-litre",
+  "q": "How do I calculate the carbon footprint of packaged drinking water per litre?",
+  "title": "Packaged drinking water footprint per litre",
+  "short": "Add the bottle (PET preform, cap, label and shrink film), the plant's electricity for treatment, blowing and filling, and delivery, then divide by litres sold. For small bottles the packaging is usually the largest part. Returnable 20 litre jars spread their container emissions over many trips, so count trips per jar.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Packaged drinking water plants and brands",
+  "sections": [
+    {
+      "h": "Where the emissions come from",
+      "ul": [
+        "Bottle: PET preform, HDPE or PP cap, label and shrink wrap, by weight.",
+        "Blowing: stretch blow moulding and high-pressure compressors, usually the largest electricity use in a bottling plant.",
+        "Treatment: RO, UV and ozonation, filtration and pumping.",
+        "Generator diesel during power cuts.",
+        "Distribution: trucks and three-wheelers to dealers and offices."
+      ]
+    },
+    {
+      "h": "Per litre for each pack size",
+      "p": [
+        "A 500 ml bottle carries more packaging per litre than a 1 litre bottle, because bottle weight does not halve with volume. Report per litre for each pack size separately rather than one average. For 20 litre jars, divide the jar's own footprint by the average number of refills before it is scrapped, from your jar register."
+      ]
+    },
+    {
+      "h": "Treatment reject water",
+      "p": [
+        "RO plants reject part of the raw water. That does not add emissions directly, but pumping the reject and any treatment of it uses electricity. Track kWh per thousand litres produced as an efficiency indicator."
+      ]
+    },
+    {
+      "h": "Quick wins",
+      "ul": [
+        "Lighter preforms where the bottle still passes your quality tests.",
+        "Fixing compressed air leaks in the blowing section.",
+        "Better route planning for jar delivery."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per litre (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Generator diesel: 1,000 litres x 2.68 = 2,680 kg CO2",
+      "Water sold: 1,200,000 litres",
+      "Plant energy: (21,300 + 2,680) / 1,200,000 = 0.020 kg, about 20 g CO2 per litre",
+      "Add bottle, cap, label and delivery per litre for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "PET preform and bottle footprint",
+      "to": "/answers/pet-preform-bottle-carbon-footprint"
+    },
+    {
+      "label": "Packaging footprint for an export shipment",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

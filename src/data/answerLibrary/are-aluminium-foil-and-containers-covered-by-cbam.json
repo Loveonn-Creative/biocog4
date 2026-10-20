@@ -1,0 +1,77 @@
+{
+  "slug": "are-aluminium-foil-and-containers-covered-by-cbam",
+  "q": "Is aluminium foil, and are aluminium containers and cans, covered by EU CBAM?",
+  "title": "Is aluminium foil covered by CBAM?",
+  "short": "Yes. Aluminium foil up to 0.2 mm thick (7607) and aluminium casks, drums, cans and boxes up to 300 litres (7612) are listed in Annex I of the CBAM Regulation. Aluminium table, kitchen and household articles (7615) are not covered today, so classification of foil trays and food containers matters.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium foil rollers, converters and packaging exporters",
+  "sections": [
+    {
+      "h": "Covered aluminium packaging headings",
+      "ul": [
+        "7607: aluminium foil, plain or backed with paper, paperboard or plastic, up to 0.2 mm thick.",
+        "7612: casks, drums, cans, boxes and similar containers of aluminium, including collapsible tubes, up to 300 litres.",
+        "7613: aluminium containers for compressed or liquefied gas.",
+        "7606: aluminium plates, sheets and strip over 0.2 mm, which includes can stock."
+      ]
+    },
+    {
+      "h": "Not covered today",
+      "ul": [
+        "7615: table, kitchen and household articles of aluminium, and sanitary ware.",
+        "Laminates where plastic or paper gives the essential character and the goods are classified outside chapter 76.",
+        "Aluminium scrap under 7602."
+      ]
+    },
+    {
+      "h": "Foil containers and trays",
+      "p": [
+        "Takeaway trays and food containers can be classified under 7612 as containers or under 7615 as household articles, depending on the product and its use. The two give opposite CBAM answers. Agree the CN code with the importer before shipping and keep their written confirmation."
+      ]
+    },
+    {
+      "h": "What drives the number",
+      "p": [
+        "For aluminium goods in the definitive period, CBAM counts direct emissions only: those embedded in the primary or secondary aluminium you bought, including CO2 from anodes and PFCs from smelting, plus your own rolling and annealing fuel. Electricity is not counted for aluminium goods. Remelted secondary aluminium usually carries far less than primary metal, so the metal source decides most of your figure."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    },
+    {
+      "label": "Why Indian aluminium intensity is high",
+      "to": "/answers/why-indian-aluminium-carbon-intensity-is-high"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

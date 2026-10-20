@@ -1,0 +1,61 @@
+{
+  "slug": "bank-charges-and-insurance-scope-3",
+  "q": "Do bank charges, loan processing fees and insurance premiums count in our Scope 3?",
+  "title": "Bank fees and insurance in Scope 3",
+  "short": "Yes, in principle. Bank fees, loan processing charges and insurance premiums are payments for services, so they belong in Scope 3 Category 1. For most MSMEs they are small and can be estimated spend-based. Interest on loans is a financing cost, not a service, and most companies leave it out; say which way you went.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Finance teams of MSMEs building a first Scope 3",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Bank charges, processing fees, guarantee commission and letter of credit charges.",
+        "Insurance premiums for property, stock, transit, vehicles and staff health cover.",
+        "Payment gateway and card acquiring fees."
+      ]
+    },
+    {
+      "h": "What stays out",
+      "ul": [
+        "Interest on loans and overdrafts: a cost of money, not a purchased service. Many companies exclude it; if you include it, state that clearly.",
+        "GST charged on the fees: a tax, not part of the service value.",
+        "Your bank's financed emissions. When a bank lends to you, it reports a share of your emissions in its own Category 15. That does not add anything to your inventory."
+      ]
+    },
+    {
+      "h": "How to estimate",
+      "p": [
+        "There are no activity units for a bank fee, so spend-based is the method: fees net of GST times a financial services factor from the dataset you use for other spend, adjusted for currency and the dataset's price year. Label the result spend-based."
+      ]
+    },
+    {
+      "h": "Is it worth including",
+      "p": [
+        "Run a quick estimate. If it is a small share of Scope 3, you can exclude it with a one-line justification under the Scope 3 Standard's relevance test. If a buyer asks for a complete Category 1, keep it in."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; where only spend is available it gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "map-expense-ledgers-to-scope-3-categories",
+  "q": "How do I map my accounting ledgers or trial balance to Scope 3 categories?",
+  "title": "Map expense ledgers to Scope 3",
+  "short": "Map each profit and loss ledger to one category. Materials, consumables and services go to Category 1, fixed asset additions to Category 2, freight you pay to Category 4, waste charges to Category 5 and travel to Category 6. Power and fuel go to Scopes 1 and 2 from units. Leave out salaries, taxes, depreciation and interest.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accountants using Tally, Zoho or SAP exports for a first Scope 3",
+  "sections": [
+    {
+      "h": "A mapping that fits most Indian charts of accounts",
+      "ul": [
+        "Purchases of raw material, stores and spares, consumables, packing material: Category 1.",
+        "Job work charges and outsourced processing: Category 1.",
+        "Repairs and maintenance, housekeeping, security, IT and telephone, professional fees, insurance, bank charges, canteen: Category 1.",
+        "Fixed asset additions in the year, from the asset register: Category 2.",
+        "Power and fuel: Scope 1 and 2 from kWh and litres on the bills; the upstream part goes to Category 3.",
+        "Freight inward, and freight outward that you pay: Category 4.",
+        "Waste disposal and scrap handling charges: Category 5.",
+        "Travelling, conveyance, hotel: Category 6."
+      ]
+    },
+    {
+      "h": "Ledgers to exclude",
+      "ul": [
+        "Salaries, wages and contributions: not purchased goods or services.",
+        "Depreciation: the assets were counted in Category 2 in the year bought; counting depreciation as well double counts them.",
+        "Interest, taxes, duties and GST.",
+        "Rent: account for the leased space through its energy, in Scope 2 if you operate it or Category 8 if you do not."
+      ]
+    },
+    {
+      "h": "Use quantities where the ledger hides them",
+      "p": [
+        "Spend-based figures are a starting point. For the three or four largest Category 1 ledgers, go to the purchase invoices and use kilograms, tonnes or litres with a material factor. That usually covers most of Scope 3 and makes the estimate far more reliable."
+      ]
+    },
+    {
+      "h": "Check the mapping once a year",
+      "p": [
+        "New ledgers appear and accountants reclassify items. Review the mapping when you close the books, keep it in a sheet next to the inventory, and apply the same mapping to the base year if you change it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices line by line, classifies them by HSN code first, and uses printed quantities where they exist. Where only spend is available it gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Can GSTR-2B be used for carbon accounting",
+      "to": "/answers/can-gstr-2b-be-used-for-carbon-accounting"
+    },
+    {
+      "label": "IT hardware in Category 2",
+      "to": "/answers/it-hardware-laptops-category-2-emissions"
+    },
+    {
+      "label": "Incoterms and freight categories",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

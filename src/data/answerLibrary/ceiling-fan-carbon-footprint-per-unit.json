@@ -1,0 +1,81 @@
+{
+  "slug": "ceiling-fan-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a ceiling fan, including its use?",
+  "title": "Ceiling fan carbon footprint",
+  "short": "Add the materials (copper or aluminium winding, electrical steel, aluminium or steel body and blades, capacitor, packaging) and your assembly energy per fan for the cradle-to-gate figure. Use is usually far larger: rated watts x hours a year x years of life x the grid factor. BLDC fans cut use-phase emissions sharply.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fan makers and brands selling in India and abroad",
+  "sections": [
+    {
+      "h": "Cradle to gate",
+      "ul": [
+        "Motor: copper or aluminium winding wire and electrical steel stampings.",
+        "Body and blades: die-cast aluminium, steel sheet or plastic.",
+        "Capacitor, or electronics for BLDC fans.",
+        "Painting or powder coating ovens.",
+        "Assembly and testing: electricity.",
+        "Carton and thermocol or pulp inserts."
+      ]
+    },
+    {
+      "h": "Use phase dominates",
+      "p": [
+        "A fan runs for years. Use-phase emissions = rated watts x hours per year x years of life / 1,000 x the grid factor. State your hours and life assumptions. BEE star labelling for ceiling fans, mandatory since January 2023, gives the rated input power and service value you need."
+      ]
+    },
+    {
+      "h": "Which category",
+      "p": [
+        "For the fan maker, energy used by customers is Scope 3 Category 11, use of sold products. It is reported for products that directly consume energy, like fans. It is not part of your own Scope 2."
+      ]
+    },
+    {
+      "h": "Comparing models",
+      "p": [
+        "Comparing an induction motor fan with a BLDC fan on use-phase emissions is a fair and useful claim, as long as you state the hours and the grid factor. The extra electronics in a BLDC fan add to its manufacturing footprint, so include them when you compare whole-life figures."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: use-phase emissions of two fans",
+    "lines": [
+      "Assumed use: 8 hours a day, 300 days a year, 2,400 hours",
+      "Induction motor fan at 50 W: 50 x 2,400 / 1,000 = 120 kWh a year; 120 x 0.710 = 85.2 kg CO2",
+      "BLDC fan at 28 W: 28 x 2,400 / 1,000 = 67.2 kWh; 67.2 x 0.710 = 47.7 kg CO2",
+      "Over 10 years: 852 kg versus 477 kg of CO2",
+      "Assembly electricity: 30,000 kWh x 0.710 / 20,000 fans = 1.07 kg CO2 per fan"
+    ],
+    "note": "Wattage, hours and life are assumptions; use the BEE label data and your own assumptions, stated."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Electric motor footprint per unit",
+      "to": "/answers/electric-motor-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Grid electricity factor",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "BEE Standards and Labelling programme, ceiling fans",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

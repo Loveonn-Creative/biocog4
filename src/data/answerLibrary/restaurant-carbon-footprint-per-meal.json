@@ -1,0 +1,89 @@
+{
+  "slug": "restaurant-carbon-footprint-per-meal",
+  "q": "How do I calculate my restaurant's carbon footprint per meal?",
+  "title": "Restaurant carbon footprint per meal",
+  "short": "Add the restaurant's cooking fuel and electricity (Scope 1 and 2), refrigerant top-ups, and the food you buy (Scope 3), then divide by covers served. Cooking gas and power are easy to measure from bills. Food ingredients are often the largest part, especially for menus heavy in meat and dairy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Restaurant owners, caterers and hotel food and beverage teams",
+  "sections": [
+    {
+      "h": "The parts that matter",
+      "ul": [
+        "Scope 1: LPG or PNG for cooking, diesel for the generator, refrigerant leaks from cold rooms and air conditioners.",
+        "Scope 2: electricity for lighting, air conditioning, refrigeration, exhaust and dishwashing.",
+        "Scope 3: food and beverages bought, packaging, waste, and deliveries you pay for."
+      ]
+    },
+    {
+      "h": "Per meal, per cover or per rupee",
+      "p": [
+        "Per cover is the easiest to explain to guests and to compare across outlets. Count covers from your billing system for the same period as the bills. If you also run takeaway and delivery, count those orders too, or split energy between dine-in and kitchen-only time."
+      ]
+    },
+    {
+      "h": "Food is the hard part",
+      "p": [
+        "Purchase invoices give kilograms of rice, vegetables, dairy, meat and oil. Multiply each by a published factor for that food and cite the dataset. Where invoices show only rupees, a spend-based estimate is a start; label it. Even a rough food figure shows which menu items drive the total."
+      ]
+    },
+    {
+      "h": "Reductions that also save money",
+      "ul": [
+        "Burner maintenance and lids on pots cut LPG use.",
+        "Cold room door seals and refrigerant leak checks.",
+        "Measuring plate waste and adjusting portions.",
+        "Moving some cooking to induction where the electrical load allows."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a 120-seat restaurant",
+    "lines": [
+      "LPG: 30 cylinders x 19 kg = 570 kg; 570 x 2.98 = 1,698.6 kg CO2",
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Covers served: 9,000",
+      "Scope 1 and 2 per cover: (1,698.6 + 4,260) / 9,000 = 0.66 kg CO2",
+      "Add refrigerant top-ups and food bought per cover for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads LPG, PNG and electricity bills and food purchase invoices, applies IPCC 2006 fuel factors and the CEA grid factor (0.710 kg CO2 per kWh), and keeps each invoice fingerprinted. Where invoices show only spend, it gives a spend-based estimate, labelled as such.",
+  "links": [
+    {
+      "label": "CO2 from a 19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "Induction or LPG in a kitchen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Hotel stay emissions per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

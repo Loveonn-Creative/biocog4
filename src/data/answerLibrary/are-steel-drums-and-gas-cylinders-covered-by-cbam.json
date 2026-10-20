@@ -1,0 +1,80 @@
+{
+  "slug": "are-steel-drums-and-gas-cylinders-covered-by-cbam",
+  "q": "Are steel drums, tanks and gas cylinders covered by EU CBAM?",
+  "title": "Are steel drums and cylinders under CBAM?",
+  "short": "Yes. Steel tanks and reservoirs over 300 litres (7309), drums, cans and boxes up to 300 litres (7310) and containers for compressed or liquefied gas (7311) are all listed in Annex I of the CBAM Regulation. EU importers of these goods need embedded emissions data or must use default values.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Makers of steel drums, LPG and industrial gas cylinders, and tanks exporting to the EU",
+  "sections": [
+    {
+      "h": "The three headings",
+      "ul": [
+        "7309: reservoirs, tanks and vats of iron or steel, over 300 litres, without mechanical or thermal equipment.",
+        "7310: tanks, casks, drums, cans and boxes of iron or steel, up to 300 litres, such as barrels and paint drums.",
+        "7311: containers for compressed or liquefied gas, of iron or steel, such as LPG, oxygen and CO2 cylinders."
+      ]
+    },
+    {
+      "h": "Goods that sit near the line",
+      "ul": [
+        "Tanks fitted with mechanical or thermal equipment, such as heat exchangers or mixers, can be classified as machinery under chapter 84 and fall outside Annex I.",
+        "Aluminium cylinders and containers fall under aluminium headings such as 7611 and 7613, which are also in Annex I.",
+        "Containers shipped as packaging with your goods are classified with the goods in many cases; check with the buyer."
+      ]
+    },
+    {
+      "h": "Where the emissions come from",
+      "p": [
+        "Cylinders and drums are made from steel sheet or plate, so the mill's embedded emissions dominate. Your own direct emissions come from heat treatment, normalising furnaces and paint or powder coating ovens. Collect the steel supplier's embedded emissions per tonne and your fuel bills for the same calendar year."
+      ]
+    },
+    {
+      "h": "Who pays",
+      "p": [
+        "The EU importer buys and surrenders CBAM certificates; for 2026 imports that happens in 2027. Your actual data reduces their cost compared with default values, which carry mark-ups, so it is a commercial point in negotiations."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Where to find CBAM default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CBAM 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification (50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

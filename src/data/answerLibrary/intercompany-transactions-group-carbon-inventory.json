@@ -1,0 +1,74 @@
+{
+  "slug": "intercompany-transactions-group-carbon-inventory",
+  "q": "Our group companies sell power, steam or freight to each other. How do we avoid counting those emissions twice?",
+  "title": "Intercompany sales in a group footprint",
+  "short": "In the group inventory, count each emission once, at the company that burns the fuel. Power or steam one group company sells to another stays in the seller's Scope 1 and drops out of the buyer's Scope 2. Freight on group-owned trucks is Scope 1, not Category 4. Each company's own standalone report still shows its purchases normally.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance and sustainability teams in family groups with several entities",
+  "sections": [
+    {
+      "h": "The consolidation rule",
+      "p": [
+        "The GHG Protocol builds a group inventory by adding the emissions of each entity inside the organisational boundary, under control or equity share. Inside that boundary, a sale from one entity to another is not a new emission. The fuel was burnt once, so the emission is counted once, as Scope 1 at the entity that burnt it."
+      ]
+    },
+    {
+      "h": "Common intercompany flows",
+      "ul": [
+        "Captive power or steam sold to a sister plant: seller's Scope 1 only; remove from the buyer's Scope 2 in the group total.",
+        "Group transport company carrying goods for a manufacturing entity: transporter's Scope 1; remove from the manufacturer's Category 4.",
+        "Intermediate goods sold between group plants: the producer's Scope 1 and 2 already count; remove from the buyer's Category 1 in the group total.",
+        "Office space let from one entity to another: the energy sits once, with whoever operates the space."
+      ]
+    },
+    {
+      "h": "Standalone and group reports side by side",
+      "p": [
+        "Lenders and buyers sometimes want one entity's footprint. In that standalone report the buyer entity shows its intercompany power as Scope 2 and goods as Category 1, as for any supplier. Keep a reconciliation that lists each intercompany flow, so the group total equals the sum of entities minus the eliminations."
+      ]
+    },
+    {
+      "h": "Equity share groups",
+      "p": [
+        "If the group reports on equity share, partly owned entities contribute their share of emissions. Eliminate intercompany flows in proportion to the share included, and state the rule you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: captive power sold to a sister company",
+    "lines": [
+      "Entity A runs a captive plant; its fuel gives 1,500 t CO2, all in A's Scope 1",
+      "A sells 2,000 MWh to Entity B; B also buys 5,000 MWh from the grid",
+      "Group Scope 1 includes A's 1,500 t once",
+      "Group Scope 2: only grid power, 5,000,000 kWh x 0.710 = 3,550 t",
+      "Group Scope 1 and 2: 1,500 + 3,550 = 5,050 t, with B's purchase from A eliminated"
+    ]
+  },
+  "senseible": "With the Multi-entity Support add-on on Pro, or on Scale, Senseible keeps several entities' bills and invoices apart. Eliminating intercompany flows for a group total is a reporting step you document alongside those records.",
+  "links": [
+    {
+      "label": "Operational control or equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Sold steam or power and Scope 1",
+      "to": "/answers/sold-steam-or-power-deduct-from-scope-1"
+    },
+    {
+      "label": "Several plants or GSTINs",
+      "to": "/answers/senseible-multiple-plants-or-gstins"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, organisational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

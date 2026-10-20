@@ -1,0 +1,92 @@
+{
+  "slug": "pressure-cooker-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a pressure cooker?",
+  "title": "Pressure cooker carbon footprint",
+  "short": "Weigh the aluminium or stainless steel in the body and lid, multiply by the metal supplier's footprint per kg, and add the gasket, handles, valve, your plant's energy per unit and the packaging. The metal usually makes up most of the figure, and recycled aluminium carries far less than primary.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cookware makers and exporters",
+  "sections": [
+    {
+      "h": "Bill of materials",
+      "ul": [
+        "Body and lid: aluminium circles or stainless steel sheet, by weight before pressing, since trimming scrap is part of what you bought.",
+        "Hard anodising or induction base plates where used.",
+        "Gasket, safety valve, weight and whistle.",
+        "Handles: bakelite or other plastics.",
+        "Carton and inserts."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Deep drawing presses, trimming and spinning: electricity.",
+        "Annealing furnaces: LPG, PNG or electricity.",
+        "Anodising: electricity for the rectifiers, which can be large.",
+        "Polishing and buffing: electricity."
+      ]
+    },
+    {
+      "h": "Metal source matters most",
+      "p": [
+        "Aluminium made from scrap usually carries a small fraction of the emissions of primary aluminium. Ask your circle supplier what share is recycled and for a figure per kg. Scrap from your own trimming, sold back to the supplier, should not be counted as a credit inside the product footprint unless you follow a stated method for it."
+      ]
+    },
+    {
+      "h": "CBAM is not the issue here",
+      "p": [
+        "Aluminium and steel kitchen articles under headings 7615 and 7323 are not in Annex I of the EU CBAM Regulation today, so EU buyers ask for footprints for their own reporting, not for CBAM. A December 2025 proposal could change that for downstream goods."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per cooker (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "LPG for annealing: 40 cylinders x 19 kg = 760 kg; 760 x 2.98 = 2,264.8 kg CO2",
+      "Cookers made: 25,000",
+      "Plant energy: (35,500 + 2,264.8) / 25,000 = 1.51 kg CO2 per cooker",
+      "Aluminium: for example 1.4 kg per cooker x the supplier's factor per kg gives the larger part"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Is kitchenware covered by CBAM",
+      "to": "/answers/are-kitchen-utensils-covered-by-cbam"
+    },
+    {
+      "label": "Stainless steel utensils footprint",
+      "to": "/answers/stainless-steel-utensils-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Aluminium scrap melting fuel",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "CBAM downstream extension proposal (December 2025) may add household articles; recheck Annex I."
+}

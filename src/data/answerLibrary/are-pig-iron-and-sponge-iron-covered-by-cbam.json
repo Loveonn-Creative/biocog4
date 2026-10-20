@@ -1,0 +1,75 @@
+{
+  "slug": "are-pig-iron-and-sponge-iron-covered-by-cbam",
+  "q": "Are pig iron, sponge iron (DRI) and steel scrap covered by EU CBAM?",
+  "title": "Are pig iron and sponge iron under CBAM?",
+  "short": "Pig iron (7201) and sponge iron or DRI (7203) are covered: both are in Annex I of the CBAM Regulation. Ferrous waste and scrap (7204) is not in Annex I, so scrap carries no CBAM obligation of its own. How scrap is treated inside a steel product's embedded emissions depends on the implementing rules in force.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Sponge iron, pig iron and merchant iron producers, and scrap traders",
+  "sections": [
+    {
+      "h": "The headings",
+      "ul": [
+        "7201: pig iron and spiegeleisen in pigs, blocks or other primary forms: covered.",
+        "7203: ferrous products obtained by direct reduction of iron ore, and other spongy ferrous products, in lumps, pellets or similar forms: covered. This includes coal-based and gas-based DRI and hot briquetted iron.",
+        "7205: granules and powders of pig iron, iron or steel: covered.",
+        "7204: ferrous waste and scrap, and remelting scrap ingots: not covered."
+      ]
+    },
+    {
+      "h": "Coal-based DRI has a high figure",
+      "p": [
+        "Coal-based rotary kilns burn coal both as reductant and as fuel, so direct emissions per tonne of sponge iron are high. Gas-based DRI is lower. Waste heat recovery power plants on kilns lower your electricity bill, but electricity is not counted for iron and steel goods in the definitive period, so they do not change the CBAM figure directly."
+      ]
+    },
+    {
+      "h": "Scrap in the charge",
+      "p": [
+        "Under the transitional-period rules, scrap was not a relevant precursor, so it brought no embedded emissions into a billet's figure, while sponge iron and pig iron did. More scrap in the charge therefore meant a lower figure. Confirm the treatment in the definitive-period implementing rules for the year you export, and keep charge mix records per heat or per month."
+      ]
+    },
+    {
+      "h": "Who exports these goods",
+      "p": [
+        "Few Indian producers ship pig iron or DRI to the EU directly, but these goods are precursors for billets, bars and castings that do go there. Your customers making those products will ask for your embedded emissions per tonne to put into their own CBAM data."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "Annex I can be amended. Check it again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Coal-based sponge iron CO2 per tonne",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Induction furnace billets from sponge iron",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "Does scrap count as zero under CBAM",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}
