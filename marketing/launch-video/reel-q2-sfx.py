@@ -36,17 +36,17 @@ def scratch(d):
 
 def tk(k):
     if k == 0: return 0.9
-    if k <= 104: return 0.9 + 3.7*(k/104)**(1/2.2)
-    if k <= 345: return 10.4 + 3.0*((k-105)/240)**(1/2.2)
+    if k <= 103: return 0.9 + 3.7*(k/103)**(1/2.2)
+    if k <= 344: return 10.4 + 3.0*((k-104)/240)**(1/2.2)
     return 24.2
 # room tone + shop murmur
 add(lp(rng.standard_normal(n), .015)*2.5, 0, 0, .18)
 add(pad([110.0, 164.81, 220.0], D, 1.0, 1.5, .18), 0)
 # rips
-for k in range(347):
-    at = tk(k); dense = 1.0 if k in (0, 346) else 1/(1 + 0.03*max(0, min(k, 104) - 5) + (0.04*(k-105) if k > 104 else 0))**.5
-    d = .32 if k in (0, 346) else .09 + rng.random()*.05
-    add(rip(d, .9), at, rng.uniform(-.5, .5), (1.0 if k in (0, 346) else .55)*max(dense, .25))
+for k in range(346):
+    at = tk(k); dense = 1.0 if k in (0, 345) else 1/(1 + 0.03*max(0, min(k, 103) - 5) + (0.04*(k-104) if k > 103 else 0))**.5
+    d = .32 if k in (0, 345) else .09 + rng.random()*.05
+    add(rip(d, .9), at, rng.uniform(-.5, .5), (1.0 if k in (0, 345) else .55)*max(dense, .25))
 # tension risers under each flurry
 add(riser(3.7, 110, 440), 0.9, 0, .22); add(riser(3.0, 130, 520), 10.4, 0, .26)
 # slams

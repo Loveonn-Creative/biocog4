@@ -5,9 +5,9 @@
 <title>Deadline Diary 01</title>
 <!--
   DEADLINE DIARY #01 — CBAM, two dates. 25 s, 1080x1920, deterministic window.render(t).
-  FACTS (verified 19 Oct 2026):
-  - Day counts computed in Python: date(2027,2,1)-date(2026,10,19) = 105 days; date(2027,9,30)-date(2026,10,19) = 346 days;
-    1 Feb 2027 -> 30 Sep 2027 = 241 days. 19 Oct 2026 is a Monday, 1 Feb 2027 a Monday, 30 Sep 2027 a Thursday.
+  FACTS (verified 19 Oct 2026; re-dated 20 Oct 2026):
+  - Day counts computed in Python: date(2027,2,1)-date(2026,10,20) = 104 days; date(2027,9,30)-date(2026,10,20) = 345 days;
+    1 Feb 2027 -> 30 Sep 2027 = 241 days. 20 Oct 2026 is a Tuesday, 1 Feb 2027 a Monday, 30 Sep 2027 a Thursday.
   - Regulation (EU) 2025/2083 (CBAM simplification, OJ L, 17 Oct 2025) amending Reg. (EU) 2023/956:
     Member States sell CBAM certificates on a common central platform to authorised CBAM declarants from 1 February 2027;
     annual CBAM declaration (covering the previous calendar year) and surrender of certificates by 30 September; first one
@@ -111,7 +111,7 @@ body { font-family: 'Space Grotesk', 'Indic', system-ui, sans-serif; color: var(
   </div>
 
   <div id="tag">DEADLINE DIARY <em>#01</em></div>
-  <div class="card" id="c0"><span class="ln h1"><span id="n0">105</span> din.</span></div>
+  <div class="card" id="c0"><span class="ln h1"><span id="n0">104</span> din.</span></div>
   <div class="card" id="c1"><span class="ln dt">1 FEB 2027</span><span class="ln h2">CBAM certificates</span><span class="ln h2">bikne shuru.</span></div>
   <div class="card" id="c2"><span class="ln h2">Kharidega <span class="you">aapka</span></span><span class="ln h2">EU importer.</span><span class="ln sub">steel · aluminium · cement · fertiliser</span></div>
   <div class="card" id="c3"><span class="ln h1"><span id="n3">241</span> din</span><span class="ln h2" style="margin-top:6px">aur.</span></div>
@@ -135,12 +135,12 @@ const D = 25;
   for (let i = 0; i < im.data.length; i += 4) { const v = 120 + r()*135; im.data[i] = v; im.data[i+1] = v*.95; im.data[i+2] = v*.88; im.data[i+3] = 22; }
   x.putImageData(im, 0, 0); const u = c.toDataURL(); document.getElementById('stage').style.backgroundImage = `url(${u}), radial-gradient(1200px 900px at 50% 45%, #f8f2e7, #ece2d1 70%, #e3d6c1)`; document.getElementById('stage').style.backgroundSize = '360px 640px, auto'; }
 
-// ---- calendar data: page k = 19 Oct 2026 + k days, k = 0..346 ----
+// ---- calendar data: page k = 20 Oct 2026 + k days, k = 0..345 ----
 const MO = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
 const MOH = ['जनवरी','फ़रवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
 const WD = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
 const WDH = ['रविवार','सोमवार','मंगलवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'];
-const T0 = Date.UTC(2026, 9, 19);
+const T0 = Date.UTC(2026, 9, 20);
 function info(k) {
   const d = new Date(T0 + k*864e5), y = d.getUTCFullYear();
   const doy = Math.round((d - Date.UTC(y, 0, 1))/864e5) + 1, len = (y % 4 ? 365 : 366);
@@ -151,13 +151,13 @@ function pageHTML(k) {
   return `<div class="top"><b>${MO[i.m]}</b><span>${MOH[i.m]}</span><b>${i.y}</b></div><div class="dn">${i.dd}</div>` +
     `<div class="wd"><b>${WD[i.w]}</b><span>${WDH[i.w]}</span></div><div class="doy2">${String(i.doy).padStart(3,'0')}</div><div class="doy">${i.left} shesh</div><div class="shade"></div>`;
 }
-const LAST = 346;   // 30 Sep 2027
+const LAST = 345;   // 30 Sep 2027
 
 // rip times
 function tk(k) {
   if (k === 0) return 0.9;
-  if (k <= 104) return 0.9 + 3.7*Math.pow(k/104, 1/2.2);
-  if (k <= 345) return 10.4 + 3.0*Math.pow((k - 105)/240, 1/2.2);
+  if (k <= 103) return 0.9 + 3.7*Math.pow(k/103, 1/2.2);
+  if (k <= 344) return 10.4 + 3.0*Math.pow((k - 104)/240, 1/2.2);
   if (k === LAST) return 24.2;
   return 1e9;
 }
@@ -190,7 +190,7 @@ for (let i = 0; i < NS; i++) {
 
 function flierTransform(k, s) {
   // s = seconds since rip. origin = top centre of the page.
-  const slow = k === 0 ? .8 : k === LAST ? .95 : (k > 104 ? 1.15 : 1);
+  const slow = k === 0 ? .8 : k === LAST ? .95 : (k > 103 ? 1.15 : 1);
   const u = s*slow, dir = rnd(k*9.1) < .5 ? -1 : 1, r1 = rnd(k*1.7), r2 = rnd(k*2.3), r3 = rnd(k*3.9);
   const p0 = k === 0 ? 40 : 0;
   if (u < .09) { const a = lerp(p0, 62, u/.09); return { tr: `rotateX(${a}deg)`, sh: a/200, op: 1 }; }
@@ -220,7 +220,7 @@ window.render = function (tt) {
   t = ((tt % D) + D) % D;
   // which pages are ripped (time >= tk)
   let ripped = 0; while (ripped <= LAST && TK[ripped] <= t) ripped++;
-  // loop reset: after the 30 Sep page goes, the pad shows 19 Oct again (frame 1)
+  // loop reset: after the 30 Sep page goes, the pad shows 20 Oct again (frame 1)
   const reset = t >= TK[LAST];
   let topK = reset ? 0 : ripped;
   const peel0 = reset || t < TK[0];        // hand is peeling page 0
@@ -306,14 +306,14 @@ window.render = function (tt) {
   });
 
   // text
-  const rem0 = t < TK[0] ? 105 : 105 - Math.min(ripped, 105);
+  const rem0 = t < TK[0] ? 104 : 104 - Math.min(ripped, 104);
   $('n0').textContent = rem0;
   const c0on = t < 4.6 || t >= 24.35;
   { const el = $('c0'); el.style.opacity = c0on ? (t >= 24.35 ? eout((t - 24.35)/.5) : 1) : 0; el.querySelector('.ln').style.transform = t >= 24.35 ? `translateY(${(1 - eout((t - 24.35)/.5))*40}px)` : 'none'; }
-  if (t >= 24.35) $('n0').textContent = 105;
+  if (t >= 24.35) $('n0').textContent = 104;
   card('c1', 4.75, 7.55);
   card('c2', 7.85, 10.2);
-  const rem3 = 241 - clamp(ripped - 105, 0, 241);
+  const rem3 = 241 - clamp(ripped - 104, 0, 241);
   $('n3').textContent = rem3;
   card('c3', 10.3, 13.35, { instant: false });
   card('c4', 13.6, 16.3);
