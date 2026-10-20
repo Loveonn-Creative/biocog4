@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import { Footer } from "@/components/Footer";
 import { LeadHeader } from "@/components/lead/LeadKit";
-import { StoryView } from "@/components/stories/StoryView";
+import { StoryArticle } from "@/components/stories/StoryArticle";
 import { getPublishedStory, type PublishedStory } from "@/lib/caseStudiesApi";
 import { NEXT_STEP } from "@/data/caseStudiesMeta";
 import { trackEvent } from "@/lib/analytics";
@@ -42,9 +42,9 @@ const CaseStudy = () => {
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Case studies", url: "/case-studies" }, { name: s.hook, url: `/case-studies/${data.slug}` }]}
       />
       <LeadHeader />
-      <main className="mx-auto max-w-4xl px-4 pb-16 pt-24 sm:px-5">
+      <main className="mx-auto max-w-5xl px-4 pb-16 pt-24 sm:px-5">
         <Link to="/case-studies" className="text-[14px] text-muted-foreground underline underline-offset-2">All case studies</Link>
-        <div className="mt-6"><StoryView story={s} /></div>
+        <div className="mt-8"><StoryArticle story={s} publishedAt={data.published_at} /></div>
         <section className="mt-12 rounded-3xl border border-border bg-card p-6 md:flex md:items-center md:justify-between md:gap-6 md:p-8">
           <div>
             <h2 className="text-xl font-semibold">Facing the same question?</h2>
