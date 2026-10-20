@@ -1,0 +1,82 @@
+{
+  "slug": "iv-fluid-bottle-carbon-footprint-per-bottle",
+  "q": "How do I calculate the carbon footprint of an IV fluid bottle?",
+  "title": "IV fluid bottle carbon footprint per bottle",
+  "short": "Add the plastic bottle, closure, salts and water treatment per bottle, then the blow-fill-seal machine electricity and steam for terminal sterilisation. Divide the plant's energy by bottles released and report by volume.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "IV fluid and large volume parenteral makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Polypropylene or LDPE granules for the bottle.",
+        "Sodium chloride, dextrose and other salts.",
+        "Closures, labels and cartons."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Water for injection plant.",
+        "Blow-fill-seal machines.",
+        "Autoclave sterilisation with steam, then inspection."
+      ]
+    },
+    {
+      "h": "Per bottle",
+      "p": [
+        "Report per bottle by millilitres. Water for injection and sterilisation steam are large energy uses, so meter them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: IV fluid bottle unit per bottle (one month)",
+    "lines": [
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "PNG: 20,000 SCM x 2.05 = 41,000 kg CO2",
+      "Bottles released: 1,000,000",
+      "Plant total: 97,800 / 1,000,000 = 0.0978 kg CO2 per bottle",
+      "Add polymer, salts and packing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Pharma formulation footprint",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    },
+    {
+      "label": "Oral liquid medicine footprint",
+      "to": "/answers/oral-liquid-medicine-carbon-footprint-per-bottle"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "wall-putty-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of wall putty per kg?",
+  "title": "Wall putty carbon footprint per kg",
+  "short": "In cement-based putty, white cement usually drives most of the footprint: multiply the cement per kg by the cement maker's figure. Add calcite, polymer and bags, then blending and packing electricity divided by kg packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Wall putty and building chemical makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "White cement by weight.",
+        "Calcite or dolomite powder.",
+        "Redispersible polymer powder and additives."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Dry blending in ribbon or plough mixers.",
+        "Packing in bags.",
+        "Dust collection."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg by product. Cement content drives most of the figure, so give the white cement share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: wall putty unit per kg (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Putty packed (kg): 2,000,000",
+      "Plant total: 14,200 / 2,000,000 = 0.00710 kg CO2 per kg",
+      "Add white cement and polymer for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Paint footprint",
+      "to": "/answers/paint-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Ready mix concrete footprint",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Cement industry",
+      "to": "/industries/cement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

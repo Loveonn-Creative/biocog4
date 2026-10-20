@@ -1,0 +1,81 @@
+{
+  "slug": "badminton-shuttlecock-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a badminton shuttlecock?",
+  "title": "Shuttlecock carbon footprint per piece",
+  "short": "Add the cork or synthetic base, feathers or nylon skirt, glue and thread per shuttle with supplier figures. Then add the unit's electricity for drilling, setting and drying, divided by shuttles packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Shuttlecock makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Natural cork or composite base.",
+        "Duck or goose feathers, or nylon skirt.",
+        "Glue, thread and tubes."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Base shaping and drilling.",
+        "Feather sorting and setting, mostly by hand.",
+        "Gluing, drying and packing into tubes."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per shuttle and per tube of ten or twelve, the unit buyers order in."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: badminton shuttlecock unit per piece (one month)",
+    "lines": [
+      "Electricity: 2,000 kWh x 0.710 = 1,420 kg CO2",
+      "Shuttlecocks packed: 200,000",
+      "Plant total: 1,420 / 200,000 = 0.00710 kg CO2 per piece",
+      "Add base, feathers and tubes for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Cricket ball footprint",
+      "to": "/answers/cricket-ball-carbon-footprint-per-ball"
+    },
+    {
+      "label": "Football footprint",
+      "to": "/answers/football-carbon-footprint-per-ball"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

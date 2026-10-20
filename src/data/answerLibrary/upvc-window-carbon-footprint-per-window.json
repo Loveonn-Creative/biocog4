@@ -1,0 +1,81 @@
+{
+  "slug": "upvc-window-carbon-footprint-per-window",
+  "q": "How do I calculate the carbon footprint of a uPVC window?",
+  "title": "uPVC window carbon footprint per window",
+  "short": "Weigh the uPVC profile, steel reinforcement and glass per window and multiply by supplier figures. Add cutting, welding, cleaning and glazing electricity, then divide the shop's energy by windows made and report per square metre.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "uPVC window fabricators",
+  "sections": [
+    {
+      "h": "Bought-in parts",
+      "ul": [
+        "uPVC profiles by weight.",
+        "Galvanised steel reinforcement inside the profiles.",
+        "Glass units, gaskets and hardware."
+      ]
+    },
+    {
+      "h": "Fabrication",
+      "ul": [
+        "Cutting saws and V-notching.",
+        "Hot plate welding and corner cleaning.",
+        "Glazing and packing."
+      ]
+    },
+    {
+      "h": "Per window",
+      "p": [
+        "Report per square metre of window by type, because buyers compare openings of different sizes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: uPVC window unit per window (one month)",
+    "lines": [
+      "Electricity: 8,000 kWh x 0.710 = 5,680 kg CO2",
+      "Windows made: 1,500",
+      "Plant total: 5,680 / 1,500 = 3.787 kg CO2 per window",
+      "Add profile, steel and glass for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PVC pipe footprint",
+      "to": "/answers/pvc-pipe-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Steel door footprint",
+      "to": "/answers/steel-door-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

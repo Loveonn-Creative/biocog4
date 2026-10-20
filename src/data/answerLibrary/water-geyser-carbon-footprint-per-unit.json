@@ -1,0 +1,82 @@
+{
+  "slug": "water-geyser-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a water geyser?",
+  "title": "Water geyser carbon footprint per unit",
+  "short": "Weigh the inner tank, outer body, insulation foam and heating element per geyser and multiply by supplier figures. Add welding, glass lining or coating, foaming and testing energy, then divide by units built by litre capacity.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Electric water heater makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Steel or copper inner tank, or glass lined steel.",
+        "Outer body in steel or plastic.",
+        "Polyurethane foam, heating element and anode rod."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Tank forming and welding.",
+        "Lining furnace or coating.",
+        "Foaming, assembly and pressure testing."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Report per geyser by litres, since tank steel and foam scale with capacity."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: water geyser unit per unit (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "PNG: 4,000 SCM x 2.05 = 8,200 kg CO2",
+      "Geysers built: 5,000",
+      "Plant total: 29,500 / 5,000 = 5.900 kg CO2 per unit",
+      "Add tank steel, foam and element for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Electric kettle footprint",
+      "to": "/answers/electric-kettle-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Foam mattress footprint",
+      "to": "/answers/foam-mattress-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Automobile industry",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

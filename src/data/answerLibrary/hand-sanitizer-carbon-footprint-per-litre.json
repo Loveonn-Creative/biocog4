@@ -1,0 +1,81 @@
+{
+  "slug": "hand-sanitizer-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of hand sanitizer per litre?",
+  "title": "Hand sanitizer carbon footprint per litre",
+  "short": "Alcohol is the main input: multiply the ethanol or isopropyl alcohol per litre by the supplier's figure. Add glycerine, gel agents and the bottle, then blending and filling electricity divided by litres filled.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sanitizer makers and contract fillers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Ethanol or isopropyl alcohol by volume.",
+        "Glycerine, carbomer and fragrance.",
+        "Bottles, pumps or sachets."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Blending in closed tanks.",
+        "Filling and capping.",
+        "Labelling and packing."
+      ]
+    },
+    {
+      "h": "Per litre",
+      "p": [
+        "Report per litre with alcohol content, and per pack size for retail packs."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: hand sanitizer unit per litre (one month)",
+    "lines": [
+      "Electricity: 4,000 kWh x 0.710 = 2,840 kg CO2",
+      "Sanitizer filled (litres): 100,000",
+      "Plant total: 2,840 / 100,000 = 0.0284 kg CO2 per litre",
+      "Add alcohol, additives and bottles for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Cosmetics footprint",
+      "to": "/answers/cosmetics-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Pharma formulation footprint",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

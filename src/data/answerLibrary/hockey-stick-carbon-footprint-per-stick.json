@@ -1,0 +1,81 @@
+{
+  "slug": "hockey-stick-carbon-footprint-per-stick",
+  "q": "How do I calculate the carbon footprint of a hockey stick?",
+  "title": "Hockey stick carbon footprint per stick",
+  "short": "For composite sticks, weigh the carbon fibre, glass fibre and resin per stick and use supplier figures. For wooden sticks, use the timber. Add moulding or shaping, curing and finishing energy, then divide by sticks finished.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Hockey stick makers in Jalandhar and Meerut",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Carbon fibre and glass fibre prepreg, or mulberry wood.",
+        "Resin, foam core and grip tape.",
+        "Paint and stickers."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Laying up and moulding with heat curing.",
+        "Sanding and finishing.",
+        "Grip wrapping and packing."
+      ]
+    },
+    {
+      "h": "Per stick",
+      "p": [
+        "Report per stick by material. Carbon fibre has a high per-kg figure, so the share of carbon in the layup matters."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: hockey stick unit per stick (one month)",
+    "lines": [
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Sticks finished: 8,000",
+      "Plant total: 4,260 / 8,000 = 0.532 kg CO2 per stick",
+      "Add fibre, resin and grip for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Cricket bat footprint",
+      "to": "/answers/cricket-bat-carbon-footprint-per-bat"
+    },
+    {
+      "label": "Football footprint",
+      "to": "/answers/football-carbon-footprint-per-ball"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

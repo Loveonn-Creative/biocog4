@@ -1,0 +1,82 @@
+{
+  "slug": "fish-meal-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of fish meal per tonne?",
+  "title": "Fish meal carbon footprint per tonne",
+  "short": "Fish meal plants cook, press and dry the catch, so steam and dryer fuel dominate plant energy. Divide the boiler fuel and electricity by tonnes of meal dispatched, and list fish oil as a co-product with a stated allocation.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fish meal and fish oil plants on the west and east coasts",
+  "sections": [
+    {
+      "h": "Raw material",
+      "ul": [
+        "Whole fish or fish processing waste by weight.",
+        "Diesel used by the boats, if you report the catch.",
+        "Antioxidants and bags."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cooking with steam.",
+        "Pressing, then drying in steam or direct fired dryers.",
+        "Grinding, bagging and oil separation."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne of meal and state how you split energy between meal and oil, by mass or by value."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: fish meal unit per tonne (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Coal: 300,000 kg x 2.42 = 726,000 kg CO2",
+      "Fish meal dispatched (tonnes): 1,000",
+      "Plant total: 768,600 / 1,000 = 768.6 kg CO2 per tonne",
+      "Add catch and bags for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Fishing vessel fuel emissions",
+      "to": "/answers/fishing-vessel-fuel-emissions-per-tonne-catch"
+    },
+    {
+      "label": "Shrimp processing footprint",
+      "to": "/answers/shrimp-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "tile-adhesive-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of tile adhesive per kg?",
+  "title": "Tile adhesive carbon footprint per kg",
+  "short": "Cement usually drives most of the footprint: multiply the cement per kg of adhesive by its supplier figure. Add sand, polymers and bags, then drying, blending and packing energy divided by kg packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tile adhesive and grout makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Cement by weight.",
+        "Graded silica sand.",
+        "Polymer powder and cellulose ether."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Sand drying, if done in-house.",
+        "Dry blending.",
+        "Valve bag packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg by class. Sand drying with a burner adds fuel that bought dry sand does not."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: tile adhesive unit per kg (one month)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Diesel: 3,000 litres x 2.68 = 8,040 kg CO2",
+      "Adhesive packed (kg): 3,000,000",
+      "Plant total: 18,690 / 3,000,000 = 0.00623 kg CO2 per kg",
+      "Add cement, sand and polymer for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Ceramic tile footprint",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Wall putty footprint",
+      "to": "/answers/wall-putty-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Cement industry",
+      "to": "/industries/cement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
