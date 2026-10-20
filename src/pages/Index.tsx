@@ -908,7 +908,7 @@ const Index = () => {
           more (bulk upload), so the visitor layout's pull-up would push the typed
           headline into the wordmark. Signed-in content keeps a gap and is centred
           only while it fits ("safe"), otherwise it starts below the wordmark. */}
-      <main className={`relative z-10 flex-1 flex flex-col items-center px-4 ${user ? '[justify-content:safe_center] pt-6 sm:pt-4 pb-6' : 'justify-center pt-6 sm:pt-0 sm:-mt-10'}`}>
+      <main className={`relative z-10 flex-1 flex flex-col items-center px-4 ${user ? '[justify-content:safe_center] pt-6 sm:pt-4 pb-6' : '[justify-content:safe_center] pt-6 sm:pt-4'}`}>
         {state === "idle" && (
           <div className={`w-full flex flex-col items-center gap-7 sm:gap-8 ${fadeHero ? "animate-fade-in" : ""}`}>
             {/* Animated use case headline - ABOVE icons for maximum impact */}
