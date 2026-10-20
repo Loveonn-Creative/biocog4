@@ -19,6 +19,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "absorbent-cotton-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of absorbent cotton wool per kg?",
+  "title": "Absorbent cotton carbon footprint per kg",
+  "short": "Start with the cotton fibre or comber noil per kg and its supplier figure, then add opening, scouring, bleaching, drying and carding energy. Divide the unit's fuel and electricity by kg packed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "ac-decommissioning-refrigerant-recovery-emissions",
   "q": "Do I report emissions when an old AC or chiller is scrapped, and how much if the gas was not recovered?",
   "title": "Refrigerant emissions when an AC is scrapped",
@@ -187,6 +195,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "alloy-wheel-carbon-footprint-per-wheel",
+  "q": "How do I calculate the carbon footprint of an alloy wheel?",
+  "title": "Alloy wheel carbon footprint per wheel",
+  "short": "Most of an alloy wheel is aluminium: multiply the cast weight, including gates and swarf, by the alloy supplier's figure. Add melting, low pressure casting, heat treatment, machining and painting energy, then divide by wheels passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "aluminium-beverage-can-carbon-footprint-per-can",
+  "q": "How do I calculate the carbon footprint of an aluminium beverage can?",
+  "title": "Aluminium can carbon footprint per can",
+  "short": "Most of a can's footprint is its aluminium: multiply the can and end weight by the coil supplier's per-kg figure, then add forming, washing, coating and curing energy. Divide the plant's energy by cans made and name the recycled share.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "aluminium-composite-panel-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of aluminium composite panel per square metre?",
+  "title": "ACP carbon footprint per sq m",
+  "short": "Weigh the two aluminium skins and the polyethylene or mineral core per square metre and multiply each by its supplier figure. Add coil coating, lamination and line energy, then divide the plant's energy by square metres dispatched.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "aluminium-cookware-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of aluminium cookware per kg?",
   "title": "Aluminium cookware carbon footprint per kg",
@@ -233,6 +265,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work it out from your own logs: fuel burnt in a month divided by tonnes of metal tapped, then times the fuel's factor, for example 2.97 kg CO2 per litre of furnace oil. Physics sets a floor of about 30 litres of furnace oil per tonne at 100% efficiency; any real furnace uses more.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "aluminium-sheet-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of aluminium sheet per tonne?",
+  "title": "Aluminium sheet carbon footprint per tonne",
+  "short": "Most of the footprint is in the metal: multiply the ingot, slab or scrap per tonne of sheet by the supplier's figure. Add remelting, hot and cold rolling and annealing energy, then divide the mill's energy by tonnes dispatched.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "aluminium-window-carbon-footprint-per-sq-m",
@@ -603,6 +643,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "baby-diaper-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a baby diaper?",
+  "title": "Baby diaper carbon footprint per piece",
+  "short": "Weigh the fluff pulp, superabsorbent polymer, non-woven sheets, film and elastics per diaper and multiply each by its supplier figure. Add the converting line's electricity and packing, then divide by diapers packed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "backpack-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a backpack or school bag?",
   "title": "Backpack carbon footprint per piece",
@@ -649,6 +697,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. RBI's fair practices rules require lenders to give the main reasons for rejecting any loan application in writing. You can complain to the bank first and, if it does not reply within 30 days or you are unhappy with the reply, go to the RBI Ombudsman, which handles service failures but not the lending decision itself.",
   "topic": "markets",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "barbed-wire-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of barbed wire per kg?",
+  "title": "Barbed wire carbon footprint per kg",
+  "short": "Multiply the galvanised wire per kg by the supplier's figure, or add your own drawing and galvanising energy and zinc. Add the barbing machines and packing, then divide the unit's energy by kg dispatched.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "baseline-boiler-efficiency-ccts-bm-t-006",
@@ -921,6 +977,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually induction, on Indian grid power. An induction furnace emits less whenever its kWh per kg melted is below 4.18 times the litres of furnace oil per kg the crucible burns, because 2.97 / 0.710 = 4.18. Crucibles waste much of their heat, so induction often wins; confirm it with your own logs.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "brass-tap-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a brass bathroom tap?",
+  "title": "Brass tap carbon footprint per piece",
+  "short": "Weigh the brass casting or forging per tap, including runners and machining swarf, and multiply by the brass supplier's figure. Add melting, machining, polishing and chrome plating energy, then divide the unit's energy by taps passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "bread-carbon-footprint-per-kg",
@@ -1923,6 +1987,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "cheese-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of cheese per kg?",
+  "title": "Cheese carbon footprint per kg",
+  "short": "Most of cheese comes from the milk: multiply the litres of milk per kg of cheese by the milk's farm figure, then add pasteurising, cooking, pressing, ripening and cold store energy. Divide the plant's energy by kg of cheese made.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "chilled-water-temperature-raise-energy-saving",
   "q": "How much chiller energy does raising the chilled water temperature by 1 degree save?",
   "title": "Chiller saving per degree of chilled water",
@@ -2033,6 +2105,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "They belong to whoever runs the common facility centre, usually the cluster's SPV. If your unit only sends parts for heat treatment or testing and pays a service charge, the CFC's fuel and power used on your jobs are your Scope 3 Category 1, purchased services, not your Scope 1 or 2.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "clutch-plate-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a clutch plate?",
+  "title": "Clutch plate carbon footprint per piece",
+  "short": "Add the steel stampings, springs and friction facings per plate with supplier figures, then add stamping, riveting, heat treatment and testing energy. Divide the plant's energy by plates passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "cnc-machined-part-carbon-footprint",
@@ -2187,6 +2267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "colour-coated-roofing-sheet-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of colour coated roofing sheet per tonne?",
+  "title": "Colour coated sheet carbon footprint per tonne",
+  "short": "Start with the galvanised or galvalume steel coil per tonne and multiply by the supplier's figure. Add paint, pretreatment and the coating line's curing oven fuel and electricity, plus roll forming, then divide by tonnes dispatched.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "common-carbon-accounting-mistakes-smes",
   "q": "What are the most common carbon accounting mistakes Indian SMEs make?",
   "title": "Common carbon accounting mistakes",
@@ -2273,6 +2361,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work out the copper mass per km from the cross-section (1 mm2 of copper over 1 km weighs 8.96 kg), times cores and a stranding allowance. Add insulation and sheath compound per km from your consumption records. Multiply each by its material factor, then add drawing, extrusion and annealing electricity per km.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "copper-tube-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of copper tube per kg?",
+  "title": "Copper tube carbon footprint per kg",
+  "short": "Most of copper tube's footprint is its metal: multiply the copper cathode, rod or scrap per kg of tube by the supplier's figure, then add melting or extrusion, drawing and annealing energy. Divide the plant's energy by kg of tube dispatched.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "corn-flakes-carbon-footprint-per-kg",
@@ -2529,6 +2625,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A declared unit is a plain quantity of product, such as 1 kg of yarn. A functional unit is the job the product does, such as painting 1 m2 of wall for ten years. Use a declared unit for materials and parts reported cradle to gate, and a functional unit to compare finished products by use.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "decorative-laminate-carbon-footprint-per-sheet",
+  "q": "How do I calculate the carbon footprint of a decorative laminate sheet?",
+  "title": "Decorative laminate carbon footprint per sheet",
+  "short": "Add the kraft paper, decor paper and phenolic and melamine resins per sheet with supplier figures. Add impregnation, drying and pressing energy, divide the plant's energy by sheets passed and state sheet size and thickness.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "dedicated-freight-corridor-emissions-saving",
@@ -3787,6 +3891,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "exhaust-fan-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an exhaust fan?",
+  "title": "Exhaust fan carbon footprint per unit",
+  "short": "Weigh the motor (copper winding and lamination steel), the blades and the plastic or metal frame per fan and multiply by supplier figures. Add winding, moulding, assembly and testing energy, then divide the unit's energy by fans passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "exhaust-silencer-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an exhaust silencer?",
+  "title": "Exhaust silencer carbon footprint per unit",
+  "short": "Weigh the steel or stainless steel shell, pipes and baffles per silencer and multiply by supplier figures. Add bending, welding, coating and testing energy, then divide the plant's energy by units passed. Count catalysts separately if fitted.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "extension-board-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of an extension board?",
   "title": "Extension board carbon footprint per piece",
@@ -3865,6 +3985,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Nitrogen fertiliser forms nitrous oxide in the soil when it is used, so a maker or distributor reports those emissions in Scope 3 Category 11, use of sold products, for the tonnes sold in the year. Urea sellers also report the CO2 from the carbon in urea.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "fibc-jumbo-bag-carbon-footprint-per-bag",
+  "q": "How do I calculate the carbon footprint of an FIBC jumbo bag?",
+  "title": "FIBC jumbo bag carbon footprint per bag",
+  "short": "Multiply the polypropylene fabric, webbing loops and liner per bag by the resin supplier's figure, then add tape extrusion, weaving, coating and stitching electricity. Divide the plant's energy by bags made.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "fibre-cement-roof-sheet-carbon-footprint-per-sheet",
@@ -3963,10 +4091,26 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "floor-cleaner-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of floor cleaner per litre?",
+  "title": "Floor cleaner carbon footprint per litre",
+  "short": "Add the active ingredients, water and fragrance per litre and the bottle and cap, each with supplier figures. Add blending and filling energy, divide the plant's energy by litres filled, and count the bottle by its weight.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "flour-mill-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of wheat flour per tonne at a roller flour mill?",
   "title": "Flour mill carbon footprint per tonne",
   "short": "Take the mill's electricity and any diesel for the generator, multiply by the CEA grid factor and IPCC diesel factor, and divide by tonnes of wheat ground. Then allocate between atta, maida, suji and bran by mass or by value, and add the wheat's own farm and transport emissions as a bought-in input.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "flush-door-carbon-footprint-per-door",
+  "q": "How do I calculate the carbon footprint of a flush door?",
+  "title": "Flush door carbon footprint per door",
+  "short": "Add the timber or block board core, face veneers or laminates and adhesive per door with supplier figures. Add hot press, sanding and finishing energy, then divide the plant's energy by doors made, stated by size and thickness.",
   "topic": "product",
   "reviewed": "2026-10-20"
  },
@@ -4275,6 +4419,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "gauze-bandage-carbon-footprint-per-roll",
+  "q": "How do I calculate the carbon footprint of a gauze bandage roll?",
+  "title": "Gauze bandage carbon footprint per roll",
+  "short": "Add the cotton yarn per roll and its supplier figure, then weaving, bleaching and drying energy, and cutting and packing. Divide the unit's energy by rolls made, stated by width and length.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "gcv-vs-ncv-in-fuel-emission-calculation",
   "q": "Should I use GCV or NCV when calculating CO2 from coal, gas or oil?",
   "title": "GCV or NCV for fuel CO2?",
@@ -4369,6 +4521,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Switching from a glass jar to a retort pouch usually cuts packaging carbon per unit by most of the jar's footprint, because a pouch weighs a few grams against a jar's few hundred. Work it out as pack mass x material factor, plus the pack's own share of road and sea freight, for each option.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "glass-mirror-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of a glass mirror per square metre?",
+  "title": "Glass mirror carbon footprint per sq m",
+  "short": "Multiply the float glass per square metre by its supplier figure, then add the silvering and protective coatings and the line's electricity and water heating. Divide the unit's energy by square metres of mirror made, stated by thickness.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "glass-tumbler-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a glass tumbler?",
+  "title": "Glass tumbler carbon footprint per piece",
+  "short": "Most of a tumbler's footprint comes from melting glass: divide the furnace fuel and plant electricity by good pieces packed, then add batch materials and packing. Count CO2 released by soda ash and limestone in the batch separately from fuel.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "gold-jewellery-carbon-footprint-per-gram",
@@ -4715,12 +4883,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "hard-boiled-candy-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of hard boiled candy per kg?",
+  "title": "Candy carbon footprint per kg",
+  "short": "Add the sugar, glucose syrup and flavours per kg with supplier figures, then the cooking, forming and wrapping energy. Divide the plant's fuel and electricity by kg packed and add the wrapper film and cartons.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "hazardous-waste-emissions-from-manifest-india",
   "q": "How do I calculate Scope 3 waste emissions for a chemical plant from hazardous waste manifests and TSDF invoices in India?",
   "title": "Hazardous waste emissions from manifests",
   "short": "Group the tonnes on your manifests and TSDF invoices by waste type and treatment route (secured landfill, incineration, co-processing, recycling), then multiply each group by a factor for that route. Incineration of solvent or organic waste usually dominates; calculate it from the waste's fossil carbon content. Report the total as Scope 3 Category 5.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "hdpe-drum-carbon-footprint-per-drum",
+  "q": "How do I calculate the carbon footprint of an HDPE drum?",
+  "title": "HDPE drum carbon footprint per drum",
+  "short": "An HDPE drum is mostly resin: multiply the drum weight by the resin supplier's per-kg figure, then add blow moulding, cooling and compressed air electricity. Divide the unit's energy by drums passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "hdpe-pipe-carbon-footprint-per-kg",
@@ -4783,6 +4967,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "What is the carbon footprint of honey per kg?",
   "title": "Honey carbon footprint per kg",
   "short": "Count the transport of hives and honey, heating and filtering energy, and the jar or bottle. Divide by kilograms packed. Bee-keeping itself uses little energy, so for honey the glass jar and road transport are often most of the footprint; sugar feeding in lean seasons adds a little.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "hospital-bed-carbon-footprint-per-bed",
+  "q": "How do I calculate the carbon footprint of a hospital bed?",
+  "title": "Hospital bed carbon footprint per bed",
+  "short": "Weigh the steel tubes and sheet, castors, motors or cranks and mattress per bed and multiply by supplier figures. Add cutting, welding, powder coating and assembly energy, then divide by beds built.",
   "topic": "product",
   "reviewed": "2026-10-20"
  },
@@ -5651,6 +5843,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "induction-cooktop-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an induction cooktop?",
+  "title": "Induction cooktop carbon footprint per unit",
+  "short": "Add the glass top, copper coil, circuit board, fan and plastic body per cooktop with supplier figures. Add assembly and testing electricity, divide the unit's energy by cooktops passed, and report by power rating.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "induction-furnace-billet-sponge-iron-cbam",
   "q": "How are CBAM embedded emissions worked out for steel billets made in an induction furnace from coal-based sponge iron?",
   "title": "CBAM for induction furnace billets",
@@ -6139,6 +6339,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "kota-stone-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of Kota stone per square metre?",
+  "title": "Kota stone carbon footprint per sq m",
+  "short": "Kota stone is quarried and cut, not made, so the footprint is mainly energy: diesel for quarrying and loading, then electricity for cutting and polishing. Divide each by square metres dispatched and add transport to site.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "kurta-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a kurta?",
   "title": "Kurta carbon footprint per piece",
@@ -6339,6 +6547,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "led-street-light-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an LED street light?",
+  "title": "LED street light carbon footprint per unit",
+  "short": "Weigh the die-cast aluminium housing and add the LED board, driver, lens and cable per fitting with supplier figures. Add assembly and burn-in testing electricity, then divide the unit's energy by fittings passed, stated by wattage.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "lidl-supplier-science-based-target-requirement",
   "q": "Lidl wants its suppliers to set science-based targets. Does that apply to an Indian food or textile supplier?",
   "title": "Lidl's supplier climate targets and India",
@@ -6395,6 +6611,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "lpg-cylinder-carbon-footprint-per-cylinder",
+  "q": "How do I calculate the carbon footprint of making an LPG cylinder?",
+  "title": "LPG cylinder carbon footprint per cylinder",
+  "short": "Multiply the steel per cylinder (two halves, foot ring and valve guard) by the steel supplier's figure, then add deep drawing, welding, heat treatment, testing and painting energy. Divide by cylinders passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "lpg-or-png-lower-co2-per-unit-of-heat",
   "q": "LPG or PNG for a furnace or boiler: which emits less CO2 for the same heat?",
   "title": "LPG or PNG: which emits less CO2?",
@@ -6409,6 +6633,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "About 11 percent less CO2 for the same heat at the same burner efficiency. The IPCC 2006 defaults are 63.1 kg CO2 per GJ for LPG and 56.1 kg for natural gas, and 56.1 / 63.1 = 0.889. A burner that runs more efficiently on gas saves a little more.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "lt-panel-board-carbon-footprint-per-panel",
+  "q": "How do I calculate the carbon footprint of an LT electrical panel?",
+  "title": "LT panel carbon footprint per panel",
+  "short": "Weigh the sheet steel enclosure, copper or aluminium busbars and the bought-in breakers, meters and cables per panel, and multiply each by its supplier figure. Add cutting, bending, powder coating and wiring energy, divided by panels built.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "machine-embroidery-carbon-footprint-per-metre",
@@ -6635,6 +6867,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "monoblock-pump-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a monoblock pump?",
+  "title": "Monoblock pump carbon footprint per unit",
+  "short": "Add the cast iron body and impeller, the stator copper and lamination steel, the shaft and bearings per pump with supplier figures. Add machining, winding, painting and testing energy, then divide the unit's energy by pumps passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "morbi-coal-gasifier-vs-natural-gas-emissions",
   "q": "How much CO2 did ceramic units save by moving from coal gasifiers to natural gas?",
   "title": "Coal gasifier to natural gas: CO2 saved",
@@ -6851,6 +7091,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "office-chair-carbon-footprint-per-chair",
+  "q": "How do I calculate the carbon footprint of an office chair?",
+  "title": "Office chair carbon footprint per chair",
+  "short": "Add the base, gas lift, mechanism, seat shell, foam, fabric and castors per chair with supplier figures. Add moulding, upholstery and assembly energy, then divide the plant's energy by chairs made.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "office-fit-out-embodied-carbon",
   "q": "How do I estimate the carbon footprint of an office fit-out or renovation?",
   "title": "Office fit-out embodied carbon",
@@ -7051,6 +7299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "particle-board-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of particle board per square metre?",
+  "title": "Particle board carbon footprint per sq m",
+  "short": "Add the wood chips or agri residue and resin per square metre with supplier figures, then the dryer, press and sanding energy. Divide the plant's energy by square metres dispatched, and state thickness and density.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "pas-2050-or-iso-14067-for-uk-buyer",
   "q": "My UK buyer asked for a footprint to PAS 2050. Is that still used, or should I follow ISO 14067?",
   "title": "PAS 2050 or ISO 14067 for a UK buyer?",
@@ -7219,6 +7475,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "piston-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of an engine piston?",
+  "title": "Piston carbon footprint per piece",
+  "short": "Multiply the aluminium alloy per piston, including runners and machining swarf, by the supplier's figure, then add casting, heat treatment and machining energy. Divide the plant's energy by pistons passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "plastic-button-carbon-footprint-per-1000",
   "q": "How do I calculate the carbon footprint of plastic buttons per 1,000?",
   "title": "Plastic button footprint per 1,000 buttons",
@@ -7313,6 +7577,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Billed in MMBtu: multiply by 1.055 to get GJ, by 0.90 to move from gross to net calorific value, then by 56.1 kg CO2 per GJ. That is about 53.3 kg CO2 per MMBtu. Billed in SCM: multiply by 2.05 kg CO2 per scm, or convert using the GCV printed on the bill.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "poha-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of poha (rice flakes) per kg?",
+  "title": "Poha carbon footprint per kg",
+  "short": "Start with the paddy per kg of poha and its farm figure, then add soaking, roasting and flaking energy. Divide the mill's fuel and electricity by kg of poha packed and add the pouch or bag.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "polyester-blanket-carbon-footprint-per-kg",
@@ -7433,6 +7705,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "As a rough guide, PPC has about 20 to 30% lower CO2 per tonne than OPC, and PSC about 40 to 55% lower, because they contain less clinker. The real gap depends on the plant's clinker share, kiln fuel and power, so compare plant EPDs where you can.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ppe-coverall-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a PPE coverall?",
+  "title": "PPE coverall carbon footprint per piece",
+  "short": "Weigh the non-woven or laminated fabric per coverall and multiply by its supplier figure, then add zips, elastic and tape. Add cutting, stitching and seam sealing electricity, divide by coveralls passed and add packing.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "precast-concrete-pole-carbon-footprint-per-pole",
@@ -7675,6 +7955,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "radiator-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a vehicle radiator?",
+  "title": "Radiator carbon footprint per unit",
+  "short": "Weigh the aluminium or copper-brass core and the plastic or metal tanks per radiator and multiply by supplier figures. Add brazing or soldering, assembly and leak testing energy, then divide by radiators passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "rail-vs-road-freight-emissions-india",
   "q": "Is rail freight lower carbon than trucking in India, and by how much per tonne-km?",
   "title": "Rail vs road freight emissions in India",
@@ -7825,6 +8113,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A refrigerated dryer uses a few kW of electricity and dries air to a pressure dew point of about 3 C, enough for most factory air. A heatless desiccant dryer reaches minus 40 C but vents about 15 to 20% of its rated air as purge, which costs far more power. Use desiccant only where the process needs it.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "refrigerator-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a refrigerator?",
+  "title": "Refrigerator carbon footprint per unit",
+  "short": "Add the steel cabinet, plastic liner, insulation foam, compressor and copper tubing per unit with supplier figures, then add the plant's energy per unit built. Count the refrigerant as its own line: HFCs warm strongly if they leak, while hydrocarbons such as R600a barely do.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "regenerative-agriculture-scope-3-claims",
@@ -8089,6 +8385,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Simple payback is capex divided by net annual savings. Estimate yearly generation as plant size in kWp times specific yield in kWh per kWp, value each unit at the grid tariff it replaces, subtract yearly maintenance, and divide the installed cost by that figure. Use your own bills and a site yield estimate, not a vendor's headline.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "room-air-conditioner-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a room air conditioner?",
+  "title": "Room AC carbon footprint per unit",
+  "short": "Weigh the compressor, copper and aluminium coils, sheet metal, plastic body and electronics per indoor and outdoor unit and multiply by supplier figures. Add brazing, assembly and testing energy, divide by sets built and list the refrigerant charge separately.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "rotavator-carbon-footprint-per-unit",
@@ -8483,6 +8787,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "shampoo-carbon-footprint-per-bottle",
+  "q": "How do I calculate the carbon footprint of a bottle of shampoo?",
+  "title": "Shampoo carbon footprint per bottle",
+  "short": "Add the surfactants, water and additives per bottle and the plastic bottle and cap, each with supplier figures. Add mixing, filling and labelling energy, then divide the plant's energy by bottles filled, stated by volume.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "share-emissions-with-buyer-without-invoices",
   "q": "How do I share emissions data with a buyer without revealing supplier prices or invoices?",
   "title": "Share emissions without sharing invoices",
@@ -8723,6 +9035,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "solid-concrete-block-carbon-footprint-per-block",
+  "q": "How do I calculate the carbon footprint of a solid concrete block?",
+  "title": "Concrete block carbon footprint per block",
+  "short": "Most of a concrete block's footprint is its cement: multiply the cement per block by the cement supplier's figure, add aggregates and any fly ash, then add the block machine and curing energy. Divide the plant's energy by good blocks made.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "solvent-incineration-emissions-pharma-api",
   "q": "How do pharma API plants account for emissions from solvent incineration and recovery?",
   "title": "Solvent incineration emissions at API plants",
@@ -8895,6 +9215,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How do I calculate the carbon footprint of a steel door?",
   "title": "Steel door carbon footprint per unit",
   "short": "Weigh the steel sheet and frame in one door, including cutting scrap, and apply your steel supplier's factor. Add infill such as honeycomb paper or rockwool, powder coating and oven fuel, welding and press electricity, hardware and packing. Divide by doors dispatched. Steel is usually most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "steel-drum-carbon-footprint-per-drum",
+  "q": "How do I calculate the carbon footprint of a steel barrel?",
+  "title": "Steel drum carbon footprint per drum",
+  "short": "Multiply the steel sheet per drum by the steel supplier's figure, then add shearing, seam welding, painting and curing energy. Divide the plant's energy by drums passed, stated by capacity.",
   "topic": "product",
   "reviewed": "2026-10-20"
  },
@@ -9251,6 +9579,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "tinplate-food-can-carbon-footprint-per-can",
+  "q": "How do I calculate the carbon footprint of a tinplate food can?",
+  "title": "Tinplate can carbon footprint per can",
+  "short": "Multiply the tinplate per can (body and two ends) by the steel supplier's figure, then add slitting, welding, lacquering and curing energy. Divide the plant's energy by cans made, stated by can size.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "tissue-paper-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of tissue paper and napkins?",
   "title": "Tissue paper carbon footprint per kg",
@@ -9287,6 +9623,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How do I calculate the carbon footprint of a tube of toothpaste?",
   "title": "Toothpaste carbon footprint per tube",
   "short": "Add the paste ingredients per tube, such as calcium carbonate or silica, sorbitol and surfactant, with supplier figures. Add the laminate tube, cap and carton, then mixing, filling and packing electricity divided by tubes filled.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "toughened-glass-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of toughened glass per square metre?",
+  "title": "Toughened glass carbon footprint per sq m",
+  "short": "Multiply the float glass per square metre (thickness times area times density) by the float glass supplier's figure, then add cutting, edging and the tempering furnace's electricity. Divide the unit's energy by square metres dispatched.",
   "topic": "product",
   "reviewed": "2026-10-20"
  },
@@ -9361,6 +9705,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add up the petrol litres on your fuel invoices or slips for the period and multiply by 2.31 kg CO2 per litre. Divide that total by kilometres ridden for CO2 per km, and by orders delivered for CO2 per order. Use fuel data where you have it; estimate from kilometres only where you do not.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "two-wheeler-helmet-carbon-footprint-per-helmet",
+  "q": "How do I calculate the carbon footprint of a two-wheeler helmet?",
+  "title": "Helmet carbon footprint per helmet",
+  "short": "Weigh the ABS or polycarbonate shell, EPS liner, visor, padding and straps per helmet and multiply by supplier figures. Add moulding, painting and assembly energy, then divide the plant's energy by helmets passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "tyre-carbon-footprint-per-unit",
@@ -9547,6 +9899,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "vermicelli-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of vermicelli per kg?",
+  "title": "Vermicelli carbon footprint per kg",
+  "short": "Add the wheat semolina or flour per kg with the mill's figure, then mixing, extrusion, drying and roasting energy. Divide the unit's fuel and electricity by kg packed and add packing.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "verra-or-gold-standard-which-to-choose",
   "q": "Verra or Gold Standard: which registry should a small project choose?",
   "title": "Verra or Gold Standard for a small project?",
@@ -9569,6 +9929,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Group net metering credits surplus solar from one of your premises against your other connections with the same discom; virtual net metering shares one solar system's output among several consumers. For location-based Scope 2, report the grid units each meter imported, before credits. Credits can lower market-based Scope 2 only if you keep the renewable attributes.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "voltage-stabilizer-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a voltage stabilizer?",
+  "title": "Voltage stabilizer carbon footprint per unit",
+  "short": "A stabilizer is mostly its transformer: weigh the copper or aluminium winding and lamination steel per unit and multiply by supplier figures. Add the board, relays and cabinet, then winding, assembly and testing energy, divided by units passed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "vsme-standard-for-small-suppliers",
@@ -9608,6 +9976,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Warranty replacements in Scope 3",
   "short": "Parts you buy and send as replacements are purchased goods in Category 1; if you make them, their production energy is already in your Scope 1 and 2. Freight you pay to ship them is Category 4. Failed parts you take back and scrap go to Category 5 as waste.",
   "topic": "accounting",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "washing-machine-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a washing machine?",
+  "title": "Washing machine carbon footprint per unit",
+  "short": "A washing machine is mostly bought-in parts: weigh the steel cabinet, plastic tub, motor and electronics per unit and multiply each by the supplier's figure. Add pressing, moulding, painting and assembly energy, then divide the plant's energy by machines built.",
+  "topic": "product",
   "reviewed": "2026-10-20"
  },
  {
@@ -9673,6 +10049,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the data transferred per page view by monthly page views, then by an energy intensity per GB from a published model such as the Sustainable Web Design Model, then by a grid factor. The result is a model-based estimate, and different methods give quite different numbers, so state the method.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "welding-electrode-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of welding electrodes per kg?",
+  "title": "Welding electrode carbon footprint per kg",
+  "short": "Add the steel core wire and flux materials per kg of electrodes with supplier figures, then wire drawing, extrusion and baking energy. Divide the plant's energy by kg of electrodes packed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "well-to-tank-emissions-from-diesel-invoices",
@@ -10131,6 +10515,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "wire-nails-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of wire nails per kg?",
+  "title": "Wire nails carbon footprint per kg",
+  "short": "Multiply the wire rod per kg of nails by the steel supplier's figure, then add drawing, nail making, polishing and packing energy. Divide the unit's energy by kg dispatched.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "wiring-harness-carbon-footprint-per-unit",
   "q": "How do I calculate the carbon footprint of a wiring harness for an auto or EV customer?",
   "title": "Wiring harness carbon footprint per unit",
@@ -10161,6 +10553,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "On one-way export shipments, a wooden pallet usually has the lower footprint per trip, because a plastic pallet's higher production emissions fall on a single trip. Plastic can come out ahead only in a closed loop where your records show it makes many trips. Compare production CO2e divided by real trips, plus freight for the pallet's own weight.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "woollen-shawl-carbon-footprint-per-shawl",
+  "q": "How do I calculate the carbon footprint of a woollen shawl?",
+  "title": "Woollen shawl carbon footprint per shawl",
+  "short": "Start with the wool or wool blend yarn per shawl and the yarn supplier's figure, then add weaving, dyeing, washing and finishing energy. Divide the unit's energy by shawls finished and state fibre, size and weight.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "work-from-home-emissions-calculation",

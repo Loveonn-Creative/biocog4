@@ -1,0 +1,86 @@
+{
+  "slug": "flush-door-carbon-footprint-per-door",
+  "q": "How do I calculate the carbon footprint of a flush door?",
+  "title": "Flush door carbon footprint per door",
+  "short": "Add the timber or block board core, face veneers or laminates and adhesive per door with supplier figures. Add hot press, sanding and finishing energy, then divide the plant's energy by doors made, stated by size and thickness.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Flush door makers and builders",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Core: solid timber, block board or particle board.",
+        "Face veneers, plywood skins or laminates.",
+        "Adhesive, usually urea or phenol formaldehyde."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Hot press, often heated by a wood or oil fired boiler.",
+        "Sizing, sanding and edge banding.",
+        "Polish or paint if supplied finished."
+      ]
+    },
+    {
+      "h": "Per door",
+      "p": [
+        "Report per door with size and thickness. Wood waste burned in the boiler still counts toward boiler fuel use."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: flush door unit per door (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Diesel: 2,000 litres x 2.68 = 5,360 kg CO2",
+      "Doors produced: 8,000",
+      "Plant total: 19,560 / 8,000 = 2.445 kg CO2 per door",
+      "Add core, skins and adhesive for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Plywood footprint",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Steel door footprint",
+      "to": "/answers/steel-door-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Wooden furniture footprint",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

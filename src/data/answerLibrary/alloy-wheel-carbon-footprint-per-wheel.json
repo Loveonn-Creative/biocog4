@@ -1,0 +1,82 @@
+{
+  "slug": "alloy-wheel-carbon-footprint-per-wheel",
+  "q": "How do I calculate the carbon footprint of an alloy wheel?",
+  "title": "Alloy wheel carbon footprint per wheel",
+  "short": "Most of an alloy wheel is aluminium: multiply the cast weight, including gates and swarf, by the alloy supplier's figure. Add melting, low pressure casting, heat treatment, machining and painting energy, then divide by wheels passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Alloy wheel makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Aluminium alloy by cast weight.",
+        "Swarf and rejects remelted.",
+        "Paint and lacquer."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Melting furnaces.",
+        "Low pressure die casting and heat treatment.",
+        "Machining, painting and testing."
+      ]
+    },
+    {
+      "h": "Per wheel",
+      "p": [
+        "Report per wheel by size and finished weight. Recycled alloy lowers the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: alloy wheel unit per wheel (one month)",
+    "lines": [
+      "Electricity: 150,000 kWh x 0.710 = 106,500 kg CO2",
+      "PNG: 50,000 SCM x 2.05 = 102,500 kg CO2",
+      "Wheels produced: 30,000",
+      "Plant total: 209,000 / 30,000 = 6.967 kg CO2 per wheel",
+      "Add aluminium alloy for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Aluminium die casting footprint",
+      "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Tyre footprint",
+      "to": "/answers/tyre-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Aluminium industry",
+      "to": "/industries/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "lpg-cylinder-carbon-footprint-per-cylinder",
+  "q": "How do I calculate the carbon footprint of making an LPG cylinder?",
+  "title": "LPG cylinder carbon footprint per cylinder",
+  "short": "Multiply the steel per cylinder (two halves, foot ring and valve guard) by the steel supplier's figure, then add deep drawing, welding, heat treatment, testing and painting energy. Divide by cylinders passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "LPG cylinder makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Hot rolled steel sheet by weight.",
+        "Valve and bung.",
+        "Paint."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Deep drawing of the halves.",
+        "Circumferential welding and normalising furnace.",
+        "Hydro testing, shot blasting and painting."
+      ]
+    },
+    {
+      "h": "Per cylinder",
+      "p": [
+        "Report per cylinder by capacity. This is the cylinder's manufacture; the gas burned is a separate figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: LPG cylinder unit per cylinder (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "PNG: 15,000 SCM x 2.05 = 30,750 kg CO2",
+      "Cylinders produced: 50,000",
+      "Plant total: 66,250 / 50,000 = 1.325 kg CO2 per cylinder",
+      "Add steel and valve for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "LPG 19 kg cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "Steel drum footprint",
+      "to": "/answers/steel-drum-carbon-footprint-per-drum"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

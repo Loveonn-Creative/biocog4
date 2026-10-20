@@ -1,0 +1,81 @@
+{
+  "slug": "fibc-jumbo-bag-carbon-footprint-per-bag",
+  "q": "How do I calculate the carbon footprint of an FIBC jumbo bag?",
+  "title": "FIBC jumbo bag carbon footprint per bag",
+  "short": "Multiply the polypropylene fabric, webbing loops and liner per bag by the resin supplier's figure, then add tape extrusion, weaving, coating and stitching electricity. Divide the plant's energy by bags made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "FIBC and bulk bag makers and exporters",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Polypropylene for tape, fabric and loops.",
+        "LDPE coating or liner.",
+        "Thread and labels."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Tape extrusion line.",
+        "Circular looms and coating.",
+        "Cutting and stitching."
+      ]
+    },
+    {
+      "h": "Per bag",
+      "p": [
+        "Report per bag by its safe working load and weight, since a 1,000 kg bag and a 2,000 kg bag use different fabric weights."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: FIBC jumbo bag unit per bag (one month)",
+    "lines": [
+      "Electricity: 150,000 kWh x 0.710 = 106,500 kg CO2",
+      "Bags produced: 100,000",
+      "Plant total: 106,500 / 100,000 = 1.065 kg CO2 per bag",
+      "Add polypropylene for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PP woven sack or jute",
+      "to": "/answers/pp-woven-sack-carbon-footprint-vs-jute"
+    },
+    {
+      "label": "Tarpaulin footprint",
+      "to": "/answers/tarpaulin-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "colour-coated-roofing-sheet-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of colour coated roofing sheet per tonne?",
+  "title": "Colour coated sheet carbon footprint per tonne",
+  "short": "Start with the galvanised or galvalume steel coil per tonne and multiply by the supplier's figure. Add paint, pretreatment and the coating line's curing oven fuel and electricity, plus roll forming, then divide by tonnes dispatched.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Colour coating lines and roofing sheet sellers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Galvanised or galvalume base coil by weight.",
+        "Primer and top coat paints.",
+        "Pretreatment chemicals."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cleaning and pretreatment section.",
+        "Curing ovens, usually fired by gas or oil.",
+        "Roll forming into profiles."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne, and per sheet on request using its length, thickness and profile. The base steel coil usually carries most of the footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: colour coated sheet unit per tonne (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "PNG: 40,000 SCM x 2.05 = 82,000 kg CO2",
+      "Tonnes dispatched: 2,000",
+      "Plant total: 124,600 / 2,000 = 62.3 kg CO2 per tonne",
+      "Add base coil and paint for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Hot-dip galvanizing footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Paint footprint",
+      "to": "/answers/paint-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Fibre cement roof sheet footprint",
+      "to": "/answers/fibre-cement-roof-sheet-carbon-footprint-per-sheet"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

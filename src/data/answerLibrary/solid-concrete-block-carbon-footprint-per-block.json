@@ -1,0 +1,86 @@
+{
+  "slug": "solid-concrete-block-carbon-footprint-per-block",
+  "q": "How do I calculate the carbon footprint of a solid concrete block?",
+  "title": "Concrete block carbon footprint per block",
+  "short": "Most of a concrete block's footprint is its cement: multiply the cement per block by the cement supplier's figure, add aggregates and any fly ash, then add the block machine and curing energy. Divide the plant's energy by good blocks made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Concrete block makers and builders",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Cement by weight per block.",
+        "Fly ash or slag if used to replace cement.",
+        "Crushed stone, sand and water."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Mixer and vibro-press block machine.",
+        "Curing, by water or steam.",
+        "Handling and transport within the yard."
+      ]
+    },
+    {
+      "h": "Per block",
+      "p": [
+        "Report per block with its size and weight. Replacing part of the cement with fly ash lowers the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: concrete block unit per block (one month)",
+    "lines": [
+      "Electricity: 8,000 kWh x 0.710 = 5,680 kg CO2",
+      "Diesel: 1,000 litres x 2.68 = 2,680 kg CO2",
+      "Blocks produced: 100,000",
+      "Plant total: 8,360 / 100,000 = 0.0836 kg CO2 per block",
+      "Add cement for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Fly ash brick footprint",
+      "to": "/answers/fly-ash-brick-carbon-footprint-per-1000"
+    },
+    {
+      "label": "Paver block footprint",
+      "to": "/answers/paver-block-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "AAC block or red brick",
+      "to": "/answers/aac-block-vs-red-brick-carbon-footprint"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
