@@ -3382,14 +3382,20 @@ export type Database = {
       subscriptions: {
         Row: {
           amount: number
+          billed_base_amount: number | null
           billing_cycle: string
           created_at: string | null
           currency: string | null
+          discount_note: string | null
           expires_at: string | null
+          gst_amount: number | null
           id: string
+          payment_mode: string
           razorpay_order_id: string | null
           razorpay_payment_id: string | null
           razorpay_signature: string | null
+          reconciled_at: string | null
+          reconciled_by: string | null
           starts_at: string | null
           status: string | null
           tier: string
@@ -3398,14 +3404,20 @@ export type Database = {
         }
         Insert: {
           amount: number
+          billed_base_amount?: number | null
           billing_cycle?: string
           created_at?: string | null
           currency?: string | null
+          discount_note?: string | null
           expires_at?: string | null
+          gst_amount?: number | null
           id?: string
+          payment_mode?: string
           razorpay_order_id?: string | null
           razorpay_payment_id?: string | null
           razorpay_signature?: string | null
+          reconciled_at?: string | null
+          reconciled_by?: string | null
           starts_at?: string | null
           status?: string | null
           tier: string
@@ -3414,14 +3426,20 @@ export type Database = {
         }
         Update: {
           amount?: number
+          billed_base_amount?: number | null
           billing_cycle?: string
           created_at?: string | null
           currency?: string | null
+          discount_note?: string | null
           expires_at?: string | null
+          gst_amount?: number | null
           id?: string
+          payment_mode?: string
           razorpay_order_id?: string | null
           razorpay_payment_id?: string | null
           razorpay_signature?: string | null
+          reconciled_at?: string | null
+          reconciled_by?: string | null
           starts_at?: string | null
           status?: string | null
           tier?: string
@@ -3860,6 +3878,20 @@ export type Database = {
       owns_session: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
+      }
+      reconcile_subscription_manual: {
+        Args: {
+          p_base_price: number
+          p_billing_cycle: string
+          p_discount_note?: string
+          p_expires_at: string
+          p_payment_mode: string
+          p_reconciled_by?: string
+          p_starts_at: string
+          p_tier: string
+          p_user_id: string
+        }
+        Returns: string
       }
       release_invoice_read: { Args: { p_id: string }; Returns: boolean }
       remove_member: {
