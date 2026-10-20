@@ -1,7 +1,20 @@
 // Reads the server's error message from a supabase.functions.invoke error.
 // No imports, so any page can use it without loading the Supabase client.
 /** Shown when Senseible's own AI capacity is unavailable (HTTP 402 from the reader). Never the person's plan. */
-export const AI_PAUSED_MESSAGE = 'Invoice reading is paused on our side right now. Your account is fine; please try again later.';
+export const AI_PAUSED_MESSAGE = 'Bill reading is catching up with demand. Nothing was counted and your account is fine. Try again in a few minutes.';
+/** Many reads at once (429). */
+export const AI_BUSY_MESSAGE = "We're reading a high volume of bills right now. Nothing was counted. Try again in a minute.";
+/** The file itself could not be read. */
+export const UNREADABLE_MESSAGE = 'This file is hard to read. Nothing was counted. A sharp photo of the full page, or the original PDF, usually works first time.';
+
+// The website owns the wording for these codes, so it changes with a site
+// deploy and stays the same whichever server version sent the error.
+const CODE_MESSAGES: Record<string, string> = {
+  ai_busy: AI_BUSY_MESSAGE,
+  ai_unavailable: AI_PAUSED_MESSAGE,
+  ai_down: AI_PAUSED_MESSAGE,
+  unreadable: UNREADABLE_MESSAGE,
+};
 
 /** HTTP status of a supabase.functions.invoke error, when there is one. */
 export function functionErrorStatus(error: unknown): number | null {
@@ -16,7 +29,7 @@ export async function getFunctionErrorMessage(error: unknown, fallback: string):
   if (context && typeof (context as Response).json === 'function') {
     try {
       const body = await (context as Response).clone().json();
-      if (body?.code === 'ai_unavailable') return AI_PAUSED_MESSAGE;
+      if (typeof body?.code === 'string' && CODE_MESSAGES[body.code]) return CODE_MESSAGES[body.code];
       if (body && typeof body.error === 'string' && body.error) return body.error;
     } catch {
       // Body was not JSON; fall through.

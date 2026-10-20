@@ -121,10 +121,10 @@ export function fileCheck(b64: string, mimeType: unknown, maxBytes = SIGNED_IN_M
 
 /** What the user sees when every AI provider failed: our problem, not their image. */
 export function providerFailure(status: number | undefined): { status: number; code: string; message: string } {
-  if (status === 429) return { status: 429, code: 'ai_busy', message: 'Invoice reading is busy right now. Please wait a minute and try again; nothing was counted.' };
-  if (status === 402) return { status: 503, code: 'ai_unavailable', message: 'Invoice reading is paused on our side right now. Please try again later; nothing was counted.' };
+  if (status === 429) return { status: 429, code: 'ai_busy', message: "We're reading a high volume of bills right now. Nothing was counted. Try again in a minute." };
+  if (status === 402) return { status: 503, code: 'ai_unavailable', message: 'Bill reading is catching up with demand. Nothing was counted and your account is fine. Try again in a few minutes.' };
   if (status === 413) return { status: 413, code: 'file_too_large', message: 'This file is too large to read in one go. Take a photo of the page, or save the PDF at a lower quality.' };
-  return { status: 503, code: 'ai_down', message: 'Invoice reading is temporarily unavailable on our side. Please try again in a few minutes; nothing was counted.' };
+  return { status: 503, code: 'ai_down', message: 'Bill reading is catching up with demand. Nothing was counted and your account is fine. Try again in a few minutes.' };
 }
 
 // ----------------------------------------------------------------------------

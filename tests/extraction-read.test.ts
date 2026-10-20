@@ -58,7 +58,10 @@ describe('file checks and our-side failures', () => {
     expect(fileCheck('A'.repeat(24), 'image/png', 10)).toMatchObject({ ok: false, status: 413 });
   });
   test('provider failures never blame the image', () => {
-    for (const s of [undefined, 400, 404, 500, 503]) expect(providerFailure(s).message).toMatch(/our side/);
+    for (const s of [undefined, 400, 404, 500, 503]) {
+      expect(providerFailure(s).message).toMatch(/Nothing was counted/);
+      expect(providerFailure(s).message).not.toMatch(/file|photo|image|PDF/i);
+    }
     expect(providerFailure(429)).toMatchObject({ status: 429, code: 'ai_busy' });
     expect(providerFailure(402).status).toBe(503);
   });

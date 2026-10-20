@@ -121,3 +121,19 @@ describe('flow contracts (audit fixes)', () => {
     expect(await getFunctionErrorMessage(coded, 'x')).toBe(AI_PAUSED_MESSAGE);
   });
 });
+
+describe('reading errors are worded by the website, by error code', () => {
+  const coded = (status: number, body: Record<string, unknown>) =>
+    Object.assign(new Error('Edge Function returned a non-2xx status code'), { context: new Response(JSON.stringify(body), { status }) });
+  test('busy, down and unreadable get the calm, actionable wording whatever the server said', async () => {
+    const m = await import('../src/lib/functionErrors');
+    expect(await m.getFunctionErrorMessage(coded(429, { code: 'ai_busy', error: 'old text' }), 'x')).toBe(m.AI_BUSY_MESSAGE);
+    expect(await m.getFunctionErrorMessage(coded(503, { code: 'ai_down', error: 'old text' }), 'x')).toBe(m.AI_PAUSED_MESSAGE);
+    expect(await m.getFunctionErrorMessage(coded(422, { code: 'unreadable', error: 'old text' }), 'x')).toBe(m.UNREADABLE_MESSAGE);
+  });
+  test('limits keep their own message even on 429', async () => {
+    const { getFunctionErrorMessage } = await import('../src/lib/functionErrors');
+    const msg = 'You have read 30 invoices today without an account.';
+    expect(await getFunctionErrorMessage(coded(429, { code: 'guest_daily_limit', error: msg }), 'x')).toBe(msg);
+  });
+});
