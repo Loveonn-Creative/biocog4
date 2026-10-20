@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { useAuthStatus, useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
+import { HOME_ALSO_ON, HomeAlso } from "@/components/home/HomeAlso";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
 import { resolveWorkspaceScope } from "@/lib/workspaceChoice";
 import { IDENTITY_CHANGED_EVENT } from "@/lib/identity";
@@ -46,6 +47,7 @@ const ResultState = lazy(() =>
 // first paint in their own chunks.
 const loadHomeStory = () => import("@/components/home/HomeStory");
 const loadSignedInNextStep = () => import("@/components/home/SignedInNextStep");
+const FooterDelivery = lazy(() => import("@/components/FooterDelivery").then((m) => ({ default: m.FooterDelivery })));
 const HomeStory = lazy(() => loadHomeStory().then((m) => ({ default: m.HomeStory })));
 const StickyCta = lazy(() => loadHomeStory().then((m) => ({ default: m.StickyCta })));
 const SignedInNextStep = lazy(loadSignedInNextStep);
@@ -985,6 +987,8 @@ const Index = () => {
                 <span className="text-primary font-semibold">Empowering climate impact.</span>
               </p>
             </div>
+
+            {authStatus === 'signedOut' && HOME_ALSO_ON && <HomeAlso />}
             
             {/* Bulk Upload Toggle for signed-in users */}
             {user && (
@@ -1051,6 +1055,14 @@ const Index = () => {
         </Suspense>
       )}
       
+      {authStatus === 'signedOut' && HOME_ALSO_ON && (
+        <div className="relative z-20 w-full max-w-6xl mx-auto px-6 pt-10">
+          <Suspense fallback={null}>
+            <FooterDelivery />
+          </Suspense>
+        </div>
+      )}
+
       <footer className="relative z-20 w-full pb-24 sm:pb-6 pt-3 border-t border-border">
         <nav className="flex items-center justify-center gap-5 sm:gap-7 flex-wrap px-4">
           <Link 
@@ -1085,6 +1097,14 @@ const Index = () => {
           </Link>
           {/* Guests get Sign In. Signed-in users already have Verify, History
               and Open dashboard as buttons above, so no Dashboard link here. */}
+          {authStatus === 'signedIn' && HOME_ALSO_ON && (
+            <Link
+              to="/help"
+              className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+            >
+              Help Center
+            </Link>
+          )}
           {authStatus === 'signedOut' && (
             <Link 
               to="/auth" 
