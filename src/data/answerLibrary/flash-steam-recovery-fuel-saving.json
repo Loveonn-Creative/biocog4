@@ -1,0 +1,78 @@
+{
+  "slug": "flash-steam-recovery-fuel-saving",
+  "q": "How much fuel can I save by recovering flash steam from condensate?",
+  "title": "Fuel saved by recovering flash steam",
+  "short": "When condensate at 10 bar(g) drops to atmospheric pressure, about 16% of it turns into flash steam. Piping that steam into a low-pressure user instead of venting it saves the boiler fuel needed to make the same steam. Work out the flash fraction from steam tables, then the heat, then the fuel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers in textiles, food, pharma and chemicals",
+  "sections": [
+    {
+      "h": "The flash fraction formula",
+      "p": [
+        "Flash fraction = (hf at the high pressure minus hf at the low pressure) / hfg at the low pressure, where hf is the enthalpy of saturated water and hfg the latent heat, both from steam tables. From 10 bar(g) (about 781 kJ/kg) to atmospheric (419 kJ/kg, hfg 2,257 kJ/kg): (781 minus 419) / 2,257 = 16%. Flashing to 1 bar(g) instead (hf 505 kJ/kg, hfg 2,202 kJ/kg) gives about 12.6%."
+      ]
+    },
+    {
+      "h": "Where flash steam can go",
+      "ul": [
+        "A low-pressure header that feeds heating, such as tank heating, deaerators, air heaters or wash water.",
+        "The deaerator or feed water tank, as long as it does not overheat and vent the steam anyway.",
+        "The flash vessel needs a low-pressure user with demand at the same times the high-pressure condensate is produced; otherwise the steam is vented and nothing is saved."
+      ]
+    },
+    {
+      "h": "From flash steam to fuel",
+      "ol": [
+        "Flash steam (kg/h) = condensate flow x flash fraction.",
+        "Heat recovered (kJ/h) = flash steam x hfg at the low pressure.",
+        "Fuel heat saved = heat recovered / boiler efficiency.",
+        "CO2 saved = fuel energy saved x the fuel's CO2 factor per GJ, or fuel quantity saved x Senseible's per unit factor."
+      ]
+    },
+    {
+      "h": "Do not count the saving twice",
+      "p": [
+        "The residual condensate leaving the flash vessel can still be returned to the boiler; that saving belongs on the condensate return calculation. Count the flash steam's latent heat here and the hot water's heat there, not both on the same kilogram."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 2,000 kg/h of condensate at 10 bar(g) flashed to 1 bar(g)",
+    "lines": [
+      "Flash fraction: (781.1 minus 504.7) / 2,201.6 = 12.6%",
+      "Flash steam: 2,000 x 0.1256 = 251.2 kg/h",
+      "Heat recovered: 251.2 x 2,201.6 = 553,000 kJ/h, or 0.553 GJ/h",
+      "Fuel heat at 80% boiler efficiency (assumed): 0.553 / 0.80 = 0.691 GJ/h",
+      "Over 6,000 hours: 0.691 x 6,000 = 4,146 GJ of fuel a year",
+      "If the boiler burns natural gas: 4,146 x 56.1 kg CO2 per GJ = 232,600 kg, about 233 t CO2 a year"
+    ],
+    "note": "Steam table values from IAPWS-IF97; the efficiency and hours are assumptions. Use the factor for the fuel your boiler burns."
+  },
+  "senseible": "Senseible converts fuel quantities from your invoices to CO2 with IPCC 2006 defaults, so lower boiler fuel purchases show up as lower Scope 1.",
+  "links": [
+    {
+      "label": "Condensate recovery fuel and CO2 savings",
+      "to": "/answers/condensate-recovery-fuel-co2-savings"
+    },
+    {
+      "label": "Failed steam trap fuel loss",
+      "to": "/answers/failed-steam-trap-fuel-loss"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, Chapter 3 Steam System, flash steam recovery (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion (natural gas CO2 default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

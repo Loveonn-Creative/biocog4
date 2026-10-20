@@ -1,0 +1,88 @@
+{
+  "slug": "low-liquor-ratio-dyeing-steam-co2-saving",
+  "q": "How much steam and CO2 does a low liquor ratio dyeing machine save?",
+  "title": "Low liquor ratio dyeing: steam and CO2 saved",
+  "short": "Work it out from the water you no longer heat. Each litre heated by 60 degrees C needs about 0.25 MJ, so cutting a 500 kg batch from 1:8 to 1:5 saves about 377 MJ per hot bath. Divide by boiler efficiency for fuel energy, then apply the fuel's emission factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dyeing and processing units in Tiruppur, Erode, Ludhiana and Surat",
+  "sections": [
+    {
+      "h": "The heat balance",
+      "p": [
+        "Heat saved per bath = water saved (kg) x 4.186 kJ per kg per degree C x temperature rise. Water saved = batch weight x (old ratio minus new ratio). One litre of water is about one kg.",
+        "Count every hot bath in the cycle: scouring or bleaching, dyeing, hot rinses and soaping. Cold rinses save water but no heat."
+      ]
+    },
+    {
+      "h": "From heat to fuel and CO2",
+      "ol": [
+        "Divide the heat by boiler efficiency from your boiler test (BEE Guide Book 2 sets out the direct and indirect methods), and by steam distribution losses if you know them.",
+        "Convert fuel energy to CO2 with the IPCC 2006 factor per GJ, for example 94.6 kg CO2 per GJ for bituminous coal on a net calorific value basis. Convert to kg of fuel with its tested calorific value.",
+        "For firewood or briquettes, report the CO2 as biogenic, outside the scope totals. The saving still shows in tonnes of fuel and in cost."
+      ]
+    },
+    {
+      "h": "Why not 2.42 kg CO2 per kg of coal?",
+      "p": [
+        "Senseible's per-kg coal factor, 2.42 kg CO2 per kg from IPCC 2006 defaults, works out to coal of about 25.6 MJ per kg (2.42 / 0.0946). Much boiler coal in textile clusters is far weaker. At an assumed 16.7 MJ per kg, 94.6 kg per GJ gives about 1.58 kg CO2 per kg.",
+        "A saving worked out from heat is an energy figure, so convert it with the factor per GJ. Multiplying the coal saved by 2.42 instead would overstate the CO2 by about half for this coal. If you have a coal analysis, use its calorific value."
+      ]
+    },
+    {
+      "h": "Savings beyond steam",
+      "ul": [
+        "Salt and alkali dosed in grams per litre fall with the bath volume.",
+        "Less effluent per kg of fabric, so less ETP power and chemical use.",
+        "Cycle time often falls, but check machine power: some low liquor machines use larger pumps or air jets."
+      ]
+    },
+    {
+      "h": "Confirming it in your records",
+      "p": [
+        "Compare fuel per kg of fabric processed for three months before and after, with a similar shade mix. Dark shades need more hot baths, so a month of heavy shades can hide the saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one machine, coal-fired boiler",
+    "lines": [
+      "Batch 500 kg, liquor ratio 1:8 to 1:5: water saved 500 x (8 minus 5) = 1,500 L per bath",
+      "Two hot baths per cycle at a 60 degree C rise: 3,000 kg x 4.186 x 60 = 753,480 kJ, about 753 MJ",
+      "At 70% boiler and distribution efficiency: 753 / 0.70 = 1,076 MJ of coal energy",
+      "CO2: 1.076 GJ x 94.6 = 102 kg per batch; at an assumed net calorific value of 16.7 MJ per kg (4,000 kcal), about 64 kg of coal; 64 x 2.42 = 155 kg would overstate it",
+      "1,000 batches a year: about 102 t CO2 and 64 t of coal saved"
+    ],
+    "note": "Efficiency, calorific value and the number of hot baths are assumptions; use your boiler test and coal analysis. 94.6 kg CO2 per GJ is the IPCC 2006 default for other bituminous coal."
+  },
+  "senseible": "Senseible reads boiler fuel invoices and electricity bills each month, so fuel per kg of fabric before and after the machine change comes from the same records. Kilograms processed come from your production register.",
+  "links": [
+    {
+      "label": "Dye house emissions per metre of fabric",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Hot water saved: CO2 per kL",
+      "to": "/answers/hot-water-saved-co2-per-kl"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, Chapter 2 Boilers",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2, Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

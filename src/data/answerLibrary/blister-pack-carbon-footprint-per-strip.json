@@ -1,0 +1,84 @@
+{
+  "slug": "blister-pack-carbon-footprint-per-strip",
+  "q": "What is the carbon footprint of a blister strip, and how do I calculate it per pack?",
+  "title": "Blister strip carbon footprint per pack",
+  "short": "There is no standard figure; it depends on the film, foil and mass in each strip. Calculate it as grams of PVC, PVDC coating and aluminium foil per strip, each times its material factor, plus a share of forming and sealing power, then multiply by strips per pack.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Formulation exporters answering buyer packaging data requests",
+  "sections": [
+    {
+      "h": "Getting the mass per strip",
+      "p": [
+        "Take masses from the bill of materials, or from area x thickness x density. Rigid PVC film of 250 microns at about 1.39 g per cm3 weighs about 348 g per square metre.",
+        "Better still, divide film and foil bought in a month by strips released. That includes the skeleton left after punching and the start-up losses that net masses miss."
+      ]
+    },
+    {
+      "h": "Choosing material factors",
+      "ul": [
+        "Use the film or foil supplier's product footprint first.",
+        "Otherwise use a published eco-profile for the polymer, such as the PlasticsEurope profile for PVC, and write down its edition and region.",
+        "Aluminium foil varies most: the power source of the smelter behind the metal changes the factor widely. Ask where the primary metal came from and its recycled share.",
+        "Cold form (Alu Alu) packs have a thick aluminium layer in the base as well as the lid, so foil dominates their footprint."
+      ]
+    },
+    {
+      "h": "Forming and sealing energy",
+      "p": [
+        "Divide the blister line's kWh for a period by strips packed and multiply by 0.710 kg CO2 per kWh. If the line has no sub-meter, use motor and heater ratings x running hours and label it an estimate."
+      ]
+    },
+    {
+      "h": "Per pack, and what to state",
+      "p": [
+        "Per pack = per strip x strips per pack, plus carton, leaflet and shipper if the buyer asks for secondary packaging. State the boundary (cradle to gate of the packaging), each factor with its source, and the GWP set where factors include gases other than CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one 10 tablet PVC/PVDC strip",
+    "lines": [
+      "PVC film: 1.6 g x 2.0 kg CO2e per kg = 3.2 g CO2e",
+      "PVDC coating: 0.2 g x 6.0 kg CO2e per kg = 1.2 g CO2e",
+      "Aluminium lidding foil: 0.5 g x 12.0 kg CO2e per kg = 6.0 g CO2e",
+      "Line power: 240 kWh for 1,44,000 strips = 0.00167 kWh per strip x 0.710 = 1.2 g CO2",
+      "Per strip: 3.2 + 1.2 + 6.0 + 1.2 = 11.6 g CO2e; per pack of 10 strips: 116 g CO2e"
+    ],
+    "note": "All masses and factors are illustrative inputs, not published values. At these numbers the foil is about half the total, which is why its source matters."
+  },
+  "senseible": "Senseible reads PVC film, foil and other packaging purchase invoices by quantity into the supplier evidence trail, and the plant's electricity bills into Scope 2. Material factors come from your suppliers or cited eco-profiles.",
+  "links": [
+    {
+      "label": "Pharma footprint per 1,000 tablets",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    },
+    {
+      "label": "Resin factors for PP, HDPE and PVC",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Checking an aluminium supplier's claim",
+      "to": "/answers/how-to-check-aluminium-supplier-carbon-claim"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

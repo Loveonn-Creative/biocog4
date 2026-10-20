@@ -1,0 +1,65 @@
+{
+  "slug": "plastic-waste-coprocessing-cement-kiln-emissions",
+  "q": "How are emissions counted when plastic waste is co-processed in a cement kiln?",
+  "title": "Plastic waste co-processed in a cement kiln",
+  "short": "The fossil carbon in the plastic becomes CO2 in the kiln and counts as the cement plant's Scope 1 fuel emissions. The company that sent the waste reports it in Scope 3: Category 5 for its own operational waste, Category 12 for sold packaging. The coal it replaces is never subtracted.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Waste generators, EPR obligated brands and cement plants",
+  "sections": [
+    {
+      "h": "The formula for CO2 from plastic burnt as fuel",
+      "p": [
+        "IPCC 2006 Volume 5, Chapter 5 gives it: CO2 = tonnes of waste x dry matter share x carbon content x fossil carbon share x oxidation factor x 44/12. For plastics the IPCC defaults are 100% dry matter, 75% carbon and 100% fossil carbon, and the default oxidation factor for incineration is 100%, which suits a kiln's long, hot burn.",
+        "Volume 2, Chapter 2 of the same guidelines says waste used as a fuel is reported in the energy sector. So in the cement plant's inventory it sits with coal and petcoke as a stationary combustion fuel, not as waste treatment."
+      ]
+    },
+    {
+      "h": "Where it shows up for each party",
+      "ul": [
+        "Cement plant: fossil CO2 from the plastic in Scope 1, plus methane and nitrous oxide from combustion. Biogenic CO2 from paper or other biomass in the feed is reported separately.",
+        "Factory sending its own plastic scrap or rejects: Scope 3 Category 5, waste generated in operations, plus transport if you include it.",
+        "Brand whose sold packaging ends up co-processed: Scope 3 Category 12, end-of-life treatment of sold products, based on how the packaging is actually treated."
+      ]
+    },
+    {
+      "h": "Why the replaced coal is not deducted",
+      "p": [
+        "The kiln would have burnt coal or petcoke for the same heat. That saving is an avoided emission, and the GHG Protocol keeps avoided emissions out of the inventory. The cement plant may describe it separately; neither the plant nor the waste sender subtracts it from a scope total. EPR certificates generated for co-processing prove a quantity of plastic was handled. They do not reduce anyone's emissions figure."
+      ]
+    },
+    {
+      "h": "What changes the number",
+      "ul": [
+        "Carbon content: polyethylene and polypropylene are about 86% carbon; PVC is much lower because of its chlorine.",
+        "Multilayer packaging with paper or aluminium layers carries less fossil carbon per tonne; ask for a composition or calorific value analysis.",
+        "Moisture and dirt in the bales: apply the carbon share to dry plastic, not wet weight, if you have a moisture figure.",
+        "Pre-processing: if the plastic goes first to a refuse-derived fuel plant, record that route too; it is still burnt in the end."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 tonnes of mixed plastic waste",
+    "lines": [
+      "IPCC 2006 defaults for plastics: dry matter 100%, carbon 75%, fossil carbon 100%",
+      "Oxidation factor in the kiln: 1.0",
+      "CO2 = 100 x 1.0 x 0.75 x 1.0 x 1.0 x 44/12 = 275 t CO2",
+      "Cement plant: 275 t CO2 in Scope 1 stationary combustion",
+      "Waste sender: the same 275 t in its Scope 3 Category 5 (or Category 12 for sold packaging), plus transport if included"
+    ],
+    "note": "Use the waste's own carbon analysis where you have it. Methane and nitrous oxide from the kiln are small next to the fossil CO2."
+  },
+  "senseible": "Senseible records the transport and waste treatment invoices for plastic you send out in your Scope 3 evidence trail, with the quantities they show. The CO2 per tonne from the plastic's carbon content is worked out with the formula on this page.",
+  "links": [
+    { "label": "Waste sent to waste-to-energy in Scope 3", "to": "/answers/waste-sent-to-waste-to-energy-scope-3" },
+    { "label": "EPR plastic credits vs carbon credits", "to": "/answers/plastic-credits-vs-carbon-credits-epr" },
+    { "label": "Cement grinding unit CO2 per tonne", "to": "/answers/cement-grinding-unit-co2-per-tonne" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Volume 5 Chapters 2 and 5 (plastics defaults, incineration) and Volume 2 Chapter 2 (waste used as fuel)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 5 and 12", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "CPCB, Guidelines for Co-processing of Plastic Waste in Cement Kilns (May 2017, under rule 5(b) of the Plastic Waste Management Rules 2016)", "url": "https://cpcb.nic.in" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 20 October 2026: plastics defaults from 2006 IPCC Guidelines Vol. 5 Table 2.4 (dry matter 100%, carbon 75% of dry weight, fossil carbon 100%); CPCB plastic co-processing guidelines dated May 2017. Recheck if the GHG Protocol publishes a revised Scope 3 Standard or CPCB revises the guidelines."
+}

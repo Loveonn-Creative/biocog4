@@ -1,0 +1,85 @@
+{
+  "slug": "how-lenders-read-msme-borrower-ghg-report",
+  "q": "I am a lender. How should I read an MSME borrower's GHG report for a loan file?",
+  "title": "Reading a borrower's GHG report as a lender",
+  "short": "Check five things before you score it: the entity and sites match the borrower on your books, the period lines up with the financials, each figure traces to bills or invoices, the factors are named, and the report says whether anyone independent checked it. Then assign the PCAF data quality score.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Bank and NBFC credit and ESG teams",
+  "sections": [
+    {
+      "h": "Match the report to the borrower",
+      "ul": [
+        "Legal entity, GSTIN and plant addresses should match the loan file. A group report may include units your loan does not finance.",
+        "The period should be the same financial year as the balance sheet you use for the attribution factor."
+      ]
+    },
+    {
+      "h": "Check the evidence behind the numbers",
+      "ul": [
+        "Scope 1 should rest on fuel invoices or stock registers; Scope 2 on discom bills.",
+        "Ask for a sample: two electricity bills and two fuel invoices, and confirm the quantities match the report.",
+        "Factors should be named, for example the CEA grid factor with its version."
+      ]
+    },
+    {
+      "h": "Decide the PCAF data quality score",
+      "p": [
+        "Under the PCAF standard for business loans, reported emissions verified by an independent party score 1. Reported emissions without verification, or figures you calculate from the borrower's own energy use with matching factors, score 2. Figures from production volume score 3, and estimates from revenue or sector averages score 4 or 5. A self-declared report from bills is usually a 2. Record the score and the reason in the file."
+      ]
+    },
+    {
+      "h": "Work out the financed share",
+      "p": [
+        "For an unlisted company, PCAF attributes emissions by your outstanding amount divided by the borrower's total equity plus debt. Use the same year for both the emissions and the balance sheet."
+      ]
+    },
+    {
+      "h": "Know what the report does not tell you",
+      "p": [
+        "A GHG report covers emissions, not physical risk or transition risk to the business. Treat it as one input to your climate risk assessment, alongside sector, location and CBAM exposure. The RBI issued a draft Disclosure framework on climate-related financial risks in February 2024. Check rbi.org.in for which final rules apply to your institution, and from when, before citing them in a policy."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: financed emissions for one term loan",
+    "lines": [
+      "Borrower's reported Scope 1 and 2: 500 t CO2 (from bills, not independently verified: PCAF score 2)",
+      "Your outstanding loan: Rs 2 crore; borrower's total equity plus debt: Rs 10 crore",
+      "Attribution factor: 2 / 10 = 0.20",
+      "Financed emissions: 500 x 0.20 = 100 t CO2"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible gives borrowers document-backed Scope 1 and 2 figures, each line tied to its bill or invoice and SHA-256 fingerprint, and a green loan readiness check. A Verified status in Senseible means its rule checks passed; it is not independent verification for a PCAF score of 1.",
+  "links": [
+    {
+      "label": "PCAF score for MSME borrowers",
+      "to": "/answers/pcaf-data-quality-score-for-msme-borrowers"
+    },
+    {
+      "label": "Financed emissions for banks in India",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard, Part A Financed Emissions: data quality scores and attribution for business loans",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "RBI draft Disclosure framework on Climate-related Financial Risks (February 2024) and Commercial Banks, Climate Finance and Management of Climate Change Risks Directions, 2025",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (revised edition), Chapter 9 Reporting GHG emissions",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-20: RBI disclosure framework confirmed only as the February 2024 draft. Check rbi.org.in for final disclosure rules and dates. PCAF score ladder per Part A for business loans; check the current edition."
+}

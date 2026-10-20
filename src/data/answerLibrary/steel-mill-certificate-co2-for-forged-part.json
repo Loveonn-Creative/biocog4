@@ -1,0 +1,88 @@
+{
+  "slug": "steel-mill-certificate-co2-for-forged-part",
+  "q": "Can I use my steel mill's CO2 figure for the bars I forge in my part's carbon footprint?",
+  "title": "Using a steel mill's CO2 figure for forgings",
+  "short": "Yes, if the figure comes from an EPD or product carbon declaration for the grade and form you buy, not from the mill test certificate, which shows chemistry and strength only. Multiply it by the bar you consume per good part, including flash, scale and end cuts, then add your forging energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Forging units in Ludhiana, Pune and Chennai supplying OEMs",
+  "sections": [
+    {
+      "h": "Where a mill's CO2 figure can come from",
+      "ul": [
+        "Mill test certificate (EN 10204 type 3.1): chemistry and mechanical properties per heat. No CO2, so it is not a footprint source.",
+        "Environmental product declaration under ISO 14025 and EN 15804: a third-party verified cradle to gate figure per tonne for a product group, reported in modules A1 to A3.",
+        "Product carbon footprint to ISO 14067, or a supplier declaration: can be grade or site specific. Ask how it was calculated and checked.",
+        "Data a mill prepares for EU CBAM: embedded emissions for its installation. Useful if your forgings go to the EU under CBAM, but its boundary follows CBAM rules, not ISO 14067."
+      ]
+    },
+    {
+      "h": "Checks before you use it",
+      "ol": [
+        "Product form: a billet or crude steel figure stops before rolling, and bright or peeled bar adds steps. Match the form you buy.",
+        "Unit: per tonne of product, cradle to gate.",
+        "Period and site: the year and the mill that made your heats, not a group average when a site figure exists.",
+        "Gases: CO2 only or CO2e. Write which.",
+        "Special claims: a low carbon or mass balance certificate assigns emissions by its own rules. Read how the figure was assigned before you treat it as your bar's footprint."
+      ]
+    },
+    {
+      "h": "Count the steel you consume, not the finished weight",
+      "p": [
+        "A closed die forging loses steel to flash, scale and end cuts, and some parts are rejected. Your part footprint needs bar issued per good part: bar issued for the period divided by good parts despatched. Using finished weight understates the steel line, which is often the largest one.",
+        "Scrap you sell leaves your boundary. Under the usual cut-off approach you do not subtract a credit for it. If a buyer's rules allow one, show it as a separate line."
+      ]
+    },
+    {
+      "h": "Adding forging energy per part",
+      "p": [
+        "Take a period's furnace fuel and press shop kWh, convert them with published factors, and divide by good parts made on that line. Where lines share a meter, split by machine hours or tonnes forged and state the rule."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one forged part",
+    "lines": [
+      "Bar issued per good part: 1.40 kg, for a finished part of 1.00 kg",
+      "Mill EPD: 2.2 kg CO2e per kg of bar (illustrative); steel: 1.40 x 2.2 = 3.08 kg CO2e",
+      "Line energy for the month: 1,80,000 kWh x 0.710 = 1,27,800 kg CO2 over 2,00,000 good parts = 0.639 kg CO2 per part",
+      "Part footprint: 3.08 + 0.639 = 3.72 kg CO2e, cradle to gate",
+      "Using finished weight instead: 1.00 x 2.2 + 0.639 = 2.84 kg CO2e, which understates the part by about a quarter"
+    ],
+    "note": "The mill figure, kWh and volumes are illustrative. Grid energy is CO2 only; the steel figure is CO2e if the EPD reports it that way."
+  },
+  "senseible": "Senseible records bar quantities from purchase invoices in the supplier evidence trail, where the mill's declaration can be kept with the invoice, and reads forging fuel and electricity bills into Scope 1 and 2. Bar issued per good part comes from your issue and despatch records.",
+  "links": [
+    {
+      "label": "Can I use my supplier's product footprint?",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Forging carbon footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "How to read GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14025:2006, Type III environmental declarations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "worldsteel life cycle inventory methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

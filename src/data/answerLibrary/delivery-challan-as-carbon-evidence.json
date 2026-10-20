@@ -1,0 +1,64 @@
+{
+  "slug": "delivery-challan-as-carbon-evidence",
+  "q": "Can I use a delivery challan instead of a tax invoice as evidence for fuel or materials?",
+  "title": "Delivery challan as carbon evidence",
+  "short": "Use it as support, not as the main record, when a tax invoice also exists for the same supply. A challan shows what moved and how much, but the invoice is what an auditor expects for a purchase. Where no invoice will follow, such as goods sent for job work, the challan is not a purchase at all.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs with job work and gas deliveries on challans",
+  "sections": [
+    {
+      "h": "When GST rules use a challan",
+      "p": [
+        "Rule 55 of the CGST Rules 2017 allows goods to move on a delivery challan instead of an invoice in a few cases, including:"
+      ],
+      "ul": [
+        "Liquid gas where the quantity is not known when it leaves the supplier; the tax invoice follows after delivery.",
+        "Goods sent for job work, and returned from it.",
+        "Goods moved for reasons other than a supply, such as to your own branch in the same state or for repair.",
+        "Goods sent in batches, such as machinery in completely or semi knocked down condition, before the last lot is invoiced."
+      ]
+    },
+    {
+      "h": "Which document carries the quantity",
+      "ul": [
+        "Bulk LPG, liquid nitrogen or CO2 delivered on a challan: use the tax invoice quantity, which reflects the measured delivery. The challan quantity was an estimate at dispatch.",
+        "Materials invoiced later: count the invoice, and use the challan only to confirm the receipt date for year-end cut-off.",
+        "Fuel or material with a challan and no invoice yet at year end: record it from the challan, label it provisional, and replace it when the invoice arrives."
+      ]
+    },
+    {
+      "h": "Challans that are not purchases",
+      "p": [
+        "Inputs you send to a job worker, and goods a principal sends you for processing, move on challans and stay the property of the sender. They are not purchases for either side. The sender counted the material when it bought it; the job worker counts only its own fuel and power. Moving goods between your own premises is not a purchase either."
+      ]
+    },
+    {
+      "h": "Avoid counting both",
+      "p": [
+        "One supply often has a challan, a weighbridge slip and a tax invoice. Pick the invoice as the record and file the others behind it. A challan and its invoice are different files carrying the same quantity, and a file fingerprint matches only identical files, so upload the invoice alone."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: bulk LPG on a challan",
+    "lines": [
+      "Challan at dispatch: about 6,000 kg LPG (estimated)",
+      "Tax invoice after weighment: 5,820 kg",
+      "Record: 5,820 x 2.98 kg CO2 per kg = 17,343.6 kg, about 17.3 t CO2",
+      "If both documents were counted: (6,000 + 5,820) x 2.98 = 35,223.6 kg, more than double"
+    ],
+    "note": "Quantities are illustrative. 2.98 kg CO2 per kg is the IPCC 2006 based LPG factor."
+  },
+  "senseible": "Senseible reads tax invoices, bills, fuel slips and freight records and fingerprints every file. Keep the challan as support for the quantity and upload the invoice as the record for each supply.",
+  "links": [
+    { "label": "Fuel bought without a GST invoice", "to": "/answers/fuel-bought-without-gst-invoice" },
+    { "label": "Job work emissions: which scope", "to": "/answers/job-work-emissions-which-scope" },
+    { "label": "Stop the same invoice being counted twice", "to": "/answers/duplicate-invoices-double-counting-emissions" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, Chapter 6 (activity data) and Chapter 7 (inventory quality)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy (default CO2 factors for fuels)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "why-did-my-emissions-go-up-this-year",
+  "q": "My emissions went up in this year's report. How do I find out why?",
+  "title": "Why did my emissions go up this year?",
+  "short": "Split the increase into four parts: more activity, changed emission factors, a wider boundary, and a changed method. Calculate the activity and factor effects line by line for fuel and electricity, and whatever is left comes from new sources or method changes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners and sustainability leads reviewing year-on-year results",
+  "sections": [
+    {
+      "h": "The two formulas",
+      "ul": [
+        "Activity effect = (this year's quantity minus last year's quantity) x last year's factor.",
+        "Factor effect = this year's quantity x (this year's factor minus last year's factor).",
+        "For each line the two add up exactly to the change. Do this for every fuel and for electricity."
+      ]
+    },
+    {
+      "h": "Then look for boundary and method changes",
+      "ul": [
+        "New sources: a new plant, a canteen LPG line, a DG set that was missed last year, contractor diesel now included.",
+        "Method: Scope 3 moved from spend-based to activity-based, refrigerant leaks now counted, a different GWP set.",
+        "Period: last year's report covered fewer than 12 months for some sources."
+      ]
+    },
+    {
+      "h": "Check whether the base year needs recalculating",
+      "p": [
+        "If the increase comes from a structural change, such as buying a unit, or from a method change or an error fix, the GHG Protocol asks you to recalculate the base year when the effect is significant. An increase from more production or a new factor version for a later year is real and stays in the trend."
+      ]
+    },
+    {
+      "h": "How to explain it to a buyer or lender",
+      "p": [
+        "Give the total change, then each part in tonnes, then emissions per unit of output. Say which parts you control. If output grew faster than emissions, intensity fell, and you can say so with both figures."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 22.42 t increase taken apart",
+    "lines": [
+      "Diesel: 10,000 L last year, 12,000 L this year, factor 2.68 kg CO2/L both years",
+      "Activity effect: 2,000 x 2.68 = 5,360 kg = 5.36 t",
+      "Electricity: 200,000 kWh at 0.690 last year (illustrative older factor), 210,000 kWh at 0.710 this year",
+      "Activity effect: 10,000 x 0.690 = 6,900 kg = 6.90 t",
+      "Factor effect: 210,000 x (0.710 minus 0.690) = 4,200 kg = 4.20 t",
+      "New source: canteen LPG, 2,000 kg x 2.98 = 5,960 kg = 5.96 t",
+      "Last year: 26.80 + 138.00 = 164.80 t; this year: 32.16 + 149.10 + 5.96 = 187.22 t",
+      "Change: 5.36 + 6.90 + 4.20 + 5.96 = 22.42 t, about 13.6%"
+    ],
+    "note": "The 0.690 factor is an assumption for the example. The diesel and LPG factors are IPCC 2006 defaults."
+  },
+  "senseible": "Senseible keeps records per document and period with the factor and source used for each, so you can pull the same fuel and electricity lines for two years and see which quantities and factors moved.",
+  "links": [
+    {
+      "label": "Emissions fell but intensity rose",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    },
+    {
+      "label": "Recalculating past years after a factor change",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "Recalculating the base year after selling a unit",
+      "to": "/answers/recalculate-base-year-after-selling-a-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 5 (tracking emissions over time)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (Equation 2.1 and default factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "cbg-sold-under-satat-and-carbon-credits",
+  "q": "If my CBG plant sells gas under SATAT, can it also sell carbon credits?",
+  "title": "CBG under SATAT and carbon credits",
+  "short": "Selling CBG under SATAT does not by itself stop you from earning carbon credits, but the same reduction must be claimed only once. Settle in writing who holds the environmental benefit of the gas, register the project in one programme, and expect a verifier to test whether the blending obligation already drives your sales.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Compressed biogas plant developers",
+  "sections": [
+    {
+      "h": "What SATAT and the blending obligation do",
+      "p": [
+        "SATAT, launched by the Ministry of Petroleum and Natural Gas in October 2018, has oil marketing companies buy CBG from plants under offtake agreements and sell it as automotive fuel. The CBG Blending Obligation, approved by the National Biofuels Coordination Committee in November 2023, requires a rising share of CBG in the CNG (transport) and PNG (domestic) sold by city gas distribution companies: voluntary until FY2024-25, mandatory from FY2025-26. Neither is a carbon credit scheme. They create a market for the gas, not a tradable tonne of CO2."
+      ]
+    },
+    {
+      "h": "Three parties who might claim the same tonnes",
+      "ul": [
+        "Your plant, through carbon credits for methane avoided and fossil fuel displaced.",
+        "The gas buyer, which may count your CBG toward its blending obligation.",
+        "End users, who report the CO2 from burning CBG as biogenic, outside Scope 1, and may present that as a reduction."
+      ],
+      "p": [
+        "Meeting a legal blending target and reporting biogenic CO2 are normal. The risk is a credit sold to a third party for the fossil displacement while the buyer markets the same gas as its own reduction. Expect a verifier and a credit buyer to ask how you prevent that."
+      ]
+    },
+    {
+      "h": "Methane avoided is the cleaner part of the claim",
+      "p": [
+        "Methane that no longer escapes from press mud, dung or crop residue happens at your plant and its feedstock source, not at the gas user. Nobody downstream claims it. The fossil fuel displacement part sits closer to the buyer's claims, so it needs the clearest contract terms."
+      ]
+    },
+    {
+      "h": "What to do before you register",
+      "ol": [
+        "Read your SATAT offtake agreement and any gas sale contract for clauses on environmental attributes or carbon credits; if they are silent, agree a written side letter with the buyer.",
+        "Choose one programme: the CCTS offset mechanism under BEE's BM WA03.003 for CBG, or a voluntary standard. Do not register the same output twice.",
+        "Prepare the additionality case: show that credit revenue matters to the plant's finances, separately from the assured offtake price.",
+        "Keep CBG dispatch records matched to sales invoices, so each kg sold can be traced to one claim."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how one year of gas could be counted three times",
+    "lines": [
+      "CBG sold: 3 t a day x 330 days = 990 t",
+      "Fossil CNG displaced at 2.69 kg CO2 per kg: 9,90,000 x 2.69 = 26,63,100 kg, about 2,663 t CO2",
+      "Counted by your credit buyer: 2,663 t",
+      "Presented again by a gas buyer marketing it as its own cut, and by end users as lower Scope 1: up to 2,663 t each",
+      "Clear contracts keep the 2,663 t displacement claim with one party"
+    ],
+    "note": "Plant output is illustrative. 2.69 kg CO2 per kg is the IPCC 2006 based CNG factor. The methane avoided term is calculated separately."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals and turns the plant's electricity bills and fuel invoices into a dated, fingerprinted record of its own energy use, the project emission data a monitoring report needs.",
+  "links": [
+    { "label": "CBG plant credits under BM WA03.003", "to": "/answers/bm-wa03-003-cbg-plant-ccts-credits" },
+    { "label": "Reporting purchased CBG as a fuel", "to": "/answers/purchased-cbg-fuel-scope-1-biogenic" },
+    { "label": "Does CBG blended PNG lower Scope 1?", "to": "/answers/does-cbg-blended-png-lower-scope-1" },
+    { "label": "Carbon credits", "to": "/carbon-credits" }
+  ],
+  "sources": [
+    { "label": "BEE, BM WA03.003 Compressed biogas (CBG), CCTS offset mechanism", "url": "https://beeindia.gov.in" },
+    { "label": "Verra VCS Program rules on double issuance and double use", "url": "https://verra.org" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported outside the scopes)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 20 October 2026: SATAT launched by MoPNG on 1 October 2018; CBG Blending Obligation approved by the NBCC on 24 November 2023 (1% FY2025-26, 3% FY2026-27, 4% FY2027-28, 5% from FY2028-29, CNG transport and PNG domestic). SATAT offtake terms on environmental attributes are not public, so the page tells developers to read their own agreement. Recheck shares and any credit rule for CBG each year."
+}

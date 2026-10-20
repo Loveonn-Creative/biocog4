@@ -1,0 +1,76 @@
+{
+  "slug": "rewind-or-replace-failed-motor-co2",
+  "q": "Should I rewind a burnt motor or replace it, and what does rewinding do to efficiency and CO2?",
+  "title": "Rewind or replace a burnt motor?",
+  "short": "Rewind when the motor is large, special or runs few hours, and the repair shop follows good practice. Replace with an IE3 or IE4 motor when it runs long hours, is a common size, or has been rewound before. A careless rewind can cost efficiency; a good one keeps it close to the original.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factory maintenance heads",
+  "sections": [
+    {
+      "h": "What rewinding does to efficiency",
+      "p": [
+        "A study by EASA and AEMT on the effect of repair and rewinding on motor efficiency found that motors rewound with good practice kept their efficiency close to the original, while poor practice, such as stripping old windings by burning at uncontrolled high temperatures or changing the winding design, raised losses. IEC 60034-23:2019 sets out good repair practice. Ask your repair shop how it strips cores and whether it copies the original winding data."
+      ]
+    },
+    {
+      "h": "A decision rule at the moment of failure",
+      "ul": [
+        "Replace: long running hours, a standard frame size available off the shelf, an old IE1 or unrated motor, or a motor already rewound once or twice.",
+        "Rewind: a large or special motor with long lead time, low running hours, or a newer high-efficiency motor with an undamaged core.",
+        "Either way: check why it failed, such as overload, single phasing, bearing failure or water ingress, so the next motor does not fail the same way."
+      ]
+    },
+    {
+      "h": "The formula for the extra energy",
+      "p": [
+        "Extra kWh a year = output kW x running hours x (1 / efficiency after rewind minus 1 / efficiency of the new motor). Output kW is the motor's rated kW times its load factor. Multiply the extra kWh by 0.710 kg CO2 per kWh for Scope 2, and by your tariff for cost."
+      ]
+    },
+    {
+      "h": "Ask for test results",
+      "p": [
+        "A good repair shop can give no-load current and loss readings before and after the rewind. Keep them with the job card. Compare the motor's running current at the same load before failure and after repair; a clear rise points to higher losses."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a 30 kW motor at 75% load",
+    "lines": [
+      "Output: 30 x 0.75 = 22.5 kW, for 6,000 hours a year",
+      "New IE3 motor: 93.6% (nominal for a 4-pole 30 kW motor; read yours from the nameplate)",
+      "Rewound motor: 92.1% (assumed 1.5 points lower after a poor rewind)",
+      "Input: 22.5 / 0.936 = 24.0385 kW; 22.5 / 0.921 = 24.4300 kW; difference 0.3915 kW",
+      "Extra energy: 0.3915 x 6,000 = 2,349 kWh a year",
+      "Extra CO2: 2,349 x 0.710 = 1,668 kg, about 1.7 t a year"
+    ],
+    "note": "The 1.5 point loss is an illustrative assumption, not a default; a good rewind may lose little or nothing."
+  },
+  "senseible": "Senseible converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh, so a more efficient motor shows up as lower Scope 2 in the records it builds from your electricity bills.",
+  "links": [
+    {
+      "label": "IE2 to IE4 motor replacement savings",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 2 Electric Motors (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "The IE3 efficiency is a nominal IEC 60034-30-1 value (30 kW, 4-pole, 50 Hz: 93.6%) used for illustration; check the nameplate of the motor you would buy. IEC 60034-23:2019 and the EASA and AEMT rewind study are named in the text; iec.ch and easa.com are not on the sources allowlist.",
+  "reviewed": "2026-10-18"
+}

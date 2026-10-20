@@ -1,0 +1,64 @@
+{
+  "slug": "aluminium-scrap-melting-fuel-per-tonne",
+  "q": "How much fuel and CO2 does melting aluminium scrap take per tonne?",
+  "title": "Aluminium scrap melting: fuel per tonne",
+  "short": "Work it out from your own logs: fuel burnt in a month divided by tonnes of metal tapped, then times the fuel's factor, for example 2.97 kg CO2 per litre of furnace oil. Physics sets a floor of about 30 litres of furnace oil per tonne at 100% efficiency; any real furnace uses more.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Aluminium recyclers and die casters",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Fuel per tonne = fuel used in the period / tonnes of good metal tapped or ingot cast. CO2 per tonne = fuel per tonne x factor, plus electricity per tonne x 0.710 kg CO2 per kWh for blowers, stirrers and any electric holding furnace.",
+        "IPCC 2006 based factors: furnace oil 2.97 kg CO2 per litre, PNG 2.05 kg CO2 per scm, LPG 2.98 kg CO2 per kg, diesel 2.68 kg CO2 per litre. Take fuel from invoices adjusted for tank or cylinder stock at the start and end of the month."
+      ]
+    },
+    {
+      "h": "The theoretical minimum, as a sanity check",
+      "p": [
+        "Heating aluminium from 25 to about 700 °C takes roughly 675 K x 1.1 kJ per kg per K, about 740 kJ per kg, and melting it takes about 397 kJ per kg more: about 1.14 GJ per tonne in all. Furnace oil at 40.4 MJ per kg (IPCC 2006 default) and an assumed density of 0.95 kg per litre gives 38.4 MJ per litre, so the floor is 1,140 / 38.4, about 30 litres per tonne, or about 88 kg CO2. If your log shows less, a fuel record is missing. Divide the floor by your actual litres per tonne to see your furnace's thermal efficiency."
+      ]
+    },
+    {
+      "h": "Why plants differ so much",
+      "ul": [
+        "Furnace type: reverberatory, rotary, crucible or tower melters lose heat in different ways.",
+        "Scrap form: thin foil, turnings and UBCs melt with more loss and often need longer holding than heavy ingot returns.",
+        "Wet, oily or painted scrap adds energy to burn off coatings and moisture; dry and preheat it where you can.",
+        "Holding time: metal held hot waiting for casting burns fuel without melting anything.",
+        "Recuperators or regenerative burners recover heat from flue gas and cut fuel per tonne."
+      ]
+    },
+    {
+      "h": "Benchmark only against yourself",
+      "p": [
+        "Another plant's figure mixes a different furnace, scrap mix and holding pattern, so it tells you little. Track your own figure monthly for each furnace, note the scrap mix and holding hours, and compare the furnace with itself before and after a change."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on a furnace oil reverberatory furnace (illustrative)",
+    "lines": [
+      "Metal tapped: 400 t; furnace oil used: 36,000 L",
+      "Fuel per tonne: 36,000 / 400 = 90 L",
+      "Fuel CO2 per tonne: 90 x 2.97 = 267.3 kg CO2",
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg, so 14,200 / 400 = 35.5 kg CO2 per tonne",
+      "Total: 267.3 + 35.5 = 302.8 kg CO2 per tonne",
+      "Thermal efficiency check: 30 / 90 = about 33%"
+    ],
+    "note": "Plant figures are illustrative assumptions. The specific heat, latent heat and density in the floor calculation are rounded physical values."
+  },
+  "senseible": "Senseible reads furnace oil, PNG and LPG invoices and electricity bills and applies the IPCC 2006 fuel factors and 0.710 kg CO2 per kWh, giving the monthly totals you divide by tonnes from your production register.",
+  "links": [
+    { "label": "Die casting carbon footprint per kg", "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg" },
+    { "label": "Recuperator combustion air preheat saving", "to": "/answers/recuperator-combustion-air-preheat-fuel-saving" },
+    { "label": "Furnace oil emission factor", "to": "/emission-factors/furnace-oil" },
+    { "label": "Carbon accounting for aluminium", "to": "/industries/aluminium" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 (calorific values and CO2 factors)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "egrid-or-cea-factor-for-us-customer",
+  "q": "My US customer told me to use eGRID factors for my electricity. Is that right for a factory in India?",
+  "title": "eGRID or CEA factor for an Indian factory?",
+  "short": "No. eGRID is the US EPA's database for electricity generated in US grid subregions; it has no figure for India. For location-based Scope 2 the GHG Protocol uses the grid where the power is consumed, so an Indian factory should use the CEA factor, 0.710 kg CO2 per kWh in version 21.0.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Indian suppliers to US buyers",
+  "sections": [
+    {
+      "h": "Why the customer may have asked",
+      "p": [
+        "US companies use eGRID for their own US sites, and some supplier templates carry eGRID as the default factor column. The request is usually a template habit, not a deliberate choice for India. A US subregion factor applied to Indian kWh gives a number that describes neither your grid nor any real power plant."
+      ]
+    },
+    {
+      "h": "What the GHG Protocol says",
+      "p": [
+        "The Scope 2 Guidance asks for location-based factors that reflect the grid where electricity is consumed, using the most precise regional or national factor available. For India the official source is the CEA CO2 Baseline Database, published by the Central Electricity Authority with its method and fiscal year. India runs one synchronised national grid, so a single all-India factor applies."
+      ]
+    },
+    {
+      "h": "How to reply to the customer",
+      "ol": [
+        "Report kWh for the period, from your electricity bills.",
+        "State the factor: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0, location-based.",
+        "Explain in one line that eGRID covers US subregions only and the GHG Protocol uses the grid where power is used.",
+        "If they still want a second figure, send it separately and label the factor and source, but keep the CEA figure as your reported number."
+      ]
+    },
+    {
+      "h": "If you buy renewable power",
+      "p": [
+        "A market-based Scope 2 figure uses your contracts, such as a green tariff, open access PPA or Indian RECs, not eGRID and not US certificates. Report it alongside the location-based figure, with the instrument named."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a month of factory power",
+    "lines": [
+      "Units billed: 85,000 kWh",
+      "CEA factor: 0.710 kg CO2 per kWh (version 21.0)",
+      "85,000 x 0.710 = 60,350 kg CO2, about 60.4 tonnes location-based Scope 2"
+    ],
+    "note": "Send kWh and the factor with the total, so the customer can see the arithmetic."
+  },
+  "senseible": "Senseible reads the kWh from your electricity bills and applies the CEA grid factor, 0.710 kg CO2 per kWh from version 21.0, naming the source on every line.",
+  "links": [
+    {
+      "label": "Is there a state-wise grid factor for India",
+      "to": "/answers/state-wise-grid-emission-factor-india"
+    },
+    {
+      "label": "CEA or IEA grid factor",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), location-based method",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "US EPA Center for Corporate Climate Leadership, GHG Emission Factors Hub (US electricity factors from eGRID subregions)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

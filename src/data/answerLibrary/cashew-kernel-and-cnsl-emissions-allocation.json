@@ -1,0 +1,75 @@
+{
+  "slug": "cashew-kernel-and-cnsl-emissions-allocation",
+  "q": "How do I split emissions between cashew kernels and cashew nut shell liquid?",
+  "title": "Splitting emissions: cashew kernels and CNSL",
+  "short": "First give CNSL its own extraction step, so power and heat used only for shell liquid go to CNSL. Then split the shared emissions, from raw nuts to cutting, by mass or by revenue. Revenue puts most on kernels; state the basis you chose, why, and show the other as a check.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cashew processors in Kollam, Mangaluru and Panruti",
+  "sections": [
+    {
+      "h": "Step one: separate what you can",
+      "p": [
+        "ISO 14044 clause 4.3.4 asks you to avoid allocation where you can by dividing the process. CNSL extraction, by expeller or hot oil bath, has its own energy, so meter or estimate it and assign it to CNSL alone. Shell cake burnt in your own boiler stays inside the system as a fuel; it is not a product."
+      ]
+    },
+    {
+      "h": "Step two: split the shared part",
+      "ul": [
+        "Shared emissions: raw nuts and their freight, drying, steaming or roasting, shelling and general plant power.",
+        "By mass: share = product kg / total product kg. Simple, but a kilogram of CNSL then carries the same burden as a kilogram of kernel.",
+        "By value: share = product revenue / total revenue. ISO 14044 prefers physical relationships first and allows other relationships, such as economic value, where a physical one cannot be established or used. A cashew plant runs to make kernels, which is the usual argument for value.",
+        "Use average prices over a year or more and say which, because kernel and CNSL prices move a lot."
+      ]
+    },
+    {
+      "h": "Sensitivity and disclosure",
+      "p": [
+        "Where more than one allocation method is reasonable, ISO 14044 asks you to show how the result changes. Report the kernel figure on your chosen basis and the other basis in a note. The product shares must add back to the plant total."
+      ]
+    },
+    {
+      "h": "If you sell shells instead of extracting CNSL",
+      "p": [
+        "When shells go to a separate CNSL unit, the shells are your co-product. Split between kernels and shells on the same rules, using the shell sale price, and the CNSL unit takes on the shells' share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month, shared steps only",
+    "lines": [
+      "Shared emissions: 60,000 kg CO2e, including raw nut freight, power, diesel and shell boiler CH4 and N2O",
+      "Kernels 100 t at ₹600 per kg = ₹6.00 crore; CNSL 40 t at ₹40 per kg = ₹16 lakh; total ₹6.16 crore",
+      "By value: CNSL 16 / 616 = 2.6%, 1,558 kg CO2e (0.039 kg per kg); kernels 58,442 kg (0.584 kg per kg)",
+      "By mass: kernels 100 / 140 = 71.4%, 42,857 kg; CNSL 17,143 kg; both 0.429 kg CO2e per kg",
+      "Check: 58,442 + 1,558 = 60,000 and 42,857 + 17,143 = 60,000"
+    ],
+    "note": "Prices, tonnages and the total are illustrative. CNSL extraction energy is assumed to have been assigned to CNSL before this split."
+  },
+  "senseible": "Senseible reads the plant's fuel and power bills and the raw nut and freight invoices, which give the shared total to split. The allocation basis is your documented choice; record it with the figures.",
+  "links": [
+    {
+      "label": "Cashew processing footprint per kg",
+      "to": "/answers/cashew-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14044:2006 clause 4.3.4, allocation; ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), chapter 9",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

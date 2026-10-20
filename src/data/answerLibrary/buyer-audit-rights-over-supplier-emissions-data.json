@@ -1,0 +1,68 @@
+{
+  "slug": "buyer-audit-rights-over-supplier-emissions-data",
+  "q": "Can my buyer audit my emissions records under its supplier code, and what can I keep confidential?",
+  "title": "Buyer audits of your emissions records",
+  "short": "Yes, if the supplier code or contract you accepted gives audit rights, which most do. The auditor can ask to see the bills, invoices and calculations behind your figures. You can usually redact prices, customer names and personal details, as long as quantities, dates and suppliers stay visible.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "MSME suppliers facing buyer or third-party audits",
+  "sections": [
+    {
+      "h": "Where the audit right comes from",
+      "p": [
+        "Your obligation comes from what you signed: the buyer's code, a supplier agreement or a purchase order's terms. Audits are often run by third-party firms under schemes such as the RBA Validated Assessment Program or the four-pillar Sedex SMETA audit, both of which include an environment section. Read the audit clause for notice period, frequency and who pays."
+      ]
+    },
+    {
+      "h": "What an auditor will ask to see",
+      "ul": [
+        "The inventory working file: each source, quantity, factor and result.",
+        "A sample of source documents: electricity bills, fuel invoices, stock registers, and supplier invoices for any Scope 3 lines.",
+        "Meter readings or production records where figures were estimated.",
+        "Your method note and any changes from last year."
+      ]
+    },
+    {
+      "h": "How sampling works",
+      "p": [
+        "An auditor does not check every invoice. ISO 14064-3 asks a verifier to plan a sample based on risk, which in practice weights it toward the largest sources. They trace each sampled figure to its document and recompute it. If the sample checks out, they rely on the rest."
+      ]
+    },
+    {
+      "h": "What you can keep confidential",
+      "ul": [
+        "Unit prices, margins and customer names on invoices can usually be masked, since emissions depend on quantities, not prices.",
+        "Process recipes and formulations, unless the clause asks for product footprints.",
+        "Personal data such as employee names on travel bills: share only what the audit needs. Under the Digital Personal Data Protection Act 2023, the Rules notified in November 2025 phase in, and most duties on businesses handling personal data start 18 months after notification, in May 2027.",
+        "Agree in writing, before the audit, what will be masked and that the auditor's notes stay confidential."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document and SHA-256 fingerprint, so an auditor can sample lines without access to your full ledger. Its Viewer role reads records and reports and changes nothing, if you choose to add the auditor as a member.",
+  "links": [
+    {
+      "label": "How many invoices a verifier samples",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "Giving your auditor access to Senseible",
+      "to": "/answers/can-my-auditor-get-access-to-senseible"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Validation and verification of GHG statements (sampling and evidence)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 10 (verification of GHG emissions)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-20: DPDP Rules notified November 2025; most data fiduciary duties commence 18 months later (May 2027), consent manager provisions after 12 months. Confirm exact commencement dates in the Gazette notification on meity.gov.in. amfori BSCI removed (a social audit scheme)."
+}

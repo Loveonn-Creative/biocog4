@@ -1,0 +1,76 @@
+{
+  "slug": "coffee-agroforestry-carbon-credits-india",
+  "q": "Can an Indian coffee estate earn carbon credits from its shade trees?",
+  "title": "Carbon credits from coffee shade trees",
+  "short": "Usually not for trees already there. Credit methodologies pay only for carbon a project adds beyond what would have happened anyway, so an existing shade canopy is the baseline. New planting on land without tree cover can qualify, but it needs a registered project, decades of monitoring and costs that suit large or pooled areas.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Coffee planters in Karnataka, Kerala and Tamil Nadu",
+  "sections": [
+    {
+      "h": "Why existing shade trees rarely qualify",
+      "p": [
+        "Additionality is the test: would the carbon have been stored without carbon finance? Shade trees planted years ago for bean quality and yield fail it, and the growth of those trees is part of the normal baseline. Programmes also restrict land cleared of native vegetation shortly before a project, so recent clearing cannot be turned into credits."
+      ]
+    },
+    {
+      "h": "What could qualify",
+      "ul": [
+        "New trees on estate land with no tree cover, such as degraded patches or boundaries, under an afforestation, reforestation and revegetation methodology such as Verra's VM0047 (version 1.1, May 2025). Check its applicability conditions for planting inside a working estate.",
+        "Gold Standard afforestation and reforestation projects, which follow its own requirements for planting and monitoring.",
+        "In India's CCTS offset mechanism, BM FR05.002 covers afforestation and reforestation of lands except wetlands. Check its applicability conditions for plantation crops before planning."
+      ]
+    },
+    {
+      "h": "What a project involves",
+      "ol": [
+        "Eligibility and baseline: land history, ownership and tree cover before the project.",
+        "A project design document under the chosen methodology, validated by an accredited body.",
+        "Planting, then field measurement of tree growth in sample plots.",
+        "Periodic verification before the programme issues any credits.",
+        "A buffer or risk deduction for reversals, since trees can be felled, burnt or die."
+      ]
+    },
+    {
+      "h": "Is it worth it for one estate?",
+      "p": [
+        "Validation, verification and monitoring carry fixed costs, while a single estate's new planting yields few credits a year. Planters often join a grouped project run by a developer, which spreads costs but shares revenue. Read who owns the credits and how long the land is committed before signing."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from your records and keeps bill-backed, dated records of estate and factory energy use. Credits are issued by the programme that registers the project.",
+  "links": [
+    {
+      "label": "What is additionality?",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "CCTS offset methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Shade trees as removals in a footprint",
+      "to": "/answers/shade-trees-carbon-removals-tea-coffee-estate"
+    },
+    {
+      "label": "Soil carbon credits for Indian farmers",
+      "to": "/answers/soil-carbon-credits-india-farmers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VM0047 Afforestation, Reforestation and Revegetation, and the VCS Standard",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard afforestation and reforestation requirements",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "BEE, CCTS offset mechanism approved methodologies (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Methodology versions and the CCTS forestry method's fit for plantation crops change; check both before planning a project."
+}

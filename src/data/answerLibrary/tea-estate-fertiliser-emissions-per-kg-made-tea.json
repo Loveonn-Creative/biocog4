@@ -1,0 +1,92 @@
+{
+  "slug": "tea-estate-fertiliser-emissions-per-kg-made-tea",
+  "q": "How do I add a tea estate's fertiliser emissions to the footprint per kg of made tea?",
+  "title": "Tea estate fertiliser emissions per kg tea",
+  "short": "Work out the season's field emissions from fertiliser, divide by the kg of made tea produced from the estate's own leaf, and add the result to the factory figure per kg. Field emissions are direct and indirect N2O from the nitrogen applied plus CO2 from urea, using IPCC defaults.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tea estates supplying export buyers",
+  "sections": [
+    {
+      "h": "Field emissions from the application register",
+      "ul": [
+        "Nitrogen applied: kg of each fertiliser x its N content (urea 46 percent, ammonium sulphate about 21 percent, NPK by its grade).",
+        "Direct N2O: kg N x EF1 of 0.01 x 44/28 (IPCC 2006). The 2019 Refinement gives 0.016 for wet climates, which may fit high rainfall tea districts. Choose one and state it.",
+        "Indirect N2O: 10 percent volatilised x 0.01 plus 30 percent leached x 0.0075, both x 44/28. Keep the leaching term where rain drains through the soil.",
+        "Urea CO2: tonnes of urea x 0.20 x 44/12 (IPCC 2006, Equation 11.13).",
+        "GWP for N2O: 273 in AR6 or 265 in AR5. Use the same set across the footprint."
+      ]
+    },
+    {
+      "h": "Divide by the right tea",
+      "p": [
+        "Divide only by made tea from the estate's own leaf. If the factory also buys green leaf from small growers, their fertiliser belongs to that bought leaf, from supplier data or a labelled estimate. Split production using the factory's records of estate leaf received and the out-turn of made tea."
+      ]
+    },
+    {
+      "h": "Joining it to the factory figure",
+      "p": [
+        "Footprint per kg made tea = factory energy per kg + estate field emissions per kg of own made tea, weighted by the share made from estate leaf. Add the making of the fertiliser as its own upstream line: tonnes bought x a cradle to gate factor for urea or NPK."
+      ]
+    },
+    {
+      "h": "Common errors",
+      "ul": [
+        "Using fertiliser bought instead of applied; stock carried over distorts the year.",
+        "Dividing by green leaf instead of made tea.",
+        "Netting shade tree removals against fertiliser emissions; removals go on a separate line.",
+        "Mixing AR5 and AR6 GWPs in one footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 ha estate on urea",
+    "lines": [
+      "Urea 300 kg per ha = 138 kg N per ha",
+      "Direct: 138 x 0.01 x 44/28 = 2.169 kg N2O x 273 = 592 kg CO2e per ha",
+      "Indirect: (138 x 0.10 x 0.01) + (138 x 0.30 x 0.0075) = 0.449 kg N2O-N x 44/28 = 0.705 kg N2O x 273 = 192 kg CO2e per ha",
+      "Urea CO2: 0.3 t x 0.20 x 44/12 = 0.22 t, 220 kg per ha",
+      "Per ha: 592 + 192 + 220 = 1,004 kg CO2e; estate: 500 x 1,004 = 5,02,000 kg CO2e",
+      "Made tea from estate leaf: 10,00,000 kg, so 0.50 kg CO2e per kg made tea from the field"
+    ],
+    "note": "IPCC 2006 Tier 1 defaults with AR6 GWP; dose and yield are illustrative. With the 2019 Refinement wet climate EF1 of 0.016, direct N2O rises to 947 kg CO2e per ha."
+  },
+  "senseible": "Senseible reads fertiliser purchase invoices with their quantities, and the factory's fuel and electricity bills into Scope 1 and 2. The application register and the field calculation come from the estate's own records.",
+  "links": [
+    {
+      "label": "Fertiliser N2O emissions calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Tea factory footprint per kg made tea",
+      "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea"
+    },
+    {
+      "label": "Factor for purchased urea and DAP",
+      "to": "/answers/emission-factor-for-purchased-urea-and-dap"
+    },
+    {
+      "label": "Urea application emissions per tonne",
+      "to": "/answers/urea-application-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 11 (Equations 11.1 and 11.13, Table 11.1)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11 (EF1 for wet climates)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7 (GWP-100 of N2O)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

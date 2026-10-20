@@ -1,0 +1,69 @@
+{
+  "slug": "supplier-code-of-conduct-ghg-clause-minimum",
+  "q": "My buyer's supplier code says I must measure and reduce greenhouse gas emissions. What is the minimum to comply?",
+  "title": "Minimum to meet a supplier code GHG clause",
+  "short": "For a clause that says measure and reduce, the usual minimum is a yearly Scope 1 and 2 inventory made with the GHG Protocol, the bills and invoices behind it, and a written reduction goal or plan with actions you are taking. Read the exact wording first: words like report publicly, set targets or science-based raise the bar.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "MSME suppliers to multinational buyers",
+  "sections": [
+    {
+      "h": "Read the verbs in the clause",
+      "ul": [
+        "Measure, track or monitor: an annual inventory of at least Scope 1 and 2.",
+        "Reduce or improve: a goal or plan, and evidence of actions such as efficiency projects.",
+        "Disclose or report: sharing figures with the buyer, through its portal or CDP, or publicly if the clause says so.",
+        "Set targets, or science-based targets: a dated, numeric target; science-based means validated under SBTi criteria.",
+        "Significant Scope 3: a screening of your own supply chain as well."
+      ]
+    },
+    {
+      "h": "The minimum pack for a measure and reduce clause",
+      "ol": [
+        "Scope 1: fuels burned on site and in owned vehicles, from fuel invoices.",
+        "Scope 2: grid electricity from discom bills, location-based with the CEA factor.",
+        "A one-page method note: boundary, period, factors and their sources.",
+        "A reduction goal, for example an absolute cut in Scope 1 and 2 by a stated year, and two or three actions with dates.",
+        "The source documents, kept for the audit period."
+      ]
+    },
+    {
+      "h": "When the minimum is not enough",
+      "p": [
+        "If the buyer's code is the RBA Code, it asks for an absolute company-wide reduction goal and public reporting, which is more than this minimum. Buyers with their own science-based supplier engagement targets will also ask for a target, not just a plan. Ask the buyer which programme its clause supports."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "p": [
+        "If the clause has no numbers, deliver the minimum pack this year and ask the buyer in writing whether it meets their expectation. If it names a standard, a date or a portal, meet that exactly."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds Scope 1 and 2 from your fuel invoices and electricity bills, with the factor and source on each line and the documents kept for a buyer audit. The figures are self-declared.",
+  "links": [
+    {
+      "label": "RBA Code energy and GHG requirements",
+      "to": "/answers/rba-code-energy-and-ghg-requirements"
+    },
+    {
+      "label": "SBTi supplier engagement targets",
+      "to": "/answers/sbti-supplier-engagement-target-for-suppliers"
+    },
+    {
+      "label": "Absolute or intensity reduction target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (Scope 1 and Scope 2 reporting)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

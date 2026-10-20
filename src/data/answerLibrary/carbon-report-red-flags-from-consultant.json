@@ -1,0 +1,69 @@
+{
+  "slug": "carbon-report-red-flags-from-consultant",
+  "q": "What are the warning signs in a carbon footprint report from a consultant?",
+  "title": "Warning signs in a carbon footprint report",
+  "short": "The main warning signs are totals with no activity data behind them, factors with no source or version, a missing boundary, carbon credits subtracted from emissions, spend-based Scope 3 presented as precise, and suspiciously round numbers. Any one of these means you cannot check the figure yourself.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs and buyers reviewing a paid carbon report",
+  "sections": [
+    {
+      "h": "Signs the figures cannot be traced",
+      "ul": [
+        "Scope totals with no litres, kWh, tonnes or kilometres beside them.",
+        "Factors given as numbers only, with no publisher, edition or year.",
+        "No list of the documents used, such as which months of electricity bills.",
+        "Totals rounded to the nearest 100 or 1,000 tonnes with no stated uncertainty."
+      ]
+    },
+    {
+      "h": "Signs the boundary is unclear",
+      "ul": [
+        "No statement of which entity and sites are covered, or which consolidation approach was used.",
+        "No reporting period, or a period that does not match your financial year.",
+        "No mention of exclusions at all. Every real inventory leaves something out, and the GHG Protocol asks for exclusions to be disclosed."
+      ]
+    },
+    {
+      "h": "Signs the result is presented better than it is",
+      "ul": [
+        "Carbon credits or RECs subtracted inside the Scope 1 or Scope 2 total instead of shown separately.",
+        "Scope 3 built entirely from spend, with no note that spend-based figures carry wide uncertainty.",
+        "A claim of reduction with no base year, or a base year that changed without explanation.",
+        "Words like certified, audited or verified with no named verification body, standard or statement."
+      ]
+    },
+    {
+      "h": "How to raise it with the preparer",
+      "p": [
+        "Ask for the working file: one row per source, with quantity, unit, factor, factor source and result. A sound report can produce this in a day. If the preparer cannot, treat the total as an estimate and say so wherever you use it."
+      ]
+    }
+  ],
+  "senseible": "Senseible's reports keep the source document, its SHA-256 fingerprint, the quantity and the factor for each line, the kind of trail this checklist asks for. Its figures are self-declared estimates, and a Verified status means its rule checks passed.",
+  "links": [
+    {
+      "label": "How to read a GHG inventory report",
+      "to": "/answers/how-to-read-a-ghg-inventory-report"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "Greenwashing self-audit checklist",
+      "to": "/climate-intelligence/msme-greenwashing-self-audit-checklist-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 1 (accounting principles) and Chapter 9 (reporting)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, clause 9 (GHG report content)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

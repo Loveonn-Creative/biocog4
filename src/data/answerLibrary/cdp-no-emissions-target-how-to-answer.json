@@ -1,0 +1,65 @@
+{
+  "slug": "cdp-no-emissions-target-how-to-answer",
+  "q": "I have no emissions reduction target yet. How do I answer CDP's target questions?",
+  "title": "CDP target questions without a target",
+  "short": "Answer that you have no active emissions target, then give the true reason and your plan, for example that you are building a baseline this year and expect to set a target within two years. Do not invent one. You lose the target points, but the rest of your response is still scored.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Small suppliers answering CDP",
+  "sections": [
+    {
+      "h": "How the question works",
+      "p": [
+        "CDP asks whether you have an active emissions target. If you answer no, it asks for the main reason and an explanation. The exact reason options change from cycle to cycle, so read the current list and pick the one that is true."
+      ]
+    },
+    {
+      "h": "What to write in the explanation",
+      "ul": [
+        "Where you are: for example, the first full year of Scope 1 and 2 data from bills is complete.",
+        "What comes next: the year you plan to choose a base year and set a target.",
+        "What you are already doing: projects that cut energy use, even without a formal target.",
+        "Keep it to facts you could show the customer."
+      ]
+    },
+    {
+      "h": "What a missing target costs",
+      "p": [
+        "Expect a lower score on the target questions, and CDP's A List criteria are out of reach without a target. A supplier that discloses complete emissions and real reduction projects still earns points on those answers. Customers often care more that you have a baseline than about the letter."
+      ]
+    },
+    {
+      "h": "Setting a first target later",
+      "p": [
+        "Many small suppliers start with an absolute Scope 1 and 2 target. The SBTi runs a simpler SME route with its own eligibility rules; check the current criteria on its site before applying. Whatever you choose, the base year needs a full 12 months of data you can evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the Scope 1 and 2 baseline from your fuel invoices and electricity bills, with the factor and source on each line, which is the starting point for a first target.",
+  "links": [
+    {
+      "label": "Absolute or intensity reduction target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    },
+    {
+      "label": "Who qualifies for the SBTi SME route",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "How to choose a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP corporate questionnaire, targets questions, and CDP scoring methodology (current cycle)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "SBTi SME target validation route, current criteria",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-20: target scoring levels are not stated because the current scoring methodology could not be confirmed; check the current reason options and scoring on cdp.net."
+}

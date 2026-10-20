@@ -1,0 +1,76 @@
+{
+  "slug": "air-compressor-kwh-from-load-unload-hours",
+  "q": "How do I estimate an air compressor's electricity and CO2 from its load and unload hours?",
+  "title": "Compressor kWh from load and unload hours",
+  "short": "Multiply load hours by the power drawn while loaded, add unload hours times the power drawn while unloaded, and multiply the total kWh by 0.710 kg CO2 per kWh. Read the hours from the compressor controller and take both power figures from the manufacturer's data sheet or a one-off clamp meter reading.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factory maintenance and energy staff without a compressor submeter",
+  "sections": [
+    {
+      "h": "Where to find the inputs",
+      "ul": [
+        "Load hours and running hours: most screw compressor controllers show both. Unload hours = running hours minus load hours.",
+        "Loaded power: input kW at your working pressure from the data sheet, or measured with a clamp meter while the machine is loading. The motor nameplate kW is shaft output, not electrical input, so do not use it as is.",
+        "Unloaded power: from the manufacturer's sheet or a clamp meter reading while the machine runs unloaded. It varies widely by machine design, so measure it rather than assume a percentage.",
+        "Reset or note the counters on a known date, so the hours match the period you report."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "kWh = (load hours x loaded kW) + (unload hours x unloaded kW). CO2 = kWh x 0.710 kg CO2 per kWh for location-based Scope 2. Do this per compressor and add them; do not use one machine's figures for another."
+      ]
+    },
+    {
+      "h": "What the result tells you",
+      "p": [
+        "A large share of unload hours means the compressor runs a lot without making air. That points to oversizing, poor sequencing between machines, or a pressure band set too narrow. A variable speed machine or better sequencing often cuts that unloaded energy."
+      ]
+    },
+    {
+      "h": "Label it as an estimate",
+      "p": [
+        "A figure from hour counters and spot readings is an estimate. In your records, say so, keep the counter photos and clamp meter readings with dates, and replace it with a submeter reading when you have one. Your total Scope 2 still comes from the electricity bill; this splits it by use."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a 75 kW screw compressor",
+    "lines": [
+      "Controller: 6,500 running hours, 5,000 load hours, so 1,500 unload hours",
+      "Loaded input: 80 kW (clamp meter reading, assumed); unloaded input: 25 kW (assumed for this machine)",
+      "Loaded: 5,000 x 80 = 400,000 kWh; unloaded: 1,500 x 25 = 37,500 kWh",
+      "Total: 437,500 kWh a year",
+      "CO2: 437,500 x 0.710 = 310,625 kg, about 310.6 t CO2",
+      "Unloaded running: 23% of hours and 8.6% of energy, spent making no air"
+    ],
+    "note": "Both power figures are illustrative assumptions; use your own measurements or the manufacturer's sheet."
+  },
+  "senseible": "Senseible applies the CEA grid factor to the kWh on your electricity bills; an equipment-level kWh you calculate this way should be kept and labelled as your estimate.",
+  "links": [
+    {
+      "label": "Air compressor specific power, kW per cfm",
+      "to": "/answers/air-compressor-specific-power-kw-per-cfm"
+    },
+    {
+      "label": "Sequencing multiple compressors",
+      "to": "/answers/multiple-air-compressors-sequencing-savings"
+    },
+    {
+      "label": "Compressed air leak cost and emissions",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 3 Compressed Air System, load and unload operation (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "auto-supplier-decarbonisation-roadmap-for-oem",
+  "q": "My OEM customer wants a decarbonisation roadmap from us. What should it contain?",
+  "title": "Decarbonisation roadmap for an OEM customer",
+  "short": "Five things: a base-year Scope 1 and 2 baseline built from bills, a dated reduction target, the projects that deliver it with tonnes saved and timing, a plan for Scope 3 and renewable electricity, and how you will report progress each year with evidence. Two to four pages is usually enough.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Auto component suppliers",
+  "sections": [
+    {
+      "h": "1. Baseline",
+      "ul": [
+        "Base year: one full year, April to March or calendar, with no unusual shutdowns.",
+        "Boundary: every plant that supplies the OEM, and whether you use operational control.",
+        "Scope 1: fuels by type, in litres, kg or scm, with factors.",
+        "Scope 2: kWh by plant, location-based at the CEA grid factor, and market-based if you hold renewable supply."
+      ]
+    },
+    {
+      "h": "2. Target",
+      "p": [
+        "Give an absolute target for Scope 1 and 2 with a base year and target year, and an intensity figure per part or per tonne beside it if your OEM asks. If you qualify for the SBTi SME route, its predefined near-term target is a recognised option; check the current wording on the SBTi site. Match any target year your OEM has set for its suppliers."
+      ]
+    },
+    {
+      "h": "3. Projects that add up to the target",
+      "p": [
+        "List each project with its expected saving in kWh or litres, the tonnes of CO2 that gives, the capex and the year it starts. Typical items: rooftop solar, IE4 motors and VFDs, compressed air leak repair, furnace insulation or recuperators, switching from furnace oil to PNG or electric heating, and green open access or certificates for the remaining grid power. The total should reach the target, or show the gap honestly."
+      ]
+    },
+    {
+      "h": "4. Scope 3 and materials",
+      "p": [
+        "OEMs care about steel, aluminium and castings you buy, because they sit in their own Scope 3. Say which material suppliers you will ask for footprints, by when, and whether you will move to secondary aluminium or lower-carbon steel. A part-level footprint, such as a Catena-X PCF, may be asked for separately."
+      ]
+    },
+    {
+      "h": "5. Tracking and evidence",
+      "ul": [
+        "Report Scope 1 and 2 every year against the baseline, and against production so a fall in output is not mistaken for a cut.",
+        "Keep the bills and invoices behind each year's figure.",
+        "Name the person responsible and when the roadmap is reviewed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: does the project list reach the target? (illustrative)",
+    "lines": [
+      "Baseline: 30,00,000 kWh x 0.710 = 2,130 t CO2, plus 40,000 L diesel x 2.68 = 107.2 t; total 2,237.2 t",
+      "Rooftop solar: 6,00,000 kWh a year x 0.710 = 426 t",
+      "IE2 to IE4 motors: 1,20,000 kWh a year x 0.710 = 85.2 t",
+      "Total savings: 426 + 85.2 = 511.2 t, which is 511.2 / 2,237.2 = 22.8% below baseline",
+      "Against a 30% target, the gap is 0.30 x 2,237.2 minus 511.2 = 159.96 t, to be covered by further projects or renewable supply"
+    ],
+    "note": "All plant figures and the 30% target are illustrative. The solar generation is an assumption; use your installer's yield estimate."
+  },
+  "senseible": "Senseible builds the Scope 1 and 2 baseline from your electricity bills and fuel invoices and keeps each year's records, so you can show your OEM the change after every project and the documents behind it.",
+  "links": [
+    { "label": "MSME net zero roadmap in 12 months", "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants" },
+    { "label": "Answer a Catena-X PCF request", "to": "/answers/answer-a-catena-x-pcf-request-auto-parts" },
+    { "label": "SBTi SME route eligibility", "to": "/answers/sbti-sme-route-eligibility" },
+    { "label": "Toyota green purchasing guidelines", "to": "/answers/toyota-green-purchasing-guidelines-suppliers" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard (base year and boundaries)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "SBTi SME target-setting route", "url": "https://sciencebasedtargets.org" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

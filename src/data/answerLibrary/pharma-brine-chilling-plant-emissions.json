@@ -1,0 +1,87 @@
+{
+  "slug": "pharma-brine-chilling-plant-emissions",
+  "q": "How do I calculate emissions from a pharma plant's brine chilling system running below zero?",
+  "title": "Brine chilling plant emissions in pharma",
+  "short": "Multiply the brine plant's kWh, from a sub-meter or measured kW per TR x TR x hours, by 0.710 kg CO2 per kWh, then add refrigerant topped up in kg times its GWP. Expect kW per TR well above a normal chiller, because compressors work harder at sub-zero evaporator temperatures.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "API and intermediate manufacturers",
+  "sections": [
+    {
+      "h": "Why brine plants use more power per TR",
+      "p": [
+        "The lower the evaporator temperature, the more work the compressor does for each unit of cooling, and the less capacity it delivers. A common refrigeration rule of thumb is about 3 percent more compressor power for each degree C lower at the evaporator; your compressor's rating tables at the actual brine temperature give the real figure. A plant making minus 15 degree C brine runs far colder than a 7 degree C chilled water plant, so do not borrow kW per TR from a comfort chiller.",
+        "Use the compressor's rated capacity at your brine temperature. Nameplate TR at standard conditions overstates what the plant delivers when cold."
+      ]
+    },
+    {
+      "h": "Getting the kWh",
+      "ol": [
+        "Best: a sub-meter on the brine plant covering compressors, brine pumps, condenser pumps and cooling tower fans.",
+        "Next: measured kW at typical load x running hours, logged by shift.",
+        "Last: assumed kW per TR x TR delivered x hours, labelled an estimate.",
+        "These kWh are already inside the plant's electricity bill. Use them to allocate Scope 2 to blocks or products, not to add to the total."
+      ]
+    },
+    {
+      "h": "Refrigerant leaks",
+      "p": [
+        "Leaks are Scope 1: kg charged in the year from service invoices x the gas's GWP, taken from one IPCC report and used throughout. Ammonia, common in low temperature plants, has no GWP, so only power counts there. For HFC blends, work out the blend GWP from its components."
+      ]
+    },
+    {
+      "h": "Ways to bring it down",
+      "ul": [
+        "Raise brine temperature wherever the process allows; each degree helps.",
+        "Move steps that do not need sub-zero cooling to chilled water.",
+        "Insulate brine lines and vessels; heat that leaks into a minus 15 degree C line is load the compressor pays for.",
+        "Run brine pumps on variable speed to follow reactor demand."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one year of a 100 TR brine plant",
+    "lines": [
+      "100 TR at minus 15 degree C brine, average 70% load, 6,000 hours: 100 x 0.7 x 6,000 = 4,20,000 TR-hours",
+      "Measured plant power 1.8 kW per TR, including pumps and fans: 4,20,000 x 1.8 = 7,56,000 kWh",
+      "Scope 2: 7,56,000 x 0.710 = 5,36,760 kg CO2",
+      "Refrigerant: 40 kg of HFC-134a x 1,530 (IPCC AR6) = 61,200 kg CO2e",
+      "Total: 5,97,960 kg CO2e, about 1.42 kg CO2e per TR-hour"
+    ],
+    "note": "Load, hours, kW per TR and the top-up are illustrative. HFC-134a only shows the arithmetic; use the gas named on your service invoices."
+  },
+  "senseible": "Senseible applies 0.710 kg CO2 per kWh to plant electricity from bills, and to brine plant kWh from a meter feed where one is set up with the Senseible team. Refrigerant top-ups are recorded as Scope 1 when the gas and kilograms charged are given.",
+  "links": [
+    {
+      "label": "Chiller plant emissions per TR-hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Refrigerant blend GWP",
+      "to": "/answers/refrigerant-blend-gwp-calculation"
+    },
+    {
+      "label": "Pharma cleanroom HVAC allocation",
+      "to": "/answers/pharma-cleanroom-hvac-emissions-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 4 Refrigeration and Air Conditioning",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, GWP-100 values",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "lpg-or-png-lower-co2-per-unit-of-heat",
+  "q": "LPG or PNG for a furnace or boiler: which emits less CO2 for the same heat?",
+  "title": "LPG or PNG: which emits less CO2?",
+  "short": "PNG. For the same heat, natural gas emits about 11% less CO2 than LPG: 56.1 kg CO2 per gigajoule against 63.1 kg, using IPCC 2006 defaults, assuming the burner or boiler converts both with the same efficiency. Compare per gigajoule, never per kg or per scm.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "MSMEs choosing between LPG and piped natural gas",
+  "sections": [
+    {
+      "h": "Why the per kg figure misleads",
+      "p": [
+        "LPG is billed in kg and PNG in scm, and the two carry different energy per unit. Per kg, LPG gives about 2.98 kg CO2; per scm, PNG gives about 2.05 kg CO2. Those numbers cannot be compared directly. Convert each to energy first: IPCC net calorific values are 47.3 GJ per tonne for LPG and 48.0 GJ per tonne for natural gas, and the carbon content per unit of energy is what differs."
+      ]
+    },
+    {
+      "h": "Where the 11% comes from",
+      "p": [
+        "LPG is mainly propane and butane, which have more carbon per unit of energy than methane, the main part of natural gas. IPCC 2006 gives 63,100 kg CO2 per TJ for LPG and 56,100 kg CO2 per TJ for natural gas. (63.1 minus 56.1) / 63.1 = 11.1%."
+      ]
+    },
+    {
+      "h": "What can change the answer",
+      "ul": [
+        "Efficiency: if your PNG burner is older or poorly tuned and your LPG burner is new, the efficiency gap can outweigh the 11%.",
+        "Bills in other units: PNG for industry is often billed in MMBTU or by calorific value; convert with the figure printed on the bill.",
+        "Methane: unburnt methane and upstream leaks are not in these combustion CO2 factors; they are small at the burner but matter in a full life cycle view.",
+        "Supply: PNG needs a city gas network at your site; LPG needs storage and safety licences."
+      ]
+    },
+    {
+      "h": "Reporting the switch",
+      "p": [
+        "Both fuels are Scope 1. Keep the last 12 months of LPG invoices and the first 12 months of PNG bills, and report the change in Scope 1 alongside production, so the saving is not hidden by a change in output."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 GJ of fuel heat a year",
+    "lines": [
+      "LPG: 1,000 GJ / 47.3 GJ per tonne = 21.14 tonnes, or 21,142 kg; x 2.98 kg CO2 per kg = 63,003 kg, about 63.0 t CO2",
+      "PNG: 1,000 x 56.1 kg CO2 per GJ = 56,100 kg, about 56.1 t CO2",
+      "Saving: 63.0 minus 56.1 = 6.9 t CO2, about 11%"
+    ],
+    "note": "Equal efficiency is assumed. Senseible's PNG factor of 2.05 kg CO2 per scm corresponds to about 36.5 MJ per scm; use the calorific value on your gas bill for a closer figure."
+  },
+  "senseible": "Senseible reads quantities from your LPG invoices and gas bills and applies IPCC 2006 defaults: LPG 2.98 kg CO2 per kg and PNG 2.05 kg CO2 per scm, so both fuels sit in Scope 1 with their source.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boiler emissions",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Induction vs LPG canteen kitchen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 Tables 1.2 and 1.4, and Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

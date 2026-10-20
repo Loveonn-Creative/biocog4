@@ -1,0 +1,76 @@
+{
+  "slug": "replace-us-epa-spend-factor-with-supplier-data",
+  "q": "My US customer estimates my emissions with EPA spend-based factors. How do I give them a better figure?",
+  "title": "Replace an EPA spend factor with your data",
+  "short": "Send your customer supplier-specific emissions: your Scope 1 and 2 for the year, allocated to the goods they bought from you, with the method stated. The GHG Protocol Scope 3 Standard prefers supplier-specific data over spend-based estimates, so a documented figure from your bills normally replaces the EPA factor in their inventory.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian suppliers to US companies",
+  "sections": [
+    {
+      "h": "What the customer is using now",
+      "p": [
+        "The US EPA Supply Chain Greenhouse Gas Emission Factors give kg CO2e per US dollar spent, by 6-digit NAICS industry, built from a US input-output model. Your customer multiplies what it paid you by the factor for your industry. The result reflects an average US industry, priced in US dollars, not your plant, your fuel mix or the Indian grid. It moves with your price, not your emissions: raise your price and your estimated emissions rise."
+      ]
+    },
+    {
+      "h": "What to send instead",
+      "ol": [
+        "Your Scope 1 (fuels on site) and Scope 2 (purchased electricity) for the same year as the customer's inventory.",
+        "An allocation to this customer: their share of your output in tonnes or pieces, or revenue only when no physical measure works.",
+        "The factors and their sources, for example the CEA grid factor and IPCC 2006 fuel defaults.",
+        "A one-line method note, and whether upstream Scope 3 of your own is included. Most supplier figures cover Scope 1 and 2 only; say so."
+      ]
+    },
+    {
+      "h": "Check the comparison is fair",
+      "p": [
+        "The EPA factor covers the whole supply chain behind a dollar of purchase, from raw materials to the point of sale. Your Scope 1 and 2 cover only your own gate. A buyer replacing a spend figure with your Scope 1 and 2 alone will see a big drop that partly comes from leaving out your raw materials. Either include your main purchased materials, or tell the customer clearly that their inventory must still cover them."
+      ]
+    },
+    {
+      "h": "Keep it updated",
+      "p": [
+        "Send a fresh figure each year with the same method. If the method changes, say what changed and restate the earlier year so the customer can compare."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one customer, one year",
+    "lines": [
+      "Customer's purchases from you: US$500,000",
+      "EPA factor for your industry: 0.8 kg CO2e per US$ (illustrative; the customer will tell you the one used)",
+      "Customer's spend estimate: 500,000 x 0.8 = 400,000 kg, or 400 t CO2e",
+      "Your Scope 1 and 2 for the year: 1,200 t CO2 from fuel and power bills",
+      "Their share of your output: 20% by tonnes",
+      "Supplier-specific figure: 1,200 x 0.20 = 240 t CO2 for your Scope 1 and 2"
+    ],
+    "note": "Add your purchased materials if you want a cradle-to-gate figure comparable with the spend estimate."
+  },
+  "senseible": "Senseible builds supplier-specific Scope 1 and 2 from the fuel and power bills it reads, which you can allocate per customer, and provides spend-based estimates, labelled as such, where only spend is available.",
+  "links": [
+    {
+      "label": "Allocate my emissions to one customer",
+      "to": "/answers/allocate-my-emissions-to-one-customer"
+    },
+    {
+      "label": "Spend-based vs activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    },
+    {
+      "label": "Supplier emissions risk calculator",
+      "to": "/calculators/supplier-emissions-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "US EPA Supply Chain Greenhouse Gas Emission Factors for US Industries and Commodities, v1.3, referenced by the EPA Center for Corporate Climate Leadership (epa.gov)",
+      "url": "https://www.epa.gov/climateleadership"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Chapter 7 Collecting data",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "pas-2050-or-iso-14067-for-uk-buyer",
+  "q": "My UK buyer asked for a footprint to PAS 2050. Is that still used, or should I follow ISO 14067?",
+  "title": "PAS 2050 or ISO 14067 for a UK buyer?",
+  "short": "PAS 2050 is still published by BSI and some UK retailers still name it, but ISO 14067:2018 is the international standard most buyers now accept. Ask your buyer whether an ISO 14067 footprint will do. If they insist on PAS 2050, build the study so it meets both, since the two share the same life cycle method.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Indian exporters to UK retailers and brands",
+  "sections": [
+    {
+      "h": "Where the two standards come from",
+      "p": [
+        "PAS 2050 is a British Standards Institution specification, first issued in 2008 and revised in 2011, written for the life cycle greenhouse gas emissions of goods and services. ISO first issued product carbon footprinting as a technical specification, ISO/TS 14067:2013, and then as the full standard ISO 14067:2018, which builds on the ISO 14040 and 14044 life cycle assessment standards. The GHG Protocol Product Standard, from 2011, covers the same ground."
+      ]
+    },
+    {
+      "h": "Differences that change your numbers",
+      "ul": [
+        "Cut-off: PAS 2050:2011 lets you leave out sources that are immaterial, each under 1% of the total, as long as at least 95% of the expected life cycle emissions are covered. ISO 14067 asks you to define and justify your own cut-off criteria.",
+        "Prescription: PAS 2050 fixes more choices for you; ISO 14067 asks you to choose and document them, which gives more freedom and more for a reviewer to question.",
+        "Communication: ISO 14067 sets out what a footprint report must contain and how a footprint may be communicated; check that section if the figure will appear on a label or a public claim.",
+        "Scope options: both allow cradle-to-gate for an intermediate product, which is what most Indian suppliers send."
+      ]
+    },
+    {
+      "h": "How to answer the buyer",
+      "ol": [
+        "Ask why PAS 2050: a legacy supplier manual, an internal tool, or a real requirement.",
+        "Offer ISO 14067, cradle-to-gate, with a note on cut-off and allocation choices.",
+        "If PAS 2050 is required, apply its 95% coverage and 1% materiality rules and state conformance to PAS 2050:2011 in the report.",
+        "Use the same plant data and factors either way, so a later request in the other standard needs only a new report, not a new study."
+      ]
+    },
+    {
+      "h": "What neither standard requires",
+      "p": [
+        "Neither PAS 2050 nor ISO 14067 requires certification for a footprint sent to one buyer. A third-party verification or critical review is needed when the buyer, a label scheme or a public claim calls for it."
+      ]
+    }
+  ],
+  "senseible": "Senseible's reports reflect the fuel and power data you upload, as self-declared drafts you can use as the plant data in a PAS 2050 or ISO 14067 study. It does not certify conformance to either standard.",
+  "links": [
+    {
+      "label": "ISO 14067 vs GHG Protocol Product Standard",
+      "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained"
+    },
+    {
+      "label": "Is ISO 14067 certification mandatory",
+      "to": "/answers/is-iso-14067-certification-mandatory"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Greenhouse gases, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "Checked 2026-10-20: PAS 2050:2011 still listed as current (supersedes PAS 2050:2008), no withdrawal or newer edition found; its sister PAS 2060 was withdrawn after ISO 14068-1. bsigroup.com is not on the sources allowlist, so PAS 2050 is named in the text only. Recheck BSI status before citing.",
+  "reviewed": "2026-10-18"
+}
