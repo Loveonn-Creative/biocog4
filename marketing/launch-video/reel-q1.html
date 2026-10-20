@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CBAM Toll Naka</title>
+<!--
+  KYA MATLAB HAI? #01 · CBAM — "Europe ke border pe naya toll."
+  FACT SOURCES (every claim on screen):
+  - CBAM definitive period applies from 1 January 2026; importers (authorised CBAM declarants) buy and surrender
+    CBAM certificates, one certificate = 1 t CO2e of emissions embedded in the goods. Regulation (EU) 2023/956,
+    Art. 3 (definition of "CBAM certificate"), Arts. 4, 6, 22, 36; European Commission CBAM page
+    https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en
+  - Covered goods: cement, electricity, fertilisers, iron and steel, aluminium, hydrogen. Regulation (EU) 2023/956, Annex I.
+  - De minimis: importers with ≤50 t net mass of CBAM goods per calendar year are exempt (not for hydrogen and
+    electricity). Regulation (EU) 2025/2083 (CBAM simplification, in force 20 Oct 2025); Luxembourg authority guide
+    https://environnement.public.lu/dam-assets/documents/emweltprozeduren/ets/cbam/guide-to-become-an-authorized-cbam-declarant.pdf
+  - Without actual (verified) emissions data, default values apply, with a mark-up of 10% (2026), 20% (2027) and
+    30% (2028 onward) for steel, aluminium and cement (fertilisers get a different, flat mark-up; electricity none).
+    Commission Implementing Regulation (EU) 2025/2621 (default values); summarised by
+    https://greensutra.in/question/cbam-fertiliser-flat-markup/ and https://cbamguide.com/exporters/default-values/
+    The penalty sign therefore hangs only over the lane where the steel / aluminium / cement trucks wait.
+  - Certificates on sale from 1 Feb 2027, first annual declaration 30 Sep 2027 (pre-verified, reels/BRIEF-batch2.md);
+    not shown on screen.
+  Analogy note: the "toll" is not collected at the moment of crossing; importers declare and surrender certificates
+  annually. The reel says who pays (the EU importer / buyer) and on what (embedded CO2e per tonne), nothing about timing.
+  Trucks, crates and the booth figure are fictional doodles; no prices or company names are shown.
+  Hidden detail (rewatch): the small roadside sign before the plaza, "Exempt: importer ≤50 t a year (not H2, bijli)".
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --paper: #f4ede1; --ink: #16181d; --saffron: #ef8a25; --green: #1f5139; --red: #c8372d; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+#scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+#scene text { font-family: 'Space Grotesk'; font-weight: 700; }
+#scene .mono { font-family: 'JetBrains Mono'; font-weight: 800; }
+#scene .hand { font-family: 'Hand'; font-weight: 600; }
+.cap { position: absolute; left: 70px; width: 850px; top: 300px; font-size: 100px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.0; z-index: 40; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.cap .w > span { display: inline-block; }
+.cap .s { color: var(--saffron); }
+#tag { position: absolute; left: 70px; top: 256px; z-index: 40; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 28px; letter-spacing: .08em; color: var(--ink); }
+#tag b { color: var(--saffron); font-weight: 700; }
+#endc { position: absolute; left: 70px; top: 300px; width: 850px; z-index: 40; }
+#wm { font-size: 132px; font-weight: 700; letter-spacing: -.045em; line-height: 1; }
+#wm i { font-style: normal; color: var(--green); }
+#line { margin-top: 18px; font-size: 54px; font-weight: 500; letter-spacing: -.02em; }
+#cta { margin-top: 34px; display: inline-block; font-family: 'Hand'; font-size: 58px; color: var(--ink); position: relative; }
+#cta svg { position: absolute; left: -8px; bottom: -14px; width: 110%; height: 26px; overflow: visible; }
+#list { position: absolute; left: 70px; top: 430px; width: 840px; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; row-gap: 4px; }
+#list span { font-family: 'Hand'; font-size: 74px; line-height: 1.05; position: relative; padding-left: 62px; }
+#list span:before { content: ''; position: absolute; left: 6px; top: 34px; width: 34px; height: 16px; border-left: 8px solid var(--ink); border-bottom: 8px solid var(--ink); transform: rotate(-48deg) scale(var(--k, 0)); transform-origin: 0 100%; }
+#grain { opacity: .09; mix-blend-mode: multiply; z-index: 80; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="scene" viewBox="0 0 1080 1920">
+    <defs>
+      <filter id="wob" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+      <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0 L0 14" stroke="#16181d" stroke-width="2" opacity=".18"/></pattern>
+    </defs>
+    <g id="zoom"><g id="world" filter="url(#wob)"></g></g>
+  </svg>
+
+  <div id="tag">KYA MATLAB HAI? <b>#01</b></div>
+  <div class="cap" id="c1">Europe ke border pe <span class="s">naya toll.</span></div>
+  <div class="cap" id="c2">Naam: <span class="s">CBAM.</span><br>1 Jan 2026 se.</div>
+  <div class="cap" id="c3">Toll ginta hai maal ke andar ka <span class="s">carbon.</span></div>
+  <div class="cap" id="c4">Kis maal pe?</div>
+  <div id="list"><span>Iron &amp; steel</span><span>Aluminium</span><span>Cement</span><span>Fertilisers</span><span>Hydrogen</span><span>Bijli</span></div>
+  <div class="cap" id="c5">Apna data nahi? <span class="s">Default lane.</span></div>
+  <div class="cap" id="c6">Aur default har saal mehenga.</div>
+  <div class="cap" id="c7">Toll aapka buyer bharta hai.</div>
+  <div class="cap" id="c8">Par hisaab <span class="s">aapke number</span> se.</div>
+  <div id="endc">
+    <div id="wm">Senseible<i>.</i></div>
+    <div id="line">Carbon, in plain words.</div>
+    <div id="cta">Send this to your export manager<svg viewBox="0 0 400 26" preserveAspectRatio="none"><path id="ctaU" d="M4 14 C 90 4, 200 22, 396 10" fill="none" stroke="#ef8a25" stroke-width="7" stroke-linecap="round" pathLength="1"/></svg></div>
+  </div>
+  <svg class="layer" id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="5"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gn)"/></svg>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  in2: x => x * x, back: x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); } };
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const D2R = Math.PI / 180;
+const INK = '#16181d', PAPER = '#f4ede1', SAF = '#ef8a25', GRN = '#1f5139', RED = '#c8372d', ROAD = '#e4d8c3', ROAD2 = '#d9ccb4';
+
+// ---------------- camera + projection ----------------
+const CAM = { x: -10, y: 10, z: -9, yaw: 24, pitch: 18, F: 1500, cx: 520, cy: 1100 };
+function proj(q) { const c = CAM, dx = q[0] - c.x, dy = q[1] - c.y, dz = q[2] - c.z;
+  const ys = Math.sin(c.yaw * D2R), yc = Math.cos(c.yaw * D2R), xr = dx * yc - dz * ys, zr = dx * ys + dz * yc;
+  const ts = Math.sin(c.pitch * D2R), tc = Math.cos(c.pitch * D2R), yr = dy * tc + zr * ts, zf = Math.max(.3, zr * tc - dy * ts);
+  return [c.cx + c.F * xr / zf, c.cy - c.F * yr / zf, zf]; }
+const f1 = v => v.toFixed(1);
+function poly(pts) { return 'M' + pts.map(q => { const s = proj(q); return f1(s[0]) + ' ' + f1(s[1]); }).join(' L') + ' Z'; }
+function line(pts) { return 'M' + pts.map(q => { const s = proj(q); return f1(s[0]) + ' ' + f1(s[1]); }).join(' L'); }
+// upright/any plane: tl = world top-left, U = unit along local +x, V = unit along local +y (down), w,h metres; local units = cm
+function planeM(tl, U, V, w, h) { const P0 = proj(tl), P1 = proj([tl[0] + U[0] * w, tl[1] + U[1] * w, tl[2] + U[2] * w]),
+  P2 = proj([tl[0] + V[0] * h, tl[1] + V[1] * h, tl[2] + V[2] * h]);
+  return `matrix(${((P1[0] - P0[0]) / (w * 100)).toFixed(4)} ${((P1[1] - P0[1]) / (w * 100)).toFixed(4)} ${((P2[0] - P0[0]) / (h * 100)).toFixed(4)} ${((P2[1] - P0[1]) / (h * 100)).toFixed(4)} ${f1(P0[0])} ${f1(P0[1])})`; }
+const DOWN = [0, -1, 0], PX = [1, 0, 0], NZ = [0, 0, -1];
+const sc = q => CAM.F / proj(q)[2];   // px per metre at q
+
+// ---------------- scene graph (rebuilt each frame; deterministic) ----------------
+let out = [];
+const add = s => out.push(s);
+function P(d, fill = 'none', stroke = INK, sw = 5, extra = '') { add(`<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round" ${extra}/>`); }
+function G(m, inner, extra = '') { add(`<g transform="${m}" ${extra}>${inner}</g>`); }
+
+// lanes (z): near lane 9..12.5, island 12.5..14, far lane 14..17.5
+const NL = 10.75, FL = 15.75;
+
+// truck: side face (cm units, 640 x 360, cab to the right) and end face (240 x 360)
+function truckSide(label, o) {
+  const { xray = 0, tag = 0, glow = 0, q = 0, lurch = 0 } = o;
+  const crateFill = q ? '#efe4d1' : '#f7efe2';
+  let s = `<g transform="rotate(${lurch} 470 300)">`;
+  // crate
+  s += `<rect x="18" y="${44}" width="452" height="232" rx="10" fill="${crateFill}" stroke="${INK}" stroke-width="7"/>`;
+  s += `<path d="M18 120 L470 120 M18 200 L470 200" stroke="${INK}" stroke-width="3" opacity=".35"/>`;
+  if (xray > 0) {
+    s += `<rect x="24" y="50" width="440" height="220" rx="8" fill="#fff8ec" opacity="${(xray * .92).toFixed(2)}"/>`;
+    // the carbon inside: packed hand-written CO2 marks
+    const marks = [[60, 100], [150, 90], [250, 104], [350, 92], [420, 120], [90, 170], [190, 160], [300, 176], [400, 190], [60, 240], [160, 236], [260, 248], [360, 244], [440, 250], [230, 205], [120, 130]];
+    marks.forEach(([x, y], i) => { const k = clamp(xray * 1.6 - i * .04);
+      s += `<text class="hand" x="${x}" y="${y}" font-size="${44 + (i % 3) * 6}" fill="${INK}" opacity="${(k * .85).toFixed(2)}" text-anchor="middle" transform="rotate(${(i % 5) * 6 - 12} ${x} ${y})">CO₂</text>`; });
+    s += `<rect x="18" y="44" width="452" height="232" rx="10" fill="none" stroke="${INK}" stroke-width="7" stroke-dasharray="${xray > .5 ? '20 14' : 'none'}"/>`;
+  }
+  if (tag > 0) s += `<rect x="18" y="44" width="452" height="232" rx="10" fill="none" stroke="${SAF}" stroke-width="${12 * tag}"/>
+    <g transform="translate(330 236) rotate(-6) scale(${E.back(clamp(tag)).toFixed(3)})"><rect x="-120" y="-40" width="240" height="72" rx="10" fill="${SAF}" stroke="${INK}" stroke-width="5"/>
+    <text class="hand" x="0" y="14" font-size="54" text-anchor="middle" fill="${INK}">aapka number</text></g>`;
+  const lo = 1 - xray * .75;
+  s += `<text x="244" y="${label.length > 7 ? 160 : 166}" font-size="${label.length > 7 ? 70 : 84}" text-anchor="middle" fill="${INK}" letter-spacing="-2" opacity="${lo.toFixed(2)}">${label}</text>`;
+  s += `</g>`;
+  // chassis + cab
+  s += `<path d="M6 288 L 492 288 L 492 300 L 6 300 Z" fill="${INK}"/>`;
+  s += `<path d="M498 300 L 498 132 Q 500 112 520 112 L 584 112 Q 606 112 616 136 L 636 196 L 636 300 Z" fill="${glow ? SAF : PAPER}" stroke="${INK}" stroke-width="7"/>`;
+  s += `<path d="M528 134 L 588 134 Q 598 134 602 146 L 616 192 L 528 192 Z" fill="#cfe0dd" stroke="${INK}" stroke-width="5"/>`;
+  s += `<path d="M512 230 L 540 230" stroke="${INK}" stroke-width="5"/><path d="M630 262 L 642 262" stroke="${INK}" stroke-width="8"/>`;
+  [80, 170, 540].forEach(x => { s += `<circle cx="${x}" cy="318" r="38" fill="${INK}"/><circle cx="${x}" cy="318" r="14" fill="${PAPER}"/>`; });
+  if (q) s += `<text class="hand" x="566" y="96" font-size="150" text-anchor="middle" fill="${RED}">?</text>`;
+  return s;
+}
+function truckEnd(o) {
+  let s = `<rect x="10" y="44" width="220" height="232" rx="10" fill="#e9dcc6" stroke="${INK}" stroke-width="7"/>`;
+  s += `<path d="M120 50 L120 270" stroke="${INK}" stroke-width="4" opacity=".4"/><path d="M4 288 L236 288 L236 300 L4 300 Z" fill="${INK}"/>`;
+  s += `<rect x="20" y="300" width="50" height="50" rx="8" fill="${INK}"/><rect x="170" y="300" width="50" height="50" rx="8" fill="${INK}"/>`;
+  s += `<rect x="28" y="296" width="24" height="10" fill="${RED}"/><rect x="188" y="296" width="24" height="10" fill="${RED}"/>`;
+  return s;
+}
+function truck(front, lane, label, o = {}) {   // front = x of cab nose
+  const L = 6.4, rear = front - L, zs = lane - 1.2, ze = lane + 1.2, Ht = 3.6;
+  // shadow
+  P(poly([[rear - .1, 0, zs + .1], [front + .25, 0, zs + .1], [front + .25, 0, ze + .4], [rear - .1, 0, ze + .4]]), 'rgba(22,24,29,.13)', 'none', 0);
+  if (CAM.x < rear) G(planeM([rear, Ht, ze], NZ, DOWN, 2.4, Ht), truckEnd(o));
+  G(planeM([rear, Ht, zs], PX, DOWN, L, Ht), truckSide(label, o));
+}
+
+// toll boom: pivot on island edge, sweeps across the lane
+function boom(px, pz, dir, ang, light) {  // dir = -1 sweeps toward -z, ang deg (0 down/horizontal, 85 up)
+  const L = 3.4, a = ang * D2R, piv = [px, 1.05, pz];
+  const end = [px, 1.05 + Math.sin(a) * L, pz + dir * Math.cos(a) * L];
+  const w = sc(piv) * .2;
+  P(line([[px, 0, pz], [px, 1.25, pz]]), 'none', INK, sc(piv) * .32);
+  P(line([piv, end]), 'none', INK, w + 6);
+  P(line([piv, end]), 'none', PAPER, w);
+  P(line([piv, end]), 'none', RED, w, `stroke-dasharray="${f1(w * 1.6)} ${f1(w * 1.6)}" stroke-linecap="butt"`);
+  const lp = proj([px, 1.55, pz]);
+  add(`<circle cx="${f1(lp[0])}" cy="${f1(lp[1])}" r="${f1(sc(piv) * .2)}" fill="${light}" stroke="${INK}" stroke-width="4"/>`);
+}
+
+function box(x0, x1, y0, y1, z0, z1, fillTop, fillSide, fillFront) {
+  P(poly([[x0, y1, z0], [x1, y1, z0], [x1, y1, z1], [x0, y1, z1]]), fillTop);
+  P(poly([[x0, y0, z1], [x0, y0, z0], [x0, y1, z0], [x0, y1, z1]]), fillSide);
+  P(poly([[x0, y0, z0], [x1, y0, z0], [x1, y1, z0], [x0, y1, z0]]), fillFront);
+}
+
+// ---------------- captions ----------------
+['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8'].forEach(id => {
+  const el = $(id); const walk = n => { [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const f = document.createDocumentFragment();
+    c.textContent.split(/(\s+)/).forEach(s => { if (!s) return; if (/^\s+$/.test(s)) f.appendChild(document.createTextNode(' ')); else { const w = document.createElement('span'); w.className = 'w'; w.innerHTML = `<span>${s}</span>`; f.appendChild(w); } });
+    n.replaceChild(f, c); } else if (c.nodeType === 1 && !c.classList.contains('w')) walk(c); }); }; walk(el); });
+function cap(id, t, tin, tout, st = .07) { const el = $(id), o = tout == null ? 1 : 1 - p(t, tout, .25, E.io);
+  el.style.opacity = o; el.style.visibility = t >= tin - .02 && o > 0 ? 'visible' : 'hidden';
+  el.querySelectorAll('.w > span').forEach((w, i) => { const k = tin < 0 ? 1 : p(t, tin + i * st, .45, E.o5); w.style.transform = `translateY(${(1 - k) * 112}%)`; }); }
+function show(el, o, dy = 0) { el.style.opacity = o; el.style.visibility = o > .001 ? 'visible' : 'hidden'; el.style.transform = `translateY(${dy}px)`; }
+
+const DUR = 30;
+function render(t) {
+  out = [];
+  // gentle camera drift (scene), held still while words rise is not needed: drift is < 1 px/frame
+  CAM.x = -10 + Math.sin(t * .21) * .3; CAM.yaw = 24 + Math.sin(t * .17) * .5;
+
+  // ===== ground =====
+  P(poly([[-28, 0, 8.6], [70, 0, 8.6], [70, 0, 17.9], [-28, 0, 17.9]]), ROAD, 'none', 0);
+  P(line([[-28, 0, 8.6], [70, 0, 8.6]]), 'none', INK, 6);
+  P(line([[-28, 0, 17.9], [70, 0, 17.9]]), 'none', INK, 5);
+  // lane dashes
+  for (let x = -28; x < 70; x += 4) { P(line([[x, 0, 12.6], [x + 2, 0, 12.6]]), 'none', INK, 4, 'opacity=".5"'); P(line([[x, 0, 13.9], [x + 2, 0, 13.9]]), 'none', INK, 4, 'opacity=".5"'); }
+  // stop lines at the plaza
+  P(line([[-1.6, 0, 9], [-1.6, 0, 12.4]]), 'none', INK, 7); P(line([[-1.6, 0, 14.1], [-1.6, 0, 17.5]]), 'none', INK, 7);
+  // island
+  P(poly([[-3.4, 0, 12.75], [3.4, 0, 12.75], [3.4, 0, 13.75], [-3.4, 0, 13.75]]), '#f7efe2');
+  P(poly([[-3.4, 0, 12.75], [3.4, 0, 12.75], [3.4, 0, 13.75], [-3.4, 0, 13.75]]), 'url(#hatch)', 'none', 0);
+  // the verge in front: a few ink grass ticks
+  for (let x = -20; x < 40; x += 5.5) { const a = proj([x, 0, 8.1]), s = sc([x, 0, 8.1]) * .25;
+    P(`M${f1(a[0])} ${f1(a[1])} l ${f1(-s * .4)} ${f1(-s)} M${f1(a[0])} ${f1(a[1])} l ${f1(s * .1)} ${f1(-s * 1.2)} M${f1(a[0])} ${f1(a[1])} l ${f1(s * .5)} ${f1(-s * .8)}`, 'none', INK, 3, 'opacity=".55"'); }
+
+  // ===== far roadside board: EU DEFAULT + growing penalty plate (+10% 2026, +20% 2027, +30% 2028+) =====
+  {
+    const on = p(t, 14.0, .35), bx = -6.3, bz = 18.4;
+    P(line([[bx + .5, 0, bz], [bx + .5, 7.4, bz]]), 'none', INK, 9); P(line([[bx + 3.9, 0, bz], [bx + 3.9, 7.4, bz]]), 'none', INK, 9);
+    G(planeM([bx, 7.6, bz], PX, DOWN, 4.4, 1.0), `<rect x="0" y="0" width="440" height="100" rx="10" fill="${on > .5 ? INK : '#e9dcc6'}" stroke="${INK}" stroke-width="7"/>
+      <text x="220" y="72" font-size="64" text-anchor="middle" fill="${PAPER}" opacity="${on.toFixed(2)}">EU DEFAULT</text>`);
+    const pen = p(t, 14.4, .4, E.back);
+    if (pen > 0) {
+      const steps = [[16.9, '+10%', '2026'], [17.9, '+20%', '2027'], [18.9, '+30%', '2028+']];
+      let k = -1; steps.forEach((st, i) => { if (t >= st[0] - .15) k = i; });
+      const flipT = k < 0 ? 0 : steps[k][0], fl = k >= 0 && t < flipT + .15 && t > flipT - .15 ? Math.abs((t - flipT) / .15) : 1;
+      const grow = [1, 1.25, 1.5][Math.max(0, k)], gw = 2.6 * grow, gh = 1.3 * grow, ox = bx + 2.2 - gw / 2;
+      const sh = k < 0 ? `<text class="mono" x="130" y="88" font-size="76" text-anchor="middle" fill="${PAPER}">+?%</text>` :
+        `<text class="mono" x="130" y="82" font-size="80" text-anchor="middle" fill="${PAPER}">${steps[k][1]}</text><text class="mono" x="130" y="116" font-size="28" text-anchor="middle" fill="${PAPER}" opacity=".85">${steps[k][2]}</text>`;
+      P(line([[ox + .4, 6.6, bz], [ox + .4, 6.4, bz]]), 'none', INK, 4); P(line([[ox + gw - .4, 6.6, bz], [ox + gw - .4, 6.4, bz]]), 'none', INK, 4);
+      G(planeM([ox, 6.45, bz], PX, DOWN, gw, gh), `<g transform="translate(0 ${f1((1 - fl) * 65)}) scale(1 ${Math.max(.02, fl * pen).toFixed(3)})">
+        <rect x="0" y="0" width="260" height="130" rx="12" fill="${RED}" stroke="${INK}" stroke-width="7"/>${sh}</g>`);
+    }
+  }
+
+  // ===== far lane =====
+  // T2: aluminium, no data -> default lane
+  const t2 = lerp(-34, -1.9, p(t, 3.4, 2.6, E.o3));
+  const t2out = p(t, 25.4, 3.0, E.in2);
+  const q2 = t > 13.9 && t < 24 ? 1 : 0;
+  truck(t2 + t2out * 40, FL, 'ALUMINIUM', { q: q2 });
+  // T4: queued cement behind
+  truck(lerp(-44, -9.4, p(t, 4.6, 3.0, E.o3)) + p(t, 25.9, 3.2, E.in2) * 30, FL, 'CEMENT', {});
+  // far boom (on island, sweeping toward +z)
+  const fbUp = p(t, 25.0, .7, E.io);
+  boom(-1.25, 13.75, 1, lerp(0, 82, fbUp), fbUp > .5 ? GRN : RED);
+
+  // ===== booth on island =====
+  box(-1.0, 1.0, 0, 2.7, 12.8, 13.7, '#e9dcc6', '#e9dcc6', PAPER);
+  G(planeM([-1.0, 2.7, 12.8], PX, DOWN, 2.0, 2.7), `<rect x="22" y="40" width="156" height="120" rx="8" fill="#d6e4e1" stroke="${INK}" stroke-width="6"/>
+    <rect x="10" y="176" width="180" height="58" rx="6" fill="${INK}"/><text class="mono" x="100" y="216" font-size="30" text-anchor="middle" fill="${PAPER}">TOLL</text>`);
+
+  // ===== near lane =====
+  // T3 (queued) and T1 (hook truck)
+  const t1stop = -1.75;   // nose just before the boom
+  const hookBrake = t < .32 ? lerp(-1.1, 0, E.o3(t / .32)) : 0;
+  const t1go = p(t, 25.2, 3.0, E.in2);
+  const t1 = t1stop + hookBrake + t1go * 42;
+  const lurch = t < .7 ? Math.sin(t / .7 * Math.PI * 2.2) * 3.5 * (1 - t / .7) : 0;
+  const xr = p(t, 7.6, .9, E.io) * (1 - p(t, 11.3, .4, E.io));
+  const tg = p(t, 22.6, .4) * (1 - p(t, 26.8, .5));
+  truck(lerp(-44, -9.0, p(t, 5.4, 3.2, E.o3)) + p(t, 26.4, 2.6, E.io) * 7.15, NL, 'CEMENT', {});
+  truck(t1, NL, 'STEEL', { xray: xr, tag: tg, lurch });
+  // near boom: the hook slam at t=0 (already mid-fall), lifts at 25, falls again at the loop
+  let nb = t < .18 ? lerp(40, 0, E.in2(t / .18)) : (t < .5 ? Math.abs(Math.sin((t - .18) / .32 * Math.PI)) * 6 * (1 - (t - .18) / .32) : 0);
+  nb = Math.max(nb, 82 * p(t, 24.9, .7, E.io) * (1 - p(t, 29.5, .5, E.in2)));
+  if (t >= 29.5) nb = lerp(82, 40, E.in2(clamp((t - 29.5) / .5)));
+  boom(-1.25, 12.75, -1, nb, t > 24.9 && t < 29.6 ? GRN : RED);
+  // "per tonne CO2e" hand note during the X-ray
+  if (xr > 0) { const a = proj([t1 - 3.6, 0, 8.3]);
+    add(`<g transform="translate(${f1(a[0])} ${f1(a[1])})" opacity="${xr.toFixed(2)}"><text class="hand" x="-150" y="96" font-size="66" fill="${INK}">per tonne CO₂e</text>
+      <path d="M-40 40 C -30 10, -20 -10, -10 -40" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - p(t, 8.3, .5)).toFixed(3)}"/>
+      <path d="M-28 -30 L -10 -44 L 2 -24" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round" opacity="${p(t, 8.7, .2).toFixed(2)}"/></g>`); }
+  // ===== canopy (drawn above the lanes) =====
+  const cx0 = -1.5, cx1 = 1.5;
+  [8.75, 13.25, 17.75].forEach(z => { P(line([[0, 0, z], [0, 6.1, z]]), 'none', INK, sc([0, 3, z]) * .3); P(line([[0, 0, z], [0, 6.1, z]]), 'none', '#e9dcc6', sc([0, 3, z]) * .3 - 8); });
+  box(cx0, cx1, 6.1, 7.5, 8.5, 18.1, '#e9dcc6', PAPER, '#e9dcc6');
+  const lit = p(t, 3.25, .12) * (t > 3.33 && t < 3.4 ? .4 : 1);
+  G(planeM([cx0, 7.5, 18.1], NZ, DOWN, 9.6, 1.4), `<rect x="0" y="0" width="960" height="140" fill="${lit > .5 ? INK : PAPER}" stroke="${INK}" stroke-width="8"/>
+      <text x="480" y="112" font-size="118" text-anchor="middle" fill="${SAF}" letter-spacing="14" opacity="${lit.toFixed(2)}">CBAM</text>
+      <text class="hand" x="480" y="98" font-size="70" text-anchor="middle" fill="${INK}" opacity="${(1 - lit).toFixed(2)}">· · ·</text>`);
+  // lane sign for the near lane, hanging under the canopy's near face
+  const lanesOn = p(t, 14.0, .35);
+  P(line([[-1.0, 6.1, 8.5], [-1.0, 5.85, 8.5]]), 'none', INK, 4); P(line([[1.0, 6.1, 8.5], [1.0, 5.85, 8.5]]), 'none', INK, 4);
+  G(planeM([-1.45, 5.85, 8.5], PX, DOWN, 2.9, .9), `<rect x="0" y="0" width="290" height="90" rx="8" fill="${lanesOn > .5 ? SAF : '#e9dcc6'}" stroke="${INK}" stroke-width="6"/>
+      <text x="145" y="64" font-size="50" text-anchor="middle" fill="${INK}" opacity="${lanesOn.toFixed(2)}">APNA DATA</text>`);
+  // arrow doodle: ? truck -> default board (beat 4)
+  const ar = p(t, 14.6, .6) * (1 - p(t, 19.4, .4));
+  if (ar > 0) { const a = proj([-.6, 5.6, FL - 1.2]), b = proj([-3.2, 4.9, 18.4]);
+    const mx = (a[0] + b[0]) / 2 + 30, my = Math.min(a[1], b[1]) - 60;
+    add(`<g opacity="${Math.min(1, ar * 3).toFixed(2)}"><path d="M${f1(a[0])} ${f1(a[1])} Q ${f1(mx)} ${f1(my)} ${f1(b[0])} ${f1(b[1])}" fill="none" stroke="${RED}" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - ar).toFixed(3)}"/>
+      <path d="M${f1(b[0] - 4)} ${f1(b[1] - 26)} L ${f1(b[0])} ${f1(b[1])} L ${f1(b[0] + 26)} ${f1(b[1] - 8)}" fill="none" stroke="${RED}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="${p(t, 15.15, .15).toFixed(2)}"/></g>`); }
+
+  // ===== the EU buyer, standing on the Europe side, pays the toll in certificates (1 certificate = 1 t CO2e) =====
+  const fig = p(t, 19.55, .55, E.back) * (1 - p(t, 26.0, .5));
+  if (fig > 0) {
+    const bx = 1.7, bz = 7.9, hgt = 3.4;
+    const hand = Math.sin(clamp((t - 20.4) / 3.2) * Math.PI * 4) * 8 * (t > 20.4 && t < 23.6 ? 1 : 0);
+    let s2 = `<g transform="translate(0 ${f1((1 - fig) * 60)})">
+      <path d="M58 228 L 62 168 M 92 228 L 88 168" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+      <path d="M40 172 Q 40 108 75 104 Q 110 108 110 172 Z" fill="${INK}"/>
+      <path d="M75 106 L 69 132 L 75 146 L 81 132 Z" fill="${PAPER}"/>
+      <path d="M108 120 L ${f1(140 + hand)} ${f1(96 - hand)}" stroke="${INK}" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="75" cy="78" r="25" fill="${PAPER}" stroke="${INK}" stroke-width="6"/>
+      <circle cx="84" cy="76" r="3.5" fill="${INK}"/><circle cx="96" cy="76" r="3.5" fill="${INK}"/><path d="M84 90 Q 92 94 98 89" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/>
+      <rect x="-6" y="0" width="162" height="40" rx="6" fill="${PAPER}" stroke="${INK}" stroke-width="5"/>
+      <text class="mono" x="75" y="29" font-size="25" text-anchor="middle" fill="${INK}">EU BUYER</text></g>`;
+    G(planeM([bx, hgt, bz], PX, DOWN, 2.2, hgt), `<g transform="scale(1.47)">${s2}</g>`);
+    // certificates fly from the buyer's hand to the booth
+    for (let i = 0; i < 5; i++) { const k = clamp((t - 20.5 - i * .55) / 1.3); if (k <= 0 || k >= 1) continue;
+      const A = [bx + 2.0, 2.2, bz], B = [-.2, 2.2, 12.7];
+      const Q = [lerp(A[0], B[0], k), lerp(A[1], B[1], k) + Math.sin(Math.PI * k) * 2.2, lerp(A[2], B[2], k)];
+      const q = proj(Q), s3 = sc(Q) / 100;
+      add(`<g transform="translate(${f1(q[0])} ${f1(q[1])}) rotate(${(i % 2 ? 12 : -9) + k * 25}) scale(${(s3 * .9).toFixed(3)})" opacity="${Math.min(1, Math.sin(Math.PI * k) * 2.5).toFixed(2)}">
+        <rect x="-50" y="-31" width="100" height="62" rx="6" fill="${PAPER}" stroke="${INK}" stroke-width="5"/>
+        <text class="mono" x="0" y="-4" font-size="17" text-anchor="middle" fill="${INK}">CBAM</text><text class="mono" x="0" y="18" font-size="15" text-anchor="middle" fill="${INK}">1 t CO₂e</text></g>`); }
+  }
+
+  // ===== hidden detail: roadside sign before the plaza =====
+  {
+    const sx = -.48, sz = 8.55;
+    G(planeM([sx, 2.3, sz], PX, DOWN, .95, .55), `<rect x="0" y="0" width="95" height="55" rx="5" fill="${PAPER}" stroke="${INK}" stroke-width="3"/>
+      <text class="hand" x="47" y="19" font-size="16" text-anchor="middle" fill="${INK}">Exempt: importer</text><text class="hand" x="47" y="35" font-size="16" text-anchor="middle" fill="${INK}">≤50 t a year</text>
+      <text class="hand" x="47" y="49" font-size="11" text-anchor="middle" fill="${INK}" opacity=".7">(not H₂, bijli)</text>`);
+  }
+
+  $('world').innerHTML = out.join('');
+  const z = 1 + .4 * (1 - p(t, .2, 2.6, E.io)), zx = 760, zy = 600;
+  $('zoom').setAttribute('transform', `translate(${f1(zx * (1 - z))} ${f1(zy * (1 - z))}) scale(${z.toFixed(4)})`);
+
+  // ===== type =====
+  const endK = p(t, 26.1, .5, E.o5);
+  show($('tag'), t < 3.0 ? 1 : (t > 26 ? p(t, 26.3, .4) : 1 - p(t, 3.0, .3)));
+  cap('c1', t, -1, 3.0);
+  cap('c2', t, 3.35, 7.35);
+  cap('c3', t, 7.6, 11.3);
+  cap('c4', t, 11.6, 13.85);
+  const lo = 1 - p(t, 13.85, .25, E.io); $('list').style.visibility = t > 11.8 && lo > 0 ? 'visible' : 'hidden';
+  [...$('list').children].forEach((el, i) => { const k = p(t, 11.95 + i * .22, .35, E.o5); el.style.opacity = k * lo; el.style.transform = `translateY(${(1 - k) * 24}px)`; el.style.setProperty('--k', p(t, 12.1 + i * .22, .25, E.back).toFixed(3)); });
+  cap('c5', t, 14.05, 16.65);
+  cap('c6', t, 16.8, 19.35);
+  cap('c7', t, 19.6, 22.15);
+  cap('c8', t, 22.35, 25.6);
+  const ec = $('endc'); ec.style.visibility = t > 26.0 ? 'visible' : 'hidden';
+  ec.style.opacity = 1; ec.style.transform = `translateY(${(1 - endK) * 40}px)`;
+  $('wm').style.opacity = endK; $('line').style.opacity = p(t, 26.6, .5); $('cta').style.opacity = p(t, 27.3, .4);
+  $('ctaU').setAttribute('stroke-dasharray', '1'); $('ctaU').setAttribute('stroke-dashoffset', (1 - p(t, 27.6, .6, E.io)).toFixed(3));
+}
+window.render = render;
+window.render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
