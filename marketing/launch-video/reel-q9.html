@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Count the wagons</title>
+<!--
+ONE NUMBER #02 · "Count the wagons."  (Senseible reel, batch 3 #9, enterprise / English, LinkedIn first, 29 s)
+
+THE NUMBER
+26 : on average, the supply-chain (Scope 3) emissions that companies reported to CDP were 26 times their
+operational emissions (Scope 1 + 2), in 2023 disclosure data.
+Primary source: CDP, with Boston Consulting Group (BCG), "Scope 3 Upstream: Big Challenges, Simple Remedies",
+June 2024. Report PDF hosted by CDP:
+  https://cdn.cdp.net/cdp-production/cms/reports/documents/000/007/834/original/Scope-3-Upstream-Report.pdf
+  (also https://assets.ctfassets.net/v7uy4j80khf8/1F70SdMyfKcaCFTz3gLLeZ/50f763fd23b3d5d7c510a7d40d76d2f8/scope-3-upstream-report-big-challenges-simple-remedies.pdf)
+CDP press release, June 2024: "Corporates' supply chain scope 3 emissions are 26 times higher than their operational
+emissions" (cdp.net/en/press-releases/corporates-supply-chain-scope-3-emissions-are-26-times-higher-than-their-operational-emissions);
+BCG press release 25 June 2024 (bcg.com/press/25june2024-corporates-supply-chain-scope-3-emissions-higher-than-operational-emissions).
+Wording on screen keeps the report's qualifiers: "on average", "companies reporting to CDP", "2023 data".
+It is an average across disclosing companies, not a law of nature; sector ratios differ.
+(Superseded figure, not used: CDP Global Supply Chain Report 2020 "Transparency to Transformation", 11.4x.)
+
+THE DEVICE
+A goods train at a railway level crossing (phatak) at night. The locomotive = your Scope 1 + 2 (one unit, saffron =
+"you"). Each wagon = one more engine's worth of emissions. 26 wagons follow. The waiting is the number.
+Wagon stencils "SCOPE 3 · nn/26" are counters only; they do not represent category shares.
+
+HIDDEN DETAILS
+- The gate plate reads "LC No. 26": the answer is on screen from frame 1.
+- The loco class is stencilled "WAG 1+2" (Indian goods locos are WAG-class: Wide gauge, AC, Goods).
+- The last wagon carries the Indian Railways "LV" (last vehicle) board and blinking tail lamp, and the painted X.
+- The catenary buzz is 50 Hz, India's grid frequency.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --paper: #f4ede1; --ink: #16181d; --night: #14161b; --saffron: #ef8a25; --green: #1f5139; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--paper); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  background: radial-gradient(120% 55% at 50% 52%, #1d2029 0%, #15171d 55%, #101116 100%); }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+svg.layer { width: 1080px; height: 1920px; }
+#grain { opacity: .07; mix-blend-mode: overlay; z-index: 80; }
+#tag { position: absolute; left: 70px; top: 262px; font-family: 'JetBrains Mono'; font-weight: 600; font-size: 28px; letter-spacing: .12em; color: rgba(244,237,225,.62); z-index: 50; }
+#tag b { color: var(--saffron); font-weight: 700; }
+.cap { position: absolute; left: 70px; width: 860px; top: 330px; font-size: 100px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; z-index: 40; opacity: 0; }
+.cap .w { display: inline-block; }
+.cap .s { color: var(--saffron); }
+.cap.sm { font-size: 84px; }
+#lab { position: absolute; left: 70px; width: 860px; top: 300px; z-index: 40; opacity: 0; }
+#lab .a { font-size: 300px; font-weight: 700; letter-spacing: -.06em; line-height: .9; }
+#lab .a i { font-style: normal; color: rgba(244,237,225,.55); font-weight: 500; }
+#lab .b { margin-top: 10px; font-size: 52px; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; color: rgba(244,237,225,.92); }
+#lab .b .s { color: var(--saffron); }
+.fine { position: absolute; left: 70px; width: 860px; top: 905px; padding: 14px 18px; margin-left: -18px; border-radius: 10px; background: rgba(16,17,22,.86); font-family: 'JetBrains Mono'; font-size: 25px; line-height: 1.45; color: rgba(244,237,225,.62); z-index: 40; opacity: 0; }
+#end { z-index: 60; opacity: 0; background: rgba(12,13,17,.74); }
+#endIn { position: absolute; left: 70px; top: 640px; width: 860px; }
+#wm { font-size: 150px; font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+#wm i { font-style: normal; color: var(--saffron); }
+#tl { margin-top: 26px; font-size: 62px; font-weight: 500; letter-spacing: -.02em; }
+#fl { margin-top: 70px; font-family: 'Hand'; font-size: 62px; color: rgba(244,237,225,.8); }
+#hand { z-index: 30; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg class="layer" id="scene" viewBox="0 0 1080 1920">
+    <defs>
+      <filter id="glowF" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+      <radialGradient id="lampG"><stop offset="0" stop-color="#ffd9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffd9a8" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redG"><stop offset="0" stop-color="#ff5a3c" stop-opacity=".7"/><stop offset="1" stop-color="#ff5a3c" stop-opacity="0"/></radialGradient>
+      <linearGradient id="boomFade" gradientUnits="userSpaceOnUse" x1="0" y1="720" x2="0" y2="1000"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
+      <mask id="boomM" maskUnits="userSpaceOnUse" x="-200" y="0" width="1500" height="1920"><rect x="-200" y="0" width="1500" height="1920" fill="url(#boomFade)"/></mask>
+      <radialGradient id="sparkG"><stop offset="0" stop-color="#cfe3ff" stop-opacity=".9"/><stop offset="1" stop-color="#8fb4ff" stop-opacity="0"/></radialGradient>
+    </defs>
+    <g id="back"></g>
+    <g id="trainG"></g>
+    <g id="engGlow" filter="url(#glowF)"></g>
+    <g id="engInk"></g>
+    <g id="fore"></g>
+  </svg>
+  <div class="layer" style="z-index:25;background:linear-gradient(180deg, rgba(16,17,22,0) 0, rgba(16,17,22,.6) 230px, rgba(16,17,22,.5) 640px, rgba(16,17,22,0) 780px)"></div>
+  <svg class="layer" id="hand" viewBox="0 0 1080 1920"><g id="handG"></g></svg>
+
+  <div id="tag">ONE NUMBER · <b>#02</b></div>
+  <div class="cap" id="c1">Count the <span class="s">wagons.</span></div>
+  <div class="cap" id="c2">The engine is <span class="s">your own</span> operations.</div>
+  <div class="cap" id="c3">The wagons are your supply chain.</div>
+  <div class="cap sm" id="c4">Each wagon carries as much carbon as the engine.</div>
+  <div class="cap" id="c5">Still coming.</div>
+  <div class="cap sm" id="c6">Somewhere, a spreadsheet is still on wagon 4.</div>
+  <div id="lab"><div class="a">26<i>×</i></div><div class="b">supply-chain emissions for every <span class="s">1×</span> of your own.</div></div>
+  <div class="fine" id="f1">Average of companies reporting to CDP, 2023 data.<br>Scope 3 supply chain vs Scope 1 + 2. CDP × BCG, 2024.</div>
+  <div class="cap" id="c7">Measure the train, not the <span class="s">engine.</span></div>
+
+  <div class="layer" id="end"><div id="endIn">
+    <div id="wm">Senseible<i>.</i></div>
+    <div id="tl">Carbon, in plain words.</div>
+    <div id="fl">Send this to whoever owns Scope 3.</div>
+  </div></div>
+  <svg class="layer" id="grain"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="7"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gn)"/></svg>
+</div>
+<script>
+const DUR = 29;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = k => k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;
+const oc = k => 1 - Math.pow(1 - k, 3);
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+function hash(n) { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); }
+const INK = '#ece4d6', SAF = '#ef8a25';
+
+// ---------- train kinematics (mirrored in q9-sfx.py) ----------
+const F0 = 560, V0 = 140, VM = 700, TA = 3.5, TB = 9.0;
+function front(t) {
+  const u = clamp((t - TA) / (TB - TA)), d = TB - TA;
+  let x = F0 + V0 * t;
+  if (t > TA) x += (VM - V0) * (t < TB ? d * (u*u*u - u*u*u*u / 2) : d * .5 + (t - TB));
+  return x;
+}
+const ENG = 520, PITCH = 430, WLEN = 400, NW = 26, GATE = 540;
+const RAIL = 1182;
+
+// ---------- hand-ink helpers ----------
+let BOIL = 0;
+function jit(id, i, amp) { const h = id * 31.7 + i * 7.13 + BOIL * 1.931; return [(hash(h) - .5) * amp, (hash(h + 5.5) - .5) * amp]; }
+function ink(pts, id = 1, amp = 1.6, closed = false) {
+  const P = closed ? pts.concat([pts[0]]) : pts; let d = '', k = 0;
+  for (let i = 0; i < P.length - 1; i++) {
+    const [ax, ay] = P[i], [bx, by] = P[i + 1], n = Math.max(1, Math.min(12, Math.round(Math.hypot(bx - ax, by - ay) / 80)));
+    for (let j = (i ? 1 : 0); j <= n; j++) { const w = jit(id, k++, amp); d += (i === 0 && j === 0 ? 'M' : 'L') + (lerp(ax, bx, j / n) + w[0]).toFixed(1) + ' ' + (lerp(ay, by, j / n) + w[1]).toFixed(1); }
+  }
+  return d + (closed ? 'Z' : '');
+}
+const st = (d, o = .75, w = 2.6, c = INK) => `<path d="${d}" stroke="${c}" stroke-opacity="${o}" stroke-width="${w}" fill="none" stroke-linejoin="round" stroke-linecap="round"/>`;
+const rect = (x0, y0, x1, y1) => [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
+const circ = (cx, cy, r, n = 14) => { const p = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; p.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); } return p; };
+const poly = (pts, fill) => `<path d="M${pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L')}Z" fill="${fill}"/>`;
+
+// ---------- static backdrop ----------
+const MASTS = [-60, 320, 700, 1080];
+const SHEDS = [[-20, 150, 1040], [130, 380, 1010], [370, 520, 1050], [510, 760, 1000], [750, 900, 1035], [890, 1110, 1015]];
+function backdrop(t) {
+  let s = '';
+  // stars
+  for (let i = 0; i < 26; i++) { const x = hash(i * 3.1) * 1080, y = 120 + hash(i * 7.7) * 600, a = .18 + .2 * Math.sin(t * 1.3 + i); s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${1.2 + hash(i) * 1.2}" fill="${INK}" opacity="${a.toFixed(2)}"/>`; }
+  // distant sheds (saw-tooth roofs), far side of the track
+  SHEDS.forEach(([x0, x1, y], i) => {
+    const pts = [[x0, RAIL - 20]]; const n = Math.max(2, Math.round((x1 - x0) / 60));
+    for (let k = 0; k < n; k++) { const a = lerp(x0, x1, k / n), b = lerp(x0, x1, (k + 1) / n); pts.push([a, y], [b - 8, y - 34], [b - 8, y]); }
+    pts.push([x1, y], [x1, RAIL - 20]);
+    s += poly(pts, '#181a20') + st(ink(pts, 40 + i, 1.2), .32, 2);
+    for (let w = 0; w < 3; w++) { const wx = lerp(x0, x1, (w + .6) / 3.4); const lit = hash(i * 9 + w) > .62; s += poly(rect(wx, y + 40, wx + 36, y + 64), lit ? 'rgba(255,214,160,.18)' : 'rgba(0,0,0,.25)') + st(ink(rect(wx, y + 40, wx + 36, y + 64), 60 + i * 5 + w, 1, true), .35, 1.6); }
+  });
+  // water tank on stilts, far right
+  s += st(ink([[840, 1000], [850, 880], [930, 880], [940, 1000]], 81, 1.2), .35, 2) + poly(rect(838, 830, 942, 880), '#181a20') + st(ink(rect(838, 830, 942, 880), 82, 1.2, true), .4, 2);
+  // ballast + far rail
+  s += poly([[0, RAIL - 8], [1080, RAIL - 8], [1080, RAIL + 40], [0, RAIL + 40]], '#121318');
+  s += st(ink([[0, RAIL - 6], [1080, RAIL - 6]], 90, 1), .35, 2);
+  // catenary masts (far side) + wires
+  for (const [i, x] of MASTS.entries()) {
+    s += st(ink([[x, RAIL - 6], [x, 790]], 100 + i, 1.2), .6, 5) + st(ink([[x, 806], [x + 150, 806]], 110 + i, 1), .5, 3) + st(ink([[x, 790], [x + 150, 832]], 120 + i, 1), .35, 2);
+  }
+  const sway = Math.sin(t * 1.1) * 1.5;
+  const mess = []; for (let k = 0; k <= 27; k++) { const x = -60 + k * 42.2, u = ((x + 60) % 380) / 380; mess.push([x, 800 + 14 * 4 * u * (1 - u) + sway]); }
+  s += st(ink(mess, 130, .8), .5, 2);
+  s += st(ink([[0, 832], [1080, 832]], 131, .6), .62, 2.2);
+  for (let k = 0; k < 27; k++) { const x = k * 42 + 10, u = ((x + 60) % 380) / 380; s += st(`M${x} ${(800 + 14 * 4 * u * (1 - u) + sway).toFixed(1)}L${x} 832`, .25, 1.2); }
+  return s;
+}
+
+// ---------- the train ----------
+function wheel(cx, r, id, rot) {
+  let s = poly(circ(cx, RAIL - r, r), '#0d0e12') + st(ink(circ(cx, RAIL - r, r), id, 1, true), .8, 2.4);
+  const a = rot; s += st(`M${(cx + Math.cos(a) * r * .6).toFixed(1)} ${(RAIL - r + Math.sin(a) * r * .6).toFixed(1)}L${(cx - Math.cos(a) * r * .6).toFixed(1)} ${(RAIL - r - Math.sin(a) * r * .6).toFixed(1)}`, .45, 2);
+  return s;
+}
+function engine(x1, t) {
+  const x0 = x1 - ENG; let s = '', g = '', k = '';
+  const body = [[x0 + 6, 1112], [x0 + 6, 900], [x0 + 30, 880], [x1 - 30, 880], [x1 - 6, 900], [x1 - 6, 1112]];
+  s += poly(body, '#1f222b');
+  k += st(ink(body, 200, 1.4, true), 1, 3.4, '#ffd29a'); g += st(ink(body, 200, 1.4, true), .7, 13, SAF);
+  // cab windows
+  for (const [a, b] of [[x0 + 22, x0 + 92], [x1 - 92, x1 - 22]]) { s += poly(rect(a, 912, b, 968), 'rgba(160,190,220,.14)'); k += st(ink(rect(a, 912, b, 968), 201 + a % 7, 1, true), .85, 2.4, '#ffd29a'); }
+  // louvres
+  for (let x = x0 + 130; x < x1 - 130; x += 22) s += st(ink([[x, 920], [x, 975]], 210 + x % 31, .8), .35, 1.6);
+  s += st(ink([[x0 + 6, 990], [x1 - 6, 990]], 230, 1), .5, 2);
+  s += st(ink([[x0 + 6, 1090], [x1 - 6, 1090]], 231, 1), .4, 2);
+  // stencils
+  s += `<text x="${x0 + 260}" y="1062" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="58" letter-spacing="2" fill="#ffd29a">SCOPE 1 + 2</text>`;
+  s += `<text x="${x0 + 132}" y="1012" font-family="JetBrains Mono" font-weight="700" font-size="18" fill="${INK}" opacity=".6">WAG 1+2 · 00001</text>`;
+  // bogies + wheels
+  const rot = front(t) / 24;
+  for (const [a, b] of [[x0 + 24, x0 + 216], [x0 + 304, x0 + 496]]) s += poly(rect(a, 1112, b, 1140), '#14161b') + st(ink(rect(a, 1112, b, 1140), 240 + a % 9, 1, true), .6, 2.2);
+  for (const o of [50, 120, 190, 330, 400, 470]) s += wheel(x0 + o, 25, 250 + o, rot);
+  // pantograph to the contact wire
+  const px = x0 + 170, py = 880; const pa = [[px - 40, py], [px + 10, py - 26], [px - 30, 836], [px + 50, 836]];
+  k += st(ink([pa[0], pa[1], pa[2]], 260, 1), .9, 2.8, '#ffd29a') + st(ink([[px - 50, 833], [px + 60, 833]], 261, .6), .9, 3, '#ffd29a');
+  // spark at the contact point
+  const sp = .4 + .6 * hash(Math.floor(t * 15) + 3);
+  g += `<circle cx="${px + 5}" cy="833" r="${30 * sp}" fill="url(#sparkG)"/>`;
+  // headlamp
+  g += `<circle cx="${x1 - 14}" cy="896" r="40" fill="#ffd9a8" opacity=".8"/>`; k += `<circle cx="${x1 - 14}" cy="896" r="9" fill="#fff3df"/>`;
+  s += `<path d="M${x1 - 14} 896 L 1300 820 L 1300 990 Z" fill="url(#lampG)" opacity=".35"/>`;
+  return { s, g, k };
+}
+function wagon(x0, i, t) {
+  const x1 = x0 + WLEN; let s = '';
+  // load heap (open BOXN wagon)
+  s += poly([[x0 + 12, 930], [x0 + 60, 912], [x0 + 200, 902], [x1 - 60, 912], [x1 - 12, 930]], '#0f1014');
+  s += st(ink([[x0 + 12, 930], [x0 + 60, 912], [x0 + 200, 902], [x1 - 60, 912], [x1 - 12, 930]], 300 + i * 7, 1.4), .3, 2);
+  const body = rect(x0, 930, x1, 1108);
+  s += poly(body, '#1a1d24') + st(ink(body, 310 + i * 7, 1.6, true), .78, 2.6);
+  for (let x = x0 + 40; x < x1 - 20; x += 40) s += st(ink([[x, 934], [x, 1104]], 320 + i * 13 + x % 17, .9), .26, 1.6);
+  s += st(ink([[x0, 944], [x1, 944]], 330 + i, 1), .5, 2);
+  // stencil
+  s += poly(rect(x0 + 120, 1000, x1 - 120, 1074), '#1a1d24');
+  s += `<text x="${x0 + 200}" y="1036" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="30" fill="${INK}" opacity=".88">SCOPE 3</text>`;
+  s += `<text x="${x0 + 200}" y="1066" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="22" fill="${INK}" opacity=".55">${String(i).padStart(2, '0')}/26</text>`;
+  // bogies
+  const rot = front(t) / 22;
+  for (const [a, b] of [[x0 + 14, x0 + 126], [x0 + 274, x0 + 386]]) s += poly(rect(a, 1108, b, 1134), '#14161b') + st(ink(rect(a, 1108, b, 1134), 340 + i * 3 + a % 5, 1, true), .55, 2);
+  for (const o of [40, 100, 300, 360]) s += wheel(x0 + o, 22, 350 + i * 11 + o, rot);
+  // coupler to the vehicle ahead
+  s += st(ink([[x1, 1080], [x1 + PITCH - WLEN, 1080]], 360 + i, .6), .7, 4);
+  if (i === NW) {
+    // last vehicle: painted X on the end panel + LV board + blinking tail lamp
+    s += st(ink([[x0 + 8, 950], [x0 + 60, 1000]], 370, 1), .9, 4, '#f4ede1') + st(ink([[x0 + 60, 950], [x0 + 8, 1000]], 371, 1), .9, 4, '#f4ede1');
+    s += poly(rect(x0 - 64, 1010, x0 - 4, 1058), '#e9dfcc') + `<text x="${x0 - 34}" y="1045" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="30" fill="#16181d">LV</text>`;
+    const on = Math.floor(t * 2.4) % 2 === 0;
+    s += `<circle cx="${x0 - 34}" cy="985" r="11" fill="${on ? '#ff5a3c' : '#4a1d16'}"/>`;
+    if (on) s += `<circle cx="${x0 - 34}" cy="985" r="46" fill="url(#redG)"/>`;
+  }
+  return s;
+}
+
+// ---------- foreground: phatak ----------
+function foreground(t, lift) {
+  let s = '';
+  // near rail + road
+  s += poly([[0, RAIL], [1080, RAIL], [1080, 1920], [0, 1920]], '#111216');
+  s += st(ink([[0, RAIL + 2], [1080, RAIL + 2]], 400, .8), .85, 4) + st(ink([[0, RAIL + 14], [1080, RAIL + 14]], 401, .8), .4, 2);
+  for (let x = 12; x < 1080; x += 56) s += st(ink([[x, RAIL + 22], [x + 30, RAIL + 22]], 410 + x, .6), .22, 3);
+  // road edge lines toward camera
+  s += st(ink([[0, 1500], [1080, 1460]], 420, 1.4), .18, 2) + st(ink([[0, 1720], [1080, 1690]], 421, 1.4), .12, 2);
+  // pivot post (left) with warning lamps and the gate plate
+  const PX = 96, PY = 1286;
+  s += poly(rect(70, 1150, 122, 1560), '#1b1d24') + st(ink(rect(70, 1150, 122, 1560), 430, 1.2, true), .7, 2.6);
+  const ph = Math.floor(t * 1.6) % 2, lampsOn = t < 22.3 || t > 28.3;
+  [[70, 1130], [122, 1130]].forEach(([x, y], i) => {
+    const on = lampsOn && (ph === i);
+    s += st(`M96 1150L${x} ${y}`, .6, 3) + `<circle cx="${x}" cy="${y}" r="17" fill="${on ? '#ff5a3c' : '#3a1712'}"/>` + st(ink(circ(x, y, 17), 440 + i, .8, true), .6, 2);
+    if (on) s += `<circle cx="${x}" cy="${y}" r="80" fill="url(#redG)"/>`;
+  });
+  s += poly(rect(130, 1372, 300, 1420), '#e9dfcc') + `<text x="215" y="1406" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="25" fill="#16181d">LC No. 26</text>`;
+  // the boom, rotates about the pivot
+  const ang = -lift * 78;
+  let b = '';
+  b += poly(rect(PX, PY - 14, PX + 1060, PY + 14), '#e9dfcc');
+  for (let k = 0; k < 12; k++) b += poly(rect(PX + 30 + k * 90, PY - 14, PX + 75 + k * 90, PY + 14), '#c2412b');
+  b += st(ink(rect(PX, PY - 14, PX + 1060, PY + 14), 450, 1, true), .7, 2.2, '#16181d');
+  for (let k = 0; k < 24; k++) { const x = PX + 40 + k * 42; b += st(`M${x} ${PY + 14}L${x + Math.sin(t * 2 + k) * 2} ${PY + 50 - (k % 2) * 8}`, .35, 1.6); }
+  s += `<g mask="url(#boomM)"><g transform="rotate(${ang.toFixed(2)} ${PX} ${PY})">${b}</g></g>`;
+  s += `<circle cx="${PX}" cy="${PY}" r="16" fill="#2a2d36"/>` + st(ink(circ(PX, PY, 16), 455, .8, true), .8, 2.4);
+  // counter board (gateman's slate) on two legs
+  s += st(ink([[470, 1470], [470, 1600]], 460, 1), .6, 5) + st(ink([[850, 1470], [850, 1600]], 461, 1), .6, 5);
+  s += poly(rect(430, 1338, 890, 1478), '#1c2a24') + st(ink(rect(430, 1338, 890, 1478), 462, 1.4, true), .85, 3);
+  return s;
+}
+
+// wagon tails crossing the gate -> count
+function count(t) { const f = front(t); return clamp(Math.floor((f - GATE - ENG) / PITCH), 0, NW); }
+
+function capShow(el, t, t0, t1) {
+  const on = t >= t0 - .05 && t <= t1 + .4;
+  if (!on) { el.style.opacity = 0; return; }
+  const out = clamp((t - t1) / .35); el.style.opacity = 1 - out;
+  el._w.forEach((w, i) => { const k = oc(clamp((t - t0 - i * .07) / .38)); w.style.transform = `translateY(${(1 - k) * 46 - out * 20}px)`; w.style.opacity = k; });
+}
+function wrapWords(el) {
+  const walk = n => { for (const c of [...n.childNodes]) {
+    if (c.nodeType === 3) { const frag = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(p => { if (!p) return; if (/^\s+$/.test(p)) frag.appendChild(document.createTextNode(p)); else { const s = document.createElement('span'); s.className = 'w'; s.textContent = p; frag.appendChild(s); } }); n.replaceChild(frag, c); }
+    else if (c.nodeType === 1 && !c.classList.contains('w')) walk(c); } };
+  walk(el); el._w = [...el.querySelectorAll('.w')];
+}
+['c1','c2','c3','c4','c5','c6','c7'].forEach(id => wrapWords($(id)));
+const fade = (el, t, a, b, d = .35) => { el.style.opacity = Math.min(clamp((t - a) / d), 1 - clamp((t - b) / d)); };
+
+function render(t) {
+  BOIL = Math.floor(t * 8);
+  const f = front(t);
+  // a little ground shake while the train is passing
+  const passing = f - ENG - NW * PITCH < 1080 ? 1 : 0;
+  const sh = passing * (1.2 + .6 * clamp((f - 2000) / 6000)) ;
+  const dx = Math.sin(t * 37) * sh, dy = Math.sin(t * 53 + 1) * sh;
+  $('scene').setAttribute('viewBox', `${dx.toFixed(2)} ${dy.toFixed(2)} 1080 1920`);
+  $('back').innerHTML = backdrop(t);
+  let tr = '', eg = '', ek = '';
+  if (f - ENG < 1200) { const e = engine(f, t); tr += e.s; eg = e.g; ek = e.k; }
+  for (let i = 1; i <= NW; i++) { const x0 = f - ENG - i * PITCH; if (x0 > 1200 || x0 + WLEN < -120) continue; tr += wagon(x0, i, t); }
+  $('trainG').innerHTML = tr; $('engGlow').innerHTML = eg; $('engInk').innerHTML = ek;
+  const lift = io(seg(t, 22.5, 24.2)) * (1 - io(seg(t, 28.3, 29.0)));
+  let fg = foreground(t, lift);
+  // counter digits
+  const n = count(t), bump = 1 - clamp((f - GATE - ENG - n * PITCH) / 120);
+  fg += `<text x="460" y="1392" font-family="JetBrains Mono" font-weight="700" font-size="34" fill="${SAF}">ENGINE</text><text x="860" y="1392" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="40" fill="${SAF}">1</text>`;
+  fg += `<text x="460" y="1452" font-family="JetBrains Mono" font-weight="700" font-size="34" fill="${INK}">WAGONS</text><text x="860" y="${1454 - (n ? bump * 8 : 0)}" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="${40 + (n ? bump * 8 : 0)}" fill="${INK}">${String(n).padStart(2, '0')}</text>`;
+  $('fore').innerHTML = fg;
+
+  // hand annotations
+  let hd = '';
+  const yA = Math.min(seg(t, .5, .9), 1 - seg(t, 5.3, 5.7));
+  if (yA > 0) {
+    const ex = f - ENG + 300, k = oc(seg(t, .5, 1.2));
+    hd += `<g opacity="${yA}"><path d="${ink([[ex - 150, 815], [ex - 70, 840 + (1 - k) * -30], [ex - 10, 868]], 600, 1.4)}" stroke="${SAF}" stroke-width="3.4" fill="none" stroke-linecap="round"/>`;
+    hd += `<path d="${ink([[ex - 30, 852], [ex - 8, 870], [ex - 34, 874]], 601, 1)}" stroke="${SAF}" stroke-width="3.4" fill="none" stroke-linecap="round"/>`;
+    hd += `<text x="${ex - 250}" y="812" font-family="Hand" font-size="64" fill="${SAF}">you</text></g>`;
+  }
+  // payoff strip: 1 engine + 26 wagons as a tally
+  const sA = Math.min(seg(t, 22.0, 22.4), 1 - seg(t, 24.1, 24.4));
+  if (sA > 0) {
+    let x = 70; const y = 760;
+    for (let i = 0; i <= NW; i++) {
+      const k = oc(seg(t, 22.0 + i * .045, 22.25 + i * .045)); if (k <= 0) { x += 31; continue; }
+      const w = 24; hd += `<rect x="${x}" y="${y + (1 - k) * 20}" width="${w}" height="26" rx="3" fill="${i === 0 ? SAF : 'none'}" stroke="${i === 0 ? SAF : INK}" stroke-opacity="${i === 0 ? 1 : .8}" stroke-width="2.4" opacity="${(sA * k).toFixed(3)}"/>`;
+      x += 31;
+    }
+  }
+  $('handG').innerHTML = hd;
+
+  // type
+  capShow($('c1'), t, 0, 2.4); if (t < .06) { $('c1').style.opacity = 1; $('c1')._w.forEach(w => { w.style.transform = 'none'; w.style.opacity = 1; }); }
+  capShow($('c2'), t, 2.7, 5.5);
+  capShow($('c3'), t, 5.9, 8.9);
+  capShow($('c4'), t, 9.3, 12.9);
+  capShow($('c5'), t, 13.3, 15.6);
+  capShow($('c6'), t, 16.0, 20.6);
+  { const L = $('lab'), k = oc(seg(t, 21.75, 22.25)), out = seg(t, 24.1, 24.4); L.style.opacity = k * (1 - out); L.style.transform = `translateY(${(1 - k) * 40}px) scale(${lerp(1.08, 1, k)})`; L.style.transformOrigin = '0 0'; }
+  fade($('f1'), t, 22.5, 24.3);
+  capShow($('c7'), t, 24.5, 26.4);
+  $('tag').style.opacity = 1 - seg(t, 26.4, 26.8) + seg(t, 28.6, 28.95);
+  const e = Math.min(seg(t, 26.5, 27.1), 1 - seg(t, 28.6, 29.0));
+  $('end').style.opacity = e;
+  [$('wm'), $('tl'), $('fl')].forEach((el, i) => { const k = oc(seg(t, 26.6 + i * .35, 27.1 + i * .35)); el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 36}px)`; });
+}
+window.render = render;
+window.render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
