@@ -1,0 +1,81 @@
+{
+  "slug": "printed-fabric-carbon-footprint-per-metre",
+  "q": "How do I calculate the carbon footprint of rotary or screen printed fabric per metre?",
+  "title": "Printed fabric carbon footprint per metre",
+  "short": "Add the print house's fuel for steamers, stenters and dryers and its electricity, convert each and divide by metres printed. Add the greige fabric, pigments, binders and thickeners for the full figure. Curing and steaming are usually the largest energy use.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fabric printing houses, including Jetpur, Balotra and Surat units",
+  "sections": [
+    {
+      "h": "Energy",
+      "ul": [
+        "Rotary or flatbed printing machines, and the drying chamber after printing.",
+        "Steamer or curing machine to fix the print.",
+        "Washing range and stenter for the finish."
+      ]
+    },
+    {
+      "h": "Materials",
+      "ul": [
+        "Greige or prepared fabric per metre, from your supplier.",
+        "Pigment or reactive dyes, binders, thickeners and urea by kg."
+      ]
+    },
+    {
+      "h": "Per metre",
+      "p": [
+        "Report per metre at a stated width and GSM, and say whether the figure covers printing only or greige to finished."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: print house per metre (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "PNG: 20,000 SCM x 2.05 = 41,000 kg CO2",
+      "Metres printed: 500,000",
+      "Plant total: 76,500 / 500,000 = 0.153 kg CO2 per metre",
+      "Add the fabric, dyes and binders for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Stenter fuel and CO2 per metre",
+      "to": "/answers/stenter-fuel-and-co2-per-metre-of-fabric"
+    },
+    {
+      "label": "Handloom fabric footprint per metre",
+      "to": "/answers/handloom-fabric-carbon-footprint-per-metre"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

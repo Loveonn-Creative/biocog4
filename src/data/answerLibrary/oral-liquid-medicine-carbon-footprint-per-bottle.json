@@ -1,0 +1,78 @@
+{
+  "slug": "oral-liquid-medicine-carbon-footprint-per-bottle",
+  "q": "How do I calculate the carbon footprint of oral liquid medicines per bottle?",
+  "title": "Oral liquid medicine footprint per bottle",
+  "short": "Weigh the API, sugar or sorbitol base, excipients and purified water per bottle and use supplier figures. Add the bottle, cap, carton and leaflet, then the plant's HVAC, water system and filling energy divided by bottles packed. HVAC is often the largest plant load.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pharmaceutical formulation plants making syrups and suspensions",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "API and excipients per bottle.",
+        "PET or amber glass bottle, cap and measuring cup.",
+        "Carton, leaflet and shipper."
+      ]
+    },
+    {
+      "h": "Plant",
+      "ul": [
+        "HVAC for classified areas, usually the largest electricity load.",
+        "Purified water generation and boiler steam for manufacturing vessels.",
+        "Filling, capping, labelling and cartoning lines."
+      ]
+    },
+    {
+      "h": "Per bottle",
+      "p": [
+        "Report per bottle by fill volume. Glass bottles weigh several times PET ones, which changes the packaging share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: oral liquid block per bottle (one month)",
+    "lines": [
+      "Electricity: 100,000 kWh x 0.710 = 71,000 kg CO2",
+      "PNG: 8,000 SCM x 2.05 = 16,400 kg CO2",
+      "Bottles packed: 1,000,000",
+      "Plant total: 87,400 / 1,000,000 = 0.0874 kg CO2 per bottle",
+      "Add API, excipients, bottles and cartons for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Pharma formulation footprint per 1,000 tablets",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    },
+    {
+      "label": "API carbon footprint per kg",
+      "to": "/answers/api-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

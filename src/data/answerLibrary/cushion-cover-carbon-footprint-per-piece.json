@@ -1,0 +1,81 @@
+{
+  "slug": "cushion-cover-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a cushion cover?",
+  "title": "Cushion cover carbon footprint per piece",
+  "short": "Take the fabric per cover, including cutting waste, and multiply by your mill's per-metre or per-kg figure. Add zips, piping, any embroidery or print, stitching, pressing and packing, then divide the unit's energy by covers passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Home textile makers and exporters, including Karur and Panipat units",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Face and back fabric per cover from the cutting plan.",
+        "Zips, piping cord and labels.",
+        "Embroidery thread or print paste, where used."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Cutting, stitching and overlock machines.",
+        "Pressing and folding.",
+        "Poly bags, inserts and cartons."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per cover by size, and keep the filler cushion separate if you sell it filled."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: home textile unit per cover (one month)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Covers passed: 60,000",
+      "Plant total: 10,650 / 60,000 = 0.177 kg CO2 per cover",
+      "Add fabric and trims for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Cotton bed sheet footprint per set",
+      "to": "/answers/cotton-bed-sheet-carbon-footprint-per-set"
+    },
+    {
+      "label": "Terry towel footprint per kg",
+      "to": "/answers/terry-towel-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

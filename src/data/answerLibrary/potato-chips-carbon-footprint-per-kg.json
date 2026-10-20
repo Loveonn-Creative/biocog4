@@ -1,0 +1,82 @@
+{
+  "slug": "potato-chips-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of potato chips per kg?",
+  "title": "Potato chips carbon footprint per kg",
+  "short": "Take the raw potatoes per kg of chips from your yield and use the grower's figure. Add frying oil absorbed, fryer fuel, slicing and line electricity and the laminated packs, then divide plant energy by kg packed. Potatoes, oil and fryer fuel are the main shares.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Chips and snack makers",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Potatoes per kg of chips; yield is usually low because of water loss.",
+        "Frying oil absorbed, from oil bought minus oil left.",
+        "Salt and seasoning."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Washing, peeling and slicing.",
+        "Continuous fryer heated by gas or thermic fluid.",
+        "Seasoning, nitrogen flushing and packing."
+      ]
+    },
+    {
+      "h": "Per kg and per pack",
+      "p": [
+        "Report per kg and per pack with its net weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: chips line per kg (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "PNG: 25,000 SCM x 2.05 = 51,250 kg CO2",
+      "Kg of chips packed: 150,000",
+      "Plant total: 79,650 / 150,000 = 0.531 kg CO2 per kg",
+      "Add potatoes, oil and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Namkeen footprint per kg",
+      "to": "/answers/namkeen-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Multilayer flexible pouch per kg",
+      "to": "/answers/multilayer-flexible-pouch-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

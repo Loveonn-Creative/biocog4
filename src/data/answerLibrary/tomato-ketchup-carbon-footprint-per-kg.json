@@ -1,0 +1,82 @@
+{
+  "slug": "tomato-ketchup-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of tomato ketchup per kg?",
+  "title": "Tomato ketchup carbon footprint per kg",
+  "short": "Weigh the tomato paste or fresh tomatoes, sugar, vinegar and spices per kg, and use supplier figures. Add cooking and pasteurising steam, filling electricity and the bottle or sachet, then divide plant energy by kg packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sauce and ketchup makers",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Tomato paste by solids, or fresh tomatoes and the evaporation energy to concentrate them.",
+        "Sugar, vinegar, salt and spices.",
+        "Bottles, caps, sachets and cartons."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cooking kettles on boiler steam.",
+        "Homogenising and hot filling or pasteurising.",
+        "Cooling, labelling and packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg packed. Concentrating fresh tomatoes takes far more steam than starting from paste."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: sauce plant per kg (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "PNG: 8,000 SCM x 2.05 = 16,400 kg CO2",
+      "Kg of ketchup packed: 200,000",
+      "Plant total: 30,600 / 200,000 = 0.153 kg CO2 per kg",
+      "Add tomato paste, sugar and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Pickle footprint per kg",
+      "to": "/answers/pickle-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Mango pulp footprint per kg",
+      "to": "/answers/mango-pulp-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

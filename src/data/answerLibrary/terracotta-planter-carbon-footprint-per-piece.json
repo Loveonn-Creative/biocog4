@@ -1,0 +1,78 @@
+{
+  "slug": "terracotta-planter-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of terracotta planters and pottery?",
+  "title": "Terracotta planter footprint per piece",
+  "short": "Record the kiln fuel per firing, such as wood, coal or gas, and divide by good pieces fired. Add clay digging and transport diesel, wheel or press electricity, and packing. Firing is usually most of the figure; wood CO2 is reported separately as biogenic.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Potters and terracotta exporters",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Clay, dug or bought, and the diesel to bring it.",
+        "Kiln fuel: wood, sawdust, coal or LPG.",
+        "Straw, cartons and pallets."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Pug mill, potter's wheels or jigger machines.",
+        "Drying, then firing in an updraft, downdraft or gas kiln.",
+        "Breakage, which raises the fuel per good piece."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per piece by size, and say how firing fuel was shared between sizes in the same load, such as by weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: pottery unit per piece (one month)",
+    "lines": [
+      "Electricity: 2,000 kWh x 0.710 = 1,420 kg CO2",
+      "Kiln coal: 10,000 kg x 2.42 = 24,200 kg CO2",
+      "Good pieces fired: 20,000",
+      "Plant total: 25,620 / 20,000 = 1.281 kg CO2 per piece",
+      "Add clay transport and packing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Stoneware crockery footprint per kg",
+      "to": "/answers/stoneware-crockery-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

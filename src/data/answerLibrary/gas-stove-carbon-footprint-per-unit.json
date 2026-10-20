@@ -1,0 +1,78 @@
+{
+  "slug": "gas-stove-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an LPG gas stove?",
+  "title": "Gas stove carbon footprint per unit",
+  "short": "Weigh the stainless steel or toughened glass top, brass or aluminium burners, valves and pipes, and multiply each by its supplier's figure. Add pressing, assembly and leak testing energy per unit and packing. Metals are usually most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Gas stove and cooktop makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Stainless or mild steel body and top, or toughened glass.",
+        "Brass or aluminium burners and caps.",
+        "Gas valves, knobs, nozzles and pan supports."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Sheet pressing, bending and spot welding.",
+        "Powder coating or polishing.",
+        "Assembly, leak testing and cartons."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Report per stove by burner count, since a four-burner model carries more metal than a two-burner."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: stove unit per piece (one month)",
+    "lines": [
+      "Electricity: 25,000 kWh x 0.710 = 17,750 kg CO2",
+      "LPG for testing: 500 kg x 2.98 = 1,490 kg CO2",
+      "Stoves passed: 20,000",
+      "Plant total: 19,240 / 20,000 = 0.962 kg CO2 per stove",
+      "Add steel, glass and brass for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Pressure cooker footprint per unit",
+      "to": "/answers/pressure-cooker-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Stainless steel utensils footprint per kg",
+      "to": "/answers/stainless-steel-utensils-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

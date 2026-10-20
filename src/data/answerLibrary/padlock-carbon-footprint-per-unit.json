@@ -1,0 +1,78 @@
+{
+  "slug": "padlock-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a padlock?",
+  "title": "Padlock carbon footprint per unit",
+  "short": "Weigh the metals in each lock, such as brass, zinc alloy and steel, and multiply each by its supplier's per-kg figure. Add casting, machining, plating, assembly and packing energy, then divide the plant's energy by locks passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Lock makers, including Aligarh units",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Body: brass, zinc die cast, iron or steel by weight.",
+        "Shackle, springs and levers in steel.",
+        "Keys in brass or nickel silver."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Casting or forging the body, with furnace fuel.",
+        "Machining, polishing and nickel or chrome plating.",
+        "Assembly, testing and blister or box packing."
+      ]
+    },
+    {
+      "h": "Per lock",
+      "p": [
+        "Report per lock by model and size. Metal is usually the largest share, so record weights from the bill of materials."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: lock unit per piece (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "LPG: 1,000 kg x 2.98 = 2,980 kg CO2",
+      "Locks passed: 50,000",
+      "Plant total: 17,180 / 50,000 = 0.344 kg CO2 per lock",
+      "Add brass, zinc and steel for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Brass component footprint per kg",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Electroplating footprint per m2",
+      "to": "/answers/electroplating-carbon-footprint-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

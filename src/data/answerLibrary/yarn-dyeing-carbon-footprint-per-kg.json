@@ -1,0 +1,81 @@
+{
+  "slug": "yarn-dyeing-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of yarn dyeing per kg?",
+  "title": "Yarn dyeing carbon footprint per kg",
+  "short": "Add the dyehouse's boiler fuel, thermic fluid heater fuel and electricity for a period, convert each with its factor and divide by kg of yarn dyed. Add dyes and chemicals per kg for the full figure. Steam is usually the largest share.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Yarn dyeing units and integrated mills",
+  "sections": [
+    {
+      "h": "Energy",
+      "ul": [
+        "Boiler fuel for package dyeing and hank dyeing steam.",
+        "Hydro extractor, dryers and winding machines on electricity.",
+        "Effluent treatment plant power, which belongs to the dyeing step."
+      ]
+    },
+    {
+      "h": "Materials",
+      "ul": [
+        "Dyes, salt, soda ash and auxiliaries by kg per kg of yarn.",
+        "Dye cones, tubes and packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg of yarn dyed by shade depth, since dark shades take longer cycles and more chemicals than pastels."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: yarn dyehouse per kg (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Coal: 90,000 kg x 2.42 = 217,800 kg CO2",
+      "Kg of yarn dyed: 150,000",
+      "Plant total: 260,400 / 150,000 = 1.736 kg CO2 per kg",
+      "Add dyes and chemicals for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Dye and pigment footprint per kg",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

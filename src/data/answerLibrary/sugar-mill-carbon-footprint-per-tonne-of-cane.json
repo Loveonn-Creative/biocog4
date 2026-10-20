@@ -1,0 +1,83 @@
+{
+  "slug": "sugar-mill-carbon-footprint-per-tonne-of-cane",
+  "q": "How do I calculate the carbon footprint of a sugar mill per tonne of cane?",
+  "title": "Sugar mill carbon footprint per tonne",
+  "short": "Count fossil fuel and grid electricity the mill buys, convert each and divide by tonnes of cane crushed or sugar made. Bagasse burnt in the boilers is biogenic and reported separately. Exported power is shown alongside, not netted off.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sugar mills and their buyers",
+  "sections": [
+    {
+      "h": "Fossil and grid",
+      "ul": [
+        "Coal or other fuel used off-season or to top up bagasse.",
+        "Grid electricity imported, often small in season.",
+        "Diesel for cane yard loaders and vehicles you own."
+      ]
+    },
+    {
+      "h": "Biogenic and other",
+      "ul": [
+        "Bagasse burnt in the boilers: report its CO2 separately as biogenic.",
+        "Lime and sulphur for clarification.",
+        "Cane transport, if your buyer asks for it."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne of cane crushed and per tonne of sugar, and say how emissions were shared with molasses and exported power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: sugar mill per tonne of cane (one season month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Coal: 100,000 kg x 2.42 = 242,000 kg CO2",
+      "Diesel: 8,000 litres x 2.68 = 21,440 kg CO2",
+      "Tonnes of cane crushed: 120,000",
+      "Plant total: 298,940 / 120,000 = 2.491 kg CO2 per tonne of cane",
+      "Bagasse CO2 is reported separately as biogenic"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Grain ethanol distillery CO2 per litre",
+      "to": "/answers/grain-ethanol-distillery-co2-per-litre"
+    },
+    {
+      "label": "Jaggery footprint per kg",
+      "to": "/answers/jaggery-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

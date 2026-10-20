@@ -1,0 +1,81 @@
+{
+  "slug": "machine-embroidery-carbon-footprint-per-metre",
+  "q": "How do I calculate the carbon footprint of machine embroidery?",
+  "title": "Machine embroidery carbon footprint",
+  "short": "Read the embroidery unit's electricity for a period, multiply by the grid factor and divide by metres or pieces embroidered. Add thread, backing and sequins by weight. Machines run on electricity, so the bill is most of the unit's own figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Embroidery units, including Surat multi-head machine owners",
+  "sections": [
+    {
+      "h": "Energy",
+      "ul": [
+        "Multi-head embroidery machines, usually the largest load.",
+        "Lighting, fans and air conditioning in the machine hall.",
+        "Cutting and finishing tables, and steam irons."
+      ]
+    },
+    {
+      "h": "Materials",
+      "ul": [
+        "Viscose, polyester or zari thread by weight.",
+        "Backing paper, sequins and stones.",
+        "The base fabric, if your figure covers it."
+      ]
+    },
+    {
+      "h": "Per metre or piece",
+      "p": [
+        "Stitch count drives machine time. Report per metre for running embroidery and per piece for panels, with the stitch count."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: embroidery unit per metre (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Metres embroidered: 100,000",
+      "Plant total: 14,200 / 100,000 = 0.142 kg CO2 per metre",
+      "Add thread, backing and base fabric for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Garment stitching emissions per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Printed fabric footprint per metre",
+      "to": "/answers/printed-fabric-carbon-footprint-per-metre"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

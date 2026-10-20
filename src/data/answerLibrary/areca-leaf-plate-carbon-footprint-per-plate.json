@@ -1,0 +1,78 @@
+{
+  "slug": "areca-leaf-plate-carbon-footprint-per-plate",
+  "q": "How do I calculate the carbon footprint of areca leaf plates?",
+  "title": "Areca leaf plate carbon footprint",
+  "short": "Read the unit's electricity for heated presses, washing and drying, multiply by the grid factor and divide by plates passed. Add collection transport and packing. The leaf is a crop residue, so the press electricity is usually most of the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Areca leaf plate makers in Karnataka and Kerala",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Fallen areca sheaths, collected and stored; record the diesel used to collect them.",
+        "Water for washing.",
+        "Shrink film and cartons."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Washing and sun or dryer drying.",
+        "Hydraulic or pneumatic presses with heated dies, the main electricity load.",
+        "Trimming, sorting and packing."
+      ]
+    },
+    {
+      "h": "Per plate",
+      "p": [
+        "Report per plate by size. Rejected plates and trimmings are usually composted, not counted as product."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: leaf plate unit per plate (one month)",
+    "lines": [
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Collection diesel: 300 litres x 2.68 = 804 kg CO2",
+      "Plates passed: 200,000",
+      "Plant total: 5,064 / 200,000 = 0.0253 kg CO2 per plate",
+      "Add packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Paper cup footprint per cup",
+      "to": "/answers/paper-cup-carbon-footprint-per-cup"
+    },
+    {
+      "label": "Thermoformed container per kg",
+      "to": "/answers/thermoformed-container-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
