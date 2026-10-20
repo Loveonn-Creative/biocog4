@@ -6138,19 +6138,19 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "What does Senseible's Expert Climate Audit cover, and when do I still need an accredited verifier?",
-  "text": "The Expert Climate Audit is a one-time expert review of your climate reports by the Senseible team: emissions reporting, green finance reports, CBAM, BRSR, net-zero, decarbonisation and green transition reports. It costs ₹7,999 before GST, booked from your profile. Where a rule names an accredited verifier, as CCTS and BRSR Core assurance do, you still appoint one.",
+  "text": "The Expert Climate Audit is a one-time expert review of your climate reports by the Senseible team: emissions reporting, green finance reports, CBAM, BRSR, net-zero, decarbonisation and green transition reports. It costs ₹7,999 before GST, booked from your Subscription page. Where a rule names an accredited verifier, as CCTS and BRSR Core assurance do, you still appoint one.",
   "url": "https://senseible.earth/answers/senseible-expert-climate-audit"
  },
  {
   "kind": "answer",
   "title": "What is Senseible's Fast-track Verification add-on, what does it cost and how fast are results?",
-  "text": "Fast-track Verification is a paid Senseible add-on priced at ₹2,999 per report before GST, with results in 24 to 72 hours. You buy it on your profile, up to 20 reports in one purchase, and each order is due within 72 hours of payment.",
+  "text": "Fast-track Verification is a paid Senseible add-on priced at ₹2,999 per report before GST, with results in 24 to 72 hours. You buy it on your Subscription page, up to 20 reports in one purchase, and each order is due within 72 hours of payment.",
   "url": "https://senseible.earth/answers/senseible-fast-track-verification"
  },
  {
   "kind": "answer",
   "title": "I have used my Senseible invoice reads for this month. When does the limit reset and what are my options?",
-  "text": "Your invoice reads reset at midnight India time on the 1st of each calendar month. Until then you have three options: buy invoice credits on your profile at ₹79 per 100 before GST, move to a larger plan, or wait for the new month. Credits are used only after your monthly allowance runs out.",
+  "text": "Your invoice reads reset at midnight India time on the 1st of each calendar month. Until then you have three options: buy invoice credits on your Subscription page at ₹79 per 100 before GST, move to a larger plan, or wait for the new month. Credits are used only after your monthly allowance runs out.",
   "url": "https://senseible.earth/answers/senseible-monthly-invoice-limit-reached"
  },
  {
