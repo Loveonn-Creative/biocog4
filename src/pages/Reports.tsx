@@ -191,6 +191,9 @@ const Reports = () => {
   const pendingSummary = useMemo(() => calculateSummary(pendingRows), [pendingRows]);
   const isDraft = !!user && summary.total <= 0 && pendingSummary.total > 0;
   const shown = isDraft ? pendingSummary : summary;
+  // Nothing measured yet: the suite still renders, with zeros and guidance, but
+  // nothing is downloadable, so no file can be passed off as a zero report.
+  const isEmpty = shown.total <= 0;
 
   const reportRows = useMemo(() => {
     if (isDraft) return pendingRows;
@@ -332,8 +335,8 @@ const Reports = () => {
 
 
   const downloadFramework = async (fwId: string, kind: 'pdf' | 'xlsx') => {
-    if (shown.total <= 0) {
-      toast.error('No emissions data to report yet');
+    if (isEmpty) {
+      toast.error('Add a bill or invoice first; reports are built from your records');
       return;
     }
     setIsGenerating(true);
@@ -614,9 +617,16 @@ const Reports = () => {
           </p>
         </div>
         
-        {shown.total > 0 ? (
-          <Tabs defaultValue="reports" className="space-y-6">
-            {isDraft ? (
+        <Tabs defaultValue="reports" className="space-y-6">
+            {isEmpty ? (
+              <div role="status" className="rounded-xl border border-border bg-secondary/40 p-4">
+                <p className="font-medium text-foreground">No records yet · reports start at zero</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Every framework below fills in from your bills and invoices. Upload one, verify it, and the figures and downloads appear here.
+                </p>
+                <Button size="sm" className="mt-3" asChild><Link to="/">Upload a bill</Link></Button>
+              </div>
+            ) : isDraft ? (
               <div role="status" className="rounded-xl border border-warning/40 bg-warning/10 p-4">
                 <p className="font-medium text-foreground">Measured from your bills · verification pending</p>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -744,7 +754,7 @@ const Reports = () => {
                   <div className="grid grid-cols-2 gap-3">
                     <Button 
                       onClick={generateESGReport}
-                      disabled={isGenerating}
+                      disabled={isGenerating || isEmpty}
                       className="gap-2"
                     >
                       {isGenerating ? (
@@ -757,7 +767,7 @@ const Reports = () => {
                     <Button 
                       variant="outline"
                       onClick={generateExcelReport}
-                      disabled={isGenerating}
+                      disabled={isGenerating || isEmpty}
                       className="gap-2"
                     >
                       {isGenerating ? (
@@ -999,7 +1009,7 @@ const Reports = () => {
                     variant="outline" 
                     className="w-full gap-2"
                     onClick={generateLenderReport}
-                    disabled={isGenerating}
+                    disabled={isGenerating || isEmpty}
                   >
 
                     {isGenerating ? (
@@ -1105,21 +1115,10 @@ const Reports = () => {
               </Card>
             </TabsContent>
           </Tabs>
-        ) : (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <FileBarChart className="h-12 w-12 text-muted-foreground/50 mx-auto mb-3" />
-              <p className="text-muted-foreground mb-4">No emissions data to report</p>
-              <Button variant="outline" asChild>
-                <Link to="/">Upload Invoice</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        )}
         
         {/* Legal Footer */}
         {/* Enterprise Finance-Grade Export */}
-        {isEnterprise && emissions.length > 0 && (
+        {isEnterprise && (
           <Card className="mt-6">
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
@@ -1129,9 +1128,13 @@ const Reports = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex gap-3 flex-wrap">
+              {emissions.length === 0 && (
+                <p className="w-full text-sm text-muted-foreground">Exports list every record with its source document. They open once your first record is saved.</p>
+              )}
               <Button
                 variant="outline"
                 size="sm"
+                disabled={emissions.length === 0}
                 onClick={async () => {
                   const XLSX = await import('xlsx');
                   const wb = XLSX.utils.book_new();
@@ -1160,6 +1163,7 @@ const Reports = () => {
               <Button
                 variant="outline"
                 size="sm"
+                disabled={emissions.length === 0}
                 onClick={async () => {
                   const XLSX = await import('xlsx');
                   const wb = XLSX.utils.book_new();
