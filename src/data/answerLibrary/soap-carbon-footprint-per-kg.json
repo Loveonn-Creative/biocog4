@@ -1,0 +1,86 @@
+{
+  "slug": "soap-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of soap per kg?",
+  "title": "Soap carbon footprint per kg",
+  "short": "Add the oils and fatty acids, caustic soda or soda ash, perfume and other ingredients from supplier or database factors, your boiler fuel and electricity, any process CO2 from neutralising fatty acids with soda ash, and the wrappers and cartons. Divide by kilograms of soap packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Toilet and laundry soap makers, including MSME and contract manufacturers",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Vegetable oils, palm-based fatty acids and soap noodles: often the largest part, with biogenic carbon and possible land use emissions depending on origin.",
+        "Caustic soda or soda ash for saponification or neutralisation.",
+        "Perfume, colour, fillers and additives.",
+        "If you buy ready soap noodles, they replace oils and alkali as one bought-in input."
+      ]
+    },
+    {
+      "h": "Process CO2 from soda ash",
+      "p": [
+        "Saponifying oils with caustic soda releases no CO2. Neutralising fatty acids with soda ash does: each kilogram of sodium carbonate that reacts releases 44 / 106 = 0.415 kg of CO2. That CO2 comes from mineral carbonate, so it belongs in Scope 1 as a process emission. Use the soda ash actually consumed in the reaction, from your batch records."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Boiler fuel for heating kettles and vacuum spray drying.",
+        "Electricity for plodders, mixers, stampers and wrapping machines.",
+        "Generator diesel if used."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "Divide by soap packed and sold. If you make both toilet and laundry soap, allocate boiler fuel by tonnes made in each line or by steam use if metered."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: soap plant per kg (one month)",
+    "lines": [
+      "Soda ash reacted with fatty acids: 20 t, so 20,000 x 0.415 = 8,300 kg CO2",
+      "Boiler furnace oil: 15,000 litres x 2.97 = 44,550 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Soap packed: 1,000 t",
+      "Plant total: (8,300 + 44,550 + 42,600) / 1,000,000 = 0.095 kg CO2 per kg",
+      "Add oils, fatty acids, perfume and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "CO2 from soda ash neutralisation",
+      "to": "/answers/co2-from-soda-ash-or-limestone-neutralisation"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

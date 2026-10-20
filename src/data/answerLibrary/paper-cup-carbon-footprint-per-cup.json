@@ -1,0 +1,82 @@
+{
+  "slug": "paper-cup-carbon-footprint-per-cup",
+  "q": "How do I calculate the carbon footprint of a paper cup?",
+  "title": "Paper cup carbon footprint per cup",
+  "short": "Weigh the cup, split the weight into paperboard and coating, and multiply each by a factor from the board mill or a published dataset. Add the electricity for printing and forming per cup and the cartons. Divide by good cups, after rejects. Board usually makes up most of the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Paper cup and container makers supplying cafes, offices and food chains",
+  "sections": [
+    {
+      "h": "Materials first",
+      "ul": [
+        "Cupstock paperboard, by weight per cup, from the board supplier.",
+        "Coating: polyethylene, PLA or aqueous barrier, by weight per cup from the board specification.",
+        "Inks for printed cups, a small share.",
+        "Cartons and sleeves for packing."
+      ]
+    },
+    {
+      "h": "Conversion energy",
+      "p": [
+        "Printing, die cutting and cup forming machines run on electricity. Divide the plant's kWh by cups produced in the same month. If you also make plates or containers, split by machine hours."
+      ]
+    },
+    {
+      "h": "Per cup or per thousand",
+      "p": [
+        "A single cup's figure is a few grams, so buyers often prefer kg CO2e per thousand cups. Weigh 100 cups of each size to get an accurate average mass rather than relying on catalogue figures."
+      ]
+    },
+    {
+      "h": "End of life",
+      "p": [
+        "PE-coated cups are hard to recycle in many places, and PLA needs industrial composting. A cradle-to-gate footprint stops at your gate; if a buyer asks for end of life, report it separately and state the assumed route, such as landfill, incineration or recycling."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: conversion energy per thousand cups (one month)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Good cups made: 6,000,000",
+      "Conversion energy: 10,650 / 6,000 = 1.78 kg CO2 per thousand cups, about 1.8 g per cup",
+      "Board and coating: weigh the cup (for example 5.5 g) and apply the mill's factor per kg"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Paper mill footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Packaging end of life for food exporters",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Paper industry",
+      "to": "/industries/paper"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

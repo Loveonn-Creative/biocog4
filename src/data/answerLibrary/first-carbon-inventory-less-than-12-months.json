@@ -1,0 +1,67 @@
+{
+  "slug": "first-carbon-inventory-less-than-12-months",
+  "q": "We only have a few months of bills for our first carbon footprint. Can we still report it?",
+  "title": "First footprint with under a year of data",
+  "short": "Yes, report the months you have and label the period clearly, for example September to March. Do not present it as a full year. If someone needs an annual figure, annualise it as a labelled estimate and say how. Use a full 12 month period, normally the April to March financial year, as your base year.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs and startups preparing a first footprint for a buyer or lender",
+  "sections": [
+    {
+      "h": "Why a part year is still useful",
+      "p": [
+        "A buyer questionnaire or a lender's first check often just needs evidence that you measure. Seven months of bill-backed numbers with a clear period are more credible than a full-year figure built on guesses. The GHG Protocol asks for a consistent, transparent reporting period; it does not stop you sharing an interim figure that is labelled as such."
+      ]
+    },
+    {
+      "h": "Annualising, and when not to",
+      "ul": [
+        "Simple scaling: total x 12 / months covered. Fine when production is steady through the year.",
+        "Seasonal businesses, such as rice mills, cold stores, sugar or textiles with export peaks, should not scale a part year. Use production-weighted estimates or wait for the full year.",
+        "Always show the actual figure and the annualised figure side by side, with the method."
+      ]
+    },
+    {
+      "h": "Picking the base year",
+      "p": [
+        "A base year should be a full year with data you can verify. If your first complete financial year is the one now running, make that the base year once it closes. Using a part year as the base makes every later year look like a large increase."
+      ]
+    },
+    {
+      "h": "Filling the gap backwards",
+      "p": [
+        "Before you settle for a part year, ask the discom for duplicate bills and pull fuel invoices from your GST records and accounts. Many companies find the earlier months are recoverable, which turns a part year into a full one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: seven months of data",
+    "lines": [
+      "Data from September to March: 140 tonnes CO2 (Scope 1 and 2)",
+      "Annualised estimate: 140 x 12 / 7 = 240 tonnes",
+      "Report as: 140 t for September to March (actual), about 240 t a year (estimate, steady production assumed)"
+    ]
+  },
+  "senseible": "Senseible builds the record from the bills and invoices you upload, so the period covered is whatever the documents cover. Upload the earlier months as you recover them and the totals update for the full year.",
+  "links": [
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    },
+    {
+      "label": "Financial or calendar year",
+      "to": "/answers/carbon-footprint-financial-or-calendar-year"
+    },
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, setting a base year",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

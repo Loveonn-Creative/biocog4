@@ -1,0 +1,75 @@
+{
+  "slug": "electricity-bill-arrears-carbon-accounting",
+  "q": "My electricity bill includes arrears or a supplementary bill for past months. Do those count in this month's emissions?",
+  "title": "Arrears on an electricity bill",
+  "short": "Rupee arrears, meaning unpaid amounts carried forward, add no emissions. A supplementary bill that charges extra units, for example after a slow or faulty meter was found, does add consumption. Assign those units to the months they relate to, not the month the bill arrived.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Accountants and plant managers reconciling discom bills",
+  "sections": [
+    {
+      "h": "Two kinds of arrears",
+      "ul": [
+        "Payment arrears: an earlier bill was not paid, so the amount, often with a late payment surcharge, is carried forward. No new units, so no new emissions.",
+        "Unit arrears: the discom back-bills extra units for past months, after an inspection, a change of multiplying factor, a tariff reclassification or a meter test. These are real consumption that was not billed before."
+      ]
+    },
+    {
+      "h": "Where to put assessed units",
+      "p": [
+        "The assessment order or supplementary bill states the period it covers. Spread the units over those months, evenly unless the order gives a monthly split. If the period falls in a financial year you have already reported, add the units to that year if your report is still open. If it is closed, restate the earlier year when the change is material for you, or report the units in the current year with a clear note."
+      ]
+    },
+    {
+      "h": "Charges that are not units",
+      "p": [
+        "Penalties for exceeding contract demand, power factor penalties, electricity duty and delayed payment charges are rupee items. They do not change consumption. Keep them out of any emissions calculation."
+      ]
+    },
+    {
+      "h": "Keep the paper trail",
+      "p": [
+        "File the assessment order or supplementary bill with the original bills for the months it corrects. A reviewer will want to see why a past month changed, and the order is the evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a slow meter found in November",
+    "lines": [
+      "Supplementary bill: 4,800 kWh assessed for July to October",
+      "Per month: 4,800 / 4 = 1,200 kWh",
+      "Extra emissions per month: 1,200 x 0.710 = 852 kg CO2",
+      "Total added to July to October: 4 x 852 = 3,408 kg CO2"
+    ]
+  },
+  "senseible": "Senseible reads the units, billing period, tariff and sanctioned load from each electricity bill and applies the CEA grid factor (0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) for location-based Scope 2. Each bill is fingerprinted, so the same bill uploaded twice is counted once. It reads the billing period printed on each bill, so check that a supplementary bill carries the months it corrects.",
+  "links": [
+    {
+      "label": "Average bills after a faulty meter",
+      "to": "/answers/average-electricity-bill-meter-faulty-emissions"
+    },
+    {
+      "label": "Split a bill across months or years",
+      "to": "/answers/split-electricity-bill-across-months-for-carbon"
+    },
+    {
+      "label": "Recalculating past years",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "Power factor rebates and penalties",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, tracking emissions over time",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

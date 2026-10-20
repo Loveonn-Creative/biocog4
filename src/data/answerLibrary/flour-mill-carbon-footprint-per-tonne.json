@@ -1,0 +1,86 @@
+{
+  "slug": "flour-mill-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of wheat flour per tonne at a roller flour mill?",
+  "title": "Flour mill carbon footprint per tonne",
+  "short": "Take the mill's electricity and any diesel for the generator, multiply by the CEA grid factor and IPCC diesel factor, and divide by tonnes of wheat ground. Then allocate between atta, maida, suji and bran by mass or by value, and add the wheat's own farm and transport emissions as a bought-in input.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Roller flour mills and chakki mills supplying bakeries, biscuit makers and exporters",
+  "sections": [
+    {
+      "h": "Where a mill's emissions come from",
+      "ul": [
+        "Electricity for cleaning, conditioning, roller milling, sifting and pneumatic conveying. In most mills this is nearly all of the mill's own footprint.",
+        "Diesel for backup generators and yard vehicles.",
+        "Wheat: farm emissions from fertiliser, diesel and irrigation, plus transport to the mill. This is bought-in and usually larger than the milling energy."
+      ]
+    },
+    {
+      "h": "Allocating to products",
+      "p": [
+        "One tonne of wheat yields several products. Mass allocation gives each tonne of output the same share. Economic allocation gives more to maida and less to bran because they sell at different prices. ISO 14067 prefers avoiding allocation where possible, then a physical basis; if you use value, say why and give the prices used. Whichever you choose, keep it the same each year."
+      ]
+    },
+    {
+      "h": "Numbers buyers ask for",
+      "ul": [
+        "kWh per tonne of wheat ground, a good efficiency indicator to track month by month.",
+        "kg CO2 per tonne of each product from mill energy, after allocation.",
+        "Cradle-to-gate kg CO2e per tonne including wheat, if the buyer wants a product footprint."
+      ]
+    },
+    {
+      "h": "Easy efficiency checks",
+      "ul": [
+        "Running roller mills and blowers at part load wastes power; compare kWh per tonne on full and part-load days.",
+        "Compressed air and pneumatic conveying leaks show up as rising kWh per tonne.",
+        "Generator hours should be logged, so diesel litres can be checked against power cuts."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a roller flour mill",
+    "lines": [
+      "Wheat ground: 1,000 t; outputs 700 t maida and atta, 50 t suji, 250 t bran",
+      "Electricity: 55,000 kWh x 0.710 = 39,050 kg CO2",
+      "Diesel for the generator: 300 litres x 2.68 = 804 kg CO2",
+      "Mill energy: (39,050 + 804) / 1,000 = 39.9 kg CO2 per tonne of wheat ground",
+      "Mass allocation: 39.9 kg CO2 per tonne for every product, before wheat is added"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

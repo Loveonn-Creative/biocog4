@@ -1,0 +1,90 @@
+{
+  "slug": "bread-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of bread per kg for a retail or export buyer?",
+  "title": "Bread carbon footprint per kg",
+  "short": "Add three parts and divide by good output: the ingredients, mainly flour, from supplier or database factors; your bakery's own fuel and electricity, mostly the oven; and the packaging. Use a month or year of bills, count only saleable loaves in the output, and state the boundary, usually cradle to bakery gate.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bakeries supplying retail chains, quick-service restaurants and export buyers",
+  "sections": [
+    {
+      "h": "What sits in a loaf's footprint",
+      "ul": [
+        "Ingredients: wheat flour, sugar, fat, yeast and improvers. Flour is the biggest by weight, and its farm emissions sit with the wheat.",
+        "Baking: deck, rack or tunnel ovens on LPG, PNG, diesel or electricity. This is often the largest part of the bakery's own emissions.",
+        "Mixing, proving, slicing and cooling: electricity.",
+        "Packaging: bread bags and ties, and crates if they are not returnable.",
+        "Waste: dough and unsold bread, which raise the footprint of what you do sell."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "Divide by the weight of bread sold, after baking losses, slicing waste and returns. Using dough weight or production planned makes the figure look lower than it is. If the bakery also makes buns, cakes and rusks, split the oven fuel by oven hours or by output weight and say which key you used."
+      ]
+    },
+    {
+      "h": "Ingredient factors",
+      "p": [
+        "Ask your flour mill for a figure per tonne of flour. Without one, use a published life cycle dataset and cite its name and year. Keep wheat's farm emissions, flour milling energy and transport to your bakery inside the ingredient factor so they are not counted twice."
+      ]
+    },
+    {
+      "h": "Where bakeries cut emissions",
+      "ul": [
+        "Fuller oven loads and fewer warm-up cycles.",
+        "Moving ovens from diesel to PNG or efficient electric ovens where the supply is reliable.",
+        "Lower returns and waste through better daily forecasting."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: bakery energy per kg of bread (one month)",
+    "lines": [
+      "LPG for ovens: 40 cylinders x 19 kg = 760 kg; 760 x 2.98 = 2,264.8 kg CO2",
+      "Electricity: 3,000 kWh x 0.710 = 2,130 kg CO2",
+      "Bread sold: 30,000 kg",
+      "Bakery energy: (2,264.8 + 2,130) / 30,000 = 0.146 kg CO2 per kg of bread",
+      "Add ingredients and packaging per kg from supplier or database factors to get the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "CO2 from a 19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

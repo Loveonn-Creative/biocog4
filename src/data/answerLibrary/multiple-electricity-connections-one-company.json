@@ -1,0 +1,81 @@
+{
+  "slug": "multiple-electricity-connections-one-company",
+  "q": "We have several electricity connections across our factory, office and godown. How do we count them for Scope 2?",
+  "title": "Several electricity connections, one footprint",
+  "short": "Add the units from every connection your company pays for and operates: the main HT or LT supply, office and godown meters, temporary connections and staff quarters inside your boundary. Keep one row per consumer number. Do not add sub-meters that sit behind a main meter, because those units are already in the main bill.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with more than one discom connection",
+  "sections": [
+    {
+      "h": "Which connections belong in the total",
+      "ul": [
+        "Every consumer number billed to your company at a site you operate.",
+        "Connections in a director's or landlord's name where your company pays the bill and runs the premises.",
+        "Temporary connections for construction or expansion, for the months they ran.",
+        "Staff quarters or colony supply inside the site boundary that the company pays for."
+      ]
+    },
+    {
+      "h": "What to leave out",
+      "ul": [
+        "Sub-meters on a feeder that is already billed through the main meter.",
+        "Connections at premises you have let out to a tenant who runs them; those are the tenant's emissions.",
+        "Duplicate copies of the same bill, such as an online copy and a paper copy."
+      ]
+    },
+    {
+      "h": "Build a connection register",
+      "p": [
+        "List each consumer number with the site, tariff category, sanctioned load and who pays. Tick off one bill per connection per billing period. A register makes a missing month visible at once and shows a reviewer that nothing is counted twice. When you open or close a connection, record the date."
+      ]
+    },
+    {
+      "h": "If connections are in different states",
+      "p": [
+        "In India the CEA publishes one weighted average grid factor for the whole country, so connections in different states use the same location-based factor. Market-based figures can differ if a site holds RECs, a green tariff or open access power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three connections and one sub-meter",
+    "lines": [
+      "HT factory connection: 80,000 kWh",
+      "LT office connection: 2,500 kWh",
+      "LT godown connection: 1,200 kWh",
+      "Sub-meter for the paint shop, behind the HT meter: 15,000 kWh, not added",
+      "Total: 80,000 + 2,500 + 1,200 = 83,700 kWh",
+      "Emissions: 83,700 x 0.710 = 59,427 kg CO2, about 59.4 tonnes"
+    ]
+  },
+  "senseible": "Senseible reads the units, billing period, tariff and sanctioned load from each electricity bill and applies the CEA grid factor (0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) for location-based Scope 2. Each bill is fingerprinted, so the same bill uploaded twice is counted once. Upload the bills for every consumer number and they count together in your Scope 2.",
+  "links": [
+    {
+      "label": "Staff quarters electricity",
+      "to": "/answers/staff-quarters-electricity-in-carbon-footprint"
+    },
+    {
+      "label": "Sub-metered electricity in a rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Temporary construction power",
+      "to": "/answers/temporary-construction-power-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, operational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

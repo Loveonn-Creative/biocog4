@@ -1,0 +1,78 @@
+{
+  "slug": "handloom-fabric-carbon-footprint-per-metre",
+  "q": "How do I calculate the carbon footprint of handloom fabric per metre?",
+  "title": "Handloom fabric footprint per metre",
+  "short": "Work out the yarn per metre from GSM and width, add weaving waste, and multiply by the yarn's footprint from the spinner or a published dataset. Add dyeing and sizing fuel and electricity per metre. The hand loom itself uses no power, so yarn and dyeing make up almost all of the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Handloom cooperatives, weavers and exporters in Varanasi, Kanchipuram, Pochampally and Assam",
+  "sections": [
+    {
+      "h": "Fabric weight per metre",
+      "p": [
+        "Grams per metre = GSM x width in metres. A 120 GSM fabric that is 1.1 m wide weighs 132 g per metre. Add the yarn lost in warping, sizing and weaving, from your own yarn issue and fabric output records, to get yarn used per metre."
+      ]
+    },
+    {
+      "h": "Where the emissions come from",
+      "ul": [
+        "Yarn: cotton, silk, wool or blends. Its footprint includes farming or sericulture and spinning, and it is usually the largest part.",
+        "Dyeing: vats heated with LPG, firewood or electricity, plus dyes and chemicals.",
+        "Sizing and preparation: starch and heating.",
+        "Finishing, washing and packing."
+      ]
+    },
+    {
+      "h": "Firewood in dyeing",
+      "p": [
+        "Many dyers heat vats with firewood. That CO2 is biogenic and is reported separately; methane and nitrous oxide from burning stay in the total. If a cluster dye house serves many weavers, ask for its fuel per kilogram of yarn dyed and apply it to your yarn."
+      ]
+    },
+    {
+      "h": "Telling the story honestly",
+      "p": [
+        "Handloom fabric avoids loom electricity entirely, which is a real difference from power looms. It does not make yarn or dyeing emissions disappear. Show the loom energy as zero and the yarn and dyeing parts clearly, rather than claiming the fabric is carbon free."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: dyeing energy per metre",
+    "lines": [
+      "Fabric: 120 GSM x 1.1 m width = 132 g per metre; with 5% yarn loss, 138.6 g of yarn per metre",
+      "Dyeing batch: 2 LPG cylinders x 19 kg = 38 kg; 38 x 2.98 = 113.2 kg CO2 for 1,500 metres",
+      "Dyeing fuel: 113.2 / 1,500 = 0.075 kg CO2 per metre",
+      "Yarn: 138.6 g x the yarn footprint per kg from the spinner gives the larger part"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the electricity and LPG bills of the dye house or cooperative (CEA grid factor 0.710 kg CO2 per kWh, IPCC 2006 fuel defaults) into a fingerprinted record. Yarn bought goes to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Silk fabric footprint per kg",
+      "to": "/answers/silk-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "rounding-numbers-in-ghg-report",
+  "q": "How should I round numbers in a carbon footprint report, and why don't my totals add up?",
+  "title": "Rounding in a carbon footprint report",
+  "short": "Calculate every line at full precision and round only the figures you present. Show tonnes CO2 to one decimal place, or whole tonnes for large totals, and add a note that totals may not add because of rounding. Never round activity data or factors before multiplying.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accountants and sustainability leads preparing reports",
+  "sections": [
+    {
+      "h": "Round at the end, not the start",
+      "p": [
+        "Rounding each invoice or bill line before adding hides small sources and can shift the total. Keep the litres, kWh and kilograms exactly as on the document, keep the factor as published, multiply, add, and only then round the results you print."
+      ]
+    },
+    {
+      "h": "How many decimals to show",
+      "ul": [
+        "Line items and monthly figures: kg CO2, whole numbers.",
+        "Scope totals for an MSME: tonnes with one decimal, such as 59.4 t.",
+        "Large companies: whole tonnes are fine, as long as small categories are not rounded to zero.",
+        "Intensities: enough decimals to show a change, such as 0.85 t per tonne of product."
+      ]
+    },
+    {
+      "h": "When the parts do not add to the total",
+      "p": [
+        "If Scope 1 shows 12.4 t and Scope 2 shows 47.0 t, the true total may print as 59.5 t rather than 59.4 t. That is expected. Keep the total computed from unrounded numbers and add the line: totals may not add due to rounding. Do not adjust a part to force the sum."
+      ]
+    },
+    {
+      "h": "Precision is not accuracy",
+      "p": [
+        "Printing five decimals on a figure built from a spend-based estimate suggests a certainty you do not have. Match the decimals to the quality of the data, and state the method for estimated lines."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: rounding too early",
+    "lines": [
+      "Three small lines: 0.44 t, 0.44 t and 0.44 t",
+      "Rounded first to whole tonnes: 0 + 0 + 0 = 0 t",
+      "Added first, then rounded: 1.32 t, shown as 1.3 t"
+    ]
+  },
+  "senseible": "Senseible calculates each line as the quantity on the document times a published factor and shows the factor used, so any figure can be recomputed at full precision.",
+  "links": [
+    {
+      "label": "Uncertainty in a GHG inventory",
+      "to": "/answers/ghg-inventory-uncertainty-calculation"
+    },
+    {
+      "label": "What goes in an ISO 14064-1 report",
+      "to": "/answers/what-goes-in-an-iso-14064-1-ghg-report"
+    },
+    {
+      "label": "Carbon report red flags",
+      "to": "/answers/carbon-report-red-flags-from-consultant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, reporting principles",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

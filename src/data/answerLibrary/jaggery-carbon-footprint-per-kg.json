@@ -1,0 +1,83 @@
+{
+  "slug": "jaggery-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of jaggery per kg?",
+  "title": "Jaggery carbon footprint per kg",
+  "short": "Add the sugarcane's farm emissions, the crusher's diesel or electricity, and any fossil fuel used in the boiling furnace, then divide by kilograms of jaggery. Bagasse burnt under the pans is biomass: report its CO2 as biogenic, outside the scopes, and keep only the small methane and nitrous oxide from combustion in Scope 1.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Jaggery units and FPOs in Uttar Pradesh, Maharashtra, Karnataka and Tamil Nadu",
+  "sections": [
+    {
+      "h": "Where the emissions come from",
+      "ul": [
+        "Sugarcane: fertiliser nitrous oxide, farm diesel and irrigation pumping. Usually the largest part.",
+        "Crushing: diesel engines or electric crushers.",
+        "Boiling: open pans or improved furnaces fired with bagasse, sometimes topped up with firewood.",
+        "Packing and transport to the market."
+      ]
+    },
+    {
+      "h": "Bagasse is biogenic, other fuels are not",
+      "p": [
+        "CO2 from burning bagasse and wood grown on farms is biogenic and is reported separately from Scope 1. If a unit burns used tyres, plastic or coal to keep the pans going, that CO2 is fossil and goes in Scope 1 at full value. Logging the fuels used in each season protects the figure."
+      ]
+    },
+    {
+      "h": "Improved furnaces",
+      "p": [
+        "Better furnace design and pan arrangement can boil the same juice with less bagasse, leaving surplus bagasse to sell or to replace firewood. Record bagasse and firewood quantities before and after any upgrade so the effect is visible."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "Divide by jaggery sold, in solid, powder or liquid form. If the unit also sells molasses-like by-products, allocate by mass or value and say which."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: crushing and plant energy per kg (one season month)",
+    "lines": [
+      "Diesel for crushers: 600 litres x 2.68 = 1,608 kg CO2",
+      "Electricity: 1,500 kWh x 0.710 = 1,065 kg CO2",
+      "Jaggery made: 120,000 kg",
+      "Fossil energy: (1,608 + 1,065) / 120,000 = 0.022 kg, about 22 g CO2 per kg",
+      "Bagasse CO2 reported separately as biogenic; sugarcane farm emissions added from farm data"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Biomass fuel in a boiler and Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Sugar mill bagasse cogeneration",
+      "to": "/answers/sugar-mill-bagasse-cogeneration-emissions"
+    },
+    {
+      "label": "Biogenic carbon for food MSMEs",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (biomass combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

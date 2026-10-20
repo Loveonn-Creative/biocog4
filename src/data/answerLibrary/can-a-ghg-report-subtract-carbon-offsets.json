@@ -1,0 +1,79 @@
+{
+  "slug": "can-a-ghg-report-subtract-carbon-offsets",
+  "q": "My GHG report shows net emissions after subtracting carbon offsets. Is that allowed?",
+  "title": "Can offsets be subtracted in a GHG report?",
+  "short": "No. A GHG inventory reports gross emissions by scope. Carbon credits you bought and retired are reported separately, with the registry, project and quantity, never subtracted from Scope 1, 2 or 3. If you make a carbon neutral claim, show the gross footprint and the credits retired side by side.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs and exporters reviewing a consultant's report or a supplier's figure",
+  "sections": [
+    {
+      "h": "What the standards say",
+      "ul": [
+        "GHG Protocol Corporate Standard: scopes are reported as gross figures; offsets bought or sold are optional information reported separately.",
+        "ISO 14064-1: the inventory reports emissions and removals within your boundary; purchased credits are not part of it.",
+        "SBTi: credits do not count toward a near-term reduction target.",
+        "BRSR: Scope 1 and 2 are disclosed as gross emissions."
+      ]
+    },
+    {
+      "h": "How to present credits correctly",
+      "ol": [
+        "Report Scope 1, 2 and 3 as calculated.",
+        "Below them, list credits retired in the period: quantity, registry, project ID, vintage and serial numbers.",
+        "If you claim carbon neutrality for a product, event or the company, name the standard you follow, such as ISO 14068-1, and its reduction requirements."
+      ]
+    },
+    {
+      "h": "Why netting is a red flag",
+      "p": [
+        "A net figure hides whether emissions actually fell. A buyer comparing suppliers, or a lender checking a sustainability-linked loan KPI, needs the gross number, and a netted figure is likely to be questioned. In the EU, product claims of neutral or reduced impact based on offsetting are banned from 27 September 2026."
+      ]
+    },
+    {
+      "h": "Removals inside your boundary are different",
+      "p": [
+        "Carbon removed on land you own, such as trees on your premises, is reported as removals separately from emissions under ISO 14064-1. It is still not subtracted inside a scope total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: presenting credits next to the inventory",
+    "lines": [
+      "Scope 1 and 2: 1,200 t CO2e (gross)",
+      "Credits retired in the year: 300 t, listed with registry, project and serial numbers",
+      "Correct: report 1,200 t and, separately, 300 t of credits retired",
+      "Wrong: report net emissions of 900 t"
+    ]
+  },
+  "senseible": "Senseible reports gross Scope 1, 2 and 3 figures built from your documents. Carbon credit eligibility signals and marketplace listings sit separately and are never deducted from the inventory.",
+  "links": [
+    {
+      "label": "Can credits count toward an SBTi target",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    },
+    {
+      "label": "ISO 14068 carbon neutral requirements",
+      "to": "/answers/iso-14068-carbon-neutral-requirements"
+    },
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, reporting GHG emissions",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, organisation-level GHG inventories (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SBTi Corporate Net-Zero Standard",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

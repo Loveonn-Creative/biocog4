@@ -1,0 +1,80 @@
+{
+  "slug": "are-steel-nails-wire-and-springs-covered-by-cbam",
+  "q": "Are steel wire, nails, wire mesh and springs covered by EU CBAM?",
+  "title": "Are steel wire and nails covered by CBAM?",
+  "short": "Steel wire itself is covered, because wire of iron or steel sits in chapter 72 of Annex I. Many wire articles are not covered today: nails (7317), stranded wire and ropes (7312), barbed wire (7313), mesh and fencing (7314), chains (7315) and springs (7320) are not in Annex I.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Wire drawers and wire product makers in Gujarat, Punjab and Maharashtra",
+  "sections": [
+    {
+      "h": "Covered today",
+      "ul": [
+        "Wire of non-alloy steel (7217), stainless steel (7223) and other alloy steel (7229).",
+        "Wire rod and bars in chapter 72.",
+        "Screws, bolts, nuts, rivets and washers made from wire, under 7318.",
+        "Other articles of iron or steel under 7326, which can include some wire products not specified elsewhere."
+      ]
+    },
+    {
+      "h": "Not in Annex I today",
+      "ul": [
+        "7312: stranded wire, ropes and cables of iron or steel.",
+        "7313: barbed wire and twisted fencing wire.",
+        "7314: cloth, grill, netting and fencing of iron or steel wire.",
+        "7315: chains and parts of chains.",
+        "7317: nails, tacks, drawing pins and staples.",
+        "7320: springs and leaves for springs."
+      ]
+    },
+    {
+      "h": "Why the code decides everything",
+      "p": [
+        "Two products made from the same wire can be in and out of CBAM. Galvanised wire sold in coils is covered as wire; the same wire woven into mesh is not. Agree the 8 digit CN code with your buyer for each item, starting from the ITC-HS code on your shipping bill, and keep it on the invoice."
+      ]
+    },
+    {
+      "h": "If you export both",
+      "p": [
+        "Keep production records separate for covered wire and for uncovered articles. Your importer only needs embedded emissions for the covered lines, but a mixed plant has to allocate fuel and steel between products to give a defensible figure."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Steel wire drawing footprint per tonne",
+      "to": "/answers/steel-wire-drawing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Are nuts and bolts covered by CBAM",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

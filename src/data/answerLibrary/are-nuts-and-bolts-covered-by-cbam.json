@@ -1,0 +1,91 @@
+{
+  "slug": "are-nuts-and-bolts-covered-by-cbam",
+  "q": "Are steel nuts, bolts and screws covered by EU CBAM?",
+  "title": "Are nuts and bolts covered by CBAM?",
+  "short": "Yes. Screws, bolts, nuts, washers, rivets and similar fasteners of iron or steel fall under heading 7318, which is listed in Annex I of the CBAM Regulation. Since 1 January 2026 your EU importer must account for their embedded emissions, using your actual data or EU default values.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Fastener makers and exporters in Ludhiana, Rajkot, Chennai and Pune",
+  "sections": [
+    {
+      "h": "What heading 7318 covers",
+      "ul": [
+        "Bolts, nuts, screws, coach screws, screw hooks and threaded studs of iron or steel.",
+        "Washers, including spring and lock washers, rivets, cotters and cotter pins.",
+        "Stainless and alloy steel fasteners, which are still iron or steel goods.",
+        "Aluminium screws, bolts and nuts fall under 7616, also covered as aluminium goods. Brass and copper fasteners in chapter 74 are not covered."
+      ]
+    },
+    {
+      "h": "Which emissions count",
+      "p": [
+        "For iron and steel goods in the definitive period, CBAM counts direct emissions only: fuels burnt in your furnaces and processes, plus the embedded emissions of the steel you bought as a precursor, such as wire rod or bar. Electricity is not counted for steel goods. For most fastener makers the precursor steel is by far the largest part, so your wire rod supplier's data matters more than your own furnace."
+      ]
+    },
+    {
+      "h": "What your EU buyer will ask for",
+      "ol": [
+        "Installation data for the calendar year: fuels, production and steel consumed.",
+        "The embedded emissions of the wire rod or bar, from your steel supplier, or a default value if they cannot provide it.",
+        "Your emissions per tonne of fasteners, so the importer can report actual values instead of default values with mark-ups."
+      ]
+    },
+    {
+      "h": "Small buyers and the 50 tonne threshold",
+      "p": [
+        "Under the 2025 simplification, an importer bringing in less than 50 tonnes a year of covered iron, steel, aluminium, cement and fertiliser goods combined is exempt. A small distributor buying a few pallets may not need your data at all. A large distributor or OEM will."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made largely of steel and aluminium. As of October 2026 that proposal is not law. Until it is adopted, coverage is what Annex I lists today, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: embedded emissions per tonne of bolts (illustrative)",
+    "lines": [
+      "Output in the year: 100 t of bolts from 105 t of wire rod",
+      "Heat treatment on PNG: 8,000 scm x 2.05 kg CO2 per scm = 16,400 kg, so 16.4 t",
+      "Wire rod embedded emissions from the supplier: 105 t x 2.0 t CO2 per t = 210 t (illustrative supplier figure, not a default value)",
+      "Total: 16.4 + 210 = 226.4 t, so about 2.26 t CO2 per tonne of bolts"
+    ],
+    "note": "Replace the 2.0 with your wire rod supplier's actual figure. Under CBAM rules, emissions are attributed through the production processes of your installation; this is a simplified view."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Steel wire drawing footprint",
+      "to": "/answers/steel-wire-drawing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification (50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-20",
+  "reviewNote": "Annex I may be extended to downstream products under the December 2025 proposal; recheck coverage before each contract season."
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "cloud-kitchen-carbon-footprint-per-order",
+  "q": "How do I calculate the carbon footprint of a cloud kitchen per order, including packaging and delivery?",
+  "title": "Cloud kitchen footprint per order",
+  "short": "Divide the kitchen's cooking gas and electricity by orders, then add packaging per order and delivery. Delivery you pay for sits in your Scope 3 Category 4; delivery the customer pays the platform for sits in Category 9. Food ingredients come on top and are often the largest part.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cloud kitchen operators and food brands selling through delivery apps",
+  "sections": [
+    {
+      "h": "Four parts per order",
+      "ul": [
+        "Kitchen energy: LPG or PNG and electricity, divided by orders.",
+        "Ingredients: kilograms from purchase invoices times food factors.",
+        "Packaging: containers, bags, cutlery and labels, by weight and material.",
+        "Delivery: distance per order times a per-km factor for the rider's vehicle."
+      ]
+    },
+    {
+      "h": "Which category the delivery goes in",
+      "p": [
+        "Under the GHG Protocol Scope 3 Standard, transport and distribution you pay for is Category 4, even when it is outbound to the customer. Transport you do not pay for, where the customer pays a delivery fee to the platform, is Category 9. Read your platform agreement to see who pays for delivery, and report it in one category only."
+      ]
+    },
+    {
+      "h": "Packaging is visible to customers",
+      "p": [
+        "Weigh one of each container and bag you use, multiply by monthly quantities from your packaging invoices, and apply a material factor from the supplier or a published dataset. Switching material or size often changes the per-order figure more than kitchen energy savings."
+      ]
+    },
+    {
+      "h": "Getting delivery distance",
+      "p": [
+        "Most platforms show order distance in their merchant reports. Use the average distance, double it for the rider's return trip if the rider comes back, and use a per-km factor for a petrol two-wheeler or an electric scooter."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: kitchen energy and delivery per order (one month)",
+    "lines": [
+      "LPG: 25 cylinders x 19 kg = 475 kg; 475 x 2.98 = 1,415.5 kg CO2",
+      "Electricity: 4,500 kWh x 0.710 = 3,195 kg CO2",
+      "Orders: 12,000, so kitchen energy = (1,415.5 + 3,195) / 12,000 = 0.384 kg CO2 per order",
+      "Delivery: 3 km each way, 6 km per order on a petrol two-wheeler at an assumed 45 km per litre",
+      "6 / 45 = 0.133 litres x 2.31 = 0.308 kg CO2 per order",
+      "Kitchen energy and delivery: about 0.69 kg CO2 per order, before food and packaging"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records. The 45 km per litre is an assumption."
+  },
+  "senseible": "Senseible reads LPG, PNG and electricity bills and purchase invoices for food and packaging, applies IPCC 2006 fuel factors and the CEA grid factor (0.710 kg CO2 per kWh), and gives a spend-based estimate, labelled as such, where only spend is available.",
+  "links": [
+    {
+      "label": "Two-wheeler delivery fleet emissions",
+      "to": "/answers/two-wheeler-delivery-fleet-emissions"
+    },
+    {
+      "label": "Incoterms and freight categories",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Restaurant footprint per meal",
+      "to": "/answers/restaurant-carbon-footprint-per-meal"
+    },
+    {
+      "label": "CO2 from a 19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

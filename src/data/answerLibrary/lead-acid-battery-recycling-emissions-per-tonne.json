@@ -1,0 +1,86 @@
+{
+  "slug": "lead-acid-battery-recycling-emissions-per-tonne",
+  "q": "How do I calculate the emissions of recycling lead-acid batteries per tonne of lead?",
+  "title": "Lead-acid battery recycling emissions",
+  "short": "Add the fuel burnt in the smelting furnace and refining kettles, the process CO2 from coke or coal used as a reductant, and the plant's electricity, then divide by tonnes of refined lead produced. Use the reductant's carbon content from the supplier's analysis to work out its CO2.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Registered lead recyclers and secondary lead smelters",
+  "sections": [
+    {
+      "h": "Process steps and their emissions",
+      "ul": [
+        "Battery breaking and separation: electricity.",
+        "Smelting in rotary or short rotary furnaces: furnace oil, PNG or LPG, plus coke or coal as reductant.",
+        "Refining and alloying in kettles: fuel.",
+        "Plastic recovery: polypropylene chips washed and sold, a co-product.",
+        "Effluent and fume treatment: electricity."
+      ]
+    },
+    {
+      "h": "Reductant CO2",
+      "p": [
+        "Carbon in coke or coal reduces lead compounds to metal and leaves as CO2. Process CO2 = reductant mass x carbon fraction x 44 / 12. Take the carbon fraction from the supplier's certificate of analysis; if you have only a default, say so. This counts in Scope 1 alongside furnace fuel."
+      ]
+    },
+    {
+      "h": "Rules recyclers work under",
+      "p": [
+        "Recyclers in India operate under the Battery Waste Management Rules, 2022, with registration and extended producer responsibility records kept on the CPCB portal. Those records give quantities processed and lead recovered, which you can use as the denominator for your footprint."
+      ]
+    },
+    {
+      "h": "What buyers of secondary lead ask",
+      "ol": [
+        "kg CO2 per tonne of refined lead or alloy.",
+        "The share of recycled content, which is usually all of it.",
+        "Fuel and reductant used, so they can compare with primary lead."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a secondary lead smelter",
+    "lines": [
+      "Furnace oil: 60,000 litres x 2.97 = 178,200 kg CO2",
+      "Coke as reductant: 40 t with 85% carbon; 40,000 x 0.85 x 44 / 12 = 124,667 kg CO2",
+      "Electricity: 150,000 kWh x 0.710 = 106,500 kg CO2",
+      "Refined lead produced: 600 t",
+      "Total: (178,200 + 124,667 + 106,500) / 600 = 682 kg CO2 per tonne of lead"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records. The 85% carbon content is an assumption; use your coke supplier's analysis."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Process CO2 from limestone",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Zinc die casting footprint",
+      "to": "/answers/zinc-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Central Pollution Control Board, Battery Waste Management Rules, 2022",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
