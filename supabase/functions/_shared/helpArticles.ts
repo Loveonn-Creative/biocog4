@@ -266,6 +266,10 @@ export const HELP_ARTICLES: HelpArticle[] = [
 /** Messages people see in the product, and what to do. */
 export const HELP_FIXES: HelpFix[] = [
   { match: 'page limit reached', fix: 'Your monthly reads are used up. Buy credits on your profile (₹79 for 100 invoices), wait for the 1st, or move to a bigger plan.', slug: 'hit-my-limit' },
+  { match: 'high volume of bills', fix: 'Many bills are being read at once. Wait a minute and try again. Nothing was counted.' },
+  { match: 'catching up with demand', fix: 'Reading is catching up on our side. Your account is fine. Try again in a few minutes. Nothing was counted.' },
+  { match: 'hard to read', fix: 'Take a sharper photo with the whole page in view, or upload the original PDF.', slug: 'blurry-or-handwritten-bill' },
+  { match: "couldn't finish reading", fix: 'Try again. If it happens again, upload a clear photo of the page.' },
   { match: 'busy right now', fix: 'Reading is busy on our side. Wait a minute and try again. Nothing was counted.' },
   { match: 'paused on our side', fix: 'Reading is paused on our side. Your account is fine. Try again later. Nothing was counted.' },
   { match: 'taking too long', fix: 'Try again, or upload a photo of just the page with the totals. Nothing was counted.', slug: 'long-pdfs' },

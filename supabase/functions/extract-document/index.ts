@@ -946,7 +946,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
           // Both reads failed: if a provider refused, that is on our side.
           if (providerStatus !== undefined) return failOnOurSide(providerStatus);
           return new Response(
-            JSON.stringify({ error: 'We could not read this file. Try a sharper photo with the whole page in view, or the original PDF.', code: 'unreadable' }),
+            JSON.stringify({ error: 'This file is hard to read. Nothing was counted. A sharp photo of the full page, or the original PDF, usually works first time.', code: 'unreadable' }),
             { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
         }
@@ -956,7 +956,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
 
     if (!ocrData) {
       return new Response(
-        JSON.stringify({ error: 'We could not read this file. Try a sharper photo with the whole page in view, or the original PDF.', code: 'unreadable' }),
+        JSON.stringify({ error: 'This file is hard to read. Nothing was counted. A sharp photo of the full page, or the original PDF, usually works first time.', code: 'unreadable' }),
         { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }

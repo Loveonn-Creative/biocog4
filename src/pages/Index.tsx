@@ -577,7 +577,7 @@ const Index = () => {
 
       if (error) {
         console.error("OCR Error:", error);
-        toast.error(await getFunctionErrorMessage(error, "We could not read this file. Try again, or upload a clear photo of the page."));
+        toast.error(await getFunctionErrorMessage(error, "We couldn't finish reading this file. Nothing was counted. Try again, or upload a clear photo of the page."));
         setState("idle");
         return;
       }
