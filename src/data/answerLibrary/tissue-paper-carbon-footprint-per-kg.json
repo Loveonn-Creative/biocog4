@@ -1,0 +1,77 @@
+{
+  "slug": "tissue-paper-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of tissue paper and napkins?",
+  "title": "Tissue paper carbon footprint per kg",
+  "short": "For a converter, multiply the parent reels by the mill's per-kg figure and add embossing, folding, cutting and packing electricity per kg passed. A tissue mill adds its pulping, Yankee dryer steam and electricity. Drying is usually the largest energy use.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tissue mills and napkin converters",
+  "sections": [
+    {
+      "h": "Mill",
+      "ul": [
+        "Pulp or recovered paper by weight.",
+        "Yankee dryer and hood: steam and gas.",
+        "Pulpers, refiners and vacuum pumps on electricity."
+      ]
+    },
+    {
+      "h": "Converting",
+      "ul": [
+        "Parent reels, including trim waste.",
+        "Embossing, folding, log saw and wrapping.",
+        "Poly wraps, cores and cartons."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg of saleable tissue, and per pack with grammage and ply count."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: napkin converter per kg (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Kg of tissue packed: 200,000",
+      "Plant total: 21,300 / 200,000 = 0.106 kg CO2 per kg",
+      "Add the parent reels from the mill for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Paper mill footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Paper industry",
+      "to": "/industries/paper"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

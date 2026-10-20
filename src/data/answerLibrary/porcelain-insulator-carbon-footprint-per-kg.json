@@ -1,0 +1,78 @@
+{
+  "slug": "porcelain-insulator-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of porcelain insulators?",
+  "title": "Porcelain insulator footprint per kg",
+  "short": "Record the kiln fuel per firing and divide by kg of good insulators, then add clay body preparation, shaping and glazing electricity. Add metal caps and pins and the cement used to fit them by weight. Firing is usually the largest share.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Porcelain and ceramic insulator makers",
+  "sections": [
+    {
+      "h": "Body and fittings",
+      "ul": [
+        "Clay, quartz, feldspar and alumina by weight.",
+        "Glaze materials.",
+        "Malleable iron caps, steel pins and cement for assembly."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Ball milling, filter pressing and pugging.",
+        "Shaping, drying and glazing.",
+        "Firing in tunnel or shuttle kilns on gas or oil, and testing."
+      ]
+    },
+    {
+      "h": "Per kg and per piece",
+      "p": [
+        "Report per kg and per insulator type, with the weight of fittings stated separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: insulator plant per kg (one month)",
+    "lines": [
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "PNG: 60,000 SCM x 2.05 = 123,000 kg CO2",
+      "Kg of good insulators: 300,000",
+      "Plant total: 179,800 / 300,000 = 0.599 kg CO2 per kg",
+      "Add clay body, glaze and metal fittings for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Sanitaryware footprint per piece",
+      "to": "/answers/sanitaryware-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

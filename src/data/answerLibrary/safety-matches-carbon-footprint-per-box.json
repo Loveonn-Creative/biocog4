@@ -1,0 +1,78 @@
+{
+  "slug": "safety-matches-carbon-footprint-per-box",
+  "q": "How do I calculate the carbon footprint of safety matches per box?",
+  "title": "Safety matches carbon footprint per box",
+  "short": "Add the splints, chemicals and paperboard per box using supplier figures. Add the unit's electricity for splint making, dipping and box filling, and any fuel for drying, then divide by boxes passed in the same period.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Match makers, including Sivakasi and Kovilpatti units",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Wood or veneer splints, or paper sticks.",
+        "Head composition, striking surface chemicals and paraffin wax.",
+        "Paperboard boxes, labels and outer packs."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Splint cutting and impregnation.",
+        "Dipping frames and drying, sometimes with heated air.",
+        "Box making, filling and packing."
+      ]
+    },
+    {
+      "h": "Per box",
+      "p": [
+        "Report per box with the stick count, and per outer pack of ten for buyers who order that way."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: match unit per box (one month)",
+    "lines": [
+      "Electricity: 10,000 kWh x 0.710 = 7,100 kg CO2",
+      "Drying coal: 2,000 kg x 2.42 = 4,840 kg CO2",
+      "Boxes passed: 2,000,000",
+      "Plant total: 11,940 / 2,000,000 = 0.00597 kg CO2 per box",
+      "Add splints, chemicals and paperboard for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Agarbatti footprint per kg",
+      "to": "/answers/agarbatti-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Candle footprint per kg",
+      "to": "/answers/candle-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

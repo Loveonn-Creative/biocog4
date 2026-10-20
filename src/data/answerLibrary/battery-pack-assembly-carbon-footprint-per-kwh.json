@@ -1,0 +1,77 @@
+{
+  "slug": "battery-pack-assembly-carbon-footprint-per-kwh",
+  "q": "How do I calculate the carbon footprint of a lithium-ion battery pack assembled in India?",
+  "title": "Battery pack assembly footprint per kWh",
+  "short": "Add the cells from the cell maker's figure, which is usually most of the total, then the BMS, busbars, casing and cables by weight. Add the assembly line's electricity for welding, testing and formation cycling, divided by kWh of packs produced.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "EV and storage battery pack assemblers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Cells by kWh, with the cell maker's footprint and country.",
+        "Battery management system, wiring harness and busbars.",
+        "Aluminium or steel casing, thermal pads and packing."
+      ]
+    },
+    {
+      "h": "Assembly",
+      "ul": [
+        "Cell sorting and laser or ultrasonic welding.",
+        "End-of-line testing and charge or discharge cycling.",
+        "Dry room or air conditioning, where used."
+      ]
+    },
+    {
+      "h": "Per kWh",
+      "p": [
+        "Report per kWh of pack capacity. Buyers selling into the EU may ask you to follow the EU Battery Regulation's carbon footprint rules."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: pack line per kWh (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "kWh of packs produced: 10,000",
+      "Plant total: 35,500 / 10,000 = 3.550 kg CO2 per kWh",
+      "Add cells, BMS and casing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Carbon footprint of imported lithium-ion cells",
+      "to": "/answers/carbon-footprint-of-imported-lithium-ion-cells"
+    },
+    {
+      "label": "EU battery carbon footprint calculation rules",
+      "to": "/answers/eu-battery-carbon-footprint-calculation-rules"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

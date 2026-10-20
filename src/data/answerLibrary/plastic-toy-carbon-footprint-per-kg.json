@@ -1,0 +1,77 @@
+{
+  "slug": "plastic-toy-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of plastic toys?",
+  "title": "Plastic toy carbon footprint per kg",
+  "short": "Weigh each polymer in the toy, such as ABS, PP or PVC, and multiply by its supplier's per-kg figure. Add moulding, assembly, painting and packing energy, divide plant energy by kg passed, and add batteries or electronics separately.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Toy makers, including Delhi NCR and Mumbai units",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "ABS, PP, PE or PVC by weight per toy, plus runners not reground.",
+        "Paint, printing and stickers.",
+        "Batteries, motors and circuit boards for electronic toys."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Injection or blow moulding machines.",
+        "Assembly, painting and pad printing.",
+        "Window boxes, blister packs and cartons, often heavier than expected."
+      ]
+    },
+    {
+      "h": "Per kg and per piece",
+      "p": [
+        "Report per kg for a range and per piece for a buyer's SKU. Packaging can be a large share for small toys."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: toy factory per kg (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Kg of toys passed: 40,000",
+      "Plant total: 42,600 / 40,000 = 1.065 kg CO2 per kg",
+      "Add polymers, paint and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Wooden toys footprint per kg",
+      "to": "/answers/wooden-toys-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

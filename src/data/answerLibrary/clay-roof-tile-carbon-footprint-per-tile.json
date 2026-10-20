@@ -1,0 +1,82 @@
+{
+  "slug": "clay-roof-tile-carbon-footprint-per-tile",
+  "q": "How do I calculate the carbon footprint of clay roof tiles?",
+  "title": "Clay roof tile carbon footprint",
+  "short": "Divide the kiln fuel for a period, such as coal, wood or gas, by good tiles fired, and convert with its factor. Add clay preparation and press electricity and loading diesel. Firing is usually most of the figure; wood CO2 is reported separately as biogenic.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Clay roof tile makers, including Mangalore pattern tile units",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Clay and any sand or grog, and the diesel to bring them.",
+        "Kiln fuel by type and quantity.",
+        "Straw and pallets for dispatch."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Clay mixing, pugging and extrusion or pressing.",
+        "Drying sheds or dryers.",
+        "Firing in a kiln, and breakage that raises fuel per good tile."
+      ]
+    },
+    {
+      "h": "Per tile",
+      "p": [
+        "Report per tile with its weight, and per square metre of roof covered for buyers comparing roof systems."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: tile works per tile (one month)",
+    "lines": [
+      "Electricity: 8,000 kWh x 0.710 = 5,680 kg CO2",
+      "Kiln coal: 60,000 kg x 2.42 = 145,200 kg CO2",
+      "Good tiles fired: 200,000",
+      "Plant total: 150,880 / 200,000 = 0.754 kg CO2 per tile",
+      "Add clay transport and packing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Ceramic tile footprint per m2",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "AAC block vs red brick footprint",
+      "to": "/answers/aac-block-vs-red-brick-carbon-footprint"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

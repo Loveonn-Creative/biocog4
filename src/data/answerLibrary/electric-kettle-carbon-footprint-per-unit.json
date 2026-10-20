@@ -1,0 +1,77 @@
+{
+  "slug": "electric-kettle-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an electric kettle?",
+  "title": "Electric kettle carbon footprint",
+  "short": "Weigh the stainless steel or plastic body, heating element, base, cord and controls, and multiply each by its supplier's figure. Add pressing, moulding, assembly and testing energy per unit and the carton. Metals and plastics are usually most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Small appliance makers and assemblers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Stainless steel or PP body and lid.",
+        "Concealed heating element and thermostat.",
+        "Power base, cord, plug and connectors."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Deep drawing or moulding of the body.",
+        "Assembly, hi-pot and boil testing.",
+        "Carton, inserts and manual."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Report cradle to gate per kettle. Use-phase electricity is usually larger over its life, so state it separately if asked."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: kettle assembly per unit (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Kettles passed: 40,000",
+      "Plant total: 14,200 / 40,000 = 0.355 kg CO2 per kettle",
+      "Add steel, plastics, element and cord for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Mixer grinder footprint per unit",
+      "to": "/answers/mixer-grinder-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Electric switch footprint per unit",
+      "to": "/answers/electric-switch-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

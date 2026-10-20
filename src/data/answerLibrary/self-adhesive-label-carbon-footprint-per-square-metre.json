@@ -1,0 +1,77 @@
+{
+  "slug": "self-adhesive-label-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of self-adhesive labels?",
+  "title": "Self-adhesive label footprint per m2",
+  "short": "Multiply the label stock used, including matrix waste and liner, by your supplier's per-square-metre or per-kg figure. Add printing ink, press electricity and UV curing, die cutting and rewinding, then divide plant energy by square metres of labels passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Label printers and converters",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Face stock: paper, PP or PE film.",
+        "Adhesive and silicone release liner, which is often thrown away by the user.",
+        "Inks, varnish and foil."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Flexo or digital press with UV or hot air dryers.",
+        "Die cutting and matrix stripping.",
+        "Slitting, rewinding and cores."
+      ]
+    },
+    {
+      "h": "Per square metre",
+      "p": [
+        "Report per square metre of printed labels; buyers can convert to per label from the label size."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: label plant per square metre (one month)",
+    "lines": [
+      "Electricity: 35,000 kWh x 0.710 = 24,850 kg CO2",
+      "Square metres of labels passed: 700,000",
+      "Plant total: 24,850 / 700,000 = 0.0355 kg CO2 per square metre",
+      "Add label stock, liner and ink for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Offset printing footprint per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Printing ink footprint per kg",
+      "to": "/answers/printing-ink-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

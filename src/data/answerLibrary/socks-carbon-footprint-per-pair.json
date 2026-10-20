@@ -1,0 +1,82 @@
+{
+  "slug": "socks-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of socks?",
+  "title": "Socks carbon footprint per pair",
+  "short": "Weigh the yarn in a pair, including knitting waste, and multiply by your spinner's per-kg figure. Add knitting, toe linking, dyeing or washing, boarding with steam, labels and packing, then divide the unit's energy by pairs passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Hosiery and sock makers, including Tiruppur and Ludhiana units",
+  "sections": [
+    {
+      "h": "Yarn",
+      "ul": [
+        "Cotton, polyester, nylon and elastane by weight per pair.",
+        "Ask the spinner for a per-kg yarn figure; blends differ.",
+        "Knitting waste and rejected pairs."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Circular sock knitting machines and toe linking.",
+        "Dyeing or washing, and boarding on heated forms.",
+        "Pairing, labels, header cards and cartons."
+      ]
+    },
+    {
+      "h": "Per pair",
+      "p": [
+        "Report per pair by size and style, since an ankle sock and a knee-length sock carry very different yarn weights."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: sock unit per pair (one month)",
+    "lines": [
+      "Electricity: 24,000 kWh x 0.710 = 17,040 kg CO2",
+      "PNG: 2,000 SCM x 2.05 = 4,100 kg CO2",
+      "Pairs passed: 300,000",
+      "Plant total: 21,140 / 300,000 = 0.0705 kg CO2 per pair",
+      "Add yarn per pair for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Knitted fabric footprint per kg",
+      "to": "/answers/knitted-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Spinning mill footprint per kg of yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

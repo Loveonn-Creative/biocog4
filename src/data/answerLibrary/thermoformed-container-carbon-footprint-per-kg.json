@@ -1,0 +1,77 @@
+{
+  "slug": "thermoformed-container-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of thermoformed food containers?",
+  "title": "Thermoformed container footprint per kg",
+  "short": "Multiply the sheet used per kg of good containers, including skeleton waste, by your polymer's per-kg figure. Add sheet extrusion if done in house, the thermoformer's heaters, trimming and packing, then divide plant electricity by kg passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Thermoformers making food trays, cups and clamshells",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "PP, PET or PS sheet or resin by weight.",
+        "Skeleton waste reground and fed back, which cuts virgin input.",
+        "Lids, labels and sleeves."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Sheet extrusion line, if you make your own sheet.",
+        "Thermoforming heaters and vacuum or pressure forming.",
+        "Trimming, stacking and counting."
+      ]
+    },
+    {
+      "h": "Per kg and per piece",
+      "p": [
+        "Give per kg and per piece with piece weight, since buyers compare by piece."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: thermoforming plant per kg (one month)",
+    "lines": [
+      "Electricity: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "Kg of containers passed: 100,000",
+      "Plant total: 63,900 / 100,000 = 0.639 kg CO2 per kg",
+      "Add polymer sheet or resin for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PET preform and bottle footprint",
+      "to": "/answers/pet-preform-bottle-carbon-footprint"
+    },
+    {
+      "label": "Paper cup footprint per cup",
+      "to": "/answers/paper-cup-carbon-footprint-per-cup"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

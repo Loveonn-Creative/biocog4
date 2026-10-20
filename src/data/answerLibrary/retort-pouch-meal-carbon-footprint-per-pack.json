@@ -1,0 +1,82 @@
+{
+  "slug": "retort-pouch-meal-carbon-footprint-per-pack",
+  "q": "How do I calculate the carbon footprint of ready-to-eat retort pouch meals?",
+  "title": "Retort pouch meal footprint per pack",
+  "short": "Weigh the ingredients per pack, such as rice, dal, vegetables, oil and spices, and use supplier figures. Add cooking fuel, retort steam, filling and sealing electricity and the multilayer pouch and carton, then divide plant energy by packs passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ready-to-eat food makers and exporters",
+  "sections": [
+    {
+      "h": "Ingredients and pack",
+      "ul": [
+        "Cooked ingredients per pack from the recipe and yield.",
+        "Multilayer retort pouch, often with aluminium foil.",
+        "Carton sleeve and shipper."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cooking kettles on steam or gas.",
+        "Filling, sealing and retort sterilisation with steam.",
+        "Cooling water, chillers and incubation testing."
+      ]
+    },
+    {
+      "h": "Per pack",
+      "p": [
+        "Report per pack with its net weight. Ambient storage is a plus point for these packs, since no cold chain is needed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: retort plant per pack (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "PNG: 15,000 SCM x 2.05 = 30,750 kg CO2",
+      "Packs passed: 300,000",
+      "Plant total: 59,150 / 300,000 = 0.197 kg CO2 per pack",
+      "Add ingredients, pouches and cartons for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Multilayer flexible pouch per kg",
+      "to": "/answers/multilayer-flexible-pouch-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

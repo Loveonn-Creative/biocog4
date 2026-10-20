@@ -1,0 +1,77 @@
+{
+  "slug": "enamelled-copper-wire-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of enamelled copper winding wire?",
+  "title": "Enamelled copper wire footprint per kg",
+  "short": "Multiply the copper rod by your supplier's per-kg figure, which is usually most of the total. Add drawing and annealing electricity, enamel varnish, the curing oven's fuel or power, and spools, then divide plant energy by kg of wire passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Winding wire makers supplying motor, fan and transformer plants",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Copper rod by weight, including drawing scrap sold back.",
+        "Polyester, polyamide-imide or other enamel varnish.",
+        "Plastic spools and cartons."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Wire drawing machines and in-line annealing.",
+        "Enamelling ovens that cure each coat, electric or gas fired.",
+        "Solvent fume incineration, if fitted."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg by gauge and insulation class, since fine gauges need more drawing passes per kg."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: winding wire plant per kg (one month)",
+    "lines": [
+      "Electricity: 150,000 kWh x 0.710 = 106,500 kg CO2",
+      "Kg of wire passed: 200,000",
+      "Plant total: 106,500 / 200,000 = 0.532 kg CO2 per kg",
+      "Add copper rod and enamel for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Copper cable footprint per km",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    },
+    {
+      "label": "Is copper covered by CBAM",
+      "to": "/answers/is-copper-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
