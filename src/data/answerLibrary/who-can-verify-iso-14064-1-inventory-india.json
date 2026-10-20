@@ -1,0 +1,76 @@
+{
+  "slug": "who-can-verify-iso-14064-1-inventory-india",
+  "q": "Who can verify an ISO 14064-1 GHG inventory in India?",
+  "title": "Who can verify an ISO 14064-1 inventory?",
+  "short": "Pick an independent verification body accredited to ISO 14065 for GHG verification by a recognised accreditation body. It checks your inventory to ISO 14064-3 and must not have helped prepare it. In India, confirm the body's current accreditation and scope on NABCB's website or with its foreign accreditor.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs seeking a verified inventory for buyers or lenders",
+  "sections": [
+    {
+      "h": "What accreditation to look for",
+      "p": [
+        "ISO 14065:2020 sets the requirements for bodies that validate and verify environmental information, including GHG statements. An accreditation body checks the verifier against it and grants a scope. The verification work itself follows ISO 14064-3:2019.",
+        "Ask for the accreditation certificate and its scope. It should name GHG verification at organisation level, ISO 14064-1, and the sector groups your sites fall in. A certificate that covers only ISO 14001 or ISO 9001 certification is a different accreditation."
+      ]
+    },
+    {
+      "h": "Where to check the accreditation",
+      "ul": [
+        "NABCB, under the Quality Council of India, is India's accreditation board for certification and inspection bodies. Search its website for the verifier and read the scope listed against its name before you sign.",
+        "Many verifiers working in India hold accreditation from a foreign accreditation body instead. Ask which body, and check that body's public directory for the verifier and a GHG verification scope.",
+        "If a buyer or lender names an accreditation body or a list of verifiers, that list decides. Ask them before you collect quotes."
+      ]
+    },
+    {
+      "h": "Who cannot sign the verification",
+      "ul": [
+        "The consultant or team that built your inventory, or anyone from the same firm.",
+        "An ISO 14001 auditor acting outside a GHG verification scope.",
+        "Software. A tool that flags data as checked does not issue an ISO 14064-3 verification opinion.",
+        "A CCTS Accredited Carbon Verification Agency is accredited by BEE for compliance reports under India's carbon market. That is a separate approval; for an ISO 14064-1 statement, check its ISO 14065 scope too."
+      ]
+    },
+    {
+      "h": "Questions to ask before you sign",
+      "ol": [
+        "Which accreditation body, which scope, and is it current?",
+        "Will the opinion be limited or reasonable assurance, and against which materiality threshold?",
+        "Which sites will be visited and how many invoices will be sampled?",
+        "Who on the team has verified inventories in your sector?",
+        "Has the firm done any other work for you in the last few years?"
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill and invoice behind a figure with a SHA-256 fingerprint and the calculation line, which gives your verifier documents to sample. Its Verified status means its rule checks passed.",
+  "links": [
+    {
+      "label": "What a VVB is for carbon projects",
+      "to": "/answers/what-is-a-vvb-and-how-to-choose-one"
+    },
+    {
+      "label": "GHG inventory verification cost",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    },
+    {
+      "label": "CCTS accredited verification agency",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    },
+    {
+      "label": "Documents needed for verification",
+      "to": "/climate-intelligence/documents-needed-carbon-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14065:2020, Requirements for bodies validating and verifying environmental information (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "NABCB's site could not be read on 2026-10-18; confirm whether it currently accredits GHG validation and verification bodies, and under which standard, at nabcb.qci.org.in before adding specifics."
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "iso-14064-1-biogenic-co2-reporting",
+  "q": "How does ISO 14064-1 want biogenic CO2 and removals reported?",
+  "title": "Biogenic CO2 and removals in ISO 14064-1",
+  "short": "ISO 14064-1 asks you to quantify biogenic CO2 emissions and removals and show them separately from your other emissions, in tonnes CO2e. Methane and nitrous oxide from burning biomass stay in your direct emissions. Removals, such as tree growth on your land, go on their own line and are not netted off the total.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs burning biomass or with on-site trees",
+  "sections": [
+    {
+      "h": "The lines your report needs",
+      "ul": [
+        "Direct emissions by gas, including CH4 and N2O from biomass combustion, converted with a named GWP set.",
+        "Biogenic CO2 emissions from combustion, as a separate figure.",
+        "Direct removals, as a separate figure.",
+        "A note on the method, fuel quantities, calorific values and factors behind each line."
+      ]
+    },
+    {
+      "h": "What counts as biogenic",
+      "p": [
+        "Carbon from plants or animals that grew recently: rice husk, bagasse, wood chips, briquettes, biogas and the biogenic share of mixed waste. Fossil carbon in the same fuel, such as plastic in waste or diesel used to start a boiler, is reported as ordinary direct CO2.",
+        "If you buy compressed biogas or biomass pellets, ask the supplier for the composition. A pellet with fossil binder is not wholly biogenic."
+      ]
+    },
+    {
+      "h": "Removals from trees on your site",
+      "ul": [
+        "Quantify only what you can measure: count, species and growth of trees, or a carbon stock survey repeated over time.",
+        "Use a documented method, such as the IPCC stock change approach, and label the result as an estimate.",
+        "Report the removal as its own figure. Do not subtract it from emissions to show a lower total.",
+        "If the trees are cut or burnt later, the carbon goes back to the atmosphere, so say how long you expect it to stay stored."
+      ]
+    },
+    {
+      "h": "Check the clause in your copy",
+      "p": [
+        "The 2018 edition sets these reporting requirements in its main text and gives guidance on biogenic carbon in an annex. Buy or borrow the standard and cite its clause numbers in your report, because verifiers check against the text, not a summary."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: 500 tonnes of rice husk in a year",
+    "lines": [
+      "Energy: 500 t x 11.6 TJ per thousand tonnes (IPCC default NCV, other primary solid biomass) = 5.8 TJ",
+      "CH4: 5.8 x 30 kg per TJ = 174 kg; x 28 (AR5 GWP) = 4,872 kg CO2e",
+      "N2O: 5.8 x 4 kg per TJ = 23.2 kg; x 265 (AR5 GWP) = 6,148 kg CO2e",
+      "Direct emissions line: 4,872 + 6,148 = 11,020 kg, about 11.0 t CO2e",
+      "Biogenic CO2 line: 5.8 TJ x 100,000 kg per TJ = 580,000 kg, 580 t, shown separately"
+    ],
+    "note": "Factors are IPCC 2006 Volume 2 defaults for industrial boilers. A lab test of your husk's calorific value replaces the default NCV."
+  },
+  "senseible": "Senseible reads biomass purchase invoices, keeps the fuel tonnes with the source file, and counts their CO2 as zero in your fossil Scope 1 total. You report the biogenic CO2, CH4 and N2O lines above from those same tonnes and a calorific value.",
+  "links": [
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "What goes in an ISO 14064-1 report",
+      "to": "/answers/what-goes-in-an-iso-14064-1-ghg-report"
+    },
+    {
+      "label": "Biogenic carbon accounting",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018, requirements on biogenic CO2 emissions and removals (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2 (stationary combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Clause and annex numbers for biogenic CO2 in ISO 14064-1:2018 were not quoted; check them in the standard text."
+}

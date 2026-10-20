@@ -1,0 +1,81 @@
+{
+  "slug": "estimate-emissions-for-stores-without-bills",
+  "q": "Some of our stores have no electricity bills. How do we estimate their emissions?",
+  "title": "Estimating stores with no electricity bills",
+  "short": "Work out kWh per square foot from stores of the same format and climate that do have bills, multiply by the floor area of each store without bills, then apply the grid factor. Label those stores as estimated, report what share of the total they make up, and replace estimates with bills as they arrive.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Retail, QSR and pharmacy chains with many outlets",
+  "sections": [
+    {
+      "h": "Build the benchmark from your own stores",
+      "ol": [
+        "Group stores with full bills by format, such as high street, mall, kiosk or dark store, and by climate, since air conditioning drives use.",
+        "For each group, add up a year of kWh and divide by the total carpet area. That is kWh per square foot per year.",
+        "Drop clear outliers, such as a store with a broken meter or one that was shut for months, before you average.",
+        "Apply the group's figure to each store without bills, using its own floor area."
+      ]
+    },
+    {
+      "h": "Other proxies, and when they are weaker",
+      "ul": [
+        "Operating hours: useful to adjust the benchmark for 24 hour stores.",
+        "Sanctioned load: tells you the size of the connection, not the use, so treat it as a ceiling check only.",
+        "Rupees paid divided by an assumed tariff: weakest, because fixed charges, tax and slabs distort it. Use it only if nothing else exists, and say so.",
+        "A published sector benchmark: use only with its source named, and expect it to fit your stores less well than your own data."
+      ]
+    },
+    {
+      "h": "How to disclose it",
+      "p": [
+        "State how many stores were estimated, the method, the benchmark value per format and the share of total Scope 2 that comes from estimates. Under the GHG Protocol, estimates are acceptable when they are transparent and applied consistently; a large silent estimate is what draws questions. Set a target to bring estimated stores below a stated share next year."
+      ]
+    },
+    {
+      "h": "Getting the missing bills",
+      "p": [
+        "Stores without bills are usually on landlord sub-meters, shared connections or franchise-run. Ask the landlord for monthly sub-meter kWh, add a kWh disclosure clause at lease renewal, and make the store team upload the bill or landlord invoice with the rent paperwork."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three mall stores without bills",
+    "lines": [
+      "Eight mall stores with bills: 1,120,000 kWh a year over 16,000 sq ft = 70 kWh per sq ft",
+      "Three mall stores without bills: 5,400 sq ft x 70 = 378,000 kWh, estimated",
+      "378,000 x 0.710 kg CO2 per kWh = 268,380 kg CO2, about 268 tonnes",
+      "Report these three stores as estimated, with the share of total Scope 2 they represent"
+    ],
+    "note": "Store figures are illustrative. The grid factor is from the CEA CO2 Baseline Database, version 21.0."
+  },
+  "senseible": "Senseible reads the bills you do have for billing period, tariff category, sanctioned load and units, and applies 0.710 kg CO2 per kWh, giving you the measured stores to build the benchmark from. Each bill is fingerprinted, and kWh you enter for a store without a bill is marked Entered by you.",
+  "links": [
+    {
+      "label": "Missing electricity bills for some months",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Store electricity data from a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "Footprint from electricity bills",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7 Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

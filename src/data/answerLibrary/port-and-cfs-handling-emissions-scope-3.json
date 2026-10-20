@@ -1,0 +1,98 @@
+{
+  "slug": "port-and-cfs-handling-emissions-scope-3",
+  "q": "Do port terminal and container freight station handling emissions belong in my Scope 3?",
+  "title": "Port and CFS handling in Scope 3",
+  "short": "Yes. Handling at a container freight station, ICD or port terminal is part of the transport chain, so it goes in Scope 3 Category 4 when you pay for it and Category 9 when your buyer pays. Use the terminal's own figure if it gives one, otherwise a per tonne handled default, labelled as such.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and importers using CFS and ICD services",
+  "sections": [
+    {
+      "h": "Which hub activities count",
+      "p": [
+        "ISO 14083 treats the places where cargo changes vehicle as hub operations, with their own emissions from the fuel and electricity used there. For an Indian export box that usually means:"
+      ],
+      "ul": [
+        "Stuffing or destuffing at the CFS, with forklifts and lighting.",
+        "Yard moves by reach stackers and cranes at the CFS, ICD and port terminal.",
+        "Reefer plug-in power while a refrigerated box waits for its vessel.",
+        "Storage in a bonded or transit warehouse before shipment.",
+        "Loading the box on rail at the ICD and on the ship at the terminal."
+      ]
+    },
+    {
+      "h": "Category 4 or 9 follows who pays the handling charge",
+      "ul": [
+        "CFS charges and origin terminal handling you pay under FOB, CFR or CIF: your Category 4.",
+        "Destination terminal handling your buyer pays under those terms: your Category 9, if you report it at all, and the buyer's Category 4.",
+        "Under DAP, DPU or DDP, destination handling that your freight contract pays for is also your Category 4.",
+        "An ICD or warehouse you run yourself is not Scope 3. Its diesel is your Scope 1 and its electricity your Scope 2."
+      ],
+      "p": [
+        "CFS and terminal invoices usually carry SAC 9967, the code for supporting transport services such as cargo handling, which helps you find them in the purchase ledger."
+      ]
+    },
+    {
+      "h": "How to put a number on it",
+      "ol": [
+        "Ask the CFS or terminal for its emissions per tonne or per TEU handled, worked out under ISO 14083 or the GLEC Framework.",
+        "If it has none, use a published default intensity for that type of hub, per tonne or per TEU handled, and label it a default.",
+        "If you hold only the rupee charge, use a spend-based estimate and label it spend-based.",
+        "Multiply the intensity by the tonnes you moved through the hub, once for each hub the box passed."
+      ],
+      "p": [
+        "A hub's intensity is its yearly emissions from fuel and electricity divided by the tonnes or TEU it handled in that year."
+      ]
+    },
+    {
+      "h": "Do not count the hub twice",
+      "p": [
+        "If your freight forwarder gives a door to door figure, check its scope note. Many ISO 14083 reports already include hub operations, and adding your own estimate on top doubles them. Equally, the CFS's electricity bill is never your Scope 2, even if the charge for reefer power is passed through on your invoice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a CFS intensity from its own records",
+    "lines": [
+      "CFS yearly electricity: 1,200,000 kWh x 0.710 kg CO2 per kWh = 852,000 kg CO2",
+      "CFS yearly diesel for reach stackers: 150,000 L x 2.68 kg CO2 per L = 402,000 kg CO2",
+      "Total 1,254,000 kg CO2 / 300,000 tonnes handled = 4.18 kg CO2 per tonne",
+      "Your box: 18.4 tonnes x 4.18 = about 77 kg CO2 for the CFS stop"
+    ],
+    "note": "All CFS figures here are invented for illustration, not a benchmark. The factors are the CEA grid factor (version 21.0) and the IPCC 2006 diesel default, both CO2 only."
+  },
+  "senseible": "Senseible keeps CFS, terminal and freight invoices in the Scope 3 supplier evidence trail, with a SHA-256 fingerprint on each file so the same invoice is not counted twice. Freight records that carry weight and distance are calculated; a handling charge with only an amount gets a spend-based estimate, labelled as spend-based.",
+  "links": [
+    {
+      "label": "Incoterms and Category 4 or 9",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Container trips across rail, road and sea",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    },
+    {
+      "label": "Checking a forwarder's emissions report",
+      "to": "/answers/freight-forwarder-emissions-report-scope-3"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

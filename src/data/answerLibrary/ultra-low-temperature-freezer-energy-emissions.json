@@ -1,0 +1,76 @@
+{
+  "slug": "ultra-low-temperature-freezer-energy-emissions",
+  "q": "How much electricity and CO2 does a -80 C lab freezer use, and does raising it to -70 C help?",
+  "title": "ULT freezer energy and CO2",
+  "short": "Measure it: plug a meter on the freezer for a week, multiply kWh per day by 365 and by 0.710 kg CO2 per kWh. Raising the setpoint from -80 C to -70 C usually cuts use, but by an amount that depends on the model, so measure before and after rather than trusting a headline percentage.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Pharma R&D, CRO, biobank and hospital lab managers",
+  "sections": [
+    {
+      "h": "Getting a kWh figure you can defend",
+      "ol": [
+        "Best: a plug-in energy meter or a sub-meter on the freezer's circuit for at least seven days of normal use, including door openings.",
+        "Next best: the rated kWh per day on the model's datasheet or energy label, recorded as rated, not measured.",
+        "Avoid nameplate power in watts x 24 hours. The compressor cycles, so that overstates use."
+      ]
+    },
+    {
+      "h": "Testing the -70 C setpoint",
+      "p": [
+        "Record a week at -80 C, change the setpoint, let it settle for a day, then record a week at -70 C with similar door use. The difference in kWh per day is your saving for that unit. Before changing anything, get sign-off from the sample owner or QA. Validated storage conditions for regulated or GMP samples must not change on an energy argument alone."
+      ]
+    },
+    {
+      "h": "Costs that do not show on the freezer meter",
+      "ul": [
+        "Heat: every kWh the freezer draws ends up as heat in the room, which the AC then has to remove. Freezer rooms often need more cooling than the freezers suggest.",
+        "Refrigerant: check the gas on the nameplate. A leak or a recharge is Scope 1 in kg CO2e at that gas's GWP; some newer units use hydrocarbon refrigerants with very low GWP.",
+        "Age and upkeep: iced-up door seals and dusty condenser filters raise use. Defrosting and cleaning are cheap first steps."
+      ]
+    },
+    {
+      "h": "How it fits your inventory",
+      "p": [
+        "Freezer kWh are already inside your electricity bill, so do not add them on top of Scope 2. Use the freezer figure to see what share of the bill the freezers take and to rank savings, such as consolidating half-empty units."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one -80 C freezer",
+    "lines": [
+      "Measured at -80 C: 11.0 kWh per day; at -70 C: 9.2 kWh per day (example readings)",
+      "Annual use at -80 C: 11.0 x 365 = 4,015 kWh, so 4,015 x 0.710 = 2,851 kg CO2",
+      "Saving: (11.0 minus 9.2) x 365 = 657 kWh a year",
+      "CO2 saved: 657 x 0.710 = 466 kg CO2 a year, before any AC saving"
+    ],
+    "note": "Readings are illustrative. Use your own meter data."
+  },
+  "senseible": "Senseible reads the lab's electricity bills for total location-based Scope 2 at the CEA factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0. Meter feeds for individual equipment can be set up with the Senseible team for each customer.",
+  "links": [
+    {
+      "label": "Refrigerant top-up to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Lab footprint per test",
+      "to": "/answers/diagnostic-lab-carbon-footprint-per-test"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Setpoint savings vary by model and load; no fixed percentage is given on purpose.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "empty-container-repositioning-emissions",
+  "q": "Should I add empty container return trips to my freight emissions?",
+  "title": "Empty container trips in freight emissions",
+  "short": "Only if you paid for the empty move and your factor does not already cover it. Per tonne-km intensities built under ISO 14083 and the GLEC Framework average a vehicle's empty running into the figure, so adding it again double counts. An empty box trucked to your factory on your hire is best counted through the job's fuel.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Exporters calculating shipment emissions",
+  "sections": [
+    {
+      "h": "Empty running is already inside a per tonne-km intensity",
+      "p": [
+        "ISO 14083 builds the intensity for each type of transport operation from all the fuel the vehicles used, empty trips included, divided by the tonne-km of cargo they carried. Empty kilometres therefore raise the intensity per loaded tonne-km instead of appearing as a separate line.",
+        "So when you multiply your cargo weight and laden distance by a carrier's ISO 14083 intensity or a GLEC default, the truck's return trip after delivery is already in the result."
+      ]
+    },
+    {
+      "h": "The usual Indian export move",
+      "p": [
+        "A transporter brings an empty box from the CFS or empty yard to your factory, you stuff it, and the same truck takes it laden to the ICD or port. You order and pay for both legs, often as one round-trip price, so the empty leg is part of the transport you bought."
+      ],
+      "ul": [
+        "Simplest and most defensible: take the transporter's diesel for the whole job and count all of it, with no tonne-km calculation.",
+        "If you only have weight and distance: calculate the laden leg with a per tonne-km factor, and write down that the empty positioning leg is not separately counted.",
+        "Never count the litres for the whole job and the laden tonne-km as well."
+      ]
+    },
+    {
+      "h": "Empty boxes on the sea leg",
+      "p": [
+        "Shipping lines move empty containers back towards export regions because trade is unbalanced. You do not order those moves. Whether that fuel sits inside a line's per TEU or per tonne intensity depends on how the line or the default was calculated, so ask for the method note and record what it says. Add nothing yourself on top of a carrier figure that already covers repositioning."
+      ]
+    },
+    {
+      "h": "Check the basis before you add anything",
+      "p": [
+        "A separate empty leg belongs in your figure only when the factor or fuel figure you hold leaves it out, for example an intensity a carrier calculated from laden trips alone, or a fuel figure for the laden leg only. Note the basis next to the number so a buyer can see each empty kilometre was counted once."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one dedicated container truck",
+    "lines": [
+      "Empty box brought 35 km from the CFS to the factory, then 55 km laden to the ICD",
+      "Transporter reports 38 litres of diesel for the whole job",
+      "38 x 2.68 kg CO2 per litre = 101.84 kg CO2, about 102 kg, empty leg included",
+      "Weight and distance only: 14 tonnes x 55 km = 770 tonne-km x a road factor per tonne-km, with a note that the 35 km empty positioning leg is not separately counted"
+    ],
+    "note": "Trip figures are illustrative. 2.68 kg CO2 per litre is the IPCC 2006 default for diesel and covers combustion CO2 only. Use one route or the other for a trip, never both."
+  },
+  "senseible": "Senseible's logistics calculator uses default intensities per tonne-km by mode and Indian truck class, applies a carrier's factor as given and adds no separate empty-return uplift. Fuel invoices with litres are calculated at 2.68 kg CO2 per litre of diesel, and freight records go into the supplier evidence trail; spend-only lines take a labelled spend-based estimate.",
+  "links": [
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Actual or shortest distance",
+      "to": "/answers/actual-vs-shortest-distance-freight-emissions"
+    },
+    {
+      "label": "Container trips across rail, road and sea",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "How ISO 14083 and GLEC v3 treat carrier repositioning of empty containers was not read from the standard's text; the page tells readers to check the carrier's method note (checked 2026-10-20)."
+}

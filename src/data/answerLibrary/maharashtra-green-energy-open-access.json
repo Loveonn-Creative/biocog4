@@ -1,0 +1,70 @@
+{
+  "slug": "maharashtra-green-energy-open-access",
+  "q": "How does green energy open access work in Maharashtra, and how is it different from MSEDCL's green tariff?",
+  "title": "Maharashtra open access or green tariff",
+  "short": "Under green energy open access you contract with a generator and pay its tariff plus MERC's wheeling, surcharge and banking charges. Under MSEDCL's green tariff you stay with the discom and pay a premium per kWh on your normal tariff. Open access can cost less per unit; the green tariff needs no PPA.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Maharashtra manufacturers in Pune, Aurangabad, Nashik and MIDC estates",
+  "sections": [
+    {
+      "h": "How the two differ",
+      "ul": [
+        "Who sells: open access, a developer or trader under a PPA; green tariff, MSEDCL itself.",
+        "Who can use it: open access, consumers with 100 kW or more, or captive users of any size; green tariff, consumers who apply on MSEDCL's portal.",
+        "What you pay: open access, the generator's tariff plus transmission, wheeling, losses, surcharges and banking charges set by MERC; green tariff, your normal tariff plus the premium in the MERC order in force.",
+        "Commitment: open access, the PPA term, often several years; green tariff, the share of consumption you choose for the minimum period MSEDCL sets.",
+        "Paperwork: open access needs scheduling, metering and monthly energy accounts; the green tariff shows on your normal bill."
+      ]
+    },
+    {
+      "h": "How to choose",
+      "p": [
+        "Work out the landed open access cost per delivered unit from developer quotes and the MERC charges, and compare its saving or extra cost with the green tariff premium for the same units. The green tariff suits units that want a quick start, a short commitment and no contract with a generator. Open access suits steady, large loads that can sign a long PPA."
+      ]
+    },
+    {
+      "h": "What each gives you for Scope 2",
+      "p": [
+        "Neither changes location-based Scope 2. For market-based Scope 2, open access units count at zero with the PPA attribute clause and the monthly energy account; green tariff units count at zero with MSEDCL's certificates for the units covered. Some buyers prefer power from a named generator, so ask your main customer which they accept."
+      ]
+    },
+    {
+      "h": "Rules to read before you commit",
+      "p": [
+        "MERC's open access regulations as amended for green energy, the MSEDCL circulars that put them into effect, and the current MERC tariff order for charges and the green tariff premium. Check the steps of cover and the minimum period on MSEDCL's green power portal. Consumers in Mumbai on Tata Power, Adani Electricity or BEST supply should read the orders for their own licensee."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your MSEDCL bill for billing period, tariff category, sanctioned load and units and reports location-based Scope 2 at 0.710 kg CO2 per kWh (CEA, version 21.0). For market-based Scope 2 it uses the instrument you record: the PPA and energy account for open access units, or MSEDCL's green tariff certificate.",
+  "links": [
+    {
+      "label": "MSEDCL green power tariff: how to apply",
+      "to": "/answers/msedcl-green-power-tariff-how-to-apply"
+    },
+    {
+      "label": "Green open access charges in India",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Open access power on your bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, and Amendment Rules, 2023, Ministry of Power (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "MERC sets open access charges and the MSEDCL green tariff premium in tariff and review orders that have changed several times since 2025; the MERC regulation and MSEDCL circular numbers were not confirmed for this check, so read the order in force on merc.gov.in and mahadiscom.in (checked 2026-10-20)."
+}

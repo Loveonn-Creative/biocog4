@@ -1,0 +1,84 @@
+{
+  "slug": "ai-api-and-gpu-usage-emissions",
+  "q": "How do I estimate the emissions of our AI model training and LLM API usage?",
+  "title": "Emissions of AI training and LLM APIs",
+  "short": "For GPU training, multiply GPU-hours by each board's power draw, then by the data centre's PUE, then by the grid factor of the region. For third-party LLM APIs, most providers publish no per-token factor, so use the provider's figure if one exists, otherwise a spend-based estimate labelled as such.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "AI and SaaS startups",
+  "sections": [
+    {
+      "h": "Which scope it falls in",
+      "ul": [
+        "GPUs in your own office or server room, on your electricity bill: Scope 2.",
+        "Rented cloud GPUs and model APIs: Scope 3 Category 1, purchased services.",
+        "GPU servers you buy: their manufacturing emissions sit in Scope 3 Category 2, capital goods."
+      ]
+    },
+    {
+      "h": "Training runs: the energy method",
+      "ol": [
+        "Take GPU-hours from the job logs or cloud bill.",
+        "Multiply by power per GPU in kW. The rated board power is an upper bound; measured draw from monitoring tools is better.",
+        "Add the rest of the server (CPU, memory, networking) if you can measure it, or state that you left it out.",
+        "Multiply by the facility PUE, from the provider or a stated assumption.",
+        "Multiply by the grid factor for the hosting region: 0.710 kg CO2 per kWh for India-hosted compute (CEA, version 21.0)."
+      ]
+    },
+    {
+      "h": "API usage when the provider publishes nothing",
+      "p": [
+        "Most model providers do not publish emissions per token or per request, and the figures that do appear use different boundaries. Ask your provider for your account's figure first. If none exists, take the pre-tax spend from the invoices and apply a spend-based factor for computer or data processing services, converted to the factor's currency and year. Label it spend-based with wide uncertainty, and replace it when the provider gives data."
+      ]
+    },
+    {
+      "h": "What to disclose",
+      "ul": [
+        "GPU-hours, power assumption, PUE and grid factor, each with its source.",
+        "Whether the figure is location-based or market-based.",
+        "Which API costs are spend-based estimates."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fine-tuning run in an Indian region",
+    "lines": [
+      "8 GPUs x 100 hours = 800 GPU-hours",
+      "800 x 0.7 kW (assumed board power) = 560 kWh",
+      "560 x 1.5 (assumed PUE) = 840 kWh",
+      "840 x 0.710 kg CO2 per kWh = 596.4 kg CO2, about 0.6 t"
+    ],
+    "note": "Board power and PUE are illustrative assumptions; replace them with measured figures."
+  },
+  "senseible": "Senseible reads your cloud and API invoices into a Scope 3 evidence trail and, where only spend is available, gives a spend-based estimate labelled with wider uncertainty. Its cloud and data centre calculator turns compute usage into kWh and emissions by hosting region.",
+  "links": [
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Cloud footprint from AWS, Azure and Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO/IEC 21031:2024, Software Carbon Intensity (SCI) specification (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "AI providers' emissions disclosures are changing fast; check whether your provider now publishes account or per-request figures.",
+  "reviewed": "2026-10-18"
+}

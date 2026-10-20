@@ -1,0 +1,77 @@
+{
+  "slug": "fume-hood-energy-use-lab-emissions",
+  "q": "How do I estimate the energy and emissions of a laboratory fume hood?",
+  "title": "Fume hood energy and emissions",
+  "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2 per kWh. In a hot, humid climate, cooling the make-up air is usually the biggest part.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pharma QC, CRO and university lab facility teams",
+  "sections": [
+    {
+      "h": "Step 1: airflow",
+      "p": [
+        "Airflow (m3 per second) = open sash area (m2) x face velocity (m per second). Take the sash width, working height and face velocity from the hood's test report. ANSI/ASHRAE 110 describes how hoods are tested for containment; the design face velocity is set by your safety team or the HVAC design, not by that standard."
+      ]
+    },
+    {
+      "h": "Step 2: conditioning the replacement air",
+      "p": [
+        "All exhausted air is replaced by outdoor air that must be cooled and dried. Thermal load (kW) = airflow x 1.2 kg per m3 x enthalpy drop (kJ per kg). Divide by the chiller plant's COP to get electrical kW. Use an annual average enthalpy drop for your city from the HVAC designer, not the peak design day."
+      ]
+    },
+    {
+      "h": "Step 3: fans and hours",
+      "p": [
+        "Fan power (kW) = airflow x total pressure (Pa) / fan efficiency / 1,000, for both exhaust and supply fans. Multiply the total electrical kW by hours of operation. Many hoods run 24 hours a day; check the BMS."
+      ]
+    },
+    {
+      "h": "What changes the answer most",
+      "ul": [
+        "Constant volume hoods exhaust the same air with the sash up or down, so closing the sash saves little.",
+        "Variable air volume hoods cut airflow as the sash closes; on these, a shut-the-sash habit roughly scales energy with the opening.",
+        "Night setback, where safety rules allow it, cuts hours.",
+        "Hoods kept for storage of chemicals can often move to ventilated cabinets."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one VAV hood in a humid city",
+    "lines": [
+      "Airflow: 1.5 m wide x 0.5 m open = 0.75 m2 x 0.5 m/s = 0.375 m3/s",
+      "Air mass: 0.375 x 1.2 = 0.45 kg/s",
+      "Cooling: 0.45 x 20 kJ/kg (assumed annual average) = 9 kW thermal; / COP 4 = 2.25 kW electric",
+      "Fans: 0.375 x 1,000 Pa (exhaust and supply combined) / 0.6 efficiency / 1,000 = 0.625 kW",
+      "Total: 2.875 kW x 8,760 hours = 25,185 kWh a year",
+      "Emissions: 25,185 x 0.710 = 17,881 kg CO2, about 17.9 tonnes a year"
+    ],
+    "note": "Face velocity, enthalpy drop, COP, pressure, fan efficiency and 24 hour running are assumptions; take real values from your HVAC design and BMS. Hood energy is already inside your electricity bill, so do not add it to Scope 2."
+  },
+  "senseible": "Senseible reports the building's electricity and DG emissions from your bills, at the CEA factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, and keeps each bill as evidence for the totals your hood estimates sit within.",
+  "links": [
+    {
+      "label": "ULT freezer energy and CO2",
+      "to": "/answers/ultra-low-temperature-freezer-energy-emissions"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Energy audit for MSMEs",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Comparisons such as one hood equals a number of homes are based on US data and are left out on purpose.",
+  "reviewed": "2026-10-18"
+}

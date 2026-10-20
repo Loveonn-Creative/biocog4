@@ -1,0 +1,76 @@
+{
+  "slug": "third-party-cold-storage-rent-which-scope",
+  "q": "We pay a cold store per tonne to keep our produce. Is that Scope 3 Category 4 or Category 8?",
+  "title": "Cold store rent: Category 4 or 8?",
+  "short": "Category 4. Paying a cold store per tonne or per bag for space it runs is a storage service you buy, which the GHG Protocol puts in upstream transportation and distribution. Category 8 applies only when you lease a specific chamber or building and use it as your own.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "FPOs, traders and food exporters using third-party cold stores",
+  "sections": [
+    {
+      "h": "The decision rule",
+      "ul": [
+        "Per tonne, per bag or per pallet, the operator runs the plant: Scope 3 Category 4.",
+        "You lease a whole chamber or building and run it: follow your consolidation approach. Under operational control it is your Scope 1 and 2; under financial control or equity share with an operating lease, Category 8.",
+        "Storage after sale that your buyer pays for: Category 9, downstream transportation and distribution, if it is relevant to your inventory."
+      ]
+    },
+    {
+      "h": "Why storage sits in Category 4",
+      "p": [
+        "The Scope 3 Standard defines Category 4 to include third-party distribution services you pay for, covering storage in warehouses and distribution centres as well as transport. It applies to inbound goods and to your own products before sale, as long as you pay. Category 8 is about assets you have a right to use, not services."
+      ]
+    },
+    {
+      "h": "Getting the data from the operator",
+      "ol": [
+        "Ask for the site's annual kWh from discom bills, DG diesel litres and refrigerant top-ups.",
+        "Ask for total tonne-months stored, or tonnes handled if they charge per load.",
+        "Your share = your tonne-months / total tonne-months x the site total.",
+        "If they share nothing, use the storage charges for a spend-based estimate, labelled as spend-based."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Note the operator, the allocation key, the source of each figure and the grid factor. Keep the storage invoices as proof of tonnes and months. Replace a spend-based figure when the operator's data arrives and say so."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: potatoes in a third-party cold store",
+    "lines": [
+      "Site electricity: 1,200,000 kWh a year; total stored: 60,000 tonne-months",
+      "Intensity: 1,200,000 / 60,000 = 20 kWh per tonne-month",
+      "Your stock: 500 t for 6 months = 3,000 tonne-months",
+      "Your share: 3,000 x 20 = 60,000 kWh x 0.710 = 42,600 kg CO2, Scope 3 Category 4"
+    ],
+    "note": "Illustrative figures. Add your share of DG diesel and refrigerant if the operator provides them."
+  },
+  "senseible": "Senseible reads purchase invoices; where only the storage charge is available it gives a spend-based estimate labelled with wider uncertainty, and if the operator shares its electricity bills it applies 0.710 kg CO2 per kWh to them.",
+  "links": [
+    {
+      "label": "Rented warehouse electricity: Scope 2 or 3",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    },
+    {
+      "label": "Cold storage emissions per tonne",
+      "to": "/answers/cold-storage-emissions-per-tonne"
+    },
+    {
+      "label": "Allocating 3PL warehouse emissions",
+      "to": "/answers/warehouse-emissions-allocation-3pl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 4 and Category 8",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 3 and Appendix F",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

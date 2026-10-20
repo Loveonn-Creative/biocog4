@@ -1,0 +1,86 @@
+{
+  "slug": "iso-14064-1-vs-iso-14064-2",
+  "q": "What is the difference between ISO 14064-1 and ISO 14064-2?",
+  "title": "ISO 14064-1 vs ISO 14064-2",
+  "short": "ISO 14064-1 is for a company's annual GHG inventory: all emissions and removals inside its boundary. ISO 14064-2 is for a single project: the reductions or removals it achieves against a baseline scenario. Use part 1 to report your footprint and part 2 to claim what one project saved.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "MSMEs, project developers and consultants",
+  "sections": [
+    {
+      "h": "What each part measures",
+      "ul": [
+        "ISO 14064-1:2018: absolute emissions and removals of an organisation over a period, usually a year, split into direct and indirect categories.",
+        "ISO 14064-2:2019: the difference between a project and its baseline scenario, the emissions that would have happened without it. The result is tonnes reduced or removed, not a footprint.",
+        "ISO 14064-3:2019: how a verifier checks either one. It covers verification of past figures and validation of a project plan."
+      ]
+    },
+    {
+      "h": "Where the work differs",
+      "ul": [
+        "Boundary: part 1 uses organisational and reporting boundaries. Part 2 sets a project boundary and lists the sources, sinks and reservoirs it controls, relates to or affects.",
+        "Baseline: part 1 has a base year for tracking change over time. Part 2 needs a baseline scenario, justified and kept conservative.",
+        "Monitoring: part 2 asks for a monitoring plan written before the project runs. Part 1 relies on the records you already keep.",
+        "Credits: part 2 is a framework only. Carbon programmes such as Verra, Gold Standard or India's CCTS add their own methodologies and additionality tests, and only they issue credits."
+      ]
+    },
+    {
+      "h": "Do not add a project's savings to your inventory",
+      "p": [
+        "If the project sits inside your own boundary, such as rooftop solar or a boiler fuel switch, the saving already shows up as lower emissions in your part 1 inventory. Subtracting the part 2 figure as well counts it twice. If you sell credits from that project, say so in your inventory report, because a buyer may then claim the same tonnes."
+      ]
+    },
+    {
+      "h": "Which one you need",
+      "ul": [
+        "A buyer or lender asks for your footprint: ISO 14064-1, or the GHG Protocol.",
+        "You want carbon credits or a verified saving from one investment: ISO 14064-2 with the programme's methodology.",
+        "Both: keep one set of meter readings and bills, and use it for each report with its own boundary."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 500,000 kWh of rooftop solar used on site",
+    "lines": [
+      "Grid purchase before solar: 2,000,000 kWh; after: 1,500,000 kWh",
+      "ISO 14064-1 view: Scope 2 falls from 2,000,000 x 0.710 = 1,420,000 kg to 1,500,000 x 0.710 = 1,065,000 kg CO2",
+      "ISO 14064-2 view: reduction = 500,000 kWh x the baseline factor the methodology sets",
+      "At 0.710 kg CO2 per kWh that is 355,000 kg, about 355 t, the same tonnes already visible in the inventory"
+    ],
+    "note": "Project methodologies often require the CEA combined margin rather than the weighted average used here; the 0.710 figure is for illustration."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor and IPCC 2006 fuel factors, which gives the activity data behind an ISO 14064-1 inventory and a dated, bill-backed record of before and after for a project.",
+  "links": [
+    {
+      "label": "ISO 14064 vs the GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    },
+    {
+      "label": "What goes in an ISO 14064-1 report",
+      "to": "/answers/what-goes-in-an-iso-14064-1-ghg-report"
+    },
+    {
+      "label": "How to choose a VVB",
+      "to": "/answers/what-is-a-vvb-and-how-to-choose-one"
+    },
+    {
+      "label": "Measuring savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018, GHG inventories at organisation level (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-2:2019, GHG projects: quantification, monitoring and reporting of reductions and removals (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

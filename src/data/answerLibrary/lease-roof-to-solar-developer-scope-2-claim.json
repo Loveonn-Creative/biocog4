@@ -1,0 +1,78 @@
+{
+  "slug": "lease-roof-to-solar-developer-scope-2-claim",
+  "q": "If we lease our roof to a solar developer who sells the power elsewhere, can we claim it in Scope 2?",
+  "title": "Roof leased for solar: can we claim it?",
+  "short": "No. If the developer sells the power to the grid or another buyer, you neither use that electricity nor own its renewable attributes, so your Scope 2 stays exactly what your bills say. The buyer of the power or its certificates makes the claim. What you earn is lease rent.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Warehouse and factory owners leasing rooftops",
+  "sections": [
+    {
+      "h": "Why location on your roof gives you no claim",
+      "p": [
+        "Scope 2 counts electricity you consume. The GHG Protocol Scope 2 Guidance ties any renewable claim to owning the energy attribute certificate or contract for the units you use. In a roof-lease deal the panels sit on your building but the power flows through the developer's meter to someone else, and the attributes go with that sale. Two parties cannot claim the same units."
+      ]
+    },
+    {
+      "h": "What you can and cannot say",
+      "ul": [
+        "You can say you host a solar plant of a given size on your roof, owned and operated by the developer.",
+        "You cannot call your site solar powered, subtract the plant's output from your consumption, or count it toward an RE100 or net zero target.",
+        "You cannot sell RECs or carbon credits from it. Those belong to the developer or its buyer under their contract."
+      ]
+    },
+    {
+      "h": "Mixed deals need the contract read line by line",
+      "p": [
+        "Some deals send part of the output behind your meter and export the rest. The part you take and pay for is purchased electricity from a RESCO plant: it sits in your Scope 2 and can be claimed at zero in market-based Scope 2 if the agreement gives you the attributes. The exported part is still not yours. Your bill or the developer's generation statement should show the two quantities separately."
+      ]
+    },
+    {
+      "h": "If you want the claim",
+      "p": [
+        "Change the deal so you buy the power with its attributes, or buy RECs or a green tariff for the units you consume. Either way, keep the agreement, the generation data and the certificates together for the year you report."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a warehouse roof leased out",
+    "lines": [
+      "Plant on roof: 500 kWp, about 7,00,000 kWh a year exported (assumes 1,400 kWh per kWp)",
+      "Warehouse grid use from bills: 4,00,000 kWh",
+      "Correct location-based Scope 2: 4,00,000 x 0.710 = 2,84,000 kg CO2",
+      "Wrong method: 4,00,000 minus 7,00,000 gives a negative figure, which no rule allows"
+    ],
+    "note": "The plant's output does not enter your calculation at all."
+  },
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2. Net-metered units are not treated as consumption.",
+  "links": [
+    {
+      "label": "RESCO solar: who claims Scope 2",
+      "to": "/answers/resco-opex-solar-who-claims-scope-2"
+    },
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 6 and the Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Rights of Consumers) Rules 2020, as amended (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "The GHG Protocol Scope 2 revision is a public consultation draft as of October 2026; recheck attribute rules for on-site plants when it is final.",
+  "reviewed": "2026-10-18"
+}

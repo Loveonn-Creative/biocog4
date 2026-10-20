@@ -1,0 +1,72 @@
+{
+  "slug": "carbon-neutral-event-claim-india",
+  "q": "Can we call our conference or event carbon neutral in India?",
+  "title": "Carbon neutral event claims in India",
+  "short": "Yes, if you can back it up. Measure the event's full footprint including attendee travel, cut what you can, offset the rest with retired credits of known quality, and publish the boundary, total, reductions and credit details. India's 2024 CCPA guidelines require environmental claims to be specific, evidenced and verifiable.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Event organisers and companies hosting summits",
+  "sections": [
+    {
+      "h": "What the CCPA guidelines mean for an event",
+      "p": [
+        "The Central Consumer Protection Authority's Guidelines for Prevention and Regulation of Greenwashing or Misleading Environmental Claims, 2024, apply to claims in advertising and promotion. A carbon neutral claim on a ticketed event, a sponsorship deck or a press release is an environmental claim. It must be specific about what it covers, backed by evidence, and disclosed where people can check it."
+      ]
+    },
+    {
+      "h": "What to have before you say it",
+      "ol": [
+        "A footprint with a stated boundary: venue energy, catering, materials, freight, staff travel and attendee travel.",
+        "Reductions made, such as a venue on green power, fewer flights or reusable stands, shown separately from offsets.",
+        "Credits for the remaining tonnes, retired in a public registry, with project name, standard, vintage and serial numbers.",
+        "A short public statement of all of the above. ISO 14068-1:2023 sets out this sequence for carbon neutrality claims."
+      ]
+    },
+    {
+      "h": "Claims that get organisers into trouble",
+      "ul": [
+        "Leaving attendee travel out of a neutrality claim without saying so. Where people fly in, it can be the largest item.",
+        "Calling credits retired when they were only bought.",
+        "Using carbon neutral when only the venue's electricity was covered. Say what was covered instead.",
+        "Promoting the same event as neutral to EU consumers, where offset-based neutrality claims face stricter limits."
+      ]
+    },
+    {
+      "h": "A safer way to word it",
+      "p": [
+        "State the facts: measured footprint, what was reduced, and the credits retired with their details. For example: event footprint 180 tonnes CO2e, including attendee travel; 40 tonnes avoided by a green power contract at the venue; 140 tonnes covered by retired credits, listed here. Readers can check every part."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the bills and invoices behind an event footprint, applies CEA and IPCC 2006 factors where they fit, fingerprints each file and keeps the record, so the measured part of a claim has its evidence.",
+  "links": [
+    {
+      "label": "Carbon neutral export products",
+      "to": "/answers/can-i-call-my-export-product-carbon-neutral"
+    },
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "ISO 14068-1 requirements",
+      "to": "/answers/iso-14068-carbon-neutral-requirements"
+    },
+    {
+      "label": "Check a carbon credit retirement",
+      "to": "/answers/how-to-check-carbon-credit-retirement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14068-1:2023, Carbon neutrality (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewNote": "CCPA Guidelines for Prevention and Regulation of Greenwashing or Misleading Environmental Claims, 2024 (consumeraffairs.nic.in); enforcement practice is still developing, recheck before relying on this.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "how-to-apply-green-energy-open-access-registry",
+  "q": "How do I apply for green energy open access on the national portal?",
+  "title": "Applying on the green open access portal",
+  "short": "Register as a consumer on the Green Energy Open Access Registry, the national single-window portal run by Grid Controller of India, then file an application naming your connection, the generator and the quantity of power. Your state's nodal agency checks it, and your state commission's rules still set the charges.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "C&I consumers with 100 kW or more connected load",
+  "sections": [
+    {
+      "h": "Have these ready before you log in",
+      "ul": [
+        "Eligibility: contracted demand or sanctioned load of 100 kW or more, from one connection or several in the same distribution division. Captive consumers have no minimum.",
+        "A generator or trader and agreed terms: quantity, period, injection point and tariff.",
+        "Your latest electricity bills, consumer number, connection voltage and contract demand.",
+        "Metering that meets your state's open access requirements, and no unpaid dues with the discom, which states usually check."
+      ]
+    },
+    {
+      "h": "The application, step by step",
+      "ol": [
+        "Register on the Green Energy Open Access Registry (greenopenaccess.in) as a consumer and verify your organisation.",
+        "Create the application: your connection details, the source of green power, quantity in MW, start and end dates, and whether it is captive, a bilateral purchase or through a trader.",
+        "Pay the application fee shown for your case on the portal.",
+        "The portal routes the request to the nodal agency for your case, usually the state load despatch centre, which takes consent from the discom and transmission utility.",
+        "The 2022 Rules give the nodal agency 15 days to decide. If it does not, the application is deemed approved, provided the technical requirements set by the commission are met.",
+        "Sign the connection, wheeling and banking agreements your state requires, then start scheduling power from the approved date."
+      ]
+    },
+    {
+      "h": "What the portal does not decide",
+      "p": [
+        "The registry is a single window, not a price list. Transmission and wheeling charges, cross-subsidy and additional surcharges, losses, banking limits and the start date rules all come from your state commission's open access regulations and tariff order. Get those figures before you sign a power purchase agreement."
+      ]
+    },
+    {
+      "h": "Keep these for your Scope 2 claim",
+      "ul": [
+        "The approval order and the quantity approved.",
+        "The PPA clause that passes the renewable attributes to you.",
+        "Monthly energy accounts showing units adjusted at your meter.",
+        "The green certificate the Rules provide for, and the discom bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the discom bills that follow approval for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database, version 21.0. With the approved quantity, contract and monthly energy account recorded, it reports market-based Scope 2 alongside.",
+  "links": [
+    {
+      "label": "Green open access charges in India",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Green energy open access for factories",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Open access power on your bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "ISTS charge waiver for green open access",
+      "to": "/answers/ists-charge-waiver-green-open-access"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, and Amendment Rules, 2023, Ministry of Power (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The 15 day decision and deemed approval are from the Green Energy Open Access Rules, 2022 as amended in 2023; the gazette text and greenopenaccess.in could not be opened for this check, so confirm both, and the current portal screens and fees, before applying (checked 2026-10-20)."
+}

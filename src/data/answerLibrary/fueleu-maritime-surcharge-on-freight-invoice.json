@@ -1,0 +1,73 @@
+{
+  "slug": "fueleu-maritime-surcharge-on-freight-invoice",
+  "q": "What is the FuelEU Maritime surcharge on my sea freight invoice?",
+  "title": "FuelEU Maritime surcharge explained",
+  "short": "It is the carrier passing on its cost of meeting FuelEU Maritime, an EU rule since 1 January 2025 that caps the greenhouse gas intensity of energy used by large ships calling at EU ports. Carriers recover cleaner fuel costs or penalties through it. It is a freight cost, separate from the EU ETS surcharge.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters and importers shipping to or from EU ports",
+  "sections": [
+    {
+      "h": "What the regulation requires",
+      "ul": [
+        "Ships over 5,000 gross tonnes carrying cargo or passengers to, from and between EU ports.",
+        "A limit on the well-to-wake greenhouse gas intensity of energy used on board, against a reference of 91.16 g CO2e per MJ.",
+        "The cut starts at 2% in 2025 and tightens in steps to 80% by 2050.",
+        "Voyages between an EU and a non-EU port count at 50% of the energy used, so an India to Rotterdam leg is half covered.",
+        "Ships that miss the limit pay a penalty; companies can bank surpluses or pool ships to meet it."
+      ]
+    },
+    {
+      "h": "How it differs from the EU ETS surcharge",
+      "p": [
+        "The EU ETS line pays for allowances covering the CO2 a ship emits. The FuelEU line pays for the fuel standard: buying biofuel or LNG blends, or the penalty for not doing so. A ship can owe both. Each carrier names and prices them differently, so read the tariff notice for each."
+      ]
+    },
+    {
+      "h": "Questions to ask your carrier or forwarder",
+      "ol": [
+        "Is the charge per container or per tonne, and on which legs?",
+        "Is it based on the fleet's actual compliance position, a pooled position or a flat estimate?",
+        "How often is it revised, and is it already inside an all-in rate?",
+        "Can you get shipment-level emissions data that reflects the cleaner fuel used?"
+      ]
+    },
+    {
+      "h": "Accounting and emissions treatment",
+      "p": [
+        "Book the charge with freight cost, paid by whoever pays freight under the Incoterm. Do not convert it into tonnes of CO2e. Your Scope 3 freight figure changes only if the carrier gives you shipment-level emissions that reflect the lower-intensity fuel, calculated under the GLEC Framework."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads freight records with weight and distance into a supplier evidence trail, and gives spend-only freight lines a labelled spend-based estimate, keeping each invoice as evidence.",
+  "links": [
+    {
+      "label": "EU ETS shipping surcharge for exporters",
+      "to": "/answers/eu-ets-shipping-surcharge-indian-exporters"
+    },
+    {
+      "label": "EU ETS surcharge on a freight invoice",
+      "to": "/answers/eu-ets-shipping-surcharge-on-freight-invoice"
+    },
+    {
+      "label": "Green shipping book and claim",
+      "to": "/answers/green-shipping-book-and-claim-scope-3"
+    },
+    {
+      "label": "Freight emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1805, FuelEU Maritime (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "GLEC Framework, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewNote": "Carrier surcharge amounts are commercial and change often, so none are quoted; recheck FuelEU reduction steps if the regulation is amended.",
+  "reviewed": "2026-10-18"
+}

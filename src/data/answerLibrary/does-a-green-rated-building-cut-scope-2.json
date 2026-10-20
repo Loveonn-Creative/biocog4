@@ -1,0 +1,75 @@
+{
+  "slug": "does-a-green-rated-building-cut-scope-2",
+  "q": "Does moving into an IGBC, GRIHA or LEED rated building lower our Scope 2 emissions?",
+  "title": "Does a green building cut Scope 2?",
+  "short": "Only if you end up buying fewer kWh. Scope 2 is the electricity you use times its emission factor, and a rating plaque is not part of that sum. A well-designed rated building often uses less power, so your bills and Scope 2 fall, but the reduction shows up in metered units, not in the certificate.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Tenants choosing offices; facility managers",
+  "sections": [
+    {
+      "h": "Why the rating itself does not count",
+      "p": [
+        "Location-based Scope 2 is metered kWh x the grid factor. In India that factor is the CEA weighted average, 0.710 kg CO2 per kWh in version 21.0, whichever building you sit in. A rating can change the kWh. It cannot change the factor, and you cannot subtract a rating level from your total."
+      ]
+    },
+    {
+      "h": "Design ratings and operating ratings are different",
+      "p": [
+        "New-building certificates from IGBC, GRIHA and LEED mainly rate design and construction: envelope, glazing, HVAC efficiency, lighting and water. Actual use depends on how the building is run, occupancy and hours. Operations ratings, such as IGBC and LEED schemes for existing buildings and the BEE star label, are based on measured energy and are closer to what you will see on bills. Ask which version and which scheme the certificate is for, because each has several."
+      ]
+    },
+    {
+      "h": "Where a rated building can move your numbers",
+      "ul": [
+        "Lower kWh per square foot from an efficient envelope, chillers and lighting: this lowers location-based Scope 2 directly.",
+        "On-site solar run by the landlord: it lowers your grid units only if it supplies your meter. Market-based Scope 2 at zero needs the renewable attributes to pass to you in writing.",
+        "Less DG use because of better backup design lowers Scope 1 or the DG share billed to you, not Scope 2.",
+        "Green power bought by the landlord through a green tariff or RECs counts for you only if the lease or a letter assigns those attributes to your consumption."
+      ]
+    },
+    {
+      "h": "How to check before you sign",
+      "ol": [
+        "Ask for 12 months of actual energy data for the building and its EPI in kWh per square metre per year.",
+        "Ask how your floor will be metered and how common area power is billed.",
+        "If renewable power is offered, ask for the instrument (PPA, green tariff, RECs) and a clause giving you the attributes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2, so a move shows up as a change in billed units.",
+  "links": [
+    {
+      "label": "GRIHA documents for government suppliers",
+      "to": "/answers/griha-requirement-government-building-suppliers"
+    },
+    {
+      "label": "BEE star rating for offices",
+      "to": "/answers/bee-star-rating-for-commercial-buildings"
+    },
+    {
+      "label": "Office footprint per square foot",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE Star Rating Programme for Buildings (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "IGBC, GRIHA and LEED release new versions every few years, and the GHG Protocol Scope 2 revision is still a public consultation draft as of October 2026; recheck scheme names and market-based rules.",
+  "reviewed": "2026-10-18"
+}

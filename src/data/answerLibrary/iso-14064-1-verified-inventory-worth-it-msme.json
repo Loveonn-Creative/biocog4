@@ -1,0 +1,78 @@
+{
+  "slug": "iso-14064-1-verified-inventory-worth-it-msme",
+  "q": "Should a small MSME get an ISO 14064-1 verified inventory, or is a GHG Protocol report enough?",
+  "title": "Verified ISO 14064-1 or GHG Protocol report?",
+  "short": "A GHG Protocol report is enough for most small MSMEs until someone asks for more. Get an ISO 14064-1 inventory verified to ISO 14064-3 when a buyer, lender or programme asks for verification in writing, or when the number will back a public claim or a loan term.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs answering buyer or lender requests",
+  "sections": [
+    {
+      "h": "When a self-prepared report is enough",
+      "ul": [
+        "A buyer questionnaire asks for Scope 1 and 2 totals and your method, with no mention of verification.",
+        "You are measuring for the first time and want to find the big sources before spending on an audit.",
+        "A listed customer collects value chain data for BRSR. Since SEBI's 28 March 2025 circular, value chain disclosures and their assessment or assurance are voluntary, so a customer may ask but cannot cite SEBI to require verification."
+      ]
+    },
+    {
+      "h": "When verification earns its cost",
+      "ul": [
+        "A buyer contract, supplier code or programme requires a verified inventory or names ISO 14064-3.",
+        "A green loan or sustainability-linked loan ties pricing to an emissions figure, and the lender wants independent checking.",
+        "You will publish a reduction claim, a carbon neutral statement or a target progress figure.",
+        "Your inventory feeds a customer's assured report and they ask you to back your share."
+      ]
+    },
+    {
+      "h": "What verification adds over a good report",
+      "p": [
+        "A self-prepared report can follow the GHG Protocol or ISO 14064-1 equally well. Verification adds an independent opinion that the numbers are free of material error, after the verifier samples invoices, meter readings and calculations. The method does not change; the trust a reader can place in it does."
+      ]
+    },
+    {
+      "h": "A sensible order for a small firm",
+      "ol": [
+        "Year 1: build the inventory to the GHG Protocol, with a source document behind every Scope 1 and 2 line.",
+        "Fix gaps: missing bills, unclear units, estimates without labels.",
+        "Year 2: if anyone asks for verification, prepare to ISO 14064-1 and get quotes for limited assurance on Scope 1 and 2.",
+        "Widen to Scope 3 only when a reader needs it verified."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a self-declared inventory from your bills and invoices with the source file and factor on every line; its Verified status means rule checks passed, which helps you get ready for an independent verifier.",
+  "links": [
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "ISO 14064 vs the GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    },
+    {
+      "label": "GHG inventory verification cost",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    },
+    {
+      "label": "BRSR Core value chain timeline",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018 and ISO 14064-3:2019 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "BRSR value chain dates follow SEBI's 28 March 2025 circular; check for a newer circular."
+}

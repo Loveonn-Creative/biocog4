@@ -1,0 +1,81 @@
+{
+  "slug": "composition-dealer-bill-of-supply-carbon-evidence",
+  "q": "My supplier is a GST composition dealer and gives a bill of supply. Can I use it as carbon evidence?",
+  "title": "Bill of supply as carbon evidence",
+  "short": "Yes, if it shows what was supplied and how much. A bill of supply is a valid GST document from a composition dealer, but quantity is often missing from it. If it gives only an amount, get the delivery challan or weighbridge slip for the quantity, or use a spend-based estimate labelled as such.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSME buyers of fuel, materials and services from small suppliers",
+  "sections": [
+    {
+      "h": "Why your supplier issues a bill of supply",
+      "p": [
+        "A registered supplier who pays tax under the composition scheme, or who supplies only exempt goods or services, issues a bill of supply instead of a tax invoice. A composition dealer cannot charge GST, so the bill shows no tax and you claim no input credit on it."
+      ]
+    },
+    {
+      "h": "What the bill will and will not show",
+      "ul": [
+        "Supplier name, address and GSTIN, a serial number and the date.",
+        "Your details if you are registered, a description of the goods or service, the HSN or SAC code and the value.",
+        "Quantity is not something to count on. Many bills print it; many give only a description and a rupee amount.",
+        "For the full list of required contents, read Rule 49 of the CGST Rules on the CBIC website."
+      ]
+    },
+    {
+      "h": "Turning it into activity data",
+      "ol": [
+        "Description and HSN tell you the material or fuel.",
+        "Quantity and unit, if printed, are your activity data. Multiply by a published factor.",
+        "If no quantity, match the bill to the delivery challan, weighbridge slip, gate entry or stock register for the same date.",
+        "If nothing gives a quantity, use the amount for a spend-based estimate and label it so."
+      ]
+    },
+    {
+      "h": "How strong is it as evidence",
+      "p": [
+        "A bill of supply comes from a registered supplier and carries their GSTIN, so it can be traced back to them. Do not rely on your GSTR-2B to confirm it, since that statement is built for input tax credit, which a bill of supply does not give. Keep the paper or PDF and the payment record together."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: coal from a composition dealer",
+    "lines": [
+      "Bill of supply: coal, HSN 2701, ₹42,000, no quantity printed",
+      "Weighbridge slip, same date and vehicle: 3,500 kg net",
+      "Emissions: 3,500 x 2.42 kg CO2 per kg = 8,470 kg CO2, about 8.5 t, Scope 1 if burnt on site"
+    ],
+    "note": "The coal factor is the IPCC 2006 default used by Senseible. The quantity comes from the weighbridge slip, not the rupee amount."
+  },
+  "senseible": "Senseible reads a bill of supply like any other invoice. When a line prints a quantity it applies the published factor; when it does not, the line shows Needs Data until a delivery document gives the quantity, or Senseible provides a spend-based estimate labelled with wider uncertainty.",
+  "links": [
+    {
+      "label": "GST e-invoice fields for carbon accounting",
+      "to": "/answers/gst-e-invoice-fields-for-carbon-accounting"
+    },
+    {
+      "label": "Fuel invoice with amount only",
+      "to": "/answers/fuel-invoice-amount-only-no-litres"
+    },
+    {
+      "label": "What Needs Data means",
+      "to": "/answers/senseible-needs-data-on-invoice-line"
+    },
+    {
+      "label": "Coal factor for India",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7, Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (coal default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CBIC and GSTN pages could not be read on 2026-10-18; bill of supply contents are described generally. Check CGST Rule 49 on cbic-gst.gov.in for the current list."
+}

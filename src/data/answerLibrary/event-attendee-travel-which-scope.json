@@ -1,0 +1,77 @@
+{
+  "slug": "event-attendee-travel-which-scope",
+  "q": "As an event organiser, do attendee travel emissions go in our Scope 3?",
+  "title": "Attendee travel: in the organiser's Scope 3?",
+  "short": "It is optional. The GHG Protocol's Category 6 covers your own employees' travel, and attendees are not your employees, so their travel is outside the minimum boundary. You can still include it, reported separately with the method stated. If you make any claim about the event's footprint, include it.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Conference and event companies; industry associations",
+  "sections": [
+    {
+      "h": "Where it fits in the Scope 3 Standard",
+      "p": [
+        "Your staff's travel to run the event is Category 6, business travel, and is required if relevant. Attendee travel has no category of its own. The closest is the optional part of Category 9, which covers customers travelling to retail stores. Some organisers report it under Category 9 by that analogy, others as an optional other item. Either works if you say which."
+      ]
+    },
+    {
+      "h": "Travel you pay for is different",
+      "p": [
+        "Flights and hotels you book and pay for speakers or guests are purchases you control. Include them, and label them so readers can see they are not staff travel."
+      ]
+    },
+    {
+      "h": "When to include attendee travel",
+      "ul": [
+        "You publish an event footprint, sell a low-carbon event, or make a neutrality claim: include it, or the claim misleads.",
+        "Clients or sponsors ask for the full event figure.",
+        "You want to act on it: venue choice, hybrid sessions and timing around trains all change it."
+      ]
+    },
+    {
+      "h": "How to estimate it",
+      "ol": [
+        "Add origin city and travel mode to the registration form.",
+        "Group attendees by mode and distance band.",
+        "Multiply passenger km by a published factor for each mode, and scale up for attendees who did not answer.",
+        "State the response rate and factor source next to the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 500 person conference in Mumbai",
+    "lines": [
+      "300 local by car: 30 km round trip each = 9,000 passenger km x 0.15 = 1,350 kg CO2e",
+      "150 domestic flyers: 2 x 1,200 km each = 3,60,000 passenger km x 0.25 = 90,000 kg CO2e",
+      "50 international flyers: 2 x 6,000 km each = 6,00,000 passenger km x 0.15 = 90,000 kg CO2e",
+      "Attendee travel total: 1,81,350 kg CO2e, about 181 tonnes"
+    ],
+    "note": "Factors are illustrations, not official values. The point: flights dominate, and local travel barely registers."
+  },
+  "senseible": "Senseible reads the flight, hotel and freight invoices you pay for, fingerprints each file and keeps the record, so the travel you book carries its evidence.",
+  "links": [
+    {
+      "label": "Hotel event footprint per guest",
+      "to": "/answers/hotel-event-carbon-footprint-per-guest"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category?",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 6 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Category treatment of attendee travel is a reporting choice, not a fixed rule; event industry guidance may change.",
+  "reviewed": "2026-10-18"
+}

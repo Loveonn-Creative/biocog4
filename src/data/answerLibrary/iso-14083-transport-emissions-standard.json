@@ -1,0 +1,85 @@
+{
+  "slug": "iso-14083-transport-emissions-standard",
+  "q": "What is ISO 14083 and do I need it for my freight emissions?",
+  "title": "What is ISO 14083 and do I need it?",
+  "short": "ISO 14083 is the international standard, published in 2023, for calculating and reporting greenhouse gas emissions from transport chains, across every mode and the hubs between legs. No Indian law requires it, but buyers and forwarders cite it. You need it only in the sense of calculating your freight the way it describes.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Exporters, freight forwarders and logistics MSMEs",
+  "sections": [
+    {
+      "h": "What the standard covers",
+      "p": [
+        "ISO 14083:2023 covers freight and passenger transport by road, rail, sea, inland waterway and air, and the hub operations between them, such as warehouses, terminals and transhipment centres. It splits a journey into elements and gives each element its own emissions.",
+        "Results are greenhouse gases in CO2e, reported both well-to-wheel, which includes producing the fuel, and tank-to-wheel, which is burning it only."
+      ]
+    },
+    {
+      "h": "The method in four steps",
+      "ol": [
+        "Group similar trips into a transport operation category, for example full truckloads on one lane, and similar hub activity into a hub operation category.",
+        "Work out each category's intensity: its total emissions divided by its total transport activity, in tonne-km for freight.",
+        "Charge each shipment that intensity times its mass times its distance, using the shortest feasible distance for that mode.",
+        "State where each input came from: the operator's own data, modelled data, or default values."
+      ]
+    },
+    {
+      "h": "How it relates to the GLEC Framework",
+      "p": [
+        "The GLEC Framework from Smart Freight Centre is free guidance aligned with ISO 14083. It adds default intensities by mode and vehicle type and practical advice for missing data. Most companies follow the ISO method and fill gaps with GLEC defaults. The ISO text itself is sold through iso.org."
+      ]
+    },
+    {
+      "h": "When a buyer asks for ISO 14083",
+      "p": [
+        "There is no certificate you must hold. What a buyer wants is a figure built the ISO 14083 way. Send it with a short method note:"
+      ],
+      "ul": [
+        "The legs and hubs covered, and which ones you paid for.",
+        "Well-to-wheel CO2e as the headline, with tank-to-wheel if asked.",
+        "The weight and distance basis.",
+        "The factor for each leg and its source, carrier data or GLEC default."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a carrier intensity and one shipment",
+    "lines": [
+      "Carrier's FTL fleet in the year: 50,000 L diesel x 2.68 kg CO2 per L = 134,000 kg CO2",
+      "Fleet transport activity: 1,800,000 tonne-km",
+      "Intensity: 134,000 / 1,800,000 = 0.0744 kg CO2 per tonne-km (tank-to-wheel)",
+      "Your shipment: 4.5 tonnes x 620 km = 2,790 tonne-km x 0.0744 = about 208 kg CO2"
+    ],
+    "note": "Fleet figures are illustrative. 2.68 kg CO2 per litre is the IPCC 2006 diesel default for combustion CO2. For the well-to-wheel figure ISO 14083 asks for, add the fuel production share from a recognised source and name it."
+  },
+  "senseible": "Senseible reads freight records with weight and distance, including lorry receipts and freight bills, into the Scope 3 supplier evidence trail and keeps the file behind each figure. Its logistics calculator uses default intensities per tonne-km by mode and Indian truck class, or the carrier's factor as given.",
+  "links": [
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "The GLEC Framework explained",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    },
+    {
+      "label": "Checking a forwarder's emissions report",
+      "to": "/answers/freight-forwarder-emissions-report-scope-3"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

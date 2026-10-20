@@ -1,0 +1,73 @@
+{
+  "slug": "tamil-nadu-green-energy-open-access",
+  "q": "How does green energy open access work for factories in Tamil Nadu?",
+  "title": "Green open access for Tamil Nadu factories",
+  "short": "A Tamil Nadu factory with 100 kW or more of load can buy wind or solar power from a generator under the 2022 Green Energy Open Access Rules, applying through the national portal. TNERC's regulations and tariff orders set the charges, losses and banking terms, so the landed cost per unit depends on the current state order.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Tamil Nadu MSMEs and exporters in Tiruppur, Coimbatore and Chennai",
+  "sections": [
+    {
+      "h": "Who decides what in Tamil Nadu",
+      "ul": [
+        "Ministry of Power: the national Rules, including the 100 kW threshold, the single-window application and a banking floor of 30 percent of the power you buy from the discom each month.",
+        "TNERC: the state's open access regulations and tariff orders, which fix wheeling and transmission charges, losses, surcharges and banking charges.",
+        "Your distribution company and the state load despatch centre: consent, metering, scheduling and monthly energy accounts."
+      ]
+    },
+    {
+      "h": "Three routes a Tamil Nadu unit can take",
+      "ul": [
+        "Third-party purchase: a PPA with a wind or solar developer, wheeled to your connection.",
+        "Group captive: you hold a share of the generating company, as captive rules require, which removes the cross-subsidy surcharge under the Electricity Act, 2003.",
+        "Discom green tariff: renewable power from your own discom at a tariff TNERC fixes, if one is in force for your category, with no PPA."
+      ]
+    },
+    {
+      "h": "Questions to settle before you sign",
+      "ol": [
+        "The wheeling, transmission and loss figures in the TNERC order in force, and whether the developer's quote already includes them.",
+        "The banking cycle and charge, and what happens to unused banked units at the end of the cycle. Wind output peaks in the monsoon months, so banking terms matter for a wind PPA.",
+        "Whether you pay the cross-subsidy and additional surcharges, and at what rate.",
+        "The metering your discom requires and who pays for it."
+      ]
+    },
+    {
+      "h": "How it shows up in Scope 2",
+      "p": [
+        "Location-based Scope 2 stays at all units consumed times the grid factor, including the wheeled units. Market-based Scope 2 can count the adjusted green units at zero when the PPA passes you the renewable attributes and no RECs were sold for the same energy. Report both, with the monthly energy account behind each claim."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your discom bills for billing period, tariff category, sanctioned load and units, so wheeled and grid units are on one record, and reports location-based Scope 2 at 0.710 kg CO2 per kWh (CEA, version 21.0). Record the adjusted wind or solar units with the PPA and energy account and it reports market-based Scope 2 too.",
+  "links": [
+    {
+      "label": "Green open access charges in India",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Tamil Nadu MSME decarbonisation incentives",
+      "to": "/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives"
+    },
+    {
+      "label": "How much solar you can bank",
+      "to": "/answers/how-much-solar-power-can-i-bank-with-discom"
+    },
+    {
+      "label": "Open access power on your bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, and Amendment Rules, 2023, Ministry of Power (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Tamil Nadu's open access charges, banking cycle and charges are set in TNERC regulations and tariff orders that could not be read for this check; take every figure from tnerc.gov.in before signing (checked 2026-10-20)."
+}

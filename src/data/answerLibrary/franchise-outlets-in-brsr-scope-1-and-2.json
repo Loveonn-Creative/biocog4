@@ -1,0 +1,73 @@
+{
+  "slug": "franchise-outlets-in-brsr-scope-1-and-2",
+  "q": "Do franchise-owned outlets count in a listed company's BRSR Scope 1 and 2?",
+  "title": "Franchise outlets in BRSR Scope 1 and 2",
+  "short": "Usually not. Outlets owned and run by franchisees are separate businesses outside the listed company's control and its financial statements, so their energy is not in its BRSR Scope 1 and 2. They belong in Scope 3 Category 14, which BRSR treats as a voluntary leadership indicator. Outlets the company runs itself do count.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Listed retail, QSR and consumer brands filing BRSR",
+  "sections": [
+    {
+      "h": "Sort outlets by who owns and who runs them",
+      "ul": [
+        "Company owned, company operated: in Scope 1 and 2.",
+        "Franchise owned, company operated: the company runs the outlet and usually pays its energy bills, so under operational control it is in Scope 1 and 2. State the approach you used.",
+        "Franchise owned, franchise operated: outside Scope 1 and 2; report in Scope 3 Category 14 if you report Scope 3.",
+        "Company owned, franchise operated: the franchisee runs it, so under operational control it is Category 14. If you use financial control, decide whether you hold financial control of that outlet, record why, and apply the same answer to every similar outlet."
+      ]
+    },
+    {
+      "h": "What BRSR itself asks",
+      "p": [
+        "Scope 1 and Scope 2 are essential indicators under Principle 6. The BRSR format also asks for the reporting boundary: standalone, for the listed entity alone, or consolidated, for it and the entities in its consolidated financial statements. A franchisee's company is in neither, unless it is a subsidiary. BRSR does not prescribe a GHG consolidation approach, so the outlet split above follows the GHG Protocol Corporate Standard. Scope 3 sits among the leadership indicators, which are voluntary."
+      ]
+    },
+    {
+      "h": "Where franchisees appear in the value chain disclosure",
+      "p": [
+        "Since SEBI's circular of 28 March 2025, the value chain disclosure covers partners that each make up 2 percent or more of purchases or sales by value, and it is voluntary for the top 250 listed companies from FY 2025-26. A large master franchisee could cross 2 percent of sales; most single-outlet franchisees will not. That disclosure reports the partner's own indicators, separately from your Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "What to write in the report",
+      "p": [
+        "Name your consolidation approach, list how many outlets of each type are inside Scope 1 and 2, and say where franchise outlets are reported. If you include Category 14, give the share of outlets on actual data and the share estimated."
+      ]
+    }
+  ],
+  "senseible": "Senseible drafts BRSR from the bills and invoices you upload, as a self-declared draft. It reads electricity bills and fuel invoices for each company-run outlet, applying 0.710 kg CO2 per kWh and IPCC 2006 fuel defaults such as 2.68 kg CO2 per litre of diesel, and keeps the fingerprinted source file behind every Scope 1 and 2 line.",
+  "links": [
+    {
+      "label": "Franchisor data collection for Category 14",
+      "to": "/answers/franchisor-scope-3-category-14-data-collection"
+    },
+    {
+      "label": "Does BRSR require Scope 3?",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "BRSR value chain: downstream partners",
+      "to": "/answers/brsr-value-chain-downstream-partners"
+    },
+    {
+      "label": "BRSR reporting requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on BRSR Core, ESG disclosures for value chain and green credits, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment of ESG disclosures for value chain, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Revised Edition (2004), Chapter 3 Setting organisational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "BRSR boundary and value chain rules follow SEBI circulars, last changed on 28 March 2025; recheck against the latest SEBI circular before filing."
+}

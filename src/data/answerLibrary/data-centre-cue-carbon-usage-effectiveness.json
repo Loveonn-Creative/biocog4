@@ -1,0 +1,80 @@
+{
+  "slug": "data-centre-cue-carbon-usage-effectiveness",
+  "q": "What is CUE and how is it different from reporting data centre Scope 2?",
+  "title": "Data centre CUE vs Scope 2",
+  "short": "CUE, carbon usage effectiveness, is the CO2 from all energy a data centre uses divided by its IT equipment energy, in kg CO2 per IT kWh. Scope 2 is an absolute total of purchased electricity emissions only. CUE is a ratio, includes diesel generators, and is for tracking efficiency, not for your inventory.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Data centre operators and colocation customers",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "CUE = total CO2 from data centre energy / IT equipment energy in kWh. Total CO2 covers grid electricity and on-site generation such as diesel sets. For a site that runs only on grid power, CUE equals PUE x the grid factor, so with grid power alone it moves with both cooling efficiency and the grid's carbon intensity."
+      ]
+    },
+    {
+      "h": "Four ways it differs from Scope 2",
+      "ul": [
+        "Units: CUE is kg CO2 per IT kWh; Scope 2 is tonnes CO2 for the year.",
+        "Sources: CUE adds diesel generator fuel, which your inventory puts in Scope 1, not Scope 2.",
+        "Boundary: CUE covers only the data centre space. Scope 2 covers every site in your organisational boundary.",
+        "Purpose: CUE compares a site against itself over time. Scope 2 goes into a GHG inventory and BRSR or buyer reports."
+      ]
+    },
+    {
+      "h": "Location-based or market-based",
+      "p": [
+        "CUE can be computed with either grid factor. State which. In India the location-based figure uses the CEA weighted average; a market-based figure needs certificates or a green tariff with matching units. Do not mix them across years or sites."
+      ]
+    },
+    {
+      "h": "For colocation customers",
+      "p": [
+        "Your provider's CUE describes their whole site. Your own emissions come from your metered IT kWh x their PUE x the grid factor, and whether that sits in your Scope 2 or Scope 3 depends on who buys the electricity. Ask for the provider's CUE basis and period before quoting it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one year with a diesel backup set",
+    "lines": [
+      "Grid electricity: 510,000 kWh x 0.710 = 362,100 kg CO2 (Scope 2)",
+      "DG diesel: 4,000 litres x 2.68 = 10,720 kg CO2 (Scope 1)",
+      "IT energy at UPS output: 300,000 kWh",
+      "CUE = (362,100 + 10,720) / 300,000 = 1.24 kg CO2 per IT kWh",
+      "Grid only check: PUE 1.70 x 0.710 = 1.21, matching 362,100 / 300,000"
+    ],
+    "note": "Figures are illustrative. Factors: CEA CO2 Baseline Database version 21.0 and the IPCC 2006 diesel default."
+  },
+  "senseible": "Senseible reads electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2, and reads diesel invoices at 2.68 kg CO2 per litre for Scope 1.",
+  "links": [
+    {
+      "label": "PUE formula and what a good PUE is",
+      "to": "/answers/pue-formula-and-good-pue"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO/IEC 30134-8, Data centres key performance indicators, Part 8: Carbon usage effectiveness (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Check the current edition of ISO/IEC 30134-8 before citing it in a report."
+}

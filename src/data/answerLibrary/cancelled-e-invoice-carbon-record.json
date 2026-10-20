@@ -1,0 +1,78 @@
+{
+  "slug": "cancelled-e-invoice-carbon-record",
+  "q": "What happens to emissions recorded from an e-invoice that was later cancelled?",
+  "title": "Cancelled e-invoice in carbon records",
+  "short": "Take them out. A cancelled e-invoice means the sale did not happen on that document, so its quantity is not your activity. If the supplier issued a replacement invoice, count only the replacement. Keep the cancelled file on record, marked as cancelled, so the trail shows why the figure changed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Accounts teams reconciling carbon records with GST",
+  "sections": [
+    {
+      "h": "Cancellation and credit notes are different",
+      "ul": [
+        "Cancellation: the supplier can cancel an IRN on the Invoice Registration Portal only within a short window after generating it. The whole invoice falls away. Check the current window in the e-invoice FAQs on the GST e-invoice portal.",
+        "Once that window closes the IRN stays live. Corrections then go through a credit note against the original invoice, which may reduce quantity, value or both.",
+        "A credit note for returned goods reduces your activity; one for a price discount does not."
+      ]
+    },
+    {
+      "h": "How to correct your carbon record",
+      "ol": [
+        "Find every line calculated from the cancelled invoice.",
+        "Reverse those lines in the same period as the original, since the purchase never happened.",
+        "Add the replacement invoice, if any, as a new record with its own number and date.",
+        "Write a short note: cancelled IRN, date of cancellation, replacement invoice number.",
+        "Do not delete the cancelled file. A verifier will want to see that it was removed on purpose."
+      ]
+    },
+    {
+      "h": "The double counting trap",
+      "p": [
+        "A reissued invoice usually carries a new document number and often the same goods. Duplicate checks that compare files will treat it as a different document, because it is one. Match replacements by supplier GSTIN, date, goods and quantity, and confirm with the supplier which invoice number stands."
+      ]
+    },
+    {
+      "h": "If the period is already reported",
+      "p": [
+        "If the cancelled invoice sat in a year you have already published, correct it in the next report and say so. Under the GHG Protocol, an error that changes the base year or a reported total materially is a reason to recalculate; a small one can be fixed going forward with a note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: LPG invoice cancelled and reissued",
+    "lines": [
+      "Cancelled invoice: 20 cylinders x 19 kg = 380 kg LPG; 380 x 2.98 = 1,132.4 kg CO2",
+      "Replacement invoice: 18 cylinders x 19 kg = 342 kg; 342 x 2.98 = 1,019.2 kg CO2",
+      "Correct Scope 1: 1,019.2 kg CO2",
+      "Counting both: 1,132.4 + 1,019.2 = 2,151.6 kg, overstated by 1,132.4 kg"
+    ],
+    "note": "LPG factor is the IPCC 2006 default of 2.98 kg CO2 per kg used by Senseible."
+  },
+  "senseible": "Senseible gives each file its own SHA-256 fingerprint, so the cancelled invoice and its replacement stay as two separate records, each with its source document. The fingerprint catches identical files; match a reissued invoice with a new number using the checks above.",
+  "links": [
+    {
+      "label": "Verify an e-invoice IRN",
+      "to": "/answers/verify-e-invoice-irn-for-carbon-evidence"
+    },
+    {
+      "label": "Credit notes for returned fuel",
+      "to": "/answers/credit-note-returned-fuel-emissions"
+    },
+    {
+      "label": "Stop the same invoice counting twice",
+      "to": "/answers/how-to-stop-same-invoice-counted-twice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 5 and 7 (recalculation and inventory quality)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "GSTN e-invoice pages could not be read on 2026-10-18; the IRN cancellation window is described generally. Check the current limit in the e-invoice FAQs (einvoice1.gst.gov.in)."
+}

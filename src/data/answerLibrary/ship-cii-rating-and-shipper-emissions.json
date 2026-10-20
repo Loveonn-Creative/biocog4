@@ -1,0 +1,66 @@
+{
+  "slug": "ship-cii-rating-and-shipper-emissions",
+  "q": "Does a ship's CII rating change the freight emissions I report?",
+  "title": "Does a ship's CII rating change my figure?",
+  "short": "Not directly. A CII rating grades a ship's yearly CO2 per unit of carrying capacity and distance, from A to E, for IMO compliance. It is not an emission factor for your cargo. Your reported figure changes only when you use the carrier's own intensity, which reflects how efficiently its ships actually run.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Exporters and freight buyers comparing carriers",
+  "sections": [
+    {
+      "h": "What the CII measures",
+      "p": [
+        "The Carbon Intensity Indicator comes from regulation 28 of MARPOL Annex VI. It has applied since 1 January 2023 to ships of 5,000 gross tonnage and above of listed types, including container ships, bulk carriers, tankers, gas carriers and general cargo ships.",
+        "A ship's attained CII is its CO2 from fuel over a calendar year divided by its capacity times the distance it sailed. For most cargo ships capacity is deadweight tonnage, so the unit is grams of CO2 per deadweight tonne-mile. That figure is compared with a required value that IMO tightens over time, and the ship gets a rating from A to E. A ship rated D for three years in a row, or E once, needs a corrective action plan."
+      ]
+    },
+    {
+      "h": "Why a rating cannot stand in for a shipment factor",
+      "ul": [
+        "It uses capacity, not the cargo carried, so a half-empty ship can rate well while emitting a lot per tonne of cargo.",
+        "It counts tank-to-wake CO2 only. ISO 14083 reports well-to-wake greenhouse gases as well, which include producing the fuel.",
+        "It is one number per ship per year, not per trade lane or per voyage.",
+        "A letter grade has no unit you can multiply by your tonne-km."
+      ]
+    },
+    {
+      "h": "Where the rating is still useful",
+      "p": [
+        "Use it when choosing carriers. Ask each line for the CII spread of the ships on your lane and for its own intensity per tonne-km or TEU-km, calculated under ISO 14083 or the GLEC Framework. Better rated ships tend to burn less fuel, and that shows up in the carrier's intensity, which is the number that belongs in your calculation."
+      ]
+    },
+    {
+      "h": "What to write in your report",
+      "p": [
+        "Name the factor you used for the sea leg, default or carrier-specific, its source and its basis, well-to-wake. If a buyer asks about ship ratings, give the CII as context in a note, separate from your Scope 3 figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your freight records in the Scope 3 supplier evidence trail, each file fingerprinted with SHA-256 so it is counted once, and calculates the records that carry weight and distance. A freight line with only a rupee amount gets a spend-based estimate, labelled as spend-based.",
+  "links": [
+    {
+      "label": "Sea freight emissions per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Air or sea freight for exports",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "The GLEC Framework explained",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "IMO reviews the CII reduction factors and rating rules under MARPOL Annex VI; check the current amendments before citing a ship's rating (checked 2026-10-18)."
+}

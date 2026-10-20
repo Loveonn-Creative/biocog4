@@ -1,0 +1,80 @@
+{
+  "slug": "self-invoice-unregistered-supplier-carbon-evidence",
+  "q": "Can a reverse charge self-invoice for an unregistered supplier count as carbon evidence?",
+  "title": "Self-invoice as carbon evidence",
+  "short": "Yes, but it is your own document, so it is weaker evidence than a supplier's bill. Use its quantity only when something independent backs it, such as a weighbridge slip, delivery challan, gate entry or payment record. Where the two differ, use the measured quantity and note why.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSMEs buying from unregistered suppliers (transport, scrap, biomass)",
+  "sections": [
+    {
+      "h": "When GST makes you raise a self-invoice",
+      "p": [
+        "The CGST Act asks a registered buyer who pays tax under reverse charge on a purchase from an unregistered supplier to issue the invoice itself. Reverse charge applies only to goods, services and classes of buyer the government notifies. For many everyday purchases from unregistered sellers no reverse charge applies, and you hold only a purchase voucher. Check the current reverse charge notifications on the CBIC website for your item."
+      ]
+    },
+    {
+      "h": "Why the evidence is weaker",
+      "ul": [
+        "The buyer writes it, so a verifier cannot treat it as independent confirmation of quantity.",
+        "Quantities are often copied from a phone call or a rough count.",
+        "The supplier has no GSTIN, so it cannot be traced in GSTR-2B or on the e-invoice portal."
+      ]
+    },
+    {
+      "h": "What to keep with it",
+      "ul": [
+        "Weighbridge slip or delivery challan with weight or volume.",
+        "Gate entry or goods receipt note with date and vehicle number.",
+        "Bank or UPI payment matching the amount.",
+        "For transport, the trip details: origin, destination, vehicle and load."
+      ]
+    },
+    {
+      "h": "Which scope the purchase lands in",
+      "ul": [
+        "Biomass burnt on site: CH4 and N2O in Scope 1, the CO2 reported separately as biogenic.",
+        "Scrap or raw material: Scope 3 Category 1, purchased goods.",
+        "Transport you pay for from a truck owner: Scope 3 Category 4, using tonne-km from the trip records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: biomass briquettes from an unregistered seller",
+    "lines": [
+      "Self-invoice: 10,000 kg briquettes; weighbridge slip: 9,860 kg net. Use 9,860 kg",
+      "Energy: 9.86 t x 11.6 TJ per thousand tonnes = 0.1144 TJ (IPCC default NCV for other primary solid biomass, assumed for briquettes)",
+      "CH4: 0.1144 x 30 = 3.43 kg; x 28 (AR5 GWP) = 96 kg CO2e",
+      "N2O: 0.1144 x 4 = 0.458 kg; x 265 (AR5 GWP) = 121 kg CO2e",
+      "Scope 1: about 217 kg CO2e; biogenic CO2 reported separately: 0.1144 x 100,000 = 11,440 kg"
+    ],
+    "note": "Factors are IPCC 2006 Volume 2 defaults for industrial boilers. A lab test of your briquettes' calorific value replaces the default."
+  },
+  "senseible": "Senseible reads a self-invoice like any other invoice when it prints a quantity, and gives the file a SHA-256 fingerprint so the same file is counted once. Keep the weighbridge slip or challan alongside it as the supporting record.",
+  "links": [
+    {
+      "label": "GTA reverse charge and freight emissions",
+      "to": "/answers/gta-reverse-charge-freight-emissions"
+    },
+    {
+      "label": "Fuel bought without a GST invoice",
+      "to": "/answers/fuel-bought-without-gst-invoice"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7, Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2 (stationary combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CBIC pages could not be read on 2026-10-18; reverse charge scope under sections 9(3) and 9(4) and the self-invoice rule are described generally. Check the current notifications on cbic-gst.gov.in for each item."
+}

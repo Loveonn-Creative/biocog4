@@ -1,0 +1,81 @@
+{
+  "slug": "software-carbon-intensity-sci-explained",
+  "q": "What is the Software Carbon Intensity (SCI) score and how do I calculate it?",
+  "title": "Software Carbon Intensity (SCI) explained",
+  "short": "The SCI score is a rate: the carbon emitted per unit of work your software does, such as per API call or per active user. ISO/IEC 21031:2024 sets the formula: energy used times grid carbon intensity, plus a share of the hardware's embodied emissions, divided by your chosen functional unit.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "SaaS founders and engineering leads",
+  "sections": [
+    {
+      "h": "The formula, term by term",
+      "p": [
+        "SCI = ((E x I) + M) per R."
+      ],
+      "ul": [
+        "E: energy the software used over the period, in kWh, for the servers, storage and network you include.",
+        "I: carbon intensity of that electricity, in grams per kWh, for the grid region where it ran.",
+        "M: embodied emissions of the hardware, shared out by time and by the part of the machine you reserved.",
+        "R: the functional unit, the thing you divide by, such as one API call, one user, one transaction or one GB processed."
+      ]
+    },
+    {
+      "h": "How to share out embodied emissions",
+      "p": [
+        "M = total embodied emissions of the device x (hours you reserved it / expected life in hours) x (resources you reserved / total resources). On a shared cloud machine the last part is your vCPUs out of the host's vCPUs.",
+        "Few cloud providers publish embodied figures per instance, so most teams use a manufacturer's product footprint or a published estimate and label it as an assumption."
+      ]
+    },
+    {
+      "h": "What the score is not",
+      "ul": [
+        "It is not your company footprint. A company inventory reports total tonnes by scope; the SCI is a per-unit rate for one software system.",
+        "Offsets and renewable energy certificates cannot lower it. The specification excludes all market-based measures, so I must be the location-based intensity of the grid you draw from, and only cuts in energy, hardware or that grid intensity move the score.",
+        "It is not comparable across products unless the boundary and functional unit match. Publish both alongside the score."
+      ]
+    },
+    {
+      "h": "Choosing the functional unit",
+      "p": [
+        "Pick the unit your product scales with and that a customer understands. An API business uses calls, a collaboration tool uses active users, a data pipeline uses GB processed. Keep the same unit over time so the trend means something."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of an API service in India",
+    "lines": [
+      "Energy: one dedicated server averaging 1 kW for 720 hours = 720 kWh",
+      "Operational: 720 x 0.710 kg CO2 per kWh (CEA, version 21.0) = 511.2 kg",
+      "Embodied: assumed 1,500 kg CO2e for the server over a 4 year life (35,040 hours); 1,500 x 720 / 35,040 = 30.8 kg",
+      "Total: 511.2 + 30.8 = 542.0 kg",
+      "R: 2,000,000 API calls; 542,000 g / 2,000,000 = 0.271 g per call"
+    ],
+    "note": "The embodied figure is an illustrative assumption. The grid factor covers CO2 only; say so if you report the score as CO2e."
+  },
+  "senseible": "Senseible's cloud and data centre calculator turns vCPU-hours, memory, storage and network transfer into kWh and emissions by hosting region, which gives the E x I part. For servers on your own premises, it reads the kWh from your electricity bill and applies 0.710 kg CO2 per kWh.",
+  "links": [
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Cloud footprint from AWS, Azure and Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO/IEC 21031:2024, Software Carbon Intensity (SCI) specification, published by the Green Software Foundation as SCI v1.1.0 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

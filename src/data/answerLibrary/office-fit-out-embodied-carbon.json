@@ -1,0 +1,82 @@
+{
+  "slug": "office-fit-out-embodied-carbon",
+  "q": "How do I estimate the carbon footprint of an office fit-out or renovation?",
+  "title": "Office fit-out embodied carbon",
+  "short": "Take the fit-out bill of quantities, multiply each item (carpet, partitions, ceilings, furniture, HVAC units) by an embodied carbon factor from its EPD, and add them. Count the total once, in the year you buy it, under Scope 3 Category 2, capital goods. Where you only know the contract value, use a labelled spend-based estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies fitting out leased offices; interior contractors",
+  "sections": [
+    {
+      "h": "What a fit-out includes",
+      "p": [
+        "Fit-out is everything added inside a shell building: raised floors, partitions, false ceilings, flooring, doors, lighting, HVAC terminal units and ducting, electrical and data cabling, and loose furniture. The RICS whole life carbon standard (2nd edition, 2023) treats these as separate building elements from the structure and facade, and expects repeated fit-outs to be counted over a building's life."
+      ]
+    },
+    {
+      "h": "The steps",
+      "ol": [
+        "Get the BOQ from the contractor, with quantities in m2, running metres, numbers or kg.",
+        "Group lines into a few big items. Flooring, partitions, ceilings, furniture and HVAC usually hold most of the total.",
+        "Find a factor for each: the manufacturer's EPD (A1 to A3, kg CO2e per declared unit) first, then a published generic database value.",
+        "Multiply quantity by factor for each line and add.",
+        "Add transport to site (A4) and site wastage and installation (A5), the EN 15978 life cycle modules, only if your scope says so, and say whether they are in."
+      ]
+    },
+    {
+      "h": "Where it sits in your inventory",
+      "p": [
+        "Capitalised fit-out items belong to Category 2, and the whole cradle-to-gate total is reported in the year you acquire them. It is not spread over the depreciation period. Small items you expense go in Category 1. Refrigerant that later leaks from new AC units is your Scope 1 when it happens, not part of the fit-out figure."
+      ]
+    },
+    {
+      "h": "When you only have the contract value",
+      "p": [
+        "Multiply the spend by a spend-based factor for construction or furniture and label the result as spend-based with wide uncertainty. Use it to see whether the fit-out is large next to your Scope 1 and 2. Replace it with a quantity-based figure for the items that turn out to matter."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 900 m2 office fit-out",
+    "lines": [
+      "Carpet tiles: 900 m2 x 12 kg CO2e per m2 = 10,800 kg CO2e",
+      "Gypsum partitions: 500 m2 x 20 kg CO2e per m2 = 10,000 kg CO2e",
+      "Mineral fibre ceiling tiles: 900 m2 x 6 kg CO2e per m2 = 5,400 kg CO2e",
+      "Workstations: 120 x 150 kg CO2e each = 18,000 kg CO2e",
+      "A1 to A3 subtotal: 44,200 kg CO2e",
+      "Site wastage at 5% on carpet, partitions and ceilings: 26,200 x 0.05 = 1,310 kg CO2e",
+      "Total: 45,510 kg CO2e, about 45.5 tonnes, or 50.6 kg CO2e per m2"
+    ],
+    "note": "Every factor here is an assumption for illustration. Replace each with the EPD value for the product actually bought."
+  },
+  "senseible": "Senseible reads the purchase invoices for a fit-out, fingerprints each file and keeps it as evidence. Where an invoice gives only spend, it provides a spend-based estimate labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Embodied carbon from quantities",
+      "to": "/answers/how-to-calculate-embodied-carbon-from-quantities"
+    },
+    {
+      "label": "Capital goods: Category 1 or 2",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "What is A1 to A3?",
+      "to": "/answers/what-is-embodied-carbon-a1-a3"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 21930:2017, core rules for environmental product declarations of construction products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 2 Capital goods",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}
