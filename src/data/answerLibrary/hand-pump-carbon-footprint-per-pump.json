@@ -1,0 +1,86 @@
+{
+  "slug": "hand-pump-carbon-footprint-per-pump",
+  "q": "How do I calculate the carbon footprint of a hand pump?",
+  "title": "Hand pump carbon footprint per pump",
+  "short": "Weigh the cast iron head, stand, handle, galvanised riser pipes and rods, and cylinder per pump and multiply by supplier figures. Add machining, assembly and painting energy, then divide the workshop's energy by pumps made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Hand pump makers supplying water schemes",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Cast iron or steel head, stand and handle.",
+        "Galvanised steel riser pipes and connecting rods.",
+        "Brass or plastic cylinder parts and seals."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Casting or fabrication.",
+        "Machining and assembly.",
+        "Painting and packing."
+      ]
+    },
+    {
+      "h": "Per pump",
+      "p": [
+        "Report per pump by type and depth, since deeper wells need more riser pipe and rod."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per pump (one month)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Coal: 3,000 kg x 2.42 = 7,260 kg CO2",
+      "Pumps made: 1,000",
+      "Plant total: 17,910 / 1,000 = 17.9 kg CO2 per pump",
+      "Add iron, pipe and rods for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Foundry footprint",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "Hot-dip galvanizing footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Submersible pump footprint",
+      "to": "/answers/submersible-pump-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "adult-diaper-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of an adult diaper?",
+  "title": "Adult diaper carbon footprint per piece",
+  "short": "Weigh the fluff pulp, superabsorbent polymer, non-wovens, backsheet and elastics per piece and multiply by supplier figures. Add converting line energy, then divide the plant's energy by pieces made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Adult diaper and incontinence product makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Fluff pulp and superabsorbent polymer.",
+        "Non-woven top sheet and PE backsheet.",
+        "Elastics, tapes and adhesive."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Fluff defibering and core forming.",
+        "Laminating layers on the converting line.",
+        "Cutting, folding and packing."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per piece by size and weight. Pulp and superabsorbent usually make up most of the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per piece (one month)",
+    "lines": [
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Pieces made: 2,000,000",
+      "Plant total: 56,800 / 2,000,000 = 0.0284 kg CO2 per piece",
+      "Add pulp, superabsorbent and non-wovens for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Baby diaper footprint",
+      "to": "/answers/baby-diaper-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Sanitary napkin footprint",
+      "to": "/answers/sanitary-napkin-carbon-footprint-per-pad"
+    },
+    {
+      "label": "Paper industry",
+      "to": "/industries/paper"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

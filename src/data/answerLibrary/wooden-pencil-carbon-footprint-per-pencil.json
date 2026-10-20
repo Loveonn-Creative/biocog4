@@ -1,0 +1,82 @@
+{
+  "slug": "wooden-pencil-carbon-footprint-per-pencil",
+  "q": "How do I calculate the carbon footprint of a wooden pencil?",
+  "title": "Wooden pencil carbon footprint per pencil",
+  "short": "Add the wood slats, graphite and clay lead, paint and eraser per pencil using supplier figures. Add lead firing, slat machining, gluing, painting and packing energy, then divide the plant's energy by pencils made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pencil makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Wood slats.",
+        "Graphite and clay for the lead.",
+        "Lacquer, eraser and metal ferrule if fitted."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Mixing, extruding and firing the leads.",
+        "Grooving slats, laying leads and gluing.",
+        "Shaping, painting and packing."
+      ]
+    },
+    {
+      "h": "Per pencil",
+      "p": [
+        "Report per pencil, or per gross. Lead firing in a kiln is often the largest energy step."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per pencil (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "PNG: 3,000 SCM x 2.05 = 6,150 kg CO2",
+      "Pencils made: 5,000,000",
+      "Plant total: 34,550 / 5,000,000 = 0.00691 kg CO2 per pencil",
+      "Add wood, graphite and lacquer for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Notebook footprint",
+      "to": "/answers/notebook-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Wooden toys footprint",
+      "to": "/answers/wooden-toys-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Paper industry",
+      "to": "/industries/paper"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

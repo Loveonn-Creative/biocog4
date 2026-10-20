@@ -1,0 +1,81 @@
+{
+  "slug": "water-meter-carbon-footprint-per-meter",
+  "q": "How do I calculate the carbon footprint of a water meter?",
+  "title": "Water meter carbon footprint per meter",
+  "short": "Weigh the brass or plastic body, the register and the internal parts per meter and multiply by supplier figures, adding electronics for smart meters. Add machining, moulding, assembly and calibration energy, then divide the plant's energy by meters made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Water meter makers supplying utilities",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Brass or engineering plastic body.",
+        "Impeller, magnets and register.",
+        "Electronics and battery for smart meters."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Casting or machining brass bodies, or moulding plastic ones.",
+        "Assembly.",
+        "Flow calibration and pressure testing."
+      ]
+    },
+    {
+      "h": "Per meter",
+      "p": [
+        "Report per meter by size and body material. A brass body usually carries more footprint than a plastic one of the same size."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per meter (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Meters made: 40,000",
+      "Plant total: 35,500 / 40,000 = 0.887 kg CO2 per meter",
+      "Add brass or plastic and any electronics for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Brass component footprint",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Electricity meter footprint",
+      "to": "/answers/electricity-meter-carbon-footprint-per-meter"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "door-hinge-carbon-footprint-per-hinge",
+  "q": "How do I calculate the carbon footprint of a door hinge?",
+  "title": "Door hinge carbon footprint per hinge",
+  "short": "Weigh each hinge and multiply by the steel, stainless steel or brass supplier's figure, then add stamping, pin making, plating or polishing and assembly energy. Divide the plant's energy by hinges made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Builders' hardware makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Mild steel, stainless steel or brass strip.",
+        "Pin and washers.",
+        "Plating or powder finish."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Stamping and knuckle curling.",
+        "Assembly with the pin.",
+        "Polishing, plating and packing."
+      ]
+    },
+    {
+      "h": "Per hinge",
+      "p": [
+        "Report per hinge by size, material and weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per hinge (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Hinges made: 500,000",
+      "Plant total: 21,300 / 500,000 = 0.0426 kg CO2 per hinge",
+      "Add steel or brass for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Sheet metal stamping footprint",
+      "to": "/answers/sheet-metal-stamping-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Electroplating footprint",
+      "to": "/answers/electroplating-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Padlock footprint",
+      "to": "/answers/padlock-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

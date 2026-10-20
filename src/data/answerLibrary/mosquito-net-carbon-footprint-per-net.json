@@ -1,0 +1,81 @@
+{
+  "slug": "mosquito-net-carbon-footprint-per-net",
+  "q": "How do I calculate the carbon footprint of a mosquito net?",
+  "title": "Mosquito net carbon footprint per net",
+  "short": "Weigh the polyester or polyethylene netting per net, multiply by the yarn supplier's figure, and add treatment chemicals if any, then add knitting, cutting and stitching energy per net made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Mosquito net makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Polyester or polyethylene yarn.",
+        "Insecticide treatment if the net is treated.",
+        "Border fabric, thread and packing."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Warp knitting the netting.",
+        "Heat setting and treatment.",
+        "Cutting, stitching and packing."
+      ]
+    },
+    {
+      "h": "Per net",
+      "p": [
+        "Report per net by size and fabric weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per net (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Nets made: 30,000",
+      "Plant total: 14,200 / 30,000 = 0.473 kg CO2 per net",
+      "Add yarn and any treatment for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Fishing net footprint",
+      "to": "/answers/fishing-net-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Knitted fabric footprint",
+      "to": "/answers/knitted-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

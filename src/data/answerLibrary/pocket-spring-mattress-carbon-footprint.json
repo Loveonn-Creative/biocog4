@@ -1,0 +1,85 @@
+{
+  "slug": "pocket-spring-mattress-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a pocket spring mattress?",
+  "title": "Pocket spring mattress carbon footprint",
+  "short": "Weigh the steel springs, foam layers, fabric and non-woven per mattress and multiply by supplier figures. Add spring coiling, pocketing, quilting and assembly energy, then divide the plant's energy by mattresses made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Mattress makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Steel spring wire.",
+        "Polyurethane or latex foam layers.",
+        "Ticking fabric, non-woven pocket fabric and adhesive."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Coiling springs and sealing them in non-woven pockets.",
+        "Quilting the cover.",
+        "Assembly, roll-packing or flat packing."
+      ]
+    },
+    {
+      "h": "Per mattress",
+      "p": [
+        "Report per mattress by size and weight. Foam and steel usually make up most of the footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per mattress (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Mattresses made: 6,000",
+      "Plant total: 42,600 / 6,000 = 7.100 kg CO2 per mattress",
+      "Add spring wire, foam and fabric for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Foam mattress footprint",
+      "to": "/answers/foam-mattress-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Steel wire drawing footprint",
+      "to": "/answers/steel-wire-drawing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Pillow footprint",
+      "to": "/answers/pillow-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

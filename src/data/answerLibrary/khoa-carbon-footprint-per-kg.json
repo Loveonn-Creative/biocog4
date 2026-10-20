@@ -1,0 +1,86 @@
+{
+  "slug": "khoa-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of khoa?",
+  "title": "Khoa carbon footprint per kg",
+  "short": "Khoa is milk boiled down, so start with the milk used per kg of khoa and the dairy's figure per litre of milk. Add the fuel used for evaporation and any chilling, then divide by kg of khoa made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dairies and sweet makers producing khoa",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Milk, the main input: several litres go into each kg of khoa.",
+        "Fuel for boiling, often LPG, PNG or wood.",
+        "Chilling and packing."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Heating milk in open pans or scraped-surface units.",
+        "Continuous stirring until the solids set.",
+        "Cooling and packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg of khoa and state the litres of milk used per kg from your own records. Milk usually dominates the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg (one month)",
+    "lines": [
+      "LPG: 2,000 kg x 2.98 = 5,960 kg CO2",
+      "Electricity: 3,000 kWh x 0.710 = 2,130 kg CO2",
+      "Kg dispatched: 5,000",
+      "Plant total: 8,090 / 5,000 = 1.618 kg CO2 per kg",
+      "Add milk for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Paneer footprint",
+      "to": "/answers/paneer-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Ghee footprint",
+      "to": "/answers/ghee-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Indian sweets footprint",
+      "to": "/answers/indian-sweets-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

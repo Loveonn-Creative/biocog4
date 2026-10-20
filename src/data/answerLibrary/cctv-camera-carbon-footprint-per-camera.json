@@ -1,0 +1,81 @@
+{
+  "slug": "cctv-camera-carbon-footprint-per-camera",
+  "q": "How do I calculate the carbon footprint of a CCTV camera?",
+  "title": "CCTV camera carbon footprint per camera",
+  "short": "Most of the footprint is in bought-in electronics: use supplier figures for the image sensor board, lens and housing. Add surface mount and assembly energy, then divide the plant's energy by cameras made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "CCTV and security camera assemblers",
+  "sections": [
+    {
+      "h": "Bought-in parts",
+      "ul": [
+        "Image sensor, processor board and IR LEDs.",
+        "Lens assembly.",
+        "Plastic or aluminium housing, cable and bracket."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Surface mount assembly if done in-house.",
+        "Camera assembly and focusing.",
+        "Testing and packing."
+      ]
+    },
+    {
+      "h": "Per camera",
+      "p": [
+        "Report per camera by type, since a metal-bodied outdoor camera carries more housing than an indoor dome."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per camera (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Cameras made: 40,000",
+      "Plant total: 21,300 / 40,000 = 0.532 kg CO2 per camera",
+      "Add boards, lens and housing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PCB assembly footprint",
+      "to": "/answers/pcb-assembly-carbon-footprint-per-board"
+    },
+    {
+      "label": "Aluminium die casting footprint",
+      "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Automobile industry",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

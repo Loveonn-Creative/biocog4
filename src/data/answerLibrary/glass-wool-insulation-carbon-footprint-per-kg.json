@@ -1,0 +1,82 @@
+{
+  "slug": "glass-wool-insulation-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of glass wool insulation?",
+  "title": "Glass wool insulation carbon footprint per kg",
+  "short": "Add the glass batch and cullet, the binder and the facing per kg of insulation using supplier figures. Add melting, fiberising, curing and packing energy, then divide the plant's energy by kg made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Glass wool insulation makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Sand, soda ash, borax and recycled glass cullet.",
+        "Binder.",
+        "Foil or kraft facing if used."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Melting, often electric or gas fired.",
+        "Fiberising and binder spraying.",
+        "Curing, cutting and compression packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg, or per square metre by thickness and density. Melting is often the largest energy line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg (one month)",
+    "lines": [
+      "Electricity: 200,000 kWh x 0.710 = 142,000 kg CO2",
+      "PNG: 40,000 SCM x 2.05 = 82,000 kg CO2",
+      "Kg dispatched: 500,000",
+      "Plant total: 224,000 / 500,000 = 0.448 kg CO2 per kg",
+      "Add batch materials and binder for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Glass bottle footprint",
+      "to": "/answers/glass-bottle-carbon-footprint-per-bottle"
+    },
+    {
+      "label": "Gypsum board footprint",
+      "to": "/answers/gypsum-board-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

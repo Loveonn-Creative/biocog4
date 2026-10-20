@@ -1,0 +1,85 @@
+{
+  "slug": "modular-kitchen-cabinet-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a modular kitchen cabinet?",
+  "title": "Modular kitchen cabinet carbon footprint",
+  "short": "Measure the board area per cabinet, multiply by the board supplier's figure, and add laminate, edge band, hinges and channels. Add panel cutting, edge banding and drilling energy, then divide the plant's energy by cabinets made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Modular kitchen and cabinet makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Particle board, MDF or plywood carcass.",
+        "Decorative laminate or acrylic and edge band.",
+        "Hinges, channels, handles and adhesive."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Panel cutting.",
+        "Edge banding and drilling.",
+        "Assembly or flat packing."
+      ]
+    },
+    {
+      "h": "Per cabinet",
+      "p": [
+        "Report per cabinet by size, or per running metre for a full kitchen. Board is usually most of the footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per cabinet (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Cabinets made: 3,000",
+      "Plant total: 21,300 / 3,000 = 7.100 kg CO2 per cabinet",
+      "Add board, laminate and hardware for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Particle board footprint",
+      "to": "/answers/particle-board-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Decorative laminate footprint",
+      "to": "/answers/decorative-laminate-carbon-footprint-per-sheet"
+    },
+    {
+      "label": "Plywood footprint",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
