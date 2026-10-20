@@ -1,0 +1,86 @@
+{
+  "slug": "shampoo-carbon-footprint-per-bottle",
+  "q": "How do I calculate the carbon footprint of a bottle of shampoo?",
+  "title": "Shampoo carbon footprint per bottle",
+  "short": "Add the surfactants, water and additives per bottle and the plastic bottle and cap, each with supplier figures. Add mixing, filling and labelling energy, then divide the plant's energy by bottles filled, stated by volume.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Shampoo makers and personal care brands",
+  "sections": [
+    {
+      "h": "Formula and pack",
+      "ul": [
+        "Surfactants, conditioners, fragrance and preservatives.",
+        "Plastic bottle and cap, or sachet film.",
+        "Labels and cartons."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Mixing tanks, with heating if required.",
+        "Filling, capping and labelling.",
+        "Air conditioning and lighting for the line."
+      ]
+    },
+    {
+      "h": "Per bottle",
+      "p": [
+        "Report per bottle with its volume. Sachets and large bottles carry very different pack weight per millilitre."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: shampoo unit per bottle (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "PNG: 2,000 SCM x 2.05 = 4,100 kg CO2",
+      "Bottles filled: 500,000",
+      "Plant total: 18,300 / 500,000 = 0.0366 kg CO2 per bottle",
+      "Add ingredients and bottle for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Hair oil footprint",
+      "to": "/answers/hair-oil-carbon-footprint-per-bottle"
+    },
+    {
+      "label": "Soap footprint",
+      "to": "/answers/soap-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Cosmetics footprint",
+      "to": "/answers/cosmetics-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

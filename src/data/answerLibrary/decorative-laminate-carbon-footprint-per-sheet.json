@@ -1,0 +1,82 @@
+{
+  "slug": "decorative-laminate-carbon-footprint-per-sheet",
+  "q": "How do I calculate the carbon footprint of a decorative laminate sheet?",
+  "title": "Decorative laminate carbon footprint per sheet",
+  "short": "Add the kraft paper, decor paper and phenolic and melamine resins per sheet with supplier figures. Add impregnation, drying and pressing energy, divide the plant's energy by sheets passed and state sheet size and thickness.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Decorative laminate makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Kraft paper core layers.",
+        "Printed decor and overlay papers.",
+        "Phenol formaldehyde and melamine resins."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Paper impregnation and drying ovens.",
+        "Multi-daylight hot press with steam or thermic oil.",
+        "Trimming, sanding and packing."
+      ]
+    },
+    {
+      "h": "Per sheet",
+      "p": [
+        "Report per sheet by size and thickness, usually 8 by 4 feet. The resins and papers usually carry most of the footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: decorative laminate unit per sheet (one month)",
+    "lines": [
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Coal: 60,000 kg x 2.42 = 145,200 kg CO2",
+      "Sheets produced: 100,000",
+      "Plant total: 202,000 / 100,000 = 2.020 kg CO2 per sheet",
+      "Add papers and resins for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Particle board footprint",
+      "to": "/answers/particle-board-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Plywood footprint",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

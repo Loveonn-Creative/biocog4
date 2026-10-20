@@ -1,0 +1,81 @@
+{
+  "slug": "toughened-glass-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of toughened glass per square metre?",
+  "title": "Toughened glass carbon footprint per sq m",
+  "short": "Multiply the float glass per square metre (thickness times area times density) by the float glass supplier's figure, then add cutting, edging and the tempering furnace's electricity. Divide the unit's energy by square metres dispatched.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Glass processors making toughened glass",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Float glass by weight: thickness, area and about 2.5 kg per square metre per mm.",
+        "Cutting losses and rejects.",
+        "Spacers and frames if made into units."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cutting and edge grinding.",
+        "Washing and drilling.",
+        "Tempering furnace, often electric."
+      ]
+    },
+    {
+      "h": "Per square metre",
+      "p": [
+        "Report per square metre by thickness. A 12 mm sheet carries twice the glass of a 6 mm sheet."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: toughened glass unit per sq m (one month)",
+    "lines": [
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Square metres dispatched: 40,000",
+      "Plant total: 56,800 / 40,000 = 1.420 kg CO2 per sq m",
+      "Add float glass for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Glass container furnace emissions",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Aluminium window footprint",
+      "to": "/answers/aluminium-window-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

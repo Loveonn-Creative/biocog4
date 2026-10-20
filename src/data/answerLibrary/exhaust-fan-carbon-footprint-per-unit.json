@@ -1,0 +1,85 @@
+{
+  "slug": "exhaust-fan-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an exhaust fan?",
+  "title": "Exhaust fan carbon footprint per unit",
+  "short": "Weigh the motor (copper winding and lamination steel), the blades and the plastic or metal frame per fan and multiply by supplier figures. Add winding, moulding, assembly and testing energy, then divide the unit's energy by fans passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Exhaust and ventilation fan makers",
+  "sections": [
+    {
+      "h": "Bought-in parts",
+      "ul": [
+        "Copper winding wire and lamination steel for the motor.",
+        "Aluminium or plastic blades.",
+        "Plastic or sheet metal frame and grille."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Stator winding and rotor die casting if done in-house.",
+        "Moulding or pressing the frame.",
+        "Assembly, balancing and testing."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Report per fan by sweep size, since a larger fan carries more motor and blade material."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: exhaust fan unit per unit (one month)",
+    "lines": [
+      "Electricity: 25,000 kWh x 0.710 = 17,750 kg CO2",
+      "Units produced: 20,000",
+      "Plant total: 17,750 / 20,000 = 0.887 kg CO2 per unit",
+      "Add copper, steel and plastic for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Ceiling fan footprint",
+      "to": "/answers/ceiling-fan-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Enamelled copper wire footprint",
+      "to": "/answers/enamelled-copper-wire-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Injection moulding footprint",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Automobile industry",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

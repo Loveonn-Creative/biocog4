@@ -1,0 +1,81 @@
+{
+  "slug": "hdpe-drum-carbon-footprint-per-drum",
+  "q": "How do I calculate the carbon footprint of an HDPE drum?",
+  "title": "HDPE drum carbon footprint per drum",
+  "short": "An HDPE drum is mostly resin: multiply the drum weight by the resin supplier's per-kg figure, then add blow moulding, cooling and compressed air electricity. Divide the unit's energy by drums passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Blow moulders making HDPE drums and jerry cans",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "HDPE resin by drum weight.",
+        "Masterbatch and UV stabilizer.",
+        "Caps, bungs and rings."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Blow moulding machines.",
+        "Chillers and compressed air.",
+        "Leak testing and stacking."
+      ]
+    },
+    {
+      "h": "Per drum",
+      "p": [
+        "Report per drum by capacity and weight. Regrind of flash and rejects lowers fresh resin use."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: HDPE drum unit per drum (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Drums produced: 30,000",
+      "Plant total: 42,600 / 30,000 = 1.420 kg CO2 per drum",
+      "Add resin for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Plastic water tank footprint",
+      "to": "/answers/plastic-water-tank-carbon-footprint-per-unit"
+    },
+    {
+      "label": "HDPE pipe footprint",
+      "to": "/answers/hdpe-pipe-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

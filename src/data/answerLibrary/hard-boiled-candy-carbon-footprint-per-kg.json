@@ -1,0 +1,86 @@
+{
+  "slug": "hard-boiled-candy-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of hard boiled candy per kg?",
+  "title": "Candy carbon footprint per kg",
+  "short": "Add the sugar, glucose syrup and flavours per kg with supplier figures, then the cooking, forming and wrapping energy. Divide the plant's fuel and electricity by kg packed and add the wrapper film and cartons.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Confectionery makers",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Sugar and liquid glucose by weight.",
+        "Flavours, colours and acids.",
+        "Milk solids for milky candies."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Vacuum cooking, usually with steam.",
+        "Forming, cooling and wrapping lines.",
+        "Air conditioning for the packing hall."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg of candy, then per piece using the count per kg. Sugar usually carries most of the ingredient footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: candy unit per kg (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "PNG: 6,000 SCM x 2.05 = 12,300 kg CO2",
+      "Kg dispatched: 300,000",
+      "Plant total: 40,700 / 300,000 = 0.136 kg CO2 per kg",
+      "Add sugar, glucose and wrappers for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Chocolate footprint",
+      "to": "/answers/chocolate-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Sugar mill footprint",
+      "to": "/answers/sugar-mill-bagasse-cogeneration-emissions"
+    },
+    {
+      "label": "Biscuit footprint",
+      "to": "/answers/biscuit-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

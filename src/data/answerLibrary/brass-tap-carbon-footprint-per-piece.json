@@ -1,0 +1,86 @@
+{
+  "slug": "brass-tap-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a brass bathroom tap?",
+  "title": "Brass tap carbon footprint per piece",
+  "short": "Weigh the brass casting or forging per tap, including runners and machining swarf, and multiply by the brass supplier's figure. Add melting, machining, polishing and chrome plating energy, then divide the unit's energy by taps passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bath fitting and faucet makers",
+  "sections": [
+    {
+      "h": "Brass",
+      "ul": [
+        "Brass ingot or rod by weight, including runners.",
+        "Melting furnace fuel or induction power.",
+        "Swarf and rejects returned to melting."
+      ]
+    },
+    {
+      "h": "Finishing",
+      "ul": [
+        "Machining and polishing.",
+        "Nickel and chrome plating.",
+        "Cartridges, aerators and packing."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per tap with its finished weight. Swarf that goes back to the furnace is not a loss, so do not count it twice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: brass tap unit per piece (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "PNG: 3,000 SCM x 2.05 = 6,150 kg CO2",
+      "Pieces produced: 50,000",
+      "Plant total: 34,550 / 50,000 = 0.691 kg CO2 per piece",
+      "Add brass and plating chemicals for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Brass component footprint",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Electroplating footprint",
+      "to": "/answers/electroplating-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Sanitaryware footprint",
+      "to": "/answers/sanitaryware-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Aluminium industry",
+      "to": "/industries/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

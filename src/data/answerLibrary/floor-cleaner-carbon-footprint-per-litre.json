@@ -1,0 +1,81 @@
+{
+  "slug": "floor-cleaner-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of floor cleaner per litre?",
+  "title": "Floor cleaner carbon footprint per litre",
+  "short": "Add the active ingredients, water and fragrance per litre and the bottle and cap, each with supplier figures. Add blending and filling energy, divide the plant's energy by litres filled, and count the bottle by its weight.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Home care and cleaning liquid makers",
+  "sections": [
+    {
+      "h": "Formula and pack",
+      "ul": [
+        "Disinfectants, surfactants and fragrance.",
+        "Water.",
+        "HDPE or PET bottle, cap and label."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Blending tanks.",
+        "Filling and capping lines.",
+        "Cartons and pallets."
+      ]
+    },
+    {
+      "h": "Per litre",
+      "p": [
+        "Report per litre, then per bottle by volume. The plastic bottle is often a large share for small packs."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: floor cleaner unit per litre (one month)",
+    "lines": [
+      "Electricity: 10,000 kWh x 0.710 = 7,100 kg CO2",
+      "Litres filled: 400,000",
+      "Plant total: 7,100 / 400,000 = 0.0177 kg CO2 per litre",
+      "Add ingredients and bottle for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Detergent powder footprint",
+      "to": "/answers/detergent-powder-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Hand sanitizer footprint",
+      "to": "/answers/hand-sanitizer-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

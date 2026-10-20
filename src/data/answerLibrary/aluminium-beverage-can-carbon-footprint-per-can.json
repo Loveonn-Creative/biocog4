@@ -1,0 +1,82 @@
+{
+  "slug": "aluminium-beverage-can-carbon-footprint-per-can",
+  "q": "How do I calculate the carbon footprint of an aluminium beverage can?",
+  "title": "Aluminium can carbon footprint per can",
+  "short": "Most of a can's footprint is its aluminium: multiply the can and end weight by the coil supplier's per-kg figure, then add forming, washing, coating and curing energy. Divide the plant's energy by cans made and name the recycled share.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Can makers and beverage brands",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Aluminium coil for the body and end.",
+        "Inside lacquer and outside inks.",
+        "Scrap returned to the coil supplier."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cupping and body making.",
+        "Washing, coating and curing ovens.",
+        "Necking, testing and palletising."
+      ]
+    },
+    {
+      "h": "Per can",
+      "p": [
+        "Report per can by size. Recycled aluminium carries a much lower per-kg figure than primary metal."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: aluminium can unit per can (one month)",
+    "lines": [
+      "Electricity: 200,000 kWh x 0.710 = 142,000 kg CO2",
+      "PNG: 80,000 SCM x 2.05 = 164,000 kg CO2",
+      "Cans produced: 20,000,000",
+      "Plant total: 306,000 / 20,000,000 = 0.0153 kg CO2 per can",
+      "Add aluminium for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Aluminium sheet footprint",
+      "to": "/answers/aluminium-sheet-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Soft drink footprint",
+      "to": "/answers/soft-drink-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Aluminium industry",
+      "to": "/industries/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

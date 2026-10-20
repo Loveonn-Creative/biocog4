@@ -1,0 +1,82 @@
+{
+  "slug": "piston-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of an engine piston?",
+  "title": "Piston carbon footprint per piece",
+  "short": "Multiply the aluminium alloy per piston, including runners and machining swarf, by the supplier's figure, then add casting, heat treatment and machining energy. Divide the plant's energy by pistons passed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Piston makers and auto component suppliers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Aluminium alloy by weight, including runners.",
+        "Swarf returned to melting.",
+        "Pins and rings if supplied as a set."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Melting and gravity die casting.",
+        "Heat treatment.",
+        "Machining and coating."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per piston by engine type. Recycled aluminium alloy lowers the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: piston unit per piece (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "PNG: 10,000 SCM x 2.05 = 20,500 kg CO2",
+      "Pieces produced: 100,000",
+      "Plant total: 56,000 / 100,000 = 0.560 kg CO2 per piece",
+      "Add aluminium alloy for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Aluminium die casting footprint",
+      "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Foundry footprint",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "Automobile industry",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
