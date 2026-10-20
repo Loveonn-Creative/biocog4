@@ -798,3 +798,10 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .fd-badge { font-size: 15px; }
 }
 
+
+/* Lead pages: a typed estimate that will not sit still, and a dot that travels a drawn path. */
+@keyframes lead-wobble { 0%, 100% { transform: rotate(0deg) translateX(0); } 25% { transform: rotate(-1.2deg) translateX(-1px); } 75% { transform: rotate(1.2deg) translateX(1px); } }
+.lead-wobble { display: inline-block; animation: lead-wobble 2.6s ease-in-out infinite; transform-origin: 50% 80%; }
+@keyframes lead-slide { 0% { left: 3%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: 96%; opacity: 0; } }
+.lead-slide { left: 96%; animation: lead-slide 3.4s cubic-bezier(.45,.05,.35,1) infinite; }
+@media (prefers-reduced-motion: reduce) { .lead-wobble, .lead-slide { animation: none; } .lead-slide { opacity: 0; } }

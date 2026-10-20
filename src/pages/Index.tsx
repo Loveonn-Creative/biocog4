@@ -5,7 +5,7 @@ import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
 import { HomeNavIcons } from "@/components/HomeNavIcons";
 import { UseCaseTyper } from "@/components/UseCaseTyper";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { getLocaleMeta } from "@/lib/i18n/locales";
 import { toast } from "sonner";
@@ -232,7 +232,8 @@ const getScopeFromCategory = (category: string): number => {
 
 const Index = () => {
   const navigate = useNavigate();
-  const { sessionId, user } = useSession();
+  const { sessionId, user, isLoading: sessionLoading } = useSession();
+  const location = useLocation();
   // Signed in or not is known from the stored sign-in alone; the guest
   // session check (network, up to 8 s) must not hold the page below the hero.
   const authStatus = useAuthStatus();
@@ -753,6 +754,19 @@ const Index = () => {
   const handleFileSelect = (file: File) => {
     processDocument(file);
   };
+
+  // A bill picked on another page (the MSME lead page) arrives in the route
+  // state: read it once the session is known, then clear the state so a
+  // refresh or Back does not read it again.
+  const pendingHandled = useRef(false);
+  useEffect(() => {
+    const pending = (location.state as { pendingFile?: unknown } | null)?.pendingFile;
+    if (pendingHandled.current || sessionLoading || !(pending instanceof File)) return;
+    pendingHandled.current = true;
+    navigate(location.pathname, { replace: true, state: null });
+    processDocument(pending);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.state, sessionLoading]);
 
   const handleVoiceInput = async (transcript: string) => {
     setState("processing");
