@@ -14,9 +14,16 @@ const LINKS: { key: string; label: string; to: string }[] = [
   { key: "supplier", label: "Supplier Emissions", to: "/scope-3-supplier-evidence" },
   { key: "credits", label: "Carbon Credits", to: "/carbon-credits" },
   { key: "netzero", label: "Net Zero", to: "/net-zero" },
-  { key: "decarbonize", label: "Decarbonize", to: "/decarbonize-india" },
   { key: "sample", label: "Sample Report", to: "/esg-report-sample" },
-  { key: "careers", label: "Careers", to: "/careers" },
+  { key: "accounting", label: "Carbon Accounting", to: "/carbon-accounting" },
+  { key: "brsr", label: "BRSR Reporting", to: "/esg-reporting" },
+  { key: "ratings", label: "EcoVadis & CDP", to: "/esg-ratings" },
+  { key: "epr", label: "EPR Compliance", to: "/circular-economy" },
+  { key: "risk", label: "Climate Risk", to: "/climate-risk" },
+  { key: "diligence", label: "Supplier Due Diligence", to: "/supplier-due-diligence" },
+  { key: "decarbonisation", label: "Decarbonisation", to: "/decarbonization" },
+  { key: "assurance", label: "ESG Assurance", to: "/esg-data-management" },
+  { key: "ehs", label: "EHS & Safety", to: "/ehs-social" },
 ];
 
 // Hover colours cycle through the platform palette: brand green, India saffron, deep green.
@@ -25,8 +32,8 @@ const HOVER = ["hover:text-[#FF9933] focus-visible:text-[#FF9933]", "hover:text-
 export const HomeAlso = () => {
   const t = useT();
   return (
-    <p className="mt-10 sm:mt-12 w-full max-w-4xl px-1 text-center text-[13px] sm:text-[15px] leading-7 sm:leading-8 text-muted-foreground">
-      {t("home.also.label", "Also:")}{" "}
+    <p className="mt-16 sm:mt-20 w-full max-w-6xl px-0 sm:px-6 text-center text-[13px] sm:text-[14px] leading-7 sm:leading-8 text-muted-foreground [text-wrap:balance]">
+      <span className="font-semibold text-foreground">{t("home.also.label", "Also:")}</span>{" "}
       {LINKS.map((l, i) => (
         <span key={l.key}>
           <Link
@@ -35,7 +42,7 @@ export const HomeAlso = () => {
           >
             {t(`home.also.${l.key}`, l.label)}
           </Link>
-          {i < LINKS.length - 1 && <>{" "}<span aria-hidden="true">·</span>{" "}</>}
+          {i < LINKS.length - 1 && <><span aria-hidden="true">{"\u00a0·"}</span>{" "}</>}
         </span>
       ))}
     </p>
