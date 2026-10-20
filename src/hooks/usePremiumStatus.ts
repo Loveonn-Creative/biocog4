@@ -5,7 +5,7 @@ import { useRealtimeRefresh } from '@/lib/sharedRealtime';
 import { reconcilePayments } from './useRazorpay';
 import { useSession } from './useSession';
 import { supabase } from '@/integrations/supabase/client';
-import { PLAN_INVOICE_SCANS_PER_MONTH, planStatus, type PlanState } from '../../supabase/functions/_shared/planLimits';
+import { canonicalPlan, PLAN_INVOICE_SCANS_PER_MONTH, planStatus, type PlanState } from '../../supabase/functions/_shared/planLimits';
 
 export type PremiumTier = 'snapshot' | 'essential' | 'pro' | 'scale';
 
@@ -194,7 +194,6 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
 // Accounts whose recent pending orders were already checked this session.
 const reconciledThisSession = new Set<string>();
 
-const TIER_RANK: Record<PremiumTier, number> = { snapshot: 0, essential: 1, pro: 2, scale: 3 };
 
 // Map legacy 'basic' tier to 'essential'
 const normalizeTier = (tier: string | null): PremiumTier => {
@@ -214,53 +213,24 @@ export const planQueryKey = (userId: string) => ['plan', userId] as const;
  * fails shows Snapshot: fail closed).
  */
 async function readPlan(userId: string): Promise<PlanRead> {
-  let nextTier: PremiumTier = 'snapshot';
-  let nextExpiry: Date | null = null;
+  const [{ data: profile, error: profileError }, { data: subscriptions, error: subscriptionError }] = await Promise.all([
+    supabase.from('profiles').select('subscription_tier, subscription_expires_at').eq('id', userId).single(),
+    supabase.from('subscriptions').select('tier, expires_at, status').eq('user_id', userId).eq('status', 'active'),
+  ]);
+  if (profileError) console.error('Error fetching profile tier:', profileError);
 
-  // Fetch from profiles table
-  const { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('subscription_tier, subscription_expires_at')
-    .eq('id', userId)
-    .single();
-
-  if (profileError) {
-    console.error('Error fetching profile tier:', profileError);
-  } else if (profile) {
-    // An expired paid plan reads as Snapshot. The profile row is not
-    // rewritten here: the active subscription row below is the record of
-    // payment, and the server applies the same expiry rule.
-    // In force through the grace period, as the server counts it (planLimits.planStatus).
-    const dbTier = normalizeTier(profile.subscription_tier);
-    const expiry = profile.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
-    if (planStatus(dbTier, profile.subscription_expires_at).plan !== 'snapshot') {
-      nextTier = dbTier;
-      nextExpiry = expiry;
-    }
-  }
-
-  // Also check active subscriptions table for latest info
-  // Every active row: a renewal paid early starts when the current period
-  // ends, so the plan in force is the highest one still in force, with the
-  // latest end date on that plan.
-  const { data: subscriptions, error: subscriptionError } = await supabase
-    .from('subscriptions')
-    .select('tier, expires_at, status')
-    .eq('user_id', userId)
-    .eq('status', 'active');
-  const subscription = (subscriptions ?? [])
-    .filter((r) => r.expires_at && planStatus(r.tier, r.expires_at).plan !== 'snapshot')
-    .sort((a, b) => TIER_RANK[normalizeTier(b.tier)] - TIER_RANK[normalizeTier(a.tier)] || Date.parse(b.expires_at!) - Date.parse(a.expires_at!))[0];
-
-  if (subscription && subscription.expires_at) {
-    const subExpiry = new Date(subscription.expires_at);
-    const subTier = normalizeTier(subscription.tier);
-    // Use the paid subscription when it is in force and at least as high as the profile copy.
-    if (TIER_RANK[subTier] > TIER_RANK[nextTier] || (TIER_RANK[subTier] === TIER_RANK[nextTier] && (!nextExpiry || subExpiry > nextExpiry))) {
-      nextTier = subTier;
-      nextExpiry = subExpiry;
-    }
-  }
+  // One rule, the same one the server applies (planLimits.canonicalPlan): the
+  // active subscription rows decide; the profile copy counts only when no row
+  // is in force. An expired plan reads as Snapshot through the grace period
+  // rule in planStatus.
+  const plan = canonicalPlan(
+    profileError ? null : { tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at },
+    subscriptionError ? [] : (subscriptions ?? []),
+  );
+  const tier = normalizeTier(plan.tier ?? null);
+  const inForce = planStatus(tier, plan.expiresAt ?? null).plan !== 'snapshot';
+  const nextTier: PremiumTier = inForce ? tier : 'snapshot';
+  const nextExpiry: Date | null = inForce && plan.expiresAt ? new Date(plan.expiresAt) : null;
 
   // A recent order still pending can mean Razorpay took the payment but
   // the browser never confirmed it. Ask the server to check with Razorpay
@@ -284,10 +254,9 @@ async function readPlan(userId: string): Promise<PlanRead> {
     }
   }
 
-  // Show the result when either record was read. A failed profile read
-  // with an active paid subscription still shows the paid plan; when both
-  // reads fail, the last known plan stays.
-  if (!profileError || (!subscriptionError && subscription)) {
+  // Show the result when either record was read; when both reads fail, the
+  // last known plan stays.
+  if (!profileError || !subscriptionError) {
     return { tier: nextTier, expiresAt: nextExpiry ? nextExpiry.toISOString() : null };
   }
   throw profileError ?? subscriptionError ?? new Error('Plan not readable');
