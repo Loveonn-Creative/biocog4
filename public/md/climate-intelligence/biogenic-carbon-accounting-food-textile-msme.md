@@ -37,6 +37,7 @@ Use the [PCF calculator](https://senseible.earth/calculators/product-carbon-foot
 
 ## Related guides
 
-- [What is GHG-6 and how do we calculate warming impact beyond CO2?](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
-- [Do methane and black carbon reductions count differently from CO2?](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
-- [Cold Chain MSMEs: Refrigerant Leakage Can Dominate Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [the six greenhouse gases and their warming impact](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
+- [methane and black carbon versus CO2](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
+- [refrigerant leaks in cold chain emissions](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [EU rules for Indian textile exporters](https://senseible.earth/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026)

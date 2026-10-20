@@ -14,6 +14,7 @@ Disclosure documents should include a reconciliation note explaining the methodo
 
 ## Related guides
 
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
-- [Scope 1 vs Scope 2 vs Scope 3: A Simple Guide for Small Businesses](https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business)
+- [ISO 14067 versus the GHG Protocol product standard](https://senseible.earth/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained)
+- [market-based versus location-based Scope 2](https://senseible.earth/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide)
+- [Scope 1, 2 and 3 emissions explained](https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business)
+- [choosing the right emission factors](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)

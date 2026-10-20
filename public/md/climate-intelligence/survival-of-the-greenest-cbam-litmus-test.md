@@ -52,6 +52,7 @@ This isn't about compliance. It's about competitive survival. The green transiti
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM checklist for steel and aluminium exporters](https://senseible.earth/climate-intelligence/steel-aluminum-exporters-cbam-compliance-checklist)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [lowering CBAM costs for importers in Germany](https://senseible.earth/climate-intelligence/lower-cbam-costs-importer-germany)
+- [South Africa's carbon tax and CBAM](https://senseible.earth/climate-intelligence/south-africa-carbon-tax-cbam)

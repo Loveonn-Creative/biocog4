@@ -49,6 +49,7 @@ Add the ICP line to your standard capex template. Train procurement to ask vendo
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [getting an SBTi target validated](https://senseible.earth/climate-intelligence/msme-sbti-fln-near-term-target-validation)
+- [a 12-month net-zero roadmap](https://senseible.earth/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants)
+- [green loan eligibility in Pakistan](https://senseible.earth/climate-intelligence/green-loan-eligibility-pakistani-small-businesses)
+- [keeping carbon data comparable when methods change](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)

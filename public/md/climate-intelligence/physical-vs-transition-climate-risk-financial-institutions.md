@@ -90,6 +90,7 @@ Counterparty-level transition risk depends entirely on the quality of emissions 
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [climate risk versus ESG for lenders](https://senseible.earth/climate-intelligence/climate-risk-vs-esg-difference-financial-institutions)
+- [how to get a green loan in India](https://senseible.earth/climate-intelligence/how-to-get-green-loans-india-carbon-data)
+- [algorithmic bias in credit decisions](https://senseible.earth/climate-intelligence/algorithmic-bias-credit-decisions-borrower-rights-2026)
+- [rerouting supply chains to cut CBAM cost](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)

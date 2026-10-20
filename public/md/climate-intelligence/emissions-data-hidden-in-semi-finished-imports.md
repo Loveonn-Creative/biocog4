@@ -16,6 +16,8 @@ Under the EU Carbon Border Adjustment Mechanism, whose definitive period began o
 
 ## Related guides
 
-- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
-- [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
-- [Vietnam Textile Factories: Carbon Footprint Data EU Buyers Ask For](https://senseible.earth/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers)
+- [cutting Scope 3 with recycled aluminium](https://senseible.earth/climate-intelligence/msme-aluminium-recycling-scope-3-savings)
+- [calculating supply chain emissions](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [spend-based versus activity-based Scope 3](https://senseible.earth/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice)
+- [getting emissions data from suppliers](https://senseible.earth/climate-intelligence/supplier-emissions-data-collection-playbook-msme)
+- [NHS carbon reduction plan rules for pharma suppliers](https://senseible.earth/climate-intelligence/nhs-carbon-reduction-plan-pharma-india)

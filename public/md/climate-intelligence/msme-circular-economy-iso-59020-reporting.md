@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/msme-circular-economy-is
 
 Published 2026-05-06.
 
-ISO 59020:2024 standardises how organisations measure and report circular economy performance. Some EU buyers and lenders are starting to ask about circularity metrics.
+ISO 59020:2024 standardises how organisations measure and report circular economy performance. Some EU buyers and lenders are starting to ask about circularity metrics. For EPR obligations in India and take-back schemes, see [circular economy and EPR compliance](https://senseible.earth/circular-economy).
 
 ## The four core indicators
 
@@ -46,6 +46,7 @@ Use [Senseible](https://senseible.earth/) to track material flows alongside emis
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [cutting Scope 3 with recycled aluminium](https://senseible.earth/climate-intelligence/msme-aluminium-recycling-scope-3-savings)
+- [choosing the right emission factors](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [carbon credits from rooftop solar](https://senseible.earth/climate-intelligence/carbon-credits-solar-installations-monetize)
+- [carbon credits for MSMEs in Sri Lanka](https://senseible.earth/climate-intelligence/msme-carbon-credits-sri-lanka-invoice-to-revenue)

@@ -58,6 +58,7 @@ EU consumer law treats unsubstantiated environmental claims as misleading. The b
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [checking if a carbon credit platform is legitimate](https://senseible.earth/climate-intelligence/how-to-vet-a-legitimate-carbon-credit-platform)
+- [MRV versus ESG reporting](https://senseible.earth/climate-intelligence/mrv-vs-esg-reporting-where-they-overlap-and-differ)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
+- [Senseible and Sensibull](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)

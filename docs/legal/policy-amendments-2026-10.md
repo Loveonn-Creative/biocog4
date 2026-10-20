@@ -64,7 +64,7 @@ Why an amendment is needed: Privacy §3 says data is processed "strictly for" a 
 >
 > A story describes one customer's experience. It does not guarantee similar results, a loan, credit approval, carbon credits or regulatory acceptance.
 >
-> **(f) Withdrawal.** Email the Data Officer (sneha@senseible.earth) or use the link in your confirmation email. The story comes down from senseible.earth within seven (7) business days.
+> **(f) Withdrawal.** Email the Data Officer ([Data Officer email, shown on senseible.earth/legal]) or use the link in your confirmation email. The story comes down from senseible.earth within seven (7) business days.
 
 ---
 
@@ -83,7 +83,7 @@ These are separate choices, none ticked by default.
 
 ## Consent text on the ESG report form (already live, version `resource-lead-2026-10-16`)
 
-> We use these details only to send the report and to understand who reads it. We never sell them, keep them for 90 days, and delete them sooner if you ask our Data Officer (sneha@senseible.earth). Temporary and made-up addresses cannot receive the link. See our Privacy Policy.
+> We use these details only to send the report and to understand who reads it. We never sell them, keep them for 90 days, and delete them sooner if you ask our Data Officer ([Data Officer email, shown on senseible.earth/legal]). Temporary and made-up addresses cannot receive the link. See our Privacy Policy.
 
 ---
 

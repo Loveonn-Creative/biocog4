@@ -72,6 +72,8 @@ The Central Electricity Authority's CO2 Baseline Database. Version 21.0 gives a 
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What is Carbon MRV and Why MSMEs Need It in 2026?](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)
+- [Brazil CBIO versus India CCTS](https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [CBAM cost for Indian steel exporters](https://senseible.earth/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034)
+- [green loan versus traditional loan](https://senseible.earth/climate-intelligence/green-loan-vs-traditional-loan-real-cost-comparison)
+- [carbon careers in India and Asia](https://senseible.earth/climate-intelligence/carbon-careers-salary-roles-india-asia-2026)

@@ -35,7 +35,7 @@ below can be undone with the matching file in `supabase/pending-migrations/rollb
 
 ## Separate: Decarbonize India applications
 
-Independent of steps 1 to 4. Apply `20261014100000_ambassador_applications.sql` the same way. Check: `SELECT to_regclass('public.ambassador_applications') IS NOT NULL;`. After it, the application form on /decarbonize-india saves applications and emails palanisamy@senseible.earth. Before it, the form points applicants to WhatsApp and email.
+Independent of steps 1 to 4. Apply `20261014100000_ambassador_applications.sql` the same way. Check: `SELECT to_regclass('public.ambassador_applications') IS NOT NULL;`. After it, the application form on /decarbonize-india saves applications and emails the program manager. Before it, the form points applicants to WhatsApp and email.
 
 ## After step 3, in the app
 

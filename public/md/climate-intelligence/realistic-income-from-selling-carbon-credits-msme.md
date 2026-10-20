@@ -74,6 +74,7 @@ For example, a 1 percentage point reduction on a ₹25 lakh green loan saves ₹
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [carbon credits for MSMEs in Sri Lanka](https://senseible.earth/climate-intelligence/msme-carbon-credits-sri-lanka-invoice-to-revenue)
+- [types of carbon credits](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
+- [carbon credits from rooftop solar](https://senseible.earth/climate-intelligence/carbon-credits-solar-installations-monetize)
+- [a 12-month net-zero roadmap](https://senseible.earth/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants)

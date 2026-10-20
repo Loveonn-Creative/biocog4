@@ -51,4 +51,7 @@ Air freight headline numbers exclude the road leg from factory to airport. Your 
 
 ## Related guides
 
-- [Fleet and Logistics Scope 1 Emissions in India: How to Measure From Fuel Invoices](https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india)
+- [fleet emissions from fuel invoices](https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india)
+- [calculating supply chain emissions](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [cutting Scope 3 with recycled aluminium](https://senseible.earth/climate-intelligence/msme-aluminium-recycling-scope-3-savings)
+- [spend-based versus activity-based Scope 3](https://senseible.earth/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice)

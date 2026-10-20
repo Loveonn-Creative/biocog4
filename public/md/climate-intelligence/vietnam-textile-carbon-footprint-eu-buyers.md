@@ -65,6 +65,7 @@ Start from facility Scope 1 and 2, then add fabric, trims and transport. The [pr
 
 ## Related guides
 
-- [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
-- [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [Scope 3 for Bangladesh textile exporters](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [Scope 3 data for Pakistani textile exporters](https://senseible.earth/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers)
+- [the EU forced labour regulation for suppliers](https://senseible.earth/climate-intelligence/eu-forced-labour-regulation-suppliers)
+- [the EU digital product passport for textiles](https://senseible.earth/climate-intelligence/digital-product-passport-textile-exporters)

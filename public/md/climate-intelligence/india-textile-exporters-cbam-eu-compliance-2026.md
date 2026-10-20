@@ -70,6 +70,8 @@ Calculate facility Scope 1 and 2 from 12 months of fuel and electricity bills, s
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [Brazil CBIO versus India CCTS](https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [Scope 3 for Bangladesh textile exporters](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [mandatory GHG reporting in India](https://senseible.earth/climate-intelligence/epa-mandatory-greenhouse-gas-reporting-msme-india)
+- [CSRD double materiality for suppliers](https://senseible.earth/climate-intelligence/csrd-double-materiality-assessment-msme-supplier)

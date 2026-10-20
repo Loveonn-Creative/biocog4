@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/
 
-Upload a bill or invoice for an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.
+Upload an invoice, get an evidence-linked carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.
 
 ## How it works
 

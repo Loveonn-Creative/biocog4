@@ -1,7 +1,8 @@
 import { trackEvent } from "@/lib/analytics";
+import { revealContact } from "../../../../supabase/functions/_shared/publicContacts";
 
-/** Senseible's published WhatsApp number (same as the Contact page). */
-export const WHATSAPP_NUMBER = "917260064476";
+/** Senseible's published WhatsApp number (same as the Contact page), decoded only at runtime. */
+export const WHATSAPP_NUMBER = revealContact("salesWhatsapp");
 
 const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 

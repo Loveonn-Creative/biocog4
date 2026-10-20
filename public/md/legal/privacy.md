@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/legal/privacy
 
-Effective 27 August 2024. Last updated 25 September 2026.
+Effective 27 August 2024. Last updated 16 October 2026.
 
 ## 0. Introduction & Legal Identity
 
@@ -49,6 +49,14 @@ Device information, IP address, logs, access timestamps, platform usage metrics 
 
 Name, email, authentication credentials, organization details.
 
+**(f) Requests You Make**
+
+When you ask for a report, guide or other resource: your name, work email, company, industry, role, the reason you give, and whether you agreed to receive updates.
+
+**(g) Stories and Feedback You Share**
+
+When you tell us about your experience: your answers, any quote you choose to add, your attribution choice (named, company only, or anonymous), and a record of your consent (what you agreed to, the version of the text shown, and when). If you are signed in and choose to, figures already in your account (such as verified emissions by scope and the number of documents processed) are added to your story.
+
 ## 3. Purpose of Data Processing
 
 Data is processed strictly for:
@@ -59,6 +67,13 @@ Data is processed strictly for:
 - Fraud, anomaly, risk, and misuse detection
 - Platform security and integrity
 - Improving AI carbon models, services, and platform performance
+
+Data is also processed for the following, each only as described:
+
+- Sending you a resource you asked for, confirming that your email address can receive it, and understanding who uses our resources.
+- Sending you updates about Senseible, only if you separately agree. You can withdraw at any time.
+- Improving Senseible using the feedback you give.
+- Publishing your story as a case study, only with your separate, explicit consent, in the form and attribution you approved.
 
 ## 4. AI Processing & Model Training
 
@@ -78,6 +93,8 @@ Data may be disclosed only:
 
 - to enable green loans, registries, partners, financing, climate finance, or carbon credit transactions,
 - to comply with legal or regulatory obligations.
+
+A story you consent to publish becomes public on senseible.earth and may be shared on Senseible's own channels. Once something is public, copies made by others (for example search engines or social shares) cannot be fully recalled.
 
 ## 6. Data Storage & Security
 
@@ -114,11 +131,20 @@ Subject to applicable law, Users may:
 
 Certain rights may be limited where data has been anonymized or aggregated.
 
+Users may also:
+
+- withdraw consent to publication of their story at any time. We take it down from senseible.earth within seven (7) business days and stop using it in new material,
+- change their attribution to company only or anonymous at any time.
+
 ## 9. Data Retention & Deletion
 
 Data is retained only for as long as necessary for stated purposes, contractual obligations, or legal requirements. The default periods described in this Policy are up to three (3) months for unauthenticated data and up to eighteen (18) months for authenticated or paid-user data.
 
 Upon termination, data may be deleted or anonymized except where retention is legally required or incorporated into aggregated intelligence. Retention periods may be extended for regulatory, audit, training, or dispute resolution purposes.
+
+Details given to request a resource are kept for up to ninety (90) days, or up to eighteen (18) months when the request comes from a signed-in account, unless you ask us to delete them sooner.
+
+Feedback that is not published is kept under the default periods above. A published story is kept while it is published and deleted within thirty (30) days of withdrawal. The record of your consent (what you agreed to and when, not the story itself) is kept for three (3) years after withdrawal, as proof that the story was published with your permission.
 
 ## 10. Sub-Processors & Third Parties
 
@@ -126,6 +152,7 @@ Senseible uses service providers only where needed to operate the platform. Curr
 
 - Lovable for managed platform hosting, cloud services, authentication and email delivery,
 - Google for analytics and supported AI processing,
+- Microsoft Clarity to understand how visitors use our pages (clicks, scrolling and page views), with form entries and pages showing financial details masked so they are not recorded,
 - ElevenLabs for voice interactions when that feature is used,
 - Razorpay for payment processing.
 
@@ -151,7 +178,7 @@ Continued use of the Services constitutes acceptance of the updated Policy.
 
 Data Officer: Sneha Ghosh
 
-Email: sneha@senseible.earth
+Email: shown on the live page at senseible.earth
 
 Address: Minarch Tower, Gurugram, 122003, Haryana, India
 

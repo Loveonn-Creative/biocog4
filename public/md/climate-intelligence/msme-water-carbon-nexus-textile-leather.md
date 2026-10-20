@@ -54,6 +54,7 @@ Zero Liquid Discharge requirements from CPCB and state pollution control boards 
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [cutting carbon in Thai food processing](https://senseible.earth/climate-intelligence/thailand-food-processing-carbon-footprint-reduction)
+- [when green hydrogen pays for MSMEs](https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026)
+- [green energy open access for factories in India](https://senseible.earth/climate-intelligence/green-energy-open-access-india)
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)

@@ -8,6 +8,7 @@ Indonesia's grid relies heavily on coal, so its grid emission factor is relative
 
 ## Related guides
 
-- [How Philippine Manufacturing SMEs Can Start Carbon Reporting in 2026](https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026)
-- [Tamil Nadu MSME Decarbonisation: State Incentives, Grid, and Quick Wins](https://senseible.earth/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives)
-- [Bangladesh Garment Exporters: Surviving EU CBAM and CSDDD Together in 2026](https://senseible.earth/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026)
+- [carbon reporting for Philippine manufacturers](https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026)
+- [carbon compliance for Indonesian palm oil MSMEs](https://senseible.earth/climate-intelligence/indonesia-pertamina-rspo-palm-oil-carbon-2026)
+- [Scope 2 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
+- [CBAM and Indonesian chemical exports](https://senseible.earth/climate-intelligence/eu-carbon-border-tax-indonesian-chemical-exports)

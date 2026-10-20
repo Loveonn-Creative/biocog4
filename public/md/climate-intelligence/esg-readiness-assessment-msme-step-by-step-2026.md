@@ -26,7 +26,7 @@ Skip generic ESG topic lists. Run a sector-specific materiality screen using:
 - The CSRD ESRS topical standards (even if you are not directly in scope, your EU buyer may be).
 - Two or three buyer questionnaires you have actually received.
 
-Output: a one-page list of 8–15 material topics. For an Indian apparel exporter, the list usually includes Scope 1 and 2 emissions, Scope 3 (purchased goods, transport), water withdrawal, wastewater quality, occupational health and safety, working hours, freedom-of-association, and supplier due diligence.
+Output: a one-page list of 8–15 material topics. For an Indian apparel exporter, the list usually includes Scope 1 and 2 emissions, Scope 3 (purchased goods, transport), water withdrawal, wastewater quality, occupational health and safety, working hours, freedom-of-association, and supplier due diligence. For the safety and labour metrics, see [EHS and social performance](https://senseible.earth/ehs-social).
 
 ## Step 2: Data inventory (1–2 weeks)
 
@@ -46,7 +46,7 @@ Pick the framework you will actually be measured against:
 - **BRSR** if you are an unlisted supplier to a BRSR-top-1000 company.
 - **CSRD ESRS** if your buyer is EU-based and CSRD-in-scope.
 - **CDP Climate** if your buyer scores suppliers through CDP.
-- **EcoVadis** if you sell into procurement-led EU or US buyers.
+- **EcoVadis** if you sell into procurement-led EU or US buyers. See [EcoVadis and CDP ratings support](https://senseible.earth/esg-ratings).
 - **GHG Protocol + ISO 14064-1** as the universal floor under all of the above.
 
 Do not chase all of them at once. Pick the binding one and design for it.
@@ -114,6 +114,7 @@ ESG consulting quotes that dwarf these items at MSME scale usually buy slide dec
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [what the India-EU FTA means for MSMEs](https://senseible.earth/climate-intelligence/136-billion-india-eu-fta-msme-breakthrough)
+- [the India-EU trade deal and MSMEs](https://senseible.earth/climate-intelligence/mother-of-all-deals-india-eu-msmes)
+- [BRSR reporting requirements](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [what carbon MRV is](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)

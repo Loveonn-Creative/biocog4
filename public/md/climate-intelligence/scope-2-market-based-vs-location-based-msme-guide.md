@@ -41,6 +41,7 @@ Run both numbers automatically in the [Product Carbon Footprint calculator](http
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [Scope 1, 2 and 3 emissions explained](https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business)
+- [keeping carbon data comparable when methods change](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
+- [ISO 14067 versus the GHG Protocol product standard](https://senseible.earth/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained)
+- [Vietnam's grid emission factor](https://senseible.earth/climate-intelligence/vietnam-grid-emission-factor)

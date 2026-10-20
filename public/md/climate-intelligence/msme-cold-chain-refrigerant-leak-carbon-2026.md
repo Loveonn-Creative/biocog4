@@ -56,6 +56,7 @@ India's HFC freeze under the Kigali Amendment starts in 2028, with reductions fr
 
 ## Related guides
 
-- [What is GHG-6 and how do we calculate warming impact beyond CO2?](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
-- [Do methane and black carbon reductions count differently from CO2?](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
-- [Biogenic Carbon Accounting for Food and Textile MSMEs: The Honest Guide](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
+- [methane and black carbon versus CO2](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
+- [the six greenhouse gases and their warming impact](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
+- [biogenic carbon accounting](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)

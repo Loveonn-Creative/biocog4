@@ -1,4 +1,5 @@
 import { useEffect, useState, memo } from "react";
+import { revealContact } from "../../supabase/functions/_shared/publicContacts";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Send } from "lucide-react";
 import { ChannelMark, PlaneFlight } from "@/components/contact/ContactVisuals";
@@ -87,7 +88,7 @@ const Contact = () => {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent("Hi Senseible, I have a query about carbon intelligence and ESG solutions.");
-    window.open(`https://wa.me/917260064476?text=${message}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/${revealContact('salesWhatsapp')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   if (isSubmitted) {

@@ -76,6 +76,7 @@ This is cheaper than annual audits, faster than annual audits, and produces a st
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [what audit-grade carbon data means](https://senseible.earth/climate-intelligence/audit-grade-carbon-data-what-it-actually-means)
+- [MRV versus ESG reporting](https://senseible.earth/climate-intelligence/mrv-vs-esg-reporting-where-they-overlap-and-differ)
+- [documents needed for carbon verification](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [carbon audit checklist for Singapore manufacturers](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)

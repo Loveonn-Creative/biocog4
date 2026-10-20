@@ -50,6 +50,8 @@ Run scenarios in the [Supplier Risk calculator](https://senseible.earth/calculat
 
 ## Related guides
 
-- [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
-- [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [embedded emissions in semi-finished imports](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
+- [Scope 3 for Bangladesh textile exporters](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [calculating supply chain emissions](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [Scope 3 data for Pakistani textile exporters](https://senseible.earth/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers)
+- [ISO 59020 circular economy reporting](https://senseible.earth/climate-intelligence/msme-circular-economy-iso-59020-reporting)

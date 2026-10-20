@@ -27,6 +27,7 @@ Gather electricity consumption data from utility bills or meters. Apply the appr
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
-- [How to Calculate a Carbon Footprint From Electricity Bills (With a Worked Example)](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
+- [Scope 3 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [when green hydrogen pays for MSMEs](https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026)
+- [green energy open access for factories in India](https://senseible.earth/climate-intelligence/green-energy-open-access-india)

@@ -4,6 +4,7 @@ import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { FormattedContent } from "@/components/FormattedContent";
+import { fillContacts } from "../../supabase/functions/_shared/publicContacts";
 import { legalDocuments, getLegalDocumentBySlug } from "@/data/legalContent";
 
 const Legal = () => {
@@ -105,7 +106,7 @@ const Legal = () => {
             {document.sections.map((section, index) => (
               <section key={index}>
                 <h2 className="text-xl font-medium text-foreground mb-4">{section.title}</h2>
-                <FormattedContent content={section.content} className="text-foreground/85" />
+                <FormattedContent content={fillContacts(section.content, "reveal")} className="text-foreground/85" />
               </section>
             ))}
           </div>

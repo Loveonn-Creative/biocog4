@@ -1,8 +1,9 @@
 import { describe, expect, test } from 'bun:test';
-import { readFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import * as di from '../src/data/decarbonizeIndia';
 import { LANES, PROGRAM_CONTACT, STEPS, stepErrors, validateApplication } from '../src/lib/ambassadorApplication';
 import { getSeoRoutes } from '../src/lib/seo/routeRegistry';
+import { revealContact } from '../supabase/functions/_shared/publicContacts';
 
 const allCopy = JSON.stringify(di);
 const valid = {
@@ -19,9 +20,11 @@ describe('Decarbonize India copy', () => {
     expect(allCopy).toContain('7 to 14 days');
     expect(allCopy).toContain('October 2026');
     expect(allCopy).toContain('18 countries');
-    expect(PROGRAM_CONTACT.managerEmail).toBe('palanisamy@senseible.earth');
-    expect(PROGRAM_CONTACT.coordinators.map(c => c.email)).toEqual(['palanisamy@senseible.earth', 'vatsalya@senseible.earth']);
-    expect(PROGRAM_CONTACT.whatsappNumber).toBe('917708540931');
+    expect(PROGRAM_CONTACT.managerEmail).toBe(revealContact('coordinatorPalanisamyEmail'));
+    expect(PROGRAM_CONTACT.coordinators.map(c => c.email)).toEqual([revealContact('coordinatorPalanisamyEmail'), revealContact('coordinatorVatsalyaEmail')]);
+    expect(PROGRAM_CONTACT.whatsappNumber).toBe(revealContact('ambassadorWhatsapp'));
+    for (const e of [PROGRAM_CONTACT.managerEmail, ...PROGRAM_CONTACT.coordinators.map(c => c.email)]) expect(e).toMatch(/^[a-z]+@senseible\.earth$/);
+    expect(PROGRAM_CONTACT.whatsappNumber).toMatch(/^91\d{10}$/);
   });
   test('states nothing the document leaves open', () => {
     for (const banned of ['50-60', '50 to 60', '400 million', '400+', '20 people', 'half-yearly', 'every year', 'yearly', 'guarantee', 'stipend', 'salary is']) {
@@ -43,7 +46,7 @@ describe('Decarbonize India copy', () => {
     expect(allCopy).not.toMatch(/\b(1[3-8]) Oct\b/i);
   });
   test('the WhatsApp link sends the CLIMATE keyword to the program number', () => {
-    expect(di.session.whatsappHref).toBe('https://wa.me/917708540931?text=CLIMATE');
+    expect(di.session.whatsappHref).toBe(`https://wa.me/${revealContact('ambassadorWhatsapp')}?text=CLIMATE`);
   });
   test('the page is pre-rendered with FAQ schema built from the same answers', () => {
     const route = getSeoRoutes().find(r => r.path === di.DI_PATH)!;
@@ -90,5 +93,15 @@ describe('ambassador application', () => {
     const inSql = sql.match(/lanes <@ ARRAY\[([^\]]*)\]/)![1].match(/'([a-z_]+)'/g)!.map(s => s.slice(1, -1));
     expect(inSql.sort()).toEqual(LANES.map(l => l.id).sort());
     expect(sql).toContain('char_length(first_move) BETWEEN 80 AND 1200');
+  });
+});
+
+describe('named public contacts', () => {
+  const raw = /(palanisamy|vatsalya|sneha)@|917708540931|917260064476/;
+  test('no source, data or static copy carries them in plain text', () => {
+    for (const f of ['src/data/legalContent.ts', 'src/lib/ambassadorApplication.ts', 'src/pages/Contact.tsx', 'src/components/services/shell/actions.ts', 'supabase/functions/_shared/ambassadorApplication.ts']) {
+      if (existsSync(f)) expect(readFileSync(f, 'utf8')).not.toMatch(raw);
+    }
+    expect(JSON.stringify(getSeoRoutes())).not.toMatch(raw);
   });
 });

@@ -62,6 +62,7 @@ MSMEs are increasingly targeted by carbon scams because they have less in-house 
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [greenwashing self-audit checklist](https://senseible.earth/climate-intelligence/msme-greenwashing-self-audit-checklist-2026)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
+- [Senseible and Sensibull](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
+- [documents needed for carbon verification](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)

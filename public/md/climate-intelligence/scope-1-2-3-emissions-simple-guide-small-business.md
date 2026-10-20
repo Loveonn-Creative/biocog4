@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-si
 
 Published 2025-01-15.
 
-Every carbon footprint calculation starts with understanding the three scopes. Here's what they mean for your small business.
+Every carbon footprint calculation starts with understanding the three scopes. Here's what they mean for your small business. If you want the inventory built for you from bills and invoices, see [carbon accounting and GHG inventory](https://senseible.earth/carbon-accounting).
 
 **Scope 1: Direct Emissions**
 
@@ -42,6 +42,7 @@ Senseible automatically categorizes your emissions by scope when you [upload doc
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [market-based versus location-based Scope 2](https://senseible.earth/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide)
+- [ISO 14067 versus the GHG Protocol product standard](https://senseible.earth/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained)
+- [keeping carbon data comparable when methods change](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
+- [green loan eligibility in Pakistan](https://senseible.earth/climate-intelligence/green-loan-eligibility-pakistani-small-businesses)

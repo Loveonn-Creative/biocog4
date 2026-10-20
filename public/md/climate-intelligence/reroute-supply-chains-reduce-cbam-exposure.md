@@ -21,6 +21,9 @@ Falsifying emission data, transshipping goods to obscure origin, or splitting sh
 
 ## Related guides
 
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
-- [What is Carbon MRV and Why MSMEs Need It in 2026?](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)
+- [CBAM checklist for steel and aluminium exporters](https://senseible.earth/climate-intelligence/steel-aluminum-exporters-cbam-compliance-checklist)
+- [CBAM supplier data for steel importers in Poland](https://senseible.earth/climate-intelligence/cbam-supplier-data-steel-importer-poland)
+- [becoming a CBAM authorised declarant](https://senseible.earth/climate-intelligence/become-cbam-authorised-declarant)
+- [what carbon MRV is](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)
+- [carbon compliance questions MSMEs ask](https://senseible.earth/climate-intelligence/msme-voice-search-carbon-faqs-2026)
+- [carbon offsets versus carbon credits](https://senseible.earth/climate-intelligence/carbon-offsets-vs-carbon-credits-difference-explained)

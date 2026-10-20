@@ -28,6 +28,8 @@ Follow either equity share, financial control, or operational control approaches
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
-- [How to Calculate a Carbon Footprint From Electricity Bills (With a Worked Example)](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
+- [Scope 2 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
+- [Scope 3 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [when green hydrogen pays for MSMEs](https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026)
+- [Scope 1 emissions for agriculture businesses](https://senseible.earth/climate-intelligence/agriculture-scope-1-emissions-india)
+- [the water-carbon link in textiles and leather](https://senseible.earth/climate-intelligence/msme-water-carbon-nexus-textile-leather)

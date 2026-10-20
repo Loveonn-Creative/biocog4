@@ -1,5 +1,5 @@
-# Carbon Intelligence Assistant
+# Biocog Intelligence: ESG Intelligence
 
 Canonical: https://senseible.earth/intelligence
 
-Ask questions about your emissions, CBAM exposure, Scope 3 suppliers or green finance readiness and get answers grounded in your verified records.
+Ask about Scope 1, 2 and 3, CBAM, ESG reporting and the platform. On Pro and Scale, answers come from your own records with the evidence behind each figure.

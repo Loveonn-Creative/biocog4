@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/climate-risk-vs-esg-diff
 
 Published 2026-05-21.
 
-Inside a financial institution, ESG and climate risk are often run by the same team and confused for the same workstream. They are not. ESG is a *disclosure and stakeholder* discipline. Climate risk is a *prudential and credit* discipline. The two have different consumers, different timeframes, and different consequences for getting it wrong.
+Inside a financial institution, ESG and climate risk are often run by the same team and confused for the same workstream. They are not. ESG is a *disclosure and stakeholder* discipline. Climate risk is a *prudential and credit* discipline. The two have different consumers, different timeframes, and different consequences for getting it wrong. For a company-side assessment of physical and transition risk, see [climate risk and resilience](https://senseible.earth/climate-risk).
 
 ## The clean split
 
@@ -76,6 +76,7 @@ This is the practical link between MSME-side carbon work (Senseible) and lender-
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [physical versus transition climate risk](https://senseible.earth/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions)
+- [rerouting supply chains to cut CBAM cost](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
+- [Brazil CBIO versus India CCTS](https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)

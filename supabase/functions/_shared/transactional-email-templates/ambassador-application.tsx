@@ -1,6 +1,7 @@
 import * as React from 'npm:react@18.3.1'
 import { Body, Container, Head, Heading, Html, Preview, Section, Text } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
+import { revealContact } from '../publicContacts.ts'
 
 interface Props {
   name?: string
@@ -45,7 +46,7 @@ export const template = {
   component: AmbassadorApplication,
   subject: (d: Record<string, unknown>) => `Impact Ambassador application: ${String(d.name || 'new applicant')}`,
   displayName: 'Impact Ambassador application',
-  to: 'palanisamy@senseible.earth',
+  to: revealContact('coordinatorPalanisamyEmail'),
   previewData: { name: 'Example applicant', email: 'applicant@example.com', city: 'Tiruppur', lanes: ['Content', 'Talking to MSMEs'], commitment: 'All 90 days', firstMove: 'An example answer written by the applicant.' },
 } satisfies TemplateEntry
 

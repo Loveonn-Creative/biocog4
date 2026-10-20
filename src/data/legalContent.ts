@@ -174,7 +174,7 @@ User shall indemnify Senseible against claims arising from:
         title: '15. Grievance Redressal',
         content: `Data Officer: Sneha Ghosh
 
-Email: sneha@senseible.earth
+Email: [[contact:dataOfficerEmail]]
 
 Address: Minarch Tower, Gurugram, 122003, Haryana, India
 
@@ -346,7 +346,7 @@ Continued use of the Services constitutes acceptance of the updated Policy.`
         title: '14. Grievance Redressal & Contact',
         content: `Data Officer: Sneha Ghosh
 
-Email: sneha@senseible.earth
+Email: [[contact:dataOfficerEmail]]
 
 Address: Minarch Tower, Gurugram, 122003, Haryana, India
 
@@ -458,7 +458,7 @@ No data localization obligation is assumed unless explicitly agreed in writing.`
         title: 'Contact',
         content: `Data Officer: Sneha Ghosh
 
-Email: sneha@senseible.earth
+Email: [[contact:dataOfficerEmail]]
 
 Address: Minarch Tower, Gurugram, 122003, Haryana, India
 
@@ -677,7 +677,7 @@ Continued use of the Services constitutes acceptance.`
         title: '14. Contact',
         content: `For questions, rights requests, or opt-out requests, contact the Data Officer:
 
-Sneha Ghosh: sneha@senseible.earth
+Sneha Ghosh: [[contact:dataOfficerEmail]]
 
 Minarch Tower, Gurugram, 122003, Haryana, India
 

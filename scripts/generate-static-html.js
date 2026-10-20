@@ -16,6 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 import { loadRegistry } from './seo/load-registry.mjs';
 import { routeChunkMap, chunksForPath, chunksFor, compactChunkMap } from './seo/route-chunks.mjs';
 
@@ -120,6 +121,50 @@ function renderAppShell(template, chunks) {
   return withPreloads(template.slice(0, start + HEAD_START.length) + '\n    ' + head + '\n    ' + template.slice(end), chunks);
 }
 
+// Real dates only: a route without its own date takes the last commit date of
+// the data file it is built from. Without git history (e.g. a shallow clone
+// that lacks the file's commit) the route keeps no lastmod, as before.
+const LASTMOD_SOURCES = [
+  ['/answers/', 'src/data/answers.ts'],
+  ['/vs/', 'src/data/competitorData.ts'],
+  ['/help', 'supabase/functions/_shared/helpArticles.ts'],
+  ['/solutions/', 'src/data/solutionsData.ts'],
+  ['/industries', 'src/data/industriesData.ts'],
+  ['/emission-factors', 'src/data/factorLibrary.ts'],
+  ['/cbam-cost', 'src/data/cbamSectorCosts.ts'],
+];
+const gitDates = new Map();
+const git = (args) => execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+// In a shallow clone the oldest fetched commit shows every file as changed,
+// so a date from that commit is not the file's real date and is skipped.
+let shallowRoots = null;
+function shallowCommits() {
+  if (shallowRoots) return shallowRoots;
+  try { shallowRoots = new Set(fs.readFileSync(path.resolve(ROOT, git(['rev-parse', '--git-path', 'shallow'])), 'utf8').split('\n').filter(Boolean)); }
+  catch { shallowRoots = new Set(); }
+  return shallowRoots;
+}
+function gitDate(file) {
+  if (!gitDates.has(file)) {
+    let date = null;
+    try {
+      const [hash, d] = git(['log', '-1', '--format=%H %cs', '--', file]).split(' ');
+      if (/^\d{4}-\d{2}-\d{2}$/.test(d ?? '') && !shallowCommits().has(hash)) date = d;
+    } catch { /* no git history */ }
+    gitDates.set(file, date);
+  }
+  return gitDates.get(file);
+}
+function withSourceDates(routes) {
+  for (const r of routes) {
+    if (r.lastmod) continue;
+    const src = LASTMOD_SOURCES.find(([prefix]) => r.path === prefix.replace(/\/$/, '') || r.path.startsWith(prefix));
+    const d = src && gitDate(src[1]);
+    if (d) r.lastmod = d;
+  }
+  return routes;
+}
+
 function sitemapXml(routes, R) {
   const urls = routes
     .map(r => {
@@ -182,7 +227,7 @@ function writeSupportFiles(baseDir, routes, R) {
 
 async function main() {
   const R = await loadRegistry();
-  const routes = R.getSeoRoutes();
+  const routes = withSourceDates(R.getSeoRoutes());
 
   const seen = new Set();
   for (const r of routes) {
@@ -248,6 +293,7 @@ async function main() {
     const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8" />
 <title>Moved | Senseible</title>
+<meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="${R.canonicalUrl(rd.to.split('#')[0])}" />
 <meta http-equiv="refresh" content="0; url=${target}" />
 <script>location.replace(${JSON.stringify(rd.to)})</script>

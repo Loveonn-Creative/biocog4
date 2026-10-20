@@ -92,6 +92,7 @@ Move up the tiers as the category becomes material. Do not move all categories s
 
 ## Related guides
 
-- [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
-- [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [calculating supply chain emissions](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [getting emissions data from suppliers](https://senseible.earth/climate-intelligence/supplier-emissions-data-collection-playbook-msme)
+- [Scope 3 data quality tiers for software buyers](https://senseible.earth/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026)
+- [Scope 3 for Bangladesh textile exporters](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)

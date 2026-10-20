@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/csrd-double-materiality-
 
 Published 2026-05-06.
 
-As an MSME supplier you are almost certainly not directly in scope of CSRD, which applies to large companies (and was narrowed further by the EU's Omnibus simplification). You are still in its reach as a supplier. Here is what your EU customer will ask for.
+As an MSME supplier you are almost certainly not directly in scope of CSRD, which applies to large companies (and was narrowed further by the EU's Omnibus simplification). You are still in its reach as a supplier. Here is what your EU customer will ask for. To check which reporting rules apply to you directly, see [ESG reporting](https://senseible.earth/esg-reporting).
 
 ## Double materiality in plain English
 
@@ -44,6 +44,7 @@ Wave 1 companies already report under CSRD, so questionnaires can arrive at any 
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [EU rules for Indian textile exporters](https://senseible.earth/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026)
+- [ESG readiness assessment for MSMEs](https://senseible.earth/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026)
+- [rerouting supply chains to cut CBAM cost](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
+- [Brazil CBIO versus India CCTS](https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets)

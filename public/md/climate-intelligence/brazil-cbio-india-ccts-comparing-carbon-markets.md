@@ -38,6 +38,7 @@ Both schemes position their countries for [CBAM compliance](https://senseible.ea
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [EU rules for Indian textile exporters](https://senseible.earth/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026)
+- [mandatory GHG reporting in India](https://senseible.earth/climate-intelligence/epa-mandatory-greenhouse-gas-reporting-msme-india)
+- [how to get a green loan in India](https://senseible.earth/climate-intelligence/how-to-get-green-loans-india-carbon-data)

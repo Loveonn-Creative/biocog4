@@ -1,37 +1,45 @@
-# Construction & Real Estate: Carbon Accounting Guide
+# Construction and Real Estate: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/construction
 
-Embodied carbon in construction is receiving increased scrutiny. Green building certifications drive premium valuations and tenant demand.
+On-site fuel is small next to the embodied carbon in cement and steel. Developers and lenders increasingly ask for both.
 
-## Scope 1 sources
+## The question developer or lenders ask
 
-- On-site diesel equipment
+“What are the site emissions and the embodied carbon of materials on this project?”
+
+This sector is not directly covered by EU CBAM. Buyers, lenders and OEMs ask for emissions built from documents for their own reporting.
+
+## Scope 1 sources (evidence: fuel invoices)
+
+- Diesel for site equipment
 - Construction vehicles
-- Generator usage
-- Concrete production
+- Generators
+- Site batching plant fuel
 
-## Scope 2 sources
+## Scope 2 sources (evidence: electricity bills)
 
-- Site electricity consumption
-- Tower crane operations
-- Temporary facilities
-- Lighting and ventilation
+- Site electricity
+- Tower cranes
+- Site offices
+- Lighting
 
-## Scope 3 sources
+## Scope 3 sources (evidence: purchase and freight invoices)
 
 - Cement and concrete
-- Steel and aluminum
-- Glass and ceramics
-- Material transportation
-- Waste disposal
+- Steel and aluminium
+- Glass and tiles
+- Material transport
 
-## Reduction strategies
+## Worked example
 
-- Low-carbon cement alternatives
-- Prefabricated components
-- Material efficiency design
-- Renewable energy on-site
-- Waste reduction and recycling
+Illustrative monthly quantities: 12,000 litre of diesel for equipment, 20,000 kWh of grid electricity, 300 kg of lpg, multiplied by the emission factors Senseible uses and annualised. Site energy only. Embodied carbon of materials comes from purchase quantities and material factors.
 
-[All industries](https://senseible.earth/industries) · [CBAM cost calculator](https://senseible.earth/cbam-calculator)
+## Where reductions usually start
+
+- Blended cement and lower-carbon concrete
+- Grid power instead of generators
+- Prefabrication
+- Material efficiency in design
+
+[All industries](https://senseible.earth/industries) · [CBAM cost calculator](https://senseible.earth/cbam-calculator) · [Upload a bill](https://senseible.earth/)

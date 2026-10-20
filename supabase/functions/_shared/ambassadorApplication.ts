@@ -5,6 +5,8 @@
 // The applicant writes every answer in their own words. Nothing here drafts,
 // suggests or rewrites an answer.
 
+import { displayWhatsapp, revealContact } from './publicContacts.ts';
+
 export const LANES = [
   { id: 'content', label: 'Content' },
   { id: 'design', label: 'Design' },
@@ -131,14 +133,14 @@ export function stepErrors(errors: FieldErrors, step: number): FieldErrors {
 export const PROGRAM_CONTACT = {
   /** Program coordinators, shown on the page. */
   coordinators: [
-    { name: 'Palanisamy', email: 'palanisamy@senseible.earth' },
-    { name: 'Vatsalya Sai', email: 'vatsalya@senseible.earth' },
+    { name: 'Palanisamy', email: revealContact('coordinatorPalanisamyEmail') },
+    { name: 'Vatsalya Sai', email: revealContact('coordinatorVatsalyaEmail') },
   ],
   /** Receives the application notification email. */
   manager: 'Palanisamy',
-  managerEmail: 'palanisamy@senseible.earth',
-  whatsappNumber: '917708540931',
-  whatsappDisplay: '+91 77085 40931',
+  managerEmail: revealContact('coordinatorPalanisamyEmail'),
+  whatsappNumber: revealContact('ambassadorWhatsapp'),
+  whatsappDisplay: displayWhatsapp('ambassadorWhatsapp'),
   whatsappKeyword: 'CLIMATE',
   questionsEmail: 'decarbonizeindia@senseible.earth',
 } as const;

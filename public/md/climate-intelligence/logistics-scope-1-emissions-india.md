@@ -70,4 +70,7 @@ Not to report Scope 1. GLEC and ISO 14083 matter when customers ask for emission
 
 ## Related guides
 
-- [The GLEC Framework Explained: Freight Emissions Without the Jargon](https://senseible.earth/climate-intelligence/glec-framework-explained-msme-freight-emissions)
+- [the GLEC framework for freight emissions](https://senseible.earth/climate-intelligence/glec-framework-explained-msme-freight-emissions)
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
+- [Scope 1 emissions for agriculture businesses](https://senseible.earth/climate-intelligence/agriculture-scope-1-emissions-india)
+- [how to get a green loan in India](https://senseible.earth/climate-intelligence/how-to-get-green-loans-india-carbon-data)

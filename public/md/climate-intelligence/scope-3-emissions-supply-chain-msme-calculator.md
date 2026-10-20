@@ -8,6 +8,7 @@ Scope 3 emissions are often the largest part of a company's total carbon footpri
 
 ## Related guides
 
-- [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
-- [Vietnam Textile Factories: Carbon Footprint Data EU Buyers Ask For](https://senseible.earth/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers)
+- [spend-based versus activity-based Scope 3](https://senseible.earth/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice)
+- [getting emissions data from suppliers](https://senseible.earth/climate-intelligence/supplier-emissions-data-collection-playbook-msme)
+- [Scope 3 data quality tiers for software buyers](https://senseible.earth/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026)
+- [Scope 3 for Bangladesh textile exporters](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)

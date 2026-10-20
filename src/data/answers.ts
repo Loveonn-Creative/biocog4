@@ -129,7 +129,7 @@ export const answers: Answer[] = [
   {
     slug: 'contact-senseible', topic: 'about', title: 'How to contact Senseible',
     q: 'How do I contact the Senseible support team?',
-    short: 'Email impact@senseible.earth, message +91 72600 64476 on WhatsApp, or use the contact form at senseible.earth/contact. The team aims to reply within 24 hours.',
+    short: 'Email impact@senseible.earth, message us on WhatsApp from senseible.earth/contact, or use the contact form there. The team aims to reply within 24 hours.',
     body: ['For a demo or an enterprise scoping call, choose “Enterprise & API” or “Sales & Partnerships” on the contact form.'],
     links: [{ label: 'Contact form', to: '/contact' }],
   },
