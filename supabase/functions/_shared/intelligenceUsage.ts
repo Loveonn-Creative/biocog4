@@ -2,7 +2,7 @@
 // Supabase client as an argument (no Deno or esm.sh imports), so the website
 // tests run it with a fake client.
 
-import { canonicalPlan, effectivePlanTier, type PlanTier } from './planLimits.ts';
+import { effectivePlanTier, strongerPlan, strongestRow, type PlanTier } from './planLimits.ts';
 import { dayIst, monthStartDayIst } from './intelligence.ts';
 
 // The query builder's chain is typed loosely on purpose: this file must not
@@ -14,15 +14,16 @@ interface Client {
   rpc: (fn: string, args?: any) => PromiseLike<{ data: unknown; error: { code?: string; message?: string } | null }>;
 }
 
-/** The plan in force for a user, from the canonical record (planLimits.canonicalPlan). */
+/** The plan in force for a user: the stronger of the profile copy and the best active subscription. */
 export async function planForUser(admin: Client, userId: string, now = new Date()): Promise<PlanTier> {
   const [{ data: profile }, { data: subs }] = await Promise.all([
     admin.from('profiles').select('subscription_tier, subscription_expires_at').eq('id', userId).maybeSingle(),
     admin.from('subscriptions').select('tier, expires_at').eq('user_id', userId).eq('status', 'active'),
   ]);
-  const inForce = canonicalPlan(
+  const sub = strongestRow(subs ?? [], now);
+  const inForce = strongerPlan(
     { tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at },
-    subs ?? [],
+    { tier: sub?.tier, expiresAt: sub?.expires_at },
     now,
   );
   return effectivePlanTier(inForce.tier, inForce.expiresAt, now);

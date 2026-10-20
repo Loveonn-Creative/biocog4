@@ -97,23 +97,3 @@ export function strongestRow<T extends { tier: string | null | undefined; expire
   live.sort((a, b) => PLAN_RANK[normalizePlanTier(b.tier)] - PLAN_RANK[normalizePlanTier(a.tier)] || Date.parse(b.expires_at as string) - Date.parse(a.expires_at as string));
   return live[0] ?? null;
 }
-
-/**
- * The plan in force, from one record. The account's active subscription rows
- * are the canonical record (Razorpay activation and staff reconciliation both
- * write them); the strongest row still in force decides. The profile copy is
- * read only when no subscription row is in force, which covers accounts
- * granted a plan before subscription rows were kept for every plan.
- */
-export function canonicalPlan<T extends { tier: string | null | undefined; expires_at: string | null | undefined }>(
-  profile: { tier: string | null | undefined; expiresAt: string | null | undefined } | null | undefined,
-  activeRows: T[],
-  now = new Date(),
-): { tier: string | null | undefined; expiresAt: string | null | undefined; source: 'subscription' | 'profile' | 'none'; row: T | null } {
-  const row = strongestRow(activeRows, now);
-  if (row) return { tier: row.tier, expiresAt: row.expires_at, source: 'subscription', row };
-  if (profile && effectivePlanTier(profile.tier, profile.expiresAt, now) !== 'snapshot') {
-    return { tier: profile.tier, expiresAt: profile.expiresAt, source: 'profile', row: null };
-  }
-  return { tier: 'snapshot', expiresAt: null, source: 'none', row: null };
-}

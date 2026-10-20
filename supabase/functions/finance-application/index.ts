@@ -24,7 +24,7 @@ import {
   cleanFigures, readiness, reviewSummary, sniffType, updateWindow, validateApplication,
   type DocFigures, type FinanceApplicationInput,
 } from '../_shared/financeApplication.ts';
-import { canonicalPlan, effectivePlanTier } from '../_shared/planLimits.ts';
+import { effectivePlanTier, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -129,9 +129,10 @@ Deno.serve(async (req) => {
       admin.from('profiles').select('business_name, gstin, sector, location, subscription_tier, subscription_expires_at').eq('id', user.id).maybeSingle(),
       admin.from('subscriptions').select('tier, expires_at').eq('user_id', user.id).eq('status', 'active'),
     ]);
-    const inForce = canonicalPlan(
+    const sub = strongestRow(subs ?? []);
+    const inForce = strongerPlan(
       { tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at },
-      subs ?? [],
+      { tier: sub?.tier, expiresAt: sub?.expires_at },
     );
     const plan = effectivePlanTier(inForce.tier, inForce.expiresAt);
 

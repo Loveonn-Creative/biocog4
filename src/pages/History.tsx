@@ -216,17 +216,13 @@ const History = () => {
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h1 className="text-2xl font-semibold">Invoice History</h1>
           {user && <Button variant="outline" size="sm" onClick={() => { void refreshDocuments(); void refreshEmissions(); void refreshLedger(); }} aria-label="Refresh saved invoices">Refresh</Button>}
-          {/* Always offered; empty until a record is verified into the ledger. */}
-          {user && (
+          {ledgerEntries.length > 0 && (
             <Button
               variant="outline"
               size="sm"
               onClick={() => { void exportComplianceXLSX(); }}
-              disabled={ledgerEntries.length === 0}
               className="gap-2 shrink-0"
-              title={ledgerEntries.length === 0
-                ? 'No audit ledger rows yet. Verify a record to add it.'
-                : `${ledgerEntries.length} audit ledger ${ledgerEntries.length === 1 ? 'record' : 'records'}, ${ledgerVerifiedKg.toFixed(1)} kg CO₂e verified`}
+              title={`${ledgerEntries.length} audit ledger ${ledgerEntries.length === 1 ? 'record' : 'records'}, ${ledgerVerifiedKg.toFixed(1)} kg CO₂e verified`}
             >
               <Download className="h-4 w-4" />
               Export audit ledger
@@ -279,8 +275,9 @@ const History = () => {
           </Card>
         )}
 
-        {/* Emissions Trend Chart: always shown, with zeros and guidance until records are verified. */}
-        <Card className="mb-6">
+        {/* Emissions Trend Chart */}
+        {emissions.length > 0 && (
+          <Card className="mb-6">
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 text-primary" />
@@ -293,11 +290,7 @@ const History = () => {
             </CardHeader>
             <CardContent>
               {verifiedCount === 0 && (
-                <p className="text-sm text-muted-foreground mb-4">
-                  {emissions.length === 0
-                    ? 'No records yet. Upload a bill or invoice; once its records are verified, they appear here and in the audit ledger.'
-                    : 'No verified records yet. Open an invoice in Verify to verify its stored records.'}
-                </p>
+                <p className="text-sm text-muted-foreground mb-4">No verified records yet. Open an invoice in Verify to verify its stored records.</p>
               )}
               <div className="grid md:grid-cols-4 gap-4 mb-4">
                 <div className="p-3 rounded-lg bg-secondary/30">
@@ -318,11 +311,6 @@ const History = () => {
                 </div>
               </div>
               
-              {trendData.length <= 1 && (
-                <div className="flex h-[120px] items-center justify-center rounded-lg border border-dashed border-border text-center text-xs text-muted-foreground px-4">
-                  The trend line appears once verified records cover two or more months.
-                </div>
-              )}
               {trendData.length > 1 && (
                 <ResponsiveContainer width="100%" height={180}>
                   <AreaChart data={trendData}>
@@ -355,6 +343,7 @@ const History = () => {
               )}
             </CardContent>
           </Card>
+        )}
 
         <RecordInsights emissions={emissions} documents={documents} />
 
