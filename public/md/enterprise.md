@@ -15,9 +15,9 @@ Supply chains and enterprise systems produce data in every shape: bills in sever
 - Life cycle assessment (LCA) (Custom): Analyst-led study following the ISO 14040 and 14044 phases
 - Decarbonisation strategy to net zero (Live): Net-zero engine self-serve; science-based target setting with analysts is custom
 - Double materiality assessment (Custom): Analyst-led, structured on the ESRS topics for CSRD
-- Audit-ready reporting (Live): For one entity, labelled self-reported; portfolio roll-up is custom
+- Evidence-linked reporting (Live): For one entity, labelled self-reported; portfolio roll-up is custom
 
-## Custom-built for Scope 3: one click from collection to audit-ready
+## Custom-built for Scope 3: one click from collection to evidence-linked records
 
 Invite, collect, clean, verify, report. Most suppliers start from documents and estimates; sensors upgrade the data later.
 
@@ -51,7 +51,7 @@ Primary data where the spend is. Spend-based estimates for the long tail. People
 - Automatic supplier reminders (Custom)
 - Duplicate documents caught by hash (Live)
 - Idempotent verification (no double counting) (Live)
-- Queued, rate-limited ingestion for large uploads (Custom)
+- Large uploads queued and processed in order (Custom)
 
 ## Emissions, from liability to decision to profit
 

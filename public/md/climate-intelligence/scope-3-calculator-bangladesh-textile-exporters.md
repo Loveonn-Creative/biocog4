@@ -80,6 +80,7 @@ Once a year at minimum, using 12 months of bills. Update sooner after a major ch
 
 ## Related guides
 
-- [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
-- [Vietnam Textile Factories: Carbon Footprint Data EU Buyers Ask For](https://senseible.earth/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers)
+- [EU rules for Indian textile exporters](https://senseible.earth/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026)
+- [carbon data EU buyers ask Vietnamese textile factories for](https://senseible.earth/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers)
+- [Scope 3 data for Pakistani textile exporters](https://senseible.earth/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers)
+- [embedded emissions in semi-finished imports](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)

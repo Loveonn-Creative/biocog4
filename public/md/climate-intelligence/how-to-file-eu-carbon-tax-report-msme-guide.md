@@ -92,6 +92,7 @@ No. Quarterly reports belonged to the transitional period, which ended on 31 Dec
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [EU CBAM explained](https://senseible.earth/climate-intelligence/eu-cbam-explained-emerging-market-exporters)
+- [becoming a CBAM authorised declarant](https://senseible.earth/climate-intelligence/become-cbam-authorised-declarant)
+- [South Africa's carbon tax and CBAM](https://senseible.earth/climate-intelligence/south-africa-carbon-tax-cbam)
+- [getting CBAM emissions verified](https://senseible.earth/climate-intelligence/cbam-verification-non-eu-producer)

@@ -72,6 +72,7 @@ CEA publishes the CO2 Baseline Database annually. Version 21.0 covers FY 2024-25
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [Scope 2 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
+- [green energy open access for factories in India](https://senseible.earth/climate-intelligence/green-energy-open-access-india)
+- [Vietnam's grid emission factor](https://senseible.earth/climate-intelligence/vietnam-grid-emission-factor)
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)

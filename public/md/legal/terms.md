@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/legal/terms
 
-Effective 27 August 2024. Last updated 25 September 2026.
+Effective 27 August 2024. Last updated 16 October 2026.
 
 ## 0. Parties & Legal Identity
 
@@ -20,10 +20,12 @@ Senseible provides AI-powered carbon estimation, ESG intelligence, digital infra
 
 For avoidance of doubt, Senseible is NOT:
 
-- a statutory auditor or verifier
+- a statutory auditor or accredited verifier
 - a carbon registry or exchange
-- a financial advisor, NBFC, or investment intermediary
+- a financial advisor, NBFC, lender, or investment intermediary
 - a government authority or regulator
+
+Senseible Earth Pvt. Ltd. acts as a data verifier only: it checks the consistency of the data users provide and the evidence behind it. Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
 
 All outputs are assistive, inferential, and non-binding in nature.
 
@@ -69,6 +71,20 @@ Data may be shared solely to enable:
 - carbon credit issuance or trading
 - compliance with regulatory requirements
 
+## 4A. Customer Stories and Feedback
+
+**(a) Your choice.** Sharing feedback is optional and unpaid. Nothing is published without your explicit consent at the time you submit. If Senseible ever offers an incentive for a story, that will be disclosed on the story itself.
+
+**(b) What you approve.** Before you submit, you see the story exactly as it will appear. You choose to be named, to show only your company, or to stay anonymous. Senseible may shorten text or correct spelling. If any other change would alter what the story says, Senseible will ask you to approve it again.
+
+**(c) Licence.** By consenting, you grant Senseible a non-exclusive, royalty-free, worldwide licence to publish the approved story, and (if you chose) your name, company name and logo, on senseible.earth and Senseible's own channels. The licence lasts until you withdraw. Withdrawal ends future use; it cannot recall copies already made by others.
+
+**(d) Accuracy and authority.** You confirm that what you share is true to the best of your knowledge. If you choose to name your company, you confirm that you are authorised to approve this on its behalf.
+
+**(e) How results are shown.** Every figure in a story is labelled as reported by you, calculated by Senseible from your documents, verified (with who verified it), or estimated. A story describes one customer's experience. It does not guarantee similar results, a loan, credit approval, carbon credits or regulatory acceptance.
+
+**(f) Withdrawal.** Use the link in your confirmation email, or contact us as set out in the Privacy Policy. The story comes down from senseible.earth within seven (7) business days.
+
 ## 5. AI Outputs, Limitations & No-Reliance (Disclaimers)
 
 - All outputs are probabilistic estimates, not certified measurements.
@@ -88,6 +104,8 @@ Senseible makes no representation that:
 - Emissions are certified or verified,
 - Outputs meet any registry methodology,
 - Use prevents greenwashing claims. Final authority rests with independent third parties.
+
+Illustrative estimates may be used for informational purposes and are not independently verified evidence for legal or regulatory proceedings.
 
 ## 7. Financial & Investment Non-Advice
 
@@ -145,7 +163,7 @@ User shall indemnify Senseible against claims arising from:
 
 Data Officer: Sneha Ghosh
 
-Email: sneha@senseible.earth
+Email: shown on the live page at senseible.earth
 
 Address: Minarch Tower, Gurugram, 122003, Haryana, India
 

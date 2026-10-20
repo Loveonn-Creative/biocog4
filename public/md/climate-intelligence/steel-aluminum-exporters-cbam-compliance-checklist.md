@@ -52,6 +52,7 @@ Explore [CBAM preparation details](https://senseible.earth/climate-intelligence/
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [why CBAM tests Indian industry](https://senseible.earth/climate-intelligence/survival-of-the-greenest-cbam-litmus-test)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [lowering CBAM costs for importers in Germany](https://senseible.earth/climate-intelligence/lower-cbam-costs-importer-germany)
+- [CBAM extension to downstream products](https://senseible.earth/climate-intelligence/cbam-downstream-products-2028)

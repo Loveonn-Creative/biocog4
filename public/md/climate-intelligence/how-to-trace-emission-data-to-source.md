@@ -16,6 +16,7 @@ This approach satisfies third-party verification requirements under ISO 14064, C
 
 ## Related guides
 
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
-- [Carbon Audit Checklist for Singapore Manufacturing Companies](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)
+- [documents needed for carbon verification](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [carbon audit checklist for Singapore manufacturers](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)
+- [carbon audit for a small business in India](https://senseible.earth/climate-intelligence/carbon-audit-small-business-india-complete-guide)
+- [greenwashing self-audit checklist](https://senseible.earth/climate-intelligence/msme-greenwashing-self-audit-checklist-2026)

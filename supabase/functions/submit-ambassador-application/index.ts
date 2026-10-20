@@ -1,5 +1,5 @@
 import { createClient } from 'npm:@supabase/supabase-js@2';
-import { COMMITMENTS, LANES, validateApplication } from '../_shared/ambassadorApplication.ts';
+import { COMMITMENTS, LANES, PROGRAM_CONTACT, validateApplication } from '../_shared/ambassadorApplication.ts';
 import { sendTemplateEmail } from '../_shared/transactional-email-templates/send-email.ts';
 
 /**
@@ -57,7 +57,7 @@ Deno.serve(async (req) => {
 
     let emailStatus: 'sent' | 'suppressed' | 'failed' = 'failed';
     try {
-      const sent = await sendTemplateEmail('ambassador-application', 'palanisamy@senseible.earth', {
+      const sent = await sendTemplateEmail('ambassador-application', PROGRAM_CONTACT.managerEmail, {
         templateData: {
           name: app.name, email: app.email, whatsapp: app.whatsapp, city: app.city,
           lanes: app.lanes.map((id) => LANES.find((l) => l.id === id)?.label || id),

@@ -8,6 +8,7 @@ BRSR requirements are expanding beyond top-1000 listed companies. Supply chain p
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [carbon audit checklist for Singapore manufacturers](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)
+- [MRV versus ESG reporting](https://senseible.earth/climate-intelligence/mrv-vs-esg-reporting-where-they-overlap-and-differ)
+- [choosing an MRV provider](https://senseible.earth/climate-intelligence/how-to-choose-an-mrv-provider-msme-checklist)
+- [BRSR reporting requirements](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

@@ -8,6 +8,7 @@ The Philippines is a major food processing hub exporting canned goods, coconut p
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [cutting carbon in Thai food processing](https://senseible.earth/climate-intelligence/thailand-food-processing-carbon-footprint-reduction)
+- [carbon measurement in Thai auto supply chains](https://senseible.earth/climate-intelligence/thailand-automotive-supply-chain-carbon-measurement)
+- [carbon reporting for Philippine manufacturers](https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026)
+- [when green hydrogen pays for MSMEs](https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026)

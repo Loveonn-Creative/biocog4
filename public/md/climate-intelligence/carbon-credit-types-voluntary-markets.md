@@ -32,6 +32,7 @@ Choose credits aligned with your sustainability narrative and stakeholder expect
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
-- [Scope 1 vs Scope 2 vs Scope 3: A Simple Guide for Small Businesses](https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business)
+- [carbon credits from rooftop solar](https://senseible.earth/climate-intelligence/carbon-credits-solar-installations-monetize)
+- [carbon credits for MSMEs in Sri Lanka](https://senseible.earth/climate-intelligence/msme-carbon-credits-sri-lanka-invoice-to-revenue)
+- [how much MSMEs can earn from carbon credits](https://senseible.earth/climate-intelligence/realistic-income-from-selling-carbon-credits-msme)
+- [choosing the right emission factors](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)

@@ -84,6 +84,7 @@ These are not options. They are the default because anything less is not audit-g
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
+- [digital MRV versus a carbon audit](https://senseible.earth/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared)
+- [emission factor data quality tiers](https://senseible.earth/climate-intelligence/msme-data-quality-tier-1-vs-tier-2-emission-factors)
+- [spend-based versus activity-based Scope 3](https://senseible.earth/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice)
+- [choosing an MRV provider](https://senseible.earth/climate-intelligence/how-to-choose-an-mrv-provider-msme-checklist)

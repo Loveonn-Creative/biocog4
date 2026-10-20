@@ -49,6 +49,7 @@ For [BRSR reporting](https://senseible.earth/climate-intelligence/brsr-reporting
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [Carbon Audit Checklist for Singapore Manufacturing Companies](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
+- [Senseible and Sensibull](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
+- [carbon audit checklist for Singapore manufacturers](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)
+- [carbon audit for a small business in India](https://senseible.earth/climate-intelligence/carbon-audit-small-business-india-complete-guide)

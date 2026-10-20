@@ -38,6 +38,8 @@ Guides on carbon accounting, CBAM, Scope 3 supplier data, BRSR and green finance
 - [How often should an MSME measure its carbon footprint?](https://senseible.earth/climate-intelligence/carbon-accounting-frequency-msme-when-to-measure)
 - [Should you do carbon accounting yourself or hire a consultant?](https://senseible.earth/climate-intelligence/diy-vs-consultant-carbon-accounting-msme-decision-framework)
 - [How much money can an MSME or individual realistically make selling carbon credits?](https://senseible.earth/climate-intelligence/realistic-income-from-selling-carbon-credits-msme)
+- [How Banks and NBFCs in India Measure Financed Emissions](https://senseible.earth/climate-intelligence/financed-emissions-banks-india)
+- [What Is Vietnam's Grid Emission Factor, and How Do You Use It?](https://senseible.earth/climate-intelligence/vietnam-grid-emission-factor)
 
 ## Multi-Gas Climate Accounting
 
@@ -57,6 +59,10 @@ Guides on carbon accounting, CBAM, Scope 3 supplier data, BRSR and green finance
 - [Spend-based vs activity-based: which Scope 3 method should you use?](https://senseible.earth/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice)
 - [How do you get supplier emissions data when suppliers will not share?](https://senseible.earth/climate-intelligence/supplier-emissions-data-collection-playbook-msme)
 - [Scope 3 data quality tiers: what audit-grade actually requires from your software](https://senseible.earth/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026)
+- [NHS Carbon Reduction Plan Rules for Pharma Suppliers in India](https://senseible.earth/climate-intelligence/nhs-carbon-reduction-plan-pharma-india)
+- [What Does Germany's Supply Chain Act (LkSG) Mean for Indian Suppliers?](https://senseible.earth/climate-intelligence/germany-supply-chain-act-lksg-indian-suppliers)
+- [What Does the EU Forced Labour Regulation Mean for Suppliers in Asia?](https://senseible.earth/climate-intelligence/eu-forced-labour-regulation-suppliers)
+- [What Does the EU Digital Product Passport Mean for Textile Exporters?](https://senseible.earth/climate-intelligence/digital-product-passport-textile-exporters)
 
 ## Carbon Regulations
 
@@ -95,6 +101,23 @@ Guides on carbon accounting, CBAM, Scope 3 supplier data, BRSR and green finance
 - [Physical vs transition climate risk: what financial institutions actually have to measure](https://senseible.earth/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions)
 - [ESG readiness assessment for MSMEs: a step-by-step framework for 2026](https://senseible.earth/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026)
 - [Algorithmic bias in credit decisions: what borrowers should know and how to respond](https://senseible.earth/climate-intelligence/algorithmic-bias-credit-decisions-borrower-rights-2026)
+- [How to Lower CBAM Costs as an Importer in Germany](https://senseible.earth/climate-intelligence/lower-cbam-costs-importer-germany)
+- [What CBAM Data to Ask Steel Suppliers For in Poland](https://senseible.earth/climate-intelligence/cbam-supplier-data-steel-importer-poland)
+- [How to Control CBAM Costs on Imported Steel Slab in Italy](https://senseible.earth/climate-intelligence/cbam-cost-imported-steel-slab-italy)
+- [CBAM Cost for Aluminium Extruders in Turkey, and How to Cut It](https://senseible.earth/climate-intelligence/cbam-cost-aluminium-extrusion-turkey)
+- [CBAM for Aluminium Exporters in India: How to Keep EU Buyers](https://senseible.earth/climate-intelligence/cbam-aluminium-exporter-india)
+- [How CBAM Changes Fertiliser Imports in Germany and Poland](https://senseible.earth/climate-intelligence/cbam-fertiliser-imports-germany-poland)
+- [CBAM Certificate Price: How It Is Set and the 2026 Prices](https://senseible.earth/climate-intelligence/cbam-certificate-price)
+- [India Carbon Credit Trading Scheme: Which Industries Have Targets](https://senseible.earth/climate-intelligence/india-carbon-credit-trading-scheme-targets)
+- [CBAM for Fastener Exporters in India (CN 7318)](https://senseible.earth/climate-intelligence/cbam-fastener-exporters-india)
+- [Does South Africa's Carbon Tax Reduce CBAM Costs?](https://senseible.earth/climate-intelligence/south-africa-carbon-tax-cbam)
+- [How to Get Your CBAM Emissions Verified as a Non-EU Producer](https://senseible.earth/climate-intelligence/cbam-verification-non-eu-producer)
+- [What Government Support Can Indian MSMEs Get for CBAM Compliance?](https://senseible.earth/climate-intelligence/cbam-support-for-indian-msmes)
+- [Is Your Import Exempt From CBAM? The 50-Tonne Rule Explained](https://senseible.earth/climate-intelligence/cbam-50-tonne-exemption)
+- [How to Become a CBAM Authorised Declarant](https://senseible.earth/climate-intelligence/become-cbam-authorised-declarant)
+- [Turkey's Emissions Trading System: Who Is Covered and When](https://senseible.earth/climate-intelligence/turkey-emissions-trading-system)
+- [EU Steel Import Quotas From July 2026: What Exporters Need to Know](https://senseible.earth/climate-intelligence/eu-steel-import-quota-2026)
+- [Will CBAM Cover Your Product From 2028? The Downstream Extension Explained](https://senseible.earth/climate-intelligence/cbam-downstream-products-2028)
 
 ## Manufacturing Emissions
 
@@ -109,6 +132,8 @@ Guides on carbon accounting, CBAM, Scope 3 supplier data, BRSR and green finance
 - [Thailand Automotive Supply Chain: Carbon Measurement for OEM Compliance](https://senseible.earth/climate-intelligence/thailand-automotive-supply-chain-carbon-measurement)
 - [Green Hydrogen for MSMEs: When Does It Actually Pay in 2026?](https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026)
 - [The Water-Carbon Nexus for Textile and Leather MSMEs: Why You Cannot Solve One Alone](https://senseible.earth/climate-intelligence/msme-water-carbon-nexus-textile-leather)
+- [How to Get an Energy Audit for an MSME in India](https://senseible.earth/climate-intelligence/energy-audit-for-msme-india)
+- [How Factories in India Can Buy Renewable Power Through Open Access](https://senseible.earth/climate-intelligence/green-energy-open-access-india)
 
 ## Agriculture Emissions
 
@@ -129,3 +154,38 @@ Guides on carbon accounting, CBAM, Scope 3 supplier data, BRSR and green finance
 - [Vietnam Electronics Supply Chain: Scope 3 Demands From Apple, Samsung, Intel](https://senseible.earth/climate-intelligence/vietnam-electronics-supply-chain-scope-3-2026)
 - [Philippines BPO and IT-BPM: Net-Zero by 2030 Without Losing Margin](https://senseible.earth/climate-intelligence/philippines-bpo-renewable-energy-net-zero-2030)
 - [Thailand EV Supply Chain: MSME Decarbonisation for the BOI 30@30 Policy](https://senseible.earth/climate-intelligence/thailand-ev-supply-chain-msme-2026)
+
+## Climate Careers
+
+- [Climate Finance Analyst Salary in India (2026)](https://senseible.earth/climate-intelligence/climate-finance-analyst-salary-india)
+- [ESG Jobs in Bangalore: Roles, Employers and Pay](https://senseible.earth/climate-intelligence/esg-jobs-bangalore)
+
+## Green Finance
+
+- [How to Get a Green Loan for a Textile Business in Karachi](https://senseible.earth/climate-intelligence/green-loan-textile-business-karachi)
+- [How to Export Textiles to Europe from Karachi](https://senseible.earth/climate-intelligence/export-textiles-to-europe-from-karachi)
+- [How to Get a Green Loan for a Steel Business in Johannesburg](https://senseible.earth/climate-intelligence/green-loan-steel-business-johannesburg)
+- [How to Get a Green Loan for a Garment Factory in Dhaka or Gazipur](https://senseible.earth/climate-intelligence/green-loan-garment-factory-dhaka)
+- [How to Get a Green Loan for a Steel MSME in Ludhiana or Raipur](https://senseible.earth/climate-intelligence/green-loan-steel-msme-ludhiana-raipur)
+- [How to Get a Green Loan for a Textile Mill in Tamil Nadu](https://senseible.earth/climate-intelligence/green-loan-textile-mill-tamil-nadu)
+- [How to Finance CBAM Compliance for a Steel Exporter in Vietnam](https://senseible.earth/climate-intelligence/finance-cbam-compliance-steel-vietnam)
+- [How Steel and Cement Exporters in Turkey Can Use Green Finance to Cut CBAM Costs](https://senseible.earth/climate-intelligence/green-finance-steel-cement-turkey)
+- [How to Get a Green Loan for a Ceramic Tile Factory in Morbi](https://senseible.earth/climate-intelligence/green-loan-ceramic-factory-morbi)
+- [How to Finance an Energy-Efficient Glass Furnace in Firozabad](https://senseible.earth/climate-intelligence/finance-glass-furnace-firozabad)
+- [How to Get Green Finance for Ship Recycling Yards and Steel Mills in Chattogram](https://senseible.earth/climate-intelligence/green-finance-ship-recycling-chattogram)
+- [How to Get a Green Loan for a Cement Plant in Pakistan](https://senseible.earth/climate-intelligence/green-loan-cement-plant-pakistan)
+- [How to Finance Emission Cuts at a Cement Plant in Vietnam](https://senseible.earth/climate-intelligence/finance-emission-cuts-cement-plant-vietnam)
+- [How to Get Green Finance for a Textile Exporter in Bursa or Denizli](https://senseible.earth/climate-intelligence/green-finance-textile-exporter-turkey)
+- [How to Finance Renewable Power for a Ferrochrome Smelter in South Africa](https://senseible.earth/climate-intelligence/renewable-power-ferrochrome-smelter-south-africa)
+- [How to Get a Green Loan for a Steel Rolling Mill in Jalna](https://senseible.earth/climate-intelligence/green-loan-steel-rolling-mill-jalna)
+- [How to Get a Green Loan for a Chemical Plant in Vapi, Ankleshwar or Dahej](https://senseible.earth/climate-intelligence/green-loan-chemical-plant-gujarat)
+- [ADEETIE Scheme: Eligibility, Benefits and How to Apply](https://senseible.earth/climate-intelligence/adeetie-scheme)
+- [How to Get a Green Loan for a Foundry in Kolhapur](https://senseible.earth/climate-intelligence/green-loan-foundry-kolhapur)
+- [What Can Banks in India Finance With Green Deposits?](https://senseible.earth/climate-intelligence/rbi-green-deposits-what-banks-finance)
+- [How to Finance Rooftop Solar for a Factory in Bangladesh](https://senseible.earth/climate-intelligence/rooftop-solar-loan-factory-bangladesh)
+- [Is Rooftop Solar Still Worth It for Factories in Pakistan After the Net Metering Changes?](https://senseible.earth/climate-intelligence/rooftop-solar-net-metering-pakistan-factories)
+- [How to Get a Solar Loan for an MSME in India](https://senseible.earth/climate-intelligence/solar-loan-for-msme-india)
+- [How Can Textile Recyclers in Panipat Get Green Finance and Keep EU Buyers?](https://senseible.earth/climate-intelligence/green-finance-textile-recycling-panipat)
+- [Can a Factory in South Africa Buy Renewable Power Through Wheeling?](https://senseible.earth/climate-intelligence/wheeling-renewable-power-south-africa-factories)
+- [What Is the Pakistan Green Taxonomy, and How Does It Affect Business Loans?](https://senseible.earth/climate-intelligence/pakistan-green-taxonomy)
+- [What Is Vietnam's Green Taxonomy, and How Do You Qualify for Green Credit?](https://senseible.earth/climate-intelligence/vietnam-green-taxonomy-decision-21)

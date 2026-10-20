@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/scope-3-data-quality-tie
 
 Published 2026-05-23.
 
-Most Scope 3 software in 2026 produces a number. Fewer produce a number that survives external assurance. The difference is data quality: specifically, the tier of input data used for each Scope 3 category and the transparency with which that tier is recorded against the number.
+Most Scope 3 software in 2026 produces a number. Fewer produce a number that survives external assurance. The difference is data quality: specifically, the tier of input data used for each Scope 3 category and the transparency with which that tier is recorded against the number. For controls and evidence that hold up to assurance, see [ESG data management and assurance](https://senseible.earth/esg-data-management).
 
 This article is for buyers of carbon software who have outgrown their first spend-based estimate and need a procurement specification that holds up under ISAE 3410, ISO 14064-3, or CDP scoring.
 
@@ -111,6 +111,7 @@ The same line-item, evidence-linked, hash-anchored discipline that audit-grade S
 
 ## Related guides
 
-- [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
-- [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [calculating supply chain emissions](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)
+- [spend-based versus activity-based Scope 3](https://senseible.earth/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice)
+- [Scope 3 for Bangladesh textile exporters](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [embedded emissions in semi-finished imports](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)

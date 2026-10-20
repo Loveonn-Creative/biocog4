@@ -2,37 +2,45 @@
 
 Canonical: https://senseible.earth/industries/textile
 
-Textiles are not covered by EU CBAM, but EU brands reporting under CSRD now ask suppliers for facility emissions. Fuel and electricity bills are enough to answer most requests.
+Textiles are not covered by EU CBAM, but global apparel brands ask suppliers for factory energy and emissions for their own Scope 3. Fuel and electricity bills answer most requests.
 
-## Scope 1 sources
+## The question apparel brands ask
 
-- Diesel generators and boilers
-- On-site fuel combustion for dyeing
-- Company-owned transportation
-- Fugitive emissions from chemicals
+“Please share your factory’s energy use and emissions for last year.”
 
-## Scope 2 sources
+This sector is not directly covered by EU CBAM. Buyers, lenders and OEMs ask for emissions built from documents for their own reporting.
 
-- Electricity for spinning mills
-- Power for weaving looms
-- Cooling and heating systems
-- Lighting and machinery
+## Scope 1 sources (evidence: fuel invoices)
 
-## Scope 3 sources
+- Boilers for dyeing and processing
+- Diesel generators
+- Thermic fluid heaters
+- Company vehicles
 
-- Raw cotton and fiber procurement
-- Chemical dyes and auxiliaries
-- Packaging materials
-- Freight and logistics
-- Employee commuting
-- Waste treatment
+## Scope 2 sources (evidence: electricity bills)
 
-## Reduction strategies
+- Spinning and weaving machines
+- Dyeing and finishing lines
+- Humidification and cooling
+- Compressed air
 
-- Solar rooftop installations (40-60% electricity reduction)
-- Energy-efficient motors and VFDs
-- Water recycling in dyeing processes
-- Sustainable fiber sourcing
-- LED lighting retrofits
+## Scope 3 sources (evidence: purchase and freight invoices)
 
-[All industries](https://senseible.earth/industries) · [CBAM cost calculator](https://senseible.earth/cbam-calculator)
+- Fibre and yarn purchases
+- Dyes and chemicals
+- Job-work processing
+- Freight to port
+
+## Worked example
+
+Illustrative monthly quantities: 50,000 kWh of grid electricity, 15,000 kg of coal for boiler, 1,500 litre of diesel for generator, multiplied by the emission factors Senseible uses and annualised. Scope 1 and 2 only. Fibre and chemical purchases (Scope 3) come from purchase invoices.
+
+## Where reductions usually start
+
+- Rooftop solar
+- Efficient motors and variable speed drives
+- Boiler fuel switch and heat recovery
+- Water recycling in dyeing
+- Preferred fibre sourcing
+
+[All industries](https://senseible.earth/industries) · [CBAM cost calculator](https://senseible.earth/cbam-calculator) · [Upload a bill](https://senseible.earth/)

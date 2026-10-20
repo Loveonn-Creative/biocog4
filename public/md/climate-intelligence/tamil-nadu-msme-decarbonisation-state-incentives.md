@@ -39,6 +39,7 @@ For most Tamil Nadu MSMEs, the biggest early reductions come from electricity, n
 
 ## Related guides
 
-- [How Philippine Manufacturing SMEs Can Start Carbon Reporting in 2026](https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026)
-- [Indonesia Manufacturing: Scope 2 Electricity Emissions Calculator](https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions)
-- [Bangladesh Garment Exporters: Surviving EU CBAM and CSDDD Together in 2026](https://senseible.earth/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026)
+- [carbon reporting for Philippine manufacturers](https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026)
+- [Scope 2 electricity emissions in Indonesia](https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions)
+- [CBAM and CSDDD for Bangladesh garment exporters](https://senseible.earth/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026)
+- [carbon compliance for Indonesian palm oil MSMEs](https://senseible.earth/climate-intelligence/indonesia-pertamina-rspo-palm-oil-carbon-2026)

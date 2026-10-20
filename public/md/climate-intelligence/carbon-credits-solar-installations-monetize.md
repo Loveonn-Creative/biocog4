@@ -48,6 +48,7 @@ For smaller installations, bundling with other MSMEs through platforms like Sens
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [carbon credits for MSMEs in Sri Lanka](https://senseible.earth/climate-intelligence/msme-carbon-credits-sri-lanka-invoice-to-revenue)
+- [types of carbon credits](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
+- [how much MSMEs can earn from carbon credits](https://senseible.earth/climate-intelligence/realistic-income-from-selling-carbon-credits-msme)
+- [solar loan for an MSME in India](https://senseible.earth/climate-intelligence/solar-loan-for-msme-india)

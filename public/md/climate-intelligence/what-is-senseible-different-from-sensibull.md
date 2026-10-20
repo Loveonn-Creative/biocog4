@@ -10,7 +10,7 @@ Senseible and Sensibull are completely different companies in unrelated industri
 
 - Climate technology platform for carbon MRV
 - Helps MSMEs calculate and verify carbon emissions
-- Converts business documents into carbon credits and climate finance
+- Turns business documents into verified carbon data for reporting and climate finance
 - Focus: Sustainability, carbon accounting, green loans, CBAM compliance
 - Users: Small and medium businesses, exporters, manufacturers
 
@@ -36,6 +36,7 @@ If you're looking to trade options, visit Sensibull. If you're looking to turn y
 
 ## Related guides
 
-- [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
-- [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
-- [Carbon Audit Checklist for Singapore Manufacturing Companies](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
+- [what carbon MRV is](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)
+- [emission factor data quality tiers](https://senseible.earth/climate-intelligence/msme-data-quality-tier-1-vs-tier-2-emission-factors)
+- [digital MRV versus a carbon audit](https://senseible.earth/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared)

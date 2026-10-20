@@ -8,6 +8,7 @@ Sri Lankan MSMEs in apparel, tea processing, and rubber manufacturing can moneti
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [carbon credits from rooftop solar](https://senseible.earth/climate-intelligence/carbon-credits-solar-installations-monetize)
+- [how much MSMEs can earn from carbon credits](https://senseible.earth/climate-intelligence/realistic-income-from-selling-carbon-credits-msme)
+- [types of carbon credits](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
+- [a 12-month net-zero roadmap](https://senseible.earth/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants)

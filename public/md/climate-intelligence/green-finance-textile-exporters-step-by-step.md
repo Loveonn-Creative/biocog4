@@ -46,6 +46,7 @@ Explore all [climate finance options](https://senseible.earth/climate-finance) a
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
+- [Scope 2 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
+- [Scope 3 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [calculating a carbon footprint from electricity bills](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)

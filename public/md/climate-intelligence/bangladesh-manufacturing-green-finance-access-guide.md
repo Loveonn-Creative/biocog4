@@ -8,6 +8,7 @@ Bangladesh Bank green refinance schemes offer concessional rates for eligible gr
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [green loan eligibility in Pakistan](https://senseible.earth/climate-intelligence/green-loan-eligibility-pakistani-small-businesses)
+- [green loan for a garment factory in Dhaka](https://senseible.earth/climate-intelligence/green-loan-garment-factory-dhaka)
+- [green finance for ship recycling in Chattogram](https://senseible.earth/climate-intelligence/green-finance-ship-recycling-chattogram)
+- [rooftop solar finance for factories in Bangladesh](https://senseible.earth/climate-intelligence/rooftop-solar-loan-factory-bangladesh)

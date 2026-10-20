@@ -21,6 +21,8 @@ import { WP_PATH, WP_PUBLISHED } from '@/data/whitePaper';
 import { ESG_SAMPLE_META, ESG_SAMPLE_OBJECTIONS } from '@/data/esgReportSample';
 import { ORGANIZATION, ORG_REF, entityJsonLd } from './entity';
 import { HELP_ARTICLES, HELP_SECTIONS } from '../../../supabase/functions/_shared/helpArticles';
+import { fillContacts } from '../../../supabase/functions/_shared/publicContacts';
+import { TIER_PRICES } from '@/lib/pricing/pricingMath';
 import { HELP_HUB_META, helpArticleMeta } from '@/lib/help/meta';
 import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
 import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
@@ -142,12 +144,16 @@ function coreRoutes(): SeoRoute[] {
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     url: `${SITE_URL}/pricing`,
+    // Prices come from the pricing code and are before GST, as the page says.
     offers: [
-      { '@type': 'Offer', name: 'Biocog Snapshot', price: '0', priceCurrency: 'INR' },
-      { '@type': 'Offer', name: 'Biocog Essential (yearly)', price: '5988', priceCurrency: 'INR' },
-      { '@type': 'Offer', name: 'Biocog Essential (monthly)', price: '1999', priceCurrency: 'INR' },
-      { '@type': 'Offer', name: 'Biocog Pro (yearly)', price: '59988', priceCurrency: 'INR' },
-      { '@type': 'Offer', name: 'Biocog Pro (monthly)', price: '9999', priceCurrency: 'INR' },
+      { '@type': 'Offer', name: 'Biocog Snapshot', price: '0', priceCurrency: 'INR', url: `${SITE_URL}/pricing` },
+      ...(['essential', 'pro'] as const).flatMap(tier => (['yearly', 'monthly'] as const).map(cycle => {
+        const price = String(cycle === 'yearly' ? TIER_PRICES[tier].yearly * 12 : TIER_PRICES[tier].monthly);
+        return {
+          '@type': 'Offer', name: `Biocog ${tier === 'pro' ? 'Pro' : 'Essential'} (${cycle})`, price, priceCurrency: 'INR', url: `${SITE_URL}/pricing`,
+          priceSpecification: { '@type': 'UnitPriceSpecification', price, priceCurrency: 'INR', valueAddedTaxIncluded: false, billingDuration: cycle === 'yearly' ? 'P1Y' : 'P1M' },
+        };
+      })),
     ],
   });
 
@@ -266,7 +272,7 @@ function coreRoutes(): SeoRoute[] {
       { h2: 'How to apply' },
       { ol: di.steps.map(st => `${st.title}. ${st.line}`) },
       { h2: di.session.title },
-      { p: `${di.session.line} Send CLIMATE on WhatsApp to +91 77085 40931, or email a Program Coordinator: Palanisamy (palanisamy@senseible.earth) or Vatsalya Sai (vatsalya@senseible.earth).` },
+      { p: `${di.session.line} Send CLIMATE on WhatsApp or email a Program Coordinator. The number and coordinator emails are on the live page.` },
       { h2: 'Questions' },
       ...di.faqs.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
     ],
@@ -436,7 +442,7 @@ function answerRoutes(): SeoRoute[] {
       breadcrumbs: crumbs,
       jsonLd: [breadcrumbLd(crumbs), {
         '@context': 'https://schema.org', '@type': 'QAPage',
-        mainEntity: { '@type': 'Question', name: a.q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: [a.short, ...a.body].join(' ') } },
+        mainEntity: { '@type': 'Question', name: a.q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: [a.short, ...a.body].join(' '), author: ORG_REF } },
       }],
       priority: 0.6, changefreq: 'monthly' as const,
     };
@@ -617,7 +623,7 @@ function legalRoutes(): SeoRoute[] {
       h1: d.title,
       blocks: [
         { p: `Effective ${d.effectiveDate}. Last updated ${d.lastUpdated}.` },
-        ...d.sections.flatMap(sec => [{ h2: sec.title } as Block, ...markdownToBlocks(sec.content)]),
+        ...d.sections.flatMap(sec => [{ h2: sec.title } as Block, ...markdownToBlocks(fillContacts(sec.content, 'static'))]),
       ],
       breadcrumbs: crumbs,
       jsonLd: [breadcrumbLd(crumbs)],

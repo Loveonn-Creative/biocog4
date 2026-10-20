@@ -83,6 +83,7 @@ Under the definitive rules, hydrogen counts direct emissions only; fertilisers a
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM on fertiliser imports in Germany and Poland](https://senseible.earth/climate-intelligence/cbam-fertiliser-imports-germany-poland)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [CBAM for aluminium exporters in India](https://senseible.earth/climate-intelligence/cbam-aluminium-exporter-india)
+- [CBAM for fastener exporters in India](https://senseible.earth/climate-intelligence/cbam-fastener-exporters-india)

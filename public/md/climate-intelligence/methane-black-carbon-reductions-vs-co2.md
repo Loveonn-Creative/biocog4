@@ -16,6 +16,7 @@ If your operations produce significant black carbon, such as diesel engines, bri
 
 ## Related guides
 
-- [What is GHG-6 and how do we calculate warming impact beyond CO2?](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
-- [Biogenic Carbon Accounting for Food and Textile MSMEs: The Honest Guide](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
-- [Cold Chain MSMEs: Refrigerant Leakage Can Dominate Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [refrigerant leaks in cold chain emissions](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [the six greenhouse gases and their warming impact](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
+- [biogenic carbon accounting](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)

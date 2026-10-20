@@ -41,6 +41,7 @@ Development finance institutions and Indonesian banks offer green loans for mill
 
 ## Related guides
 
-- [How Philippine Manufacturing SMEs Can Start Carbon Reporting in 2026](https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026)
-- [Indonesia Manufacturing: Scope 2 Electricity Emissions Calculator](https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions)
-- [Tamil Nadu MSME Decarbonisation: State Incentives, Grid, and Quick Wins](https://senseible.earth/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives)
+- [palm oil emissions in Malaysia](https://senseible.earth/climate-intelligence/malaysia-palm-oil-scope-1-2-3-emission-breakdown)
+- [Scope 2 electricity emissions in Indonesia](https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions)
+- [Tamil Nadu decarbonisation incentives](https://senseible.earth/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives)
+- [net zero for Philippine BPO firms](https://senseible.earth/climate-intelligence/philippines-bpo-renewable-energy-net-zero-2030)

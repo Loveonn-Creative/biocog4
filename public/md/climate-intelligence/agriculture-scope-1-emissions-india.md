@@ -27,3 +27,10 @@ Use IPCC Tier 1 methods with India-specific emission factors where available. Th
 **Reporting:**
 
 Document all livestock numbers, cropped areas, fertilizer quantities, and fuel consumption. Apply appropriate GWP factors to convert CH4 and N2O to CO2 equivalent.
+
+## Related guides
+
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
+- [fleet emissions from fuel invoices](https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india)
+- [Scope 2 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
+- [Scope 3 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)

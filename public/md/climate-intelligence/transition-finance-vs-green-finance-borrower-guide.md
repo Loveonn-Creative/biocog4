@@ -95,6 +95,7 @@ A continuous MRV layer (such as Senseible) compresses this cost and converts the
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [why green loans get rejected](https://senseible.earth/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them)
+- [comparing climate finance options for MSMEs](https://senseible.earth/climate-intelligence/msme-climate-finance-instruments-comparison-2026)
+- [green loan versus traditional loan](https://senseible.earth/climate-intelligence/green-loan-vs-traditional-loan-real-cost-comparison)
+- [ESG readiness assessment for MSMEs](https://senseible.earth/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026)

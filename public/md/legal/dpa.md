@@ -105,7 +105,7 @@ This DPA shall be governed by the laws of India.
 
 Data Officer: Sneha Ghosh
 
-Email: sneha@senseible.earth
+Email: shown on the live page at senseible.earth
 
 Address: Minarch Tower, Gurugram, 122003, Haryana, India
 

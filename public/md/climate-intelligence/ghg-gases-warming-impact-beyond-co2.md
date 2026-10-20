@@ -16,6 +16,7 @@ For refrigerants like HFCs, use the specific GWP for each chemical compound, as 
 
 ## Related guides
 
-- [Do methane and black carbon reductions count differently from CO2?](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
-- [Biogenic Carbon Accounting for Food and Textile MSMEs: The Honest Guide](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
-- [Cold Chain MSMEs: Refrigerant Leakage Can Dominate Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [methane and black carbon versus CO2](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
+- [biogenic carbon accounting](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
+- [refrigerant leaks in cold chain emissions](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [tracing emission data back to invoices](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)

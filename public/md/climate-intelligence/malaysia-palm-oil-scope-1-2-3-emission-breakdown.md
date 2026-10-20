@@ -8,6 +8,7 @@ Malaysia is the world second-largest palm oil producer. RSPO and MSPO certificat
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [carbon compliance for Indonesian palm oil MSMEs](https://senseible.earth/climate-intelligence/indonesia-pertamina-rspo-palm-oil-carbon-2026)
+- [cutting carbon in Thai food processing](https://senseible.earth/climate-intelligence/thailand-food-processing-carbon-footprint-reduction)
+- [when green hydrogen pays for MSMEs](https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026)
+- [green energy open access for factories in India](https://senseible.earth/climate-intelligence/green-energy-open-access-india)

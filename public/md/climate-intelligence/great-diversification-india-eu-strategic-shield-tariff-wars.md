@@ -51,6 +51,7 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [what the India-EU FTA means for MSMEs](https://senseible.earth/climate-intelligence/136-billion-india-eu-fta-msme-breakthrough)
+- [the India-EU trade deal and MSMEs](https://senseible.earth/climate-intelligence/mother-of-all-deals-india-eu-msmes)
+- [ESG readiness assessment for MSMEs](https://senseible.earth/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026)
+- [rerouting supply chains to cut CBAM cost](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)

@@ -36,6 +36,7 @@ Emission factor selection directly impacts the accuracy and credibility of your 
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [Scope 1 vs Scope 2 vs Scope 3: A Simple Guide for Small Businesses](https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business)
+- [green loan eligibility in Pakistan](https://senseible.earth/climate-intelligence/green-loan-eligibility-pakistani-small-businesses)
+- [getting an SBTi target validated](https://senseible.earth/climate-intelligence/msme-sbti-fln-near-term-target-validation)
+- [keeping carbon data comparable when methods change](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
+- [types of carbon credits](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)

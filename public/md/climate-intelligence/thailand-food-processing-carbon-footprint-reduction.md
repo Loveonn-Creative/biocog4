@@ -8,6 +8,7 @@ Thailand is the world largest exporter of canned tuna and a significant processe
 
 ## Related guides
 
-- [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
+- [carbon measurement in Thai auto supply chains](https://senseible.earth/climate-intelligence/thailand-automotive-supply-chain-carbon-measurement)
+- [calculating a carbon footprint from electricity bills](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
+- [carbon measurement for Philippine food exporters](https://senseible.earth/climate-intelligence/philippines-food-processing-carbon-measurement-guide)
+- [green finance for textile exporters, step by step](https://senseible.earth/climate-intelligence/green-finance-textile-exporters-step-by-step)

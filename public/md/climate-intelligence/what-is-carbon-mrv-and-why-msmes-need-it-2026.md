@@ -22,6 +22,8 @@ Start with one document. See your carbon footprint from one document. [Try it no
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM support for Indian MSMEs](https://senseible.earth/climate-intelligence/cbam-support-for-indian-msmes)
+- [rerouting supply chains to cut CBAM cost](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [green finance versus transition finance](https://senseible.earth/climate-intelligence/transition-finance-vs-green-finance-borrower-guide)
+- [real-world asset tokenisation for MSME finance](https://senseible.earth/climate-intelligence/real-world-asset-tokenisation-explained-for-msme-finance)

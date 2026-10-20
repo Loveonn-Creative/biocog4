@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/how-to-get-green-loans-i
 
 Published 2025-01-15.
 
-Banks in India are increasingly offering green loans with lower interest rates for businesses that can demonstrate sustainability. The key? Verified carbon data.
+Banks in India are increasingly offering green loans with lower interest rates for businesses that can demonstrate sustainability. The key? Verified carbon data. For green bonds, sustainability-linked loans and supply chain finance, see [green finance](https://senseible.earth/green-finance).
 
 **What Banks Want to See:**
 
@@ -32,6 +32,7 @@ Senseible reports use published emission factors and trace each number to its so
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [what banks finance with green deposits](https://senseible.earth/climate-intelligence/rbi-green-deposits-what-banks-finance)
+- [BRSR reporting requirements](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [Brazil CBIO versus India CCTS](https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)

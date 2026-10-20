@@ -8,6 +8,7 @@ Indonesia exports chemicals and fertilizers to the EU. Under CBAM, hydrogen and 
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [rerouting supply chains to cut CBAM cost](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
+- [India's carbon market and the EU carbon price](https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price)
+- [lowering CBAM costs for importers in Germany](https://senseible.earth/climate-intelligence/lower-cbam-costs-importer-germany)
+- [CBAM costs on imported steel slab in Italy](https://senseible.earth/climate-intelligence/cbam-cost-imported-steel-slab-italy)

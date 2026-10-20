@@ -8,6 +8,9 @@ The Philippines Department of Trade and Industry (DTI) is progressively aligning
 
 ## Related guides
 
-- [Indonesia Manufacturing: Scope 2 Electricity Emissions Calculator](https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions)
-- [Tamil Nadu MSME Decarbonisation: State Incentives, Grid, and Quick Wins](https://senseible.earth/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives)
-- [Bangladesh Garment Exporters: Surviving EU CBAM and CSDDD Together in 2026](https://senseible.earth/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026)
+- [Scope 2 electricity emissions in Indonesia](https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions)
+- [net zero for Philippine BPO firms](https://senseible.earth/climate-intelligence/philippines-bpo-renewable-energy-net-zero-2030)
+- [carbon measurement for Philippine food exporters](https://senseible.earth/climate-intelligence/philippines-food-processing-carbon-measurement-guide)
+- [Tamil Nadu decarbonisation incentives](https://senseible.earth/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives)
+- [Scope 3 demands on Vietnamese electronics suppliers](https://senseible.earth/climate-intelligence/vietnam-electronics-supply-chain-scope-3-2026)
+- [decarbonising the Thai EV supply chain](https://senseible.earth/climate-intelligence/thailand-ev-supply-chain-msme-2026)

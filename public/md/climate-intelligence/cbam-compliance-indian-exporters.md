@@ -97,6 +97,7 @@ Commercially, yes: many buyers compare suppliers on landed cost including CBAM. 
 
 ## Related guides
 
-- [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
-- [What is Carbon MRV and Why MSMEs Need It in 2026?](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)
+- [lowering CBAM costs for importers in Germany](https://senseible.earth/climate-intelligence/lower-cbam-costs-importer-germany)
+- [a 90-day CBAM plan for Vietnamese steel exporters](https://senseible.earth/climate-intelligence/vietnamese-exporters-prepare-eu-cbam-90-days)
+- [India carbon credit trading scheme targets](https://senseible.earth/climate-intelligence/india-carbon-credit-trading-scheme-targets)
+- [CBAM extension to downstream products](https://senseible.earth/climate-intelligence/cbam-downstream-products-2028)

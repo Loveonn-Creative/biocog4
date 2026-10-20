@@ -4,7 +4,7 @@ Canonical: https://senseible.earth/climate-intelligence/msme-net-zero-roadmap-12
 
 Published 2026-05-06.
 
-Many MSME net-zero strategies stall because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week.
+Many MSME net-zero strategies stall because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week. For targets, renewable procurement and audits in one plan, see [decarbonisation strategy and net-zero roadmaps](https://senseible.earth/decarbonization).
 
 ## Month 1: Baseline
 
@@ -48,6 +48,7 @@ The roadmap is not the hard part. Consistency is. Block a recurring 2-hour calen
 
 ## Related guides
 
-- [How do we maintain historical carbon data when methodologies change?](https://senseible.earth/climate-intelligence/maintain-historical-carbon-data-methodology-changes)
-- [What are the different types of carbon credits in voluntary markets?](https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets)
-- [How do we select the right emission factors for our calculations?](https://senseible.earth/climate-intelligence/emission-factors-selection-guidance)
+- [getting an SBTi target validated](https://senseible.earth/climate-intelligence/msme-sbti-fln-near-term-target-validation)
+- [carbon credits for MSMEs in Sri Lanka](https://senseible.earth/climate-intelligence/msme-carbon-credits-sri-lanka-invoice-to-revenue)
+- [setting an internal carbon price](https://senseible.earth/climate-intelligence/msme-internal-carbon-price-implementation-guide)
+- [how often to measure your carbon footprint](https://senseible.earth/climate-intelligence/carbon-accounting-frequency-msme-when-to-measure)
