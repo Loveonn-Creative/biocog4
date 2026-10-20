@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Deadline Diary 01</title>
+<!--
+  DEADLINE DIARY #01 — CBAM, two dates. 25 s, 1080x1920, deterministic window.render(t).
+  FACTS (verified 19 Oct 2026):
+  - Day counts computed in Python: date(2027,2,1)-date(2026,10,19) = 105 days; date(2027,9,30)-date(2026,10,19) = 346 days;
+    1 Feb 2027 -> 30 Sep 2027 = 241 days. 19 Oct 2026 is a Monday, 1 Feb 2027 a Monday, 30 Sep 2027 a Thursday.
+  - Regulation (EU) 2025/2083 (CBAM simplification, OJ L, 17 Oct 2025) amending Reg. (EU) 2023/956:
+    Member States sell CBAM certificates on a common central platform to authorised CBAM declarants from 1 February 2027;
+    annual CBAM declaration (covering the previous calendar year) and surrender of certificates by 30 September; first one
+    by 30 Sep 2027 for 2026 imports. https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202502083
+  - European Commission, CBAM Q&A and CBAM verification page (Feb 2027: declarants can purchase certificates;
+    Sep 2027: declarants finalise CBAM declaration for year 2026).
+    https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en
+  - Only authorised CBAM declarants (generally the EU importer) may import CBAM goods above the 50 t/year de minimis
+    threshold introduced by Reg. 2025/2083. Goods covered: iron & steel, aluminium, cement, fertilisers, hydrogen, electricity.
+  - Without actual embedded-emissions data from the producer, default values apply, with a mark-up (Commission
+    implementing rules; 10% for 2026). We say only "default value + mark-up".
+  Hidden detail: the counter-calendar's printed header reads "Hisaab saaf · Order pakka" instead of a blessing.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Indic'; font-weight: 600; src: url('node_modules/@fontsource/noto-sans-devanagari/files/noto-sans-devanagari-devanagari-600-normal.woff2') format('woff2'); unicode-range: U+0900-097F; }
+:root { --paper: #f4ede1; --ink: #16181d; --saffron: #ef8a25; --green: #1f5139; --red: #c8372d; --muted: #6b6f78; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Space Grotesk', 'Indic', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  background: radial-gradient(1200px 900px at 50% 45%, #f8f2e7, #ece2d1 70%, #e3d6c1); }
+#counter { position: absolute; left: 0; right: 0; top: 1395px; bottom: 0;
+  background: linear-gradient(180deg, #c99a68, #b98652 40%, #a8743f); }
+#counter:before { content: ''; position: absolute; inset: 0; display: none;
+  background: repeating-linear-gradient(178deg, rgba(90,50,20,.0) 0 22px, rgba(90,50,20,.13) 22px 25px, rgba(255,240,210,.06) 25px 40px); }
+#counter:after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 14px; background: linear-gradient(#e4c193, #b98652); }
+
+#scene { position: absolute; inset: 0; perspective: 1700px; perspective-origin: 540px 900px; }
+#cal { position: absolute; left: 200px; top: 600px; width: 680px; height: 790px; transform-style: preserve-3d; transform-origin: 340px 790px; }
+#back { position: absolute; inset: 0; border-radius: 16px; background: linear-gradient(170deg, #8d2a22, #6e1c18 60%, #5b1513);
+  box-shadow: 0 50px 60px -30px rgba(60,25,10,.65), inset 0 0 0 3px rgba(255,210,140,.25); }
+#hdr { position: absolute; left: 0; right: 0; top: 16px; text-align: center; color: #e8c27a; }
+#hdr .a { font-family: 'Space Grotesk', 'Indic'; font-weight: 600; font-size: 25px; letter-spacing: .14em; }
+#hdr .b { font-family: 'JetBrains Mono'; font-size: 15px; letter-spacing: .35em; opacity: .75; margin-top: 4px; }
+#bind { position: absolute; left: 30px; right: 30px; top: 86px; height: 38px; border-radius: 6px;
+  background: linear-gradient(#d8d8d2, #8e8f8a 45%, #c4c5bf 70%, #7d7e79); box-shadow: 0 6px 8px -4px rgba(0,0,0,.5); z-index: 5; }
+#bind i { position: absolute; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff, #6b6c68 70%); }
+#pad { position: absolute; left: 40px; top: 110px; width: 600px; height: 610px; transform-style: preserve-3d; }
+#edges { position: absolute; left: 4px; right: 4px; top: 600px; height: 26px; border-radius: 0 0 6px 6px;
+  background: repeating-linear-gradient(180deg, #f3eee2 0 2px, #cfc6b3 2px 3px); box-shadow: 0 6px 6px -3px rgba(0,0,0,.35); }
+.pg { position: absolute; left: 0; top: 0; width: 600px; height: 610px; background: linear-gradient(180deg, #fdfaf2, #f6f0e2);
+  border-radius: 2px 2px 4px 4px; transform-origin: 300px 0; overflow: visible; backface-visibility: visible;
+  box-shadow: inset 0 0 0 1px rgba(22,24,29,.08); }
+.pg .top { position: absolute; left: 0; right: 0; top: 18px; height: 70px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 30px; border-bottom: 3px solid var(--ink); margin: 0 18px; }
+.pg .top b { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 34px; letter-spacing: .06em; }
+.pg .top span { font-family: 'Indic'; font-size: 30px; }
+.pg .dn { position: absolute; left: 0; right: 0; top: 90px; text-align: center; font-weight: 700; font-size: 350px; line-height: 400px; letter-spacing: -.04em; }
+.pg .wd { position: absolute; left: 36px; right: 36px; top: 492px; display: flex; justify-content: center; gap: 22px; align-items: baseline;
+  border-top: 2px solid rgba(22,24,29,.25); padding-top: 14px; }
+.pg .wd b { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 32px; letter-spacing: .14em; }
+.pg .wd span { font-family: 'Indic'; font-size: 30px; }
+.pg .doy { position: absolute; right: 30px; bottom: 14px; font-family: 'JetBrains Mono'; font-size: 17px; color: var(--muted); }
+.pg .doy2 { position: absolute; left: 30px; bottom: 14px; font-family: 'JetBrains Mono'; font-size: 17px; color: var(--muted); }
+.pg.sun .dn, .pg.sun .wd { color: var(--red); }
+.pg .shade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+.pg svg.circ { position: absolute; left: 0; top: 0; width: 600px; height: 610px; overflow: visible; }
+.pg svg.circ path { fill: none; stroke: var(--red); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+#hand { position: absolute; left: 440px; top: 480px; width: 360px; height: 360px; overflow: visible; }
+#hand path { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+#pile { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+.sc { position: absolute; left: 0; top: 0; width: 200px; height: 203px; background: linear-gradient(180deg, #fdfaf2, #efe7d6);
+  border-bottom: 3px solid #b9a98c; border-right: 2px solid #cdbfa6; text-align: center; border-radius: 2px; }
+.sc b { display: block; font-weight: 700; font-size: 112px; line-height: 150px; letter-spacing: -.04em; }
+.sc i { display: block; font-style: normal; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 18px; letter-spacing: .1em; border-top: 2px solid var(--ink); margin: 0 14px; padding-top: 4px; }
+.sc.sun b { color: var(--red); }
+
+#tag { position: absolute; left: 72px; top: 262px; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 26px; letter-spacing: .16em; color: var(--ink); }
+#tag em { font-style: normal; color: var(--red); }
+.card { position: absolute; left: 72px; right: 150px; top: 312px; opacity: 0; }
+.ln { display: block; will-change: transform; }
+.h1 { font-weight: 700; font-size: 200px; line-height: .95; letter-spacing: -.045em; }
+.h2 { font-weight: 700; font-size: 78px; line-height: 1.0; letter-spacing: -.03em; }
+.dt { font-family: 'JetBrains Mono'; font-weight: 800; font-size: 46px; letter-spacing: .04em; color: var(--red); margin-bottom: 14px; }
+.sub { font-family: 'JetBrains Mono'; font-weight: 500; font-size: 30px; color: #4b4f58; margin-top: 16px; letter-spacing: .01em; }
+.you { color: var(--saffron); }
+.hand { font-family: 'Hand'; font-weight: 600; }
+#sign .wm { font-weight: 700; font-size: 104px; letter-spacing: -.04em; line-height: 1; }
+#sign .wm sup { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: var(--saffron); margin-left: 6px; vertical-align: top; margin-top: 18px; }
+#sign .tl { font-family: 'Hand'; font-weight: 600; font-size: 64px; margin-top: 4px; }
+#sign .cta { font-family: 'JetBrains Mono'; font-weight: 600; font-size: 29px; margin-top: 10px; color: #3a3d45; }
+#grain { position: absolute; inset: 0; pointer-events: none; opacity: .16; mix-blend-mode: multiply; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="counter"></div>
+  <div id="pile"></div>
+  <div id="scene">
+    <div id="cal">
+      <div id="back"></div>
+      <div id="hdr"><div class="a">॥ HISAAB SAAF · ORDER PAKKA ॥</div><div class="b">EST. 1987 · DESK CALENDAR</div></div>
+      <div id="pad"><div id="edges"></div></div>
+      <div id="bind"><i style="left:60px"></i><i style="left:180px"></i><i style="right:180px"></i><i style="right:60px"></i></div>
+    </div>
+  </div>
+
+  <div id="tag">DEADLINE DIARY <em>#01</em></div>
+  <div class="card" id="c0"><span class="ln h1"><span id="n0">105</span> din.</span></div>
+  <div class="card" id="c1"><span class="ln dt">1 FEB 2027</span><span class="ln h2">CBAM certificates</span><span class="ln h2">bikne shuru.</span></div>
+  <div class="card" id="c2"><span class="ln h2">Kharidega <span class="you">aapka</span></span><span class="ln h2">EU importer.</span><span class="ln sub">steel · aluminium · cement · fertiliser</span></div>
+  <div class="card" id="c3"><span class="ln h1"><span id="n3">241</span> din</span><span class="ln h2" style="margin-top:6px">aur.</span></div>
+  <div class="card" id="c4"><span class="ln dt">30 SEP 2027</span><span class="ln h2">Pehli CBAM</span><span class="ln h2">declaration.</span><span class="ln sub">2026 ke imports ka hisaab</span></div>
+  <div class="card" id="c5"><span class="ln h2">Unhe <span class="you">aapka</span> carbon</span><span class="ln h2">number chahiye.</span><span class="ln sub">warna default value + mark-up</span></div>
+  <div class="card" id="c6"><span class="ln h2">Tab tak, <span class="you">aapka</span></span><span class="ln h2">number tayyar?</span></div>
+  <div class="card" id="sign"><span class="ln wm">Senseible<sup></sup></span><span class="ln tl">Carbon, in plain words.</span><span class="ln cta">Save this. Send it to your export team.</span></div>
+
+  <canvas id="grain" width="360" height="640" style="display:none"></canvas>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => { x = clamp(x); return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3)/2; };
+const eout = x => 1 - Math.pow(1 - clamp(x), 3);
+const lerp = (a, b, k) => a + (b - a)*k;
+const rnd = k => { const s = Math.sin(k*127.1 + 311.7)*43758.5453; return s - Math.floor(s); };
+const D = 25;
+{ const c = document.getElementById('grain'), x = c.getContext('2d'), im = x.createImageData(360, 640);
+  let seed = 7; const r = () => (seed = (seed*16807) % 2147483647)/2147483647;
+  for (let i = 0; i < im.data.length; i += 4) { const v = 120 + r()*135; im.data[i] = v; im.data[i+1] = v*.95; im.data[i+2] = v*.88; im.data[i+3] = 22; }
+  x.putImageData(im, 0, 0); const u = c.toDataURL(); document.getElementById('stage').style.backgroundImage = `url(${u}), radial-gradient(1200px 900px at 50% 45%, #f8f2e7, #ece2d1 70%, #e3d6c1)`; document.getElementById('stage').style.backgroundSize = '360px 640px, auto'; }
+
+// ---- calendar data: page k = 19 Oct 2026 + k days, k = 0..346 ----
+const MO = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+const MOH = ['जनवरी','फ़रवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
+const WD = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+const WDH = ['रविवार','सोमवार','मंगलवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'];
+const T0 = Date.UTC(2026, 9, 19);
+function info(k) {
+  const d = new Date(T0 + k*864e5), y = d.getUTCFullYear();
+  const doy = Math.round((d - Date.UTC(y, 0, 1))/864e5) + 1, len = (y % 4 ? 365 : 366);
+  return { y, m: d.getUTCMonth(), dd: d.getUTCDate(), w: d.getUTCDay(), doy, left: len - doy };
+}
+function pageHTML(k) {
+  const i = info(k);
+  return `<div class="top"><b>${MO[i.m]}</b><span>${MOH[i.m]}</span><b>${i.y}</b></div><div class="dn">${i.dd}</div>` +
+    `<div class="wd"><b>${WD[i.w]}</b><span>${WDH[i.w]}</span></div><div class="doy2">${String(i.doy).padStart(3,'0')}</div><div class="doy">${i.left} shesh</div><div class="shade"></div>`;
+}
+const LAST = 346;   // 30 Sep 2027
+
+// rip times
+function tk(k) {
+  if (k === 0) return 0.9;
+  if (k <= 104) return 0.9 + 3.7*Math.pow(k/104, 1/2.2);
+  if (k <= 345) return 10.4 + 3.0*Math.pow((k - 105)/240, 1/2.2);
+  if (k === LAST) return 24.2;
+  return 1e9;
+}
+const TK = []; for (let k = 0; k <= LAST; k++) TK.push(tk(k));
+
+// ---- build DOM ----
+const pad = $('pad');
+function mkPage() { const e = document.createElement('div'); e.className = 'pg'; e.dataset.k = -1; pad.appendChild(e); return e; }
+function setPage(e, k) { if (+e.dataset.k !== k) { e.dataset.k = k; e.innerHTML = pageHTML(k); e.classList.toggle('sun', info(k).w === 0); } }
+const under = mkPage(), flat = mkPage();
+const POOL = 12, fly = []; for (let i = 0; i < POOL; i++) fly.push(mkPage());
+// red doodle circle lives on the 30 Sep page (flat + its flier)
+const CIRC = 'M 418 150 C 360 96 210 100 140 168 C 70 238 82 392 160 452 C 250 520 420 512 478 430 C 534 352 512 214 430 160 C 396 138 350 128 318 130';
+function addCirc(e) { /* re-added after innerHTML swaps */ }
+// hand doodle (thumb on the front of the page corner, wrist coming from the right)
+const handSVG = `<svg id="hand" viewBox="0 0 360 360"><path fill="#f1d3b4" d="M 60 70 C 40 50 18 40 10 60 C 4 76 26 92 52 104 C 78 116 110 140 150 170 L 360 300 L 360 120 C 300 80 230 54 170 48 C 130 44 100 60 60 70 Z"/>` +
+  `<path fill="none" d="M 96 64 C 120 70 140 80 160 94"/><path fill="none" d="M 150 50 C 172 60 196 76 214 96"/><path fill="none" d="M 20 66 C 26 60 34 60 40 64"/>` +
+  `<path fill="#e9e3d6" d="M 330 110 L 360 104 L 360 330 L 300 290 Z"/></svg>`;
+
+const pile = $('pile'), NS = 84, scraps = [];
+for (let i = 0; i < NS; i++) {
+  const k = Math.round(i*345/(NS - 1)), e = document.createElement('div'), inf = info(k);
+  e.className = 'sc' + (inf.w === 0 ? ' sun' : ''); e.innerHTML = `<b>${inf.dd}</b><i>${MO[inf.m].slice(0,3)}</i>`;
+  const g = (rnd(i*3+1) + rnd(i*3+2) + rnd(i*3+3) - 1.5)/1.5;          // ~ -1..1, centred
+  const x = 540 + g*430, h = 1 - Math.abs(g)*.75;
+  const y = 1745 - 175*(i/NS)*h - rnd(i*7)*60;
+  scraps.push({ e, k, x: x - 100, y: y - 100, r: (rnd(i*5) - .5)*80, s: .62 + rnd(i*11)*.22 });
+  pile.appendChild(e);
+}
+
+function flierTransform(k, s) {
+  // s = seconds since rip. origin = top centre of the page.
+  const slow = k === 0 ? .8 : k === LAST ? .95 : (k > 104 ? 1.15 : 1);
+  const u = s*slow, dir = rnd(k*9.1) < .5 ? -1 : 1, r1 = rnd(k*1.7), r2 = rnd(k*2.3), r3 = rnd(k*3.9);
+  const p0 = k === 0 ? 40 : 0;
+  if (u < .09) { const a = lerp(p0, 62, u/.09); return { tr: `rotateX(${a}deg)`, sh: a/200, op: 1 }; }
+  const v = u - .09;
+  let tx = dir*(380 + 420*r1)*v, ty = (40 + 120*r2)*v + 1500*v*v, tz = 160*v;
+  let rx = 62 - 30*clamp(v/.25) + 14*Math.sin(v*16 + k), rz = dir*(40 + 100*r3)*v, ry = dir*40*r2*v;
+  let sc = 1 - .3*clamp(v/.8);
+  if (k === LAST) { // gentle flutter down-left onto the counter, into frame 1
+    tx = -620*v; ty = 300*v + 700*v*v; rx = 62 - 30*clamp(v/.3) + 10*Math.sin(v*6); rz = -60*v + 8*Math.sin(v*3.1); ry = 20*Math.sin(v*4.2); sc = 1 - .45*clamp(v/.9);
+  }
+  return { tr: `translate3d(${tx}px,${ty}px,${tz}px) rotateZ(${rz}deg) rotateY(${ry}deg) rotateX(${rx}deg) scale(${sc})`, sh: .12 + .1*Math.sin(v*9 + k), op: 1 };
+}
+
+function card(id, t0, t1, opts = {}) {
+  const el = $(id), lines = el.querySelectorAll('.ln');
+  const on = t >= t0 - .05 && t < t1 + .4;
+  if (!on) { el.style.opacity = 0; return; }
+  const out = opts.noOut ? 0 : eout((t - t1)/.32);
+  el.style.opacity = 1 - out;
+  lines.forEach((ln, i) => {
+    const k = opts.instant ? 1 : eout((t - t0 - i*.12)/.38);
+    ln.style.opacity = k; ln.style.transform = `translateY(${(1 - k)*46 - out*30}px)`;
+  });
+}
+let t = 0;
+window.render = function (tt) {
+  t = ((tt % D) + D) % D;
+  // which pages are ripped (time >= tk)
+  let ripped = 0; while (ripped <= LAST && TK[ripped] <= t) ripped++;
+  // loop reset: after the 30 Sep page goes, the pad shows 19 Oct again (frame 1)
+  const reset = t >= TK[LAST];
+  let topK = reset ? 0 : ripped;
+  const peel0 = reset || t < TK[0];        // hand is peeling page 0
+  // flat page + page under it
+  if (peel0) { setPage(flat, 1); flat.style.opacity = 1; }
+  else { setPage(flat, Math.min(topK, LAST)); }
+  setPage(under, Math.min((peel0 ? 1 : topK) + 1, LAST));
+  flat.style.transform = 'translateZ(.5px)'; under.style.transform = 'translateZ(0px)';
+  under.style.opacity = 1;
+
+  // circle on 30 Sep (drawn 19.6 -> 20.5)
+  const cK = (t - 19.6)/.9;
+  [flat].concat(fly).forEach(e => {
+    let c = e.querySelector('svg.circ');
+    if (+e.dataset.k === LAST && t >= 19.6) {
+      if (!c) { e.insertAdjacentHTML('beforeend', `<svg class="circ" viewBox="0 0 600 610"><path d="${CIRC}" pathLength="1" stroke-dasharray="1 1"/></svg>`); c = e.querySelector('svg.circ'); }
+      c.firstChild.style.strokeDashoffset = 1 - ease(cK);
+    } else if (c) c.remove();
+  });
+
+  // fliers: most recent POOL pages within their life
+  const list = [];
+  for (let k = Math.min(ripped, LAST + 1) - 1; k >= 0 && list.length < POOL; k--) {
+    const s = t - TK[k], life = k === LAST ? 3 : (k === 0 ? 1.6 : 1.2);
+    if (s >= 0 && s < life) list.push([k, s]);
+    else if (s >= 1.6) break;
+  }
+  // the last page keeps fluttering into the start of the loop
+  if (t < .8) list.push([LAST, t + D - TK[LAST]]);
+  // hand-held peel of page 0 (before rip, and during the loop reset)
+  let peelA = null;
+  if (t < TK[0]) peelA = lerp(24, 40, t/TK[0]);
+  else if (reset) peelA = lerp(0, 24, ease((t - 24.35)/.65));
+  fly.forEach((e, i) => {
+    const it = list[i];
+    if (!it) { e.style.display = 'none'; return; }
+    const [k, s] = it, f = flierTransform(k, s);
+    setPage(e, k); e.style.display = 'block';
+    e.style.transform = 'translateZ(' + (1 + i*.1) + 'px) ' + f.tr; e.style.zIndex = 10 + (POOL - i);
+    e.querySelector('.shade').style.opacity = clamp(f.sh, 0, .35);
+    e.style.opacity = k === LAST ? clamp((3 - s)/.5) : clamp((1.2 - s)/.25);
+  });
+  // page 0 being peeled by the hand
+  let hp = pad.querySelector('.pg.peel');
+  if (peelA !== null) {
+    if (!hp) { hp = mkPage(); hp.classList.add('peel'); }
+    setPage(hp, 0); if (!hp.querySelector('#hand')) hp.insertAdjacentHTML('beforeend', handSVG);
+    hp.style.display = 'block'; hp.style.zIndex = 60; hp.style.opacity = 1;
+    const hx = reset ? (1 - eout((t - 24.3)/.7))*380 : 0;
+    hp.querySelector('#hand').style.transform = `translate(${hx}px,${hx*.5}px)`;
+    hp.querySelector('#hand').style.opacity = reset ? clamp((t - 24.3)/.3) : 1;
+    hp.style.transform = `translateZ(3px) rotateX(${peelA}deg) rotateZ(${peelA*.08}deg)`;
+    hp.querySelector('.shade').style.opacity = peelA/260;
+    flat.style.opacity = 1;
+  } else if (hp) {
+    // hand lets go and leaves after the rip
+    hp.style.display = 'none';
+  }
+  // hand rides off with the ripped page 0 for a moment
+  const f0 = fly.find(e => +e.dataset.k === 0 && e.style.display !== 'none');
+  fly.forEach(e => { const h = e.querySelector('#hand'); if (h && e !== f0) h.remove(); });
+  if (f0) { if (!f0.querySelector('#hand')) f0.insertAdjacentHTML('beforeend', handSVG); const s = t - TK[0]; const h = f0.querySelector('#hand'); h.style.opacity = clamp(1 - s/.35); h.style.transform = `translate(${s*500}px,${-s*300}px)`; }
+  // during the reset the flat page under the peel should be 19 Oct+1 -> show 0 lying flat until peel starts
+  if (reset && t < 24.35) { setPage(flat, 0); }
+  if (reset && hp && t < 24.35) hp.style.display = 'none';
+
+  // calendar body: slam bumps + gentle idle tilt
+  const sl = [4.6, 13.4].map(a => t >= a ? Math.exp(-(t - a)*9)*Math.sin((t - a)*48) : 0).reduce((a, b) => a + b, 0);
+  const hit = [4.6, 13.4].map(a => t >= a && t < a + .25 ? 1 - (t - a)/.25 : 0).reduce((a, b) => a + b, 0);
+  const fl = (t > 0.9 && t < 4.6) || (t > 10.4 && t < 13.4) ? 1 : 0;
+  const jit = fl ? (rnd(Math.floor(t*30)) - .5)*3 : 0;
+  $('cal').style.transform = `translate(${sl*10 + jit}px,${hit*14}px) rotateX(${7 + sl*2}deg) rotateY(${-6 + Math.sin(t*.4)*1.2}deg) scale(${1 + hit*.03})`;
+
+  // pile of torn pages
+  const sink = reset ? ease((t - 24.2)/.8)*520 : 0;
+  scraps.forEach(sc => {
+    const land = TK[sc.k] + .55, a = (t - land)/.18;
+    if (t < land) { sc.e.style.display = 'none'; return; }
+    sc.e.style.display = 'block';
+    const dy = (1 - eout(a))*-90;
+    sc.e.style.transform = `translate(${sc.x}px,${sc.y + dy + sink}px) rotate(${sc.r}deg) scale(${sc.s})`;
+    sc.e.style.opacity = clamp(a*2);
+  });
+
+  // text
+  const rem0 = t < TK[0] ? 105 : 105 - Math.min(ripped, 105);
+  $('n0').textContent = rem0;
+  const c0on = t < 4.6 || t >= 24.35;
+  { const el = $('c0'); el.style.opacity = c0on ? (t >= 24.35 ? eout((t - 24.35)/.5) : 1) : 0; el.querySelector('.ln').style.transform = t >= 24.35 ? `translateY(${(1 - eout((t - 24.35)/.5))*40}px)` : 'none'; }
+  if (t >= 24.35) $('n0').textContent = 105;
+  card('c1', 4.75, 7.55);
+  card('c2', 7.85, 10.2);
+  const rem3 = 241 - clamp(ripped - 105, 0, 241);
+  $('n3').textContent = rem3;
+  card('c3', 10.3, 13.35, { instant: false });
+  card('c4', 13.6, 16.3);
+  card('c5', 16.55, 19.35);
+  card('c6', 19.6, 21.8);
+  card('sign', 22.05, 24.05);
+  $('tag').style.opacity = 1;
+};
+render(0);
+</script>
+</body>
+</html>
