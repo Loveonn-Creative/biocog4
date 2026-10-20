@@ -3,7 +3,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
-import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
+import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, canonicalPlan, strongestRow } from '../_shared/planLimits.ts';
 import { pageCountingFrom } from '../_shared/addonPurchases.ts';
 import { clientIp, guestSubject, readUse, takeUse } from '../_shared/intelligenceUsage.ts';
 import { dayIst } from '../_shared/intelligence.ts';
@@ -704,8 +704,8 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
           .single();
         profileLocation = typeof profile?.location === 'string' ? profile.location : null;
 
-        // An active paid subscription row counts too, so a profile copy that
-        // failed to update after payment cannot cut a paying customer's limit.
+        // The active subscription rows are the record of the plan; the profile
+        // copy counts only when no row is in force (planLimits.canonicalPlan).
         const { data: activeRows } = await supabase
           .from('subscriptions')
           .select('tier, expires_at, billing_cycle')
@@ -714,9 +714,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         const activeSub = strongestRow(activeRows ?? []);
         planCycle = activeSub ? (activeSub.billing_cycle === 'monthly' ? 'monthly' : 'yearly') : null;
         planExpiresAt = activeSub?.expires_at ?? null;
-        const plan = strongerPlan(
+        const plan = canonicalPlan(
           { tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at },
-          { tier: activeSub?.tier, expiresAt: activeSub?.expires_at },
+          activeRows ?? [],
         );
 
         // The plan in force (an expired paid plan reads as Snapshot).

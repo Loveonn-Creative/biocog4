@@ -24,9 +24,9 @@ ALTER TABLE public.financial_documents
 ALTER TABLE public.financial_documents
   ADD CONSTRAINT financial_documents_monthly_array CHECK (jsonb_typeof(monthly) = 'array');
 
--- The plan in force for the calling account, the way the server counts it
--- (planLimits.ts): the stronger of the profile copy and any active
--- subscription row, each counted through the 7-day grace period.
+-- The plan in force, by the same rule as planLimits.canonicalPlan: the
+-- strongest active subscription row still in force (7-day grace) decides; the
+-- profile copy counts only when no row is in force.
 CREATE OR REPLACE FUNCTION public.finance_insights_plan(p_user uuid)
 RETURNS text
 LANGUAGE sql
@@ -34,16 +34,21 @@ STABLE
 SECURITY DEFINER
 SET search_path = public
 AS $$
-  WITH rows AS (
-    SELECT subscription_tier AS tier, subscription_expires_at AS expires_at FROM public.profiles WHERE id = p_user
+  WITH rank_of AS (
+    SELECT 'sub' AS src, CASE lower(tier) WHEN 'scale' THEN 3 WHEN 'pro' THEN 2 WHEN 'essential' THEN 1 WHEN 'basic' THEN 1 ELSE 0 END AS r
+    FROM public.subscriptions
+    WHERE user_id = p_user AND status = 'active' AND expires_at IS NOT NULL AND expires_at > now() - interval '7 days'
     UNION ALL
-    SELECT tier, expires_at FROM public.subscriptions WHERE user_id = p_user AND status = 'active'
-  ), ranked AS (
-    SELECT CASE lower(tier) WHEN 'scale' THEN 3 WHEN 'pro' THEN 2 WHEN 'essential' THEN 1 WHEN 'basic' THEN 1 ELSE 0 END AS r
-    FROM rows
-    WHERE expires_at IS NOT NULL AND expires_at > now() - interval '7 days'
+    SELECT 'profile', CASE lower(subscription_tier) WHEN 'scale' THEN 3 WHEN 'pro' THEN 2 WHEN 'essential' THEN 1 WHEN 'basic' THEN 1 ELSE 0 END
+    FROM public.profiles
+    WHERE id = p_user AND subscription_expires_at IS NOT NULL AND subscription_expires_at > now() - interval '7 days'
+  ), chosen AS (
+    SELECT coalesce(
+      (SELECT max(r) FROM rank_of WHERE src = 'sub' AND r > 0),
+      (SELECT max(r) FROM rank_of WHERE src = 'profile'),
+      0) AS r
   )
-  SELECT CASE coalesce(max(r), 0) WHEN 3 THEN 'scale' WHEN 2 THEN 'pro' WHEN 1 THEN 'essential' ELSE 'snapshot' END FROM ranked;
+  SELECT CASE r WHEN 3 THEN 'scale' WHEN 2 THEN 'pro' WHEN 1 THEN 'essential' ELSE 'snapshot' END FROM chosen;
 $$;
 REVOKE ALL ON FUNCTION public.finance_insights_plan(uuid) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.finance_insights_plan(uuid) TO service_role;
