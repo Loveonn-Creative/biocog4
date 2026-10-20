@@ -1,0 +1,65 @@
+{
+  "slug": "are-auto-components-covered-by-cbam",
+  "q": "Are auto components covered by EU CBAM?",
+  "title": "Are auto components covered by CBAM?",
+  "short": "Mostly not. Parts of motor vehicles under CN 8708, and engine parts under chapter 84, are not in Annex I today. Some steel and aluminium goods auto suppliers ship are covered, such as bolts under 7318, tube fittings under 7307, other steel articles under 7326 and aluminium articles under 7616.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Auto component exporters in Pune, Chennai, Gurugram and Rajkot",
+  "sections": [
+    {
+      "h": "Not covered today",
+      "ul": [
+        "8708: parts and accessories of motor vehicles, such as brake parts, axles and gearboxes.",
+        "8409 and 8483: engine parts, crankshafts, gears and bearings housings.",
+        "8511 and 8544: ignition equipment and insulated wiring harnesses."
+      ]
+    },
+    {
+      "h": "Covered when declared under these headings",
+      "ul": [
+        "7318: screws, bolts, nuts and washers of iron or steel.",
+        "7307: tube or pipe fittings of iron or steel.",
+        "7326: other articles of iron or steel, which can include some forged or stamped parts not classified as vehicle parts.",
+        "7616: other articles of aluminium, which can include some aluminium castings."
+      ]
+    },
+    {
+      "h": "Check each part number",
+      "p": [
+        "Classification is by part, not by industry. Make a list of your EU part numbers with the CN code your buyer declares. Parts under covered headings need embedded emissions data; the rest do not, for now."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel and electricity bills into a fingerprinted Scope 1 and 2 record, the plant-level input when a covered part needs embedded emissions data. Its CBAM calculator estimates certificate cost from 2026 to 2034.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Are aluminium castings covered by CBAM?",
+      "to": "/answers/are-aluminium-castings-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The December 2025 downstream extension proposal may add steel and aluminium-intensive goods; recheck Annex I and the adopted text.",
+  "reviewed": "2026-10-20"
+}

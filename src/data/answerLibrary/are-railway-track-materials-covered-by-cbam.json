@@ -1,0 +1,65 @@
+{
+  "slug": "are-railway-track-materials-covered-by-cbam",
+  "q": "Are rails, sleepers and railway track fittings covered by EU CBAM?",
+  "title": "Are railway track materials covered by CBAM?",
+  "short": "Steel ones are. Railway or tramway track construction material of iron or steel under CN 7302, such as rails, check rails, switch blades, steel sleepers, fish plates, base plates and clips, is in Annex I. Concrete sleepers under chapter 68 and rolling stock parts under chapter 86 are not.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Track fitting makers and rail suppliers",
+  "sections": [
+    {
+      "h": "Covered under 7302",
+      "ul": [
+        "Rails and check rails.",
+        "Switch blades, crossing frogs and point rods.",
+        "Steel sleepers and cross-ties.",
+        "Fish plates, sole plates, chairs, rail clips, bedplates and tie bars, which heading 7302 names."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "Prestressed concrete sleepers: chapter 68.",
+        "Wheels, axles and bogie parts for rolling stock: chapter 86.",
+        "Wooden sleepers: chapter 44."
+      ]
+    },
+    {
+      "h": "What the data needs",
+      "p": [
+        "For iron and steel goods CBAM counts direct emissions. The steel you buy carries most of it, so ask the mill for embedded emissions per tonne and add your forging, machining and heat treatment fuel and electricity as your own stage."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel and electricity bills into a fingerprinted Scope 1 and 2 record, the plant-level input for your forging and machining stage. Its CBAM calculator estimates certificate cost from 2026 to 2034.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "How to calculate embedded emissions for steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The December 2025 downstream extension proposal may add steel and aluminium-intensive goods; recheck Annex I and the adopted text.",
+  "reviewed": "2026-10-20"
+}

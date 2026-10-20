@@ -1,0 +1,54 @@
+{
+  "slug": "diwali-gifts-for-customers-scope-3",
+  "q": "Do Diwali gifts and corporate gifts for customers count in our Scope 3?",
+  "title": "Corporate gifts in Scope 3",
+  "short": "Yes. Gifts you buy are purchased goods in Scope 3 Category 1. Use quantities where the invoice lists items, such as boxes of sweets or dry fruit, and a spend-based estimate otherwise. Courier you pay to deliver them is Category 4. It is usually a small, seasonal line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance and admin teams preparing an annual footprint",
+  "sections": [
+    {
+      "h": "How to count",
+      "ul": [
+        "Sweets, dry fruit, hampers: by weight with a food factor where available, or by spend.",
+        "Electronics and branded goods: by spend, or by a per-unit factor if the supplier gives one.",
+        "Packaging and decoration are part of the item bought.",
+        "Delivery couriers you pay: Category 4."
+      ]
+    },
+    {
+      "h": "Where it shows",
+      "p": [
+        "Gifts usually sit in a sales promotion or business promotion ledger. Map that ledger to Category 1 and note the method: activity or spend, with the factor source."
+      ]
+    },
+    {
+      "h": "Keep it in proportion",
+      "p": [
+        "For most companies gifts are well under one percent of Scope 3. Estimate once by spend and reuse the method each year unless the amount changes a lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "paver-block-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of concrete paver blocks per square metre?",
+  "title": "Paver block carbon footprint per m2",
+  "short": "Cement is most of a paver's footprint. Multiply the cement used per batch by your cement supplier's factor, add aggregates, fly ash, pigment and admixture, then vibro press electricity, curing water pumping and delivery. Divide by square metres made, stating thickness, since 80 mm uses more than 60 mm.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Paver block, kerb stone and precast makers",
+  "sections": [
+    {
+      "h": "Mix design",
+      "ul": [
+        "Cement: ask for the plant's figure per tonne. Blended cements such as PPC usually carry less CO2 than OPC.",
+        "Fly ash or slag replacing part of the cement lowers the figure.",
+        "Aggregates and stone dust: low per tonne, but heavy, so transport matters.",
+        "Iron oxide pigment for coloured pavers."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Electricity for the batching plant, vibro press and conveyors.",
+        "Diesel for loaders and the generator.",
+        "Curing usually needs water, not heat, unless you steam cure."
+      ]
+    },
+    {
+      "h": "Per square metre",
+      "p": [
+        "Report per square metre at a stated thickness and strength grade. If you sell per piece, give both, with pieces per square metre."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: paver plant per m2 (one month)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Loader and generator diesel: 2,000 litres x 2.68 = 5,360 kg CO2",
+      "Square metres made (60 mm): 20,000",
+      "Plant total: 16,010 / 20,000 = 0.800 kg CO2 per square metre",
+      "Add cement, fly ash, aggregates and pigment for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PPC vs OPC cement footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

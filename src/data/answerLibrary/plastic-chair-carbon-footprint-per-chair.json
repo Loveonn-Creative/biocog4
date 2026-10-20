@@ -1,0 +1,81 @@
+{
+  "slug": "plastic-chair-carbon-footprint-per-chair",
+  "q": "What is the carbon footprint of a moulded plastic chair?",
+  "title": "Plastic chair carbon footprint",
+  "short": "Multiply the chair's weight in polypropylene by a resin factor, add masterbatch and fillers, then add moulding electricity per chair from your machine meter or bill. A chair weighing 2.5 kg is mostly resin; moulding usually adds a smaller share. Recycled granules lower the resin part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Moulded furniture makers",
+  "sections": [
+    {
+      "h": "Resin and additives",
+      "ul": [
+        "Virgin PP granules: the largest part. Use a cradle-to-gate factor per kg from the resin supplier or a recognised database.",
+        "Recycled PP: lower per kg, but record the source and grade, since buyers will ask.",
+        "Masterbatch, calcium carbonate filler and UV stabiliser."
+      ]
+    },
+    {
+      "h": "Moulding energy",
+      "ul": [
+        "Large injection moulding machines, plus chillers and dryers.",
+        "Runner and reject regrind returned to the hopper is not new resin; do not count it twice.",
+        "Servo machines use noticeably less electricity than older hydraulic ones."
+      ]
+    },
+    {
+      "h": "Per chair",
+      "p": [
+        "Weigh a chair off the line and divide machine electricity by chairs passed. If the same machines make tables and stools, allocate by machine hours or by kilograms moulded."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: chair moulding per chair (one month)",
+    "lines": [
+      "Electricity: 45,000 kWh x 0.710 = 31,950 kg CO2",
+      "Chairs passed: 60,000",
+      "Plant total: 31,950 / 60,000 = 0.532 kg CO2 per chair",
+      "Add PP resin (2.5 kg per chair at your resin factor) and masterbatch for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Emission factors for PP, HDPE and PVC resin",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Servo vs hydraulic moulding energy",
+      "to": "/answers/servo-vs-hydraulic-injection-moulding-energy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

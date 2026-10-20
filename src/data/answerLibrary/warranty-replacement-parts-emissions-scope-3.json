@@ -1,0 +1,59 @@
+{
+  "slug": "warranty-replacement-parts-emissions-scope-3",
+  "q": "How do we count emissions from warranty replacements and spare parts we send to customers?",
+  "title": "Warranty replacements in Scope 3",
+  "short": "Parts you buy and send as replacements are purchased goods in Category 1; if you make them, their production energy is already in your Scope 1 and 2. Freight you pay to ship them is Category 4. Failed parts you take back and scrap go to Category 5 as waste.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "After-sales and service teams at appliance, auto component and machinery makers",
+  "sections": [
+    {
+      "h": "Split the warranty cost by what happened",
+      "ul": [
+        "Bought-in replacement parts: Category 1, by quantity or spend.",
+        "Parts made in your own plant: already in Scope 1 and 2 through the plant's fuel and electricity; do not add them again.",
+        "Courier or truck freight you pay: Category 4.",
+        "Service engineers' travel: their vehicles if you own them are Scope 1; hired cabs and flights are Category 6."
+      ]
+    },
+    {
+      "h": "Returned and failed parts",
+      "ul": [
+        "Scrapped returns: Category 5, waste generated in operations.",
+        "Repaired and resold units: the repair energy is in your Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "Use it as a signal",
+      "p": [
+        "A high warranty rate means extra parts, freight and travel for the same product sold. Tracking warranty emissions next to the failure rate shows the carbon cost of quality problems."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Reverse logistics for customer returns",
+      "to": "/answers/reverse-logistics-customer-returns-emissions"
+    },
+    {
+      "label": "Courier shipment emissions",
+      "to": "/answers/courier-shipment-emissions-from-invoices"
+    },
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)",
+      "url": "https://ghgprotocol.org"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

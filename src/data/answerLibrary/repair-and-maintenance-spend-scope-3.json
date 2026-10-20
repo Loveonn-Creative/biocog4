@@ -1,0 +1,58 @@
+{
+  "slug": "repair-and-maintenance-spend-scope-3",
+  "q": "Where do repair, maintenance and spare parts spend go in Scope 3?",
+  "title": "Repairs and maintenance in Scope 3",
+  "short": "Day-to-day spares, consumables and maintenance services are Category 1, purchased goods and services. Major spares and overhauls you capitalise as assets go to Category 2, capital goods. Fuel and electricity used on site by contractors doing the work are already in your Scope 1 and 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant maintenance, finance and stores teams",
+  "sections": [
+    {
+      "h": "Split by accounting treatment",
+      "ul": [
+        "Revenue spend: bearings, belts, lubricants, filters, welding rods, AMC and repair service charges: Category 1.",
+        "Capitalised spend: a new motor, a rebuilt gearbox or a furnace relining treated as an asset: Category 2.",
+        "Follow your fixed asset policy so the split matches your books."
+      ]
+    },
+    {
+      "h": "What not to add again",
+      "ul": [
+        "Electricity and fuel used by contractors on your premises are on your bills: already Scope 1 and 2.",
+        "Contractor diesel generators brought on site: check who buys the fuel; the GHG Protocol control approach decides."
+      ]
+    },
+    {
+      "h": "How to estimate",
+      "p": [
+        "Most maintenance invoices do not give quantities that map to factors, so a spend-based estimate is normal. Use spend excluding GST, a factor for the product or service group, and state the price year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    },
+    {
+      "label": "Contractor diesel on my site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)",
+      "url": "https://ghgprotocol.org"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

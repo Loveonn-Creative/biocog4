@@ -1,0 +1,58 @@
+{
+  "slug": "product-samples-sent-to-buyers-scope-3",
+  "q": "How do we account for product samples sent to buyers and trade fairs?",
+  "title": "Product samples in Scope 3",
+  "short": "Samples you make are already in your Scope 1 and 2 through plant energy, and their materials are in Category 1 with your other purchases. Courier and air freight you pay to send them is Category 4. Count sample freight separately: air couriers to overseas buyers can be noticeable.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters' merchandising and sampling teams",
+  "sections": [
+    {
+      "h": "Avoid counting twice",
+      "ul": [
+        "Sampling done in your own unit uses your fuel and electricity: already in Scope 1 and 2.",
+        "Fabric, yarn and trims for samples are part of your purchases: already in Category 1.",
+        "Samples bought from another maker are purchased goods: Category 1."
+      ]
+    },
+    {
+      "h": "Freight is the visible line",
+      "ul": [
+        "International courier invoices show weight and destination: use them for a distance and weight estimate, or the carrier's emission statement if it provides one.",
+        "Air freight per kg is many times road or sea per kg."
+      ]
+    },
+    {
+      "h": "Reduce it",
+      "p": [
+        "Digital samples, consolidating samples into fewer shipments and using a local sampling office cut courier weight. Record the change in kilograms sent."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Courier shipment emissions",
+      "to": "/answers/courier-shipment-emissions-from-invoices"
+    },
+    {
+      "label": "Marketing and trade fair spend",
+      "to": "/answers/advertising-and-marketing-spend-scope-3"
+    },
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

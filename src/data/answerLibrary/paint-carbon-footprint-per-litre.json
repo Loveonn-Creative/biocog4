@@ -1,0 +1,86 @@
+{
+  "slug": "paint-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of paint per litre?",
+  "title": "Paint carbon footprint per litre",
+  "short": "Add the titanium dioxide, binder, extenders, solvents, additives and containers from supplier or database factors, then your mixing and dispersion electricity and any boiler or generator fuel. Divide by litres filled. Pigment and binder usually outweigh plant energy by a wide margin.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Decorative and industrial paint makers, including MSME and contract fillers",
+  "sections": [
+    {
+      "h": "Raw materials, by weight in the recipe",
+      "ul": [
+        "Titanium dioxide: the white pigment, usually the largest single contributor per litre in light shades.",
+        "Binder: acrylic or vinyl emulsion for water-based paint, alkyd or epoxy resin for solvent-based paint.",
+        "Extenders such as calcium carbonate, talc and china clay: high in weight, low per kg.",
+        "Solvents, coalescents, dispersants, thickeners and biocides.",
+        "Tins, pails and lids: steel or plastic, counted by mass per pack size."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Electricity for high-speed dispersers, bead mills, mixers and filling lines.",
+        "Diesel for the generator during power cuts.",
+        "Any thermal fluid heater or boiler used for resin cooking if you make your own resin."
+      ]
+    },
+    {
+      "h": "Per litre of what",
+      "p": [
+        "Report per litre of paint as filled. A litre of a high-solids enamel and a litre of a distemper differ several times over, so give each product family its own figure rather than one plant average. Allocate plant electricity by litres or by batch hours if you meter mills separately."
+      ]
+    },
+    {
+      "h": "Solvent emissions",
+      "p": [
+        "Solvent that evaporates is a VOC, not CO2, unless it is burnt in a thermal oxidiser. If you run an oxidiser, count the CO2 from its fuel and from the solvent it burns as Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: paint plant per litre (one month)",
+    "lines": [
+      "Electricity: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "Generator diesel: 3,000 litres x 2.68 = 8,040 kg CO2",
+      "Litres filled: 600,000",
+      "Plant total: 71,940 / 600,000 = 0.120 kg CO2 per litre",
+      "Add titanium dioxide, binder, extenders and tins for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    },
+    {
+      "label": "Cradle to gate or cradle to grave",
+      "to": "/answers/cradle-to-gate-or-cradle-to-grave"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

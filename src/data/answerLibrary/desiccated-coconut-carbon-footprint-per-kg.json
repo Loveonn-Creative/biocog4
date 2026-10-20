@@ -1,0 +1,81 @@
+{
+  "slug": "desiccated-coconut-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of desiccated coconut per kg?",
+  "title": "Desiccated coconut carbon footprint",
+  "short": "Add the coconuts per kg of product from your yield, then paring, grinding and drying energy, and packaging. Divide by kilograms packed. Many units fire dryers with coconut shell, whose CO2 is biogenic; electricity and any diesel or LPG are the fossil part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Coconut processors in Kerala, Tamil Nadu and Karnataka",
+  "sections": [
+    {
+      "h": "Raw material",
+      "ul": [
+        "Coconuts bought per kg of product: use your own conversion.",
+        "Co-products such as coconut water, parings oil and shell: allocate by mass or value and state the method."
+      ]
+    },
+    {
+      "h": "Process energy",
+      "ul": [
+        "Dryers: often fired by shell or husk; report that CO2 as biogenic.",
+        "Electricity for disintegrators, conveyors and sifters.",
+        "Diesel for generators and vehicles."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg packed, by grade if fine and medium grades need different drying."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: coconut unit per kg (one month, fossil part)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Generator diesel: 800 litres x 2.68 = 2,144 kg CO2",
+      "Product packed (kg): 60,000",
+      "Plant total: 16,344 / 60,000 = 0.272 kg CO2 per kg",
+      "Add coconuts and packaging; report shell-fired dryer CO2 as biogenic"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

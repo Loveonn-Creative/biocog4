@@ -1,0 +1,82 @@
+{
+  "slug": "fruit-juice-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of fruit juice per litre?",
+  "title": "Fruit juice carbon footprint per litre",
+  "short": "Add the fruit or concentrate per litre from your yield, sugar and additives, then extraction, pasteurisation and filling energy, and the carton, bottle or pouch. Divide by litres filled. Packaging and fruit are usually the largest parts; reconstituted juice adds concentrate transport.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Juice and beverage makers",
+  "sections": [
+    {
+      "h": "Fruit and concentrate",
+      "ul": [
+        "Fresh fruit: count tonnes bought per litre made, from your extraction yield.",
+        "Concentrate or pulp: ask the supplier for a per-kg figure, including their evaporation energy.",
+        "Sugar, acidulants and preservatives."
+      ]
+    },
+    {
+      "h": "Process energy",
+      "ul": [
+        "Boiler fuel for pasteurising or hot filling.",
+        "Electricity for extractors, homogenisers, aseptic fillers and chillers.",
+        "Cleaning in place uses hot water and chemicals."
+      ]
+    },
+    {
+      "h": "Packaging",
+      "p": [
+        "Aseptic cartons, PET bottles, glass and pouches differ widely per litre. Weigh each pack and use the material factors; count caps and straws too."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: juice plant per litre (one month)",
+    "lines": [
+      "Boiler PNG: 12,000 SCM x 2.05 = 24,600 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Litres filled: 500,000",
+      "Plant total: 67,200 / 500,000 = 0.134 kg CO2 per litre",
+      "Add fruit or concentrate, sugar and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Mango pulp footprint per kg",
+      "to": "/answers/mango-pulp-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

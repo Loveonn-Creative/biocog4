@@ -1,0 +1,56 @@
+{
+  "slug": "staff-uniforms-and-ppe-scope-3",
+  "q": "Where do staff uniforms, safety shoes and PPE go in our carbon footprint?",
+  "title": "Uniforms and PPE in Scope 3",
+  "short": "They are purchased goods, so they belong in Scope 3 Category 1. Use quantities and materials from the invoice where you have them, such as pieces of cotton or polyester uniform and pairs of safety shoes, and a spend-based estimate for the rest. They are usually a small line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HR, admin and EHS teams at factories",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Uniforms, aprons and coats: count pieces and fabric type.",
+        "Safety shoes, helmets, gloves, goggles and ear protection.",
+        "Disposable PPE such as masks and nitrile gloves, which can add up in pharma and food plants.",
+        "Laundry of uniforms by an outside service is a purchased service, also Category 1."
+      ]
+    },
+    {
+      "h": "How to estimate",
+      "ul": [
+        "Activity-based: pieces x a per-piece factor for the material, where a supplier or database gives one.",
+        "Spend-based: invoice value excluding GST x a factor for the product group, stating the factor's source and price year.",
+        "Disposal of used PPE is Category 5, waste."
+      ]
+    },
+    {
+      "h": "Is it worth the effort",
+      "p": [
+        "For most manufacturers uniforms and PPE are a small share of Scope 3. Estimate once by spend; if it is under a few percent of your Scope 3, keep the spend method and say so."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "T-shirt footprint cradle to gate",
+      "to": "/answers/t-shirt-carbon-footprint-cradle-to-gate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

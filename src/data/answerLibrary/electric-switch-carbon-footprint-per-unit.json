@@ -1,0 +1,77 @@
+{
+  "slug": "electric-switch-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a modular electrical switch?",
+  "title": "Electrical switch carbon footprint per unit",
+  "short": "Weigh the polycarbonate or urea moulding, brass or copper contacts, springs and packaging in one switch, apply supplier or database factors, and add moulding, stamping, assembly and testing electricity per unit. Divide by switches passed. Brass and plastic are usually most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Switch, socket and wiring accessory makers",
+  "sections": [
+    {
+      "h": "Bill of materials",
+      "ul": [
+        "Polycarbonate plates and housings, or urea formaldehyde for older ranges.",
+        "Brass or phosphor bronze contacts and terminals; silver-plated contacts in some designs.",
+        "Steel springs, screws and the carton."
+      ]
+    },
+    {
+      "h": "Process energy",
+      "ul": [
+        "Injection moulding machines and dryers.",
+        "Power presses for contacts and plating lines.",
+        "Assembly, high-voltage and endurance testing."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Report per switch module and per plate separately, since a buyer may combine them. Use your brass supplier's figure; recycled brass is lower than brass from new copper and zinc."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: switch plant per unit (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Switches passed: 1,000,000",
+      "Plant total: 35,500 / 1,000,000 = 0.035 kg CO2 per switch",
+      "Add plastic, brass and springs for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Brass component footprint per kg",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

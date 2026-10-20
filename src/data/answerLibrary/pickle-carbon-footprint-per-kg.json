@@ -1,0 +1,78 @@
+{
+  "slug": "pickle-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of pickles per kg?",
+  "title": "Pickle carbon footprint per kg",
+  "short": "Add the vegetables or fruit, edible oil, salt and spices from supplier or database factors, then cutting, cooking and filling energy, and the glass jar or pouch. Divide by kilograms packed. Oil and the jar are often bigger than the plant's own energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pickle makers and achar exporters",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Raw mango, lime, chilli or mixed vegetables, counted by weight bought, including peel and stones discarded.",
+        "Mustard or sesame oil: vegetable oils carry a sizeable farm footprint per kg.",
+        "Salt, spices, vinegar and sugar."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Electricity for cutters, mixers and filling lines.",
+        "LPG or PNG for heating oil and tempering spices.",
+        "Sun curing uses no fuel."
+      ]
+    },
+    {
+      "h": "Packaging",
+      "p": [
+        "A glass jar can weigh more than the pickle inside a small pack, and glass is energy-intensive. Compare jar against PET or pouch per kg of product, and include caps and labels."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: pickle unit per kg (one month)",
+    "lines": [
+      "Electricity: 5,000 kWh x 0.710 = 3,550 kg CO2",
+      "Cooking LPG: 800 kg x 2.98 = 2,384 kg CO2",
+      "Pickle packed (kg): 40,000",
+      "Plant total: 5,934 / 40,000 = 0.148 kg CO2 per kg",
+      "Add produce, oil, spices and jars for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Glass jar vs pouch for food exports",
+      "to": "/answers/glass-jar-vs-pouch-food-export-carbon"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

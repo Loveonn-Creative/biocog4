@@ -1,0 +1,79 @@
+{
+  "slug": "marble-slab-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of marble slabs per square metre?",
+  "title": "Marble slab carbon footprint per m2",
+  "short": "Add quarry diesel for blocks and haulage, gang saw or block cutter electricity, polishing line electricity, resin and mesh used to treat slabs, and packing. Divide by square metres sold at a stated thickness. Electricity for sawing and polishing is often the biggest plant line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Marble processors in Rajasthan and Gujarat, and stone exporters",
+  "sections": [
+    {
+      "h": "Quarry and blocks",
+      "ul": [
+        "Diesel for excavators, wire saws, loaders and dumpers, if you run the quarry.",
+        "If you buy blocks, count the block transport and ask the quarry for its fuel per tonne.",
+        "Explosives, where used, are small but should be listed."
+      ]
+    },
+    {
+      "h": "Processing",
+      "ul": [
+        "Gang saws and block cutters: long running hours at high load.",
+        "Polishing, calibrating and edge machines.",
+        "Epoxy resin and fibreglass mesh used to fill and back slabs: count by kilograms used.",
+        "Water recycling plant pumps and filter presses."
+      ]
+    },
+    {
+      "h": "Per square metre",
+      "p": [
+        "State thickness, usually 16 to 20 mm for slabs. Waste from blocks to slabs is high, so allocate quarry and sawing energy to saleable square metres, not to all stone cut."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: marble unit per m2 (one month)",
+    "lines": [
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Loader and generator diesel: 5,000 litres x 2.68 = 13,400 kg CO2",
+      "Square metres sold (18 mm): 15,000",
+      "Plant total: 70,200 / 15,000 = 4.68 kg CO2 per square metre",
+      "Add blocks, resin, mesh and packing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Granite slab footprint per m2",
+      "to": "/answers/granite-slab-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

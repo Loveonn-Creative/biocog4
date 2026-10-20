@@ -1,0 +1,63 @@
+{
+  "slug": "is-steel-furniture-covered-by-cbam",
+  "q": "Is steel furniture, such as almirahs, racks and office chairs, covered by CBAM?",
+  "title": "Is steel furniture covered by CBAM?",
+  "short": "Not today. Furniture under chapter 94 of the Combined Nomenclature, including metal furniture under 9403 and seats under 9401, is not in Annex I of the EU CBAM Regulation. The steel sheet and tubes you buy are covered when imported into the EU, and a December 2025 proposal may extend CBAM to downstream goods.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel furniture, storage and racking exporters",
+  "sections": [
+    {
+      "h": "The headings that matter",
+      "ul": [
+        "9401: seats, including office chairs with steel frames: not in Annex I.",
+        "9403: other furniture, including metal cupboards, filing cabinets and beds: not in Annex I.",
+        "7308: structures and parts of structures of iron or steel: covered. Industrial racking can be classified here; check with the importer."
+      ]
+    },
+    {
+      "h": "Where you may be pulled in",
+      "ul": [
+        "Warehouse and pallet racking declared as a steel structure under 7308 is covered.",
+        "Loose steel parts shipped for assembly in the EU may fall under chapter 73 headings in Annex I."
+      ]
+    },
+    {
+      "h": "Who settles the code",
+      "p": [
+        "The EU importer declares the 8 digit CN code and customs can reclassify it. Agree the code with your buyer before shipment and keep it on the invoice."
+      ]
+    }
+  ],
+  "senseible": "Senseible helps answer buyer requests for product footprint data from your bills and invoices. Its CBAM data and cost calculator matter for furniture only if its headings are added to CBAM.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Map an HSN code to an EU CN code",
+      "to": "/answers/map-indian-hsn-code-to-eu-cn-code"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    },
+    {
+      "label": "Are steel structures covered by CBAM?",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The December 2025 downstream extension proposal may add steel and aluminium-intensive goods; recheck Annex I and the adopted text.",
+  "reviewed": "2026-10-20"
+}

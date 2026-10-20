@@ -1,0 +1,77 @@
+{
+  "slug": "wooden-toys-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of wooden toys, such as Channapatna toys?",
+  "title": "Wooden toys carbon footprint per kg",
+  "short": "Add the wood, lac or lacquer colours, varnish and packaging per kg of toys, then lathe and drying energy. Divide by kilograms sold. Turned wooden toys use little fossil energy per kg; wood carbon is reported separately, and colours and packaging can be a large share.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Wooden toy makers and handicraft exporters",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Wood such as hale or rubberwood: count wood bought, including turning waste.",
+        "Lac, natural or synthetic colours, varnish.",
+        "Cartons, tissue and labels; export packing can outweigh small toys."
+      ]
+    },
+    {
+      "h": "Energy",
+      "ul": [
+        "Lathe motors, often small and many.",
+        "Drying, by sun or kiln.",
+        "Generator diesel."
+      ]
+    },
+    {
+      "h": "Per kg or per piece",
+      "p": [
+        "Report per kg and per piece for each product line. If artisans work at home on their own lathes, ask for their electricity units or estimate from motor ratings and hours, and label the estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: toy unit per kg (one month)",
+    "lines": [
+      "Electricity: 3,000 kWh x 0.710 = 2,130 kg CO2",
+      "Toys sold (kg): 4,000",
+      "Plant total: 2,130 / 4,000 = 0.532 kg CO2 per kg",
+      "Add wood, lac, colours and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Handicraft exporter footprint",
+      "to": "/answers/handicraft-exporter-carbon-footprint-artisan-supply-chain"
+    },
+    {
+      "label": "Biogenic carbon in timber products",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

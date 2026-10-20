@@ -1,0 +1,76 @@
+{
+  "slug": "paper-bag-carbon-footprint-per-bag",
+  "q": "How do I calculate the carbon footprint of a paper bag?",
+  "title": "Paper bag carbon footprint per bag",
+  "short": "Weigh the kraft paper in one bag, including handles, and apply the paper mill's per-tonne factor. Add glue, ink and the bag machine's electricity per bag. Divide by bags made. Paper is usually most of the total, and recycled kraft is often lower than virgin.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Paper bag makers and retail packaging suppliers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Kraft paper: count reel weight used, including trim waste, per bag size.",
+        "Twisted paper or flat handles and their glue.",
+        "Printing inks and any lamination."
+      ]
+    },
+    {
+      "h": "Energy",
+      "ul": [
+        "Automatic bag machine and printing press electricity.",
+        "Generator diesel during outages."
+      ]
+    },
+    {
+      "h": "Per bag",
+      "p": [
+        "Report per bag for each size and GSM, and per kg so buyers can compare with plastic or jute. Biogenic carbon in the paper is reported separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: paper bag unit per bag (one month)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Bags made: 1,500,000",
+      "Plant total: 10,650 / 1,500,000 = 0.0071 kg CO2 per bag",
+      "Add kraft paper, handles, glue and ink for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Paper mill footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Paper industry",
+      "to": "/industries/paper"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

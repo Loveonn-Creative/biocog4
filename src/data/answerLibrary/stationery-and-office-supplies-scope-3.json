@@ -1,0 +1,64 @@
+{
+  "slug": "stationery-and-office-supplies-scope-3",
+  "q": "How do we count stationery, printing paper and office supplies in Scope 3?",
+  "title": "Stationery and office supplies in Scope 3",
+  "short": "They are purchased goods in Category 1. Copier paper is easy to count by weight, since invoices show reams and GSM; for pens, files and toner use spend. It is a small line for factories but can matter for offices, where paper is one of the few material purchases.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Admin teams in offices and factories",
+  "sections": [
+    {
+      "h": "Count what you can by weight",
+      "ul": [
+        "Copier paper: a ream of 500 A4 sheets at 75 GSM weighs about 2.3 kg. Reams x weight x a paper factor gives an activity-based figure.",
+        "Recycled paper usually carries a lower factor than virgin; check the supplier's claim.",
+        "Envelopes and printed forms by weight where listed."
+      ]
+    },
+    {
+      "h": "Use spend for the rest",
+      "ul": [
+        "Pens, files, folders, toner and cartridges: spend excluding GST x a factor for the product group.",
+        "Printing done by an outside press: purchased service, by weight of print or spend."
+      ]
+    },
+    {
+      "h": "Cut it",
+      "p": [
+        "Double-sided default printing and digital approvals reduce reams bought. Track reams per employee per year as a simple indicator."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: copier paper weight (one year)",
+    "lines": [
+      "Reams bought: 1,200 of A4 75 GSM",
+      "One ream: 500 x 0.0624 m2 x 75 g = 2,340 g, about 2.3 kg",
+      "Paper weight: 1,200 x 2.34 = 2,808 kg",
+      "Multiply by your paper factor per kg for Category 1"
+    ],
+    "note": "An A4 sheet is 0.21 m x 0.297 m = 0.0624 m2."
+  },
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Offset printing footprint per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Office footprint per square foot",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

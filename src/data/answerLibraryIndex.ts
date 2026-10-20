@@ -139,6 +139,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "air-cooler-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an air cooler?",
+  "title": "Air cooler carbon footprint per unit",
+  "short": "Weigh the plastic body, fan motor, pump, cooling pads and packaging, apply supplier or database factors, and add moulding and assembly electricity per unit. Report use-phase electricity separately; over a cooler's life it is usually larger than the making.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "air-freight-actual-or-chargeable-weight",
   "q": "Should air freight emissions use actual weight or chargeable (volumetric) weight?",
   "title": "Air freight CO2: actual or chargeable weight?",
@@ -177,6 +185,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the supplier's emissions by your share of its output. Use a physical basis, such as tonnes or metres of fabric, when its products are similar, and an economic basis, your share of its revenue, only when products differ a lot in value. Ask first whether the supplier can give a figure for your product line, which avoids allocation.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "aluminium-cookware-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of aluminium cookware per kg?",
+  "title": "Aluminium cookware carbon footprint per kg",
+  "short": "Aluminium circles or sheet are most of the total, and primary aluminium is many times higher per kg than recycled. Multiply aluminium bought per kg of finished cookware by your supplier's factor, then add spinning, pressing, anodising or non-stick coating energy and packaging.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "aluminium-die-casting-carbon-footprint-per-kg",
@@ -307,6 +323,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "are-aluminium-wire-and-cables-covered-by-cbam",
+  "q": "Are aluminium wire, conductors and cables covered by EU CBAM?",
+  "title": "Are aluminium wire and cables covered by CBAM?",
+  "short": "Partly. Aluminium wire under CN 7605 and stranded wire, cables and conductors that are not electrically insulated, under 7614, are in CBAM Annex I. This includes bare AAC and ACSR conductors. Insulated wire and cable under 8544 is not covered today.",
+  "topic": "regulation",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "are-auto-components-covered-by-cbam",
+  "q": "Are auto components covered by EU CBAM?",
+  "title": "Are auto components covered by CBAM?",
+  "short": "Mostly not. Parts of motor vehicles under CN 8708, and engine parts under chapter 84, are not in Annex I today. Some steel and aluminium goods auto suppliers ship are covered, such as bolts under 7318, tube fittings under 7307, other steel articles under 7326 and aluminium articles under 7616.",
+  "topic": "regulation",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "are-bicycles-and-bicycle-parts-covered-by-cbam",
   "q": "Are bicycles and bicycle parts exported from Ludhiana covered by the EU CBAM?",
   "title": "Are bicycles covered by EU CBAM?",
@@ -403,6 +435,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "are-railway-track-materials-covered-by-cbam",
+  "q": "Are rails, sleepers and railway track fittings covered by EU CBAM?",
+  "title": "Are railway track materials covered by CBAM?",
+  "short": "Steel ones are. Railway or tramway track construction material of iron or steel under CN 7302, such as rails, check rails, switch blades, steel sleepers, fish plates, base plates and clips, is in Annex I. Concrete sleepers under chapter 68 and rolling stock parts under chapter 86 are not.",
+  "topic": "regulation",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "are-steel-drums-and-gas-cylinders-covered-by-cbam",
   "q": "Are steel drums, tanks and gas cylinders covered by EU CBAM?",
   "title": "Are steel drums and cylinders under CBAM?",
@@ -439,6 +479,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Are fabricated steel structures, towers and steel doors and windows covered by EU CBAM?",
   "title": "Are steel structures covered by CBAM?",
   "short": "Yes. Structures and parts of structures of iron or steel, such as bridges, towers, lattice masts, roof frames, columns, and steel doors, windows and frames, fall under heading 7308, which is in Annex I of the CBAM Regulation. Prefabricated buildings classified under 9406 are not covered today.",
+  "topic": "regulation",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "are-urea-and-dap-covered-by-cbam",
+  "q": "Are urea, DAP and other fertilisers covered by EU CBAM?",
+  "title": "Are urea and DAP covered by CBAM?",
+  "short": "Yes. Nitrogenous fertilisers under CN 3102, which includes urea, and mixed fertilisers under 3105, which includes DAP, are in Annex I of the EU CBAM Regulation, as are ammonia (2814) and nitric acid (2808). Potash under 3104 and single superphosphate under 3103 are not covered.",
   "topic": "regulation",
   "reviewed": "2026-10-20"
  },
@@ -513,6 +561,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Under IPCC 2019 Refinement defaults, fields drained several times in a season emit 55% of the methane of continuously flooded fields, a 45% cut. A single drainage gives a 29% cut. Multiply your baseline methane per hectare by that cut and by verified AWD hectares, subtract any nitrous oxide increase, and back it with field water records.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "ayurvedic-medicine-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of ayurvedic medicines per kg?",
+  "title": "Ayurvedic medicine carbon footprint",
+  "short": "Add the herbs, ghee, jaggery, honey or oils in the formulation, then decoction and drying fuel, grinding and tablet or syrup filling electricity, and the bottles and cartons. Divide by kilograms or litres packed. Boiling fuel and packaging are often the largest plant lines.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "bank-charges-and-insurance-scope-3",
@@ -1395,6 +1451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "cattle-feed-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of cattle feed per tonne?",
+  "title": "Cattle feed carbon footprint per tonne",
+  "short": "Add the grains, de-oiled cakes, bran, molasses, minerals and urea in your formula from supplier or database factors, then grinding, mixing, steam conditioning and pelleting energy, and bags. Divide by tonnes dispatched. Ingredients are usually most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "caustic-soda-carbon-footprint-per-tonne",
   "q": "What is the carbon footprint per tonne of caustic soda made in India?",
   "title": "Caustic soda carbon footprint per tonne",
@@ -1777,6 +1841,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the plant's kW per TR, including pumps and cooling tower fans, by the grid factor to get kg CO2 per TR-hour from power. Then add the year's refrigerant top-ups in kg times the gas's GWP, divided by the year's TR-hours. At an assumed 0.7 kW/TR, power alone is about 0.50 kg CO2 per TR-hour.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "chocolate-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of chocolate per kg?",
+  "title": "Chocolate carbon footprint per kg",
+  "short": "Cocoa and milk ingredients usually dominate. Add cocoa mass, butter or powder, milk powder, sugar and fats from supplier or database factors, then refining, conching, tempering and cooling energy, and wrappers. Divide by kilograms packed. Cocoa linked to deforestation carries land use emissions.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "chp-emissions-allocation-electricity-and-steam",
@@ -2187,6 +2259,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "cricket-bat-carbon-footprint-per-bat",
+  "q": "What is the carbon footprint of a cricket bat?",
+  "title": "Cricket bat carbon footprint",
+  "short": "Add the willow cleft, cane handle, rubber grip, glue, stickers and packing, then seasoning, pressing and finishing energy. Divide by bats made. Most of a bat is wood, whose stored carbon is reported separately, so its fossil footprint is small compared with metal or plastic goods.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "csddd-contract-clause-from-eu-buyer",
   "q": "My EU buyer sent a CSDDD contractual assurance clause. What am I agreeing to?",
   "title": "EU buyer's CSDDD contract clause",
@@ -2331,6 +2411,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "denim-jeans-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of jeans?",
+  "title": "Denim jeans carbon footprint per pair",
+  "short": "Multiply the denim fabric per pair, including cutting waste, by your mill's per-metre or per-kg factor. Add trims, sewing electricity, washing and finishing fuel and chemicals, and packing. Divide by pairs passed. Fabric is usually most of the total, then washing.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "denim-washing-emissions-per-garment",
   "q": "How much CO2 does denim washing add per garment?",
   "title": "Denim washing CO2 per garment",
@@ -2353,6 +2441,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Large seawater reverse osmosis plants use about 3.5 to 5 kWh of electricity per kilolitre, so on the Indian grid desalinated water carries about 2.5 to 3.6 kg CO2 per kL. If you run the plant, that electricity is already in your Scope 2. If you buy the water, it belongs in Scope 3 Category 1.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "desiccated-coconut-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of desiccated coconut per kg?",
+  "title": "Desiccated coconut carbon footprint",
+  "short": "Add the coconuts per kg of product from your yield, then paring, grinding and drying energy, and packaging. Divide by kilograms packed. Many units fire dryers with coconut shell, whose CO2 is biogenic; electricity and any diesel or LPG are the fossil part.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "detergent-powder-carbon-footprint-per-kg",
@@ -2457,6 +2553,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the materials in one unit, CRGO core steel, copper or aluminium windings, tank steel, oil and insulation, multiply each by a named factor, and add your factory's energy allocated per unit. That gives the cradle to gate figure. Report lifetime no-load and load losses separately; over 25 years they often outweigh manufacturing.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "diwali-gifts-for-customers-scope-3",
+  "q": "Do Diwali gifts and corporate gifts for customers count in our Scope 3?",
+  "title": "Corporate gifts in Scope 3",
+  "short": "Yes. Gifts you buy are purchased goods in Scope 3 Category 1. Use quantities where the invoice lists items, such as boxes of sweets or dry fruit, and a spend-based estimate otherwise. Courier you pay to deliver them is Category 4. It is usually a small, seasonal line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "do-buyers-pay-more-for-low-carbon-suppliers",
@@ -2969,6 +3073,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2 per kWh comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "electric-switch-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a modular electrical switch?",
+  "title": "Electrical switch carbon footprint per unit",
+  "short": "Weigh the polycarbonate or urea moulding, brass or copper contacts, springs and packaging in one switch, apply supplier or database factors, and add moulding, stamping, assembly and testing electricity per unit. Divide by switches passed. Brass and plastic are usually most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "electric-vs-cng-three-wheeler-emissions",
@@ -3779,6 +3891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "fruit-juice-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of fruit juice per litre?",
+  "title": "Fruit juice carbon footprint per litre",
+  "short": "Add the fruit or concentrate per litre from your yield, sugar and additives, then extraction, pasteurisation and filling energy, and the carton, bottle or pouch. Divide by litres filled. Packaging and fruit are usually the largest parts; reconstituted juice adds concentrate transport.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "fuel-bought-without-gst-invoice",
   "q": "Can fuel bought on cash memos or without a GST invoice count in my carbon footprint?",
   "title": "Fuel on cash memos: does it count?",
@@ -4337,6 +4457,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Scope 3. A truck hired with its driver from a transporter is operated by the transporter, so its fuel is Scope 3, Category 4 when you pay for the transport. That holds for long-term attached trucks too. Only trucks you own, or lease and run yourself, are Scope 1.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "honey-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of honey per kg?",
+  "title": "Honey carbon footprint per kg",
+  "short": "Count the transport of hives and honey, heating and filtering energy, and the jar or bottle. Divide by kilograms packed. Bee-keeping itself uses little energy, so for honey the glass jar and road transport are often most of the footprint; sugar feeding in lean seasons adds a little.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "hospital-carbon-footprint-per-bed",
@@ -4947,6 +5075,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ice-cream-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of ice cream per litre?",
+  "title": "Ice cream carbon footprint per litre",
+  "short": "Add milk, cream, milk powder and sugar from supplier or database factors, then pasteurising fuel, freezing and hardening electricity, refrigerant leakage, cups and cones, and cold storage. Divide by litres produced. Dairy ingredients usually lead; frozen storage and refrigerant leaks follow.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "ice-plant-electricity-per-tonne-of-ice",
   "q": "How much electricity and CO2 goes into a tonne of ice for fish handling?",
   "title": "Electricity and CO2 per tonne of ice",
@@ -5339,6 +5475,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "is-cement-covered-by-cbam",
+  "q": "Is cement or clinker covered by EU CBAM?",
+  "title": "Is cement covered by CBAM?",
+  "short": "Yes. Cement clinker (CN 2523 10 00), white and other Portland cement (2523 21 00 and 2523 29 00), aluminous cement (2523 30 00) and other hydraulic cements (2523 90 00) are in Annex I, as is calcined kaolinic clay (2507 00 80). Concrete products and precast goods are not.",
+  "topic": "regulation",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "is-copper-covered-by-cbam",
   "q": "Is copper wire rod or copper cathode covered by EU CBAM, and will it be?",
   "title": "Is copper covered by EU CBAM?",
@@ -5415,6 +5559,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Are ferro alloys such as silico-manganese and ferro-silicon covered by EU CBAM?",
   "title": "Is silico-manganese covered by CBAM?",
   "short": "Only some ferro alloys are. Annex I of the CBAM Regulation lists ferro-manganese (7202 1), ferro-chromium (7202 4) and ferro-nickel (7202 6). Silico-manganese (7202 30), ferro-silicon (7202 2) and other ferro alloys under 7202 are not in Annex I today, so EU imports of them carry no CBAM obligation.",
+  "topic": "regulation",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "is-steel-furniture-covered-by-cbam",
+  "q": "Is steel furniture, such as almirahs, racks and office chairs, covered by CBAM?",
+  "title": "Is steel furniture covered by CBAM?",
+  "short": "Not today. Furniture under chapter 94 of the Combined Nomenclature, including metal furniture under 9403 and seats under 9401, is not in Annex I of the EU CBAM Regulation. The steel sheet and tubes you buy are covered when imported into the EU, and a December 2025 proposal may extend CBAM to downstream goods.",
   "topic": "regulation",
   "reviewed": "2026-10-20"
  },
@@ -5675,6 +5827,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "lead-acid-battery-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a lead-acid battery?",
+  "title": "Lead-acid battery carbon footprint",
+  "short": "Lead is most of the total. Multiply lead and alloy per battery by your supplier's factor, where recycled secondary lead is far lower than primary. Add the plastic case, separators, acid, grid casting and formation electricity. Divide by batteries passed, and report each Ah rating separately.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "lead-acid-battery-recycling-emissions-per-tonne",
   "q": "How do I calculate the emissions of recycling lead-acid batteries per tonne of lead?",
   "title": "Lead-acid battery recycling emissions",
@@ -5769,6 +5929,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The LWG audit protocol has an energy consumption section that scores your energy use per unit produced, usually per square metre of leather, over the last 24 months. It counts all energy on site, subcontracted operations and effluent treatment, and credits renewable energy generated on site. Have two years of fuel invoices, bills and production records ready.",
   "topic": "regulation",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "led-bulb-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an LED bulb?",
+  "title": "LED bulb carbon footprint per unit",
+  "short": "Weigh the bulb's parts: LED chips, driver board with its components, aluminium or plastic heat sink, diffuser, cap and packaging. Apply supplier or database factors to each, add your assembly and testing electricity per bulb, and keep use-phase electricity as a separate line.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "led-retrofit-energy-co2-savings",
@@ -5939,6 +6107,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "marble-slab-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of marble slabs per square metre?",
+  "title": "Marble slab carbon footprint per m2",
+  "short": "Add quarry diesel for blocks and haulage, gang saw or block cutter electricity, polishing line electricity, resin and mesh used to treat slabs, and packing. Divide by square metres sold at a stated thickness. Electricity for sawing and polishing is often the biggest plant line.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "marketplace-logistics-order-emissions",
   "q": "How do I estimate emissions for orders shipped through Amazon, Flipkart or a 3PL marketplace logistics service?",
   "title": "Emissions from marketplace-shipped orders",
@@ -6025,6 +6201,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "First try to recover the real figure: download duplicate bills from your discom or use the meter readings on the next bill. Only then estimate the gap, from the average of the months either side or the same month last year scaled to production, and label it as an estimate in your report.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "mixer-grinder-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a mixer grinder?",
+  "title": "Mixer grinder carbon footprint per unit",
+  "short": "Weigh the motor's copper and steel, the stainless steel jars and blades, the plastic body and the packaging, apply supplier or database factors, and add assembly and testing electricity per unit. Report use-phase electricity separately. Motor and jars are usually the largest parts.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "mobile-and-internet-bills-scope-3",
+  "q": "Do mobile phone and internet bills count in our carbon footprint?",
+  "title": "Mobile and internet bills in Scope 3",
+  "short": "Yes, as a purchased service in Scope 3 Category 1. Telecom invoices rarely show energy, so most companies use a spend-based estimate. Data centre and cloud services are separate lines. The phones and routers you buy are Category 2 if capitalised, or Category 1 if expensed.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "morbi-coal-gasifier-vs-natural-gas-emissions",
@@ -6195,6 +6387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "non-woven-bag-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of non-woven PP bags per kg?",
+  "title": "Non-woven bag carbon footprint per kg",
+  "short": "Multiply the polypropylene granules used per kg of fabric by a resin factor, add spunbond line electricity, printing ink and bag-making electricity, then divide by kilograms of bags sold. Resin is usually most of the total; trim waste sent back as regrind is not new resin.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "notebook-carbon-footprint-per-unit",
   "q": "How do I calculate the carbon footprint of a notebook or exercise book?",
   "title": "Notebook carbon footprint per unit",
@@ -6299,6 +6499,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "packaged-drinking-water-carbon-footprint-per-litre",
+  "q": "What is the carbon footprint of packaged drinking water per litre?",
+  "title": "Packaged water carbon footprint per litre",
+  "short": "For bottled water the bottle usually matters most. Add PET preforms, caps, labels and shrink wrap by weight, then RO, ozonation and filling electricity, and delivery. Divide by litres filled. A 20 litre returnable jar reused many times carries far less packaging per litre.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "packaged-drinking-water-carbon-per-litre",
   "q": "How do I calculate the carbon footprint of packaged drinking water per litre?",
   "title": "Packaged drinking water footprint per litre",
@@ -6339,6 +6547,38 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "paint-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint of paint per litre?",
+  "title": "Paint carbon footprint per litre",
+  "short": "Add the titanium dioxide, binder, extenders, solvents, additives and containers from supplier or database factors, then your mixing and dispersion electricity and any boiler or generator fuel. Divide by litres filled. Pigment and binder usually outweigh plant energy by a wide margin.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "paneer-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of paneer per kg?",
+  "title": "Paneer carbon footprint per kg",
+  "short": "Multiply the milk used per kg of paneer, from your yield records, by a milk factor; milk is most of the total. Add boiler fuel for heating, electricity for pressing, chilling and storage, the coagulant and packaging. Divide by kilograms of paneer packed.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "papad-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of papad per kg?",
+  "title": "Papad carbon footprint per kg",
+  "short": "Add the urad or moong flour, rice flour, salt, spices and edible oil, then dough mixing, rolling, drying and packing energy. Divide by kilograms packed. Pulse flour is usually the largest part; sun drying uses no fuel, while dryers on electricity or fuel add to the plant line.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "paper-bag-carbon-footprint-per-bag",
+  "q": "How do I calculate the carbon footprint of a paper bag?",
+  "title": "Paper bag carbon footprint per bag",
+  "short": "Weigh the kraft paper in one bag, including handles, and apply the paper mill's per-tonne factor. Add glue, ink and the bag machine's electricity per bag. Divide by bags made. Paper is usually most of the total, and recycled kraft is often lower than virgin.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "paper-cup-carbon-footprint-per-cup",
   "q": "How do I calculate the carbon footprint of a paper cup?",
   "title": "Paper cup carbon footprint per cup",
@@ -6377,6 +6617,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The Carbon Credit Trading Scheme, 2023 is designed to take over from PAT for energy-intensive sectors. Its compliance mechanism sets greenhouse gas emission intensity targets, in tonnes CO2e per unit of output, in place of PAT's energy targets, and issues carbon credit certificates instead of ESCerts. How existing ESCerts are treated is set by BEE and Ministry of Power notifications.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "paver-block-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of concrete paver blocks per square metre?",
+  "title": "Paver block carbon footprint per m2",
+  "short": "Cement is most of a paver's footprint. Multiply the cement used per batch by your cement supplier's factor, add aggregates, fly ash, pigment and admixture, then vibro press electricity, curing water pumping and delivery. Divide by square metres made, stating thickness, since 80 mm uses more than 60 mm.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "pcaf-data-quality-score-for-msme-borrowers",
@@ -6491,6 +6739,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "pickle-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of pickles per kg?",
+  "title": "Pickle carbon footprint per kg",
+  "short": "Add the vegetables or fruit, edible oil, salt and spices from supplier or database factors, then cutting, cooking and filling energy, and the glass jar or pouch. Divide by kilograms packed. Oil and the jar are often bigger than the plant's own energy.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "plastic-chair-carbon-footprint-per-chair",
+  "q": "What is the carbon footprint of a moulded plastic chair?",
+  "title": "Plastic chair carbon footprint",
+  "short": "Multiply the chair's weight in polypropylene by a resin factor, add masterbatch and fillers, then add moulding electricity per chair from your machine meter or bill. A chair weighing 2.5 kg is mostly resin; moulding usually adds a smaller share. Recycled granules lower the resin part.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "plastic-credits-vs-carbon-credits-epr",
   "q": "What is the difference between EPR plastic credits and carbon credits?",
   "title": "EPR plastic credits vs carbon credits",
@@ -6521,6 +6785,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The fossil carbon in the plastic becomes CO2 in the kiln and counts as the cement plant's Scope 1 fuel emissions. The company that sent the waste reports it in Scope 3: Category 5 for its own operational waste, Category 12 for sold packaging. The coal it replaces is never subtracted.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "plastic-water-tank-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a rotomoulded plastic water tank?",
+  "title": "Plastic water tank carbon footprint",
+  "short": "Multiply the LLDPE powder used per tank, including flash and rejects, by a resin factor. Add the rotomoulding oven's LPG, PNG or diesel, pulverising and cooling electricity, and fittings. Divide by tanks dispatched, and report each capacity separately since weight scales with litres.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "plywood-carbon-footprint-per-cubic-metre",
@@ -6697,6 +6969,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "One month is allowed only if you can show it represents the product, and you must state the period. A full year is safer and usually expected, because power use, boiler fuel, product mix and yields change with seasons and orders. Use a month as a labelled provisional figure and replace it when twelve months are in.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "product-samples-sent-to-buyers-scope-3",
+  "q": "How do we account for product samples sent to buyers and trade fairs?",
+  "title": "Product samples in Scope 3",
+  "short": "Samples you make are already in your Scope 1 and 2 through plant energy, and their materials are in Category 1 with your other purchases. Courier and air freight you pay to send them is Category 4. Count sample freight separately: air couriers to overseas buyers can be noticeable.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "professional-services-fees-scope-3",
@@ -7075,6 +7355,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "repair-and-maintenance-spend-scope-3",
+  "q": "Where do repair, maintenance and spare parts spend go in Scope 3?",
+  "title": "Repairs and maintenance in Scope 3",
+  "short": "Day-to-day spares, consumables and maintenance services are Category 1, purchased goods and services. Major spares and overhauls you capitalise as assets go to Category 2, capital goods. Fuel and electricity used on site by contractors doing the work are already in your Scope 1 and 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "replace-us-epa-spend-factor-with-supplier-data",
   "q": "My US customer estimates my emissions with EPA spend-based factors. How do I give them a better figure?",
   "title": "Replace an EPA spend factor with your data",
@@ -7297,6 +7585,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Give the plant-specific footprint whenever you can tell which plant supplied the buyer's goods. Use a production-weighted average only when shipments genuinely mix output from both plants, and then name the plants, their weights and the period. For EU CBAM goods, embedded emissions are reported per installation, not averaged.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "sanitary-napkin-carbon-footprint-per-pad",
+  "q": "How do I calculate the carbon footprint of a sanitary napkin?",
+  "title": "Sanitary napkin carbon footprint per pad",
+  "short": "Weigh one pad's fluff pulp, superabsorbent polymer, nonwoven top sheet, PE back sheet, adhesive and wrapper, apply supplier or database factors, and add machine electricity per pad. Divide by pads made. Materials are usually most of the total; compostable materials change the end-of-life picture.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "sanitaryware-carbon-footprint-per-piece",
@@ -7859,6 +8155,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "staff-uniforms-and-ppe-scope-3",
+  "q": "Where do staff uniforms, safety shoes and PPE go in our carbon footprint?",
+  "title": "Uniforms and PPE in Scope 3",
+  "short": "They are purchased goods, so they belong in Scope 3 Category 1. Use quantities and materials from the invoice where you have them, such as pieces of cotton or polyester uniform and pairs of safety shoes, and a spend-based estimate for the rest. They are usually a small line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "stainless-steel-utensils-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of stainless steel kitchen utensils per kg?",
   "title": "Stainless steel utensils footprint per kg",
@@ -7899,12 +8203,44 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "stationery-and-office-supplies-scope-3",
+  "q": "How do we count stationery, printing paper and office supplies in Scope 3?",
+  "title": "Stationery and office supplies in Scope 3",
+  "short": "They are purchased goods in Category 1. Copier paper is easy to count by weight, since invoices show reams and GSM; for pens, files and toner use spend. It is a small line for factories but can matter for offices, where paper is one of the few material purchases.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "steam-pipe-insulation-heat-loss",
   "q": "How much fuel do uninsulated steam pipes waste?",
   "title": "Fuel lost from bare steam pipes",
   "short": "A lot. In an illustrative case, 50 metres of bare 80 mm steam pipe at about 170 C wastes roughly 33 tonnes of furnace oil over 8,000 hours a year, about 105 tonnes of CO2. In the same example, 50 mm of insulation cuts that loss by about 80 percent.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "steel-almirah-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a steel almirah or cupboard?",
+  "title": "Steel almirah carbon footprint per unit",
+  "short": "Weigh the cold rolled steel sheet in one almirah, including scrap from cutting, and apply your steel supplier's factor. Add pretreatment and powder coating, the oven fuel, welding and press electricity, locks, hinges and packaging. Divide by almirahs dispatched. Steel is usually most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "steel-door-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a steel door?",
+  "title": "Steel door carbon footprint per unit",
+  "short": "Weigh the steel sheet and frame in one door, including cutting scrap, and apply your steel supplier's factor. Add infill such as honeycomb paper or rockwool, powder coating and oven fuel, welding and press electricity, hardware and packing. Divide by doors dispatched. Steel is usually most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "steel-fastener-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of bolts, nuts and screws per kg?",
+  "title": "Steel fastener carbon footprint per kg",
+  "short": "Multiply the wire rod used per kg of fasteners, including scrap, by your steel supplier's factor. Add wire drawing, cold heading, thread rolling and heat treatment energy, then zinc plating or coating. Divide by kilograms dispatched. Steel is usually most of the total; heat treatment is next.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "steel-mill-certificate-co2-for-forged-part",
@@ -8033,6 +8369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. Scope 3 is built to overlap with other companies' Scope 1 and 2, and the GHG Protocol accepts that overlap between inventories. Double counting is a problem when you count the same emissions twice inside your own inventory, when two parties claim the same reduction or offset, or when company inventories are added together.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "surgical-gloves-carbon-footprint-per-1000",
+  "q": "How do I calculate the carbon footprint of latex or nitrile gloves?",
+  "title": "Glove carbon footprint per 1,000",
+  "short": "Multiply the latex or nitrile compound per 1,000 gloves by its factor, add the dipping line's heating fuel and electricity, chlorination or polymer coating, and boxes. Divide by thousands of gloves passed. Dipping lines run hot ovens continuously, so fuel is a large plant line.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "sustainability-linked-bond-coupon-step-up",
@@ -8467,6 +8811,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "warranty-replacement-parts-emissions-scope-3",
+  "q": "How do we count emissions from warranty replacements and spare parts we send to customers?",
+  "title": "Warranty replacements in Scope 3",
+  "short": "Parts you buy and send as replacements are purchased goods in Category 1; if you make them, their production energy is already in your Scope 1 and 2. Freight you pay to ship them is Category 4. Failed parts you take back and scrap go to Category 5 as waste.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "waste-emissions-scope-3-category-5",
   "q": "How do I calculate emissions from my factory's waste for Scope 3 Category 5?",
   "title": "Factory waste emissions for Category 5",
@@ -8497,6 +8849,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add up all water drawn in the year by source, in kilolitres: that is withdrawal. Subtract water discharged to get consumption. Divide consumption by revenue from operations for intensity per rupee, and by revenue converted at the PPP rate for the BRSR Core figure. Report a physical output intensity too if it suits your sector.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "water-tanker-purchases-which-scope",
+  "q": "How do we count emissions from water tankers bought for our factory?",
+  "title": "Water tanker purchases: which scope",
+  "short": "Water bought from a tanker supplier is a purchased good in Scope 3 Category 1, and the supplier's truck diesel is inside it. If your own truck and pump fetch the water, that diesel is your Scope 1. Electricity for your own borewell pumps is Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "weaving-electricity-per-metre-of-fabric",
@@ -8979,6 +9339,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "wooden-furniture-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a wooden chair, table or bed?",
+  "title": "Wooden furniture carbon footprint per piece",
+  "short": "Weigh the solid wood, plywood or MDF, adhesives, polish, hardware and packaging in one piece and apply supplier or database factors. Add kiln drying fuel, workshop electricity and finishing. Report the carbon stored in the wood separately, not as a deduction from the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "wooden-toys-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of wooden toys, such as Channapatna toys?",
+  "title": "Wooden toys carbon footprint per kg",
+  "short": "Add the wood, lac or lacquer colours, varnish and packaging per kg of toys, then lathe and drying energy. Divide by kilograms sold. Turned wooden toys use little fossil energy per kg; wood carbon is reported separately, and colours and packaging can be a large share.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
+ },
+ {
   "slug": "wooden-vs-plastic-pallet-carbon-footprint",
   "q": "Wooden or plastic pallets for exports: which has the lower carbon footprint per trip?",
   "title": "Wooden or plastic pallet: CO2 per trip",
@@ -9001,6 +9377,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if you count them at all, work-from-home emissions go in Scope 3 Category 7, employee commuting. The GHG Protocol makes them optional. Include them when hybrid work is a large share of your days, or when you report lower commuting from hybrid work, so the saving is not overstated.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "woven-shirt-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a woven shirt?",
+  "title": "Woven shirt carbon footprint per piece",
+  "short": "Multiply the fabric issued per shirt, including cutting waste, by your mill's per-metre factor. Add interlining, buttons, thread, labels, sewing and pressing electricity, washing if any, and the folding pack. Divide by shirts passed. Fabric is usually most of the total.",
+  "topic": "product",
+  "reviewed": "2026-10-20"
  },
  {
   "slug": "zero-waste-to-landfill-certification-criteria",

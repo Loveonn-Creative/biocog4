@@ -1,0 +1,78 @@
+{
+  "slug": "plastic-water-tank-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a rotomoulded plastic water tank?",
+  "title": "Plastic water tank carbon footprint",
+  "short": "Multiply the LLDPE powder used per tank, including flash and rejects, by a resin factor. Add the rotomoulding oven's LPG, PNG or diesel, pulverising and cooling electricity, and fittings. Divide by tanks dispatched, and report each capacity separately since weight scales with litres.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Rotomoulded tank and container makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "LLDPE or MDPE powder: the largest share. A 1,000 litre tank uses many kilograms of polymer; weigh the charge per mould.",
+        "UV stabiliser and carbon black or colour masterbatch.",
+        "Brass or plastic fittings, lids and lids' threads."
+      ]
+    },
+    {
+      "h": "Process energy",
+      "ul": [
+        "Oven burners: LPG, PNG or diesel, usually the largest plant energy line.",
+        "Pulveriser electricity if you grind your own powder from granules.",
+        "Cooling fans and arm drives."
+      ]
+    },
+    {
+      "h": "Per tank",
+      "p": [
+        "Allocate oven fuel by cycle time or by charge weight per mould, since a 2,000 litre tank occupies the oven longer than a 500 litre one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: tank plant per tank (one month)",
+    "lines": [
+      "Oven LPG: 12,000 kg x 2.98 = 35,760 kg CO2",
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Tanks made: 3,000",
+      "Plant total: 49,960 / 3,000 = 16.65 kg CO2 per tank",
+      "Add LLDPE powder and fittings for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Emission factors for PP, HDPE and PVC resin",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

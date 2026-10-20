@@ -1,0 +1,78 @@
+{
+  "slug": "denim-jeans-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of jeans?",
+  "title": "Denim jeans carbon footprint per pair",
+  "short": "Multiply the denim fabric per pair, including cutting waste, by your mill's per-metre or per-kg factor. Add trims, sewing electricity, washing and finishing fuel and chemicals, and packing. Divide by pairs passed. Fabric is usually most of the total, then washing.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Denim garment makers and exporters",
+  "sections": [
+    {
+      "h": "Fabric",
+      "ul": [
+        "Count fabric issued per pair from your marker plan, including the cutting waste.",
+        "Ask the denim mill for a figure per metre or per kg; cotton growing, spinning, dyeing and weaving are all in it.",
+        "Stretch denim includes elastane, which is higher per kg than cotton."
+      ]
+    },
+    {
+      "h": "Make and wash",
+      "ul": [
+        "Sewing and pressing electricity.",
+        "Washing: boiler steam for hot washes, enzymes, stones, bleach and dryers. Laser and ozone finishing cut water and chemicals.",
+        "Rivets, buttons, zips, labels and the poly bag."
+      ]
+    },
+    {
+      "h": "Per pair",
+      "p": [
+        "Divide by pairs that pass inspection. Give heavy and light washes separate figures if your wash recipes differ."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: jeans unit per pair (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Wash boiler PNG: 15,000 SCM x 2.05 = 30,750 kg CO2",
+      "Pairs passed: 100,000",
+      "Plant total: 73,350 / 100,000 = 0.734 kg CO2 per pair",
+      "Add denim fabric, trims and chemicals for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Denim washing emissions per garment",
+      "to": "/answers/denim-washing-emissions-per-garment"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

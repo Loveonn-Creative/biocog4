@@ -1,0 +1,83 @@
+{
+  "slug": "aluminium-cookware-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of aluminium cookware per kg?",
+  "title": "Aluminium cookware carbon footprint per kg",
+  "short": "Aluminium circles or sheet are most of the total, and primary aluminium is many times higher per kg than recycled. Multiply aluminium bought per kg of finished cookware by your supplier's factor, then add spinning, pressing, anodising or non-stick coating energy and packaging.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Aluminium utensil and cookware makers",
+  "sections": [
+    {
+      "h": "Aluminium input",
+      "ul": [
+        "Circles or sheet bought per kg of finished product, including trimming scrap.",
+        "Ask the supplier for its share of primary and recycled metal and a per-tonne figure.",
+        "Primary aluminium made with coal power is among the highest-carbon common metals per kg."
+      ]
+    },
+    {
+      "h": "Forming and finishing",
+      "ul": [
+        "Spinning and deep drawing presses.",
+        "Hard anodising: rectifiers and tank cooling draw significant electricity.",
+        "Non-stick coatings cured in ovens, and induction base plates of steel where fitted.",
+        "Handles, lids and cartons."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Divide by kilograms of finished product packed and sold, not by raw material bought. Report pressure cookers and induction-base items separately, since they carry other parts."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: cookware unit per kg (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Coating oven LPG: 2,000 kg x 2.98 = 5,960 kg CO2",
+      "Cookware sold (kg): 50,000",
+      "Plant total: 34,360 / 50,000 = 0.687 kg CO2 per kg",
+      "Add aluminium circles at your supplier's factor for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Pressure cooker footprint per unit",
+      "to": "/answers/pressure-cooker-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Aluminium industry",
+      "to": "/industries/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
