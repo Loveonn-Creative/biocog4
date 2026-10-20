@@ -34,7 +34,7 @@ describe("help search", () => {
   });
 
   test("matches pasted product messages to a fix", () => {
-    expect(findFix("Page limit reached. Upgrade, wait until next month, or top up credits now on your profile.")?.slug).toBe("hit-my-limit");
+    expect(findFix("Page limit reached. Upgrade, wait until next month, or top up credits now on your Subscription page.")?.slug).toBe("hit-my-limit");
     expect(findFix("You've tried 30 invoices today without an account. Sign in free to keep going and save your results.")?.slug).toBe("try-without-an-account");
     expect(findFix("This file is 12.3 MB. Without an account the limit is 10 MB; try a smaller scan or a photo of the bill.")?.slug).toBe("what-can-i-upload");
     expect(findFix("This invoice has verified records. They stay for your audit trail and cannot be deleted.")?.slug).toBe("what-verified-means");

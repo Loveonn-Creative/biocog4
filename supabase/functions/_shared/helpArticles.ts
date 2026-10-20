@@ -204,7 +204,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
     q: 'I hit my limit. What now?',
     a: 'Top up credits, wait for the 1st, or move to a bigger plan.',
     facts: [['Invoice credits', '₹79 for 100 invoices'], ['Credits last', '12 months on a yearly plan, 30 days otherwise']],
-    steps: ['Buy credits on your profile. They are used after your monthly reads run out.', 'Or wait for the 1st of next month, when your reads reset.'],
+    steps: ['Buy credits on your Subscription page. They are used after your monthly reads run out.', 'Or wait for the 1st of next month, when your reads reset.'],
     cta: { label: 'Top up now', to: '/profile#top-up' },
     keywords: ['limit', 'page limit', 'used up', 'top up', 'topup', 'credits', 'buy more', 'exceeded', 'quota'],
     pages: ['/', '/profile', '/subscription'],
@@ -265,7 +265,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
 
 /** Messages people see in the product, and what to do. */
 export const HELP_FIXES: HelpFix[] = [
-  { match: 'page limit reached', fix: 'Your monthly reads are used up. Buy credits on your profile (₹79 for 100 invoices), wait for the 1st, or move to a bigger plan.', slug: 'hit-my-limit' },
+  { match: 'page limit reached', fix: 'Your monthly reads are used up. Buy credits on your Subscription page (₹79 for 100 invoices), wait for the 1st, or move to a bigger plan.', slug: 'hit-my-limit' },
   { match: 'high volume of bills', fix: 'Many bills are being read at once. Wait a minute and try again. Nothing was counted.' },
   { match: 'catching up with demand', fix: 'Reading is catching up on our side. Your account is fine. Try again in a few minutes. Nothing was counted.' },
   { match: 'hard to read', fix: 'Take a sharper photo with the whole page in view, or upload the original PDF.', slug: 'blurry-or-handwritten-bill' },

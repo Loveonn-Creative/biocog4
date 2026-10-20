@@ -67,7 +67,7 @@ export function monthStartIst(now = new Date()): string {
 
 /** Shown when the plan's reads and any credits are used up (owner wording, October 2026). */
 export function monthlyLimitMessage(_limit: number): string {
-  return 'Page limit reached. Upgrade, wait until next month, or top up credits now on your profile.';
+  return 'Page limit reached. Upgrade, wait until next month, or top up credits now on your Subscription page.';
 }
 
 const PLAN_RANK: Record<PlanTier, number> = { snapshot: 0, essential: 1, pro: 2, scale: 3 };
