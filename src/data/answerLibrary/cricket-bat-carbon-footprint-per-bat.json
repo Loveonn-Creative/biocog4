@@ -1,0 +1,78 @@
+{
+  "slug": "cricket-bat-carbon-footprint-per-bat",
+  "q": "What is the carbon footprint of a cricket bat?",
+  "title": "Cricket bat carbon footprint",
+  "short": "Add the willow cleft, cane handle, rubber grip, glue, stickers and packing, then seasoning, pressing and finishing energy. Divide by bats made. Most of a bat is wood, whose stored carbon is reported separately, so its fossil footprint is small compared with metal or plastic goods.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sports goods makers in Meerut and Jalandhar",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "English or Kashmir willow clefts: count clefts bought per bat made, since some are rejected.",
+        "Cane and rubber handle, grip, twine and glue.",
+        "Stickers, toe guard, cover and carton.",
+        "Imported English willow adds sea freight."
+      ]
+    },
+    {
+      "h": "Workshop energy",
+      "ul": [
+        "Seasoning or drying: sun or kiln.",
+        "Pressing, shaping and sanding machines.",
+        "Polish and oiling."
+      ]
+    },
+    {
+      "h": "Biogenic carbon",
+      "p": [
+        "The willow holds carbon taken from the air. Report it separately rather than netting it off."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: bat workshop per bat (one month)",
+    "lines": [
+      "Electricity: 4,000 kWh x 0.710 = 2,840 kg CO2",
+      "Bats made: 3,000",
+      "Plant total: 2,840 / 3,000 = 0.947 kg CO2 per bat",
+      "Add clefts, handles, grips and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Biogenic carbon in timber products",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    },
+    {
+      "label": "Football footprint per ball",
+      "to": "/answers/football-carbon-footprint-per-ball"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

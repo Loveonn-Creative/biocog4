@@ -1,0 +1,82 @@
+{
+  "slug": "woven-shirt-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a woven shirt?",
+  "title": "Woven shirt carbon footprint per piece",
+  "short": "Multiply the fabric issued per shirt, including cutting waste, by your mill's per-metre factor. Add interlining, buttons, thread, labels, sewing and pressing electricity, washing if any, and the folding pack. Divide by shirts passed. Fabric is usually most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Shirt makers and garment exporters",
+  "sections": [
+    {
+      "h": "Fabric and trims",
+      "ul": [
+        "Fabric per shirt from the marker, including waste.",
+        "Ask the weaving or processing mill for a per-metre figure; dyeing and finishing energy is in it.",
+        "Fusible interlining, buttons, thread, labels and collar stays."
+      ]
+    },
+    {
+      "h": "Making",
+      "ul": [
+        "Sewing machines, fusing presses and steam irons with their boiler.",
+        "Garment washing or softening, where done.",
+        "Poly bags, cartons and tissue."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per shirt by style, since full and half sleeves differ in fabric. Give the fabric weight in GSM."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: shirt unit per piece (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Steam boiler PNG: 5,000 SCM x 2.05 = 10,250 kg CO2",
+      "Shirts passed: 80,000",
+      "Plant total: 38,650 / 80,000 = 0.483 kg CO2 per shirt",
+      "Add fabric, interlining and trims for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "T-shirt footprint cradle to gate",
+      "to": "/answers/t-shirt-carbon-footprint-cradle-to-gate"
+    },
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "are-aluminium-wire-and-cables-covered-by-cbam",
+  "q": "Are aluminium wire, conductors and cables covered by EU CBAM?",
+  "title": "Are aluminium wire and cables covered by CBAM?",
+  "short": "Partly. Aluminium wire under CN 7605 and stranded wire, cables and conductors that are not electrically insulated, under 7614, are in CBAM Annex I. This includes bare AAC and ACSR conductors. Insulated wire and cable under 8544 is not covered today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Conductor and cable makers exporting to the EU",
+  "sections": [
+    {
+      "h": "Covered",
+      "ul": [
+        "7605: aluminium wire, alloyed or not.",
+        "7614: stranded wire, cables and plaited bands of aluminium, not electrically insulated, with or without a steel core.",
+        "7604: aluminium bars and rods, including wire rod you may also sell."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "8544: insulated wire, cable and conductors, including aluminium XLPE power cable.",
+        "Copper wire and cable: copper is not a CBAM good."
+      ]
+    },
+    {
+      "h": "What the data needs",
+      "p": [
+        "For aluminium goods CBAM counts direct emissions. Most of a conductor's embedded emissions come from the aluminium rod, so ask your rod supplier for actual embedded emissions and add your own drawing and stranding energy."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel and electricity bills into a fingerprinted Scope 1 and 2 record, the plant-level input for your drawing and stranding stage. Its CBAM calculator estimates certificate cost from 2026 to 2034.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    },
+    {
+      "label": "CBAM for aluminium exporters",
+      "to": "/climate-intelligence/cbam-aluminium-exporter-india"
+    },
+    {
+      "label": "Is copper covered by CBAM?",
+      "to": "/answers/is-copper-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The December 2025 downstream extension proposal may add steel and aluminium-intensive goods; recheck Annex I and the adopted text.",
+  "reviewed": "2026-10-20"
+}

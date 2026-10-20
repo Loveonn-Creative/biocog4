@@ -1,0 +1,85 @@
+{
+  "slug": "led-bulb-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of an LED bulb?",
+  "title": "LED bulb carbon footprint per unit",
+  "short": "Weigh the bulb's parts: LED chips, driver board with its components, aluminium or plastic heat sink, diffuser, cap and packaging. Apply supplier or database factors to each, add your assembly and testing electricity per bulb, and keep use-phase electricity as a separate line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "LED lighting assemblers and brands in India",
+  "sections": [
+    {
+      "h": "Bill of materials",
+      "ul": [
+        "LED chips or packages: small in mass but energy-intensive to make; take a per-unit factor from the chip supplier where you can.",
+        "Driver board: the printed circuit board, capacitors, ICs and inductors. Electronics often dominate a bulb's cradle-to-gate figure.",
+        "Heat sink: aluminium is heavier in carbon per kg than the plastic used in cheaper bulbs.",
+        "Polycarbonate diffuser, B22 or E27 cap, and the carton and blister."
+      ]
+    },
+    {
+      "h": "Assembly energy",
+      "ul": [
+        "SMT line and reflow oven electricity for driver boards made in-house.",
+        "Ageing and burn-in testing, which can run bulbs for hours.",
+        "Generator diesel if used."
+      ]
+    },
+    {
+      "h": "Use phase",
+      "p": [
+        "A 9 W bulb used 4 hours a day draws about 13 kWh a year. Over its life this usually exceeds the manufacturing footprint. Report it as a separate use-phase line with the wattage, hours and grid factor stated, so buyers can see both."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Divide assembly energy by bulbs passed after testing. Report each wattage separately, since driver and heat sink size scale with wattage."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: LED assembly per bulb (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Generator diesel: 800 litres x 2.68 = 2,144 kg CO2",
+      "Bulbs passed: 500,000",
+      "Plant total: 30,544 / 500,000 = 0.061 kg CO2 per bulb",
+      "Add chips, driver components, heat sink and packaging for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PCB assembly footprint per board",
+      "to": "/answers/pcb-assembly-carbon-footprint-per-board"
+    },
+    {
+      "label": "Cradle to gate or cradle to grave",
+      "to": "/answers/cradle-to-gate-or-cradle-to-grave"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

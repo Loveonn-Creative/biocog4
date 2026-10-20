@@ -1,0 +1,66 @@
+{
+  "slug": "is-cement-covered-by-cbam",
+  "q": "Is cement or clinker covered by EU CBAM?",
+  "title": "Is cement covered by CBAM?",
+  "short": "Yes. Cement clinker (CN 2523 10 00), white and other Portland cement (2523 21 00 and 2523 29 00), aluminous cement (2523 30 00) and other hydraulic cements (2523 90 00) are in Annex I, as is calcined kaolinic clay (2507 00 80). Concrete products and precast goods are not.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Cement and clinker exporters, and grinding units selling to EU buyers",
+  "sections": [
+    {
+      "h": "Cement goods in Annex I",
+      "ul": [
+        "2507 00 80: other kaolinic clays, calcined.",
+        "2523 10 00: cement clinkers.",
+        "2523 21 00: white Portland cement.",
+        "2523 29 00: other Portland cement.",
+        "2523 30 00: aluminous cement.",
+        "2523 90 00: other hydraulic cements."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "Ready-mix concrete, precast blocks, pipes and sleepers under chapter 68.",
+        "Lime under 2522 and gypsum under 2520."
+      ]
+    },
+    {
+      "h": "What is counted",
+      "p": [
+        "For cement, CBAM counts direct emissions, including calcination CO2 from clinker, and indirect emissions from electricity. Clinker is the main driver, so a grinding unit's figure depends heavily on the clinker it buys and the clinker share in its cement."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel and electricity bills into a fingerprinted Scope 1 and 2 record, a starting point for a cement plant's direct and indirect emissions. Its CBAM calculator estimates certificate cost from 2026 to 2034.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost for cement",
+      "to": "/cbam-cost/cement"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Cement grinding unit CO2 per tonne",
+      "to": "/answers/cement-grinding-unit-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "Annex I cement codes as in the consolidated text; recheck if the regulation is amended.",
+  "reviewed": "2026-10-20"
+}

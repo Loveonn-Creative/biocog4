@@ -1,0 +1,78 @@
+{
+  "slug": "packaged-drinking-water-carbon-footprint-per-litre",
+  "q": "What is the carbon footprint of packaged drinking water per litre?",
+  "title": "Packaged water carbon footprint per litre",
+  "short": "For bottled water the bottle usually matters most. Add PET preforms, caps, labels and shrink wrap by weight, then RO, ozonation and filling electricity, and delivery. Divide by litres filled. A 20 litre returnable jar reused many times carries far less packaging per litre.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Packaged drinking water plants",
+  "sections": [
+    {
+      "h": "Packaging",
+      "ul": [
+        "PET preform per bottle: weigh it; lighter preforms cut the largest line.",
+        "HDPE caps, labels and LDPE shrink film.",
+        "20 litre polycarbonate or PET jars: divide their footprint by the number of trips each jar makes before it is retired."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Borewell pumps, RO membranes, UV and ozonation.",
+        "Blow moulding if you blow your own bottles.",
+        "Generator diesel."
+      ]
+    },
+    {
+      "h": "Delivery",
+      "p": [
+        "Water is heavy, so delivery emissions per litre are noticeable. Count truck diesel for your own fleet as Scope 1, and hired transport as Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: water plant per litre (one month)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Generator and delivery diesel: 2,500 litres x 2.68 = 6,700 kg CO2",
+      "Litres filled: 2,000,000",
+      "Plant total: 42,200 / 2,000,000 = 0.021 kg CO2 per litre",
+      "Add PET, caps, labels and film for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "PET preform and bottle footprint",
+      "to": "/answers/pet-preform-bottle-carbon-footprint"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

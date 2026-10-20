@@ -1,0 +1,66 @@
+{
+  "slug": "water-tanker-purchases-which-scope",
+  "q": "How do we count emissions from water tankers bought for our factory?",
+  "title": "Water tanker purchases: which scope",
+  "short": "Water bought from a tanker supplier is a purchased good in Scope 3 Category 1, and the supplier's truck diesel is inside it. If your own truck and pump fetch the water, that diesel is your Scope 1. Electricity for your own borewell pumps is Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories in water-stressed areas buying tanker water",
+  "sections": [
+    {
+      "h": "Who runs the truck decides",
+      "ul": [
+        "Supplier's tanker delivers: Category 1, purchased water. Estimate from kilolitres and a factor for delivered water, or from trips x distance x diesel per km if the supplier shares it.",
+        "Your own tanker: diesel on your fuel bills is Scope 1.",
+        "Your own borewell or RO plant: the pump and RO electricity is on your bill, Scope 2."
+      ]
+    },
+    {
+      "h": "Estimating from trips",
+      "p": [
+        "If you know the number of trips and the round-trip distance, multiply by the truck's diesel per km and 2.68 kg CO2 per litre of diesel. Label it as an estimate of the supplier's emissions."
+      ]
+    },
+    {
+      "h": "Water is a separate disclosure",
+      "p": [
+        "Report water withdrawn in kilolitres separately from carbon. BRSR and CDP Water ask for water volumes by source, including tanker water."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: supplier tanker estimate (one month)",
+    "lines": [
+      "Trips: 60, round trip 30 km, so 1,800 km",
+      "Truck diesel: 1,800 km / 4 km per litre = 450 litres",
+      "450 litres x 2.68 = 1,206 kg CO2 (Scope 3, Category 1)"
+    ],
+    "note": "Distance and mileage are illustrative; ask the supplier for theirs."
+  },
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Check water stress at a supplier location",
+      "to": "/answers/check-water-stress-at-supplier-location-india"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Mapping expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

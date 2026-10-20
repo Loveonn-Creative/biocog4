@@ -1,0 +1,55 @@
+{
+  "slug": "mobile-and-internet-bills-scope-3",
+  "q": "Do mobile phone and internet bills count in our carbon footprint?",
+  "title": "Mobile and internet bills in Scope 3",
+  "short": "Yes, as a purchased service in Scope 3 Category 1. Telecom invoices rarely show energy, so most companies use a spend-based estimate. Data centre and cloud services are separate lines. The phones and routers you buy are Category 2 if capitalised, or Category 1 if expensed.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance and IT teams",
+  "sections": [
+    {
+      "h": "What the bill covers",
+      "ul": [
+        "Mobile plans and leased lines: a service, Category 1, usually by spend.",
+        "Some operators publish emissions per subscriber or per terabyte; use that if your operator does and state it.",
+        "Cloud hosting and SaaS: separate Category 1 lines with their own methods."
+      ]
+    },
+    {
+      "h": "Devices",
+      "ul": [
+        "Phones, laptops and routers capitalised as assets: Category 2.",
+        "Low-value devices expensed: Category 1.",
+        "Leased devices: see the leased assets rules."
+      ]
+    },
+    {
+      "h": "Keep it simple",
+      "p": [
+        "Telecom is a small line for most companies. A spend-based estimate with the factor source and price year is enough; revisit only if your telecom spend is large."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and service invoices; it uses quantities where the invoice shows them and otherwise gives a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "SaaS subscriptions in Scope 3",
+      "to": "/answers/saas-subscriptions-scope-3-emissions"
+    },
+    {
+      "label": "Leased laptops and servers",
+      "to": "/answers/leased-laptops-and-servers-scope-3"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1 purchased goods and services",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

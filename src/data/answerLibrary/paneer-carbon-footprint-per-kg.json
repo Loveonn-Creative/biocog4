@@ -1,0 +1,82 @@
+{
+  "slug": "paneer-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of paneer per kg?",
+  "title": "Paneer carbon footprint per kg",
+  "short": "Multiply the milk used per kg of paneer, from your yield records, by a milk factor; milk is most of the total. Add boiler fuel for heating, electricity for pressing, chilling and storage, the coagulant and packaging. Divide by kilograms of paneer packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dairies and paneer makers",
+  "sections": [
+    {
+      "h": "Milk, the main input",
+      "ul": [
+        "Paneer takes several kilograms of milk per kilogram, depending on fat and solids; use your own yield.",
+        "Ask your milk supplier or dairy union for a per-litre farm figure, or use a database value and name it.",
+        "Whey is a co-product. If you sell it, allocate between paneer and whey by mass of solids or by value, and state the method."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Boiler or direct-fired heating to bring milk to coagulation temperature.",
+        "Electricity for presses, chillers and cold rooms.",
+        "Vacuum packing machines."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Divide by paneer packed. If you also make curd or ghee in the same plant, allocate energy by product using metered lines or batch times."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: dairy paneer line per kg (one month)",
+    "lines": [
+      "Boiler PNG: 6,000 SCM x 2.05 = 12,300 kg CO2",
+      "Electricity: 25,000 kWh x 0.710 = 17,750 kg CO2",
+      "Paneer packed (kg): 30,000",
+      "Plant total: 30,050 / 30,000 = 1.00 kg CO2 per kg",
+      "Add milk (your yield x milk factor), citric acid and packaging"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Dairy plant emissions per litre of milk",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

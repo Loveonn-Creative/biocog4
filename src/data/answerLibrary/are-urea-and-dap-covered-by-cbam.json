@@ -1,0 +1,72 @@
+{
+  "slug": "are-urea-and-dap-covered-by-cbam",
+  "q": "Are urea, DAP and other fertilisers covered by EU CBAM?",
+  "title": "Are urea and DAP covered by CBAM?",
+  "short": "Yes. Nitrogenous fertilisers under CN 3102, which includes urea, and mixed fertilisers under 3105, which includes DAP, are in Annex I of the EU CBAM Regulation, as are ammonia (2814) and nitric acid (2808). Potash under 3104 and single superphosphate under 3103 are not covered.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Fertiliser producers and traders exporting to the EU",
+  "sections": [
+    {
+      "h": "Fertiliser goods in Annex I",
+      "ul": [
+        "2808 00 00: nitric acid and sulphonitric acids.",
+        "2814: ammonia, anhydrous or in solution.",
+        "2834 21 00: potassium nitrate.",
+        "3102: mineral or chemical fertilisers, nitrogenous, such as urea, ammonium nitrate and ammonium sulphate.",
+        "3105: fertilisers with two or three of nitrogen, phosphorus and potassium, such as DAP and NPK, except 3105 60 00 (phosphorus and potassium only)."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "3103: phosphatic fertilisers such as single superphosphate.",
+        "3104: potassic fertilisers such as muriate of potash.",
+        "Organic manures under 3101."
+      ]
+    },
+    {
+      "h": "What is counted for fertilisers",
+      "p": [
+        "For fertilisers, CBAM counts both direct emissions and the indirect emissions from electricity used in production. Nitrous oxide from nitric acid production is included, so abatement there matters for the figure."
+      ]
+    },
+    {
+      "h": "Small importers",
+      "p": [
+        "Since the 2025 amendment, an importer bringing in no more than 50 tonnes a year of CBAM goods, other than hydrogen and electricity, is exempt. Large fertiliser consignments usually exceed that."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, gas and electricity bills into a fingerprinted Scope 1 and 2 record, a starting point for a CBAM installation's direct and indirect emissions. Its CBAM calculator estimates certificate cost from 2026 to 2034.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost for fertilisers",
+      "to": "/cbam-cost/fertilizers"
+    },
+    {
+      "label": "CBAM and fertiliser imports in Germany and Poland",
+      "to": "/climate-intelligence/cbam-fertiliser-imports-germany-poland"
+    },
+    {
+      "label": "The CBAM 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "Annex I fertiliser codes as in the consolidated text; recheck if the regulation is amended.",
+  "reviewed": "2026-10-20"
+}

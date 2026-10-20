@@ -1,0 +1,83 @@
+{
+  "slug": "steel-almirah-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a steel almirah or cupboard?",
+  "title": "Steel almirah carbon footprint per unit",
+  "short": "Weigh the cold rolled steel sheet in one almirah, including scrap from cutting, and apply your steel supplier's factor. Add pretreatment and powder coating, the oven fuel, welding and press electricity, locks, hinges and packaging. Divide by almirahs dispatched. Steel is usually most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Steel furniture and storage makers",
+  "sections": [
+    {
+      "h": "Steel, the main input",
+      "ul": [
+        "Count the sheet bought per almirah, not just the finished weight: blanking and notching scrap is part of what you bought.",
+        "Ask the steel mill or stockist for a per-tonne figure. Blast furnace and induction furnace routes differ, so a supplier figure beats a generic one.",
+        "Credit scrap sold only as the GHG Protocol allows; the usual approach is to cut it off at sale, not subtract it."
+      ]
+    },
+    {
+      "h": "Finishing and assembly",
+      "ul": [
+        "Pretreatment tanks and their heating.",
+        "Powder coating: powder used and the curing oven's LPG, PNG or electricity.",
+        "Spot and MIG welding, presses and brake bending electricity.",
+        "Locks, handles, hinges, shelves clips and the packing material."
+      ]
+    },
+    {
+      "h": "Per almirah",
+      "p": [
+        "Divide plant energy by almirahs made, or allocate by steel weight if you also make racks and lockers on the same line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: almirah plant per unit (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Powder oven LPG: 4,000 kg x 2.98 = 11,920 kg CO2",
+      "Almirahs made: 2,000",
+      "Plant total: 33,220 / 2,000 = 16.61 kg CO2 per almirah",
+      "Add sheet steel (often 40 to 70 kg per almirah), powder, fittings and packaging"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Powder coating line emissions",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

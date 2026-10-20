@@ -1,0 +1,82 @@
+{
+  "slug": "cattle-feed-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of cattle feed per tonne?",
+  "title": "Cattle feed carbon footprint per tonne",
+  "short": "Add the grains, de-oiled cakes, bran, molasses, minerals and urea in your formula from supplier or database factors, then grinding, mixing, steam conditioning and pelleting energy, and bags. Divide by tonnes dispatched. Ingredients are usually most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Compound cattle feed plants and dairy cooperatives",
+  "sections": [
+    {
+      "h": "Formula ingredients",
+      "ul": [
+        "Maize and other grains, rice bran, de-oiled rice bran and soybean or cottonseed cake.",
+        "Molasses, salt, mineral mixture and urea.",
+        "Co-products such as de-oiled cake carry an allocated share of the oil mill's footprint; ask the supplier how they allocate."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Hammer mills, mixers and pellet mills: electricity.",
+        "Boiler steam for conditioning: coal, biomass, PNG or furnace oil.",
+        "Bagging and loading."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne for each formula. Feed figures feed into the dairy's Scope 3 and into the milk footprint at farm level."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: feed plant per tonne (one month)",
+    "lines": [
+      "Electricity: 200,000 kWh x 0.710 = 142,000 kg CO2",
+      "Boiler coal: 300,000 kg x 2.42 = 726,000 kg CO2",
+      "Feed dispatched (t): 10,000",
+      "Plant total: 868,000 / 10,000 = 86.80 kg CO2 per tonne",
+      "Add grains, cakes, molasses, minerals and bags for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Soybean meal footprint per tonne",
+      "to": "/answers/soybean-meal-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Dairy member farm emissions",
+      "to": "/answers/dairy-member-farm-emissions-scope-3"
+    },
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
