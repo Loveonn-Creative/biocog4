@@ -2,7 +2,7 @@
   "slug": "senseible-fast-track-verification",
   "q": "What is Senseible's Fast-track Verification add-on, what does it cost and how fast are results?",
   "title": "Senseible Fast-track Verification",
-  "short": "Fast-track Verification is a paid Senseible add-on priced at ₹2,999 per report before GST, with results in 24 to 72 hours. You buy it on your profile, up to 20 reports in one purchase, and each order is due within 72 hours of payment.",
+  "short": "Fast-track Verification is a paid Senseible add-on priced at ₹2,999 per report before GST, with results in 24 to 72 hours. You buy it on your Subscription page, up to 20 reports in one purchase, and each order is due within 72 hours of payment.",
   "topic": "product",
   "intent": "check",
   "audience": "Paying Senseible users with a buyer or lender deadline",
@@ -19,17 +19,17 @@
     {
       "h": "How fast results come back",
       "p": [
-        "The stated turnaround is 24 to 72 hours. The clock starts when payment is confirmed, and each order carries a due time 72 hours after that. Your profile lists each order with its status (Booked, In progress, Delivered) and the due time until it is delivered.",
+        "The stated turnaround is 24 to 72 hours. The clock starts when payment is confirmed, and each order carries a due time 72 hours after that. Your Subscription page lists each order with its status (Booked, In progress, Delivered) and the due time until it is delivered.",
         "If your buyer or lender deadline is less than three days away, plan for the 72 hour end of the range, not the 24 hour end."
       ]
     },
     {
       "h": "How to buy it",
       "ol": [
-        "Sign in and open your profile.",
+        "Sign in and open your Subscription page.",
         "In Top up and services, choose UPI or card, netbanking or wallet.",
         "Set the number of reports under Fast-track Verification.",
-        "Pay. The order appears on your profile with its due time."
+        "Pay. The order appears on your Subscription page with its due time."
       ]
     },
     {
@@ -47,7 +47,7 @@
       "Three reports by UPI: ₹8,997 + 18% GST (₹1,619.46) = ₹10,616.46",
       "UPI saves ₹141.55 per report against card"
     ],
-    "note": "Prices as set in the live checkout on 18 October 2026. Check the price shown on your profile before you pay."
+    "note": "Prices as set in the live checkout on 18 October 2026. Check the price shown on your Subscription page before you pay."
   },
   "senseible": "This page describes Senseible's own add-on: its price, turnaround and how to buy it. The Verified status still means Senseible's rule checks passed, whichever way a report is verified.",
   "links": [

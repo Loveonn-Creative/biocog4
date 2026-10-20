@@ -2,7 +2,7 @@
   "slug": "senseible-monthly-invoice-limit-reached",
   "q": "I have used my Senseible invoice reads for this month. When does the limit reset and what are my options?",
   "title": "Senseible monthly invoice limit reached",
-  "short": "Your invoice reads reset at midnight India time on the 1st of each calendar month. Until then you have three options: buy invoice credits on your profile at ₹79 per 100 before GST, move to a larger plan, or wait for the new month. Credits are used only after your monthly allowance runs out.",
+  "short": "Your invoice reads reset at midnight India time on the 1st of each calendar month. Until then you have three options: buy invoice credits on your Subscription page at ₹79 per 100 before GST, move to a larger plan, or wait for the new month. Credits are used only after your monthly allowance runs out.",
   "topic": "product",
   "intent": "how-to",
   "audience": "Essential and Pro users who hit the limit mid-month",
@@ -13,14 +13,14 @@
         "Allowances run by calendar month in India time, not from the date you signed up. On the 1st at 00:00 IST the count starts again: 10 reads on Snapshot, 100 on Essential, 1,000 on Pro and 10,000 on Scale. Unused reads do not carry over to the next month."
       ],
       "ul": [
-        "When the limit is reached, Senseible shows: Page limit reached. Upgrade, wait until next month, or top up credits now on your profile."
+        "When the limit is reached, Senseible shows: Page limit reached. Upgrade, wait until next month, or top up credits now on your Subscription page."
       ]
     },
     {
       "h": "Option 1: buy invoice credits",
       "ul": [
         "₹79 per pack of 100 invoices, before GST; 1 to 50 packs in one purchase.",
-        "Bought in Top up and services on your profile; UPI adds only GST, card, netbanking or wallet adds a 4% fee before GST.",
+        "Bought in Top up and services on your Subscription page; UPI adds only GST, card, netbanking or wallet adds a 4% fee before GST.",
         "Credits are drawn only after the month's plan allowance is used, so buying early does not waste them.",
         "Validity: 12 months when bought on a yearly plan, but no later than 30 days after that plan ends; 30 days from payment on a monthly or free plan."
       ]
@@ -52,7 +52,7 @@
       "Cost by UPI: 3 x ₹79 = ₹237 + 18% GST (₹42.66) = ₹279.66",
       "The 70 unused credits stay available until they expire: 30 days from payment on a monthly plan"
     ],
-    "note": "Prices before GST as set in the live checkout on 18 October 2026; check the profile before you pay."
+    "note": "Prices before GST as set in the live checkout on 18 October 2026; check the Subscription page before you pay."
   },
   "senseible": "This page describes how Senseible's own monthly allowance and invoice credits work. The plan comparison and prices for each tier are on the pricing page.",
   "links": [
