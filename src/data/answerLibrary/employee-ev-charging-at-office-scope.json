@@ -1,0 +1,74 @@
+{
+  "slug": "employee-ev-charging-at-office-scope",
+  "q": "Employees charge their own EVs at our office. Whose emissions are they?",
+  "title": "Employee EV charging at the office",
+  "short": "Yours, in Scope 2. The electricity is bought on your meter and used at your site, so it stays in your Scope 2 like any other load. To avoid counting it twice, leave those kWh out when you calculate employee commuting in Scope 3 Category 7. Sub-meter the chargers if you want it shown separately.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Offices and factories with workplace EV chargers",
+  "sections": [
+    {
+      "h": "Why it stays in Scope 2",
+      "p": [
+        "The GHG Protocol Scope 2 Guidance covers electricity purchased and consumed at facilities you own or control. The car belongs to the employee, but the purchase and the meter are yours, and the units are already inside your discom bill. Removing them would need evidence the electricity left your boundary, which a workplace charger does not give."
+      ]
+    },
+    {
+      "h": "The overlap with commuting",
+      "ul": [
+        "Category 7 covers employees' travel to work in vehicles you do not own.",
+        "If you estimate EV commuting as km x kWh per km x grid factor, the office-charged share is already in Scope 2.",
+        "Subtract the charger's metered kWh from the commuting kWh, or calculate commuting energy from home and public charging only.",
+        "State the method so a reader can see each kWh appears once."
+      ]
+    },
+    {
+      "h": "If you charge employees for it",
+      "p": [
+        "Recovering the cost through a fee or salary deduction does not move the emissions. If you run chargers as a business selling electricity to the public, that is a different case: state how you treat the units and keep them as a separate line."
+      ]
+    },
+    {
+      "h": "Visitors and tenants",
+      "p": [
+        "Visitor and customer charging on your meter is treated the same way: in Scope 2. In a shared building where the landlord owns the charger and meter, the units sit with the landlord, unless the lease passes them through to you."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 20 EV commuters, chargers on a sub-meter",
+    "lines": [
+      "Charger sub-meter: 1,500 kWh a month x 12 = 18,000 kWh; 18,000 x 0.710 = 12,780 kg CO2 in Scope 2",
+      "EV commuting: 20 people x 40 km a day x 240 days = 192,000 km x 0.15 kWh per km (assumed) = 28,800 kWh",
+      "Charged elsewhere: 28,800 minus 18,000 = 10,800 kWh",
+      "Category 7: 10,800 x 0.710 = 7,668 kg CO2"
+    ],
+    "note": "0.15 kWh per km is an assumption for small EVs; use the charger app or car data where you have it."
+  },
+  "senseible": "Senseible reads electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2.",
+  "links": [
+    {
+      "label": "EV fleet charging: which scope",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 7, Employee commuting",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

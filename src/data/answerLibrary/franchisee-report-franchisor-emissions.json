@@ -1,0 +1,77 @@
+{
+  "slug": "franchisee-report-franchisor-emissions",
+  "q": "As a franchisee, what emissions do I report, and do I include the franchisor's?",
+  "title": "What a franchisee reports",
+  "short": "As a franchisee you report your own outlet's emissions as Scope 1 and Scope 2: electricity, DG set diesel, kitchen LPG or PNG and refrigerant top-ups. The franchisor's head office, factories and warehouses are not yours. The GHG Protocol lets you show them optionally, as upstream Scope 3 in Category 1, purchased goods and services.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Franchise owners of restaurants, salons, schools and retail outlets",
+  "sections": [
+    {
+      "h": "Why the outlet is yours",
+      "p": [
+        "The GHG Protocol sets boundaries by control. You run the outlet, pay its bills and decide how it operates, so under the operational control approach its fuel use is your Scope 1 and its purchased electricity your Scope 2. The franchise agreement and the brand name do not change that. If your chosen consolidation approach leaves an outlet you operate out of Scope 1 and 2, the Scope 3 guidance puts its emissions in your Category 14 instead. A franchisor reports the same outlet emissions in its own Category 14, which is not double counting: each party reports its own view."
+      ]
+    },
+    {
+      "h": "What goes in each scope for a typical outlet",
+      "ul": [
+        "Scope 1: diesel for the DG set, LPG cylinders or PNG for the kitchen, fuel in delivery vehicles you own, and refrigerant gas topped up in ACs and cold rooms, in CO2e.",
+        "Scope 2: grid electricity from your discom bill, or from the mall's sub-meter invoice if you lease space.",
+        "Scope 3, if you report it: ingredients, packaging and supplies, including those bought from the franchisor or its approved vendors, delivery by third parties, and waste."
+      ]
+    },
+    {
+      "h": "Where the franchisor fits",
+      "p": [
+        "The franchisor's own operations, its offices, central kitchens, factories and distribution centres, sit outside your Scope 1 and 2. The GHG Protocol's Scope 3 guidance for Category 14 says a franchisee may optionally report them as upstream emissions in Category 1, purchased goods and services. Royalty and fee payments buy a service, so any estimate for them is spend-based and sits in the same category. Most small franchisees leave this out and say so."
+      ]
+    },
+    {
+      "h": "What the franchisor will probably ask you for",
+      "p": [
+        "For its Category 14, a franchisor needs your activity figures by month: kWh from electricity bills, litres of diesel, kg of LPG and kg of refrigerant. Sending quantities, not rupee amounts, is enough, and the same numbers make up your own Scope 1 and 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one restaurant outlet for a year",
+    "lines": [
+      "Electricity: 36,000 kWh x 0.710 kg CO2 per kWh = 25,560 kg CO2 (Scope 2)",
+      "DG set diesel: 600 L x 2.68 kg CO2 per L = 1,608 kg CO2 (Scope 1)",
+      "LPG: 40 commercial cylinders x 19 kg = 760 kg x 2.98 = 2,264.8 kg CO2 (Scope 1)",
+      "Total: 25,560 + 1,608 + 2,264.8 = 29,432.8 kg CO2, about 29.4 tonnes"
+    ],
+    "note": "Fuel factors are IPCC 2006 defaults and cover combustion CO2 only; the grid factor is from the CEA CO2 Baseline Database, version 21.0. Refrigerant top-ups would be added in CO2e with a named GWP set."
+  },
+  "senseible": "Senseible reads your outlet's electricity bills (billing period, tariff category, sanctioned load, units) and applies 0.710 kg CO2 per kWh for Scope 2, and reads diesel and LPG invoices with quantities using IPCC 2006 defaults, such as 2.68 kg CO2 per litre of diesel, for Scope 1. Each bill is fingerprinted, so the same figures can go to your franchisor without being counted twice.",
+  "links": [
+    {
+      "label": "Franchisor data collection for Category 14",
+      "to": "/answers/franchisor-scope-3-category-14-data-collection"
+    },
+    {
+      "label": "Store electricity data from a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "Can I report only Scope 1 and 2?",
+      "to": "/answers/can-i-report-only-scope-1-and-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 14 Franchises",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Category 14 Franchises",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Revised Edition (2004), Chapter 3 Setting organisational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "iso-20121-vs-event-carbon-footprint",
+  "q": "Is ISO 20121 the same as measuring an event's carbon footprint?",
+  "title": "ISO 20121 vs an event carbon footprint",
+  "short": "No. ISO 20121 is a management system standard: it checks that an organisation plans, runs and improves events with environmental, social and economic issues in mind. It does not require a carbon footprint or set a method for one. A footprint is a calculation of tonnes, done with the GHG Protocol or ISO 14064-1.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Event organisers and corporate event buyers",
+  "sections": [
+    {
+      "h": "What ISO 20121 covers",
+      "p": [
+        "ISO 20121, Event sustainability management systems, follows the plan, do, check, act pattern used in ISO 14001. An organiser, venue or supplier identifies its significant sustainability issues, sets objectives, controls suppliers, involves stakeholders and reviews results. Issues can include energy, waste, transport, accessibility, local spending and safety. It can be certified by a certification body or self-declared."
+      ]
+    },
+    {
+      "h": "What a carbon footprint covers",
+      "p": [
+        "A footprint counts greenhouse gas emissions in a defined boundary: venue energy, travel, accommodation, catering, materials, freight and waste, in tonnes of CO2e. The GHG Protocol and ISO 14064-1 set how to define the boundary, pick factors and report. It says nothing about how the event was managed."
+      ]
+    },
+    {
+      "h": "Side by side",
+      "ul": [
+        "Output: ISO 20121 gives a management system and possibly a certificate; a footprint gives a number in tonnes.",
+        "Scope: ISO 20121 covers environmental, social and economic issues; a footprint covers greenhouse gases only.",
+        "Applies to: ISO 20121 applies to the organisation running events; a footprint applies to one event or one year.",
+        "Claims: neither on its own supports a carbon neutral claim, which needs ISO 14068-1 or a similar standard."
+      ]
+    },
+    {
+      "h": "Using them together",
+      "p": [
+        "If carbon is a significant issue in your ISO 20121 system, a yearly footprint per event becomes your measure of progress. That is the usual link: the standard tells you to set and track objectives, and the footprint is how you track the carbon one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the invoices and bills behind an event footprint, such as venue electricity, fuel, freight and travel, applies CEA and IPCC 2006 factors where they fit, and keeps each file as evidence.",
+  "links": [
+    {
+      "label": "Hotel event footprint per guest",
+      "to": "/answers/hotel-event-carbon-footprint-per-guest"
+    },
+    {
+      "label": "Attendee travel in Scope 3",
+      "to": "/answers/event-attendee-travel-which-scope"
+    },
+    {
+      "label": "ISO 14064 vs GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 20121, Event sustainability management systems: requirements with guidance for use (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-1:2018, organisation-level GHG quantification and reporting (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Edition year not quoted because iso.org could not be read on review; confirm the current ISO 20121 edition on iso.org before citing a year.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "data-centre-wue-water-usage-effectiveness",
+  "q": "How do I calculate WUE for a data centre or server room?",
+  "title": "How to calculate data centre WUE",
+  "short": "Divide the site's annual water use in litres by the IT equipment's annual energy in kWh. WUE = litres of water / IT kWh, reported in litres per kWh. Take water from the meters on cooling towers, evaporative coolers and humidifiers, and IT energy from the UPS output meter, over the same 12 months.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Data centre and IT park facility teams",
+  "sections": [
+    {
+      "h": "What goes in the water figure",
+      "ul": [
+        "Make-up water to cooling towers, including what is lost to evaporation and blowdown.",
+        "Water for evaporative or adiabatic coolers and humidifiers.",
+        "Water treated on site for these uses, counted at the point it enters the system.",
+        "Leave out kitchens and washrooms if they are metered separately, and say so. If they share a meter, state that the figure includes them."
+      ]
+    },
+    {
+      "h": "What goes in the energy figure",
+      "p": [
+        "The denominator is IT equipment energy, the same figure used for PUE: servers, storage and network gear, measured at the UPS output, the PDU output or the equipment itself. State where you measured it. Do not divide by total facility energy; that gives a different and smaller number."
+      ]
+    },
+    {
+      "h": "Site WUE and the water behind your electricity",
+      "p": [
+        "Site WUE counts only water used at your premises. An air-cooled server room with no evaporative cooling can show close to zero. The Green Grid also describes a source-based figure that adds the water used to generate your grid electricity. If you publish that one, name the water factor you used and keep it apart from site WUE."
+      ]
+    },
+    {
+      "h": "Reading the result",
+      "ul": [
+        "Compare against your own past years, not a published average from another climate.",
+        "Raising chilled water or supply air temperature can cut both energy and water; switching from evaporative to air-cooled chillers cuts water and often raises PUE. Track WUE and PUE together.",
+        "Report the measurement point, the 12 month period and what the water figure includes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one year for a server room with a cooling tower",
+    "lines": [
+      "Cooling tower make-up meter: 540 kL = 540,000 litres",
+      "Humidifier meter: 0 litres (none installed)",
+      "IT energy at UPS output: 300,000 kWh",
+      "WUE = 540,000 / 300,000 = 1.8 litres per kWh"
+    ],
+    "note": "Figures are illustrative, not a benchmark."
+  },
+  "senseible": "Senseible reads the site's electricity bills and applies 0.710 kg CO2 per kWh for the emissions side; the water and UPS meter readings for WUE come from your facility logs.",
+  "links": [
+    {
+      "label": "PUE formula and what a good PUE is",
+      "to": "/answers/pue-formula-and-good-pue"
+    },
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO/IEC 30134-9, Data centres key performance indicators, Part 9: Water usage effectiveness (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Check the current edition of ISO/IEC 30134-9 before citing it in a report."
+}

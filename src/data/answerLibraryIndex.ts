@@ -91,6 +91,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "ai-api-and-gpu-usage-emissions",
+  "q": "How do I estimate the emissions of our AI model training and LLM API usage?",
+  "title": "Emissions of AI training and LLM APIs",
+  "short": "For GPU training, multiply GPU-hours by each board's power draw, then by the data centre's PUE, then by the grid factor of the region. For third-party LLM APIs, most providers publish no per-token factor, so use the provider's figure if one exists, otherwise a spend-based estimate labelled as such.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "air-compressor-heat-recovery-savings",
   "q": "How much fuel can I save by recovering heat from an air compressor, and how do I calculate the CO2?",
   "title": "Compressor heat recovery: fuel and CO2",
@@ -136,6 +144,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Allocate my footprint to one customer",
   "short": "Take your Scope 1 and 2 for the same period and multiply by the customer's share of your output, measured in tonnes, pieces or metres. Use machine hours when products take very different energy per unit, and revenue only when nothing physical works. If you can meter their product's line, allocate from that line.",
   "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "allocate-saas-emissions-to-customers",
+  "q": "A customer asked for the emissions of our SaaS allocated to their account. How do we calculate it?",
+  "title": "Allocating SaaS emissions to one customer",
+  "short": "Take the emissions of the service you deliver, mainly hosting, and share them across customers with a usage key such as compute hours, storage or seats. Add a share of your other company emissions only if you say so. Send the figure with the key, the period and the factors used.",
+  "topic": "product",
   "reviewed": "2026-10-18"
  },
  {
@@ -481,6 +497,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the quantity, tariff heading and country of origin from each bill of entry and multiply the quantity by an emission factor for that material and route. Use the assessable value only for a spend-based estimate, after removing duty and IGST. Ocean freight from the supplier to you goes in Category 4.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "bill-of-lading-as-freight-emissions-evidence",
+  "q": "Can I use a bill of lading as evidence for sea freight emissions?",
+  "title": "Bill of lading as sea freight evidence",
+  "short": "Yes, for part of the calculation. A bill of lading proves the ports, vessel, shipment date, containers and declared gross weight of the cargo. It does not give the sea distance, the route sailed or any fuel data, so add a port-to-port distance from a named source and keep the bill as your weight evidence.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "biochar-carbon-credits-india",
@@ -1075,6 +1099,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "cancelled-e-invoice-carbon-record",
+  "q": "What happens to emissions recorded from an e-invoice that was later cancelled?",
+  "title": "Cancelled e-invoice in carbon records",
+  "short": "Take them out. A cancelled e-invoice means the sale did not happen on that document, so its quantity is not your activity. If the supplier issued a replacement invoice, count only the replacement. Keep the cancelled file on record, marked as cancelled, so the trail shows why the figure changed.",
+  "topic": "product",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "carbon-audit-vs-energy-audit-vs-esg-audit",
   "q": "Carbon audit vs energy audit vs ESG audit: which one does my company need?",
   "title": "Carbon, energy or ESG audit: which?",
@@ -1153,6 +1185,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Change one input at a time, such as a factor, a quantity or an allocation choice, by a set amount like 10%, recalculate the total and record how much it moves. Inputs that move the total most are the ones to measure better and to explain in your report.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "carbon-neutral-event-claim-india",
+  "q": "Can we call our conference or event carbon neutral in India?",
+  "title": "Carbon neutral event claims in India",
+  "short": "Yes, if you can back it up. Measure the event's full footprint including attendee travel, cut what you can, offset the rest with retired credits of known quality, and publish the boundary, total, reductions and credit details. India's 2024 CCPA guidelines require environmental claims to be specific, evidenced and verifiable.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "carbon-pricing-mechanisms-in-india",
@@ -1555,6 +1595,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "check-if-supplier-has-sbti-target",
+  "q": "How do I check whether a company really has an SBTi-validated target?",
+  "title": "Check if a company has an SBTi target",
+  "short": "Search the company on the SBTi Target Dashboard at sciencebasedtargets.org. A validated target is listed with its wording, scopes and date. A commitment only means the company has promised to set one. Check the exact legal entity, because a parent's target may not cover the supplier you buy from.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "check-plot-deforestation-free-since-2020",
   "q": "How can I check from satellite data that a farm plot was not deforested after 2020?",
   "title": "Check a plot is deforestation-free since 2020",
@@ -1819,6 +1867,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "composition-dealer-bill-of-supply-carbon-evidence",
+  "q": "My supplier is a GST composition dealer and gives a bill of supply. Can I use it as carbon evidence?",
+  "title": "Bill of supply as carbon evidence",
+  "short": "Yes, if it shows what was supplied and how much. A bill of supply is a valid GST document from a composition dealer, but quantity is often missing from it. If it gives only an amount, get the delivery challan or weighbridge slip for the quantity, or use a spend-based estimate labelled as such.",
+  "topic": "product",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "compressed-air-leak-cost-and-emissions",
   "q": "How much do compressed air leaks cost in electricity and CO2?",
   "title": "Compressed air leaks: cost and CO2",
@@ -2035,6 +2091,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "data-centre-cue-carbon-usage-effectiveness",
+  "q": "What is CUE and how is it different from reporting data centre Scope 2?",
+  "title": "Data centre CUE vs Scope 2",
+  "short": "CUE, carbon usage effectiveness, is the CO2 from all energy a data centre uses divided by its IT equipment energy, in kg CO2 per IT kWh. Scope 2 is an absolute total of purchased electricity emissions only. CUE is a ratio, includes diesel generators, and is for tracking efficiency, not for your inventory.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "data-centre-wue-water-usage-effectiveness",
+  "q": "How do I calculate WUE for a data centre or server room?",
+  "title": "How to calculate data centre WUE",
+  "short": "Divide the site's annual water use in litres by the IT equipment's annual energy in kWh. WUE = litres of water / IT kWh, reported in litres per kWh. Take water from the meters on cooling towers, evaporative coolers and humidifiers, and IT energy from the UPS output meter, over the same 12 months.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "data-quality-rating-dqr-explained",
   "q": "What does the data quality rating (DQR) on a PEF or EPD mean?",
   "title": "Data quality rating (DQR) explained",
@@ -2080,6 +2152,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Dehydrated onion footprint per kg",
   "short": "There is no single published figure; you calculate it from your own unit. Per kg of flakes, add dryer fuel and electricity, the fresh onion or garlic it took (often several kg), and packaging. Dryer fuel usually dominates the factory share, so a coal-fired unit and a biomass unit give very different results.",
   "topic": "product",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "delhi-business-green-power-options",
+  "q": "Can a Delhi business buy green power from its discom?",
+  "title": "Green power options for Delhi businesses",
+  "short": "Only if DERC has set a green tariff for your category. The national Green Energy Open Access Rules, 2022 let any consumer ask its discom for renewable power at a green tariff fixed by the state commission. Ask BSES Rajdhani, BSES Yamuna, Tata Power-DDL or NDMC whether one is in force for you, and get the terms in writing.",
+  "topic": "markets",
   "reviewed": "2026-10-18"
  },
  {
@@ -2129,6 +2209,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "diagnostic-lab-carbon-footprint-per-test",
+  "q": "How does a diagnostic lab calculate its carbon footprint per test?",
+  "title": "Diagnostic lab carbon footprint per test",
+  "short": "Add a year of Scope 1 (DG diesel, refrigerant leaks, any fuel) and Scope 2 (grid electricity), then divide by the number of tests reported from your LIS. Report a second figure that adds the Scope 3 you measured, mainly reagents, sample logistics and biomedical waste, so readers can see both.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "diesel-forklift-vs-electric-forklift-emissions",
@@ -2288,6 +2376,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Does a green loan need external review?",
   "short": "Usually not. The Green Loan Principles recommend an external review, such as a second-party opinion, but do not require one, and most bilateral MSME green loans rely on the bank's own checks. Your bank may still ask for an energy audit, a vendor certificate or verified impact figures.",
   "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "does-a-green-rated-building-cut-scope-2",
+  "q": "Does moving into an IGBC, GRIHA or LEED rated building lower our Scope 2 emissions?",
+  "title": "Does a green building cut Scope 2?",
+  "short": "Only if you end up buying fewer kWh. Scope 2 is the electricity you use times its emission factor, and a rating plaque is not part of that sum. A well-designed rated building often uses less power, so your bills and Scope 2 fall, but the reduction shows up in metered units, not in the certificate.",
+  "topic": "accounting",
   "reviewed": "2026-10-18"
  },
  {
@@ -2787,6 +2883,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "employee-ev-charging-at-office-scope",
+  "q": "Employees charge their own EVs at our office. Whose emissions are they?",
+  "title": "Employee EV charging at the office",
+  "short": "Yours, in Scope 2. The electricity is bought on your meter and used at your site, so it stays in your Scope 2 like any other load. To avoid counting it twice, leave those kWh out when you calculate employee commuting in Scope 3 Category 7. Sub-meter the chargers if you want it shown separately.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "empty-container-repositioning-emissions",
+  "q": "Should I add empty container return trips to my freight emissions?",
+  "title": "Empty container trips in freight emissions",
+  "short": "Only if you paid for the empty move and your factor does not already cover it. Per tonne-km intensities built under ISO 14083 and the GLEC Framework average a vehicle's empty running into the figure, so adding it again double counts. An empty box trucked to your factory on your hire is best counted through the job's fuel.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "energize-pharma-supplier-renewable-electricity",
   "q": "My pharma customer invited us to the Energize programme. What is it and what do I commit to?",
   "title": "Energize programme for pharma suppliers",
@@ -2863,6 +2975,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "My DG set has no fuel log. How do I estimate diesel use from run hours?",
   "title": "Estimate DG diesel from run hours",
   "short": "Multiply run hours by the set's kVA rating, a 0.8 power factor and the average load share to get kWh, then divide by 3.0 to 3.5 kWh per litre. Label the result an estimate and check it against the diesel you bought in the same period.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "estimate-emissions-for-stores-without-bills",
+  "q": "Some of our stores have no electricity bills. How do we estimate their emissions?",
+  "title": "Estimating stores with no electricity bills",
+  "short": "Work out kWh per square foot from stores of the same format and climate that do have bills, multiply by the floor area of each store without bills, then apply the grid factor. Label those stores as estimated, report what share of the total they make up, and replace estimates with bills as they arrive.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -3123,6 +3243,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "event-attendee-travel-which-scope",
+  "q": "As an event organiser, do attendee travel emissions go in our Scope 3?",
+  "title": "Attendee travel: in the organiser's Scope 3?",
+  "short": "It is optional. The GHG Protocol's Category 6 covers your own employees' travel, and attendees are not your employees, so their travel is outside the minimum boundary. You can still include it, reported separately with the method stated. If you make any claim about the event's footprint, include it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "excavator-diesel-consumption-per-hour",
   "q": "How do I estimate diesel use and CO2 for an excavator or JCB from its hour meter?",
   "title": "Excavator diesel and CO2 from hour meter",
@@ -3209,6 +3337,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add up the nitrogen in every fertiliser applied to the field, multiply by the IPCC default of 0.01 kg N2O-N per kg N, then convert with 44/28 and a GWP of 273. Add indirect N2O from volatilisation and leaching, and 0.733 t CO2 for each tonne of urea.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "fertiliser-sellers-category-11-farm-n2o",
+  "q": "If we sell fertiliser, do farm N2O emissions go in our Scope 3 Category 11?",
+  "title": "Fertiliser sellers and Category 11 N2O",
+  "short": "Yes. Nitrogen fertiliser forms nitrous oxide in the soil when it is used, so a maker or distributor reports those emissions in Scope 3 Category 11, use of sold products, for the tonnes sold in the year. Urea sellers also report the CO2 from the carbon in urea.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "fire-extinguisher-refill-scope-1",
@@ -3331,11 +3467,43 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "fpo-carbon-credit-developer-contract-checklist",
+  "q": "What should an FPO check before signing a carbon credit contract with a project developer?",
+  "title": "FPO checklist for a carbon credit contract",
+  "short": "Check who owns the credits and the farm data, how the farmer share is calculated and when it is paid, what costs come off first, how long members are bound, what happens if a farmer stops the practice, and how you can exit. Get every figure written into the contract.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "fpo-crop-carbon-footprint-for-buyer",
+  "q": "How does an FPO calculate a per-kg carbon footprint for a corporate buyer?",
+  "title": "FPO per-kg crop footprint for a buyer",
+  "short": "Survey a sample of member farms for fertiliser, diesel, irrigation power and residue practice per hectare, convert each to emissions with IPCC methods and the grid factor, add the FPO's own processing energy, then divide by the yield. Send the buyer kg CO2e per kg with the sample size and season.",
+  "topic": "product",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "france-textile-environmental-cost-label-supplier-data",
   "q": "What data will a French brand ask me for its textile environmental cost label?",
   "title": "French textile eco-cost label: supplier data",
   "short": "Mainly where each step was done and what the product is made of: product mass, fibre composition, the countries of weaving or knitting, dyeing and finishing, and making up, the spinning country if known, and how much went by air. The brand enters these into the French government's Ecobalyse tool to get a score in points.",
   "topic": "product",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "franchise-outlets-in-brsr-scope-1-and-2",
+  "q": "Do franchise-owned outlets count in a listed company's BRSR Scope 1 and 2?",
+  "title": "Franchise outlets in BRSR Scope 1 and 2",
+  "short": "Usually not. Outlets owned and run by franchisees are separate businesses outside the listed company's control and its financial statements, so their energy is not in its BRSR Scope 1 and 2. They belong in Scope 3 Category 14, which BRSR treats as a voluntary leadership indicator. Outlets the company runs itself do count.",
+  "topic": "regulation",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "franchisee-report-franchisor-emissions",
+  "q": "As a franchisee, what emissions do I report, and do I include the franchisor's?",
+  "title": "What a franchisee reports",
+  "short": "As a franchisee you report your own outlet's emissions as Scope 1 and Scope 2: electricity, DG set diesel, kitchen LPG or PNG and refrigerant top-ups. The franchisor's head office, factories and warehouses are not yours. The GHG Protocol lets you show them optionally, as upstream Scope 3 in Category 1, purchased goods and services.",
+  "topic": "accounting",
   "reviewed": "2026-10-18"
  },
  {
@@ -3447,6 +3615,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "My electricity bill shows a fuel and power purchase adjustment surcharge. Does that change my emissions?",
   "title": "Does a fuel surcharge on my bill raise CO2?",
   "short": "No. The fuel and power purchase adjustment surcharge (called FPPCA, FPPAS or FAC depending on the state) changes what you pay per unit, not the units you used. Scope 2 is kWh x 0.710 kg CO2 per kWh, so your emissions stay the same. It matters only if you work kWh back from rupees.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "fueleu-maritime-surcharge-on-freight-invoice",
+  "q": "What is the FuelEU Maritime surcharge on my sea freight invoice?",
+  "title": "FuelEU Maritime surcharge explained",
+  "short": "It is the carrier passing on its cost of meeting FuelEU Maritime, an EU rule since 1 January 2025 that caps the greenhouse gas intensity of energy used by large ships calling at EU ports. Carriers recover cleaner fuel costs or penalties through it. It is a freight cost, separate from the EU ETS surcharge.",
+  "topic": "regulation",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "fume-hood-energy-use-lab-emissions",
+  "q": "How do I estimate the energy and emissions of a laboratory fume hood?",
+  "title": "Fume hood energy and emissions",
+  "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2 per kWh. In a hot, humid climate, cooling the make-up air is usually the biggest part.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -4203,6 +4387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "how-to-apply-green-energy-open-access-registry",
+  "q": "How do I apply for green energy open access on the national portal?",
+  "title": "Applying on the green open access portal",
+  "short": "Register as a consumer on the Green Energy Open Access Registry, the national single-window portal run by Grid Controller of India, then file an application naming your connection, the generator and the quantity of power. Your state's nodal agency checks it, and your state commission's rules still set the charges.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "how-to-benchmark-plant-energy-against-sector",
   "q": "How do I benchmark my plant's energy use against others in my sector in India?",
   "title": "Benchmark plant energy against your sector",
@@ -4731,6 +4923,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "indian-recs-for-sbti-scope-2-target",
+  "q": "Can Indian RECs or a green tariff count toward an SBTi Scope 2 target?",
+  "title": "Indian RECs and green tariffs for SBTi",
+  "short": "Yes, if your target uses market-based Scope 2 and the certificate or tariff meets the GHG Protocol Scope 2 Quality Criteria. The SBTi accepts market-based accounting, so a REC retired in your name or a discom green tariff with clear attribute claims can lower your Scope 2. Report location-based alongside.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "indian-sandstone-paving-carbon-footprint-per-square-metre",
   "q": "What is the carbon footprint of Indian sandstone paving per square metre for UK buyers?",
   "title": "Sandstone paving footprint per m2",
@@ -4995,10 +5195,34 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "iso-14064-1-biogenic-co2-reporting",
+  "q": "How does ISO 14064-1 want biogenic CO2 and removals reported?",
+  "title": "Biogenic CO2 and removals in ISO 14064-1",
+  "short": "ISO 14064-1 asks you to quantify biogenic CO2 emissions and removals and show them separately from your other emissions, in tonnes CO2e. Methane and nitrous oxide from burning biomass stay in your direct emissions. Removals, such as tree growth on your land, go on their own line and are not netted off the total.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "iso-14064-1-significance-criteria-indirect-emissions",
   "q": "How do I set significance criteria for indirect emissions under ISO 14064-1?",
   "title": "Significance criteria under ISO 14064-1",
   "short": "ISO 14064-1:2018 lets you set your own criteria, but you must define them in advance, document them and apply them to every indirect category. Common criteria are magnitude, your influence over the source, risk or opportunity, sector guidance and outsourcing. Screen each source, include the significant ones and justify each exclusion.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "iso-14064-1-verified-inventory-worth-it-msme",
+  "q": "Should a small MSME get an ISO 14064-1 verified inventory, or is a GHG Protocol report enough?",
+  "title": "Verified ISO 14064-1 or GHG Protocol report?",
+  "short": "A GHG Protocol report is enough for most small MSMEs until someone asks for more. Get an ISO 14064-1 inventory verified to ISO 14064-3 when a buyer, lender or programme asks for verification in writing, or when the number will back a public claim or a loan term.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "iso-14064-1-vs-iso-14064-2",
+  "q": "What is the difference between ISO 14064-1 and ISO 14064-2?",
+  "title": "ISO 14064-1 vs ISO 14064-2",
+  "short": "ISO 14064-1 is for a company's annual GHG inventory: all emissions and removals inside its boundary. ISO 14064-2 is for a single project: the reductions or removals it achieves against a baseline scenario. Use part 1 to report your footprint and part 2 to claim what one project saved.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -5017,6 +5241,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "ISO 14068-1:2023 requires a defined subject and boundary, a quantified carbon footprint, a carbon neutrality management plan with reduction targets, cutting emissions before offsetting, offsetting only the residual with quality credits that are retired, and a claim that states the subject, period and how it was checked.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "iso-14083-transport-emissions-standard",
+  "q": "What is ISO 14083 and do I need it for my freight emissions?",
+  "title": "What is ISO 14083 and do I need it?",
+  "short": "ISO 14083 is the international standard, published in 2023, for calculating and reporting greenhouse gas emissions from transport chains, across every mode and the hubs between legs. No Indian law requires it, but buyers and forwarders cite it. You need it only in the sense of calculating your freight the way it describes.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "iso-20121-vs-event-carbon-footprint",
+  "q": "Is ISO 20121 the same as measuring an event's carbon footprint?",
+  "title": "ISO 20121 vs an event carbon footprint",
+  "short": "No. ISO 20121 is a management system standard: it checks that an organisation plans, runs and improves events with environmental, social and economic issues in mind. It does not require a carbon footprint or set a method for one. A footprint is a calculation of tonnes, done with the GHG Protocol or ISO 14064-1.",
+  "topic": "regulation",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "iso-50001-vs-iso-14001-which-first",
@@ -5195,6 +5435,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "lease-roof-to-solar-developer-scope-2-claim",
+  "q": "If we lease our roof to a solar developer who sells the power elsewhere, can we claim it in Scope 2?",
+  "title": "Roof leased for solar: can we claim it?",
+  "short": "No. If the developer sells the power to the grid or another buyer, you neither use that electricity nor own its renewable attributes, so your Scope 2 stays exactly what your bills say. The buyer of the power or its certificates makes the claim. What you earn is lease rent.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "leased-electric-vehicles-which-scope",
+  "q": "We lease electric cars and vans from a fleet provider. Are their emissions Scope 1, 2 or 3?",
+  "title": "Leased EVs: which scope?",
+  "short": "Never Scope 1, since EVs burn no fuel. Under operational control, the charging electricity of leased EVs you drive is Scope 2. Under financial control or equity share, an operating lease puts it in Scope 3 Category 8 and a finance lease in Scope 2. A vehicle with a provider's driver is a transport service instead.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "leased-factory-emissions-which-scope",
   "q": "If I rent my factory or office, are its electricity and diesel emissions my Scope 1 and 2 or Scope 3?",
   "title": "Rented factory: Scope 1 and 2 or Scope 3?",
@@ -5363,6 +5619,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "maharashtra-green-energy-open-access",
+  "q": "How does green energy open access work in Maharashtra, and how is it different from MSEDCL's green tariff?",
+  "title": "Maharashtra open access or green tariff",
+  "short": "Under green energy open access you contract with a generator and pay its tariff plus MERC's wheeling, surcharge and banking charges. Under MSEDCL's green tariff you stay with the discom and pay a premium per kWh on your normal tariff. Open access can cost less per unit; the green tariff needs no PPA.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "maharashtra-meda-energy-conservation-subsidy",
   "q": "What energy audit and efficiency subsidy does MEDA give Maharashtra industries, and how do I apply?",
   "title": "MEDA energy conservation support",
@@ -5467,6 +5731,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "methyl-bromide-fumigation-scope-1",
+  "q": "Does methyl bromide fumigation of export consignments count in Scope 1?",
+  "title": "Methyl bromide fumigation and Scope 1",
+  "short": "No. Methyl bromide is an ozone depleting substance under the Montreal Protocol, and the GHG Protocol's scopes cover only the seven Kyoto gases. So it stays out of your Scope 1 total. If a buyer wants it disclosed, give the kilograms used in the year as a separate memo line beside your inventory.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "microsoft-supplier-carbon-free-electricity-requirement",
   "q": "What does Microsoft's supplier requirement for carbon-free electricity mean for an Indian IT or hardware supplier?",
   "title": "Microsoft's carbon-free electricity rule",
@@ -5505,6 +5777,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Under PCAF, a motor vehicle loan's financed emissions are the vehicle's annual emissions times an attribution factor: the outstanding loan amount divided by the vehicle's total value at origination. Vehicle emissions come from fuel used, or from distance and fuel economy, multiplied by a fuel factor. Most NBFC books start with estimated data.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "mri-ct-scanner-energy-per-scan",
+  "q": "How much energy does an MRI or CT scan use, and how should an imaging centre count it?",
+  "title": "MRI and CT scanner energy per scan",
+  "short": "Sub-meter each scanner with its cooling, take a month of kWh and divide by the scans in your RIS for the same month. An MRI draws power all day and night because its magnet cooling never stops, so much of its energy is used when no patient is on the table. That idle use belongs in the per scan figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "msedcl-green-power-tariff-how-to-apply",
@@ -5647,6 +5927,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How much electricity and CO2 does replacing old office ACs with 5-star inverter ACs save?",
   "title": "CO2 saved by replacing old office ACs",
   "short": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2 per kWh. The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "office-carbon-footprint-per-square-foot",
+  "q": "How do I calculate my office's carbon footprint per square foot, including diesel backup?",
+  "title": "Office carbon footprint per square foot",
+  "short": "Add a year of grid electricity (kWh x 0.710 kg CO2) and DG diesel (litres x 2.68 kg CO2), plus any refrigerant top-ups, then divide by the office area. Say whether you used carpet or built-up area: they differ, and the choice changes the answer.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "office-fit-out-embodied-carbon",
+  "q": "How do I estimate the carbon footprint of an office fit-out or renovation?",
+  "title": "Office fit-out embodied carbon",
+  "short": "Take the fit-out bill of quantities, multiply each item (carpet, partitions, ceilings, furniture, HVAC units) by an embodied carbon factor from its EPD, and add them. Count the total once, in the year you buy it, under Scope 3 Category 2, capital goods. Where you only know the contract value, use a labelled spend-based estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -5968,6 +6264,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Pooling MSME efficiency projects for credits",
   "short": "Yes. Registries allow it through grouped projects (Verra's VCS) or programmes of activities (the CDM and Gold Standard), where one coordinator registers the programme and brings in further sites under the same rules. Every site keeps its own baseline, monitoring and a contract that hands its credit rights to the coordinator.",
   "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "port-and-cfs-handling-emissions-scope-3",
+  "q": "Do port terminal and container freight station handling emissions belong in my Scope 3?",
+  "title": "Port and CFS handling in Scope 3",
+  "short": "Yes. Handling at a container freight station, ICD or port terminal is part of the transport chain, so it goes in Scope 3 Category 4 when you pay for it and Category 9 when your buyer pays. Use the terminal's own figure if it gives one, otherwise a per tonne handled default, labelled as such.",
+  "topic": "accounting",
   "reviewed": "2026-10-18"
  },
  {
@@ -6795,6 +7099,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "self-invoice-unregistered-supplier-carbon-evidence",
+  "q": "Can a reverse charge self-invoice for an unregistered supplier count as carbon evidence?",
+  "title": "Self-invoice as carbon evidence",
+  "short": "Yes, but it is your own document, so it is weaker evidence than a supplier's bill. Use its quantity only when something independent backs it, such as a weighbridge slip, delivery challan, gate entry or payment record. Where the two differ, use the measured quantity and note why.",
+  "topic": "product",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "selling-production-scrap-scope-3-category-5",
   "q": "Can I claim a carbon credit for selling or recycling my production scrap?",
   "title": "Carbon credit for selling scrap?",
@@ -6923,6 +7235,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "ship-cii-rating-and-shipper-emissions",
+  "q": "Does a ship's CII rating change the freight emissions I report?",
+  "title": "Does a ship's CII rating change my figure?",
+  "short": "Not directly. A CII rating grades a ship's yearly CO2 per unit of carrying capacity and distance, from A to E, for IMO compliance. It is not an emission factor for your cargo. Your reported figure changes only when you use the carrier's own intensity, which reflects how efficiently its ships actually run.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "should-flight-emissions-include-radiative-forcing",
   "q": "Should business travel flight emissions include radiative forcing, and how much does it change the number?",
   "title": "Flight emissions and radiative forcing",
@@ -7032,6 +7352,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "SME Climate Commitment: what you agree to",
   "short": "You commit to halve your Scope 1 and 2 emissions before 2030, reach net zero across all scopes before 2050, and report progress every year. It is a public pledge on the SME Climate Hub, recognised by the UN Race to Zero campaign. The pledge is self-declared. The real work is a measured baseline and a yearly update.",
   "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "software-carbon-intensity-sci-explained",
+  "q": "What is the Software Carbon Intensity (SCI) score and how do I calculate it?",
+  "title": "Software Carbon Intensity (SCI) explained",
+  "short": "The SCI score is a rate: the carbon emitted per unit of work your software does, such as per API call or per active user. ISO/IEC 21031:2024 sets the formula: energy used times grid carbon intensity, plus a share of the hardware's embodied emissions, divided by your chosen functional unit.",
+  "topic": "accounting",
   "reviewed": "2026-10-18"
  },
  {
@@ -7185,6 +7513,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the kg of stainless sheet bought per kg of finished utensils by a footprint factor for that grade, then add your own pressing, annealing and polishing energy per kg. The sheet usually dominates, so the grade, its nickel content and your mill's own figure matter more than anything in your factory.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "startup-carbon-data-for-investor-due-diligence",
+  "q": "What carbon data do investors ask Indian startups for in due diligence?",
+  "title": "Carbon data investors ask startups for",
+  "short": "Most investors ask for Scope 1 and 2 emissions for the last financial year, the method and factors used, a view of material Scope 3, and any climate policy or target. Development finance investors and EU funds ask for more, because they must report the emissions of companies they back.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "state-designated-agency-energy-conservation",
@@ -7403,6 +7739,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "tamil-nadu-green-energy-open-access",
+  "q": "How does green energy open access work for factories in Tamil Nadu?",
+  "title": "Green open access for Tamil Nadu factories",
+  "short": "A Tamil Nadu factory with 100 kW or more of load can buy wind or solar power from a generator under the 2022 Green Energy Open Access Rules, applying through the national portal. TNERC's regulations and tariff orders set the charges, losses and banking terms, so the landed cost per unit depends on the current state order.",
+  "topic": "markets",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "tea-estate-fertiliser-emissions-per-kg-made-tea",
   "q": "How do I add a tea estate's fertiliser emissions to the footprint per kg of made tea?",
   "title": "Tea estate fertiliser emissions per kg tea",
@@ -7459,6 +7803,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "third-party-cold-storage-rent-which-scope",
+  "q": "We pay a cold store per tonne to keep our produce. Is that Scope 3 Category 4 or Category 8?",
+  "title": "Cold store rent: Category 4 or 8?",
+  "short": "Category 4. Paying a cold store per tonne or per bag for space it runs is a storage service you buy, which the GHG Protocol puts in upstream transportation and distribution. Category 8 applies only when you lease a specific chamber or building and use it as your own.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "time-of-day-electricity-tariff-for-factories",
   "q": "How does the time-of-day electricity tariff work for Indian factories?",
   "title": "Time of day tariff for Indian factories",
@@ -7497,6 +7849,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Total the diesel used for field work in a season, from fuel invoices or litres per acre for each operation, multiply by 2.68 kg CO2 per litre, and divide by acres worked. Add methane and nitrous oxide at the IPCC off-road defaults, which add roughly a tenth for farm machinery.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "trade-fair-exhibitor-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of exhibiting at an overseas trade fair?",
+  "title": "Trade fair exhibitor carbon footprint",
+  "short": "Add four parts: staff flights by distance and cabin class, hotel nights by country, freight for samples and stand material by weight, distance and mode, and the stand build itself. Report flights and hotels in Scope 3 Category 6, freight you pay for in Category 4 and the stand in Category 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "train-travel-emissions-factor-india",
@@ -7600,6 +7960,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "UK green claims rules for exporters",
   "short": "UK consumer law, explained in the CMA's Green Claims Code, applies: an environmental or carbon claim must be true, clear, complete and backed by evidence. Since April 2025 the CMA can fine businesses directly for misleading claims under the Digital Markets, Competition and Consumers Act 2024, so UK retailers now check suppliers' claims closely.",
   "topic": "regulation",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "ultra-low-temperature-freezer-energy-emissions",
+  "q": "How much electricity and CO2 does a -80 C lab freezer use, and does raising it to -70 C help?",
+  "title": "ULT freezer energy and CO2",
+  "short": "Measure it: plug a meter on the freezer for a week, multiply kWh per day by 365 and by 0.710 kg CO2 per kWh. Raising the setpoint from -80 C to -70 C usually cuts use, but by an amount that depends on the model, so measure before and after rather than trusting a headline percentage.",
+  "topic": "accounting",
   "reviewed": "2026-10-18"
  },
  {
@@ -7707,6 +8075,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "virtual-and-group-net-metering-scope-2",
+  "q": "How do virtual and group net metering work, and how do I report them in Scope 2?",
+  "title": "Virtual and group net metering in Scope 2",
+  "short": "Group net metering credits surplus solar from one of your premises against your other connections with the same discom; virtual net metering shares one solar system's output among several consumers. For location-based Scope 2, report the grid units each meter imported, before credits. Credits can lower market-based Scope 2 only if you keep the renewable attributes.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
   "slug": "vsme-standard-for-small-suppliers",
   "q": "What is the VSME standard, and should a small supplier use it to answer EU customers?",
   "title": "VSME standard for small suppliers",
@@ -7767,6 +8143,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How much electricity and CO2 does weaving one metre of fabric take on water-jet, air-jet and rapier looms?",
   "title": "Electricity and CO2 per metre of weaving",
   "short": "There is no single figure: it depends on loom type, speed, pick density and width, so measure it. Divide a month's weaving kWh by metres woven, then multiply by 0.710 kg CO2 per kWh. Sub-meter each loom group, and the compressor for air-jets, to compare loom types fairly.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "website-carbon-footprint-calculation",
+  "q": "How do I calculate my website's carbon footprint?",
+  "title": "Calculating a website's carbon footprint",
+  "short": "Multiply the data transferred per page view by monthly page views, then by an energy intensity per GB from a published model such as the Sustainable Web Design Model, then by a grid factor. The result is a model-based estimate, and different methods give quite different numbers, so state the method.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
  },
@@ -8089,6 +8473,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Quantis's Measuring Fashion study put dyeing and finishing at about 36% of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "who-can-verify-iso-14064-1-inventory-india",
+  "q": "Who can verify an ISO 14064-1 GHG inventory in India?",
+  "title": "Who can verify an ISO 14064-1 inventory?",
+  "short": "Pick an independent verification body accredited to ISO 14065 for GHG verification by a recognised accreditation body. It checks your inventory to ISO 14064-3 and must not have helped prepare it. In India, confirm the body's current accreditation and scope on NABCB's website or with its foreign accreditor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-18"
  },
  {
   "slug": "who-can-verify-records-in-senseible",

@@ -1,0 +1,82 @@
+{
+  "slug": "bill-of-lading-as-freight-emissions-evidence",
+  "q": "Can I use a bill of lading as evidence for sea freight emissions?",
+  "title": "Bill of lading as sea freight evidence",
+  "short": "Yes, for part of the calculation. A bill of lading proves the ports, vessel, shipment date, containers and declared gross weight of the cargo. It does not give the sea distance, the route sailed or any fuel data, so add a port-to-port distance from a named source and keep the bill as your weight evidence.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Exporters and auditors checking freight data",
+  "sections": [
+    {
+      "h": "What a bill of lading does prove",
+      "ul": [
+        "Port of loading, port of discharge and, on a combined transport bill, the place of receipt and delivery.",
+        "Vessel name, voyage number and the shipped on board date, which places the shipment in a reporting period.",
+        "Container numbers and sizes, and the number of packages.",
+        "Gross weight of the cargo in kg, as declared by the shipper.",
+        "Freight prepaid or freight collect, which shows who paid the ocean leg and so whether it is your Category 4 or the buyer's."
+      ]
+    },
+    {
+      "h": "What it does not prove",
+      "ul": [
+        "Distance. No bill prints it. You calculate it from a sea distance table or the carrier.",
+        "The route actually sailed. Transhipment ports are not always shown, and a diversion round the Cape of Good Hope is far longer than the Suez route.",
+        "Fuel or the carrier's emission intensity.",
+        "Verified weight. Lines often mark the cargo 'said to contain', meaning the weight is your declaration. The verified gross mass required under SOLAS since 1 July 2016 includes the container's own weight, so do not use it as cargo weight."
+      ]
+    },
+    {
+      "h": "House bill or master bill",
+      "p": [
+        "A freight forwarder issues a house bill to you and receives a master bill from the shipping line. The master bill names the real vessel. For a groupage or LCL shipment, the master bill's weight covers every shipper's cargo in the box, so use your own weight from the house bill."
+      ]
+    },
+    {
+      "h": "Cross-check before an auditor does",
+      "p": [
+        "Match the bill's gross weight to the packing list and the shipping bill for the same consignment. Check the on board date falls in your reporting year, and that prepaid or collect agrees with the Incoterm on your sales invoice. Note the distance source next to the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: tonne-km from a bill of lading",
+    "lines": [
+      "Bill of lading: Nhava Sheva to Rotterdam, gross weight 18,400 kg, freight prepaid",
+      "Sea distance via Suez, illustrative, from a port distance table: about 6,300 nautical miles x 1.852 = 11,668 km",
+      "18.4 tonnes x 11,668 km = about 214,700 tonne-km",
+      "Multiply by the carrier's or a GLEC default well-to-wake factor per tonne-km for container ships"
+    ],
+    "note": "The distance is calculated, not read from the bill; label it so, and redo it if the vessel sailed round the Cape."
+  },
+  "senseible": "Senseible keeps the bill of lading with your freight invoices in the Scope 3 supplier evidence trail and gives every file a SHA-256 fingerprint, so a bill uploaded twice is not counted twice. Freight records with weight and distance are calculated; a freight charge with only an amount gets a labelled spend-based estimate.",
+  "links": [
+    {
+      "label": "Sea freight emissions per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Incoterms and Category 4 or 9",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

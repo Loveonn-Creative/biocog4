@@ -1,0 +1,85 @@
+{
+  "slug": "fpo-crop-carbon-footprint-for-buyer",
+  "q": "How does an FPO calculate a per-kg carbon footprint for a corporate buyer?",
+  "title": "FPO per-kg crop footprint for a buyer",
+  "short": "Survey a sample of member farms for fertiliser, diesel, irrigation power and residue practice per hectare, convert each to emissions with IPCC methods and the grid factor, add the FPO's own processing energy, then divide by the yield. Send the buyer kg CO2e per kg with the sample size and season.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Farmer producer organisations and agri buyers",
+  "sections": [
+    {
+      "h": "Step 1: draw a sample the buyer will trust",
+      "ul": [
+        "Pick farms across the villages, farm sizes and irrigation types you buy from, not only the best-run ones.",
+        "Record per hectare: fertiliser by product and quantity, diesel for tractors and pumps, electricity for pumps, residue burnt or kept, and the yield.",
+        "Write down the sample size and the share of FPO volume it covers. Buyers ask for it."
+      ]
+    },
+    {
+      "h": "Step 2: convert each input",
+      "ul": [
+        "Nitrogen: kg N applied x 0.01 (IPCC 2006 default) x 44/28 = kg N2O, then x GWP. Add indirect N2O if you can.",
+        "Urea: kg urea x 0.733 kg CO2 per kg, for the carbon in urea.",
+        "Diesel: litres x 2.68 kg CO2 per litre (IPCC 2006).",
+        "Grid power for pumps: kWh x 0.710 kg CO2 per kWh (CEA, version 21.0). Many farm connections are unmetered, so estimate from pump rating and hours and label it.",
+        "Rice paddies: add methane from flooded fields, which can be the largest item. Residue burning adds methane and N2O."
+      ]
+    },
+    {
+      "h": "Step 3: from a hectare to a kilogram",
+      "p": [
+        "Average the per hectare totals across the sample, weighting by area, and divide by the average yield in kg per hectare. Then add the FPO's own aggregation, cleaning, drying and transport, divided by the tonnes it handled. State the boundary: farm to FPO gate."
+      ]
+    },
+    {
+      "h": "What the buyer will check",
+      "ul": [
+        "GWP values named, for example IPCC AR6.",
+        "Which factors are IPCC Tier 1 defaults and which are measured.",
+        "Whether land use change and soil carbon are excluded, and why.",
+        "That the same season's yield and inputs were used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: wheat, per hectare averages from the sample",
+    "lines": [
+      "Nitrogen 100 kg N, all from urea: 100 x 0.01 x 44/28 = 1.571 kg N2O x 273 = 429.0 kg CO2e",
+      "Urea CO2: 100 / 0.46 = 217.4 kg urea x 0.733 = 159.3 kg CO2",
+      "Diesel 40 litres x 2.68 = 107.2 kg CO2",
+      "Pump power 300 kWh x 0.710 = 213.0 kg CO2",
+      "Total 908.5 kg CO2e per hectare; yield 3,500 kg per hectare; 908.5 / 3,500 = 0.260 kg CO2e per kg"
+    ],
+    "note": "Inputs are illustrative. Indirect N2O, residue burning and FPO processing are left out here and would raise the figure."
+  },
+  "senseible": "Senseible reads the FPO's diesel and electricity invoices and applies IPCC 2006 and CEA factors, with the source bill kept against each line. It also keeps fertiliser purchase invoices, which give the product quantities the farm calculation starts from.",
+  "links": [
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Rice procurement in a buyer's Scope 3",
+      "to": "/answers/rice-procurement-scope-3-emissions"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 4 AFOLU",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

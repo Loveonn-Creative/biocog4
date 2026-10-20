@@ -1,0 +1,82 @@
+{
+  "slug": "virtual-and-group-net-metering-scope-2",
+  "q": "How do virtual and group net metering work, and how do I report them in Scope 2?",
+  "title": "Virtual and group net metering in Scope 2",
+  "short": "Group net metering credits surplus solar from one of your premises against your other connections with the same discom; virtual net metering shares one solar system's output among several consumers. For location-based Scope 2, report the grid units each meter imported, before credits. Credits can lower market-based Scope 2 only if you keep the renewable attributes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with several premises or no roof of their own",
+  "sections": [
+    {
+      "h": "The two arrangements",
+      "p": [
+        "Both are central rooftop solar arrangements that state commissions put into effect through their own regulations. Under group net metering, surplus energy exported from a system at one premises is adjusted against more than one connection of the same consumer, within the same discom's area. Under virtual net metering, the energy from a shared or community system is exported to the grid and credited to the bills of several participating consumers, such as units in an industrial estate or flats in a society with one common roof.",
+        "Your state commission decides whether either is available to your category, the size limits and how credits are settled."
+      ]
+    },
+    {
+      "h": "Location-based Scope 2: credits are billing, not consumption",
+      "ul": [
+        "Every connection: grid units imported at its meter, before any solar credit, times the grid factor.",
+        "The premises with the panels: solar used on site has no Scope 2; exports do not reduce its imports.",
+        "The connections receiving credits: they still drew their full units from the grid, so the credit changes the bill, not the location-based figure."
+      ]
+    },
+    {
+      "h": "Market-based Scope 2: when credits can count",
+      "p": [
+        "Credited units can be reported at zero in market-based Scope 2 only if the renewable attributes stay with you, for the period, and no one else claims them. This is a reading of the Scope 2 Guidance quality criteria, which have no rule written for Indian net metering credits, so state it as your method. Read the net metering agreement and your state regulation: if the discom counts the exported energy towards its renewable purchase obligation, or RECs are issued for it, you cannot also claim it. For virtual net metering, each member claims only its own share."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Monthly generation from the solar meter or inverter.",
+        "Import, export and credit lines from every bill in the group.",
+        "The agreement or order that sets how credits are allocated.",
+        "A note of which credited units you claim in market-based Scope 2, and why."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two premises under group net metering",
+    "lines": [
+      "Premises A: solar generates 30,000 kWh, 18,000 used on site, 12,000 exported; grid imports 20,000 kWh",
+      "Premises B: grid imports 25,000 kWh; 12,000 kWh of A's export credited, bill shows 13,000 net",
+      "Location-based: (20,000 + 25,000) x 0.710 = 31,950 kg CO2",
+      "Market-based, attributes kept: (45,000 minus 12,000) x 0.710 = 23,430 kg CO2"
+    ],
+    "note": "Using the net 13,000 kWh at B for location-based would understate it by 8,520 kg CO2. The market-based line uses the grid average for uncovered units because India has no published residual mix; say so."
+  },
+  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from each premises' bill and applies 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0) for location-based Scope 2. It keeps net-metered units apart from consumption, so solar credits are not counted as units used.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Gross-metered solar and Scope 2",
+      "to": "/answers/gross-metering-solar-scope-2-claim"
+    },
+    {
+      "label": "Group captive solar in Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Rights of Consumers) Rules, 2020, as amended, Ministry of Power (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Group and virtual net metering depend on each state's rooftop solar regulations, which are amended often; the market-based treatment of credits is an interpretation of the Scope 2 Guidance, and the GHG Protocol's Scope 2 revision is still a public-consultation draft (checked 2026-10-20)."
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "methyl-bromide-fumigation-scope-1",
+  "q": "Does methyl bromide fumigation of export consignments count in Scope 1?",
+  "title": "Methyl bromide fumigation and Scope 1",
+  "short": "No. Methyl bromide is an ozone depleting substance under the Montreal Protocol, and the GHG Protocol's scopes cover only the seven Kyoto gases. So it stays out of your Scope 1 total. If a buyer wants it disclosed, give the kilograms used in the year as a separate memo line beside your inventory.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Agri exporters, fumigation agencies and warehouses",
+  "sections": [
+    {
+      "h": "Why it sits outside the scopes",
+      "p": [
+        "Scopes 1, 2 and 3 count seven gases: CO2, methane, nitrous oxide, HFCs, PFCs, SF6 and NF3. Methyl bromide, like the CFCs and HCFCs, is regulated by the Montreal Protocol for the damage it does to the ozone layer. The Corporate Standard allows such gases to be reported for information, kept apart from the scope totals."
+      ]
+    },
+    {
+      "h": "Why fumigation still uses it",
+      "p": [
+        "Methyl bromide is phased out for most uses under the Montreal Protocol, but quarantine and pre-shipment uses are exempt. Importing countries and plant quarantine rules can require it for certain goods and wood packaging. In India its import and use are controlled under the Ozone Depleting Substances (Regulation and Control) Rules, 2000."
+      ]
+    },
+    {
+      "h": "Who would report it, if anyone",
+      "ul": [
+        "The fumigation agency releases the gas, so the kilograms are its direct release.",
+        "An exporter who hires the agency buys a service. Any disclosure belongs in its supplier records, not its own direct emissions.",
+        "A warehouse that fumigates with its own staff and stock of gas holds the register of kilograms used."
+      ]
+    },
+    {
+      "h": "What to write if a buyer asks",
+      "ol": [
+        "State that methyl bromide is excluded from Scope 1 because it is not a GHG Protocol gas.",
+        "Give kilograms used in the year from the fumigation register, as a memo item.",
+        "If you add a CO2e figure, name the GWP source, such as the IPCC AR6 Working Group I table, and keep it out of the totals.",
+        "Mention alternatives you use, such as heat treatment for wood packaging, where they apply."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fumigation agency invoices with their SHA-256 fingerprints in the supplier evidence trail and calculates the fuel and electricity used at your packhouse or warehouse from their bills.",
+  "links": [
+    {
+      "label": "Scope 1, 2 and 3 for small businesses",
+      "to": "/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Cold storage emissions per tonne",
+      "to": "/answers/cold-storage-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (gases covered; other gases reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7 supplementary material (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "Ozone Cell, MoEFCC: Ozone Depleting Substances (Regulation and Control) Rules, 2000",
+      "url": "https://www.ozonecell.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

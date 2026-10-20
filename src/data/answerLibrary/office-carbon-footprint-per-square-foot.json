@@ -1,0 +1,87 @@
+{
+  "slug": "office-carbon-footprint-per-square-foot",
+  "q": "How do I calculate my office's carbon footprint per square foot, including diesel backup?",
+  "title": "Office carbon footprint per square foot",
+  "short": "Add a year of grid electricity (kWh x 0.710 kg CO2) and DG diesel (litres x 2.68 kg CO2), plus any refrigerant top-ups, then divide by the office area. Say whether you used carpet or built-up area: they differ, and the choice changes the answer.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Office tenants, owners and facility managers in India",
+  "sections": [
+    {
+      "h": "The data to collect for twelve months",
+      "ul": [
+        "Electricity bills for every meter you pay for, with units in kWh for each billing period.",
+        "Diesel invoices for the DG set, in litres. If the landlord runs the DG and bills you DG units in kWh, ask for the litres burnt and your share of them.",
+        "AC service invoices that mention a refrigerant top-up, with the gas type and kilograms.",
+        "The area figure from the lease: carpet area, or built-up or super built-up area. Use one and name it."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "Scope 2 (kg CO2) = grid kWh x 0.710. Scope 1 (kg CO2) = DG litres x 2.68. Refrigerant leaks are Scope 1 too, in kg CO2e, because the gas is not CO2: kilograms topped up x the gas's GWP.",
+        "Intensity = (Scope 1 + Scope 2) / area. Report kg CO2 per square foot if your leases are in square feet, and also per square metre if you compare with BEE energy figures, which use kWh per square metre per year. One square metre is 10.764 square feet."
+      ]
+    },
+    {
+      "h": "Shared buildings and landlord charges",
+      "p": [
+        "In a multi-tenant tower your own meter covers your floor. Common areas, lifts and the central chiller are usually run by the landlord and recovered through maintenance charges. If you do not control those systems, you can report your share in Scope 3 Category 8, upstream leased assets, and keep it out of the per square foot figure for your own space. Whatever you choose, write it down and keep it the same every year."
+      ]
+    },
+    {
+      "h": "Why the number moves",
+      "ul": [
+        "Hours of use: a 24 hour support floor uses far more power per square foot than a 9 to 6 office.",
+        "Grid outages: more DG hours move load from the electricity bill to diesel invoices. Divide DG units by litres to know your set's kWh per litre before comparing it with grid power.",
+        "Server rooms inside the office: report their kWh separately if they are sub-metered, so a reader can see the office load on its own.",
+        "Occupancy: per square foot does not fall when you add people. Add a per employee figure if headcount changed a lot."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 10,000 sq ft leased office",
+    "lines": [
+      "Grid electricity: 1,80,000 kWh x 0.710 = 1,27,800 kg CO2",
+      "DG diesel: 3,000 litres x 2.68 = 8,040 kg CO2",
+      "Total: 1,27,800 + 8,040 = 1,35,840 kg CO2",
+      "Per square foot of carpet area: 1,35,840 / 10,000 = 13.6 kg CO2",
+      "Per square metre: 10,000 sq ft is 929 m2, so 1,35,840 / 929 = 146 kg CO2 per m2"
+    ],
+    "note": "Figures are illustrative. No refrigerant top-up was recorded that year; if one was, add it in kg CO2e and say the total includes other gases."
+  },
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2. It reads DG diesel invoices with litres and applies the IPCC 2006 default of 2.68 kg CO2 per litre, keeping each bill as evidence.",
+  "links": [
+    {
+      "label": "BEE star rating for offices",
+      "to": "/answers/bee-star-rating-for-commercial-buildings"
+    },
+    {
+      "label": "DG set fuel use per kWh",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (diesel default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4 Setting Operational Boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

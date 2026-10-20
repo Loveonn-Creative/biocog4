@@ -1,0 +1,71 @@
+{
+  "slug": "delhi-business-green-power-options",
+  "q": "Can a Delhi business buy green power from its discom?",
+  "title": "Green power options for Delhi businesses",
+  "short": "Only if DERC has set a green tariff for your category. The national Green Energy Open Access Rules, 2022 let any consumer ask its discom for renewable power at a green tariff fixed by the state commission. Ask BSES Rajdhani, BSES Yamuna, Tata Power-DDL or NDMC whether one is in force for you, and get the terms in writing.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Delhi offices, hotels and small units on BSES or Tata Power-DDL supply",
+  "sections": [
+    {
+      "h": "What to ask your discom",
+      "ol": [
+        "Is a green tariff in force for my tariff category under the current DERC order, and what is the premium per kWh?",
+        "Can I cover a share of my consumption or must I cover all of it, and for what minimum period?",
+        "How will the green units appear on my bill?",
+        "Will you give me a yearly statement or certificate for the green units, confirming their attributes are not sold or claimed by anyone else?"
+      ]
+    },
+    {
+      "h": "If no green tariff is on offer",
+      "ul": [
+        "Green energy open access from a generator, if your load is 100 kW or more. Read DERC's current open access regulations for the connection and metering conditions that apply in Delhi before you approach developers.",
+        "Renewable energy certificates bought on a power exchange and retired for your units, which suit offices and hotels with no roof.",
+        "Rooftop solar under net metering, where you own or control the roof."
+      ]
+    },
+    {
+      "h": "Which option a buyer or guest will accept",
+      "p": [
+        "Hotel groups and multinational tenants often report to group standards that name the instruments they accept. Before you pay a premium, ask whether a discom green tariff, Indian RECs or open access power is accepted, and what document they want each year."
+      ]
+    },
+    {
+      "h": "What it does to your Scope 2",
+      "p": [
+        "Location-based Scope 2 is unchanged by any of these: all units consumed times the grid factor. Market-based Scope 2 falls only for units covered by a document that conveys the renewable attribute to you for your reporting period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your BSES, Tata Power-DDL or NDMC bill for billing period, tariff category, sanctioned load and units, and reports location-based Scope 2 at 0.710 kg CO2 per kWh (CEA, version 21.0). It reports market-based Scope 2 alongside when you record the green units or retired RECs with their certificate.",
+  "links": [
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Green tariff or RECs, which is cheaper",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "Green energy open access for factories",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, and Amendment Rules, 2023, Ministry of Power (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Whether a DERC green tariff is in force, and DERC's current open access eligibility conditions, could not be confirmed from DERC's site for this check; read the current DERC tariff order and open access regulations on derc.gov.in (checked 2026-10-20)."
+}

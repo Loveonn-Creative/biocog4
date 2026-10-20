@@ -1,0 +1,71 @@
+{
+  "slug": "indian-recs-for-sbti-scope-2-target",
+  "q": "Can Indian RECs or a green tariff count toward an SBTi Scope 2 target?",
+  "title": "Indian RECs and green tariffs for SBTi",
+  "short": "Yes, if your target uses market-based Scope 2 and the certificate or tariff meets the GHG Protocol Scope 2 Quality Criteria. The SBTi accepts market-based accounting, so a REC retired in your name or a discom green tariff with clear attribute claims can lower your Scope 2. Report location-based alongside.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian SMEs with SBTi targets",
+  "sections": [
+    {
+      "h": "What the instrument must show",
+      "ul": [
+        "It conveys the environmental attributes of each MWh, one REC per MWh, and nobody else claims them.",
+        "It is retired or cancelled in your company's name.",
+        "Its generation period matches your reporting year closely.",
+        "It comes from the same market as your consumption; under the 2015 guidance India counts as one market."
+      ]
+    },
+    {
+      "h": "Indian RECs",
+      "p": [
+        "RECs issued under the CERC REC Regulations 2022 and bought on a power exchange can be used for market-based Scope 2 once retired for you. Keep the retirement record with the MWh, vintage and generator."
+      ]
+    },
+    {
+      "h": "Green tariffs from a discom",
+      "p": [
+        "A green tariff under the Green Energy Open Access Rules 2022 works when the bill or a certificate states the renewable units supplied to you and the discom does not also count them toward another claim. Ask the discom in writing how the attributes are tracked. Without that, treat it as grid power."
+      ]
+    },
+    {
+      "h": "How it fits an SBTi target",
+      "ul": [
+        "State in your target whether Scope 2 is market-based or location-based, and stay with it.",
+        "Read the Scope 2 and renewable electricity criteria in the SBTi version you are validated under; the SBTi can set instrument rules beyond the GHG Protocol's.",
+        "Keep reporting location-based Scope 2 at 0.710 kg CO2 per kWh, as the GHG Protocol requires both figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives you both Scope 2 figures: location-based from the kWh printed on each bill at the CEA grid factor, and market-based once you add the instrument data for your RECs or green tariff.",
+  "links": [
+    {
+      "label": "Do RE100 and CDP accept Indian RECs",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Green tariff or RECs: which is cheaper",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Scope 2 revision and Indian RECs",
+      "to": "/answers/scope-2-revision-deliverability-indian-recs"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Corporate Near-Term Criteria, Scope 2 and renewable electricity criteria",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Ministry of Power, Green Energy Open Access Rules 2022",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "The GHG Protocol Scope 2 revision is a public-consultation draft as of October 2026 and may tighten these criteria. Check the SBTi's current criteria on sciencebasedtargets.org for any renewable electricity target option and instrument rules before relying on them.",
+  "reviewed": "2026-10-18"
+}

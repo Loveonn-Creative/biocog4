@@ -1,0 +1,87 @@
+{
+  "slug": "trade-fair-exhibitor-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of exhibiting at an overseas trade fair?",
+  "title": "Trade fair exhibitor carbon footprint",
+  "short": "Add four parts: staff flights by distance and cabin class, hotel nights by country, freight for samples and stand material by weight, distance and mode, and the stand build itself. Report flights and hotels in Scope 3 Category 6, freight you pay for in Category 4 and the stand in Category 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian exporters exhibiting at fairs such as Heimtextil or Ambiente",
+  "sections": [
+    {
+      "h": "Data to collect for one fair",
+      "ul": [
+        "Flights: each traveller's airport pairs and cabin class, from tickets or the travel agent invoice.",
+        "Hotels: room nights and the country.",
+        "Freight: gross weight of samples and stand material, origin, destination and mode, from the airway bill or bill of lading.",
+        "Stand: shell scheme or custom build, materials and the contractor invoice."
+      ]
+    },
+    {
+      "h": "How to calculate each part",
+      "ol": [
+        "Flights: passenger km x a published factor for that distance band and class. Business class carries a larger factor than economy because the seat takes more space.",
+        "Hotels: room nights x a country factor per room night.",
+        "Freight: tonnes x km x a factor per tonne km for the mode. Air freight carries a far higher factor per tonne km than sea.",
+        "Stand: for a custom build, quantities of timber, board, aluminium and graphics x their factors; for a shell scheme or where only the invoice is known, a labelled spend-based estimate."
+      ]
+    },
+    {
+      "h": "What is not yours",
+      "p": [
+        "Visitors' travel, the hall's energy and the organiser's own operations are in the organiser's and venue's footprint. Samples you sell or give away at the fair end up as your products, not your event footprint. If the stand is reused across fairs, count its materials once and say so."
+      ]
+    },
+    {
+      "h": "Cutting the number next year",
+      "ul": [
+        "Send samples by sea early instead of air at the last minute.",
+        "Fewer travellers, or economy for medium-haul legs.",
+        "A reusable modular stand stored near the fair."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three staff to Frankfurt",
+    "lines": [
+      "Flights: 3 people x 2 legs x 6,100 km (Delhi to Frankfurt) = 36,600 passenger km x 0.15 kg CO2e = 5,490 kg CO2e",
+      "Hotels: 3 rooms x 5 nights = 15 room nights x 20 kg CO2e = 300 kg CO2e",
+      "Air freight of samples: 0.4 t x 6,100 km = 2,440 tonne km x 0.8 kg CO2e = 1,952 kg CO2e",
+      "Total before the stand: 5,490 + 300 + 1,952 = 7,742 kg CO2e, about 7.7 tonnes"
+    ],
+    "note": "The three factors are illustrations, not official values. Use a published source such as the UK government conversion factors or the ICAO calculator for flights, and name it."
+  },
+  "senseible": "Senseible reads freight records with weight and distance into a supplier evidence trail, and gives spend-only freight lines a labelled spend-based estimate. Flight and hotel invoices can also get labelled estimates.",
+  "links": [
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Hotel stay emissions per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Air or sea freight for exports",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "Freight emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 1, 4 and 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GLEC Framework, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "UK government GHG conversion factors (flights and hotels)",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

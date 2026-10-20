@@ -1,0 +1,78 @@
+{
+  "slug": "mri-ct-scanner-energy-per-scan",
+  "q": "How much energy does an MRI or CT scan use, and how should an imaging centre count it?",
+  "title": "MRI and CT scanner energy per scan",
+  "short": "Sub-meter each scanner with its cooling, take a month of kWh and divide by the scans in your RIS for the same month. An MRI draws power all day and night because its magnet cooling never stops, so much of its energy is used when no patient is on the table. That idle use belongs in the per scan figure.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Diagnostic imaging centres and hospital radiology heads",
+  "sections": [
+    {
+      "h": "Why published figures are only a guide",
+      "p": [
+        "Most published kWh per scan figures come from hospitals abroad. Scanner models, protocols, climate, cooling plant and opening hours differ, so treat any such number as indicative and measure your own. An MRI's magnet cooling runs whether or not anyone is booked, so a quiet day still uses a lot of power."
+      ]
+    },
+    {
+      "h": "What to meter",
+      "ul": [
+        "The scanner and its electronics cabinet.",
+        "For MRI, the helium compressor and the chiller that cools it, which run around the clock.",
+        "Dedicated precision AC for the scan and equipment rooms.",
+        "If you cannot sub-meter, ask the service engineer for the system's measured standby and scanning loads and label the result as an estimate."
+      ]
+    },
+    {
+      "h": "Choosing the denominator",
+      "p": [
+        "Count examinations from the RIS, not series or images, and keep contrast and non-contrast studies together unless you report them separately. Divide each scanner's kWh by its own scans. A quiet scanner will look worse per scan because its idle load is spread over fewer patients, which is useful to know when planning schedules."
+      ]
+    },
+    {
+      "h": "Where savings come from",
+      "ul": [
+        "Use the manufacturer's low-power or standby mode at night and on Sundays where the model supports it.",
+        "Power down CT systems out of hours if the manufacturer allows it.",
+        "Raise chilled water and room setpoints within the vendor's limits.",
+        "Helium is not a greenhouse gas, so magnet refills add no Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one MRI scanner, one month",
+    "lines": [
+      "Sub-metered use, scanner plus cooling: 15,000 kWh (example reading)",
+      "Scans in the RIS: 600",
+      "Energy per scan: 15,000 / 600 = 25 kWh",
+      "Emissions per scan: 25 x 0.710 = 17.75 kg CO2"
+    ],
+    "note": "Illustrative figures only, not a benchmark."
+  },
+  "senseible": "Senseible reads the centre's electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2. Sub-meter feeds for individual scanners can be set up with the Senseible team for each customer.",
+  "links": [
+    {
+      "label": "Hospital footprint per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    },
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Foreign per scan measurements are not quoted; use site sub-meter data.",
+  "reviewed": "2026-10-18"
+}

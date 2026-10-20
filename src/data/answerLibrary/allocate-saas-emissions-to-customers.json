@@ -1,0 +1,87 @@
+{
+  "slug": "allocate-saas-emissions-to-customers",
+  "q": "A customer asked for the emissions of our SaaS allocated to their account. How do we calculate it?",
+  "title": "Allocating SaaS emissions to one customer",
+  "short": "Take the emissions of the service you deliver, mainly hosting, and share them across customers with a usage key such as compute hours, storage or seats. Add a share of your other company emissions only if you say so. Send the figure with the key, the period and the factors used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "SaaS companies answering enterprise supplier requests",
+  "sections": [
+    {
+      "h": "Step 1: build the pool you are sharing out",
+      "ul": [
+        "Hosting: your cloud provider's dashboard figure for the year, or an estimate from usage, kept location-based and market-based where you have both.",
+        "Third-party services the product runs on, such as data, monitoring or email delivery, if you can estimate them.",
+        "Optional overhead: offices, staff commuting, travel and laptops. Include it with its own key, usually revenue share, or leave it out and say so."
+      ]
+    },
+    {
+      "h": "Step 2: pick an allocation key that follows cause",
+      "p": [
+        "The GHG Protocol and ISO 14067 prefer a physical key over a financial one when it reflects what drives the emissions. For hosting that is usually compute hours, storage held or requests served for the customer's tenant. Seats are fine when usage per seat is similar across customers. Revenue share is the fallback, and works for overhead."
+      ],
+      "ul": [
+        "Use the same key for every customer, so allocated totals add up to the pool.",
+        "On a shared multi-tenant system, measure each tenant's share from logs or billing metrics rather than guessing."
+      ]
+    },
+    {
+      "h": "Step 3: write the disclosure the customer needs",
+      "ol": [
+        "Reporting period and the customer's share in tonnes.",
+        "What the pool covers and what it leaves out.",
+        "The key used and the customer's percentage.",
+        "Whether the hosting figure is location-based or market-based, and its source.",
+        "How the customer should book it: their Scope 3 Category 1, purchased goods and services."
+      ]
+    },
+    {
+      "h": "Mistakes that make the number unusable",
+      "ul": [
+        "Sending your whole company footprint with no allocation.",
+        "Mixing keys between customers, so the shares add up to more than 100 percent.",
+        "Netting off offsets inside the allocated figure. Report gross emissions and any credits separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one enterprise customer for a year",
+    "lines": [
+      "Hosting pool: 12 t CO2 for the year from the cloud dashboard",
+      "Customer's tenant: 3% of compute hours; 12 x 0.03 = 0.36 t",
+      "Overhead pool (offices, travel, commuting): 30 t; customer's revenue share 2%; 30 x 0.02 = 0.60 t",
+      "Allocated total: 0.36 + 0.60 = 0.96 t, disclosed as two lines with both keys"
+    ],
+    "note": "Figures are illustrative. If you exclude overhead, send only the 0.36 t and say so."
+  },
+  "senseible": "Senseible builds your own Scope 1 and 2 record from fuel invoices and electricity bills and reads supplier invoices, such as cloud bills, into a Scope 3 evidence trail, which gives you the pool to allocate. Its cloud calculator estimates hosting emissions from usage where the provider gives no figure.",
+  "links": [
+    {
+      "label": "Cloud footprint from AWS, Azure and Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "SaaS subscriptions in a buyer's Scope 3",
+      "to": "/answers/saas-subscriptions-scope-3-emissions"
+    },
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol ICT Sector Guidance, cloud and data centre services chapter (ghgprotocol.org)",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard, allocation",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, allocation (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

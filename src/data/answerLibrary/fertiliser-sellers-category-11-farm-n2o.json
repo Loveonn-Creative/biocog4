@@ -1,0 +1,80 @@
+{
+  "slug": "fertiliser-sellers-category-11-farm-n2o",
+  "q": "If we sell fertiliser, do farm N2O emissions go in our Scope 3 Category 11?",
+  "title": "Fertiliser sellers and Category 11 N2O",
+  "short": "Yes. Nitrogen fertiliser forms nitrous oxide in the soil when it is used, so a maker or distributor reports those emissions in Scope 3 Category 11, use of sold products, for the tonnes sold in the year. Urea sellers also report the CO2 from the carbon in urea.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Fertiliser makers, agri input distributors and agritech platforms",
+  "sections": [
+    {
+      "h": "Why it counts as a direct use-phase emission",
+      "p": [
+        "The GHG Protocol Scope 3 Standard requires direct use-phase emissions in Category 11. These include products that contain or form greenhouse gases released during use. Nitrogen fertiliser fits that description: the N2O forms from the product's own nitrogen once it is in the soil, not from energy the farmer uses."
+      ]
+    },
+    {
+      "h": "What to include",
+      "ul": [
+        "Direct N2O: kg N sold x 0.01 kg N2O-N per kg N (IPCC 2006 default).",
+        "Indirect N2O from volatilisation (10% of synthetic N, then 0.01) and leaching (30% of N, then 0.0075). Include them or say you left them out.",
+        "Urea CO2: 0.733 t CO2 per tonne of urea.",
+        "Convert N2O-N to N2O with 44/28 and name the GWP, for example 273 (IPCC AR6)."
+      ]
+    },
+    {
+      "h": "Who else reports the same emissions",
+      "p": [
+        "The farmer reports them in Scope 1. A maker and its distributors each report them in Category 11 for the volume they sell. That overlap is expected in Scope 3; it is not double counting within one company's inventory."
+      ]
+    },
+    {
+      "h": "Keep it apart from your own footprint",
+      "p": [
+        "Emissions from making ammonia and urea at your plant are your Scope 1 and 2. Purchased fertiliser you resell carries upstream emissions in Category 1. Use-phase N2O sits only in Category 11. Report all lifetime emissions in the year of sale."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 t of urea sold",
+    "lines": [
+      "Nitrogen: 1,000 x 0.46 = 460 t N",
+      "Direct N2O: 460 x 0.01 = 4.6 t N2O-N x 44/28 = 7.23 t N2O x 273 = 1,973 t CO2e",
+      "Indirect N2O: (460 x 0.10 x 0.01) + (460 x 0.30 x 0.0075) = 1.495 t N2O-N x 44/28 = 2.35 t N2O x 273 = 641 t CO2e",
+      "Urea CO2: 1,000 x 0.733 = 733 t CO2",
+      "Category 11 total: about 3,348 t CO2e"
+    ],
+    "note": "IPCC 2006 Tier 1 defaults; the IPCC 2019 Refinement offers updated and climate-specific factors."
+  },
+  "senseible": "Senseible reads your fertiliser sales and purchase invoices and keeps product, quantity and date for each line, which gives the tonnes sold that this calculation starts from.",
+  "links": [
+    {
+      "label": "Fuel sellers and Category 11",
+      "to": "/answers/fuel-sellers-category-11-combustion-of-sold-fuel"
+    },
+    {
+      "label": "Fertiliser N2O calculation for a field",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Category 11 calculation",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 11",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 11 (N2O from managed soils, urea application)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Check the Category 11 chapter of the GHG Protocol Scope 3 Standard and its Technical Guidance for the current list of example products that form greenhouse gases in use."
+}

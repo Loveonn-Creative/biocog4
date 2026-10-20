@@ -1,0 +1,79 @@
+{
+  "slug": "leased-electric-vehicles-which-scope",
+  "q": "We lease electric cars and vans from a fleet provider. Are their emissions Scope 1, 2 or 3?",
+  "title": "Leased EVs: which scope?",
+  "short": "Never Scope 1, since EVs burn no fuel. Under operational control, the charging electricity of leased EVs you drive is Scope 2. Under financial control or equity share, an operating lease puts it in Scope 3 Category 8 and a finance lease in Scope 2. A vehicle with a provider's driver is a transport service instead.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs on EV leases or subscriptions",
+  "sections": [
+    {
+      "h": "Decision table for leased EVs",
+      "ul": [
+        "Operational control, any lease you drive yourself: Scope 2.",
+        "Financial control or equity share, finance lease: Scope 2.",
+        "Financial control or equity share, operating lease or monthly subscription: Scope 3 Category 8.",
+        "EV cab or van with the provider's driver: not a leased asset. Staff trips go in Category 6 or 7; goods movement in Category 4 or 9."
+      ]
+    },
+    {
+      "h": "Where the kWh comes from",
+      "ul": [
+        "Charged at your premises: the units are on your bill. Show the fleet as a sub-total; do not add it again.",
+        "Charged at public or provider chargers: use the kWh on each charging receipt or the provider's monthly statement.",
+        "Battery swapping: ask the provider for kWh per swap or per km. A rupee-only swap bill needs a documented conversion."
+      ]
+    },
+    {
+      "h": "What the provider reports",
+      "p": [
+        "The leasing company reports the same charging in its Category 13, downstream leased assets, when you hold control. Your Scope 2 and its Category 13 describe the same kWh from two sides, which is how the GHG Protocol intends it."
+      ]
+    },
+    {
+      "h": "Write the choice down",
+      "p": [
+        "Name the consolidation approach, the lease type from your agreement, the kWh source and the grid factor. Apply the same rule to leased diesel vehicles, whose fuel goes in Scope 1 under the same conditions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: five leased e-vans charged at the depot",
+    "lines": [
+      "Depot charger sub-meter: 900 kWh a month x 12 = 10,800 kWh",
+      "10,800 x 0.710 kg CO2 per kWh = 7,668 kg CO2, about 7.7 t a year",
+      "Operational control: Scope 2. Financial control with an operating lease: Category 8, same 7.7 t"
+    ],
+    "note": "Grid factor: CEA CO2 Baseline Database version 21.0."
+  },
+  "senseible": "Senseible reads electricity bills (billing period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, for location-based Scope 2.",
+  "links": [
+    {
+      "label": "EV fleet charging: which scope",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Operational control vs equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Leased factory emissions: which scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Appendix F, Categorizing emissions from leased assets",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 8 and 13",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

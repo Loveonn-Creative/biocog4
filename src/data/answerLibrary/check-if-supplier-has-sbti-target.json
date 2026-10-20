@@ -1,0 +1,62 @@
+{
+  "slug": "check-if-supplier-has-sbti-target",
+  "q": "How do I check whether a company really has an SBTi-validated target?",
+  "title": "Check if a company has an SBTi target",
+  "short": "Search the company on the SBTi Target Dashboard at sciencebasedtargets.org. A validated target is listed with its wording, scopes and date. A commitment only means the company has promised to set one. Check the exact legal entity, because a parent's target may not cover the supplier you buy from.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Buyers, lenders and suppliers checking claims",
+  "sections": [
+    {
+      "h": "Read the status, not the press release",
+      "ul": [
+        "A validated target: the dashboard lists the target, its classification, the scopes it covers and its wording.",
+        "A commitment: the company has said it will set a target within the SBTi's deadline. Nothing is validated yet.",
+        "A commitment that was removed or has lapsed: treat any claim of an SBTi target as unsupported.",
+        "Not listed: no SBTi target or commitment under that name. Read the dashboard's own legend for the exact status labels."
+      ]
+    },
+    {
+      "h": "Checks beyond the status",
+      "ol": [
+        "Match the legal name and country. Indian subsidiaries often trade under a group name that has a target.",
+        "Read the target text: near-term or net-zero, base year, target year, and which scopes it covers.",
+        "Check whether it was set on the SME route, and which scopes the entry lists.",
+        "Note the date; older targets may have been set under earlier criteria.",
+        "Ask for the company's latest published emissions and its progress against the target."
+      ]
+    },
+    {
+      "h": "Red flags in a supplier's claim",
+      "ul": [
+        "\"SBTi approved\" with no dashboard entry.",
+        "A commitment presented as a validated target.",
+        "A parent company's target quoted for a separate legal entity without confirmation that it is included.",
+        "Credits presented as progress toward the target. The SBTi does not count credits as reductions."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your suppliers' invoices in a Scope 3 evidence trail, so a supplier's target claim can sit next to the activity data you buy from them.",
+  "links": [
+    {
+      "label": "Can carbon credits count toward an SBTi target",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    },
+    {
+      "label": "SBTi supplier engagement targets",
+      "to": "/answers/sbti-supplier-engagement-target-for-suppliers"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Target Dashboard and guidance on company statuses",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Dashboard status labels and SBTi criteria change; recheck the dashboard legend on sciencebasedtargets.org."
+}

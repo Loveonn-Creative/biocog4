@@ -1,0 +1,88 @@
+{
+  "slug": "diagnostic-lab-carbon-footprint-per-test",
+  "q": "How does a diagnostic lab calculate its carbon footprint per test?",
+  "title": "Diagnostic lab carbon footprint per test",
+  "short": "Add a year of Scope 1 (DG diesel, refrigerant leaks, any fuel) and Scope 2 (grid electricity), then divide by the number of tests reported from your LIS. Report a second figure that adds the Scope 3 you measured, mainly reagents, sample logistics and biomedical waste, so readers can see both.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pathology and diagnostic lab chains in India",
+  "sections": [
+    {
+      "h": "What goes in each scope for a lab",
+      "ul": [
+        "Scope 1: DG diesel, LPG or other fuel, fuel for vehicles the lab owns, and refrigerant top-ups for ACs, cold rooms and freezers.",
+        "Scope 2: grid electricity for analysers, ACs, freezers and lighting, from your bills.",
+        "Scope 3 Category 1: reagents, kits, tubes and plastics. Check this first; for a lab it is often the biggest Scope 3 line.",
+        "Scope 3 Category 4: couriers and third-party transport of samples between collection centres and the processing lab.",
+        "Scope 3 Category 5: biomedical waste collected by the common treatment facility, by colour category under the Biomedical Waste Management Rules 2016.",
+        "Scope 3 Category 6: phlebotomists' own bikes paid per km for home collection."
+      ]
+    },
+    {
+      "h": "Define the test count before dividing",
+      "p": [
+        "Pull the count from the LIS for the same twelve months as the bills. Decide whether a profile of 20 parameters counts as one test or 20, and whether outsourced tests count. Write the rule down. A chain that counts parameters will show a far lower figure per test than one that counts orders, so per test figures from different labs are rarely comparable."
+      ]
+    },
+    {
+      "h": "Chains with many sites",
+      "p": [
+        "Calculate each processing lab and collection centre separately, then add. Collection centres are small and use mostly AC and lighting; the processing labs carry the analysers and cold storage. Divide each site's total by the tests that site processed, so a busy hub does not look worse than a quiet one for the wrong reason."
+      ]
+    },
+    {
+      "h": "Where the reductions usually are",
+      "ul": [
+        "Analysers left on overnight and ACs running in empty rooms show up on the night load of the bill.",
+        "Freezer and cold room setpoints, door discipline and defrosting.",
+        "DG hours: an inverter or battery for short outages can cut diesel.",
+        "Route planning for sample pickups."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one processing lab, one year",
+    "lines": [
+      "Grid electricity: 2,40,000 kWh x 0.710 = 1,70,400 kg CO2",
+      "DG diesel: 4,000 litres x 2.68 = 10,720 kg CO2",
+      "Scope 1 and 2: 1,70,400 + 10,720 = 1,81,120 kg CO2",
+      "Tests reported (orders, not parameters): 6,00,000",
+      "Per test: 1,81,120 / 6,00,000 = 0.30 kg CO2, about 300 grams"
+    ],
+    "note": "Illustrative figures. Refrigerant leaks would be added in kg CO2e; Scope 3 is reported as a second per test figure."
+  },
+  "senseible": "Senseible reads the lab's electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0, and reads diesel invoices with litres at the IPCC 2006 default of 2.68 kg CO2 per litre. Reagent and consumable purchases can get a spend-based estimate, labelled as such.",
+  "links": [
+    {
+      "label": "Hospital footprint per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    },
+    {
+      "label": "Biomedical waste in Scope 3",
+      "to": "/answers/biomedical-waste-emissions-scope-3"
+    },
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "DG set: Scope 1 or 2",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 1, 4, 5 and 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

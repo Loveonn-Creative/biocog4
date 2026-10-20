@@ -1,0 +1,81 @@
+{
+  "slug": "fpo-carbon-credit-developer-contract-checklist",
+  "q": "What should an FPO check before signing a carbon credit contract with a project developer?",
+  "title": "FPO checklist for a carbon credit contract",
+  "short": "Check who owns the credits and the farm data, how the farmer share is calculated and when it is paid, what costs come off first, how long members are bound, what happens if a farmer stops the practice, and how you can exit. Get every figure written into the contract.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "FPOs and farmer groups approached by soil or rice carbon developers",
+  "sections": [
+    {
+      "h": "Money: how the share is worked out",
+      "ul": [
+        "Is the farmer share a percentage of gross sale price, of net revenue after costs, or a fixed rupee amount per credit or per acre?",
+        "Which costs are deducted before sharing: validation, verification, registry fees, buffer, the developer's margin.",
+        "When payment happens: on issuance, on sale, or in advance, and whether advances are repayable.",
+        "Whether the sale price and buyer will be shown to the FPO."
+      ]
+    },
+    {
+      "h": "Time and obligations",
+      "ul": [
+        "How long members must keep the practice and allow monitoring. Soil carbon projects under standards such as Verra VM0042 carry long monitoring and permanence duties.",
+        "What share of credits goes to the buffer pool for reversal risk, and who bears a reversal if a farmer ploughs or stops alternate wetting and drying.",
+        "Whether new farmers can join and existing ones leave."
+      ]
+    },
+    {
+      "h": "Ownership, data and exclusivity",
+      "ul": [
+        "Who holds title to the credits, and in whose name they sit on the registry.",
+        "Who owns farm data, soil samples and satellite records, and whether they can be sold.",
+        "Exclusivity: whether members can sell the same reductions to a food buyer as an inset claim or join another scheme. Selling the same tonne twice voids it.",
+        "Which standard and methodology apply: Verra, Gold Standard or India's Carbon Credit Trading Scheme offset mechanism."
+      ]
+    },
+    {
+      "h": "Exit and disputes",
+      "ul": [
+        "Termination rights for the FPO, and penalties or repayment on exit.",
+        "What happens if the project fails validation or issues nothing.",
+        "Governing law and a dispute forum the FPO can afford.",
+        "Have the contract read by a lawyer and explained to members in their language before anyone signs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the FPO's diesel and electricity bills, applies IPCC 2006 and CEA factors, and keeps each file fingerprinted and dated, so you hold your own record of energy use before and during a project instead of relying only on the developer's figures. It also gives carbon credit eligibility signals from those records.",
+  "links": [
+    {
+      "label": "Soil carbon credits for Indian farmers",
+      "to": "/answers/soil-carbon-credits-india-farmers"
+    },
+    {
+      "label": "How much of my credits go to the buffer pool",
+      "to": "/answers/how-much-of-my-credits-go-to-buffer-pool"
+    },
+    {
+      "label": "Grouped projects in Verra",
+      "to": "/answers/what-is-a-grouped-project-in-verra"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VCS Standard and VM0042 Improved Agricultural Land Management",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard for the Global Goals, soil organic carbon requirements",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "MoEFCC, Carbon Credit Trading Scheme offset mechanism procedures",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewNote": "CCTS offset procedures and VM0042 versions are being updated; check the current version before signing.",
+  "reviewed": "2026-10-18"
+}

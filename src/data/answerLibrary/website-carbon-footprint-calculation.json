@@ -1,0 +1,84 @@
+{
+  "slug": "website-carbon-footprint-calculation",
+  "q": "How do I calculate my website's carbon footprint?",
+  "title": "Calculating a website's carbon footprint",
+  "short": "Multiply the data transferred per page view by monthly page views, then by an energy intensity per GB from a published model such as the Sustainable Web Design Model, then by a grid factor. The result is a model-based estimate, and different methods give quite different numbers, so state the method.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "SaaS, D2C and digital businesses",
+  "sections": [
+    {
+      "h": "The inputs you need",
+      "ul": [
+        "Page weight: kB or MB transferred per view, from your browser's developer tools or a page test, averaged over your main pages.",
+        "Page views per month, from your analytics.",
+        "Energy per GB: the figure the model you use publishes, covering data centres, networks and user devices.",
+        "Grid factor: where most of the energy is used. For an Indian audience and hosting, 0.710 kg CO2 per kWh (CEA, version 21.0)."
+      ]
+    },
+    {
+      "h": "Where the result sits in your inventory",
+      "p": [
+        "Hosting you pay for is Scope 3 Category 1; servers on your own electricity bill are Scope 2. Energy used by visitors' phones and laptops is not your Scope 1 or 2 and is not a purchase, so most inventories leave it out; website models include it because it is part of the system your pages drive. Report a website estimate as a separate metric, not as an added line in your Scope 1, 2 and 3 totals."
+      ]
+    },
+    {
+      "h": "Why tools disagree",
+      "ul": [
+        "They use different energy per GB figures and different splits between data centre, network and device.",
+        "Some count returning visitors' cached pages as smaller transfers, others do not.",
+        "Some apply a global average grid factor, others the visitor's country.",
+        "Fix one method, record its version, and track the trend rather than comparing with another tool's number."
+      ]
+    },
+    {
+      "h": "What actually cuts it",
+      "ul": [
+        "Compress and resize images, and serve modern formats.",
+        "Remove unused scripts, fonts and trackers.",
+        "Cache static files so repeat visits transfer less.",
+        "Host in a region with lower grid intensity if latency allows."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a D2C store",
+    "lines": [
+      "Page weight 2 MB x 100,000 views a month = 200,000 MB = 200 GB",
+      "200 GB x 0.2 kWh per GB (illustrative intensity) = 40 kWh",
+      "40 x 0.710 kg CO2 per kWh = 28.4 kg CO2 a month, about 341 kg a year"
+    ],
+    "note": "The 0.2 kWh per GB is a placeholder. Use the energy intensity published in the current version of the model you choose."
+  },
+  "senseible": "Senseible reads your hosting and SaaS invoices into its Scope 3 evidence trail, and its cloud and data centre calculator estimates hosting emissions from usage by region.",
+  "links": [
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "SaaS subscriptions in Scope 3",
+      "to": "/answers/saas-subscriptions-scope-3-emissions"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO/IEC 21031:2024, Software Carbon Intensity (SCI) specification (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Website models such as the Sustainable Web Design Model are revised; record the version and recheck its energy intensity figures when it changes.",
+  "reviewed": "2026-10-18"
+}

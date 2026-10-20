@@ -1,0 +1,74 @@
+{
+  "slug": "startup-carbon-data-for-investor-due-diligence",
+  "q": "What carbon data do investors ask Indian startups for in due diligence?",
+  "title": "Carbon data investors ask startups for",
+  "short": "Most investors ask for Scope 1 and 2 emissions for the last financial year, the method and factors used, a view of material Scope 3, and any climate policy or target. Development finance investors and EU funds ask for more, because they must report the emissions of companies they back.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Founders raising from VCs and development finance investors",
+  "sections": [
+    {
+      "h": "The core request from most funds",
+      "ul": [
+        "Scope 1 (fuel burnt, refrigerant leaks) and Scope 2 (purchased electricity) in tonnes, for a stated financial year.",
+        "The boundary: which offices, warehouses and plants are included.",
+        "The factors and their sources, for example the CEA grid factor for Indian electricity.",
+        "Your largest Scope 3 categories, even as an estimate: purchased goods, cloud, freight or travel.",
+        "Who owns climate in the company and any target you have set."
+      ]
+    },
+    {
+      "h": "Why investors need it",
+      "p": [
+        "Funds that follow the PCAF Global GHG Accounting and Reporting Standard report financed emissions. For an unlisted company they attribute a share of your emissions to their investment, in proportion to their stake in your total equity plus debt. Without your figures they fall back on sector averages, scored as the lowest data quality.",
+        "EU-based funds also report principal adverse impact indicators under SFDR, which include investee emissions. Development finance institutions add their own environmental standards, often written into the term sheet."
+      ]
+    },
+    {
+      "h": "What changes for development finance investors",
+      "p": [
+        "Development finance institutions and the funds they back screen companies against environmental and social standards such as IFC Performance Standard 3, which ties yearly GHG quantification to a project's expected emissions. Ask the investor which standard and threshold they apply, and expect a credible estimate and an action plan in their environmental and social review even if you sit below it."
+      ]
+    },
+    {
+      "h": "What to prepare before the data room opens",
+      "ol": [
+        "One page with Scope 1 and 2 totals, the year, boundary and factors.",
+        "The source invoices and bills behind each figure, so a diligence team can trace a sample.",
+        "A Scope 3 screening note listing categories, method (activity or spend-based) and uncertainty.",
+        "A short note on what you will measure each year after the round."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel invoices and electricity bills into a dated Scope 1 and 2 record, with the factor and source document on every line, and gives labelled Scope 3 estimates from supplier invoices. Each file is fingerprinted, so a diligence team can trace any figure back to its bill.",
+  "links": [
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "SFDR PAI data request from an EU investor",
+      "to": "/answers/sfdr-pai-data-request-from-eu-investor"
+    },
+    {
+      "label": "PCAF data quality score",
+      "to": "/answers/pcaf-data-quality-score-for-msme-borrowers"
+    },
+    {
+      "label": "When IFC or ADB funding requires GHG quantification",
+      "to": "/answers/ifc-ps3-ghg-quantification-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard, Part A: Financed Emissions",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Investor requirements follow PCAF, SFDR and IFC standards, which are revised from time to time; check the version a fund cites, and take any IFC threshold from the current Performance Standard 3 on ifc.org.",
+  "reviewed": "2026-10-18"
+}
