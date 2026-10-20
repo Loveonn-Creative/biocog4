@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scope 3 Floor Plan</title>
+<!--
+  KYA MATLAB HAI? #02 · SCOPE 3 (enterprise, English, LinkedIn-first). 32 s, 1080x1920, deterministic window.render(t).
+  DEVICE: the office evacuation floor plan ("YOU ARE HERE") that hangs by every lift. Folded, it shows only your
+  building (Scope 1 and 2). It unfolds upward (upstream, 8 rooms) and downward (downstream, 7 rooms). Payoff: the
+  "In case of fire, do not use the lift" plate gets corrected by hand to "In case of Scope 3".
+  FACT SOURCES (every claim on screen):
+  - Scope 3 has 15 categories: 8 upstream (1 purchased goods and services, 2 capital goods, 3 fuel- and
+    energy-related activities, 4 upstream transportation and distribution, 5 waste generated in operations,
+    6 business travel, 7 employee commuting, 8 upstream leased assets) and 7 downstream (9 downstream transportation
+    and distribution, 10 processing of sold products, 11 use of sold products, 12 end-of-life treatment of sold
+    products, 13 downstream leased assets, 14 franchises, 15 investments).
+    GHG Protocol, Corporate Value Chain (Scope 3) Accounting and Reporting Standard (WRI/WBCSD, 2011), Table 5.3;
+    GHG Protocol Scope 3 FAQ https://ghgprotocol.org/scope-3-frequently-asked-questions
+  - Upstream vs downstream "is based on the financial transactions of the reporting company: Upstream emissions are
+    indirect GHG emissions related to purchased or acquired goods and services. Downstream emissions are indirect GHG
+    emissions related to sold goods and services." (GHG Protocol Scope 3 FAQ, same URL). Hence "What you buy" /
+    "What you sell".
+  - Scope 1 = direct emissions from owned or controlled sources (e.g. boiler, DG set); Scope 2 = purchased
+    electricity, steam, heat, cooling. GHG Protocol Corporate Standard (revised ed., 2004), ch. 4.
+  - Scope 3 = all other indirect emissions in the value chain, i.e. from sources the company does not own or control,
+    hence "mostly someone else's address" (said of the categories, not of tonnes; no share-of-emissions number used).
+  - Hidden detail: footnote "*8: only if it isn't already in your Scope 1 & 2". Category 8 covers "the operation of
+    assets that are leased by the reporting company in the reporting year and not already included in the reporting
+    company's scope 1 or scope 2 inventories"; whether a lease lands in Scope 1/2 depends on lease type and
+    consolidation approach. GHG Protocol, Technical Guidance for Calculating Scope 3 Emissions (2013), Category 8
+    https://ghgprotocol.org/sites/default/files/2022-12/Chapter8.pdf
+    That is also why the caption says "mostly": a leased room can sit inside your walls.
+  "Take the stairs. Room by room." is advice in the series voice, not a GHG Protocol rule. No numbers beyond 1, 2, 3,
+  8, 7 and 15. No product UI, no Senseible claim beyond the sign-off.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --paper: #f4ede1; --ink: #16181d; --saffron: #ef8a25; --green: #1f5139; --red: #c8372d; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+#cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+#wall { position: absolute; left: 0; top: 0; }
+#map { position: absolute; left: 70px; top: 610px; width: 840px; height: 870px; perspective: 2600px; perspective-origin: 50% 50%; transform-style: preserve-3d; }
+.pan { position: absolute; left: 0; width: 840px; height: 290px; background: #fbf6ec; border: 5px solid var(--ink); border-radius: 6px; transform-style: preserve-3d; overflow: hidden; }
+.pan svg { position: absolute; left: -5px; top: -5px; width: 840px; height: 290px; }
+.pan .shade { position: absolute; inset: 0; background: #16181d; opacity: 0; }
+#pU { top: 0; transform-origin: 50% 100%; }
+#pC { top: 290px; box-shadow: 0 14px 0 rgba(22,24,29,.10); }
+#pD { top: 580px; transform-origin: 50% 0; }
+#over { position: absolute; left: 70px; top: 610px; width: 840px; height: 870px; overflow: visible; }
+.pan text, #over text { font-family: 'JetBrains Mono'; font-weight: 600; }
+.pan .hand, #over .hand, #wall .hand { font-family: 'Hand'; font-weight: 600; }
+.cap { position: absolute; left: 70px; width: 850px; top: 300px; font-size: 92px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.0; z-index: 40; }
+.cap.sm { font-size: 80px; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.cap .w > span { display: inline-block; }
+.cap .s { color: var(--saffron); }
+#tag { position: absolute; left: 70px; top: 254px; z-index: 40; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 28px; letter-spacing: .08em; }
+#tag b { color: var(--saffron); font-weight: 700; }
+#sign { position: absolute; left: 70px; top: 300px; width: 840px; height: 290px; z-index: 40; }
+#endc { position: absolute; left: 70px; top: 300px; width: 850px; z-index: 40; }
+#wm { font-size: 132px; font-weight: 700; letter-spacing: -.045em; line-height: 1; }
+#wm i { font-style: normal; color: var(--green); }
+#line { margin-top: 18px; font-size: 54px; font-weight: 500; letter-spacing: -.02em; }
+#cta { margin-top: 30px; display: inline-block; font-family: 'Hand'; font-size: 56px; position: relative; }
+#cta svg { position: absolute; left: -8px; bottom: -14px; width: 104%; height: 26px; overflow: visible; }
+#grain { opacity: .09; mix-blend-mode: multiply; z-index: 80; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="cam">
+    <svg id="wall" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+    <div id="map">
+      <div class="pan" id="pU"><svg viewBox="0 0 840 290"></svg><div class="shade"></div></div>
+      <div class="pan" id="pC"><svg viewBox="0 0 840 290"></svg><div class="shade"></div></div>
+      <div class="pan" id="pD"><svg viewBox="0 0 840 290"></svg><div class="shade"></div></div>
+    </div>
+    <svg id="over" width="840" height="870" viewBox="0 0 840 870"></svg>
+  </div>
+
+  <div id="tag">KYA MATLAB HAI? <b>#02</b></div>
+  <div class="cap" id="c1"><span class="s">You</span> are here.<br>Scope 3 isn't.</div>
+  <div class="cap" id="c2">Scope 1 and 2 live inside <span class="s">your walls.</span></div>
+  <div class="cap" id="c3">Scope 3? Unfold the map.</div>
+  <div class="cap" id="c4">Upstream: 8 categories. What you buy.</div>
+  <div class="cap" id="c5">Downstream: 7. What you sell.</div>
+  <div class="cap sm" id="c6">15 categories. Mostly someone else's address.</div>
+  <svg id="sign" viewBox="0 0 840 290"></svg>
+  <div class="cap" id="c8">Take the stairs. Room by room.</div>
+  <div id="endc">
+    <div id="wm">Senseible<i>.</i></div>
+    <div id="line">Carbon, in plain words.</div>
+    <div id="cta">Send this to whoever owns the supplier list<svg viewBox="0 0 400 26" preserveAspectRatio="none"><path id="ctaU" d="M4 14 C 90 4, 200 22, 396 10" fill="none" stroke="#ef8a25" stroke-width="7" stroke-linecap="round" pathLength="1"/></svg></div>
+  </div>
+  <svg class="layer" id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="5"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gn)"/></svg>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  in2: x => x * x, back: x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); } };
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const f1 = v => (+v).toFixed(1);
+const INK = '#16181d', PAPER = '#f4ede1', SAF = '#ef8a25', GRN = '#1f5139', RED = '#c8372d', LITE = '#fbf6ec';
+
+// ---------------- icons (drawn in a 60 x 40 box) ----------------
+const ic = {
+  box: `<path d="M8 14 L30 6 L52 14 L52 34 L30 40 L8 34 Z M8 14 L30 22 L52 14 M30 22 L30 40"/>`,
+  gear: `<circle cx="30" cy="22" r="10"/><circle cx="30" cy="22" r="3.5"/>` + [0,45,90,135,180,225,270,315].map(a => { const r = a * Math.PI / 180;
+      return `<path d="M${f1(30 + Math.cos(r) * 11)} ${f1(22 + Math.sin(r) * 11)} L${f1(30 + Math.cos(r) * 17)} ${f1(22 + Math.sin(r) * 17)}"/>`; }).join(''),
+  drop: `<path d="M22 6 C 14 18, 10 24, 14 31 C 18 38, 26 38, 30 31 C 34 24, 30 18, 22 6 Z"/><path d="M42 6 L36 22 L46 22 L40 38"/>`,
+  truck: `<path d="M4 10 L36 10 L36 32 L4 32 Z M36 18 L48 18 L56 26 L56 32 L36 32"/><circle cx="14" cy="34" r="5"/><circle cx="46" cy="34" r="5"/>`,
+  bin: `<path d="M14 12 L46 12 M26 12 L27 7 L33 7 L34 12 M17 12 L20 38 L40 38 L43 12 M26 18 L26 32 M34 18 L34 32"/>`,
+  plane: `<path d="M6 24 L54 16 M54 16 L48 12 M30 20 L22 6 L16 7 L20 21 M28 21 L32 34 L38 33 L36 20 M10 23 L7 15 L11 15 L16 22"/>`,
+  auto: `<path d="M10 30 L10 14 Q 12 6 24 6 L40 6 Q 50 8 52 22 L54 30 Z M24 6 L24 30 M10 18 L24 18"/><circle cx="16" cy="33" r="5"/><circle cx="46" cy="33" r="5"/>`,
+  key: `<circle cx="16" cy="22" r="9"/><path d="M25 22 L54 22 M46 22 L46 30 M52 22 L52 28"/>`,
+  factory: `<path d="M6 38 L6 18 L18 10 L18 18 L30 10 L30 18 L42 10 L42 18 L54 10 L54 38 Z M14 28 L20 28 M28 28 L34 28 M42 28 L48 28"/>`,
+  plug: `<path d="M18 10 L42 10 L42 24 Q 42 30 30 30 Q 18 30 18 24 Z M24 10 L24 3 M36 10 L36 3 M30 30 L30 36 Q 30 40 40 40 L56 40"/>`,
+  cycle: `<path d="M44 18 A 15 15 0 1 0 45 28 M44 18 L48 9 M44 18 L35 16"/>`,
+  shop: `<path d="M6 16 L12 6 L48 6 L54 16 Z M6 16 Q 12 22 18 16 Q 24 22 30 16 Q 36 22 42 16 Q 48 22 54 16 M10 20 L10 38 L50 38 L50 20 M24 38 L24 26 L36 26 L36 38"/>`,
+  pie: `<circle cx="30" cy="22" r="16"/><path d="M30 22 L30 6 M30 22 L44 30"/>`,
+};
+const UP = [[1, ['Purchased goods', '& services'], 'box'], [2, ['Capital goods'], 'gear'], [3, ['Fuel- & energy-', 'related activities'], 'drop'],
+  [4, ['Upstream transport', '& distribution'], 'truck'], [5, ['Waste generated', 'in operations'], 'bin'], [6, ['Business travel'], 'plane'],
+  [7, ['Employee', 'commuting'], 'auto'], [8, ['Upstream', 'leased assets*'], 'key']];
+const DN = [[9, ['Downstream transport', '& distribution'], 'truck'], [10, ['Processing of', 'sold products'], 'factory'], [11, ['Use of', 'sold products'], 'plug'],
+  [12, ['End-of-life of', 'sold products'], 'cycle'], [13, ['Downstream', 'leased assets'], 'key'], [14, ['Franchises'], 'shop'], [15, ['Investments'], 'pie']];
+
+// room cell; grid: 4 x 2 cells of 200 x 118 starting at (20, 46)
+function cell(i) { return [20 + (i % 4) * 200, 46 + Math.floor(i / 4) * 118]; }
+function room(i, [n, lab, icon], k, hl, tick) {
+  if (k <= 0) return '';
+  const [x, y] = cell(i), s = E.back(clamp(k)), w = 192, h = 110;
+  let r = `<g transform="translate(${x + 4 + w / 2} ${y + 4 + h / 2}) scale(${s.toFixed(3)}) translate(${-w / 2} ${-h / 2})" opacity="${clamp(k * 3).toFixed(2)}">`;
+  r += `<path d="M0 0 L${w} 0 L${w} ${h} L${w * .62} ${h} M${w * .38} ${h} L0 ${h} Z" fill="${hl > 0 ? `rgba(239,138,37,${(hl * .35).toFixed(2)})` : 'none'}" stroke="${INK}" stroke-width="4.5" stroke-linejoin="round"/>`;
+  r += `<path d="M${w * .38} ${h} A ${w * .24} ${w * .24} 0 0 1 ${w * .38 + w * .17} ${h - w * .17}" fill="none" stroke="${INK}" stroke-width="2" opacity=".5"/>`;
+  r += `<text class="hand" x="12" y="44" font-size="46" fill="${INK}">${n}</text>`;
+  r += `<g transform="translate(${w - 72} 8)" fill="none" stroke="${INK}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">${ic[icon]}</g>`;
+  lab.forEach((l, j) => { r += `<text x="12" y="${70 + j * 19}" font-size="${l.length > 18 ? 14.5 : 16}" fill="${INK}">${l}</text>`; });
+  if (tick > 0) r += `<path d="M${w - 52} ${h - 34} L${w - 38} ${h - 20} L${w - 14} ${h - 50}" fill="none" stroke="${GRN}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - tick).toFixed(3)}"/>`;
+  return r + '</g>';
+}
+function header(txt, k) { return `<text x="22" y="32" font-size="19" letter-spacing="2" fill="${INK}" opacity="${(.75 * k).toFixed(2)}">${txt}</text>`; }
+
+// ---------------- captions ----------------
+const CAPS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c8'];
+CAPS.forEach(id => {
+  const el = $(id); const walk = n => { [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const f = document.createDocumentFragment();
+    c.textContent.split(/(\s+)/).forEach(s => { if (!s) return; if (/^\s+$/.test(s)) f.appendChild(document.createTextNode(' ')); else { const w = document.createElement('span'); w.className = 'w'; w.innerHTML = `<span>${s}</span>`; f.appendChild(w); } });
+    n.replaceChild(f, c); } else if (c.nodeType === 1 && !c.classList.contains('w') && c.tagName !== 'BR') walk(c); }); }; walk(el); });
+function cap(id, t, tin, tout, st = .07) { const el = $(id), o = tout == null ? 1 : 1 - p(t, tout, .25, E.io);
+  el.style.opacity = o; el.style.visibility = t >= tin - .02 && o > 0 ? 'visible' : 'hidden';
+  el.querySelectorAll('.w > span').forEach((w, i) => { const k = tin < 0 ? 1 : p(t, tin + i * st, .45, E.o5); w.style.transform = `translateY(${(1 - k) * 112}%)`; }); }
+
+// fold state: 0 = folded behind the centre panel, 1 = flat
+function fold(el, k, dir) {
+  const a = 180 * (1 - k), c = Math.cos(a * Math.PI / 180);
+  el.style.visibility = a > 178.5 ? 'hidden' : 'visible';
+  el.style.transform = `rotateX(${(dir * a).toFixed(2)}deg)`;
+  el.querySelector('svg').style.visibility = c > 0 ? 'visible' : 'hidden';
+  el.style.background = c > 0 ? LITE : '#e6dac4';
+  el.querySelector('.shade').style.opacity = ((1 - Math.abs(c)) * .28).toFixed(3);
+}
+
+const DUR = 32;
+// map coords (inside #map / #over)
+const YOU = [420, 290 + 150];
+function render(t) {
+  // ---------- fold timeline ----------
+  const refold = p(t, 28.55, 1.1, E.io);
+  const kU = p(t, 8.2, 1.3, E.io) * (1 - refold), kD = p(t, 13.75, 1.3, E.io) * (1 - refold);
+  fold($('pU'), kU, -1); fold($('pD'), kD, 1);
+
+  // ---------- centre panel: your building ----------
+  {
+    const reset = 1 - p(t, 30.5, .7, E.io);   // loop: back to the plain plan of frame 0
+    const wallK = p(t, 3.5, 1.2, E.io) * reset;
+    const s1 = p(t, 4.25, .45, E.back) * reset, s2 = p(t, 4.85, .45, E.back) * reset;
+    let s = header('FLOOR PLAN · YOUR WALLS', 1);
+    // walls with two gates (top: inward from upstream, bottom: outward to downstream)
+    const W = `M380 46 L40 46 L40 268 L380 268 M460 268 L800 268 L800 46 L460 46`;
+    s += `<path d="${W}" fill="none" stroke="${INK}" stroke-width="13" stroke-linejoin="miter"/>`;
+    s += `<path d="${W}" fill="none" stroke="${SAF}" stroke-width="6" stroke-linejoin="miter" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - wallK).toFixed(3)}"/>`;
+    // inner walls
+    s += `<path d="M220 46 L220 150 M220 192 L220 268 M360 46 L360 80 M360 122 L360 268 M560 46 L560 120 M560 160 L560 268 M640 46 L640 268" fill="none" stroke="${INK}" stroke-width="6"/>`;
+    s += `<text x="420" y="40" font-size="15" text-anchor="middle" fill="${INK}" opacity=".7">INWARD</text><text x="420" y="287" font-size="15" text-anchor="middle" fill="${INK}" opacity=".7">OUTWARD</text>`;
+    s += `<path d="M420 6 L420 30 M412 22 L420 30 L428 22" fill="none" stroke="${INK}" stroke-width="3" opacity=".6"/>`;
+    // scope 1 rooms: boiler + DG set (flame doodles), scope 2: meter room
+    const flame = (x, y, k) => `<path d="M${x} ${y} C ${x - 18} ${y - 14}, ${x - 8} ${y - 34}, ${x} ${y - 44} C ${x + 2} ${y - 30}, ${x + 18} ${y - 26}, ${x + 12} ${y - 8} C ${x + 8} ${y}, ${x + 2} ${y}, ${x} ${y} Z" fill="${k > .5 ? SAF : 'none'}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`;
+    s += `<text x="66" y="236" font-size="19" fill="${INK}">BOILER</text>` + flame(130, 180, s1);
+    s += `<rect x="248" y="96" width="94" height="62" rx="6" fill="none" stroke="${INK}" stroke-width="4"/><path d="M262 112 L326 112 M262 126 L326 126 M262 140 L310 140" stroke="${INK}" stroke-width="3"/>`;
+    s += `<text x="246" y="236" font-size="19" fill="${INK}">DG SET</text>`;
+    s += `<rect x="676" y="86" width="90" height="96" rx="8" fill="none" stroke="${INK}" stroke-width="4"/><rect x="690" y="100" width="62" height="26" fill="${s2 > .5 ? '#fff4d8' : 'none'}" stroke="${INK}" stroke-width="3"/>`;
+    s += `<path d="M722 140 L710 160 L724 160 L714 178" fill="none" stroke="${s2 > .5 ? SAF : INK}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="664" y="236" font-size="19" fill="${INK}">METER</text>`;
+    s += `<text x="380" y="80" font-size="15" fill="${INK}" opacity=".7">OFFICE</text>`;
+    s += `<text x="584" y="236" font-size="15" fill="${INK}" opacity=".6" transform="rotate(-90 594 200)">LIFT</text>`;
+    // scope badges
+    const badge = (x, y, n, k) => k <= 0 ? '' : `<g transform="translate(${x} ${y}) scale(${k.toFixed(3)})"><circle r="27" fill="${SAF}" stroke="${INK}" stroke-width="4"/><text class="hand" y="15" font-size="44" text-anchor="middle" fill="${INK}">${n}</text></g>`;
+    s += badge(178, 92, 1, s1) + badge(330, 200, 1, p(t, 4.45, .45, E.back) * reset) + badge(752, 220, 2, s2);
+    $('pC').querySelector('svg').innerHTML = s;
+  }
+
+  // ---------- upstream / downstream panels ----------
+  const sweep = i => { const c = 17.3 + i * .095; return clamp(1 - Math.abs(t - c) / .22); };
+  {
+    let s = header('UPSTREAM · WHAT YOU BUY', p(t, 9.3, .4));
+    UP.forEach((r, i) => { const k = p(t, 9.9 + i * .33, .4);
+      const tick = i === 0 ? p(t, 27.5, .45, E.io) * (1 - refold) : 0;
+      s += room(i, r, k, Math.max(sweep(i), i === 0 ? p(t, 27.2, .3) : 0), tick); });
+    $('pU').querySelector('svg').innerHTML = s;
+  }
+  {
+    let s = header('DOWNSTREAM · WHAT YOU SELL', p(t, 14.9, .4));
+    DN.forEach((r, i) => { const k = p(t, 15.1 + i * .33, .4); s += room(i, r, k, sweep(8 + i), 0); });
+    // hidden detail: the footnote cell
+    const [fx, fy] = cell(7);
+    s += `<g opacity="${(p(t, 17.6, .6) * .8).toFixed(2)}"><text x="${fx + 12}" y="${fy + 50}" font-size="13" fill="${INK}">*8: only if it isn't</text><text x="${fx + 12}" y="${fy + 68}" font-size="13" fill="${INK}">already in your</text><text x="${fx + 12}" y="${fy + 86}" font-size="13" fill="${INK}">Scope 1 &amp; 2.</text></g>`;
+    $('pD').querySelector('svg').innerHTML = s;
+  }
+
+  // ---------- overlay: YOU ARE HERE dot, hand circle, stair hops ----------
+  {
+    let s = '';
+    // hops: you -> inward gate -> up the corridor -> room 1 (25.7 .. 27.3)
+    const pts = [YOU, [420, 318], [420, 276], [300, 210], [200, 150], [96, 80]];
+    const hopT = 25.75, hd = .3;
+    let pos = YOU, lift = 0;
+    for (let j = 0; j < pts.length - 1; j++) { const k = clamp((t - hopT - j * hd) / hd); if (k > 0 && k < 1) { pos = [lerp(pts[j][0], pts[j + 1][0], E.io(k)), lerp(pts[j][1], pts[j + 1][1], E.io(k))]; lift = Math.sin(Math.PI * k) * 34; }
+      else if (k >= 1) pos = pts[j + 1]; }
+    // refold: dot returns home
+    if (refold > 0) pos = [lerp(pos[0], YOU[0], refold), lerp(pos[1], YOU[1], refold)];
+    const stamp = t < .3 ? lerp(2.2, 1, E.o3(t / .3)) : 1;
+    const pulse = 1 + Math.sin(t * 5.2) * .06;
+    const R = 20 * stamp * pulse;
+    s += `<ellipse cx="${f1(pos[0])}" cy="${f1(pos[1] + 8)}" rx="${f1(R * .9)}" ry="${f1(R * .35)}" fill="rgba(22,24,29,.15)"/>`;
+    s += `<circle cx="${f1(pos[0])}" cy="${f1(pos[1] - lift)}" r="${f1(R)}" fill="${SAF}" stroke="${INK}" stroke-width="5"/>`;
+    // hand-drawn circle around the dot (hook), and the label
+    const ring = p(t, 0, .9, E.io) * (1 - p(t, 3.0, .4));
+    if (ring > 0) s += `<path d="M${YOU[0] + 46} ${YOU[1] - 6} C ${YOU[0] + 50} ${YOU[1] - 50}, ${YOU[0] - 40} ${YOU[1] - 58}, ${YOU[0] - 50} ${YOU[1] - 8} C ${YOU[0] - 56} ${YOU[1] + 38}, ${YOU[0] + 30} ${YOU[1] + 52}, ${YOU[0] + 50} ${YOU[1] + 6} L ${YOU[0] + 40} ${YOU[1] - 26}"
+      fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - ring).toFixed(3)}"/>`;
+    const lab = (t < 25.6 ? 1 : 1 - p(t, 25.6, .2)) + p(t, 29.4, .4);
+    s += `<text x="${YOU[0] + 40}" y="${YOU[1] + 68}" font-size="17" fill="${INK}" opacity="${clamp(lab).toFixed(2)}">YOU ARE HERE</text>`;
+    $('over').innerHTML = s;
+  }
+
+  // ---------- wall dressing: screws on the map board, extinguisher at the right edge ----------
+  {
+    let s = '';
+    const top = lerp(900, 610, Math.max(kU, 0)), bot = lerp(1190, 1480, Math.max(kD, 0));
+    // board behind the map
+    s += `<rect x="52" y="${f1(top - 18)}" width="876" height="${f1(bot - top + 36)}" rx="10" fill="#e9dfcd" stroke="${INK}" stroke-width="3" opacity=".9"/>`;
+    [[62, top - 8], [918, top - 8], [62, bot + 8], [918, bot + 8]].forEach(([x, y]) => { s += `<circle cx="${x}" cy="${f1(y)}" r="5" fill="none" stroke="${INK}" stroke-width="2.5"/>`; });
+    // extinguisher (decor, outside the text area)
+    s += `<g transform="translate(965 1520)" fill="none" stroke="${INK}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="0" y="40" width="64" height="200" rx="26" fill="${RED}"/><path d="M18 40 L18 18 L46 18 L46 40 M32 18 L32 4 L64 4 M50 26 Q 80 40 74 110"/><rect x="10" y="110" width="44" height="50" rx="4" fill="${PAPER}"/></g>`;
+    $('wall').innerHTML = s;
+  }
+
+  // ---------- camera ----------
+  const zIn = 1 + .55 * (1 - p(t, .3, 2.6, E.io));
+  const zOut = 1 - .08 * p(t, 18.8, 1.4, E.io) * (1 - p(t, 29.0, 1.4, E.io));
+  const zl = p(t, 30.85, 1.15, E.io);   // loop: push back in on the dot
+  const z = zIn * zOut * (1 + .55 * zl);
+  const fk = p(t, .3, 2.6, E.io) * (1 - zl);
+  const fx = lerp(70 + YOU[0], 490, fk), fy = lerp(610 + YOU[1], 1045, fk);
+  const zoomCy = 1045 + (1 - p(t, .3, 2.6, E.io)) * 0;
+  $('cam').style.transform = `translate(${f1(fx - fx * z)}px, ${f1(fy - fy * z)}px) scale(${z.toFixed(4)})`;
+
+  // ---------- type ----------
+  $('tag').style.opacity = t < 2.9 ? 1 : (t > 28.5 ? p(t, 28.8, .4) : 1 - p(t, 2.9, .3));
+  if (t > 31.4) cap("c1", t, 31.6, null, .04); else cap('c1', t, -1, 2.95);
+  cap('c2', t, 3.2, 6.85);
+  cap('c3', t, 7.1, 9.45);
+  cap('c4', t, 9.7, 13.4);
+  cap('c5', t, 13.6, 16.9);
+  cap('c6', t, 17.1, 20.55);
+  // payoff: the lift sign gets corrected
+  {
+    const k = p(t, 20.85, .5, E.back), out = p(t, 25.25, .3, E.io);
+    const sg = $('sign'); sg.style.visibility = t > 20.8 && out < 1 ? 'visible' : 'hidden'; sg.style.opacity = 1 - out;
+    sg.style.transform = `translateY(${f1((1 - k) * -60)}px) rotate(${f1((1 - k) * -3 + Math.sin(clamp((t - 21.2) / 1.0) * Math.PI * 3) * .6 * (1 - clamp((t - 21.2) / 1.0)))}deg)`;
+    const strike = p(t, 21.75, .35, E.io), hw = p(t, 22.15, .7, E.io), l2 = p(t, 23.2, .35, E.o5);
+    let s = `<rect x="4" y="4" width="832" height="282" rx="16" fill="#fffaf0" stroke="${RED}" stroke-width="9"/>`;
+    // lift-with-cross icon
+    s += `<g transform="translate(40 66)" fill="none" stroke="${RED}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><rect x="0" y="0" width="120" height="160" rx="8"/><path d="M60 0 L60 160"/>
+      <path d="M30 40 L30 120 M90 40 L90 120" stroke-width="5"/><path d="M-10 170 L130 -10" stroke-width="10" opacity="${l2.toFixed(2)}"/></g>`;
+    s += `<text x="196" y="130" font-size="58" font-weight="700" fill="${RED}" style="font-family:'Space Grotesk';letter-spacing:-1px">IN CASE OF <tspan opacity="${(1 - strike * .55).toFixed(2)}">FIRE</tspan></text>`;
+    s += `<path d="M528 112 C 600 106, 660 116, 718 104" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - strike).toFixed(3)}"/>`;
+    s += `<clipPath id="hwc"><rect x="556" y="0" width="${f1(hw * 210)}" height="110"/></clipPath><g clip-path="url(#hwc)"><text class="hand" x="566" y="62" font-size="64" fill="${INK}" transform="rotate(-4 566 62)" style="font-family:'Hand';font-weight:600">Scope 3</text>
+      <path d="M612 72 L622 92 L632 72" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+    s += `<g opacity="${l2.toFixed(2)}" transform="translate(0 ${f1((1 - l2) * 18)})"><text x="196" y="222" font-size="58" font-weight="700" fill="${RED}" style="font-family:'Space Grotesk';letter-spacing:-1px">DO NOT USE THE LIFT.</text></g>`;
+    sg.innerHTML = s;
+  }
+  cap('c8', t, 25.55, 28.35);
+  const endK = p(t, 28.6, .5, E.o5), endOut = p(t, 31.55, .35, E.io);
+  const ec = $('endc'); ec.style.visibility = t > 28.5 && endOut < 1 ? 'visible' : 'hidden';
+  ec.style.opacity = 1 - endOut; ec.style.transform = `translateY(${f1((1 - endK) * 40)}px)`;
+  $('wm').style.opacity = endK; $('line').style.opacity = p(t, 29.1, .5); $('cta').style.opacity = p(t, 29.7, .4);
+  $('ctaU').setAttribute('stroke-dasharray', '1'); $('ctaU').setAttribute('stroke-dashoffset', (1 - p(t, 30.0, .6, E.io)).toFixed(3));
+}
+window.render = render;
+window.render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
