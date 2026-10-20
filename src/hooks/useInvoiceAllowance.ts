@@ -34,8 +34,8 @@ export function useInvoiceAllowance() {
     const reads = await db.from('invoice_reads').select('plan_units, status, created_at').eq('user_id', user.id).gte('created_at', since);
     if (reads.error) { setUsed(await docsBetween(since)); return; }
     let n = planReadsUsed(reads.data ?? []);
-    const rpc = supabase.rpc as unknown as (fn: string) => Promise<{ data: string | null }>;
-    const { data: ledgerStart } = await rpc('invoice_ledger_started_at');
+    // Bound call: an unbound supabase.rpc loses its client and throws.
+    const { data: ledgerStart } = await (supabase as unknown as { rpc: (fn: string) => Promise<{ data: string | null }> }).rpc('invoice_ledger_started_at');
     if (ledgerStart && ledgerStart > since) n += await docsBetween(since, ledgerStart);
     setUsed(n);
     const [p, o, c] = await Promise.all([
