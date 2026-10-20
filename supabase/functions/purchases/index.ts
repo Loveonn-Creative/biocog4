@@ -50,7 +50,7 @@ serve(async (req) => {
       const r = await activateAddonOrder(admin, rz, { orderId, paymentId, expectedUserId: userId });
       if (r.ok === false) {
         console.error('Add-on activation refused:', r.code, { order: mask(orderId) });
-        const msg = r.code === 'not_captured' ? 'Your payment is still being confirmed. It will appear on your profile within a few minutes.' : 'This payment could not be matched to your order. Contact billing@senseible.earth.';
+        const msg = r.code === 'not_captured' ? 'Your payment is still being confirmed. It will appear on your Subscription page within a few minutes.' : 'This payment could not be matched to your order. Contact billing@senseible.earth.';
         return json({ error: msg, code: r.code }, r.code === 'not_captured' ? 202 : 400);
       }
       if (r.activated && r.table === 'service_orders') await notifyServiceOrder(admin, r.rowId);

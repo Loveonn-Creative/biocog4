@@ -58,7 +58,7 @@ export function useAddonPurchase(onDone: () => void) {
           setBusy(null);
           if (done) { toast.success(`${data.name}: payment confirmed.`); onDone(); return; }
           if (failed) toast.error(`${failed} Payment reference ${res.razorpay_payment_id}.`, { duration: 15000 });
-          else { toast.info('Payment received. It will appear on your profile within a few minutes; please do not pay again.', { duration: 12000 }); setTimeout(onDone, 30_000); }
+          else { toast.info('Payment received. It will appear on your Subscription page within a few minutes; please do not pay again.', { duration: 12000 }); setTimeout(onDone, 30_000); }
         },
       });
       rz.open();

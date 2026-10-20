@@ -32,7 +32,6 @@ import { Link } from 'react-router-dom';
 import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
 import { Scope3FullTrailCard } from '@/components/scope3/Scope3FullTrailCard';
 import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
-import { QuickPurchases } from '@/components/profile/QuickPurchases';
 
 const tierIcons = {
   snapshot: Sparkles,
@@ -80,7 +79,7 @@ interface ProfileData {
 const Profile = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
-  const { tier, isPremium, expiresAt } = usePremiumStatus();
+  const { tier, isPremium } = usePremiumStatus();
   const { hasOrganization } = useOrganization();
   
   const [profile, setProfile] = useState<ProfileData>({
@@ -287,8 +286,11 @@ const Profile = () => {
             </CardContent>
           </Card>
 
-          {/* Invoice credits, Fast-track Verification, Expert Climate Audit */}
-          <QuickPurchases planEnd={expiresAt ? expiresAt.toISOString() : null} />
+          {/* Top-ups and services are bought on the Subscription page only. */}
+          <p className="text-sm text-muted-foreground">
+            Need more invoice reads, Fast-track Verification or an Expert Climate Audit?{' '}
+            <Link to="/subscription" className="font-medium text-foreground underline underline-offset-2">Top up on Subscription</Link>
+          </p>
 
           {/* Account Info */}
           <Card>
