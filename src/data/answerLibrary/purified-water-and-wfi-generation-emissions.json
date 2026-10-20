@@ -1,0 +1,89 @@
+{
+  "slug": "purified-water-and-wfi-generation-emissions",
+  "q": "How do I count emissions from purified water and WFI generation in a formulation plant?",
+  "title": "Purified water and WFI emissions",
+  "short": "Count the energy each step uses. For a multi-column still, multiply steam per litre of WFI by litres made and by the CO2 per kg of your boiler's steam. For membrane systems, multiply kWh per litre by litres and by 0.710 kg CO2 per kWh. Then add hot loop heating and cooling.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pharma formulation and injectables plants",
+  "sections": [
+    {
+      "h": "Map the water system first",
+      "ul": [
+        "Purified water: pretreatment, RO and EDI, mostly pump power.",
+        "WFI by distillation: a multi-column or vapour compression still. Steam or electricity is the main input, plus cooling water for the condenser.",
+        "WFI by membranes: since April 2017 the revised European Pharmacopoeia WFI monograph (0169) has allowed a purification process equivalent to distillation, such as reverse osmosis combined with other techniques, and USP chapter <1231> describes the options. These run on electricity.",
+        "Storage and distribution: loops kept hot for microbial control need steam to cover heat losses, and point of use coolers then remove heat again.",
+        "A pure steam generator for sterilisers, if separate."
+      ]
+    },
+    {
+      "h": "The calculation for each route",
+      "ol": [
+        "Steam route: litres of WFI x steam per litre (still data sheet or a steam flow meter) x kg CO2 per kg of steam from your boiler records.",
+        "Electric route: litres x kWh per litre (sub-meter preferred) x 0.710.",
+        "Loop: steam or heater energy for the loop over the period, converted the same way.",
+        "Point of use cooling: the chiller's kWh share x 0.710."
+      ]
+    },
+    {
+      "h": "Allocating it to products",
+      "p": [
+        "The water system's emissions already sit inside the plant's Scope 1 and 2. For a product footprint, allocate them by litres of WFI drawn by each block or product, from point of use meters or batch records. In a plant making both tablets and injectables, the injectables can draw most of the WFI, so sharing by units or floor area misstates both."
+      ]
+    },
+    {
+      "h": "Where savings come from",
+      "ul": [
+        "Check steam per litre against the still's data sheet; feed preheating and heat recovery that are bypassed show up here.",
+        "Avoid making WFI that is later dumped from the storage tank.",
+        "Insulate loops and check steam traps on the loop heat exchanger.",
+        "When replacing a still, compare steam per litre with kWh per litre of membrane WFI at your factors, subject to quality approval."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 10,000 litres of WFI a day",
+    "lines": [
+      "Still steam: 0.25 kg per litre x 10,000 L = 2,500 kg of steam a day",
+      "Boiler steam at 165 kg CO2 per tonne (from plant records, PNG boiler): 2.5 x 165 = 412.5 kg CO2 a day",
+      "Purified water generation: 60 kWh a day x 0.710 = 42.6 kg CO2",
+      "Total: 455.1 kg CO2 a day; over 300 days, about 136.5 t CO2, before loop heating and cooling"
+    ],
+    "note": "Steam per litre, CO2 per tonne of steam and PW kWh are illustrative. Take CO2 per tonne of steam from your own fuel and steam records."
+  },
+  "senseible": "Senseible reads boiler fuel invoices and electricity bills into the plant's Scope 1 and 2. Splitting those totals to the water system needs sub-meter readings or a labelled estimate from your utility logs.",
+  "links": [
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Pharma cleanroom HVAC allocation",
+      "to": "/answers/pharma-cleanroom-hvac-emissions-allocation"
+    },
+    {
+      "label": "RO plant electricity per kL",
+      "to": "/answers/ro-plant-electricity-per-kl-process-water"
+    },
+    {
+      "label": "Pharma footprint per 1,000 tablets",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2, stationary combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), allocation",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

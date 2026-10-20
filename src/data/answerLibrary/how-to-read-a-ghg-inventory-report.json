@@ -1,0 +1,74 @@
+{
+  "slug": "how-to-read-a-ghg-inventory-report",
+  "q": "How do I read a GHG inventory report, and which numbers should I check first?",
+  "title": "How to read a GHG inventory report",
+  "short": "Read a GHG inventory report in this order: who and what it covers, which 12 months, the Scope 1, 2 and 3 split, the emission factors and their versions, what was left out, and the base year. Check the boundary and period before you look at the total, because a total means nothing without them.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners, sourcing teams and finance staff who receive a carbon report",
+  "sections": [
+    {
+      "h": "First check: whose emissions, and which sites",
+      "p": [
+        "The report should name the legal entity and list the sites included. It should also say how it drew the boundary: by operational control, financial control or equity share. If your supplier has three plants and the report covers one, its total is not the supplier's footprint.",
+        "Look for leased sheds, warehouses and subcontracted job work. These are where boundaries most often go missing without anyone saying so."
+      ]
+    },
+    {
+      "h": "Second check: the reporting period",
+      "p": [
+        "Indian companies usually report April to March. Many buyers and EU rules work on calendar years. Make sure the 12 months in the report are the 12 months you need, and that every line covers the same period. A report that mixes an annual electricity figure with six months of diesel invoices is understated."
+      ]
+    },
+    {
+      "h": "Third check: the scope split and the gases",
+      "ul": [
+        "Scope 1 and Scope 2 should each be shown on their own, not only as a combined figure.",
+        "Scope 2 should say location-based, market-based, or both.",
+        "Scope 3 should be listed by category, separate from Scopes 1 and 2.",
+        "The report should say whether figures are tonnes CO2 or tonnes CO2e, and which GWP set it used for refrigerants and other gases."
+      ]
+    },
+    {
+      "h": "Fourth check: factors, exclusions and base year",
+      "ol": [
+        "Factors: each large line should name its factor, unit and source edition, for example 0.710 kg CO2 per kWh from CEA CO2 Baseline Database version 21.0.",
+        "Exclusions: any source left out should be named with a reason. Silence is not the same as zero.",
+        "Base year: if the report claims a reduction, it should state the base year, its emissions, and whether it was recalculated after any change in sites or method.",
+        "Offsets and certificates: carbon credits should appear in a separate line, never subtracted from the scope totals."
+      ]
+    },
+    {
+      "h": "What to do with what you find",
+      "p": [
+        "Write down every gap as a question for the preparer. Most gaps have honest answers, such as a site that opened mid-year. Gaps without answers are the ones to weigh before you rely on the figure in your own Scope 3, a loan file or a buyer response."
+      ]
+    }
+  ],
+  "senseible": "Senseible reports show each figure with the source document, quantity, factor and factor source behind it, so a reader can trace any line back to its bill or invoice. The figures are self-declared by the company that prepared them.",
+  "links": [
+    {
+      "label": "What goes in an ISO 14064-1 report",
+      "to": "/answers/what-goes-in-an-iso-14064-1-ghg-report"
+    },
+    {
+      "label": "How to spot a wrong emission factor",
+      "to": "/answers/how-to-spot-a-wrong-emission-factor"
+    },
+    {
+      "label": "Tracing emission data to source",
+      "to": "/climate-intelligence/how-to-trace-emission-data-to-source"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (revised edition), Chapter 9 Reporting GHG emissions",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, clause 9 (GHG report content)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

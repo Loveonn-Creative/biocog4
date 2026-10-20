@@ -1,0 +1,62 @@
+{
+  "slug": "inter-unit-stock-transfer-invoice-emissions",
+  "q": "How do I treat GST stock transfer invoices between my own units in carbon accounting?",
+  "title": "Stock transfer invoices between own units",
+  "short": "Leave them out of purchases. A stock transfer invoice between two GSTINs of the same company is a tax document, not a purchase from outside, so the goods are not Scope 3. Count the material once, when it was first bought from a supplier, and count only the transport between units.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Multi-unit MSMEs with more than one GSTIN",
+  "sections": [
+    {
+      "h": "Why GST needs an invoice but carbon accounting does not",
+      "p": [
+        "Each state registration of a company is a distinct person under Section 25 of the CGST Act 2017. Schedule I, paragraph 2 treats goods moved between distinct persons as a supply even without payment, so the sending unit issues a tax invoice and charges IGST. Under the GHG Protocol Corporate Standard both units sit inside one organisational boundary. Nothing was bought from outside, so no Scope 3 purchase happened."
+      ]
+    },
+    {
+      "h": "How to spot them in a purchase register",
+      "ul": [
+        "Characters 3 to 12 of a GSTIN are the PAN. A supplier GSTIN with your own PAN is one of your own units.",
+        "Within one state, goods moving between your own premises under the same GSTIN usually travel on a delivery challan, not an invoice; those are not purchases either.",
+        "Mark these lines as internal in your register and exclude them before you total purchased goods."
+      ]
+    },
+    {
+      "h": "What does count",
+      "ul": [
+        "The original purchase: the steel, yarn or resin bought from an outside supplier, counted once in Category 1 at the unit that bought it.",
+        "Transport between units in your own trucks: diesel in Scope 1.",
+        "Transport between units by a hired transporter you pay: Scope 3 Category 4, upstream transportation.",
+        "Each unit's own fuel and electricity: Scope 1 and 2 of that unit."
+      ]
+    },
+    {
+      "h": "Separate companies in a group are different",
+      "p": [
+        "If the two units belong to different companies with different PANs, the sale is a real purchase for the receiving company's own report. In a consolidated group report, sales between group companies drop out, just as stock transfers do. Write down which view each report takes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: double counting from one transfer",
+    "lines": [
+      "Unit A in Tamil Nadu buys 50 t of steel from a mill: counted once in Category 1",
+      "Unit A machines it and sends 45 t of parts to Unit B in Karnataka on a stock transfer invoice",
+      "If Unit B's inward invoices are all counted as purchases: 50 + 45 = 95 t of steel in Category 1, 90% too high",
+      "Correct: 50 t in Category 1, and the transfer trip as transport",
+      "Own truck for the trip: 120 L diesel x 2.68 kg CO2 per litre = 321.6 kg CO2 in Scope 1"
+    ],
+    "note": "Quantities are illustrative. The diesel factor is the IPCC 2006 default."
+  },
+  "senseible": "Senseible fingerprints every file so an identical upload counts once. Upload the outside supplier's invoice for each material and keep stock transfer invoices out of your purchase uploads, so the material is counted once at the unit that bought it.",
+  "links": [
+    { "label": "Senseible for several plants or GSTINs", "to": "/answers/senseible-multiple-plants-or-gstins" },
+    { "label": "Operational control or equity share", "to": "/answers/operational-control-vs-equity-share" },
+    { "label": "Stop the same invoice being counted twice", "to": "/answers/duplicate-invoices-double-counting-emissions" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, Chapter 3 (organisational boundaries)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 1 and 4", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-18"
+}

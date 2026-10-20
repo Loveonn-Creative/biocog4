@@ -1,0 +1,65 @@
+{
+  "slug": "supplier-code-public-emissions-disclosure",
+  "q": "Does a buyer's code of conduct require me to publish my emissions publicly?",
+  "title": "Must I publish emissions under a buyer code?",
+  "short": "Usually not. Most buyer codes of conduct ask you to track your emissions and share them with the buyer when asked. A few say publicly report. The best known is the RBA Code of Conduct version 8.0, which requires energy use and Scope 1, 2 and significant Scope 3 emissions to be publicly reported against a reduction target.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSME suppliers",
+  "sections": [
+    {
+      "h": "Read the verb in the clause",
+      "ul": [
+        "\"Publicly report\" or \"publicly disclose\": the figures must be available to anyone, for example on your website, in a sustainability report or in a public CDP response.",
+        "\"Report to\", \"disclose to\" or \"provide to\" the buyer: you share with that customer only, through its portal, a questionnaire or an email.",
+        "\"Track\", \"monitor\" or \"document\": you keep the figures and evidence on file, ready for an audit, with no duty to send them anywhere unprompted.",
+        "\"Set a target\" or \"reduction goal\": a commitment to cut, which may or may not come with a disclosure duty."
+      ]
+    },
+    {
+      "h": "Where public reporting is a firm requirement",
+      "p": [
+        "The RBA Code of Conduct version 8.0, in force since 1 January 2024 and used across electronics supply chains, asks for an absolute company-wide reduction target. Energy use and Scope 1, 2 and significant Scope 3 emissions, including at least Category 1, purchased goods and services, are to be tracked, documented and publicly reported against it, at least once a year. If you are audited against the RBA Code, figures kept only in a file do not meet that clause.",
+        "Codes that reference RBA, or customer supplier manuals that copy its wording, carry the same duty. Check whether your customer's code adopts the RBA text or only borrows from it."
+      ]
+    },
+    {
+      "h": "If the code only says share with us",
+      "p": [
+        "Send the figures to the buyer in the format it asks for and keep the documents behind them. Publishing is your choice. Some suppliers publish anyway so they can point every customer to one page; others keep plant energy data private for commercial reasons. If you do publish and say the inventory follows the GHG Protocol Corporate Standard, chapter 9 of that standard lists what the public report must contain, such as the boundary, the scopes covered, the base year and the factors used."
+      ]
+    },
+    {
+      "h": "What to ask your buyer before you answer",
+      "ol": [
+        "Which clause and version of the code applies to your contract.",
+        "Whether a non-public CDP response, or figures in their portal, meets the disclosure clause.",
+        "Which year, boundary and scopes they expect, so one set of figures serves the code, CDP and any questionnaire.",
+        "Whether the code is audited, and by whom, so you know what evidence to keep ready."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds Scope 1 and 2 figures from your fuel invoices and electricity bills, each traced to its document, and its reports are self-declared drafts that you share or publish as you choose.",
+  "links": [
+    {
+      "label": "RBA Code energy and GHG requirements",
+      "to": "/answers/rba-code-energy-and-ghg-requirements"
+    },
+    {
+      "label": "Who sees my CDP supply chain response",
+      "to": "/answers/cdp-supply-chain-who-sees-my-response"
+    },
+    {
+      "label": "Share emissions with a buyer without invoices",
+      "to": "/answers/share-emissions-with-buyer-without-invoices"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 9 Reporting GHG emissions",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "RBA Code of Conduct v8.0 (effective 1 January 2024), Energy Consumption and Greenhouse Gas Emissions criterion, checked 2026-10-20 via the RBA criterion vocabulary (responsiblebusiness.org); no v9.0 found. responsiblebusiness.org is not on the sources allowlist, so it is named here only. Buyer codes are revised often; confirm the version and clause your customer cites.",
+  "reviewed": "2026-10-18"
+}

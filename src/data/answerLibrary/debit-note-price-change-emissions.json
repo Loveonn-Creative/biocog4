@@ -1,0 +1,60 @@
+{
+  "slug": "debit-note-price-change-emissions",
+  "q": "Does a supplier's debit note for a price increase change my emissions?",
+  "title": "Price-only debit notes and emissions",
+  "short": "Not if you calculate from quantities. A debit note that only raises the price leaves the tonnes, litres or kWh unchanged, so an activity-based figure stays where it is. It does change a spend-based estimate, which rises with the rupee value even though no extra goods arrived.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME accounts teams",
+  "sections": [
+    {
+      "h": "Read the note before deciding",
+      "p": [
+        "Section 34 of the CGST Act 2017 lets a supplier raise a debit note when the taxable value or tax on an invoice was too low. That covers two very different events. Check the lines:"
+      ],
+      "ul": [
+        "Rate revision, price escalation clause or freight recovery with no quantity: price only.",
+        "Extra quantity supplied beyond the invoice, with a quantity printed: add that quantity to the original line.",
+        "Both in one note: split it, and add only the quantity part."
+      ]
+    },
+    {
+      "h": "Why spend-based figures move and what to do",
+      "p": [
+        "A spend-based estimate multiplies rupees by a factor per rupee, so a 5% price rise adds 5% to emissions with no change in material. Price escalation clauses are common for steel, aluminium and resin, so the effect can be large across a year."
+      ],
+      "ol": [
+        "Add the debit note's taxable value, before GST, to the original line, so the spend matches what you finally paid.",
+        "Deflate the spend to the factor's base year, as you do for the rest of the spend-based lines.",
+        "Where the material is significant, ask the supplier for quantities and move that line to an activity-based figure."
+      ]
+    },
+    {
+      "h": "Which period it belongs to",
+      "p": [
+        "For a spend-based line, book the extra value in the period of the original purchase if that period is still open. If you have already reported, note it in the period the debit note arrives. For an activity-based line there is nothing to book unless quantity changed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: steel bought on an escalation clause",
+    "lines": [
+      "Invoice: 20 t of steel, Rs 10,00,000 before GST; debit note for price escalation: Rs 50,000 before GST, no quantity",
+      "Activity-based: still 20 t, no change",
+      "Spend-based at an illustrative 0.5 kg CO2e per rupee: before the note 10,00,000 x 0.5 = 5,00,000 kg CO2e",
+      "After the note: 10,50,000 x 0.5 = 5,25,000 kg CO2e, 25,000 kg more for the same 20 t"
+    ],
+    "note": "The spend factor is an illustrative assumption, not a published value. The result is CO2e because spend-based factors cover all greenhouse gases."
+  },
+  "senseible": "Senseible calculates from the quantities printed on invoices, so a price-only debit note does not change those lines. Where only spend is available it provides a spend-based estimate, labelled as such, which follows the rupee value including debit notes.",
+  "links": [
+    { "label": "Credit notes and returned fuel", "to": "/answers/credit-note-returned-fuel-emissions" },
+    { "label": "Spend-based Scope 3: GST, inflation, currency", "to": "/answers/spend-based-scope-3-gst-inflation-currency" },
+    { "label": "Spend-based vs activity-based Scope 3", "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Chapter 7 (collecting data: spend-based and activity data)", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol Corporate Standard, Chapter 6", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-18"
+}

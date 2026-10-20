@@ -1,0 +1,82 @@
+{
+  "slug": "how-to-recheck-ghg-report-arithmetic",
+  "q": "How can I recheck the arithmetic in a GHG report myself?",
+  "title": "How to recheck a GHG report's arithmetic",
+  "short": "Take each large line, multiply the activity quantity by the stated emission factor, convert kg to tonnes, and compare with the report. Then add the lines and compare with the scope totals. Check the units first: the usual errors are kg read as tonnes or a factor meant for a different unit.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs, buyers and lenders checking a report before relying on it",
+  "sections": [
+    {
+      "h": "The one formula",
+      "p": [
+        "Emissions = activity data x emission factor. This is the basic method in the IPCC 2006 Guidelines and in the GHG Protocol. If a line uses anything more complex, such as fuel heating values, the report should show the steps."
+      ]
+    },
+    {
+      "h": "Steps that catch most errors",
+      "ol": [
+        "Pick the lines that make up about 80% of the total. Usually that is grid electricity, the main fuel and the largest purchased material.",
+        "Check the units match: litres with kg per litre, kWh with kg per kWh, kg of LPG with kg per kg. A factor per tonne applied to kg gives a figure 1,000 times too large.",
+        "Recompute each line and divide by 1,000 to get tonnes.",
+        "Add the lines within each scope and compare with the stated scope totals.",
+        "Add the scopes and compare with the grand total. A mismatch here often means a scope was double counted or one was dropped."
+      ]
+    },
+    {
+      "h": "Check the factors themselves",
+      "ul": [
+        "Grid electricity in India: the CEA CO2 Baseline Database weighted average, 0.710 kg CO2 per kWh in version 21.0.",
+        "Fuels: IPCC 2006 defaults such as diesel 2.68 kg CO2 per litre and LPG 2.98 kg CO2 per kg, or a stated alternative.",
+        "The factor version should match the reporting year, or the report should say why not."
+      ]
+    },
+    {
+      "h": "What counts as a match",
+      "p": [
+        "Small differences from rounding are normal. A gap of more than about one per cent on a large line deserves a question; a gap that is a round multiple, such as 10 or 1,000 times, is almost always a unit error."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: rechecking three lines",
+    "lines": [
+      "Diesel: 12,000 L x 2.68 kg CO2/L = 32,160 kg = 32.16 t CO2",
+      "LPG: 1,500 kg x 2.98 kg CO2/kg = 4,470 kg = 4.47 t CO2",
+      "Scope 1 total: 32.16 + 4.47 = 36.63 t CO2",
+      "Grid electricity: 250,000 kWh x 0.710 kg CO2/kWh = 177,500 kg = 177.5 t CO2",
+      "Scope 1 and 2: 36.63 + 177.5 = 214.13 t CO2",
+      "If the report shows Scope 2 as 177,500 t, kg were written as tonnes"
+    ]
+  },
+  "senseible": "Senseible recomputes each line from its quantity and factor and flags any mismatch beyond max(0.01, 0.1%) as part of its rule checks, and shows the quantity, factor and source so a reader can redo the sum.",
+  "links": [
+    {
+      "label": "How to spot a wrong emission factor",
+      "to": "/answers/how-to-spot-a-wrong-emission-factor"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (Equation 2.1 and default factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 6 (identifying and calculating emissions)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

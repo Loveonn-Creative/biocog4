@@ -1,0 +1,83 @@
+{
+  "slug": "dyehouse-hot-effluent-heat-recovery-saving",
+  "q": "How much fuel can a dye house save by recovering heat from hot drain water?",
+  "title": "Dye house drain heat recovery: fuel saved",
+  "short": "Heat recovered = flow x 4.186 kJ per kg per degree C x (drain temperature minus fresh water temperature) x exchanger effectiveness. With 200 kL a day of 70 degree C drain heating 28 degree C fresh water at 60% effectiveness, that is about 21 GJ a day, or about 30 GJ of boiler fuel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile dyeing units",
+  "sections": [
+    {
+      "h": "What sets the saving",
+      "ul": [
+        "Hot drain you can capture: keep hot dyeing and soaping drains apart from cold rinses. Mixed drains are cooler and give back less.",
+        "The temperature gap between the drain and incoming water.",
+        "Exchanger effectiveness: plate exchangers recover more but foul with lint; shell and tube or self-cleaning designs suit dirty drains. Effectiveness falls as fouling builds.",
+        "Timing: drains come in bursts. A hot drain tank and a warm water tank let you use the heat when the next bath fills."
+      ]
+    },
+    {
+      "h": "From recovered heat to fuel and CO2",
+      "p": [
+        "Fuel saved = heat recovered / boiler efficiency, provided that fresh water would otherwise have been heated with steam to at least the preheated temperature. CO2 avoided = fuel energy x the fuel's IPCC 2006 factor per GJ. BEE Guide Book 2, in its waste heat recovery chapter, uses the same heat balance."
+      ]
+    },
+    {
+      "h": "What cuts the real saving",
+      "ul": [
+        "Pump power for the drain and fresh water circuits: subtract kWh x 0.710 kg CO2.",
+        "Lint and fibre filters need daily cleaning; a fouled exchanger loses effectiveness.",
+        "Preheated water used where cold water would do saves nothing.",
+        "Low production days and holidays."
+      ]
+    },
+    {
+      "h": "A side benefit at the ETP",
+      "p": [
+        "Cooler effluent suits the biological stage of an ETP, which works poorly when wastewater is too hot. Treat this as a side benefit, not part of the fuel saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 200 kL a day of hot drain",
+    "lines": [
+      "Hot drain 200 kL a day at 70 degrees C; fresh water 28 degrees C at an equal flow; effectiveness 60%",
+      "Heat recovered: 0.60 x 2,00,000 kg x 4.186 x (70 minus 28) = 21,097,440 kJ, about 21.10 GJ a day; fresh water leaves at about 28 + 0.6 x 42 = 53 degrees C",
+      "Boiler at 70% efficiency: 21.10 / 0.70 = 30.14 GJ of fuel a day",
+      "Coal at 94.6 kg CO2 per GJ: 30.14 x 94.6 = 2,851 kg CO2 a day",
+      "Pumps: 15 kW x 20 h = 300 kWh x 0.710 = 213 kg CO2 a day, so net 2,638 kg a day",
+      "300 working days: about 9,042 GJ of fuel and 791 t CO2 net"
+    ],
+    "note": "Flows, effectiveness, boiler efficiency and pump power are illustrative. Use measured drain flows and temperatures. The fuel line stays in GJ because the per-kg coal factor of 2.42 assumes coal of about 25.6 MJ per kg; weaker coal emits less per kg."
+  },
+  "senseible": "Senseible reads boiler fuel invoices and electricity bills, so the fuel saved and the extra pump power both show in the monthly Scope 1 and 2 records. Drain flows and temperatures come from your own measurements.",
+  "links": [
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "ETP electricity per kL of effluent",
+      "to": "/answers/etp-electricity-per-kl-effluent"
+    },
+    {
+      "label": "Low liquor ratio dyeing savings",
+      "to": "/answers/low-liquor-ratio-dyeing-steam-co2-saving"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, Chapter 8 Waste Heat Recovery",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2, Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

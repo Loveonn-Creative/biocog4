@@ -1,0 +1,69 @@
+{
+  "slug": "stenter-fuel-and-co2-per-metre-of-fabric",
+  "q": "How do I calculate a stenter's fuel and CO2 per metre of fabric, and what does exhaust humidity control save?",
+  "title": "Stenter fuel and CO2 per metre",
+  "short": "Find the stenter's share of thermic fluid heater fuel, multiply by the fuel's factor, add its fan and drive electricity, and divide by metres processed. Exhaust humidity control saves the fuel that would heat surplus fresh air: air volume cut x 1.2 kg per m3 x temperature rise, divided by fuel energy and heater efficiency.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Textile processing units in Tiruppur, Surat, Erode and Bhilwara",
+  "sections": [
+    {
+      "h": "Getting the stenter's share of the heater fuel",
+      "ul": [
+        "Best: a heat meter on the stenter's thermic fluid line, giving flow x specific heat x supply minus return temperature. Its share of all heat metered is its share of fuel.",
+        "Next best: hours run and average valve opening for each consumer on the heater, labelled an estimate.",
+        "Gas-fired stenters with burners in each chamber: a gas sub-meter gives the figure directly.",
+        "Add the stenter's own electricity for circulation fans, exhaust fans and drives from a sub-meter, at 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Fuel factors and biomass",
+      "p": [
+        "Coal 2.42 kg CO2 per kg, PNG 2.05 kg CO2 per scm, furnace oil 2.97 kg CO2 per litre (IPCC 2006 based). If your heater burns wood or briquettes, that CO2 is biogenic and reported separately, so the stenter's fossil CO2 is then mainly its electricity."
+      ]
+    },
+    {
+      "h": "Why exhaust air costs fuel",
+      "p": [
+        "A stenter dries fabric by blowing hot air through it. The exhaust fans pull out moist air and fresh air comes in to replace it, which must be heated to chamber temperature. Fans set for the worst fabric often pull far more air than needed for lighter or drier fabric. A humidity sensor in the exhaust slows the fans until the exhaust carries as much moisture as it safely can, so less fresh air is heated."
+      ]
+    },
+    {
+      "h": "Estimating the saving honestly",
+      "ol": [
+        "Measure exhaust air volume before and after, with an anemometer or the fan curve and speed, in m3 per hour at ambient conditions.",
+        "Heat saved per hour = air volume cut x 1.2 kg per m3 x 1.0 kJ per kg per K x (chamber temperature minus ambient).",
+        "Fuel saved = heat saved / (fuel calorific value x heater efficiency).",
+        "Check against heater fuel per metre for a month before and after, at similar fabric mix."
+      ],
+      "p": [
+        "Savings depend heavily on how much excess air the fans pulled before. Do not quote a percentage from another plant; measure your own."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per metre figure and a humidity control saving (illustrative)",
+    "lines": [
+      "Heater coal for the month: 150 t; heat meter shows the stenter took 60%: 90 t",
+      "Stenter coal CO2: 90,000 x 2.42 = 2,17,800 kg; stenter electricity 30,000 kWh x 0.710 = 21,300 kg",
+      "Per metre: (2,17,800 + 21,300) / 20,00,000 m = 0.120 kg CO2",
+      "Humidity control cuts exhaust by 5,000 m3 per hour: 5,000 x 1.2 = 6,000 kg air per hour",
+      "Heat saved: 6,000 x 1.0 x (160 minus 30) = 7,80,000 kJ = 780 MJ per hour",
+      "Coal at 16.75 MJ per kg (4,000 kcal per kg) and 75% efficiency: 780 / (16.75 x 0.75) = 62 kg per hour",
+      "At 500 hours a month: 62 x 500 = 31,000 kg coal, so 31,000 x 2.42 = 75,020 kg, about 75 t CO2"
+    ],
+    "note": "Every plant figure, the coal calorific value and the 75% efficiency are illustrative assumptions. The air calculation ignores moisture in the air, which slightly understates the heat."
+  },
+  "senseible": "Senseible reads the thermic fluid heater's coal, wood, PNG or furnace oil invoices and the electricity bill, with the factor on each line. The stenter's share comes from your heat meter or sub-meter, or a labelled estimate.",
+  "links": [
+    { "label": "Dye house emissions per metre of fabric", "to": "/answers/dye-house-emissions-per-metre-of-fabric" },
+    { "label": "Thermic fluid heater emissions", "to": "/answers/thermic-fluid-heater-emissions-scope-1" },
+    { "label": "Carbon accounting for textiles", "to": "/industries/textile" }
+  ],
+  "sources": [
+    { "label": "BEE, Guide Book 2 for energy managers and auditors: Energy Efficiency in Thermal Utilities", "url": "https://beeindia.gov.in" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel CO2 defaults)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

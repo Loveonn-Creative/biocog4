@@ -1,0 +1,84 @@
+{
+  "slug": "cdp-emissions-reduction-initiatives-how-to-fill",
+  "q": "How do I fill in CDP's emissions reduction initiatives questions with my own project savings?",
+  "title": "Filling CDP's reduction initiatives section",
+  "short": "List each project that cut emissions in the reporting year and, for each, give the estimated annual saving in tonnes CO2e and the scope it falls in. Work the saving out from billed or metered use before and after the change, and check CDP's current guidance for the other details it asks for.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Small suppliers answering a customer's CDP request",
+  "sections": [
+    {
+      "h": "What the section asks for",
+      "p": [
+        "CDP asks whether you had emissions reduction initiatives active in the reporting year, including ones being planned or implemented, and then for details of each implemented one, starting with what kind of initiative it is and its estimated annual saving. The exact fields and question numbers change between cycles, and CDP's shorter SME questionnaire differs from the full one, so open the version your customer sent and find the section by name.",
+        "Work out the cost, money saved and payback while you have the bills open. If the form asks for them you will need them, and your customer is likely to ask anyway."
+      ]
+    },
+    {
+      "h": "How to calculate a saving",
+      "ol": [
+        "Pick a baseline: the 12 months before the change, from bills or meter readings.",
+        "Take the same 12 months after the change.",
+        "Adjust for production if output changed a lot, for example by comparing kWh per tonne.",
+        "Saving = (baseline activity minus new activity) x emission factor."
+      ]
+    },
+    {
+      "h": "What counts as an initiative",
+      "ul": [
+        "Counts: a VFD on a compressor, a boiler fuel switch, LED retrofit, rooftop solar for self use, compressed air leak repair, a heat recovery unit.",
+        "Does not count: lower output, closing a line, moving work to a subcontractor, or buying carbon credits. Renewable electricity certificates change your market-based Scope 2 figure, not your energy use; check how the current guidance wants them shown."
+      ]
+    },
+    {
+      "h": "Keep it honest",
+      "ul": [
+        "Say when a figure is estimated rather than measured.",
+        "Report grid savings as tonnes CO2 if your factor is CO2 only, and say so in the comment field.",
+        "Do not count the same saving twice when two projects affect one machine.",
+        "Keep the bills behind each figure; customers may ask for them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: VFD on a compressor",
+    "lines": [
+      "Baseline: 480,000 kWh in the 12 months before; after: 440,000 kWh, with output about the same",
+      "Saving: 40,000 kWh x 0.710 kg CO2/kWh = 28,400 kg = 28.4 t CO2 a year, Scope 2",
+      "Money saved: 40,000 kWh x Rs 8 per kWh (assumed tariff) = Rs 3.2 lakh a year",
+      "Investment Rs 6 lakh (assumed), so payback = 6 / 3.2 = about 1.9 years"
+    ],
+    "note": "The tariff and investment are assumptions for the example; use your own bills and purchase invoice."
+  },
+  "senseible": "Senseible's records from monthly electricity bills and fuel invoices give the before and after activity behind each saving, with the factor and source on every line. Choosing which projects to list and filling the CDP response is your work.",
+  "links": [
+    {
+      "label": "What to do with a CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "GRI 305-5: reduction of emissions",
+      "to": "/answers/gri-305-5-reduction-of-emissions"
+    },
+    {
+      "label": "How to prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP corporate and SME questionnaires and reporting guidance, emissions reduction initiatives (current cycle, cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 8 (accounting for GHG reductions)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-20: field list removed because the current CDP questionnaire could not be confirmed; only the question's scope (initiatives active in the reporting year, planned or implemented) is described. Check the current questionnaire before submitting."
+}

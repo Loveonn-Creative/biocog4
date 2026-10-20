@@ -1,0 +1,86 @@
+{
+  "slug": "foundry-charge-mix-pig-iron-vs-scrap-carbon",
+  "q": "How does the charge mix of pig iron, steel scrap and returns change carbon per tonne of castings?",
+  "title": "Charge mix and carbon per tonne of castings",
+  "short": "Pig iron brings the largest upstream burden because it was made in a blast furnace. Bought scrap carries only collection and processing, and your own returns bring nothing new. So each tonne of pig iron replaced by scrap lowers the footprint by roughly the pig iron supplier's figure per tonne.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Foundries answering buyer footprint requests",
+  "sections": [
+    {
+      "h": "Why each charge input carries a different burden",
+      "ul": [
+        "Pig iron: made from iron ore and coke in a blast furnace, so its cradle to gate footprint is large. Use your supplier's own figure; there is no single Indian default.",
+        "Bought steel or cast iron scrap: under the recycled content (cut-off) approach common in product footprints, scrap enters with only its collection, sorting and transport emissions.",
+        "Returns, such as runners, risers and rejected castings: already counted when first melted, so no new upstream emissions. They do cost melting energy again.",
+        "Additions: ferrosilicon, carburiser and inoculants are small by weight but carry high factors per kg, so include them."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "Upstream CO2e per good tonne = bought charge per good tonne x (share pig iron x pig iron factor + share bought scrap x scrap factor) + additions per good tonne x their factors.",
+        "Bought charge excludes returns and is a little above one tonne because of melt loss. Take it from your melt register: bought metal charged in the month divided by good castings despatched."
+      ]
+    },
+    {
+      "h": "Side effects of using more scrap",
+      "ul": [
+        "Steel scrap is low in carbon and silicon, so grey iron needs more carburiser and ferrosilicon. Add their emissions.",
+        "Carburiser carbon mostly dissolves into the iron instead of burning, so count its upstream footprint, not its full carbon as CO2.",
+        "Melting power per tonne can change with the charge. Check kWh per tonne in your own records before and after.",
+        "Buyers may ask for the recycled content share. Keep the charge sheets."
+      ]
+    },
+    {
+      "h": "What to tell a buyer",
+      "p": [
+        "State the charge mix for the period, the source of each upstream factor, that scrap is treated by the cut-off approach and that returns carry no new burden. If the buyer's rules treat scrap differently, give the figure on their basis too and label both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: two charge mixes per good tonne",
+    "lines": [
+      "Bought charge per good tonne of castings: 1.05 t (melt loss assumed)",
+      "Mix A, 60% pig iron and 40% scrap: 1.05 x (0.6 x 2.0 + 0.4 x 0.05) = 1.05 x 1.22 = 1.28 t CO2e",
+      "Mix B, 20% pig iron and 80% scrap: 1.05 x (0.2 x 2.0 + 0.8 x 0.05) = 1.05 x 0.44 = 0.46 t CO2e",
+      "Difference: 1.28 minus 0.46 = 0.82 t CO2e per good tonne, before the extra carburiser and ferrosilicon Mix B needs"
+    ],
+    "note": "Pig iron at 2.0 and scrap at 0.05 t CO2e per tonne are placeholders for the arithmetic, not published values. Use your suppliers' figures."
+  },
+  "senseible": "Senseible reads pig iron, scrap and alloy purchase invoices by quantity into the supplier evidence trail, and melting electricity and fuel into Scope 1 and 2. Upstream factors come from your suppliers or are labelled estimates.",
+  "links": [
+    {
+      "label": "Does scrap count as zero under CBAM?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Foundry CO2 per tonne of good castings",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "worldsteel life cycle inventory methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

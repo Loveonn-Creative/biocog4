@@ -1,0 +1,66 @@
+{
+  "slug": "plastic-recycler-avoided-emissions-claim",
+  "q": "Can a plastic recycler tell buyers how much CO2 its recycled granules avoid?",
+  "title": "Avoided CO2 claims for recycled granules",
+  "short": "Yes, if you present it as a separate comparison and not as part of your footprint. State your granules' own footprint per kg, the virgin resin figure you compare against and its source, and the difference. Never subtract the avoided amount from your footprint, and never let buyers count it twice.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Plastic recyclers and buyers of recycled resin",
+  "sections": [
+    {
+      "h": "Footprint and avoided emissions are two different numbers",
+      "p": [
+        "Your footprint is what making the granules emits: collection, washing, extrusion and so on, divided by kg sold. ISO 14067 counts only the emissions and removals of the product system and keeps offsetting out, so an avoided figure has no place inside it. An avoided emissions figure is a comparison with what the buyer would have used instead, usually virgin resin. The WBCSD Guidance on Avoided Emissions (2023) asks for it to be reported apart from the inventory, with the reference scenario disclosed."
+      ]
+    },
+    {
+      "h": "How to make the comparison fair",
+      "ul": [
+        "Same polymer and grade: compare recycled HDPE with virgin HDPE, not with an average plastic.",
+        "Same boundary: cradle to gate for both, with your granules under the cut-off method.",
+        "A named source for the virgin figure, such as the resin producer's published footprint or a stated database version and year.",
+        "Same unit: per kg of granules delivered, after your process losses."
+      ]
+    },
+    {
+      "h": "The double counting trap",
+      "p": [
+        "Under the cut-off method your buyer already gets the benefit: their product footprint uses your low figure instead of a virgin resin figure. If you also hand them an avoided tonnes number, and they report it as a reduction on top, the same benefit is counted twice. Give buyers your footprint per kg for their inventory, and keep any avoided figure as a separate statement about the comparison."
+      ]
+    },
+    {
+      "h": "Wording that stays within India's greenwashing rules",
+      "p": [
+        "The CCPA Guidelines for Prevention and Regulation of Greenwashing, 2024, require environmental claims to be specific and backed by evidence, and comparative claims to rest on verifiable data on a like-for-like basis."
+      ],
+      "ul": [
+        "Write: \"Our recycled HDPE granules: 0.50 kg CO2e per kg, cradle to gate, cut-off method, FY2025-26. Virgin HDPE reference: [figure, source, year].\"",
+        "Avoid: \"Every tonne saves the planet X tonnes of CO2\" with no method or reference.",
+        "Avoid calling the avoided amount an offset or a carbon credit. It has no project registration or verification."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the comparison, kept apart from the footprint",
+    "lines": [
+      "Your granules: 0.50 kg CO2e per kg (illustrative, from your own plant bills)",
+      "Virgin resin reference: 1.90 kg CO2e per kg (illustrative; replace with a published producer or database figure)",
+      "Difference: 1.90 minus 0.50 = 1.40 kg CO2e per kg",
+      "Sales of 1,000 t: 1,000 x 1.40 = 1,400 t CO2e avoided, reported as a separate statement",
+      "Footprint you report to buyers: still 0.50 kg CO2e per kg"
+    ],
+    "note": "Both footprints are illustrative assumptions. They are CO2e because a full cradle to gate footprint includes gases other than CO2."
+  },
+  "senseible": "Senseible builds the recycler's own footprint inputs from electricity bills, fuel invoices and freight records, with the factor and source on every line. An avoided emissions comparison is your own statement, kept beside that footprint and never netted from it.",
+  "links": [
+    { "label": "Recycled plastic granules: CO2 per kg", "to": "/answers/recycled-plastic-granules-carbon-per-kg" },
+    { "label": "How to calculate avoided emissions", "to": "/answers/how-to-calculate-avoided-emissions" },
+    { "label": "CCPA greenwashing guidelines", "to": "/answers/ccpa-greenwashing-guidelines-india" }
+  ],
+  "sources": [
+    { "label": "WBCSD Guidance on Avoided Emissions (2023)", "url": "https://www.wbcsd.org" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Standard (2011), recycled content method", "url": "https://ghgprotocol.org/standards" }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "does-cpcb-iv-plus-dg-set-reduce-co2",
+  "q": "Does a new CPCB IV+ diesel generator cut CO2 compared with my old DG set?",
+  "title": "Does a CPCB IV+ genset cut CO2?",
+  "short": "Only if it burns fewer litres for the same kWh. CPCB IV+ norms limit NOx, hydrocarbons, carbon monoxide and particulates, not CO2, and every litre of diesel still gives about 2.68 kg CO2. Compare the litres per kWh of the old and new sets at your real load to know the saving.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories replacing DG sets",
+  "sections": [
+    {
+      "h": "What the CPCB IV+ norms regulate",
+      "p": [
+        "The CPCB IV+ limits were notified by the Ministry of Environment, Forest and Climate Change as G.S.R. 804(E) of 3 November 2022, and apply to new genset engines up to 800 kW from 1 July 2023. They cap NOx, hydrocarbons, carbon monoxide and particulate matter per kWh. They set no limit or target for CO2 or fuel efficiency.",
+        "Makers meet the limits with engine and exhaust changes, such as electronic fuel injection and, on some ratings, exhaust after-treatment. These can move fuel use either way, so the CPCB IV+ label alone tells you nothing about CO2."
+      ]
+    },
+    {
+      "h": "Where a real CO2 saving can come from",
+      "ul": [
+        "Better fuel use at your load: compare the maker's fuel curve for the new set with the litres per kWh you measured on the old one.",
+        "Right-sizing: an oversized old set running at light load burns more per kWh. A new set sized to your actual load runs nearer its efficient range.",
+        "Condition: worn injectors, leaks and long idling raise litres per kWh on an old set. A new set removes these until it ages too.",
+        "Fewer running hours: a better grid connection or battery backup for short outages usually saves more than any new engine."
+      ]
+    },
+    {
+      "h": "Urea solution in sets with SCR",
+      "p": [
+        "Some CPCB IV+ sets use selective catalytic reduction, dosing diesel exhaust fluid, a solution of about 32.5 percent urea. The urea releases a little CO2. The IPCC 2006 method for urea-based catalysts (Volume 2, Chapter 3, written for vehicles) counts it as urea mass x 12/60 x 44/12. At an assumed density of 1.09 kg per litre that is about 0.26 kg CO2 per litre of fluid. It is small next to the diesel, but add it to Scope 1 if you buy the fluid."
+      ]
+    },
+    {
+      "h": "How to test the saving",
+      "ol": [
+        "Log diesel litres from fuel slips and kWh from the DG energy meter for at least a month on the old set.",
+        "Do the same on the new set over a similar load pattern.",
+        "Compare kWh per litre, not total litres, because outage hours change from month to month.",
+        "Multiply the litres saved by 2.68 for kg CO2 avoided, and report it as lower Scope 1, not as a credit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: replacing an old 2.8 kWh per litre set",
+    "lines": [
+      "Annual DG output: 1,00,000 kWh. Old set: 1,00,000 / 2.8 = 35,714 litres x 2.68 = 95,714 kg CO2",
+      "New set at 3.4 kWh per litre at this load: 1,00,000 / 3.4 = 29,412 litres x 2.68 = 78,824 kg CO2",
+      "Saving: 6,302 litres and 16,890 kg, about 16.9 t CO2 a year",
+      "If the new set uses 1,000 litres of exhaust fluid a year: 1,000 x 0.26 = 260 kg CO2 added back, net saving about 16.6 t"
+    ],
+    "note": "Both kWh per litre figures and the fluid volume are illustrative; use your meter and fuel slips. The diesel factor comes from the IPCC 2006 stationary combustion defaults."
+  },
+  "senseible": "Senseible turns each diesel invoice or fuel slip into Scope 1 at 2.68 kg CO2 per litre, so fewer litres after the new set arrives show up month by month. For kWh per litre, pair those litres with DG meter readings, logged by hand or fed from the meter where the Senseible team has set that up for your site.",
+  "links": [
+    {
+      "label": "Does an RECD cut DG CO2?",
+      "to": "/answers/does-recd-on-dg-set-reduce-co2"
+    },
+    {
+      "label": "DG set specific fuel consumption",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Is my DG set oversized?",
+      "to": "/answers/is-my-dg-set-oversized-wasting-diesel"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MoEFCC notification G.S.R. 804(E), 3 November 2022, Environment (Protection) Third Amendment Rules, 2022: India Genset Emission Standards IV+ for engines up to 800 kW (moef.gov.in)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy, Chapter 2 (stationary combustion) and Chapter 3 (urea-based catalysts)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked October 2026: G.S.R. 804(E) of 3 November 2022, engines up to 800 kW, in force 1 July 2023. Re-check if MoEFCC amends the genset standards."
+}

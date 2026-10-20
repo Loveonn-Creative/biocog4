@@ -1,0 +1,68 @@
+{
+  "slug": "cdp-value-chain-engagement-small-supplier",
+  "q": "CDP asks how I engage my own suppliers on climate. What can a small supplier honestly say?",
+  "title": "CDP supplier engagement for a small firm",
+  "short": "Describe only what you actually do: asking key suppliers for energy or emissions data, adding climate questions to supplier onboarding, or buying lower-carbon inputs. Give the share of suppliers or spend it covers. If you do nothing yet, say so and state the first step you will take.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Small suppliers answering CDP",
+  "sections": [
+    {
+      "h": "What CDP is asking",
+      "p": [
+        "CDP asks whether you engage your value chain on environmental issues, with whom (suppliers, customers, others), how, and how much of your supply base it covers, usually as a share of suppliers or of procurement spend. Engagement ranges from collecting information to setting requirements and working jointly on reductions."
+      ]
+    },
+    {
+      "h": "Engagement a small supplier can honestly report",
+      "ul": [
+        "Collecting data: you asked your top raw material and freight suppliers for energy use, emissions or product footprints.",
+        "Requirements: purchase orders or supplier onboarding forms now include climate or energy questions.",
+        "Purchasing choices: you shifted part of a material to recycled content or a supplier with lower-carbon production, with invoices to show it.",
+        "Joint work: a project with a supplier, such as returnable packaging or full-truck loads."
+      ]
+    },
+    {
+      "h": "How to work out coverage",
+      "ol": [
+        "List suppliers by annual spend from your purchase register.",
+        "Mark those you engaged during the reporting year.",
+        "Coverage by spend = spend with engaged suppliers / total procurement spend.",
+        "If you engaged 6 suppliers who account for Rs 2.4 crore of Rs 4 crore spend, coverage is 60% of spend."
+      ]
+    },
+    {
+      "h": "What not to claim",
+      "p": [
+        "Do not count a supplier as engaged because you sent one email with no reply, and do not describe a plan as something already done. A customer may ask for the evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices and keeps supplier, spend, quantity and HSN code in a separate supplier evidence trail, which gives you the spend list for coverage and the record of what you bought.",
+  "links": [
+    {
+      "label": "Which suppliers to engage first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    },
+    {
+      "label": "Getting data from tier 2 suppliers",
+      "to": "/answers/how-to-get-emissions-data-from-tier-2-suppliers"
+    },
+    {
+      "label": "Supplier emissions data playbook",
+      "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP corporate questionnaire, value chain engagement questions (current cycle)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Chapter 7 (collecting data)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CDP value chain engagement questions change between cycles; check the current questionnaire."
+}

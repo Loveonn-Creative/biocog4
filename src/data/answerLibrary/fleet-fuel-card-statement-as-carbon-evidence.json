@@ -1,0 +1,61 @@
+{
+  "slug": "fleet-fuel-card-statement-as-carbon-evidence",
+  "q": "Can I use my fleet fuel card statement instead of individual fuel slips for vehicle emissions?",
+  "title": "Fleet fuel card statement as evidence",
+  "short": "Yes, if the statement lists litres for each fill, with date, vehicle and fuel type. Those litres are the activity data, so multiply them by 2.68 kg CO2 per litre for diesel or 2.31 for petrol. Use either the statement or the slips for a period, never both.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs and logistics firms using oil company fleet cards",
+  "sections": [
+    {
+      "h": "What the statement must show to count as activity data",
+      "ul": [
+        "Date of each transaction.",
+        "Vehicle number or card number tied to one vehicle.",
+        "Product: diesel, petrol, premium fuels or CNG, kept apart.",
+        "Quantity in litres, or kg for CNG, not only the amount in rupees.",
+        "Outlet name or location, so a fill can be checked against the trip."
+      ],
+      "p": [
+        "If your statement shows only rupees, it is spend data. Ask the card provider for a transaction-level report with quantities before falling back on a rupee-to-litre estimate."
+      ]
+    },
+    {
+      "h": "Clean the statement before you total it",
+      "ul": [
+        "Remove non-fuel lines: lubricants, FASTag recharges, service charges and card fees.",
+        "Split by fuel, since diesel, petrol and CNG take different factors: diesel 2.68 kg CO2 per litre, petrol 2.31, CNG 2.69 per kg.",
+        "Separate company-owned vehicles, which are Scope 1, from cards used in hired or employee vehicles, which are Scope 3.",
+        "Check each vehicle's litres against its kilometres; a fill far above the tank size points to fuel used elsewhere."
+      ]
+    },
+    {
+      "h": "Pick one record and stick to it",
+      "p": [
+        "Drivers often keep pump slips for the same fills that appear on the statement. If both go into your records, every fill counts twice. Choose the statement as the record for card fills, keep the slips filed behind it for spot checks, and record cash fills, which are not on the statement, from their own slips. The statement and a slip are different documents, and a file fingerprint matches only identical files, so the choice has to be yours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month's statement for five trucks",
+    "lines": [
+      "Diesel fills on the statement: 14,200 L",
+      "Non-fuel lines removed: Rs 18,500 of lubricants and FASTag (no litres)",
+      "Scope 1: 14,200 x 2.68 = 38,056 kg, about 38.1 t CO2",
+      "Cash fills from slips, not on the statement: 600 L x 2.68 = 1,608 kg CO2",
+      "Month total: 38,056 + 1,608 = 39,664 kg CO2"
+    ],
+    "note": "Quantities are illustrative. Factors are IPCC 2006 defaults."
+  },
+  "senseible": "Senseible reads fuel slips and invoices that print litres and applies 2.68 kg CO2 per litre for diesel and 2.31 for petrol, fingerprinting every file so an identical upload counts once. For each period, add either the card statement or the individual slips for card fills, not both.",
+  "links": [
+    { "label": "Vehicle emissions from fuel spend", "to": "/answers/vehicle-emissions-from-fuel-spend" },
+    { "label": "Telematics or fuel invoices for fleet CO2", "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions" },
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, Chapter 6 (activity data)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 3 (mobile combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-18"
+}

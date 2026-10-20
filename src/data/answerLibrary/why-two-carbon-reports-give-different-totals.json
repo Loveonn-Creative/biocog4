@@ -1,0 +1,87 @@
+{
+  "slug": "why-two-carbon-reports-give-different-totals",
+  "q": "Why do two carbon reports for the same factory and year show different totals?",
+  "title": "Why two carbon reports disagree",
+  "short": "Two reports for the same factory and year usually differ because they drew different boundaries, used different factor versions, chose different Scope 3 methods, or counted different gases. Line them up by scope, then by source, and the gap almost always traces to three or four lines.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs comparing a consultant's figure with a software or buyer estimate",
+  "sections": [
+    {
+      "h": "The usual causes",
+      "ol": [
+        "Scope 3 method: one report multiplies tonnes of material by a material factor, the other multiplies rupee spend by an economic factor. This alone can move Scope 3 by a large share.",
+        "Scope 3 coverage: one report includes only purchased goods, the other adds freight, waste and business travel.",
+        "Boundary: one includes a leased warehouse, a second plant or contractor diesel used on site; the other does not.",
+        "Factor versions: different editions of the CEA grid database, or an international grid factor in place of the Indian one.",
+        "Scope 2 basis: location-based in one, market-based with RECs or a green tariff in the other.",
+        "Gases and GWP: CO2 only for fuels in one, CO2e with refrigerant leaks at AR5 or AR6 values in the other.",
+        "Period: April to March in one, January to December in the other."
+      ]
+    },
+    {
+      "h": "How to find the gap in an afternoon",
+      "ol": [
+        "Put both reports side by side and compare Scope 1, Scope 2 and Scope 3 separately. The gap usually sits in one scope.",
+        "Within that scope, compare activity quantities first: litres, kWh, tonnes. If quantities differ, it is a boundary or data issue.",
+        "If quantities match, compare factors and their sources. If factors differ, it is a method or version issue.",
+        "Ask both preparers for the line items behind the scope that differs."
+      ]
+    },
+    {
+      "h": "Which figure to use",
+      "p": [
+        "Neither is right by default. Use the one whose boundary matches what you were asked for, whose factors are named and current, and whose quantities trace to documents. If a buyer prescribes a method or factor set, use that and keep the other report's working as a reconciliation note."
+      ]
+    },
+    {
+      "h": "How this differs from a Scope 3 tool gap",
+      "p": [
+        "When only the Scope 3 figures differ, the cause is nearly always method and category mapping. When Scope 1 or 2 differ too, look first at boundary and factor versions, because the underlying fuel and electricity quantities should be the same in both reports."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one factory, two reports, a 28% gap",
+    "lines": [
+      "Diesel in both: 20,000 L x 2.68 kg CO2/L = 53.6 t CO2",
+      "Report A electricity: 300,000 kWh x 0.710 (CEA v21.0) = 213.0 t CO2",
+      "Report B electricity: 300,000 kWh x 0.80 (assumed older factor, illustrative) = 240.0 t CO2",
+      "Report A steel: 200 t x 2.0 t CO2e/t (assumed material factor) = 400 t CO2e",
+      "Report B steel: Rs 1.6 crore x 0.035 kg CO2e per rupee (assumed spend factor) = 560 t CO2e",
+      "Report A total: 53.6 + 213.0 + 400 = 666.6 t; Report B total: 53.6 + 240.0 + 560 = 853.6 t",
+      "Gap: 187.0 t, so Report B is about 28% higher; the steel method causes 160 t of it"
+    ],
+    "note": "The 0.80 grid factor, the steel factor and the spend factor are assumptions chosen to show the mechanics, not published values."
+  },
+  "senseible": "Senseible pins the factor and its source to each line, which lets you compare its figures with another report line by line. Spend-based Scope 3 estimates are labelled as spend-based with wider uncertainty, so they are not mistaken for activity-based figures.",
+  "links": [
+    {
+      "label": "Why two tools give different Scope 3",
+      "to": "/answers/why-two-tools-give-different-scope-3-numbers"
+    },
+    {
+      "label": "AR5 or AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Which CEA factor version for which year",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 3 and 4 (organisational and operational boundaries)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (location-based and market-based)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

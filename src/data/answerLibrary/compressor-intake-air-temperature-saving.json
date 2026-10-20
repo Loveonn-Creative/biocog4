@@ -1,0 +1,77 @@
+{
+  "slug": "compressor-intake-air-temperature-saving",
+  "q": "How much power does cooler intake air save on an air compressor?",
+  "title": "Compressor saving from cooler intake air",
+  "short": "About 1% of compressor power for every 4 degrees C cooler the intake air, according to BEE's guide book on electrical utilities. A compressor that draws hot air from inside its own room, 12 degrees above outdoor air, uses roughly 3% more electricity than it would with a duct from outside.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factory maintenance teams",
+  "sections": [
+    {
+      "h": "Why cooler air saves power",
+      "p": [
+        "Cooler air is denser, so each stroke or rotation takes in more mass of air. The compressor delivers the same free air with less work, or more air for the same power. Hot intake also loads the aftercooler and dryer more, which adds to the penalty."
+      ]
+    },
+    {
+      "h": "How to measure the gap",
+      "ol": [
+        "Measure air temperature at the compressor intake filter while the machine runs, in the hottest part of the day.",
+        "Measure outdoor shade temperature at the same time, on the side where a duct would draw from.",
+        "Divide the difference by 4 to get the approximate percentage of power saved.",
+        "Repeat in summer and winter; the saving changes with the season."
+      ]
+    },
+    {
+      "h": "Ways to get cooler intake",
+      "ul": [
+        "Duct intake from outside, on a shaded wall away from exhausts, boiler stacks and cooling tower plumes.",
+        "Exhaust the hot cooling air from the compressor's own cooler out of the room, so the room does not heat up.",
+        "Keep intake filters clean; a choked filter costs power through pressure drop, separate from temperature.",
+        "Guard the duct inlet against rain and dust, and keep it short with few bends."
+      ]
+    },
+    {
+      "h": "Converting to CO2",
+      "p": [
+        "Take the compressor's annual kWh from a submeter or from load and unload hours, multiply by the percentage saved, and multiply by 0.710 kg CO2 per kWh. Confirm with a month of readings after the change at similar production."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a compressor in a hot room",
+    "lines": [
+      "Annual use: 400,000 kWh",
+      "Intake 12 degrees C above outdoor air: 12 / 4 = about 3% extra power",
+      "kWh saved with an outdoor duct: 400,000 x 0.03 = 12,000 kWh",
+      "CO2 saved: 12,000 x 0.710 = 8,520 kg, about 8.5 t CO2 a year"
+    ],
+    "note": "The 1% per 4 degrees is BEE's rule of thumb; the real saving depends on the season and the machine."
+  },
+  "senseible": "Senseible converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh, so the lower electricity use appears in the Scope 2 records it builds from your bills.",
+  "links": [
+    {
+      "label": "Compressed air pressure reduction savings",
+      "to": "/answers/compressed-air-pressure-reduction-savings"
+    },
+    {
+      "label": "Air compressor heat recovery",
+      "to": "/answers/air-compressor-heat-recovery-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 3 Compressed Air System, effect of intake air temperature (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

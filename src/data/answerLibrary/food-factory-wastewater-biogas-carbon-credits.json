@@ -1,0 +1,70 @@
+{
+  "slug": "food-factory-wastewater-biogas-carbon-credits",
+  "q": "Can an anaerobic digester on my food factory's wastewater earn carbon credits?",
+  "title": "Wastewater biogas digester carbon credits",
+  "short": "It can, if the old treatment let methane escape, for example an open anaerobic lagoon, and the digester captures and burns it. AMS-III.H, the CDM small-scale method for methane recovery in wastewater, was written for this. If your old treatment was aerobic, there is little methane to avoid, and only displaced fossil fuel counts.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Food, dairy, distillery and starch MSMEs",
+  "sections": [
+    {
+      "h": "Where the reductions come from",
+      "ul": [
+        "Methane avoided: the methane your old open lagoon or anaerobic pond released, now captured in a closed digester.",
+        "Fuel displaced: furnace oil, coal, LPG or diesel that the biogas replaces in your boiler or generator.",
+        "Deducted: methane leaking from the digester and gas lines, unburnt methane from the flare, and electricity used by pumps and blowers."
+      ],
+      "p": [
+        "The baseline decides most of the result. IPCC 2006 Volume 5 gives a methane correction factor of 0.8 for a deep anaerobic lagoon and 0 for a well run aerobic plant, so the same factory can have a large claim or almost none."
+      ]
+    },
+    {
+      "h": "Which methodology fits",
+      "ul": [
+        "CDM AMS-III.H, methane recovery in wastewater treatment: the CDM small-scale method for industrial effluent. Before you plan around it, check Verra's methodology list on verra.org for whether AMS-III.H, and which version, is open to new VCS projects.",
+        "Gold Standard: runs its own rules and approves CDM methods case by case; check its current methodology list on goldstandard.org for wastewater methane.",
+        "India's CCTS offset mechanism: none of BEE's 12 approved methodologies (list updated 7 July 2026) is for industrial wastewater methane. If you upgrade the biogas to CBG and sell it, BM WA03.003 for compressed biogas may apply."
+      ]
+    },
+    {
+      "h": "The additionality question",
+      "p": [
+        "Your consent to operate requires you to meet discharge limits for BOD and COD; it does not usually prescribe an anaerobic digester. A project that goes beyond the legal requirement and needs credit revenue to make sense can be additional. If a rule or your consent order already requires methane capture, or the digester pays for itself on fuel savings alone, a verifier is likely to reject the claim. Keep the board's consent conditions and your financial case in the project file."
+      ]
+    },
+    {
+      "h": "Records to keep from the start",
+      "ul": [
+        "Daily effluent flow and inlet and outlet COD, from a flow meter and lab tests.",
+        "Biogas flow from a calibrated meter and its methane content from an analyser.",
+        "Flare running hours, and gas sent to the boiler or generator.",
+        "Fuel invoices for the year before and after, to prove what the biogas replaced."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: methane in the old open lagoon (baseline only)",
+    "lines": [
+      "Effluent: 200 m3 a day x 8 kg COD per m3 = 1,600 kg COD a day",
+      "Per year at 330 operating days: 1,600 x 330 = 5,28,000 kg COD",
+      "Baseline methane, deep anaerobic lagoon: 5,28,000 x 0.25 kg CH4 per kg COD x 0.8 = 1,05,600 kg CH4",
+      "CO2e at GWP 28 (IPCC AR5): 1,05,600 x 28 = 29,56,800 kg, about 2,957 t CO2e a year",
+      "Credits would be this baseline minus project emissions and leakage, worked out with the methodology's own equations"
+    ],
+    "note": "Flow and COD are illustrative. 0.25 kg CH4 per kg COD and 0.8 are IPCC 2006 defaults; a methodology may set its own values and a different GWP."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals and keeps a bill-backed, dated record of the fuel and electricity your plant uses before and after the digester, which supports the fuel displacement and project emission terms.",
+  "links": [
+    { "label": "Methane from an effluent treatment plant", "to": "/answers/etp-wastewater-methane-emissions" },
+    { "label": "Dairy biogas plant carbon credits", "to": "/answers/dairy-biogas-plant-carbon-credits" },
+    { "label": "BEE approved CCTS offset methodologies", "to": "/answers/ccts-offset-approved-methodologies" },
+    { "label": "What is additionality", "to": "/answers/what-is-additionality-in-carbon-credits" }
+  ],
+  "sources": [
+    { "label": "UNFCCC CDM methodology AMS-III.H, Methane recovery in wastewater treatment", "url": "https://unfccc.int" },
+    { "label": "Verra VCS Program, eligible methodologies", "url": "https://verra.org" },
+    { "label": "BEE, approved methodologies under the CCTS offset mechanism (updated 7 July 2026)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 20 October 2026: AMS-III.H acceptance for new Verra and Gold Standard projects not confirmed, so the page tells readers to check both lists. CCTS statement checked against BEE's list of 12 approved methodologies (updated 7 July 2026); none covers industrial wastewater methane. Recheck both when BEE or the standards add methods."
+}

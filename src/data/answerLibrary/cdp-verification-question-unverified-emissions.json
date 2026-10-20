@@ -1,0 +1,65 @@
+{
+  "slug": "cdp-verification-question-unverified-emissions",
+  "q": "CDP asks whether my emissions are third-party verified. What do I answer if they are not?",
+  "title": "CDP verification question if not verified",
+  "short": "Answer that no third-party verification or assurance is in place for that scope, and use the comment field to say how your figures were prepared and what evidence sits behind them. An honest no costs you the verification points; claiming verification you do not have can cost far more.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Small suppliers in CDP supply chain",
+  "sections": [
+    {
+      "h": "What CDP means by verified",
+      "p": [
+        "CDP asks, scope by scope, whether an independent third party has verified or assured your emissions figure. If you say yes, it asks for details such as the standard used and the verification statement. CDP keeps a list of verification standards it accepts; ISO 14064-3 is one. A statement has to come from an independent body, not from your own team or from software."
+      ]
+    },
+    {
+      "h": "What the answer costs in score",
+      "p": [
+        "CDP lists third-party verification of emissions among its essential criteria for an A, so without it you will not reach A. The rest of your response is still scored on its own answers. For most small suppliers, a complete and consistent response matters more to the customer than the letter. If you answer CDP's shorter SME questionnaire, read its current scoring guidance, which differs from the full questionnaire."
+      ]
+    },
+    {
+      "h": "What to write in the comment",
+      "ul": [
+        "How the figures were prepared, for example GHG Protocol Corporate Standard, location-based Scope 2.",
+        "The evidence behind them: monthly electricity bills and fuel invoices for the full year.",
+        "Factor sources and versions.",
+        "Whether you plan verification, and for which year, only if you really do."
+      ]
+    },
+    {
+      "h": "If you want to verify next year",
+      "p": [
+        "Ask two or three verification bodies for quotes for limited assurance of Scope 1 and 2 under ISO 14064-3. Have a full year of bills and invoices, and the working file linking each to its figure, ready before they start."
+      ]
+    }
+  ],
+  "senseible": "Senseible's Verified status means its internal rule checks passed, not third-party verification, so in CDP answer no rather than ticking verified. What it does give you is a file-by-file trail, with SHA-256 fingerprints, that a verification body can sample.",
+  "links": [
+    {
+      "label": "How the CDP score is calculated",
+      "to": "/answers/how-is-cdp-score-calculated"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "GHG verification cost in India",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP scoring methodology and accepted verification standards (current cycle)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "ISO 14064-3:2019, Validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-20: only the general rule kept (verification is an A List essential criterion; CDP publishes accepted verification standards). No shares or level placement stated; check the current scoring methodology on cdp.net."
+}

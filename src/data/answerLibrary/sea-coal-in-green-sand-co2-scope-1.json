@@ -1,0 +1,79 @@
+{
+  "slug": "sea-coal-in-green-sand-co2-scope-1",
+  "q": "Is the coal dust (sea coal) in foundry green sand a Scope 1 emission, and how do I estimate it?",
+  "title": "Sea coal in green sand: is it Scope 1?",
+  "short": "Yes. The carbon in sea coal burns or breaks down when molten iron meets the mould, on your site, so its CO2 is a direct Scope 1 emission. Estimate it as sea coal used x carbon content x share oxidised x 44/12, and label the oxidised share as your own assumption.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Grey iron foundries in Kolhapur, Belagavi, Rajkot and Coimbatore",
+  "sections": [
+    {
+      "h": "Why it is Scope 1 but not a fuel line",
+      "p": [
+        "The GHG Protocol Corporate Standard counts emissions from sources you own or control as Scope 1, whether they come from fuel or from carbon in process materials. Sea coal is added to green sand so it gives off gas and forms lustrous carbon at the metal face, which leaves a cleaner casting surface. That happens in your moulds, so the CO2 is yours.",
+        "Report it as a process emission, separate from melting and heating fuels. It is not burnt for energy, and mixing it with furnace or boiler coal makes your energy figures look worse than they are."
+      ]
+    },
+    {
+      "h": "Why not all of it becomes CO2 in one pour",
+      "p": [
+        "Only the sand close to the metal gets hot enough. Some sea coal burns fully, some is coked and stays in the system sand, and some leaves in dust and in the sand you discard. Foundries keep topping it up because each pouring cycle uses part of it.",
+        "There is no published default for the share oxidised. Estimate it, write it down as an assumption with its basis, and review it when you have test data."
+      ]
+    },
+    {
+      "h": "Two ways to estimate it",
+      "ol": [
+        "Simple: sea coal issued (kg) x carbon content (from the supplier's analysis or a lab test) x assumed share oxidised x 44/12.",
+        "Carbon balance, following the mass balance idea the IPCC 2006 Guidelines use for carbon inputs in metal production (Volume 3, Chapter 4): carbon added in sea coal, minus carbon leaving in discarded sand and dust (from loss on ignition or carbon tests on samples), minus any build-up in the system sand, then x 44/12.",
+        "Ceiling: sea coal x carbon content x 44/12 assumes every gram burns. Quote it only as an upper bound."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ul": [
+        "Sea coal bought and issued each month, from invoices and the store register.",
+        "Carbon content for each lot, with the test report.",
+        "The oxidised share or the carbon balance workings, dated.",
+        "Other carbon additives, such as lustrous carbon formers or resin binders, as separate lines. Cereal binders are plant based, so their CO2 is biogenic and reported outside the scope totals."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of sea coal",
+    "lines": [
+      "Sea coal issued: 5,000 kg; carbon content 70% (supplier analysis, illustrative)",
+      "Share oxidised: 50% (your assumption, not a default)",
+      "5,000 x 0.70 x 0.50 x 44/12 = 6,417 kg CO2, Scope 1 process emission",
+      "Ceiling if all the carbon burned: 5,000 x 0.70 x 44/12 = 12,833 kg CO2"
+    ],
+    "note": "Every input is illustrative. Replace the 50% with your own estimate or a carbon balance, and keep the note with the figure."
+  },
+  "senseible": "Senseible reads sea coal purchase invoices with their kilograms as the activity record. The carbon content and the share oxidised in the mould are your own inputs; label the share as an estimate and keep the workings with the figure.",
+  "links": [
+    {
+      "label": "Foundry CO2 per tonne of good castings",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Cupola coke CO2 per tonne",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    },
+    {
+      "label": "Green loan for a foundry in Kolhapur",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (direct emissions)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 4, Metal Industry Emissions (carbon mass balance)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The oxidised share has no published default; it is a labelled estimate to revisit when sand test data is available."
+}

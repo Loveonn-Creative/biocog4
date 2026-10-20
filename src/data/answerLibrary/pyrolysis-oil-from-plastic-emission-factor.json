@@ -1,0 +1,64 @@
+{
+  "slug": "pyrolysis-oil-from-plastic-emission-factor",
+  "q": "What emission factor should I use for pyrolysis oil made from plastic waste?",
+  "title": "Emission factor for plastic pyrolysis oil",
+  "short": "There is no IPCC default for pyrolysis oil from plastic, so build your own factor from a lab test: CO2 per kg equals the oil's carbon mass fraction times 44/12, and per litre you multiply by its density. All the carbon is fossil, so it counts in Scope 1. Do not borrow the furnace oil factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories buying plastic pyrolysis oil as boiler or furnace fuel",
+  "sections": [
+    {
+      "h": "Why the furnace oil factor is the wrong shortcut",
+      "p": [
+        "Pyrolysis oil from mixed plastic varies batch to batch with the feed and the reactor. It can be lighter than furnace oil, with a different carbon content, water content and density. Using 2.97 kg CO2 per litre, the IPCC 2006 based figure for furnace oil, would be a guess with no evidence behind it. The IPCC 2006 Guidelines, Volume 2, Chapter 1, allow a plant-specific factor where a fuel has no suitable default, provided it rests on measured properties."
+      ]
+    },
+    {
+      "h": "What to ask the lab for",
+      "ul": [
+        "Carbon content by mass, from an ultimate analysis such as ASTM D5291.",
+        "Density at a stated temperature, in kg per litre.",
+        "Net calorific value in MJ per kg, so you can check the factor per unit of energy.",
+        "Water and ash content, since a wet sample lowers carbon per kg as delivered.",
+        "Test samples from several deliveries, and repeat when the supplier or feed changes."
+      ]
+    },
+    {
+      "h": "Fossil or biogenic",
+      "p": [
+        "Carbon from plastic is fossil, so the CO2 goes in Scope 1 in full. If the supplier's feed also includes tyres, paper or other biomass, part of the carbon may be biogenic. Count it as fossil unless the supplier gives a measured biogenic share, for example from a radiocarbon test, and say which you did."
+      ]
+    },
+    {
+      "h": "Checks before you rely on the oil",
+      "ul": [
+        "The supplier should hold a valid consent to operate from its State Pollution Control Board for the pyrolysis unit; ask for a copy and check the conditions the board attached to it.",
+        "Invoices should state litres or kg, so you have activity data to multiply by your factor.",
+        "Keep the lab reports with the invoices for the same months; an auditor will want both.",
+        "Methane and nitrous oxide from burning the oil are small; if you add them, name the proxy factor you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: building the factor from a lab report",
+    "lines": [
+      "Lab results (illustrative): carbon 85% by mass, density 0.85 kg per litre",
+      "CO2 per kg: 0.85 x 44/12 = 3.117 kg CO2 per kg",
+      "CO2 per litre: 3.117 x 0.85 = 2.649 kg CO2 per litre",
+      "Month's purchases: 20,000 litres",
+      "Scope 1: 20,000 x 2.649 = 52,980 kg, about 53.0 t CO2"
+    ],
+    "note": "The lab values are illustrative assumptions, not defaults. The formula assumes all the carbon burns to CO2."
+  },
+  "senseible": "Senseible reads the litres or kg on pyrolysis oil invoices and calculates with published fuel factors from its IPCC 2006 table, so this line waits for a factor. Keep the lab report beside the invoices as the basis for the factor you calculate.",
+  "links": [
+    { "label": "Furnace oil emission factor", "to": "/emission-factors/furnace-oil" },
+    { "label": "Biomass or waste fuel in a boiler", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },
+    { "label": "GCV vs NCV in fuel calculations", "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapters 1 and 2 (country or plant specific factors)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-18"
+}

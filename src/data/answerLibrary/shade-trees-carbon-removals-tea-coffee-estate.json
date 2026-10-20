@@ -1,0 +1,88 @@
+{
+  "slug": "shade-trees-carbon-removals-tea-coffee-estate",
+  "q": "Can a tea or coffee estate count its shade trees as carbon removals in its footprint?",
+  "title": "Shade trees as carbon removals on an estate",
+  "short": "Only the growth in tree carbon can count, not the carbon already standing, and only as removals reported separately from emissions, never netted off. You need repeated tree inventories, a record of trees cut and a plan for reversals, as the GHG Protocol Land Sector and Removals Standard requires.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Tea and coffee estates and their export buyers",
+  "sections": [
+    {
+      "h": "Stock change, not standing stock",
+      "p": [
+        "A mature shade canopy holds a lot of carbon, but it removed that carbon in past years. A removal in your reporting year is the increase in carbon stock over that year: new planting and trees growing larger, minus trees lopped, felled or lost. The IPCC 2006 Guidelines (Volume 4, Chapter 5, Cropland) treat perennial woody biomass the same way, by change in stock."
+      ]
+    },
+    {
+      "h": "How to measure it",
+      "ol": [
+        "Map the estate and its shade blocks.",
+        "Lay sample plots and record each tree's species, diameter at breast height and height.",
+        "Convert to biomass with published allometric equations for those species, add roots with a root to shoot ratio, and take carbon as a fraction of dry biomass (IPCC default 0.47).",
+        "Repeat the inventory after a few years and divide the stock change by the years in between.",
+        "Subtract carbon in loppings and trees taken for fuel or timber."
+      ]
+    },
+    {
+      "h": "Reporting rules",
+      "ul": [
+        "Report removals as their own line in t CO2, next to gross emissions, not subtracted from them.",
+        "Keep monitoring the stored carbon. A later loss, such as clearing a block, is reported as a reversal.",
+        "ISO 14067 product footprints also keep removals and biogenic carbon visible as separate items in the study report.",
+        "A buyer can count your removals in its Scope 3 only if it can trace its tea or coffee to your land."
+      ]
+    },
+    {
+      "h": "Which version applies",
+      "p": [
+        "Use version 1.1 of the Land Sector and Removals Standard, dated 30 June 2026. It made minor edits to version 1.0 from 30 January 2026, and its effective date is 1 January 2027. This version covers agriculture and CO2 removal technologies, not forestry, so confirm your shade blocks are treated as cropland before you report.",
+        "Buyers with SBTi FLAG targets may ask for removals data before 2027."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 100 ha of shade blocks",
+    "lines": [
+      "Shade tree carbon: 40 t C per ha in the 2020 inventory, 45 t C per ha in 2025",
+      "Stock change: (45 minus 40) x 100 = 500 t C over 5 years = 100 t C a year",
+      "Removals: 100 x 44/12 = 367 t CO2 a year, reported as a separate line",
+      "Made tea from estate leaf: 10,00,000 kg a year, so 0.37 kg CO2 removals per kg, shown beside the emissions figure, not subtracted"
+    ],
+    "note": "Stock figures are illustrative. If a block was cleared during the period, its loss comes off the stock change first."
+  },
+  "senseible": "Senseible records the factory's fuel and electricity emissions from bills, the emissions side of the footprint. Tree carbon stock comes from your field inventories and is reported as a separate removals line.",
+  "links": [
+    {
+      "label": "Land Sector and Removals Standard for exporters",
+      "to": "/answers/ghg-protocol-land-sector-removals-standard-exporters"
+    },
+    {
+      "label": "Tea factory footprint per kg made tea",
+      "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea"
+    },
+    {
+      "label": "Carbon credits from coffee shade trees",
+      "to": "/answers/coffee-agroforestry-carbon-credits-india"
+    },
+    {
+      "label": "Durable or nature-based removals",
+      "to": "/answers/durable-removals-vs-nature-based-for-net-zero"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Land Sector and Removals Standard, version 1.1 (30 June 2026)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 4 (carbon fraction) and Chapter 5, Cropland",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked October 2026: LSR Standard v1.1 published 30 June 2026, effective 1 January 2027, excludes forestry. Check for later versions before reporting."
+}

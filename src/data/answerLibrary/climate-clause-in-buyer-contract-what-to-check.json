@@ -1,0 +1,76 @@
+{
+  "slug": "climate-clause-in-buyer-contract-what-to-check",
+  "q": "What should I check before signing a climate clause in a buyer's supply contract?",
+  "title": "Checking a climate clause before signing",
+  "short": "Check what data you must give and how often, which standard and factors define it, any target you are committing to, the buyer's audit rights, how your data can be used and shared, who pays for verification or changes, and what happens if you miss a target. This is general guidance, not legal advice.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSME exporters negotiating supply agreements",
+  "sections": [
+    {
+      "h": "Definitions and data duties",
+      "ul": [
+        "Which emissions: Scope 1 and 2 only, or Scope 3 too; company level or per product.",
+        "Which method: the GHG Protocol, ISO 14064-1 or ISO 14067, and who chooses the emission factors.",
+        "Frequency and deadlines: annual, quarterly, or per shipment; in which portal or format.",
+        "What happens if the standard changes during the contract."
+      ]
+    },
+    {
+      "h": "Targets and costs",
+      "ul": [
+        "Is the target a best-efforts aim or a firm obligation with a number and a date?",
+        "Who pays for verification, new meters, renewable electricity or redesign?",
+        "Is any price, rebate or volume linked to your emissions performance? If so, how is performance measured?"
+      ]
+    },
+    {
+      "h": "Audit, confidentiality and use of data",
+      "ul": [
+        "Who can audit, how often, with what notice, and at whose cost.",
+        "Whether the buyer may share your data with its customers, investors, CDP or regulators, and whether it is anonymised.",
+        "Protection for prices, recipes, process data and personal data in your records."
+      ]
+    },
+    {
+      "h": "Liability and exit",
+      "ul": [
+        "Liability or indemnity if your figures later prove wrong; try to limit it to errors you made knowingly or negligently.",
+        "Whether missing a target is a breach or a termination ground, and whether there is a cure period.",
+        "Whether you must pass the same terms to your own suppliers."
+      ]
+    },
+    {
+      "h": "Where to compare wording",
+      "p": [
+        "The Chancery Lane Project publishes free model climate clauses that show how such terms are often drafted. Comparing your buyer's text against a model can show where it is unusually one-sided. Take legal advice before signing anything with targets or liability attached."
+      ]
+    }
+  ],
+  "senseible": "Senseible can supply the Scope 1 and 2 figures a clause asks for from your uploaded bills and invoices, each traced to its document, as self-declared data. It does not give legal advice on the contract.",
+  "links": [
+    {
+      "label": "CSDDD clause from an EU buyer",
+      "to": "/answers/csddd-contract-clause-from-eu-buyer"
+    },
+    {
+      "label": "CBAM clause for an export contract",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    },
+    {
+      "label": "Minimum to meet a supplier code GHG clause",
+      "to": "/answers/supplier-code-of-conduct-ghg-clause-minimum"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

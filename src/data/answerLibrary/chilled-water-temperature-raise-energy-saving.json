@@ -1,0 +1,78 @@
+{
+  "slug": "chilled-water-temperature-raise-energy-saving",
+  "q": "How much chiller energy does raising the chilled water temperature by 1 degree save?",
+  "title": "Chiller saving per degree of chilled water",
+  "short": "About 3% of chiller compressor power for each 1 degree C you raise the evaporator temperature, according to BEE's guide book on electrical utilities. Raising chilled water supply from 7 to 9 degrees C on a busy process chiller can cut its electricity by around 6%, provided the process still gets the cooling it needs.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers in pharma, food, plastics and commercial buildings",
+  "sections": [
+    {
+      "h": "Why a warmer setpoint saves power",
+      "p": [
+        "A chiller's compressor works to lift heat from the evaporator pressure up to the condenser pressure. A warmer chilled water setpoint raises the evaporator temperature and pressure, so the lift is smaller and the compressor does less work for the same cooling. The 3% per degree figure is a rule of thumb for vapour compression chillers; your machine's part-load data sheet gives a closer number."
+      ]
+    },
+    {
+      "h": "How far you can raise it",
+      "ul": [
+        "Check the coldest user first: a jacketed reactor, a mould, a cold room or an air handler that must remove moisture.",
+        "Air handlers that dehumidify need cold enough water to bring coil temperature below the dew point; raising the setpoint too far raises room humidity.",
+        "Watch pump energy: warmer water carries less cooling per litre at the same temperature difference, so flow may rise and pumps work harder.",
+        "Raise in steps of 0.5 to 1 degree, and log product quality and room conditions for a week at each step."
+      ]
+    },
+    {
+      "h": "Turning the saving into kWh and CO2",
+      "ol": [
+        "Find the chiller's annual kWh: from a submeter, or kW per TR times TR times running hours.",
+        "Multiply by 3% per degree raised to get kWh saved.",
+        "Multiply kWh saved by the grid factor, 0.710 kg CO2 per kWh, for location-based Scope 2.",
+        "Compare the next year's chiller kWh at similar load and weather to confirm the saving."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "p": [
+        "Applying 3% to the whole plant's electricity instead of the chiller alone; counting the saving at full load when the chiller runs mostly at part load; and raising the setpoint while users open their valves fully to compensate, which wipes out the gain."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 200 TR process chiller",
+    "lines": [
+      "Running: 200 TR x 0.8 kW per TR = 160 kW, for 6,000 hours a year",
+      "Annual use: 160 x 6,000 = 960,000 kWh",
+      "Setpoint raised by 2 degrees C: about 3% x 2 = 6% saved",
+      "kWh saved: 960,000 x 0.06 = 57,600 kWh",
+      "CO2 saved: 57,600 x 0.710 = 40,896 kg, about 40.9 t CO2 a year"
+    ],
+    "note": "The 3% per degree is BEE's rule of thumb; confirm with before and after submeter readings."
+  },
+  "senseible": "Senseible reads kWh from your electricity bills and converts kWh to CO2 at the CEA factor of 0.710 kg CO2 per kWh, so a lower chiller load shows up in your monthly Scope 2 records.",
+  "links": [
+    {
+      "label": "Chiller efficiency in kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "AC setpoint at 24 degrees savings",
+      "to": "/answers/ac-temperature-setpoint-24-savings"
+    },
+    {
+      "label": "Chiller plant emissions per TR hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 4 Refrigeration and Air Conditioning (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}
