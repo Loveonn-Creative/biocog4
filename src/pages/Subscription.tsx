@@ -39,6 +39,16 @@ const usageLimits = (t: string) => {
   return { invoices: PLAN_INVOICE_SCANS_PER_MONTH[plan], reports: reportLimits[plan] };
 };
 
+// Rows reconciled by staff carry the exact billed base price; older and
+// Razorpay rows carry it in amount (whole rupees, before GST).
+const billedBase = (sub: { amount?: number | null; billed_base_amount?: number | string | null }) =>
+  sub.billed_base_amount != null ? Number(sub.billed_base_amount) : Number(sub.amount ?? 0);
+interface SubRow {
+  id: string; tier: string; status: string | null; amount: number | null; billing_cycle: string | null; created_at: string;
+  billed_base_amount?: number | string | null; gst_amount?: number | string | null; payment_mode?: string | null; discount_note?: string | null;
+}
+const PAYMENT_MODE: Record<string, string> = { manual: 'Paid offline', bank_transfer: 'Bank transfer', discount: 'Discounted' };
+
 const Subscription = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
@@ -48,7 +58,7 @@ const Subscription = () => {
   // Invoice reads from the reads ledger, as the server counts them; credits shown alongside.
   const allowance = useInvoiceAllowance();
   const [isLoading, setIsLoading] = useState(true);
-  const [subscriptions, setSubscriptions] = useState<any[]>([]);
+  const [subscriptions, setSubscriptions] = useState<SubRow[]>([]);
 
   // Redirect if not authenticated
   useEffect(() => {
@@ -79,7 +89,7 @@ const Subscription = () => {
           .order('created_at', { ascending: false });
 
         setUsage({ reports: reportCount || 0 });
-        setSubscriptions(subs || []);
+        setSubscriptions((subs ?? []) as SubRow[]);
       } catch (error) {
         console.error('Error fetching subscription data:', error);
       } finally {
@@ -94,15 +104,17 @@ const Subscription = () => {
   const currentTier = tiers.find(t => t.id === tier) || tiers[0];
   const TierIcon = currentTier.icon;
 
-  // Prefer what the user actually paid for the active plan over any list price.
+  // Prefer what the user was actually billed for the active plan over any list
+  // price: a reconciled row carries the exact base price (billed_base_amount).
   const activeSub = subscriptions.find(
-    (s) => s.status === 'active' && normalizeTier(s.tier) === tier && Number(s.amount) > 0
+    (s) => s.status === 'active' && normalizeTier(s.tier) === tier && (Number(s.amount) > 0 || s.payment_mode === 'discount')
   );
   const planPriceLabel = (() => {
     if (tier === 'snapshot') return 'Free forever';
     if (activeSub) {
       const period = activeSub.billing_cycle === 'monthly' ? 'month' : activeSub.billing_cycle === 'yearly' ? 'year' : null;
-      return `Paid ₹${Number(activeSub.amount).toLocaleString('en-IN')}${period ? ` per ${period}` : ''}`;
+      if (activeSub.payment_mode === 'discount' && billedBase(activeSub) === 0) return 'Complimentary';
+      return `Paid ₹${billedBase(activeSub).toLocaleString('en-IN')}${period ? ` per ${period}` : ''} + GST`;
     }
     if (currentTier.price === null) return 'Custom pricing';
     return `₹${currentTier.price.toLocaleString('en-IN')}/month`;
@@ -268,7 +280,8 @@ const Subscription = () => {
                         </p>
                       </div>
                       <div className="text-right">
-                        <p className="font-medium">₹{sub.amount?.toLocaleString('en-IN')}</p>
+                        <p className="font-medium">₹{billedBase(sub).toLocaleString('en-IN')}{sub.gst_amount != null && Number(sub.gst_amount) > 0 ? ` + ₹${Number(sub.gst_amount).toLocaleString('en-IN')} GST` : ''}</p>
+                        {sub.payment_mode && PAYMENT_MODE[sub.payment_mode] && <p className="text-xs text-muted-foreground">{PAYMENT_MODE[sub.payment_mode]}{sub.discount_note ? ` · ${sub.discount_note}` : ''}</p>}
                         <Badge 
                           variant={sub.status === 'active' ? 'default' : 'secondary'}
                           className="text-xs"
