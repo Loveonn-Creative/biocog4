@@ -1,0 +1,81 @@
+{
+  "slug": "vacuum-flask-carbon-footprint-per-flask",
+  "q": "How do I calculate the carbon footprint of a vacuum flask?",
+  "title": "Vacuum flask carbon footprint per flask",
+  "short": "Weigh the inner and outer stainless steel walls, the cap and the seal per flask and multiply by supplier figures. Add drawing, welding, vacuum brazing, polishing and coating energy, then divide the plant's energy by flasks made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Vacuum flask makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Stainless steel for the inner and outer walls.",
+        "Plastic cap and silicone seal.",
+        "Paint or powder coating."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Drawing and welding the two walls.",
+        "Evacuating and sealing in a vacuum furnace.",
+        "Polishing, coating and assembly."
+      ]
+    },
+    {
+      "h": "Per flask",
+      "p": [
+        "Report per flask by capacity and weight. The vacuum furnace is often a large energy user."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per flask (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Flasks made: 40,000",
+      "Plant total: 42,600 / 40,000 = 1.065 kg CO2 per flask",
+      "Add stainless steel and cap for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Steel water bottle footprint",
+      "to": "/answers/steel-water-bottle-carbon-footprint-per-bottle"
+    },
+    {
+      "label": "Stainless steel utensils footprint",
+      "to": "/answers/stainless-steel-utensils-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

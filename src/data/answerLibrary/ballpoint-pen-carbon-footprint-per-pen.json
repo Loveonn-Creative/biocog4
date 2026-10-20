@@ -1,0 +1,81 @@
+{
+  "slug": "ballpoint-pen-carbon-footprint-per-pen",
+  "q": "How do I calculate the carbon footprint of a ballpoint pen?",
+  "title": "Ballpoint pen carbon footprint per pen",
+  "short": "Weigh the barrel, cap and refill per pen and multiply the plastics, brass tip and ink by supplier figures. Add moulding, tip making, ink filling and assembly energy, then divide the plant's energy by pens made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pen makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "PP, PS or ABS barrel and cap.",
+        "Refill tube, brass or steel tip and ball.",
+        "Ink."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Injection moulding.",
+        "Tip machining and refill filling.",
+        "Assembly and packing."
+      ]
+    },
+    {
+      "h": "Per pen",
+      "p": [
+        "Report per pen by type. A refillable metal pen carries a different figure from a use-and-throw pen."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per pen (one month)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Pens made: 10,000,000",
+      "Plant total: 28,400 / 10,000,000 = 0.00284 kg CO2 per pen",
+      "Add plastics, tip and ink for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Injection moulding footprint",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Printing ink footprint",
+      "to": "/answers/printing-ink-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

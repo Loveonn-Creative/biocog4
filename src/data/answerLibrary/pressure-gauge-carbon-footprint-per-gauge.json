@@ -1,0 +1,81 @@
+{
+  "slug": "pressure-gauge-carbon-footprint-per-gauge",
+  "q": "How do I calculate the carbon footprint of a pressure gauge?",
+  "title": "Pressure gauge carbon footprint per gauge",
+  "short": "Weigh the case, bourdon tube, movement, dial and window per gauge and multiply by supplier figures. Add machining, brazing, assembly and calibration energy, then divide the plant's energy by gauges made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pressure gauge and instrument makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Steel, stainless steel or plastic case.",
+        "Brass or stainless steel bourdon tube and socket.",
+        "Movement, dial, glass or polycarbonate window and filling liquid if used."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Machining sockets and forming tubes.",
+        "Brazing or welding the tube to the socket.",
+        "Assembly and calibration."
+      ]
+    },
+    {
+      "h": "Per gauge",
+      "p": [
+        "Report per gauge by dial size and material. Stainless steel gauges usually carry more footprint than brass and steel ones."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per gauge (one month)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Gauges made: 50,000",
+      "Plant total: 14,200 / 50,000 = 0.284 kg CO2 per gauge",
+      "Add case, tube and movement for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Brass component footprint",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Industrial valve footprint",
+      "to": "/answers/industrial-valve-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

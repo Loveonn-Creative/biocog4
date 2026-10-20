@@ -1,0 +1,85 @@
+{
+  "slug": "sofa-carbon-footprint-per-seat",
+  "q": "How do I calculate the carbon footprint of a sofa?",
+  "title": "Sofa carbon footprint per seat",
+  "short": "Weigh the wooden or steel frame, foam, springs or webbing, and upholstery fabric or leather per sofa and multiply by supplier figures. Add cutting, upholstery and assembly energy, then divide the workshop's energy by seats made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sofa and upholstered furniture makers",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Solid wood, plywood or steel frame.",
+        "Foam, fibre fill and springs or elastic webbing.",
+        "Fabric or leather upholstery."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Frame cutting and joining.",
+        "Foam cutting and upholstery.",
+        "Assembly and packing."
+      ]
+    },
+    {
+      "h": "Per seat",
+      "p": [
+        "Report per seat or per sofa by type, since a three-seater carries more frame, foam and fabric than a single seat. Leather usually carries a higher figure than fabric."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per seat (one month)",
+    "lines": [
+      "Electricity: 10,000 kWh x 0.710 = 7,100 kg CO2",
+      "Seats made: 1,500",
+      "Plant total: 7,100 / 1,500 = 4.733 kg CO2 per seat",
+      "Add frame, foam and upholstery for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Wooden furniture footprint",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Foam mattress footprint",
+      "to": "/answers/foam-mattress-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Plywood footprint",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

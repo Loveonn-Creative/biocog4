@@ -1,0 +1,85 @@
+{
+  "slug": "curtain-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a curtain?",
+  "title": "Curtain carbon footprint per piece",
+  "short": "Measure the fabric per curtain, multiply by the fabric supplier's figure per metre or kg, and add lining, eyelets and thread. Add cutting and stitching energy, then divide the unit's energy by curtains made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Home furnishing makers and exporters",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Polyester, cotton or blended fabric.",
+        "Lining and blackout coating if used.",
+        "Eyelets, tape and thread."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Cutting.",
+        "Stitching and eyelet fixing.",
+        "Pressing and packing."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per curtain by size and fabric. Fabric usually makes up most of the figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per piece (one month)",
+    "lines": [
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Curtains made: 20,000",
+      "Plant total: 4,260 / 20,000 = 0.213 kg CO2 per piece",
+      "Add fabric, lining and fittings for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Cushion cover footprint",
+      "to": "/answers/cushion-cover-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Cotton bed sheet footprint",
+      "to": "/answers/cotton-bed-sheet-carbon-footprint-per-set"
+    },
+    {
+      "label": "Printed fabric footprint",
+      "to": "/answers/printed-fabric-carbon-footprint-per-metre"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "cast-iron-manhole-cover-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a cast iron manhole cover?",
+  "title": "Cast iron manhole cover carbon footprint",
+  "short": "Weigh each cover and frame, then add the foundry's melting energy per tonne of good castings, the pig iron, scrap and alloys charged, and the sand and binders used. Divide the foundry's energy by tonnes of good castings, then multiply by the cover's weight.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Foundries making manhole covers and gratings",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Pig iron and cast iron or steel scrap.",
+        "Ferroalloys and inoculants.",
+        "Moulding sand, binders and coke if a cupola is used."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Melting in an induction furnace or cupola.",
+        "Moulding, pouring and knockout.",
+        "Fettling, grinding and painting."
+      ]
+    },
+    {
+      "h": "Per cover",
+      "p": [
+        "Report per cover by load class and weight, since a heavy-duty road cover can weigh several times a light-duty one. Count rejected castings: they were melted too."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per tonne (one month)",
+    "lines": [
+      "Electricity: 300,000 kWh x 0.710 = 213,000 kg CO2",
+      "Coal: 20,000 kg x 2.42 = 48,400 kg CO2",
+      "Tonnes of good castings: 600",
+      "Plant total: 261,400 / 600 = 435.7 kg CO2 per tonne",
+      "Multiply by the cover weight, then add pig iron and scrap for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Foundry footprint",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "Ductile iron pipe footprint",
+      "to": "/answers/ductile-iron-pipe-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

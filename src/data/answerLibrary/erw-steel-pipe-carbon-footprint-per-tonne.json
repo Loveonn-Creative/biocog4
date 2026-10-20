@@ -1,0 +1,86 @@
+{
+  "slug": "erw-steel-pipe-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of ERW steel pipe?",
+  "title": "ERW steel pipe carbon footprint per tonne",
+  "short": "Start with the hot-rolled coil, which carries most of the footprint, using the steel supplier's figure per tonne. Add slitting, forming, welding, galvanising if any and finishing energy, then divide the mill's energy by tonnes of pipe dispatched.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "ERW pipe and tube mills",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Hot-rolled steel coil, the main input.",
+        "Zinc if the pipe is galvanised.",
+        "Paint or varnish for black pipe."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Slitting the coil and roll forming the tube.",
+        "High-frequency welding and sizing.",
+        "Hydro testing, cutting and end finishing."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne by size and finish. Galvanised pipe adds the zinc and the galvanising bath to the black pipe figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per tonne (one month)",
+    "lines": [
+      "Electricity: 250,000 kWh x 0.710 = 177,500 kg CO2",
+      "PNG: 20,000 SCM x 2.05 = 41,000 kg CO2",
+      "Tonnes dispatched: 5,000",
+      "Plant total: 218,500 / 5,000 = 43.7 kg CO2 per tonne",
+      "Add hot-rolled coil and any zinc for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Hot-dip galvanizing footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "TMT bar mill CO2",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    },
+    {
+      "label": "Ductile iron pipe footprint",
+      "to": "/answers/ductile-iron-pipe-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

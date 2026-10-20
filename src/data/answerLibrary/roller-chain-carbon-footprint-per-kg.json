@@ -1,0 +1,82 @@
+{
+  "slug": "roller-chain-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of a roller chain?",
+  "title": "Roller chain carbon footprint per kg",
+  "short": "Chains are mostly steel: multiply the steel strip and wire used per kg of chain by the supplier's figure, then add stamping, heat treatment, assembly and finishing energy per kg made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Roller chain makers for bicycles, two-wheelers and industry",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Steel strip for link plates.",
+        "Steel wire for pins, bushes and rollers.",
+        "Lubricant and packing."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Stamping link plates and making pins, bushes and rollers.",
+        "Case hardening and tempering.",
+        "Assembly, pre-stretching and lubrication."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg, or per metre by chain size."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg (one month)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "PNG: 5,000 SCM x 2.05 = 10,250 kg CO2",
+      "Kg dispatched: 100,000",
+      "Plant total: 52,850 / 100,000 = 0.528 kg CO2 per kg",
+      "Add steel strip and wire for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Sheet metal stamping footprint",
+      "to": "/answers/sheet-metal-stamping-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Bicycle footprint",
+      "to": "/answers/bicycle-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Automobile industry",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

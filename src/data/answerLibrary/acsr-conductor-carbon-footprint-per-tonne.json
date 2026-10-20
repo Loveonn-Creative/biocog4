@@ -1,0 +1,85 @@
+{
+  "slug": "acsr-conductor-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of ACSR conductor?",
+  "title": "ACSR conductor carbon footprint per tonne",
+  "short": "ACSR is aluminium wire stranded around a galvanised steel core. Split the conductor's weight into aluminium and steel, multiply each by its supplier's figure, then add wire drawing and stranding energy per tonne of conductor.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Conductor makers supplying transmission and distribution utilities",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Aluminium rod, which carries most of the footprint.",
+        "Galvanised steel core wire.",
+        "Grease and wooden or steel drums."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Drawing aluminium rod into wire.",
+        "Stranding aluminium layers over the steel core.",
+        "Testing and winding onto drums."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne or per km by conductor code, since the aluminium to steel ratio differs between sizes. Primary aluminium smelted on coal power carries a high figure, so ask for the rod supplier's own number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per tonne (one month)",
+    "lines": [
+      "Electricity: 120,000 kWh x 0.710 = 85,200 kg CO2",
+      "Tonnes of conductor: 800",
+      "Plant total: 85,200 / 800 = 106.5 kg CO2 per tonne",
+      "Add aluminium rod and steel core wire for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Aluminium extrusion footprint",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Steel wire drawing footprint",
+      "to": "/answers/steel-wire-drawing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Copper cable footprint",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    },
+    {
+      "label": "Aluminium industry",
+      "to": "/industries/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
