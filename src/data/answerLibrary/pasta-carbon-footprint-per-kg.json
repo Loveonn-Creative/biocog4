@@ -1,0 +1,82 @@
+{
+  "slug": "pasta-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of pasta per kg?",
+  "title": "Pasta carbon footprint per kg",
+  "short": "Multiply the durum semolina per kg of pasta by the miller's figure, then add mixing, extrusion and drying energy. Drying is usually the main plant energy use. Divide the plant's energy by kg packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pasta and macaroni makers",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Durum wheat semolina or maida by weight.",
+        "Water, and vegetables or eggs in some lines.",
+        "Pouches and cartons."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Mixing and vacuum extrusion through dies.",
+        "Pre-drying and final drying in heated chambers.",
+        "Cooling and packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg of dry pasta. Long cut pasta often dries longer than short cut, so report by shape family where you can."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: pasta unit per kg (one month)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "PNG: 8,000 SCM x 2.05 = 16,400 kg CO2",
+      "Pasta packed (kg): 300,000",
+      "Plant total: 37,700 / 300,000 = 0.126 kg CO2 per kg",
+      "Add semolina and packing for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Instant noodles footprint",
+      "to": "/answers/instant-noodles-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Flour mill footprint",
+      "to": "/answers/flour-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "gypsum-board-carbon-footprint-per-sq-m",
+  "q": "How do I calculate the carbon footprint of gypsum board per square metre?",
+  "title": "Gypsum board carbon footprint per sq m",
+  "short": "Gypsum board needs heat twice: calcining the gypsum and drying the wet board. Divide the plant's fuel and electricity by square metres made, then add the facing paper and additives with supplier figures.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Gypsum board plants and interior contractors",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Natural or FGD gypsum by weight.",
+        "Facing paper on both sides.",
+        "Starch, foam agents and fibre."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Calcining gypsum to stucco.",
+        "Mixing and forming the board.",
+        "Drying kiln, cutting and stacking."
+      ]
+    },
+    {
+      "h": "Per sq m",
+      "p": [
+        "Report per square metre by thickness. FGD gypsum from power plants replaces mined gypsum but the energy steps stay."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: gypsum board unit per sq m (one month)",
+    "lines": [
+      "PNG: 150,000 SCM x 2.05 = 307,500 kg CO2",
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Board made (sq m): 300,000",
+      "Plant total: 364,300 / 300,000 = 1.214 kg CO2 per sq m",
+      "Add gypsum, paper and additives for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Fly ash brick footprint",
+      "to": "/answers/fly-ash-brick-carbon-footprint-per-1000"
+    },
+    {
+      "label": "Ready mix concrete footprint",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

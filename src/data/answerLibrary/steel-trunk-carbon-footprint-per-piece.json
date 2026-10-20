@@ -1,0 +1,82 @@
+{
+  "slug": "steel-trunk-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a steel trunk?",
+  "title": "Steel trunk carbon footprint per piece",
+  "short": "Weigh the steel sheet per trunk, including offcuts, and multiply by the steel supplier's per-kg figure. Add pressing, welding, painting and oven energy, then divide the unit's energy by trunks made.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Steel trunk and storage box makers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Cold rolled steel sheet by weight.",
+        "Hinges, latches and handles.",
+        "Paint or powder."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Shearing, bending and spot welding.",
+        "Pretreatment and painting.",
+        "Paint oven and packing."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Report per trunk by size and sheet gauge."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: steel trunk unit per piece (one month)",
+    "lines": [
+      "Electricity: 8,000 kWh x 0.710 = 5,680 kg CO2",
+      "LPG: 600 kg x 2.98 = 1,788 kg CO2",
+      "Trunks made: 3,000",
+      "Plant total: 7,468 / 3,000 = 2.489 kg CO2 per piece",
+      "Add steel sheet and paint for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Steel almirah footprint",
+      "to": "/answers/steel-almirah-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Sheet metal stamping footprint",
+      "to": "/answers/sheet-metal-stamping-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}

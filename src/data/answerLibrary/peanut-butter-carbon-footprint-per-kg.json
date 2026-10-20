@@ -1,0 +1,82 @@
+{
+  "slug": "peanut-butter-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of peanut butter per kg?",
+  "title": "Peanut butter carbon footprint per kg",
+  "short": "Groundnuts are the main input: multiply the kernels per kg by the supplier's figure. Add roasting, blanching, grinding and filling energy and the jars, then divide the plant's energy by kg packed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Peanut butter and nut spread makers",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Groundnut kernels by weight.",
+        "Sugar, salt and oil.",
+        "PET or glass jars with caps."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Roasting with gas or electric roasters.",
+        "Blanching and grinding.",
+        "Filling, capping and labelling."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg with the pack shown separately, since a glass jar weighs far more than PET."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: peanut butter unit per kg (one month)",
+    "lines": [
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "LPG: 1,500 kg x 2.98 = 4,470 kg CO2",
+      "Peanut butter packed (kg): 60,000",
+      "Plant total: 8,730 / 60,000 = 0.145 kg CO2 per kg",
+      "Add groundnuts and jars for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your own bills and production records."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Cashew processing footprint",
+      "to": "/answers/cashew-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Edible oil mill footprint",
+      "to": "/answers/edible-oil-mill-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-20"
+}
