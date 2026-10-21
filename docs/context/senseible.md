@@ -96,6 +96,8 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - Security and data card (Profile): sign out of all devices; change email (current password first, Supabase confirms from both inboxes); Download my data on Scale only, locked on other plans, built from an allow-list (`src/lib/accountExport.ts`) with no ids, file paths, fingerprints, raw reads or private financial records, and formula-safe cells.
 - Quick wins: the upload result counts up with "Read in X s"; Verify shows verified records before → after; a repeat upload says "Already have this one. Counted once, as promised."; first-record steps tick over once.
 
+- Deferred by the owner (21 October 2026), do not start without a go-ahead: OCR accuracy test on 50 to 100 real documents, fix-in-place units for needs-data bills, a coverage line under every total, closing a reporting period, a lender share link, a CBAM supplier export.
+
 ## 9. Open decisions (ask before acting)
 
 - Evidence trail line (fingerprinted · factor sourced · method pinned): move from Dashboard to MRV? Not answered yet.
