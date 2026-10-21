@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Loader2, Minus, Plus, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,7 +8,7 @@ import { checkoutTotal, type PaymentMethod } from '../../../supabase/functions/_
 import { CREDIT_PACK_BASE_PAISE, CREDIT_PACK_INVOICES, MAX_PACKS, SERVICES } from '../../../supabase/functions/_shared/addonPurchases';
 import { packUsableUntil } from '@/lib/invoiceAllowance';
 
-// Quick purchases on the profile, so invoice credits, Fast-track Verification
+// Quick purchases on the Subscription page, so invoice credits, Fast-track Verification
 // and the Expert Climate Audit do not need a trip to the pricing page.
 // Prices come from the shared add-on table; the server charges the same.
 
@@ -35,6 +35,11 @@ export function QuickPurchases({ planEnd }: { planEnd: string | null }) {
   const total = (base: number) => rupees(checkoutTotal(base, method).totalPaise);
   const fast = SERVICES.fast_track, audit = SERVICES.expert_audit;
   const payLabel = method === 'upi' ? 'with UPI' : 'by card';
+
+  // Links such as /subscription#top-up land here; the router does not scroll to hashes.
+  useEffect(() => {
+    if (window.location.hash === '#top-up') document.getElementById('top-up')?.scrollIntoView({ block: 'start' });
+  }, []);
 
   return (
     <Card id="top-up">

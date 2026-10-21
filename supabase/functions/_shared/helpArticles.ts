@@ -205,7 +205,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
     a: 'Top up credits, wait for the 1st, or move to a bigger plan.',
     facts: [['Invoice credits', '₹79 for 100 invoices'], ['Credits last', '12 months on a yearly plan, 30 days otherwise']],
     steps: ['Buy credits on your Subscription page. They are used after your monthly reads run out.', 'Or wait for the 1st of next month, when your reads reset.'],
-    cta: { label: 'Top up now', to: '/profile#top-up' },
+    cta: { label: 'Top up now', to: '/subscription#top-up' },
     keywords: ['limit', 'page limit', 'used up', 'top up', 'topup', 'credits', 'buy more', 'exceeded', 'quota'],
     pages: ['/', '/profile', '/subscription'],
   },
