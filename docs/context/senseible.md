@@ -85,10 +85,15 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 | Audit log on Dashboard and trail on MRV | Owner: audit log belongs to MRV | One audit trail, on MRV (#258). |
 | Grid factor check on the dummy account | Owner: do not break the live platform for a dummy account | Review it only in the live OCR-to-report review. |
 
-## 8. Open decisions (ask before acting)
+## 8. Decided (21 October 2026)
 
-- Rupees next to tonnes: only if critical. Waiting for the owner's call after the usability rating.
-- Moving repeated items between Dashboard and MRV: proposals need owner confirmation first.
-- Intelligent actions (personal reduction actions replacing generic tips): plan approved; build after the owner sees it.
-- Dashboard design audit for a WOW experience without extra design: to be presented, not built.
+- Dashboard vs MRV: compliance labels and the audit trail live on MRV. MRV's scope split reads the same verified totals as the Dashboard. "Credit value withheld" appears on the Dashboard only. Scope tonnes that repeat move off the Dashboard's Finance evidence (MRV has them). Unverified-record summary (Dashboard) and Evidence queue (MRV) both stay. Generate report stays on both.
+- Carbon score, green score and confidence score stay as they are.
+- Rupees next to tonnes: not added.
+- Intelligent actions: rules from the user's own bills, with friendly fallback messages for new users and users with limited data.
+- Dashboard design audit: approved as one PR (REVERT applies).
+
+## 9. Open decisions (ask before acting)
+
+- Evidence trail line (fingerprinted · factor sourced · method pinned): move from Dashboard to MRV? Not answered yet.
 - Grid factor (1.42 to 1.52 on dummy rows vs 0.710): confirm in the live OCR review before any change.

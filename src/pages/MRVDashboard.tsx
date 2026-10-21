@@ -218,8 +218,6 @@ const MRVDashboard = () => {
     };
   }, [verifications]);
 
-  // Get latest verification analysis for recommendations
-  const latestAnalysis = verifications[0]?.ai_analysis;
   const latestStatus = verifications[0]?.verification_status;
   const greenwashingRisk = verifications[0]?.greenwashing_risk;
 
@@ -406,12 +404,13 @@ const MRVDashboard = () => {
                     </div>
 
                     {/* Scope Breakdown */}
-                    {latestAnalysis?.scopeBreakdown && (
+                    {/* Same verified totals as the Dashboard, so the two pages always match. */}
+                    {summary.total > 0 && (
                       <div className="grid grid-cols-3 gap-3 mb-4">
                         {[
-                          { label: 'Scope 1', value: latestAnalysis.scopeBreakdown.scope1, color: 'bg-orange-500' },
-                          { label: 'Scope 2', value: latestAnalysis.scopeBreakdown.scope2, color: 'bg-yellow-500' },
-                          { label: 'Scope 3', value: latestAnalysis.scopeBreakdown.scope3, color: 'bg-blue-500' },
+                          { label: 'Scope 1', value: summary.scope1, color: 'bg-orange-500' },
+                          { label: 'Scope 2', value: summary.scope2, color: 'bg-yellow-500' },
+                          { label: 'Scope 3', value: summary.scope3, color: 'bg-blue-500' },
                         ].map(scope => (
                           <div key={scope.label} className="p-3 rounded-lg bg-muted/50 text-center">
                             <div className="text-xs text-muted-foreground mb-1">{scope.label}</div>
@@ -676,12 +675,6 @@ const MRVDashboard = () => {
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Verifications</span>
                         <span className="font-mono">{verifications.length}</span>
-                      </div>
-                      <div className="pt-3 border-t border-border/50">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Credit value</span>
-                          <span className="text-xs text-muted-foreground text-right max-w-[12rem]">Withheld until reductions are verified</span>
-                        </div>
                       </div>
                     </div>
                   </CardContent>
