@@ -1,0 +1,61 @@
+{
+  "slug": "dahej-copper-smelter-sulphuric-acid-allocation",
+  "q": "How does a copper smelter split its emissions between cathode and the sulphuric acid it sells?",
+  "title": "Copper smelter: cathode vs acid",
+  "short": "Sulphuric acid is made from the sulphur dioxide in smelter gas, so it is a co-product. Most smelters allocate shared emissions by mass or economic value and say which, while the acid plant's own energy goes to acid. Buyers of cathode and acid should each get a figure with the method stated.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Copper smelters such as the one at Dahej, and buyers of their cathode, rod and acid",
+  "sections": [
+    {
+      "h": "What is shared",
+      "ul": [
+        "Concentrate drying, smelting and converting fuel and power.",
+        "Oxygen plant electricity.",
+        "Gas cleaning ahead of the acid plant."
+      ]
+    },
+    {
+      "h": "What belongs to acid",
+      "p": [
+        "The acid plant's blowers and pumps, less any steam it exports. Acid plants often make surplus heat, which some smelters credit."
+      ]
+    },
+    {
+      "h": "Is any of this CBAM?",
+      "p": [
+        "No. Copper and sulphuric acid are outside CBAM's current goods list, so these are product footprint figures for buyers, not customs data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Is copper covered by CBAM?",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "Acid plant steam export",
+      "to": "/answers/sulphuric-acid-plant-emissions-steam-export"
+    },
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

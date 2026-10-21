@@ -1,0 +1,55 @@
+{
+  "slug": "philippines-grid-emission-factor-by-grid",
+  "q": "Which grid emission factor should a Philippine factory use: Luzon Visayas, Mindanao or national?",
+  "title": "Philippines grid factor by grid",
+  "short": "Use the factor for the grid you draw from, if the Department of Energy publishes one for your year; Luzon and Visayas lean on coal and gas and sit roughly around 0.7 kg CO2 per kWh, while Mindanao has more hydro. Cite the source and year, and use the national figure only when no grid figure exists.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Manufacturers in Philippine economic zones reporting Scope 2",
+  "sections": [
+    {
+      "h": "Why grid matters",
+      "p": [
+        "The grids differ in their mix. A Mindanao factory using the Luzon figure would overstate its Scope 2."
+      ]
+    },
+    {
+      "h": "Sources",
+      "p": [
+        "The Department of Energy's published grid factors, or the IEA national figure if none. Name it."
+      ]
+    },
+    {
+      "h": "Show it",
+      "p": [
+        "kWh, factor, grid, source and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Manila data centre grid",
+      "to": "/answers/manila-data-centre-grid-scope-2"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Batangas imported clinker",
+      "to": "/answers/batangas-cement-grinding-imported-clinker-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

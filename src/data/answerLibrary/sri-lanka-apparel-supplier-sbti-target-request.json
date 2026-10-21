@@ -1,0 +1,58 @@
+{
+  "slug": "sri-lanka-apparel-supplier-sbti-target-request",
+  "q": "What should a Sri Lankan apparel supplier do when a brand asks it to set a science based target?",
+  "title": "Brand asks for an SBTi target",
+  "short": "Start with a clean baseline year of Scope 1 and 2 from bills and fuel records, then set a reduction target, often through the SBTi route for small and medium companies. Brands mainly want factory energy and fuel cut and renewable share raised. Report progress yearly with the same method.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Apparel and textile suppliers in Sri Lanka asked by brands for climate targets",
+  "sections": [
+    {
+      "h": "First steps",
+      "ol": [
+        "Pick a baseline year with complete bills and fuel records.",
+        "Work out Scope 1 and 2 for it.",
+        "Choose a target and timeframe.",
+        "Plan the cuts: solar, boiler fuel, efficiency."
+      ]
+    },
+    {
+      "h": "Which route",
+      "p": [
+        "The SBTi has a simpler route for small and medium firms, mainly for Scope 1 and 2. Larger suppliers may need the full route with Scope 3."
+      ]
+    },
+    {
+      "h": "Keep it checkable",
+      "p": [
+        "The same method every year, with bills behind each figure, is what brands and verifiers look for."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Absolute or intensity target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    },
+    {
+      "label": "East African apparel buyer data",
+      "to": "/answers/east-africa-apparel-exporter-buyer-carbon-data"
+    },
+    {
+      "label": "Biomass boiler CO2",
+      "to": "/answers/sri-lanka-apparel-biomass-boiler-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Science Based Targets initiative (sciencebasedtargets.org)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

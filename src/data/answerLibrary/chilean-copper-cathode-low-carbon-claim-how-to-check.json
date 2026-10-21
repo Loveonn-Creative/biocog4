@@ -1,0 +1,62 @@
+{
+  "slug": "chilean-copper-cathode-low-carbon-claim-how-to-check",
+  "q": "How should an EU buyer check a Chilean supplier's low carbon copper cathode claim?",
+  "title": "Chilean low carbon copper: checking it",
+  "short": "Ask for the cradle to gate figure per tonne with its boundary, year and method, the share of mine, concentrator and refinery power from renewable contracts, and any third party review. Copper is outside CBAM, so there is no customs check; the claim stands on the supplier's evidence.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "EU cable, wire and component makers buying Chilean cathode, and their sustainability teams",
+  "sections": [
+    {
+      "h": "Questions to ask",
+      "ul": [
+        "Is the figure cradle to gate, including mining?",
+        "Which year and which operations?",
+        "How much electricity is from renewable supply contracts, and is it matched by certificates or contracts?",
+        "Who reviewed it?"
+      ]
+    },
+    {
+      "h": "Why power is the lever",
+      "p": [
+        "Mines and refineries use a lot of electricity. Chile's grid has added large amounts of solar and wind, so the contract behind the power changes the figure most."
+      ]
+    },
+    {
+      "h": "Red flags",
+      "p": [
+        "A refinery only figure presented as the whole cathode, or offsets subtracted from the total."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Is copper in CBAM?",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "Chile grid factor",
+      "to": "/answers/chile-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

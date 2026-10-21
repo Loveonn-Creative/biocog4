@@ -1,0 +1,61 @@
+{
+  "slug": "thoothukudi-port-coal-imports-scope-3",
+  "q": "How should a Tamil Nadu mill count emissions from coal shipped in through Thoothukudi port?",
+  "title": "Coal via Thoothukudi port: freight scope",
+  "short": "Burning the coal is your Scope 1. Shipping it from Indonesia or South Africa, port handling and trucking to the mill are Scope 3, Category 4, upstream transport, usually small next to combustion. Use tonne kilometres by mode with GLEC style factors, or the shipper's own figure, and keep it apart from your combustion figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile, paper, cement and chemical units in southern Tamil Nadu burning imported coal",
+  "sections": [
+    {
+      "h": "Pieces of the journey",
+      "ul": [
+        "Ocean leg from the load port to Thoothukudi.",
+        "Port handling and stockyard.",
+        "Truck or rail to the mill."
+      ]
+    },
+    {
+      "h": "Working it out",
+      "p": [
+        "Tonnes from the bill of lading, distance by mode, and a factor per tonne kilometre for bulk carriers and trucks. ISO 14083 and the GLEC Framework set out the method."
+      ]
+    },
+    {
+      "h": "Proportion",
+      "p": [
+        "Combustion of a tonne of coal releases far more CO2 than shipping it. Get the combustion figure right first."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Coal factor by GAR and NAR",
+      "to": "/answers/imported-coal-gar-nar-emission-factor"
+    },
+    {
+      "label": "ISO 14083 for transport",
+      "to": "/answers/iso-14083-transport-emissions-standard"
+    },
+    {
+      "label": "Port handling per TEU",
+      "to": "/answers/port-handling-emissions-per-teu"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

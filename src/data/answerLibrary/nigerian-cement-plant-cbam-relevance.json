@@ -1,0 +1,57 @@
+{
+  "slug": "nigerian-cement-plant-cbam-relevance",
+  "q": "Does CBAM matter to a Nigerian cement plant that sells mostly within West Africa?",
+  "title": "Nigerian cement and CBAM",
+  "short": "Only for cement or clinker that actually enters the EU. Sales within Nigeria and across ECOWAS are untouched. It still pays to keep clinker and fuel records in CBAM form, because lenders, development finance institutions and multinational buyers ask similar questions, and EU exports become possible if routes open.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Nigerian cement producers and exporters considering European or global buyers",
+  "sections": [
+    {
+      "h": "Who pays CBAM",
+      "p": [
+        "The EU importer, on the embedded emissions of cement and clinker entering the EU. No EU imports means no CBAM cost."
+      ]
+    },
+    {
+      "h": "Why keep the records anyway",
+      "ul": [
+        "Development lenders and green bond investors ask for CO2 per tonne.",
+        "Multinational construction buyers report Scope 3.",
+        "It keeps an EU sale open without a scramble."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Monthly clinker production, raw meal chemistry, fuel by type with heat content, and grid and captive power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Obajana clinker CO2",
+      "to": "/answers/obajana-cement-kiln-gas-and-coal-co2"
+    },
+    {
+      "label": "Egypt clinker for CBAM",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    },
+    {
+      "label": "EU importer cement questions",
+      "to": "/answers/eu-importer-turkish-cement-what-to-ask"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

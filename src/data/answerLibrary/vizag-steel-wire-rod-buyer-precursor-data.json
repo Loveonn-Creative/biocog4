@@ -1,0 +1,62 @@
+{
+  "slug": "vizag-steel-wire-rod-buyer-precursor-data",
+  "q": "What does an EU wire or fastener maker need from a Visakhapatnam wire rod supplier for CBAM?",
+  "title": "Vizag wire rod: what EU buyers need",
+  "short": "Wire rod under CN 7213 is a CBAM good. The importer needs direct and indirect emissions per tonne, the production period and the installation. If the buyer then draws wire or makes fasteners outside the EU, its own figure carries the wire rod as a precursor, so the rod figure has to be passed down.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Wire drawers, fastener and spring makers buying Indian wire rod, and their EU importers",
+  "sections": [
+    {
+      "h": "Data to send",
+      "ul": [
+        "CN code and tonnes per shipment.",
+        "Specific direct and indirect emissions per tonne.",
+        "Installation name and reporting period.",
+        "Whether actual data or default values were used."
+      ]
+    },
+    {
+      "h": "Passing it down",
+      "p": [
+        "A fastener maker in India exporting to the EU adds its own drawing, heat treatment and plating emissions to the precursor figure from the rod. Without the rod figure it falls back to default values."
+      ]
+    },
+    {
+      "h": "Common gap",
+      "p": [
+        "Mill test certificates without carbon data. Ask for the CBAM figure in the same document set as the test certificate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Monterrey fasteners and CBAM",
+      "to": "/answers/monterrey-steel-fasteners-cbam-cn-7318"
+    },
+    {
+      "label": "Gebze wire drawing unit",
+      "to": "/answers/gebze-steel-wire-drawing-unit-cbam-figure"
+    },
+    {
+      "label": "Vizag CBAM figure",
+      "to": "/answers/vizag-steel-plant-bf-bof-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

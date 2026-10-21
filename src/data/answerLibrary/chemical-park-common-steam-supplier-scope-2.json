@@ -1,0 +1,57 @@
+{
+  "slug": "chemical-park-common-steam-supplier-scope-2",
+  "q": "Is steam bought from a common utility provider in a chemical park like Dahej Scope 2 or Scope 3?",
+  "title": "Steam from a park utility: which scope",
+  "short": "Purchased steam is Scope 2, the same as purchased electricity. Ask the utility for kg CO2 per tonne of steam from its own fuel records, multiply by the tonnes on your monthly invoice, and keep the two separate from your own boiler emissions, which are Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Chemical units buying steam from shared utility plants in Dahej, Jhagadia, Ankleshwar and Vapi",
+  "sections": [
+    {
+      "h": "Why Scope 2",
+      "p": [
+        "The GHG Protocol treats purchased electricity, steam, heat and cooling the same way: the emissions happen at the supplier, and you report them as Scope 2."
+      ]
+    },
+    {
+      "h": "Getting the factor",
+      "ul": [
+        "Ask the utility for fuel burnt and steam sent out for the year.",
+        "If it also makes power, ask how it splits fuel between steam and electricity.",
+        "If no figure is given, use a stated assumption and mark it as an estimate."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Adding the steam to Scope 1 because it arrives by pipe. Your Scope 1 is only fuel burnt in equipment you control."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, steam, electricity and raw material invoices into a dated, fingerprinted record per unit, so a product figure can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Shared utilities and CBAM",
+      "to": "/answers/industrial-park-shared-utilities-cbam-allocation"
+    },
+    {
+      "label": "Steam allocation per kg",
+      "to": "/answers/dye-intermediate-unit-steam-allocation-per-kg"
+    },
+    {
+      "label": "Green loans for Gujarat chemicals",
+      "to": "/climate-intelligence/green-loan-chemical-plant-gujarat"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

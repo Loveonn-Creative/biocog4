@@ -1,0 +1,55 @@
+{
+  "slug": "pakistan-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a Pakistani supplier use for Scope 2?",
+  "title": "Pakistan grid factor for suppliers",
+  "short": "Pakistan's grid mixes hydro, gas, imported and local coal, nuclear and furnace oil, which puts it roughly around 0.4 to 0.5 kg CO2 per kWh. Use the official or IEA figure for the reporting year and cite it. Gas or diesel generators you run on site are Scope 1, not part of this figure.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Pakistani manufacturers and exporters reporting Scope 2 to buyers and lenders",
+  "sections": [
+    {
+      "h": "Sources",
+      "p": [
+        "A national factor from the government, the regulator or the IEA, for the year. Name it."
+      ]
+    },
+    {
+      "h": "Captive power",
+      "p": [
+        "Many textile and cement plants run their own gas engines or turbines. That fuel is Scope 1."
+      ]
+    },
+    {
+      "h": "Show it",
+      "p": [
+        "kWh from bills, factor, source and year together."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Faisalabad gas generator",
+      "to": "/answers/faisalabad-textile-mill-gas-generator-scope-1"
+    },
+    {
+      "label": "Waste heat power",
+      "to": "/answers/pakistan-cement-waste-heat-recovery-power"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "hawassa-industrial-park-apparel-scope-2",
+  "q": "Why is Scope 2 so low for an apparel factory in Hawassa Industrial Park?",
+  "title": "Hawassa apparel: why Scope 2 is low",
+  "short": "Ethiopia's grid is almost entirely hydro with some wind, so its location based factor is close to zero, well under 0.1 kg CO2 per kWh. Use the latest official or IEA figure for the year. That shifts a brand's attention to fabric, transport and any diesel backup, which then dominate the factory's figure.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Apparel and textile factories in Hawassa, Bole Lemi and Kombolcha parks and their brand buyers",
+  "sections": [
+    {
+      "h": "What dominates instead",
+      "ul": [
+        "Fabric and trims bought in, often imported.",
+        "Ocean and road freight to Djibouti and onward.",
+        "Diesel generators during outages.",
+        "Boilers for pressing and any wet processing."
+      ]
+    },
+    {
+      "h": "Market based Scope 2",
+      "p": [
+        "With a clean grid, location and market based figures are both low. Do not buy certificates expecting a big change."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills from the park, generator fuel logs and boiler fuel invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Ethiopia grid factor",
+      "to": "/answers/ethiopia-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Hawassa effluent plant",
+      "to": "/answers/hawassa-park-zld-effluent-emissions"
+    },
+    {
+      "label": "Which textile tier emits most",
+      "to": "/answers/which-textile-tier-has-most-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

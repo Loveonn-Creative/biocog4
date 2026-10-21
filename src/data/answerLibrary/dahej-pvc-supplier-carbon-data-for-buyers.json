@@ -1,0 +1,62 @@
+{
+  "slug": "dahej-pvc-supplier-carbon-data-for-buyers",
+  "q": "What carbon data can a PVC resin supplier in the Dahej and Gandhar belt give a pipe or profile maker?",
+  "title": "Dahej PVC resin: buyer carbon data",
+  "short": "A cradle to gate figure per tonne of resin covering ethylene or EDC bought in, chlorine from chlor-alkali, VCM cracking fuel, polymerisation steam and electricity. Give the boundary, the year, the allocation method and whether purchased inputs use supplier or average factors, so the pipe maker can put it straight into their own product footprint.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "PVC resin producers near Dahej and the pipe, profile and film makers who buy from them",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Ethylene, EDC or VCM bought in, with the seller's figure where they have one.",
+        "Chlorine, with its share of the electrolysis power.",
+        "Fuel for the EDC cracker and steam for polymerisation and drying.",
+        "Electricity for compressors, dryers and bagging."
+      ]
+    },
+    {
+      "h": "What the buyer needs to see",
+      "p": [
+        "One figure per tonne of resin for a stated year, the boundary (cradle to gate), and the split between your own fuel and power and the purchased raw materials. Without the split, a buyer cannot tell what you control."
+      ]
+    },
+    {
+      "h": "Common gap",
+      "p": [
+        "Using a global average for ethylene when the actual cracker is known. If the supplier gives a figure, use it and say so."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, steam, electricity and raw material invoices into a dated, fingerprinted record per unit, so a product figure can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Polymer resin factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "PVC pipe footprint",
+      "to": "/answers/pvc-pipe-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Chlor-alkali CO2",
+      "to": "/answers/dahej-chlor-alkali-caustic-soda-captive-power-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

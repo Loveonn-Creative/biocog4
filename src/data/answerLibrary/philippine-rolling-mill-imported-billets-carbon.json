@@ -1,0 +1,57 @@
+{
+  "slug": "philippine-rolling-mill-imported-billets-carbon",
+  "q": "What carbon figure should a Philippine rebar mill use for the billets it imports?",
+  "title": "Philippine rebar mill: imported billets",
+  "short": "Ask the billet supplier for CO2 per tonne for the route and year; billets from blast furnace plants carry much more than billets from scrap based electric furnaces. Multiply by tonnes imported as Scope 3, Category 1. Your reheating furnace fuel is Scope 1 and mill power is Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Rebar and wire rod rolling mills in Batangas, Bulacan and Cebu using imported billets",
+  "sections": [
+    {
+      "h": "Billet route",
+      "ul": [
+        "Blast furnace and converter billets: high per tonne.",
+        "Scrap based electric furnace billets: much lower.",
+        "DRI based electric furnace billets: in between, depending on fuel."
+      ]
+    },
+    {
+      "h": "Your own share",
+      "p": [
+        "Reheating fuel and rolling power are usually small next to the billet. Getting the billet figure right matters most."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Bills of lading with tonnes and supplier, the supplier's figure, and your fuel and power bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Selling billets to rerollers",
+      "to": "/answers/iskenderun-mill-selling-billets-to-rerollers-data"
+    },
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Philippines grid factor",
+      "to": "/answers/philippines-grid-emission-factor-by-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology (worldsteel.org)",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

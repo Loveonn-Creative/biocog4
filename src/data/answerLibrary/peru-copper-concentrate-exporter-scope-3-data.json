@@ -1,0 +1,58 @@
+{
+  "slug": "peru-copper-concentrate-exporter-scope-3-data",
+  "q": "What carbon data does a Peruvian copper concentrate exporter give the smelters that buy it?",
+  "title": "Peru copper concentrate: buyer data",
+  "short": "Emissions per dry tonne of concentrate covering mining and concentrating, plus the copper content, so the smelter can express it per tonne of copper. Shipping to the smelter is usually added by the buyer. Peruvian concentrate mostly goes to Asian smelters, but EU buyers of the final copper ask for this chain.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Copper mines and traders in Peru and the smelters and metal buyers downstream",
+  "sections": [
+    {
+      "h": "What to send",
+      "ul": [
+        "CO2e per dry tonne of concentrate, with the year.",
+        "Copper grade of the concentrate.",
+        "Split between diesel and electricity.",
+        "Grid factor or power contract used."
+      ]
+    },
+    {
+      "h": "Why grade matters",
+      "p": [
+        "A 25 percent concentrate carries more copper per tonne than a 20 percent one, so per tonne of copper it can look better even with the same mine emissions."
+      ]
+    },
+    {
+      "h": "Freight",
+      "p": [
+        "Port to smelter shipping is separate. Give tonnes and route so the buyer can add it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Concentrate sea freight",
+      "to": "/answers/copper-concentrate-sea-freight-emissions"
+    },
+    {
+      "label": "Haul truck diesel",
+      "to": "/answers/copper-mine-haul-truck-diesel-scope-1"
+    },
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

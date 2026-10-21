@@ -1,0 +1,56 @@
+{
+  "slug": "sri-lanka-grid-emission-factor-for-factories",
+  "q": "What grid emission factor should a Sri Lankan factory use?",
+  "title": "Sri Lanka grid factor for factories",
+  "short": "Roughly around half a kilogram of CO2 per kWh, but it swings with rainfall, because hydro competes with the coal plant and oil generation. Use the official or IEA figure for your reporting year and cite it. If a figure for your year is not out yet, use the latest and say so.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Manufacturers and exporters in Sri Lanka reporting Scope 2",
+  "sections": [
+    {
+      "h": "Why it moves",
+      "p": [
+        "Sri Lanka's mix is hydro, one large coal plant, oil and growing solar. Dry years mean more coal and oil."
+      ]
+    },
+    {
+      "h": "Sources",
+      "p": [
+        "Use the utility, the sustainable energy authority or the IEA for the year. Name it."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Generator diesel during outages, which is Scope 1.",
+        "Applying an Indian or regional factor, which is wrong for Sri Lanka."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Katunayake Scope 2",
+      "to": "/answers/katunayake-epz-garment-factory-scope-2"
+    },
+    {
+      "label": "Bangladesh grid factor",
+      "to": "/answers/bangladesh-grid-emission-factor-for-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

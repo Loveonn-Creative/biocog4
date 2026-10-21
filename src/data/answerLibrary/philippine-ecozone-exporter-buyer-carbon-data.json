@@ -1,0 +1,58 @@
+{
+  "slug": "philippine-ecozone-exporter-buyer-carbon-data",
+  "q": "What carbon data do foreign buyers ask Philippine economic zone exporters for?",
+  "title": "Philippine ecozone exporters: buyer data",
+  "short": "Most ask for site Scope 1 and 2 by month with energy sources, sometimes a product figure, and targets. Electronics and auto parts buyers often use their own supplier platforms. The coal heavy Luzon grid makes electricity the biggest lever, so rooftop solar and renewable contracts show up quickly in the numbers.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Electronics, auto parts, garment and food exporters in PEZA zones in Batangas, Cavite and Laguna",
+  "sections": [
+    {
+      "h": "Typical asks",
+      "ul": [
+        "Electricity, fuel and refrigerant by month.",
+        "Renewable share of electricity.",
+        "Targets and progress.",
+        "Sometimes CO2e per unit of product."
+      ]
+    },
+    {
+      "h": "Biggest lever",
+      "p": [
+        "On a grid around 0.7 kg CO2 per kWh, every kWh replaced by solar shows clearly."
+      ]
+    },
+    {
+      "h": "Common gap",
+      "p": [
+        "Leaving out refrigerant top ups and diesel backup, both Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Philippines grid factor",
+      "to": "/answers/philippines-grid-emission-factor-by-grid"
+    },
+    {
+      "label": "Chiller refrigerant leaks",
+      "to": "/answers/data-centre-chiller-refrigerant-leaks-scope-1"
+    },
+    {
+      "label": "Philippine SME reporting",
+      "to": "/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

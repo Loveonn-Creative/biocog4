@@ -1,0 +1,61 @@
+{
+  "slug": "dahej-chlor-alkali-caustic-soda-captive-power-co2",
+  "q": "How does a Dahej chlor-alkali plant with captive coal power work out CO2 per tonne of caustic soda?",
+  "title": "Dahej chlor-alkali: CO2 per tonne",
+  "short": "Electrolysis electricity is almost the whole footprint. With a captive coal plant, that power is Scope 1 at the fuel burnt, not a grid figure. Divide the coal and other fuel used for the cells, evaporation and steam by electrochemical units produced, then split between caustic, chlorine and hydrogen on an agreed basis.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chlor-alkali producers in the Dahej and Bharuch belt and their downstream buyers",
+  "sections": [
+    {
+      "h": "Where the CO2 comes from",
+      "ul": [
+        "Coal or gas burnt in the captive power plant for the membrane cells.",
+        "Steam for caustic evaporation and flaking, often from the same plant.",
+        "Any grid power bought on top, which is Scope 2 at the CEA figure."
+      ]
+    },
+    {
+      "h": "Splitting the result",
+      "p": [
+        "Electrolysis makes caustic soda, chlorine and hydrogen together. Most producers allocate by mass of the three products, or by the electrochemical unit (ECU), and say which. State the method in every buyer response so figures can be compared."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Monthly coal receipts with lab tested calorific value, power plant generation logs, cell house energy meters and production records. These let a buyer or verifier recompute the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, steam, electricity and raw material invoices into a dated, fingerprinted record per unit, so a product figure can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Caustic soda footprint",
+      "to": "/answers/caustic-soda-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Captive coal power upstream",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Coal factor by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

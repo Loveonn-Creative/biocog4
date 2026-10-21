@@ -1,0 +1,58 @@
+{
+  "slug": "east-africa-apparel-exporter-buyer-carbon-data",
+  "q": "What carbon data do brands ask East African apparel exporters for?",
+  "title": "East African apparel: buyer carbon data",
+  "short": "Usually factory Scope 1 and 2 by month, energy sources, and progress on targets, often through the brand's own platform or the Higg Facility Environmental Module. Some now ask for product figures per garment. Clean grids in Ethiopia and Kenya help, but fabric and freight still dominate the product total.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Apparel exporters in Ethiopia, Kenya, Tanzania and Uganda selling to US and EU brands",
+  "sections": [
+    {
+      "h": "Typical asks",
+      "ul": [
+        "Electricity, diesel and boiler fuel by month.",
+        "Renewable share of electricity.",
+        "Targets, often aligned with the brand's SBTi goal.",
+        "Sometimes CO2e per garment."
+      ]
+    },
+    {
+      "h": "Where the numbers are",
+      "p": [
+        "Bills and fuel receipts at the factory, fabric supplier data, and freight invoices. A per garment figure needs all three."
+      ]
+    },
+    {
+      "h": "Common gap",
+      "p": [
+        "Reporting grid power without diesel backup, which can be a large share during outages."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Garment stitching per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Hawassa apparel Scope 2",
+      "to": "/answers/hawassa-industrial-park-apparel-scope-2"
+    },
+    {
+      "label": "Gazipur and Savar buyer data",
+      "to": "/answers/gazipur-savar-garment-factory-buyer-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Science Based Targets initiative (sciencebasedtargets.org)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

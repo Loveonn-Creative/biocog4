@@ -1,0 +1,56 @@
+{
+  "slug": "pakistan-cement-waste-heat-recovery-power",
+  "q": "How should a Pakistani cement plant report electricity from its waste heat recovery plant?",
+  "title": "Waste heat power at Pakistani cement plants",
+  "short": "Power from waste heat recovery uses kiln exhaust heat, so it adds no extra fuel combustion and no new CO2. Report the kWh generated, and the grid or captive fuel power it replaced. It lowers Scope 2 or captive fuel use; it is not an offset to subtract from the total.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement producers in Pakistan with waste heat recovery plants",
+  "sections": [
+    {
+      "h": "How it shows up",
+      "ul": [
+        "Less grid electricity bought, so lower Scope 2.",
+        "Or less fuel in captive power plants, so lower Scope 1."
+      ]
+    },
+    {
+      "h": "What not to do",
+      "p": [
+        "Do not subtract a credit for the waste heat power on top of the lower purchases. The benefit is already in the smaller numbers."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Generation meter readings, grid bills and captive plant fuel logs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Marmara waste heat power",
+      "to": "/answers/marmara-cement-waste-heat-power-cbam"
+    },
+    {
+      "label": "Chakwal clinker CO2",
+      "to": "/answers/chakwal-cement-plant-coal-kiln-co2"
+    },
+    {
+      "label": "Pakistan grid factor",
+      "to": "/answers/pakistan-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

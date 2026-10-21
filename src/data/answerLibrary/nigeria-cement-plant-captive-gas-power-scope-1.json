@@ -1,0 +1,59 @@
+{
+  "slug": "nigeria-cement-plant-captive-gas-power-scope-1",
+  "q": "Is electricity from a Nigerian cement plant's own gas turbines Scope 1 or Scope 2?",
+  "title": "Nigerian cement captive power: scope",
+  "short": "If the plant owns or controls the turbines, the gas burnt is Scope 1, and there is no Scope 2 for that power. Only power bought from the grid or a third party is Scope 2. Report the gas by volume and heat content from the supply invoices or meters, with the factor and its source.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement and other heavy industry in Nigeria running captive gas or diesel power",
+  "sections": [
+    {
+      "h": "The test",
+      "p": [
+        "Control decides it. A turbine you own and run is your Scope 1. An independent power producer on your site selling you electricity is Scope 2."
+      ]
+    },
+    {
+      "h": "Diesel backup",
+      "p": [
+        "Diesel generators you own are Scope 1 as well. Keep their fuel separate so the backup share is visible."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Gas supply invoices or meter readings with heating value, generator fuel logs and any grid bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Lagos diesel power scope",
+      "to": "/answers/lagos-data-centre-diesel-power-scope-1"
+    },
+    {
+      "label": "Obajana clinker CO2",
+      "to": "/answers/obajana-cement-kiln-gas-and-coal-co2"
+    },
+    {
+      "label": "Nigeria grid factor",
+      "to": "/answers/nigeria-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

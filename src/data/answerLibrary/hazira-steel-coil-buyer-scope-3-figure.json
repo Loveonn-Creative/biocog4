@@ -1,0 +1,57 @@
+{
+  "slug": "hazira-steel-coil-buyer-scope-3-figure",
+  "q": "Which carbon figure should an Indian fabricator use for steel coil bought from Hazira?",
+  "title": "Hazira coil buyer: Scope 3 figure",
+  "short": "Use the mill's cradle to gate figure per tonne for the product and year if it gives one; otherwise a published average for that product route, labelled as an estimate. Multiply by tonnes on your purchase invoices. It is Scope 3, Category 1, purchased goods, and it is usually your largest number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fabricators, tube makers and engineering firms in Gujarat and Maharashtra buying Hazira coil",
+  "sections": [
+    {
+      "h": "Supplier figure first",
+      "p": [
+        "Large mills publish or share product carbon figures. A mill figure for hot rolled or coated coil, with its boundary and year, beats any average."
+      ]
+    },
+    {
+      "h": "If you have no mill figure",
+      "ul": [
+        "Use a route based average (blast furnace or DRI) from a recognised source.",
+        "Say which source and year, and mark it as an estimate.",
+        "Swap it for the mill figure when you get one."
+      ]
+    },
+    {
+      "h": "Keep the link to invoices",
+      "p": [
+        "Tonnes come from purchase invoices or GRNs. That is what lets a buyer or lender check your Scope 3 back to paper."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Hazira CBAM figure by route",
+      "to": "/answers/hazira-steel-coil-cbam-figure-by-route"
+    },
+    {
+      "label": "Steel tube precursor data",
+      "to": "/answers/eu-importer-steel-tube-precursor-data"
+    },
+    {
+      "label": "Scope 3 from bills of entry",
+      "to": "/answers/bill-of-entry-imported-materials-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology (worldsteel.org)",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

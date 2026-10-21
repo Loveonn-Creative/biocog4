@@ -1,0 +1,57 @@
+{
+  "slug": "batangas-cement-grinding-imported-clinker-scope-3",
+  "q": "How does a Philippine cement grinding plant count the imported clinker it uses?",
+  "title": "Philippine grinding plant: imported clinker",
+  "short": "The clinker's emissions happened at the kiln abroad, so for the grinding plant they are Scope 3, Category 1, purchased goods. Ask the clinker supplier for CO2 per tonne for the year; if none, use a stated estimate. Your own Scope 1 and 2 are the mill's power and any fuel used for drying.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement grinding plants in Batangas, Bataan and Cebu using imported clinker, and their buyers",
+  "sections": [
+    {
+      "h": "Split",
+      "ul": [
+        "Scope 3: clinker bought, by tonnes times the supplier figure.",
+        "Scope 2: grinding mill electricity.",
+        "Scope 1: dryer or hot gas generator fuel, if any."
+      ]
+    },
+    {
+      "h": "Cement figure",
+      "p": [
+        "Clinker share times the clinker figure plus your grinding energy per tonne. More limestone or pozzolan lowers it."
+      ]
+    },
+    {
+      "h": "Ask the supplier",
+      "p": [
+        "Clinker CO2 per tonne, kiln fuel and year, and whether it was reviewed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Marmara grinding imported clinker",
+      "to": "/answers/marmara-grinding-imported-clinker-cbam"
+    },
+    {
+      "label": "Philippines grid factor",
+      "to": "/answers/philippines-grid-emission-factor-by-grid"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

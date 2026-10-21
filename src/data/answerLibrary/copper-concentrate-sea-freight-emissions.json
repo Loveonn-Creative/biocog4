@@ -1,0 +1,57 @@
+{
+  "slug": "copper-concentrate-sea-freight-emissions",
+  "q": "How do you work out emissions for shipping copper concentrate to a smelter?",
+  "title": "Copper concentrate shipping: CO2",
+  "short": "Wet tonnes shipped times sea distance times a factor per tonne kilometre for bulk carriers, using the GLEC Framework or the carrier's own figure. It is Scope 3 upstream transport for the smelter. Compared with mining and smelting it is usually small, but long routes from South America to Asia add up.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Smelters, traders and miners accounting for concentrate logistics",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Wet tonnes from the bill of lading, since the ship carries the moisture too.",
+        "Port to port distance.",
+        "A bulk carrier factor from GLEC or the carrier."
+      ]
+    },
+    {
+      "h": "Method",
+      "p": [
+        "ISO 14083 and the GLEC Framework set out how to allocate a voyage's fuel to cargo. Ask the carrier for its figure first."
+      ]
+    },
+    {
+      "h": "Proportion",
+      "p": [
+        "Get mining and smelting right before refining freight; they are much larger."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "ISO 14083 for transport",
+      "to": "/answers/iso-14083-transport-emissions-standard"
+    },
+    {
+      "label": "Air vs sea freight",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "Peru concentrate data",
+      "to": "/answers/peru-copper-concentrate-exporter-scope-3-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

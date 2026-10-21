@@ -1,0 +1,58 @@
+{
+  "slug": "tamil-nadu-cable-maker-copper-rod-carbon-data",
+  "q": "Where does a Tamil Nadu cable maker get a carbon figure for the copper rod it buys?",
+  "title": "Copper rod for cable makers: carbon data",
+  "short": "From the rod supplier, who should pass on the cathode figure plus its own casting and rolling energy. Since the Thoothukudi smelter closed in 2018, much rod is made from imported cathode, so ask whose cathode it is and from which country. Without that, use a stated average and mark it as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cable, winding wire and transformer makers in Tamil Nadu, Kerala and Karnataka",
+  "sections": [
+    {
+      "h": "Ask the rod supplier for",
+      "ul": [
+        "Cathode source: producer and country.",
+        "Cathode figure per tonne, with year.",
+        "Rod mill fuel and electricity per tonne.",
+        "Recycled copper share, if any."
+      ]
+    },
+    {
+      "h": "Why origin matters",
+      "p": [
+        "Cathode refined on a coal heavy grid and cathode from a mostly renewable grid can differ by a lot per tonne. A generic copper factor hides that."
+      ]
+    },
+    {
+      "h": "Then",
+      "p": [
+        "Multiply tonnes on your purchase invoices by the rod figure. That is Scope 3, Category 1, for the cable maker."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Copper cable per km",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    },
+    {
+      "label": "Chilean cathode claims",
+      "to": "/answers/chilean-copper-cathode-low-carbon-claim-how-to-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
