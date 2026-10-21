@@ -6474,7 +6474,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "Is silicon metal made in Minas Gerais covered by CBAM?",
-  "text": "No. Silicon metal, declared under CN 2804 69, is not in Annex I; the only chapter 28 element covered is hydrogen. Ferrosilicon, under 7202 21 and 7202 29, is covered. Aluminium, chemical and solar buyers may still ask silicon makers for a product footprint.",
+  "text": "No. Silicon metal, declared under CN 2804 69, is not in Annex I; the only chapter 28 element covered is hydrogen. Ferrosilicon (7202 21 and 7202 29) is not covered either: the only ferro-alloys in CBAM are ferro-manganese, ferro-chromium and ferro-nickel. Aluminium, chemical and solar buyers may still ask silicon makers for a product footprint.",
   "url": "https://senseible.earth/answers/is-silicon-metal-covered-by-cbam"
  },
  {
@@ -9732,7 +9732,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "Does woodchip or charcoal in a Samalaju ferrosilicon furnace count as zero emissions under CBAM?",
-  "text": "Only if it meets the sustainability and greenhouse gas saving criteria the CBAM monitoring rules refer to, with evidence. Otherwise its carbon is counted like coal. Coal, coke and electrode carbon count in any case. Ferrosilicon is a CBAM good, charged on direct emissions only.",
+  "text": "Ferrosilicon is not a CBAM good, so no CBAM figure is due on it. The question matters for the product footprint EU buyers ask for: woodchip or charcoal carbon counts as biogenic only with evidence of a sustainable source; otherwise count it like coal. Coal, coke and electrode carbon always count.",
   "url": "https://senseible.earth/answers/samalaju-ferrosilicon-woodchip-reductant-cbam"
  },
  {

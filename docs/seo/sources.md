@@ -8,6 +8,7 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20
 - https://eur-lex.europa.eu/eli/reg/2023/956/oj
 - https://eur-lex.europa.eu/eli/reg/2025/2083/oj
+- https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng
 - https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng
 - https://finance.ec.europa.eu/news/feedback-sustainability-reporting-standards-additional-explanatory-information-regarding-value-chain-2026-05-06_en
 - https://ghgprotocol.org/corporate-standard

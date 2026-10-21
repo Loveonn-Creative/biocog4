@@ -2,7 +2,7 @@
   "slug": "is-silicon-metal-covered-by-cbam",
   "q": "Is silicon metal made in Minas Gerais covered by CBAM?",
   "title": "Is silicon metal covered by CBAM?",
-  "short": "No. Silicon metal, declared under CN 2804 69, is not in Annex I; the only chapter 28 element covered is hydrogen. Ferrosilicon, under 7202 21 and 7202 29, is covered. Aluminium, chemical and solar buyers may still ask silicon makers for a product footprint.",
+  "short": "No. Silicon metal, declared under CN 2804 69, is not in Annex I; the only chapter 28 element covered is hydrogen. Ferrosilicon (7202 21 and 7202 29) is not covered either: the only ferro-alloys in CBAM are ferro-manganese, ferro-chromium and ferro-nickel. Aluminium, chemical and solar buyers may still ask silicon makers for a product footprint.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Silicon metal and ferrosilicon producers in Brazil and their EU customers",
@@ -11,7 +11,8 @@
       "h": "Covered and not covered",
       "ul": [
         "Not covered: silicon metal and high purity silicon under 2804 61 and 2804 69.",
-        "Covered: ferrosilicon under 7202 21 and 7202 29, charged on direct emissions.",
+        "Not covered: ferrosilicon under 7202 21 and 7202 29, and silico-manganese under 7202 30.",
+        "Covered: ferro-manganese (7202 1), ferro-chromium (7202 4) and ferro-nickel (7202 6).",
         "Covered: hydrogen under 2804 10 00."
       ]
     },
@@ -43,8 +44,12 @@
       "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
     },
     {
-      "label": "European Commission, CBAM legislation and guidance",
+      "label": "European Commission, CBAM Guidance 5d: iron and steel",
       "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, Annex II (ferro-alloys: 7202 1, 7202 4 and 7202 6 only)",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
     }
   ],
   "reviewed": "2026-10-21"
