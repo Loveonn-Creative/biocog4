@@ -1,232 +1,468 @@
-import { useEffect, useMemo, useState, lazy, Suspense } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Upload } from 'lucide-react';
-import { toast } from 'sonner';
-import { Navigation } from '@/components/Navigation';
-import { RecordsLoadError } from '@/components/RecordsLoadError';
-import { GraceNotice } from '@/components/billing/GraceNotice';
-import { NextStep } from '@/components/dashboard/NextStep';
-import { KpiStrip } from '@/components/dashboard/KpiStrip';
-import { ScopeTrend } from '@/components/dashboard/ScopeTrend';
-import { CategoryBreakdown } from '@/components/dashboard/CategoryBreakdown';
-import { WhatChanged } from '@/components/dashboard/WhatChanged';
-import { UseEvidence } from '@/components/dashboard/UseEvidence';
-import { FinanceEvidenceCard } from '@/components/dashboard/FinanceEvidenceCard';
-import { RecentDocuments } from '@/components/dashboard/RecentDocuments';
-import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
-import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
-import { supabase } from '@/integrations/supabase/client';
 import { useEmissions } from '@/hooks/useEmissions';
+import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { GraceNotice } from '@/components/billing/GraceNotice';
 import { usePersonalization } from '@/hooks/usePersonalization';
 import { useOrganization } from '@/hooks/useOrganization';
 import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
+import { readOrganizationProfile } from '@/lib/organizationProfile';
+import { useNavigate, Link } from 'react-router-dom';
+import { CarbonParticles } from '@/components/CarbonParticles';
+import { Navigation } from '@/components/Navigation';
+import { EmissionsSummary } from '@/components/dashboard/EmissionsSummary';
+import { TrendChart } from '@/components/dashboard/TrendChart';
+import { RecentDocuments } from '@/components/dashboard/RecentDocuments';
+import { QuickActions } from '@/components/dashboard/QuickActions';
+import { MonetizationPanel } from '@/components/dashboard/MonetizationPanel';
+import { FinanceEvidenceCard } from '@/components/dashboard/FinanceEvidenceCard';
+import { sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
+import { VerificationStatusCard } from '@/components/dashboard/VerificationStatusCard';
+import { Helmet } from 'react-helmet-async';
+import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { Trash2, Loader2, ArrowRight, Zap } from 'lucide-react';
+import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { useScope3Visibility } from '@/hooks/useScope3Trail';
-import { useCredibility } from '@/hooks/useCredibility';
-import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
-import { computeFinanceEvidence, type FinanceLedgerRow } from '@/lib/financeEvidence';
-import { grossKg } from '@/lib/emissionLedger';
-import { nextStep, categoryLabel, type ScopeId } from '@/lib/dashboardView';
-import {
-  resolveWindow, applyFilters, totals as computeTotals, periodDelta, topCategories, monthlySeries,
-  TIME_RANGE_LABELS, type DashboardFilters, type TimeRange,
-} from '@/lib/dashboardAnalytics';
 
-const Scope3Preview = lazy(() => import('@/components/scope3/Scope3Preview').then((m) => ({ default: m.Scope3Preview })));
 const FinanceInsights = lazy(() => import('@/components/finance/FinanceInsights').then((m) => ({ default: m.FinanceInsights })));
-
-// Decision-first: the one next step, four figures, then the analysis behind
-// them (trend, scope, category, what changed), then where the evidence goes.
-// Every figure comes from records already loaded by the shared hooks; totals
-// count verified records only, as Reports, History and Monetize do.
-
-const RANGES: { id: TimeRange; short: string }[] = [
-  { id: '30d', short: '30D' }, { id: '90d', short: '90D' }, { id: '12m', short: '12M' }, { id: 'fy', short: 'FY' }, { id: 'all', short: 'All' },
-];
-
-const Skeleton = () => (
-  <div className="space-y-4" aria-label="Loading your records">
-    <div className="h-20 animate-pulse rounded-xl bg-muted motion-reduce:animate-none" />
-    <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-      {[0, 1, 2, 3].map((i) => <div key={i} className="h-32 animate-pulse rounded-xl bg-muted motion-reduce:animate-none" />)}
-    </div>
-    <div className="h-72 animate-pulse rounded-xl bg-muted motion-reduce:animate-none" />
-  </div>
-);
+const Scope3Preview = lazy(() => import('@/components/scope3/Scope3Preview').then((m) => ({ default: m.Scope3Preview })));
+import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
+import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
+import { useCredibility } from '@/hooks/useCredibility';
+import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
+import { AlertTriangle, Info, CheckCircle2, Sparkles } from 'lucide-react';
+import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
+import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
+import { RecordInsights } from '@/components/insights/RecordInsights';
+import { useRecordsChanged } from '@/lib/recordsEvents';
+import {
+  defaultFilters,
+  resolveWindow,
+  applyFilters,
+  totals as computeTotals,
+  periodDelta,
+  topCategories,
+  monthlySeries,
+  evidenceCompleteness,
+  allCategories,
+  type DashboardFilters,
+} from '@/lib/dashboardAnalytics';
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { user, isLoading: sessionLoading } = useSession();
+  const { user, sessionId, isLoading: sessionLoading } = useSession();
   const { tier } = usePremiumStatus();
-  const { greeting, isPersonalized } = usePersonalization();
+  const { greeting, tierLabel, tierEmoji, isPersonalized } = usePersonalization();
   const { activeContext } = useOrganization();
-  const { organization } = useWorkspace();
+  const { scope, ready: workspaceReady, organization } = useWorkspace();
+  const workspaceKey = scopeKey(scope);
   const { isEnterprise } = useEnterpriseMode();
   const scope3 = useScope3Visibility();
   const financeSwitch = useFinanceInsightsSwitch();
-  const { summary, emissions, isLoading: emissionsLoading, refetch, error: emissionsError } = useEmissions();
+  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch, error: emissionsError } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
-  const { entries } = useComplianceLedger();
-  const { credibility, isLoading: credibilityLoading } = useCredibility();
+  const [verificationScore, setVerificationScore] = useState(0);
+  const [latestStatus, setLatestStatus] = useState<'verified' | 'needs_review' | 'pending' | null>(null);
 
-  const isPartner = activeContext?.context_type === 'partner';
+  const [isResetting, setIsResetting] = useState(false);
+
+  const isLoading = sessionLoading || emissionsLoading || docsLoading;
+  const unverifiedEmissions = getUnverifiedEmissions();
+  const verifiedEmissions = getVerifiedEmissions();
+  const isGuestUser = !user && sessionId;
+
+  // Profile Intelligence — read from stored records, never localStorage, so the
+  // same signals appear on every device the user signs in from.
+  const [profileRecord, setProfileRecord] = useState<{
+    location: string; sector: string; size: string; exportsToEU: boolean; hasNetZeroTarget: boolean;
+  } | null>(null);
+
   useEffect(() => {
-    if (isPartner) {
+    let cancelled = false;
+    const load = async () => {
+      if (!workspaceReady) return;
+      const docQuery = user?.id ? applyScope(supabase.from('documents').select('currency').limit(200), scope) : null;
+      if (!user?.id || !docQuery) { if (!cancelled) setProfileRecord(null); return; }
+      const [profileRes, docRes, goalRes] = await Promise.all([
+        supabase.from('profiles').select('location, sector, size').eq('id', user.id).maybeSingle(),
+        docQuery,
+        supabase.from('net_zero_goals').select('id').eq('user_id', user.id).limit(1),
+      ]);
+      if (cancelled) return;
+      // In an organisation workspace the signals describe the organisation.
+      const org = organization ? readOrganizationProfile(organization) : null;
+      setProfileRecord({
+        location: (org ? org.country : profileRes.data?.location) || 'India',
+        sector: (org ? org.sector : profileRes.data?.sector) || 'manufacturing',
+        size: (org ? org.size : profileRes.data?.size) || 'small',
+        exportsToEU: (docRes.data ?? []).some(d => (d.currency || '').toUpperCase() === 'EUR'),
+        hasNetZeroTarget: !org && (goalRes.data ?? []).length > 0,
+      });
+    };
+    load();
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [user?.id, workspaceKey, workspaceReady, organization]);
+
+  const profileInput = useMemo(() => profileRecord ? {
+    ...profileRecord,
+    seekingFinance: true,
+    totalCO2Kg: summary.total,
+    verifiedCount: verifiedEmissions.length,
+  } : null, [profileRecord, summary.total, verifiedEmissions.length]);
+
+  // ---- Decision-intelligence layer: filtering and period analysis over the
+  // records already loaded. Display only; no factor or methodology is applied.
+  const [filters, setFilters] = useState<DashboardFilters>(() => defaultFilters(Boolean(user)));
+  // Signing in or out restarts from that state's default (verified-only when signed in).
+  useEffect(() => { setFilters(defaultFilters(Boolean(user))); }, [user]);
+
+  const analytics = useMemo(() => {
+    const win = resolveWindow(filters.range);
+    const rows = applyFilters(emissions, filters, win);
+    return {
+      rows,
+      totals: computeTotals(rows),
+      delta: periodDelta(emissions, filters, win),
+      categories: topCategories(rows),
+      series: monthlySeries(rows, win),
+      // Completeness compares verified with all records in view, so it ignores
+      // the status filter.
+      completeness: evidenceCompleteness(applyFilters(emissions, { ...filters, status: 'all' }, win)),
+    };
+  }, [emissions, filters]);
+
+  const categoryOptions = useMemo(() => allCategories(emissions), [emissions]);
+
+  const { alerts } = useProfileIntelligence(profileInput);
+
+  // Route protection: redirect partners to their dashboard
+  useEffect(() => {
+    if (activeContext?.context_type === 'partner') {
       toast.info('This dashboard is for MSMEs. Redirecting to Partner Dashboard.');
       navigate('/partner-dashboard');
     }
-  }, [isPartner, navigate]);
+  }, [activeContext, navigate]);
 
-  const [range, setRange] = useState<TimeRange>('12m');
-  const [category, setCategory] = useState('all');
-  const [shown, setShown] = useState<Set<ScopeId>>(() => new Set([1, 2, 3]));
-  const toggleScope = (s: ScopeId) => setShown((prev) => {
-    const next = new Set(prev);
-    if (next.has(s)) { if (next.size > 1) next.delete(s); } else next.add(s);
-    return next;
-  });
-
-  const view = useMemo(() => {
-    const win = resolveWindow(range);
-    const filters: DashboardFilters = { range, scope: 'all', status: 'verified', category };
-    const rows = applyFilters(emissions, filters, win);
-    const unverified = emissions.filter((e) => e.verified !== true);
-    return {
-      totals: computeTotals(rows),
-      delta: periodDelta(emissions, filters, win),
-      series: monthlySeries(rows, win, 'en-IN'),
-      // Categories ignore the category filter so another can be picked.
-      categories: topCategories(applyFilters(emissions, { ...filters, category: 'all' }, win), Infinity),
-      unverifiedCount: unverified.length,
-      unverifiedKg: unverified.reduce((t, e) => t + grossKg(e.co2_kg), 0),
-      needsDetail: unverified.filter((e) => e.activity_data === null || e.activity_data === undefined || e.emission_factor === null || e.emission_factor === undefined).length,
-      hasVerified: emissions.some((e) => e.verified === true),
-    };
-  }, [emissions, range, category]);
-
-  const evidence = useMemo(() => computeFinanceEvidence(entries as unknown as FinanceLedgerRow[]).summary, [entries]);
-  const step = nextStep({
-    totalRecords: emissions.length,
-    unverified: view.unverifiedCount,
-    needsDetail: view.needsDetail,
-    verifiedInvoices: evidence.invoices,
-    monthsCovered: evidence.monthsCovered,
-  });
-  // A saved net-zero goal (personal workspace) keeps the roadmap one tap away.
-  const [hasNetZero, setHasNetZero] = useState(false);
+  // Initial fetch
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { fetchVerificationData(); });
   useEffect(() => {
-    if (!user?.id || organization) { setHasNetZero(false); return; }
-    let cancelled = false;
-    void supabase.from('net_zero_goals').select('id').eq('user_id', user.id).limit(1).then(({ data }) => { if (!cancelled) setHasNetZero((data ?? []).length > 0); });
-    return () => { cancelled = true; };
-  }, [user?.id, organization]);
-  const invoicesInEur = useMemo(() => documents.some((d) => (d.currency || '').toUpperCase() === 'EUR'), [documents]);
+    fetchVerificationData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady]);
 
-  if (isPartner) return null;
-  const firstLoad = sessionLoading || (emissionsLoading && emissions.length === 0);
-  const rangeLabel = TIME_RANGE_LABELS[range];
+  // Real-time subscription for carbon verifications
+  useEffect(() => {
+    if (!workspaceReady) return;
+    // Filtered realtime subscriptions: only this workspace's rows.
+    const filter = realtimeFilter(scope);
+    if (!filter) return;
+
+    const channel = supabase
+      .channel('dashboard-verifications')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'carbon_verifications',
+          filter,
+        },
+        (payload) => {
+          console.log('[Dashboard] Verification update:', payload.eventType);
+          fetchVerificationData();
+        }
+      )
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'emissions',
+          filter,
+        },
+        (payload) => {
+          console.log('[Dashboard] Emission update:', payload.eventType);
+          refetch();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady, refetch]);
+
+  const resetAllData = async () => {
+    if (!sessionId) return;
+    
+    setIsResetting(true);
+    try {
+      // Delete in order: verifications -> emissions -> documents (due to foreign keys)
+      await supabase.from('carbon_verifications').delete().eq('session_id', sessionId);
+      await supabase.from('emissions').delete().eq('session_id', sessionId);
+      await supabase.from('documents').delete().eq('session_id', sessionId);
+      
+      toast.success('All data cleared. Start fresh with a new upload!');
+      
+      // Refetch data
+      refetch();
+      fetchVerificationData();
+      setVerificationScore(0);
+      setLatestStatus(null);
+    } catch (error) {
+      console.error('Error resetting data:', error);
+      toast.error('Failed to reset data. Please try again.');
+    } finally {
+      setIsResetting(false);
+    }
+  };
+
+  const fetchVerificationData = async () => {
+    if (!workspaceReady) return;
+    try {
+      const query = applyScope(
+        supabase
+          .from('carbon_verifications')
+          .select('verification_score, verification_status, ai_analysis')
+          .order('created_at', { ascending: false }),
+        scope,
+      );
+      if (!query) return;
+
+      const { data } = await query;
+      // Clear figures from another workspace before showing this one.
+      if (!data || data.length === 0) {
+        setVerificationScore(0);
+        setLatestStatus(null);
+      }
+      if (data && data.length > 0) {
+        setVerificationScore(Math.round((data[0].verification_score || 0) * 100));
+        setLatestStatus(data[0].verification_status as any);
+      }
+    } catch (err) {
+      console.error('Error fetching verification data:', err);
+    }
+  };
+
+  // Same score and inputs as Monetize.
+  const { credibility } = useCredibility();
 
   return (
-    <div className="min-h-screen w-full bg-background pb-16 md:pb-0">
+    <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <Helmet>
         <title>Dashboard | Senseible Carbon MRV</title>
-        <meta name="description" content="Your verified emissions, what changed, and the next step to finance-ready evidence." />
+        <meta name="description" content="View your carbon emissions summary, trends, and monetization opportunities." />
       </Helmet>
+      
+      <CarbonParticles />
       <Navigation onSignOut={() => navigate('/')} />
       {emissionsError && <RecordsLoadError onRetry={() => void refetch()} />}
 
-      <main className="mx-auto w-full max-w-7xl px-4 py-6 md:px-6 md:py-8">
+      {/* Main Content */}
+      <main className="relative z-10 container mx-auto px-4 py-8">
         <GraceNotice className="mb-4" />
-
-        <header className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div className="min-w-0">
-            <h1 className="truncate text-[22px] font-semibold tracking-tight md:text-2xl">{isPersonalized ? greeting : 'Overview'}</h1>
+        {/* Welcome Section - Personalized */}
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-8">
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <h1 className="text-2xl font-semibold text-foreground">
+                {isPersonalized ? greeting : user ? 'Welcome back!' : 'Carbon Dashboard'}
+              </h1>
+              {user && (
+                <Badge 
+                  variant="secondary" 
+                  className="flex items-center gap-1 text-xs"
+                >
+                  <span>{tierEmoji}</span>
+                  {tierLabel}
+                </Badge>
+              )}
+            </div>
+            <p className="text-muted-foreground">
+              Decision view over your verified records. Capture and verification happen in the MRV workspace.
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            {/* Upgrade CTA for free users */}
             {user && tier === 'snapshot' && (
-              <Link to="/pricing" className="mt-1 inline-flex items-center gap-1 text-[13px] text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
-                Compare plans<ArrowRight className="h-3 w-3" aria-hidden="true" />
-              </Link>
+              <Button variant="outline" size="sm" asChild className="gap-2">
+                <Link to="/pricing">
+                  <Zap className="w-4 h-4" />
+                  Upgrade
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </Button>
+            )}
+
+            {/* Reset Data Button - Only for guest users */}
+            {isGuestUser && (documents.length > 0 || emissions.length > 0) && (
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="text-destructive hover:text-destructive hover:bg-destructive/10 gap-2"
+                    disabled={isResetting}
+                  >
+                  {isResetting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="h-4 w-4" />
+                  )}
+                  Reset Data
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Reset all data?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This will permanently delete all your uploaded documents, emissions data, and verifications. 
+                    This action cannot be undone. You can start fresh with new uploads.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction 
+                    onClick={resetAllData}
+                    className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                  >
+                    Yes, reset everything
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             )}
           </div>
+        </div>
+
+        {isLoading ? (
+          <div className="flex items-center justify-center py-20">
+            <div className="animate-pulse text-muted-foreground">Loading your data...</div>
+          </div>
+        ) : (
+          <>
           {emissions.length > 0 && (
-            <div className="flex shrink-0 flex-wrap items-center gap-2">
-            <Link to="/" className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-[12.5px] font-medium hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-              <Upload className="h-3.5 w-3.5" aria-hidden="true" />Upload
-            </Link>
-            <div role="group" aria-label="Time range" className="inline-flex rounded-lg border border-border bg-card p-0.5">
-              {RANGES.map((r) => (
-                <button key={r.id} type="button" aria-pressed={range === r.id} title={TIME_RANGE_LABELS[r.id]} onClick={() => setRange(r.id)}
-                  className={`min-w-[2.75rem] rounded-md px-2.5 py-1.5 text-[12.5px] font-medium tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${range === r.id ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>
-                  {r.short}
-                </button>
-              ))}
-            </div>
-            </div>
-          )}
-        </header>
-
-        {firstLoad ? <Skeleton /> : (
-          <div className="space-y-4 md:space-y-5">
-            <NextStep step={step} />
-
-            {emissions.length > 0 && (
-              <>
-                <KpiStrip
-                  rangeLabel={category === 'all' ? rangeLabel : `${categoryLabel(category)} · ${rangeLabel}`}
-                  totals={view.totals}
-                  delta={view.delta}
-                  unverifiedCount={view.unverifiedCount}
-                  unverifiedKg={view.unverifiedKg}
-                  credibility={credibility}
-                  credibilityLoading={credibilityLoading}
-                  monthsCovered={evidence.monthsCovered}
-                  invoices={evidence.invoices}
-                  periodStart={evidence.periodStart}
-                  periodEnd={evidence.periodEnd}
+            <>
+              <DashboardFilterBar
+                defaults={defaultFilters(Boolean(user))}
+                filters={filters}
+                categories={categoryOptions}
+                matchedCount={analytics.rows.length}
+                totalCount={emissions.length}
+                onChange={setFilters}
+              />
+              <div className="mb-6">
+                <DashboardIntelligence
+                  range={filters.range}
+                  totals={analytics.totals}
+                  delta={analytics.delta}
+                  categories={analytics.categories}
+                  completeness={analytics.completeness}
                 />
-
-                <ScopeTrend
-                  series={view.series}
-                  totals={view.totals}
-                  shown={shown}
-                  onToggleScope={toggleScope}
-                  filterLabel={category === 'all' ? null : categoryLabel(category)}
-                  onClearFilter={() => setCategory('all')}
-                />
-
-                <div className="grid gap-4 md:gap-5 lg:grid-cols-2">
-                  {view.categories.length > 0
-                    ? <CategoryBreakdown rows={view.categories} selected={category} onSelect={setCategory} />
-                    : <section className="rounded-xl border border-border bg-card p-4 text-[13.5px] text-muted-foreground md:p-5">No verified records in this period to break down.</section>}
-                  <WhatChanged emissions={emissions} documents={documents} />
-                </div>
-              </>
-            )}
-
-            <div className="grid items-start gap-4 md:gap-5 lg:grid-cols-3">
-              {emissions.length > 0 && <UseEvidence hasVerified={view.hasVerified} invoicesInEur={invoicesInEur} hasNetZero={hasNetZero} />}
-              {user && <FinanceEvidenceCard />}
-              {(documents.length > 0 || docsLoading) && <RecentDocuments documents={documents.slice(0, 5)} loading={docsLoading} />}
-            </div>
-
-            {user && financeSwitch.on && (
-              <Suspense fallback={null}><FinanceInsights /></Suspense>
-            )}
-
-            {isEnterprise && emissions.length > 0 && (
-              <div className="grid gap-4 md:gap-5 lg:grid-cols-2">
-                <EnterpriseAuditLog />
-                <EnterpriseComplianceLabels scope1={summary.scope1} scope2={summary.scope2} scope3={summary.scope3} />
               </div>
-            )}
+            </>
+          )}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left Column - Summary & Trend */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Verification Status Card - Only show score when emissions exist */}
+              <VerificationStatusCard
+                verificationScore={emissions.length > 0 ? verificationScore : 0}
+                totalEmissions={summary.total}
+                unverifiedCount={unverifiedEmissions.length}
+                hasVerifiedData={verifiedEmissions.length > 0}
+                latestStatus={emissions.length > 0 ? latestStatus : null}
+                credibilityScore={credibility?.score}
+                credibilityGrade={credibility?.grade}
+              />
+              <EmissionsSummary summary={summary} />
 
-            {scope3.showBasic && (
-              <Suspense fallback={null}><Scope3Preview fullAvailable={scope3.fullAvailable} /></Suspense>
-            )}
+              {/* Profile Intelligence Alerts */}
+              {alerts.length > 0 && (
+                <div className="space-y-3">
+                  {alerts.slice(0, 3).map(alert => (
+                    <div 
+                      key={alert.id}
+                      className={`p-4 rounded-xl border flex items-start gap-3 ${
+                        alert.severity === 'warning' ? 'bg-warning/5 border-warning/30' :
+                        alert.severity === 'success' ? 'bg-success/5 border-success/30' :
+                        'bg-primary/5 border-primary/20'
+                      }`}
+                    >
+                      {alert.severity === 'warning' ? <AlertTriangle className="h-5 w-5 text-warning shrink-0 mt-0.5" /> :
+                       alert.severity === 'success' ? <CheckCircle2 className="h-5 w-5 text-success shrink-0 mt-0.5" /> :
+                       <Info className="h-5 w-5 text-primary shrink-0 mt-0.5" />}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium">{alert.title}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{alert.message}</p>
+                        {alert.linkTo && (
+                          <Link to={alert.linkTo} className="text-xs text-primary font-medium mt-1 inline-block hover:underline">
+                            {alert.linkLabel} →
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <TrendChart data={analytics.series.length > 0 ? analytics.series : summary.monthlyTrend} />
+              <RecordInsights emissions={emissions} documents={documents} />
+            </div>
+
+            {/* Right Column - Actions & Recent */}
+            <div className="space-y-6">
+              <QuickActions 
+                unverifiedCount={unverifiedEmissions.length}
+                totalEmissions={summary.total}
+              />
+              <MonetizationPanel 
+                totalCO2={summary.total}
+                verifiedCO2Kg={sumVerifiedKgOncePerEmission(verifiedEmissions, e => e.id, e => e.co2_kg)}
+                hasVerifiedData={verifiedEmissions.length > 0}
+              />
+              {user && <FinanceEvidenceCard />}
+              <RecentDocuments documents={documents.slice(0, 5)} />
+            </div>
+          </div>
+          </>
+        )}
+
+        {/* Enterprise Mode Panels — Only visible when toggle is ON */}
+        {isEnterprise && !isLoading && emissions.length > 0 && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            <EnterpriseAuditLog />
+            <EnterpriseComplianceLabels
+              scope1={summary.scope1}
+              scope2={summary.scope2}
+              scope3={summary.scope3}
+            />
+          </div>
+        )}
+
+        {/* Scope 3 evidence trail preview: paid plans, Enterprise Mode, switched on in Settings */}
+        {scope3.showBasic && (
+          <div className="mt-6">
+            <Suspense fallback={null}><Scope3Preview fullAvailable={scope3.fullAvailable} /></Suspense>
+          </div>
+        )}
+
+        {/* Finance insights from the user's own statements and returns: opt-in in Settings, by plan */}
+        {financeSwitch.on && (
+          <div className="mt-8">
+            <Suspense fallback={null}><FinanceInsights /></Suspense>
           </div>
         )}
       </main>
