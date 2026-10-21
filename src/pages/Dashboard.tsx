@@ -40,6 +40,7 @@ import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
 import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
 import { RecordInsights } from '@/components/insights/RecordInsights';
 import { missingElectricityMonths } from '@/lib/missingMonths';
+import { intelligentActions } from '@/lib/intelligentActions';
 import { useRecordsChanged } from '@/lib/recordsEvents';
 import {
   defaultFilters,
@@ -273,6 +274,8 @@ const Dashboard = () => {
   const PLAN_NAME: Record<string, string> = { snapshot: 'Snapshot', essential: 'Essential', pro: 'Pro', scale: 'Scale' };
   const countedDocIds = new Set(emissions.map((e) => e.document_id).filter(Boolean));
   const missingMonths = useMemo(() => missingElectricityMonths(emissions), [emissions]);
+  // Only a lever (cost or emission cut) takes the next-step slot; record tasks already have theirs.
+  const topAction = useMemo(() => intelligentActions(emissions, documents).find((a) => a.lever) ?? null, [emissions, documents]);
   const uncountedDocs = documents.filter((d) => !countedDocIds.has(d.id)).length;
   const verifiedKg = sumVerifiedKgOncePerEmission(verifiedEmissions, e => e.id, e => e.co2_kg);
   const checks = pathwayChecks({ verifiedCount: verifiedChecks.count, qualityGrade: verifiedChecks.grade, ledgerCount: ledgerEntries.length, greenInvoiceCount: countGreenInvoices(ledgerEntries as never) });
@@ -343,6 +346,7 @@ const Dashboard = () => {
               documentCount={documents.length}
               uncountedDocs={uncountedDocs}
               missingMonths={missingMonths}
+              topAction={topAction}
               unverifiedCount={unverifiedEmissions.length}
               hasVerifiedData={verifiedEmissions.length > 0}
               verificationScore={verificationScore}

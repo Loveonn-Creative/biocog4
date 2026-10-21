@@ -15,8 +15,8 @@ import { useOrganization } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
 import {
   Shield, TrendingUp, Target, Award, FileCheck, AlertCircle,
-  CheckCircle, Clock, ArrowRight, Leaf, Zap, Recycle, Sun,
-  ChevronRight, BarChart3, Lock, ExternalLink, Lightbulb, Activity
+  CheckCircle, Clock, ArrowRight, Leaf,
+  BarChart3, Lock, ExternalLink, Lightbulb
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
@@ -30,11 +30,8 @@ import { SupplierCoveragePanel } from '@/components/mrv/SupplierCoveragePanel';
 import { MRVEmptyState } from '@/components/mrv/MRVEmptyState';
 import { useShowMore } from '@/hooks/useShowMore';
 import { ShowMoreButton } from '@/components/ShowMore';
-import { 
-  generateIntelligentRecommendations, 
-  getTotalImpact,
-  IntelligenceRecommendation 
-} from '@/lib/intelligenceEngine';
+import { intelligentActions } from '@/lib/intelligentActions';
+import { IntelligentActionsList } from '@/components/mrv/IntelligentActions';
 import { sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
@@ -76,6 +73,7 @@ const MRVDashboard = () => {
   // Long lists open with the first rows; the rest stay one tap away.
   const auditRows = useShowMore(verifications);
   const pendingRows = useShowMore(emissions.filter((e) => !e.verified));
+  const actions = useMemo(() => intelligentActions(emissions, documents), [emissions, documents]);
   // Verified emission rows, each id counted once, not a sum of verification
   // records (which can overlap the same emissions). No rupee value: emissions
   // are not credits (see carbonValue.ts).
@@ -494,52 +492,8 @@ const MRVDashboard = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    {(() => {
-                      // Same basis as the summary (verified rows), so shares add up.
-                      const intelligentRecs = generateIntelligentRecommendations(verifiedEmissions, summary);
-                      const impact = getTotalImpact(intelligentRecs.slice(0, 4));
-                      
-                      if (intelligentRecs.length > 0) {
-                        return (
-                          <div className="space-y-4">
-                            {/* Impact summary: emissions only. Cost savings and payback need a site's own tariffs and quotes, so none are shown. */}
-                            <div className="flex items-baseline justify-between gap-3 p-3 rounded-lg bg-success/5 border border-success/20">
-                              <span className="text-xs text-muted-foreground">Indicative reduction across {Math.min(intelligentRecs.length, 4)} action{Math.min(intelligentRecs.length, 4) === 1 ? '' : 's'}</span>
-                              <span className="text-lg font-mono font-bold text-success">{formatNumber(impact.totalReduction)}</span>
-                            </div>
-
-                            {/* Recommendations */}
-                            <ul className="space-y-3">
-                              {intelligentRecs.slice(0, 4).map((rec) => (
-                                <li key={rec.id} className="p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors">
-                                  <div className="flex items-start gap-3">
-                                    <div className={`mt-0.5 p-1.5 rounded-full ${
-                                      rec.priority === 'high' ? 'bg-destructive/10 text-destructive' :
-                                      rec.priority === 'medium' ? 'bg-warning/10 text-warning' : 'bg-muted'
-                                    }`}>
-                                      {rec.priority === 'high' ? <Zap className="h-3 w-3" /> : <Activity className="h-3 w-3" />}
-                                    </div>
-                                    <div className="flex-1">
-                                      <div className="font-medium text-sm mb-1">{rec.title}</div>
-                                      <p className="text-xs text-muted-foreground mb-2">{rec.insight}</p>
-                                      <div className="text-xs">
-                                        <span className="text-success font-medium">-{formatNumber(rec.impact.co2ReductionKg)} indicative</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        );
-                      }
-                      
-                      return (
-                        <p className="text-sm text-muted-foreground text-center py-6">
-                          Upload invoices to receive personalized recommendations.
-                        </p>
-                      );
-                    })()}
+                    {/* From the business's own bills, fuel and suppliers; friendly next step when data is thin. */}
+                    <IntelligentActionsList actions={actions} />
                   </CardContent>
                 </Card>
 
