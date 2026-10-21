@@ -1,0 +1,71 @@
+{
+  "slug": "jorf-lasfar-dap-exporter-ammonia-precursor-cbam",
+  "q": "How does a Moroccan DAP exporter at Jorf Lasfar count imported ammonia in its CBAM figure?",
+  "title": "DAP exporter: ammonia in the CBAM figure",
+  "short": "DAP under CN 3105 is a CBAM good, and ammonia is its precursor. Multiply the ammonia consumed, about 0.22 t per tonne of DAP at 18% nitrogen, by the ammonia supplier's embedded emissions, then add your own direct and indirect emissions. Phosphoric and sulphuric acid are not CBAM goods.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Phosphate fertiliser producers in Jorf Lasfar and other Moroccan clusters selling DAP, MAP and NPK to the EU",
+  "sections": [
+    {
+      "h": "Why about 0.22 t of ammonia",
+      "p": [
+        "Standard DAP is 18% nitrogen. Ammonia, NH3, is 14.007 / 17.031 = 82.2% nitrogen by mass, so 0.18 t of nitrogen needs 0.18 x 17.031 / 14.007 = 0.219 t of ammonia per tonne of DAP. Use your metered ammonia consumption, which includes losses."
+      ]
+    },
+    {
+      "h": "Imported ammonia",
+      "p": [
+        "If the ammonia is bought from abroad, its embedded emissions come from the producer's verified data, passed to you, or from the EU default value for ammonia from that origin. Keep supplier, cargo and quantity records that tie each cargo to your production period."
+      ]
+    },
+    {
+      "h": "Your own emissions",
+      "ul": [
+        "Direct: fuel for granulation dryers and any steam you raise.",
+        "Indirect: electricity for granulation, scrubbers and conveying, because fertilisers are charged on indirect emissions too.",
+        "Not CBAM precursors: phosphoric acid, sulphuric acid and phosphate rock."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of DAP (illustrative inputs)",
+    "lines": [
+      "Ammonia: 0.219 t x 2.20 t CO2e per t (supplier figure) = 0.482 t CO2e",
+      "Dryer fuel: 0.03 t CO2",
+      "Electricity: 40 kWh x 0.60 kg CO2 per kWh (illustrative grid factor) = 0.024 t CO2",
+      "Embedded emissions: 0.482 + 0.03 + 0.024 = 0.536 t CO2e per tonne of DAP"
+    ],
+    "note": "The ammonia figure, fuel and grid factor are illustrative; use verified supplier data and the factor set in the CBAM rules."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are urea and DAP covered?",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Urea and DAP purchase factors",
+      "to": "/answers/emission-factor-for-purchased-urea-and-dap"
+    },
+    {
+      "label": "Egyptian urea embedded emissions",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

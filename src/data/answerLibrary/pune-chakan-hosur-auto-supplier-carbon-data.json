@@ -1,0 +1,59 @@
+{
+  "slug": "pune-chakan-hosur-auto-supplier-carbon-data",
+  "q": "What carbon data should an auto component supplier in Chakan or Hosur keep ready for OEMs?",
+  "title": "Auto supplier carbon data for OEMs",
+  "short": "Scope 1 and 2 totals for each plant from bills, a footprint per part or per kg for your main parts, the steel, aluminium and plastic weights per part with supplier figures where you have them, and your renewable power share. OEM questionnaires usually ask for these.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Tier 1 and tier 2 auto component makers in the Pune to Chakan belt and the Hosur cluster",
+  "sections": [
+    {
+      "h": "Plant level",
+      "ul": [
+        "Electricity, diesel, LPG and gas per month, from bills and invoices.",
+        "Refrigerant top-ups.",
+        "Renewable power bought or generated, with contracts or certificates."
+      ]
+    },
+    {
+      "h": "Part level",
+      "ul": [
+        "Material weight per part by type: steel, aluminium, plastics, rubber.",
+        "Supplier emission figures for steel and aluminium, or named database factors.",
+        "Process energy allocated by machine hours or weight."
+      ]
+    },
+    {
+      "h": "Exports to the EU",
+      "p": [
+        "Parts declared under 7318 or 7326, such as fasteners and some pressed parts, need CBAM embedded emissions. Parts declared under 8708 do not today, though buyers may still ask for a footprint."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Are auto components covered?",
+      "to": "/answers/are-auto-components-covered-by-cbam"
+    },
+    {
+      "label": "Drive Sustainability questionnaire",
+      "to": "/answers/drive-sustainability-saq-auto-supplier"
+    },
+    {
+      "label": "Supplier engagement targets",
+      "to": "/answers/sbti-supplier-engagement-target-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

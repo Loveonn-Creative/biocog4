@@ -1,0 +1,61 @@
+{
+  "slug": "vaal-triangle-nitric-acid-n2o-for-cbam",
+  "q": "How does a nitric acid plant in the Vaal Triangle report N2O for CBAM?",
+  "title": "Vaal nitric acid N2O for CBAM",
+  "short": "Measure it. For nitric acid, a CBAM fertiliser good, N2O must be determined with a measurement-based method in the definitive period: analysers for N2O concentration and flow in the tail gas, converted to CO2e with the GWP set in the CBAM rules. Ammonia used is a precursor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ammonia, nitric acid and fertiliser producers in the Vaal Triangle, including Sasolburg, selling to the EU",
+  "sections": [
+    {
+      "h": "Why measurement",
+      "p": [
+        "N2O from the oxidation of ammonia over platinum gauzes varies with gauze age, pressure and temperature. IPCC default factors range widely by plant type, so the CBAM monitoring rules require continuous measurement for N2O at each emission point."
+      ]
+    },
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Measured N2O from tail gas, converted to CO2e.",
+        "Embedded emissions of ammonia consumed, from your own ammonia plant or the supplier.",
+        "Fuel burnt on site and electricity used, because fertiliser goods count indirect emissions."
+      ]
+    },
+    {
+      "h": "South African carbon tax",
+      "p": [
+        "South Africa's carbon tax applies to process emissions such as N2O. A tax effectively paid on the embedded emissions can be claimed as a reduction under Article 9, net of allowances and offsets that lowered the tax bill, with independent certification."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Nitric acid plant N2O",
+      "to": "/answers/nitric-acid-plant-n2o-emissions"
+    },
+    {
+      "label": "South Africa carbon tax and CBAM",
+      "to": "/climate-intelligence/south-africa-carbon-tax-cbam"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

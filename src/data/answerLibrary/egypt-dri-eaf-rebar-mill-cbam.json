@@ -1,0 +1,61 @@
+{
+  "slug": "egypt-dri-eaf-rebar-mill-cbam",
+  "q": "How does an Egyptian DRI and EAF rebar mill in 10th of Ramadan City report CBAM emissions?",
+  "title": "Egyptian DRI and EAF rebar CBAM figure",
+  "short": "Add the DRI's direct emissions, mostly natural gas used in reduction, to the arc furnace's direct emissions from electrodes, charge carbon and burners, plus reheating furnace gas in the rolling mill, then divide by tonnes of rebar. Electricity is not counted for steel today.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "DRI, EAF and rolling mills in 10th of Ramadan City and other Egyptian steel clusters selling to the EU",
+  "sections": [
+    {
+      "h": "Two or three processes",
+      "ol": [
+        "DRI plant: gas burnt in the reformer and process, plus pellets as a precursor.",
+        "Melt shop: electrodes, charge carbon, burner gas, lime, and DRI, scrap and alloys charged.",
+        "Rolling mill: reheating furnace gas, if billets are not hot charged."
+      ]
+    },
+    {
+      "h": "Bought or own DRI",
+      "p": [
+        "If you make DRI on site, it is part of your installation and its emissions flow straight in. If you buy DRI or HBI, count it as a precursor at the supplier's verified figure or the default value."
+      ]
+    },
+    {
+      "h": "Why actual data pays",
+      "p": [
+        "Gas-based DRI and EAF steel has a much lower direct figure than blast furnace steel, but the default values for Egypt are set by product and country, not by route. Verified actual data is the only way the lower figure reaches the EU buyer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Gas-based DRI and CBAM",
+      "to": "/answers/monterrey-gas-dri-steel-cbam-figure"
+    },
+    {
+      "label": "Marmara EAF direct emissions",
+      "to": "/answers/marmara-eaf-steel-mill-cbam-direct-emissions"
+    },
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

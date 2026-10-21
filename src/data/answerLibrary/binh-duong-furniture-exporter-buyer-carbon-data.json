@@ -1,0 +1,59 @@
+{
+  "slug": "binh-duong-furniture-exporter-buyer-carbon-data",
+  "q": "What carbon data do EU buyers ask Binh Duong furniture makers for?",
+  "title": "Furniture maker carbon data for EU buyers",
+  "short": "A footprint per piece or per cubic metre of wood, built from factory electricity and fuel, the wood, board, foam and hardware per piece, and the finishing chemicals. Furniture is not a CBAM good unless declared as steel or aluminium articles, but buyers counting Scope 3 ask for it.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Wooden and upholstered furniture makers in the Binh Duong cluster in Vietnam",
+  "sections": [
+    {
+      "h": "Factory energy",
+      "ul": [
+        "Electricity for saws, CNC, dust extraction and spray booths.",
+        "Fuel for kiln drying, often wood waste or biomass: record quantities even where biogenic.",
+        "Diesel for forklifts and generators."
+      ]
+    },
+    {
+      "h": "Materials per piece",
+      "ul": [
+        "Solid wood and board volumes, with species and origin.",
+        "Foam, fabric and hardware weights.",
+        "Lacquers and coatings."
+      ]
+    },
+    {
+      "h": "Other rules buyers apply",
+      "p": [
+        "The EU Deforestation Regulation covers wood and furniture, with traceability to plot of land. Steel furniture declared under a steel heading can fall under CBAM. Keep origin records alongside the carbon data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Wooden furniture footprint per piece",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Is steel furniture covered by CBAM?",
+      "to": "/answers/is-steel-furniture-covered-by-cbam"
+    },
+    {
+      "label": "EUDR for wooden furniture",
+      "to": "/answers/eudr-wooden-handicrafts-furniture-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

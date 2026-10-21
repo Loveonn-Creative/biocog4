@@ -1,0 +1,74 @@
+{
+  "slug": "marmara-eaf-steel-mill-cbam-direct-emissions",
+  "q": "How does a Marmara electric arc furnace steel mill calculate its CBAM direct emissions?",
+  "title": "EAF steel mill CBAM direct emissions",
+  "short": "Use a carbon mass balance: carbon in electrodes, injected coal, charge carbon and alloys, plus natural gas burnt in burners and ladle heaters, minus carbon leaving in steel and slag. Divide by tonnes of billets or products. Scrap carried no embedded emissions under the transitional rules, and furnace electricity is not counted for steel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Scrap-based electric arc furnace mills in the Marmara and Kocaeli industrial corridor",
+  "sections": [
+    {
+      "h": "Inputs to track",
+      "ul": [
+        "Graphite electrode consumption, from stock and purchase records.",
+        "Injected coal, anthracite or charge carbon, with carbon content from supplier analyses.",
+        "Natural gas for oxy-fuel burners, ladle preheating and reheating furnaces.",
+        "Lime and dolomite, if carbonate-based, and alloys that contain carbon.",
+        "Carbon in the steel produced and in slag, from your lab."
+      ]
+    },
+    {
+      "h": "Precursors",
+      "p": [
+        "Scrap carried no embedded emissions under the transitional rules; check the definitive-period act. Bought pig iron, DRI or HBI and ferro-alloys covered by CBAM do. Add their tonnes times their verified embedded emissions, or the default values if the supplier gives none."
+      ]
+    },
+    {
+      "h": "Why EAF mills gain from actual values",
+      "p": [
+        "Most of an EAF mill's full footprint is electricity, which is outside the CBAM figure for steel. Its direct figure is therefore far below a blast furnace mill's, but the EU default values for Turkey do not know that. Only verified actual data shows it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100,000 t of billets in a year (illustrative inputs)",
+    "lines": [
+      "Electrodes: 150 t x 3.664 t CO2 per t carbon = 549.6 t CO2",
+      "Injected coal: 1,500 t x 85% carbon x 3.664 = 4,671.6 t CO2",
+      "Burner and ladle gas: 2,000,000 scm x 2.05 kg CO2 per scm = 4,100 t CO2",
+      "Less carbon in steel: 100,000 t x 0.2% carbon x 3.664 = 732.8 t CO2",
+      "Net: 549.6 + 4,671.6 + 4,100 minus 732.8 = 8,588.4 t CO2, or 0.086 t CO2 per tonne"
+    ],
+    "note": "Quantities are illustrative. 3.664 is the CO2 to carbon mass ratio (44.01 / 12.011). Add precursors such as pig iron or DRI if you use them."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Graphite electrodes in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    },
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Recarburiser carbon in the mass balance",
+      "to": "/answers/recarburiser-carbon-in-cbam-mass-balance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

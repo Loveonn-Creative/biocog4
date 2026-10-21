@@ -1,0 +1,58 @@
+{
+  "slug": "johor-data-centre-scope-2-reporting",
+  "q": "How should a Johor data centre report Scope 2 emissions for its customers?",
+  "title": "Johor data centre Scope 2 reporting",
+  "short": "Report a location-based figure using Malaysia's published grid emission factor and a market-based figure using any green electricity tariff, power purchase agreement or certificates retired for the site, then allocate to customers by their metered IT energy. Name each factor and its year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Colocation and hyperscale data centres in the Johor cluster in Malaysia",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Multiply total facility electricity by the grid emission factor published for Peninsular Malaysia for the reporting year. Use the official figure and cite it; do not borrow another country's factor."
+      ]
+    },
+    {
+      "h": "Market based",
+      "ul": [
+        "Power under a utility green electricity tariff, with the certificates or statements that come with it.",
+        "Renewable power purchase agreements with metered delivery.",
+        "Certificates such as I-RECs retired for the facility and the period.",
+        "Uncovered power at the residual mix factor if one is published, otherwise the grid factor, stated as such."
+      ]
+    },
+    {
+      "h": "Customer allocation",
+      "p": [
+        "Allocate facility emissions by each customer's metered IT energy, so cooling and losses follow load through PUE. Give each customer both figures and the contract evidence behind the market-based one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and generator fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "I-REC vs Indian REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Navi Mumbai data centre Scope 2",
+      "to": "/answers/navi-mumbai-data-centre-scope-2-per-kw"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

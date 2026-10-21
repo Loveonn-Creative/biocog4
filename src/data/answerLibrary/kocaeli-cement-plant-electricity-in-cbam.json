@@ -1,0 +1,70 @@
+{
+  "slug": "kocaeli-cement-plant-electricity-in-cbam",
+  "q": "How does a Kocaeli cement plant count electricity in its CBAM embedded emissions?",
+  "title": "Cement plant electricity in CBAM",
+  "short": "Cement is one of the goods where CBAM counts indirect emissions. Multiply the electricity used to make each tonne of clinker and cement by the emission factor the CBAM rules allow, usually the default for the country's grid, then add it to direct emissions from calcination and kiln fuel.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cement and clinker producers in the Marmara and Kocaeli corridor exporting to the EU",
+  "sections": [
+    {
+      "h": "Direct and indirect for cement",
+      "p": [
+        "Annex II of the CBAM Regulation lists the goods charged on direct emissions only; cement is not among them. Cement clinker and cement are therefore charged on direct emissions, from calcination and kiln fuel, and on indirect emissions from electricity for raw milling, kiln drives, fans and cement grinding."
+      ]
+    },
+    {
+      "h": "Which electricity factor",
+      "p": [
+        "Annex IV sets the method. The default is the emission factor of the electricity grid in the country of origin as provided in the CBAM rules. A plant can use the actual emission factor of its supply only if it meets the conditions, such as a direct technical link to a named generator or a power purchase agreement that covers the electricity used."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ol": [
+        "Metered kWh for each production process: raw mill, kiln, cement mill.",
+        "Production of clinker and of each cement type, so electricity can be attributed.",
+        "Contracts and meter data for any direct supply you want to count at its actual factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of cement (illustrative inputs)",
+    "lines": [
+      "Clinker share: 0.80 t x 0.85 t CO2 per t clinker (direct) = 0.68 t CO2",
+      "Electricity: 95 kWh x 0.45 kg CO2 per kWh (illustrative grid factor) = 42.75 kg CO2",
+      "Embedded emissions: 0.68 + 0.04275 = 0.723 t CO2e per tonne of cement"
+    ],
+    "note": "The grid factor and clinker intensity are illustrative; use the factor for Turkey in the CBAM rules and your plant's clinker figure."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Cement grinding unit CO2",
+      "to": "/answers/cement-grinding-unit-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

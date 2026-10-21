@@ -1,0 +1,64 @@
+{
+  "slug": "frankfurt-data-centre-eu-energy-efficiency-reporting",
+  "q": "What must a Frankfurt data centre report under the EU Energy Efficiency Directive?",
+  "title": "Frankfurt data centre EU energy reporting",
+  "short": "Data centres with installed IT power demand of at least 500 kW must report energy, PUE-related, water, waste heat and renewable energy indicators to the European database each year by 15 May, under Article 12 of the Energy Efficiency Directive. Germany's Energy Efficiency Act adds national requirements.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Colocation and enterprise data centres in the Frankfurt hub and elsewhere in Germany",
+  "sections": [
+    {
+      "h": "Who reports",
+      "p": [
+        "Operators of data centres with installed IT power demand of at least 500 kW. The first reports were due in 2024 and they are annual since. Smaller sites are outside this obligation."
+      ]
+    },
+    {
+      "h": "What is reported",
+      "ul": [
+        "Floor area, installed power and data traffic.",
+        "Total energy consumption and IT energy, from which PUE follows.",
+        "Water use, waste heat reuse and the share of renewable energy."
+      ]
+    },
+    {
+      "h": "National rules on top",
+      "p": [
+        "Germany's Energy Efficiency Act sets further duties for data centres, including energy efficiency targets, renewable electricity and waste heat reuse. Check the current thresholds and dates for your site's start of operation."
+      ]
+    },
+    {
+      "h": "Scope 2 is separate",
+      "p": [
+        "The directive's indicators are not a GHG inventory. Customers asking for emissions still need location and market-based Scope 2 under the GHG Protocol."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and generator fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site, with location and market-based figures where contracts are provided. It does not file reports to the European data centre database.",
+  "links": [
+    {
+      "label": "PUE formula and good PUE",
+      "to": "/answers/pue-formula-and-good-pue"
+    },
+    {
+      "label": "Carbon usage effectiveness",
+      "to": "/answers/data-centre-cue-carbon-usage-effectiveness"
+    },
+    {
+      "label": "Water usage effectiveness",
+      "to": "/answers/data-centre-wue-water-usage-effectiveness"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2023/1791 (Energy Efficiency Directive), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Check delegated act and national updates before the next 15 May report."
+}

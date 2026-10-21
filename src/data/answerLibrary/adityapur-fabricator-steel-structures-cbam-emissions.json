@@ -1,0 +1,67 @@
+{
+  "slug": "adityapur-fabricator-steel-structures-cbam-emissions",
+  "q": "How does a steel fabricator near Jamshedpur pass its mill's emissions into CBAM figures for structures?",
+  "title": "Fabricator CBAM figure from mill steel",
+  "short": "Treat the plate, sections or coil you buy as a precursor. Multiply tonnes consumed, including offcuts, by the mill's specific embedded emissions, add your own direct emissions from cutting gas and furnaces, and divide by tonnes of structures shipped. Grid electricity for welding is not counted for steel.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel fabricators and structure makers in Adityapur and around Jamshedpur exporting under CN 7308",
+  "sections": [
+    {
+      "h": "Which goods this covers",
+      "p": [
+        "Structures and parts of structures of iron or steel under CN 7308, and most other chapter 72 and 73 goods in Annex I of the CBAM Regulation. If you export these to the EU, your buyer must declare their embedded emissions from 2026."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "ol": [
+        "Precursor: tonnes of steel consumed, not tonnes in the finished structure, times the mill's verified specific embedded emissions for that product.",
+        "Own direct emissions: LPG, acetylene or propane for cutting, and any fuel for preheating, stress relieving or galvanising kettles.",
+        "Divide the sum by tonnes of structures produced in the same calendar year."
+      ]
+    },
+    {
+      "h": "Getting the mill's figure",
+      "p": [
+        "Ask your mill for the verified figure per CN code for the year, or for access through the CBAM Registry if it is registered. A figure on a mill test certificate is not enough on its own unless it states the CBAM basis and verification. Without the mill's data, the declarant uses the default value for the precursor, with its mark-up."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of structures in a year (illustrative inputs)",
+    "lines": [
+      "Plate and sections consumed: 108 t x 2.10 t CO2e/t (mill figure) = 226.8 t CO2e",
+      "Cutting LPG: 1,500 kg x 2.98 kg CO2 per kg = 4.47 t CO2",
+      "Total: 226.8 + 4.47 = 231.27 t CO2e",
+      "Specific embedded emissions: 231.27 / 100 = 2.313 t CO2e per tonne"
+    ],
+    "note": "The mill figure is illustrative; use your mill's verified value per CN code. LPG factor from IPCC 2006 defaults."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Steel pipes made from purchased coil",
+      "to": "/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+    },
+    {
+      "label": "Are steel structures covered?",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    },
+    {
+      "label": "Mill certificate CO2 for a forged part",
+      "to": "/answers/steel-mill-certificate-co2-for-forged-part"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

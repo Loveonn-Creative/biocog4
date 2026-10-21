@@ -1,0 +1,66 @@
+{
+  "slug": "morbi-coal-gasifier-vs-piped-gas-kiln-co2",
+  "q": "How much more CO2 does a coal gasifier emit than piped natural gas for a tile kiln?",
+  "title": "Coal gasifier vs piped gas for tile kilns",
+  "short": "Per gigajoule of fuel gas delivered to the kiln, a coal gasifier emits roughly twice or more the CO2 of piped natural gas, because coal carries more carbon per unit of energy and the gasifier loses heat converting it. On IPCC defaults the ratio is about 2.2 at 75% gasifier efficiency.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Tile and sanitaryware makers in Morbi and other ceramic clusters comparing fuels",
+  "sections": [
+    {
+      "h": "Why coal gas is higher",
+      "ol": [
+        "Coal emits about 94.6 kg CO2 per GJ of fuel on the IPCC default for bituminous coal, against 56.1 kg for natural gas.",
+        "A gasifier converts only part of the coal's energy into fuel gas; the rest is lost as heat, tar and char.",
+        "So each GJ of gas reaching the kiln needs well over a GJ of coal."
+      ]
+    },
+    {
+      "h": "Use your own numbers",
+      "p": [
+        "Replace the defaults with your coal's calorific value and carbon content from lab reports, and your gasifier's measured efficiency. Local coal and lignite vary widely, and a verifier will ask which figures you used."
+      ]
+    },
+    {
+      "h": "What the comparison leaves out",
+      "p": [
+        "Methane leakage upstream of piped gas, ash and tar disposal from gasifiers, and electricity for the gasifier blowers. Count them if your buyer asks for a full footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one GJ of fuel gas at the kiln (illustrative efficiency)",
+    "lines": [
+      "Coal gasifier: 94.6 kg CO2 per GJ of coal / 0.75 efficiency = 126.1 kg CO2 per GJ of gas",
+      "Piped natural gas: 56.1 kg CO2 per GJ",
+      "Ratio: 126.1 / 56.1 = 2.25"
+    ],
+    "note": "IPCC 2006 default factors on a net calorific value basis; gasifier efficiency of 75% is illustrative."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Propane vs natural gas for tile kilns",
+      "to": "/answers/propane-vs-natural-gas-tile-kiln-co2"
+    },
+    {
+      "label": "Morbi tile gas per square metre",
+      "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

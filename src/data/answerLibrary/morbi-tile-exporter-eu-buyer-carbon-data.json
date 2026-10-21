@@ -1,0 +1,58 @@
+{
+  "slug": "morbi-tile-exporter-eu-buyer-carbon-data",
+  "q": "What carbon data do EU buyers ask Morbi tile exporters for?",
+  "title": "Carbon data EU buyers want from tile exporters",
+  "short": "A footprint per square metre for each tile type, the energy records behind it, and the method used. Tiles are not CBAM goods, so there is no declaration, but distributors counting Scope 3 and projects asking for environmental product declarations want a figure they can trace.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Tile exporters in the Morbi cluster selling to European distributors and projects",
+  "sections": [
+    {
+      "h": "What to send",
+      "ol": [
+        "Kg CO2e per square metre for each size and type, for a named year.",
+        "The boundary: factory gate only, or including raw materials such as clay, feldspar and glaze.",
+        "The energy behind it: gas and electricity totals and the factors used.",
+        "Square metres packed in the same period."
+      ]
+    },
+    {
+      "h": "When an EPD is asked for",
+      "p": [
+        "Large projects and green building schemes may ask for an environmental product declaration to EN 15804, verified by a third party. That is a bigger job than a supplier footprint and is worth doing for high-volume products only."
+      ]
+    },
+    {
+      "h": "What makes the figure credible",
+      "p": [
+        "Bills and meter readings that match the totals, a clear split between drying and firing, and the same method year to year so a buyer can see change."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Are ceramic tiles covered by CBAM?",
+      "to": "/answers/are-ceramic-tiles-covered-by-cbam"
+    },
+    {
+      "label": "Morbi tile gas per square metre",
+      "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre"
+    },
+    {
+      "label": "EU tile makers vs imported tiles",
+      "to": "/answers/castellon-sassuolo-tile-makers-pay-carbon-imports-not"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

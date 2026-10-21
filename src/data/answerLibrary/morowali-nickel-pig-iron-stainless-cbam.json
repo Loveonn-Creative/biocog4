@@ -1,0 +1,59 @@
+{
+  "slug": "morowali-nickel-pig-iron-stainless-cbam",
+  "q": "Are nickel pig iron, ferro-nickel and stainless steel from Morowali covered by EU CBAM?",
+  "title": "Morowali nickel products under CBAM",
+  "short": "Ferro-nickel under CN 7202 60 00 and stainless steel slabs, coils and bars in chapter 72 are CBAM goods, and nickel pig iron is covered when declared as pig iron under 7201 or as ferro-nickel. Nickel matte under 7501 and unwrought nickel under 7502 are not in Annex I.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Nickel and stainless steel producers in the Morowali industrial park in Indonesia and their EU buyers",
+  "sections": [
+    {
+      "h": "Covered",
+      "ul": [
+        "7201: pig iron, if nickel pig iron is declared under this heading.",
+        "7202 60 00: ferro-nickel.",
+        "7218 to 7223: stainless steel in ingots, semi-finished products, flat-rolled products, bars, rods and wire."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "7501: nickel mattes and intermediate products of nickel metallurgy.",
+        "7502: unwrought nickel.",
+        "Nickel ore and concentrates under 2604."
+      ]
+    },
+    {
+      "h": "What drives the figure",
+      "p": [
+        "For iron and steel goods only direct emissions count. Rotary kiln and electric furnace smelting of laterite uses coal and coke as reductant and fuel, and those emissions count; the electricity for the furnaces, often from captive coal plants, does not count under Annex II today. The customs code your EU importer declares decides coverage, so agree it with the buyer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Is silico-manganese covered?",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    },
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Pig iron and sponge iron under CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

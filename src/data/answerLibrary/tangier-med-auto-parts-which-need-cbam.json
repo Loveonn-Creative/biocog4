@@ -1,0 +1,61 @@
+{
+  "slug": "tangier-med-auto-parts-which-need-cbam",
+  "q": "Which auto parts made in the Tangier Med zone need CBAM data for EU buyers?",
+  "title": "Tangier auto parts and CBAM",
+  "short": "Only parts declared under CBAM headings: steel screws, bolts and nuts under 7318, other articles of steel under 7326, steel tubes and sections, and aluminium articles under 7616. Parts declared under chapter 87 as vehicle parts, wiring harnesses and seats are not in Annex I today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Auto component makers in the Tangier Med and Kenitra automotive zones supplying EU plants",
+  "sections": [
+    {
+      "h": "Usually covered",
+      "ul": [
+        "7318: screws, bolts, nuts, washers and rivets of iron or steel.",
+        "7326: other articles of iron or steel, such as some brackets and pressed parts.",
+        "7304 to 7306: steel tubes and pipes.",
+        "7616: other articles of aluminium."
+      ]
+    },
+    {
+      "h": "Usually not covered",
+      "ul": [
+        "8708: parts and accessories of motor vehicles.",
+        "8544: insulated wire and wiring harnesses.",
+        "9401: seats."
+      ]
+    },
+    {
+      "h": "Downstream goods later",
+      "p": [
+        "The Commission has been asked to assess adding more downstream goods. If 87 or 84 headings are added later, parts made from covered steel and aluminium could come into scope. Keep the steel and aluminium you buy traceable to its mill now."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are auto components covered?",
+      "to": "/answers/are-auto-components-covered-by-cbam"
+    },
+    {
+      "label": "Are nuts and bolts covered?",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    },
+    {
+      "label": "Downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Recheck if the Commission extends Annex I to downstream goods."
+}

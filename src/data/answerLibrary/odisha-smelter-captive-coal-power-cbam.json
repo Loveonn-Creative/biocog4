@@ -1,0 +1,67 @@
+{
+  "slug": "odisha-smelter-captive-coal-power-cbam",
+  "q": "Does an Odisha aluminium smelter's captive coal power count in its CBAM figure?",
+  "title": "Odisha smelter captive power and CBAM",
+  "short": "Not for the CBAM charge on aluminium. Power from a captive coal plant is indirect emissions under the CBAM Regulation, and Annex II lists aluminium for direct emissions only. Anode consumption and perfluorocarbons from anode effects do count, and the captive plant's emissions still matter for buyers counting Scope 3.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Primary aluminium smelters and their EU buyers in the Angul and Jharsuguda belt of Odisha",
+  "sections": [
+    {
+      "h": "What counts for unwrought aluminium",
+      "ul": [
+        "CO2 from consumption of prebaked carbon anodes or Soderberg paste in the pots.",
+        "Perfluorocarbons, CF4 and C2F6, released during anode effects, converted with the GWPs set in the CBAM rules.",
+        "Fuel burnt in casthouses, anode baking and other on-site processes.",
+        "The embedded emissions of any primary aluminium bought in as a precursor."
+      ]
+    },
+    {
+      "h": "Why captive power stays out",
+      "p": [
+        "The CBAM Regulation defines indirect emissions as emissions from producing the electricity consumed in production, wherever it is produced. A smelter's own coal plant next door is therefore indirect, not direct. For aluminium, iron and steel and hydrogen, Annex II limits the charge to direct emissions, so the many tonnes of CO2 per tonne of metal from coal power are not in the CBAM obligation today."
+      ]
+    },
+    {
+      "h": "Why you should still measure it",
+      "p": [
+        "Article 30 asks the Commission to assess adding indirect emissions for these goods, and EU buyers report the full footprint in Scope 3. Keep the captive plant's coal consumption, gross and auxiliary generation and power sent to the pots, so you can show both the CBAM figure and the full footprint."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Why Indian aluminium is carbon-intensive",
+      "to": "/answers/why-indian-aluminium-carbon-intensity-is-high"
+    },
+    {
+      "label": "Does CBAM count electricity?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Check an aluminium supplier's claim",
+      "to": "/answers/how-to-check-aluminium-supplier-carbon-claim"
+    },
+    {
+      "label": "CBAM for aluminium exporters in India",
+      "to": "/climate-intelligence/cbam-aluminium-exporter-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Recheck if the Commission extends indirect emissions to aluminium under Article 30."
+}

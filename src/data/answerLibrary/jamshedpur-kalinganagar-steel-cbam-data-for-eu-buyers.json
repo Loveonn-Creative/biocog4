@@ -1,0 +1,67 @@
+{
+  "slug": "jamshedpur-kalinganagar-steel-cbam-data-for-eu-buyers",
+  "q": "What CBAM data should a Jamshedpur or Kalinganagar steel exporter send its EU buyer?",
+  "title": "CBAM data from a Jamshedpur steel plant",
+  "short": "Send verified specific embedded emissions per CN code for each installation, in tonnes CO2e per tonne, with the production route, the precursors used and their emissions, and the verifier's report. For steel, only direct emissions count, so blast furnace coal and coke dominate the figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Integrated steel plants and steel traders in the Jamshedpur and Kalinganagar belt exporting to the EU",
+  "sections": [
+    {
+      "h": "What the EU declarant needs from you",
+      "ol": [
+        "The installation: name, address and its main activity.",
+        "For each CN code shipped: specific direct embedded emissions in t CO2e per tonne, for the calendar year.",
+        "The production route, for example blast furnace and basic oxygen furnace, and the precursors consumed, such as sinter, pellets, pig iron or DRI, with their own embedded emissions.",
+        "Any carbon price effectively paid in India for those emissions, with evidence. Today that is usually none.",
+        "The verification report from an accredited verifier, if the buyer is to use actual values."
+      ]
+    },
+    {
+      "h": "Why the blast furnace route sets the number",
+      "p": [
+        "In the blast furnace and basic oxygen furnace route, most direct emissions come from coal and coke used to reduce iron ore, plus fuel burnt in sinter plants, reheating furnaces and boilers. Electricity is not counted for iron and steel goods under Annex II of the CBAM Regulation, so captive power and grid power stay out of the CBAM figure, even though buyers counting Scope 3 will still want them."
+      ]
+    },
+    {
+      "h": "Actual values or defaults",
+      "p": [
+        "If you send nothing usable, the declarant falls back on the EU default value for India and your CN code, with a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028. Verified actual data avoids the mark-up and lets a better plant show it. If you sell to several EU buyers, registering your installation in the CBAM Registry under Article 10 lets you share one verified figure with all of them."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Embedded emissions for steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Register in the CBAM Registry",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "CBAM for steel exporters in India",
+      "to": "/solutions/cbam-steel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

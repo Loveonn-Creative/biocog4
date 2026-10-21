@@ -1,0 +1,61 @@
+{
+  "slug": "richards-bay-smelter-pfc-emissions-cbam",
+  "q": "How does an aluminium smelter at Richards Bay count PFC emissions for CBAM?",
+  "title": "Smelter PFC emissions for CBAM",
+  "short": "Record anode effect frequency and duration, or overvoltage, for every potline, convert them to CF4 and C2F6 with plant-specific or default slope coefficients, and multiply by the GWPs set in the CBAM rules. PFCs are direct emissions of unwrought aluminium and count in the CBAM figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Primary aluminium smelters at Richards Bay and other South African sites, and their EU buyers",
+  "sections": [
+    {
+      "h": "Where PFCs come from",
+      "p": [
+        "When alumina in the bath runs low, the cell voltage jumps in an anode effect and the carbon anode reacts with the fluoride bath to form CF4 and smaller amounts of C2F6. Both are very potent greenhouse gases, so a few minutes of anode effects per cell-day can add materially to the metal's direct emissions."
+      ]
+    },
+    {
+      "h": "The method",
+      "ol": [
+        "Log anode effect minutes per cell-day, or overvoltage, per potline from the process control system.",
+        "Apply the slope or overvoltage coefficients for your cell technology; plant-specific coefficients from measurement campaigns beat defaults.",
+        "Multiply CF4 and C2F6 by their GWPs from the CBAM rules and add to anode CO2 and on-site fuel."
+      ]
+    },
+    {
+      "h": "What does not count",
+      "p": [
+        "Electricity from the grid is indirect and not charged for aluminium today, even though for coal-heavy grids it is most of the footprint. A carbon tax effectively paid on direct emissions can be claimed under Article 9."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Odisha smelter captive power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Why Indian aluminium is carbon-intensive",
+      "to": "/answers/why-indian-aluminium-carbon-intensity-is-high"
+    },
+    {
+      "label": "South Africa carbon tax and CBAM",
+      "to": "/climate-intelligence/south-africa-carbon-tax-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

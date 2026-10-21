@@ -1,0 +1,72 @@
+{
+  "slug": "sivakasi-printing-press-carbon-per-tonne",
+  "q": "How does a Sivakasi printing press work out carbon per tonne printed?",
+  "title": "Sivakasi printing press carbon per tonne",
+  "short": "Add press and finishing electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by tonnes of printed product dispatched. Paper and board usually carry far more carbon than printing, so add them as purchased goods from supplier figures.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Offset and label printers, notebook and diary makers in the Sivakasi cluster",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Offset presses and their dryers.",
+        "Plate making and CTP units.",
+        "Cutting, binding and lamination.",
+        "Compressors and air conditioning for paper conditioning."
+      ]
+    },
+    {
+      "h": "Tonnes dispatched",
+      "p": [
+        "Use tonnes of finished product dispatched, so wastage and makeready sheets carry their energy into good output."
+      ]
+    },
+    {
+      "h": "Paper and board",
+      "p": [
+        "Paper is Scope 3 purchased goods. Use mill figures where offered; otherwise use a named database factor and say which."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Generator diesel: 1,200 litres x 2.68 = 3,216 kg CO2",
+      "Total: 28,400 + 3,216 = 31,616 kg CO2",
+      "Printed product dispatched: 250 t, so 31,616 / 250 = 126.5 kg CO2 per tonne"
+    ],
+    "note": "Quantities are illustrative; paper and ink are extra, from supplier data."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Offset printing per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Book printing per copy",
+      "to": "/answers/book-printing-carbon-footprint-per-copy"
+    },
+    {
+      "label": "CTP plate footprint",
+      "to": "/answers/offset-printing-ctp-plate-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

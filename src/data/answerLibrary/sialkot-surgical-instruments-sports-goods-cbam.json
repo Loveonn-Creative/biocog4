@@ -1,0 +1,57 @@
+{
+  "slug": "sialkot-surgical-instruments-sports-goods-cbam",
+  "q": "Do surgical instruments and sports goods from Sialkot need CBAM data?",
+  "title": "Sialkot exports and CBAM",
+  "short": "No. Surgical and medical instruments under chapter 90 and sports goods under chapter 95 are not in Annex I of the CBAM Regulation, even when made of stainless steel. EU buyers may still ask for a product footprint for their own Scope 3 or tender requirements.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Surgical instrument, sports goods and leather exporters in Sialkot",
+  "sections": [
+    {
+      "h": "Why steel instruments are outside",
+      "p": [
+        "CBAM covers goods by customs code. Stainless steel bars and sheet that an instrument maker imports are CBAM goods in the EU, but finished surgical instruments are declared under 9018, which Annex I does not list."
+      ]
+    },
+    {
+      "h": "What buyers ask instead",
+      "ul": [
+        "Energy use per piece or per batch, from electricity and generator fuel records.",
+        "The weight and grade of stainless steel per instrument, for a material footprint.",
+        "Packaging and sterilisation, for hospital buyers that count them."
+      ]
+    },
+    {
+      "h": "If you also export bar or semi-finished steel",
+      "p": [
+        "Any stainless bar, wire or forgings sold as such under chapter 72 or 73 are CBAM goods, and your EU buyer needs their embedded emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Surgical instrument footprint",
+      "to": "/answers/surgical-instrument-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Football carbon footprint",
+      "to": "/answers/football-carbon-footprint-per-ball"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
