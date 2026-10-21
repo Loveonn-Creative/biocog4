@@ -412,7 +412,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
               <p className={cn("pt-2 text-xs", overAllowance ? "text-destructive" : "text-muted-foreground")} role={overAllowance ? 'alert' : undefined}>
                 {estimate && pendingCount > 0 && `About ${estimate.reads} ${estimate.reads === 1 ? 'read' : 'reads'} (${estimate.pages} ${estimate.pages === 1 ? 'page' : 'pages'}). `}
                 {remaining !== null && `${remaining.toLocaleString('en-IN')} reads left${allowance.credits ? ` (including ${allowance.credits.toLocaleString('en-IN')} credits)` : ' this month'}.`}
-                {overAllowance && <> Page limit reached for this batch. Remove some files, upgrade, wait until next month, or <a href="/profile#top-up" className="underline">top up credits now</a>.</>}
+                {overAllowance && <> Page limit reached for this batch. Remove some files, upgrade, wait until next month, or <a href="/subscription#top-up" className="underline">top up credits now</a>.</>}
               </p>
             )}
 
