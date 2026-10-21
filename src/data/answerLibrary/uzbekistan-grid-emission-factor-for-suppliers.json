@@ -1,0 +1,63 @@
+{
+  "slug": "uzbekistan-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Uzbekistan use?",
+  "title": "Uzbekistan grid factor for suppliers",
+  "short": "Uzbekistan's power comes mostly from gas, with some hydro and a little coal, so the grid factor sits roughly around 0.4 to 0.5 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it, because new solar and wind are pulling it down.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories, spinners and metal plants in Uzbekistan reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Uzbekistan.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Most electricity comes from gas plants. Large solar and wind projects have been added in recent years, so each year's figure can be lower than the last."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "For steel and aluminium, electricity is reported but not charged. For fertilisers and cement it counts toward the charge, so the factor matters more."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Kazakhstan grid factor",
+      "to": "/answers/kazakhstan-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

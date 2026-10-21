@@ -1,0 +1,62 @@
+{
+  "slug": "cerro-matoso-ferronickel-cbam-figure",
+  "q": "What goes into the CBAM figure for ferronickel from Cerro Matoso?",
+  "title": "Cerro Matoso ferronickel: CBAM figure",
+  "short": "Ferronickel is a CBAM good. Count drying and calcining the laterite ore, coal or coke used as reductant in the electric furnaces, electrode carbon, and refining fuel, by mass balance per tonne of alloy. Electricity is reported, not charged.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Colombian ferronickel exports and the EU stainless steel mills buying them",
+  "sections": [
+    {
+      "h": "Direct",
+      "ul": [
+        "Fuel for dryers and rotary kilns.",
+        "Reductant carbon fed to the furnace.",
+        "Electrode carbon.",
+        "Fuel for refining and granulation."
+      ]
+    },
+    {
+      "h": "Per tonne of what",
+      "p": [
+        "Report per tonne of ferronickel shipped, and give its nickel content so stainless mills can convert it."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Smelting laterite uses a lot of power. Colombia's grid is mostly hydro, which buyers like, so report the kWh and factor even though it is not charged."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "North Macedonia ferronickel",
+      "to": "/answers/north-macedonia-ferronickel-cbam-figure"
+    },
+    {
+      "label": "Colombia grid factor",
+      "to": "/answers/colombia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Stainless coil precursors",
+      "to": "/answers/indonesian-stainless-cold-rolled-coil-precursors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

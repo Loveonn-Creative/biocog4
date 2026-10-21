@@ -1,0 +1,58 @@
+{
+  "slug": "uzbekistan-cotton-yarn-spinner-buyer-data",
+  "q": "What carbon data does an EU brand want from a cotton spinner in Uzbekistan?",
+  "title": "Uzbek cotton spinner: buyer carbon data",
+  "short": "Electricity per kg of yarn, the grid factor and year, any gas for humidification or heating, and the cotton's origin. Spinning is mostly electricity, so the kWh figure from bills carries most of the result. Brands then add farming and ginning upstream.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cotton spinning mills in Uzbekistan supplying yarn to European and Turkish garment chains",
+  "sections": [
+    {
+      "h": "Per kg of yarn",
+      "ol": [
+        "Total kWh for the month from bills.",
+        "Divide by kg of yarn produced.",
+        "Multiply by the grid factor.",
+        "Add gas or diesel, if any, the same way."
+      ]
+    },
+    {
+      "h": "Upstream",
+      "p": [
+        "Farming and ginning sit before you. Pass on the cotton lot and region so the brand can add them."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "If you also make waste yarn or comber noil for sale, say how emissions were split."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Cotton farming emissions",
+      "to": "/answers/cotton-farming-emissions-per-kg-seed-cotton"
+    },
+    {
+      "label": "Ginning per bale",
+      "to": "/answers/cotton-ginning-emissions-per-bale"
+    },
+    {
+      "label": "Cotton vs polyester",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

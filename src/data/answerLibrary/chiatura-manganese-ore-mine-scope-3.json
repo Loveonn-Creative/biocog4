@@ -1,0 +1,57 @@
+{
+  "slug": "chiatura-manganese-ore-mine-scope-3",
+  "q": "How does a ferroalloy plant count the emissions of manganese ore from Chiatura?",
+  "title": "Chiatura manganese ore: Scope 3",
+  "short": "If you do not run the mine, the ore is Scope 3 purchased goods: mining diesel, electricity for washing and concentrating, and freight to your plant. If your group runs the mine, those emissions are your own Scope 1 and 2. Ore is not a CBAM precursor for ferro-manganese.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Ferroalloy plants and traders using manganese ore from Chiatura in Georgia",
+  "sections": [
+    {
+      "h": "What the mine adds",
+      "ul": [
+        "Diesel for underground and open pit equipment.",
+        "Electricity for washing and beneficiation.",
+        "Rail freight to the smelter."
+      ]
+    },
+    {
+      "h": "Control decides scope",
+      "p": [
+        "Emissions follow control under the GHG Protocol. Same group and operated by you: Scope 1 and 2. Bought ore: Scope 3, category 1."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "CBAM counts the smelter's direct emissions and listed precursors. Manganese ore is not listed, so it stays out of the CBAM figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Zestaponi ferroalloys",
+      "to": "/answers/zestaponi-ferroalloy-plant-cbam-check"
+    },
+    {
+      "label": "Haul truck diesel",
+      "to": "/answers/copper-mine-haul-truck-diesel-scope-1"
+    },
+    {
+      "label": "Ferro-manganese supplier data",
+      "to": "/answers/steel-mill-abroad-indian-ferromanganese-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

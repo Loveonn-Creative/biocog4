@@ -1,0 +1,57 @@
+{
+  "slug": "sriperumbudur-electronics-supplier-scope-2",
+  "q": "How does a Sriperumbudur electronics supplier report Scope 2 to a global brand?",
+  "title": "Sriperumbudur electronics: Scope 2",
+  "short": "Report location based Scope 2 from kWh on your bills times 0.710 kg CO2 per kWh (CEA v21.0), and market based Scope 2 only for renewable power you can prove, such as open access contracts or certificates. Brands compare both and check the evidence.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Electronics and component makers in Sriperumbudur and Oragadam supplying global phone and appliance brands",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "All grid kWh times the national factor, plus any diesel generator use in Scope 1."
+      ]
+    },
+    {
+      "h": "Market based",
+      "ul": [
+        "Open access green power with supplier records.",
+        "Renewable energy certificates retired for your site.",
+        "Rooftop solar with meter readings."
+      ]
+    },
+    {
+      "h": "What brands check",
+      "p": [
+        "That the renewable claim matches the kWh and period, and is not also claimed by someone else."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Open access biomass power",
+      "to": "/answers/biomass-power-open-access-scope-2"
+    },
+    {
+      "label": "State wise grid factor",
+      "to": "/answers/state-wise-grid-emission-factor-india"
+    },
+    {
+      "label": "CEA vs IEA factor",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "nepal-cement-plant-coal-kiln-co2",
+  "q": "How does a cement plant in Nepal count CO2 from its kiln?",
+  "title": "Nepal cement kiln: CO2",
+  "short": "Add calcination CO2 from clinker made to fuel CO2 from coal or petcoke burnt, usually imported. Grinding power from Nepal's mostly hydro grid adds little. Plants that buy clinker instead of making it put that clinker's emissions in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Nepal with their own kilns or grinding units",
+  "sections": [
+    {
+      "h": "Kiln",
+      "ol": [
+        "Clinker made, in tonnes, times its calcination factor.",
+        "Coal or petcoke burnt, with heating value and carbon content.",
+        "Add any diesel for mining and loaders."
+      ]
+    },
+    {
+      "h": "Bought clinker",
+      "p": [
+        "Clinker bought from another plant is Scope 3, category 1. Ask the seller for its figure per tonne."
+      ]
+    },
+    {
+      "h": "Low power factor",
+      "p": [
+        "Electricity matters less where the grid is mostly hydro, so the kiln dominates the cement figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "PPC vs OPC",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Nepal grid factor",
+      "to": "/answers/nepal-grid-emission-factor-for-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

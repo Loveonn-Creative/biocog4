@@ -1,0 +1,57 @@
+{
+  "slug": "chandrapur-cement-plant-local-coal-records",
+  "q": "What records does a Chandrapur cement plant need for coal from nearby mines?",
+  "title": "Chandrapur cement: local coal records",
+  "short": "Coal receipts by mine with weight, grade and lab results for heating value and carbon content, plus kiln feed and clinker made. Local coal is often high ash, so a lab result per lot gives a far better figure than a national default.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Chandrapur using coal from Wardha valley mines",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Weighbridge slips per rake or truck.",
+        "Proximate and ultimate analysis per lot.",
+        "Coal fed to the kiln and the captive power plant, separately."
+      ]
+    },
+    {
+      "h": "Why per lot",
+      "p": [
+        "Carbon content varies with ash. Using one default for all coal can over or understate fuel CO2."
+      ]
+    },
+    {
+      "h": "Upstream",
+      "p": [
+        "Mining and transport of the coal are Scope 3, category 3. Fly ash bought from power stations has its own rules."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Fly ash allocation",
+      "to": "/answers/fly-ash-from-power-plant-carbon-allocation"
+    },
+    {
+      "label": "Chittorgarh alternative fuels",
+      "to": "/answers/chittorgarh-cement-plant-alternative-fuel-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

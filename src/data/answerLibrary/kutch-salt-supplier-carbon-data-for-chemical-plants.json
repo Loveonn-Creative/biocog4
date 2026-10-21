@@ -1,0 +1,57 @@
+{
+  "slug": "kutch-salt-supplier-carbon-data-for-chemical-plants",
+  "q": "What carbon data can a Kutch salt works give a soda ash or chlor alkali buyer?",
+  "title": "Kutch salt works: carbon data for buyers",
+  "short": "Diesel or electricity for brine pumps, diesel for harvesting and loading, and freight to the plant, per tonne of salt. Evaporation itself uses sunlight, so the figure is small. Buyers mainly want it measured so their Scope 3 is complete.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Salt producers in Kutch supplying soda ash, chlor alkali and other chemical plants",
+  "sections": [
+    {
+      "h": "Per tonne",
+      "ol": [
+        "Pump energy: kWh from bills, or diesel litres.",
+        "Harvest and loading diesel.",
+        "Divide by tonnes dispatched."
+      ]
+    },
+    {
+      "h": "Freight",
+      "p": [
+        "Truck or rail to the chemical plant, by distance and load. Often larger than the salt works itself."
+      ]
+    },
+    {
+      "h": "For the buyer",
+      "p": [
+        "Salt is Scope 3, category 1 for the soda ash or chlor alkali plant."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Soda ash plant CO2",
+      "to": "/answers/soda-ash-plant-co2-per-tonne"
+    },
+    {
+      "label": "Dahej chlor alkali power",
+      "to": "/answers/dahej-chlor-alkali-caustic-soda-captive-power-co2"
+    },
+    {
+      "label": "Supplier footprint use",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

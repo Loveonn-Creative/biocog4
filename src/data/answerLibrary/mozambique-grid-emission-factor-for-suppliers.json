@@ -1,0 +1,57 @@
+{
+  "slug": "mozambique-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Mozambique use?",
+  "title": "Mozambique grid factor for suppliers",
+  "short": "Mozambique's grid is mostly hydro, led by Cahora Bassa, with some gas plants, so its factor is low. Power traded across the regional pool and dedicated contracts can differ from the national mix, so use the official figure for the year or your supplier's.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories, mines and exporters in Mozambique reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Mozambique.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Hydro dominates, but dry years and regional trading change the mix. Large users on dedicated contracts should use the factor for their supply."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Zambia grid factor",
+      "to": "/answers/zambia-grid-emission-factor-for-mines"
+    },
+    {
+      "label": "Tanzania grid factor",
+      "to": "/answers/tanzania-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Mozal aluminium",
+      "to": "/answers/mozal-aluminium-smelter-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

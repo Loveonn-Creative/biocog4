@@ -1,0 +1,63 @@
+{
+  "slug": "ukraine-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Ukraine use?",
+  "title": "Ukraine grid factor for suppliers",
+  "short": "Nuclear supplies a large share of Ukraine's power, with coal, gas and hydro making up much of the rest, so its factor is lower than coal heavy neighbours. War damage has changed the mix sharply year to year, so use the official figure for the year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Ukraine reporting Scope 2 to EU buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Ukraine.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Attacks on power plants and the grid have shifted output between nuclear, thermal, hydro, imports and on site generators. A factor from before 2022 may no longer fit."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    },
+    {
+      "h": "Generators",
+      "p": [
+        "Diesel or gas generators run during outages are Scope 1. Log litres or cubic metres so they are not missed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Ukrainian steel to Poland",
+      "to": "/answers/ukraine-steel-exporter-to-poland-cbam-records"
+    },
+    {
+      "label": "Turkey grid factor",
+      "to": "/answers/turkey-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

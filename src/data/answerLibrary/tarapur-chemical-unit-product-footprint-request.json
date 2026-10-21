@@ -1,0 +1,59 @@
+{
+  "slug": "tarapur-chemical-unit-product-footprint-request",
+  "q": "A buyer asked a Tarapur chemical unit for a product carbon footprint: what do we send?",
+  "title": "Tarapur chemical unit: footprint request",
+  "short": "Send emissions per kg of product from steam, power and solvents used, allocated by batch hours or steam use, with the factors and year. Add raw materials from supplier data or databases, and say what is estimated. A clear, checkable figure beats a polished one.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical and pharma intermediate units in Tarapur MIDC answering buyer requests",
+  "sections": [
+    {
+      "h": "Your own part",
+      "ol": [
+        "Fuel for boilers and thermic fluid heaters.",
+        "Electricity, at 0.710 kg CO2 per kWh (CEA v21.0).",
+        "Allocate to the product by steam or reactor hours."
+      ]
+    },
+    {
+      "h": "Raw materials",
+      "p": [
+        "Ask key suppliers for figures. Where none exist, use a named database value and mark it as estimated."
+      ]
+    },
+    {
+      "h": "What to state",
+      "ul": [
+        "Boundary: cradle to gate.",
+        "Year and production volume.",
+        "Method and allocation used."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Product footprint: what to send",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Dye intermediate steam allocation",
+      "to": "/answers/dye-intermediate-unit-steam-allocation-per-kg"
+    },
+    {
+      "label": "Dahej agrochemical PCF",
+      "to": "/answers/dahej-agrochemical-exporter-pcf-request"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

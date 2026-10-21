@@ -1,0 +1,61 @@
+{
+  "slug": "renukoot-aluminium-smelter-captive-coal-cbam",
+  "q": "Does captive coal power at Renukoot count in the CBAM figure for its aluminium?",
+  "title": "Renukoot aluminium: captive coal and CBAM",
+  "short": "No. For aluminium, CBAM charges only direct emissions from the smelter: anode carbon, perfluorocarbons and casting fuel. Power from a captive coal plant is indirect and reported separately. It is still the biggest part of the metal's footprint, and buyers asking for a full figure will see it.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Aluminium producers in Sonbhadra with captive coal power, and their export buyers",
+  "sections": [
+    {
+      "h": "Charged",
+      "ul": [
+        "Anode carbon consumed.",
+        "Perfluorocarbons from anode effects.",
+        "Fuel for casting and anode baking."
+      ]
+    },
+    {
+      "h": "Reported, not charged",
+      "p": [
+        "Electricity, including from your own coal plant. Report kWh per tonne and the plant's actual emissions per kWh, not the grid average."
+      ]
+    },
+    {
+      "h": "Your own inventory",
+      "p": [
+        "The captive power plant is your Scope 1. Do not count its emissions again as Scope 2 for the smelter."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Angul smelter and CCTS",
+      "to": "/answers/angul-aluminium-smelter-ccts-target"
+    },
+    {
+      "label": "Captive coal power heat rate",
+      "to": "/answers/coal-power-plant-co2-per-kwh-heat-rate"
+    },
+    {
+      "label": "Alumina is not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

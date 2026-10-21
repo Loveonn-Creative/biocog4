@@ -1,0 +1,57 @@
+{
+  "slug": "colombia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Colombia use?",
+  "title": "Colombia grid factor for suppliers",
+  "short": "Hydro supplies most of Colombia's power, so the grid factor is low in wet years and rises in El Niño droughts, when gas and coal plants run more. Use the official or IEA figure for the reporting year, not an old one, and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Colombia reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Colombia.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "In drought years thermal plants make up the shortfall from reservoirs, and the annual factor can rise sharply."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Brazil grid factor",
+      "to": "/answers/brazil-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

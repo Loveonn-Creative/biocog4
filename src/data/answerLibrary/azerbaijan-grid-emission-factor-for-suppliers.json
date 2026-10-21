@@ -1,0 +1,57 @@
+{
+  "slug": "azerbaijan-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Azerbaijan use?",
+  "title": "Azerbaijan grid factor for suppliers",
+  "short": "Azerbaijan's power comes mostly from gas, with some hydro, so the grid factor sits roughly around 0.4 to 0.5 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it; new solar and wind will lower it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Azerbaijan reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Azerbaijan.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Gas plants supply most electricity. Hydro adds a share that varies with rainfall, and large solar and wind projects are being added."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Georgia grid factor",
+      "to": "/answers/georgia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Kazakhstan grid factor",
+      "to": "/answers/kazakhstan-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Sumgait aluminium",
+      "to": "/answers/sumgait-aluminium-smelter-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

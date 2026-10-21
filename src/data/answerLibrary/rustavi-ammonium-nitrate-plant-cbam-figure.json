@@ -1,0 +1,61 @@
+{
+  "slug": "rustavi-ammonium-nitrate-plant-cbam-figure",
+  "q": "What goes into the CBAM figure for ammonium nitrate made at Rustavi?",
+  "title": "Rustavi ammonium nitrate: CBAM figure",
+  "short": "Ammonia from gas, nitrous oxide from the nitric acid plant, and electricity all count, because fertilisers carry direct and indirect emissions into the charge. If the plant buys ammonia, that ammonia is a precursor and its figure is needed too.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Nitrogen fertiliser producers in Georgia exporting ammonium nitrate to the EU and their importers",
+  "sections": [
+    {
+      "h": "Direct",
+      "ul": [
+        "Natural gas as feedstock and fuel for ammonia.",
+        "Nitrous oxide from nitric acid production.",
+        "Steam raised on site."
+      ]
+    },
+    {
+      "h": "Precursors",
+      "p": [
+        "Ammonia and nitric acid made on site are part of one figure. Bought ammonia needs its own embedded emissions from the supplier or a default."
+      ]
+    },
+    {
+      "h": "Nitrous oxide abatement",
+      "p": [
+        "A catalyst in the nitric acid burner can remove most nitrous oxide. Keep the monitoring records; CBAM counts the measured figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Fertiliser N2O",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Uzbek ammonium nitrate",
+      "to": "/answers/uzbekistan-ammonium-nitrate-plant-cbam-figure"
+    },
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

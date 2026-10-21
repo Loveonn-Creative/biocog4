@@ -1,0 +1,63 @@
+{
+  "slug": "kosovo-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Kosovo use?",
+  "title": "Kosovo grid factor for suppliers",
+  "short": "Kosovo's power comes overwhelmingly from two lignite plants, so its grid factor is among the highest in Europe, often above 1 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Kosovo reporting Scope 2 to EU buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Kosovo.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Lignite plants supply most electricity, with small amounts of hydro and wind. Outages at the old units change the mix and imports."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "For cement and fertilisers, electricity counts toward the charge, so a lignite grid factor raises the figure noticeably."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Serbia grid factor",
+      "to": "/answers/serbia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Bosnia grid factor",
+      "to": "/answers/bosnia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Albania grid factor",
+      "to": "/answers/albania-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

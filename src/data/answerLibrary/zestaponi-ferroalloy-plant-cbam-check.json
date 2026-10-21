@@ -1,0 +1,62 @@
+{
+  "slug": "zestaponi-ferroalloy-plant-cbam-check",
+  "q": "Do ferroalloys from Zestaponi face CBAM in the EU?",
+  "title": "Zestaponi ferroalloys: CBAM check",
+  "short": "It depends on the alloy. Ferro-manganese (CN 7202 1) is covered by CBAM; silico-manganese (7202 30) is not. Check the CN code on each shipment, and for covered alloys send direct emissions from coke, coal and electrodes per tonne.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferroalloy makers in Georgia and EU steel mills buying their alloys",
+  "sections": [
+    {
+      "h": "Covered or not",
+      "ul": [
+        "Ferro-manganese: covered.",
+        "Silico-manganese: not covered.",
+        "Ferro-chromium and ferro-nickel: covered.",
+        "Ferro-silicon and other 7202 alloys: not covered."
+      ]
+    },
+    {
+      "h": "For covered alloys",
+      "p": [
+        "Direct emissions come from the carbon in coke, coal and electrode paste, worked out by mass balance, divided by tonnes of alloy. Electricity is reported, not charged."
+      ]
+    },
+    {
+      "h": "Even when not covered",
+      "p": [
+        "EU steel mills still ask for a figure for their own Scope 3. Keep the same records either way."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Silico-manganese and CBAM",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    },
+    {
+      "label": "Ferro alloy coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    },
+    {
+      "label": "Mills asking for alloy data",
+      "to": "/answers/brescia-mill-ferro-alloy-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

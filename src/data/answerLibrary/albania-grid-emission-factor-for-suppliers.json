@@ -1,0 +1,57 @@
+{
+  "slug": "albania-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Albania use?",
+  "title": "Albania grid factor for suppliers",
+  "short": "Almost all of Albania's domestic power comes from hydro, so its grid factor is very low in wet years. In dry years Albania imports power, often from fossil heavy neighbours. Use the official figure for the year and say how imports are treated.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Albania reporting Scope 2 to EU buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Albania.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Rainfall drives output. Imports in dry years raise the effective factor."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Serbia grid factor",
+      "to": "/answers/serbia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Balkan electricity and CBAM",
+      "to": "/answers/western-balkans-electricity-exports-cbam"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

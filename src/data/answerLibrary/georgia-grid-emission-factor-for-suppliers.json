@@ -1,0 +1,57 @@
+{
+  "slug": "georgia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Georgia use?",
+  "title": "Georgia grid factor for suppliers",
+  "short": "Most of Georgia's power comes from hydro, with gas plants filling winter and dry months, so its grid factor is low next to its neighbours and moves with rainfall. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Georgia reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Georgia.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Hydro output falls in winter, when gas plants and imports fill the gap. A dry year can raise the annual figure noticeably."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Turkey grid factor",
+      "to": "/answers/turkey-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Zestaponi ferroalloys",
+      "to": "/answers/zestaponi-ferroalloy-plant-cbam-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

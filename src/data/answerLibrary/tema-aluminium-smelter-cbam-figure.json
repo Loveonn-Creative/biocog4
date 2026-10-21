@@ -1,0 +1,61 @@
+{
+  "slug": "tema-aluminium-smelter-cbam-figure",
+  "q": "What CBAM figure should an EU buyer ask for on aluminium from Tema?",
+  "title": "Tema aluminium smelter: CBAM figure",
+  "short": "Direct emissions only: anode carbon consumed, perfluorocarbons from anode effects, and fuel for casting. A smelter running only part of its potlines should report per tonne actually produced in the period, because fixed loads spread over fewer tonnes.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "The Ghanaian aluminium smelter, traders and EU buyers of its metal",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "Anode consumption per tonne.",
+        "Perfluorocarbons from anode effects.",
+        "Fuel for holding furnaces and casting."
+      ]
+    },
+    {
+      "h": "Part load",
+      "p": [
+        "Anode effects and heat losses per tonne can be higher when a smelter restarts or runs few potlines. Report the period and lines operating."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported, not charged. Power from hydro and gas gives a lower indirect figure than coal based smelters, which buyers may value."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Mozal aluminium",
+      "to": "/answers/mozal-aluminium-smelter-cbam-figure"
+    },
+    {
+      "label": "Alumina is not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    },
+    {
+      "label": "Ghana grid factor",
+      "to": "/answers/ghana-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

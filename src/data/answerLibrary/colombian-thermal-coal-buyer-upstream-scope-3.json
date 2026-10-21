@@ -1,0 +1,58 @@
+{
+  "slug": "colombian-thermal-coal-buyer-upstream-scope-3",
+  "q": "How does a power or cement plant count upstream emissions of Colombian thermal coal?",
+  "title": "Colombian coal: upstream Scope 3",
+  "short": "Add mining diesel and electricity, mine methane, rail to port and sea freight, per tonne of coal received. Colombian export coal comes mostly from large open pit mines, so the IPCC surface mining default of about 1.2 cubic metres of methane per tonne applies when the mine gives no data.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Power plants, cement makers and traders buying thermal coal from Colombia",
+  "sections": [
+    {
+      "h": "The pieces",
+      "ul": [
+        "Mining: diesel for trucks and shovels, electricity.",
+        "Methane: surface mining 0.3 to 2.0 cubic metres per tonne, 1.2 average (IPCC 2006).",
+        "Rail to the port and ship loading.",
+        "Sea freight to your port."
+      ]
+    },
+    {
+      "h": "Where it goes",
+      "p": [
+        "Burning the coal is your Scope 1. Everything before it arrives is Scope 3, category 3, fuel and energy related activities."
+      ]
+    },
+    {
+      "h": "Better data",
+      "p": [
+        "Ask the trader which mine and port the cargo came from, and the voyage distance."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Opencast mine methane",
+      "to": "/answers/opencast-coal-mine-methane-and-diesel"
+    },
+    {
+      "label": "Coal rail freight",
+      "to": "/answers/coal-rail-freight-mine-to-plant-emissions"
+    },
+    {
+      "label": "Captive coal power category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

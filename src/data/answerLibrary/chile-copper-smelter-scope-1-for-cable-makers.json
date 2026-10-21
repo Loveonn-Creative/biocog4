@@ -1,0 +1,57 @@
+{
+  "slug": "chile-copper-smelter-scope-1-for-cable-makers",
+  "q": "What should a cable maker ask a Chilean copper smelter about its Scope 1?",
+  "title": "Chilean copper smelter: Scope 1 data",
+  "short": "Ask for fuel burnt in smelting and converting, carbon in fluxes and reductants, and how sulphur captured as acid was handled, per tonne of anode or cathode. Smelting concentrate releases relatively little CO2 itself; fuel and power drive most of the figure.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cable and wire makers buying copper anode or cathode from Chilean smelters",
+  "sections": [
+    {
+      "h": "Direct sources",
+      "ul": [
+        "Natural gas, diesel or fuel oil for furnaces and converters.",
+        "Coal or coke used as reductant.",
+        "Flux carbonates, if any."
+      ]
+    },
+    {
+      "h": "Electricity and acid",
+      "p": [
+        "Electricity for refining is Scope 2 for the smelter. Sulphuric acid made from off gas is a co product; ask how emissions were split."
+      ]
+    },
+    {
+      "h": "For the cable maker",
+      "p": [
+        "All of it is your Scope 3, category 1. Ask for the year and boundary with the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "EU cable maker and Chilean copper",
+      "to": "/answers/eu-cable-maker-asks-chilean-copper-footprint"
+    },
+    {
+      "label": "Copper smelter acid allocation",
+      "to": "/answers/dahej-copper-smelter-sulphuric-acid-allocation"
+    },
+    {
+      "label": "Copper cable footprint",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

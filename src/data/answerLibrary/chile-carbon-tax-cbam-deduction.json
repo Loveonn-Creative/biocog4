@@ -1,0 +1,57 @@
+{
+  "slug": "chile-carbon-tax-cbam-deduction",
+  "q": "Can a Chilean exporter deduct Chile's green tax from CBAM?",
+  "title": "Chile's green tax and CBAM",
+  "short": "Only for CBAM goods, and only for tax actually paid on the emissions behind them, with proof and independent certification. Chile's tax, about US$5 per tonne on large emitters, mostly hits power and mining, and copper is not a CBAM good, so few exports qualify.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Chilean producers of steel, cement or fertilisers selling to the EU",
+  "sections": [
+    {
+      "h": "Who it applies to",
+      "p": [
+        "Large stationary sources above the law's thresholds pay per tonne of CO2. Check the current rate and thresholds."
+      ]
+    },
+    {
+      "h": "What counts",
+      "ul": [
+        "Tax paid on the installation's emissions, per tonne of goods exported.",
+        "Not offsets used to reduce the bill.",
+        "Certified by an independent person."
+      ]
+    },
+    {
+      "h": "Copper",
+      "p": [
+        "Copper cathode is outside CBAM, so there is nothing to deduct from. Copper buyers ask for footprints for their own reporting instead."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Argentina's carbon tax",
+      "to": "/answers/argentina-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Colombia's carbon tax",
+      "to": "/answers/colombia-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Chile grid factor",
+      "to": "/answers/chile-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

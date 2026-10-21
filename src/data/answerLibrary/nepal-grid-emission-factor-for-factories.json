@@ -1,0 +1,63 @@
+{
+  "slug": "nepal-grid-emission-factor-for-factories",
+  "q": "What grid emission factor should a factory in Nepal use?",
+  "title": "Nepal grid factor for suppliers",
+  "short": "Almost all of Nepal's domestic power is hydro, so its grid factor is very low in the wet season. In the dry season Nepal imports electricity from India, whose grid is coal heavy. Use the official figure for the year and say how imports are treated.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cement plants, factories and exporters in Nepal reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Nepal.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Imports from India in dry months raise the effective factor for that period. Some reporters weight imports at the Indian factor, 0.710 kg CO2 per kWh on CEA v21.0."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    },
+    {
+      "h": "Generators",
+      "p": [
+        "Diesel generators run during load shedding are Scope 1. Keep fuel logs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "CEA vs IEA grid factor",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    },
+    {
+      "label": "Bangladesh grid factor",
+      "to": "/answers/bangladesh-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Nepal cement plants",
+      "to": "/answers/nepal-cement-plant-coal-kiln-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

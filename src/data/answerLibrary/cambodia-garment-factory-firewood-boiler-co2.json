@@ -1,0 +1,57 @@
+{
+  "slug": "cambodia-garment-factory-firewood-boiler-co2",
+  "q": "How does a Cambodian garment factory count emissions from a firewood boiler?",
+  "title": "Cambodian garment boiler: firewood CO2",
+  "short": "Report the CO2 from burning wood separately as biogenic, and count the methane and nitrous oxide in Scope 1. Brands increasingly ask where the wood comes from, because wood from cleared forest does not deliver the saving a sustainable supply does. Weigh the wood; do not estimate it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Garment and footwear factories in Cambodia running wood or biomass fired boilers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Wood bought, by weight, with moisture if known.",
+        "Supplier and source of the wood.",
+        "Steam or hours run, to check efficiency."
+      ]
+    },
+    {
+      "h": "The split",
+      "p": [
+        "Biogenic CO2 from wood is shown outside the Scope 1 total under the GHG Protocol. Methane and nitrous oxide from combustion are counted in it."
+      ]
+    },
+    {
+      "h": "What brands check",
+      "p": [
+        "Where the wood comes from and whether supply is sustainable. Without evidence, some brands treat it as a risk, not a saving."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Sri Lankan apparel biomass boilers",
+      "to": "/answers/sri-lanka-apparel-biomass-boiler-co2"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Firewood by quintal",
+      "to": "/answers/firewood-by-quintal-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

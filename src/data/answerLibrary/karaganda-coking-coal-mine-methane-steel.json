@@ -1,0 +1,57 @@
+{
+  "slug": "karaganda-coking-coal-mine-methane-steel",
+  "q": "How much mine methane comes with coking coal from Karaganda underground mines?",
+  "title": "Karaganda coking coal: mine methane",
+  "short": "Karaganda coking coal comes from deep underground mines, which release far more methane than open pits. Without mine data, IPCC Tier 1 gives 18 cubic metres per tonne, with a range of 10 to 25, plus about 2.5 after mining. Ask for ventilation measurements.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Steel plants and coke makers buying coking coal from the Karaganda basin",
+  "sections": [
+    {
+      "h": "The default",
+      "ul": [
+        "Underground mining: 10 to 25 cubic metres per tonne, 18 average (IPCC 2006).",
+        "Post mining: about 2.5 cubic metres per tonne.",
+        "One cubic metre weighs about 0.67 kg."
+      ]
+    },
+    {
+      "h": "Measured is better",
+      "p": [
+        "Gassy mines monitor ventilation air and degasification. A figure from those records is more accurate than the default."
+      ]
+    },
+    {
+      "h": "Where it goes",
+      "p": [
+        "Scope 3 for a steel plant buying the coal. Scope 1 if your group runs the mine, as some integrated steel groups do."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Jharia mine methane",
+      "to": "/answers/jharia-coking-coal-mine-methane-scope-3"
+    },
+    {
+      "label": "Temirtau steel",
+      "to": "/answers/temirtau-steel-exporter-cbam-figure"
+    },
+    {
+      "label": "Moatize coking coal",
+      "to": "/answers/moatize-coking-coal-buyer-mine-methane"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

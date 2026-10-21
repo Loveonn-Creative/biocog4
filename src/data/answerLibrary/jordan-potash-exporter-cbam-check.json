@@ -1,0 +1,57 @@
+{
+  "slug": "jordan-potash-exporter-cbam-check",
+  "q": "Is potash from Jordan covered by CBAM?",
+  "title": "Jordanian potash: CBAM check",
+  "short": "No. Potassium chloride sits under CN 3104, which is not on the CBAM list, so EU imports carry no CBAM obligation. Buyers may still ask for a footprint per tonne, built from the energy used in evaporation, refining and drying at the Dead Sea works.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Potash producers in Jordan and EU fertiliser blenders and distributors",
+  "sections": [
+    {
+      "h": "Covered fertilisers",
+      "ul": [
+        "Nitrogen fertilisers under 3102: covered.",
+        "Mixed fertilisers with nitrogen under 3105: covered.",
+        "Potash under 3104: not covered."
+      ]
+    },
+    {
+      "h": "Blends",
+      "p": [
+        "A blend that contains nitrogen falls under 3105 and is covered, including its potash share. Check the CN code of what is actually shipped."
+      ]
+    },
+    {
+      "h": "Footprint anyway",
+      "p": [
+        "Fuel and power per tonne, and freight to the port. Buyers use it for their Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Aqaba DAP",
+      "to": "/answers/aqaba-dap-exporter-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

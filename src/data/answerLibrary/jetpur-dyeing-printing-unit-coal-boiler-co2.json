@@ -1,0 +1,57 @@
+{
+  "slug": "jetpur-dyeing-printing-unit-coal-boiler-co2",
+  "q": "How does a Jetpur dyeing and printing unit count CO2 from its boiler?",
+  "title": "Jetpur dyeing unit: boiler CO2",
+  "short": "Weigh the coal, lignite or wood burnt each month, apply its heating value and carbon content, and divide by metres or kg processed. Steam for dyeing and drying is usually most of the unit's footprint. Wood is reported as biogenic CO2, with methane and nitrous oxide counted.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Saree and fabric dyeing and printing units in Jetpur, Gujarat",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Fuel bought, by weight, with type.",
+        "Electricity bills.",
+        "Metres or kg processed each month."
+      ]
+    },
+    {
+      "h": "Per metre",
+      "p": [
+        "Fuel CO2 plus electricity times 0.710 kg CO2 per kWh (CEA v21.0), divided by metres processed."
+      ]
+    },
+    {
+      "h": "Effluent",
+      "p": [
+        "A common effluent plant's power and treatment emissions may be billed to you. Ask for your share."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Surat processing house fuel",
+      "to": "/answers/surat-processing-house-fuel-per-metre"
+    },
+    {
+      "label": "Tiruppur firewood boilers",
+      "to": "/answers/tiruppur-dyeing-unit-firewood-boiler-emissions"
+    },
+    {
+      "label": "Coal vs gas vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
