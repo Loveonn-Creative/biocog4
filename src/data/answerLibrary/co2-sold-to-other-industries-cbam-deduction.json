@@ -1,0 +1,61 @@
+{
+  "slug": "co2-sold-to-other-industries-cbam-deduction",
+  "q": "Can a Jubail plant subtract CO2 it captures and sells to food or chemical makers from its CBAM figure?",
+  "title": "Captured CO2 sold on: CBAM treatment",
+  "short": "Usually not. CBAM, following EU ETS rules, deducts CO2 only when it is transferred for permanent geological storage or bound in products that keep it permanently. CO2 sold for drinks, food, urea or methanol is released again, so it still counts as emitted by the plant that captured it.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Petrochemical and fertiliser plants with carbon capture units and their EU buyers",
+  "sections": [
+    {
+      "h": "When CO2 can be subtracted",
+      "ul": [
+        "Transferred to a permitted geological storage site.",
+        "Chemically bound in a product that keeps it permanently under normal use, as defined in EU rules."
+      ]
+    },
+    {
+      "h": "When it cannot",
+      "ul": [
+        "Food and drink grade CO2.",
+        "CO2 used to make urea, methanol or other fuels and chemicals that release it later."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Metered quantities of CO2 captured and transferred, the receiving company, and its use. Even when no deduction applies, buyers value the record as evidence of lower process emissions elsewhere."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, fuel and electricity invoices into a dated, fingerprinted record per site and keeps lab reports and production logs beside them, so each figure can be traced to its documents.",
+  "links": [
+    {
+      "label": "UAE blue ammonia captured CO2",
+      "to": "/answers/uae-blue-ammonia-captured-co2-cbam"
+    },
+    {
+      "label": "Egypt urea plant figure",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "Jubail exports and CBAM",
+      "to": "/answers/jubail-petrochemical-exports-which-need-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "EUR-Lex, EU law",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

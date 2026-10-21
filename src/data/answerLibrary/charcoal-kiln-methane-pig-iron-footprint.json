@@ -1,0 +1,65 @@
+{
+  "slug": "charcoal-kiln-methane-pig-iron-footprint",
+  "q": "Does methane from making charcoal count in the carbon footprint of pig iron?",
+  "title": "Charcoal making methane in pig iron footprint",
+  "short": "In a product footprint, yes. Carbonising wood in kilns releases methane, which is not biogenic CO2 and has a high warming effect, so it belongs in the cradle to gate figure. It sits outside the CBAM boundary of the pig iron plant, because the charcoal is made elsewhere and bought in.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Pig iron producers using charcoal, and buyers building cradle to gate figures",
+  "sections": [
+    {
+      "h": "Where it sits",
+      "ul": [
+        "CBAM figure of the pig iron: direct emissions at the blast furnace installation only.",
+        "Product footprint under ISO 14067: upstream charcoal production, including kiln methane, is included.",
+        "Corporate Scope 3 of the pig iron maker: purchased goods, Category 1."
+      ]
+    },
+    {
+      "h": "How to estimate it",
+      "p": [
+        "Use the kiln operator's measurements where they exist. Otherwise use an emission factor per tonne of charcoal from the IPCC guidelines and convert methane with the AR6 warming potential for non fossil methane. Say which you used."
+      ]
+    },
+    {
+      "h": "How it falls",
+      "p": [
+        "Kilns that burn the smoke or recover gas emit much less methane than traditional brick kilns. Asking suppliers which kiln type they use is the first step."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into a dated, fingerprinted record and keeps each supplier's own figure beside the purchase it belongs to, so a Scope 3 total shows which numbers are primary data and which are estimates.",
+  "links": [
+    {
+      "label": "Eucalyptus charcoal records",
+      "to": "/answers/eucalyptus-charcoal-records-for-pig-iron-buyers"
+    },
+    {
+      "label": "Charcoal pig iron and CBAM",
+      "to": "/answers/charcoal-pig-iron-minas-gerais-cbam-zero"
+    },
+    {
+      "label": "Reporting biogenic CO2",
+      "to": "/answers/iso-14064-1-biogenic-co2-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

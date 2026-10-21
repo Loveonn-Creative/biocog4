@@ -1,0 +1,61 @@
+{
+  "slug": "kazakhstan-ets-carbon-price-cbam-deduction",
+  "q": "Can a Kazakh exporter's EU importer deduct the carbon price paid under Kazakhstan's emissions trading system?",
+  "title": "Kazakhstan ETS and CBAM deduction",
+  "short": "In principle yes, for the price effectively paid on the embedded emissions. In practice most Kazakh installations receive their allowances free and prices have been low, so the amount actually paid per tonne exported is usually small. The declarant needs proof of payment and an independent certification.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Kazakh ferroalloy, aluminium and steel exporters and their EU declarants",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Allowances bought at auction or on the market and surrendered for the installation's emissions.",
+        "Only the share attributable to the exported goods."
+      ]
+    },
+    {
+      "h": "What does not",
+      "ul": [
+        "Allowances received free.",
+        "Any compensation or rebate linked to the system."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "The allowance purchase and surrender records, the installation's verified emissions, and a certification of the amount attributable to the goods by a person independent of the operator and the importer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Vietnam pilot market and CBAM",
+      "to": "/answers/vietnam-carbon-market-pilot-cbam-deduction"
+    },
+    {
+      "label": "Kazakh ferrochrome CBAM figure",
+      "to": "/answers/aktobe-ferrochrome-smelter-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "UNFCCC, national inventory and NDC documents",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

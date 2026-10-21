@@ -1,0 +1,62 @@
+{
+  "slug": "saraburi-portland-limestone-cement-cbam",
+  "q": "Does Portland limestone cement from Saraburi have a lower CBAM figure than ordinary Portland cement?",
+  "title": "Saraburi limestone cement and CBAM",
+  "short": "Yes, because it contains less clinker per tonne. The CBAM figure for cement adds the clinker's embedded emissions in proportion to the clinker used, plus grinding fuel and electricity, so replacing clinker with ground limestone lowers it almost in line with the clinker ratio.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement producers in Saraburi and their export customers",
+  "sections": [
+    {
+      "h": "How the figure is built",
+      "ol": [
+        "Clinker share per tonne of cement, from the production records.",
+        "Times the clinker's embedded emissions per tonne, including calcination and kiln fuel.",
+        "Plus direct emissions from any fuel used in drying or grinding.",
+        "Plus indirect emissions from grinding electricity, which count for cement."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Monthly clinker, gypsum and limestone additions per cement type, and the product standard each type meets. A buyer will check that the clinker ratio you claim matches the product."
+      ]
+    },
+    {
+      "h": "Limits",
+      "p": [
+        "The figure falls with the clinker share but the clinker itself is unchanged. Kiln fuel and electricity factors still decide most of it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Lower clinker ratio and CBAM cost",
+      "to": "/answers/turkish-cement-lower-clinker-ratio-cbam-cost"
+    },
+    {
+      "label": "PPC vs OPC carbon footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "are-steel-rails-and-wheels-covered-by-cbam",
+  "q": "Are steel rails and railway wheels covered by CBAM?",
+  "title": "Are steel rails and wheels covered by CBAM?",
+  "short": "Rails and track material under CN 7302 are CBAM goods. Railway wheels, axles and other parts of rolling stock under chapter 86 are not in Annex I, so they need no CBAM data, even though they are made of steel. Their buyers may still ask for a product footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Rail and wheel makers, including those at Bhilai and Durgapur, and EU rail buyers",
+  "sections": [
+    {
+      "h": "Covered",
+      "ul": [
+        "Rails, check rails, switch blades and crossing pieces under 7302.",
+        "Sleepers and fishplates of steel under 7302.",
+        "Steel billets and blooms used to make them."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "Wheels, axles, bogies and other parts of railway vehicles under 8607.",
+        "Complete wagons and coaches under chapter 86."
+      ]
+    },
+    {
+      "h": "Figure for rails",
+      "p": [
+        "For an integrated plant, rails carry the plant's direct emissions from coke, iron and steelmaking divided across products. Exporters should give the EU buyer a verified figure for the year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Are steel forgings covered?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Temirtau integrated steel figure",
+      "to": "/answers/temirtau-steel-exporter-cbam-figure"
+    },
+    {
+      "label": "CBAM: blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

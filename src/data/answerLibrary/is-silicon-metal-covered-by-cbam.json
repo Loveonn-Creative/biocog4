@@ -1,0 +1,51 @@
+{
+  "slug": "is-silicon-metal-covered-by-cbam",
+  "q": "Is silicon metal made in Minas Gerais covered by CBAM?",
+  "title": "Is silicon metal covered by CBAM?",
+  "short": "No. Silicon metal, declared under CN 2804 69, is not in Annex I; the only chapter 28 element covered is hydrogen. Ferrosilicon, under 7202 21 and 7202 29, is covered. Aluminium, chemical and solar buyers may still ask silicon makers for a product footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Silicon metal and ferrosilicon producers in Brazil and their EU customers",
+  "sections": [
+    {
+      "h": "Covered and not covered",
+      "ul": [
+        "Not covered: silicon metal and high purity silicon under 2804 61 and 2804 69.",
+        "Covered: ferrosilicon under 7202 21 and 7202 29, charged on direct emissions.",
+        "Covered: hydrogen under 2804 10 00."
+      ]
+    },
+    {
+      "h": "What buyers still ask",
+      "p": [
+        "Aluminium alloy makers, silicone producers and solar wafer makers count purchased silicon in Scope 3. They want a figure per tonne that includes reductant carbon, electrodes and electricity, and evidence for any charcoal counted as biomass."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Biomass reductant in ferrosilicon",
+      "to": "/answers/samalaju-ferrosilicon-woodchip-reductant-cbam"
+    },
+    {
+      "label": "Charcoal pig iron and CBAM",
+      "to": "/answers/charcoal-pig-iron-minas-gerais-cbam-zero"
+    },
+    {
+      "label": "Is silico-manganese covered?",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

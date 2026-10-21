@@ -1,0 +1,60 @@
+{
+  "slug": "high-carbon-vs-low-carbon-ferrochrome-cbam",
+  "q": "Do high carbon and low carbon ferrochrome have different CBAM figures?",
+  "title": "High vs low carbon ferrochrome in CBAM",
+  "short": "Yes. They are declared under different CN codes and made differently. High carbon ferrochrome is reduced with coke in electric furnaces. Low carbon ferrochrome is usually refined with silicon from ferrosilicochrome, so its figure includes that precursor. Report each grade separately.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Ferrochrome producers making several grades and EU buyers comparing suppliers",
+  "sections": [
+    {
+      "h": "CN codes",
+      "ul": [
+        "7202 41: ferrochrome containing more than 4 percent carbon by weight.",
+        "7202 49: other ferrochrome, including low and medium carbon grades."
+      ]
+    },
+    {
+      "h": "Why the figures differ",
+      "p": [
+        "High carbon ferrochrome's emissions come mainly from coke and electrodes. Low carbon grades use a silicon bearing precursor made in another furnace, whose embedded emissions are added, plus lime and the refining step."
+      ]
+    },
+    {
+      "h": "What buyers should ask",
+      "p": [
+        "The grade, the CN code and the figure for that grade. A single site average across grades hides the difference and is likely to be challenged."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Kazakh ferrochrome CBAM figure",
+      "to": "/answers/aktobe-ferrochrome-smelter-cbam-figure"
+    },
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Odisha ferrochrome captive power",
+      "to": "/answers/odisha-ferrochrome-captive-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "brazil-merchant-pig-iron-exporter-buyer-data",
+  "q": "What carbon data should a Brazilian merchant pig iron exporter prepare for EU and US buyers?",
+  "title": "Brazilian pig iron: buyer carbon data",
+  "short": "For EU buyers, a verified CBAM figure per tonne under CN 7201, because pig iron is a covered good. For US and other mills, a cradle to gate product figure they can use in their own footprint and declarations. Both start from the same records: reductant, fuel, ore and production.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Merchant pig iron exporters in Minas Gerais and Espirito Santo",
+  "sections": [
+    {
+      "h": "EU buyers",
+      "ul": [
+        "Direct embedded emissions per tonne, by installation, for each year.",
+        "The monitoring method and a verifier's report.",
+        "Biomass evidence if charcoal carbon is rated zero."
+      ]
+    },
+    {
+      "h": "US and other buyers",
+      "ul": [
+        "A cradle to gate figure per tonne, including electricity, ore and charcoal making.",
+        "The share of charcoal versus coke and the plantation evidence behind it.",
+        "The method used, such as ISO 14067."
+      ]
+    },
+    {
+      "h": "Why it pays",
+      "p": [
+        "Electric arc furnace mills charge pig iron to lift metal quality, and its figure flows into their steel. A low, well documented number is a reason to buy from you."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Pig iron and sponge iron in CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Foundry charge mix: pig iron vs scrap",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "Brescia mill buying pig iron",
+      "to": "/answers/brescia-mill-buys-imported-pig-iron-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

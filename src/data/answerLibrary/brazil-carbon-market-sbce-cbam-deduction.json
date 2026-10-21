@@ -1,0 +1,55 @@
+{
+  "slug": "brazil-carbon-market-sbce-cbam-deduction",
+  "q": "Will Brazil's regulated carbon market let pig iron and steel exporters reduce CBAM costs?",
+  "title": "Brazil's carbon market and CBAM",
+  "short": "Only once a carbon price is actually paid. Brazil's law creating its emissions trading system phases it in over several years, starting with reporting before any allowance cost. Until a producer pays for its emissions, there is nothing for the EU declarant to deduct.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Brazilian steel, pig iron and aluminium exporters and their EU declarants",
+  "sections": [
+    {
+      "h": "How the deduction works",
+      "p": [
+        "Article 9 of the CBAM Regulation lets the declarant deduct the carbon price effectively paid in the country of origin for the embedded emissions, after free allocation and any rebate."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "ul": [
+        "Start the monitoring and reporting the Brazilian system will require; it matches what CBAM needs.",
+        "Keep fuel, reductant and production records per installation.",
+        "When a price applies, keep proof of payment and the share attributable to exported goods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Charcoal pig iron and CBAM",
+      "to": "/answers/charcoal-pig-iron-minas-gerais-cbam-zero"
+    },
+    {
+      "label": "Brazilian pig iron buyer data",
+      "to": "/answers/brazil-merchant-pig-iron-exporter-buyer-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "UNFCCC, national inventory and NDC documents",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

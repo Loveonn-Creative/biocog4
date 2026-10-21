@@ -1,0 +1,63 @@
+{
+  "slug": "mexico-carbon-tax-cbam-deduction",
+  "q": "Can a Mexican steel or cement exporter deduct Mexico's carbon tax under CBAM?",
+  "title": "Mexico carbon tax and CBAM deduction",
+  "short": "Possibly, for the part actually paid on fuels behind the exported goods. Mexico's federal carbon tax applies to fossil fuels but not to natural gas, so a gas based mill has little to claim. Some states also tax emissions. The EU declarant needs proof of payment and an independent certification.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Mexican steel, cement and fertiliser exporters and their EU declarants",
+  "sections": [
+    {
+      "h": "What can count",
+      "ul": [
+        "Federal carbon tax paid on fuels such as coal, petroleum coke and fuel oil used in production.",
+        "State level emission taxes paid by the installation.",
+        "Not the pilot emissions trading system, which imposed no cost."
+      ]
+    },
+    {
+      "h": "What reduces it",
+      "p": [
+        "Any rebate, exemption or credit against the tax, and the share of fuel that went into goods not exported to the EU."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "ul": [
+        "Fuel invoices showing the tax.",
+        "Payment proof for state taxes.",
+        "A certification of the amount attributable to the exported goods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Monterrey gas DRI steel",
+      "to": "/answers/monterrey-gas-dri-steel-cbam-figure"
+    },
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "UNFCCC, national inventory and NDC documents",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

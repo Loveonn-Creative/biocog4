@@ -1,0 +1,61 @@
+{
+  "slug": "angul-aluminium-smelter-ccts-target",
+  "q": "Does an Angul aluminium smelter have an emission intensity target under India's CCTS?",
+  "title": "Angul smelter and India's CCTS target",
+  "short": "Only if the plant is named. Aluminium is among the sectors with emission intensity targets under the 2025 target rules, and coverage is plant by plant: a smelter has a target only if its name and location appear in the notification, with a baseline and a target per tonne for each year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium smelters and refineries in Odisha and other Indian states",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the latest Greenhouse Gases Emission Intensity Target Rules notification for aluminium and any amendment.",
+        "Search for the plant name and location.",
+        "Note the baseline year, product unit and target for each compliance year."
+      ]
+    },
+    {
+      "h": "If listed",
+      "p": [
+        "The plant must meet its intensity target or buy carbon credit certificates for the shortfall. Monthly fuel, power, anode and production records feed the monitoring report, and captive power use is central to the number."
+      ]
+    },
+    {
+      "h": "CCTS and CBAM differ",
+      "p": [
+        "CCTS targets cover the plant's intensity under Indian rules, while the CBAM figure for aluminium counts direct emissions only. Keep both calculations from the same records."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads anode, fuel and electricity invoices into a dated, fingerprinted record per site, so a buyer can see which inputs sit behind each figure. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Odisha smelter captive coal power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Is a paper mill covered by CCTS?",
+      "to": "/answers/is-a-paper-mill-covered-by-ccts"
+    },
+    {
+      "label": "If a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, Carbon Credit Trading Scheme notices",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

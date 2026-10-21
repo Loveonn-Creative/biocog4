@@ -1,0 +1,62 @@
+{
+  "slug": "monterrey-glass-container-supplier-carbon-data",
+  "q": "What carbon data do EU drinks brands ask Monterrey glass container makers for?",
+  "title": "Monterrey glass containers: buyer carbon data",
+  "short": "Glass is not a CBAM good, but brands counting Scope 3 ask for a figure per tonne or per bottle. It covers furnace fuel, CO2 released from soda ash, limestone and dolomite, electricity, and the cullet share, which lowers both fuel and process emissions.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Container glass plants in Nuevo Leon supplying beer, spirits and food brands",
+  "sections": [
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Natural gas or fuel oil burnt in the furnace.",
+        "Process CO2 from carbonates in the batch.",
+        "Electricity, including any electric boosting.",
+        "Packaging and transport if the buyer asks for delivered figures."
+      ]
+    },
+    {
+      "h": "Why cullet matters",
+      "p": [
+        "Recycled glass melts at a lower temperature and carries no carbonate, so every point of cullet lowers both fuel and process CO2. State the cullet share with the figure."
+      ]
+    },
+    {
+      "h": "Give two units",
+      "p": [
+        "Per tonne of glass for comparison, and per container using its weight, so the brand can fit it into its product footprint."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, fuel and electricity invoices into a dated, fingerprinted record per site and keeps lab reports and production logs beside them, so each figure can be traced to its documents.",
+  "links": [
+    {
+      "label": "Container glass furnace emissions",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Glass batch carbonates",
+      "to": "/answers/firozabad-glass-batch-carbonates-process-co2"
+    },
+    {
+      "label": "Is glassware covered by CBAM?",
+      "to": "/answers/is-glassware-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

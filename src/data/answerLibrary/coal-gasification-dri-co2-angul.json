@@ -1,0 +1,61 @@
+{
+  "slug": "coal-gasification-dri-co2-angul",
+  "q": "How is CO2 counted for DRI made with syngas from coal gasification, as at Angul?",
+  "title": "Coal gasification DRI: counting CO2",
+  "short": "By carbon mass balance across the gasifiers and the DRI shaft: carbon in the coal fed in, minus carbon leaving in DRI, char, tar or sold by-products, times 44/12. CO2 stripped from the syngas and vented still counts. It can be subtracted only if sent to permanent geological storage.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Gas based and syngas based DRI plants in Odisha and their steel buyers",
+  "sections": [
+    {
+      "h": "Where the carbon goes",
+      "ul": [
+        "Into syngas, which reduces the ore and is partly burnt for heating.",
+        "Into CO2 removed by the acid gas removal unit, usually vented.",
+        "Into DRI as carbon content, and into ash, char and tar."
+      ]
+    },
+    {
+      "h": "What CBAM counts",
+      "p": [
+        "The DRI's direct emissions are all CO2 released from the gasification and reduction steps within the installation. The vented CO2 stream is often a large single source and must be metered or balanced."
+      ]
+    },
+    {
+      "h": "Compared with a coal kiln",
+      "p": [
+        "Gasification and shaft reduction can use coal more efficiently than a rotary kiln, but the figure depends on the coal, the carbon left in the DRI and what happens to the CO2 stream. Work it out from your own data rather than assuming it is lower."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Coal based sponge iron CO2",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Monterrey gas DRI steel",
+      "to": "/answers/monterrey-gas-dri-steel-cbam-figure"
+    },
+    {
+      "label": "CBAM: blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

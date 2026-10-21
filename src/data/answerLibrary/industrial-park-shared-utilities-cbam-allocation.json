@@ -1,0 +1,61 @@
+{
+  "slug": "industrial-park-shared-utilities-cbam-allocation",
+  "q": "How does a smelter in a shared industrial park split shared steam, oxygen and power for CBAM?",
+  "title": "Shared park utilities in a CBAM figure",
+  "short": "Draw the installation boundary first, then use metered flows. Measurable heat or steam bought from a park utility counts in your direct emissions at the utility's emission factor; electricity bought from the park is indirect. Allocate shared kilns or lines by metered input, not by sales value.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Smelters and steel mills in shared parks such as IMIP in Morowali, IWIP in Weda Bay and similar zones",
+  "sections": [
+    {
+      "h": "Boundary first",
+      "p": [
+        "The installation is the site under your operational control that makes the goods. A park's power plant or steam boiler run by another company is outside it, even if it is next door."
+      ]
+    },
+    {
+      "h": "How each flow is treated",
+      "ul": [
+        "Imported steam or hot water: counted as direct emissions, using the supplier's emission factor for that heat.",
+        "Electricity: indirect, which for iron and steel goods is not charged.",
+        "Oxygen or nitrogen from a park plant: its electricity is indirect; no direct emissions are added."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep meter readings for each flow, the supplier's statement of the fuel and efficiency behind its steam, and the method you used to split shared equipment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Morowali captive power and CBAM",
+      "to": "/answers/morowali-captive-coal-power-ferro-nickel-cbam"
+    },
+    {
+      "label": "CHP emissions allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Ferro-nickel CO2 per tonne",
+      "to": "/answers/rkef-ferro-nickel-co2-per-tonne-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

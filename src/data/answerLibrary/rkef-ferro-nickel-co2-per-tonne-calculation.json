@@ -1,0 +1,64 @@
+{
+  "slug": "rkef-ferro-nickel-co2-per-tonne-calculation",
+  "q": "How do you work out CO2 per tonne of ferro-nickel from an RKEF line?",
+  "title": "Ferro-nickel CO2 per tonne from RKEF",
+  "short": "Use a carbon mass balance. Add the carbon in coal, coke and fuel fed to the dryers, rotary kilns and electric furnaces, subtract the carbon leaving in the alloy and slag, multiply by 44/12 and divide by tonnes of alloy. State the result per tonne of product and per tonne of contained nickel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "RKEF plant managers and sustainability teams at nickel pig iron and ferro-nickel smelters",
+  "sections": [
+    {
+      "h": "The balance",
+      "ol": [
+        "Weigh every carbon input: kiln coal, reductant coal or coke, electrode paste, fuel oil or gas.",
+        "Get lab carbon content for each input and for the alloy, slag and any dust that leaves the site.",
+        "CO2 = (carbon in minus carbon out) x 44/12. Add CO2 from carbonates if limestone or dolomite is charged.",
+        "Divide by tonnes of alloy produced in the same period."
+      ]
+    },
+    {
+      "h": "Why two units",
+      "p": [
+        "Nickel content in nickel pig iron and ferro-nickel varies widely between plants and grades. A stainless mill compares suppliers per tonne of nickel units, while CBAM reports per tonne of the good as declared. Give both, with the nickel assay behind the conversion."
+      ]
+    },
+    {
+      "h": "Records an auditor will open",
+      "ul": [
+        "Weighbridge or belt scale records for each input.",
+        "Lab certificates for carbon content, by lot or by month.",
+        "Production and assay records for the alloy."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Ferro-alloy coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    },
+    {
+      "label": "Electrode paste CO2",
+      "to": "/answers/ferro-alloy-electrode-paste-co2-per-tonne"
+    },
+    {
+      "label": "Morowali captive power and CBAM",
+      "to": "/answers/morowali-captive-coal-power-ferro-nickel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "indonesia-carbon-price-cbam-deduction-nickel",
+  "q": "Can an Indonesian nickel smelter's importer deduct a carbon price paid in Indonesia under CBAM?",
+  "title": "Indonesia carbon price and CBAM deduction",
+  "short": "Only for a carbon price actually paid on the emissions embedded in the goods. Indonesia's emissions trading so far covers power plants, and its carbon tax has been delayed, so a nickel or stainless producer usually has nothing to claim. If that changes, the payment must be proven and net of free allowances.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indonesian ferro-nickel and stainless exporters and their EU declarants",
+  "sections": [
+    {
+      "h": "What Article 9 allows",
+      "p": [
+        "An authorised declarant can reduce the certificates owed by the carbon price effectively paid in the country of origin for the embedded emissions, after any rebate, free allocation or other compensation."
+      ]
+    },
+    {
+      "h": "Why it rarely applies today",
+      "ul": [
+        "The power sector trading scheme puts the price on the power plant, and electricity is not in the CBAM figure for steel or ferro-alloys.",
+        "No carbon price is charged on the kiln and furnace emissions of nickel processing at present."
+      ]
+    },
+    {
+      "h": "Keep watching",
+      "p": [
+        "If Indonesia brings industrial plants into its scheme or starts the carbon tax, keep the official rate notice, your payment proof and an independent certification of the amount attributable to exported goods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Vietnam pilot market and CBAM",
+      "to": "/answers/vietnam-carbon-market-pilot-cbam-deduction"
+    },
+    {
+      "label": "Morowali captive power and CBAM",
+      "to": "/answers/morowali-captive-coal-power-ferro-nickel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "UNFCCC, national inventory and NDC documents",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

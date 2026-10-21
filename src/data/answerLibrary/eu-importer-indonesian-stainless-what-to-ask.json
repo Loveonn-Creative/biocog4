@@ -1,0 +1,69 @@
+{
+  "slug": "eu-importer-indonesian-stainless-what-to-ask",
+  "q": "What should an EU importer ask an Indonesian stainless steel supplier for CBAM?",
+  "title": "Indonesian stainless: what EU importers ask",
+  "short": "Ask for the installation details and production route, embedded emissions per tonne by CN code, the precursor values used, the monitoring method and the verification report. Without verified actual data you must use default values, which are set high, so the request is worth making early in the year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers and authorised CBAM declarants buying stainless slab, coil or bar from Indonesia",
+  "sections": [
+    {
+      "h": "The request list",
+      "ol": [
+        "Installation name, location and operator, and whether nickel making is on the same site.",
+        "Production route: RKEF with AOD or another route.",
+        "Specific embedded emissions per tonne for each CN code shipped, for the reporting year.",
+        "Precursor values: nickel pig iron, ferro-chromium, slab or coil bought in.",
+        "The monitoring methodology document and a verifier's report."
+      ]
+    },
+    {
+      "h": "What to check",
+      "ul": [
+        "The figure covers direct emissions only; captive power should not be in the CBAM number.",
+        "Biomass or captured CO2 claims come with the evidence the rules require.",
+        "The period matches your import year."
+      ]
+    },
+    {
+      "h": "If data is late",
+      "p": [
+        "Declare with default values and keep the supplier correspondence. You cannot swap in actual data later without a verified report."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a supplier's emissions statement beside the invoices and shipping documents it belongs to, dated and fingerprinted, so an importer can show which figure was used for which consignment.",
+  "links": [
+    {
+      "label": "Morowali stainless and CBAM",
+      "to": "/answers/morowali-nickel-pig-iron-stainless-cbam"
+    },
+    {
+      "label": "Stainless coil precursors",
+      "to": "/answers/indonesian-stainless-cold-rolled-coil-precursors"
+    },
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

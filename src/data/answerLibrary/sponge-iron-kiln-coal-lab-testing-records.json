@@ -1,0 +1,64 @@
+{
+  "slug": "sponge-iron-kiln-coal-lab-testing-records",
+  "q": "Which coal and char lab tests does a sponge iron kiln need for an auditable CO2 figure?",
+  "title": "Lab tests for a sponge iron CO2 figure",
+  "short": "Fixed carbon or total carbon of each coal lot, carbon in the dolochar and in the sponge iron, and carbonate in the dolomite. With those and the weighbridge tonnages, the carbon mass balance can be checked by a verifier. Default IPCC values do not reflect the wide spread of Indian coal quality.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sponge iron plants in Chhattisgarh, Odisha and Jharkhand",
+  "sections": [
+    {
+      "h": "The tests",
+      "ul": [
+        "Coal: proximate analysis and, at least monthly, ultimate analysis for total carbon.",
+        "Dolochar and accretion: carbon content, sampled when removed.",
+        "Sponge iron: total carbon or metallisation and carbon from routine quality tests.",
+        "Dolomite: carbonate or loss on ignition."
+      ]
+    },
+    {
+      "h": "How often",
+      "p": [
+        "Test each coal lot or each week, whichever is more frequent, and keep sampling records. A verifier will check that test frequency matches the quantities used."
+      ]
+    },
+    {
+      "h": "Records beside the tests",
+      "ul": [
+        "Weighbridge slips for coal, ore and dolomite.",
+        "Production and dolochar quantities.",
+        "The lab's accreditation or the in-house method used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Coal based sponge iron CO2",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Raipur sponge iron in CBAM",
+      "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

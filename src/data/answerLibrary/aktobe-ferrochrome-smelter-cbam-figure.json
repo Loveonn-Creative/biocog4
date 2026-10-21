@@ -1,0 +1,62 @@
+{
+  "slug": "aktobe-ferrochrome-smelter-cbam-figure",
+  "q": "What goes into the CBAM figure for ferrochrome from an Aktobe or Aksu smelter?",
+  "title": "Kazakh ferrochrome: the CBAM figure",
+  "short": "Direct emissions from the carbon in coke, coal and electrodes, plus any fuel burnt for pre-heating or drying, worked out by mass balance and divided by tonnes of alloy. Power from Kazakhstan's coal plants is indirect and not charged for ferro-alloys, though steel buyers will ask for it separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferrochrome producers in Aktobe and Pavlodar regions and EU stainless mills buying from them",
+  "sections": [
+    {
+      "h": "Inputs to balance",
+      "ul": [
+        "Coke and coal used as reductant in the electric furnaces.",
+        "Electrode paste.",
+        "Fuel for chrome ore pellet sintering or pre-heating kilns, if inside the installation.",
+        "Carbon leaving in alloy, slag and dust."
+      ]
+    },
+    {
+      "h": "CN codes",
+      "p": [
+        "High carbon ferrochrome is declared under 7202 41 and other ferrochrome under 7202 49. Both are iron and steel goods, charged on direct emissions."
+      ]
+    },
+    {
+      "h": "What a stainless mill will add",
+      "p": [
+        "Electricity per tonne, because the coal heavy grid makes it the largest share of the product footprint even though CBAM leaves it out."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "High vs low carbon ferrochrome",
+      "to": "/answers/high-carbon-vs-low-carbon-ferrochrome-cbam"
+    },
+    {
+      "label": "Kazakhstan ETS and CBAM",
+      "to": "/answers/kazakhstan-ets-carbon-price-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

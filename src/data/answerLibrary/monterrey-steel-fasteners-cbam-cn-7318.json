@@ -1,0 +1,62 @@
+{
+  "slug": "monterrey-steel-fasteners-cbam-cn-7318",
+  "q": "Are steel screws, bolts and nuts made in Monterrey covered by CBAM?",
+  "title": "Monterrey steel fasteners and CBAM",
+  "short": "Yes. Screws, bolts, nuts and washers of iron or steel under CN 7318 are CBAM goods. Their figure is the embedded emissions of the wire rod or bar you bought, in proportion to the tonnes used, plus your own direct emissions from heat treatment and any gas fired furnaces, divided by tonnes of fasteners.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Fastener makers in Nuevo Leon supplying EU automotive and construction buyers",
+  "sections": [
+    {
+      "h": "The figure",
+      "ol": [
+        "Tonnes of wire rod or bar consumed, including the share lost as scrap and offcuts.",
+        "Times the supplier's embedded emissions per tonne, or the default value if none is given.",
+        "Plus direct emissions from heat treatment, galvanising burners and other fuel use.",
+        "Divided by tonnes of fasteners shipped."
+      ]
+    },
+    {
+      "h": "What is not counted",
+      "p": [
+        "Electricity for cold heading and threading is not charged for steel goods."
+      ]
+    },
+    {
+      "h": "Ask your mill",
+      "p": [
+        "Most of the number comes from the steel. Ask your wire rod mill for its embedded emissions per tonne for the year, from its monitoring report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Bajio auto parts and CBAM goods",
+      "to": "/answers/bajio-auto-parts-shipment-cbam-goods"
+    },
+    {
+      "label": "Monterrey gas DRI steel",
+      "to": "/answers/monterrey-gas-dri-steel-cbam-figure"
+    },
+    {
+      "label": "Are steel forgings covered?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

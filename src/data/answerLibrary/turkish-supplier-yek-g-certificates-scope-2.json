@@ -1,0 +1,61 @@
+{
+  "slug": "turkish-supplier-yek-g-certificates-scope-2",
+  "q": "Can a Turkish supplier use YEK-G certificates to show renewable electricity to European buyers?",
+  "title": "YEK-G certificates for Turkish suppliers",
+  "short": "Yes, in market based Scope 2, if the certificates are retired in your name for the year's consumption and meet the GHG Protocol Scope 2 Quality Criteria. YEK-G is Turkey's own guarantee of origin system. Report the location based figure with the grid factor beside it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto parts and textile suppliers in Kocaeli, Bursa and Istanbul asked for renewable electricity evidence",
+  "sections": [
+    {
+      "h": "What to keep",
+      "ul": [
+        "The retirement statement in your company name, with generation period and plant.",
+        "Your metered consumption for the same period.",
+        "Proof the same certificates were not sold or claimed elsewhere."
+      ]
+    },
+    {
+      "h": "What buyers check",
+      "p": [
+        "That the certificates are from the Turkish market where you consume, match the year, and cover the amount claimed. Many car makers also accept a direct supply contract from a renewable plant."
+      ]
+    },
+    {
+      "h": "Report both",
+      "p": [
+        "Give location based and market based figures, clearly labelled, so the buyer can use the one its own reporting requires."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Turkey grid factor",
+      "to": "/answers/turkey-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Malaysian RECs and Scope 2",
+      "to": "/answers/malaysia-renewable-energy-certificates-scope-2"
+    },
+    {
+      "label": "Annual vs hourly renewable matching",
+      "to": "/answers/data-centre-24-7-clean-power-vs-annual-match"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IRENA, renewable capacity and power statistics",
+      "url": "https://www.irena.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

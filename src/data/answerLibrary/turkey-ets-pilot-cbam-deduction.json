@@ -1,0 +1,55 @@
+{
+  "slug": "turkey-ets-pilot-cbam-deduction",
+  "q": "Will Turkey's emissions trading system reduce CBAM costs for Turkish exporters?",
+  "title": "Turkey's ETS and CBAM deduction",
+  "short": "Only to the extent a carbon price is actually paid. Turkey's climate law sets up an emissions trading system that starts with a pilot phase, and allowances in early phases are expected to be largely free. Free allowances give nothing to deduct; paid allowances can count, with proof.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Turkish steel, cement, aluminium and fertiliser exporters and their EU declarants",
+  "sections": [
+    {
+      "h": "What can be deducted",
+      "p": [
+        "Under Article 9, the EU declarant can claim the carbon price effectively paid in Turkey for the embedded emissions, net of free allocation and any compensation."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "ul": [
+        "Align the monitoring plan required by the Turkish system with your CBAM monitoring, so one data set serves both.",
+        "Keep allowance purchase and surrender records by installation.",
+        "Arrange an independent certification of the amount attributable to EU exports."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Turkish cement CBAM cost",
+      "to": "/answers/turkish-cement-cbam-cost-per-tonne-2026"
+    },
+    {
+      "label": "Turkish rebar CBAM cost",
+      "to": "/answers/turkish-rebar-cbam-cost-per-tonne-2026"
+    },
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

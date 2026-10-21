@@ -1,0 +1,55 @@
+{
+  "slug": "pavlodar-aluminium-smelter-cbam-direct-emissions",
+  "q": "What counts in the CBAM figure for primary aluminium from a Pavlodar smelter?",
+  "title": "Pavlodar aluminium: CBAM direct emissions",
+  "short": "Only direct emissions: CO2 from anode consumption and perfluorocarbons from anode effects, plus fuel used in casting and anode baking inside the installation. Power from Ekibastuz coal plants is indirect and not charged for aluminium, even though it is the largest part of the metal's footprint.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Primary aluminium producers in Kazakhstan and EU buyers of their ingot and billet",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Net anode consumption per tonne of aluminium and its carbon content.",
+        "Anode effect frequency and duration, converted to CF4 and C2F6 with AR6 warming potentials.",
+        "Gas or oil used in casthouse furnaces and any anode baking on site."
+      ]
+    },
+    {
+      "h": "What stays out of CBAM",
+      "p": [
+        "Electricity for electrolysis, alumina and transport. Buyers counting Scope 3 will still ask for the electricity figure, so keep it beside the CBAM number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads anode, fuel and electricity invoices into a dated, fingerprinted record per site, so a buyer can see which inputs sit behind each figure. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Korba aluminium direct emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Alumina is Scope 3, not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    },
+    {
+      "label": "Smelter anode CO2",
+      "to": "/answers/jharsuguda-smelter-anode-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

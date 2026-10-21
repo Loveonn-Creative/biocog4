@@ -1,0 +1,61 @@
+{
+  "slug": "malaysia-renewable-energy-certificates-scope-2",
+  "q": "Can a Malaysian factory use renewable energy certificates to lower its Scope 2 figure?",
+  "title": "Malaysian RECs and market based Scope 2",
+  "short": "Yes, in market based Scope 2, if the certificates meet the GHG Protocol Scope 2 Quality Criteria: they come from the same market, match the year, are retired in your name and are not counted twice. Your location based figure, using the grid factor, still has to be reported beside it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Malaysian manufacturers asked by buyers for renewable electricity evidence",
+  "sections": [
+    {
+      "h": "What the certificate must show",
+      "ul": [
+        "The generating plant, its technology and location in Malaysia.",
+        "The generation period, matching your reporting year.",
+        "Retirement in your company's name for your consumption."
+      ]
+    },
+    {
+      "h": "Report both figures",
+      "p": [
+        "The Scope 2 Guidance requires both methods where market instruments exist. Buyers usually ask which one you gave them, so label each clearly."
+      ]
+    },
+    {
+      "h": "Other routes",
+      "p": [
+        "A direct supply contract from a renewable plant, or rooftop solar you own, also lowers market based Scope 2. Solar you own reduces the electricity you buy, which lowers both figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Malaysia grid factor by region",
+      "to": "/answers/malaysia-grid-emission-factor-by-region"
+    },
+    {
+      "label": "Bangladesh garment rooftop solar",
+      "to": "/answers/bangladesh-garment-factory-rooftop-solar-scope-2"
+    },
+    {
+      "label": "Annual vs hourly renewable matching",
+      "to": "/answers/data-centre-24-7-clean-power-vs-annual-match"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IRENA, renewable capacity and power statistics",
+      "url": "https://www.irena.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

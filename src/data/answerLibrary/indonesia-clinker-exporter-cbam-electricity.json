@@ -1,0 +1,58 @@
+{
+  "slug": "indonesia-clinker-exporter-cbam-electricity",
+  "q": "How much does electricity add to the CBAM figure for clinker and cement exported from Indonesia?",
+  "title": "Indonesian clinker: electricity in CBAM",
+  "short": "Cement and clinker are charged on indirect emissions too, so the electricity used per tonne, times the grid or plant factor the rules allow, is added to direct emissions. On Java's coal heavy grid or a coal captive plant this adds noticeably to the figure, more than for the same plant on a cleaner grid.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Clinker and cement exporters in Java and Sumatra and their EU or other CBAM regime buyers",
+  "sections": [
+    {
+      "h": "The steps",
+      "ol": [
+        "Metered electricity per tonne of clinker: raw mill, kiln drive, fans and coal mill.",
+        "For cement, add grinding electricity per tonne of cement.",
+        "Multiply by the emission factor the CBAM rules allow: usually the default for the country, or an actual factor for a captive plant or direct supply contract with evidence.",
+        "Add to the direct emissions per tonne."
+      ]
+    },
+    {
+      "h": "Where it can fall",
+      "ul": [
+        "Waste heat recovery power used on site replaces grid power.",
+        "Efficient grinding mills and fans cut kWh per tonne.",
+        "A documented direct supply from a renewable plant can lower the factor applied."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Kocaeli cement electricity in CBAM",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    },
+    {
+      "label": "Egypt clinker exporter",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    },
+    {
+      "label": "Captive coal power: Scope 1 or 2",
+      "to": "/answers/indonesia-captive-coal-power-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "gebze-steel-wire-drawing-unit-cbam-figure",
+  "q": "How does a steel wire drawing unit in Gebze or Kocaeli work out its CBAM figure?",
+  "title": "Steel wire drawing unit: CBAM figure",
+  "short": "Steel wire under CN 7217 is a CBAM good. Add the wire rod's embedded emissions, in proportion to the tonnes consumed including losses, to your own direct emissions from annealing, galvanising and any fuel fired furnaces, then divide by tonnes of wire. Drawing machines run on electricity, which is not charged.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wire drawing, cold heading wire and galvanised wire makers in the Marmara region",
+  "sections": [
+    {
+      "h": "The figure",
+      "ol": [
+        "Tonnes of wire rod consumed in the period.",
+        "Times the rod mill's embedded emissions per tonne, or the default value.",
+        "Plus gas or LPG burnt in annealing and zinc baths.",
+        "Divided by tonnes of wire produced."
+      ]
+    },
+    {
+      "h": "Losses",
+      "p": [
+        "Scale, crop ends and rejects mean more rod goes in than wire comes out. Use the actual consumption, not the shipped weight, so the precursor share is right."
+      ]
+    },
+    {
+      "h": "Coatings",
+      "p": [
+        "Zinc is not a CBAM good, but the fuel used to heat the zinc bath counts in your direct emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Monterrey steel fasteners",
+      "to": "/answers/monterrey-steel-fasteners-cbam-cn-7318"
+    },
+    {
+      "label": "Vanderbijlpark coated steel",
+      "to": "/answers/vanderbijlpark-coated-steel-zinc-cbam"
+    },
+    {
+      "label": "Turkish rebar CBAM cost",
+      "to": "/answers/turkish-rebar-cbam-cost-per-tonne-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
