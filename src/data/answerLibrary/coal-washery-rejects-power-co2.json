@@ -1,0 +1,53 @@
+{
+  "slug": "coal-washery-rejects-power-co2",
+  "q": "How do I count CO2 from burning coal washery rejects in a power plant?",
+  "title": "Washery rejects as fuel: CO2",
+  "short": "The same way as coal: tonnes burnt times carbon content times 44/12. Rejects carry much more ash and much less energy than run of mine coal, so the CO2 per tonne is lower but the CO2 per kWh is usually higher. Use a lab analysis of the rejects you burn, not a coal default.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fluidised bed power plants near Korba, Talcher and Dhanbad burning rejects, and the units buying their power",
+  "sections": [
+    {
+      "h": "Calculation",
+      "ul": [
+        "Tonnes burnt from weighbridge records.",
+        "Carbon content or gross calorific value from lab tests on each lot.",
+        "CO2 = tonnes x carbon fraction x 44/12, or energy x a coal factor matched to the rejects."
+      ]
+    },
+    {
+      "h": "Why per kWh can rise",
+      "p": [
+        "High ash lowers boiler efficiency and raises auxiliary power, so more fuel carbon is burnt for each kWh sent out. Calculate per kWh from your own heat rate."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "The plant burning the rejects reports the CO2 as Scope 1. The washery that sells them does not count it again."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal power CO2 per kWh",
+      "to": "/answers/coal-power-plant-co2-per-kwh-heat-rate"
+    },
+    {
+      "label": "Opencast mine methane",
+      "to": "/answers/opencast-coal-mine-methane-and-diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

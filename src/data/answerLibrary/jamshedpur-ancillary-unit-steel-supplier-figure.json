@@ -1,0 +1,61 @@
+{
+  "slug": "jamshedpur-ancillary-unit-steel-supplier-figure",
+  "q": "Which steel carbon figure should a Jamshedpur ancillary unit use for steel bought from the integrated mill?",
+  "title": "Ancillary units: the mill's steel figure",
+  "short": "Use the mill's own product figure for the grade and year you bought, from its product footprint, EPD or CBAM data, and keep the document. Only fall back to a published average if the mill will not share one, and label it. Steel is usually most of an ancillary part's footprint.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fabrication, forging, pressing and machining ancillaries in Adityapur, Gamharia and Jamshedpur buying steel from integrated mills",
+  "sections": [
+    {
+      "h": "What to ask the mill or stockist",
+      "ul": [
+        "kg CO2e per tonne for the product: coil, plate, bar or section.",
+        "Year, boundary and route.",
+        "Whether any low carbon claim rests on certificates and how they are tracked."
+      ]
+    },
+    {
+      "h": "Through a stockist",
+      "p": [
+        "If you buy from a service centre, ask for mill test certificates and the mill's figure. Add cutting and transport separately."
+      ]
+    },
+    {
+      "h": "Then add your own",
+      "p": [
+        "Your electricity, fuel and process scrap, split by parts made. Process scrap sent back to the mill is reported as waste, not subtracted."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads steel, electricity and fuel invoices into a dated, fingerprinted record, so the steel tonnes and supplier figure behind a part trace back to the documents.",
+  "links": [
+    {
+      "label": "Green steel certificates",
+      "to": "/answers/green-steel-certificate-scope-3"
+    },
+    {
+      "label": "Mill certificate CO2 for a forged part",
+      "to": "/answers/steel-mill-certificate-co2-for-forged-part"
+    },
+    {
+      "label": "Jamshedpur steel for EU buyers",
+      "to": "/answers/jamshedpur-kalinganagar-steel-cbam-data-for-eu-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

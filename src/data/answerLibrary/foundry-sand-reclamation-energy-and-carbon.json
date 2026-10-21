@@ -1,0 +1,63 @@
+{
+  "slug": "foundry-sand-reclamation-energy-and-carbon",
+  "q": "Does reclaiming foundry sand lower or raise a foundry's carbon footprint?",
+  "title": "Foundry sand reclamation: carbon effect",
+  "short": "Usually lower overall, but not on site. Mechanical reclamation adds electricity and thermal reclamation adds gas or oil to your Scope 1 and 2, while it cuts new sand mining, transport and landfill, which sit in Scope 3. Count both sides with your own figures before claiming a saving.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Foundries in Kolhapur, Belgaum, Coimbatore and Rajkot considering mechanical or thermal sand reclamation",
+  "sections": [
+    {
+      "h": "What goes up",
+      "ul": [
+        "Electricity for attrition and classifying units x 0.710 kg CO2 per kWh.",
+        "Gas, LPG or oil for thermal reclamation that burns off resin binders.",
+        "Dust collection power."
+      ]
+    },
+    {
+      "h": "What goes down",
+      "ul": [
+        "New silica sand bought, and its quarrying and drying.",
+        "Truck trips for new sand and for waste sand to landfill.",
+        "Disposal fees, which often pay for the unit."
+      ]
+    },
+    {
+      "h": "Report it fairly",
+      "p": [
+        "Show the on site increase and the upstream and waste decrease separately, with the tonnes behind each. Buyers distrust a single net figure without the parts."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Sea coal in green sand",
+      "to": "/answers/sea-coal-in-green-sand-co2-scope-1"
+    },
+    {
+      "label": "Foundry per tonne good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Kolhapur castings buyer data",
+      "to": "/answers/kolhapur-foundry-castings-buyer-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

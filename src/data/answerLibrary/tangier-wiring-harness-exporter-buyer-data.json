@@ -1,0 +1,61 @@
+{
+  "slug": "tangier-wiring-harness-exporter-buyer-data",
+  "q": "What product carbon data should a Moroccan wiring harness exporter prepare for EU car makers?",
+  "title": "Moroccan harnesses: product carbon data",
+  "short": "A cradle to gate figure per harness or per kilogram, with copper, PVC and connector shares shown separately, plus your plant's electricity per harness. Copper usually dominates, so a real figure from your wire or rod supplier matters most. Use the same allocation rule for every harness family.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wiring harness plants in Tangier, Kenitra, Meknes and Tetouan supplying European car makers",
+  "sections": [
+    {
+      "h": "Bill of materials",
+      "ul": [
+        "Copper conductor: kg per harness x the supplier's figure per kg.",
+        "Insulation and sheathing: PVC or other polymers.",
+        "Connectors, terminals and tapes from supplier data or labelled averages."
+      ]
+    },
+    {
+      "h": "Your plant",
+      "p": [
+        "Cutting, crimping and assembly power, split by harness family by labour or machine hours, using Morocco's grid factor."
+      ]
+    },
+    {
+      "h": "Transport",
+      "p": [
+        "Inbound copper and components and outbound trucks to Spain or ferries to Europe, from freight records."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Wiring harness footprint",
+      "to": "/answers/wiring-harness-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Copper cathode per tonne",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

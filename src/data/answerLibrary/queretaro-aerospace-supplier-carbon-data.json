@@ -1,0 +1,64 @@
+{
+  "slug": "queretaro-aerospace-supplier-carbon-data",
+  "q": "What carbon data do aircraft and engine makers ask Queretaro aerospace suppliers for?",
+  "title": "Queretaro aerospace: customer carbon asks",
+  "short": "Scope 1 and 2 by site with year and method, a reduction target, and more often a footprint per part with material, machining and treatment shares. Build them from Mexico grid bills, gas for heat treatment and surface finishing, and metal supplier figures, and keep every number traceable.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Machining, composites, harness and surface treatment suppliers in the Queretaro aerospace cluster",
+  "sections": [
+    {
+      "h": "Typical asks",
+      "ul": [
+        "Scope 1 and 2 per site.",
+        "Renewable share and contracts.",
+        "Targets aligned with the customer's programme.",
+        "Part level footprints for key items."
+      ]
+    },
+    {
+      "h": "Main sources",
+      "ul": [
+        "Electricity for machining and clean rooms at Mexico's grid factor.",
+        "Natural gas for heat treatment, anodising lines and ovens.",
+        "Titanium, aluminium, nickel alloys and composites bought."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "p": [
+        "No material figures and no split between parts. Start with the top parts by spend or weight, then widen."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Buy to fly and carbon",
+      "to": "/answers/aerospace-part-buy-to-fly-ratio-carbon"
+    },
+    {
+      "label": "Maquiladora: who reports",
+      "to": "/answers/maquiladora-shelter-who-reports-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

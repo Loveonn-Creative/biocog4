@@ -1,0 +1,61 @@
+{
+  "slug": "hooghly-jute-mill-energy-per-tonne",
+  "q": "How do I work out the carbon footprint per tonne of hessian or sacking from a jute mill?",
+  "title": "Jute mill: carbon per tonne of goods",
+  "short": "Add the mill's electricity and any boiler fuel over a period, convert them with the right factors, and divide by tonnes of finished goods. Grid power at 0.710 kg CO2 per kWh usually dominates, since spinning and weaving are electric. Raw jute farming is a separate, upstream figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Jute mills along the Hooghly and in Andhra Pradesh, and buyers of jute bags and sacking",
+  "sections": [
+    {
+      "h": "Your own share",
+      "ul": [
+        "Electricity kWh from bills x 0.710 kg CO2 per kWh.",
+        "Coal, wood or oil for boilers used in batching, finishing or the canteen, with their factors.",
+        "Diesel for gensets and forklifts."
+      ]
+    },
+    {
+      "h": "Divide properly",
+      "p": [
+        "Use tonnes of finished hessian, sacking and yarn sold, and keep yarn sold to others separate. If the mill makes very different products, split by machine hours or weight in each department."
+      ]
+    },
+    {
+      "h": "Upstream",
+      "p": [
+        "Raw jute growing and retting add farm emissions. Report them separately, labelled as an estimate unless the supplier gives figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, plus fuel invoices, so each tonne figure traces back to the bills behind it.",
+  "links": [
+    {
+      "label": "Jute bag vs plastic",
+      "to": "/answers/jute-bag-carbon-footprint-vs-plastic"
+    },
+    {
+      "label": "Allocating by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    },
+    {
+      "label": "Spinning mill per kg yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

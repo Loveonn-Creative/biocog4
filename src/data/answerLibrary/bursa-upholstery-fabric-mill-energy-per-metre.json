@@ -1,0 +1,61 @@
+{
+  "slug": "bursa-upholstery-fabric-mill-energy-per-metre",
+  "q": "How do I calculate the carbon footprint per metre of upholstery fabric from a Bursa mill?",
+  "title": "Upholstery fabric: carbon per metre",
+  "short": "Add weaving or knitting electricity and the natural gas used in dyeing, stentering and finishing, convert them to CO2, and divide by metres finished. Then add the yarn's footprint from your spinner. Heavy upholstery and car seat fabrics weigh more per metre, so give a per kilogram figure too.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Upholstery, curtain and automotive textile mills in Bursa and Inegol, and furniture and car seat buyers asking them",
+  "sections": [
+    {
+      "h": "Your own share",
+      "ul": [
+        "Electricity for looms, warping and compressors, at Turkey's grid factor.",
+        "Natural gas for boilers, stenters and dryers from gas bills.",
+        "Coatings, backings and flame retardant chemicals as upstream estimates."
+      ]
+    },
+    {
+      "h": "Yarn and fibre",
+      "p": [
+        "Polyester, polypropylene or cotton yarn from the spinner's figure. Yarn is often the larger share, so ask for it."
+      ]
+    },
+    {
+      "h": "Per metre and per kilogram",
+      "p": [
+        "Buyers compare fabrics by both. Give the grams per square metre with the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Bursa textile buyer data",
+      "to": "/answers/bursa-textile-mill-buyer-carbon-data"
+    },
+    {
+      "label": "Turkey grid factor",
+      "to": "/answers/turkey-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Dye house per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

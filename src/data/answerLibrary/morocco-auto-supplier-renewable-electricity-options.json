@@ -1,0 +1,59 @@
+{
+  "slug": "morocco-auto-supplier-renewable-electricity-options",
+  "q": "How can an automotive supplier in Morocco get renewable electricity that counts in market based Scope 2?",
+  "title": "Morocco: renewable power for suppliers",
+  "short": "Three common routes: a private supply contract from a wind or solar producer under Morocco's renewable energy law, rooftop or on site solar under the self generation rules, or certificates where available. Each counts only with a contract, metered delivery and proof the attributes are not claimed twice.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Car part, harness and textile suppliers in Tangier, Kenitra and Casablanca asked by European buyers to raise renewable share",
+  "sections": [
+    {
+      "h": "Options",
+      "ul": [
+        "Private supply: renewable producers can sell to customers connected at medium, high or very high voltage.",
+        "Self generation: on site solar, with rules on grid connection and surplus.",
+        "Certificates: check that they meet Scope 2 quality criteria for your market."
+      ]
+    },
+    {
+      "h": "Evidence a buyer accepts",
+      "ul": [
+        "The contract naming your site.",
+        "Monthly delivered kWh.",
+        "Attribute retirement or a clause that the producer will not sell them elsewhere."
+      ]
+    },
+    {
+      "h": "Check the rules",
+      "p": [
+        "Eligibility, voltage levels and grid fees change with new regulations, so check the current rules before signing."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and solar generation records into a dated, fingerprinted record, so the kWh behind a market based claim trace back to the documents.",
+  "links": [
+    {
+      "label": "Moroccan steel renewable PPA",
+      "to": "/answers/morocco-steel-mill-renewable-ppa-cbam-effect"
+    },
+    {
+      "label": "What to put in a PPA",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    },
+    {
+      "label": "Morocco grid factor",
+      "to": "/answers/morocco-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

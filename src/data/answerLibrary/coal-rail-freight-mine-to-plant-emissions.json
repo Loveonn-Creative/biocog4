@@ -1,0 +1,57 @@
+{
+  "slug": "coal-rail-freight-mine-to-plant-emissions",
+  "q": "How do I estimate emissions from moving coal by rail from the mine to my plant?",
+  "title": "Coal by rail: freight emissions",
+  "short": "Multiply tonnes moved by the rail distance and a rail freight factor, or better, use the railway's own energy data if you can get it. Electric traction uses grid power, so its factor follows the grid. Report it as Scope 3 if the railway or the coal company runs the trains.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Power plants, cement plants and steel units receiving coal by rake from Korba, Talcher and other coalfields",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ul": [
+        "Tonnes received from rake records.",
+        "Distance from the railway receipt or route.",
+        "Tonne kilometres x a rail factor from a recognised source, labelled with its year."
+      ]
+    },
+    {
+      "h": "Electric or diesel",
+      "p": [
+        "Most Indian main lines are electrified, so the energy is grid power. Diesel locomotives on branch lines use fuel. A factor that ignores the traction type can be badly off."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Rail freight paid by you is Scope 3 Category 4. Merry go round systems owned and run by a power plant are its own Scope 1 and 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Ferro alloy rail freight",
+      "to": "/answers/kazakhstan-ferroalloy-rail-freight-scope-3"
+    },
+    {
+      "label": "Truck freight factor India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Hired trucks: which scope",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "maquiladora-shelter-who-reports-emissions",
+  "q": "Who reports the emissions of a plant run under a Mexican shelter or maquiladora arrangement?",
+  "title": "Mexican shelter plants: who reports",
+  "short": "It depends on the boundary rule each company uses. Under operational control, the foreign client that runs the production usually reports the plant's Scope 1 and 2, even if the shelter company is the legal importer and employer. The shelter reports its own offices and services. Agree it in writing so nothing is counted twice or missed.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Foreign manufacturers operating in Mexico through shelter or IMMEX arrangements, and the shelter companies serving them",
+  "sections": [
+    {
+      "h": "The rule",
+      "ul": [
+        "GHG Protocol lets a company use equity share, financial control or operational control, applied consistently.",
+        "Under operational control, whoever introduces and runs the operating policies reports the plant.",
+        "The other party treats it as Scope 3 if relevant."
+      ]
+    },
+    {
+      "h": "Typical split",
+      "p": [
+        "The client controls production, equipment and energy use, so it reports the plant. The shelter company reports its own administration, staff transport it runs, and other services."
+      ]
+    },
+    {
+      "h": "Put it in the contract",
+      "p": [
+        "Name who reports which emissions, who holds the bills and how data is shared each year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Bajio auto parts and CBAM",
+      "to": "/answers/bajio-auto-parts-shipment-cbam-goods"
+    },
+    {
+      "label": "Queretaro aerospace supplier data",
+      "to": "/answers/queretaro-aerospace-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

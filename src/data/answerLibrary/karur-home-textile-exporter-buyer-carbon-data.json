@@ -1,0 +1,62 @@
+{
+  "slug": "karur-home-textile-exporter-buyer-carbon-data",
+  "q": "What carbon data do EU and US buyers ask Karur home textile exporters for?",
+  "title": "Karur home textiles: buyer carbon asks",
+  "short": "Usually three things: your factory's Scope 1 and 2 for the last year, the share from renewable power, and a footprint per product or per kilogram for the lines they buy. Many also send the Higg facility module. Build all three from the same electricity, fuel and dyeing records.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Bed linen, kitchen linen and curtain exporters in Karur and Erode, and their merchandisers",
+  "sections": [
+    {
+      "h": "Typical requests",
+      "ul": [
+        "Scope 1 and 2 totals with method and year.",
+        "Renewable share, often from own windmills or rooftop solar.",
+        "kg CO2e per kg or per piece for main styles.",
+        "Targets or a reduction plan."
+      ]
+    },
+    {
+      "h": "Where the numbers come from",
+      "p": [
+        "Electricity bills, boiler fuel for processing houses, diesel for gensets, and the yarn and fabric bought from mills. Processing is often outsourced, so ask job workers for their energy."
+      ]
+    },
+    {
+      "h": "Keep one source",
+      "p": [
+        "Use the same records for the brand questionnaire, Higg and any lender. Different numbers in different forms cause more trouble than a modest figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and job work invoices into a dated, fingerprinted record per factory, so the figures a buyer asks for trace back to the bills behind them.",
+  "links": [
+    {
+      "label": "Higg FEM energy data",
+      "to": "/answers/higg-fem-energy-and-emissions-data"
+    },
+    {
+      "label": "Own windmill Scope 2",
+      "to": "/answers/tamil-nadu-mill-own-windmill-scope-2"
+    },
+    {
+      "label": "Green loan for a Tamil Nadu mill",
+      "to": "/climate-intelligence/green-loan-textile-mill-tamil-nadu"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

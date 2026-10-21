@@ -1,0 +1,59 @@
+{
+  "slug": "carbon-fibre-composite-part-carbon-footprint",
+  "q": "How do I estimate the carbon footprint of a carbon fibre composite part?",
+  "title": "Carbon fibre parts: carbon footprint",
+  "short": "Start with the fibre, which is energy hungry to make and usually dominates; published life cycle studies give figures in the tens of kilograms of CO2e per kilogram of fibre, varying with the power behind it. Add resin, prepreg scrap, autoclave or oven energy, and tooling, using supplier data wherever possible.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Aerospace, automotive and sporting goods composite makers in Queretaro, Bengaluru, Hyderabad and Southeast Asia",
+  "sections": [
+    {
+      "h": "Material",
+      "ul": [
+        "Carbon fibre or prepreg: supplier's figure per kg, with year and boundary.",
+        "Resin and hardener.",
+        "Scrap and offcuts, often a large share of prepreg bought."
+      ]
+    },
+    {
+      "h": "Process",
+      "ul": [
+        "Autoclave or oven curing energy per cycle, split by parts in the load.",
+        "Clean room and freezer power for prepreg storage.",
+        "Trimming and finishing."
+      ]
+    },
+    {
+      "h": "Be careful",
+      "p": [
+        "Avoid a single literature number for fibre unless labelled as an estimate with its source; the spread between producers is wide."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads material, electricity and fuel invoices into a dated, fingerprinted record, so the quantities behind a composite part figure trace back to the documents.",
+  "links": [
+    {
+      "label": "Buy to fly and carbon",
+      "to": "/answers/aerospace-part-buy-to-fly-ratio-carbon"
+    },
+    {
+      "label": "Aluminium composite panel",
+      "to": "/answers/aluminium-composite-panel-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Queretaro aerospace supplier data",
+      "to": "/answers/queretaro-aerospace-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

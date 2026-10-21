@@ -1,0 +1,57 @@
+{
+  "slug": "truck-chassis-frame-parts-cbam-check",
+  "q": "Do truck chassis and frame parts exported to the EU need CBAM data?",
+  "title": "Truck frame parts: CBAM check",
+  "short": "Usually not, if they are declared as parts of motor vehicles under heading 8708, which is outside CBAM. Check each line: fasteners under 7318, structures under 7308 and other steel articles under 7326 are covered, so a mixed shipment may still need embedded emissions for some lines.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chassis, frame, bracket and axle part makers in Jamshedpur, Pune, Pithampur and Hosur exporting to EU truck makers",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Get the CN code your importer uses for each line.",
+        "Compare with Annex I of the CBAM Regulation.",
+        "Prepare embedded emissions only for covered lines."
+      ]
+    },
+    {
+      "h": "What a buyer still wants",
+      "p": [
+        "Truck makers ask for product footprints for their own Scope 3 and targets even when CBAM does not apply. Keep a per part figure ready."
+      ]
+    },
+    {
+      "h": "Keep the evidence",
+      "p": [
+        "Store the classification the importer used. If customs reclassifies a part into a covered heading, you will need data quickly."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your invoices into dated, fingerprinted records and its CBAM check flags which goods fall under the regulation. Senseible does not classify goods for customs or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Tractor parts CBAM check",
+      "to": "/answers/ludhiana-tractor-parts-exporter-cbam-check"
+    },
+    {
+      "label": "Fasteners CN 7318",
+      "to": "/answers/monterrey-steel-fasteners-cbam-cn-7318"
+    },
+    {
+      "label": "Tangier auto parts and CBAM",
+      "to": "/answers/tangier-med-auto-parts-which-need-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "vietnam-direct-ppa-factory-scope-2",
+  "q": "Can a factory in Vietnam lower its market based Scope 2 through a direct power purchase agreement?",
+  "title": "Vietnam direct PPA: Scope 2 effect",
+  "short": "Yes, if the contract carries the renewable attributes to your site. A 2024 decree allows direct power purchase from wind and solar producers, through a private line or through the national grid. Market based Scope 2 can count those kWh at zero with the contract and monthly delivery records; location based stays on the grid factor.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Large electronics, footwear, garment and furniture factories in Binh Duong, Dong Nai and northern industrial parks",
+  "sections": [
+    {
+      "h": "Two forms",
+      "ul": [
+        "Private line: the producer connects directly to your plant.",
+        "Through the grid: you buy from the producer via the utility, with settlement rules."
+      ]
+    },
+    {
+      "h": "What makes it count",
+      "ul": [
+        "Contract naming your site and the attributes.",
+        "Monthly delivered kWh matched to consumption.",
+        "No double sale of certificates for the same power."
+      ]
+    },
+    {
+      "h": "Check eligibility",
+      "p": [
+        "Consumption thresholds, voltage levels and fees are set in the rules and can change. Confirm with the current decree and your industrial park operator."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and supply statements into a dated, fingerprinted record, so the kWh behind a market based claim trace back to the documents.",
+  "links": [
+    {
+      "label": "Vietnam grid factor",
+      "to": "/answers/vietnam-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Physical vs virtual PPA",
+      "to": "/answers/physical-vs-virtual-ppa-india-scope-2"
+    },
+    {
+      "label": "What to put in a PPA",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

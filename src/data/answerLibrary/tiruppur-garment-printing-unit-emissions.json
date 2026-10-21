@@ -1,0 +1,61 @@
+{
+  "slug": "tiruppur-garment-printing-unit-emissions",
+  "q": "How do I calculate the carbon footprint of a garment printing unit per piece?",
+  "title": "Garment printing: carbon per piece",
+  "short": "Add the unit's electricity, mostly curing dryers and flash cure units, plus any gas used for curing, then divide by pieces printed. Ink and screen chemicals are a smaller upstream share. Plastisol inks need higher curing heat than water based ones, which shows up in the energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Screen and digital printing job workers in Tiruppur and the knitwear exporters asking them for figures",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity for conveyor dryers, flash cure units, compressors and lighting x 0.710 kg CO2 per kWh.",
+        "LPG or PNG if dryers are gas fired.",
+        "Inks, emulsions and cleaning solvents bought, as upstream estimates."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Divide by pieces printed in the same period. If prints differ a lot in area or colours, split by print area or by dryer passes."
+      ]
+    },
+    {
+      "h": "For your buyer",
+      "p": [
+        "Give the printing share separately from knitting, dyeing and stitching, so the garment figure shows where the emissions sit."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, plus fuel and ink invoices, so the per piece figure traces back to the bills.",
+  "links": [
+    {
+      "label": "Tiruppur knitwear per garment",
+      "to": "/answers/tiruppur-knitwear-carbon-per-garment"
+    },
+    {
+      "label": "Knitted fabric per kg",
+      "to": "/answers/knitted-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Printing ink footprint",
+      "to": "/answers/printing-ink-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

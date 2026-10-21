@@ -1,0 +1,58 @@
+{
+  "slug": "are-refined-petroleum-products-covered-by-cbam",
+  "q": "Are diesel, naphtha, jet fuel or polymers exported to the EU covered by CBAM?",
+  "title": "Refinery products and CBAM",
+  "short": "No. CBAM covers cement, iron and steel, aluminium, fertilisers, electricity and hydrogen. Refined fuels, naphtha and polymers are not on the list, so a refinery exporting them buys no certificates. Hydrogen sold as a product is covered, and the regulation asks the Commission to assess adding organic chemicals and polymers later.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Refineries and petrochemical exporters on India's west coast and their EU buyers",
+  "sections": [
+    {
+      "h": "What is covered today",
+      "ul": [
+        "Cement, iron and steel, aluminium, fertilisers (including ammonia), electricity and hydrogen, listed by CN code in Annex I.",
+        "Fuels, lubricants, naphtha and plastics in primary forms are not listed."
+      ]
+    },
+    {
+      "h": "Watch points",
+      "ul": [
+        "Hydrogen sold under CN 2804 10 00 is a CBAM good.",
+        "Ammonia or fertiliser made on the same site is covered.",
+        "The Commission has to report on extending scope, including organic chemicals and polymers, so check before each contract year."
+      ]
+    },
+    {
+      "h": "What buyers still ask for",
+      "p": [
+        "EU buyers reporting their own Scope 3 still ask for product footprints, even without CBAM. Keep a per product figure with its allocation method ready."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, feedstock and electricity invoices into dated, fingerprinted records per site, and its CBAM checks flag which of your goods fall under the regulation. Senseible does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Jubail petrochemical exports",
+      "to": "/answers/jubail-petrochemical-exports-which-need-cbam"
+    },
+    {
+      "label": "Hydrogen 50 tonne exemption",
+      "to": "/answers/antwerp-hydrogen-imports-cbam-50-tonne-exemption"
+    },
+    {
+      "label": "Refinery allocation",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
