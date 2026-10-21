@@ -1,0 +1,61 @@
+{
+  "slug": "chittorgarh-cement-plant-alternative-fuel-co2",
+  "q": "How does a Chittorgarh cement plant count CO2 from alternative fuels in the kiln?",
+  "title": "Chittorgarh cement: alternative fuel CO2",
+  "short": "Split each fuel into fossil and biomass carbon. Plastic rich refuse derived fuel is largely fossil, so its CO2 counts in Scope 1. Biomass such as agricultural residue is biogenic: report it separately, outside the fossil total. Use fuel tests, not supplier labels.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Chittorgarh and Nimbahera co processing waste and biomass",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Tonnes of each fuel fired.",
+        "Calorific value and carbon content tests.",
+        "Biomass share for mixed fuels."
+      ]
+    },
+    {
+      "h": "Effect on clinker",
+      "p": [
+        "Swapping coal for biomass lowers fossil CO2 per tonne of clinker. Calcination CO2 from limestone does not change."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Clinker and cement are CBAM goods. Biomass counts at zero only if it meets the EU sustainability criteria for biomass, so keep its origin records."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Biogenic CO2 reporting",
+      "to": "/answers/iso-14064-1-biogenic-co2-reporting"
+    },
+    {
+      "label": "Waste heat power in cement",
+      "to": "/answers/pakistan-cement-waste-heat-recovery-power"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "bhilwara-textile-mill-captive-thermal-power",
+  "q": "A Bhilwara textile mill runs its own coal power plant: how does that change its footprint?",
+  "title": "Bhilwara mills with captive coal power",
+  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg, so the comparison is worth making.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Spinning, weaving and processing mills in Bhilwara with captive thermal power",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Coal or lignite invoices with tonnes and GCV.",
+        "Units generated and units used by the mill.",
+        "Any power sold or wheeled to the grid."
+      ]
+    },
+    {
+      "h": "Per kWh check",
+      "ol": [
+        "Coal CO2 ÷ units generated = your own kg per kWh.",
+        "Compare with the grid factor, 0.710 on CEA v21.0.",
+        "Add open access solar or wind to see the mix."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Brands ask for footprint per kg of yarn or per metre of fabric. Captive coal often decides it, so show it separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Spinning mill per kg of yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    },
+    {
+      "label": "Captive coal power and category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Coal vs gas vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

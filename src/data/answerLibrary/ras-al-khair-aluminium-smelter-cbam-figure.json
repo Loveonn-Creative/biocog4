@@ -1,0 +1,62 @@
+{
+  "slug": "ras-al-khair-aluminium-smelter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for aluminium from Ras Al Khair?",
+  "title": "Ras Al Khair aluminium: the CBAM figure",
+  "short": "Embedded direct emissions per tonne: anode consumption, perfluorocarbons from anode effects and cast house fuel. For aluminium only direct emissions count toward the charge, so the gas power behind the smelter is reported but not charged. Ask for a verified per tonne figure by product.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and traders buying primary aluminium and products from Ras Al Khair",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "CO2 from anode carbon used in the pots.",
+        "CF4 and C2F6 from anode effects.",
+        "Fuel for casting and holding furnaces.",
+        "Bought anodes or alloying metals as precursors."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Smelting needs a lot of power and here it comes from gas. It must be reported, and buyers doing Scope 3 will count it."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "p": [
+        "A verified figure per tonne for the specific product, ingot, billet or rolled product, and the period it covers."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Sohar smelter gas power",
+      "to": "/answers/sohar-aluminium-smelter-gas-power-cbam"
+    },
+    {
+      "label": "Alumina is Scope 3, not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    },
+    {
+      "label": "Saudi grid factor",
+      "to": "/answers/saudi-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

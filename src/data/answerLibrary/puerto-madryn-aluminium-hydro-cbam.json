@@ -1,0 +1,61 @@
+{
+  "slug": "puerto-madryn-aluminium-hydro-cbam",
+  "q": "Does hydro power lower the CBAM figure for aluminium from Puerto Madryn?",
+  "title": "Puerto Madryn aluminium: hydro and CBAM",
+  "short": "Not the charge. For aluminium only direct emissions count toward CBAM: anode CO2, perfluorocarbons and cast house fuel. Hydro and wind power lower the reported indirect emissions and the Scope 3 footprint buyers see, which matters for low carbon contracts.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers and extruders buying Argentine primary aluminium",
+  "sections": [
+    {
+      "h": "What the charge covers",
+      "ul": [
+        "Anode carbon in the pots.",
+        "CF4 and C2F6 from anode effects.",
+        "Casting furnace fuel."
+      ]
+    },
+    {
+      "h": "Where power helps",
+      "p": [
+        "Buyers comparing footprints count power. A smelter on hydro and wind can show a much lower cradle to gate figure than one on coal."
+      ]
+    },
+    {
+      "h": "Mixed supply",
+      "p": [
+        "If part of the power comes from gas, ask for the share by year so the claim matches the supply."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Hydro aluminium claims",
+      "to": "/answers/samalaju-hydro-aluminium-low-carbon-claim"
+    },
+    {
+      "label": "Argentina grid factor",
+      "to": "/answers/argentina-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Argentina carbon tax",
+      "to": "/answers/argentina-carbon-tax-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

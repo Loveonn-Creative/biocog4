@@ -1,0 +1,61 @@
+{
+  "slug": "drc-copper-mine-diesel-vs-hydro-power",
+  "q": "A Katanga copper mine runs on hydro power and diesel: how does it count each?",
+  "title": "Katanga copper mines: hydro power and diesel",
+  "short": "Grid power in the DRC is almost all hydro, so its Scope 2 is low. Diesel for gensets, haul trucks and processing is Scope 1 at about 2.68 kg CO2 per litre. When the grid falls short and gensets run, diesel quickly becomes the largest number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Copper and cobalt mines and processors in Katanga and Lualaba",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Utility bills or meter readings for grid power.",
+        "Diesel invoices split by gensets and mobile fleet.",
+        "Tonnes of copper and cobalt produced."
+      ]
+    },
+    {
+      "h": "Imported power",
+      "p": [
+        "Power bought across the border from Zambia or elsewhere follows that grid's factor. Keep the contract and invoices."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Cable makers and battery buyers want per tonne figures. Show diesel and power separately so they see what drives the number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Haul truck diesel",
+      "to": "/answers/copper-mine-haul-truck-diesel-scope-1"
+    },
+    {
+      "label": "Zambia grid factor",
+      "to": "/answers/zambia-grid-emission-factor-for-mines"
+    },
+    {
+      "label": "Diesel genset vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

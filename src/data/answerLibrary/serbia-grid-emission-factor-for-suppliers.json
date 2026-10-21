@@ -1,0 +1,57 @@
+{
+  "slug": "serbia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Serbia use?",
+  "title": "Serbia grid factor for suppliers",
+  "short": "Serbia's power comes mostly from lignite, with hydro making up most of the rest, so its grid factor is high, roughly 0.7 kg CO2 per kWh or a little above. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Auto parts, steel and food suppliers in Serbia reporting Scope 2 to EU buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: guarantees of origin for hydro or wind, if you buy them.",
+        "State both and the year."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "EU customers compare suppliers. A lignite grid can double a factory's footprint against a supplier on a cleaner grid."
+      ]
+    },
+    {
+      "h": "Lowering it",
+      "p": [
+        "Rooftop solar and renewable contracts cut market based Scope 2. Keep meter data and certificates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Smederevo coil",
+      "to": "/answers/smederevo-steel-hot-rolled-coil-cbam"
+    },
+    {
+      "label": "Balkans electricity and CBAM",
+      "to": "/answers/western-balkans-electricity-exports-cbam"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

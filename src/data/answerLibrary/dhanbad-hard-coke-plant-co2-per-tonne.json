@@ -1,0 +1,62 @@
+{
+  "slug": "dhanbad-hard-coke-plant-co2-per-tonne",
+  "q": "How much CO2 does a Dhanbad hard coke plant emit per tonne of coke?",
+  "title": "Dhanbad hard coke: CO2 per tonne",
+  "short": "Use a carbon balance: carbon in the coal charged, minus carbon leaving in coke, breeze and any tar sold, times 44/12. In non recovery ovens most volatile matter burns on site, so that carbon becomes your CO2. Test coal and coke for carbon instead of using a flat factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hard coke and non recovery coke oven units in Dhanbad and Jharkhand",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Coal charged per batch and its carbon content.",
+        "Coke and breeze produced and their carbon content.",
+        "Fuel used to start or heat ovens.",
+        "Electricity bills."
+      ]
+    },
+    {
+      "h": "Heat recovery ovens",
+      "p": [
+        "If oven gas raises steam for power, the CO2 is the same but you buy less grid power. Count the burning once, in Scope 1."
+      ]
+    },
+    {
+      "h": "Buyers",
+      "p": [
+        "Coke itself is not a CBAM good, but foundries and steel mills that use it will ask for its footprint as a precursor or Scope 3 input."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Bought met coke upstream",
+      "to": "/answers/purchased-met-coke-upstream-emissions"
+    },
+    {
+      "label": "Coke ovens inside the boundary",
+      "to": "/answers/vaal-steel-mill-coke-ovens-inside-cbam-boundary"
+    },
+    {
+      "label": "Cupola coke emissions",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

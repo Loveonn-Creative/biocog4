@@ -1,7 +1,9 @@
 import { describe, expect, test } from 'bun:test';
 
-// recordsEvents listens on window; give the module a minimal one before it loads.
-(globalThis as unknown as { window: EventTarget }).window ??= new EventTarget();
+// recordsEvents listens on window; give the module a real event target before it loads,
+// replacing any stub another test file left behind (bun shares globals across files).
+const g = globalThis as unknown as { window?: Partial<EventTarget> };
+if (typeof g.window?.addEventListener !== 'function') g.window = new EventTarget();
 const store = new Map<string, string>();
 (globalThis as unknown as { localStorage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> }).localStorage ??= {
   getItem: k => store.get(k) ?? null, setItem: (k, v) => { store.set(k, String(v)); }, removeItem: k => { store.delete(k); },

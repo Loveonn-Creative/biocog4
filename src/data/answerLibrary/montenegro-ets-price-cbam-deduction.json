@@ -1,0 +1,57 @@
+{
+  "slug": "montenegro-ets-price-cbam-deduction",
+  "q": "Can an EU importer deduct a carbon price paid in Montenegro from CBAM?",
+  "title": "Montenegro's carbon price and CBAM",
+  "short": "Possibly. Montenegro runs its own emissions trading system for power and large industry, and CBAM allows a deduction for a carbon price effectively paid in the country of origin. The producer must prove what was paid per tonne, net of free allowances. Check the rules for the year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of goods from Montenegro and the producers who supply them",
+  "sections": [
+    {
+      "h": "What a deduction needs",
+      "ul": [
+        "Allowances actually surrendered and paid for.",
+        "A link to the embedded emissions of the goods.",
+        "Free allocation and any compensation subtracted."
+      ]
+    },
+    {
+      "h": "What usually remains",
+      "p": [
+        "Free allocation can shrink the amount actually paid, so the deduction may be smaller than the headline price suggests."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Allowance purchase and surrender records by installation and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Korea ETS deduction",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "Balkans electricity and CBAM",
+      "to": "/answers/western-balkans-electricity-exports-cbam"
+    },
+    {
+      "label": "Carbon pricing impact",
+      "to": "/calculators/carbon-pricing-impact"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

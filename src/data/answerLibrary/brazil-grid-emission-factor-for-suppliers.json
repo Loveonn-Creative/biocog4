@@ -1,0 +1,57 @@
+{
+  "slug": "brazil-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Brazil use?",
+  "title": "Brazil grid factor for suppliers",
+  "short": "Brazil's national grid is mostly hydro, with wind and solar growing, so its factor is low and moves with rainfall. Use the official national grid figure for the reporting year, published by the government, or the IEA figure, and name it. A dry year can be much higher.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Brazil reporting Scope 2 or CBAM indirect emissions",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national grid average for the year.",
+        "Market based: renewable certificates or contracts, if you hold them.",
+        "State the year and source."
+      ]
+    },
+    {
+      "h": "Self generation",
+      "p": [
+        "Gas or diesel generation on site is Scope 1. Bagasse and charcoal are biogenic; report them separately."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Indirect emissions count for cement and fertilisers. For steel and aluminium they are reported only."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Pecém slab figure",
+      "to": "/answers/pecem-steel-slab-cbam-figure"
+    },
+    {
+      "label": "Brazil merchant pig iron",
+      "to": "/answers/brazil-merchant-pig-iron-exporter-buyer-data"
+    },
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

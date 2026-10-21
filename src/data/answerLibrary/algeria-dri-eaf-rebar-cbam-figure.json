@@ -1,0 +1,62 @@
+{
+  "slug": "algeria-dri-eaf-rebar-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for rebar from a gas DRI mill in western Algeria?",
+  "title": "Algerian DRI rebar: the CBAM figure",
+  "short": "Embedded direct emissions per tonne of rebar: gas used to reduce iron ore pellets, carbon and lime in the electric arc furnace, and reheating fuel. Gas based DRI runs well below blast furnace steel, so a verified actual figure usually beats the EU default.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of rebar, wire rod and billets from the Oran and Bethioua steel complexes",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Natural gas in the DRI module.",
+        "Electrodes, charge carbon and lime in the arc furnace.",
+        "Billet casting and reheating fuel.",
+        "Bought pellets are not a precursor; bought DRI or billets are."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported, not charged, for steel. Algeria's grid runs on gas, so indirect emissions are moderate."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "p": [
+        "A verified figure per tonne for the product and period, and whether scrap was charged with the DRI."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Egypt DRI rebar mill",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    },
+    {
+      "label": "Abu Dhabi DRI rebar",
+      "to": "/answers/abu-dhabi-dri-eaf-rebar-cbam-figure"
+    },
+    {
+      "label": "Algeria grid factor",
+      "to": "/answers/algeria-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

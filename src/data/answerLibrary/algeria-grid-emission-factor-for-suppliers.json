@@ -1,0 +1,57 @@
+{
+  "slug": "algeria-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Algeria use?",
+  "title": "Algeria grid factor for suppliers",
+  "short": "Algeria generates almost all its power from natural gas, so its grid factor sits around 0.5 kg CO2 per kWh. Use the official or IEA figure for the year and name it. Solar is growing, so check for an updated year before each report.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Algeria reporting Scope 2 or CBAM indirect emissions",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: only with a supplier specific or renewable contract.",
+        "State both, the source and the year."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Indirect emissions count for cement and fertilisers, and are reported for steel and aluminium. Use the same factor across your reports."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly bills with kWh, and logs for any captive gas turbines, which are Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Morocco grid factor",
+      "to": "/answers/morocco-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Algerian DRI rebar",
+      "to": "/answers/algeria-dri-eaf-rebar-cbam-figure"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

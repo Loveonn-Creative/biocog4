@@ -1,0 +1,62 @@
+{
+  "slug": "algeria-clinker-exporter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for Algerian clinker?",
+  "title": "Algerian clinker: the CBAM figure",
+  "short": "Per tonne of clinker: calcination CO2 from limestone, roughly half a tonne, plus kiln fuel, which in Algeria is mostly gas. Electricity counts for cement too. Ask for a verified figure; gas fired kilns can come in below the EU default.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and traders buying clinker and cement from Algerian plants",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Process CO2 from calcining limestone.",
+        "Kiln fuel, mostly natural gas.",
+        "Electricity for grinding and fans.",
+        "Bought clinker if a plant buys from another."
+      ]
+    },
+    {
+      "h": "Cement",
+      "p": [
+        "Cement adds grinding power and takes the clinker share times its figure. Ask for the clinker share of each grade."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Algeria has no carbon price to deduct."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Egypt clinker exporters",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    },
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Algeria grid factor",
+      "to": "/answers/algeria-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

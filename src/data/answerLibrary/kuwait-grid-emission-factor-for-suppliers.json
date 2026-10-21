@@ -1,0 +1,57 @@
+{
+  "slug": "kuwait-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Kuwait use?",
+  "title": "Kuwait grid factor for suppliers",
+  "short": "Kuwait's power plants burn gas and oil, so its grid factor is among the higher ones in the Gulf, roughly 0.6 kg CO2 per kWh or more. Use the official or IEA figure for the reporting year, name the source, and update it when a new year is published.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories, contractors and exporters in Kuwait reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: only if a supplier specific or renewable contract exists.",
+        "State both and the year."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly bills with kWh per meter. Desalination and cooling loads swing with season, so use all twelve months."
+      ]
+    },
+    {
+      "h": "Lowering it",
+      "p": [
+        "Rooftop solar and efficient chillers cut kWh. Keep meter data so the saving shows in your figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Saudi grid factor",
+      "to": "/answers/saudi-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Bahrain grid factor",
+      "to": "/answers/bahrain-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "western-balkans-electricity-exports-cbam",
+  "q": "Does CBAM apply to electricity exported from the Western Balkans to the EU?",
+  "title": "Western Balkans electricity and CBAM",
+  "short": "Yes. Electricity is a CBAM good, and imports from Serbia, Bosnia and Herzegovina, North Macedonia, Montenegro, Albania and Kosovo are covered. CBAM allows an exemption for countries whose power markets are coupled with the EU's and that meet strict conditions, including carbon pricing. Check each year.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Power traders and producers in the Western Balkans selling into EU markets",
+  "sections": [
+    {
+      "h": "How it is counted",
+      "ul": [
+        "Default values based on the exporting country's grid emissions.",
+        "Actual figures only under strict conditions, such as a direct contract with a named plant."
+      ]
+    },
+    {
+      "h": "The exemption",
+      "p": [
+        "The CBAM Regulation lets the Commission exempt electricity from a country coupled with the EU market that commits to carbon pricing and other conditions. Whether any Western Balkans country qualifies depends on decisions made over time."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Coal heavy grids carry high default values, which makes exports to the EU dearer unless the exemption applies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Serbia grid factor",
+      "to": "/answers/serbia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Montenegro carbon price",
+      "to": "/answers/montenegro-ets-price-cbam-deduction"
+    },
+    {
+      "label": "CBAM explained",
+      "to": "/climate-intelligence/eu-cbam-explained-emerging-market-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "talcher-coal-gasification-urea-co2",
+  "q": "How does urea from coal gasification at Talcher compare on CO2 with gas based urea?",
+  "title": "Talcher coal gasification urea: CO2",
+  "short": "Coal gasification makes ammonia from coal instead of natural gas, and coal carries far more carbon per unit of hydrogen. Expect a much higher figure per tonne of urea than gas based plants unless CO2 is captured and stored. Count it from coal invoices and carbon content, not a flat factor.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Fertiliser makers, policy teams and buyers following the Talcher coal gasification urea project",
+  "sections": [
+    {
+      "h": "How to count it",
+      "ol": [
+        "Coal fed to gasifiers and boilers, in tonnes, with carbon content.",
+        "Subtract carbon leaving in ash or slag.",
+        "CO2 used to make urea is still counted as emitted under CBAM.",
+        "Add bought power."
+      ]
+    },
+    {
+      "h": "Capture",
+      "p": [
+        "CO2 captured and permanently stored lowers the figure. CO2 sold for another use generally does not."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Urea is a CBAM good, so any EU export would carry this figure. Most Indian urea serves the home market."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Coal gasification DRI at Angul",
+      "to": "/answers/coal-gasification-dri-co2-angul"
+    },
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Arzew urea and ammonia",
+      "to": "/answers/arzew-ammonia-urea-exporter-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

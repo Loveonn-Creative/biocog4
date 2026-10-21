@@ -1,0 +1,61 @@
+{
+  "slug": "bhilai-rails-exporter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for rails from Bhilai?",
+  "title": "Bhilai rails: the CBAM figure",
+  "short": "Rails fall under CN 7302, so they are CBAM goods. The buyer needs embedded emissions per tonne of rail, from the integrated works through the rail mill, verified for the definitive regime. Integrated blast furnace mills sit well above scrap based mills, so measured data matters.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Rail mills in Bhilai and Indian traders supplying rails and track material abroad",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Coke, sinter, blast furnace and converter emissions.",
+        "Bloom casting and reheating fuel.",
+        "Rail mill fuel and process gases."
+      ]
+    },
+    {
+      "h": "What to send",
+      "p": [
+        "One figure per tonne of rail, with the period and method. Only direct emissions count toward the steel charge; electricity is reported separately."
+      ]
+    },
+    {
+      "h": "Domestic first",
+      "p": [
+        "Most Bhilai rails go to Indian Railways. The figure still matters for any export lot and for Indian buyers asking for Scope 3 data."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Rails and wheels in CBAM",
+      "to": "/answers/are-steel-rails-and-wheels-covered-by-cbam"
+    },
+    {
+      "label": "Railway track materials",
+      "to": "/answers/are-railway-track-materials-covered-by-cbam"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

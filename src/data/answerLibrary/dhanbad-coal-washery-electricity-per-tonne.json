@@ -1,0 +1,61 @@
+{
+  "slug": "dhanbad-coal-washery-electricity-per-tonne",
+  "q": "How do I work out CO2 per tonne of washed coal at a Dhanbad washery?",
+  "title": "Dhanbad washery: CO2 per tonne of washed coal",
+  "short": "Add the washery's electricity in kWh times the grid factor, 0.710 kg CO2 per kWh on CEA v21.0, to diesel for loaders and trucks at 2.68 kg per litre. Divide by tonnes of clean coal dispatched, not raw coal fed, because buyers ask per tonne they receive.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coal washeries in Dhanbad and Jharia supplying coking coal to steel plants",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity bills with kWh.",
+        "Diesel invoices or fuel logs.",
+        "Raw coal received and clean coal dispatched, in tonnes."
+      ]
+    },
+    {
+      "h": "Rejects and middlings",
+      "p": [
+        "Washing splits coal into clean coal, middlings and rejects. If middlings go to a power plant as a product, share the washery's emissions by mass or by energy and say which."
+      ]
+    },
+    {
+      "h": "What the steel plant needs",
+      "p": [
+        "The mill adds your figure to mining and freight for its coking coal. It is small next to the coke ovens, but buyers asking for supplier data want it measured, not guessed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, diesel and dispatch invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Washery rejects power",
+      "to": "/answers/coal-washery-rejects-power-co2"
+    },
+    {
+      "label": "Bought met coke upstream",
+      "to": "/answers/purchased-met-coke-upstream-emissions"
+    },
+    {
+      "label": "Coal rail freight",
+      "to": "/answers/coal-rail-freight-mine-to-plant-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

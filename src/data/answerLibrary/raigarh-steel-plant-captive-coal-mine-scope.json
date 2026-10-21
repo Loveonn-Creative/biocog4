@@ -1,0 +1,62 @@
+{
+  "slug": "raigarh-steel-plant-captive-coal-mine-scope",
+  "q": "A Raigarh steel plant runs its own coal mine: which scope do the mine's emissions go in?",
+  "title": "Raigarh plant with its own mine: which scope",
+  "short": "If your company owns or controls the mine, its diesel, explosives, electricity and mine methane are your own Scope 1 and 2, not Scope 3. Report the mine as a separate site so the plant figure and the mine figure can each be checked against their own records.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Integrated steel and sponge iron groups in Raigarh with captive coal blocks",
+  "sections": [
+    {
+      "h": "Owned or controlled",
+      "p": [
+        "Under the GHG Protocol, emissions follow control. A captive block you operate is inside your boundary. Coal bought from a mine you do not operate is Scope 3, category 1."
+      ]
+    },
+    {
+      "h": "What the mine adds",
+      "ul": [
+        "Diesel for haul trucks and shovels.",
+        "Explosives used in blasting.",
+        "Grid or captive power for crushers and conveyors.",
+        "Methane released from the seam."
+      ]
+    },
+    {
+      "h": "Buyers and CBAM",
+      "p": [
+        "CBAM counts the steel plant's direct emissions and precursors, not mining. Your own inventory and lender reports should still include the mine, or they look smaller than they are."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Opencast mine methane and diesel",
+      "to": "/answers/opencast-coal-mine-methane-and-diesel"
+    },
+    {
+      "label": "Captive coal power and category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Chhattisgarh steel and CCTS",
+      "to": "/answers/chhattisgarh-steel-plant-ccts-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "chittorgarh-zinc-smelter-covered-by-cbam",
+  "q": "Is zinc from Chittorgarh covered by CBAM?",
+  "title": "Is Chittorgarh zinc covered by CBAM?",
+  "short": "No. Zinc, lead and silver are not CBAM goods. But galvanised steel is, and zinc is not a listed precursor for it, so the coating does not add to the steel's CBAM figure. EU buyers may still ask for zinc's footprint for their Scope 3.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Zinc and lead smelters in Chittorgarh and galvanisers buying Indian zinc",
+  "sections": [
+    {
+      "h": "What is covered",
+      "ul": [
+        "Iron and steel, aluminium, cement, fertilisers, hydrogen and electricity."
+      ]
+    },
+    {
+      "h": "Galvanised steel",
+      "p": [
+        "Coated sheet and galvanised structures are steel goods. Their figure covers steel making and the processing plant, including the galvanising line's fuel, not zinc mining or smelting."
+      ]
+    },
+    {
+      "h": "Zinc footprint",
+      "p": [
+        "Smelting is power hungry. Keep kWh, captive power fuel and tonnes of zinc per month, so buyers get a sourced number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Hot dip galvanising footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Coated steel and zinc",
+      "to": "/answers/vanderbijlpark-coated-steel-zinc-cbam"
+    },
+    {
+      "label": "Zinc die casting",
+      "to": "/answers/zinc-die-casting-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

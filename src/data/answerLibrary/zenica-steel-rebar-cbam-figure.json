@@ -1,0 +1,61 @@
+{
+  "slug": "zenica-steel-rebar-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for rebar and wire rod from Zenica?",
+  "title": "Zenica rebar and wire rod: the CBAM figure",
+  "short": "Zenica is an integrated blast furnace works, so its long products carry coke, sinter and furnace emissions, well above scrap based mills. Ask for a verified figure per tonne of product and period. Bosnia and Herzegovina has no carbon price to deduct.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and traders buying long steel from Bosnia and Herzegovina",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Coke ovens and sinter plant.",
+        "Blast furnace and converter.",
+        "Billet casting and rod or bar mill fuel."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported, not charged, for steel. Bosnia's grid is coal heavy."
+      ]
+    },
+    {
+      "h": "Without data",
+      "p": [
+        "The importer uses EU default values, set high on purpose. A measured figure is worth getting."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Bosnia grid factor",
+      "to": "/answers/bosnia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

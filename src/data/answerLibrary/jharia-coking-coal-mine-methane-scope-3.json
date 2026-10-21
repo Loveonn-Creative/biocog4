@@ -1,0 +1,62 @@
+{
+  "slug": "jharia-coking-coal-mine-methane-scope-3",
+  "q": "Should a steel plant buying Jharia coking coal count mine methane in Scope 3?",
+  "title": "Jharia coking coal: mine methane in Scope 3",
+  "short": "Yes, if you report category 1 for coal. Methane escapes from the seam during mining, and deep coking coal seams release more than surface mines. Without mine data, IPCC Tier 1 gives 18 cubic metres of methane per tonne for underground mining, a default with a wide range.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Steel plants and coke makers buying coking coal from Jharia and other Jharkhand mines",
+  "sections": [
+    {
+      "h": "The default",
+      "ul": [
+        "Underground mining: 10 to 25 cubic metres per tonne, 18 average (IPCC 2006).",
+        "Post mining handling: about 2.5 cubic metres per tonne more.",
+        "Surface mining: 0.3 to 2.0, 1.2 average.",
+        "One cubic metre of methane weighs about 0.67 kg."
+      ]
+    },
+    {
+      "h": "Better than default",
+      "p": [
+        "Ask the supplier which mines the coal comes from and whether they measure ventilation methane. Mixed underground and opencast supply needs a weighted figure."
+      ]
+    },
+    {
+      "h": "Where it goes",
+      "p": [
+        "Mine methane is upstream of your plant, so it is Scope 3 for you. It is not part of the CBAM figure for steel."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Opencast mine methane",
+      "to": "/answers/opencast-coal-mine-methane-and-diesel"
+    },
+    {
+      "label": "Bought met coke upstream",
+      "to": "/answers/purchased-met-coke-upstream-emissions"
+    },
+    {
+      "label": "Washery CO2 per tonne",
+      "to": "/answers/dhanbad-coal-washery-electricity-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
