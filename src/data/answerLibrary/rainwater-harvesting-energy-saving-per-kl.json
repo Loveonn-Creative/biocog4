@@ -1,0 +1,70 @@
+{
+  "slug": "rainwater-harvesting-energy-saving-per-kl",
+  "q": "How do I calculate the emissions saved by rainwater harvesting?",
+  "title": "Rainwater harvesting CO2 saving",
+  "short": "Multiply the kL of harvested rainwater actually used by the energy per kL of the source it replaces, such as borewell pumping or tanker diesel, then by the right factor. Measure both with meters. Recharge pits that only refill groundwater save no direct energy that year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories, campuses, housing societies and offices",
+  "sections": [
+    {
+      "h": "What you need",
+      "ul": [
+        "A meter on the harvested water you use.",
+        "kWh per kL for the replaced source, from its meter.",
+        "For tankers: litres of diesel per delivery, or the water supplier's figure."
+      ]
+    },
+    {
+      "h": "Use or recharge",
+      "p": [
+        "Harvested water you store and use replaces pumping now. Water sent to recharge pits raises the water table, which may cut pumping energy later but is hard to measure, so report it in kL, not CO2."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "The saving shows as lower Scope 2 or lower purchased water. Report it against your baseline, not as a deduction."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: harvested water replacing borewell water (illustrative inputs)",
+    "lines": [
+      "Rainwater harvested and used: 500 kL in the season (from the tank meter)",
+      "Borewell pumping it replaces: 1.2 kWh per kL (from the borewell meter)",
+      "Saving: 500 x 1.2 = 600 kWh x 0.710 = 426.0 kg CO2"
+    ],
+    "note": "Volumes and kWh per kL are illustrative; measure both on site."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Borewell pumping energy per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "Water tanker purchases: which scope?",
+      "to": "/answers/water-tanker-purchases-which-scope"
+    },
+    {
+      "label": "Purchased water emission factor",
+      "to": "/answers/purchased-water-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

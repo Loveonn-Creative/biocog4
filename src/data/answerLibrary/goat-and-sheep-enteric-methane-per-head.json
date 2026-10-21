@@ -1,0 +1,66 @@
+{
+  "slug": "goat-and-sheep-enteric-methane-per-head",
+  "q": "How much methane do goats and sheep emit per head?",
+  "title": "Goat and sheep enteric methane",
+  "short": "IPCC Tier 1 defaults give 5 kg of enteric methane per head a year for goats, and 5 kg for sheep in developing countries. Multiply by head count and by 27, the AR6 GWP for non-fossil methane. Manure methane is a separate, smaller line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Livestock farmers, FPOs and meat and wool buyers",
+  "sections": [
+    {
+      "h": "Tier 1 factors",
+      "ul": [
+        "Goats: 5 kg CH4 per head a year (IPCC 2006 Volume 4, Table 10.10).",
+        "Sheep: 5 kg CH4 per head a year for developing countries, 8 kg for developed countries.",
+        "Use the average head count over the year, not the peak."
+      ]
+    },
+    {
+      "h": "When to go further",
+      "p": [
+        "Tier 1 suits small herds. Large flocks or meat buyers asking for a product figure may need Tier 2, based on animal weight and feed intake."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Enteric methane from animals you own is Scope 1 for the farm. For a buyer of meat, milk or wool it is part of Scope 3, Category 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: mixed flock (one year)",
+    "lines": [
+      "Goats: 100 x 5 kg = 500 kg CH4 a year",
+      "Sheep: 60 x 5 kg = 300 kg CH4 a year",
+      "CO2e: 800 x 27 = 21,600 kg, about 21.6 t a year"
+    ],
+    "note": "Head counts are illustrative; factors from IPCC 2006 Volume 4, Table 10.10, AR6 GWP 27."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Dairy enteric methane emissions",
+      "to": "/answers/dairy-enteric-methane-emissions-india"
+    },
+    {
+      "label": "Dairy member farm emissions",
+      "to": "/answers/dairy-member-farm-emissions-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 4 AFOLU, Chapters 10 and 11",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

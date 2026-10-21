@@ -1,0 +1,67 @@
+{
+  "slug": "drip-irrigation-energy-saving-per-acre",
+  "q": "How do I calculate the emissions saved by moving to drip irrigation?",
+  "title": "Drip irrigation energy saving per acre",
+  "short": "Measure pump kWh for a season before and after drip on the same land, and multiply the difference by 0.710 kg CO2 per kWh. Drip saves energy by pumping less water, but the saving depends on crop, soil and how the system is run, so measure it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Farmers, FPOs and drip irrigation suppliers",
+  "sections": [
+    {
+      "h": "Measuring it",
+      "ul": [
+        "Meter readings or pump hours before and after.",
+        "The same crop, area and season for both.",
+        "Pump changes noted, since a new pump changes the result too."
+      ]
+    },
+    {
+      "h": "Add the system",
+      "p": [
+        "Drip pipes and fittings are plastic with their own footprint. For a full comparison, spread the system's footprint over its expected life."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "The saving shows as lower Scope 2 for the farm. Report it as a reduction against your baseline, not as a credit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 acres before and after drip (illustrative inputs)",
+    "lines": [
+      "Before drip (flood irrigation): 4,500 kWh a season, metered",
+      "After drip: 3,150 kWh a season, metered",
+      "Saving: 1,350 kWh x 0.710 = 958.5 kg CO2 a season",
+      "Over 10 acres: 95.8 kg CO2 an acre"
+    ],
+    "note": "Readings are illustrative; use your own meter or pump hours."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Electric irrigation pump emissions",
+      "to": "/answers/electric-irrigation-pump-emissions-per-acre"
+    },
+    {
+      "label": "Diesel pump to solar pump saving",
+      "to": "/answers/diesel-pump-to-solar-pump-co2-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

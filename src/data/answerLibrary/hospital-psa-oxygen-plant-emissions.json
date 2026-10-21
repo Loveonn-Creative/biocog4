@@ -1,0 +1,66 @@
+{
+  "slug": "hospital-psa-oxygen-plant-emissions",
+  "q": "How do I calculate the emissions of a hospital PSA oxygen plant?",
+  "title": "Hospital PSA oxygen plant emissions",
+  "short": "A PSA oxygen plant runs on electricity, mainly its air compressor. Multiply the plant's kWh from a sub-meter by 0.710 kg CO2 per kWh, add generator diesel during outages, and divide by cubic metres of oxygen produced. Bought liquid oxygen is Scope 3 instead.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hospital engineering and biomedical teams",
+  "sections": [
+    {
+      "h": "What uses power",
+      "ul": [
+        "The air compressor, the largest load.",
+        "Air dryer and filters.",
+        "The oxygen booster where cylinders are filled."
+      ]
+    },
+    {
+      "h": "PSA or bought oxygen",
+      "p": [
+        "Oxygen made on site counts through the plant's electricity, in Scope 2. Liquid or cylinder oxygen bought from a supplier is a purchased good in Scope 3, Category 1."
+      ]
+    },
+    {
+      "h": "Per cubic metre",
+      "p": [
+        "Report kg CO2 per cubic metre from the plant's flow meter, and keep the sub-meter readings as evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: hospital PSA plant (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Cubic metres of oxygen produced: 9,000",
+      "Total: 10,650 / 9,000 = 1.183 kg CO2 per cubic metre"
+    ],
+    "note": "Inputs are illustrative; use the plant sub-meter and flow meter readings."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Industrial gases in Scope 3",
+      "to": "/answers/industrial-gases-oxygen-nitrogen-scope-3"
+    },
+    {
+      "label": "Hospital carbon footprint per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

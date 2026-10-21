@@ -1,0 +1,75 @@
+{
+  "slug": "sugarcane-farming-emissions-per-tonne-cane",
+  "q": "How do I calculate the carbon footprint of growing sugarcane per tonne of cane?",
+  "title": "Sugarcane farming emissions per tonne",
+  "short": "Add nitrogen fertiliser N2O with IPCC defaults, urea CO2, tractor diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes of cane per acre. Count trash burning separately if fields are burnt after harvest.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sugar mills, cane growers and their buyers",
+  "sections": [
+    {
+      "h": "Field sources",
+      "ul": [
+        "N2O from nitrogen fertiliser, direct and indirect.",
+        "CO2 from urea.",
+        "Diesel for land preparation, inter-cultivation and haulage.",
+        "Electricity or diesel for irrigation pumps."
+      ]
+    },
+    {
+      "h": "Trash burning",
+      "p": [
+        "Burning cane trash releases methane and N2O from the burnt dry matter. Work it out with IPCC Volume 4, Chapter 2, as a separate line."
+      ]
+    },
+    {
+      "h": "What is left out",
+      "p": [
+        "Fertiliser manufacture, pesticides and seed are upstream inputs. Add them from supplier figures when you have them, and say which are missing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one acre of sugarcane (illustrative inputs)",
+    "lines": [
+      "Direct N2O: 120 kg N x 0.01 = 1.200 kg N2O-N x 44/28 x 273 = 514.8 kg CO2e",
+      "Indirect N2O: 120 x (0.10 x 0.01 + 0.30 x 0.0075) = 0.390 kg N2O-N x 44/28 x 273 = 167.3 kg CO2e",
+      "Urea CO2: 260 kg x 0.733 = 190.6 kg CO2",
+      "Diesel: 60 litres x 2.68 = 160.8 kg CO2",
+      "Irrigation electricity: 1,500 kWh x 0.710 = 1,065 kg CO2",
+      "Per acre: 2,098.5 kg CO2e",
+      "At 35 t an acre: 2,098.5 / 35 = 60.0 kg CO2e per tonne"
+    ],
+    "note": "IPCC 2006 Tier 1 defaults (EF1 0.01; 10 percent volatilised, 30 percent leached for irrigated land); AR6 GWP 273 for N2O. Fertiliser rates, litres, units and yield are illustrative, and fertiliser manufacture is not included."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Sugar mill carbon per tonne of cane",
+      "to": "/answers/sugar-mill-carbon-footprint-per-tonne-of-cane"
+    },
+    {
+      "label": "Fertiliser N2O emissions",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Tractor diesel emissions per acre",
+      "to": "/answers/tractor-diesel-emissions-per-acre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 4 AFOLU, Chapters 10 and 11",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

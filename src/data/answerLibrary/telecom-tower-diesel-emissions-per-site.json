@@ -1,0 +1,70 @@
+{
+  "slug": "telecom-tower-diesel-emissions-per-site",
+  "q": "How do I calculate the emissions of a telecom tower site?",
+  "title": "Telecom tower emissions per site",
+  "short": "Add the diesel burnt in the site generator, from fuel slips or tank dip records, at 2.68 kg CO2 per litre, and the grid electricity from the site bill at 0.710 kg per kWh. Divide by sites for a per-site figure, and report diesel as Scope 1 and grid power as Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tower companies, telecom operators and site maintenance contractors",
+  "sections": [
+    {
+      "h": "What a site burns",
+      "ul": [
+        "Grid electricity for radios, cooling and lights, from the EB bill.",
+        "Diesel for the generator during grid outages, from fuel slips or dip records.",
+        "Battery and solar systems that cut generator hours."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "The company that operates the site reports the generator diesel as Scope 1. A tenant operator that pays an energy charge to the tower company reports its share in Scope 3, unless it runs the site itself."
+      ]
+    },
+    {
+      "h": "Per site",
+      "p": [
+        "Report per site per year and track generator run hours separately, since they show where battery or solar upgrades cut the most diesel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one site (one month, illustrative inputs)",
+    "lines": [
+      "Diesel: 600 litres x 2.68 = 1,608 kg CO2",
+      "Electricity: 2,400 kWh x 0.710 = 1,704 kg CO2",
+      "Site total: 3,312 kg CO2 a month, 39.7 t a year"
+    ],
+    "note": "Litres and units are illustrative; use the site's fuel slips and electricity bill."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Diesel generator: Scope 1 or 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "DG set emissions vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Battery backup vs DG set",
+      "to": "/answers/battery-backup-vs-dg-set-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

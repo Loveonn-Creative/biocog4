@@ -1,0 +1,62 @@
+{
+  "slug": "ambulance-fleet-emissions-scope-1",
+  "q": "How do I calculate emissions from a hospital's ambulance fleet?",
+  "title": "Ambulance fleet emissions",
+  "short": "Add the diesel bought for your own ambulances at 2.68 kg CO2 per litre, from fuel cards or invoices, and report it as Scope 1. Ambulances hired with drivers from an operator are Scope 3. Track litres per vehicle, since run time on site and idling add up.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hospitals and ambulance service operators",
+  "sections": [
+    {
+      "h": "Which scope",
+      "ul": [
+        "Ambulances you own or lease and run with your drivers: Scope 1.",
+        "Ambulances supplied with drivers by an operator: Scope 3, Category 1.",
+        "Patient transport arranged and paid by patients: outside your inventory."
+      ]
+    },
+    {
+      "h": "Data to keep",
+      "p": [
+        "Fuel card statements or invoices per vehicle, and the logbook distance. Litres from fuel records beat distance estimates."
+      ]
+    },
+    {
+      "h": "Medical oxygen and refrigerants",
+      "p": [
+        "Oxygen cylinders are a purchased good in Scope 3. AC refrigerant top-ups in the vehicles are Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three ambulances (one year, illustrative inputs)",
+    "lines": [
+      "Diesel: 2,400 litres x 2.68 = 6,432 kg CO2",
+      "Distance driven: 24,000 km",
+      "Per km: 6,432 / 24,000 = 0.268 kg CO2"
+    ],
+    "note": "Litres and distance are illustrative; use fuel card statements."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hired trucks: Scope 1 or 3?",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    },
+    {
+      "label": "Fuel card statements as evidence",
+      "to": "/answers/fleet-fuel-card-statement-as-carbon-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

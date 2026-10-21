@@ -1,0 +1,71 @@
+{
+  "slug": "construction-demolition-waste-emissions-scope-3",
+  "q": "How do I calculate emissions from construction and demolition waste?",
+  "title": "Construction and demolition waste",
+  "short": "For construction and demolition waste you send away, Scope 3, Category 5 is mainly transport, at 2.68 kg CO2 per litre of diesel, plus treatment. Inert concrete and brick do not decay, so they add no landfill methane under IPCC defaults; mixed wood and paper do.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Builders, contractors and companies refurbishing sites",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Diesel for trucks taking debris away, from the transporter.",
+        "Treatment at a C&D processing plant, if it reports energy per tonne.",
+        "Mixed waste with wood, paper or plastic sent to landfill."
+      ]
+    },
+    {
+      "h": "Inert waste",
+      "p": [
+        "Concrete, brick and stone hold no degradable organic carbon, so landfilling them releases no methane by IPCC default. Wood and paper mixed in should be estimated separately."
+      ]
+    },
+    {
+      "h": "Recycling",
+      "p": [
+        "Debris processed into recycled aggregate is a good outcome to report in tonnes. Any avoided emissions from it are shown separately, never subtracted."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one demolition job (illustrative inputs)",
+    "lines": [
+      "Debris removed: 200 tonnes in 25 truck trips",
+      "Diesel from the transporter's log: 300 litres x 2.68 = 804 kg CO2",
+      "Disposal of concrete and brick at a designated site: no landfill methane under IPCC defaults",
+      "Category 5 for the project: about 804 kg CO2, plus any wood or paper sent to landfill"
+    ],
+    "note": "Tonnes and litres are illustrative; use the transporter's and processor's records."
+  },
+  "senseible": "Senseible keeps waste manifests, transport invoices and treatment bills as evidence on the Scope 3 trail and reads electricity bills for on-site equipment into Scope 2. Avoided emissions are never subtracted from the inventory.",
+  "links": [
+    {
+      "label": "Waste emissions in Scope 3, Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Office fit-out embodied carbon",
+      "to": "/answers/office-fit-out-embodied-carbon"
+    },
+    {
+      "label": "Can I deduct recycling avoided emissions?",
+      "to": "/answers/recycling-avoided-emissions-can-i-deduct"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 Waste, Chapters 2 and 5",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

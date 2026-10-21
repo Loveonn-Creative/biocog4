@@ -1,0 +1,71 @@
+{
+  "slug": "hospital-autoclave-sterilisation-emissions",
+  "q": "How do I calculate emissions from autoclave sterilisation in a hospital?",
+  "title": "Hospital autoclave emissions per cycle",
+  "short": "Count the steam's boiler fuel, or the electricity of electric steam generators at 0.710 kg CO2 per kWh, plus vacuum pumps and controls, and divide by cycles run. Biomedical waste sent to a common treatment facility is Scope 3, not part of this figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hospital CSSD and engineering teams",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Boiler fuel for steam, shared by sterilisation load.",
+        "Electricity for electric autoclaves and vacuum pumps.",
+        "Water heating where it is separate."
+      ]
+    },
+    {
+      "h": "Where it fits",
+      "p": [
+        "Sterilisation sits inside the hospital's Scope 1 and 2. It is worth tracking per cycle when deciding between a central steam supply and electric units."
+      ]
+    },
+    {
+      "h": "Waste is separate",
+      "p": [
+        "Treatment of biomedical waste at a common facility belongs in Scope 3, Category 5, from the facility's invoices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: CSSD autoclaves (one month, illustrative inputs)",
+    "lines": [
+      "PNG: 900 scm x 2.05 = 1,845 kg CO2",
+      "Electricity: 2,500 kWh x 0.710 = 1,775 kg CO2",
+      "Autoclave cycles: 1,500",
+      "Total: 3,620 / 1,500 = 2.413 kg CO2 per cycle"
+    ],
+    "note": "Inputs are illustrative; share boiler fuel by steam meter where one exists."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Biomedical waste emissions",
+      "to": "/answers/biomedical-waste-emissions-scope-3"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Hospital carbon footprint per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

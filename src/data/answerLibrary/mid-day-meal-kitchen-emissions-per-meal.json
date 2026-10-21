@@ -1,0 +1,67 @@
+{
+  "slug": "mid-day-meal-kitchen-emissions-per-meal",
+  "q": "How do I calculate the emissions per meal of a mid-day meal kitchen?",
+  "title": "Mid-day meal kitchen per meal",
+  "short": "Add the kitchen's LPG at 2.98 kg CO2 per kg, steam boiler fuel if used, and electricity at 0.710 kg per kWh, then divide by meals served. Delivery vehicles are a separate line. Food ingredients are Scope 3 and are often larger than the cooking energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Central kitchens, NGOs and schools running meal programmes",
+  "sections": [
+    {
+      "h": "Cooking energy",
+      "ul": [
+        "LPG for burners and kettles.",
+        "Boiler fuel where steam cookers are used.",
+        "Electricity for grinders, washers and lighting."
+      ]
+    },
+    {
+      "h": "Delivery",
+      "p": [
+        "Vans that carry meals to schools: own vehicles in Scope 1, hired vehicles in Scope 3."
+      ]
+    },
+    {
+      "h": "Per meal",
+      "p": [
+        "Divide by meals served from the daily count. Report rice, dal and vegetables separately if you add ingredient emissions later."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: central kitchen (one month, illustrative inputs)",
+    "lines": [
+      "LPG: 1,800 kg x 2.98 = 5,364 kg CO2",
+      "Electricity: 2,000 kWh x 0.710 = 1,420 kg CO2",
+      "Meals served: 120,000",
+      "Total: 6,784 / 120,000 = 0.0565 kg CO2 per meal"
+    ],
+    "note": "Inputs are illustrative; use your LPG invoices and meal counts."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Induction or LPG kitchen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    },
+    {
+      "label": "Staff canteen meals in Scope 3",
+      "to": "/answers/staff-canteen-meals-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

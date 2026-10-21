@@ -1,0 +1,67 @@
+{
+  "slug": "parcel-sorting-hub-emissions-per-parcel",
+  "q": "How do I calculate the emissions of a parcel sorting hub per parcel?",
+  "title": "Parcel sorting hub per parcel",
+  "short": "Add the hub's electricity for sorters, conveyors and lights at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by parcels sorted. The GLEC Framework calls this a hub emission intensity, which shippers add to the transport legs.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Courier companies, e-commerce logistics and 3PL operators",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity for automated sorters, conveyors, scanners and lighting.",
+        "Diesel for generators and diesel forklifts.",
+        "Refrigerant top-ups where offices or cold rooms are cooled."
+      ]
+    },
+    {
+      "h": "Per parcel",
+      "p": [
+        "Divide by parcels handled in the period. Hubs with heavy parcels may prefer kg CO2 per tonne handled; state which."
+      ]
+    },
+    {
+      "h": "Line-haul is separate",
+      "p": [
+        "Trucks between hubs are transport legs, not hub emissions. Keep them apart so a shipper can add the hub figure once per parcel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: sorting hub (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Diesel: 500 litres x 2.68 = 1,340 kg CO2",
+      "Parcels sorted: 1,500,000",
+      "Total: 43,940 / 1,500,000 = 0.0293 kg CO2 per parcel"
+    ],
+    "note": "Inputs are illustrative; use the hub's meter and parcel count."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Courier shipment emissions from invoices",
+      "to": "/answers/courier-shipment-emissions-from-invoices"
+    },
+    {
+      "label": "Warehouse emissions allocation (3PL)",
+      "to": "/answers/warehouse-emissions-allocation-3pl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

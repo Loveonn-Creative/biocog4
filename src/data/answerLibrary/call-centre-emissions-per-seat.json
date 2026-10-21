@@ -1,0 +1,67 @@
+{
+  "slug": "call-centre-emissions-per-seat",
+  "q": "How do I calculate the carbon footprint of a call centre per seat?",
+  "title": "Call centre emissions per seat",
+  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by production seats. Night shifts and 24-hour cooling raise use per seat, and employee cabs are a separate Scope 1 or Scope 3 line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "BPO and contact centre operators",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity for desks, IT, air conditioning and lights.",
+        "Diesel for backup generators.",
+        "Refrigerant top-ups for the AC plant."
+      ]
+    },
+    {
+      "h": "Employee transport",
+      "p": [
+        "Cabs the company runs are Scope 1; cabs from a vendor with drivers are Scope 3. Night-shift transport is often a large share of a BPO footprint."
+      ]
+    },
+    {
+      "h": "Per seat",
+      "p": [
+        "Divide by production seats, and by seat-hours for sites running different shift patterns."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 400-seat centre (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 45,000 kWh x 0.710 = 31,950 kg CO2",
+      "Diesel: 600 litres x 2.68 = 1,608 kg CO2",
+      "Seats: 400",
+      "Total: 33,558 / 400 = 83.9 kg CO2 per seat a month"
+    ],
+    "note": "Inputs are illustrative; use your bills and seat count."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Night-shift cab emissions",
+      "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3"
+    },
+    {
+      "label": "IT company carbon per employee",
+      "to": "/answers/it-company-carbon-footprint-per-employee"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

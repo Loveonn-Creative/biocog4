@@ -299,6 +299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "ambulance-fleet-emissions-scope-1",
+  "q": "How do I calculate emissions from a hospital's ambulance fleet?",
+  "title": "Ambulance fleet emissions",
+  "short": "Add the diesel bought for your own ambulances at 2.68 kg CO2 per litre, from fuel cards or invoices, and report it as Scope 1. Ambulances hired with drivers from an operator are Scope 3. Track litres per vehicle, since run time on site and idling add up.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "amfori-bepi-energy-and-emissions-questions",
   "q": "What energy and emissions questions does amfori BEPI ask a factory, and what evidence works?",
   "title": "amfori BEPI energy and emissions evidence",
@@ -707,6 +715,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "bank-branch-carbon-footprint-calculation",
+  "q": "How do I calculate the carbon footprint of a bank branch?",
+  "title": "Bank branch carbon footprint",
+  "short": "Add each branch's electricity at 0.710 kg CO2 per kWh, generator diesel at 2.68 kg per litre and AC refrigerant top-ups. Sum branches for the operational footprint. Loans and investments are a separate figure, financed emissions in Scope 3 Category 15, not part of the branch number.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "bank-charges-and-insurance-scope-3",
   "q": "Do bank charges, loan processing fees and insurance premiums count in our Scope 3?",
   "title": "Bank fees and insurance in Scope 3",
@@ -1043,6 +1059,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "broiler-farm-emissions-per-kg-live-weight",
+  "q": "How do I calculate a broiler farm's emissions per kg of live weight?",
+  "title": "Broiler farm emissions per kg",
+  "short": "Add the farm's electricity for fans, lights and water at 0.710 kg CO2 per kWh and LPG or coal for brooding at their default factors, then divide by kg of live weight sold. Feed is usually the largest share, so add it from the feed mill's figure.",
+  "topic": "product",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "brsr-air-emissions-nox-sox-pm",
   "q": "How do I calculate NOx, SOx and PM for the BRSR air emissions table?",
   "title": "NOx, SOx and PM for BRSR",
@@ -1171,6 +1195,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "bus-operator-emissions-per-passenger-km",
+  "q": "How does a bus operator calculate emissions per passenger-km?",
+  "title": "Bus operator emissions per passenger-km",
+  "short": "Multiply the diesel bought for the fleet by 2.68 kg CO2 per litre and divide by passenger-km: passengers carried times km per trip, from tickets or seat logs. Occupancy decides the result, so report per bus-km as well.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "business-car-travel-which-scope",
   "q": "Is fuel for company cars, employee-owned cars and taxis Scope 1 or Scope 3?",
   "title": "Company cars, own cars, taxis: which scope?",
@@ -1273,6 +1305,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not for now. In November 2025 the Ninth Circuit paused enforcement of SB 261 while an appeal is heard, and CARB said it would not enforce the reporting duty while that order stands. As of October 2026 no ruling has lifted it, but the law stands, so keep a report ready.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "call-centre-emissions-per-seat",
+  "q": "How do I calculate the carbon footprint of a call centre per seat?",
+  "title": "Call centre emissions per seat",
+  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by production seats. Night shifts and 24-hour cooling raise use per seat, and employee cabs are a separate Scope 1 or Scope 3 line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "can-a-company-buy-ccts-credits-voluntarily",
@@ -2123,6 +2163,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "cinema-multiplex-carbon-footprint-per-screen",
+  "q": "How do I calculate the carbon footprint of a cinema multiplex per screen?",
+  "title": "Cinema multiplex carbon per screen",
+  "short": "Take the multiplex electricity from the bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre and any refrigerant top-ups, then divide by screens. Air conditioning is often the largest load, so report per screen and per show if you track shows.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "claim-discom-renewable-share-in-scope-2",
   "q": "Can I claim my discom's renewable purchase share as renewable electricity in my Scope 2?",
   "title": "Claiming your discom's renewable share",
@@ -2153,6 +2201,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "List what your factory depends on, then check two kinds of risk: physical risks such as flood, heat, cyclone and water shortage at your site, and transition risks such as carbon prices, CBAM, energy costs and buyer demands. Score each by likelihood and cost, act on the top three, and repeat yearly.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "clinic-carbon-footprint-calculation",
+  "q": "How do I calculate the carbon footprint of a clinic or small hospital?",
+  "title": "Clinic carbon footprint calculation",
+  "short": "Start with the clinic electricity bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre, AC refrigerant top-ups and any anaesthetic gases, then divide by patient visits. Medicines and supplies go in Scope 3 once the basics are in place.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "cloud-carbon-footprint-aws-azure-google-india",
@@ -2201,6 +2257,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add up the kg of CNG on your station bills and multiply by 2.69 kg CO2 per kg, the IPCC 2006 default for natural gas. Where a slip shows only rupees, divide by the price per kg printed on it first. Vehicles you own or operate are Scope 1.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "cng-truck-vs-diesel-truck-emissions",
+  "q": "Does a CNG truck emit less CO2 than a diesel truck?",
+  "title": "CNG truck vs diesel truck emissions",
+  "short": "Not automatically. A litre of diesel and a kg of CNG carry almost the same CO2, 2.68 and 2.69 kg, so the result comes down to km per litre against km per kg on your routes. Use your own logbooks, and note that methane slip adds to CNG.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "co-product-apportioning-ccts-bm-t-014",
@@ -2331,6 +2395,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "college-hostel-carbon-footprint-per-student",
+  "q": "How do I calculate the carbon footprint of a college hostel per student?",
+  "title": "College hostel carbon per student",
+  "short": "Add hostel electricity at 0.710 kg CO2 per kWh, mess LPG at 2.98 kg per kg, and generator diesel at 2.68 kg per litre, then divide by resident students. Sub-meter the hostel if it shares a campus supply, or label the split an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "colocation-data-centre-emissions-with-pue",
   "q": "How do I calculate emissions for servers in a colocation data centre using PUE?",
   "title": "Colocation server emissions with PUE",
@@ -2393,6 +2465,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Returning hot condensate raises boiler feed water temperature, and the BEE rule of thumb is about 1 percent fuel saved for every 6 C rise. Returning 60 percent of condensate at 80 C to a 30 C make-up tank saves roughly 5 percent of boiler fuel, before counting water and treatment savings.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "construction-demolition-waste-emissions-scope-3",
+  "q": "How do I calculate emissions from construction and demolition waste?",
+  "title": "Construction and demolition waste",
+  "short": "For construction and demolition waste you send away, Scope 3, Category 5 is mainly transport, at 2.68 kg CO2 per litre of diesel, plus treatment. Inert concrete and brick do not decay, so they add no landfill methane under IPCC defaults; mixed wood and paper do.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "contractor-diesel-on-my-site-which-scope",
@@ -2497,6 +2577,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the yarn in a square metre, including weaving waste, and multiply by your yarn supplier's per-kg figure. Add dyeing, loom electricity if powered, washing, drying and finishing, then divide the unit's energy by square metres woven.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "cotton-farming-emissions-per-kg-seed-cotton",
+  "q": "How do I calculate the carbon footprint of growing cotton per kg of seed cotton?",
+  "title": "Cotton farming emissions per kg",
+  "short": "For seed cotton, sum the field N2O from nitrogen fertiliser using IPCC defaults, CO2 from urea, diesel at 2.68 kg CO2 per litre and pump electricity at 0.710 kg per kWh, then divide by kg harvested per acre. The gin later splits it between lint and seed.",
+  "topic": "product",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "cotton-ginning-emissions-per-bale",
@@ -3307,6 +3395,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "drip-irrigation-energy-saving-per-acre",
+  "q": "How do I calculate the emissions saved by moving to drip irrigation?",
+  "title": "Drip irrigation energy saving per acre",
+  "short": "Measure pump kWh for a season before and after drip on the same land, and multiply the difference by 0.710 kg CO2 per kWh. Drip saves energy by pumping less water, but the saving depends on crop, soil and how the system is run, so measure it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "drive-sustainability-saq-auto-supplier",
   "q": "How do auto component suppliers answer the climate section of the Drive Sustainability SAQ?",
   "title": "Drive Sustainability SAQ climate answers",
@@ -3433,6 +3529,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the aluminium soleplate, heating element, thermostat, plastic body and cord per iron with supplier figures. Add casting, moulding, assembly and testing energy, then divide by irons passed and report by wattage and type.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "electric-irrigation-pump-emissions-per-acre",
+  "q": "How do I calculate emissions from an electric irrigation pump per acre?",
+  "title": "Electric irrigation pump emissions",
+  "short": "Take the pump's kWh from a meter or the electricity bill, or estimate it from rated power and run hours, and multiply by 0.710 kg CO2 per kWh. Divide by acres irrigated. Unmetered farm connections need the estimate, labelled as one.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "electric-kettle-carbon-footprint-per-unit",
@@ -4435,6 +4539,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "fruit-pack-house-emissions-per-tonne",
+  "q": "How do I calculate a fruit pack house's emissions per tonne packed?",
+  "title": "Fruit pack house emissions per tonne",
+  "short": "Add electricity for pre-cooling, washing, grading lines and cold rooms at 0.710 kg CO2 per kWh, generator diesel and refrigerant top-ups, then divide by tonnes packed. Cartons and crates are bought-in packaging, added from supplier figures.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "fruit-ripening-chamber-electricity-per-tonne",
+  "q": "How do I calculate the emissions of a fruit ripening chamber per tonne?",
+  "title": "Ripening chamber emissions per tonne",
+  "short": "Multiply the chamber's electricity for cooling, air circulation and controls by 0.710 kg CO2 per kWh and divide by tonnes ripened. Ethylene used to trigger ripening is not one of the greenhouse gases the GHG Protocol counts, so only energy and refrigerant leaks matter.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "fuel-bought-without-gst-invoice",
   "q": "Can fuel bought on cash memos or without a GST invoice count in my carbon footprint?",
   "title": "Fuel on cash memos: does it count?",
@@ -4473,6 +4593,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. A company that sells fuel reports the emissions from burning it in Scope 3 Category 11, use of sold products. Multiply the quantity sold by the fuel's emission factor. For a fuel dealer this figure is usually many times larger than its own Scope 1 and 2.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "fuel-station-carbon-footprint-calculation",
+  "q": "How do I calculate the carbon footprint of a petrol pump or fuel station?",
+  "title": "Fuel station carbon footprint",
+  "short": "A fuel station's own footprint is its electricity for dispensers, lights and the convenience store at 0.710 kg CO2 per kWh, plus generator diesel. The fuel it sells is not its Scope 1: customers burning it fall under Scope 3, Category 11, for sold fuels.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "fuel-stock-count-when-bought-or-burned",
@@ -4683,6 +4811,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "goat-and-sheep-enteric-methane-per-head",
+  "q": "How much methane do goats and sheep emit per head?",
+  "title": "Goat and sheep enteric methane",
+  "short": "IPCC Tier 1 defaults give 5 kg of enteric methane per head a year for goats, and 5 kg for sheep in developing countries. Multiply by head count and by 27, the AR6 GWP for non-fossil methane. Manure methane is a separate, smaller line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "gold-jewellery-carbon-footprint-per-gram",
   "q": "What is the carbon footprint of gold jewellery per gram, and how much depends on mined versus recycled gold?",
   "title": "Gold jewellery carbon footprint per gram",
@@ -4705,6 +4841,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the factor of the producer that made the goods, not the trader. A trader adds little beyond storage and transport. Find the mill or plant from the mill test certificate or the trader's purchase records, then multiply your quantity by that producer's per tonne factor.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "grain-dryer-emissions-per-tonne",
+  "q": "How do I calculate the emissions of drying grain per tonne?",
+  "title": "Grain dryer emissions per tonne",
+  "short": "Add the burner fuel, such as diesel at 2.68 kg CO2 per litre or LPG at 2.98 per kg, and the fan electricity at 0.710 kg per kWh, then divide by tonnes dried. Moisture removed drives the fuel, so record moisture in and out.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "grain-ethanol-distillery-co2-per-litre",
@@ -4859,6 +5003,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "greywater-recycling-energy-per-kl",
+  "q": "How do I calculate the energy and CO2 per kL of recycled greywater?",
+  "title": "Greywater recycling energy per kL",
+  "short": "Divide the recycling plant's electricity, from a sub-meter, by kL treated and reused, then multiply by 0.710 kg CO2 per kWh. Compare it with the energy per kL of the fresh water it replaces to see whether reuse also saves emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "gri-102-climate-change-standard-changes",
   "q": "What changes with the new GRI 102 Climate Change standard, and when does it replace GRI 305?",
   "title": "GRI 102 Climate Change: what changes",
@@ -4977,6 +5129,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Under the Aatmanirbhar Gujarat Scheme for Assistance to MSMEs, the state reimburses 75% of the cost of an energy or water audit, up to Rs 50,000, and offers 25% of the cost of equipment the audit recommends, up to Rs 20 lakh. Confirm the current terms with your District Industries Centre before you book the audit.",
   "topic": "regulation",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "gym-carbon-footprint-per-member",
+  "q": "How do I calculate the carbon footprint of a gym per member?",
+  "title": "Gym carbon footprint per member",
+  "short": "Read the gym electricity bill at 0.710 kg CO2 per kWh, add LPG or diesel for hot water or backup at their default factors, then divide by active members. Air conditioning, powered machines and hot water are the main loads, so report per member each month.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "gypsum-board-carbon-footprint-per-sq-m",
@@ -5107,6 +5267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "hired-tractor-emissions-which-scope",
+  "q": "Are emissions from a tractor I hire with its driver Scope 1 or Scope 3?",
+  "title": "Hired tractor emissions: which scope?",
+  "short": "Scope 3. A tractor hired with its operator from a custom hiring centre or a neighbour is run by them, so its diesel is in their Scope 1 and your Scope 3, Category 1, as a purchased service. Only tractors you own, or lease and operate yourself, are Scope 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "hired-trucks-scope-1-or-scope-3",
   "q": "Are trucks we hire with drivers from a transporter Scope 1 or Scope 3?",
   "title": "Hired trucks with drivers: Scope 1 or 3?",
@@ -5131,6 +5299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "hospital-autoclave-sterilisation-emissions",
+  "q": "How do I calculate emissions from autoclave sterilisation in a hospital?",
+  "title": "Hospital autoclave emissions per cycle",
+  "short": "Count the steam's boiler fuel, or the electricity of electric steam generators at 0.710 kg CO2 per kWh, plus vacuum pumps and controls, and divide by cycles run. Biomedical waste sent to a common treatment facility is Scope 3, not part of this figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "hospital-bed-carbon-footprint-per-bed",
   "q": "How do I calculate the carbon footprint of a hospital bed?",
   "title": "Hospital bed carbon footprint per bed",
@@ -5145,6 +5321,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add Scope 1 (DG diesel, boiler and kitchen fuel, anaesthetic gases, refrigerant leaks) and Scope 2 (grid electricity from your bills) for a year, then divide by beds and by occupied bed-days. Report both. Start with the electricity bills: air conditioning, operating theatres and imaging run day and night.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "hospital-psa-oxygen-plant-emissions",
+  "q": "How do I calculate the emissions of a hospital PSA oxygen plant?",
+  "title": "Hospital PSA oxygen plant emissions",
+  "short": "A PSA oxygen plant runs on electricity, mainly its air compressor. Multiply the plant's kWh from a sub-meter by 0.710 kg CO2 per kWh, add generator diesel during outages, and divide by cubic metres of oxygen produced. Bought liquid oxygen is Scope 3 instead.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "hospital-scope-3-medicines-and-supplies",
@@ -5195,12 +5379,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "hotel-guest-shuttle-emissions-scope-1",
+  "q": "How do I calculate emissions from a hotel's airport or guest shuttle?",
+  "title": "Hotel guest shuttle emissions",
+  "short": "If the hotel owns or leases the shuttle and employs the driver, its diesel is Scope 1 at 2.68 kg CO2 per litre. A shuttle supplied with driver by a travel vendor is Scope 3. Divide fuel by transfers to report per guest trip.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "hotel-in-house-laundry-emissions-per-kg",
+  "q": "How do I calculate emissions per kg of linen in a hotel's own laundry?",
+  "title": "In-house hotel laundry per kg",
+  "short": "Add the laundry's steam or boiler fuel, washer, dryer and ironer electricity at 0.710 kg CO2 per kWh, and any LPG for dryers, then divide by kg of linen washed. A sub-meter or the boiler log shows the laundry's share of hotel energy.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "hotel-stay-emissions-per-night",
   "q": "How do I calculate emissions from hotel stays on business trips?",
   "title": "Hotel stay emissions per room night",
   "short": "Multiply the room nights by a hotel emission factor for the country of stay, given in kg CO2e per room per night. The UK government conversion factors publish one for India and many other countries. Count rooms, not guests, and report the result in Scope 3 Category 6, business travel.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "hotel-swimming-pool-heating-emissions",
+  "q": "How do I calculate the emissions of heating a hotel swimming pool?",
+  "title": "Hotel pool heating emissions",
+  "short": "Count the fuel or electricity used to heat the pool: LPG or diesel for a boiler at their default factors, or the heat pump's electricity at 0.710 kg CO2 per kWh. Add the filtration pump. A pool cover cuts evaporation, which is where most of the heat is lost.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "hourly-grid-emission-factors-india",
@@ -6779,6 +6987,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "lift-and-escalator-electricity-emissions",
+  "q": "How do I calculate the emissions from lifts and escalators in a building?",
+  "title": "Lift and escalator emissions",
+  "short": "Sub-meter the lifts and escalators, or estimate from rated motor power and run hours, then multiply kWh by 0.710 kg CO2 per kWh. They sit inside the building's Scope 2, so report them as a sub-figure when planning regenerative drives or escalator sleep modes.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "lignite-emission-factor-india",
   "q": "What emission factor should I use for lignite burned in a boiler or thermic fluid heater in India?",
   "title": "Emission factor for lignite in India",
@@ -6915,6 +7131,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "mall-common-area-electricity-allocation",
+  "q": "How do I allocate a mall's common-area electricity to my store?",
+  "title": "Mall common-area electricity share",
+  "short": "Ask the mall for the common-area electricity in kWh and the total leasable area, then take your store's share by area and multiply by 0.710 kg CO2 per kWh. For a tenant it is Scope 3, Category 8; the operator reports the whole common area in its Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "mango-pulp-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of aseptic mango pulp per kg?",
   "title": "Aseptic mango pulp carbon footprint per kg",
@@ -7043,12 +7267,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "mid-day-meal-kitchen-emissions-per-meal",
+  "q": "How do I calculate the emissions per meal of a mid-day meal kitchen?",
+  "title": "Mid-day meal kitchen per meal",
+  "short": "Add the kitchen's LPG at 2.98 kg CO2 per kg, steam boiler fuel if used, and electricity at 0.710 kg per kWh, then divide by meals served. Delivery vehicles are a separate line. Food ingredients are Scope 3 and are often larger than the cooking energy.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "milk-collection-route-emissions-per-litre",
+  "q": "How do I calculate milk collection transport emissions per litre?",
+  "title": "Milk collection route per litre",
+  "short": "Add the diesel used by collection vehicles on village routes at 2.68 kg CO2 per litre and divide by litres of milk collected. Own vehicles are Scope 1; hired route contractors are Scope 3, Category 4. Report per route to find long, lightly loaded runs.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "milk-powder-carbon-footprint-per-kg",
   "q": "What is the carbon footprint per kg of milk powder at an Indian dairy plant?",
   "title": "Milk powder carbon footprint per kg",
   "short": "At the plant, add the steam fuel and electricity used by the evaporator and spray dryer, plus the powder's share of receiving and pasteurising, and divide by kg of powder. Then add the raw milk's farm footprint, allocated to the powder by milk solids. The farm part is usually far larger than the plant part.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "milk-run-vs-direct-delivery-emissions",
+  "q": "Does a milk run cut emissions compared with direct deliveries from each supplier?",
+  "title": "Milk run vs direct delivery emissions",
+  "short": "Compare the fuel of one truck collecting from several suppliers on a loop against separate trucks from each supplier. Multiply litres by 2.68 kg CO2 per litre for each case. A milk run usually cuts distance and empty running, provided the truck is full enough.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "missing-electricity-bills-carbon-footprint",
@@ -7193,6 +7441,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the units from every connection your company pays for and operates: the main HT or LT supply, office and godown meters, temporary connections and staff quarters inside your boundary. Keep one row per consumer number. Do not add sub-meters that sit behind a main meter, because those units are already in the main bill.",
   "topic": "accounting",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "mushroom-farm-carbon-footprint-per-kg",
+  "q": "How do I calculate a mushroom farm's carbon footprint per kg?",
+  "title": "Mushroom farm carbon per kg",
+  "short": "Add electricity for air conditioning, humidifiers and cold rooms at 0.710 kg CO2 per kWh and generator or boiler fuel, then divide by kg of mushrooms sold. Climate-controlled growing rooms usually make electricity the main on-farm source; compost materials are bought-in inputs.",
+  "topic": "product",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "namkeen-carbon-footprint-per-kg",
@@ -7355,6 +7611,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "on-premise-server-room-emissions",
+  "q": "How do I calculate the emissions of an on-premise server room?",
+  "title": "On-premise server room emissions",
+  "short": "Meter the server room's total electricity, including its air conditioning and UPS losses, and multiply by 0.710 kg CO2 per kWh. Divide by racks, and compare with the IT load alone to get the PUE. Moving to colocation or cloud shifts it to Scope 3.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "one-carbon-dataset-for-several-buyers",
   "q": "Several buyers send different carbon questionnaires. Can I use one set of figures for all of them?",
   "title": "One carbon dataset for several buyers",
@@ -7401,6 +7665,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Per kg of nitrogen, it depends on your climate. Under the IPCC 2019 Refinement, in wet climates manure or compost emits less direct N2O than urea, 0.006 against 0.016 kg N2O-N per kg N. In dry climates both use 0.005, so there is no saving. Dropping urea also removes its CO2.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "organic-waste-converter-machine-emissions",
+  "q": "How do I calculate the emissions of an organic waste converter machine?",
+  "title": "Organic waste converter emissions",
+  "short": "Multiply the machine's electricity, from a sub-meter or rated power and hours, by 0.710 kg CO2 per kWh, and divide by kg of wet waste processed. Composting the output releases a little methane and N2O. Landfill emissions avoided are not deducted.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "outsourced-hotel-laundry-emissions",
@@ -7457,6 +7729,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The PACT Pathfinder Framework, run by WBCSD, is guidance for calculating cradle-to-gate product carbon footprints and exchanging them between companies in a common data format. It builds on ISO 14067 and the GHG Protocol Product Standard. No law requires it; a small supplier follows it only when a customer asks for PACT-aligned data.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "paddy-straw-burning-emissions-per-acre",
+  "q": "How do I calculate greenhouse gas emissions from burning paddy straw?",
+  "title": "Paddy straw burning emissions per acre",
+  "short": "Multiply the dry straw burnt per acre by the IPCC combustion factor, then by 2.7 g methane and 0.07 g N2O per kg of dry matter, and convert with AR6 GWPs. CO2 from burning straw is biogenic, so it is reported outside the scopes, not in the CO2e total.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "paddy-straw-carbon-credits-punjab",
@@ -7545,6 +7825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Parametric insurance pays a fixed amount when a measured index, such as temperature or rainfall at a named weather station, crosses a set trigger, without a loss survey. Payouts can come within days. The catch is basis risk: you can suffer a loss without the index triggering, or be paid without a loss.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "parcel-sorting-hub-emissions-per-parcel",
+  "q": "How do I calculate the emissions of a parcel sorting hub per parcel?",
+  "title": "Parcel sorting hub per parcel",
+  "short": "Add the hub's electricity for sorters, conveyors and lights at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by parcels sorted. The GLEC Framework calls this a hub emission intensity, which shippers add to the transport legs.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "particle-board-carbon-footprint-per-sq-m",
@@ -7883,6 +8171,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "polyhouse-farming-emissions-per-kg",
+  "q": "How do I calculate the carbon footprint of polyhouse vegetables per kg?",
+  "title": "Polyhouse farming emissions per kg",
+  "short": "Add electricity for fans, cooling pads, fogging and pumps at 0.710 kg CO2 per kWh, diesel for generators, and fertiliser N2O, then divide by kg harvested. Spread the plastic film and structure over their working life as bought-in inputs.",
+  "topic": "product",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "polymer-resin-emission-factors-pp-hdpe-pvc",
   "q": "What emission factor should I use for purchased PP, HDPE and PVC resin in Scope 3?",
   "title": "Emission factors for PP, HDPE and PVC resin",
@@ -7913,6 +8209,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Handling at a container freight station, ICD or port terminal is part of the transport chain, so it goes in Scope 3 Category 4 when you pay for it and Category 9 when your buyer pays. Use the terminal's own figure if it gives one, otherwise a per tonne handled default, labelled as such.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "port-handling-emissions-per-teu",
+  "q": "How do I calculate container handling emissions per TEU at a port or terminal?",
+  "title": "Port handling emissions per TEU",
+  "short": "Add the terminal's electricity for cranes and reefers at 0.710 kg CO2 per kWh and diesel for straddle carriers, reach stackers and yard tractors at 2.68 kg per litre. Divide by TEU handled. Shippers using the terminal report their share in Scope 3 through the GLEC Framework.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "potato-chips-carbon-footprint-per-kg",
@@ -8267,6 +8571,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "rainwater-harvesting-energy-saving-per-kl",
+  "q": "How do I calculate the emissions saved by rainwater harvesting?",
+  "title": "Rainwater harvesting CO2 saving",
+  "short": "Multiply the kL of harvested rainwater actually used by the energy per kL of the source it replaces, such as borewell pumping or tanker diesel, then by the right factor. Measure both with meters. Recharge pits that only refill groundwater save no direct energy that year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "rba-code-energy-and-ghg-requirements",
   "q": "What energy and GHG data does the RBA Code of Conduct require from an electronics supplier?",
   "title": "RBA Code: energy and GHG data needed",
@@ -8353,6 +8665,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "It depends on your plant's energy, so calculate it rather than borrow a number. Under the cut-off method the bottles arrive with no burden, and each kg of yarn carries bale transport, washing, flaking, extrusion and spinning energy, plus process losses. That is usually lower than virgin polyester, which carries PTA and MEG production.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "recycling-avoided-emissions-can-i-deduct",
+  "q": "Can I subtract emissions avoided by recycling my waste from my carbon footprint?",
+  "title": "Can I deduct recycling avoided emissions?",
+  "short": "No. Emissions avoided because your waste is recycled are not deducted from your inventory under the GHG Protocol. Report your waste emissions in Scope 3, Category 5, and show any avoided emissions separately, with the method, if you report them at all.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "reefer-container-emissions-food-exporters",
@@ -8561,6 +8881,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the restaurant's cooking fuel and electricity (Scope 1 and 2), refrigerant top-ups, and the food you buy (Scope 3), then divide by covers served. Cooking gas and power are easy to measure from bills. Food ingredients are often the largest part, especially for menus heavy in meat and dairy.",
   "topic": "accounting",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "retail-store-carbon-footprint-per-square-foot",
+  "q": "How do I calculate the carbon footprint of a retail store per square foot?",
+  "title": "Retail store carbon per square foot",
+  "short": "Divide the store's electricity at 0.710 kg CO2 per kWh, plus generator diesel and refrigerant top-ups, by the carpet area in square feet. Report each store per month, and keep refrigerated stores apart, since chillers and freezers use far more energy per square foot.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "retail-store-electricity-data-from-mall",
@@ -8867,6 +9195,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "school-owned-buses-emissions-scope-1",
+  "q": "How do I calculate emissions from buses my school owns and runs?",
+  "title": "School-owned buses emissions",
+  "short": "Diesel for buses the school owns or leases and runs with its own drivers is Scope 1: multiply litres from fuel invoices by 2.68 kg CO2 per litre. Buses hired with drivers from a contractor are Scope 3, and parents' own trips are student commuting.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "scope-2-revision-deliverability-indian-recs",
   "q": "Under the proposed GHG Protocol Scope 2 revision, would RECs from a generator in another Indian state still count for my market-based Scope 2?",
   "title": "Out-of-state RECs under the Scope 2 draft",
@@ -8953,6 +9289,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "In a 4-pillar SMETA audit, the auditor checks that you hold your environmental permits, have an environmental policy and someone responsible for it, and track energy, water, waste and emissions with records. For carbon, that means a year of electricity bills and fuel invoices, a Scope 1 and 2 total, and any targets or actions you claim.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "seed-processing-plant-emissions-per-tonne",
+  "q": "How do I calculate a seed processing plant's emissions per tonne?",
+  "title": "Seed processing plant per tonne",
+  "short": "Add electricity for cleaning, grading, treating and packing lines at 0.710 kg CO2 per kWh, dryer fuel and cold store power, then divide by tonnes of seed processed. Seed grown by contract farmers is a bought-in input, counted in Scope 3.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "self-adhesive-label-carbon-footprint-per-square-metre",
@@ -9683,6 +10027,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "sugarcane-farming-emissions-per-tonne-cane",
+  "q": "How do I calculate the carbon footprint of growing sugarcane per tonne of cane?",
+  "title": "Sugarcane farming emissions per tonne",
+  "short": "Add nitrogen fertiliser N2O with IPCC defaults, urea CO2, tractor diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes of cane per acre. Count trash burning separately if fields are burnt after harvest.",
+  "topic": "product",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "sulphuric-acid-plant-emissions-steam-export",
   "q": "Does a sulphur-burning sulphuric acid plant have Scope 1 emissions, and how do I report the steam it exports?",
   "title": "Sulphuric acid plant: Scope 1 and steam",
@@ -9835,6 +10187,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "taxi-fleet-operator-emissions-per-km",
+  "q": "How do I calculate a taxi or cab fleet's emissions per km?",
+  "title": "Taxi fleet emissions per km",
+  "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "tea-estate-fertiliser-emissions-per-kg-made-tea",
   "q": "How do I add a tea estate's fertiliser emissions to the footprint per kg of made tea?",
   "title": "Tea estate fertiliser emissions per kg tea",
@@ -9849,6 +10209,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add up the factory's fuel and electricity emissions for the season and divide by kg of made tea. In formula: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "telecom-tower-diesel-emissions-per-site",
+  "q": "How do I calculate the emissions of a telecom tower site?",
+  "title": "Telecom tower emissions per site",
+  "short": "Add the diesel burnt in the site generator, from fuel slips or tank dip records, at 2.68 kg CO2 per litre, and the grid electricity from the site bill at 0.710 kg per kWh. Divide by sites for a per-site figure, and report diesel as Scope 1 and grid power as Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "telematics-or-fuel-invoices-for-fleet-emissions",
@@ -10057,6 +10425,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the default factor for India for your truck class, per tonne-km and well-to-wheel: from 0.3795 kg CO2e for a small pickup down to 0.0551 for a tractor-trailer. These defaults already include typical empty running, so do not add the return trip. A carrier's own factor, backed by fuel data, is better still.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "truck-idling-emissions-per-hour",
+  "q": "How do I calculate emissions from trucks idling?",
+  "title": "Truck idling emissions per hour",
+  "short": "Multiply idling litres per hour by 2.68 kg CO2 per litre of diesel. Take the idle fuel rate from telematics or the engine data, not a guess, then multiply by idle hours from the tracker. Idling is already inside your fuel invoices, so report it as a sub-figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "try-senseible-without-an-account",
@@ -10371,6 +10747,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "warehouse-electricity-per-pallet-position",
+  "q": "How do I calculate warehouse emissions per pallet position?",
+  "title": "Warehouse emissions per pallet position",
+  "short": "Add the warehouse electricity at 0.710 kg CO2 per kWh, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "warehouse-emissions-allocation-3pl",
   "q": "How do I allocate a shared 3PL warehouse's emissions to my goods?",
   "title": "Your share of a shared 3PL warehouse",
@@ -10409,6 +10793,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, in effect: power from a waste heat recovery system that you use on site adds no Scope 2, because you did not buy it, and adds no new Scope 1 unless you burn extra fuel to run it. The emissions behind the heat are already in Scope 1, from the kiln or furnace fuel.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "waste-incineration-fossil-co2-calculation",
+  "q": "How do I calculate the CO2 from incinerating waste?",
+  "title": "Waste incineration fossil CO2",
+  "short": "Use IPCC Equation 5.1: waste burnt x dry matter share x carbon share x fossil carbon share x oxidation factor x 44/12. Only fossil carbon, mainly from plastics and synthetics, counts in the CO2 total; carbon in food, paper and wood is biogenic.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "waste-sent-to-waste-to-energy-scope-3",
@@ -10681,6 +11073,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The PPA should name the generating plant, transfer all environmental attributes of each MWh to you alone, bar the generator from selling those attributes again, match delivery to your consumption period and grid, and give you the metering data and certificate retirement records. Without these, a buyer can reject the market-based Scope 2 claim.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "wheat-farming-emissions-per-tonne",
+  "q": "How do I calculate the carbon footprint of growing wheat per tonne?",
+  "title": "Wheat farming emissions per tonne",
+  "short": "Add nitrogen fertiliser N2O with IPCC Tier 1 defaults, urea CO2, tractor and harvester diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes harvested per acre. Fertiliser N2O is often the largest field source.",
+  "topic": "product",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "when-is-a-scope-3-target-required-sbti",

@@ -1,0 +1,66 @@
+{
+  "slug": "bus-operator-emissions-per-passenger-km",
+  "q": "How does a bus operator calculate emissions per passenger-km?",
+  "title": "Bus operator emissions per passenger-km",
+  "short": "Multiply the diesel bought for the fleet by 2.68 kg CO2 per litre and divide by passenger-km: passengers carried times km per trip, from tickets or seat logs. Occupancy decides the result, so report per bus-km as well.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Private bus operators and staff transport contractors",
+  "sections": [
+    {
+      "h": "Data needed",
+      "ul": [
+        "Diesel from fuel invoices or fuel cards.",
+        "Passengers per trip, from tickets or headcounts.",
+        "Trip distance from the route schedule or GPS."
+      ]
+    },
+    {
+      "h": "Two figures",
+      "p": [
+        "Per bus-km shows fuel efficiency; per passenger-km shows how well buses are filled. Clients and schools want the second."
+      ]
+    },
+    {
+      "h": "For clients",
+      "p": [
+        "A company hiring your buses for staff reports them in Scope 3, Category 7. A per passenger-km figure from real diesel is better than a default factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: bus fleet (one month, illustrative inputs)",
+    "lines": [
+      "Diesel: 30,000 litres x 2.68 = 80,400 kg CO2",
+      "Passenger-km: 1,000,000",
+      "Per passenger-km: 80,400 / 1,000,000 = 0.0804 kg CO2"
+    ],
+    "note": "Inputs are illustrative; use fuel records and ticket counts."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Student commuting in Scope 3",
+      "to": "/answers/student-commuting-scope-3-school"
+    },
+    {
+      "label": "Business car travel: which scope?",
+      "to": "/answers/business-car-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

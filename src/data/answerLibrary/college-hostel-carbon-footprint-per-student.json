@@ -1,0 +1,68 @@
+{
+  "slug": "college-hostel-carbon-footprint-per-student",
+  "q": "How do I calculate the carbon footprint of a college hostel per student?",
+  "title": "College hostel carbon per student",
+  "short": "Add hostel electricity at 0.710 kg CO2 per kWh, mess LPG at 2.98 kg per kg, and generator diesel at 2.68 kg per litre, then divide by resident students. Sub-meter the hostel if it shares a campus supply, or label the split an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Colleges, universities and hostel operators",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Electricity for rooms, fans, ACs, water heaters and pumps.",
+        "LPG for the mess kitchen.",
+        "Diesel for backup generators."
+      ]
+    },
+    {
+      "h": "Shared campus supply",
+      "p": [
+        "If the hostel shares a meter with the campus, split by sub-meter readings, or by connected load and hours as a labelled estimate."
+      ]
+    },
+    {
+      "h": "Per student",
+      "p": [
+        "Divide by resident students per month. Food bought for the mess is Scope 3 and can be added later from purchase records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500-student hostel (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "LPG: 1,500 kg x 2.98 = 4,470 kg CO2",
+      "Diesel: 300 litres x 2.68 = 804 kg CO2",
+      "Resident students: 500",
+      "Total: 33,674 / 500 = 67.3 kg CO2 per student a month"
+    ],
+    "note": "Inputs are illustrative; use your own bills and occupancy."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "School carbon footprint",
+      "to": "/answers/school-carbon-footprint-how-to-calculate"
+    },
+    {
+      "label": "Induction or LPG kitchen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

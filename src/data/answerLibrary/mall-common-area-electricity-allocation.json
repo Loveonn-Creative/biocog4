@@ -1,0 +1,66 @@
+{
+  "slug": "mall-common-area-electricity-allocation",
+  "q": "How do I allocate a mall's common-area electricity to my store?",
+  "title": "Mall common-area electricity share",
+  "short": "Ask the mall for the common-area electricity in kWh and the total leasable area, then take your store's share by area and multiply by 0.710 kg CO2 per kWh. For a tenant it is Scope 3, Category 8; the operator reports the whole common area in its Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Retail tenants in malls and the mall operators who bill them",
+  "sections": [
+    {
+      "h": "What the mall should give you",
+      "ul": [
+        "Common-area kWh for the period, from its bills.",
+        "Total leasable area and your area from the lease.",
+        "Diesel for common-area generators, if any."
+      ]
+    },
+    {
+      "h": "Which basis",
+      "p": [
+        "Area share is the usual basis and matches how service charges are billed. Use it every year so figures stay comparable, and say so in your method note."
+      ]
+    },
+    {
+      "h": "Where it goes",
+      "p": [
+        "Your own metered electricity is Scope 2. The common-area share is Scope 3, Category 8, upstream leased assets, because the mall runs that space."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one store's common-area share (one month, illustrative inputs)",
+    "lines": [
+      "Common-area electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Your store: 4,000 sq ft of 200,000 sq ft leasable area = 2 percent",
+      "Your share: 42,600 x 0.02 = 852 kg CO2, reported in Scope 3, Category 8"
+    ],
+    "note": "Inputs are illustrative; use the mall's statement of common-area units."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Retail store electricity from a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "Coworking space: Scope 2 or Category 8?",
+      "to": "/answers/coworking-space-emissions-scope-2-or-category-8"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "fruit-ripening-chamber-electricity-per-tonne",
+  "q": "How do I calculate the emissions of a fruit ripening chamber per tonne?",
+  "title": "Ripening chamber emissions per tonne",
+  "short": "Multiply the chamber's electricity for cooling, air circulation and controls by 0.710 kg CO2 per kWh and divide by tonnes ripened. Ethylene used to trigger ripening is not one of the greenhouse gases the GHG Protocol counts, so only energy and refrigerant leaks matter.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ripening chamber operators, banana and mango traders",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity for refrigeration, fans and ethylene dosing.",
+        "Refrigerant top-ups from service invoices: Scope 1.",
+        "Generator diesel during outages."
+      ]
+    },
+    {
+      "h": "Ethylene",
+      "p": [
+        "Ethylene is not among the seven gases in the GHG Protocol inventory, so it adds nothing to the CO2e figure."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes ripened per cycle. Bananas and mangoes need different times and temperatures, so report by fruit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ripening chambers (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Fruit ripened (tonnes): 200",
+      "Total: 4,260 / 200 = 21.3 kg CO2 per tonne"
+    ],
+    "note": "Inputs are illustrative; use the chamber meter and throughput."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Ammonia vs HFC in cold storage",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Ozone Cell, Ministry of Environment (refrigerants)",
+      "url": "https://www.ozonecell.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

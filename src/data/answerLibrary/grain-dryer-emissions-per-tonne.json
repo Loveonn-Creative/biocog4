@@ -1,0 +1,67 @@
+{
+  "slug": "grain-dryer-emissions-per-tonne",
+  "q": "How do I calculate the emissions of drying grain per tonne?",
+  "title": "Grain dryer emissions per tonne",
+  "short": "Add the burner fuel, such as diesel at 2.68 kg CO2 per litre or LPG at 2.98 per kg, and the fan electricity at 0.710 kg per kWh, then divide by tonnes dried. Moisture removed drives the fuel, so record moisture in and out.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Rice mills, maize traders and grain warehouses",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Burner fuel: diesel, LPG, PNG or rice husk.",
+        "Electricity for fans and elevators.",
+        "Moisture before and after drying."
+      ]
+    },
+    {
+      "h": "Husk or biomass burners",
+      "p": [
+        "Burning rice husk is biogenic: its CO2 is reported outside the scopes, while its small methane and N2O count. That makes husk dryers far lower than diesel ones."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report per tonne dried and per percentage point of moisture removed, which allows fair comparison between seasons."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: grain dryer (one season, illustrative inputs)",
+    "lines": [
+      "Diesel: 1,500 litres x 2.68 = 4,020 kg CO2",
+      "Electricity: 4,000 kWh x 0.710 = 2,840 kg CO2",
+      "Grain dried (tonnes): 1,000",
+      "Total: 6,860 / 1,000 = 6.860 kg CO2 per tonne"
+    ],
+    "note": "Inputs are illustrative; use fuel invoices and dryer logs."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Rice mill carbon per tonne paddy",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

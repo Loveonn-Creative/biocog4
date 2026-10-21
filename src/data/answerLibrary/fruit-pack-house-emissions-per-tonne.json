@@ -1,0 +1,67 @@
+{
+  "slug": "fruit-pack-house-emissions-per-tonne",
+  "q": "How do I calculate a fruit pack house's emissions per tonne packed?",
+  "title": "Fruit pack house emissions per tonne",
+  "short": "Add electricity for pre-cooling, washing, grading lines and cold rooms at 0.710 kg CO2 per kWh, generator diesel and refrigerant top-ups, then divide by tonnes packed. Cartons and crates are bought-in packaging, added from supplier figures.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pack houses, fruit exporters and FPOs",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Pre-cooling and cold rooms.",
+        "Washing, waxing and grading lines.",
+        "Generator diesel and refrigerant top-ups."
+      ]
+    },
+    {
+      "h": "Packaging",
+      "p": [
+        "Cartons, liners and crates are purchased goods. Add them per tonne packed from supplier figures for a fuller export footprint."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes packed, and report by fruit and season, since grapes and pomegranates use cold storage very differently."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: export pack house (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 30,000 kWh x 0.710 = 21,300 kg CO2",
+      "Diesel: 300 litres x 2.68 = 804 kg CO2",
+      "Fruit packed (tonnes): 1,500",
+      "Total: 22,104 / 1,500 = 14.7 kg CO2 per tonne"
+    ],
+    "note": "Inputs are illustrative; use the pack house meter and dispatch records."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "FPO crop carbon footprint for a buyer",
+      "to": "/answers/fpo-crop-carbon-footprint-for-buyer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Ozone Cell, Ministry of Environment (refrigerants)",
+      "url": "https://www.ozonecell.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

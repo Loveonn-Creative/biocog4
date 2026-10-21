@@ -1,0 +1,68 @@
+{
+  "slug": "paddy-straw-burning-emissions-per-acre",
+  "q": "How do I calculate greenhouse gas emissions from burning paddy straw?",
+  "title": "Paddy straw burning emissions per acre",
+  "short": "Multiply the dry straw burnt per acre by the IPCC combustion factor, then by 2.7 g methane and 0.07 g N2O per kg of dry matter, and convert with AR6 GWPs. CO2 from burning straw is biogenic, so it is reported outside the scopes, not in the CO2e total.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Farmers, FPOs, rice buyers and residue management projects",
+  "sections": [
+    {
+      "h": "The method",
+      "ul": [
+        "Dry straw on the field per acre, from the grain to straw ratio or a field sample.",
+        "Combustion factor: the share that actually burns (IPCC Table 2.6).",
+        "Emission factors for agricultural residues: 2.7 g CH4 and 0.07 g N2O per kg dry matter (IPCC Table 2.5)."
+      ]
+    },
+    {
+      "h": "Why CO2 is left out",
+      "p": [
+        "The carbon in straw was taken from the air that season, so its CO2 is biogenic. Report it separately if asked, but only methane and N2O count in the CO2e total."
+      ]
+    },
+    {
+      "h": "Alternatives",
+      "p": [
+        "Baling straw for boilers or biomass co-firing, or mixing it into soil, avoids these emissions. Report any avoided burning separately, not as a deduction."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one acre of paddy straw (illustrative inputs)",
+    "lines": [
+      "Straw left on the field: 2,500 kg dry matter an acre (illustrative)",
+      "Burnt: 2,500 x 0.8 combustion factor = 2,000 kg",
+      "Methane: 2,000 x 2.7 g = 5.4 kg CH4 x 27 = 145.8 kg CO2e",
+      "N2O: 2,000 x 0.07 g = 0.14 kg N2O x 273 = 38.2 kg CO2e",
+      "Total: 184.0 kg CO2e an acre; CO2 from the straw is biogenic and reported outside the scopes"
+    ],
+    "note": "Straw quantity is illustrative; factors are IPCC 2006 Volume 4 Tables 2.5 and 2.6, AR6 GWPs (27 for non-fossil methane, 273 for N2O)."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Paddy straw carbon credits in Punjab",
+      "to": "/answers/paddy-straw-carbon-credits-punjab"
+    },
+    {
+      "label": "AWD rice methane reduction",
+      "to": "/answers/awd-rice-methane-reduction-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 2, Tables 2.5 and 2.6",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

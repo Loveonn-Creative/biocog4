@@ -1,0 +1,67 @@
+{
+  "slug": "port-handling-emissions-per-teu",
+  "q": "How do I calculate container handling emissions per TEU at a port or terminal?",
+  "title": "Port handling emissions per TEU",
+  "short": "Add the terminal's electricity for cranes and reefers at 0.710 kg CO2 per kWh and diesel for straddle carriers, reach stackers and yard tractors at 2.68 kg per litre. Divide by TEU handled. Shippers using the terminal report their share in Scope 3 through the GLEC Framework.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Port terminals, container freight stations and inland depots",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Electricity for quay cranes, electric yard cranes, reefer plugs and lighting.",
+        "Diesel for reach stackers, yard tractors, straddle carriers and diesel cranes.",
+        "Generator diesel during outages."
+      ]
+    },
+    {
+      "h": "Per TEU",
+      "p": [
+        "Divide by TEU handled in the same period. Report reefer power separately, since it depends on how many refrigerated boxes the terminal holds."
+      ]
+    },
+    {
+      "h": "For shippers",
+      "p": [
+        "The GLEC Framework treats terminal handling as a hub activity. Shippers add a per-TEU or per-tonne hub figure to their transport emissions in Category 4 or 9."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: container terminal (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 300,000 kWh x 0.710 = 213,000 kg CO2",
+      "Diesel: 40,000 litres x 2.68 = 107,200 kg CO2",
+      "TEU handled: 50,000",
+      "Total: 320,200 / 50,000 = 6.404 kg CO2 per TEU"
+    ],
+    "note": "Inputs are illustrative; use the terminal's own meters and fuel issue records."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Intermodal container: rail, road, sea",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    },
+    {
+      "label": "Empty container repositioning",
+      "to": "/answers/empty-container-repositioning-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

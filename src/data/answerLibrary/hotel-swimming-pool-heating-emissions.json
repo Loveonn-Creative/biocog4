@@ -1,0 +1,66 @@
+{
+  "slug": "hotel-swimming-pool-heating-emissions",
+  "q": "How do I calculate the emissions of heating a hotel swimming pool?",
+  "title": "Hotel pool heating emissions",
+  "short": "Count the fuel or electricity used to heat the pool: LPG or diesel for a boiler at their default factors, or the heat pump's electricity at 0.710 kg CO2 per kWh. Add the filtration pump. A pool cover cuts evaporation, which is where most of the heat is lost.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hotels, resorts and clubs with heated pools",
+  "sections": [
+    {
+      "h": "What uses energy",
+      "ul": [
+        "The heater: LPG, diesel or gas boiler, heat pump, or solar.",
+        "Filtration and circulation pumps, which run for long hours.",
+        "Lighting and dehumidifiers for indoor pools."
+      ]
+    },
+    {
+      "h": "Measure it",
+      "p": [
+        "A sub-meter on the heat pump or the boiler's fuel log is far better than a share of the hotel bill. Without one, estimate from rated power and run hours and label it an estimate."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Boiler fuel is Scope 1 and heat pump electricity Scope 2, both inside the hotel's total. Pool heating is a useful sub-figure when comparing a boiler with a heat pump."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: boiler or heat pump for the same pool (one month, illustrative inputs)",
+    "lines": [
+      "LPG boiler: 900 kg x 2.98 = 2,682 kg CO2",
+      "Heat pump: 3,600 kWh x 0.710 = 2,556 kg CO2",
+      "Difference: 126 kg CO2 a month"
+    ],
+    "note": "Fuel and electricity use are illustrative; a heat pump's actual use depends on climate and cover use."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hotel carbon per occupied room",
+      "to": "/answers/hotel-carbon-per-occupied-room-hcmi"
+    },
+    {
+      "label": "Hot water saved, CO2 per kL",
+      "to": "/answers/hot-water-saved-co2-per-kl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

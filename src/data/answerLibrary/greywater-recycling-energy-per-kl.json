@@ -1,0 +1,70 @@
+{
+  "slug": "greywater-recycling-energy-per-kl",
+  "q": "How do I calculate the energy and CO2 per kL of recycled greywater?",
+  "title": "Greywater recycling energy per kL",
+  "short": "Divide the recycling plant's electricity, from a sub-meter, by kL treated and reused, then multiply by 0.710 kg CO2 per kWh. Compare it with the energy per kL of the fresh water it replaces to see whether reuse also saves emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Housing societies, hotels, offices and campuses",
+  "sections": [
+    {
+      "h": "What uses power",
+      "ul": [
+        "Pumps for collection, treatment and supply.",
+        "Blowers for aeration.",
+        "Filtration and disinfection."
+      ]
+    },
+    {
+      "h": "Compare with the source",
+      "p": [
+        "Recycling saves emissions only if its kWh per kL is lower than the replaced source, such as deep borewell pumping or tanker water. It always saves fresh water."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "The plant's electricity is Scope 2. Report kL reused and kWh per kL alongside your water intensity."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: greywater plant (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 1,500 kWh x 0.710 = 1,065 kg CO2",
+      "Greywater treated and reused (kL): 3,000",
+      "Total: 1,065 / 3,000 = 0.355 kg CO2 per kL"
+    ],
+    "note": "Inputs are illustrative; use the plant sub-meter and flow meter."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Sewage treatment plant electricity per kL",
+      "to": "/answers/sewage-treatment-plant-electricity-per-kl"
+    },
+    {
+      "label": "Borewell pumping energy per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

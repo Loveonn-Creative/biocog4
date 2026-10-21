@@ -1,0 +1,66 @@
+{
+  "slug": "milk-run-vs-direct-delivery-emissions",
+  "q": "Does a milk run cut emissions compared with direct deliveries from each supplier?",
+  "title": "Milk run vs direct delivery emissions",
+  "short": "Compare the fuel of one truck collecting from several suppliers on a loop against separate trucks from each supplier. Multiply litres by 2.68 kg CO2 per litre for each case. A milk run usually cuts distance and empty running, provided the truck is full enough.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Manufacturers planning inbound logistics",
+  "sections": [
+    {
+      "h": "What to compare",
+      "ul": [
+        "Total distance for the loop against the sum of direct trips.",
+        "Litres per km for each truck size, from fuel records.",
+        "Load factor, since a half-empty loop truck saves less."
+      ]
+    },
+    {
+      "h": "Where it is reported",
+      "p": [
+        "Inbound freight you pay for is Scope 3, Category 4. Your own trucks running the loop are Scope 1."
+      ]
+    },
+    {
+      "h": "Record it",
+      "p": [
+        "Keep the planned and actual routes and fuel. A before and after figure from real fuel use is stronger than a modelled one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: five suppliers (one trip, illustrative inputs)",
+    "lines": [
+      "Direct: five suppliers, five trucks, 120 km each at an assumed 5 km per litre: 600 / 5 = 120 litres x 2.68 = 321.6 kg CO2",
+      "Milk run: one truck, 140 km loop at an assumed 4.5 km per litre: 31.11 litres x 2.68 = 83.38 kg CO2",
+      "Saving: 238.2 kg CO2 a trip"
+    ],
+    "note": "Distances and mileages are assumed inputs."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Truck freight emission factor India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Hired trucks: Scope 1 or 3?",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

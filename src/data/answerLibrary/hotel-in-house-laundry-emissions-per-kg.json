@@ -1,0 +1,72 @@
+{
+  "slug": "hotel-in-house-laundry-emissions-per-kg",
+  "q": "How do I calculate emissions per kg of linen in a hotel's own laundry?",
+  "title": "In-house hotel laundry per kg",
+  "short": "Add the laundry's steam or boiler fuel, washer, dryer and ironer electricity at 0.710 kg CO2 per kWh, and any LPG for dryers, then divide by kg of linen washed. A sub-meter or the boiler log shows the laundry's share of hotel energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hotel engineering and housekeeping teams",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Boiler fuel for steam or hot water used by the laundry.",
+        "Electricity for washer extractors, tumble dryers and the flatwork ironer.",
+        "LPG or gas if dryers burn it directly."
+      ]
+    },
+    {
+      "h": "Getting the laundry share",
+      "p": [
+        "Use a sub-meter where one exists. Otherwise share boiler fuel by steam demand and label the split an estimate in your method note."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Report per kg of linen washed, from the laundry's weighing log. Outsourced laundry is Scope 3 instead."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: hotel laundry (one month, illustrative inputs)",
+    "lines": [
+      "PNG: 1,200 scm x 2.05 = 2,460 kg CO2",
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "LPG: 150 kg x 2.98 = 447 kg CO2",
+      "Kg of linen washed: 30,000",
+      "Total: 7,167 / 30,000 = 0.239 kg CO2 per kg of linen"
+    ],
+    "note": "Inputs are illustrative; use the laundry sub-meter or boiler log."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Outsourced hotel laundry emissions",
+      "to": "/answers/outsourced-hotel-laundry-emissions"
+    },
+    {
+      "label": "Hotel carbon per occupied room",
+      "to": "/answers/hotel-carbon-per-occupied-room-hcmi"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

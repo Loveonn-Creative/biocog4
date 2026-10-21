@@ -1,0 +1,69 @@
+{
+  "slug": "gym-carbon-footprint-per-member",
+  "q": "How do I calculate the carbon footprint of a gym per member?",
+  "title": "Gym carbon footprint per member",
+  "short": "Read the gym electricity bill at 0.710 kg CO2 per kWh, add LPG or diesel for hot water or backup at their default factors, then divide by active members. Air conditioning, powered machines and hot water are the main loads, so report per member each month.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Gym and fitness centre owners",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Air conditioning and ventilation.",
+        "Treadmills, cross trainers and other powered machines.",
+        "Hot water for showers, from electric geysers, LPG or solar."
+      ]
+    },
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity from the bill: Scope 2.",
+        "LPG or diesel bought for the site: Scope 1.",
+        "Refrigerant top-ups for the AC: Scope 1."
+      ]
+    },
+    {
+      "h": "Per member",
+      "p": [
+        "Divide by active members in the month. For a chain, report each site and the total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one gym (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 12,000 kWh x 0.710 = 8,520 kg CO2",
+      "LPG: 60 kg x 2.98 = 178.8 kg CO2",
+      "Active members: 800",
+      "Total: 8,698.8 / 800 = 10.9 kg CO2 per member a month"
+    ],
+    "note": "Inputs are illustrative; use your own bills and member count."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Office carbon per square foot",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Office AC replacement savings",
+      "to": "/answers/office-ac-replacement-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
