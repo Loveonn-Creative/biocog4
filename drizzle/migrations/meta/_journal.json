@@ -225,6 +225,13 @@
       "when": 1792581552411,
       "tag": "0031_cng_factor_correction",
       "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1792581572539,
+      "tag": "0032_subscriptions_staff_email",
+      "breakpoints": true
     }
   ]
 }
