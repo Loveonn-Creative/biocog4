@@ -32,10 +32,11 @@ import {
 import { clientIp, guestSubject, planForUser, readUse, takeUse } from "../_shared/intelligenceUsage.ts";
 import { orgCan } from "../_shared/workspaceAccess.ts";
 import {
-  answerStream, buildEvidence, citableRecords, IdScrubber, mapAnswerIds, probeReply, retrieveResources, sseDelta, SSE_DONE, sseEvidence, textIndex,
+  answerStream, buildEvidence, citableRecords, IdScrubber, mapAnswerIds, probeReply, sseDelta, SSE_DONE, sseEvidence, textIndex,
   type CitableRecord, type Evidence, type LibraryEntry,
 } from "../_shared/intelligenceEvidence.ts";
 import { INTELLIGENCE_LIBRARY } from "../_shared/intelligenceLibrary.generated.ts";
+import { findResources, syncLibrary } from "../_shared/publicLibrary.ts";
 import { versionProbe } from "../_shared/versionProbe.ts";
 
 const corsHeaders = {
@@ -358,7 +359,10 @@ Deno.serve(async (req) => {
     }
     // Only Pro and Scale may cite records, and only the ones in their own brief.
     const citable = access.ownRecords ? facts.citable ?? [] : [];
-    const resources = retrieveResources(question, INTELLIGENCE_LIBRARY, 4);
+    const { entries: resources } = await findResources(admin, question, INTELLIGENCE_LIBRARY, 4);
+    // Keep the database copy of the public library current (one check per six hours, in the background).
+    const sync = syncLibrary(admin).then((r) => { if (r === "updated" || r === "failed") console.log(`public library sync: ${r}`); });
+    (globalThis as unknown as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime?.waitUntil?.(sync);
     const finish = (text: string, seen: string[], removed: number): Evidence => buildEvidence({
       text, audience, access,
       brief: access.ownRecords ? facts.brief ?? null : null,
