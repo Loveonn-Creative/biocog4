@@ -13,6 +13,8 @@ interface Props {
   /** Documents read with nothing counted yet (no emission record). */
   uncountedDocs?: number;
   unverifiedCount: number;
+  /** Months with no electricity bill between the first and last on record (yyyy-mm). */
+  missingMonths?: string[];
   hasVerifiedData: boolean;
   verificationScore: number;
   latestStatus: 'verified' | 'needs_review' | 'pending' | null;
@@ -37,6 +39,12 @@ function nextAction(p: Props) {
   if (p.recordCount === 0 && u > 0) return { message: `${u === 1 ? '1 document was' : `${u} documents were`} read, but nothing in ${u === 1 ? 'it' : 'them'} could be counted yet. History shows what is missing.`, label: 'See what is missing', to: '/history' };
   if (p.recordCount === 0) return { message: 'Upload your first invoice to start tracking carbon emissions.', label: 'Upload invoice', to: '/' };
   if (p.unverifiedCount > 0) return { message: `${p.unverifiedCount} ${p.unverifiedCount === 1 ? 'record is' : 'records are'} waiting for verification. Verify to use them in reports and finance.`, label: 'Verify now', to: '/verify' };
+  const gaps = p.missingMonths ?? [];
+  if (gaps.length) {
+    const name = (ym: string) => new Date(`${ym}-01T00:00:00Z`).toLocaleDateString('en-IN', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    const what = gaps.length === 1 ? `${name(gaps[0])}'s electricity bill is` : `Electricity bills for ${gaps.length} months, from ${name(gaps[0])}, are`;
+    return { message: `${what} not uploaded yet. Complete months are what lenders check first.`, label: 'Upload bill', to: '/' };
+  }
   if (p.hasVerifiedData) return { message: 'All emissions verified. Generate reports or upload more invoices.', label: 'View reports', to: '/reports' };
   return { message: 'Upload invoices to begin tracking.', label: 'Get started', to: '/' };
 }

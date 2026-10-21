@@ -34,13 +34,13 @@ import { useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
 const FinanceInsights = lazy(() => import('@/components/finance/FinanceInsights').then((m) => ({ default: m.FinanceInsights })));
 const Scope3Preview = lazy(() => import('@/components/scope3/Scope3Preview').then((m) => ({ default: m.Scope3Preview })));
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
-import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { useCredibility } from '@/hooks/useCredibility';
 import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
 import { AlertTriangle, Info, CheckCircle2, ChevronRight } from 'lucide-react';
 import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
 import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
 import { RecordInsights } from '@/components/insights/RecordInsights';
+import { missingElectricityMonths } from '@/lib/missingMonths';
 import { useRecordsChanged } from '@/lib/recordsEvents';
 import {
   defaultFilters,
@@ -273,6 +273,7 @@ const Dashboard = () => {
 
   const PLAN_NAME: Record<string, string> = { snapshot: 'Snapshot', essential: 'Essential', pro: 'Pro', scale: 'Scale' };
   const countedDocIds = new Set(emissions.map((e) => e.document_id).filter(Boolean));
+  const missingMonths = useMemo(() => missingElectricityMonths(emissions), [emissions]);
   const uncountedDocs = documents.filter((d) => !countedDocIds.has(d.id)).length;
   const verifiedKg = sumVerifiedKgOncePerEmission(verifiedEmissions, e => e.id, e => e.co2_kg);
   const checks = pathwayChecks({ verifiedCount: verifiedChecks.count, qualityGrade: verifiedChecks.grade, ledgerCount: ledgerEntries.length, greenInvoiceCount: countGreenInvoices(ledgerEntries as never) });
@@ -341,6 +342,7 @@ const Dashboard = () => {
               summary={summary}
               recordCount={emissions.length}
               uncountedDocs={uncountedDocs}
+              missingMonths={missingMonths}
               unverifiedCount={unverifiedEmissions.length}
               hasVerifiedData={verifiedEmissions.length > 0}
               verificationScore={verificationScore}
@@ -403,12 +405,8 @@ const Dashboard = () => {
 
             <RecentDocuments documents={documents.slice(0, 5)} />
 
-            {isEnterprise && emissions.length > 0 && (
-              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <EnterpriseAuditLog />
-                <EnterpriseComplianceLabels scope1={summary.scope1} scope2={summary.scope2} scope3={summary.scope3} />
-              </div>
-            )}
+            {/* Compliance labels live on MRV; the audit log is shown only here. */}
+            {isEnterprise && emissions.length > 0 && <EnterpriseAuditLog />}
 
             {scope3.showBasic && (
               <Suspense fallback={null}><Scope3Preview fullAvailable={scope3.fullAvailable} /></Suspense>
