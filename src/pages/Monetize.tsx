@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -68,6 +68,7 @@ interface Verification {
 
 const Monetize = () => {
   const navigate = useNavigate();
+  const { hash } = useLocation();
   const { sessionId, user } = useSession();
   const { scope, ready: workspaceReady } = useWorkspace();
   const workspaceKey = scopeKey(scope);
@@ -309,6 +310,13 @@ const Monetize = () => {
     }
   };
 
+  // A link to one pathway (/monetize#green_factoring, from the Dashboard)
+  // opens on that pathway's card once the page has loaded.
+  useEffect(() => {
+    if (isLoading || !hash) return;
+    document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' });
+  }, [isLoading, hash]);
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -392,7 +400,8 @@ const Monetize = () => {
               {pathways.map((p, idx) => (
                 <Card 
                   key={p.id} 
-                  className="hover:border-primary/30 transition-all duration-300 animate-fade-in"
+                  id={p.id}
+                  className="scroll-mt-24 hover:border-primary/30 transition-all duration-300 animate-fade-in"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
                   <CardContent className="p-6">
