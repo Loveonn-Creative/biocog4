@@ -1,0 +1,62 @@
+{
+  "slug": "firozabad-glass-unit-gas-evidence-for-buyers",
+  "q": "How should a Firozabad glass unit show its gas use and emissions to buyers?",
+  "title": "Firozabad glass unit gas evidence",
+  "short": "Send monthly gas bills, electricity bills and production in tonnes of good glass, with emissions worked out at 2.05 kg CO2 per scm and 0.710 kg CO2 per kWh, plus batch carbonate CO2. Units in the Taj Trapezium Zone are required to use natural gas, which buyers can check against the bills.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Glass bangle, glassware and decorative glass units in the Firozabad cluster",
+  "sections": [
+    {
+      "h": "Why gas",
+      "p": [
+        "Firozabad lies in the Taj Trapezium Zone, where Supreme Court orders from the 1990s directed industries to move from coal to natural gas to protect the Taj Mahal. Furnaces and muffles are expected to run on piped gas, so gas bills are the main evidence."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ol": [
+        "Gas in scm and electricity in kWh per month, from bills.",
+        "Soda ash, limestone and dolomite in the batch, for carbonate CO2.",
+        "Tonnes of good glass, and pieces if the buyer counts per piece.",
+        "The factors used and their sources."
+      ]
+    },
+    {
+      "h": "Idle furnace gas",
+      "p": [
+        "Pot and tank furnaces burn gas even when production pauses. Count all gas billed, so the figure per tonne reflects real operation."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Glass bangle furnace per tonne",
+      "to": "/answers/glass-bangle-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Is glassware covered by CBAM?",
+      "to": "/answers/is-glassware-covered-by-cbam"
+    },
+    {
+      "label": "Is a glass unit covered by CCTS?",
+      "to": "/answers/is-a-glass-unit-covered-by-ccts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

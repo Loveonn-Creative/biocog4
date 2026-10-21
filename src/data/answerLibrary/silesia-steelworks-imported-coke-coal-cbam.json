@@ -1,0 +1,60 @@
+{
+  "slug": "silesia-steelworks-imported-coke-coal-cbam",
+  "q": "Do Silesian steelworks pay CBAM on imported coke and coal?",
+  "title": "Imported coke and coal under CBAM",
+  "short": "No. Coal under CN 2701 and coke under 2704 are not in Annex I of the CBAM Regulation, so importing them carries no CBAM obligation. The steelworks pays for burning them through the EU ETS. CBAM applies only if the works imports covered goods such as pig iron, DRI or semi-finished steel.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steelworks, coke plants and traders in Silesia and other EU coal and steel regions",
+  "sections": [
+    {
+      "h": "Not covered",
+      "ul": [
+        "2701: coal, including coking coal.",
+        "2704: coke and semi-coke.",
+        "2601 11: non-agglomerated iron ore, such as fines and lump."
+      ]
+    },
+    {
+      "h": "Covered imports to watch",
+      "ul": [
+        "2601 12 00: agglomerated iron ore, such as pellets and sinter.",
+        "7201 and 7203: pig iron, DRI and HBI.",
+        "7202 1, 7202 4 and 7202 60: ferro-manganese, ferro-chromium and ferro-nickel.",
+        "7206 and 7207: ingots and semi-finished steel."
+      ]
+    },
+    {
+      "h": "Why coke is treated this way",
+      "p": [
+        "CBAM covers goods at the highest risk of carbon leakage from the sectors listed in Annex I. Coke is an input to steel, and its emissions are caught at the EU installation that burns it, under the EU ETS."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods, and non-EU suppliers can use Senseible to keep document-backed fuel and electricity records to share with you. Senseible does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Iron ore pellets under CBAM",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    },
+    {
+      "label": "EU ETS and CBAM difference",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "Supplier data for a Polish importer",
+      "to": "/climate-intelligence/cbam-supplier-data-steel-importer-poland"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Directive 2003/87/EC (EU ETS), consolidated, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

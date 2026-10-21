@@ -1,0 +1,63 @@
+{
+  "slug": "rotterdam-steel-imports-who-files-cbam-declaration",
+  "q": "Who files the CBAM declaration for steel landed at the port of Rotterdam?",
+  "title": "Who files CBAM for Rotterdam imports?",
+  "short": "The authorised CBAM declarant: the importer, or an indirect customs representative acting for it, authorised by the competent authority before importing. A direct representative cannot carry the obligation for the importer. Importers bringing in 50 tonnes or less a year of covered goods are exempt.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Steel traders, importers and customs representatives at Rotterdam and other EU ports",
+  "sections": [
+    {
+      "h": "Who can be the declarant",
+      "ul": [
+        "The importer established in the EU that lodges the customs declaration in its own name.",
+        "An indirect customs representative, which acts in its own name for the importer, if it agrees to take on the CBAM obligations.",
+        "Not the non-EU exporter itself; it can register in the CBAM Registry and share data, but it does not declare."
+      ]
+    },
+    {
+      "h": "What the declarant does",
+      "ol": [
+        "Holds the authorisation, or has applied for it in time under the 2025 transitional arrangement, before importing covered goods above the threshold.",
+        "Collects embedded emissions per CN code and origin, from verified supplier data or default values.",
+        "Holds certificates each quarter and surrenders them with the annual declaration for the previous year."
+      ]
+    },
+    {
+      "h": "Transit and storage",
+      "p": [
+        "Goods only in transit or in a customs warehouse are not yet released for free circulation, so the CBAM obligation arises when they are released into the EU market."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods, and non-EU suppliers can use Senseible to keep document-backed fuel and electricity records to share with you. Senseible does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Can a non-EU exporter be the declarant?",
+      "to": "/answers/can-non-eu-exporter-be-cbam-declarant-ddp"
+    },
+    {
+      "label": "Become an authorised declarant",
+      "to": "/climate-intelligence/become-cbam-authorised-declarant"
+    },
+    {
+      "label": "The 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

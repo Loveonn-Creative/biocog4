@@ -1,0 +1,77 @@
+{
+  "slug": "iskenderun-steel-exporter-actual-vs-default-cbam",
+  "q": "Should an Iskenderun steel exporter give EU buyers actual emissions or let them use default values?",
+  "title": "Iskenderun steel: actual or default values",
+  "short": "Usually actual, if your verified intensity is below the EU default for Turkey and your CN code. Defaults for steel carry a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028, so a buyer using them pays more than the plant's real figure. Actual values need monitoring and an accredited verifier every year.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Steel mills and traders in the Iskenderun and Hatay steel belt selling to EU importers",
+  "sections": [
+    {
+      "h": "Where the defaults come from",
+      "p": [
+        "The default values for the definitive period are in Implementing Regulation (EU) 2025/2621, set by CN code and country of origin. Your furnace route does not change them, so a cleaner mill gains nothing from defaults."
+      ]
+    },
+    {
+      "h": "How to decide",
+      "ol": [
+        "Find the default value for each of your CN codes and Turkey, and add the mark-up for the import year.",
+        "Estimate your plant's direct embedded emissions per tonne for the same codes.",
+        "Price the annual verification, which you need for actual values whether or not you register in the CBAM Registry.",
+        "If your figure plus verification cost beats the marked-up default for your EU volumes, offer verified actual data."
+      ]
+    },
+    {
+      "h": "Near the EU, contracts move first",
+      "p": [
+        "Because the EU importer carries the CBAM cost, buyers increasingly write the emissions figure into price terms. Agree in the contract which figure applies, who pays for verification, and what happens if the verified figure differs from the estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 t of hot-rolled coil in 2027 (illustrative inputs)",
+    "lines": [
+      "Default value: 2.00 t CO2e/t x 1.20 (20% mark-up) = 2.40 t CO2e/t",
+      "Verified actual value: 1.90 t CO2e/t",
+      "Difference in embedded emissions: (2.40 minus 1.90) x 10,000 = 5,000 t CO2e",
+      "At €82.32 per certificate, before the free allocation adjustment: 5,000 x 82.32 = €411,600 more on defaults"
+    ],
+    "note": "The default value and plant figure are illustrative; look up the value for your CN code. The free allocation adjustment applies to both figures equally, so it does not change the gap."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CBAM clause for export contracts",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    },
+    {
+      "label": "Register in the CBAM Registry",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Recheck the mark-ups and the certificate price before quoting them to a buyer."
+}

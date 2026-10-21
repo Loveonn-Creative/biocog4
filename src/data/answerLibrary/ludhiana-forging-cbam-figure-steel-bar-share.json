@@ -1,0 +1,67 @@
+{
+  "slug": "ludhiana-forging-cbam-figure-steel-bar-share",
+  "q": "Why is a Ludhiana forging unit's CBAM figure mostly the steel bar it buys?",
+  "title": "Ludhiana forging CBAM figure",
+  "short": "Because the bar is a precursor carrying the mill's embedded emissions, often around two tonnes of CO2e per tonne, while the forge adds only its furnace fuel. With induction heating, the forge adds almost nothing, since electricity is not counted for steel goods under CBAM.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Forging units and auto and cycle part makers in the Ludhiana cluster exporting to the EU",
+  "sections": [
+    {
+      "h": "Where the figure comes from",
+      "ol": [
+        "Bar consumed, including flash and scale losses, times the mill's specific embedded emissions.",
+        "Fuel for oil- or gas-fired heating furnaces, if used.",
+        "Divided by tonnes of forgings produced."
+      ]
+    },
+    {
+      "h": "Why induction helps the CBAM figure",
+      "p": [
+        "An induction billet heater replaces furnace oil or gas with electricity. For iron and steel goods, CBAM counts direct emissions only, so the heating drops out of the CBAM figure. The electricity still counts in a full footprint for buyers reporting Scope 3."
+      ]
+    },
+    {
+      "h": "What to ask your mill for",
+      "p": [
+        "Verified specific embedded emissions per grade or CN code for the year, or CBAM Registry access if the mill is registered. Yield matters too: cutting flash losses reduces the bar per tonne of forgings."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of forgings (illustrative inputs)",
+    "lines": [
+      "Bar consumed: 115 t x 2.10 t CO2e per t (mill figure) = 241.5 t CO2e",
+      "Oil-fired furnace: 8,000 litres of furnace oil x 2.97 kg CO2 per litre = 23.76 t CO2",
+      "With the oil furnace: (241.5 + 23.76) / 100 = 2.653 t CO2e per tonne",
+      "With an induction heater: 241.5 / 100 = 2.415 t CO2e per tonne"
+    ],
+    "note": "Mill figure and quantities are illustrative. Furnace oil factor from IPCC 2006 defaults."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are steel forgings covered?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Mill certificate CO2 for a forged part",
+      "to": "/answers/steel-mill-certificate-co2-for-forged-part"
+    },
+    {
+      "label": "Induction vs oil-fired billet heating",
+      "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

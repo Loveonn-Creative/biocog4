@@ -1,0 +1,71 @@
+{
+  "slug": "jaipur-gemstone-cutting-carbon-per-carat",
+  "q": "How does a Jaipur coloured gemstone cutting unit work out carbon per carat?",
+  "title": "Gemstone cutting carbon per carat",
+  "short": "Add electricity at 0.710 kg CO2 per kWh and any generator diesel at 2.68 kg per litre for the month, then divide by carats of finished stones. Rough stone and its mining sit in Scope 3 and need the supplier's data or a stated estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coloured gemstone cutters and polishers in the Jaipur cluster",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Cutting and faceting wheels.",
+        "Polishing laps.",
+        "Lighting for sorting and grading, and air conditioning."
+      ]
+    },
+    {
+      "h": "Finished carats",
+      "p": [
+        "Divide by carats of finished stones, not rough weight. Yield from rough to finished is often low, so the rough stone carries most of any upstream footprint."
+      ]
+    },
+    {
+      "h": "Job work",
+      "p": [
+        "If you send stones to outside cutters, their electricity is your Scope 3 purchased service. Ask them for kWh per lot or allocate by carats."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity: 2,500 kWh x 0.710 = 1,775 kg CO2",
+      "Generator diesel: 100 litres x 2.68 = 268 kg CO2",
+      "Total: 1,775 + 268 = 2,043 kg CO2",
+      "Finished stones: 25,000 carats, so 2,043 / 25,000 = 0.082 kg CO2 per carat"
+    ],
+    "note": "Quantities are illustrative; use bills and the finished stock register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Natural diamond polishing per carat",
+      "to": "/answers/natural-diamond-polishing-carbon-per-carat"
+    },
+    {
+      "label": "Gold jewellery per gram",
+      "to": "/answers/gold-jewellery-carbon-footprint-per-gram"
+    },
+    {
+      "label": "Jewellery casting workshop",
+      "to": "/answers/jewellery-casting-workshop-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

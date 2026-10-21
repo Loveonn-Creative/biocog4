@@ -1,0 +1,55 @@
+{
+  "slug": "castellon-sassuolo-tile-makers-pay-carbon-imports-not",
+  "q": "Why do tile makers in Castellon and Sassuolo pay for carbon while imported tiles do not?",
+  "title": "EU tile makers vs imported tiles",
+  "short": "Ceramic kilns in the EU with a capacity above 75 tonnes a day are covered by the EU ETS, so they buy allowances for emissions above their free allocation. Ceramic tiles are not in Annex I of the CBAM Regulation, so tiles imported from India, China or Turkey carry no CBAM charge.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Tile makers in the Castellon and Sassuolo districts, and tile exporters selling into the EU",
+  "sections": [
+    {
+      "h": "The EU side",
+      "p": [
+        "Annex I of the EU ETS Directive lists the manufacture of ceramic products by firing, including tiles, with a production capacity above 75 tonnes a day. Those plants monitor and verify their emissions and surrender allowances each year."
+      ]
+    },
+    {
+      "h": "The import side",
+      "p": [
+        "CBAM covers cement, iron and steel, aluminium, fertilisers, hydrogen and electricity. Ceramic tiles under chapter 69 are not on the list, so an importer of tiles has no CBAM declaration to make."
+      ]
+    },
+    {
+      "h": "What exporters still face",
+      "p": [
+        "EU buyers counting Scope 3, green building schemes asking for environmental product declarations, and product rules under the Ecodesign for Sustainable Products Regulation can still ask for a tile's footprint. A Morbi or Castellon tile with a documented figure per square metre is easier to specify."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Are ceramic tiles covered by CBAM?",
+      "to": "/answers/are-ceramic-tiles-covered-by-cbam"
+    },
+    {
+      "label": "Ceramic tile footprint per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "EU rules beyond CBAM",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive 2003/87/EC (EU ETS), consolidated, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

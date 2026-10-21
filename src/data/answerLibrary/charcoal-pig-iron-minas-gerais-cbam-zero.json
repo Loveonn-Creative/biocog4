@@ -1,0 +1,63 @@
+{
+  "slug": "charcoal-pig-iron-minas-gerais-cbam-zero",
+  "q": "Does charcoal pig iron from Minas Gerais count as zero emissions under CBAM?",
+  "title": "Charcoal pig iron and CBAM",
+  "short": "Not automatically. CO2 from biomass can be rated zero only if the biomass meets the sustainability and greenhouse gas saving criteria the CBAM monitoring rules refer to; otherwise it is counted like fossil carbon. Fossil fuels, coke and carbonates in the charge still count either way.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Charcoal-based pig iron producers in Minas Gerais, including the Vale do Aco steel valley, and their EU buyers",
+  "sections": [
+    {
+      "h": "Why it is not automatic",
+      "p": [
+        "The CBAM monitoring rules follow the EU emissions trading rules on biomass: the emission factor of biomass is zero only where it meets the applicable criteria from EU renewable energy law. Charcoal from planted eucalyptus with documented chain of custody can qualify; charcoal of unknown origin is treated as fossil."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ol": [
+        "Charcoal purchase records by supplier and plantation, with quantities and moisture.",
+        "Evidence that the wood comes from managed plantations that meet the criteria, such as certification and land-use records.",
+        "Carbon content analyses of charcoal, coke and other reductants.",
+        "Production of pig iron for the same calendar year."
+      ]
+    },
+    {
+      "h": "What still counts",
+      "p": [
+        "Any coke or coal used alongside charcoal, fuel oil or gas in stoves, and CO2 from limestone or dolomite fluxes. If part of the charcoal fails the criteria, only that part is counted as fossil."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Pig iron and sponge iron under CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Embedded emissions for steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Check the definitive-period monitoring rules for the exact biomass criteria before claiming zero."
+}

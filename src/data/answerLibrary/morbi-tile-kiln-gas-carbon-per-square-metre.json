@@ -1,0 +1,72 @@
+{
+  "slug": "morbi-tile-kiln-gas-carbon-per-square-metre",
+  "q": "How does a Morbi tile maker work out kiln and spray dryer gas per square metre?",
+  "title": "Morbi tile gas and power per square metre",
+  "short": "Add the gas burnt in spray dryers, dryers and kilns, at 2.05 kg CO2 per scm of piped natural gas, to electricity at 0.710 kg CO2 per kWh, then divide by square metres of good tiles packed. Use the month's gas bill and meter, not the contracted quantity.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wall, floor and vitrified tile makers in the Morbi ceramic cluster in Gujarat",
+  "sections": [
+    {
+      "h": "Where the gas goes",
+      "ul": [
+        "Spray dryers that turn slip into press powder.",
+        "Vertical or horizontal dryers after pressing.",
+        "Roller kilns for firing, the largest single use.",
+        "Any gas-fired hot air generators for glaze lines."
+      ]
+    },
+    {
+      "h": "Good tiles, not pressed tiles",
+      "p": [
+        "Divide by square metres packed and sold, or packed for stock, not square metres pressed. Breakage and rejects carry their gas into the good tiles, which is why yield moves the figure as much as kiln efficiency."
+      ]
+    },
+    {
+      "h": "Keep them separate",
+      "p": [
+        "If a sub-meter exists for the spray dryer, record it separately. Buyers and auditors increasingly ask how much of the figure is drying and how much is firing, and a split shows where heat recovery would pay."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Piped natural gas: 450,000 scm x 2.05 = 922,500 kg CO2",
+      "Electricity: 900,000 kWh x 0.710 = 639,000 kg CO2",
+      "Total: 922,500 + 639,000 = 1,561,500 kg CO2",
+      "Good tiles packed: 1,200,000 sq m, so 1,561,500 / 1,200,000 = 1.301 kg CO2 per sq m"
+    ],
+    "note": "Quantities are illustrative; use the gas bill, electricity bill and dispatch register for the month."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Ceramic tile footprint per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Spray dryer CO2 per tonne of powder",
+      "to": "/answers/ceramic-spray-dryer-co2-per-tonne-powder"
+    },
+    {
+      "label": "Kiln exhaust heat to dryer",
+      "to": "/answers/tile-kiln-exhaust-heat-to-dryer-gas-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

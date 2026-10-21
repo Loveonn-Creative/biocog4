@@ -1,0 +1,72 @@
+{
+  "slug": "extruder-buying-odisha-aluminium-cbam-calculation",
+  "q": "How does an extruder buying primary aluminium from an Odisha smelter calculate its CBAM figure?",
+  "title": "CBAM figure for extrusions from bought metal",
+  "short": "Count the billet or ingot you buy as a precursor: tonnes consumed times the smelter's direct embedded emissions per tonne. Add your own direct emissions from billet heating, homogenising and ageing furnaces, then divide by tonnes of extrusions produced. Press electricity is not counted for aluminium goods.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Aluminium extruders, rolling mills and foil makers exporting profiles and sheet to the EU",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Get the smelter's verified specific direct embedded emissions for the billet or ingot, by year.",
+        "Multiply by tonnes of metal consumed, including scrap generated in your plant that you sell on.",
+        "Add CO2 from gas, LPG or furnace oil burnt in your furnaces.",
+        "Divide by tonnes of extrusions made in the same year."
+      ]
+    },
+    {
+      "h": "Remelted scrap",
+      "p": [
+        "Scrap carried no embedded emissions under the transitional CBAM rules; check the definitive-period act. Melting and refining it still produces direct emissions that count. A billet with a high scrap share can show a much lower figure than primary metal, so keep scrap purchase records that tie quantities to the casting run."
+      ]
+    },
+    {
+      "h": "What the buyer will compare",
+      "p": [
+        "Your EU buyer compares your figure with the EU default value for your CN code and India, which carries a mark-up from 2026. A smelter that will not share verified data pushes your figure towards the default."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 t of extrusions in a year (illustrative inputs)",
+    "lines": [
+      "Billet consumed: 540 t x 1.80 t CO2e/t (smelter direct figure) = 972 t CO2e",
+      "Billet heating gas: 27,000 scm x 2.05 kg CO2 per scm = 55.35 t CO2",
+      "Total: 972 + 55.35 = 1,027.35 t CO2e",
+      "Specific embedded emissions: 1,027.35 / 500 = 2.055 t CO2e per tonne"
+    ],
+    "note": "Smelter figure and quantities are illustrative. Gas factor from IPCC 2006 defaults per scm."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Aluminium extrusion footprint per kg",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Captive power and CBAM in Odisha",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Aluminium scrap melting fuel",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

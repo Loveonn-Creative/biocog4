@@ -1,0 +1,67 @@
+{
+  "slug": "chennai-data-centre-wind-open-access-scope-2",
+  "q": "How much can a Chennai data centre cut market-based Scope 2 with Tamil Nadu wind power?",
+  "title": "Chennai data centre wind power Scope 2",
+  "short": "In proportion to the share of electricity covered by contracted wind with its certificates or attributes retired for you. If 60% of facility power is wind under green open access, market-based Scope 2 falls by about 60%, while the location-based figure stays at the grid factor.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Colocation and hyperscale data centres in the Chennai region",
+  "sections": [
+    {
+      "h": "What counts as covered",
+      "ul": [
+        "Units delivered under green open access, net of banking rules, with attributes not sold to anyone else.",
+        "Renewable energy certificates retired for the facility and the period.",
+        "Captive or group captive renewable power with metered delivery."
+      ]
+    },
+    {
+      "h": "The rest of the power",
+      "p": [
+        "Uncovered units use a residual mix factor in the market-based method. India has no official residual mix, so most reporters use the grid factor and say so."
+      ]
+    },
+    {
+      "h": "What auditors check",
+      "p": [
+        "Monthly energy statements from the discom showing open access units, certificate retirement records naming the facility, and that banked units are counted in the month they are drawn, not when generated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Facility energy: 1,566,000 kWh",
+      "Location-based: 1,566,000 x 0.710 = 1,111,860 kg CO2",
+      "Wind under open access: 60%, so uncovered power is 626,400 kWh",
+      "Market-based: 626,400 x 0.710 = 444,744 kg CO2, a cut of 60%"
+    ],
+    "note": "Share and energy are illustrative; uncovered units use the grid factor for want of an official residual mix."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Tamil Nadu green open access",
+      "to": "/answers/tamil-nadu-green-energy-open-access"
+    },
+    {
+      "label": "Residual mix factor in India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "Navi Mumbai data centre Scope 2",
+      "to": "/answers/navi-mumbai-data-centre-scope-2-per-kw"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

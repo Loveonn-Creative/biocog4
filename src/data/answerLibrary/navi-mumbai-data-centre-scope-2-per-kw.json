@@ -1,0 +1,67 @@
+{
+  "slug": "navi-mumbai-data-centre-scope-2-per-kw",
+  "q": "How does a Navi Mumbai data centre calculate Scope 2 emissions per kW of IT load?",
+  "title": "Data centre Scope 2 per kW of IT load",
+  "short": "Multiply total facility electricity, which is IT load times PUE, by 0.710 kg CO2 per kWh for the location-based figure, then divide by average IT load in kW. Report a market-based figure separately for renewable power bought under open access or certificates.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Colocation and enterprise data centres in Navi Mumbai and the Mumbai region",
+  "sections": [
+    {
+      "h": "The inputs",
+      "ol": [
+        "Total facility kWh from the utility bill and any on-site generation.",
+        "IT load kWh from UPS or PDU metering, to calculate PUE.",
+        "Average IT load in kW for the period."
+      ]
+    },
+    {
+      "h": "Location and market based",
+      "p": [
+        "The location-based figure uses the grid factor. The market-based figure uses the factor of power you have contracted, such as green open access with its certificates, and the grid factor for the rest. Report both; customers asking for their share usually want the market-based figure."
+      ]
+    },
+    {
+      "h": "Allocating to customers",
+      "p": [
+        "Colocation customers want their share. Allocate facility emissions by their metered IT kWh, so cooling and losses follow their load through PUE."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "IT energy: 1,500 kW x 720 hours = 1,080,000 kWh",
+      "Facility energy at PUE 1.45: 1,080,000 x 1.45 = 1,566,000 kWh",
+      "Location-based: 1,566,000 x 0.710 = 1,111,860 kg CO2",
+      "Per kW of IT load: 1,111.86 t / 1,500 = 0.741 t CO2 per kW for the month"
+    ],
+    "note": "Load and PUE are illustrative; use metered IT and facility energy."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "PUE formula and good PUE",
+      "to": "/answers/pue-formula-and-good-pue"
+    },
+    {
+      "label": "Maharashtra green open access",
+      "to": "/answers/maharashtra-green-energy-open-access"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

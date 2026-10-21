@@ -1,0 +1,59 @@
+{
+  "slug": "antwerp-hydrogen-imports-cbam-50-tonne-exemption",
+  "q": "Does the CBAM 50 tonne exemption cover hydrogen imported into Antwerp?",
+  "title": "Hydrogen imports and the 50 tonne exemption",
+  "short": "No. The 2025 simplification exempts importers bringing in 50 tonnes or less a year of covered goods, but hydrogen and electricity are excluded from that exemption. Any hydrogen import, however small, needs an authorised declarant, its direct embedded emissions and certificates.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chemical companies and energy importers in the Antwerp and wider Benelux chemical cluster",
+  "sections": [
+    {
+      "h": "How the threshold works",
+      "p": [
+        "Regulation (EU) 2025/2083 replaced the old per-consignment value threshold with a yearly mass threshold per importer: up to 50 tonnes of covered goods a year in total is exempt. Hydrogen and electricity do not count towards it and are not exempted by it."
+      ]
+    },
+    {
+      "h": "What counts for hydrogen",
+      "p": [
+        "Hydrogen under CN 2804 10 00 is charged on direct emissions only. For hydrogen made from natural gas, that is the CO2 from reforming and fuel; electricity used in electrolysis is indirect and not charged under Annex II today."
+      ]
+    },
+    {
+      "h": "Ammonia as a hydrogen carrier",
+      "p": [
+        "Ammonia imported as a hydrogen carrier is its own CBAM good under 2814 and does count towards the 50 tonne threshold. Large cargoes exceed it in any case."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods, and non-EU suppliers can use Senseible to keep document-backed fuel and electricity records to share with you. Senseible does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "The 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    },
+    {
+      "label": "Grid hydrogen carbon intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "German chemical park imports",
+      "to": "/answers/german-chemical-park-imports-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

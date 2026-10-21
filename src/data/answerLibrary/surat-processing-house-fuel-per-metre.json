@@ -1,0 +1,71 @@
+{
+  "slug": "surat-processing-house-fuel-per-metre",
+  "q": "How does a Surat textile processing house split boiler and thermic fluid fuel per metre of fabric?",
+  "title": "Surat processing house fuel per metre",
+  "short": "Add the fuel burnt in boilers and thermic fluid heaters, coal at 2.42 kg CO2 per kg or your lab factor, to electricity at 0.710 kg CO2 per kWh, then divide by metres processed. Split by process only where steam or heat is metered.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dyeing, printing and finishing houses in the Surat textile cluster",
+  "sections": [
+    {
+      "h": "Where the heat goes",
+      "ul": [
+        "Steam for jet dyeing, washing and jiggers.",
+        "Thermic fluid for stenters and curing.",
+        "Hot air for dryers."
+      ]
+    },
+    {
+      "h": "Metres processed",
+      "p": [
+        "Use metres finished and dispatched in the month. If you process very different fabrics, such as light polyester and heavy cotton, report per kg as well, because heat use follows weight more than length."
+      ]
+    },
+    {
+      "h": "Allocating to customers",
+      "p": [
+        "Brands increasingly ask for a figure per order. Allocate by metres or kg processed for each order unless you have process-level metering, and say which basis you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Coal for boiler and thermic fluid heater: 120 t x 2.42 kg CO2 per kg = 290.4 t CO2",
+      "Electricity: 180,000 kWh x 0.710 = 127.8 t CO2",
+      "Total: 290.4 + 127.8 = 418.2 t CO2",
+      "Metres processed: 4,000,000, so 418,200 kg / 4,000,000 = 0.105 kg CO2 per metre"
+    ],
+    "note": "Quantities are illustrative; use stock records, bills and dispatch records for the month."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Dye house emissions per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Textile printing per metre",
+      "to": "/answers/textile-printing-emissions-per-metre"
+    },
+    {
+      "label": "Low liquor ratio dyeing saving",
+      "to": "/answers/low-liquor-ratio-dyeing-steam-co2-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

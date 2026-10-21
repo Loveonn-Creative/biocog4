@@ -1,0 +1,61 @@
+{
+  "slug": "ruhr-steel-mill-cbam-or-eu-ets",
+  "q": "Does a Ruhr steel mill pay CBAM, the EU ETS, or both?",
+  "title": "Ruhr steel mill: CBAM or EU ETS?",
+  "short": "The mill pays for its own emissions under the EU ETS. CBAM applies only to goods it imports from outside the EU, such as pig iron, DRI, slabs or ferro-alloys, where it must buy CBAM certificates as the importer. Free allocation under the ETS falls as CBAM phases in from 2026.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Steelworks in the Ruhr and other EU steel regions, and their purchasing teams",
+  "sections": [
+    {
+      "h": "Two systems, one carbon price",
+      "p": [
+        "The EU ETS covers installations inside the EU. CBAM puts the same carbon price on covered goods entering the EU, so imported steel and EU steel face a comparable charge. CBAM certificates are priced on EU ETS auction prices, averaged over the period the Commission publishes for each year."
+      ]
+    },
+    {
+      "h": "Where CBAM touches an EU mill",
+      "ul": [
+        "Imported precursors: pig iron, DRI, HBI, slabs, billets and covered ferro-alloys.",
+        "Imported finished steel the mill trades alongside its own products.",
+        "Goods under inward processing that are re-exported are outside CBAM; those released into the EU market are not."
+      ]
+    },
+    {
+      "h": "Free allocation phase-out",
+      "p": [
+        "Free allocation for CBAM sectors falls from 97.5% of the benchmark-based amount in 2026 to zero in 2034. The same factor reduces the CBAM obligation on imports, so both sides lose their free share on the same schedule."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods, and non-EU suppliers can use Senseible to keep document-backed fuel and electricity records to share with you. Senseible does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "EU ETS and CBAM difference",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "CBAM and inward processing",
+      "to": "/answers/does-cbam-apply-to-inward-processing"
+    },
+    {
+      "label": "Lower CBAM cost for German importers",
+      "to": "/climate-intelligence/lower-cbam-costs-importer-germany"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Directive 2003/87/EC (EU ETS), consolidated, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

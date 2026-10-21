@@ -1,0 +1,69 @@
+{
+  "slug": "egypt-urea-plant-cbam-embedded-emissions",
+  "q": "How does an Egyptian urea plant at Ain Sokhna calculate CBAM embedded emissions?",
+  "title": "Egyptian urea CBAM embedded emissions",
+  "short": "Add the embedded emissions of the ammonia consumed, about 0.567 t per tonne of urea, to the urea plant's own direct emissions from fuel and its indirect emissions from electricity, then divide by tonnes of urea. Do not subtract the CO2 that goes into the urea from the ammonia plant's figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ammonia and urea producers in Ain Sokhna and other Egyptian fertiliser clusters exporting to the EU",
+  "sections": [
+    {
+      "h": "Why 0.567",
+      "p": [
+        "Urea, CO(NH2)2, has a molar mass of 60.06. Each molecule uses two ammonia molecules, 2 x 17.031 = 34.06, so a tonne of urea contains the nitrogen of 34.06 / 60.06 = 0.567 t of ammonia. Your plant's actual consumption will be slightly higher because of losses; use your metered figure."
+      ]
+    },
+    {
+      "h": "CO2 bound in urea",
+      "p": [
+        "Urea synthesis takes CO2 from the ammonia plant. Under the EU ETS monitoring rules CBAM is modelled on, that CO2 counts as emitted at the ammonia step and is not subtracted, because it is released when urea is applied to soil. Check the CBAM monitoring rules for your reporting period before treating it differently."
+      ]
+    },
+    {
+      "h": "Fertilisers count electricity",
+      "p": [
+        "Fertiliser goods are charged on direct and indirect emissions, so meter the electricity for synthesis, prilling or granulation, and compression, and apply the factor the CBAM rules allow."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of urea (illustrative inputs)",
+    "lines": [
+      "Ammonia: 0.567 t x 2.00 t CO2e per t (ammonia plant figure) = 1.134 t CO2e",
+      "Urea plant steam fuel: 0.10 t CO2",
+      "Electricity: 120 kWh x 0.45 kg CO2 per kWh (illustrative grid factor) = 0.054 t CO2",
+      "Embedded emissions: 1.134 + 0.10 + 0.054 = 1.288 t CO2e per tonne of urea"
+    ],
+    "note": "The ammonia figure, steam fuel and grid factor are illustrative; use your plant's metered values and the factor set in the CBAM rules."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are urea and DAP covered?",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Urea and DAP purchase factors",
+      "to": "/answers/emission-factor-for-purchased-urea-and-dap"
+    },
+    {
+      "label": "Fertiliser imports into Germany and Poland",
+      "to": "/climate-intelligence/cbam-fertiliser-imports-germany-poland"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

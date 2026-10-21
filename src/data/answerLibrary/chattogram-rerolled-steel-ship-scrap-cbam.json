@@ -1,0 +1,59 @@
+{
+  "slug": "chattogram-rerolled-steel-ship-scrap-cbam",
+  "q": "Is steel rerolled from Chattogram ship-breaking scrap low in CBAM embedded emissions?",
+  "title": "Ship-breaking scrap steel and CBAM",
+  "short": "It can be. Ship plate and other ferrous scrap brings no embedded emissions into the calculation under the transitional rules; check the definitive-period act. The reroller still counts direct emissions from its reheating furnace and any induction or arc melting, and any pig iron or DRI it adds.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Rerolling and steel mills around Chattogram using ship-breaking scrap, and their EU buyers",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Fuel for reheating furnaces: natural gas, furnace oil or coal.",
+        "Electrodes and charge carbon if scrap is melted in an arc furnace.",
+        "Covered precursors such as pig iron, DRI or ferro-alloys added to the melt.",
+        "Not counted for steel: electricity for induction furnaces and rolling."
+      ]
+    },
+    {
+      "h": "Rebar and other goods",
+      "p": [
+        "Bars and rods under 7213 and 7214, angles and sections under 7216, and most other steel in chapters 72 and 73 are CBAM goods, so an EU importer needs your embedded emissions or uses defaults for Bangladesh."
+      ]
+    },
+    {
+      "h": "Evidence a buyer will ask for",
+      "p": [
+        "Scrap purchase records that tie tonnes to production, fuel invoices for the furnaces, production records by product and a verifier's report. Without them, a low-scrap figure cannot be shown and the default applies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "TMT re-rolling mill CO2 per tonne",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    },
+    {
+      "label": "Bangladesh exporters and CBAM",
+      "to": "/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Confirm the definitive-period treatment of scrap as a precursor."
+}

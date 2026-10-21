@@ -1,0 +1,65 @@
+{
+  "slug": "coimbatore-induction-foundry-cbam-vs-footprint",
+  "q": "Why is a Coimbatore induction foundry's CBAM figure much lower than its carbon footprint?",
+  "title": "Induction foundry: CBAM vs footprint",
+  "short": "Because CBAM counts only direct emissions for iron and steel goods, and an induction furnace's energy is electricity, which is left out. The CBAM figure is mostly the pig iron or other covered precursors charged; the full footprint adds the electricity, often about as much again.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Induction foundries making pump, valve and motor castings in the Coimbatore cluster",
+  "sections": [
+    {
+      "h": "Two numbers, two uses",
+      "ul": [
+        "CBAM figure: direct emissions plus covered precursors, for an EU importer's declaration.",
+        "Product footprint: also counts electricity and other inputs, for buyers reporting Scope 3."
+      ]
+    },
+    {
+      "h": "Keep both ready",
+      "p": [
+        "Send the CBAM figure only where the casting is declared under a CBAM code such as 7325. For pump and valve bodies declared under chapter 84, the buyer needs no CBAM data today but may still ask for the footprint."
+      ]
+    },
+    {
+      "h": "Where the footprint can fall",
+      "p": [
+        "Melting efficiency in kWh per tonne, yield, and the scrap share in the charge drive both figures. Renewable power bought through open access lowers the market-based footprint but not the CBAM figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of good castings (illustrative inputs)",
+    "lines": [
+      "Pig iron charged: 0.20 t x 2.00 t CO2e per t = 0.40 t CO2e (CBAM figure)",
+      "Electricity: 700 kWh x 0.710 = 0.497 t CO2 (footprint only)",
+      "Footprint: 0.40 + 0.497 = 0.897 t CO2e per tonne"
+    ],
+    "note": "Quantities and the pig iron figure are illustrative."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are pumps, valves and bearings covered?",
+      "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam"
+    },
+    {
+      "label": "Foundry footprint per good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Rajkot cupola foundry CBAM figure",
+      "to": "/answers/rajkot-foundry-cupola-castings-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

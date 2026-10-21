@@ -1,0 +1,65 @@
+{
+  "slug": "jubail-petrochemical-exports-which-need-cbam",
+  "q": "Which Jubail petrochemical and fertiliser exports to the EU need CBAM data?",
+  "title": "Jubail exports covered by CBAM",
+  "short": "Ammonia, urea and other nitrogen fertilisers, nitric acid, mixed fertilisers and hydrogen are CBAM goods. Methanol, polymers such as polyethylene and polypropylene, glycols and most other organic chemicals are not in Annex I, so they need no CBAM data today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Petrochemical and fertiliser producers in Jubail and other Gulf industrial cities selling to EU importers",
+  "sections": [
+    {
+      "h": "Covered goods in this cluster",
+      "ul": [
+        "2814: ammonia, anhydrous or in solution.",
+        "3102: nitrogenous fertilisers, such as urea and ammonium sulphate.",
+        "3105: mixed fertilisers such as DAP and NPK, except 3105 60 00.",
+        "2808: nitric acid.",
+        "2804 10 00: hydrogen."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "Methanol and other alcohols in chapter 29.",
+        "Polymers in primary forms in chapter 39.",
+        "Glycols, aromatics and other organic chemicals."
+      ]
+    },
+    {
+      "h": "What counts for fertilisers",
+      "p": [
+        "For fertiliser goods, CBAM counts direct emissions and indirect emissions from electricity. Ammonia is a precursor of urea and nitric acid, so its embedded emissions flow into theirs. For hydrogen only direct emissions count. Importers bringing in 50 tonnes or less a year of CBAM goods are exempt, but the exemption does not apply to hydrogen."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are urea and DAP covered?",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Nitric acid plant N2O",
+      "to": "/answers/nitric-acid-plant-n2o-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "kanpur-agra-ambur-leather-exporter-buyer-carbon-data",
+  "q": "What carbon data do EU brands ask leather exporters in Kanpur, Agra and Ambur for?",
+  "title": "Carbon data brands want from leather exporters",
+  "short": "Energy and fuel use per square foot of leather or per pair of shoes, chemical use, and the share of hides from tanneries you control. Leather is not a CBAM good, but brands counting Scope 3 and audit schemes such as the Leather Working Group ask for these figures.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Tanneries, finished leather makers and footwear exporters in the Kanpur, Agra and Ambur clusters",
+  "sections": [
+    {
+      "h": "Tanneries",
+      "ul": [
+        "Boiler fuel and electricity per square foot of finished leather.",
+        "Chemicals used per tonne of hides, from purchase records.",
+        "Effluent sent to the common treatment plant, as Scope 3 waste."
+      ]
+    },
+    {
+      "h": "Footwear units",
+      "ul": [
+        "Electricity and generator diesel per pair, allocated by pairs or by labour minutes.",
+        "Leather and synthetic material per pair, with supplier figures where available.",
+        "Soles and components bought in, with their weights."
+      ]
+    },
+    {
+      "h": "What auditors check",
+      "p": [
+        "Bills and stock records that match the totals, a stated allocation basis, and the same method each year so reductions can be shown."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather tannery per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Footwear allocation per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    },
+    {
+      "label": "Leather Working Group energy audit",
+      "to": "/answers/leather-working-group-audit-energy-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

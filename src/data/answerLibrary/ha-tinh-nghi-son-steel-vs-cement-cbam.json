@@ -1,0 +1,59 @@
+{
+  "slug": "ha-tinh-nghi-son-steel-vs-cement-cbam",
+  "q": "What changes between steel and cement CBAM figures for exporters in Vietnam's Ha Tinh and Nghi Son corridor?",
+  "title": "Vietnam steel vs cement CBAM figures",
+  "short": "Steel is charged on direct emissions only, so coal and coke in the blast furnace set the figure and electricity is left out. Cement is charged on direct and indirect emissions, so calcination, kiln fuel and electricity all count. The two need different monitoring plans.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Steel and cement producers in the Ha Tinh and Nghi Son corridor in Vietnam and their EU buyers",
+  "sections": [
+    {
+      "h": "Steel",
+      "ul": [
+        "Direct emissions only, under Annex II of the CBAM Regulation.",
+        "Main sources: coal and coke in the blast furnace, sinter and pellet plants, reheating furnaces.",
+        "Precursors: sinter or pellets, pig iron, and any bought DRI or ferro-alloys."
+      ]
+    },
+    {
+      "h": "Cement",
+      "ul": [
+        "Direct and indirect emissions.",
+        "Main sources: calcination of limestone, kiln fuel, and electricity for mills and fans.",
+        "Precursor: clinker, if a grinding unit buys it."
+      ]
+    },
+    {
+      "h": "One verifier, two methods",
+      "p": [
+        "A group with both a steel plant and a cement plant can use one accredited verifier, but each installation needs its own monitoring and its own embedded emissions per CN code. Blast furnace slag sent to cement grinding carries no embedded emissions into the cement under CBAM, because slag is not a CBAM good."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Embedded emissions for steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Vietnamese exporters preparing for CBAM",
+      "to": "/climate-intelligence/vietnamese-exporters-prepare-eu-cbam-90-days"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

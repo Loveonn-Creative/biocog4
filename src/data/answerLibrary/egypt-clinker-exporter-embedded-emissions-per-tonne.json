@@ -1,0 +1,69 @@
+{
+  "slug": "egypt-clinker-exporter-embedded-emissions-per-tonne",
+  "q": "How does a clinker exporter in Egypt's Ain Sokhna zone calculate embedded emissions per tonne?",
+  "title": "Egyptian clinker embedded emissions",
+  "short": "Add calcination CO2 from the raw meal, CO2 from kiln fuel such as coal or petcoke, and indirect emissions from electricity, then divide by tonnes of clinker. Calcination alone is about 0.52 t CO2 per tonne of clinker on the IPCC default; a lab-based figure from CaO and MgO content is better.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Clinker and cement exporters in Ain Sokhna and other Egyptian cement clusters selling to EU buyers",
+  "sections": [
+    {
+      "h": "Calcination",
+      "p": [
+        "Limestone breaks down into lime and CO2 in the kiln. The IPCC 2006 default is 0.52 t CO2 per tonne of clinker. A plant-specific figure uses the CaO and MgO content of the clinker from carbonate sources, which a verifier will expect for actual CBAM values."
+      ]
+    },
+    {
+      "h": "Kiln fuel",
+      "p": [
+        "Multiply each fuel by its emission factor: coal and petroleum coke from lab analyses where you have them, or IPCC defaults. Alternative fuels such as waste or biomass need their own factors and evidence."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Cement goods are charged on indirect emissions too, so meter electricity for raw milling, the kiln and fans, and apply the factor the CBAM rules allow for Egypt unless you meet the conditions for an actual factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of clinker (illustrative inputs)",
+    "lines": [
+      "Calcination: 0.52 t CO2 (IPCC default)",
+      "Kiln fuel: 3.3 GJ of petcoke x 97.5 kg CO2 per GJ = 321.75 kg CO2",
+      "Electricity: 70 kWh x 0.45 kg CO2 per kWh (illustrative grid factor) = 31.5 kg CO2",
+      "Embedded emissions: 0.52 + 0.32175 + 0.0315 = 0.873 t CO2e per tonne of clinker"
+    ],
+    "note": "Heat use and grid factor are illustrative. Petcoke factor of 97.5 t CO2 per TJ from IPCC 2006 Volume 2."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Kocaeli cement electricity in CBAM",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

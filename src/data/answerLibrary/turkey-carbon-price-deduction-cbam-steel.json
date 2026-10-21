@@ -1,0 +1,60 @@
+{
+  "slug": "turkey-carbon-price-deduction-cbam-steel",
+  "q": "Can a Turkish steel exporter reduce its EU buyer's CBAM cost with a carbon price paid in Turkey?",
+  "title": "Turkish carbon price and CBAM deduction",
+  "short": "Only for a carbon price effectively paid in Turkey on the emissions embedded in the goods. Article 9 of the CBAM Regulation lets the EU declarant claim a reduction, net of any rebate or free allowance, with evidence certified by an independent person. A price that has not yet been paid cannot be claimed.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Turkish steel, cement and aluminium exporters in Iskenderun, Marmara and other clusters",
+  "sections": [
+    {
+      "h": "What qualifies",
+      "p": [
+        "The CBAM Regulation defines a carbon price as an amount paid in a third country under a carbon emissions reduction scheme, as a tax, levy, fee or emission allowances, calculated on greenhouse gases released in making the goods. A national emissions trading system that charges installations for their emissions can qualify once allowances are actually surrendered at a cost."
+      ]
+    },
+    {
+      "h": "What reduces the claim",
+      "ul": [
+        "Free allocation of allowances to the installation.",
+        "Any rebate, compensation or exemption linked to exports.",
+        "Prices paid on emissions that are not part of the goods' embedded emissions."
+      ]
+    },
+    {
+      "h": "Evidence the declarant needs",
+      "ol": [
+        "The legal act that sets the carbon price and its rate for the year.",
+        "Proof of payment or surrender by the installation, and the share attributable to the exported goods.",
+        "Certification by a person independent of both the operator and the declarant."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Does India's coal GST count?",
+      "to": "/answers/does-india-coal-gst-count-as-carbon-price-cbam"
+    },
+    {
+      "label": "South Africa carbon tax and CBAM",
+      "to": "/climate-intelligence/south-africa-carbon-tax-cbam"
+    },
+    {
+      "label": "EU ETS and CBAM difference",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "reviewNote": "Check the status of Turkey's national emissions trading system and any Commission rules on deductions before relying on a claim."
+}

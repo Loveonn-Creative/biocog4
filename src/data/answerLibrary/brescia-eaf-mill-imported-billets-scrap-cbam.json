@@ -1,0 +1,67 @@
+{
+  "slug": "brescia-eaf-mill-imported-billets-scrap-cbam",
+  "q": "Does a Brescia electric arc furnace mill owe CBAM on imported billets and scrap?",
+  "title": "Brescia EAF mill: billets and scrap",
+  "short": "Imported billets and other semi-finished steel under CN 7207 are CBAM goods, so the mill, as importer, needs an authorised declarant and certificates for their embedded emissions. Ferrous scrap under 7204 is not in Annex I, so imported scrap carries no CBAM obligation.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Electric arc furnace mills and rerollers in the Brescia and Lombardy steel cluster",
+  "sections": [
+    {
+      "h": "What is covered",
+      "ul": [
+        "7207: semi-finished products of iron or non-alloy steel, such as billets and blooms: covered.",
+        "7201 and 7203: pig iron and DRI or HBI: covered.",
+        "7204: ferrous waste and scrap, including remelting ingots: not covered."
+      ]
+    },
+    {
+      "h": "What the mill must do for covered imports",
+      "ol": [
+        "Be or appoint an authorised CBAM declarant, or have applied in time under the 2025 transitional arrangement, before importing more than the 50 tonne yearly threshold.",
+        "Collect the supplier's verified embedded emissions, or use the EU default value with its mark-up.",
+        "Hold certificates each quarter and surrender them with the annual declaration."
+      ]
+    },
+    {
+      "h": "The mill's own furnace",
+      "p": [
+        "The EAF's own emissions fall under the EU ETS, not CBAM. Billets rolled under inward processing and re-exported outside the EU are outside CBAM."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods, and non-EU suppliers can use Senseible to keep document-backed fuel and electricity records to share with you. Senseible does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "CBAM and inward processing",
+      "to": "/answers/does-cbam-apply-to-inward-processing"
+    },
+    {
+      "label": "Imported slab cost in Italy",
+      "to": "/climate-intelligence/cbam-cost-imported-steel-slab-italy"
+    },
+    {
+      "label": "How many certificates each quarter",
+      "to": "/answers/how-many-cbam-certificates-to-hold-each-quarter"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "vapi-ankleshwar-dye-unit-boiler-coal-emissions",
+  "q": "How does a Vapi or Ankleshwar dye unit count boiler coal emissions?",
+  "title": "Dye unit boiler coal emissions",
+  "short": "Multiply tonnes of coal burnt in boilers and thermic fluid heaters by an emission factor, 2.42 kg CO2 per kg on Senseible's default or a factor from your coal's lab analysis, and report it as Scope 1. Use coal consumed, from stock records, not coal purchased.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dye, dye intermediate and specialty chemical units in the Vapi and Ankleshwar estates in Gujarat",
+  "sections": [
+    {
+      "h": "Coal consumed",
+      "p": [
+        "Take opening stock plus purchases minus closing stock for the month. Moisture changes weight in the yard, so record it at the same point each time."
+      ]
+    },
+    {
+      "h": "Default or lab factor",
+      "p": [
+        "Indian coal and imported coal differ widely in calorific value and carbon. A lab report giving gross calorific value or carbon content lets you calculate a plant-specific factor, which a verifier prefers to a default."
+      ]
+    },
+    {
+      "h": "Other Scope 1 sources",
+      "ul": [
+        "Process emissions from reactions that release CO2, if any.",
+        "Diesel in generators and forklifts.",
+        "Refrigerant top-ups in chillers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Coal consumed: 300 t x 2.42 kg CO2 per kg = 726 t CO2",
+      "Generator diesel: 2,000 litres x 2.68 = 5.36 t CO2",
+      "Scope 1: 726 + 5.36 = 731.36 t CO2"
+    ],
+    "note": "Quantities are illustrative; use stock records and a lab-based factor where you have one."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Dye and pigment footprint per kg",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Effluent emissions: which scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

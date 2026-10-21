@@ -1,0 +1,63 @@
+{
+  "slug": "german-chemical-park-imports-covered-by-cbam",
+  "q": "Which chemical imports into German chemical parks such as Rhine-Neckar or Leuna count for CBAM?",
+  "title": "German chemical park imports under CBAM",
+  "short": "Only a few: hydrogen, ammonia, nitric acid, potassium nitrate and nitrogen or mixed fertilisers are CBAM goods. Most organic chemicals, polymers, solvents and specialty chemicals are not in Annex I. Hydrogen imports need a declarant from the first tonne, because the 50 tonne exemption does not apply to it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chemical companies and purchasing teams in the Rhine-Neckar region and the Central German Chemical Triangle",
+  "sections": [
+    {
+      "h": "Covered chemical goods",
+      "ul": [
+        "2804 10 00: hydrogen.",
+        "2814: ammonia.",
+        "2808: nitric acid and sulphonitric acids.",
+        "2834 21 00: potassium nitrate.",
+        "3102 and 3105: nitrogenous and mixed fertilisers, except 3105 60 00."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "p": [
+        "Organic chemicals in chapter 29, polymers in chapter 39, industrial gases other than hydrogen, and inorganic chemicals not listed in Annex I."
+      ]
+    },
+    {
+      "h": "What counts per good",
+      "p": [
+        "For hydrogen, only direct emissions count. For ammonia, nitric acid and fertilisers, direct and indirect emissions count, and ammonia's embedded emissions flow into nitric acid and fertilisers made from it."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods, and non-EU suppliers can use Senseible to keep document-backed fuel and electricity records to share with you. Senseible does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Grid hydrogen carbon intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "Green ammonia intensity threshold",
+      "to": "/answers/green-ammonia-carbon-intensity-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

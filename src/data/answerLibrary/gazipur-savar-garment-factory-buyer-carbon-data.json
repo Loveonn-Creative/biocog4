@@ -1,0 +1,62 @@
+{
+  "slug": "gazipur-savar-garment-factory-buyer-carbon-data",
+  "q": "What carbon data do EU brands ask garment factories in Gazipur and Savar for?",
+  "title": "Garment factory carbon data for brands",
+  "short": "Monthly electricity, captive generator gas or diesel, boiler fuel and refrigerant, with emissions per piece or per kg for the period. Garments are not CBAM goods, but brands counting Scope 3 and using platforms such as the Higg Facility Environmental Module ask for these figures and the bills behind them.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Garment and knitwear factories in the Gazipur and Savar clusters near Dhaka",
+  "sections": [
+    {
+      "h": "Energy to record",
+      "ul": [
+        "Grid electricity, from bills.",
+        "Gas or diesel for captive generators, from meters and invoices.",
+        "Boiler fuel for washing, dyeing and ironing steam.",
+        "Refrigerant top-ups in chillers and air conditioning."
+      ]
+    },
+    {
+      "h": "Per piece or per kg",
+      "p": [
+        "Divide by pieces produced for cut and sew, or kg processed for washing and dyeing. State which basis you use, and keep it the same each year."
+      ]
+    },
+    {
+      "h": "Factors",
+      "p": [
+        "Use the national grid factor published for Bangladesh, and IPCC defaults or supplier data for fuels. Name each factor and its source in your submission."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Garment stitching per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Which textile tier emits most",
+      "to": "/answers/which-textile-tier-has-most-emissions"
+    },
+    {
+      "label": "Bangladesh exporters and CBAM",
+      "to": "/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

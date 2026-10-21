@@ -1,0 +1,61 @@
+{
+  "slug": "vapi-ankleshwar-chemicals-covered-by-cbam",
+  "q": "Which chemicals made in Vapi and Ankleshwar fall under EU CBAM?",
+  "title": "Vapi and Ankleshwar chemicals under CBAM",
+  "short": "Very few. Hydrogen, ammonia, nitric acid, potassium nitrate and nitrogen or mixed fertilisers are CBAM goods. Dyes, pigments, dye intermediates, pharmaceutical intermediates and agrochemical actives are not in Annex I, so exporting them needs no CBAM data today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chemical exporters in the Vapi and Ankleshwar estates and other Gujarat chemical clusters",
+  "sections": [
+    {
+      "h": "Covered",
+      "ul": [
+        "2804 10 00: hydrogen.",
+        "2814: ammonia.",
+        "2808: nitric acid.",
+        "2834 21 00: potassium nitrate.",
+        "3102 and 3105: nitrogenous and mixed fertilisers."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "Chapter 32 dyes and pigments.",
+        "Chapter 29 organic intermediates.",
+        "Chapter 38 agrochemical formulations and other chemical products."
+      ]
+    },
+    {
+      "h": "What EU buyers may still ask",
+      "p": [
+        "Product carbon footprints for their Scope 3 reporting, and data under chemical sector schemes such as Together for Sustainability. Keep energy records by plant so a product figure can be built when a buyer asks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "German chemical park imports",
+      "to": "/answers/german-chemical-park-imports-covered-by-cbam"
+    },
+    {
+      "label": "CBAM and Indian chemicals",
+      "to": "/solutions/cbam-chemicals-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

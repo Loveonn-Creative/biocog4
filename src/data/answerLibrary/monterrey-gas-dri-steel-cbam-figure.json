@@ -1,0 +1,68 @@
+{
+  "slug": "monterrey-gas-dri-steel-cbam-figure",
+  "q": "How does gas-based DRI, as used in Monterrey, change a steel mill's CBAM figure?",
+  "title": "Gas-based DRI and the CBAM steel figure",
+  "short": "Natural gas reduction emits far less CO2 per tonne of iron than a coal blast furnace, so DRI made with gas carries a low direct figure into the steel. Count the gas burnt in the reformer and shaft as direct emissions of the DRI, then add the EAF's own direct emissions.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "DRI and EAF steelmakers in Monterrey and other gas-based steel clusters in Mexico selling to the EU",
+  "sections": [
+    {
+      "h": "Where the CO2 comes from",
+      "p": [
+        "In a gas-based shaft furnace, natural gas is reformed into hydrogen and carbon monoxide, which strip oxygen from iron ore pellets. The carbon in the gas leaves as CO2 from the reformer stack and process gas. That CO2 is the DRI's direct emissions; the pellets bring their own embedded emissions as a precursor."
+      ]
+    },
+    {
+      "h": "Then the EAF",
+      "p": [
+        "The EAF adds electrode, charge carbon and burner gas emissions. Electricity for the shaft furnace, compressors and the EAF is not counted for steel under CBAM today, though buyers counting the full footprint will add it."
+      ]
+    },
+    {
+      "h": "Captured CO2",
+      "p": [
+        "Some gas-based plants capture CO2 from process gas and sell it. Only CO2 that is permanently stored or used in ways the CBAM monitoring rules accept can be deducted; CO2 sold for drinks or other short-lived uses still counts as emitted."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of DRI (illustrative inputs)",
+    "lines": [
+      "Natural gas: 10 GJ x 56.1 kg CO2 per GJ = 561 kg CO2",
+      "Pellets: 1.40 t x 0.05 t CO2e per t (supplier figure) = 70 kg CO2e",
+      "Direct embedded emissions of the DRI: 0.561 + 0.07 = 0.631 t CO2e per tonne"
+    ],
+    "note": "Gas use and pellet figure are illustrative. Natural gas factor of 56.1 t CO2 per TJ from IPCC 2006 Volume 2."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Embedded emissions for steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Iron ore pellets under CBAM",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "worldsteel, steel statistics and CO2 data",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
