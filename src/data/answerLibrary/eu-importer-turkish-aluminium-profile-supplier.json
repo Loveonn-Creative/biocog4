@@ -1,0 +1,47 @@
+{
+  "slug": "eu-importer-turkish-aluminium-profile-supplier",
+  "q": "What should an EU importer ask a Turkish aluminium profile supplier for?",
+  "title": "EU importers: Turkish aluminium profiles",
+  "short": "Direct emissions per tonne at the extrusion plant, and the embedded emissions of the billet used, whether bought ingot or remelted scrap. Aluminium profiles are CBAM goods, and only direct emissions count for aluminium.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers buying aluminium profiles from Turkish extruders",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Extrusion and any casthouse direct emissions per tonne.",
+        "Billet or ingot source and its embedded emissions.",
+        "Any carbon price paid in Turkey, with evidence."
+      ]
+    },
+    {
+      "h": "Scrap share",
+      "p": [
+        "Remelted scrap billet has lower precursor emissions than primary ingot, so ask for the mix by lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Vietnamese extrusion data",
+      "to": "/answers/eu-importer-vietnam-aluminium-extrusion-data"
+    },
+    {
+      "label": "Aluminium window per square metre",
+      "to": "/answers/aluminium-window-carbon-footprint-per-sq-m"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

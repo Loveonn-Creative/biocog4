@@ -1,0 +1,53 @@
+{
+  "slug": "agra-footwear-unit-diesel-genset-scope-1",
+  "q": "Is diesel for an Agra footwear unit's generator Scope 1?",
+  "title": "Agra footwear units: generator diesel",
+  "short": "Yes. Diesel burned in a generator you own or control is Scope 1. Take litres from the fuel bills and multiply by 2.68 kg CO2 per litre, the IPCC 2006 default for diesel. The grid units on your electricity bill stay in Scope 2.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Shoe and upper units in the Agra cluster that run diesel generators during power cuts",
+  "sections": [
+    {
+      "h": "What to record",
+      "p": [
+        "Litres bought for the generator each month, from the fuel invoice or the pump slip.",
+        "If the same diesel also goes into a vehicle, split it by logbook before you add it up."
+      ]
+    },
+    {
+      "h": "Do not double count",
+      "p": [
+        "Generator output is not on the electricity bill, so adding both is correct. Do not convert generator kWh again with the grid factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantity)",
+    "lines": [
+      "Diesel: 600 litres x 2.68 = 1,608 kg CO2 (Scope 1)"
+    ],
+    "note": "The quantity is illustrative; 2.68 kg CO2 per litre is the IPCC 2006 default."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Diesel generator Scope 1",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Agra shoe unit electricity per pair",
+      "to": "/answers/agra-shoe-unit-electricity-per-pair"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

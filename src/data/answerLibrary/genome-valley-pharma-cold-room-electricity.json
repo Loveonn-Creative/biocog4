@@ -1,0 +1,47 @@
+{
+  "slug": "genome-valley-pharma-cold-room-electricity",
+  "q": "How does a Genome Valley pharma unit count its cold room electricity?",
+  "title": "Pharma cold rooms: electricity count",
+  "short": "Cold room power is part of your Scope 2: kWh times 0.710 kg CO2 per kWh. If the cold room has its own meter, report it separately so you can see what storage costs per pallet or per batch.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Vaccine and biologics makers in the Genome Valley cluster near Hyderabad, Telangana",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Sub-meter kWh for cold rooms, or estimate from rated load and hours, labelled as an estimate.",
+        "Multiply by 0.710.",
+        "Add refrigerant top-ups as Scope 1."
+      ]
+    },
+    {
+      "h": "Backup power",
+      "p": [
+        "Diesel for generators that protect the cold chain is Scope 1 at 2.68 kg CO2 per litre."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Pharma cold chain passive shippers",
+      "to": "/answers/pharma-cold-chain-passive-shipper-emissions"
+    },
+    {
+      "label": "Warehouse electricity per pallet",
+      "to": "/answers/warehouse-electricity-per-pallet-position"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

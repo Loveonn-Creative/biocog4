@@ -1,0 +1,51 @@
+{
+  "slug": "kanpur-tannery-chrome-tanning-chemicals-scope-3",
+  "q": "How does a Kanpur tannery count the chrome and chemicals it buys?",
+  "title": "Kanpur tanneries: bought tanning chemicals",
+  "short": "Basic chromium sulphate, fatliquors, dyes and other chemicals bought for tanning are Scope 3 category 1 purchased goods. Use kilograms from the invoices and a factor from the supplier or a named database, with the source on each line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tanneries in the Jajmau cluster of Kanpur, Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Keep it traceable",
+      "p": [
+        "Record kg per chemical from each invoice.",
+        "Note the factor, its unit and where it came from.",
+        "Keep chemicals separate from hides, which are their own purchased-goods line."
+      ]
+    },
+    {
+      "h": "What stays in Scope 1 and 2",
+      "p": [
+        "Boiler fuel and generator diesel are Scope 1; grid electricity is Scope 2. Effluent sent to the common treatment plant is Scope 3 category 5."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Chrome vs vegetable tanned leather",
+      "to": "/answers/chrome-vs-vegetable-tanned-leather-carbon-footprint"
+    },
+    {
+      "label": "Tannery per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "CETP effluent, which scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

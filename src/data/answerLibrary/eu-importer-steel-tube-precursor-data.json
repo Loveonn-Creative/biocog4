@@ -1,0 +1,51 @@
+{
+  "slug": "eu-importer-steel-tube-precursor-data",
+  "q": "What precursor data does an EU importer need for steel tubes under CBAM?",
+  "title": "EU importers: steel tube precursors",
+  "short": "The tube mill's own direct emissions per tonne plus the embedded emissions of the hot-rolled coil, skelp or billet it used, with the supplier of each. Tubes are complex goods, so the precursor's emissions are added in.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers buying welded and seamless steel tubes from non-EU mills",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Tube mill direct emissions per tonne.",
+        "Precursor embedded emissions per tonne, from the coil or billet maker.",
+        "Yield, so precursor tonnes per tonne of tube are clear."
+      ]
+    },
+    {
+      "h": "Without precursor data",
+      "p": [
+        "The precursor uses the Commission's default value, with its mark-up, which raises the result."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are steel pipes and tubes covered",
+      "to": "/answers/are-steel-pipes-and-tubes-covered-by-cbam"
+    },
+    {
+      "label": "ERW steel pipe per tonne",
+      "to": "/answers/erw-steel-pipe-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Indian steel data request",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

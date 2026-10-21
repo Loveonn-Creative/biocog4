@@ -1,0 +1,56 @@
+{
+  "slug": "panipat-shoddy-yarn-mill-electricity-per-kg",
+  "q": "How does a Panipat recycled yarn mill work out electricity per kg?",
+  "title": "Panipat recycled yarn: power per kg",
+  "short": "Multiply billed kWh by 0.710 kg CO2 per kWh and divide by kilograms of yarn spun in the same month. Mechanical recycling of waste into shoddy yarn runs mainly on electricity, so this is the mill's main own-energy line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Shoddy and recycled cotton yarn mills in the Panipat cluster of Haryana",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "kWh from the bill, including the opening and garnetting machines.",
+        "Multiply by 0.710 kg CO2 per kWh.",
+        "Divide by kg of yarn spun."
+      ]
+    },
+    {
+      "h": "The waste input",
+      "p": [
+        "How you count the incoming textile waste depends on the method your buyer follows. Write down the rule, for example whether waste carries any upstream emissions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Electricity: 26,000 kWh x 0.710 = 18,460 kg CO2",
+      "Yarn spun: 40,000 kg",
+      "Per kg: 18,460 / 40,000 = 0.462 kg CO2"
+    ],
+    "note": "Quantities are illustrative; the factor is the CEA grid average."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Recycled cotton yarn per kg",
+      "to": "/answers/recycled-cotton-yarn-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Counting recycled content",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

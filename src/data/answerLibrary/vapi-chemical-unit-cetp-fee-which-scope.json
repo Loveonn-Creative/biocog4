@@ -1,0 +1,46 @@
+{
+  "slug": "vapi-chemical-unit-cetp-fee-which-scope",
+  "q": "Which scope covers the common effluent plant a Vapi chemical unit pays for?",
+  "title": "Vapi chemical units: CETP fee scope",
+  "short": "Effluent you send to the common treatment plant is waste generated in operations, Scope 3 category 5. The plant's own energy and emissions are its Scope 1 and 2, not yours. Your own pre-treatment plant's power stays in your Scope 2.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Chemical, dye and pharma units in the Vapi industrial estate sending effluent to the CETP",
+  "sections": [
+    {
+      "h": "What to record",
+      "p": [
+        "Volume sent each month, from the CETP bill.",
+        "Any factor the CETP provides per kilolitre, with its basis."
+      ]
+    },
+    {
+      "h": "If no factor is available",
+      "p": [
+        "Report the volume and mark the line as a gap. A rupee fee alone is not a reliable activity measure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "CETP effluent, which scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Vapi dye unit coal boiler",
+      "to": "/answers/vapi-ankleshwar-dye-unit-boiler-coal-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

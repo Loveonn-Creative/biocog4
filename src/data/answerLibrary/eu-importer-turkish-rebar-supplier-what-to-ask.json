@@ -1,0 +1,51 @@
+{
+  "slug": "eu-importer-turkish-rebar-supplier-what-to-ask",
+  "q": "What should an EU importer ask a Turkish rebar supplier for under CBAM?",
+  "title": "EU importers: Turkish rebar data",
+  "short": "Direct embedded emissions per tonne of rebar from the installation, including the crude steel or billet precursor, for the period, with the production route stated. For iron and steel, CBAM counts direct emissions only.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and declarants buying rebar and long products from Turkish mills",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Embedded direct emissions per tonne, by product.",
+        "Precursor emissions and whether the billet was made on site or bought.",
+        "Any carbon price actually paid in Turkey, with evidence."
+      ]
+    },
+    {
+      "h": "Route matters",
+      "p": [
+        "Scrap-based electric arc furnace steel and blast furnace steel give very different figures, so ask which route each lot came from."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Turkey carbon price deduction",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    },
+    {
+      "label": "Checking a supplier's CBAM figure",
+      "to": "/answers/eu-importer-checking-supplier-cbam-figure"
+    },
+    {
+      "label": "Egypt DRI EAF rebar",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "morbi-tile-unit-rooftop-solar-share",
+  "q": "How does a Morbi tile unit show the effect of rooftop solar on its footprint?",
+  "title": "Morbi tile units: rooftop solar share",
+  "short": "Report grid imports at 0.710 kg CO2 per kWh and show solar used on site as a separate line with no grid factor. The saving is the solar kWh used times the grid factor, but only grid imports go in Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tile makers in the Morbi cluster with rooftop or ground-mounted solar",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Grid import kWh from the bill x 0.710.",
+        "Solar kWh used from the generation meter.",
+        "Avoided emissions: solar kWh x 0.710, reported separately."
+      ]
+    },
+    {
+      "h": "Kiln gas is the bigger line",
+      "p": [
+        "Solar cuts electricity emissions only. In tile making the kiln and dryer gas can be larger, so show both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Grid imports: 120,000 kWh x 0.710 = 85,200 kg CO2 (Scope 2)",
+      "Solar used on site: 30,000 kWh",
+      "Avoided: 30,000 x 0.710 = 21,300 kg CO2, shown separately"
+    ],
+    "note": "Quantities are illustrative."
+  },
+  "senseible": "Senseible reads the import units on an electricity bill and applies the India grid factor of 0.710 kg CO2 per kWh. Net-metered units are not treated as consumption, and kVAh lines get no factor until kWh is available. It does not read inverter or solar meter data.",
+  "links": [
+    {
+      "label": "Rooftop solar net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Morbi kiln gas per square metre",
+      "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

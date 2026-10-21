@@ -1,0 +1,60 @@
+{
+  "slug": "pet-recycler-hot-wash-line-steam-and-power",
+  "q": "How does a PET recycler count the hot wash line's steam and power?",
+  "title": "PET recyclers: hot wash steam and power",
+  "short": "Count the boiler fuel that makes the wash steam as Scope 1 and the line's grid power as Scope 2, then divide both by kg of flake washed. Caustic soda and detergents are purchased goods in Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "PET bottle recyclers running hot wash lines for flake",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Boiler fuel per month x its factor (PNG 2.05 kg CO2 per scm, coal or diesel by IPCC default).",
+        "Line kWh x 0.710.",
+        "Divide the total by kg of clean flake."
+      ]
+    },
+    {
+      "h": "Shared boiler",
+      "p": [
+        "If the boiler also serves other lines, split steam by a meter or by hours, and record the split."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day (illustrative quantities)",
+    "lines": [
+      "Line power: 5,200 kWh x 0.710 = 3,692 kg CO2",
+      "Flake washed: 8,000 kg",
+      "Power per kg: 3,692 / 8,000 = 0.462 kg CO2, before boiler fuel"
+    ],
+    "note": "Quantities are illustrative."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "PET flake per kg",
+      "to": "/answers/pet-bottle-recycling-flakes-carbon-per-kg"
+    },
+    {
+      "label": "PET bale transport",
+      "to": "/answers/pet-recycler-bale-transport-scope-3"
+    },
+    {
+      "label": "rPET recycled content claim",
+      "to": "/answers/rpet-flake-buyer-recycled-content-claim"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
