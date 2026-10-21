@@ -1,0 +1,62 @@
+{
+  "slug": "jubail-ammonium-nitrate-cbam-precursors",
+  "q": "Which precursors go into the CBAM figure for ammonium nitrate made in Jubail?",
+  "title": "Ammonium nitrate CBAM precursors",
+  "short": "Ammonia and nitric acid. Add the embedded emissions of the ammonia and nitric acid consumed, in proportion to the tonnes used, to the plant's own direct emissions and its electricity, then divide by tonnes of ammonium nitrate. Nitric acid's N2O usually dominates.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ammonium nitrate and calcium ammonium nitrate exporters in Saudi Arabia",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Tonnes of ammonia used directly in neutralisation, times its embedded emissions.",
+        "Tonnes of nitric acid used, times its embedded emissions, including N2O.",
+        "Plus fuel and electricity for neutralisation, evaporation and granulation.",
+        "Divided by tonnes of product."
+      ]
+    },
+    {
+      "h": "Where ammonia and acid are made on site",
+      "p": [
+        "If they are made in the same installation, their emissions are part of your direct and indirect total rather than bought precursors. Keep the split so each product's figure can be shown."
+      ]
+    },
+    {
+      "h": "Mixed fertilisers",
+      "p": [
+        "For blends, the figure follows the nitrogen compounds in the mix, so record the share of each component."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, fuel and electricity invoices into a dated, fingerprinted record per site and keeps lab reports and production logs beside them, so each figure can be traced to its documents.",
+  "links": [
+    {
+      "label": "Nitric acid N2O in CBAM",
+      "to": "/answers/nitric-acid-plant-n2o-cbam-jubail"
+    },
+    {
+      "label": "Sasolburg ammonia precursor",
+      "to": "/answers/sasolburg-ammonia-precursor-for-fertiliser-exporters"
+    },
+    {
+      "label": "South Africa NPK blend exporter",
+      "to": "/answers/south-africa-npk-blend-exporter-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

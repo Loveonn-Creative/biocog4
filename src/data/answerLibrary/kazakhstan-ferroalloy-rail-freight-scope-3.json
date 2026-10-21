@@ -1,0 +1,61 @@
+{
+  "slug": "kazakhstan-ferroalloy-rail-freight-scope-3",
+  "q": "How do EU buyers count rail and sea freight for ferroalloys shipped from Kazakhstan?",
+  "title": "Kazakh ferroalloy freight in Scope 3",
+  "short": "Freight is not part of the CBAM figure, but it belongs in the buyer's Scope 3 under upstream transport. Multiply tonnes by distance for each leg, rail across Central Asia, sea or further rail into Europe, by a factor for that mode, using the GLEC Framework or ISO 14083.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "EU stainless and steel mills and traders buying Kazakh ferroalloys",
+  "sections": [
+    {
+      "h": "Leg by leg",
+      "ol": [
+        "Rail from the plant to the border or port, using the route distance.",
+        "Sea or rail into Europe, depending on the route taken.",
+        "Road from the port or terminal to the mill."
+      ]
+    },
+    {
+      "h": "Which factors",
+      "p": [
+        "Use the carrier's own figures where they report under the GLEC Framework. Otherwise use GLEC default factors for each mode and label them as defaults. Electric and diesel rail differ, so record which applies."
+      ]
+    },
+    {
+      "h": "Keep it separate",
+      "p": [
+        "Report freight beside the ferroalloy's production figure, not inside it, so the CBAM number and the product footprint stay comparable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads freight invoices and bills of lading into a dated, fingerprinted record, so each shipment's legs and tonnes can be traced to their documents.",
+  "links": [
+    {
+      "label": "Kazakh ferrochrome CBAM figure",
+      "to": "/answers/aktobe-ferrochrome-smelter-cbam-figure"
+    },
+    {
+      "label": "Turkish cement sea freight",
+      "to": "/answers/turkish-cement-sea-freight-cbam"
+    },
+    {
+      "label": "Ballari ore trucks to port",
+      "to": "/answers/ballari-iron-ore-trucks-to-port-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

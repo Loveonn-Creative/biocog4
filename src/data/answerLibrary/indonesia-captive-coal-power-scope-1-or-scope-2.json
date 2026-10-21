@@ -1,0 +1,61 @@
+{
+  "slug": "indonesia-captive-coal-power-scope-1-or-scope-2",
+  "q": "Is power from a captive coal plant in an Indonesian industrial park Scope 1 or Scope 2?",
+  "title": "Captive coal power: Scope 1 or Scope 2",
+  "short": "It depends on who owns or controls the plant. If your company owns or operates it, the coal burnt is Scope 1. If a park operator or another company runs it and sells you power, it is Scope 2, calculated with that plant's own emission rate rather than the national grid average.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Smelters, stainless mills and suppliers in Indonesian parks with off-grid coal power",
+  "sections": [
+    {
+      "h": "Owned or controlled",
+      "p": [
+        "Report the coal combustion in Scope 1 using the coal's own carbon content or the IPCC default for its type. Do not count the same power again in Scope 2."
+      ]
+    },
+    {
+      "h": "Bought from the park",
+      "p": [
+        "Report it in Scope 2. Because the park is not on the public grid, a location based figure should use the supplying plant's emission rate, from its fuel use and output. The Java and Bali grid average does not describe it."
+      ]
+    },
+    {
+      "h": "Ask the park for",
+      "ul": [
+        "Annual coal use and its heating value or carbon content.",
+        "Net electricity sent out.",
+        "Emissions per MWh sold, with the year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Jakarta data centre on a coal grid",
+      "to": "/answers/jakarta-data-centre-coal-grid-scope-2"
+    },
+    {
+      "label": "Captive coal plant, Category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

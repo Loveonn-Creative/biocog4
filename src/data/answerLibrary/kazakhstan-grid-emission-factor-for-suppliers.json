@@ -1,0 +1,55 @@
+{
+  "slug": "kazakhstan-grid-emission-factor-for-suppliers",
+  "q": "Which grid emission factor should a Kazakh supplier use?",
+  "title": "Kazakhstan grid factor for suppliers",
+  "short": "Use the official national grid factor for the year the power was used, and cite it. Kazakhstan's grid relies heavily on coal, especially in the north, so its factor is among the highest in the region, well above half a kilogram of CO2 per kWh. Use a plant's own rate if you buy from it directly.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Kazakh manufacturers and exporters answering buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Which number for which question",
+      "ul": [
+        "Location based Scope 2: the official national or regional factor for the year.",
+        "Market based Scope 2: certificates or a supply contract from a renewable plant meeting the Scope 2 Quality Criteria.",
+        "Direct supply from a named coal plant: that plant's own emissions per MWh."
+      ]
+    },
+    {
+      "h": "Keep it auditable",
+      "p": [
+        "Record the publication or supplier statement, its year and the value. Keep the same source each year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Pavlodar aluminium CBAM",
+      "to": "/answers/pavlodar-aluminium-smelter-cbam-direct-emissions"
+    },
+    {
+      "label": "South African grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

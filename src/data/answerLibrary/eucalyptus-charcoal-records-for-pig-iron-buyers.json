@@ -1,0 +1,63 @@
+{
+  "slug": "eucalyptus-charcoal-records-for-pig-iron-buyers",
+  "q": "What records show that charcoal for Minas Gerais pig iron comes from planted eucalyptus?",
+  "title": "Eucalyptus charcoal records for pig iron",
+  "short": "Keep, for each delivery, the plantation it came from, the forest management plan or certification, the official forest origin transport document, and the tonnes and carbon content. Without that trail a buyer or verifier will treat the charcoal carbon as fossil, which can multiply the pig iron figure several times.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Charcoal pig iron producers in Minas Gerais and the EU steel mills buying their iron",
+  "sections": [
+    {
+      "h": "For each charcoal delivery",
+      "ul": [
+        "Supplier and the plantation or land parcel, with ownership or lease documents.",
+        "The forest origin transport record issued for the load.",
+        "Weighbridge tonnage and a carbon content test, monthly at least."
+      ]
+    },
+    {
+      "h": "For the plantations",
+      "ul": [
+        "A forest management plan showing replanting after harvest.",
+        "FSC or another recognised certification, where held.",
+        "Evidence the land was not cleared native forest."
+      ]
+    },
+    {
+      "h": "Why it decides the number",
+      "p": [
+        "Charcoal is the main reductant in these blast furnaces. Counted as sustainable biomass its CO2 can be rated zero; counted as fossil it becomes the largest source in the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Charcoal pig iron and CBAM",
+      "to": "/answers/charcoal-pig-iron-minas-gerais-cbam-zero"
+    },
+    {
+      "label": "Pig iron and sponge iron in CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Charcoal making methane",
+      "to": "/answers/charcoal-kiln-methane-pig-iron-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

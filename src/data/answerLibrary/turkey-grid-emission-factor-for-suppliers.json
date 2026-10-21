@@ -1,0 +1,55 @@
+{
+  "slug": "turkey-grid-emission-factor-for-suppliers",
+  "q": "Which grid emission factor should a Turkish supplier use?",
+  "title": "Turkey grid factor for suppliers",
+  "short": "Use the national grid emission factor published by Turkey's energy ministry for the year the power was used, and cite it. Recent published figures are around 0.4 to 0.45 kg of CO2 per kWh, from a mix of coal, gas, hydropower and growing wind and solar.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto parts, chemical, steel and textile suppliers in Turkey answering buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Which number for which question",
+      "ul": [
+        "Location based Scope 2: the official national factor for the year.",
+        "Market based Scope 2: YEK-G or other certificates meeting the Scope 2 Quality Criteria.",
+        "CBAM: for cement and fertilisers the electricity factor changes the cost; for steel and aluminium electricity is not charged."
+      ]
+    },
+    {
+      "h": "Keep it auditable",
+      "p": [
+        "Record the publication, its year and the value. Hydropower output varies with rainfall, so the factor moves year to year; do not reuse an old one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Kocaeli cement electricity in CBAM",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    },
+    {
+      "label": "YEK-G certificates and Scope 2",
+      "to": "/answers/turkish-supplier-yek-g-certificates-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

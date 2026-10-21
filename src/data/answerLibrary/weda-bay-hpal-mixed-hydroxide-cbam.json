@@ -1,0 +1,63 @@
+{
+  "slug": "weda-bay-hpal-mixed-hydroxide-cbam",
+  "q": "Is mixed hydroxide precipitate from Weda Bay or Morowali HPAL plants covered by CBAM?",
+  "title": "HPAL nickel intermediates and CBAM",
+  "short": "No. Mixed hydroxide precipitate, nickel matte and refined nickel are not in Annex I of the CBAM Regulation, so they need no CBAM data today. Battery makers will still ask for their carbon footprint, which includes coal power, acid making and CO2 from limestone used to neutralise the leach.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "HPAL operators in Indonesia and the battery material buyers who purchase their nickel intermediates",
+  "sections": [
+    {
+      "h": "What is and is not covered",
+      "ul": [
+        "Not covered: mixed hydroxide precipitate, nickel matte, nickel sulphate and unwrought nickel.",
+        "Covered: ferro-nickel and nickel pig iron declared as pig iron or ferro-nickel, and stainless steel."
+      ]
+    },
+    {
+      "h": "What a battery buyer counts",
+      "ul": [
+        "Fuel and electricity for the autoclaves, mostly from coal on site.",
+        "Sulphur burnt to make sulphuric acid, and any purchased acid.",
+        "Process CO2 from limestone or lime used to neutralise acid and remove impurities.",
+        "Reagents and transport to the refinery or precursor plant."
+      ]
+    },
+    {
+      "h": "Why it matters now",
+      "p": [
+        "EU battery rules require a carbon footprint declaration for electric vehicle batteries once the calculation rules are in force, and cell makers pass the request up the chain. A per tonne of contained nickel figure with its records is what they will ask for."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, fuel and electricity invoices into a dated, fingerprinted record per site and keeps lab reports and production logs beside them, so each figure can be traced to its documents.",
+  "links": [
+    {
+      "label": "Morowali nickel pig iron and stainless",
+      "to": "/answers/morowali-nickel-pig-iron-stainless-cbam"
+    },
+    {
+      "label": "EU battery footprint rules",
+      "to": "/answers/eu-battery-carbon-footprint-calculation-rules"
+    },
+    {
+      "label": "CO2 from limestone neutralisation",
+      "to": "/answers/co2-from-soda-ash-or-limestone-neutralisation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "EUR-Lex, EU law",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

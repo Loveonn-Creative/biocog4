@@ -1,0 +1,61 @@
+{
+  "slug": "morowali-captive-coal-power-ferro-nickel-cbam",
+  "q": "Does Morowali's captive coal power count in the CBAM figure for ferro-nickel and stainless steel?",
+  "title": "Morowali captive coal power and CBAM",
+  "short": "Not for the CBAM charge. Ferro-nickel and stainless steel are iron and steel goods, which CBAM charges on direct emissions only. The coal burnt in rotary kilns and the reductant carbon in the electric furnaces count; power from the captive plant is indirect and stays out of the charge.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Nickel pig iron, ferro-nickel and stainless producers in Morowali and Weda Bay, and EU importers buying from them",
+  "sections": [
+    {
+      "h": "What counts in the charge",
+      "ul": [
+        "Coal and other fuel burnt in dryers and rotary kilns that calcine and pre-reduce the ore.",
+        "Reductant carbon (coal, coke, anthracite) and electrode consumption in the electric furnaces, by carbon mass balance.",
+        "Carbonates added as flux, and the embedded emissions of any bought precursor such as ferro-chromium for stainless."
+      ]
+    },
+    {
+      "h": "Why the power plant stays out",
+      "p": [
+        "Annex II of the CBAM Regulation lists iron and steel goods for direct emissions only. Electricity from a captive coal unit, owned by you or the park, is an indirect emission for CBAM, so it does not raise the number of certificates."
+      ]
+    },
+    {
+      "h": "Why you should still measure it",
+      "p": [
+        "Electric furnaces in RKEF lines use a lot of power, so the coal plant is often the largest single source in the product footprint. Battery makers and stainless buyers counting Scope 3 will ask for it, and it may enter CBAM if indirect emissions are added later."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Morowali nickel pig iron and stainless",
+      "to": "/answers/morowali-nickel-pig-iron-stainless-cbam"
+    },
+    {
+      "label": "Odisha smelter captive coal power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "CBAM: blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

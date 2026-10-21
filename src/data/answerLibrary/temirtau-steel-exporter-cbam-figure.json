@@ -1,0 +1,61 @@
+{
+  "slug": "temirtau-steel-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for flat steel from an integrated mill in Temirtau?",
+  "title": "Temirtau integrated steel: CBAM figure",
+  "short": "All direct emissions of the integrated route: coke ovens, sinter plant, blast furnaces and the basic oxygen shop, by carbon mass balance, plus lime kilns inside the site. Divide by tonnes of each product. Electricity from the mill's or the grid's coal plants is indirect and not charged for steel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Integrated steel producers in Kazakhstan and EU buyers of their coil and sheet",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Coking coal carbon not leaving in coke sold, tar or other products.",
+        "Blast furnace and BOF gas burnt on site, counted where it is burnt.",
+        "Lime and dolomite calcined in kilns and fluxes in the sinter plant."
+      ]
+    },
+    {
+      "h": "Waste gases",
+      "p": [
+        "Where blast furnace or BOF gas is sent to a power plant, the CBAM rules assign part of its emissions to the steel. Follow the method for waste gases in the monitoring rules and document the gas flows."
+      ]
+    },
+    {
+      "h": "Per product",
+      "p": [
+        "Hot rolled coil, cold rolled sheet and coated products each need a figure. Downstream steps add their own fuel; precursor steel carries its embedded emissions in."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Coke ovens inside the CBAM boundary",
+      "to": "/answers/vaal-steel-mill-coke-ovens-inside-cbam-boundary"
+    },
+    {
+      "label": "Waste gas to power and CBAM",
+      "to": "/answers/steel-plant-waste-gas-to-power-cbam"
+    },
+    {
+      "label": "Ha Tinh BF BOF precursors",
+      "to": "/answers/ha-tinh-bf-bof-steel-precursor-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

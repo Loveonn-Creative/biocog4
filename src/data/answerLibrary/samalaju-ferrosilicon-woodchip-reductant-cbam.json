@@ -1,0 +1,61 @@
+{
+  "slug": "samalaju-ferrosilicon-woodchip-reductant-cbam",
+  "q": "Does woodchip or charcoal in a Samalaju ferrosilicon furnace count as zero emissions under CBAM?",
+  "title": "Biomass reductant in ferrosilicon CBAM",
+  "short": "Only if it meets the sustainability and greenhouse gas saving criteria the CBAM monitoring rules refer to, with evidence. Otherwise its carbon is counted like coal. Coal, coke and electrode carbon count in any case. Ferrosilicon is a CBAM good, charged on direct emissions only.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Ferrosilicon and silicon alloy smelters in Sarawak and their EU buyers",
+  "sections": [
+    {
+      "h": "Covered and charged",
+      "p": [
+        "Ferrosilicon is declared under CN 7202 21 or 7202 29, which are in Annex I. Direct emissions come from the carbon in the reductants and electrodes, worked out by mass balance. Electricity is indirect and not charged."
+      ]
+    },
+    {
+      "h": "Biomass evidence to keep",
+      "ul": [
+        "The source of the woodchips or charcoal: plantation, sawmill residue or other.",
+        "Certification or a documented chain of custody.",
+        "Quantities and carbon content for each delivery."
+      ]
+    },
+    {
+      "h": "If evidence is missing",
+      "p": [
+        "Count the biomass carbon as fossil. Over claiming biomass is a common reason for a verifier to reject a figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Charcoal pig iron from Minas Gerais",
+      "to": "/answers/charcoal-pig-iron-minas-gerais-cbam-zero"
+    },
+    {
+      "label": "Ferro-alloy coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    },
+    {
+      "label": "Electrode paste CO2",
+      "to": "/answers/ferro-alloy-electrode-paste-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "EUR-Lex, EU law",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "jubail-polyethylene-buyer-scope-3-figure",
+  "q": "What carbon figure should a buyer of Jubail polyethylene ask for?",
+  "title": "Jubail polyethylene: buyer carbon figure",
+  "short": "Polyethylene is not a CBAM good, so the request is for Scope 3. Ask for a cradle to gate figure per tonne of resin that covers ethane or naphtha cracking, polymerisation, steam and electricity, with the method and year. Do not use a generic European average for Saudi resin.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Packaging, film and moulding companies buying polyethylene from Jubail producers",
+  "sections": [
+    {
+      "h": "What the figure should include",
+      "ul": [
+        "Feedstock extraction and processing up to the cracker.",
+        "Cracking furnaces, which are the largest direct source.",
+        "Polymerisation, steam, electricity and site utilities."
+      ]
+    },
+    {
+      "h": "What to check",
+      "ul": [
+        "Whether biogenic or recycled content claims are by mass balance, and how that is allocated.",
+        "The allocation between ethylene and co-products from the cracker.",
+        "The year and method, such as ISO 14067."
+      ]
+    },
+    {
+      "h": "If the producer gives none",
+      "p": [
+        "Use a published regional figure for the resin type and label it as an estimate in your Scope 3 total."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into a dated, fingerprinted record and keeps each supplier's own figure beside the purchase it belongs to, so a Scope 3 total shows which numbers are primary data and which are estimates.",
+  "links": [
+    {
+      "label": "Resin emission factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Jubail exports and CBAM",
+      "to": "/answers/jubail-petrochemical-exports-which-need-cbam"
+    },
+    {
+      "label": "Mass balance claims",
+      "to": "/answers/chain-of-custody-mass-balance-vs-segregation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

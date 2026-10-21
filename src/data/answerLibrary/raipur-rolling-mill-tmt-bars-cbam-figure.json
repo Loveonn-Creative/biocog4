@@ -1,0 +1,62 @@
+{
+  "slug": "raipur-rolling-mill-tmt-bars-cbam-figure",
+  "q": "How does a Raipur rolling mill that buys billets work out the CBAM figure for its TMT bars?",
+  "title": "Raipur rolling mill TMT bars: CBAM",
+  "short": "Add the billets' embedded emissions, in proportion to the tonnes charged including scale and crop losses, to the mill's own direct emissions from the reheating furnace, then divide by tonnes of bars. Coal or producer gas in the furnace counts; the mill's electricity is not charged for steel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Re-rolling mills in Raipur, Durg and Bilaspur supplying TMT bars, including to exporters",
+  "sections": [
+    {
+      "h": "The figure",
+      "ol": [
+        "Tonnes of billets charged in the period.",
+        "Times the billet supplier's embedded emissions per tonne, or the default value.",
+        "Plus CO2 from coal, producer gas or oil burnt in the reheating furnace.",
+        "Divided by tonnes of bars produced."
+      ]
+    },
+    {
+      "h": "Ask your billet supplier",
+      "p": [
+        "Billets from coal based sponge iron and induction furnaces carry a high figure, and that share usually dominates the bar. A supplier who can show its own number helps you more than any change in the rolling mill."
+      ]
+    },
+    {
+      "h": "Where the mill can cut",
+      "p": [
+        "Hot charging billets straight from casting and switching the furnace from coal to gas lower your own share, and both show in fuel invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Induction furnace billets from sponge iron",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "Raipur sponge iron in CBAM",
+      "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions"
+    },
+    {
+      "label": "Turkish rebar reheating furnace gas",
+      "to": "/answers/turkish-rebar-reheating-furnace-gas-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

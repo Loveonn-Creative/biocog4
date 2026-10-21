@@ -1,0 +1,63 @@
+{
+  "slug": "float-glass-furnace-co2-per-tonne",
+  "q": "How much CO2 does a float glass furnace emit per tonne of glass?",
+  "title": "Float glass furnace CO2 per tonne",
+  "short": "Work it out from your own records: fuel burnt in the furnace times its emission factor, plus process CO2 from soda ash, limestone and dolomite in the batch, divided by tonnes of glass pulled. Cullet lowers both parts. Add electricity separately for Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Float and automotive glass plants, including those in Nuevo Leon, and their buyers",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Furnace fuel: gas or oil quantity times its emission factor.",
+        "Process CO2: tonnes of each carbonate times its stoichiometric factor (soda ash about 0.415 t CO2 per tonne, limestone 0.440, dolomite 0.477).",
+        "Divide the sum by tonnes of glass pulled, not tonnes sold."
+      ]
+    },
+    {
+      "h": "Things that move the number",
+      "ul": [
+        "Cullet share, both internal and bought in.",
+        "Furnace age and regenerator condition.",
+        "Oxygen firing, which changes fuel use but adds electricity for oxygen."
+      ]
+    },
+    {
+      "h": "For automotive buyers",
+      "p": [
+        "Car makers ask per square metre of a given thickness. Convert with the glass density and state the thickness used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, fuel and electricity invoices into a dated, fingerprinted record per site and keeps lab reports and production logs beside them, so each figure can be traced to its documents.",
+  "links": [
+    {
+      "label": "Container glass furnace emissions",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Toughened glass per square metre",
+      "to": "/answers/toughened-glass-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Glass batch carbonates",
+      "to": "/answers/firozabad-glass-batch-carbonates-process-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

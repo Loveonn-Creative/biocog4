@@ -1,0 +1,60 @@
+{
+  "slug": "indonesian-stainless-cold-rolled-coil-precursors",
+  "q": "Which precursors go into the CBAM figure for Indonesian stainless cold rolled coil?",
+  "title": "Indonesian stainless coil CBAM precursors",
+  "short": "Add the embedded emissions of the precursors you buy, such as slab, hot rolled coil, nickel pig iron or ferro-chromium, to the direct emissions of your own steps, then divide by tonnes of coil. In an integrated Morowali plant the nickel and melt shop sit inside your boundary, so their emissions are your own direct ones.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Stainless rolling mills in Indonesia exporting cold rolled coil and sheet to the EU",
+  "sections": [
+    {
+      "h": "Two cases",
+      "ul": [
+        "Integrated: nickel pig iron, melting, casting and rolling at one installation. Count all direct emissions; there is no bought precursor except ferro-chromium or scrap with its own value.",
+        "Re-roller: you buy hot rolled coil or slab. Ask the supplier for its embedded emissions per tonne and add them in proportion to the tonnes consumed."
+      ]
+    },
+    {
+      "h": "Your own direct emissions",
+      "p": [
+        "Cold rolling adds little: gas or LPG in annealing furnaces and any pickling line burners. Electricity for the mill is not charged for steel."
+      ]
+    },
+    {
+      "h": "If a supplier gives no figure",
+      "p": [
+        "Use the default value for that precursor from the Commission's default value regulation, and keep a record of the request you made. Defaults are set high on purpose, so real data usually lowers the result."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Morowali stainless and CBAM",
+      "to": "/answers/morowali-nickel-pig-iron-stainless-cbam"
+    },
+    {
+      "label": "Steel tube precursor data",
+      "to": "/answers/eu-importer-steel-tube-precursor-data"
+    },
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

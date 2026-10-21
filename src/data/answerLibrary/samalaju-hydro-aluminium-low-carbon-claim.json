@@ -1,0 +1,61 @@
+{
+  "slug": "samalaju-hydro-aluminium-low-carbon-claim",
+  "q": "Can buyers call Samalaju aluminium low carbon because the smelters run on hydropower?",
+  "title": "Samalaju hydro aluminium: what you can claim",
+  "short": "For the product footprint, yes if the smelter shows its electricity really comes from hydropower and gives a cradle to gate figure that includes alumina. For CBAM it changes nothing: electricity is not charged for aluminium, so the certificates depend on anode and perfluorocarbon emissions only.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Buyers of Malaysian primary aluminium and extruders using Samalaju ingot or billet",
+  "sections": [
+    {
+      "h": "What hydropower changes",
+      "p": [
+        "Smelting electricity is the biggest part of primary aluminium's footprint, so a smelter supplied by hydropower plants can show a much lower cradle to gate figure than one on a coal grid."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "ul": [
+        "The power supply contract or plant link that shows where the electricity comes from.",
+        "A cradle to gate figure per tonne that includes the alumina, which is imported and often made with coal or oil.",
+        "Anode and perfluorocarbon emissions, which count under CBAM."
+      ]
+    },
+    {
+      "h": "What not to claim",
+      "p": [
+        "Do not call the metal zero carbon. Anodes, perfluorocarbons, alumina and casting fuel still emit."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads anode, fuel and electricity invoices into a dated, fingerprinted record per site, so a buyer can see which inputs sit behind each figure. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Check an aluminium carbon claim",
+      "to": "/answers/how-to-check-aluminium-supplier-carbon-claim"
+    },
+    {
+      "label": "Alumina is Scope 3, not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    },
+    {
+      "label": "ASI carbon threshold",
+      "to": "/answers/asi-certification-aluminium-carbon-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "nitric-acid-plant-n2o-cbam-jubail",
+  "q": "Does nitrous oxide from a Jubail nitric acid plant count in its CBAM figure?",
+  "title": "Nitric acid N2O in the CBAM figure",
+  "short": "Yes. Nitric acid is a CBAM fertiliser good, and nitrous oxide from its production is counted alongside CO2, converted with its global warming potential. Because N2O is so potent, it is often the largest part of the figure unless the plant runs abatement catalysts.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Nitric acid and ammonium nitrate producers in Jubail and their EU buyers",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "N2O formed on the oxidation catalyst, measured continuously in the stack.",
+        "CO2 from fuel used on site.",
+        "Electricity, because fertiliser goods are charged on indirect emissions too.",
+        "Embedded emissions of the ammonia consumed."
+      ]
+    },
+    {
+      "h": "Why abatement decides the number",
+      "p": [
+        "Secondary and tertiary catalysts can cut N2O by most of its untreated level. A plant with them installed and monitored has a far lower figure than one without."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep continuous stack measurements, calibration records and catalyst replacement dates. Default values assume little abatement."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, fuel and electricity invoices into a dated, fingerprinted record per site and keeps lab reports and production logs beside them, so each figure can be traced to its documents.",
+  "links": [
+    {
+      "label": "Jubail exports and CBAM",
+      "to": "/answers/jubail-petrochemical-exports-which-need-cbam"
+    },
+    {
+      "label": "Ammonium nitrate precursors",
+      "to": "/answers/jubail-ammonium-nitrate-cbam-precursors"
+    },
+    {
+      "label": "Egypt urea plant figure",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

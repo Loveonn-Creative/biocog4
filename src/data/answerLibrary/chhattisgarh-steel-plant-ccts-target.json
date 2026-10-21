@@ -1,0 +1,63 @@
+{
+  "slug": "chhattisgarh-steel-plant-ccts-target",
+  "q": "Do sponge iron and steel plants in Raipur and Durg have CCTS emission intensity targets yet?",
+  "title": "Chhattisgarh steel plants and CCTS targets",
+  "short": "Check the latest notification. The first target rules named plants in a few sectors, and iron and steel is a large sector expected to follow. A plant has a target only once its name, baseline and target appear in a notification. Until then it has none, but its monitoring records will be needed.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Sponge iron, induction furnace and integrated steel plants in Chhattisgarh",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Look for the latest Greenhouse Gases Emission Intensity Target Rules notification and amendments covering iron and steel.",
+        "Search for your plant name and location.",
+        "If listed, note the baseline year, product unit and target."
+      ]
+    },
+    {
+      "h": "Prepare anyway",
+      "ul": [
+        "Monthly coal, dolomite and ore quantities with lab analyses.",
+        "Electricity bought and generated, including waste heat recovery power.",
+        "Production by product: sponge iron, billets, bars."
+      ]
+    },
+    {
+      "h": "The same records serve CBAM",
+      "p": [
+        "Exporters and their customers need embedded emissions per tonne for CBAM. A plant that keeps these records once can answer both."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Raipur sponge iron in CBAM",
+      "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions"
+    },
+    {
+      "label": "If a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, Carbon Credit Trading Scheme notices",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

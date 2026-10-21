@@ -1,0 +1,55 @@
+{
+  "slug": "thailand-grid-emission-factor-for-suppliers",
+  "q": "Which grid emission factor should a Thai supplier use?",
+  "title": "Thailand grid factor for suppliers",
+  "short": "Use the national grid emission factor published by Thailand's greenhouse gas management organisation for the year the power was used, and cite it. The grid runs mainly on natural gas, so recent figures are around 0.4 to 0.5 kg of CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement, auto parts, food and electronics suppliers in Thailand answering buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Which number for which question",
+      "ul": [
+        "Location based Scope 2: the official national factor for the year.",
+        "Market based Scope 2: renewable energy certificates or a supply contract meeting the Scope 2 Quality Criteria.",
+        "CBAM: for cement the electricity factor changes the cost; for steel and aluminium electricity is not charged."
+      ]
+    },
+    {
+      "h": "Keep it auditable",
+      "p": [
+        "Record the publication, its year and the value. Some published Thai factors are combined margin figures meant for projects; for Scope 2 use the grid average and say which you used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Saraburi limestone cement",
+      "to": "/answers/saraburi-portland-limestone-cement-cbam"
+    },
+    {
+      "label": "Vietnam grid factor",
+      "to": "/answers/vietnam-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

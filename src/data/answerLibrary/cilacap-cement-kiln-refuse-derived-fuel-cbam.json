@@ -1,0 +1,61 @@
+{
+  "slug": "cilacap-cement-kiln-refuse-derived-fuel-cbam",
+  "q": "How does refuse derived fuel burnt in a Cilacap cement kiln count in its CBAM figure?",
+  "title": "Refuse derived fuel in a cement kiln: CBAM",
+  "short": "Split the fuel by origin. The fossil part, mainly plastics, counts like any fossil fuel. The biomass part, such as paper, wood and food waste, can be rated zero only with evidence that meets the rules the CBAM monitoring refers to. Without lab analysis of the biomass share, count it all as fossil.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Java co-processing municipal refuse derived fuel, and their buyers",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Tonnes of refuse derived fuel fed to the kiln or calciner.",
+        "Its heating value and carbon content, by regular sampling.",
+        "The biomass fraction, using a recognised lab method."
+      ]
+    },
+    {
+      "h": "What counts",
+      "p": [
+        "CO2 from the fossil carbon counts in the kiln's direct emissions. Calcination CO2 from limestone is unchanged by the fuel choice."
+      ]
+    },
+    {
+      "h": "Why it still helps",
+      "p": [
+        "Replacing coal with a fuel that is partly biomass lowers the figure even when only the proven share is rated zero, and it takes waste out of landfill."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Plastic waste co-processing in kilns",
+      "to": "/answers/plastic-waste-coprocessing-cement-kiln-emissions"
+    },
+    {
+      "label": "Vietnam rice husk kiln fuel",
+      "to": "/answers/vietnam-cement-kiln-rice-husk-fuel-cbam"
+    },
+    {
+      "label": "Marmara biomass kiln fuel",
+      "to": "/answers/marmara-cement-plant-biomass-fuel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

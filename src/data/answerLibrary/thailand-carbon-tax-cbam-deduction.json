@@ -1,0 +1,61 @@
+{
+  "slug": "thailand-carbon-tax-cbam-deduction",
+  "q": "Could a Thai carbon tax on fuels reduce CBAM costs for Thai cement and steel exporters?",
+  "title": "Thai carbon tax and CBAM deduction",
+  "short": "Possibly, if a carbon tax is actually paid on the fuels used to make the exported goods. Article 9 lets the EU declarant deduct a carbon price effectively paid in the country of origin, net of rebates. The amount must be proven per installation and attributed to the goods shipped.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Thai cement, steel and aluminium product exporters and their EU declarants",
+  "sections": [
+    {
+      "h": "What would count",
+      "ul": [
+        "A carbon tax charged on coal, oil or gas burnt in production, shown on fuel invoices or tax returns.",
+        "Only the share of fuel behind the goods exported to the EU."
+      ]
+    },
+    {
+      "h": "What would not",
+      "ul": [
+        "Taxes refunded or offset by a reduction in other duties on the same fuel.",
+        "A price applied only to transport fuels the plant does not use in production."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "The legal basis and rate for the year, invoices or returns showing the amount paid, and an independent certification of the share attributable to the exported goods. Check the current Thai rules before relying on a deduction."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Mexico carbon tax and CBAM",
+      "to": "/answers/mexico-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Saraburi limestone cement",
+      "to": "/answers/saraburi-portland-limestone-cement-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

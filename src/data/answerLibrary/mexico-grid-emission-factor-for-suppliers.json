@@ -1,0 +1,55 @@
+{
+  "slug": "mexico-grid-emission-factor-for-suppliers",
+  "q": "Which grid emission factor should a Mexican supplier use?",
+  "title": "Mexico grid factor for suppliers",
+  "short": "Use the national electricity system emission factor published each year by Mexico's environment and energy authorities, for the year the power was used, and cite it. Recent figures are a little over 0.4 kg of CO2 per kWh, reflecting a gas heavy grid.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto parts, steel and glass suppliers in Mexico answering buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Which number for which question",
+      "ul": [
+        "Location based Scope 2: the official national factor for the year.",
+        "Market based Scope 2: clean energy certificates or a supply contract meeting the Scope 2 Quality Criteria.",
+        "CBAM: for cement and fertilisers the electricity factor changes the cost; for steel and aluminium electricity is not charged."
+      ]
+    },
+    {
+      "h": "Keep it auditable",
+      "p": [
+        "Record the publication, its year and the value. Do not mix years in one report, and update when the new figure is out."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated, fingerprinted Scope 2 record. Grid factors outside India are entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Bajio auto parts and CBAM goods",
+      "to": "/answers/bajio-auto-parts-shipment-cbam-goods"
+    },
+    {
+      "label": "Vietnam grid factor",
+      "to": "/answers/vietnam-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "sarawak-manganese-alloy-smelter-cbam-figure",
+  "q": "What goes into the CBAM figure for silico-manganese and ferro-manganese made in Sarawak?",
+  "title": "Sarawak manganese alloys: the CBAM figure",
+  "short": "Direct emissions from the carbon in coke, coal and electrodes, plus CO2 from any carbonate in the ore or flux, worked out by mass balance and divided by tonnes of alloy. Electricity is indirect and not charged, so the hydropower supply does not change the CBAM number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Manganese alloy smelters in Samalaju and EU steel mills buying their alloys",
+  "sections": [
+    {
+      "h": "Inputs to balance",
+      "ul": [
+        "Coke and coal used as reductant.",
+        "Electrode paste.",
+        "Manganese ore, which can contain carbonate, and dolomite or limestone flux.",
+        "Carbon leaving in alloy, slag and dust."
+      ]
+    },
+    {
+      "h": "CN codes",
+      "p": [
+        "Ferro-manganese is declared under 7202 11 or 7202 19 and silico-manganese under 7202 30. All are iron and steel goods under CBAM, charged on direct emissions."
+      ]
+    },
+    {
+      "h": "What a steel buyer may add",
+      "p": [
+        "Steel mills counting their own product footprint will also ask for electricity use per tonne, because ferro-alloy power can be a large share outside CBAM."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas and electricity invoices and production records into a dated, fingerprinted record per site, so the direct emissions behind each tonne can be traced to the documents. Emissions factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Is silico-manganese covered?",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    },
+    {
+      "label": "Chhattisgarh silico-manganese",
+      "to": "/answers/chhattisgarh-silico-manganese-carbon-per-tonne"
+    },
+    {
+      "label": "Ferro-alloy slag and dust",
+      "to": "/answers/ferro-alloy-slag-and-dust-carbon-in-balance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
