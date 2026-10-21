@@ -1,37 +1,14 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
-import { LIBRARY_TOPICS, type LibraryAnswer, type LibraryIndexEntry } from '@/data/answerLibraryTypes';
-import { answerLibraryIndex } from '@/data/answerLibraryIndex';
+import { LIBRARY_TOPICS } from '@/data/answerLibraryTypes';
+import type { AnswerPageData } from '@/lib/answerData';
 
-// One answer library page. The short answer comes from the index, so it shows
-// at once; the full page (sections, worked example, sources) loads as its own
-// small JSON chunk. The prerendered HTML already carries the whole page for
-// crawlers and answer engines.
-const PAGES = import.meta.glob<{ default: LibraryAnswer }>('../../data/answerLibrary/*.json');
-const load = (slug: string) => PAGES[`../../data/answerLibrary/${slug}.json`]?.().then((m) => m.default);
-
-/** Same-topic pages, closest by shared question words, so "Related" stays on subject. */
-function related(entry: LibraryIndexEntry, n = 4): LibraryIndexEntry[] {
-  const w = new Set(entry.q.toLowerCase().split(/\W+/).filter((x) => x.length > 3));
-  return answerLibraryIndex
-    .filter((x) => x.slug !== entry.slug && x.topic === entry.topic)
-    .map((x) => ({ x, s: x.q.toLowerCase().split(/\W+/).filter((t) => w.has(t)).length }))
-    .sort((a, b) => b.s - a.s)
-    .slice(0, n)
-    .map(({ x }) => x);
-}
-
-export function LibraryArticle({ entry }: { entry: LibraryIndexEntry }) {
-  const [page, setPage] = useState<LibraryAnswer | null>(null);
-  useEffect(() => {
-    let live = true;
-    setPage(null);
-    void load(entry.slug)?.then((p) => { if (live) setPage(p); }).catch(() => {});
-    return () => { live = false; };
-  }, [entry.slug]);
-  const more = related(entry);
-
+// One answer library page. Its data (the page and its related links) arrives
+// as one small JSON file, or embedded in the prerendered HTML on first visit,
+// so the browser never downloads the whole library.
+export function LibraryArticle({ data }: { data: AnswerPageData }) {
+  const { page, related: more } = data;
+  const entry = page;
   return (
     <article className="container max-w-2xl mx-auto px-5 pt-10 pb-20 md:pt-16">
       <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
@@ -46,12 +23,7 @@ export function LibraryArticle({ entry }: { entry: LibraryIndexEntry }) {
         <p data-speakable className="mt-2 text-[19px] leading-relaxed text-foreground [text-wrap:pretty]">{entry.short}</p>
       </div>
 
-      {!page ? (
-        <div className="mt-10 space-y-4" aria-hidden="true">
-          {[0, 1, 2].map((i) => <div key={i} className="h-24 animate-pulse rounded-2xl bg-secondary/60 motion-reduce:animate-none" />)}
-        </div>
-      ) : (
-        <>
+      <>
           <div className="mt-10 space-y-10 text-[17px] leading-[1.75] text-foreground/85">
             {page.sections.map((s) => (
               <section key={s.h}>
@@ -101,8 +73,7 @@ export function LibraryArticle({ entry }: { entry: LibraryIndexEntry }) {
             </ul>
             <p className="mt-4">Last reviewed <time dateTime={page.reviewed}>{new Date(page.reviewed).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>.{page.reviewNote ? ` ${page.reviewNote}` : ''}</p>
           </div>
-        </>
-      )}
+      </>
 
       {more.length > 0 && (
         <aside className="mt-14 border-t border-border pt-8">

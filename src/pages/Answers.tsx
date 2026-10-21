@@ -7,25 +7,21 @@ import { Footer } from '@/components/Footer';
 import { answers, answerBySlug, ANSWER_TOPICS, type Answer, type AnswerTopic } from '@/data/answers';
 import { answerMeta, STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { TwoVoices } from '@/components/doodles/Doodles';
-import { answerLibraryIndex } from '@/data/answerLibraryIndex';
+import { answerFromPage, loadAnswer, loadAnswerIndex, type AnswerIndexRow, type AnswerPageData } from '@/lib/answerData';
 import { LIBRARY_TOPICS, type LibraryTopic } from '@/data/answerLibraryTypes';
 
 const LibraryArticle = lazy(() => import('@/components/answers/LibraryArticle'));
-const librarySlug = new Map(answerLibraryIndex.map((e) => [e.slug, e]));
 
 // Hub groups: the product answers first, then the answer library by topic.
 type GroupKey = AnswerTopic | `lib-${LibraryTopic}`;
 interface HubItem { slug: string; q: string; text: string; group: GroupKey }
-const GROUPS: { key: GroupKey; label: string; line: string }[] = [
-  ...(Object.keys(ANSWER_TOPICS) as AnswerTopic[]).map((t) => ({ key: t as GroupKey, ...ANSWER_TOPICS[t] })),
-  ...(Object.keys(LIBRARY_TOPICS) as LibraryTopic[])
-    .filter((t) => answerLibraryIndex.some((e) => e.topic === t))
-    .map((t) => ({ key: `lib-${t}` as GroupKey, ...LIBRARY_TOPICS[t] })),
-];
-const HUB_ITEMS: HubItem[] = [
-  ...answers.map((a) => ({ slug: a.slug, q: a.q, text: `${a.q} ${a.title} ${a.short}`, group: a.topic as GroupKey })),
-  ...answerLibraryIndex.map((e) => ({ slug: e.slug, q: e.q, text: `${e.q} ${e.title} ${e.short}`, group: `lib-${e.topic}` as GroupKey })),
-];
+// Product answers are part of the page; the library list is fetched for the hub only.
+const ANSWER_GROUPS = (Object.keys(ANSWER_TOPICS) as AnswerTopic[]).map((t) => ({ key: t as GroupKey, ...ANSWER_TOPICS[t] }));
+const libraryGroups = (rows: AnswerIndexRow[]) => (Object.keys(LIBRARY_TOPICS) as LibraryTopic[])
+  .filter((t) => rows.some((e) => e.topic === t))
+  .map((t) => ({ key: `lib-${t}` as GroupKey, ...LIBRARY_TOPICS[t] }));
+const ANSWER_ITEMS: HubItem[] = answers.map((a) => ({ slug: a.slug, q: a.q, text: `${a.q} ${a.title} ${a.short}`, group: a.topic as GroupKey }));
+const libraryItems = (rows: AnswerIndexRow[]): HubItem[] => rows.map((e) => ({ slug: e.slug, q: e.q, text: `${e.q} ${e.title}`, group: `lib-${e.topic}` as GroupKey }));
 // Long groups show this many until opened, so the hub stays scannable.
 const PREVIEW = 8;
 // Only loaded for an /answers address that has no page.
@@ -56,6 +52,10 @@ const norm = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p
 /* ---------------- Hub ---------------- */
 
 const Hub = () => {
+  const [library, setLibrary] = useState<AnswerIndexRow[]>([]);
+  useEffect(() => { let live = true; void loadAnswerIndex().then((rows) => { if (live) setLibrary(rows); }); return () => { live = false; }; }, []);
+  const GROUPS = useMemo(() => [...ANSWER_GROUPS, ...libraryGroups(library)], [library]);
+  const HUB_ITEMS = useMemo(() => [...ANSWER_ITEMS, ...libraryItems(library)], [library]);
   const [query, setQuery] = useState('');
   const [topic, setTopic] = useState<GroupKey | 'all'>('all');
   const [open, setOpen] = useState<Set<GroupKey>>(new Set());
@@ -74,7 +74,7 @@ const Hub = () => {
     const terms = norm(query).split(/\s+/).filter(Boolean);
     return HUB_ITEMS.filter(a => (topic === 'all' || a.group === topic)
       && terms.every(t => norm(a.text).includes(t)));
-  }, [query, topic]);
+  }, [query, topic, HUB_ITEMS]);
 
   return (
     <>
@@ -200,15 +200,34 @@ const Article = ({ a }: { a: Answer }) => {
   );
 };
 
+// A library page: the embedded data on first visit, otherwise its own small JSON.
+// undefined while loading, null when there is no page with that slug.
+function useLibraryPage(slug: string | undefined) {
+  const [data, setData] = useState<AnswerPageData | null | undefined>(() => (slug ? answerFromPage(slug) ?? undefined : undefined));
+  useEffect(() => {
+    if (!slug) return;
+    let live = true;
+    const now = answerFromPage(slug);
+    if (now) { setData(now); return; }
+    setData(undefined);
+    void loadAnswer(slug).then((d) => { if (live) setData(d); });
+    return () => { live = false; };
+  }, [slug]);
+  return data;
+}
+
 const Answers = () => {
   const { slug } = useParams();
   const a = slug ? answerBySlug(slug) : undefined;
-  const lib = slug && !a ? librarySlug.get(slug) : undefined;
+  const libData = useLibraryPage(slug && !a ? slug : undefined);
+  const lib = libData?.page;
   const page = a ?? lib;
   useEffect(() => { window.scrollTo({ top: 0 }); }, [slug]);
   const meta: { title: string; description: string } = page ? answerMeta(page) : STATIC_PAGE_META['/answers'];
-  const content: ReactNode = lib ? (
-    <Suspense fallback={<div className="min-h-[60vh]" />}><LibraryArticle key={lib.slug} entry={lib} /></Suspense>
+  const content: ReactNode = libData ? (
+    <Suspense fallback={<div className="min-h-[60vh]" />}><LibraryArticle key={libData.page.slug} data={libData} /></Suspense>
+  ) : slug && !a && libData === undefined ? (
+    <div className="min-h-[60vh]" aria-busy="true" />
   ) : slug && !a ? (
     <Suspense fallback={<div className="min-h-[60vh]" />}><QuestionRadar key={slug} slug={slug} /></Suspense>
   ) : a ? <Article a={a} /> : <Hub />;
@@ -219,7 +238,7 @@ const Answers = () => {
         title={meta.title}
         description={meta.description}
         canonical={page ? `/answers/${page.slug}` : '/answers'}
-        noIndex={!!slug && !page}
+        noIndex={!!slug && !page && libData === null}
         breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Answers', url: '/answers' }, ...(page ? [{ name: page.title, url: `/answers/${page.slug}` }] : [])]}
         faqSchema={page ? [{ question: page.q, answer: page.short }] : undefined}
       />

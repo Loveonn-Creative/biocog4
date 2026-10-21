@@ -3,6 +3,9 @@
 // writes the two generated modules the site reads.
 //   - src/data/answerLibraryIndex.ts  short index for the hub and the radar
 //   - src/data/answerLibraryAll.ts    every page, for the prerender and tests
+//   - public/answer-data/<slug>.json  one page plus its related links, fetched by
+//     that page only; public/answer-data/index.json is the light list the hub
+//     and the radar fetch. Generated on every build, never committed.
 // A page that fails any check stops the build, so nothing unaudited ships.
 //
 // Usage:
@@ -10,7 +13,7 @@
 //   node scripts/seo/build-answer-library.mjs --check a.json b.json
 //                                                        validate only these, write nothing
 //   --planned docs/seo/batch-01.tsv  also accept links to answers proposed in that register
-import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync, rmSync } from 'node:fs';
 import { join, basename } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
@@ -130,4 +133,21 @@ writeFileSync(join(ROOT, 'src/data/answerLibraryIndex.ts'),
 const ids = pages.map((p, i) => `p${i}`);
 writeFileSync(join(ROOT, 'src/data/answerLibraryAll.ts'),
   `${header}// Build and tests only: imports every page. The browser loads pages one at a time.\nimport type { LibraryAnswer } from './answerLibraryTypes';\n${pages.map((p, i) => `import ${ids[i]} from './answerLibrary/${p.slug}.json';`).join('\n')}\n\nexport const answerLibraryAll = [${ids.join(', ')}] as unknown as LibraryAnswer[];\n`);
-console.log(`✓ ${pages.length} pages; wrote answerLibraryIndex.ts and answerLibraryAll.ts`);
+// Per-page data for the browser, so an answer page never downloads the whole
+// library. Related: same topic, closest by shared question words (as before).
+const words = (q) => new Set(q.toLowerCase().split(/\W+/).filter((x) => x.length > 3));
+const related = (a) => {
+  const w = words(a.q);
+  return pages
+    .filter((x) => x.slug !== a.slug && x.topic === a.topic)
+    .map((x) => ({ x, s: x.q.toLowerCase().split(/\W+/).filter((t) => w.has(t)).length }))
+    .sort((m, n) => n.s - m.s)
+    .slice(0, 4)
+    .map(({ x }) => ({ slug: x.slug, q: x.q }));
+};
+const OUT = join(ROOT, 'public/answer-data');
+rmSync(OUT, { recursive: true, force: true });
+mkdirSync(OUT, { recursive: true });
+for (const a of pages) writeFileSync(join(OUT, `${a.slug}.json`), JSON.stringify({ page: a, related: related(a) }));
+writeFileSync(join(OUT, 'index.json'), JSON.stringify(pages.map(({ slug, q, title, topic }) => ({ s: slug, q, t: title, o: topic }))));
+console.log(`✓ ${pages.length} pages; wrote answerLibraryIndex.ts, answerLibraryAll.ts and public/answer-data/`);

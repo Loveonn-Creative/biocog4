@@ -28,3 +28,6 @@ dist-ssr
 CLAUDE.local.md
 coverage
 .cache
+
+# Generated on every build by scripts/seo/build-answer-library.mjs
+public/answer-data/
