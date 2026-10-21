@@ -36,6 +36,7 @@ import {
   type CitableRecord, type Evidence, type LibraryEntry,
 } from "../_shared/intelligenceEvidence.ts";
 import { INTELLIGENCE_LIBRARY } from "../_shared/intelligenceLibrary.generated.ts";
+import { versionProbe } from "../_shared/versionProbe.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -254,6 +255,8 @@ const LEAK_REPLY = "\n\nThat's one recipe I keep to myself. Ask me anything abou
 // ---------------------------------------------------------------- handler
 
 Deno.serve(async (req) => {
+  const probe = versionProbe(req, "intelligence-chat");
+  if (probe) return probe;
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {

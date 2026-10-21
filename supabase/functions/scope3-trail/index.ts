@@ -1,5 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { recordExtraction, scope3NotEnabled } from '../_shared/scope3Record.ts';
+import { versionProbe } from '../_shared/versionProbe.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -18,6 +19,8 @@ const MAX_DOCUMENTS = 200;
  * changed ones get a new row and the old one stays as history.
  */
 Deno.serve(async (req) => {
+  const probe = versionProbe(req, "scope3-trail");
+  if (probe) return probe;
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   try {

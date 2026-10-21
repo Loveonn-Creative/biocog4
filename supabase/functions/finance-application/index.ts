@@ -25,6 +25,7 @@ import {
   type DocFigures, type FinanceApplicationInput,
 } from '../_shared/financeApplication.ts';
 import { canonicalPlan, effectivePlanTier } from '../_shared/planLimits.ts';
+import { versionProbe } from '../_shared/versionProbe.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -90,6 +91,8 @@ async function readFigures(aiReady: boolean, mime: string, bytes: Uint8Array): P
 }
 
 Deno.serve(async (req) => {
+  const probe = versionProbe(req, 'finance-application');
+  if (probe) return probe;
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   try {

@@ -19,6 +19,7 @@ Owner rule (October 2026): no feature change, code change, schema migration or d
 
 ## After deploy (production)
 - Upload one real invoice signed in: it is read, saved, counted once, and appears in History, Verify, Reports and Dashboard with the same figures.
+- Edge functions deploy through Lovable, separately from the website. After any change under `supabase/functions/`, run `node scripts/function-versions.mjs` (the Checks test fails until the fingerprints are current), and after Lovable redeploys, run `node scripts/function-versions.mjs --live`: every core-flow and payment function must match the repo. A ✗ means that function is still running older code; ask Lovable to redeploy it.
 - Check 10 minutes of extract-document, verify-carbon and intelligence-chat logs for errors.
 - Report what changed, what was tested, the actual results, any open risk and the rollback status. Never claim success without evidence.
 

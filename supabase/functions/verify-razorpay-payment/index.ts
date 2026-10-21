@@ -8,6 +8,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { activateOrder, activationFailure } from "../_shared/razorpayActivation.ts";
 import { afterActivation, hmacSha256Hex, mask, razorpayApi, supabaseStore, timingSafeEqual } from "../_shared/razorpayServer.ts";
+import { versionProbe } from "../_shared/versionProbe.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -17,6 +18,8 @@ const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
 
 serve(async (req) => {
+  const probe = versionProbe(req, "verify-razorpay-payment");
+  if (probe) return probe;
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
 
   try {

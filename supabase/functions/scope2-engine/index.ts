@@ -1,5 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { recalculateOwner, scope2NotEnabled } from '../_shared/scope2Record.ts';
+import { versionProbe } from '../_shared/versionProbe.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -24,6 +25,8 @@ const text = (v: unknown, max: number) => (typeof v === 'string' && v.trim() ? v
  *   consumption records, approved factors and instruments.
  */
 Deno.serve(async (req) => {
+  const probe = versionProbe(req, "scope2-engine");
+  if (probe) return probe;
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   try {

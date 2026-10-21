@@ -1,3 +1,4 @@
+import { versionProbe } from "../_shared/versionProbe.ts";
 import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -549,6 +550,8 @@ async function settleRead(read: ReadCtx) {
 }
 
 serve(async (req) => {
+  const probe = versionProbe(req, "extract-document");
+  if (probe) return probe;
   const read: ReadCtx = { id: null, commit: false, documentId: null };
   try { return await handleRequest(req, read); } finally { await settleRead(read); }
 });

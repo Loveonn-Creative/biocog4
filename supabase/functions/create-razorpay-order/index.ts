@@ -4,6 +4,7 @@ import { reconcileUser } from "../_shared/razorpayReconcile.ts";
 import { blocksNewOrder } from "../_shared/razorpayActivation.ts";
 import { LAUNCH_PRICES, orderPrice, REGULAR_PRICING_STARTS_AT } from "../_shared/planPricing.ts";
 import { checkoutTotal, isPaymentMethod, type CheckoutTotal } from "../_shared/checkoutTotals.ts";
+import { versionProbe } from "../_shared/versionProbe.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -29,6 +30,8 @@ const json = (body: unknown, status = 200) =>
   });
 
 serve(async (req) => {
+  const probe = versionProbe(req, "create-razorpay-order");
+  if (probe) return probe;
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });

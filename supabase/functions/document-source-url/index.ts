@@ -1,6 +1,7 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { orgCan } from '../_shared/workspaceAccess.ts';
 import { isSourceFilePath, SOURCE_BUCKET, SOURCE_LINK_SECONDS } from '../_shared/sourceFiles.ts';
+import { versionProbe } from '../_shared/versionProbe.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -17,6 +18,8 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
  * "not found". Every link issued is written to security_audit_log.
  */
 Deno.serve(async (req) => {
+  const probe = versionProbe(req, 'document-source-url');
+  if (probe) return probe;
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
 
