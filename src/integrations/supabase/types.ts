@@ -1199,6 +1199,33 @@ export type Database = {
           },
         ]
       }
+      emissions_cng_backup_20261104: {
+        Row: {
+          backed_up_at: string
+          emission_id: string
+          new_co2_kg: number
+          old_co2_kg: number
+          old_emission_factor: number
+          old_verification_notes: string | null
+        }
+        Insert: {
+          backed_up_at?: string
+          emission_id: string
+          new_co2_kg: number
+          old_co2_kg: number
+          old_emission_factor: number
+          old_verification_notes?: string | null
+        }
+        Update: {
+          backed_up_at?: string
+          emission_id?: string
+          new_co2_kg?: number
+          old_co2_kg?: number
+          old_emission_factor?: number
+          old_verification_notes?: string | null
+        }
+        Relationships: []
+      }
       finance_application_documents: {
         Row: {
           application_id: string
