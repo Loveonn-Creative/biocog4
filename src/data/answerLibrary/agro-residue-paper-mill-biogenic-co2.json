@@ -1,0 +1,57 @@
+{
+  "slug": "agro-residue-paper-mill-biogenic-co2",
+  "q": "How does a paper mill pulping bagasse or wheat straw report biogenic CO2?",
+  "title": "Agro residue paper mills: biogenic CO2",
+  "short": "CO2 from burning bagasse, straw, pith or black liquor in the boiler is biogenic: report it separately, outside the scopes. Methane and nitrous oxide from that burning, and all CO2 from coal or oil, stay in Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Agro residue based paper mills in Uttar Pradesh, Punjab, Tamil Nadu and Gujarat",
+  "sections": [
+    {
+      "h": "Three buckets",
+      "ul": [
+        "Scope 1 fossil: coal, lignite, petcoke or oil burnt in boilers and lime kilns.",
+        "Scope 1 non CO2: methane and nitrous oxide from biomass and black liquor combustion, from IPCC defaults per TJ.",
+        "Biogenic CO2: reported separately, not added to the Scope 1 total."
+      ]
+    },
+    {
+      "h": "Lime kiln",
+      "p": [
+        "CO2 from calcining lime mud in a kraft style recovery cycle is biogenic too when the carbonate comes from the pulping chemistry, but fuel burnt in the kiln is counted by fuel type."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep purchase records for bagasse and straw, and black liquor solids fired. Buyers and verifiers ask how biomass quantities were measured."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "ISO 14064 biogenic CO2 reporting",
+      "to": "/answers/iso-14064-1-biogenic-co2-reporting"
+    },
+    {
+      "label": "Paper mill per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Sugar mill bagasse cogeneration",
+      "to": "/answers/sugar-mill-bagasse-cogeneration-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

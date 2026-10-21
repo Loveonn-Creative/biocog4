@@ -1,0 +1,64 @@
+{
+  "slug": "turkish-cement-cbam-cost-per-tonne-2026",
+  "q": "How do I estimate the CBAM cost per tonne of Turkish cement in 2026?",
+  "title": "Turkish cement: CBAM cost per tonne",
+  "short": "Take the embedded emissions per tonne, direct plus indirect, subtract the adjustment for free allocation still given to EU producers that year, and multiply by the CBAM certificate price for the quarter. Deduct any carbon price effectively paid in Turkey.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Turkish cement exporters and EU importers budgeting for CBAM certificates",
+  "sections": [
+    {
+      "h": "The inputs",
+      "ul": [
+        "Embedded emissions per tonne: verified actual or the default value with its mark up.",
+        "The free allocation adjustment, which shrinks each year from 2026 to 2034 as EU free allocation is phased out.",
+        "The certificate price, published quarterly by the Commission in 2026."
+      ]
+    },
+    {
+      "h": "Order of steps",
+      "ol": [
+        "Embedded emissions x tonnes imported.",
+        "Minus the free allocation adjustment for the year.",
+        "Minus any eligible carbon price paid in Turkey.",
+        "Times the certificate price."
+      ]
+    },
+    {
+      "h": "Use the calculator",
+      "p": [
+        "The phase out schedule and default mark ups change each year, so run the numbers year by year rather than using one rate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "Turkish cement supplier questions",
+      "to": "/answers/eu-importer-turkish-cement-what-to-ask"
+    },
+    {
+      "label": "Turkey carbon price deduction",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

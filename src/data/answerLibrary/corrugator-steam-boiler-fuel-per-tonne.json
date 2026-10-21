@@ -1,0 +1,57 @@
+{
+  "slug": "corrugator-steam-boiler-fuel-per-tonne",
+  "q": "How does a corrugated box plant count the fuel for its corrugator steam?",
+  "title": "Corrugator steam: fuel per tonne",
+  "short": "Fuel burnt in the boiler that feeds the corrugator is Scope 1: tonnes of coal, briquettes or litres of oil times their emission factor. Divide by tonnes of board made to get a per tonne figure. CO2 from biomass briquettes is biogenic and reported separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Corrugated box and board makers in India running coal, briquette or oil fired boilers for the corrugator",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Fuel purchases and stock change for the boiler.",
+        "Calorific value and carbon content from the supplier or lab where available.",
+        "Board produced in tonnes or square metres, matching the unit your buyers use."
+      ]
+    },
+    {
+      "h": "Biomass briquettes",
+      "p": [
+        "CO2 from burning biomass is biogenic, outside the scopes; methane and nitrous oxide from the fire stay in Scope 1. Keep proof the briquettes are biomass only."
+      ]
+    },
+    {
+      "h": "A quick check",
+      "p": [
+        "Compare steam fuel per tonne month to month. A rise often means condensate not returning or steam traps failing."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Corrugated box per kg",
+      "to": "/answers/corrugated-box-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Boiler efficiency methods",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

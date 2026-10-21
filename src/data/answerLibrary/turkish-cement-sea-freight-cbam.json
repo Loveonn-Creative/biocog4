@@ -1,0 +1,56 @@
+{
+  "slug": "turkish-cement-sea-freight-cbam",
+  "q": "Does sea freight to Europe count in a Turkish cement exporter's CBAM figure?",
+  "title": "Turkish cement: sea freight and CBAM",
+  "short": "No. CBAM embedded emissions stop at the installation gate: direct and, for cement, indirect emissions of production. Shipping from Marmara ports to the EU is not included, though a buyer asking for a full footprint may want it separately.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Cement and clinker exporters in Turkey and their EU importers",
+  "sections": [
+    {
+      "h": "What is in and out",
+      "ul": [
+        "In: calcination, kiln fuel, grinding electricity, and precursors such as clinker bought in.",
+        "Out: transport to port, sea freight, unloading in the EU."
+      ]
+    },
+    {
+      "h": "When freight still matters",
+      "p": [
+        "Construction buyers working on product footprints count transport to site. Keep bills of lading and voyage data if they ask."
+      ]
+    },
+    {
+      "h": "EU shipping costs",
+      "p": [
+        "Freight invoices may carry an EU ETS shipping surcharge. That is a cost passed through by the carrier, not part of CBAM."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Sea freight per container to Europe",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "EU ETS shipping surcharge on freight",
+      "to": "/answers/eu-ets-shipping-surcharge-on-freight-invoice"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

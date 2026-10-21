@@ -1,0 +1,61 @@
+{
+  "slug": "marmara-cement-plant-biomass-fuel-cbam",
+  "q": "How does biomass fuel count in a Marmara cement plant's CBAM figure?",
+  "title": "Marmara cement: biomass fuel and CBAM",
+  "short": "Biomass that meets the sustainability criteria in the CBAM rules counts at zero emission factor, so replacing coal or petcoke with it lowers direct emissions. Mixed fuels such as RDF count only their fossil share. You need evidence of the biomass fraction.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cement plants in Turkey's Marmara region co firing biomass, RDF or tyre derived fuel",
+  "sections": [
+    {
+      "h": "How fuel is counted",
+      "ul": [
+        "Fossil fuels: quantity x net calorific value x emission factor.",
+        "Biomass meeting the criteria: zero for the CO2, with its quantity still reported.",
+        "Mixed waste fuels: the fossil carbon share counted, the biomass share at zero if it qualifies."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Supplier declarations, lab determination of the biomass fraction for mixed fuels, and records showing where the biomass came from."
+      ]
+    },
+    {
+      "h": "Calcination is untouched",
+      "p": [
+        "Fuel switching cuts kiln fuel CO2 only. Calcination CO2 from limestone stays the same per tonne of clinker."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Plastic waste co processing",
+      "to": "/answers/plastic-waste-coprocessing-cement-kiln-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

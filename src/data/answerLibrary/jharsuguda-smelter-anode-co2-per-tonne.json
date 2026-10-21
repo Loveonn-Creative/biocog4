@@ -1,0 +1,63 @@
+{
+  "slug": "jharsuguda-smelter-anode-co2-per-tonne",
+  "q": "How much CO2 do anodes add per tonne of aluminium at a Jharsuguda smelter?",
+  "title": "Jharsuguda smelters: anode CO2 per tonne",
+  "short": "Prebaked anodes are consumed in the pot, and their carbon leaves as CO2. Multiply net anode consumption per tonne of aluminium by its carbon content and 44/12. The IPCC Tier 1 default for prebake cells is 1.6 t CO2 per tonne of aluminium.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Primary aluminium smelters in Jharsuguda and elsewhere in Odisha using prebaked anode technology",
+  "sections": [
+    {
+      "h": "The calculation",
+      "p": [
+        "Net anode consumption per tonne of aluminium, times carbon content from anode analysis, less sulphur and ash, times 44/12. Use your own plant data for a Tier 2 or Tier 3 figure."
+      ]
+    },
+    {
+      "h": "Anode baking",
+      "p": [
+        "Fuel burnt in the anode baking furnace and pitch volatiles are direct emissions too, if the carbon plant is inside your installation."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Anode CO2 and PFCs from anode effects are the main direct emissions charged for unwrought aluminium. Captive power CO2 is not charged for aluminium today."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative anode CO2 for one tonne of aluminium",
+    "lines": [
+      "Net anode consumption: 420 kg per tonne at 97% carbon",
+      "CO2: 420 x 0.97 x 44/12 = 1,494 kg, about 1.5 t CO2 per tonne"
+    ],
+    "note": "Consumption and carbon content are illustrative; compare with the IPCC Tier 1 default of 1.6 t CO2 per tonne for prebake cells."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Odisha smelter captive coal power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Richards Bay smelter PFCs",
+      "to": "/answers/richards-bay-smelter-pfc-emissions-cbam"
+    },
+    {
+      "label": "Extruder buying Odisha aluminium",
+      "to": "/answers/extruder-buying-odisha-aluminium-cbam-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

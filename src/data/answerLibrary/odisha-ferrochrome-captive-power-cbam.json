@@ -1,0 +1,60 @@
+{
+  "slug": "odisha-ferrochrome-captive-power-cbam",
+  "q": "Does captive coal power at an Odisha ferrochrome plant count for CBAM?",
+  "title": "Odisha ferrochrome: captive power and CBAM",
+  "short": "Not for certificates. Ferrochrome is an iron and steel good, charged on direct emissions only, so CO2 from the captive power plant feeding your furnaces is not counted even though it sits inside the fence. Report the electricity anyway, and keep it in your own footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferrochrome plants in Odisha, around Jajpur, Kalinganagar and Dhenkanal, running submerged arc furnaces on captive coal power",
+  "sections": [
+    {
+      "h": "What counts and what does not",
+      "ul": [
+        "Counted: carbon in coke, coal and electrode paste leaving as CO2, plus fuel burnt in preheaters, pelletising or sintering inside the installation.",
+        "Not counted for certificates: CO2 from generating the electricity the furnaces use, captive or grid."
+      ]
+    },
+    {
+      "h": "Why the electricity still matters",
+      "p": [
+        "Submerged arc furnaces use a lot of power per tonne, so electricity is often the largest part of your full footprint. EU steelmakers buying your alloy for their own reporting may ask for it, and the Commission must assess extending indirect emissions to more goods."
+      ]
+    },
+    {
+      "h": "Keep the two apart",
+      "p": [
+        "Meter the power plant output and the furnace input separately. If the captive plant also sells power or steam, allocate its emissions before you report anything."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Odisha smelter captive coal power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "CHP allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

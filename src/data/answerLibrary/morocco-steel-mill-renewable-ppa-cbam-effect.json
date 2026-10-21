@@ -1,0 +1,57 @@
+{
+  "slug": "morocco-steel-mill-renewable-ppa-cbam-effect",
+  "q": "Does a renewable power deal lower a Moroccan steel mill's CBAM figure?",
+  "title": "Moroccan steel: renewable power and CBAM",
+  "short": "Not today. For iron and steel goods CBAM charges direct emissions only, so cleaner electricity does not change the certificate count. It does cut your Scope 2 and the product footprint EU buyers ask for, and the Commission is due to assess adding indirect emissions.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel mills in Morocco weighing wind or solar power purchase agreements, often under the country's self generation and private supply rules",
+  "sections": [
+    {
+      "h": "What CBAM counts for steel",
+      "p": [
+        "Annex II of the CBAM Regulation lists iron and steel among the goods charged on direct emissions only. Electricity is still reported, but certificates are bought on fuel, electrode and process emissions, plus precursors."
+      ]
+    },
+    {
+      "h": "Where the power deal still pays",
+      "ul": [
+        "Market based Scope 2: a contract with matching attributes lowers your reported electricity emissions under the GHG Protocol Scope 2 Guidance.",
+        "Buyer footprints: EU car and construction buyers increasingly ask for cradle to gate figures that include electricity.",
+        "Future proofing: if indirect emissions are added for steel later, contracted clean power is already in place."
+      ]
+    },
+    {
+      "h": "Paperwork to keep",
+      "p": [
+        "The contract, metered delivery by month, and proof the attributes are not sold twice. Without these, market based claims do not hold up."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

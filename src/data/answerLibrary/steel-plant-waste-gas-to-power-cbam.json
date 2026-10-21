@@ -1,0 +1,61 @@
+{
+  "slug": "steel-plant-waste-gas-to-power-cbam",
+  "q": "How are steel plant waste gases sent to a power plant treated under CBAM?",
+  "title": "Steel waste gas to power under CBAM",
+  "short": "Blast furnace, COREX and converter gases carry carbon from the steel process. Under the CBAM monitoring rules their CO2 is attributed to the steel production process, with a correction for the electricity the gas generates. Keep metered gas volumes and composition to apply it.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Integrated steel plants in Karnataka, Odisha and Jharkhand that burn process gases in captive power plants",
+  "sections": [
+    {
+      "h": "Why it needs a rule",
+      "p": [
+        "The carbon in waste gas comes from coke or coal used to make iron. Without a rule, emissions could be shifted to the power plant and out of the steel figure."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ul": [
+        "Volume of each waste gas exported to the power plant, from flow meters.",
+        "Gas composition or net calorific value from regular analysis.",
+        "Electricity and steam produced from it."
+      ]
+    },
+    {
+      "h": "Check the current text",
+      "p": [
+        "The exact correction is set in the CBAM implementing rules on calculating embedded emissions, which are amended from time to time. Confirm the version in force for your reporting year with your verifier."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "COREX ironmaking CO2",
+      "to": "/answers/corex-ironmaking-unit-co2-calculation"
+    },
+    {
+      "label": "CHP allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "CBAM monitoring documentation",
+      "to": "/answers/cbam-monitoring-methodology-documentation-for-operators"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

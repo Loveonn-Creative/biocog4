@@ -1,0 +1,57 @@
+{
+  "slug": "marmara-white-cement-cbam-figure",
+  "q": "How does a white cement plant in Marmara work out its CBAM figure?",
+  "title": "White cement: the CBAM figure",
+  "short": "The same way as grey cement, with higher numbers: calcination CO2 plus kiln fuel CO2 per tonne of white clinker, then clinker share in the cement, plus grinding electricity. White clinker burns hotter and longer, so fuel per tonne is usually higher than for grey.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "White cement producers in Turkey exporting to Europe",
+  "sections": [
+    {
+      "h": "Its own code",
+      "p": [
+        "White Portland cement has its own CN code, 2523 21 00, in Annex I of the CBAM Regulation. Report it separately from grey cement made in the same plant."
+      ]
+    },
+    {
+      "h": "What pushes it up",
+      "ul": [
+        "Higher kiln temperature and longer residence time for low iron clinker.",
+        "Fuel choice: low ash fuels such as gas or oil to keep colour.",
+        "Bleaching or water quenching steps that add energy."
+      ]
+    },
+    {
+      "h": "Split the records",
+      "p": [
+        "If the plant makes both grey and white clinker, meter fuel by kiln line so each product gets its own figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Kocaeli plant electricity in CBAM",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

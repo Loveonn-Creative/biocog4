@@ -1,0 +1,56 @@
+{
+  "slug": "recycled-paper-mill-waste-paper-scope-3",
+  "q": "How does a recycled paper mill count the waste paper it buys?",
+  "title": "Recycled paper mills: waste paper in Scope 3",
+  "short": "Waste paper bought is a purchased good, Scope 3 category 1. Under the common cut off approach it carries only the emissions of collecting, sorting and baling, not the original paper's. Freight you pay for, including imported bales, is category 4.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Recycled fibre paper and board mills in India buying domestic and imported waste paper",
+  "sections": [
+    {
+      "h": "Two lines",
+      "ul": [
+        "Category 1: tonnes of waste paper times a factor for collection and processing, from the supplier or a named database.",
+        "Category 4: transport you pay for, by truck, rail or sea, from tonne kilometres and a mode factor."
+      ]
+    },
+    {
+      "h": "Imported bales",
+      "p": [
+        "Sea freight from Europe or the US adds a real amount per tonne. Keep the bill of lading and port of origin to calculate it."
+      ]
+    },
+    {
+      "h": "Yield matters",
+      "p": [
+        "Rejects mean more than a tonne of waste paper goes into a tonne of product. Divide by product tonnes, not fibre tonnes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Sea freight per container to Europe",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Paper mill sludge and rejects",
+      "to": "/answers/paper-mill-sludge-and-rejects-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "corex-ironmaking-unit-co2-calculation",
+  "q": "How is CO2 calculated for a COREX ironmaking unit?",
+  "title": "COREX ironmaking: CO2 calculation",
+  "short": "Use a carbon mass balance: carbon in coal, coke and fluxes charged, minus carbon leaving in hot metal, slag and the export gas, times 44/12. The export gas carbon is counted where that gas is burnt, so it must not be counted twice.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Integrated steel plants with COREX smelting reduction units, such as those in the Ballari region of Karnataka",
+  "sections": [
+    {
+      "h": "How COREX differs",
+      "p": [
+        "COREX gasifies non coking coal with oxygen in a melter gasifier and reduces ore in a shaft above it. It makes a large volume of carbon rich export gas that usually feeds a power plant or a DRI unit."
+      ]
+    },
+    {
+      "h": "The balance",
+      "ul": [
+        "Inputs: coal, any coke, limestone and dolomite, and electrodes if used.",
+        "Outputs: carbon in hot metal, carbon in slag, carbon in export gas sent elsewhere.",
+        "CO2 at the unit: (inputs minus outputs) x 44/12."
+      ]
+    },
+    {
+      "h": "Where the export gas goes",
+      "p": [
+        "If the gas is burnt in your own power plant, its CO2 sits in your Scope 1 there. If it goes to another company, it leaves your boundary, and the CBAM rules have their own treatment for waste gases exported from steel processes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Steel plant waste gas to power and CBAM",
+      "to": "/answers/steel-plant-waste-gas-to-power-cbam"
+    },
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Kalinganagar steel CBAM data",
+      "to": "/answers/jamshedpur-kalinganagar-steel-cbam-data-for-eu-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "worldsteel Association",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

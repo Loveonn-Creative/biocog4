@@ -1,0 +1,57 @@
+{
+  "slug": "jharsuguda-smelter-cast-house-fuel-cbam",
+  "q": "Does cast house fuel count in a Jharsuguda smelter's CBAM figure?",
+  "title": "Smelter cast house fuel and CBAM",
+  "short": "Yes. Gas or oil burnt in holding furnaces, ingot and billet casting and homogenising inside the installation is a direct emission of the aluminium you make. Add it to anode and PFC emissions before dividing by tonnes of product.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium smelters in Jharsuguda making ingots, billets, wire rod and slabs for export",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Furnace oil, LPG or gas for holding and melting furnaces and homogenising ovens.",
+        "Fuel for ladle preheating and dross treatment if on site.",
+        "Not the electricity for casting machines, which is indirect and not charged for aluminium."
+      ]
+    },
+    {
+      "h": "Products differ",
+      "p": [
+        "Billets and wire rod go through extra heating steps. If you export several products, attribute cast house fuel to each product line so each CN code gets its own figure."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Separate fuel meters for the cast house make this simple; otherwise allocate by tonnes cast and document the basis."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Jharsuguda anode CO2",
+      "to": "/answers/jharsuguda-smelter-anode-co2-per-tonne"
+    },
+    {
+      "label": "Aluminium scrap melting fuel",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

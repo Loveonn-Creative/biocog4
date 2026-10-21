@@ -1,0 +1,53 @@
+{
+  "slug": "is-moroccan-triple-superphosphate-covered-by-cbam",
+  "q": "Is triple superphosphate from Morocco covered by EU CBAM?",
+  "title": "Moroccan TSP and CBAM coverage",
+  "short": "No. Triple superphosphate falls under CN heading 3103, phosphatic fertilisers, which is not in Annex I of the CBAM Regulation. CBAM covers nitrogen fertilisers and mixtures that contain nitrogen, so DAP and MAP shipped from Jorf Lasfar are covered while plain TSP is not.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Phosphate fertiliser exporters and EU importers of Moroccan fertilisers",
+  "sections": [
+    {
+      "h": "Where the line falls",
+      "ul": [
+        "3103, mineral or chemical phosphatic fertilisers such as TSP and single superphosphate: not covered.",
+        "3102, nitrogen fertilisers, and 3105, mixed fertilisers such as DAP and MAP: covered, except 3105 60, which has phosphorus and potassium but no nitrogen.",
+        "2814 ammonia, 2808 nitric acid and 2834 21 potassium nitrates: covered as fertiliser goods."
+      ]
+    },
+    {
+      "h": "What that means in practice",
+      "p": [
+        "A plant making both DAP and TSP reports CBAM data only for DAP and the other covered goods. Keep production and energy records split by product line, so the covered share can be worked out cleanly."
+      ]
+    },
+    {
+      "h": "Check the exact code",
+      "p": [
+        "Coverage follows the 8 digit CN code your EU importer declares. Agree it with the importer before shipment, and recheck when the Annex is amended."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Jorf Lasfar DAP and ammonia precursor",
+      "to": "/answers/jorf-lasfar-dap-exporter-ammonia-precursor-cbam"
+    },
+    {
+      "label": "Egypt urea plant CBAM",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

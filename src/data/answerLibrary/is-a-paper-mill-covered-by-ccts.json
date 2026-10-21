@@ -1,0 +1,61 @@
+{
+  "slug": "is-a-paper-mill-covered-by-ccts",
+  "q": "Is a paper mill covered by India's Carbon Credit Trading Scheme?",
+  "title": "Paper mills and India's CCTS",
+  "short": "Only if it is named. Pulp and paper is among the sectors with emission intensity targets under the 2025 target rules, but coverage is plant by plant: a mill has a target only if its name and location appear in the notification, with a baseline and target per tonne.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Paper, board and newsprint mills in India checking whether they have a CCTS target",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the latest Greenhouse Gases Emission Intensity Target Rules notification for pulp and paper and any amendment.",
+        "Search for your plant name and location.",
+        "If listed, note the baseline year, product unit and target for each compliance year."
+      ]
+    },
+    {
+      "h": "If you are listed",
+      "p": [
+        "You must meet your intensity target or buy carbon credit certificates for the shortfall. Monthly fuel, power and production records are the base for the monitoring report."
+      ]
+    },
+    {
+      "h": "If you are not",
+      "p": [
+        "You have no target, but covered customers may ask for your data, and the offset mechanism lets you earn credits from projects under approved methodologies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel invoices and electricity bills and adds up annual energy quantities and emissions, which is the evidence you need to check yourself against a threshold or answer a covered customer. It also shows carbon credit eligibility signals from the same records.",
+  "links": [
+    {
+      "label": "Is my textile mill covered by CCTS?",
+      "to": "/answers/is-my-textile-mill-covered-by-ccts"
+    },
+    {
+      "label": "What if a plant misses its CCTS target?",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "Paper mill per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, Greenhouse Gases Emission Intensity Target Rules",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
