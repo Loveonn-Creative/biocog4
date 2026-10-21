@@ -1014,7 +1014,14 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
       // database without the monthly column (finance-insights migration not
       // yet applied) still stores the record and its figures.
       // Kill switch: secret FINANCE_INSIGHTS=off stops the monthly read.
-      if (finKind === 'bank_statement' && !rowError && Deno.env.get('FINANCE_INSIGHTS') !== 'off') {
+      // A statement stored before monthly reading existed has no months yet:
+      // uploading it again reads them now instead of skipping it as a repeat.
+      let needsMonths = !rowError;
+      if (rowError?.code === '23505' && finKind === 'bank_statement') {
+        const { data: prior } = await admin.from('financial_documents').select('monthly').eq('user_id', userId).eq('sha256', documentHash).maybeSingle();
+        needsMonths = Array.isArray(prior?.monthly) && prior.monthly.length === 0;
+      }
+      if (finKind === 'bank_statement' && needsMonths && Deno.env.get('FINANCE_INSIGHTS') !== 'off') {
         const monthly = await readMonthlyCashflow(mime, clean);
         if (monthly.length) {
           const { error: mErr } = await admin.from('financial_documents').update({ monthly }).eq('user_id', userId).eq('sha256', documentHash);
