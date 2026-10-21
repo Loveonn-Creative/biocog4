@@ -10,6 +10,8 @@ import type { EmissionsSummary } from '@/hooks/useEmissions';
 interface Props {
   summary: EmissionsSummary;
   recordCount: number;
+  /** Documents read with nothing counted yet (no emission record). */
+  uncountedDocs?: number;
   unverifiedCount: number;
   hasVerifiedData: boolean;
   verificationScore: number;
@@ -31,6 +33,8 @@ const SCOPES = [
 ];
 
 function nextAction(p: Props) {
+  const u = p.uncountedDocs ?? 0;
+  if (p.recordCount === 0 && u > 0) return { message: `${u === 1 ? '1 document was' : `${u} documents were`} read, but nothing in ${u === 1 ? 'it' : 'them'} could be counted yet. History shows what is missing.`, label: 'See what is missing', to: '/history' };
   if (p.recordCount === 0) return { message: 'Upload your first invoice to start tracking carbon emissions.', label: 'Upload invoice', to: '/' };
   if (p.unverifiedCount > 0) return { message: `${p.unverifiedCount} ${p.unverifiedCount === 1 ? 'record is' : 'records are'} waiting for verification. Verify to use them in reports and finance.`, label: 'Verify now', to: '/verify' };
   if (p.hasVerifiedData) return { message: 'All emissions verified. Generate reports or upload more invoices.', label: 'View reports', to: '/reports' };
@@ -50,7 +54,8 @@ const Round = ({ to, label, icon: Icon, primary, badge }: { to: string; label: s
 export function StandSection(p: Props) {
   const total = fmt(p.summary.total);
   const action = nextAction(p);
-  const hasScore = p.recordCount > 0 && p.latestStatus !== null;
+  // No verified evidence yet reads as 0, never a blank.
+  const score = p.recordCount > 0 && p.latestStatus !== null ? p.verificationScore : 0;
   return (
     <section aria-label="Where you stand" className="grid overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
       <div className="flex min-w-0 flex-col gap-5 p-5 md:p-7">
@@ -86,15 +91,15 @@ export function StandSection(p: Props) {
         <p className="text-xs font-medium uppercase tracking-[0.06em] text-muted-foreground">Evidence</p>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-3xl font-semibold tabular-nums md:text-4xl">{hasScore ? `${p.verificationScore}%` : '–'}</p>
+            <p className="text-3xl font-semibold tabular-nums md:text-4xl">{score}%</p>
             <p className="text-xs text-muted-foreground">Evidence score: records passing checks</p>
           </div>
           <div>
-            <p className="text-3xl font-semibold md:text-4xl">{p.credibilityScore != null ? <>{p.credibilityGrade} <span className="text-base font-medium text-muted-foreground tabular-nums">{p.credibilityScore}</span></> : '–'}</p>
+            <p className="text-3xl font-semibold md:text-4xl">{p.credibilityScore != null ? <>{p.credibilityGrade} <span className="text-base font-medium text-muted-foreground tabular-nums">{p.credibilityScore}</span></> : <span className="tabular-nums">0</span>}</p>
             <p className="text-xs text-muted-foreground">Credibility</p>
           </div>
         </div>
-        <span className="h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden="true"><span className="block h-full rounded-full bg-success" style={{ width: `${hasScore ? p.verificationScore : 0}%` }} /></span>
+        <span className="h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden="true"><span className="block h-full rounded-full bg-success" style={{ width: `${score}%` }} /></span>
         <div className="mt-auto flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm">{action.message}</p>
           <Link to={action.to} className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-[13px] font-medium text-primary-foreground hover:bg-primary/90">

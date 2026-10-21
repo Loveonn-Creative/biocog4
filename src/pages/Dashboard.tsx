@@ -272,6 +272,8 @@ const Dashboard = () => {
   const { credibility } = useCredibility();
 
   const PLAN_NAME: Record<string, string> = { snapshot: 'Snapshot', essential: 'Essential', pro: 'Pro', scale: 'Scale' };
+  const countedDocIds = new Set(emissions.map((e) => e.document_id).filter(Boolean));
+  const uncountedDocs = documents.filter((d) => !countedDocIds.has(d.id)).length;
   const verifiedKg = sumVerifiedKgOncePerEmission(verifiedEmissions, e => e.id, e => e.co2_kg);
   const checks = pathwayChecks({ verifiedCount: verifiedChecks.count, qualityGrade: verifiedChecks.grade, ledgerCount: ledgerEntries.length, greenInvoiceCount: countGreenInvoices(ledgerEntries as never) });
   // Green-finance readiness is shown on the green-loan row, not repeated as an alert.
@@ -338,6 +340,7 @@ const Dashboard = () => {
             <StandSection
               summary={summary}
               recordCount={emissions.length}
+              uncountedDocs={uncountedDocs}
               unverifiedCount={unverifiedEmissions.length}
               hasVerifiedData={verifiedEmissions.length > 0}
               verificationScore={verificationScore}

@@ -6,6 +6,8 @@ import type { PathwayCheck, PathwayId } from '@/lib/monetizationPathways';
 // Climate finance the records can open, with the same checks Monetize runs.
 // No value, saving or advance is estimated: lenders and schemes set terms.
 
+// Each row opens its own place: the green loan application, or that
+// pathway's card on Monetize, where it is applied for.
 const ROWS: { id: PathwayId; title: string; line: string }[] = [
   { id: 'green_loan', title: 'Green loan', line: 'Lenders set their own terms' },
   { id: 'govt_incentive', title: 'Government incentives', line: 'Each scheme sets its own rules' },
@@ -49,7 +51,7 @@ export function FinancePathways({ verifiedTonnes, verifiedRecords, checks, statu
               : r.line;
             return (
               <li key={r.id}>
-                <Link to={r.id === 'green_loan' && missing === 0 ? '/green-loan' : '/monetize'}
+                <Link to={r.id === 'green_loan' ? '/green-loan' : `/monetize#${r.id}`}
                   className="grid items-center gap-x-5 gap-y-2 px-5 py-4 transition-colors hover:bg-secondary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.6fr)_9rem_1rem] md:px-6">
                   <span className="min-w-0">
                     <span className="block text-[15px] font-semibold">{r.title}</span>
