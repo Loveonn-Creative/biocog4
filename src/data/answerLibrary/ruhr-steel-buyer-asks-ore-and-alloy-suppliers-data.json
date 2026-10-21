@@ -1,0 +1,61 @@
+{
+  "slug": "ruhr-steel-buyer-asks-ore-and-alloy-suppliers-data",
+  "q": "What carbon data do Ruhr steelmakers ask ore and ferroalloy suppliers for?",
+  "title": "Ruhr steelmakers: supplier carbon data",
+  "short": "Mostly product footprints per tonne for their own Scope 3 and low carbon steel claims, and CBAM embedded emissions for covered goods such as pellets and ferroalloys. Iron ore fines are not a CBAM good, but buyers still want mining, processing and shipping emissions.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Iron ore, pellet and ferroalloy suppliers in India, South Africa and elsewhere selling to German steelmakers",
+  "sections": [
+    {
+      "h": "Covered goods",
+      "ul": [
+        "Agglomerated ore (pellets, sinter) and ferroalloys: CBAM embedded emissions per tonne.",
+        "Their own Scope 1 and 2 behind that figure."
+      ]
+    },
+    {
+      "h": "Not covered, still asked",
+      "ul": [
+        "Iron ore fines and lump: mining diesel, beneficiation electricity, rail and sea freight.",
+        "Coking coal: mining methane and transport."
+      ]
+    },
+    {
+      "h": "Why they ask",
+      "p": [
+        "Ruhr mills switching to DRI and arc furnaces sell low carbon steel on a cradle to gate figure, so every input's footprint now shows up in their price."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "Ruhr steel mill: CBAM or EU ETS",
+      "to": "/answers/ruhr-steel-mill-cbam-or-eu-ets"
+    },
+    {
+      "label": "Ballari pellet plant CO2",
+      "to": "/answers/ballari-pellet-plant-co2-per-tonne"
+    },
+    {
+      "label": "Steel mill abroad buying Indian ferromanganese",
+      "to": "/answers/steel-mill-abroad-indian-ferromanganese-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

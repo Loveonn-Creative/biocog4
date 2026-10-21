@@ -1,0 +1,55 @@
+{
+  "slug": "german-supply-chain-act-climate-questions-suppliers",
+  "q": "Does Germany's supply chain law make buyers ask suppliers for climate data?",
+  "title": "German supply chain law and climate data",
+  "short": "Not directly. The German supply chain act focuses on human rights and a short list of environmental harms, not greenhouse gases. Climate questions usually come from the buyer's own targets, CSRD reporting or CBAM. Answer both in one place, because the same procurement team often sends them together.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Suppliers in India, Bangladesh, Pakistan and Vietnam receiving questionnaires from German customers",
+  "sections": [
+    {
+      "h": "Where the climate questions come from",
+      "ul": [
+        "Science based or net zero targets that include Scope 3.",
+        "Sustainability reporting under the CSRD, for companies still in scope after the 2026 simplification.",
+        "CBAM, for covered goods."
+      ]
+    },
+    {
+      "h": "What to send",
+      "p": [
+        "Scope 1 and 2 by site with sources, product footprints if asked, and a contact for follow up. Keep the human rights answers in the format the buyer's risk analysis needs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "CSDDD clause from an EU buyer",
+      "to": "/answers/csddd-contract-clause-from-eu-buyer"
+    },
+    {
+      "label": "Does the CSDDD still apply after the omnibus",
+      "to": "/answers/does-csddd-still-apply-after-omnibus"
+    },
+    {
+      "label": "A German buyer asks for more than VSME",
+      "to": "/answers/german-buyer-asks-more-than-vsme-can-i-refuse"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Directive (EU) 2026/470, sustainability reporting and due diligence",
+      "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

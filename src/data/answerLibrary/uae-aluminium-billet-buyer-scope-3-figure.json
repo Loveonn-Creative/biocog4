@@ -1,0 +1,54 @@
+{
+  "slug": "uae-aluminium-billet-buyer-scope-3-figure",
+  "q": "Which figure should an Indian buyer of UAE aluminium billet use for Scope 3?",
+  "title": "UAE aluminium billet in your Scope 3",
+  "short": "Use the supplier's cradle to gate product footprint per tonne, including electricity and alumina, not its CBAM figure. CBAM counts direct emissions only and leaves out the power that dominates primary aluminium. If no product footprint is available, use a recognised average and label it as an estimate.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian and other non-EU manufacturers buying primary aluminium billet or ingot from Gulf smelters",
+  "sections": [
+    {
+      "h": "Two numbers, two jobs",
+      "ul": [
+        "CBAM figure: direct emissions, used by EU importers for certificates.",
+        "Product footprint: full cradle to gate, used for your Category 1 purchased goods."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "p": [
+        "A product footprint to ISO 14067 or a published EPD, with the power source and period. Ask whether renewable power is allocated by mass balance, and treat such claims with the checks a buyer would apply."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "Checking a low carbon aluminium claim",
+      "to": "/answers/uae-low-carbon-aluminium-claim-how-to-check"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Alumina is Scope 3, not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

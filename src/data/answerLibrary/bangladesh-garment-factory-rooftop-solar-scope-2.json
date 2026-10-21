@@ -1,0 +1,57 @@
+{
+  "slug": "bangladesh-garment-factory-rooftop-solar-scope-2",
+  "q": "How does rooftop solar change a Bangladesh garment factory's Scope 2?",
+  "title": "Rooftop solar at Bangladesh factories",
+  "short": "Solar power you generate and use on site never enters Scope 2, so grid kWh fall and location based Scope 2 falls with them. Power exported under net metering is not subtracted from Scope 2. Keep the inverter readings and grid bills so brands can see both.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Garment, knitting and denim factories in Bangladesh installing rooftop solar under net metering",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Solar generation from the inverter, monthly.",
+        "Grid import and export from the net meter.",
+        "The share of solar used on site, which is generation minus export."
+      ]
+    },
+    {
+      "h": "What not to claim",
+      "ul": [
+        "Exported units as a reduction in Scope 2.",
+        "Renewable attributes you sold or that the utility claims.",
+        "A percentage renewable figure based on generation alone."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Rooftop solar net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Bangladesh grid factor",
+      "to": "/answers/bangladesh-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Higg FEM energy data",
+      "to": "/answers/higg-fem-energy-and-emissions-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IRENA, renewable capacity and generation statistics",
+      "url": "https://www.irena.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

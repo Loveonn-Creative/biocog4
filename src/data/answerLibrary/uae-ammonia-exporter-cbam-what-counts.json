@@ -1,0 +1,56 @@
+{
+  "slug": "uae-ammonia-exporter-cbam-what-counts",
+  "q": "What counts in the CBAM figure for ammonia exported from the UAE?",
+  "title": "UAE ammonia exports: what CBAM counts",
+  "short": "Direct emissions from the plant, mainly natural gas used as feedstock and fuel in reforming, plus indirect emissions from electricity, since fertilisers including ammonia are charged on both. CO2 sold to a urea plant or others is not simply deducted. With no UAE carbon price paid, there is nothing to deduct under Article 9.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Ammonia producers in Abu Dhabi and their EU importers",
+  "sections": [
+    {
+      "h": "In the figure",
+      "ul": [
+        "Process and combustion CO2 from steam methane reforming.",
+        "Electricity consumed, at the factor for the source of supply.",
+        "Any precursor bought in, such as hydrogen."
+      ]
+    },
+    {
+      "h": "Watch these",
+      "ul": [
+        "CO2 captured and sent to urea production stays with the ammonia unless the rules allow otherwise; confirm the treatment.",
+        "Blue ammonia claims need the capture and storage evidence the CBAM rules ask for."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Blue ammonia and captured CO2",
+      "to": "/answers/uae-blue-ammonia-captured-co2-cbam"
+    },
+    {
+      "label": "Green ammonia threshold",
+      "to": "/answers/green-ammonia-carbon-intensity-threshold"
+    },
+    {
+      "label": "Al Taweelah smelter gas power",
+      "to": "/answers/al-taweelah-smelter-gas-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

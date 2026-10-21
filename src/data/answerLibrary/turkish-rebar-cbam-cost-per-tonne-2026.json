@@ -1,0 +1,56 @@
+{
+  "slug": "turkish-rebar-cbam-cost-per-tonne-2026",
+  "q": "How do I estimate the CBAM cost per tonne of Turkish rebar in 2026?",
+  "title": "Turkish rebar: CBAM cost in 2026",
+  "short": "Take the embedded emissions per tonne, subtract the free allocation adjustment for the year, multiply by the certificate price and subtract any Turkish carbon price paid. In 2026 the adjustment still covers 97.5 percent of the benchmark, so a scrap based arc furnace mill with verified data pays far less than default values imply.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Turkish rebar exporters and EU importers budgeting for CBAM certificates",
+  "sections": [
+    {
+      "h": "The inputs",
+      "ul": [
+        "Embedded emissions per tonne: verified actual data or the default value with its mark-up.",
+        "The benchmark used for the free allocation adjustment, and the phase out share for the year.",
+        "The certificate price, set from EU ETS auction prices.",
+        "Any carbon price effectively paid in Turkey."
+      ]
+    },
+    {
+      "h": "How it changes",
+      "p": [
+        "The free allocation share falls each year until 2034, so the same tonne costs more every year. Run the numbers year by year, not once."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "EU importer of Turkish rebar",
+      "to": "/answers/eu-importer-turkish-rebar-supplier-what-to-ask"
+    },
+    {
+      "label": "Turkish carbon price and CBAM",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

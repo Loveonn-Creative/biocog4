@@ -1,0 +1,51 @@
+{
+  "slug": "data-centre-24-7-clean-power-vs-annual-match",
+  "q": "Is annual renewable matching enough for a data centre, or does it need hourly matching?",
+  "title": "Annual vs hourly renewable matching",
+  "short": "Annual matching is still accepted for market based Scope 2 under the current GHG Protocol guidance. A draft revision proposes hourly matching within the same grid, and some large customers already ask for it. Report annual matching today, and start collecting hourly data so you are ready if the rules change.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Data centre operators and large electricity users buying renewable power",
+  "sections": [
+    {
+      "h": "What changes with hourly matching",
+      "ul": [
+        "Solar at noon no longer covers servers at midnight.",
+        "Storage, wind and firm clean power gain value.",
+        "Certificates need time stamps or hourly data."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "p": [
+        "Keep annual claims honest, store hourly meter data and contract terms, and tell customers which method your figure uses."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Renewable contracts and the Scope 2 revision",
+      "to": "/answers/renewable-contracts-signed-now-scope-2-revision"
+    },
+    {
+      "label": "Hourly grid emission factors in India",
+      "to": "/answers/hourly-grid-emission-factors-india"
+    },
+    {
+      "label": "Shifting load to solar hours",
+      "to": "/answers/does-shifting-load-to-solar-hours-cut-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

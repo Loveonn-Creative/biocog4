@@ -1,0 +1,55 @@
+{
+  "slug": "ukraine-steel-exporter-to-poland-cbam-records",
+  "q": "What CBAM data should a Ukrainian steel exporter give Polish buyers?",
+  "title": "Ukrainian steel exports: CBAM data",
+  "short": "The same as any non EU supplier: embedded emissions per tonne by product, installation and period, split into direct and indirect, with verification once required. Ukraine's small CO2 tax may be claimable as a carbon price if paid and certified, but it rarely changes much.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel mills in Ukraine and their importers in Poland and other EU countries",
+  "sections": [
+    {
+      "h": "Hand over",
+      "ul": [
+        "Specific direct embedded emissions per product.",
+        "Indirect emissions, reported separately.",
+        "Precursor data for bought pig iron, pellets or slab."
+      ]
+    },
+    {
+      "h": "Records under pressure",
+      "p": [
+        "War damage, outages and route changes make records patchy. Keep meter readings, fuel invoices and production logs, and explain gaps in writing rather than estimating silently."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Polish service centres: CBAM records",
+      "to": "/answers/polish-steel-service-centre-cbam-import-records"
+    },
+    {
+      "label": "Turkish carbon price and CBAM",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    },
+    {
+      "label": "Iskenderun actual vs default values",
+      "to": "/answers/iskenderun-steel-exporter-actual-vs-default-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

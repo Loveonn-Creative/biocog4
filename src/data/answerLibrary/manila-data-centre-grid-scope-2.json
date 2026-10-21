@@ -1,0 +1,55 @@
+{
+  "slug": "manila-data-centre-grid-scope-2",
+  "q": "How should a Manila data centre report Scope 2 for its customers?",
+  "title": "Manila data centres: Scope 2",
+  "short": "Use the official grid factor for the Luzon grid for the year, around 0.7 kg CO2 per kWh in recent figures, for location based Scope 2, and report market based separately. Allocate to customers by contracted kW or metered kWh, as the contract says.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Data centre operators in Metro Manila and their enterprise customers",
+  "sections": [
+    {
+      "h": "Hand customers",
+      "ul": [
+        "Their kWh share, the factor and its source.",
+        "Location and market based figures.",
+        "Generator diesel share, as Scope 1."
+      ]
+    },
+    {
+      "h": "Renewable purchases",
+      "p": [
+        "Retail supply contracts and certificates count for market based Scope 2 only if the attributes are retired for you and not double counted."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Johor data centre Scope 2",
+      "to": "/answers/johor-data-centre-scope-2-reporting"
+    },
+    {
+      "label": "Navi Mumbai data centre per kW",
+      "to": "/answers/navi-mumbai-data-centre-scope-2-per-kw"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

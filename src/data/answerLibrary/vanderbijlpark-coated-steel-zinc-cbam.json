@@ -1,0 +1,55 @@
+{
+  "slug": "vanderbijlpark-coated-steel-zinc-cbam",
+  "q": "Does the zinc on Vanderbijlpark galvanised sheet count in CBAM?",
+  "title": "Galvanised sheet: does zinc count in CBAM?",
+  "short": "No. Zinc is not a CBAM good, so it carries no embedded emissions into the figure. Coated flat steel under CN 7210 is covered, though, so its figure is the substrate coil's embedded emissions plus the coating line's own direct emissions, such as gas for annealing and pot heating.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Coating lines in Vanderbijlpark and other South African mills exporting galvanised or colour coated sheet to the EU",
+  "sections": [
+    {
+      "h": "How the figure is built",
+      "ol": [
+        "Embedded emissions of the cold or hot rolled coil used, from your own mill or the supplier.",
+        "Direct emissions of the coating line: natural gas or other fuel for furnaces and the zinc pot.",
+        "Divide by tonnes of coated product, including the coating weight."
+      ]
+    },
+    {
+      "h": "Where zinc does matter",
+      "p": [
+        "Zinc refining is energy intensive, so it belongs in a product carbon footprint and in your buyer's Scope 3. Keep the zinc consumption per tonne for that, separate from the CBAM figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Hot dip galvanising footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Colour coated roofing sheet",
+      "to": "/answers/colour-coated-roofing-sheet-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Vietnam galvanised coil data",
+      "to": "/answers/vietnam-galvanised-coil-maker-precursor-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

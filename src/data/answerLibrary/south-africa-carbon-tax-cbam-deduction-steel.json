@@ -1,0 +1,63 @@
+{
+  "slug": "south-africa-carbon-tax-cbam-deduction-steel",
+  "q": "Can South Africa's carbon tax reduce an EU buyer's CBAM cost on Vaal steel?",
+  "title": "South African carbon tax and CBAM",
+  "short": "Possibly, but only for the tax effectively paid on the emissions embedded in the exported steel. Article 9 lets the EU declarant claim it, net of tax free allowances, offsets and rebates. With allowances, many emitters pay a small share of the headline rate, so the deduction is often modest.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel and ferroalloy exporters in South Africa's Vaal Triangle and their EU importers",
+  "sections": [
+    {
+      "h": "What can be claimed",
+      "p": [
+        "The carbon tax is a price on greenhouse gases, so it can qualify. The claim covers the amount actually paid for the year, attributed to the tonnes shipped, not the headline rate per tonne."
+      ]
+    },
+    {
+      "h": "What reduces it",
+      "ul": [
+        "Basic and trade exposure allowances that cut taxable emissions.",
+        "Carbon offsets used against the liability.",
+        "Any rebate or relief linked to exports."
+      ]
+    },
+    {
+      "h": "Evidence the declarant needs",
+      "ul": [
+        "The rate and allowances that applied for the year, from the official notice.",
+        "Your tax return and proof of payment.",
+        "The share of the payment attributed to the exported goods, certified by a person independent of you and the importer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Turkish carbon price and CBAM",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    },
+    {
+      "label": "Saldanha Bay steel exporter records",
+      "to": "/answers/saldanha-bay-steel-exporter-cbam-records"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

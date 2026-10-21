@@ -1,0 +1,51 @@
+{
+  "slug": "data-centre-servers-embodied-carbon-per-rack",
+  "q": "How much embodied carbon is in the servers in a data centre rack?",
+  "title": "Embodied carbon in data centre servers",
+  "short": "Manufacturers' product footprints for a typical two socket rack server often put manufacturing at roughly one to two tonnes CO2e, so a full rack can hold tens of tonnes. It is Scope 3 for whoever buys the servers, spread over their service life, and usually smaller than the electricity they use over that life.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Data centre operators, cloud customers and enterprises owning servers in colocation",
+  "sections": [
+    {
+      "h": "Where to get the number",
+      "ul": [
+        "The manufacturer's product carbon footprint for the exact model and configuration.",
+        "Memory and storage heavy configurations, which raise the figure.",
+        "If none is published, a similar model's figure, labelled as an estimate."
+      ]
+    },
+    {
+      "h": "Whose Scope 3",
+      "p": [
+        "The server owner reports it in purchased goods or capital goods. A colocation operator reports only the servers it owns, not tenants' equipment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Leased laptops and servers in Scope 3",
+      "to": "/answers/leased-laptops-and-servers-scope-3"
+    },
+    {
+      "label": "What is embodied carbon A1 to A3",
+      "to": "/answers/what-is-embodied-carbon-a1-a3"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

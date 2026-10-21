@@ -1,0 +1,55 @@
+{
+  "slug": "south-africa-steel-mill-load-shedding-diesel-cbam",
+  "q": "Does diesel burnt during load shedding count in a South African steel mill's CBAM figure?",
+  "title": "Load shedding diesel and CBAM",
+  "short": "Diesel burnt in generators to make electricity is treated as electricity, so for steel it is reported as indirect emissions and not charged today. Diesel burnt directly in process heat, mobile plant inside the site or furnaces is direct and does count. Meter the two separately.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel mills, foundries and ferroalloy plants in South Africa running backup generators during grid outages",
+  "sections": [
+    {
+      "h": "Split the fuel",
+      "ul": [
+        "Generator diesel: log litres and kWh produced, and report as electricity from your own plant.",
+        "Process diesel or burner oil: count as direct emissions at IPCC defaults or measured values.",
+        "Site vehicles inside the installation: follow your monitoring plan and be consistent."
+      ]
+    },
+    {
+      "h": "Why it still matters",
+      "p": [
+        "Generator power emits more per kWh than most grids, and buyers counting Scope 3 will see it. Indirect emissions may also be extended to more goods after the Commission's review."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "DG set emissions per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Grid factor for South African suppliers",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    },
+    {
+      "label": "Odisha ferrochrome captive power",
+      "to": "/answers/odisha-ferrochrome-captive-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "uae-aluminium-extruder-smelter-data-for-cbam",
+  "q": "What data does a UAE aluminium extruder need from its smelter for CBAM?",
+  "title": "UAE extruders: smelter data for CBAM",
+  "short": "The embedded emissions of the billet you bought, per tonne, for the period you used it, and the installation it came from. Add your own direct emissions from billet heating, ageing and any remelting, then divide by tonnes of profiles. Without smelter data your EU buyer falls back on default values.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Extrusion plants in Dubai, Sharjah and Abu Dhabi exporting profiles to the EU",
+  "sections": [
+    {
+      "h": "Ask the smelter for",
+      "ul": [
+        "Specific direct embedded emissions per tonne of billet.",
+        "The installation and reporting period.",
+        "Whether a verifier has checked the figure."
+      ]
+    },
+    {
+      "h": "Your own part",
+      "ul": [
+        "Gas or electricity for billet heating: gas is direct, electricity is reported but not charged.",
+        "Scrap you remelt in house, which brings only your melting fuel.",
+        "Yield losses: account for scrap returned to the smelter so you do not double count."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "EU importer of Turkish aluminium profiles",
+      "to": "/answers/eu-importer-turkish-aluminium-profile-supplier"
+    },
+    {
+      "label": "Aluminium extrusion footprint",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Secondary aluminium from scrap",
+      "to": "/answers/dubai-secondary-aluminium-scrap-remelt-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

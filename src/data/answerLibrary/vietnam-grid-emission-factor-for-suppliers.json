@@ -1,0 +1,55 @@
+{
+  "slug": "vietnam-grid-emission-factor-for-suppliers",
+  "q": "Which grid emission factor should a Vietnamese supplier use?",
+  "title": "Grid factor for Vietnamese suppliers",
+  "short": "Use the national grid emission factor published by Vietnam's environment ministry for the year your electricity was used, and cite it. Recent figures are around two thirds of a kilogram of CO2 per kWh, reflecting a grid with a large coal share, so electricity is a big part of most suppliers' footprints.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Steel, cement, textile and electronics suppliers in Vietnam answering buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Which number for which question",
+      "ul": [
+        "Location based Scope 2: the national grid factor for the year.",
+        "Market based Scope 2: renewable certificates or direct power purchase contracts that meet the Scope 2 Quality Criteria.",
+        "CBAM: for cement the electricity factor changes the cost; for steel and aluminium electricity is reported, not charged."
+      ]
+    },
+    {
+      "h": "Keep it auditable",
+      "p": [
+        "Record the publication, its year and the value used. Update when a new figure is published, and do not mix years in one report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Ha Tinh and Nghi Son: steel vs cement",
+      "to": "/answers/ha-tinh-nghi-son-steel-vs-cement-cbam"
+    },
+    {
+      "label": "EU importer of Vietnamese cement",
+      "to": "/answers/eu-importer-vietnam-cement-what-to-ask"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "polish-chemical-buyer-supplier-scope-3-data",
+  "q": "What carbon data do Polish chemical companies ask raw material suppliers for?",
+  "title": "Polish chemical buyers: supplier data",
+  "short": "Usually a product carbon footprint per tonne for each material, cradle to gate, with the method and period. Large Polish chemical groups report under the CSRD and set Scope 3 targets, so they want supplier specific figures in place of industry averages. Hydrogen, ammonia and fertilisers also need CBAM data.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Chemical and plastics suppliers in India, Turkey and Asia selling to chemical plants in Poland",
+  "sections": [
+    {
+      "h": "Expect",
+      "ul": [
+        "Product footprints to ISO 14067 or the PACT method.",
+        "Your Scope 1 and 2 behind them.",
+        "CBAM embedded emissions for covered goods only."
+      ]
+    },
+    {
+      "h": "Answer well",
+      "p": [
+        "Start from metered site energy, allocate to products by mass or energy with the reason stated, and show what is estimated. A clear first figure beats a perfect one sent late."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "Answering a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "PACT Pathfinder explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    },
+    {
+      "label": "German chemical park imports and CBAM",
+      "to": "/answers/german-chemical-park-imports-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "WBCSD PACT Methodology for product carbon footprints",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

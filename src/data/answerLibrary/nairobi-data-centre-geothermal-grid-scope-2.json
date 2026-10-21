@@ -1,0 +1,55 @@
+{
+  "slug": "nairobi-data-centre-geothermal-grid-scope-2",
+  "q": "Is a Nairobi data centre's grid power low carbon for Scope 2?",
+  "title": "Nairobi data centres: grid Scope 2",
+  "short": "Mostly, yes. Kenya's grid runs largely on geothermal, hydro and wind, so its location based factor is far below most emerging market grids, well under 0.2 kg CO2 per kWh in recent years. Use the official figure for the year, and still count diesel backup as Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Data centre operators in Nairobi and customers comparing African locations",
+  "sections": [
+    {
+      "h": "What to report",
+      "ul": [
+        "Location based Scope 2 with the national factor for the year.",
+        "Market based Scope 2 if you hold certificates or a direct contract.",
+        "Diesel used in outages and testing, as Scope 1."
+      ]
+    },
+    {
+      "h": "Do not overstate",
+      "p": [
+        "A low grid factor is not the same as 100 percent renewable. Say renewable only for power backed by certificates or contracts retired for you."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Jakarta data centres: Scope 2",
+      "to": "/answers/jakarta-data-centre-coal-grid-scope-2"
+    },
+    {
+      "label": "Lagos data centres: generator power",
+      "to": "/answers/lagos-data-centre-diesel-power-scope-1"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IRENA, renewable capacity and generation statistics",
+      "url": "https://www.irena.org"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "dubai-data-centre-clean-energy-certificate-scope-2",
+  "q": "Do Dubai clean energy certificates lower a data centre's Scope 2?",
+  "title": "Dubai clean energy certificates",
+  "short": "They can lower market based Scope 2 if they meet the Scope 2 Quality Criteria: issued for the period, from the same market, retired for you and not counted elsewhere. Location based Scope 2 stays on the grid factor. Ask the issuer how double counting with the grid factor is avoided.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Data centre operators and tenants in Dubai and Abu Dhabi buying utility clean energy certificates",
+  "sections": [
+    {
+      "h": "Check each certificate",
+      "ul": [
+        "Generation period matches your consumption year.",
+        "Source plant and technology named.",
+        "Retired in your name or your customer's.",
+        "Not also claimed in a utility green tariff."
+      ]
+    },
+    {
+      "h": "For customers",
+      "p": [
+        "Pass certificates through only if the contract says so, and say which customers' consumption they cover."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "I-REC vs India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Renewable contracts and the Scope 2 revision",
+      "to": "/answers/renewable-contracts-signed-now-scope-2-revision"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

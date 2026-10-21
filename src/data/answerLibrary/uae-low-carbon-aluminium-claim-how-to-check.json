@@ -1,0 +1,56 @@
+{
+  "slug": "uae-low-carbon-aluminium-claim-how-to-check",
+  "q": "How do I check a low carbon aluminium claim from a UAE smelter?",
+  "title": "Checking a low carbon aluminium claim",
+  "short": "Ask what the number covers, how the low carbon power is proven and who checked it. A figure per tonne is only comparable if it states the boundary, the power source with certificates retired for that metal, and whether it is mass balance or physically separate production.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "EU and Indian buyers of primary aluminium marketed as solar or low carbon by Gulf smelters",
+  "sections": [
+    {
+      "h": "Questions to ask",
+      "ul": [
+        "Boundary: smelting only, or cradle to gate including alumina and anodes?",
+        "Power: which certificates or contracts, retired in whose name, for which period?",
+        "Allocation: does the claim move renewable power onto one product line by mass balance?",
+        "Assurance: who verified it, and against which standard?"
+      ]
+    },
+    {
+      "h": "CBAM is a separate number",
+      "p": [
+        "Aluminium is charged on direct emissions only, so renewable power does not change the CBAM figure. A low carbon claim helps your Scope 3, not your importer's certificates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "Mass balance vs segregation",
+      "to": "/answers/chain-of-custody-mass-balance-vs-segregation"
+    },
+    {
+      "label": "Jharsuguda renewable power and CBAM",
+      "to": "/answers/jharsuguda-smelter-renewable-power-cbam-effect"
+    },
+    {
+      "label": "Al Taweelah smelter gas power",
+      "to": "/answers/al-taweelah-smelter-gas-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

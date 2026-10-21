@@ -1,0 +1,61 @@
+{
+  "slug": "vaal-steel-mill-coke-ovens-inside-cbam-boundary",
+  "q": "Are a Vaal steel mill's own coke ovens inside its CBAM figure?",
+  "title": "Vaal steel mills: coke ovens and CBAM",
+  "short": "Yes, if the coke ovens are part of your installation. Coal carbon that leaves as CO2 from the ovens, and coke oven gas burnt anywhere on site, count as direct emissions. Bought coke is different: it is not a CBAM precursor, so only its carbon content enters your mass balance.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Integrated steel mills in Vanderbijlpark, Vereeniging and the wider Vaal Triangle that run their own coke batteries",
+  "sections": [
+    {
+      "h": "Own coke plant",
+      "ul": [
+        "Coal charged, coke produced and coke oven gas made are tracked in a carbon mass balance across the whole installation.",
+        "Gas flared, burnt in boilers or reheating furnaces is counted where it is burnt, but only once.",
+        "Tar, benzole and other by-products sold off site leave carbon that you deduct, with sales records."
+      ]
+    },
+    {
+      "h": "Bought coke",
+      "p": [
+        "Coke is not in CBAM Annex I, so it carries no embedded emissions into your figure. Its carbon is counted when it is consumed in your blast furnace, through the same mass balance."
+      ]
+    },
+    {
+      "h": "Electricity from waste gas",
+      "p": [
+        "If coke oven or blast furnace gas runs a power plant on site, the CBAM rules include a correction for waste gas used to make electricity. Steel is charged on direct emissions only, so confirm the treatment with your verifier before you report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Waste gas to power under CBAM",
+      "to": "/answers/steel-plant-waste-gas-to-power-cbam"
+    },
+    {
+      "label": "Saldanha Bay steel exporter records",
+      "to": "/answers/saldanha-bay-steel-exporter-cbam-records"
+    },
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

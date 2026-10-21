@@ -1,0 +1,55 @@
+{
+  "slug": "german-buyer-asks-more-than-vsme-can-i-refuse",
+  "q": "Can a small supplier refuse a German buyer's sustainability data request beyond VSME?",
+  "title": "Data requests beyond VSME",
+  "short": "Within the EU reporting rules, a buyer in CSRD scope should not require value chain companies under 1,000 employees to report beyond the voluntary VSME standard for its own report. Commercial contracts are separate, so read the clause, offer VSME data, and explain politely what goes beyond it.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Small suppliers in the EU and abroad answering data requests from German companies that report under the CSRD",
+  "sections": [
+    {
+      "h": "What the value chain cap does",
+      "p": [
+        "It limits what reporting companies can ask of smaller value chain partners for sustainability reporting, using the VSME standard as the ceiling."
+      ]
+    },
+    {
+      "h": "What it does not do",
+      "ul": [
+        "It does not override CBAM, which sets its own data duties for covered goods.",
+        "It does not stop a buyer making data a commercial condition.",
+        "It does not stop you sharing more if it wins business."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "VSME standard for small suppliers",
+      "to": "/answers/vsme-standard-for-small-suppliers"
+    },
+    {
+      "label": "Climate clause in a buyer contract",
+      "to": "/answers/climate-clause-in-buyer-contract-what-to-check"
+    },
+    {
+      "label": "German supply chain law and climate",
+      "to": "/answers/german-supply-chain-act-climate-questions-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, explanatory information on the value chain cap",
+      "url": "https://finance.ec.europa.eu/news/feedback-sustainability-reporting-standards-additional-explanatory-information-regarding-value-chain-2026-05-06_en"
+    },
+    {
+      "label": "Directive (EU) 2026/470, sustainability reporting and due diligence",
+      "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
+    },
+    {
+      "label": "EFRAG, VSME standard",
+      "url": "https://www.efrag.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
