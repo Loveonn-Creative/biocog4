@@ -1,0 +1,57 @@
+{
+  "slug": "odisha-chrome-ore-briquetting-plant-emissions",
+  "q": "Do a ferrochrome plant's briquetting and pellet plant emissions count?",
+  "title": "Ferrochrome: briquetting and pelletising",
+  "short": "Yes, if the briquetting or pelletising unit sits inside your installation. Fuel burnt to dry, preheat or sinter chrome ore fines is a direct emission of the ferrochrome you make, so it belongs in the same CBAM figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Odisha ferrochrome producers that agglomerate chrome ore fines on site before smelting",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Coal, coke breeze, gas or oil burnt in the pellet induration furnace, sinter strand or dryers.",
+        "Process CO2 from any carbonate binder or flux.",
+        "Not the electricity for grinding and pressing, which is indirect and not charged for iron and steel goods."
+      ]
+    },
+    {
+      "h": "If the unit is separate",
+      "p": [
+        "If agglomerated ore comes from another company or a separate installation, it is not a CBAM precursor for ferrochrome, and its emissions sit in your Scope 3, not your CBAM figure."
+      ]
+    },
+    {
+      "h": "Split the records",
+      "p": [
+        "Meter fuel to the agglomeration unit separately from the furnaces. It helps the verifier and shows where a fuel switch would pay."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Are iron ore pellets covered?",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "ferro-alloy-furnace-waste-heat-power-counting",
+  "q": "How does a ferro alloy plant count power made from furnace waste heat?",
+  "title": "Ferro alloy: waste heat power",
+  "short": "Power from furnace off gas or waste heat adds no fuel, so it carries no extra CO2. Count the emissions once, at the furnace, and treat the recovered electricity as reducing what you buy. Never subtract it from the furnace's own CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferro alloy plants in Odisha and Chhattisgarh with waste heat recovery boilers or off gas power units",
+  "sections": [
+    {
+      "h": "No double counting",
+      "p": [
+        "The carbon in the off gas already left as CO2 in your mass balance. Burning the gas to make steam does not create a second emission, and recovering heat does not undo the first."
+      ]
+    },
+    {
+      "h": "How it shows in your figures",
+      "ul": [
+        "Grid and captive purchases fall by the recovered kWh, so your electricity emissions drop.",
+        "Direct emissions stay as calculated from the reductants.",
+        "For iron and steel goods under CBAM, electricity is not charged anyway, so the gain shows in your footprint and Scope 2."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Meter the waste heat generator output separately. Without it, the saving cannot be shown."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "CHP allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Odisha ferrochrome captive power",
+      "to": "/answers/odisha-ferrochrome-captive-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

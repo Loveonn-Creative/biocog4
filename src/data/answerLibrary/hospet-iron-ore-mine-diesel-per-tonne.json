@@ -1,0 +1,66 @@
+{
+  "slug": "hospet-iron-ore-mine-diesel-per-tonne",
+  "q": "How does a Hospet iron ore mine work out diesel emissions per tonne?",
+  "title": "Hospet iron ore mines: diesel per tonne",
+  "short": "Add the litres of diesel used by excavators, dumpers, drills and site gensets, multiply by 2.68 kg CO2 per litre, and divide by tonnes of ore dispatched. Diesel is usually the mine's largest direct emission, and it is Scope 1 if you own or run the fleet.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Iron ore mines and mining contractors in the Hospet, Sandur and Ballari belt of Karnataka",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ul": [
+        "Diesel issued from the mine's own pump or bowser, by machine where possible.",
+        "Diesel bought by contractors for your work, recorded separately: their Scope 1, your Scope 3.",
+        "Tonnes of ore dispatched, and tonnes of waste rock moved if you want a per tonne moved figure."
+      ]
+    },
+    {
+      "h": "Strip ratio matters",
+      "p": [
+        "Moving more waste per tonne of ore raises diesel per tonne. Report the strip ratio alongside the figure so a buyer can compare mines fairly."
+      ]
+    },
+    {
+      "h": "Explosives",
+      "p": [
+        "Explosives emit some CO2 when detonated. Add them from purchase records if the buyer wants a full figure; it is usually small next to diesel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month for one mine",
+    "lines": [
+      "Diesel: 180,000 litres x 2.68 = 482.4 t CO2",
+      "Ore dispatched: 120,000 t",
+      "Per tonne: 482.4 t / 120,000 t = 4.0 kg CO2 per tonne of ore"
+    ],
+    "note": "Quantities are illustrative; 2.68 kg CO2 per litre is the IPCC 2006 default for diesel."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Excavator diesel per cubic metre",
+      "to": "/answers/contractor-excavator-diesel-per-cubic-metre"
+    },
+    {
+      "label": "Ballari ore trucks to port",
+      "to": "/answers/ballari-iron-ore-trucks-to-port-emissions"
+    },
+    {
+      "label": "Indian truck diesel mileage",
+      "to": "/answers/indian-truck-diesel-mileage-by-size"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "ferro-alloy-electrode-paste-co2-per-tonne",
+  "q": "How much CO2 does electrode paste add per tonne of ferro alloy?",
+  "title": "Ferro alloy: electrode paste CO2",
+  "short": "Multiply paste consumed per tonne of alloy by its carbon content and by 44/12. At 20 kg of paste per tonne and 85% carbon, that is about 62 kg CO2 per tonne. Use your own consumption, because it varies widely with furnace and product.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferro alloy plants running Soderberg electrodes in India and elsewhere",
+  "sections": [
+    {
+      "h": "The calculation",
+      "p": [
+        "Paste consumed in the period, from stock records, times its carbon content from the supplier analysis, times 44/12, divided by tonnes of alloy. It sits inside the overall mass balance, so do not add it twice."
+      ]
+    },
+    {
+      "h": "Why consumption varies",
+      "p": [
+        "Electrode breakage, current density and product grade all change paste use. Track it monthly against output; a jump is often the first sign of an operating problem."
+      ]
+    },
+    {
+      "h": "Where it counts",
+      "p": [
+        "Paste carbon is a direct emission of the alloy, counted for CBAM where the alloy is covered, such as ferrochrome and ferromanganese, and in every footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative paste CO2 for one month",
+    "lines": [
+      "Paste used: 160 t; alloy made: 8,000 t",
+      "Per tonne: 20 kg x 85% carbon x 44/12 = 62.3 kg CO2"
+    ],
+    "note": "Consumption and carbon content are illustrative; use your stock records and supplier analysis."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Graphite electrode CO2 in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

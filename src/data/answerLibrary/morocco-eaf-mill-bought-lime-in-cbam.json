@@ -1,0 +1,69 @@
+{
+  "slug": "morocco-eaf-mill-bought-lime-in-cbam",
+  "q": "Does the lime a Moroccan EAF mill buys count in its CBAM figure?",
+  "title": "EAF mills: bought lime in the CBAM figure",
+  "short": "Bought burnt lime does not add CO2 to your direct emissions: it was calcined at the lime plant, and lime is not a CBAM precursor for steel. Only limestone or raw dolomite charged into your own furnace releases process CO2 at your site, and that counts.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Electric arc furnace steel mills in Morocco and North Africa that buy quicklime or dolomitic lime for slag practice",
+  "sections": [
+    {
+      "h": "Lime versus limestone",
+      "ul": [
+        "Quicklime or calcined dolomite bought in: no process CO2 at your mill. Record the tonnes anyway, because the verifier checks the slag balance.",
+        "Raw limestone or dolomite charged into the furnace: CO2 released in your furnace. Use tonnes charged times the stoichiometric factor, 0.440 t CO2 per tonne of calcium carbonate, adjusted for purity."
+      ]
+    },
+    {
+      "h": "Why lime is not a precursor",
+      "p": [
+        "For iron and steel goods, the relevant precursors are crude steel, pig iron, DRI and the covered ferro alloys. Lime is not a CBAM good, so its upstream calcination stays with the lime maker and out of your embedded emissions."
+      ]
+    },
+    {
+      "h": "For your own footprint",
+      "p": [
+        "Lime is still a purchased good in your Scope 3. An EU buyer asking for a full product footprint, beyond CBAM, may want it, so keep the lime supplier's figure if you can get one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative carbonate CO2 for one month",
+    "lines": [
+      "Raw dolomite charged: 120 t at 95% carbonate",
+      "Process CO2: 120 x 0.95 x 0.477 = 54.4 t CO2 (dolomite factor 0.477 t CO2 per tonne)",
+      "Quicklime bought: 900 t, no process CO2 at this mill"
+    ],
+    "note": "Quantities are illustrative. Use your own charge records and the carbonate content from the supplier analysis."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Process CO2 from limestone",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Quicklime kiln CO2 per tonne",
+      "to": "/answers/quicklime-kiln-co2-per-tonne"
+    },
+    {
+      "label": "Graphite electrode CO2 in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

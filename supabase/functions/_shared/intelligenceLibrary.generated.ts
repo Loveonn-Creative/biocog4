@@ -209,6 +209,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a paper mill pulping bagasse or wheat straw report biogenic CO2?",
+  "text": "CO2 from burning bagasse, straw, pith or black liquor in the boiler is biogenic: report it separately, outside the scopes. Methane and nitrous oxide from that burning, and all CO2 from coal or oil, stay in Scope 1.",
+  "url": "https://senseible.earth/answers/agro-residue-paper-mill-biogenic-co2"
+ },
+ {
+  "kind": "answer",
   "title": "How do I estimate the carbon footprint per kg of an agrochemical technical for a multinational customer?",
   "text": "Take one campaign's batch records: raw materials per kg of in-spec technical times their emission factors, plus steam, electricity, and fossil CO2 from incinerating spent solvent and waste, all divided by good output. Then see which lines are biggest in your own numbers and get supplier figures for those first.",
   "url": "https://senseible.earth/answers/agrochemical-technical-carbon-footprint-per-kg"
@@ -218,6 +224,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I estimate the emissions of our AI model training and LLM API usage?",
   "text": "For GPU training, multiply GPU-hours by each board's power draw, then by the data centre's PUE, then by the grid factor of the region. For third-party LLM APIs, most providers publish no per-token factor, so use the provider's figure if one exists, otherwise a spend-based estimate labelled as such.",
   "url": "https://senseible.earth/answers/ai-api-and-gpu-usage-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "How does an Ain Sokhna flat steel mill count bought slab in CBAM?",
+  "text": "Bought slab is a precursor. Add its embedded emissions, from the slab supplier's verified figure or the default value, to your own direct emissions from reheating and rolling, then divide by tonnes of coil or plate produced.",
+  "url": "https://senseible.earth/answers/ain-sokhna-flat-steel-mill-bought-slab-cbam"
  },
  {
   "kind": "answer",
@@ -344,6 +356,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of aluminium sheet per tonne?",
   "text": "Most of the footprint is in the metal: multiply the ingot, slab or scrap per tonne of sheet by the supplier's figure. Add remelting, hot and cold rolling and annealing energy, then divide the mill's energy by tonnes dispatched.",
   "url": "https://senseible.earth/answers/aluminium-sheet-carbon-footprint-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "Is alumina a CBAM precursor for an aluminium smelter?",
+  "text": "No. Alumina is not a CBAM good, so its refining emissions do not enter the embedded emissions of the aluminium you export. It is still a purchased good in your Scope 3, often a large one, and EU buyers asking for a full footprint will want it.",
+  "url": "https://senseible.earth/answers/aluminium-smelter-alumina-scope-3-not-precursor"
  },
  {
   "kind": "answer",
@@ -689,6 +707,30 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Ballari ore beneficiation plant work out electricity carbon per tonne?",
+  "text": "Divide the plant's metered kWh for crushing, grinding, screening and pumping by tonnes of concentrate produced, and multiply by 0.710 kg CO2 per kWh. Report per tonne of concentrate and per tonne of feed, because yield varies with ore grade.",
+  "url": "https://senseible.earth/answers/ballari-iron-ore-beneficiation-electricity-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I work out emissions from trucking Ballari iron ore to the port?",
+  "text": "Multiply tonnes carried by road kilometres and by a factor for the truck class, or use the diesel the transporter actually burnt times 2.68 kg CO2 per litre. If you pay the transporter, it is your Scope 3 category 4.",
+  "url": "https://senseible.earth/answers/ballari-iron-ore-trucks-to-port-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a Ballari pellet plant work out CO2 per tonne of pellets?",
+  "text": "Add fuel burnt in the induration furnace or grate, such as coal, coke breeze, furnace oil or gas, to process CO2 from limestone and dolomite additives, then divide by tonnes of pellets. Pellets are covered by CBAM, and for them electricity is reported but not charged.",
+  "url": "https://senseible.earth/answers/ballari-pellet-plant-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How is steel slag sold to cement plants counted in a Ballari steel plant's footprint?",
+  "text": "Slag sold as a by product is not waste: its emissions stay with the steel, and selling it earns no deduction from your own figure. The cement plant using granulated slag counts only grinding and transport, which is why slag cement has a lower footprint.",
+  "url": "https://senseible.earth/answers/ballari-steel-slag-sold-to-cement-plants"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of a ballpoint pen?",
   "text": "Weigh the barrel, cap and refill per pen and multiply the plastics, brass tip and ink by supplier figures. Add moulding, tip making, ink filling and assembly energy, then divide the plant's energy by pens made.",
   "url": "https://senseible.earth/answers/ballpoint-pen-carbon-footprint-per-pen"
@@ -962,6 +1004,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much electricity and CO2 does pumping groundwater from a borewell take per kilolitre?",
   "text": "kWh per kL = 9.81 x total head in metres / (3,600 x pump and motor efficiency). Lifting water 50 m at 40 percent efficiency takes about 0.34 kWh per kL, or about 0.24 kg CO2 per kL at India's grid factor of 0.710. Deeper water and worn pumps raise it.",
   "url": "https://senseible.earth/answers/borewell-pumping-energy-per-kl"
+ },
+ {
+  "kind": "answer",
+  "title": "What should a box maker ask its kraft paper mill for?",
+  "text": "Ask for CO2e per tonne of kraft paper for a stated year, what it includes, and how biomass fuel was treated. Kraft paper is usually the biggest line in a corrugated box's footprint, so the mill's figure decides most of yours.",
+  "url": "https://senseible.earth/answers/box-maker-kraft-paper-supplier-carbon-data"
  },
  {
   "kind": "answer",
@@ -1763,6 +1811,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I correct calcination CO2 for kiln bypass dust?",
+  "text": "Dust removed from the kiln system, such as bypass or cement kiln dust, has been partly or fully calcined, so its CO2 was released too. Add it: tonnes of dust times its calcination degree times the CO2 factor. IPCC Tier 1 uses a 2% uplift on clinker CO2 when dust data is missing.",
+  "url": "https://senseible.earth/answers/cement-kiln-bypass-dust-calcination-correction"
+ },
+ {
+  "kind": "answer",
   "title": "How do I compare cement suppliers on carbon: per tonne of clinker or per tonne of cement, and what range is normal?",
   "text": "Compare cement suppliers per tonne of cement, for the same cement type, and use the per tonne of clinker figure only to judge the kiln. Clinker usually sits around 0.8 to 0.9 t CO2 per tonne, so a cement's figure depends mostly on how much clinker it contains.",
   "url": "https://senseible.earth/answers/cement-supplier-benchmark-carbon-intensity"
@@ -1898,6 +1952,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much can a Chennai data centre cut market-based Scope 2 with Tamil Nadu wind power?",
   "text": "In proportion to the share of electricity covered by contracted wind with its certificates or attributes retired for you. If 60% of facility power is wind under green open access, market-based Scope 2 falls by about 60%, while the location-based figure stays at the grid factor.",
   "url": "https://senseible.earth/answers/chennai-data-centre-wind-open-access-scope-2"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a Chhattisgarh silico-manganese plant work out carbon per tonne?",
+  "text": "Add the CO2 from reductants by carbon mass balance to the CO2 from the electricity your furnaces use, then divide by tonnes of alloy. Silico-manganese is excluded from CBAM, so this is a footprint for buyers and lenders, not a CBAM figure.",
+  "url": "https://senseible.earth/answers/chhattisgarh-silico-manganese-carbon-per-tonne"
  },
  {
   "kind": "answer",
@@ -2111,6 +2171,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Coimbatore machine chain unit work out carbon per kg?",
+  "text": "Divide the month's electricity emissions, plus any LPG used for annealing or soldering, by kilograms of chain produced. Chain machines, rolling mills and annealing furnaces draw most of the power, so meter them if you can.",
+  "url": "https://senseible.earth/answers/coimbatore-machine-chain-unit-electricity-per-kg"
+ },
+ {
+  "kind": "answer",
   "title": "Does a Coimbatore pump exporter need an EPD for European buyers?",
   "text": "No EU law requires one for pumps today, but some buyers and tenders ask for it. An EPD under ISO 14025 is a verified, standard-format declaration built on product category rules. A carbon footprint under ISO 14067 is smaller in scope and often enough for a buyer's Scope 3.",
   "url": "https://senseible.earth/answers/coimbatore-pump-exporter-epd-for-buyers"
@@ -2297,6 +2363,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How is CO2 calculated for a COREX ironmaking unit?",
+  "text": "Use a carbon mass balance: carbon in coal, coke and fluxes charged, minus carbon leaving in hot metal, slag and the export gas, times 44/12. The export gas carbon is counted where that gas is burnt, so it must not be counted twice.",
+  "url": "https://senseible.earth/answers/corex-ironmaking-unit-co2-calculation"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of corn flakes per kg?",
   "text": "Add the maize grits, sugar and malt per kg with supplier figures. Then add cooking, flaking and toasting energy, a large plant energy use, plus packing, and divide the plant's energy by kg of flakes packed.",
   "url": "https://senseible.earth/answers/corn-flakes-carbon-footprint-per-kg"
@@ -2306,6 +2378,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of a corrugated box per kg, and how does a box maker calculate it?",
   "text": "A box maker calculates it as kraft paper used per kg of boxes, including trim waste, times the paper's footprint, plus corrugator steam fuel, starch, inks and electricity per kg dispatched. Kraft paper is usually the largest part, so the paper mill's own figure matters more than anything else.",
   "url": "https://senseible.earth/answers/corrugated-box-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a corrugated box plant count the fuel for its corrugator steam?",
+  "text": "Fuel burnt in the boiler that feeds the corrugator is Scope 1: tonnes of coal, briquettes or litres of oil times their emission factor. Divide by tonnes of board made to get a per tonne figure. CO2 from biomass briquettes is biogenic and reported separately.",
+  "url": "https://senseible.earth/answers/corrugator-steam-boiler-fuel-per-tonne"
  },
  {
   "kind": "answer",
@@ -3089,6 +3167,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does hot charging billets lower an Egyptian rebar mill's CBAM figure?",
+  "text": "Yes, if it cuts the gas your reheating furnace burns. Reheating fuel is part of the rolling mill's direct emissions, so billets charged hot need less gas per tonne. Show it with metered furnace gas and the share of billets hot charged in the year.",
+  "url": "https://senseible.earth/answers/egypt-rebar-mill-hot-charging-billets-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "How does an Egyptian urea plant at Ain Sokhna calculate CBAM embedded emissions?",
   "text": "Add the embedded emissions of the ammonia consumed, about 0.567 t per tonne of urea, to the urea plant's own direct emissions from fuel and its indirect emissions from electricity, then divide by tonnes of urea. Do not subtract the CO2 that goes into the urea from the ammonia plant's figure.",
   "url": "https://senseible.earth/answers/egypt-urea-plant-cbam-embedded-emissions"
@@ -3485,6 +3569,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What should an EU importer ask a Turkish cement supplier for?",
+  "text": "Ask for direct and indirect specific embedded emissions per tonne for each cement type, the clinker share and its origin, the electricity factor used, the reporting period and whether figures are verified. Cement is charged on both direct and indirect emissions.",
+  "url": "https://senseible.earth/answers/eu-importer-turkish-cement-what-to-ask"
+ },
+ {
+  "kind": "answer",
   "title": "What should an EU importer ask a Turkish rebar supplier for under CBAM?",
   "text": "Direct embedded emissions per tonne of rebar from the installation, including the crude steel or billet precursor, for the period, with the production route stated. For iron and steel, CBAM counts direct emissions only.",
   "url": "https://senseible.earth/answers/eu-importer-turkish-rebar-supplier-what-to-ask"
@@ -3704,6 +3794,30 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How is the carbon footprint of a fermentation-made API different from a synthetic one?",
   "text": "A fermentation API's footprint is driven by utilities: electricity for aeration and agitation, steam for sterilisation, and chilling, run for days per batch. A synthetic API's footprint is driven more by solvents, reagents and starting materials. Fermentation also releases biogenic CO2 from the microbes, which is reported separately.",
   "url": "https://senseible.earth/answers/fermentation-api-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does electrode paste add per tonne of ferro alloy?",
+  "text": "Multiply paste consumed per tonne of alloy by its carbon content and by 44/12. At 20 kg of paste per tonne and 85% carbon, that is about 62 kg CO2 per tonne. Use your own consumption, because it varies widely with furnace and product.",
+  "url": "https://senseible.earth/answers/ferro-alloy-electrode-paste-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a ferro alloy plant count power made from furnace waste heat?",
+  "text": "Power from furnace off gas or waste heat adds no fuel, so it carries no extra CO2. Count the emissions once, at the furnace, and treat the recovered electricity as reducing what you buy. Never subtract it from the furnace's own CO2.",
+  "url": "https://senseible.earth/answers/ferro-alloy-furnace-waste-heat-power-counting"
+ },
+ {
+  "kind": "answer",
+  "title": "Which coke and coal records does a ferro alloy plant need for its carbon figure?",
+  "text": "For each reductant keep tonnes received, opening and closing stock, moisture, and fixed carbon or total carbon from a lab analysis. The mass balance needs carbon actually charged, so purchase invoices alone are not enough.",
+  "url": "https://senseible.earth/answers/ferro-alloy-plant-coke-and-coal-records"
+ },
+ {
+  "kind": "answer",
+  "title": "How do slag and dust enter a ferro alloy plant's carbon mass balance?",
+  "text": "Carbon leaving in slag, bag filter dust or sludge was not emitted, so subtract it in the mass balance. Multiply tonnes of each stream by its measured carbon content. If you assume zero, say so and show it is small.",
+  "url": "https://senseible.earth/answers/ferro-alloy-slag-and-dust-carbon-in-balance"
  },
  {
   "kind": "answer",
@@ -4619,6 +4733,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Hospet iron ore mine work out diesel emissions per tonne?",
+  "text": "Add the litres of diesel used by excavators, dumpers, drills and site gensets, multiply by 2.68 kg CO2 per litre, and divide by tonnes of ore dispatched. Diesel is usually the mine's largest direct emission, and it is Scope 1 if you own or run the fleet.",
+  "url": "https://senseible.earth/answers/hospet-iron-ore-mine-diesel-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate emissions from autoclave sterilisation in a hospital?",
   "text": "Count the steam's boiler fuel, or the electricity of electric steam generators at 0.710 kg CO2 per kWh, plus vacuum pumps and controls, and divide by cycles run. Biomedical waste sent to a common treatment facility is Scope 3, not part of this figure.",
   "url": "https://senseible.earth/answers/hospital-autoclave-sterilisation-emissions"
@@ -5075,6 +5195,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I work out electricity carbon per carat for an HPHT diamond press?",
+  "text": "Meter each press, add the kWh for every growth run in a month, multiply by your grid factor and divide by rough carats grown. HPHT presses run hot and long, so electricity dominates; use metered runs, not nameplate ratings.",
+  "url": "https://senseible.earth/answers/hpht-diamond-press-electricity-per-carat"
+ },
+ {
+  "kind": "answer",
   "title": "Can I use HSN codes on invoices to assign emission factors?",
   "text": "Partly. An HSN code can narrow a line to a material family and point to a shortlist of factors, but it cannot choose the factor alone. Use the description to pick the exact item and the unit to confirm the factor fits. India has no official HSN to factor table, so the mapping is your own documented method.",
   "url": "https://senseible.earth/answers/hsn-code-emission-factor-mapping"
@@ -5453,6 +5579,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is a paper mill covered by India's Carbon Credit Trading Scheme?",
+  "text": "Only if it is named. Pulp and paper is among the sectors with emission intensity targets under the 2025 target rules, but coverage is plant by plant: a mill has a target only if its name and location appear in the notification, with a baseline and target per tonne.",
+  "url": "https://senseible.earth/answers/is-a-paper-mill-covered-by-ccts"
+ },
+ {
+  "kind": "answer",
   "title": "Is the CEA grid emission factor CO2 only, and should I add methane and nitrous oxide?",
   "text": "The CEA grid factor is CO2 only. Adding methane and nitrous oxide from coal-fired generation raises it by roughly half a percent, an estimate from IPCC defaults. Most companies report it as CO2 and say so; add the other gases only if your buyer or method asks for full CO2e.",
   "url": "https://senseible.earth/answers/is-cea-grid-factor-co2-or-co2e"
@@ -5486,6 +5618,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is ISO 14067 certification mandatory, and who can verify a product carbon footprint?",
   "text": "No. ISO 14067 sets out how to calculate and report a product carbon footprint; it does not require third-party verification. Buyers, labels or programmes may require it. When they do, an independent verification body checks the footprint against ISO 14064-3, ideally one accredited to ISO 14065.",
   "url": "https://senseible.earth/answers/is-iso-14067-certification-mandatory"
+ },
+ {
+  "kind": "answer",
+  "title": "Is triple superphosphate from Morocco covered by EU CBAM?",
+  "text": "No. Triple superphosphate falls under CN heading 3103, phosphatic fertilisers, which is not in Annex I of the CBAM Regulation. CBAM covers nitrogen fertilisers and mixtures that contain nitrogen, so DAP and MAP shipped from Jorf Lasfar are covered while plain TSP is not.",
+  "url": "https://senseible.earth/answers/is-moroccan-triple-superphosphate-covered-by-cbam"
  },
  {
   "kind": "answer",
@@ -5699,6 +5837,30 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Jharsuguda fabricator count the aluminium sections it buys?",
+  "text": "Aluminium sections bought are purchased goods, Scope 3 category 1: kilograms times a factor per kg, ideally the extruder's own figure. Your workshop's electricity and gas are Scope 2 and 1. The metal is usually far larger than your fabrication energy.",
+  "url": "https://senseible.earth/answers/jharsuguda-fabricator-aluminium-sections-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 do anodes add per tonne of aluminium at a Jharsuguda smelter?",
+  "text": "Prebaked anodes are consumed in the pot, and their carbon leaves as CO2. Multiply net anode consumption per tonne of aluminium by its carbon content and 44/12. The IPCC Tier 1 default for prebake cells is 1.6 t CO2 per tonne of aluminium.",
+  "url": "https://senseible.earth/answers/jharsuguda-smelter-anode-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "Does cast house fuel count in a Jharsuguda smelter's CBAM figure?",
+  "text": "Yes. Gas or oil burnt in holding furnaces, ingot and billet casting and homogenising inside the installation is a direct emission of the aluminium you make. Add it to anode and PFC emissions before dividing by tonnes of product.",
+  "url": "https://senseible.earth/answers/jharsuguda-smelter-cast-house-fuel-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Does renewable power lower a Jharsuguda smelter's CBAM figure?",
+  "text": "Not today. Aluminium is charged on direct emissions only, so switching part of the smelter load to renewable power does not change certificates. It lowers your Scope 2 and the cradle to gate figure buyers compare, and indirect emissions may be added to CBAM later.",
+  "url": "https://senseible.earth/answers/jharsuguda-smelter-renewable-power-cbam-effect"
+ },
+ {
+  "kind": "answer",
   "title": "How do I count emissions from job work under GST in my carbon footprint?",
   "text": "If you are the principal, the job worker's fuel and power used on your goods are Scope 3 Category 1, purchased services. The material you sent stays counted once, at its purchase. If you are the job worker, the same energy is your own Scope 1 and Scope 2. The GST challan does not change either answer.",
   "url": "https://senseible.earth/answers/job-work-emissions-which-scope"
@@ -5732,6 +5894,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is a jute bag really lower carbon than a plastic bag, and what can an exporter claim?",
   "text": "Usually not per bag, but often per use: a jute bag carries a larger footprint to make, so it beats a single-use plastic bag only after enough reuses. An exporter can safely state its own measured footprint per bag; a comparative claim needs a like-for-like study.",
   "url": "https://senseible.earth/answers/jute-bag-carbon-footprint-vs-plastic"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a Kalinganagar ferrochrome plant count chrome ore in Scope 3?",
+  "text": "Chrome ore bought from Sukinda valley mines is a purchased good, Scope 3 category 1: tonnes times a factor for mining and processing, ideally from the mine. Trucking it to the plant is category 4 if you pay for the freight.",
+  "url": "https://senseible.earth/answers/kalinganagar-ferrochrome-chrome-ore-scope-3"
  },
  {
   "kind": "answer",
@@ -6209,9 +6377,39 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does biomass fuel count in a Marmara cement plant's CBAM figure?",
+  "text": "Biomass that meets the sustainability criteria in the CBAM rules counts at zero emission factor, so replacing coal or petcoke with it lowers direct emissions. Mixed fuels such as RDF count only their fossil share. You need evidence of the biomass fraction.",
+  "url": "https://senseible.earth/answers/marmara-cement-plant-biomass-fuel-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Does adding slag to cement raw meal cut calcination CO2?",
+  "text": "Yes. Calcination CO2 comes only from carbonates such as limestone. Calcium supplied by already decarbonated material, like steel slag or fly ash in the raw meal, releases no CO2 in the kiln, so CO2 per tonne of clinker falls.",
+  "url": "https://senseible.earth/answers/marmara-cement-slag-in-raw-meal-co2"
+ },
+ {
+  "kind": "answer",
+  "title": "How does waste heat power count in a Marmara cement plant's CBAM figure?",
+  "text": "Waste heat recovery power uses heat from the kiln that is already counted, so it adds no fuel emissions. It lowers the grid electricity you buy, and with it the indirect emissions CBAM counts for cement. Meter its output separately.",
+  "url": "https://senseible.earth/answers/marmara-cement-waste-heat-power-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "How does a Marmara electric arc furnace steel mill calculate its CBAM direct emissions?",
   "text": "Use a carbon mass balance: carbon in electrodes, injected coal, charge carbon and alloys, plus natural gas burnt in burners and ladle heaters, minus carbon leaving in steel and slag. Divide by tonnes of billets or products. Scrap carried no embedded emissions under the transitional rules, and furnace electricity is not counted for steel.",
   "url": "https://senseible.earth/answers/marmara-eaf-steel-mill-cbam-direct-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a Marmara grinding unit count imported clinker in CBAM?",
+  "text": "Clinker is a precursor. Add tonnes of clinker used times its producer's verified embedded emissions, or the default value for its origin, to your own grinding electricity, then divide by tonnes of cement. Clinker usually decides most of the figure.",
+  "url": "https://senseible.earth/answers/marmara-grinding-imported-clinker-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a white cement plant in Marmara work out its CBAM figure?",
+  "text": "The same way as grey cement, with higher numbers: calcination CO2 plus kiln fuel CO2 per tonne of white clinker, then clinker share in the cement, plus grinding electricity. White clinker burns hotter and longer, so fuel per tonne is usually higher than for grey.",
+  "url": "https://senseible.earth/answers/marmara-white-cement-cbam-figure"
  },
  {
   "kind": "answer",
@@ -6389,6 +6587,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What CBAM data should a Moroccan rebar exporter send its EU buyer?",
+  "text": "Send the direct emissions per tonne of rebar for the calendar year, worked out at installation level: melt shop and rolling mill fuel, electrodes and charge carbon, plus the embedded emissions of any billets, DRI or ferro alloys you bought. Add production tonnes, the CN code and how each figure was measured.",
+  "url": "https://senseible.earth/answers/moroccan-rebar-exporter-cbam-data-for-eu-buyer"
+ },
+ {
+  "kind": "answer",
+  "title": "Does the lime a Moroccan EAF mill buys count in its CBAM figure?",
+  "text": "Bought burnt lime does not add CO2 to your direct emissions: it was calcined at the lime plant, and lime is not a CBAM precursor for steel. Only limestone or raw dolomite charged into your own furnace releases process CO2 at your site, and that counts.",
+  "url": "https://senseible.earth/answers/morocco-eaf-mill-bought-lime-in-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Does a renewable power deal lower a Moroccan steel mill's CBAM figure?",
+  "text": "Not today. For iron and steel goods CBAM charges direct emissions only, so cleaner electricity does not change the certificate count. It does cut your Scope 2 and the product footprint EU buyers ask for, and the Commission is due to assess adding indirect emissions.",
+  "url": "https://senseible.earth/answers/morocco-steel-mill-renewable-ppa-cbam-effect"
+ },
+ {
+  "kind": "answer",
   "title": "Are nickel pig iron, ferro-nickel and stainless steel from Morowali covered by EU CBAM?",
   "text": "Ferro-nickel under CN 7202 60 00 and stainless steel slabs, coils and bars in chapter 72 are CBAM goods, and nickel pig iron is covered when declared as pig iron under 7201 or as ferro-nickel. Nickel matte under 7501 and unwrought nickel under 7502 are not in Annex I.",
   "url": "https://senseible.earth/answers/morowali-nickel-pig-iron-stainless-cbam"
@@ -6479,6 +6695,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Muzaffarnagar kraft paper mill count its boiler fuel?",
+  "text": "Coal and petcoke burnt are Scope 1 at their emission factors. Rice husk, bagasse and other biomass give biogenic CO2, reported separately, with their methane and nitrous oxide in Scope 1. Divide by tonnes of kraft paper made for a per tonne figure.",
+  "url": "https://senseible.earth/answers/muzaffarnagar-kraft-paper-mill-boiler-fuel"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of namkeen or fried snacks per kg?",
   "text": "Add the ingredients (besan, potatoes, dal, nuts and frying oil absorbed) from supplier or database factors, the fuel that heats the fryer, the plant's electricity and the packaging. Divide by kilograms packed. If the thermic fluid heater burns wood or briquettes, report that CO2 as biogenic, separately from Scope 1.",
   "url": "https://senseible.earth/answers/namkeen-carbon-footprint-per-kg"
@@ -6539,6 +6761,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a newspaper printing plant work out carbon per copy?",
+  "text": "Add newsprint and ink as purchased goods to the plant's own electricity and fuel, then divide by copies printed. Newsprint usually dominates, so the paper mill's figure per tonne matters more than anything on the press floor.",
+  "url": "https://senseible.earth/answers/newspaper-printing-plant-carbon-per-copy"
+ },
+ {
+  "kind": "answer",
   "title": "How does a lender apply an NGFS carbon price to an MSME borrower?",
   "text": "Multiply the borrower's annual Scope 1 and 2 emissions in tonnes by the scenario's carbon price for a given year, adjust for how much of the cost the borrower can pass on, and subtract the result from EBITDA. Then recompute the debt service coverage ratio and compare it with your covenant.",
   "url": "https://senseible.earth/answers/ngfs-carbon-price-msme-loan-stress-test"
@@ -6584,6 +6812,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the difference between template OCR and AI vision for reading invoices?",
   "text": "Template OCR turns the page into text and pulls each field from a fixed position you set up per supplier layout. AI vision reads the whole page, layout and text together, and fills named fields without a template. Templates suit a few stable layouts; AI vision suits many suppliers and photos, if every value is checked.",
   "url": "https://senseible.earth/answers/ocr-vs-ai-vision-invoice-extraction"
+ },
+ {
+  "kind": "answer",
+  "title": "Do a ferrochrome plant's briquetting and pellet plant emissions count?",
+  "text": "Yes, if the briquetting or pelletising unit sits inside your installation. Fuel burnt to dry, preheat or sinter chrome ore fines is a direct emission of the ferrochrome you make, so it belongs in the same CBAM figure.",
+  "url": "https://senseible.earth/answers/odisha-chrome-ore-briquetting-plant-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Does captive coal power at an Odisha ferrochrome plant count for CBAM?",
+  "text": "Not for certificates. Ferrochrome is an iron and steel good, charged on direct emissions only, so CO2 from the captive power plant feeding your furnaces is not counted even though it sits inside the fence. Report the electricity anyway, and keep it in your own footprint.",
+  "url": "https://senseible.earth/answers/odisha-ferrochrome-captive-power-cbam"
  },
  {
   "kind": "answer",
@@ -6794,6 +7034,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate a paper mill's carbon footprint per tonne of paper?",
   "text": "Add a year's fossil fuel emissions from boilers and captive power, purchased electricity, and any process emissions, then divide by tonnes of saleable paper made in that year. Report CO2 from black liquor, rice husk and other biomass separately as biogenic. For a product footprint, also add fibre, chemicals and transport upstream.",
   "url": "https://senseible.earth/answers/paper-mill-carbon-footprint-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a paper mill count sludge and rejects in its footprint?",
+  "text": "Burnt in your own boiler, they are Scope 1, with biogenic CO2 from fibre reported separately and CO2 from plastic rejects counted in full. Sent to a landfill or another company, they are Scope 3 category 5, waste generated in operations.",
+  "url": "https://senseible.earth/answers/paper-mill-sludge-and-rejects-emissions"
  },
  {
   "kind": "answer",
@@ -7253,6 +7499,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I count makeready paper waste in a print job's footprint?",
+  "text": "Charge each job with the paper it actually consumed, good sheets plus makeready and spoilage. Use the press log for sheets run, multiply by sheet weight, and apply the paper factor to the total, not just to the delivered copies.",
+  "url": "https://senseible.earth/answers/printing-press-makeready-waste-per-job"
+ },
+ {
+  "kind": "answer",
+  "title": "How much of a printing press's electricity goes to UV curing?",
+  "text": "Measure it: put a meter on the UV lamp supply for a week of normal jobs and compare with the press total. On presses that cure every unit with mercury lamps it is often a large share, and LED curing cuts it sharply.",
+  "url": "https://senseible.earth/answers/printing-press-uv-curing-electricity-share"
+ },
+ {
+  "kind": "answer",
   "title": "How does a printing unit count the paper it buys in its footprint?",
   "text": "Paper is a purchased good, Scope 3 category 1: tonnes bought times a factor per tonne, ideally from the paper mill. Add it to the press's own electricity and fuel to see which line is bigger. For most print jobs it is worth checking, because paper can outweigh the press.",
   "url": "https://senseible.earth/answers/printing-unit-paper-purchases-scope-3-share"
@@ -7514,6 +7772,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint per kg of mechanically recycled cotton or shoddy yarn from textile waste?",
   "text": "Under the cut-off method, textile waste arrives with no production burden, so count only what happens from collection on: transport of the waste, sorting and cutting, shredding or garnetting, open-end spinning power, and any virgin fibre blended in at its own footprint. Divide by kg of yarn produced, not kg of waste bought.",
   "url": "https://senseible.earth/answers/recycled-cotton-yarn-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a recycled paper mill count the waste paper it buys?",
+  "text": "Waste paper bought is a purchased good, Scope 3 category 1. Under the common cut off approach it carries only the emissions of collecting, sorting and baling, not the original paper's. Freight you pay for, including imported bales, is category 4.",
+  "url": "https://senseible.earth/answers/recycled-paper-mill-waste-paper-scope-3"
  },
  {
   "kind": "answer",
@@ -8555,9 +8819,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What will a steel mill abroad ask an Indian ferromanganese supplier for?",
+  "text": "The specific embedded emissions of your ferromanganese, in tonnes CO2 per tonne, for the latest calendar year, with how it was measured. A steel mill exporting to the EU counts your alloy as a precursor, so your figure replaces a default value in its own CBAM report.",
+  "url": "https://senseible.earth/answers/steel-mill-abroad-indian-ferromanganese-data"
+ },
+ {
+  "kind": "answer",
   "title": "Can I use my steel mill's CO2 figure for the bars I forge in my part's carbon footprint?",
   "text": "Yes, if the figure comes from an EPD or product carbon declaration for the grade and form you buy, not from the mill test certificate, which shows chemistry and strength only. Multiply it by the bar you consume per good part, including flash, scale and end cuts, then add your forging energy.",
   "url": "https://senseible.earth/answers/steel-mill-certificate-co2-for-forged-part"
+ },
+ {
+  "kind": "answer",
+  "title": "How are steel plant waste gases sent to a power plant treated under CBAM?",
+  "text": "Blast furnace, COREX and converter gases carry carbon from the steel process. Under the CBAM monitoring rules their CO2 is attributed to the steel production process, with a correction for the electricity the gas generates. Keep metered gas volumes and composition to apply it.",
+  "url": "https://senseible.earth/answers/steel-plant-waste-gas-to-power-cbam"
  },
  {
   "kind": "answer",
@@ -8897,6 +9173,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Thrissur gold jewellery workshop work out energy carbon per gram?",
+  "text": "Add the CO2 from the workshop's electricity and the LPG or gas used for melting and soldering, then divide by grams of jewellery finished. This covers making only; the gold itself is a separate and far larger figure that depends on mined or recycled metal.",
+  "url": "https://senseible.earth/answers/thrissur-gold-jewellery-workshop-energy-per-gram"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of tile adhesive per kg?",
   "text": "Cement usually drives most of the footprint: multiply the cement per kg of adhesive by its supplier figure. Add sand, polymers and bags, then drying, blending and packing energy divided by kg packed.",
   "url": "https://senseible.earth/answers/tile-adhesive-carbon-footprint-per-kg"
@@ -9044,6 +9326,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can a Turkish steel exporter reduce its EU buyer's CBAM cost with a carbon price paid in Turkey?",
   "text": "Only for a carbon price effectively paid in Turkey on the emissions embedded in the goods. Article 9 of the CBAM Regulation lets the EU declarant claim a reduction, net of any rebate or free allowance, with evidence certified by an independent person. A price that has not yet been paid cannot be claimed.",
   "url": "https://senseible.earth/answers/turkey-carbon-price-deduction-cbam-steel"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I estimate the CBAM cost per tonne of Turkish cement in 2026?",
+  "text": "Take the embedded emissions per tonne, direct plus indirect, subtract the adjustment for free allocation still given to EU producers that year, and multiply by the CBAM certificate price for the quarter. Deduct any carbon price effectively paid in Turkey.",
+  "url": "https://senseible.earth/answers/turkish-cement-cbam-cost-per-tonne-2026"
+ },
+ {
+  "kind": "answer",
+  "title": "Does a lower clinker ratio cut a Turkish cement exporter's CBAM cost?",
+  "text": "Yes, with actual data. Clinker carries most of a cement's embedded emissions, so a blended cement with less clinker per tonne has a lower figure. Default values are set per CN code and do not reward blending, so the saving reaches the buyer only through verified actual emissions.",
+  "url": "https://senseible.earth/answers/turkish-cement-lower-clinker-ratio-cbam-cost"
+ },
+ {
+  "kind": "answer",
+  "title": "Does sea freight to Europe count in a Turkish cement exporter's CBAM figure?",
+  "text": "No. CBAM embedded emissions stop at the installation gate: direct and, for cement, indirect emissions of production. Shipping from Marmara ports to the EU is not included, though a buyer asking for a full footprint may want it separately.",
+  "url": "https://senseible.earth/answers/turkish-cement-sea-freight-cbam"
  },
  {
   "kind": "answer",

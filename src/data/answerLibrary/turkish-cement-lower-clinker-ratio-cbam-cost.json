@@ -1,0 +1,68 @@
+{
+  "slug": "turkish-cement-lower-clinker-ratio-cbam-cost",
+  "q": "Does a lower clinker ratio cut a Turkish cement exporter's CBAM cost?",
+  "title": "Turkish cement: clinker ratio and CBAM",
+  "short": "Yes, with actual data. Clinker carries most of a cement's embedded emissions, so a blended cement with less clinker per tonne has a lower figure. Default values are set per CN code and do not reward blending, so the saving reaches the buyer only through verified actual emissions.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Cement producers in Turkey shipping blended and Portland cement to EU buyers",
+  "sections": [
+    {
+      "h": "Why the ratio drives the number",
+      "p": [
+        "Each tonne of clinker carries calcination CO2 and kiln fuel CO2. Cement's embedded emissions are roughly clinker share times clinker intensity, plus grinding electricity and any additives' emissions."
+      ]
+    },
+    {
+      "h": "Defaults do not see it",
+      "p": [
+        "Default values apply per CN code and country. A CEM II or CEM III with 65% clinker and a CEM I with 95% fall under similar codes, so only actual data shows the gap."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Clinker consumed per cement type, additive purchases and electricity by mill. These let the verifier attribute emissions per product."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative embedded emissions per tonne of cement",
+    "lines": [
+      "CEM I: 0.95 t clinker x 0.85 t CO2 = 0.81 t CO2",
+      "CEM II: 0.70 t clinker x 0.85 t CO2 = 0.60 t CO2",
+      "Add grinding electricity to each; the clinker share drives the gap"
+    ],
+    "note": "Clinker intensity is illustrative; use your plant's measured figure."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "PPC vs OPC cement",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Kocaeli plant electricity in CBAM",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

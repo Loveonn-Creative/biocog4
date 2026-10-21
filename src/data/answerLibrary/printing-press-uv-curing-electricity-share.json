@@ -1,0 +1,61 @@
+{
+  "slug": "printing-press-uv-curing-electricity-share",
+  "q": "How much of a printing press's electricity goes to UV curing?",
+  "title": "Printing presses: UV curing electricity",
+  "short": "Measure it: put a meter on the UV lamp supply for a week of normal jobs and compare with the press total. On presses that cure every unit with mercury lamps it is often a large share, and LED curing cuts it sharply.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Commercial, label and packaging printers running UV or LED UV presses",
+  "sections": [
+    {
+      "h": "How to measure",
+      "ol": [
+        "Clamp or install a meter on the UV power supply.",
+        "Log kWh with press hours and impressions for a representative week.",
+        "Divide lamp kWh by total press kWh to get the share, and by impressions to get kWh per thousand."
+      ]
+    },
+    {
+      "h": "What to do with it",
+      "p": [
+        "Lamp hours on idle, lamps left at full power between jobs, and ageing reflectors are common waste. A before and after reading is the evidence for a retrofit to LED."
+      ]
+    },
+    {
+      "h": "In your footprint",
+      "p": [
+        "It is all Scope 2 electricity at 0.710 kg CO2 per kWh. The share tells you where a saving would come from."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative week on one press",
+    "lines": [
+      "Press total: 4,200 kWh; UV lamps: 1,900 kWh, a 45% share",
+      "UV CO2: 1,900 x 0.710 = 1,349 kg"
+    ],
+    "note": "Figures are illustrative; your own meter readings decide the share."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Offset printing per tonne of print",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Flexo label printing per square metre",
+      "to": "/answers/flexo-label-printing-carbon-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

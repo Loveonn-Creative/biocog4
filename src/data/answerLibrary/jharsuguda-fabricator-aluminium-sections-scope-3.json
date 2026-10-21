@@ -1,0 +1,56 @@
+{
+  "slug": "jharsuguda-fabricator-aluminium-sections-scope-3",
+  "q": "How does a Jharsuguda fabricator count the aluminium sections it buys?",
+  "title": "Fabricators: aluminium sections in Scope 3",
+  "short": "Aluminium sections bought are purchased goods, Scope 3 category 1: kilograms times a factor per kg, ideally the extruder's own figure. Your workshop's electricity and gas are Scope 2 and 1. The metal is usually far larger than your fabrication energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME fabricators, window and structure makers near the Jharsuguda aluminium cluster",
+  "sections": [
+    {
+      "h": "Two parts",
+      "ul": [
+        "Bought metal: kg from invoices times the extruder's CO2 per kg, or a named database value if they have none.",
+        "Your own work: cutting, drilling, powder coating ovens and site power, from bills."
+      ]
+    },
+    {
+      "h": "Ask the extruder",
+      "p": [
+        "Primary aluminium from captive coal power and recycled aluminium differ by several times. The supplier's figure, with its share of recycled metal, matters more than anything else."
+      ]
+    },
+    {
+      "h": "Offcuts",
+      "p": [
+        "Offcuts sold back to scrap dealers do not reduce what you bought; report them separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Aluminium extrusion per kg",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Aluminium window per square metre",
+      "to": "/answers/aluminium-window-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Extruder buying Odisha aluminium",
+      "to": "/answers/extruder-buying-odisha-aluminium-cbam-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

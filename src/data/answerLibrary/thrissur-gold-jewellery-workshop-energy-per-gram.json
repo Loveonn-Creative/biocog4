@@ -1,0 +1,71 @@
+{
+  "slug": "thrissur-gold-jewellery-workshop-energy-per-gram",
+  "q": "How does a Thrissur gold jewellery workshop work out energy carbon per gram?",
+  "title": "Thrissur jewellery: workshop carbon per gram",
+  "short": "Add the CO2 from the workshop's electricity and the LPG or gas used for melting and soldering, then divide by grams of jewellery finished. This covers making only; the gold itself is a separate and far larger figure that depends on mined or recycled metal.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Gold jewellery makers and job workers in the Thrissur cluster of Kerala",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Electricity: kWh from the bill times 0.710 kg CO2 per kWh, the CEA grid factor.",
+        "LPG for torches and melting: kg from cylinder invoices times the IPCC default, about 3.0 kg CO2 per kg of LPG.",
+        "Grams finished in the same month, from the job register or stock book."
+      ]
+    },
+    {
+      "h": "Keep metal separate",
+      "p": [
+        "Gold's own footprint is set by where it came from and is many times larger than workshop energy. Report it as a separate line so a buyer can see what you control."
+      ]
+    },
+    {
+      "h": "Shared premises",
+      "p": [
+        "Many units share a building. Use your own meter if you have one; otherwise split by connected load and hours, and say so."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month for a small workshop",
+    "lines": [
+      "Electricity: 900 kWh x 0.710 = 639 kg CO2",
+      "LPG: 60 kg x 3.0 = 180 kg CO2",
+      "Finished jewellery: 4,000 g",
+      "Making stage: 819 / 4,000 = 0.20 kg CO2 per gram"
+    ],
+    "note": "Quantities are illustrative. The LPG factor is rounded from IPCC 2006 defaults; use your own bills."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Gold jewellery per gram",
+      "to": "/answers/gold-jewellery-carbon-footprint-per-gram"
+    },
+    {
+      "label": "Jewellery casting workshop emissions",
+      "to": "/answers/jewellery-casting-workshop-emissions"
+    },
+    {
+      "label": "Recycled gold claims",
+      "to": "/answers/can-i-claim-recycled-gold-is-low-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

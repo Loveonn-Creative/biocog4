@@ -1,0 +1,55 @@
+{
+  "slug": "ballari-steel-slag-sold-to-cement-plants",
+  "q": "How is steel slag sold to cement plants counted in a Ballari steel plant's footprint?",
+  "title": "Ballari steel slag sold to cement",
+  "short": "Slag sold as a by product is not waste: its emissions stay with the steel, and selling it earns no deduction from your own figure. The cement plant using granulated slag counts only grinding and transport, which is why slag cement has a lower footprint.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Integrated steel plants in Ballari selling blast furnace or COREX slag to cement makers",
+  "sections": [
+    {
+      "h": "For the steel plant",
+      "p": [
+        "All emissions from making iron and steel stay in your inventory. A slag sale is revenue, not a reduction. If you pay to dispose of slag, that cost and its emissions are Scope 3 category 5."
+      ]
+    },
+    {
+      "h": "For the cement buyer",
+      "p": [
+        "Granulated slag replaces clinker, which carries calcination and kiln fuel CO2. The buyer counts slag drying, grinding and freight, usually far less per tonne than clinker."
+      ]
+    },
+    {
+      "h": "Avoid double claims",
+      "p": [
+        "Do not claim the cement plant's clinker saving as your own reduction. Each company reports its own emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "PPC vs OPC cement",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Selling production scrap",
+      "to": "/answers/selling-production-scrap-scope-3-category-5"
+    },
+    {
+      "label": "Slag in cement raw meal",
+      "to": "/answers/marmara-cement-slag-in-raw-meal-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

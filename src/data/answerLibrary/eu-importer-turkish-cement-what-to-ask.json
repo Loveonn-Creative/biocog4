@@ -1,0 +1,62 @@
+{
+  "slug": "eu-importer-turkish-cement-what-to-ask",
+  "q": "What should an EU importer ask a Turkish cement supplier for?",
+  "title": "EU importers: Turkish cement data",
+  "short": "Ask for direct and indirect specific embedded emissions per tonne for each cement type, the clinker share and its origin, the electricity factor used, the reporting period and whether figures are verified. Cement is charged on both direct and indirect emissions.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers buying cement and clinker from Turkey",
+  "sections": [
+    {
+      "h": "The request",
+      "ul": [
+        "Specific direct embedded emissions per tonne of cement, by CN code.",
+        "Specific indirect emissions and the electricity factor applied.",
+        "Clinker share, and for bought clinker its producer's figure or the default.",
+        "Reporting period, installation name and verification status."
+      ]
+    },
+    {
+      "h": "Carbon price paid",
+      "p": [
+        "If the producer paid a carbon price in Turkey, ask for evidence. A carbon price effectively paid in the country of origin can reduce the certificates owed, under strict conditions."
+      ]
+    },
+    {
+      "h": "Without data",
+      "p": [
+        "Default values with the yearly mark up apply. For a lower clinker cement, that usually costs more than actual data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Turkish rebar supplier questions",
+      "to": "/answers/eu-importer-turkish-rebar-supplier-what-to-ask"
+    },
+    {
+      "label": "Turkey carbon price deduction",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    },
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

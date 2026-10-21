@@ -1,0 +1,56 @@
+{
+  "slug": "marmara-cement-slag-in-raw-meal-co2",
+  "q": "Does adding slag to cement raw meal cut calcination CO2?",
+  "title": "Slag in raw meal: calcination CO2",
+  "short": "Yes. Calcination CO2 comes only from carbonates such as limestone. Calcium supplied by already decarbonated material, like steel slag or fly ash in the raw meal, releases no CO2 in the kiln, so CO2 per tonne of clinker falls.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement plants in Turkey, India and elsewhere using steel slag or other decarbonated materials in kiln feed",
+  "sections": [
+    {
+      "h": "Why it works",
+      "p": [
+        "The IPCC default links clinker CO2 to its lime content on the assumption that all the lime came from carbonate. If part of the lime comes from slag, that share released no CO2, so the default overstates emissions."
+      ]
+    },
+    {
+      "h": "How to show it",
+      "ul": [
+        "Use a raw meal based method: carbonate content of the kiln feed, measured by lab analysis.",
+        "Or adjust the clinker based factor for non carbonate calcium, with slag tonnes and its CaO content."
+      ]
+    },
+    {
+      "h": "For CBAM and buyers",
+      "p": [
+        "The lower calcination figure counts only with measurements a verifier can check. Keep raw meal and slag analyses for the year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Process CO2 from limestone",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Ballari steel slag sold to cement",
+      "to": "/answers/ballari-steel-slag-sold-to-cement-plants"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "hpht-diamond-press-electricity-per-carat",
+  "q": "How do I work out electricity carbon per carat for an HPHT diamond press?",
+  "title": "HPHT diamond press: carbon per carat",
+  "short": "Meter each press, add the kWh for every growth run in a month, multiply by your grid factor and divide by rough carats grown. HPHT presses run hot and long, so electricity dominates; use metered runs, not nameplate ratings.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Lab grown diamond growers using HPHT cubic presses in Surat and elsewhere in Gujarat",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "kWh per press per month from sub meters.",
+        "Multiply by 0.710 kg CO2 per kWh, or by the factor for your supply if you buy green power with valid attributes.",
+        "Divide by rough carats grown, then by the cutting yield if a buyer wants per polished carat."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "p": [
+        "Using press rating times hours overstates use when presses cycle; ignoring chillers and compressors understates it. Meter the plant auxiliaries and share them by run hours."
+      ]
+    },
+    {
+      "h": "Claims",
+      "p": [
+        "A low carbon claim needs the electricity contract and meter data behind it. Without them, the grid factor applies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "CVD grower electricity per carat",
+      "to": "/answers/surat-cvd-diamond-grower-electricity-per-carat"
+    },
+    {
+      "label": "Lab grown diamond per carat",
+      "to": "/answers/lab-grown-diamond-carbon-footprint-per-carat"
+    },
+    {
+      "label": "Can lab grown diamonds be called sustainable?",
+      "to": "/answers/can-lab-grown-diamonds-be-called-sustainable"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

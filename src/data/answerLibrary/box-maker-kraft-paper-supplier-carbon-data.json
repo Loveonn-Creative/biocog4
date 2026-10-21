@@ -1,0 +1,58 @@
+{
+  "slug": "box-maker-kraft-paper-supplier-carbon-data",
+  "q": "What should a box maker ask its kraft paper mill for?",
+  "title": "Box makers: kraft paper supplier data",
+  "short": "Ask for CO2e per tonne of kraft paper for a stated year, what it includes, and how biomass fuel was treated. Kraft paper is usually the biggest line in a corrugated box's footprint, so the mill's figure decides most of yours.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Corrugated box makers supplying FMCG, pharma and export customers",
+  "sections": [
+    {
+      "h": "The questions",
+      "ul": [
+        "CO2e per tonne, by grade, for a named calendar or financial year.",
+        "Boundary: mill gate only, or including waste paper and chemicals.",
+        "Fuel mix and how biogenic CO2 was reported.",
+        "Electricity source, grid or captive, and the factor used."
+      ]
+    },
+    {
+      "h": "If the mill has no figure",
+      "p": [
+        "Ask for fuel, power and output for the year and work it out with them. Mark it as supplier data you calculated, not a published figure."
+      ]
+    },
+    {
+      "h": "Use it",
+      "p": [
+        "Multiply by tonnes of paper per box, including trim waste, and add your own corrugator and conversion energy."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Corrugated box per kg",
+      "to": "/answers/corrugated-box-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Muzaffarnagar kraft mill boiler fuel",
+      "to": "/answers/muzaffarnagar-kraft-paper-mill-boiler-fuel"
+    },
+    {
+      "label": "Using a supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

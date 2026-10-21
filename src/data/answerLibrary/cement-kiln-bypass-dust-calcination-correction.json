@@ -1,0 +1,53 @@
+{
+  "slug": "cement-kiln-bypass-dust-calcination-correction",
+  "q": "How do I correct calcination CO2 for kiln bypass dust?",
+  "title": "Cement kilns: bypass dust correction",
+  "short": "Dust removed from the kiln system, such as bypass or cement kiln dust, has been partly or fully calcined, so its CO2 was released too. Add it: tonnes of dust times its calcination degree times the CO2 factor. IPCC Tier 1 uses a 2% uplift on clinker CO2 when dust data is missing.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants with chlorine bypass systems or dust leaving the kiln system",
+  "sections": [
+    {
+      "h": "The correction",
+      "p": [
+        "CO2 from dust = tonnes of dust leaving the system x degree of calcination x the carbonate CO2 factor of the raw meal. Add it to clinker based calcination CO2."
+      ]
+    },
+    {
+      "h": "When to measure",
+      "ul": [
+        "Bypass systems on plants burning chlorine rich alternative fuels.",
+        "Dust sold or landfilled rather than returned to the kiln.",
+        "Not dust returned to the kiln feed, which stays inside the balance."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Dust tonnes from weighing, and calcination degree from regular loss on ignition tests."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Process CO2 from limestone",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

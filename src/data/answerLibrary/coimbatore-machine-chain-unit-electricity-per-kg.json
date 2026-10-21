@@ -1,0 +1,57 @@
+{
+  "slug": "coimbatore-machine-chain-unit-electricity-per-kg",
+  "q": "How does a Coimbatore machine chain unit work out carbon per kg?",
+  "title": "Coimbatore machine chains: carbon per kg",
+  "short": "Divide the month's electricity emissions, plus any LPG used for annealing or soldering, by kilograms of chain produced. Chain machines, rolling mills and annealing furnaces draw most of the power, so meter them if you can.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Machine made gold and silver chain manufacturers in the Coimbatore jewellery cluster",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "kWh from the electricity bill times 0.710 kg CO2 per kWh.",
+        "LPG or gas for annealing and soldering, from invoices, times the IPCC default.",
+        "Kilograms of chain produced, from the production register, excluding metal returned as scrap."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "State whether the figure is per kg of finished chain or per kg of metal processed. Scrap goes back to the melt, so processed weight is usually higher."
+      ]
+    },
+    {
+      "h": "Metal is separate",
+      "p": [
+        "The figure covers making only. The metal's footprint depends on its source and is reported separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Silver jewellery per kg",
+      "to": "/answers/silver-jewellery-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Thrissur workshop carbon per gram",
+      "to": "/answers/thrissur-gold-jewellery-workshop-energy-per-gram"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

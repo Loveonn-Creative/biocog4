@@ -1,0 +1,53 @@
+{
+  "slug": "ferro-alloy-slag-and-dust-carbon-in-balance",
+  "q": "How do slag and dust enter a ferro alloy plant's carbon mass balance?",
+  "title": "Ferro alloy: slag and dust carbon",
+  "short": "Carbon leaving in slag, bag filter dust or sludge was not emitted, so subtract it in the mass balance. Multiply tonnes of each stream by its measured carbon content. If you assume zero, say so and show it is small.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferrochrome, ferromanganese and silico-manganese plants preparing CBAM or buyer carbon figures",
+  "sections": [
+    {
+      "h": "Why it matters",
+      "p": [
+        "Leaving carbon out of the outputs side overstates emissions; counting it without data understates them. A verifier will want to see either a measurement or evidence that the stream is negligible."
+      ]
+    },
+    {
+      "h": "What to measure",
+      "ul": [
+        "Slag tonnes per month and carbon content from periodic samples.",
+        "Dust and sludge collected, with carbon content, if they are sold or landfilled.",
+        "Carbon in the alloy from product analysis, which is usually the largest output term."
+      ]
+    },
+    {
+      "h": "When dust is recycled",
+      "p": [
+        "If dust goes back into the furnace, its carbon is not an output. Count it only when it leaves the installation."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    },
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

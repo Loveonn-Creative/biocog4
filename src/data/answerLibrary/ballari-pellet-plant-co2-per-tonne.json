@@ -1,0 +1,61 @@
+{
+  "slug": "ballari-pellet-plant-co2-per-tonne",
+  "q": "How does a Ballari pellet plant work out CO2 per tonne of pellets?",
+  "title": "Ballari pellet plants: CO2 per tonne",
+  "short": "Add fuel burnt in the induration furnace or grate, such as coal, coke breeze, furnace oil or gas, to process CO2 from limestone and dolomite additives, then divide by tonnes of pellets. Pellets are covered by CBAM, and for them electricity is reported but not charged.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Iron ore pellet plants in the Ballari and Hospet region of Karnataka",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "Fuel: tonnes or kilolitres times the emission factor, using carbon content from supplier analysis where available.",
+        "Additives: tonnes of limestone or dolomite times 0.440 or 0.477 t CO2 per tonne of pure carbonate.",
+        "Bentonite and other binders without carbonates add no process CO2."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Grinding and balling use a lot of power. Record kWh at 0.710 kg CO2 per kWh for your footprint, even though CBAM does not charge it for iron and steel goods."
+      ]
+    },
+    {
+      "h": "Per dry tonne",
+      "p": [
+        "Buyers may want the figure per dry tonne. Keep the moisture basis of your production figure clear."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are iron ore pellets covered by CBAM?",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    },
+    {
+      "label": "Process CO2 from limestone",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Coal based sponge iron CO2",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

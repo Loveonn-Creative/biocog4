@@ -1,0 +1,62 @@
+{
+  "slug": "moroccan-rebar-exporter-cbam-data-for-eu-buyer",
+  "q": "What CBAM data should a Moroccan rebar exporter send its EU buyer?",
+  "title": "Moroccan rebar: CBAM data for EU buyers",
+  "short": "Send the direct emissions per tonne of rebar for the calendar year, worked out at installation level: melt shop and rolling mill fuel, electrodes and charge carbon, plus the embedded emissions of any billets, DRI or ferro alloys you bought. Add production tonnes, the CN code and how each figure was measured.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Rebar and wire rod exporters in Morocco shipping to EU buyers, from Jorf Lasfar to the Casablanca mills",
+  "sections": [
+    {
+      "h": "The figures your buyer needs",
+      "ul": [
+        "Specific direct embedded emissions, in tonnes CO2 per tonne of rebar, for the reporting year.",
+        "Tonnes of rebar produced and exported under each CN code, usually 7214 or 7213.",
+        "Embedded emissions of each precursor you bought in, such as billets, DRI or ferromanganese, with the supplier figure or the default value used.",
+        "Electricity used, in MWh. It is not charged for steel, but the report form still asks for it."
+      ]
+    },
+    {
+      "h": "Where the numbers come from",
+      "p": [
+        "Fuel invoices for reheating furnace and ladle gas or oil, electrode and charge carbon purchases, lime and dolomite if charged raw, and the weighbridge record of scrap and precursors. Divide the year's direct emissions by the year's good output, not by tonnes shipped to one buyer."
+      ]
+    },
+    {
+      "h": "Why actual data is worth the effort",
+      "p": [
+        "Default values are set by country and CN code with a mark up that rises each year. A scrap based EAF mill usually sits well below the default, so verified actual data is how that advantage reaches the buyer's CBAM bill."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "Does scrap count as zero emissions?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Marmara EAF direct emissions",
+      "to": "/answers/marmara-eaf-steel-mill-cbam-direct-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

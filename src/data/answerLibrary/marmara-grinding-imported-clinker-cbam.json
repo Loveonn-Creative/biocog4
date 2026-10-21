@@ -1,0 +1,62 @@
+{
+  "slug": "marmara-grinding-imported-clinker-cbam",
+  "q": "How does a Marmara grinding unit count imported clinker in CBAM?",
+  "title": "Grinding units: imported clinker in CBAM",
+  "short": "Clinker is a precursor. Add tonnes of clinker used times its producer's verified embedded emissions, or the default value for its origin, to your own grinding electricity, then divide by tonnes of cement. Clinker usually decides most of the figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cement grinding units in Turkey's Marmara region that buy clinker from other plants or abroad",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Clinker used x the clinker's specific embedded emissions, direct and indirect.",
+        "Your grinding electricity x the applicable electricity factor.",
+        "Any fuel burnt on site, such as for slag drying.",
+        "Divide the total by tonnes of cement produced."
+      ]
+    },
+    {
+      "h": "Ask the clinker supplier",
+      "p": [
+        "Request its verified direct and indirect emissions per tonne of clinker for the same period. Without them, the default value for the supplier's country applies."
+      ]
+    },
+    {
+      "h": "Additives",
+      "p": [
+        "Slag, fly ash and limestone added at grinding carry little process CO2. Record tonnes so the clinker share is clear."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Cement grinding unit CO2",
+      "to": "/answers/cement-grinding-unit-co2-per-tonne"
+    },
+    {
+      "label": "Egypt clinker exporter per tonne",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    },
+    {
+      "label": "Clinker ratio and CBAM cost",
+      "to": "/answers/turkish-cement-lower-clinker-ratio-cbam-cost"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

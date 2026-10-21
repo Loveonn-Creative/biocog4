@@ -1,0 +1,55 @@
+{
+  "slug": "aluminium-smelter-alumina-scope-3-not-precursor",
+  "q": "Is alumina a CBAM precursor for an aluminium smelter?",
+  "title": "Alumina: Scope 3, not a CBAM precursor",
+  "short": "No. Alumina is not a CBAM good, so its refining emissions do not enter the embedded emissions of the aluminium you export. It is still a purchased good in your Scope 3, often a large one, and EU buyers asking for a full footprint will want it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium smelters in Odisha and elsewhere buying alumina from refineries",
+  "sections": [
+    {
+      "h": "What CBAM counts",
+      "p": [
+        "For unwrought aluminium, CBAM charges the smelter's direct emissions: anode CO2, PFCs and fuel. Precursors are unwrought aluminium bought in for further processing, not raw materials like alumina."
+      ]
+    },
+    {
+      "h": "Where alumina belongs",
+      "p": [
+        "Scope 3 category 1. Ask the refinery for its CO2 per tonne of alumina; refineries burn a lot of coal or gas for steam and calcining. About two tonnes of alumina go into a tonne of aluminium."
+      ]
+    },
+    {
+      "h": "Why buyers ask",
+      "p": [
+        "Car makers and packaging buyers compare cradle to gate aluminium figures. Alumina and power often outweigh the CBAM direct emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Odisha smelter captive coal power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Jharsuguda anode CO2",
+      "to": "/answers/jharsuguda-smelter-anode-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "egypt-rebar-mill-hot-charging-billets-cbam",
+  "q": "Does hot charging billets lower an Egyptian rebar mill's CBAM figure?",
+  "title": "Egyptian rebar: hot charging and CBAM",
+  "short": "Yes, if it cuts the gas your reheating furnace burns. Reheating fuel is part of the rolling mill's direct emissions, so billets charged hot need less gas per tonne. Show it with metered furnace gas and the share of billets hot charged in the year.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Integrated rebar mills in Egypt, such as those around 10th of Ramadan City and Ain Sokhna, that roll their own billets",
+  "sections": [
+    {
+      "h": "Where the saving shows up",
+      "p": [
+        "Reheating furnace gas, multiplied by its emission factor, is a direct emission of the installation. Natural gas at the IPCC default is 56.1 t CO2 per TJ. Less gas per tonne of rebar means a lower specific embedded emission for the whole year."
+      ]
+    },
+    {
+      "h": "What to measure",
+      "ul": [
+        "Furnace gas from a dedicated meter, not a share of the site total.",
+        "Billets charged hot and cold each month, from the rolling log.",
+        "Rebar output, so the figure is per tonne of product."
+      ]
+    },
+    {
+      "h": "Keep the comparison honest",
+      "p": [
+        "A low gas month is not proof on its own. Compare months with similar hot charge shares and product mix, and keep the meter calibration record ready for the verifier."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative reheating gas per tonne",
+    "lines": [
+      "Cold charging: 1.30 GJ gas per tonne x 56.1 kg CO2 per GJ = 72.9 kg CO2",
+      "With 60% hot charged: 0.85 GJ per tonne x 56.1 = 47.7 kg CO2",
+      "Saving: about 25 kg CO2 per tonne of rebar"
+    ],
+    "note": "Gas use per tonne is illustrative; use your own metered figures."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Egypt DRI and EAF rebar mill",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    },
+    {
+      "label": "Natural gas SCM vs Nm3",
+      "to": "/answers/natural-gas-scm-vs-nm3-conversion"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

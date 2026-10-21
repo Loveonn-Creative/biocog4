@@ -1,0 +1,61 @@
+{
+  "slug": "ain-sokhna-flat-steel-mill-bought-slab-cbam",
+  "q": "How does an Ain Sokhna flat steel mill count bought slab in CBAM?",
+  "title": "Ain Sokhna flat steel: bought slab in CBAM",
+  "short": "Bought slab is a precursor. Add its embedded emissions, from the slab supplier's verified figure or the default value, to your own direct emissions from reheating and rolling, then divide by tonnes of coil or plate produced.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Flat steel rolling mills in Egypt's Ain Sokhna zone that roll purchased slab into hot rolled coil or plate for EU buyers",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Your direct emissions: reheating furnace gas and any other fuel burnt in the rolling mill.",
+        "Precursor emissions: tonnes of slab used times the slab's specific embedded emissions.",
+        "Add both and divide by the tonnes of coil or plate produced in the year."
+      ]
+    },
+    {
+      "h": "Getting the slab figure",
+      "p": [
+        "Ask the slab producer for its verified specific embedded emissions for the same period, and record the slab's producer and country of origin. Without supplier data, use the default value for the slab's CN code and origin."
+      ]
+    },
+    {
+      "h": "Why it dominates",
+      "p": [
+        "Slab from a blast furnace route carries around two tonnes of CO2 per tonne, far more than rolling adds. The supplier figure decides most of your number, so start that conversation early."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Steel pipes from purchased coil",
+      "to": "/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+    },
+    {
+      "label": "Egypt DRI and EAF rebar mill",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel Association",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

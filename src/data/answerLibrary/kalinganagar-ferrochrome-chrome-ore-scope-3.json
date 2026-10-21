@@ -1,0 +1,56 @@
+{
+  "slug": "kalinganagar-ferrochrome-chrome-ore-scope-3",
+  "q": "How does a Kalinganagar ferrochrome plant count chrome ore in Scope 3?",
+  "title": "Ferrochrome: chrome ore in Scope 3",
+  "short": "Chrome ore bought from Sukinda valley mines is a purchased good, Scope 3 category 1: tonnes times a factor for mining and processing, ideally from the mine. Trucking it to the plant is category 4 if you pay for the freight.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferrochrome plants in Kalinganagar and Jajpur buying chrome ore from Odisha's Sukinda valley",
+  "sections": [
+    {
+      "h": "Two lines, two categories",
+      "ul": [
+        "Category 1: ore tonnes times the mine's figure per tonne. Ask the mine for its diesel, explosives and electricity per tonne if it has no published number.",
+        "Category 4: tonne kilometres by truck or rail times a factor for the mode, when you pay the transporter."
+      ]
+    },
+    {
+      "h": "What is not Scope 3",
+      "p": [
+        "Ore drying or briquetting inside your own plant is Scope 1. Electricity your plant buys is Scope 2."
+      ]
+    },
+    {
+      "h": "Why bother",
+      "p": [
+        "It is small next to the furnace, but EU buyers asking for a cradle to gate figure expect it. A mine figure based on its own diesel is better than a generic number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Hospet mine diesel per tonne",
+      "to": "/answers/hospet-iron-ore-mine-diesel-per-tonne"
+    },
+    {
+      "label": "Truck freight factors in India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "ballari-iron-ore-trucks-to-port-emissions",
+  "q": "How do I work out emissions from trucking Ballari iron ore to the port?",
+  "title": "Ballari ore trucks to port: emissions",
+  "short": "Multiply tonnes carried by road kilometres and by a factor for the truck class, or use the diesel the transporter actually burnt times 2.68 kg CO2 per litre. If you pay the transporter, it is your Scope 3 category 4.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Iron ore sellers and traders in the Ballari Hospet belt moving ore by road to ports or rail sidings",
+  "sections": [
+    {
+      "h": "Two ways",
+      "ul": [
+        "Distance based: tonnes x km x factor per tonne km. The Smart Freight Centre India default for 30 to 50 tonne trucks is 0.0663 kg CO2e per tonne km.",
+        "Fuel based: litres of diesel from the transporter x 2.68 kg CO2 per litre. Better when you can get it."
+      ]
+    },
+    {
+      "h": "Return trips",
+      "p": [
+        "Ore trucks often return empty. Published tonne km factors usually include typical empty running; do not add the empty leg again."
+      ]
+    },
+    {
+      "h": "Rail",
+      "p": [
+        "Moving ore to a rail siding and then by rail cuts emissions per tonne km sharply. Calculate each leg with its own mode factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative trip to the port",
+    "lines": [
+      "Load: 35 t; distance: 300 km",
+      "35 x 300 = 10,500 tonne km",
+      "10,500 x 0.0663 = 696 kg CO2e"
+    ],
+    "note": "Load and distance are illustrative; 0.0663 kg CO2e per tonne km is the SFC India default for 30 to 50 tonne trucks, well to wheel."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Morbi tile trucks to Mundra port",
+      "to": "/answers/morbi-tile-trucks-to-mundra-port-emissions"
+    },
+    {
+      "label": "Rail vs road freight in India",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Hired trucks: Scope 1 or 3?",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

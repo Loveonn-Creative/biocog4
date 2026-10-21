@@ -1,0 +1,57 @@
+{
+  "slug": "marmara-cement-waste-heat-power-cbam",
+  "q": "How does waste heat power count in a Marmara cement plant's CBAM figure?",
+  "title": "Cement waste heat power and CBAM",
+  "short": "Waste heat recovery power uses heat from the kiln that is already counted, so it adds no fuel emissions. It lowers the grid electricity you buy, and with it the indirect emissions CBAM counts for cement. Meter its output separately.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cement plants in Turkey's Marmara region with waste heat recovery systems on kiln exhaust and clinker coolers",
+  "sections": [
+    {
+      "h": "Why it helps under CBAM",
+      "p": [
+        "Cement is charged on indirect emissions as well as direct. Each kWh made from waste heat replaces a kWh from the grid at the country factor, so indirect emissions per tonne fall."
+      ]
+    },
+    {
+      "h": "How to show it",
+      "ul": [
+        "Metered WHR generation and internal use.",
+        "Grid imports by month.",
+        "Electricity per tonne of clinker and cement before and after."
+      ]
+    },
+    {
+      "h": "Check the rules",
+      "p": [
+        "The CBAM rules set how self generated electricity is valued. Confirm with your verifier how WHR output is treated in the version in force."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Kocaeli plant electricity in CBAM",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    },
+    {
+      "label": "EU importer and Egyptian cement indirect emissions",
+      "to": "/answers/eu-importer-egyptian-cement-indirect-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "ferro-alloy-plant-coke-and-coal-records",
+  "q": "Which coke and coal records does a ferro alloy plant need for its carbon figure?",
+  "title": "Ferro alloy reductants: records to keep",
+  "short": "For each reductant keep tonnes received, opening and closing stock, moisture, and fixed carbon or total carbon from a lab analysis. The mass balance needs carbon actually charged, so purchase invoices alone are not enough.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferrochrome, ferromanganese and silico-manganese plants in Odisha, Chhattisgarh and Andhra Pradesh",
+  "sections": [
+    {
+      "h": "The minimum set",
+      "ul": [
+        "Purchase invoices and weighbridge slips for coke, coal, char and electrode paste.",
+        "Monthly stock counts, so consumption equals receipts plus opening minus closing stock.",
+        "Moisture per lot, because carbon content is measured on a dry basis.",
+        "Carbon content per lot or per month from your lab or the supplier's certificate."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "p": [
+        "Using total coke bought for the year without the stock change, or applying a book carbon content when lab results exist. Both move the figure by several per cent and a verifier will ask."
+      ]
+    },
+    {
+      "h": "Output side",
+      "p": [
+        "Carbon in the alloy from product analysis, and carbon in slag and dust if material. These are subtracted in the balance."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Slag and dust in the balance",
+      "to": "/answers/ferro-alloy-slag-and-dust-carbon-in-balance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

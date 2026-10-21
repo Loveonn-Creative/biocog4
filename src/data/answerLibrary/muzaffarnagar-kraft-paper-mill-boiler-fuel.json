@@ -1,0 +1,57 @@
+{
+  "slug": "muzaffarnagar-kraft-paper-mill-boiler-fuel",
+  "q": "How does a Muzaffarnagar kraft paper mill count its boiler fuel?",
+  "title": "Muzaffarnagar kraft mills: boiler fuel",
+  "short": "Coal and petcoke burnt are Scope 1 at their emission factors. Rice husk, bagasse and other biomass give biogenic CO2, reported separately, with their methane and nitrous oxide in Scope 1. Divide by tonnes of kraft paper made for a per tonne figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Kraft paper mills in the Muzaffarnagar cluster of western Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Record by fuel",
+      "ul": [
+        "Tonnes of each fuel burnt, from purchases and stock change.",
+        "Calorific value from supplier or lab tests, so fuel energy can be checked against steam output.",
+        "Kraft paper output by grade."
+      ]
+    },
+    {
+      "h": "Mixed firing",
+      "p": [
+        "Many mills switch between coal and biomass with price and season. Record the mix every month rather than an annual average, so the figure reflects what was actually burnt."
+      ]
+    },
+    {
+      "h": "Buyers",
+      "p": [
+        "Box makers and FMCG buyers increasingly ask kraft suppliers for a figure per tonne. A monthly fuel record by type is the base for it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Kraft paper per tonne",
+      "to": "/answers/kraft-paper-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Box maker asking kraft suppliers",
+      "to": "/answers/box-maker-kraft-paper-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "jharsuguda-smelter-renewable-power-cbam-effect",
+  "q": "Does renewable power lower a Jharsuguda smelter's CBAM figure?",
+  "title": "Smelters: renewable power and CBAM",
+  "short": "Not today. Aluminium is charged on direct emissions only, so switching part of the smelter load to renewable power does not change certificates. It lowers your Scope 2 and the cradle to gate figure buyers compare, and indirect emissions may be added to CBAM later.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium smelters in Odisha contracting renewable power through green open access or round the clock supply deals",
+  "sections": [
+    {
+      "h": "What CBAM charges",
+      "p": [
+        "Annex II of the CBAM Regulation lists aluminium among goods charged on direct emissions only. Electricity is reported, not charged."
+      ]
+    },
+    {
+      "h": "Where it pays",
+      "ul": [
+        "Market based Scope 2 under the GHG Protocol, with valid attributes and no double sale.",
+        "Product footprints, where power is the largest single item for primary aluminium.",
+        "Buyer programmes that set low carbon aluminium thresholds per tonne."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Open access approvals, monthly energy accounts and certificates retired in your name. Without them the grid or captive factor applies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Odisha smelter captive coal power",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Green open access charges",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Renewable PPAs for Moroccan steel",
+      "to": "/answers/morocco-steel-mill-renewable-ppa-cbam-effect"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
