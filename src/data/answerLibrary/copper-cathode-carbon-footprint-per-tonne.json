@@ -1,0 +1,62 @@
+{
+  "slug": "copper-cathode-carbon-footprint-per-tonne",
+  "q": "What makes up the carbon footprint of a tonne of copper cathode?",
+  "title": "Copper cathode: footprint per tonne",
+  "short": "Mining and concentrating ore, usually the largest share and heavy on diesel and electricity; smelting and converting; and electrolytic refining, which is mostly electricity. The grid behind the mine and refinery decides much of the total, so cathode from a coal heavy grid can carry several times the figure of cathode refined on clean power.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cable, wire and component makers buying copper, and their buyers asking for product footprints",
+  "sections": [
+    {
+      "h": "Stages",
+      "ul": [
+        "Mine: haul trucks, crushing and grinding, often the biggest part.",
+        "Concentrator: flotation power.",
+        "Smelter: fuel and oxygen.",
+        "Refinery: electricity for electrolysis."
+      ]
+    },
+    {
+      "h": "Primary vs recycled",
+      "p": [
+        "Cathode refined from scrap skips mining and concentrating, so its figure is usually much lower. Ask the supplier for the recycled share."
+      ]
+    },
+    {
+      "h": "Using it",
+      "p": [
+        "Ask your supplier for a cradle to gate figure with year and boundary. If you must use an average, name the source and mark it as an estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Copper cable per km",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    },
+    {
+      "label": "Enamelled copper wire",
+      "to": "/answers/enamelled-copper-wire-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Smelter acid allocation",
+      "to": "/answers/dahej-copper-smelter-sulphuric-acid-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

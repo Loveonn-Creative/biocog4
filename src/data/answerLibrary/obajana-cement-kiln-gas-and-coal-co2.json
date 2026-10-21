@@ -1,0 +1,56 @@
+{
+  "slug": "obajana-cement-kiln-gas-and-coal-co2",
+  "q": "How does a large Nigerian cement plant like Obajana work out CO2 per tonne of clinker?",
+  "title": "Obajana cement: CO2 per tonne of clinker",
+  "short": "Add process CO2 from limestone calcination, about 0.52 tonnes per tonne of clinker for typical raw meal, to fuel CO2 from the gas, coal or mix burnt in the kiln. Divide by tonnes of clinker made. Plants switching between gas and coal should keep the fuel split by month, because coal gives more CO2 per unit of heat.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement producers in Kogi, Ogun and Edo states and the lenders and buyers reading their figures",
+  "sections": [
+    {
+      "h": "Two sources",
+      "ul": [
+        "Calcination: CaCO3 to CaO in the kiln, set by raw meal chemistry.",
+        "Kiln fuel: gas, coal or a mix, each with its own factor per unit of heat."
+      ]
+    },
+    {
+      "h": "Fuel switching",
+      "p": [
+        "Moving from gas to coal raises fuel CO2 per tonne of clinker. Report the months on each fuel so the change is visible, not averaged away."
+      ]
+    },
+    {
+      "h": "Then cement",
+      "p": [
+        "Cement per tonne is clinker share times the clinker figure, plus grinding power. More limestone or other additions lowers it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Process CO2 from calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Captive gas power at Nigerian plants",
+      "to": "/answers/nigeria-cement-plant-captive-gas-power-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

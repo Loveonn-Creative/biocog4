@@ -1,0 +1,65 @@
+{
+  "slug": "athi-river-epz-garment-factory-diesel-backup",
+  "q": "How does a garment factory in Kenya's Athi River EPZ report diesel backup alongside grid power?",
+  "title": "Athi River EPZ: diesel and grid",
+  "short": "Grid power is Scope 2 at Kenya's factor, which is low because most power comes from geothermal, hydro and wind. Diesel burnt in your own generators is Scope 1 at about 2.68 kg CO2 per litre. Report both separately so a brand can see how much outages cost in emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Apparel exporters in Athi River, Mombasa and other Kenyan export zones",
+  "sections": [
+    {
+      "h": "Two lines",
+      "ul": [
+        "Grid kWh from bills times the Kenyan factor: Scope 2.",
+        "Litres of diesel times 2.68 kg CO2 per litre: Scope 1."
+      ]
+    },
+    {
+      "h": "Why separate",
+      "p": [
+        "On a clean grid, a week of diesel can outweigh a month of grid power. Showing it makes a case for a battery or solar backup."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Power bills, generator fuel receipts and run hour logs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Kenya grid factor",
+      "to": "/answers/kenya-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Faisalabad gas generator",
+      "to": "/answers/faisalabad-textile-mill-gas-generator-scope-1"
+    },
+    {
+      "label": "Garment stitching per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "example": {
+    "title": "Worked example: one month",
+    "lines": [
+      "Grid: 60,000 kWh x 0.1 (assumed Kenyan factor) = 6,000 kg CO2, Scope 2",
+      "Diesel: 4,000 L x 2.68 = 10,720 kg CO2, Scope 1",
+      "Diesel is 64% of the month's total: 10,720 / 16,720"
+    ],
+    "note": "The grid factor here is an assumption for illustration. Use the official or IEA figure for the year."
+  }
+}

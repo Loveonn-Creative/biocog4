@@ -1,0 +1,70 @@
+{
+  "slug": "ankleshwar-api-unit-solvent-recovery-emissions",
+  "q": "How should an Ankleshwar bulk drug unit count emissions from solvent recovery and incineration?",
+  "title": "Ankleshwar API unit: solvent emissions",
+  "short": "Steam and power used to distil solvents back for reuse are ordinary Scope 1 and 2. Solvent you burn in your own incinerator or thermal oxidiser is Scope 1 at its carbon content. Solvent waste sent to a common incinerator is Scope 3, Category 5, using the operator's figure or a stated estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bulk drug and intermediate makers in Ankleshwar, Panoli and Jhagadia",
+  "sections": [
+    {
+      "h": "Three routes, three answers",
+      "ul": [
+        "Recovered in house: count the steam and electricity used by the recovery columns.",
+        "Burnt in your own incinerator: Scope 1, carbon in the solvent converted to CO2, plus any support fuel.",
+        "Sent out to a common hazardous waste incinerator: Scope 3, waste generated in operations."
+      ]
+    },
+    {
+      "h": "Working out the carbon",
+      "p": [
+        "For a known solvent, the carbon fraction comes from its formula; toluene is about 91 percent carbon by mass, methanol about 37 percent. Multiply tonnes burnt by carbon fraction and by 44/12."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "p": [
+        "Solvent purchase invoices, recovery logs, incinerator feed records and manifests for waste sent out. They also support the solvent balance a pharma buyer may ask for."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, steam, electricity and raw material invoices into a dated, fingerprinted record per unit, so a product figure can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Pharma KSM imports factor",
+      "to": "/answers/pharma-ksm-imports-from-china-emission-factor"
+    },
+    {
+      "label": "CETP and effluent scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Tablet footprint",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21",
+  "example": {
+    "title": "Worked example: 10 tonnes of toluene burnt in your own oxidiser",
+    "lines": [
+      "Carbon: 10 t x 0.913 = 9.13 t C",
+      "CO2: 9.13 x 44/12 = 33.5 t CO2, Scope 1",
+      "Plus the support fuel burnt, from the fuel invoices"
+    ],
+    "note": "Carbon fractions come from the chemical formula. Mixed solvent streams need the mix from the recovery log."
+  }
+}

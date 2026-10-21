@@ -1,0 +1,57 @@
+{
+  "slug": "pakistan-cement-coal-source-emissions",
+  "q": "Does switching between Afghan, imported and local coal change a Pakistani cement plant's CO2?",
+  "title": "Coal source and CO2 at Pakistani plants",
+  "short": "Per unit of heat the difference is modest, since most bituminous and subbituminous coals sit near 95 kg CO2 per GJ; per tonne it can be large, because heat content varies. Work out CO2 from each lot's tonnes and lab tested heat value or carbon content, not from a single factor per tonne.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement plants in Punjab and Khyber Pakhtunkhwa buying coal from several sources",
+  "sections": [
+    {
+      "h": "Why per tonne misleads",
+      "p": [
+        "A tonne of high ash local coal and a tonne of imported coal give very different heat. A per tonne factor overstates one and understates the other."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "Tonnes per lot from weighbridge and invoices.",
+        "Lab gross calorific value, ash and moisture per lot.",
+        "Carbon content if tested."
+      ]
+    },
+    {
+      "h": "Lignite",
+      "p": [
+        "Thar lignite has a higher CO2 per GJ than bituminous coal. Treat it as its own fuel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Coal factor by GAR and NAR",
+      "to": "/answers/imported-coal-gar-nar-emission-factor"
+    },
+    {
+      "label": "Chakwal clinker CO2",
+      "to": "/answers/chakwal-cement-plant-coal-kiln-co2"
+    },
+    {
+      "label": "Indian coal by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

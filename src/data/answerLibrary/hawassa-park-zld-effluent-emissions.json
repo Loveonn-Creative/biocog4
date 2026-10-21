@@ -1,0 +1,57 @@
+{
+  "slug": "hawassa-park-zld-effluent-emissions",
+  "q": "How should a factory count emissions from a park's zero liquid discharge effluent plant?",
+  "title": "Park ZLD effluent plant: which scope",
+  "short": "If the park operates the plant and charges you a fee, its energy and treatment emissions are your Scope 3, Category 5, shared by your volume of effluent. Ask the park for kWh and chemicals per kilolitre treated. If your factory runs its own treatment, the energy is your Scope 1 and 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories in Hawassa and other parks with central effluent treatment, and brands auditing them",
+  "sections": [
+    {
+      "h": "Why it is not small",
+      "p": [
+        "Zero liquid discharge uses evaporators and reverse osmosis, which take a lot of energy per kilolitre. On a clean grid the CO2 is modest, but on a diesel backup it is not."
+      ]
+    },
+    {
+      "h": "What to ask the park",
+      "ul": [
+        "kWh per kilolitre treated.",
+        "Fuel for evaporators, if any.",
+        "Your share of volume by month."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Effluent volume readings and park invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "ZLD energy and carbon per kl",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    },
+    {
+      "label": "CETP effluent scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "ETP sludge in textiles",
+      "to": "/answers/etp-sludge-and-wastewater-scope-3-textiles"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "west-africa-cement-buyer-carbon-per-tonne-data",
+  "q": "What carbon figure should a West African builder ask its cement supplier for?",
+  "title": "West African cement buyers: what to ask",
+  "short": "Kg CO2 per tonne of the actual cement product, not just clinker, for a stated year, with the clinker share and whether captive power is included. Blended cements with more limestone or slag can be well below ordinary Portland cement, so ask per product. Use it for your project or Scope 3 figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Contractors, developers and precast makers in Nigeria, Ghana and Cote d'Ivoire",
+  "sections": [
+    {
+      "h": "Ask for",
+      "ul": [
+        "CO2 per tonne by cement type.",
+        "Clinker share in that product.",
+        "Year and plant.",
+        "Whether it is cradle to gate and includes power."
+      ]
+    },
+    {
+      "h": "Why per product",
+      "p": [
+        "A plant's average hides the difference between a high clinker and a blended cement. Choosing the blended one may be the cheapest cut in a building's footprint."
+      ]
+    },
+    {
+      "h": "Using it",
+      "p": [
+        "Tonnes from delivery notes times the per tonne figure gives your purchased goods emissions for the job."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Lower clinker ratio and cost",
+      "to": "/answers/turkish-cement-lower-clinker-ratio-cbam-cost"
+    },
+    {
+      "label": "Contractor EPD requests",
+      "to": "/answers/contractor-epd-request-from-suppliers"
+    },
+    {
+      "label": "Obajana clinker CO2",
+      "to": "/answers/obajana-cement-kiln-gas-and-coal-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

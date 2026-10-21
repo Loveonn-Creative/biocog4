@@ -1,0 +1,57 @@
+{
+  "slug": "katunayake-epz-garment-factory-scope-2",
+  "q": "How does a garment factory in Sri Lanka's Katunayake zone work out Scope 2?",
+  "title": "Katunayake garment factory: Scope 2",
+  "short": "kWh from monthly electricity bills times Sri Lanka's grid factor for the year, which moves with how much hydro ran versus coal and oil. Rooftop solar used on site cuts the kWh bought. Report location based Scope 2, and market based too if you buy renewable certificates.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Apparel factories in Katunayake, Biyagama and other Sri Lankan export zones",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Total kWh bought from bills.",
+        "Multiply by the grid factor for the year, with its source.",
+        "Report solar generated and used separately."
+      ]
+    },
+    {
+      "h": "Why the year matters",
+      "p": [
+        "A wet year with more hydro lowers the factor; a dry year leans on the coal plant and oil. Do not reuse an old figure."
+      ]
+    },
+    {
+      "h": "Brands ask",
+      "p": [
+        "Most large brands ask for monthly energy and renewable share, often through their own platform."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Sri Lanka grid factor",
+      "to": "/answers/sri-lanka-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Bangladesh garment rooftop solar",
+      "to": "/answers/bangladesh-garment-factory-rooftop-solar-scope-2"
+    },
+    {
+      "label": "Biomass boiler CO2",
+      "to": "/answers/sri-lanka-apparel-biomass-boiler-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

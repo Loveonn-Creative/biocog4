@@ -1,0 +1,55 @@
+{
+  "slug": "chile-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a Chilean mine or supplier use for Scope 2?",
+  "title": "Chile grid factor for suppliers",
+  "short": "Chile's national grid has shifted fast toward solar and wind but still burns coal and gas, putting it roughly around 0.3 kg CO2 per kWh and falling. Use the official or IEA figure for the reporting year and cite it, and report market based Scope 2 separately if you hold renewable supply contracts.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Mines, refineries and manufacturers in Chile reporting to EU and other buyers",
+  "sections": [
+    {
+      "h": "Location vs market based",
+      "p": [
+        "Location based uses the grid average. Market based uses your contracts. Many Chilean mines buy renewable power by contract, so the two can differ widely; show both."
+      ]
+    },
+    {
+      "h": "Year matters",
+      "p": [
+        "With coal plants closing, last year's factor may already be out of date. Use the matching year."
+      ]
+    },
+    {
+      "h": "Show it",
+      "p": [
+        "kWh, factor, source and year for each figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Chilean low carbon cathode",
+      "to": "/answers/chilean-copper-cathode-low-carbon-claim-how-to-check"
+    },
+    {
+      "label": "Mine haul truck diesel",
+      "to": "/answers/copper-mine-haul-truck-diesel-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

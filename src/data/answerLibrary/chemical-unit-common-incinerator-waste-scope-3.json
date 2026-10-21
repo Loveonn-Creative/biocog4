@@ -1,0 +1,57 @@
+{
+  "slug": "chemical-unit-common-incinerator-waste-scope-3",
+  "q": "When a Gujarat chemical unit sends hazardous waste to a common incinerator, how is that counted?",
+  "title": "Waste to a common incinerator: scope",
+  "short": "It is Scope 3, Category 5, waste generated in operations, not your Scope 1. Multiply the tonnes on each manifest by a factor for incinerated waste, ideally from the facility's own fuel and waste records. If none is given, use a stated estimate and mark it as one.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Chemical, dye and pharma units in Ankleshwar, Vapi, Dahej and Nandesari sending waste to common facilities",
+  "sections": [
+    {
+      "h": "Why not Scope 1",
+      "p": [
+        "The incinerator is owned and run by someone else. Your Scope 1 covers only fuel and process emissions in equipment you control."
+      ]
+    },
+    {
+      "h": "What to ask the facility",
+      "ul": [
+        "Support fuel used per tonne of waste.",
+        "The share of fossil carbon in the waste it receives.",
+        "Whether it recovers energy, and how it reports that."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Keep the manifests and the facility's invoices by month. They give tonnes, waste category and date, which is what an auditor checks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, steam, electricity and raw material invoices into a dated, fingerprinted record per unit, so a product figure can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "CETP effluent scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Vapi CETP fee scope",
+      "to": "/answers/vapi-chemical-unit-cetp-fee-which-scope"
+    },
+    {
+      "label": "Solvent recovery emissions",
+      "to": "/answers/ankleshwar-api-unit-solvent-recovery-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

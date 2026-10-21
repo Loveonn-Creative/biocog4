@@ -1,0 +1,57 @@
+{
+  "slug": "rourkela-ancillary-units-steel-scope-3",
+  "q": "How should an engineering unit near Rourkela count the steel it buys from the plant or its stockyards?",
+  "title": "Rourkela ancillaries: steel in Scope 3",
+  "short": "Steel bought is Scope 3, Category 1, purchased goods: tonnes from your invoices multiplied by a per tonne figure for that product. Ask the stockyard or the plant for the plant's product figure; if you only have a route average for blast furnace steel, use it, name the source and mark it as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fabrication, structural and engineering MSMEs in the Rourkela and Kalunga industrial estates",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Total tonnes by product from purchase invoices.",
+        "Get a plant figure per tonne, or a stated average.",
+        "Multiply and keep the source next to the number."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "For a fabricator, bought steel is usually far bigger than its own electricity and fuel. A buyer asking for your footprint will look here first."
+      ]
+    },
+    {
+      "h": "If you export to the EU",
+      "p": [
+        "Fabricated structures under CN 7308 are CBAM goods. Your own figure then carries the steel as a precursor, and default values apply if you cannot get the mill figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Rourkela CBAM data",
+      "to": "/answers/rourkela-steel-plates-cbam-figure"
+    },
+    {
+      "label": "Hazira coil buyer figure",
+      "to": "/answers/hazira-steel-coil-buyer-scope-3-figure"
+    },
+    {
+      "label": "EU buyer data request",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

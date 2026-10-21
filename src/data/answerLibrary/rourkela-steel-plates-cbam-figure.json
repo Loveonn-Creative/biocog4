@@ -1,0 +1,62 @@
+{
+  "slug": "rourkela-steel-plates-cbam-figure",
+  "q": "What does an EU importer need for plates and coil from the Rourkela steel plant?",
+  "title": "Rourkela plates: CBAM data",
+  "short": "Rourkela is a blast furnace and converter plant, so the importer needs direct emissions per tonne from the site's mass balance across coke ovens, sinter, blast furnace and steelmaking, plus indirect emissions, the production period and CN code. Plates under 7208 and pipes under 7305 or 7306 are CBAM goods.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and Indian traders of Rourkela plates, coil and pipes",
+  "sections": [
+    {
+      "h": "Data per shipment",
+      "ul": [
+        "CN code and tonnes.",
+        "Direct and indirect emissions per tonne for the period.",
+        "Installation and production process.",
+        "Actual data or default values, and who verified it."
+      ]
+    },
+    {
+      "h": "Pipes",
+      "p": [
+        "Welded pipes made from the plant's own coil carry the coil as a precursor. Ask for the pipe figure, not just the coil figure."
+      ]
+    },
+    {
+      "h": "If no figure comes",
+      "p": [
+        "The importer falls back to default values, which are set high on purpose. A plant figure usually saves money."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Steel tube precursors",
+      "to": "/answers/eu-importer-steel-tube-precursor-data"
+    },
+    {
+      "label": "Ancillary units around Rourkela",
+      "to": "/answers/rourkela-ancillary-units-steel-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

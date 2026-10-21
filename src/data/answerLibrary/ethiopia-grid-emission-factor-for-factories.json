@@ -1,0 +1,57 @@
+{
+  "slug": "ethiopia-grid-emission-factor-for-factories",
+  "q": "What grid emission factor should a factory in Ethiopia use?",
+  "title": "Ethiopia grid factor for factories",
+  "short": "A very low one, because almost all generation is hydro, with wind, geothermal and some solar. Expect a figure well under 0.1 kg CO2 per kWh, but take the latest official or IEA value for the reporting year and cite it. Do not borrow an East African average, which would overstate it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Manufacturers in Ethiopian industrial parks reporting Scope 2 to buyers and lenders",
+  "sections": [
+    {
+      "h": "Sources",
+      "p": [
+        "Use a national figure from the utility, the government or the IEA for the year. Say which and when you looked it up."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Outages covered by diesel, which is Scope 1.",
+        "Bills that show park charges as well as energy; count kWh only.",
+        "Using a regional average that includes coal heavy neighbours."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Buyers comparing sourcing countries will see Ethiopia's low Scope 2. A wrong factor erases that advantage."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Hawassa apparel Scope 2",
+      "to": "/answers/hawassa-industrial-park-apparel-scope-2"
+    },
+    {
+      "label": "Kenya grid factor",
+      "to": "/answers/kenya-grid-emission-factor-for-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "sri-lanka-apparel-biomass-boiler-co2",
+  "q": "How should a Sri Lankan apparel or textile plant report CO2 from a biomass boiler?",
+  "title": "Biomass boiler CO2: how to report",
+  "short": "Report the biomass CO2 separately as biogenic, not inside Scope 1 totals, under the GHG Protocol. Methane and nitrous oxide from burning it do go into Scope 1. Keep the fuel type and tonnes by month, and be ready to show the wood or gliricidia comes from sustainable sources if a brand asks.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Apparel and textile mills in Sri Lanka using biomass boilers for steam",
+  "sections": [
+    {
+      "h": "What goes where",
+      "ul": [
+        "Biogenic CO2 from burning biomass: reported separately.",
+        "CH4 and N2O from combustion: Scope 1.",
+        "Any diesel or furnace oil backup: Scope 1."
+      ]
+    },
+    {
+      "h": "Sourcing questions",
+      "p": [
+        "Brands and auditors ask where the biomass comes from. Keep supplier invoices and any plantation or waste source records."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Tonnes and moisture of fuel delivered, boiler logs and steam produced."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and boiler invoices into a dated, fingerprinted record per factory, so the figures a brand asks for can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Biogenic CO2 in ISO 14064-1",
+      "to": "/answers/iso-14064-1-biogenic-co2-reporting"
+    },
+    {
+      "label": "Faisalabad biomass boilers",
+      "to": "/answers/faisalabad-processing-mill-coal-boiler-to-biomass-co2"
+    },
+    {
+      "label": "Katunayake Scope 2",
+      "to": "/answers/katunayake-epz-garment-factory-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

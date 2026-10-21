@@ -1,0 +1,62 @@
+{
+  "slug": "hazira-steel-coil-cbam-figure-by-route",
+  "q": "Why can hot rolled coil from Hazira carry different CBAM figures from one shipment to the next?",
+  "title": "Hazira coil: CBAM figure by route",
+  "short": "Hazira mixes ironmaking routes, including direct reduced iron and blast furnace iron, and the CBAM figure follows the route that made each coil. Ask the mill which route and production period a shipment came from, and whether the figure is for that route or a site average under the CBAM rules.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers of Hazira hot rolled, cold rolled and coated coil, and Indian traders reselling it",
+  "sections": [
+    {
+      "h": "Why it varies",
+      "p": [
+        "Gas based DRI fed to electric furnaces and coal based blast furnace iron fed to converters have very different direct emissions per tonne. A mill running both can report per production process, so coil from different routes can carry different figures."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "ul": [
+        "The installation and production process the goods came from.",
+        "Direct emissions per tonne for that period.",
+        "Precursor figures for purchased iron or slab, if any.",
+        "Whether actual data or default values were used."
+      ]
+    },
+    {
+      "h": "Common gap",
+      "p": [
+        "Receiving one annual company average. That may not match how the CBAM rules want emissions attributed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "EU importer data request",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    },
+    {
+      "label": "Coil buyer in India",
+      "to": "/answers/hazira-steel-coil-buyer-scope-3-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

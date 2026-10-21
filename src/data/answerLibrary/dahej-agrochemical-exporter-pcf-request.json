@@ -1,0 +1,58 @@
+{
+  "slug": "dahej-agrochemical-exporter-pcf-request",
+  "q": "What should a Dahej or Jhagadia agrochemical exporter send when a European buyer asks for a product carbon footprint?",
+  "title": "Agrochemical exporter: answering a PCF ask",
+  "short": "A cradle to gate figure per kg of active ingredient or formulation, covering purchased intermediates, solvents, steam, electricity and waste treatment, with the year, boundary and allocation method. Agrochemicals are not CBAM goods, so this is a buyer request under ISO 14067 or the buyer's own template, not a customs declaration.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Agrochemical technical and formulation exporters in Dahej, Jhagadia and Ankleshwar",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Purchased intermediates, with supplier figures where known.",
+        "Solvents used and not recovered.",
+        "Steam, fuel and electricity per batch, from meters and invoices.",
+        "Effluent and waste treatment sent out."
+      ]
+    },
+    {
+      "h": "How to allocate",
+      "p": [
+        "Multi product plants share boilers and utilities. Allocate by metered use where you can and by mass or batch hours where you cannot, and state which."
+      ]
+    },
+    {
+      "h": "What it is not",
+      "p": [
+        "It is not a CBAM figure and does not need an accredited verifier, though some buyers ask for third party review."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, steam, electricity and raw material invoices into a dated, fingerprinted record per unit, so a product figure can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Are Gujarat chemicals in CBAM?",
+      "to": "/answers/vapi-ankleshwar-chemicals-covered-by-cbam"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Common steam supplier scope",
+      "to": "/answers/chemical-park-common-steam-supplier-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

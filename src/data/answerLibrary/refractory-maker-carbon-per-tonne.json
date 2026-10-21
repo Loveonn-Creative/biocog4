@@ -1,0 +1,57 @@
+{
+  "slug": "refractory-maker-carbon-per-tonne",
+  "q": "How does a refractory maker supplying steel plants work out CO2 per tonne of bricks?",
+  "title": "Refractory bricks: CO2 per tonne",
+  "short": "Add kiln fuel, electricity and process CO2 from carbonate raw materials such as magnesite or dolomite, then divide by tonnes fired. Process CO2 can be as large as the fuel. Steel plant buyers increasingly ask for this as part of their own Scope 3, so keep the raw material and fuel records per batch.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refractory makers in Odisha, Jharkhand, Rajasthan and Gujarat supplying steel and cement plants",
+  "sections": [
+    {
+      "h": "Three parts",
+      "ul": [
+        "Fuel for tunnel or shuttle kilns: gas, oil or coal.",
+        "Electricity for grinding, pressing and drying.",
+        "Calcination of carbonates in raw magnesite or dolomite, if not bought already dead burnt."
+      ]
+    },
+    {
+      "h": "Calcination",
+      "p": [
+        "Raw magnesite releases about 0.52 tonnes of CO2 per tonne of MgCO3, and dolomite about 0.48 per tonne of CaMg(CO3)2, from chemistry alone. If you buy dead burnt magnesia, that CO2 sits with your supplier."
+      ]
+    },
+    {
+      "h": "Who asks",
+      "p": [
+        "Integrated steel plants reporting Scope 3 and some cement buyers."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Process CO2 from calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Quicklime kiln CO2",
+      "to": "/answers/quicklime-kiln-co2-per-tonne"
+    },
+    {
+      "label": "Rourkela CBAM data",
+      "to": "/answers/rourkela-steel-plates-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

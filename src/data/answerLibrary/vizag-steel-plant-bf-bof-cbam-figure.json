@@ -1,0 +1,62 @@
+{
+  "slug": "vizag-steel-plant-bf-bof-cbam-figure",
+  "q": "What goes into the CBAM figure for steel from the Visakhapatnam integrated plant?",
+  "title": "Visakhapatnam steel: CBAM figure",
+  "short": "It is a blast furnace and converter plant, so direct emissions come mainly from coking coal through the coke ovens, sinter plant, blast furnace and converter, worked out by mass balance across the site. Electricity is indirect. Divide by tonnes of the product shipped, with precursor figures carried through for semi finished steel.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU buyers and Indian traders of Visakhapatnam billets, wire rod and structural steel",
+  "sections": [
+    {
+      "h": "Inside the boundary",
+      "ul": [
+        "Coke ovens, including coke oven gas used on site.",
+        "Sinter plant and lime kilns.",
+        "Blast furnace and converter.",
+        "Rolling mills reheating fuel."
+      ]
+    },
+    {
+      "h": "Waste gas",
+      "p": [
+        "Blast furnace and coke oven gas burnt for power or heat on site stays inside the balance. Gas sent outside is handled by the CBAM rules on exported waste gases; ask the mill how it treats it."
+      ]
+    },
+    {
+      "h": "What a buyer asks",
+      "p": [
+        "Direct and indirect emissions per tonne, the production period, and whether actual data or default values were used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Coke ovens in the boundary",
+      "to": "/answers/vaal-steel-mill-coke-ovens-inside-cbam-boundary"
+    },
+    {
+      "label": "Waste gas to power",
+      "to": "/answers/steel-plant-waste-gas-to-power-cbam"
+    },
+    {
+      "label": "Wire rod buyer",
+      "to": "/answers/vizag-steel-wire-rod-buyer-precursor-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology (worldsteel.org)",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

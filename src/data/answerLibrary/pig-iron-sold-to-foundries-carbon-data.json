@@ -1,0 +1,59 @@
+{
+  "slug": "pig-iron-sold-to-foundries-carbon-data",
+  "q": "What carbon figure should a foundry use for pig iron bought from an integrated steel plant?",
+  "title": "Pig iron for foundries: carbon figure",
+  "short": "Ask the plant for direct emissions per tonne of pig iron from its blast furnace balance, including coke and sinter, for the year. Pig iron under CN 7201 is a CBAM good, so plants exporting to the EU already work this out. For a domestic foundry it is Scope 3, Category 1, purchased goods.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundries in Coimbatore, Kolhapur, Rajkot and Andhra Pradesh buying pig iron from integrated plants",
+  "sections": [
+    {
+      "h": "Where the figure comes from",
+      "p": [
+        "Pig iron carries most of a blast furnace plant's emissions: coke making, sintering and the furnace itself. The plant can give a per tonne figure from its mass balance."
+      ]
+    },
+    {
+      "h": "If you export castings",
+      "p": [
+        "Cast articles under CN 7325 are outside CBAM, while other iron and steel articles under 7326 are in scope. Either way some buyers ask for a product figure, and the pig iron figure is the largest input."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Purchase invoices with tonnes and grade, and the plant's figure with its year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Brazil merchant pig iron data",
+      "to": "/answers/brazil-merchant-pig-iron-exporter-buyer-data"
+    },
+    {
+      "label": "Are cast iron castings in CBAM?",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    },
+    {
+      "label": "Brescia pig iron imports",
+      "to": "/answers/brescia-mill-buys-imported-pig-iron-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology (worldsteel.org)",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

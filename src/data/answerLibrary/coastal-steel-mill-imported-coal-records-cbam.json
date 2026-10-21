@@ -1,0 +1,62 @@
+{
+  "slug": "coastal-steel-mill-imported-coal-records-cbam",
+  "q": "What records does a coastal Indian steel mill need for imported coking coal in its CBAM figure?",
+  "title": "Imported coking coal: CBAM records",
+  "short": "Per cargo: tonnes received, the supplier's analysis of carbon content and calorific value, and your own lab check. CBAM direct emissions use a mass balance, so the carbon in coal and coke going in matters more than its origin. Freight to the port is not in the CBAM figure but buyers may ask for it separately.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Coastal integrated mills at Hazira, Visakhapatnam, Dolvi and Paradip and their CBAM consultants",
+  "sections": [
+    {
+      "h": "Per shipment",
+      "ul": [
+        "Bill of lading and port receipt tonnes.",
+        "Supplier certificate of analysis: carbon, ash, moisture, volatile matter.",
+        "Your own lab result on arrival.",
+        "Stock movement into coke ovens or PCI."
+      ]
+    },
+    {
+      "h": "Why carbon content",
+      "p": [
+        "The mass balance method takes carbon in all inputs minus carbon leaving in products and by products. A default factor per tonne of coal is weaker than the measured carbon."
+      ]
+    },
+    {
+      "h": "Freight",
+      "p": [
+        "Ocean freight of coal is Scope 3 for the mill and outside the CBAM embedded emissions. Keep it apart."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so each figure in a CBAM or buyer response can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Coal factor by GAR and NAR",
+      "to": "/answers/imported-coal-gar-nar-emission-factor"
+    },
+    {
+      "label": "Silesia imported coke and coal",
+      "to": "/answers/silesia-steelworks-imported-coke-coal-cbam"
+    },
+    {
+      "label": "Vizag CBAM figure",
+      "to": "/answers/vizag-steel-plant-bf-bof-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

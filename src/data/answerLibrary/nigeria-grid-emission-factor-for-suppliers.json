@@ -1,0 +1,55 @@
+{
+  "slug": "nigeria-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a Nigerian supplier use for electricity bought from the grid?",
+  "title": "Nigeria grid factor for suppliers",
+  "short": "Nigeria's grid runs mostly on gas with some hydro, which puts it roughly in the range of 0.4 to 0.5 kg CO2 per kWh, but use the latest official or IEA figure for the year and cite it. Many factories also run diesel generators; that fuel is Scope 1 and must not be folded into the grid figure.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Nigerian manufacturers reporting Scope 2 to buyers, lenders or parent companies",
+  "sections": [
+    {
+      "h": "Which figure",
+      "p": [
+        "Use a national location based factor from an official or IEA source for the reporting year. If none is published for your year, use the latest and say so."
+      ]
+    },
+    {
+      "h": "Generators",
+      "p": [
+        "Grid supply is often unreliable, so diesel or gas generators fill the gaps. Keep litres or gas volume by month and report it as Scope 1."
+      ]
+    },
+    {
+      "h": "Show your workings",
+      "p": [
+        "Give kWh from bills, the factor, its source and year. A buyer can then check the arithmetic."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Captive gas power scope",
+      "to": "/answers/nigeria-cement-plant-captive-gas-power-scope-1"
+    },
+    {
+      "label": "Lagos diesel power scope",
+      "to": "/answers/lagos-data-centre-diesel-power-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

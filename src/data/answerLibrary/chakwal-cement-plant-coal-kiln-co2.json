@@ -1,0 +1,57 @@
+{
+  "slug": "chakwal-cement-plant-coal-kiln-co2",
+  "q": "How does a cement plant in the Chakwal belt work out CO2 per tonne of clinker?",
+  "title": "Chakwal cement: CO2 per tonne of clinker",
+  "short": "Process CO2 from calcination, around 0.52 tonnes per tonne of clinker, plus fuel CO2 from the coal burnt, which depends on the coal's carbon content. Plants switching between imported, Afghan and local coal should keep each lot's analysis, because using one factor for all of them misstates the result.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Chakwal, Khushab and the northern Punjab belt and their lenders",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Clinker production by month.",
+        "Raw meal chemistry for the calcination figure.",
+        "Coal tonnes by source, with lab analysis of each lot."
+      ]
+    },
+    {
+      "h": "Coal source matters",
+      "p": [
+        "Imported South African, Afghan and local coals differ in carbon and heat content. Per tonne of coal, CO2 differs; per unit of heat it is closer, so track both."
+      ]
+    },
+    {
+      "h": "Then cement",
+      "p": [
+        "Clinker share times the clinker figure, plus grinding power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, raw material and electricity invoices into a dated, fingerprinted record per plant, so the clinker and cement figures can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Coal source and emissions",
+      "to": "/answers/pakistan-cement-coal-source-emissions"
+    },
+    {
+      "label": "Green loans for Pakistani cement",
+      "to": "/climate-intelligence/green-loan-cement-plant-pakistan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

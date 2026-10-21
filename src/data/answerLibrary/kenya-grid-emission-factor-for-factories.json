@@ -1,0 +1,56 @@
+{
+  "slug": "kenya-grid-emission-factor-for-factories",
+  "q": "What grid emission factor should a Kenyan factory use for Scope 2?",
+  "title": "Kenya grid factor for factories",
+  "short": "Kenya's grid is mostly geothermal, hydro and wind, with thermal plants running in dry years, so the factor is low, usually under 0.2 kg CO2 per kWh. Take the official or IEA figure for the reporting year and cite it, because a dry year with more thermal generation can push it up.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Manufacturers and exporters in Kenya reporting Scope 2 to buyers and lenders",
+  "sections": [
+    {
+      "h": "Year matters",
+      "p": [
+        "Hydro output varies with rainfall. In a dry year more oil fired plants run, so use the figure for your actual year if one exists."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Diesel backup, which is Scope 1.",
+        "Using a world average, which badly overstates Kenyan grid power."
+      ]
+    },
+    {
+      "h": "Show it",
+      "p": [
+        "kWh from bills, factor, source and year on the same line."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per site and applies the grid factor you choose with its source and year shown, so a buyer can see exactly which figure was used.",
+  "links": [
+    {
+      "label": "Nairobi geothermal grid",
+      "to": "/answers/nairobi-data-centre-geothermal-grid-scope-2"
+    },
+    {
+      "label": "Athi River diesel and grid",
+      "to": "/answers/athi-river-epz-garment-factory-diesel-backup"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "International Energy Agency, country energy data (iea.org)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

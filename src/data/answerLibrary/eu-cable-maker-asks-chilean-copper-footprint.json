@@ -1,0 +1,59 @@
+{
+  "slug": "eu-cable-maker-asks-chilean-copper-footprint",
+  "q": "What should an EU cable maker put in its request to a Chilean copper supplier?",
+  "title": "EU cable maker: asking for copper data",
+  "short": "Ask for a cradle to gate figure per tonne of cathode or rod with year, boundary and method, the electricity mix behind mine and refinery, the recycled share, and permission to use the figure in your product declarations. Asking for one format up front saves months of back and forth.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "EU cable, wire and busbar makers and their procurement teams",
+  "sections": [
+    {
+      "h": "Put in the request",
+      "ul": [
+        "Per tonne figure, cradle to gate, for the year supplied.",
+        "Which mine, smelter and refinery.",
+        "Electricity sources and contracts.",
+        "Recycled content.",
+        "Whether it was reviewed, and by whom."
+      ]
+    },
+    {
+      "h": "Why",
+      "p": [
+        "Your own product footprint, and any EPD you publish, will be built on it. A figure without a boundary cannot be used safely."
+      ]
+    },
+    {
+      "h": "If they cannot answer",
+      "p": [
+        "Use a published average for the route, labelled as an estimate, and ask again next year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so a copper product figure can be traced back to the documents behind it. Factors outside India are entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Chilean low carbon claims",
+      "to": "/answers/chilean-copper-cathode-low-carbon-claim-how-to-check"
+    },
+    {
+      "label": "How to get an EPD",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Copper cable per km",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018 Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
