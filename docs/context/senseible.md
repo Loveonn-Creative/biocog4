@@ -93,6 +93,7 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - Intelligent actions (`src/lib/intelligentActions.ts`): power factor on kVAh bills, diesel generator vs grid, rooftop solar from 6+ months of bills (capped by sanctioned load), supplier above half of Scope 3, missing months, records to verify. Estimates are labelled. With thin data a friendly next step shows instead. MRV lists them; the Dashboard's next step shows only the top lever. Contract demand is not a rule: recorded demand is not read from bills.
 - Dashboard design audit: approved as one PR (REVERT applies).
 - Proof moments (`src/lib/proofMoments.ts`): first verified record (with the bill fingerprint), six complete months, a power-factor fix confirmed by a later bill. One per visit, newest first, shown once per account (`trust_layer_prefs.moments_seen`). Kill switch `VITE_PROOF_MOMENTS=off`.
+- Security and data card (Profile): sign out of all devices; change email (current password first, Supabase confirms from both inboxes); Download my data on Scale only, locked on other plans, built from an allow-list (`src/lib/accountExport.ts`) with no ids, file paths, fingerprints, raw reads or private financial records, and formula-safe cells.
 - Quick wins: the upload result counts up with "Read in X s"; Verify shows verified records before → after; a repeat upload says "Already have this one. Counted once, as promised."; first-record steps tick over once.
 
 ## 9. Open decisions (ask before acting)

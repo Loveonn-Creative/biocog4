@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { cleanAuthUrl, EMAIL_REDIRECT_URL, hasAuthLinkParams, parseAuthLinkError, parseAuthLinkSuccess, resendErrorMessage } from '../src/lib/authLink';
+import { cleanAuthUrl, EMAIL_REDIRECT_URL, hasAuthLinkParams, parseAuthLinkError, parseAuthLinkMessage, parseAuthLinkSuccess, resendErrorMessage } from '../src/lib/authLink';
 
 describe('email link errors (Supabase contract)', () => {
   test('expired or used link in the hash (implicit flow)', () => {
@@ -62,5 +62,14 @@ describe('resend failures', () => {
     expect(resendErrorMessage({ code: 'email_address_invalid' })).toMatch(/does not look right/);
     expect(resendErrorMessage({ message: 'Email already confirmed' })).toMatch(/Sign in/);
     expect(resendErrorMessage({ message: 'Failed to fetch' })).toMatch(/connection/);
+  });
+});
+
+describe('email change links', () => {
+  test('first confirmed link carries a message and is cleaned from the address bar', () => {
+    const h = '#message=Confirmation+link+accepted.+Please+proceed+to+confirm+link+sent+to+the+other+email';
+    expect(parseAuthLinkMessage(h)).toContain('Confirmation link accepted');
+    expect(hasAuthLinkParams(h, '')).toBe(true);
+    expect(parseAuthLinkMessage('#access_token=x&type=email_change')).toBeNull();
   });
 });

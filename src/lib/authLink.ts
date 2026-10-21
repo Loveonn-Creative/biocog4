@@ -49,6 +49,11 @@ export function parseAuthLinkError(hash: string, search: string): AuthLinkError 
   return { code, kind: code === 'access_denied' ? 'expired' : 'invalid', title: 'Link expired or already used', detail: 'This link is no longer valid. Send yourself a fresh one, or sign in if you already confirmed.', canResend: true };
 }
 
+/** The first of two email-change links: Supabase confirms it and waits for the other inbox. */
+export function parseAuthLinkMessage(hash: string): string | null {
+  return params(hash).get('message');
+}
+
 /** A successful link: the token type Supabase put in the hash. */
 export function parseAuthLinkSuccess(hash: string): AuthLinkSuccess | null {
   const h = params(hash);
@@ -59,7 +64,7 @@ export function parseAuthLinkSuccess(hash: string): AuthLinkSuccess | null {
 export function hasAuthLinkParams(hash: string, search: string): boolean {
   const h = params(hash);
   const q = params(search);
-  return ['error', 'error_code', 'error_description', 'access_token', 'refresh_token'].some((k) => h.has(k)) || ['error', 'error_code', 'error_description'].some((k) => q.has(k));
+  return ['error', 'error_code', 'error_description', 'access_token', 'refresh_token', 'message'].some((k) => h.has(k)) || ['error', 'error_code', 'error_description'].some((k) => q.has(k));
 }
 
 /** The address without auth-link keys, keeping any other query (for example ?next=). */

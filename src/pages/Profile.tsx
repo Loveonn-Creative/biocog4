@@ -32,6 +32,7 @@ import { Link } from 'react-router-dom';
 import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
 import { Scope3FullTrailCard } from '@/components/scope3/Scope3FullTrailCard';
 import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
+import { SecurityDataCard } from '@/components/settings/SecurityDataCard';
 
 const tierIcons = {
   snapshot: Sparkles,
@@ -306,7 +307,7 @@ const Profile = () => {
                 <Label>Email</Label>
                 <Input value={user?.email || ''} disabled className="bg-muted" />
                 <p className="text-xs text-muted-foreground">
-                  Email cannot be changed. Contact support if needed.
+                  Change it under Security and data, below.
                 </p>
               </div>
 
@@ -494,6 +495,7 @@ const Profile = () => {
 
           {/* Security */}
           <ChangePasswordCard user={user} />
+          <SecurityDataCard user={user} />
         </div>
       </main>
     </div>

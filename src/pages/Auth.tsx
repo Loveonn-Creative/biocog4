@@ -13,7 +13,7 @@ import { analyticsEvents } from "@/lib/analytics";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG } from "@/lib/factors";
 import { AccountStack, StackStrip, type StackLayer } from "@/components/auth/AccountStack";
 import {
-  cleanAuthUrl, EMAIL_REDIRECT_URL, forgetPendingEmail, parseAuthLinkError, parseAuthLinkSuccess, pendingEmail,
+  cleanAuthUrl, EMAIL_REDIRECT_URL, forgetPendingEmail, parseAuthLinkError, parseAuthLinkMessage, parseAuthLinkSuccess, pendingEmail,
   rememberPendingEmail, resendErrorMessage, type AuthLinkError,
 } from "@/lib/authLink";
 import { takeAuthLinkSnapshot } from "@/lib/authLinkSnapshot";
@@ -176,6 +176,11 @@ const Auth = () => {
       });
       return;
     }
+    // Email change: the first confirmed link says to open the one sent to the other address.
+    if (parseAuthLinkMessage(snap.hash) && !parseAuthLinkSuccess(snap.hash)) {
+      toast.success("One link confirmed", { description: "Open the link sent to your other email address to finish the change.", duration: 10000 });
+      return;
+    }
     const ok = parseAuthLinkSuccess(snap.hash);
     if (!ok) return;
     void (async () => {
@@ -194,7 +199,7 @@ const Auth = () => {
         }
       }
       forgetPendingEmail();
-      toast.success(ok.type === "signup" ? "Email confirmed. Signing you in…" : ok.type === "magiclink" ? "Signed in with your email link." : "Signed in. Taking you to your dashboard…");
+      toast.success(ok.type === "email_change" ? "Email changed. Use your new address to sign in from now on." : ok.type === "signup" ? "Email confirmed. Signing you in…" : ok.type === "magiclink" ? "Signed in with your email link." : "Signed in. Taking you to your dashboard…");
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
