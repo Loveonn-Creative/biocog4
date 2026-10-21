@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Radar, Send } from 'lucide-react';
 import { answers } from '@/data/answers';
-import { answerLibraryIndex } from '@/data/answerLibraryIndex';
+import { loadAnswerIndex } from '@/lib/answerData';
 import { STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { askLink, scan, slugToQuestion, type RadarHit, type RadarItem } from '@/lib/answerRadar';
 
@@ -14,7 +14,6 @@ import { askLink, scan, slugToQuestion, type RadarHit, type RadarItem } from '@/
 
 const ANSWER_ITEMS: RadarItem[] = [
   ...answers.map((a) => ({ kind: 'answer' as const, title: a.q, to: `/answers/${a.slug}`, text: `${a.title} ${a.short}` })),
-  ...answerLibraryIndex.map((e) => ({ kind: 'answer' as const, title: e.q, to: `/answers/${e.slug}`, text: `${e.title} ${e.short}` })),
   // Free tools: a question that a calculator answers should find the calculator.
   ...Object.entries(STATIC_PAGE_META)
     .filter(([path]) => path.startsWith('/calculators/') || path === '/cbam-calculator' || path === '/green-loan-check')
@@ -34,13 +33,20 @@ export function QuestionRadar({ slug }: { slug: string }) {
   const [scanning, setScanning] = useState(!prefersReducedMotion());
   const timer = useRef<number>();
 
-  // Guides join the scan once their index has loaded (kept out of the first bundle).
+  // Library answers and guides join the scan once their indexes load (kept out of the first bundle).
   useEffect(() => {
     let live = true;
-    void import('@/data/articleIndex').then(({ articleIndex }) => {
+    void Promise.all([
+      loadAnswerIndex(),
+      import('@/data/articleIndex').then((m) => m.articleIndex).catch(() => []),
+    ]).then(([library, guides]) => {
       if (!live) return;
-      setItems([...ANSWER_ITEMS, ...articleIndex.map((g) => ({ kind: 'guide' as const, title: g.title, to: `/climate-intelligence/${g.slug}`, text: `${g.subtitle} ${g.tags.join(' ')}` }))]);
-    }).catch(() => {});
+      setItems([
+        ...ANSWER_ITEMS,
+        ...library.map((e) => ({ kind: 'answer' as const, title: e.q, to: `/answers/${e.slug}`, text: e.title })),
+        ...guides.map((g) => ({ kind: 'guide' as const, title: g.title, to: `/climate-intelligence/${g.slug}`, text: `${g.subtitle} ${g.tags.join(' ')}` })),
+      ]);
+    });
     return () => { live = false; };
   }, []);
 

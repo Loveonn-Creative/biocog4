@@ -101,13 +101,25 @@ function withPreloads(html, chunks) {
   return html.replace('</head>', `  ${preloadTags(chunks)}\n  </head>`);
 }
 
+// An answer library page carries its own data (written to dist/answer-data by
+// scripts/seo/build-answer-library.mjs), so the app shows it at once without
+// fetching anything. "<" is escaped so the JSON can never close the script tag.
+function answerDataTag(route) {
+  const m = route.path.match(/^\/answers\/([a-z0-9-]+)$/);
+  if (!m) return '';
+  const file = path.join(DIST_DIR, 'answer-data', `${m[1]}.json`);
+  if (!fs.existsSync(file)) return '';
+  const json = fs.readFileSync(file, 'utf-8').replace(/</g, '\\u003c');
+  return `<script type="application/json" id="answer-data">${json}</script>`;
+}
+
 function renderPage(template, route, R, chunks = []) {
   const start = template.indexOf(HEAD_START);
   const end = template.indexOf(HEAD_END);
   if (start === -1 || end === -1) throw new Error('index.html is missing the <!--seo:head--> markers');
   let html = template.slice(0, start + HEAD_START.length) + '\n    ' + headTags(route, R) + '\n    ' + template.slice(end);
   if (!html.includes('<div id="root"></div>')) throw new Error('index.html is missing <div id="root"></div>');
-  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml(route, R)}</div>`);
+  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml(route, R)}</div>${answerDataTag(route)}`);
   return withPreloads(html, chunks);
 }
 
