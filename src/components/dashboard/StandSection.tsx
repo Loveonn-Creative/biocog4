@@ -1,3 +1,4 @@
+import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Upload, ShieldCheck, FileBarChart, Shield, Coins } from 'lucide-react';
 import type { EmissionsSummary } from '@/hooks/useEmissions';
@@ -19,6 +20,10 @@ interface Props {
   missingMonths?: string[];
   /** The biggest lever from the business's own records (intelligentActions). */
   topAction?: { title: string; cta: { label: string; to: string } } | null;
+  /** Account id, so the first-record steps tick over once per person. */
+  userId?: string | null;
+  /** A one-time proof moment, shown across the bottom of the frame. */
+  moment?: ReactNode;
   hasVerifiedData: boolean;
   verificationScore: number;
   latestStatus: 'verified' | 'needs_review' | 'pending' | null;
@@ -64,9 +69,34 @@ const Round = ({ to, label, icon: Icon, primary, badge }: { to: string; label: s
   </Link>
 );
 
+// Which first-record steps this person has already seen done (a per-browser
+// convenience): a step ticks over with a small check only the first time.
+function useStepsSeen(userId: string | null | undefined, done: string[]) {
+  const key = userId ? `senseible:steps-seen:${userId}` : null;
+  const [fresh, setFresh] = useState<string[]>([]);
+  const doneKey = done.join(',');
+  useEffect(() => {
+    if (!key) return;
+    let seen: string[] = [];
+    try { seen = JSON.parse(localStorage.getItem(key) ?? '[]'); } catch { /* storage unavailable */ }
+    const now = done.filter((d) => !seen.includes(d));
+    if (!now.length) return;
+    setFresh(now);
+    try { localStorage.setItem(key, JSON.stringify([...new Set([...seen, ...done])])); } catch { /* storage unavailable */ }
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- doneKey captures done
+  }, [key, doneKey]);
+  return fresh;
+}
+
 export function StandSection(p: Props) {
   const total = fmt(p.summary.total);
   const action = nextAction(p);
+  const steps = [
+    { label: 'Bill read', on: (p.documentCount ?? 0) > 0 },
+    { label: 'Counted', on: p.recordCount > 0 },
+    { label: 'Verified', on: p.hasVerifiedData },
+  ];
+  const freshSteps = useStepsSeen(p.userId, steps.filter((st) => st.on).map((st) => st.label));
   // No verified evidence yet reads as 0, never a blank.
   const score = p.recordCount > 0 && p.latestStatus !== null ? p.verificationScore : 0;
   return (
@@ -102,14 +132,12 @@ export function StandSection(p: Props) {
         {/* Before anything is verified, show how far the first bill has come. */}
         {!p.hasVerifiedData && (
           <ol className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs" aria-label="Your first record">
-            {[
-              { label: 'Bill read', on: (p.documentCount ?? 0) > 0 },
-              { label: 'Counted', on: p.recordCount > 0 },
-              { label: 'Verified', on: false },
-            ].map((st, i) => (
+            {steps.map((st, i) => (
               <li key={st.label} className={`flex items-center gap-1.5 ${st.on ? 'font-medium text-foreground' : 'text-muted-foreground'}`}>
                 {i > 0 && <span className="h-px w-4 bg-border" aria-hidden="true" />}
-                <span className={`h-2 w-2 rounded-full ${st.on ? 'bg-success' : 'border border-border'}`} aria-hidden="true" />
+                {st.on && freshSteps.includes(st.label)
+                  ? <span className="grid h-3.5 w-3.5 place-items-center rounded-full bg-success text-success-foreground motion-safe:animate-[pop-in_0.35s_ease-out_both]" aria-hidden="true"><svg viewBox="0 0 12 12" className="h-2.5 w-2.5"><path d="M2.5 6.2 5 8.5l4.5-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
+                  : <span className={`h-2 w-2 rounded-full ${st.on ? 'bg-success' : 'border border-border'}`} aria-hidden="true" />}
                 {st.label}<span className="sr-only">{st.on ? ' done' : ' not yet'}</span>
               </li>
             ))}
@@ -143,6 +171,7 @@ export function StandSection(p: Props) {
           </Link>
         </div>
       </div>
+      {p.moment && <div className="lg:col-span-2">{p.moment}</div>}
     </section>
   );
 }

@@ -91,6 +91,10 @@ export default {
       },
       keyframes: {
         "grow-x": { from: { transform: "scaleX(0)" }, to: { transform: "scaleX(1)" } },
+        draw: { from: { strokeDashoffset: "1" }, to: { strokeDashoffset: "0" } },
+        "line-flash": { "0%, 30%": { backgroundColor: "hsl(var(--primary) / 0.12)" }, "100%": { backgroundColor: "transparent" } },
+        appear: { from: { opacity: "0" }, to: { opacity: "1" } },
+        "pop-in": { from: { opacity: "0", transform: "translateY(4px) scale(0.9)" }, to: { opacity: "1", transform: "none" } },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
