@@ -7,6 +7,7 @@
 // transactions) is read or kept, and nothing appears in the user's records.
 import { aiFetch } from './aiFetch.ts';
 import { cleanFigures, FIGURES_PROMPT, type DocFigures } from './financeApplication.ts';
+import { cleanMonthly, MONTHLY_PROMPT, type MonthRow } from './financeInsights.ts';
 
 export const FINANCIAL_BUCKET = 'financial-documents';
 
@@ -71,6 +72,42 @@ export async function readFinancialFigures(mime: string, base64: string): Promis
   }
 }
 
-export const FINANCIAL_STORED_MESSAGE = 'This is a financial document. It is stored securely for climate finance and risk review: it is not shown in your records, never sent back to a browser, and only the key figures needed (such as turnover and repayments) are read.';
+/**
+ * Month-by-month totals from a bank statement (financeInsights.ts). Narrations
+ * are read only to sort payments into categories; only the totals come back.
+ * Never throws; [] when nothing could be read.
+ */
+export async function readMonthlyCashflow(mime: string, base64: string): Promise<MonthRow[]> {
+  try {
+    const res = await aiFetch({
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'google/gemini-2.5-flash',
+        temperature: 0,
+        max_tokens: 6144,
+        response_format: { type: 'json_object' },
+        reasoning_effort: 'low',
+        messages: [
+          { role: 'system', content: MONTHLY_PROMPT },
+          { role: 'user', content: [
+            { type: 'text', text: 'Return only the JSON object.' },
+            { type: 'image_url', image_url: { url: `data:${mime};base64,${base64}` } },
+          ] },
+        ],
+      }),
+    });
+    if (!res.ok) { console.error('Monthly cash-flow read failed:', res.status); return []; }
+    const body = await res.json();
+    const content = String(body?.choices?.[0]?.message?.content ?? '');
+    const match = content.match(/\{[\s\S]*\}/);
+    return match ? cleanMonthly(JSON.parse(match[0])) : [];
+  } catch {
+    console.error('Monthly cash-flow read error');
+    return [];
+  }
+}
+
+export const FINANCIAL_STORED_MESSAGE = 'Saved as a private record. The file is kept securely and never sent back to a browser; only key totals (such as turnover, repayments and monthly money in and out) are read. Turn on Finance insights in Settings to see them on your Dashboard.';
 export const FINANCIAL_GUEST_MESSAGE = 'This is a financial document. Sign in to store it securely for climate finance review; without an account nothing is kept.';
 export const FINANCIAL_UNAVAILABLE_MESSAGE = 'This is a financial document. Secure storage is not switched on yet, so nothing was kept. Please try again later.';

@@ -31,6 +31,7 @@ import { cachedGuestHashes, getGuestSource } from '@/lib/guestSourceCache';
 import { isSourceFilePath } from '../../supabase/functions/_shared/sourceFiles';
 import { documentKindLabel } from '../../supabase/functions/_shared/documentKind';
 import { RecordInsights } from '@/components/insights/RecordInsights';
+import { PrivateRecords } from '@/components/finance/PrivateRecords';
 import { RecordCalculationLine } from '@/components/records/RecordCalculationLine';
 
 const History = () => {
@@ -357,6 +358,8 @@ const History = () => {
           </Card>
 
         <RecordInsights emissions={emissions} documents={documents} />
+
+        <PrivateRecords />
 
         {/* Date Range Indicator */}
         {(dateRange.from || dateRange.to) && (
