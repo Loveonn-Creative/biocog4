@@ -1,0 +1,58 @@
+{
+  "slug": "thailand-petrochemical-exporter-cbam-relevance",
+  "q": "Does CBAM apply to petrochemical exports from Map Ta Phut?",
+  "title": "Map Ta Phut exports and CBAM",
+  "short": "Mostly not today. CBAM covers cement, iron and steel, aluminium, fertilisers, hydrogen and electricity. Polymers and organic chemicals are outside, though hydrogen, ammonia based fertilisers and steel or aluminium parts shipped from the estate are inside. The Commission is reviewing an extension, so check the scope every year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Petrochemical, fertiliser and metal exporters on the Eastern Seaboard",
+  "sections": [
+    {
+      "h": "Inside the scope",
+      "ul": [
+        "Hydrogen sold as a product.",
+        "Ammonia, nitric acid and fertilisers.",
+        "Steel and aluminium goods, including tanks and structures."
+      ]
+    },
+    {
+      "h": "Outside, for now",
+      "ul": [
+        "Polyethylene, polypropylene, PVC and PET.",
+        "Aromatics and solvents."
+      ]
+    },
+    {
+      "h": "Still asked for data",
+      "p": [
+        "EU buyers outside CBAM still ask for product footprints for their own Scope 3, so a figure per grade is worth keeping."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Jubail exports and CBAM",
+      "to": "/answers/jubail-petrochemical-exports-which-need-cbam"
+    },
+    {
+      "label": "Thailand carbon tax and CBAM",
+      "to": "/answers/thailand-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Map Ta Phut polymer data",
+      "to": "/answers/map-ta-phut-polymer-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

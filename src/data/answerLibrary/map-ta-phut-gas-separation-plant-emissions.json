@@ -1,0 +1,53 @@
+{
+  "slug": "map-ta-phut-gas-separation-plant-emissions",
+  "q": "How does a gas separation plant count the CO2 it strips from raw natural gas?",
+  "title": "Gas separation plants: stripped CO2",
+  "short": "CO2 removed from raw gas and vented is a Scope 1 process emission of the gas separation plant, on top of the fuel it burns. Measure it from the CO2 content of the feed and sales gas and the flow, or from the acid gas stream directly. If it is captured and sold, report it and the buyer separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Gas separation and processing plants on the Eastern Seaboard and their auditors",
+  "sections": [
+    {
+      "h": "Sources at the plant",
+      "ul": [
+        "Vented CO2 from the acid gas removal unit.",
+        "Fuel gas in turbines, heaters and flares.",
+        "Methane from leaks and venting."
+      ]
+    },
+    {
+      "h": "Mass balance",
+      "p": [
+        "Feed gas CO2 minus CO2 left in sales gas and products gives the CO2 removed. Check it against any meter on the vent stream."
+      ]
+    },
+    {
+      "h": "CO2 sold to users",
+      "p": [
+        "Selling CO2 for drinks or welding does not erase it from the plant inventory unless the standard you use allows a transfer. State the treatment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Refinery allocation across products",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    },
+    {
+      "label": "Shared utilities in a park",
+      "to": "/answers/industrial-park-shared-utilities-cbam-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

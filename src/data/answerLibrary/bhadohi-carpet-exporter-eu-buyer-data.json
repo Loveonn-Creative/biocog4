@@ -1,0 +1,57 @@
+{
+  "slug": "bhadohi-carpet-exporter-eu-buyer-data",
+  "q": "What carbon data do EU buyers ask Bhadohi carpet exporters for?",
+  "title": "Bhadohi carpet exporters: EU buyer data",
+  "short": "Carpets are not CBAM goods, but EU retailers need supplier figures for their own Scope 3 and reporting. Expect requests for your Scope 1 and 2 totals and a figure per square metre, built from yarn, dyeing, backing and finishing. Send figures with their records, not a certificate alone.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Carpet and rug exporters in Bhadohi and Mirzapur selling to European retailers and importers",
+  "sections": [
+    {
+      "h": "Typical requests",
+      "ul": [
+        "Scope 1 and 2 totals with factors and year.",
+        "Footprint per square metre for main qualities.",
+        "Share of recycled or natural fibres."
+      ]
+    },
+    {
+      "h": "Weaving done outside",
+      "p": [
+        "Much hand weaving happens in village looms you do not run. Count their yarn and transport in your product figure even if their energy is small."
+      ]
+    },
+    {
+      "h": "How to answer",
+      "p": [
+        "One dataset per year, with the method stated and estimates labelled."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Hand knotted carpet footprint",
+      "to": "/answers/hand-knotted-carpet-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Bhadohi wool dyeing",
+      "to": "/answers/bhadohi-carpet-wool-dyeing-emissions"
+    },
+    {
+      "label": "Tufted carpet backing",
+      "to": "/answers/bhadohi-tufted-carpet-latex-backing-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

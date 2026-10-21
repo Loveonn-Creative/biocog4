@@ -1,0 +1,57 @@
+{
+  "slug": "hosur-ev-component-supplier-battery-data",
+  "q": "What battery carbon data do EV makers ask Hosur component suppliers for?",
+  "title": "Hosur EV suppliers: battery data",
+  "short": "For batteries sold in the EU, the maker needs a carbon footprint per kWh under the EU Battery Regulation, so it asks suppliers of cells, modules, packs and enclosures for material weights and the electricity used to make each part. Timing depends on the delegated rules, so check the current dates.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Battery pack, BMS, enclosure and cable suppliers in Hosur and Krishnagiri serving EV makers",
+  "sections": [
+    {
+      "h": "What is asked",
+      "ul": [
+        "Bill of materials with weights per part.",
+        "Electricity and fuel used per part, from bills and meters.",
+        "Where cells and key materials come from."
+      ]
+    },
+    {
+      "h": "Electricity rules",
+      "p": [
+        "The battery rules set how supplier electricity is counted, including when a renewable contract may be used. Keep bills and any contract documents together."
+      ]
+    },
+    {
+      "h": "Not only exports",
+      "p": [
+        "Indian EV makers ask the same for their own reporting and investor questions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and material invoices into a dated, fingerprinted record, so each part figure you send traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "EU battery footprint rules",
+      "to": "/answers/eu-battery-carbon-footprint-calculation-rules"
+    },
+    {
+      "label": "Battery pack footprint per kWh",
+      "to": "/answers/battery-pack-assembly-carbon-footprint-per-kwh"
+    },
+    {
+      "label": "Pune, Chakan and Hosur suppliers",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

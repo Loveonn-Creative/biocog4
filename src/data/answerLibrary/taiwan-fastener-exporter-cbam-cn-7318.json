@@ -1,0 +1,57 @@
+{
+  "slug": "taiwan-fastener-exporter-cbam-cn-7318",
+  "q": "What must a Taiwanese fastener exporter provide for CBAM under CN 7318?",
+  "title": "Taiwan fasteners under CN 7318",
+  "short": "Screws, bolts and nuts under CN 7318 are CBAM goods. The exporter gives the importer embedded emissions per tonne: the wire rod it bought as a precursor, plus direct emissions of drawing, forming and heat treatment. The wire rod figure comes from the mill, so ask for it with every supply contract.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Fastener makers in Kaohsiung Gangshan and their EU importers",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Wire rod embedded emissions, from the mill, per tonne consumed.",
+        "Gas or fuel for annealing, heat treatment and coating.",
+        "Electricity, reported but not charged for steel goods."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "Heading and threading create scrap, so more rod goes in than fastener goes out. Use tonnes consumed for the precursor."
+      ]
+    },
+    {
+      "h": "If the mill will not share",
+      "p": [
+        "Default values apply to the rod, and they are set high. Securing mill data is usually the biggest saving."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Monterrey fasteners under CN 7318",
+      "to": "/answers/monterrey-steel-fasteners-cbam-cn-7318"
+    },
+    {
+      "label": "Kaohsiung steel figure",
+      "to": "/answers/kaohsiung-steel-mill-cbam-figure"
+    },
+    {
+      "label": "Taiwan carbon fee and CBAM",
+      "to": "/answers/taiwan-carbon-fee-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

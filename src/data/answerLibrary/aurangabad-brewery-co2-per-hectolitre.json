@@ -1,0 +1,57 @@
+{
+  "slug": "aurangabad-brewery-co2-per-hectolitre",
+  "q": "How do I calculate a brewery carbon footprint per hectolitre of beer?",
+  "title": "Brewery CO2 per hectolitre",
+  "short": "Add boiler fuel for brewing and pasteurising, electricity for cooling and packaging at 0.710 kg CO2 per kWh, refrigerant leaks and any CO2 bought for carbonation, then divide by hectolitres packed. Fermentation CO2 is biogenic, so report it separately. Bottles, cans and malt belong in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Breweries in Aurangabad, Bengaluru and other Indian brewing clusters answering buyer and investor questions",
+  "sections": [
+    {
+      "h": "Scope 1 and 2",
+      "ul": [
+        "Fuel for wort boiling, cleaning and pasteurising.",
+        "Electricity for refrigeration, compressors and filling lines.",
+        "Refrigerant top ups, from service invoices."
+      ]
+    },
+    {
+      "h": "Fermentation CO2",
+      "p": [
+        "It comes from the sugar in the grain, so it is biogenic and shown outside the scopes. If you capture and reuse it, you buy less CO2."
+      ]
+    },
+    {
+      "h": "Scope 3",
+      "p": [
+        "Glass bottles and cans are often the largest part. Count them per hectolitre from packaging invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Refrigerant leaks without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Condensate recovery savings",
+      "to": "/answers/condensate-recovery-fuel-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

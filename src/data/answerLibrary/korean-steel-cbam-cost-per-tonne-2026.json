@@ -1,0 +1,62 @@
+{
+  "slug": "korean-steel-cbam-cost-per-tonne-2026",
+  "q": "How do I estimate the 2026 CBAM cost per tonne of Korean steel?",
+  "title": "Korean steel CBAM cost in 2026",
+  "short": "Take the embedded emissions per tonne, subtract the free allocation adjustment for the year, multiply by the certificate price and deduct any Korean carbon price effectively paid. In 2026 the adjustment still covers most of the benchmark, so the charge is small, and it rises each year to 2034. Check the current figures before relying on them.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of Korean steel and the Korean mills pricing contracts with them",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Embedded emissions per tonne, actual or default.",
+        "The benchmark and the phase out share for the year.",
+        "The certificate price set from EU ETS auctions.",
+        "Any K-ETS price paid, net of free allocation."
+      ]
+    },
+    {
+      "h": "Integrated route",
+      "p": [
+        "A blast furnace route sits well above the benchmark for scrap based steel, so the gap between actual emissions and the adjustment is wider than for an arc furnace mill."
+      ]
+    },
+    {
+      "h": "Run it yearly",
+      "p": [
+        "The free share falls each year, so a figure for 2026 understates later years."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Turkish rebar cost per tonne",
+      "to": "/answers/turkish-rebar-cbam-cost-per-tonne-2026"
+    },
+    {
+      "label": "K-ETS price and CBAM",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "Pohang hot rolled coil",
+      "to": "/answers/pohang-steel-hot-rolled-coil-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "bhadohi-tufted-carpet-latex-backing-scope-3",
+  "q": "How do I count latex and backing cloth in a tufted carpet footprint?",
+  "title": "Tufted carpet: latex and backing",
+  "short": "Latex compound and backing cloth are purchased materials, so they go in Scope 3 Category 1 for your company and in the cradle to gate figure per square metre. Multiply kg used per square metre by a supplier or published factor for each material, and add the energy of the curing oven.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hand tufted and machine tufted carpet makers in Bhadohi and Panipat",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Latex: synthetic SBR or natural rubber, with different factors.",
+        "Primary and secondary backing: cotton, jute or polypropylene.",
+        "Filler such as chalk in the compound."
+      ]
+    },
+    {
+      "h": "Curing",
+      "p": [
+        "Gas, diesel or wood burned in the drying and curing stage, per square metre, from fuel invoices and production logs."
+      ]
+    },
+    {
+      "h": "Where to find factors",
+      "p": [
+        "Ask the latex and cloth suppliers first; use a published average only when they cannot answer, and label it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Hand knotted carpet footprint",
+      "to": "/answers/hand-knotted-carpet-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Bhadohi exporters and EU buyers",
+      "to": "/answers/bhadohi-carpet-exporter-eu-buyer-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

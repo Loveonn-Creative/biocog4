@@ -1,0 +1,59 @@
+{
+  "slug": "kaohsiung-steel-mill-cbam-figure",
+  "q": "What CBAM figure should an importer use for steel from a Kaohsiung mill?",
+  "title": "Kaohsiung steel: the CBAM figure",
+  "short": "Ask the mill for actual direct embedded emissions per tonne of the product you import, by CN code and period, including any bought slabs or billets as precursors. Kaohsiung has both integrated and arc furnace mills, and the route changes the figure a lot, so never reuse another mill or a national average.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of plate, coil, wire rod and bar from Kaohsiung mills",
+  "sections": [
+    {
+      "h": "Integrated route",
+      "p": [
+        "Coke, sinter, blast furnace and converter emissions, net of export gases treated under the CBAM rules."
+      ]
+    },
+    {
+      "h": "Arc furnace route",
+      "p": [
+        "Electrodes, charge carbon, lime and gas for reheating. Scrap carries no embedded emissions, but bought DRI or pig iron does."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported for steel, not charged in the definitive period. Keep it per tonne with the factor used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Hazira coil by route",
+      "to": "/answers/hazira-steel-coil-cbam-figure-by-route"
+    },
+    {
+      "label": "Scrap in CBAM",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Actual figures and verification",
+      "to": "/answers/cbam-actual-emissions-need-verification-importer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

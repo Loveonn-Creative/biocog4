@@ -1,0 +1,55 @@
+{
+  "slug": "moradabad-brass-scrap-recycled-content-claim",
+  "q": "Can a Moradabad brassware exporter claim recycled content for brass melted from scrap?",
+  "title": "Moradabad brass: recycled content claims",
+  "short": "Yes, for scrap that would otherwise have been waste: pre consumer scrap from other factories and post consumer scrap. Your own runners, risers and rejects melted again do not count. Keep purchase invoices showing scrap type and weight, and state the percentage by weight under ISO 14021.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Brassware and metal handicraft exporters in Moradabad answering buyer questions on recycled content",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Post consumer scrap such as old utensils and fittings.",
+        "Pre consumer scrap bought from other units."
+      ]
+    },
+    {
+      "h": "What does not",
+      "ul": [
+        "Your own process scrap remelted in the same plant.",
+        "Virgin copper and zinc ingot."
+      ]
+    },
+    {
+      "h": "How to calculate",
+      "ol": [
+        "Weigh scrap and virgin metal charged per month from invoices.",
+        "Divide eligible scrap by total metal charged.",
+        "Keep supplier invoices naming the scrap type."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads metal purchase invoices into a dated, fingerprinted record, so the scrap and ingot weights behind a recycled content figure trace back to the documents.",
+  "links": [
+    {
+      "label": "Moradabad exporters and CBAM",
+      "to": "/answers/moradabad-brassware-exporter-cbam-and-buyers"
+    },
+    {
+      "label": "Recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Oil or induction melting",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

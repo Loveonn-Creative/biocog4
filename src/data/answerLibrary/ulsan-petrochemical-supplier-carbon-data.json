@@ -1,0 +1,55 @@
+{
+  "slug": "ulsan-petrochemical-supplier-carbon-data",
+  "q": "What carbon data should a buyer ask an Ulsan petrochemical supplier for?",
+  "title": "Ulsan petrochemicals: supplier carbon data",
+  "short": "Ask for a cradle to gate footprint per tonne of the product and grade you buy, with feedstock, cracker fuel, steam and electricity shown, and the allocation method used across co products. Use it with the tonnes on your invoices in Scope 3 Category 1; without it, use a published average and label it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Converters, fibre, tyre and paint makers buying aromatics, olefins and polymers from Ulsan",
+  "sections": [
+    {
+      "h": "Allocation matters",
+      "p": [
+        "A cracker makes ethylene, propylene, butadiene and aromatics together. Mass, energy or economic allocation can change a product figure a lot, so ask which one was used."
+      ]
+    },
+    {
+      "h": "Shared utilities",
+      "p": [
+        "Ulsan plants often take steam and power from a shared complex. The supplier should include its share of those emissions."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Organic chemicals and polymers are outside the current CBAM scope; hydrogen is inside. Check the scope each year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Steam cracker CO2 per tonne",
+      "to": "/answers/steam-cracker-co2-per-tonne-ethylene"
+    },
+    {
+      "label": "Answering a PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "Shared utilities in a park",
+      "to": "/answers/industrial-park-shared-utilities-cbam-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

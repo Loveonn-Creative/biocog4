@@ -1,0 +1,54 @@
+{
+  "slug": "korean-supplier-renewable-certificates-scope-2",
+  "q": "Which Korean renewable electricity options lower a supplier market based Scope 2?",
+  "title": "Korean renewable options for Scope 2",
+  "short": "Korea offers a green premium paid to the utility, renewable energy certificates, third party and direct power purchase agreements and on site solar. Each can lower the market based figure if it meets the GHG Protocol Scope 2 quality criteria. Location based stays at the grid average whatever you buy.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Korean manufacturers asked by global buyers for renewable electricity in their Scope 2",
+  "sections": [
+    {
+      "h": "The options",
+      "ul": [
+        "Green premium: pay extra on the tariff for renewable attribution.",
+        "RECs bought and retired for your consumption.",
+        "Power purchase agreements, third party or direct.",
+        "Own solar, which cuts kWh bought."
+      ]
+    },
+    {
+      "h": "What buyers check",
+      "p": [
+        "That the instrument is retired in your name, covers the same year and market, and is not also claimed by someone else. Some buyers weigh contracts for new capacity higher than a premium on existing plants."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Show both totals and list each instrument with its MWh and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Green tariff or certificates",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Korea grid factor",
+      "to": "/answers/korea-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Malaysia green tariff",
+      "to": "/answers/malaysia-green-electricity-tariff-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

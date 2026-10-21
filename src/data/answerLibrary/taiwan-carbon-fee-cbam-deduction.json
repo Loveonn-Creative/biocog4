@@ -1,0 +1,57 @@
+{
+  "slug": "taiwan-carbon-fee-cbam-deduction",
+  "q": "Can Taiwan carbon fee payments reduce the CBAM cost on exported steel?",
+  "title": "Taiwan carbon fee and CBAM deductions",
+  "short": "Possibly. Taiwan charges a carbon fee on large emitters, first on 2025 emissions, and a price effectively paid can be deducted by the EU declarant for the emissions embedded in the goods. Preferential rates and exemptions lower what is paid, so only the net amount per tonne counts. Check the current rates.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Taiwanese steel, aluminium and fastener exporters and their EU importers",
+  "sections": [
+    {
+      "h": "What could count",
+      "ul": [
+        "Carbon fee actually paid by the installation for the year.",
+        "Only the share attributable to goods shipped to the EU."
+      ]
+    },
+    {
+      "h": "What reduces it",
+      "ul": [
+        "Preferential rates for companies with approved reduction plans.",
+        "Exempted tonnes below the fee threshold or covered by offsets."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "The fee notice and payment record, the rate applied and an independent statement of the share for the exported goods. The fee is paid by the emitting installation, so a fastener maker buying wire rod may have nothing of its own to deduct."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Thailand carbon tax and CBAM",
+      "to": "/answers/thailand-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "K-ETS price and CBAM",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "Fasteners under CN 7318",
+      "to": "/answers/taiwan-fastener-exporter-cbam-cn-7318"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

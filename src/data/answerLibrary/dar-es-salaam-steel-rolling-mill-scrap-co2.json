@@ -1,0 +1,61 @@
+{
+  "slug": "dar-es-salaam-steel-rolling-mill-scrap-co2",
+  "q": "How much CO2 does a Dar es Salaam mill melting scrap emit per tonne of bar?",
+  "title": "Dar es Salaam scrap mills: CO2 per tonne",
+  "short": "Most of it comes from electricity for the induction furnace and rolling, plus fuel for the reheating furnace. Multiply kWh per tonne by the Tanzania grid factor for the year and add fuel invoices converted to CO2. Scrap itself carries no embedded emissions under CBAM, but bought billets do.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Induction furnace and re rolling mills in Dar es Salaam and Tanga",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity bills with kWh.",
+        "Furnace oil, coal or gas invoices for reheating.",
+        "Production in tonnes per month."
+      ]
+    },
+    {
+      "h": "Bought billets",
+      "p": [
+        "If you roll imported billets, their embedded emissions come with them. Ask the supplier per tonne."
+      ]
+    },
+    {
+      "h": "Exports to the EU",
+      "p": [
+        "Rebar is a CBAM good. Electricity is reported, not charged, for steel; direct emissions decide the charge."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Scrap in CBAM",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Re rolling mill CO2 per tonne",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    },
+    {
+      "label": "Tanzania grid factor",
+      "to": "/answers/tanzania-grid-emission-factor-for-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

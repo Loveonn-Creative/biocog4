@@ -1,0 +1,53 @@
+{
+  "slug": "mesaieed-aluminium-smelter-cbam-figure",
+  "q": "What CBAM figure should an importer use for aluminium from Mesaieed?",
+  "title": "Mesaieed aluminium: the CBAM figure",
+  "short": "Ask the smelter for direct embedded emissions per tonne of the product you import: anode carbon, perfluorocarbons and cast house fuel. Electricity from its gas power plant is reported but not charged for aluminium. Use the figure for your CN code and period, not a company wide average.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of ingot, billet and foundry alloy from Mesaieed",
+  "sections": [
+    {
+      "h": "What the figure covers",
+      "ul": [
+        "Anode consumption in the pots.",
+        "Perfluorocarbons from anode effects.",
+        "Fuel for holding, alloying and casting."
+      ]
+    },
+    {
+      "h": "Alloys and remelt",
+      "p": [
+        "If the product includes remelted scrap or added alloying metals, the figure changes. Ask for it per product."
+      ]
+    },
+    {
+      "h": "Paperwork",
+      "p": [
+        "The communication template for the installation and period, matched to your invoices by CN code and tonnes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Sohar smelter under CBAM",
+      "to": "/answers/sohar-aluminium-smelter-gas-power-cbam"
+    },
+    {
+      "label": "UAE smelter data",
+      "to": "/answers/uae-aluminium-extruder-smelter-data-for-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

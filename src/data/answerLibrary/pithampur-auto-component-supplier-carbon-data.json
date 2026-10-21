@@ -1,0 +1,62 @@
+{
+  "slug": "pithampur-auto-component-supplier-carbon-data",
+  "q": "What carbon data do vehicle makers ask Pithampur auto component suppliers for?",
+  "title": "Pithampur auto suppliers: carbon data",
+  "short": "Expect Scope 1 and 2 totals with the 0.710 kg CO2 per kWh CEA grid factor, renewable electricity share and a figure per part. Build them from electricity and fuel bills, steel and aluminium purchases and an allocation by weight or machine hours, and keep one dataset for every customer template.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Forging, machining, casting and sheet metal suppliers in Pithampur and Indore serving truck, tractor and car makers",
+  "sections": [
+    {
+      "h": "What is asked",
+      "ul": [
+        "Annual Scope 1 and 2.",
+        "Share of solar or open access power.",
+        "Footprint per part supplied.",
+        "A reduction plan."
+      ]
+    },
+    {
+      "h": "Part figures",
+      "p": [
+        "Steel weight per part usually dominates. Use the mill figure if you have it, then add your allocated energy."
+      ]
+    },
+    {
+      "h": "Madhya Pradesh grid",
+      "p": [
+        "The location based factor is the national CEA figure. Open access solar lowers the market based figure only with documents showing the units delivered to you."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Pune, Chakan and Hosur suppliers",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Forging footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Drive Sustainability questionnaire",
+      "to": "/answers/drive-sustainability-saq-auto-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "sohar-aluminium-buyer-scope-3-figure",
+  "q": "What Scope 3 figure should a buyer use for primary aluminium from Sohar?",
+  "title": "Sohar aluminium in a buyer Scope 3",
+  "short": "Ask the smelter for a cradle to gate figure per tonne that includes alumina, anodes and the electricity from its gas plant, not only the CBAM direct figure. Multiply it by the tonnes on your invoices. If the smelter cannot provide one, use a regional average and label it as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Extruders, cable makers and foundries buying Sohar ingot, billet or slab",
+  "sections": [
+    {
+      "h": "Why the CBAM figure is not enough",
+      "p": [
+        "CBAM charges aluminium on direct emissions only. A buyer Scope 3 figure needs the full cradle to gate footprint, including power, which is often the largest part for a smelter."
+      ]
+    },
+    {
+      "h": "How to calculate",
+      "ol": [
+        "Tonnes bought per period from purchase invoices.",
+        "Supplier figure per tonne, with its year and boundary.",
+        "Multiply, and keep the supplier letter with the invoices."
+      ]
+    },
+    {
+      "h": "Quality",
+      "p": [
+        "A supplier specific figure ranks above a regional average; say which one you used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "UAE aluminium billet buyers",
+      "to": "/answers/uae-aluminium-billet-buyer-scope-3-figure"
+    },
+    {
+      "label": "Checking a low carbon aluminium claim",
+      "to": "/answers/uae-low-carbon-aluminium-claim-how-to-check"
+    },
+    {
+      "label": "Alumina is not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

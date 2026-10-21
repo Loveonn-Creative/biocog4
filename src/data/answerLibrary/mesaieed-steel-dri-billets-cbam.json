@@ -1,0 +1,61 @@
+{
+  "slug": "mesaieed-steel-dri-billets-cbam",
+  "q": "What CBAM figure should an importer use for billets from a Mesaieed DRI plant?",
+  "title": "Mesaieed DRI billets: the CBAM figure",
+  "short": "Ask for actual embedded emissions per tonne of billet, covering the gas used in the DRI module, the arc furnace and any pellets or scrap bought in. Gas based DRI usually sits well under a blast furnace route, but only installation data for your period counts; default values apply only when it is missing.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of billets and rebar from Mesaieed, and re rollers buying those billets",
+  "sections": [
+    {
+      "h": "Boundary",
+      "ul": [
+        "DRI shaft gas, as reductant and fuel.",
+        "Arc furnace electrodes, charge carbon and lime.",
+        "Purchased pellets or DRI as precursors."
+      ]
+    },
+    {
+      "h": "For re rollers buying the billets",
+      "p": [
+        "The billet figure becomes the precursor in your own rebar figure, so ask for it per tonne and per period."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported, not charged, for steel goods in the definitive period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Sohar DRI steel",
+      "to": "/answers/sohar-dri-steel-plant-cbam-figure"
+    },
+    {
+      "label": "Billets sold to re rollers",
+      "to": "/answers/iskenderun-mill-selling-billets-to-rerollers-data"
+    },
+    {
+      "label": "Actual figures and verification",
+      "to": "/answers/cbam-actual-emissions-need-verification-importer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "oman-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Oman use for electricity?",
+  "title": "Oman grid factor for suppliers",
+  "short": "Oman generates almost all its grid power from natural gas, so the location based factor sits around half a kilogram of CO2 per kWh. Use the official national or IEA figure for the reporting year, state its source and year, and report solar or certificate purchases separately under the market based method.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Sohar, Duqm and Muscat reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Take the national average factor for the year of the bills. Gas fired combined cycle plants pull it down, older open cycle units push it up, so the figure moves a little from year to year."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "If you buy electricity from a named solar plant under contract, or hold certificates that meet the Scope 2 quality criteria, that figure goes in the market based total. Without them, the market based figure falls back to the grid average."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ul": [
+        "kWh per month from the bills.",
+        "The factor, its source and its year.",
+        "Both totals, labelled."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Saudi grid factor",
+      "to": "/answers/saudi-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Green tariff or certificates",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "UAE grid and certificates",
+      "to": "/answers/dubai-data-centre-clean-energy-certificate-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "tanzania-grid-emission-factor-for-factories",
+  "q": "What grid emission factor should a factory in Tanzania use?",
+  "title": "Tanzania grid factor for factories",
+  "short": "Tanzania generates from hydro and natural gas, and new large hydro has been lowering the factor. A location based figure of roughly 0.3 to 0.5 kg CO2 per kWh is typical in recent years; use the official or IEA figure for the reporting year and state source and year.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Dar es Salaam, Tanga and Arusha reporting Scope 2",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Use the national figure for the year of the bills. Dry years with less hydro push it up."
+      ]
+    },
+    {
+      "h": "Generators",
+      "p": [
+        "Diesel run during outages is Scope 1, not Scope 2. Keep fuel invoices separate from power bills."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Without contracts or certificates for renewable power, use the grid average here too."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Kenya grid factor",
+      "to": "/answers/kenya-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Eskom grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

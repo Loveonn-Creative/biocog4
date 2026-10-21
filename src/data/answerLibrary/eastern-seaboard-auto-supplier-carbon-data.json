@@ -1,0 +1,62 @@
+{
+  "slug": "eastern-seaboard-auto-supplier-carbon-data",
+  "q": "What carbon data do car makers ask Eastern Seaboard auto suppliers for?",
+  "title": "Eastern Seaboard auto suppliers: data",
+  "short": "Expect requests for Scope 1 and 2 totals with factors, a reduction target and, more often now, a figure per part. Build it from fuel and electricity bills, material purchases and an allocation by weight or machine hours. Answer every customer template from one dataset so the figures agree.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Tier 1 and tier 2 suppliers in Rayong, Chonburi and Chachoengsao serving Japanese and other car makers",
+  "sections": [
+    {
+      "h": "Typical requests",
+      "ul": [
+        "Annual Scope 1 and 2, with the Thai grid factor and year.",
+        "Renewable electricity share.",
+        "A product figure for the parts you supply.",
+        "A target and the actions behind it."
+      ]
+    },
+    {
+      "h": "Part figures",
+      "p": [
+        "Material is usually the largest share. Steel, aluminium and resin weights per part times supplier or average factors, plus allocated plant energy."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Different templates ask the same thing in different words. One master dataset keeps answers aligned."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Chennai auto supplier data",
+      "to": "/answers/chennai-auto-component-supplier-oem-data"
+    },
+    {
+      "label": "Drive Sustainability questionnaire",
+      "to": "/answers/drive-sustainability-saq-auto-supplier"
+    },
+    {
+      "label": "Thailand grid factor",
+      "to": "/answers/thailand-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

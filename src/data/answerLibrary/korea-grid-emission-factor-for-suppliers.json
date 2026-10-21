@@ -1,0 +1,56 @@
+{
+  "slug": "korea-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Korea use for electricity?",
+  "title": "Korea grid factor for suppliers",
+  "short": "Korea generates from coal, gas, nuclear and a small share of renewables, so the location based factor sits a little over 0.4 kg CO2 per kWh. Use the official national figure or the IEA figure for the reporting year, state source and year, and report green premium, RECs or PPAs under the market based method.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and exporters in Pohang, Gwangyang, Ulsan and Changwon reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "The national grid average for the year of the bills. It moves with the share of coal and nuclear, so do not reuse an old year."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Instruments that meet the Scope 2 quality criteria, such as RECs retired for you or a power purchase agreement, set this figure. Without them it falls back to the grid average or a residual mix if one is published."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ul": [
+        "Monthly kWh from the bills.",
+        "Both totals, each with factor, source and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Korean buyer data requests",
+      "to": "/answers/korean-buyer-supplier-emissions-request"
+    },
+    {
+      "label": "Thailand grid factor",
+      "to": "/answers/thailand-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Green tariff or certificates",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

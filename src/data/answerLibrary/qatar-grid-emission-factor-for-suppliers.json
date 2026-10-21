@@ -1,0 +1,52 @@
+{
+  "slug": "qatar-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Qatar use?",
+  "title": "Qatar grid factor for suppliers",
+  "short": "Qatar runs its grid almost entirely on natural gas, with a growing share of solar, so the location based factor sits close to half a kilogram of CO2 per kWh. Use the official or IEA figure for the reporting year, state source and year, and report contracted solar separately under the market based method.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories, warehouses and exporters in Mesaieed, Ras Laffan and Doha reporting Scope 2",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "The national average for the year of the bills. Large solar plants added in recent years lower it gradually."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Only contractual instruments that meet the Scope 2 quality criteria change this figure. Without them it equals the grid average."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "ul": [
+        "Monthly kWh from bills.",
+        "Both totals, labelled, with factor source and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Oman grid factor",
+      "to": "/answers/oman-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Saudi grid factor",
+      "to": "/answers/saudi-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

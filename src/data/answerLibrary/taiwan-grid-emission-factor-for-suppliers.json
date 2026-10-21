@@ -1,0 +1,52 @@
+{
+  "slug": "taiwan-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Taiwan use?",
+  "title": "Taiwan grid factor for suppliers",
+  "short": "Taiwan grid power comes mostly from gas and coal, with growing solar and wind, so the location based factor sits around half a kilogram of CO2 per kWh. Use the figure the energy authority publishes for the reporting year, state source and year, and report RECs or PPAs under the market based method.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories in Kaohsiung, Taichung and Hsinchu reporting Scope 2 to global buyers",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "The official figure is published yearly and has been easing as renewables grow. Use the year that matches the bills."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Taiwan RECs or a corporate PPA retired for your consumption set this figure, if they meet the Scope 2 quality criteria."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ul": [
+        "Monthly kWh from bills.",
+        "Both totals, with factor, source and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Korea grid factor",
+      "to": "/answers/korea-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Green tariff or certificates",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

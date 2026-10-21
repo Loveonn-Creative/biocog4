@@ -1,0 +1,56 @@
+{
+  "slug": "qatar-lng-buyer-scope-3-upstream",
+  "q": "How does a buyer of Qatari LNG count its upstream emissions in Scope 3?",
+  "title": "Qatari LNG: upstream in Scope 3",
+  "short": "Burning the LNG is Scope 1. Everything before your gate, from gas extraction and processing to liquefaction, shipping and regasification, goes in Scope 3 Category 3 as fuel and energy related activities. Use a supplier or cargo specific figure if you have one, otherwise a published well to tank factor, and say which.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Utilities, fertiliser makers, glass and ceramics plants and city gas distributors burning imported LNG",
+  "sections": [
+    {
+      "h": "Split the emissions",
+      "ul": [
+        "Scope 1: combustion at your site, from the gas quantity on invoices.",
+        "Scope 3 Category 3: upstream extraction, processing, liquefaction, shipping and regasification."
+      ]
+    },
+    {
+      "h": "Which upstream figure",
+      "p": [
+        "A supplier figure per cargo or per contract is best. A published well to tank factor is acceptable when labelled as secondary data. Do not mix LNG and pipeline gas factors."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Invoices with quantities in kg, tonnes or MMBtu, and the factor source and year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "LNG invoice to CO2",
+      "to": "/answers/lng-invoice-co2-per-kg"
+    },
+    {
+      "label": "Well to tank from fuel invoices",
+      "to": "/answers/well-to-tank-emissions-from-diesel-invoices"
+    },
+    {
+      "label": "Upstream for transmission losses",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

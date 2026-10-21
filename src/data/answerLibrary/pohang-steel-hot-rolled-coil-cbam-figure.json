@@ -1,0 +1,61 @@
+{
+  "slug": "pohang-steel-hot-rolled-coil-cbam-figure",
+  "q": "What CBAM figure should an importer use for hot rolled coil from a Pohang steelworks?",
+  "title": "Pohang hot rolled coil: the CBAM figure",
+  "short": "Ask the mill for actual direct embedded emissions per tonne of the coil you import, covering coke, sinter, the blast furnace, the converter and the hot strip mill, plus any bought slabs as precursors. An integrated route sits well above a scrap route, so default values rarely help, but real data is still needed.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and service centres buying Korean hot rolled coil, and Korean mills supplying them",
+  "sections": [
+    {
+      "h": "What the figure covers",
+      "ul": [
+        "Coal and coke burned or used as reductant, net of export gases credited under the CBAM rules.",
+        "Lime, sinter and pellet plant emissions inside the site.",
+        "Purchased slabs or pig iron, carried in as precursors."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Charged steel goods count direct emissions only in the definitive period. Electricity is still reported, so the mill should give it per tonne too."
+      ]
+    },
+    {
+      "h": "Per product, not per company",
+      "p": [
+        "A company wide intensity is not the CBAM figure. Ask for the figure for the CN code and reporting period on your invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Hazira coil by route",
+      "to": "/answers/hazira-steel-coil-cbam-figure-by-route"
+    },
+    {
+      "label": "Korean buyer data requests",
+      "to": "/answers/korean-buyer-supplier-emissions-request"
+    },
+    {
+      "label": "Actual figures and verification",
+      "to": "/answers/cbam-actual-emissions-need-verification-importer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

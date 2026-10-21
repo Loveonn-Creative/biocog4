@@ -1,0 +1,56 @@
+{
+  "slug": "oman-carbon-price-cbam-deduction",
+  "q": "Can an Omani exporter deduct a local carbon price from the CBAM cost?",
+  "title": "Oman exporters and CBAM deductions",
+  "short": "Only a carbon price actually paid in the country of origin can reduce the CBAM certificates an importer surrenders. Oman has no carbon tax or emissions trading charge that installations pay today, so there is nothing to deduct. Check the current rules each year, since this can change.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Omani aluminium, steel and fertiliser exporters and their EU importers",
+  "sections": [
+    {
+      "h": "What the rule says",
+      "p": [
+        "The CBAM Regulation lets the declarant claim a reduction for a carbon price effectively paid abroad, net of any rebate or free allocation, with evidence from the installation."
+      ]
+    },
+    {
+      "h": "What this means for Oman",
+      "p": [
+        "Fuel taxes or utility tariffs are not a carbon price for this purpose. Without an explicit price on emissions, the full CBAM obligation applies to the embedded emissions."
+      ]
+    },
+    {
+      "h": "What lowers the cost instead",
+      "ul": [
+        "Actual data in place of default values.",
+        "Lower direct emissions per tonne, for example from scrap or cleaner reductants."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Indonesia carbon price and CBAM",
+      "to": "/answers/indonesia-carbon-price-cbam-deduction-nickel"
+    },
+    {
+      "label": "Kazakhstan ETS and CBAM",
+      "to": "/answers/kazakhstan-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "Price of CBAM certificates",
+      "to": "/answers/turkish-rebar-cbam-cost-per-tonne-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
