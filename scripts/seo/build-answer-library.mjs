@@ -15,6 +15,7 @@
 //   --planned docs/seo/batch-01.tsv  also accept links to answers proposed in that register
 import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync, rmSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
 const DIR = join(ROOT, 'src/data/answerLibrary');
@@ -150,4 +151,11 @@ rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 for (const a of pages) writeFileSync(join(OUT, `${a.slug}.json`), JSON.stringify({ page: a, related: related(a) }));
 writeFileSync(join(OUT, 'index.json'), JSON.stringify(pages.map(({ slug, q, title, topic }) => ({ s: slug, q, t: title, o: topic }))));
+// The public library Biocog Intelligence cites, for its database copy to sync
+// from (supabase/functions/_shared/publicLibrary.ts). Same entries as the
+// bundled intelligenceLibrary.generated.ts, which tests keep current.
+const libSrc = readFileSync(join(ROOT, 'supabase/functions/_shared/intelligenceLibrary.generated.ts'), 'utf8');
+const libText = JSON.stringify(JSON.parse(/=\s*(\[[\s\S]*\]);\s*$/.exec(libSrc)[1]));
+writeFileSync(join(OUT, '_library.json'), libText);
+writeFileSync(join(OUT, '_library-version.json'), JSON.stringify({ version: createHash('sha256').update(libText).digest('hex').slice(0, 16), count: JSON.parse(libText).length }));
 console.log(`✓ ${pages.length} pages; wrote answerLibraryIndex.ts, answerLibraryAll.ts and public/answer-data/`);
