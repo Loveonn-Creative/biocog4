@@ -1,0 +1,61 @@
+{
+  "slug": "durban-auto-supplier-carbon-data",
+  "q": "What carbon data do car makers ask Durban auto suppliers for?",
+  "title": "Durban auto suppliers: carbon data",
+  "short": "Expect Scope 1 and 2 totals with the Eskom grid factor, a figure per part and a reduction plan, often for exports to Europe. Eskom power is coal heavy, so electricity is usually the largest share of a supplier footprint, and rooftop solar or wheeled renewable power lowers it fastest.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Component suppliers in Durban, Pinetown and Prospecton serving vehicle assembly plants",
+  "sections": [
+    {
+      "h": "What is asked",
+      "ul": [
+        "Annual Scope 1 and 2.",
+        "Footprint per part supplied.",
+        "Renewable electricity share and plans."
+      ]
+    },
+    {
+      "h": "Load shedding",
+      "p": [
+        "Diesel generators run during outages add Scope 1. Keep fuel invoices for every month."
+      ]
+    },
+    {
+      "h": "Carbon tax",
+      "p": [
+        "South Africa taxes direct emissions above thresholds. Note whether you pay it, since it may matter for steel and aluminium parts under CBAM."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Eskom grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    },
+    {
+      "label": "Tangier car plant suppliers",
+      "to": "/answers/tangier-car-plant-supplier-scope-3-data"
+    },
+    {
+      "label": "Load shedding diesel and CBAM",
+      "to": "/answers/south-africa-steel-mill-load-shedding-diesel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

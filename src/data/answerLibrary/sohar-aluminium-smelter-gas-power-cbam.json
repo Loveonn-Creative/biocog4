@@ -1,0 +1,61 @@
+{
+  "slug": "sohar-aluminium-smelter-gas-power-cbam",
+  "q": "How does a gas powered smelter in Sohar report aluminium emissions under CBAM?",
+  "title": "Sohar smelter: aluminium under CBAM",
+  "short": "Report direct emissions only: anode carbon burned in the pots, perfluorocarbons from anode effects and fuel burned in the cast house. Electricity from the captive gas plant is reported for information but is not charged for aluminium goods. The buyer then needs a figure per tonne of the exact product shipped.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Primary aluminium smelters in Sohar and their EU buyers of ingot, billet and slab",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Anode consumption, at about 3.67 kg CO2 for every kg of carbon burned.",
+        "Perfluorocarbons (CF4 and C2F6) from anode effects, converted with the GWP values in the CBAM rules.",
+        "Gas or oil burned in holding and casting furnaces."
+      ]
+    },
+    {
+      "h": "Where the gas power plant fits",
+      "p": [
+        "A captive gas plant feeding the potline makes the electricity an indirect emission for CBAM purposes. For aluminium the definitive period charges direct emissions only, but the electricity figure is still reported, so keep the plant meter data and gas invoices together."
+      ]
+    },
+    {
+      "h": "What the buyer receives",
+      "p": [
+        "One figure per tonne for each CN code shipped, with the reporting period and the method, in the Commission communication template."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "UAE smelter data for extruders",
+      "to": "/answers/uae-aluminium-extruder-smelter-data-for-cbam"
+    },
+    {
+      "label": "Alumina is not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    },
+    {
+      "label": "Actual figures and verification",
+      "to": "/answers/cbam-actual-emissions-need-verification-importer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

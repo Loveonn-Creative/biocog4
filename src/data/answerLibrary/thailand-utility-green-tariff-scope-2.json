@@ -1,0 +1,57 @@
+{
+  "slug": "thailand-utility-green-tariff-scope-2",
+  "q": "Does a Thai utility green tariff lower my market based Scope 2?",
+  "title": "Thai utility green tariff and Scope 2",
+  "short": "It can. Thailand has introduced utility green tariffs that attach renewable electricity to your supply. If the attributes are retired for you, cover the same year and meet the GHG Protocol Scope 2 quality criteria, the matching kWh carry a renewable factor in your market based total. Check current terms with your utility.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories in Rayong, Chonburi and Bangkok asked by buyers for renewable electricity",
+  "sections": [
+    {
+      "h": "What to confirm",
+      "ul": [
+        "The kWh covered and the year.",
+        "That certificates or attributes are retired in your name.",
+        "Whether the tariff draws on new or existing plants, which some buyers ask about."
+      ]
+    },
+    {
+      "h": "Location based",
+      "p": [
+        "Stays at the Thai grid average whatever tariff you choose."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Show both totals and the tariff documents next to the bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Thailand grid factor",
+      "to": "/answers/thailand-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Malaysia green tariff",
+      "to": "/answers/malaysia-green-electricity-tariff-scope-2"
+    },
+    {
+      "label": "Green tariff or certificates",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

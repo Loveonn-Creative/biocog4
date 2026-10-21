@@ -1,0 +1,57 @@
+{
+  "slug": "kaohsiung-petrochemical-supplier-pcf-request",
+  "q": "How should a Kaohsiung petrochemical supplier answer a product carbon footprint request?",
+  "title": "Kaohsiung petrochemicals: PCF requests",
+  "short": "Send a cradle to gate figure per tonne of the product, built under ISO 14067 or the Together for Sustainability guideline, with the boundary, year, allocation method and the share of primary data. Separate feedstock, process fuel, steam and electricity so the buyer can see what drives the figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plastics, synthetic rubber and chemical makers in Linyuan, Renwu and Dashe answering customer requests",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Feedstock from naphtha or gas, with its upstream factor.",
+        "Fuel, steam and electricity per tonne, from invoices and meters.",
+        "Allocation across co products, stated."
+      ]
+    },
+    {
+      "h": "Primary data share",
+      "p": [
+        "Buyers ask how much of the figure comes from your own meters and invoices. Report it honestly; a rough figure with a clear method is better than a polished one nobody can trace."
+      ]
+    },
+    {
+      "h": "Updates",
+      "p": [
+        "Refresh it yearly, or when the feed or energy mix changes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Answering a PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "Refinery allocation across products",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    },
+    {
+      "label": "Ulsan petrochemical data",
+      "to": "/answers/ulsan-petrochemical-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

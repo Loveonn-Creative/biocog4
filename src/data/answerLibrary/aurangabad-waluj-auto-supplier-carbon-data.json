@@ -1,0 +1,57 @@
+{
+  "slug": "aurangabad-waluj-auto-supplier-carbon-data",
+  "q": "What carbon data do vehicle makers ask Aurangabad Waluj suppliers for?",
+  "title": "Aurangabad Waluj suppliers: carbon data",
+  "short": "Expect Scope 1 and 2 totals with the CEA factor, a figure per part and a reduction plan. Read kWh, not kVAh, from MSEDCL bills, add diesel and gas from fuel invoices, then allocate by weight or machine hours. Power factor fixes cut the bill, not the kWh used.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Two wheeler, three wheeler and car component suppliers in Waluj, Shendra and Chikalthana",
+  "sections": [
+    {
+      "h": "From the bills",
+      "ul": [
+        "kWh consumed per month, at 0.710 kg CO2 per kWh.",
+        "Diesel for generators and gas for furnaces.",
+        "Paint shop and heat treatment fuel."
+      ]
+    },
+    {
+      "h": "kVAh billing",
+      "p": [
+        "Maharashtra bills many industrial users in kVAh. Emissions follow kWh, so read the kWh line or use the power factor printed on the bill."
+      ]
+    },
+    {
+      "h": "One dataset",
+      "p": [
+        "Fill every customer template from the same records so figures agree."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Pune, Chakan and Hosur suppliers",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Power factor and emissions",
+      "to": "/answers/does-power-factor-correction-reduce-emissions"
+    },
+    {
+      "label": "Drive Sustainability questionnaire",
+      "to": "/answers/drive-sustainability-saq-auto-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "kenya-cement-clinker-imports-scope-3",
+  "q": "How does a Mombasa cement grinder count imported clinker in Scope 3?",
+  "title": "Mombasa grinders: imported clinker",
+  "short": "Clinker you buy is a purchased good, so its emissions go in Scope 3 Category 1, while your grinding electricity is Scope 2 and your dryer fuel is Scope 1. Ask the clinker plant for its figure per tonne; without it, use a published default and label it. Clinker usually dominates cement footprint.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement grinding plants in Mombasa and Athi River using imported clinker",
+  "sections": [
+    {
+      "h": "Split",
+      "ul": [
+        "Scope 1: fuel for drying slag, pozzolana or limestone.",
+        "Scope 2: grinding mill electricity at the Kenya grid factor.",
+        "Scope 3 Category 1: clinker, gypsum and additives."
+      ]
+    },
+    {
+      "h": "Clinker figure",
+      "p": [
+        "Calcination alone gives around half a tonne of CO2 per tonne of clinker, and kiln fuel adds more. Supplier data is far better than an average."
+      ]
+    },
+    {
+      "h": "Lower clinker ratio",
+      "p": [
+        "Blending more pozzolana or slag cuts the footprint per tonne of cement directly."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Batangas grinding with imported clinker",
+      "to": "/answers/batangas-cement-grinding-imported-clinker-scope-3"
+    },
+    {
+      "label": "Kenya grid factor",
+      "to": "/answers/kenya-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Clinker CO2 per tonne",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

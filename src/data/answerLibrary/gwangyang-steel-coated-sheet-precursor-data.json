@@ -1,0 +1,60 @@
+{
+  "slug": "gwangyang-steel-coated-sheet-precursor-data",
+  "q": "What precursor data does a Gwangyang coated steel sheet need for CBAM?",
+  "title": "Gwangyang coated sheet: precursor data",
+  "short": "A galvanised or cold rolled sheet carries the embedded emissions of the hot rolled coil it was made from, plus the direct emissions of pickling, cold rolling, annealing and coating. Zinc is not a CBAM good, so it is not a precursor. Ask the mill for both parts per tonne and period.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers of galvanised, cold rolled and coated sheet from Gwangyang, and auto and appliance buyers",
+  "sections": [
+    {
+      "h": "Two layers",
+      "ol": [
+        "Hot rolled coil: its embedded emissions per tonne from the integrated route.",
+        "Downstream processes: gas burned in annealing and coating lines, plus their electricity, reported."
+      ]
+    },
+    {
+      "h": "Inside one site",
+      "p": [
+        "When the coil is made on the same site, the mill still allocates the upstream emissions to the coated product through the precursor route in the CBAM rules, rather than reporting one site total."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "More than one tonne of coil goes into a tonne of finished sheet. The precursor amount should reflect the tonnes consumed, not the tonnes shipped."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Vietnam galvanised coil precursors",
+      "to": "/answers/vietnam-galvanised-coil-maker-precursor-data"
+    },
+    {
+      "label": "Coated steel and zinc",
+      "to": "/answers/vanderbijlpark-coated-steel-zinc-cbam"
+    },
+    {
+      "label": "Pohang hot rolled coil",
+      "to": "/answers/pohang-steel-hot-rolled-coil-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

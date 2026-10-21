@@ -1,0 +1,56 @@
+{
+  "slug": "baddi-pharma-boiler-briquette-switch-co2",
+  "q": "How does a Baddi pharma unit report CO2 after switching its boiler to briquettes?",
+  "title": "Pharma boiler: switching to briquettes",
+  "short": "CO2 from burning biomass briquettes is biogenic, so it is reported separately and not added to Scope 1. Methane and nitrous oxide from combustion stay in Scope 1. Keep briquette invoices with weights and source, and compare against the coal or oil the boiler used before for the saving.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pharma and food plants in Baddi and the Himachal and Punjab belt moving boilers off coal or oil",
+  "sections": [
+    {
+      "h": "How to report",
+      "ul": [
+        "Scope 1: methane and nitrous oxide from briquettes, plus any fossil fuel still used.",
+        "Outside the scopes: biogenic CO2 from the briquettes, shown separately."
+      ]
+    },
+    {
+      "h": "Proving the source",
+      "p": [
+        "Buyers ask whether briquettes come from agricultural residue or sawdust. Supplier invoices naming the feedstock help."
+      ]
+    },
+    {
+      "h": "Fuel quantity",
+      "p": [
+        "Briquettes have a lower heating value than coal, so more tonnes are burned for the same steam."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so the coal, oil and briquette quantities before and after a switch trace back to the documents.",
+  "links": [
+    {
+      "label": "Briquette per tonne of coal",
+      "to": "/answers/how-much-briquette-replaces-a-tonne-of-coal"
+    },
+    {
+      "label": "Furnace oil boiler CO2",
+      "to": "/answers/pithampur-pharma-unit-boiler-fuel-co2"
+    },
+    {
+      "label": "PSCI pharma supplier questions",
+      "to": "/answers/psci-questionnaire-pharma-supplier-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

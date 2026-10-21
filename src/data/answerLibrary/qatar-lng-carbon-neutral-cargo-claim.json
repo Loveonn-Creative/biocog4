@@ -1,0 +1,52 @@
+{
+  "slug": "qatar-lng-carbon-neutral-cargo-claim",
+  "q": "Can a buyer report a carbon neutral LNG cargo as zero emissions?",
+  "title": "Carbon neutral LNG cargo claims",
+  "short": "No. Burning the gas still emits the same CO2, so your Scope 1 and Scope 3 figures stay gross. Offsets bought for the cargo can be reported separately as offsets, with their registry and serial numbers, but they are not subtracted from the inventory under the GHG Protocol.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Gas buyers offered offset backed or carbon neutral LNG cargoes",
+  "sections": [
+    {
+      "h": "What the label usually means",
+      "p": [
+        "The seller has bought carbon credits equal to some or all of the cargo life cycle emissions. The physical emissions have not changed."
+      ]
+    },
+    {
+      "h": "How to report",
+      "ul": [
+        "Combustion in Scope 1, upstream in Scope 3 Category 3, both gross.",
+        "Credits listed separately, with the standard, project and retirement record."
+      ]
+    },
+    {
+      "h": "What to ask the seller",
+      "p": [
+        "Which emissions the credits cover, which standard issued them and proof of retirement in your name."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Offsets and GHG reports",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    },
+    {
+      "label": "Qatari LNG upstream",
+      "to": "/answers/qatar-lng-buyer-scope-3-upstream"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

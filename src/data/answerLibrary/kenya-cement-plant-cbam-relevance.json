@@ -1,0 +1,57 @@
+{
+  "slug": "kenya-cement-plant-cbam-relevance",
+  "q": "Does CBAM matter for a Kenyan cement plant?",
+  "title": "Kenyan cement plants and CBAM",
+  "short": "Only for cement or clinker shipped into the EU. Most Kenyan cement goes to East African markets, which CBAM does not touch. If you do export to Europe, the importer needs embedded emissions per tonne, including electricity, since cement counts indirect emissions. Buyers elsewhere may still ask for footprints.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Cement and clinker producers in Kenya considering exports",
+  "sections": [
+    {
+      "h": "When it applies",
+      "p": [
+        "When an EU importer declares your cement or clinker. Exports to Uganda, Tanzania or South Sudan are outside."
+      ]
+    },
+    {
+      "h": "If you export to the EU",
+      "ul": [
+        "Direct emissions from calcination and kiln fuel.",
+        "Electricity, counted for cement.",
+        "Clinker bought in, as a precursor."
+      ]
+    },
+    {
+      "h": "Worth doing anyway",
+      "p": [
+        "Lenders and regional buyers increasingly ask for a tonnes per tonne figure. Keeping the kiln and fuel records helps either way."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Nigerian cement and CBAM",
+      "to": "/answers/nigerian-cement-plant-cbam-relevance"
+    },
+    {
+      "label": "Pakistan cement exporters",
+      "to": "/answers/pakistan-cement-exporter-cbam-relevance"
+    },
+    {
+      "label": "Mombasa imported clinker",
+      "to": "/answers/kenya-cement-clinker-imports-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "map-ta-phut-polymer-supplier-carbon-data",
+  "q": "What carbon data should a buyer ask a Map Ta Phut polymer supplier for?",
+  "title": "Map Ta Phut polymers: supplier data",
+  "short": "Ask for a cradle to gate footprint per tonne of the exact grade, with feedstock, cracker and polymerisation energy, the allocation method and the year. Thailand runs a national carbon footprint label for products, so some suppliers already hold a figure. Multiply it by the tonnes on your invoices in Scope 3 Category 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Packaging, auto parts and appliance makers buying polyethylene, polypropylene and PVC from Map Ta Phut",
+  "sections": [
+    {
+      "h": "Gas or naphtha feed",
+      "p": [
+        "Crackers fed with ethane from Gulf of Thailand gas and those fed with naphtha produce different figures. Ask which feed the grade came from."
+      ]
+    },
+    {
+      "h": "Labels",
+      "p": [
+        "A national product label shows a figure was calculated and reviewed under its scheme. Check its year and boundary before using it."
+      ]
+    },
+    {
+      "h": "Without a figure",
+      "p": [
+        "Use a published resin average and label it as secondary data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Polymer resin factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Sohar polypropylene data",
+      "to": "/answers/sohar-polypropylene-supplier-carbon-data"
+    },
+    {
+      "label": "Steam cracker CO2",
+      "to": "/answers/steam-cracker-co2-per-tonne-ethylene"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

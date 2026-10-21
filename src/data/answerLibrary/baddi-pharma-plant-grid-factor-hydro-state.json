@@ -1,0 +1,57 @@
+{
+  "slug": "baddi-pharma-plant-grid-factor-hydro-state",
+  "q": "Can a Baddi pharma plant use a lower grid factor because Himachal runs on hydro?",
+  "title": "Baddi plant: hydro state, grid factor",
+  "short": "No. India publishes one national grid factor, 0.710 kg CO2 per kWh in CEA v21.0, and the location based method uses it for every state. Himachal hydro feeds the shared grid. To report lower Scope 2, buy renewable power or certificates and show it under the market based method.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Pharma, FMCG and packaging plants in Baddi, Barotiwala and Nalagarh",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Use the CEA national figure for the year, whatever the state generation mix."
+      ]
+    },
+    {
+      "h": "Market based",
+      "ul": [
+        "Green energy open access with units delivered to you.",
+        "Indian RECs or I-RECs retired for your consumption.",
+        "Own rooftop solar, which cuts kWh bought."
+      ]
+    },
+    {
+      "h": "What buyers expect",
+      "p": [
+        "Both totals, with factor source and year, and documents for any renewable claim."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Large hydro and Scope 2",
+      "to": "/answers/large-hydro-renewable-scope-2-india"
+    },
+    {
+      "label": "I-REC or Indian REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Pharma supplier renewable power",
+      "to": "/answers/energize-pharma-supplier-renewable-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "pohang-steel-buyer-scope-3-figure",
+  "q": "What Scope 3 figure should a buyer use for steel from Pohang?",
+  "title": "Pohang steel in a buyer Scope 3",
+  "short": "Use the mill cradle to gate figure per tonne for the product you buy, including electricity and upstream raw materials, multiplied by the tonnes on your invoices. The CBAM direct figure is narrower, so do not use it alone. Without a supplier figure, use a route average and label it as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Shipbuilders, auto parts makers and fabricators buying Korean plate, coil and wire rod",
+  "sections": [
+    {
+      "h": "Why not the CBAM figure",
+      "p": [
+        "CBAM charges steel on direct emissions. A Scope 3 figure should cover the full cradle to gate footprint, including electricity and mined inputs."
+      ]
+    },
+    {
+      "h": "Steps",
+      "ol": [
+        "Tonnes per product from purchase invoices.",
+        "Supplier figure per tonne, with year and method.",
+        "Multiply and keep the supplier document with the invoices."
+      ]
+    },
+    {
+      "h": "Data quality",
+      "p": [
+        "A product specific figure ranks first, a site average next, a global route average last. Say which you used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Pohang hot rolled coil",
+      "to": "/answers/pohang-steel-hot-rolled-coil-cbam-figure"
+    },
+    {
+      "label": "Checking a low carbon steel claim",
+      "to": "/answers/korean-steel-hydrogen-steel-claim-how-to-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

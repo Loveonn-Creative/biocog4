@@ -1,0 +1,56 @@
+{
+  "slug": "dar-es-salaam-cement-plant-coal-kiln-co2",
+  "q": "How much CO2 does a coal fired cement kiln in Dar es Salaam emit per tonne of clinker?",
+  "title": "Dar es Salaam cement kiln: CO2 per tonne",
+  "short": "Calcination releases about 0.52 tonnes of CO2 per tonne of clinker on the IPCC default, and coal burned in the kiln adds more, depending on kiln efficiency. Calculate fuel CO2 from coal invoices and its lab tested carbon or heating value, and add kiln dust if it leaves the system.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Dar es Salaam, Tanga and Mbeya with coal fired kilns",
+  "sections": [
+    {
+      "h": "Two sources",
+      "ul": [
+        "Process: about 0.52 t CO2 per t clinker, or your own CaO and MgO data.",
+        "Fuel: coal tonnes times its emission factor."
+      ]
+    },
+    {
+      "h": "Coal quality",
+      "p": [
+        "Local and imported coals differ. Lab tests per delivery give a better factor than a default."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Grinding and fans add Scope 2 at the Tanzania grid factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Chakwal coal kiln",
+      "to": "/answers/chakwal-cement-plant-coal-kiln-co2"
+    },
+    {
+      "label": "Clinker CO2 per tonne",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Kenyan cement and CBAM",
+      "to": "/answers/kenya-cement-plant-cbam-relevance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

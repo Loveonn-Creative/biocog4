@@ -1,0 +1,57 @@
+{
+  "slug": "korea-ets-carbon-price-cbam-deduction",
+  "q": "Can a Korean steel exporter deduct its K-ETS carbon price from the CBAM cost?",
+  "title": "K-ETS price and CBAM deductions",
+  "short": "Partly, at most. The EU declarant can deduct a carbon price effectively paid in Korea, net of free allocation, for the emissions embedded in the goods. Most Korean steel installations receive a large share of free allowances and the market price has been low, so the deductible amount per tonne is usually small. Check the current figures each year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Korean steel, aluminium and fertiliser exporters and their EU importers",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Allowances the installation actually bought or surrendered without a free cover.",
+        "Only the share attributable to the goods shipped to the EU."
+      ]
+    },
+    {
+      "h": "What does not",
+      "ul": [
+        "Free allowances, which cancel out the price for the tonnes they cover.",
+        "Indirect costs passed through electricity tariffs."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "The K-ETS allocation and surrender records for the installation, the price paid and an independent statement of the share for the exported goods. Rules for this deduction may be refined by implementing acts, so recheck before each declaration."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Kazakhstan ETS and CBAM",
+      "to": "/answers/kazakhstan-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "South Africa carbon tax and CBAM",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Turkish rebar cost per tonne",
+      "to": "/answers/turkish-rebar-cbam-cost-per-tonne-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

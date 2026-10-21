@@ -1,0 +1,65 @@
+{
+  "slug": "pithampur-pharma-unit-boiler-fuel-co2",
+  "q": "How much CO2 does a Pithampur pharma unit boiler emit per kg of furnace oil?",
+  "title": "Pharma boiler: furnace oil CO2 per kg",
+  "short": "About 3.1 kg CO2 for every kg of furnace oil, from the IPCC default of 77.4 kg CO2 per GJ for residual fuel oil at about 40.4 GJ per tonne. Multiply by the kg on your fuel invoices for Scope 1, and use a supplier certificate value if you have one.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pharma formulation and API units in Pithampur running oil fired boilers",
+  "sections": [
+    {
+      "h": "Calculation",
+      "ol": [
+        "Kg of furnace oil from invoices or tank dips, per month.",
+        "Multiply by about 3.13 kg CO2 per kg.",
+        "Add methane and nitrous oxide if your buyer asks for CO2e."
+      ]
+    },
+    {
+      "h": "Litres on the invoice",
+      "p": [
+        "Convert with the density on the supplier certificate before applying the factor; oils vary."
+      ]
+    },
+    {
+      "h": "Lower options",
+      "p": [
+        "Piped gas or briquettes cut Scope 1 per tonne of steam, and condensate recovery cuts the fuel needed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each boiler figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Furnace oil to piped gas",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "Pharma footprint per 1,000 tablets",
+      "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+    },
+    {
+      "label": "Condensate recovery savings",
+      "to": "/answers/condensate-recovery-fuel-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Example: 12 tonnes of furnace oil a month",
+    "lines": [
+      "12,000 kg × 3.13 kg CO2 per kg = 37,560 kg",
+      "About 37.6 t CO2 a month in Scope 1"
+    ],
+    "note": "Use the density and heating value on your supplier certificate where available."
+  },
+  "reviewed": "2026-10-21"
+}

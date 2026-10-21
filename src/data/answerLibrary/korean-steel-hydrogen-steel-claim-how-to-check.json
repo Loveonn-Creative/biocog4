@@ -1,0 +1,57 @@
+{
+  "slug": "korean-steel-hydrogen-steel-claim-how-to-check",
+  "q": "How do I check a low carbon or hydrogen steel claim from a Korean mill?",
+  "title": "Checking a Korean low carbon steel claim",
+  "short": "Ask what the figure is per tonne of the product you buy, which method and boundary it uses, and whether the reduction is physical or allocated by mass balance. Hydrogen based ironmaking in Korea is still at pilot scale, so most current offers rely on scrap, allocation or certificates.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Auto, appliance and construction buyers offered low carbon steel by Korean mills",
+  "sections": [
+    {
+      "h": "Questions to ask",
+      "ul": [
+        "The figure per tonne, its year and the standard used, such as the worldsteel method or ISO 14067.",
+        "Physical change or mass balance allocation across the site.",
+        "Whether certificates or offsets are included."
+      ]
+    },
+    {
+      "h": "Mass balance",
+      "p": [
+        "Allocating site reductions to a few products can be legitimate under some schemes, but the plant total has not changed. Report it as the supplier figure and say it is allocated."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "CBAM uses actual installation emissions for the goods. An allocated green label does not change that figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Checking a low carbon aluminium claim",
+      "to": "/answers/uae-low-carbon-aluminium-claim-how-to-check"
+    },
+    {
+      "label": "Pohang hot rolled coil",
+      "to": "/answers/pohang-steel-hot-rolled-coil-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "sohar-polypropylene-supplier-carbon-data",
+  "q": "What carbon data should a buyer ask a Sohar polypropylene supplier for?",
+  "title": "Sohar polypropylene: supplier carbon data",
+  "short": "Ask for a cradle to gate footprint per tonne of the grade you buy, calculated under ISO 14067 or the GHG Protocol product standard, with the year and the share from feedstock, process fuel and electricity. Use it with the tonnes on your invoices; without it, use a published average and label it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Converters, packaging and textile makers buying polypropylene from Sohar",
+  "sections": [
+    {
+      "h": "What a usable figure includes",
+      "ul": [
+        "Feedstock extraction and processing.",
+        "Cracker or propane dehydrogenation fuel and power.",
+        "Polymerisation energy.",
+        "The method, boundary and year."
+      ]
+    },
+    {
+      "h": "Is polypropylene under CBAM",
+      "p": [
+        "Not in the current scope, which covers cement, iron and steel, aluminium, fertilisers, hydrogen and electricity. The Commission has a review of organic chemicals and polymers under way, so check before each year."
+      ]
+    },
+    {
+      "h": "In your inventory",
+      "p": [
+        "Tonnes bought times the supplier figure goes in Scope 3 Category 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into a dated, fingerprinted record, so each supplier figure in your Scope 3 sits next to the quantity and the document it applies to.",
+  "links": [
+    {
+      "label": "Jubail polyethylene buyers",
+      "to": "/answers/jubail-polyethylene-buyer-scope-3-figure"
+    },
+    {
+      "label": "Polymer resin factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Answering a PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 and ISO 14021 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "mesaieed-urea-exporter-cbam-precursors",
+  "q": "What does a Mesaieed urea exporter report for CBAM, including precursors?",
+  "title": "Mesaieed urea: CBAM and precursors",
+  "short": "Report the direct and indirect emissions of the urea plant and add the embedded emissions of the ammonia it consumes, which is the main precursor. Fertilisers are one of the CBAM goods where electricity emissions count. The importer needs one figure per tonne of urea for each reporting period.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Urea and ammonia producers in Mesaieed and EU importers of their fertilisers",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Natural gas burned for heat and steam at the urea plant.",
+        "Electricity used, since fertilisers count indirect emissions.",
+        "Ammonia consumed, with its own embedded emissions from reforming."
+      ]
+    },
+    {
+      "h": "Bound CO2",
+      "p": [
+        "Urea synthesis uses CO2 from the ammonia plant. How that carbon is treated follows the CBAM implementing rules, so take the method from the current text rather than netting it off yourself."
+      ]
+    },
+    {
+      "h": "What the importer needs",
+      "p": [
+        "The communication template filled for the installation, with the ammonia figure shown as a precursor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and material invoices into dated, fingerprinted installation records, the starting point for the actual figures an EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Egypt urea plants",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "UAE ammonia exporters",
+      "to": "/answers/uae-ammonia-exporter-cbam-what-counts"
+    },
+    {
+      "label": "Are urea and DAP covered",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
