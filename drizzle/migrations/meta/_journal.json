@@ -218,6 +218,27 @@
       "when": 1792513966857,
       "tag": "0030_reconcile_subscription_manual",
       "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1792581552411,
+      "tag": "0031_cng_factor_correction",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1792581572539,
+      "tag": "0032_subscriptions_staff_email",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1792581599309,
+      "tag": "0033_finance_insights",
+      "breakpoints": true
     }
   ]
 }

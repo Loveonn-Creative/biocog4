@@ -1199,6 +1199,33 @@ export type Database = {
           },
         ]
       }
+      emissions_cng_backup_20261104: {
+        Row: {
+          backed_up_at: string
+          emission_id: string
+          new_co2_kg: number
+          old_co2_kg: number
+          old_emission_factor: number
+          old_verification_notes: string | null
+        }
+        Insert: {
+          backed_up_at?: string
+          emission_id: string
+          new_co2_kg: number
+          old_co2_kg: number
+          old_emission_factor: number
+          old_verification_notes?: string | null
+        }
+        Update: {
+          backed_up_at?: string
+          emission_id?: string
+          new_co2_kg?: number
+          old_co2_kg?: number
+          old_emission_factor?: number
+          old_verification_notes?: string | null
+        }
+        Relationships: []
+      }
       finance_application_documents: {
         Row: {
           application_id: string
@@ -1381,6 +1408,7 @@ export type Database = {
           figures_read_at: string | null
           id: string
           mime_type: string
+          monthly: Json
           organization_id: string | null
           sha256: string
           size_bytes: number
@@ -1395,6 +1423,7 @@ export type Database = {
           figures_read_at?: string | null
           id?: string
           mime_type: string
+          monthly?: Json
           organization_id?: string | null
           sha256: string
           size_bytes: number
@@ -1409,6 +1438,7 @@ export type Database = {
           figures_read_at?: string | null
           id?: string
           mime_type?: string
+          monthly?: Json
           organization_id?: string | null
           sha256?: string
           size_bytes?: number
@@ -1747,6 +1777,13 @@ export type Database = {
             columns: ["subscription_id"]
             isOneToOne: false
             referencedRelation: "subscriptions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "invoices_subscription_id_fkey"
+            columns: ["subscription_id"]
+            isOneToOne: false
+            referencedRelation: "subscriptions_with_email"
             referencedColumns: ["id"]
           },
         ]
@@ -3732,6 +3769,32 @@ export type Database = {
           },
         ]
       }
+      subscriptions_with_email: {
+        Row: {
+          amount: number | null
+          billed_base_amount: number | null
+          billing_cycle: string | null
+          created_at: string | null
+          currency: string | null
+          discount_note: string | null
+          email: string | null
+          expires_at: string | null
+          gst_amount: number | null
+          id: string | null
+          payment_mode: string | null
+          razorpay_order_id: string | null
+          razorpay_payment_id: string | null
+          razorpay_signature: string | null
+          reconciled_at: string | null
+          reconciled_by: string | null
+          starts_at: string | null
+          status: string | null
+          tier: string | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       commit_invoice_read: {
@@ -3772,6 +3835,7 @@ export type Database = {
         }
         Returns: Json
       }
+      finance_insights_plan: { Args: { p_user: string }; Returns: string }
       get_active_context: {
         Args: never
         Returns: {
@@ -3872,12 +3936,28 @@ export type Database = {
         Returns: string
       }
       ledger_row_digest: { Args: { r: Json }; Returns: string }
+      my_finance_insights: { Args: never; Returns: Json }
       my_org_permissions: { Args: { p_organization_id: string }; Returns: Json }
+      my_private_records: { Args: never; Returns: Json }
       owner_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
+      }
+      reconcile_subscription_by_email: {
+        Args: {
+          p_base_price: number
+          p_billing_cycle: string
+          p_discount_note?: string
+          p_email: string
+          p_expires_at: string
+          p_payment_mode: string
+          p_reconciled_by?: string
+          p_starts_at: string
+          p_tier: string
+        }
+        Returns: string
       }
       reconcile_subscription_manual: {
         Args: {
