@@ -1,78 +1,35 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { FileText, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Document } from '@/hooks/useDocuments';
+import { money, shortDate } from '@/lib/dashboardView';
 
-interface RecentDocumentsProps {
-  documents: Document[];
-}
+// The latest uploads, newest first; the full list and each calculation are in History.
 
-export function RecentDocuments({ documents }: RecentDocumentsProps) {
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-  };
-
-  const formatAmount = (amount: number | null) => {
-    if (!amount) return '-';
-    return new Intl.NumberFormat('en-IN', { 
-      style: 'currency', 
-      currency: 'INR',
-      maximumFractionDigits: 0 
-    }).format(amount);
-  };
-
+export function RecentDocuments({ documents, loading }: { documents: Document[]; loading?: boolean }) {
   return (
-    <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-      <CardContent className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-foreground">Recent Documents</h2>
-          <Link 
-            to="/history" 
-            className="text-sm text-primary hover:underline"
-          >
-            View all
-          </Link>
+    <section aria-labelledby="recent-title" className="min-w-0 rounded-xl border border-border bg-card p-4 md:p-5">
+      <div className="flex items-baseline justify-between gap-2">
+        <h2 id="recent-title" className="text-[15px] font-semibold">Latest uploads</h2>
+        <Link to="/history" className="text-[12.5px] font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">History</Link>
+      </div>
+      {loading && documents.length === 0 ? (
+        <div className="mt-3 space-y-2" aria-label="Loading uploads">
+          {[0, 1, 2].map((i) => <div key={i} className="h-9 animate-pulse rounded-md bg-muted motion-reduce:animate-none" />)}
         </div>
-
-        {documents.length > 0 ? (
-          <div className="space-y-3">
-            {documents.map(doc => (
-              <div 
-                key={doc.id}
-                className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors"
-              >
-                <div className="p-2 rounded-md bg-primary/10">
-                  <FileText className="h-4 w-4 text-primary" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-foreground truncate">
-                    {doc.vendor || doc.document_type || 'Document'}
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3" />
-                    {formatDate(doc.created_at)}
-                  </div>
-                </div>
-                <div className="text-sm font-medium text-foreground">
-                  {formatAmount(doc.amount)}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-8">
-            <FileText className="h-8 w-8 text-muted-foreground/50 mx-auto mb-2" />
-            <p className="text-sm text-muted-foreground">No documents yet</p>
-            <Link 
-              to="/" 
-              className="text-sm text-primary hover:underline mt-2 inline-block"
-            >
-              Upload your first invoice
-            </Link>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      ) : documents.length === 0 ? (
+        <p className="mt-3 text-[13.5px] text-muted-foreground">No uploads yet.</p>
+      ) : (
+        <ul className="mt-2 divide-y divide-border">
+          {documents.map((d) => (
+            <li key={d.id} className="flex items-baseline justify-between gap-3 py-2.5">
+              <span className="min-w-0">
+                <span className="block truncate text-[13.5px] font-medium">{d.vendor || 'Unnamed supplier'}</span>
+                <span className="block text-[12px] text-muted-foreground">{shortDate(d.invoice_date) || `Uploaded ${shortDate(d.created_at)}`}</span>
+              </span>
+              <span className="shrink-0 text-[13.5px] tabular-nums">{money(d.amount, d.currency)}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
   );
 }
