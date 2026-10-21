@@ -1,0 +1,68 @@
+{
+  "slug": "leather-wallet-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a leather wallet?",
+  "title": "Leather wallet carbon per piece",
+  "short": "The leather is the main material. Multiply the square feet used, including cutting waste, by the tannery's footprint per square foot, add lining, thread and packaging from supplier data, and add the making energy at 0.710 kg CO2 per kWh.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Leather goods makers and brands sourcing wallets",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Leather, the largest share, from the tannery's per-square-foot figure.",
+        "Cutting waste, which raises the leather used per wallet.",
+        "Lining, adhesive, thread and hardware.",
+        "Box and packaging."
+      ]
+    },
+    {
+      "h": "Leather used, not leather in",
+      "p": [
+        "Use the gross area issued for cutting, from your consumption norms, not just the area in the finished wallet. Better nesting cuts both waste and carbon."
+      ]
+    },
+    {
+      "h": "Allocating cattle impacts",
+      "p": [
+        "Whether hides carry part of the cattle footprint is a method choice. State the tannery's allocation rule with the leather figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: structure of a wallet figure (illustrative inputs)",
+    "lines": [
+      "Making: 0.35 kWh per wallet x 0.710 = 0.25 kg CO2",
+      "Leather: 0.6 sq ft x your tannery's factor per sq ft (from the tannery or a named database)",
+      "Lining, thread, box: from supplier data or weights x named factors",
+      "Total = making + leather + lining and packaging"
+    ],
+    "note": "Making energy is illustrative; take the leather factor from your tannery with its method."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather tannery per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Leather belt per piece",
+      "to": "/answers/leather-belt-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Chrome vs vegetable tanned leather",
+      "to": "/answers/chrome-vs-vegetable-tanned-leather-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

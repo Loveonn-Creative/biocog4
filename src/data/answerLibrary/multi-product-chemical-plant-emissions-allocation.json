@@ -1,0 +1,73 @@
+{
+  "slug": "multi-product-chemical-plant-emissions-allocation",
+  "q": "How do I split a chemical plant's emissions between its products?",
+  "title": "Allocating emissions in a multi-product plant",
+  "short": "Measure what you can per product, such as dedicated reactors or steam lines, then split the shared energy by a stated rule, such as mass of output, or batch hours when products need very different heating. Keep the rule the same each year and state it with every product figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Chemical, dye and pharma plants making several products in one facility",
+  "sections": [
+    {
+      "h": "Order of preference",
+      "ul": [
+        "Direct measurement: sub-meters or steam meters per line.",
+        "Physical allocation: kilograms of output or reactor hours.",
+        "Economic allocation by revenue, only when physical rules do not fit."
+      ]
+    },
+    {
+      "h": "Why the rule matters",
+      "p": [
+        "Mass allocation gives every kilogram the same share, even if one product needs twice the heating. If heating time differs a lot, reactor hours or steam per batch give a fairer split."
+      ]
+    },
+    {
+      "h": "What a buyer sees",
+      "p": [
+        "Give the per-kilogram figure, the rule used and the share of energy that was directly metered, so the buyer can judge how close the number is to the product."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: mass allocation (one month, illustrative inputs)",
+    "lines": [
+      "PNG: 30,000 scm x 2.05 = 61,500 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Plant total: 104,100 kg CO2 for 500 t of output",
+      "Product A, 320 t: 104,100 x 320 / 500 = 66,624 kg CO2",
+      "Product B, 180 t: 104,100 x 180 / 500 = 37,476 kg CO2",
+      "Per kg, either product: 104,100 / 500,000 = 0.208 kg CO2"
+    ],
+    "note": "Inputs are illustrative; ISO 14067 and the GHG Protocol Product Standard set the allocation order."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "CHP allocation between power and steam",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Pharma cleanroom HVAC allocation",
+      "to": "/answers/pharma-cleanroom-hvac-emissions-allocation"
+    },
+    {
+      "label": "Answer a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

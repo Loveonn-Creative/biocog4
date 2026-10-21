@@ -1,0 +1,69 @@
+{
+  "slug": "pu-sole-vs-rubber-sole-carbon-per-pair",
+  "q": "Which has a lower carbon footprint per pair, a PU sole or a rubber sole?",
+  "title": "PU sole vs rubber sole carbon",
+  "short": "Compare weight times the material factor, from the PU system or rubber compound supplier, plus the moulding energy at 0.710 kg CO2 per kWh. The answer depends on sole weight and each supplier's factor rather than on the material name.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Footwear makers, sole makers and brands",
+  "sections": [
+    {
+      "h": "What to compare",
+      "ul": [
+        "Sole weight per pair, from the BOM.",
+        "Material factor per kilogram, from the supplier with its method.",
+        "Moulding or pressing energy per pair.",
+        "Moulding scrap and flash."
+      ]
+    },
+    {
+      "h": "Durability",
+      "p": [
+        "A sole that lasts longer can mean fewer pairs over time. Note expected life as context, but keep the per-pair figure to materials and making."
+      ]
+    },
+    {
+      "h": "Asking suppliers",
+      "p": [
+        "Ask each sole supplier for a per-kilogram figure with method and boundary, so the two numbers can be compared fairly."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: structure of the comparison (illustrative inputs)",
+    "lines": [
+      "Sole A, PU: 220 g x the PU system's factor from the supplier",
+      "Sole B, rubber: 310 g x the rubber compound's factor from the supplier",
+      "Moulding energy: PU 0.12 kWh, rubber press 0.30 kWh per pair",
+      "Moulding CO2: PU 0.085 kg, rubber 0.213 kg per pair",
+      "Compare (weight x factor) + moulding for each sole"
+    ],
+    "note": "Weights and kWh are illustrative; material factors must come from your suppliers."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather footwear per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Synthetic footwear per pair",
+      "to": "/answers/synthetic-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Injection moulding per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "jewellery-casting-workshop-emissions",
+  "q": "How do I calculate the emissions of a jewellery casting workshop?",
+  "title": "Jewellery casting workshop emissions",
+  "short": "Add the electricity for burnout ovens, casting machines and polishing at 0.710 kg CO2 per kWh, and LPG for torches and melting at 2.98 kg per kilogram. Divide by pieces or grams cast. Add the metal separately, per gram, from the supplier.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Jewellery manufacturers and karigar workshops",
+  "sections": [
+    {
+      "h": "Main energy uses",
+      "ul": [
+        "Burnout ovens that run for hours per flask.",
+        "Induction casting machines.",
+        "Torches for soldering and melting.",
+        "Polishing motors and ultrasonic cleaners."
+      ]
+    },
+    {
+      "h": "Per piece or per gram",
+      "p": [
+        "Report per gram of metal cast when pieces vary a lot in weight, and per piece for standard designs."
+      ]
+    },
+    {
+      "h": "Metal loss",
+      "p": [
+        "Metal in polishing dust and sprues can be recovered and refined. Note recovery, since it lowers the new metal needed per piece."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity (burnout oven, casting machine, polishing): 3,200 kWh x 0.710 = 2,272 kg CO2",
+      "LPG (torches, melting): 120 kg x 2.98 = 357.6 kg CO2",
+      "Workshop total: 2,629.6 kg CO2 a month for 2,500 pieces = 1.052 kg per piece"
+    ],
+    "note": "Inputs are illustrative; use the workshop bill and LPG cylinder records."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Gold jewellery per gram",
+      "to": "/answers/gold-jewellery-carbon-footprint-per-gram"
+    },
+    {
+      "label": "Silver jewellery per kg",
+      "to": "/answers/silver-jewellery-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Investment casting per kg",
+      "to": "/answers/investment-casting-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

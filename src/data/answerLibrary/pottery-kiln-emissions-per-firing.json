@@ -1,0 +1,71 @@
+{
+  "slug": "pottery-kiln-emissions-per-firing",
+  "q": "How do I calculate the emissions of a pottery kiln firing?",
+  "title": "Pottery kiln emissions per firing",
+  "short": "For an electric kiln, multiply the kWh per firing, from a meter or the controller log, by 0.710 kg CO2 per kWh. For a gas kiln, multiply the LPG or PNG used by its default factor. Divide by the pieces in the load for a per-piece figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Studio potters, craft units and small terracotta and stoneware makers",
+  "sections": [
+    {
+      "h": "Getting the energy",
+      "ul": [
+        "Electric kiln: a plug-in or sub-meter, or rated power times firing hours as an estimate.",
+        "Gas kiln: cylinder weight before and after, or the gas meter.",
+        "Wood kiln: wood weight, whose CO2 is biogenic and reported separately."
+      ]
+    },
+    {
+      "h": "Bisque and glaze",
+      "p": [
+        "Work fired twice, biscuit then glaze, carries both firings. Spread each firing over the pieces it held."
+      ]
+    },
+    {
+      "h": "Fuller loads",
+      "p": [
+        "A kiln uses much the same energy to reach temperature whether it is full or half empty, so packing it fully spreads that energy over more pieces."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one glaze firing (illustrative inputs)",
+    "lines": [
+      "Electric kiln: 18 kWh per firing x 0.710 = 12.78 kg CO2",
+      "Pieces in the firing: 40",
+      "Per piece: 12.78 / 40 = 0.320 kg CO2",
+      "LPG kiln instead: 9 kg LPG x 2.98 = 26.82 kg CO2, 0.670 kg per piece"
+    ],
+    "note": "Energy per firing is illustrative; read your meter or weigh your cylinder."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Terracotta planter per piece",
+      "to": "/answers/terracotta-planter-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Stoneware crockery per kg",
+      "to": "/answers/stoneware-crockery-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Propane vs natural gas tile kiln",
+      "to": "/answers/propane-vs-natural-gas-tile-kiln-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

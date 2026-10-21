@@ -1,0 +1,71 @@
+{
+  "slug": "steam-ejector-vs-vacuum-pump-emissions",
+  "q": "Does a vacuum pump have lower emissions than a steam ejector?",
+  "title": "Steam ejector vs vacuum pump emissions",
+  "short": "Compare the boiler fuel behind the ejector steam with the pump electricity at 0.710 kg CO2 per kWh, over the same hours. The answer depends on your steam rate and boiler fuel, which your meters can show.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Chemical, pharma, edible oil and food plants running vacuum systems",
+  "sections": [
+    {
+      "h": "How to compare",
+      "ul": [
+        "Ejector: steam per hour times hours, converted to boiler fuel at your plant's steam to fuel ratio.",
+        "Pump: rated power or sub-meter reading times hours.",
+        "Same vacuum level and same operating hours on both sides."
+      ]
+    },
+    {
+      "h": "What else changes",
+      "p": [
+        "Ejector steam ends up in the condensate or effluent, which may need treatment. A dry pump avoids that, but has its own maintenance. Count only the energy in the carbon comparison and note the rest."
+      ]
+    },
+    {
+      "h": "Recording a switch",
+      "p": [
+        "Keep a dated record of steam and power before and after the change, so the saving can be shown from meter data rather than estimated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one vacuum duty over 600 hours (illustrative inputs)",
+    "lines": [
+      "Steam ejector: 0.9 t steam an hour x 600 h = 540 t steam",
+      "Ejector share of boiler PNG (90 scm per t steam): 540 x 90 = 48,600 scm x 2.05 = 99,630 kg CO2",
+      "Dry vacuum pump: 30 kW x 600 h = 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "Difference: 99,630 minus 12,780 = 86,850 kg CO2 over the period"
+    ],
+    "note": "Steam rate, boiler ratio and pump rating are illustrative; your boiler log gives your scm or kg of fuel per tonne of steam."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Boiler blowdown heat recovery",
+      "to": "/answers/boiler-blowdown-heat-recovery-savings"
+    },
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Air compressor kWh from hours",
+      "to": "/answers/air-compressor-kwh-from-load-unload-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

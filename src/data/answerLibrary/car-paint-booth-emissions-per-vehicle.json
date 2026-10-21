@@ -1,0 +1,71 @@
+{
+  "slug": "car-paint-booth-emissions-per-vehicle",
+  "q": "How do I calculate the emissions of a car paint booth per vehicle painted?",
+  "title": "Car paint booth emissions per job",
+  "short": "Add the burner fuel for the bake cycle, LPG at 2.98 kg CO2 per kilogram or diesel at 2.68 per litre, and the fan and lighting electricity at 0.710 kg CO2 per kWh. Divide by paint jobs, and count panels as well if job sizes vary.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Body shops, dealer workshops and refinish centres",
+  "sections": [
+    {
+      "h": "What uses energy",
+      "ul": [
+        "The burner heating air for spraying and baking.",
+        "Supply and exhaust fans.",
+        "Lighting and the compressor for spray guns."
+      ]
+    },
+    {
+      "h": "Per job or per panel",
+      "p": [
+        "A full respray uses more booth time than a single panel. Divide by booth hours or panels as well as jobs, so the figure reflects the work."
+      ]
+    },
+    {
+      "h": "Paint solvents",
+      "p": [
+        "Solvent vapour is a VOC and an air quality issue, not CO2 from the booth. Keep it out of the energy figure and track it separately for air quality compliance."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Booth burner LPG: 900 kg x 2.98 = 2,682 kg CO2",
+      "Fans, lights and compressor: 3,600 kWh x 0.710 = 2,556 kg CO2",
+      "Paint jobs: 180",
+      "Total: 5,238 / 180 = 29.1 kg CO2 per job"
+    ],
+    "note": "Fuel and power are illustrative; use LPG invoices, a booth sub-meter and the job register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Powder coating line per m2",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Service workshop footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    },
+    {
+      "label": "ED coating line per m2",
+      "to": "/answers/ed-coating-line-carbon-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

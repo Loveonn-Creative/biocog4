@@ -1,0 +1,67 @@
+{
+  "slug": "cold-room-door-air-curtain-energy-savings",
+  "q": "How do I measure the energy saved by a strip curtain or fast door on a cold room?",
+  "title": "Cold room door savings: curtains, fast doors",
+  "short": "Compare the cold room's metered kWh for the same months before and after fitting the curtain or fast door, with throughput noted, and convert the difference at 0.710 kg CO2 per kWh. Warm moist air entering through open doors adds load and ice, so door changes can show up clearly on a sub-meter.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cold storage, warehouse and food processing managers",
+  "sections": [
+    {
+      "h": "What door openings cost",
+      "ul": [
+        "Warm air enters and must be cooled.",
+        "Moisture freezes on coils, adding defrost cycles.",
+        "Longer openings during loading add the most."
+      ]
+    },
+    {
+      "h": "Measuring fairly",
+      "p": [
+        "Use a sub-meter on the cold room. Compare similar seasons and throughput, since hot months and heavy loading raise energy regardless of the door."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Report the measured kWh difference with dates. Do not claim a manufacturer's percentage unless your meter shows it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: before and after (illustrative inputs)",
+    "lines": [
+      "Before (6 months): 96,000 kWh x 0.710 = 68,160 kg CO2",
+      "After strip curtain and fast door (6 months): 88,000 kWh x 0.710 = 62,480 kg CO2",
+      "Measured difference: 5,680 kg CO2 over 6 months",
+      "Same months compared, same throughput noted"
+    ],
+    "note": "Readings are illustrative; use your sub-meter for matched periods."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Blast freezer energy per tonne",
+      "to": "/answers/blast-freezer-energy-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

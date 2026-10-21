@@ -1,0 +1,73 @@
+{
+  "slug": "cold-chain-emissions-per-kg-of-food",
+  "q": "How do I calculate the cold chain emissions for one kilogram of food?",
+  "title": "Cold chain emissions per kg of food",
+  "short": "Add each cold stage per kilogram: pre-cooling and cold storage electricity at 0.710 kg CO2 per kWh, reefer truck diesel at 2.68 kg per litre, and retail chilling. Get each stage's energy per kilogram from the operator, and add refrigerant leaks where they are reported.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Food brands, exporters and cold chain operators",
+  "sections": [
+    {
+      "h": "Stages to include",
+      "ul": [
+        "Pre-cooling at the pack-house.",
+        "Cold storage, by days stored.",
+        "Reefer transport, including the refrigeration unit's fuel.",
+        "Retail display chilling."
+      ]
+    },
+    {
+      "h": "Getting per-kilogram data",
+      "p": [
+        "Ask each operator for energy per kilogram or per pallet-day. Where you estimate, state the assumption and label it."
+      ]
+    },
+    {
+      "h": "Food loss",
+      "p": [
+        "A good cold chain reduces spoilage, which avoids wasting the farm footprint. Note loss rates as context, without netting them against cold chain emissions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one kilogram of produce (illustrative inputs)",
+    "lines": [
+      "Pre-cooling: 0.04 kWh per kg x 0.710 = 0.0284 kg CO2",
+      "Cold store, 20 days: 0.12 kWh per kg x 0.710 = 0.0852 kg CO2",
+      "Reefer truck: 0.03 L diesel per kg x 2.68 = 0.0804 kg CO2",
+      "Retail chiller: 0.05 kWh per kg x 0.710 = 0.0355 kg CO2",
+      "Cold chain total: 0.2295 kg CO2 per kg of food"
+    ],
+    "note": "Values are illustrative; get per-kilogram energy from each operator."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Reefer truck refrigeration emissions",
+      "to": "/answers/reefer-truck-refrigeration-unit-emissions"
+    },
+    {
+      "label": "Cold storage emissions per tonne",
+      "to": "/answers/cold-storage-emissions-per-tonne"
+    },
+    {
+      "label": "Reefer containers for food exporters",
+      "to": "/answers/reefer-container-emissions-food-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "book-printing-carbon-footprint-per-copy",
+  "q": "How do I calculate the carbon footprint of printing one book?",
+  "title": "Book printing carbon per copy",
+  "short": "Weigh the book, multiply the paper and cover board by the mills' factors, and add the printing and binding energy at 0.710 kg CO2 per kWh divided by copies. Paper weight, stock choice and print run waste all move the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Book printers and publishers",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Text paper and cover board.",
+        "Plates and make-ready waste for offset runs.",
+        "Press, folding and binding energy.",
+        "Lamination, packing and delivery."
+      ]
+    },
+    {
+      "h": "Run length",
+      "p": [
+        "Short runs carry more make-ready waste per copy. Print-on-demand avoids returns and pulping of unsold copies, which you can note as context."
+      ]
+    },
+    {
+      "h": "Unsold copies",
+      "p": [
+        "Returned and pulped copies used paper and energy without being read. Track returns, since they raise the footprint per copy sold."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: structure of a per-copy figure (illustrative inputs)",
+    "lines": [
+      "Press and binding energy: 0.15 kWh per copy x 0.710 = 0.106 kg CO2",
+      "Paper: 0.45 kg per copy x the paper mill's factor per kg",
+      "Cover board and lamination: weight x supplier factor",
+      "Delivery to warehouse: tonne-km x the transport factor, in Scope 3"
+    ],
+    "note": "Weights and energy are illustrative; use your job tickets and paper invoices."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Digital vs offset printing",
+      "to": "/answers/digital-vs-offset-printing-carbon-short-runs"
+    },
+    {
+      "label": "Offset printing per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Notebook per unit",
+      "to": "/answers/notebook-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

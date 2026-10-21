@@ -1,0 +1,66 @@
+{
+  "slug": "vitrified-tile-polishing-line-electricity",
+  "q": "How much do polishing and squaring add to a vitrified tile's footprint?",
+  "title": "Tile polishing line electricity",
+  "short": "Sub-meter the polishing, squaring and calibration line, multiply its kWh by 0.710 kg CO2 per kWh and divide by square metres polished. Add it to the kiln and press figure for polished tiles only, since unpolished tiles skip this stage.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Vitrified and porcelain tile makers",
+  "sections": [
+    {
+      "h": "What the line uses",
+      "ul": [
+        "Calibrating and polishing heads.",
+        "Squaring and chamfering machines.",
+        "Water pumping and slurry handling."
+      ]
+    },
+    {
+      "h": "Per product",
+      "p": [
+        "Report the polishing energy only on polished SKUs. Averaging it over all tiles understates polished tiles and overstates matt ones."
+      ]
+    },
+    {
+      "h": "Waste from polishing",
+      "p": [
+        "Polishing removes material as slurry. Its disposal or reuse is waste in Scope 3, or recycled into the body, which you can note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of polishing (illustrative inputs)",
+    "lines": [
+      "Electricity: 420,000 kWh x 0.710 = 298,200 kg CO2",
+      "Square metres polished: 300,000",
+      "Total: 298,200 / 300,000 = 0.994 kg CO2 per square metre"
+    ],
+    "note": "kWh and area are illustrative; use the line sub-meter and production log."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Ceramic tile per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Ceramic spray dryer per tonne",
+      "to": "/answers/ceramic-spray-dryer-co2-per-tonne-powder"
+    },
+    {
+      "label": "Is a tile unit covered by CCTS?",
+      "to": "/answers/is-a-ceramic-tile-unit-covered-by-ccts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "contractor-carbon-data-for-tender-bids",
+  "q": "What carbon data should a construction contractor include in a tender bid?",
+  "title": "Carbon data for tender bids",
+  "short": "Give site emissions from completed projects: diesel at 2.68 kg CO2 per litre and site electricity at 0.710 kg CO2 per kWh, per square metre or per contract value. Back each figure with invoices and fuel logs, and list the steps you will take on the new site.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Building and infrastructure contractors bidding for projects",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Scope 1 and 2 per square metre on past projects.",
+        "The documents behind each figure.",
+        "Plans for grid power, efficient equipment and lower carbon materials.",
+        "How you will report during the contract."
+      ]
+    },
+    {
+      "h": "What clients check",
+      "p": [
+        "A figure with dated invoices behind it holds up better than a claim. State the method, the factors and what is excluded, such as materials bought by the client."
+      ]
+    },
+    {
+      "h": "Keep it comparable",
+      "p": [
+        "Use the same boundary on every project, so a client can compare your sites with each other and with other bidders."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a past building project (illustrative inputs)",
+    "lines": [
+      "Site diesel: 42,000 litres x 2.68 = 112,560 kg CO2",
+      "Site electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Scope 1 and 2 total: 155,160 kg CO2",
+      "Built-up area: 12,000 m2, so 12.93 kg CO2 per m2"
+    ],
+    "note": "Quantities are illustrative; use fuel invoices and site electricity bills from the project."
+  },
+  "senseible": "Senseible reads diesel invoices, fuel slips and site electricity bills into a dated, fingerprinted record per project, so a contractor can hand a client Scope 1 and 2 figures with the document behind each line. Estimates from hours or distance are labelled as estimates.",
+  "links": [
+    {
+      "label": "EU Net Zero Industry Act tenders",
+      "to": "/answers/eu-net-zero-industry-act-public-tenders"
+    },
+    {
+      "label": "Construction waste emissions",
+      "to": "/answers/construction-demolition-waste-emissions-scope-3"
+    },
+    {
+      "label": "Temporary construction power",
+      "to": "/answers/temporary-construction-power-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

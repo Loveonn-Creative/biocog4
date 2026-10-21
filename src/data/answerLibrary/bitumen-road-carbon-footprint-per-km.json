@@ -1,0 +1,74 @@
+{
+  "slug": "bitumen-road-carbon-footprint-per-km",
+  "q": "How do I calculate the carbon footprint of one kilometre of bitumen road?",
+  "title": "Bitumen road carbon footprint per km",
+  "short": "Work out the tonnes of mix laid from width, length, thickness and density. Add the mixing plant fuel, the paver and roller diesel and the haulage diesel at 2.68 kg CO2 per litre. Then add bitumen and aggregate from supplier or named database factors.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Road contractors, highway developers and project consultants",
+  "sections": [
+    {
+      "h": "What a kilometre includes",
+      "ul": [
+        "Hot mix: plant burner fuel and plant electricity.",
+        "Bitumen and aggregate, from supplier data.",
+        "Haulage from plant to site.",
+        "Paving and compaction diesel.",
+        "Earthwork and base layers, if in scope."
+      ]
+    },
+    {
+      "h": "Getting the quantities",
+      "p": [
+        "Use the measurement book or bill of quantities for the layers laid, and the plant's fuel log per tonne of mix. State the density you use."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Plant and equipment the contractor owns are its Scope 1. Hired tippers and bought mix sit in Scope 3. A client that reports emissions counts the road in its Scope 3 capital goods."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one km of 50 mm wearing course (illustrative inputs)",
+    "lines": [
+      "Asphalt laid: 7 m wide x 1,000 m x 0.05 m x 2.4 t per m3 = 840 t",
+      "Mixing plant burner diesel: 840 t x 7 litres = 5,880 litres x 2.68 = 15,758.4 kg CO2",
+      "Paver and rollers: 600 litres x 2.68 = 1,608 kg CO2",
+      "Tipper haulage: 2,500 litres x 2.68 = 6,700 kg CO2",
+      "Energy total per km: 24,066.4 kg CO2, before bitumen and aggregate from supplier data"
+    ],
+    "note": "Fuel rates, thickness and density are illustrative; use the plant fuel log and the measurement book."
+  },
+  "senseible": "Senseible reads diesel invoices, fuel slips and site electricity bills into a dated, fingerprinted record per project, so a contractor can hand a client Scope 1 and 2 figures with the document behind each line. Estimates from hours or distance are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hot mix asphalt plant per tonne",
+      "to": "/answers/hot-mix-asphalt-plant-co2-per-tonne"
+    },
+    {
+      "label": "Embodied carbon from quantities",
+      "to": "/answers/how-to-calculate-embodied-carbon-from-quantities"
+    },
+    {
+      "label": "Hired trucks scope",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

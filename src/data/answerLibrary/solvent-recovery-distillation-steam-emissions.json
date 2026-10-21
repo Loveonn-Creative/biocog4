@@ -1,0 +1,73 @@
+{
+  "slug": "solvent-recovery-distillation-steam-emissions",
+  "q": "How do I calculate the emissions of a solvent recovery distillation plant?",
+  "title": "Solvent recovery plant emissions",
+  "short": "Take the steam the recovery columns use, from the steam meter, and give them that share of the boiler fuel. Add the electricity for pumps and condensers at 0.710 kg CO2 per kWh, then divide by kilograms of solvent recovered. Report boiler fuel as Scope 1 and grid power as Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pharma, API and specialty chemical plants that recover solvents on site",
+  "sections": [
+    {
+      "h": "What uses energy",
+      "ul": [
+        "Steam for the reboilers.",
+        "Cooling water and chilled brine for the condensers.",
+        "Pumps and vacuum systems."
+      ]
+    },
+    {
+      "h": "How to allocate the boiler",
+      "p": [
+        "Use steam meter readings, or the column design steam rate times operating hours if there is no meter, and label the second as an estimate. The share of boiler fuel follows the share of steam."
+      ]
+    },
+    {
+      "h": "Recovered versus virgin solvent",
+      "p": [
+        "Recovered solvent replaces purchased solvent. Report the recovery energy in your inventory; do not subtract the virgin solvent you avoided buying, and keep any such comparison as a separate, labelled estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of solvent recovery (illustrative inputs)",
+    "lines": [
+      "Boiler PNG: 9,000 scm x 2.05 = 18,450 kg CO2 for 110 t steam",
+      "Solvent recovery column: 26 t steam of 110 = 23.6%",
+      "Share: 18,450 x 26 / 110 = 4,360.9 kg CO2",
+      "Electricity (pumps, condensers): 4,200 kWh x 0.710 = 2,982 kg CO2",
+      "Recovery total: 4,360.9 + 2,982 = 7,342.9 kg CO2",
+      "Solvent recovered: 52,000 kg, so 7,342.9 / 52,000 = 0.141 kg CO2 per kg"
+    ],
+    "note": "Fuel, steam and output are illustrative; use your boiler log, steam meter and recovery register."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Thermic fluid heater emissions",
+      "to": "/answers/thermic-fluid-heater-emissions-scope-1"
+    },
+    {
+      "label": "Solvent incineration in API plants",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    },
+    {
+      "label": "CHP allocation between power and steam",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
