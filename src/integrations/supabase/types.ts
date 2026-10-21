@@ -1408,6 +1408,7 @@ export type Database = {
           figures_read_at: string | null
           id: string
           mime_type: string
+          monthly: Json
           organization_id: string | null
           sha256: string
           size_bytes: number
@@ -1422,6 +1423,7 @@ export type Database = {
           figures_read_at?: string | null
           id?: string
           mime_type: string
+          monthly?: Json
           organization_id?: string | null
           sha256: string
           size_bytes: number
@@ -1436,6 +1438,7 @@ export type Database = {
           figures_read_at?: string | null
           id?: string
           mime_type?: string
+          monthly?: Json
           organization_id?: string | null
           sha256?: string
           size_bytes?: number
@@ -3832,6 +3835,7 @@ export type Database = {
         }
         Returns: Json
       }
+      finance_insights_plan: { Args: { p_user: string }; Returns: string }
       get_active_context: {
         Args: never
         Returns: {
@@ -3932,7 +3936,9 @@ export type Database = {
         Returns: string
       }
       ledger_row_digest: { Args: { r: Json }; Returns: string }
+      my_finance_insights: { Args: never; Returns: Json }
       my_org_permissions: { Args: { p_organization_id: string }; Returns: Json }
+      my_private_records: { Args: never; Returns: Json }
       owner_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {

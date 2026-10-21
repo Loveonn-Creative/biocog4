@@ -232,6 +232,13 @@
       "when": 1792581572539,
       "tag": "0032_subscriptions_staff_email",
       "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1792581599309,
+      "tag": "0033_finance_insights",
+      "breakpoints": true
     }
   ]
 }
