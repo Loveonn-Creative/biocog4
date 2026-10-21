@@ -1,0 +1,51 @@
+{
+  "slug": "kanpur-saddlery-unit-carbon-per-saddle",
+  "q": "How does a Kanpur saddlery unit work out a carbon figure per saddle?",
+  "title": "Kanpur saddlery: carbon per saddle",
+  "short": "Add the unit's energy emissions for the month, divide them across saddles by pieces or by leather area used, and add the bought leather and fittings per saddle from supplier or database factors. State which split you used so the buyer can follow it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Saddlery and equestrian goods makers in the Kanpur cluster exporting to Europe",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Energy: kWh x 0.710 plus fuel litres or kg x IPCC defaults, for the month.",
+        "Share it across saddles finished that month.",
+        "Add materials per saddle: leather area, tree, fittings and packaging, each with its factor source."
+      ]
+    },
+    {
+      "h": "Where the figure moves",
+      "p": [
+        "Leather is a major material line, so the leather factor and the area per saddle matter. Measure area from your cutting records, not from a catalogue."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather goods per piece",
+      "to": "/answers/leather-bag-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Can I use my supplier's footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

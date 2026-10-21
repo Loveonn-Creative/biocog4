@@ -1,0 +1,51 @@
+{
+  "slug": "agra-shoe-unit-soles-and-adhesives-scope-3",
+  "q": "How should an Agra shoe unit count the soles and adhesives it buys?",
+  "title": "Agra shoe units: bought soles and adhesives",
+  "short": "Bought soles, adhesives, leather and boxes are purchased goods, Scope 3 category 1. Multiply each quantity by a factor from your supplier or a named database, and keep the source beside each line. Without a factor, report the gap rather than guessing.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Footwear makers in the Agra cluster buying soles, adhesives, leather and packaging",
+  "sections": [
+    {
+      "h": "Order of preference",
+      "p": [
+        "Supplier's own product figure, with its method stated.",
+        "A named database factor for the same material and region.",
+        "Spend-based factors only as a last resort, labelled as such."
+      ]
+    },
+    {
+      "h": "What buyers look at",
+      "p": [
+        "A buyer will ask where each material factor came from. A source column answers that before they ask."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather footwear per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "EVA slipper per pair",
+      "to": "/answers/eva-slipper-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Can I use my supplier's footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

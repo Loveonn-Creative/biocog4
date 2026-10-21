@@ -1,0 +1,60 @@
+{
+  "slug": "agra-shoe-unit-electricity-per-pair",
+  "q": "How does an Agra shoe unit work out electricity emissions per pair?",
+  "title": "Agra shoe units: electricity per pair",
+  "short": "Add the kWh on the month's electricity bills, multiply by the CEA grid factor of 0.710 kg CO2 per kWh, and divide by the pairs finished that month. Use the same month for both numbers so seasonal swings do not distort the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Leather and non-leather footwear units in the Agra cluster of Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Take kWh from the bill, not the rupee amount.",
+        "Multiply by 0.710 kg CO2 per kWh (CEA, version 21.0).",
+        "Divide by pairs packed in the same billing period."
+      ]
+    },
+    {
+      "h": "When styles differ a lot",
+      "p": [
+        "If one line makes heavy boots and another makes sandals, split by machine hours or by line meters if you have them, and write down the rule you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Electricity: 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "Pairs finished: 24,000",
+      "Per pair: 12,780 / 24,000 = 0.532 kg CO2"
+    ],
+    "note": "Quantities are illustrative; the factor is the CEA grid average."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Footwear factory allocation per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    },
+    {
+      "label": "Leather footwear per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Kanpur, Agra and Ambur buyer data",
+      "to": "/answers/kanpur-agra-ambur-leather-exporter-buyer-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

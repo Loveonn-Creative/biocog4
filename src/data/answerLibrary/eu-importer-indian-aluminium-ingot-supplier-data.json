@@ -1,0 +1,47 @@
+{
+  "slug": "eu-importer-indian-aluminium-ingot-supplier-data",
+  "q": "What should an EU importer ask an Indian aluminium ingot supplier for under CBAM?",
+  "title": "EU importers: Indian aluminium ingots",
+  "short": "Direct embedded emissions per tonne of ingot, including the smelter's process emissions and perfluorocarbons from anode effects, for the period. Emissions from generating the smelter's electricity are indirect and are not charged for aluminium today.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers buying primary aluminium ingot from Indian smelters",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Direct emissions per tonne, with PFC emissions shown.",
+        "The period and the monitoring method.",
+        "A verifier's report when actual values are declared."
+      ]
+    },
+    {
+      "h": "Captive power",
+      "p": [
+        "Several Indian smelters run captive coal plants. That power is indirect for CBAM aluminium, but the buyer may still ask for it for their own reporting."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Korba aluminium direct emissions and PFC",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Aluminium sheet per tonne",
+      "to": "/answers/aluminium-sheet-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

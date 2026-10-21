@@ -1,0 +1,46 @@
+{
+  "slug": "vapi-dye-unit-sludge-to-cement-kiln-scope-3",
+  "q": "Which scope covers ETP sludge a Vapi dye unit sends to a cement kiln?",
+  "title": "Vapi dye units: sludge sent to kilns",
+  "short": "Waste you send off site, including sludge sent for co-processing in a cement kiln, is Scope 3 category 5. The kiln's combustion emissions are the cement plant's Scope 1, not yours. Record tonnes sent and the receiver for each load.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Dye and chemical units in the Vapi and Ankleshwar estates sending ETP sludge for co-processing",
+  "sections": [
+    {
+      "h": "What to record",
+      "p": [
+        "Tonnes of sludge per load, from the manifest.",
+        "The receiving facility and the treatment route."
+      ]
+    },
+    {
+      "h": "Transport",
+      "p": [
+        "The trucking to the kiln is also Scope 3 if you pay for it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "ETP sludge and wastewater",
+      "to": "/answers/etp-sludge-and-wastewater-scope-3-textiles"
+    },
+    {
+      "label": "Vapi CETP fee scope",
+      "to": "/answers/vapi-chemical-unit-cetp-fee-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

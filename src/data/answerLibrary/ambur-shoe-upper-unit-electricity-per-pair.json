@@ -1,0 +1,56 @@
+{
+  "slug": "ambur-shoe-upper-unit-electricity-per-pair",
+  "q": "How does an Ambur shoe upper unit work out electricity per pair?",
+  "title": "Ambur shoe uppers: power per pair",
+  "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh and divide by pairs of uppers stitched. Cutting, skiving and stitching machines run on grid power, so for an upper unit this is the main own-energy line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Shoe upper and footwear component units in the Ambur and Vaniyambadi cluster of Tamil Nadu",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "kWh from the electricity bill.",
+        "Multiply by 0.710 kg CO2 per kWh.",
+        "Divide by pairs of uppers finished."
+      ]
+    },
+    {
+      "h": "Leather and linings",
+      "p": [
+        "Leather from the tannery is your largest bought input. Ask the tannery for its figure per square foot and add it per pair."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Electricity: 7,000 kWh x 0.710 = 4,970 kg CO2",
+      "Uppers: 14,000 pairs",
+      "Per pair: 4,970 / 14,000 = 0.355 kg CO2"
+    ],
+    "note": "Quantities are illustrative; the factor is the CEA grid average."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Ambur tannery boiler and ETP",
+      "to": "/answers/ambur-tannery-boiler-etp-emissions"
+    },
+    {
+      "label": "Footwear allocation per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

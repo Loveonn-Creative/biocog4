@@ -1,0 +1,56 @@
+{
+  "slug": "contractor-excavator-diesel-per-cubic-metre",
+  "q": "How does a contractor work out excavator diesel per cubic metre dug?",
+  "title": "Contractors: excavator diesel per m3",
+  "short": "Divide the diesel issued to the excavator by the cubic metres excavated in the same period, then multiply by 2.68 kg CO2 per litre. Use the site's measured quantities, not the drawing, so idle time and rework are included.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Earthwork and infrastructure contractors running excavators and loaders",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Litres issued per machine from the fuel log.",
+        "Cubic metres excavated from the measurement book.",
+        "Litres per m3 x 2.68."
+      ]
+    },
+    {
+      "h": "Hired machines",
+      "p": [
+        "If the hire includes fuel paid by the owner, that diesel is in your Scope 3, not Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day (illustrative quantities)",
+    "lines": [
+      "Diesel: 450 L for 600 m3 excavated",
+      "Litres per m3: 450 / 600 = 0.75",
+      "Per m3: 0.75 x 2.68 = 2.01 kg CO2"
+    ],
+    "note": "Quantities are illustrative; 2.68 kg CO2 per litre is the IPCC 2006 diesel default."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Contractor diesel on my site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    },
+    {
+      "label": "Site generator vs grid",
+      "to": "/answers/contractor-site-genset-vs-temporary-grid-supply"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

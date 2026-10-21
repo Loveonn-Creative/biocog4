@@ -1,0 +1,60 @@
+{
+  "slug": "vapi-paper-mill-coal-boiler-per-tonne",
+  "q": "How does a Vapi paper mill work out boiler coal emissions per tonne of paper?",
+  "title": "Vapi paper mills: boiler coal per tonne",
+  "short": "Multiply the coal burned by its emission factor, then divide by tonnes of paper made. Senseible's default for coal invoices is 2.42 kg CO2 per kg; a factor from your own coal's lab calorific value is more accurate.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Kraft, duplex and writing paper mills in the Vapi cluster of Gujarat",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Tonnes of coal from purchase or consumption records.",
+        "Multiply by the factor, or by a lab gross calorific value if you have one.",
+        "Divide by tonnes of paper made."
+      ]
+    },
+    {
+      "h": "Better than a default",
+      "p": [
+        "If you test the coal's calorific value, a factor from that test is more accurate than a default. Keep the lab reports with the invoices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day (illustrative quantities)",
+    "lines": [
+      "Coal: 9,000 kg x 2.42 = 21,780 kg CO2",
+      "Paper made: 50 tonnes",
+      "Per tonne: 21,780 / 50 = 435.6 kg CO2"
+    ],
+    "note": "Quantities are illustrative; 2.42 kg CO2 per kg is the default Senseible applies to coal invoices."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Paper mill per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Kraft paper per tonne",
+      "to": "/answers/kraft-paper-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

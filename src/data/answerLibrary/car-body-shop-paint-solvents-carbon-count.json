@@ -1,0 +1,47 @@
+{
+  "slug": "car-body-shop-paint-solvents-carbon-count",
+  "q": "Do paint solvents in a car body shop count in its carbon footprint?",
+  "title": "Body shops: paint solvents and carbon",
+  "short": "The solvents themselves are mostly volatile organic compounds, an air quality issue rather than a greenhouse gas line. What counts is the paint and solvent you buy, as Scope 3 purchased goods, and the gas or diesel for the booth's heaters, as Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Car body shops and accident repair workshops",
+  "sections": [
+    {
+      "h": "What to count",
+      "p": [
+        "Booth heater fuel as Scope 1.",
+        "Booth fans and compressors as Scope 2.",
+        "Paint, primer and thinner bought as Scope 3 category 1."
+      ]
+    },
+    {
+      "h": "What not to count",
+      "p": [
+        "Do not add solvent VOC emissions to a CO2e total unless your method converts them; most small workshop reports do not."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Car paint booth per vehicle",
+      "to": "/answers/car-paint-booth-emissions-per-vehicle"
+    },
+    {
+      "label": "Auto service workshop footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

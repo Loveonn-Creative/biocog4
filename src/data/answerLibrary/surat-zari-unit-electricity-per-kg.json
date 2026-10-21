@@ -1,0 +1,56 @@
+{
+  "slug": "surat-zari-unit-electricity-per-kg",
+  "q": "How does a Surat zari unit work out electricity emissions per kg of thread?",
+  "title": "Surat zari units: electricity per kg",
+  "short": "Multiply the month's billed kWh by 0.710 kg CO2 per kWh and divide by the kilograms of zari thread produced that month. Keep metallic and polyester zari separate if they run on different machines, because their power use per kg can differ.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Zari and embroidery thread makers in the Surat cluster of Gujarat",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Take kWh from the electricity bill.",
+        "Multiply by 0.710 kg CO2 per kWh (CEA, version 21.0).",
+        "Divide by kg of thread produced in the same period."
+      ]
+    },
+    {
+      "h": "Bought yarn and film",
+      "p": [
+        "Polyester yarn, metallised film and any silver or copper used are purchased goods, Scope 3 category 1. Add them per kg with their factor sources if the buyer wants a full product figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Electricity: 9,000 kWh x 0.710 = 6,390 kg CO2",
+      "Thread produced: 1,500 kg",
+      "Per kg: 6,390 / 1,500 = 4.26 kg CO2"
+    ],
+    "note": "Quantities are illustrative; the factor is the CEA grid average."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Surat diamond unit electricity",
+      "to": "/answers/surat-diamond-unit-electricity-emissions"
+    },
+    {
+      "label": "Polyester texturising electricity",
+      "to": "/answers/polyester-texturising-electricity-per-kg-yarn"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

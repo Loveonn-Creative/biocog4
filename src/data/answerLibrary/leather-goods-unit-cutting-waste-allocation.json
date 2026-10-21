@@ -1,0 +1,51 @@
+{
+  "slug": "leather-goods-unit-cutting-waste-allocation",
+  "q": "How should a leather goods unit count leather lost in cutting?",
+  "title": "Leather goods: cutting waste in the figure",
+  "short": "Use leather bought, not leather in the finished product. Divide the square feet purchased by pieces made so cutting waste is inside each piece's figure. If offcuts are sold, record that and the rule you use for them.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bag, wallet and belt makers buying finished leather",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Square feet of leather bought in the period.",
+        "Pieces finished in the same period.",
+        "Leather per piece x the leather's factor."
+      ]
+    },
+    {
+      "h": "Selling offcuts",
+      "p": [
+        "Some methods let you allocate part of the leather to sold offcuts. State the method so a buyer can check it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather bag per piece",
+      "to": "/answers/leather-bag-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Leather wallet per piece",
+      "to": "/answers/leather-wallet-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Tannery per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

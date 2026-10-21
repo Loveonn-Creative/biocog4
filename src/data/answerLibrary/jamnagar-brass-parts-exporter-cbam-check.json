@@ -1,0 +1,50 @@
+{
+  "slug": "jamnagar-brass-parts-exporter-cbam-check",
+  "q": "Do brass parts exported from Jamnagar fall under EU CBAM?",
+  "title": "Jamnagar brass parts and CBAM",
+  "short": "No. Brass is a copper alloy, and CBAM covers iron and steel, aluminium, cement, fertilisers, hydrogen and electricity. Copper and brass goods are not on the Annex I list, though steel screws or aluminium parts in the same shipment may be.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Brass component makers in the Jamnagar cluster of Gujarat exporting to Europe",
+  "sections": [
+    {
+      "h": "Check each line",
+      "p": [
+        "Brass fittings and turned parts: outside CBAM.",
+        "Steel fasteners or aluminium components shipped with them: check their CN codes against Annex I."
+      ]
+    },
+    {
+      "h": "What buyers may still ask",
+      "p": [
+        "A product carbon footprint for their Scope 3, where the brass rod you buy is a major line. Keep the rod supplier's figure if they give one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Brass component per kg",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Are nuts and bolts covered",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

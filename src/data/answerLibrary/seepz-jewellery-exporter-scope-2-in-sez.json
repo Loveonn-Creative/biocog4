@@ -1,0 +1,50 @@
+{
+  "slug": "seepz-jewellery-exporter-scope-2-in-sez",
+  "q": "Does a jewellery exporter in SEEPZ use the India grid factor for Scope 2?",
+  "title": "SEEPZ jewellers: Scope 2 grid factor",
+  "short": "Yes, for the location-based figure. Electricity drawn in an SEZ is still Indian grid power, so use 0.710 kg CO2 per kWh. A lower market-based figure needs contractual instruments, such as renewable certificates or a green tariff, in your name.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Gold and diamond jewellery exporters in SEEPZ, Mumbai",
+  "sections": [
+    {
+      "h": "Report both",
+      "p": [
+        "Location-based: kWh x 0.710.",
+        "Market-based: kWh covered by instruments at their factor, the rest at the residual mix or grid average, as the guidance allows."
+      ]
+    },
+    {
+      "h": "Gold and diamonds",
+      "p": [
+        "Bought gold and diamonds are purchased goods, Scope 3. They are separate from the unit's electricity."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Jewellery casting workshop",
+      "to": "/answers/jewellery-casting-workshop-emissions"
+    },
+    {
+      "label": "Gold jewellery per gram",
+      "to": "/answers/gold-jewellery-carbon-footprint-per-gram"
+    },
+    {
+      "label": "Jaipur jewellery exporter buyer data",
+      "to": "/answers/jaipur-jewellery-exporter-eu-buyer-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

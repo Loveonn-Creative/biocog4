@@ -1,0 +1,55 @@
+{
+  "slug": "lpg-bullet-tanker-transport-emissions-per-tonne",
+  "q": "How does a shipper count emissions from moving LPG by bullet tanker?",
+  "title": "LPG bullet tankers: transport emissions",
+  "short": "Multiply tonnes of LPG carried by road kilometres and a published intensity for the truck class, or use the trip's actual diesel if the transporter shares it. The shipper reports it as Scope 3 transport.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "LPG bottlers, distributors and industrial buyers moving gas by road tanker",
+  "sections": [
+    {
+      "h": "Two methods",
+      "p": [
+        "Fuel-based: diesel litres for the trip x 2.68, if the transporter gives them.",
+        "Distance-based: tonnes x km x the intensity for the truck class."
+      ]
+    },
+    {
+      "h": "Empty return",
+      "p": [
+        "Published averages already include typical empty running. Do not add the return leg again unless you use actual fuel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one trip, distance method (illustrative load and distance)",
+    "lines": [
+      "Load: 18 tonnes, distance: 400 km",
+      "18 x 400 = 7,200 tonne-km",
+      "7,200 x 0.0663 = 477.4 kg CO2e"
+    ],
+    "note": "Load and distance are illustrative; 0.0663 kg CO2e per tonne-km is the SFC India default for 30 to 50 tonne trucks."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Chemical tanker per tonne",
+      "to": "/answers/chemical-road-tanker-emissions-per-tonne"
+    },
+    {
+      "label": "Tanker empty return trips",
+      "to": "/answers/chemical-tanker-empty-return-trip-count"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

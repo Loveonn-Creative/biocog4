@@ -1,0 +1,51 @@
+{
+  "slug": "panipat-home-furnishing-exporter-eu-buyer-data",
+  "q": "What carbon data do EU buyers ask Panipat home furnishing exporters for?",
+  "title": "Panipat home textiles: EU buyer data",
+  "short": "Usually a product figure per piece or per kg for their own Scope 3, built from your energy bills, the yarn and fabric you buy, and dyeing done by job workers. Home textiles are outside CBAM, so this is a buyer request, not an EU import charge.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Bedsheet, curtain, rug and blanket exporters in the Panipat cluster of Haryana",
+  "sections": [
+    {
+      "h": "What to prepare",
+      "p": [
+        "12 months of electricity and fuel bills.",
+        "Yarn and fabric purchases with supplier figures where available.",
+        "Job-work dyeing and printing, by kg sent out."
+      ]
+    },
+    {
+      "h": "Common reasons for rejection",
+      "p": [
+        "No source for material factors, a single month passed off as a year, or recycled content claimed without a certificate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Why a buyer rejected a footprint",
+      "to": "/answers/why-buyer-rejected-product-carbon-footprint"
+    },
+    {
+      "label": "Denizli home textiles EU rules",
+      "to": "/answers/denizli-home-textile-exports-eu-carbon-rules"
+    },
+    {
+      "label": "Cotton bed sheet per set",
+      "to": "/answers/cotton-bed-sheet-carbon-footprint-per-set"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

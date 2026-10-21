@@ -1,0 +1,56 @@
+{
+  "slug": "firozabad-bangle-unit-gas-per-kg",
+  "q": "How does a Firozabad bangle unit work out gas emissions per kg of glass?",
+  "title": "Firozabad bangles: gas per kg of glass",
+  "short": "Multiply the standard cubic metres on the gas bill by 2.05 kg CO2 per scm and divide by kilograms of glass drawn into bangles that month. Add process CO2 from the batch carbonates if you melt your own glass.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bangle and decorative glass units in the Firozabad cluster that melt or rework glass",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "scm from the gas bill.",
+        "Multiply by 2.05 kg CO2 per scm.",
+        "Divide by kg of glass processed in the same month."
+      ]
+    },
+    {
+      "h": "Units that buy glass",
+      "p": [
+        "If you buy glass blocks and only rework them, the melting happened upstream: count the bought glass as Scope 3, and your own reheating gas as Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Gas: 12,000 scm x 2.05 = 24,600 kg CO2",
+      "Glass processed: 20,000 kg",
+      "Per kg: 24,600 / 20,000 = 1.23 kg CO2"
+    ],
+    "note": "Quantities are illustrative; 2.05 kg CO2 per scm is the IPCC 2006 natural gas default as used for Indian piped gas."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Firozabad batch carbonates",
+      "to": "/answers/firozabad-glass-batch-carbonates-process-co2"
+    },
+    {
+      "label": "Glass tumbler per piece",
+      "to": "/answers/glass-tumbler-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

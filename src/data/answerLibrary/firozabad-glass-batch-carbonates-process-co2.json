@@ -1,0 +1,60 @@
+{
+  "slug": "firozabad-glass-batch-carbonates-process-co2",
+  "q": "How does a Firozabad glass unit count CO2 from soda ash and limestone in the batch?",
+  "title": "Firozabad glass: process CO2 from batch",
+  "short": "Carbonates in the batch release CO2 when they melt: about 0.415 t per tonne of soda ash, 0.440 t per tonne of limestone and 0.477 t per tonne of dolomite, by IPCC 2006. This process CO2 is Scope 1, added to the furnace gas.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Glass and bangle units in the Firozabad cluster of Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Tonnes of each carbonate from purchase or stock records.",
+        "Multiply by its IPCC factor.",
+        "Add to Scope 1 alongside gas burned in the furnace."
+      ]
+    },
+    {
+      "h": "Cullet",
+      "p": [
+        "Recycled glass (cullet) has no carbonates left to release, so more cullet means less process CO2 per tonne melted."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Soda ash: 1,000 kg x 0.415 = 415 kg CO2",
+      "Limestone: 300 kg x 0.440 = 132 kg CO2",
+      "Process CO2: 547 kg (Scope 1)"
+    ],
+    "note": "Quantities are illustrative; factors are IPCC 2006 stoichiometric values for full calcination."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Firozabad gas evidence for buyers",
+      "to": "/answers/firozabad-glass-unit-gas-evidence-for-buyers"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
+    },
+    {
+      "label": "Glass bottle per bottle",
+      "to": "/answers/glass-bottle-carbon-footprint-per-bottle"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

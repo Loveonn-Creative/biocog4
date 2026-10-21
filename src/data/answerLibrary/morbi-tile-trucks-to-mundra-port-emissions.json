@@ -1,0 +1,56 @@
+{
+  "slug": "morbi-tile-trucks-to-mundra-port-emissions",
+  "q": "How does a Morbi tile exporter count truck emissions to Mundra port?",
+  "title": "Morbi tiles: trucks to Mundra port",
+  "short": "Multiply tonnes carried by road kilometres and by a published intensity for the truck class. For a heavy truck of 30 to 50 tonnes, the Smart Freight Centre India default is 0.0663 kg CO2e per tonne-km. If you pay the transporter, this is Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tile exporters in the Morbi cluster trucking containers to Mundra or Kandla",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Tonnes per trip from the lorry receipt or weighbridge slip.",
+        "Road distance for the route.",
+        "Tonnes x km x the intensity for the truck class."
+      ]
+    },
+    {
+      "h": "Which category",
+      "p": [
+        "Transport you pay for to the port is Scope 3 category 4. If your own trucks do it, the diesel is Scope 1 instead."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one container trip (illustrative distance and load)",
+    "lines": [
+      "Load: 30 tonnes, distance: 230 km",
+      "30 x 230 = 6,900 tonne-km",
+      "6,900 x 0.0663 = 457.5 kg CO2e"
+    ],
+    "note": "Load and distance are illustrative; 0.0663 kg CO2e per tonne-km is the SFC India default for 30 to 50 tonne trucks, well to wheel."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Packaging for an export shipment",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    },
+    {
+      "label": "Morbi exporter buyer data",
+      "to": "/answers/morbi-tile-exporter-eu-buyer-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

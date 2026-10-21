@@ -1,0 +1,47 @@
+{
+  "slug": "eu-importer-egyptian-cement-indirect-emissions",
+  "q": "Does an EU importer of Egyptian cement need indirect emissions for CBAM?",
+  "title": "EU importers: cement indirect emissions",
+  "short": "Yes. Cement is one of the goods for which CBAM counts both direct emissions and the indirect emissions from electricity used in production. Ask the plant for its electricity use and the emission factor applied, alongside direct emissions per tonne.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers buying cement and clinker from Egyptian plants",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Direct emissions per tonne of cement and of the clinker in it.",
+        "Electricity consumed per tonne and the factor used.",
+        "Clinker share of the cement."
+      ]
+    },
+    {
+      "h": "Which goods count indirect emissions",
+      "p": [
+        "Cement and fertilisers do. Iron and steel, aluminium and hydrogen count direct emissions only."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Egypt clinker exporter per tonne",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    },
+    {
+      "label": "PPC vs OPC cement",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

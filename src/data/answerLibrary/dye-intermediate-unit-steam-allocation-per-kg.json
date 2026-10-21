@@ -1,0 +1,51 @@
+{
+  "slug": "dye-intermediate-unit-steam-allocation-per-kg",
+  "q": "How does a dye intermediate unit split boiler steam across products?",
+  "title": "Dye intermediates: steam per product",
+  "short": "Share the boiler's fuel emissions by steam used per product: from batch records or flow meters if you have them, otherwise by reactor hours. Write down the rule, then divide each product's share by kg produced.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dye intermediate and specialty chemical units in Gujarat and Maharashtra chemical estates",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Boiler fuel for the month x its factor.",
+        "Steam share per product, from meters or batch logs.",
+        "Product share / kg of that product."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reactor agitators, pumps and chillers run on grid power: add each product's share of kWh x 0.710."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Dye and pigment per kg",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Solvent recovery steam",
+      "to": "/answers/solvent-recovery-distillation-steam-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
