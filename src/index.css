@@ -132,11 +132,6 @@
     --verified: 152 60% 40%;
     --pending: 38 92% 50%;
     --rejected: 0 72% 51%;
-
-    /* Emission scopes in charts (validated for colour-blind separation on this surface) */
-    --scope-1: #1a7f55;
-    --scope-2: #2a78d6;
-    --scope-3: #c97a00;
     
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
@@ -196,10 +191,6 @@
     --verified: 152 55% 50%;
     --pending: 38 92% 60%;
     --rejected: 0 62% 45%;
-
-    --scope-1: #22a06b;
-    --scope-2: #3987e5;
-    --scope-3: #c98500;
     
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
