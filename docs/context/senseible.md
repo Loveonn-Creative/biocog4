@@ -1,0 +1,94 @@
+# Senseible context: source of truth
+
+Owner rule (21 October 2026): read this file and `not-allowed.md` before any design, copy, product, data or deployment work. They hold everything the owner has already decided, so it never has to be explained twice. When the owner sets a new requirement, add it here in the same PR as the work. When two instructions conflict, record which one wins under "Conflicts resolved"; never drop an earlier requirement silently. If something is unclear or not covered here, ask the owner. Do not guess.
+
+Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, finance documents, guests), `docs/copy/content-test.md` (every line of copy), `docs/runbooks/core-flow-continuity.md` (deploy gate), `docs/runbooks/design-revert.md` (REVERT kill word).
+
+## 1. What Senseible is
+
+- Carbon MRV and climate-finance infrastructure. Invoices, bills and fuel slips become a verified emission record that a lender can underwrite, a regulator can audit and a buyer can rely on.
+- Promise: **as simple as UPI.** An MSME owner with no ESG knowledge should get value without help.
+- Order of value: **carbon visibility first, monetising that visibility second.** Emission reporting and climate finance are related but not the same thing; never blur them.
+- Run by Senseible Earth Pvt. Ltd. Methodology reviewed by a senior CBAM policy adviser. Piloted across 29 clusters and 11 countries with 92% benchmarking accuracy (the owner's approved figures).
+
+## 2. Who it is for
+
+- **Primary:** an MSME owner or operator in India, Asia and emerging markets, often a manufacturer or supplier. Has little time and little ESG expertise. Cares about costs, survival, buyers and getting finance. Three questions every screen should answer fast: *Where do I stand? What can I improve? What should I do next?*
+- **Secondary:** enterprise sustainability, procurement and CFO teams with 100 to 1,000+ suppliers, stuck on Scope 3 supplier data (CSRD, CBAM, CDP, BRSR).
+- Two use cases, shown only where each is relevant, never mixed on one surface:
+  1. MSME: MRV to monetise (climate finance, green loans, credits).
+  2. Enterprise: supplier (Scope 3) emissions automation.
+- Visitors may want carbon accounting, supplier emissions, monetisation, net zero or reporting. Never force everyone toward a loan message.
+
+## 3. Design language
+
+- Philosophy: design is how it works. The next step should feel obvious and effortless, and the experience worth remembering. Users scan, decide fast and expect things to work. As little design as possible: less, but better. Subtract the obvious, add the meaningful.
+- Decide spacing, typography, colour, contrast, hierarchy and layout on purpose. Effects are never decoration.
+- **WOW, not average** on public and marketing pages: one interaction or motion per section that carries its meaning (scroll story, before/after reveal, draw-in doodle, count-up, physics flow). Each page uses a different pattern. The reference standard is `/decarbonize-india`.
+- **App pages are different.** Dashboard, MRV, History, Verify, Reports and Monetize exist for critical data at UPI-level simplicity, not for showing off design. Use restrained colour, no black-and-white clutter and no flashy colour.
+- **Dashboard:** decision-first. Swiss grid, with Stripe-like clarity and Bloomberg-style density only where it helps. It answers: where you stand, what changed, what you can unlock, next step. Finance insights are an addition, not a replacement.
+- **MRV:** the place for detailed carbon data, scope detail, audit trails, traceability, ESG audit and accounting. Long lists open with 6 rows; every row stays one tap away.
+- Motion: lightweight. Loads after first paint, respects `prefers-reduced-motion` (with a still final state) and Save-Data, never blocks LCP, and has a static fallback. Every animation explains a real product function.
+- Mobile-first and fluid, with no horizontal scroll at 390px and alignment checked on phone, tablet and desktop.
+- Scope colours for data visualisation: light #1a7f55 / #2a78d6 / #c97a00; dark #22a06b / #3987e5 / #c98500.
+- Footer: owner approval needed for any change (see `AGENTS.md`). The approved walking truck motion stays. Help Center appears in the homepage footer only for signed-in users.
+
+## 4. Copy
+
+- Apply the Content Test (`docs/copy/content-test.md`) to every line.
+- Voice: a sharp founder who knows the customer. Use specific problems, clear value, natural words and honest claims.
+- Labels and CTAs are 2 to 4 words, clear and outcome-first. Short lines beat sentences. Lead with cost, survival and buyers for MSMEs; risk, data quality and scale for enterprise.
+- Errors are a chance to help. Say what happened and the one thing that fixes it ("We couldn't find how many units you used… a sharper photo fixes it"). Never leave a user on a silent or unrelated page.
+- Show 0, never a blank or dash, when there is no verified figure yet.
+- Fact sources live in code comments or data files, not on the page, unless the owner asks for them.
+- Financing wording: Pro gives "financing readiness signals"; Scale adds "financing ecosystem access" and "monetization setup". Lenders, schemes and buyers decide, and financing is never guaranteed. Use "Estimate", never "Simulation".
+- Badges: "Independently Reviewed" (not "Certificate"). "CCTS Readiness Review" and "CBAM Readiness Review" appear only where a documented assessment exists.
+
+## 5. Product and data rules
+
+- No fabricated numbers, factors, customers, integrations, certifications or outcomes. If data is missing, flag the gap. Missing data is null, never 0, unless 0 is the real value. Never label an estimate as verified.
+- Every figure traces back to its document, factor (with source, year and unit), method version and verification state. Recalculation creates a new version; it never overwrites.
+- India grid factor: 0.710 kg CO2/kWh (CEA v21.0). CNG: 2.69. Freight follows ISO 14083 and GLEC (well-to-wake for sea). kVAh is not kWh.
+- A capability missing from the code may still exist as a manual, paid or on-ground service. Never remove or deny it. Features named in pricing or legal pages but absent from code are custom, built on demand.
+- Plans: Snapshot (free forever), Essential, Pro, Scale (custom; enterprise is entirely custom). Plan state comes from the canonical subscription row. Prices on the page exclude GST, which is added at checkout.
+- Finance insights: opt-in, by plan, read only through `my_finance_insights()` and `my_private_records()`. Essential gets monthly cash flow. Pro gets all three deployed modules, view only. Scale adds date filters and CSV export. Three custom modules open on Scale. Never show words like "sample data", "pro user" or "in pipeline" on a live dashboard.
+- Grants page (startups and business offers) and government grants in Monetize (MSME green transition) are different things; never mix them.
+- Biocog Intelligence (Pro) and Biocog Superintelligence (Scale). Help Center has its own help-only AI.
+- Machinery beta: always unverified until a document, IoT feed or sensor matches it. It needs a geo-tagged photo and live location.
+
+## 6. Deployment
+
+- Work on the designated branch. Each change is its own PR. A page redesign records its start commit (REVERT rule). Merge with a merge commit.
+- Database and edge functions go through Lovable as pending migrations, each with a tested rollback. Code must work before and after a migration is applied. Never write to production data by hand.
+- Inspect before changing anything: code, callers, data, permissions, navigation. Make the smallest change, and do not redesign what works.
+- Show a mockup first for any new design, footer change or redesign, and wait for approval. When the owner says "show me", show before deploying.
+- Never print or commit secrets, test credentials, internal inboxes or payment IDs. The repo is public.
+
+### Pre-deploy evaluation (every PR)
+1. **Need:** does this solve a real user problem the owner asked for, without redesigning something that works?
+2. **Design:** is there one clear focus per screen and an obvious next step? Is the pattern distinctive (see `not-allowed.md`)? Mobile 390px and desktop both checked?
+3. **Copy:** does every line pass the Content Test, with no internal words?
+4. **Data:** are figures real, traceable and the same across Dashboard, MRV, History, Reports and Monetize? Zero vs null correct?
+5. **Function:** has the full journey been run in a real browser or test, including loading, empty, error, guest, signed-in and plan states?
+6. **Regression:** do `bun test tests` (with the extract-document journey), tsc and the build all pass? Is the core flow intact?
+7. **After deploy:** verify live and report what changed, what was tested, results, risks and rollback. Never claim success without evidence.
+
+## 7. Conflicts resolved
+
+| Earlier | Later / wins | Rule now |
+|---|---|---|
+| "Add all new page links to the footer" | Footer owner rule (Oct 2026) | Ask Yes/No for each page; never add by default. |
+| "Every string through the translation system" | Sensitive pages rule | Sensitive pages use reviewed static bundles only, with English fallback. |
+| "WOW experience on every page" | App pages are UPI-simple | WOW on public pages; data-first on Dashboard, MRV, History, Verify, Reports, Monetize. |
+| "Remove dependency on Lovable" | Database access | Frontend ships via git/Vercel; migrations and edge functions still go through Lovable. |
+| Dashboard redesign replaced old features (#246) | Owner: keep every feature | Additions never remove existing Dashboard features; REVERT #251 restored them. |
+| Audit log on Dashboard and trail on MRV | Owner: audit log belongs to MRV | One audit trail, on MRV (#258). |
+| Grid factor check on the dummy account | Owner: do not break the live platform for a dummy account | Review it only in the live OCR-to-report review. |
+
+## 8. Open decisions (ask before acting)
+
+- Rupees next to tonnes: only if critical. Waiting for the owner's call after the usability rating.
+- Moving repeated items between Dashboard and MRV: proposals need owner confirmation first.
+- Intelligent actions (personal reduction actions replacing generic tips): plan approved; build after the owner sees it.
+- Dashboard design audit for a WOW experience without extra design: to be presented, not built.
+- Grid factor (1.42 to 1.52 on dummy rows vs 0.710): confirm in the live OCR review before any change.
