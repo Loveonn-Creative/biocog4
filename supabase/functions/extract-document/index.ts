@@ -1013,7 +1013,8 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
       // Month-by-month totals for bank statements, written separately so a
       // database without the monthly column (finance-insights migration not
       // yet applied) still stores the record and its figures.
-      if (finKind === 'bank_statement' && !rowError) {
+      // Kill switch: secret FINANCE_INSIGHTS=off stops the monthly read.
+      if (finKind === 'bank_statement' && !rowError && Deno.env.get('FINANCE_INSIGHTS') !== 'off') {
         const monthly = await readMonthlyCashflow(mime, clean);
         if (monthly.length) {
           const { error: mErr } = await admin.from('financial_documents').update({ monthly }).eq('user_id', userId).eq('sha256', documentHash);
