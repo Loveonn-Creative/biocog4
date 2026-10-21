@@ -2,6 +2,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { decideDocumentDelete } from '../_shared/deletePolicy.ts';
 import { canDeleteOrganizationDocument, orgCan } from '../_shared/workspaceAccess.ts';
 import { isSourceFilePath, SOURCE_BUCKET } from '../_shared/sourceFiles.ts';
+import { versionProbe } from '../_shared/versionProbe.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -17,6 +18,8 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
  * is verified (audit evidence). Every deletion is written to security_audit_log.
  */
 Deno.serve(async (req) => {
+  const probe = versionProbe(req, 'delete-document');
+  if (probe) return probe;
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
 

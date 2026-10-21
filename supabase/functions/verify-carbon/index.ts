@@ -7,6 +7,7 @@ import { activityDate, fiscalPeriod } from "../_shared/invoiceDate.ts";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
 import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
 import { calculateGreenwashingRisk, evidenceGaps, previewVerification, validateEmission, type EmissionRecord } from "../_shared/verifyGate.ts";
+import { versionProbe } from "../_shared/versionProbe.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -139,6 +140,8 @@ function replayIndicativeValue(previous: { verification_status: string | null; t
 
 
 serve(async (req) => {
+  const probe = versionProbe(req, "verify-carbon");
+  if (probe) return probe;
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }

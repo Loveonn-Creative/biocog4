@@ -3,6 +3,7 @@ import { sendTemplateEmail } from '../_shared/transactional-email-templates/send
 import { internalInbox } from '../_shared/internalInbox.ts';
 import { RESOURCE, type DnsAnswer } from '../_shared/resourceLead.ts';
 import { createHandler } from './handler.ts';
+import { versionProbe } from '../_shared/versionProbe.ts';
 
 /**
  * Sample ESG report: gated access. See handler.ts for the three actions.
@@ -76,6 +77,6 @@ const handler = db && serviceKey && lovableKey
   })
   : null;
 
-Deno.serve((req) => handler
+Deno.serve((req) => versionProbe(req, 'esg-report-access') ?? (handler
   ? handler(req)
-  : new Response(JSON.stringify({ error: 'Something went wrong. Please try again.' }), { status: 503, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } }));
+  : new Response(JSON.stringify({ error: 'Something went wrong. Please try again.' }), { status: 503, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } })));

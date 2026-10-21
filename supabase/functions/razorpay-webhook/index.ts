@@ -23,11 +23,14 @@ import { activateOrder, revokeRefundedPayment } from "../_shared/razorpayActivat
 import { afterActivation, hmacSha256Hex, mask, razorpayApi, supabaseStore, timingSafeEqual } from "../_shared/razorpayServer.ts";
 import { activateAddonOrder, refundAddonPayment } from "../_shared/addonActivation.ts";
 import { notifyServiceOrder, sendAddonInvoice } from "../_shared/addonNotify.ts";
+import { versionProbe } from "../_shared/versionProbe.ts";
 
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
 const HANDLED = new Set(['payment.captured', 'order.paid']);
 
 serve(async (req) => {
+  const probe = versionProbe(req, "razorpay-webhook");
+  if (probe) return probe;
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   const WEBHOOK_SECRET = Deno.env.get('RAZORPAY_WEBHOOK_SECRET');
   const KEY_ID = Deno.env.get('RAZORPAY_KEY_ID');
