@@ -1,0 +1,51 @@
+{
+  "slug": "jaipur-jewellery-exporter-eu-buyer-data",
+  "q": "What carbon data do EU buyers want from a Jaipur jewellery exporter?",
+  "title": "Jaipur jewellery: data EU buyers ask for",
+  "short": "Usually the workshop's Scope 1 and 2 emissions and a figure per piece or per gram for what they buy. Precious metal dominates the footprint, so buyers care most about where gold and silver come from and whether recycled content is backed by supplier documents.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Gold, silver and gemstone jewellery makers and exporters in the Jaipur cluster of Rajasthan",
+  "sections": [
+    {
+      "h": "What to prepare",
+      "ul": [
+        "Workshop electricity and LPG or gas for melting and soldering.",
+        "Metal purchases by weight, with the refiner and any recycled content stated on the invoice.",
+        "Pieces or grams shipped per period."
+      ]
+    },
+    {
+      "h": "Recycled metal",
+      "p": [
+        "Count metal as recycled only when the supplier's documents say so. Under the recycled-content method, recycled metal carries the burden of reprocessing, not of mining."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Gold jewellery footprint",
+      "to": "/answers/gold-jewellery-carbon-footprint-per-gram"
+    },
+    {
+      "label": "Jaipur gem cutting per carat",
+      "to": "/answers/jaipur-gemstone-cutting-carbon-per-carat"
+    },
+    {
+      "label": "Silver jewellery footprint",
+      "to": "/answers/silver-jewellery-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards (Product Standard)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

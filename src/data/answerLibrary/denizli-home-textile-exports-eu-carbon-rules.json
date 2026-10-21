@@ -1,0 +1,57 @@
+{
+  "slug": "denizli-home-textile-exports-eu-carbon-rules",
+  "q": "Which EU carbon rules apply to home textiles exported from Denizli?",
+  "title": "Denizli home textiles: EU carbon rules",
+  "short": "CBAM does not apply: textiles are not in its Annex I. The pressure comes from EU buyers reporting their own Scope 3, and from product rules the EU can set for textiles under its ecodesign framework. Keep energy records by site so a footprint per product can be built when asked.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Home textile and towel exporters in the Denizli cluster of Turkey selling to EU retailers",
+  "sections": [
+    {
+      "h": "Not CBAM",
+      "p": [
+        "Annex I of the CBAM Regulation lists cement, electricity, fertilisers, iron and steel, aluminium and hydrogen. Chapter 63 home textiles are not on it."
+      ]
+    },
+    {
+      "h": "What buyers ask",
+      "ul": [
+        "Scope 1 and 2 emissions per site.",
+        "A figure per kg or per piece for the products they buy.",
+        "The factors and method behind it."
+      ]
+    },
+    {
+      "h": "Product rules",
+      "p": [
+        "The EU ecodesign framework lets the Commission set product rules, including information requirements, for textiles through later acts. Check the acts that apply to your products before assuming a requirement."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Bursa textile buyer data",
+      "to": "/answers/bursa-textile-mill-buyer-carbon-data"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Towel mill gas per kg",
+      "to": "/answers/denizli-towel-mill-gas-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

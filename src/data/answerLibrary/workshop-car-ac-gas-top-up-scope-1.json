@@ -1,0 +1,52 @@
+{
+  "slug": "workshop-car-ac-gas-top-up-scope-1",
+  "q": "Is the AC gas a car workshop recharges counted in its Scope 1?",
+  "title": "Workshops: AC gas recharge and Scope 1",
+  "short": "Gas charged into a customer's car is not your emission. What you lose from your own recovery and charging machines and cylinders is. Work it out as gas bought, minus gas charged into cars, minus gas recovered and sent back, times the gas's global warming potential.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Car and two-wheeler service workshops that recharge vehicle air conditioning",
+  "sections": [
+    {
+      "h": "Mass balance",
+      "p": [
+        "Gas bought in the year, in kg.",
+        "Minus gas charged into customer vehicles, from job cards.",
+        "Minus gas recovered and returned to the supplier.",
+        "The rest is your loss: multiply by GWP and report as Scope 1."
+      ]
+    },
+    {
+      "h": "Which gas",
+      "p": [
+        "Older cars use HFC-134a, with a GWP of 1,530 under IPCC AR6. Newer cars often use HFO-1234yf, whose GWP is very low. Record the gas on each cylinder."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Workshop carbon footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    },
+    {
+      "label": "Refrigerant top-up to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Estimate leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

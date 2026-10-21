@@ -1,0 +1,64 @@
+{
+  "slug": "jalandhar-sports-goods-carbon-per-ball",
+  "q": "How does a Jalandhar sports goods maker work out carbon per ball?",
+  "title": "Jalandhar sports goods: carbon per ball",
+  "short": "Divide the unit's electricity and fuel emissions for the month by balls made, for the making stage. Synthetic leather, bladders, thread and packaging bought in are Scope 3 and should come from supplier figures or a named database, labelled with their source.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sports goods makers in the Jalandhar cluster of Punjab supplying overseas brands",
+  "sections": [
+    {
+      "h": "Making stage",
+      "p": [
+        "Electricity kWh x 0.710 kg CO2 per kWh.",
+        "Generator diesel in litres x 2.68 kg CO2 per litre.",
+        "Divide by balls made, or by machine hours if products differ."
+      ]
+    },
+    {
+      "h": "Materials",
+      "p": [
+        "For most stitched balls, purchased materials outweigh assembly. Ask suppliers for figures per kg and keep the source next to each line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: making stage, one month (illustrative inputs)",
+    "lines": [
+      "Electricity: 4,000 kWh x 0.710 = 2,840 kg CO2",
+      "Balls made: 20,000",
+      "Per ball: 2,840 / 20,000 = 0.142 kg CO2"
+    ],
+    "note": "Quantities are illustrative; materials are not included in this figure."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Sialkot sports goods and CBAM",
+      "to": "/answers/sialkot-surgical-instruments-sports-goods-cbam"
+    },
+    {
+      "label": "Allocate to one customer",
+      "to": "/answers/allocate-my-emissions-to-one-customer"
+    },
+    {
+      "label": "Jalandhar hand tools and CBAM",
+      "to": "/answers/jalandhar-hand-tool-exporter-cbam-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

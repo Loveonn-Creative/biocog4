@@ -1,0 +1,51 @@
+{
+  "slug": "pet-recycler-bale-transport-scope-3",
+  "q": "How does a PET recycler count the transport of bottle bales it buys?",
+  "title": "PET recyclers: inbound bale transport",
+  "short": "If you pay for the transport, it is Scope 3, category 4. Multiply tonnes of bales by distance and by a freight intensity, or use the trucker's fuel. If the bale seller delivers and charges one price, the transport sits in their figure, not a separate line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "PET bottle recyclers and flake producers buying baled post-consumer bottles",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Tonnes delivered and kilometres per trip, from weighbridge slips and trip sheets.",
+        "Tonne-km x a GLEC or national intensity for the truck size, or litres of diesel x 2.68.",
+        "Report as Scope 3, category 4."
+      ]
+    },
+    {
+      "h": "In the flake figure",
+      "p": [
+        "Inbound transport is part of the burden recycled flakes carry under the recycled-content method, so include it when a buyer asks for a figure per kg."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "rPET flakes per kg",
+      "to": "/answers/pet-bottle-recycling-flakes-carbon-per-kg"
+    },
+    {
+      "label": "rPET buyer claims",
+      "to": "/answers/rpet-flake-buyer-recycled-content-claim"
+    },
+    {
+      "label": "Recycled plastic granules",
+      "to": "/answers/recycled-plastic-granules-carbon-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "faisalabad-textile-mill-gas-generator-scope-1",
+  "q": "How does a Faisalabad textile mill count power from its own gas generators?",
+  "title": "Faisalabad mills: own gas generators",
+  "short": "Electricity you make yourself is not Scope 2. Count the gas burned in the generators as Scope 1, at about 2.05 kg CO2 per standard cubic metre with the IPCC default. Only electricity bought from the grid is Scope 2, so do not add the generated kWh again.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Spinning, weaving and processing mills in the Faisalabad textile cluster of Pakistan",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Gas to generators in scm from the gas bill or sub-meter.",
+        "x about 2.05 kg CO2 per scm (or a factor from the calorific value on the bill).",
+        "Report as Scope 1; report grid kWh separately as Scope 2."
+      ]
+    },
+    {
+      "h": "Waste heat",
+      "p": [
+        "If generator exhaust heat makes steam, the emissions are already in the gas figure. Do not count the steam again."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "CHP allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Sold steam or power",
+      "to": "/answers/sold-steam-or-power-deduct-from-scope-1"
+    },
+    {
+      "label": "Bursa textile buyer data",
+      "to": "/answers/bursa-textile-mill-buyer-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

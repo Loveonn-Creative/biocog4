@@ -1,0 +1,58 @@
+{
+  "slug": "bursa-textile-mill-buyer-carbon-data",
+  "q": "What carbon data do EU buyers want from a Bursa textile mill?",
+  "title": "Bursa textile mill: data EU buyers ask for",
+  "short": "Usually Scope 1 and 2 emissions for the mill, split by site, and a figure per kilogram or metre of fabric for the products they buy. Textiles are not CBAM goods, so this is buyer-driven Scope 3 data, built from gas, steam and electricity bills and your production register.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Weaving, knitting and finishing mills in the Bursa textile cluster of Turkey supplying EU brands",
+  "sections": [
+    {
+      "h": "The usual request",
+      "ul": [
+        "Scope 1: natural gas, coal or fuel oil burned in boilers and dryers.",
+        "Scope 2: purchased electricity and steam.",
+        "Production for the same period, in kg or metres.",
+        "The method and factors used, so the buyer can check them."
+      ]
+    },
+    {
+      "h": "Per product",
+      "p": [
+        "Divide each site's emissions over its output using kg or metres, or machine hours where products differ a lot. State the basis next to the figure."
+      ]
+    },
+    {
+      "h": "Not CBAM",
+      "p": [
+        "Textiles are outside Annex I of the CBAM Regulation. Buyers ask because their own Scope 3 includes purchased goods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Which textile tier has most emissions",
+      "to": "/answers/which-textile-tier-has-most-emissions"
+    },
+    {
+      "label": "Knitted fabric footprint",
+      "to": "/answers/knitted-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Dye house emissions per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

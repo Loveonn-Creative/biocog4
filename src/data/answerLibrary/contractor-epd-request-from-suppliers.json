@@ -1,0 +1,52 @@
+{
+  "slug": "contractor-epd-request-from-suppliers",
+  "q": "What should a contractor ask suppliers for in an EPD?",
+  "title": "Contractors: what to ask for in an EPD",
+  "short": "Ask for a product-specific EPD for the plant that supplies you, verified by a third party and still valid, with the product category rule it follows and the declared unit. Use the A1 to A3 figure for purchased materials, and check the unit matches what you buy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Contractors and project teams collecting carbon data for cement, steel, concrete and other materials",
+  "sections": [
+    {
+      "h": "Check on every EPD",
+      "ul": [
+        "Product and plant named, not an industry average, unless you accept an average.",
+        "Declared unit, such as per tonne or per cubic metre.",
+        "Product category rule and the standard it follows (ISO 14025, EN 15804 for construction).",
+        "Third-party verification and the validity date."
+      ]
+    },
+    {
+      "h": "Using it",
+      "p": [
+        "Multiply your purchased quantity by the A1 to A3 global warming figure. Keep the EPD file with the purchase order for audit."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "How to read GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Which PCR to use",
+      "to": "/answers/which-pcr-to-use-for-an-epd"
+    },
+    {
+      "label": "Cement purchases in Scope 3",
+      "to": "/answers/contractor-cement-purchases-scope-3-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO (ISO 14025, ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

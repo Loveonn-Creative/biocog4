@@ -1,0 +1,60 @@
+{
+  "slug": "surat-cvd-diamond-grower-electricity-per-carat",
+  "q": "How does a Surat CVD diamond grower work out electricity CO2 per carat?",
+  "title": "Surat CVD growers: CO2 per carat",
+  "short": "Divide the month's reactor electricity, times the grid factor, by rough carats grown. On the grid at 0.710 kg CO2 per kWh the figure is large, because reactors run for weeks. Renewable power bought with evidence lowers the market-based figure; the location-based figure stays on the grid factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Lab-grown diamond growers using CVD reactors in the Surat cluster of Gujarat",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Meter the reactors separately from cutting and offices where you can.",
+        "Multiply reactor kWh by 0.710 kg CO2 per kWh for the location-based figure.",
+        "Divide by rough carats grown in the same period."
+      ]
+    },
+    {
+      "h": "Renewable claims",
+      "p": [
+        "A market-based figure can use renewable electricity only when it is backed by contracts or certificates that meet the Scope 2 Quality Criteria. Report both figures and say which one a claim uses."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Reactor electricity: 500,000 kWh x 0.710 = 355,000 kg CO2",
+      "Rough carats grown: 2,000",
+      "Per carat: 355,000 / 2,000 = 177.5 kg CO2 per carat"
+    ],
+    "note": "Quantities are illustrative; use your reactor meters and growth register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Lab-grown diamond per carat",
+      "to": "/answers/lab-grown-diamond-carbon-footprint-per-carat"
+    },
+    {
+      "label": "Can lab-grown be called sustainable",
+      "to": "/answers/can-lab-grown-diamonds-be-called-sustainable"
+    },
+    {
+      "label": "Surat diamond unit electricity",
+      "to": "/answers/surat-diamond-unit-electricity-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

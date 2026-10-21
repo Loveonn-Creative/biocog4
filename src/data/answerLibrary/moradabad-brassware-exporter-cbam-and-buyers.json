@@ -1,0 +1,58 @@
+{
+  "slug": "moradabad-brassware-exporter-cbam-and-buyers",
+  "q": "Does CBAM apply to brassware exported from Moradabad?",
+  "title": "Moradabad brassware and CBAM",
+  "short": "No. Brass is a copper alloy, and copper articles in Chapter 74 are not CBAM goods. Steel or aluminium items in a Moradabad shipment may be, if declared under a covered heading. Buyers of brassware may still ask for a footprint per kg built from melting fuel, electricity and metal bought.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Brassware, metal handicraft and hardware exporters in the Moradabad cluster of Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Not covered",
+      "p": [
+        "Chapter 74 copper and copper alloy articles, including brass artware, are outside Annex I."
+      ]
+    },
+    {
+      "h": "Check mixed shipments",
+      "ul": [
+        "7323 steel household articles: not covered.",
+        "7326 other articles of iron or steel: covered.",
+        "7615 aluminium household articles: not covered.",
+        "7616 other articles of aluminium: covered."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Melting fuel and electricity give the making-stage figure; brass ingots and scrap bought in carry most of the footprint and sit in Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Brass artware footprint",
+      "to": "/answers/brass-artware-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Brass melting furnaces compared",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    },
+    {
+      "label": "Kitchen utensils and CBAM",
+      "to": "/answers/are-kitchen-utensils-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "eu-importer-one-supplier-two-plants-cbam",
+  "q": "What if an EU importer buys the same steel from two plants of one supplier?",
+  "title": "One supplier, two plants: CBAM data",
+  "short": "Embedded emissions are worked out per installation, so the importer needs a separate figure for each plant that made the goods, even when the supplier, product and invoice look the same. Ask the supplier to name the installation on every shipment and to send per-installation data.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers buying steel or aluminium from suppliers with several plants, for example in Indian, Turkish or Vietnamese clusters",
+  "sections": [
+    {
+      "h": "Why per plant",
+      "p": [
+        "CBAM ties embedded emissions to the installation where the good was produced. Two plants with different routes or fuels can give very different figures for the same CN code."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "ul": [
+        "The installation that produced each consignment.",
+        "Embedded emissions per tonne for that installation and period.",
+        "Which plant supplied which share, when one shipment mixes production."
+      ]
+    },
+    {
+      "h": "If the supplier cannot split it",
+      "p": [
+        "Without per-installation data, the importer may have to use default values for the part it cannot attribute. Agree the split in the supply contract."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM supplier template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Indian steel: what to ask",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    },
+    {
+      "label": "Kocaeli cement electricity",
+      "to": "/answers/kocaeli-cement-plant-electricity-in-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "mandi-gobindgarh-rerolling-mill-cbam-figure",
+  "q": "Which CBAM figure does a Mandi Gobindgarh re-rolling mill send for bars?",
+  "title": "Mandi Gobindgarh bars: the CBAM figure",
+  "short": "Send embedded emissions per tonne of bar: the direct emissions of your reheating furnace plus the embedded emissions of the billets you rolled, from your billet supplier. Electricity for the rolling mill is not charged for steel, so it stays out of the CBAM figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Re-rolling mills and bar makers in the Mandi Gobindgarh steel cluster of Punjab supplying EU importers",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Reheating furnace fuel in the period times its factor (for example furnace oil at 2.97 kg CO2 per litre).",
+        "Tonnes of billet rolled times the billet's embedded emissions per tonne, from the supplier.",
+        "Add, then divide by tonnes of bar produced."
+      ]
+    },
+    {
+      "h": "The billet figure",
+      "p": [
+        "The billet carries most of the result. If your billet supplier cannot give a figure, your importer will use a default value for it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of bar (illustrative inputs)",
+    "lines": [
+      "Billet used: 1.05 t x 2.0 t CO2 per t = 2.10 t CO2",
+      "Reheating furnace oil: 30 L x 2.97 = 89.1 kg = 0.0891 t CO2",
+      "Embedded emissions: 2.10 + 0.0891 = 2.189 t CO2 per t of bar"
+    ],
+    "note": "The billet figure and quantities are illustrative; use supplier data and your furnace records."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Re-rolling mill CO2 per tonne",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    },
+    {
+      "label": "Induction furnace billets",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

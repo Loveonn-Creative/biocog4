@@ -1,0 +1,59 @@
+{
+  "slug": "saldanha-bay-steel-exporter-cbam-records",
+  "q": "What records should a Saldanha Bay steel exporter keep for CBAM?",
+  "title": "Saldanha Bay steel: CBAM records to keep",
+  "short": "Keep the records an accredited verifier will ask for: installation identity, production route, monthly production by CN code, every fuel, reductant and electrode input with its invoice, precursor data from suppliers, and proof of any carbon price paid. Your EU importer needs these to report actual emissions instead of default values.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel producers, processors and exporters in the Saldanha Bay and West Coast industrial area of South Africa selling to the EU",
+  "sections": [
+    {
+      "h": "The core set",
+      "ul": [
+        "Installation name, location and the production processes inside the boundary.",
+        "Production of each CBAM good by month, by CN code.",
+        "Fuel, coal, coke, gas and electrode purchases, each with an invoice and a quantity.",
+        "Electricity bills, kept even though only direct emissions are charged for steel.",
+        "Embedded emissions of purchased precursors, such as pig iron, DRI or slabs, from each supplier."
+      ]
+    },
+    {
+      "h": "Carbon price evidence",
+      "p": [
+        "Article 9 of the CBAM Regulation lets the importer claim a reduction for a carbon price effectively paid in the country of origin. Keep the tax return, the assessment and the payment proof, split by installation, so the importer can show what was paid on the exported goods."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Without actual, verified data the importer falls back on default values, which include a mark-up. Records that tie every tonne of CO2 to an invoice are what make an actual figure possible."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "How long to keep CBAM records",
+      "to": "/answers/how-long-to-keep-cbam-records"
+    },
+    {
+      "label": "CBAM supplier template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Where default values come from",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

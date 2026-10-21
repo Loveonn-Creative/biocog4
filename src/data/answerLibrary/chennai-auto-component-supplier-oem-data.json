@@ -1,0 +1,60 @@
+{
+  "slug": "chennai-auto-component-supplier-oem-data",
+  "q": "How should a Chennai auto component supplier give carbon data to an OEM?",
+  "title": "Chennai auto suppliers: data for OEMs",
+  "short": "Give plant Scope 1 and 2 for the period, then a figure per part allocated by mass or machine hours, with the method stated. Add purchased steel, aluminium and castings from supplier figures. OEMs check consistency between years, so keep the same allocation basis.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto component makers in the Chennai and Sriperumbudur cluster of Tamil Nadu supplying vehicle makers",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Plant emissions: fuels at IPCC factors, electricity at 0.710 kg CO2 per kWh.",
+        "Share to each part by machine hours or mass, whichever reflects the work.",
+        "Add materials bought, from supplier figures, labelled with their source."
+      ]
+    },
+    {
+      "h": "Keep it auditable",
+      "p": [
+        "Keep the allocation sheet with the bills. A buyer audit asks how a per-part figure was built, not only what it is."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one part (illustrative inputs)",
+    "lines": [
+      "Plant emissions in the year: 500 t CO2",
+      "Part A uses 20% of machine hours: 500 x 0.20 = 100 t CO2",
+      "Parts made: 200,000, so 100,000 kg / 200,000 = 0.5 kg CO2 per part"
+    ],
+    "note": "Quantities are illustrative; materials are added separately."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Allocate to one customer",
+      "to": "/answers/allocate-my-emissions-to-one-customer"
+    },
+    {
+      "label": "Supplier roadmap for OEMs",
+      "to": "/answers/auto-supplier-decarbonisation-roadmap-for-oem"
+    },
+    {
+      "label": "Drive Sustainability SAQ",
+      "to": "/answers/drive-sustainability-saq-auto-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "electric-vs-diesel-bus-depot-indian-grid",
+  "q": "Is an electric bus lower carbon than a diesel bus on the Indian grid?",
+  "title": "Electric vs diesel bus on the Indian grid",
+  "short": "Compare per kilometre with your own figures: diesel litres per km times 2.68, against kWh at the depot meter per km times 0.710. On grid power the gap can be modest; renewable electricity bought with evidence widens it on the market-based method.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Bus operators and electric bus depot managers in India comparing fleets",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Diesel bus: litres per km from fuel records x 2.68 kg CO2 per litre.",
+        "Electric bus: kWh per km at the depot meter, including charger losses, x 0.710 kg CO2 per kWh.",
+        "Compare on the same routes and seasons."
+      ]
+    },
+    {
+      "h": "Market-based",
+      "p": [
+        "If the depot buys renewable power through open access or certificates, report a market-based figure as well, with the evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per km (illustrative inputs)",
+    "lines": [
+      "Diesel bus: 0.35 L per km x 2.68 = 0.938 kg CO2 per km",
+      "Electric bus: 1.2 kWh per km x 0.710 = 0.852 kg CO2 per km",
+      "Difference: 0.938 minus 0.852 = 0.086 kg CO2 per km on grid power"
+    ],
+    "note": "Consumption figures are illustrative; use your own fuel and meter records."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Electric bus depot charging",
+      "to": "/answers/electric-bus-depot-charging-emissions"
+    },
+    {
+      "label": "Charger losses at the depot",
+      "to": "/answers/electric-bus-depot-charger-losses-count"
+    },
+    {
+      "label": "Bus emissions per passenger-km",
+      "to": "/answers/bus-operator-emissions-per-passenger-km"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

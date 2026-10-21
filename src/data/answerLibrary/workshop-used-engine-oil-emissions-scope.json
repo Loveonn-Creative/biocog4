@@ -1,0 +1,53 @@
+{
+  "slug": "workshop-used-engine-oil-emissions-scope",
+  "q": "Does a vehicle workshop count emissions from used engine oil?",
+  "title": "Workshops: used engine oil emissions",
+  "short": "Only if you burn it. Used oil sold to an authorised re-refiner or recycler is not your emission; keep the disposal receipts. Used oil burned in a heater or boiler on your site is Scope 1 fuel combustion, counted from the litres burned.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Car, truck and two-wheeler service workshops and fleet maintenance yards",
+  "sections": [
+    {
+      "h": "Sold or handed over",
+      "p": [
+        "Oil passed to an authorised recycler is waste leaving your site. The emissions of treating it sit in your Scope 3, category 5, if you report that category."
+      ]
+    },
+    {
+      "h": "Burned on site",
+      "p": [
+        "Burning waste oil for heat is fuel combustion in Scope 1. Record litres burned and use the IPCC default for waste oils, or your supplier's analysis."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Workshop carbon footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    },
+    {
+      "label": "Workshop AC gas recharge",
+      "to": "/answers/workshop-car-ac-gas-top-up-scope-1"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

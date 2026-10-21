@@ -1,0 +1,51 @@
+{
+  "slug": "colocation-tenant-renewable-claim-navi-mumbai",
+  "q": "Can a Navi Mumbai colocation tenant claim the operator's renewable power?",
+  "title": "Colocation tenants: claiming renewables",
+  "short": "Only for the share allocated to you in writing. Under the Scope 2 Guidance a market-based claim needs contractual instruments that are uniquely yours. If the operator buys renewable power, ask it to allocate certificates or contract volumes to your space; otherwise use its residual or grid factor.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies renting colocation space in the Navi Mumbai data centre hub",
+  "sections": [
+    {
+      "h": "What you need",
+      "ul": [
+        "A document naming your allocation of renewable MWh or certificates.",
+        "The same period as your consumption.",
+        "Assurance that the operator does not count the same MWh for another tenant."
+      ]
+    },
+    {
+      "h": "Without it",
+      "p": [
+        "Report your share on the location-based method at 0.710 kg CO2 per kWh, times PUE, and leave the market-based figure at the grid or residual factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market-based reporting, and records diesel for backup generators as Scope 1. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Group captive solar Scope 2",
+      "to": "/answers/group-captive-solar-ppa-scope-2-claim"
+    },
+    {
+      "label": "Navi Mumbai PUE and Scope 2",
+      "to": "/answers/navi-mumbai-data-centre-pue-scope-2-example"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
