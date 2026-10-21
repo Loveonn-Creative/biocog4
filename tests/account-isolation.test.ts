@@ -1,6 +1,9 @@
-import { beforeEach, describe, expect, test } from 'bun:test';
+import { afterAll, beforeEach, describe, expect, test } from 'bun:test';
 
 // Minimal browser stand-ins for the pure modules under test.
+// bun shares globals across test files, so put the originals back afterwards.
+const saved = { localStorage: (globalThis as any).localStorage, window: (globalThis as any).window, CustomEvent: (globalThis as any).CustomEvent };
+afterAll(() => { Object.assign(globalThis, saved); });
 const store = new Map<string, string>();
 (globalThis as any).localStorage = {
   getItem: (k: string) => (store.has(k) ? store.get(k)! : null),
