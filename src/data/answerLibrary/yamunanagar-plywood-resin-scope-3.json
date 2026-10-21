@@ -1,0 +1,61 @@
+{
+  "slug": "yamunanagar-plywood-resin-scope-3",
+  "q": "How does a Yamunanagar plywood unit count the resin it uses in Scope 3?",
+  "title": "Yamunanagar plywood: resin in Scope 3",
+  "short": "Urea formaldehyde and phenolic resins are made from fossil feedstocks, so they carry a real upstream footprint. Multiply kilograms of resin bought by a per kg factor from the supplier or a database, and keep it separate from timber, which is mostly biogenic carbon.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plywood, block board and veneer units in Yamunanagar and Haryana",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Resin purchase invoices in kg, by type.",
+        "Urea or formaldehyde bought if you cook resin yourself.",
+        "Veneer and timber purchases in cubic metres."
+      ]
+    },
+    {
+      "h": "If you make resin on site",
+      "p": [
+        "Count the boiler fuel and power for cooking in your own Scope 1 and 2, and the urea and methanol or formaldehyde you buy in Scope 3."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Furniture makers and EU importers ask for footprint per cubic metre. Resin, hot press steam and power usually decide the difference between units."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Plywood footprint per cubic metre",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Wood waste boilers",
+      "to": "/answers/furniture-factory-wood-waste-boiler-biogenic-co2"
+    },
+    {
+      "label": "Biogenic carbon in timber",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

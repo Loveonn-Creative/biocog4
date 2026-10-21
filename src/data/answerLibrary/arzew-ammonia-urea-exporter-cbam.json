@@ -1,0 +1,63 @@
+{
+  "slug": "arzew-ammonia-urea-exporter-cbam",
+  "q": "What goes into the CBAM figure for urea and ammonia from Arzew?",
+  "title": "Arzew urea and ammonia: the CBAM figure",
+  "short": "Ammonia's figure is the gas burned and reformed to make it, plus power. Urea adds its own plant and takes in some CO2 from the ammonia plant, but under CBAM that CO2 is not subtracted. Ask for verified figures per tonne of each product.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of Algerian ammonia and urea and traders buying from Arzew",
+  "sections": [
+    {
+      "h": "Ammonia",
+      "ul": [
+        "Reformer feed gas and fuel gas.",
+        "Electricity and steam.",
+        "Indirect emissions count for fertilisers."
+      ]
+    },
+    {
+      "h": "Urea",
+      "ul": [
+        "The ammonia it contains, as a precursor.",
+        "Synthesis and granulation energy.",
+        "CO2 bound in urea is released when it is used, so it is not netted off."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Algeria has no carbon price to deduct."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Egypt urea plant",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "UAE ammonia exporters",
+      "to": "/answers/uae-ammonia-exporter-cbam-what-counts"
+    },
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

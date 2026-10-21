@@ -1,0 +1,62 @@
+{
+  "slug": "smederevo-steel-hot-rolled-coil-cbam",
+  "q": "What CBAM figure does an EU buyer need for hot rolled coil from Smederevo?",
+  "title": "Smederevo hot rolled coil: the CBAM figure",
+  "short": "Smederevo is a blast furnace works, so its coil carries coke, sinter and furnace emissions. Ask for a verified figure per tonne of coil for the period. Serbia has no carbon price to deduct, so the full CBAM charge applies to that figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and service centres buying coil, plate and tinplate from Serbia",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Coke and sinter, made on site or bought.",
+        "Blast furnace and converter.",
+        "Hot strip mill fuel.",
+        "Bought slabs or pig iron as precursors."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported, not charged, for steel. Serbia's grid is lignite heavy, which buyers doing Scope 3 will notice."
+      ]
+    },
+    {
+      "h": "Tinplate and plate",
+      "p": [
+        "Each product needs its own figure. Downstream steps add their own fuel and power."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Bokaro hot rolled coil",
+      "to": "/answers/bokaro-steel-hot-rolled-coil-cbam-figure"
+    },
+    {
+      "label": "Serbia grid factor",
+      "to": "/answers/serbia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

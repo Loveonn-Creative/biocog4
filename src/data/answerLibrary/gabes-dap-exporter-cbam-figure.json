@@ -1,0 +1,59 @@
+{
+  "slug": "gabes-dap-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for DAP from Gabès?",
+  "title": "Gabès DAP: the CBAM figure",
+  "short": "DAP contains nitrogen, so it is a CBAM good. Its figure adds the ammonia it contains, usually imported for Tunisian plants, to the plant's fuel, steam and power. Triple superphosphate made at the same sites carries no nitrogen and sits outside CBAM.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of Tunisian fertilisers and traders buying DAP from Gabès and Skhira",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Ammonia precursor, from the supplier's verified figure or defaults.",
+        "Granulation, drying and steam.",
+        "Electricity, since indirect emissions count for fertilisers."
+      ]
+    },
+    {
+      "h": "Outside CBAM",
+      "ul": [
+        "Phosphoric acid and sulphuric acid.",
+        "Triple superphosphate under 3103.",
+        "Phosphate rock."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Tunisia has no carbon price that an importer could deduct."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Triple superphosphate in CBAM",
+      "to": "/answers/is-moroccan-triple-superphosphate-covered-by-cbam"
+    },
+    {
+      "label": "Tunisia grid factor",
+      "to": "/answers/tunisia-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

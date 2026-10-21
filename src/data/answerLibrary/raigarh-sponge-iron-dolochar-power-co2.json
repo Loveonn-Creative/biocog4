@@ -1,0 +1,62 @@
+{
+  "slug": "raigarh-sponge-iron-dolochar-power-co2",
+  "q": "Does power from dolochar count in a Raigarh sponge iron unit's emissions?",
+  "title": "Raigarh sponge iron: dolochar power and CO2",
+  "short": "Yes. Dolochar is the char left after the coal based kiln, and burning it in your boiler releases fossil CO2 from its fixed carbon. Count it in Scope 1 from tonnes burned and a carbon content test. The power it makes then cuts what you buy from the grid.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coal based sponge iron units in Raigarh and Raipur with dolochar fired boilers",
+  "sections": [
+    {
+      "h": "Why it is not free",
+      "p": [
+        "Dolochar is a by product, but its carbon came from coal. Treating it as zero hides real emissions and buyers who audit the kiln balance will spot the gap."
+      ]
+    },
+    {
+      "h": "How to count it",
+      "ol": [
+        "Weigh dolochar sent to the boiler each month.",
+        "Test its fixed carbon, or use a recent lab report.",
+        "CO2 = tonnes × carbon share × 44/12.",
+        "Add it to the coal burned in the kiln, without counting the same carbon twice."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Sponge iron is a CBAM good. Power made from dolochar inside your boundary is part of the direct emissions of the plant, so the kiln and the boiler go into one figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Coal based sponge iron CO2",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Kiln coal lab records",
+      "to": "/answers/sponge-iron-kiln-coal-lab-testing-records"
+    },
+    {
+      "label": "Raipur sponge iron and CBAM",
+      "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -275,6 +275,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "algeria-clinker-exporter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for Algerian clinker?",
+  "title": "Algerian clinker: the CBAM figure",
+  "short": "Per tonne of clinker: calcination CO2 from limestone, roughly half a tonne, plus kiln fuel, which in Algeria is mostly gas. Electricity counts for cement too. Ask for a verified figure; gas fired kilns can come in below the EU default.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "algeria-dri-eaf-rebar-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for rebar from a gas DRI mill in western Algeria?",
+  "title": "Algerian DRI rebar: the CBAM figure",
+  "short": "Embedded direct emissions per tonne of rebar: gas used to reduce iron ore pellets, carbon and lime in the electric arc furnace, and reheating fuel. Gas based DRI runs well below blast furnace steel, so a verified actual figure usually beats the EU default.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "algeria-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Algeria use?",
+  "title": "Algeria grid factor for suppliers",
+  "short": "Algeria generates almost all its power from natural gas, so its grid factor sits around 0.5 kg CO2 per kWh. Use the official or IEA figure for the year and name it. Solar is growing, so check for an updated year before each report.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "aligarh-locks-hardware-cbam-check",
   "q": "Do locks and hardware exported from Aligarh fall under EU CBAM?",
   "title": "Aligarh locks and CBAM",
@@ -480,6 +504,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Ankleshwar API unit: solvent emissions",
   "short": "Steam and power used to distil solvents back for reuse are ordinary Scope 1 and 2. Solvent you burn in your own incinerator or thermal oxidiser is Scope 1 at its carbon content. Solvent waste sent to a common incinerator is Scope 3, Category 5, using the operator's figure or a stated estimate.",
   "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "annaba-blast-furnace-steel-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for steel from the Annaba blast furnace works?",
+  "title": "Annaba blast furnace steel: the CBAM figure",
+  "short": "Blast furnace steel carries coke, sinter and furnace emissions, so its figure is high, often around twice that of gas DRI steel. Ask the works for a verified figure per tonne of product. If output was intermittent, make sure the period matches your shipment.",
+  "topic": "regulation",
   "reviewed": "2026-10-21"
  },
  {
@@ -763,6 +795,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "argentina-carbon-tax-cbam-deduction",
+  "q": "Can an EU importer deduct Argentina's carbon tax from CBAM?",
+  "title": "Argentina's carbon tax and CBAM",
+  "short": "Only for a carbon price actually paid on the embedded emissions, net of any rebate, and proven by the producer. Argentina taxes CO2 in liquid fuels and coal, but natural gas, the main industrial fuel, largely falls outside it, so the deductible amount is usually small.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "argentina-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Argentina use?",
+  "title": "Argentina grid factor for suppliers",
+  "short": "Argentina's power comes mainly from gas, with hydro, nuclear, wind and solar making up the rest, so its grid factor sits roughly around 0.3 to 0.35 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "article-6-4-share-of-proceeds-and-omge",
   "q": "How much of an Article 6.4 project's credits go to the share of proceeds and overall mitigation?",
   "title": "Article 6.4 share of proceeds and OMGE",
@@ -777,6 +825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "An Article 8 fund promotes environmental or social traits and checks that you follow good governance. An Article 9 fund must treat almost every holding as a sustainable investment, so it has to show your company contributes to an environmental or social goal, does no significant harm and is well governed. Expect deeper diligence from Article 9.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "arzew-ammonia-urea-exporter-cbam",
+  "q": "What goes into the CBAM figure for urea and ammonia from Arzew?",
+  "title": "Arzew urea and ammonia: the CBAM figure",
+  "short": "Ammonia's figure is the gas burned and reformed to make it, plus power. Urea adds its own plant and takes in some CO2 from the ammonia plant, but under CBAM that CO2 is not subtracted. Ask for verified figures per tonne of each product.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "asi-certification-aluminium-carbon-threshold",
@@ -913,6 +969,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the cork or synthetic base, feathers or nylon skirt, glue and thread per shuttle with supplier figures. Then add the unit's electricity for drilling, setting and drying, divided by shuttles packed.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "bahrain-aluminium-smelter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for Bahraini aluminium?",
+  "title": "Bahraini aluminium: the CBAM figure",
+  "short": "Direct emissions per tonne from the smelter: anode CO2, perfluorocarbons and cast house fuel. Bahrain's smelter runs on its own gas fired power, which is reported but not charged for aluminium. Ask for a verified figure per product rather than relying on default values.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bahrain-carbon-price-cbam-deduction",
+  "q": "Can an EU importer deduct a Bahraini carbon price from CBAM?",
+  "title": "Bahrain: any carbon price to deduct?",
+  "short": "Not today. CBAM lets an importer deduct a carbon price effectively paid in the country of origin, but Bahrain has no carbon tax or emissions trading scheme in force. The full CBAM charge applies, so a lower measured emission figure is the only lever.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bahrain-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Bahrain use?",
+  "title": "Bahrain grid factor for suppliers",
+  "short": "Bahrain's power comes almost entirely from gas, so the grid factor sits roughly between 0.5 and 0.7 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it. Solar on your roof lowers market based Scope 2 only if you keep generation records.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "bajio-auto-parts-shipment-cbam-goods",
@@ -1119,6 +1199,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How do I count latex and backing cloth in a tufted carpet footprint?",
   "title": "Tufted carpet: latex and backing",
   "short": "Latex compound and backing cloth are purchased materials, so they go in Scope 3 Category 1 for your company and in the cradle to gate figure per square metre. Multiply kg used per square metre by a supplier or published factor for each material, and add the energy of the curing oven.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bhilai-fabricator-steel-plate-scope-3",
+  "q": "How does a Bhilai fabricator count the steel plate it buys in Scope 3?",
+  "title": "Bhilai fabricators: steel plate in Scope 3",
+  "short": "Multiply tonnes of plate bought by a per tonne factor, ideally the mill's own figure for that product. If the mill gives none, use an integrated steel average and say so. Plate is usually most of a fabricator's footprint, far more than its own welding and cutting.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bhilai-rails-exporter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for rails from Bhilai?",
+  "title": "Bhilai rails: the CBAM figure",
+  "short": "Rails fall under CN 7302, so they are CBAM goods. The buyer needs embedded emissions per tonne of rail, from the integrated works through the rail mill, verified for the definitive regime. Integrated blast furnace mills sit well above scrap based mills, so measured data matters.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bhilwara-textile-mill-captive-thermal-power",
+  "q": "A Bhilwara textile mill runs its own coal power plant: how does that change its footprint?",
+  "title": "Bhilwara mills with captive coal power",
+  "short": "Coal burned in your captive plant is Scope 1, counted from tonnes and calorific value on your coal invoices. Power you then use is not Scope 2 again. Per kWh, an old small coal unit is often worse than the grid at 0.710 kg, so the comparison is worth making.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
  },
@@ -1347,6 +1451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "bokaro-steel-hot-rolled-coil-cbam-figure",
+  "q": "How does an EU buyer get a CBAM figure for hot rolled coil from Bokaro?",
+  "title": "Bokaro hot rolled coil: the CBAM figure",
+  "short": "Ask the mill for embedded emissions per tonne of coil, built from its blast furnace, coke ovens, sinter plant and steel shop, plus any bought precursors. Integrated mills run high, so a measured figure usually beats the EU default. Without one, the importer must use default values.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "bone-china-tableware-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of bone china or porcelain tableware per piece?",
   "title": "Bone china tableware carbon per piece",
@@ -1385,6 +1497,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "kWh per kL = 9.81 x total head in metres / (3,600 x pump and motor efficiency). Lifting water 50 m at 40 percent efficiency takes about 0.34 kWh per kL, or about 0.24 kg CO2 per kL at India's grid factor of 0.710. Deeper water and worn pumps raise it.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "bosnia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Bosnia and Herzegovina use?",
+  "title": "Bosnia grid factor for suppliers",
+  "short": "Most of Bosnia and Herzegovina's power comes from coal, with hydro making up most of the rest, so its grid factor is high, roughly 0.7 kg CO2 per kWh or more, and swings with rainfall. Use the official or IEA figure for the reporting year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "box-maker-kraft-paper-supplier-carbon-data",
@@ -1440,6 +1560,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Brazil's carbon market and CBAM",
   "short": "Only once a carbon price is actually paid. Brazil's law creating its emissions trading system phases it in over several years, starting with reporting before any allowance cost. Until a producer pays for its emissions, there is nothing for the EU declarant to deduct.",
   "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "brazil-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Brazil use?",
+  "title": "Brazil grid factor for suppliers",
+  "short": "Brazil's national grid is mostly hydro, with wind and solar growing, so its factor is low and moves with rainfall. Use the official national grid figure for the reporting year, published by the government, or the IEA figure, and name it. A dry year can be much higher.",
+  "topic": "accounting",
   "reviewed": "2026-10-21"
  },
  {
@@ -2787,6 +2915,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "chittorgarh-cement-plant-alternative-fuel-co2",
+  "q": "How does a Chittorgarh cement plant count CO2 from alternative fuels in the kiln?",
+  "title": "Chittorgarh cement: alternative fuel CO2",
+  "short": "Split each fuel into fossil and biomass carbon. Plastic rich refuse derived fuel is largely fossil, so its CO2 counts in Scope 1. Biomass such as agricultural residue is biogenic: report it separately, outside the fossil total. Use fuel tests, not supplier labels.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "chittorgarh-zinc-smelter-covered-by-cbam",
+  "q": "Is zinc from Chittorgarh covered by CBAM?",
+  "title": "Is Chittorgarh zinc covered by CBAM?",
+  "short": "No. Zinc, lead and silver are not CBAM goods. But galvanised steel is, and zinc is not a listed precursor for it, so the coating does not add to the steel's CBAM figure. EU buyers may still ask for zinc's footprint for their Scope 3.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "chocolate-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of chocolate per kg?",
   "title": "Chocolate carbon footprint per kg",
@@ -3883,6 +4027,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "dhanbad-coal-washery-electricity-per-tonne",
+  "q": "How do I work out CO2 per tonne of washed coal at a Dhanbad washery?",
+  "title": "Dhanbad washery: CO2 per tonne of washed coal",
+  "short": "Add the washery's electricity in kWh times the grid factor, 0.710 kg CO2 per kWh on CEA v21.0, to diesel for loaders and trucks at 2.68 kg per litre. Divide by tonnes of clean coal dispatched, not raw coal fed, because buyers ask per tonne they receive.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "dhanbad-hard-coke-plant-co2-per-tonne",
+  "q": "How much CO2 does a Dhanbad hard coke plant emit per tonne of coke?",
+  "title": "Dhanbad hard coke: CO2 per tonne",
+  "short": "Use a carbon balance: carbon in the coal charged, minus carbon leaving in coke, breeze and any tar sold, times 44/12. In non recovery ovens most volatile matter burns on site, so that carbon becomes your CO2. Test coal and coke for carbon instead of using a flat factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "diagnostic-lab-carbon-footprint-per-test",
   "q": "How does a diagnostic lab calculate its carbon footprint per test?",
   "title": "Diagnostic lab carbon footprint per test",
@@ -4377,6 +4537,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, when it is relevant. Category 9 covers storage of your sold products in warehouses, distribution centres and shops you do not own, control or pay for. Storage you pay a third party for goes in Category 4 instead. It matters most for chilled and frozen products that sit in refrigerated rooms and coolers.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "drc-copper-mine-diesel-vs-hydro-power",
+  "q": "A Katanga copper mine runs on hydro power and diesel: how does it count each?",
+  "title": "Katanga copper mines: hydro power and diesel",
+  "short": "Grid power in the DRC is almost all hydro, so its Scope 2 is low. Diesel for gensets, haul trucks and processing is Scope 1 at about 2.68 kg CO2 per litre. When the grid falls short and gensets run, diesel quickly becomes the largest number.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "drip-irrigation-energy-saving-per-acre",
@@ -6104,6 +6272,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Wood waste boilers: biogenic CO2",
   "short": "Report the CO2 from wood as biogenic, outside Scopes 1, 2 and 3, and show it separately. Methane and nitrous oxide from the fire do count in Scope 1, using IPCC defaults for wood. Keep a log of tonnes burnt and any fossil fuel used to start or support the boiler.",
   "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "gabes-dap-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for DAP from Gabès?",
+  "title": "Gabès DAP: the CBAM figure",
+  "short": "DAP contains nitrogen, so it is a CBAM good. Its figure adds the ammonia it contains, usually imported for Tunisian plants, to the plant's fuel, steam and power. Triple superphosphate made at the same sites carries no nitrogen and sits outside CBAM.",
+  "topic": "regulation",
   "reviewed": "2026-10-21"
  },
  {
@@ -8467,6 +8643,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "jharia-coking-coal-mine-methane-scope-3",
+  "q": "Should a steel plant buying Jharia coking coal count mine methane in Scope 3?",
+  "title": "Jharia coking coal: mine methane in Scope 3",
+  "short": "Yes, if you report category 1 for coal. Methane escapes from the seam during mining, and deep coking coal seams release more than surface mines. Without mine data, IPCC Tier 1 gives 18 cubic metres of methane per tonne for underground mining, a default with a wide range.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "jharsuguda-fabricator-aluminium-sections-scope-3",
   "q": "How does a Jharsuguda fabricator count the aluminium sections it buys?",
   "title": "Fabricators: aluminium sections in Scope 3",
@@ -8632,6 +8816,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Karur home textiles: buyer carbon asks",
   "short": "Usually three things: your factory's Scope 1 and 2 for the last year, the share from renewable power, and a footprint per product or per kilogram for the lines they buy. Many also send the Higg facility module. Build all three from the same electricity, fuel and dyeing records.",
   "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "katni-lime-kiln-covered-by-cbam",
+  "q": "Is lime from a Katni kiln covered by CBAM?",
+  "title": "Is Katni lime covered by CBAM?",
+  "short": "No. Quicklime and hydrated lime sit under CN 2522, which is outside CBAM. Your kiln still emits process CO2 from limestone, close to 0.75 tonnes per tonne of high calcium lime by the IPCC default, plus fuel. Steel and chemical buyers will ask for that figure.",
+  "topic": "regulation",
   "reviewed": "2026-10-21"
  },
  {
@@ -8841,6 +9033,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the fabric issued per kurta, including cutting waste, and multiply by the mill's per-metre figure. Add embroidery or printing, trims, stitching and pressing electricity and packing, then divide the unit's energy by kurtas passed.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "kuwait-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Kuwait use?",
+  "title": "Kuwait grid factor for suppliers",
+  "short": "Kuwait's power plants burn gas and oil, so its grid factor is among the higher ones in the Gulf, roughly 0.6 kg CO2 per kWh or more. Use the official or IEA figure for the reporting year, name the source, and update it when a new year is published.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "kuwait-polyethylene-buyer-scope-3-figure",
+  "q": "How does a buyer count Kuwaiti polyethylene in Scope 3?",
+  "title": "Kuwaiti polyethylene in Scope 3",
+  "short": "Multiply tonnes bought by a per tonne footprint for that grade, ideally from the producer, cradle to gate. Polyethylene is not a CBAM good, so this is a Scope 3 figure, not a border charge. Without producer data, use a database value for gas based ethylene and say so.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "kvah-electricity-bill-convert-to-kwh-for-emissions",
@@ -9667,6 +9875,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "montenegro-ets-price-cbam-deduction",
+  "q": "Can an EU importer deduct a carbon price paid in Montenegro from CBAM?",
+  "title": "Montenegro's carbon price and CBAM",
+  "short": "Possibly. Montenegro runs its own emissions trading system for power and large industry, and CBAM allows a deduction for a carbon price effectively paid in the country of origin. The producer must prove what was paid per tonne, net of free allowances. Check the rules for the year.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "monterrey-gas-dri-steel-cbam-figure",
   "q": "How does gas-based DRI, as used in Monterrey, change a steel mill's CBAM figure?",
   "title": "Gas-based DRI and the CBAM steel figure",
@@ -10035,6 +10251,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "neemrana-japanese-auto-supplier-carbon-data",
+  "q": "What carbon data do Japanese customers ask of a Neemrana auto supplier?",
+  "title": "Neemrana auto suppliers: Japanese buyer data",
+  "short": "Usually Scope 1 and 2 per year, an emission figure per part or per tonne, and a reduction plan. Japanese carmakers are pushing targets down their supplier chains, and listed Japanese companies are moving to SSBJ disclosure, which includes Scope 3. Start with fuel and power invoices.",
+  "topic": "markets",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "net-zero-vs-carbon-neutral",
   "q": "What is the difference between net zero and carbon neutral for a company?",
   "title": "Net zero vs carbon neutral",
@@ -10137,6 +10361,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the polypropylene granules used per kg of fabric by a resin factor, add spunbond line electricity, printing ink and bag-making electricity, then divide by kilograms of bags sold. Resin is usually most of the total; trim waste sent back as regrind is not new resin.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "north-macedonia-ferronickel-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for ferronickel from North Macedonia?",
+  "title": "North Macedonian ferronickel: the CBAM figure",
+  "short": "Ferronickel is a CBAM good under CN 7202 60. Its figure covers drying and calcining the laterite ore, electric furnace smelting with coal or coke as reductant, and refining. Ask for a verified figure for the period when the plant was running.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "notebook-carbon-footprint-per-unit",
@@ -10547,6 +10779,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "paradip-dap-plant-imported-ammonia-cbam",
+  "q": "A Paradip DAP plant uses imported ammonia: what goes into its CBAM figure?",
+  "title": "Paradip DAP: imported ammonia in CBAM",
+  "short": "DAP is a CBAM good and ammonia is its precursor. Use the ammonia supplier's verified embedded emissions per tonne, or default values if they give none, plus your own plant's fuel and power. Phosphoric acid and sulphuric acid made on site add energy but are not CBAM goods themselves.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "paradip-phosphoric-acid-covered-by-cbam",
+  "q": "Is phosphoric acid from Paradip covered by CBAM?",
+  "title": "Is Paradip phosphoric acid covered by CBAM?",
+  "short": "No. Phosphoric acid sits under CN 2809, which is not on the CBAM list. Fertilisers containing nitrogen, such as DAP and many NPK grades, are covered. If acid is used to make DAP that goes to the EU, the acid's energy shows up in the DAP figure.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "parametric-heat-insurance-msme-india",
   "q": "How does parametric heat or rainfall insurance work for Indian MSMEs and workers?",
   "title": "Parametric heat and rain insurance",
@@ -10633,6 +10881,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Groundnuts are the main input: multiply the kernels per kg by the supplier's figure. Add roasting, blanching, grinding and filling energy and the jars, then divide the plant's energy by kg packed.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "pecem-steel-slab-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for slabs from Pecém?",
+  "title": "Pecém slabs: the CBAM figure",
+  "short": "Slabs fall under CN 7207, so they are CBAM goods. The Pecém mill is a coke and blast furnace plant, so expect a high direct figure per tonne. Ask for a verified figure for the period, since an EU rolling mill will carry it into its own product.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "pedestal-fan-carbon-footprint-per-fan",
@@ -11419,6 +11675,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "puerto-madryn-aluminium-hydro-cbam",
+  "q": "Does hydro power lower the CBAM figure for aluminium from Puerto Madryn?",
+  "title": "Puerto Madryn aluminium: hydro and CBAM",
+  "short": "Not the charge. For aluminium only direct emissions count toward CBAM: anode CO2, perfluorocarbons and cast house fuel. Hydro and wind power lower the reported indirect emissions and the Scope 3 footprint buyers see, which matters for low carbon contracts.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "pump-efficiency-test-and-replacement-savings",
   "q": "How do I test a pump's efficiency and work out the CO2 saved by replacing it?",
   "title": "Pump efficiency test and replacement CO2",
@@ -11563,6 +11827,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "raigarh-sponge-iron-dolochar-power-co2",
+  "q": "Does power from dolochar count in a Raigarh sponge iron unit's emissions?",
+  "title": "Raigarh sponge iron: dolochar power and CO2",
+  "short": "Yes. Dolochar is the char left after the coal based kiln, and burning it in your boiler releases fossil CO2 from its fixed carbon. Count it in Scope 1 from tonnes burned and a carbon content test. The power it makes then cuts what you buy from the grid.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "raigarh-steel-plant-captive-coal-mine-scope",
+  "q": "A Raigarh steel plant runs its own coal mine: which scope do the mine's emissions go in?",
+  "title": "Raigarh plant with its own mine: which scope",
+  "short": "If your company owns or controls the mine, its diesel, explosives, electricity and mine methane are your own Scope 1 and 2, not Scope 3. Report the mine as a separate site so the plant figure and the mine figure can each be checked against their own records.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "rail-vs-road-freight-emissions-india",
   "q": "Is rail freight lower carbon than trucking in India, and by how much per tonne-km?",
   "title": "Rail vs road freight emissions in India",
@@ -11615,6 +11895,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How does a Rajkot cupola foundry work out CBAM emissions for cast iron castings?",
   "title": "Rajkot cupola foundry CBAM figure",
   "short": "Add CO2 from cupola coke, about 3.02 t CO2 per tonne of coke on IPCC defaults, and any limestone flux, to the embedded emissions of pig iron or other covered precursors charged, then divide by tonnes of good castings. Scrap carried none under the transitional rules, and electricity is not counted.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ras-al-khair-aluminium-smelter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for aluminium from Ras Al Khair?",
+  "title": "Ras Al Khair aluminium: the CBAM figure",
+  "short": "Embedded direct emissions per tonne: anode consumption, perfluorocarbons from anode effects and cast house fuel. For aluminium only direct emissions count toward the charge, so the gas power behind the smelter is reported but not charged. Ask for a verified per tonne figure by product.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ras-al-khair-dap-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for DAP from Ras Al Khair?",
+  "title": "Ras Al Khair DAP: the CBAM figure",
+  "short": "DAP contains nitrogen, so it is a CBAM good. Its figure adds the ammonia it contains, made from local gas, to the phosphate plant's own fuel and power. Since the ammonia is made in the same complex, ask for that plant's measured figure rather than a default.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
  },
@@ -12355,6 +12651,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "satna-clinker-sent-to-grinding-unit-scope",
+  "q": "A Satna clinker plant sends clinker to our own grinding unit: who reports which emissions?",
+  "title": "Satna clinker to your own grinding unit",
+  "short": "Each site reports its own. The kiln site keeps the calcination and fuel CO2; the grinding unit reports its power and receives clinker with that kiln's per tonne figure attached. At company level, add both once. Do not count the clinker again at the grinding unit.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "satna-limestone-mine-diesel-scope-1",
+  "q": "How does a Satna cement plant count diesel and blasting at its limestone mine?",
+  "title": "Satna limestone mines: diesel and blasting",
+  "short": "If the plant owns or runs the mine, diesel for drills, shovels and dumpers is Scope 1 at about 2.68 kg CO2 per litre. Explosives also release CO2 when they detonate, a small amount per tonne of rock. Report the mine with the plant, but as its own line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "saudi-grid-emission-factor-for-suppliers",
   "q": "Which grid emission factor should a Saudi supplier use?",
   "title": "Saudi grid factor for suppliers",
@@ -12595,6 +12907,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "serbia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Serbia use?",
+  "title": "Serbia grid factor for suppliers",
+  "short": "Serbia's power comes mostly from lignite, with hydro making up most of the rest, so its grid factor is high, roughly 0.7 kg CO2 per kWh or a little above. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "servo-vs-hydraulic-injection-moulding-energy",
   "q": "How much electricity and CO2 does a servo injection moulding machine save over a fixed-pump hydraulic one?",
   "title": "Servo vs hydraulic moulding machine energy",
@@ -12811,6 +13131,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "skopje-auto-parts-supplier-carbon-data",
+  "q": "What carbon data do EU carmakers ask of an auto parts plant near Skopje?",
+  "title": "Skopje auto parts plants: buyer carbon data",
+  "short": "Annual Scope 1 and 2 with factors named, a figure per part, renewable power share and a reduction plan. North Macedonia's grid still leans on lignite, so power is often the biggest share. Bills, gas invoices and production by part number are enough to start.",
+  "topic": "markets",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "sll-baseline-recalculation-after-growth",
   "q": "What happens to my sustainability-linked loan KPI if production grows or I buy a new plant?",
   "title": "SLL baseline after growth or a new plant",
@@ -12849,6 +13177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "You commit to halve your Scope 1 and 2 emissions before 2030, reach net zero across all scopes before 2050, and report progress every year. It is a public pledge on the SME Climate Hub, recognised by the UN Race to Zero campaign. The pledge is self-declared. The real work is a measured baseline and a yearly update.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "smederevo-steel-hot-rolled-coil-cbam",
+  "q": "What CBAM figure does an EU buyer need for hot rolled coil from Smederevo?",
+  "title": "Smederevo hot rolled coil: the CBAM figure",
+  "short": "Smederevo is a blast furnace works, so its coil carries coke, sinter and furnace emissions. Ask for a verified figure per tonne of coil for the period. Serbia has no carbon price to deduct, so the full CBAM charge applies to that figure.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "smr-hydrogen-co2-per-kg",
@@ -13675,6 +14011,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "talcher-coal-gasification-urea-co2",
+  "q": "How does urea from coal gasification at Talcher compare on CO2 with gas based urea?",
+  "title": "Talcher coal gasification urea: CO2",
+  "short": "Coal gasification makes ammonia from coal instead of natural gas, and coal carries far more carbon per unit of hydrogen. Expect a much higher figure per tonne of urea than gas based plants unless CO2 is captured and stored. Count it from coal invoices and carbon content, not a flat factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "tamil-nadu-cable-maker-copper-rod-carbon-data",
   "q": "Where does a Tamil Nadu cable maker get a carbon figure for the copper rod it buys?",
   "title": "Copper rod for cable makers: carbon data",
@@ -14121,6 +14465,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. You can upload an invoice or electricity bill from the Senseible home page without an account. The file is read, but nothing is stored on Senseible's servers: no file, record or result. Your results stay only in your own browser for 24 hours, and then they expire and are removed.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "tunisia-clinker-exporter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for Tunisian clinker or cement?",
+  "title": "Tunisian clinker: the CBAM figure",
+  "short": "Per tonne of clinker: calcination CO2 from limestone, roughly half a tonne, plus kiln fuel, often petcoke or gas. Cement adds grinding power and takes its clinker share. Electricity counts toward the charge for cement, so ask for a verified figure with kWh.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "tunisia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Tunisia use?",
+  "title": "Tunisia grid factor for suppliers",
+  "short": "Tunisia makes almost all its power from natural gas, so its grid factor sits around 0.45 to 0.5 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it. Auto and textile buyers in Europe will check the year you used.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
  },
  {
   "slug": "turkey-carbon-price-deduction-cbam-steel",
@@ -14859,6 +15219,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "western-balkans-electricity-exports-cbam",
+  "q": "Does CBAM apply to electricity exported from the Western Balkans to the EU?",
+  "title": "Western Balkans electricity and CBAM",
+  "short": "Yes. Electricity is a CBAM good, and imports from Serbia, Bosnia and Herzegovina, North Macedonia, Montenegro, Albania and Kosovo are covered. CBAM allows an exemption for countries whose power markets are coupled with the EU's and that meet strict conditions, including carbon pricing. Check each year.",
+  "topic": "regulation",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "what-are-icvcm-core-carbon-principles",
   "q": "What are the ICVCM Core Carbon Principles, and how do I know a credit has the CCP label?",
   "title": "ICVCM Core Carbon Principles and CCP label",
@@ -15411,6 +15779,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "yamunanagar-plywood-resin-scope-3",
+  "q": "How does a Yamunanagar plywood unit count the resin it uses in Scope 3?",
+  "title": "Yamunanagar plywood: resin in Scope 3",
+  "short": "Urea formaldehyde and phenolic resins are made from fossil feedstocks, so they carry a real upstream footprint. Multiply kilograms of resin bought by a per kg factor from the supplier or a database, and keep it separate from timber, which is mostly biogenic carbon.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
   "slug": "yarn-dyeing-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of yarn dyeing per kg?",
   "title": "Yarn dyeing carbon footprint per kg",
@@ -15424,6 +15800,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Yoga mat carbon footprint per mat",
   "short": "Weigh each mat and multiply by the supplier's figure for its material, such as PVC, TPE, NBR foam or natural rubber, then add the strap and pack. Add foaming, cutting and packing energy, then divide the plant's energy by mats made.",
   "topic": "product",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "zambia-copper-cathode-buyer-scope-3",
+  "q": "How does a cable maker count Zambian copper cathode in Scope 3?",
+  "title": "Zambian copper cathode in Scope 3",
+  "short": "Multiply tonnes bought by a per tonne footprint for that producer, cradle to gate. Copper is not a CBAM good, so this is Scope 3 only. Ask whether the figure covers mining, smelting and refining, and which year's grid power it uses.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "zambia-grid-emission-factor-for-mines",
+  "q": "What grid emission factor should a mine or factory in Zambia use?",
+  "title": "Zambia grid factor for mines",
+  "short": "Zambia's grid is mostly hydro, so its factor is low in normal years. Drought cuts hydro output, as in 2024, and more coal, imports and diesel fill the gap, which raises it. Use the official or IEA figure for the reporting year, and count any diesel gensets separately.",
+  "topic": "accounting",
+  "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "zenica-steel-rebar-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for rebar and wire rod from Zenica?",
+  "title": "Zenica rebar and wire rod: the CBAM figure",
+  "short": "Zenica is an integrated blast furnace works, so its long products carry coke, sinter and furnace emissions, well above scrap based mills. Ask for a verified figure per tonne of product and period. Bosnia and Herzegovina has no carbon price to deduct.",
+  "topic": "regulation",
   "reviewed": "2026-10-21"
  },
  {

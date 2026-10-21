@@ -1,0 +1,57 @@
+{
+  "slug": "satna-limestone-mine-diesel-scope-1",
+  "q": "How does a Satna cement plant count diesel and blasting at its limestone mine?",
+  "title": "Satna limestone mines: diesel and blasting",
+  "short": "If the plant owns or runs the mine, diesel for drills, shovels and dumpers is Scope 1 at about 2.68 kg CO2 per litre. Explosives also release CO2 when they detonate, a small amount per tonne of rock. Report the mine with the plant, but as its own line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants in Satna and Maihar with captive limestone mines",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Diesel issued to mine equipment, from fuel logs or invoices.",
+        "Explosives used, in kg, by type.",
+        "Limestone mined and sent to the crusher, in tonnes."
+      ]
+    },
+    {
+      "h": "Contractors",
+      "p": [
+        "If a contractor runs the mine and buys its own diesel, it is Scope 3 for you, unless you supply the fuel. Check the contract."
+      ]
+    },
+    {
+      "h": "Size of it",
+      "p": [
+        "Mining is small next to calcination and kiln fuel, but auditors check that it is there."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Satna clinker and grinding units",
+      "to": "/answers/satna-clinker-sent-to-grinding-unit-scope"
+    },
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Haul truck diesel",
+      "to": "/answers/copper-mine-haul-truck-diesel-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

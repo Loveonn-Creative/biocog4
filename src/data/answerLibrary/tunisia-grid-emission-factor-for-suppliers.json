@@ -1,0 +1,57 @@
+{
+  "slug": "tunisia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Tunisia use?",
+  "title": "Tunisia grid factor for suppliers",
+  "short": "Tunisia makes almost all its power from natural gas, so its grid factor sits around 0.45 to 0.5 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it. Auto and textile buyers in Europe will check the year you used.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Auto parts, textile and fertiliser suppliers in Tunisia reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: rooftop solar or a renewable contract, with records.",
+        "State both and the year."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly bills with kWh per meter, and generation data for any solar."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Indirect emissions count for cement and fertilisers, so this factor goes straight into those figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Morocco grid factor",
+      "to": "/answers/morocco-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Algeria grid factor",
+      "to": "/answers/algeria-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

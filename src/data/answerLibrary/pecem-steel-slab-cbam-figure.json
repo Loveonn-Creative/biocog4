@@ -1,0 +1,62 @@
+{
+  "slug": "pecem-steel-slab-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for slabs from Pecém?",
+  "title": "Pecém slabs: the CBAM figure",
+  "short": "Slabs fall under CN 7207, so they are CBAM goods. The Pecém mill is a coke and blast furnace plant, so expect a high direct figure per tonne. Ask for a verified figure for the period, since an EU rolling mill will carry it into its own product.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU rolling mills and traders buying semi finished steel from Ceará",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Coke ovens and sinter plant.",
+        "Blast furnace and converter.",
+        "Slab casting.",
+        "Bought coke or pig iron as precursors."
+      ]
+    },
+    {
+      "h": "For the rolling mill",
+      "p": [
+        "When slabs are rolled in the EU, the importer reports the slab as the CBAM good. The roller later uses that figure for its own product data."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Reported, not charged, for steel. Brazil's grid is mostly hydro, so indirect emissions are small."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Bought slab in a flat mill",
+      "to": "/answers/ain-sokhna-flat-steel-mill-bought-slab-cbam"
+    },
+    {
+      "label": "Brazil grid factor",
+      "to": "/answers/brazil-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Brazil carbon market",
+      "to": "/answers/brazil-carbon-market-sbce-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

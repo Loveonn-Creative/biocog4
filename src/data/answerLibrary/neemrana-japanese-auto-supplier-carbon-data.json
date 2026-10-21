@@ -1,0 +1,65 @@
+{
+  "slug": "neemrana-japanese-auto-supplier-carbon-data",
+  "q": "What carbon data do Japanese customers ask of a Neemrana auto supplier?",
+  "title": "Neemrana auto suppliers: Japanese buyer data",
+  "short": "Usually Scope 1 and 2 per year, an emission figure per part or per tonne, and a reduction plan. Japanese carmakers are pushing targets down their supplier chains, and listed Japanese companies are moving to SSBJ disclosure, which includes Scope 3. Start with fuel and power invoices.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Auto component makers in the Neemrana Japanese zone and Bhiwadi supplying Japanese OEMs",
+  "sections": [
+    {
+      "h": "What they ask",
+      "ul": [
+        "Annual Scope 1 and 2 with the factors used.",
+        "Emissions per part, by allocation of plant totals.",
+        "Renewable power share.",
+        "A target and the actions behind it."
+      ]
+    },
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity bills, solar generation and open access invoices.",
+        "Diesel for gensets and forklifts.",
+        "LPG or gas for heat treatment and paint shops.",
+        "Production by part number."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "Share plant emissions by machine hours or weight, and use the same method each year so trends mean something."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Japanese buyers and SSBJ",
+      "to": "/answers/ssbj-japanese-buyers-supplier-emissions"
+    },
+    {
+      "label": "Diesel genset vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Supplier emissions risk",
+      "to": "/calculators/supplier-emissions-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

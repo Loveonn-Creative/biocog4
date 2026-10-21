@@ -1,0 +1,61 @@
+{
+  "slug": "zambia-grid-emission-factor-for-mines",
+  "q": "What grid emission factor should a mine or factory in Zambia use?",
+  "title": "Zambia grid factor for mines",
+  "short": "Zambia's grid is mostly hydro, so its factor is low in normal years. Drought cuts hydro output, as in 2024, and more coal, imports and diesel fill the gap, which raises it. Use the official or IEA figure for the reporting year, and count any diesel gensets separately.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Copper mines, smelters and factories on the Copperbelt and around Lusaka",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: the utility contract or a renewable contract, if one exists.",
+        "State the year; a drought year differs a lot."
+      ]
+    },
+    {
+      "h": "Load shedding",
+      "p": [
+        "Diesel run during outages is Scope 1 at about 2.68 kg CO2 per litre. It can outweigh the grid in a bad year."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Copper is not a CBAM good, but cable and wire makers ask for the footprint of cathode. Power is a large share of it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Diesel genset vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Kenya grid factor",
+      "to": "/answers/kenya-grid-emission-factor-for-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

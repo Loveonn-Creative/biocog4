@@ -1,0 +1,57 @@
+{
+  "slug": "ras-al-khair-dap-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for DAP from Ras Al Khair?",
+  "title": "Ras Al Khair DAP: the CBAM figure",
+  "short": "DAP contains nitrogen, so it is a CBAM good. Its figure adds the ammonia it contains, made from local gas, to the phosphate plant's own fuel and power. Since the ammonia is made in the same complex, ask for that plant's measured figure rather than a default.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of Saudi phosphate fertilisers and traders buying DAP and MAP",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Ammonia precursor: gas reforming CO2.",
+        "Granulation, drying and steam.",
+        "Electricity, since indirect emissions count for fertilisers."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "p": [
+        "Phosphoric acid, sulphuric acid and phosphate rock are outside CBAM, though their energy enters the DAP figure through the plant."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Saudi Arabia has no carbon price that an importer could deduct."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Jorf Lasfar DAP and ammonia",
+      "to": "/answers/jorf-lasfar-dap-exporter-ammonia-precursor-cbam"
+    },
+    {
+      "label": "Paradip DAP and imported ammonia",
+      "to": "/answers/paradip-dap-plant-imported-ammonia-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

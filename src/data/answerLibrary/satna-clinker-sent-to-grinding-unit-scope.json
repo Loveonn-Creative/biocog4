@@ -1,0 +1,61 @@
+{
+  "slug": "satna-clinker-sent-to-grinding-unit-scope",
+  "q": "A Satna clinker plant sends clinker to our own grinding unit: who reports which emissions?",
+  "title": "Satna clinker to your own grinding unit",
+  "short": "Each site reports its own. The kiln site keeps the calcination and fuel CO2; the grinding unit reports its power and receives clinker with that kiln's per tonne figure attached. At company level, add both once. Do not count the clinker again at the grinding unit.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement groups with clinker units in Satna and Maihar and split grinding units in other states",
+  "sections": [
+    {
+      "h": "Per site",
+      "ul": [
+        "Clinker unit: limestone calcination, kiln fuel, power.",
+        "Grinding unit: power, dryers, bought slag or fly ash.",
+        "Freight between them, by rail or road."
+      ]
+    },
+    {
+      "h": "Per tonne of cement",
+      "p": [
+        "Clinker share × kiln figure + grinding power + additives. This is what a buyer or an EU importer of cement needs."
+      ]
+    },
+    {
+      "h": "For CCTS",
+      "p": [
+        "Cement is one of the first sectors given intensity targets under the Carbon Credit Trading Scheme. Check whether each site is an obligated entity before you merge their figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Cement grinding unit CO2",
+      "to": "/answers/cement-grinding-unit-co2-per-tonne"
+    },
+    {
+      "label": "PPC vs OPC",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Grinding imported clinker",
+      "to": "/answers/batangas-cement-grinding-imported-clinker-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

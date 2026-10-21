@@ -1,0 +1,57 @@
+{
+  "slug": "kuwait-polyethylene-buyer-scope-3-figure",
+  "q": "How does a buyer count Kuwaiti polyethylene in Scope 3?",
+  "title": "Kuwaiti polyethylene in Scope 3",
+  "short": "Multiply tonnes bought by a per tonne footprint for that grade, ideally from the producer, cradle to gate. Polyethylene is not a CBAM good, so this is a Scope 3 figure, not a border charge. Without producer data, use a database value for gas based ethylene and say so.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Converters and packaging makers in India, Asia and Europe buying Kuwaiti polyethylene",
+  "sections": [
+    {
+      "h": "What to ask",
+      "ul": [
+        "Cradle to gate CO2 per tonne for the grade.",
+        "Whether it includes feedstock extraction.",
+        "Method and year."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Purchase invoices with tonnes per grade, and the producer named on the delivery note."
+      ]
+    },
+    {
+      "h": "Your own share",
+      "p": [
+        "Add the power for extrusion or moulding to get a footprint per tonne of finished product."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Jubail polyethylene figure",
+      "to": "/answers/jubail-polyethylene-buyer-scope-3-figure"
+    },
+    {
+      "label": "Jubail exports and CBAM",
+      "to": "/answers/jubail-petrochemical-exports-which-need-cbam"
+    },
+    {
+      "label": "Product carbon footprint",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

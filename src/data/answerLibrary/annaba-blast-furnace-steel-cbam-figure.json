@@ -1,0 +1,62 @@
+{
+  "slug": "annaba-blast-furnace-steel-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for steel from the Annaba blast furnace works?",
+  "title": "Annaba blast furnace steel: the CBAM figure",
+  "short": "Blast furnace steel carries coke, sinter and furnace emissions, so its figure is high, often around twice that of gas DRI steel. Ask the works for a verified figure per tonne of product. If output was intermittent, make sure the period matches your shipment.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers and traders buying flat and long steel from the Annaba integrated works",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Coke ovens and sinter plant.",
+        "Blast furnace and converter.",
+        "Rolling mill fuel.",
+        "Bought coke, pig iron or slabs as precursors."
+      ]
+    },
+    {
+      "h": "Stop and start",
+      "p": [
+        "Restarts burn extra fuel per tonne. A figure from a short run may not fit a full year, so ask for the period behind it."
+      ]
+    },
+    {
+      "h": "Without data",
+      "p": [
+        "The importer must use EU default values, which are set high on purpose. Measured data almost always helps."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Algerian DRI rebar",
+      "to": "/answers/algeria-dri-eaf-rebar-cbam-figure"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

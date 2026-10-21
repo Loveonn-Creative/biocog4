@@ -1,0 +1,57 @@
+{
+  "slug": "bosnia-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Bosnia and Herzegovina use?",
+  "title": "Bosnia grid factor for suppliers",
+  "short": "Most of Bosnia and Herzegovina's power comes from coal, with hydro making up most of the rest, so its grid factor is high, roughly 0.7 kg CO2 per kWh or more, and swings with rainfall. Use the official or IEA figure for the reporting year.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Metal, wood and auto parts suppliers in Bosnia and Herzegovina reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: hydro guarantees of origin, if you buy them.",
+        "State both and the year."
+      ]
+    },
+    {
+      "h": "Wet and dry years",
+      "p": [
+        "More hydro in a wet year lowers the factor. Use the figure for your reporting year, not an old one."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly bills with kWh, and any certificates with volumes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Zenica rebar",
+      "to": "/answers/zenica-steel-rebar-cbam-figure"
+    },
+    {
+      "label": "Serbia grid factor",
+      "to": "/answers/serbia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

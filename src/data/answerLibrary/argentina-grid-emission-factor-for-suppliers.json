@@ -1,0 +1,57 @@
+{
+  "slug": "argentina-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Argentina use?",
+  "title": "Argentina grid factor for suppliers",
+  "short": "Argentina's power comes mainly from gas, with hydro, nuclear, wind and solar making up the rest, so its grid factor sits roughly around 0.3 to 0.35 kg CO2 per kWh. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories, mines and exporters in Argentina reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: national average for the year.",
+        "Market based: renewable contracts, which large users can sign.",
+        "State both and the year."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly bills with kWh, and the renewable contract with its volumes if you hold one."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Lithium, aluminium and steel buyers ask for footprints. Power is often a large share, so show it separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Puerto Madryn aluminium",
+      "to": "/answers/puerto-madryn-aluminium-hydro-cbam"
+    },
+    {
+      "label": "Brazil grid factor",
+      "to": "/answers/brazil-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Electricity bill footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

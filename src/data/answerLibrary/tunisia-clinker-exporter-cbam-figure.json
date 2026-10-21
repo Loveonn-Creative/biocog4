@@ -1,0 +1,61 @@
+{
+  "slug": "tunisia-clinker-exporter-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for Tunisian clinker or cement?",
+  "title": "Tunisian clinker: the CBAM figure",
+  "short": "Per tonne of clinker: calcination CO2 from limestone, roughly half a tonne, plus kiln fuel, often petcoke or gas. Cement adds grinding power and takes its clinker share. Electricity counts toward the charge for cement, so ask for a verified figure with kWh.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and traders buying clinker and cement from Tunisian plants",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Process CO2 from calcining limestone.",
+        "Kiln fuel: petcoke, coal or gas.",
+        "Electricity for grinding and fans."
+      ]
+    },
+    {
+      "h": "Clinker share",
+      "p": [
+        "A cement with less clinker carries less CO2 per tonne. Ask for the share in each grade you buy."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Tunisia has no carbon price to deduct."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Egypt clinker exporters",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    },
+    {
+      "label": "Algerian clinker figure",
+      "to": "/answers/algeria-clinker-exporter-cbam-figure"
+    },
+    {
+      "label": "Petcoke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

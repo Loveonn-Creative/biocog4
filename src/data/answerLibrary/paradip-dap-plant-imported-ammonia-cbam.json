@@ -1,0 +1,62 @@
+{
+  "slug": "paradip-dap-plant-imported-ammonia-cbam",
+  "q": "A Paradip DAP plant uses imported ammonia: what goes into its CBAM figure?",
+  "title": "Paradip DAP: imported ammonia in CBAM",
+  "short": "DAP is a CBAM good and ammonia is its precursor. Use the ammonia supplier's verified embedded emissions per tonne, or default values if they give none, plus your own plant's fuel and power. Phosphoric acid and sulphuric acid made on site add energy but are not CBAM goods themselves.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "DAP and NPK makers at Paradip and other coastal fertiliser plants that import ammonia",
+  "sections": [
+    {
+      "h": "Your figure",
+      "ol": [
+        "Tonnes of ammonia per tonne of DAP, from your plant balance.",
+        "Embedded emissions per tonne of that ammonia.",
+        "Your granulation, drying and power.",
+        "Indirect emissions count for fertilisers."
+      ]
+    },
+    {
+      "h": "Ask the ammonia supplier",
+      "p": [
+        "Gas based ammonia without carbon capture often carries around 2 tonnes of CO2 per tonne, more from older plants. Ask for the verified figure for your cargoes."
+      ]
+    },
+    {
+      "h": "Exports",
+      "p": [
+        "Indian DAP mostly serves the home market. The figure matters for any EU lot and for buyers asking for fertiliser footprints."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Jorf Lasfar DAP and ammonia",
+      "to": "/answers/jorf-lasfar-dap-exporter-ammonia-precursor-cbam"
+    },
+    {
+      "label": "Purchased urea and DAP",
+      "to": "/answers/emission-factor-for-purchased-urea-and-dap"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

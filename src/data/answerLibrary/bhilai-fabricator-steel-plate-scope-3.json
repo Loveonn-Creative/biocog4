@@ -1,0 +1,61 @@
+{
+  "slug": "bhilai-fabricator-steel-plate-scope-3",
+  "q": "How does a Bhilai fabricator count the steel plate it buys in Scope 3?",
+  "title": "Bhilai fabricators: steel plate in Scope 3",
+  "short": "Multiply tonnes of plate bought by a per tonne factor, ideally the mill's own figure for that product. If the mill gives none, use an integrated steel average and say so. Plate is usually most of a fabricator's footprint, far more than its own welding and cutting.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Structural and equipment fabricators around Bhilai and Durg buying plates and sections",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Purchase invoices with tonnes per grade.",
+        "Mill test certificates showing the producing mill.",
+        "Any per tonne figure the mill publishes or shares."
+      ]
+    },
+    {
+      "h": "Your own share",
+      "p": [
+        "Electricity for cutting and welding, gases, and diesel for cranes and trucks. Add these to plate to get a footprint per tonne of finished structure."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "If your structures are exported to the EU as CBAM goods under chapter 73, the plate becomes a precursor. Keep mill figures by heat or lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Bokaro hot rolled coil figure",
+      "to": "/answers/bokaro-steel-hot-rolled-coil-cbam-figure"
+    },
+    {
+      "label": "Fasteners and chapter 73",
+      "to": "/answers/monterrey-steel-fasteners-cbam-cn-7318"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "north-macedonia-ferronickel-cbam-figure",
+  "q": "What CBAM figure does an EU buyer need for ferronickel from North Macedonia?",
+  "title": "North Macedonian ferronickel: the CBAM figure",
+  "short": "Ferronickel is a CBAM good under CN 7202 60. Its figure covers drying and calcining the laterite ore, electric furnace smelting with coal or coke as reductant, and refining. Ask for a verified figure for the period when the plant was running.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU stainless steel makers and traders buying ferronickel from Kavadarci",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Fuel for drying and rotary kilns.",
+        "Reductant coal or coke.",
+        "Electrode consumption.",
+        "Electricity is reported, since ferro alloys count as steel goods."
+      ]
+    },
+    {
+      "h": "Intermittent output",
+      "p": [
+        "Plants that stop and restart burn more per tonne. Match the figure to the period of your shipment."
+      ]
+    },
+    {
+      "h": "For stainless makers",
+      "p": [
+        "Ferronickel is a precursor for stainless steel. Keep the supplier figure by lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "RKEF ferronickel CO2",
+      "to": "/answers/rkef-ferro-nickel-co2-per-tonne-calculation"
+    },
+    {
+      "label": "Morowali ferronickel",
+      "to": "/answers/morowali-captive-coal-power-ferro-nickel-cbam"
+    },
+    {
+      "label": "Balkans electricity and CBAM",
+      "to": "/answers/western-balkans-electricity-exports-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

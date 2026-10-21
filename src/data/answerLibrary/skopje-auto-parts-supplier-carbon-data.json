@@ -1,0 +1,65 @@
+{
+  "slug": "skopje-auto-parts-supplier-carbon-data",
+  "q": "What carbon data do EU carmakers ask of an auto parts plant near Skopje?",
+  "title": "Skopje auto parts plants: buyer carbon data",
+  "short": "Annual Scope 1 and 2 with factors named, a figure per part, renewable power share and a reduction plan. North Macedonia's grid still leans on lignite, so power is often the biggest share. Bills, gas invoices and production by part number are enough to start.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Auto component plants in the Skopje free zones supplying EU carmakers",
+  "sections": [
+    {
+      "h": "What they ask",
+      "ul": [
+        "Scope 1 and 2 for the plant, with the grid factor and year.",
+        "Emissions per part, by allocation.",
+        "Renewable share and certificates.",
+        "A target with the actions behind it."
+      ]
+    },
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity bills with kWh.",
+        "Gas or LPG for ovens and heat treatment.",
+        "Diesel for forklifts and backup gensets.",
+        "Production by part number."
+      ]
+    },
+    {
+      "h": "Lowering it",
+      "p": [
+        "Rooftop solar and guarantees of origin move market based Scope 2. Keep meter data and certificates for the audit."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Neemrana auto suppliers",
+      "to": "/answers/neemrana-japanese-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Serbia grid factor",
+      "to": "/answers/serbia-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Supplier emissions risk",
+      "to": "/calculators/supplier-emissions-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

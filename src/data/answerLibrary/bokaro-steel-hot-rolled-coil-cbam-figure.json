@@ -1,0 +1,62 @@
+{
+  "slug": "bokaro-steel-hot-rolled-coil-cbam-figure",
+  "q": "How does an EU buyer get a CBAM figure for hot rolled coil from Bokaro?",
+  "title": "Bokaro hot rolled coil: the CBAM figure",
+  "short": "Ask the mill for embedded emissions per tonne of coil, built from its blast furnace, coke ovens, sinter plant and steel shop, plus any bought precursors. Integrated mills run high, so a measured figure usually beats the EU default. Without one, the importer must use default values.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and Indian traders buying hot rolled coil from Bokaro and other integrated mills in Jharkhand",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Coke ovens, sinter and pellet plants inside the works.",
+        "Blast furnace and converter.",
+        "Reheating and rolling fuel.",
+        "Bought pig iron, coke or slabs as precursors."
+      ]
+    },
+    {
+      "h": "What to send",
+      "p": [
+        "One figure per tonne of coil, the reporting period, and the method. For steel only direct emissions count toward the charge; electricity is reported separately."
+      ]
+    },
+    {
+      "h": "Verification",
+      "p": [
+        "Actual figures need verification by an accredited verifier before an importer can use them for the definitive regime."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Pohang hot rolled coil",
+      "to": "/answers/pohang-steel-hot-rolled-coil-cbam-figure"
+    },
+    {
+      "label": "Hot rolled coil and indirect emissions",
+      "to": "/answers/iskenderun-hot-rolled-coil-indirect-emissions"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

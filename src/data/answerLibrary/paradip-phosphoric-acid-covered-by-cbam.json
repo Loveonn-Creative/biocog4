@@ -1,0 +1,59 @@
+{
+  "slug": "paradip-phosphoric-acid-covered-by-cbam",
+  "q": "Is phosphoric acid from Paradip covered by CBAM?",
+  "title": "Is Paradip phosphoric acid covered by CBAM?",
+  "short": "No. Phosphoric acid sits under CN 2809, which is not on the CBAM list. Fertilisers containing nitrogen, such as DAP and many NPK grades, are covered. If acid is used to make DAP that goes to the EU, the acid's energy shows up in the DAP figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Phosphoric acid and fertiliser producers at Paradip and buyers of Indian phosphates",
+  "sections": [
+    {
+      "h": "Covered fertiliser goods",
+      "ul": [
+        "Ammonia, nitric acid and urea.",
+        "Nitrogen fertilisers under 3102.",
+        "Mixed fertilisers with nitrogen under 3105, except those with only phosphorus and potassium."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "Phosphoric acid and sulphuric acid.",
+        "Phosphate rock.",
+        "Single and triple superphosphate under 3103."
+      ]
+    },
+    {
+      "h": "Still asked for",
+      "p": [
+        "EU buyers reporting Scope 3 may still want a footprint for the acid. Keep sulphur burning, steam and power records per tonne."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Urea and DAP in CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Triple superphosphate in CBAM",
+      "to": "/answers/is-moroccan-triple-superphosphate-covered-by-cbam"
+    },
+    {
+      "label": "Paradip DAP and ammonia",
+      "to": "/answers/paradip-dap-plant-imported-ammonia-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

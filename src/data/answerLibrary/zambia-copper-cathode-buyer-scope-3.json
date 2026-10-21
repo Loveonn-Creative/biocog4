@@ -1,0 +1,57 @@
+{
+  "slug": "zambia-copper-cathode-buyer-scope-3",
+  "q": "How does a cable maker count Zambian copper cathode in Scope 3?",
+  "title": "Zambian copper cathode in Scope 3",
+  "short": "Multiply tonnes bought by a per tonne footprint for that producer, cradle to gate. Copper is not a CBAM good, so this is Scope 3 only. Ask whether the figure covers mining, smelting and refining, and which year's grid power it uses.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cable, wire and tube makers in India, Asia and Europe buying Zambian copper",
+  "sections": [
+    {
+      "h": "What to ask",
+      "ul": [
+        "CO2 per tonne of cathode and the boundary.",
+        "Share from diesel, grid power and smelting fuel.",
+        "Whether sulphuric acid by product got a share."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Purchase invoices with tonnes and the producer on each lot, so the right figure attaches to each delivery."
+      ]
+    },
+    {
+      "h": "Without data",
+      "p": [
+        "Use a database average and say so. Producer data usually replaces it within a reporting cycle once you ask."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Is copper covered by CBAM",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Copper cable per km",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

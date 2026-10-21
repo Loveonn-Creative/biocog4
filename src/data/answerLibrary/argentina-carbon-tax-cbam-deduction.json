@@ -1,0 +1,57 @@
+{
+  "slug": "argentina-carbon-tax-cbam-deduction",
+  "q": "Can an EU importer deduct Argentina's carbon tax from CBAM?",
+  "title": "Argentina's carbon tax and CBAM",
+  "short": "Only for a carbon price actually paid on the embedded emissions, net of any rebate, and proven by the producer. Argentina taxes CO2 in liquid fuels and coal, but natural gas, the main industrial fuel, largely falls outside it, so the deductible amount is usually small.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of Argentine steel and aluminium and the exporters who supply them",
+  "sections": [
+    {
+      "h": "What a deduction needs",
+      "ul": [
+        "The tax paid on fuels used to make the goods.",
+        "A link from that tax to tonnes of embedded emissions.",
+        "Any exemption or refund subtracted."
+      ]
+    },
+    {
+      "h": "Check the rate",
+      "p": [
+        "The tax is set in pesos and adjusted over time. Use the rate actually paid in the period, from fuel invoices."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Fuel invoices showing the tax line, by plant and month."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Mexico carbon tax",
+      "to": "/answers/mexico-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Brazil carbon market",
+      "to": "/answers/brazil-carbon-market-sbce-cbam-deduction"
+    },
+    {
+      "label": "Carbon pricing impact",
+      "to": "/calculators/carbon-pricing-impact"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
