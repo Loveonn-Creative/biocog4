@@ -19,7 +19,7 @@ const monthName = (ym: string) => new Date(`${ym}-01T00:00:00Z`).toLocaleString(
 
 const Fact = ({ label, value, note }: { label: string; value: string; note?: string }) => (
   <div className="min-w-0 border-b border-r border-border p-4 [&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(4n)]:border-r-0">
-    <p className="text-[12.5px] text-muted-foreground">{label}</p>
+    <p className="text-xs text-muted-foreground">{label}</p>
     <p className="mt-0.5 break-words text-lg font-semibold tabular-nums">{value}</p>
     {note && <p className="text-xs text-muted-foreground">{note}</p>}
   </div>
@@ -61,7 +61,6 @@ export function FinanceEvidenceCard() {
     { label: 'Months covered', value: num(s.monthsCovered, 0), note: s.periodStart && s.periodEnd ? `${s.periodStart} to ${s.periodEnd}` : undefined },
   ];
   if (enabled) {
-    facts.push({ label: 'Scope 1 · 2 · 3', value: `${num(d.scopeTonnes[1], 2)} · ${num(d.scopeTonnes[2], 2)} · ${num(d.scopeTonnes[3], 2)} t` });
     if (d.electricity.kwh > 0) {
       facts.push({ label: 'Electricity billed', value: `${num(d.electricity.kwh, 0)} kWh`, note: `${d.electricity.months} month${d.electricity.months === 1 ? '' : 's'} of bills` });
       if (d.electricity.impliedFactor !== null) facts.push({ label: 'Grid factor applied', value: `${d.electricity.impliedFactor} kg/kWh` });
@@ -77,12 +76,12 @@ export function FinanceEvidenceCard() {
     <section aria-labelledby="fe-title" className="flex flex-col gap-3">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h2 id="fe-title" className="text-lg font-semibold">Finance evidence</h2>
-        <span className="text-[13px] text-muted-foreground">Verified records only</span>
+        <span className="text-sm text-muted-foreground">Verified records only</span>
       </div>
-      <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-4">
+      <div className="grid grid-cols-2 border-t border-border lg:grid-cols-4">
         {facts.map((f) => <Fact key={f.label} {...f} />)}
       </div>
-      <p className="text-[13px] text-muted-foreground">
+      <p className="text-sm text-muted-foreground">
         {enabled
           ? <>Full trail per record: <Link to="/reports" className="underline">Reports</Link>.</>
           : available
