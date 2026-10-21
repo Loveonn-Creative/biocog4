@@ -340,6 +340,7 @@ const Dashboard = () => {
             <StandSection
               summary={summary}
               recordCount={emissions.length}
+              documentCount={documents.length}
               uncountedDocs={uncountedDocs}
               missingMonths={missingMonths}
               unverifiedCount={unverifiedEmissions.length}
@@ -402,7 +403,7 @@ const Dashboard = () => {
               <Suspense fallback={null}><FinanceInsights /></Suspense>
             )}
 
-            <RecentDocuments documents={documents.slice(0, 5)} />
+            <RecentDocuments documents={documents.slice(0, 5)} emissions={emissions} />
 
             {/* Audit trail and compliance labels live on MRV. */}
 

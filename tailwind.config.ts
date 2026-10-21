@@ -90,6 +90,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "grow-x": { from: { transform: "scaleX(0)" }, to: { transform: "scaleX(1)" } },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -108,6 +109,7 @@ export default {
         },
       },
       animation: {
+        "grow-x": "grow-x 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 3s ease-in-out infinite",

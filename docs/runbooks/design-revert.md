@@ -43,3 +43,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | 404 page (reader; `REVERT 404`) | "404: address reader" | `761882f` |
 | Footer (delivery truck story; `REVERT footer`) | "Footer: one delivery, made visible" | `755cad5` |
 | Footer (shipment routes: truck, train, ship, plane; `REVERT footer`) | "Footer: one shipment, four routes" | `89aadbd` |
+| /dashboard (design audit: one focal frame, scope bar, first-record steps, document status, type scale) | "Dashboard: design audit" | `fa2658b` |

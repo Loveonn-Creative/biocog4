@@ -33,11 +33,11 @@ export function FinancePathways({ verifiedTonnes, verifiedRecords, checks, statu
         <h2 id="unlock-title" className="text-lg font-semibold">Climate finance you can unlock</h2>
         <Link to="/monetize" className="text-sm font-medium text-primary hover:underline">Explore options</Link>
       </div>
-      <div className="overflow-hidden rounded-2xl border border-border bg-card">
+      <div className="border-y border-border">
         {verifiedTonnes > 0 && (
-          <div className="border-b border-border bg-primary/[0.04] px-5 py-4 md:px-6">
-            <p className="text-[15px] font-semibold text-primary tabular-nums">{verifiedTonnes.toFixed(3)} t CO₂e verified</p>
-            <p className="mt-0.5 text-[13px] text-muted-foreground">{CREDIT_VALUE_WITHHELD}</p>
+          <div className="border-b border-border py-4">
+            <p className="text-base font-semibold text-primary tabular-nums">{verifiedTonnes.toFixed(3)} t CO₂e verified</p>
+            <p className="mt-0.5 text-sm text-muted-foreground">{CREDIT_VALUE_WITHHELD}</p>
           </div>
         )}
         <ul className="divide-y divide-border">
@@ -52,12 +52,12 @@ export function FinancePathways({ verifiedTonnes, verifiedRecords, checks, statu
             return (
               <li key={r.id}>
                 <Link to={r.id === 'green_loan' ? '/green-loan' : `/monetize#${r.id}`}
-                  className="grid items-center gap-x-5 gap-y-2 px-5 py-4 transition-colors hover:bg-secondary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.6fr)_9rem_1rem] md:px-6">
+                  className="grid items-center gap-x-5 gap-y-2 -mx-2 rounded-lg px-2 py-4 transition-colors hover:bg-secondary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.6fr)_9rem_1rem]">
                   <span className="min-w-0">
-                    <span className="block text-[15px] font-semibold">{r.title}</span>
-                    <span className="block text-[12.5px] text-muted-foreground">{line}</span>
+                    <span className="block text-sm font-semibold">{r.title}</span>
+                    <span className="block text-xs text-muted-foreground">{line}</span>
                   </span>
-                  {!loaded ? <span className="h-3 w-40 animate-pulse rounded bg-muted motion-reduce:animate-none" aria-hidden="true" /> : <span className="flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] text-muted-foreground">
+                  {!loaded ? <span className="h-3 w-40 animate-pulse rounded bg-muted motion-reduce:animate-none" aria-hidden="true" /> : <span className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-muted-foreground">
                     {list.map((c) => (
                       <span key={c.label} className="inline-flex items-center gap-1.5">
                         {c.pass
@@ -67,7 +67,7 @@ export function FinancePathways({ verifiedTonnes, verifiedRecords, checks, statu
                       </span>
                     ))}
                   </span>}
-                  <span className={`text-[13px] font-semibold ${!loaded ? 'invisible' : ''} ${requested ? 'text-foreground' : missing === 0 ? 'text-success' : 'text-warning'}`}>{status}</span>
+                  <span className={`text-sm font-semibold ${!loaded ? 'invisible' : ''} ${requested ? 'text-foreground' : missing === 0 ? 'text-success' : 'text-warning'}`}>{status}</span>
                   <ChevronRight className="hidden h-4 w-4 text-muted-foreground md:block" aria-hidden="true" />
                 </Link>
               </li>

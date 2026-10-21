@@ -10,6 +10,8 @@ import type { EmissionsSummary } from '@/hooks/useEmissions';
 interface Props {
   summary: EmissionsSummary;
   recordCount: number;
+  /** Documents uploaded to this workspace. */
+  documentCount?: number;
   /** Documents read with nothing counted yet (no emission record). */
   uncountedDocs?: number;
   unverifiedCount: number;
@@ -50,7 +52,7 @@ function nextAction(p: Props) {
 }
 
 const Round = ({ to, label, icon: Icon, primary, badge }: { to: string; label: string; icon: typeof Upload; primary?: boolean; badge?: number }) => (
-  <Link to={to} className="group relative flex min-w-0 flex-col items-center gap-2 rounded-xl py-1 text-center text-[13px] font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+  <Link to={to} className="group relative flex min-w-0 flex-col items-center gap-2 rounded-xl py-1 text-center text-sm font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
     <span className={`grid h-12 w-12 place-items-center rounded-full transition-colors ${primary ? 'bg-primary text-primary-foreground group-hover:bg-primary/90' : 'bg-primary/10 text-primary group-hover:bg-primary/15'}`}>
       <Icon className="h-5 w-5" aria-hidden="true" />
     </span>
@@ -74,19 +76,42 @@ export function StandSection(p: Props) {
             <span className="text-base text-muted-foreground">{total.unit}</span>
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-3">
-          {SCOPES.map((s) => {
-            const v = p.summary[s.key];
-            const f = fmt(v);
-            return (
-              <div key={s.key} className="min-w-0">
-                <span className="block h-1.5 rounded-full" style={{ background: v > 0 ? s.color : 'hsl(var(--muted))' }} />
-                <p className="mt-2 text-xs text-muted-foreground">{s.label} · {s.plain}</p>
-                <p className="text-base font-semibold tabular-nums">{f.value} <span className="text-xs font-normal text-muted-foreground">{f.unit.split(' ')[0]}</span></p>
-              </div>
-            );
-          })}
+        {/* One bar shows the shape of the footprint; values sit in the legend. */}
+        <div>
+          <div className="flex h-2 gap-0.5 overflow-hidden rounded-full bg-muted" role="img"
+            aria-label={SCOPES.map((s) => `${s.label} ${fmt(p.summary[s.key]).value} ${fmt(p.summary[s.key]).unit}`).join(', ')}>
+            {p.summary.total > 0 && SCOPES.map((s) => p.summary[s.key] > 0 && (
+              <span key={s.key} className="h-full min-w-[4px] origin-left motion-safe:animate-grow-x" style={{ flexGrow: p.summary[s.key], background: s.color }} />
+            ))}
+          </div>
+          <div className="mt-3 grid grid-cols-3 gap-3">
+            {SCOPES.map((s) => {
+              const f = fmt(p.summary[s.key]);
+              return (
+                <div key={s.key} className="min-w-0">
+                  <p className="flex items-center gap-1.5 text-xs text-muted-foreground"><span className="h-2 w-2 shrink-0 rounded-sm" style={{ background: s.color }} aria-hidden="true" />{s.plain}</p>
+                  <p className="text-sm font-semibold tabular-nums">{f.value} <span className="text-xs font-normal text-muted-foreground">{f.unit.split(' ')[0]}</span></p>
+                </div>
+              );
+            })}
+          </div>
         </div>
+        {/* Before anything is verified, show how far the first bill has come. */}
+        {!p.hasVerifiedData && (
+          <ol className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs" aria-label="Your first record">
+            {[
+              { label: 'Bill read', on: (p.documentCount ?? 0) > 0 },
+              { label: 'Counted', on: p.recordCount > 0 },
+              { label: 'Verified', on: false },
+            ].map((st, i) => (
+              <li key={st.label} className={`flex items-center gap-1.5 ${st.on ? 'font-medium text-foreground' : 'text-muted-foreground'}`}>
+                {i > 0 && <span className="h-px w-4 bg-border" aria-hidden="true" />}
+                <span className={`h-2 w-2 rounded-full ${st.on ? 'bg-success' : 'border border-border'}`} aria-hidden="true" />
+                {st.label}<span className="sr-only">{st.on ? ' done' : ' not yet'}</span>
+              </li>
+            ))}
+          </ol>
+        )}
         <nav aria-label="Actions" className={`grid gap-1 ${p.unverifiedCount > 0 ? 'grid-cols-5' : 'grid-cols-4'}`}>
           <Round to="/" label="Upload invoice" icon={Upload} primary />
           {p.unverifiedCount > 0 && <Round to="/verify" label="Verify" icon={ShieldCheck} badge={p.unverifiedCount} />}
@@ -110,7 +135,7 @@ export function StandSection(p: Props) {
         <span className="h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden="true"><span className="block h-full rounded-full bg-success" style={{ width: `${score}%` }} /></span>
         <div className="mt-auto flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm">{action.message}</p>
-          <Link to={action.to} className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-[13px] font-medium text-primary-foreground hover:bg-primary/90">
+          <Link to={action.to} className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
             {action.label}<ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
         </div>
