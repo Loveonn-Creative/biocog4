@@ -90,7 +90,7 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - Dashboard vs MRV: compliance labels and the audit trail live on MRV. MRV's scope split reads the same verified totals as the Dashboard. "Credit value withheld" appears on the Dashboard only. Scope tonnes that repeat move off the Dashboard's Finance evidence (MRV has them). Unverified-record summary (Dashboard) and Evidence queue (MRV) both stay. Generate report stays on both.
 - Carbon score, green score and confidence score stay as they are.
 - Rupees next to tonnes: not added.
-- Intelligent actions: rules from the user's own bills, with friendly fallback messages for new users and users with limited data.
+- Intelligent actions (`src/lib/intelligentActions.ts`): power factor on kVAh bills, diesel generator vs grid, rooftop solar from 6+ months of bills (capped by sanctioned load), supplier above half of Scope 3, missing months, records to verify. Estimates are labelled. With thin data a friendly next step shows instead. MRV lists them; the Dashboard's next step shows only the top lever. Contract demand is not a rule: recorded demand is not read from bills.
 - Dashboard design audit: approved as one PR (REVERT applies).
 
 ## 9. Open decisions (ask before acting)

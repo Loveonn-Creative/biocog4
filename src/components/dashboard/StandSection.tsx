@@ -17,6 +17,8 @@ interface Props {
   unverifiedCount: number;
   /** Months with no electricity bill between the first and last on record (yyyy-mm). */
   missingMonths?: string[];
+  /** The biggest lever from the business's own records (intelligentActions). */
+  topAction?: { title: string; cta: { label: string; to: string } } | null;
   hasVerifiedData: boolean;
   verificationScore: number;
   latestStatus: 'verified' | 'needs_review' | 'pending' | null;
@@ -47,6 +49,7 @@ function nextAction(p: Props) {
     const what = gaps.length === 1 ? `${name(gaps[0])}'s electricity bill is` : `Electricity bills for ${gaps.length} months, from ${name(gaps[0])}, are`;
     return { message: `${what} not uploaded yet. Complete months are what lenders check first.`, label: 'Upload bill', to: '/' };
   }
+  if (p.topAction) return { message: p.topAction.title, label: p.topAction.cta.label, to: p.topAction.cta.to };
   if (p.hasVerifiedData) return { message: 'All emissions verified. Generate reports or upload more invoices.', label: 'View reports', to: '/reports' };
   return { message: 'Upload invoices to begin tracking.', label: 'Get started', to: '/' };
 }
