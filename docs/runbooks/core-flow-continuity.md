@@ -10,6 +10,7 @@ Owner rule (October 2026): no feature change, code change, schema migration or d
 3. Database changes ship as backward-compatible migrations: new tables and columns, nothing dropped or renamed in use. Each one comes with a rollback that restores the identical catalog and refuses while paid or user data would be lost. Code must work both before and after the migration is applied, through a fallback path, because Lovable applies migrations and deploys functions at different times.
 
 ## Before merging (deployment gate)
+- The `Checks` workflow (`.github/workflows/checks.yml`) runs all of the below on every pull request and on main. Do not merge on red.
 - `bun test tests` all green, including `tests/extract-document-journey.test.ts`, which runs the real extract-document handler end to end (save, duplicates, read again, electricity bills, credit notes, the reads ledger and the Gemini key).
 - SQL behaviour tests for any migration on a replay of the production schema (`supabase/pending-migrations/tests/run_*.sh`): applies, rolls back to the same catalog, re-applies.
 - `tsc --noEmit` clean; `npm run build` clean, with prerender and the SEO gate passing.
