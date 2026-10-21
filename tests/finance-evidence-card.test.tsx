@@ -20,12 +20,19 @@ const { FinanceEvidenceCard } = await import('../src/components/dashboard/Financ
 const render = () => renderToStaticMarkup(<MemoryRouter><FinanceEvidenceCard /></MemoryRouter>);
 
 describe('FinanceEvidenceCard', () => {
-  test('simple view for Snapshot and Essential', () => {
+  test('locked for Snapshot and Essential: shape only, no figures', () => {
     detail = { available: false, enabled: false };
     const html = render();
-    expect(html).toContain('Invoices behind it');
+    expect(html).toContain('Opens on Pro');
     expect(html).not.toContain('Electricity billed');
-    expect(html).toContain('come with Pro and Scale');
+    expect(html).not.toContain('kWh');
+    expect(html).not.toContain('TATA Power');
+  });
+  test('Pro or Scale with the switch off points to Settings, no figures', () => {
+    detail = { available: true, enabled: false };
+    const html = render();
+    expect(html).toContain('Turn on Finance detail');
+    expect(html).not.toContain('kWh');
   });
   test('detail view for Pro and Scale with the switch on', () => {
     detail = { available: true, enabled: true };
