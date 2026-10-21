@@ -27,6 +27,9 @@ const Scope2Panel = lazy(() => import('@/components/scope2/Scope2Panel').then((m
 import { EnterpriseAuditLedger } from '@/components/enterprise/EnterpriseAuditLedger';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { SupplierCoveragePanel } from '@/components/mrv/SupplierCoveragePanel';
+import { MRVEmptyState } from '@/components/mrv/MRVEmptyState';
+import { useShowMore } from '@/hooks/useShowMore';
+import { ShowMoreButton } from '@/components/ShowMore';
 import { 
   generateIntelligentRecommendations, 
   getTotalImpact,
@@ -70,6 +73,9 @@ const MRVDashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const verifiedEmissions = getVerifiedEmissions();
+  // Long lists open with the first rows; the rest stay one tap away.
+  const auditRows = useShowMore(verifications);
+  const pendingRows = useShowMore(emissions.filter((e) => !e.verified));
   // Verified emission rows, each id counted once, not a sum of verification
   // records (which can overlap the same emissions). No rupee value: emissions
   // are not credits (see carbonValue.ts).
@@ -269,15 +275,7 @@ const MRVDashboard = () => {
         {emissionsLoading && emissions.length === 0 ? (
           <div className="py-16 text-center text-sm text-muted-foreground" role="status">Loading your records…</div>
         ) : emissions.length === 0 ? (
-          <Card className="py-12">
-            <CardContent className="text-center">
-              <FileCheck className="h-12 w-12 text-muted-foreground/50 mx-auto mb-3" />
-              <p className="text-muted-foreground mb-4">No emission data yet. Upload invoices to begin.</p>
-              <Button asChild>
-                <Link to="/">Upload Invoice</Link>
-              </Button>
-            </CardContent>
-          </Card>
+          <MRVEmptyState documentCount={documents.length} />
         ) : (
           <>
             {/* Score Cards */}
@@ -556,7 +554,7 @@ const MRVDashboard = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      {verifications.slice(0, 5).map((v, idx) => (
+                      {auditRows.visible.map((v) => (
                         <div key={v.id} className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
                           <div className="flex items-center gap-3">
                             <div className={`w-2 h-2 rounded-full ${
@@ -583,6 +581,7 @@ const MRVDashboard = () => {
                         </div>
                       ))}
                     </div>
+                    <ShowMoreButton hidden={auditRows.hidden} all={auditRows.all} onClick={auditRows.toggle} total={verifications.length} noun="verifications" />
                     <div className="mt-4 pt-4 border-t border-border/50 text-center">
                       <p className="text-xs text-muted-foreground">
                         All data cryptographically hashed for tamper-proof verification
@@ -632,7 +631,7 @@ const MRVDashboard = () => {
                             Unverified lines are excluded from framework coverage.
                           </p>
                           <div className="space-y-2 mb-4">
-                            {pending.slice(0, 5).map(e => (
+                            {pendingRows.visible.map(e => (
                               <div key={e.id} className="p-3 rounded-lg bg-muted/30">
                                 <div className="flex items-center justify-between gap-2">
                                   <span className="text-sm font-medium truncate">{e.category}</span>
@@ -644,11 +643,7 @@ const MRVDashboard = () => {
                               </div>
                             ))}
                           </div>
-                          {pending.length > 5 && (
-                            <p className="text-xs text-muted-foreground mb-3">
-                              and {pending.length - 5} more.
-                            </p>
-                          )}
+                          <div className="-mt-2 mb-3"><ShowMoreButton hidden={pendingRows.hidden} all={pendingRows.all} onClick={pendingRows.toggle} total={pending.length} noun="records" /></div>
                           <Button className="w-full" asChild>
                             <Link to="/verify">
                               Run verification

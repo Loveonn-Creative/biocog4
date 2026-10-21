@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Network, AlertTriangle, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useSupplierCoverage } from '@/hooks/useSupplierCoverage';
+import { useShowMore } from '@/hooks/useShowMore';
+import { ShowMoreButton } from '@/components/ShowMore';
 import { TIER_LABEL, type SupplierRecord } from '@/lib/supplierLedger';
 
 const fmt = (n: number, currency: string) =>
@@ -15,6 +17,7 @@ const tierVariant = (t: SupplierRecord['tier']) =>
 
 export const SupplierCoveragePanel = () => {
   const { coverage, isLoading } = useSupplierCoverage();
+  const more = useShowMore(coverage.suppliers);
 
   if (isLoading) return null;
 
@@ -34,7 +37,7 @@ export const SupplierCoveragePanel = () => {
     );
   }
 
-  const top = coverage.suppliers.slice(0, 8);
+  const top = more.visible;
 
   return (
     <Card>
@@ -92,11 +95,11 @@ export const SupplierCoveragePanel = () => {
           ))}
         </div>
 
-        {coverage.suppliers.length > top.length && (
-          <p className="text-xs text-muted-foreground">
-            Showing the {top.length} suppliers with the highest attributed emissions of{' '}
-            {coverage.suppliers.length}.
-          </p>
+        {more.hidden > 0 && (
+          <div>
+            {!more.all && <p className="text-xs text-muted-foreground">The {top.length} suppliers with the highest emissions, of {coverage.suppliers.length}.</p>}
+            <ShowMoreButton hidden={more.hidden} all={more.all} onClick={more.toggle} total={coverage.suppliers.length} noun="suppliers" />
+          </div>
         )}
 
         <div className="flex flex-wrap items-center gap-3 pt-1">
