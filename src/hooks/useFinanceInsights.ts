@@ -16,6 +16,9 @@ const rpc = (fn: string) => (supabase.rpc as unknown as Rpc).call(supabase, fn);
 const missing = (e: { code?: string; message?: string } | null) => !!e && (e.code === "PGRST202" || e.code === "42883" || /my_(finance_insights|private_records)/.test(e.message ?? ""));
 
 const PREF = "finance_insights";
+
+/** Kill switch: VITE_FINANCE_INSIGHTS=off hides Finance insights everywhere (Settings, Dashboard, History). */
+export const FINANCE_INSIGHTS_OFF = import.meta.env.VITE_FINANCE_INSIGHTS === "off";
 type Prefs = Record<string, unknown>;
 
 export interface FinanceInsightsData { ready: boolean; enabled: boolean; plan: Plan; records: InsightRecord[] }
@@ -66,6 +69,7 @@ export function useFinanceInsights(enabled: boolean) {
     staleTime: 60_000,
     retry: false,
     queryFn: async (): Promise<FinanceInsightsData> => {
+      if (FINANCE_INSIGHTS_OFF) return { ready: false, enabled: false, plan: "snapshot", records: [] };
       const { data, error } = await rpc("my_finance_insights");
       if (missing(error)) return { ready: false, enabled: false, plan: "snapshot", records: [] };
       if (error) throw error;
@@ -83,6 +87,7 @@ export function usePrivateRecords() {
     staleTime: 60_000,
     retry: false,
     queryFn: async (): Promise<PrivateRecord[]> => {
+      if (FINANCE_INSIGHTS_OFF) return [];
       const { data, error } = await rpc("my_private_records");
       if (missing(error)) return [];
       if (error) throw error;

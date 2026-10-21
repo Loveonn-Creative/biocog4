@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Lock } from "lucide-react";
 import { LockedBody } from "@/components/dashboard/Locked";
 import {
   CATEGORIES, CATEGORY_LABEL, ENERGY_CATEGORIES, KIND_LABEL, UNLOCKS_ON,
@@ -27,6 +28,13 @@ const Source = ({ children }: { children: React.ReactNode }) => (
   <p className="mt-1 text-[12.5px] text-muted-foreground">{children}</p>
 );
 
+// What the next plan adds to an open module: a quiet pill, not a sales line.
+const NextPlan = ({ plan, what }: { plan: string; what: string }) => (
+  <Link to="/pricing" title={what} aria-label={`${what}: opens on ${plan}`} className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[12px] text-muted-foreground hover:bg-secondary hover:text-foreground">
+    <Lock className="h-3 w-3" aria-hidden="true" />Opens on {plan}
+  </Link>
+);
+
 const Shell = ({ id, title, line, access, children, actions }: { id: ModuleId; title: string; line: string; access: Access; plan: Plan; children?: React.ReactNode; actions?: React.ReactNode }) => (
   <section aria-labelledby={`fin-${id}`} className="min-w-0 rounded-xl border border-border bg-card p-4 md:p-5">
     <div className="flex flex-wrap items-start justify-between gap-3">
@@ -34,7 +42,7 @@ const Shell = ({ id, title, line, access, children, actions }: { id: ModuleId; t
         <h3 id={`fin-${id}`} className="text-[15px] font-semibold">{title}</h3>
         <p className="mt-0.5 text-[13px] text-muted-foreground">{line}</p>
       </div>
-      {access !== "locked" && actions}
+      {access === "read" ? <NextPlan plan="Scale" what="Date filters and CSV download" /> : access !== "locked" && actions}
     </div>
     {access === "locked" ? <LockedBody plan={PLAN_NAME[UNLOCKS_ON[id]]} /> : children}
   </section>
@@ -104,6 +112,12 @@ function CashFlow({ months, access, plan }: { months: (MonthRow & { source: stri
           </p>
           {shown.some((m) => m.balanced === false) && (
             <p className="mt-2 text-[12.5px] text-muted-foreground">On {shown.filter((m) => m.balanced === false).map((m) => monthLabel(m.month)).join(", ")} the printed balances do not add up to money in and out. Shown as printed.</p>
+          )}
+          {access === "basic" && (
+            <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-4">
+              <p className="text-[13.5px] font-medium">Where money went</p>
+              <NextPlan plan="Pro" what="Money out by purpose" />
+            </div>
           )}
           {access !== "basic" && (
             totals.out > 0 ? (
