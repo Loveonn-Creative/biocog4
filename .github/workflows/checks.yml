@@ -1,0 +1,41 @@
+# Runs on every pull request to main and every push to main: type check, the
+# full test suite (including the real extract-document journey) and the
+# production build with prerender and the SEO gate. A red run means the
+# change must not merge. Read-only: no secrets are used or exposed.
+name: Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.2.21
+      # package-lock.json resolves from the public npm registry (bun.lock
+      # points at a private sandbox cache), so CI installs with npm.
+      - run: npm ci --no-audit --no-fund
+      - name: Type check
+        run: npx tsc --noEmit -p tsconfig.app.json
+      - name: Tests (core flow journey included)
+        run: bun test tests/
+      - name: Build, prerender and SEO gate
+        run: npm run build
