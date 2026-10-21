@@ -1,4 +1,6 @@
 import { useMemo, useState } from 'react';
+import { useShowMore } from '@/hooks/useShowMore';
+import { ShowMoreButton } from '@/components/ShowMore';
 import { useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 import { ChevronDown, RefreshCw } from 'lucide-react';
@@ -91,6 +93,7 @@ export function Scope3Trail() {
     return c;
   }, [rows]);
   const shown = filter === 'all' ? rows : rows.filter((r) => r.status === filter);
+  const more = useShowMore(shown);
 
   const recalc = async () => {
     setBusy(true);
@@ -160,14 +163,14 @@ export function Scope3Trail() {
         <div>
           <div role="tablist" aria-label="Filter lines" className="flex flex-wrap gap-1.5">
             {FILTERS.filter((f) => f === 'all' || counts[f]).map((f) => (
-              <button key={f} type="button" role="tab" aria-selected={filter === f} onClick={() => setFilter(f)}
+              <button key={f} type="button" role="tab" aria-selected={filter === f} onClick={() => { setFilter(f); more.reset(); }}
                 className={`rounded-full border px-3 py-1 text-xs transition-colors ${filter === f ? 'border-foreground bg-foreground text-background' : 'border-border text-muted-foreground hover:text-foreground'}`}>
                 {f === 'all' ? 'All' : STATUS_LABEL[f]} {counts[f] ?? 0}
               </button>
             ))}
           </div>
           <ul className="mt-3 grid grid-cols-1 gap-2">
-            {shown.map((l) => {
+            {more.visible.map((l) => {
               const isOpen = open === l.id;
               return (
                 <li key={l.id} className="rounded-xl border border-border p-3">
@@ -185,6 +188,7 @@ export function Scope3Trail() {
               );
             })}
           </ul>
+          <ShowMoreButton hidden={more.hidden} all={more.all} onClick={more.toggle} total={shown.length} noun="lines" />
         </div>
       </CardContent>
     </Card>

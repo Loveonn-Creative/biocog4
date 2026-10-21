@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Shield, Database, Clock } from 'lucide-react';
+import { useShowMore } from '@/hooks/useShowMore';
+import { ShowMoreButton } from '@/components/ShowMore';
 
 interface EmissionEntry {
   id: string;
@@ -19,6 +21,7 @@ interface Props {
 }
 
 export function EnterpriseAuditLedger({ emissions }: Props) {
+  const more = useShowMore(emissions);
   if (emissions.length === 0) return null;
 
   return (
@@ -45,7 +48,7 @@ export function EnterpriseAuditLedger({ emissions }: Props) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {emissions.slice(0, 20).map(e => (
+              {more.visible.map(e => (
                 <TableRow key={e.id}>
                   <TableCell className="text-xs text-muted-foreground">
                     {new Date(e.created_at).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' })}
@@ -71,9 +74,10 @@ export function EnterpriseAuditLedger({ emissions }: Props) {
             </TableBody>
           </Table>
         </div>
+        <ShowMoreButton hidden={more.hidden} all={more.all} onClick={more.toggle} total={emissions.length} noun="entries" />
         <div className="flex items-center gap-2 mt-3 text-xs text-muted-foreground">
           <Clock className="h-3 w-3" />
-          Extended data retention active • Showing last {Math.min(emissions.length, 20)} entries
+          Extended data retention active • {more.visible.length} of {emissions.length} entries shown
         </div>
       </CardContent>
     </Card>

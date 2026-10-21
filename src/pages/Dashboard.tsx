@@ -33,7 +33,6 @@ import { useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
 
 const FinanceInsights = lazy(() => import('@/components/finance/FinanceInsights').then((m) => ({ default: m.FinanceInsights })));
 const Scope3Preview = lazy(() => import('@/components/scope3/Scope3Preview').then((m) => ({ default: m.Scope3Preview })));
-import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { useCredibility } from '@/hooks/useCredibility';
 import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
 import { AlertTriangle, Info, CheckCircle2, ChevronRight } from 'lucide-react';
@@ -405,8 +404,7 @@ const Dashboard = () => {
 
             <RecentDocuments documents={documents.slice(0, 5)} />
 
-            {/* Compliance labels live on MRV; the audit log is shown only here. */}
-            {isEnterprise && emissions.length > 0 && <EnterpriseAuditLog />}
+            {/* Audit trail and compliance labels live on MRV. */}
 
             {scope3.showBasic && (
               <Suspense fallback={null}><Scope3Preview fullAvailable={scope3.fullAvailable} /></Suspense>
