@@ -1,0 +1,61 @@
+{
+  "slug": "erode-sizing-unit-steam-per-kg-yarn",
+  "q": "How do I calculate the steam and emissions of warp sizing per kg of yarn?",
+  "title": "Warp sizing: steam and CO2 per kg",
+  "short": "Sizing uses steam to cook the size and to dry the coated yarn on heated cylinders, plus some electricity. Take the boiler fuel and the sizing machine's kWh for a period, convert them to CO2, and divide by kilograms of yarn sized. Steam leaks and wet yarn can double the figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sizing units serving powerloom and handloom weavers around Erode, Komarapalayam, Salem and Bhiwandi",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Boiler fuel: wood, coal, briquettes or PNG from invoices.",
+        "Electricity for the sizing machine, size cooker and compressor x 0.710 kg CO2 per kWh.",
+        "Starch and binders bought, as an upstream estimate."
+      ]
+    },
+    {
+      "h": "Steam per kg",
+      "p": [
+        "If the boiler also serves other processes, split the fuel by steam flow meters or by the hours each user runs, and label the split."
+      ]
+    },
+    {
+      "h": "Where to save",
+      "p": [
+        "Condensate return, insulated cylinders, controlled size pick up and better squeeze rolls cut the steam per kg of yarn."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Powerloom vs airjet loom energy",
+      "to": "/answers/powerloom-vs-airjet-loom-energy-per-metre"
+    },
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Spinning mill per kg yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

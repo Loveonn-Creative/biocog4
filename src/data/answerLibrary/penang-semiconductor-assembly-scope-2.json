@@ -1,0 +1,62 @@
+{
+  "slug": "penang-semiconductor-assembly-scope-2",
+  "q": "Why is electricity most of a Penang semiconductor assembly plant's footprint, and how is it reported?",
+  "title": "Penang chip assembly: Scope 2",
+  "short": "Back end assembly and test run clean rooms, chillers, compressed air and testers around the clock, so grid electricity usually dwarfs fuel. Report location based Scope 2 with Peninsular Malaysia's grid factor and market based with any green tariff or certificates you hold, then split per unit for customers.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Semiconductor assembly, test and packaging plants and their suppliers in Bayan Lepas, Batu Kawan and Kulim",
+  "sections": [
+    {
+      "h": "Where the kWh go",
+      "ul": [
+        "Clean room air handling and chillers.",
+        "Compressed air and nitrogen generation.",
+        "Test and burn in equipment.",
+        "Wire bonding, moulding and plating lines."
+      ]
+    },
+    {
+      "h": "Two figures",
+      "p": [
+        "Location based: grid kWh x the Peninsular factor. Market based: subtract kWh covered by a green tariff or retired certificates in your name, at zero."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Customers ask per device or per wafer equivalent. Split by test hours or line hours, not just units, when packages differ."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per plant; for sites outside India the grid factor is entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Malaysia grid factor by region",
+      "to": "/answers/malaysia-grid-emission-factor-by-region"
+    },
+    {
+      "label": "Malaysia green electricity tariff",
+      "to": "/answers/malaysia-green-electricity-tariff-scope-2"
+    },
+    {
+      "label": "Electronics fluorinated gases",
+      "to": "/answers/electronics-plant-fluorinated-gas-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

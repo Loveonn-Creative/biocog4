@@ -1,0 +1,58 @@
+{
+  "slug": "allocate-plant-emissions-by-machine-hours",
+  "q": "How do I split my plant's emissions between products using machine hours?",
+  "title": "Splitting plant emissions by machine hours",
+  "short": "Measure or log the hours each product spends on each machine group, weight them by that group's power draw, and share the electricity accordingly. Fuel for furnaces or ovens is split the same way by their own hours. It is fairer than weight when products differ in how much machining they need.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto component and engineering units in Bhiwadi, Manesar and Gurugram answering per part footprint requests",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Group machines by area: turning, milling, grinding, heat treatment, assembly.",
+        "Get each area's kWh from sub meters, or estimate from rated power and hours, and label estimates.",
+        "Share each area's kWh over parts by the machine hours they used.",
+        "Add the part's material footprint from your steel or aluminium supplier."
+      ]
+    },
+    {
+      "h": "When weight is fine",
+      "p": [
+        "If parts go through the same route and differ mainly in size, splitting by kilograms gives similar results with less work."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Write the rule down, use the same period as your bills, and apply it every year so the trend means something."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity and fuel bills into a dated, fingerprinted record per plant, so the totals you split between parts trace back to the bills behind them.",
+  "links": [
+    {
+      "label": "CNC machined part footprint",
+      "to": "/answers/cnc-machined-part-carbon-footprint"
+    },
+    {
+      "label": "OEM supplier data request",
+      "to": "/answers/chennai-auto-component-supplier-oem-data"
+    },
+    {
+      "label": "Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

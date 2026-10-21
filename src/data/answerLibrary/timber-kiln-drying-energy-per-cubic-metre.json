@@ -1,0 +1,57 @@
+{
+  "slug": "timber-kiln-drying-energy-per-cubic-metre",
+  "q": "How do I calculate the energy and emissions of kiln drying timber per cubic metre?",
+  "title": "Timber kiln drying: CO2 per cubic metre",
+  "short": "Log the heat source and the fans. Steam or hot air from a wood waste boiler gives biogenic CO2, shown separately; fossil boilers and electric dehumidifier kilns count fully. Divide the period's fuel and electricity by cubic metres dried, and note species and moisture change, since hardwoods take longer.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sawmills and furniture makers drying rubberwood, acacia, teak and pine in Vietnam, India and Indonesia",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Boiler fuel: wood waste, coal or gas, by kiln if metered.",
+        "Electricity for fans and dehumidifiers at the local grid factor.",
+        "Hours per charge and cubic metres per charge."
+      ]
+    },
+    {
+      "h": "Per cubic metre",
+      "p": [
+        "Divide by cubic metres dried, and give the starting and final moisture. Drying from green to 8 percent uses far more energy than from air dried."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Kiln drying is often the largest energy step in solid wood furniture, so a measured figure makes a buyer's product footprint far more credible."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Wood waste boiler biogenic CO2",
+      "to": "/answers/furniture-factory-wood-waste-boiler-biogenic-co2"
+    },
+    {
+      "label": "Biogenic carbon in timber",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    },
+    {
+      "label": "Wooden furniture footprint",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

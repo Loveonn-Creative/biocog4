@@ -1,0 +1,66 @@
+{
+  "slug": "aerospace-part-buy-to-fly-ratio-carbon",
+  "q": "Why does the buy to fly ratio matter so much for an aerospace part's carbon footprint?",
+  "title": "Aerospace parts: buy to fly and carbon",
+  "short": "Because you pay for the carbon in all the metal you buy, not just what flies. Machined titanium and aluminium parts can start from billets many times their finished weight, so material production dominates. Count the whole bought weight at the supplier's figure, and report chips sold for recycling separately.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Aerospace machining and structures suppliers in Queretaro, Chihuahua, Hosur and Bengaluru",
+  "sections": [
+    {
+      "h": "The arithmetic",
+      "ul": [
+        "Bought weight = finished weight x buy to fly ratio.",
+        "Material footprint = bought weight x supplier figure per kg.",
+        "Add machining electricity and coolant handling from your plant."
+      ]
+    },
+    {
+      "h": "Chips and scrap",
+      "p": [
+        "Chips sold to recyclers are not subtracted from your figure. Report them as waste or sold scrap, with tonnes."
+      ]
+    },
+    {
+      "h": "Where to cut",
+      "p": [
+        "Near net shape forgings, castings or additive preforms lower the ratio, and recycled content titanium or aluminium lowers the per kg figure. Show both changes with evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 2 kg titanium bracket",
+    "lines": [
+      "Buy to fly 8:1, so 16 kg of titanium bought",
+      "16 kg x supplier figure per kg = material footprint",
+      "Plus machining kWh x grid factor"
+    ],
+    "note": "Ratio and figures are illustrative; use your own routing and supplier data."
+  },
+  "senseible": "Senseible reads metal, electricity and fuel invoices into a dated, fingerprinted record, so bought weight and energy behind a part figure trace back to the documents.",
+  "links": [
+    {
+      "label": "CNC machined part footprint",
+      "to": "/answers/cnc-machined-part-carbon-footprint"
+    },
+    {
+      "label": "Selling production scrap",
+      "to": "/answers/selling-production-scrap-scope-3-category-5"
+    },
+    {
+      "label": "Queretaro aerospace supplier data",
+      "to": "/answers/queretaro-aerospace-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

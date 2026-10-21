@@ -1,0 +1,57 @@
+{
+  "slug": "turmeric-boiling-and-drying-emissions-per-tonne",
+  "q": "What are the emissions from boiling and drying turmeric per tonne?",
+  "title": "Turmeric curing: emissions per tonne",
+  "short": "Boiling is the energy step. Firewood or agricultural waste fires give biogenic CO2, reported separately, plus small methane and nitrous oxide amounts that do count. Steam boilers using coal or gas count fully. Sun drying adds nothing; mechanical dryers add their fuel or power.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Turmeric growers, curing units and traders around Erode, Salem and Nizamabad, and spice exporters asked for product figures",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Fuel for boiling: firewood, dried leaves, coal or LPG, in kg or litres.",
+        "Electricity for polishers and dryers x 0.710 kg CO2 per kWh.",
+        "Diesel for transport to the yard or market."
+      ]
+    },
+    {
+      "h": "Biomass fuel",
+      "p": [
+        "CO2 from burning wood or crop waste is biogenic and shown outside the scopes. Methane and nitrous oxide from the fire are counted using IPCC defaults for the fuel."
+      ]
+    },
+    {
+      "h": "Per tonne of what",
+      "p": [
+        "Fresh rhizomes lose most of their weight in curing and drying. Report per tonne of dried, polished turmeric sold, and state it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Spice processing footprint",
+      "to": "/answers/spice-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass boiler CO2",
+      "to": "/answers/sri-lanka-apparel-biomass-boiler-co2"
+    },
+    {
+      "label": "Wood fired boiler biogenic CO2",
+      "to": "/answers/kanpur-tannery-wood-fired-boiler-biogenic-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

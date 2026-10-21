@@ -1,0 +1,55 @@
+{
+  "slug": "refinery-fuel-gas-co2-factor",
+  "q": "What emission factor should I use for refinery fuel gas?",
+  "title": "Refinery fuel gas: which CO2 factor",
+  "short": "Use the gas composition from your own analysis if you have it, because refinery gas varies with hydrogen, methane and heavier gases. If you do not, the IPCC 2006 default is 57.6 kg CO2 per GJ on a net basis, applied to the energy from your metered volume and heating value.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refinery and petrochemical energy managers reporting Scope 1, and auditors checking them",
+  "sections": [
+    {
+      "h": "Best: composition based",
+      "p": [
+        "From a gas chromatograph analysis, add up the carbon in each component per cubic metre, multiply by metered volume and by 44/12. Gas rich in hydrogen has far less carbon per unit of energy."
+      ]
+    },
+    {
+      "h": "Fallback: IPCC default",
+      "ul": [
+        "Refinery gas: 57.6 kg CO2 per GJ (net calorific basis).",
+        "Multiply by the energy burnt, from volume and a measured heating value.",
+        "Label it as a default and say why measured data was not used."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Using a natural gas factor for a hydrogen rich gas.",
+        "Counting flare gas twice, once as fuel and once as flare.",
+        "Mixing gross and net heating values."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Process flare CO2",
+      "to": "/answers/process-flare-co2-emissions-calculation"
+    },
+    {
+      "label": "Refinery allocation",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    },
+    {
+      "label": "PNG bill to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "durgapur-steel-products-cbam-figure",
+  "q": "What CBAM figure should a buyer use for steel from a Durgapur blast furnace plant?",
+  "title": "Durgapur steel: the CBAM figure",
+  "short": "Ask the plant for its actual embedded emissions per tonne of the product you buy, calculated under the CBAM method. A blast furnace and converter route usually lands around two tonnes of CO2 per tonne of crude steel. Default values apply only if actual data is missing, and they are set high on purpose.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and Indian exporters of plates, sections, wheels and other steel from integrated plants in the Durgapur and Asansol belt",
+  "sections": [
+    {
+      "h": "What the figure covers",
+      "ul": [
+        "Direct emissions from coke making, sintering, the blast furnace and the converter.",
+        "Precursors such as pig iron and slabs, attributed through the production chain.",
+        "Electricity is reported but not charged for steel goods."
+      ]
+    },
+    {
+      "h": "How to get it",
+      "p": [
+        "Request the installation data in the Commission's communication template for the reporting period, with the production route and the product's CN code. Check it matches the invoice quantities."
+      ]
+    },
+    {
+      "h": "If data is missing",
+      "p": [
+        "The default values in the 2025 implementing regulation apply, with a mark up in later years, which usually costs more than real data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, fuel and electricity invoices into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Rourkela steel plates",
+      "to": "/answers/rourkela-steel-plates-cbam-figure"
+    },
+    {
+      "label": "Vizag blast furnace steel",
+      "to": "/answers/vizag-steel-plant-bf-bof-cbam-figure"
+    },
+    {
+      "label": "Purchased coke upstream",
+      "to": "/answers/purchased-met-coke-upstream-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

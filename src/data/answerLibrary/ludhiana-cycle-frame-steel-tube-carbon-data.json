@@ -1,0 +1,61 @@
+{
+  "slug": "ludhiana-cycle-frame-steel-tube-carbon-data",
+  "q": "What carbon data should a Ludhiana cycle maker get from its steel tube supplier?",
+  "title": "Cycle frames: steel tube supplier data",
+  "short": "Ask the tube maker for kg CO2e per tonne of tube, with the steel route behind it, the year and the boundary. Steel tube is usually most of a steel frame's footprint, so a real supplier figure matters more than your own welding and painting, which come from your bills.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bicycle and fitness equipment makers in Ludhiana buying ERW and CDW tubes, and the brands asking them",
+  "sections": [
+    {
+      "h": "What to ask for",
+      "ul": [
+        "kg CO2e per tonne of tube at the tube mill's gate.",
+        "The coil or strip supplier and its route: blast furnace, DRI or scrap based.",
+        "The year, and whether it is site specific or an average."
+      ]
+    },
+    {
+      "h": "Your part",
+      "p": [
+        "Cutting, bending, brazing or welding, phosphating and painting, from your electricity, LPG or PNG bills, split by frames made."
+      ]
+    },
+    {
+      "h": "CBAM note",
+      "p": [
+        "Steel tubes themselves are CBAM goods if exported to the EU, but bicycles and frames are not, so a frame maker exporting finished cycles buys no certificates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads steel, fuel and electricity invoices into a dated, fingerprinted record, so the tube tonnes and energy behind a frame figure trace back to the documents.",
+  "links": [
+    {
+      "label": "Bicycles and CBAM",
+      "to": "/answers/are-bicycles-and-bicycle-parts-covered-by-cbam"
+    },
+    {
+      "label": "Ludhiana bicycle maker CBAM check",
+      "to": "/answers/ludhiana-bicycle-maker-cbam-check"
+    },
+    {
+      "label": "Bicycle footprint per unit",
+      "to": "/answers/bicycle-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

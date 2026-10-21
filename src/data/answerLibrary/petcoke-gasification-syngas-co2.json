@@ -1,0 +1,66 @@
+{
+  "slug": "petcoke-gasification-syngas-co2",
+  "q": "How do I calculate CO2 from gasifying petroleum coke into syngas?",
+  "title": "Petcoke gasification: CO2 by mass balance",
+  "short": "Work from carbon. Every tonne of carbon in the petcoke that leaves as CO2, whether from burning the syngas or from the shift step that makes hydrogen, is 3.67 tonnes of CO2. Petcoke is mostly carbon, so a lab analysis of your lots and the tonnes fed give the figure; subtract only carbon that leaves in products.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refineries, fertiliser and chemical plants that gasify petroleum coke for fuel gas, hydrogen or chemicals",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ul": [
+        "Tonnes of petcoke fed x carbon content from your lab report = tonnes of carbon in.",
+        "Subtract carbon that leaves in products such as methanol or captured CO2 sold under contract.",
+        "Carbon left x 44/12 = tonnes of CO2 emitted."
+      ]
+    },
+    {
+      "h": "Where it shows up",
+      "p": [
+        "If the syngas is burnt for heat or power, the CO2 leaves the stack. If it is shifted to make hydrogen, a concentrated CO2 stream comes out of the shift and acid gas removal. Both count unless the CO2 is permanently stored or sold into a product with evidence."
+      ]
+    },
+    {
+      "h": "Default if you have no lab data",
+      "p": [
+        "The IPCC 2006 default for petroleum coke is 97.5 kg CO2 per GJ at about 32.5 GJ per tonne, which is about 3.17 tonnes of CO2 per tonne. Use it only as a labelled fallback."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day of feed",
+    "lines": [
+      "1,000 t petcoke at 87% carbon = 870 t carbon",
+      "Less 20 t carbon leaving in a chemical product = 850 t carbon",
+      "850 x 44/12 = 3,117 t CO2"
+    ],
+    "note": "Carbon content is an assumption for illustration; use your own lab results."
+  },
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Petcoke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    },
+    {
+      "label": "Hydrogen from natural gas",
+      "to": "/answers/smr-hydrogen-co2-per-kg"
+    },
+    {
+      "label": "CO2 sold to other industries",
+      "to": "/answers/co2-sold-to-other-industries-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

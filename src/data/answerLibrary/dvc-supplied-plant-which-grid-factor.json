@@ -1,0 +1,55 @@
+{
+  "slug": "dvc-supplied-plant-which-grid-factor",
+  "q": "Which grid factor should a factory supplied by DVC or any one state utility use?",
+  "title": "DVC or state supply: which grid factor",
+  "short": "Use the national figure. India's grids are one synchronised system, and the CEA CO2 Baseline Database publishes a single weighted average, 0.710 kg CO2 per kWh in version 21.0, for all grid power. There is no official utility specific factor for location based reporting, whichever company bills you.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Steel, cement and sponge iron units in West Bengal and Jharkhand buying from Damodar Valley Corporation, and factories anywhere in India unsure which factor to use",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Multiply every kWh on your bills by 0.710 kg CO2. The utility, tariff or state does not change it."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Only contracts that carry renewable attributes, such as green open access or certificates you retire, change your market based figure. A utility's general fuel mix is not a contract."
+      ]
+    },
+    {
+      "h": "Captive power is different",
+      "p": [
+        "Electricity from your own coal or gas plant is not grid power. Its fuel is your Scope 1, and you should not apply the grid factor to it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and applies 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, so each kWh and its emissions trace back to the bill.",
+  "links": [
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Captive coal power Scope 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Coal power CO2 per kWh",
+      "to": "/answers/coal-power-plant-co2-per-kwh-heat-rate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "refinery-emissions-allocation-across-products",
+  "q": "How are a refinery's emissions split between diesel, naphtha, polymers and other products?",
+  "title": "Refinery emissions: splitting by product",
+  "short": "There is no single answer. Standards prefer splitting by process unit first, then allocating what is left by a physical measure such as mass or energy content, and only then by price. The method changes each product's figure a lot, so a supplier's number is only comparable if you know which rule it used.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Buyers of fuels, naphtha, polypropylene and other refinery products, and refinery sustainability teams answering them",
+  "sections": [
+    {
+      "h": "The order the standards set",
+      "ol": [
+        "Avoid allocation where you can: assign each process unit's fuel and process emissions to the streams it actually makes.",
+        "Where units make several products, split by a physical relationship such as mass or energy content.",
+        "Use economic value only when no physical relationship fits, and say so."
+      ]
+    },
+    {
+      "h": "Why it matters to a buyer",
+      "p": [
+        "A lubricant base oil or a polymer grade can carry very different figures under mass, energy or value allocation. Two refineries quoting different numbers may simply be using different rules, not running cleaner plants."
+      ]
+    },
+    {
+      "h": "What to ask the supplier",
+      "ul": [
+        "The allocation method and the boundary (gate of refinery or of the product plant).",
+        "The year and whether captive power and steam are inside.",
+        "Whether crude production and shipping are included upstream."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the invoices for the products you buy into a dated, fingerprinted record, so a supplier figure and the quantity it applies to can be traced back to the documents behind it. It does not calculate refinery allocations.",
+  "links": [
+    {
+      "label": "Polymer resin factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Fuel gas factor",
+      "to": "/answers/refinery-fuel-gas-co2-factor"
+    },
+    {
+      "label": "Process flare CO2",
+      "to": "/answers/process-flare-co2-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

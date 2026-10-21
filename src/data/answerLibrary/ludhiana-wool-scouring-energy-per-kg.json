@@ -1,0 +1,61 @@
+{
+  "slug": "ludhiana-wool-scouring-energy-per-kg",
+  "q": "How do I calculate the energy and emissions of scouring raw wool?",
+  "title": "Wool scouring: energy and CO2 per kg",
+  "short": "Scouring is mostly heating water and drying wool. Add the boiler fuel and the electricity used in the scouring line over a period, convert them to CO2, and divide by kilograms of clean wool out. Measure water temperature and liquor ratio too, because those drive the steam use.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Woollen spinners and scouring units in Ludhiana and Panipat, and knitwear and blanket makers buying their yarn",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Boiler fuel for hot scour bowls and dryers: coal, wood, PNG or oil, from invoices.",
+        "Electricity for pumps, squeeze rollers and dryer fans x 0.710 kg CO2 per kWh.",
+        "Effluent treatment energy if the plant runs its own."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "Raw greasy wool loses a large share of its weight in scouring. Divide by clean wool out, and say so, or the figure will look much better than it is."
+      ]
+    },
+    {
+      "h": "Where to save",
+      "p": [
+        "Lower bowl temperatures where the detergent allows, heat recovery from effluent, and better squeezing before the dryer cut steam per kg."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Woollen shawl footprint",
+      "to": "/answers/woollen-shawl-carbon-footprint-per-shawl"
+    },
+    {
+      "label": "Effluent heat recovery",
+      "to": "/answers/dyehouse-hot-effluent-heat-recovery-saving"
+    },
+    {
+      "label": "Ludhiana hosiery per garment",
+      "to": "/answers/ludhiana-hosiery-unit-carbon-per-garment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

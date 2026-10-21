@@ -1,0 +1,57 @@
+{
+  "slug": "soda-ash-plant-co2-per-tonne",
+  "q": "What are the main CO2 sources in a soda ash plant using the Solvay process?",
+  "title": "Soda ash plant: where the CO2 comes from",
+  "short": "Most of it comes from fuel, not chemistry. The CO2 from burning limestone is captured inside the process to carbonate brine, so the main emissions are coke or coal in the lime kilns and coal for the steam the plant needs. Count those from your fuel records, plus any CO2 vented from the process.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Soda ash makers on the Saurashtra coast and the glass, detergent and chemical buyers asking them for figures",
+  "sections": [
+    {
+      "h": "The process in short",
+      "p": [
+        "Limestone is burnt to lime and CO2. The CO2 is bubbled through ammoniated brine to make sodium bicarbonate, which is heated to soda ash, releasing CO2 that is reused. Lime recovers the ammonia."
+      ]
+    },
+    {
+      "h": "What to count",
+      "ul": [
+        "Coke or coal in the lime kilns, from purchase and stock records.",
+        "Coal, lignite or gas for steam and power, often from a captive plant.",
+        "Any CO2 not reabsorbed and vented, from a plant mass balance."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "A glass maker buying soda ash should ask for a cradle to gate figure per tonne with year and boundary. Soda ash melted in a furnace also releases its own carbonate CO2, which the glass maker reports."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Soda ash neutralisation CO2",
+      "to": "/answers/co2-from-soda-ash-or-limestone-neutralisation"
+    },
+    {
+      "label": "Float glass furnace CO2",
+      "to": "/answers/float-glass-furnace-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "furniture-factory-wood-waste-boiler-biogenic-co2",
+  "q": "How do I report CO2 from burning wood offcuts in a furniture factory boiler?",
+  "title": "Wood waste boilers: biogenic CO2",
+  "short": "Report the CO2 from wood as biogenic, outside Scopes 1, 2 and 3, and show it separately. Methane and nitrous oxide from the fire do count in Scope 1, using IPCC defaults for wood. Keep a log of tonnes burnt and any fossil fuel used to start or support the boiler.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Furniture and wood product factories in Binh Duong, Dong Nai, Jodhpur and Kerala using offcuts and sawdust for kiln and process heat",
+  "sections": [
+    {
+      "h": "What to log",
+      "ul": [
+        "Tonnes of wood waste burnt, from weighing or volume and moisture.",
+        "Diesel or coal used alongside.",
+        "Steam or heat delivered, if you split it between kilns and other uses."
+      ]
+    },
+    {
+      "h": "How to report",
+      "ul": [
+        "Biogenic CO2: tonnes of dry wood x carbon content x 44/12, shown separately.",
+        "CH4 and N2O: energy from wood x IPCC defaults, in Scope 1.",
+        "Fossil support fuel: fully in Scope 1."
+      ]
+    },
+    {
+      "h": "Bought biomass",
+      "p": [
+        "If you buy wood pellets or chips, the same rule applies; add their transport in Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Wooden furniture footprint",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Timber kiln drying energy",
+      "to": "/answers/timber-kiln-drying-energy-per-cubic-metre"
+    },
+    {
+      "label": "Binh Duong furniture buyer data",
+      "to": "/answers/binh-duong-furniture-exporter-buyer-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

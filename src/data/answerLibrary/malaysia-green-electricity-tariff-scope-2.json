@@ -1,0 +1,57 @@
+{
+  "slug": "malaysia-green-electricity-tariff-scope-2",
+  "q": "Does subscribing to Malaysia's Green Electricity Tariff lower my market based Scope 2?",
+  "title": "Malaysia green tariff: Scope 2 effect",
+  "short": "It can, for the kWh subscribed, if the renewable attributes are allocated and retired for your account and not claimed again. The tariff lets customers in Peninsular Malaysia pay extra for renewable supplied energy. Keep the subscription, the monthly kWh and the certificate or allocation records as evidence.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Electronics, glove, medical device and other manufacturers in Penang, Kedah, Selangor and Johor",
+  "sections": [
+    {
+      "h": "What to check",
+      "ul": [
+        "That certificates or attribute statements are issued and retired in your name.",
+        "That subscribed kWh match the reporting period.",
+        "That the same attributes are not counted by the utility for others."
+      ]
+    },
+    {
+      "h": "How to report",
+      "p": [
+        "Market based: subscribed kWh at zero, the rest at a residual or grid figure. Location based: all grid kWh at the Peninsular grid factor, unchanged."
+      ]
+    },
+    {
+      "h": "Alternatives",
+      "p": [
+        "Rooftop solar and corporate renewable supply schemes may give stronger additionality claims, which some customers prefer. Check the current scheme rules."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record; green tariff kWh and certificates come from your subscription records.",
+  "links": [
+    {
+      "label": "Malaysia renewable certificates",
+      "to": "/answers/malaysia-renewable-energy-certificates-scope-2"
+    },
+    {
+      "label": "Malaysia grid factor by region",
+      "to": "/answers/malaysia-grid-emission-factor-by-region"
+    },
+    {
+      "label": "Penang chip assembly Scope 2",
+      "to": "/answers/penang-semiconductor-assembly-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

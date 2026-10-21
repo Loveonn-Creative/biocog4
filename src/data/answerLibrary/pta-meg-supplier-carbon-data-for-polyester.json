@@ -1,0 +1,61 @@
+{
+  "slug": "pta-meg-supplier-carbon-data-for-polyester",
+  "q": "What PTA and MEG carbon data does a polyester yarn maker need from its suppliers?",
+  "title": "PTA and MEG data for polyester makers",
+  "short": "Ask each supplier for a cradle to gate figure per tonne, with year and boundary. By chemistry, one kilogram of polyester needs about 0.865 kg of PTA and 0.323 kg of MEG, so the two raw material figures carry most of a polyester chip or yarn footprint before your own spinning energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Polyester chip, filament and staple fibre makers in Gujarat, Maharashtra and Silvassa, and the textile buyers asking them",
+  "sections": [
+    {
+      "h": "Why the quantities are fixed",
+      "p": [
+        "Polyester is made from terephthalic acid and ethylene glycol, losing water as the chain forms. That fixes the inputs at about 0.865 kg PTA and 0.323 kg MEG per kg of polymer, plus small catalyst and additive amounts."
+      ]
+    },
+    {
+      "h": "What to ask for",
+      "ul": [
+        "Cradle to gate kg CO2e per tonne for each grade, with the year.",
+        "Whether captive power and steam are included and how co-products were allocated.",
+        "Any recycled or bio based share, with its certificate."
+      ]
+    },
+    {
+      "h": "Then add your own",
+      "p": [
+        "Add polymerisation, melt spinning and texturising energy from your own bills, per tonne of yarn sold, and report the raw material share separately so a buyer can see where the figure comes from."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your PTA, MEG, fuel and electricity invoices into a dated, fingerprinted record, so the quantities behind your polyester figure can be traced back to the documents behind them.",
+  "links": [
+    {
+      "label": "Polyester texturising energy",
+      "to": "/answers/polyester-texturising-electricity-per-kg-yarn"
+    },
+    {
+      "label": "Recycled polyester yarn",
+      "to": "/answers/recycled-polyester-yarn-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Refinery allocation",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

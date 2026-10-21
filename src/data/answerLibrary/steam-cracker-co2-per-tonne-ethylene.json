@@ -1,0 +1,57 @@
+{
+  "slug": "steam-cracker-co2-per-tonne-ethylene",
+  "q": "How much CO2 does a naphtha steam cracker emit per tonne of ethylene?",
+  "title": "Steam cracker: CO2 per tonne ethylene",
+  "short": "IPCC Tier 1 defaults put a naphtha cracker at about 1.73 tonnes of CO2 per tonne of ethylene and an ethane cracker at about 0.95, mostly from furnace fuel. A real plant should use its own fuel gas meters and analysis, since furnace efficiency and fuel mix move the figure a lot.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Petrochemical plants at Haldia, Dahej and Jamnagar, and polymer buyers asking for upstream figures",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Cracking furnaces burning the plant's own methane rich fuel gas, often the largest share.",
+        "Decoking and flaring.",
+        "Steam and power from captive plants."
+      ]
+    },
+    {
+      "h": "Measured beats default",
+      "p": [
+        "Use metered fuel gas with its composition, as for any refinery gas, and add bought power and steam. The IPCC defaults are only for checking or when nothing is measured."
+      ]
+    },
+    {
+      "h": "Sharing it across products",
+      "p": [
+        "A cracker makes ethylene, propylene, butadiene and pyrolysis gasoline together. Split emissions by mass or energy, say which, and use the same rule every year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Refinery fuel gas factor",
+      "to": "/answers/refinery-fuel-gas-co2-factor"
+    },
+    {
+      "label": "Polymer resin factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Jubail polyethylene figure",
+      "to": "/answers/jubail-polyethylene-buyer-scope-3-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

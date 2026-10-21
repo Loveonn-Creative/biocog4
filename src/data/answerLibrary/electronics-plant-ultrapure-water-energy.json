@@ -1,0 +1,58 @@
+{
+  "slug": "electronics-plant-ultrapure-water-energy",
+  "q": "How much does ultrapure water add to an electronics plant's energy and emissions?",
+  "title": "Ultrapure water: energy and CO2",
+  "short": "It adds electricity for pumps, reverse osmosis, electrodeionisation, UV and recirculation, which run all day. Sub meter the water plant if you can; otherwise estimate from motor ratings and hours and label it. It is usually a few percent of a fab's power but grows with recirculation loops.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Semiconductor, display and electronics plants in Penang, Kulim and India's semiconductor parks",
+  "sections": [
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "High pressure pumps for reverse osmosis.",
+        "Electrodeionisation and UV units.",
+        "Continuous recirculation to keep water pure.",
+        "Wastewater treatment and reclaim."
+      ]
+    },
+    {
+      "h": "How to measure",
+      "p": [
+        "Sub meters on the water plant feeders give kWh directly. Multiply by the grid factor, and divide by cubic metres produced for a per unit figure."
+      ]
+    },
+    {
+      "h": "Where to save",
+      "p": [
+        "Variable speed pumps, higher water reclaim and right sized loops cut both water and kWh."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record per plant; for sites outside India the grid factor is entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "ZLD plant energy per kl",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    },
+    {
+      "label": "Pharma cleanroom HVAC",
+      "to": "/answers/pharma-cleanroom-hvac-emissions-allocation"
+    },
+    {
+      "label": "Penang chip assembly Scope 2",
+      "to": "/answers/penang-semiconductor-assembly-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

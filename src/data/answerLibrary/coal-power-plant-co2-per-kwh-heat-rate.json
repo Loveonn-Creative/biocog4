@@ -1,0 +1,66 @@
+{
+  "slug": "coal-power-plant-co2-per-kwh-heat-rate",
+  "q": "How do I calculate a coal power plant's CO2 per kWh from its heat rate?",
+  "title": "Coal power: CO2 per kWh from heat rate",
+  "short": "Multiply the heat rate by the coal's CO2 per unit of energy. A plant at 2,400 kcal per kWh gross, burning coal near 95 kg CO2 per GJ, emits about 0.95 kg CO2 per kWh generated, and about 1.0 per kWh sent out once auxiliary power is taken off.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Captive and utility coal power plants in Chhattisgarh and elsewhere, and units buying captive power from them",
+  "sections": [
+    {
+      "h": "The formula",
+      "ul": [
+        "kcal per kWh x 4.1868 = kJ per kWh; divide by a million for GJ.",
+        "GJ per kWh x kg CO2 per GJ of your coal = kg CO2 per kWh generated.",
+        "Divide by (1 minus auxiliary share) for kWh sent out."
+      ]
+    },
+    {
+      "h": "Use your own coal data",
+      "p": [
+        "Indian coal varies widely in ash and energy. A lab measured carbon content or a factor tied to your coal's calorific value beats a single default."
+      ]
+    },
+    {
+      "h": "Where this figure is used",
+      "p": [
+        "Captive users should report the plant's actual figure, not the grid's 0.710. The CEA database also lists station wise figures for utility plants."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "2,400 kcal/kWh x 4.1868 = 10,048 kJ = 0.01005 GJ per kWh",
+      "0.01005 GJ x 95 kg CO2/GJ = 0.955 kg CO2 per kWh generated",
+      "With 7% auxiliary use: 0.955 / 0.93 = 1.03 kg CO2 per kWh sent out"
+    ],
+    "note": "Heat rate, coal factor and auxiliary share are assumptions for illustration."
+  },
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Captive coal power Scope 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Which grid factor",
+      "to": "/answers/dvc-supplied-plant-which-grid-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

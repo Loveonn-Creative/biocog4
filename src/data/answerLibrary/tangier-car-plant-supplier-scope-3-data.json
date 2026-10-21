@@ -1,0 +1,62 @@
+{
+  "slug": "tangier-car-plant-supplier-scope-3-data",
+  "q": "What carbon data do car plants in Tangier and Kenitra ask their suppliers for?",
+  "title": "Moroccan car plants: supplier carbon asks",
+  "short": "Typically Scope 1 and 2 totals with year and method, the renewable share of your electricity, a product footprint for the parts you supply, and a reduction plan. Build them from your own bills and your material suppliers' figures, and answer every portal with the same numbers.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Tier 1 and tier 2 suppliers in the Tangier Automotive City, Tanger Med zones and Kenitra",
+  "sections": [
+    {
+      "h": "Typical asks",
+      "ul": [
+        "Scope 1 and 2 for the last full year.",
+        "Electricity sources: grid, private renewable supply, certificates.",
+        "kg CO2e per part, with steel, aluminium, copper and plastics shares.",
+        "Targets and actions."
+      ]
+    },
+    {
+      "h": "Where the figures come from",
+      "p": [
+        "Electricity and fuel bills for your own share; material invoices and supplier figures for the rest. Use Morocco's grid factor for location based Scope 2."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "p": [
+        "Missing material data and no renewable evidence. A part figure without a material source is the first thing a car maker's team will question."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Morocco grid factor",
+      "to": "/answers/morocco-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Tangier wiring harness data",
+      "to": "/answers/tangier-wiring-harness-exporter-buyer-data"
+    },
+    {
+      "label": "Tangier auto parts and CBAM",
+      "to": "/answers/tangier-med-auto-parts-which-need-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

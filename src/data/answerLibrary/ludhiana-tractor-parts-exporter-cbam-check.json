@@ -1,0 +1,60 @@
+{
+  "slug": "ludhiana-tractor-parts-exporter-cbam-check",
+  "q": "Do tractor parts exported from Ludhiana need CBAM data?",
+  "title": "Tractor parts exports: CBAM check",
+  "short": "Mostly no. Parts classified as parts of tractors or motor vehicles, under heading 8708, are not CBAM goods. Check each line's CN code: bolts and nuts under 7318 and some other steel articles under 7326 are covered, so a mixed shipment can still need embedded emissions for a few lines.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Tractor and agricultural implement part makers in Ludhiana, Phagwara and Jalandhar exporting to the EU",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Take the CN code your EU importer declares for each line.",
+        "Compare it with Annex I of the CBAM Regulation.",
+        "Flag covered lines and prepare embedded emissions only for those."
+      ]
+    },
+    {
+      "h": "Often covered",
+      "ul": [
+        "Fasteners such as bolts, nuts and washers (7318).",
+        "Other articles of iron or steel (7326), such as some brackets.",
+        "Steel structures (7308)."
+      ]
+    },
+    {
+      "h": "Often not covered",
+      "ul": [
+        "Parts of tractors and vehicles (8708).",
+        "Iron castings classed under 7325."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your invoices into dated, fingerprinted records and its CBAM check flags which goods fall under the regulation. Senseible does not classify goods for customs or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Bajio auto parts and CBAM",
+      "to": "/answers/bajio-auto-parts-shipment-cbam-goods"
+    },
+    {
+      "label": "Steel forgings and CBAM",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Fasteners CN 7318",
+      "to": "/answers/monterrey-steel-fasteners-cbam-cn-7318"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

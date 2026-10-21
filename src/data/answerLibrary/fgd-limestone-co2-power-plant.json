@@ -1,0 +1,57 @@
+{
+  "slug": "fgd-limestone-co2-power-plant",
+  "q": "Does a flue gas desulphurisation unit add CO2 at a coal power plant?",
+  "title": "FGD limestone: the extra CO2",
+  "short": "Yes, a little. Wet limestone scrubbers release the carbon in the limestone: 0.44 tonnes of CO2 per tonne of limestone, or about 0.69 tonnes per tonne of SO2 removed. It is small next to the coal, but it is a real process emission and should be reported, along with the scrubber's power use.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Thermal power plants fitting FGD under India's SO2 norms, and auditors checking their inventories",
+  "sections": [
+    {
+      "h": "The chemistry",
+      "p": [
+        "Limestone (calcium carbonate) reacts with SO2 and oxygen to make gypsum and releases CO2. Each 100 kg of carbonate gives 44 kg of CO2."
+      ]
+    },
+    {
+      "h": "What to report",
+      "ul": [
+        "Process CO2: tonnes of limestone used x purity x 0.44.",
+        "Electricity for fans, pumps and mills inside the unit, already in auxiliary consumption.",
+        "Gypsum sold to cement or board makers carries no share of the CO2."
+      ]
+    },
+    {
+      "h": "Scale",
+      "p": [
+        "For typical Indian coal with low sulphur, the scrubber adds well under 2 percent to the plant's CO2, but leaving it out understates Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Coal power CO2 per kWh",
+      "to": "/answers/coal-power-plant-co2-per-kwh-heat-rate"
+    },
+    {
+      "label": "Fly ash allocation",
+      "to": "/answers/fly-ash-from-power-plant-carbon-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

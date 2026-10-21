@@ -1,0 +1,61 @@
+{
+  "slug": "kolhapur-foundry-castings-buyer-carbon-data",
+  "q": "What carbon data do tractor, pump and engine makers ask Kolhapur foundries for?",
+  "title": "Kolhapur castings: buyer carbon asks",
+  "short": "Mostly kg CO2e per tonne of good castings, the melting route, and your electricity and fuel totals for the year. Some ask for the pig iron and scrap mix. Work from melting kWh or coke, add moulding and fettling power, and divide by good castings, not liquid metal.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Grey and ductile iron foundries in Kolhapur, Shiroli and Gokul Shirgaon supplying tractor, pump, compressor and engine makers",
+  "sections": [
+    {
+      "h": "Build the figure",
+      "ul": [
+        "Melting: induction kWh x 0.710 kg CO2 per kWh, or coke x 3.02 kg CO2 per kg for cupolas.",
+        "Moulding, sand plant, fettling and compressors from the rest of the bill.",
+        "Charge mix: pig iron carries much more upstream carbon than scrap."
+      ]
+    },
+    {
+      "h": "Divide by good castings",
+      "p": [
+        "Rejections and runners and risers are remelted, so divide by tonnes dispatched. A yield change alone can move the figure by a fifth."
+      ]
+    },
+    {
+      "h": "What buyers do next",
+      "p": [
+        "OEMs put supplier figures into their own product footprints and targets. Expect the request yearly and keep the same method."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh, plus coke and metal invoices, into a dated, fingerprinted record, so a per tonne figure traces back to the bills.",
+  "links": [
+    {
+      "label": "Foundry per tonne good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Charge mix: pig iron vs scrap",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "Green loan for a Kolhapur foundry",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

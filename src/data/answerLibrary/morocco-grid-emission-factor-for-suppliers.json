@@ -1,0 +1,55 @@
+{
+  "slug": "morocco-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a factory in Morocco use?",
+  "title": "Morocco grid factor for suppliers",
+  "short": "Use the latest national figure from an official or IEA source for the year you report. Morocco's grid still relies heavily on coal, so it sits around 0.6 to 0.7 kg CO2 per kWh, though wind and solar are pulling it down. State the source, year and whether it covers CO2 only.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Automotive, textile, phosphate and food suppliers in Morocco reporting Scope 2 to European buyers",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Grid kWh from bills x the national factor for the year. Use the same source every year and update when a new edition comes out."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Private renewable supply contracts or certificates with matching attributes can lower the market based figure. Without them, use a residual or the grid factor and say which."
+      ]
+    },
+    {
+      "h": "Why a range here",
+      "p": [
+        "Factors differ by edition and by whether they include losses and other gases. The range above is indicative; your report should use one named figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into a dated, fingerprinted record; for factories outside India the grid factor is entered from the official source and labelled.",
+  "links": [
+    {
+      "label": "Morocco renewable options",
+      "to": "/answers/morocco-auto-supplier-renewable-electricity-options"
+    },
+    {
+      "label": "Turkey grid factor",
+      "to": "/answers/turkey-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Moroccan car plant supplier asks",
+      "to": "/answers/tangier-car-plant-supplier-scope-3-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

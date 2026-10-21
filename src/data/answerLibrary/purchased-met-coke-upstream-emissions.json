@@ -1,0 +1,57 @@
+{
+  "slug": "purchased-met-coke-upstream-emissions",
+  "q": "What emissions should I report for metallurgical coke I buy from a coke maker?",
+  "title": "Bought coke: combustion and upstream",
+  "short": "Two parts. Burning it in your cupola, furnace or kiln is your Scope 1, about 3.02 kg CO2 per kg with the IPCC default for coke oven coke. Making it, in the supplier's coke ovens, is your Scope 3; ask the coke maker for that figure rather than guessing it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundries, ferro alloy plants and mini steel units buying merchant coke from Haldia, Durgapur, Dhanbad and import terminals",
+  "sections": [
+    {
+      "h": "Scope 1: what you burn",
+      "ul": [
+        "Tonnes of coke used, from purchase and stock records.",
+        "Carbon content from the supplier's analysis, or the IPCC default of 3.02 kg CO2 per kg.",
+        "Coke that stays in the product, such as carbon in pig iron, is subtracted only with a mass balance."
+      ]
+    },
+    {
+      "h": "Scope 3: how it was made",
+      "p": [
+        "Coke ovens burn coal and part of their own gas and lose some to flaring. Ask the supplier for kg CO2e per tonne of coke at their gate, with year and boundary. Imported coke also carries shipping."
+      ]
+    },
+    {
+      "h": "For CBAM goods",
+      "p": [
+        "If you make pig iron, ferro alloys or castings covered by CBAM, coke burnt on site is a direct emission, and bought coke is not a precursor under CBAM."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Cupola coke CO2",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    },
+    {
+      "label": "Coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    },
+    {
+      "label": "Durgapur steel CBAM figure",
+      "to": "/answers/durgapur-steel-products-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

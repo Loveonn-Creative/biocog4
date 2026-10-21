@@ -1,0 +1,57 @@
+{
+  "slug": "ncr-coal-ban-industrial-fuel-switch-emissions",
+  "q": "How does the NCR ban on coal in industry change my unit's emissions report?",
+  "title": "NCR coal ban: fuel switch reporting",
+  "short": "Your Scope 1 changes with the fuel. Since January 2023 most industrial units in the NCR may use only fuels on the air quality commission's approved list, such as piped natural gas or biomass. Recalculate from the new fuel's invoices, keep biomass CO2 separate, and note the change in your base year.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factories in Bhiwadi, Manesar, Faridabad, Ghaziabad and Sonipat that switched boilers, furnaces or dryers away from coal",
+  "sections": [
+    {
+      "h": "What to recalculate",
+      "ul": [
+        "PNG: volume or energy from the gas bill x the natural gas factor.",
+        "Biomass: report the CO2 as biogenic, outside the scopes, but count methane and nitrous oxide in Scope 1.",
+        "Electric heating: the extra kWh go into Scope 2 at 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Base year",
+      "p": [
+        "If coal was in your base year, show the switch as a real change, not a restatement. Buyers and lenders want to see the before and after with the invoices behind both."
+      ]
+    },
+    {
+      "h": "Check the list",
+      "p": [
+        "The approved fuel list and exemptions can change, so check the commission's current directions before buying new equipment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads PNG, biomass, coal and electricity invoices into a dated, fingerprinted record, so the before and after of a fuel switch can be traced back to the bills.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "PNG bill to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Furnace oil to PNG",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

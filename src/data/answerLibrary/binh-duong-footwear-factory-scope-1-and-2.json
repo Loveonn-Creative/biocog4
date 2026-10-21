@@ -1,0 +1,61 @@
+{
+  "slug": "binh-duong-footwear-factory-scope-1-and-2",
+  "q": "How should a footwear factory in Binh Duong calculate its Scope 1 and 2?",
+  "title": "Vietnam footwear plant: Scope 1 and 2",
+  "short": "Scope 2 is grid electricity times Vietnam's grid factor. Scope 1 is fuel for boilers, heat setting ovens and forklifts, plus refrigerant leaks from chillers. Coal or biomass boilers are common, so use fuel invoices, keep biomass CO2 separate, and report each source with its quantity.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Athletic and leather footwear factories in Binh Duong, Dong Nai and Long An supplying global brands",
+  "sections": [
+    {
+      "h": "Scope 1",
+      "ul": [
+        "Boiler fuel: coal, biomass pellets, LPG or diesel, from invoices.",
+        "Forklift and genset fuel.",
+        "Refrigerant top ups for chillers and air conditioning, by gas type."
+      ]
+    },
+    {
+      "h": "Scope 2",
+      "p": [
+        "Grid kWh x Vietnam's grid factor for the year. Rooftop solar used on site lowers grid kWh; certificates or a direct PPA affect market based only."
+      ]
+    },
+    {
+      "h": "Then per pair",
+      "p": [
+        "Brands ask for per pair figures. Split plant totals by pairs made, or by line hours if products differ a lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Vietnam grid factor",
+      "to": "/answers/vietnam-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Footwear allocation per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    },
+    {
+      "label": "Vietnam direct PPA",
+      "to": "/answers/vietnam-direct-ppa-factory-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

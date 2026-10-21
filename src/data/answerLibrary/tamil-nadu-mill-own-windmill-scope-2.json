@@ -1,0 +1,61 @@
+{
+  "slug": "tamil-nadu-mill-own-windmill-scope-2",
+  "q": "How does a Tamil Nadu mill report power from its own windmills in Scope 2?",
+  "title": "Own windmills: Scope 2 reporting",
+  "short": "Report twice. Location based, every kWh you take from the grid uses 0.710 kg CO2 per kWh, including wheeled wind units. Market based, the wind units credited to your bill count as zero if you keep the renewable attributes and do not sell them as certificates. Keep the wheeling and banking statements.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Spinning, weaving and home textile mills around Coimbatore, Tiruppur, Karur and Tirunelveli that own wind turbines",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Total grid kWh consumed x 0.710. Wheeled units still arrive through the grid, so the location based figure does not change."
+      ]
+    },
+    {
+      "h": "Market based",
+      "ul": [
+        "Wind kWh adjusted against your consumption in the period, from the utility's statement, at zero.",
+        "Remaining kWh at the residual or grid figure.",
+        "No double claim: if you sell certificates for those units, you cannot also count them."
+      ]
+    },
+    {
+      "h": "Banking",
+      "p": [
+        "Banked units used in a later month count in the month they are adjusted. Match statements to bills month by month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, so the location based figure traces back to each bill; wind adjustments come from your statements.",
+  "links": [
+    {
+      "label": "Wind open access Scope 2",
+      "to": "/answers/chennai-data-centre-wind-open-access-scope-2"
+    },
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Green open access charges",
+      "to": "/answers/green-open-access-charges-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

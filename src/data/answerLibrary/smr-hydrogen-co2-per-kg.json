@@ -1,0 +1,66 @@
+{
+  "slug": "smr-hydrogen-co2-per-kg",
+  "q": "How much CO2 does making hydrogen from natural gas release per kilogram?",
+  "title": "Grey hydrogen: CO2 per kg",
+  "short": "The reforming chemistry alone releases 5.5 kg of CO2 per kg of hydrogen. Adding the gas burnt to heat the reformer usually takes the total to roughly 9 to 10 kg per kg. Use your own gas meters for both feed and fuel rather than a published average.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Refineries, fertiliser plants and chemical units running steam methane reformers, and buyers comparing grey and green hydrogen",
+  "sections": [
+    {
+      "h": "Where the CO2 comes from",
+      "ul": [
+        "Feed: methane and steam become hydrogen and CO2. Per kg of hydrogen that is 5.5 kg of CO2, fixed by chemistry.",
+        "Fuel: natural gas or off gas burnt to heat the reformer tubes adds the rest.",
+        "Power and steam bought in add indirect emissions."
+      ]
+    },
+    {
+      "h": "How to calculate yours",
+      "p": [
+        "Take metered feed gas plus fuel gas, convert to energy with the gas analysis, multiply by the gas factor, and divide by tonnes of hydrogen made. Credit only CO2 that is captured and stored or sold into a product with contracts."
+      ]
+    },
+    {
+      "h": "Comparing with green hydrogen",
+      "p": [
+        "India's Green Hydrogen Standard sets 2 kg CO2e per kg as the threshold, so grey hydrogen sits several times above it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Feed CO2: 5.5 kg per kg H2",
+      "Reformer fuel: about 3.5 to 4.5 kg per kg H2 (assumed)",
+      "Total: about 9 to 10 kg CO2 per kg H2"
+    ],
+    "note": "The fuel share depends on the plant; use your own meters."
+  },
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "India green hydrogen threshold",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "Hydrogen from grid power",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "Petcoke gasification CO2",
+      "to": "/answers/petcoke-gasification-syngas-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

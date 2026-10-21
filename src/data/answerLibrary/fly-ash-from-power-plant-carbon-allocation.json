@@ -1,0 +1,57 @@
+{
+  "slug": "fly-ash-from-power-plant-carbon-allocation",
+  "q": "Does fly ash from a coal power plant carry any of the plant's emissions?",
+  "title": "Fly ash: does it carry plant emissions?",
+  "short": "Usually almost none. Many product footprint rules and EPD programmes treat fly ash as a waste or a low value by product, so only its collection, drying, grinding and transport are counted. Some use economic allocation, which adds a small share, so ask what rule a cement or brick supplier used.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement, brick and block makers buying fly ash from Korba and other thermal plants, and their buyers",
+  "sections": [
+    {
+      "h": "Common practice",
+      "ul": [
+        "Fly ash as waste: zero share of combustion emissions, only handling and transport counted.",
+        "Fly ash as co product: a share by economic value, small because ash sells cheaply.",
+        "Never by mass, which would load most of the plant's CO2 onto ash."
+      ]
+    },
+    {
+      "h": "What to count yourself",
+      "p": [
+        "Trucking or rail from the plant to your site, any drying, and grinding power. These are real and often larger than people expect over long distances."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Fly ash lowers clinker or clay use, so blended cement and fly ash bricks often show lower figures. Make sure the supplier's rule is stated so the comparison is fair."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads freight, fuel and electricity invoices into a dated, fingerprinted record, so the transport and processing behind your fly ash figure can be traced back to the documents.",
+  "links": [
+    {
+      "label": "Fly ash brick footprint",
+      "to": "/answers/fly-ash-brick-carbon-footprint-per-1000"
+    },
+    {
+      "label": "Truck freight factor India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Coal power CO2 per kWh",
+      "to": "/answers/coal-power-plant-co2-per-kwh-heat-rate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

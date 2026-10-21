@@ -1,0 +1,66 @@
+{
+  "slug": "opencast-coal-mine-methane-and-diesel",
+  "q": "What emissions should an opencast coal mine report besides diesel?",
+  "title": "Opencast coal mine: diesel and methane",
+  "short": "Diesel for dumpers, shovels and drills is usually the largest on site source. Methane released from the coal seam is the second: the IPCC Tier 1 average for surface mining is 1.2 cubic metres per tonne mined, about 24 kg CO2e. Add explosives, grid power for conveyors, and any coal fires.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Opencast coal mines and contractors in Korba, Talcher and Singrauli, and power plants reporting upstream coal emissions",
+  "sections": [
+    {
+      "h": "Sources to count",
+      "ul": [
+        "Diesel: litres from fuel logs x 2.68 kg CO2 per litre.",
+        "Seam methane: tonnes mined x emission factor, measured where possible.",
+        "Explosives, mainly ammonium nitrate based, from consumption records.",
+        "Electricity for conveyors and pumps x 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Methane defaults",
+      "p": [
+        "IPCC 2006 gives low, average and high factors of 0.3, 1.2 and 2.0 cubic metres per tonne for surface mines, plus a small post mining amount. Convert at 0.67 kg per cubic metre and weight by the methane GWP."
+      ]
+    },
+    {
+      "h": "Contractors",
+      "p": [
+        "If a contractor runs the fleet, its diesel is the contractor's Scope 1 and the mine's Scope 3, unless the mine supplies and controls the fuel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: methane per tonne",
+    "lines": [
+      "1.2 m3 CH4 per tonne x 0.67 kg per m3 = 0.80 kg CH4",
+      "0.80 kg x 29.8 (AR6 fossil methane GWP100) = about 24 kg CO2e per tonne mined"
+    ],
+    "note": "Uses the IPCC average; a measured factor for your seam is better."
+  },
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer can be traced back to the documents behind it.",
+  "links": [
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Contractor diesel: which scope",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    },
+    {
+      "label": "Washery rejects as fuel",
+      "to": "/answers/coal-washery-rejects-power-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

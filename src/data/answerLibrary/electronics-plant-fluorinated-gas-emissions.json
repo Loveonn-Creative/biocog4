@@ -1,0 +1,64 @@
+{
+  "slug": "electronics-plant-fluorinated-gas-emissions",
+  "q": "How should an electronics plant report fluorinated gases used in etching and chamber cleaning?",
+  "title": "Electronics plants: fluorinated gases",
+  "short": "Count what is not destroyed. Gases such as CF4, C2F6, NF3 and SF6 are used in etch and clean steps; part reacts, part is broken down in abatement, and the rest escapes. IPCC 2006 gives default use and destruction rates, but purchase records and abatement data per tool give a far better figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wafer fabs, display makers and back end plants in Penang, Kulim, Singapore and India's new semiconductor parks",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ul": [
+        "Gas bought and drawn per tool, from purchase and cylinder records.",
+        "Share used up in the process, from the tool or IPCC defaults.",
+        "Share destroyed by point of use abatement, from tested efficiency.",
+        "Remaining emissions x the gas's GWP."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "These gases have global warming potentials thousands to tens of thousands of times CO2, so small leaks can rival a plant's electricity emissions."
+      ]
+    },
+    {
+      "h": "Don't forget",
+      "ul": [
+        "Heat transfer fluids and refrigerants.",
+        "Nitrous oxide used in some deposition steps.",
+        "By products formed in the process, such as CF4 from other gases."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads gas, refrigerant and electricity invoices into a dated, fingerprinted record, so the quantities behind each gas figure trace back to the documents.",
+  "links": [
+    {
+      "label": "SF6 switchgear leaks",
+      "to": "/answers/sf6-switchgear-leak-scope-1"
+    },
+    {
+      "label": "Penang chip assembly Scope 2",
+      "to": "/answers/penang-semiconductor-assembly-scope-2"
+    },
+    {
+      "label": "Refrigerant leaks Scope 1",
+      "to": "/answers/data-centre-chiller-refrigerant-leaks-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3 Industrial Processes",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

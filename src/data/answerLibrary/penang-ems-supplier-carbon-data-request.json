@@ -1,0 +1,62 @@
+{
+  "slug": "penang-ems-supplier-carbon-data-request",
+  "q": "What carbon data do global brands ask Penang electronics manufacturing suppliers for?",
+  "title": "Penang EMS: brand carbon requests",
+  "short": "Usually Scope 1 and 2 by site with year and method, renewable share, a target, and increasingly a product footprint for the assemblies you build. Build them from electricity and gas bills, refrigerant logs and component supplier data, and answer every portal with the same numbers.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Electronics manufacturing services and component suppliers in Penang and Kulim serving computing, medical and automotive brands",
+  "sections": [
+    {
+      "h": "Typical asks",
+      "ul": [
+        "Scope 1 and 2 per site.",
+        "Renewable electricity share and how it is sourced.",
+        "Science based or other targets.",
+        "Product footprint per board or assembly."
+      ]
+    },
+    {
+      "h": "Product figures",
+      "p": [
+        "Components, especially chips and PCBs, carry most of an assembly's footprint. Your own SMT and test energy is small but must be shown with its split."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Use one data set for all customers and update it yearly. Different numbers in different portals are the quickest way to lose trust."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity, fuel and refrigerant invoices into a dated, fingerprinted record per site, so the figures a brand asks for trace back to the bills behind them.",
+  "links": [
+    {
+      "label": "PCB assembly footprint",
+      "to": "/answers/pcb-assembly-carbon-footprint-per-board"
+    },
+    {
+      "label": "Vietnam electronics Scope 3",
+      "to": "/climate-intelligence/vietnam-electronics-supply-chain-scope-3-2026"
+    },
+    {
+      "label": "Penang chip assembly Scope 2",
+      "to": "/answers/penang-semiconductor-assembly-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
