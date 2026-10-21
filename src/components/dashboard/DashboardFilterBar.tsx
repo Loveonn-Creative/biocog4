@@ -1,7 +1,5 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Filter, RotateCcw } from 'lucide-react';
+import { RotateCcw } from 'lucide-react';
 import {
   DEFAULT_FILTERS,
   TIME_RANGE_LABELS,
@@ -22,7 +20,7 @@ interface Props {
 }
 
 const selectClass =
-  'h-9 rounded-md border border-input bg-background px-3 text-sm min-w-[9rem] focus:outline-none focus:ring-2 focus:ring-ring';
+  'h-9 min-w-0 rounded-lg border border-border bg-card px-2.5 text-[13px] focus:outline-none focus:ring-2 focus:ring-ring';
 
 export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCount, onChange, defaults = DEFAULT_FILTERS }: Props) => {
   const isDefault =
@@ -32,12 +30,7 @@ export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCou
     filters.category === defaults.category;
 
   return (
-    <Card className="mb-6">
-      <CardContent className="p-4 flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground shrink-0">
-          <Filter className="h-4 w-4" />
-          <span>View</span>
-        </div>
+    <div role="group" aria-label="Filter your emissions" className="flex flex-wrap items-center gap-2">
 
         <select
           aria-label="Time range"
@@ -94,10 +87,10 @@ export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCou
           ))}
         </select>
 
-        <div className="flex items-center gap-2 ml-auto">
-          <Badge variant="secondary" className="font-normal">
+        <div className="flex items-center gap-2">
+          <span className="text-[13px] text-muted-foreground tabular-nums">
             {matchedCount} of {totalCount} records
-          </Badge>
+          </span>
           {!isDefault && (
             <Button variant="ghost" size="sm" onClick={() => onChange(defaults)} className="gap-1">
               <RotateCcw className="h-3 w-3" />
@@ -105,7 +98,6 @@ export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCou
             </Button>
           )}
         </div>
-      </CardContent>
-    </Card>
+    </div>
   );
 };

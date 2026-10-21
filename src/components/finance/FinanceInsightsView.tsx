@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Lock } from "lucide-react";
 import { LockedBody } from "@/components/dashboard/Locked";
+import { FinancePath, type UploadedRecord } from "@/components/finance/FinancePath";
 import {
   CATEGORIES, CATEGORY_LABEL, ENERGY_CATEGORIES, KIND_LABEL, UNLOCKS_ON,
   energyCosts, moduleAccess, monthsCsv, monthsFrom, readiness,
@@ -36,13 +37,13 @@ const NextPlan = ({ plan, what }: { plan: string; what: string }) => (
 );
 
 const Shell = ({ id, title, line, access, children, actions }: { id: ModuleId; title: string; line: string; access: Access; plan: Plan; children?: React.ReactNode; actions?: React.ReactNode }) => (
-  <section aria-labelledby={`fin-${id}`} className="min-w-0 rounded-xl border border-border bg-card p-4 md:p-5">
+  <section aria-labelledby={`fin-${id}`} className="min-w-0 rounded-2xl border border-border bg-card p-5">
     <div className="flex flex-wrap items-start justify-between gap-3">
       <div className="min-w-0">
         <h3 id={`fin-${id}`} className="text-[15px] font-semibold">{title}</h3>
         <p className="mt-0.5 text-[13px] text-muted-foreground">{line}</p>
       </div>
-      {access === "read" ? <NextPlan plan="Scale" what="Date filters and CSV download" /> : access !== "locked" && actions}
+      {access !== "locked" && actions}
     </div>
     {access === "locked" ? <LockedBody plan={PLAN_NAME[UNLOCKS_ON[id]]} /> : children}
   </section>
@@ -209,20 +210,33 @@ function EnergyCosts({ months, access, plan }: { months: MonthRow[]; access: Acc
   );
 }
 
-export function FinanceInsightsView({ plan, records }: { plan: Plan; records: InsightRecord[] }) {
+// Built as custom work for Scale accounts, so they are listed, locked, on other plans only.
+const CUSTOM = ["Emissions per ₹ of revenue", "Working capital and EMI planning", "Climate-risk score"];
+
+export function FinanceInsightsView({ plan, records, uploads = [] }: { plan: Plan; records: InsightRecord[]; uploads?: UploadedRecord[] }) {
   const access = moduleAccess(plan);
   const months = useMemo(() => monthsFrom(records), [records]);
   return (
-    <section aria-labelledby="finance-title" className="space-y-3">
-      <div className="flex flex-wrap items-baseline justify-between gap-2 pt-2">
-        <h2 id="finance-title" className="text-[17px] font-semibold tracking-tight">Finance insights</h2>
-        <p className="text-[12.5px] text-muted-foreground">Private to your account · <Link to="/settings" className="underline underline-offset-4">Settings</Link></p>
-      </div>
+    <section aria-labelledby="finance-title" className="flex flex-col gap-3">
+      <h2 id="finance-title" className="text-lg font-semibold">Your money, from your statements</h2>
+      <FinancePath plan={plan} uploads={uploads} records={records} months={months} />
       <div className="grid items-start gap-3 lg:grid-cols-2 lg:gap-4">
         <CashFlow months={months} access={access.cashflow} plan={plan} />
         <Readiness records={records} access={access.readiness} plan={plan} />
       </div>
       <EnergyCosts months={months} access={access.energy} plan={plan} />
+      {plan !== "scale" && (
+        <ul className="grid divide-y divide-border overflow-hidden rounded-2xl border border-border bg-muted/30 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {CUSTOM.map((t) => (
+            <li key={t}>
+              <Link to="/pricing" className="flex items-center justify-between gap-3 px-5 py-4 text-[13.5px] hover:bg-secondary/50">
+                <span className="font-medium text-foreground/80">{t}</span>
+                <span className="shrink-0 text-[12.5px] text-muted-foreground">Opens on Scale</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }
