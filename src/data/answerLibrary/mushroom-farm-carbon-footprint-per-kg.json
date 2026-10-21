@@ -1,0 +1,70 @@
+{
+  "slug": "mushroom-farm-carbon-footprint-per-kg",
+  "q": "How do I calculate a mushroom farm's carbon footprint per kg?",
+  "title": "Mushroom farm carbon per kg",
+  "short": "Add electricity for air conditioning, humidifiers and cold rooms at 0.710 kg CO2 per kWh and generator or boiler fuel, then divide by kg of mushrooms sold. Climate-controlled growing rooms usually make electricity the main on-farm source; compost materials are bought-in inputs.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Button and oyster mushroom growers",
+  "sections": [
+    {
+      "h": "On the farm",
+      "ul": [
+        "Electricity for growing-room cooling, humidifiers and fans.",
+        "Boiler fuel for compost pasteurisation, where used.",
+        "Cold storage before dispatch."
+      ]
+    },
+    {
+      "h": "Inputs",
+      "ul": [
+        "Straw, manure and other compost materials.",
+        "Spawn.",
+        "Packaging."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Divide by kg of fresh mushrooms sold. Composting itself releases some methane and N2O; note it as a known gap if you do not calculate it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: button mushroom farm (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 20,000 kWh x 0.710 = 14,200 kg CO2",
+      "Diesel: 200 litres x 2.68 = 536 kg CO2",
+      "Mushrooms sold (kg): 10,000",
+      "Total: 14,736 / 10,000 = 1.474 kg CO2 per kg",
+      "Add compost materials and spawn for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your bills and dispatch records."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

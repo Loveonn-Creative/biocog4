@@ -1,0 +1,66 @@
+{
+  "slug": "electric-irrigation-pump-emissions-per-acre",
+  "q": "How do I calculate emissions from an electric irrigation pump per acre?",
+  "title": "Electric irrigation pump emissions",
+  "short": "Take the pump's kWh from a meter or the electricity bill, or estimate it from rated power and run hours, and multiply by 0.710 kg CO2 per kWh. Divide by acres irrigated. Unmetered farm connections need the estimate, labelled as one.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Farmers, FPOs and agri buyers building crop footprints",
+  "sections": [
+    {
+      "h": "Getting the kWh",
+      "ul": [
+        "A meter or the farm electricity bill is best.",
+        "Otherwise rated kW x run hours for the season, labelled an estimate.",
+        "Note the pump size in HP or kW and its age."
+      ]
+    },
+    {
+      "h": "Per acre and per tonne",
+      "p": [
+        "Divide by acres irrigated, then by yield for a per tonne figure. Groundwater depth changes pumping energy a lot between seasons."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Grid electricity for your own pump is Scope 2 for the farm. For a crop buyer it is part of the farm's Scope 3 data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 HP pump on 10 acres (illustrative inputs)",
+    "lines": [
+      "Pump: 7.5 kW x 600 hours a season = 4,500 kWh (rated power x hours, an estimate)",
+      "Emissions: 4,500 x 0.710 = 3,195 kg CO2",
+      "Over 10 acres: 3,195 / 10 = 319.5 kg CO2 an acre a season"
+    ],
+    "note": "Run hours are illustrative; record actual hours or meter readings."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Diesel pump to solar pump saving",
+      "to": "/answers/diesel-pump-to-solar-pump-co2-saving"
+    },
+    {
+      "label": "Borewell pumping energy per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

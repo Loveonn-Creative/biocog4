@@ -1,0 +1,67 @@
+{
+  "slug": "cinema-multiplex-carbon-footprint-per-screen",
+  "q": "How do I calculate the carbon footprint of a cinema multiplex per screen?",
+  "title": "Cinema multiplex carbon per screen",
+  "short": "Take the multiplex electricity from the bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre and any refrigerant top-ups, then divide by screens. Air conditioning is often the largest load, so report per screen and per show if you track shows.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Multiplex operators and single-screen cinema owners",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Central air conditioning for auditoriums and lobbies.",
+        "Projectors, sound systems and lighting.",
+        "Food court kitchens, often on LPG or electricity."
+      ]
+    },
+    {
+      "h": "Inside a mall",
+      "p": [
+        "If the cinema is a mall tenant, its own metered electricity is Scope 2, and the common-area share billed by the landlord is Scope 3, Category 8."
+      ]
+    },
+    {
+      "h": "Per screen",
+      "p": [
+        "Report per screen per month, and per show or per ticket sold if your booking system gives the count."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: six-screen multiplex (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "Diesel: 800 litres x 2.68 = 2,144 kg CO2",
+      "Screens: 6",
+      "Total: 66,044 / 6 = 11,007.3 kg CO2 per screen a month"
+    ],
+    "note": "Inputs are illustrative; add refrigerant top-ups from service invoices as their own line."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Retail store electricity from a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "Diesel generator: Scope 1 or 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

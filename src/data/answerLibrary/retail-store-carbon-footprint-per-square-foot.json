@@ -1,0 +1,71 @@
+{
+  "slug": "retail-store-carbon-footprint-per-square-foot",
+  "q": "How do I calculate the carbon footprint of a retail store per square foot?",
+  "title": "Retail store carbon per square foot",
+  "short": "Divide the store's electricity at 0.710 kg CO2 per kWh, plus generator diesel and refrigerant top-ups, by the carpet area in square feet. Report each store per month, and keep refrigerated stores apart, since chillers and freezers use far more energy per square foot.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Retail chains and franchise store owners",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity from the store meter.",
+        "Generator diesel during outages.",
+        "Refrigerant top-ups for AC and display chillers."
+      ]
+    },
+    {
+      "h": "Mall stores",
+      "p": [
+        "In a mall, your own metered electricity is Scope 2. Common-area charges are Scope 3, Category 8, unless you control that space."
+      ]
+    },
+    {
+      "h": "Per square foot",
+      "p": [
+        "Use carpet area from the lease, and compare stores of the same format, since grocery and apparel stores differ widely."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one apparel store (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 9,000 kWh x 0.710 = 6,390 kg CO2",
+      "Diesel: 100 litres x 2.68 = 268 kg CO2",
+      "Store area (sq ft): 3,000",
+      "Total: 6,658 / 3,000 = 2.219 kg CO2 per sq ft a month"
+    ],
+    "note": "Inputs are illustrative; use each store's bill and lease area."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Retail store electricity from a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "Supermarket refrigerant leak rate",
+      "to": "/answers/supermarket-refrigerant-leak-rate"
+    },
+    {
+      "label": "Office carbon per square foot",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "hired-tractor-emissions-which-scope",
+  "q": "Are emissions from a tractor I hire with its driver Scope 1 or Scope 3?",
+  "title": "Hired tractor emissions: which scope?",
+  "short": "Scope 3. A tractor hired with its operator from a custom hiring centre or a neighbour is run by them, so its diesel is in their Scope 1 and your Scope 3, Category 1, as a purchased service. Only tractors you own, or lease and operate yourself, are Scope 1.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Farmers, FPOs and agri companies using custom hiring centres",
+  "sections": [
+    {
+      "h": "The test",
+      "p": [
+        "Under operational control, a source is Scope 1 if you run it day to day: you drive it or employ the driver, and you maintain it. A hired tractor with its operator fails that test for the farmer."
+      ]
+    },
+    {
+      "h": "Case by case",
+      "ul": [
+        "Own tractor, own driver: Scope 1.",
+        "Tractor hired with operator: Scope 3, Category 1.",
+        "Tractor rented without operator, driven by you: Scope 1 under operational control.",
+        "Combine harvester hired per acre: Scope 3, Category 1."
+      ]
+    },
+    {
+      "h": "Data to ask for",
+      "p": [
+        "Hours or acres worked and the diesel used, from the hiring centre's log. Without litres, estimate from hours and label it an estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: hired ploughing (illustrative inputs)",
+    "lines": [
+      "Ploughing hired from a custom hiring centre: 8 hours",
+      "Diesel used, from the centre's log: 40 litres",
+      "40 x 2.68 = 107.2 kg CO2, reported in Scope 3, Category 1 (purchased service)"
+    ],
+    "note": "Hours and litres are illustrative; 2.68 kg CO2 per litre is the IPCC 2006 diesel default."
+  },
+  "senseible": "Senseible reads the invoices behind each line and files them as Scope 1, Scope 2 or Scope 3 evidence; the scope choice for contracted services follows the control test you record in your method note.",
+  "links": [
+    {
+      "label": "Tractor diesel emissions per acre",
+      "to": "/answers/tractor-diesel-emissions-per-acre"
+    },
+    {
+      "label": "Hired trucks: Scope 1 or 3?",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    },
+    {
+      "label": "Contractor diesel on my site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

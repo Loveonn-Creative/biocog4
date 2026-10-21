@@ -1,0 +1,73 @@
+{
+  "slug": "clinic-carbon-footprint-calculation",
+  "q": "How do I calculate the carbon footprint of a clinic or small hospital?",
+  "title": "Clinic carbon footprint calculation",
+  "short": "Start with the clinic electricity bill at 0.710 kg CO2 per kWh, add generator diesel at 2.68 kg per litre, AC refrigerant top-ups and any anaesthetic gases, then divide by patient visits. Medicines and supplies go in Scope 3 once the basics are in place.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Clinics, diagnostic centres and nursing homes",
+  "sections": [
+    {
+      "h": "Scope 1 and 2",
+      "ul": [
+        "Electricity from the bill: Scope 2.",
+        "Generator diesel and refrigerant top-ups: Scope 1.",
+        "Anaesthetic gases released, if surgery is done: Scope 1."
+      ]
+    },
+    {
+      "h": "Scope 3 to add next",
+      "ul": [
+        "Medicines and consumables, from purchase invoices.",
+        "Biomedical waste treatment, from the treatment facility.",
+        "Staff commuting, if you want the fuller picture."
+      ]
+    },
+    {
+      "h": "Per visit",
+      "p": [
+        "Divide by patient visits in the month from your billing system, and keep a separate figure for any inpatient beds."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one clinic (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 1,800 kWh x 0.710 = 1,278 kg CO2",
+      "Diesel: 40 litres x 2.68 = 107.2 kg CO2",
+      "Clinic total: 1,385.2 kg CO2 a month",
+      "Per patient visit at 1,200 visits: 1.154 kg CO2"
+    ],
+    "note": "Inputs are illustrative; use your own bills and visit count."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Anaesthetic gases in Scope 1",
+      "to": "/answers/anaesthetic-gases-scope-1-hospital"
+    },
+    {
+      "label": "Hospital medicines and supplies",
+      "to": "/answers/hospital-scope-3-medicines-and-supplies"
+    },
+    {
+      "label": "Biomedical waste emissions",
+      "to": "/answers/biomedical-waste-emissions-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

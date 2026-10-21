@@ -1,0 +1,70 @@
+{
+  "slug": "polyhouse-farming-emissions-per-kg",
+  "q": "How do I calculate the carbon footprint of polyhouse vegetables per kg?",
+  "title": "Polyhouse farming emissions per kg",
+  "short": "Add electricity for fans, cooling pads, fogging and pumps at 0.710 kg CO2 per kWh, diesel for generators, and fertiliser N2O, then divide by kg harvested. Spread the plastic film and structure over their working life as bought-in inputs.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Polyhouse and greenhouse growers",
+  "sections": [
+    {
+      "h": "Energy",
+      "ul": [
+        "Fans, cooling pads and foggers.",
+        "Fertigation and irrigation pumps.",
+        "Generator diesel during outages."
+      ]
+    },
+    {
+      "h": "Inputs",
+      "ul": [
+        "Fertiliser, for N2O with IPCC defaults.",
+        "Polyhouse film, replaced every few years.",
+        "Seedlings, coco peat and growing media."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Divide by kg harvested per crop cycle, and report each crop separately, since tomatoes and capsicum yield very differently."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one-acre polyhouse (one crop cycle, illustrative inputs)",
+    "lines": [
+      "Electricity: 5,000 kWh x 0.710 = 3,550 kg CO2",
+      "Diesel: 100 litres x 2.68 = 268 kg CO2",
+      "Produce harvested (kg): 30,000",
+      "Total: 3,818 / 30,000 = 0.127 kg CO2 per kg",
+      "Add fertiliser N2O and the plastic film spread over its life for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your bills and harvest records."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Fertiliser N2O emissions",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Electric irrigation pump emissions",
+      "to": "/answers/electric-irrigation-pump-emissions-per-acre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 4 AFOLU, Chapters 10 and 11",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

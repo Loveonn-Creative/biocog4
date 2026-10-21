@@ -1,0 +1,66 @@
+{
+  "slug": "truck-idling-emissions-per-hour",
+  "q": "How do I calculate emissions from trucks idling?",
+  "title": "Truck idling emissions per hour",
+  "short": "Multiply idling litres per hour by 2.68 kg CO2 per litre of diesel. Take the idle fuel rate from telematics or the engine data, not a guess, then multiply by idle hours from the tracker. Idling is already inside your fuel invoices, so report it as a sub-figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fleet owners and transport managers",
+  "sections": [
+    {
+      "h": "Getting the idle rate",
+      "ul": [
+        "Telematics or engine data that logs fuel while stationary.",
+        "A test: run the engine at idle for an hour and measure the tank drop.",
+        "Use an assumed rate only if labelled as one."
+      ]
+    },
+    {
+      "h": "Do not double count",
+      "p": [
+        "Idle fuel is part of the litres you already buy. Use the idling figure to target savings, not to add to the total."
+      ]
+    },
+    {
+      "h": "Cutting it",
+      "p": [
+        "Engine-off rules at loading bays, auto shut-off and cab heaters or coolers that do not need the engine all reduce idle hours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20-truck fleet (one month, illustrative inputs)",
+    "lines": [
+      "Idling at an assumed 2 litres per hour: 2 x 2.68 = 5.36 kg CO2 per hour",
+      "Fleet idling: 20 trucks x 2 hours a day x 25 days = 1,000 hours",
+      "Monthly idling: 1,000 x 5.36 = 5,360 kg CO2"
+    ],
+    "note": "The 2 litres per hour idle rate is an assumed input; replace it with your telematics figure."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Telematics or fuel invoices for fleets",
+      "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions"
+    },
+    {
+      "label": "Indian truck diesel mileage by size",
+      "to": "/answers/indian-truck-diesel-mileage-by-size"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

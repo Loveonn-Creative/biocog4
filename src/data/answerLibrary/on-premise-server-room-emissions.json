@@ -1,0 +1,71 @@
+{
+  "slug": "on-premise-server-room-emissions",
+  "q": "How do I calculate the emissions of an on-premise server room?",
+  "title": "On-premise server room emissions",
+  "short": "Meter the server room's total electricity, including its air conditioning and UPS losses, and multiply by 0.710 kg CO2 per kWh. Divide by racks, and compare with the IT load alone to get the PUE. Moving to colocation or cloud shifts it to Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "IT teams in offices, factories and hospitals",
+  "sections": [
+    {
+      "h": "What to meter",
+      "ul": [
+        "IT load at the UPS output: servers, storage, network.",
+        "Precision air conditioning for the room.",
+        "UPS and distribution losses."
+      ]
+    },
+    {
+      "h": "PUE",
+      "p": [
+        "Total server room kWh divided by IT kWh is the power usage effectiveness. Small rooms with comfort ACs often run well above purpose-built data centres."
+      ]
+    },
+    {
+      "h": "On-premise or outsourced",
+      "p": [
+        "Your own server room is Scope 2. Colocation and cloud services are Scope 3: Category 8 or Category 1, depending on the contract and who controls the space."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: four-rack server room (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 14,600 kWh x 0.710 = 10,366 kg CO2",
+      "Racks: 4",
+      "Total: 10,366 / 4 = 2,591.5 kg CO2 per rack a month",
+      "IT load 9,000 kWh, so cooling and losses add 62 percent (PUE about 1.6)"
+    ],
+    "note": "Inputs are illustrative; read the UPS output for IT load."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Colocation data centre with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Cloud carbon footprint",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "Data centre carbon usage effectiveness",
+      "to": "/answers/data-centre-cue-carbon-usage-effectiveness"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

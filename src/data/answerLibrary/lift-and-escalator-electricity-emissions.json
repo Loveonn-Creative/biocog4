@@ -1,0 +1,66 @@
+{
+  "slug": "lift-and-escalator-electricity-emissions",
+  "q": "How do I calculate the emissions from lifts and escalators in a building?",
+  "title": "Lift and escalator emissions",
+  "short": "Sub-meter the lifts and escalators, or estimate from rated motor power and run hours, then multiply kWh by 0.710 kg CO2 per kWh. They sit inside the building's Scope 2, so report them as a sub-figure when planning regenerative drives or escalator sleep modes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Building managers, malls and office landlords",
+  "sections": [
+    {
+      "h": "Getting the kWh",
+      "ul": [
+        "A sub-meter on the lift panel is best.",
+        "Otherwise rated power x hours x an assumed load factor, labelled an estimate.",
+        "Escalators run all day, so idle running often decides their use."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "The landlord who runs the lifts reports them in Scope 2. Tenants charged through maintenance fees report their share in Scope 3, Category 8."
+      ]
+    },
+    {
+      "h": "Cutting it",
+      "p": [
+        "Regenerative drives, standby when idle and slower speeds off-peak all cut lift and escalator electricity. Measure before and after with the same meter."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one office building (one month, illustrative inputs)",
+    "lines": [
+      "Lifts and escalators: 7,300 kWh x 0.710 = 5,183 kg CO2",
+      "Building electricity: 120,000 kWh",
+      "Share: 7,300 / 120,000 = 6.1 percent of the building load"
+    ],
+    "note": "Inputs are illustrative; use sub-meter readings where you have them."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Coworking space: Scope 2 or Category 8?",
+      "to": "/answers/coworking-space-emissions-scope-2-or-category-8"
+    },
+    {
+      "label": "Office carbon per square foot",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

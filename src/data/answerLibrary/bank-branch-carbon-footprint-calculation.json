@@ -1,0 +1,66 @@
+{
+  "slug": "bank-branch-carbon-footprint-calculation",
+  "q": "How do I calculate the carbon footprint of a bank branch?",
+  "title": "Bank branch carbon footprint",
+  "short": "Add each branch's electricity at 0.710 kg CO2 per kWh, generator diesel at 2.68 kg per litre and AC refrigerant top-ups. Sum branches for the operational footprint. Loans and investments are a separate figure, financed emissions in Scope 3 Category 15, not part of the branch number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Banks, NBFCs and cooperative banks with branch networks",
+  "sections": [
+    {
+      "h": "Per branch",
+      "ul": [
+        "Electricity from the branch bill, including ATMs on the same meter.",
+        "Diesel for the generator.",
+        "Refrigerant top-ups from AC service invoices."
+      ]
+    },
+    {
+      "h": "Rented premises",
+      "p": [
+        "Most branches are rented. If the bank runs the space and pays the bill, the electricity is Scope 2 under operational control."
+      ]
+    },
+    {
+      "h": "Keep financed emissions apart",
+      "p": [
+        "Emissions of borrowers and investee companies go in Category 15 under the PCAF method. Report them separately from the branch footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one branch (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 3,500 kWh x 0.710 = 2,485 kg CO2",
+      "Diesel: 150 litres x 2.68 = 402 kg CO2",
+      "Branch total: 2,887 kg CO2 a month, 34.6 t a year"
+    ],
+    "note": "Inputs are illustrative; repeat for each branch from its own bills."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Rented space electricity: Scope 2 or 3?",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    },
+    {
+      "label": "Office carbon per square foot",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

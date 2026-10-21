@@ -1,0 +1,67 @@
+{
+  "slug": "seed-processing-plant-emissions-per-tonne",
+  "q": "How do I calculate a seed processing plant's emissions per tonne?",
+  "title": "Seed processing plant per tonne",
+  "short": "Add electricity for cleaning, grading, treating and packing lines at 0.710 kg CO2 per kWh, dryer fuel and cold store power, then divide by tonnes of seed processed. Seed grown by contract farmers is a bought-in input, counted in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Seed companies and seed processing units",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity for pre-cleaners, graders, gravity separators and treaters.",
+        "Fuel for seed dryers.",
+        "Cold and conditioned storage for seed lots."
+      ]
+    },
+    {
+      "h": "Contract farmers",
+      "p": [
+        "Raw seed from contract growers is Scope 3, Category 1. Use farm-level figures where growers can provide them, and spend-based estimates otherwise, labelled as such."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes processed and passed, and report by crop, since vegetable seed and field crop seed differ a lot."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: seed plant (one season, illustrative inputs)",
+    "lines": [
+      "Electricity: 25,000 kWh x 0.710 = 17,750 kg CO2",
+      "Diesel: 2,000 litres x 2.68 = 5,360 kg CO2",
+      "Seed processed (tonnes): 2,000",
+      "Total: 23,110 / 2,000 = 11.6 kg CO2 per tonne"
+    ],
+    "note": "Inputs are illustrative; use the plant meter and processing records."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Grain dryer emissions per tonne",
+      "to": "/answers/grain-dryer-emissions-per-tonne"
+    },
+    {
+      "label": "FPO crop carbon footprint for a buyer",
+      "to": "/answers/fpo-crop-carbon-footprint-for-buyer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

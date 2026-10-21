@@ -1,0 +1,70 @@
+{
+  "slug": "waste-incineration-fossil-co2-calculation",
+  "q": "How do I calculate the CO2 from incinerating waste?",
+  "title": "Waste incineration fossil CO2",
+  "short": "Use IPCC Equation 5.1: waste burnt x dry matter share x carbon share x fossil carbon share x oxidation factor x 44/12. Only fossil carbon, mainly from plastics and synthetics, counts in the CO2 total; carbon in food, paper and wood is biogenic.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Waste generators, incinerator operators and hospitals",
+  "sections": [
+    {
+      "h": "The inputs",
+      "ul": [
+        "Tonnes of each waste type burnt, from the operator's records.",
+        "Dry matter, carbon and fossil carbon fractions: measured, or IPCC defaults.",
+        "Oxidation factor: 1.0 for incineration by IPCC default."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "If you run the incinerator, its CO2 is Scope 1. Waste sent to an outside incinerator or waste-to-energy plant is Scope 3, Category 5 for the generator."
+      ]
+    },
+    {
+      "h": "Biogenic carbon",
+      "p": [
+        "Food, paper and wood carbon is biogenic, so its CO2 is reported outside the scopes. Methane and N2O from incineration are small and calculated separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plastic waste incinerated (illustrative inputs)",
+    "lines": [
+      "Plastic waste incinerated: 10,000 kg",
+      "IPCC defaults for plastics: dry matter 100 percent, carbon 75 percent of dry matter, fossil carbon 100 percent, oxidation 1.0",
+      "Fossil CO2: 10,000 x 1.0 x 0.75 x 1.0 x 1.0 x 44/12 = 27,500 kg, about 27.5 t"
+    ],
+    "note": "Fractions are IPCC 2006 defaults for plastics (Volume 5, Table 2.4); use measured values where available."
+  },
+  "senseible": "Senseible keeps waste manifests, transport invoices and treatment bills as evidence on the Scope 3 trail and reads electricity bills for on-site equipment into Scope 2. Avoided emissions are never subtracted from the inventory.",
+  "links": [
+    {
+      "label": "Waste sent to waste-to-energy",
+      "to": "/answers/waste-sent-to-waste-to-energy-scope-3"
+    },
+    {
+      "label": "Plastic waste co-processing in kilns",
+      "to": "/answers/plastic-waste-coprocessing-cement-kiln-emissions"
+    },
+    {
+      "label": "Hazardous waste emissions from manifests",
+      "to": "/answers/hazardous-waste-emissions-from-manifest-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 Waste, Chapters 2 and 5",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

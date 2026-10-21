@@ -1,0 +1,67 @@
+{
+  "slug": "taxi-fleet-operator-emissions-per-km",
+  "q": "How do I calculate a taxi or cab fleet's emissions per km?",
+  "title": "Taxi fleet emissions per km",
+  "short": "Add CNG at 2.69 kg CO2 per kg, diesel at 2.68 and petrol at 2.31 kg per litre from fuel records, plus charging electricity for EVs at 0.710 kg per kWh. Divide by fleet km from trip logs. Corporate clients report their trips in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Taxi fleet owners and corporate cab operators",
+  "sections": [
+    {
+      "h": "Fuel by type",
+      "ul": [
+        "CNG from filling slips, in kg.",
+        "Diesel or petrol from fuel cards or invoices.",
+        "EV charging from depot meters or charging bills."
+      ]
+    },
+    {
+      "h": "Per km and per trip",
+      "p": [
+        "Divide by km driven, including dead km between trips. Report per passenger trip too, since clients ask for that."
+      ]
+    },
+    {
+      "h": "For your clients",
+      "p": [
+        "A company booking your cabs reports them in Scope 3, Category 6 for business travel or 7 for commuting. A per-km figure from real fuel helps them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: cab fleet (one month, illustrative inputs)",
+    "lines": [
+      "CNG: 9,000 kg x 2.69 = 24,210 kg CO2",
+      "Diesel: 2,000 litres x 2.68 = 5,360 kg CO2",
+      "Distance driven: 300,000 km",
+      "Per km: 29,570 / 300,000 = 0.0986 kg CO2"
+    ],
+    "note": "Inputs are illustrative; use fuel records and trip logs."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Night-shift cab emissions",
+      "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3"
+    },
+    {
+      "label": "Electric vs CNG three-wheeler",
+      "to": "/answers/electric-vs-cng-three-wheeler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

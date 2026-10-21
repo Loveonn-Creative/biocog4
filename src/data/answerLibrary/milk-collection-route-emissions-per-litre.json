@@ -1,0 +1,70 @@
+{
+  "slug": "milk-collection-route-emissions-per-litre",
+  "q": "How do I calculate milk collection transport emissions per litre?",
+  "title": "Milk collection route per litre",
+  "short": "Add the diesel used by collection vehicles on village routes at 2.68 kg CO2 per litre and divide by litres of milk collected. Own vehicles are Scope 1; hired route contractors are Scope 3, Category 4. Report per route to find long, lightly loaded runs.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dairy cooperatives, chilling centres and milk unions",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Diesel for collection trucks and tankers.",
+        "Route distance and litres collected per route.",
+        "Chilling at bulk milk coolers, as a separate electricity line."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Vehicles the dairy owns and runs are Scope 1. Route contractors paid per trip or per litre are Scope 3, Category 4."
+      ]
+    },
+    {
+      "h": "Per litre",
+      "p": [
+        "Divide by litres collected. Combine with chilling and plant figures for a farm-gate-to-plant transport and cooling number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: collection routes (one month, illustrative inputs)",
+    "lines": [
+      "Diesel: 4,500 litres x 2.68 = 12,060 kg CO2",
+      "Milk collected: 1,500,000 litres",
+      "Per litre: 12,060 / 1,500,000 = 0.00804 kg CO2"
+    ],
+    "note": "Inputs are illustrative; use fuel and collection records."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Bulk milk cooler electricity per litre",
+      "to": "/answers/bulk-milk-cooler-electricity-per-litre"
+    },
+    {
+      "label": "Dairy plant emissions per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Hired trucks: Scope 1 or 3?",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

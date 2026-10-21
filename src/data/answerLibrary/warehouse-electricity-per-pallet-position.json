@@ -1,0 +1,71 @@
+{
+  "slug": "warehouse-electricity-per-pallet-position",
+  "q": "How do I calculate warehouse emissions per pallet position?",
+  "title": "Warehouse emissions per pallet position",
+  "short": "Add the warehouse electricity at 0.710 kg CO2 per kWh, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Warehouse operators, 3PLs and their clients",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity for lights, racks, docks, offices and any cold rooms.",
+        "Diesel for generators and diesel forklifts.",
+        "Refrigerant top-ups for cold rooms and offices."
+      ]
+    },
+    {
+      "h": "Sharing with clients",
+      "p": [
+        "A 3PL can share the warehouse total among clients by occupied pallet positions or pallet-days. Clients report their share in Scope 3, Category 4 or 9."
+      ]
+    },
+    {
+      "h": "Per pallet position",
+      "p": [
+        "Report per pallet position per month, or per pallet-day stored, and say whether it is ambient, chilled or frozen."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ambient warehouse (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Diesel: 600 litres x 2.68 = 1,608 kg CO2",
+      "Pallet positions: 8,000",
+      "Total: 37,108 / 8,000 = 4.638 kg CO2 per pallet position a month"
+    ],
+    "note": "Inputs are illustrative; use the warehouse meter and position count."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Warehouse emissions allocation (3PL)",
+      "to": "/answers/warehouse-emissions-allocation-3pl"
+    },
+    {
+      "label": "Rented warehouse electricity",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    },
+    {
+      "label": "Diesel vs electric forklift",
+      "to": "/answers/diesel-forklift-vs-electric-forklift-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

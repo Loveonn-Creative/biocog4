@@ -1,0 +1,70 @@
+{
+  "slug": "broiler-farm-emissions-per-kg-live-weight",
+  "q": "How do I calculate a broiler farm's emissions per kg of live weight?",
+  "title": "Broiler farm emissions per kg",
+  "short": "Add the farm's electricity for fans, lights and water at 0.710 kg CO2 per kWh and LPG or coal for brooding at their default factors, then divide by kg of live weight sold. Feed is usually the largest share, so add it from the feed mill's figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Poultry integrators and contract broiler farmers",
+  "sections": [
+    {
+      "h": "On the farm",
+      "ul": [
+        "Electricity for fans, cooling pads, lights and water pumps.",
+        "LPG, coal or wood for brooding chicks.",
+        "Diesel for generators."
+      ]
+    },
+    {
+      "h": "Bought in",
+      "ul": [
+        "Feed, from the feed mill's footprint per tonne.",
+        "Day-old chicks from the hatchery.",
+        "Litter material."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "Divide by kg of live birds sold per batch. Report per batch, since summer batches use far more cooling power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one batch of 20,000 birds (illustrative inputs)",
+    "lines": [
+      "Electricity: 8,000 kWh x 0.710 = 5,680 kg CO2",
+      "LPG: 600 kg x 2.98 = 1,788 kg CO2",
+      "Live weight sold (kg): 44,000",
+      "Total: 7,468 / 44,000 = 0.170 kg CO2 per kg live weight",
+      "Add feed and chicks from supplier figures for the full figure"
+    ],
+    "note": "Inputs are illustrative; use your bills and batch records."
+  },
+  "senseible": "Senseible reads diesel, electricity and fertiliser invoices into dated, fingerprinted records that support a farm or crop figure. Field emissions such as N2O and methane are calculated with IPCC defaults in your method note and labelled as estimates, not measured values.",
+  "links": [
+    {
+      "label": "Poultry feed carbon per tonne",
+      "to": "/answers/poultry-feed-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Poultry processing carbon per kg",
+      "to": "/answers/poultry-processing-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

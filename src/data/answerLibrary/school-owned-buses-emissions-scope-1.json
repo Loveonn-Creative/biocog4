@@ -1,0 +1,62 @@
+{
+  "slug": "school-owned-buses-emissions-scope-1",
+  "q": "How do I calculate emissions from buses my school owns and runs?",
+  "title": "School-owned buses emissions",
+  "short": "Diesel for buses the school owns or leases and runs with its own drivers is Scope 1: multiply litres from fuel invoices by 2.68 kg CO2 per litre. Buses hired with drivers from a contractor are Scope 3, and parents' own trips are student commuting.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "School administrators and transport managers",
+  "sections": [
+    {
+      "h": "Which scope",
+      "ul": [
+        "School-owned or leased buses with school drivers: Scope 1.",
+        "Buses hired with drivers from a transport contractor: Scope 3, Category 1.",
+        "Private vans or cars arranged by parents: student commuting, outside Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "Data to keep",
+      "p": [
+        "Fuel invoices or fuel card statements per bus, route distance and the number of students on each route."
+      ]
+    },
+    {
+      "h": "Per student",
+      "p": [
+        "Divide by students carried, and report per route to see which routes use the most fuel per child."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ten school buses (one month, illustrative inputs)",
+    "lines": [
+      "Diesel: 3,000 litres x 2.68 = 8,040 kg CO2",
+      "Students carried: 600",
+      "Per student: 8,040 / 600 = 13.4 kg CO2 a month"
+    ],
+    "note": "Litres and student numbers are illustrative."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Student commuting in Scope 3",
+      "to": "/answers/student-commuting-scope-3-school"
+    },
+    {
+      "label": "School carbon footprint",
+      "to": "/answers/school-carbon-footprint-how-to-calculate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

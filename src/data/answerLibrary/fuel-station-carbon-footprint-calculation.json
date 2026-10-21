@@ -1,0 +1,62 @@
+{
+  "slug": "fuel-station-carbon-footprint-calculation",
+  "q": "How do I calculate the carbon footprint of a petrol pump or fuel station?",
+  "title": "Fuel station carbon footprint",
+  "short": "A fuel station's own footprint is its electricity for dispensers, lights and the convenience store at 0.710 kg CO2 per kWh, plus generator diesel. The fuel it sells is not its Scope 1: customers burning it fall under Scope 3, Category 11, for sold fuels.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fuel station dealers and oil marketing company outlets",
+  "sections": [
+    {
+      "h": "Scope 1 and 2",
+      "ul": [
+        "Electricity for dispensers, canopy lights, air compressors and the store.",
+        "Diesel used in the station generator.",
+        "Refrigerant top-ups in store chillers."
+      ]
+    },
+    {
+      "h": "Fuel sold",
+      "p": [
+        "The Scope 3 Standard puts the combustion of sold fuels in Category 11. For a dealer it is many times larger than the station's own footprint, so report it separately and say whose fuel it is."
+      ]
+    },
+    {
+      "h": "Keep stock losses apart",
+      "p": [
+        "Evaporation of petrol releases volatile organic compounds, which are not among the greenhouse gases the GHG Protocol counts."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one fuel station (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 2,500 kWh x 0.710 = 1,775 kg CO2",
+      "Diesel: 80 litres x 2.68 = 214.4 kg CO2",
+      "Station Scope 1 and 2: 1,989.4 kg CO2 a month"
+    ],
+    "note": "Inputs are illustrative; use the station electricity bill and generator log."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Diesel generator: Scope 1 or 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

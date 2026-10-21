@@ -1,0 +1,62 @@
+{
+  "slug": "hotel-guest-shuttle-emissions-scope-1",
+  "q": "How do I calculate emissions from a hotel's airport or guest shuttle?",
+  "title": "Hotel guest shuttle emissions",
+  "short": "If the hotel owns or leases the shuttle and employs the driver, its diesel is Scope 1 at 2.68 kg CO2 per litre. A shuttle supplied with driver by a travel vendor is Scope 3. Divide fuel by transfers to report per guest trip.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hotels and resorts running guest transfers",
+  "sections": [
+    {
+      "h": "Which scope",
+      "ul": [
+        "Hotel-owned vehicles and drivers: Scope 1.",
+        "Vendor vehicles with drivers, paid by the hotel: Scope 3, Category 1.",
+        "Taxis booked and paid by guests: outside the hotel's inventory."
+      ]
+    },
+    {
+      "h": "Data to keep",
+      "p": [
+        "Fuel invoices or fuel cards per vehicle, and the transfer log with trips and passengers."
+      ]
+    },
+    {
+      "h": "Per transfer",
+      "p": [
+        "Report per transfer, or per passenger if the log records them, and keep it apart from the room footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two hotel shuttles (one month, illustrative inputs)",
+    "lines": [
+      "Diesel: 900 litres x 2.68 = 2,412 kg CO2",
+      "Guest transfers: 1,500",
+      "Per transfer: 2,412 / 1,500 = 1.608 kg CO2"
+    ],
+    "note": "Litres and transfers are illustrative."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hotel carbon per occupied room",
+      "to": "/answers/hotel-carbon-per-occupied-room-hcmi"
+    },
+    {
+      "label": "Business car travel: which scope?",
+      "to": "/answers/business-car-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

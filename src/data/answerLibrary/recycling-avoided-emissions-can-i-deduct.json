@@ -1,0 +1,62 @@
+{
+  "slug": "recycling-avoided-emissions-can-i-deduct",
+  "q": "Can I subtract emissions avoided by recycling my waste from my carbon footprint?",
+  "title": "Can I deduct recycling avoided emissions?",
+  "short": "No. Emissions avoided because your waste is recycled are not deducted from your inventory under the GHG Protocol. Report your waste emissions in Scope 3, Category 5, and show any avoided emissions separately, with the method, if you report them at all.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories, retailers and offices reporting waste",
+  "sections": [
+    {
+      "h": "Why not",
+      "p": [
+        "The inventory counts emissions that happen. Avoided emissions compare against a scenario that did not happen, so the GHG Protocol keeps them out of Scopes 1, 2 and 3."
+      ]
+    },
+    {
+      "h": "What goes in Category 5",
+      "ul": [
+        "Transport of waste to the recycler or landfill, where it is in the boundary.",
+        "Treatment emissions for waste sent to landfill, composting or incineration.",
+        "Recycling processes are usually counted by the user of the recycled material."
+      ]
+    },
+    {
+      "h": "If you want to show the benefit",
+      "p": [
+        "Report kg recycled and, separately, an avoided emissions estimate with its method and source. Label it clearly so readers do not add it to or take it from your total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: reporting recycling correctly (illustrative inputs)",
+    "lines": [
+      "Scope 1, 2 and 3 inventory for the year: 500 t CO2e",
+      "Estimated emissions avoided because scrap went to recycling: 40 t CO2e",
+      "Reported total: 500 t CO2e; the 40 t is shown separately as avoided emissions, never subtracted"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible keeps waste manifests, transport invoices and treatment bills as evidence on the Scope 3 trail and reads electricity bills for on-site equipment into Scope 2. Avoided emissions are never subtracted from the inventory.",
+  "links": [
+    {
+      "label": "Waste emissions in Scope 3, Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Zero waste to landfill criteria",
+      "to": "/answers/zero-waste-to-landfill-certification-criteria"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
