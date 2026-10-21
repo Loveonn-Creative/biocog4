@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/motion/CountUp";
 import { useState } from "react";
 import { splitDocumentNotes } from "../../supabase/functions/_shared/documentChecks";
 import { createPortal } from "react-dom";
@@ -77,6 +78,8 @@ interface ResultStateProps {
   onReread?: () => void;
   /** A kVAh bill that prints neither kWh nor a power factor: count it with the kWh the owner types (labelled "Entered by you"). */
   onEnterKwh?: (kwh: number) => void;
+  /** How long this read took, for a fresh read only (not a saved or repeated one). */
+  readMs?: number;
 }
 
 /**
@@ -87,7 +90,7 @@ interface ResultStateProps {
  * without it (a kVAh bill with no printed kWh or power factor). Every figure,
  * factor, check and score is still here, folded under the result.
  */
-export const ResultState = ({ type: _type, amount: _amount, extractedData, onConfirm, onReset, hasRecords = true, onReread, onEnterKwh }: ResultStateProps) => {
+export const ResultState = ({ type: _type, amount: _amount, extractedData, onConfirm, onReset, hasRecords = true, onReread, onEnterKwh, readMs }: ResultStateProps) => {
   const { isEnabled } = useTrustLayerSettings();
   const [kwhInput, setKwhInput] = useState("");
 
@@ -277,19 +280,19 @@ export const ResultState = ({ type: _type, amount: _amount, extractedData, onCon
               <p className="truncate font-semibold text-foreground">{docTitle}{extractedData?.vendor ? ` · ${extractedData.vendor}` : ""}</p>
               {docSub && <p className="truncate text-xs text-muted-foreground">{docSub}</p>}
             </div>
-            <span className="ml-auto flex shrink-0 items-center gap-1 text-xs font-medium text-success"><Check className="h-3.5 w-3.5" aria-hidden="true" />Read</span>
+            <span className="ml-auto flex shrink-0 items-center gap-1 text-xs font-medium text-success"><Check className="h-3.5 w-3.5" aria-hidden="true" />{readMs ? `Read in ${(readMs / 1000).toLocaleString('en-IN', { maximumFractionDigits: 1 })} s` : 'Read'}</span>
           </div>
 
           {/* The result */}
           {hasRecords && !isGreenBenefit ? (
             <div className="flex flex-col gap-1.5">
               <p className="text-sm text-muted-foreground">Emissions from this {isElectricity ? "bill" : "document"}</p>
-              <p className="text-4xl font-semibold tracking-tight text-foreground">{total.v} <span className="text-lg font-medium text-muted-foreground">{total.u}</span></p>
+              <p className="text-4xl font-semibold tracking-tight text-foreground tabular-nums"><CountUp to={co2Value >= 1000 ? co2Value / 1000 : co2Value} decimals={co2Value >= 1000 || co2Value < 10 ? 2 : 0} /> <span className="text-lg font-medium text-muted-foreground">{total.u}</span></p>
               <span className="inline-flex w-max items-center gap-1.5 rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-warning" aria-hidden="true" />Verification pending
               </span>
               {singleLine && (
-                <p className="text-sm text-muted-foreground">
+                <p className="w-max max-w-full rounded-md px-1 -mx-1 text-sm text-muted-foreground motion-safe:animate-[line-flash_1.4s_ease-out_both]">
                   <span className="font-mono text-[13px]">{fmt(singleLine.quantity!)} {singleLine.unit} × {fmt(singleLine.emissionFactor!, 3)}</span>
                   {singleLine.scope ? ` · Scope ${singleLine.scope}` : ""}
                 </p>

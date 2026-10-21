@@ -41,6 +41,9 @@ import { DashboardIntelligence } from '@/components/dashboard/DashboardIntellige
 import { RecordInsights } from '@/components/insights/RecordInsights';
 import { missingElectricityMonths } from '@/lib/missingMonths';
 import { intelligentActions } from '@/lib/intelligentActions';
+import { nextMoment } from '@/lib/proofMoments';
+import { useSeenMoments, PROOF_MOMENTS_OFF } from '@/hooks/useSeenMoments';
+import { ProofMoment } from '@/components/dashboard/ProofMoment';
 import { useRecordsChanged } from '@/lib/recordsEvents';
 import {
   defaultFilters,
@@ -275,6 +278,10 @@ const Dashboard = () => {
   const countedDocIds = new Set(emissions.map((e) => e.document_id).filter(Boolean));
   const missingMonths = useMemo(() => missingElectricityMonths(emissions), [emissions]);
   // Only a lever (cost or emission cut) takes the next-step slot; record tasks already have theirs.
+  // One proof moment per visit, newest achievement first, never repeated.
+  const seenMoments = useSeenMoments();
+  const [hiddenMoment, setHiddenMoment] = useState<string | null>(null);
+  const moment = useMemo(() => (PROOF_MOMENTS_OFF || !user || !seenMoments.ready ? null : nextMoment(emissions, documents, seenMoments.seen)), [user, seenMoments.ready, seenMoments.seen, emissions, documents]);
   const topAction = useMemo(() => intelligentActions(emissions, documents).find((a) => a.lever) ?? null, [emissions, documents]);
   const uncountedDocs = documents.filter((d) => !countedDocIds.has(d.id)).length;
   const verifiedKg = sumVerifiedKgOncePerEmission(verifiedEmissions, e => e.id, e => e.co2_kg);
@@ -347,6 +354,8 @@ const Dashboard = () => {
               uncountedDocs={uncountedDocs}
               missingMonths={missingMonths}
               topAction={topAction}
+              userId={user?.id ?? null}
+              moment={moment && !hiddenMoment ? <ProofMoment moment={moment} onDismiss={() => { setHiddenMoment(moment.id); void seenMoments.markSeen(moment.id); }} /> : null}
               unverifiedCount={unverifiedEmissions.length}
               hasVerifiedData={verifiedEmissions.length > 0}
               verificationScore={verificationScore}

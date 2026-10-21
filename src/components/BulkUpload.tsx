@@ -239,7 +239,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             idx === i ? { 
               ...f, 
               status: 'success' as const,
-              message: reviewNote ?? (data.isDuplicate ? 'Already in your records, counted once' : data.cached ? 'Saved result' : 'Processed'),
+              message: reviewNote ?? (data.isDuplicate ? 'Already have this one. Counted once.' : data.cached ? 'Saved result' : 'Processed'),
               documentHash: data.documentHash,
               extractedData
             } : f

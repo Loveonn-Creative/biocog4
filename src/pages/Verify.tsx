@@ -102,6 +102,9 @@ const Verify = () => {
   // after the list refetches and those rows are no longer pending.
   const [lastBatch, setLastBatch] = useState<BatchRow[]>([]);
   const [outcomes, setOutcomes] = useState<InvoiceOutcome[] | null>(null);
+  // Verified records before the last run, so the jump it made can be shown.
+  const [verifiedBefore, setVerifiedBefore] = useState<number | null>(null);
+  const verifiedNow = emissions.filter((e) => e.verified === true).length;
   const [refetchAttempts, setRefetchAttempts] = useState(0);
   const { isEnabled } = useTrustLayerSettings();
 
@@ -167,6 +170,7 @@ const Verify = () => {
     setMissingInputs(null);
     setVerifyError(null);
     setOutcomes(null);
+    setVerifiedBefore(verifiedNow);
     setLastBatch(pending.map(e => ({ id: e.id, category: e.category, scope: e.scope })));
 
     try {
@@ -391,6 +395,20 @@ const Verify = () => {
         </Card>
 
         {/* Bulk run: one line per invoice */}
+        {outcomes && verifiedBefore !== null && verifiedNow > verifiedBefore && emissions.length > 0 && (
+          <div className="mb-6 rounded-xl border border-success/30 bg-success/5 p-4" role="status">
+            <p className="text-sm text-muted-foreground">Verified records</p>
+            <p className="mt-0.5 font-mono text-lg font-semibold tabular-nums">
+              {verifiedBefore} <span className="text-muted-foreground">→</span> <span className="text-success">{verifiedNow}</span>
+              <span className="ml-1 text-sm font-normal text-muted-foreground">of {emissions.length} (+{verifiedNow - verifiedBefore})</span>
+            </p>
+            <div className="relative mt-2 h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden="true">
+              <span className="absolute inset-y-0 left-0 rounded-full bg-success/40" style={{ width: `${(verifiedBefore / emissions.length) * 100}%` }} />
+              <span className="absolute inset-y-0 left-0 origin-left rounded-full bg-success motion-safe:animate-grow-x" style={{ width: `${(verifiedNow / emissions.length) * 100}%` }} />
+            </div>
+          </div>
+        )}
+
         {outcomes && outcomes.length > 1 && (
           <Card className="mb-6">
             <CardHeader>

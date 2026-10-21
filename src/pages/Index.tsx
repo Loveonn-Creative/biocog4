@@ -127,6 +127,8 @@ interface ProcessingResult {
   emissionId?: string;
   /** Number of emission rows saved for this document. */
   recordCount?: number;
+  /** Milliseconds a fresh read took (unset for a saved or repeated result). */
+  readMs?: number;
 }
 
 // ============= DETERMINISTIC SCOPE MAPPING =============
@@ -389,7 +391,7 @@ const Index = () => {
         .order('created_at', { ascending: true });
 
       if (existingEmissions?.length) {
-        toast.info('This invoice was already processed. Showing existing results.', { icon: '🔒' });
+        toast.info('Already have this one. Counted once, as promised.');
         return {
           documentId,
           emissionId: existingEmissions[0].id,
@@ -566,6 +568,7 @@ const Index = () => {
 
       
       // Pass sessionId to edge function for guest user data linking
+      const readStart = performance.now();
       const invoke = (await loadSupabase()).functions.invoke('extract-document', {
         body: { imageBase64, mimeType, sessionId, organizationId: uploadOrganizationId(), ...(opts.reread ? { reread: true } : {}), ...(opts.enteredKwh ? { enteredKwh: opts.enteredKwh } : {}) }
       });
@@ -589,10 +592,7 @@ const Index = () => {
       // result is shown and the invoice stays counted once.
       if (data?.isDuplicate) {
         if (data.success && data.data) {
-          toast.info(data.message || "You uploaded this invoice before. Showing the saved result; it is counted once.", {
-            duration: 6000,
-            icon: "🔒"
-          });
+          toast.info("Already have this one. Counted once, as promised.", { duration: 5000 });
         } else {
           // Free/snapshot user - block duplicate processing
           toast.error(data.error || "This invoice was already processed.", {
@@ -610,7 +610,7 @@ const Index = () => {
       // Financial documents (ITR, bank or financial statements) are kept
       // privately on the server for climate finance; nothing to show here.
       if (data?.financialDocument) {
-        if (data.stored) toast.success(data.message, { duration: 8000, icon: "🔒" });
+        if (data.stored) toast.success(data.message, { duration: 8000 });
         else toast.info(data.message, { duration: 8000 });
         setState("idle");
         return;
@@ -689,6 +689,7 @@ const Index = () => {
         documentId: savedIds?.documentId,
         emissionId: savedIds?.emissionId,
         recordCount: savedIds?.emissionIds.length ?? 0,
+        readMs: data.isDuplicate || data.cached ? undefined : Math.round(performance.now() - readStart),
       };
 
       setDocumentType(processingResult.documentType);
@@ -1032,6 +1033,7 @@ const Index = () => {
               onConfirm={handleConfirm}
               onReset={handleReset}
               hasRecords={result.recordCount !== 0}
+              readMs={result.readMs}
               onReread={user && lastFileRef.current ? handleReread : undefined}
               onEnterKwh={lastFileRef.current ? handleEnterKwh : undefined}
             />
