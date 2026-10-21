@@ -19,7 +19,7 @@ export const legalDocuments: LegalDocument[] = [
     title: 'Terms of Service',
     slug: 'terms',
     effectiveDate: '27 August 2024',
-    lastUpdated: '16 October 2026',
+    lastUpdated: '21 October 2026',
     sections: [
       {
         title: '0. Parties & Legal Identity',
@@ -73,7 +73,8 @@ Senseible does not independently verify raw data unless contractually agreed.`
 - Authenticated or paid user data is retained for up to eighteen (18) months.
 - Data may be used to train Senseible's proprietary AI carbon layers, inference systems and proprietary ESG models.
 - Users may opt out of future model training by emailing impact@senseible.earth.
-- Aggregated, anonymized, or derived learnings incorporated into models are non-reversible and non-deletable.`
+- Aggregated, anonymized, or derived learnings incorporated into models are non-reversible and non-deletable.
+- Private records (tax returns, bank statements and annual accounts you upload) and the totals read from them are kept while your account is active. You can ask us to delete them at any time by writing to impact@senseible.earth, and we delete them within thirty (30) to ninety (90) days.`
       },
       {
         title: '4. Data Sharing & Commercial Enablement',
@@ -82,7 +83,9 @@ Senseible does not independently verify raw data unless contractually agreed.`
 Data may be shared solely to enable:
 - green loans or climate finance
 - carbon credit issuance or trading
-- compliance with regulatory requirements`
+- compliance with regulatory requirements
+
+We never sell private records or share them with lenders or partners unless you clearly ask us to, for example when you apply for finance through Senseible.`
       },
       {
         title: '4A. Customer Stories and Feedback',
@@ -123,7 +126,8 @@ Illustrative estimates may be used for informational purposes and are not indepe
         title: '7. Financial & Investment Non-Advice',
         content: `- Nothing on the Platform constitutes financial, investment, lending, or regulatory advice.
 - Financing eligibility signals are indicative only.
-- Final decisions rest with third-party lenders, registries, or buyers.`
+- Final decisions rest with third-party lenders, registries, or buyers.
+- Finance insights summarise your own records to help you prepare. They are not a credit decision, credit score, loan offer or financial advice.`
       },
       {
         title: '8. Payments, Taxes, Pricing & Refunds',
@@ -187,7 +191,7 @@ Email us with your request and sufficient information to identify your account. 
     title: 'Privacy Policy',
     slug: 'privacy',
     effectiveDate: '27 August 2024',
-    lastUpdated: '16 October 2026',
+    lastUpdated: '21 October 2026',
     sections: [
       {
         title: '0. Introduction & Legal Identity',
@@ -214,6 +218,8 @@ This Policy is designed to align with:
 
 **(a) Business & Financial Data**
 GST details, invoices, supply chain data, transactional records, operational metrics, accounting data.
+
+**Private records.** If you upload a tax return, bank statement or annual accounts, we keep the file in private storage that only our servers can reach. It is never shown, previewed or sent back to any browser, including yours. We read only key totals, such as turnover, profit, loan repayments, and monthly money in and money out. We do not keep names, PAN, account numbers or individual transactions. To group monthly spending (for example electricity, fuel or rent), we read payment descriptions once and keep only the category totals.
 
 **(b) Sustainability & ESG Data**
 Activity data, emissions-related information, IoT/satellites data, derived sustainability indicators.
@@ -280,7 +286,15 @@ Controls include:
 - tenant-scoped database policies,
 - private document storage,
 - evidence fingerprints and audit references,
-- monitoring and incident-response procedures.`
+- monitoring and incident-response procedures.
+
+We apply finance-grade security standards to protect your data, privacy and personal information. Access is restricted, and data is handled responsibly in accordance with applicable data protection laws and this Privacy Policy.`
+      },
+      {
+        title: '6A. Finance Insights',
+        content: `Finance insights is off by default. You turn it on or off in Settings. When it is on, your Dashboard shows summaries built from your own private records. What you see depends on your plan.
+
+Only you can see your records and insights; no other account, including other users on Senseible, can see them. Turning it off hides the insights straight away; it does not delete your records.`
       },
       {
         title: '7. Legal Basis & Compliance',
@@ -313,7 +327,11 @@ Upon termination, data may be deleted or anonymized except where retention is le
 
 Details given to request a resource are kept for up to ninety (90) days, or up to eighteen (18) months when the request comes from a signed-in account, unless you ask us to delete them sooner.
 
-Feedback that is not published is kept under the default periods above. A published story is kept while it is published and deleted within thirty (30) days of withdrawal. The record of your consent (what you agreed to and when, not the story itself) is kept for three (3) years after withdrawal, as proof that the story was published with your permission.`
+Feedback that is not published is kept under the default periods above. A published story is kept while it is published and deleted within thirty (30) days of withdrawal. The record of your consent (what you agreed to and when, not the story itself) is kept for three (3) years after withdrawal, as proof that the story was published with your permission.
+
+Private records and the totals read from them are kept while your account is active. You can ask us to delete them at any time by writing to impact@senseible.earth, and we delete them within thirty (30) to ninety (90) days.
+
+If you are not signed in, we do not keep any private record you upload, or anything read from it.`
       },
       {
         title: '10. Sub-Processors & Third Parties',
@@ -359,7 +377,7 @@ To request access, correction, deletion, consent withdrawal, processing informat
     title: 'Data Processing Addendum',
     slug: 'dpa',
     effectiveDate: '27 August 2024',
-    lastUpdated: '25 September 2026',
+    lastUpdated: '21 October 2026',
     sections: [
       {
         title: 'Introduction',
@@ -387,6 +405,7 @@ This DPA shall be interpreted to ensure lawful processing while preserving Sense
         title: 'Scope of Processing',
         content: `**Categories of Data:**
 - Business and financial data including GST records, invoices, and transaction data
+- Totals read from private records you upload (tax returns, bank statements, annual accounts)
 - Operational, ESG, and emissions-related data
 - Identifiers, logs, metadata, and technical records
 
