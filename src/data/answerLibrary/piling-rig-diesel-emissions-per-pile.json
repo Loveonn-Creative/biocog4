@@ -1,0 +1,72 @@
+{
+  "slug": "piling-rig-diesel-emissions-per-pile",
+  "q": "How do I calculate the diesel emissions of a piling rig per pile?",
+  "title": "Piling rig diesel emissions per pile",
+  "short": "Take the diesel issued to the rig for a period from the fuel log, multiply by 2.68 kg CO2 per litre, and divide by piles completed. Add the crane, generator and pump diesel on the same log, then concrete and steel per pile from supplier data.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Piling and foundation contractors",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Rig diesel.",
+        "Service crane and generator diesel.",
+        "Bentonite or slurry pumps.",
+        "Concrete and reinforcement, from supplier factors."
+      ]
+    },
+    {
+      "h": "Per pile or per metre",
+      "p": [
+        "Piles differ in depth and diameter. Divide by metres bored as well as piles, so deep piles do not hide in the average."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Diesel in a rig the piling contractor owns or controls is its Scope 1. For the main contractor and the client, the piling subcontract sits in Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of bored piles (illustrative inputs)",
+    "lines": [
+      "Rig diesel for the month: 9,600 litres x 2.68 = 25,728 kg CO2",
+      "Piles completed: 120",
+      "Per pile: 25,728 / 120 = 214.4 kg CO2 from rig diesel",
+      "Add concrete and reinforcement per pile from supplier factors"
+    ],
+    "note": "Fuel and pile counts are illustrative; use the rig fuel log and the pile register."
+  },
+  "senseible": "Senseible reads diesel invoices, fuel slips and site electricity bills into a dated, fingerprinted record per project, so a contractor can hand a client Scope 1 and 2 figures with the document behind each line. Estimates from hours or distance are labelled as estimates.",
+  "links": [
+    {
+      "label": "Excavator diesel per hour",
+      "to": "/answers/excavator-diesel-consumption-per-hour"
+    },
+    {
+      "label": "Contractor diesel on site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    },
+    {
+      "label": "Ready mix concrete per cubic metre",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

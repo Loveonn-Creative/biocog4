@@ -1,0 +1,73 @@
+{
+  "slug": "brass-artware-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of brass artware and handicrafts per kg?",
+  "title": "Brass artware carbon per kg",
+  "short": "Add the furnace fuel for melting at its default factor, and electricity for polishing and lacquering at 0.710 kg CO2 per kWh, then divide by kilograms finished. Add the brass itself from the supplier, noting how much is scrap, with its own supplier figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Brass and metal handicraft exporters and artisan clusters",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Brass ingot or scrap, the largest share.",
+        "Melting and casting fuel.",
+        "Polishing, buffing and lacquering.",
+        "Plating or colouring chemicals."
+      ]
+    },
+    {
+      "h": "Scrap versus ingot",
+      "p": [
+        "Brass made from scrap avoids much of the mining footprint. Keep purchase records that show the share of scrap, and report it beside the figure."
+      ]
+    },
+    {
+      "h": "Many small units",
+      "p": [
+        "Work may be split across small units. Collect fuel and power from each step, or estimate with stated assumptions and label them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: making energy per kg (one month, illustrative inputs)",
+    "lines": [
+      "LPG: 1,400 kg x 2.98 = 4,172 kg CO2",
+      "Electricity: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Kilograms of finished artware: 12,000",
+      "Total: 8,432 / 12,000 = 0.703 kg CO2 per kg",
+      "Add brass ingot or scrap from supplier data, and plating chemicals if used"
+    ],
+    "note": "Inputs are illustrative; coal-fired furnaces use the coal's factor from its calorific value."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Brass melting: oil vs induction",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    },
+    {
+      "label": "Are metal handicrafts covered by CBAM?",
+      "to": "/answers/are-metal-handicrafts-covered-by-cbam"
+    },
+    {
+      "label": "Handicraft exporter footprint",
+      "to": "/answers/handicraft-exporter-carbon-footprint-artisan-supply-chain"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

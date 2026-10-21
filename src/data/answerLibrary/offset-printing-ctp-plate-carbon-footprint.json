@@ -1,0 +1,68 @@
+{
+  "slug": "offset-printing-ctp-plate-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of an offset printing CTP plate?",
+  "title": "CTP plate carbon footprint",
+  "short": "Work out the plate weight from size, thickness and the density of aluminium, and multiply by the supplier's aluminium factor. Add the platesetter and processor electricity per plate at 0.710 kg CO2 per kWh, and chemistry where it is used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Offset printers and print buyers",
+  "sections": [
+    {
+      "h": "What a plate includes",
+      "ul": [
+        "The aluminium base, by weight.",
+        "Coating and processing chemistry.",
+        "Platesetter and processor power.",
+        "Remakes after errors."
+      ]
+    },
+    {
+      "h": "Fewer plates per job",
+      "p": [
+        "Remakes, extra colours and short runs add plates per job. Track plates per job as well as per copy."
+      ]
+    },
+    {
+      "h": "Recycling",
+      "p": [
+        "Used plates are valuable scrap. Keep sale notes as evidence, and report the plate on the purchase basis."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one plate (illustrative inputs)",
+    "lines": [
+      "Plate weight: 1.03 m x 0.80 m x 0.3 mm x 2,700 kg per m3 = 0.667 kg aluminium",
+      "Aluminium: weight x the plate supplier's factor per kg",
+      "Platesetter and processor: 0.15 kWh per plate x 0.710 = 0.106 kg CO2",
+      "Used plates sold for recycling: noted, not subtracted"
+    ],
+    "note": "Plate size and power are illustrative; use your plate size and the supplier's factor."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Offset printing per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Digital vs offset printing",
+      "to": "/answers/digital-vs-offset-printing-carbon-short-runs"
+    },
+    {
+      "label": "Book printing per copy",
+      "to": "/answers/book-printing-carbon-footprint-per-copy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

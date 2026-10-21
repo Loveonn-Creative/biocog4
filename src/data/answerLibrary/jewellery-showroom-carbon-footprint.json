@@ -1,0 +1,71 @@
+{
+  "slug": "jewellery-showroom-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a jewellery showroom?",
+  "title": "Jewellery showroom carbon footprint",
+  "short": "Read the showroom electricity bill at 0.710 kg CO2 per kWh and add generator diesel at 2.68 kg per litre. Lighting and air conditioning are the main loads, so report per square foot of floor and per month. The jewellery itself sits in Scope 3 as purchased goods.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Jewellery retailers and chains",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Display lighting at each counter.",
+        "Air conditioning for the floor and strong room.",
+        "Security systems running all day and night."
+      ]
+    },
+    {
+      "h": "The stock",
+      "p": [
+        "Gold, silver and stones bought for sale are purchased goods in Scope 3, Category 1. Their footprint per gram comes from refiners and suppliers, not from the showroom."
+      ]
+    },
+    {
+      "h": "Quick wins to measure",
+      "p": [
+        "LED display lights and AC set points both show up on the next bills. Compare kWh for the same months year on year, since festive seasons change opening hours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one showroom (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 9,500 kWh x 0.710 = 6,745 kg CO2",
+      "Diesel: 120 litres x 2.68 = 321.6 kg CO2",
+      "Showroom total: 7,066.6 kg CO2 a month, 84.8 t a year",
+      "Per square foot of floor (4,000 sq ft): 1.767 kg CO2 a month"
+    ],
+    "note": "Inputs are illustrative; use the showroom bill and generator fuel slips."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Gold jewellery per gram",
+      "to": "/answers/gold-jewellery-carbon-footprint-per-gram"
+    },
+    {
+      "label": "Retail store electricity in a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "AC set point at 24 savings",
+      "to": "/answers/ac-temperature-setpoint-24-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

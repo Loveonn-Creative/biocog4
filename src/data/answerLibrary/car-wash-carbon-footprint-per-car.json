@@ -1,0 +1,67 @@
+{
+  "slug": "car-wash-carbon-footprint-per-car",
+  "q": "How do I calculate the carbon footprint of a car wash per car?",
+  "title": "Car wash carbon footprint per car",
+  "short": "Take the car wash electricity, from a sub-meter or its share of the site bill, multiply by 0.710 kg CO2 per kWh, and divide by cars washed. Add water heating fuel if used, and keep water tanker or supply bills as Scope 3 evidence.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Car wash operators, fuel stations and dealer workshops",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Pressure washer and pump power.",
+        "Vacuum cleaners and dryers.",
+        "Water heating, if any.",
+        "Bought water, detergents and wax."
+      ]
+    },
+    {
+      "h": "Water",
+      "p": [
+        "Water use matters to customers and regulators. Report litres per car alongside CO2, and note any water recycling."
+      ]
+    },
+    {
+      "h": "Per car",
+      "p": [
+        "Count washes by type. A full wash with a vacuum uses more than an exterior rinse, so split them if you can."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity (pumps, pressure washers, vacuums): 2,000 kWh x 0.710 = 1,420 kg CO2",
+      "Cars washed: 1,600",
+      "Total: 1,420 / 1,600 = 0.887 kg CO2 per car"
+    ],
+    "note": "Readings are illustrative; use the sub-meter and the wash counter."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Water tanker purchases scope",
+      "to": "/answers/water-tanker-purchases-which-scope"
+    },
+    {
+      "label": "Service workshop footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    },
+    {
+      "label": "Car paint booth per job",
+      "to": "/answers/car-paint-booth-emissions-per-vehicle"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

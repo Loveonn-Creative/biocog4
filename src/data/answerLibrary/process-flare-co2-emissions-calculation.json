@@ -1,0 +1,71 @@
+{
+  "slug": "process-flare-co2-emissions-calculation",
+  "q": "How do I calculate the CO2 from a process flare?",
+  "title": "Process flare CO2 calculation",
+  "short": "Measure the gas sent to the flare and its composition, then convert each carbon-bearing gas to CO2 by chemistry: one kilogram of methane burns to 2.75 kilograms of CO2. Report it as Scope 1, and report any unburnt methane separately with its global warming potential.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refineries, chemical plants, biogas and landfill gas operators",
+  "sections": [
+    {
+      "h": "Data you need",
+      "ul": [
+        "Flow meter readings for the flare line.",
+        "Gas composition from lab analysis or an online analyser.",
+        "The flare efficiency your method uses, stated as an assumption."
+      ]
+    },
+    {
+      "h": "Fossil or biogenic",
+      "p": [
+        "Flaring fossil gas is Scope 1 fossil CO2. Flaring biogas or landfill gas releases biogenic CO2, reported outside the scopes, while unburnt methane from either still counts in Scope 1."
+      ]
+    },
+    {
+      "h": "Pilot and purge gas",
+      "p": [
+        "The pilot flame and purge gas burn all the time. Meter or estimate them and add them, since they run even when no process gas is flared."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of flaring (illustrative inputs)",
+    "lines": [
+      "Flare gas: 2,000 kg methane burnt in the month",
+      "Combustion: 1 kg CH4 burns to 44 / 16 = 2.75 kg CO2",
+      "Burnt at 98% (illustrative): 2,000 x 0.98 x 2.75 = 5,390 kg CO2",
+      "Unburnt methane: 2,000 x 0.02 = 40 kg CH4, reported separately with the AR6 GWP for fossil methane"
+    ],
+    "note": "Gas mass and efficiency are illustrative; use your flow meter, analysis and stated method."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Biogas plant carbon credits",
+      "to": "/answers/dairy-biogas-plant-carbon-credits"
+    },
+    {
+      "label": "Biomass or waste fuel in boilers",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Sulphuric acid plant steam export",
+      "to": "/answers/sulphuric-acid-plant-emissions-steam-export"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "steel-rebar-wastage-carbon-on-site",
+  "q": "How do I calculate the carbon cost of steel rebar wasted on a construction site?",
+  "title": "Rebar wastage carbon on site",
+  "short": "Compare rebar bought with rebar placed, from purchase invoices and the bar bending schedule. Multiply the difference by the mill's carbon factor per tonne from its EPD or published data. Every tonne placed then carries the extra steel bought for it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Building contractors, quantity surveyors and site engineers",
+  "sections": [
+    {
+      "h": "Where wastage comes from",
+      "ul": [
+        "Offcuts from cutting stock lengths.",
+        "Laps and extra lengths beyond the schedule.",
+        "Rusted, damaged or lost bars.",
+        "Over-ordering at project close."
+      ]
+    },
+    {
+      "h": "Data to keep",
+      "p": [
+        "Purchase invoices give tonnes bought, the bar bending schedule gives tonnes placed, and scrap sale notes show what left the site. Keep all three for the period."
+      ]
+    },
+    {
+      "h": "Scrap sold",
+      "p": [
+        "Offcuts sold as scrap are recycled, but the carbon of making them is already spent. Report wastage on the purchase basis and note scrap sales, without subtracting them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one building (illustrative inputs)",
+    "lines": [
+      "Rebar bought: 500 t; rebar in the structure per bar bending schedule: 470 t",
+      "Wastage: 500 minus 470 = 30 t, which is 6.0% of purchases",
+      "Bought per tonne placed: 500 / 470 = 1.064 t",
+      "Carbon of the waste: 30 t x the mill's factor per tonne, from its EPD or published data",
+      "Cutting and bending power: 1,900 kWh x 0.710 = 1,349 kg CO2"
+    ],
+    "note": "Quantities are illustrative; use purchase invoices, the bar bending schedule and the mill's published factor."
+  },
+  "senseible": "Senseible reads diesel invoices, fuel slips and site electricity bills into a dated, fingerprinted record per project, so a contractor can hand a client Scope 1 and 2 figures with the document behind each line. Estimates from hours or distance are labelled as estimates.",
+  "links": [
+    {
+      "label": "Embodied carbon from quantities",
+      "to": "/answers/how-to-calculate-embodied-carbon-from-quantities"
+    },
+    {
+      "label": "Emission factor for purchased steel",
+      "to": "/answers/emission-factor-for-purchased-steel-india"
+    },
+    {
+      "label": "How scrap rate affects carbon",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "blast-freezer-energy-per-tonne",
+  "q": "How do I calculate the energy and emissions of a blast freezer per tonne?",
+  "title": "Blast freezer energy per tonne",
+  "short": "Sub-meter the blast freezer, multiply its kWh by 0.710 kg CO2 per kWh, and divide by tonnes frozen. Add refrigerant top-ups from service records as Scope 1. Product entry temperature and loading pattern change the energy per tonne, so record both.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Seafood, meat, frozen food and dairy processors",
+  "sections": [
+    {
+      "h": "What drives the energy",
+      "ul": [
+        "Product entry temperature: warm product needs more cooling.",
+        "Target core temperature and cycle time.",
+        "Door openings and defrost cycles.",
+        "Condenser condition and ambient temperature."
+      ]
+    },
+    {
+      "h": "Refrigerant leaks",
+      "p": [
+        "Top-ups of HFC refrigerants are Scope 1 at their global warming potential. Ammonia has no direct warming effect, but its compressors still use electricity."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Report kWh and kg CO2 per tonne frozen each month, and compare like products, since seafood, meat and bakery items freeze differently."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of blast freezing (illustrative inputs)",
+    "lines": [
+      "Electricity: 36,000 kWh x 0.710 = 25,560 kg CO2",
+      "Tonnes frozen: 300",
+      "Total: 25,560 / 300 = 85.2 kg CO2 per tonne"
+    ],
+    "note": "Inputs are illustrative; use a sub-meter and the freezing log."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Ammonia vs HFC refrigerant",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Shrimp processing per kg",
+      "to": "/answers/shrimp-processing-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

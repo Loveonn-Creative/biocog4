@@ -1,0 +1,67 @@
+{
+  "slug": "cold-store-temperature-setpoint-energy-measurement",
+  "q": "How do I measure the energy saved by changing a cold store's temperature set point?",
+  "title": "Cold store set point energy saving",
+  "short": "Change the set point only within the product's quality limit, then compare the sub-metered kWh with a period of similar load and weather, and convert the difference at 0.710 kg CO2 per kWh. Report the measured figure with dates, not a rule-of-thumb percentage.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cold storage and frozen food warehouse operators",
+  "sections": [
+    {
+      "h": "Quality first",
+      "p": [
+        "Frozen and chilled products have temperature limits set by food safety and buyer specifications. Any change must stay within them, with records."
+      ]
+    },
+    {
+      "h": "Comparing fairly",
+      "ul": [
+        "Similar ambient temperature and season.",
+        "Similar throughput and door openings.",
+        "The same defrost settings."
+      ]
+    },
+    {
+      "h": "What else to check",
+      "p": [
+        "Defrost frequency, condenser cleaning and door seals also affect use. Measure each change separately where you can."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two comparable months (illustrative inputs)",
+    "lines": [
+      "At -20 C (May): 42,000 kWh x 0.710 = 29,820 kg CO2",
+      "At -18 C (June, similar load): 39,500 kWh x 0.710 = 28,045 kg CO2",
+      "Measured difference: 1,775 kg CO2 a month",
+      "Check product quality limits before any change"
+    ],
+    "note": "Readings are illustrative; use your sub-meter and temperature logs."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "AC set point at 24 savings",
+      "to": "/answers/ac-temperature-setpoint-24-savings"
+    },
+    {
+      "label": "Cold room door savings",
+      "to": "/answers/cold-room-door-air-curtain-energy-savings"
+    },
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

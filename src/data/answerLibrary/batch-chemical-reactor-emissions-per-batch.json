@@ -1,0 +1,72 @@
+{
+  "slug": "batch-chemical-reactor-emissions-per-batch",
+  "q": "How do I calculate the emissions of one batch in a chemical reactor?",
+  "title": "Batch reactor emissions per batch",
+  "short": "Add the steam the reactor took for heating, as a share of boiler fuel, the electricity for the agitator and brine chilling at 0.710 kg CO2 per kWh, and any thermic fluid heating. Divide by the batch output in kilograms, and keep the batch record as evidence.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Specialty chemical, dye intermediate and API manufacturers",
+  "sections": [
+    {
+      "h": "What a batch uses",
+      "ul": [
+        "Steam or thermic fluid for heating and distillation.",
+        "Chilled brine or cooling water for exothermic steps.",
+        "Agitator, vacuum pump and transfer pump power."
+      ]
+    },
+    {
+      "h": "Data from the batch record",
+      "p": [
+        "The batch manufacturing record can give start and end times, steam valve hours and yield. Meter readings beat design values; label design values as estimates."
+      ]
+    },
+    {
+      "h": "Per kilogram of product",
+      "p": [
+        "Divide by the dry weight of good output. Rework batches add energy without adding output, so they raise the per-kilogram figure and belong in it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one batch (illustrative inputs)",
+    "lines": [
+      "Boiler PNG: 6,000 scm x 2.05 = 12,300 kg CO2 for 80 t steam",
+      "Reactor R-3 heating: 9 t steam of 80 = 11.2%",
+      "Share: 12,300 x 9 / 80 = 1,383.7 kg CO2",
+      "Reactor agitator and chilled brine: 1,100 kWh x 0.710 = 781 kg CO2",
+      "Per batch: 2,164.8 kg CO2; batch output 2,400 kg, so 0.902 kg CO2 per kg"
+    ],
+    "note": "Inputs are illustrative; use steam meter readings and the batch manufacturing record."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Thermic fluid heater emissions",
+      "to": "/answers/thermic-fluid-heater-emissions-scope-1"
+    },
+    {
+      "label": "Pharma brine chilling emissions",
+      "to": "/answers/pharma-brine-chilling-plant-emissions"
+    },
+    {
+      "label": "Agrochemical technical per kg",
+      "to": "/answers/agrochemical-technical-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

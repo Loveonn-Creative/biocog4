@@ -1,0 +1,67 @@
+{
+  "slug": "tile-kiln-exhaust-heat-to-dryer-gas-saving",
+  "q": "How do I measure the gas saved by sending tile kiln exhaust heat to the dryer?",
+  "title": "Tile kiln heat to dryer gas saving",
+  "short": "Meter the dryer gas per square metre of tiles before and after the change, over days with similar output and tile size. Multiply the gas saved by 2.05 kg CO2 per scm. Your actual gas bills fall, so the cut shows in Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ceramic tile manufacturers",
+  "sections": [
+    {
+      "h": "What to compare",
+      "ul": [
+        "Dryer gas per square metre, not per day.",
+        "Similar tile size and body moisture.",
+        "The same kiln output."
+      ]
+    },
+    {
+      "h": "Check the kiln too",
+      "p": [
+        "Drawing heat from the kiln cooling zone can change kiln fan load or firing. Meter the kiln fuel and fans as well, so the saving is net."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "The saving shows as lower gas in your bills, so no separate credit is needed. Keep the before and after readings with the date of the change."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: before and after (illustrative inputs)",
+    "lines": [
+      "Dryer gas before: 1,200 scm a day for 9,000 m2 of tiles",
+      "Dryer gas after: 800 scm a day for 9,000 m2 of tiles",
+      "Saving: 400 scm x 2.05 = 820 kg CO2 a day",
+      "Per m2: 820 / 9,000 = 0.0911 kg CO2 per m2"
+    ],
+    "note": "Readings are illustrative; use dryer gas meters and the production register."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Propane vs gas tile kiln CO2",
+      "to": "/answers/propane-vs-natural-gas-tile-kiln-co2"
+    },
+    {
+      "label": "Ceramic tile per m2",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "flexo-label-printing-carbon-per-square-metre",
+  "q": "How do I calculate the carbon footprint of flexo label printing per square metre?",
+  "title": "Flexo label printing carbon per m2",
+  "short": "Divide the press electricity, including UV or hot air drying, by square metres printed, at 0.710 kg CO2 per kWh. Add the label stock, liner, inks and varnish from supplier data, and count make-ready waste, since short runs waste more stock per label.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Label converters, packaging printers and brand owners",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Label stock and liner, from supplier data.",
+        "Press motors and drying (UV lamps or hot air).",
+        "Inks, varnish and adhesive.",
+        "Make-ready and matrix waste."
+      ]
+    },
+    {
+      "h": "Short runs",
+      "p": [
+        "Each job needs make-ready material and time. For short runs, waste stock can be a large share, so report per job when runs vary."
+      ]
+    },
+    {
+      "h": "Liner waste",
+      "p": [
+        "Release liner is left with the label user. Note whether a liner recycling scheme is used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: press energy per m2 (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Square metres of labels printed: 250,000",
+      "Total: 10,650 / 250,000 = 0.0426 kg CO2 per square metre",
+      "Add label stock, inks, varnish and liner from supplier data"
+    ],
+    "note": "Inputs are illustrative; stock and inks are added from supplier data."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Self-adhesive label per m2",
+      "to": "/answers/self-adhesive-label-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Printing ink per kg",
+      "to": "/answers/printing-ink-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Offset printing per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

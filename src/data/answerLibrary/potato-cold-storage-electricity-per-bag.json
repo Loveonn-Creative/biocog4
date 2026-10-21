@@ -1,0 +1,72 @@
+{
+  "slug": "potato-cold-storage-electricity-per-bag",
+  "q": "How do I calculate the emissions of storing potatoes in cold storage per bag?",
+  "title": "Potato cold storage emissions per bag",
+  "short": "Take the cold store's electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre for the storage season, then divide by bag-months stored. A full store spreads the same refrigeration load over more bags, so occupancy changes the figure per bag.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cold storage owners, potato farmers and traders",
+  "sections": [
+    {
+      "h": "What drives it",
+      "ul": [
+        "Refrigeration compressors through the season.",
+        "Loading-time cooling of field heat.",
+        "Generator hours during power cuts.",
+        "Insulation and door condition."
+      ]
+    },
+    {
+      "h": "Bag-months",
+      "p": [
+        "Bags stay for different lengths of time. Multiply bags by months stored to share energy fairly between farmers or traders."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "The store owner reports the electricity and diesel as Scope 2 and Scope 1. A farmer paying rent per bag reports it in Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one storage season (illustrative inputs)",
+    "lines": [
+      "Electricity: 210,000 kWh x 0.710 = 149,100 kg CO2",
+      "Diesel: 1,500 litres x 2.68 = 4,020 kg CO2",
+      "Bag-months stored (50 kg bags): 120,000",
+      "Total: 153,120 / 120,000 = 1.276 kg CO2 per bag a month"
+    ],
+    "note": "Inputs are illustrative; use the store's bills and stock register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cold storage emissions per tonne",
+      "to": "/answers/cold-storage-emissions-per-tonne"
+    },
+    {
+      "label": "Third-party cold storage rent scope",
+      "to": "/answers/third-party-cold-storage-rent-which-scope"
+    },
+    {
+      "label": "Potato chips per kg",
+      "to": "/answers/potato-chips-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

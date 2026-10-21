@@ -1,0 +1,70 @@
+{
+  "slug": "electric-bus-depot-charging-emissions",
+  "q": "How do I calculate the emissions of charging electric buses at a depot?",
+  "title": "Electric bus depot charging emissions",
+  "short": "Take the depot charger electricity from its meter, multiply by 0.710 kg CO2 per kWh, and divide by bus kilometres run. The company with operational control of the depot and buses reports it as Scope 2; an authority contracting the service records it in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bus operators, city transport undertakings and fleet owners",
+  "sections": [
+    {
+      "h": "What to meter",
+      "ul": [
+        "Charger kWh, separate from depot lighting and workshops.",
+        "Bus kilometres from the fleet system.",
+        "Any opportunity charging away from the depot."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "Under contracts where an operator runs buses for a transport authority, write down who has operational control of the depot and the buses, and who pays the power bill. Under the operational control approach, that decides whose Scope 2 it is."
+      ]
+    },
+    {
+      "h": "Per passenger-km",
+      "p": [
+        "Divide by passenger-km as well when ticket data allows, so electric and diesel routes can be compared on the same basis."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one depot, one month (illustrative inputs)",
+    "lines": [
+      "Depot charging electricity: 210,000 kWh x 0.710 = 149,100 kg CO2",
+      "Bus km run: 180,000",
+      "Total: 149,100 / 180,000 = 0.828 kg CO2 per km"
+    ],
+    "note": "Readings are illustrative; use the depot charger meter and fleet km records."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Bus operator per passenger-km",
+      "to": "/answers/bus-operator-emissions-per-passenger-km"
+    },
+    {
+      "label": "Battery swapping scope",
+      "to": "/answers/battery-swapping-emissions-which-scope"
+    },
+    {
+      "label": "Staff bus scope",
+      "to": "/answers/staff-bus-scope-1-or-category-7"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "supermarket-display-freezer-electricity",
+  "q": "How do I calculate the emissions of supermarket display freezers and chillers?",
+  "title": "Supermarket freezer electricity",
+  "short": "Sub-meter the refrigerated cabinets, or take their share of the store bill, and multiply the kWh by 0.710 kg CO2 per kWh. Add refrigerant top-ups from service invoices as Scope 1. A meter shows how open and doored cabinets compare in your store.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Supermarket, grocery and convenience store operators",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Display freezers and chillers.",
+        "Remote condensing units on the roof.",
+        "Anti-sweat heaters on glass doors.",
+        "Night blinds or their absence on open cabinets."
+      ]
+    },
+    {
+      "h": "Refrigerant top-ups",
+      "p": [
+        "Leaks from long pipe runs in remote systems can be large. Service invoices give the kilograms added, which go into Scope 1 at the gas's global warming potential."
+      ]
+    },
+    {
+      "h": "Per store",
+      "p": [
+        "Report refrigeration kWh per store and per square metre of sales floor, so stores of different sizes can be compared."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one store's cabinets (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 5,400 kWh x 0.710 = 3,834 kg CO2",
+      "Display freezer and chiller cabinets: 12",
+      "Total: 3,834 / 12 = 319.5 kg CO2 per cabinet a month"
+    ],
+    "note": "Inputs are illustrative; use a sub-meter or the cabinet energy labels."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Ammonia vs HFC refrigerant",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Retail store electricity in a mall",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    },
+    {
+      "label": "Ice cream per litre",
+      "to": "/answers/ice-cream-carbon-footprint-per-litre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

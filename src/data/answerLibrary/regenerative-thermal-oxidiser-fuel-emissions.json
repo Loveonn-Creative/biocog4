@@ -1,0 +1,71 @@
+{
+  "slug": "regenerative-thermal-oxidiser-fuel-emissions",
+  "q": "How do I count the emissions of a regenerative thermal oxidiser (RTO)?",
+  "title": "RTO emissions: support fuel and fans",
+  "short": "Count the support fuel burnt in the RTO at its IPCC default factor and the fan electricity at 0.710 kg CO2 per kWh. Also count the CO2 formed when the solvent vapours burn, from their carbon content, as Scope 1. An RTO prevents VOC release, but its own fuel and power still count.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical, coating, printing and pharma plants that treat solvent fumes",
+  "sections": [
+    {
+      "h": "Three parts",
+      "ul": [
+        "Support fuel to keep the chamber hot: Scope 1.",
+        "Fan and control electricity: Scope 2.",
+        "CO2 from oxidising the solvent itself: Scope 1, from the mass of solvent and its carbon content."
+      ]
+    },
+    {
+      "h": "Data to keep",
+      "p": [
+        "Gas meter readings for the RTO, a sub-meter for the fans, and the solvent mass balance from purchase and recovery records. Without a sub-meter, use the fan rating times hours and label it an estimate."
+      ]
+    },
+    {
+      "h": "Cutting the load",
+      "p": [
+        "Higher solvent concentration in the fumes can let the RTO run with less support fuel; track support gas per hour before and after any change, with dates."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one RTO (one month, illustrative inputs)",
+    "lines": [
+      "RTO support gas (PNG): 14,000 scm x 2.05 = 28,700 kg CO2",
+      "RTO fan electricity: 21,000 kWh x 0.710 = 14,910 kg CO2",
+      "Total: 43,610 kg CO2 a month",
+      "Add the CO2 from oxidising the solvent vapours, from their carbon content, as its own Scope 1 line"
+    ],
+    "note": "Inputs are illustrative; use the RTO gas meter and fan sub-meter."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Solvent incineration in API plants",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    },
+    {
+      "label": "Offset printing per tonne of print",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Thermic fluid heater emissions",
+      "to": "/answers/thermic-fluid-heater-emissions-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

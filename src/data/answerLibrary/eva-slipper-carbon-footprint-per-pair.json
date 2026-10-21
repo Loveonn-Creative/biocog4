@@ -1,0 +1,73 @@
+{
+  "slug": "eva-slipper-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of EVA slippers per pair?",
+  "title": "EVA slipper carbon per pair",
+  "short": "Add the factory electricity at 0.710 kg CO2 per kWh and any LPG or gas for heating, divide by pairs made, then add the EVA compound, straps and packaging from supplier data. Sole weight matters because the compound is counted per kilogram.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Slipper and flip-flop makers and retailers",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "EVA compound for the sole, by weight.",
+        "Straps, by material and weight.",
+        "Press or injection moulding energy.",
+        "Packaging."
+      ]
+    },
+    {
+      "h": "Sheet cutting waste",
+      "p": [
+        "Slippers cut from EVA sheet leave offcuts. Use the gross sheet weight per pair, and note any offcuts reground into new compound."
+      ]
+    },
+    {
+      "h": "Per pair",
+      "p": [
+        "Report per pair for each size range, since adult and child sizes differ a lot in weight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: factory energy per pair (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 26,000 kWh x 0.710 = 18,460 kg CO2",
+      "LPG: 300 kg x 2.98 = 894 kg CO2",
+      "Pairs made: 90,000",
+      "Total: 19,354 / 90,000 = 0.215 kg CO2 per pair",
+      "Add EVA compound, straps and packaging from supplier data"
+    ],
+    "note": "Inputs are illustrative; materials are added from supplier data."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Synthetic footwear per pair",
+      "to": "/answers/synthetic-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Injection moulding per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "vehicle-scrapping-rvsf-emissions-per-vehicle",
+  "q": "How do I calculate the emissions of a vehicle scrapping facility per vehicle?",
+  "title": "Vehicle scrapping emissions per vehicle",
+  "short": "Add the facility electricity at 0.710 kg CO2 per kWh, LPG for cutting at 2.98 kg per kilogram and machine diesel at 2.68 kg per litre, then divide by vehicles scrapped. Record refrigerant recovered from vehicle AC, and any released, separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Registered vehicle scrapping facilities and recyclers",
+  "sections": [
+    {
+      "h": "Steps that use energy",
+      "ul": [
+        "Depollution: draining fluids and recovering AC gas.",
+        "Dismantling and cutting.",
+        "Baling or shredding.",
+        "Moving vehicles and scrap on site."
+      ]
+    },
+    {
+      "h": "Refrigerant",
+      "p": [
+        "Recovered gas is not an emission. Keep the recovery log, and record any gas released as an emission using its global warming potential."
+      ]
+    },
+    {
+      "h": "Recycled metal",
+      "p": [
+        "Steel and aluminium sent to mills replace new metal for the buyer. Report your own facility emissions without subtracting this, and keep any saving as a separate, labelled estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity (baler, shears, depollution rig): 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "LPG for oxy cutting: 600 kg x 2.98 = 1,788 kg CO2",
+      "Forklift and excavator diesel: 1,500 litres x 2.68 = 4,020 kg CO2",
+      "Vehicles scrapped: 450",
+      "Total: 18,588 / 450 = 41.3 kg CO2 per vehicle"
+    ],
+    "note": "Inputs are illustrative; use bills, fuel invoices and the scrapping register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Lead acid battery recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    },
+    {
+      "label": "Tyre retreading per tyre",
+      "to": "/answers/tyre-retreading-carbon-footprint-per-tyre"
+    },
+    {
+      "label": "Used engine oil re-refining",
+      "to": "/answers/used-engine-oil-re-refining-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

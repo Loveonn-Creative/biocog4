@@ -1,0 +1,72 @@
+{
+  "slug": "footwear-factory-emissions-allocation-per-pair",
+  "q": "How do I split a footwear factory's emissions across different styles?",
+  "title": "Footwear factory emissions per pair",
+  "short": "Total the factory electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then split by standard minutes per style rather than pairs, since a boot takes much longer to make than a sandal. State the rule beside each per-pair figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Footwear exporters with mixed styles in one factory",
+  "sections": [
+    {
+      "h": "Why pairs alone mislead",
+      "p": [
+        "Dividing by pairs gives every style the same energy. Styles with more operations, such as boots with lasting and stitching, use more machine and lighting time."
+      ]
+    },
+    {
+      "h": "Rules that work",
+      "ul": [
+        "Standard minute value (SMV) per style, from industrial engineering data.",
+        "Machine hours per line, if lines are dedicated to styles.",
+        "Pairs, only when styles are similar."
+      ]
+    },
+    {
+      "h": "Materials stay separate",
+      "p": [
+        "Allocation covers factory energy. Leather, soles and components are added per style from the bill of materials."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: pairs versus standard minutes (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 70,000 kWh x 0.710 = 49,700 kg CO2",
+      "Diesel: 900 litres x 2.68 = 2,412 kg CO2",
+      "Factory total: 52,112 kg CO2 for 40,000 pairs",
+      "By pairs: 52,112 / 40,000 = 1.303 kg CO2 per pair",
+      "By standard minutes (boots 30, sandals 12; 10,000 boots, 30,000 sandals): boot 2.369 kg, sandal 0.947 kg"
+    ],
+    "note": "Inputs and minutes are illustrative; use your SMV data."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Leather footwear per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Allocating in a multi-product plant",
+      "to": "/answers/multi-product-chemical-plant-emissions-allocation"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

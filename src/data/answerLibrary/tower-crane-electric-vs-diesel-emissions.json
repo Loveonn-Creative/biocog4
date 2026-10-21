@@ -1,0 +1,70 @@
+{
+  "slug": "tower-crane-electric-vs-diesel-emissions",
+  "q": "Is a tower crane on grid power lower carbon than one run from a diesel generator?",
+  "title": "Tower crane: grid power vs diesel",
+  "short": "Most tower cranes run on electric motors, so the real question is where its power comes from. Compare the generator diesel at 2.68 kg CO2 per litre with grid kWh at 0.710 kg CO2 per kWh, over the same month and the same lifting work.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Building contractors and project managers planning site power",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Generator diesel issued to the crane set, from the fuel log.",
+        "Crane kWh from a sub-meter if it shares a grid connection.",
+        "Months with similar lifting work, so the comparison is fair."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Diesel burned in a generator the contractor owns or controls is Scope 1. Grid power on the contractor's connection is Scope 2. If the client supplies power, it sits in the client's inventory, and you record what you used."
+      ]
+    },
+    {
+      "h": "Making the switch",
+      "p": [
+        "An early temporary grid connection lets the crane, hoists and site cabins come off the generator. Note the date of the change, so before and after months can be compared."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one crane, one month (illustrative inputs)",
+    "lines": [
+      "Fed by a diesel generator: 1,800 litres x 2.68 = 4,824 kg CO2 a month",
+      "Fed from a grid connection: 5,400 kWh x 0.710 = 3,834 kg CO2 a month",
+      "Difference: 4,824 minus 3,834 = 990 kg CO2 a month"
+    ],
+    "note": "Fuel and kWh are illustrative; use the generator fuel log and the crane sub-meter."
+  },
+  "senseible": "Senseible reads diesel invoices, fuel slips and site electricity bills into a dated, fingerprinted record per project, so a contractor can hand a client Scope 1 and 2 figures with the document behind each line. Estimates from hours or distance are labelled as estimates.",
+  "links": [
+    {
+      "label": "Temporary construction power",
+      "to": "/answers/temporary-construction-power-scope-2"
+    },
+    {
+      "label": "Rented diesel generator scope",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "Contractor diesel on site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

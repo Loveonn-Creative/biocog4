@@ -1,0 +1,72 @@
+{
+  "slug": "kraft-paper-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of kraft paper per tonne?",
+  "title": "Kraft paper carbon per tonne",
+  "short": "Add the boiler fuel for drying at its IPCC default factor and the mill electricity at 0.710 kg CO2 per kWh, divide by tonnes of paper, then add waste paper or pulp, starch and chemicals from supplier data..",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Kraft paper mills, corrugated box makers and packaging buyers",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Steam for the dryer cylinders.",
+        "Electricity for pulpers, refiners and the paper machine.",
+        "Purchased waste paper or pulp.",
+        "Starch, sizing and other chemicals."
+      ]
+    },
+    {
+      "h": "Biomass boilers",
+      "p": [
+        "Many mills burn biomass or rice husk. That CO2 is biogenic and reported separately, while any coal or gas counts in Scope 1."
+      ]
+    },
+    {
+      "h": "Rejects and sludge",
+      "p": [
+        "Waste paper brings plastics and fibre rejects that go to landfill or co-processing. Count them as waste in Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: mill energy per tonne (one month, illustrative inputs)",
+    "lines": [
+      "Boiler PNG: 180,000 scm x 2.05 = 369,000 kg CO2 for 2,200 t steam",
+      "Electricity: 520,000 kWh x 0.710 = 369,200 kg CO2",
+      "Total: 738,200 kg CO2 for 1,000 t of kraft paper = 738.2 kg CO2 per tonne",
+      "Add waste paper or pulp purchased, starch and chemicals from supplier data"
+    ],
+    "note": "Fuel type and quantities are illustrative; use your boiler log and mill meters."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Paper mill per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Corrugated box per kg",
+      "to": "/answers/corrugated-box-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass fuel in boilers",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

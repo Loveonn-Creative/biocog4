@@ -1,0 +1,76 @@
+{
+  "slug": "chemical-road-tanker-emissions-per-tonne",
+  "q": "How do I calculate the emissions of moving chemicals by road tanker per tonne?",
+  "title": "Chemical road tanker emissions per tonne",
+  "short": "Take the diesel for the whole trip, including the empty return a dedicated tanker makes, and multiply by 2.68 kg CO2 per litre. Divide by tonnes delivered. Owned tankers are Scope 1; hired tankers are Scope 3 transport, backed by the transporter's data.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical makers, distributors and tanker fleet operators",
+  "sections": [
+    {
+      "h": "Empty running",
+      "p": [
+        "A dedicated chemical tanker may return empty, since cleaning between products limits backloads. Include the return leg; leaving it out understates each tonne."
+      ]
+    },
+    {
+      "h": "Data to collect",
+      "ul": [
+        "Diesel per trip, from fuel slips or the transporter.",
+        "Loaded and empty km.",
+        "Tonnes per load, from weighbridge slips.",
+        "Washing or cleaning between loads, if done by you."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Tankers you own or lease and run are Scope 1. Hired tankers sit in Scope 3, category 4 or 9 depending on who pays for the freight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 600 km delivery (illustrative inputs)",
+    "lines": [
+      "Round trip: 600 km loaded + 600 km empty = 1,200 km at 3.5 km per litre = 342.9 litres",
+      "Diesel: 342.9 x 2.68 = 918.9 kg CO2",
+      "Per tonne delivered: 918.9 / 25 t = 36.8 kg CO2",
+      "Per tonne-km, loaded distance: 36.8 / 600 = 0.0613 kg CO2"
+    ],
+    "note": "Mileage and load are illustrative; use fuel slips, trip sheets and weighbridge records."
+  },
+  "senseible": "Senseible reads fuel invoices and fuel card statements (diesel 2.68 and CNG 2.69 kg CO2, IPCC 2006 defaults) into a fingerprinted Scope 1 record. Hired transport goes to the Scope 3 evidence trail, and distance or tonne-km estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hired trucks scope",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    },
+    {
+      "label": "Rail vs road freight India",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Multi-product plant allocation",
+      "to": "/answers/multi-product-chemical-plant-emissions-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

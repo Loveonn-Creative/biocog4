@@ -1,0 +1,76 @@
+{
+  "slug": "pet-bottle-recycling-flakes-carbon-per-kg",
+  "q": "How do I calculate the carbon footprint of recycled PET flakes per kilogram?",
+  "title": "PET bottle flakes carbon per kg",
+  "short": "Add the wash line electricity at 0.710 kg CO2 per kWh and the hot wash heating fuel at its default factor, then divide by kilograms of clean flakes. Add collection and baling transport from the aggregator, and report process losses.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "PET recyclers and brands buying recycled PET",
+  "sections": [
+    {
+      "h": "Process stages",
+      "ul": [
+        "Sorting and label removal.",
+        "Grinding into flakes.",
+        "Hot washing with caustic and detergent.",
+        "Rinsing, drying and bagging."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "Labels, caps, dirt and fines are lost. Divide by clean flakes out, not bales in, and report the yield."
+      ]
+    },
+    {
+      "h": "Comparing with virgin PET",
+      "p": [
+        "Buyers may compare with virgin resin. Keep your flake figure as measured and present any comparison as a separate, labelled estimate using the resin supplier's factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity (shredder, washers, dryers): 95,000 kWh x 0.710 = 67,450 kg CO2",
+      "Hot wash heating PNG: 12,000 scm x 2.05 = 24,600 kg CO2",
+      "Clean flakes, kg: 400,000",
+      "Total: 92,050 / 400,000 = 0.230 kg CO2 per kg"
+    ],
+    "note": "Inputs are illustrative; use electricity and gas bills and the production register."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "PET preform and bottle",
+      "to": "/answers/pet-preform-bottle-carbon-footprint"
+    },
+    {
+      "label": "Recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    },
+    {
+      "label": "Scrap rate and carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

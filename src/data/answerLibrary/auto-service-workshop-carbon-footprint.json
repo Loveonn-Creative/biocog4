@@ -1,0 +1,72 @@
+{
+  "slug": "auto-service-workshop-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a car or bike service workshop?",
+  "title": "Car service workshop carbon footprint",
+  "short": "Add the workshop electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then divide by vehicles serviced. Record refrigerant from AC servicing and the waste oil and parts sent out, as Scope 3 evidence.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Authorised dealers, multi-brand workshops and service chains",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Air compressors for tools and tyre work.",
+        "Hydraulic lifts and wheel alignment.",
+        "Lighting and air conditioning.",
+        "Washing bays and paint booths, if on site."
+      ]
+    },
+    {
+      "h": "Refrigerant",
+      "p": [
+        "Keep the log of gas recovered from and charged into vehicle AC systems. Any gas released in the workshop is an emission; state in your method note how you classify it."
+      ]
+    },
+    {
+      "h": "Waste streams",
+      "p": [
+        "Used oil, filters, batteries and tyres go to authorised recyclers. Keep their receipts as Scope 3 waste evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity (compressors, lifts, lighting, AC): 4,200 kWh x 0.710 = 2,982 kg CO2",
+      "Generator diesel: 300 litres x 2.68 = 804 kg CO2",
+      "Vehicles serviced: 600",
+      "Total: 3,786 / 600 = 6.310 kg CO2 per vehicle"
+    ],
+    "note": "Readings are illustrative; use electricity bills, the generator fuel log and the job card count."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Car paint booth per vehicle",
+      "to": "/answers/car-paint-booth-emissions-per-vehicle"
+    },
+    {
+      "label": "Car wash per car",
+      "to": "/answers/car-wash-carbon-footprint-per-car"
+    },
+    {
+      "label": "Lead acid battery recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "textile-auxiliary-chemicals-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of textile auxiliary chemicals per kg?",
+  "title": "Textile auxiliaries carbon per kg",
+  "short": "Add each raw material, such as surfactants, polymers or solvents, from supplier data. Then add the blending plant energy, electricity at 0.710 kg CO2 per kWh and gas at its default factor, divided by kilograms produced.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Makers of softeners, wetting agents, binders and other textile auxiliaries",
+  "sections": [
+    {
+      "h": "Where the footprint sits",
+      "ul": [
+        "Raw materials, from supplier data.",
+        "Heating for melting, emulsifying or reacting.",
+        "Mixing, pumping and filling power.",
+        "Drums or IBCs for packing."
+      ]
+    },
+    {
+      "h": "Data a buyer asks for",
+      "p": [
+        "Brands and mills ask for a per-kilogram figure with its method. Give the plant energy per kilogram and list each raw material factor with its source, so the mill can see what is measured and what comes from a database."
+      ]
+    },
+    {
+      "h": "Many products, one plant",
+      "p": [
+        "If the plant makes many products, allocate energy by mass of output, or by batch hours if some products need long heating, and state the rule."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy per kg (one month, illustrative inputs)",
+    "lines": [
+      "PNG: 2,600 scm x 2.05 = 5,330 kg CO2",
+      "Electricity: 9,500 kWh x 0.710 = 6,745 kg CO2",
+      "Output (kg of auxiliaries blended): 140,000",
+      "Total: 12,075 / 140,000 = 0.0862 kg CO2 per kg",
+      "Add raw materials (surfactants, polymers, solvents) from supplier data as their own lines"
+    ],
+    "note": "Inputs are illustrative; the plant energy is only the making stage, so raw materials must be added."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Answer a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "Dye and pigment per kg",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    },
+    {
+      "label": "HDPE drum per drum",
+      "to": "/answers/hdpe-drum-carbon-footprint-per-drum"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

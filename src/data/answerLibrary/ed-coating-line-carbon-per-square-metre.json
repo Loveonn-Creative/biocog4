@@ -1,0 +1,72 @@
+{
+  "slug": "ed-coating-line-carbon-per-square-metre",
+  "q": "How do I calculate the carbon footprint of an electrocoating (ED) line per square metre?",
+  "title": "ED coating line carbon per m2",
+  "short": "Add the oven and tank heating fuel, PNG at 2.05 kg CO2 per scm, and the line electricity at 0.710 kg CO2 per kWh, including the rectifier and chiller. Divide by square metres coated, and add the paint from the supplier's factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto component makers and job coaters running ED lines",
+  "sections": [
+    {
+      "h": "What uses energy",
+      "ul": [
+        "Pretreatment tank heating.",
+        "The ED tank rectifier and the chiller that cools the bath.",
+        "Circulation pumps, filters and the conveyor.",
+        "The cure oven."
+      ]
+    },
+    {
+      "h": "Square metres",
+      "p": [
+        "Use the surface area per part from the drawing times parts coated, or racks times area per rack. State which."
+      ]
+    },
+    {
+      "h": "For your customer",
+      "p": [
+        "An OEM buying coated parts can use your figure per square metre or per part in its Scope 3. Give both, with the boundary stated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Cure oven and tank heating PNG: 14,000 scm x 2.05 = 28,700 kg CO2",
+      "Rectifier, chiller, pumps and conveyor: 52,000 kWh x 0.710 = 36,920 kg CO2",
+      "Area coated, m2: 60,000",
+      "Total: 65,620 / 60,000 = 1.094 kg CO2 per m2"
+    ],
+    "note": "Inputs are illustrative; use gas and electricity bills and the coating register."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Phosphating line emissions",
+      "to": "/answers/phosphating-pretreatment-line-emissions"
+    },
+    {
+      "label": "Powder coating line per m2",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Auto supplier roadmap for OEMs",
+      "to": "/answers/auto-supplier-decarbonisation-roadmap-for-oem"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

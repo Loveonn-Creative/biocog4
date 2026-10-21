@@ -1,0 +1,73 @@
+{
+  "slug": "site-mixed-vs-ready-mix-concrete-carbon",
+  "q": "Is site-mixed concrete higher or lower carbon than ready-mix concrete?",
+  "title": "Site-mixed vs ready-mix concrete carbon",
+  "short": "Start with the cement per cubic metre in each mix, times the supplier's factor. Then add mixing energy: site mixer diesel at 2.68 kg CO2 per litre, and for ready mix the plant electricity and truck mixer diesel.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Building contractors and developers choosing how to source concrete",
+  "sections": [
+    {
+      "h": "What decides it",
+      "ul": [
+        "Cement content per cubic metre, from the mix design or batch sheets.",
+        "Use of fly ash or slag in place of some cement.",
+        "Mixing energy at site or plant.",
+        "Delivery distance for ready mix."
+      ]
+    },
+    {
+      "h": "Evidence for each",
+      "p": [
+        "Ready mix suppliers can give batch tickets with cement and blend per load. For site mixing, divide cement bags used by cubic metres poured over the same period."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "A site mixer the contractor runs is Scope 1. Bought ready mix, including its plant and delivery, is Scope 3 purchased goods."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per cubic metre (illustrative inputs)",
+    "lines": [
+      "Site mixer: 0.5 litre diesel per m3 x 2.68 = 1.34 kg CO2 per m3",
+      "Ready mix: plant 2 kWh x 0.710 = 1.42 kg, plus truck mixer 1 litre x 2.68 = 2.68 kg, so 4.10 kg CO2 per m3",
+      "Mixing difference: 4.10 minus 1.34 = 2.76 kg CO2 per m3",
+      "Cement: site mix 340 kg vs ready mix design 320 kg per m3, a 20 kg difference",
+      "Cement difference: 20 kg x the cement factor per kg from the supplier"
+    ],
+    "note": "Values are illustrative; use batch tickets, cement issue records and the cement supplier's factor."
+  },
+  "senseible": "Senseible reads diesel invoices, fuel slips and site electricity bills into a dated, fingerprinted record per project, so a contractor can hand a client Scope 1 and 2 figures with the document behind each line. Estimates from hours or distance are labelled as estimates.",
+  "links": [
+    {
+      "label": "Ready mix concrete per cubic metre",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Embodied carbon from quantities",
+      "to": "/answers/how-to-calculate-embodied-carbon-from-quantities"
+    },
+    {
+      "label": "Contractor diesel on site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

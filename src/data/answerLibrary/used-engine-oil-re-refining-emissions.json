@@ -1,0 +1,71 @@
+{
+  "slug": "used-engine-oil-re-refining-emissions",
+  "q": "How do I calculate the emissions of re-refining used engine oil?",
+  "title": "Used oil re-refining emissions",
+  "short": "Add the heater fuel for distillation at its default factor, PNG at 2.05 kg CO2 per scm, and the plant electricity at 0.710 kg CO2 per kWh, then divide by kilolitres of base oil produced. Include any residues or off-gases burned on site.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Used oil re-refiners and lubricant brands buying re-refined base oil",
+  "sections": [
+    {
+      "h": "Process stages",
+      "ul": [
+        "Dewatering and removing light ends.",
+        "Vacuum distillation, the main heat use.",
+        "Finishing, such as hydrofinishing or clay treatment."
+      ]
+    },
+    {
+      "h": "Residues and off-gases",
+      "p": [
+        "If you burn residues or light ends on site, measure the quantity and include the CO2 from that fuel as Scope 1. If they are sold, they leave your boundary."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "A lubricant brand buying re-refined base oil puts the re-refiner's figure per kilolitre in its Scope 3. Ask for it with the boundary stated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Heater PNG: 18,000 scm x 2.05 = 36,900 kg CO2",
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2",
+      "Base oil produced, kL: 400",
+      "Total: 65,300 / 400 = 163.2 kg CO2 per kL"
+    ],
+    "note": "Inputs are illustrative; use gas and electricity bills and the production register."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "Lead acid battery recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    },
+    {
+      "label": "Vehicle scrapping per vehicle",
+      "to": "/answers/vehicle-scrapping-rvsf-emissions-per-vehicle"
+    },
+    {
+      "label": "Multi-product plant allocation",
+      "to": "/answers/multi-product-chemical-plant-emissions-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

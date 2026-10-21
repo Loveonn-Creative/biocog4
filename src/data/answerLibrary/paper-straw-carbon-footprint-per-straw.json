@@ -1,0 +1,68 @@
+{
+  "slug": "paper-straw-carbon-footprint-per-straw",
+  "q": "How do I calculate the carbon footprint of a paper straw?",
+  "title": "Paper straw carbon per straw",
+  "short": "Weigh one straw, multiply the paper weight by the paper supplier's factor, add the adhesive, and add the winding and cutting electricity at 0.710 kg CO2 per kWh divided by straws made. Compare with plastic straws on the same basis, per straw, including disposal.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Paper straw makers, cafes and beverage brands",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Food-grade paper, the largest share.",
+        "Adhesive between layers.",
+        "Winding, cutting and packing machines.",
+        "Wrapping, if individually wrapped."
+      ]
+    },
+    {
+      "h": "Comparing with plastic",
+      "p": [
+        "Compare like for like. Use weights and supplier factors for both, and include disposal."
+      ]
+    },
+    {
+      "h": "End of life",
+      "p": [
+        "Used paper straws may be food-soiled. Say how they are disposed of when you compare."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: making energy per straw (one month, illustrative inputs)",
+    "lines": [
+      "Electricity: 4,000 kWh x 0.710 = 2,840 kg CO2",
+      "Straws made: 2,000,000",
+      "Total: 2,840 / 2,000,000 = 0.00142 kg CO2 per straw",
+      "Add paper (about 1 g per straw, check yours) and adhesive from supplier data"
+    ],
+    "note": "Inputs are illustrative; weigh your straws and use the paper supplier's factor."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Paper cup per cup",
+      "to": "/answers/paper-cup-carbon-footprint-per-cup"
+    },
+    {
+      "label": "Paper bag per bag",
+      "to": "/answers/paper-bag-carbon-footprint-per-bag"
+    },
+    {
+      "label": "EPS vs moulded pulp packaging",
+      "to": "/answers/eps-thermocol-vs-moulded-pulp-packaging-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "phosphating-pretreatment-line-emissions",
+  "q": "How do I calculate the emissions of a phosphating pretreatment line?",
+  "title": "Phosphating line emissions",
+  "short": "Add the fuel heating the degreasing and phosphating tanks, LPG at 2.98 kg CO2 per kilogram or PNG at 2.05 per scm, and the pump and conveyor electricity at 0.710 kg CO2 per kWh. Divide by square metres or tonnes treated.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sheet metal, auto component and appliance makers",
+  "sections": [
+    {
+      "h": "What uses energy",
+      "ul": [
+        "Heating degreasing and phosphating tanks.",
+        "Spray or dip circulation pumps.",
+        "Drying ovens after rinsing.",
+        "Effluent treatment for the rinse water."
+      ]
+    },
+    {
+      "h": "Lower temperature chemistry",
+      "p": [
+        "Some chemical suppliers offer degreasers and phosphates that work at lower bath temperatures. Meter tank fuel before and after any change, over similar output."
+      ]
+    },
+    {
+      "h": "Chemicals and sludge",
+      "p": [
+        "Bought chemicals and sludge disposal sit in Scope 3. Keep the invoices and disposal receipts."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Tank burner LPG: 2,400 kg x 2.98 = 7,152 kg CO2",
+      "Pumps, blowers and conveyor: 9,000 kWh x 0.710 = 6,390 kg CO2",
+      "Area treated, m2: 80,000",
+      "Total: 13,542 / 80,000 = 0.169 kg CO2 per m2"
+    ],
+    "note": "Inputs are illustrative; use fuel invoices, a line sub-meter and the production register."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "ED coating line per m2",
+      "to": "/answers/ed-coating-line-carbon-per-square-metre"
+    },
+    {
+      "label": "Powder coating line per m2",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Heat treatment per tonne",
+      "to": "/answers/heat-treatment-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

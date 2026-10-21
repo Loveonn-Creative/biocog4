@@ -1,0 +1,73 @@
+{
+  "slug": "multiple-effect-evaporator-steam-emissions",
+  "q": "How do I calculate the emissions of a multiple effect evaporator (MEE)?",
+  "title": "Multiple effect evaporator emissions",
+  "short": "Give the MEE its share of boiler fuel from the live steam it takes, add pump and vacuum electricity at 0.710 kg CO2 per kWh, and divide by kilolitres of effluent evaporated. More effects use less steam per kilolitre, so the steam meter shows how the MEE is performing.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile, pharma, chemical and distillery units running MEEs for zero liquid discharge",
+  "sections": [
+    {
+      "h": "What uses energy",
+      "ul": [
+        "Live steam to the first effect.",
+        "Feed, circulation and condensate pumps.",
+        "Vacuum on the last effect.",
+        "An agitated dryer or ATFD after the MEE, if fitted."
+      ]
+    },
+    {
+      "h": "Steam economy",
+      "p": [
+        "Kilograms of water evaporated per kilogram of live steam is the MEE's steam economy. Track it monthly; scaling or a vacuum leak lowers it and raises fuel use."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "The MEE runs on your boiler fuel (Scope 1) and grid power (Scope 2). Salts or sludge sent to a TSDF are waste in Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of MEE operation (illustrative inputs)",
+    "lines": [
+      "Boiler PNG: 20,000 scm x 2.05 = 41,000 kg CO2 for 240 t steam",
+      "MEE live steam: 96 t steam of 240 = 40.0%",
+      "Share: 41,000 x 96 / 240 = 16,400 kg CO2",
+      "MEE pumps and vacuum: 7,000 kWh x 0.710 = 4,970 kg CO2",
+      "Total: 21,370 kg CO2 for 1,500 kL of effluent evaporated = 14.2 kg CO2 per kL"
+    ],
+    "note": "Fuel, steam and volume are illustrative; use the MEE steam meter and evaporation log."
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh) and fuel invoices (IPCC 2006 defaults) into dated, fingerprinted Scope 1 and 2 records. A per-unit figure divides those by the output you enter, and purchased materials are added from supplier data on the Scope 3 trail, labelled by source.",
+  "links": [
+    {
+      "label": "ETP sludge and wastewater in Scope 3",
+      "to": "/answers/etp-sludge-and-wastewater-scope-3-textiles"
+    },
+    {
+      "label": "Dyehouse effluent heat recovery",
+      "to": "/answers/dyehouse-hot-effluent-heat-recovery-saving"
+    },
+    {
+      "label": "Grain ethanol distillery CO2",
+      "to": "/answers/grain-ethanol-distillery-co2-per-litre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

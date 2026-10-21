@@ -1,0 +1,72 @@
+{
+  "slug": "duplex-board-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of duplex board per tonne?",
+  "title": "Duplex board carbon per tonne",
+  "short": "Add the boiler fuel at its default factor and mill electricity at 0.710 kg CO2 per kWh, divide by tonnes of board, then add the waste paper, coating clay and binders from supplier data. The coating line adds drying energy, so coated grades use more than uncoated ones.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Board mills, carton makers and FMCG packaging buyers",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Steam for drying the board and the coating.",
+        "Electricity for pulping, refining and the board machine.",
+        "Waste paper, by grade.",
+        "Coating pigments and binders."
+      ]
+    },
+    {
+      "h": "Coated and uncoated",
+      "p": [
+        "Report each grade separately if the mill makes both, since coating and its drying change the energy per tonne."
+      ]
+    },
+    {
+      "h": "For carton buyers",
+      "p": [
+        "FMCG brands ask carton makers for board figures. Give the mill figure per tonne with its boundary, so the carton maker can add printing and conversion."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: mill energy per tonne (one month, illustrative inputs)",
+    "lines": [
+      "Boiler PNG: 160,000 scm x 2.05 = 328,000 kg CO2",
+      "Electricity: 600,000 kWh x 0.710 = 426,000 kg CO2",
+      "Total: 754,000 kg CO2 for 900 t of duplex board = 837.8 kg CO2 per tonne",
+      "Add waste paper, coating clay and binders from supplier data"
+    ],
+    "note": "Inputs are illustrative; use your boiler and mill records."
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Folding carton per kg",
+      "to": "/answers/folding-carton-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Paper mill per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Kraft paper per tonne",
+      "to": "/answers/kraft-paper-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
