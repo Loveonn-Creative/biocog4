@@ -1,0 +1,66 @@
+{
+  "slug": "ha-tinh-bf-bof-steel-precursor-emissions",
+  "q": "How are precursor emissions added for Ha Tinh blast furnace steel under CBAM?",
+  "title": "Ha Tinh BF-BOF steel: adding precursors",
+  "short": "Embedded emissions of the steel are the direct emissions of the steelmaking step plus the embedded emissions of each relevant precursor used, such as pig iron and sintered ore, per tonne of product. Electricity is not added for iron and steel, because only direct emissions are charged for these goods.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Integrated blast furnace and converter steel producers in the Ha Tinh and Nghi Son corridor of Vietnam and their EU importers",
+  "sections": [
+    {
+      "h": "The method",
+      "p": [
+        "Find the direct emissions of the converter and downstream steps in the period.",
+        "For each precursor used, multiply the tonnes consumed by its embedded emissions per tonne.",
+        "Add the two and divide by the tonnes of the CBAM good produced."
+      ]
+    },
+    {
+      "h": "Which precursors count",
+      "p": [
+        "For crude steel the relevant precursors include pig iron, DRI, ferroalloys and, where made on site, sintered ore. Each carries its own embedded emissions, worked out the same way one step earlier."
+      ]
+    },
+    {
+      "h": "What not to add",
+      "p": [
+        "Indirect emissions from electricity are not charged for iron and steel in the definitive period, though they are still reported for information where the rules ask for it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of steel (illustrative inputs)",
+    "lines": [
+      "Pig iron used: 0.95 t x 1.90 t CO2 per t = 1.805 t CO2",
+      "Direct emissions of the converter step: 0.10 t CO2",
+      "Embedded emissions: 1.805 + 0.10 = 1.905 t CO2 per t of steel"
+    ],
+    "note": "The pig iron figure and the converter figure are illustrative; use your installation's monitored values."
+  },
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ha Tinh steel vs cement",
+      "to": "/answers/ha-tinh-nghi-son-steel-vs-cement-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Pipes from purchased coil",
+      "to": "/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

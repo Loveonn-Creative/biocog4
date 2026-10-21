@@ -1,0 +1,51 @@
+{
+  "slug": "rpet-flake-buyer-recycled-content-claim",
+  "q": "Can a buyer of rPET flakes count them as lower carbon than virgin PET?",
+  "title": "rPET flakes: what a buyer can count",
+  "short": "Yes, if the figure follows the recycled-content method. Under it, recycled flakes carry only the burden of collection, sorting, washing and processing, not of making the original bottle. Ask the recycler for its own figure per kg and for documents showing the recycled share.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Packaging and textile buyers sourcing recycled PET flakes and chips from recyclers",
+  "sections": [
+    {
+      "h": "The method",
+      "p": [
+        "The GHG Protocol Product Standard allows the recycled-content (cut-off) approach: emissions of the first life stay with the first product, and the recycled material starts at collection."
+      ]
+    },
+    {
+      "h": "Ask the recycler for",
+      "ul": [
+        "Electricity, fuel and water treatment used per kg of flakes.",
+        "Inbound transport of bales.",
+        "Proof of the recycled share, such as input records or a chain-of-custody document."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "rPET flakes per kg",
+      "to": "/answers/pet-bottle-recycling-flakes-carbon-per-kg"
+    },
+    {
+      "label": "Counting recycled content",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards (Product Standard)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "chemical-tanker-empty-return-trip-count",
+  "q": "Should a chemical tanker operator count the empty return trip?",
+  "title": "Chemical tankers: the empty return trip",
+  "short": "Yes. Fuel burned driving back empty is part of the service, so it is counted and shared over the loads delivered. The GLEC Framework default intensities already include empty running; when you work from your own fuel records, add the return fuel yourself.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical and liquid road tanker operators and the shippers who hire them",
+  "sections": [
+    {
+      "h": "Two ways",
+      "ul": [
+        "From fuel: add loaded and empty fuel for the round trip, then divide by tonnes delivered.",
+        "From defaults: tonne-km of the loaded leg times a GLEC intensity, which already includes empty running. Do not add the return again."
+      ]
+    },
+    {
+      "h": "Report",
+      "p": [
+        "State which method you used. Mixing the two counts the empty leg twice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one round trip (illustrative inputs)",
+    "lines": [
+      "Loaded leg: 105 L; empty return: 75 L",
+      "Fuel: 105 + 75 = 180 L x 2.68 = 482.4 kg CO2",
+      "Delivered: 20 t, so 482.4 / 20 = 24.12 kg CO2 per tonne"
+    ],
+    "note": "Quantities are illustrative; use trip fuel records."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Road tanker emissions per tonne",
+      "to": "/answers/chemical-road-tanker-emissions-per-tonne"
+    },
+    {
+      "label": "Empty container repositioning",
+      "to": "/answers/empty-container-repositioning-emissions"
+    },
+    {
+      "label": "Eco-driving savings",
+      "to": "/answers/how-to-measure-eco-driving-fuel-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

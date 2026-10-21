@@ -1,0 +1,51 @@
+{
+  "slug": "printing-unit-paper-purchases-scope-3-share",
+  "q": "How does a printing unit count the paper it buys in its footprint?",
+  "title": "Printing units: paper bought in Scope 3",
+  "short": "Paper is a purchased good, Scope 3 category 1: tonnes bought times a factor per tonne, ideally from the paper mill. Add it to the press's own electricity and fuel to see which line is bigger. For most print jobs it is worth checking, because paper can outweigh the press.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Offset, label and packaging printers, including the Sivakasi printing cluster of Tamil Nadu",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Tonnes of paper and board bought, by grade, from purchase invoices.",
+        "A factor per tonne from the mill, or a named database labelled as such.",
+        "Multiply and add up; report as Scope 3, category 1."
+      ]
+    },
+    {
+      "h": "Per job",
+      "p": [
+        "Divide by tonnes of print delivered, including make-ready waste in the paper used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Sivakasi press carbon per tonne",
+      "to": "/answers/sivakasi-printing-press-carbon-per-tonne"
+    },
+    {
+      "label": "Offset printing per tonne",
+      "to": "/answers/offset-printing-carbon-footprint-per-tonne-of-print"
+    },
+    {
+      "label": "Kraft paper per tonne",
+      "to": "/answers/kraft-paper-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "coimbatore-pump-exporter-epd-for-buyers",
+  "q": "Does a Coimbatore pump exporter need an EPD for European buyers?",
+  "title": "Coimbatore pumps: when an EPD helps",
+  "short": "No EU law requires one for pumps today, but some buyers and tenders ask for it. An EPD under ISO 14025 is a verified, standard-format declaration built on product category rules. A carbon footprint under ISO 14067 is smaller in scope and often enough for a buyer's Scope 3.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Pump and motor makers in the Coimbatore engineering cluster of Tamil Nadu exporting to Europe",
+  "sections": [
+    {
+      "h": "Which to offer",
+      "ul": [
+        "Carbon footprint (ISO 14067): one impact, faster to build, often accepted for Scope 3.",
+        "EPD (ISO 14025): many impacts, built on a product category rule and verified by a third party, often asked for in public tenders."
+      ]
+    },
+    {
+      "h": "What both need",
+      "p": [
+        "Energy bills for the plant, metal and copper purchases by weight, and the use-phase assumptions a pump footprint depends on. Use phase usually dominates for pumps, so state the duty cycle you assumed."
+      ]
+    },
+    {
+      "h": "Not CBAM",
+      "p": [
+        "Pumps under 8413 are not CBAM goods, so no embedded emissions figure is required at the EU border."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Use phase for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Pumps, valves and CBAM",
+      "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam"
+    },
+    {
+      "label": "Monoblock pump footprint",
+      "to": "/answers/monoblock-pump-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO (ISO 14025, ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol standards (Product Standard)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

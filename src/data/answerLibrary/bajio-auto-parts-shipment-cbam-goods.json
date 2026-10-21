@@ -1,0 +1,60 @@
+{
+  "slug": "bajio-auto-parts-shipment-cbam-goods",
+  "q": "Which parts of a Bajío auto-parts shipment to the EU are CBAM goods?",
+  "title": "Bajío auto parts: which lines need CBAM data",
+  "short": "Only lines classified under the CBAM headings. Screws, bolts and nuts under 7318, other articles of iron or steel under 7326 and aluminium articles under 7616 are covered. Parts classified as vehicle parts under 8708 or engine parts under 8409 are not, even when made of steel.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Auto-parts makers in the Bajío corridor of Mexico (Guanajuato, Querétaro, Aguascalientes) exporting to the EU",
+  "sections": [
+    {
+      "h": "Covered when classified here",
+      "ul": [
+        "7318: screws, bolts, nuts and washers of iron or steel.",
+        "7326: other articles of iron or steel.",
+        "7616: other articles of aluminium.",
+        "Chapter 72 semis and flat or long products sold as such."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "8708: parts and accessories of motor vehicles.",
+        "8409: parts of engines.",
+        "8482: ball and roller bearings."
+      ]
+    },
+    {
+      "h": "What to do",
+      "p": [
+        "Check the CN code your EU customer declares for each line, not the material. For covered lines, the importer needs embedded emissions; for the rest, expect Scope 3 questions instead."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are auto components covered",
+      "to": "/answers/are-auto-components-covered-by-cbam"
+    },
+    {
+      "label": "Are nuts and bolts covered",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    },
+    {
+      "label": "Monterrey steel figure",
+      "to": "/answers/monterrey-gas-dri-steel-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

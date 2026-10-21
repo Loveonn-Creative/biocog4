@@ -1,0 +1,49 @@
+{
+  "slug": "electric-bus-depot-charger-losses-count",
+  "q": "Should an electric bus depot count charger losses in its emissions?",
+  "title": "Bus depots: count charger losses",
+  "short": "Yes. Count the kWh on the depot's electricity bill, not the energy that reaches the batteries. The difference is lost in chargers and cables, and it is still electricity you bought, so it belongs in Scope 2 at the grid factor.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Electric bus depot operators and transport authorities in India",
+  "sections": [
+    {
+      "h": "Which number",
+      "p": [
+        "The depot meter is the boundary for purchased electricity. Charger dashboards report energy delivered to the bus, which is lower."
+      ]
+    },
+    {
+      "h": "Use both",
+      "p": [
+        "Divide metered kWh by km run for a per-km figure, and track delivered kWh separately to see how efficient the chargers are."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Depot charging emissions",
+      "to": "/answers/electric-bus-depot-charging-emissions"
+    },
+    {
+      "label": "Electric vs diesel bus",
+      "to": "/answers/electric-vs-diesel-bus-depot-indian-grid"
+    },
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

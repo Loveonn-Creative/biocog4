@@ -1,0 +1,59 @@
+{
+  "slug": "chennai-data-centre-diesel-genset-scope-1",
+  "q": "How does a Chennai data centre count diesel for backup generators?",
+  "title": "Chennai data centres: generator diesel",
+  "short": "Diesel burned in on-site generators is Scope 1: litres bought or burned times 2.68 kg CO2 per litre. It includes monthly test runs, not only outages. Count diesel by consumption from tank dips or meters where you have them, and by purchases otherwise, and say which.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Data centre operators in the Chennai hub of Tamil Nadu (Ambattur, Siruseri, Sriperumbudur and nearby)",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Take litres consumed from tank records, or litres bought if that is all you have.",
+        "Multiply by 2.68 kg CO2 per litre (IPCC 2006 default for diesel).",
+        "Report as Scope 1, separate from purchased electricity in Scope 2."
+      ]
+    },
+    {
+      "h": "Customers' share",
+      "p": [
+        "Colocation customers usually receive a share of generator emissions within the operator's figure, allocated with the same key as electricity."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one quarter (illustrative inputs)",
+    "lines": [
+      "Diesel consumed in tests and outages: 3,000 L",
+      "Scope 1: 3,000 x 2.68 = 8,040 kg CO2"
+    ],
+    "note": "Quantity is illustrative; use tank records."
+  },
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market-based reporting, and records diesel for backup generators as Scope 1. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Chennai wind open access",
+      "to": "/answers/chennai-data-centre-wind-open-access-scope-2"
+    },
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

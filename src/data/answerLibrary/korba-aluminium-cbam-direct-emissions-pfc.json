@@ -1,0 +1,57 @@
+{
+  "slug": "korba-aluminium-cbam-direct-emissions-pfc",
+  "q": "What does CBAM charge on aluminium made in Korba?",
+  "title": "Korba aluminium: what CBAM charges",
+  "short": "Only direct emissions: CO2 from anode consumption and fuels, and perfluorocarbons released in anode effects. Electricity used in the potline is not charged for aluminium, however carbon-intensive the power. The figure is per tonne of the CBAM good, with unwrought aluminium as the precursor for downstream products.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Primary aluminium smelters and downstream processors in the Korba cluster of Chhattisgarh and their EU importers",
+  "sections": [
+    {
+      "h": "Charged",
+      "ul": [
+        "CO2 from consumption of carbon anodes.",
+        "CO2 from fuels used in the installation.",
+        "Perfluorocarbons (CF4 and C2F6) from anode effects, converted to CO2e."
+      ]
+    },
+    {
+      "h": "Not charged",
+      "p": [
+        "Indirect emissions from electricity are not charged for aluminium in the definitive period. They may still be asked for information."
+      ]
+    },
+    {
+      "h": "Downstream",
+      "p": [
+        "Rolling mills and extruders use the smelter's figure for unwrought aluminium as their precursor, then add their own direct emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Why Indian aluminium intensity is high",
+      "to": "/answers/why-indian-aluminium-carbon-intensity-is-high"
+    },
+    {
+      "label": "Odisha captive power and CBAM",
+      "to": "/answers/odisha-smelter-captive-coal-power-cbam"
+    },
+    {
+      "label": "Extruder buying Odisha aluminium",
+      "to": "/answers/extruder-buying-odisha-aluminium-cbam-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

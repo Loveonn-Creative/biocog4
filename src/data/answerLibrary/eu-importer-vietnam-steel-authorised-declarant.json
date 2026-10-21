@@ -1,0 +1,60 @@
+{
+  "slug": "eu-importer-vietnam-steel-authorised-declarant",
+  "q": "Does an EU importer of Vietnamese steel need to be an authorised CBAM declarant?",
+  "title": "Vietnamese steel: authorised declarant status",
+  "short": "Yes, unless its imports of CBAM goods stay within the 50 tonne a year exemption. From 2026 only an authorised CBAM declarant may import covered goods above that, so apply through the CBAM Registry in good time. A customs representative can act as declarant on your behalf.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers buying steel from Vietnamese producers, including the Ha Tinh and Nghi Son corridor",
+  "sections": [
+    {
+      "h": "Who needs status",
+      "ul": [
+        "Importers bringing in more than 50 tonnes a year of iron and steel, aluminium, fertilisers and cement, counted together.",
+        "Any importer of hydrogen or electricity, whatever the volume."
+      ]
+    },
+    {
+      "h": "How",
+      "p": [
+        "Apply through the CBAM Registry with your national authority. Once authorised, you declare embedded emissions each year and surrender certificates. The 2025 simplification lets importers that applied in time keep importing while their application is decided; check the dates in Regulation (EU) 2025/2083."
+      ]
+    },
+    {
+      "h": "From the supplier",
+      "p": [
+        "Ask your Vietnamese supplier for embedded emissions per tonne by CN code and production route, so you can declare actual values rather than defaults."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "The 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    },
+    {
+      "label": "Can a non-EU exporter be declarant",
+      "to": "/answers/can-non-eu-exporter-be-cbam-declarant-ddp"
+    },
+    {
+      "label": "Ha Tinh precursor emissions",
+      "to": "/answers/ha-tinh-bf-bof-steel-precursor-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083 (CBAM simplification)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

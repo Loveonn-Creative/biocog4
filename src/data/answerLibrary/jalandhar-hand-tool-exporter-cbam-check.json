@@ -1,0 +1,59 @@
+{
+  "slug": "jalandhar-hand-tool-exporter-cbam-check",
+  "q": "Do hand tools exported from Jalandhar fall under EU CBAM?",
+  "title": "Jalandhar hand tools and CBAM",
+  "short": "No. Hand tools such as spanners, pliers and hammers are classified in Chapter 82, which is not in Annex I of the CBAM Regulation. Only iron and steel goods in Chapter 72 and headings 7301 to 7311, 7318 and 7326 are covered, so check the CN code your EU customer declares.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Hand tool and forging exporters in the Jalandhar cluster of Punjab",
+  "sections": [
+    {
+      "h": "Covered iron and steel",
+      "ul": [
+        "Chapter 72: iron and steel, including semis and flat or long products.",
+        "7301 to 7311: structures, tubes, containers and similar.",
+        "7318: screws, bolts and nuts.",
+        "7326: other articles of iron or steel."
+      ]
+    },
+    {
+      "h": "Not covered",
+      "ul": [
+        "8201 to 8205: hand tools.",
+        "8207: interchangeable tools."
+      ]
+    },
+    {
+      "h": "What buyers still ask",
+      "p": [
+        "Buyers may still want a footprint per tool for their Scope 3. Keep forging fuel, electricity and steel purchase records so one can be built."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Are nuts and bolts covered",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    },
+    {
+      "label": "Ludhiana forging and CBAM",
+      "to": "/answers/ludhiana-forging-cbam-figure-steel-bar-share"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

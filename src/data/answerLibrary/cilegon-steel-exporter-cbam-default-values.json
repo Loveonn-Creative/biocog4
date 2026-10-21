@@ -1,0 +1,64 @@
+{
+  "slug": "cilegon-steel-exporter-cbam-default-values",
+  "q": "Should a Cilegon steel exporter rely on CBAM default values?",
+  "title": "Cilegon steel: actual data or defaults",
+  "short": "Only as a stopgap. Default values published by the Commission include a mark-up, so they usually come out higher than a well-measured plant. An importer buying Cilegon steel pays certificates on whichever figure it declares, so verified actual emissions from your installation are what keep its cost down.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Integrated and downstream steel producers in the Cilegon industrial area of Banten, Indonesia, and their EU importers",
+  "sections": [
+    {
+      "h": "What defaults are",
+      "p": [
+        "Default values are set by the Commission per good and production route for use when actual data is missing. In the definitive period they carry a mark-up, which is the point: they are meant to be cautious."
+      ]
+    },
+    {
+      "h": "What actual data needs",
+      "ul": [
+        "A monitoring approach for the installation.",
+        "Fuel, reductant and electricity records for the reporting period.",
+        "Precursor emissions from suppliers.",
+        "Verification by an accredited verifier before the importer uses the figure."
+      ]
+    },
+    {
+      "h": "A practical order",
+      "p": [
+        "Share defaults for the first shipments if you must.",
+        "Start collecting installation data now.",
+        "Move the importer to verified actual figures as soon as they exist."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Blast furnace vs EAF vs DRI cost",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "CBAM supplier template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

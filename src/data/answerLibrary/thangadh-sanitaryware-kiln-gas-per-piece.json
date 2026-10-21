@@ -1,0 +1,60 @@
+{
+  "slug": "thangadh-sanitaryware-kiln-gas-per-piece",
+  "q": "How does a Thangadh sanitaryware unit work out kiln gas CO2 per piece?",
+  "title": "Thangadh sanitaryware: kiln CO2 per piece",
+  "short": "Multiply the gas billed for the kiln in the month by about 2.05 kg CO2 per standard cubic metre, then divide by good pieces fired. Count rejects in the gas but not in the pieces, so the figure reflects what you actually sell.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sanitaryware and ceramic units in the Thangadh cluster of Surendranagar, Gujarat",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Take standard cubic metres of gas, or LPG in kg, from the bills.",
+        "Gas x 2.05 kg CO2 per scm; LPG x 2.98 kg CO2 per kg (IPCC defaults).",
+        "Divide by good pieces packed in the month."
+      ]
+    },
+    {
+      "h": "Separate lines",
+      "p": [
+        "Report kiln fuel, dryer fuel and electricity separately. Buyers and auditors want to see which one moves when you change something."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Kiln gas: 18,000 scm x 2.05 = 36,900 kg CO2",
+      "Good pieces packed: 12,000",
+      "Per piece: 36,900 / 12,000 = 3.075 kg CO2"
+    ],
+    "note": "Quantities are illustrative; use your gas bill and packing register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Sanitaryware footprint per piece",
+      "to": "/answers/sanitaryware-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Morbi kiln gas per sq m",
+      "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre"
+    },
+    {
+      "label": "Kiln exhaust heat to dryer",
+      "to": "/answers/tile-kiln-exhaust-heat-to-dryer-gas-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

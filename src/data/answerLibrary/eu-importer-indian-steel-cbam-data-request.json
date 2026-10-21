@@ -1,0 +1,52 @@
+{
+  "slug": "eu-importer-indian-steel-cbam-data-request",
+  "q": "What should an EU importer ask an Indian steel supplier for under CBAM?",
+  "title": "EU importers: CBAM data from Indian steel",
+  "short": "Ask for the installation and production route, embedded emissions per tonne by CN code, the precursors and their emissions, the period covered, and whether the figure is verified. Also ask for evidence of any carbon price actually paid; India's carbon market is still being set up.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and authorised declarants buying steel from Indian clusters such as Jamshedpur, Angul, Raipur and Mandi Gobindgarh",
+  "sections": [
+    {
+      "h": "Ask for",
+      "ul": [
+        "Installation name and location, and the production route (BF-BOF, DRI-EAF, induction furnace or re-rolling).",
+        "Specific embedded emissions per tonne of each CN code, direct emissions only.",
+        "Precursors used and their embedded emissions.",
+        "The reporting period and the verifier, once verification applies."
+      ]
+    },
+    {
+      "h": "Use the template",
+      "p": [
+        "The Commission publishes a communication template for operators. Sending it early saves rework, because suppliers then collect data in the format you must declare."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM supplier template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Induction furnace billets",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "Re-rolling mill CO2 per tonne",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

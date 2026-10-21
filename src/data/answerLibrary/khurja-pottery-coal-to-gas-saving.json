@@ -1,0 +1,57 @@
+{
+  "slug": "khurja-pottery-coal-to-gas-saving",
+  "q": "How much CO2 does a Khurja pottery unit save moving its kiln from coal to gas?",
+  "title": "Khurja pottery: coal to gas saving",
+  "short": "Per unit of heat, natural gas emits about 40% less CO2 than bituminous coal under IPCC defaults: 56.1 against 94.6 kg CO2 per GJ. The real saving also depends on kiln efficiency, so compare fuel bills before and after for the same output.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Ceramic and pottery units in the Khurja cluster of Uttar Pradesh",
+  "sections": [
+    {
+      "h": "The comparison",
+      "ul": [
+        "Coal (other bituminous): 94.6 kg CO2 per GJ (IPCC 2006 default).",
+        "Natural gas: 56.1 kg CO2 per GJ.",
+        "Saving per GJ: 1 minus 56.1 / 94.6, about 40.7%."
+      ]
+    },
+    {
+      "h": "Check it",
+      "p": [
+        "A gas kiln often fires more efficiently, which adds to the saving. Use measured fuel per tonne fired before and after, not the factor alone."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: same heat (illustrative quantity)",
+    "lines": [
+      "Heat needed: 258 GJ (about 10 t of coal at 25.8 GJ per t)",
+      "Coal: 258 x 94.6 = 24,407 kg CO2",
+      "Gas: 258 x 56.1 = 14,474 kg CO2",
+      "Saving: 24,407 minus 14,474 = 9,933 kg CO2"
+    ],
+    "note": "Heat demand is illustrative and assumes equal kiln efficiency."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Pottery kiln emissions per firing",
+      "to": "/answers/pottery-kiln-emissions-per-firing"
+    },
+    {
+      "label": "Coal vs PNG vs biomass",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Morbi gasifier vs piped gas",
+      "to": "/answers/morbi-coal-gasifier-vs-piped-gas-kiln-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

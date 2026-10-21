@@ -1,0 +1,65 @@
+{
+  "slug": "tiruppur-knitwear-carbon-per-garment",
+  "q": "How does a Tiruppur knitwear unit work out carbon per garment?",
+  "title": "Tiruppur knitwear: carbon per garment",
+  "short": "Add the unit's electricity and fuel emissions for the month and divide by pieces packed. That gives the making-stage figure per garment. Fabric, yarn and dyeing bought in sit in Scope 3 and should be added from supplier figures, not guessed.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Knitwear and garment units in the Tiruppur cluster of Tamil Nadu",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Electricity kWh x 0.710 kg CO2 per kWh.",
+        "Diesel for generators in litres x 2.68 kg CO2 per litre.",
+        "Add, then divide by pieces packed in the month."
+      ]
+    },
+    {
+      "h": "Different garments",
+      "p": [
+        "If products differ a lot, split by standard minutes per piece instead of piece count, and state the basis."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Electricity: 25,000 kWh x 0.710 = 17,750 kg CO2",
+      "Generator diesel: 840 L x 2.68 = 2,251.2 kg CO2",
+      "Total: 17,750 + 2,251.2 = 20,001.2 kg CO2",
+      "Pieces packed: 100,000, so 20,001.2 / 100,000 = 0.200 kg CO2 per piece"
+    ],
+    "note": "Quantities are illustrative; use your bills and packing register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Garment stitching per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Knitted fabric per kg",
+      "to": "/answers/knitted-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Firewood boiler emissions",
+      "to": "/answers/tiruppur-dyeing-unit-firewood-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

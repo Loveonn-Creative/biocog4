@@ -1,0 +1,53 @@
+{
+  "slug": "eu-importer-checking-supplier-cbam-figure",
+  "q": "How can an EU importer sanity-check a supplier's CBAM figure?",
+  "title": "Checking a supplier's CBAM figure",
+  "short": "Check that it is per tonne of the exact CN code, covers direct emissions only for steel and aluminium, includes precursors, matches the stated production route, covers the right period and names a verifier once verification applies. A figure far below route norms needs an explanation before you declare it.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and authorised declarants reviewing embedded emissions data from non-EU suppliers",
+  "sections": [
+    {
+      "h": "Checklist",
+      "ul": [
+        "Unit: tonnes CO2e per tonne of the good, by CN code.",
+        "Scope: direct only for iron, steel, aluminium and hydrogen; direct plus indirect for cement and fertilisers.",
+        "Precursors listed with their own figures.",
+        "Production route and installation named.",
+        "Period and verifier stated."
+      ]
+    },
+    {
+      "h": "If it fails",
+      "p": [
+        "Ask for the calculation behind it. You carry the declaration, so a figure you cannot support is safer replaced by a default value."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "One supplier, two plants",
+      "to": "/answers/eu-importer-one-supplier-two-plants-cbam"
+    },
+    {
+      "label": "CBAM supplier template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

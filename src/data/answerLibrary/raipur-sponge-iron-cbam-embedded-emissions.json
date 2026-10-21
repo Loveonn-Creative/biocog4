@@ -1,0 +1,51 @@
+{
+  "slug": "raipur-sponge-iron-cbam-embedded-emissions",
+  "q": "Which emissions go into the CBAM figure for Raipur sponge iron?",
+  "title": "Raipur sponge iron: CBAM embedded emissions",
+  "short": "Sponge iron (DRI, heading 7203) is a CBAM good. Its figure covers direct emissions of the kiln: coal and other carbon inputs used for reduction and heating, worked out by mass balance where carbon leaves in the product or char, plus any precursor such as pellets. Electricity is not charged.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Coal-based sponge iron plants in the Raipur and wider Chhattisgarh cluster supplying steelmakers that export to the EU",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Coal and other carbon inputs fed into the kiln for reduction and heating.",
+        "Carbon leaving in the product, char or dust, subtracted under a mass balance.",
+        "Embedded emissions of agglomerated ore (pellets) used as a precursor."
+      ]
+    },
+    {
+      "h": "Who needs it",
+      "p": [
+        "Even if you never export, a steelmaker using your DRI in its billets needs your figure as a precursor for its own CBAM data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Coal-based sponge iron CO2",
+      "to": "/answers/coal-based-sponge-iron-co2-per-tonne"
+    },
+    {
+      "label": "Pig iron and sponge iron in CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Iron ore pellets in CBAM",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

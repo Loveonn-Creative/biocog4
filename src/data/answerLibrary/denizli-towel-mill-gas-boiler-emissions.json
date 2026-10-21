@@ -1,0 +1,60 @@
+{
+  "slug": "denizli-towel-mill-gas-boiler-emissions",
+  "q": "How does a Denizli towel mill work out gas boiler emissions per kg?",
+  "title": "Denizli towels: gas boiler CO2 per kg",
+  "short": "Multiply the natural gas billed in the month by its emission factor, then divide by kilograms of towels finished. With the IPCC default for natural gas, a cubic metre gives about 2.05 kg of CO2 at typical density; use the calorific value on your gas bill where it is printed.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Terry towel and home textile mills in the Denizli cluster of Turkey",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Take standard cubic metres of gas from the monthly bill.",
+        "Multiply by the emission factor (IPCC default about 2.05 kg CO2 per scm, or one built from the calorific value on the bill).",
+        "Divide by kilograms of finished towels from the dispatch register."
+      ]
+    },
+    {
+      "h": "Keep it apart",
+      "p": [
+        "Report electricity separately as Scope 2 and add it only when the buyer asks for a total per kg. Keep the two figures visible so savings from each can be seen."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative inputs)",
+    "lines": [
+      "Natural gas: 50,000 scm x 2.05 = 102,500 kg CO2",
+      "Towels finished: 60,000 kg",
+      "Gas per kg: 102,500 / 60,000 = 1.708 kg CO2 per kg"
+    ],
+    "note": "Quantities are illustrative; use your gas bill and dispatch register."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Dye house emissions per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Boiler efficiency methods",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

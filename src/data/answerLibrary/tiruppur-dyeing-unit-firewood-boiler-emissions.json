@@ -1,0 +1,67 @@
+{
+  "slug": "tiruppur-dyeing-unit-firewood-boiler-emissions",
+  "q": "How does a Tiruppur dyeing unit count emissions from a firewood boiler?",
+  "title": "Tiruppur dyeing: firewood boiler emissions",
+  "short": "CO2 from burning wood is biogenic: report it separately, outside the scopes. Methane and nitrous oxide from the burning still count in Scope 1. With IPCC defaults, a tonne of firewood gives about 1.75 t of biogenic CO2 and about 0.03 t CO2e of Scope 1 gases.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dyeing and processing units with firewood or wood-chip boilers in the Tiruppur cluster of Tamil Nadu",
+  "sections": [
+    {
+      "h": "The defaults used",
+      "ul": [
+        "Net calorific value of wood: 15.6 GJ per tonne (IPCC 2006 Vol 2, Table 1.2).",
+        "CO2: 112,000 kg per TJ, reported as biogenic.",
+        "CH4: 30 kg per TJ and N2O: 4 kg per TJ (Table 2.3).",
+        "GWP: 27.0 for non-fossil methane and 273 for N2O (IPCC AR6)."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep purchase invoices by weight. If the wood is bought by volume or by the cart, record the conversion you used and its source."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 tonnes of firewood (IPCC defaults)",
+    "lines": [
+      "Energy: 10 t x 15.6 GJ = 156 GJ = 0.156 TJ",
+      "Biogenic CO2: 0.156 x 112,000 = 17,472 kg, reported outside the scopes",
+      "CH4: 0.156 x 30 = 4.68 kg x 27.0 = 126.4 kg CO2e",
+      "N2O: 0.156 x 4 = 0.624 kg x 273 = 170.4 kg CO2e",
+      "Scope 1: 126.4 + 170.4 = 296.8 kg CO2e"
+    ],
+    "note": "The fuel quantity is illustrative; the factors are IPCC defaults."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Firewood by quintal",
+      "to": "/answers/firewood-by-quintal-emissions"
+    },
+    {
+      "label": "Biomass in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Biomass supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

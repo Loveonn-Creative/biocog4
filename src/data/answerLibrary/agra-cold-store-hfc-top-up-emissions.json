@@ -1,0 +1,59 @@
+{
+  "slug": "agra-cold-store-hfc-top-up-emissions",
+  "q": "How does an Agra potato cold store count emissions from an HFC top-up?",
+  "title": "Agra cold stores: HFC top-up emissions",
+  "short": "Gas added to top up the system replaces gas that leaked, so the kilograms added are a fair measure of Scope 1 leakage. Multiply by the refrigerant's global warming potential: 1,530 for HFC-134a under IPCC AR6. Ammonia systems have a GWP of zero, so their leaks add no CO2e.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Potato and produce cold storage operators in the Agra cluster of Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Take kg of refrigerant charged from the service invoice.",
+        "Check the gas name on the invoice, not the equipment plate.",
+        "Multiply by its GWP (AR6), and report as Scope 1."
+      ]
+    },
+    {
+      "h": "Blends",
+      "p": [
+        "For a blend such as R-404A, work out the GWP from its components and their shares. Keep the calculation with the invoice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one top-up (illustrative quantity)",
+    "lines": [
+      "HFC-134a charged: 40 kg",
+      "Scope 1: 40 x 1,530 = 61,200 kg CO2e"
+    ],
+    "note": "The quantity is illustrative; the GWP is from IPCC AR6."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Ammonia vs HFC in cold storage",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Potato cold storage per bag",
+      "to": "/answers/potato-cold-storage-electricity-per-bag"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

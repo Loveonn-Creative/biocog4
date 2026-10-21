@@ -1,0 +1,58 @@
+{
+  "slug": "frankfurt-data-centre-waste-heat-kpi",
+  "q": "What must a Frankfurt data centre report about waste heat reuse?",
+  "title": "Frankfurt data centres: waste heat reporting",
+  "short": "Under the EU Energy Efficiency Directive, data centres with installed IT power of 500 kW or more report key indicators every year to a European database, including energy use and how much waste heat is reused. The delegated act sets the indicators, such as the energy reuse factor.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Data centre operators in the Frankfurt hub in Germany and their large tenants",
+  "sections": [
+    {
+      "h": "Who reports",
+      "p": [
+        "Article 12 of Directive (EU) 2023/1791 covers data centres with an installed IT power demand of at least 500 kW. Delegated Regulation (EU) 2024/1364 sets what they report and how."
+      ]
+    },
+    {
+      "h": "What is reported",
+      "ul": [
+        "Total energy consumption and IT energy, giving PUE.",
+        "Renewable energy share.",
+        "Waste heat reused, as an energy reuse factor.",
+        "Water use, as WUE."
+      ]
+    },
+    {
+      "h": "National rules",
+      "p": [
+        "Member states can add their own requirements on top. Check German law for any reuse targets that apply to your site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market-based reporting, and records diesel for backup generators as Scope 1. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Frankfurt EED reporting",
+      "to": "/answers/frankfurt-data-centre-eu-energy-efficiency-reporting"
+    },
+    {
+      "label": "Data centre WUE",
+      "to": "/answers/data-centre-wue-water-usage-effectiveness"
+    },
+    {
+      "label": "Data centre CUE",
+      "to": "/answers/data-centre-cue-carbon-usage-effectiveness"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EUR-Lex: Directive (EU) 2023/1791 (Energy Efficiency Directive) and Delegated Regulation (EU) 2024/1364",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO (ISO 14025, ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

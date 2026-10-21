@@ -1,0 +1,55 @@
+{
+  "slug": "johor-data-centre-customer-scope-3-share",
+  "q": "How does a customer count its share of a Johor data centre's emissions?",
+  "title": "Johor data centres: a customer's share",
+  "short": "A colocation customer reports its share in Scope 3, category 1 (purchased goods and services), unless it controls the space's energy contract. The fair key is the customer's metered IT energy times the site's PUE, then times the operator's emission factor for the period.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies renting colocation or cloud capacity in the Johor data centre hub of Malaysia",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Get your metered IT energy for the period from the operator.",
+        "Multiply by the site PUE for the same period.",
+        "Multiply by the operator's electricity emission factor, location-based and market-based if both are given."
+      ]
+    },
+    {
+      "h": "When it is Scope 2",
+      "p": [
+        "If you buy the electricity for your cage directly, or control it under the lease, it is your Scope 2. Check the contract, not the invoice layout."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market-based reporting, and records diesel for backup generators as Scope 1. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Johor Scope 2 reporting",
+      "to": "/answers/johor-data-centre-scope-2-reporting"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "PUE formula",
+      "to": "/answers/pue-formula-and-good-pue"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO (ISO 14025, ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
