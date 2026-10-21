@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 import { LanguagePreference } from '@/components/settings/LanguagePreference';
 import { useFinanceDetail } from '@/hooks/useFinanceDetail';
 import { useScope3Visibility } from '@/hooks/useScope3Trail';
-import { useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
+import { useFinanceInsights, useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
 
 
 interface CompanyProfile {
@@ -57,6 +57,8 @@ const Settings = () => {
   const financeDetail = useFinanceDetail();
   const scope3 = useScope3Visibility();
   const financeInsights = useFinanceInsightsSwitch();
+  // The switch appears once the database functions behind it exist.
+  const financeInsightsReady = useFinanceInsights(financeInsights.signedIn).data?.ready === true;
 
   const countryConfig = getCountryConfig(profile.location);
   const countries = getCountryList();
@@ -427,7 +429,7 @@ const Settings = () => {
           </Card>
 
           {/* Finance insights from the user's own statements and returns (opt-in) */}
-          {user?.id && (
+          {user?.id && financeInsightsReady && (
           <Card>
             <CardHeader>
               <CardTitle>Finance insights</CardTitle>

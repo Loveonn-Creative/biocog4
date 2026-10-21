@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { LockedBody } from "@/components/dashboard/Locked";
 import {
   CATEGORIES, CATEGORY_LABEL, ENERGY_CATEGORIES, KIND_LABEL, UNLOCKS_ON,
   energyCosts, moduleAccess, monthsCsv, monthsFrom, readiness,
@@ -9,7 +10,7 @@ import {
 // The three finance modules on the Dashboard (pure view: data comes in as
 // props, so the page and its tests render it the same way). Every figure says
 // where it comes from and over which period; nothing is estimated or filled
-// in. Locked modules show what they do and the plan they open on, never data.
+// in. Locked modules show their shape and the plan they open on, never data.
 
 const PLAN_NAME: Record<Plan, string> = { snapshot: "Snapshot", essential: "Essential", pro: "Pro", scale: "Scale" };
 
@@ -23,31 +24,24 @@ function inr(n: number): string {
 const monthLabel = (m: string) => new Date(`${m}-01T00:00:00Z`).toLocaleDateString("en-IN", { month: "short", year: "numeric", timeZone: "UTC" });
 
 const Source = ({ children }: { children: React.ReactNode }) => (
-  <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-muted-foreground">
-    <span className="rounded-full border border-border px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide">From your documents</span>
-    <span>{children}</span>
-  </p>
+  <p className="mt-1 text-[12.5px] text-muted-foreground">{children}</p>
 );
 
-const Shell = ({ id, title, line, access, plan, children, actions }: { id: ModuleId; title: string; line: string; access: Access; plan: Plan; children?: React.ReactNode; actions?: React.ReactNode }) => (
-  <section aria-labelledby={`fin-${id}`} className="rounded-2xl border border-border bg-card p-5 md:p-6">
+const Shell = ({ id, title, line, access, children, actions }: { id: ModuleId; title: string; line: string; access: Access; plan: Plan; children?: React.ReactNode; actions?: React.ReactNode }) => (
+  <section aria-labelledby={`fin-${id}`} className="min-w-0 rounded-xl border border-border bg-card p-4 md:p-5">
     <div className="flex flex-wrap items-start justify-between gap-3">
       <div className="min-w-0">
-        <h3 id={`fin-${id}`} className="text-[17px] font-semibold tracking-tight">{title}</h3>
-        <p className="mt-0.5 text-[13.5px] text-muted-foreground">{line}</p>
+        <h3 id={`fin-${id}`} className="text-[15px] font-semibold">{title}</h3>
+        <p className="mt-0.5 text-[13px] text-muted-foreground">{line}</p>
       </div>
-      {access === "locked" ? (
-        <Link to="/pricing" className="shrink-0 rounded-full border border-border px-3 py-1 text-[12.5px] font-medium hover:bg-secondary">Opens on {PLAN_NAME[UNLOCKS_ON[id]]}</Link>
-      ) : actions}
+      {access !== "locked" && actions}
     </div>
-    {access === "locked" ? (
-      <p className="mt-4 text-[13.5px] text-muted-foreground">Your plan is {PLAN_NAME[plan]}. Nothing from your records is loaded for this module until it opens.</p>
-    ) : children}
+    {access === "locked" ? <LockedBody plan={PLAN_NAME[UNLOCKS_ON[id]]} /> : children}
   </section>
 );
 
 const Empty = ({ children }: { children: React.ReactNode }) => (
-  <p className="mt-4 rounded-xl border border-dashed border-border px-4 py-5 text-center text-[13.5px] text-muted-foreground">{children}</p>
+  <p className="mt-4 rounded-lg border border-dashed border-border px-4 py-5 text-center text-[13.5px] text-muted-foreground">{children}</p>
 );
 
 type Range = 3 | 6 | 12 | 0;
@@ -94,8 +88,8 @@ function CashFlow({ months, access, plan }: { months: (MonthRow & { source: stri
                 <li key={m.month} className="grid grid-cols-[4.5rem_minmax(0,1fr)_5.5rem] items-center gap-3 text-[13px]">
                   <span className="text-muted-foreground">{monthLabel(m.month)}</span>
                   <span className="space-y-1">
-                    <span className="block h-2 rounded-full bg-primary/80" style={{ width: `${((m.inflow ?? 0) / max) * 100}%` }} title={m.inflow !== null ? `In ${inr(m.inflow)}` : "In: not printed"} />
-                    <span className="block h-2 rounded-full bg-foreground/25" style={{ width: `${((m.outflow ?? 0) / max) * 100}%` }} title={m.outflow !== null ? `Out ${inr(m.outflow)}` : "Out: not printed"} />
+                    {m.inflow !== null ? <span className="block h-2 rounded-full bg-primary/80" style={{ width: `${(m.inflow / max) * 100}%` }} title={`In ${inr(m.inflow)}`} /> : <span className="block h-2 w-full rounded-full border border-dashed border-border" title="Money in not printed" />}
+                    {m.outflow !== null ? <span className="block h-2 rounded-full bg-foreground/25" style={{ width: `${(m.outflow / max) * 100}%` }} title={`Out ${inr(m.outflow)}`} /> : <span className="block h-2 w-full rounded-full border border-dashed border-border" title="Money out not printed" />}
                   </span>
                   <span className={`text-right tabular-nums ${net !== null && net < 0 ? "text-destructive" : ""}`}>{net === null ? "–" : `${net >= 0 ? "+" : ""}${inr(net)}`}</span>
                 </li>
@@ -105,7 +99,8 @@ function CashFlow({ months, access, plan }: { months: (MonthRow & { source: stri
           <p className="mt-3 flex flex-wrap gap-x-4 text-[12px] text-muted-foreground">
             <span><span className="mr-1 inline-block h-2 w-3 rounded-full bg-primary/80 align-middle" />Money in</span>
             <span><span className="mr-1 inline-block h-2 w-3 rounded-full bg-foreground/25 align-middle" />Money out</span>
-            <span>Right: money in minus money out</span>
+            <span><span className="mr-1 inline-block h-2 w-3 rounded-full border border-dashed border-border align-middle" />Not printed</span>
+            <span>Right: in minus out</span>
           </p>
           {shown.some((m) => m.balanced === false) && (
             <p className="mt-2 text-[12.5px] text-muted-foreground">On {shown.filter((m) => m.balanced === false).map((m) => monthLabel(m.month)).join(", ")} the printed balances do not add up to money in and out. Shown as printed.</p>
@@ -200,38 +195,20 @@ function EnergyCosts({ months, access, plan }: { months: MonthRow[]; access: Acc
   );
 }
 
-const PIPELINE = [
-  { t: "Emission intensity per ₹ of revenue", d: "Verified emissions against turnover from your documents." },
-  { t: "Working capital and EMI planning", d: "Repayment load against money in, and timing of large payments." },
-  { t: "Climate-risk score and underwriting", d: "After validation on real outcomes and a reviewed method." },
-];
-
-export function FinanceInsightsView({ plan, records, ready }: { plan: Plan; records: InsightRecord[]; ready: boolean }) {
+export function FinanceInsightsView({ plan, records }: { plan: Plan; records: InsightRecord[] }) {
   const access = moduleAccess(plan);
   const months = useMemo(() => monthsFrom(records), [records]);
   return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="text-xl font-semibold tracking-tight">Finance insights</h2>
-        <p className="text-[12.5px] text-muted-foreground">Private to your account · <Link to="/settings" className="underline underline-offset-2">Turn off in Settings</Link></p>
+    <section aria-labelledby="finance-title" className="space-y-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2 pt-2">
+        <h2 id="finance-title" className="text-[17px] font-semibold tracking-tight">Finance insights</h2>
+        <p className="text-[12.5px] text-muted-foreground">Private to your account · <Link to="/settings" className="underline underline-offset-4">Settings</Link></p>
       </div>
-      {!ready && <p className="rounded-xl border border-dashed border-border px-4 py-3 text-[13.5px] text-muted-foreground">Finance insights are being switched on for your account. Your uploads are kept and will show here.</p>}
-      <CashFlow months={months} access={access.cashflow} plan={plan} />
-      <Readiness records={records} access={access.readiness} plan={plan} />
+      <div className="grid items-start gap-3 lg:grid-cols-2 lg:gap-4">
+        <CashFlow months={months} access={access.cashflow} plan={plan} />
+        <Readiness records={records} access={access.readiness} plan={plan} />
+      </div>
       <EnergyCosts months={months} access={access.energy} plan={plan} />
-      <section aria-labelledby="fin-pipeline" className="rounded-2xl border border-dashed border-border p-5">
-        <h3 id="fin-pipeline" className="text-[15px] font-semibold">Custom builds</h3>
-        <p className="mt-0.5 text-[13px] text-muted-foreground">In the pipeline. Available now as a custom build for your business.</p>
-        <ul className="mt-3 grid gap-3 sm:grid-cols-3">
-          {PIPELINE.map((p) => (
-            <li key={p.t} className="min-w-0">
-              <p className="text-[13.5px] font-medium">{p.t}</p>
-              <p className="text-[12.5px] text-muted-foreground">{p.d}</p>
-            </li>
-          ))}
-        </ul>
-        <Link to={`/contact?topic=enterprise&msg=${encodeURIComponent("I'd like a custom build of a finance insight (emission intensity, working capital or climate-risk).")}`} className="mt-4 inline-block text-[13.5px] font-medium underline underline-offset-2">Ask for a custom build</Link>
-      </section>
-    </div>
+    </section>
   );
 }
