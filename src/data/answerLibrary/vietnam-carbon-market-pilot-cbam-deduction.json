@@ -1,0 +1,55 @@
+{
+  "slug": "vietnam-carbon-market-pilot-cbam-deduction",
+  "q": "Can Vietnam's carbon market pilot reduce CBAM on Vietnamese steel or cement?",
+  "title": "Vietnam's carbon market and CBAM",
+  "short": "Only for a carbon price actually paid on the embedded emissions, net of free allowances. Vietnam's pilot for power, steel and cement starts with allowances allocated free, so in its early years there is usually little or nothing to deduct. Check what was paid for the specific installation and year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel and cement exporters in Vietnam and their EU importers",
+  "sections": [
+    {
+      "h": "How Article 9 works",
+      "p": [
+        "The EU declarant can reduce certificates for a carbon price effectively paid in the country of origin, after free allocation and rebates, with independent certification."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "The allocation the installation received and any allowances it had to buy.",
+        "Payments made and the period covered.",
+        "How the payment is attributed to the exported tonnes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Turkish carbon price and CBAM",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    },
+    {
+      "label": "Ha Tinh blast furnace precursors",
+      "to": "/answers/ha-tinh-bf-bof-steel-precursor-emissions"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

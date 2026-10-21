@@ -1,0 +1,55 @@
+{
+  "slug": "vietnam-cement-kiln-rice-husk-fuel-cbam",
+  "q": "Does rice husk fuel lower a Vietnamese cement kiln's CBAM figure?",
+  "title": "Rice husk in cement kilns and CBAM",
+  "short": "It can, if the husk qualifies as biomass under the CBAM rules, which refer to EU sustainability criteria. Qualifying biomass CO2 is counted at zero, and only the fossil share of the fuel mix stays. Keep purchase records, calorific values and the evidence that the husk is a residue.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Cement plants in Vietnam's Mekong and northern provinces replacing coal with rice husk or other agricultural residues",
+  "sections": [
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Tonnes of husk fired, with moisture and calorific value.",
+        "Supplier invoices showing it is a processing residue.",
+        "The coal or petcoke it replaced, for your own trend."
+      ]
+    },
+    {
+      "h": "Limits",
+      "p": [
+        "Calcination CO2 from limestone does not change with fuel, and it is usually the larger part of clinker emissions. Rice husk ash also adds silica to the kiln feed, so watch clinker chemistry."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Marmara cement biomass fuel",
+      "to": "/answers/marmara-cement-plant-biomass-fuel-cbam"
+    },
+    {
+      "label": "Rice husk sold to power plants",
+      "to": "/answers/rice-husk-sold-to-power-plant-who-claims"
+    },
+    {
+      "label": "Process CO2 from calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

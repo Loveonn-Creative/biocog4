@@ -1,0 +1,51 @@
+{
+  "slug": "bangladesh-grid-emission-factor-for-factories",
+  "q": "Which grid emission factor should a Bangladesh factory use?",
+  "title": "Grid factor for Bangladesh factories",
+  "short": "Use the national grid factor for the year, from the official publication if available, otherwise a recognised international dataset, and name the source. Bangladesh's gas heavy grid sits roughly between 0.5 and 0.7 kg CO2 per kWh depending on year and source, lower than coal heavy grids.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Garment, textile, leather and steel factories in Bangladesh answering brand and buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Be consistent",
+      "ul": [
+        "One source, one year per report.",
+        "Write the value and source next to the result.",
+        "Update when a newer figure is published, and say so."
+      ]
+    },
+    {
+      "h": "Generators are separate",
+      "p": [
+        "Diesel or gas generators on site are Scope 1. Do not mix their kWh into grid electricity at the grid factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Rooftop solar at Bangladesh factories",
+      "to": "/answers/bangladesh-garment-factory-rooftop-solar-scope-2"
+    },
+    {
+      "label": "Narayanganj gas boiler CO2",
+      "to": "/answers/narayanganj-knit-dyeing-gas-boiler-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

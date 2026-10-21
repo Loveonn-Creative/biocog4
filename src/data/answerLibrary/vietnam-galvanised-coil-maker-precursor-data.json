@@ -1,0 +1,55 @@
+{
+  "slug": "vietnam-galvanised-coil-maker-precursor-data",
+  "q": "What CBAM data does a Vietnamese galvanising line need for imported coil?",
+  "title": "Vietnam galvanisers: imported coil data",
+  "short": "The embedded emissions of each hot or cold rolled coil you buy, from the mill that made it, per tonne and period. Add your own line's direct emissions from annealing and pot heating fuel and divide by tonnes of coated product. Zinc carries nothing under CBAM.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Galvanising and colour coating lines in Vietnam that buy substrate coil from Vietnamese, Chinese or other mills and export to the EU",
+  "sections": [
+    {
+      "h": "From the coil supplier",
+      "ul": [
+        "Specific direct embedded emissions per tonne, with installation and period.",
+        "Production route, since blast furnace and arc furnace coil differ widely.",
+        "Whether a verifier has checked the figure."
+      ]
+    },
+    {
+      "h": "If a supplier will not share",
+      "p": [
+        "Your importer uses the default value for that coil, which carries a mark-up. Mixing verified coil from one mill with default coil from another is allowed, but track it by batch."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Steel pipes from purchased coil",
+      "to": "/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+    },
+    {
+      "label": "Galvanised sheet and zinc",
+      "to": "/answers/vanderbijlpark-coated-steel-zinc-cbam"
+    },
+    {
+      "label": "EU importer of Vietnamese steel",
+      "to": "/answers/eu-importer-vietnam-steel-authorised-declarant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

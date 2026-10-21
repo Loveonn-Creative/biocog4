@@ -1,0 +1,56 @@
+{
+  "slug": "lagos-data-centre-diesel-power-scope-1",
+  "q": "How should a Lagos data centre count power from its own diesel and gas generators?",
+  "title": "Lagos data centres: generator power",
+  "short": "Fuel burnt in on site generators is Scope 1, at about 2.68 kg CO2 per litre of diesel or by gas volume for gas engines. Grid electricity is Scope 2. Where generators run most hours, Scope 1 can exceed Scope 2, so customers need both, not grid kWh alone.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Data centre operators in Lagos and other cities with unreliable grid supply",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Diesel delivered and tank levels, or a fuel meter per generator.",
+        "Gas volume for gas engines.",
+        "Grid kWh from the utility meter.",
+        "IT load, so PUE and per kW figures make sense."
+      ]
+    },
+    {
+      "h": "For customers",
+      "p": [
+        "Allocate both Scope 1 and Scope 2 by the contract key. A customer counting only grid power under reports badly here."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Chennai data centre diesel gensets",
+      "to": "/answers/chennai-data-centre-diesel-genset-scope-1"
+    },
+    {
+      "label": "DG set emissions per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Battery backup vs DG set",
+      "to": "/answers/battery-backup-vs-dg-set-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

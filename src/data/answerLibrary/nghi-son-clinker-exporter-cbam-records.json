@@ -1,0 +1,61 @@
+{
+  "slug": "nghi-son-clinker-exporter-cbam-records",
+  "q": "What records should a Nghi Son clinker or cement exporter keep for CBAM?",
+  "title": "Nghi Son cement exporters: CBAM records",
+  "short": "Kiln fuel by type and calorific value, raw meal or clinker output with its CaO and MgO content for calcination, electricity consumed, and production by product. Cement is charged on direct and indirect emissions, so keep electricity records as carefully as fuel.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Clinker and cement plants in Thanh Hoa's Nghi Son area and elsewhere in Vietnam selling to EU importers",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "Fuel: coal, petcoke, alternative fuels, each with tonnes and calorific value.",
+        "Calcination: clinker tonnes and oxide content, or the carbonate content of raw meal.",
+        "Bypass and kiln dust leaving the system, corrected for calcination."
+      ]
+    },
+    {
+      "h": "Indirect emissions",
+      "p": [
+        "Electricity for raw milling, kiln drives and cement grinding, with the grid or captive factor and its source."
+      ]
+    },
+    {
+      "h": "Per product",
+      "p": [
+        "Allocate to clinker and to each cement type by clinker ratio. Grinding units buying clinker need your clinker figure as a precursor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Kiln bypass dust correction",
+      "to": "/answers/cement-kiln-bypass-dust-calcination-correction"
+    },
+    {
+      "label": "Egypt clinker exporter figure",
+      "to": "/answers/egypt-clinker-exporter-embedded-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

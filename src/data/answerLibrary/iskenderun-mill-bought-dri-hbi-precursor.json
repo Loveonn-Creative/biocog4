@@ -1,0 +1,55 @@
+{
+  "slug": "iskenderun-mill-bought-dri-hbi-precursor",
+  "q": "How does a Turkish arc furnace mill count bought DRI or HBI for CBAM?",
+  "title": "Bought DRI or HBI in Turkish EAF steel",
+  "short": "As a precursor. Multiply the tonnes of DRI or HBI charged by their embedded emissions per tonne, from the supplier's actual data or the default value, and add your own melt shop and rolling emissions. Scrap brings no embedded emissions; DRI does.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Electric arc furnace mills in Iskenderun, Hatay and the Marmara region charging imported DRI or HBI",
+  "sections": [
+    {
+      "h": "What to get from the DRI supplier",
+      "ul": [
+        "Direct embedded emissions per tonne, with installation and period.",
+        "Whether the DRI was made with gas or coal, since coal DRI is much higher.",
+        "Any verification."
+      ]
+    },
+    {
+      "h": "Batch tracking",
+      "p": [
+        "If you charge DRI from several sources, track tonnes by source per period. Averaging verified and default material is allowed if the arithmetic is shown."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Does scrap count as zero",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Egypt DRI and EAF rebar",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    },
+    {
+      "label": "Pig iron and sponge iron in CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

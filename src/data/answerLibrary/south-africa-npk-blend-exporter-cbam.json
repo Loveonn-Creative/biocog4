@@ -1,0 +1,55 @@
+{
+  "slug": "south-africa-npk-blend-exporter-cbam",
+  "q": "Does a South African NPK blending plant need CBAM data for EU exports?",
+  "title": "NPK blends from South Africa and CBAM",
+  "short": "Yes, if the blend is declared under CN 3105 and contains nitrogen. Mixed and compound fertilisers are covered. A blending plant has few direct emissions of its own, so the figure is mostly the embedded emissions of the urea, ammonium nitrate or other nitrogen inputs, weighted by how much of each goes in.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Fertiliser blending and granulation plants in South Africa selling NPK products to EU buyers",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Your own fuel for drying or granulation, and electricity, since fertilisers include indirect emissions.",
+        "Embedded emissions of each covered input, per tonne used.",
+        "Phosphate rock and potash are not CBAM precursors, so they add nothing to the CBAM figure."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "p": [
+        "Batch recipes, tonnes of each input consumed, supplier embedded emissions or default values, and output tonnes by product grade for the reporting period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are urea and DAP covered by CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Sasolburg ammonia as a precursor",
+      "to": "/answers/sasolburg-ammonia-precursor-for-fertiliser-exporters"
+    },
+    {
+      "label": "Is triple superphosphate covered",
+      "to": "/answers/is-moroccan-triple-superphosphate-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

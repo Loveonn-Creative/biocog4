@@ -1,0 +1,55 @@
+{
+  "slug": "brescia-mill-ferro-alloy-supplier-carbon-data",
+  "q": "What carbon data does a Brescia arc furnace mill want from ferroalloy suppliers?",
+  "title": "Brescia mills: ferroalloy supplier data",
+  "short": "Ferroalloys are CBAM goods, so the mill or its importer needs embedded emissions per tonne, by installation and period. For the mill's own product footprints it also wants electricity and reductant use, since alloys add notable emissions per tonne of low carbon steel.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Ferromanganese, silicomanganese and ferrochrome suppliers selling to electric arc furnace mills around Brescia",
+  "sections": [
+    {
+      "h": "For CBAM",
+      "ul": [
+        "Specific direct embedded emissions per tonne of alloy.",
+        "Indirect emissions, reported separately.",
+        "Installation, period and verification."
+      ]
+    },
+    {
+      "h": "For the mill's footprint",
+      "p": [
+        "Electricity per tonne and its source, plus transport to the mill. Scrap based steel has a low footprint, so alloys and electrodes become a visible share."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, the site data a buyer questionnaire starts from. It does not produce verified product footprints or fill a buyer's portal for you.",
+  "links": [
+    {
+      "label": "Steel mill abroad buying Indian ferromanganese",
+      "to": "/answers/steel-mill-abroad-indian-ferromanganese-data"
+    },
+    {
+      "label": "Chhattisgarh silicomanganese carbon",
+      "to": "/answers/chhattisgarh-silico-manganese-carbon-per-tonne"
+    },
+    {
+      "label": "Brescia EAF mill imported billets",
+      "to": "/answers/brescia-eaf-mill-imported-billets-scrap-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

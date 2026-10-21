@@ -1,0 +1,58 @@
+{
+  "slug": "eu-importer-vietnam-cement-what-to-ask",
+  "q": "What should an EU importer ask a Vietnamese cement supplier for under CBAM?",
+  "title": "EU importers of Vietnamese cement",
+  "short": "Ask for direct and indirect embedded emissions per tonne for each cement or clinker product, the installation, the reporting period and the clinker ratio. Ask whether a verifier has checked the figures and how electricity was counted. Without that, use default values, which carry a mark-up.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and traders buying cement or clinker from Vietnam",
+  "sections": [
+    {
+      "h": "Ask for",
+      "ul": [
+        "Direct and indirect specific embedded emissions per product.",
+        "Clinker ratio and any bought clinker used as a precursor.",
+        "Electricity source and factor.",
+        "Verifier details, once verification is required."
+      ]
+    },
+    {
+      "h": "Contract points",
+      "ul": [
+        "Delivery of data before the annual declaration.",
+        "Who pays if data is late and default values apply.",
+        "Notice when the plant changes fuel or clinker source."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Nghi Son cement exporter records",
+      "to": "/answers/nghi-son-clinker-exporter-cbam-records"
+    },
+    {
+      "label": "EU importer of Turkish cement",
+      "to": "/answers/eu-importer-turkish-cement-what-to-ask"
+    },
+    {
+      "label": "CBAM clause in an export contract",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "eskom-grid-factor-for-south-african-suppliers",
+  "q": "Which grid factor should a South African supplier use for Scope 2?",
+  "title": "Grid factor for South African suppliers",
+  "short": "Use the national grid emission factor for the year your electricity was consumed, from the official or utility publication, and name the source. South Africa's coal heavy grid sits roughly between 0.9 and 1.0 kg CO2 per kWh, among the highest in the world, so electricity often dominates a supplier's footprint.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Manufacturers and exporters in the Vaal Triangle and across South Africa answering buyer Scope 2 questions",
+  "sections": [
+    {
+      "h": "Location and market based",
+      "ul": [
+        "Location based: the grid average factor for the year.",
+        "Market based: certificates or contracts for renewable power that meet the Scope 2 Quality Criteria, else a residual mix if one exists."
+      ]
+    },
+    {
+      "h": "For CBAM goods",
+      "p": [
+        "Steel and aluminium are charged on direct emissions only, so the grid factor affects reporting, not certificates. Cement and fertilisers include indirect emissions, where the factor does change the cost."
+      ]
+    },
+    {
+      "h": "Mistakes to avoid",
+      "p": [
+        "Mixing years, using a generation factor where the buyer asked for consumption including grid losses, or quoting a global average instead of the national figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "I-REC vs India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Load shedding diesel and CBAM",
+      "to": "/answers/south-africa-steel-mill-load-shedding-diesel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

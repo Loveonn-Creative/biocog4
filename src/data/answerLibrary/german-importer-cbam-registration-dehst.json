@@ -1,0 +1,55 @@
+{
+  "slug": "german-importer-cbam-registration-dehst",
+  "q": "Does a German importer of steel or aluminium need to register for CBAM?",
+  "title": "German importers: CBAM registration",
+  "short": "Yes, if it imports more than 50 tonnes of covered goods a year. It must be an authorised CBAM declarant, applied for through the CBAM Registry and handled in Germany by the German Emissions Trading Authority (DEHSt). Below 50 tonnes a year, the simplification regulation exempts it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "German importers, traders and Mittelstand manufacturers buying covered steel, aluminium, fertiliser or cement from outside the EU",
+  "sections": [
+    {
+      "h": "What the status brings",
+      "ul": [
+        "An annual CBAM declaration of embedded emissions for the previous year.",
+        "Buying and surrendering certificates for that year.",
+        "Keeping supplier emissions data and verification reports."
+      ]
+    },
+    {
+      "h": "From suppliers",
+      "p": [
+        "Ask emerging market suppliers for actual embedded emissions early. Default values carry a mark-up that rises over the first years, and the cost is yours."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Antwerp hydrogen imports and the 50 tonne rule",
+      "to": "/answers/antwerp-hydrogen-imports-cbam-50-tonne-exemption"
+    },
+    {
+      "label": "Can a non EU exporter be the declarant",
+      "to": "/answers/can-non-eu-exporter-be-cbam-declarant-ddp"
+    },
+    {
+      "label": "EU importer of Turkish rebar",
+      "to": "/answers/eu-importer-turkish-rebar-supplier-what-to-ask"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

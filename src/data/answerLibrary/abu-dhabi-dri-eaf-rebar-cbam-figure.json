@@ -1,0 +1,55 @@
+{
+  "slug": "abu-dhabi-dri-eaf-rebar-cbam-figure",
+  "q": "How is the CBAM figure built for gas DRI and arc furnace rebar from Abu Dhabi?",
+  "title": "Abu Dhabi DRI and EAF rebar: CBAM figure",
+  "short": "Add the DRI plant's direct emissions, mostly natural gas, to the melt shop's direct emissions from electrodes, charge carbon and burners, plus reheating gas in the rolling mill, and divide by tonnes of rebar. Pellets are a precursor. Electricity is reported, not charged, for steel.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Integrated DRI and EAF steel producers in Abu Dhabi and EU importers of Gulf rebar",
+  "sections": [
+    {
+      "h": "Where the emissions sit",
+      "ul": [
+        "DRI plant: reformer and process gas.",
+        "Melt shop: electrodes, charge carbon, lime, burner gas.",
+        "Rolling mill: reheating furnace fuel, unless billets are hot charged."
+      ]
+    },
+    {
+      "h": "Why actual data matters",
+      "p": [
+        "Gas DRI and EAF steel usually has a much lower direct figure than blast furnace steel, but default values are set by product and country. Verified actual data is how the lower figure reaches the EU buyer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Egypt DRI and EAF rebar",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    },
+    {
+      "label": "Monterrey gas DRI steel",
+      "to": "/answers/monterrey-gas-dri-steel-cbam-figure"
+    },
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

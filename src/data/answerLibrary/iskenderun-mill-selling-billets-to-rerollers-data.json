@@ -1,0 +1,55 @@
+{
+  "slug": "iskenderun-mill-selling-billets-to-rerollers-data",
+  "q": "What CBAM data should an Iskenderun mill give rerollers buying its billets?",
+  "title": "Selling billets to rerollers: CBAM data",
+  "short": "The embedded emissions per tonne of billet, for the period and installation, split into direct and indirect, with verification status. Rerollers that export bars to the EU need it as a precursor figure. Without it they fall back on default values, which makes your billets less attractive.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Melt shops in Iskenderun and Hatay selling billets to rerolling mills that export to the EU",
+  "sections": [
+    {
+      "h": "Hand over",
+      "ul": [
+        "Specific direct embedded emissions per tonne of billet.",
+        "Indirect emissions per tonne, reported separately.",
+        "Installation, period and verifier."
+      ]
+    },
+    {
+      "h": "Make it repeatable",
+      "p": [
+        "Publish the figure each reporting period, tied to delivery notes, so a reroller can match tonnes received to the right value."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Induction furnace billets in CBAM",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "Iskenderun actual vs default values",
+      "to": "/answers/iskenderun-steel-exporter-actual-vs-default-cbam"
+    },
+    {
+      "label": "Brescia EAF mill imported billets",
+      "to": "/answers/brescia-eaf-mill-imported-billets-scrap-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

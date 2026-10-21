@@ -1,0 +1,53 @@
+{
+  "slug": "data-centre-ups-losses-scope-2",
+  "q": "Do UPS losses count in a data centre's Scope 2?",
+  "title": "UPS losses and data centre Scope 2",
+  "short": "Yes, they are already inside your metered electricity. A double conversion UPS loses a few percent of what passes through it as heat, which then also needs cooling. The losses do not need a separate line in Scope 2, but they show up in PUE and in what you allocate to customers.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Data centre operators and enterprises running server rooms with large UPS systems",
+  "sections": [
+    {
+      "h": "Where the losses go",
+      "ul": [
+        "UPS conversion losses: a few percent of IT load at typical loading.",
+        "Extra cooling to remove that heat.",
+        "Both sit between the utility meter and the IT load."
+      ]
+    },
+    {
+      "h": "Cutting them",
+      "ul": [
+        "Running UPS modules nearer their efficient load range.",
+        "Eco mode where the risk policy allows it.",
+        "Right sizing redundancy."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "PUE formula and a good PUE",
+      "to": "/answers/pue-formula-and-good-pue"
+    },
+    {
+      "label": "Inverter and UPS footprint",
+      "to": "/answers/inverter-ups-carbon-footprint-per-unit"
+    },
+    {
+      "label": "On premise server room emissions",
+      "to": "/answers/on-premise-server-room-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

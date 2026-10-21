@@ -1,0 +1,57 @@
+{
+  "slug": "polish-steel-service-centre-cbam-import-records",
+  "q": "What CBAM records does a Polish steel service centre need for imported coil?",
+  "title": "Polish service centres: CBAM records",
+  "short": "For each import: CN code, tonnes, country and installation of origin, and the supplier's embedded emissions or a note that default values apply. Keep supplier verification reports. Slitting and cutting in Poland adds nothing to CBAM, since it happens after import.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel service centres and distributors in Poland importing coil, plate and sections from Turkey, Ukraine, India and Asia",
+  "sections": [
+    {
+      "h": "Per shipment",
+      "ul": [
+        "Customs declaration and CN code.",
+        "Supplier and installation.",
+        "Embedded emissions per tonne, direct and indirect, or the default value used."
+      ]
+    },
+    {
+      "h": "Per year",
+      "ul": [
+        "The annual CBAM declaration and certificate surrender.",
+        "Evidence for any carbon price claimed.",
+        "Supplier verification reports, kept for the audit period."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ukrainian steel to Poland",
+      "to": "/answers/ukraine-steel-exporter-to-poland-cbam-records"
+    },
+    {
+      "label": "Silesian steelworks imported coke",
+      "to": "/answers/silesia-steelworks-imported-coke-coal-cbam"
+    },
+    {
+      "label": "German importers: CBAM registration",
+      "to": "/answers/german-importer-cbam-registration-dehst"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

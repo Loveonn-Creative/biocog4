@@ -1,0 +1,55 @@
+{
+  "slug": "south-africa-ferrochrome-exporter-eskom-power-cbam",
+  "q": "Does grid power count in a South African ferrochrome exporter's CBAM figure?",
+  "title": "South African ferrochrome and grid power",
+  "short": "Not for certificates. Ferroalloys are iron and steel goods, charged on direct emissions only: reductant carbon, electrode paste and fuel burnt on site. Grid electricity is reported as indirect emissions. On a coal heavy grid it is often the largest part of the full footprint, so buyers will still ask.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferrochrome smelters in South Africa exporting to EU stainless steel makers",
+  "sections": [
+    {
+      "h": "Counted",
+      "ul": [
+        "Coke, anthracite and char used as reductants, through a carbon mass balance.",
+        "Electrode paste consumed.",
+        "Fuel for pelletising, preheating or sintering inside the installation."
+      ]
+    },
+    {
+      "h": "Reported, not charged",
+      "p": [
+        "Electricity per tonne multiplied by the grid factor for the year. Keep it ready: EU stainless mills report it in their own footprints."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Odisha ferrochrome captive power",
+      "to": "/answers/odisha-ferrochrome-captive-power-cbam"
+    },
+    {
+      "label": "Electrode paste CO2",
+      "to": "/answers/ferro-alloy-electrode-paste-co2-per-tonne"
+    },
+    {
+      "label": "Grid factor for South African suppliers",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

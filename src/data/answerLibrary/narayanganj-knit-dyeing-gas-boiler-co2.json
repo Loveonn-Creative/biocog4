@@ -1,0 +1,64 @@
+{
+  "slug": "narayanganj-knit-dyeing-gas-boiler-co2",
+  "q": "How does a Narayanganj knit dyeing unit calculate CO2 from its gas boilers?",
+  "title": "Narayanganj dyeing units: gas boiler CO2",
+  "short": "Take the gas volume from the utility bill or your meter, convert it to energy with the calorific value, and multiply by the natural gas emission factor, about 56 kg CO2 per GJ at the IPCC default. Add diesel or LPG used when gas pressure drops, from fuel invoices.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Knit dyeing and finishing units in Narayanganj, Gazipur and Savar supplying EU and UK brands",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Gas used in cubic metres for the month.",
+        "Times the calorific value on the bill or a standard value, to get GJ.",
+        "Times 56.1 kg CO2 per GJ, the IPCC default for natural gas.",
+        "Divide by kilograms of fabric dyed for an intensity."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "ul": [
+        "Captive gas generators on the same meter: split boiler and generator use.",
+        "Backup diesel during gas shortages left out.",
+        "Steam bought from a neighbour, which is Scope 2, not Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One month at a mid size dyeing unit",
+    "lines": [
+      "Gas used: 60,000 m3",
+      "At about 0.037 GJ per m3: 2,220 GJ",
+      "2,220 GJ x 56.1 kg = 124,542 kg, about 125 t CO2",
+      "Fabric dyed: 300,000 kg, so about 0.42 kg CO2 per kg from gas"
+    ],
+    "note": "Use the calorific value on your own bill; this example uses a typical figure."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Dye house emissions per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Gazipur and Savar garment data",
+      "to": "/answers/gazipur-savar-garment-factory-buyer-carbon-data"
+    },
+    {
+      "label": "Higg FEM energy data",
+      "to": "/answers/higg-fem-energy-and-emissions-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

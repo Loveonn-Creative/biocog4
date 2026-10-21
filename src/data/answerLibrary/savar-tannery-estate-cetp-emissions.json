@@ -1,0 +1,55 @@
+{
+  "slug": "savar-tannery-estate-cetp-emissions",
+  "q": "How should a Savar tannery count emissions from the shared effluent plant?",
+  "title": "Savar tanneries: shared effluent plant",
+  "short": "If the tannery pays the central effluent treatment plant and does not run it, those emissions are Scope 3, under waste generated in operations. Ask the plant for its electricity, chemicals and any methane from sludge, then take your share by effluent volume or the fee basis.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tanneries in the Savar tannery estate at Hemayetpur and other shared effluent clusters",
+  "sections": [
+    {
+      "h": "Your own scopes",
+      "ul": [
+        "Scope 1: your boilers, generators and any pre-treatment you run.",
+        "Scope 2: electricity bought for drums, dryers and your own pumps.",
+        "Scope 3: the shared plant, chemicals bought, hides transport."
+      ]
+    },
+    {
+      "h": "If the plant has no data",
+      "p": [
+        "Estimate from effluent volume and typical treatment energy, label it as an estimate, and ask for metered data next year. Brands accept a clear estimate more readily than a blank."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Effluent plant emissions: which scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Tannery footprint per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Kanpur chrome tanning chemicals",
+      "to": "/answers/kanpur-tannery-chrome-tanning-chemicals-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

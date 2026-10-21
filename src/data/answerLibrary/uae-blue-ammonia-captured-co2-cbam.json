@@ -1,0 +1,55 @@
+{
+  "slug": "uae-blue-ammonia-captured-co2-cbam",
+  "q": "Does captured CO2 lower the CBAM figure of UAE blue ammonia?",
+  "title": "Blue ammonia: does captured CO2 count?",
+  "short": "Only if the capture and the permanent storage meet the CBAM monitoring rules, with the transferred CO2 measured and the storage site recognised. Otherwise the CO2 counts as emitted. Ask your verifier which evidence they will accept before you sell the product as low carbon.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ammonia producers in the UAE marketing blue ammonia to EU buyers, and their importers",
+  "sections": [
+    {
+      "h": "What the claim needs",
+      "ul": [
+        "Metered tonnes of CO2 captured and transferred, per reporting period.",
+        "Proof the CO2 went to permanent geological storage, not to use in a product that releases it.",
+        "A verifier who has checked the chain."
+      ]
+    },
+    {
+      "h": "CO2 used, not stored",
+      "p": [
+        "CO2 sent to enhanced oil recovery or to make urea or drinks is not permanent storage in the usual sense. Treat it as emitted unless the rules you apply say otherwise."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "UAE ammonia exports and CBAM",
+      "to": "/answers/uae-ammonia-exporter-cbam-what-counts"
+    },
+    {
+      "label": "Green ammonia threshold",
+      "to": "/answers/green-ammonia-carbon-intensity-threshold"
+    },
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

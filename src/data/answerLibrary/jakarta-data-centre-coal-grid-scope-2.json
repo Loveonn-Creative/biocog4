@@ -1,0 +1,55 @@
+{
+  "slug": "jakarta-data-centre-coal-grid-scope-2",
+  "q": "How should a Jakarta data centre report Scope 2 on Indonesia's grid?",
+  "title": "Jakarta data centres: Scope 2",
+  "short": "Report location based Scope 2 with the official factor for the Java Madura Bali grid for the year, which is high because coal dominates, around 0.8 to 0.9 kg CO2 per kWh in recent figures. Report market based separately using renewable certificates or contracts that meet the Scope 2 Quality Criteria.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Colocation and hyperscale data centre operators around Jakarta and their customers",
+  "sections": [
+    {
+      "h": "For customers",
+      "ul": [
+        "Share Scope 2 by the allocation key in the contract, usually contracted kW or metered kWh.",
+        "Give location and market based figures, not one blended number.",
+        "Include the share of diesel generator testing as Scope 1."
+      ]
+    },
+    {
+      "h": "Why market based matters here",
+      "p": [
+        "On a coal heavy grid, renewable purchases change the market based figure a lot, so customers will ask what was bought, where and for which period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Johor data centre Scope 2",
+      "to": "/answers/johor-data-centre-scope-2-reporting"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Cloud and data centre calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data by country",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "ISO (ISO 14067, ISO/IEC 30134)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "faisalabad-processing-mill-coal-boiler-to-biomass-co2",
+  "q": "How does a Faisalabad processing mill report switching its boiler from coal to biomass?",
+  "title": "Faisalabad mills: coal to biomass boilers",
+  "short": "Report fossil CO2 from the remaining coal as Scope 1, and biomass CO2 separately as biogenic, outside the scope totals, as the GHG Protocol asks. Methane and nitrous oxide from burning biomass still count in Scope 1. Keep fuel receipts showing what the biomass is.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile processing and finishing mills in Faisalabad and Lahore moving boilers to rice husk, corn cob or wood",
+  "sections": [
+    {
+      "h": "Before and after",
+      "ul": [
+        "Coal: tonnes, calorific value, IPCC factor, all in Scope 1.",
+        "Biomass: tonnes and calorific value; CO2 reported as biogenic, CH4 and N2O in Scope 1.",
+        "Steam output, so buyers see emissions per kg of fabric."
+      ]
+    },
+    {
+      "h": "Make the claim hold",
+      "p": [
+        "Show the biomass is a residue and not from cleared land, and that the switch is real in fuel invoices, not only in the boiler specification."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into a dated, fingerprinted Scope 1 and 2 record per site. Grid factors outside India must be entered from the official source for the country and year, and are labelled with that source.",
+  "links": [
+    {
+      "label": "Faisalabad mill gas generators",
+      "to": "/answers/faisalabad-textile-mill-gas-generator-scope-1"
+    },
+    {
+      "label": "Kanpur tannery wood fired boiler",
+      "to": "/answers/kanpur-tannery-wood-fired-boiler-biogenic-co2"
+    },
+    {
+      "label": "Tiruppur firewood boiler emissions",
+      "to": "/answers/tiruppur-dyeing-unit-firewood-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

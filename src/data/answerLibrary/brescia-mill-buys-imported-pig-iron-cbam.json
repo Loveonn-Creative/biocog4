@@ -1,0 +1,55 @@
+{
+  "slug": "brescia-mill-buys-imported-pig-iron-cbam",
+  "q": "What does imported pig iron add to a Brescia mill's CBAM costs?",
+  "title": "Imported pig iron for Brescia mills",
+  "short": "Pig iron is a CBAM good, so whoever imports it buys certificates for its embedded emissions. Blast furnace pig iron carries much higher emissions per tonne than scrap, so even a small share in the charge mix moves the cost. Charcoal pig iron can be far lower if the biomass qualifies.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Electric arc furnace mills and foundries in Brescia and northern Italy buying pig iron from Brazil, India or Ukraine",
+  "sections": [
+    {
+      "h": "What to ask the supplier",
+      "ul": [
+        "Embedded emissions per tonne, by installation and period.",
+        "The reductant: coke or charcoal, with biomass evidence if charcoal.",
+        "Verification status."
+      ]
+    },
+    {
+      "h": "Inside the mill",
+      "p": [
+        "Once imported and paid for, the pig iron enters the mill's EU ETS installation, not its CBAM figure, since the mill itself is in the EU."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Pig iron and sponge iron in CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Charcoal pig iron from Minas Gerais",
+      "to": "/answers/charcoal-pig-iron-minas-gerais-cbam-zero"
+    },
+    {
+      "label": "Foundry charge mix: pig iron vs scrap",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

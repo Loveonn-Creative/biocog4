@@ -1,0 +1,57 @@
+{
+  "slug": "turkish-rebar-reheating-furnace-gas-cbam",
+  "q": "Does reheating furnace gas count in a Turkish rebar mill's CBAM figure?",
+  "title": "Reheating gas in Turkish rebar",
+  "short": "Yes. Natural gas or fuel oil burnt in the rolling mill's reheating furnace is a direct emission of the installation and goes into the rebar figure. Hot charging billets straight from the caster cuts it, and the saving shows up directly in what your EU buyer pays.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Rebar and wire rod mills in Turkey exporting long products to the EU",
+  "sections": [
+    {
+      "h": "How to count it",
+      "ol": [
+        "Read gas consumption from the meter or supplier invoices for the period.",
+        "Multiply by the net calorific value and emission factor, using IPCC defaults or supplier data.",
+        "Allocate to rolled products by tonnage."
+      ]
+    },
+    {
+      "h": "Ways to lower it",
+      "ul": [
+        "Hot charging and direct rolling.",
+        "Furnace insulation and burner tuning.",
+        "Recovering heat from flue gas to preheat combustion air."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Reheating furnace insulation savings",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    },
+    {
+      "label": "Egypt hot charging billets",
+      "to": "/answers/egypt-rebar-mill-hot-charging-billets-cbam"
+    },
+    {
+      "label": "Turkish rebar CBAM cost in 2026",
+      "to": "/answers/turkish-rebar-cbam-cost-per-tonne-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

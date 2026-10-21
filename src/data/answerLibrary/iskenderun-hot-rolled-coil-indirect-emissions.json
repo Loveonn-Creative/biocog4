@@ -1,0 +1,55 @@
+{
+  "slug": "iskenderun-hot-rolled-coil-indirect-emissions",
+  "q": "Is electricity counted in the CBAM figure for Iskenderun hot rolled coil?",
+  "title": "Iskenderun hot rolled coil and electricity",
+  "short": "Reported, but not charged. Steel is charged on direct emissions only, so electricity for rolling, arc furnaces or oxygen plants stays outside the certificate figure. Report it anyway as indirect emissions, because EU buyers use it in footprints and the scope may widen later.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Flat steel producers around Iskenderun and Hatay exporting hot rolled coil to the EU",
+  "sections": [
+    {
+      "h": "What is charged",
+      "ul": [
+        "Blast furnace or arc furnace direct emissions, through the installation's mass balance.",
+        "Reheating furnace fuel in the hot strip mill.",
+        "Precursors such as bought slab, pig iron or DRI, at their embedded emissions."
+      ]
+    },
+    {
+      "h": "What is reported only",
+      "p": [
+        "Electricity consumed across the route, at the grid or own plant factor, per tonne of coil."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Iskenderun actual vs default values",
+      "to": "/answers/iskenderun-steel-exporter-actual-vs-default-cbam"
+    },
+    {
+      "label": "Ain Sokhna flat steel bought slab",
+      "to": "/answers/ain-sokhna-flat-steel-mill-bought-slab-cbam"
+    },
+    {
+      "label": "Turkish carbon price and CBAM",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

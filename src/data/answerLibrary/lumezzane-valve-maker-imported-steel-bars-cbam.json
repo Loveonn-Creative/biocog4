@@ -1,0 +1,55 @@
+{
+  "slug": "lumezzane-valve-maker-imported-steel-bars-cbam",
+  "q": "Does a Lumezzane valve maker owe CBAM on imported steel bars?",
+  "title": "Lumezzane valve makers: imported bars",
+  "short": "Yes, if it imports more than 50 tonnes of covered steel a year, such as bars under CN 7214 or 7228. The finished valves are usually outside CBAM today, but the bars bought from India, Turkey or elsewhere are not. Brass bars are not covered.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Valve, fitting and forging companies in Lumezzane and the Val Trompia that buy steel bars from outside the EU",
+  "sections": [
+    {
+      "h": "What to do",
+      "ul": [
+        "Check the CN codes of bars and forgings bought from outside the EU.",
+        "Apply to be an authorised declarant if over 50 tonnes a year.",
+        "Ask bar suppliers for actual embedded emissions."
+      ]
+    },
+    {
+      "h": "What could change",
+      "p": [
+        "The Commission proposed extending CBAM to many steel intensive downstream products from 2028. Check whether valve and fitting codes appear in the text finally adopted."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "German importers: CBAM registration",
+      "to": "/answers/german-importer-cbam-registration-dehst"
+    },
+    {
+      "label": "Antwerp and the 50 tonne rule",
+      "to": "/answers/antwerp-hydrogen-imports-cbam-50-tonne-exemption"
+    },
+    {
+      "label": "Cast iron castings and CBAM",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

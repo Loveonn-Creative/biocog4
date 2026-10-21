@@ -1,0 +1,61 @@
+{
+  "slug": "sasolburg-ammonia-precursor-for-fertiliser-exporters",
+  "q": "How do fertiliser makers using Sasolburg ammonia report it for CBAM?",
+  "title": "Sasolburg ammonia as a CBAM precursor",
+  "short": "Ammonia is a CBAM good and a precursor for nitric acid, ammonium nitrate and many compound fertilisers. If you buy it, add its embedded emissions per tonne used, at your supplier's actual figure or the default value. Ask the supplier for direct and indirect emissions separately.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Fertiliser and explosives grade nitrate producers in the Vaal Triangle buying ammonia from Sasolburg or importing it",
+  "sections": [
+    {
+      "h": "What to ask the ammonia supplier",
+      "ul": [
+        "Specific direct embedded emissions per tonne of ammonia, with the reporting period.",
+        "Specific indirect emissions, since fertilisers are charged on both.",
+        "The production route and whether a verifier has checked the figures."
+      ]
+    },
+    {
+      "h": "How it flows into your product",
+      "p": [
+        "Multiply tonnes of ammonia consumed by its embedded emissions, add your own direct emissions such as nitric acid N2O, and divide by tonnes of product. Track each precursor batch you can tie to production."
+      ]
+    },
+    {
+      "h": "If the supplier will not share",
+      "p": [
+        "Use the default value for ammonia, which carries a mark-up and is usually higher than actual data from an efficient plant. That cost lands on your EU buyer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Vaal Triangle nitric acid N2O",
+      "to": "/answers/vaal-triangle-nitric-acid-n2o-for-cbam"
+    },
+    {
+      "label": "Jorf Lasfar ammonia precursor",
+      "to": "/answers/jorf-lasfar-dap-exporter-ammonia-precursor-cbam"
+    },
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

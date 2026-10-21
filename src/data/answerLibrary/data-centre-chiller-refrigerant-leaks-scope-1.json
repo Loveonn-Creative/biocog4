@@ -1,0 +1,57 @@
+{
+  "slug": "data-centre-chiller-refrigerant-leaks-scope-1",
+  "q": "How does a data centre count refrigerant leaks from its chillers?",
+  "title": "Data centre chillers: refrigerant leaks",
+  "short": "Refrigerant leaked from chillers and CRAC units is Scope 1. Take the kilograms topped up during the year as the leak, multiply by the gas's global warming potential, and add it to Scope 1. For R-134a, the AR6 value is about 1,530, so a 20 kg top up is about 31 t CO2e.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Data centre and large server room operators with chilled water or direct expansion cooling",
+  "sections": [
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Service invoices showing kilograms of refrigerant added, by gas.",
+        "Equipment list with refrigerant type and charge.",
+        "Recovered gas sent for reclamation, which is not a leak."
+      ]
+    },
+    {
+      "h": "Lowering it",
+      "ul": [
+        "Leak checks on a schedule.",
+        "Low GWP refrigerants when replacing chillers.",
+        "Free cooling hours where the climate allows."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads each site's monthly electricity bills into a dated Scope 2 record, keeps renewable purchase documents beside them for market based reporting, and records diesel for backup generators as Scope 1. Grid factors outside India are entered from the official source and labelled. Customer shares use the allocation key you enter.",
+  "links": [
+    {
+      "label": "Refrigerant top up to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Estimating leaks without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Low GWP refrigerant for a new chiller",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
