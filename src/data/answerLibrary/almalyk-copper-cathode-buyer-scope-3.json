@@ -1,0 +1,58 @@
+{
+  "slug": "almalyk-copper-cathode-buyer-scope-3",
+  "q": "What carbon data should a buyer ask for on copper cathode from Almalyk?",
+  "title": "Almalyk copper cathode: buyer data",
+  "short": "Ask for emissions per tonne of cathode from mine to refinery, with the boundary, year and method, and how much of the power came from the grid. Copper is outside CBAM, so there is no customs check; the figure stands on the producer's own evidence and any third party review.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cable makers, traders and EU buyers of copper cathode from Uzbekistan",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Mining: diesel for haul trucks and blasting.",
+        "Concentrating: mostly electricity for crushing and grinding.",
+        "Smelting and refining: fuel, electricity and process emissions.",
+        "Freight to the buyer, often added by the buyer."
+      ]
+    },
+    {
+      "h": "Co products",
+      "p": [
+        "A copper complex also makes gold, silver, zinc or sulphuric acid. Ask how emissions were split between them, by mass or by value, and that the split is stated."
+      ]
+    },
+    {
+      "h": "Where it goes",
+      "p": [
+        "For the buyer, this is Scope 3 category 1, purchased goods. Record it per tonne received, with the supplier's figure and its year."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Copper cathode footprint",
+      "to": "/answers/copper-cathode-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Checking a low carbon copper claim",
+      "to": "/answers/chilean-copper-cathode-low-carbon-claim-how-to-check"
+    },
+    {
+      "label": "Copper cable footprint",
+      "to": "/answers/copper-cable-carbon-footprint-per-km"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

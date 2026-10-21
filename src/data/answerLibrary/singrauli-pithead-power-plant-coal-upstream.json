@@ -1,0 +1,62 @@
+{
+  "slug": "singrauli-pithead-power-plant-coal-upstream",
+  "q": "How does a Singrauli pithead power plant count upstream emissions of its coal?",
+  "title": "Singrauli pithead plant: coal upstream",
+  "short": "Add mining diesel and electricity, methane from the opencast mines, and the short haul to the plant by conveyor, merry go round rail or truck, per tonne received. This is Scope 3 category 3. A pithead plant's haul is short, so mining and methane usually dominate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coal power plants and coal based industries in Singrauli and Sonbhadra",
+  "sections": [
+    {
+      "h": "The pieces",
+      "ul": [
+        "Mining diesel and power, from the supplier or an estimate per tonne.",
+        "Methane: surface mining 1.2 cubic metres per tonne on the IPCC default.",
+        "Conveyor power, if it is your own, is already in your electricity.",
+        "Rail or truck fuel for the haul."
+      ]
+    },
+    {
+      "h": "Own or bought",
+      "p": [
+        "Coal from a mine your group runs is your Scope 1. Coal bought from another company is Scope 3."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Coal receipts by source mine, and the transport mode for each."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Opencast mine methane",
+      "to": "/answers/opencast-coal-mine-methane-and-diesel"
+    },
+    {
+      "label": "Captive coal power category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "Coal rail freight",
+      "to": "/answers/coal-rail-freight-mine-to-plant-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

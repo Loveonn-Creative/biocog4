@@ -1,0 +1,57 @@
+{
+  "slug": "lagos-factory-captive-gas-engine-scope-1",
+  "q": "How does a Lagos factory count emissions from its own gas engines?",
+  "title": "Lagos factory gas engines: Scope 1",
+  "short": "Take the gas volume from the supplier's invoice or your meter, convert it to energy, and multiply by the IPCC default of about 56 kg CO2 per GJ, or the supplier's own figure. It is Scope 1. Power bought from the grid on top is Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Manufacturers in Lagos and Ogun running captive gas engines instead of relying on the grid",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Gas invoices or meter readings, in standard cubic metres or MMBtu.",
+        "Engine run hours and kWh generated.",
+        "Diesel for backup generators, separately."
+      ]
+    },
+    {
+      "h": "Per kWh",
+      "p": [
+        "Gas CO2 divided by kWh generated gives your own power's factor. Brands find this useful when comparing with the grid."
+      ]
+    },
+    {
+      "h": "Methane",
+      "p": [
+        "Small amounts of unburnt methane slip from gas engines. Add it if the engine maker or a test gives a figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Nigeria grid factor",
+      "to": "/answers/nigeria-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Cement plant captive gas power",
+      "to": "/answers/nigeria-cement-plant-captive-gas-power-scope-1"
+    },
+    {
+      "label": "Lagos data centre diesel",
+      "to": "/answers/lagos-data-centre-diesel-power-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

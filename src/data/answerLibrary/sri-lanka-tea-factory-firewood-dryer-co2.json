@@ -1,0 +1,57 @@
+{
+  "slug": "sri-lanka-tea-factory-firewood-dryer-co2",
+  "q": "How does a Sri Lankan tea factory count emissions from firewood used to dry tea?",
+  "title": "Sri Lankan tea factory: firewood drying",
+  "short": "Weigh the firewood burnt in the dryers each month and report its CO2 as biogenic, with methane and nitrous oxide counted in Scope 1. Add grid electricity for withering and rolling. Divide by kg of made tea. Buyers increasingly ask whether the wood comes from managed plantations.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tea factories in Sri Lanka's up country and low country regions",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Firewood bought, by weight or cubic metres converted to weight.",
+        "Electricity bills.",
+        "Made tea produced, in kg."
+      ]
+    },
+    {
+      "h": "The split",
+      "p": [
+        "Biogenic CO2 from wood is shown outside the Scope 1 total. Methane and nitrous oxide from burning are counted in it."
+      ]
+    },
+    {
+      "h": "What buyers ask",
+      "p": [
+        "The source of the wood, such as estate grown eucalyptus, and evidence it is replanted."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Tea factory footprint",
+      "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea"
+    },
+    {
+      "label": "Sri Lanka grid factor",
+      "to": "/answers/sri-lanka-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Biomass fuel evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

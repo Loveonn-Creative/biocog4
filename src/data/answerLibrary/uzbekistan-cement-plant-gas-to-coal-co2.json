@@ -1,0 +1,58 @@
+{
+  "slug": "uzbekistan-cement-plant-gas-to-coal-co2",
+  "q": "How much does switching a cement kiln in Uzbekistan from gas to coal change its CO2?",
+  "title": "Uzbek cement kiln: gas to coal CO2",
+  "short": "Calcination CO2 stays the same, but fuel CO2 rises, because coal releases far more CO2 than gas for the same heat. Work it out from tonnes of coal with its heating value and carbon content, not a flat rate, and report the year of the switch so buyers see why the figure moved.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Cement plants in Uzbekistan and Central Asia that moved kilns from gas to coal",
+  "sections": [
+    {
+      "h": "Two sources",
+      "ul": [
+        "Calcination: CO2 from limestone, set by the clinker made.",
+        "Fuel: CO2 from what the kiln burns, which changes with the switch."
+      ]
+    },
+    {
+      "h": "How to compare",
+      "ol": [
+        "Kiln heat use per tonne of clinker, in GJ.",
+        "Times the fuel's CO2 per GJ, from its lab report or IPCC default.",
+        "Compare the two fuels at the same heat use."
+      ]
+    },
+    {
+      "h": "For buyers and CBAM",
+      "p": [
+        "Cement and clinker are CBAM goods. A fuel switch shows up directly in the embedded emissions an EU importer must report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Chakwal coal kiln",
+      "to": "/answers/chakwal-cement-plant-coal-kiln-co2"
+    },
+    {
+      "label": "Coal vs gas vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

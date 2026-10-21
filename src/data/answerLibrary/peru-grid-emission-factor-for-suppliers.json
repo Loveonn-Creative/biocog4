@@ -1,0 +1,57 @@
+{
+  "slug": "peru-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Peru use?",
+  "title": "Peru grid factor for suppliers",
+  "short": "Peru's power comes mainly from hydro and natural gas from Camisea, with a growing share of wind and solar, so its factor sits between a hydro and a gas grid. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Mines, smelters and exporters in Peru reporting Scope 2 to buyers",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Peru.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Dry years cut hydro output and gas plants run more. Mines on dedicated contracts should use the factor for their supply."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Chile grid factor",
+      "to": "/answers/chile-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Peruvian copper concentrate",
+      "to": "/answers/peru-copper-concentrate-exporter-scope-3-data"
+    },
+    {
+      "label": "Brazil grid factor",
+      "to": "/answers/brazil-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

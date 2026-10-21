@@ -1,0 +1,63 @@
+{
+  "slug": "cambodia-footwear-factory-buyer-carbon-data",
+  "q": "What carbon data do sportswear brands want from a footwear factory in Cambodia?",
+  "title": "Cambodian footwear factory: buyer data",
+  "short": "Electricity and fuel per pair, split into Scope 1 and 2, with the grid factor and year, plus material data the brand cannot get elsewhere. Bills and fuel logs carry most of it. Allocate by pairs only if styles are similar; otherwise use hours or weight.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Footwear factories in Cambodia supplying global sportswear and fashion brands",
+  "sections": [
+    {
+      "h": "Per pair",
+      "ol": [
+        "Monthly kWh and fuel from bills and logs.",
+        "Convert each to CO2 with its factor.",
+        "Divide by pairs made, or allocate by hours if styles differ a lot."
+      ]
+    },
+    {
+      "h": "What else brands ask",
+      "ul": [
+        "Adhesives and solvents used.",
+        "Waste sent out, by type.",
+        "Any rooftop solar output."
+      ]
+    },
+    {
+      "h": "Keep it checkable",
+      "p": [
+        "Brands compare factories. A figure that traces to bills is trusted more than a per pair number with no workings."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Footwear emissions per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    },
+    {
+      "label": "Binh Duong footwear",
+      "to": "/answers/binh-duong-footwear-factory-scope-1-and-2"
+    },
+    {
+      "label": "Cambodia grid factor",
+      "to": "/answers/cambodia-grid-emission-factor-for-garment-factories"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

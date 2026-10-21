@@ -1,0 +1,57 @@
+{
+  "slug": "cambodia-grid-emission-factor-for-garment-factories",
+  "q": "What grid emission factor should a garment or footwear factory in Cambodia use?",
+  "title": "Cambodia grid factor for suppliers",
+  "short": "Cambodia's power mixes hydro, coal plants and imports from neighbours, so the grid factor moves with rainfall and with how much coal and imported power is used. Use the official or IEA figure for the reporting year and name it in buyer reports.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Garment, footwear and travel goods factories in Cambodia reporting Scope 2 to brands",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Cambodia.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Dry season hydro output falls and coal plants and imports from Thailand, Vietnam and Laos fill the gap. Each year's mix differs."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Vietnam grid factor",
+      "to": "/answers/vietnam-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Thailand grid factor",
+      "to": "/answers/thailand-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Bangladesh garment rooftop solar",
+      "to": "/answers/bangladesh-garment-factory-rooftop-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "colombia-carbon-tax-cbam-deduction",
+  "q": "Can a Colombian exporter deduct its national carbon tax from CBAM?",
+  "title": "Colombia's carbon tax and CBAM",
+  "short": "Possibly, for the part actually paid on the fuels behind the goods exported, with proof and an independent certification. Colombia's tax is charged on fossil fuels and can be offset with carbon credits, so any amount avoided that way cannot be claimed. Check current rates.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Colombian producers of steel, ferronickel, cement and fertilisers selling to the EU",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Tax actually paid, per tonne of embedded emissions.",
+        "Not amounts offset with credits.",
+        "Not rebates or exemptions."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Fuel invoices showing the tax, the link between those fuels and the exported goods, and certification by an independent person."
+      ]
+    },
+    {
+      "h": "Size",
+      "p": [
+        "Colombia's rate is low next to the EU price, so the deduction is usually small. Do not let it hold up the main figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Argentina's carbon tax",
+      "to": "/answers/argentina-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Mexico's carbon tax",
+      "to": "/answers/mexico-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Cerro Matoso ferronickel",
+      "to": "/answers/cerro-matoso-ferronickel-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

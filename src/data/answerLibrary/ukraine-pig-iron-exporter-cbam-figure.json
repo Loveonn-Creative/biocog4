@@ -1,0 +1,61 @@
+{
+  "slug": "ukraine-pig-iron-exporter-cbam-figure",
+  "q": "How does a Ukrainian merchant pig iron exporter build its CBAM figure?",
+  "title": "Ukrainian pig iron: the CBAM figure",
+  "short": "Pig iron is a CBAM good. Count the blast furnace's direct emissions by carbon mass balance, including coke ovens and sinter plants on site, and add bought coke or pellets as precursors where listed. Divide by tonnes of pig iron sold.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Merchant pig iron producers in Ukraine and EU foundries and steel mills buying from them",
+  "sections": [
+    {
+      "h": "Mass balance",
+      "ol": [
+        "Carbon in coke, coal injection and natural gas fed.",
+        "Minus carbon leaving in pig iron, slag and sold gas.",
+        "Times 44/12 for CO2."
+      ]
+    },
+    {
+      "h": "Precursors",
+      "p": [
+        "Pellets and sinter are listed; bought coke is not a CBAM good but its carbon enters your balance when burnt. Ask pellet suppliers for figures."
+      ]
+    },
+    {
+      "h": "Records in hard times",
+      "p": [
+        "Plants that ran intermittently should report by period actually operated and say so. Verifiers check the production figure as closely as the fuel."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Pig iron and sponge iron in CBAM",
+      "to": "/answers/are-pig-iron-and-sponge-iron-covered-by-cbam"
+    },
+    {
+      "label": "Ukrainian pellets",
+      "to": "/answers/ukraine-iron-ore-pellets-cbam-figure"
+    },
+    {
+      "label": "Brescia mill buying pig iron",
+      "to": "/answers/brescia-mill-buys-imported-pig-iron-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "chandrapur-ferro-alloy-plant-cbam-check",
+  "q": "Does a Chandrapur ferro alloy plant face CBAM on its exports?",
+  "title": "Chandrapur ferro alloys: CBAM check",
+  "short": "Only for alloys on the CBAM list. Ferro-manganese, ferro-chromium and ferro-nickel are covered; silico-manganese and ferro-silicon are not. For covered alloys, send direct emissions from coke, coal and electrodes per tonne, worked out by mass balance.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferro alloy plants in Chandrapur and Vidarbha selling to EU steel mills or traders",
+  "sections": [
+    {
+      "h": "Check the CN code",
+      "ul": [
+        "7202 1, ferro-manganese: covered.",
+        "7202 30, silico-manganese: not covered.",
+        "7202 2, ferro-silicon: not covered."
+      ]
+    },
+    {
+      "h": "For covered alloys",
+      "p": [
+        "Carbon in coke, coal and electrode paste in, minus carbon out in alloy and slag, times 44/12. Divide by tonnes of alloy."
+      ]
+    },
+    {
+      "h": "Power",
+      "p": [
+        "Furnace electricity is reported but not charged. With India's grid at 0.710 kg CO2 per kWh on CEA v21.0, buyers will still notice it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Silico-manganese and CBAM",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    },
+    {
+      "label": "Zestaponi ferroalloys",
+      "to": "/answers/zestaponi-ferroalloy-plant-cbam-check"
+    },
+    {
+      "label": "Ferro alloy coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, v21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "peru-zinc-refinery-buyer-scope-3",
+  "q": "What carbon data should a buyer ask for on zinc from a Peruvian refinery?",
+  "title": "Peruvian refined zinc: buyer data",
+  "short": "Emissions per tonne of zinc from roasting, leaching and electrolysis, with the electricity used and its factor, plus the concentrate's upstream figure if the refinery has it. Zinc is outside CBAM, so the buyer relies on the refinery's own evidence.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Galvanisers, die casters and traders buying refined zinc from Peru",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Electrolysis: by far the largest power use.",
+        "Roasting and leaching fuel.",
+        "Concentrate mining and transport, upstream."
+      ]
+    },
+    {
+      "h": "Co products",
+      "p": [
+        "Refineries also make sulphuric acid and other metals. Ask how emissions were split."
+      ]
+    },
+    {
+      "h": "For galvanisers",
+      "p": [
+        "Zinc enters coated steel. If you export coated steel to the EU, CBAM counts your direct emissions; zinc stays in your Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Zinc die casting footprint",
+      "to": "/answers/zinc-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Peru grid factor",
+      "to": "/answers/peru-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Coated steel and zinc in CBAM",
+      "to": "/answers/vanderbijlpark-coated-steel-zinc-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

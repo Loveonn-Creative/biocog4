@@ -1,0 +1,57 @@
+{
+  "slug": "moatize-coking-coal-buyer-mine-methane",
+  "q": "Should a steel plant count mine methane on coking coal from Moatize?",
+  "title": "Moatize coking coal: mine methane",
+  "short": "Yes, in Scope 3 category 1 for the coal. Moatize coal is mined mostly from open pits, so without mine data the IPCC surface mining default of about 1.2 cubic metres of methane per tonne applies. Add diesel, rail to the port at Nacala or Beira, and sea freight.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Steel plants and coke makers buying coking coal from Tete province in Mozambique",
+  "sections": [
+    {
+      "h": "The default",
+      "ul": [
+        "Surface mining: 0.3 to 2.0 cubic metres per tonne, 1.2 average (IPCC 2006).",
+        "One cubic metre of methane weighs about 0.67 kg.",
+        "Use mine measured data when the supplier has it."
+      ]
+    },
+    {
+      "h": "The rest of the chain",
+      "p": [
+        "Diesel for mining, rail to the port and the voyage to your plant. Ask the trader for the mine, port and voyage."
+      ]
+    },
+    {
+      "h": "Not in CBAM",
+      "p": [
+        "Mine methane is upstream and stays out of the CBAM steel figure, but buyers reporting a full footprint include it."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which supplier data is still missing.",
+  "links": [
+    {
+      "label": "Jharia mine methane",
+      "to": "/answers/jharia-coking-coal-mine-methane-scope-3"
+    },
+    {
+      "label": "Bought met coke upstream",
+      "to": "/answers/purchased-met-coke-upstream-emissions"
+    },
+    {
+      "label": "Opencast mine methane",
+      "to": "/answers/opencast-coal-mine-methane-and-diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

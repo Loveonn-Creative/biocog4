@@ -4,6 +4,11 @@ import { describe, expect, test } from 'bun:test';
 // replacing any stub another test file left behind (bun shares globals across files).
 const g = globalThis as unknown as { window?: Partial<EventTarget> };
 if (typeof g.window?.addEventListener !== 'function') g.window = new EventTarget();
+// Same for CustomEvent: a plain-object stub cannot be dispatched on an EventTarget.
+const ce = globalThis as unknown as { CustomEvent: typeof CustomEvent };
+if (!(Object.create(ce.CustomEvent.prototype) instanceof Event)) {
+  ce.CustomEvent = class<T> extends Event { detail: T; constructor(type: string, init?: CustomEventInit<T>) { super(type); this.detail = init?.detail as T; } } as typeof CustomEvent;
+}
 const store = new Map<string, string>();
 (globalThis as unknown as { localStorage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> }).localStorage ??= {
   getItem: k => store.get(k) ?? null, setItem: (k, v) => { store.set(k, String(v)); }, removeItem: k => { store.delete(k); },

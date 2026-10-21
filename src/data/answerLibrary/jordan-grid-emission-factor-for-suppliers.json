@@ -1,0 +1,63 @@
+{
+  "slug": "jordan-grid-emission-factor-for-suppliers",
+  "q": "What grid emission factor should a supplier in Jordan use?",
+  "title": "Jordan grid factor for suppliers",
+  "short": "Jordan's power comes mostly from gas, with a large and growing share of solar and wind and some oil shale, so the grid factor is moderate and falling. Use the official or IEA figure for the reporting year and name it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories, fertiliser plants and exporters in Jordan reporting Scope 2",
+  "sections": [
+    {
+      "h": "Which figure",
+      "ul": [
+        "Location based: the national grid average for the reporting year, from the official source or the IEA.",
+        "Market based: a supplier specific figure or residual mix, only if one exists for Jordan.",
+        "Write down the figure, its source and its year."
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Solar and wind have grown quickly. An oil shale fired plant adds a high emitting share, so the annual mix matters."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Monthly electricity bills with kWh, and meter readings for any power you make on site."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "For fertilisers, electricity counts toward the charge, so the factor feeds directly into a DAP figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated, fingerprinted records and keeps location based and market based figures side by side, each with the factor and year used.",
+  "links": [
+    {
+      "label": "Saudi grid factor",
+      "to": "/answers/saudi-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Aqaba DAP",
+      "to": "/answers/aqaba-dap-exporter-cbam-figure"
+    },
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IEA, electricity and emissions data",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

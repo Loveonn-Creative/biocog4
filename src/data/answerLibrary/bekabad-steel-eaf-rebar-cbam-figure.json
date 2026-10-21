@@ -1,0 +1,62 @@
+{
+  "slug": "bekabad-steel-eaf-rebar-cbam-figure",
+  "q": "How does a mill at Bekabad work out the CBAM figure for electric arc furnace steel?",
+  "title": "Bekabad electric arc steel: CBAM figure",
+  "short": "Count the carbon from electrodes, charge carbon and any gas burnt in the furnace and reheating, plus bought precursors such as pig iron or DRI. Scrap itself carries no embedded emissions. Electricity is reported separately and is not charged for steel, though buyers will still ask for it.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel mills in Uzbekistan making rebar and sections in electric arc furnaces, and their EU buyers",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "Graphite electrodes consumed, by mass.",
+        "Charge carbon and injection carbon.",
+        "Natural gas for ladles and the reheating furnace.",
+        "Lime and dolomite only if calcined on site."
+      ]
+    },
+    {
+      "h": "Precursors",
+      "p": [
+        "Bought pig iron, DRI or billets each bring their own embedded emissions. Ask those suppliers for figures or use default values."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Report the furnace's kWh per tonne and the grid factor used. With a gas heavy grid the indirect figure is large, even though it is not charged."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Graphite electrodes in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    },
+    {
+      "label": "Does scrap count as zero",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

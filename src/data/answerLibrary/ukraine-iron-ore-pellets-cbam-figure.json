@@ -1,0 +1,61 @@
+{
+  "slug": "ukraine-iron-ore-pellets-cbam-figure",
+  "q": "What CBAM figure does an EU mill need for iron ore pellets from Ukraine?",
+  "title": "Ukrainian iron ore pellets: CBAM figure",
+  "short": "Pellets are a CBAM good, so the importer needs embedded emissions per tonne: fuel for the induration furnace, carbon in any additives, and electricity for grinding, reported separately. Fines and lump ore are not covered, only agglomerated ore.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Pellet producers in Ukraine and EU steel mills importing their pellets",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "Gas, coal or oil burnt in the induration furnace.",
+        "Carbon in bentonite, limestone or dolomite additives.",
+        "Fuel for drying, if separate."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Grinding and pelletising use a lot of power. Report kWh per tonne and the factor; for iron and steel goods it is reported, not charged."
+      ]
+    },
+    {
+      "h": "Mine and concentrator",
+      "p": [
+        "Mining and concentrating ore are outside the CBAM pellet figure. Steel buyers may still ask for them for a full footprint."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each site's fuel, power and production records together, so the embedded emissions you send an EU importer trace back to dated documents.",
+  "links": [
+    {
+      "label": "Are pellets covered",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    },
+    {
+      "label": "Pellet plant CO2",
+      "to": "/answers/ballari-pellet-plant-co2-per-tonne"
+    },
+    {
+      "label": "Ukrainian steel to Poland",
+      "to": "/answers/ukraine-steel-exporter-to-poland-cbam-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

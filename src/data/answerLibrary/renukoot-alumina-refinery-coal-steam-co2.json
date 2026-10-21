@@ -1,0 +1,57 @@
+{
+  "slug": "renukoot-alumina-refinery-coal-steam-co2",
+  "q": "How does an alumina refinery at Renukoot count CO2 from its steam and calciners?",
+  "title": "Renukoot alumina refinery: steam CO2",
+  "short": "Count coal burnt for steam used in digestion and fuel burnt in calciners, from tonnes or kilolitres with heating value and carbon content, per tonne of alumina. Alumina is not a CBAM good, but it is the largest bought input in an aluminium buyer's full footprint.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Alumina refineries in Sonbhadra and the smelters they supply",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Coal or gas for steam in Bayer digestion.",
+        "Fuel oil or gas in calciners.",
+        "Caustic soda and lime bought in, upstream."
+      ]
+    },
+    {
+      "h": "Inside one company",
+      "p": [
+        "If the refinery feeds your own smelter, it is your Scope 1. Report it as its own line so the alumina figure can be checked."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Smelters buying alumina put it in Scope 3, category 1. CBAM leaves it out."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and freight invoices into a dated, fingerprinted record per site, so each figure you send a buyer traces back to the documents behind it.",
+  "links": [
+    {
+      "label": "Renukoot captive coal and CBAM",
+      "to": "/answers/renukoot-aluminium-smelter-captive-coal-cbam"
+    },
+    {
+      "label": "Alumina is not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
