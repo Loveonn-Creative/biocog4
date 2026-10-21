@@ -1,0 +1,52 @@
+{
+  "slug": "sivakasi-diary-calendar-printer-carbon-per-copy",
+  "q": "How does a Sivakasi printer work out carbon per diary or calendar?",
+  "title": "Sivakasi printers: carbon per copy",
+  "short": "Add the press's energy for the job, then the paper, board and ink per copy with supplier or database factors, and divide by copies printed. Paper is a major line, so get the paper mill's figure if you can.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Diary, calendar and notebook printers in the Sivakasi cluster of Tamil Nadu",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Press, binding and finishing kWh for the job, x 0.710.",
+        "Paper and board tonnes, with the mill's figure or a named factor.",
+        "Ink and plates by kg.",
+        "Divide the total by copies delivered."
+      ]
+    },
+    {
+      "h": "Wastage",
+      "p": [
+        "Count paper bought, not paper in the finished copies, so make-ready and trimming waste is included."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Sivakasi press per tonne",
+      "to": "/answers/sivakasi-printing-press-carbon-per-tonne"
+    },
+    {
+      "label": "Book printing per copy",
+      "to": "/answers/book-printing-carbon-footprint-per-copy"
+    },
+    {
+      "label": "Notebook per unit",
+      "to": "/answers/notebook-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

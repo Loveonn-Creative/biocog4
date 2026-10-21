@@ -1,0 +1,46 @@
+{
+  "slug": "chemical-tanker-cleaning-station-steam-and-effluent",
+  "q": "How does a tanker cleaning station count steam and effluent emissions?",
+  "title": "Tanker cleaning stations: steam and effluent",
+  "short": "Boiler fuel used to make cleaning steam is Scope 1 for the station. Wastewater sent to a treatment plant is Scope 3 category 5. The trucking company that pays for cleaning counts it as a purchased service in its own Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical tanker cleaning stations and the transporters who use them",
+  "sections": [
+    {
+      "h": "Station records",
+      "p": [
+        "Boiler fuel per month and the number of tankers cleaned.",
+        "Effluent volume sent for treatment."
+      ]
+    },
+    {
+      "h": "Per tanker figure",
+      "p": [
+        "Divide the station's emissions by tankers cleaned if a customer asks for a per-wash figure, and say how it was split."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Chemical tanker emissions per tonne",
+      "to": "/answers/chemical-road-tanker-emissions-per-tonne"
+    },
+    {
+      "label": "Tanker empty return trips",
+      "to": "/answers/chemical-tanker-empty-return-trip-count"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "morbi-tile-unit-clay-and-glaze-scope-3",
+  "q": "How should a Morbi tile maker count the clay, frit and glaze it buys?",
+  "title": "Morbi tiles: bought clay, frit and glaze",
+  "short": "Clay, feldspar, frit, glaze and packaging are purchased goods, Scope 3 category 1. Take tonnes from the invoices and use supplier or named database factors. Kiln gas and power stay in Scope 1 and 2, and transport to the plant is category 4.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wall, floor and vitrified tile makers in the Morbi cluster of Gujarat",
+  "sections": [
+    {
+      "h": "Lines to keep",
+      "p": [
+        "Clay and feldspar by tonne.",
+        "Frit and glaze by kg, each with its supplier.",
+        "Cartons and pallets by unit or kg."
+      ]
+    },
+    {
+      "h": "Why frit matters",
+      "p": [
+        "Frit is itself melted at high temperature before you buy it, so its factor per kg matters. Ask the frit maker for their figure before using a generic one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Ceramic frit per kg",
+      "to": "/answers/ceramic-frit-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Morbi kiln gas per square metre",
+      "to": "/answers/morbi-tile-kiln-gas-carbon-per-square-metre"
+    },
+    {
+      "label": "Ceramic tile per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

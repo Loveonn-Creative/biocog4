@@ -1,0 +1,51 @@
+{
+  "slug": "rajkot-engine-parts-exporter-cbam-check",
+  "q": "Do engine parts exported from Rajkot fall under EU CBAM?",
+  "title": "Rajkot engine parts and CBAM",
+  "short": "Usually not. CBAM covers iron and steel goods in chapters 72 and 73 of the EU tariff, plus aluminium, cement, fertilisers, hydrogen and electricity. Finished engine parts classed in chapter 84 are outside it, but a plain casting or forging in chapter 73 may be in.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Diesel engine, pump and auto component makers in the Rajkot cluster of Gujarat exporting to Europe",
+  "sections": [
+    {
+      "h": "How to check",
+      "p": [
+        "Ask your EU buyer for the CN code they declare.",
+        "Compare it with the goods list in Annex I of the CBAM Regulation.",
+        "If the code is listed, they will ask you for embedded emissions."
+      ]
+    },
+    {
+      "h": "Why it still matters",
+      "p": [
+        "Buyers outside CBAM may still ask for a product footprint for their own Scope 3. That is a different request with different rules."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Rajkot foundry cupola castings",
+      "to": "/answers/rajkot-foundry-cupola-castings-cbam"
+    },
+    {
+      "label": "Are cast iron castings covered",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "ceramic-tile-pallet-and-packaging-scope-3",
+  "q": "How should a tile maker count pallets, cartons and stretch film?",
+  "title": "Tile makers: pallets and packaging",
+  "short": "Pallets, cartons, corner boards and stretch film you buy are purchased goods, Scope 3 category 1. Count them by unit or kg from invoices with a factor for each, and include them per square metre if a buyer wants a delivered product figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ceramic and vitrified tile makers packing for domestic and export markets",
+  "sections": [
+    {
+      "h": "Lines",
+      "p": [
+        "Cartons by kg.",
+        "Wooden or plastic pallets by unit and weight.",
+        "Stretch film and straps by kg."
+      ]
+    },
+    {
+      "h": "Reused pallets",
+      "p": [
+        "If pallets come back and are reused, spread each pallet's figure over its trips and record the trip count you assumed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Wooden vs plastic pallet",
+      "to": "/answers/wooden-vs-plastic-pallet-carbon-footprint"
+    },
+    {
+      "label": "Corrugated box per kg",
+      "to": "/answers/corrugated-box-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Morbi clay and glaze",
+      "to": "/answers/morbi-tile-unit-clay-and-glaze-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

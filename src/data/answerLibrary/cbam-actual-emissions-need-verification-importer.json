@@ -1,0 +1,46 @@
+{
+  "slug": "cbam-actual-emissions-need-verification-importer",
+  "q": "Do actual emissions in a CBAM declaration need to be verified?",
+  "title": "CBAM actual emissions: verification",
+  "short": "Yes. In the definitive period, embedded emissions declared as actual values must be verified by an accredited verifier. Default values do not need verification but carry mark-ups, so verification is the price of using a supplier's real data.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers and their non-EU suppliers preparing CBAM data",
+  "sections": [
+    {
+      "h": "What it means for suppliers",
+      "p": [
+        "Expect a verifier to check your monitoring and records, not just the final figure.",
+        "Keep invoices, meter readings and production records for the period."
+      ]
+    },
+    {
+      "h": "Timing",
+      "p": [
+        "For goods imported in 2026, the annual declaration is due by 30 September 2027 under the 2025 simplification."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Why an importer rejected CBAM data",
+      "to": "/answers/why-eu-importer-rejected-cbam-emissions-data"
+    },
+    {
+      "label": "Checking a supplier's CBAM figure",
+      "to": "/answers/eu-importer-checking-supplier-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083 (CBAM simplification)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

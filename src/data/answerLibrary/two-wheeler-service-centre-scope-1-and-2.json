@@ -1,0 +1,56 @@
+{
+  "slug": "two-wheeler-service-centre-scope-1-and-2",
+  "q": "What goes into a two-wheeler service centre's Scope 1 and Scope 2?",
+  "title": "Two-wheeler service centres: scopes",
+  "short": "Scope 1 covers fuel you burn, such as diesel in a generator and petrol used for test rides on vehicles you control. Scope 2 is grid electricity for lifts, compressors and washing. Oil and parts you buy are Scope 3.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Two-wheeler dealer workshops and service centres",
+  "sections": [
+    {
+      "h": "Scope 1",
+      "p": [
+        "Generator diesel at 2.68 kg CO2 per litre.",
+        "Petrol for workshop and test-ride use, from the fuel log."
+      ]
+    },
+    {
+      "h": "Scope 2",
+      "p": [
+        "Grid kWh x 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Scope 3",
+      "p": [
+        "Engine oil, parts and consumables bought, and waste oil sent for recycling."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Auto service workshop footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    },
+    {
+      "label": "Workshop used engine oil",
+      "to": "/answers/workshop-used-engine-oil-emissions-scope"
+    },
+    {
+      "label": "Workshop AC gas top-up",
+      "to": "/answers/workshop-car-ac-gas-top-up-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

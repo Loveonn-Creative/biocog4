@@ -1,0 +1,47 @@
+{
+  "slug": "kanpur-tannery-wood-fired-boiler-biogenic-co2",
+  "q": "How does a Kanpur tannery report CO2 from a wood-fired boiler?",
+  "title": "Kanpur tanneries: wood-fired boiler CO2",
+  "short": "Under the GHG Protocol, CO2 from burning wood is biogenic and reported separately, outside the scopes. The methane and nitrous oxide from the same fire are Scope 1. Coal or diesel burned in the boiler is fully Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Tanneries in the Jajmau cluster of Kanpur running boilers on wood, briquettes or coal",
+  "sections": [
+    {
+      "h": "How to report",
+      "p": [
+        "Show biogenic CO2 from wood as a separate line, not inside Scope 1.",
+        "Add the CH4 and N2O from combustion to Scope 1, using IPCC 2006 defaults for wood.",
+        "Keep the weight of wood bought, from the invoices, as the activity data."
+      ]
+    },
+    {
+      "h": "Mixed fuels",
+      "p": [
+        "If the boiler co-fires coal, split the fuel by invoice. Coal CO2 goes in Scope 1 in full."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Tannery chemicals Scope 3",
+      "to": "/answers/kanpur-tannery-chrome-tanning-chemicals-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

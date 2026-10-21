@@ -1,0 +1,47 @@
+{
+  "slug": "morbi-wall-clock-unit-carbon-per-clock",
+  "q": "How does a Morbi wall clock maker work out carbon per clock?",
+  "title": "Morbi wall clocks: carbon per clock",
+  "short": "Share the unit's monthly electricity and fuel emissions across clocks made, then add the bought parts per clock: plastic case, glass, movement and packaging, each with a supplier or database factor.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Wall clock and time-piece assemblers in the Morbi cluster of Gujarat",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Energy: kWh x 0.710 for the month, plus any fuel.",
+        "Divide by clocks finished that month.",
+        "Add materials per clock with their sources."
+      ]
+    },
+    {
+      "h": "Bought movements",
+      "p": [
+        "Quartz movements may be imported. If the supplier gives no figure, mark that line as a gap instead of filling it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Injection moulding per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "eu-importer-egyptian-urea-supplier-what-to-ask",
+  "q": "What should an EU importer ask an Egyptian urea supplier for under CBAM?",
+  "title": "EU importers: Egyptian urea data",
+  "short": "The installation's direct and indirect emissions per tonne of urea, including the ammonia used as a precursor, for the reporting period, with the monitoring method. Fertilisers count indirect emissions from electricity under CBAM, unlike steel and aluminium.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers and declarants buying urea from Egyptian producers",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Specific direct and indirect embedded emissions per tonne.",
+        "The ammonia precursor's emissions and where it came from.",
+        "The verifier's report once actual values are declared in the definitive period."
+      ]
+    },
+    {
+      "h": "If the data does not come",
+      "p": [
+        "The declarant uses the Commission's default values, which carry mark-ups."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator estimates certificate cost from 2026 to 2034 for covered goods. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Egypt urea plant embedded emissions",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "Are urea and DAP covered",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Why an importer rejected CBAM data",
+      "to": "/answers/why-eu-importer-rejected-cbam-emissions-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

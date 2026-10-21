@@ -1,0 +1,58 @@
+{
+  "slug": "narol-textile-processing-coal-boiler-emissions",
+  "q": "How does a Narol textile processing house count coal boiler emissions?",
+  "title": "Narol processing houses: coal boilers",
+  "short": "Multiply the coal burned by its emission factor, such as the 2.42 kg CO2 per kg Senseible applies to coal invoices, and report it as Scope 1. Divide by metres processed if a buyer wants a per-metre figure, using the same month for both numbers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dyeing and printing houses in the Narol industrial area of Ahmedabad, Gujarat",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Tonnes of coal from the stock register or invoices.",
+        "Multiply by the factor.",
+        "Report as Scope 1; add thermic fluid heater fuel the same way."
+      ]
+    },
+    {
+      "h": "Switching fuel",
+      "p": [
+        "If you move to piped gas, compare on the same steam output, not on cost. Gas carries 2.05 kg CO2 per scm."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day (illustrative quantity)",
+    "lines": [
+      "Coal: 6,000 kg x 2.42 = 14,520 kg CO2 (Scope 1)"
+    ],
+    "note": "The quantity is illustrative."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Dye house per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Coal vs PNG vs biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Textile printing per metre",
+      "to": "/answers/textile-printing-emissions-per-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

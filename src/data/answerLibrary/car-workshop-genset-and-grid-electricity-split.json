@@ -1,0 +1,56 @@
+{
+  "slug": "car-workshop-genset-and-grid-electricity-split",
+  "q": "How does a car workshop split generator and grid electricity in its footprint?",
+  "title": "Car workshops: generator vs grid",
+  "short": "Count them separately. Grid kWh go to Scope 2 at 0.710 kg CO2 per kWh. Diesel for the generator goes to Scope 1 at 2.68 kg CO2 per litre. Do not also convert the generator's kWh, or you count the same power twice.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Car dealer workshops and independent garages with backup generators",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Grid kWh from the bill, x 0.710.",
+        "Generator litres from fuel invoices, x 2.68.",
+        "Report the two lines in their own scopes."
+      ]
+    },
+    {
+      "h": "Why litres, not kWh",
+      "p": [
+        "The generator's emissions come from the diesel burned. Its kWh output is useful for cost, not for carbon."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month (illustrative quantities)",
+    "lines": [
+      "Grid: 4,000 kWh x 0.710 = 2,840 kg CO2 (Scope 2)",
+      "Generator: 300 L x 2.68 = 804 kg CO2 (Scope 1)",
+      "Total: 3,644 kg CO2"
+    ],
+    "note": "Quantities are illustrative."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Auto service workshop footprint",
+      "to": "/answers/auto-service-workshop-carbon-footprint"
+    },
+    {
+      "label": "Two-wheeler service centre scopes",
+      "to": "/answers/two-wheeler-service-centre-scope-1-and-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

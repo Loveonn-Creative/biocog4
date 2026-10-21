@@ -1,0 +1,51 @@
+{
+  "slug": "contractor-rmc-supplier-carbon-data-request",
+  "q": "What carbon data should a contractor ask its ready-mix concrete supplier for?",
+  "title": "Contractors: ready-mix supplier data",
+  "short": "Ask for kg CO2e per cubic metre for each mix grade, with the cement type and quantity per cubic metre and the method used. Concrete is purchased goods in your Scope 3; check the cement content per cubic metre first.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Contractors buying ready-mix concrete for building and infrastructure projects",
+  "sections": [
+    {
+      "h": "Ask for",
+      "p": [
+        "Figure per cubic metre by grade.",
+        "Cement and supplementary material per cubic metre, such as fly ash or slag.",
+        "Whether transport to site is included."
+      ]
+    },
+    {
+      "h": "If they cannot provide it",
+      "p": [
+        "Use a named database factor for a similar mix and label it, then ask again at the next tender."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Ready-mix concrete per cubic metre",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Contractor EPD request",
+      "to": "/answers/contractor-epd-request-from-suppliers"
+    },
+    {
+      "label": "Contractor cement purchases",
+      "to": "/answers/contractor-cement-purchases-scope-3-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067 Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}

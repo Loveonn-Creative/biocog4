@@ -1,0 +1,55 @@
+{
+  "slug": "contractor-site-genset-vs-temporary-grid-supply",
+  "q": "Should a contractor count site generator diesel or the temporary grid connection?",
+  "title": "Contractors: site generator vs grid",
+  "short": "Both, in different scopes. Diesel you burn in site generators is Scope 1 at 2.68 kg CO2 per litre. Electricity from a temporary grid connection in your name is Scope 2 at 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Building and infrastructure contractors running site power",
+  "sections": [
+    {
+      "h": "Steps",
+      "p": [
+        "Litres per site from fuel issue records.",
+        "kWh from the temporary connection bill.",
+        "Report each in its scope, by site."
+      ]
+    },
+    {
+      "h": "Who owns the connection",
+      "p": [
+        "If the client pays the bill, that electricity is in the client's Scope 2, not yours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one site month (illustrative quantities)",
+    "lines": [
+      "Generator: 900 L x 2.68 = 2,412 kg CO2 (Scope 1)",
+      "Grid: 3,000 kWh x 0.710 = 2,130 kg CO2 (Scope 2)"
+    ],
+    "note": "Quantities are illustrative."
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Contractor diesel on my site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    },
+    {
+      "label": "Contractor data for tender bids",
+      "to": "/answers/contractor-carbon-data-for-tender-bids"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-21"
+}
