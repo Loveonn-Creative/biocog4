@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Upload } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 import { Navigation } from '@/components/Navigation';
 import { RecordsLoadError } from '@/components/RecordsLoadError';
@@ -16,14 +16,12 @@ import { FinanceEvidenceCard } from '@/components/dashboard/FinanceEvidenceCard'
 import { RecentDocuments } from '@/components/dashboard/RecentDocuments';
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
-import { supabase } from '@/integrations/supabase/client';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { usePersonalization } from '@/hooks/usePersonalization';
 import { useOrganization } from '@/hooks/useOrganization';
-import { useWorkspace } from '@/hooks/useWorkspace';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { useScope3Visibility } from '@/hooks/useScope3Trail';
 import { useCredibility } from '@/hooks/useCredibility';
@@ -65,7 +63,6 @@ const Dashboard = () => {
   const { tier } = usePremiumStatus();
   const { greeting, isPersonalized } = usePersonalization();
   const { activeContext } = useOrganization();
-  const { organization } = useWorkspace();
   const { isEnterprise } = useEnterpriseMode();
   const scope3 = useScope3Visibility();
   const financeSwitch = useFinanceInsightsSwitch();
@@ -117,14 +114,6 @@ const Dashboard = () => {
     verifiedInvoices: evidence.invoices,
     monthsCovered: evidence.monthsCovered,
   });
-  // A saved net-zero goal (personal workspace) keeps the roadmap one tap away.
-  const [hasNetZero, setHasNetZero] = useState(false);
-  useEffect(() => {
-    if (!user?.id || organization) { setHasNetZero(false); return; }
-    let cancelled = false;
-    void supabase.from('net_zero_goals').select('id').eq('user_id', user.id).limit(1).then(({ data }) => { if (!cancelled) setHasNetZero((data ?? []).length > 0); });
-    return () => { cancelled = true; };
-  }, [user?.id, organization]);
   const invoicesInEur = useMemo(() => documents.some((d) => (d.currency || '').toUpperCase() === 'EUR'), [documents]);
 
   if (isPartner) return null;
@@ -153,18 +142,13 @@ const Dashboard = () => {
             )}
           </div>
           {emissions.length > 0 && (
-            <div className="flex shrink-0 flex-wrap items-center gap-2">
-            <Link to="/" className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-[12.5px] font-medium hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-              <Upload className="h-3.5 w-3.5" aria-hidden="true" />Upload
-            </Link>
-            <div role="group" aria-label="Time range" className="inline-flex rounded-lg border border-border bg-card p-0.5">
+            <div role="group" aria-label="Time range" className="inline-flex shrink-0 self-start rounded-lg border border-border bg-card p-0.5 sm:self-auto">
               {RANGES.map((r) => (
                 <button key={r.id} type="button" aria-pressed={range === r.id} title={TIME_RANGE_LABELS[r.id]} onClick={() => setRange(r.id)}
                   className={`min-w-[2.75rem] rounded-md px-2.5 py-1.5 text-[12.5px] font-medium tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${range === r.id ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>
                   {r.short}
                 </button>
               ))}
-            </div>
             </div>
           )}
         </header>
@@ -208,7 +192,7 @@ const Dashboard = () => {
             )}
 
             <div className="grid items-start gap-4 md:gap-5 lg:grid-cols-3">
-              {emissions.length > 0 && <UseEvidence hasVerified={view.hasVerified} invoicesInEur={invoicesInEur} hasNetZero={hasNetZero} />}
+              {emissions.length > 0 && <UseEvidence hasVerified={view.hasVerified} invoicesInEur={invoicesInEur} />}
               {user && <FinanceEvidenceCard />}
               {(documents.length > 0 || docsLoading) && <RecentDocuments documents={documents.slice(0, 5)} loading={docsLoading} />}
             </div>

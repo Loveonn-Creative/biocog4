@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, FileBarChart, Landmark, Ship, Target } from 'lucide-react';
+import { ArrowUpRight, FileBarChart, Landmark, Ship } from 'lucide-react';
 
 // Where verified records go next. CBAM shows only for accounts with invoices
-// in euros, the one signal on record that the business sells into the EU; the
-// roadmap only for accounts with a saved net-zero goal.
+// in euros, the one signal on record that the business sells into the EU.
 
-export function UseEvidence({ hasVerified, invoicesInEur, hasNetZero = false }: { hasVerified: boolean; invoicesInEur: boolean; hasNetZero?: boolean }) {
+export function UseEvidence({ hasVerified, invoicesInEur }: { hasVerified: boolean; invoicesInEur: boolean }) {
   const items = [
     { to: '/reports', icon: FileBarChart, title: 'Reports', line: hasVerified ? 'Framework reports and the audit file, from verified records.' : 'Built from verified records once you have them.' },
     { to: '/monetize', icon: Landmark, title: 'Climate finance', line: 'Green loans and other options that ask for verified data.' },
-    ...(hasNetZero ? [{ to: '/net-zero', icon: Target, title: 'Net-zero roadmap', line: 'Track progress against the goal you set.' }] : []),
     ...(invoicesInEur ? [{ to: '/cbam-calculator', icon: Ship, title: 'CBAM exposure', line: 'You invoice in euros. See what EU importers will ask for.' }] : []),
   ];
   return (
