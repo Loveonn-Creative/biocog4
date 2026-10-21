@@ -30,7 +30,9 @@ import { Trash2, Loader2, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { useScope3Visibility } from '@/hooks/useScope3Trail';
+import { useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
 
+const FinanceInsights = lazy(() => import('@/components/finance/FinanceInsights').then((m) => ({ default: m.FinanceInsights })));
 const Scope3Preview = lazy(() => import('@/components/scope3/Scope3Preview').then((m) => ({ default: m.Scope3Preview })));
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
@@ -64,6 +66,7 @@ const Dashboard = () => {
   const workspaceKey = scopeKey(scope);
   const { isEnterprise } = useEnterpriseMode();
   const scope3 = useScope3Visibility();
+  const financeSwitch = useFinanceInsightsSwitch();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch, error: emissionsError } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
@@ -453,6 +456,13 @@ const Dashboard = () => {
         {scope3.showBasic && (
           <div className="mt-6">
             <Suspense fallback={null}><Scope3Preview fullAvailable={scope3.fullAvailable} /></Suspense>
+          </div>
+        )}
+
+        {/* Finance insights from the user's own statements and returns: opt-in in Settings, by plan */}
+        {financeSwitch.on && (
+          <div className="mt-8">
+            <Suspense fallback={null}><FinanceInsights /></Suspense>
           </div>
         )}
       </main>

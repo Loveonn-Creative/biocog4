@@ -20,7 +20,7 @@ import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import { buildEmissionRows } from '../_shared/emissionRows.ts';
 import { documentKind, isEvidenceOnlyKind, DOCUMENT_KIND_LABEL, EVIDENCE_ONLY_NOTE, type DocumentKind } from '../_shared/documentKind.ts';
 import { priceCheck, type PriceCheck } from '../_shared/priceCheck.ts';
-import { financialKind, financialPath, readFinancialFigures, FINANCIAL_BUCKET, FINANCIAL_GUEST_MESSAGE, FINANCIAL_STORED_MESSAGE, FINANCIAL_UNAVAILABLE_MESSAGE } from '../_shared/financialDocuments.ts';
+import { financialKind, financialPath, readFinancialFigures, readMonthlyCashflow, FINANCIAL_BUCKET, FINANCIAL_GUEST_MESSAGE, FINANCIAL_STORED_MESSAGE, FINANCIAL_UNAVAILABLE_MESSAGE } from '../_shared/financialDocuments.ts';
 import { cylinderToKg, electricityBillIdentity, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
 import {
   calculateEmissions,
@@ -1009,6 +1009,16 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         console.error('Financial document row not stored:', rowError.code);
         if (!alreadyThere) await admin.storage.from(FINANCIAL_BUCKET).remove([path]);
         return unavailable();
+      }
+      // Month-by-month totals for bank statements, written separately so a
+      // database without the monthly column (finance-insights migration not
+      // yet applied) still stores the record and its figures.
+      if (finKind === 'bank_statement' && !rowError) {
+        const monthly = await readMonthlyCashflow(mime, clean);
+        if (monthly.length) {
+          const { error: mErr } = await admin.from('financial_documents').update({ monthly }).eq('user_id', userId).eq('sha256', documentHash);
+          if (mErr) console.error('Monthly totals not stored:', mErr.code);
+        }
       }
       read.commit = true;
       return reply({ success: true, financialDocument: true, stored: true, alreadyStored: rowError?.code === '23505', error: FINANCIAL_STORED_MESSAGE, message: FINANCIAL_STORED_MESSAGE });
