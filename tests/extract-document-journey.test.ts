@@ -248,6 +248,23 @@ describe('invoice to stored records, through the real handler', () => {
     expect(db.financial_documents).toHaveLength(1);
   });
 
+  test('a bank statement stored before monthly reading gets its months when uploaded again', async () => {
+    ocr = { documentType: 'Bank Statement', notes: 'Bank Statement, IFSC HDFC0001234, branch Pune', lineItems: [] };
+    figures = { document_kind: 'bank_statement' };
+    await upload('bank-old');
+    db.financial_documents[0].monthly = [];
+    const realInsert = Query.prototype.insert;
+    Query.prototype.insert = function (this: any, rows: any) { if ((this as any).table === 'financial_documents') { (this as any).run = () => ({ data: null, error: { code: '23505' } }); return this; } return realInsert.call(this, rows); } as any;
+    // The fake AI answers the monthly read with the OCR reply, so the months ride on it.
+    ocr = { ...ocr, months: [{ month: '2026-05', inflow_inr: 120000, outflow_inr: 90000 }] };
+    const again = await upload('bank-old');
+    Query.prototype.insert = realInsert;
+    expect(again.body).toMatchObject({ financialDocument: true, stored: true, alreadyStored: true });
+    expect(db.financial_documents).toHaveLength(1);
+    expect(db.financial_documents[0].monthly).toHaveLength(1);
+    expect(db.financial_documents[0].monthly[0]).toMatchObject({ month: '2026-05', inflow: 120000, outflow: 90000 });
+  });
+
   test('an accountant\'s tax invoice for ITR filing stays an invoice', async () => {
     ocr = { documentType: 'Tax Invoice', vendor: 'Gupta & Co', invoiceNumber: 'GC/77', date: '2026-08-01', supplierGstin: '27AAPFU0939F1ZV', amount: 5900,
       lineItems: [{ description: 'Professional fees: ITR filing and preparation of financial statements', hsn_code: '998221', total: 5000 }] };
