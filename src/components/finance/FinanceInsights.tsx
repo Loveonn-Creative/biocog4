@@ -1,5 +1,5 @@
 import { usePremiumStatus } from "@/hooks/usePremiumStatus";
-import { useFinanceInsights } from "@/hooks/useFinanceInsights";
+import { useFinanceInsights, usePrivateRecords } from "@/hooks/useFinanceInsights";
 import { FinanceInsightsView } from "@/components/finance/FinanceInsightsView";
 import type { Plan } from "../../../supabase/functions/_shared/financeInsights";
 
@@ -12,10 +12,12 @@ import type { Plan } from "../../../supabase/functions/_shared/financeInsights";
 export function FinanceInsights() {
   const { tier } = usePremiumStatus();
   const q = useFinanceInsights(true);
+  // Kinds and read status only (no figures), so the path works on every plan.
+  const uploads = (usePrivateRecords().data ?? []).map((r) => ({ kind: r.kind, read: r.read }));
   if (q.isPending) return <div className="h-40 animate-pulse rounded-xl border border-border bg-card motion-reduce:animate-none" aria-label="Loading finance insights" />;
   if (q.isError) return <p className="rounded-xl border border-border bg-card px-4 py-3 text-[13.5px] text-muted-foreground">Finance insights could not load. Refresh to try again.</p>;
   const d = q.data!;
   if (!d.ready) return null;
   const plan: Plan = d.plan ?? (tier as Plan);
-  return <FinanceInsightsView plan={plan} records={d.records} />;
+  return <FinanceInsightsView plan={plan} records={d.records} uploads={uploads} />;
 }

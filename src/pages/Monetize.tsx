@@ -23,6 +23,7 @@ import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { toast } from 'sonner';
 import { CREDIT_VALUE_WITHHELD, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
+import { countGreenInvoices, pathwayChecks } from '@/lib/monetizationPathways';
 import { useRecordsChanged } from '@/lib/recordsEvents';
 import { FinancingEstimate } from '@/components/finance/FinancingEstimate';
 import type { ApplicantEstimate } from '../../supabase/functions/_shared/financeApplication';
@@ -122,14 +123,12 @@ const Monetize = () => {
   const { credibility } = useCredibility();
 
   // Green invoices on the ledger (count only; amounts are not turned into an advance figure).
-  const greenInvoiceCount = new Set(
-    ledgerEntries
-      .filter((e: any) => e.is_green_benefit)
-      .map((e: any) => e.document_id || e.document_hash || e.id),
-  ).size;
+  const greenInvoiceCount = countGreenInvoices(ledgerEntries as never);
 
   // Dynamic eligibility
   const qualityGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
+  // The same checks the Dashboard shows (src/lib/monetizationPathways.ts).
+  const checks = pathwayChecks({ verifiedCount: verifications.length, qualityGrade, ledgerCount: ledgerEntries.length, greenInvoiceCount });
 
   // Refetch when records change anywhere (verify, delete, upload).
   useRecordsChanged(() => { fetchVerifications(); fetchPathwayStatuses(); });
@@ -235,11 +234,7 @@ const Monetize = () => {
       status: (pathwayStatuses['carbon_credit'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified emissions data', 'Quality Grade B or above', 'Programme registration'],
       timeline: '2-4 weeks processing',
-      checks: [
-        { label: 'Verified emissions', pass: verifications.length > 0 },
-        { label: `Quality Grade B+ (yours: ${qualityGrade})`, pass: ['A', 'B', 'A+'].includes(qualityGrade) },
-        { label: 'CCTS eligibility: not assessed', pass: false },
-      ],
+      checks: checks.carbon_credit,
     },
     { 
       id: 'green_loan',
@@ -254,9 +249,7 @@ const Monetize = () => {
       status: (pathwayStatuses['green_loan'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified carbon data', 'Business registration'],
       timeline: 'First update within 1-2 weeks',
-      checks: [
-        { label: 'Verified carbon data', pass: verifications.length > 0 },
-      ],
+      checks: checks.green_loan,
     },
     { 
       id: 'govt_incentive',
@@ -271,10 +264,7 @@ const Monetize = () => {
       status: (pathwayStatuses['govt_incentive'] as MonetizationPathway['status']) || 'available',
       requirements: ['MSME registration', 'Carbon reporting compliance', 'Verified emissions'],
       timeline: '4-6 weeks processing',
-      checks: [
-        { label: 'Verified emissions', pass: verifications.length > 0 },
-        { label: 'Carbon reporting compliance', pass: ledgerEntries.length > 0 },
-      ],
+      checks: checks.govt_incentive,
     },
     {
       id: 'green_factoring',
@@ -289,9 +279,7 @@ const Monetize = () => {
       status: (pathwayStatuses['green_factoring'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified green invoices'],
       timeline: '3-5 business days',
-      checks: [
-        { label: `Verified green invoices (yours: ${greenInvoiceCount})`, pass: greenInvoiceCount > 0 },
-      ],
+      checks: checks.green_factoring,
     }
   ];
 

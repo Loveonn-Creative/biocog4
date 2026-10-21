@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { useFinanceDetail } from '@/hooks/useFinanceDetail';
 import { computeFinanceEvidence, type BillingPeriods, type FinanceLedgerRow } from '@/lib/financeEvidence';
@@ -18,10 +17,11 @@ const pct = (n: number) => `${Math.round(n * 100)}%`;
 const num = (n: number, dp = 1) => n.toLocaleString('en-IN', { maximumFractionDigits: dp });
 const monthName = (ym: string) => new Date(`${ym}-01T00:00:00Z`).toLocaleString('en-IN', { month: 'short', year: 'numeric', timeZone: 'UTC' });
 
-const Row = ({ label, value, note }: { label: string; value: string; note?: string }) => (
-  <div className="flex items-baseline justify-between gap-4 border-b border-border/60 py-2 last:border-0">
-    <span className="text-sm text-muted-foreground">{label}{note && <span className="block text-xs">{note}</span>}</span>
-    <span className="shrink-0 text-right font-mono text-sm font-medium">{value}</span>
+const Fact = ({ label, value, note }: { label: string; value: string; note?: string }) => (
+  <div className="min-w-0 border-b border-r border-border p-4 [&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(4n)]:border-r-0">
+    <p className="text-[12.5px] text-muted-foreground">{label}</p>
+    <p className="mt-0.5 break-words text-lg font-semibold tabular-nums">{value}</p>
+    {note && <p className="text-xs text-muted-foreground">{note}</p>}
   </div>
 );
 
@@ -56,43 +56,39 @@ export function FinanceEvidenceCard() {
   if (fe.summary.invoices === 0) return null;
   const { summary: s, detail: d } = fe;
 
+  const facts: { label: string; value: string; note?: string }[] = [
+    { label: 'Invoices behind it', value: num(s.invoices, 0) },
+    { label: 'Months covered', value: num(s.monthsCovered, 0), note: s.periodStart && s.periodEnd ? `${s.periodStart} to ${s.periodEnd}` : undefined },
+  ];
+  if (enabled) {
+    facts.push({ label: 'Scope 1 · 2 · 3', value: `${num(d.scopeTonnes[1], 2)} · ${num(d.scopeTonnes[2], 2)} · ${num(d.scopeTonnes[3], 2)} t` });
+    if (d.electricity.kwh > 0) {
+      facts.push({ label: 'Electricity billed', value: `${num(d.electricity.kwh, 0)} kWh`, note: `${d.electricity.months} month${d.electricity.months === 1 ? '' : 's'} of bills` });
+      if (d.electricity.impliedFactor !== null) facts.push({ label: 'Grid factor applied', value: `${d.electricity.impliedFactor} kg/kWh` });
+      facts.push({ label: 'Missing electricity months', value: d.electricity.missingMonths.length ? String(d.electricity.missingMonths.length) : 'None',
+        note: d.electricity.missingMonths.length ? d.electricity.missingMonths.slice(0, 4).map(monthName).join(', ') + (d.electricity.missingMonths.length > 4 ? '…' : '') : undefined });
+    }
+    if (d.kgPerThousandInr !== null) facts.push({ label: 'Spend intensity', value: `${num(d.kgPerThousandInr, 2)} kg per ₹1,000`, note: `from ₹${num(d.spendInr, 0)} of invoices` });
+    if (d.topSupplier) facts.push({ label: 'Largest supplier share', value: pct(d.topSupplier.share), note: d.topSupplier.name });
+    facts.push({ label: 'Fingerprinted · factor sourced · method pinned', value: `${pct(d.trail.fingerprinted)} · ${pct(d.trail.factorSourced)} · ${pct(d.trail.methodPinned)}`, note: d.trail.methodVersions.length > 0 ? d.trail.methodVersions.join(', ') : undefined });
+  }
+
   return (
-    <Card>
-      <CardContent className="p-6">
-        <div className="mb-3 flex items-baseline justify-between gap-3">
-          <h2 className="text-lg font-semibold">Finance evidence</h2>
-          <span className="text-xs text-muted-foreground">verified records only</span>
-        </div>
-        <Row label="Invoices behind it" value={num(s.invoices, 0)} />
-        <Row label="Months covered" value={num(s.monthsCovered, 0)} note={s.periodStart && s.periodEnd ? `${s.periodStart} to ${s.periodEnd}` : undefined} />
-
-        {enabled && (
-          <div className="mt-4">
-            <p className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">Detail</p>
-            <Row label="Scope 1 · 2 · 3" value={`${num(d.scopeTonnes[1], 2)} · ${num(d.scopeTonnes[2], 2)} · ${num(d.scopeTonnes[3], 2)} t`} />
-            {d.electricity.kwh > 0 && (
-              <>
-                <Row label="Electricity billed" value={`${num(d.electricity.kwh, 0)} kWh`} note={`${d.electricity.months} month${d.electricity.months === 1 ? '' : 's'} of bills`} />
-                {d.electricity.impliedFactor !== null && <Row label="Grid factor applied" value={`${d.electricity.impliedFactor} kg/kWh`} />}
-                <Row label="Missing electricity months" value={d.electricity.missingMonths.length ? String(d.electricity.missingMonths.length) : 'None'}
-                  note={d.electricity.missingMonths.length ? d.electricity.missingMonths.slice(0, 4).map(monthName).join(', ') + (d.electricity.missingMonths.length > 4 ? '…' : '') : undefined} />
-              </>
-            )}
-            {d.kgPerThousandInr !== null && <Row label="Spend intensity" value={`${num(d.kgPerThousandInr, 2)} kg per ₹1,000`} note={`from ₹${num(d.spendInr, 0)} of invoices`} />}
-            {d.topSupplier && <Row label="Largest supplier share" value={pct(d.topSupplier.share)} note={d.topSupplier.name} />}
-            <Row label="Fingerprinted · factor sourced · method pinned" value={`${pct(d.trail.fingerprinted)} · ${pct(d.trail.factorSourced)} · ${pct(d.trail.methodPinned)}`} />
-            {d.trail.methodVersions.length > 0 && <Row label="Methodology" value={d.trail.methodVersions.join(', ')} />}
-          </div>
-        )}
-
-        <p className="mt-4 text-xs text-muted-foreground">
-          {enabled
-            ? <>Full trail per record: <Link to="/reports" className="underline">Reports</Link>.</>
-            : available
-              ? <>More detail is available: switch on Finance detail in <Link to="/settings" className="underline">Settings</Link>.</>
-              : <>Energy, spend and supplier detail come with Pro and Scale. <Link to="/pricing" className="underline">View plans</Link></>}
-        </p>
-      </CardContent>
-    </Card>
+    <section aria-labelledby="fe-title" className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 id="fe-title" className="text-lg font-semibold">Finance evidence</h2>
+        <span className="text-[13px] text-muted-foreground">Verified records only</span>
+      </div>
+      <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-4">
+        {facts.map((f) => <Fact key={f.label} {...f} />)}
+      </div>
+      <p className="text-[13px] text-muted-foreground">
+        {enabled
+          ? <>Full trail per record: <Link to="/reports" className="underline">Reports</Link>.</>
+          : available
+            ? <>More detail is available: switch on Finance detail in <Link to="/settings" className="underline">Settings</Link>.</>
+            : <>Energy, spend and supplier detail come with Pro and Scale. <Link to="/pricing" className="underline">View plans</Link></>}
+      </p>
+    </section>
   );
 }

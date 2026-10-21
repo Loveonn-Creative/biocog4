@@ -83,11 +83,13 @@ export function useProfileIntelligence(profile: ProfileInput | null): {
     // Country-specific compliance gaps
     if (countryConfig.frameworks.length > 0) {
       const fw = countryConfig.frameworks[0];
+      // India's Green Credit Programme (Green Credit Rules, 2023) is voluntary, so it is not shown as a requirement.
+      const gcp = fw === 'GCP';
       result.push({
         id: 'local_compliance',
         type: 'compliance',
-        title: `${fw} Compliance`,
-        message: `${countryConfig.govBody} requires ${fw} reporting. Ensure your data meets ${countryConfig.name} standards.`,
+        title: gcp ? 'Green Credit Programme' : `${fw} Compliance`,
+        message: gcp ? 'Participation is voluntary.' : `${countryConfig.govBody} requires ${fw} reporting. Ensure your data meets ${countryConfig.name} standards.`,
         severity: 'info',
         linkTo: '/reports',
         linkLabel: 'Generate report',
