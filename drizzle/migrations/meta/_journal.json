@@ -232,6 +232,13 @@
       "when": 1792682730930,
       "tag": "0032_public_library",
       "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1792682752820,
+      "tag": "0033_security_hardening",
+      "breakpoints": true
     }
   ]
 }
