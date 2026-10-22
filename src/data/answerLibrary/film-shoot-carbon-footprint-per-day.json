@@ -1,0 +1,49 @@
+{
+  "slug": "film-shoot-carbon-footprint-per-day",
+  "q": "How do I work out the carbon footprint of a film shoot per day?",
+  "title": "Film shoot carbon footprint per day",
+  "short": "On location, generator diesel is usually the largest item at 2.68 kg CO2 per litre. Add crew and cast travel, hotel nights, set construction materials, catering and waste. Divide by shooting days. Hired generator vans with their own operators are the production's Scope 3 unless it controls them.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Production houses, ad agencies and line producers",
+  "sections": [
+    {
+      "h": "Daily log",
+      "ul": [
+        "Generator litres per day from the fuel log.",
+        "Vehicle trips and flights for crew.",
+        "Hotel room nights.",
+        "Set materials and their disposal.",
+        "Meals served."
+      ]
+    },
+    {
+      "h": "Studio days",
+      "p": [
+        "Studio electricity is the studio's Scope 2; the production counts its share as Scope 3 unless it pays the bill directly."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Rented generator scope",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "Hotel stay per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "formwork-plywood-vs-aluminium-carbon",
+  "q": "Is plywood or aluminium formwork lower carbon?",
+  "title": "Plywood vs aluminium formwork",
+  "short": "Aluminium has far more embodied carbon per kilogram, but it is reused many more times than plywood. Divide each system's material footprint by the number of pours you expect, then compare per square metre of concrete cast. The answer depends on how many repeats the project really gets.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Builders and contractors",
+  "sections": [
+    {
+      "h": "Per use",
+      "ol": [
+        "Material footprint per square metre of formwork.",
+        "Expected number of uses on this project and later ones.",
+        "Footprint per use = material footprint ÷ uses."
+      ]
+    },
+    {
+      "h": "Aluminium origin",
+      "p": [
+        "Aluminium made with coal power has a much higher footprint than recycled aluminium; ask for the supplier's figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Plywood per cubic metre",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Ready-mix concrete per m3",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

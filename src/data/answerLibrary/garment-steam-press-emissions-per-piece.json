@@ -1,0 +1,48 @@
+{
+  "slug": "garment-steam-press-emissions-per-piece",
+  "q": "What are the emissions of steam pressing per garment?",
+  "title": "Garment steam pressing per piece",
+  "short": "Steam irons and pressing tables are fed by a boiler, so the boiler fuel is the main source, plus electricity for vacuum tables. Find steam or fuel used by the finishing section, divide by pieces pressed, and multiply by the fuel factor. Electric irons count in Scope 2 instead.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Garment factories and laundries",
+  "sections": [
+    {
+      "h": "Per piece",
+      "ol": [
+        "Meter or estimate the finishing section's steam share.",
+        "Convert steam to boiler fuel using boiler efficiency.",
+        "Add vacuum and lighting kWh × 0.710.",
+        "Divide by pieces pressed."
+      ]
+    },
+    {
+      "h": "Save",
+      "p": [
+        "Insulating steam lines and repairing traps cuts fuel without changing the finish."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Steam pipe insulation",
+      "to": "/answers/steam-pipe-insulation-heat-loss"
+    },
+    {
+      "label": "Hosiery unit per garment",
+      "to": "/answers/ludhiana-hosiery-unit-carbon-per-garment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

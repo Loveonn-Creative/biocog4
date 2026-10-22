@@ -1,0 +1,47 @@
+{
+  "slug": "petroleum-pipeline-vs-tanker-truck-emissions",
+  "q": "Is moving fuel by pipeline lower carbon than by tanker truck?",
+  "title": "Fuel by pipeline vs tanker truck",
+  "short": "Usually yes per tonne-kilometre, because pumps move far more fuel per unit of energy than trucks burning diesel. The pipeline operator counts its pumping power and fuel. A fuel buyer usually finds this transport inside the fuel's upstream emissions, Scope 3 Category 3, unless it pays for transport separately.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Fuel retailers, depots and bulk fuel buyers",
+  "sections": [
+    {
+      "h": "Who counts it",
+      "ul": [
+        "Pipeline operator: Scope 2 for pumping electricity, Scope 1 for any fuel burned at stations.",
+        "Tanker operator: Scope 1 diesel.",
+        "Buyer: Category 3 well-to-tank, or Category 4 if you pay for transport separately."
+      ]
+    },
+    {
+      "h": "Get a figure",
+      "p": [
+        "Ask the operator for energy per tonne-kilometre. For trucks, use litres of diesel per trip at 2.68 kg CO2 per litre."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Rail vs road freight",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Inland waterway vs road",
+      "to": "/answers/inland-waterway-vs-road-freight-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

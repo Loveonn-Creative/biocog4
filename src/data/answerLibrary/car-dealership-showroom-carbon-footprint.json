@@ -1,0 +1,47 @@
+{
+  "slug": "car-dealership-showroom-carbon-footprint",
+  "q": "What makes up the carbon footprint of a car dealership?",
+  "title": "Car dealership carbon footprint",
+  "short": "Showroom lighting and air conditioning are Scope 2, at 0.710 kg CO2 per kWh. Generator diesel and demo or test drive cars you own are Scope 1. The workshop adds compressors, paint and refrigerant top ups. The cars you sell keep emitting on the road, which is a separate and much larger figure.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Car and two-wheeler dealers",
+  "sections": [
+    {
+      "h": "By scope",
+      "ul": [
+        "Scope 1: DG diesel, fuel for demo cars and pick-up vans, AC refrigerant top ups.",
+        "Scope 2: showroom and workshop electricity.",
+        "Scope 3: parts and consumables, waste oil disposal, staff commuting."
+      ]
+    },
+    {
+      "h": "Cars you sell",
+      "p": [
+        "Their fuel use on the road is use of sold products, Category 11. The maker counts it; a dealer that includes it should report it as a separate line and explain the estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Two-wheeler service centre",
+      "to": "/answers/two-wheeler-service-centre-scope-1-and-2"
+    },
+    {
+      "label": "Jewellery showroom footprint",
+      "to": "/answers/jewellery-showroom-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

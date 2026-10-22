@@ -1,0 +1,47 @@
+{
+  "slug": "law-firm-carbon-footprint-per-lawyer",
+  "q": "What is the carbon footprint of a law firm per lawyer?",
+  "title": "Law firm carbon footprint per lawyer",
+  "short": "Office electricity, mostly air conditioning and IT, is the firm's main Scope 2. Business travel, commuting, paper, IT equipment and cloud services are Scope 3 and often larger. Divide the total by lawyers or by all staff, and name the denominator so the figure compares year to year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Law firms, CA firms and other professional practices",
+  "sections": [
+    {
+      "h": "By scope",
+      "ul": [
+        "Scope 1: DG diesel, refrigerant top ups.",
+        "Scope 2: office electricity at 0.710 kg CO2 per kWh.",
+        "Scope 3: flights, hotel stays, commuting, paper, laptops, cloud and courier."
+      ]
+    },
+    {
+      "h": "Clients ask",
+      "p": [
+        "Clients collecting supplier data usually want your Scope 1 and 2 and the share billed to them."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Professional services in Scope 3",
+      "to": "/answers/professional-services-fees-scope-3"
+    },
+    {
+      "label": "IT company per employee",
+      "to": "/answers/it-company-carbon-footprint-per-employee"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

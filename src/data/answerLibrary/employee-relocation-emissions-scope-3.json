@@ -1,0 +1,43 @@
+{
+  "slug": "employee-relocation-emissions-scope-3",
+  "q": "How do we count an employee's relocation in our emissions?",
+  "title": "Employee relocation emissions",
+  "short": "Flights and train journeys for the employee and family that you pay for are business travel, Category 6. Packers and movers are a purchased service, so their trucking is Category 1 or 4 depending on how you classify it. Temporary hotel stays go with business travel.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "HR and admin teams",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Travel bookings for the move.",
+        "Movers' invoice with distance and truck size.",
+        "Hotel nights during the move."
+      ]
+    },
+    {
+      "h": "Be consistent",
+      "p": [
+        "Choose one category for movers' trucking and keep it every year."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps purchase invoices on the Scope 3 trail with the category, method and factor source on every line, so spend-based estimates are labelled as estimates and can be replaced with supplier data later.",
+  "links": [
+    {
+      "label": "Business travel flights",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Hotel stay per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "team-offsite-emissions-scope-3",
+  "q": "How do we count a company offsite in our emissions?",
+  "title": "Company offsite emissions",
+  "short": "Travel to the venue is business travel, Category 6. Hotel nights also go in Category 6, and a per-night factor covers the venue's energy. Meals and venue hire you pay for separately are purchased services. Add them up and keep the event as one line so it is easy to compare.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HR and admin teams planning offsites",
+  "sections": [
+    {
+      "h": "Collect",
+      "ul": [
+        "Mode and distance for each person's travel.",
+        "Room nights.",
+        "Venue, food and activities invoices."
+      ]
+    },
+    {
+      "h": "Reduce",
+      "p": [
+        "Choosing a venue reachable by train or bus usually cuts more than any change at the venue."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps purchase invoices on the Scope 3 trail with the category, method and factor source on every line, so spend-based estimates are labelled as estimates and can be replaced with supplier data later.",
+  "links": [
+    {
+      "label": "Hotel event per guest",
+      "to": "/answers/hotel-event-carbon-footprint-per-guest"
+    },
+    {
+      "label": "Event attendee travel",
+      "to": "/answers/event-attendee-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

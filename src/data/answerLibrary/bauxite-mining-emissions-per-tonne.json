@@ -1,0 +1,48 @@
+{
+  "slug": "bauxite-mining-emissions-per-tonne",
+  "q": "What are the emissions of bauxite mining per tonne?",
+  "title": "Bauxite mining emissions per tonne",
+  "short": "Open-cast bauxite mining burns diesel in excavators, dumpers and dozers, which is Scope 1 at 2.68 kg CO2 per litre. Add blasting explosives, electricity for crushing and conveyors, and transport to the refinery. Divide by tonnes dispatched. Bauxite is not a CBAM good, but aluminium is.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Mine operators and alumina refineries",
+  "sections": [
+    {
+      "h": "Per tonne",
+      "ul": [
+        "Diesel litres from the mine's fuel issue register.",
+        "Explosives used, by type.",
+        "Electricity kWh × 0.710.",
+        "Rail or road transport to the refinery."
+      ]
+    },
+    {
+      "h": "For refineries",
+      "p": [
+        "Bauxite is Category 1 for the refinery; the mine's figure per tonne replaces a default."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Alumina refinery coal steam",
+      "to": "/answers/renukoot-alumina-refinery-coal-steam-co2"
+    },
+    {
+      "label": "Quarry blasting explosives",
+      "to": "/answers/quarry-blasting-explosives-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

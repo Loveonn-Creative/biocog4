@@ -1,0 +1,48 @@
+{
+  "slug": "marathon-carbon-footprint-per-runner",
+  "q": "What is the carbon footprint of a marathon per runner?",
+  "title": "Marathon carbon footprint per runner",
+  "short": "Runners' travel to the event is usually the largest share, especially by air. The organiser adds race kits, medals, bottled water, generators and waste. Divide the total by runners. Count travel separately so the organiser can show what it controls.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Race organisers and corporate sponsors",
+  "sections": [
+    {
+      "h": "Organiser controls",
+      "ul": [
+        "Generators and stage power.",
+        "T-shirts, medals and bibs, by quantity.",
+        "Water bottles and cups.",
+        "Waste collection and disposal."
+      ]
+    },
+    {
+      "h": "Runner travel",
+      "p": [
+        "Estimate from a registration question on city and mode of travel, and report it as a separate figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Event attendee travel",
+      "to": "/answers/event-attendee-travel-which-scope"
+    },
+    {
+      "label": "ISO 20121 vs event footprint",
+      "to": "/answers/iso-20121-vs-event-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO, International Organization for Standardization",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

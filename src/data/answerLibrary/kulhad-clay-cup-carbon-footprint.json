@@ -1,0 +1,47 @@
+{
+  "slug": "kulhad-clay-cup-carbon-footprint",
+  "q": "What is the carbon footprint of a kulhad clay tea cup?",
+  "title": "Kulhad clay cup: carbon footprint",
+  "short": "A kulhad's footprint comes almost entirely from firing it in the kiln. If the kiln burns wood or agricultural waste, that CO2 is biogenic and reported separately; coal or diesel firing is fossil CO2. Divide the kiln's fuel per firing by the number of cups that come out whole.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Potters, tea stalls and railway caterers",
+  "sections": [
+    {
+      "h": "Per cup",
+      "ol": [
+        "Record fuel per firing: kg of coal, wood or husk.",
+        "Count good cups from that firing, not cups loaded.",
+        "Multiply fuel by its factor; keep biomass CO2 as a separate line."
+      ]
+    },
+    {
+      "h": "Against a paper cup",
+      "p": [
+        "The comparison depends on the kiln fuel and breakage. A kulhad is single use, so compare one cup with one cup."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Paper cup per cup",
+      "to": "/answers/paper-cup-carbon-footprint-per-cup"
+    },
+    {
+      "label": "Terracotta planter",
+      "to": "/answers/terracotta-planter-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

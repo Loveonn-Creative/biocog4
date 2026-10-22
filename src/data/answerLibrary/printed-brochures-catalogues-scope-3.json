@@ -1,0 +1,43 @@
+{
+  "slug": "printed-brochures-catalogues-scope-3",
+  "q": "How do we count printed brochures and catalogues in Scope 3?",
+  "title": "Printed brochures and catalogues",
+  "short": "They are purchased goods, Scope 3 Category 1. Use the paper weight and a paper factor per kg, plus the printer's energy if it shares a figure. Without weights, use the printing bill with a spend-based factor and label it as an estimate. Distribution by courier is transport.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Marketing teams and exporters printing catalogues",
+  "sections": [
+    {
+      "h": "By weight",
+      "ol": [
+        "Pages × paper GSM × sheet area gives kg per copy.",
+        "Copies printed × kg per copy.",
+        "Multiply by the paper factor; add inks and binding if known."
+      ]
+    },
+    {
+      "h": "Unused stock",
+      "p": [
+        "Copies printed and later pulped were still produced, so count everything printed."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps purchase invoices on the Scope 3 trail with the category, method and factor source on every line, so spend-based estimates are labelled as estimates and can be replaced with supplier data later.",
+  "links": [
+    {
+      "label": "Advertising spend in Scope 3",
+      "to": "/answers/advertising-and-marketing-spend-scope-3"
+    },
+    {
+      "label": "Newspaper per copy",
+      "to": "/answers/newspaper-printing-plant-carbon-per-copy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

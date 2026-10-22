@@ -1,0 +1,47 @@
+{
+  "slug": "real-estate-developer-sold-flats-scope-3",
+  "q": "How does a real estate developer count emissions from flats it sells?",
+  "title": "Developer: emissions from sold flats",
+  "short": "Materials like cement, steel and glass are the developer's purchased goods, Category 1, counted when bought. Contractors' site diesel and power are Scope 3 unless the developer runs the site. Residents' electricity after sale is use of sold products, Category 11, usually estimated over the building's expected life.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Real estate developers and their lenders",
+  "sections": [
+    {
+      "h": "Main figures",
+      "ul": [
+        "Embodied carbon: materials by quantity from bills of quantities.",
+        "Construction: site diesel and electricity.",
+        "Use: expected annual electricity per flat × years × grid factor."
+      ]
+    },
+    {
+      "h": "Label assumptions",
+      "p": [
+        "Category 11 rests on assumptions about use and grid change; state them."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps purchase invoices on the Scope 3 trail with the category, method and factor source on every line, so spend-based estimates are labelled as estimates and can be replaced with supplier data later.",
+  "links": [
+    {
+      "label": "Ready-mix concrete per m3",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Glass facade per sq m",
+      "to": "/answers/glass-facade-embodied-carbon-per-sq-m"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

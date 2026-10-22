@@ -1,0 +1,47 @@
+{
+  "slug": "fabric-singeing-gas-emissions-per-metre",
+  "q": "What are the CO2 emissions of singeing fabric per metre?",
+  "title": "Fabric singeing CO2 per metre",
+  "short": "Singeing burns off surface fibres with gas flames, so the gas burned is Scope 1. Divide the singeing machine's gas use by metres processed, then multiply by the factor: 2.98 kg CO2 per kg of LPG, or the IPCC natural gas default for PNG. Add the machine's electricity.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fabric processors",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Gas meter or LPG cylinder log for the machine.",
+        "Metres singed, from the production register.",
+        "Machine kWh."
+      ]
+    },
+    {
+      "h": "Reduce",
+      "p": [
+        "Burner tuning and switching off flames during stops lower gas per metre."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "LPG or PNG per unit of heat",
+      "to": "/answers/lpg-or-png-lower-co2-per-unit-of-heat"
+    },
+    {
+      "label": "Dye house per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

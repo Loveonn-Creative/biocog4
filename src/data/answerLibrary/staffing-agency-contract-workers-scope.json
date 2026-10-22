@@ -1,0 +1,47 @@
+{
+  "slug": "staffing-agency-contract-workers-scope",
+  "q": "How do we count contract workers supplied by a staffing agency?",
+  "title": "Contract workers in your inventory",
+  "short": "Energy they use at your site is already in your Scope 1 and 2, because you control the site. The agency's fee is a purchased service, Scope 3 Category 1. Many companies include contract workers' commuting in Category 7 with employees; say whether you do.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and offices using contract labour",
+  "sections": [
+    {
+      "h": "Where they appear",
+      "ul": [
+        "Site electricity and fuel: your Scope 1 and 2.",
+        "Agency invoices: Category 1.",
+        "Commuting and company transport: Category 7, or Scope 1 if you run the buses."
+      ]
+    },
+    {
+      "h": "Intensity",
+      "p": [
+        "If you report per employee, state whether contract workers are in the headcount."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Staff bus scope",
+      "to": "/answers/staff-bus-scope-1-or-category-7"
+    },
+    {
+      "label": "Professional services in Scope 3",
+      "to": "/answers/professional-services-fees-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

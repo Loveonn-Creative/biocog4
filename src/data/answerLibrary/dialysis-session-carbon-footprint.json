@@ -1,0 +1,48 @@
+{
+  "slug": "dialysis-session-carbon-footprint",
+  "q": "What is the carbon footprint of one dialysis session?",
+  "title": "Dialysis session carbon footprint",
+  "short": "A session uses electricity for the machine and the water treatment plant, plus single-use dialysers, tubing and concentrate. Patient travel to the centre is often large too. Add the centre's power and water treatment per session, then the consumables per session from purchase records.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dialysis centres and hospital nephrology units",
+  "sections": [
+    {
+      "h": "Per session",
+      "ul": [
+        "Machines and RO plant: kWh per session × 0.710 kg CO2 per kWh.",
+        "Consumables: dialyser, lines, needles and concentrate, from supplier data or spend.",
+        "Clinical waste disposal.",
+        "Patient travel, if you choose to report it."
+      ]
+    },
+    {
+      "h": "Water",
+      "p": [
+        "Treated water use is high, so RO plant electricity is worth metering separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "RO plant electricity per kl",
+      "to": "/answers/ro-plant-electricity-per-kl-process-water"
+    },
+    {
+      "label": "Biomedical waste emissions",
+      "to": "/answers/biomedical-waste-emissions-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "mica-mining-and-processing-emissions",
+  "q": "What are the emissions of mica mining and processing?",
+  "title": "Mica mining and processing emissions",
+  "short": "Mining uses diesel for excavation and transport. Processing into flakes or powder uses electricity for grinding and screening, and fuel for drying. Divide each by tonnes of product. Buyers in paints, cosmetics and electronics count mica as a purchased material in Scope 3.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Mica processors and paint, cosmetic and electronics buyers",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Diesel for excavation and haulage.",
+        "Grinding and micronising electricity at 0.710 kg CO2 per kWh.",
+        "Dryer fuel.",
+        "Bags and transport."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Ask processors for energy per tonne of the grade you buy; ground grades use more power than flakes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Stone crusher per tonne",
+      "to": "/answers/stone-crusher-aggregate-co2-per-tonne"
+    },
+    {
+      "label": "Cosmetics per unit",
+      "to": "/answers/cosmetics-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

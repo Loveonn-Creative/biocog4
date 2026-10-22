@@ -1,0 +1,51 @@
+{
+  "slug": "charter-flight-emissions-which-scope",
+  "q": "Which scope does a chartered flight fall in?",
+  "title": "Chartered flight: which scope",
+  "short": "If you charter an aircraft with the operator's crew, the operator burns the fuel, so it is your Scope 3 Category 6. If your company owns or leases and operates the aircraft, the fuel is your Scope 1. Ask the operator for fuel burned; jet fuel is about 3.15 kg CO2 per kg.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies chartering aircraft or helicopters",
+  "sections": [
+    {
+      "h": "Best data",
+      "ul": [
+        "Fuel burned on your flights, from the operator.",
+        "If not available, block hours times the aircraft's typical burn rate.",
+        "Empty positioning legs flown for you count too."
+      ]
+    },
+    {
+      "h": "Helicopters",
+      "p": [
+        "The same rule applies: whoever operates the aircraft has the Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Business travel flights",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Radiative forcing in flights",
+      "to": "/answers/should-flight-emissions-include-radiative-forcing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

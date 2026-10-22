@@ -1,0 +1,47 @@
+{
+  "slug": "csr-tree-plantation-net-off-emissions",
+  "q": "Can our CSR tree plantation be subtracted from our emissions?",
+  "title": "CSR tree plantation and your emissions",
+  "short": "No. The inventory reports gross emissions, and a plantation is reported separately, never subtracted. Trees planted outside your operations are not removals in your inventory. Even on your own land, removals need measurement over time and their own line. You can describe the plantation as a separate climate action.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "CSR and sustainability teams",
+  "sections": [
+    {
+      "h": "How to report it",
+      "ul": [
+        "Emissions: unchanged by the plantation.",
+        "Plantation: area, species, survival rate and any measured carbon, as a separate disclosure.",
+        "Credits: only if issued under a recognised programme, and still reported separately."
+      ]
+    },
+    {
+      "h": "Claims",
+      "p": [
+        "Avoid saying the plantation makes you carbon neutral unless you follow a recognised standard for that claim."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Durable vs nature-based removals",
+      "to": "/answers/durable-removals-vs-nature-based-for-net-zero"
+    },
+    {
+      "label": "Can a factory earn green credits",
+      "to": "/answers/can-a-factory-earn-green-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Science Based Targets initiative",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

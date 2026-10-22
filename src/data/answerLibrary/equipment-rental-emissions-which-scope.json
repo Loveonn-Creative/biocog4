@@ -1,0 +1,47 @@
+{
+  "slug": "equipment-rental-emissions-which-scope",
+  "q": "Which scope does rented equipment like a crane or forklift fall in?",
+  "title": "Rented equipment: which scope",
+  "short": "It depends on who operates it and buys the fuel. If you rent the machine without an operator and fuel it yourself, the fuel is your Scope 1. If the rental company supplies the operator and fuel and bills a service, it is your Scope 3. The contract and invoice show which.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Contractors, factories and warehouses",
+  "sections": [
+    {
+      "h": "Examples",
+      "ul": [
+        "Forklift rented monthly, your diesel: Scope 1.",
+        "Crane hired with operator, all-in rate: Scope 3 Category 1.",
+        "Electric equipment charged on your meter: Scope 2."
+      ]
+    },
+    {
+      "h": "Fuel in the rate",
+      "p": [
+        "If the rental bill includes fuel, ask for litres used so you can count it accurately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Rented generator scope",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "Diesel vs electric forklift",
+      "to": "/answers/diesel-forklift-vs-electric-forklift-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

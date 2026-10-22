@@ -1,0 +1,47 @@
+{
+  "slug": "dry-waste-sorting-centre-emissions-per-tonne",
+  "q": "What are the emissions of a dry waste sorting centre per tonne?",
+  "title": "Dry waste sorting centre per tonne",
+  "short": "Sorting itself uses little energy: conveyors, balers and lighting on electricity, plus loaders on diesel. Divide both by tonnes received. The larger figure is usually the rejects sent to landfill or incineration, which are the centre's Scope 3 waste emissions. Recyclables sold are not counted as savings in the inventory.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Material recovery facilities and municipal contractors",
+  "sections": [
+    {
+      "h": "Per tonne",
+      "ul": [
+        "Electricity kWh × 0.710 kg CO2 per kWh.",
+        "Loader and truck diesel × 2.68 kg CO2 per litre.",
+        "Rejects to landfill or incineration, by tonnes and disposal route."
+      ]
+    },
+    {
+      "h": "Avoided emissions",
+      "p": [
+        "Report any benefit of recycling separately from the inventory and explain the method."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Waste incineration fossil CO2",
+      "to": "/answers/waste-incineration-fossil-co2-calculation"
+    },
+    {
+      "label": "Parcel sorting hub",
+      "to": "/answers/parcel-sorting-hub-emissions-per-parcel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

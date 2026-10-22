@@ -1,0 +1,55 @@
+{
+  "slug": "cng-auto-rickshaw-emissions-per-km",
+  "q": "What are the CO2 emissions of a CNG auto rickshaw per km?",
+  "title": "CNG auto rickshaw CO2 per km",
+  "short": "Divide kilograms of CNG filled by kilometres driven, then multiply by 2.69 kg CO2 per kg of CNG. Get kilograms from refill receipts and kilometres from the meter. For the owner-driver it is Scope 1; a company paying for auto rides counts them as business travel or commuting.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Auto owners, fleet operators and companies reimbursing rides",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Refill receipts in kg, not rupees.",
+        "Odometer or trip meter readings at each refill.",
+        "Kilometres per kg, tracked month by month."
+      ]
+    },
+    {
+      "h": "For a company",
+      "p": [
+        "Rides for work are Category 6. Rides between home and work are Category 7."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "E-rickshaw per vehicle",
+      "to": "/answers/e-rickshaw-carbon-footprint-per-vehicle"
+    },
+    {
+      "label": "Taxi fleet per km",
+      "to": "/answers/taxi-fleet-operator-emissions-per-km"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "example": {
+    "title": "Example (illustrative)",
+    "lines": [
+      "60 kg CNG for 1,800 km = 0.033 kg per km",
+      "0.033 × 2.69 = about 0.09 kg CO2 per km"
+    ],
+    "note": "Illustrative figures; use your own refill and meter records."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "cng-station-compressor-electricity-per-kg",
+  "q": "How much CO2 does a CNG station's compressor add per kg of gas sold?",
+  "title": "CNG station compressor CO2 per kg",
+  "short": "Divide the compressor's monthly kWh by the kilograms of CNG dispensed, then multiply by 0.710 kg CO2 per kWh. That is the station's Scope 2 per kg. Gas vented during maintenance is unburnt methane and counts in Scope 1. The CO2 from burning the gas belongs to the vehicle owner.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "CNG station operators and fleet owners",
+  "sections": [
+    {
+      "h": "Records you need",
+      "ul": [
+        "Compressor sub-meter readings, or the station's electricity bill if the compressor dominates.",
+        "Kilograms dispensed from the dispenser totaliser.",
+        "Maintenance logs for any venting."
+      ]
+    },
+    {
+      "h": "For fleets",
+      "p": [
+        "Your Scope 1 is 2.69 kg CO2 per kg of CNG burned. The station's compression energy is upstream, Category 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Fuel station footprint",
+      "to": "/answers/fuel-station-carbon-footprint-calculation"
+    },
+    {
+      "label": "Purchased CBG in Scope 1",
+      "to": "/answers/purchased-cbg-fuel-scope-1-biogenic"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "used-cooking-oil-biodiesel-emission-factor",
+  "q": "What emission factor do I use for biodiesel made from used cooking oil?",
+  "title": "Used cooking oil biodiesel factor",
+  "short": "CO2 from burning biodiesel is biogenic, so report it outside the scopes. Methane and nitrous oxide from the engine stay in Scope 1. For a blend, only the diesel share counts as fossil CO2. Collection, processing and transport of the oil go in Category 3, and published factors include them.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fleet owners and biodiesel buyers",
+  "sections": [
+    {
+      "h": "For a blend",
+      "ol": [
+        "Split litres into the diesel share and the biodiesel share from the blend ratio.",
+        "Diesel share: 2.68 kg CO2 per litre in Scope 1.",
+        "Biodiesel share: biogenic CO2 as a separate line.",
+        "Add methane and nitrous oxide for all litres."
+      ]
+    },
+    {
+      "h": "Prove the feedstock",
+      "p": [
+        "Keep the supplier's declaration that the fuel is from used cooking oil. Without it, use a general biodiesel factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Biodiesel blends in Scope 1",
+      "to": "/answers/biodiesel-blend-fleet-scope-1"
+    },
+    {
+      "label": "Pyrolysis oil from plastic",
+      "to": "/answers/pyrolysis-oil-from-plastic-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UK Government GHG conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

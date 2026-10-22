@@ -1,0 +1,49 @@
+{
+  "slug": "catering-carbon-footprint-per-plate",
+  "q": "What is the carbon footprint of catering per plate?",
+  "title": "Catering footprint per plate",
+  "short": "The food itself is usually the largest part, especially dairy and meat. Cooking fuel is next: LPG at 2.98 kg CO2 per kg is the caterer's Scope 1. Add transport, disposables and leftovers sent as waste, then divide by plates served. The client counts the catering bill in Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Caterers and companies hiring them for events",
+  "sections": [
+    {
+      "h": "Per plate",
+      "ul": [
+        "Ingredients by kg, from purchase bills, times food factors.",
+        "LPG cylinders used × 2.98 kg CO2 per kg of gas.",
+        "Delivery vans' diesel.",
+        "Plates, cups and cutlery, if disposable.",
+        "Food waste to landfill or composting."
+      ]
+    },
+    {
+      "h": "For the client",
+      "p": [
+        "Ask the caterer for the per-plate figure; otherwise use a spend-based estimate and label it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Staff canteen meals",
+      "to": "/answers/staff-canteen-meals-scope-3"
+    },
+    {
+      "label": "Induction vs LPG kitchen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
