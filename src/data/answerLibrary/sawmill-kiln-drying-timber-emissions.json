@@ -1,0 +1,47 @@
+{
+  "slug": "sawmill-kiln-drying-timber-emissions",
+  "q": "What are the emissions of sawing and kiln drying timber?",
+  "title": "Sawmill and kiln drying emissions",
+  "short": "Saw electricity is small next to kiln drying. If the kiln boiler burns sawdust and offcuts, that CO2 is biogenic and reported separately, while its methane and nitrous oxide count in Scope 1. Electric dehumidifier kilns put it in Scope 2 instead.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Sawmills, timber merchants and furniture makers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Saw and planer electricity.",
+        "Kiln fuel type and quantity, or kiln electricity.",
+        "Cubic metres dried and moisture before and after."
+      ]
+    },
+    {
+      "h": "Per cubic metre",
+      "p": [
+        "Hardwoods dried from green take longer than softwoods; report by species group if you dry both."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Wood waste boiler biogenic CO2",
+      "to": "/answers/furniture-factory-wood-waste-boiler-biogenic-co2"
+    },
+    {
+      "label": "Biogenic carbon in timber",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "bentonite-processing-co2-per-tonne",
+  "q": "What are the emissions of processing bentonite per tonne?",
+  "title": "Bentonite processing CO2 per tonne",
+  "short": "Mining diesel, drying fuel and grinding electricity make up most of it. Sodium activation with soda ash adds the soda ash's own footprint to Scope 3. Divide each by tonnes of finished bentonite and add them up.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bentonite miners and processors in Gujarat and Rajasthan",
+  "sections": [
+    {
+      "h": "Steps",
+      "ul": [
+        "Mining and haulage: diesel at 2.68 kg CO2 per litre.",
+        "Sun drying costs nothing; mechanical dryers burn fuel.",
+        "Grinding and bagging: electricity at 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Activation",
+      "p": [
+        "Soda ash bought for activation is Scope 3. Its CO2 is released where it is made, not in your plant."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Soda ash plant CO2",
+      "to": "/answers/soda-ash-plant-co2-per-tonne"
+    },
+    {
+      "label": "Dumper diesel per tonne",
+      "to": "/answers/mining-dumper-diesel-per-tonne-moved"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

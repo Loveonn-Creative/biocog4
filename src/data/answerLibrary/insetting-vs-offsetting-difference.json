@@ -1,0 +1,57 @@
+{
+  "slug": "insetting-vs-offsetting-difference",
+  "q": "What is the difference between insetting and offsetting?",
+  "title": "Insetting vs offsetting",
+  "short": "Insetting means funding reductions inside your own value chain, such as helping a supplier switch fuel; they show up as lower Scope 3 when the supplier's data changes. Offsetting means buying credits from outside it, reported separately and never subtracted from your inventory.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Sustainability teams planning supplier programmes",
+  "sections": [
+    {
+      "h": "Insetting",
+      "ul": [
+        "Counts only through measured lower emissions in your supplier data.",
+        "Paying for a project does not by itself change your figures."
+      ]
+    },
+    {
+      "h": "Offsetting",
+      "ul": [
+        "Credits are retired and reported alongside, not deducted.",
+        "Check the credit's quality, for example against ICVCM principles."
+      ]
+    },
+    {
+      "h": "Wording",
+      "p": [
+        "Insetting is not a GHG Protocol term. Describe what you funded and what changed in the data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Can offsets be subtracted",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    },
+    {
+      "label": "Credits and SBTi targets",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Integrity Council for the Voluntary Carbon Market",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

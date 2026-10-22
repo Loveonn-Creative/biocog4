@@ -1,0 +1,46 @@
+{
+  "slug": "virtual-ppa-scope-2-india",
+  "q": "Can a virtual power purchase agreement lower our Scope 2 in India?",
+  "title": "Virtual PPA and Scope 2",
+  "short": "Only through the certificates it transfers. A virtual PPA is a financial contract: no power flows to you. Under the GHG Protocol Scope 2 Guidance, a market based claim needs the renewable attributes delivered and retired for you. Open access and green tariffs are more common in India.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Companies weighing renewable power contracts",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Renewable energy certificates retired in your name, matched to your consumption period.",
+        "A contract that settles only money, with no certificates, does not change Scope 2."
+      ]
+    },
+    {
+      "h": "Location based",
+      "p": [
+        "Your location based figure stays at the grid factor whatever you buy."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Green tariff vs RECs",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Green open access charges",
+      "to": "/answers/green-open-access-charges-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

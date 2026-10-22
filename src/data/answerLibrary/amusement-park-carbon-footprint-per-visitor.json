@@ -1,0 +1,47 @@
+{
+  "slug": "amusement-park-carbon-footprint-per-visitor",
+  "q": "How do I calculate an amusement park's carbon footprint per visitor?",
+  "title": "Amusement park CO2 per visitor",
+  "short": "Rides, lighting and food courts run on electricity at 0.710 kg CO2 per kWh, with diesel generators for backup. Divide by visitors for a per visitor figure. Ride motors draw heavily at start up, so off peak days with few riders raise the per visitor number.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Amusement and theme park operators",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity by ride zone where metered.",
+        "Generator diesel.",
+        "Visitor counts by day."
+      ]
+    },
+    {
+      "h": "Food courts",
+      "p": [
+        "LPG for kitchens is Scope 1; food bought in is Scope 3. Leased outlets on their own meters report their own power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Water park footprint",
+      "to": "/answers/water-park-carbon-footprint-per-visitor"
+    },
+    {
+      "label": "DG set CO2 per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

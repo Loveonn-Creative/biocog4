@@ -1,0 +1,47 @@
+{
+  "slug": "coconut-oil-expeller-co2-per-litre",
+  "q": "How much CO2 does pressing coconut oil emit per litre?",
+  "title": "Coconut oil expeller CO2 per litre",
+  "short": "Expellers and filters run on electricity: kWh times 0.710 kg CO2, divided by litres of oil. Copra drying before pressing is usually larger and belongs to whoever dries it. Packaging and freight are Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Coconut oil mills and brand owners",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Expeller and filter press electricity.",
+        "Litres or kg of oil produced, and cake sold.",
+        "Copra purchases with the drier's fuel if you can get it."
+      ]
+    },
+    {
+      "h": "Oil cake",
+      "p": [
+        "Cake is a co product. Split emissions between oil and cake by mass or value, and say which."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Copra drying per tonne",
+      "to": "/answers/copra-drying-emissions-per-tonne"
+    },
+    {
+      "label": "Groundnut decorticator",
+      "to": "/answers/groundnut-decorticator-electricity-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "feldspar-grinding-electricity-co2-per-tonne",
+  "q": "What is the CO2 per tonne of ground feldspar?",
+  "title": "Feldspar grinding CO2 per tonne",
+  "short": "Grinding electricity is most of it: mill kWh times 0.710 kg CO2, divided by tonnes of powder. Finer mesh sizes take more energy per tonne. Add quarry diesel and any dryer fuel if the feed is wet.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Feldspar and quartz grinding units supplying tile and glass makers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Ball mill or pulveriser meter by product mesh.",
+        "Quarry and transport diesel.",
+        "Tonnes dispatched by mesh size."
+      ]
+    },
+    {
+      "h": "Buyers",
+      "p": [
+        "Tile makers ask for a per tonne figure; give one per mesh grade rather than a plant average."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Morbi tile buyer data",
+      "to": "/answers/morbi-tile-exporter-eu-buyer-carbon-data"
+    },
+    {
+      "label": "Stone crusher per tonne",
+      "to": "/answers/stone-crusher-aggregate-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

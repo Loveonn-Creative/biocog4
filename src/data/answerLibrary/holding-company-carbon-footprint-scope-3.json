@@ -1,0 +1,48 @@
+{
+  "slug": "holding-company-carbon-footprint-scope-3",
+  "q": "What should a holding company with no operations report as its carbon footprint?",
+  "title": "Holding company carbon footprint",
+  "short": "Its own office is small. Under the control approach, subsidiaries it controls are consolidated into its Scope 1 and 2. Stakes it does not control fall in Scope 3 Category 15, investments, in proportion to its share.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Holding companies and family group parents",
+  "sections": [
+    {
+      "h": "Steps",
+      "ul": [
+        "Pick a consolidation approach and apply it to every entity.",
+        "Controlled subsidiaries: their Scope 1 and 2 roll up.",
+        "Minority stakes: Category 15 by equity share.",
+        "The holding company's own office power and travel."
+      ]
+    },
+    {
+      "h": "Disclose",
+      "p": [
+        "List which entities are in, which are in Category 15, and the approach used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Operational control vs equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Joint venture stake",
+      "to": "/answers/equity-stake-in-joint-venture-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

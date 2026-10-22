@@ -1,0 +1,48 @@
+{
+  "slug": "water-park-carbon-footprint-per-visitor",
+  "q": "What is the carbon footprint of a water park per visitor?",
+  "title": "Water park CO2 per visitor",
+  "short": "Pumping and filtration electricity is the largest part, running long hours to keep pools moving and clean, at 0.710 kg CO2 per kWh. Add generator diesel and chlorine, then divide by visitors. Pools heated in winter add a large fuel or electricity line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Water park and resort operators",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Pump and filter electricity.",
+        "Pool heating fuel or heat pump power, if used.",
+        "Chlorine and other chemicals, as Scope 3.",
+        "Visitor counts."
+      ]
+    },
+    {
+      "h": "Cutting it",
+      "p": [
+        "Variable speed pumps and pool covers overnight reduce both electricity and heating."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Pool heating emissions",
+      "to": "/answers/hotel-swimming-pool-heating-emissions"
+    },
+    {
+      "label": "Amusement park per visitor",
+      "to": "/answers/amusement-park-carbon-footprint-per-visitor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

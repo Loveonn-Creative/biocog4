@@ -1,0 +1,51 @@
+{
+  "slug": "lead-oxide-battery-plant-co2-per-tonne",
+  "q": "How much CO2 does making lead oxide for batteries emit per tonne?",
+  "title": "Battery lead oxide CO2 per tonne",
+  "short": "Lead oxide is made in ball mills or Barton pots that oxidise lead, mostly with electricity, and melting the lead ingots uses fuel or induction power. Add kWh times 0.710 kg CO2 and fuel at IPCC defaults, then divide by tonnes of oxide.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Lead acid battery makers and oxide producers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Mill or Barton pot electricity.",
+        "Lead melting fuel or induction power.",
+        "Lead ingots bought, as Scope 3."
+      ]
+    },
+    {
+      "h": "Recycled lead",
+      "p": [
+        "Secondary lead from recycled batteries usually carries far less than primary lead. Ask your smelter which you are buying."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Lead acid battery recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    },
+    {
+      "label": "Induction vs cupola",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

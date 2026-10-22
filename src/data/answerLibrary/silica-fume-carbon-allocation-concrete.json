@@ -1,0 +1,47 @@
+{
+  "slug": "silica-fume-carbon-allocation-concrete",
+  "q": "Does silica fume carry carbon from the silicon smelter that made it?",
+  "title": "Silica fume carbon allocation",
+  "short": "Silica fume is collected from the off gas of silicon and ferrosilicon furnaces. Many methods treat it as a residue that carries only its collection, densifying and transport emissions; others allocate part of the smelter's burden. State which rule you used.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Concrete makers, admixture suppliers and silicon smelters",
+  "sections": [
+    {
+      "h": "Options",
+      "ul": [
+        "Residue: only bagging, densifying and freight.",
+        "By product: a share of smelter emissions by mass or value.",
+        "Whichever you pick, apply it every year."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Silica fume replaces some cement, so the rule decides how much credit a low carbon concrete mix can claim."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Fly ash carbon allocation",
+      "to": "/answers/fly-ash-from-power-plant-carbon-allocation"
+    },
+    {
+      "label": "Silicon metal and CBAM",
+      "to": "/answers/is-silicon-metal-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

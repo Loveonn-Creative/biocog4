@@ -1,0 +1,47 @@
+{
+  "slug": "railway-station-electricity-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a railway station?",
+  "title": "Railway station carbon footprint",
+  "short": "Most of it is electricity for lighting, fans, lifts, escalators, waiting room AC and signage: kWh times 0.710 kg CO2. Add diesel for backup generators. Shops and food stalls on separate meters belong to their operators unless the railway pays their power.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Railway station managers and concession operators",
+  "sections": [
+    {
+      "h": "Split the meters",
+      "ul": [
+        "Station common areas and platforms.",
+        "Concessions: stalls, retiring rooms, parcel offices.",
+        "Traction power is not station power; keep it out."
+      ]
+    },
+    {
+      "h": "Per passenger",
+      "p": [
+        "Divide station kWh by footfall for a comparable figure across stations and months."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Lift and escalator power",
+      "to": "/answers/lift-and-escalator-electricity-emissions"
+    },
+    {
+      "label": "Rooftop solar at a bus depot",
+      "to": "/answers/electric-bus-depot-rooftop-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

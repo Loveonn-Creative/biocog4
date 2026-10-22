@@ -1,0 +1,55 @@
+{
+  "slug": "cruise-ship-co2-per-passenger-night",
+  "q": "How is a cruise ship's CO2 per passenger night worked out?",
+  "title": "Cruise ship CO2 per passenger night",
+  "short": "Total the fuel burned on the voyage, multiply heavy fuel oil by about 3.13 t CO2 per tonne and marine gas oil by about 3.19, then divide by passenger nights. Some operators allocate by cabin area instead; say which method you used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cruise operators, travel companies and corporate event planners",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Fuel consumption by type from the engine log.",
+        "Passengers and nights on board.",
+        "Shore power used in port, as Scope 2 for the operator."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "Crew and cargo are not passengers. If the ship carries cargo, split fuel by a stated rule before dividing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Marine gas oil: 30 tonnes a day × 3.19 = 95.7 t CO2.",
+      "Passengers on board: 1,500.",
+      "95.7 ÷ 1,500 = about 63.8 kg CO2 per passenger night."
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Heavy fuel oil CO2 per tonne",
+      "to": "/answers/ship-bunker-fuel-heavy-fuel-oil-co2-per-tonne"
+    },
+    {
+      "label": "Shore power at berth",
+      "to": "/answers/shore-power-at-berth-scope-2-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GLEC Framework (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

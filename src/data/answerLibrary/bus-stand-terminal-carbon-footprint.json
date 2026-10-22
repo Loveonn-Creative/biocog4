@@ -1,0 +1,47 @@
+{
+  "slug": "bus-stand-terminal-carbon-footprint",
+  "q": "What makes up the carbon footprint of a bus stand?",
+  "title": "Bus stand carbon footprint",
+  "short": "Electricity for lighting, fans, display boards and offices is the main part, at 0.710 kg CO2 per kWh, with diesel for backup generators. Bus fuel burned while idling at the bays belongs to the bus operator's Scope 1, not the terminal's.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "State transport corporations and bus terminal operators",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 2: terminal electricity.",
+        "Scope 1: generator diesel, refrigerant top ups for AC offices.",
+        "Not the terminal's: bus fuel, unless the corporation owns both."
+      ]
+    },
+    {
+      "h": "Idling",
+      "p": [
+        "Idling rules cut the operator's fuel, so report them in the operator's figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Electric bus depot charging",
+      "to": "/answers/electric-bus-depot-charging-emissions"
+    },
+    {
+      "label": "DG set CO2 per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

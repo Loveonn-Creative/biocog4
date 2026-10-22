@@ -1,0 +1,47 @@
+{
+  "slug": "cigarette-factory-carbon-footprint-per-thousand",
+  "q": "How do I calculate a cigarette factory's carbon footprint per thousand sticks?",
+  "title": "Cigarette factory CO2 per 1,000",
+  "short": "Divide factory electricity and boiler fuel by thousands of sticks made. Purchased tobacco, filters, paper and board are Scope 3 and usually larger than the factory. Smoke from the product in use is Scope 3 Category 11 for the maker.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cigarette manufacturers and their suppliers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity for making and packing machines and humidity control.",
+        "Boiler fuel for tobacco conditioning.",
+        "Purchases of leaf, filters, paper and packaging."
+      ]
+    },
+    {
+      "h": "Use phase",
+      "p": [
+        "Combustion of the product by smokers releases CO2 and other gases; report it in Category 11 with the method stated."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Tobacco barn fuel",
+      "to": "/answers/flue-cured-tobacco-barn-fuel-emissions"
+    },
+    {
+      "label": "Bidi making footprint",
+      "to": "/answers/bidi-making-carbon-footprint-per-thousand"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

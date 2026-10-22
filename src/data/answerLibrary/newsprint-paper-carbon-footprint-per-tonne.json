@@ -1,0 +1,52 @@
+{
+  "slug": "newsprint-paper-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of newsprint per tonne?",
+  "title": "Newsprint CO2 per tonne",
+  "short": "Newsprint from recycled fibre needs de-inking and pulping electricity plus steam for drying; newsprint from mechanical pulp uses a great deal of refiner electricity. Add electricity at 0.710 kg CO2 per kWh and boiler fuel, then divide by tonnes of reels.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Newsprint mills and newspaper publishers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity for pulping, refining and the paper machine.",
+        "Boiler fuel for drying steam.",
+        "Waste paper or wood bought in, as Scope 3.",
+        "Tonnes of finished reels."
+      ]
+    },
+    {
+      "h": "Publishers",
+      "p": [
+        "Newsprint is a publisher's largest Scope 3 purchase. Ask the mill for its per tonne figure and fibre source."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Agro residue paper mill",
+      "to": "/answers/agro-residue-paper-mill-biogenic-co2"
+    },
+    {
+      "label": "Kashipur paper mill boiler",
+      "to": "/answers/kashipur-paper-mill-agro-residue-boiler"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "ropeway-electricity-co2-per-passenger",
+  "q": "How do I work out a passenger ropeway's CO2 per passenger?",
+  "title": "Ropeway CO2 per passenger",
+  "short": "Read the drive station's electricity meter for the month, multiply by 0.710 kg CO2 per kWh and divide by passengers carried. Backup diesel for rescue drives is Scope 1. Off season days raise the per passenger figure because the line runs nearly empty.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ropeway and cable car operators at tourist and pilgrim sites",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Drive and return station meters.",
+        "Ticket counts by month.",
+        "Diesel for the backup drive and generator tests."
+      ]
+    },
+    {
+      "h": "What changes it",
+      "p": [
+        "Running speed and empty cabins in low season. Report monthly figures, not one annual average."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "DG set CO2 per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Lift and escalator power",
+      "to": "/answers/lift-and-escalator-electricity-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

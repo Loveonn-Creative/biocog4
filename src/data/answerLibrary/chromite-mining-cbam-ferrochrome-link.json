@@ -1,0 +1,47 @@
+{
+  "slug": "chromite-mining-cbam-ferrochrome-link",
+  "q": "Does chromite ore face CBAM, and what figure will buyers ask for?",
+  "title": "Chromite ore and CBAM",
+  "short": "Chromite ore itself is not a CBAM good. Ferro-chromium made from it is (CN 7202 4), so a ferrochrome smelter's EU importer needs emissions that include the ore. Miners can expect requests for diesel, electricity and tonnes mined per tonne of ore.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chromite miners and ferrochrome smelters",
+  "sections": [
+    {
+      "h": "Covered or not",
+      "ul": [
+        "Chromite ore: not covered.",
+        "Ferro-chromium: covered.",
+        "Charge chrome or ferrochrome made from your ore carries the smelter's emissions, not the mine's, under CBAM."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Monthly diesel, explosives, electricity and tonnes of ore dispatched. These feed the smelter's supply chain figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Ferroalloy additions in steel",
+      "to": "/answers/cbam-ferroalloy-additions-in-steel-precursor"
+    },
+    {
+      "label": "Dumper diesel per tonne",
+      "to": "/answers/mining-dumper-diesel-per-tonne-moved"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

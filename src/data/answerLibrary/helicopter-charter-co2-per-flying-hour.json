@@ -1,0 +1,54 @@
+{
+  "slug": "helicopter-charter-co2-per-flying-hour",
+  "q": "How much CO2 does a helicopter emit per flying hour?",
+  "title": "Helicopter CO2 per flying hour",
+  "short": "Take fuel used per hour from the flight log, convert litres of aviation turbine fuel to kg, and multiply by about 3.15 kg CO2 per kg. An owned helicopter is Scope 1; a chartered one for business travel is Scope 3 Category 6.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Companies chartering helicopters and aviation operators",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Fuel uplift or burn per sector from the operator's log.",
+        "Fuel density from the delivery note to turn litres into kg.",
+        "Block hours, including positioning flights you pay for."
+      ]
+    },
+    {
+      "h": "Charter invoices",
+      "p": [
+        "Ask the operator for fuel burned on your sectors. A per hour estimate is acceptable if labelled as one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Fuel burned in one hour: 300 litres at about 0.8 kg per litre = 240 kg.",
+      "240 × 3.15 = 756 kg CO2 for that hour."
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Charter flight scope",
+      "to": "/answers/charter-flight-emissions-which-scope"
+    },
+    {
+      "label": "Event attendee travel",
+      "to": "/answers/event-attendee-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "financial-control-approach-ghg-boundary",
+  "q": "When should a company use the financial control approach for its GHG boundary?",
+  "title": "Financial control approach",
+  "short": "Use it when your reporting follows the accounts: an entity is in if you direct its financial and operating policies to gain economic benefit. Assets on finance leases are treated as yours. Operational control instead follows who runs the asset day to day.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Finance and sustainability teams setting reporting boundaries",
+  "sections": [
+    {
+      "h": "How it differs",
+      "ul": [
+        "Financial control: matches the consolidated financial statements.",
+        "Operational control: follows authority to introduce operating policies.",
+        "Both: 100 percent of emissions of what is in, nothing of what is out."
+      ]
+    },
+    {
+      "h": "Choose once",
+      "p": [
+        "Pick one approach for the whole group and keep it; switching later means restating past years."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Operational control vs equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Leased factory scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

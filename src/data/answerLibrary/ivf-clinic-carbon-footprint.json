@@ -1,0 +1,47 @@
+{
+  "slug": "ivf-clinic-carbon-footprint",
+  "q": "What makes up the carbon footprint of an IVF clinic?",
+  "title": "IVF clinic carbon footprint",
+  "short": "Electricity is most of it: incubators, clean room air handling and lab AC run day and night, at 0.710 kg CO2 per kWh. Liquid nitrogen for cryostorage and plastics are Scope 3. Nitrous oxide used for sedation is Scope 1.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "IVF and fertility clinics",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 2: incubators, HEPA air handling, AC.",
+        "Scope 1: generator diesel, refrigerant top ups, nitrous oxide if used.",
+        "Scope 3: liquid nitrogen, culture media, single use plastics."
+      ]
+    },
+    {
+      "h": "Per cycle",
+      "p": [
+        "Divide annual totals by treatment cycles for a figure you can track year on year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hospital footprint per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    },
+    {
+      "label": "Anaesthetic gases in Scope 1",
+      "to": "/answers/anaesthetic-gases-scope-1-hospital"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -137,6 +137,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the emissions of producing acetic acid per tonne?",
+  "text": "Most acetic acid is made by reacting methanol with carbon monoxide. Your Scope 1 and 2 are steam, fuel and electricity for reaction and purification; the methanol and CO bought in, or the syngas you make for them, carry most of the footprint.",
+  "url": "https://senseible.earth/answers/acetic-acid-production-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How much CO2 does acetylene used for cutting and welding emit?",
   "text": "Each kg of acetylene burnt in a cutting or welding torch releases about 3.38 kg CO2, because one molecule of acetylene (C2H2) burns to two molecules of CO2. A cylinder holding 7 cubic metres of gas, about 7.7 kg, gives roughly 26 kg CO2.",
   "url": "https://senseible.earth/answers/acetylene-gas-cylinder-co2"
@@ -425,6 +431,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the emissions of recovering aluminium from dross?",
+  "text": "Dross processors melt dross in rotary furnaces with salt flux, burning gas or furnace oil. Count fuel at IPCC defaults and electricity, then divide by tonnes of aluminium recovered. Salt cake left over goes to disposal in Scope 3.",
+  "url": "https://senseible.earth/answers/aluminium-dross-recovery-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of an aluminium extrusion per kg?",
   "text": "Per kg of good extrusion, multiply the billet bought per kg of good profile by the billet's footprint from your supplier, then add press, oven and finishing energy per kg. The billet usually makes up most of the result, so whether it is primary or recycled metal changes the answer more than anything you do in the plant.",
   "url": "https://senseible.earth/answers/aluminium-extrusion-carbon-footprint-per-kg"
@@ -500,6 +512,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Ammonia or HFC refrigeration for a new cold storage: what is the carbon difference?",
   "text": "Ammonia leaks add no CO2e, while every kilogram of R-404A that leaks adds about 4.7 tonnes of CO2e. A 500 kg R-404A charge losing 10% a year adds about 236 tonnes of CO2e a year. Electricity is the other half, so compare both systems' annual kWh before deciding.",
   "url": "https://senseible.earth/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate an amusement park's carbon footprint per visitor?",
+  "text": "Rides, lighting and food courts run on electricity at 0.710 kg CO2 per kWh, with diesel generators for backup. Divide by visitors for a per visitor figure. Ride motors draw heavily at start up, so off peak days with few riders raise the per visitor number.",
+  "url": "https://senseible.earth/answers/amusement-park-carbon-footprint-per-visitor"
  },
  {
   "kind": "answer",
@@ -1115,6 +1133,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much CO2 does grinding barite for drilling mud emit per tonne?",
+  "text": "Grinding to drilling grade fineness is most of it: mill electricity times 0.710 kg CO2 per kWh, divided by tonnes. Add mining diesel and freight to the buyer. Barite is not a CBAM good, but oilfield buyers increasingly ask for a figure.",
+  "url": "https://senseible.earth/answers/barite-grinding-drilling-grade-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How much CO2 does a lignite power plant like those in Barmer emit per kWh?",
   "text": "More than the grid average, because lignite carries more carbon per unit of energy and plants run at modest efficiency. Use the station's figure from the CEA CO2 database. A factory buying from the grid still uses the grid factor of 0.710, not the station's.",
   "url": "https://senseible.earth/answers/barmer-lignite-power-plant-co2-per-kwh"
@@ -1229,6 +1253,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the emissions of processing bentonite per tonne?",
+  "text": "Mining diesel, drying fuel and grinding electricity make up most of it. Sodium activation with soda ash adds the soda ash's own footprint to Scope 3. Divide each by tonnes of finished bentonite and add them up.",
+  "url": "https://senseible.earth/answers/bentonite-processing-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "We supply parts to a carmaker in Betim. How does Brazil's low-carbon grid affect our figure?",
   "text": "Brazil's grid is mostly hydro, so electricity adds less per unit than in most countries. That leaves fuels and purchased steel, aluminium and plastic as the bigger share. Use the official Brazilian grid factor for the year and show materials separately.",
   "url": "https://senseible.earth/answers/betim-auto-parts-supplier-carbon-data"
@@ -1304,6 +1334,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of one bicycle for a European buyer?",
   "text": "Add three parts and express them per bicycle: the materials in it (steel or aluminium tube, rims, spokes, chain, tyres, plastics) times their emission factors, your factory's electricity and fuel divided by bicycles built, and the packaging. That gives a cradle-to-gate footprint in kg CO2e per bicycle under ISO 14067.",
   "url": "https://senseible.earth/answers/bicycle-carbon-footprint-per-unit"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint of making bidis?",
+  "text": "Hand rolling uses no energy. The footprint is in the tobacco and tendu leaves, roasting the rolled bidis, often over coal, wood or LPG, and packaging. Count roasting fuel at IPCC defaults and divide by thousands of bidis.",
+  "url": "https://senseible.earth/answers/bidi-making-carbon-footprint-per-thousand"
  },
  {
   "kind": "answer",
@@ -1661,6 +1697,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much CO2 does producing bromine from salt pan bittern emit?",
+  "text": "Bromine is stripped from bittern, the liquor left after salt crystallises, using chlorine and steam. Steam from the boiler is usually the largest part, with pumping electricity next. Chlorine bought in is Scope 3, carrying the chlor alkali plant's electricity.",
+  "url": "https://senseible.earth/answers/bromine-from-bittern-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate NOx, SOx and PM for the BRSR air emissions table?",
   "text": "Use your stack monitoring reports. For each stack, multiply the measured concentration in mg/Nm3 by the flue gas flow in Nm3/h and the operating hours, then divide by 10^9 to get tonnes. Add all stacks. Where a stack has no monitoring, estimate SOx from fuel sulphur and say so.",
   "url": "https://senseible.earth/answers/brsr-air-emissions-nox-sox-pm"
@@ -1790,6 +1832,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a bus operator calculate emissions per passenger-km?",
   "text": "Multiply the diesel bought for the fleet by 2.68 kg CO2 per litre and divide by passenger-km: passengers carried times km per trip, from tickets or seat logs. Occupancy decides the result, so report per bus-km as well.",
   "url": "https://senseible.earth/answers/bus-operator-emissions-per-passenger-km"
+ },
+ {
+  "kind": "answer",
+  "title": "What makes up the carbon footprint of a bus stand?",
+  "text": "Electricity for lighting, fans, display boards and offices is the main part, at 0.710 kg CO2 per kWh, with diesel for backup generators. Bus fuel burned while idling at the bays belongs to the bus operator's Scope 1, not the terminal's.",
+  "url": "https://senseible.earth/answers/bus-stand-terminal-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -3149,9 +3197,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does chromite ore face CBAM, and what figure will buyers ask for?",
+  "text": "Chromite ore itself is not a CBAM good. Ferro-chromium made from it is (CN 7202 4), so a ferrochrome smelter's EU importer needs emissions that include the ore. Miners can expect requests for diesel, electricity and tonnes mined per tonne of ore.",
+  "url": "https://senseible.earth/answers/chromite-mining-cbam-ferrochrome-link"
+ },
+ {
+  "kind": "answer",
   "title": "What is the CIBIL MSME Rank (CMR), and what score do banks look for?",
   "text": "The CIBIL MSME Rank is a rating from CMR-1 to CMR-10 that TransUnion CIBIL gives a business from its credit record. CMR-1 is the least risky, CMR-10 the most likely to turn into a bad loan within a year. No single cut-off applies: each bank sets its own, usually alongside the promoter's personal CIBIL score.",
   "url": "https://senseible.earth/answers/cibil-msme-rank-cmr-explained"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate a cigarette factory's carbon footprint per thousand sticks?",
+  "text": "Divide factory electricity and boiler fuel by thousands of sticks made. Purchased tobacco, filters, paper and board are Scope 3 and usually larger than the factory. Smoke from the product in use is Scope 3 Category 11 for the maker.",
+  "url": "https://senseible.earth/answers/cigarette-factory-carbon-footprint-per-thousand"
  },
  {
   "kind": "answer",
@@ -3398,6 +3458,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What records does a coastal Indian steel mill need for imported coking coal in its CBAM figure?",
   "text": "Per cargo: tonnes received, the supplier's analysis of carbon content and calorific value, and your own lab check. CBAM direct emissions use a mass balance, so the carbon in coal and coke going in matters more than its origin. Freight to the port is not in the CBAM figure but buyers may ask for it separately.",
   "url": "https://senseible.earth/answers/coastal-steel-mill-imported-coal-records-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does pressing coconut oil emit per litre?",
+  "text": "Expellers and filters run on electricity: kWh times 0.710 kg CO2, divided by litres of oil. Copra drying before pressing is usually larger and belongs to whoever dries it. Packaging and freight are Scope 3.",
+  "url": "https://senseible.earth/answers/coconut-oil-expeller-co2-per-litre"
  },
  {
   "kind": "answer",
@@ -3839,6 +3905,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How is a cruise ship's CO2 per passenger night worked out?",
+  "text": "Total the fuel burned on the voyage, multiply heavy fuel oil by about 3.13 t CO2 per tonne and marine gas oil by about 3.19, then divide by passenger nights. Some operators allocate by cabin area instead; say which method you used.",
+  "url": "https://senseible.earth/answers/cruise-ship-co2-per-passenger-night"
+ },
+ {
+  "kind": "answer",
   "title": "My EU buyer sent a CSDDD contractual assurance clause. What am I agreeing to?",
   "text": "You are promising to follow your buyer's code of conduct and its plan for preventing human rights and environmental harm, usually to pass similar promises on to your own suppliers, and to let the buyer check. Read the audit, cost, data and termination terms before signing, and take legal advice.",
   "url": "https://senseible.earth/answers/csddd-contract-clause-from-eu-buyer"
@@ -4106,6 +4178,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of using desalinated water in a factory?",
   "text": "Large seawater reverse osmosis plants use about 3.5 to 5 kWh of electricity per kilolitre, so on the Indian grid desalinated water carries about 2.5 to 3.6 kg CO2 per kL. If you run the plant, that electricity is already in your Scope 2. If you buy the water, it belongs in Scope 3 Category 1.",
   "url": "https://senseible.earth/answers/desalinated-water-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does a desalination plant emit per kL of water?",
+  "text": "Divide the plant's electricity by kL of product water and multiply by 0.710 kg CO2 per kWh. Seawater reverse osmosis uses far more energy than brackish water treatment, and energy recovery devices cut it. Use your plant meter, not a textbook figure.",
+  "url": "https://senseible.earth/answers/desalination-plant-electricity-co2-per-kl"
  },
  {
   "kind": "answer",
@@ -4784,6 +4862,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does an Egyptian urea plant at Ain Sokhna calculate CBAM embedded emissions?",
   "text": "Add the embedded emissions of the ammonia consumed, about 0.567 t per tonne of urea, to the urea plant's own direct emissions from fuel and its indirect emissions from electricity, then divide by tonnes of urea. Do not subtract the CO2 that goes into the urea from the ammonia plant's figure.",
   "url": "https://senseible.earth/answers/egypt-urea-plant-cbam-embedded-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint of elastane (spandex) yarn?",
+  "text": "Elastane is a polyurethane fibre spun from petrochemical raw materials, so purchased chemicals are most of its footprint. Your own share is spinning, solvent recovery and heat setting energy. A garment with 5 percent elastane carries that share of the fibre's footprint.",
+  "url": "https://senseible.earth/answers/elastane-spandex-yarn-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -5501,6 +5585,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate an eye hospital's carbon footprint per surgery?",
+  "text": "Add theatre and clinic electricity at 0.710 kg CO2 per kWh, generator diesel and sterilisation, then divide by surgeries. Single use kits, lenses and drugs are Scope 3 and can match or exceed the energy. Report outpatient visits separately from surgeries.",
+  "url": "https://senseible.earth/answers/eye-hospital-carbon-footprint-per-surgery"
+ },
+ {
+  "kind": "answer",
   "title": "What are the emissions of mercerising cotton fabric per metre?",
   "text": "Mercerising treats cotton with caustic soda, then washes it with hot water. Emissions come from the caustic soda used, which is a Scope 3 purchase, and from steam for washing and caustic recovery, which is boiler fuel in Scope 1. Divide both by metres processed.",
   "url": "https://senseible.earth/answers/fabric-mercerising-emissions-per-metre"
@@ -5564,6 +5654,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can I use FASTag toll statements to prove the distance my trucks travelled for freight emissions?",
   "text": "Yes, as evidence of the route, not as a distance on its own. A FASTag statement shows which toll plazas the truck crossed and when. Measure the map distance through those plazas, add the legs before the first and after the last, and cross-check the total with the e-way bill or trip sheet.",
   "url": "https://senseible.earth/answers/fastag-statement-freight-distance-evidence"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the CO2 per tonne of ground feldspar?",
+  "text": "Grinding electricity is most of it: mill kWh times 0.710 kg CO2, divided by tonnes of powder. Finer mesh sizes take more energy per tonne. Add quarry diesel and any dryer fuel if the feed is wet.",
+  "url": "https://senseible.earth/answers/feldspar-grinding-electricity-co2-per-tonne"
  },
  {
   "kind": "answer",
@@ -5642,6 +5738,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I work out the carbon footprint of a film shoot per day?",
   "text": "On location, generator diesel is usually the largest item at 2.68 kg CO2 per litre. Add crew and cast travel, hotel nights, set construction materials, catering and waste. Divide by shooting days. Hired generator vans with their own operators are the production's Scope 3 unless it controls them.",
   "url": "https://senseible.earth/answers/film-shoot-carbon-footprint-per-day"
+ },
+ {
+  "kind": "answer",
+  "title": "When should a company use the financial control approach for its GHG boundary?",
+  "text": "Use it when your reporting follows the accounts: an entity is in if you direct its financial and operating policies to gain economic benefit. Assets on finance leases are treated as yours. Operational control instead follows who runs the asset day to day.",
+  "url": "https://senseible.earth/answers/financial-control-approach-ghg-boundary"
  },
  {
   "kind": "answer",
@@ -5816,6 +5918,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I split a footwear factory's emissions across different styles?",
   "text": "Total the factory electricity at 0.710 kg CO2 per kWh and generator diesel at 2.68 kg per litre, then split by standard minutes per style rather than pairs, since a boot takes much longer to make than a sandal. State the rule beside each per-pair figure.",
   "url": "https://senseible.earth/answers/footwear-factory-emissions-allocation-per-pair"
+ },
+ {
+  "kind": "answer",
+  "title": "Which grid factor should an Indian group use for its overseas subsidiaries?",
+  "text": "Use the grid factor of the country where each site uses the power, not India's 0.710. Calculate each site's Scope 2 with its own national or regional factor, then add them up in the group report and list the factor and source per site.",
+  "url": "https://senseible.earth/answers/foreign-subsidiary-grid-factor-group-report"
  },
  {
   "kind": "answer",
@@ -6605,6 +6713,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint of a grinding wheel?",
+  "text": "Most of it is in the abrasive grain, aluminium oxide or silicon carbide, which is energy intensive to make. Your own share is the kiln fuel or electricity that fires vitrified wheels, or the ovens that cure resin bonded ones, divided by kg of wheels.",
+  "url": "https://senseible.earth/answers/grinding-wheel-abrasive-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "Can I claim solar under gross metering in my Scope 2?",
   "text": "No, not in location-based Scope 2. With a gross meter you sell every solar unit to the discom and buy every unit you use, so Scope 2 is all units consumed times the grid factor. Market-based Scope 2 can count the solar only if your agreement leaves its renewable attributes with you.",
   "url": "https://senseible.earth/answers/gross-metering-solar-scope-2-claim"
@@ -6851,6 +6965,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much CO2 does a helicopter emit per flying hour?",
+  "text": "Take fuel used per hour from the flight log, convert litres of aviation turbine fuel to kg, and multiply by about 3.15 kg CO2 per kg. An owned helicopter is Scope 1; a chartered one for business travel is Scope 3 Category 6.",
+  "url": "https://senseible.earth/answers/helicopter-charter-co2-per-flying-hour"
+ },
+ {
+  "kind": "answer",
   "title": "Our Henan foil mill rolls bought-in aluminium. What goes into the CBAM figure for foil?",
   "text": "Foil under CN 7607 is a CBAM good. Its figure is the mill's own direct emissions, such as gas for melting, casting and annealing, plus the embedded emissions of the unwrought aluminium bought in. Ask the smelter or remelter for its figure; otherwise use the default value.",
   "url": "https://senseible.earth/answers/henan-aluminium-foil-exporter-cbam-precursor"
@@ -6896,6 +7016,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a hockey stick?",
   "text": "For composite sticks, weigh the carbon fibre, glass fibre and resin per stick and use supplier figures. For wooden sticks, use the timber. Add moulding or shaping, curing and finishing energy, then divide by sticks finished.",
   "url": "https://senseible.earth/answers/hockey-stick-carbon-footprint-per-stick"
+ },
+ {
+  "kind": "answer",
+  "title": "What should a holding company with no operations report as its carbon footprint?",
+  "text": "Its own office is small. Under the control approach, subsidiaries it controls are consolidated into its Scope 1 and 2. Stakes it does not control fall in Scope 3 Category 15, investments, in proportion to its share.",
+  "url": "https://senseible.earth/answers/holding-company-carbon-footprint-scope-3"
  },
  {
   "kind": "answer",
@@ -7457,6 +7583,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do hydropower reservoirs emit greenhouse gases?",
+  "text": "They can: flooded vegetation and soils decompose and release methane, especially in warm, shallow reservoirs. Grid emission factors count only combustion, so reservoir methane is not in the 0.710 figure. Hydro operators can estimate it using IPCC guidance on flooded land.",
+  "url": "https://senseible.earth/answers/hydro-reservoir-methane-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint of hydrogen peroxide per tonne?",
   "text": "Most hydrogen peroxide is made by the anthraquinone process. Its footprint comes from the hydrogen it uses, usually made from natural gas, plus steam and electricity for distillation. Ask your supplier for a figure at the strength you buy, since 50 and 35 percent solutions differ.",
   "url": "https://senseible.earth/answers/hydrogen-peroxide-carbon-footprint-per-tonne"
@@ -7763,6 +7895,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the CO2 per tonne km of moving cargo by inland waterway barge?",
+  "text": "Divide the barge's diesel for the trip by tonnes carried times km sailed, then multiply litres by 2.68 kg CO2. Count the empty return leg against the loaded trip. Loading cranes and trucks to and from the jetty are separate legs.",
+  "url": "https://senseible.earth/answers/inland-waterway-barge-co2-per-tonne-km"
+ },
+ {
+  "kind": "answer",
   "title": "Is moving cargo on National Waterway 1 lower carbon than trucking it, and how do I calculate it?",
   "text": "Usually yes for full bulk loads, but check your lane. A barge emits far less per tonne-km than a truck, while the river route on the Ganga is longer than the highway and trucks still run to and from the terminals. Add up every leg in tonne-km x factor and compare.",
   "url": "https://senseible.earth/answers/inland-waterway-vs-road-freight-emissions-india"
@@ -7778,6 +7916,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of innerwear such as briefs and vests?",
   "text": "Weigh the knitted fabric in each piece, including cutting waste, and multiply by your fabric supplier's per-kg figure. Add elastic, thread, stitching and packing, then divide the unit's electricity and fuel by pieces passed in the same period.",
   "url": "https://senseible.earth/answers/innerwear-carbon-footprint-per-piece"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the difference between insetting and offsetting?",
+  "text": "Insetting means funding reductions inside your own value chain, such as helping a supplier switch fuel; they show up as lower Scope 3 when the supplier's data changes. Offsetting means buying credits from outside it, reported separately and never subtracted from your inventory.",
+  "url": "https://senseible.earth/answers/insetting-vs-offsetting-difference"
  },
  {
   "kind": "answer",
@@ -8195,6 +8339,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What makes up the carbon footprint of an IVF clinic?",
+  "text": "Electricity is most of it: incubators, clean room air handling and lab AC run day and night, at 0.710 kg CO2 per kWh. Liquid nitrogen for cryostorage and plastics are Scope 3. Nitrous oxide used for sedation is Scope 1.",
+  "url": "https://senseible.earth/answers/ivf-clinic-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "How does a utensil maker in Jagadhri work out CO2 per kg?",
   "text": "Add fuel for melting and annealing furnaces and electricity for presses and polishing, divided by kg of utensils made. Oil or coal crucible furnaces usually emit more than induction melting. Most utensils are outside CBAM today, but export buyers still ask for a figure per kg.",
   "url": "https://senseible.earth/answers/jagadhri-utensil-unit-melting-furnace-co2"
@@ -8477,6 +8627,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much CO2 does kaolin (china clay) processing emit per tonne?",
+  "text": "Washed kaolin goes through slurrying, settling, filter pressing and drying. Drying fuel usually dominates, followed by pumping electricity. Calcined kaolin adds a kiln step that burns far more fuel per tonne, so report the two grades separately.",
+  "url": "https://senseible.earth/answers/kaolin-china-clay-processing-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "How much mine methane comes with coking coal from Karaganda underground mines?",
   "text": "Karaganda coking coal comes from deep underground mines, which release far more methane than open pits. Without mine data, IPCC Tier 1 gives 18 cubic metres per tonne, with a range of 10 to 25, plus about 2.5 after mining. Ask for ventilation measurements.",
   "url": "https://senseible.earth/answers/karaganda-coking-coal-mine-methane-steel"
@@ -8546,6 +8702,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What grid emission factor should a Kenyan factory use for Scope 2?",
   "text": "Kenya's grid is mostly geothermal, hydro and wind, with thermal plants running in dry years, so the factor is low, usually under 0.2 kg CO2 per kWh. Take the official or IEA figure for the reporting year and cite it, because a dry year with more thermal generation can push it up.",
   "url": "https://senseible.earth/answers/kenya-grid-emission-factor-for-factories"
+ },
+ {
+  "kind": "answer",
+  "title": "What are the emissions of a Kerala houseboat per guest night?",
+  "text": "Most comes from diesel: the engine while cruising and the generator that runs air conditioning at night. Add LPG for cooking. Multiply litres of diesel by 2.68 and kg of LPG by 2.98, then divide by guest nights.",
+  "url": "https://senseible.earth/answers/kerala-houseboat-emissions-per-guest-night"
  },
  {
   "kind": "answer",
@@ -8810,6 +8972,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the emissions of recycling lead-acid batteries per tonne of lead?",
   "text": "Add the fuel burnt in the smelting furnace and refining kettles, the process CO2 from coke or coal used as a reductant, and the plant's electricity, then divide by tonnes of refined lead produced. Use the reductant's carbon content from the supplier's analysis to work out its CO2.",
   "url": "https://senseible.earth/answers/lead-acid-battery-recycling-emissions-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does making lead oxide for batteries emit per tonne?",
+  "text": "Lead oxide is made in ball mills or Barton pots that oxidise lead, mostly with electricity, and melting the lead ingots uses fuel or induction power. Add kWh times 0.710 kg CO2 and fuel at IPCC defaults, then divide by tonnes of oxide.",
+  "url": "https://senseible.earth/answers/lead-oxide-battery-plant-co2-per-tonne"
  },
  {
   "kind": "answer",
@@ -9353,6 +9521,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate the carbon footprint of MDF board per cubic metre?",
+  "text": "Count fossil fuel and electricity for chipping, refining fibre, drying and pressing, plus the resin, usually urea formaldehyde, in Scope 3. Wood residue burned for heat gives biogenic CO2, reported separately, but its methane and nitrous oxide count.",
+  "url": "https://senseible.earth/answers/mdf-board-carbon-footprint-per-cubic-metre"
+ },
+ {
+  "kind": "answer",
   "title": "How do I prove that route optimisation actually cut my freight emissions?",
   "text": "Compare emissions per tonne-km before and after, using diesel litres for emissions and a fixed distance per delivery for tonne-km. Then multiply the drop in intensity by the tonne-km you moved after the change. Using actual kilometres driven for tonne-km would hide the very saving you are trying to show.",
   "url": "https://senseible.earth/answers/measure-emission-cut-from-route-optimisation"
@@ -9422,6 +9596,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does methyl bromide fumigation of export consignments count in Scope 1?",
   "text": "No. Methyl bromide is an ozone depleting substance under the Montreal Protocol, and the GHG Protocol's scopes cover only the seven Kyoto gases. So it stays out of your Scope 1 total. If a buyer wants it disclosed, give the kilograms used in the year as a separate memo line beside your inventory.",
   "url": "https://senseible.earth/answers/methyl-bromide-fumigation-scope-1"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate a metro rail line's CO2 per passenger km?",
+  "text": "Take the traction electricity for the period, multiply by 0.710 kg CO2 per kWh, and divide by passenger km from ridership and average trip length. Report station power separately. Regenerative braking lowers net traction kWh only if the meter records the returned energy.",
+  "url": "https://senseible.earth/answers/metro-rail-co2-per-passenger-km"
  },
  {
   "kind": "answer",
@@ -9659,6 +9839,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the emissions of running a mortuary cold room?",
+  "text": "Refrigeration electricity runs around the clock: compressor kWh times 0.710 kg CO2 per kWh. Refrigerant leaks topped up during servicing are Scope 1, multiplied by the gas's warming potential, and they can rival the electricity.",
+  "url": "https://senseible.earth/answers/mortuary-cold-room-electricity-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of a mosquito net?",
   "text": "Weigh the polyester or polyethylene netting per net, multiply by the yarn supplier's figure, and add treatment chemicals if any, then add knitting, cutting and stitching energy per net made.",
   "url": "https://senseible.earth/answers/mosquito-net-carbon-footprint-per-net"
@@ -9758,6 +9944,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "We have several electricity connections across our factory, office and godown. How do we count them for Scope 2?",
   "text": "Add the units from every connection your company pays for and operates: the main HT or LT supply, office and godown meters, temporary connections and staff quarters inside your boundary. Keep one row per consumer number. Do not add sub-meters that sit behind a main meter, because those units are already in the main bill.",
   "url": "https://senseible.earth/answers/multiple-electricity-connections-one-company"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate a museum's carbon footprint per visitor?",
+  "text": "Climate control for collections usually dominates: AC and dehumidifiers running all year at 0.710 kg CO2 per kWh. Add lighting, generator diesel and refrigerant top ups, then divide by visitors. Visitor travel to the museum is Scope 3 and often larger.",
+  "url": "https://senseible.earth/answers/museum-carbon-footprint-per-visitor"
  },
  {
   "kind": "answer",
@@ -9920,6 +10112,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a newspaper printing plant work out carbon per copy?",
   "text": "Add newsprint and ink as purchased goods to the plant's own electricity and fuel, then divide by copies printed. Newsprint usually dominates, so the paper mill's figure per tonne matters more than anything on the press floor.",
   "url": "https://senseible.earth/answers/newspaper-printing-plant-carbon-per-copy"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint of newsprint per tonne?",
+  "text": "Newsprint from recycled fibre needs de-inking and pulping electricity plus steam for drying; newsprint from mechanical pulp uses a great deal of refiner electricity. Add electricity at 0.710 kg CO2 per kWh and boiler fuel, then divide by tonnes of reels.",
+  "url": "https://senseible.earth/answers/newsprint-paper-carbon-footprint-per-tonne"
  },
  {
   "kind": "answer",
@@ -10631,6 +10829,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How should a phenol plant split CO2 between phenol and acetone?",
+  "text": "The cumene route makes phenol and acetone together, roughly 0.6 tonne of acetone per tonne of phenol. Total the plant's fuel, steam and electricity emissions, then allocate between the two by mass or by economic value, and state which rule you used.",
+  "url": "https://senseible.earth/answers/phenol-acetone-cumene-plant-co2-allocation"
+ },
+ {
+  "kind": "answer",
   "title": "What carbon data do foreign buyers ask Philippine economic zone exporters for?",
   "text": "Most ask for site Scope 1 and 2 by month with energy sources, sometimes a product figure, and targets. Electronics and auto parts buyers often use their own supplier platforms. The coal heavy Luzon grid makes electricity the biggest lever, so rooftop solar and renewable contracts show up quickly in the numbers.",
   "url": "https://senseible.earth/answers/philippine-ecozone-exporter-buyer-carbon-data"
@@ -10700,6 +10904,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much CO2 does a Pithampur pharma unit boiler emit per kg of furnace oil?",
   "text": "About 3.1 kg CO2 for every kg of furnace oil, from the IPCC default of 77.4 kg CO2 per GJ for residual fuel oil at about 40.4 GJ per tonne. Multiply by the kg on your fuel invoices for Scope 1, and use a supplier certificate value if you have one.",
   "url": "https://senseible.earth/answers/pithampur-pharma-unit-boiler-fuel-co2"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does making plaster of Paris emit per tonne?",
+  "text": "Heating gypsum drives off water to make plaster of Paris; that releases no process CO2, unlike limestone. The CO2 comes from the fuel that heats the calciner and from grinding electricity. Divide both by tonnes of plaster produced.",
+  "url": "https://senseible.earth/answers/plaster-of-paris-calcination-co2-per-tonne"
  },
  {
   "kind": "answer",
@@ -11327,6 +11537,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate the carbon footprint of a railway station?",
+  "text": "Most of it is electricity for lighting, fans, lifts, escalators, waiting room AC and signage: kWh times 0.710 kg CO2. Add diesel for backup generators. Shops and food stalls on separate meters belong to their operators unless the railway pays their power.",
+  "url": "https://senseible.earth/answers/railway-station-electricity-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the emissions saved by rainwater harvesting?",
   "text": "Multiply the kL of harvested rainwater actually used by the energy per kL of the source it replaces, such as borewell pumping or tanker diesel, then by the right factor. Measure both with meters. Recharge pits that only refill groundwater save no direct energy that year.",
   "url": "https://senseible.earth/answers/rainwater-harvesting-energy-saving-per-kl"
@@ -11777,6 +11993,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint of rock wool insulation per kg?",
+  "text": "Rock wool is made by melting basalt and slag, often in a coke fired cupola, then spinning fibres and curing a binder. Coke combustion is the main CO2; carbonate fluxes add process CO2. Divide by kg of finished product.",
+  "url": "https://senseible.earth/answers/rock-wool-insulation-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
   "title": "How does an agrochemical unit in Roha work out CO2 per batch?",
   "text": "Total the month's boiler fuel and electricity, then split by steam and power each batch used, from batch records. Add process CO2 if a reaction releases it. Divide by kg produced for each product. A flat split by tonnes hides products that need long distillation or drying.",
   "url": "https://senseible.earth/answers/roha-agrochemical-unit-steam-co2-per-batch"
@@ -11822,6 +12044,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a room air conditioner?",
   "text": "Weigh the compressor, copper and aluminium coils, sheet metal, plastic body and electronics per indoor and outdoor unit and multiply by supplier figures. Add brazing, assembly and testing energy, divide by sets built and list the refrigerant charge separately.",
   "url": "https://senseible.earth/answers/room-air-conditioner-carbon-footprint-per-unit"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I work out a passenger ropeway's CO2 per passenger?",
+  "text": "Read the drive station's electricity meter for the month, multiply by 0.710 kg CO2 per kWh and divide by passengers carried. Backup diesel for rescue drives is Scope 1. Off season days raise the per passenger figure because the line runs nearly empty.",
+  "url": "https://senseible.earth/answers/ropeway-electricity-co2-per-passenger"
  },
  {
   "kind": "answer",
@@ -12083,6 +12311,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the emissions of sawing and kiln drying timber?",
+  "text": "Saw electricity is small next to kiln drying. If the kiln boiler burns sawdust and offcuts, that CO2 is biogenic and reported separately, while its methane and nitrous oxide count in Scope 1. Electric dehumidifier kilns put it in Scope 2 instead.",
+  "url": "https://senseible.earth/answers/sawmill-kiln-drying-timber-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "Does California SB 253 apply to an Indian company's US subsidiary?",
   "text": "It does if the subsidiary is formed under US law, has total annual revenue above USD 1 billion and does business in California. The Indian parent itself is not a reporting entity because it is not formed in the US. A US subsidiary below the revenue line is outside SB 253 on the statute's wording.",
   "url": "https://senseible.earth/answers/sb-253-who-must-report"
@@ -12176,6 +12410,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Our factory runs only part of the year. How do we show emissions intensity fairly?",
   "text": "Report the full year's emissions, including the idle months, then divide by the year's output. Idle months carry base load such as lighting, security and maintenance, which is real. Showing season months only flatters the figure and a verifier will spot it.",
   "url": "https://senseible.earth/answers/seasonal-factory-emissions-intensity"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint of seaweed farming?",
+  "text": "Farm emissions are small: boat fuel to tend rafts or lines, ropes and floats, and drying, which is often in the sun. Count boat diesel or petrol and materials, then divide by tonnes of dry seaweed. Claims that the farm removes carbon need evidence of long term storage.",
+  "url": "https://senseible.earth/answers/seaweed-farming-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -12521,6 +12761,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does silica fume carry carbon from the silicon smelter that made it?",
+  "text": "Silica fume is collected from the off gas of silicon and ferrosilicon furnaces. Many methods treat it as a residue that carries only its collection, densifying and transport emissions; others allocate part of the smelter's burden. State which rule you used.",
+  "url": "https://senseible.earth/answers/silica-fume-carbon-allocation-concrete"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does washing and drying silica sand add per tonne?",
+  "text": "Washing and screening run on electricity, and the dryer burns fuel to take moisture out. Add kWh times 0.710 kg CO2 and the dryer fuel at IPCC defaults, then divide by tonnes of dry sand dispatched. Wetter feed means more dryer fuel per tonne.",
+  "url": "https://senseible.earth/answers/silica-sand-washing-drying-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does silicon carbide production emit per tonne?",
+  "text": "Two parts: process CO2 from the petroleum coke that reduces the silica, for which IPCC 2006 gives a default of about 2.62 t CO2 per tonne of silicon carbide, and the large electricity use of the Acheson furnace at 0.710 kg CO2 per kWh.",
+  "url": "https://senseible.earth/answers/silicon-carbide-acheson-furnace-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint of a tube of silicone sealant?",
   "text": "Most of a sealant tube's footprint is the silicone polymer and fillers, made upstream with energy-heavy silicon metal. Mixing and filling at your plant add electricity. Weigh the sealant and the plastic cartridge, then use supplier or named database factors.",
   "url": "https://senseible.earth/answers/silicone-sealant-carbon-footprint-per-tube"
@@ -12602,6 +12860,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What carbon data do EU carmakers ask of an auto parts plant near Skopje?",
   "text": "Annual Scope 1 and 2 with factors named, a figure per part, renewable power share and a reduction plan. North Macedonia's grid still leans on lignite, so power is often the biggest share. Bills, gas invoices and production by part number are enough to start.",
   "url": "https://senseible.earth/answers/skopje-auto-parts-supplier-carbon-data"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate the emissions of a slate quarry per tonne?",
+  "text": "Add diesel for excavators, loaders and trucks, electricity for cutting saws, and any explosives, then divide by tonnes of finished slate. Much quarried rock is waste, so dividing by finished slate rather than rock moved gives a higher, honest figure.",
+  "url": "https://senseible.earth/answers/slate-quarry-emissions-per-tonne"
  },
  {
   "kind": "answer",
@@ -13799,6 +14063,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate a tram's CO2 per passenger km?",
+  "text": "Take traction electricity from the substations feeding the overhead line, multiply by 0.710 kg CO2 per kWh, and divide by passenger km. Depot and workshop power are separate lines. Low ridership on a route raises the per passenger figure sharply.",
+  "url": "https://senseible.earth/answers/tram-electricity-co2-per-passenger-km"
+ },
+ {
+  "kind": "answer",
   "title": "Do transformer losses count in my Scope 2 if I am an HT consumer?",
   "text": "Yes. Losses in your own transformer are electricity you bought and consumed, so they belong in Scope 2. If your meter is on the HT side, the billed kWh already include them. If it is on the LT side, add the transformer loss units your discom prints on the bill.",
   "url": "https://senseible.earth/answers/transformer-losses-in-scope-2"
@@ -14525,6 +14795,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a virtual power purchase agreement lower our Scope 2 in India?",
+  "text": "Only through the certificates it transfers. A virtual PPA is a financial contract: no power flows to you. Under the GHG Protocol Scope 2 Guidance, a market based claim needs the renewable attributes delivered and retired for you. Open access and green tariffs are more common in India.",
+  "url": "https://senseible.earth/answers/virtual-ppa-scope-2-india"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of viscose fabric?",
   "text": "Start with the viscose yarn per metre of fabric and the fibre and spinning suppliers' figures. Add weaving or knitting and wet processing energy, especially steam for dyeing and finishing, then divide by metres produced.",
   "url": "https://senseible.earth/answers/viscose-fabric-carbon-footprint-per-metre"
@@ -14657,6 +14933,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint of a water park per visitor?",
+  "text": "Pumping and filtration electricity is the largest part, running long hours to keep pools moving and clean, at 0.710 kg CO2 per kWh. Add generator diesel and chlorine, then divide by visitors. Pools heated in winter add a large fuel or electricity line.",
+  "url": "https://senseible.earth/answers/water-park-carbon-footprint-per-visitor"
+ },
+ {
+  "kind": "answer",
   "title": "What are the emissions of running a water softener?",
   "text": "Usually small. A softener uses salt to regenerate its resin, which is a purchased material in Scope 3, and some electricity for pumps and controls in Scope 2. Measure salt bought and pump kWh per kilolitre treated. Soft water can save boiler fuel by reducing scale.",
   "url": "https://senseible.earth/answers/water-softener-salt-and-power-emissions"
@@ -14672,6 +14954,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do we count the alum, PAC and polyelectrolyte our water plant buys?",
   "text": "Coagulants and flocculants you buy are Scope 3 Category 1. Use kilograms bought from invoices and a supplier or named database factor for each. They are often small next to the plant's electricity, but auditors still expect them listed or a reason for leaving them out.",
   "url": "https://senseible.earth/answers/water-treatment-chemicals-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a water utility calculate CO2 per kL supplied?",
+  "text": "Add pumping and treatment electricity, multiply by 0.710 kg CO2 per kWh, then divide by kL supplied. State whether you divide by water pumped or water billed: leaks and other non revenue water raise the figure per billed kL.",
+  "url": "https://senseible.earth/answers/water-utility-co2-per-kl-supplied"
  },
  {
   "kind": "answer",
@@ -15101,6 +15389,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint of a bottle of wine from an Indian winery?",
+  "text": "The glass bottle is often the largest part. Add winery electricity for crushing, cooling fermentation tanks and cold storage at 0.710 kg CO2 per kWh, grape growing inputs and freight. CO2 from fermentation is biogenic and reported separately.",
+  "url": "https://senseible.earth/answers/winery-carbon-footprint-per-bottle"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of wire nails per kg?",
   "text": "Multiply the wire rod per kg of nails by the steel supplier's figure, then add drawing, nail making, polishing and packing energy. Divide the unit's energy by kg dispatched.",
   "url": "https://senseible.earth/answers/wire-nails-carbon-footprint-per-kg"
@@ -15278,6 +15572,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much energy and CO2 does a zero liquid discharge (ZLD) plant add per kilolitre?",
   "text": "It depends on how much reject goes to thermal evaporation and what fuel makes the steam, so measure it. CO2 per kL = (ZLD electricity in kWh x 0.710 + boiler fuel for ZLD steam x its fuel factor) / kL treated. Where a coal boiler makes the evaporator steam, steam often outweighs RO electricity.",
   "url": "https://senseible.earth/answers/zld-plant-energy-and-carbon-per-kl"
+ },
+ {
+  "kind": "answer",
+  "title": "What makes up a zoo's carbon footprint?",
+  "text": "Electricity for enclosures, aquariums, reptile houses and offices, diesel for vehicles and generators, and animal feed bought in are the main parts. Manure handling can add methane if it is stored wet. Visitor travel is Scope 3.",
+  "url": "https://senseible.earth/answers/zoo-carbon-footprint-per-year"
  },
  {
   "kind": "article",
