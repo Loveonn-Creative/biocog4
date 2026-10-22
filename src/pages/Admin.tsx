@@ -26,6 +26,11 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 
+// Partner-supplied links: only http(s), so a javascript: URL can never run here.
+const safeHttpUrl = (url: string | null | undefined): string | null => {
+  try { const u = new URL(url ?? ''); return u.protocol === 'https:' || u.protocol === 'http:' ? u.href : null; } catch { return null; }
+};
+
 interface MarketplaceListing {
   id: string;
   sector: string;
@@ -515,9 +520,9 @@ const Admin = () => {
                             <Clock className="w-3 h-3" />
                             {formatDate(app.created_at)}
                           </div>
-                          {app.website && (
+                          {safeHttpUrl(app.website) && (
                             <a 
-                              href={app.website} 
+                              href={safeHttpUrl(app.website)!} 
                               target="_blank" 
                               rel="noopener noreferrer"
                               className="text-primary hover:underline text-xs"
