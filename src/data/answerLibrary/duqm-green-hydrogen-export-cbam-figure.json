@@ -1,0 +1,61 @@
+{
+  "slug": "duqm-green-hydrogen-export-cbam-figure",
+  "q": "If green hydrogen or ammonia is shipped from Duqm to the EU, what does CBAM count?",
+  "title": "Duqm hydrogen and ammonia under CBAM",
+  "short": "Hydrogen counts direct emissions only, close to zero for electrolysis. Ammonia is a fertiliser good, so indirect emissions from electricity count too; renewable power with proper evidence keeps that low. Projects at Duqm are still in development, so check each project's status.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Hydrogen and ammonia project developers in Oman and their EU offtakers",
+  "sections": [
+    {
+      "h": "Hydrogen",
+      "p": [
+        "Under CBAM, hydrogen carries direct emissions only. Electrolysis emits almost nothing directly; the electricity behind it is not counted for hydrogen."
+      ]
+    },
+    {
+      "h": "Ammonia",
+      "ul": [
+        "Ammonia is listed with fertilisers.",
+        "Direct emissions from synthesis and any fuel burnt.",
+        "Indirect emissions from electricity consumed, which needs evidence of renewable supply to count as low."
+      ]
+    },
+    {
+      "h": "Other rules",
+      "p": [
+        "EU renewable fuel rules for RFNBO status are separate from CBAM and have their own evidence requirements."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Electrolytic hydrogen: direct only",
+      "to": "/answers/cbam-electrolytic-hydrogen-direct-emissions-only"
+    },
+    {
+      "label": "UAE ammonia exporters",
+      "to": "/answers/uae-ammonia-exporter-cbam-what-counts"
+    },
+    {
+      "label": "India and EU hydrogen thresholds",
+      "to": "/answers/india-green-hydrogen-vs-eu-rfnbo-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

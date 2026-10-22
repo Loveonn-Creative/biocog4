@@ -1,0 +1,57 @@
+{
+  "slug": "supplier-gets-different-figures-from-two-buyer-tools",
+  "q": "Two buyers' carbon tools gave us different figures from the same data. Which is right?",
+  "title": "Different figures from two buyer tools",
+  "short": "Usually both are correct for their own settings. Differences come from emission factors, the year of the grid factor, allocation rules and what is included. Compare the inputs line by line, then give both buyers the same base data with your chosen factors stated.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Suppliers entering the same data into several buyer platforms",
+  "sections": [
+    {
+      "h": "Common causes",
+      "ul": [
+        "Different grid factor or year.",
+        "Fuel defaults by mass or by energy.",
+        "Inclusion of transport or upstream fuel."
+      ]
+    },
+    {
+      "h": "What to do",
+      "p": [
+        "Pick one set of factors, document it, and ask each buyer whether you may use it."
+      ]
+    },
+    {
+      "h": "Record",
+      "p": [
+        "Keep the inputs and outputs from each tool so differences can be explained later."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Why tools give different numbers",
+      "to": "/answers/why-ai-gives-different-numbers-for-same-bill"
+    },
+    {
+      "label": "Emission factor database for India",
+      "to": "/answers/which-emission-factor-database-for-india"
+    },
+    {
+      "label": "Buyer questionnaire formats",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

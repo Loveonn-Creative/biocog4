@@ -1,0 +1,57 @@
+{
+  "slug": "are-aluminium-ladders-covered-by-cbam",
+  "q": "Are aluminium ladders and other aluminium articles covered by CBAM?",
+  "title": "Are aluminium ladders covered by CBAM?",
+  "short": "Yes. Other articles of aluminium under CN 7616, which includes ladders, are CBAM goods. Their figure is the maker's own direct emissions plus the embedded emissions of the aluminium profiles or sheet used. Check the exact code with your customs broker.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium ladder and article makers exporting to the EU",
+  "sections": [
+    {
+      "h": "Covered",
+      "ul": [
+        "7616: other articles of aluminium, including ladders.",
+        "7604 and 7608: bars, profiles and tubes used to make them.",
+        "Electricity is not counted for aluminium."
+      ]
+    },
+    {
+      "h": "Building the figure",
+      "p": [
+        "Add the embedded emissions of profiles bought in, by weight, to fuel burnt in your plant, and divide by product weight shipped."
+      ]
+    },
+    {
+      "h": "Mixed products",
+      "p": [
+        "Ladders with steel or plastic parts are still classified by their main material; confirm the code first."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Aluminium windows and doors",
+      "to": "/answers/are-aluminium-windows-and-doors-covered-by-cbam"
+    },
+    {
+      "label": "Foshan profile exporters",
+      "to": "/answers/foshan-aluminium-profile-exporter-cbam-data"
+    },
+    {
+      "label": "Aluminium die casting footprint",
+      "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

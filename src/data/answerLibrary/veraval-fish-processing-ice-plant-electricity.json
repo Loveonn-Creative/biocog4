@@ -1,0 +1,63 @@
+{
+  "slug": "veraval-fish-processing-ice-plant-electricity",
+  "q": "How does a Veraval fish processing and ice plant count its emissions?",
+  "title": "Veraval fish processing emissions",
+  "short": "Electricity for freezing, cold storage and ice making is usually the largest part, at 0.710 kg CO2 per kWh. Add diesel for generators and refrigerant leaks topped up during the year. Divide by tonnes of fish processed.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Seafood processors and ice plants in Veraval and coastal Gujarat",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Electricity for blast freezers, cold rooms and ice plants.",
+        "Diesel for generators during outages.",
+        "Refrigerant top ups: ammonia has no global warming effect; HFCs do."
+      ]
+    },
+    {
+      "h": "Records",
+      "ul": [
+        "Monthly units from bills.",
+        "Diesel invoices.",
+        "Refrigerant service records with kilograms added."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes processed or frozen; export buyers often want it per kilogram of product."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Ammonia vs HFC cold storage",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Fishmeal plant emissions",
+      "to": "/answers/fishmeal-plant-emissions-per-tonne"
+    },
+    {
+      "label": "Cold storage electricity per tonne",
+      "to": "/answers/guntur-chilli-cold-storage-electricity-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

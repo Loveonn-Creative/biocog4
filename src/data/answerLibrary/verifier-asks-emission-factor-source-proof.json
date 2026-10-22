@@ -1,0 +1,61 @@
+{
+  "slug": "verifier-asks-emission-factor-source-proof",
+  "q": "The verifier wants proof of where our emission factors come from. What do we show?",
+  "title": "Proof of emission factor sources",
+  "short": "Show each factor with its publisher, edition, year and unit, such as CEA version 21.0 for the Indian grid at 0.710 kg CO2 per kWh, and IPCC 2006 defaults for fuels. Keep a copy or link of the source table and note why it was chosen.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs and suppliers preparing for a GHG verification",
+  "sections": [
+    {
+      "h": "For each factor",
+      "ul": [
+        "Publisher and document name.",
+        "Edition or version and year.",
+        "Unit, and any conversion applied."
+      ]
+    },
+    {
+      "h": "Choosing",
+      "p": [
+        "Prefer official national factors, then IPCC defaults, then supplier specific figures with evidence. Record the reason."
+      ]
+    },
+    {
+      "h": "Changes",
+      "p": [
+        "If a factor changes between years, say so and show the effect on the total."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record with its source document, fingerprint, factor and method version, so a verifier can trace any figure back to the bill it came from.",
+  "links": [
+    {
+      "label": "Emission factor database for India",
+      "to": "/answers/which-emission-factor-database-for-india"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "Internal review before verification",
+      "to": "/answers/internal-review-before-external-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

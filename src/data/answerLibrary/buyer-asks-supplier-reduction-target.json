@@ -1,0 +1,57 @@
+{
+  "slug": "buyer-asks-supplier-reduction-target",
+  "q": "A buyer asks whether we have an emissions reduction target. What should a small supplier say?",
+  "title": "Supplier reduction target for a buyer",
+  "short": "Answer honestly. If you have no target, say so and give your measured baseline and the steps planned. If you set one, keep it simple, absolute or per unit, with a base year and target year. A science-based target is optional for most small suppliers.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME suppliers asked about targets by larger customers",
+  "sections": [
+    {
+      "h": "If you have none",
+      "ul": [
+        "Share the baseline year and figure.",
+        "List planned actions: solar, efficient motors, fuel switch.",
+        "Give a date to set a target."
+      ]
+    },
+    {
+      "h": "If you set one",
+      "p": [
+        "Choose absolute or intensity, a base year with real data, and a target year. Track it each year."
+      ]
+    },
+    {
+      "h": "Science-based targets",
+      "p": [
+        "SBTi has a simpler route for small companies; check whether the buyer actually requires it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Absolute or intensity target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    },
+    {
+      "label": "Check a supplier's SBTi target",
+      "to": "/answers/check-if-supplier-has-sbti-target"
+    },
+    {
+      "label": "MSME transition plan",
+      "to": "/answers/msme-climate-transition-plan-what-to-include"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Science Based Targets initiative",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

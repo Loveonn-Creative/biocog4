@@ -1,0 +1,61 @@
+{
+  "slug": "oragadam-auto-supplier-carbon-data",
+  "q": "Our Oragadam plant supplies carmakers near Chennai. What carbon data should we have ready?",
+  "title": "Oragadam auto supplier carbon data",
+  "short": "Have a year of electricity bills, diesel and LPG invoices, and production by part, giving Scope 1 and 2 and a figure per part. Grid power at 0.710 kg CO2 per kWh is usually the biggest own source; purchased steel and aluminium are larger still.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Automotive suppliers in Oragadam, Sriperumbudur and the Chennai auto corridor",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "HT electricity bills with units and any solar or open access.",
+        "Diesel for generators, LPG for furnaces.",
+        "Production by part number."
+      ]
+    },
+    {
+      "h": "Factors",
+      "p": [
+        "Use the CEA grid factor of 0.710 kg CO2 per kWh and IPCC fuel defaults, stating both."
+      ]
+    },
+    {
+      "h": "Materials",
+      "p": [
+        "Ask steel and aluminium suppliers for their figures; give defaults where you have none, labelled as estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Chakan and Hosur auto suppliers",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Sanand OEM carbon request",
+      "to": "/answers/sanand-auto-ancillary-oem-carbon-request"
+    },
+    {
+      "label": "Carbon per kg or per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

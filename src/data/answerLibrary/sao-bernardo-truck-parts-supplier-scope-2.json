@@ -1,0 +1,57 @@
+{
+  "slug": "sao-bernardo-truck-parts-supplier-scope-2",
+  "q": "Our São Bernardo truck parts plant buys renewable certificates. How do we show Scope 2?",
+  "title": "São Bernardo truck parts Scope 2",
+  "short": "Report two Scope 2 figures: location-based at the Brazilian grid factor, and market-based using the certificates you bought for the same period and volume. Keep the certificate retirement records. Buyers usually ask for both.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Truck and bus component suppliers in São Bernardo do Campo and the ABC region",
+  "sections": [
+    {
+      "h": "Location-based",
+      "p": [
+        "Units from bills times the official grid factor for the year."
+      ]
+    },
+    {
+      "h": "Market-based",
+      "ul": [
+        "Certificates matched to the units and the period.",
+        "Retirement in your name, on the registry.",
+        "Any units not covered at a residual factor where one is published."
+      ]
+    },
+    {
+      "h": "Showing it",
+      "p": [
+        "Put both figures side by side and say which one any target is set against."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Brazil grid factor",
+      "to": "/answers/brazil-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Brazil carbon market and CBAM",
+      "to": "/answers/brazil-carbon-market-sbce-cbam-deduction"
+    },
+    {
+      "label": "Buyer asks proof of renewables",
+      "to": "/answers/buyer-asks-proof-of-renewable-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

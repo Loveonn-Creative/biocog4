@@ -1,0 +1,62 @@
+{
+  "slug": "shanxi-coke-supplier-steel-buyer-scope-3",
+  "q": "Our steel mill buys coke from Shanxi. Is the coke maker's emission a CBAM precursor?",
+  "title": "Shanxi coke: CBAM precursor or Scope 3",
+  "short": "No. Coke is not a CBAM precursor. Its carbon enters your own mass balance as an input when it is burnt or used to reduce ore, and the coking plant's emissions stay upstream. Count them in Scope 3 category 1 for your corporate footprint.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Blast furnace and foundry operators buying coke from Shanxi and other coking regions",
+  "sections": [
+    {
+      "h": "In the CBAM figure",
+      "p": [
+        "The carbon content of purchased coke is part of the installation's mass balance, so the CO2 it releases in the furnace is counted as direct emissions. What happened at the coke oven is not added."
+      ]
+    },
+    {
+      "h": "In your corporate footprint",
+      "ul": [
+        "Scope 1: CO2 from the coke you use.",
+        "Scope 3 category 1: the coke maker's own emissions per tonne.",
+        "Scope 3 category 4: rail or truck transport."
+      ]
+    },
+    {
+      "h": "What to ask the supplier",
+      "ul": [
+        "Carbon content and moisture per lot.",
+        "Emissions per tonne of coke, with the method used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Coke plant CO2 per tonne",
+      "to": "/answers/dhanbad-hard-coke-plant-co2-per-tonne"
+    },
+    {
+      "label": "Cupola coke emissions",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    },
+    {
+      "label": "Tangshan coil CBAM figure",
+      "to": "/answers/tangshan-steel-hot-rolled-coil-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

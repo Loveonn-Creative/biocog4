@@ -1,0 +1,57 @@
+{
+  "slug": "thailand-tapioca-starch-mill-biogas-methane",
+  "q": "How does a Thai tapioca starch mill count methane from its wastewater?",
+  "title": "Thai tapioca starch wastewater methane",
+  "short": "Estimate methane from the chemical oxygen demand removed in open anaerobic ponds, using about 0.25 kg of methane per kg of COD times a correction factor for the pond type. Biogas captured and burnt avoids most of it. Report what still escapes in Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tapioca starch mills in northeast and eastern Thailand",
+  "sections": [
+    {
+      "h": "Open ponds",
+      "p": [
+        "Deep anaerobic ponds turn much of the organic load into methane. Multiply COD removed by 0.25 kg CH4 per kg COD and the pond's correction factor, which can be up to 0.8."
+      ]
+    },
+    {
+      "h": "Covered digesters",
+      "ul": [
+        "Biogas burnt in boilers or engines: CO2 is biogenic.",
+        "Leaks and flaring losses: still methane, in Scope 1.",
+        "Record gas flow and engine hours."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep COD test results for inflow and outflow and the volume treated each month. Without them the estimate cannot be checked."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Sago effluent methane and biogas",
+      "to": "/answers/salem-sago-unit-effluent-methane-biogas"
+    },
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Thailand grid factor",
+      "to": "/answers/thailand-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

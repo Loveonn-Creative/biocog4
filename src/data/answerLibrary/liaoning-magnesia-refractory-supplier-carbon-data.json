@@ -1,0 +1,61 @@
+{
+  "slug": "liaoning-magnesia-refractory-supplier-carbon-data",
+  "q": "A steel mill asks our Liaoning magnesia refractory plant for carbon data. What counts?",
+  "title": "Liaoning magnesia refractory carbon data",
+  "short": "Count CO2 from calcining magnesite, about 1.09 tonnes per tonne of magnesia from chemistry alone, plus kiln fuel and electricity. Refractories are not CBAM goods, so this is a Scope 3 figure for the buyer. Give it per tonne of brick or mix shipped.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Magnesia and magnesia-carbon refractory makers in Liaoning supplying steel mills",
+  "sections": [
+    {
+      "h": "Process CO2",
+      "p": [
+        "Calcining magnesium carbonate releases its carbon. Per tonne of pure MgO, the chemistry gives about 1.09 tonnes of CO2; correct for the ore's actual purity."
+      ]
+    },
+    {
+      "h": "Energy",
+      "ul": [
+        "Coal, gas or petcoke in shaft and rotary kilns.",
+        "Fuel for dead-burning or fusing.",
+        "Electricity, including electric arc fusing for fused magnesia."
+      ]
+    },
+    {
+      "h": "For the buyer",
+      "p": [
+        "Refractories are outside CBAM, so the steel mill uses your figure for its own footprint. Give it per tonne of product with the purity and fuel assumptions stated."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Magnesite calcination CO2",
+      "to": "/answers/magnesite-calcination-co2-per-tonne"
+    },
+    {
+      "label": "Are refractories covered by CBAM?",
+      "to": "/answers/are-refractories-covered-by-cbam"
+    },
+    {
+      "label": "Refractory kiln CO2 per tonne",
+      "to": "/answers/asansol-refractory-plant-kiln-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

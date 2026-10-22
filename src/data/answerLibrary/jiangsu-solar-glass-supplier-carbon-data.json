@@ -1,0 +1,61 @@
+{
+  "slug": "jiangsu-solar-glass-supplier-carbon-data",
+  "q": "A module maker asks our Jiangsu solar glass plant for its carbon footprint. How do we work it out?",
+  "title": "Jiangsu solar glass carbon footprint",
+  "short": "Add the furnace fuel, process CO2 from soda ash and limestone in the batch, and electricity for melting boost, tempering and coating. Divide by tonnes or square metres of finished glass. Glass is not a CBAM good; this figure serves the buyer's product footprint.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Solar glass makers in Jiangsu and Anhui supplying module manufacturers",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Natural gas or fuel oil in the furnace.",
+        "Carbonates in the batch: soda ash, limestone and dolomite release CO2.",
+        "Electricity for boosting, tempering and anti-reflective coating."
+      ]
+    },
+    {
+      "h": "Cullet",
+      "p": [
+        "Recycled cullet needs no calcination and less melting energy, so record the cullet share; it lowers the figure."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Module makers usually want kilograms of CO2e per square metre at a stated thickness, so give the thickness and the area produced."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Float glass furnace CO2",
+      "to": "/answers/float-glass-furnace-co2-per-tonne"
+    },
+    {
+      "label": "China grid factor",
+      "to": "/answers/china-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Buyer questionnaire formats",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

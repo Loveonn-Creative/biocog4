@@ -1,0 +1,61 @@
+{
+  "slug": "pali-textile-dyeing-unit-coal-boiler-co2",
+  "q": "How does a Pali dyeing and printing unit count CO2 from its boiler?",
+  "title": "Pali dyeing unit boiler CO2",
+  "short": "Multiply the coal, lignite or wood used each month by its emission factor: coal and lignite in full in Scope 1, wood with its CO2 reported as biogenic. Add electricity at 0.710 kg CO2 per kWh. Divide by metres or kilograms processed.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile dyeing and printing units in Pali and Balotra, Rajasthan",
+  "sections": [
+    {
+      "h": "Boiler fuel",
+      "ul": [
+        "Coal or lignite: weigh at receipt and note GCV from the supplier.",
+        "Wood or agro waste: CO2 biogenic, methane and N2O in Scope 1.",
+        "Thermic fluid heaters count the same way."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Units from bills at the CEA factor; the shared effluent plant's power is usually billed separately."
+      ]
+    },
+    {
+      "h": "Per unit",
+      "p": [
+        "Divide by fabric processed, keeping dyeing and printing apart if heat use differs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Jetpur dyeing unit boiler",
+      "to": "/answers/jetpur-dyeing-printing-unit-coal-boiler-co2"
+    },
+    {
+      "label": "Coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Boiler logbook records",
+      "to": "/answers/boiler-logbook-what-to-record-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

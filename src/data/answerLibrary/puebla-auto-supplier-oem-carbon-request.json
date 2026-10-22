@@ -1,0 +1,61 @@
+{
+  "slug": "puebla-auto-supplier-oem-carbon-request",
+  "q": "Our Puebla plant supplies a German carmaker. What will their carbon request look like?",
+  "title": "Puebla auto supplier carbon request",
+  "short": "Expect a request for Scope 1 and 2 by plant, a footprint for each part number, the share of renewable electricity and a reduction plan. Data often goes through the carmaker's own supplier portal, so keep the figures and their sources in one place.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Automotive suppliers in Puebla and Tlaxcala serving German carmakers",
+  "sections": [
+    {
+      "h": "What they ask",
+      "ul": [
+        "Plant Scope 1 and 2 with method and factors.",
+        "Product footprints, often cradle to gate.",
+        "Renewable electricity share and certificates."
+      ]
+    },
+    {
+      "h": "Preparing",
+      "p": [
+        "Collect a year of electricity bills, fuel invoices and production by part number. Material emissions need supplier data or defaults."
+      ]
+    },
+    {
+      "h": "Consistency",
+      "p": [
+        "Use the same period and factors across every buyer portal, so the numbers match when compared."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Mexico carbon tax and CBAM",
+      "to": "/answers/mexico-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "Buyer questionnaire formats",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

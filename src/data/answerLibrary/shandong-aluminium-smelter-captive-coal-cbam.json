@@ -1,0 +1,61 @@
+{
+  "slug": "shandong-aluminium-smelter-captive-coal-cbam",
+  "q": "Does the captive coal power of a Shandong aluminium smelter count in its CBAM figure?",
+  "title": "Shandong smelter captive power and CBAM",
+  "short": "No. For aluminium, CBAM counts direct emissions only: anode carbon, perfluorocarbons and fuels burnt in the installation for the process. Electricity is an indirect emission, even from the smelter's own coal plant. EU buyers may still ask for it for their own footprints.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Primary aluminium smelters in Shandong and other Chinese provinces with captive coal plants, and their EU importers",
+  "sections": [
+    {
+      "h": "What the CBAM figure includes",
+      "ul": [
+        "Anode consumption and anode baking.",
+        "PFC emissions from anode effects, as CO2e.",
+        "Fuels for casting and holding furnaces."
+      ]
+    },
+    {
+      "h": "Why captive power is left out",
+      "p": [
+        "The CBAM rules treat electricity as indirect emissions, whoever generates it, and only cement and fertilisers carry indirect emissions in the definitive period. The power plant's emissions are still reported as information on electricity consumed."
+      ]
+    },
+    {
+      "h": "What buyers still want",
+      "p": [
+        "Car and packaging makers count the whole footprint, including power, in their Scope 3. Keep the captive plant's coal and generation records ready alongside the CBAM figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Korba smelter direct emissions and PFC",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Captive coal power: Scope 1 or 2",
+      "to": "/answers/indonesia-captive-coal-power-scope-1-or-scope-2"
+    },
+    {
+      "label": "China grid factor for suppliers",
+      "to": "/answers/china-grid-emission-factor-for-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

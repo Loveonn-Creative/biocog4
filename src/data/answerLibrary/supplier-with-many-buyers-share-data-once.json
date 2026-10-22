@@ -1,0 +1,61 @@
+{
+  "slug": "supplier-with-many-buyers-share-data-once",
+  "q": "We supply ten buyers who all want carbon data. Can we prepare it once?",
+  "title": "Share carbon data once with many buyers",
+  "short": "Mostly yes. Build one inventory with Scope 1 and 2, product figures and their sources, then map it to each buyer's form. Formats differ, but the numbers underneath should not. Data exchange standards such as the PACT methodology help when buyers support them.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers answering carbon requests from several customers",
+  "sections": [
+    {
+      "h": "One base",
+      "ul": [
+        "One period, usually the last financial year.",
+        "One set of factors.",
+        "Product figures with allocation rules written down."
+      ]
+    },
+    {
+      "h": "Mapping",
+      "p": [
+        "Keep a short note of how each buyer's fields map to your base data, so answers stay consistent."
+      ]
+    },
+    {
+      "h": "Sharing",
+      "p": [
+        "Some buyers accept a standard product footprint file; others insist on their portal."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Buyer questionnaire formats",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    },
+    {
+      "label": "Will buyers keep data confidential?",
+      "to": "/answers/will-buyer-keep-my-emissions-data-confidential"
+    },
+    {
+      "label": "Why tools give different numbers",
+      "to": "/answers/why-ai-gives-different-numbers-for-same-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "WBCSD, Partnership for Carbon Transparency",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

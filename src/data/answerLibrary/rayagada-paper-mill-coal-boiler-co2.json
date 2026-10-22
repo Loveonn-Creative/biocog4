@@ -1,0 +1,63 @@
+{
+  "slug": "rayagada-paper-mill-coal-boiler-co2",
+  "q": "How does a Rayagada paper mill separate coal boiler CO2 from biogenic CO2?",
+  "title": "Rayagada paper mill coal and biogenic CO2",
+  "short": "Count coal and any oil in full in Scope 1. Report CO2 from black liquor, bark and other wood residues as biogenic, outside the Scope 1 total, with their methane and N2O inside it. Add bought electricity at 0.710. Divide by tonnes of paper.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Integrated pulp and paper mills in Rayagada and southern Odisha",
+  "sections": [
+    {
+      "h": "Fossil",
+      "ul": [
+        "Coal for power boilers, by weight and GCV.",
+        "Fuel oil for lime kilns.",
+        "Purchased electricity."
+      ]
+    },
+    {
+      "h": "Biogenic",
+      "ul": [
+        "Black liquor in the recovery boiler.",
+        "Bark, chips and sludge burnt for steam.",
+        "Lime kiln CO2 from recovered lime mud."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes of saleable paper and show fossil and biogenic separately for buyers."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Black liquor biogenic CO2",
+      "to": "/answers/rajahmundry-pulp-mill-black-liquor-biogenic-co2"
+    },
+    {
+      "label": "Coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

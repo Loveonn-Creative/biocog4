@@ -1,0 +1,61 @@
+{
+  "slug": "hyderabad-pharma-api-unit-boiler-co2",
+  "q": "How does a Hyderabad pharma API unit count CO2 from boilers and solvent incineration?",
+  "title": "Hyderabad API unit boiler and solvent CO2",
+  "short": "Count boiler fuel in Scope 1: coal in full, biomass with biogenic CO2 separate. Solvents burnt in an incinerator or used as fuel also emit fossil CO2 from their carbon. Add electricity at 0.710 and divide by kilograms of API.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bulk drug and API units in Jeedimetla, Patancheru and the Hyderabad pharma belt",
+  "sections": [
+    {
+      "h": "Boilers",
+      "ul": [
+        "Coal or briquettes, by weight.",
+        "Steam meters help split use between blocks.",
+        "Thermic fluid heaters count the same way."
+      ]
+    },
+    {
+      "h": "Solvents",
+      "p": [
+        "Spent solvents burnt on site release CO2 from their carbon content. Record volumes sent to the incinerator and those sent out for recovery."
+      ]
+    },
+    {
+      "h": "Per kilogram",
+      "p": [
+        "API batches vary widely in steam use, so allocate by steam hours or batch records where you can."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Steam meter or fuel records",
+      "to": "/answers/steam-flow-meter-or-fuel-records-for-emissions"
+    },
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Boiler logbook records",
+      "to": "/answers/boiler-logbook-what-to-record-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

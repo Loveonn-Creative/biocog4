@@ -1,0 +1,58 @@
+{
+  "slug": "verifier-asks-for-calculation-workings",
+  "q": "The verifier asks to see our calculation workings. What should we hand over?",
+  "title": "Calculation workings for the verifier",
+  "short": "A file or report showing, for each source, the activity data, unit, factor, any conversion and the result, with a reference to the bill or invoice behind each figure. Totals should add up, and any estimate should be marked with its method.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs and suppliers going through GHG verification",
+  "sections": [
+    {
+      "h": "For each line",
+      "ul": [
+        "Activity data and unit.",
+        "Emission factor and source.",
+        "Conversions such as litres to kilograms.",
+        "Result in kg or tonnes CO2e."
+      ]
+    },
+    {
+      "h": "Traceability",
+      "p": [
+        "Each line should point to its source document, so the verifier can sample and recalculate."
+      ]
+    },
+    {
+      "h": "Estimates",
+      "p": [
+        "Missing data filled by estimate needs a short note on the method and the share of the total it covers."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record with its source document, fingerprint, factor and method version, so a verifier can trace any figure back to the bill it came from.",
+  "links": [
+    {
+      "label": "Estimation note for the verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "Materiality in verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

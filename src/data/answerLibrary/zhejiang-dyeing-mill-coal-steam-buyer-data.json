@@ -1,0 +1,61 @@
+{
+  "slug": "zhejiang-dyeing-mill-coal-steam-buyer-data",
+  "q": "A European apparel brand wants carbon data from our Zhejiang dyeing mill. What do we send?",
+  "title": "Zhejiang dyeing mill carbon data",
+  "short": "Send Scope 1 from boiler fuel, Scope 2 from electricity at the grid factor, and a figure per kilogram of fabric dyed. If steam comes from an industrial park plant, count it as purchased heat. Give the period, the factors and the share of output each figure covers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile dyeing and finishing mills in Zhejiang supplying European and US apparel brands",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Coal, gas or biomass for your own boilers.",
+        "Steam bought from a park utility, in tonnes.",
+        "Electricity from bills."
+      ]
+    },
+    {
+      "h": "How to express it",
+      "p": [
+        "Most brands want kilograms of CO2e per kilogram of fabric, separated by process if you can: dyeing, printing and finishing use very different amounts of heat."
+      ]
+    },
+    {
+      "h": "Factors",
+      "p": [
+        "Use the official Chinese grid factor for electricity and the steam supplier's figure for purchased steam, with a default stated if the supplier cannot give one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Jetpur dyeing unit coal boiler",
+      "to": "/answers/jetpur-dyeing-printing-unit-coal-boiler-co2"
+    },
+    {
+      "label": "China grid factor",
+      "to": "/answers/china-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Buyer wants carbon per kg",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

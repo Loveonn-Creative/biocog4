@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-uan-solution-precursors-urea-ammonium-nitrate",
+  "q": "How is the CBAM figure for urea ammonium nitrate solution built from its precursors?",
+  "title": "UAN solution CBAM precursors",
+  "short": "UAN is a mix of urea and ammonium nitrate in water. Its figure adds the embedded emissions of the urea and ammonium nitrate used, by weight, plus direct and indirect emissions of mixing. Ammonia and nitric acid sit behind both, with nitric acid N2O often the largest part.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Nitrogen fertiliser producers making UAN and their EU importers",
+  "sections": [
+    {
+      "h": "Precursors",
+      "ul": [
+        "Urea: from ammonia and CO2.",
+        "Ammonium nitrate: from ammonia and nitric acid.",
+        "Each carries its own embedded emissions."
+      ]
+    },
+    {
+      "h": "Mixing",
+      "p": [
+        "Blending and storage use little energy, but electricity counts as indirect for fertilisers."
+      ]
+    },
+    {
+      "h": "N2O",
+      "p": [
+        "Nitric acid plants without abatement emit N2O, which can dominate the figure; abatement records lower it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Ammonium nitrate CBAM figure",
+      "to": "/answers/uzbekistan-ammonium-nitrate-plant-cbam-figure"
+    },
+    {
+      "label": "Nitric acid N2O emissions",
+      "to": "/answers/nitric-acid-plant-n2o-emissions"
+    },
+    {
+      "label": "Are urea and DAP covered?",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

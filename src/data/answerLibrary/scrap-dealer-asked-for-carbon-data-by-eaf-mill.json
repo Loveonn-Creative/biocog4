@@ -1,0 +1,61 @@
+{
+  "slug": "scrap-dealer-asked-for-carbon-data-by-eaf-mill",
+  "q": "An electric arc furnace mill asks our scrap yard for carbon data. What should we give?",
+  "title": "Scrap dealer carbon data for EAF mills",
+  "short": "Under CBAM, scrap enters a steel figure at zero embedded emissions, so the mill mainly needs proof of what is scrap. For footprints, give your own emissions per tonne handled: diesel for cranes and trucks, electricity for shears and balers, and transport to the mill.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Scrap yards and dealers supplying electric arc and induction furnace mills",
+  "sections": [
+    {
+      "h": "For CBAM",
+      "p": [
+        "Scrap counts at zero, so records that show material is genuine scrap, by grade and source, matter more than a carbon figure."
+      ]
+    },
+    {
+      "h": "For footprints",
+      "ul": [
+        "Diesel for cranes, loaders and trucks.",
+        "Electricity for shears, balers and shredders.",
+        "Transport to the mill, per tonne."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes sold; the figure is usually small next to steelmaking."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Scrap at zero under CBAM",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "EAF mill imported billets and scrap",
+      "to": "/answers/brescia-eaf-mill-imported-billets-scrap-cbam"
+    },
+    {
+      "label": "Ship scrap EAF rebar",
+      "to": "/answers/aliaga-ship-scrap-eaf-rebar-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "butibori-steel-re-roller-coal-gasifier-co2",
+  "q": "A Butibori re-rolling mill reheats billets with a coal gasifier. How is the CO2 counted?",
+  "title": "Butibori re-roller coal gasifier CO2",
+  "short": "Count the coal fed to the gasifier, not the gas made: multiply tonnes of coal by its emission factor in Scope 1. Add electricity for the mill at 0.710 and divide by tonnes of rolled product. Billets bought in carry their own emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Steel re-rolling mills in Butibori, Hingna and the Nagpur area",
+  "sections": [
+    {
+      "h": "Reheating",
+      "p": [
+        "The gasifier turns coal into producer gas, but the carbon still ends up as CO2. Count the coal input by weight and GCV."
+      ]
+    },
+    {
+      "h": "Rolling",
+      "ul": [
+        "Electricity for stands and motors.",
+        "Scale loss and end cuts reduce yield.",
+        "Any furnace oil used at start-up."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Billets carry the melting shop's emissions, often larger than reheating; ask the supplier for its figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "PNG reheating furnace CO2",
+      "to": "/answers/bhiwadi-rolling-mill-png-reheating-furnace-co2"
+    },
+    {
+      "label": "Coal gasifier vs gas",
+      "to": "/answers/morbi-coal-gasifier-vs-natural-gas-emissions"
+    },
+    {
+      "label": "Coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

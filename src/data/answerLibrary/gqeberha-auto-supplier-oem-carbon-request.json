@@ -1,0 +1,61 @@
+{
+  "slug": "gqeberha-auto-supplier-oem-carbon-request",
+  "q": "Our Gqeberha plant supplies a European carmaker. What carbon data do they usually ask for?",
+  "title": "Gqeberha auto supplier carbon request",
+  "short": "Usually Scope 1 and 2 for the plant, a footprint per part with material emissions, and a renewable electricity plan. Eskom power makes Scope 2 large, so record units and any wheeled renewable power or certificates separately. Give the period and factors.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Automotive component suppliers in Gqeberha, Kariega and the Eastern Cape",
+  "sections": [
+    {
+      "h": "Typical request",
+      "ul": [
+        "Scope 1 and 2 for the plant, per year.",
+        "A product carbon footprint for key parts.",
+        "A target or plan for renewable electricity."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Grid power in South Africa is coal heavy, so it often dominates the plant figure. Keep units from bills and any renewable supply contracts with their certificates."
+      ]
+    },
+    {
+      "h": "Materials",
+      "p": [
+        "Steel, aluminium and plastics bought in usually outweigh the plant's own energy; ask suppliers for figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Eskom grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    },
+    {
+      "label": "Sanand OEM carbon request",
+      "to": "/answers/sanand-auto-ancillary-oem-carbon-request"
+    },
+    {
+      "label": "Carbon per kg or per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
