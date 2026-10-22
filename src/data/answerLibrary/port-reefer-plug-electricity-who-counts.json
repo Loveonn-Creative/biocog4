@@ -1,0 +1,47 @@
+{
+  "slug": "port-reefer-plug-electricity-who-counts",
+  "q": "Who counts the electricity for reefer containers plugged in at a port?",
+  "title": "Reefer plugs at the port: whose scope",
+  "short": "The terminal pays the power bill, so the electricity for reefer plugs is in the terminal's Scope 2 unless it is billed on to the shipping line as metered use. The cargo owner sees it inside the reefer freight figure. Count it once.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Container terminals and food exporters",
+  "sections": [
+    {
+      "h": "Cases",
+      "ul": [
+        "Terminal pays and absorbs it: terminal Scope 2.",
+        "Terminal bills metered power to the line: line's Scope 2 or Scope 3.",
+        "Exporter: inside the reefer freight emissions."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Reefer plug hours or metered kWh per container. That turns a site total into a per-box figure a food exporter can use."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Reefer container emissions",
+      "to": "/answers/reefer-container-emissions-food-exporters"
+    },
+    {
+      "label": "Third-party cold storage rent",
+      "to": "/answers/third-party-cold-storage-rent-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "video-calls-and-streaming-office-emissions",
+  "q": "Should we count emissions from video calls and streaming at work?",
+  "title": "Video calls and streaming at work",
+  "short": "The laptops and office network are already in your electricity bill, so they are counted in Scope 2. Data centre energy for the call service sits in the provider's footprint and, if material, your Scope 3 purchased services. For most offices it is small next to travel avoided.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "IT, services and office-based companies",
+  "sections": [
+    {
+      "h": "Where it falls",
+      "ul": [
+        "Office devices and Wi-Fi: Scope 2 on your bill.",
+        "Staff working from home: Scope 3 Category 7, optional.",
+        "Cloud and meeting services: Scope 3 Category 1."
+      ]
+    },
+    {
+      "h": "Keep it in proportion",
+      "p": [
+        "A call that replaces a flight saves far more than it emits. Report the flight data properly before refining call emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Work from home emissions",
+      "to": "/answers/work-from-home-emissions-calculation"
+    },
+    {
+      "label": "Cloud footprint",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

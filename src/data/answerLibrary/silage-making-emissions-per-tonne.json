@@ -1,0 +1,47 @@
+{
+  "slug": "silage-making-emissions-per-tonne",
+  "q": "What are the emissions from making silage for dairy cattle?",
+  "title": "Silage making: emissions",
+  "short": "Silage emissions come from diesel for harvesting, chopping and packing, at 2.68 kg CO2 per litre, and the plastic bags or film used to seal it. Spoilage when air gets in wastes feed. Divide by tonnes of silage made to get a figure dairies can use.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Silage makers and dairy farms",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Diesel for harvester, chopper and tractor.",
+        "Plastic bags, film or bales by weight.",
+        "Inoculants and transport to farms."
+      ]
+    },
+    {
+      "h": "For dairies",
+      "p": [
+        "Bought silage is Scope 3 feed. Well-made silage that does not spoil means less feed grown per litre of milk."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Tractor diesel per acre",
+      "to": "/answers/tractor-diesel-emissions-per-acre"
+    },
+    {
+      "label": "Dairy member farm Scope 3",
+      "to": "/answers/dairy-member-farm-emissions-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

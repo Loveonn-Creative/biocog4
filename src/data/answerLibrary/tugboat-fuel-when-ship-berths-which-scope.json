@@ -1,0 +1,48 @@
+{
+  "slug": "tugboat-fuel-when-ship-berths-which-scope",
+  "q": "Who counts the tugboat fuel when our ship berths at a port?",
+  "title": "Tugboat fuel at berthing: whose scope",
+  "short": "The tug operator burns the fuel, so it is their Scope 1. For a shipping line it is a bought service, Scope 3. For an exporter it usually sits inside the freight emissions your carrier or forwarder reports. Count it once, at the level of the freight figure.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Shipping lines, port users and exporters",
+  "sections": [
+    {
+      "h": "Who reports it",
+      "ul": [
+        "Tug owner: Scope 1, from the diesel it burns.",
+        "Port that runs its own tugs: Scope 1.",
+        "Shipping line hiring tugs: Scope 3 purchased services.",
+        "Exporter: inside the sea freight figure, not a separate line."
+      ]
+    },
+    {
+      "h": "Avoid double counting",
+      "p": [
+        "If your forwarder's report already uses a well-to-wake figure per container, do not add port services again on top."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Sea freight per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Forwarder emissions report",
+      "to": "/answers/freight-forwarder-emissions-report-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

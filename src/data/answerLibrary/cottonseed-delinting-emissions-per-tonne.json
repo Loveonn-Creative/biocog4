@@ -1,0 +1,47 @@
+{
+  "slug": "cottonseed-delinting-emissions-per-tonne",
+  "q": "What are the emissions from delinting cottonseed?",
+  "title": "Cottonseed delinting: emissions",
+  "short": "Delinting strips short fibres from cottonseed, by machine or with acid. Machine delinting uses electricity at 0.710 kg CO2 per kWh. Acid delinting adds the bought acid, a Scope 3 material, plus heat for drying the seed. Divide by tonnes of seed processed.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Seed companies and delinting units",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Electricity for delinting machines and dryers.",
+        "Fuel for drying, if fired.",
+        "Sulphuric acid bought, for acid delinting."
+      ]
+    },
+    {
+      "h": "Linters",
+      "p": [
+        "The short fibres removed are sold for cellulose and paper. Treat them as a co-product and allocate if a buyer asks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Cotton ginning per bale",
+      "to": "/answers/cotton-ginning-emissions-per-bale"
+    },
+    {
+      "label": "Seed processing plant",
+      "to": "/answers/seed-processing-plant-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

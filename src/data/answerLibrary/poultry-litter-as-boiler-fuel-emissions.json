@@ -1,0 +1,51 @@
+{
+  "slug": "poultry-litter-as-boiler-fuel-emissions",
+  "q": "Can we burn poultry litter in our boiler, and how is it counted?",
+  "title": "Poultry litter as boiler fuel",
+  "short": "Poultry litter is a biomass fuel, so its CO2 is biogenic and reported separately, while methane and nitrous oxide from burning stay in Scope 1. Its high moisture and ash lower useful heat per tonne, so weigh and test it before comparing with coal.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Feed mills, poultry integrators and boiler users",
+  "sections": [
+    {
+      "h": "Before switching",
+      "ul": [
+        "Moisture and ash content tests.",
+        "Boiler grate suited to high-ash fuel.",
+        "State pollution board consent for the new fuel."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Tonnes received per month and a supplier note on its source, so a verifier accepts it as biomass."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Wet biomass fuel quantity",
+      "to": "/answers/wet-biomass-moisture-boiler-fuel-quantity"
+    },
+    {
+      "label": "Biomass still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Poultry hatchery",
+      "to": "/answers/poultry-hatchery-emissions-per-chick"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

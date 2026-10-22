@@ -1,0 +1,51 @@
+{
+  "slug": "chilli-drying-emissions-per-tonne",
+  "q": "What are the emissions from drying red chillies?",
+  "title": "Red chilli drying: emissions",
+  "short": "Sun drying on open yards uses almost no energy. Mechanical dryers burn firewood, coal or LPG, or use electricity, and that fuel is the footprint. Record fuel per tonne of dried chilli. Cold storage afterwards adds electricity, counted separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Chilli traders, dryers and spice processors",
+  "sections": [
+    {
+      "h": "Options",
+      "ul": [
+        "Open sun drying: low energy, quality risk from dust and rain.",
+        "Solar tunnel dryers: low fuel, better quality.",
+        "Fuel-fired dryers: firewood, coal or LPG."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Fuel bought and tonnes of wet and dried chilli per season give a figure buyers can check."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Guntur chilli cold storage",
+      "to": "/answers/guntur-chilli-cold-storage-electricity-per-tonne"
+    },
+    {
+      "label": "Spice processing per kg",
+      "to": "/answers/spice-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Solar dryer for agro processing",
+      "to": "/answers/solar-dryer-agro-processing-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

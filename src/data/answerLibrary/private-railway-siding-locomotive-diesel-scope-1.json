@@ -1,0 +1,47 @@
+{
+  "slug": "private-railway-siding-locomotive-diesel-scope-1",
+  "q": "We run our own locomotive in our railway siding. Is its diesel Scope 1?",
+  "title": "Own siding locomotive: Scope 1",
+  "short": "Yes. A locomotive you own or control burns diesel for shunting wagons in your siding, so it is Scope 1, at 2.68 kg CO2 per litre. Freight hauled by the railway on its own locomotives outside your siding is Scope 3 transport.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plants with private railway sidings",
+  "sections": [
+    {
+      "h": "Split",
+      "ul": [
+        "Own shunting locomotive: Scope 1.",
+        "Railway's locomotive on the main line: Scope 3 freight.",
+        "Hired shunting service: Scope 3."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Fuel issue register for the locomotive and wagons placed and removed per month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Coal by rail to the plant",
+      "to": "/answers/coal-rail-freight-mine-to-plant-emissions"
+    },
+    {
+      "label": "Railway receipt freight",
+      "to": "/answers/railway-receipt-freight-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

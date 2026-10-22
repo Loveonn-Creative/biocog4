@@ -1,0 +1,48 @@
+{
+  "slug": "transshipment-hub-freight-emissions-legs",
+  "q": "Our container goes via a transshipment hub. How do we count the freight emissions?",
+  "title": "Transshipment: counting each leg",
+  "short": "Count each leg separately: the feeder ship to the hub, the handling at the hub and the mainline ship onwards. Add them for the shipment total. Using one direct distance from origin to destination understates it, because the route via the hub is longer.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and freight buyers",
+  "sections": [
+    {
+      "h": "Legs to list",
+      "ul": [
+        "Feeder: origin port to hub.",
+        "Hub handling: crane moves and yard time.",
+        "Mainline: hub to destination port.",
+        "Road or rail at each end."
+      ]
+    },
+    {
+      "h": "Where to find them",
+      "p": [
+        "The bill of lading and carrier schedule name the hub. The GLEC Framework sets out how to add legs and hub activity."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Bill of lading as evidence",
+      "to": "/answers/bill-of-lading-as-freight-emissions-evidence"
+    },
+    {
+      "label": "Sea and air via Dubai",
+      "to": "/answers/sea-air-freight-via-dubai-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

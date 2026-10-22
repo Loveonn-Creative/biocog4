@@ -1,0 +1,47 @@
+{
+  "slug": "concrete-pump-diesel-emissions-per-cubic-metre",
+  "q": "How do we count diesel used by a concrete pump on site?",
+  "title": "Concrete pump diesel: emissions",
+  "short": "A truck-mounted or stationary concrete pump burns diesel at 2.68 kg CO2 per litre. If you own or run it, it is Scope 1. If a contractor brings and fuels it, it is their Scope 1 and your Scope 3. Divide litres by cubic metres pumped for a per-pour figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Builders and concrete contractors",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Litres filled per pump per day.",
+        "Cubic metres poured, from delivery challans.",
+        "Who supplied the fuel."
+      ]
+    },
+    {
+      "h": "With ready-mix",
+      "p": [
+        "Ready-mix suppliers often pump as part of the order. Ask whether their per cubic metre figure includes pumping, so it is not counted twice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Ready-mix concrete per cubic metre",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Contractor diesel on site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

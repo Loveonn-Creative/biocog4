@@ -1,0 +1,49 @@
+{
+  "slug": "led-billboard-electricity-emissions",
+  "q": "How much carbon does an LED billboard emit?",
+  "title": "LED billboard: emissions",
+  "short": "An LED billboard's emissions are its electricity, often running 16 to 24 hours a day. Multiply metered kWh by 0.710 kg CO2 per kWh. The media owner pays the bill and reports it as Scope 2. An advertiser can count its share as Scope 3 purchased services.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Outdoor media owners and advertisers",
+  "sections": [
+    {
+      "h": "Estimate without a meter",
+      "p": [
+        "Panel power rating times hours on times average brightness, labelled as an estimate until a meter is fitted."
+      ]
+    },
+    {
+      "h": "Cut it",
+      "p": [
+        "Dimming at night and switching off between midnight and dawn cuts power sharply."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Advertising spend Scope 3",
+      "to": "/answers/advertising-and-marketing-spend-scope-3"
+    },
+    {
+      "label": "LED retrofit savings",
+      "to": "/answers/led-retrofit-energy-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

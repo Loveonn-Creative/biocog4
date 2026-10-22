@@ -1,0 +1,47 @@
+{
+  "slug": "passenger-ferry-emissions-per-trip",
+  "q": "How do I calculate the emissions of a passenger ferry trip?",
+  "title": "Passenger ferry: emissions per trip",
+  "short": "Multiply the litres of diesel burnt per trip by 2.68 kg CO2 per litre, then divide by passengers carried for a per-person figure. Use the fuel log, not the engine rating. A ferry that also carries vehicles should split fuel by deck area or weight before dividing.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ferry operators and companies counting staff travel",
+  "sections": [
+    {
+      "h": "Data you need",
+      "ul": [
+        "Diesel bought per month from fuel invoices.",
+        "Trips run and passengers carried per month.",
+        "Vehicles carried, if any."
+      ]
+    },
+    {
+      "h": "For staff travel",
+      "p": [
+        "A company whose staff commute by ferry counts it in Scope 3 Category 7, using the operator's per-passenger figure or a fuel-based estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Coastal shipping vs road",
+      "to": "/answers/coastal-shipping-vs-road-emissions-india"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

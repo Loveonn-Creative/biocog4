@@ -1,0 +1,51 @@
+{
+  "slug": "torrefied-biomass-pellets-emissions-per-tonne",
+  "q": "What are the emissions from making torrefied biomass pellets?",
+  "title": "Torrefied biomass pellets: emissions",
+  "short": "Torrefaction roasts biomass at about 250 to 300 degrees C without air, then it is pelletised. The plant's own emissions are electricity for grinding and pelleting, at 0.710 kg CO2 per kWh, and any fossil fuel used to start the reactor. Gases from the biomass itself are biogenic.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Pellet makers and boilers switching from coal",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Electricity for chipping, drying, grinding and pelleting.",
+        "Diesel for loaders and trucks.",
+        "Fossil fuel for start-up, if any."
+      ]
+    },
+    {
+      "h": "For the buyer",
+      "p": [
+        "Burning the pellets is biogenic CO2, reported separately, plus small methane and nitrous oxide in Scope 1. Keep supplier evidence of the biomass source."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Briquette replacing coal",
+      "to": "/answers/how-much-briquette-replaces-a-tonne-of-coal"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Biomass still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

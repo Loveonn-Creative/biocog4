@@ -1,0 +1,48 @@
+{
+  "slug": "transmission-line-construction-emissions-per-km",
+  "q": "What are the emissions from building a power transmission line per km?",
+  "title": "Building a transmission line: per km",
+  "short": "Most of the footprint is materials: galvanised steel towers, aluminium conductors and concrete foundations, which are Scope 3 capital goods. Site work adds diesel for cranes, winches and trucks, at 2.68 kg CO2 per litre. Divide by km built.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Transmission EPC contractors and utilities",
+  "sections": [
+    {
+      "h": "Main parts",
+      "ul": [
+        "Steel towers, by tonnes.",
+        "ACSR or aluminium conductor, by tonnes.",
+        "Foundation concrete and rebar.",
+        "Diesel for erection and stringing."
+      ]
+    },
+    {
+      "h": "CBAM note",
+      "p": [
+        "Exported steel structures and aluminium conductors can be CBAM goods. A line built in India is not."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "ACSR conductor per tonne",
+      "to": "/answers/acsr-conductor-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Steel structures and CBAM",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

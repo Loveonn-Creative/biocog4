@@ -1,0 +1,47 @@
+{
+  "slug": "slaughterhouse-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of a slaughterhouse per tonne of meat?",
+  "title": "Slaughterhouse: emissions per tonne",
+  "short": "The plant's own share is electricity for chilling and freezing, boiler fuel for hot water, refrigerant leaks and methane from effluent ponds. The animals raised for it carry a far larger upstream footprint, which belongs in Scope 3. Divide plant emissions by tonnes of dressed meat.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Meat processors and exporters",
+  "sections": [
+    {
+      "h": "Plant sources",
+      "ul": [
+        "Scope 2: chillers, blast freezers, lighting.",
+        "Scope 1: boiler fuel, refrigerant leaks, effluent methane from open ponds.",
+        "Scope 3: animals bought, packaging, transport."
+      ]
+    },
+    {
+      "h": "Effluent",
+      "p": [
+        "Open anaerobic lagoons release methane. Covered digesters that capture and burn the gas cut it sharply."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Poultry processing per kg",
+      "to": "/answers/poultry-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Gelatin plant emissions",
+      "to": "/answers/gelatin-plant-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

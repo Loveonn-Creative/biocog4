@@ -1,0 +1,47 @@
+{
+  "slug": "citric-acid-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of citric acid per tonne?",
+  "title": "Citric acid per tonne",
+  "short": "Citric acid is made by fermenting sugar or starch, then recovering and crystallising it. The figure comes from the sugar feedstock, steam for evaporation and drying, and electricity for aeration. Fermentation CO2 from the sugar is biogenic and reported separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Food, beverage and detergent buyers",
+  "sections": [
+    {
+      "h": "Main parts",
+      "ul": [
+        "Feedstock: molasses, glucose or starch.",
+        "Aeration and stirring electricity during fermentation.",
+        "Steam for evaporation, crystallisation and drying."
+      ]
+    },
+    {
+      "h": "Biogenic CO2",
+      "p": [
+        "CO2 released as sugar ferments comes from plant carbon. Show it apart from fossil emissions, not added to them."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Fermentation API footprint",
+      "to": "/answers/fermentation-api-carbon-footprint"
+    },
+    {
+      "label": "Sugar mill per tonne of cane",
+      "to": "/answers/sugar-mill-carbon-footprint-per-tonne-of-cane"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

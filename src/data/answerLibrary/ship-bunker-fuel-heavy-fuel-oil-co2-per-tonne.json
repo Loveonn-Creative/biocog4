@@ -1,0 +1,47 @@
+{
+  "slug": "ship-bunker-fuel-heavy-fuel-oil-co2-per-tonne",
+  "q": "What is the CO2 factor for heavy fuel oil used as ship bunker fuel?",
+  "title": "Bunker fuel oil: CO2 per tonne",
+  "short": "Using IPCC 2006 defaults for residual fuel oil, 77.4 tonnes CO2 per terajoule and 40.4 gigajoules per tonne, one tonne of heavy fuel oil gives about 3.13 tonnes of CO2 when burnt. Bunker delivery notes give tonnes, so the sum is quick.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Shipowners, charterers and freight buyers",
+  "sections": [
+    {
+      "h": "The sum",
+      "ol": [
+        "Tonnes of fuel from bunker delivery notes.",
+        "Times 40.4 GJ per tonne.",
+        "Times 77.4 kg CO2 per GJ, which gives about 3.13 t CO2 per tonne."
+      ]
+    },
+    {
+      "h": "Whose scope",
+      "p": [
+        "The shipowner or operator who burns it reports Scope 1. A time charterer that buys the bunkers may report it under its own control approach. Cargo owners see it in Scope 3 freight."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Sea freight per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Well-to-tank from diesel",
+      "to": "/answers/well-to-tank-emissions-from-diesel-invoices"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

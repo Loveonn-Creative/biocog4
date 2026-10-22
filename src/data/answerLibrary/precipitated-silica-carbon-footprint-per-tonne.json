@@ -1,0 +1,47 @@
+{
+  "slug": "precipitated-silica-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of precipitated silica per tonne?",
+  "title": "Precipitated silica per tonne",
+  "short": "Precipitated silica is made by reacting sodium silicate with sulphuric acid, then filtering and drying. The sodium silicate furnace and the spray dryer are the big energy users. Most of the figure is fuel for those two steps, plus electricity for filter presses.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Tyre, rubber and toothpaste ingredient buyers",
+  "sections": [
+    {
+      "h": "Main steps",
+      "ol": [
+        "Melting sand and soda ash into sodium silicate.",
+        "Precipitation with acid.",
+        "Filtering, washing and spray drying."
+      ]
+    },
+    {
+      "h": "Drying is the lever",
+      "p": [
+        "Dewatering the cake better before the dryer cuts fuel per tonne, since every kg of water costs heat to evaporate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Sodium silicate furnace",
+      "to": "/answers/sodium-silicate-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Soda ash plant CO2",
+      "to": "/answers/soda-ash-plant-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

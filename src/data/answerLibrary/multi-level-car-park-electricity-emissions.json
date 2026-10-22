@@ -1,0 +1,47 @@
+{
+  "slug": "multi-level-car-park-electricity-emissions",
+  "q": "How do we count the emissions of a multi-level car park?",
+  "title": "Multi-level car park: emissions",
+  "short": "A car park's own emissions are electricity for lighting, ventilation fans, lifts and boom barriers, at 0.710 kg CO2 per kWh. Cars driving in are their owners' emissions, not the car park's. EV chargers on your bill are your Scope 2 unless metered and billed on.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Malls, offices and car park operators",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Lighting, often on 24 hours.",
+        "Jet fans for basement ventilation.",
+        "Lifts, barriers and pay stations."
+      ]
+    },
+    {
+      "h": "Cuts",
+      "p": [
+        "Motion-sensor lighting and CO sensors that run fans only when needed cut the load the most."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Lift and escalator electricity",
+      "to": "/answers/lift-and-escalator-electricity-emissions"
+    },
+    {
+      "label": "Employee EV charging at office",
+      "to": "/answers/employee-ev-charging-at-office-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

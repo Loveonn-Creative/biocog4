@@ -1,0 +1,48 @@
+{
+  "slug": "sewing-thread-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of sewing thread per kg?",
+  "title": "Sewing thread per kg",
+  "short": "Most sewing thread is polyester or a poly-cotton core, so the fibre carries much of the footprint. Spinning or twisting, dyeing and winding onto cones add electricity and steam at the thread mill. Garment makers count bought thread as Scope 3.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Thread makers and garment factories",
+  "sections": [
+    {
+      "h": "Parts",
+      "ul": [
+        "Polyester or cotton fibre.",
+        "Spinning, twisting and finishing power.",
+        "Dyeing steam and chemicals.",
+        "Cones and packaging."
+      ]
+    },
+    {
+      "h": "For garment makers",
+      "p": [
+        "Thread is a small share of a garment by weight. Fabric, dyeing and your own power usually matter far more."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Polyester texturising power",
+      "to": "/answers/polyester-texturising-electricity-per-kg-yarn"
+    },
+    {
+      "label": "Yarn dyeing per kg",
+      "to": "/answers/yarn-dyeing-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

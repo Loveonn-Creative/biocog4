@@ -1,0 +1,51 @@
+{
+  "slug": "electric-crematorium-vs-wood-pyre-emissions",
+  "q": "How do emissions from an electric crematorium compare with a wood pyre?",
+  "title": "Electric crematorium vs wood pyre",
+  "short": "An electric crematorium's emissions are the electricity it uses, at 0.710 kg CO2 per kWh, read from its meter per cremation. A wood pyre's CO2 is biogenic but releases smoke, methane and nitrous oxide, and the wood itself has to be cut and carried. Gas crematoria burn LPG or PNG, which is fossil Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Municipal bodies and crematorium trusts",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Electric: kWh per cremation from a sub-meter.",
+        "Gas: kg of LPG or cubic metres of PNG per cremation.",
+        "Wood: kilograms of wood per cremation."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "A municipal body reports the fuel and power it pays for. Biogenic CO2 from wood goes in a separate line, with methane and nitrous oxide in Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Biomass still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "LPG or PNG per unit of heat",
+      "to": "/answers/lpg-or-png-lower-co2-per-unit-of-heat"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

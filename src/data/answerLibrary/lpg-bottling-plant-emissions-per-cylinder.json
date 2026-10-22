@@ -1,0 +1,47 @@
+{
+  "slug": "lpg-bottling-plant-emissions-per-cylinder",
+  "q": "What are the emissions of an LPG bottling plant per cylinder filled?",
+  "title": "LPG bottling plant: per cylinder",
+  "short": "The plant's own emissions are electricity for compressors, carousels and pumps, at 0.710 kg CO2 per kWh, and diesel for gensets and forklifts. Divide by cylinders filled. The gas inside is not the plant's emission; it is burnt later by the customer.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "LPG bottling plants and distributors",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Scope 2: compressors, filling carousel, lighting.",
+        "Scope 1: genset diesel, any vapour released in purging.",
+        "Scope 3: cylinder trucks to distributors, if hired."
+      ]
+    },
+    {
+      "h": "Cylinder count",
+      "p": [
+        "Use cylinders filled from the plant register, split by 14.2 kg and 19 kg if you want separate figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "LPG bullet tanker transport",
+      "to": "/answers/lpg-bullet-tanker-transport-emissions-per-tonne"
+    },
+    {
+      "label": "19 kg cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

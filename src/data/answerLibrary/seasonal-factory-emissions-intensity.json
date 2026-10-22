@@ -1,0 +1,51 @@
+{
+  "slug": "seasonal-factory-emissions-intensity",
+  "q": "Our factory runs only part of the year. How do we show emissions intensity fairly?",
+  "title": "Seasonal factory: fair intensity",
+  "short": "Report the full year's emissions, including the idle months, then divide by the year's output. Idle months carry base load such as lighting, security and maintenance, which is real. Showing season months only flatters the figure and a verifier will spot it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Seasonal units: ginning, sugar, rice, food processing",
+  "sections": [
+    {
+      "h": "Show both",
+      "ul": [
+        "Annual total and annual intensity per tonne.",
+        "Intensity for season months, clearly labelled.",
+        "Off-season base load as its own line."
+      ]
+    },
+    {
+      "h": "Cut idle load",
+      "p": [
+        "Switching off idle transformers, compressors and lighting in the off-season cuts emissions that produce nothing."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Idle machine base load",
+      "to": "/answers/idle-machines-base-load-electricity"
+    },
+    {
+      "label": "Which intensity metric",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Emissions fell but intensity rose",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

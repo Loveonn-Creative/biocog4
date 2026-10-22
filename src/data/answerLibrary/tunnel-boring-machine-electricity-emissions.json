@@ -1,0 +1,51 @@
+{
+  "slug": "tunnel-boring-machine-electricity-emissions",
+  "q": "How are emissions from a tunnel boring machine counted?",
+  "title": "Tunnel boring machine: emissions",
+  "short": "A tunnel boring machine runs on electricity, often several megawatts, so its emissions are metered kWh times 0.710 kg CO2 per kWh. Add ventilation, muck conveyors and site gensets. Segment linings of concrete and steel are usually the larger Scope 3 share.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Metro, rail and road tunnel contractors",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Scope 2: TBM, ventilation, conveyors, site power.",
+        "Scope 1: gensets, loaders, trucks you run.",
+        "Scope 3: concrete segments, rebar, grout."
+      ]
+    },
+    {
+      "h": "Per metre",
+      "p": [
+        "Divide by metres bored for a figure you can compare across drives."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Ready-mix concrete per cubic metre",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Contractor genset or temporary grid",
+      "to": "/answers/contractor-site-genset-vs-temporary-grid-supply"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
