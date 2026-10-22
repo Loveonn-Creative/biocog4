@@ -339,6 +339,7 @@ interface ExtractedData {
   guidance?: ReturnType<typeof guideDocument>;
   /** Printed identity of the invoice (supplier, number, date), so a second copy is counted once. */
   invoiceKey?: string;
+  billKey?: string;
   confidence: number;
   validationFlags: string[];
   classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';

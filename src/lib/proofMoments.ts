@@ -34,7 +34,8 @@ export function firstVerified(emissions: ActionEmission[], docs: ActionDocument[
 export function sixMonths(emissions: ActionEmission[]): Moment | null {
   const months = new Set(emissions.filter((e) => e.scope === 2 && /electric/i.test(e.category)).map((e) => monthOf(dateOf(e))).filter(Boolean) as string[]);
   if (months.size < 6) return null;
-  const last = [...months].sort().at(-1)!;
+  const sortedMonths = [...months].sort();
+  const last = sortedMonths[sortedMonths.length - 1]!;
   const run = Array.from({ length: 6 }, (_, i) => addMonths(last, i - 5));
   return run.every((m) => months.has(m)) ? { id: 'six_months', months: run } : null;
 }
@@ -50,7 +51,7 @@ export function pfConfirmed(docs: ActionDocument[]): Moment | null {
     .filter((x): x is { pf: number; month: string } => !!x && !!x.month)
     .sort((a, b) => a.month.localeCompare(b.month));
   const low = pfs.find((p) => p.pf < 0.95);
-  const latest = pfs.at(-1);
+  const latest = pfs[pfs.length - 1];
   if (!low || !latest || latest.month <= low.month || latest.pf < 0.95 || latest.pf - low.pf < 0.03) return null;
   return { id: 'pf_confirmed', before: low.pf, after: latest.pf, month: latest.month };
 }
