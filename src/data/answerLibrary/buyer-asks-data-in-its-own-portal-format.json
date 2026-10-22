@@ -1,0 +1,48 @@
+{
+  "slug": "buyer-asks-data-in-its-own-portal-format",
+  "q": "Our buyer wants carbon data entered in its own supplier portal. How do we prepare?",
+  "title": "Entering carbon data in a buyer's portal",
+  "short": "Download the portal's questions first and map each one to a record you hold: electricity kWh, fuel by type, production, and any renewable share. Work the numbers out once from your bills, keep the workings, and copy them in. The same base figures then serve every buyer's portal.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers filling in buyer and CDP supply chain portals",
+  "sections": [
+    {
+      "h": "Usual fields",
+      "ul": [
+        "Scope 1 and Scope 2 in tonnes.",
+        "Energy use by type.",
+        "Revenue or units for intensity.",
+        "Targets and actions."
+      ]
+    },
+    {
+      "h": "Avoid",
+      "p": [
+        "Typing different figures into different portals. Buyers compare notes, and auditors check consistency."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Buyer asks for my Scope 3",
+      "to": "/answers/buyer-asks-for-my-scope-3"
+    },
+    {
+      "label": "Location and market-based Scope 2",
+      "to": "/answers/buyer-asks-location-and-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP Supply Chain programme",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

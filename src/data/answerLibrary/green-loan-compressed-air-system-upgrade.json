@@ -1,0 +1,67 @@
+{
+  "slug": "green-loan-compressed-air-system-upgrade",
+  "q": "What will a lender want to see for a compressed air upgrade loan?",
+  "title": "Compressed air upgrade loan: what to show",
+  "short": "Show 6 to 12 months of electricity bills and compressor run hours before the upgrade, the supplier quote with rated specific power, and a leak survey. After installation, show the same records again. The saving in kWh times the grid factor is the carbon benefit lenders can read.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factories replacing old compressors or fixing leaks with a loan",
+  "sections": [
+    {
+      "h": "Before the project",
+      "ul": [
+        "Monthly electricity bills.",
+        "Compressor run and load hours, or a sub-meter reading.",
+        "Leak survey or air audit report."
+      ]
+    },
+    {
+      "h": "After the project",
+      "ul": [
+        "Same bills and run hours for the same months.",
+        "Commissioning report for the new compressor or dryer."
+      ]
+    },
+    {
+      "h": "What lenders look for",
+      "p": [
+        "A measured baseline, a clear link between the asset and the saving, and figures that compare like with like after allowing for production changes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Before: 18,000 kWh a month on compressors",
+      "After: 13,500 kWh a month for the same output",
+      "Saving: 4,500 kWh x 0.710 kg = 3.2 t CO2 a month, about 38 t a year"
+    ],
+    "note": "Illustrative. Use your own sub-meter or bill figures."
+  },
+  "senseible": "Senseible measures your baseline from your own bills before the project and keeps measuring after it, so the saving you show a lender comes from documents, not a brochure. Lenders decide on the loan.",
+  "links": [
+    {
+      "label": "Compressed air leak cost",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

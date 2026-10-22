@@ -1,0 +1,51 @@
+{
+  "slug": "cuddalore-chemical-unit-buyer-carbon-data",
+  "q": "What carbon data should a chemical unit in Cuddalore send to an export buyer?",
+  "title": "Cuddalore chemical unit: buyer carbon data",
+  "short": "Send Scope 1 from boiler and heater fuel, Scope 2 from grid electricity at 0.710 kg CO2 per kWh, and a figure per kg of the product the buyer takes. State the boundary and the allocation method. If the buyer asks for cradle-to-gate, add raw material emissions and say which come from suppliers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical units in SIPCOT Cuddalore exporting to Europe and Japan",
+  "sections": [
+    {
+      "h": "Send",
+      "ul": [
+        "Scope 1 and 2 totals for the year.",
+        "Per-kg figure for the product, with allocation basis.",
+        "Raw material share, if cradle-to-gate."
+      ]
+    },
+    {
+      "h": "Keep",
+      "p": [
+        "Fuel bills, electricity bills, batch records and supplier figures, ready for a verifier."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Tarapur product footprint request",
+      "to": "/answers/tarapur-chemical-unit-product-footprint-request"
+    },
+    {
+      "label": "Jhagadia chemical plant steam",
+      "to": "/answers/jhagadia-chemical-plant-steam-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "kalaburagi-cement-plant-cbam-figure",
+  "q": "How does a cement plant in Kalaburagi work out its CBAM figure?",
+  "title": "Kalaburagi cement plant: CBAM figure",
+  "short": "Count CO2 from limestone calcination, worked from the clinker's lime and magnesia content, plus kiln and dryer fuel. For cement, CBAM also counts indirect emissions from electricity. Divide clinker figures by tonnes of clinker, then build each cement type from its clinker share and grinding power.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cement plants in the Kalaburagi limestone belt",
+  "sections": [
+    {
+      "h": "Direct",
+      "ul": [
+        "Calcination CO2 from clinker CaO and MgO.",
+        "Coal, pet coke or alternative fuel in the kiln.",
+        "Fuel for drying raw materials."
+      ]
+    },
+    {
+      "h": "Indirect",
+      "p": [
+        "Electricity for raw mill, kiln drives and cement mill. Captive power uses its own fuel; grid power uses the grid factor."
+      ]
+    },
+    {
+      "h": "Cement types",
+      "p": [
+        "OPC and blended cements differ by clinker share. Keep the recipe and mill power for each."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "OPC and PPC from one clinker",
+      "to": "/answers/cbam-opc-and-ppc-from-same-clinker-split"
+    },
+    {
+      "label": "Ariyalur cement fuel mix",
+      "to": "/answers/ariyalur-cement-plant-fuel-mix-co2"
+    },
+    {
+      "label": "Captive power and indirect CBAM",
+      "to": "/answers/cement-plant-captive-power-cbam-indirect-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

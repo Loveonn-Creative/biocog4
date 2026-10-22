@@ -1,0 +1,51 @@
+{
+  "slug": "cameroon-aluminium-smelter-cbam-figure",
+  "q": "What goes into the CBAM figure for aluminium from Cameroon?",
+  "title": "Cameroon aluminium: CBAM figure",
+  "short": "Direct emissions per tonne: CO2 from anode consumption and fuels, and perfluorocarbons from anode effects. Hydropower supply matters for buyers' footprints but is not charged for aluminium. Without the smelter's figures, an EU importer must use the default value, which is usually higher.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Aluminium smelters in Cameroon and their EU buyers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Net anode consumption per tonne.",
+        "Anode effect frequency and duration.",
+        "Fuel invoices for casting and anode baking."
+      ]
+    },
+    {
+      "h": "For importers",
+      "p": [
+        "Ask for installation details and the monitoring method along with the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Korba aluminium direct emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Richards Bay smelter PFCs",
+      "to": "/answers/richards-bay-smelter-pfc-emissions-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

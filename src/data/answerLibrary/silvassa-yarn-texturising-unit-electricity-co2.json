@@ -1,0 +1,59 @@
+{
+  "slug": "silvassa-yarn-texturising-unit-electricity-co2",
+  "q": "How does a yarn texturising unit in Silvassa work out carbon per kg?",
+  "title": "Silvassa texturising unit: carbon per kg",
+  "short": "Texturising runs on electricity for heaters, godets and winders. Take kWh from the bill, multiply by 0.710 kg CO2, and divide by kg of textured yarn. For a buyer's full figure, add the partially oriented yarn you buy, from the supplier or a database factor, labelled as such.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Polyester texturising and twisting units in Silvassa and Daman",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Electricity bill units.",
+        "DG diesel during outages.",
+        "Kg of yarn produced and POY consumed."
+      ]
+    },
+    {
+      "h": "Biggest lever",
+      "p": [
+        "POY usually carries far more than the texturising step. Ask the POY maker for its figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Electricity: 180,000 kWh x 0.710 kg = 127.8 t CO2",
+      "Yarn produced: 400,000 kg",
+      "About 0.32 kg CO2 per kg, before POY"
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Daman unit carbon data",
+      "to": "/answers/daman-plastic-moulding-unit-electricity-per-kg"
+    },
+    {
+      "label": "Yarn dyeing footprint per kg",
+      "to": "/answers/yarn-dyeing-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

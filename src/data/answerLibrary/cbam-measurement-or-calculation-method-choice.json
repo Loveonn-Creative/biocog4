@@ -1,0 +1,55 @@
+{
+  "slug": "cbam-measurement-or-calculation-method-choice",
+  "q": "Should a CBAM installation measure emissions with a stack monitor or calculate them from fuel?",
+  "title": "CBAM: measure or calculate emissions?",
+  "short": "Most small and mid-size plants calculate: fuel or material used times its emission factor, or a carbon mass balance. Continuous stack monitoring is allowed and suits large single stacks that already run one. Whichever you pick, write it down, apply it every period, and keep the readings that back it.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Operators of CBAM installations choosing a monitoring method",
+  "sections": [
+    {
+      "h": "Calculation",
+      "ul": [
+        "Standard method: activity data times emission factor times oxidation factor.",
+        "Mass balance: carbon in minus carbon out, used where carbon sits in products and slag.",
+        "Needs invoices, weighbridge or meter records and fuel analysis."
+      ]
+    },
+    {
+      "h": "Measurement",
+      "ul": [
+        "A continuous emissions monitor on the stack measures CO2 concentration and flue gas flow.",
+        "Needs calibration records and a back-up method for downtime.",
+        "Usually cross-checked against a calculation."
+      ]
+    },
+    {
+      "h": "How to choose",
+      "p": [
+        "Pick the method your records can support every month. A precise method with gaps is worse than a simpler one with complete data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Mass balance in a steel plant",
+      "to": "/answers/cbam-mass-balance-method-integrated-steel-plant"
+    },
+    {
+      "label": "Recarburiser in a mass balance",
+      "to": "/answers/recarburiser-carbon-in-cbam-mass-balance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

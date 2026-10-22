@@ -1,0 +1,63 @@
+{
+  "slug": "shivamogga-foundry-castings-carbon-data",
+  "q": "How does a foundry in Shivamogga work out carbon per tonne of castings?",
+  "title": "Shivamogga foundry: carbon per tonne",
+  "short": "Count coke in the cupola, or electricity for induction melting, plus fuel for ladle heating and heat treatment. Divide by tonnes of good castings, not liquid metal, because rejects and returns are melted again. Most machine-part castings sit outside CBAM today, but buyers still ask.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundries in Shivamogga and the Malnad engineering belt",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Foundry coke for cupolas.",
+        "Electricity for induction furnaces and sand plant.",
+        "Pig iron and scrap bought, for cradle-to-gate."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "Good castings per tonne melted decides the figure. Track it monthly from the melting log and dispatch register."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Induction melting: 650 kWh per tonne melted x 0.710 kg = 462 kg CO2",
+      "Yield: 0.70 t good castings per tonne melted",
+      "About 660 kg CO2 per tonne of good castings from melting"
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Cast iron castings and CBAM",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    },
+    {
+      "label": "Foundry footprint per good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Charge mix: pig iron vs scrap",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

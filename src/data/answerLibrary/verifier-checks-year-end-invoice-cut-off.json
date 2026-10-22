@@ -1,0 +1,55 @@
+{
+  "slug": "verifier-checks-year-end-invoice-cut-off",
+  "q": "Why does a GHG verifier check invoices around the year end?",
+  "title": "Year-end invoice cut-off in GHG audits",
+  "short": "Fuel and power used in March can be billed in April. The verifier checks that each bill is counted in the period the energy was used, not the period it was paid. Use meter reading dates and delivery dates, and adjust for bills that straddle the year end.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs facing a first GHG verification",
+  "sections": [
+    {
+      "h": "What they test",
+      "ul": [
+        "The last bills of the year and the first of the next.",
+        "Electricity bills whose reading period crosses the year end.",
+        "Fuel delivered before year end but invoiced after."
+      ]
+    },
+    {
+      "h": "How to handle it",
+      "p": [
+        "Split a straddling bill by days or by meter readings. Note the split so the verifier can recompute it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Splitting a bill",
+    "lines": [
+      "Bill period 15 March to 14 April: 31 days, 9,300 kWh",
+      "Days in March: 17, so 9,300 x 17 / 31 = 5,100 kWh in the year",
+      "5,100 kWh x 0.710 kg = 3,621 kg CO2"
+    ]
+  },
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    },
+    {
+      "label": "Purchase ledger checks",
+      "to": "/answers/verifier-checks-purchase-ledger-for-missing-fuel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

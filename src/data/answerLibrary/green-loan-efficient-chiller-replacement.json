@@ -1,0 +1,65 @@
+{
+  "slug": "green-loan-efficient-chiller-replacement",
+  "q": "What will a lender want for a chiller replacement loan?",
+  "title": "Chiller replacement loan: what to show",
+  "short": "Show the old chiller's power use per ton of refrigeration and its run hours, from a meter or audit. Give the quote for the new unit with its rated efficiency and refrigerant type. After installation, show measured kWh for the same cooling load. Both power and refrigerant leaks count.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Food, pharma and plastics units replacing chillers",
+  "sections": [
+    {
+      "h": "Before the project",
+      "ul": [
+        "Chiller kW per TR from an audit or sub-meter.",
+        "Run hours and refrigerant top-up invoices."
+      ]
+    },
+    {
+      "h": "After the project",
+      "ul": [
+        "Sub-meter readings for the new chiller.",
+        "Commissioning report and refrigerant charge."
+      ]
+    },
+    {
+      "h": "What lenders look for",
+      "p": [
+        "Like-for-like cooling load, and a lower-impact refrigerant noted, since leaks of high-GWP gases can outweigh power savings."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Old: 0.95 kW per TR, new: 0.65 kW per TR, 200 TR load, 6,000 hours a year",
+      "Saving: 0.30 x 200 x 6,000 = 360,000 kWh",
+      "360,000 kWh x 0.710 kg = 256 t CO2 a year"
+    ]
+  },
+  "senseible": "Senseible measures your baseline from your own bills before the project and keeps measuring after it, so the saving you show a lender comes from documents, not a brochure. Lenders decide on the loan.",
+  "links": [
+    {
+      "label": "Chiller efficiency in kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Choosing a low-GWP refrigerant",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

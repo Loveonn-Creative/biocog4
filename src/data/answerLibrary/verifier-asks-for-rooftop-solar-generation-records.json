@@ -1,0 +1,51 @@
+{
+  "slug": "verifier-asks-for-rooftop-solar-generation-records",
+  "q": "What solar records will a GHG verifier ask for?",
+  "title": "Rooftop solar records for a verifier",
+  "short": "Expect to show the inverter or generation meter log for the year, the net-metering bill showing import and export, and proof you own the system or the power purchase terms. Only solar you used yourself lowers grid electricity; units exported to the grid are not your consumption.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories with rooftop solar",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Monthly generation from the inverter or a separate meter.",
+        "Net-metering bills with import, export and net units.",
+        "Ownership papers or the solar power purchase agreement."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "p": [
+        "Inverter portals that lost history, and bills showing only net units. Export the log every month and keep it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Proof of renewable electricity",
+      "to": "/answers/buyer-asks-proof-of-renewable-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "buyer-asks-carbon-data-every-quarter",
+  "q": "Our buyer now wants carbon data every quarter. How do we keep up?",
+  "title": "Buyer wants carbon data every quarter",
+  "short": "Build the quarter from the same records you already keep: electricity bills, fuel invoices and production. Close each month as it ends, so the quarter is three months added up, not a scramble. Send the same fields in the same format every time, and flag any estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers to brands and OEMs moving to quarterly reporting",
+  "sections": [
+    {
+      "h": "Monthly routine",
+      "ol": [
+        "Collect the month's power and fuel bills.",
+        "Record production for the month.",
+        "Work out emissions and intensity per unit.",
+        "Note anything estimated and why."
+      ]
+    },
+    {
+      "h": "What buyers compare",
+      "p": [
+        "Quarter on quarter intensity. Explain swings from production mix or one-off events before they ask."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Emissions for the last three years",
+      "to": "/answers/buyer-asks-emissions-for-last-three-years"
+    },
+    {
+      "label": "Your share of a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

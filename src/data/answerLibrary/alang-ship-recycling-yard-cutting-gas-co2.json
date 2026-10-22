@@ -1,0 +1,59 @@
+{
+  "slug": "alang-ship-recycling-yard-cutting-gas-co2",
+  "q": "How does a ship recycling plot in Alang work out its emissions?",
+  "title": "Alang ship recycling plot: emissions",
+  "short": "Most direct emissions come from LPG burnt in cutting torches and diesel in winches, cranes and vehicles. Add electricity from the bill. Divide by tonnes of steel recovered, or by light displacement tonnes of the ship. Oxygen used with the torches is bought in, so its emissions sit in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ship recycling plots at Alang and Sosiya and their steel buyers",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "LPG cylinders or bulk LPG for cutting.",
+        "Diesel for winches, cranes and trucks.",
+        "Grid electricity and DG diesel."
+      ]
+    },
+    {
+      "h": "Who asks",
+      "p": [
+        "Re-rollers and steel buyers increasingly want a figure for the plate they buy. Keep tonnes recovered per ship."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "LPG: 18 t for one ship x 2.98 kg = 53.6 t CO2",
+      "Diesel: 25,000 L x 2.68 kg = 67.0 t CO2",
+      "Steel recovered: 9,000 t, so about 13 kg CO2 per tonne"
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Chattogram ship scrap rerolling",
+      "to": "/answers/chattogram-rerolled-steel-ship-scrap-cbam"
+    },
+    {
+      "label": "Sihor reheating furnace CO2",
+      "to": "/answers/sihor-rerolling-mill-reheating-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

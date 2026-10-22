@@ -1,0 +1,64 @@
+{
+  "slug": "cbam-steel-flanges-from-bought-billets",
+  "q": "How does a flange forging unit work out its CBAM figure?",
+  "title": "Steel flanges and forgings: CBAM figure",
+  "short": "Steel flanges and many forgings fall under CBAM iron and steel goods. Count fuel for heating and heat treatment, divided by tonnes of finished flanges, then add the embedded emissions of the billets or bars used, scaled by tonnes consumed per tonne shipped. Forging and machining losses push that second part up.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Flange and forging units exporting to the EU",
+  "sections": [
+    {
+      "h": "Your own part",
+      "p": [
+        "Furnace oil, PNG or LPG in the forging and heat-treatment furnaces. Electricity for presses and machining is recorded but not charged for steel."
+      ]
+    },
+    {
+      "h": "The billets",
+      "p": [
+        "Ask the steel mill for embedded emissions per tonne of billet or bar. If you buy from traders, ask them for the mill name and its figure."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "Track input tonnes per tonne of finished flange from your production register. Turnings sold as scrap still count as input used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Furnace oil: 38 L per tonne of flanges x 2.97 kg = 113 kg CO2",
+      "Billets used: 1.35 t per tonne of flanges x 2.1 t CO2 = 2.84 t CO2",
+      "Embedded emissions: about 2.95 t CO2 per tonne"
+    ],
+    "note": "Illustrative. Use the mill's declared figure and your own yield."
+  },
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Ludhiana forging CBAM figure",
+      "to": "/answers/ludhiana-forging-cbam-figure-steel-bar-share"
+    },
+    {
+      "label": "Several precursor suppliers",
+      "to": "/answers/cbam-precursor-bought-from-several-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

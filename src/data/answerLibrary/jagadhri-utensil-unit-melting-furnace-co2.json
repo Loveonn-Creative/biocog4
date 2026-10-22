@@ -1,0 +1,59 @@
+{
+  "slug": "jagadhri-utensil-unit-melting-furnace-co2",
+  "q": "How does a utensil maker in Jagadhri work out CO2 per kg?",
+  "title": "Jagadhri utensil unit: CO2 per kg",
+  "short": "Add fuel for melting and annealing furnaces and electricity for presses and polishing, divided by kg of utensils made. Oil or coal crucible furnaces usually emit more than induction melting. Most utensils are outside CBAM today, but export buyers still ask for a figure per kg.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Brass, aluminium and steel utensil units in Jagadhri and Yamunanagar",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Furnace oil, coal or LPG for melting and annealing.",
+        "Electricity for induction furnaces, presses and buffing.",
+        "Metal bought: scrap, ingots or sheets."
+      ]
+    },
+    {
+      "h": "Metal",
+      "p": [
+        "For cradle-to-gate, add the metal's own footprint. Recycled scrap carries far less than primary metal; keep purchase bills that show which you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Furnace oil: 1,200 L x 2.97 kg = 3.56 t CO2",
+      "Electricity: 8,000 kWh x 0.710 kg = 5.68 t CO2",
+      "Output: 20,000 kg, so about 0.46 kg CO2 per kg before metal"
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Brass melting: oil vs induction",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    },
+    {
+      "label": "Steel utensils footprint per kg",
+      "to": "/answers/stainless-steel-utensils-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

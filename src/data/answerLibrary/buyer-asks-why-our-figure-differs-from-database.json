@@ -1,0 +1,51 @@
+{
+  "slug": "buyer-asks-why-our-figure-differs-from-database",
+  "q": "Our buyer says our carbon figure is higher than the database value. What do we say?",
+  "title": "Our figure vs the database: explaining it",
+  "short": "Database values are averages for a region or technology, often older and with a different boundary. Your figure comes from your own bills. Show the boundary, factors and period behind yours, and point out which differences are real: fuel type, grid share, yield. A measured figure usually beats an average.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Suppliers whose measured figures differ from buyer databases",
+  "sections": [
+    {
+      "h": "Check first",
+      "ul": [
+        "Same unit and boundary?",
+        "Same grid factor and year?",
+        "Materials included in one but not the other?"
+      ]
+    },
+    {
+      "h": "Then explain",
+      "p": [
+        "If yours is higher for a real reason, such as diesel generator use, say what you plan to do about it. If it is a boundary mismatch, line them up."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Which factor database for India",
+      "to": "/answers/which-emission-factor-database-for-india"
+    },
+    {
+      "label": "Primary data share",
+      "to": "/answers/primary-data-share-meaning"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

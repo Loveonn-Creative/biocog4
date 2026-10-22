@@ -1,0 +1,65 @@
+{
+  "slug": "green-loan-solar-thermal-water-heating",
+  "q": "What does a lender ask for a solar water heating loan in a factory?",
+  "title": "Solar thermal loan: what lenders ask",
+  "short": "Show how much fuel or electricity now heats water or process fluid, the supplier design with expected yield, and where the collectors go. After commissioning, show the fall in fuel or power bills. The avoided fuel times its emission factor is the carbon benefit.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Dairies, textile units, hotels and food processors preheating water",
+  "sections": [
+    {
+      "h": "Before the project",
+      "ul": [
+        "Fuel invoices or electricity used for heating.",
+        "Hot water volume and temperature, if measured."
+      ]
+    },
+    {
+      "h": "After the project",
+      "ul": [
+        "Fuel or power bills for the same season.",
+        "Flow and temperature log from the solar loop, if fitted."
+      ]
+    },
+    {
+      "h": "What lenders look for",
+      "p": [
+        "A design yield from the supplier, checked later against your own bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "LPG for water heating: 900 kg a month",
+      "Solar preheat cuts this by 40%: 360 kg a month",
+      "Saving: 360 kg x 2.98 kg = 1.07 t CO2 a month"
+    ]
+  },
+  "senseible": "Senseible measures your baseline from your own bills before the project and keeps measuring after it, so the saving you show a lender comes from documents, not a brochure. Lenders decide on the loan.",
+  "links": [
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

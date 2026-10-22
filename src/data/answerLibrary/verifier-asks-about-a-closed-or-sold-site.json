@@ -1,0 +1,47 @@
+{
+  "slug": "verifier-asks-about-a-closed-or-sold-site",
+  "q": "How do I explain a closed or sold site to a GHG verifier?",
+  "title": "Verifier and a closed or sold site",
+  "short": "Show the date the site left your control and count its emissions only up to that date. If it was large enough to shift your total, recalculate the base year as if it had never been yours, as your base-year policy says. Keep the sale deed or closure notice and the last bills.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs whose boundary changed during the year",
+  "sections": [
+    {
+      "h": "Evidence",
+      "ul": [
+        "Sale agreement, lease surrender or closure notice with the date.",
+        "Last electricity bill and fuel invoices for the site.",
+        "Your written threshold for base-year recalculation."
+      ]
+    },
+    {
+      "h": "Explain the change",
+      "p": [
+        "Separate the drop from the sale or closure from real reductions. A verifier will not accept a sold site as a cut in emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Organisational boundary evidence",
+      "to": "/answers/verifier-asks-organisational-boundary-evidence"
+    },
+    {
+      "label": "Why emissions changed",
+      "to": "/answers/verifier-asks-why-emissions-changed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

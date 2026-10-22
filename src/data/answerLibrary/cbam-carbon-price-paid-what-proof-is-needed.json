@@ -1,0 +1,58 @@
+{
+  "slug": "cbam-carbon-price-paid-what-proof-is-needed",
+  "q": "What proof does an EU importer need to deduct a carbon price paid in the producer's country?",
+  "title": "CBAM carbon price deduction: the proof",
+  "short": "The importer can only reduce CBAM certificates for a carbon price effectively paid where the goods were made. That needs documents showing the price, the payment, and any rebate or free allocation that cut it, with the producer's information certified by an independent person. A tax with no proof gives no deduction.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Exporters in countries with a carbon tax or ETS, and their EU importers",
+  "sections": [
+    {
+      "h": "What to keep",
+      "ul": [
+        "The law that sets the carbon price and the rate that applied.",
+        "Proof of payment for the installation and period.",
+        "Free allowances, rebates or compensation received, which reduce the price counted.",
+        "Which goods and tonnes the payment covers."
+      ]
+    },
+    {
+      "h": "Who certifies",
+      "p": [
+        "The regulation asks for the information to be certified by a person independent of the producer and the importer. Plan it with your verifier visit so it is done once."
+      ]
+    },
+    {
+      "h": "What does not count",
+      "p": [
+        "General fuel duties or levies that are not a price on emissions are unlikely to qualify. Check each one against the rule before claiming it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Turkey carbon price deduction",
+      "to": "/answers/turkey-carbon-price-deduction-cbam-steel"
+    },
+    {
+      "label": "Does India's coal GST count?",
+      "to": "/answers/does-india-coal-gst-count-as-carbon-price-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

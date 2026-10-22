@@ -1,0 +1,48 @@
+{
+  "slug": "buyer-asks-carbon-figure-in-rfq",
+  "q": "A buyer's RFQ asks for a carbon figure per unit. What do we put?",
+  "title": "Carbon figure in a buyer's RFQ",
+  "short": "Give a cradle-to-gate figure per unit from your last 12 months of bills and production, with the boundary stated. If you have not measured it, give a clearly labelled estimate and the date you will have a measured figure. A number you cannot back up can cost you the contract later.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Suppliers bidding on RFQs with carbon questions",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Figure per unit and the unit used.",
+        "Boundary: own operations only, or including materials.",
+        "Period and data source.",
+        "Whether it is measured or estimated."
+      ]
+    },
+    {
+      "h": "If time is short",
+      "p": [
+        "Use your energy bills for Scope 1 and 2 per unit now, and add materials later. Say which parts are in."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Footprint of a new product",
+      "to": "/answers/buyer-asks-footprint-of-new-product"
+    },
+    {
+      "label": "Contractor carbon data for tenders",
+      "to": "/answers/contractor-carbon-data-for-tender-bids"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
