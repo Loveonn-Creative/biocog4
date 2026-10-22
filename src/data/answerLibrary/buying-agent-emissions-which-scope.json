@@ -1,0 +1,47 @@
+{
+  "slug": "buying-agent-emissions-which-scope",
+  "q": "We are a buying agent on commission. Do the goods we source count in our emissions?",
+  "title": "Buying agents and sourced goods",
+  "short": "Not as purchased goods. If you never buy or own the goods and earn a commission, they are your client's purchases, not yours. Your inventory covers your offices, travel to factories and courier of samples. Buyers may still ask you to collect supplier data on their behalf.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Buying houses and sourcing agents",
+  "sections": [
+    {
+      "h": "What you report",
+      "ul": [
+        "Office electricity and any generator fuel.",
+        "Travel to suppliers and fairs.",
+        "Samples and courier shipments you pay for."
+      ]
+    },
+    {
+      "h": "If you take title to goods",
+      "p": [
+        "If you buy and resell, you are a trader, and the goods are your Scope 3 Category 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Goods bought from a trader",
+      "to": "/answers/goods-bought-from-trader-scope-3"
+    },
+    {
+      "label": "Merchant exporter without a factory",
+      "to": "/answers/merchant-exporter-carbon-footprint-without-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

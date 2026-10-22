@@ -1,0 +1,47 @@
+{
+  "slug": "pneumatic-vs-electric-tools-energy-co2",
+  "q": "Are pneumatic tools higher carbon than electric tools?",
+  "title": "Pneumatic vs electric tools",
+  "short": "Generally yes. Compressed air is one of the least efficient ways to deliver energy: the compressor turns most of its electricity into heat, and leaks waste more. Battery or corded electric tools deliver far more of the energy to the work. Switch tools where torque and duty allow, and fix leaks first.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Assembly lines and workshops",
+  "sections": [
+    {
+      "h": "Where to start",
+      "ul": [
+        "Tools that run for long periods, such as grinders and sanders.",
+        "Air used for cleaning or blowing, which can often be replaced.",
+        "Leaks, which waste air whether tools run or not."
+      ]
+    },
+    {
+      "h": "Proving it",
+      "p": [
+        "Log compressor kWh before and after the change for the same production level."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Compressed air leaks",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

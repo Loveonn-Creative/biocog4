@@ -1,0 +1,47 @@
+{
+  "slug": "cpcb-red-category-vs-high-carbon-emitter",
+  "q": "Does a CPCB red category factory have high carbon emissions?",
+  "title": "CPCB red category and carbon",
+  "short": "Not necessarily. CPCB colour categories rank industries by pollution potential, such as air and water pollutants and hazardous waste, not by greenhouse gases. A red category unit may have modest CO2, and a green category unit with a big boiler or many kilns can emit more. Measure CO2 from your fuel and power bills.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSME owners and EHS teams",
+  "sections": [
+    {
+      "h": "What the colours mean",
+      "ul": [
+        "Red, orange, green and white come from a pollution index set by CPCB.",
+        "They decide consent conditions and inspection frequency.",
+        "They say nothing about your Scope 1 and 2 total."
+      ]
+    },
+    {
+      "h": "What buyers and lenders ask instead",
+      "p": [
+        "They ask for tonnes of CO2e from fuel and electricity, with the documents behind them, and sometimes for Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Carbon audit vs energy audit vs ESG audit",
+      "to": "/answers/carbon-audit-vs-energy-audit-vs-esg-audit"
+    },
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

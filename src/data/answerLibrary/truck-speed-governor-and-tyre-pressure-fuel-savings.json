@@ -1,0 +1,64 @@
+{
+  "slug": "truck-speed-governor-and-tyre-pressure-fuel-savings",
+  "q": "Do speed governors and tyre pressure checks cut truck fuel, and how do we prove it?",
+  "title": "Speed governors and tyre pressure",
+  "short": "Usually yes: lower top speeds and correctly inflated tyres reduce diesel burned per kilometre. Prove it with your own data. Compare litres per 100 km for the same trucks and routes, three months before and after, from fuel invoices and odometer or trip records. Emissions saved are litres saved times 2.68 kg CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fleet owners and transporters",
+  "sections": [
+    {
+      "h": "Set up the comparison",
+      "ul": [
+        "Same vehicles, similar loads and routes.",
+        "Fuel from invoices or fuel card statements, distance from trip sheets or FASTag.",
+        "Note anything else that changed, such as new tyres or a route change."
+      ]
+    },
+    {
+      "h": "Report the saving honestly",
+      "p": [
+        "Show litres per 100 km before and after, the months used and the trucks included. Do not claim a saving from one good month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Measure eco-driving savings",
+      "to": "/answers/how-to-measure-eco-driving-fuel-savings"
+    },
+    {
+      "label": "Truck diesel mileage by size",
+      "to": "/answers/indian-truck-diesel-mileage-by-size"
+    },
+    {
+      "label": "Truck freight factor",
+      "to": "/answers/truck-freight-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "Before: 32 litres per 100 km over 60,000 km = 19,200 litres.",
+      "After: 30 litres per 100 km over 60,000 km = 18,000 litres.",
+      "Saved 1,200 litres x 2.68 = 3,216 kg CO2."
+    ],
+    "note": "Illustrative figures. Use your own invoices and trip records."
+  }
+}

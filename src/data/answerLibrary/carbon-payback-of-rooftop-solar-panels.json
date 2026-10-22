@@ -1,0 +1,51 @@
+{
+  "slug": "carbon-payback-of-rooftop-solar-panels",
+  "q": "How long does rooftop solar take to pay back its own carbon?",
+  "title": "Carbon payback of rooftop solar",
+  "short": "Divide the embodied emissions of the system by the CO2 it avoids each year. Get embodied emissions per kW from the panel and inverter maker or an environmental product declaration. Avoided CO2 is yearly generation in kWh times 0.710. On the Indian grid, the carbon payback is usually much shorter than the financial one.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Factory owners considering rooftop solar",
+  "sections": [
+    {
+      "h": "What you need",
+      "ul": [
+        "System size in kW and expected yearly kWh.",
+        "Embodied kg CO2e per kW from the supplier.",
+        "The CEA grid factor for avoided emissions."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "p": [
+        "Count the panels in Scope 3 capital goods in the year you buy them, and the lower grid electricity in Scope 2 each year after."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Rooftop solar payback",
+      "to": "/answers/rooftop-solar-payback-for-a-factory"
+    },
+    {
+      "label": "Capital goods in the year bought",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

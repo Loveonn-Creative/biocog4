@@ -1,0 +1,47 @@
+{
+  "slug": "allocate-office-overheads-to-product-footprint",
+  "q": "Should office and canteen emissions be included in a product carbon footprint?",
+  "title": "Office overheads in a product footprint",
+  "short": "A product footprint usually covers the processes that make the product. Office lighting, canteens and staff travel are often left out as non-attributable under the GHG Protocol Product Standard, if you say so. In a company inventory they always count. Keep the two figures separate and state the boundary.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Manufacturers preparing product footprints for buyers",
+  "sections": [
+    {
+      "h": "Common practice",
+      "ul": [
+        "Include: process fuel, electricity, materials, packaging, inbound transport.",
+        "Often excluded: offices, canteens, R&D, business travel.",
+        "State every exclusion in the report."
+      ]
+    },
+    {
+      "h": "If the buyer wants everything",
+      "p": [
+        "Allocate site overheads by production share, such as tonnes or machine hours, and show it as a separate line."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Allocate by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

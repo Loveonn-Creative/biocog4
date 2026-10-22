@@ -1,0 +1,51 @@
+{
+  "slug": "open-burning-of-waste-on-factory-site",
+  "q": "Do we count emissions from burning waste in the open at our factory?",
+  "title": "Open burning of waste at a site",
+  "short": "Yes. Burning waste on your own site is Scope 1. Fossil carbon, such as plastics and rubber, gives CO2 that counts. Paper, wood and food give biogenic CO2, reported separately. Methane and nitrous oxide from the fire count either way. Indian waste rules prohibit open burning, so stopping it is the real fix.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factory managers and EHS teams",
+  "sections": [
+    {
+      "h": "How to estimate it",
+      "ul": [
+        "Weigh or estimate what was burned each month, by type.",
+        "Use the IPCC 2006 Volume 5 method for open burning to split fossil and biogenic carbon.",
+        "Record the estimate and how you made it."
+      ]
+    },
+    {
+      "h": "Better than counting it",
+      "p": [
+        "Send dry waste to an authorised recycler or co-processor and keep the manifests. The emissions then sit with the receiver, and your records show where the waste went."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record linked to its source document and marks estimates as estimates, so a verifier can see what was measured and what was assumed.",
+  "links": [
+    {
+      "label": "Food waste: landfill, compost or biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    },
+    {
+      "label": "Hazardous waste from manifests",
+      "to": "/answers/hazardous-waste-emissions-from-manifest-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

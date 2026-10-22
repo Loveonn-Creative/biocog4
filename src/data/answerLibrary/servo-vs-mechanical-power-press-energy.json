@@ -1,0 +1,47 @@
+{
+  "slug": "servo-vs-mechanical-power-press-energy",
+  "q": "Does a servo press use less electricity than a mechanical power press?",
+  "title": "Servo vs mechanical power press",
+  "short": "Usually yes. A mechanical press keeps a heavy flywheel spinning between strokes, so its motor draws power even when idle. A servo press draws power mainly during the stroke. The saving is largest where presses wait between parts. Meter kWh per thousand parts on both before deciding.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Sheet metal and auto component press shops",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "kWh per shift from a clamp meter or sub-meter.",
+        "Parts produced in the same shift.",
+        "Idle time between strokes."
+      ]
+    },
+    {
+      "h": "Beyond electricity",
+      "p": [
+        "Servo presses can cut scrap and die wear with better stroke control, which also lowers the material footprint per good part."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Servo vs hydraulic injection moulding",
+      "to": "/answers/servo-vs-hydraulic-injection-moulding-energy"
+    },
+    {
+      "label": "Idle machines and base load",
+      "to": "/answers/idle-machines-base-load-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

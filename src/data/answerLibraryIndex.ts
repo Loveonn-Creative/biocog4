@@ -67,6 +67,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "accidental-gas-release-scope-1-how-to-count",
+  "q": "How do we count an accidental gas or refrigerant release in Scope 1?",
+  "title": "Accidental gas releases in Scope 1",
+  "short": "Count it. Estimate the mass released and multiply by its global warming potential. A refrigerant burst counts at the gas GWP. A natural gas leak counts as methane at 29.8 times CO2. Unburned LPG is not one of the reported greenhouse gases, but record the incident and the fix.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "acetic-acid-production-co2-per-tonne",
   "q": "What are the emissions of producing acetic acid per tonne?",
   "title": "Acetic acid CO2 per tonne",
@@ -409,6 +417,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take your Scope 1 and 2 for the same period and multiply by the customer's share of your output, measured in tonnes, pieces or metres. Use machine hours when products take very different energy per unit, and revenue only when nothing physical works. If you can meter their product's line, allocate from that line.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "allocate-office-overheads-to-product-footprint",
+  "q": "Should office and canteen emissions be included in a product carbon footprint?",
+  "title": "Office overheads in a product footprint",
+  "short": "A product footprint usually covers the processes that make the product. Office lighting, canteens and staff travel are often left out as non-attributable under the GHG Protocol Product Standard, if you say so. In a company inventory they always count. Keep the two figures separate and state the boundary.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "allocate-plant-emissions-by-machine-hours",
@@ -1563,6 +1579,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "bee-star-labelled-equipment-saving-count",
+  "q": "Does buying BEE star labelled equipment cut our emissions, and how do we count it?",
+  "title": "BEE star labels and your emissions",
+  "short": "Yes, if it uses fewer kWh. BEE's Standards and Labelling programme rates appliances such as air conditioners and some motors by efficiency. The saving shows up as lower electricity in Scope 2. Count it from metered kWh before and after, not from the label alone, because use hours change.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "bee-star-rating-for-commercial-buildings",
   "q": "How does the BEE star rating for office buildings work?",
   "title": "BEE star rating for office buildings",
@@ -1779,12 +1803,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "bio-based-plastic-lower-carbon",
+  "q": "Is bio-based plastic lower carbon than fossil plastic?",
+  "title": "Is bio-based plastic lower carbon?",
+  "short": "Not automatically. Bio-based plastic takes its carbon from plants, but farming, fertiliser and processing add emissions, and the end of life matters. Burned, it releases biogenic CO2; sent to landfill, some types can make methane. Ask the supplier for a cradle-to-gate footprint per kg and compare like for like.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "biochar-carbon-credits-india",
   "q": "Can I earn carbon removal credits from biochar in India, and under which methodology?",
   "title": "Biochar carbon credits in India",
   "short": "Yes. Indian producers can register biochar projects in the voluntary market, for example under Verra's VM0044 methodology for biochar used in soil and non-soil applications. Credits depend on waste biomass feedstock, controlled pyrolysis, lab-tested carbon stability and proof of where the biochar ended up. Expect validation and verification costs before any credit is issued.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "biodegradable-packaging-carbon-footprint",
+  "q": "Is biodegradable packaging better for the climate?",
+  "title": "Is biodegradable packaging lower carbon?",
+  "short": "Not always. Biodegradable material that breaks down in a landfill without air can release methane, a stronger greenhouse gas than CO2. The climate result depends on the material footprint and on where the pack actually ends up. Compare cradle-to-grave figures for the realistic disposal route, not the label.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "biodiesel-blend-fleet-scope-1",
@@ -1897,6 +1937,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Sub-meter the blast freezer, multiply its kWh by 0.710 kg CO2 per kWh, and divide by tonnes frozen. Add refrigerant top-ups from service records as Scope 1. Product entry temperature and loading pattern change the energy per tonne, so record both.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "blast-furnace-gas-and-coke-oven-gas-emission-factors",
+  "q": "What emission factors apply to blast furnace gas and coke oven gas?",
+  "title": "Blast furnace and coke oven gas factors",
+  "short": "The IPCC 2006 defaults are about 260 t CO2 per TJ for blast furnace gas and 44.4 t per TJ for coke oven gas. Blast furnace gas is mostly CO and CO2, so it is very carbon-heavy per unit of energy. Use the supplier measured composition when it is available.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "bleaching-powder-carbon-footprint-per-tonne",
@@ -2427,6 +2475,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "business-travel-policy-to-cut-emissions",
+  "q": "What business travel rules actually cut emissions?",
+  "title": "Travel rules that cut emissions",
+  "short": "The biggest levers are fewer flights, not greener ones. Rules that work: video calls for internal meetings, train for trips under about six hours, economy class, and combining visits into one trip. Track flights and hotel nights from travel agent invoices so you can see whether the rules changed anything.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "butibori-steel-re-roller-coal-gasifier-co2",
   "q": "A Butibori re-rolling mill reheats billets with a coal gasifier. How is the CO2 counted?",
   "title": "Butibori re-roller coal gasifier CO2",
@@ -2675,6 +2731,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "buying-agent-emissions-which-scope",
+  "q": "We are a buying agent on commission. Do the goods we source count in our emissions?",
+  "title": "Buying agents and sourced goods",
+  "short": "Not as purchased goods. If you never buy or own the goods and earn a commission, they are your client's purchases, not yours. Your inventory covers your offices, travel to factories and courier of samples. Buyers may still ask you to collect supplier data on their behalf.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "buying-power-from-a-neighbouring-factory",
   "q": "We buy electricity from a neighbouring factory's generator. What factor do we use?",
   "title": "Power bought from a neighbour's plant",
@@ -2761,6 +2825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Direct emissions per tonne: CO2 from anode consumption and fuels, and perfluorocarbons from anode effects. Hydropower supply matters for buyers' footprints but is not charged for aluminium. Without the smelter's figures, an EU importer must use the default value, which is usually higher.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "campus-electric-buggies-and-pickups-which-scope",
+  "q": "Which scope do campus buggies and pickup vehicles fall in?",
+  "title": "Campus buggies and pickups",
+  "short": "Electric buggies charged on your site are Scope 2, already inside your electricity bill. Diesel or petrol pickups, tractors and buggies you own or lease and operate are Scope 1 from the fuel they burn. Vehicles a contractor owns and fuels are Scope 3.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "can-a-company-buy-ccts-credits-voluntarily",
@@ -2883,6 +2955,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "can-i-call-my-factory-coal-free",
+  "q": "Can we call our factory coal-free, and what proves it?",
+  "title": "Calling a factory coal-free",
+  "short": "Only if no coal or coal-derived fuel is burned on site, and you say what the claim covers. Grid electricity in India is still largely coal-fired, so coal-free on site is not coal-free power. Keep twelve months of fuel invoices showing no coal, pet coke or lignite, and word the claim exactly.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "can-i-claim-recycled-gold-is-low-carbon",
   "q": "Can I tell buyers my jewellery is low carbon because it uses recycled gold?",
   "title": "Recycled gold: can you say low carbon?",
@@ -2937,6 +3017,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "An Indian company cannot itself be an authorised CBAM declarant, because the status is only granted to persons established in an EU Member State. If you sell DDP and act as importer, an indirect customs representative in the EU must take the CBAM declarant role for you, or you import through an EU entity of your own.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "can-our-chartered-accountant-prepare-the-ghg-inventory",
+  "q": "Can our chartered accountant prepare our carbon inventory?",
+  "title": "Can our CA prepare the inventory?",
+  "short": "Yes, if they learn the method. No Indian rule says who must prepare a company carbon inventory. A CA is good at tracing figures to invoices, which is most of the work. They need the GHG Protocol rules on scopes and factors. The same person should not also verify it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "can-senseible-calculate-freight-emissions",
@@ -3171,12 +3259,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "carbon-inventory-change-log-for-verifier",
+  "q": "Why should we keep a change log for our carbon inventory?",
+  "title": "A change log for your inventory",
+  "short": "Because figures change: a late bill arrives, a factor is updated, a duplicate is found. A change log records what changed, why, who changed it, the date and the effect in tonnes. Verifiers use it to follow the trail, and it stops two versions of your number reaching buyers.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "carbon-negative-claim-when-is-it-allowed",
+  "q": "When can a company say it is carbon negative?",
+  "title": "When is carbon negative allowed?",
+  "short": "Rarely, and only with evidence. You would need verified removals larger than all your emissions, including material Scope 3, reported separately rather than netted inside the inventory. Avoided emissions and purchased avoidance credits do not count. Indian greenwashing guidelines expect claims like this to be backed by credible, verifiable evidence.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "carbon-neutral-event-claim-india",
   "q": "Can we call our conference or event carbon neutral in India?",
   "title": "Carbon neutral event claims in India",
   "short": "Yes, if you can back it up. Measure the event's full footprint including attendee travel, cut what you can, offset the rest with retired credits of known quality, and publish the boundary, total, reductions and credit details. India's 2024 CCPA guidelines require environmental claims to be specific, evidenced and verifiable.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "carbon-payback-of-rooftop-solar-panels",
+  "q": "How long does rooftop solar take to pay back its own carbon?",
+  "title": "Carbon payback of rooftop solar",
+  "short": "Divide the embodied emissions of the system by the CO2 it avoids each year. Get embodied emissions per kW from the panel and inverter maker or an environmental product declaration. Avoided CO2 is yearly generation in kWh times 0.710. On the Indian grid, the carbon payback is usually much shorter than the financial one.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "carbon-per-invoice-line-for-quotes",
@@ -3217,6 +3329,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply tonnes of carbon by 44/12, which is 3.667, to get tonnes of CO2. The 44 and 12 are the molecular weight of CO2 and the atomic weight of carbon. To go back, multiply tonnes of CO2 by 12/44, or 0.273. First confirm the supplier really meant carbon.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "carburising-furnace-endo-gas-scope-1",
+  "q": "Does the endothermic gas in a carburising furnace count in Scope 1?",
+  "title": "Carburising endo gas in Scope 1",
+  "short": "Yes. Endothermic gas is made by partly burning natural gas or LPG, and it is burned off at the furnace doors. Almost all its carbon ends up as CO2 at your site. Count the gas fed to the generator and the furnace with the fuel factor, as Scope 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "cardamom-drying-fuel-emissions-per-kg",
@@ -4499,6 +4619,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "co2-refrigerant-r744-leaks-scope-1",
+  "q": "Do leaks from CO2 refrigeration systems count in Scope 1?",
+  "title": "Leaks from CO2 (R744) systems",
+  "short": "Yes, but they are tiny. CO2 as a refrigerant, called R744, has a global warming potential of 1, so a 10 kg leak is 10 kg CO2e. The same leak of a common HFC would count hundreds or thousands of times more. Record top-ups like any refrigerant.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "co2-sold-to-other-industries-cbam-deduction",
   "q": "Can a Jubail plant subtract CO2 it captures and sells to food or chemical makers from its CBAM figure?",
   "title": "Captured CO2 sold on: CBAM treatment",
@@ -4835,6 +4963,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "company-fixed-deposits-and-mutual-funds-scope-3",
+  "q": "Do our company's bank deposits and mutual funds count in Scope 3?",
+  "title": "Company deposits and funds in Scope 3",
+  "short": "They fall under Category 15, investments, which the GHG Protocol frames mainly around equity, debt and project finance. For most manufacturers these holdings are small next to fuel, power and purchased goods. Note them as excluded with a reason, or estimate fund emissions from the fund house disclosures if a buyer asks.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "company-guest-house-emissions-which-scope",
   "q": "Our company runs a guest house for visiting staff. Which scope do its emissions go in?",
   "title": "Company guest house emissions",
@@ -4921,6 +5057,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A diesel rubber-tyred gantry crane burns diesel at 2.68 kg CO2 per litre. An electrified one uses grid power at 0.710 kg CO2 per kWh. Compare litres per box moved before with kWh per box after. The saving is the difference times boxes handled.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "continuous-vs-batch-heat-treatment-furnace-co2",
+  "q": "Is a continuous heat treatment furnace lower carbon than a batch furnace?",
+  "title": "Continuous vs batch heat treatment",
+  "short": "At steady, high volumes, usually yes. A continuous furnace stays hot and avoids reheating the furnace and fixtures for every batch. At low or irregular volumes a batch furnace can win, because a continuous line burns fuel while waiting. Compare fuel or kWh per tonne treated from your own logs.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "contractor-carbon-data-for-tender-bids",
@@ -5201,6 +5345,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "For most desk members it is Scope 3. You buy a service and the operator controls the building, its meters and its power, so that electricity is the operator's Scope 2. Report your share in Category 8, upstream leased assets, using an allocation by seats or floor area, and label it estimated.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "cpcb-red-category-vs-high-carbon-emitter",
+  "q": "Does a CPCB red category factory have high carbon emissions?",
+  "title": "CPCB red category and carbon",
+  "short": "Not necessarily. CPCB colour categories rank industries by pollution potential, such as air and water pollutants and hazardous waste, not by greenhouse gases. A red category unit may have modest CO2, and a green category unit with a big boiler or many kilns can emit more. Measure CO2 from your fuel and power bills.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "cradle-to-gate-or-cradle-to-grave",
@@ -5547,6 +5699,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "degree-days-to-normalise-cooling-energy",
+  "q": "How do we adjust air conditioning energy for a hotter year?",
+  "title": "Weather-normalising cooling energy",
+  "short": "Use cooling degree days. They add up how far each day's temperature was above a base, often 18 to 24 C. Plot monthly cooling kWh against degree days for a past year. The fitted line shows what a normal year would use, so a hot summer does not hide a real saving.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "dehydrated-onion-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of dehydrated onion or garlic flakes per kg?",
   "title": "Dehydrated onion footprint per kg",
@@ -5787,6 +5947,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "discom-fuel-mix-instead-of-cea-grid-factor",
+  "q": "Can we use our discom's own fuel mix instead of the CEA grid factor?",
+  "title": "Discom fuel mix vs CEA grid factor",
+  "short": "For the location-based figure, no: use the grid average, which in India is the CEA factor. For the market-based figure, a supplier-specific rate can be used if it meets the GHG Protocol Scope 2 quality criteria, such as covering your exact supply and not being double counted. Few Indian discoms publish one.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "disposable-syringe-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a disposable syringe?",
   "title": "Disposable syringe carbon footprint per piece",
@@ -5801,6 +5969,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the materials in one unit, CRGO core steel, copper or aluminium windings, tank steel, oil and insulation, multiply each by a named factor, and add your factory's energy allocated per unit. That gives the cradle to gate figure. Report lifetime no-load and load losses separately; over 25 years they often outweigh manufacturing.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "district-cooling-chilled-water-scope-2",
+  "q": "Is chilled water bought from a district cooling plant Scope 2?",
+  "title": "District cooling and Scope 2",
+  "short": "Yes. Purchased cooling is Scope 2, like purchased electricity and steam. Ask the provider for the emissions per unit of cooling, usually per TR-hour or kWh of cooling, based on their electricity and fuel. Without it, estimate from their chiller efficiency and the grid factor, and label it an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "division-sold-mid-year-carbon-inventory",
@@ -5923,6 +6099,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "does-a-partnership-firm-need-carbon-reporting",
+  "q": "Does a partnership or proprietorship firm have to report its carbon emissions?",
+  "title": "Carbon reporting for partnership firms",
+  "short": "No law requires it today. BRSR reporting applies to the top 1,000 listed companies by market value. Most small firms report because a buyer, lender or exporter asks. The exception is a plant in a sector notified under India's carbon credit trading scheme, which goes by sector and energy use, not company form.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "does-adblue-def-emit-co2",
   "q": "Does AdBlue or DEF used in BS-VI trucks add to CO2 emissions?",
   "title": "Does AdBlue (DEF) add to CO2?",
@@ -5961,6 +6145,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No, not for the share that leaves the EU. CBAM applies to goods released for free circulation, and goods under inward processing are not released while they stay in the procedure. If the steel or aluminium, or products made from it, are later released into the EU market, CBAM applies to the input quantity behind that release.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "does-cbam-cost-depend-on-invoice-value",
+  "q": "Does the CBAM cost depend on the invoice value of my goods?",
+  "title": "CBAM cost and invoice value",
+  "short": "No. CBAM is charged on embedded emissions, not on price. The importer buys certificates for the tonnes of CO2e embedded in the goods, so the cost follows mass and the emissions per tonne. A cheap and an expensive product with the same embedded emissions carry the same CBAM cost.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "does-cbam-count-electricity-emissions-steel",
@@ -7091,6 +7283,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "etp-fine-bubble-diffuser-aeration-energy",
+  "q": "Do fine bubble diffusers cut ETP aeration electricity?",
+  "title": "Fine bubble aeration in an ETP",
+  "short": "Usually yes. Aeration blowers are often the largest electricity user in an effluent plant. Fine bubble diffusers transfer more oxygen per kWh than coarse bubble systems or surface aerators. Add dissolved oxygen control so blowers slow down when demand drops, and compare blower kWh per kL treated before and after.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "etp-sludge-and-wastewater-scope-3-textiles",
   "q": "How do textile dyeing units count wastewater and ETP sludge sent to a common effluent treatment plant in Scope 3?",
   "title": "CETP wastewater and sludge in Scope 3",
@@ -7651,6 +7851,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "falling-grid-factor-and-reduction-targets",
+  "q": "Should we count on a cleaner grid to meet our reduction target?",
+  "title": "A cleaner grid and your targets",
+  "short": "You can expect it, but report it honestly. India plans a much larger share of non-fossil power, so the CEA grid factor should fall over time. Your Scope 2 will drop even if you do nothing. Show how much of each year's fall came from the grid factor and how much from your own actions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "faridabad-forging-unit-furnace-oil-to-png",
   "q": "Does switching a Faridabad forging unit's furnace from oil to PNG cut its CO2?",
   "title": "Faridabad forging furnace oil to PNG",
@@ -7801,6 +8009,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, when the refill replaces gas that was released. The kilograms refilled after a discharge or leak are a Scope 1 fugitive emission. CO2 extinguishers count kg for kg. HFC agents such as HFC-227ea (FM-200) count at their GWP and can be material. Dry powder, water, foam and FK-5-1-12 add nothing material.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "fire-pump-diesel-testing-scope-1",
+  "q": "Does diesel burned testing our fire pump count in Scope 1?",
+  "title": "Fire pump diesel testing",
+  "short": "Yes. Diesel fire pumps are run for weekly or monthly tests, and the fuel they burn is Scope 1 at 2.68 kg CO2 per litre. The amounts are small, but verifiers often ask for it. Record top-ups in a log and keep the fuel invoices or issue slips.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "firewood-by-quintal-emissions",
@@ -8179,6 +8395,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "free-cooling-for-process-chillers-energy-saving",
+  "q": "Can free cooling cut chiller electricity in a factory?",
+  "title": "Free cooling for process chillers",
+  "short": "Yes, when outside air or cooling tower water is colder than the return water you need. In cooler months or at night, a free cooling heat exchanger can carry part or all of the load with only pumps and fans running. Measure chiller kWh before and after over the same season.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "free-grid-emission-factors-by-country",
   "q": "Are IEA emission factors free, and what can I use instead for grid electricity by country?",
   "title": "Free grid emission factors by country",
@@ -8385,6 +8609,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually yes. The CBAM monitoring rules treat nickel pig iron with more than 10% nickel under the ferro-nickel route, so its embedded emissions flow into the stainless figure. With rotary kiln and electric furnace routes, that share can be large, so ask the NPI plant for its data.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "full-truckload-vs-part-load-emissions-per-tonne",
+  "q": "Is a full truckload lower carbon per tonne than a part load?",
+  "title": "Full truckload vs part load",
+  "short": "Per tonne, yes. A truck burns only a little more diesel when full, so emissions per tonne-km fall as the load rises. A half-empty truck can double the emissions per tonne. Consolidating shipments, or asking your transporter to load-share, is often the cheapest freight cut you can make.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "fume-hood-energy-use-lab-emissions",
@@ -9451,6 +9683,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "heat-pump-dryer-vs-lpg-dryer-emissions",
+  "q": "Is a heat pump dryer lower carbon than an LPG dryer?",
+  "title": "Heat pump dryer vs LPG dryer",
+  "short": "Often, because a heat pump moves heat rather than making it, and it recovers moisture-laden heat that an LPG dryer vents. On the Indian grid the answer depends on how much heat it delivers per kWh. Compare kg CO2 per kg of water removed: LPG at 2.98 kg CO2 per kg, electricity at 0.710 per kWh.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "heat-pump-for-process-heat-india",
   "q": "Can an industrial heat pump replace my boiler for process heat below 90 C, and how much CO2 does it save on India's grid?",
   "title": "Heat pump vs boiler for process heat in India",
@@ -9513,6 +9753,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The Higg FEM energy and GHG section asks for a full year of energy use by source: purchased electricity, on-site renewables, and every fuel for boilers, generators and vehicles, with the documents behind each. The module turns this into emissions, then asks about baselines, targets and reduction actions at higher levels.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "high-bay-led-retrofit-co2-saving-proof",
+  "q": "How do we prove the CO2 saving from replacing high-bay lights with LEDs?",
+  "title": "High-bay LED retrofit saving",
+  "short": "Count fittings and wattage before and after, multiply by operating hours to get kWh, then use 0.710 kg CO2 per kWh. Back it with the purchase invoice, a photo log, and electricity bills or a sub-meter reading for the lighting circuit. Lenders and verifiers trust measured kWh over nameplate maths.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "high-carbon-vs-low-carbon-ferrochrome-cbam",
@@ -10315,6 +10563,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "hvo-renewable-diesel-scope-1-reporting",
+  "q": "How do we report HVO renewable diesel in Scope 1?",
+  "title": "Reporting HVO renewable diesel",
+  "short": "HVO is made from vegetable oils or waste fats, so the CO2 from burning it is biogenic: report it separately, outside the scope totals. Methane and nitrous oxide from combustion still count in Scope 1. Its production and transport emissions go in Scope 3 Category 3. Keep the supplier certificate showing the feedstock.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "hyderabad-pharma-api-unit-boiler-co2",
   "q": "How does a Hyderabad pharma API unit count CO2 from boilers and solvent incineration?",
   "title": "Hyderabad API unit boiler and solvent CO2",
@@ -10353,6 +10609,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Burning hydrogen emits no CO2, so a blend lowers Scope 1, but by less than the blend percentage suggests. Hydrogen carries about a third of methane's energy per cubic metre, so a few percent by volume replaces a smaller share of energy. Ask the supplier for blend share and calorific value.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "hydrogen-cylinders-for-heat-treatment-which-scope",
+  "q": "Do hydrogen cylinders used in a heat treatment furnace count in Scope 1?",
+  "title": "Bought hydrogen in heat treatment",
+  "short": "Using hydrogen gives no CO2 at your site, so there is nothing for Scope 1 from the hydrogen itself. The emissions are upstream, where it was made, usually from natural gas. Count those in Scope 3 Category 1 using the supplier figure or a factor per kg of hydrogen.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "hydrogen-fuel-cell-bus-emissions-per-km",
@@ -11137,6 +11401,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. ISO 14067 sets out how to calculate and report a product carbon footprint; it does not require third-party verification. Buyers, labels or programmes may require it. When they do, an independent verification body checks the footprint against ISO 14064-3, ideally one accredited to ISO 14065.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "is-local-sourcing-always-lower-carbon",
+  "q": "Is buying from a local supplier always lower carbon?",
+  "title": "Is local sourcing always lower carbon?",
+  "short": "No. Transport is often a small part of a material footprint; how it is made usually matters more. Steel from an electric arc furnace far away can beat local steel from a coal-based route. Compare cradle-to-gate footprints plus transport for each option, using supplier data where you can get it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "is-moroccan-triple-superphosphate-covered-by-cbam",
@@ -12131,6 +12403,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "kvarh-reactive-energy-on-bill-emissions",
+  "q": "Does the kVArh reactive energy on my electricity bill count in emissions?",
+  "title": "kVArh reactive energy and emissions",
+  "short": "No. Emissions use active energy in kWh. Reactive energy in kVArh is not consumed from the grid in the same way and is not multiplied by the grid factor. It matters for your power factor and any penalty. If your tariff charges for apparent energy, still take the kWh line for emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "lab-grown-diamond-carbon-footprint-per-carat",
   "q": "How do I calculate the carbon footprint of a lab-grown diamond per carat?",
   "title": "Lab-grown diamond footprint per carat",
@@ -13033,6 +13313,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Count fossil fuel and electricity for chipping, refining fibre, drying and pressing, plus the resin, usually urea formaldehyde, in Scope 3. Wood residue burned for heat gives biogenic CO2, reported separately, but its methane and nitrous oxide count.",
   "topic": "product",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "measure-carbon-saving-from-material-substitution",
+  "q": "How do we measure the carbon saving from switching a material in our product?",
+  "title": "Saving from a material switch",
+  "short": "Compare the product footprint before and after, for the same function, such as one part that does the same job. Include the material, changes in process energy and scrap, and transport. A lighter or recycled material only helps if the whole product footprint falls, so show the full comparison.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "measure-emission-cut-from-route-optimisation",
@@ -14155,6 +14443,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "one-page-climate-policy-for-msme",
+  "q": "What should a one-page climate policy for an MSME say?",
+  "title": "A one-page climate policy",
+  "short": "Keep it short and specific. Say what you measure (Scope 1 and 2 from bills, Scope 3 where buyers ask), your reduction goal with a year, the actions you are taking, who owns it, and how often you report. Buyers and lenders trust a short policy backed by numbers over a long statement.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "open-access-deviation-units-scope-2",
   "q": "Our green open access bill shows deviation units. How do they count in Scope 2?",
   "title": "Open access deviation units",
@@ -14185,6 +14481,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use units drawn at your factory. Location-based Scope 2 is everything your meter recorded, times the grid factor. The renewable claim in market-based Scope 2 covers only the units delivered to you after transmission and wheeling losses, as shown in the energy account. The units lost on the way are not your Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "open-burning-of-waste-on-factory-site",
+  "q": "Do we count emissions from burning waste in the open at our factory?",
+  "title": "Open burning of waste at a site",
+  "short": "Yes. Burning waste on your own site is Scope 1. Fossil carbon, such as plastics and rubber, gives CO2 that counts. Paper, wood and food give biogenic CO2, reported separately. Methane and nitrous oxide from the fire count either way. Indian waste rules prohibit open burning, so stopping it is the real fix.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "opencast-coal-mine-methane-and-diesel",
@@ -14337,6 +14641,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the tonnes of each packaging material you put on the market, split them by how they are disposed of in the country of sale, and multiply each share by a factor for that route. Report it in Scope 3 Category 12. EPR data gives you tonnes placed on the market, not actual disposal routes.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "packaging-lightweighting-co2-saving-proof",
+  "q": "How do we prove the CO2 saving from lighter packaging?",
+  "title": "Proving lighter packaging savings",
+  "short": "Multiply the kilograms of packaging saved by the material emission factor, and add the freight saved on the lighter load. Prove it with purchase invoices showing kg bought per thousand units before and after, and the new specification sheet. Check that damage and returns did not rise.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "pact-pathfinder-framework-explained",
@@ -15067,6 +15379,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "pneumatic-vs-electric-tools-energy-co2",
+  "q": "Are pneumatic tools higher carbon than electric tools?",
+  "title": "Pneumatic vs electric tools",
+  "short": "Generally yes. Compressed air is one of the least efficient ways to deliver energy: the compressor turns most of its electricity into heat, and leaks waste more. Battery or corded electric tools deliver far more of the energy to the work. Switch tools where torque and duty allow, and fix leaks first.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "png-bill-mmbtu-to-co2",
   "q": "How do I convert an industrial PNG bill in SCM or MMBtu to CO2?",
   "title": "PNG bill in MMBtu or SCM to CO2",
@@ -15273,6 +15593,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work it out from your own line: add a month's oven and pretreatment fuel (LPG kg x 2.98 or PNG scm x 2.05) and the line's kWh x 0.710, then divide by square metres coated. Add the powder's own footprint per square metre for a product figure. Oven loading drives the result.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "powder-coating-vs-liquid-paint-carbon",
+  "q": "Is powder coating lower carbon than liquid paint?",
+  "title": "Powder coating vs liquid paint",
+  "short": "Often, but it depends on the curing oven. Powder needs no solvent, and overspray can be reused. Its oven runs hotter than many liquid paint ovens, so fuel per square metre can be higher. Compare oven fuel and electricity per square metre, plus coating material, for your own line.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "powder-metallurgy-sintered-part-carbon-footprint",
@@ -15785,6 +16113,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add two parts. Process CO2 is 0.785 t per tonne of CaO in the product, so about 0.706 t for quicklime at 90 percent CaO. Fuel CO2 is the coal, petcoke or gas burnt per tonne of quicklime times its factor. A coal-fired kiln using 0.2 t of coal per tonne lands near 1.19 t CO2 per tonne.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "r-and-d-pilot-plant-emissions-in-inventory",
+  "q": "Do we include our R&D pilot plant in our carbon inventory?",
+  "title": "R&D pilot plant in the inventory",
+  "short": "Yes, if it sits inside your boundary and you control it. Pilot plants, test rigs and labs use fuel and electricity like any unit. Being non-commercial is not a reason to leave them out. You can show them as a separate line so buyers see production emissions on their own.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "radiator-carbon-footprint-per-unit",
@@ -17083,6 +17419,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "second-shift-effect-on-co2-per-unit",
+  "q": "Will running a second shift lower our CO2 per unit?",
+  "title": "Second shift and CO2 per unit",
+  "short": "Often yes, per unit, because fixed loads such as lighting, compressors on standby, furnace holding and offices are spread over more output. Total emissions still rise with production. Report both: absolute tonnes and tonnes per unit, so a buyer does not mistake growth for a worse plant.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "secondary-lead-smelter-co2-per-tonne",
   "q": "What is the carbon footprint of recycled lead from a secondary lead smelter per tonne?",
   "title": "CO2 per tonne of recycled lead",
@@ -17225,6 +17569,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh. Savings are biggest on long cycles with long cooling or holding times.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "servo-vs-mechanical-power-press-energy",
+  "q": "Does a servo press use less electricity than a mechanical power press?",
+  "title": "Servo vs mechanical power press",
+  "short": "Usually yes. A mechanical press keeps a heavy flywheel spinning between strokes, so its motor draws power even when idle. A servo press draws power mainly during the stroke. The saving is largest where presses wait between parts. Meter kWh per thousand parts on both before deciding.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "sewage-treatment-plant-electricity-per-kl",
@@ -17425,6 +17777,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Shot blasting uses electricity for the blast wheels, dust collector and, in air blasting, a large compressor. Multiply the machine's kWh by 0.710 kg CO2 and divide by tonnes cleaned. Worn shot is bought steel, in Scope 3.",
   "topic": "product",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "should-carbon-estimates-be-conservative",
+  "q": "Should we round our carbon estimates up to be safe?",
+  "title": "Should carbon estimates be conservative?",
+  "short": "Not for an inventory. The GHG Protocol asks for accuracy: no systematic overstatement or understatement. Use the best estimate and state the uncertainty. Conservativeness is a principle for carbon credit projects under ISO 14064-2, where overclaiming reductions is the risk. Never inflate a baseline to show a bigger cut later.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "should-flight-emissions-include-radiative-forcing",
@@ -17915,6 +18275,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "solar-cold-room-for-farm-produce-emissions",
+  "q": "Does a solar powered cold room really cut emissions?",
+  "title": "Solar cold rooms for farm produce",
+  "short": "Yes, against a grid or diesel powered cold room, because the cooling electricity comes from the panels. Two things still count: refrigerant leaks, which are Scope 1 at the gas GWP, and backup power. The embodied emissions of panels and batteries go in Scope 3 capital goods in the year bought.",
+  "topic": "product",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "solar-concentrator-process-heat-msme",
   "q": "Can solar concentrators replace boiler fuel for process heat in an Indian factory?",
   "title": "Solar concentrators for factory process heat",
@@ -18281,6 +18649,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "They are purchased goods, so they belong in Scope 3 Category 1. Use quantities and materials from the invoice where you have them, such as pieces of cotton or polyester uniform and pairs of safety shoes, and a spend-based estimate for the rest. They are usually a small line.",
   "topic": "accounting",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "staff-working-at-client-site-which-scope",
+  "q": "Our engineers work at client sites. Whose emissions are those?",
+  "title": "Staff working at client sites",
+  "short": "The electricity and fuel used at the client site belong to the client's inventory, because the client controls the site. You report your staff travel to the site as commuting or business travel in Scope 3, and anything you own that runs there, such as your vehicles or generators.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "staffing-agency-contract-workers-scope",
@@ -18673,6 +19049,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. Scope 3 is built to overlap with other companies' Scope 1 and 2, and the GHG Protocol accepts that overlap between inventories. Double counting is a problem when you count the same emissions twice inside your own inventory, when two parties claim the same reduction or offset, or when company inventories are added together.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "supplier-switched-to-green-power-mid-year",
+  "q": "Our supplier moved to renewable power mid-year. How do we update our Scope 3?",
+  "title": "Supplier went green mid-year",
+  "short": "Use their figure month by month: old emissions for the months before the switch, new ones after, weighted by what you bought in each period. Ask the supplier for evidence that the renewable claim is backed by certificates or a supply contract and is not also claimed by someone else.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "supplier-with-many-buyers-share-data-once",
@@ -19459,6 +19843,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "truck-speed-governor-and-tyre-pressure-fuel-savings",
+  "q": "Do speed governors and tyre pressure checks cut truck fuel, and how do we prove it?",
+  "title": "Speed governors and tyre pressure",
+  "short": "Usually yes: lower top speeds and correctly inflated tyres reduce diesel burned per kilometre. Prove it with your own data. Compare litres per 100 km for the same trucks and routes, three months before and after, from fuel invoices and odometer or trip records. Emissions saved are litres saved times 2.68 kg CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "try-senseible-without-an-account",
   "q": "Can I try Senseible on a bill without signing up, and what happens to the file?",
   "title": "Try Senseible without an account",
@@ -19625,6 +20017,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A tyre's cradle to gate footprint is its raw materials (natural and synthetic rubber, carbon black, steel cord, textile, chemicals) plus the plant energy to mix, build and cure it, per tyre and per kg. Over the full life, fuel spent against rolling resistance is the largest part. For an EU buyer, follow ISO 14067.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "tyre-derived-fuel-biogenic-share",
+  "q": "Is all the CO2 from burning tyre-derived fuel fossil?",
+  "title": "Tyre-derived fuel and biogenic carbon",
+  "short": "No. Tyres contain natural rubber, which is biogenic, along with synthetic rubber and carbon black, which are fossil. Only the fossil share counts as Scope 1 CO2; the biogenic share is reported separately. Ask the supplier or a lab for the fossil carbon fraction rather than assuming one.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "tyre-retreading-carbon-footprint-per-tyre",

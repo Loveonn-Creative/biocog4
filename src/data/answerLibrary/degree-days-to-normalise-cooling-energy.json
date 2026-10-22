@@ -1,0 +1,51 @@
+{
+  "slug": "degree-days-to-normalise-cooling-energy",
+  "q": "How do we adjust air conditioning energy for a hotter year?",
+  "title": "Weather-normalising cooling energy",
+  "short": "Use cooling degree days. They add up how far each day's temperature was above a base, often 18 to 24 C. Plot monthly cooling kWh against degree days for a past year. The fitted line shows what a normal year would use, so a hot summer does not hide a real saving.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Offices, hotels, hospitals and cold stores",
+  "sections": [
+    {
+      "h": "Steps",
+      "ul": [
+        "Separate cooling kWh by sub-meter, or estimate it from summer and winter bills.",
+        "Get monthly degree days for the nearest weather station.",
+        "Fit kWh against degree days and report actual and normalised figures."
+      ]
+    },
+    {
+      "h": "What to report",
+      "p": [
+        "Report actual emissions in the inventory. Use the normalised figure only to explain performance, and label it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Why did my emissions go up?",
+      "to": "/answers/why-did-my-emissions-go-up-this-year"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

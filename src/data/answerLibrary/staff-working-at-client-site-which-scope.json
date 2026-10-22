@@ -1,0 +1,51 @@
+{
+  "slug": "staff-working-at-client-site-which-scope",
+  "q": "Our engineers work at client sites. Whose emissions are those?",
+  "title": "Staff working at client sites",
+  "short": "The electricity and fuel used at the client site belong to the client's inventory, because the client controls the site. You report your staff travel to the site as commuting or business travel in Scope 3, and anything you own that runs there, such as your vehicles or generators.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "IT services, maintenance and project companies",
+  "sections": [
+    {
+      "h": "What stays with you",
+      "ul": [
+        "Travel to and between client sites.",
+        "Hotels on long assignments.",
+        "Your own equipment and vehicles used at the site."
+      ]
+    },
+    {
+      "h": "What stays with the client",
+      "p": [
+        "Their electricity, cooling and building fuel, even if your people use it. Do not add it to your Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "Coworking space emissions",
+      "to": "/answers/coworking-space-emissions-scope-2-or-category-8"
+    },
+    {
+      "label": "Employee commute estimate",
+      "to": "/answers/employee-commute-msme-scope-3-estimate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

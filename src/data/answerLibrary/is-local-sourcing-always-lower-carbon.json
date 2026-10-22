@@ -1,0 +1,51 @@
+{
+  "slug": "is-local-sourcing-always-lower-carbon",
+  "q": "Is buying from a local supplier always lower carbon?",
+  "title": "Is local sourcing always lower carbon?",
+  "short": "No. Transport is often a small part of a material footprint; how it is made usually matters more. Steel from an electric arc furnace far away can beat local steel from a coal-based route. Compare cradle-to-gate footprints plus transport for each option, using supplier data where you can get it.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Procurement teams",
+  "sections": [
+    {
+      "h": "How to compare",
+      "ul": [
+        "Supplier footprint per tonne, cradle to gate.",
+        "Transport mode and distance to your gate.",
+        "Packaging and losses in transit."
+      ]
+    },
+    {
+      "h": "When local wins",
+      "p": [
+        "For heavy, low value materials moved by road, such as sand, aggregate and bricks, transport can dominate, and local is usually lower."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Air vs sea freight",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "Emissions of our raw materials",
+      "to": "/answers/buyer-asks-emissions-of-our-raw-materials"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

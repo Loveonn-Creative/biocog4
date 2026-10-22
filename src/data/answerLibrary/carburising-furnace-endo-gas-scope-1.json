@@ -1,0 +1,47 @@
+{
+  "slug": "carburising-furnace-endo-gas-scope-1",
+  "q": "Does the endothermic gas in a carburising furnace count in Scope 1?",
+  "title": "Carburising endo gas in Scope 1",
+  "short": "Yes. Endothermic gas is made by partly burning natural gas or LPG, and it is burned off at the furnace doors. Almost all its carbon ends up as CO2 at your site. Count the gas fed to the generator and the furnace with the fuel factor, as Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Heat treaters and gear makers",
+  "sections": [
+    {
+      "h": "What to meter",
+      "ul": [
+        "Natural gas or LPG to the endo generator.",
+        "Fuel to burners and door flames.",
+        "Any enriching gas or methanol added."
+      ]
+    },
+    {
+      "h": "Nitriding is different",
+      "p": [
+        "Gas nitriding with ammonia gives no CO2. If you nitrocarburise with a carbon-bearing gas, count that gas."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Induction vs furnace hardening",
+      "to": "/answers/induction-hardening-vs-furnace-hardening-co2"
+    },
+    {
+      "label": "Continuous vs batch furnace",
+      "to": "/answers/continuous-vs-batch-heat-treatment-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

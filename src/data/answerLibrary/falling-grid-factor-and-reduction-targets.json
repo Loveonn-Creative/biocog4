@@ -1,0 +1,51 @@
+{
+  "slug": "falling-grid-factor-and-reduction-targets",
+  "q": "Should we count on a cleaner grid to meet our reduction target?",
+  "title": "A cleaner grid and your targets",
+  "short": "You can expect it, but report it honestly. India plans a much larger share of non-fossil power, so the CEA grid factor should fall over time. Your Scope 2 will drop even if you do nothing. Show how much of each year's fall came from the grid factor and how much from your own actions.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies setting and tracking targets",
+  "sections": [
+    {
+      "h": "How to report progress",
+      "ul": [
+        "Emissions at this year's factor.",
+        "Emissions at the base year factor, to isolate your own action.",
+        "The difference, labelled as the grid effect."
+      ]
+    },
+    {
+      "h": "When setting the target",
+      "p": [
+        "Do not plan on the grid alone. Buyers and lenders look for efficiency, fuel switching and renewable power you control."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Recalculate when the grid factor changes",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "India NDC targets for business",
+      "to": "/answers/india-ndc-targets-for-business"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "UNFCCC",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

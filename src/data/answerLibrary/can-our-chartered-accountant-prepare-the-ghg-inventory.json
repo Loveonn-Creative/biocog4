@@ -1,0 +1,53 @@
+{
+  "slug": "can-our-chartered-accountant-prepare-the-ghg-inventory",
+  "q": "Can our chartered accountant prepare our carbon inventory?",
+  "title": "Can our CA prepare the inventory?",
+  "short": "Yes, if they learn the method. No Indian rule says who must prepare a company carbon inventory. A CA is good at tracing figures to invoices, which is most of the work. They need the GHG Protocol rules on scopes and factors. The same person should not also verify it.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners and finance teams",
+  "sections": [
+    {
+      "h": "What a CA brings",
+      "ul": [
+        "Ledgers and invoice trails they already know.",
+        "Discipline on cut-off dates and duplicates.",
+        "Sign-off habits that verifiers like."
+      ]
+    },
+    {
+      "h": "What they need to learn",
+      "ul": [
+        "Scope 1, 2 and 3 boundaries.",
+        "Activity data in litres, kWh and kg, not only rupees.",
+        "Which emission factors to use and why."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Who should sign off carbon figures",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Who cannot verify",
+      "to": "/answers/verifier-independence-who-cannot-verify"
+    },
+    {
+      "label": "Excel or software",
+      "to": "/answers/excel-or-carbon-accounting-software"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

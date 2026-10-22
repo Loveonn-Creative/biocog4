@@ -1,0 +1,47 @@
+{
+  "slug": "district-cooling-chilled-water-scope-2",
+  "q": "Is chilled water bought from a district cooling plant Scope 2?",
+  "title": "District cooling and Scope 2",
+  "short": "Yes. Purchased cooling is Scope 2, like purchased electricity and steam. Ask the provider for the emissions per unit of cooling, usually per TR-hour or kWh of cooling, based on their electricity and fuel. Without it, estimate from their chiller efficiency and the grid factor, and label it an estimate.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Offices, IT parks and campuses on district cooling",
+  "sections": [
+    {
+      "h": "What to ask the provider",
+      "ul": [
+        "Cooling delivered to you per month, from the meter.",
+        "Their plant electricity and fuel per unit of cooling.",
+        "Refrigerant top-ups, which they report in their own Scope 1."
+      ]
+    },
+    {
+      "h": "If you get only a bill in rupees",
+      "p": [
+        "Ask for the metered TR-hours. A rupee-based estimate is weak evidence and verifiers will ask for the meter data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    },
+    {
+      "label": "Chiller plant per TR-hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

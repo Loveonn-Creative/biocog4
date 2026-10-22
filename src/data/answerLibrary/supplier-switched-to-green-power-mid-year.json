@@ -1,0 +1,47 @@
+{
+  "slug": "supplier-switched-to-green-power-mid-year",
+  "q": "Our supplier moved to renewable power mid-year. How do we update our Scope 3?",
+  "title": "Supplier went green mid-year",
+  "short": "Use their figure month by month: old emissions for the months before the switch, new ones after, weighted by what you bought in each period. Ask the supplier for evidence that the renewable claim is backed by certificates or a supply contract and is not also claimed by someone else.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Procurement and sustainability teams",
+  "sections": [
+    {
+      "h": "What to ask the supplier",
+      "ul": [
+        "The switch date and the share of power now renewable.",
+        "Their market-based emissions per unit before and after.",
+        "Certificates or contracts behind the claim."
+      ]
+    },
+    {
+      "h": "How to show it",
+      "p": [
+        "Report the change as a supplier action in your Scope 3 notes, so readers see why the figure moved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Location and market-based Scope 2",
+      "to": "/answers/buyer-asks-location-and-market-based-scope-2"
+    },
+    {
+      "label": "Residual mix factor",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

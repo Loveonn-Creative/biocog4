@@ -1,0 +1,51 @@
+{
+  "slug": "bio-based-plastic-lower-carbon",
+  "q": "Is bio-based plastic lower carbon than fossil plastic?",
+  "title": "Is bio-based plastic lower carbon?",
+  "short": "Not automatically. Bio-based plastic takes its carbon from plants, but farming, fertiliser and processing add emissions, and the end of life matters. Burned, it releases biogenic CO2; sent to landfill, some types can make methane. Ask the supplier for a cradle-to-gate footprint per kg and compare like for like.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Packaging buyers and brand owners",
+  "sections": [
+    {
+      "h": "Questions to ask",
+      "ul": [
+        "Cradle-to-gate kg CO2e per kg, with the method.",
+        "Feedstock and where it is grown.",
+        "How the product is disposed of in your market."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "p": [
+        "Count purchased bio-based plastic in Scope 3 Category 1 using the supplier figure, and do not claim stored biogenic carbon as a removal."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Thermocol vs moulded pulp",
+      "to": "/answers/eps-thermocol-vs-moulded-pulp-packaging-carbon"
+    },
+    {
+      "label": "Packaging end of life",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
