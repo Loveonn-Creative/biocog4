@@ -165,7 +165,8 @@
     
     --primary: 152 50% 45%;
     --strip-accent: 152 45% 24%;
-    --primary-foreground: 0 0% 100%;
+    /* Near-black on the bright dark-mode green: 7:1. White read at 2.9:1 and failed WCAG AA on every button. */
+    --primary-foreground: 150 30% 6%;
     
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 95%;
@@ -777,6 +778,7 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .fd-ledger { display: flex; gap: 6px; justify-content: flex-end; align-items: center; margin-top: 6px; flex-wrap: wrap; }
 .fd-saved { font: 600 11px 'JetBrains Mono', ui-monospace, monospace; color: #15803d; margin-right: auto; }
 .fd-saved b { font-size: 13px; }
+.dark .fd-saved { color: #4ade80; }
 .fd-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid hsl(var(--border)); background: hsl(var(--background)); border-radius: 999px; padding: 3px 9px 3px 6px; font: 600 11px 'JetBrains Mono', ui-monospace, monospace; color: hsl(var(--muted-foreground)); cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
 .fd-chip svg { width: 18px; height: 12px; }
 .fd-chip:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
@@ -807,3 +809,17 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @keyframes lead-slide { 0% { left: 3%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: 96%; opacity: 0; } }
 .lead-slide { left: 96%; animation: lead-slide 3.4s cubic-bezier(.45,.05,.35,1) infinite; }
 @media (prefers-reduced-motion: reduce) { .lead-wobble, .lead-slide { animation: none; } .lead-slide { opacity: 0; } }
+
+/* Stone canvas pilot (owner, 23 October 2026), light mode only: #F5F3EF page,
+   white cards on top. Pure white glares on bright phone screens and gives cards
+   nothing to sit on; stone keeps data colours true and lifts white cards 1.11:1.
+   Grey text is darkened to #6B6B6B so it stays above WCAG AA (4.8:1) on stone.
+   Fields stay white so they read as places to type. */
+html:not(.dark) .canvas-stone {
+  --background: 40 23% 95%;
+  --muted-foreground: 0 0% 42%;
+  --input: 40 10% 84%;
+}
+html:not(.dark) .canvas-stone :is(input, textarea, button[role="combobox"]) { background-color: hsl(var(--card)); }
+/* Green labels on their pale green chips read at 2.9:1; this shade reads at 5.3:1. Icons and fills keep --success. */
+html:not(.dark) .canvas-stone .text-success { color: hsl(152 60% 28%); }
