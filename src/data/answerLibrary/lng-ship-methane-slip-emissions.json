@@ -1,0 +1,55 @@
+{
+  "slug": "lng-ship-methane-slip-emissions",
+  "q": "Do LNG-fuelled ships emit methane, and who reports it?",
+  "title": "LNG ships: methane slip",
+  "short": "Yes. Some LNG engines let a little unburned methane escape, called methane slip. Methane traps far more heat than CO2 (fossil methane GWP 29.8 under AR6), so slip can erase part of LNG's CO2 advantage. The ship operator reports it in Scope 1; shippers count it in Category 4.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Exporters, freight buyers and shipping lines",
+  "sections": [
+    {
+      "h": "What to ask a carrier",
+      "ul": [
+        "Whether their figures include methane slip, not just CO2.",
+        "Engine type, since slip differs by design.",
+        "Whether figures are tank to wake or well to wake."
+      ]
+    },
+    {
+      "h": "For your report",
+      "p": [
+        "Use carrier figures that state their scope, or a recognised framework such as GLEC, and say which."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Ship bunker fuel CO2",
+      "to": "/answers/ship-bunker-fuel-heavy-fuel-oil-co2-per-tonne"
+    },
+    {
+      "label": "LNG invoice CO2",
+      "to": "/answers/lng-invoice-co2-per-kg"
+    },
+    {
+      "label": "Electric or LNG trucks",
+      "to": "/answers/electric-or-lng-truck-vs-diesel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "dried-fish-processing-emissions-per-kg",
+  "q": "What are the emissions from processing dried fish?",
+  "title": "Dried fish processing emissions",
+  "short": "Sun drying on racks uses almost no energy, so emissions come from ice, salt, transport and packing. Mechanical or solar-assisted dryers add fuel or electricity. Work per kg of dried product: fresh fish loses most of its weight, so divide energy by output, not by fish landed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fish processors and exporters",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Ice bought or made (electricity).",
+        "Dryer fuel or electricity, if used.",
+        "Salt, packaging and transport."
+      ]
+    },
+    {
+      "h": "Per kg of dried fish",
+      "p": [
+        "Divide total energy emissions by kg of dried product sold. Catch emissions come from the vessel's fuel; ask suppliers or use a database figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Fish processing ice plant",
+      "to": "/answers/veraval-fish-processing-ice-plant-electricity"
+    },
+    {
+      "label": "Fishing vessel fuel",
+      "to": "/answers/fishing-vessel-fuel-emissions-per-tonne-catch"
+    },
+    {
+      "label": "Solar dryer agro processing",
+      "to": "/answers/solar-dryer-agro-processing-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "spark-plug-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of a spark plug, and is it covered by CBAM?",
+  "title": "Spark plug: footprint and CBAM",
+  "short": "A spark plug has a steel shell, a fired alumina ceramic insulator, a nickel alloy electrode and sometimes a precious metal tip. The ceramic firing and the metals carry most of the footprint. Spark plugs fall under CN 8511, which is not on the CBAM list.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Auto component makers and exporters",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Steel shell, nickel alloy and any iridium or platinum tip.",
+        "Alumina powder and the kiln fuel to fire insulators.",
+        "Machining, plating and assembly electricity."
+      ]
+    },
+    {
+      "h": "For EU buyers",
+      "p": [
+        "No CBAM declaration is needed for CN 8511 goods, but car makers still ask for a product footprint."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Auto components and CBAM",
+      "to": "/answers/are-auto-components-covered-by-cbam"
+    },
+    {
+      "label": "Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

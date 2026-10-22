@@ -1,0 +1,62 @@
+{
+  "slug": "voltage-optimiser-servo-stabiliser-savings",
+  "q": "Do voltage optimisers or servo stabilisers really cut electricity and emissions?",
+  "title": "Voltage optimisers: real savings?",
+  "short": "Only for loads that use less power at lower voltage, such as some lighting and resistive heaters. Motors on drives, LED drivers and electronics often save little. A stabiliser also has its own losses. Measure kWh with the unit bypassed and in service before counting any saving.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Factory and building managers",
+  "sections": [
+    {
+      "h": "Loads that may respond",
+      "ul": [
+        "Older lighting and resistive heating.",
+        "Lightly loaded motors without drives, sometimes."
+      ]
+    },
+    {
+      "h": "Loads that usually do not",
+      "ul": [
+        "Motors on variable speed drives.",
+        "LED drivers and electronics with regulated supplies.",
+        "Heaters on thermostats, which simply run longer."
+      ]
+    },
+    {
+      "h": "How to test",
+      "p": [
+        "Alternate weeks with the unit in service and bypassed at similar production, and compare kWh per unit made. Count only a measured saving, multiplied by 0.710."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Transformer losses",
+      "to": "/answers/transformer-losses-in-scope-2"
+    },
+    {
+      "label": "LED retrofit savings",
+      "to": "/answers/led-retrofit-energy-co2-savings"
+    },
+    {
+      "label": "IE2 to IE4 motors",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

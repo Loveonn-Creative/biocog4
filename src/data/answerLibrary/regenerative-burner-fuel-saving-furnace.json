@@ -1,0 +1,62 @@
+{
+  "slug": "regenerative-burner-fuel-saving-furnace",
+  "q": "Do regenerative burners cut furnace fuel and emissions?",
+  "title": "Regenerative burners: fuel saving",
+  "short": "Yes, often substantially. Regenerative burners work in pairs: one fires while the other stores heat from the exhaust in a ceramic bed, then they swap, so combustion air arrives very hot. Less fuel heats the same steel. Prove the saving with fuel per tonne before and after.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Reheating furnace, forging and aluminium melting operators",
+  "sections": [
+    {
+      "h": "How it differs from a recuperator",
+      "ul": [
+        "A recuperator passes exhaust heat through a metal heat exchanger, limited by the metal temperature.",
+        "A regenerative pair stores heat in ceramic media, so the air can be preheated much hotter."
+      ]
+    },
+    {
+      "h": "What to check before buying",
+      "ul": [
+        "Higher flame temperatures can raise NOx; ask about low-NOx designs.",
+        "Dusty or corrosive exhaust can foul the ceramic bed.",
+        "Controls must handle the switching cycle."
+      ]
+    },
+    {
+      "h": "Proving the saving",
+      "p": [
+        "Compare fuel per tonne heated over a few months before and after, at similar throughput. Multiply the fuel saved by its factor, for example 2.05 kg CO2 per scm of natural gas."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Recuperator air preheat",
+      "to": "/answers/recuperator-combustion-air-preheat-fuel-saving"
+    },
+    {
+      "label": "Reheating furnace insulation",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    },
+    {
+      "label": "PNG reheating furnace",
+      "to": "/answers/bhiwadi-rolling-mill-png-reheating-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

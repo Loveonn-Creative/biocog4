@@ -1,0 +1,51 @@
+{
+  "slug": "solar-lantern-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of a solar lantern?",
+  "title": "Solar lantern footprint",
+  "short": "Add the small solar panel, the battery (lithium-ion or lead-acid), the LED board, the plastic body and packaging. Batteries and the panel usually carry the most. If you claim it replaces a kerosene lamp, report that avoided figure separately from the lantern's own footprint.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Solar lighting makers and distributors",
+  "sections": [
+    {
+      "h": "What to weigh",
+      "ul": [
+        "Solar cell area or panel watt rating.",
+        "Battery chemistry and capacity.",
+        "Plastic body, LEDs and circuit board."
+      ]
+    },
+    {
+      "h": "Avoided emissions",
+      "p": [
+        "Avoided kerosene use is not a reduction in your inventory. Show it as a separate claim with its assumptions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Solar panel embodied carbon",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    },
+    {
+      "label": "Power bank footprint",
+      "to": "/answers/power-bank-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Lead acid battery footprint",
+      "to": "/answers/lead-acid-battery-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

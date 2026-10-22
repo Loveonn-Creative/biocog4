@@ -1,0 +1,57 @@
+{
+  "slug": "captured-co2-how-to-report-ghg-inventory",
+  "q": "If my plant captures CO2, can I subtract it from Scope 1?",
+  "title": "Captured CO2 in your inventory",
+  "short": "Report gross Scope 1 first. Show CO2 captured and permanently stored, or sold on, as a separate line with its destination. CO2 sold for drinks or chemicals is released later, so it is not a removal. Never net it out silently; buyers and verifiers will ask.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plants with CO2 recovery or capture units",
+  "sections": [
+    {
+      "h": "What to disclose",
+      "ul": [
+        "Gross Scope 1 before capture.",
+        "Tonnes captured, and where they went: storage, sale or use.",
+        "Energy used by the capture unit, in Scope 1 or 2."
+      ]
+    },
+    {
+      "h": "Common traps",
+      "ul": [
+        "Calling CO2 sold to a bottler a removal.",
+        "Counting capture without measured flows.",
+        "Leaving out the capture unit's own fuel and power."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Blue ammonia captured CO2",
+      "to": "/answers/uae-blue-ammonia-captured-co2-cbam"
+    },
+    {
+      "label": "Sodium bicarbonate CO2 balance",
+      "to": "/answers/sodium-bicarbonate-production-co2-balance"
+    },
+    {
+      "label": "Durable vs nature-based removals",
+      "to": "/answers/durable-removals-vs-nature-based-for-net-zero"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

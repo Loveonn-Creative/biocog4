@@ -1,0 +1,52 @@
+{
+  "slug": "co2-welding-shielding-gas-scope-1",
+  "q": "Does CO2 used as welding shielding gas count in Scope 1?",
+  "title": "CO2 welding gas in Scope 1",
+  "short": "Yes. CO2 released at your site from cylinders or bulk tanks is a direct emission, so it is Scope 1 at its mass, usually small next to fuel and power. For mixed gases count only the CO2 share. Argon is not a greenhouse gas. Welder electricity is Scope 2.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Fabricators and engineering workshops",
+  "sections": [
+    {
+      "h": "How to count it",
+      "ol": [
+        "Add up kg of CO2 bought from cylinder or bulk invoices.",
+        "Adjust for stock at the start and end of the year.",
+        "For mixtures, multiply by the CO2 percentage on the label."
+      ]
+    },
+    {
+      "h": "Common questions",
+      "ul": [
+        "If it is small, you can say so and include it anyway; leaving it out needs a stated reason.",
+        "Making the gas is the supplier's emission, reported in your Scope 3 if you choose to include it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Fire extinguisher refill",
+      "to": "/answers/fire-extinguisher-refill-scope-1"
+    },
+    {
+      "label": "Industrial gases in Scope 3",
+      "to": "/answers/industrial-gases-oxygen-nitrogen-scope-3"
+    },
+    {
+      "label": "Structural steel per tonne",
+      "to": "/answers/fabricated-structural-steel-carbon-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "packaged-coconut-water-carbon-footprint",
+  "q": "What is the carbon footprint of packaged coconut water?",
+  "title": "Packaged coconut water footprint",
+  "short": "Packaging and transport often matter most. Count the nuts as bought, then cutting and filling, pasteurisation or cold processing energy, the carton, PET or can, chilling and delivery. Husk and shell waste can be a fuel or a cost; record where it goes.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Coconut water processors and beverage brands",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Tender coconuts bought and their transport.",
+        "Processing electricity and any boiler fuel.",
+        "Packaging by type and weight.",
+        "Cold storage and distribution."
+      ]
+    },
+    {
+      "h": "Shells and husk",
+      "p": [
+        "If sold as fuel or coir, they leave your boundary. If dumped, include waste handling."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Desiccated coconut",
+      "to": "/answers/desiccated-coconut-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Coconut oil expeller",
+      "to": "/answers/coconut-oil-expeller-co2-per-litre"
+    },
+    {
+      "label": "Soft drink per litre",
+      "to": "/answers/soft-drink-carbon-footprint-per-litre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

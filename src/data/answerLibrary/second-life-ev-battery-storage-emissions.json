@@ -1,0 +1,56 @@
+{
+  "slug": "second-life-ev-battery-storage-emissions",
+  "q": "How do I count emissions for a storage system built from second-life EV batteries?",
+  "title": "Second-life EV battery storage",
+  "short": "Reusing EV batteries avoids making new cells, the biggest part of a battery's footprint. Decide how to split the original manufacturing emissions between first and second life, state the rule, and add testing, repacking and transport. The storage itself only shifts electricity use.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Energy storage integrators and commercial users",
+  "sections": [
+    {
+      "h": "Common allocation choices",
+      "ul": [
+        "All manufacturing emissions to the first life, so second life carries only repurposing.",
+        "A split by remaining capacity or years of service."
+      ]
+    },
+    {
+      "h": "What to add",
+      "ul": [
+        "Testing, sorting and new battery management electronics.",
+        "Transport and enclosure.",
+        "Round-trip losses while operating (Scope 2)."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Battery storage and Scope 2",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    },
+    {
+      "label": "Battery pack per kWh",
+      "to": "/answers/battery-pack-assembly-carbon-footprint-per-kwh"
+    },
+    {
+      "label": "Lithium-ion recycling",
+      "to": "/answers/lithium-ion-battery-recycling-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

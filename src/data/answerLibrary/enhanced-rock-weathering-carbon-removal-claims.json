@@ -1,0 +1,55 @@
+{
+  "slug": "enhanced-rock-weathering-carbon-removal-claims",
+  "q": "Can crushed rock spread on farms count as carbon removal for my company?",
+  "title": "Enhanced rock weathering claims",
+  "short": "Enhanced weathering spreads crushed silicate rock, such as basalt, on fields so it reacts with CO2 over years. The removal is slow and hard to measure. Count it only through credits with measured results, and subtract crushing and transport emissions. Never deduct it from Scope 1, 2 or 3.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Companies evaluating carbon removal purchases",
+  "sections": [
+    {
+      "h": "Questions to ask",
+      "ul": [
+        "How was CO2 removal measured, not just modelled?",
+        "Who checked the soil and water sampling?",
+        "Are mining, crushing and trucking emissions subtracted?"
+      ]
+    },
+    {
+      "h": "How to report",
+      "p": [
+        "Report removals or credits separately from your inventory. Your Scope 1, 2 and 3 stay gross."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Durable vs nature-based removals",
+      "to": "/answers/durable-removals-vs-nature-based-for-net-zero"
+    },
+    {
+      "label": "Biochar carbon credits",
+      "to": "/answers/biochar-carbon-credits-india"
+    },
+    {
+      "label": "Biochar CO2 per tonne",
+      "to": "/answers/how-much-co2-does-a-tonne-of-biochar-remove"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "ICVCM",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
