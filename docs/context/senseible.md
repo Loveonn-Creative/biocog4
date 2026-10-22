@@ -100,6 +100,8 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 
 - Security (owner, 22 October 2026): fix the audit findings without breaking OCR → reporting or payments; stop and report a one-line risk otherwise. Guests stay browser-only (no server rows); old guest rows may be purged only with a check that no account-owned row changes. GST always applies to plan orders. Moving internal mail to a new inbox must not break any notification. Published customer stories are edited by admins only.
 
+- Ad landing pages (owner, 22 October 2026): four noindex pages for A/B tests from ads, /go/green-loan-a and -b (MSME, finance readiness) and /go/suppliers-a and -b (enterprise, supplier emissions). One action: a 10-minute call through the existing contact form (name, WhatsApp, email, industry), notified to the internal inbox held in the INTERNAL_INBOX secret. Each page gives a free kit to keep (PDF built from the visitor's own numbers). Organisation names shown as styled names under "Trusted by teams at". Yearly plans only; MSMEs see Free check, Essential, Pro; enterprises see Pro and Scale. Launch prices shown without a struck regular price until a regular-pricing date is set.
+
 - Deferred by the owner (21 October 2026), do not start without a go-ahead: OCR accuracy test on 50 to 100 real documents, fix-in-place units for needs-data bills, a coverage line under every total, closing a reporting period, a lender share link, a CBAM supplier export.
 
 ## 9. Open decisions (ask before acting)
