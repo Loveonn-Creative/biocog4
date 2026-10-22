@@ -92,6 +92,8 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const SupplierEvidence = lazy(() => import("./pages/lead/SupplierEvidence"));
 const Answers = lazy(() => import("./pages/Answers"));
 const MsmeCarbonNumber = lazy(() => import("./pages/lead/MsmeCarbonNumber"));
+const GreenLoanLanding = lazy(() => import("./pages/lead/ads/GreenLoanLanding"));
+const SupplierLanding = lazy(() => import("./pages/lead/ads/SupplierLanding"));
 const Profile = lazy(() => import("./pages/Profile"));
 const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
@@ -179,6 +181,11 @@ const App = () => (
               <Route path="/answers/:slug" element={<Answers />} />
               <Route path="/scope-3-supplier-evidence" element={<SupplierEvidence />} />
               <Route path="/msme-carbon-number" element={<MsmeCarbonNumber />} />
+              {/* Ad landing pages (A/B colour tests), noindex */}
+              <Route path="/go/green-loan-a" element={<GreenLoanLanding variant="a" />} />
+              <Route path="/go/green-loan-b" element={<GreenLoanLanding variant="b" />} />
+              <Route path="/go/suppliers-a" element={<SupplierLanding variant="a" />} />
+              <Route path="/go/suppliers-b" element={<SupplierLanding variant="b" />} />
               {serviceNav.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
