@@ -1,0 +1,59 @@
+{
+  "slug": "internal-controls-for-carbon-data-msme",
+  "q": "What internal controls should an MSME have over its carbon data?",
+  "title": "Internal controls for MSME carbon data",
+  "short": "A few simple ones: one person enters data and another checks it, monthly totals are compared with last year and with accounts, factor changes are approved and dated, and originals are kept. These catch most errors before a buyer or verifier does.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME finance and operations teams preparing emissions data for buyers and lenders",
+  "sections": [
+    {
+      "h": "Basic controls",
+      "ul": [
+        "Maker and checker: different people enter and review figures.",
+        "Monthly comparison with the same month last year.",
+        "Reconciliation of fuel and power spend with accounts."
+      ]
+    },
+    {
+      "h": "Change control",
+      "ul": [
+        "Factor or method changes approved and dated.",
+        "Past figures restated when a method changes.",
+        "A short log of corrections."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep the original bills and a record of who checked what. A verifier will ask to see that the checks happened, not just that they exist on paper."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, emission factor and method version, so a verifier can trace a total back to the invoice.",
+  "links": [
+    {
+      "label": "Who should sign off carbon figures?",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Internal review before verification",
+      "to": "/answers/internal-review-before-external-verification"
+    },
+    {
+      "label": "Restating emissions after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

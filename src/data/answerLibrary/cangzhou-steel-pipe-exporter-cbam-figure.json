@@ -1,0 +1,61 @@
+{
+  "slug": "cangzhou-steel-pipe-exporter-cbam-figure",
+  "q": "How should a Cangzhou welded pipe exporter work out its CBAM figure?",
+  "title": "Cangzhou welded pipe CBAM figure",
+  "short": "Add the embedded emissions of the coil or strip you bought to your own direct emissions from welding, annealing and galvanising fuel. Steel pipes under CN 7304 to 7306 are covered, and the purchased coil usually makes up most of the figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Welded and galvanised pipe makers in Cangzhou and wider Hebei",
+  "sections": [
+    {
+      "h": "Precursor first",
+      "p": [
+        "Hot-rolled coil or strip is a precursor. Get the coil mill's specific embedded emissions per tonne, or use the default value if it will not share. Multiply by tonnes of coil used per tonne of pipe, including slitting and cutting losses."
+      ]
+    },
+    {
+      "h": "Your own direct emissions",
+      "ul": [
+        "Gas for annealing or normalising furnaces.",
+        "Fuel for galvanising kettles, where the pipe is galvanised on site.",
+        "Not electricity for welding: for steel goods it is outside the charged figure."
+      ]
+    },
+    {
+      "h": "Pierced tube is different",
+      "p": [
+        "Tube pierced and rolled from billets has the billets as its precursor instead of coil. Keep the two product lines apart in your records so each gets its own figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Are steel pipes covered?",
+      "to": "/answers/are-steel-pipes-and-tubes-covered-by-cbam"
+    },
+    {
+      "label": "Pipes from purchased coil",
+      "to": "/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+    },
+    {
+      "label": "Specific embedded emissions explained",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

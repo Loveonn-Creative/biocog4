@@ -1,0 +1,61 @@
+{
+  "slug": "yunnan-hydro-aluminium-buyer-scope-3-claim",
+  "q": "Our Chinese aluminium supplier says its Yunnan smelter runs on hydro power. How do we check the claim?",
+  "title": "Checking a Yunnan hydro aluminium claim",
+  "short": "Ask for the smelter's electricity source by month, not a general statement. Yunnan relies heavily on hydro but has cut smelter power in dry seasons. Hydro lowers your Scope 3 figure; it does not change the CBAM figure, which counts anode and PFC emissions only.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Buyers of primary aluminium ingot, billet and products made from Yunnan metal",
+  "sections": [
+    {
+      "h": "What to ask for",
+      "ul": [
+        "Monthly electricity use and where it came from: grid supply, contracts or certificates.",
+        "The smelter's direct emissions per tonne: anode carbon and PFCs.",
+        "Which smelter the metal in your shipment came from, not a company average."
+      ]
+    },
+    {
+      "h": "Why dry seasons matter",
+      "p": [
+        "When hydro output falls, smelters in the province have been asked to cut load, and the remaining power can come from a mix that includes coal. A yearly claim can hide that, so monthly data is a better check."
+      ]
+    },
+    {
+      "h": "CBAM and footprint are different",
+      "p": [
+        "For aluminium goods only direct emissions are charged under CBAM, so the power source does not move that figure. Your cradle to gate footprint does include electricity, and that is where hydro makes the difference."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated, fingerprinted records, so each purchased material in a Scope 3 figure traces back to its document.",
+  "links": [
+    {
+      "label": "Checking a UAE low-carbon aluminium claim",
+      "to": "/answers/uae-low-carbon-aluminium-claim-how-to-check"
+    },
+    {
+      "label": "Samalaju hydro aluminium claim",
+      "to": "/answers/samalaju-hydro-aluminium-low-carbon-claim"
+    },
+    {
+      "label": "Alumina is Scope 3, not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

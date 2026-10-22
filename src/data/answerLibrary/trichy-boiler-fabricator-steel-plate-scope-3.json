@@ -1,0 +1,63 @@
+{
+  "slug": "trichy-boiler-fabricator-steel-plate-scope-3",
+  "q": "How does a Trichy boiler parts fabricator count the steel plate and tube it buys?",
+  "title": "Trichy boiler fabricator steel in Scope 3",
+  "short": "As Scope 3 category 1, purchased goods: tonnes of plate and tube times a supplier-specific factor, or a route average if none is given. Your own Scope 1 covers stress relieving furnaces and cutting gases; welding power is Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler, pressure part and structural fabricators around Tiruchirappalli",
+  "sections": [
+    {
+      "h": "Purchased steel",
+      "ol": [
+        "Total tonnes of plate, tube and sections bought, from invoices.",
+        "A factor per tonne from each mill, or a published route average.",
+        "Multiply and add up by supplier."
+      ]
+    },
+    {
+      "h": "Your own sources",
+      "ul": [
+        "Fuel for stress relieving and heat treatment furnaces.",
+        "LPG and other gases for cutting and preheating.",
+        "Electricity for welding and machining, as Scope 2."
+      ]
+    },
+    {
+      "h": "When a customer asks for a product figure",
+      "p": [
+        "Share the steel by the weight that goes into each job, add your process emissions per job, and allow for offcuts that are sold as scrap."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated, fingerprinted records, so each purchased material in a Scope 3 figure traces back to its document.",
+  "links": [
+    {
+      "label": "Purchased stainless steel factor",
+      "to": "/answers/emission-factor-for-purchased-stainless-steel"
+    },
+    {
+      "label": "Primary data share meaning",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "Welding electrode carbon per kg",
+      "to": "/answers/welding-electrode-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "worldsteel",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

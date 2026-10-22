@@ -1,0 +1,59 @@
+{
+  "slug": "how-long-to-keep-carbon-accounting-records",
+  "q": "How long should an Indian MSME keep its carbon accounting records?",
+  "title": "How long to keep carbon records",
+  "short": "At least as long as the tax records they come from: GST law asks for accounts to be kept for 72 months from the annual return due date. Keep emissions workings, factors and corrections for the same period, and longer if a loan or contract asks.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs keeping bills, emissions workings and reports for buyers, lenders or verifiers",
+  "sections": [
+    {
+      "h": "What to keep",
+      "ul": [
+        "Original bills and invoices behind each figure.",
+        "The workings: quantities, factors, versions and results.",
+        "Corrections, restatements and verification reports."
+      ]
+    },
+    {
+      "h": "Longer periods",
+      "ul": [
+        "Base year records, for as long as you report against that base year.",
+        "Records behind a sustainability-linked loan, for the loan term.",
+        "Records an EU importer may need for CBAM checks, for several years after the import."
+      ]
+    },
+    {
+      "h": "Storage",
+      "p": [
+        "Keep digital copies with their dates and a way to show they have not been changed since filing."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, emission factor and method version, so a verifier can trace a total back to the invoice.",
+  "links": [
+    {
+      "label": "Financial or calendar year footprint",
+      "to": "/answers/carbon-footprint-financial-or-calendar-year"
+    },
+    {
+      "label": "Recalculating the base year",
+      "to": "/answers/recalculate-base-year-after-selling-a-unit"
+    },
+    {
+      "label": "Restating emissions after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

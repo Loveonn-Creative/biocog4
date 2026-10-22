@@ -1,0 +1,67 @@
+{
+  "slug": "tangshan-steel-hot-rolled-coil-cbam-figure",
+  "q": "What CBAM figure should an EU buyer expect for hot-rolled coil from a Tangshan blast furnace mill?",
+  "title": "Tangshan hot-rolled coil CBAM figure",
+  "short": "Expect a direct emissions figure close to the usual blast furnace range, often around 2 tonnes of CO2 per tonne of coil once sinter, pig iron and crude steel are included. Ask for the mill's own monitored figure; default values usually come out higher.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers and traders buying hot-rolled coil from Tangshan and wider Hebei",
+  "sections": [
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Direct emissions at the coil mill: reheating furnace gas and any process fuel.",
+        "Embedded emissions of precursors: sinter, pig iron and crude steel, mostly coking coal and coke carbon.",
+        "Not electricity: for iron and steel goods only direct emissions are charged."
+      ]
+    },
+    {
+      "h": "Why the range is wide",
+      "p": [
+        "Plants differ in coke rate, scrap share in the converter and how much blast furnace gas is used for power. Two Tangshan mills can sit several hundred kilograms apart per tonne, which is why the mill's own data matters."
+      ]
+    },
+    {
+      "h": "What to ask the mill for",
+      "ul": [
+        "Specific embedded emissions per tonne of coil, with the reporting period.",
+        "Which precursors were made on site and which were bought in.",
+        "Whether the figure has been verified, and by whom."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Specific embedded emissions explained",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    },
+    {
+      "label": "Where to find official default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Electricity in steel CBAM figures",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "worldsteel",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

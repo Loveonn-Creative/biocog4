@@ -1,0 +1,63 @@
+{
+  "slug": "baotou-rare-earth-magnet-supplier-carbon-data",
+  "q": "Our motor buyer wants the carbon footprint of the rare earth magnets we buy from Baotou. What do we ask?",
+  "title": "Carbon data for Baotou rare earth magnets",
+  "short": "Ask the magnet maker for a cradle to gate footprint per kilogram covering separation, metal making, alloy casting and sintering, with the electricity source. Magnets are not CBAM goods, so this is a footprint request; if no figure comes, label any estimate clearly.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Motor and EV component makers buying NdFeB magnets from Baotou and Inner Mongolia",
+  "sections": [
+    {
+      "h": "Where the emissions are",
+      "ul": [
+        "Rare earth separation, which uses chemicals and heat.",
+        "Metal production by electrolysis, which uses a lot of electricity.",
+        "Alloy casting, milling, sintering and heat treatment of the magnets."
+      ]
+    },
+    {
+      "h": "What to ask the supplier",
+      "ul": [
+        "Footprint per kilogram of magnet, with the system boundary stated.",
+        "Electricity used per kilogram and where it came from.",
+        "Which stages it runs itself and which it buys in."
+      ]
+    },
+    {
+      "h": "If the supplier has no figure",
+      "p": [
+        "Use a published estimate for the material and mark it as secondary data. Keep asking: magnets can be a large share of a motor's footprint, and buyers increasingly expect primary data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated, fingerprinted records, so each purchased material in a Scope 3 figure traces back to its document.",
+  "links": [
+    {
+      "label": "Primary data share meaning",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "Data quality rating explained",
+      "to": "/answers/data-quality-rating-dqr-explained"
+    },
+    {
+      "label": "Battery pack carbon per kWh",
+      "to": "/answers/battery-pack-assembly-carbon-footprint-per-kwh"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

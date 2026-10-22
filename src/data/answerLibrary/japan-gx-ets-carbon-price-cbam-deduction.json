@@ -1,0 +1,57 @@
+{
+  "slug": "japan-gx-ets-carbon-price-cbam-deduction",
+  "q": "Can a Japanese steel or aluminium exporter deduct GX emissions trading costs from CBAM?",
+  "title": "Japan GX trading and the CBAM deduction",
+  "short": "Only for a price effectively paid. Japan's GX emissions trading becomes mandatory for large emitters from 2026, with allowances largely free at first. Until a plant pays for allowances beyond its allocation, there is little to deduct. Keep the evidence ready.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Japanese exporters of CBAM goods and their EU importers",
+  "sections": [
+    {
+      "h": "What changes from 2026",
+      "p": [
+        "Japan has moved its GX emissions trading from voluntary participation to a mandatory scheme for companies above an emissions threshold. Allocation is expected to be largely free in the early years."
+      ]
+    },
+    {
+      "h": "What counts for CBAM",
+      "ul": [
+        "Allowances actually bought and surrendered beyond the free amount.",
+        "Any separate carbon levy actually paid.",
+        "Net of rebates or compensation."
+      ]
+    },
+    {
+      "h": "Check before declaring",
+      "p": [
+        "The Commission decides how foreign carbon prices are recognised. Confirm the current rules and keep the allocation and surrender records for the year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Korea ETS and the CBAM deduction",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "SSBJ and Japanese buyers",
+      "to": "/answers/ssbj-japanese-buyers-supplier-emissions"
+    },
+    {
+      "label": "EU ETS vs CBAM",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "is-norwegian-aluminium-subject-to-cbam",
+  "q": "Do EU importers pay CBAM on aluminium from Norway or steel from Switzerland?",
+  "title": "Norway, Switzerland and CBAM",
+  "short": "No. Annex III of the CBAM Regulation exempts goods originating in Iceland, Liechtenstein, Norway and Switzerland, because they apply the EU ETS or a linked system. An origin certificate is still needed, and goods only passing through these countries are not exempt.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers and traders sourcing from Norway, Switzerland, Iceland or Liechtenstein",
+  "sections": [
+    {
+      "h": "Who is exempt",
+      "ul": [
+        "Iceland, Liechtenstein and Norway, which take part in the EU ETS.",
+        "Switzerland, whose system is linked to the EU ETS.",
+        "A few small territories listed in the same annex."
+      ]
+    },
+    {
+      "h": "Origin, not shipping route",
+      "p": [
+        "The exemption follows the non-preferential origin of the goods. Indian or Chinese metal routed through a Norwegian port or warehouse keeps its original origin and is covered."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Origin documents for each shipment. If origin is unclear, customs will treat the goods as covered until it is shown."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier documents dated and fingerprinted by shipment, so origin and emissions records can be shown together when an importer asks.",
+  "links": [
+    {
+      "label": "UK CBAM vs EU CBAM",
+      "to": "/answers/uk-cbam-vs-eu-cbam-differences"
+    },
+    {
+      "label": "EU ETS vs CBAM",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

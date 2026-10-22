@@ -1,0 +1,60 @@
+{
+  "slug": "haiyan-fastener-exporter-cbam-precursor-data",
+  "q": "How does a Haiyan fastener exporter get the wire rod data its EU importer asks for?",
+  "title": "Haiyan fasteners: wire rod precursor data",
+  "short": "Ask the wire rod mill for its specific embedded emissions per tonne and add your own direct emissions, mainly gas for heat treatment and any annealing. Screws and bolts under CN 7318 are CBAM goods, and the rod is usually most of the figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Fastener makers in Haiyan, Jiaxing and wider Zhejiang exporting to the EU",
+  "sections": [
+    {
+      "h": "Build the figure in two parts",
+      "ol": [
+        "Your direct emissions: gas or LPG for heat treatment, annealing and any other fuel, divided by tonnes produced.",
+        "Precursor emissions: tonnes of wire rod used per tonne of fasteners, times the rod mill's embedded emissions per tonne."
+      ]
+    },
+    {
+      "h": "Allow for yield",
+      "p": [
+        "Cold heading and threading leave scrap. If you use 1.05 tonnes of rod per tonne of finished fasteners, the precursor part rises by the same share. Keep the yield figure from your production records."
+      ]
+    },
+    {
+      "h": "If the rod mill does not reply",
+      "p": [
+        "Use the official default value for the rod and say so. Keep the request emails: the importer may need to show it tried to get actual data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Taiwan fastener exporters and CBAM",
+      "to": "/answers/taiwan-fastener-exporter-cbam-cn-7318"
+    },
+    {
+      "label": "Wire rod precursor data",
+      "to": "/answers/vizag-steel-wire-rod-buyer-precursor-data"
+    },
+    {
+      "label": "Where to find official default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "climate-finance-readiness-check-msme",
+  "q": "What does a lender look at to judge if an MSME is ready for climate-linked finance?",
+  "title": "Climate finance readiness for MSMEs",
+  "short": "Clean records first: monthly energy and fuel data from bills, an emissions estimate that traces to those bills, a defined project with costed savings, and up-to-date compliance. Climate data supports the case; the credit decision still rests on cash flow.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs preparing to approach banks or NBFCs for green or sustainability-linked loans",
+  "sections": [
+    {
+      "h": "Records lenders look for",
+      "ul": [
+        "12 months of electricity and fuel bills.",
+        "An emissions figure that ties back to those bills.",
+        "Production data, so intensity per unit can be shown."
+      ]
+    },
+    {
+      "h": "Project basics",
+      "ul": [
+        "Quotes, a project report and expected energy savings.",
+        "How the savings will be measured after installation.",
+        "Who will report to the lender and how often."
+      ]
+    },
+    {
+      "h": "Compliance and credit",
+      "p": [
+        "Pollution control consents, GST filings and financial statements still decide most of the outcome. Gaps there matter more than a missing emissions figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
+  "links": [
+    {
+      "label": "How lenders read a borrower GHG report",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "Proving energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Energy efficiency loan project report",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

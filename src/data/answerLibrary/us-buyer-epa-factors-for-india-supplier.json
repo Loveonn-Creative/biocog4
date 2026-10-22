@@ -1,0 +1,59 @@
+{
+  "slug": "us-buyer-epa-factors-for-india-supplier",
+  "q": "Our US buyer's template uses EPA emission factors. Should we use them for our Indian plant?",
+  "title": "US EPA factors for an Indian plant?",
+  "short": "Use them for fuels, where the chemistry is the same, but not for grid electricity. For power, use India's grid factor of 0.710 kg CO2 per kWh from the CEA database. Say which factors you used next to each figure.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Indian suppliers filling in emissions templates from US buyers",
+  "sections": [
+    {
+      "h": "Fuels",
+      "p": [
+        "Factors for diesel, LPG or natural gas per unit of energy are similar worldwide, so EPA or IPCC factors both work. Check the units: US templates often use gallons and million BTU."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "US grid factors describe the US power mix. Your plant draws from the Indian grid, so use the CEA factor and note the version."
+      ]
+    },
+    {
+      "h": "Tell the buyer",
+      "p": [
+        "Add a short note listing each factor, its source and year. Buyers would rather see a correct local factor than a template default."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Replacing EPA spend factors with supplier data",
+      "to": "/answers/replace-us-epa-spend-factor-with-supplier-data"
+    },
+    {
+      "label": "CEA vs IEA grid factor",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    },
+    {
+      "label": "Buyer's own questionnaire format",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "US EPA Center for Corporate Climate Leadership",
+      "url": "https://www.epa.gov/climateleadership"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

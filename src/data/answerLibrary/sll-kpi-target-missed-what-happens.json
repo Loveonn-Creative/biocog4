@@ -1,0 +1,55 @@
+{
+  "slug": "sll-kpi-target-missed-what-happens",
+  "q": "What happens if we miss the target in a sustainability-linked loan?",
+  "title": "Missing a sustainability-linked loan target",
+  "short": "Usually the interest margin steps up or a discount is lost for the next period. Missing a target is not normally a default, but failing to report or verify the KPI can breach the loan terms. Read the margin and reporting clauses before signing.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs and mid-size companies with or considering sustainability-linked loans",
+  "sections": [
+    {
+      "h": "Typical consequences",
+      "ul": [
+        "A margin increase, or loss of a margin reduction, for the following period.",
+        "Disclosure of the miss in the annual KPI report.",
+        "No change to repayment, unless the loan says otherwise."
+      ]
+    },
+    {
+      "h": "Reporting still matters",
+      "p": [
+        "Most loans require yearly KPI reporting and external verification. Missing that obligation is usually treated more seriously than missing the target itself."
+      ]
+    },
+    {
+      "h": "Before you sign",
+      "ul": [
+        "Check how the KPI is measured and which data it uses.",
+        "Agree how the baseline is recalculated if you grow or buy a unit.",
+        "Set targets you can track monthly, not only at year end."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
+  "links": [
+    {
+      "label": "SLL KPI examples",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "SLL interest discount",
+      "to": "/answers/sustainability-linked-loan-interest-discount"
+    },
+    {
+      "label": "What an SLL verifier checks",
+      "to": "/answers/sll-kpi-verification-what-verifier-checks"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "mangalore-tile-factory-wood-kiln-co2",
+  "q": "How does a Mangalore roof tile factory count emissions from its wood-fired kilns?",
+  "title": "Mangalore tile kiln wood emissions",
+  "short": "Report the CO2 from wood as biogenic, separately from Scope 1, and count the methane and nitrous oxide from burning it in Scope 1. Add any coal or diesel in full. Divide by tiles fired to give a figure per thousand tiles.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Clay roof tile makers in Mangaluru and coastal Karnataka and Kerala",
+  "sections": [
+    {
+      "h": "Wood and biomass",
+      "ul": [
+        "CO2: reported as biogenic, outside the Scope 1 total, when the wood comes from renewable sources.",
+        "Methane and nitrous oxide: counted in Scope 1 using IPCC defaults for wood."
+      ]
+    },
+    {
+      "h": "Fossil fuels",
+      "p": [
+        "Coal, furnace oil or diesel used in kilns, dryers or vehicles count in full in Scope 1. Electricity for clay preparation and pressing is Scope 2."
+      ]
+    },
+    {
+      "h": "Records",
+      "ul": [
+        "Wood bought by weight, with a note of moisture if known.",
+        "Tiles fired per batch or month.",
+        "Losses and rejects, so the figure per good tile is right."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Brick kiln emissions per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Pottery kiln emissions per firing",
+      "to": "/answers/pottery-kiln-emissions-per-firing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

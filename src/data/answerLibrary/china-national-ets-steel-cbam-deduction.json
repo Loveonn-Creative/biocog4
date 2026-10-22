@@ -1,0 +1,69 @@
+{
+  "slug": "china-national-ets-steel-cbam-deduction",
+  "q": "Can a Chinese steel exporter deduct its national carbon market costs from the CBAM charge?",
+  "title": "China carbon market and the CBAM deduction",
+  "short": "Only for a carbon price effectively paid, net of free allocation. China's national carbon market was extended in 2025 to steel, cement and aluminium smelting, but allowances are allocated free against intensity benchmarks, so the price actually paid per tonne exported is often small. It needs evidence.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chinese steel, aluminium and cement exporters and their EU importers",
+  "sections": [
+    {
+      "h": "What CBAM allows",
+      "p": [
+        "Article 9 of the CBAM Regulation lets the declarant claim a reduction for a carbon price effectively paid in the country of origin, after taking account of any rebate or free allocation."
+      ]
+    },
+    {
+      "h": "Why the deduction is usually small today",
+      "ul": [
+        "Allowances in the national market are mostly allocated free, based on output and benchmarks.",
+        "A plant only pays for allowances it has to buy beyond its allocation.",
+        "The price per allowance has been well below the EU ETS price."
+      ]
+    },
+    {
+      "h": "Evidence the importer will need",
+      "ul": [
+        "The plant's allocation and verified emissions for the year.",
+        "Proof of allowances bought or surrendered beyond the free amount.",
+        "A calculation of the price paid per tonne of the goods shipped."
+      ]
+    },
+    {
+      "h": "Check before relying on it",
+      "p": [
+        "Rules for the newly covered sectors are still being phased in, and the Commission's guidance on what counts as a price paid can change. Check both before each declaration."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Korea ETS and the CBAM deduction",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "Taiwan carbon fee and CBAM",
+      "to": "/answers/taiwan-carbon-fee-cbam-deduction"
+    },
+    {
+      "label": "EU ETS vs CBAM",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

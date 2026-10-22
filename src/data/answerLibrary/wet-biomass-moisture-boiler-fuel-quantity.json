@@ -1,0 +1,59 @@
+{
+  "slug": "wet-biomass-moisture-boiler-fuel-quantity",
+  "q": "Our biomass is bought by weight but often wet. How does moisture affect our emissions figures?",
+  "title": "Wet biomass and boiler emissions",
+  "short": "Moisture adds weight but no energy, so wet fuel gives less heat per tonne bought. CO2 from the biomass stays biogenic, but methane and nitrous oxide are worked out from energy, so convert tonnes to energy using a moisture-adjusted calorific value.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs running boilers on wood chips, husk, briquettes or agro residue",
+  "sections": [
+    {
+      "h": "Why moisture matters",
+      "ul": [
+        "A tonne at 40% moisture holds much less usable energy than a dry tonne.",
+        "Boilers burning wet fuel run less efficiently.",
+        "Comparing suppliers by tonnes alone can mislead."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ul": [
+        "Weight bought, from weighbridge slips.",
+        "Moisture, from supplier tests or your own sample checks.",
+        "Calorific value, adjusted for moisture."
+      ]
+    },
+    {
+      "h": "In the figures",
+      "p": [
+        "Report biogenic CO2 separately from Scope 1. Count methane and nitrous oxide in Scope 1 using IPCC defaults per unit of energy, which is why the energy figure needs the moisture adjustment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Briquettes to replace a tonne of coal",
+      "to": "/answers/how-much-briquette-replaces-a-tonne-of-coal"
+    },
+    {
+      "label": "GCV vs NCV in fuel calculations",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "fujian-stainless-nickel-pig-iron-precursor",
+  "q": "Does nickel pig iron count as a precursor for stainless steel made in Fujian?",
+  "title": "Nickel pig iron in Fujian stainless CBAM",
+  "short": "Usually yes. The CBAM monitoring rules treat nickel pig iron with more than 10% nickel under the ferro-nickel route, so its embedded emissions flow into the stainless figure. With rotary kiln and electric furnace routes, that share can be large, so ask the NPI plant for its data.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Stainless steel mills in Fujian and their EU importers",
+  "sections": [
+    {
+      "h": "Why it matters",
+      "p": [
+        "Nickel pig iron made in rotary kilns and electric furnaces burns a lot of coal and coke. When it is a precursor, those emissions are part of every tonne of stainless steel made from it."
+      ]
+    },
+    {
+      "h": "Where the NPI comes from",
+      "ul": [
+        "Made in the same complex: count it inside your installation's own figures.",
+        "Bought from another plant, including in Indonesia: ask that plant for its specific embedded emissions per tonne.",
+        "No data: use the default value and say so."
+      ]
+    },
+    {
+      "h": "Check the definition",
+      "p": [
+        "Whether a material falls under ferro-nickel depends on its nickel content and how it is declared. Confirm the classification with the importer before the figure is built."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Morowali NPI and stainless",
+      "to": "/answers/morowali-nickel-pig-iron-stainless-cbam"
+    },
+    {
+      "label": "Indonesian stainless coil precursors",
+      "to": "/answers/indonesian-stainless-cold-rolled-coil-precursors"
+    },
+    {
+      "label": "Purchased stainless steel factor",
+      "to": "/answers/emission-factor-for-purchased-stainless-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

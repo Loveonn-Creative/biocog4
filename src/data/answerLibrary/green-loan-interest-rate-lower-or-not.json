@@ -1,0 +1,59 @@
+{
+  "slug": "green-loan-interest-rate-lower-or-not",
+  "q": "Will a green loan get my MSME a lower interest rate in India?",
+  "title": "Do green loans carry lower rates?",
+  "short": "Sometimes, not always. Some banks offer small concessions for green projects, and renewable energy loans can count toward priority sector lending, which helps banks lend. The rate still depends mostly on your credit profile. Treat any saving as possible, not promised.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners comparing green and ordinary term loans",
+  "sections": [
+    {
+      "h": "What can help",
+      "ul": [
+        "Bank or SIDBI schemes for energy efficiency and renewable energy.",
+        "Priority sector treatment for eligible renewable energy loans.",
+        "Credit guarantee schemes that reduce the collateral needed."
+      ]
+    },
+    {
+      "h": "What still decides the rate",
+      "ul": [
+        "Your repayment history, cash flow and collateral.",
+        "The bank's benchmark rate and spread.",
+        "Project quality: a clear report with realistic savings."
+      ]
+    },
+    {
+      "h": "Compare the full cost",
+      "p": [
+        "Look at processing fees, any external review costs and reporting effort, not only the headline rate."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
+  "links": [
+    {
+      "label": "Is renewable energy lending priority sector?",
+      "to": "/answers/is-renewable-energy-loan-priority-sector"
+    },
+    {
+      "label": "SIDBI energy efficiency loan",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "Credit guarantee for green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

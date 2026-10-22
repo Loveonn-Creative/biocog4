@@ -1,0 +1,58 @@
+{
+  "slug": "neyveli-lignite-mine-overburden-diesel-scope-1",
+  "q": "How should a lignite mine contractor at Neyveli count diesel used to move overburden?",
+  "title": "Neyveli mine overburden diesel emissions",
+  "short": "As Scope 1 if the contractor owns or runs the excavators, dumpers and pumps: litres of diesel times 2.68 kg CO2 per litre. For the mine owner, the same emissions are Scope 3 unless it controls the fleet. Surface lignite mines release little methane.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Mining contractors and suppliers working at lignite mines around Neyveli",
+  "sections": [
+    {
+      "h": "Who reports what",
+      "ul": [
+        "Contractor operating the machines: Scope 1.",
+        "Mine owner: Scope 3, unless the contract gives it operational control of the fleet."
+      ]
+    },
+    {
+      "h": "Records",
+      "ul": [
+        "Diesel issued per machine from the site tank register.",
+        "Hours run and volume of overburden moved, for an intensity per cubic metre.",
+        "Electricity for pumps and conveyors, as Scope 2."
+      ]
+    },
+    {
+      "h": "Methane",
+      "p": [
+        "IPCC defaults for surface mining give low methane per tonne compared with underground coal mines. Include it for completeness if the mine owner asks, using the surface mining default."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Iron ore mine diesel per tonne",
+      "to": "/answers/hospet-iron-ore-mine-diesel-per-tonne"
+    },
+    {
+      "label": "Copper mine haul truck diesel",
+      "to": "/answers/copper-mine-haul-truck-diesel-scope-1"
+    },
+    {
+      "label": "Own diesel tank issue register",
+      "to": "/answers/own-diesel-tank-issue-register-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

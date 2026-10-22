@@ -1,0 +1,59 @@
+{
+  "slug": "scope-3-verification-what-evidence",
+  "q": "What evidence does a verifier want for Scope 3 figures?",
+  "title": "Evidence verifiers want for Scope 3",
+  "short": "A list of what you bought or shipped with quantities that tie to your accounts, the factor used for each line with its source and year, and any supplier-specific data with the supplier's own backing. Spend-based estimates are accepted when labelled and explained.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies preparing Scope 3 figures for limited assurance or buyer review",
+  "sections": [
+    {
+      "h": "Activity data",
+      "ul": [
+        "Purchase registers or GST records showing quantities or spend.",
+        "A reconciliation to total purchases in your accounts.",
+        "Freight records with weights and distances where used."
+      ]
+    },
+    {
+      "h": "Factors",
+      "ul": [
+        "Source, year and unit for every factor.",
+        "Why that factor fits the material or service.",
+        "Supplier figures with the supplier's method or verification statement."
+      ]
+    },
+    {
+      "h": "Gaps and estimates",
+      "p": [
+        "List categories left out and why, and how estimates were made. Verifiers accept estimates; they object to figures that cannot be traced or methods that change without notice."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, emission factor and method version, so a verifier can trace a total back to the invoice.",
+  "links": [
+    {
+      "label": "Estimation note for the verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "How many invoices does a verifier sample?",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "What is materiality in GHG verification?",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

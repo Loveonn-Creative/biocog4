@@ -1,0 +1,63 @@
+{
+  "slug": "cbam-smelter-buying-prebaked-anodes",
+  "q": "Our smelter buys prebaked anodes from another plant. How do they enter our CBAM figure?",
+  "title": "Bought-in anodes in a smelter's CBAM figure",
+  "short": "The CO2 released when the anodes are consumed in your pots is your direct emission and counts in full. The emissions from making the anodes at the other plant are not a CBAM precursor, though buyers' footprints include them.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Primary aluminium smelters that buy prebaked anodes instead of baking them on site",
+  "sections": [
+    {
+      "h": "In your figure",
+      "ul": [
+        "Anode carbon consumed in electrolysis, by mass balance.",
+        "PFCs from anode effects.",
+        "Fuel used in your cast house."
+      ]
+    },
+    {
+      "h": "Outside your figure",
+      "p": [
+        "Calcining coke, mixing and baking at the anode supplier are its own emissions. Anodes are not a precursor for aluminium under CBAM, so they do not add embedded emissions."
+      ]
+    },
+    {
+      "h": "Records",
+      "ul": [
+        "Anode tonnes received and consumed, with carbon content.",
+        "Butts returned, so net consumption is right.",
+        "Aluminium produced in the same period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Smelter anode CO2 per tonne",
+      "to": "/answers/jharsuguda-smelter-anode-co2-per-tonne"
+    },
+    {
+      "label": "Korba aluminium direct emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Alumina is Scope 3, not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

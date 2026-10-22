@@ -1,0 +1,63 @@
+{
+  "slug": "aluminium-anodizing-line-energy-per-square-metre",
+  "q": "How does an aluminium anodizing unit work out its emissions per square metre?",
+  "title": "Anodizing line emissions per square metre",
+  "short": "Add electricity for rectifiers, pumps and bath cooling to fuel for heating sealing and cleaning tanks, then divide by square metres anodized in the same month. Rectifier power usually dominates, so log it separately if you can.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Anodizing job shops and extruders with anodizing lines",
+  "sections": [
+    {
+      "h": "Main energy users",
+      "ul": [
+        "Rectifiers for the anodizing tanks.",
+        "Chillers or cooling towers for bath temperature.",
+        "Heating for sealing and degreasing tanks, by electricity, gas or diesel."
+      ]
+    },
+    {
+      "h": "Work it out",
+      "ol": [
+        "Electricity in kWh times the grid factor of 0.710 kg CO2 per kWh.",
+        "Fuel for heating times its factor.",
+        "Add and divide by square metres anodized."
+      ]
+    },
+    {
+      "h": "Coating thickness matters",
+      "p": [
+        "Thicker coatings need more time at the rectifier. If you run different classes, keep figures per class so customers get a fair number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Powder coating line emissions",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Electroplating carbon per square metre",
+      "to": "/answers/electroplating-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Aluminium extrusion carbon per kg",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "kuantan-blast-furnace-steel-exporter-cbam",
+  "q": "What do EU buyers ask a Kuantan blast furnace steel exporter for under CBAM?",
+  "title": "Kuantan blast furnace steel CBAM data",
+  "short": "Specific embedded emissions per tonne for each product shipped, built from the plant's coke, sinter, pig iron and steelmaking data, plus the reporting period and verification status. Without it, importers use default values, which are set high and raise the cost of each shipment.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Integrated steel plants in Kuantan and Pahang exporting billets, wire rod and coil",
+  "sections": [
+    {
+      "h": "What the importer needs",
+      "ul": [
+        "Embedded emissions per tonne by product: billet, wire rod or coil.",
+        "Which precursors were made on site and which were bought.",
+        "The monitoring period and who verified the data."
+      ]
+    },
+    {
+      "h": "Plants still ramping up",
+      "p": [
+        "A newer blast furnace complex can run with a higher coke rate while it stabilises. Report the actual figure for the period rather than a design value, and update it as operations settle."
+      ]
+    },
+    {
+      "h": "Malaysian carbon pricing",
+      "p": [
+        "Malaysia has announced a carbon tax starting with iron, steel and energy. Only a price actually paid, with evidence, can reduce the CBAM charge."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Malaysia grid factor by region",
+      "to": "/answers/malaysia-grid-emission-factor-by-region"
+    },
+    {
+      "label": "Where to find official default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Specific embedded emissions explained",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
