@@ -982,7 +982,7 @@ const Index = () => {
               <p className="text-sm sm:text-base text-center leading-relaxed font-medium max-w-full">
                 <span className="sm:whitespace-nowrap">
                   <span className="text-muted-foreground">AI verification infrastructure for MSMEs </span>
-                  <span style={{ color: '#FF9933' }} className="font-semibold">from India.</span>
+                  <span className="font-semibold text-[#A85400] dark:text-[#FF9933]">from India.</span>
                 </span>
                 <br />
                 <span className="text-primary font-semibold">Empowering climate impact.</span>

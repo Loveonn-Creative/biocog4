@@ -32,7 +32,7 @@ export function TrendChart({ data, rangeLabel }: TrendChartProps) {
                 contentStyle={{ backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', fontSize: '12px' }}
                 formatter={(value: number, name: string) => [`${value.toLocaleString('en-IN', { maximumFractionDigits: 1 })} kg CO₂e`, NAMES[name] ?? name]}
               />
-              <Legend wrapperStyle={{ fontSize: '12px' }} formatter={(v) => NAMES[v as string] ?? v} />
+              <Legend wrapperStyle={{ fontSize: '12px' }} formatter={(v) => <span style={{ color: 'hsl(var(--foreground))' }}>{NAMES[v as string] ?? v}</span>} />
               <Bar dataKey="scope1" stackId="s" fill={COLORS.scope1} />
               <Bar dataKey="scope2" stackId="s" fill={COLORS.scope2} />
               <Bar dataKey="scope3" stackId="s" fill={COLORS.scope3} radius={[3, 3, 0, 0]} />

@@ -84,7 +84,8 @@
 @layer base {
   :root {
     /* Core palette - Climate/Nature inspired */
-    --background: 0 0% 100%;
+    /* Stone canvas (owner, 23 October 2026): cuts glare on bright phone screens and lets white cards sit on the page. */
+    --background: 40 23% 95%;
     --foreground: 0 0% 8%;
     
     /* Cards and surfaces */
@@ -101,12 +102,13 @@
     --primary-foreground: 0 0% 100%;
     
     /* Secondary - Soft atmospheric */
-    --secondary: 200 15% 96%;
+    --secondary: 40 14% 91%;
     --secondary-foreground: 0 0% 8%;
     
     /* Muted - Subtle gray */
-    --muted: 210 10% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 40 14% 91%;
+    /* #666: 4.7:1 on muted chips, 5.2:1 on the stone page, 5.7:1 on white cards (WCAG AA everywhere). */
+    --muted-foreground: 0 0% 40%;
     
     /* Accent - Sky/atmosphere blue */
     --accent: 200 80% 65%;
@@ -136,8 +138,8 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
+    --border: 40 10% 87%;
+    --input: 40 10% 82%;
     --ring: 152 45% 22%;
     
     --radius: 0.75rem;
@@ -810,16 +812,17 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .lead-slide { left: 96%; animation: lead-slide 3.4s cubic-bezier(.45,.05,.35,1) infinite; }
 @media (prefers-reduced-motion: reduce) { .lead-wobble, .lead-slide { animation: none; } .lead-slide { opacity: 0; } }
 
-/* Stone canvas pilot (owner, 23 October 2026), light mode only: #F5F3EF page,
-   white cards on top. Pure white glares on bright phone screens and gives cards
-   nothing to sit on; stone keeps data colours true and lifts white cards 1.11:1.
-   Grey text is darkened to #6B6B6B so it stays above WCAG AA (4.8:1) on stone.
-   Fields stay white so they read as places to type. */
-html:not(.dark) .canvas-stone {
-  --background: 40 23% 95%;
-  --muted-foreground: 0 0% 42%;
-  --input: 40 10% 84%;
-}
-html:not(.dark) .canvas-stone :is(input, textarea, button[role="combobox"]) { background-color: hsl(var(--card)); }
-/* Green labels on their pale green chips read at 2.9:1; this shade reads at 5.3:1. Icons and fills keep --success. */
-html:not(.dark) .canvas-stone .text-success { color: hsl(152 60% 28%); }
+/* Readable status text in light mode. The success and warning tokens stay bright for
+   fills, dots and icons; as text on the stone page, white cards and their pale chips
+   they read at 2.1 to 3.2:1, so text uses deeper shades (5.3:1 and 6:1). Inverted
+   strips (bg-foreground) are dark in light mode and keep the bright tokens. */
+html:not(.dark) :is(input, textarea, button[role="combobox"]) { background-color: hsl(var(--card)); }
+html:not(.dark) .text-success:not(.bg-foreground *) { color: hsl(152 60% 28%); }
+html:not(.dark) .text-warning:not(.bg-foreground *) { color: hsl(30 90% 30%); }
+html:not(.dark) .text-accent:not(.bg-foreground *) { color: hsl(200 80% 30%); }
+/* Dark mode: red text brightened for dark surfaces (was 3.2:1). Inverted panels
+   (bg-foreground) turn light in dark mode, so status text on them uses the deep shades. */
+.dark .text-destructive { color: hsl(0 85% 68%); }
+.dark .bg-foreground :is(.text-success) { color: hsl(152 60% 28%); }
+.dark .bg-foreground :is(.text-warning) { color: hsl(30 90% 30%); }
+.dark .bg-foreground :is(.text-destructive) { color: hsl(0 72% 42%); }
