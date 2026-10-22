@@ -1,0 +1,47 @@
+{
+  "slug": "methanol-production-emissions-per-tonne",
+  "q": "How are emissions from making methanol calculated?",
+  "title": "Methanol plant emissions per tonne",
+  "short": "Use a carbon balance: carbon in the gas or coal fed in, minus carbon leaving in the methanol, is emitted as CO2. Coal-based methanol emits far more than gas-based. Add grid power at 0.710 kg CO2 per kWh. Methanol is not a CBAM good today.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Methanol producers and chemical buyers",
+  "sections": [
+    {
+      "h": "Carbon balance",
+      "ol": [
+        "Carbon in feedstock and fuel, from quantity and carbon content.",
+        "Minus carbon in methanol and other products sold.",
+        "The rest, times 44/12, is CO2."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Methanol is not on the CBAM goods list. Hydrogen is, so a methanol plant selling hydrogen should check that stream separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Gas used as feedstock or fuel",
+      "to": "/answers/kakinada-urea-plant-gas-feedstock-vs-fuel"
+    },
+    {
+      "label": "Answer a chemical PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

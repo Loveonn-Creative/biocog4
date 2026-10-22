@@ -1,0 +1,47 @@
+{
+  "slug": "container-freight-station-handling-emissions",
+  "q": "How do I count emissions from handling at a container freight station?",
+  "title": "Container freight station emissions",
+  "short": "A container freight station burns diesel in reach stackers, forklifts and trucks and uses power for lights and offices. For the station that is Scope 1 and 2. For a shipper, the handling is part of transport and distribution, Category 4 or 9.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "CFS operators and exporters",
+  "sections": [
+    {
+      "h": "For the operator",
+      "ul": [
+        "Diesel per month from fuel slips.",
+        "Container moves per month, in TEU.",
+        "Diesel divided by TEU gives a figure per move."
+      ]
+    },
+    {
+      "h": "For the shipper",
+      "p": [
+        "Ask the station for a figure per TEU, or estimate from its moves. The GLEC Framework counts logistics sites alongside transport legs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Freight Category 4 or 9",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Empty container repositioning",
+      "to": "/answers/empty-container-repositioning-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

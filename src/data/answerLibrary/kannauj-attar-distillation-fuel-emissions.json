@@ -1,0 +1,47 @@
+{
+  "slug": "kannauj-attar-distillation-fuel-emissions",
+  "q": "How do I count emissions from attar distillation in Kannauj?",
+  "title": "Kannauj attar distillation: emissions",
+  "short": "The copper stills are fired with wood or cow dung for many hours, so fuel is the main source. Report the biogenic CO2 separately and the methane and nitrous oxide in Scope 1. If you switch a still to LPG or electricity, count that fuel or power instead.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Attar makers and perfume buyers",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Quintals of wood or dung cake burnt per batch.",
+        "Hours of firing and kilograms of flowers or herbs per batch.",
+        "Litres of base oil, often sandalwood, bought in."
+      ]
+    },
+    {
+      "h": "What a buyer sees",
+      "p": [
+        "Per kg of attar, the fuel figure is usually small next to the base oil and the transport of flowers. Keep base oil invoices on the Scope 3 trail."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Firewood by the quintal",
+      "to": "/answers/firewood-by-quintal-emissions"
+    },
+    {
+      "label": "Biomass fuel still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

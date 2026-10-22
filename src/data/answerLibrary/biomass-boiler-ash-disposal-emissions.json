@@ -1,0 +1,47 @@
+{
+  "slug": "biomass-boiler-ash-disposal-emissions",
+  "q": "Do we count emissions from disposing of biomass boiler ash?",
+  "title": "Biomass boiler ash disposal",
+  "short": "Yes, if you send it away. Trucking the ash and its treatment is Scope 3 Category 5, usually small. Ash given to brick makers or farmers is a by-product, so count only transport. The boiler's methane and nitrous oxide stay in Scope 1.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories running biomass boilers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Tonnes of ash removed, from weighbridge slips.",
+        "Who took it and where.",
+        "Truck distance."
+      ]
+    },
+    {
+      "h": "Biogenic CO2",
+      "p": [
+        "CO2 from burning biomass is reported separately, outside the scopes. Ash disposal does not change that."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Biomass fuel still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Waste in Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

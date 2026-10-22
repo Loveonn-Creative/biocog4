@@ -1,0 +1,47 @@
+{
+  "slug": "ibc-tote-tank-reuse-emissions",
+  "q": "How do I count emissions for reusable IBC tote tanks?",
+  "title": "Reusable IBC totes: emissions",
+  "short": "Spread the making of each IBC over the trips it makes, then add washing and the return trip. A tote used ten times carries a tenth of its manufacturing footprint per trip. Single-use totes carry all of it on one trip.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Chemical and food shippers using IBCs",
+  "sections": [
+    {
+      "h": "Per trip",
+      "ul": [
+        "Manufacturing footprint divided by trips.",
+        "Washing water, steam and chemicals.",
+        "Empty return transport."
+      ]
+    },
+    {
+      "h": "Keep records",
+      "p": [
+        "Count trips per tote from your tracking sheet. Reconditioning, a new bottle in an old cage, is a smaller hit than a new IBC."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "HDPE drum footprint",
+      "to": "/answers/hdpe-drum-carbon-footprint-per-drum"
+    },
+    {
+      "label": "FIBC jumbo bag",
+      "to": "/answers/fibc-jumbo-bag-carbon-footprint-per-bag"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

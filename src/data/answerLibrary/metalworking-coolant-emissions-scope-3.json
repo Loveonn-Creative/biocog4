@@ -1,0 +1,42 @@
+{
+  "slug": "metalworking-coolant-emissions-scope-3",
+  "q": "Do metalworking coolants count in our carbon footprint?",
+  "title": "Metalworking coolant emissions",
+  "short": "Coolant concentrate you buy is Scope 3 Category 1, and spent coolant sent to a recycler or treatment plant is Category 5. Coolant does not burn in normal use, so it adds nothing to Scope 1. Longer sump life cuts both lines.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Machine shops and component makers",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Litres of concentrate bought.",
+        "Litres of spent coolant sent out, with the recycler's receipt."
+      ]
+    },
+    {
+      "h": "Size",
+      "p": [
+        "For most machine shops coolant is small next to electricity. Track it so the inventory is complete, not because it is large."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Lubricants in Scope 1",
+      "to": "/answers/do-lubricants-count-in-scope-1"
+    },
+    {
+      "label": "Waste in Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

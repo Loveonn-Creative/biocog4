@@ -1,0 +1,54 @@
+{
+  "slug": "sodium-silicate-furnace-emissions-per-tonne",
+  "q": "What are the CO2 emissions from making sodium silicate in a furnace?",
+  "title": "Sodium silicate furnace CO2",
+  "short": "Melting soda ash with sand releases process CO2: about 0.415 tonnes for every tonne of soda ash used, because its carbonate turns into CO2. Add the furnace fuel and electricity. The hydrothermal route, using caustic soda, has no carbonate CO2.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Sodium silicate producers",
+  "sections": [
+    {
+      "h": "Two sources in the furnace",
+      "ul": [
+        "Process CO2 from soda ash: 44/106 of its weight.",
+        "Fuel CO2 from gas, oil or coal firing the furnace."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Tonnes of soda ash charged, fuel bought, and tonnes of glass produced. The soda ash figure comes straight from purchase invoices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: one month",
+    "lines": [
+      "Soda ash used: 300 t x 0.415 = 124.5 t CO2",
+      "Furnace fuel: from fuel invoices",
+      "Divide by tonnes of sodium silicate made"
+    ]
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "CO2 from soda ash or limestone",
+      "to": "/answers/co2-from-soda-ash-or-limestone-neutralisation"
+    },
+    {
+      "label": "Soda ash plant CO2",
+      "to": "/answers/soda-ash-plant-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

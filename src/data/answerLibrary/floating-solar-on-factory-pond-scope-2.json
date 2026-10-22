@@ -1,0 +1,47 @@
+{
+  "slug": "floating-solar-on-factory-pond-scope-2",
+  "q": "Can a factory count floating solar on its own pond as clean power?",
+  "title": "Floating solar on a factory pond",
+  "short": "Yes. Solar panels on your own reservoir or effluent pond work like rooftop solar: units used on site cut grid purchases, so Scope 2 falls. Keep the generation log. If any units are exported, follow the discom's net or gross metering terms.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories with ponds or reservoirs",
+  "sections": [
+    {
+      "h": "Evidence",
+      "ul": [
+        "Inverter or generation meter readings.",
+        "Grid bill showing lower imports.",
+        "Approval or metering agreement with the discom."
+      ]
+    },
+    {
+      "h": "Side benefit",
+      "p": [
+        "Shading the pond can cut evaporation. Report that as a water benefit, not a carbon one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Rooftop solar payback",
+      "to": "/answers/rooftop-solar-payback-for-a-factory"
+    },
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

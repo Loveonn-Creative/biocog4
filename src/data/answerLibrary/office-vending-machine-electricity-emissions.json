@@ -1,0 +1,47 @@
+{
+  "slug": "office-vending-machine-electricity-emissions",
+  "q": "How much do office vending machines add to our emissions?",
+  "title": "Office vending machine emissions",
+  "short": "A refrigerated vending machine runs day and night, so it uses more electricity than its size suggests. Count its units at 0.710 kg CO2 per kWh, from a plug meter or its rated consumption, labelled as an estimate. Timers on lighting and cooling cut it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Office and facility managers",
+  "sections": [
+    {
+      "h": "Who reports",
+      "ul": [
+        "Your power bill, your machine: Scope 2.",
+        "Vendor's machine on your power: still your Scope 2.",
+        "Products stocked: the vendor's Scope 3."
+      ]
+    },
+    {
+      "h": "Cut it",
+      "p": [
+        "Switch off the display lights at night and pick machines with efficient compressors."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Idle machine base load",
+      "to": "/answers/idle-machines-base-load-electricity"
+    },
+    {
+      "label": "Office water jars",
+      "to": "/answers/bottled-water-jars-office-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

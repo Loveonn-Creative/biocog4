@@ -1,0 +1,47 @@
+{
+  "slug": "bhutan-ferrosilicon-exporter-cbam-check",
+  "q": "Does ferro-silicon from Bhutan face EU CBAM?",
+  "title": "Bhutanese ferro-silicon: CBAM check",
+  "short": "No, not under the current goods list. Among ferroalloys, CBAM covers ferro-manganese, ferro-chromium and ferro-nickel only, so ferro-silicon is outside it. Bhutan is not one of the exempt countries, so any covered goods it ships would still need figures.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferroalloy producers in Bhutan and EU steel buyers",
+  "sections": [
+    {
+      "h": "Covered ferroalloys",
+      "ul": [
+        "7202 1: ferro-manganese.",
+        "7202 4: ferro-chromium.",
+        "7202 6: ferro-nickel."
+      ]
+    },
+    {
+      "h": "Still worth tracking",
+      "p": [
+        "EU steel mills ask for alloy footprints for their own reporting. Electricity, reductant and electrode records serve both."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Gabon silico-manganese check",
+      "to": "/answers/gabon-silicomanganese-exporter-cbam-check"
+    },
+    {
+      "label": "Ferroalloy additions in steel",
+      "to": "/answers/cbam-ferroalloy-additions-in-steel-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

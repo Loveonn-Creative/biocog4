@@ -1,0 +1,47 @@
+{
+  "slug": "solar-carport-at-factory-scope-2",
+  "q": "How do we count a solar carport at our factory?",
+  "title": "Solar carport at a factory",
+  "short": "Like rooftop solar: power you make and use on site never appears on the grid bill, so Scope 2 falls with no certificate needed. Read generation from the inverter to show the saving. Building the carport is Scope 3 Category 2 in the year you buy it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories adding solar over parking",
+  "sections": [
+    {
+      "h": "Show the saving",
+      "ul": [
+        "Monthly generation from the inverter or meter.",
+        "Times 0.710 gives grid CO2 avoided.",
+        "Exported units under net metering follow the discom's rules."
+      ]
+    },
+    {
+      "h": "EV charging",
+      "p": [
+        "If the carport feeds EV chargers, that use is on-site solar too. Keep charger logs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Inverter reading vs net meter",
+      "to": "/answers/solar-inverter-reading-vs-net-meter-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

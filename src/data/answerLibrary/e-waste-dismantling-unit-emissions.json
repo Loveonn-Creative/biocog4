@@ -1,0 +1,47 @@
+{
+  "slug": "e-waste-dismantling-unit-emissions",
+  "q": "What are the emissions of an e-waste dismantling unit?",
+  "title": "E-waste dismantling unit emissions",
+  "short": "A dismantler's own emissions are electricity for shredders, conveyors and tools, and diesel for collection trucks and forklifts. Refrigerant recovered from fridges and ACs must be captured, not vented. Any release counts at the gas's warming potential.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Authorised e-waste dismantlers and recyclers",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Grid power for shredding and sorting.",
+        "Diesel for collection vehicles.",
+        "Refrigerant leaks during recovery."
+      ]
+    },
+    {
+      "h": "Rules",
+      "p": [
+        "India's E-Waste (Management) Rules, 2022 set up producer responsibility and registered recyclers. Keep the CPCB portal records alongside your energy bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Appliance end of life",
+      "to": "/answers/appliance-end-of-life-emissions-e-waste-india"
+    },
+    {
+      "label": "AC refrigerant recovery",
+      "to": "/answers/ac-decommissioning-refrigerant-recovery-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Central Pollution Control Board (cpcb.nic.in)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

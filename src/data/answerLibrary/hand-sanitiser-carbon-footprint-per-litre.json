@@ -1,0 +1,47 @@
+{
+  "slug": "hand-sanitiser-carbon-footprint-per-litre",
+  "q": "What is the carbon footprint of hand sanitiser per litre?",
+  "title": "Hand sanitiser per litre",
+  "short": "The alcohol is the largest part: ethanol or isopropyl alcohol bought in. Blending and filling use little electricity. Bottles, pumps and cartons add packaging. Grain or molasses ethanol carries farming emissions, and isopropyl alcohol carries petrochemical ones.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Sanitiser makers and institutional buyers",
+  "sections": [
+    {
+      "h": "Main parts",
+      "ul": [
+        "Alcohol, about 60 to 80 percent of the liquid.",
+        "Bottle, pump and label.",
+        "Blending and filling power."
+      ]
+    },
+    {
+      "h": "Bulk vs small packs",
+      "p": [
+        "Five litre refill cans carry far less packaging per litre than 100 ml bottles."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Grain ethanol distillery",
+      "to": "/answers/grain-ethanol-distillery-co2-per-litre"
+    },
+    {
+      "label": "Soap footprint",
+      "to": "/answers/soap-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "wood-varnish-and-polish-scope-3",
+  "q": "How do we count the varnish and polish used on wooden products?",
+  "title": "Wood varnish and polish: Scope 3",
+  "short": "Varnish, lacquer and polish you buy are Scope 3 Category 1, by litres or kilograms bought and a supplier or database factor. Solvent that evaporates in your shop is not counted as CO2 in Scope 1 unless it is burnt, for example in a fume incinerator.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Furniture and handicraft makers",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Litres of varnish, lacquer and thinner bought.",
+        "Factor per litre or kg, with source."
+      ]
+    },
+    {
+      "h": "Solvent fumes",
+      "p": [
+        "Fumes are an air quality issue. If an incinerator burns them, its fuel and the solvent carbon become Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Wooden furniture footprint",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Car body shop paint solvents",
+      "to": "/answers/car-body-shop-paint-solvents-carbon-count"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

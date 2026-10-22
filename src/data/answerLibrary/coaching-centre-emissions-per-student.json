@@ -1,0 +1,47 @@
+{
+  "slug": "coaching-centre-emissions-per-student",
+  "q": "What is the carbon footprint of a coaching centre per student?",
+  "title": "Coaching centre emissions per student",
+  "short": "For a coaching centre, the bills are mainly electricity for ACs, lights and projectors, plus any diesel genset. Divide the year's Scope 1 and 2 by enrolled students. Student travel to class, often the largest share, is commuting in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coaching institutes and test-prep chains",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Electricity bills for each centre.",
+        "Genset diesel during outages.",
+        "Printed study material, in Scope 3."
+      ]
+    },
+    {
+      "h": "Online classes",
+      "p": [
+        "Live online batches move energy to students' homes and to cloud services. Count the cloud bill in Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "SaaS subscriptions in Scope 3",
+      "to": "/answers/saas-subscriptions-scope-3-emissions"
+    },
+    {
+      "label": "Work from home emissions",
+      "to": "/answers/work-from-home-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

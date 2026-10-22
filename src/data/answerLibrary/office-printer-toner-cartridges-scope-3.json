@@ -1,0 +1,43 @@
+{
+  "slug": "office-printer-toner-cartridges-scope-3",
+  "q": "Do printer toner cartridges count in our carbon footprint?",
+  "title": "Printer toner cartridges: Scope 3",
+  "short": "Yes, as purchased goods in Scope 3 Category 1, usually counted by number of cartridges and a factor per cartridge or per kg. Remanufactured cartridges carry a lower figure. Printing electricity is in your Scope 2 already.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Office managers and procurement teams",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Cartridges bought per year, from invoices.",
+        "Weight or a per-cartridge factor with its source.",
+        "Used cartridges returned for refill."
+      ]
+    },
+    {
+      "h": "Size",
+      "p": [
+        "Small for most offices. Paper and IT hardware usually matter more."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "IT hardware in Category 2",
+      "to": "/answers/it-hardware-laptops-category-2-emissions"
+    },
+    {
+      "label": "Mobile and internet bills",
+      "to": "/answers/mobile-and-internet-bills-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "glass-cullet-use-co2-saving",
+  "q": "How much CO2 does using more cullet save in a glass furnace?",
+  "title": "Cullet in a glass furnace: CO2 saved",
+  "short": "Cullet saves in two ways. It replaces soda ash and limestone, so their process CO2 is never released. It also melts with less energy, so furnace fuel falls. Measure both: carbonates charged and fuel per tonne of glass, before and after.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Glass container and tableware makers",
+  "sections": [
+    {
+      "h": "Track",
+      "ul": [
+        "Tonnes of cullet, soda ash and limestone charged.",
+        "Furnace fuel per tonne of glass pulled.",
+        "Bought cullet, with the supplier's invoices."
+      ]
+    },
+    {
+      "h": "Process CO2 avoided",
+      "p": [
+        "Soda ash releases 0.415 t CO2 per tonne and limestone 0.440 t CO2 per tonne. Less of each in the batch means less process CO2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Firozabad batch carbonates",
+      "to": "/answers/firozabad-glass-batch-carbonates-process-co2"
+    },
+    {
+      "label": "Glass container furnace",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

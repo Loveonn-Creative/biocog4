@@ -1,0 +1,43 @@
+{
+  "slug": "paper-yarn-cone-carbon-footprint",
+  "q": "What is the carbon footprint of the paper cones yarn is wound on?",
+  "title": "Paper yarn cones: carbon footprint",
+  "short": "Paper cones are small per kg of yarn, but a spinning mill uses millions. Weigh a cone, multiply by cones bought and use a paperboard factor from your supplier or a named database. Cones taken back and reused cut the figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Spinning mills and cone makers",
+  "sections": [
+    {
+      "h": "Calculate",
+      "ul": [
+        "Cone weight in grams.",
+        "Cones bought per year, from invoices.",
+        "Paperboard factor, labelled with source."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Cones you buy are Category 1. Cones shipped to weavers go into their Scope 3 and, at end of life, your Category 12."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Yarn dyeing footprint",
+      "to": "/answers/yarn-dyeing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Packaging HSN codes",
+      "to": "/answers/hsn-codes-for-packaging-materials-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

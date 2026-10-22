@@ -1,0 +1,47 @@
+{
+  "slug": "lac-processing-unit-emissions-per-kg",
+  "q": "What are the emissions from processing lac into shellac?",
+  "title": "Lac to shellac: processing emissions",
+  "short": "Stick lac is crushed, washed, dried and melted into shellac. Emissions come from electricity for crushers and washers, and fuel for melting and drying. Lac itself is a natural resin, so its carbon is biogenic. Record fuel and power per kg of shellac made.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Lac processors and shellac buyers",
+  "sections": [
+    {
+      "h": "Process steps",
+      "ol": [
+        "Crushing and sieving stick lac.",
+        "Washing to seedlac, then drying.",
+        "Melting and filtering to shellac flakes."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Units on the electricity bill, fuel bought for melting, and kilograms of seedlac and shellac produced each month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Biomass fuel still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Buyer asks before first order",
+      "to": "/answers/buyer-asks-carbon-data-before-first-order"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

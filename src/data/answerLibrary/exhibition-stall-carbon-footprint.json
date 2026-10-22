@@ -1,0 +1,52 @@
+{
+  "slug": "exhibition-stall-carbon-footprint",
+  "q": "What is the carbon footprint of our stall at a trade exhibition?",
+  "title": "Exhibition stall carbon footprint",
+  "short": "For an exhibitor, the big items are usually team travel and hotel nights, then building the stall and shipping samples. Stall electricity is often small. Reusing a modular stall instead of a one-time build is the easiest cut.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies exhibiting at trade fairs",
+  "sections": [
+    {
+      "h": "What to add",
+      "ul": [
+        "Flights, trains and hotel nights for staff.",
+        "Stall build: plywood, vinyl prints, carpets.",
+        "Freight for samples and stall material.",
+        "Power drawn at the stall, if the organiser reports it."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Travel is Category 6 and stall materials are Category 1. The organiser's venue energy is theirs to report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Event attendee travel",
+      "to": "/answers/event-attendee-travel-which-scope"
+    },
+    {
+      "label": "Hotel stay per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Carbon neutral event claims",
+      "to": "/answers/carbon-neutral-event-claim-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

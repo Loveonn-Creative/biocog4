@@ -1,0 +1,47 @@
+{
+  "slug": "activated-carbon-kiln-emissions-per-tonne",
+  "q": "How do I count emissions from an activated carbon plant?",
+  "title": "Activated carbon plant emissions",
+  "short": "When coconut shell charcoal is activated with steam, the carbon released comes from the shell, so it is biogenic and reported separately. Your fossil emissions are the boiler fuel for steam, any diesel and the grid power. Coal-based activated carbon is fossil throughout.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Activated carbon producers and buyers",
+  "sections": [
+    {
+      "h": "Split by origin",
+      "ul": [
+        "Coconut shell feed: biogenic CO2, reported outside the scopes.",
+        "Coal feed: fossil CO2 in Scope 1.",
+        "Steam boiler, kilns and power: by fuel used."
+      ]
+    },
+    {
+      "h": "What a buyer asks",
+      "p": [
+        "Per tonne of product, state which feed you use and keep the biogenic figure separate. Mixing the two overstates a shell-based product."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Desiccated coconut footprint",
+      "to": "/answers/desiccated-coconut-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass fuel still has CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

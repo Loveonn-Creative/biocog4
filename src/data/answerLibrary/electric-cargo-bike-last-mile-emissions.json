@@ -1,0 +1,55 @@
+{
+  "slug": "electric-cargo-bike-last-mile-emissions",
+  "q": "What are the emissions of an electric cargo bike for deliveries?",
+  "title": "Electric cargo bike delivery emissions",
+  "short": "Only the charging electricity counts in use, at 0.710 kg CO2 per kWh. A cargo bike uses a few kWh a day, so a day's deliveries come to a few kg CO2, far below a diesel van. Building the battery and bike is Scope 3 Category 2.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Delivery operators and retailers",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "ol": [
+        "Charging kWh from a meter or charger log.",
+        "Times 0.710 gives kg CO2.",
+        "Divide by parcels delivered."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "If you own the bikes and pay for charging, it is your Scope 2. If a courier does the delivery, it sits in your Scope 3 transport."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: one bike, one day",
+    "lines": [
+      "Charging: 3 kWh x 0.710 = 2.1 kg CO2",
+      "Parcels delivered: 60",
+      "About 35 g CO2 per parcel"
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "EV deliveries are not zero",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
+    },
+    {
+      "label": "Diesel to electric van",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

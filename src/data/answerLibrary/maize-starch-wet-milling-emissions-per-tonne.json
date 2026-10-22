@@ -1,0 +1,47 @@
+{
+  "slug": "maize-starch-wet-milling-emissions-per-tonne",
+  "q": "What are the emissions from maize starch wet milling?",
+  "title": "Maize starch wet milling emissions",
+  "short": "Wet milling steeps maize, grinds it and separates starch, gluten, germ and fibre, then dries each. Steam for drying and electricity for grinding and separation are the big uses. Share the plant total across the co-products by mass or by value, and say which.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Starch makers and food or paper buyers",
+  "sections": [
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "Steam: steeping, starch drying, feed drying.",
+        "Electricity: mills, hydrocyclones, centrifuges.",
+        "Maize growing: Scope 3, often the largest share."
+      ]
+    },
+    {
+      "h": "Co-products",
+      "p": [
+        "Gluten meal and fibre feed carry part of the burden. Pick one allocation basis and keep it every year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Sago starch footprint",
+      "to": "/answers/sago-starch-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Grain ethanol distillery",
+      "to": "/answers/grain-ethanol-distillery-co2-per-litre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

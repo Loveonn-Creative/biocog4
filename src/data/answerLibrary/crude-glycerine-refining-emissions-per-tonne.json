@@ -1,0 +1,47 @@
+{
+  "slug": "crude-glycerine-refining-emissions-per-tonne",
+  "q": "How do I count emissions from refining crude glycerine?",
+  "title": "Refining crude glycerine: emissions",
+  "short": "Refining crude glycerine is mostly vacuum distillation and bleaching, so steam and electricity are your own emissions. The crude glycerine is a by-product of biodiesel or soap, and how much of that process it carries depends on the allocation rule you choose.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Glycerine refiners and pharma or cosmetics buyers",
+  "sections": [
+    {
+      "h": "Your own share",
+      "ul": [
+        "Steam for distillation, from boiler fuel.",
+        "Electricity for vacuum pumps.",
+        "Activated carbon and chemicals, in Scope 3."
+      ]
+    },
+    {
+      "h": "By-product burden",
+      "p": [
+        "Ask the supplier how the crude was allocated. A mass basis gives glycerine more burden than an economic basis."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Soap footprint",
+      "to": "/answers/soap-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biodiesel blend in fleets",
+      "to": "/answers/biodiesel-blend-fleet-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

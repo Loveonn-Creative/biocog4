@@ -1,0 +1,55 @@
+{
+  "slug": "stretch-wrap-film-emissions-per-pallet",
+  "q": "What is the carbon footprint of the stretch film on a pallet?",
+  "title": "Stretch film per pallet",
+  "short": "Weigh the film on a typical wrapped pallet, then multiply by a factor for LLDPE film from your supplier or a named database. Pre-stretched film and better wrapping machines use less film per pallet, which is the easiest cut.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Warehouses, exporters and packaging buyers",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "ol": [
+        "Grams of film per pallet, weighed.",
+        "Times pallets wrapped in the year.",
+        "Times the film factor, labelled with its source."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "p": [
+        "Film you buy is Category 1. Film on pallets you ship to customers also ends up in their waste, Category 12."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative only",
+    "lines": [
+      "Film: 250 g per pallet x 20,000 pallets = 5 t",
+      "Factor: 2 kg CO2e per kg (illustrative)",
+      "About 10 t CO2e a year"
+    ]
+  },
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Wooden or plastic pallet",
+      "to": "/answers/wooden-vs-plastic-pallet-carbon-footprint"
+    },
+    {
+      "label": "Packaging HSN codes",
+      "to": "/answers/hsn-codes-for-packaging-materials-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

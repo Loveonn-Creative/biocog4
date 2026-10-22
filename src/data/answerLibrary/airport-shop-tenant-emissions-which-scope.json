@@ -1,0 +1,47 @@
+{
+  "slug": "airport-shop-tenant-emissions-which-scope",
+  "q": "Which scope is electricity for my shop inside an airport terminal?",
+  "title": "Airport shop electricity: which scope",
+  "short": "If the airport bills you for your own metered electricity, report it as Scope 2. If power and cooling are built into the rent, it is still your use: get your share from the airport or estimate it by floor area, and label the estimate.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Retail and food tenants at airports",
+  "sections": [
+    {
+      "h": "Common cases",
+      "ul": [
+        "Own sub-meter billed by the airport: Scope 2.",
+        "Rent includes power: estimate your share, ideally reported as Scope 2.",
+        "Common area cooling: ask for the allocation method."
+      ]
+    },
+    {
+      "h": "Ask the airport",
+      "p": [
+        "Request monthly kWh for your unit and the share of central chiller energy charged to it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Sub-metered rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Mall electricity data",
+      "to": "/answers/retail-store-electricity-data-from-mall"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
