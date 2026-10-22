@@ -1,0 +1,49 @@
+{
+  "slug": "musical-instrument-maker-carbon-footprint",
+  "q": "How does a musical instrument workshop estimate the carbon footprint of what it makes?",
+  "title": "Musical instrument maker footprint",
+  "short": "Weigh each instrument by material, wood, brass, steel or plastic, and apply material factors. Add the workshop's electricity, any furnace or gas used for brass work, and lacquer. Brass and other metals usually carry most of the footprint in band instruments.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Instrument workshops and exporters",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Brass sheet and tube by weight.",
+        "Timber, by species if the buyer asks.",
+        "Strings, skins, lacquer and cases."
+      ]
+    },
+    {
+      "h": "Workshop",
+      "ul": [
+        "Electricity for lathes, buffing and blowers.",
+        "LPG or gas for brazing and annealing.",
+        "Divide by instruments made."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Brass artware footprint",
+      "to": "/answers/brass-artware-carbon-footprint-per-kg"
+    },
+    {
+      "label": "What to send a buyer for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "selling-scrap-does-it-cut-my-footprint",
+  "q": "We sell our metal and plastic scrap. Does that reduce our carbon footprint?",
+  "title": "Selling scrap and your footprint",
+  "short": "No. Selling scrap does not lower your Scope 1 or 2, and under the common cut-off approach the recycler, not you, gets the benefit of recycled material. What it does is keep scrap out of landfill, so your Category 5 waste emissions stay low.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Fabricators, foundries and plastics processors",
+  "sections": [
+    {
+      "h": "What changes",
+      "ul": [
+        "Waste to landfill falls, so Category 5 is smaller.",
+        "Revenue from scrap does not offset fuel or power."
+      ]
+    },
+    {
+      "h": "Avoided emissions",
+      "p": [
+        "You may describe the recycling separately, but avoided emissions are reported outside your inventory, never subtracted from it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Recycler avoided emissions claim",
+      "to": "/answers/plastic-recycler-avoided-emissions-claim"
+    },
+    {
+      "label": "Metal products end of life",
+      "to": "/answers/metal-products-end-of-life-category-12"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

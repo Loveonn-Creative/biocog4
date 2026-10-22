@@ -1,0 +1,47 @@
+{
+  "slug": "wind-turbine-blade-end-of-life-emissions",
+  "q": "How do wind turbine makers count emissions from blades at end of life?",
+  "title": "Wind turbine blades at end of life",
+  "short": "For the manufacturer it is Scope 3 Category 12, end-of-life treatment of sold products. Estimate blade mass sold, the share likely landfilled, co-processed in cement kilns or recycled, and apply a factor per route. Blades are mostly glass fibre composite, which is hard to recycle.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wind component makers and their buyers",
+  "sections": [
+    {
+      "h": "The inputs",
+      "ul": [
+        "Blade mass per turbine model sold in the year.",
+        "Likely end-of-life route in the market where it is installed.",
+        "A factor per route: landfill, kiln co-processing or recycling."
+      ]
+    },
+    {
+      "h": "For the wind farm owner",
+      "p": [
+        "Decommissioning waste is their Category 5 in the year it happens, not a figure to report years ahead."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Metal products end of life",
+      "to": "/answers/metal-products-end-of-life-category-12"
+    },
+    {
+      "label": "Appliance end of life in India",
+      "to": "/answers/appliance-end-of-life-emissions-e-waste-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "outsourced-security-and-housekeeping-scope-3",
+  "q": "Do outsourced security guards and housekeeping staff count in our carbon footprint?",
+  "title": "Security and housekeeping contracts",
+  "short": "Their services count as Scope 3 Category 1, purchased services, usually estimated from the contract value with a spend-based factor. Their fuel and power on your site is already in your bills. Their commuting belongs to the contractor, not your Category 7.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs with facility service contracts",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "The annual contract value, by service.",
+        "Cleaning chemicals and consumables if billed separately.",
+        "Any vehicles the contractor runs for you."
+      ]
+    },
+    {
+      "h": "What is already counted",
+      "p": [
+        "Lights, lifts and machines the staff use run on your electricity bill, so do not add them again."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Repair and maintenance spend",
+      "to": "/answers/repair-and-maintenance-spend-scope-3"
+    },
+    {
+      "label": "Spend-based Scope 3 and inflation",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

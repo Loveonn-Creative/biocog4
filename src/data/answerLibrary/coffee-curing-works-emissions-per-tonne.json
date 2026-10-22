@@ -1,0 +1,47 @@
+{
+  "slug": "coffee-curing-works-emissions-per-tonne",
+  "q": "How does a coffee curing works calculate emissions per tonne of green coffee?",
+  "title": "Coffee curing works emissions",
+  "short": "Add electricity for hullers, graders and polishers, fuel for any mechanical driers and genset diesel, then divide by tonnes of green coffee dispatched. Sun-dried coffee has almost no drying emissions. Farm emissions sit upstream, so report them separately if a roaster asks.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coffee curers and exporters",
+  "sections": [
+    {
+      "h": "At the works",
+      "ul": [
+        "Grid units for hulling, grading and colour sorting.",
+        "Driers: firewood, diesel or electric.",
+        "Backup diesel during power cuts."
+      ]
+    },
+    {
+      "h": "Upstream and downstream",
+      "p": [
+        "Fertiliser and processing at the estate come before curing; shipping to the roaster comes after. Keep each stage on its own line."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "EUDR for coffee exporters",
+      "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide"
+    },
+    {
+      "label": "Spice processing footprint",
+      "to": "/answers/spice-processing-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

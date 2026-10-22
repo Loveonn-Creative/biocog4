@@ -1,0 +1,54 @@
+{
+  "slug": "two-electricity-meters-one-factory-total",
+  "q": "My factory has two electricity connections. Do I just add both bills?",
+  "title": "Two electricity meters, one factory",
+  "short": "Yes, add every connection that serves the site, but first check none is a check meter on the same supply. Two separate consumer numbers are two supplies and both count. A sub-meter or check meter behind the main meter would count the same units twice.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with more than one power connection",
+  "sections": [
+    {
+      "h": "How to tell",
+      "ul": [
+        "Different consumer numbers on different bills: separate supplies, add them.",
+        "A meter you read yourself behind the main meter: a sub-meter, do not add it.",
+        "A DISCOM check meter: same supply, use the billing meter."
+      ]
+    },
+    {
+      "h": "Keep it clean",
+      "p": [
+        "List each connection once with its consumer number, so the same bill is never counted twice in a later month."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Adding them",
+    "lines": [
+      "HT connection: 42,000 kWh; LT connection: 3,500 kWh",
+      "45,500 kWh x 0.710 kg = 32,305 kg CO2"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Billed units or meter reading",
+      "to": "/answers/billed-units-vs-meter-reading-for-emissions"
+    },
+    {
+      "label": "Smart meter data vs bills",
+      "to": "/answers/smart-meter-data-vs-bills-for-carbon-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

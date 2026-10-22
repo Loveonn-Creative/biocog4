@@ -1,0 +1,47 @@
+{
+  "slug": "bell-metal-utensil-carbon-footprint",
+  "q": "How do bell metal utensil workshops estimate the carbon footprint per kg?",
+  "title": "Bell metal utensil carbon footprint",
+  "short": "Count the charcoal, coal or gas used to melt and anneal, plus the copper and tin bought, per kilogram of finished utensils. Copper and tin usually outweigh the furnace. Recycled scrap metal lowers the material share, so record what portion you remelt.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bell metal artisans, cooperatives and buyers",
+  "sections": [
+    {
+      "h": "Per kg",
+      "ul": [
+        "Copper and tin bought, or scrap remelted.",
+        "Furnace fuel: charcoal, coal or LPG.",
+        "Electricity for polishing and lathes."
+      ]
+    },
+    {
+      "h": "Charcoal",
+      "p": [
+        "Charcoal CO2 is biogenic if from sustainable wood, but making charcoal releases methane, so ask the source."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Brass artware footprint",
+      "to": "/answers/brass-artware-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Charcoal kiln methane",
+      "to": "/answers/charcoal-kiln-methane-pig-iron-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

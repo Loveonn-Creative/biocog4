@@ -1,0 +1,47 @@
+{
+  "slug": "spectacle-frame-carbon-footprint-per-piece",
+  "q": "How do I estimate the carbon footprint of one spectacle frame?",
+  "title": "Spectacle frame carbon footprint",
+  "short": "Weigh the frame by material, usually acetate, injected plastic or metal, and apply a material factor per kilogram. Add the factory's electricity and fuel per frame, and packaging. For lenses, do the same separately, since glass and plastic lenses differ.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Eyewear makers and optical retail chains",
+  "sections": [
+    {
+      "h": "Per frame",
+      "ul": [
+        "Material weight: acetate, nylon, steel, titanium.",
+        "Factory energy divided by frames made.",
+        "Case, cloth and box."
+      ]
+    },
+    {
+      "h": "Standard",
+      "p": [
+        "ISO 14067 sets out how to build and report a product footprint; state the boundary, cradle to gate or wider."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "What to send a buyer for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Surgical instrument footprint",
+      "to": "/answers/surgical-instrument-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

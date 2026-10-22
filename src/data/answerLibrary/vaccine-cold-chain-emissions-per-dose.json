@@ -1,0 +1,47 @@
+{
+  "slug": "vaccine-cold-chain-emissions-per-dose",
+  "q": "How do I work out the cold chain emissions per vaccine dose?",
+  "title": "Vaccine cold chain emissions per dose",
+  "short": "Add the electricity for walk-in coolers and freezers, refrigerated transport fuel and refrigerant top-ups for the period, then divide by doses handled. Refrigerant leaks can matter more than power, because common refrigerants have global warming potentials in the thousands.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Distributors, hospitals and cold chain operators",
+  "sections": [
+    {
+      "h": "The three parts",
+      "ul": [
+        "Cold room and freezer electricity, from sub-meters or the bill share.",
+        "Reefer van or truck diesel.",
+        "Refrigerant recharged in the year, by gas type."
+      ]
+    },
+    {
+      "h": "Divide carefully",
+      "p": [
+        "Use doses actually stored or moved, and keep ultra-cold storage separate if you run it, since it draws far more power per dose."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Cold storage emissions per tonne",
+      "to": "/answers/cold-storage-emissions-per-tonne"
+    },
+    {
+      "label": "Reefer container emissions",
+      "to": "/answers/reefer-container-emissions-food-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 WG1, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "solar-panel-cleaning-water-and-emissions",
+  "q": "Does cleaning our solar panels add to our emissions?",
+  "title": "Solar panel cleaning and emissions",
+  "short": "Only a little. Water bought for cleaning and a contractor's service are small Scope 3 items. A diesel pump used for cleaning is Scope 1. The bigger effect runs the other way: dusty panels generate less, so more power comes from the grid.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs maintaining rooftop or ground solar",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Tanker water bought for cleaning: Scope 3.",
+        "A cleaning contract: Scope 3 purchased services.",
+        "Your own diesel pump or vehicle: Scope 1."
+      ]
+    },
+    {
+      "h": "What to watch",
+      "p": [
+        "Compare generation before and after cleaning. If output rises noticeably, more frequent cleaning cuts grid units and Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Water tanker purchases",
+      "to": "/answers/water-tanker-purchases-which-scope"
+    },
+    {
+      "label": "Solar net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

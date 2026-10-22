@@ -1,0 +1,48 @@
+{
+  "slug": "new-plant-construction-phase-emissions",
+  "q": "How do we count emissions while our new plant is being built?",
+  "title": "Emissions while building a new plant",
+  "short": "Fuel and power you buy for the site during construction are your Scope 1 and 2 in that year. The contractor's own diesel, and the steel and cement in the building, are Scope 3 Category 2, capital goods, counted when you acquire them.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs expanding or building a new unit",
+  "sections": [
+    {
+      "h": "Yours directly",
+      "ul": [
+        "Construction power connection in your name: Scope 2.",
+        "Diesel you buy for site gensets or machines: Scope 1."
+      ]
+    },
+    {
+      "h": "Scope 3",
+      "ul": [
+        "Contractor diesel and machinery, if they buy the fuel.",
+        "Steel, cement and equipment: Category 2, in the year bought.",
+        "Note the base year effect once the plant runs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Capital goods timing",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    },
+    {
+      "label": "Excavator diesel per hour",
+      "to": "/answers/excavator-diesel-consumption-per-hour"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

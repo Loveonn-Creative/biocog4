@@ -1,0 +1,54 @@
+{
+  "slug": "employee-mileage-claims-scope-3",
+  "q": "How do I count emissions from employees' mileage claims for business trips in their own cars?",
+  "title": "Mileage claims for business travel",
+  "short": "They are Scope 3 Category 6, business travel. Take the kilometres from each claim, split by car or two-wheeler and fuel, and apply a per-km factor or convert to litres with a typical mileage. Commuting to the usual workplace is Category 7, so keep it out.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HR and finance teams in MSMEs",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ul": [
+        "Kilometres per claim, already on most reimbursement forms.",
+        "Vehicle type: car, two-wheeler, petrol, diesel or CNG.",
+        "Trip purpose, to separate business travel from commuting."
+      ]
+    },
+    {
+      "h": "Two ways to calculate",
+      "p": [
+        "Per-km factors from a published table, or kilometres divided by mileage to get litres, then the fuel factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One month of claims",
+    "lines": [
+      "Petrol cars: 1,200 km at 15 km per litre = 80 L",
+      "80 L x 2.31 kg = 184.8 kg CO2"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Business car travel scope",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Employee commuting estimate",
+      "to": "/answers/employee-commute-msme-scope-3-estimate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK Government GHG conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

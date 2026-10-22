@@ -1179,6 +1179,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "bakery-oven-emissions-per-kg-bread",
+  "q": "How do I work out my bakery's oven emissions per kilogram of bread?",
+  "title": "Bakery oven emissions per kg of bread",
+  "short": "Take a month of oven fuel, LPG, PNG, diesel or electricity, convert to CO2 with the right factor, and divide by kilograms baked. Add mixers and cold storage from the electricity bill. Flour usually outweighs baking, so add it if your buyer wants a full product figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "ball-bearing-carbon-footprint-per-bearing",
   "q": "How do I calculate the carbon footprint of a ball bearing?",
   "title": "Ball bearing carbon footprint per bearing",
@@ -1289,6 +1297,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. RBI's fair practices rules require lenders to give the main reasons for rejecting any loan application in writing. You can complain to the bank first and, if it does not reply within 30 days or you are unhappy with the reply, go to the RBI Ombudsman, which handles service failures but not the lending decision itself.",
   "topic": "markets",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "banquet-hall-wedding-carbon-footprint",
+  "q": "How does a banquet hall work out the carbon footprint of a wedding?",
+  "title": "Banquet hall wedding carbon footprint",
+  "short": "Read the electricity and generator diesel for the event, the LPG used in the kitchen and the food bought, then divide by guests. Catering and generators usually lead. Guest travel can be estimated separately if the couple asks for it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "baotou-rare-earth-magnet-supplier-carbon-data",
@@ -1435,6 +1451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "bell-metal-utensil-carbon-footprint",
+  "q": "How do bell metal utensil workshops estimate the carbon footprint per kg?",
+  "title": "Bell metal utensil carbon footprint",
+  "short": "Count the charcoal, coal or gas used to melt and anneal, plus the copper and tin bought, per kilogram of finished utensils. Copper and tin usually outweigh the furnace. Recycled scrap metal lowers the material share, so record what portion you remelt.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "betim-auto-parts-supplier-carbon-data",
   "q": "We supply parts to a carmaker in Betim. How does Brazil's low-carbon grid affect our figure?",
   "title": "Betim auto parts and Brazil's grid",
@@ -1543,6 +1567,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Should I use billed units or the meter reading for my electricity emissions?",
   "title": "Billed units or meter reading?",
   "short": "Use the units actually consumed in the period: the meter reading difference times the multiplying factor. Billed units can include assessed units, minimum charges or adjustments for earlier months. If the bill is in kVAh, use the kWh register for emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "bills-in-old-company-name-after-merger",
+  "q": "Our electricity bills are still in the old company name after a merger. Can we count them?",
+  "title": "Bills in an old company name",
+  "short": "Yes. What matters is that the site sits inside your reporting boundary, not the name printed on the bill. Keep the merger or name-change document next to the bills, and recalculate your base year if the merger brought in a large new site.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -1699,6 +1731,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "blurred-bill-photo-what-to-do",
+  "q": "The photo of my bill is blurred and the units are unreadable. What should I do?",
+  "title": "Blurred bill photo: what to do",
+  "short": "Do not guess the number. Download a fresh copy from your DISCOM or supplier portal, ask the supplier for a duplicate, or read the meter history. A guessed figure is the first thing a verifier challenges, and one wrong digit can move a month by thousands of kWh.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "bm-en01-003-biomass-boiler-ccts-credits",
   "q": "Can a factory biomass boiler or cogeneration plant earn CCTS credits under BM EN01.003, and what biomass is allowed?",
   "title": "Biomass boiler credits under BM EN01.003",
@@ -1809,6 +1849,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Most of Bosnia and Herzegovina's power comes from coal, with hydro making up most of the rest, so its grid factor is high, roughly 0.7 kg CO2 per kWh or more, and swings with rainfall. Use the official or IEA figure for the reporting year.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bottled-water-jars-office-emissions",
+  "q": "Do the 20 litre drinking water jars delivered to our office count in our emissions?",
+  "title": "Drinking water jars: do they count",
+  "short": "Yes, as Scope 3 Category 1, purchased goods, but they are usually tiny. Count the water, the delivery trips if you know them, and new jars bought. Reusable jars are refilled many times, so most of the impact is the supplier's treatment power and transport.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "bought-a-unit-mid-year-carbon-base-year",
@@ -2371,6 +2419,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "buying-power-from-a-neighbouring-factory",
+  "q": "We buy electricity from a neighbouring factory's generator. What factor do we use?",
+  "title": "Power bought from a neighbour's plant",
+  "short": "It is your Scope 2, but the grid factor may be wrong. Ask the neighbour for the fuel burned and units generated, and work out a supplier-specific factor. If they cannot share it, use the grid factor and note it as an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "cake-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of cakes per kg?",
   "title": "Cake carbon footprint per kg",
@@ -2865,6 +2921,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply tonnes of carbon by 44/12, which is 3.667, to get tonnes of CO2. The 44 and 12 are the molecular weight of CO2 and the atomic weight of carbon. To go back, multiply tonnes of CO2 by 12/44, or 0.273. First confirm the supplier really meant carbon.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "cardamom-drying-fuel-emissions-per-kg",
+  "q": "How do cardamom growers and curing houses work out drying emissions per kg?",
+  "title": "Cardamom drying emissions per kg",
+  "short": "Weigh the firewood or measure the diesel and electricity used by the drier for a batch, convert to CO2, and divide by kilograms of dry cardamom. CO2 from firewood is biogenic and reported separately; its methane and nitrous oxide still count. Electric driers shift it to Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "carrom-board-carbon-footprint-per-board",
@@ -4179,6 +4243,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "coffee-curing-works-emissions-per-tonne",
+  "q": "How does a coffee curing works calculate emissions per tonne of green coffee?",
+  "title": "Coffee curing works emissions",
+  "short": "Add electricity for hullers, graders and polishers, fuel for any mechanical driers and genset diesel, then divide by tonnes of green coffee dispatched. Sun-dried coffee has almost no drying emissions. Farm emissions sit upstream, so report them separately if a roaster asks.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "cogged-or-synchronous-belt-energy-saving",
   "q": "Do cogged or synchronous belts save energy over standard V-belts?",
   "title": "Cogged or synchronous belts vs V-belts",
@@ -4329,6 +4401,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The most common mistakes are using kVAh as kWh, counting the same bill twice, putting GST-inclusive amounts into spend-based factors, mixing up billing date and consumption period, putting diesel generators and rented space in the wrong scope, and using a grid factor without naming its source and edition.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "company-guest-house-emissions-which-scope",
+  "q": "Our company runs a guest house for visiting staff. Which scope do its emissions go in?",
+  "title": "Company guest house emissions",
+  "short": "If you own or lease it and pay its bills, it sits inside your operational control: its electricity is Scope 2 and its LPG and diesel are Scope 1. If staff stay in hotels you pay for, that is Scope 3 business travel instead.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "composition-dealer-bill-of-supply-carbon-evidence",
@@ -4979,6 +5059,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "dental-clinic-carbon-footprint",
+  "q": "How does a dental clinic work out its carbon footprint?",
+  "title": "Dental clinic carbon footprint",
+  "short": "Start with the electricity bill, then add any nitrous oxide used for sedation, LPG or diesel, and the main purchases: consumables, instruments and lab work. Nitrous oxide is a direct Scope 1 emission with a global warming potential of 273, so a few cylinders matter.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "depreciation-on-solar-and-energy-saving-equipment",
   "q": "What depreciation can an Indian business claim on rooftop solar and energy-saving equipment?",
   "title": "Depreciation on solar and energy savers",
@@ -5099,12 +5187,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "diesel-price-change-and-spend-based-estimates",
+  "q": "Diesel prices changed this year. Does that distort a spend-based emissions estimate?",
+  "title": "Fuel price changes and spend estimates",
+  "short": "Yes. If you estimate from rupees, a price rise looks like more fuel and a price cut looks like less. Convert spend to litres with the price on each invoice date, or better, use the litres printed on the invoice. Emissions follow litres, not rupees.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "diesel-pump-to-solar-pump-co2-saving",
   "q": "How much CO2 does replacing a diesel pump set with a solar pump save under PM-KUSUM?",
   "title": "Diesel to solar pump: CO2 saved",
   "short": "Replacing a diesel pump set with a standalone solar pump saves the diesel it used to burn: litres a year x 2.68 kg CO2 per litre. A pump using 800 litres a year saves about 2.1 tonnes of CO2. Without fuel records, estimate litres from pumping hours and the engine's litres per hour.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "diesel-theft-or-pilferage-emissions",
+  "q": "Some of our diesel was stolen. Do we still count it as our emissions?",
+  "title": "Stolen diesel: count it or not",
+  "short": "Only fuel you burn is your Scope 1. Stolen diesel is not, but you need evidence: a police complaint, a stock register showing the loss, or an insurance claim. Without that, a verifier will expect you to count all fuel bought, which is the safer choice.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "diesel-to-electric-van-emissions-saving-india",
@@ -6059,6 +6163,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "employee-mileage-claims-scope-3",
+  "q": "How do I count emissions from employees' mileage claims for business trips in their own cars?",
+  "title": "Mileage claims for business travel",
+  "short": "They are Scope 3 Category 6, business travel. Take the kilometres from each claim, split by car or two-wheeler and fuel, and apply a per-km factor or convert to litres with a typical mileage. Commuting to the usual workplace is Category 7, so keep it out.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "employee-own-car-business-mileage-emissions",
   "q": "Employees use their own cars for work trips and claim mileage. How do I count those emissions?",
   "title": "Mileage claims in your own car",
@@ -6611,6 +6723,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "ev-charger-maker-product-carbon-footprint",
+  "q": "How does an EV charger maker calculate the carbon footprint of one charger?",
+  "title": "EV charger product carbon footprint",
+  "short": "List the bill of materials by weight: steel or aluminium enclosure, copper cable, power electronics and circuit boards. Apply material factors, add assembly energy per unit and packaging. Electronics and copper usually dominate, so get supplier data for those first.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "ev-charging-station-carbon-credits-india",
   "q": "Can an EV charging station business earn carbon credits in India?",
   "title": "Carbon credits for EV charging stations",
@@ -6625,6 +6745,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Electricity used to charge EVs your company owns or controls is Scope 2, never Scope 1, because the emissions happen at the power station. Charging of employees' own EVs for business trips is Scope 3 Category 6, and for commuting Category 7. Public charger electricity for company EVs is where practice differs.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ev-fleet-loan-what-lenders-ask",
+  "q": "What do lenders usually ask for when an MSME borrows to buy electric vehicles?",
+  "title": "EV fleet loans: what lenders ask",
+  "short": "Expect vehicle quotations, registration plans, a charging plan and the business case. For green labelling, lenders want the use of proceeds tied to the vehicles and a way to report the result, usually kilometres run and diesel or petrol displaced.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "eva-slipper-carbon-footprint-per-pair",
@@ -6859,6 +6987,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "field-sales-team-travel-emissions",
+  "q": "How do I work out emissions from my sales team's travel across the country?",
+  "title": "Field sales team travel emissions",
+  "short": "Use the travel bills you already approve: train and air tickets, taxi receipts, bus fares and fuel claims. Group them by mode, take distance or fuel, and apply a factor per mode. Field sales travel is Scope 3 Category 6 unless the vehicles are company-owned.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "fire-extinguisher-refill-scope-1",
   "q": "Do fire extinguisher refills count in Scope 1?",
   "title": "Do fire extinguisher refills count?",
@@ -7001,6 +7137,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the mill's electricity and any diesel for the generator, multiply by the CEA grid factor and IPCC diesel factor, and divide by tonnes of wheat ground. Then allocate between atta, maida, suji and bran by mass or by value, and add the wheat's own farm and transport emissions as a bought-in input.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "flue-cured-tobacco-barn-fuel-emissions",
+  "q": "How do I calculate emissions from curing tobacco in flue-cured barns?",
+  "title": "Flue-cured tobacco barn emissions",
+  "short": "Weigh the coal or firewood burned per barn season and divide by kilograms of cured leaf. Coal CO2 is fossil and counts fully; firewood CO2 is biogenic and reported separately. Fuel per kilogram varies widely with barn insulation and furnace design.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "flush-door-carbon-footprint-per-door",
@@ -7283,6 +7427,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "fuel-burned-in-commissioning-trials",
+  "q": "Do we count fuel burned while commissioning or testing new equipment?",
+  "title": "Fuel burned in trials and testing",
+  "short": "Yes. Fuel burned in equipment you control is Scope 1 whatever the purpose: commissioning a boiler, test runs of a furnace or engine trials. If the supplier ran the trial with their own fuel, it is their emissions, so check who paid for and controlled the fuel.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "fuel-emission-factors-co2-only-or-co2e",
   "q": "Which fuels need methane and nitrous oxide counted, and when is a CO2-only factor enough?",
   "title": "Which fuels need CH4 and N2O counted?",
@@ -7297,6 +7449,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide the rupee amount by the price per litre on the purchase date, then multiply the litres by the fuel's emission factor, 2.68 kg CO2 per litre for diesel. Compare like with like: a tax-inclusive amount with a tax-inclusive price. Label the result an estimate until the supplier confirms the litres.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "fuel-paid-in-advance-which-year-to-count",
+  "q": "We paid for fuel in advance. Which year do the emissions go in?",
+  "title": "Fuel paid in advance: which year",
+  "short": "Count fuel in the year you burn it, not the year you pay. An advance is a payment, not consumption. Use delivery dates and your stock register to place each lot, and carry unburned stock into the next year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "fuel-purchased-vs-fuel-consumed",
@@ -8225,6 +8385,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the cotton rag, waste paper or plant fibre used per kg of finished sheets, the pulping and drying energy, and any dyes and sizing. Divide the unit's energy by kg of good sheets made.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "handwritten-fuel-bill-as-carbon-evidence",
+  "q": "Can I use a handwritten diesel bill from a local supplier for carbon reporting?",
+  "title": "Handwritten fuel bills as evidence",
+  "short": "Yes, if it shows the date, supplier, litres and your business name, and you can back it with a payment record. A verifier will look for a matching bank or cash entry and your stock or logbook. Where a bill lacks litres, record how you converted it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "hard-boiled-candy-carbon-footprint-per-kg",
@@ -9265,6 +9433,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the NAR figure if the certificate gives one: it is the net calorific value as received, which matches the net basis of IPCC factors and the wet tonnes on your invoice. Convert kcal/kg to MJ/kg, multiply by tonnes for energy, then by the IPCC CO2 factor per TJ for the coal's rank.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "imported-coal-invoice-priced-in-us-dollars",
+  "q": "My imported coal invoice is priced in US dollars. How do I count its emissions?",
+  "title": "Imported coal invoice in US dollars",
+  "short": "Ignore the currency. Emissions come from the tonnes delivered and the coal's heating value, not the price. Take the quantity from the bill of lading or weighbridge slip and the NCV or GCV from the supplier's test certificate, then apply the IPCC factor for that coal type.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "incoterms-freight-scope-3-category-4-or-9",
@@ -10555,6 +10731,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "khandsari-unit-bagasse-and-fuel-emissions",
+  "q": "How does a khandsari sugar unit count emissions when it burns bagasse?",
+  "title": "Khandsari unit bagasse emissions",
+  "short": "Bagasse burned in the open pans is biomass: report its CO2 separately as biogenic, and count only its methane and nitrous oxide in Scope 1. Add any coal or firewood bought, crusher diesel and grid power. Divide by tonnes of khandsari for a per-tonne figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "khoa-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of khoa?",
   "title": "Khoa carbon footprint per kg",
@@ -10809,6 +10993,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually yes. Under operational control, tenants run the sheds, so their electricity goes in your Scope 3 Category 13, downstream leased assets. Under financial control or equity share with an operating lease, it goes in your Scope 1 and 2. Electricity for common areas you run stays in your Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "laptop-refurbishment-avoided-emissions-claim",
+  "q": "Can a laptop refurbisher claim avoided emissions for each device it sells?",
+  "title": "Refurbished laptops and avoided emissions",
+  "short": "It can describe them, but separately from its own inventory. Compare a refurbished laptop with the manufacture of a new one, show the method and assumptions, and never subtract the result from Scope 1, 2 or 3. Buyers will ask whether the device really replaced a new purchase.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "large-hydro-renewable-scope-2-india",
@@ -11523,6 +11715,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "meerut-scissors-unit-carbon-footprint",
+  "q": "How does a Meerut scissors maker work out the carbon footprint per pair?",
+  "title": "Meerut scissors carbon footprint",
+  "short": "Weigh the steel in each pair, often from scrap or sheet, and apply a steel factor, then add electricity for grinding and polishing and any furnace fuel for hardening. Scissors fall under HS chapter 82, which CBAM does not cover, but EU buyers may still ask for a figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "mercedes-supplier-ambition-letter-co2-neutral-parts",
   "q": "What does signing a car maker's CO2 ambition letter commit an auto parts supplier to?",
   "title": "Car maker CO2 ambition letter for suppliers",
@@ -11647,6 +11847,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "If my rolling mill sells mill scale, who counts its emissions?",
   "title": "Mill scale sold: who counts it?",
   "short": "Usually you carry no emissions out with it. Mill scale is a by-product of rolling, so your rolling emissions stay with your steel. The sinter plant or briquette maker that uses it counts the emissions of processing it. Record tonnes sold for your material balance.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "mining-dumper-diesel-per-tonne-moved",
+  "q": "How do I calculate diesel emissions per tonne of material moved by dumpers at a mine?",
+  "title": "Dumper diesel per tonne moved",
+  "short": "Divide the diesel issued to haul trucks by the tonnes they moved in the same period, then multiply by 2.68 kg CO2 per litre. Use the fuel issue register and the weighbridge or survey tonnage. Haul distance drives the number, so report tonne-kilometres too.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -12019,6 +12227,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "musical-instrument-maker-carbon-footprint",
+  "q": "How does a musical instrument workshop estimate the carbon footprint of what it makes?",
+  "title": "Musical instrument maker footprint",
+  "short": "Weigh each instrument by material, wood, brass, steel or plastic, and apply material factors. Add the workshop's electricity, any furnace or gas used for brass work, and lacquer. Brass and other metals usually carry most of the footprint in band instruments.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "mutual-fund-portfolio-carbon-footprint-pcaf",
+  "q": "How does a mutual fund calculate the carbon footprint of its portfolio?",
+  "title": "Mutual fund portfolio carbon footprint",
+  "short": "Under PCAF, each holding's emissions are attributed by the fund's share: the value held divided by the company's enterprise value including cash. Add the attributed Scope 1 and 2 across holdings, and show a data quality score, since many Indian companies still estimate.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "muzaffarnagar-kraft-paper-mill-boiler-fuel",
   "q": "How does a Muzaffarnagar kraft paper mill count its boiler fuel?",
   "title": "Muzaffarnagar kraft mills: boiler fuel",
@@ -12161,6 +12385,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Carbon neutral means a period's measured emissions are balanced, mostly by retiring carbon credits, alongside a reduction plan. Net zero is a long-term target: cut Scope 1, 2 and 3 emissions by about 90 percent or more, then remove only the residual. Carbon neutral can be this year; net zero is usually a 2050 goal.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "new-plant-construction-phase-emissions",
+  "q": "How do we count emissions while our new plant is being built?",
+  "title": "Emissions while building a new plant",
+  "short": "Fuel and power you buy for the site during construction are your Scope 1 and 2 in that year. The contractor's own diesel, and the steel and cement in the building, are Scope 3 Category 2, capital goods, counted when you acquire them.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "new-plant-started-mid-year-carbon-reporting",
@@ -12411,6 +12643,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "office-paper-emissions-per-ream",
+  "q": "How do I estimate the emissions from the office paper we buy?",
+  "title": "Office paper emissions per ream",
+  "short": "Convert reams to weight, then apply a paper factor. A ream of 500 A4 sheets at 80 gsm weighs about 2.5 kg. Multiply total kilograms by a factor for virgin or recycled paper from a published table. It is Scope 3 Category 1 and usually small.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "offset-printing-carbon-footprint-per-tonne-of-print",
   "q": "How do I calculate the carbon footprint of offset printed cartons, books or labels?",
   "title": "Offset print carbon footprint",
@@ -12467,12 +12707,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "open-access-deviation-units-scope-2",
+  "q": "Our green open access bill shows deviation units. How do they count in Scope 2?",
+  "title": "Open access deviation units",
+  "short": "Only renewable units actually scheduled and settled to you count as green. When you draw more than scheduled, the shortfall comes from the grid and takes the grid factor. Read the DISCOM settlement statement, not the contracted quantity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "open-access-green-power-on-bill-scope-2",
   "q": "Open access green power shows on my HT bill. How do I report it in Scope 2?",
   "title": "Open access green power on an HT bill",
   "short": "Take total consumption at your meter, including the open access units the discom adjusted, for location-based Scope 2 at the grid factor. For market-based, count only the adjusted green units at zero, and only if your contract and green certificate give you their attributes. The discom units that remain take the grid average.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "open-access-power-curtailed-which-factor",
+  "q": "Our open access wind supply was curtailed for days. What factor do we use for those units?",
+  "title": "Curtailed open access power",
+  "short": "Curtailed renewable units never reached you, so you cannot claim them. The power you used instead came from the grid and takes the grid factor. Use the settled renewable units on the DISCOM statement, which already reflect the curtailment.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "open-access-transmission-losses-which-units",
@@ -12545,6 +12801,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "They go in Scope 3 Category 1, purchased services. Multiply the year's contract value before GST by a spend-based factor for building services, and label it an estimate. Where the contractor burns fuel for you, such as patrol vehicles, ask for litres and use activity data instead.",
   "topic": "accounting",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "outsourced-security-and-housekeeping-scope-3",
+  "q": "Do outsourced security guards and housekeeping staff count in our carbon footprint?",
+  "title": "Security and housekeeping contracts",
+  "short": "Their services count as Scope 3 Category 1, purchased services, usually estimated from the contract value with a spend-based factor. Their fuel and power on your site is already in your bills. Their commuting belongs to the contractor, not your Category 7.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "own-diesel-tank-issue-register-emissions",
@@ -13699,6 +13963,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "puffed-rice-unit-fuel-emissions",
+  "q": "How does a puffed rice unit work out emissions from its roasting fuel?",
+  "title": "Puffed rice unit fuel emissions",
+  "short": "Measure the fuel for roasting, often rice husk, firewood or LPG, over a week and divide by kilograms of puffed rice. Husk and firewood CO2 is biogenic and reported separately; LPG CO2 counts fully at 2.98 kg per kg. Add parboiling steam and electricity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "pump-efficiency-test-and-replacement-savings",
   "q": "How do I test a pump's efficiency and work out the CO2 saved by replacing it?",
   "title": "Pump efficiency test and replacement CO2",
@@ -14731,6 +15003,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "same-invoice-uploaded-twice-double-count",
+  "q": "How do I stop the same invoice being counted twice in my carbon figures?",
+  "title": "Same invoice counted twice",
+  "short": "Give every invoice one identity: supplier GSTIN plus invoice number, or a file fingerprint. Check every new upload against that list before it is added. Duplicates usually arrive as a scan and an email copy of the same bill, or a revised invoice that replaces an older one.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "same-product-two-plants-footprint",
   "q": "We make the same product in two plants. Do we give the buyer a weighted average or plant-specific footprint?",
   "title": "Same product, two plants: which footprint?",
@@ -14987,6 +15267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "second-ghg-verification-what-changes",
+  "q": "What changes in our second year of GHG verification?",
+  "title": "Your second GHG verification",
+  "short": "The verifier checks that last year's findings were closed, compares this year with the base year, and looks hard at anything that changed: new sites, new factors, new methods. Explain each change in a short note before they ask, and keep last year's working papers handy.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "secondary-lead-smelter-co2-per-tonne",
   "q": "What is the carbon footprint of recycled lead from a secondary lead smelter per tonne?",
   "title": "CO2 per tonne of recycled lead",
@@ -15043,12 +15331,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "selling-electricity-to-a-neighbour-scope-2",
+  "q": "We pass some of our grid electricity to a neighbouring unit. Is that still our Scope 2?",
+  "title": "Passing power to a neighbour: Scope 2",
+  "short": "No. Scope 2 covers electricity you consume. Units sub-metered and billed to a neighbour or tenant are theirs to report. Keep the sub-meter readings and the recharge invoices, and subtract only what is metered, never an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "selling-production-scrap-scope-3-category-5",
   "q": "Can I claim a carbon credit for selling or recycling my production scrap?",
   "title": "Carbon credit for selling scrap?",
   "short": "No. Selling or recycling your production scrap does not earn a carbon credit and cannot be subtracted from your footprint. Credits come only from registered, verified projects, and the GHG Protocol keeps avoided emissions outside your inventory totals. The benefit of recycling is counted by whoever uses the recycled material.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "selling-scrap-does-it-cut-my-footprint",
+  "q": "We sell our metal and plastic scrap. Does that reduce our carbon footprint?",
+  "title": "Selling scrap and your footprint",
+  "short": "No. Selling scrap does not lower your Scope 1 or 2, and under the common cut-off approach the recycler, not you, gets the benefit of recycled material. What it does is keep scrap out of landfill, so your Category 5 waste emissions stay low.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "senseible-expert-climate-audit",
@@ -15395,6 +15699,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "sivakasi-fireworks-unit-emissions",
+  "q": "How does a fireworks unit in Sivakasi calculate its emissions?",
+  "title": "Sivakasi fireworks unit emissions",
+  "short": "Count the unit's own fuel and power as Scope 1 and 2, then the chemicals, paper and packaging bought as Category 1. Gases released when fireworks are lit happen at the customer, so they belong in the maker's Category 11, use of sold products, as direct use-phase emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "sivakasi-match-unit-carbon-footprint",
+  "q": "How does a Sivakasi match unit work out the carbon footprint of its matchboxes?",
+  "title": "Sivakasi match unit carbon footprint",
+  "short": "Most of the footprint sits in materials, not energy: wood or paper splints, board for boxes, wax and the head chemicals. Weigh each per thousand boxes and apply material factors, then add the unit's electricity and any diesel. Manual units use little power.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "sivakasi-printing-press-carbon-per-tonne",
   "q": "How does a Sivakasi printing press work out carbon per tonne printed?",
   "title": "Sivakasi printing press carbon per tonne",
@@ -15619,12 +15939,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "solar-panel-cleaning-water-and-emissions",
+  "q": "Does cleaning our solar panels add to our emissions?",
+  "title": "Solar panel cleaning and emissions",
+  "short": "Only a little. Water bought for cleaning and a contractor's service are small Scope 3 items. A diesel pump used for cleaning is Scope 1. The bigger effect runs the other way: dusty panels generate less, so more power comes from the grid.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "solar-panel-degradation-and-scope-2-claim",
+  "q": "My rooftop solar output drops every year. How does that affect my Scope 2 claim?",
+  "title": "Solar degradation and your Scope 2",
+  "short": "Claim only what the plant actually generates, read from the generation meter or inverter export, never the nameplate estimate. As panels age they produce less, so more power comes from the grid and your Scope 2 rises slightly. Your records then show the real trend.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "solar-panel-embodied-carbon-per-kwp",
   "q": "What is the embodied carbon of rooftop solar panels per kWp for Scope 3?",
   "title": "Solar panel embodied carbon per kWp",
   "short": "There is no single figure. Crystalline silicon modules carry several hundred kilograms of CO2e per kWp, and more when made on a coal heavy grid. Use the module maker's EPD if you can get one. Report the whole amount in Scope 3 Category 2, capital goods, in the year you buy the system.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "solar-panel-recycling-emissions-india",
+  "q": "How do I count emissions when old solar panels are recycled in India?",
+  "title": "Recycling old solar panels in India",
+  "short": "For the plant owner, panels sent for disposal are Scope 3 Category 5, waste, in the year removed. Use the recycler's weight slip and a factor for the treatment route. India's E-Waste (Management) Rules, 2022 bring solar PV modules under producer responsibility, so keep the recycler's certificate.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "solar-plus-grid-electricity-factor-for-buyer",
@@ -15739,6 +16083,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "spectacle-frame-carbon-footprint-per-piece",
+  "q": "How do I estimate the carbon footprint of one spectacle frame?",
+  "title": "Spectacle frame carbon footprint",
+  "short": "Weigh the frame by material, usually acetate, injected plastic or metal, and apply a material factor per kilogram. Add the factory's electricity and fuel per frame, and packaging. For lenses, do the same separately, since glass and plastic lenses differ.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "spend-based-scope-3-gst-inflation-currency",
   "q": "In spend-based Scope 3, do I remove GST and adjust for inflation and currency before applying factors?",
   "title": "Spend-based Scope 3: GST, inflation, FX",
@@ -15825,6 +16177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, increasingly. Japan's SSBJ climate standard follows IFRS S2 and asks large listed companies to report Scope 3, which includes what they buy from suppliers. Estimates are allowed, so early requests may be light, but Japanese customers will want supplier figures they can defend as mandatory reporting phases in.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "stadium-match-day-carbon-footprint",
+  "q": "How do we calculate the carbon footprint of a match day at our stadium?",
+  "title": "Stadium match-day carbon footprint",
+  "short": "Count floodlight and venue electricity, generator diesel, catering fuel and waste for the event. Spectator travel is often the largest share, estimated from a short survey or ticket postcodes. Report it per match and per spectator, and keep travel as a separate line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "staff-bus-scope-1-or-category-7",
@@ -16531,6 +16891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "temple-community-kitchen-fuel-emissions",
+  "q": "How do we calculate emissions from a temple or community kitchen that feeds thousands daily?",
+  "title": "Community kitchen fuel emissions",
+  "short": "Add up LPG, firewood, diesel and electricity used by the kitchen, then divide by meals served. CO2 from firewood is biogenic and reported separately, while its methane and nitrous oxide count. Switching from firewood to steam or LPG changes both numbers.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "temporary-construction-power-scope-2",
   "q": "Does electricity on a temporary connection for building our new plant count in our Scope 2?",
   "title": "Temporary construction power and Scope 2",
@@ -17003,6 +17371,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "two-electricity-meters-one-factory-total",
+  "q": "My factory has two electricity connections. Do I just add both bills?",
+  "title": "Two electricity meters, one factory",
+  "short": "Yes, add every connection that serves the site, but first check none is a check meter on the same supply. Two separate consumer numbers are two supplies and both count. A sub-meter or check meter behind the main meter would count the same units twice.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "two-wheeler-delivery-fleet-emissions",
   "q": "How do I calculate emissions for a petrol two-wheeler delivery fleet per km and per order?",
   "title": "Two-wheeler delivery fleet: CO2 per order",
@@ -17195,6 +17571,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "ups-battery-replacement-emissions",
+  "q": "Where do replacement UPS batteries go in our emissions?",
+  "title": "UPS battery replacement emissions",
+  "short": "New batteries are Scope 3: Category 1 if expensed, Category 2 if you treat them as capital goods, matching your accounts. Their disposal is Category 5, waste. The electricity a UPS uses is already in your Scope 2 bill.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "upvc-window-carbon-footprint-per-window",
   "q": "How do I calculate the carbon footprint of a uPVC window?",
   "title": "uPVC window carbon footprint per window",
@@ -17337,6 +17721,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Measure it. For nitric acid, a CBAM fertiliser good, N2O must be determined with a measurement-based method in the definitive period: analysers for N2O concentration and flow in the tail gas, converted to CO2e with the GWP set in the CBAM rules. Ammonia used is a precursor.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "vaccine-cold-chain-emissions-per-dose",
+  "q": "How do I work out the cold chain emissions per vaccine dose?",
+  "title": "Vaccine cold chain emissions per dose",
+  "short": "Add the electricity for walk-in coolers and freezers, refrigerated transport fuel and refrigerant top-ups for the period, then divide by doses handled. Refrigerant leaks can matter more than power, because common refrigerants have global warming potentials in the thousands.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "vacuum-flask-carbon-footprint-per-flask",
@@ -18441,6 +18833,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not yet. No US federal carbon border tax is law. Bills such as the Clean Competition Act and the Foreign Pollution Fee Act would charge imports by their carbon intensity above a US benchmark, but none has passed Congress. Exporters should still keep embedded emissions per tonne ready, because the EU already charges for them.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "wind-turbine-blade-end-of-life-emissions",
+  "q": "How do wind turbine makers count emissions from blades at end of life?",
+  "title": "Wind turbine blades at end of life",
+  "short": "For the manufacturer it is Scope 3 Category 12, end-of-life treatment of sold products. Estimate blade mass sold, the share likely landfilled, co-processed in cement kilns or recycled, and apply a factor per route. Blades are mostly glass fibre composite, which is hard to recycle.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "wire-nails-carbon-footprint-per-kg",

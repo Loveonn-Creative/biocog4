@@ -1,0 +1,47 @@
+{
+  "slug": "diesel-theft-or-pilferage-emissions",
+  "q": "Some of our diesel was stolen. Do we still count it as our emissions?",
+  "title": "Stolen diesel: count it or not",
+  "short": "Only fuel you burn is your Scope 1. Stolen diesel is not, but you need evidence: a police complaint, a stock register showing the loss, or an insurance claim. Without that, a verifier will expect you to count all fuel bought, which is the safer choice.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs with diesel tanks on site or on trucks",
+  "sections": [
+    {
+      "h": "When you can exclude it",
+      "ul": [
+        "A dated police complaint or FIR naming the quantity.",
+        "A stock register showing the gap between stock and use.",
+        "An insurance claim for the lost fuel."
+      ]
+    },
+    {
+      "h": "When you cannot",
+      "p": [
+        "Unexplained gaps between purchases and use are treated as consumption. Write down the reason for any exclusion so it survives review."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    },
+    {
+      "label": "Returned fuel and credit notes",
+      "to": "/answers/credit-note-returned-fuel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

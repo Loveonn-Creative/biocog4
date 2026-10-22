@@ -1,0 +1,55 @@
+{
+  "slug": "fuel-paid-in-advance-which-year-to-count",
+  "q": "We paid for fuel in advance. Which year do the emissions go in?",
+  "title": "Fuel paid in advance: which year",
+  "short": "Count fuel in the year you burn it, not the year you pay. An advance is a payment, not consumption. Use delivery dates and your stock register to place each lot, and carry unburned stock into the next year.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs with fuel contracts or prepaid deliveries",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "The GHG Protocol counts emissions when combustion happens. Payment timing never moves emissions between years."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "The advance receipt or contract.",
+        "Each delivery challan with its date and quantity.",
+        "A year-end stock count of fuel still in the tank."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Splitting it",
+    "lines": [
+      "Paid in March for 12,000 L, delivered April to September",
+      "Opening stock 0, closing stock 1,500 L",
+      "Burned in the year: 10,500 L x 2.68 kg = 28,140 kg CO2"
+    ]
+  },
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    },
+    {
+      "label": "Year-end invoice cut-off",
+      "to": "/answers/verifier-checks-year-end-invoice-cut-off"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

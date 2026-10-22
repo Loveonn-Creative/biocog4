@@ -1,0 +1,47 @@
+{
+  "slug": "handwritten-fuel-bill-as-carbon-evidence",
+  "q": "Can I use a handwritten diesel bill from a local supplier for carbon reporting?",
+  "title": "Handwritten fuel bills as evidence",
+  "short": "Yes, if it shows the date, supplier, litres and your business name, and you can back it with a payment record. A verifier will look for a matching bank or cash entry and your stock or logbook. Where a bill lacks litres, record how you converted it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs buying diesel from small dealers",
+  "sections": [
+    {
+      "h": "What makes it usable",
+      "ul": [
+        "Date of supply and the supplier's name or stamp.",
+        "Quantity in litres, not only a rupee amount.",
+        "A payment entry in your books that matches it."
+      ]
+    },
+    {
+      "h": "Make it stronger",
+      "p": [
+        "Keep a simple register: date, litres received, where the fuel went. A handwritten bill plus a register reads far better than either alone."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Delivery challan as evidence",
+      "to": "/answers/delivery-challan-as-carbon-evidence"
+    },
+    {
+      "label": "Fuel bill with only rupees",
+      "to": "/answers/fuel-invoice-amount-only-no-litres"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

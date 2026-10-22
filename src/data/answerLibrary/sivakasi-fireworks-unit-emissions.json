@@ -1,0 +1,46 @@
+{
+  "slug": "sivakasi-fireworks-unit-emissions",
+  "q": "How does a fireworks unit in Sivakasi calculate its emissions?",
+  "title": "Sivakasi fireworks unit emissions",
+  "short": "Count the unit's own fuel and power as Scope 1 and 2, then the chemicals, paper and packaging bought as Category 1. Gases released when fireworks are lit happen at the customer, so they belong in the maker's Category 11, use of sold products, as direct use-phase emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fireworks manufacturers and distributors",
+  "sections": [
+    {
+      "h": "At the unit",
+      "ul": [
+        "Electricity and any diesel.",
+        "Purchased oxidisers, fuels like charcoal and aluminium powder, paper tubes and boxes, by weight."
+      ]
+    },
+    {
+      "h": "At use",
+      "p": [
+        "Burning releases CO2 from charcoal and other carbon in the mix. Estimate it from the carbon content of the composition if a buyer asks."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Quarry blasting emissions",
+      "to": "/answers/quarry-blasting-explosives-scope-1"
+    },
+    {
+      "label": "Filling Scope 3 gaps",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

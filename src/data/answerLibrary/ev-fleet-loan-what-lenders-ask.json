@@ -1,0 +1,47 @@
+{
+  "slug": "ev-fleet-loan-what-lenders-ask",
+  "q": "What do lenders usually ask for when an MSME borrows to buy electric vehicles?",
+  "title": "EV fleet loans: what lenders ask",
+  "short": "Expect vehicle quotations, registration plans, a charging plan and the business case. For green labelling, lenders want the use of proceeds tied to the vehicles and a way to report the result, usually kilometres run and diesel or petrol displaced.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs electrifying delivery or passenger fleets",
+  "sections": [
+    {
+      "h": "Usually asked",
+      "ul": [
+        "Dealer quotations and vehicle specifications.",
+        "Where and how vehicles will charge.",
+        "Current fuel bills for the vehicles being replaced."
+      ]
+    },
+    {
+      "h": "After disbursement",
+      "p": [
+        "Track kilometres and charging units each month. Comparing with the old fuel bills gives the emissions saved."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a bill-backed emissions record with the source on every line, the evidence a lender's credit team can check.",
+  "links": [
+    {
+      "label": "Switching to electric two-wheelers",
+      "to": "/answers/switch-delivery-fleet-to-electric-two-wheelers"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan Principles (lma.eu.com)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
