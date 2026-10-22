@@ -1,0 +1,63 @@
+{
+  "slug": "bulk-cement-tanker-emissions-per-tonne-km",
+  "q": "How do I calculate emissions from bulk cement tankers per tonne km?",
+  "title": "Bulk cement tanker emissions",
+  "short": "Multiply the diesel used per round trip by 2.68 kg CO2 per litre, then divide by tonnes delivered times distance. Count the empty return leg, which bulk tankers usually make, and diesel for the unloading blower. Your own fleet is Scope 1; hired tankers are Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cement plants, grinding units and RMC buyers",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Diesel per trip, from fuel slips or a fuel card.",
+        "Tonnes delivered, from the weighbridge.",
+        "One way distance."
+      ]
+    },
+    {
+      "h": "Why the return leg counts",
+      "p": [
+        "Fuel for the empty return is part of delivering the load. Divide total fuel by loaded tonne km, not round trip tonne km."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Round trip diesel: 300 litres; 300 × 2.68 = 804 kg CO2.",
+      "Load: 30 tonnes over 250 km = 7,500 tonne km.",
+      "804 ÷ 7,500 = 0.107 kg CO2 per tonne km."
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Rail vs road freight",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "CNG vs diesel truck",
+      "to": "/answers/cng-truck-vs-diesel-truck-emissions"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

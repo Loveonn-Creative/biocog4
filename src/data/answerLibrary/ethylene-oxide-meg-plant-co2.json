@@ -1,0 +1,55 @@
+{
+  "slug": "ethylene-oxide-meg-plant-co2",
+  "q": "Why does an ethylene oxide plant emit CO2, and how is it counted?",
+  "title": "Ethylene oxide and MEG plant CO2",
+  "short": "Ethylene is oxidised with oxygen over a silver catalyst, and a share of it burns to CO2 inside the reactor. That CO2 is stripped from the recycle gas. Vented, it is Scope 1 process CO2. Sold to a CO2 buyer, report it separately and state where it goes.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Ethylene oxide and MEG producers and polyester buyers",
+  "sections": [
+    {
+      "h": "Process CO2",
+      "p": [
+        "The side reaction that burns ethylene is the main direct source. IPCC 2006 Volume 3 covers ethylene oxide under petrochemicals."
+      ]
+    },
+    {
+      "h": "CO2 sold on",
+      "p": [
+        "Some plants sell the stripped CO2 for drinks or dry ice. It is usually released again soon after, so do not present it as removed. Show it as a transferred quantity next to your Scope 1."
+      ]
+    },
+    {
+      "h": "MEG",
+      "p": [
+        "Ethylene oxide is reacted with water to make MEG, then glycol is separated by evaporation. Steam for that step is the main fuel use."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Purchased CO2 gas",
+      "to": "/answers/purchased-co2-gas-scope-1"
+    },
+    {
+      "label": "PTA and MEG supplier data",
+      "to": "/answers/pta-meg-supplier-carbon-data-for-polyester"
+    },
+    {
+      "label": "Steam cracker CO2",
+      "to": "/answers/steam-cracker-co2-per-tonne-ethylene"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

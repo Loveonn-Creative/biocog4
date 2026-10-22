@@ -1,0 +1,55 @@
+{
+  "slug": "tipper-truck-emissions-per-trip",
+  "q": "How do I count tipper truck emissions on a construction site?",
+  "title": "Tipper truck emissions per trip",
+  "short": "Record diesel issued to each tipper and trips made, multiply litres by 2.68 kg CO2, and divide by trips or tonnes moved. Tippers you operate are Scope 1; a hauling contractor paid per trip is Scope 3. Weighbridge slips give the tonnes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Contractors and builders tracking site fuel",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Diesel issue register by vehicle number.",
+        "Trip sheets or weighbridge slips.",
+        "Contractor invoices showing trips and diesel if supplied by you."
+      ]
+    },
+    {
+      "h": "Diesel you give a contractor",
+      "p": [
+        "If you buy diesel and hand it to a contractor's tippers, check how your boundary treats it and apply the same rule every year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Excavator diesel per cubic metre",
+      "to": "/answers/contractor-excavator-diesel-per-cubic-metre"
+    },
+    {
+      "label": "Mining dumper diesel",
+      "to": "/answers/mining-dumper-diesel-per-tonne-moved"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

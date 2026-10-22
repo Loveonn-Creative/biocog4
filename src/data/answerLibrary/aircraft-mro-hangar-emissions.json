@@ -1,0 +1,52 @@
+{
+  "slug": "aircraft-mro-hangar-emissions",
+  "q": "What are the main emission sources at an aircraft MRO hangar?",
+  "title": "Aircraft MRO hangar emissions",
+  "short": "Engine ground runs burning jet fuel, hangar cooling or heating, compressed air and paint shop ovens are the usual sources. Fuel the MRO buys for engine tests is its Scope 1. Customer aircraft in flight are not part of it. Divide by checks or labour hours.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Aircraft maintenance organisations",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Jet fuel for engine ground runs, about 3.15 kg CO2 per kg.",
+        "Electricity for hangars, tools and compressors.",
+        "Paint shop fuel.",
+        "Refrigerant and fire suppression gas losses."
+      ]
+    },
+    {
+      "h": "Fuel supplied by airlines",
+      "p": [
+        "If the airline supplies fuel for a test run, agree in writing who reports it, so it is counted once."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Airport ground equipment",
+      "to": "/answers/airport-ground-support-equipment-emissions"
+    },
+    {
+      "label": "Charter flight emissions",
+      "to": "/answers/charter-flight-emissions-which-scope"
+    },
+    {
+      "label": "Airport terminal per passenger",
+      "to": "/answers/airport-terminal-emissions-per-passenger"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

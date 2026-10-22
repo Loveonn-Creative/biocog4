@@ -1,0 +1,61 @@
+{
+  "slug": "caprolactam-plant-n2o-emissions",
+  "q": "Does a caprolactam plant emit nitrous oxide?",
+  "title": "Caprolactam plant N2O emissions",
+  "short": "Yes. Caprolactam, the raw material for nylon 6, is usually made through hydroxylamine from ammonia oxidation, which forms nitrous oxide. The IPCC 2006 default is 9.0 kg N2O per tonne of caprolactam, about 2.5 tonnes CO2e at a GWP of 273. Report it in Scope 1.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Caprolactam and nylon 6 producers, and their buyers",
+  "sections": [
+    {
+      "h": "Sources at the plant",
+      "ul": [
+        "N2O from the ammonia oxidation step.",
+        "CO2 from fuel for steam and process heat.",
+        "Electricity for compressors and utilities, in Scope 2."
+      ]
+    },
+    {
+      "h": "By-product ammonium sulphate",
+      "p": [
+        "Many routes also make ammonium sulphate, sold as fertiliser. If you share emissions between caprolactam and the by-product, state the rule you used, by mass or by value, and keep it the same each year."
+      ]
+    },
+    {
+      "h": "For nylon buyers",
+      "p": [
+        "A nylon 6 chip or yarn footprint carries the caprolactam N2O. Ask whether the figure you receive includes it and whether the supplier abates it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Adipic acid plant N2O",
+      "to": "/answers/adipic-acid-plant-n2o-emissions"
+    },
+    {
+      "label": "Nitric acid plant N2O",
+      "to": "/answers/nitric-acid-plant-n2o-emissions"
+    },
+    {
+      "label": "Nylon zipper footprint",
+      "to": "/answers/nylon-zipper-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

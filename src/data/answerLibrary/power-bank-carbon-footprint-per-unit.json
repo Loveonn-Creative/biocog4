@@ -1,0 +1,64 @@
+{
+  "slug": "power-bank-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of a power bank?",
+  "title": "Power bank carbon footprint",
+  "short": "Most of it sits in the lithium ion cells and circuit board, made upstream. Assembly, testing and the plastic or aluminium shell add less. Ask cell suppliers for kg CO2e per kWh of cell capacity, then add the board, casing, packaging and your own electricity.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Power bank brands and assemblers",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Convert capacity to kWh: mAh × cell voltage ÷ 1,000,000.",
+        "Multiply by the cell supplier's kg CO2e per kWh.",
+        "Add board, casing, cable and packaging from weights and factors.",
+        "Add assembly electricity per unit."
+      ]
+    },
+    {
+      "h": "Label it",
+      "p": [
+        "If you use a secondary factor for cells rather than a supplier figure, say so on the result."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Capacity: 10,000 mAh at 3.7 V = 0.037 kWh.",
+      "Supplier figure: 80 kg CO2e per kWh of cells.",
+      "0.037 × 80 = 2.96 kg CO2e for the cells."
+    ]
+  },
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Imported lithium ion cells",
+      "to": "/answers/carbon-footprint-of-imported-lithium-ion-cells"
+    },
+    {
+      "label": "Mobile charger footprint",
+      "to": "/answers/mobile-charger-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

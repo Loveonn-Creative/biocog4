@@ -1,0 +1,55 @@
+{
+  "slug": "coal-tar-pitch-distillation-emissions",
+  "q": "How are emissions counted at a coal tar pitch distillation plant?",
+  "title": "Coal tar pitch distillation emissions",
+  "short": "Coal tar from coke ovens is heated in a fired still and split into pitch, oils and naphthalene. The furnace fuel is Scope 1. The tar arrives as a by-product, so ask the coke maker how it allocates emissions to it. Anode and graphite electrode makers buy the pitch.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Tar distillers and buyers of binder pitch",
+  "sections": [
+    {
+      "h": "At the distillery",
+      "ul": [
+        "Fuel for the tar still furnace.",
+        "Electricity for pumps and pitch handling.",
+        "Fume incineration, if fitted."
+      ]
+    },
+    {
+      "h": "The tar itself",
+      "p": [
+        "Coke oven emissions belong to the coke maker. A share reaches the tar only if the coke maker allocates some to it. Record which approach your supplier used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Smelter anode CO2",
+      "to": "/answers/jharsuguda-smelter-anode-co2-per-tonne"
+    },
+    {
+      "label": "Graphite electrode CO2",
+      "to": "/answers/graphite-electrode-manufacturing-co2-per-tonne"
+    },
+    {
+      "label": "Carbon black CO2",
+      "to": "/answers/carbon-black-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

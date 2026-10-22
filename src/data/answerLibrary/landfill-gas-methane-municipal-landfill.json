@@ -1,0 +1,55 @@
+{
+  "slug": "landfill-gas-methane-municipal-landfill",
+  "q": "How is methane from a municipal landfill estimated?",
+  "title": "Landfill methane estimate",
+  "short": "Landfills release methane for decades as organic waste decays. Operators estimate it with the IPCC first order decay method, using waste tonnes by type each year, then subtract gas captured and flared. Methane from waste still counts, at a GWP of 27.0 under IPCC AR6.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Landfill operators and city waste departments",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Waste tonnes received each year, by type if possible.",
+        "Years the site has been open.",
+        "Gas captured and flared or used, from flow meters."
+      ]
+    },
+    {
+      "h": "Biogenic CO2",
+      "p": [
+        "CO2 from decay and from flaring is biogenic and reported separately. Methane released is counted in the total."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Landfill vs compost vs biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    },
+    {
+      "label": "Waste incineration CO2",
+      "to": "/answers/waste-incineration-fossil-co2-calculation"
+    },
+    {
+      "label": "Faecal sludge treatment",
+      "to": "/answers/faecal-sludge-treatment-plant-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

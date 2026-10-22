@@ -1,0 +1,56 @@
+{
+  "slug": "frozen-french-fries-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of frozen french fries?",
+  "title": "Frozen french fries carbon footprint",
+  "short": "Potatoes, frying oil and the energy to blanch, fry and freeze make up most of it. Freezing and cold storage electricity at 0.710 kg CO2 per kWh is large in India. Divide by kg packed, and count peel and trim losses in the potatoes bought.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Frozen food processors and quick service chains",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Potatoes bought per kg of fries packed.",
+        "Frying oil used.",
+        "Boiler fuel for blanching and fryers.",
+        "Electricity for freezing tunnels and cold rooms."
+      ]
+    },
+    {
+      "h": "Refrigerants",
+      "p": [
+        "Leaks from freezing plant refrigerants count in Scope 1 at their GWP. Ammonia systems have none."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Potato chips footprint",
+      "to": "/answers/potato-chips-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Frozen vegetables footprint",
+      "to": "/answers/frozen-vegetables-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Potato cold storage",
+      "to": "/answers/potato-cold-storage-electricity-per-bag"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

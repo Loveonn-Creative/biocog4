@@ -1,0 +1,56 @@
+{
+  "slug": "lithium-ion-battery-recycling-emissions-per-tonne",
+  "q": "What are the emissions from recycling lithium ion batteries?",
+  "title": "Lithium ion battery recycling emissions",
+  "short": "It depends on the route. Shredding to black mass uses mainly electricity; furnace routes add fuel and burn the graphite and electrolyte; chemical leaching routes use acids and reagents. Report per tonne of batteries processed, and state which route you use.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Battery recyclers and EV makers",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Tonnes of batteries received.",
+        "Electricity and fuel by process step.",
+        "Reagents bought, for Scope 3.",
+        "Output: black mass or recovered metals."
+      ]
+    },
+    {
+      "h": "Claims",
+      "p": [
+        "Recovered metals can lower a buyer's footprint compared with mined metal, but only with records of the recovery route and quantities."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Lead acid battery recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    },
+    {
+      "label": "Imported lithium ion cells",
+      "to": "/answers/carbon-footprint-of-imported-lithium-ion-cells"
+    },
+    {
+      "label": "EU battery recycled content",
+      "to": "/answers/eu-battery-recycled-content-documentation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

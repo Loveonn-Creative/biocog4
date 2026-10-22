@@ -1,0 +1,56 @@
+{
+  "slug": "electric-iron-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of an electric iron?",
+  "title": "Electric iron carbon footprint",
+  "short": "Making it is small next to using it: years of heating at a typical 750 to 2,000 watts use far more electricity than making the soleplate, heater and plastic body. Report assembly in Scope 1 and 2, parts in Category 1, and customers' electricity in Category 11.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Appliance makers and brands",
+  "sections": [
+    {
+      "h": "Use phase",
+      "p": [
+        "Estimate rated power × hours of use a week × weeks × years of life × a stated grid factor. State each assumption."
+      ]
+    },
+    {
+      "h": "Manufacturing",
+      "ul": [
+        "Soleplate, often aluminium.",
+        "Heating element and thermostat.",
+        "Plastic body and cord.",
+        "Assembly and testing electricity."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Electric kettle footprint",
+      "to": "/answers/electric-kettle-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Mixer grinder footprint",
+      "to": "/answers/mixer-grinder-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

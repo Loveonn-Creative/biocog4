@@ -1,0 +1,58 @@
+{
+  "slug": "railway-coach-manufacturing-carbon-footprint",
+  "q": "What drives the carbon footprint of building a railway coach?",
+  "title": "Railway coach build carbon footprint",
+  "short": "The shell material dominates: stainless steel or aluminium bought by the tonne, plus bogies, wheels and interiors. Factory emissions come from welding, paint shop ovens, compressed air and testing. Divide each by coaches completed, and keep materials in Scope 3 Category 1.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Coach builders and rolling stock suppliers",
+  "sections": [
+    {
+      "h": "Bill of materials",
+      "ul": [
+        "Shell steel or aluminium.",
+        "Bogies and wheelsets.",
+        "Seats, panels, wiring and HVAC units.",
+        "Paint and sealants."
+      ]
+    },
+    {
+      "h": "Factory",
+      "ul": [
+        "Electricity for welding, compressors and testing.",
+        "Fuel for paint ovens.",
+        "Refrigerant charged into coach air conditioning, with losses in Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Rails and wheels in CBAM",
+      "to": "/answers/are-steel-rails-and-wheels-covered-by-cbam"
+    },
+    {
+      "label": "Paint booth emissions",
+      "to": "/answers/car-paint-booth-emissions-per-vehicle"
+    },
+    {
+      "label": "Compressor sequencing",
+      "to": "/answers/multiple-air-compressors-sequencing-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

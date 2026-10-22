@@ -1,0 +1,65 @@
+{
+  "slug": "solar-cell-manufacturing-carbon-per-watt",
+  "q": "How do I calculate a solar cell plant's carbon footprint per watt?",
+  "title": "Solar cell plant carbon per watt",
+  "short": "Divide the plant's electricity and fuel emissions by the watts of cells produced, rated at standard test conditions. Electricity for furnaces, cleanrooms and chillers dominates. Purchased wafers carry most of a cell's embodied carbon, so report them separately in Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Solar cell manufacturers in India",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Monthly electricity bills, including open access or rooftop solar.",
+        "Diesel and gas invoices.",
+        "Watts of cells produced, from production records.",
+        "Wafers bought, with supplier figures if available."
+      ]
+    },
+    {
+      "h": "Gases",
+      "p": [
+        "Some cell lines use fluorinated gases for cleaning or etching. Losses of gases covered by the GHG Protocol count in Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Electricity in a month: 2,000,000 kWh.",
+      "2,000,000 × 0.710 = 1,420,000 kg CO2.",
+      "Cells produced: 150,000,000 watts.",
+      "1,420,000 ÷ 150,000,000 = 0.0095 kg, about 9.5 g CO2 per watt."
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Polysilicon CO2",
+      "to": "/answers/polysilicon-production-co2-per-kg"
+    },
+    {
+      "label": "Module assembly per watt",
+      "to": "/answers/solar-module-assembly-carbon-footprint-per-watt"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

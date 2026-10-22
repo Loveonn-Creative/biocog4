@@ -1,0 +1,58 @@
+{
+  "slug": "pet-food-carbon-footprint-per-kg",
+  "q": "What makes up the carbon footprint of dry pet food?",
+  "title": "Pet food carbon footprint",
+  "short": "Ingredients dominate, especially meat and fish meals and grains. The factory adds steam for extrusion and gas or electricity for drying. Ask ingredient suppliers for figures per kg, then add your fuel, power and packaging per kg of finished kibble.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Pet food makers and private label brands",
+  "sections": [
+    {
+      "h": "Ingredients",
+      "ul": [
+        "Animal and fish meals.",
+        "Rice, maize and wheat.",
+        "Fats and oils.",
+        "Vitamins and minerals."
+      ]
+    },
+    {
+      "h": "Factory",
+      "ul": [
+        "Boiler fuel for extrusion steam.",
+        "Dryer fuel or electricity.",
+        "Packaging bags and cartons."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Fish meal footprint",
+      "to": "/answers/fish-meal-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Poultry feed footprint",
+      "to": "/answers/poultry-feed-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Fish and shrimp feed",
+      "to": "/answers/fish-feed-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

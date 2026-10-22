@@ -1,0 +1,63 @@
+{
+  "slug": "styrene-monomer-co2-per-tonne",
+  "q": "Where does the CO2 come from when styrene monomer is made?",
+  "title": "Styrene monomer CO2 per tonne",
+  "short": "Most styrene is made by dehydrogenating ethylbenzene with superheated steam, so the main source is fuel burned in the steam superheater and boilers. Off-gas burned as fuel adds to it. Count fuel CO2 in Scope 1 and purchased benzene and ethylene in Scope 3.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Petrochemical plants and buyers of polystyrene, ABS and SBR",
+  "sections": [
+    {
+      "h": "Scope 1 sources",
+      "ul": [
+        "Fuel for the steam superheater, the largest single use.",
+        "Hydrogen-rich off-gas burned as fuel.",
+        "Flaring during start up and upsets."
+      ]
+    },
+    {
+      "h": "Scope 3 sources",
+      "ul": [
+        "Benzene and ethylene, or bought ethylbenzene.",
+        "Catalyst and chemicals.",
+        "Transport of feedstock."
+      ]
+    },
+    {
+      "h": "Co-products",
+      "p": [
+        "Toluene and off-gas leave the unit alongside styrene. If you split emissions between them, write down the method and use it every year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Steam cracker CO2",
+      "to": "/answers/steam-cracker-co2-per-tonne-ethylene"
+    },
+    {
+      "label": "Polymer resin factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Epoxy resin footprint",
+      "to": "/answers/epoxy-resin-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

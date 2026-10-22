@@ -1,0 +1,56 @@
+{
+  "slug": "school-bag-carbon-footprint-per-bag",
+  "q": "What is the carbon footprint of a school bag?",
+  "title": "School bag carbon footprint",
+  "short": "Most of it comes from the fabric, usually polyester or nylon, plus foam padding, zips and buckles. Weigh each material per bag, apply supplier or secondary factors per kg, and add cutting and stitching electricity. Fabric cut away as waste still counts in the fabric bought.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bag makers and school suppliers",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Outer fabric and lining.",
+        "Foam and padding.",
+        "Zips, buckles and webbing.",
+        "Packaging."
+      ]
+    },
+    {
+      "h": "Factory",
+      "p": [
+        "Divide monthly electricity by bags made. Count fabric bought, including offcuts."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Nylon zipper footprint",
+      "to": "/answers/nylon-zipper-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Non-woven bag footprint",
+      "to": "/answers/non-woven-bag-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

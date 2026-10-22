@@ -1,0 +1,56 @@
+{
+  "slug": "flyover-construction-carbon-per-metre",
+  "q": "How do I estimate the carbon footprint of building a flyover?",
+  "title": "Flyover construction carbon",
+  "short": "Cement, steel rebar and prestressing strand dominate, so start with quantities from the bill of quantities and supplier factors. Add site diesel for piling rigs, cranes and batching, and divide by length. Report embodied materials separately from construction fuel.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Infrastructure contractors and city agencies",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Concrete by grade, or cement and fly ash bought.",
+        "Rebar and prestressing strand.",
+        "Bearings, expansion joints and crash barriers."
+      ]
+    },
+    {
+      "h": "Site energy",
+      "ul": [
+        "Diesel for piling, cranes and generators.",
+        "Electricity for batching plants and lighting."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Ready mix concrete footprint",
+      "to": "/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Rebar wastage on site",
+      "to": "/answers/steel-rebar-wastage-carbon-on-site"
+    },
+    {
+      "label": "Tower crane electric vs diesel",
+      "to": "/answers/tower-crane-electric-vs-diesel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "dry-cleaning-shop-carbon-footprint",
+  "q": "What is the carbon footprint of a dry cleaning shop?",
+  "title": "Dry cleaning shop carbon footprint",
+  "short": "Electricity for machines, steam and pressing usually dominates, with boiler fuel if steam is raised on site. Most dry cleaning solvents are not greenhouse gases, but losses of any HFC or other gas covered by the GHG Protocol count in Scope 1.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dry cleaners and laundry chains",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Electricity bills.",
+        "LPG, diesel or PNG for the boiler.",
+        "Solvent bought, with its type."
+      ]
+    },
+    {
+      "h": "Per garment",
+      "p": [
+        "Divide monthly emissions by garments cleaned from your billing records."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hotel in-house laundry",
+      "to": "/answers/hotel-in-house-laundry-emissions-per-kg"
+    },
+    {
+      "label": "Outsourced hotel laundry",
+      "to": "/answers/outsourced-hotel-laundry-emissions"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
