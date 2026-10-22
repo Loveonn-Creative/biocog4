@@ -1,0 +1,58 @@
+{
+  "slug": "can-ghg-verification-be-done-remotely",
+  "q": "Can a GHG verification be done remotely, without a site visit?",
+  "title": "Remote GHG verification",
+  "short": "Partly. Document review and interviews can be remote, and many verifiers allow remote work for small sites with simple sources. Where emissions are material or meters need checking, expect a site visit, or a live video walk-through if the verifier's procedures accept it. The verifier decides.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Small companies planning verification on a tight budget",
+  "sections": [
+    {
+      "h": "Usually remote",
+      "ul": [
+        "Reviewing invoices, bills and calculation workings.",
+        "Interviews with the people who prepared the data."
+      ]
+    },
+    {
+      "h": "Usually needs presence",
+      "ul": [
+        "Checking meters, fuel tanks and weighbridges.",
+        "Sites with process emissions or many sources.",
+        "First verifications, where the verifier has never seen the site."
+      ]
+    },
+    {
+      "h": "Ask up front",
+      "p": [
+        "Ask whether a remote visit is acceptable for your scope before you sign the engagement, so cost and timing are clear."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Site visit preparation",
+      "to": "/answers/verifier-site-visit-what-to-prepare"
+    },
+    {
+      "label": "How long verification takes",
+      "to": "/answers/how-long-does-ghg-verification-take"
+    },
+    {
+      "label": "Verification cost in India",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

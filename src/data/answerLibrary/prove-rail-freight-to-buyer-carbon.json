@@ -1,0 +1,53 @@
+{
+  "slug": "prove-rail-freight-to-buyer-carbon",
+  "q": "We moved goods by rail to cut emissions. How do we prove it to our buyer?",
+  "title": "Proving rail freight to a buyer",
+  "short": "Keep the railway receipts or freight forwarder documents that show rail legs, tonnes and distance, plus the road legs at each end. Calculate each leg with its own factor. Buyers accept rail savings when documents show the mode, not just a claim in an email.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and suppliers using rail or container trains",
+  "sections": [
+    {
+      "h": "Documents",
+      "ul": [
+        "Railway receipt or container train bill.",
+        "Forwarder invoice showing legs and modes.",
+        "Truck invoices for first and last mile."
+      ]
+    },
+    {
+      "h": "Calculation",
+      "p": [
+        "Tonne-km per leg times the mode's factor, following ISO 14083 and the GLEC Framework."
+      ]
+    },
+    {
+      "h": "Report both",
+      "p": [
+        "Show the rail route figure and what road-only would have been, labelled as a comparison."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Rail vs road freight",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Intermodal container emissions",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

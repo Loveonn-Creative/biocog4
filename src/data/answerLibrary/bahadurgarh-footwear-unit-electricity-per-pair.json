@@ -1,0 +1,57 @@
+{
+  "slug": "bahadurgarh-footwear-unit-electricity-per-pair",
+  "q": "How does a footwear unit in Bahadurgarh work out CO2 per pair?",
+  "title": "Bahadurgarh footwear CO2 per pair",
+  "short": "Divide the unit's yearly electricity, DG diesel and any boiler fuel by pairs produced. Grid power at 0.710 kg CO2 per kWh and diesel at 2.68 kg per litre cover most units. Export buyers often add materials such as soles and adhesives, which need supplier data.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Footwear makers in Bahadurgarh and the NCR cluster",
+  "sections": [
+    {
+      "h": "Own emissions",
+      "ul": [
+        "Grid electricity for stitching, moulding and lasting.",
+        "DG set diesel.",
+        "Boiler or heater fuel if used for curing."
+      ]
+    },
+    {
+      "h": "Per pair",
+      "p": [
+        "Divide by pairs produced in the same period."
+      ]
+    },
+    {
+      "h": "For export buyers",
+      "p": [
+        "Ask sole, upper and adhesive suppliers for their figures, or use labelled material factors."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Agra shoe unit per pair",
+      "to": "/answers/agra-shoe-unit-electricity-per-pair"
+    },
+    {
+      "label": "Soles and adhesives Scope 3",
+      "to": "/answers/agra-shoe-unit-soles-and-adhesives-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

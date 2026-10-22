@@ -1,0 +1,61 @@
+{
+  "slug": "does-organic-carbon-in-limestone-count-cbam",
+  "q": "Does organic carbon in limestone add to a cement plant's CBAM figure?",
+  "title": "Organic carbon in raw meal and CBAM",
+  "short": "Yes. Carbon in the raw meal that is not carbonate, such as organic matter or shale carbon, burns off in the kiln and the resulting CO2 counts as a process emission. It is usually small next to calcination, but it belongs in the figure when you report actual emissions.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement plant process and environment teams preparing CBAM data",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "p": [
+        "Some limestone, clay and shale carry organic carbon. In the preheater it oxidises to CO2 alongside calcination CO2."
+      ]
+    },
+    {
+      "h": "How to count it",
+      "ul": [
+        "Test total organic carbon in raw meal as part of your lab routine.",
+        "Multiply carbon content by raw meal tonnes and by 44/12 to get CO2.",
+        "Report it with calcination as a process emission."
+      ]
+    },
+    {
+      "h": "When to skip it",
+      "p": [
+        "If tests show it is negligible, record the tests and the reason in your monitoring notes rather than leaving it out silently."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Kiln bypass dust correction",
+      "to": "/answers/cement-kiln-bypass-dust-calcination-correction"
+    },
+    {
+      "label": "Slag in raw meal",
+      "to": "/answers/marmara-cement-slag-in-raw-meal-co2"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

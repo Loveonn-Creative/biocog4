@@ -1,0 +1,59 @@
+{
+  "slug": "kashipur-paper-mill-agro-residue-boiler",
+  "q": "How does a Kashipur paper mill count CO2 from boilers burning agro residue and coal?",
+  "title": "Kashipur paper mill boiler CO2",
+  "short": "Coal is fossil, so its CO2 is Scope 1. CO2 from agro residues such as bagasse or rice husk is biogenic and reported separately, but their methane and nitrous oxide still count. Keep separate fuel records for each, with weights and moisture.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Paper and board mills in Kashipur and the Kumaon belt",
+  "sections": [
+    {
+      "h": "Fuel records",
+      "ul": [
+        "Coal tonnes and calorific value.",
+        "Agro residue tonnes, type and moisture.",
+        "Pet coke or other fuels if used."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "ul": [
+        "Fossil CO2 in Scope 1.",
+        "Biogenic CO2 shown separately.",
+        "CH4 and N2O from all fuels in Scope 1."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Packaging buyers ask for CO2 per tonne of paper. Give fossil and biogenic figures separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Agro residue paper mill CO2",
+      "to": "/answers/agro-residue-paper-mill-biogenic-co2"
+    },
+    {
+      "label": "Muzaffarnagar kraft paper boiler",
+      "to": "/answers/muzaffarnagar-kraft-paper-mill-boiler-fuel"
+    },
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "buyer-wants-copies-of-our-electricity-bills",
+  "q": "Our buyer wants copies of our electricity bills as proof. Should we share them?",
+  "title": "Sharing electricity bills with a buyer",
+  "short": "You can share them, but you do not have to send everything. Offer bills with tariff details or consumer numbers masked, or a summary of units per month with a verifier's or auditor's check. Agree confidentiality terms first.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Suppliers asked for evidence behind carbon figures",
+  "sections": [
+    {
+      "h": "Options",
+      "ul": [
+        "Masked copies showing units and period.",
+        "Monthly unit summary signed by your auditor.",
+        "Read-only access to your records for a limited time."
+      ]
+    },
+    {
+      "h": "What to protect",
+      "p": [
+        "Tariff rates, consumer and account numbers, and anything that reveals your costs."
+      ]
+    },
+    {
+      "h": "Put it in writing",
+      "p": [
+        "Use the buyer's confidentiality clause or an NDA, and limit use to carbon reporting."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Will a buyer keep data confidential?",
+      "to": "/answers/will-buyer-keep-my-emissions-data-confidential"
+    },
+    {
+      "label": "Third-party verified footprint",
+      "to": "/answers/buyer-asks-third-party-verified-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

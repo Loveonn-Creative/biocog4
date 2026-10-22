@@ -1,0 +1,57 @@
+{
+  "slug": "wardha-steel-galvanising-unit-cbam-figure",
+  "q": "How does a steel galvanising unit near Wardha work out its CBAM figure?",
+  "title": "Wardha galvanising unit CBAM figure",
+  "short": "Galvanised coil or sheet is a CBAM steel good. Its figure is the embedded emissions of the coil you bought, plus your own direct emissions from furnace and annealing fuel. Zinc is not a precursor. Electricity is not charged for steel goods, but keep it on record.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cold rolling and galvanising units in Wardha and the Vidarbha belt",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Coil supplier's embedded emissions per tonne.",
+        "Fuel for annealing and zinc pot heating.",
+        "Tonnes of coil in and product out, for yield."
+      ]
+    },
+    {
+      "h": "Yield matters",
+      "p": [
+        "Scrap and trim losses mean more coil per tonne of product, which raises the figure."
+      ]
+    },
+    {
+      "h": "Ask the coil supplier",
+      "p": [
+        "Without their figure, your importer falls back on default values for the precursor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Hot-dip galvanising footprint",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Galvanised coil precursor data",
+      "to": "/answers/vietnam-galvanised-coil-maker-precursor-data"
+    },
+    {
+      "label": "Coated steel zinc and CBAM",
+      "to": "/answers/vanderbijlpark-coated-steel-zinc-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

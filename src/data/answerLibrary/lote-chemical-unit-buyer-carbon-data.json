@@ -1,0 +1,58 @@
+{
+  "slug": "lote-chemical-unit-buyer-carbon-data",
+  "q": "What carbon data do buyers ask a chemical unit in Lote Parshuram for?",
+  "title": "Lote chemical unit buyer carbon data",
+  "short": "Most buyers want Scope 1 and 2 per tonne of product: boiler and heater fuel, grid power at 0.710 kg CO2 per kWh, and any process emissions. Larger buyers also ask for main raw material footprints and a reduction plan. Start with twelve months of bills and batch records.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Chemical and pharma intermediate units in the Lote Parshuram estate",
+  "sections": [
+    {
+      "h": "Usually asked",
+      "ul": [
+        "Scope 1 and 2 per tonne of product.",
+        "Energy use per tonne.",
+        "Main raw materials and their sources."
+      ]
+    },
+    {
+      "h": "Sometimes asked",
+      "ul": [
+        "Product footprint following ISO 14067.",
+        "Reduction targets and actions."
+      ]
+    },
+    {
+      "h": "Be ready",
+      "p": [
+        "Keep fuel and power invoices with batch logs, so each product's share can be shown."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Taloja chemical CO2 per tonne",
+      "to": "/answers/taloja-chemical-unit-steam-and-power-co2"
+    },
+    {
+      "label": "Buyer questionnaire format",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

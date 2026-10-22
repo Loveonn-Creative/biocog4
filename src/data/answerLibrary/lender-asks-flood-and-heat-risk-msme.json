@@ -1,0 +1,58 @@
+{
+  "slug": "lender-asks-flood-and-heat-risk-msme",
+  "q": "A lender asks about flood and heat risk at our factory. What do they want to know?",
+  "title": "Answering a lender on physical climate risk",
+  "short": "They want to know whether floods, heatwaves or water shortages could stop your plant or damage assets during the loan. Give your site's flood history, insurance cover, backup power and water, and any steps taken. Honest, specific answers help more than a generic policy.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs answering lender climate questionnaires",
+  "sections": [
+    {
+      "h": "What to prepare",
+      "ul": [
+        "Past flood or waterlogging events and downtime.",
+        "Insurance policy and what it covers.",
+        "Plinth height, drainage and stock storage.",
+        "Heat effects on workers and machines, and cooling measures."
+      ]
+    },
+    {
+      "h": "Why lenders ask",
+      "p": [
+        "Supervisors expect banks to look at climate risk in their loan books. A plant that loses weeks to floods is a credit risk."
+      ]
+    },
+    {
+      "h": "Keep proof",
+      "p": [
+        "Photos, insurance claims and maintenance records back up your answers."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills into a dated, traceable emission record, the baseline a lender reads before it looks at a green project. Lenders decide; finance is never guaranteed.",
+  "links": [
+    {
+      "label": "Check flood risk for a site",
+      "to": "/answers/check-flood-risk-for-factory-site-india"
+    },
+    {
+      "label": "1 in 100 year flood",
+      "to": "/answers/what-does-1-in-100-year-flood-mean-for-site"
+    },
+    {
+      "label": "TCFD questionnaire for small firms",
+      "to": "/answers/answer-tcfd-questionnaire-small-company"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "Loan Market Association, Green Loan Principles",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

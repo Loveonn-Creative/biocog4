@@ -1,0 +1,60 @@
+{
+  "slug": "verifier-asks-organisational-boundary-evidence",
+  "q": "The verifier asks how we set our organisational boundary. What do we show?",
+  "title": "Showing your boundary to a verifier",
+  "short": "Show which entities and sites you included, the approach you chose (operational control, financial control or equity share), and documents that prove control: registration certificates, lease or ownership papers, and electricity connections in your name. List anything left out and why.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with several units, leased sheds or group companies",
+  "sections": [
+    {
+      "h": "Documents that help",
+      "ul": [
+        "GST and Udyam registrations for each unit.",
+        "Lease, rent or ownership documents.",
+        "Electricity and fuel accounts in the company's name.",
+        "A one-page boundary note naming the approach."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Leased sheds you operate.",
+        "Job workers on your premises.",
+        "Units owned by family members but run by you."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Use the same boundary every year, or explain and restate when it changes."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Operational control vs equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Leased factory emissions",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "Excluded sources list",
+      "to": "/answers/verifier-asks-list-of-excluded-emission-sources"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

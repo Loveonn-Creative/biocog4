@@ -1,0 +1,57 @@
+{
+  "slug": "buyer-asks-footprint-of-new-product",
+  "q": "A buyer wants the carbon footprint of a product we have not made yet. What can we give?",
+  "title": "Footprint for a product not yet made",
+  "short": "Give an estimate, clearly labelled, built from the bill of materials, expected process energy and material factors from similar products you already make. State the assumptions and promise an actual figure after the first production runs. Do not present it as measured.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers quoting for new parts or products",
+  "sections": [
+    {
+      "h": "Build the estimate",
+      "ul": [
+        "Materials: weight of each input times a factor, supplier-specific where known.",
+        "Process: expected kWh and fuel per unit from similar products.",
+        "Packaging and transport if the buyer asks."
+      ]
+    },
+    {
+      "h": "Label it",
+      "p": [
+        "Mark it as an estimate with the date and assumptions, and the products used as a reference."
+      ]
+    },
+    {
+      "h": "Replace it",
+      "p": [
+        "Recalculate from real meters and production after the first runs and send the update."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Allocate plant emissions by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    },
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "Carbon per kg, not per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

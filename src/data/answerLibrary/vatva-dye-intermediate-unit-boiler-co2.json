@@ -1,0 +1,54 @@
+{
+  "slug": "vatva-dye-intermediate-unit-boiler-co2",
+  "q": "How does a dye intermediate unit in Vatva count CO2 from its boiler and thermic fluid heater?",
+  "title": "Vatva dye unit boiler and heater CO2",
+  "short": "Add up every fuel burnt: coal, briquettes, natural gas or furnace oil in the boiler and thermic fluid heater. Multiply each by its calorific value and factor. Steam bought from a common facility is not your Scope 1, but its emissions are a cost your buyer may ask about.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dye and chemical units in Vatva and nearby Ahmedabad estates",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Boiler fuel.",
+        "Thermic fluid heater fuel.",
+        "Grid electricity for reactors, filters and dryers.",
+        "Process emissions, if any reaction releases CO2."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Fuel invoices, stock registers and gas bills, matched to production batches."
+      ]
+    },
+    {
+      "h": "Per kg of product",
+      "p": [
+        "Divide by kilograms produced, or allocate by batch steam use when several products share the boiler."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Jhagadia chemical steam CO2",
+      "to": "/answers/jhagadia-chemical-plant-steam-co2"
+    },
+    {
+      "label": "Coal vs PNG vs biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

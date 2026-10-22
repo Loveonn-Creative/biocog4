@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-ammonia-plant-buying-hydrogen-precursor",
+  "q": "Our ammonia plant buys hydrogen from a neighbouring unit. How does CBAM count it?",
+  "title": "Bought hydrogen in an ammonia CBAM figure",
+  "short": "Hydrogen produced separately and fed to ammonia synthesis is treated as a relevant precursor. Add its embedded emissions, from the supplier's own figure, to your plant's direct and indirect emissions. Without supplier data you fall back on default values, which are usually higher.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Ammonia and fertiliser plants that buy hydrogen over the fence",
+  "sections": [
+    {
+      "h": "What you need from the supplier",
+      "ul": [
+        "Tonnes of hydrogen delivered in the period.",
+        "Its specific embedded emissions, with the method used.",
+        "Ideally a verified figure, matched to your reporting period."
+      ]
+    },
+    {
+      "h": "How it adds up",
+      "p": [
+        "Your ammonia figure equals your own process and fuel emissions, plus indirect emissions from electricity, plus the hydrogen's embedded emissions, divided by tonnes of ammonia. Confirm the precursor list for your route in the implementing rules."
+      ]
+    },
+    {
+      "h": "Contract it in",
+      "p": [
+        "Put the data request into the supply contract, with a deadline before your importer's declaration is due."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Precursor from two suppliers",
+      "to": "/answers/cbam-precursor-from-two-suppliers-weighted-average"
+    },
+    {
+      "label": "Urea plant CBAM figure",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "SMR hydrogen CO2 per kg",
+      "to": "/answers/smr-hydrogen-co2-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

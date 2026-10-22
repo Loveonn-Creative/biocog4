@@ -1,0 +1,56 @@
+{
+  "slug": "us-steel-exporter-eu-cbam-no-carbon-price",
+  "q": "What does CBAM mean for a US steel exporter with no federal carbon price?",
+  "title": "US steel exports and EU CBAM",
+  "short": "US steel entering the EU falls under CBAM, and with no national carbon price there is usually nothing to deduct. Electric arc furnace mills often have lower direct emissions than blast furnace routes, so reporting verified actual figures, rather than defaults, matters for their buyers.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "US steel exporters and EU importers of US steel",
+  "sections": [
+    {
+      "h": "What applies",
+      "ul": [
+        "Direct embedded emissions per tonne, plus precursors such as bought slab or DRI.",
+        "No deduction unless a carbon price was effectively paid."
+      ]
+    },
+    {
+      "h": "State schemes",
+      "p": [
+        "Some state programmes cover power plants, not steel mills, so they rarely create a deductible price for steel."
+      ]
+    },
+    {
+      "h": "Practical step",
+      "p": [
+        "Prepare a verified figure per installation and product route."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Actual vs default CBAM values",
+      "to": "/answers/iskenderun-steel-exporter-actual-vs-default-cbam"
+    },
+    {
+      "label": "US buyer and EPA factors",
+      "to": "/answers/us-buyer-epa-factors-for-india-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

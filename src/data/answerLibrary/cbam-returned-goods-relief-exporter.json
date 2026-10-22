@@ -1,0 +1,52 @@
+{
+  "slug": "cbam-returned-goods-relief-exporter",
+  "q": "Our EU buyer is sending steel goods back to us. Is CBAM due when we ship them to Europe again?",
+  "title": "CBAM and returned goods",
+  "short": "CBAM follows customs rules on returned goods. Goods exported from the EU and brought back unchanged within the customs time limit can be relieved, and CBAM does not apply to them. Goods made outside the EU and re-sent after repair or rework are a new import and usually need a figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Exporters handling returns, repairs and replacements with EU customers",
+  "sections": [
+    {
+      "h": "Likely relieved",
+      "ul": [
+        "EU-made goods returned unchanged that qualify for customs returned goods relief."
+      ]
+    },
+    {
+      "h": "Likely a new import",
+      "ul": [
+        "Your own goods sent back for repair and then shipped to Europe again.",
+        "Replacement goods you ship instead of the rejected lot."
+      ]
+    },
+    {
+      "h": "Ask first",
+      "p": [
+        "The importer's customs broker decides the procedure. Agree in writing who reports what before the second shipment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "CBAM clause in export contract",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    },
+    {
+      "label": "One shipment, several CN codes",
+      "to": "/answers/cbam-one-shipment-several-cn-codes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

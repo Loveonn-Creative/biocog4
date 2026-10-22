@@ -1,0 +1,56 @@
+{
+  "slug": "is-calcium-aluminate-cement-covered-by-cbam",
+  "q": "Is calcium aluminate cement for refractories covered by CBAM?",
+  "title": "Calcium aluminate cement under CBAM",
+  "short": "Yes. Aluminous cement (CN 2523 30 00) is in Annex I, so an EU importer needs its embedded emissions. Refractory castables and mortars that contain it are usually declared under chapter 38 and are not CBAM goods, but check the code for each product.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Makers and exporters of calcium aluminate cement and refractory products",
+  "sections": [
+    {
+      "h": "Covered",
+      "ul": [
+        "Aluminous cement under 2523 30 00, sold as cement."
+      ]
+    },
+    {
+      "h": "Usually not covered",
+      "ul": [
+        "Refractory castables, mortars and ramming mixes, commonly declared under 3816.",
+        "Shaped refractory bricks under chapter 69."
+      ]
+    },
+    {
+      "h": "What the figure includes",
+      "p": [
+        "Direct emissions from the kiln or furnace that makes the clinker, including any carbonate in the raw mix, plus electricity, since indirect emissions count for cement goods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Are refractories covered?",
+      "to": "/answers/are-refractories-covered-by-cbam"
+    },
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

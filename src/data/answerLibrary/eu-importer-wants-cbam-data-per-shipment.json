@@ -1,0 +1,61 @@
+{
+  "slug": "eu-importer-wants-cbam-data-per-shipment",
+  "q": "Our EU importer wants CBAM data for every shipment. Is that really needed?",
+  "title": "CBAM data per shipment or per period",
+  "short": "Embedded emissions are worked out per installation and product over a reporting period, not shipment by shipment. Your importer may still ask you to tag each shipment with the period's figure, CN code and installation, so their declaration adds up. Agree a format once.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Exporters fielding repeated CBAM requests from EU importers",
+  "sections": [
+    {
+      "h": "What changes per shipment",
+      "ul": [
+        "Quantity and CN code.",
+        "Installation where the goods were made.",
+        "Reporting period whose figure applies."
+      ]
+    },
+    {
+      "h": "What usually does not",
+      "ul": [
+        "The specific embedded emissions per tonne, which come from the period's monitoring."
+      ]
+    },
+    {
+      "h": "Save work",
+      "p": [
+        "Send one data sheet per period and quote its reference on each invoice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "One shipment, several CN codes",
+      "to": "/answers/cbam-one-shipment-several-cn-codes"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    },
+    {
+      "label": "Share data with many buyers once",
+      "to": "/answers/supplier-with-many-buyers-share-data-once"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

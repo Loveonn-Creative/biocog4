@@ -839,6 +839,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can an Australian aluminium exporter deduct Safeguard Mechanism costs under CBAM?",
+  "text": "Only a carbon price effectively paid can be deducted, net of any free allocation or rebate. The Safeguard Mechanism sets baselines rather than charging every tonne, so the amount actually paid per tonne of aluminium may be small. Check the Commission's rules on proving it.",
+  "url": "https://senseible.earth/answers/australia-aluminium-safeguard-cbam-deduction"
+ },
+ {
+  "kind": "answer",
   "title": "Will Australia's mandatory climate reporting reach Indian exporters through Scope 3?",
   "text": "Yes, indirectly. Large Australian companies must report Scope 3 emissions from their second reporting year under AASB S2, so Indian suppliers can expect data requests from 2026. The law puts no duty on the supplier, and customers may use estimates, but your own figures replace industry averages.",
   "url": "https://senseible.earth/answers/australia-climate-disclosure-scope-3-suppliers"
@@ -920,6 +926,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a badminton shuttlecock?",
   "text": "Add the cork or synthetic base, feathers or nylon skirt, glue and thread per shuttle with supplier figures. Then add the unit's electricity for drilling, setting and drying, divided by shuttles packed.",
   "url": "https://senseible.earth/answers/badminton-shuttlecock-carbon-footprint-per-piece"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a footwear unit in Bahadurgarh work out CO2 per pair?",
+  "text": "Divide the unit's yearly electricity, DG diesel and any boiler fuel by pairs produced. Grid power at 0.710 kg CO2 per kWh and diesel at 2.68 kg per litre cover most units. Export buyers often add materials such as soles and adhesives, which need supplier data.",
+  "url": "https://senseible.earth/answers/bahadurgarh-footwear-unit-electricity-per-pair"
  },
  {
   "kind": "answer",
@@ -1088,6 +1100,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "If my electric fleet uses battery swapping stations, are those emissions Scope 2 or Scope 3?",
   "text": "Usually Scope 3. With battery swapping you buy a charged battery as a service; the operator owns the batteries and stations and buys the electricity, so it is the operator's Scope 2. Report your share as a purchased service in Scope 3 Category 1, state the choice, and keep it consistent year to year.",
   "url": "https://senseible.earth/answers/battery-swapping-emissions-which-scope"
+ },
+ {
+  "kind": "answer",
+  "title": "What carbon data do OEMs ask auto part suppliers in Bawal for?",
+  "text": "Carmakers ask for Scope 1 and 2 emissions, often per part or per kg, plus renewable share and a reduction plan. Some ask for material footprints for steel, aluminium and plastic parts. Twelve months of power and fuel bills and part-wise production are the starting point.",
+  "url": "https://senseible.earth/answers/bawal-auto-parts-supplier-carbon-data"
  },
  {
   "kind": "answer",
@@ -1679,9 +1697,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "A buyer wants the carbon footprint of a product we have not made yet. What can we give?",
+  "text": "Give an estimate, clearly labelled, built from the bill of materials, expected process energy and material factors from similar products you already make. State the assumptions and promise an actual figure after the first production runs. Do not present it as measured.",
+  "url": "https://senseible.earth/answers/buyer-asks-footprint-of-new-product"
+ },
+ {
+  "kind": "answer",
   "title": "My buyer asks for my own Scope 3, not just Scope 1 and 2. Do small suppliers really need it?",
   "text": "Usually not all of it. A buyer asks because your Scope 1 and 2 leave out the materials and freight behind what you sell them, often the biggest part. Give measured Scope 1 and 2 plus estimates for purchased materials, inbound freight and waste. Downstream categories, such as use of sold products, rarely matter to the buyer.",
   "url": "https://senseible.earth/answers/buyer-asks-for-my-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "Our buyer asks for Scope 2 both location based and market based. What is the difference?",
+  "text": "Location based uses the average grid factor where you are, 0.710 kg CO2 per kWh in India. Market based uses what you contracted: green tariffs, RECs or PPAs, with a residual mix factor for the rest. Report both; without contracts, the two figures are similar.",
+  "url": "https://senseible.earth/answers/buyer-asks-location-and-market-based-scope-2"
  },
  {
   "kind": "answer",
@@ -1721,6 +1751,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "We burn no fuel, but our buyer doubts our zero Scope 1. How do we show it?",
+  "text": "Show that no Scope 1 source exists: no generator, boiler, furnace, LPG, company vehicles or refrigerant equipment, or that any present was not used. Purchase ledgers with no fuel, a site list of equipment and a signed statement usually settle it.",
+  "url": "https://senseible.earth/answers/buyer-doubts-our-zero-scope-1"
+ },
+ {
+  "kind": "answer",
+  "title": "Our buyer says it will prefer lower carbon suppliers. What can we do in six months?",
+  "text": "Start with an honest baseline from your bills, then fix the cheap things: power factor, compressed air leaks, idle running, and switching diesel generation to grid or solar where possible. Report a credible figure with evidence, plus a short plan. Buyers value proof over promises.",
+  "url": "https://senseible.earth/answers/buyer-prefers-lower-carbon-suppliers-six-months"
+ },
+ {
+  "kind": "answer",
   "title": "My buyer says our carbon footprint looks too low. How do I check it?",
   "text": "Check four things in order: missing sources (DG diesel, a second meter, missing months, refrigerants, fuel bought for cash), unit slips (kVAh, MWh, kilolitres), a boundary mismatch with what the buyer expected, and the denominator. Then compare your intensity per tonne with a published benchmark for your process. A big gap means keep looking.",
   "url": "https://senseible.earth/answers/buyer-says-my-carbon-footprint-is-too-low"
@@ -1748,6 +1790,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Our EU buyer wants CBAM data for products that are not CBAM goods. Do we have to give it?",
   "text": "There is no CBAM duty for goods outside Annex I. The buyer may still want a carbon footprint for its own reporting, which is a commercial request. Confirm the CN code, explain it is not covered, and offer an ordinary product footprint instead.",
   "url": "https://senseible.earth/answers/buyer-wants-cbam-data-for-goods-not-covered"
+ },
+ {
+  "kind": "answer",
+  "title": "Our buyer wants copies of our electricity bills as proof. Should we share them?",
+  "text": "You can share them, but you do not have to send everything. Offer bills with tariff details or consumer numbers masked, or a summary of units per month with a verifier's or auditor's check. Agree confidentiality terms first.",
+  "url": "https://senseible.earth/answers/buyer-wants-copies-of-our-electricity-bills"
  },
  {
   "kind": "answer",
@@ -1856,6 +1904,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can carbon credit certificates issued under India's CCTS be sold to foreign buyers?",
   "text": "Not under the rules published as of October 2026. Carbon credit certificates under India's Carbon Credit Trading Scheme are issued to entities registered in India and traded on Indian power exchanges for the domestic scheme. A transfer abroad would need India's authorisation under Article 6 of the Paris Agreement, and the published rules set out no such route yet.",
   "url": "https://senseible.earth/answers/can-ccts-carbon-credits-be-sold-abroad"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a GHG verification be done remotely, without a site visit?",
+  "text": "Partly. Document review and interviews can be remote, and many verifiers allow remote work for small sites with simple sources. Where emissions are material or meters need checking, expect a site visit, or a live video walk-through if the verifier's procedures accept it. The verifier decides.",
+  "url": "https://senseible.earth/answers/can-ghg-verification-be-done-remotely"
  },
  {
   "kind": "answer",
@@ -2189,6 +2243,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our ammonia plant buys hydrogen from a neighbouring unit. How does CBAM count it?",
+  "text": "Hydrogen produced separately and fed to ammonia synthesis is treated as a relevant precursor. Add its embedded emissions, from the supplier's own figure, to your plant's direct and indirect emissions. Without supplier data you fall back on default values, which are usually higher.",
+  "url": "https://senseible.earth/answers/cbam-ammonia-plant-buying-hydrogen-precursor"
+ },
+ {
+  "kind": "answer",
+  "title": "Do kiln start-up oil and raw material dryer fuel count in a cement plant's CBAM figure?",
+  "text": "Yes. Every fuel burnt inside the installation for making clinker and cement counts as a direct emission, including oil or diesel used to light up the kiln after a stop and fuel for raw material or coal dryers. Leaving them out understates the figure and fails a verifier's completeness check.",
+  "url": "https://senseible.earth/answers/cbam-cement-kiln-startup-oil-counted"
+ },
+ {
+  "kind": "answer",
   "title": "Is there an official template for sending CBAM emissions data to my EU buyer?",
   "text": "Yes, but it is voluntary. The European Commission publishes an Excel communication template, with guidance, for installation operators outside the EU to send embedded emissions data to EU importers. Your buyer may accept another format, but using the Commission template makes the data easier for them to check and file.",
   "url": "https://senseible.earth/answers/cbam-communication-template-for-suppliers"
@@ -2237,6 +2303,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What steps does a gas-based hydrogen plant follow to report its CBAM emissions?",
+  "text": "Hydrogen (CN 2804 10 00) is charged on direct emissions only. Measure feed and fuel gas, apply the gas analysis and factor, subtract only CO2 that leaves for permanent storage under the rules, and divide by tonnes of hydrogen produced. Keep metering and lab records for a verifier.",
+  "url": "https://senseible.earth/answers/cbam-grey-hydrogen-smr-installation-steps"
+ },
+ {
+  "kind": "answer",
   "title": "We buy steam from a neighbouring plant for a CBAM product. How is that heat counted?",
   "text": "Heat you import is added to your production process with the emissions of producing it. Use the supplier's actual fuel and boiler efficiency data where you can get it; without it, the monitoring rules give a fallback factor. Heat counts for every CBAM good, including steel and aluminium, unlike grid electricity.",
   "url": "https://senseible.earth/answers/cbam-imported-heat-from-neighbouring-plant"
@@ -2255,6 +2327,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How is the CBAM figure worked out for limestone calcined clay (LC3) cement?",
+  "text": "LC3 cement is a hydraulic cement, so it sits in the cement goods of Annex I. Its figure is the clinker it contains, plus direct emissions from calcining the clay, plus electricity for grinding. Less clinker usually means a lower figure, but the clay kiln's fuel still counts.",
+  "url": "https://senseible.earth/answers/cbam-lc3-calcined-clay-cement-figure"
+ },
+ {
+  "kind": "answer",
   "title": "What monitoring methodology documentation must a non-EU CBAM installation keep?",
   "text": "A non-EU installation reporting actual emissions in the CBAM definitive period needs a written monitoring plan, in English, covering at least the elements in Annex II, point A.5 of Implementing Regulation (EU) 2025/2547: the installation, goods by CN code, boundaries, source streams, methods, precursors and data controls. Keep every version.",
   "url": "https://senseible.earth/answers/cbam-monitoring-methodology-documentation-for-operators"
@@ -2264,6 +2342,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "One export shipment has goods under several CN codes. How do we give CBAM figures?",
   "text": "Give a figure for each CN code and each installation that made it, not one figure for the container. The importer declares embedded emissions line by line against the customs declaration, so a mixed shipment needs one figure per product, with tonnes per line that match the invoice and packing list.",
   "url": "https://senseible.earth/answers/cbam-one-shipment-several-cn-codes"
+ },
+ {
+  "kind": "answer",
+  "title": "Our plant makes OPC and PPC from the same clinker. How do we split the CBAM figure between them?",
+  "text": "Give each product its own figure. Multiply each cement's clinker share by the clinker's embedded emissions, then add the grinding electricity used for that product. PPC carries less clinker, so its figure is lower even though both come from one kiln.",
+  "url": "https://senseible.earth/answers/cbam-opc-and-ppc-from-same-clinker-split"
  },
  {
   "kind": "answer",
@@ -2282,6 +2366,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate CBAM embedded emissions when I buy the same steel input from two suppliers?",
   "text": "Use each supplier's embedded emissions per tonne for the tonnes you actually consumed in the period. If you cannot trace which coil went into which product, weight the two figures by tonnes consumed. Any tonnes without supplier data take the default value.",
   "url": "https://senseible.earth/answers/cbam-precursor-from-two-suppliers-weighted-average"
+ },
+ {
+  "kind": "answer",
+  "title": "Our refinery makes hydrogen for its own use. Does CBAM apply?",
+  "text": "Not to the hydrogen you use yourself. CBAM charges goods imported into the EU, and refined fuels are not CBAM goods. Only hydrogen you export to the EU under CN 2804 10 00 needs a figure. Your refinery may still fall under India's carbon market rules.",
+  "url": "https://senseible.earth/answers/cbam-refinery-hydrogen-own-use"
+ },
+ {
+  "kind": "answer",
+  "title": "Our EU buyer is sending steel goods back to us. Is CBAM due when we ship them to Europe again?",
+  "text": "CBAM follows customs rules on returned goods. Goods exported from the EU and brought back unchanged within the customs time limit can be relieved, and CBAM does not apply to them. Goods made outside the EU and re-sent after repair or rework are a new import and usually need a figure.",
+  "url": "https://senseible.earth/answers/cbam-returned-goods-relief-exporter"
  },
  {
   "kind": "answer",
@@ -3443,6 +3539,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a plastic moulding unit in Daman work out CO2 per kg of product?",
+  "text": "Electricity is the main source. Divide yearly kWh by kilograms moulded and multiply by 0.710 kg CO2 per kWh. For buyers asking for a product footprint, add the plastic resin itself from the resin supplier or a recognised factor, which is usually larger than the moulding energy.",
+  "url": "https://senseible.earth/answers/daman-plastic-moulding-unit-electricity-per-kg"
+ },
+ {
+  "kind": "answer",
   "title": "How much CO2 does a coal fired cement kiln in Dar es Salaam emit per tonne of clinker?",
   "text": "Calcination releases about 0.52 tonnes of CO2 per tonne of clinker on the IPCC default, and coal burned in the kiln adds more, depending on kiln efficiency. Calculate fuel CO2 from coal invoices and its lab tested carbon or heating value, and add kiln dust if it leaves the system.",
   "url": "https://senseible.earth/answers/dar-es-salaam-cement-plant-coal-kiln-co2"
@@ -3908,6 +4010,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does neem-coated urea reduce N2O emissions, and can I claim a lower footprint for it?",
   "text": "Not in a way you can claim. All subsidised urea sold in India has been neem-coated since 2015, so it is the normal product, not an improvement. The IPCC methods give no reduction factor for coated urea, so at default factors your N2O and urea CO2 stay the same as for plain urea.",
   "url": "https://senseible.earth/answers/does-neem-coated-urea-reduce-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Does organic carbon in limestone add to a cement plant's CBAM figure?",
+  "text": "Yes. Carbon in the raw meal that is not carbonate, such as organic matter or shale carbon, burns off in the kiln and the resulting CO2 counts as a process emission. It is usually small next to calcination, but it belongs in the figure when you report actual emissions.",
+  "url": "https://senseible.earth/answers/does-organic-carbon-in-limestone-count-cbam"
  },
  {
   "kind": "answer",
@@ -4499,6 +4607,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a cement plant in Ethiopia work out CO2 from imported coal in its kiln?",
+  "text": "Multiply coal tonnes by its net calorific value and carbon factor, using lab analysis of each shipment where possible, and add calcination CO2 from clinker produced. Grid power in Ethiopia is mostly hydro, so electricity adds little; kiln fuel and calcination dominate.",
+  "url": "https://senseible.earth/answers/ethiopia-cement-plant-imported-coal-co2"
+ },
+ {
+  "kind": "answer",
   "title": "What grid emission factor should a factory in Ethiopia use?",
   "text": "A very low one, because almost all generation is hydro, with wind, geothermal and some solar. Expect a figure well under 0.1 kg CO2 per kWh, but take the latest official or IEA value for the reporting year and cite it. Do not borrow an East African average, which would overstate it.",
   "url": "https://senseible.earth/answers/ethiopia-grid-emission-factor-for-factories"
@@ -4583,6 +4697,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our EU importer asks for our installation's name, address and coordinates for CBAM. Why?",
+  "text": "CBAM data is tied to the installation where goods were made, not to the company. Importers must identify each installation in their declaration, so they ask for its name, address, coordinates and production route. Give details for the plant that actually made the goods.",
+  "url": "https://senseible.earth/answers/eu-importer-asks-installation-details-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "How can an EU importer sanity-check a supplier's CBAM figure?",
   "text": "Check that it is per tonne of the exact CN code, covers direct emissions only for steel and aluminium, includes precursors, matches the stated production route, covers the right period and names a verifier once verification applies. A figure far below route norms needs an explanation before you declare it.",
   "url": "https://senseible.earth/answers/eu-importer-checking-supplier-cbam-figure"
@@ -4664,6 +4784,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does an EU importer of Vietnamese steel need to be an authorised CBAM declarant?",
   "text": "Yes, unless its imports of CBAM goods stay within the 50 tonne a year exemption. From 2026 only an authorised CBAM declarant may import covered goods above that, so apply through the CBAM Registry in good time. A customs representative can act as declarant on your behalf.",
   "url": "https://senseible.earth/answers/eu-importer-vietnam-steel-authorised-declarant"
+ },
+ {
+  "kind": "answer",
+  "title": "Our EU importer wants CBAM data for every shipment. Is that really needed?",
+  "text": "Embedded emissions are worked out per installation and product over a reporting period, not shipment by shipment. Your importer may still ask you to tag each shipment with the period's figure, CN code and installation, so their declaration adds up. Agree a format once.",
+  "url": "https://senseible.earth/answers/eu-importer-wants-cbam-data-per-shipment"
  },
  {
   "kind": "answer",
@@ -4868,6 +4994,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Faisalabad textile mill count power from its own gas generators?",
   "text": "Electricity you make yourself is not Scope 2. Count the gas burned in the generators as Scope 1, at about 2.05 kg CO2 per standard cubic metre with the IPCC default. Only electricity bought from the grid is Scope 2, so do not add the generated kWh again.",
   "url": "https://senseible.earth/answers/faisalabad-textile-mill-gas-generator-scope-1"
+ },
+ {
+  "kind": "answer",
+  "title": "Does switching a Faridabad forging unit's furnace from oil to PNG cut its CO2?",
+  "text": "Yes, usually. Natural gas releases less CO2 per unit of heat than furnace oil, and gas furnaces are easier to control. Compare using your own fuel use per tonne forged before and after. IPCC defaults are about 77.4 kg CO2 per GJ for residual fuel oil and 56.1 for natural gas.",
+  "url": "https://senseible.earth/answers/faridabad-forging-unit-furnace-oil-to-png"
  },
  {
   "kind": "answer",
@@ -5351,6 +5483,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a chemical plant in Gajraula count CO2 from its coal boiler and captive power?",
+  "text": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh.",
+  "url": "https://senseible.earth/answers/gajraula-chemical-unit-coal-boiler-co2"
+ },
+ {
+  "kind": "answer",
   "title": "How should a garment exporter estimate end-of-life emissions for clothing sold in the EU?",
   "text": "Take the tonnes of garments you ship to the EU, split them by fibre, apply an EU disposal mix (incineration, landfill, collection for reuse or recycling), and multiply each share by a route factor. Report it as Scope 3 Category 12 and label the disposal mix as an estimate.",
   "url": "https://senseible.earth/answers/garment-end-of-life-emissions-eu-market"
@@ -5498,6 +5636,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Are delivery riders' own two-wheelers part of my Scope 3, and in which category?",
   "text": "Yes. Riders' own two-wheelers are not your Scope 1 because you neither own nor control them. Deliveries you pay riders for are a purchased transport service, so they go in Scope 3 Category 4. Deliveries a customer pays for separately belong in Category 9. Estimate from trips, distance and a per-km factor.",
   "url": "https://senseible.earth/answers/gig-delivery-riders-emissions-which-scope"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a sponge iron unit in Giridih work out its CBAM figure?",
+  "text": "Direct reduced iron is a CBAM precursor for steel. Count CO2 from coal burnt in the rotary kiln, minus carbon left in the product and char, using a mass balance. Electricity is not charged for iron and steel goods, but keep the records for buyers' footprints.",
+  "url": "https://senseible.earth/answers/giridih-sponge-iron-kiln-cbam-figure"
  },
  {
   "kind": "answer",
@@ -5651,6 +5795,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can switching a coal boiler to a biomass boiler qualify for a green loan?",
+  "text": "It can, if the lender accepts the project as renewable energy or fuel switching and you can show a sustainable, documented biomass supply. Expect questions on fuel source, expected CO2 cut, air pollution control and how you will report results. Lenders decide; terms are never guaranteed.",
+  "url": "https://senseible.earth/answers/green-loan-coal-to-biomass-boiler-readiness"
+ },
+ {
+  "kind": "answer",
   "title": "What evidence does a lender want for a green loan to buy electric delivery vehicles?",
   "text": "A lender will want proof the vehicles are fully electric, a quotation and later the invoices, registration certificates showing electric fuel type, the fuel records of the vehicles they replace as a baseline, a charging plan, and a yearly report of kilometres, kWh and CO2 avoided. Clean transport is an eligible green loan category.",
   "url": "https://senseible.earth/answers/green-loan-electric-delivery-vehicles"
@@ -5660,6 +5810,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can a green loan finance a new machine that is only partly about energy saving?",
   "text": "Often yes, but usually only for the green part. Under the Green Loan Principles the proceeds must go to a clearly green project, so a lender may finance the whole machine if it meets an efficiency test, or treat only the efficiency share as green, through a separate tranche or an apportioned amount. You need before-and-after energy data either way.",
   "url": "https://senseible.earth/answers/green-loan-for-partly-energy-saving-machine"
+ },
+ {
+  "kind": "answer",
+  "title": "Can upgrading an old induction furnace qualify for green or energy efficiency finance?",
+  "text": "Possibly, if the new furnace uses clearly less electricity per tonne and you can prove it. Lenders look for your current kWh per tonne, the supplier's guaranteed figure, expected savings and how you will measure them. Whether it counts as green is the lender's call.",
+  "url": "https://senseible.earth/answers/green-loan-induction-furnace-upgrade-readiness"
  },
  {
   "kind": "answer",
@@ -5690,6 +5846,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What do I have to report to the bank after a green loan is disbursed?",
   "text": "Expect to report at least once a year until the loan is repaid: proof the money went to the agreed green project, the amount spent, and the project's impact, such as kWh generated, energy saved or tonnes CO2 avoided, with the method used. Your loan agreement sets the exact items and dates.",
   "url": "https://senseible.earth/answers/green-loan-reporting-after-disbursement"
+ },
+ {
+  "kind": "answer",
+  "title": "How do we show a lender that green loan money was spent only on the green project?",
+  "text": "Keep the loan money traceable: a separate account or ledger code, vendor invoices that match the approved project, payment records and commissioning reports. Report spending against the project budget when the lender asks. Mixing funds with general expenses is the most common problem.",
+  "url": "https://senseible.earth/answers/green-loan-show-money-spent-on-project"
  },
  {
   "kind": "answer",
@@ -6407,6 +6569,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How should a small company choose a GHG verifier?",
+  "text": "Pick a body accredited to ISO 14065 for your sector and the standard you report under, check that the person leading the work knows your process, and confirm independence. Ask whoever relies on the figure, such as a buyer, lender or regulator, which verifiers they accept before you sign.",
+  "url": "https://senseible.earth/answers/how-to-choose-a-ghg-verifier-msme"
+ },
+ {
+  "kind": "answer",
   "title": "How should an MSME choose the base year for its carbon footprint?",
   "text": "Pick the most recent financial year for which you have complete, checkable data: twelve months of electricity bills and fuel invoices, and normal production. If no single year is typical, use an average of two or three years. Write down the year and a rule for when you will recalculate it.",
   "url": "https://senseible.earth/answers/how-to-choose-base-year-carbon-inventory"
@@ -7025,6 +7193,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is calcium aluminate cement for refractories covered by CBAM?",
+  "text": "Yes. Aluminous cement (CN 2523 30 00) is in Annex I, so an EU importer needs its embedded emissions. Refractory castables and mortars that contain it are usually declared under chapter 38 and are not CBAM goods, but check the code for each product.",
+  "url": "https://senseible.earth/answers/is-calcium-aluminate-cement-covered-by-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "Is carbon black exported to the EU covered by CBAM?",
   "text": "No. Carbon black is declared under 2803, and the only chapter 28 product in Annex I is hydrogen. EU tyre and rubber buyers file no CBAM figure for it, but many ask for a product footprint because carbon black is carbon intensive.",
   "url": "https://senseible.earth/answers/is-carbon-black-covered-by-cbam"
@@ -7076,6 +7250,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is glassware or glass from Firozabad covered by the EU CBAM?",
   "text": "No. Glass and glassware, including tableware, bangles, beads, lamps and containers in chapter 70, are not in Annex I of the CBAM Regulation, so EU importers pay no CBAM on them. CBAM covers only cement, iron and steel, aluminium, fertilisers, hydrogen and electricity, plus listed products made from them.",
   "url": "https://senseible.earth/answers/is-glassware-covered-by-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "We export hydrogen in small cylinders to Europe. Is that covered by CBAM?",
+  "text": "Yes. Hydrogen under CN 2804 10 00 is a CBAM good whatever the packing, and hydrogen is outside the 50 tonne yearly exemption, so even small volumes need an authorised declarant and a figure. Steel cylinders sold with the gas may be a separate covered good; ask your broker.",
+  "url": "https://senseible.earth/answers/is-hydrogen-in-cylinders-covered-by-cbam"
  },
  {
   "kind": "answer",
@@ -7541,6 +7721,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a Kashipur paper mill count CO2 from boilers burning agro residue and coal?",
+  "text": "Coal is fossil, so its CO2 is Scope 1. CO2 from agro residues such as bagasse or rice husk is biogenic and reported separately, but their methane and nitrous oxide still count. Keep separate fuel records for each, with weights and moisture.",
+  "url": "https://senseible.earth/answers/kashipur-paper-mill-agro-residue-boiler"
+ },
+ {
+  "kind": "answer",
   "title": "Is lime from a Katni kiln covered by CBAM?",
   "text": "No. Quicklime and hydrated lime sit under CN 2522, which is outside CBAM. Your kiln still emits process CO2 from limestone, close to 0.75 tonnes per tonne of high calcium lime by the IPCC default, plus fuel. Steel and chemical buyers will ask for that figure.",
   "url": "https://senseible.earth/answers/katni-lime-kiln-covered-by-cbam"
@@ -7937,6 +8123,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "A lender asks about flood and heat risk at our factory. What do they want to know?",
+  "text": "They want to know whether floods, heatwaves or water shortages could stop your plant or damage assets during the loan. Give your site's flood history, insurance cover, backup power and water, and any steps taken. Honest, specific answers help more than a generic policy.",
+  "url": "https://senseible.earth/answers/lender-asks-flood-and-heat-risk-msme"
+ },
+ {
+  "kind": "answer",
   "title": "A steel mill asks our Liaoning magnesia refractory plant for carbon data. What counts?",
   "text": "Count CO2 from calcining magnesite, about 1.09 tonnes per tonne of magnesia from chemistry alone, plus kiln fuel and electricity. Refractories are not CBAM goods, so this is a Scope 3 figure for the buyer. Give it per tonne of brick or mix shipped.",
   "url": "https://senseible.earth/answers/liaoning-magnesia-refractory-supplier-carbon-data"
@@ -7976,6 +8168,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is a load factor incentive on an HT electricity bill and how do I earn it?",
   "text": "Some state tariffs give a rebate when load factor is high: units used divided by maximum demand times hours in the month. Running steadily across shifts, instead of in peaks, raises it. It lowers cost; emissions still follow kWh.",
   "url": "https://senseible.earth/answers/load-factor-incentive-on-ht-electricity-bill"
+ },
+ {
+  "kind": "answer",
+  "title": "What carbon data do buyers ask a chemical unit in Lote Parshuram for?",
+  "text": "Most buyers want Scope 1 and 2 per tonne of product: boiler and heater fuel, grid power at 0.710 kg CO2 per kWh, and any process emissions. Larger buyers also ask for main raw material footprints and a reduction plan. Start with twelve months of bills and batch records.",
+  "url": "https://senseible.earth/answers/lote-chemical-unit-buyer-carbon-data"
  },
  {
   "kind": "answer",
@@ -8096,6 +8294,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much process CO2 comes from calcining magnesite to make magnesia?",
   "text": "Calcining pure magnesite releases 0.522 tonnes of CO2 per tonne of magnesium carbonate, about 1.09 tonnes per tonne of magnesia formed. Multiply tonnes calcined by the MgCO3 share and the fraction actually calcined, add any calcium carbonate at 0.440, then add kiln fuel separately.",
   "url": "https://senseible.earth/answers/magnesite-calcination-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "Does solvent recovery at a Mahad chemical unit change its carbon footprint?",
+  "text": "Yes, in two directions. Recovering solvent cuts purchased solvent, whose production carries emissions, but distillation uses steam and power. Count both: steam fuel and electricity in Scope 1 and 2, and avoided solvent purchases as lower Scope 3. Measure per batch.",
+  "url": "https://senseible.earth/answers/mahad-chemical-unit-solvent-recovery-energy"
  },
  {
   "kind": "answer",
@@ -8930,6 +9134,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of an office chair?",
   "text": "Add the base, gas lift, mechanism, seat shell, foam, fabric and castors per chair with supplier figures. Add moulding, upholstery and assembly energy, then divide the plant's energy by chairs made.",
   "url": "https://senseible.earth/answers/office-chair-carbon-footprint-per-chair"
+ },
+ {
+  "kind": "answer",
+  "title": "Should our office and admin emissions be included in the product footprint we give a buyer?",
+  "text": "Usually no for a cradle-to-gate product footprint, which covers materials, production energy and processes. Office power and business travel belong in your company inventory. If your offices share a meter with the factory, separate them or state that they are included.",
+  "url": "https://senseible.earth/answers/office-emissions-in-product-footprint"
  },
  {
   "kind": "answer",
@@ -9848,6 +10058,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I prove additionality for an energy efficiency or fuel switch project?",
   "text": "Show four things with dated documents: you considered carbon credits before you committed money, no law required the change, the project is not financially attractive without credit revenue or faces real barriers, and similar plants nearby have not already made the same change. Small projects may qualify through a simplified route.",
   "url": "https://senseible.earth/answers/prove-additionality-energy-efficiency-project"
+ },
+ {
+  "kind": "answer",
+  "title": "We moved goods by rail to cut emissions. How do we prove it to our buyer?",
+  "text": "Keep the railway receipts or freight forwarder documents that show rail legs, tonnes and distance, plus the road legs at each end. Calculate each leg with its own factor. Buyers accept rail savings when documents show the mode, not just a claim in an email.",
+  "url": "https://senseible.earth/answers/prove-rail-freight-to-buyer-carbon"
  },
  {
   "kind": "answer",
@@ -11321,6 +11537,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "We use rooftop solar and grid power. What electricity factor do we give a buyer?",
+  "text": "Give the buyer your actual Scope 2: grid units bought times 0.710 kg CO2 per kWh. Solar you generate and use yourself has no grid emissions, so it lowers the total. Dividing by all units used gives a blended factor, but report kWh from each source too.",
+  "url": "https://senseible.earth/answers/solar-plus-grid-electricity-factor-for-buyer"
+ },
+ {
+  "kind": "answer",
   "title": "How do lenders account for financed emissions on a solar project loan, and can they subtract avoided emissions?",
   "text": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
   "url": "https://senseible.earth/answers/solar-project-finance-financed-emissions"
@@ -11885,6 +12107,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a chemical unit in Taloja work out CO2 per tonne of product?",
+  "text": "Count fuel burnt for steam and heat, grid electricity at 0.710 kg CO2 per kWh, and any process emissions from reactions. Divide by tonnes produced, or allocate by steam and power use when several products share utilities. Buyers will ask for both Scope 1 and 2.",
+  "url": "https://senseible.earth/answers/taloja-chemical-unit-steam-and-power-co2"
+ },
+ {
+  "kind": "answer",
   "title": "Where does a Tamil Nadu cable maker get a carbon figure for the copper rod it buys?",
   "text": "From the rod supplier, who should pass on the cathode figure plus its own casting and rolling energy. Since the Thoothukudi smelter closed in 2018, much rod is made from imported cathode, so ask whose cathode it is and from which country. Without that, use a stated average and mark it as an estimate.",
   "url": "https://senseible.earth/answers/tamil-nadu-cable-maker-copper-rod-carbon-data"
@@ -12239,6 +12467,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What CBAM figure does an ammonia exporter in Trinidad need for EU buyers?",
+  "text": "Ammonia (CN 2814) is a CBAM good. Its figure counts direct emissions from gas used as feed and fuel, plus indirect emissions from electricity. CO2 sent to a urea or methanol plant is usually treated as emitted unless the rules allow otherwise. Methanol itself is not a CBAM good.",
+  "url": "https://senseible.earth/answers/trinidad-ammonia-exporter-cbam-figure"
+ },
+ {
+  "kind": "answer",
   "title": "Do truck chassis and frame parts exported to the EU need CBAM data?",
   "text": "Usually not, if they are declared as parts of motor vehicles under heading 8708, which is outside CBAM. Check each line: fasteners under 7318, structures under 7308 and other steel articles under 7326 are covered, so a mixed shipment may still need embedded emissions for some lines.",
   "url": "https://senseible.earth/answers/truck-chassis-frame-parts-cbam-check"
@@ -12431,6 +12665,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does a UK steel exporter selling into the EU face CBAM, and can it deduct UK ETS costs?",
+  "text": "Yes. The UK is outside the EU ETS, so UK steel entering the EU falls under CBAM. A UK ETS price effectively paid, net of free allocation, may be deductible. Talks on linking the UK and EU systems would change this if a link comes into force.",
+  "url": "https://senseible.earth/answers/uk-steel-exporter-eu-cbam-and-uk-ets"
+ },
+ {
+  "kind": "answer",
   "title": "What grid emission factor should a supplier in Ukraine use?",
   "text": "Nuclear supplies a large share of Ukraine's power, with coal, gas and hydro making up much of the rest, so its factor is lower than coal heavy neighbours. War damage has changed the mix sharply year to year, so use the official figure for the year and name it.",
   "url": "https://senseible.earth/answers/ukraine-grid-emission-factor-for-suppliers"
@@ -12506,6 +12746,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What carbon or eco-friendly claims can an Indian exporter make on products sold in the US?",
   "text": "Specific, measured claims you can prove, such as a stated product footprint with its boundary and year. The US FTC Green Guides (16 CFR Part 260) warn against unqualified claims like eco-friendly, require offset claims to be backed by reliable evidence, and hold the seller responsible for every reasonable reading of a claim.",
   "url": "https://senseible.earth/answers/us-ftc-green-guides-carbon-claims"
+ },
+ {
+  "kind": "answer",
+  "title": "What does CBAM mean for a US steel exporter with no federal carbon price?",
+  "text": "US steel entering the EU falls under CBAM, and with no national carbon price there is usually nothing to deduct. Electric arc furnace mills often have lower direct emissions than blast furnace routes, so reporting verified actual figures, rather than defaults, matters for their buyers.",
+  "url": "https://senseible.earth/answers/us-steel-exporter-eu-cbam-no-carbon-price"
  },
  {
   "kind": "answer",
@@ -12623,6 +12869,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a dye intermediate unit in Vatva count CO2 from its boiler and thermic fluid heater?",
+  "text": "Add up every fuel burnt: coal, briquettes, natural gas or furnace oil in the boiler and thermic fluid heater. Multiply each by its calorific value and factor. Steam bought from a common facility is not your Scope 1, but its emissions are a cost your buyer may ask about.",
+  "url": "https://senseible.earth/answers/vatva-dye-intermediate-unit-boiler-co2"
+ },
+ {
+  "kind": "answer",
   "title": "What can a company claim under the VCMI Claims Code (Silver, Gold, Platinum)?",
   "text": "A VCMI claim says a company is cutting its own emissions on a science-aligned path and also buying high-quality carbon credits for part of what remains. Silver covers 20% to under 60% of remaining emissions, Gold 60% to under 100%, Platinum 100% or more. Four prerequisites come first, and the claim must be independently assured.",
   "url": "https://senseible.earth/answers/vcmi-claims-code-silver-gold-platinum"
@@ -12665,9 +12917,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our verifier asked for a data flow diagram. What should it show?",
+  "text": "A simple picture of how each emission figure is produced: where the data starts (meter, invoice, register), who records it, where it is stored, how it is calculated and who checks it. One page is enough for a small company. It helps the verifier choose what to test.",
+  "url": "https://senseible.earth/answers/verifier-asks-for-data-flow-diagram"
+ },
+ {
+  "kind": "answer",
   "title": "The verifier wants a list of the emission sources we left out. Why, and what goes in it?",
   "text": "Verifiers check that exclusions are small and justified. List each source left out, such as fire extinguishers, small refrigerant units or staff travel, with an estimate of its size and the reason. Keep the total of exclusions within the agreed materiality threshold.",
   "url": "https://senseible.earth/answers/verifier-asks-list-of-excluded-emission-sources"
+ },
+ {
+  "kind": "answer",
+  "title": "The verifier wants a management representation letter. What is it?",
+  "text": "It is a signed letter in which your management confirms that the data and documents given to the verifier are complete and correct, and that nothing material has been withheld. It is standard in assurance work and does not replace evidence. A director or senior manager usually signs it.",
+  "url": "https://senseible.earth/answers/verifier-asks-management-representation-letter"
  },
  {
   "kind": "answer",
@@ -12677,9 +12941,27 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "The verifier asks how we set our organisational boundary. What do we show?",
+  "text": "Show which entities and sites you included, the approach you chose (operational control, financial control or equity share), and documents that prove control: registration certificates, lease or ownership papers, and electricity connections in your name. List anything left out and why.",
+  "url": "https://senseible.earth/answers/verifier-asks-organisational-boundary-evidence"
+ },
+ {
+  "kind": "answer",
   "title": "The verifier asks for production records. What format do they need?",
   "text": "Monthly output in the same unit as your intensity figure, from a source that can be cross-checked, such as dispatch registers, sales invoices or GST returns. Stock changes should reconcile. A spreadsheet is fine if it traces to these documents.",
   "url": "https://senseible.earth/answers/verifier-asks-production-records-format"
+ },
+ {
+  "kind": "answer",
+  "title": "The verifier asks why our emissions changed so much from last year. What do they want?",
+  "text": "They want a short, evidenced reason for each large movement: more production, a fuel switch, a new machine, a corrected error or a changed factor. Prepare a table of last year versus this year by source, with the cause and the document behind each change.",
+  "url": "https://senseible.earth/answers/verifier-asks-why-emissions-changed"
+ },
+ {
+  "kind": "answer",
+  "title": "Why does the verifier compare our purchase ledger with the fuel in our emissions report?",
+  "text": "It is a completeness test. The verifier looks for fuel, gas, refrigerant or power bought during the year that never reached the inventory. Every fuel ledger entry should match a line in your workings, or carry a reason, such as stock carried forward or fuel resold.",
+  "url": "https://senseible.earth/answers/verifier-checks-purchase-ledger-for-missing-fuel"
  },
  {
   "kind": "answer",
@@ -12833,6 +13115,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a steel galvanising unit near Wardha work out its CBAM figure?",
+  "text": "Galvanised coil or sheet is a CBAM steel good. Its figure is the embedded emissions of the coil you bought, plus your own direct emissions from furnace and annealing fuel. Zinc is not a precursor. Electricity is not charged for steel goods, but keep it on record.",
+  "url": "https://senseible.earth/answers/wardha-steel-galvanising-unit-cbam-figure"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate warehouse emissions per pallet position?",
   "text": "Add the warehouse electricity at 0.710 kg CO2 per kWh, generator and forklift diesel at 2.68 kg per litre, and refrigerant top-ups, then divide by pallet positions. Ambient and cold warehouses differ widely, so report each type separately and share by occupied positions.",
   "url": "https://senseible.earth/answers/warehouse-electricity-per-pallet-position"
@@ -12860,6 +13148,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate emissions from my factory's waste for Scope 3 Category 5?",
   "text": "Weigh your waste by type and disposal route from weighbridge slips and contractor invoices, then multiply each tonnage by an emission factor for that type and route, and add them up. This is the GHG Protocol's waste-type-specific method. Landfilled organic waste usually dominates; recycled material carries only a small factor.",
   "url": "https://senseible.earth/answers/waste-emissions-scope-3-category-5"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a lender want to see for a waste heat recovery project loan?",
+  "text": "A lender usually wants proof of the heat available, the power or steam the system will produce, the fuel or grid electricity it replaces, and the expected CO2 cut. Measured flue gas data and a vendor proposal carry more weight than estimates. Approval and terms remain the lender's decision.",
+  "url": "https://senseible.earth/answers/waste-heat-recovery-loan-what-lenders-ask"
  },
  {
   "kind": "answer",
@@ -13466,6 +13760,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can a brick kiln earn carbon credits for converting to zigzag firing or switching fuel?",
   "text": "Usually not for a zigzag conversion. Since 2022, Indian rules require brick kilns to use zigzag, vertical shaft or PNG firing, so a conversion the law requires fails the regulatory surplus test that most carbon standards apply. Only measured savings beyond the legal requirement may qualify, and one kiln's volume is small.",
   "url": "https://senseible.earth/answers/zigzag-kiln-conversion-carbon-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a ferrochrome smelter in Zimbabwe work out its CBAM figure?",
+  "text": "High-carbon ferrochrome (CN 7202 41) is a CBAM good. Its figure counts direct emissions from coke, coal and electrode carbon by mass balance. Electricity is not charged for iron and steel goods, but keep the records, because buyers' footprints include it.",
+  "url": "https://senseible.earth/answers/zimbabwe-ferrochrome-exporter-cbam-figure"
  },
  {
   "kind": "answer",
