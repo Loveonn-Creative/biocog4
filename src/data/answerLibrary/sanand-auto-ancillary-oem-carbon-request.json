@@ -1,0 +1,63 @@
+{
+  "slug": "sanand-auto-ancillary-oem-carbon-request",
+  "q": "Our car maker customer in Sanand wants our carbon data. What should an ancillary unit send?",
+  "title": "Sanand auto ancillary carbon request",
+  "short": "Start with Scope 1 and 2 for your plant, per year, with energy use by source and production volume. Then, if asked, a per-part figure that adds your share of plant emissions to the main materials by weight. Car makers mostly want consistency and a method they can check.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tier 1 and tier 2 auto suppliers in Sanand",
+  "sections": [
+    {
+      "h": "First request",
+      "ul": [
+        "Scope 1: fuel for furnaces, DG sets, forklifts.",
+        "Scope 2: electricity, with any solar shown separately.",
+        "Production in parts or tonnes for intensity."
+      ]
+    },
+    {
+      "h": "Per-part request",
+      "ul": [
+        "Plant emissions allocated by weight or machine hours.",
+        "Steel, aluminium or plastic per part times supplier or average factors.",
+        "Packaging, if the customer asks."
+      ]
+    },
+    {
+      "h": "Formats",
+      "p": [
+        "Some OEMs use their own portals or industry data exchanges. Keep one master dataset and map it to each format."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    },
+    {
+      "label": "Auto supplier carbon data",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Many questionnaires, one dataset",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

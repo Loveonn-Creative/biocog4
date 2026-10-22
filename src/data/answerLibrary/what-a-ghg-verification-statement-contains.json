@@ -1,0 +1,66 @@
+{
+  "slug": "what-a-ghg-verification-statement-contains",
+  "q": "What should a GHG verification statement contain?",
+  "title": "What a verification statement contains",
+  "short": "Who verified what, against which standard, at what level of assurance, and their conclusion. A usable statement names the organisation and period, the emissions verified by scope, the criteria such as ISO 14064-1 or the GHG Protocol, materiality, the verifier's independence, and any qualifications or exclusions.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies receiving or reviewing verification statements",
+  "sections": [
+    {
+      "h": "Check for",
+      "ul": [
+        "Organisation, sites and reporting period.",
+        "Scope 1, Scope 2 and any Scope 3 totals verified.",
+        "Standard and criteria used.",
+        "Limited or reasonable assurance.",
+        "Materiality threshold.",
+        "Qualified or unqualified conclusion, with reasons."
+      ]
+    },
+    {
+      "h": "Red flags",
+      "ul": [
+        "No named verifier or accreditation.",
+        "A conclusion with no stated level of assurance.",
+        "Totals that differ from the report it refers to."
+      ]
+    },
+    {
+      "h": "Sharing it",
+      "p": [
+        "Send buyers the statement with the report it covers, so they can match the numbers."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "What auditors check in assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "Who can verify in India",
+      "to": "/answers/who-can-verify-iso-14064-1-inventory-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

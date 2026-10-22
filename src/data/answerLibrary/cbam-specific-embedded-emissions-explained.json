@@ -1,0 +1,72 @@
+{
+  "slug": "cbam-specific-embedded-emissions-explained",
+  "q": "What are specific embedded emissions in CBAM, and how is the number built?",
+  "title": "Specific embedded emissions in CBAM",
+  "short": "It is the CO2 per tonne of a CBAM good: the direct emissions attributed to its production process, plus the embedded emissions of any precursors consumed, divided by the tonnes produced. For cement and fertilisers, indirect emissions from electricity are added too. The importer declares this figure per tonne imported.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Exporters asked for a CBAM figure for the first time",
+  "sections": [
+    {
+      "h": "The three parts",
+      "ol": [
+        "Attributed direct emissions: fuel, process emissions and heat for the production process, for the reporting period.",
+        "Precursor emissions: tonnes of each relevant precursor consumed times its own specific embedded emissions.",
+        "Activity level: tonnes of the good produced in the same period. Divide the sum of 1 and 2 by this."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Dividing by tonnes sold instead of tonnes produced.",
+        "Leaving out a precursor bought from another plant.",
+        "Mixing periods: fuel for the calendar year, output for the financial year."
+      ]
+    },
+    {
+      "h": "Units",
+      "p": [
+        "The result is tonnes of CO2e per tonne of good. Keep three or four significant figures and show the inputs, so the importer can check the arithmetic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative only",
+    "lines": [
+      "Direct emissions attributed to rolling: 1,200 t CO2",
+      "Billets consumed: 10,000 t at 2.0 t CO2/t = 20,000 t CO2",
+      "Bars produced: 9,700 t",
+      "Specific embedded emissions: 21,200 / 9,700 = 2.19 t CO2/t"
+    ]
+  },
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "CBAM precursors from two suppliers",
+      "to": "/answers/cbam-precursor-from-two-suppliers-weighted-average"
+    },
+    {
+      "label": "Official CBAM default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Monitoring documentation",
+      "to": "/answers/cbam-monitoring-methodology-documentation-for-operators"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

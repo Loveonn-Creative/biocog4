@@ -1,0 +1,61 @@
+{
+  "slug": "new-plant-started-mid-year-carbon-reporting",
+  "q": "Our new plant started in October. How do we report its emissions for the year?",
+  "title": "Reporting a plant that started mid-year",
+  "short": "Include it from the day it started operating, and say so. The company total rises because of a new source, not worse performance, so show the new plant separately for the first year and use intensity per tonne for comparisons. Trial runs before commercial production still count.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies adding a new site or line",
+  "sections": [
+    {
+      "h": "What to report",
+      "ul": [
+        "Emissions from the start date to year end.",
+        "The start date and that it is a part year.",
+        "Intensity per unit of output, so the trend stays meaningful."
+      ]
+    },
+    {
+      "h": "Base year",
+      "p": [
+        "A new plant is organic growth, not an acquisition. You usually do not recalculate the base year, but explain the jump."
+      ]
+    },
+    {
+      "h": "Commissioning",
+      "p": [
+        "Fuel and power used for trials and commissioning are real emissions. Include them, labelled if large."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Choose a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    },
+    {
+      "label": "Emissions fell but intensity rose",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    },
+    {
+      "label": "Several plants: one report?",
+      "to": "/answers/multi-plant-msme-one-report-or-per-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

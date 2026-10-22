@@ -1,0 +1,61 @@
+{
+  "slug": "buyer-asks-emissions-for-last-three-years",
+  "q": "A buyer wants our emissions for the last three years. We only started tracking this year. What now?",
+  "title": "Emissions for past years",
+  "short": "Rebuild them from records you already keep: electricity bills, fuel invoices and production registers for those years usually still exist for tax reasons. Use the grid factor published for each year, mark any month you had to estimate, and send the figures with a note on method rather than leaving the years blank.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME suppliers asked for a multi-year emissions history",
+  "sections": [
+    {
+      "h": "Where the data is",
+      "ul": [
+        "Electricity bills: the discom portal often holds past years.",
+        "Fuel invoices in purchase records and GST returns.",
+        "Production from stock registers or excise and GST records."
+      ]
+    },
+    {
+      "h": "Gaps",
+      "p": [
+        "Fill a missing month from the months around it or from production, and label it. A labelled estimate is accepted far more often than a gap."
+      ]
+    },
+    {
+      "h": "Grid factor by year",
+      "p": [
+        "Use the CEA factor applicable to each year, not today's, so the trend is real rather than an artefact of the factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Recalculate past years",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "How long to keep invoices",
+      "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

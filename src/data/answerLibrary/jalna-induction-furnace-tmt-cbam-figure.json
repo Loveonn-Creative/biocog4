@@ -1,0 +1,62 @@
+{
+  "slug": "jalna-induction-furnace-tmt-cbam-figure",
+  "q": "What drives the CBAM figure for TMT bars from a Jalna induction furnace mill?",
+  "title": "Jalna induction furnace TMT CBAM figure",
+  "short": "Mostly the metal you charge. Induction furnace electricity is indirect and not counted for steel under CBAM, so the figure is driven by the embedded emissions of sponge iron or pig iron charged, plus reheating fuel and any direct emissions. Scrap carries zero, so the scrap share decides the number.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Induction furnace and rolling mills in Jalna making TMT bars",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Sponge iron or pig iron: tonnes times their supplier's specific embedded emissions.",
+        "Scrap: zero embedded emissions.",
+        "Reheating furnace fuel, if billets are reheated.",
+        "Ferro-alloys: only ferro-manganese, ferro-chromium and ferro-nickel carry a CBAM figure."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Charge mix per heat, supplier figures for sponge iron, billet and bar output, and fuel for the reheating furnace."
+      ]
+    },
+    {
+      "h": "Buyers' footprints differ",
+      "p": [
+        "Product footprints include the furnace electricity, which at grid power is large for an induction route."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Raipur sponge iron",
+      "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions"
+    },
+    {
+      "label": "Electricity in steel CBAM",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

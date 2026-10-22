@@ -1,0 +1,60 @@
+{
+  "slug": "rejected-batches-and-yield-loss-in-product-footprint",
+  "q": "How do rejected batches and yield losses affect our product carbon footprint?",
+  "title": "Rejects and yield loss in a footprint",
+  "short": "They raise it. Emissions from making rejects are spread over the good units you sell, because the energy was used either way. Divide total emissions by good output, not by gross production. Rejects you recycle or sell as scrap can carry a share if they have a market value.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Manufacturers preparing product carbon footprints",
+  "sections": [
+    {
+      "h": "The rule of thumb",
+      "p": [
+        "Product footprint equals emissions of the process divided by sellable output. A 5 per cent reject rate lifts the footprint by a little over 5 per cent."
+      ]
+    },
+    {
+      "h": "When to allocate to rejects",
+      "ul": [
+        "Sold as a co-product with value: allocate by economic value or mass, and state which.",
+        "Scrapped or reworked internally: no allocation, the good units carry it."
+      ]
+    },
+    {
+      "h": "Why it is worth tracking",
+      "p": [
+        "Cutting rejects is often the cheapest way to lower a footprint per unit, and buyers recognise it as real."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "LCA vs product carbon footprint",
+      "to": "/answers/lca-vs-product-carbon-footprint"
+    },
+    {
+      "label": "Footwear emissions per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

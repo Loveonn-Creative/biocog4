@@ -1,0 +1,61 @@
+{
+  "slug": "sangli-sugar-distillery-spentwash-biogas-methane",
+  "q": "How should a Sangli sugar mill distillery count methane from spentwash digesters?",
+  "title": "Sangli distillery spentwash methane",
+  "short": "Biogas burnt in the boiler gives biogenic CO2, reported separately, but methane that escapes from digesters, leaks or open lagoons counts in Scope 1 at its full warming effect. Measure biogas produced and burnt; the gap, plus any flaring losses, is where the Scope 1 methane is.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sugar mills with molasses distilleries in Sangli and western Maharashtra",
+  "sections": [
+    {
+      "h": "Where methane escapes",
+      "ul": [
+        "Digester leaks and pressure relief.",
+        "Open lagoons holding spentwash before treatment.",
+        "Incomplete combustion in flares."
+      ]
+    },
+    {
+      "h": "How to estimate",
+      "p": [
+        "Biogas flow meters on the digester outlet and boiler inlet give the gap. For open lagoons, use IPCC wastewater methods based on chemical oxygen demand, labelled as estimates."
+      ]
+    },
+    {
+      "h": "Good news to record",
+      "p": [
+        "Capturing biogas that replaces coal in the boiler cuts fossil Scope 1, and well-run digesters may support offset projects under approved methodologies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Bagasse cogeneration",
+      "to": "/answers/sugar-mill-bagasse-cogeneration-emissions"
+    },
+    {
+      "label": "Grain ethanol distillery",
+      "to": "/answers/grain-ethanol-distillery-co2-per-litre"
+    },
+    {
+      "label": "Process flare emissions",
+      "to": "/answers/process-flare-co2-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

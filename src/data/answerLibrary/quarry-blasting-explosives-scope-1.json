@@ -1,0 +1,61 @@
+{
+  "slug": "quarry-blasting-explosives-scope-1",
+  "q": "Do explosives used for blasting in our quarry count in Scope 1?",
+  "title": "Quarry blasting explosives in Scope 1",
+  "short": "Yes. Explosives such as ANFO release CO2 from the carbon in their fuel component when they detonate, and you control the blast, so it is Scope 1. It is usually small next to diesel for excavators and haul trucks, but include it with a stated method so the quarry total is complete.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Limestone, stone and mineral quarry operators",
+  "sections": [
+    {
+      "h": "A simple estimate",
+      "p": [
+        "ANFO is mostly ammonium nitrate with around 6 per cent fuel oil. The carbon in that fuel oil, around 85 per cent by weight, ends up as CO2, giving roughly 0.19 tonnes of CO2 per tonne of ANFO. Emulsions differ; use the supplier's composition where you have it."
+      ]
+    },
+    {
+      "h": "The bigger items",
+      "ul": [
+        "Diesel for drills, excavators, loaders and dumpers.",
+        "Electricity for crushers and conveyors.",
+        "Hired transport, which is Scope 3."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Explosive issue records by blast, from the magazine register, give the tonnes you need."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "Limestone mine diesel",
+      "to": "/answers/satna-limestone-mine-diesel-scope-1"
+    },
+    {
+      "label": "Hired trucks: which scope",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    },
+    {
+      "label": "Is an IPCC default good enough?",
+      "to": "/answers/ipcc-tier-1-default-factor-good-enough"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

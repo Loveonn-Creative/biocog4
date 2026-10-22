@@ -1,0 +1,63 @@
+{
+  "slug": "should-msme-publish-emissions-in-annual-report",
+  "q": "Should an unlisted MSME publish its emissions in its annual report?",
+  "title": "Publishing emissions in an annual report",
+  "short": "It is not required for an unlisted MSME, but a short, honest disclosure helps with lenders and buyers who ask anyway. Publish Scope 1 and 2, the method, what is estimated and one clear action. Do not publish a figure you have not checked, or a target you cannot track.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Unlisted MSMEs preparing annual reports",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Scope 1 and 2 totals and intensity per unit of output.",
+        "Period, sites covered and factors used.",
+        "Which numbers are estimates.",
+        "One or two actions taken or planned."
+      ]
+    },
+    {
+      "h": "What to leave out",
+      "ul": [
+        "Net zero claims without a plan.",
+        "Carbon neutral claims based on unverified credits."
+      ]
+    },
+    {
+      "h": "Who reads it",
+      "p": [
+        "Banks assessing green loans, large buyers checking suppliers under BRSR value chain rules, and future investors."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Do unlisted companies need BRSR?",
+      "to": "/answers/do-unlisted-companies-need-brsr"
+    },
+    {
+      "label": "Who signs off carbon figures",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Is PAS 2060 still valid?",
+      "to": "/answers/is-pas-2060-still-valid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

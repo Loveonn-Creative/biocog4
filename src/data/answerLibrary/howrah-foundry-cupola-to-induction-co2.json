@@ -1,0 +1,69 @@
+{
+  "slug": "howrah-foundry-cupola-to-induction-co2",
+  "q": "Will switching our Howrah foundry from cupola to induction furnace cut CO2?",
+  "title": "Howrah foundry: cupola to induction",
+  "short": "Not automatically on grid power. An induction furnace replaces coke with electricity, and at India's grid factor of 0.710 kg CO2 per kWh the CO2 per tonne can land close to a well-run cupola. It falls clearly when the power comes from solar or other renewable supply, and local smoke drops either way.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Cast iron foundries in Howrah considering induction melting",
+  "sections": [
+    {
+      "h": "Compare per tonne of molten metal",
+      "ul": [
+        "Cupola: tonnes of coke per tonne of metal times about 3.0 t CO2.",
+        "Induction: kWh per tonne of metal times 0.710, from your trials or the supplier's guarantee."
+      ]
+    },
+    {
+      "h": "What tips it",
+      "ul": [
+        "Renewable power through open access or rooftop solar.",
+        "Yield and melt loss in each route.",
+        "Holding time: induction furnaces left on between heats waste power."
+      ]
+    },
+    {
+      "h": "Check before deciding",
+      "p": [
+        "Measure your cupola's actual coke ratio for a month. Many foundries find it higher than they assumed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative only, replace with your own figures",
+    "lines": [
+      "Cupola at 0.12 t coke per t metal: 0.12 x 3.0 = 0.36 t CO2/t",
+      "Induction at 600 kWh per t metal: 600 x 0.710 = 0.43 t CO2/t"
+    ]
+  },
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Batala cupola foundry",
+      "to": "/answers/batala-foundry-cupola-coke-per-tonne"
+    },
+    {
+      "label": "Induction billet heater vs oil furnace",
+      "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace"
+    },
+    {
+      "label": "Foundry charge mix",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

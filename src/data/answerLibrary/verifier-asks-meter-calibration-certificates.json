@@ -1,0 +1,61 @@
+{
+  "slug": "verifier-asks-meter-calibration-certificates",
+  "q": "Our verifier wants calibration certificates for our meters. Which ones matter?",
+  "title": "Meter calibration for verification",
+  "short": "The meters whose readings become emissions: your own fuel flow meters, sub-meters, steam meters and the weighbridge. Utility meters belong to the discom or gas company, so their bill is the evidence. In India a weighbridge used for trade should carry a valid Legal Metrology stamp.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plants preparing for GHG verification",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ul": [
+        "Weighbridge verification or stamping certificate.",
+        "Calibration reports for fuel flow meters and sub-meters.",
+        "Steam meter calibration, if used to allocate emissions."
+      ]
+    },
+    {
+      "h": "If a meter is out of date",
+      "p": [
+        "Say so, use the reading with a note, and cross-check against invoices. Get it calibrated before the next period."
+      ]
+    },
+    {
+      "h": "Meters you do not own",
+      "p": [
+        "Discom and gas company meters are checked by them. Keep the bills; a verifier will not ask for their certificates."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Smart meters for carbon reporting",
+      "to": "/answers/do-i-need-smart-meters-for-carbon-reporting"
+    },
+    {
+      "label": "Coal weighbridge vs invoice",
+      "to": "/answers/coal-weighbridge-weight-vs-invoice-quantity"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

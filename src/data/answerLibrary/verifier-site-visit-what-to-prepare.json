@@ -1,0 +1,64 @@
+{
+  "slug": "verifier-site-visit-what-to-prepare",
+  "q": "A verifier is visiting our plant for our carbon inventory. What should we prepare?",
+  "title": "Preparing for a verifier's site visit",
+  "short": "Have the documents behind every number ready, the meters and weighbridge accessible, and the people who keep the records available. The verifier will trace a sample of figures from your report back to invoices, logbooks and meters, and check that what they see on site matches what the report describes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs getting their first GHG verification",
+  "sections": [
+    {
+      "h": "Documents",
+      "ul": [
+        "The inventory, with methods and factors.",
+        "Fuel and electricity invoices for the period.",
+        "Logbooks, stock registers and production records.",
+        "Calibration certificates for meters and weighbridges."
+      ]
+    },
+    {
+      "h": "On the day",
+      "ul": [
+        "A walk through each emission source: boilers, DG sets, furnaces, refrigeration.",
+        "The person who enters data, to explain how it flows.",
+        "A quiet room and access to files."
+      ]
+    },
+    {
+      "h": "After",
+      "p": [
+        "Expect questions and requests for more evidence. Answer them in writing with the documents attached."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "How many invoices a verifier samples",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "Meter calibration certificates",
+      "to": "/answers/verifier-asks-meter-calibration-certificates"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

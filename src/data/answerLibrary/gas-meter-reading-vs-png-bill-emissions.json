@@ -1,0 +1,63 @@
+{
+  "slug": "gas-meter-reading-vs-png-bill-emissions",
+  "q": "Our gas meter reading does not match the PNG bill. Which do we use?",
+  "title": "Gas meter reading or PNG bill",
+  "short": "Use the bill for emissions. The supplier corrects the raw meter volume for pressure and temperature to standard cubic metres, and states the calorific value used for billing. Your own reading is useful to check the bill, but it is not on the same basis until the same correction is applied.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs on piped natural gas",
+  "sections": [
+    {
+      "h": "From bill to CO2",
+      "ol": [
+        "Billed volume in SCM, or energy in MMBTU.",
+        "Times the calorific value on the bill to get energy, if not already given.",
+        "Times about 56.1 kg CO2 per GJ, the IPCC default for natural gas."
+      ]
+    },
+    {
+      "h": "When to question the bill",
+      "ul": [
+        "A month far above normal with no production reason.",
+        "A billed volume based on estimate rather than reading.",
+        "A meter replacement mid-month."
+      ]
+    },
+    {
+      "h": "Keep",
+      "p": [
+        "Bills, your own monthly readings and any supplier correspondence about disputed readings."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "SCM vs Nm3",
+      "to": "/answers/natural-gas-scm-vs-nm3-conversion"
+    },
+    {
+      "label": "PNG bill in MMBTU to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "LPG or PNG",
+      "to": "/answers/lpg-or-png-lower-co2-per-unit-of-heat"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "buyer-wants-carbon-per-kg-not-per-piece",
+  "q": "My buyer wants carbon per kg, but we track it per piece. How do we convert?",
+  "title": "Carbon per kg instead of per piece",
+  "short": "Divide the per-piece figure by the net weight of one piece, from your drawing or a scale. If you make many sizes, allocate plant emissions by weight of good output in the first place, which gives a per-kg figure directly and a per-piece figure for each size by multiplying back.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Component, casting and packaging suppliers answering buyer requests",
+  "sections": [
+    {
+      "h": "Which weight",
+      "ul": [
+        "Net weight of the finished piece, not the gross weight including runners or offcuts.",
+        "Packaging excluded unless the buyer asks for it."
+      ]
+    },
+    {
+      "h": "When per kg misleads",
+      "p": [
+        "Machined or plated parts use energy per piece more than per kg. Say so, and offer both figures with the method."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Use the same allocation every year and the same weights the buyer sees on your invoices or packing lists."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Rejects and yield loss",
+      "to": "/answers/rejected-batches-and-yield-loss-in-product-footprint"
+    },
+    {
+      "label": "Emissions share for a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    },
+    {
+      "label": "Footwear emissions per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

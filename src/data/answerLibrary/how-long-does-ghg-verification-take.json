@@ -1,0 +1,65 @@
+{
+  "slug": "how-long-does-ghg-verification-take",
+  "q": "How long does a GHG verification take for a small company?",
+  "title": "How long a GHG verification takes",
+  "short": "For a single-site MSME with organised records, often a few weeks from contract to statement: planning, document review, a site visit of a day or two, then questions and the report. Most delay comes from slow answers to the verifier's queries, not the verifier's own work.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs planning a verification for a buyer or lender deadline",
+  "sections": [
+    {
+      "h": "The stages",
+      "ol": [
+        "Agreement on scope, criteria and level of assurance.",
+        "Document review and a sampling plan.",
+        "Site visit.",
+        "Findings and your responses.",
+        "Verification statement."
+      ]
+    },
+    {
+      "h": "What speeds it up",
+      "ul": [
+        "A complete inventory with methods written down.",
+        "Invoices and logbooks filed by month.",
+        "One person who can answer queries quickly."
+      ]
+    },
+    {
+      "h": "Plan backwards",
+      "p": [
+        "If a buyer needs the statement by a date, start at least two months earlier so a round of corrections does not miss it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Verifier site visit",
+      "to": "/answers/verifier-site-visit-what-to-prepare"
+    },
+    {
+      "label": "Verification cost in India",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

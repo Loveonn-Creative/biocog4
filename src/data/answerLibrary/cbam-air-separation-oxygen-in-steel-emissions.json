@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-air-separation-oxygen-in-steel-emissions",
+  "q": "Our steel plant runs its own oxygen plant. Does its power count in our CBAM figure?",
+  "title": "Oxygen plant power in steel CBAM figures",
+  "short": "Not in the figure that is charged. An air separation unit runs on electricity, and for iron and steel only direct emissions count toward CBAM. Oxygen is not a CBAM precursor either, so oxygen bought in adds nothing. Keep the electricity data anyway: buyers' product footprints include it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Integrated and EAF steel plants with on-site oxygen plants",
+  "sections": [
+    {
+      "h": "Why it drops out",
+      "p": [
+        "Annex II of the CBAM Regulation lists iron and steel among the goods for which only direct emissions are counted. The oxygen plant's emissions come from electricity, which is indirect, so it stays outside the charged figure."
+      ]
+    },
+    {
+      "h": "When it does count",
+      "ul": [
+        "If the oxygen plant has its own gas or diesel generator, that fuel is a direct emission of the installation.",
+        "For cement and fertiliser goods, indirect emissions are counted, so electricity matters there."
+      ]
+    },
+    {
+      "h": "Why record it anyway",
+      "p": [
+        "EU and Japanese buyers asking for a product carbon footprint want cradle to gate figures that include electricity. A separate kWh meter on the oxygen plant answers both requests from one set of records."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Electricity in steel CBAM figures",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Industrial gases in Scope 3",
+      "to": "/answers/industrial-gases-oxygen-nitrogen-scope-3"
+    },
+    {
+      "label": "Cold-rolled coil embedded emissions",
+      "to": "/answers/cold-rolled-coil-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

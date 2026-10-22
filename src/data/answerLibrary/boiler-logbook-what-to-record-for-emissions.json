@@ -1,0 +1,64 @@
+{
+  "slug": "boiler-logbook-what-to-record-for-emissions",
+  "q": "What should our boiler logbook record so the emissions figure holds up?",
+  "title": "Boiler logbook entries for emissions",
+  "short": "Fuel fired, not just fuel bought, plus steam produced, operating hours and any fuel test results, every shift or day. Those entries let you reconcile invoices with what was burnt, catch errors before a verifier does, and show efficiency, which is where the cost and CO2 savings come from.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs running coal, biomass, oil or gas boilers",
+  "sections": [
+    {
+      "h": "Daily entries",
+      "ul": [
+        "Fuel fired, by weight or meter reading, per shift.",
+        "Steam generated, from a meter or feedwater reading.",
+        "Operating hours and pressure.",
+        "Fuel type, if more than one is used."
+      ]
+    },
+    {
+      "h": "Monthly entries",
+      "ul": [
+        "Fuel received, opening and closing stock.",
+        "Fuel test reports: calorific value, moisture and ash.",
+        "Blowdown and maintenance notes."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Monthly fuel received should roughly equal fuel fired plus stock change. A gap of more than a few per cent points to weighing errors, losses or misplaced invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "Boiler efficiency methods",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Fuel stock: bought or burned?",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

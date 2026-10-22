@@ -1,0 +1,69 @@
+{
+  "slug": "furnace-oil-litres-to-kg-density",
+  "q": "Our furnace oil invoice is in litres. How do we convert it for emissions?",
+  "title": "Furnace oil litres to kilograms",
+  "short": "Multiply litres by the density on the invoice or test certificate to get kilograms, then apply the CO2 factor per tonne. IPCC defaults for residual fuel oil give about 3.13 tonnes of CO2 per tonne. Densities vary by grade and temperature, so use the supplier's figure rather than a guess.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs using furnace oil or LSHS in boilers and furnaces",
+  "sections": [
+    {
+      "h": "The steps",
+      "ol": [
+        "Litres from the invoice.",
+        "Times density in kg per litre, from the invoice or certificate.",
+        "Divide by 1,000 for tonnes.",
+        "Times 3.13 t CO2 per tonne, or the supplier's carbon content if given."
+      ]
+    },
+    {
+      "h": "Where 3.13 comes from",
+      "p": [
+        "IPCC default net calorific value of 40.4 GJ per tonne times 77.4 kg CO2 per GJ for residual fuel oil. It is a default; supplier test data is better."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "p": [
+        "Invoices quoting volume at a reference temperature, and tanker deliveries where the dip reading differs from the invoice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative only",
+    "lines": [
+      "10,000 litres at 0.95 kg/L = 9,500 kg = 9.5 t",
+      "9.5 t x 3.13 t CO2/t = 29.7 t CO2"
+    ]
+  },
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "GCV vs NCV",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "Is an IPCC default good enough?",
+      "to": "/answers/ipcc-tier-1-default-factor-good-enough"
+    },
+    {
+      "label": "Own diesel tank issue register",
+      "to": "/answers/own-diesel-tank-issue-register-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

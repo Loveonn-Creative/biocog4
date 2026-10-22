@@ -1,0 +1,63 @@
+{
+  "slug": "batala-foundry-cupola-coke-per-tonne",
+  "q": "How do I work out CO2 per tonne of castings at a Batala cupola foundry?",
+  "title": "Batala cupola foundry CO2 per tonne",
+  "short": "Add up coke charged in the month, multiply by about 3.0 tonnes of CO2 per tonne of coke, add electricity for blowers, moulding and fettling, and divide by tonnes of good castings, not tonnes melted. Poor yield from runners, risers and rejects is often the biggest lever.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cupola foundries in Batala making agricultural and machine castings",
+  "sections": [
+    {
+      "h": "The coke factor",
+      "p": [
+        "IPCC defaults for coke oven coke are 28.2 GJ per tonne and 107 kg CO2 per GJ, about 3.0 tonnes of CO2 per tonne. Your supplier's fixed carbon test can replace it."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Coke and pig iron or scrap charged per heat.",
+        "Molten metal tapped and good castings dispatched.",
+        "Electricity bills and any DG diesel."
+      ]
+    },
+    {
+      "h": "Where savings come from",
+      "ul": [
+        "Better yield: less metal returned as runners and rejects.",
+        "Divided blast cupolas, which can cut coke use.",
+        "Charging coke by weight, not by basket."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Foundry charge mix",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "Rejects and yield loss",
+      "to": "/answers/rejected-batches-and-yield-loss-in-product-footprint"
+    },
+    {
+      "label": "Howrah cupola to induction",
+      "to": "/answers/howrah-foundry-cupola-to-induction-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

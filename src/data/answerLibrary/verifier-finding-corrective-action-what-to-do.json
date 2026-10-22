@@ -1,0 +1,65 @@
+{
+  "slug": "verifier-finding-corrective-action-what-to-do",
+  "q": "The verifier raised findings on our emissions report. What do we do?",
+  "title": "Responding to verifier findings",
+  "short": "Read each finding, fix the cause rather than the symptom, and reply in writing with evidence. A misstatement means a number is wrong and must be corrected; a clarification request means the verifier needs more evidence. Findings left open, or material errors not corrected, can stop a clean statement.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies going through GHG verification",
+  "sections": [
+    {
+      "h": "Common findings",
+      "ul": [
+        "Invoices missing for a month.",
+        "A factor from the wrong year.",
+        "Units mixed, such as kVAh treated as kWh.",
+        "Fuel bought counted instead of fuel used."
+      ]
+    },
+    {
+      "h": "How to respond",
+      "ol": [
+        "Agree or explain, per finding.",
+        "Correct the figure and show the before and after.",
+        "Attach the evidence.",
+        "Say what will stop it recurring."
+      ]
+    },
+    {
+      "h": "If a past year is affected",
+      "p": [
+        "Restate it with a note, rather than carrying the error forward."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Restate after finding an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "Materiality in GHG verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    },
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

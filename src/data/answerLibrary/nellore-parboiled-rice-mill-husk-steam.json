@@ -1,0 +1,61 @@
+{
+  "slug": "nellore-parboiled-rice-mill-husk-steam",
+  "q": "How does a Nellore parboiled rice mill count emissions from its husk boiler?",
+  "title": "Nellore parboiling: husk boiler emissions",
+  "short": "Husk CO2 is biogenic, so report it separately; methane and nitrous oxide from burning it stay in Scope 1. Add electricity for hulling, polishing and dryers at 0.710 kg CO2 per kWh, and divide by tonnes of paddy or rice. Selling surplus husk or ash does not reduce your own figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Parboiling rice mills around Nellore",
+  "sections": [
+    {
+      "h": "Sources in a parboiling mill",
+      "ul": [
+        "Husk boiler for soaking, steaming and drying: biogenic CO2, small Scope 1.",
+        "Grid electricity for milling: Scope 2.",
+        "Diesel for DG sets and yard vehicles: Scope 1."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes of paddy processed, or by tonnes of rice if the buyer asks. Say which."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Husk used in the boiler, electricity bills, diesel invoices and paddy intake registers by month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Rice mill footprint per tonne",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    },
+    {
+      "label": "Biomass boilers and Scope 1",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
