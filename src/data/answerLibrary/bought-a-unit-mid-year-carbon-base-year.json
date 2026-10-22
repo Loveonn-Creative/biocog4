@@ -1,0 +1,61 @@
+{
+  "slug": "bought-a-unit-mid-year-carbon-base-year",
+  "q": "We acquired another factory this year. Do we change our carbon base year?",
+  "title": "Acquisitions and the base year",
+  "short": "Usually you recalculate the base year to include the acquired factory, as if you had owned it then, if the change is significant. The GHG Protocol treats acquisitions as structural changes, so the trend compares like with like. Set a significance threshold in your policy and apply it every time.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies that bought or merged with another unit",
+  "sections": [
+    {
+      "h": "The steps",
+      "ol": [
+        "Get the acquired unit's past energy and fuel records for the base year.",
+        "Add its emissions to the base year total.",
+        "Report the current year with the unit from the acquisition date."
+      ]
+    },
+    {
+      "h": "If past data is missing",
+      "p": [
+        "Estimate from production or energy bills and label it. Do not leave the base year unadjusted without saying so."
+      ]
+    },
+    {
+      "h": "Selling a unit",
+      "p": [
+        "The same rule runs in reverse: remove the sold unit from the base year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Choose a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    },
+    {
+      "label": "Operational control vs equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Intercompany transactions",
+      "to": "/answers/intercompany-transactions-group-carbon-inventory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

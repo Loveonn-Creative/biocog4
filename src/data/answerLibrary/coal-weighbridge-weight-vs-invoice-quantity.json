@@ -1,0 +1,63 @@
+{
+  "slug": "coal-weighbridge-weight-vs-invoice-quantity",
+  "q": "The weighbridge weight of our coal trucks differs from the invoice. Which do we use?",
+  "title": "Weighbridge weight or invoice quantity",
+  "short": "Use the weight received at your gate if your weighbridge is stamped and records every truck, because that is the coal you actually burn. Keep the invoice quantity alongside it. Differences of a few per cent are common from moisture and transit loss; larger gaps need explaining before a verifier asks.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs buying coal, lignite or biomass by truck",
+  "sections": [
+    {
+      "h": "Why the two differ",
+      "ul": [
+        "Moisture lost or gained in transit.",
+        "Spillage or theft on the way.",
+        "Different weighbridges, one of them out of calibration."
+      ]
+    },
+    {
+      "h": "Good practice",
+      "ol": [
+        "Record gross, tare and net weight for each truck against the invoice number.",
+        "Total by month and compare with invoices.",
+        "Use one basis consistently and note it in your method."
+      ]
+    },
+    {
+      "h": "Calorific value",
+      "p": [
+        "If you weigh wet coal at the gate, pair it with an as-received calorific value from the same deliveries."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "As-received or air-dried values",
+      "to": "/answers/coal-as-received-vs-air-dried-basis"
+    },
+    {
+      "label": "Meter calibration certificates",
+      "to": "/answers/verifier-asks-meter-calibration-certificates"
+    },
+    {
+      "label": "Fuel stock counts",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

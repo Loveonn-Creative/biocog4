@@ -1,0 +1,61 @@
+{
+  "slug": "how-is-the-cbam-certificate-price-set",
+  "q": "How is the price of a CBAM certificate set?",
+  "title": "How the CBAM certificate price is set",
+  "short": "It follows the EU Emissions Trading System auction price. For goods imported in 2026 the price is the average of each quarter's auction clearing prices; from 2027 it is set weekly. Certificates for 2026 imports go on sale in 2027, so the cost is known only after the quarter ends.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Exporters and EU importers estimating CBAM cost",
+  "sections": [
+    {
+      "h": "What drives the cost",
+      "ul": [
+        "Embedded emissions per tonne of the good.",
+        "The share not yet covered by free allocation in the EU, which phases out to 2034.",
+        "The certificate price, minus any carbon price already paid in the country of production."
+      ]
+    },
+    {
+      "h": "Who pays",
+      "p": [
+        "The authorised CBAM declarant in the EU buys and surrenders certificates. Exporters feel it through price talks, which is why a lower actual figure can be worth more than a default value."
+      ]
+    },
+    {
+      "h": "Planning",
+      "p": [
+        "Model a range of prices rather than one number, and agree in the contract who bears the cost if the price moves."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Certificates to hold each quarter",
+      "to": "/answers/how-many-cbam-certificates-to-hold-each-quarter"
+    },
+    {
+      "label": "EU ETS vs CBAM",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "CBAM clause for export contracts",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

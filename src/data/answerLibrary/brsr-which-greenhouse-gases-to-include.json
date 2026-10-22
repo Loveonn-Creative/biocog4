@@ -1,0 +1,62 @@
+{
+  "slug": "brsr-which-greenhouse-gases-to-include",
+  "q": "Which greenhouse gases should we include in BRSR Scope 1 and 2?",
+  "title": "Which gases to include in BRSR",
+  "short": "All seven Kyoto gases, reported together in tonnes of CO2e: carbon dioxide, methane, nitrous oxide, HFCs, PFCs, sulphur hexafluoride and nitrogen trifluoride. BRSR asks for a breakdown by gas if available. For most Indian manufacturers, CO2 from fuel and electricity dominates, with HFCs from refrigerant top-ups next.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Companies preparing BRSR emission disclosures",
+  "sections": [
+    {
+      "h": "Where each gas comes from",
+      "ul": [
+        "CO2: fuel, process emissions, grid electricity.",
+        "Methane and nitrous oxide: combustion, wastewater, biomass boilers.",
+        "HFCs: air conditioners, chillers and cold rooms.",
+        "SF6: electrical switchgear."
+      ]
+    },
+    {
+      "h": "Converting to CO2e",
+      "p": [
+        "Multiply each gas by its global warming potential and state which IPCC assessment report the values come from. Use the same set every year."
+      ]
+    },
+    {
+      "h": "If you cannot split by gas",
+      "p": [
+        "Report the total and say the breakdown is not available. Grid electricity factors from CEA are given as CO2, which is acceptable for Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "BRSR Core nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "Is the CEA factor CO2 or CO2e?",
+      "to": "/answers/is-cea-grid-factor-co2-or-co2e"
+    },
+    {
+      "label": "SF6 switchgear leaks",
+      "to": "/answers/sf6-switchgear-leak-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR Core framework (July 2023)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

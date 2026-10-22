@@ -1,0 +1,63 @@
+{
+  "slug": "biomass-boiler-ch4-n2o-still-scope-1",
+  "q": "Our boiler burns only biomass. Do we still have Scope 1 emissions?",
+  "title": "Biomass boilers and Scope 1",
+  "short": "Yes, a little. The CO2 from burning biomass is reported separately as biogenic, outside the Scope 1 total, but methane and nitrous oxide from combustion stay in Scope 1. IPCC defaults for wood are 30 kg methane and 4 kg nitrous oxide per terajoule, roughly 2 tonnes of CO2e per terajoule.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs running husk, wood, briquette or bagasse boilers",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "ol": [
+        "Tonnes of biomass times its net calorific value gives terajoules.",
+        "Times 30 kg CH4 and 4 kg N2O per TJ.",
+        "Convert with global warming potentials, stating which IPCC report you used."
+      ]
+    },
+    {
+      "h": "Report three numbers",
+      "ul": [
+        "Scope 1 CO2e from methane and nitrous oxide.",
+        "Biogenic CO2, shown separately.",
+        "Any fossil fuel used for start-up, such as diesel or coal."
+      ]
+    },
+    {
+      "h": "Evidence on the biomass",
+      "p": [
+        "Buyers and verifiers ask where it came from. Keep supplier invoices and note whether it is residue, waste or plantation wood."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Firewood bought by the quintal",
+      "to": "/answers/firewood-by-quintal-emissions"
+    },
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

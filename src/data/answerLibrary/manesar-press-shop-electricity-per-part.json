@@ -1,0 +1,61 @@
+{
+  "slug": "manesar-press-shop-electricity-per-part",
+  "q": "How does a Manesar sheet metal press shop work out electricity per part for an auto buyer?",
+  "title": "Manesar press shop electricity per part",
+  "short": "Meter or estimate each press line's kWh for a month, divide by good parts from that line, and multiply by 0.710 kg CO2 per kWh. Where lines share one meter, split by running hours times rated power. Add welding, painting and compressed air if the buyer asks for the finished part.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sheet metal and press shop suppliers in Manesar",
+  "sections": [
+    {
+      "h": "Getting kWh by line",
+      "ul": [
+        "Sub-meters on large presses give the best figure.",
+        "Otherwise: motor rating times load factor times running hours, checked against the main bill.",
+        "Compressors and lighting spread by floor area or hours."
+      ]
+    },
+    {
+      "h": "Per part",
+      "p": [
+        "Divide line kWh by good parts. Heavy, slow presses can use more energy per part than light, fast ones even at lower total load."
+      ]
+    },
+    {
+      "h": "What buyers also want",
+      "p": [
+        "Steel sheet is usually the largest part of the footprint. Ask your steel supplier for its mill certificate figure and add it per part by weight."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "Auto supplier carbon data",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Carbon per kg or per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "employee-commute-msme-scope-3-estimate",
+  "q": "How can a small company estimate employee commuting emissions?",
+  "title": "Employee commuting for a small company",
+  "short": "Run a short survey: how each person travels, how far and how many days a week. Multiply distance by a factor for each mode and add up. Commuting is Scope 3 category 7, optional for most MSMEs, but buyers sometimes ask and a one-page survey answers it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs asked about Scope 3 category 7",
+  "sections": [
+    {
+      "h": "The survey",
+      "ul": [
+        "Mode: two-wheeler, car, bus, company bus, walk or cycle.",
+        "One-way distance.",
+        "Days a week on site."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "p": [
+        "Distance times two times working days times a factor per km for each mode. Published factors such as the UK government's are a reasonable start; label them as defaults."
+      ]
+    },
+    {
+      "h": "Company buses",
+      "p": [
+        "A bus you own or lease and fuel is Scope 1, not commuting. A contracted bus service is commuting."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Factory staff bus: Scope 1 or 3",
+      "to": "/answers/factory-staff-bus-scope-1-or-scope-3"
+    },
+    {
+      "label": "Staff quarters electricity",
+      "to": "/answers/staff-quarters-electricity-in-carbon-footprint"
+    },
+    {
+      "label": "Hired trucks: which scope",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK government conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

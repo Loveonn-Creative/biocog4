@@ -1,0 +1,61 @@
+{
+  "slug": "dolvi-steel-coil-buyer-scope-3-figure",
+  "q": "We buy hot rolled coil from a Dolvi steel works. What figure should we use for Scope 3?",
+  "title": "Dolvi steel coil in a buyer's Scope 3",
+  "short": "Ask the mill for a product-specific figure per tonne of coil, with its method and boundary, and use it times tonnes bought. Without one, use a published average for the route, labelled. Integrated plants can run more than one ironmaking route, so a figure for the exact product beats a company average.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian and EU buyers of coil from the Dolvi steel cluster",
+  "sections": [
+    {
+      "h": "What to ask the mill",
+      "ul": [
+        "CO2e per tonne for the grade and product you buy.",
+        "Whether it is cradle to gate and includes electricity.",
+        "The year and any verification."
+      ]
+    },
+    {
+      "h": "CBAM versus footprint",
+      "p": [
+        "A CBAM figure for coil counts direct emissions and precursors only. A Scope 3 or product footprint figure includes electricity, so it is usually higher. Do not mix them."
+      ]
+    },
+    {
+      "h": "If no figure comes",
+      "p": [
+        "Use a sector average such as worldsteel's for the likely route and say so. Replace it when the mill responds."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Green steel certificate in Scope 3",
+      "to": "/answers/green-steel-certificate-scope-3"
+    },
+    {
+      "label": "Rourkela steel plates",
+      "to": "/answers/rourkela-steel-plates-cbam-figure"
+    },
+    {
+      "label": "Kalinganagar steel for EU buyers",
+      "to": "/answers/jamshedpur-kalinganagar-steel-cbam-data-for-eu-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "worldsteel",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

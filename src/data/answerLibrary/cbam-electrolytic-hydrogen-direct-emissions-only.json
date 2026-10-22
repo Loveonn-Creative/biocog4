@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-electrolytic-hydrogen-direct-emissions-only",
+  "q": "Our hydrogen is made by electrolysis on grid power. What is its CBAM figure?",
+  "title": "Electrolytic hydrogen under CBAM",
+  "short": "Close to zero for CBAM, because hydrogen is one of the goods for which only direct emissions count, and electrolysis burns no fuel. Grid electricity is indirect, so it sits outside the charged figure. EU renewable hydrogen rules and buyers' footprints still count that electricity, so keep the data.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Hydrogen producers and buyers considering EU exports",
+  "sections": [
+    {
+      "h": "What still counts as direct",
+      "ul": [
+        "Any fuel burnt on site, such as a backup generator.",
+        "Emissions from producing heat used in the process."
+      ]
+    },
+    {
+      "h": "Why the low figure is not the whole story",
+      "p": [
+        "Under EU rules for renewable fuels of non-biological origin and in buyers' footprints, grid electricity is counted. Hydrogen on a coal-heavy grid can carry far more CO2 per kilogram than hydrogen from natural gas."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "p": [
+        "Electricity by source and month, water use, hydrogen output, and any renewable supply contracts with matching certificates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Grid electricity hydrogen intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "India green hydrogen vs EU RFNBO",
+      "to": "/answers/india-green-hydrogen-vs-eu-rfnbo-threshold"
+    },
+    {
+      "label": "SMR hydrogen CO2 per kg",
+      "to": "/answers/smr-hydrogen-co2-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IEA",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

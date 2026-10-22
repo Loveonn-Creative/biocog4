@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-one-shipment-several-cn-codes",
+  "q": "One export shipment has goods under several CN codes. How do we give CBAM figures?",
+  "title": "One shipment, several CN codes",
+  "short": "Give a figure for each CN code and each installation that made it, not one figure for the container. The importer declares embedded emissions line by line against the customs declaration, so a mixed shipment needs one figure per product, with tonnes per line that match the invoice and packing list.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Exporters shipping mixed steel or aluminium products to EU buyers",
+  "sections": [
+    {
+      "h": "What to send",
+      "ul": [
+        "CN code, tonnes and specific embedded emissions for each line.",
+        "The installation where each product was made.",
+        "Whether each figure is actual or a default value."
+      ]
+    },
+    {
+      "h": "Goods that are not covered",
+      "p": [
+        "If some lines are outside Annex I, say so per line. The importer only declares the covered ones, but a clear list saves a round of questions."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Use the same figure for the same product from the same installation and period across shipments. Changing it per container invites a verifier query."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "CBAM communication template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    },
+    {
+      "label": "Is steel furniture covered?",
+      "to": "/answers/is-steel-furniture-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

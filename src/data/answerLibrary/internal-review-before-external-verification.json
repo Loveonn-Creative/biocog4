@@ -1,0 +1,65 @@
+{
+  "slug": "internal-review-before-external-verification",
+  "q": "What should we check ourselves before an external verifier looks at our emissions?",
+  "title": "Internal review before verification",
+  "short": "Run the checks a verifier would: totals match the invoices, units are right, factors are from the right year, every month is there and estimates are labelled. A one-day internal review usually finds the errors that would otherwise come back as findings and cost a second round.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies preparing for verification",
+  "sections": [
+    {
+      "h": "The checklist",
+      "ul": [
+        "Twelve months of bills and invoices for every source.",
+        "Units: kWh not kVAh, litres not kg, SCM not MMBTU unless converted.",
+        "Factors: source and year stated.",
+        "Fuel used, not just bought.",
+        "Estimates marked with the method."
+      ]
+    },
+    {
+      "h": "Sense checks",
+      "ul": [
+        "Emissions per tonne of output against last year.",
+        "Litres per unit for DG sets.",
+        "Fuel per tonne of steam for boilers."
+      ]
+    },
+    {
+      "h": "Who does it",
+      "p": [
+        "Someone who did not prepare the figures, even a colleague from accounts."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Verifier findings",
+      "to": "/answers/verifier-finding-corrective-action-what-to-do"
+    },
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "kVAh vs kWh",
+      "to": "/answers/billed-units-vs-meter-reading-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

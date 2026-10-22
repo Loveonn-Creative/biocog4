@@ -1,0 +1,61 @@
+{
+  "slug": "brsr-dg-set-diesel-energy-and-scope-1",
+  "q": "How do we report diesel for our DG set in BRSR?",
+  "title": "DG set diesel in BRSR",
+  "short": "Count the diesel twice in different places, but the electricity never. Diesel goes into total energy from non-renewable sources, in gigajoules, and into Scope 1 emissions at about 2.68 kg CO2 per litre. The units the DG set produces are not added again as electricity, or both energy and emissions are double counted.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies and value chain partners filling BRSR Principle 6",
+  "sections": [
+    {
+      "h": "Energy",
+      "p": [
+        "Litres times density times net calorific value gives gigajoules. Report it under fuel from non-renewable sources, not under electricity."
+      ]
+    },
+    {
+      "h": "Emissions",
+      "p": [
+        "Litres times the diesel factor gives Scope 1. Include diesel for forklifts and company vehicles too, but keep hired transport out."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "ul": [
+        "Diesel invoices or the tank issue register.",
+        "DG run hours and meter readings, to sense-check litres per unit generated.",
+        "The factor and calorific value used, with their source."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "DG diesel and DG units double counting",
+      "to": "/answers/dg-diesel-and-dg-units-double-counting"
+    },
+    {
+      "label": "BRSR energy intensity",
+      "to": "/answers/brsr-energy-intensity-calculation"
+    },
+    {
+      "label": "Estimate DG diesel from run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR Core framework (July 2023)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

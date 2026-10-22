@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-fertiliser-indirect-emissions-electricity",
+  "q": "Does grid electricity count in the CBAM figure for our fertiliser?",
+  "title": "Electricity in fertiliser CBAM figures",
+  "short": "Yes. Fertilisers are among the CBAM goods for which indirect emissions count, so the electricity used in each production process is added to the figure, along with direct emissions such as natural gas and nitric acid N2O. That differs from steel, aluminium and hydrogen, where only direct emissions count.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Urea, ammonium nitrate, NPK and DAP producers exporting to the EU",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Electricity consumed by each production process, from sub-meters where possible.",
+        "Electricity generated on site and its fuel, if you have a captive plant.",
+        "The emission factor you apply and its source."
+      ]
+    },
+    {
+      "h": "Which factor",
+      "p": [
+        "The rules start from a default factor for the grid in the country of production. An actual factor is allowed only with a direct technical link to a generator or a power purchase agreement that meets the conditions, so keep the contract and metering records."
+      ]
+    },
+    {
+      "h": "Where it bites",
+      "p": [
+        "Ammonia made from purchased ammonia carries a precursor figure; electricity for prilling, granulation and pumps adds to it. Sub-metering each line avoids an unfair share landing on the product you export."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Captive power and indirect emissions",
+      "to": "/answers/cement-plant-captive-power-cbam-indirect-emissions"
+    },
+    {
+      "label": "Indirect emissions in cement",
+      "to": "/answers/eu-importer-egyptian-cement-indirect-emissions"
+    },
+    {
+      "label": "Fertiliser N2O",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

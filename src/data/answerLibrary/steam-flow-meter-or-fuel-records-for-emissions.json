@@ -1,0 +1,61 @@
+{
+  "slug": "steam-flow-meter-or-fuel-records-for-emissions",
+  "q": "We have a steam flow meter. Can we calculate boiler emissions from steam instead of fuel?",
+  "title": "Steam meter or fuel records for emissions",
+  "short": "Calculate emissions from fuel, not steam. Scope 1 is the fuel burnt times its emission factor; the steam meter tells you how well the boiler converts fuel to steam. Use steam readings to check fuel records, to work out CO2 per tonne of steam, and to split emissions between departments.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plants with steam meters on boilers or headers",
+  "sections": [
+    {
+      "h": "What each record is for",
+      "ul": [
+        "Fuel records: Scope 1 emissions.",
+        "Steam meter: efficiency, CO2 per tonne of steam, allocation to products or units.",
+        "Both together: a cross-check that catches missing fuel invoices."
+      ]
+    },
+    {
+      "h": "When steam is the only data",
+      "p": [
+        "If fuel records are missing for a month, estimate fuel from steam and a measured boiler efficiency, and label the figure as an estimate."
+      ]
+    },
+    {
+      "h": "Meter care",
+      "p": [
+        "Steam meters drift. Keep the calibration date and compare monthly steam per tonne of fuel; a sudden change usually means the meter, not the boiler."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Boiler logbook entries",
+      "to": "/answers/boiler-logbook-what-to-record-for-emissions"
+    },
+    {
+      "label": "Steam allocation per kg",
+      "to": "/answers/dye-intermediate-unit-steam-allocation-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

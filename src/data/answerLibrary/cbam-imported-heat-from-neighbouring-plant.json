@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-imported-heat-from-neighbouring-plant",
+  "q": "We buy steam from a neighbouring plant for a CBAM product. How is that heat counted?",
+  "title": "Bought-in heat in a CBAM figure",
+  "short": "Heat you import is added to your production process with the emissions of producing it. Use the supplier's actual fuel and boiler efficiency data where you can get it; without it, the monitoring rules give a fallback factor. Heat counts for every CBAM good, including steel and aluminium, unlike grid electricity.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "CBAM goods producers buying steam or hot water from another site",
+  "sections": [
+    {
+      "h": "How it enters the calculation",
+      "p": [
+        "Measurable heat flowing into the production process carries an emission factor: tonnes of CO2 per terajoule of heat. Multiply the heat consumed by that factor and add it to the process's attributed emissions, alongside your own fuel."
+      ]
+    },
+    {
+      "h": "What to ask the heat supplier",
+      "ul": [
+        "The fuel burnt and its quantity for the period.",
+        "Heat produced, so the factor per terajoule can be worked out.",
+        "Whether the boiler also makes power, which needs a split between heat and electricity."
+      ]
+    },
+    {
+      "h": "If the supplier will not share data",
+      "p": [
+        "Use the fallback in Annex III of Implementing Regulation 2023/1773 and record why. A verifier will accept a documented fallback more readily than an unexplained number."
+      ]
+    },
+    {
+      "h": "Keep the records",
+      "p": [
+        "Steam invoices or meter readings by month, the supplier's factor and its basis, and how the heat was split if one meter serves more than one process."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    },
+    {
+      "label": "CHP emissions split",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "CBAM boundary with two units",
+      "to": "/answers/cbam-installation-boundary-two-units"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

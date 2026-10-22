@@ -1,0 +1,64 @@
+{
+  "slug": "buyer-sends-own-carbon-questionnaire-format",
+  "q": "Each buyer sends its own carbon questionnaire. How do we answer them without redoing the work?",
+  "title": "Many buyer questionnaires, one dataset",
+  "short": "Keep one master inventory, by month and site, with Scope 1, Scope 2, production and the method, and map each questionnaire's fields to it. Most ask the same handful of numbers in different words. Answer from the master, note the basis each time, and never change a figure to fit a form.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers answering several buyers' sustainability surveys",
+  "sections": [
+    {
+      "h": "What the master holds",
+      "ul": [
+        "Scope 1 and 2 totals by month and site.",
+        "Energy use by source.",
+        "Production volumes for intensity figures.",
+        "Factors used and their sources, and the year they apply to."
+      ]
+    },
+    {
+      "h": "Mapping tips",
+      "ul": [
+        "Calendar or financial year: say which.",
+        "Location or market-based Scope 2: give both if you have renewable supply.",
+        "Per product requests: use one allocation method and reuse it."
+      ]
+    },
+    {
+      "h": "When a form asks for more",
+      "p": [
+        "Say what you have and what you are working on. A clear partial answer beats an invented complete one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "EcoVadis carbon questions",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "Tier 2 supplier data",
+      "to": "/answers/how-to-get-emissions-data-from-tier-2-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CDP",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

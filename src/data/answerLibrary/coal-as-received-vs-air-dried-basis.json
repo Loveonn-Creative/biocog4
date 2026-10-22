@@ -1,0 +1,61 @@
+{
+  "slug": "coal-as-received-vs-air-dried-basis",
+  "q": "Our coal test report shows as-received and air-dried values. Which do we use for emissions?",
+  "title": "As-received or air-dried coal values",
+  "short": "Use the basis that matches the weight you are multiplying. Coal is usually weighed as received, wet, so pair that weight with the as-received calorific value or carbon content. Pairing a wet weight with an air-dried value overstates emissions, because the air-dried figure assumes less water per tonne.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler and kiln operators buying coal by weight",
+  "sections": [
+    {
+      "h": "The bases on a report",
+      "ul": [
+        "As received: the coal as delivered, with all its moisture.",
+        "Air dried: after surface moisture has evaporated in the lab.",
+        "Dry or dry ash free: with no moisture at all."
+      ]
+    },
+    {
+      "h": "Converting between them",
+      "p": [
+        "Lab reports often give the moisture for each basis. A value can be converted using the ratio (100 minus moisture on the target basis) divided by (100 minus moisture on the reported basis)."
+      ]
+    },
+    {
+      "h": "What a verifier checks",
+      "p": [
+        "That the weight and the calorific value are on the same basis, and that the test report covers the same deliveries as the invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "GCV vs NCV",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal weighbridge vs invoice",
+      "to": "/answers/coal-weighbridge-weight-vs-invoice-quantity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

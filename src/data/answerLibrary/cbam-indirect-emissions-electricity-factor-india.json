@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-indirect-emissions-electricity-factor-india",
+  "q": "Which electricity emission factor should an Indian exporter use for CBAM indirect emissions?",
+  "title": "Electricity factor for CBAM in India",
+  "short": "For cement and fertilisers, start with the default electricity factor the Commission sets for India. A lower actual factor needs a direct technical link to a generator or a qualifying power purchase agreement, with evidence. Check whether the importer's verifier accepts the CEA factor of 0.710 before relying on it.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian cement and fertiliser exporters",
+  "sections": [
+    {
+      "h": "The options",
+      "ul": [
+        "Default factor for India, from the Commission's default values.",
+        "Actual factor from a captive or directly linked plant, backed by metering and fuel records.",
+        "Actual factor under a power purchase agreement that meets the CBAM conditions."
+      ]
+    },
+    {
+      "h": "Steel and aluminium",
+      "p": [
+        "Indirect emissions are not part of the charged figure for iron, steel, aluminium or hydrogen, so this choice matters mainly for cement and fertilisers."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Monthly units by source, contracts, renewable certificates if any, and a note of which factor you used and why."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Is the CEA factor CO2 or CO2e?",
+      "to": "/answers/is-cea-grid-factor-co2-or-co2e"
+    },
+    {
+      "label": "Which CEA version",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    },
+    {
+      "label": "Fertiliser electricity in CBAM",
+      "to": "/answers/cbam-fertiliser-indirect-emissions-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

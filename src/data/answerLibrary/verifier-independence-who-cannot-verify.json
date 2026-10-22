@@ -1,0 +1,61 @@
+{
+  "slug": "verifier-independence-who-cannot-verify",
+  "q": "Can the consultant who prepared our carbon inventory also verify it?",
+  "title": "Who cannot verify your inventory",
+  "short": "No. A verifier must be independent of the work they check, so the firm or person who prepared or advised on your inventory should not verify it. ISO 14064-3 and accreditation rules require impartiality. Use a separate accredited body, and expect them to ask about any past consulting.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies choosing a verifier",
+  "sections": [
+    {
+      "h": "Conflicts to avoid",
+      "ul": [
+        "The same firm built the inventory or chose the factors.",
+        "The verifier sells you software or credits linked to the result.",
+        "Fees that depend on the outcome."
+      ]
+    },
+    {
+      "h": "What is allowed",
+      "p": [
+        "A verifier can explain requirements and point out findings. Designing your system or writing your figures crosses the line."
+      ]
+    },
+    {
+      "h": "Ask before you sign",
+      "p": [
+        "Request the verifier's accreditation and a written statement of independence."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Who can verify in India",
+      "to": "/answers/who-can-verify-iso-14064-1-inventory-india"
+    },
+    {
+      "label": "CCTS accredited verification agencies",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    },
+    {
+      "label": "Changing verifiers",
+      "to": "/answers/should-we-change-verifier-every-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

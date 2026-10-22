@@ -1,0 +1,61 @@
+{
+  "slug": "who-should-sign-off-company-carbon-figures",
+  "q": "Who in a small company should sign off the carbon figures before they go to a buyer or bank?",
+  "title": "Who signs off company carbon figures",
+  "short": "A director or owner, after someone other than the preparer has checked them. Carbon figures now go into loan files, buyer contracts and CBAM declarations, so treat them like financial numbers: one person prepares, another reviews, and a named director approves the final version and the date it was sent.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners and finance heads",
+  "sections": [
+    {
+      "h": "A simple control",
+      "ol": [
+        "Preparer: plant or accounts staff who enter the data.",
+        "Reviewer: someone else checks totals against invoices.",
+        "Approver: a director signs off and records the date."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "A wrong figure sent to a lender or EU importer is hard to withdraw. A sign-off trail shows the figure was checked and who to ask about it."
+      ]
+    },
+    {
+      "h": "Keep a version log",
+      "p": [
+        "Which figure went to whom, on what date, and on what basis. Buyers often ask months later."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Internal review before verification",
+      "to": "/answers/internal-review-before-external-verification"
+    },
+    {
+      "label": "Track carbon monthly or yearly",
+      "to": "/answers/track-carbon-monthly-or-yearly-msme"
+    },
+    {
+      "label": "Restate after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

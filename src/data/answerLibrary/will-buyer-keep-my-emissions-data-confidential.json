@@ -1,0 +1,61 @@
+{
+  "slug": "will-buyer-keep-my-emissions-data-confidential",
+  "q": "If I share emissions data with a buyer, can they pass it on to others?",
+  "title": "Keeping supplier emissions data confidential",
+  "short": "Only what your contract or the platform terms allow. Agree in writing what the buyer may use the data for, who else may see it, and whether it can be published in aggregate. CBAM data is different: the importer must give it to EU authorities, so treat it as shared with them.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Suppliers sharing emissions data with customers",
+  "sections": [
+    {
+      "h": "What to agree",
+      "ul": [
+        "Purpose: the buyer's own Scope 3, product footprint or CBAM declaration.",
+        "Who may see it: the buyer, its verifier, regulators.",
+        "Whether it may be named or only aggregated in public reports."
+      ]
+    },
+    {
+      "h": "Platforms",
+      "p": [
+        "Questionnaire platforms have their own sharing settings. Check who your response is visible to before submitting."
+      ]
+    },
+    {
+      "h": "What to keep private",
+      "p": [
+        "Production volumes and fuel prices can reveal costs. You can often give intensity figures without absolute volumes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Buyer audit rights over data",
+      "to": "/answers/buyer-audit-rights-over-supplier-emissions-data"
+    },
+    {
+      "label": "Who sees a CDP response",
+      "to": "/answers/cdp-supply-chain-who-sees-my-response"
+    },
+    {
+      "label": "Climate clause in buyer contracts",
+      "to": "/answers/climate-clause-in-buyer-contract-what-to-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CDP",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

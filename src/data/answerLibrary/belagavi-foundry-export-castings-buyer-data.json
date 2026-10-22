@@ -1,0 +1,62 @@
+{
+  "slug": "belagavi-foundry-export-castings-buyer-data",
+  "q": "A European pump maker wants carbon data for castings from our Belagavi foundry. What do we give?",
+  "title": "Belagavi foundry castings for export buyers",
+  "short": "A product footprint per kg of casting: your melting energy, coke or electricity, sand and binders, and the metal charge, divided by good castings. Iron castings are mostly outside CBAM, so this is a buyer request, not a legal filing, but the buyer will use it in its own declarations.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Ferrous and non-ferrous foundries in Belagavi exporting to Europe",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Pig iron, scrap and ferro-alloys charged, with factors.",
+        "Coke or electricity for melting.",
+        "Sand, resin and core materials.",
+        "Fettling, machining and heat treatment, if you do them."
+      ]
+    },
+    {
+      "h": "CBAM check",
+      "p": [
+        "Cast iron articles under heading 7325 are not in Annex I. Steel castings and some semi-finished forms can be. Check the CN code on your invoice."
+      ]
+    },
+    {
+      "h": "Make it usable",
+      "p": [
+        "Give the figure per kg and per part, state cradle to gate, and say which inputs are measured and which use averages."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel, electricity and purchase documents into dated, fingerprinted records, so the figure you send a buyer can be traced to its source.",
+  "links": [
+    {
+      "label": "Are cast iron manhole covers covered?",
+      "to": "/answers/are-cast-iron-manhole-covers-covered-by-cbam"
+    },
+    {
+      "label": "Foundry charge mix",
+      "to": "/answers/foundry-charge-mix-pig-iron-vs-scrap-carbon"
+    },
+    {
+      "label": "EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-own-precursor-made-in-same-installation",
+  "q": "We make our own billets and roll them in the same plant. Do we count the billets as a precursor?",
+  "title": "Own precursors in one CBAM installation",
+  "short": "You can either treat billet making and rolling as one production process, or keep them separate and pass the billets' figure into rolling as a precursor. Either works if each tonne of CO2 is counted once. The usual error is adding the billet emissions twice: once as direct emissions and again as a precursor.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel and aluminium plants making and processing their own intermediate products",
+  "sections": [
+    {
+      "h": "Two ways to set it up",
+      "ol": [
+        "Combined: one production process covering melting and rolling; direct emissions of both, divided by tonnes of rolled product.",
+        "Separate: billets get their own figure; rolling adds its fuel plus billets consumed times that figure."
+      ]
+    },
+    {
+      "h": "When separate is better",
+      "p": [
+        "If you also sell billets, you need their own figure anyway, and separating keeps rolled products from carrying melting emissions for billets that were sold."
+      ]
+    },
+    {
+      "h": "Check for double counting",
+      "p": [
+        "Total CO2 attributed across all products should not exceed the installation's direct emissions plus bought precursors. If it does, something is counted twice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "CBAM boundary with two units",
+      "to": "/answers/cbam-installation-boundary-two-units"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    },
+    {
+      "label": "Mandi Gobindgarh rerolling mill",
+      "to": "/answers/mandi-gobindgarh-rerolling-mill-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "which-emission-factor-database-for-india",
+  "q": "Which emission factors should an Indian company use for its carbon inventory?",
+  "title": "Emission factors for an Indian inventory",
+  "short": "Use the most specific official source for each activity: CEA for grid electricity, supplier data or IPCC 2006 defaults for fuels, and your suppliers' own figures for purchased goods where they have them. Fill gaps with published sets such as the UK government's, labelled as defaults, and keep one list of sources.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian companies building a first inventory",
+  "sections": [
+    {
+      "h": "By activity",
+      "ul": [
+        "Grid electricity: CEA CO2 baseline database, version for the year.",
+        "Fuels: supplier calorific value and carbon content, else IPCC 2006 defaults.",
+        "Freight: GLEC Framework factors.",
+        "Purchased goods: supplier data, else spend or average factors, labelled."
+      ]
+    },
+    {
+      "h": "What to avoid",
+      "ul": [
+        "Mixing factor years within one report.",
+        "Foreign grid factors for Indian electricity.",
+        "Unlabelled factors with no source."
+      ]
+    },
+    {
+      "h": "Document it",
+      "p": [
+        "A one-page factor register, with value, unit, source and year, is the first thing a verifier asks for."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Is an IPCC default good enough?",
+      "to": "/answers/ipcc-tier-1-default-factor-good-enough"
+    },
+    {
+      "label": "Which CEA version",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    },
+    {
+      "label": "Replace spend factors with supplier data",
+      "to": "/answers/replace-us-epa-spend-factor-with-supplier-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "UK government conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "own-diesel-tank-issue-register-emissions",
+  "q": "We store diesel in our own tank and issue it to DG sets and forklifts. How do we count it?",
+  "title": "Diesel from your own tank",
+  "short": "Count diesel issued, not just diesel bought, and record who used it. A tank issue register by equipment gives Scope 1 per use and shows whether stock moved. Purchases minus closing stock change should equal issues; diesel given to a contractor's vehicles belongs in their emissions, not yours.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with diesel storage tanks",
+  "sections": [
+    {
+      "h": "What the register needs",
+      "ul": [
+        "Date, equipment, litres issued and who signed.",
+        "Dip readings at month start and end.",
+        "Deliveries with invoice numbers."
+      ]
+    },
+    {
+      "h": "Splitting by use",
+      "ul": [
+        "DG sets: Scope 1, and do not add their units again as electricity.",
+        "Forklifts and company vehicles: Scope 1.",
+        "Contractor or hired vehicles: Scope 3 for you."
+      ]
+    },
+    {
+      "h": "Factor",
+      "p": [
+        "About 2.68 kg CO2 per litre for diesel. Biodiesel blends need the fossil share only in Scope 1, with the bio share reported separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices, gas bills and delivery documents into dated, fingerprinted records, so each tonne of CO2 traces back to the document behind it.",
+  "links": [
+    {
+      "label": "DG diesel and DG units double counting",
+      "to": "/answers/dg-diesel-and-dg-units-double-counting"
+    },
+    {
+      "label": "Hired trucks: which scope",
+      "to": "/answers/hired-trucks-scope-1-or-scope-3"
+    },
+    {
+      "label": "Diesel forklift vs electric",
+      "to": "/answers/diesel-forklift-vs-electric-forklift-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "UK government conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "bhiwadi-rolling-mill-png-reheating-furnace-co2",
+  "q": "How much CO2 does a Bhiwadi rolling mill's PNG reheating furnace add per tonne?",
+  "title": "Bhiwadi rolling mill PNG reheating furnace",
+  "short": "Take the gas billed for the month, convert it to energy using the calorific value on the bill, multiply by about 56.1 kg CO2 per GJ, and divide by tonnes rolled. Hot charging billets straight from the caster, where possible, cuts gas use per tonne.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Re-rolling and section mills in Bhiwadi on piped gas",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Gas in SCM or MMBTU from the bill.",
+        "Energy in GJ using the billed calorific value.",
+        "Times 56.1 kg CO2 per GJ, the IPCC default for natural gas.",
+        "Divided by tonnes of good product rolled."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Reheating gas is a direct emission of the rolling process. Add it to the billets' embedded emissions per tonne of bar."
+      ]
+    },
+    {
+      "h": "Levers",
+      "ul": [
+        "Hot charging.",
+        "Recuperators to preheat combustion air.",
+        "Furnace door and refractory upkeep."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "PNG bill in MMBTU to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Reheating furnace insulation",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    },
+    {
+      "label": "Gas meter vs PNG bill",
+      "to": "/answers/gas-meter-reading-vs-png-bill-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

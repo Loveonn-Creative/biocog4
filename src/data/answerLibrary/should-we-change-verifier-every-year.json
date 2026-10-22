@@ -1,0 +1,62 @@
+{
+  "slug": "should-we-change-verifier-every-year",
+  "q": "Should we use a different verifier for our carbon inventory every year?",
+  "title": "Changing GHG verifiers each year",
+  "short": "Not by default. ISO 14064-3 does not require rotation for voluntary verification, and a verifier who knows your plant is often faster. Check your scheme or buyer rules, since some programmes limit how long one verifier can serve, and change if independence could be questioned.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs with repeat verification",
+  "sections": [
+    {
+      "h": "Reasons to stay",
+      "ul": [
+        "Familiarity cuts time and cost.",
+        "Year-on-year consistency in judgement."
+      ]
+    },
+    {
+      "h": "Reasons to change",
+      "ul": [
+        "Your scheme, lender or buyer requires rotation.",
+        "The verifier also gave you consulting help on the inventory.",
+        "Repeated findings you think were missed."
+      ]
+    },
+    {
+      "h": "A middle path",
+      "p": [
+        "Keep the firm but ask for a different lead verifier after a few years."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every figure linked to its source invoice or bill with a fingerprint, so a verifier can trace a total back to the documents it came from.",
+  "links": [
+    {
+      "label": "Who cannot verify your inventory",
+      "to": "/answers/verifier-independence-who-cannot-verify"
+    },
+    {
+      "label": "Verification cost in India",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    },
+    {
+      "label": "Is ISO 14064-1 verification worth it?",
+      "to": "/answers/iso-14064-1-verified-inventory-worth-it-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1, 14064-3 and 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

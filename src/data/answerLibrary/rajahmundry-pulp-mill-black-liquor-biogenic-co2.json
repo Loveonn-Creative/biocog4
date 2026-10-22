@@ -1,0 +1,62 @@
+{
+  "slug": "rajahmundry-pulp-mill-black-liquor-biogenic-co2",
+  "q": "How should a Rajahmundry pulp mill count CO2 from burning black liquor?",
+  "title": "Black liquor CO2 at a pulp mill",
+  "short": "As biogenic, reported separately from Scope 1, because the carbon in black liquor comes from the wood. Methane and nitrous oxide from the recovery boiler stay in Scope 1, as do coal and oil burnt in power boilers and the lime kiln. Make-up limestone adds fossil process CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Integrated pulp and paper mills around Rajahmundry",
+  "sections": [
+    {
+      "h": "Split the sources",
+      "ul": [
+        "Recovery boiler: biogenic CO2, plus small methane and nitrous oxide in Scope 1.",
+        "Power boilers on coal: Scope 1.",
+        "Lime kiln fuel: Scope 1.",
+        "Make-up limestone: fossil process CO2."
+      ]
+    },
+    {
+      "h": "Lime mud",
+      "p": [
+        "CO2 released when lime mud is reburnt comes from carbon that started in the wood, so common pulp and paper guidance treats it as biogenic. Fresh limestone bought in is fossil."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Black liquor solids fired, fuel to each boiler and kiln, and limestone purchases by month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Paper mill footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Agro-residue paper mill",
+      "to": "/answers/agro-residue-paper-mill-biogenic-co2"
+    },
+    {
+      "label": "Is a paper mill covered by CCTS?",
+      "to": "/answers/is-a-paper-mill-covered-by-ccts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
