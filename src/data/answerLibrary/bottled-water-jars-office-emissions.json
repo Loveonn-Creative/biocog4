@@ -1,0 +1,43 @@
+{
+  "slug": "bottled-water-jars-office-emissions",
+  "q": "Do the 20 litre drinking water jars delivered to our office count in our emissions?",
+  "title": "Drinking water jars: do they count",
+  "short": "Yes, as Scope 3 Category 1, purchased goods, but they are usually tiny. Count the water, the delivery trips if you know them, and new jars bought. Reusable jars are refilled many times, so most of the impact is the supplier's treatment power and transport.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Offices and small factories",
+  "sections": [
+    {
+      "h": "What drives it",
+      "ul": [
+        "Treatment energy at the supplier, often RO plus chilling.",
+        "Delivery van trips.",
+        "New jars, if you buy them rather than swap."
+      ]
+    },
+    {
+      "h": "Where to stop",
+      "p": [
+        "If water jars are under one percent of your total, estimate once and keep the method. Spend the effort on fuel and power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Purchased water factor",
+      "to": "/answers/purchased-water-emission-factor"
+    },
+    {
+      "label": "Water tanker purchases",
+      "to": "/answers/water-tanker-purchases-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

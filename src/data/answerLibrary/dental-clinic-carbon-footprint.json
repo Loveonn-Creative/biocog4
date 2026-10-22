@@ -1,0 +1,55 @@
+{
+  "slug": "dental-clinic-carbon-footprint",
+  "q": "How does a dental clinic work out its carbon footprint?",
+  "title": "Dental clinic carbon footprint",
+  "short": "Start with the electricity bill, then add any nitrous oxide used for sedation, LPG or diesel, and the main purchases: consumables, instruments and lab work. Nitrous oxide is a direct Scope 1 emission with a global warming potential of 273, so a few cylinders matter.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dental clinics and small hospital chains",
+  "sections": [
+    {
+      "h": "Scope 1 and 2",
+      "ul": [
+        "Electricity for chairs, compressors, autoclaves and air conditioning.",
+        "Nitrous oxide bought, in kilograms.",
+        "Backup genset diesel."
+      ]
+    },
+    {
+      "h": "Scope 3",
+      "ul": [
+        "Gloves, masks and single-use items.",
+        "Dental lab work sent out.",
+        "Patient travel, if you choose to estimate it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Nitrous oxide",
+    "lines": [
+      "20 kg N2O in a year x 273 = 5,460 kg CO2e"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Anaesthetic gases in hospitals",
+      "to": "/answers/anaesthetic-gases-scope-1-hospital"
+    },
+    {
+      "label": "Hospital autoclave emissions",
+      "to": "/answers/hospital-autoclave-sterilisation-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 WG1, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

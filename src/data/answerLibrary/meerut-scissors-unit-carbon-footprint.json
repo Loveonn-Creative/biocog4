@@ -1,0 +1,47 @@
+{
+  "slug": "meerut-scissors-unit-carbon-footprint",
+  "q": "How does a Meerut scissors maker work out the carbon footprint per pair?",
+  "title": "Meerut scissors carbon footprint",
+  "short": "Weigh the steel in each pair, often from scrap or sheet, and apply a steel factor, then add electricity for grinding and polishing and any furnace fuel for hardening. Scissors fall under HS chapter 82, which CBAM does not cover, but EU buyers may still ask for a figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Scissors and cutlery makers",
+  "sections": [
+    {
+      "h": "Per pair",
+      "ul": [
+        "Steel weight and whether it is recycled scrap.",
+        "Hardening furnace fuel.",
+        "Grinding and polishing electricity."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "CBAM covers iron and steel in chapters 72 and 73, not finished tools in chapter 82. A buyer request is about their own Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Forging footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Surgical instrument footprint",
+      "to": "/answers/surgical-instrument-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "ISO 14067:2018, carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

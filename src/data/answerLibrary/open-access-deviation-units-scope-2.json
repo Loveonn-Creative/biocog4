@@ -1,0 +1,54 @@
+{
+  "slug": "open-access-deviation-units-scope-2",
+  "q": "Our green open access bill shows deviation units. How do they count in Scope 2?",
+  "title": "Open access deviation units",
+  "short": "Only renewable units actually scheduled and settled to you count as green. When you draw more than scheduled, the shortfall comes from the grid and takes the grid factor. Read the DISCOM settlement statement, not the contracted quantity.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Industrial consumers on green open access",
+  "sections": [
+    {
+      "h": "What to read",
+      "ul": [
+        "Scheduled renewable units for the month.",
+        "Actual drawal from the DISCOM energy account.",
+        "Banked or lapsed units shown on the statement."
+      ]
+    },
+    {
+      "h": "How to split",
+      "p": [
+        "Green units settled to you take a zero or supplier factor under the market-based method. Every other unit drawn takes the grid factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One month",
+    "lines": [
+      "Total drawal 500,000 kWh; renewable settled 380,000 kWh",
+      "Grid share 120,000 kWh x 0.710 kg = 85,200 kg CO2"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Green open access charges",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Banked renewable units",
+      "to": "/answers/renewable-banking-units-which-month-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

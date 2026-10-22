@@ -1,0 +1,47 @@
+{
+  "slug": "same-invoice-uploaded-twice-double-count",
+  "q": "How do I stop the same invoice being counted twice in my carbon figures?",
+  "title": "Same invoice counted twice",
+  "short": "Give every invoice one identity: supplier GSTIN plus invoice number, or a file fingerprint. Check every new upload against that list before it is added. Duplicates usually arrive as a scan and an email copy of the same bill, or a revised invoice that replaces an older one.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Finance and admin teams collecting invoices",
+  "sections": [
+    {
+      "h": "Common ways it happens",
+      "ul": [
+        "Scan and emailed PDF of the same bill.",
+        "A revised invoice that replaces an earlier one.",
+        "Two people uploading the same month."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Keep the replaced invoice on file but marked as superseded, so the trail shows why only one counts."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every document, so the same bill uploaded twice is recognised and counted once.",
+  "links": [
+    {
+      "label": "Supplier Scope 1 counted twice",
+      "to": "/answers/supplier-scope-1-double-counted-in-scope-3"
+    },
+    {
+      "label": "Restating after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

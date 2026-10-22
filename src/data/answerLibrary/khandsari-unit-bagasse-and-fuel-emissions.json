@@ -1,0 +1,47 @@
+{
+  "slug": "khandsari-unit-bagasse-and-fuel-emissions",
+  "q": "How does a khandsari sugar unit count emissions when it burns bagasse?",
+  "title": "Khandsari unit bagasse emissions",
+  "short": "Bagasse burned in the open pans is biomass: report its CO2 separately as biogenic, and count only its methane and nitrous oxide in Scope 1. Add any coal or firewood bought, crusher diesel and grid power. Divide by tonnes of khandsari for a per-tonne figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Khandsari and jaggery units",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Coal or purchased fuel: fossil CO2 in full.",
+        "Bagasse and firewood: CH4 and N2O only in Scope 1.",
+        "Crusher diesel and electricity."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by sugar produced in the season. Units that buy extra fuel late in the season see it clearly in the number."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Sugar mill bagasse cogeneration",
+      "to": "/answers/sugar-mill-bagasse-cogeneration-emissions"
+    },
+    {
+      "label": "Biomass fuel in boilers",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

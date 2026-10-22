@@ -1,0 +1,48 @@
+{
+  "slug": "temple-community-kitchen-fuel-emissions",
+  "q": "How do we calculate emissions from a temple or community kitchen that feeds thousands daily?",
+  "title": "Community kitchen fuel emissions",
+  "short": "Add up LPG, firewood, diesel and electricity used by the kitchen, then divide by meals served. CO2 from firewood is biogenic and reported separately, while its methane and nitrous oxide count. Switching from firewood to steam or LPG changes both numbers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Temple trusts, gurdwaras and large community kitchens",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ul": [
+        "LPG cylinders or bulk LPG bought.",
+        "Firewood in kilograms.",
+        "Boiler fuel if cooking uses steam.",
+        "Electricity for grinders and lighting."
+      ]
+    },
+    {
+      "h": "Per meal",
+      "p": [
+        "Divide by meals served. It turns a large total into a figure donors and trustees can follow year to year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Biomass fuel in boilers",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Induction or LPG kitchens",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

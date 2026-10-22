@@ -1,0 +1,47 @@
+{
+  "slug": "cardamom-drying-fuel-emissions-per-kg",
+  "q": "How do cardamom growers and curing houses work out drying emissions per kg?",
+  "title": "Cardamom drying emissions per kg",
+  "short": "Weigh the firewood or measure the diesel and electricity used by the drier for a batch, convert to CO2, and divide by kilograms of dry cardamom. CO2 from firewood is biogenic and reported separately; its methane and nitrous oxide still count. Electric driers shift it to Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cardamom growers, curing houses and spice exporters",
+  "sections": [
+    {
+      "h": "Per batch",
+      "ul": [
+        "Fuel: firewood kilograms, diesel litres or units from the meter.",
+        "Green capsules in, dry cardamom out.",
+        "Fans and blowers on the electricity bill."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Spice buyers increasingly ask for per-kg figures. A few weighed batches give a better number than a yearly guess."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Spice processing footprint",
+      "to": "/answers/spice-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Firewood tea dryers",
+      "to": "/answers/sri-lanka-tea-factory-firewood-dryer-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

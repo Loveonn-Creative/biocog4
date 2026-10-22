@@ -1,0 +1,52 @@
+{
+  "slug": "mutual-fund-portfolio-carbon-footprint-pcaf",
+  "q": "How does a mutual fund calculate the carbon footprint of its portfolio?",
+  "title": "Mutual fund portfolio carbon footprint",
+  "short": "Under PCAF, each holding's emissions are attributed by the fund's share: the value held divided by the company's enterprise value including cash. Add the attributed Scope 1 and 2 across holdings, and show a data quality score, since many Indian companies still estimate.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Fund managers and investee companies asked for data",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Attributed emissions = value held / EVIC x company emissions. Sum across listed equity and corporate bonds."
+      ]
+    },
+    {
+      "h": "For investee companies",
+      "p": [
+        "Funds ask for reported emissions because estimates score lower. Bill-backed Scope 1 and 2 improve the fund's data quality score."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One holding",
+    "lines": [
+      "Held Rs 50 crore of a company with EVIC Rs 5,000 crore: 1%",
+      "Company Scope 1 and 2: 80,000 t; attributed 800 t"
+    ]
+  },
+  "senseible": "Senseible builds a bill-backed emissions record with the source on every line, the evidence a lender's credit team can check.",
+  "links": [
+    {
+      "label": "PCAF data quality for MSMEs",
+      "to": "/answers/pcaf-data-quality-score-for-msme-borrowers"
+    },
+    {
+      "label": "Why EU funds ask for PAI data",
+      "to": "/answers/why-eu-fund-asks-for-sfdr-pai-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PCAF, Global GHG Accounting and Reporting Standard for the Financial Industry",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

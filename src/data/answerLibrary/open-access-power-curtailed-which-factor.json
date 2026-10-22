@@ -1,0 +1,47 @@
+{
+  "slug": "open-access-power-curtailed-which-factor",
+  "q": "Our open access wind supply was curtailed for days. What factor do we use for those units?",
+  "title": "Curtailed open access power",
+  "short": "Curtailed renewable units never reached you, so you cannot claim them. The power you used instead came from the grid and takes the grid factor. Use the settled renewable units on the DISCOM statement, which already reflect the curtailment.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Consumers buying wind or solar through open access",
+  "sections": [
+    {
+      "h": "Why it matters",
+      "p": [
+        "A contract for a share of a wind farm is not a delivery. Market-based Scope 2 counts what was generated and settled to you."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "The monthly energy account from the DISCOM or SLDC.",
+        "Curtailment notices, if the generator shares them.",
+        "Any compensation units credited later, counted in the month settled."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Open access deviation units",
+      "to": "/answers/open-access-deviation-units-scope-2"
+    },
+    {
+      "label": "Group captive solar claim",
+      "to": "/answers/group-captive-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

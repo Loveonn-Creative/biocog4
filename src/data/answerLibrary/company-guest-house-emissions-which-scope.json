@@ -1,0 +1,47 @@
+{
+  "slug": "company-guest-house-emissions-which-scope",
+  "q": "Our company runs a guest house for visiting staff. Which scope do its emissions go in?",
+  "title": "Company guest house emissions",
+  "short": "If you own or lease it and pay its bills, it sits inside your operational control: its electricity is Scope 2 and its LPG and diesel are Scope 1. If staff stay in hotels you pay for, that is Scope 3 business travel instead.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs with staff accommodation",
+  "sections": [
+    {
+      "h": "Inside your boundary",
+      "ul": [
+        "Electricity bill in your name or paid by you: Scope 2.",
+        "LPG cylinders for the kitchen, diesel for a backup genset: Scope 1.",
+        "Refrigerant top-ups for its air conditioners: Scope 1."
+      ]
+    },
+    {
+      "h": "Outside it",
+      "p": [
+        "Hotel nights booked for staff are Category 6. A flat provided by a landlord who pays the bills may be a leased asset; see who controls the meter."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Leased premises and scopes",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "LPG cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

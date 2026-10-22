@@ -1,0 +1,54 @@
+{
+  "slug": "puffed-rice-unit-fuel-emissions",
+  "q": "How does a puffed rice unit work out emissions from its roasting fuel?",
+  "title": "Puffed rice unit fuel emissions",
+  "short": "Measure the fuel for roasting, often rice husk, firewood or LPG, over a week and divide by kilograms of puffed rice. Husk and firewood CO2 is biogenic and reported separately; LPG CO2 counts fully at 2.98 kg per kg. Add parboiling steam and electricity.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Puffed rice and snack units",
+  "sections": [
+    {
+      "h": "Records for a week",
+      "ul": [
+        "Husk or firewood in kilograms, or LPG cylinders.",
+        "Paddy or rice in and puffed rice out.",
+        "Electricity for conveyors and packing."
+      ]
+    },
+    {
+      "h": "Per kg",
+      "p": [
+        "A week of careful weighing is enough to set a per-kg figure you can reuse until the process changes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "LPG roaster",
+    "lines": [
+      "LPG 190 kg x 2.98 = 566 kg CO2 for 7,000 kg output",
+      "0.081 kg CO2 per kg from roasting"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Husk sold to a power plant",
+      "to": "/answers/rice-husk-sold-to-power-plant-who-claims"
+    },
+    {
+      "label": "LPG cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

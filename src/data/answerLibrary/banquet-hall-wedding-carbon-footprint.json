@@ -1,0 +1,54 @@
+{
+  "slug": "banquet-hall-wedding-carbon-footprint",
+  "q": "How does a banquet hall work out the carbon footprint of a wedding?",
+  "title": "Banquet hall wedding carbon footprint",
+  "short": "Read the electricity and generator diesel for the event, the LPG used in the kitchen and the food bought, then divide by guests. Catering and generators usually lead. Guest travel can be estimated separately if the couple asks for it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Banquet halls, caterers and event planners",
+  "sections": [
+    {
+      "h": "From your own records",
+      "ul": [
+        "Meter reading before and after the event.",
+        "Genset diesel for the day.",
+        "LPG cylinders used in the kitchen."
+      ]
+    },
+    {
+      "h": "Per guest",
+      "p": [
+        "Divide by confirmed headcount. Food waste weighed after the event adds a useful number for reducing next time."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One evening",
+    "lines": [
+      "Diesel 120 L x 2.68 = 322 kg; LPG 6 x 19 kg x 2.98 = 340 kg",
+      "Grid 900 kWh x 0.710 = 639 kg; total 1,301 kg for 500 guests = 2.6 kg each"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Restaurant footprint per meal",
+      "to": "/answers/restaurant-carbon-footprint-per-meal"
+    },
+    {
+      "label": "LPG cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

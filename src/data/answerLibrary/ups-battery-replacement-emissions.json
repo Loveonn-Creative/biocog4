@@ -1,0 +1,43 @@
+{
+  "slug": "ups-battery-replacement-emissions",
+  "q": "Where do replacement UPS batteries go in our emissions?",
+  "title": "UPS battery replacement emissions",
+  "short": "New batteries are Scope 3: Category 1 if expensed, Category 2 if you treat them as capital goods, matching your accounts. Their disposal is Category 5, waste. The electricity a UPS uses is already in your Scope 2 bill.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Offices, hospitals and plants with UPS systems",
+  "sections": [
+    {
+      "h": "Which category",
+      "ul": [
+        "Expensed in the year: Category 1.",
+        "Capitalised with the UPS: Category 2.",
+        "Old batteries sent to a recycler: Category 5."
+      ]
+    },
+    {
+      "h": "The footprint",
+      "p": [
+        "Use the battery supplier's figure if offered, or a per-unit footprint for lead-acid or lithium batteries by weight."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Lead-acid battery footprint",
+      "to": "/answers/lead-acid-battery-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Capital goods timing",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "mining-dumper-diesel-per-tonne-moved",
+  "q": "How do I calculate diesel emissions per tonne of material moved by dumpers at a mine?",
+  "title": "Dumper diesel per tonne moved",
+  "short": "Divide the diesel issued to haul trucks by the tonnes they moved in the same period, then multiply by 2.68 kg CO2 per litre. Use the fuel issue register and the weighbridge or survey tonnage. Haul distance drives the number, so report tonne-kilometres too.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Mines, quarries and mining contractors",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Fuel issue register per dumper.",
+        "Tonnes hauled: weighbridge, truck factor or survey.",
+        "Average haul distance per bench."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "Your own fleet is Scope 1. A hired contractor buying the diesel is your Scope 3, so ask for litres, not just the bill."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One month",
+    "lines": [
+      "Diesel 84,000 L for 600,000 t moved",
+      "84,000 x 2.68 / 600,000 = 0.375 kg CO2 per tonne"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Excavator diesel per hour",
+      "to": "/answers/excavator-diesel-consumption-per-hour"
+    },
+    {
+      "label": "Quarry blasting emissions",
+      "to": "/answers/quarry-blasting-explosives-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

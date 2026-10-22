@@ -1,0 +1,49 @@
+{
+  "slug": "stadium-match-day-carbon-footprint",
+  "q": "How do we calculate the carbon footprint of a match day at our stadium?",
+  "title": "Stadium match-day carbon footprint",
+  "short": "Count floodlight and venue electricity, generator diesel, catering fuel and waste for the event. Spectator travel is often the largest share, estimated from a short survey or ticket postcodes. Report it per match and per spectator, and keep travel as a separate line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Venue operators and event organisers",
+  "sections": [
+    {
+      "h": "Venue",
+      "ul": [
+        "Electricity on the day from the meter.",
+        "Generator diesel for lights and broadcast.",
+        "LPG for catering stalls."
+      ]
+    },
+    {
+      "h": "People and waste",
+      "ul": [
+        "Spectator and team travel by mode.",
+        "Waste collected after the match.",
+        "Hotel nights for teams and officials."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Event footprint per guest",
+      "to": "/answers/hotel-event-carbon-footprint-per-guest"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

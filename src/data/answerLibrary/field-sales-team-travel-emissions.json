@@ -1,0 +1,48 @@
+{
+  "slug": "field-sales-team-travel-emissions",
+  "q": "How do I work out emissions from my sales team's travel across the country?",
+  "title": "Field sales team travel emissions",
+  "short": "Use the travel bills you already approve: train and air tickets, taxi receipts, bus fares and fuel claims. Group them by mode, take distance or fuel, and apply a factor per mode. Field sales travel is Scope 3 Category 6 unless the vehicles are company-owned.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with travelling sales staff",
+  "sections": [
+    {
+      "h": "By mode",
+      "ul": [
+        "Air: origin and destination from the ticket.",
+        "Rail: distance between stations.",
+        "Taxi and own car: kilometres or fuel.",
+        "Company-owned vehicles: Scope 1 instead."
+      ]
+    },
+    {
+      "h": "Keep it light",
+      "p": [
+        "Start with the three biggest modes by spend. Small fares rarely change the total."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Business car travel scope",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Travel reimbursed by a client",
+      "to": "/answers/who-reports-travel-reimbursed-by-client"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK Government GHG conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

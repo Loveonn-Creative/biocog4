@@ -1,0 +1,52 @@
+{
+  "slug": "office-paper-emissions-per-ream",
+  "q": "How do I estimate the emissions from the office paper we buy?",
+  "title": "Office paper emissions per ream",
+  "short": "Convert reams to weight, then apply a paper factor. A ream of 500 A4 sheets at 80 gsm weighs about 2.5 kg. Multiply total kilograms by a factor for virgin or recycled paper from a published table. It is Scope 3 Category 1 and usually small.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Offices and service MSMEs",
+  "sections": [
+    {
+      "h": "The weight",
+      "p": [
+        "One A4 sheet is 0.0624 square metres. At 80 gsm that is about 5 g, so 500 sheets weigh about 2.5 kg."
+      ]
+    },
+    {
+      "h": "The factor",
+      "p": [
+        "Use a paper factor per tonne from a published set such as the UK government conversion factors, and pick recycled where your invoice says so."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A year of paper",
+    "lines": [
+      "400 reams x 2.5 kg = 1,000 kg of paper",
+      "1 tonne x the paper factor from your chosen table"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Filling Scope 3 gaps",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    },
+    {
+      "label": "Purchase order or invoice",
+      "to": "/answers/purchase-order-or-invoice-for-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK Government GHG conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

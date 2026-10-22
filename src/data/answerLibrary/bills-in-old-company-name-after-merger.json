@@ -1,0 +1,42 @@
+{
+  "slug": "bills-in-old-company-name-after-merger",
+  "q": "Our electricity bills are still in the old company name after a merger. Can we count them?",
+  "title": "Bills in an old company name",
+  "short": "Yes. What matters is that the site sits inside your reporting boundary, not the name printed on the bill. Keep the merger or name-change document next to the bills, and recalculate your base year if the merger brought in a large new site.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs after a merger, takeover or name change",
+  "sections": [
+    {
+      "h": "Show the link",
+      "ul": [
+        "The board resolution, merger order or name-change certificate.",
+        "The consumer number on the bill, matched to the site you now run."
+      ]
+    },
+    {
+      "h": "Base year",
+      "p": [
+        "A merger is a structural change. If it shifts your total materially, the GHG Protocol asks you to restate the base year as if the site had always been yours."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Bought a unit mid-year",
+      "to": "/answers/bought-a-unit-mid-year-carbon-base-year"
+    },
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

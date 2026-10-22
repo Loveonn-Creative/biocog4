@@ -1,0 +1,47 @@
+{
+  "slug": "solar-panel-recycling-emissions-india",
+  "q": "How do I count emissions when old solar panels are recycled in India?",
+  "title": "Recycling old solar panels in India",
+  "short": "For the plant owner, panels sent for disposal are Scope 3 Category 5, waste, in the year removed. Use the recycler's weight slip and a factor for the treatment route. India's E-Waste (Management) Rules, 2022 bring solar PV modules under producer responsibility, so keep the recycler's certificate.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "MSMEs replacing rooftop solar panels",
+  "sections": [
+    {
+      "h": "What to keep",
+      "ul": [
+        "Number and weight of panels removed.",
+        "The authorised recycler's receipt or certificate.",
+        "The date, for the right reporting year."
+      ]
+    },
+    {
+      "h": "Your new panels",
+      "p": [
+        "Replacement panels are capital goods, Category 2, in the year you buy them."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Solar panel embodied carbon",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    },
+    {
+      "label": "E-waste end of life in India",
+      "to": "/answers/appliance-end-of-life-emissions-e-waste-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "MoEFCC, E-Waste (Management) Rules, 2022 (moef.gov.in)",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

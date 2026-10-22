@@ -1,0 +1,47 @@
+{
+  "slug": "laptop-refurbishment-avoided-emissions-claim",
+  "q": "Can a laptop refurbisher claim avoided emissions for each device it sells?",
+  "title": "Refurbished laptops and avoided emissions",
+  "short": "It can describe them, but separately from its own inventory. Compare a refurbished laptop with the manufacture of a new one, show the method and assumptions, and never subtract the result from Scope 1, 2 or 3. Buyers will ask whether the device really replaced a new purchase.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "IT refurbishers and their corporate buyers",
+  "sections": [
+    {
+      "h": "A defensible claim",
+      "ul": [
+        "Your own emissions reported in full first.",
+        "A clear baseline: a new laptop that would otherwise be bought.",
+        "Testing, parts and transport counted on the refurbished side."
+      ]
+    },
+    {
+      "h": "What to avoid",
+      "p": [
+        "Calling the business carbon negative, or adding avoided emissions to a net figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Recycler avoided emissions claim",
+      "to": "/answers/plastic-recycler-avoided-emissions-claim"
+    },
+    {
+      "label": "Laptops in Category 2",
+      "to": "/answers/it-hardware-laptops-category-2-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "WBCSD, Guidance on Avoided Emissions (wbcsd.org)",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

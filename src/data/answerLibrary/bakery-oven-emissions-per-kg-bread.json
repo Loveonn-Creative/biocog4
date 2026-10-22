@@ -1,0 +1,54 @@
+{
+  "slug": "bakery-oven-emissions-per-kg-bread",
+  "q": "How do I work out my bakery's oven emissions per kilogram of bread?",
+  "title": "Bakery oven emissions per kg of bread",
+  "short": "Take a month of oven fuel, LPG, PNG, diesel or electricity, convert to CO2 with the right factor, and divide by kilograms baked. Add mixers and cold storage from the electricity bill. Flour usually outweighs baking, so add it if your buyer wants a full product figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bakeries and biscuit units",
+  "sections": [
+    {
+      "h": "The oven",
+      "ul": [
+        "LPG in kilograms or cylinders.",
+        "PNG in SCM from the gas bill.",
+        "Electric ovens on the main meter or a sub-meter."
+      ]
+    },
+    {
+      "h": "The product",
+      "p": [
+        "For a cradle-to-gate figure, add flour, sugar, fat and packaging by weight with supplier or published factors."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One month",
+    "lines": [
+      "LPG 300 kg x 2.98 = 894 kg CO2",
+      "Bread baked: 9,000 kg; oven share 0.099 kg CO2 per kg"
+    ]
+  },
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "Flour mill footprint",
+      "to": "/answers/flour-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "LPG cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

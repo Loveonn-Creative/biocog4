@@ -1,0 +1,47 @@
+{
+  "slug": "blurred-bill-photo-what-to-do",
+  "q": "The photo of my bill is blurred and the units are unreadable. What should I do?",
+  "title": "Blurred bill photo: what to do",
+  "short": "Do not guess the number. Download a fresh copy from your DISCOM or supplier portal, ask the supplier for a duplicate, or read the meter history. A guessed figure is the first thing a verifier challenges, and one wrong digit can move a month by thousands of kWh.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "MSMEs collecting bills by phone",
+  "sections": [
+    {
+      "h": "Where to get a clean copy",
+      "ul": [
+        "Most DISCOMs let you download past bills by consumer number.",
+        "Fuel and gas suppliers reissue invoices on request.",
+        "Your meter reading history or the bill's QR code."
+      ]
+    },
+    {
+      "h": "Taking a better photo",
+      "p": [
+        "Lay the bill flat in daylight, fill the frame and keep the units, dates and consumer number sharp."
+      ]
+    }
+  ],
+  "senseible": "Senseible flags fields it cannot read clearly instead of filling them in, so a gap stays visible until you supply a clean copy.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Estimated or faulty-meter bills",
+      "to": "/answers/average-electricity-bill-meter-faulty-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

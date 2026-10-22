@@ -1,0 +1,54 @@
+{
+  "slug": "selling-electricity-to-a-neighbour-scope-2",
+  "q": "We pass some of our grid electricity to a neighbouring unit. Is that still our Scope 2?",
+  "title": "Passing power to a neighbour: Scope 2",
+  "short": "No. Scope 2 covers electricity you consume. Units sub-metered and billed to a neighbour or tenant are theirs to report. Keep the sub-meter readings and the recharge invoices, and subtract only what is metered, never an estimate.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories sharing a connection with another unit",
+  "sections": [
+    {
+      "h": "What you need",
+      "ul": [
+        "A sub-meter on the neighbour's supply.",
+        "Monthly readings and the recharge bill you raise.",
+        "A note in your inventory showing the subtraction."
+      ]
+    },
+    {
+      "h": "If you generate the power",
+      "p": [
+        "Power from your own genset or captive plant is different: all fuel burned stays in your Scope 1, and you report the exported share separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "The subtraction",
+    "lines": [
+      "Main bill: 60,000 kWh; neighbour sub-meter: 8,000 kWh",
+      "Your Scope 2: 52,000 kWh x 0.710 kg = 36,920 kg CO2"
+    ]
+  },
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Landlord and tenant emissions",
+      "to": "/answers/landlord-reporting-tenant-emissions-industrial-sheds"
+    },
+    {
+      "label": "Captive power and scopes",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

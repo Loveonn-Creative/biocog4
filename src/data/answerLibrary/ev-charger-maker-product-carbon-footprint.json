@@ -1,0 +1,47 @@
+{
+  "slug": "ev-charger-maker-product-carbon-footprint",
+  "q": "How does an EV charger maker calculate the carbon footprint of one charger?",
+  "title": "EV charger product carbon footprint",
+  "short": "List the bill of materials by weight: steel or aluminium enclosure, copper cable, power electronics and circuit boards. Apply material factors, add assembly energy per unit and packaging. Electronics and copper usually dominate, so get supplier data for those first.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "EV charger manufacturers and charge point operators",
+  "sections": [
+    {
+      "h": "Cradle to gate",
+      "ul": [
+        "Enclosure metal, cables and connectors by weight.",
+        "Circuit boards and power modules, ideally supplier figures.",
+        "Assembly electricity and testing."
+      ]
+    },
+    {
+      "h": "Use phase",
+      "p": [
+        "The electricity a charger passes to vehicles is not part of its cradle-to-gate footprint; standby power can be shown separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your fuel, power and material invoices into a dated, sourced activity record, the starting point for a per-unit footprint.",
+  "links": [
+    {
+      "label": "What to send a buyer for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "EV charging station credits",
+      "to": "/answers/ev-charging-station-carbon-credits-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

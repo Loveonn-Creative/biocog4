@@ -1,0 +1,55 @@
+{
+  "slug": "imported-coal-invoice-priced-in-us-dollars",
+  "q": "My imported coal invoice is priced in US dollars. How do I count its emissions?",
+  "title": "Imported coal invoice in US dollars",
+  "short": "Ignore the currency. Emissions come from the tonnes delivered and the coal's heating value, not the price. Take the quantity from the bill of lading or weighbridge slip and the NCV or GCV from the supplier's test certificate, then apply the IPCC factor for that coal type.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian MSMEs and mills burning imported coal",
+  "sections": [
+    {
+      "h": "What to pull from the papers",
+      "ul": [
+        "Tonnes received: bill of lading, port weighment or your weighbridge slip.",
+        "Heating value: the supplier's certificate of analysis, per shipment.",
+        "Coal type: bituminous or sub-bituminous, as stated on the certificate."
+      ]
+    },
+    {
+      "h": "Why price is the wrong basis",
+      "p": [
+        "A dollar figure moves with freight rates and the exchange rate. Two identical cargoes can cost very different amounts and emit exactly the same CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One shipment",
+    "lines": [
+      "1,000 t at NCV 25.8 GJ per tonne = 25,800 GJ",
+      "25,800 GJ x 94.6 kg CO2 per GJ (IPCC default, other bituminous coal) = 2,441 t CO2"
+    ],
+    "note": "Use your own certificate values; these are the IPCC defaults."
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "GCV or NCV in fuel maths",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "Weighbridge vs invoice weight",
+      "to": "/answers/coal-weighbridge-weight-vs-invoice-quantity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

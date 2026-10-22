@@ -1,0 +1,55 @@
+{
+  "slug": "buying-power-from-a-neighbouring-factory",
+  "q": "We buy electricity from a neighbouring factory's generator. What factor do we use?",
+  "title": "Power bought from a neighbour's plant",
+  "short": "It is your Scope 2, but the grid factor may be wrong. Ask the neighbour for the fuel burned and units generated, and work out a supplier-specific factor. If they cannot share it, use the grid factor and note it as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs in clusters sharing captive power",
+  "sections": [
+    {
+      "h": "What to ask for",
+      "ul": [
+        "Fuel burned in the period, in litres or tonnes.",
+        "Units generated and units sold to you.",
+        "Their meter readings for your supply."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Diesel power usually emits more per kWh than the grid average, so the grid factor can understate your footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Supplier-specific factor",
+    "lines": [
+      "Neighbour burned 30,000 L diesel for 105,000 kWh",
+      "30,000 x 2.68 / 105,000 = 0.766 kg CO2 per kWh",
+      "Your 12,000 kWh x 0.766 = 9,192 kg CO2"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Diesel generator scope",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Rented generator scope",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "flue-cured-tobacco-barn-fuel-emissions",
+  "q": "How do I calculate emissions from curing tobacco in flue-cured barns?",
+  "title": "Flue-cured tobacco barn emissions",
+  "short": "Weigh the coal or firewood burned per barn season and divide by kilograms of cured leaf. Coal CO2 is fossil and counts fully; firewood CO2 is biogenic and reported separately. Fuel per kilogram varies widely with barn insulation and furnace design.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tobacco growers, leaf companies and their buyers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Coal tonnes or firewood kilograms per barn.",
+        "Green leaf loaded and cured leaf out.",
+        "Number of curings in the season."
+      ]
+    },
+    {
+      "h": "Reducing it",
+      "p": [
+        "Insulated barns and better furnaces cut fuel per kilogram, and the per-kg figure shows the gain."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One barn season",
+    "lines": [
+      "Coal 6 t, cured leaf 3,000 kg",
+      "Coal CO2 from tonnes x NCV x the IPCC factor, then divided by 3,000 kg"
+    ]
+  },
+  "senseible": "Senseible reads quantities, dates and units from your bills and invoices and shows the factor and source used on every line.",
+  "links": [
+    {
+      "label": "Indian coal by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Biomass fuel in boilers",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
