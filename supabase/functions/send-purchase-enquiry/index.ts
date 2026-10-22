@@ -75,7 +75,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Validate required fields
     if (!listing?.id || !rawBody.buyer?.email || !requestedQuantity) {
-      throw new Error("Missing required fields: listing, buyer email, or quantity");
+      return new Response(JSON.stringify({ error: "Add the listing, your email and a quantity, then send again." }), { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
 
     const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
