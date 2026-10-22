@@ -3,7 +3,7 @@ import { Loader2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { LAUNCH_PRICES } from '../../../supabase/functions/_shared/planPricing';
+import { LAUNCH_PRICES, listPrice } from '../../../supabase/functions/_shared/planPricing';
 import {
   GST_RATE, PLATFORM_FEE_RATE, checkoutTotal, upiSavingPaise, type PaymentMethod,
 } from '../../../supabase/functions/_shared/checkoutTotals';
@@ -36,7 +36,7 @@ export function CheckoutSummary({ open, plan, cycle, busy, onOpenChange, onPay }
   const [method, setMethod] = useState<PaymentMethod>('upi');
   const payRef = useRef<HTMLButtonElement>(null);
   const list = LAUNCH_PRICES[plan === 'essential' ? 'basic' : 'pro'];
-  const basePaise = list[cycle];
+  const basePaise = listPrice(plan === 'essential' ? 'basic' : 'pro', cycle);
   const t = checkoutTotal(basePaise, method);
   const saving = upiSavingPaise(basePaise);
   const planLabel = `${list.name.replace('Biocog ', '')} ${cycle === 'yearly' ? 'Yearly' : 'Monthly'}`;

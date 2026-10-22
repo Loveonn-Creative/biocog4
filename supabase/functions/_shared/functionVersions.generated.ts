@@ -10,7 +10,7 @@ export const FUNCTION_VERSIONS: Record<string, string> = {
   "document-source-url": "d9ab1b678049b6c6",
   "finance-application": "35e46299547d4fb6",
   "esg-report-access": "fe25b99cc35e970a",
-  "create-razorpay-order": "db5d7f3d6b8f450b",
+  "create-razorpay-order": "124fc357de2ea7b1",
   "verify-razorpay-payment": "1422ed66d53ed646",
   "razorpay-webhook": "90a7c2f2a76eae9b"
 };

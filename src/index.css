@@ -485,11 +485,13 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .pr-receipt-line { animation: pr-feed .3s ease-out both; }
 @keyframes pr-pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes pr-drop { 0% { transform: translateY(-4px) scale(.98); } 60% { transform: translateY(2px); } 100% { transform: none; } }
+@keyframes pr-pulse { 0%, 100% { box-shadow: 0 0 0 0 hsl(var(--warning) / .6); } 60% { box-shadow: 0 0 0 6px hsl(var(--warning) / 0); } }
+.pr-launch-dot { animation: pr-pulse 1.8s ease-out infinite; }
 @keyframes pr-feed { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .pr-sheet, .pr-ring path { transition: none; }
   .pr-strike path, .pr-save path { animation: none; stroke-dashoffset: 0; }
-  .pr-fit, .pr-tick, .pr-token[data-on="true"], .pr-receipt-line { animation: none; }
+  .pr-fit, .pr-tick, .pr-token[data-on="true"], .pr-receipt-line, .pr-launch-dot { animation: none; }
 }
 
 

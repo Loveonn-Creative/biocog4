@@ -2,14 +2,33 @@
 // always shown; checkout amounts are set on the server (create-razorpay-order),
 // so nothing here can change what anyone is charged.
 import { PLAN_INVOICE_SCANS_PER_MONTH, type PlanTier } from '../../../supabase/functions/_shared/planLimits';
+import { REGULAR_MULTIPLIER, REGULAR_PRICING_STARTS_AT, regularPricingInForce } from '../../../supabase/functions/_shared/planPricing';
 
 export type BillingCycle = 'yearly' | 'monthly';
 
-/** Per-month price: yearly = monthly equivalent billed annually; monthly = billed monthly. */
-export const TIER_PRICES = {
+/** Launch per-month prices: yearly = monthly equivalent billed annually; monthly = billed monthly. */
+export const LAUNCH_TIER_PRICES = {
   essential: { yearly: 499, monthly: 1999 },
   pro: { yearly: 4999, monthly: 9999 },
 } as const;
+
+/** Per-month prices a buyer sees at `now`: launch, or regular (launch x multiplier, to the paisa) once in force. */
+export function tierPricesAt(now = new Date()): Record<'essential' | 'pro', { yearly: number; monthly: number }> {
+  const k = regularPricingInForce(now) ? REGULAR_MULTIPLIER : 1;
+  const at = (n: number) => Math.round(n * k * 100) / 100;
+  return {
+    essential: { yearly: at(LAUNCH_TIER_PRICES.essential.yearly), monthly: at(LAUNCH_TIER_PRICES.essential.monthly) },
+    pro: { yearly: at(LAUNCH_TIER_PRICES.pro.yearly), monthly: at(LAUNCH_TIER_PRICES.pro.monthly) },
+  };
+}
+
+/** Prices as of page load: the page never quotes less than checkout charges. */
+export const TIER_PRICES = tierPricesAt();
+
+/** Last day of launch pricing as shown on the page (the day before regular pricing starts, IST). */
+export const LAUNCH_ENDS_LABEL = REGULAR_PRICING_STARTS_AT
+  ? new Date(Date.parse(REGULAR_PRICING_STARTS_AT) - 1).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', timeZone: 'Asia/Kolkata' })
+  : null;
 
 export type PaidTier = keyof typeof TIER_PRICES;
 
@@ -19,9 +38,9 @@ export interface YearlySaving { perYear: number; percent: number; billedYearly: 
 export function yearlySaving(tier: PaidTier): YearlySaving {
   const { yearly, monthly } = TIER_PRICES[tier];
   return {
-    perYear: (monthly - yearly) * 12,
+    perYear: Math.round((monthly - yearly) * 12),
     percent: Math.round((1 - yearly / monthly) * 100),
-    billedYearly: yearly * 12,
+    billedYearly: Math.round(yearly * 12),
   };
 }
 

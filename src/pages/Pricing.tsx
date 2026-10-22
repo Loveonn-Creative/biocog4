@@ -24,7 +24,8 @@ import { useOrganization } from '@/hooks/useOrganization';
 import { toast } from 'sonner';
 import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner';
 import { PlanMeter } from '@/components/pricing/PlanMeter';
-import { MAX_SAVING_PERCENT, TIER_PRICES, yearlySaving } from '@/lib/pricing/pricingMath';
+import { LAUNCH_ENDS_LABEL, MAX_SAVING_PERCENT, TIER_PRICES, yearlySaving } from '@/lib/pricing/pricingMath';
+import { regularPricingInForce } from '../../supabase/functions/_shared/planPricing';
 import type { PlanTier } from '../../supabase/functions/_shared/planLimits';
 import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTotals';
 import type { CheckoutPlan } from '@/components/pricing/CheckoutSummary';
@@ -285,7 +286,7 @@ const Pricing = () => {
       originalPrice: billingCycle === 'yearly' ? TIER_PRICES.essential.monthly : undefined,
       period: '/month',
       subtext: billingCycle === 'yearly'
-        ? `Billed ₹${(TIER_PRICES.essential.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.essential.monthly - TIER_PRICES.essential.yearly) * 12).toLocaleString('en-IN')}.`
+        ? `Billed ₹${yearlySaving('essential').billedYearly.toLocaleString('en-IN')}/yr. Save ₹${yearlySaving('essential').perYear.toLocaleString('en-IN')}.`
         : `Switch to yearly to save ${yearlySaving('essential').percent}%.`,
       cta: 'Unlock Savings',
       ctaVariant: 'default',
@@ -309,7 +310,7 @@ const Pricing = () => {
       originalPrice: billingCycle === 'yearly' ? TIER_PRICES.pro.monthly : undefined,
       period: '/month',
       subtext: billingCycle === 'yearly'
-        ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
+        ? `Billed ₹${yearlySaving('pro').billedYearly.toLocaleString('en-IN')}/yr. Save ₹${yearlySaving('pro').perYear.toLocaleString('en-IN')}.`
         : `Switch to yearly to save ${yearlySaving('pro').percent}%.`,
       cta: 'Get finance-ready',
       ctaVariant: 'default',
@@ -424,7 +425,7 @@ const Pricing = () => {
   const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
     style: 'currency', 
     currency: 'INR', 
-    maximumFractionDigits: 0 
+    maximumFractionDigits: 2 
   }).format(n);
 
   return (
@@ -566,6 +567,12 @@ const Pricing = () => {
           <section id="plans" className="container mx-auto px-4 pb-16 scroll-mt-20">
             {/* Yearly / Monthly toggle */}
             <div className="flex flex-col items-center mb-8">
+              {LAUNCH_ENDS_LABEL && !regularPricingInForce() && (
+                <p className="pr-launch mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-warning/40 bg-warning/10 px-3.5 py-1.5 text-xs font-medium sm:text-sm">
+                  <span className="pr-launch-dot h-2 w-2 shrink-0 rounded-full bg-warning" aria-hidden="true" />
+                  <span>Launch prices end <strong>{LAUNCH_ENDS_LABEL}</strong>. Lock today's price for every on-time renewal.</span>
+                </p>
+              )}
               <div className="inline-flex items-center rounded-full border bg-background p-1 shadow-sm">
                 <button
                   type="button"
@@ -691,7 +698,7 @@ const Pricing = () => {
                         <p className="text-xs font-medium mb-2">
                           Switch to yearly and save{' '}
                           <span className="text-success font-bold">
-                            ₹{(((TIER_PRICES as any)[tier.id]?.monthly - (TIER_PRICES as any)[tier.id]?.yearly) * 12).toLocaleString('en-IN')}
+                            ₹{yearlySaving(tier.id as 'essential' | 'pro').perYear.toLocaleString('en-IN')}
                           </span>
                           ?
                         </p>
