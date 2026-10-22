@@ -1,0 +1,47 @@
+{
+  "slug": "bidi-making-carbon-footprint-per-thousand",
+  "q": "What is the carbon footprint of making bidis?",
+  "title": "Bidi making carbon footprint",
+  "short": "Hand rolling uses no energy. The footprint is in the tobacco and tendu leaves, roasting the rolled bidis, often over coal, wood or LPG, and packaging. Count roasting fuel at IPCC defaults and divide by thousands of bidis.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Bidi manufacturers and contractors",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 1: roasting fuel at the factory.",
+        "Scope 3: tobacco, tendu leaves, thread, labels and packets.",
+        "Home rollers: their work is unpowered; transport to and from them is Scope 3."
+      ]
+    },
+    {
+      "h": "Wood fuel",
+      "p": [
+        "Wood gives biogenic CO2, reported separately, but its methane and nitrous oxide count."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Tobacco barn fuel",
+      "to": "/answers/flue-cured-tobacco-barn-fuel-emissions"
+    },
+    {
+      "label": "Wood boiler biogenic CO2",
+      "to": "/answers/furniture-factory-wood-waste-boiler-biogenic-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

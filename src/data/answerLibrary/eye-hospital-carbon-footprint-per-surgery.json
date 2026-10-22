@@ -1,0 +1,47 @@
+{
+  "slug": "eye-hospital-carbon-footprint-per-surgery",
+  "q": "How do I calculate an eye hospital's carbon footprint per surgery?",
+  "title": "Eye hospital CO2 per surgery",
+  "short": "Add theatre and clinic electricity at 0.710 kg CO2 per kWh, generator diesel and sterilisation, then divide by surgeries. Single use kits, lenses and drugs are Scope 3 and can match or exceed the energy. Report outpatient visits separately from surgeries.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Eye hospitals and cataract surgery centres",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Theatre and sterilisation electricity.",
+        "Diesel for backup power.",
+        "Purchases of surgical kits, intraocular lenses and drapes."
+      ]
+    },
+    {
+      "h": "Reusable versus single use",
+      "p": [
+        "Compare per surgery: reusable instruments add sterilisation energy, single use kits add purchased goods and waste."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hospital footprint per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    },
+    {
+      "label": "Biomedical waste Scope 3",
+      "to": "/answers/biomedical-waste-emissions-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

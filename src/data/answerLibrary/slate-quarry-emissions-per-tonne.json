@@ -1,0 +1,47 @@
+{
+  "slug": "slate-quarry-emissions-per-tonne",
+  "q": "How do I calculate the emissions of a slate quarry per tonne?",
+  "title": "Slate quarry CO2 per tonne",
+  "short": "Add diesel for excavators, loaders and trucks, electricity for cutting saws, and any explosives, then divide by tonnes of finished slate. Much quarried rock is waste, so dividing by finished slate rather than rock moved gives a higher, honest figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Slate quarries and stone processors",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 1: diesel at 2.68 kg CO2 per litre; explosives.",
+        "Scope 2: cutting and polishing electricity.",
+        "Scope 3: blades, packaging, outbound freight."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "State the recovery rate. A quarry that sells 20 percent of what it moves carries five tonnes of handling per tonne sold."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Quarry blasting explosives",
+      "to": "/answers/quarry-blasting-explosives-scope-1"
+    },
+    {
+      "label": "Dumper diesel per tonne",
+      "to": "/answers/mining-dumper-diesel-per-tonne-moved"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "elastane-spandex-yarn-carbon-footprint",
+  "q": "What is the carbon footprint of elastane (spandex) yarn?",
+  "title": "Elastane yarn carbon footprint",
+  "short": "Elastane is a polyurethane fibre spun from petrochemical raw materials, so purchased chemicals are most of its footprint. Your own share is spinning, solvent recovery and heat setting energy. A garment with 5 percent elastane carries that share of the fibre's footprint.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Elastane producers, covering mills and stretch fabric makers",
+  "sections": [
+    {
+      "h": "Where it sits",
+      "ul": [
+        "Scope 3: polyols, diisocyanates and solvent purchased.",
+        "Scope 1 and 2: spinning, drying and solvent recovery energy.",
+        "Solvent losses: count any that are greenhouse gases; most are not."
+      ]
+    },
+    {
+      "h": "Blends",
+      "p": [
+        "Weight the fibre figures by blend: 95 percent cotton and 5 percent elastane means 0.05 kg of elastane per kg of fabric."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Polyester texturising per kg",
+      "to": "/answers/polyester-texturising-electricity-per-kg-yarn"
+    },
+    {
+      "label": "Cotton vs polyester fabric",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "museum-carbon-footprint-per-visitor",
+  "q": "How do I calculate a museum's carbon footprint per visitor?",
+  "title": "Museum CO2 per visitor",
+  "short": "Climate control for collections usually dominates: AC and dehumidifiers running all year at 0.710 kg CO2 per kWh. Add lighting, generator diesel and refrigerant top ups, then divide by visitors. Visitor travel to the museum is Scope 3 and often larger.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Museums, galleries and heritage sites",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity by gallery or HVAC system where metered.",
+        "Visitor counts by month.",
+        "Diesel and refrigerant service records."
+      ]
+    },
+    {
+      "h": "Collections",
+      "p": [
+        "Tighter humidity bands use more energy. Agree the band with conservators before setting a reduction target."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cinema multiplex per screen",
+      "to": "/answers/cinema-multiplex-carbon-footprint-per-screen"
+    },
+    {
+      "label": "Stadium match day footprint",
+      "to": "/answers/stadium-match-day-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

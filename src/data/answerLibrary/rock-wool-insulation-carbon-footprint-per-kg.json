@@ -1,0 +1,52 @@
+{
+  "slug": "rock-wool-insulation-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of rock wool insulation per kg?",
+  "title": "Rock wool insulation CO2 per kg",
+  "short": "Rock wool is made by melting basalt and slag, often in a coke fired cupola, then spinning fibres and curing a binder. Coke combustion is the main CO2; carbonate fluxes add process CO2. Divide by kg of finished product.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Insulation makers, builders and HVAC contractors",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 1: coke or gas in the melter, curing oven fuel.",
+        "Process CO2 from any limestone or dolomite in the charge.",
+        "Scope 2: spinning and fan electricity.",
+        "Scope 3: binder, packaging, slag bought in."
+      ]
+    },
+    {
+      "h": "Electric melters",
+      "p": [
+        "An electric melter moves most of the CO2 into Scope 2 and cuts it if the power is renewable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Glass wool per kg",
+      "to": "/answers/glass-wool-insulation-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

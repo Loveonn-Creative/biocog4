@@ -1,0 +1,47 @@
+{
+  "slug": "aluminium-dross-recovery-emissions",
+  "q": "What are the emissions of recovering aluminium from dross?",
+  "title": "Aluminium dross recovery emissions",
+  "short": "Dross processors melt dross in rotary furnaces with salt flux, burning gas or furnace oil. Count fuel at IPCC defaults and electricity, then divide by tonnes of aluminium recovered. Salt cake left over goes to disposal in Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dross processors and secondary aluminium units",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Furnace fuel per batch.",
+        "Tonnes of dross charged and aluminium recovered.",
+        "Salt flux bought and salt cake sent for disposal."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Aluminium ingots made from dross are CBAM goods. Your fuel records are the installation data an EU importer needs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Aluminium scrap melting fuel",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    },
+    {
+      "label": "Secondary aluminium and CBAM",
+      "to": "/answers/dubai-secondary-aluminium-scrap-remelt-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

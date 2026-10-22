@@ -1,0 +1,52 @@
+{
+  "slug": "mdf-board-carbon-footprint-per-cubic-metre",
+  "q": "How do I calculate the carbon footprint of MDF board per cubic metre?",
+  "title": "MDF board CO2 per cubic metre",
+  "short": "Count fossil fuel and electricity for chipping, refining fibre, drying and pressing, plus the resin, usually urea formaldehyde, in Scope 3. Wood residue burned for heat gives biogenic CO2, reported separately, but its methane and nitrous oxide count.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "MDF and particle board manufacturers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Electricity for refiners and presses.",
+        "Boiler and dryer fuel by type.",
+        "Resin and wax purchases.",
+        "Cubic metres of board at stated thickness."
+      ]
+    },
+    {
+      "h": "Carbon stored",
+      "p": [
+        "Biogenic carbon in the board is reported separately, never subtracted from fossil emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Plywood per cubic metre",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    },
+    {
+      "label": "Biogenic carbon in timber",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

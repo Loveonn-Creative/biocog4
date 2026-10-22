@@ -1,0 +1,54 @@
+{
+  "slug": "kerala-houseboat-emissions-per-guest-night",
+  "q": "What are the emissions of a Kerala houseboat per guest night?",
+  "title": "Houseboat CO2 per guest night",
+  "short": "Most comes from diesel: the engine while cruising and the generator that runs air conditioning at night. Add LPG for cooking. Multiply litres of diesel by 2.68 and kg of LPG by 2.98, then divide by guest nights.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Houseboat owners, tour operators and travel buyers",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 1: engine and generator diesel, LPG for the galley, refrigerant top ups for AC.",
+        "Scope 3: guest transfers, laundry sent out, waste taken ashore."
+      ]
+    },
+    {
+      "h": "Lowering it",
+      "p": [
+        "Shore power at the mooring, where available, lets the generator stay off overnight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Generator and engine diesel: 20 litres a night × 2.68 = 53.6 kg CO2.",
+      "LPG: 2 kg × 2.98 = 5.96 kg CO2.",
+      "Total 59.56 kg for 2 guests: about 29.8 kg CO2 per guest night."
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "DG set CO2 per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Passenger ferry per trip",
+      "to": "/answers/passenger-ferry-emissions-per-trip"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

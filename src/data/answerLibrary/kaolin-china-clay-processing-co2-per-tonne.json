@@ -1,0 +1,47 @@
+{
+  "slug": "kaolin-china-clay-processing-co2-per-tonne",
+  "q": "How much CO2 does kaolin (china clay) processing emit per tonne?",
+  "title": "Kaolin processing CO2 per tonne",
+  "short": "Washed kaolin goes through slurrying, settling, filter pressing and drying. Drying fuel usually dominates, followed by pumping electricity. Calcined kaolin adds a kiln step that burns far more fuel per tonne, so report the two grades separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "China clay processors supplying ceramics, paper and paint",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Dryer and kiln fuel by grade.",
+        "Electricity for blungers, pumps and filter presses.",
+        "Tonnes dispatched by grade, dry basis."
+      ]
+    },
+    {
+      "h": "Calcining",
+      "p": [
+        "Calcining drives off water bound in the clay; it is fuel heavy but not a carbonate, so there is no process CO2 like limestone."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Ceramic spray dryer CO2",
+      "to": "/answers/ceramic-spray-dryer-co2-per-tonne-powder"
+    },
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

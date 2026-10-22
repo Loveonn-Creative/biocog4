@@ -1,0 +1,51 @@
+{
+  "slug": "foreign-subsidiary-grid-factor-group-report",
+  "q": "Which grid factor should an Indian group use for its overseas subsidiaries?",
+  "title": "Grid factor for overseas subsidiaries",
+  "short": "Use the grid factor of the country where each site uses the power, not India's 0.710. Calculate each site's Scope 2 with its own national or regional factor, then add them up in the group report and list the factor and source per site.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian groups with factories or offices abroad",
+  "sections": [
+    {
+      "h": "Sources of factors",
+      "ul": [
+        "UK sites: the UK Government conversion factors for that year.",
+        "Other countries: the national published factor, or IEA data where none is published.",
+        "India: CEA CO2 Baseline Database, 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Market based",
+      "p": [
+        "Contracts and certificates count only in the market where the site is supplied."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "SECR for a UK subsidiary",
+      "to": "/answers/does-secr-apply-to-uk-subsidiary-of-indian-company"
+    },
+    {
+      "label": "South African grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "UK Government conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "metro-rail-co2-per-passenger-km",
+  "q": "How do I calculate a metro rail line's CO2 per passenger km?",
+  "title": "Metro rail CO2 per passenger km",
+  "short": "Take the traction electricity for the period, multiply by 0.710 kg CO2 per kWh, and divide by passenger km from ridership and average trip length. Report station power separately. Regenerative braking lowers net traction kWh only if the meter records the returned energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Metro rail operators and city transport planners",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Traction substation meter readings, net of energy fed back by braking.",
+        "Ridership and average trip length, giving passenger km.",
+        "Station, depot and office electricity as separate lines."
+      ]
+    },
+    {
+      "h": "Reading the result",
+      "p": [
+        "Crowding changes the figure more than the trains do. Quote the period and average load with every per passenger km number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Traction electricity: 30,000 kWh in a day.",
+      "30,000 × 0.710 = 21,300 kg CO2.",
+      "Passenger km that day: 600,000.",
+      "21,300 ÷ 600,000 = 0.0355 kg, about 36 g CO2 per passenger km."
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Lift and escalator power",
+      "to": "/answers/lift-and-escalator-electricity-emissions"
+    },
+    {
+      "label": "Electric bus depot charging",
+      "to": "/answers/electric-bus-depot-charging-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

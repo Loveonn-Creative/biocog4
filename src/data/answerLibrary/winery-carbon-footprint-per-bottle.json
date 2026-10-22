@@ -1,0 +1,47 @@
+{
+  "slug": "winery-carbon-footprint-per-bottle",
+  "q": "What is the carbon footprint of a bottle of wine from an Indian winery?",
+  "title": "Winery CO2 per bottle",
+  "short": "The glass bottle is often the largest part. Add winery electricity for crushing, cooling fermentation tanks and cold storage at 0.710 kg CO2 per kWh, grape growing inputs and freight. CO2 from fermentation is biogenic and reported separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Wineries and their distributors",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 2: tank cooling, chillers, bottling line.",
+        "Scope 3: grapes, bottles, corks or caps, cartons, freight.",
+        "Biogenic: fermentation CO2, reported separately."
+      ]
+    },
+    {
+      "h": "Per bottle",
+      "p": [
+        "Divide winery totals by bottles filled and add the bottle's own footprint from the glass supplier."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Glass bottle footprint",
+      "to": "/answers/glass-bottle-carbon-footprint-per-bottle"
+    },
+    {
+      "label": "Grape pre cooling per tonne",
+      "to": "/answers/nashik-grape-pre-cooling-electricity-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

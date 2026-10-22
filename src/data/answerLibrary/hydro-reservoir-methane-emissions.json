@@ -1,0 +1,51 @@
+{
+  "slug": "hydro-reservoir-methane-emissions",
+  "q": "Do hydropower reservoirs emit greenhouse gases?",
+  "title": "Hydro reservoir methane",
+  "short": "They can: flooded vegetation and soils decompose and release methane, especially in warm, shallow reservoirs. Grid emission factors count only combustion, so reservoir methane is not in the 0.710 figure. Hydro operators can estimate it using IPCC guidance on flooded land.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Hydropower operators and buyers of hydro power",
+  "sections": [
+    {
+      "h": "For operators",
+      "ul": [
+        "Methane from reservoirs is reported separately with the method named.",
+        "It varies widely by climate, depth and how much biomass was flooded.",
+        "Non fossil methane has a 100 year warming potential of 27.0 in IPCC AR6."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Your Scope 2 uses the grid or contract factor. Reservoir emissions belong to the generator's inventory, not yours."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Large hydro and Scope 2",
+      "to": "/answers/large-hydro-renewable-scope-2-india"
+    },
+    {
+      "label": "Pumped storage and Scope 2",
+      "to": "/answers/pumped-storage-hydro-electricity-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

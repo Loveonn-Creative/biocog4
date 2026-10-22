@@ -1,0 +1,47 @@
+{
+  "slug": "inland-waterway-barge-co2-per-tonne-km",
+  "q": "What is the CO2 per tonne km of moving cargo by inland waterway barge?",
+  "title": "Inland barge CO2 per tonne km",
+  "short": "Divide the barge's diesel for the trip by tonnes carried times km sailed, then multiply litres by 2.68 kg CO2. Count the empty return leg against the loaded trip. Loading cranes and trucks to and from the jetty are separate legs.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Shippers, barge operators and logistics teams using inland waterways",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Fuel log per voyage, in litres.",
+        "Cargo tonnes from the bill of lading.",
+        "Route distance, including the return leg if the barge comes back empty."
+      ]
+    },
+    {
+      "h": "Comparing with road",
+      "p": [
+        "Compare door to door: add the truck legs to and from both jetties before setting the barge against a direct truck."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Ro-Ro truck on train",
+      "to": "/answers/konkan-railway-ro-ro-truck-emissions"
+    },
+    {
+      "label": "Empty return trips",
+      "to": "/answers/chemical-tanker-empty-return-trip-count"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

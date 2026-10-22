@@ -1,0 +1,47 @@
+{
+  "slug": "zoo-carbon-footprint-per-year",
+  "q": "What makes up a zoo's carbon footprint?",
+  "title": "Zoo carbon footprint",
+  "short": "Electricity for enclosures, aquariums, reptile houses and offices, diesel for vehicles and generators, and animal feed bought in are the main parts. Manure handling can add methane if it is stored wet. Visitor travel is Scope 3.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Zoos, safari parks and aquariums",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 2: enclosure climate control, pumps, lighting.",
+        "Scope 1: vehicle and generator diesel, refrigerant, methane from wet manure storage.",
+        "Scope 3: feed, veterinary supplies, visitor travel."
+      ]
+    },
+    {
+      "h": "Manure",
+      "p": [
+        "Composting manure aerobically produces far less methane than leaving it in wet heaps."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Golf course per year",
+      "to": "/answers/golf-course-carbon-footprint-per-year"
+    },
+    {
+      "label": "Stadium match day footprint",
+      "to": "/answers/stadium-match-day-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

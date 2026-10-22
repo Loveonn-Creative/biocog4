@@ -1,0 +1,51 @@
+{
+  "slug": "acetic-acid-production-co2-per-tonne",
+  "q": "What are the emissions of producing acetic acid per tonne?",
+  "title": "Acetic acid CO2 per tonne",
+  "short": "Most acetic acid is made by reacting methanol with carbon monoxide. Your Scope 1 and 2 are steam, fuel and electricity for reaction and purification; the methanol and CO bought in, or the syngas you make for them, carry most of the footprint.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Acetic acid producers and buyers in pharma, PTA and textiles",
+  "sections": [
+    {
+      "h": "Where it sits",
+      "ul": [
+        "Scope 1: boiler fuel; any CO made on site from gas or coal.",
+        "Scope 2: electricity for compressors and pumps.",
+        "Scope 3: methanol and CO purchased."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Acetic acid is not a CBAM good. Methanol is not either; hydrogen is, so a plant making its own hydrogen should check."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Methanol plant emissions",
+      "to": "/answers/methanol-production-emissions-per-tonne"
+    },
+    {
+      "label": "Petcoke gasification syngas",
+      "to": "/answers/petcoke-gasification-syngas-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

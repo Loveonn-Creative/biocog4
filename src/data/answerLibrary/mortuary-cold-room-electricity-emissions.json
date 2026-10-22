@@ -1,0 +1,47 @@
+{
+  "slug": "mortuary-cold-room-electricity-emissions",
+  "q": "What are the emissions of running a mortuary cold room?",
+  "title": "Mortuary cold room emissions",
+  "short": "Refrigeration electricity runs around the clock: compressor kWh times 0.710 kg CO2 per kWh. Refrigerant leaks topped up during servicing are Scope 1, multiplied by the gas's warming potential, and they can rival the electricity.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Hospitals, municipal mortuaries and funeral services",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Sub meter for the cold chamber, or compressor rating times hours.",
+        "Service records with refrigerant kg added.",
+        "Backup generator diesel."
+      ]
+    },
+    {
+      "h": "Cutting it",
+      "p": [
+        "Door seals, insulation and leak checks lower both lines at once."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cold store HFC top up",
+      "to": "/answers/agra-cold-store-hfc-top-up-emissions"
+    },
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

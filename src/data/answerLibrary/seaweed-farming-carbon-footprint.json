@@ -1,0 +1,47 @@
+{
+  "slug": "seaweed-farming-carbon-footprint",
+  "q": "What is the carbon footprint of seaweed farming?",
+  "title": "Seaweed farming carbon footprint",
+  "short": "Farm emissions are small: boat fuel to tend rafts or lines, ropes and floats, and drying, which is often in the sun. Count boat diesel or petrol and materials, then divide by tonnes of dry seaweed. Claims that the farm removes carbon need evidence of long term storage.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Seaweed farmers, cooperatives and processors",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 1: boat fuel.",
+        "Scope 3: ropes, rafts, nets and packaging.",
+        "Processing: drying fuel or electricity if not sun dried."
+      ]
+    },
+    {
+      "h": "Removal claims",
+      "p": [
+        "Carbon in harvested seaweed returns to the air when it is eaten or decays. Do not subtract it from your emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Fishing net per kg",
+      "to": "/answers/fishing-net-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Can offsets be subtracted",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

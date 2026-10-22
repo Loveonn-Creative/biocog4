@@ -1,0 +1,55 @@
+{
+  "slug": "water-utility-co2-per-kl-supplied",
+  "q": "How does a water utility calculate CO2 per kL supplied?",
+  "title": "Water utility CO2 per kL supplied",
+  "short": "Add pumping and treatment electricity, multiply by 0.710 kg CO2 per kWh, then divide by kL supplied. State whether you divide by water pumped or water billed: leaks and other non revenue water raise the figure per billed kL.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Municipal water utilities and industrial estates supplying water",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Pump station and treatment plant meters.",
+        "Water pumped into the network.",
+        "Water billed to consumers."
+      ]
+    },
+    {
+      "h": "Why both",
+      "p": [
+        "Fixing leaks lowers emissions per billed kL even when the pumps run the same hours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Pumping and treatment: 400,000 kWh × 0.710 = 284,000 kg CO2.",
+      "Water pumped: 1,000,000 kL, so 0.284 kg per kL pumped.",
+      "Water billed: 700,000 kL, so 0.406 kg per kL billed."
+    ]
+  },
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Borewell pumping per kL",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "Sewage treatment per kL",
+      "to": "/answers/sewage-treatment-plant-electricity-per-kl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

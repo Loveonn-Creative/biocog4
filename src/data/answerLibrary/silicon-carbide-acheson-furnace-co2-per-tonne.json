@@ -1,0 +1,64 @@
+{
+  "slug": "silicon-carbide-acheson-furnace-co2-per-tonne",
+  "q": "How much CO2 does silicon carbide production emit per tonne?",
+  "title": "Silicon carbide CO2 per tonne",
+  "short": "Two parts: process CO2 from the petroleum coke that reduces the silica, for which IPCC 2006 gives a default of about 2.62 t CO2 per tonne of silicon carbide, and the large electricity use of the Acheson furnace at 0.710 kg CO2 per kWh.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Silicon carbide and abrasive grain producers",
+  "sections": [
+    {
+      "h": "Process CO2",
+      "ul": [
+        "Silica sand and petroleum coke react in the furnace; the carbon leaves as CO that burns to CO2.",
+        "Measure coke input and its carbon content for a plant figure; use the IPCC default only if you have nothing better."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Each furnace run draws power for hours. Use the furnace meter per batch and divide by tonnes of crude silicon carbide recovered."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Silicon carbide is not a CBAM good. EU buyers may still ask for a figure for their own Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Output: 1,000 tonnes of silicon carbide in a year.",
+      "Process CO2 at the IPCC default: 1,000 × 2.62 = 2,620 t CO2.",
+      "Furnace electricity is added on top from the meter."
+    ]
+  },
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Petcoke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    },
+    {
+      "label": "Silicon metal and CBAM",
+      "to": "/answers/is-silicon-metal-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

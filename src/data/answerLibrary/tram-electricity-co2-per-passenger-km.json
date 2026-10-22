@@ -1,0 +1,47 @@
+{
+  "slug": "tram-electricity-co2-per-passenger-km",
+  "q": "How do I calculate a tram's CO2 per passenger km?",
+  "title": "Tram CO2 per passenger km",
+  "short": "Take traction electricity from the substations feeding the overhead line, multiply by 0.710 kg CO2 per kWh, and divide by passenger km. Depot and workshop power are separate lines. Low ridership on a route raises the per passenger figure sharply.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tram operators and urban transport researchers",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Traction substation meters for the network.",
+        "Ticket data and average trip length.",
+        "Depot, workshop and office meters."
+      ]
+    },
+    {
+      "h": "Comparing modes",
+      "p": [
+        "Use the same occupancy basis when you compare a tram with buses on the same corridor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Electric bus depot charging",
+      "to": "/answers/electric-bus-depot-charging-emissions"
+    },
+    {
+      "label": "Lift and escalator power",
+      "to": "/answers/lift-and-escalator-electricity-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
