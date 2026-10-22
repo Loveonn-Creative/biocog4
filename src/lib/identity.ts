@@ -15,6 +15,9 @@ export const PERSONAL_STORAGE_KEYS = [
   'senseible_profile_triggers',
   'senseible_trust_layer_prefs',
   'senseible_ambassador_draft',
+  'senseible_story_draft_v1',
+  'senseible_company_profile',
+  'senseible_pending_signup_email',
 ] as const;
 
 export const IDENTITY_CHANGED_EVENT = 'senseible:identity-changed';
