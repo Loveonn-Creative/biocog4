@@ -50,13 +50,10 @@
   .lp-stamp { transform:rotate(6deg); }
 }
 
-/* Launch-price urgency: pill, clock, struck price, sticky bar. Final week turns red. */
+/* Offer: batch clock, struck price, sticky bar. The last two days before a batch turn red. */
 .lp-page { --lp-urgent:#ff5a3c; }
 .lp-msme-b { --lp-urgent:#c0321a; }
-.lp-offer-pill { background:color-mix(in srgb, var(--lp-cta) 16%, transparent); border:1px solid color-mix(in srgb, var(--lp-cta) 45%, transparent); }
-.lp-offer-dot { background:var(--lp-cta); animation:lp-pulse 1.8s ease-out infinite; }
-.lp-offer-pill.is-final .lp-offer-dot, .lp-clock.is-final .lp-meter i { background:var(--lp-urgent); }
-@keyframes lp-pulse { 0%,100% { box-shadow:0 0 0 0 color-mix(in srgb, var(--lp-cta) 60%, transparent) } 60% { box-shadow:0 0 0 7px transparent } }
+.lp-clock.is-final .lp-meter i { background:var(--lp-urgent); }
 .lp-clock { background:var(--lp-soft); border:1px solid var(--lp-line); }
 .lp-clock.is-final { border-color:var(--lp-urgent); }
 .lp-clock-cell { background:var(--lp-bg); border:1px solid var(--lp-line); }
@@ -66,7 +63,7 @@
 .lp-off { background:var(--lp-urgent); color:#fff; }
 .lp-bar { background:color-mix(in srgb, var(--lp-bg) 92%, transparent); backdrop-filter:blur(10px); border-top:1px solid var(--lp-line); color:var(--lp-ink); }
 .lp-bar.is-final { border-top:2px solid var(--lp-urgent); }
-@media (prefers-reduced-motion: reduce) { .lp-offer-dot { animation:none } .lp-meter i, .lp-bar { transition:none } }
+@media (prefers-reduced-motion: reduce) { .lp-meter i, .lp-bar { transition:none } }
 .lp-buy { background:var(--lp-cta); color:var(--lp-cta-ink); }
 .lp-buy:focus-visible, .lp-wa:focus-visible, .lp-proof:focus-visible { outline:3px solid var(--lp-cta); outline-offset:3px; }
 .lp-wa { background:#25d366; color:#06331a; }

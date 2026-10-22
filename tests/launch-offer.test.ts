@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { listPrice, orderPrice, REGULAR_PRICING_STARTS_AT } from '../supabase/functions/_shared/planPricing';
-import { offerEndsLabel, timeLeft, yearlyOffer } from '../src/lib/leadMagnets/launchOffer';
+import { nextBatch, yearlyOffer } from '../src/lib/leadMagnets/launchOffer';
 import { launchWindowOpen } from '../src/lib/pricing/launchWindow';
 import { tierPricesAt } from '../src/lib/pricing/pricingMath';
 
@@ -17,18 +17,30 @@ describe('launch-price review date (display only)', () => {
     }
   });
 
-  test('the notice and countdown run to 31 December, IST, and then hide', () => {
-    expect(offerEndsLabel()).toBe('31 December');
+  test('the /pricing notice runs to 31 December, IST, and then hides', () => {
     expect(launchWindowOpen(BEFORE)).toBe(true);
     expect(launchWindowOpen(AFTER)).toBe(false);
-    expect(timeLeft(AFTER).over).toBe(true);
-    expect(timeLeft(BEFORE).secs).toBe(1);
-    expect(timeLeft(new Date('2026-12-30T18:30:00Z'))).toMatchObject({ over: false, days: 1, hours: 0, finalWeek: true });
-    expect(timeLeft(new Date('2026-11-01T00:00:00Z')).finalWeek).toBe(false);
   });
 
   test('struck price is the same plan billed monthly; UPI total is what checkout charges', () => {
-    expect(yearlyOffer('basic')).toEqual({ launch: 5988, regular: 23988, perMonth: 499, save: 18000, percentOff: 75, upiTotal: 7065.84 });
-    expect(yearlyOffer('pro')).toEqual({ launch: 59988, regular: 119988, perMonth: 4999, save: 60000, percentOff: 50, upiTotal: 70785.84 });
+    expect(yearlyOffer('basic')).toEqual({ launch: 5988, regular: 23988, perMonth: 499, save: 18000, percentOff: 75, withGst: 7065.84 });
+    expect(yearlyOffer('pro')).toEqual({ launch: 59988, regular: 119988, perMonth: 4999, save: 60000, percentOff: 50, withGst: 70785.84 });
+  });
+});
+
+describe('onboarding batches every 10 days', () => {
+  const at = (iso: string) => nextBatch(new Date(iso));
+  test('22 Oct shows the 2 Nov batch; on 2 Nov it rolls to 12 Nov', () => {
+    expect(at('2026-10-22T06:00:00Z')).toMatchObject({ label: '2 November', nextLabel: '12 November' });
+    expect(at('2026-11-01T18:29:59Z').label).toBe('2 November'); // 1 Nov 23:59:59 IST
+    expect(at('2026-11-01T18:30:00Z').label).toBe('12 November'); // 2 Nov 00:00 IST
+    expect(at('2026-11-12T18:30:00Z').label).toBe('22 November');
+    expect(at('2026-12-31T12:00:00Z').label).toBe('1 January');
+  });
+  test('counts down daily within the 10 days and turns final in the last two', () => {
+    const b = at('2026-11-04T18:30:00Z'); // 5 Nov 00:00 IST
+    expect(b.left).toMatchObject({ over: false, days: 7, hours: 0, finalDays: false });
+    expect(b.left.fraction).toBeCloseTo(0.7, 5);
+    expect(at('2026-11-10T18:30:00Z').left).toMatchObject({ days: 1, finalDays: true });
   });
 });
