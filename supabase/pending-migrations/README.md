@@ -346,3 +346,17 @@ Staff tracking by email, nothing stored twice. `subscriptions_with_email` lists 
 Moves the public library Biocog Intelligence cites (answers, guides, product facts; about 2,000 entries, public content only) into `public_library_entries` with a full-text index, so a question reads only its closest matches instead of the chat function loading 1 MB on every start. `public_library_state` holds the loaded version. Three functions, granted to `service_role` only: `search_public_library(terms, limit)` (keywords limited to lower-case letters and digits, so nothing is parsed as query syntax; returns `ready=false` until a library is loaded), `claim_public_library_check(min_age)` (one check per six hours) and `apply_public_library(version, entries)` (replaces the library in one transaction; links must be on senseible.earth). RLS on, no policies, no grants to anon or authenticated.
 
 intelligence-chat syncs the table itself from `https://senseible.earth/answer-data/_library.json` (written at build; the download must hash to the version in `_library-version.json` and every entry must validate, or nothing changes) and keeps its bundled copy as the fallback, so the chat works before the migration, after it, and after a rollback. Tested on the local schema replay (applies, rolls back to the same catalog, re-applies, 9 behaviour checks) and with the real library: the database lookup returned the same top four as the bundle for 10 of 10 sample questions. Roll back with `rollback/20261105100000_public_library.rollback.sql`.
+
+## 20261106100000_security_hardening.sql
+
+Closes browser write paths found in the October 2026 security audit. No data changes; signed-in users keep the same read access to their documents, emissions, verifications, ledger and reports.
+
+- `compliance_ledger`: browser INSERT policy dropped (only verify-carbon / `commit_verification` write it; no browser code inserts).
+- `case_studies_public`: INSERT/UPDATE/DELETE/TRUNCATE revoked from anon and authenticated (published stories become read-only; admins edit through story-review).
+- Guests: `owns_guest_session` now answers false (guests are browser-only), closing the user-agent branch of every documents/emissions/verifications/reports/pathways policy; `get_session_by_fingerprint` revoked from browsers; anon UPDATE on `sessions` dropped; guest branches removed from `chat_history`.
+- Teams: direct INSERT/UPDATE on `organization_members` and INSERT on `team_invitations` dropped; `create_organization`, `update_member_role`, `remove_member` and the invitation functions keep working.
+- `invoices` INSERT: admin only. `marketplace_listings`: platform admins manage, org admins view. `partner_applications` insert must be `pending`. `monetization_pathways` insert must reference the caller's (or their team's) verification and starts as `applied`.
+
+Tested on the local replay: applies, rolls back to the same catalog, re-applies, 14 behaviour checks (`tests/run_security_hardening.sh`). Roll back with `rollback/20261106100000_security_hardening.rollback.sql`.
+
+`security_followup_checks.sql` (read-only counts: plan orders paid without GST since 15 Oct, translation-cache rows that look personal, legacy guest rows, bucket privacy, grant_applications policy) and `guest_rows_purge.sql` (optional, owner-approved; deletes only rows with no account and rolls back if any account-owned count changes) sit next to it.

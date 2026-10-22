@@ -98,6 +98,8 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 
 - Tech batch (owner, 21 October 2026): Checks run on every pull request; each Answers page loads only its own data; the 12 core-flow and payment edge functions report their source fingerprint on `GET ?__version` (`node scripts/function-versions.mjs --live` after each Lovable redeploy); Biocog Intelligence looks public answers up in the database (`public_library_entries`, synced from `/answer-data/_library.json`) with the bundled library as the fallback until the migration is applied and confirmed live. Stop any of these if it touches the OCR-to-reporting flow.
 
+- Security (owner, 22 October 2026): fix the audit findings without breaking OCR → reporting or payments; stop and report a one-line risk otherwise. Guests stay browser-only (no server rows); old guest rows may be purged only with a check that no account-owned row changes. GST always applies to plan orders. Moving internal mail to a new inbox must not break any notification. Published customer stories are edited by admins only.
+
 - Deferred by the owner (21 October 2026), do not start without a go-ahead: OCR accuracy test on 50 to 100 real documents, fix-in-place units for needs-data bills, a coverage line under every total, closing a reporting period, a lender share link, a CBAM supplier export.
 
 ## 9. Open decisions (ask before acting)
