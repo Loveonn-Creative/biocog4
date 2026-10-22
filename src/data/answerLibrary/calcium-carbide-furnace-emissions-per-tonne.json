@@ -1,0 +1,47 @@
+{
+  "slug": "calcium-carbide-furnace-emissions-per-tonne",
+  "q": "What are the emissions from a calcium carbide furnace?",
+  "title": "Calcium carbide furnace emissions",
+  "short": "Three sources add up: CO2 from burning limestone to lime, CO2 from the coke whose carbon leaves as gas, and the large electricity use of the arc furnace. Count power at 0.710 kg CO2 per kWh. Calcium carbide is not a CBAM good.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Carbide producers and acetylene makers",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Lime kiln: CO2 from limestone and kiln fuel.",
+        "Coke and electrodes: carbon that leaves as CO and is burnt.",
+        "Electricity: often the biggest share."
+      ]
+    },
+    {
+      "h": "Downstream",
+      "p": [
+        "Acetylene made from the carbide releases more CO2 when burnt. That is the user's Scope 1, not yours."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Acetylene cylinder CO2",
+      "to": "/answers/acetylene-gas-cylinder-co2"
+    },
+    {
+      "label": "CO2 from soda ash or limestone",
+      "to": "/answers/co2-from-soda-ash-or-limestone-neutralisation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

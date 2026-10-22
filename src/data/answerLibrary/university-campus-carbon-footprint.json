@@ -1,0 +1,48 @@
+{
+  "slug": "university-campus-carbon-footprint",
+  "q": "How does a university calculate its campus carbon footprint?",
+  "title": "University campus carbon footprint",
+  "short": "Start with what the campus pays for: electricity, diesel for gensets and buses, LPG in hostels and canteens, and refrigerant top-ups. That is Scope 1 and 2. Then add staff and student travel, purchases and waste in Scope 3, which is usually larger.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "University estate and sustainability teams",
+  "sections": [
+    {
+      "h": "Scope 1 and 2",
+      "ul": [
+        "Grid electricity and campus solar.",
+        "Diesel for gensets and campus buses.",
+        "LPG for hostel kitchens and labs.",
+        "Refrigerant refills for ACs and cold rooms."
+      ]
+    },
+    {
+      "h": "Scope 3",
+      "p": [
+        "Commuting, flights for conferences, books and equipment, construction and waste. Survey commuting once a year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "College hostel per student",
+      "to": "/answers/college-hostel-carbon-footprint-per-student"
+    },
+    {
+      "label": "Commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

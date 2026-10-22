@@ -1,0 +1,47 @@
+{
+  "slug": "solar-on-rented-factory-roof-who-claims",
+  "q": "Our landlord put solar on the roof of our rented factory. Who claims it?",
+  "title": "Solar on a rented roof: who claims",
+  "short": "Whoever uses the power can count it, but only once. If you consume the solar units, your Scope 2 falls by that amount. If the landlord sells them to you under a contract, keep the contract and meter readings. The landlord cannot also claim units you used.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Tenants in leased factory sheds",
+  "sections": [
+    {
+      "h": "Common setups",
+      "ul": [
+        "Landlord's panels feed your meter: your Scope 2 drops.",
+        "Landlord sells solar units to you: market-based claim with the contract.",
+        "Landlord exports to the grid: you see no change."
+      ]
+    },
+    {
+      "h": "Get in writing",
+      "p": [
+        "A clause stating who claims the solar attributes avoids double counting later."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Landlord and tenant emissions",
+      "to": "/answers/landlord-reporting-tenant-emissions-industrial-sheds"
+    },
+    {
+      "label": "Rented warehouse electricity",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

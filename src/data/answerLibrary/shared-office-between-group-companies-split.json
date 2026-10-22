@@ -1,0 +1,47 @@
+{
+  "slug": "shared-office-between-group-companies-split",
+  "q": "How do group companies sharing one office split its emissions?",
+  "title": "Group companies sharing an office",
+  "short": "Split the office's electricity and fuel by a fair key, such as floor area or headcount, and use the same key every year. Each company reports its share. The group's consolidated report counts the office once, not once per company.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Group companies sharing premises",
+  "sections": [
+    {
+      "h": "Choosing the key",
+      "ul": [
+        "Floor area: good when spaces are clearly separate.",
+        "Headcount: good for open shared floors.",
+        "Sub-meters: best when available."
+      ]
+    },
+    {
+      "h": "Paperwork",
+      "p": [
+        "Write the key and the reason in your methodology note. Keep the bill in the payer's name with the allocation sheet."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Intercompany transactions",
+      "to": "/answers/intercompany-transactions-group-carbon-inventory"
+    },
+    {
+      "label": "Sub-metered rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "sold-packaging-end-of-life-category-12",
+  "q": "Do FMCG companies count the packaging their products are sold in under Category 12?",
+  "title": "Sold packaging in Category 12",
+  "short": "Yes. Category 12 covers end-of-life treatment of sold products, including their packaging. Estimate tonnes of packaging sold by material, then apply landfill, recycling or burning shares. Your plastic EPR returns give you most of the tonnage.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "FMCG and consumer goods companies",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Packaging tonnes by material, from sales and pack specs.",
+        "Likely disposal route for each material.",
+        "A waste factor for each route, labelled with its source."
+      ]
+    },
+    {
+      "h": "Data you already have",
+      "p": [
+        "Plastic EPR filings list packaging by category. Reuse them instead of starting again."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Metal products end of life",
+      "to": "/answers/metal-products-end-of-life-category-12"
+    },
+    {
+      "label": "Plastic EPR obligation",
+      "to": "/answers/how-to-calculate-plastic-epr-obligation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Central Pollution Control Board (cpcb.nic.in)",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

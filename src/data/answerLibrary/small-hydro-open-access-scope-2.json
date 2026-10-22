@@ -1,0 +1,47 @@
+{
+  "slug": "small-hydro-open-access-scope-2",
+  "q": "Can we claim zero Scope 2 if we buy small hydro power through open access?",
+  "title": "Small hydro via open access: Scope 2",
+  "short": "Under the market-based method, yes for the units covered, if the contract and documents prove you alone claim that power. Under the location-based method you still use the grid factor, 0.710 kg CO2 per kWh. Report both.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories buying renewable power through open access",
+  "sections": [
+    {
+      "h": "Evidence to keep",
+      "ul": [
+        "Open access approval and the supply contract.",
+        "Monthly energy accounts showing units delivered.",
+        "Proof no one else claims the same units."
+      ]
+    },
+    {
+      "h": "Partial supply",
+      "p": [
+        "Units outside the contract stay at the grid factor, even under the market-based method."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Biomass power via open access",
+      "to": "/answers/biomass-power-open-access-scope-2"
+    },
+    {
+      "label": "Green open access charges",
+      "to": "/answers/green-open-access-charges-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

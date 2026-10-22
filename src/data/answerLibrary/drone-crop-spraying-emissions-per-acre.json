@@ -1,0 +1,47 @@
+{
+  "slug": "drone-crop-spraying-emissions-per-acre",
+  "q": "What are the emissions of spraying crops with a drone?",
+  "title": "Drone crop spraying emissions",
+  "short": "An electric spraying drone uses battery charge, so emissions are the charging electricity times 0.710 kg CO2 per kWh, or genset diesel if charged in the field. Per acre that is small next to tractor spraying. The pesticide itself has its own footprint.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Drone service providers and farmer groups",
+  "sections": [
+    {
+      "h": "Calculate",
+      "ol": [
+        "kWh per battery charge times charges per day.",
+        "Times 0.710, or genset litres times 2.68 kg.",
+        "Divide by acres sprayed."
+      ]
+    },
+    {
+      "h": "Who reports",
+      "p": [
+        "The drone operator reports charging as Scope 2 or genset diesel as Scope 1. The farmer hiring the service puts it in Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Tractor diesel per acre",
+      "to": "/answers/tractor-diesel-emissions-per-acre"
+    },
+    {
+      "label": "Hired tractor which scope",
+      "to": "/answers/hired-tractor-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

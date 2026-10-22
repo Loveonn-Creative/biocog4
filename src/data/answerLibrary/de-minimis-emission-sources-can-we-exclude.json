@@ -1,0 +1,43 @@
+{
+  "slug": "de-minimis-emission-sources-can-we-exclude",
+  "q": "Can we leave out very small emission sources from our inventory?",
+  "title": "Leaving out tiny emission sources",
+  "short": "Yes, if you say so. The GHG Protocol asks you to report all sources inside your boundary and to disclose and justify any exclusion. Many verifiers accept leaving out sources that together stay well under their materiality threshold, often around 5 percent.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies preparing a first inventory",
+  "sections": [
+    {
+      "h": "Typical small sources",
+      "ul": [
+        "Fire extinguisher refills.",
+        "A small diesel pump used a few hours a year.",
+        "Kitchen LPG in a large factory."
+      ]
+    },
+    {
+      "h": "Do it properly",
+      "p": [
+        "Estimate each excluded source once, list it with the estimate, and recheck every year. A source that grows has to come back in."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Materiality in verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    },
+    {
+      "label": "Excluding a Scope 3 category",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

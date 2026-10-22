@@ -1,0 +1,51 @@
+{
+  "slug": "saharanpur-wood-carving-unit-emissions",
+  "q": "What is the carbon footprint of a wood carving unit in Saharanpur?",
+  "title": "Saharanpur wood carving: emissions",
+  "short": "A carving unit's own emissions are mostly electricity for saws, lathes, sanders and spray guns, at 0.710 kg CO2 per kWh. Timber, polish and lacquer are bought-in Scope 3. Carbon stored in the wood is reported separately, not subtracted from your total.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Woodcraft exporters and their buyers",
+  "sections": [
+    {
+      "h": "Typical split",
+      "ul": [
+        "Scope 2: grid power for machines and lights.",
+        "Scope 1: diesel genset during cuts, if any.",
+        "Scope 3: timber, varnish, packaging and freight."
+      ]
+    },
+    {
+      "h": "For EU buyers",
+      "p": [
+        "Wooden goods may also need deforestation-free proof under EUDR. That is a separate check from the carbon figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Wooden furniture footprint",
+      "to": "/answers/wooden-furniture-carbon-footprint-per-piece"
+    },
+    {
+      "label": "EUDR for wooden handicrafts",
+      "to": "/answers/eudr-wooden-handicrafts-furniture-india"
+    },
+    {
+      "label": "Carbon stored in timber",
+      "to": "/answers/biogenic-carbon-in-timber-building-materials"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

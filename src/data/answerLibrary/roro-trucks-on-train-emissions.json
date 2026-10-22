@@ -1,0 +1,47 @@
+{
+  "slug": "roro-trucks-on-train-emissions",
+  "q": "How do I count emissions when my truck travels on a Ro-Ro train?",
+  "title": "Trucks on a Ro-Ro train: emissions",
+  "short": "Split the trip into legs. The road legs to and from the rail terminals use truck diesel. The rail leg uses a rail factor applied to the full weight carried, truck plus cargo, unless the railway gives you its own figure. Diesel saved on the rail leg is the gain.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Transporters and shippers using Ro-Ro rail",
+  "sections": [
+    {
+      "h": "Legs to add",
+      "ul": [
+        "Road: factory to loading terminal.",
+        "Rail: terminal to terminal, truck on a flat wagon.",
+        "Road: unloading terminal to customer."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep the Ro-Ro booking with distance and weight, and fuel slips for the road legs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Intermodal container emissions",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    },
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "shot-blasting-energy-emissions-per-tonne",
+  "q": "What are the emissions from shot blasting castings?",
+  "title": "Shot blasting emissions per tonne",
+  "short": "Shot blasting uses electricity for the blast wheels, dust collector and, in air blasting, a large compressor. Multiply the machine's kWh by 0.710 kg CO2 and divide by tonnes cleaned. Worn shot is bought steel, in Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Foundries and fabricators",
+  "sections": [
+    {
+      "h": "Measure",
+      "ul": [
+        "kWh from a sub-meter on the blaster.",
+        "Tonnes of castings cleaned.",
+        "Kilograms of steel shot bought."
+      ]
+    },
+    {
+      "h": "Cut it",
+      "p": [
+        "Run full loads, fix compressed air leaks on air blasters, and stop the dust collector between batches."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Foundry per tonne good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Compressed air upgrade loan",
+      "to": "/answers/green-loan-compressed-air-system-upgrade"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

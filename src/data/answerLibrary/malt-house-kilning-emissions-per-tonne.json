@@ -1,0 +1,47 @@
+{
+  "slug": "malt-house-kilning-emissions-per-tonne",
+  "q": "What are the emissions from a malt house?",
+  "title": "Malt house kilning emissions",
+  "short": "Barley is steeped, germinated and then kilned with hot air, and the kiln fuel is the largest share. Add electricity for fans and germination boxes. The barley itself is Scope 3. Count fuel per tonne of malt from the kiln's fuel records.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Maltsters and brewery buyers",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Kiln burner fuel: gas, oil, coal or biomass.",
+        "Fans and turning machines in germination.",
+        "Barley growing and transport, in Scope 3."
+      ]
+    },
+    {
+      "h": "For the brewery",
+      "p": [
+        "Malt is often a brewery's biggest bought-in item. A supplier figure per tonne beats a database average."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Brewery CO2 per hectolitre",
+      "to": "/answers/aurangabad-brewery-co2-per-hectolitre"
+    },
+    {
+      "label": "Use your supplier's footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "recycled-paper-deinking-emissions-per-tonne",
+  "q": "What are the emissions of a paper mill that de-inks waste paper?",
+  "title": "De-inking paper mill emissions",
+  "short": "A recycled paper mill pulps waste paper, removes ink by flotation and dries the sheet on steam cylinders. Steam for drying and electricity for pulping are the main sources. De-inking sludge going to landfill or boilers adds a waste line.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Recycled paper mills and packaging buyers",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Boiler fuel for drying steam.",
+        "Electricity for pulpers, screens and the paper machine.",
+        "Sludge disposal, in Category 5 if sent out."
+      ]
+    },
+    {
+      "h": "Biogenic part",
+      "p": [
+        "If the mill burns rejects or sludge, the fibre carbon is biogenic. Plastic in the rejects is fossil."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Agro-residue paper mill",
+      "to": "/answers/agro-residue-paper-mill-biogenic-co2"
+    },
+    {
+      "label": "Kraft paper supplier data",
+      "to": "/answers/box-maker-kraft-paper-supplier-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

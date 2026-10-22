@@ -1,0 +1,47 @@
+{
+  "slug": "gelatin-plant-emissions-per-tonne",
+  "q": "What are the emissions from making gelatin?",
+  "title": "Gelatin plant emissions per tonne",
+  "short": "Gelatin from bones or hides needs weeks of liming or acid treatment, then hot-water extraction, evaporation and drying. Steam for extraction and drying is the main energy use, so boiler fuel dominates. Add grid power, effluent treatment and the raw material.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Gelatin makers and pharma or food buyers",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Boiler fuel for extraction, evaporation and drying.",
+        "Electricity for pumps, chillers and filters.",
+        "Effluent treatment, which can release methane if anaerobic."
+      ]
+    },
+    {
+      "h": "Raw material",
+      "p": [
+        "Bones and hides are by-products of meat processing. State the allocation rule you used for them, because it changes the answer a lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "ETP wastewater methane",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Tannery boiler and ETP",
+      "to": "/answers/ambur-tannery-boiler-etp-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

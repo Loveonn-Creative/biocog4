@@ -1,0 +1,47 @@
+{
+  "slug": "poultry-hatchery-emissions-per-chick",
+  "q": "What are the emissions of a poultry hatchery per chick?",
+  "title": "Poultry hatchery emissions per chick",
+  "short": "A hatchery's emissions are mostly electricity for incubators, hatchers and air conditioning, plus genset diesel during outages. Divide by chicks hatched. Hatching eggs bought from breeder farms and chick transport are Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Hatcheries and integrated poultry companies",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Monthly units on the electricity bill.",
+        "Genset diesel and run hours.",
+        "Chicks hatched and sold per month."
+      ]
+    },
+    {
+      "h": "Power cuts matter",
+      "p": [
+        "Incubators cannot stop, so genset diesel can be a big share in areas with long outages. Log run hours."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Broiler farm per kg",
+      "to": "/answers/broiler-farm-emissions-per-kg-live-weight"
+    },
+    {
+      "label": "DG diesel from run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
