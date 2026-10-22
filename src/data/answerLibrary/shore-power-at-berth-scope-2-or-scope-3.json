@@ -1,0 +1,47 @@
+{
+  "slug": "shore-power-at-berth-scope-2-or-scope-3",
+  "q": "When a ship plugs into shore power at berth, whose scope is it?",
+  "title": "Shore power at berth: whose scope",
+  "short": "The ship owner or operator consumes the electricity, so it is their Scope 2, at the grid factor of the port's country. In India that is 0.710 kg CO2 per kWh. The port that resells the power does not count it as its own use. It replaces fuel the ship's auxiliary engines would burn.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Ports and shipping lines",
+  "sections": [
+    {
+      "h": "Who reports",
+      "ul": [
+        "Ship operator: Scope 2 for power drawn at berth.",
+        "Port: only its own use, not power resold to ships.",
+        "Charterer or exporter: inside the freight figure."
+      ]
+    },
+    {
+      "h": "Why it helps",
+      "p": [
+        "Auxiliary engines burning marine fuel at berth add local pollution and CO2. Grid power usually cuts both, more so as the grid gets cleaner."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Diesel generator or grid",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Sea freight per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

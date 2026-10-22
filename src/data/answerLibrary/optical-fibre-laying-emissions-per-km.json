@@ -1,0 +1,47 @@
+{
+  "slug": "optical-fibre-laying-emissions-per-km",
+  "q": "What are the emissions from laying optical fibre cable per km?",
+  "title": "Laying optical fibre: emissions per km",
+  "short": "Most of it is diesel for trenching machines, horizontal directional drilling rigs and support trucks, at 2.68 kg CO2 per litre, divided by km laid. The cable and HDPE duct are Scope 3 materials. Directional drilling usually needs less road digging and repair than open trenching.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Telecom contractors and network operators",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Diesel per rig and vehicle per day.",
+        "Km of route laid.",
+        "HDPE duct and cable bought, by weight."
+      ]
+    },
+    {
+      "h": "Who reports",
+      "p": [
+        "The contractor running the machines reports Scope 1. The telecom operator reports the contractor's emissions as Scope 3 capital goods or services."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "HDPE pipe per kg",
+      "to": "/answers/hdpe-pipe-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Telecom tower diesel",
+      "to": "/answers/telecom-tower-diesel-emissions-per-site"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

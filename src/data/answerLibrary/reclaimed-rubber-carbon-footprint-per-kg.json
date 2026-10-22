@@ -1,0 +1,47 @@
+{
+  "slug": "reclaimed-rubber-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of reclaimed rubber per kg?",
+  "title": "Reclaimed rubber per kg",
+  "short": "Reclaimed rubber is made by grinding scrap tyres and devulcanising the crumb with heat, steam and oils. Its own footprint is the electricity for grinding and refining, at 0.710 kg CO2 per kWh, and the boiler fuel. It avoids making new rubber, but report that saving separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Rubber reclaimers and tyre and footwear makers",
+  "sections": [
+    {
+      "h": "Process energy",
+      "ul": [
+        "Grinding scrap tyres to crumb: electricity.",
+        "Devulcanising in a reactor or autoclave: steam.",
+        "Refining and sheeting: electricity."
+      ]
+    },
+    {
+      "h": "Recycled content",
+      "p": [
+        "A buyer using reclaim can claim recycled content by weight. Keep purchase records showing the reclaim share in each batch."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Tyre retreading",
+      "to": "/answers/tyre-retreading-carbon-footprint-per-tyre"
+    },
+    {
+      "label": "Rubber moulded parts",
+      "to": "/answers/rubber-moulded-part-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

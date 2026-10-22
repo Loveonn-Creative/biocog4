@@ -1,0 +1,51 @@
+{
+  "slug": "container-terminal-rtg-crane-electrification-co2",
+  "q": "How much CO2 does electrifying container yard cranes save?",
+  "title": "Electric yard cranes: CO2 saving",
+  "short": "A diesel rubber-tyred gantry crane burns diesel at 2.68 kg CO2 per litre. An electrified one uses grid power at 0.710 kg CO2 per kWh. Compare litres per box moved before with kWh per box after. The saving is the difference times boxes handled.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Container terminal operators",
+  "sections": [
+    {
+      "h": "Before and after",
+      "ul": [
+        "Before: diesel litres per crane per month, boxes moved.",
+        "After: kWh from the crane feeder meter, boxes moved.",
+        "Same months, so seasonal volume does not skew it."
+      ]
+    },
+    {
+      "h": "Worth noting",
+      "p": [
+        "Hybrid cranes with batteries sit in between. Use the fuel and power actually metered, not the brochure figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Electric forklift vs diesel",
+      "to": "/answers/diesel-forklift-vs-electric-forklift-emissions"
+    },
+    {
+      "label": "Tower crane electric vs diesel",
+      "to": "/answers/tower-crane-electric-vs-diesel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

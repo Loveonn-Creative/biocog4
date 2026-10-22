@@ -1,0 +1,47 @@
+{
+  "slug": "zinc-oxide-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of zinc oxide per tonne?",
+  "title": "Zinc oxide per tonne",
+  "short": "Most zinc oxide in India is made by vaporising zinc metal or zinc ash in a furnace and oxidising the vapour. The fuel or electricity for the furnace is the plant's own share. The zinc metal bought in carries the larger upstream footprint from smelting.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Rubber, ceramic and pharma buyers",
+  "sections": [
+    {
+      "h": "Split",
+      "ul": [
+        "Scope 1: furnace fuel, often furnace oil or gas.",
+        "Scope 2: electricity for fans and bagging.",
+        "Scope 3: zinc metal or zinc ash bought in."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Zinc oxide is not among CBAM goods, but EU tyre and ceramic buyers may still ask for a figure for their own reporting."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the plant's electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input to a per-unit figure. Bought-in materials go to the supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Zinc die casting",
+      "to": "/answers/zinc-die-casting-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Chittorgarh zinc and CBAM",
+      "to": "/answers/chittorgarh-zinc-smelter-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

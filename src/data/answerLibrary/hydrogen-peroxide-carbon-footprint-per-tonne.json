@@ -1,0 +1,47 @@
+{
+  "slug": "hydrogen-peroxide-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of hydrogen peroxide per tonne?",
+  "title": "Hydrogen peroxide per tonne",
+  "short": "Most hydrogen peroxide is made by the anthraquinone process. Its footprint comes from the hydrogen it uses, usually made from natural gas, plus steam and electricity for distillation. Ask your supplier for a figure at the strength you buy, since 50 and 35 percent solutions differ.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Textile, paper and chemical buyers",
+  "sections": [
+    {
+      "h": "Main parts",
+      "ul": [
+        "Hydrogen, often from steam reforming of gas.",
+        "Steam and power for oxidation and concentration.",
+        "Transport of a heavy, mostly water product."
+      ]
+    },
+    {
+      "h": "Compare like with like",
+      "p": [
+        "Convert to 100 percent peroxide before comparing supplier figures, or compare per tonne at the same strength."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Caustic soda per tonne",
+      "to": "/answers/caustic-soda-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Grid hydrogen intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

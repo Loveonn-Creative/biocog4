@@ -1,0 +1,48 @@
+{
+  "slug": "veterinary-clinic-carbon-footprint",
+  "q": "What makes up the carbon footprint of a veterinary clinic?",
+  "title": "Veterinary clinic: carbon footprint",
+  "short": "Electricity for air conditioning, X-ray, autoclaves and vaccine fridges is usually the largest part, at 0.710 kg CO2 per kWh. Van or ambulance fuel is Scope 1. Anaesthetic gases such as isoflurane are strong greenhouse gases but not among the seven the GHG Protocol requires, so report them as a separate line. Medicines, consumables and clinical waste are Scope 3.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Veterinary clinics and animal hospitals",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Scope 2: power for equipment and cooling.",
+        "Scope 1: ambulance or van fuel; nitrous oxide if you use it.",
+        "Separate line: isoflurane and sevoflurane, outside the GHG Protocol's seven gases.",
+        "Scope 3: drugs, syringes, waste disposal."
+      ]
+    },
+    {
+      "h": "Anaesthetic gases",
+      "p": [
+        "Record bottles used per month. Low-flow anaesthesia uses less gas for the same procedure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Anaesthetic gases Scope 1",
+      "to": "/answers/anaesthetic-gases-scope-1-hospital"
+    },
+    {
+      "label": "Clinic footprint",
+      "to": "/answers/clinic-carbon-footprint-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

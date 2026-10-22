@@ -1,0 +1,48 @@
+{
+  "slug": "airport-ground-support-equipment-emissions",
+  "q": "How do airports and ground handlers count emissions from ground equipment?",
+  "title": "Airport ground equipment: emissions",
+  "short": "Tugs, belt loaders, buses and power units run on diesel or electricity. The ground handler that owns them reports diesel as Scope 1, at 2.68 kg CO2 per litre, and charging as Scope 2. An airline buying the service reports it as Scope 3.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Ground handlers, airports and airlines",
+  "sections": [
+    {
+      "h": "Common equipment",
+      "ul": [
+        "Aircraft tugs and pushback tractors.",
+        "Belt loaders and cargo loaders.",
+        "Ground power units and air conditioning units.",
+        "Apron buses."
+      ]
+    },
+    {
+      "h": "Switching",
+      "p": [
+        "Plugging aircraft into fixed ground power instead of running the onboard auxiliary unit cuts jet fuel. Track hours on ground power to show it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Airport shop tenant",
+      "to": "/answers/airport-shop-tenant-emissions-which-scope"
+    },
+    {
+      "label": "Electric forklift vs diesel",
+      "to": "/answers/diesel-forklift-vs-electric-forklift-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

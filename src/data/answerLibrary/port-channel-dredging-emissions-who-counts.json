@@ -1,0 +1,51 @@
+{
+  "slug": "port-channel-dredging-emissions-who-counts",
+  "q": "How are the emissions from dredging a port channel counted?",
+  "title": "Port channel dredging: emissions",
+  "short": "Dredgers burn large amounts of marine diesel to cut, pump and dump sediment. The dredging contractor reports that fuel as Scope 1. A port authority that hires the contractor reports it as Scope 3, or as Scope 1 if it runs its own dredgers. Record fuel per cubic metre moved.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Port authorities and marine contractors",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Fuel bought for each dredger, from bunker delivery notes.",
+        "Cubic metres of sediment dredged.",
+        "Distance to the dumping ground."
+      ]
+    },
+    {
+      "h": "Capital or maintenance",
+      "p": [
+        "Capital dredging for a new berth is a one-off project. Maintenance dredging repeats every year and belongs in your annual inventory."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Contractor diesel on site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    },
+    {
+      "label": "Excavator diesel per cubic metre",
+      "to": "/answers/contractor-excavator-diesel-per-cubic-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

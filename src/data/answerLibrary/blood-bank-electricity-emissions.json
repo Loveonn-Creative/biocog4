@@ -1,0 +1,47 @@
+{
+  "slug": "blood-bank-electricity-emissions",
+  "q": "How do we calculate the carbon footprint of a blood bank?",
+  "title": "Blood bank: emissions",
+  "short": "Blood banks run refrigerators, deep freezers and platelet agitators all day, every day, so electricity dominates. Count units at 0.710 kg CO2 per kWh, plus genset diesel during outages. Blood bags, reagents and donation camp travel are Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Blood banks and hospital labs",
+  "sections": [
+    {
+      "h": "Main loads",
+      "ul": [
+        "Blood bank refrigerators and plasma freezers.",
+        "Platelet incubators and agitators.",
+        "Air conditioning for the component lab."
+      ]
+    },
+    {
+      "h": "Per unit collected",
+      "p": [
+        "Divide the month's total by units of blood collected for a figure you can track over time."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Blood bag footprint",
+      "to": "/answers/blood-bag-carbon-footprint-per-bag"
+    },
+    {
+      "label": "Hospital per bed",
+      "to": "/answers/hospital-carbon-footprint-per-bed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

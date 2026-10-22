@@ -1,0 +1,47 @@
+{
+  "slug": "water-treatment-chemicals-scope-3",
+  "q": "How do we count the alum, PAC and polyelectrolyte our water plant buys?",
+  "title": "Water treatment chemicals: Scope 3",
+  "short": "Coagulants and flocculants you buy are Scope 3 Category 1. Use kilograms bought from invoices and a supplier or named database factor for each. They are often small next to the plant's electricity, but auditors still expect them listed or a reason for leaving them out.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "ETP, STP and water plant operators",
+  "sections": [
+    {
+      "h": "List",
+      "ul": [
+        "Alum and poly aluminium chloride (PAC).",
+        "Polyelectrolyte.",
+        "Hypochlorite, lime and acid for pH."
+      ]
+    },
+    {
+      "h": "Leaving them out",
+      "p": [
+        "If they are below your exclusion threshold, say so and show the estimate behind that decision."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "ETP electricity per kl",
+      "to": "/answers/etp-electricity-per-kl-effluent"
+    },
+    {
+      "label": "Exclusion threshold",
+      "to": "/answers/carbon-footprint-exclusion-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

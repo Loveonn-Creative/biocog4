@@ -1,0 +1,47 @@
+{
+  "slug": "titanium-dioxide-pigment-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of titanium dioxide pigment per tonne?",
+  "title": "Titanium dioxide pigment per tonne",
+  "short": "Titanium dioxide is made from ilmenite or rutile by the sulphate or chloride route. Both use a lot of energy, and the chloride route also uses petroleum coke, which releases process CO2. For paint and plastics makers it is often a large share of their raw material footprint.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Paint, plastics and paper buyers",
+  "sections": [
+    {
+      "h": "Main sources",
+      "ul": [
+        "Petroleum coke in chlorination (chloride route).",
+        "Acid digestion and calcination (sulphate route).",
+        "Steam, fuel and electricity throughout."
+      ]
+    },
+    {
+      "h": "For paint makers",
+      "p": [
+        "Ask the pigment supplier for a figure per tonne and the route used. It often matters more than your own factory's power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Paint per litre",
+      "to": "/answers/paint-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Dye and pigment per kg",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

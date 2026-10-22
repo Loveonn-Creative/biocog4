@@ -1,0 +1,47 @@
+{
+  "slug": "sodium-hypochlorite-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of sodium hypochlorite per tonne?",
+  "title": "Sodium hypochlorite per tonne",
+  "short": "Sodium hypochlorite is made from chlorine and caustic soda, both from chlor-alkali electrolysis, which runs on a lot of electricity. So its footprint largely follows the power behind that plant. A plant on captive coal power has a much higher figure than one on cleaner supply.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Water treatment, laundry and cleaning buyers",
+  "sections": [
+    {
+      "h": "Where it comes from",
+      "ul": [
+        "Electricity for chlor-alkali cells, the main share.",
+        "Mixing chlorine into caustic soda solution.",
+        "Transport of a dilute solution, often 10 to 12 percent."
+      ]
+    },
+    {
+      "h": "Ask for",
+      "p": [
+        "A supplier figure per tonne at the strength delivered, and the power source of the chlor-alkali plant behind it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Caustic soda per tonne",
+      "to": "/answers/caustic-soda-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Dahej chlor-alkali power",
+      "to": "/answers/dahej-chlor-alkali-caustic-soda-captive-power-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

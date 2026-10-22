@@ -1,0 +1,47 @@
+{
+  "slug": "solar-park-construction-emissions",
+  "q": "What are the emissions from building a solar park?",
+  "title": "Building a solar park: emissions",
+  "short": "Panels, inverters and steel mounting structures carry most of the footprint as Scope 3 capital goods. Site work adds diesel for piling, cranes and trucks, at 2.68 kg CO2 per litre. These are one-off emissions, separate from the clean power the park then generates.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Solar developers and EPC contractors",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "Modules, by kWp and supplier figure.",
+        "Mounting steel and cables, by tonnes.",
+        "Diesel for site equipment."
+      ]
+    },
+    {
+      "h": "Payback",
+      "p": [
+        "Construction emissions are repaid over time by the grid power the park displaces. Report them in the build year, not spread across generation."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Solar panel embodied carbon",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    },
+    {
+      "label": "Piling rig diesel per pile",
+      "to": "/answers/piling-rig-diesel-emissions-per-pile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

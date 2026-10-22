@@ -1,0 +1,47 @@
+{
+  "slug": "site-dewatering-pump-diesel-emissions",
+  "q": "How do we count diesel used by dewatering pumps on a construction site?",
+  "title": "Dewatering pump diesel: emissions",
+  "short": "Dewatering pumps often run day and night during excavation, burning diesel at 2.68 kg CO2 per litre. Whoever owns or controls the pumps reports it as Scope 1. Electric pumps on a temporary grid connection cut emissions where supply is available.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Builders and excavation contractors",
+  "sections": [
+    {
+      "h": "Records",
+      "ul": [
+        "Litres issued per pump per day.",
+        "Run hours from the pump log.",
+        "Who supplied and paid for the fuel."
+      ]
+    },
+    {
+      "h": "Estimate",
+      "p": [
+        "Without fuel records, use run hours times the pump's fuel rate, labelled as an estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Estimate diesel from run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    },
+    {
+      "label": "Contractor diesel on site",
+      "to": "/answers/contractor-diesel-on-my-site-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

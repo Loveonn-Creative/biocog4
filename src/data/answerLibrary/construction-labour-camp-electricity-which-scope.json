@@ -1,0 +1,47 @@
+{
+  "slug": "construction-labour-camp-electricity-which-scope",
+  "q": "Whose scope is the electricity and cooking fuel at a construction labour camp?",
+  "title": "Labour camp power and fuel: whose scope",
+  "short": "If the camp runs on your electricity connection or your genset, it is your Scope 2 or Scope 1. If the contractor runs the camp on its own supply, it is the contractor's Scope 1 and 2 and your Scope 3. LPG supplied for workers' cooking follows whoever buys it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Builders, EPC contractors and project owners",
+  "sections": [
+    {
+      "h": "Check",
+      "ul": [
+        "Whose name is on the electricity bill or temporary connection.",
+        "Who buys the genset diesel.",
+        "Who supplies the LPG cylinders."
+      ]
+    },
+    {
+      "h": "Write it down",
+      "p": [
+        "State in the contract who reports camp energy, so neither side leaves it out or both count it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Contractor genset or temporary grid",
+      "to": "/answers/contractor-site-genset-vs-temporary-grid-supply"
+    },
+    {
+      "label": "Staff quarters electricity",
+      "to": "/answers/staff-quarters-electricity-in-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

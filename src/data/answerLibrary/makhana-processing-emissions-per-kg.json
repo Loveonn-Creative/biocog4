@@ -1,0 +1,47 @@
+{
+  "slug": "makhana-processing-emissions-per-kg",
+  "q": "What are the emissions from processing makhana (fox nut) per kg?",
+  "title": "Makhana processing: emissions per kg",
+  "short": "Makhana seeds are roasted, often twice, then popped by hand or machine. The roasting fuel is the main source: firewood is biogenic CO2 with methane and nitrous oxide in Scope 1, while LPG or electric roasters are fossil fuel or Scope 2. Record fuel per kg of popped makhana.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Makhana processors in Bihar and their buyers",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Cleaning and grading seeds.",
+        "Roasting in pans or roasters.",
+        "Popping, grading and packing."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Popped makhana is light, so per kg figures look high next to grains. Packaging and air freight for export often matter more."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Firewood by the quintal",
+      "to": "/answers/firewood-by-quintal-emissions"
+    },
+    {
+      "label": "Puffed rice footprint",
+      "to": "/answers/puffed-rice-unit-fuel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

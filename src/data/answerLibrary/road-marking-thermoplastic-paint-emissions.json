@@ -1,0 +1,47 @@
+{
+  "slug": "road-marking-thermoplastic-paint-emissions",
+  "q": "What are the emissions from thermoplastic road marking?",
+  "title": "Thermoplastic road marking: emissions",
+  "short": "Thermoplastic paint is melted in kettles, usually fired by LPG, then laid hot. The LPG is Scope 1 for the marking contractor. The paint itself, resin, glass beads and pigment, is Scope 3. Record LPG and kilograms of paint per km of marking.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Road marking contractors and highway agencies",
+  "sections": [
+    {
+      "h": "Count",
+      "ul": [
+        "LPG for melting kettles.",
+        "Diesel for the marking truck.",
+        "Kilograms of thermoplastic and glass beads laid."
+      ]
+    },
+    {
+      "h": "For highway agencies",
+      "p": [
+        "Marking is small next to bitumen and aggregates, but it recurs every few years, so it adds up over a road's life."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Bitumen road per km",
+      "to": "/answers/bitumen-road-carbon-footprint-per-km"
+    },
+    {
+      "label": "19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
