@@ -1,5 +1,14 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { guestSubject, takeUse } from "../_shared/intelligenceUsage.ts";
+import { dayIst } from "../_shared/intelligence.ts";
+import { platformIp } from "../_shared/platformIp.ts";
+
+// Abuse limit: enquiries per network a day (the inbox is fixed; this stops flooding).
+const ENQUIRIES_PER_ADDRESS_PER_DAY = 10;
+const num = (v: unknown, max: number) => { const n = Number(v); return Number.isFinite(n) && n >= 0 ? Math.min(n, max) : 0; };
+const CURRENCIES = new Set(["INR", "USD", "EUR", "GBP"]);
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -42,19 +51,38 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const rawBody: PurchaseEnquiry = await req.json();
-    const listing = rawBody.listing;
+    // Every listing field comes from the browser: escape text, coerce numbers.
+    const l = rawBody.listing ?? ({} as PurchaseEnquiry["listing"]);
+    const listing = {
+      id: escapeHtml(String(l.id ?? '')),
+      sector: escapeHtml(String(l.sector ?? '').slice(0, 80)),
+      region: escapeHtml(String(l.region ?? '').slice(0, 80)),
+      methodology: escapeHtml(String(l.methodology ?? '').slice(0, 80)),
+      vintage: escapeHtml(String(l.vintage ?? '').slice(0, 20)),
+      verificationScore: num(l.verificationScore, 100),
+      pricePerTonne: num(l.pricePerTonne, 1e7),
+      creditsAvailable: num(l.creditsAvailable, 1e9),
+      currency: CURRENCIES.has(String(l.currency)) ? String(l.currency) : 'INR',
+    };
     const buyer = {
       name: escapeHtml(rawBody.buyer?.name),
       email: escapeHtml(rawBody.buyer?.email),
       company: escapeHtml(rawBody.buyer?.company),
       phone: escapeHtml(rawBody.buyer?.phone),
     };
-    const requestedQuantity = rawBody.requestedQuantity;
+    const requestedQuantity = Math.floor(num(rawBody.requestedQuantity, 1e8));
     const message = escapeHtml(rawBody.message);
 
     // Validate required fields
     if (!listing?.id || !rawBody.buyer?.email || !requestedQuantity) {
       throw new Error("Missing required fields: listing, buyer email, or quantity");
+    }
+
+    const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const admin = createClient(Deno.env.get("SUPABASE_URL")!, serviceKey);
+    const allowed = await takeUse(admin, await guestSubject(`enquiry|${platformIp(req.headers)}`, dayIst(), serviceKey), "guest_scan", ENQUIRIES_PER_ADDRESS_PER_DAY).catch(() => ({ allowed: true }));
+    if (!allowed.allowed) {
+      return new Response(JSON.stringify({ error: "Too many enquiries today. Write to impact@senseible.earth." }), { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
 
     const totalValue = requestedQuantity * (listing.pricePerTonne || 0);
@@ -174,7 +202,7 @@ const handler = async (req: Request): Promise<Response> => {
       html: emailHtml,
     });
 
-    console.log("Purchase enquiry email sent:", emailResponse);
+    console.log("Purchase enquiry email sent");
 
     return new Response(JSON.stringify({ success: true, id: (emailResponse as any).id }), {
       status: 200,
@@ -184,7 +212,7 @@ const handler = async (req: Request): Promise<Response> => {
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
     console.error("Error in send-purchase-enquiry:", errorMessage);
     return new Response(
-      JSON.stringify({ error: errorMessage }),
+      JSON.stringify({ error: "Could not send the enquiry. Try again." }),
       { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }

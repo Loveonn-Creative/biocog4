@@ -4,6 +4,9 @@ import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 // Response: { translations: Record<string, string> }  // keyed by source string
 
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { guestSubject, takeUse } from "../_shared/intelligenceUsage.ts";
+import { platformIp } from "../_shared/platformIp.ts";
+import { dayIst } from "../_shared/intelligence.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -43,6 +46,15 @@ const PROTECTED_TERMS = [
   "EU", "UK", "US", "IEA", "UNFCCC", "Scope 1", "Scope 2", "Scope 3",
 ];
 
+// Abuse limits: a visitor's browsing makes a handful of calls a day; cache hits are free.
+const MAX_STRING_CHARS = 600;
+const AI_CALLS_PER_ADDRESS_PER_DAY = 400;
+// Text that may be personal (an email, a phone or account number) is never sent or cached.
+const PERSONAL = /[^\s@]+@[^\s@]+\.[a-z]{2,}|\d[\d\s-]{8,}\d/i;
+const LINK = /https?:\/\/|www\.|@/i;
+/** A translation is cached only if it adds no link or address the source did not have. */
+export const safeToCache = (source: string, translated: string) => !LINK.test(translated) || LINK.test(source);
+
 async function sha256(input: string): Promise<string> {
   const buf = new TextEncoder().encode(input);
   const hash = await crypto.subtle.digest("SHA-256", buf);
@@ -76,7 +88,8 @@ Deno.serve(async (req) => {
     }
 
     // Dedupe + cap batch size
-    const unique = Array.from(new Set(strings.filter(s => typeof s === "string" && s.trim().length > 0))).slice(0, 100);
+    const unique = Array.from(new Set(strings.filter(s =>
+      typeof s === "string" && s.trim().length > 0 && s.length <= MAX_STRING_CHARS && !PERSONAL.test(s)))).slice(0, 100);
     const hashes = await Promise.all(unique.map(sha256));
 
     const supabase = createClient(
@@ -104,12 +117,18 @@ Deno.serve(async (req) => {
 
     // 2. Translate misses via Lovable AI Gateway
     if (missing.length > 0) {
-      if (!aiConfigured()) {
+      const ip = platformIp(req.headers);
+      const allowed = ip === "unknown" ? { allowed: true } : await takeUse(
+        supabase, await guestSubject(`translate|${ip}`, dayIst(), Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!),
+        "guest_scan", AI_CALLS_PER_ADDRESS_PER_DAY,
+      ).catch(() => ({ allowed: true }));
+      if (!aiConfigured() || !allowed.allowed) {
         // Fallback: return English for misses
         for (const m of missing) translations[m.source] = m.source;
       } else {
         const target = LANGUAGE_NAMES[locale];
-        const numbered = missing.map((m, i) => `${i + 1}. ${m.source}`).join("\n");
+        // One line per string: a newline inside a string cannot fake another numbered line.
+        const numbered = missing.map((m, i) => `${i + 1}. ${m.source.replace(/\s+/g, " ")}`).join("\n");
         const protectedList = PROTECTED_TERMS.join(", ");
         const systemPrompt =
           `You translate UI strings for Senseible, a climate-fintech platform used by MSMEs across emerging markets and rural India. ` +
@@ -160,7 +179,7 @@ Deno.serve(async (req) => {
                 ? parsed[key]
                 : m.source;
             translations[m.source] = translated;
-            if (translated !== m.source) {
+            if (translated !== m.source && safeToCache(m.source, translated)) {
               rowsToInsert.push({
                 locale,
                 source_hash: m.hash,
@@ -187,7 +206,7 @@ Deno.serve(async (req) => {
     });
   } catch (err) {
     console.error("translate-batch error", err);
-    return new Response(JSON.stringify({ error: String(err) }), {
+    return new Response(JSON.stringify({ error: "Translation is unavailable right now." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

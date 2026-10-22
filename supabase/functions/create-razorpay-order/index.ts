@@ -81,9 +81,9 @@ serve(async (req) => {
     const tier = rawTier === 'essential' ? 'basic' : rawTier;
     let cycle: 'monthly' | 'yearly' = body?.billingCycle === 'monthly' ? 'monthly' : 'yearly';
     // UPI (no platform fee) or Razorpay card/netbanking/wallet (+4%), both +18%
-    // GST (_shared/checkoutTotals.ts). A client from before this change sends
-    // no method and is charged the list price it was shown, as before.
-    const paymentMethod = isPaymentMethod(body?.paymentMethod) ? body.paymentMethod : null;
+    // GST (_shared/checkoutTotals.ts). GST always applies: a request without a
+    // method (an old cached page or an edited request) is priced as UPI.
+    const paymentMethod = isPaymentMethod(body?.paymentMethod) ? body.paymentMethod : 'upi';
     console.log('Creating order for:', { tier, cycle, userId });
 
     let amount: number;
@@ -252,7 +252,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('Order creation error:', error);
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }),
+      JSON.stringify({ error: 'Could not start the payment. Try again.' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }

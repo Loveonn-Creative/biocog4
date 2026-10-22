@@ -1,7 +1,8 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { orgCan } from '../_shared/workspaceAccess.ts';
-import { isSourceFilePath, SOURCE_BUCKET, SOURCE_LINK_SECONDS } from '../_shared/sourceFiles.ts';
+import { SOURCE_BUCKET, SOURCE_LINK_SECONDS } from '../_shared/sourceFiles.ts';
 import { versionProbe } from '../_shared/versionProbe.ts';
+import { ownedSourcePath } from '../_shared/sourceFileAccess.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -45,11 +46,12 @@ Deno.serve(async (req) => {
     const allowed = !!doc && (orgId ? await orgCan(admin, user.id, orgId, 'records.view') : doc.user_id === user.id);
     if (!doc || !allowed) return json({ error: 'Invoice not found.' }, 404);
 
-    if (!isSourceFilePath(doc.file_url)) {
+    const sourcePath = ownedSourcePath(doc);
+    if (!sourcePath) {
       return json({ error: 'The original file was not kept for this invoice. Files are kept for invoices added after source storage was switched on.', code: 'no_source_file' }, 404);
     }
 
-    const { data: signed, error: signError } = await admin.storage.from(SOURCE_BUCKET).createSignedUrl(doc.file_url, SOURCE_LINK_SECONDS);
+    const { data: signed, error: signError } = await admin.storage.from(SOURCE_BUCKET).createSignedUrl(sourcePath, SOURCE_LINK_SECONDS);
     if (signError || !signed?.signedUrl) return json({ error: 'The original file could not be opened. Try again.' }, 500);
 
     await admin.from('security_audit_log').insert({

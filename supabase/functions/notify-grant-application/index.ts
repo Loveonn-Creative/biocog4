@@ -1,5 +1,8 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { guestSubject, takeUse } from "../_shared/intelligenceUsage.ts";
+import { dayIst } from "../_shared/intelligence.ts";
+import { platformIp } from "../_shared/platformIp.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
@@ -36,6 +39,9 @@ async function sendEmail(to: string[], subject: string, html: string, from: stri
 // Content comes from that stored row, not from the request, so this endpoint
 // cannot be used to send branded email to arbitrary addresses or text.
 const RECENT_MS = 15 * 60_000;
+// Abuse limits: one confirmation per address a day, ten requests per network a day.
+const EMAILS_PER_ADDRESS_PER_DAY = 1;
+const REQUESTS_PER_ADDRESS_IP_PER_DAY = 10;
 const EMAIL_RE = /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/;
 
 const corsHeaders = {
@@ -65,7 +71,12 @@ const handler = async (req: Request): Promise<Response> => {
     if (!EMAIL_RE.test(requested)) {
       return new Response(JSON.stringify({ error: "A valid email is required" }), { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
-    const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+    const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const admin = createClient(Deno.env.get("SUPABASE_URL")!, serviceKey);
+    const day = dayIst();
+    const quiet = () => new Response(JSON.stringify({ success: true }), { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    const byNetwork = await takeUse(admin, await guestSubject(`grant-ip|${platformIp(req.headers)}`, day, serviceKey), "guest_scan", REQUESTS_PER_ADDRESS_IP_PER_DAY).catch(() => ({ allowed: true }));
+    if (!byNetwork.allowed) return quiet();
     const { data: row, error: rowErr } = await admin
       .from("grant_applications")
       .select("applicant_name, email, company_name, country, company_stage, sector, pitch, created_at")
@@ -81,6 +92,9 @@ const handler = async (req: Request): Promise<Response> => {
     if (!row) {
       return new Response(JSON.stringify({ error: "No recent application found for this email" }), { status: 404, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
+    // Already confirmed today: answer the same way, send nothing more.
+    const byRecipient = await takeUse(admin, await guestSubject(`grant-mail|${String(row.email).toLowerCase()}`, day, serviceKey), "guest_scan", EMAILS_PER_ADDRESS_PER_DAY).catch(() => ({ allowed: true }));
+    if (!byRecipient.allowed) return quiet();
     const raw: GrantApplicationRequest = {
       applicantName: row.applicant_name, email: row.email, companyName: row.company_name,
       country: row.country, companyStage: row.company_stage, sector: row.sector, pitch: row.pitch,
