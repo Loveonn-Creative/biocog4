@@ -1,0 +1,63 @@
+{
+  "slug": "esp-and-bag-filter-electricity-emissions",
+  "q": "Do pollution control systems like ESPs and bag filters add to my emissions?",
+  "title": "ESPs and bag filters: electricity",
+  "short": "Yes, through electricity: fans, ESP power supplies and compressed air for bag cleaning are Scope 2. You cannot switch them off, but you can cut their kWh with fan drives, cleaning on pressure drop and fixing air leaks. Sub-meter them to see their share.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Cement, steel, boiler and foundry operators",
+  "sections": [
+    {
+      "h": "Where the kWh go",
+      "ul": [
+        "Induced draft fans pushing gas through the filter.",
+        "ESP transformer-rectifier sets.",
+        "Compressed air pulses that clean filter bags."
+      ]
+    },
+    {
+      "h": "Cutting kWh without cutting control",
+      "ul": [
+        "Variable speed drives on fans.",
+        "Pulse cleaning triggered by pressure drop, not a timer.",
+        "Sealing duct leaks so fans move less air."
+      ]
+    },
+    {
+      "h": "Keep compliance first",
+      "p": [
+        "Never trade emission limits for energy. Agree changes with the pollution control board consent conditions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Air compressor run hours",
+      "to": "/answers/air-compressor-kwh-from-load-unload-hours"
+    },
+    {
+      "label": "Transformer losses",
+      "to": "/answers/transformer-losses-in-scope-2"
+    },
+    {
+      "label": "FGD limestone CO2",
+      "to": "/answers/fgd-limestone-co2-power-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

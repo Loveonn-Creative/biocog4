@@ -1,0 +1,55 @@
+{
+  "slug": "battery-waste-rules-epr-and-carbon-data",
+  "q": "Do India's battery waste rules affect a battery maker's carbon reporting?",
+  "title": "Battery waste rules and carbon data",
+  "short": "Not directly. The Battery Waste Management Rules, 2022 set extended producer responsibility for collection and recycling, and a phased minimum use of recycled material in new batteries. Those records help your carbon work: recycled content changes material emissions, and recycler data feeds end-of-life figures.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Battery producers, importers and recyclers in India",
+  "sections": [
+    {
+      "h": "Useful overlaps",
+      "ul": [
+        "EPR certificates show what was recycled and by whom.",
+        "Recycled content per battery feeds your product footprint.",
+        "Recycler energy data can support end-of-life emissions."
+      ]
+    },
+    {
+      "h": "Keep them separate",
+      "p": [
+        "EPR compliance is reported on the CPCB portal; carbon figures follow the GHG Protocol. One does not substitute for the other."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Lead acid recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    },
+    {
+      "label": "Lithium-ion recycling",
+      "to": "/answers/lithium-ion-battery-recycling-emissions-per-tonne"
+    },
+    {
+      "label": "Plastic EPR recycled content",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Environment, Forest and Climate Change",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

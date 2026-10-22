@@ -1,0 +1,57 @@
+{
+  "slug": "kiln-exhaust-heat-to-dryer-fuel-saving",
+  "q": "Can kiln or cooler exhaust heat replace dryer fuel, and how do I count it?",
+  "title": "Kiln exhaust heat for dryers",
+  "short": "Yes, ducting hot air from a kiln's cooling zone or exhaust to a dryer can replace some dryer fuel. Count the saving as lower fuel on the dryer's own bills or meter. Do not add a separate credit for the recovered heat; it is already inside the kiln's fuel.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ceramic, brick, refractory and food processing plants",
+  "sections": [
+    {
+      "h": "Good matches",
+      "ul": [
+        "Tile and sanitaryware kilns feeding body or glaze dryers.",
+        "Cement or lime cooler air feeding raw material drying.",
+        "Biscuit and snack ovens feeding pre-dryers."
+      ]
+    },
+    {
+      "h": "How to show the saving",
+      "ol": [
+        "Measure dryer fuel per tonne for a few months before.",
+        "Measure again after the duct is in service, at similar output.",
+        "Multiply the fuel saved by its factor. Fan electricity added is Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Waste heat recovery scope",
+      "to": "/answers/waste-heat-recovery-power-which-scope"
+    },
+    {
+      "label": "Ceramic spray dryer",
+      "to": "/answers/ceramic-spray-dryer-co2-per-tonne-powder"
+    },
+    {
+      "label": "Waste heat recovery loans",
+      "to": "/answers/waste-heat-recovery-loan-what-lenders-ask"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "natural-dye-vs-synthetic-dye-carbon",
+  "q": "Are natural dyes lower carbon than synthetic dyes?",
+  "title": "Natural vs synthetic dyes: carbon",
+  "short": "Not automatically. Natural dyes avoid petrochemical dye making, but often need more dye material, mordants such as alum, more dyebaths and more hot water. Hot water is usually the big energy use. Compare kg CO2e per kg of fabric with measured steam or fuel on both.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Textile dyers, artisans and fashion brands",
+  "sections": [
+    {
+      "h": "What decides the result",
+      "ul": [
+        "Steam or fuel per kg of fabric dyed.",
+        "Dye material grown, harvested and extracted.",
+        "Mordants and fixing agents.",
+        "Number of dips to reach the shade."
+      ]
+    },
+    {
+      "h": "Making a claim",
+      "p": [
+        "Say \"lower carbon\" only with your own measured comparison. \"Natural\" alone is not a carbon claim."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Dye and pigment footprint",
+      "to": "/answers/dye-pigment-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Dye house per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Hand block printed fabric",
+      "to": "/answers/hand-block-printed-fabric-carbon-per-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

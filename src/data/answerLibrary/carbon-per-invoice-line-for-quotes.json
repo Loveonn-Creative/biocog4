@@ -1,0 +1,53 @@
+{
+  "slug": "carbon-per-invoice-line-for-quotes",
+  "q": "A buyer wants a carbon figure on every invoice line. How do I do that?",
+  "title": "Carbon on every invoice line",
+  "short": "Work out kg CO2e per unit for each product once, from your yearly Scope 1 and 2 and the inputs each product uses, then multiply by the quantity on each line. Update the per-unit figure when your inventory changes, and state the period and method on the invoice.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers whose buyers ask for carbon per shipment",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Build a yearly per-unit figure per product, with a stated allocation rule.",
+        "Store it as a product attribute in your billing system.",
+        "Print quantity x per-unit figure on each line, with the basis year."
+      ]
+    },
+    {
+      "h": "Keep it defensible",
+      "ul": [
+        "Do not recalculate per invoice from that month's bills; seasonal swings confuse buyers.",
+        "Say whether the figure is cradle to gate.",
+        "Keep the workings ready for review."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Buyer asks for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "One dataset for several buyers",
+      "to": "/answers/one-carbon-dataset-for-several-buyers"
+    },
+    {
+      "label": "Split by product line",
+      "to": "/answers/buyer-asks-scope-1-2-split-by-product-line"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "ladle-preheating-fuel-and-emissions",
+  "q": "How much fuel does ladle preheating use in a foundry or melt shop?",
+  "title": "Ladle preheating: fuel and CO2",
+  "short": "Ladle preheaters burn gas, oil or LPG to keep refractory lining hot so metal does not chill. It is a steady Scope 1 load that is easy to overlook. Lids on idle ladles, better burners and tighter cycle times cut it. Meter the preheater fuel separately if you can.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Foundries and steel melt shops",
+  "sections": [
+    {
+      "h": "Why it matters",
+      "ul": [
+        "Preheaters often run between heats and over breaks.",
+        "Open ladles lose heat fast from the mouth.",
+        "Cold ladles mean higher tapping temperatures, so more melting energy."
+      ]
+    },
+    {
+      "h": "Ways to cut it",
+      "ul": [
+        "Ladle covers during waiting time.",
+        "Burners with air preheat or oxygen enrichment.",
+        "Scheduling so fewer ladles are kept hot."
+      ]
+    },
+    {
+      "h": "Counting it",
+      "p": [
+        "Fuel to the preheater multiplied by its factor, for example 2.98 kg CO2 per kg of LPG or 2.05 kg per scm of natural gas."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Cupola vs induction furnace",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "Howrah foundry cupola",
+      "to": "/answers/howrah-foundry-cupola-to-induction-co2"
+    },
+    {
+      "label": "LPG cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

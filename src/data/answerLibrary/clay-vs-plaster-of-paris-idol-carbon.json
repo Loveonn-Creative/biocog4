@@ -1,0 +1,51 @@
+{
+  "slug": "clay-vs-plaster-of-paris-idol-carbon",
+  "q": "Which has a lower carbon footprint, a clay idol or a plaster of Paris idol?",
+  "title": "Clay idol vs plaster of Paris idol",
+  "short": "An unfired clay idol usually has the lower footprint: the clay needs little processing. Plaster of Paris is made by heating gypsum, which burns fuel. Paints, transport and the frame add to both. For a fair figure, weigh the materials and include the fuel behind the plaster.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Idol makers, puja committees and event organisers",
+  "sections": [
+    {
+      "h": "Where emissions come from",
+      "ul": [
+        "Plaster of Paris: fuel to calcine gypsum.",
+        "Clay idols: digging, transport and drying, usually small.",
+        "Both: paints, decorations, scaffolding and transport."
+      ]
+    },
+    {
+      "h": "Beyond carbon",
+      "p": [
+        "Water pollution from immersion is a separate issue from greenhouse gases; this page covers carbon only."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Plaster of Paris calcination",
+      "to": "/answers/plaster-of-paris-calcination-co2-per-tonne"
+    },
+    {
+      "label": "Terracotta planter",
+      "to": "/answers/terracotta-planter-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Durga puja pandal",
+      "to": "/answers/durga-puja-pandal-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

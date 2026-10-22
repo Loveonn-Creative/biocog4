@@ -1,0 +1,56 @@
+{
+  "slug": "laminated-windscreen-carbon-footprint",
+  "q": "What is the carbon footprint of a laminated car windscreen?",
+  "title": "Laminated windscreen footprint",
+  "short": "A windscreen is two sheets of float glass bonded with a PVB interlayer. The float glass carries most of the footprint, then bending furnaces and the autoclave that bonds the layers. Ask the glass supplier for kg CO2e per kg, and add your cutting, bending and autoclave energy per piece.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Automotive glass processors",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Float glass, by weight.",
+        "PVB interlayer, by weight.",
+        "Bending furnace fuel or electricity.",
+        "Autoclave steam or electricity."
+      ]
+    },
+    {
+      "h": "Per piece",
+      "p": [
+        "Divide energy by good windscreens; glass broken in processing counts against output."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Float glass furnace",
+      "to": "/answers/float-glass-furnace-co2-per-tonne"
+    },
+    {
+      "label": "Vehicle headlamp",
+      "to": "/answers/vehicle-headlamp-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Auto components and CBAM",
+      "to": "/answers/are-auto-components-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "whey-protein-powder-carbon-footprint",
+  "q": "What is the carbon footprint of whey protein powder?",
+  "title": "Whey protein powder footprint",
+  "short": "Whey is a co-product of cheese or paneer, so first decide how much of the milk's footprint it carries, by mass or by value, and state the rule. Then add membrane filtration, evaporation and spray drying energy, flavours and packaging. Spray drying is usually the largest plant energy use.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dairy processors and nutrition brands",
+  "sections": [
+    {
+      "h": "Allocation choice",
+      "ul": [
+        "By mass: whey carries a large share, since most of the milk becomes whey.",
+        "By value: whey carries a smaller share, if it sells for less.",
+        "Use one rule and keep it."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Ultrafiltration and pumps (electricity).",
+        "Evaporators and spray dryers (steam or gas)."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Milk powder footprint",
+      "to": "/answers/milk-powder-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Dairy plant per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Paneer footprint",
+      "to": "/answers/paneer-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

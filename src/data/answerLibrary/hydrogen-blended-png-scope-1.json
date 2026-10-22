@@ -1,0 +1,55 @@
+{
+  "slug": "hydrogen-blended-png-scope-1",
+  "q": "If my city gas supplier blends hydrogen into PNG, how does my Scope 1 change?",
+  "title": "Hydrogen in PNG and Scope 1",
+  "short": "Burning hydrogen emits no CO2, so a blend lowers Scope 1, but by less than the blend percentage suggests. Hydrogen carries about a third of methane's energy per cubic metre, so a few percent by volume replaces a smaller share of energy. Ask the supplier for blend share and calorific value.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Factories and commercial users on piped natural gas",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "ol": [
+        "Get the hydrogen share and calorific value from the supplier for the period.",
+        "Apply the natural gas factor only to the natural gas part.",
+        "Count the hydrogen's production emissions in Scope 3, Category 3, if the supplier gives them."
+      ]
+    },
+    {
+      "h": "Check the bill",
+      "p": [
+        "Bills in energy units (MMBtu or kcal) handle the lower energy per volume; bills in scm need the calorific value."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "CBG blended PNG",
+      "to": "/answers/does-cbg-blended-png-lower-scope-1"
+    },
+    {
+      "label": "City gas methane leaks",
+      "to": "/answers/city-gas-network-methane-leaks-scope-1"
+    },
+    {
+      "label": "India green hydrogen standard",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

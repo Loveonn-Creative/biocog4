@@ -1,0 +1,62 @@
+{
+  "slug": "hot-water-generator-vs-steam-boiler-fuel",
+  "q": "Should I use a hot water generator instead of a steam boiler for low-temperature heat?",
+  "title": "Hot water generator vs steam boiler",
+  "short": "If your process needs water below about 90 °C, making steam and then cooling it back to hot water wastes fuel through flash, condensate and blowdown losses. A hot water generator heats water directly. Check your process temperatures first, then compare fuel per kilolitre heated.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Food, dairy, textile and pharma plants",
+  "sections": [
+    {
+      "h": "Where steam loses heat",
+      "ul": [
+        "Flash steam and condensate not returned.",
+        "Blowdown to control dissolved solids.",
+        "Trap and line losses at higher temperature."
+      ]
+    },
+    {
+      "h": "When to keep steam",
+      "ul": [
+        "Processes above water's boiling point, sterilisation or direct steam injection.",
+        "Sites where one boiler already serves high-temperature users."
+      ]
+    },
+    {
+      "h": "How to compare",
+      "p": [
+        "Fuel per kilolitre of water heated, before and after, from invoices or a meter. A heat pump may beat both for low temperatures; see the linked page."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Hot water saved per kL",
+      "to": "/answers/hot-water-saved-co2-per-kl"
+    },
+    {
+      "label": "Heat pump for process heat",
+      "to": "/answers/heat-pump-for-process-heat-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

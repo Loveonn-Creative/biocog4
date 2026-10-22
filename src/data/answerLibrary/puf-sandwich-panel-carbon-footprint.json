@@ -1,0 +1,52 @@
+{
+  "slug": "puf-sandwich-panel-carbon-footprint",
+  "q": "What is the carbon footprint of a PUF sandwich panel?",
+  "title": "PUF sandwich panel footprint",
+  "short": "Most of it comes from the steel skins and the polyurethane foam, made from MDI and polyol. The blowing agent matters too: HFC blowing agents are strong greenhouse gases, while hydrocarbons such as cyclopentane are not. Ask suppliers for each, then add your press and curing energy per square metre.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cold room, clean room and prefab building panel makers",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Coated steel or aluminium skins, by weight.",
+        "Polyol and MDI, by weight.",
+        "Blowing agent type and quantity, including any released during foaming.",
+        "Press, heating and curing energy."
+      ]
+    },
+    {
+      "h": "Why the blowing agent matters",
+      "p": [
+        "HFC releases during foaming count in your Scope 1. Ask buyers whether they want the agent named in the declaration."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Aluminium composite panel",
+      "to": "/answers/aluminium-composite-panel-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Cold storage per tonne",
+      "to": "/answers/cold-storage-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

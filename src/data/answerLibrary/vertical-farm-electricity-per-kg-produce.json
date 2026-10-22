@@ -1,0 +1,59 @@
+{
+  "slug": "vertical-farm-electricity-per-kg-produce",
+  "q": "What is the carbon footprint of vegetables from an indoor vertical farm?",
+  "title": "Vertical farm footprint per kg",
+  "short": "Mostly electricity for LED lighting, air conditioning and pumps. On India's grid at 0.710 kg CO2 per kWh, kWh per kg decides the result, so measure it. Rooftop solar or contracted renewable power can cut market-based Scope 2. Add packaging and delivery.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indoor farm operators and food retailers",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Total kWh per month, ideally split into lighting, cooling and pumps.",
+        "Kg of saleable produce per month.",
+        "Nutrients, growing media and packaging."
+      ]
+    },
+    {
+      "h": "Compare fairly",
+      "p": [
+        "Field-grown produce trucked long distances can still be lower. Compare per kg delivered, with stated assumptions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "Electricity: 10 kWh per kg of lettuce (illustrative)",
+      "10 x 0.710 = 7.1 kg CO2 per kg from electricity alone"
+    ],
+    "note": "Illustrative figure only. Use your own metered kWh and output."
+  },
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Polyhouse farming per kg",
+      "to": "/answers/polyhouse-farming-emissions-per-kg"
+    },
+    {
+      "label": "Mushroom farm per kg",
+      "to": "/answers/mushroom-farm-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

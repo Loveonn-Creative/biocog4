@@ -1,0 +1,57 @@
+{
+  "slug": "oxy-fuel-firing-furnace-co2",
+  "q": "Does oxy-fuel firing lower a furnace's carbon footprint?",
+  "title": "Oxy-fuel firing: footprint effect",
+  "short": "It cuts fuel, because burners no longer heat the nitrogen in air. But making oxygen takes electricity. Your Scope 1 falls; your Scope 2 rises if you run an oxygen plant, or Scope 3 rises if you buy liquid oxygen. Count both before calling it a saving.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Glass, metal melting and frit furnace operators",
+  "sections": [
+    {
+      "h": "What changes",
+      "ul": [
+        "Fuel per tonne melted falls (Scope 1).",
+        "Oxygen plant electricity is added (Scope 2), or bought oxygen (Scope 3, Category 1).",
+        "Flue gas volume drops, which helps any heat recovery or capture later."
+      ]
+    },
+    {
+      "h": "How to compare",
+      "ol": [
+        "Fuel saved per tonne multiplied by its factor.",
+        "Minus oxygen used per tonne multiplied by the electricity per tonne of oxygen and 0.710 kg CO2 per kWh, or the supplier's figure for bought oxygen.",
+        "The difference is the net change."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Industrial gases in Scope 3",
+      "to": "/answers/industrial-gases-oxygen-nitrogen-scope-3"
+    },
+    {
+      "label": "Glass container furnace",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Recuperator air preheat",
+      "to": "/answers/recuperator-combustion-air-preheat-fuel-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

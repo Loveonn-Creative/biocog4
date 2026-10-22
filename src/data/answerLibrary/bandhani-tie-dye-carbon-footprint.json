@@ -1,0 +1,52 @@
+{
+  "slug": "bandhani-tie-dye-carbon-footprint",
+  "q": "What is the carbon footprint of a bandhani tie-dye piece?",
+  "title": "Bandhani tie-dye footprint",
+  "short": "The tying is handwork with almost no energy. Emissions come from the fabric, each dyebath heated with fuel or steam, washing, drying and transport. Many colours mean many dyebaths, so count heating energy per bath. Divide by pieces dyed in that bath.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bandhani units and handloom exporters",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Fabric, from supplier or database.",
+        "Fuel or firewood to heat each dyebath.",
+        "Dyes and chemicals.",
+        "Drying and washing."
+      ]
+    },
+    {
+      "h": "Firewood",
+      "p": [
+        "CO2 from firewood is biogenic and reported separately; methane and nitrous oxide still count."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Saree footprint",
+      "to": "/answers/saree-carbon-footprint-per-saree"
+    },
+    {
+      "label": "Hand block printed fabric",
+      "to": "/answers/hand-block-printed-fabric-carbon-per-metre"
+    },
+    {
+      "label": "Dye house per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

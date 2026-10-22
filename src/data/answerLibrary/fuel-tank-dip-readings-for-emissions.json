@@ -1,0 +1,63 @@
+{
+  "slug": "fuel-tank-dip-readings-for-emissions",
+  "q": "Can I use fuel tank dip readings to work out diesel burned?",
+  "title": "Fuel tank dip readings",
+  "short": "Yes. Diesel burned in a period is opening stock plus diesel bought minus closing stock. Dip readings give the stock: convert centimetres to litres with the tank's calibration chart and record the date and time. Invoices still prove what you bought; dips adjust for timing.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with diesel tanks for DG sets or boilers",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Dip in cm at the start and end of each month, same time of day.",
+        "The tank's calibration chart, signed off.",
+        "Every delivery with its invoice."
+      ]
+    },
+    {
+      "h": "Common errors",
+      "ul": [
+        "Using a chart for a different tank.",
+        "Reading right after a delivery, before the level settles.",
+        "Forgetting fuel drawn for vehicles or other sites."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "Opening stock from dip: 4,000 L",
+      "Bought in the month (invoices): 10,000 L",
+      "Closing stock from dip: 3,000 L",
+      "Burned: 4,000 + 10,000 minus 3,000 = 11,000 L x 2.68 = 29,480 kg, about 29.5 t CO2"
+    ],
+    "note": "Illustrative quantities only."
+  },
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    },
+    {
+      "label": "Fuel purchased vs consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    },
+    {
+      "label": "Bulk diesel invoice in kL",
+      "to": "/answers/bulk-diesel-invoice-kilolitres-15c"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "waste-tyre-epr-and-tyre-carbon-footprint",
+  "q": "Does waste tyre EPR in India change a tyre maker's carbon footprint?",
+  "title": "Waste tyre EPR and carbon",
+  "short": "EPR for waste tyres, added to India's hazardous waste rules in 2022, makes producers and importers meet recycling obligations through registered recyclers, including pyrolysis units. It does not change your factory emissions, but recycler records can inform the end-of-life part of a tyre's footprint.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Tyre makers, importers and recyclers",
+  "sections": [
+    {
+      "h": "What to keep",
+      "ul": [
+        "EPR certificates and the recycling route behind them.",
+        "Recycler type: crumb rubber, reclaimed rubber or pyrolysis."
+      ]
+    },
+    {
+      "h": "For the footprint",
+      "p": [
+        "End of life (Category 12) depends on the route. Pyrolysis oil burned as fuel emits CO2 when burned, so do not treat it as zero."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Tyre footprint per unit",
+      "to": "/answers/tyre-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Tyre retreading",
+      "to": "/answers/tyre-retreading-carbon-footprint-per-tyre"
+    },
+    {
+      "label": "Pyrolysis oil factor",
+      "to": "/answers/pyrolysis-oil-from-plastic-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Environment, Forest and Climate Change",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

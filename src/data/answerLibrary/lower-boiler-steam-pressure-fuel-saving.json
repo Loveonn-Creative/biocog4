@@ -1,0 +1,57 @@
+{
+  "slug": "lower-boiler-steam-pressure-fuel-saving",
+  "q": "Does running a boiler at lower steam pressure save fuel?",
+  "title": "Lower steam pressure: fuel saving",
+  "short": "Often a little, if every user still gets the temperature it needs. Lower pressure means lower steam temperature, so less heat escapes from pipes and less flash steam is lost at traps. Check the hottest process first, then compare fuel per tonne of steam over a few weeks.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Boiler operators and plant engineers",
+  "sections": [
+    {
+      "h": "Where the saving comes from",
+      "ul": [
+        "Lower surface temperature on lines and fittings.",
+        "Less flash steam where condensate drops to atmospheric pressure.",
+        "Fewer leaks driven by high pressure."
+      ]
+    },
+    {
+      "h": "Limits",
+      "ul": [
+        "Some processes need a minimum temperature, so check them first.",
+        "Lower pressure means larger steam volume, so check pipe velocities.",
+        "Some boilers are less efficient well below their design pressure; ask the maker."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Flash steam recovery",
+      "to": "/answers/flash-steam-recovery-fuel-saving"
+    },
+    {
+      "label": "Steam pipe insulation",
+      "to": "/answers/steam-pipe-insulation-heat-loss"
+    },
+    {
+      "label": "Failed steam traps",
+      "to": "/answers/failed-steam-trap-fuel-loss"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

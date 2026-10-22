@@ -1339,6 +1339,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "bandhani-tie-dye-carbon-footprint",
+  "q": "What is the carbon footprint of a bandhani tie-dye piece?",
+  "title": "Bandhani tie-dye footprint",
+  "short": "The tying is handwork with almost no energy. Emissions come from the fabric, each dyebath heated with fuel or steam, washing, drying and transport. Many colours mean many dyebaths, so count heating energy per bath. Divide by pieces dyed in that bath.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "bangladesh-garment-factory-rooftop-solar-scope-2",
   "q": "How does rooftop solar change a Bangladesh garment factory's Scope 2?",
   "title": "Rooftop solar at Bangladesh factories",
@@ -1513,6 +1521,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually Scope 3. With battery swapping you buy a charged battery as a service; the operator owns the batteries and stations and buys the electricity, so it is the operator's Scope 2. Report your share as a purchased service in Scope 3 Category 1, state the choice, and keep it consistent year to year.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "battery-waste-rules-epr-and-carbon-data",
+  "q": "Do India's battery waste rules affect a battery maker's carbon reporting?",
+  "title": "Battery waste rules and carbon data",
+  "short": "Not directly. The Battery Waste Management Rules, 2022 set extended producer responsibility for collection and recycling, and a phased minimum use of recycled material in new batteries. Those records help your carbon work: recycled content changes material emissions, and recycler data feeds end-of-life figures.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "bauxite-mining-emissions-per-tonne",
@@ -2145,6 +2161,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add three parts and divide by good output: the ingredients, mainly flour, from supplier or database factors; your bakery's own fuel and electricity, mostly the oven; and the packaging. Use a month or year of bills, count only saleable loaves in the output, and state the boundary, usually cradle to bakery gate.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "breakfast-cereal-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of breakfast cereal like cornflakes?",
+  "title": "Breakfast cereal footprint",
+  "short": "Add the grain or maize, sugar and other ingredients, then cooking, flaking or extrusion, and toasting, which uses gas ovens or dryers. Packaging, a bag in a carton, and distribution follow. Divide by kg of cereal packed, with rejects counted against output.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "brescia-eaf-mill-imported-billets-scrap-cbam",
@@ -2995,6 +3019,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "captured-co2-how-to-report-ghg-inventory",
+  "q": "If my plant captures CO2, can I subtract it from Scope 1?",
+  "title": "Captured CO2 in your inventory",
+  "short": "Report gross Scope 1 first. Show CO2 captured and permanently stored, or sold on, as a separate line with its destination. CO2 sold for drinks or chemicals is released later, so it is not a removal. Never net it out silently; buyers and verifiers will ask.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "car-body-shop-paint-solvents-carbon-count",
   "q": "Do paint solvents in a car body shop count in its carbon footprint?",
   "title": "Body shops: paint solvents and carbon",
@@ -3145,6 +3177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if you can back it up. Measure the event's full footprint including attendee travel, cut what you can, offset the rest with retired credits of known quality, and publish the boundary, total, reductions and credit details. India's 2024 CCPA guidelines require environmental claims to be specific, evidenced and verifiable.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "carbon-per-invoice-line-for-quotes",
+  "q": "A buyer wants a carbon figure on every invoice line. How do I do that?",
+  "title": "Carbon on every invoice line",
+  "short": "Work out kg CO2e per unit for each product once, from your yearly Scope 1 and 2 and the inputs each product uses, then multiply by the quantity on each line. Update the per-unit figure when your inventory changes, and state the period and method on the invoice.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "carbon-pricing-mechanisms-in-india",
@@ -3345,6 +3385,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "With verified actual data, scrap-based EAF and gas-based DRI steel can owe little or no CBAM in 2026, while blast furnace steel pays on emissions above the benchmark. By 2034, when free allocation ends, EAF scrap steel costs roughly a fifth of BF-BOF. The saving only appears with verified actual emissions, not default values.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cbam-electricity-imports-cn-2716",
+  "q": "Is electricity exported to the EU covered by CBAM?",
+  "title": "Electricity exports and CBAM",
+  "short": "Yes. Electricity, CN 2716 00 00, is one of the CBAM goods. It matters only where a grid connects to the EU's. Default values are used unless strict conditions for actual emissions, such as a direct contract with a named plant, are met. Indian exporters are not affected directly.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "cbam-electrolytic-hydrogen-direct-emissions-only",
@@ -4299,6 +4347,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "clay-vs-plaster-of-paris-idol-carbon",
+  "q": "Which has a lower carbon footprint, a clay idol or a plaster of Paris idol?",
+  "title": "Clay idol vs plaster of Paris idol",
+  "short": "An unfired clay idol usually has the lower footprint: the clay needs little processing. Plaster of Paris is made by heating gypsum, which burns fuel. Paints, transport and the frame add to both. For a fair figure, weigh the materials and include the fuel behind the plaster.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "climate-clause-in-buyer-contract-what-to-check",
   "q": "What should I check before signing a climate clause in a buyer's supply contract?",
   "title": "Checking a climate clause before signing",
@@ -4451,6 +4507,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "co2-welding-shielding-gas-scope-1",
+  "q": "Does CO2 used as welding shielding gas count in Scope 1?",
+  "title": "CO2 welding gas in Scope 1",
+  "short": "Yes. CO2 released at your site from cylinders or bulk tanks is a direct emission, so it is Scope 1 at its mass, usually small next to fuel and power. For mixed gases count only the CO2 share. Argon is not a greenhouse gas. Welder electricity is Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "coaching-centre-emissions-per-student",
   "q": "What is the carbon footprint of a coaching centre per student?",
   "title": "Coaching centre emissions per student",
@@ -4529,6 +4593,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "It can, but only as a registered project under an approved methodology, such as CDM AMS-I.C for renewable thermal energy, and only if the biomass counts as renewable, the switch is additional and leakage is deducted. Credits are earned on verified reductions after registration, not on past switches, and the net volume is usually well below the coal CO2 avoided.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "coal-ultimate-analysis-carbon-content-factor",
+  "q": "Can I use my coal's lab carbon content instead of a default factor?",
+  "title": "Coal carbon content from lab tests",
+  "short": "Yes, and it is often more accurate. If a lab gives the carbon percentage on an as-received basis, CO2 equals carbon mass times 44/12, with full oxidation as the IPCC 2006 default assumes. Use the same basis as the weight you burned, and test each lot or a fixed schedule.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "coal-vs-png-vs-biomass-boiler-emissions",
@@ -4747,6 +4819,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "combine-harvester-diesel-per-acre",
+  "q": "What are the emissions from combine harvesting per acre?",
+  "title": "Combine harvester: CO2 per acre",
+  "short": "Multiply diesel per acre by 2.68 kg CO2 per litre. Owners report it in Scope 1. Farmers who hire a harvester count it in Scope 3, from the hire invoice. Diesel per acre varies with crop, yield and field size, so measure it from fill-ups over a season.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "common-carbon-accounting-mistakes-smes",
   "q": "What are the most common carbon accounting mistakes Indian SMEs make?",
   "title": "Common carbon accounting mistakes",
@@ -4913,6 +4993,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Many older cookstove credits were. A 2024 Nature Sustainability study by Gill-Wiehl, Kammen and Haya estimated that a sample of 51 cookstove projects was over-credited about 9 times, mainly from overstated stove use, wood savings and non-renewable biomass shares. Buy only after checking the methodology, its version and how use was measured.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "cool-roof-coating-factory-energy-saving",
+  "q": "Does a cool roof coating cut energy use and emissions in a factory?",
+  "title": "Cool roof coating: energy effect",
+  "short": "In air-conditioned spaces, a reflective roof coating reduces heat entering through the roof, so cooling uses fewer kWh. In sheds without cooling it improves comfort but saves little electricity. Measure cooling kWh in comparable months before and after, then multiply the saving by 0.710.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "cooling-tower-energy-savings-factory",
@@ -6155,6 +6243,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "dried-fish-processing-emissions-per-kg",
+  "q": "What are the emissions from processing dried fish?",
+  "title": "Dried fish processing emissions",
+  "short": "Sun drying on racks uses almost no energy, so emissions come from ice, salt, transport and packing. Mechanical or solar-assisted dryers add fuel or electricity. Work per kg of dried product: fresh fish loses most of its weight, so divide energy by output, not by fish landed.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "drip-irrigation-energy-saving-per-acre",
   "q": "How do I calculate the emissions saved by moving to drip irrigation?",
   "title": "Drip irrigation energy saving per acre",
@@ -6819,6 +6915,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "enhanced-rock-weathering-carbon-removal-claims",
+  "q": "Can crushed rock spread on farms count as carbon removal for my company?",
+  "title": "Enhanced rock weathering claims",
+  "short": "Enhanced weathering spreads crushed silicate rock, such as basalt, on fields so it reacts with CO2 over years. The removal is slow and hard to measure. Count it only through credits with measured results, and subtract crushing and transport emissions. Never deduct it from Scope 1, 2 or 3.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "epoxy-resin-carbon-footprint-per-kg",
   "q": "What makes up the carbon footprint of epoxy resin?",
   "title": "Epoxy resin carbon footprint per kg",
@@ -6897,6 +7001,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the national grid emission factor for the year your electricity was consumed, from the official or utility publication, and name the source. South Africa's coal heavy grid sits roughly between 0.9 and 1.0 kg CO2 per kWh, among the highest in the world, so electricity often dominates a supplier's footprint.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "esp-and-bag-filter-electricity-emissions",
+  "q": "Do pollution control systems like ESPs and bag filters add to my emissions?",
+  "title": "ESPs and bag filters: electricity",
+  "short": "Yes, through electricity: fans, ESP power supplies and compressed air for bag cleaning are Scope 2. You cannot switch them off, but you can cut their kWh with fan drives, cleaning on pressure drop and fixing air leaks. Sub-meter them to see their share.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "espr-steel-aluminium-carbon-data-indian-exporters",
@@ -7489,6 +7601,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Report the factory's actual emissions from the date you took control, using its bills from that date. If the purchase is significant, also recalculate your base year as if you had owned the factory then, and show a full-year comparable figure for the current year, so growth by acquisition is not mistaken for higher emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "factory-skylights-daylight-lighting-savings",
+  "q": "Do skylights and daylight panels cut factory lighting emissions?",
+  "title": "Skylights: lighting savings",
+  "short": "Yes, if lights actually switch off when daylight is enough. Daylight sheets or light pipes replace lighting kWh during the day, at 0.710 kg CO2 per kWh. Add daylight sensors or zoned switching, or people leave lights on. In air-conditioned areas, check the extra heat gain.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "factory-staff-bus-scope-1-or-scope-3",
@@ -8243,6 +8363,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "fuel-tank-dip-readings-for-emissions",
+  "q": "Can I use fuel tank dip readings to work out diesel burned?",
+  "title": "Fuel tank dip readings",
+  "short": "Yes. Diesel burned in a period is opening stock plus diesel bought minus closing stock. Dip readings give the stock: convert centimetres to litres with the tank's calibration chart and record the date and time. Invoices still prove what you bought; dips adjust for timing.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "fueleu-maritime-surcharge-on-freight-invoice",
   "q": "What is the FuelEU Maritime surcharge on my sea freight invoice?",
   "title": "FuelEU Maritime surcharge explained",
@@ -8265,6 +8393,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work out the air the hood exhausts (sash opening area x face velocity), then add the fan power to move it and the cooling energy to condition the replacement air. Multiply the electrical kW by operating hours and by 0.710 kg CO2 per kWh. In a hot, humid climate, cooling the make-up air is usually the biggest part.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "furnace-door-opening-heat-loss-fuel",
+  "q": "How much fuel do furnace door openings waste, and how do I measure it?",
+  "title": "Furnace door openings: fuel lost",
+  "short": "Every minute a hot furnace door stands open, radiant heat escapes and cold air rushes in, so burners fire harder. Log door-open minutes for a few weeks, compare fuel per tonne on low and high days, then fix with faster doors, curtains or smaller charging openings.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "furnace-oil-litres-to-kg-density",
@@ -8617,6 +8753,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Most of a tumbler's footprint comes from melting glass: divide the furnace fuel and plant electricity by good pieces packed, then add batch materials and packing. Count CO2 released by soda ash and limestone in the batch separately from fuel.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "glass-vial-ampoule-carbon-footprint",
+  "q": "What is the carbon footprint of pharmaceutical glass vials and ampoules?",
+  "title": "Glass vials and ampoules",
+  "short": "Most of it sits in the glass tubing, melted in a furnace from sand and other minerals. Converters then form vials and ampoules with gas and oxygen flames, then anneal them. Ask the tubing supplier for its figure per kg, and add your forming fuel, oxygen and annealing per thousand pieces.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "glass-wool-insulation-carbon-footprint-per-kg",
@@ -9523,6 +9667,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "hot-water-generator-vs-steam-boiler-fuel",
+  "q": "Should I use a hot water generator instead of a steam boiler for low-temperature heat?",
+  "title": "Hot water generator vs steam boiler",
+  "short": "If your process needs water below about 90 °C, making steam and then cooling it back to hot water wastes fuel through flash, condensate and blowdown losses. A hot water generator heats water directly. Check your process temperatures first, then compare fuel per kilolitre heated.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "hot-water-saved-co2-per-kl",
   "q": "How much fuel and CO2 do I save for every kilolitre of hot process water I stop using?",
   "title": "Fuel and CO2 saved per kL of hot water",
@@ -10195,6 +10347,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "hydrogen-blended-png-scope-1",
+  "q": "If my city gas supplier blends hydrogen into PNG, how does my Scope 1 change?",
+  "title": "Hydrogen in PNG and Scope 1",
+  "short": "Burning hydrogen emits no CO2, so a blend lowers Scope 1, but by less than the blend percentage suggests. Hydrogen carries about a third of methane's energy per cubic metre, so a few percent by volume replaces a smaller share of energy. Ask the supplier for blend share and calorific value.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "hydrogen-fuel-cell-bus-emissions-per-km",
   "q": "How do I calculate emissions for a hydrogen fuel cell bus?",
   "title": "Hydrogen fuel cell bus emissions",
@@ -10224,6 +10384,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Reusable IBC totes: emissions",
   "short": "Spread the making of each IBC over the trips it makes, then add washing and the return trip. A tote used ten times carries a tenth of its manufacturing footprint per trip. Single-use totes carry all of it on one trip.",
   "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "ice-bank-thermal-storage-scope-2",
+  "q": "Does an ice bank or chilled water storage tank cut my Scope 2 emissions?",
+  "title": "Thermal storage and Scope 2",
+  "short": "Usually not on the location-based method. Storage shifts chiller load to night, but India's grid factor is one annual average (0.710 kg CO2 per kWh), so the same kWh give the same CO2. Making ice can even use more kWh. It can still cut cost and peak demand.",
+  "topic": "accounting",
   "reviewed": "2026-10-22"
  },
  {
@@ -10569,6 +10737,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide the furnace's own metered kWh by tonnes of liquid metal tapped in the same period, then compare it with a measured range from a BEE foundry study and with the physical minimum, roughly 350 to 400 kWh per tonne, which is an estimate from the heat needed to melt iron. The gap shows your losses.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "induction-hardening-vs-furnace-hardening-co2",
+  "q": "Is induction hardening lower carbon than furnace hardening?",
+  "title": "Induction vs furnace hardening",
+  "short": "Often, for parts that need only a hard surface. Induction heats a thin surface layer with electricity in seconds, while a gas furnace heats the whole part and the furnace. The answer depends on your grid factor (0.710 kg CO2 per kWh) and the gas saved, so compare per part.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "induction-vs-lpg-canteen-kitchen-emissions",
@@ -11739,6 +11915,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "kiln-exhaust-heat-to-dryer-fuel-saving",
+  "q": "Can kiln or cooler exhaust heat replace dryer fuel, and how do I count it?",
+  "title": "Kiln exhaust heat for dryers",
+  "short": "Yes, ducting hot air from a kiln's cooling zone or exhaust to a dryer can replace some dryer fuel. Count the saving as lower fuel on the dryer's own bills or meter. Do not add a separate credit for the recovered heat; it is already inside the kiln's fuel.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "kirana-store-carbon-footprint",
   "q": "What is the carbon footprint of a kirana store?",
   "title": "Kirana store: carbon footprint",
@@ -11963,6 +12147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "ladle-preheating-fuel-and-emissions",
+  "q": "How much fuel does ladle preheating use in a foundry or melt shop?",
+  "title": "Ladle preheating: fuel and CO2",
+  "short": "Ladle preheaters burn gas, oil or LPG to keep refractory lining hot so metal does not chill. It is a steady Scope 1 load that is easy to overlook. Lids on idle ladles, better burners and tighter cycle times cut it. Meter the preheater fuel separately if you can.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "lagos-data-centre-diesel-power-scope-1",
   "q": "How should a Lagos data centre count power from its own diesel and gas generators?",
   "title": "Lagos data centres: generator power",
@@ -11985,6 +12177,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the laminate web, shoulder and cap per tube and multiply by supplier figures. Add printing, tube forming, shoulder moulding and capping energy, then divide the plant's energy by tubes made.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "laminated-windscreen-carbon-footprint",
+  "q": "What is the carbon footprint of a laminated car windscreen?",
+  "title": "Laminated windscreen footprint",
+  "short": "A windscreen is two sheets of float glass bonded with a PVB interlayer. The float glass carries most of the footprint, then bending furnaces and the autoclave that bonds the layers. Ask the glass supplier for kg CO2e per kg, and add your cutting, bending and autoclave energy per piece.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "land-use-change-emissions-in-scope-3",
@@ -12025,6 +12225,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes for Indian policy: since the Ministry of Power order of 8 March 2019, hydro plants above 25 MW are renewable energy. For Scope 2 it only matters in the market-based figure, and only if you hold the contract or certificate for that hydro power. RE100 accepts hydro, subject to its own plant and claim tests.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "laser-plasma-gas-cutting-emissions-compared",
+  "q": "Which emits less: laser, plasma or gas cutting of steel?",
+  "title": "Laser, plasma or gas cutting",
+  "short": "Laser and plasma run on electricity, so their emissions sit in Scope 2 at 0.710 kg CO2 per kWh. Gas cutting burns acetylene or LPG, which is Scope 1, plus bought oxygen in Scope 3. Compare per metre cut at your plate thickness, from meter readings and gas invoices.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "law-firm-carbon-footprint-per-lawyer",
@@ -12323,6 +12531,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "lng-ship-methane-slip-emissions",
+  "q": "Do LNG-fuelled ships emit methane, and who reports it?",
+  "title": "LNG ships: methane slip",
+  "short": "Yes. Some LNG engines let a little unburned methane escape, called methane slip. Methane traps far more heat than CO2 (fossil methane GWP 29.8 under AR6), so slip can erase part of LNG's CO2 advantage. The ship operator reports it in Scope 1; shippers count it in Category 4.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "load-factor-incentive-on-ht-electricity-bill",
   "q": "What is a load factor incentive on an HT electricity bill and how do I earn it?",
   "title": "Load factor incentive on an HT bill",
@@ -12353,6 +12569,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work it out from the water you no longer heat. Each litre heated by 60 degrees C needs about 0.25 MJ, so cutting a 500 kg batch from 1:8 to 1:5 saves about 377 MJ per hot bath. Divide by boiler efficiency for fuel energy, then apply the fuel's emission factor.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "lower-boiler-steam-pressure-fuel-saving",
+  "q": "Does running a boiler at lower steam pressure save fuel?",
+  "title": "Lower steam pressure: fuel saving",
+  "short": "Often a little, if every user still gets the temperature it needs. Lower pressure means lower steam temperature, so less heat escapes from pipes and less flash steam is lost at traps. Check the hottest process first, then compare fuel per tonne of steam over a few weeks.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "lpg-19-kg-cylinder-co2",
@@ -12987,6 +13211,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "millet-processing-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of processed millets such as ragi or jowar?",
+  "title": "Millet processing footprint",
+  "short": "Processing usually adds cleaning, destoning, dehulling and milling electricity, plus packaging and transport. The farm stage should come from farmer data or a database figure. Report per kg of finished flour or grain, and say whether bran and husk were sold.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "mining-dumper-diesel-per-tonne-moved",
   "q": "How do I calculate diesel emissions per tonne of material moved by dumpers at a mine?",
   "title": "Dumper diesel per tonne moved",
@@ -13419,6 +13651,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "mvr-evaporator-vs-steam-evaporator-co2",
+  "q": "Does an MVR evaporator cut emissions compared with a steam evaporator?",
+  "title": "MVR evaporator vs steam evaporator",
+  "short": "It replaces most of the steam with electricity: a compressor reuses the evaporated vapour as the heating medium. Scope 1 falls and Scope 2 rises. With India's grid at 0.710 kg CO2 per kWh, check the net change with your own steam and power figures before claiming a cut.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "nairobi-data-centre-geothermal-grid-scope-2",
   "q": "Is a Nairobi data centre's grid power low carbon for Scope 2?",
   "title": "Nairobi data centres: grid Scope 2",
@@ -13473,6 +13713,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work it out in two parts: your cutting and polishing energy per polished carat, from electricity and DG fuel divided by polished carats, plus the mining footprint of the rough you used, from the miner's published figure per carat recovered, scaled up for the weight lost in cutting.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "natural-dye-vs-synthetic-dye-carbon",
+  "q": "Are natural dyes lower carbon than synthetic dyes?",
+  "title": "Natural vs synthetic dyes: carbon",
+  "short": "Not automatically. Natural dyes avoid petrochemical dye making, but often need more dye material, mordants such as alum, more dyebaths and more hot water. Hot water is usually the big energy use. Compare kg CO2e per kg of fabric with measured steam or fuel on both.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "natural-gas-scm-vs-nm3-conversion",
@@ -14032,6 +14280,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Diesel from your own tank",
   "short": "Count diesel issued, not just diesel bought, and record who used it. A tank issue register by equipment gives Scope 1 per use and shows whether stock moved. Purchases minus closing stock change should equal issues; diesel given to a contractor's vehicles belongs in their emissions, not yours.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "oxy-fuel-firing-furnace-co2",
+  "q": "Does oxy-fuel firing lower a furnace's carbon footprint?",
+  "title": "Oxy-fuel firing: footprint effect",
+  "short": "It cuts fuel, because burners no longer heat the nitrogen in air. But making oxygen takes electricity. Your Scope 1 falls; your Scope 2 rises if you run an oxygen plant, or Scope 3 rises if you buy liquid oxygen. Count both before calling it a saving.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "packaged-coconut-water-carbon-footprint",
+  "q": "What is the carbon footprint of packaged coconut water?",
+  "title": "Packaged coconut water footprint",
+  "short": "Packaging and transport often matter most. Count the nuts as bought, then cutting and filling, pasteurisation or cold processing energy, the carton, PET or can, chilling and delivery. Husk and shell waste can be a fuel or a cost; record where it goes.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -15331,6 +15595,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "puf-sandwich-panel-carbon-footprint",
+  "q": "What is the carbon footprint of a PUF sandwich panel?",
+  "title": "PUF sandwich panel footprint",
+  "short": "Most of it comes from the steel skins and the polyurethane foam, made from MDI and polyol. The blowing agent matters too: HFC blowing agents are strong greenhouse gases, while hydrocarbons such as cyclopentane are not. Ask suppliers for each, then add your press and curing energy per square metre.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "puffed-rice-unit-fuel-emissions",
   "q": "How does a puffed rice unit work out emissions from its roasting fuel?",
   "title": "Puffed rice unit fuel emissions",
@@ -15865,6 +16137,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if you can trace what you buy to the farms that changed practice and use their own data. Lower fertiliser, diesel or rice methane can cut your Scope 3 Category 1 figure. Soil carbon gains are reported separately as removals, need ongoing monitoring, and cannot also be sold as credits.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "regenerative-burner-fuel-saving-furnace",
+  "q": "Do regenerative burners cut furnace fuel and emissions?",
+  "title": "Regenerative burners: fuel saving",
+  "short": "Yes, often substantially. Regenerative burners work in pairs: one fires while the other stores heat from the exhaust in a ceramic bed, then they swap, so combustion air arrives very hot. Less fuel heats the same steel. Prove the saving with fuel per tonne before and after.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "regenerative-thermal-oxidiser-fuel-emissions",
@@ -16787,6 +17067,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "second-hand-machine-scope-3-capital-goods",
+  "q": "How do I count a second-hand machine in Scope 3 capital goods?",
+  "title": "Second-hand machines in Scope 3",
+  "short": "Category 2 asks for the cradle-to-gate emissions of capital goods you buy. A used machine's manufacturing emissions happened when it was first made, so many companies count only refurbishment, parts and transport, and state that choice. Use the same rule every year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "second-life-ev-battery-storage-emissions",
+  "q": "How do I count emissions for a storage system built from second-life EV batteries?",
+  "title": "Second-life EV battery storage",
+  "short": "Reusing EV batteries avoids making new cells, the biggest part of a battery's footprint. Decide how to split the original manufacturing emissions between first and second life, state the rule, and add testing, repacking and transport. The storage itself only shifts electricity use.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "secondary-lead-smelter-co2-per-tonne",
   "q": "What is the carbon footprint of recycled lead from a secondary lead smelter per tonne?",
   "title": "CO2 per tonne of recycled lead",
@@ -17087,6 +17383,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "What makes up the carbon footprint of building a ship?",
   "title": "Shipbuilding carbon footprint",
   "short": "Steel plate and sections are usually the largest share, followed by engines and equipment. Yard emissions come from cutting gas, welding power, shot blasting, painting and cranes. Ships themselves are not CBAM goods, but the steel plate a yard buys can carry embedded emissions data.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "shipping-container-manufacturing-carbon-footprint",
+  "q": "What is the carbon footprint of making a steel shipping container?",
+  "title": "Making a shipping container",
+  "short": "Most of it is the steel: corrugated weathering steel panels, frame and doors. Add the plywood or bamboo floor, paint, and welding and painting energy. Containers themselves fall under CN 8609, which is not on the CBAM list, though buyers may still ask for a footprint.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -17403,6 +17707,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "sludge-dryer-fuel-emissions-per-tonne",
+  "q": "What are the emissions from drying ETP sludge before disposal?",
+  "title": "Sludge drying: fuel and emissions",
+  "short": "A thermal sludge dryer burns fuel or uses steam to drive off water, which is Scope 1. Drying cuts the weight you pay to transport and dispose of, which lowers Scope 3 waste emissions. Weigh both: fuel per tonne of water removed against tonnes no longer hauled.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "small-hydro-open-access-scope-2",
   "q": "Can we claim zero Scope 2 if we buy small hydro power through open access?",
   "title": "Small hydro via open access: Scope 2",
@@ -17635,6 +17947,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "solar-lantern-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of a solar lantern?",
+  "title": "Solar lantern footprint",
+  "short": "Add the small solar panel, the battery (lithium-ion or lead-acid), the LED board, the plastic body and packaging. Batteries and the panel usually carry the most. If you claim it replaces a kerosene lamp, report that avoided figure separately from the lantern's own footprint.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "solar-module-assembly-carbon-footprint-per-watt",
   "q": "How do I calculate the carbon footprint of solar modules assembled in India?",
   "title": "Solar module carbon footprint per watt",
@@ -17811,6 +18131,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "spark-plug-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of a spark plug, and is it covered by CBAM?",
+  "title": "Spark plug: footprint and CBAM",
+  "short": "A spark plug has a steel shell, a fired alumina ceramic insulator, a nickel alloy electrode and sometimes a precious metal tip. The ceramic firing and the metals carry most of the footprint. Spark plugs fall under CN 8511, which is not on the CBAM list.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "spectacle-frame-carbon-footprint-per-piece",
   "q": "How do I estimate the carbon footprint of one spectacle frame?",
   "title": "Spectacle frame carbon footprint",
@@ -17857,6 +18185,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Fixed carbon or total carbon of each coal lot, carbon in the dolochar and in the sponge iron, and carbonate in the dolomite. With those and the weighbridge tonnages, the carbon mass balance can be checked by a verifier. Default IPCC values do not reflect the wide spread of Indian coal quality.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "sprinkler-irrigation-energy-per-acre",
+  "q": "Does sprinkler irrigation use more or less energy than flood irrigation?",
+  "title": "Sprinkler vs flood irrigation energy",
+  "short": "Sprinklers need pressure, so each litre takes more pump energy, but they usually apply much less water than flooding. The net energy per acre depends on how much water you save and how deep your water source is. Compare pump kWh or diesel per acre over a season.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "sri-lanka-apparel-biomass-boiler-co2",
@@ -18539,6 +18875,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "tandoor-charcoal-emissions-restaurant",
+  "q": "How do I count emissions from a charcoal tandoor in a restaurant?",
+  "title": "Charcoal tandoor emissions",
+  "short": "CO2 from burning charcoal made from wood is biogenic, so report it separately from Scope 1. The methane and nitrous oxide from burning still count in Scope 1, and charcoal making releases methane upstream (Scope 3). An LPG or electric tandoor moves emissions to fossil Scope 1 or to Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "tangier-car-plant-supplier-scope-3-data",
   "q": "What carbon data do car plants in Tangier and Kenitra ask their suppliers for?",
   "title": "Moroccan car plants: supplier carbon asks",
@@ -19075,6 +19419,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "trigeneration-gas-engine-scope-1-and-2",
+  "q": "How does a trigeneration plant change my Scope 1 and Scope 2?",
+  "title": "Trigeneration: Scope 1 and 2",
+  "short": "A gas engine making power, heat and chilled water raises Scope 1, because you now burn the gas yourself, and lowers Scope 2, because you buy less grid power. Whether the total falls depends on how much heat and cooling you actually use. Report both scopes, never just the net.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "trinidad-ammonia-exporter-cbam-figure",
   "q": "What CBAM figure does an ammonia exporter in Trinidad need for EU buyers?",
   "title": "Trinidad ammonia exporter CBAM figure",
@@ -19143,6 +19495,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How are emissions from a tunnel boring machine counted?",
   "title": "Tunnel boring machine: emissions",
   "short": "A tunnel boring machine runs on electricity, often several megawatts, so its emissions are metered kWh times 0.710 kg CO2 per kWh. Add ventilation, muck conveyors and site gensets. Segment linings of concrete and steel are usually the larger Scope 3 share.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "tunnel-kiln-vs-shuttle-kiln-emissions",
+  "q": "Does a tunnel kiln emit less than a shuttle kiln per tonne fired?",
+  "title": "Tunnel kiln vs shuttle kiln",
+  "short": "Usually yes per tonne, when it runs full. A tunnel kiln fires continuously and uses heat from the cooling zone to preheat incoming ware. A shuttle kiln reheats its walls and kiln furniture every cycle, but suits small or varied batches. Compare fuel per tonne from your own bills.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -19907,6 +20267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "vertical-farm-electricity-per-kg-produce",
+  "q": "What is the carbon footprint of vegetables from an indoor vertical farm?",
+  "title": "Vertical farm footprint per kg",
+  "short": "Mostly electricity for LED lighting, air conditioning and pumps. On India's grid at 0.710 kg CO2 per kWh, kWh per kg decides the result, so measure it. Rooftop solar or contracted renewable power can cut market-based Scope 2. Add packaging and delivery.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "veterinary-clinic-carbon-footprint",
   "q": "What makes up the carbon footprint of a veterinary clinic?",
   "title": "Veterinary clinic: carbon footprint",
@@ -20043,6 +20411,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "voltage-optimiser-servo-stabiliser-savings",
+  "q": "Do voltage optimisers or servo stabilisers really cut electricity and emissions?",
+  "title": "Voltage optimisers: real savings?",
+  "short": "Only for loads that use less power at lower voltage, such as some lighting and resistive heaters. Motors on drives, LED drivers and electronics often save little. A stabiliser also has its own losses. Measure kWh with the unit bypassed and in service before counting any saving.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "voltage-stabilizer-carbon-footprint-per-unit",
   "q": "How do I calculate the carbon footprint of a voltage stabilizer?",
   "title": "Voltage stabilizer carbon footprint per unit",
@@ -20153,6 +20529,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Report it in Scope 3 Category 5. Count the fossil CO2, methane and nitrous oxide released when your waste is burnt, add transport if you choose to, and do not subtract anything for the electricity or steam the plant makes. That avoided energy can be described separately, never netted from your total.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "waste-tyre-epr-and-tyre-carbon-footprint",
+  "q": "Does waste tyre EPR in India change a tyre maker's carbon footprint?",
+  "title": "Waste tyre EPR and carbon",
+  "short": "EPR for waste tyres, added to India's hazardous waste rules in 2022, makes producers and importers meet recycling obligations through registered recyclers, including pyrolysis units. It does not change your factory emissions, but recycler records can inform the end-of-life part of a tyre's footprint.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "water-geyser-carbon-footprint-per-unit",
@@ -20513,6 +20897,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The official definitive-period default values are in the annex to Commission Implementing Regulation (EU) 2025/2621, listed by CN code and country of origin, together with the mark-ups that apply each year. Look up your 8-digit CN code, find your country's row, and apply the mark-up for the import year.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "whey-protein-powder-carbon-footprint",
+  "q": "What is the carbon footprint of whey protein powder?",
+  "title": "Whey protein powder footprint",
+  "short": "Whey is a co-product of cheese or paneer, so first decide how much of the milk's footprint it carries, by mass or by value, and state the rule. Then add membrane filtration, evaporation and spray drying energy, flavours and packaging. Spray drying is usually the largest plant energy use.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "which-carbon-compliance-tasks-can-be-automated",
@@ -20937,6 +21329,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the dyehouse's boiler fuel, thermic fluid heater fuel and electricity for a period, convert each with its factor and divide by kg of yarn dyed. Add dyes and chemicals per kg for the full figure. Steam is usually the largest share.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "yeast-plant-fermentation-co2-and-energy",
+  "q": "What are the emissions from making baker's yeast?",
+  "title": "Yeast plant emissions",
+  "short": "Yeast is grown on molasses in aerated fermenters. CO2 released by the yeast comes from sugar, so report it separately as biogenic. Fossil emissions come from aeration blowers and cooling (electricity), steam for sterilising and drying, and effluent treatment.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "yoga-mat-carbon-footprint-per-mat",

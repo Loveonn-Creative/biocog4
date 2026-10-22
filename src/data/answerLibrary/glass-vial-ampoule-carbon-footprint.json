@@ -1,0 +1,55 @@
+{
+  "slug": "glass-vial-ampoule-carbon-footprint",
+  "q": "What is the carbon footprint of pharmaceutical glass vials and ampoules?",
+  "title": "Glass vials and ampoules",
+  "short": "Most of it sits in the glass tubing, melted in a furnace from sand and other minerals. Converters then form vials and ampoules with gas and oxygen flames, then anneal them. Ask the tubing supplier for its figure per kg, and add your forming fuel, oxygen and annealing per thousand pieces.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pharma packaging converters and drug makers",
+  "sections": [
+    {
+      "h": "Your own emissions",
+      "ul": [
+        "Forming burners: natural gas or LPG (Scope 1).",
+        "Annealing lehr and inspection machines (Scope 2).",
+        "Oxygen bought for burners (Scope 3)."
+      ]
+    },
+    {
+      "h": "Per thousand pieces",
+      "p": [
+        "Divide each by good pieces made; rejects count against the batch."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Scientific glassware unit",
+      "to": "/answers/ambala-scientific-glassware-unit-gas-per-kg"
+    },
+    {
+      "label": "IV fluid bottle",
+      "to": "/answers/iv-fluid-bottle-carbon-footprint-per-bottle"
+    },
+    {
+      "label": "Disposable syringe",
+      "to": "/answers/disposable-syringe-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "cbam-electricity-imports-cn-2716",
+  "q": "Is electricity exported to the EU covered by CBAM?",
+  "title": "Electricity exports and CBAM",
+  "short": "Yes. Electricity, CN 2716 00 00, is one of the CBAM goods. It matters only where a grid connects to the EU's. Default values are used unless strict conditions for actual emissions, such as a direct contract with a named plant, are met. Indian exporters are not affected directly.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Power traders and exporters near EU grids",
+  "sections": [
+    {
+      "h": "Who it affects",
+      "ul": [
+        "Generators and traders in countries whose grids connect to the EU.",
+        "Not exporters of goods that only used electricity in production; that falls under the goods' own rules."
+      ]
+    },
+    {
+      "h": "Related rule for goods",
+      "p": [
+        "For cement and fertilisers, the electricity used in production counts as indirect emissions. For iron, steel, aluminium and hydrogen, only direct emissions count."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Clinker exporter and electricity",
+      "to": "/answers/indonesia-clinker-exporter-cbam-electricity"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

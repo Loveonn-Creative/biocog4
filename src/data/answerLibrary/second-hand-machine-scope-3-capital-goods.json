@@ -1,0 +1,47 @@
+{
+  "slug": "second-hand-machine-scope-3-capital-goods",
+  "q": "How do I count a second-hand machine in Scope 3 capital goods?",
+  "title": "Second-hand machines in Scope 3",
+  "short": "Category 2 asks for the cradle-to-gate emissions of capital goods you buy. A used machine's manufacturing emissions happened when it was first made, so many companies count only refurbishment, parts and transport, and state that choice. Use the same rule every year.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories buying used or refurbished equipment",
+  "sections": [
+    {
+      "h": "A workable approach",
+      "ul": [
+        "Refurbishment and new parts, from the seller's invoice.",
+        "Transport to your site.",
+        "A note that the machine is second-hand and how you treated it."
+      ]
+    },
+    {
+      "h": "If a buyer or verifier asks",
+      "p": [
+        "Show the purchase invoice, the refurbishment breakdown and your written rule. Consistency matters more than the choice."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Capital goods in purchase year",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    },
+    {
+      "label": "Counting a new machine",
+      "to": "/answers/how-to-count-a-new-machine-in-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

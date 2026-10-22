@@ -1,0 +1,70 @@
+{
+  "slug": "coal-ultimate-analysis-carbon-content-factor",
+  "q": "Can I use my coal's lab carbon content instead of a default factor?",
+  "title": "Coal carbon content from lab tests",
+  "short": "Yes, and it is often more accurate. If a lab gives the carbon percentage on an as-received basis, CO2 equals carbon mass times 44/12, with full oxidation as the IPCC 2006 default assumes. Use the same basis as the weight you burned, and test each lot or a fixed schedule.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler, kiln and captive power operators burning coal",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "CO2 (t) = coal burned (t, as received) x carbon fraction (as received) x 44/12."
+      ]
+    },
+    {
+      "h": "Get the basis right",
+      "ul": [
+        "Air-dried or dry-basis results must be converted to as-received using total moisture.",
+        "Sample to a written method, so results represent the lot.",
+        "Keep lab certificates with the invoices."
+      ]
+    },
+    {
+      "h": "When a default is fine",
+      "p": [
+        "For small users, the IPCC default by coal type or a GCV-based estimate is accepted. State which you used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "Coal burned: 1,000 t as received",
+      "Carbon content (as received): 45%",
+      "CO2: 1,000 x 0.45 x 44/12 = 1,650 t"
+    ],
+    "note": "Illustrative carbon content. Use your own lab result on the same basis."
+  },
+  "senseible": "Senseible keeps each bill and invoice behind every figure, dated and fingerprinted, so a reviewer can trace a number back to the document it came from.",
+  "links": [
+    {
+      "label": "Indian coal by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "As received vs air dried",
+      "to": "/answers/coal-as-received-vs-air-dried-basis"
+    },
+    {
+      "label": "Tier 1 default factor",
+      "to": "/answers/ipcc-tier-1-default-factor-good-enough"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "shipping-container-manufacturing-carbon-footprint",
+  "q": "What is the carbon footprint of making a steel shipping container?",
+  "title": "Making a shipping container",
+  "short": "Most of it is the steel: corrugated weathering steel panels, frame and doors. Add the plywood or bamboo floor, paint, and welding and painting energy. Containers themselves fall under CN 8609, which is not on the CBAM list, though buyers may still ask for a footprint.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Container manufacturers and leasing companies",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Steel panels, rails, posts and doors.",
+        "Floorboards, often plywood or bamboo.",
+        "Paint and sealants."
+      ]
+    },
+    {
+      "h": "Plant energy",
+      "ul": [
+        "Welding and cutting electricity.",
+        "Paint booth heating and drying.",
+        "Compressed air for tools and blasting."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Sea freight per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Empty container repositioning",
+      "to": "/answers/empty-container-repositioning-emissions"
+    },
+    {
+      "label": "Steel drums and cylinders in CBAM",
+      "to": "/answers/are-steel-drums-and-gas-cylinders-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

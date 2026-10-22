@@ -1,0 +1,62 @@
+{
+  "slug": "induction-hardening-vs-furnace-hardening-co2",
+  "q": "Is induction hardening lower carbon than furnace hardening?",
+  "title": "Induction vs furnace hardening",
+  "short": "Often, for parts that need only a hard surface. Induction heats a thin surface layer with electricity in seconds, while a gas furnace heats the whole part and the furnace. The answer depends on your grid factor (0.710 kg CO2 per kWh) and the gas saved, so compare per part.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Auto component and gear makers",
+  "sections": [
+    {
+      "h": "Why induction can win",
+      "ul": [
+        "Only the surface that needs hardening is heated.",
+        "No furnace to keep hot between batches.",
+        "Short cycle, so little standing loss."
+      ]
+    },
+    {
+      "h": "Where furnaces still fit",
+      "ul": [
+        "Through-hardening whole parts.",
+        "Case carburising, which needs time at temperature in a controlled atmosphere."
+      ]
+    },
+    {
+      "h": "Compare per part",
+      "p": [
+        "Induction: kWh per part (from a sub-meter) multiplied by 0.710. Furnace: gas per batch multiplied by 2.05 kg CO2 per scm, divided by parts per batch, plus any endothermic gas used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Heat treatment emissions",
+      "to": "/answers/heat-treatment-emissions-per-tonne"
+    },
+    {
+      "label": "Induction billet heater",
+      "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace"
+    },
+    {
+      "label": "Crankshaft footprint",
+      "to": "/answers/crankshaft-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
