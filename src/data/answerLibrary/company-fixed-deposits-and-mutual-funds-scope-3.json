@@ -1,0 +1,47 @@
+{
+  "slug": "company-fixed-deposits-and-mutual-funds-scope-3",
+  "q": "Do our company's bank deposits and mutual funds count in Scope 3?",
+  "title": "Company deposits and funds in Scope 3",
+  "short": "They fall under Category 15, investments, which the GHG Protocol frames mainly around equity, debt and project finance. For most manufacturers these holdings are small next to fuel, power and purchased goods. Note them as excluded with a reason, or estimate fund emissions from the fund house disclosures if a buyer asks.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Finance teams in non-financial companies",
+  "sections": [
+    {
+      "h": "What Category 15 covers",
+      "ul": [
+        "Equity stakes and joint ventures not in your boundary.",
+        "Loans and bonds you hold.",
+        "Managed investments such as funds."
+      ]
+    },
+    {
+      "h": "A practical approach",
+      "p": [
+        "List the holdings, state the reason for any exclusion, and revisit if the amounts are large or a lender asks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Equity stake in a joint venture",
+      "to": "/answers/equity-stake-in-joint-venture-scope-3"
+    },
+    {
+      "label": "Mutual fund portfolio footprint",
+      "to": "/answers/mutual-fund-portfolio-carbon-footprint-pcaf"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "PCAF",
+      "url": "https://carbonaccountingfinancials.com"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

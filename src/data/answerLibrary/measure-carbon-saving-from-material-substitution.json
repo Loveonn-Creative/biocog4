@@ -1,0 +1,47 @@
+{
+  "slug": "measure-carbon-saving-from-material-substitution",
+  "q": "How do we measure the carbon saving from switching a material in our product?",
+  "title": "Saving from a material switch",
+  "short": "Compare the product footprint before and after, for the same function, such as one part that does the same job. Include the material, changes in process energy and scrap, and transport. A lighter or recycled material only helps if the whole product footprint falls, so show the full comparison.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Product designers and engineers",
+  "sections": [
+    {
+      "h": "Steps",
+      "ul": [
+        "Fix the functional unit, such as one bracket or one metre.",
+        "Footprint the old design and the new one with the same method.",
+        "Report the difference and the main reasons for it."
+      ]
+    },
+    {
+      "h": "What buyers check",
+      "p": [
+        "That both footprints use the same boundary, factors and data year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "How to calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

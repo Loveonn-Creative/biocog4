@@ -1,0 +1,49 @@
+{
+  "slug": "can-i-call-my-factory-coal-free",
+  "q": "Can we call our factory coal-free, and what proves it?",
+  "title": "Calling a factory coal-free",
+  "short": "Only if no coal or coal-derived fuel is burned on site, and you say what the claim covers. Grid electricity in India is still largely coal-fired, so coal-free on site is not coal-free power. Keep twelve months of fuel invoices showing no coal, pet coke or lignite, and word the claim exactly.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Manufacturers making claims to buyers",
+  "sections": [
+    {
+      "h": "Safe wording",
+      "ul": [
+        "\"No coal burned on site since April 2025.\"",
+        "\"Process heat from biomass and natural gas.\"",
+        "Avoid \"coal-free\" alone if you use grid power."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "ul": [
+        "Fuel purchase invoices for the period.",
+        "Boiler logbooks showing fuels used.",
+        "Electricity source documents if you claim renewable power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Greenwashing guidelines in India",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Boiler logbook records",
+      "to": "/answers/boiler-logbook-what-to-record-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

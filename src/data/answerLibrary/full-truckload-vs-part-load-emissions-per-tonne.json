@@ -1,0 +1,55 @@
+{
+  "slug": "full-truckload-vs-part-load-emissions-per-tonne",
+  "q": "Is a full truckload lower carbon per tonne than a part load?",
+  "title": "Full truckload vs part load",
+  "short": "Per tonne, yes. A truck burns only a little more diesel when full, so emissions per tonne-km fall as the load rises. A half-empty truck can double the emissions per tonne. Consolidating shipments, or asking your transporter to load-share, is often the cheapest freight cut you can make.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Shippers and logistics teams",
+  "sections": [
+    {
+      "h": "How to measure it",
+      "ul": [
+        "Diesel per trip from the transporter, or a factor per vehicle size.",
+        "Tonnes carried per trip from invoices or weighbridge slips.",
+        "Divide trip emissions by tonne-km to compare loads."
+      ]
+    },
+    {
+      "h": "When part loads make sense",
+      "p": [
+        "Urgent or small orders may need part loads. Report them honestly; a shared or groupage truck allocates its trip across all the shippers on it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Milk run vs direct delivery",
+      "to": "/answers/milk-run-vs-direct-delivery-emissions"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Truck freight factor",
+      "to": "/answers/truck-freight-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

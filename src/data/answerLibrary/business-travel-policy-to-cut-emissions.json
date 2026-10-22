@@ -1,0 +1,49 @@
+{
+  "slug": "business-travel-policy-to-cut-emissions",
+  "q": "What business travel rules actually cut emissions?",
+  "title": "Travel rules that cut emissions",
+  "short": "The biggest levers are fewer flights, not greener ones. Rules that work: video calls for internal meetings, train for trips under about six hours, economy class, and combining visits into one trip. Track flights and hotel nights from travel agent invoices so you can see whether the rules changed anything.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies with field sales and management travel",
+  "sections": [
+    {
+      "h": "Rules to consider",
+      "ul": [
+        "Approval needed for internal flights.",
+        "Train or bus as the default for short routes.",
+        "One trip covering several customers."
+      ]
+    },
+    {
+      "h": "Measure it",
+      "ul": [
+        "Flights by route and class from agent invoices.",
+        "Hotel nights per trip.",
+        "Compare the year before and after the rules."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Hotel stay emissions per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Business car travel scope",
+      "to": "/answers/business-car-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

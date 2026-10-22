@@ -1,0 +1,47 @@
+{
+  "slug": "should-carbon-estimates-be-conservative",
+  "q": "Should we round our carbon estimates up to be safe?",
+  "title": "Should carbon estimates be conservative?",
+  "short": "Not for an inventory. The GHG Protocol asks for accuracy: no systematic overstatement or understatement. Use the best estimate and state the uncertainty. Conservativeness is a principle for carbon credit projects under ISO 14064-2, where overclaiming reductions is the risk. Never inflate a baseline to show a bigger cut later.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Teams preparing a first inventory",
+  "sections": [
+    {
+      "h": "Where to be careful",
+      "ul": [
+        "Missing months: estimate from similar months and label it.",
+        "Unknown factors: use a recognised default and cite it.",
+        "Reduction claims: understate rather than overstate."
+      ]
+    },
+    {
+      "h": "What verifiers want",
+      "p": [
+        "A clear note of each estimate, the method and the source. A padded figure is as wrong as a low one."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record linked to its source document and marks estimates as estimates, so a verifier can see what was measured and what was assumed.",
+  "links": [
+    {
+      "label": "Estimation note for the verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "Inventory uncertainty",
+      "to": "/answers/ghg-inventory-uncertainty-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

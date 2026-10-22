@@ -1,0 +1,48 @@
+{
+  "slug": "carbon-inventory-change-log-for-verifier",
+  "q": "Why should we keep a change log for our carbon inventory?",
+  "title": "A change log for your inventory",
+  "short": "Because figures change: a late bill arrives, a factor is updated, a duplicate is found. A change log records what changed, why, who changed it, the date and the effect in tonnes. Verifiers use it to follow the trail, and it stops two versions of your number reaching buyers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Teams maintaining carbon records",
+  "sections": [
+    {
+      "h": "What each entry needs",
+      "ul": [
+        "Date and the person making the change.",
+        "Record or factor changed, old and new value.",
+        "Reason and source document.",
+        "Effect on the total."
+      ]
+    },
+    {
+      "h": "When a change needs a restatement",
+      "p": [
+        "If a correction moves a past year beyond your significance threshold, restate that year and say so in the report."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record linked to its source document and marks estimates as estimates, so a verifier can see what was measured and what was assumed.",
+  "links": [
+    {
+      "label": "Restate after finding an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "How long to keep records",
+      "to": "/answers/how-long-to-keep-carbon-accounting-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

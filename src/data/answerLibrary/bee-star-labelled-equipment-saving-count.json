@@ -1,0 +1,51 @@
+{
+  "slug": "bee-star-labelled-equipment-saving-count",
+  "q": "Does buying BEE star labelled equipment cut our emissions, and how do we count it?",
+  "title": "BEE star labels and your emissions",
+  "short": "Yes, if it uses fewer kWh. BEE's Standards and Labelling programme rates appliances such as air conditioners and some motors by efficiency. The saving shows up as lower electricity in Scope 2. Count it from metered kWh before and after, not from the label alone, because use hours change.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Offices, hotels and factories replacing equipment",
+  "sections": [
+    {
+      "h": "How to count the saving",
+      "ul": [
+        "kWh per month for the old unit, metered or from a sub-meter.",
+        "kWh per month for the new unit over the same season.",
+        "Saving in kWh times 0.710 kg CO2."
+      ]
+    },
+    {
+      "h": "Also consider",
+      "p": [
+        "The old unit refrigerant if it is an AC, which must be recovered, and the new unit embodied emissions in Scope 3 capital goods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Office AC replacement savings",
+      "to": "/answers/office-ac-replacement-co2-savings"
+    },
+    {
+      "label": "IE2 to IE4 motors",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

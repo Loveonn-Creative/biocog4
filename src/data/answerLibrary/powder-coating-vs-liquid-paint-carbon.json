@@ -1,0 +1,47 @@
+{
+  "slug": "powder-coating-vs-liquid-paint-carbon",
+  "q": "Is powder coating lower carbon than liquid paint?",
+  "title": "Powder coating vs liquid paint",
+  "short": "Often, but it depends on the curing oven. Powder needs no solvent, and overspray can be reused. Its oven runs hotter than many liquid paint ovens, so fuel per square metre can be higher. Compare oven fuel and electricity per square metre, plus coating material, for your own line.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Fabricators and coating job shops",
+  "sections": [
+    {
+      "h": "What to compare",
+      "ul": [
+        "Oven gas or electricity per square metre coated.",
+        "Coating material per square metre, including waste.",
+        "Booth and spray energy."
+      ]
+    },
+    {
+      "h": "About solvents",
+      "p": [
+        "Solvent fumes are VOCs, not greenhouse gases. If you burn them in a thermal oxidiser, the fuel and the CO2 from the solvent carbon count."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Powder coating line per square metre",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Do VOCs count?",
+      "to": "/answers/do-voc-emissions-count-in-ghg-inventory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "r-and-d-pilot-plant-emissions-in-inventory",
+  "q": "Do we include our R&D pilot plant in our carbon inventory?",
+  "title": "R&D pilot plant in the inventory",
+  "short": "Yes, if it sits inside your boundary and you control it. Pilot plants, test rigs and labs use fuel and electricity like any unit. Being non-commercial is not a reason to leave them out. You can show them as a separate line so buyers see production emissions on their own.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Manufacturers with R&D or trial facilities",
+  "sections": [
+    {
+      "h": "How to capture it",
+      "ul": [
+        "Sub-meter the pilot plant, or apportion from the site bill by connected load and hours.",
+        "Record fuels and gases used in trials.",
+        "Note trial batches, so product footprints can leave them out if they are not sold."
+      ]
+    },
+    {
+      "h": "When exclusion is acceptable",
+      "p": [
+        "Only if it is below your stated exclusion threshold, and you list it as excluded with the reason."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Excluded emission sources list",
+      "to": "/answers/verifier-asks-list-of-excluded-emission-sources"
+    },
+    {
+      "label": "Exclusion threshold",
+      "to": "/answers/carbon-footprint-exclusion-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

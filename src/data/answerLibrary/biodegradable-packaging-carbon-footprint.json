@@ -1,0 +1,51 @@
+{
+  "slug": "biodegradable-packaging-carbon-footprint",
+  "q": "Is biodegradable packaging better for the climate?",
+  "title": "Is biodegradable packaging lower carbon?",
+  "short": "Not always. Biodegradable material that breaks down in a landfill without air can release methane, a stronger greenhouse gas than CO2. The climate result depends on the material footprint and on where the pack actually ends up. Compare cradle-to-grave figures for the realistic disposal route, not the label.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "FMCG, food and e-commerce packaging teams",
+  "sections": [
+    {
+      "h": "What decides it",
+      "ul": [
+        "Material footprint per pack.",
+        "Weight compared with the pack it replaces.",
+        "Real disposal: landfill, compost, recycling or burning."
+      ]
+    },
+    {
+      "h": "A practical test",
+      "p": [
+        "If the pack will mostly go to mixed waste or landfill, a lighter recyclable pack may be lower carbon."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Packaging end of life",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    },
+    {
+      "label": "Food waste routes",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "packaging-lightweighting-co2-saving-proof",
+  "q": "How do we prove the CO2 saving from lighter packaging?",
+  "title": "Proving lighter packaging savings",
+  "short": "Multiply the kilograms of packaging saved by the material emission factor, and add the freight saved on the lighter load. Prove it with purchase invoices showing kg bought per thousand units before and after, and the new specification sheet. Check that damage and returns did not rise.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Packaging and procurement teams",
+  "sections": [
+    {
+      "h": "Evidence to keep",
+      "ul": [
+        "Old and new specifications with grammage or weight.",
+        "Purchase invoices for six months before and after.",
+        "Units shipped in the same periods."
+      ]
+    },
+    {
+      "h": "Watch for rebound",
+      "p": [
+        "If lighter cartons cause damage, the extra product lost can outweigh the saving. Track returns."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Packaging footprint for exports",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    },
+    {
+      "label": "Recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

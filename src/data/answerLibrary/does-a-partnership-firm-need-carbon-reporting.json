@@ -1,0 +1,51 @@
+{
+  "slug": "does-a-partnership-firm-need-carbon-reporting",
+  "q": "Does a partnership or proprietorship firm have to report its carbon emissions?",
+  "title": "Carbon reporting for partnership firms",
+  "short": "No law requires it today. BRSR reporting applies to the top 1,000 listed companies by market value. Most small firms report because a buyer, lender or exporter asks. The exception is a plant in a sector notified under India's carbon credit trading scheme, which goes by sector and energy use, not company form.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Proprietors and partnership firms",
+  "sections": [
+    {
+      "h": "Why firms report anyway",
+      "ul": [
+        "Buyers and listed customers need value chain data.",
+        "Banks ask for it in green or sustainability-linked loans.",
+        "EU importers need CBAM data for covered goods."
+      ]
+    },
+    {
+      "h": "What to start with",
+      "p": [
+        "Twelve months of fuel invoices and electricity bills give Scope 1 and 2. That covers most requests from buyers."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Do unlisted companies need BRSR?",
+      "to": "/answers/do-unlisted-companies-need-brsr"
+    },
+    {
+      "label": "VSME standard for small suppliers",
+      "to": "/answers/vsme-standard-for-small-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI BRSR Core circular, July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

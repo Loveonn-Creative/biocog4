@@ -1,0 +1,51 @@
+{
+  "slug": "one-page-climate-policy-for-msme",
+  "q": "What should a one-page climate policy for an MSME say?",
+  "title": "A one-page climate policy",
+  "short": "Keep it short and specific. Say what you measure (Scope 1 and 2 from bills, Scope 3 where buyers ask), your reduction goal with a year, the actions you are taking, who owns it, and how often you report. Buyers and lenders trust a short policy backed by numbers over a long statement.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners responding to buyer questionnaires",
+  "sections": [
+    {
+      "h": "The five parts",
+      "ul": [
+        "Scope and boundary.",
+        "Target and base year.",
+        "Main actions, such as solar or a fuel switch.",
+        "Owner and review frequency.",
+        "How data is collected and checked."
+      ]
+    },
+    {
+      "h": "What to avoid",
+      "ul": [
+        "Net zero claims with no plan.",
+        "Offsets presented as reductions.",
+        "Promises you cannot evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Carbon data governance policy",
+      "to": "/answers/carbon-data-governance-policy-what-to-include"
+    },
+    {
+      "label": "Absolute or intensity target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

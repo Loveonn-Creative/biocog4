@@ -1,0 +1,57 @@
+{
+  "slug": "accidental-gas-release-scope-1-how-to-count",
+  "q": "How do we count an accidental gas or refrigerant release in Scope 1?",
+  "title": "Accidental gas releases in Scope 1",
+  "short": "Count it. Estimate the mass released and multiply by its global warming potential. A refrigerant burst counts at the gas GWP. A natural gas leak counts as methane at 29.8 times CO2. Unburned LPG is not one of the reported greenhouse gases, but record the incident and the fix.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "EHS and maintenance teams",
+  "sections": [
+    {
+      "h": "How to estimate the mass",
+      "ul": [
+        "Refrigerant: the top-up needed to refill the system after repair.",
+        "Gas cylinders: weight before and after.",
+        "Pipeline gas: meter readings or an engineering estimate of leak time and flow."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "The incident report with date and cause.",
+        "The refill invoice or cylinder weights.",
+        "The repair record, so the leak is not counted twice."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record linked to its source document and marks estimates as estimates, so a verifier can see what was measured and what was assumed.",
+  "links": [
+    {
+      "label": "Refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Refrigerant top-up to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

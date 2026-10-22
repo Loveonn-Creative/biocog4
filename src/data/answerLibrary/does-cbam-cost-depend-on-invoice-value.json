@@ -1,0 +1,52 @@
+{
+  "slug": "does-cbam-cost-depend-on-invoice-value",
+  "q": "Does the CBAM cost depend on the invoice value of my goods?",
+  "title": "CBAM cost and invoice value",
+  "short": "No. CBAM is charged on embedded emissions, not on price. The importer buys certificates for the tonnes of CO2e embedded in the goods, so the cost follows mass and the emissions per tonne. A cheap and an expensive product with the same embedded emissions carry the same CBAM cost.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Exporters of steel, aluminium, cement and fertilisers",
+  "sections": [
+    {
+      "h": "What sets the cost",
+      "ul": [
+        "Tonnes of goods imported.",
+        "Embedded emissions per tonne, actual or default.",
+        "Certificate price, linked to EU ETS auction prices.",
+        "Any carbon price already paid abroad, which can be deducted."
+      ]
+    },
+    {
+      "h": "Why it matters for pricing",
+      "p": [
+        "A low-margin product with high embedded emissions loses more competitiveness than a high-value one. Your real emissions data can bring the figure below the default."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "How the certificate price is set",
+      "to": "/answers/how-is-the-cbam-certificate-price-set"
+    },
+    {
+      "label": "CBAM cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

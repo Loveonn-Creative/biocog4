@@ -1,0 +1,47 @@
+{
+  "slug": "etp-fine-bubble-diffuser-aeration-energy",
+  "q": "Do fine bubble diffusers cut ETP aeration electricity?",
+  "title": "Fine bubble aeration in an ETP",
+  "short": "Usually yes. Aeration blowers are often the largest electricity user in an effluent plant. Fine bubble diffusers transfer more oxygen per kWh than coarse bubble systems or surface aerators. Add dissolved oxygen control so blowers slow down when demand drops, and compare blower kWh per kL treated before and after.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile, food, pharma and chemical units with ETPs",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Blower kWh from a sub-meter.",
+        "Effluent treated per day in kL.",
+        "Dissolved oxygen readings, to show treatment did not suffer."
+      ]
+    },
+    {
+      "h": "Keep an eye on methane",
+      "p": [
+        "Poor aeration can create anaerobic zones that release methane. Good aeration control helps both energy and methane."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "ETP electricity per kL",
+      "to": "/answers/etp-electricity-per-kl-effluent"
+    },
+    {
+      "label": "ETP wastewater methane",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "hydrogen-cylinders-for-heat-treatment-which-scope",
+  "q": "Do hydrogen cylinders used in a heat treatment furnace count in Scope 1?",
+  "title": "Bought hydrogen in heat treatment",
+  "short": "Using hydrogen gives no CO2 at your site, so there is nothing for Scope 1 from the hydrogen itself. The emissions are upstream, where it was made, usually from natural gas. Count those in Scope 3 Category 1 using the supplier figure or a factor per kg of hydrogen.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Heat treaters and furnace operators",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Cylinders or kg of hydrogen bought, from invoices.",
+        "The supplier production route, if they share it.",
+        "Any other gas mixed in, such as nitrogen."
+      ]
+    },
+    {
+      "h": "Where Scope 1 still appears",
+      "p": [
+        "If the furnace also burns natural gas or LPG for heat, or burns off a carbon-bearing atmosphere, that fuel is Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Industrial gases in Scope 3",
+      "to": "/answers/industrial-gases-oxygen-nitrogen-scope-3"
+    },
+    {
+      "label": "SMR hydrogen per kg",
+      "to": "/answers/smr-hydrogen-co2-per-kg"
+    },
+    {
+      "label": "Induction vs furnace hardening",
+      "to": "/answers/induction-hardening-vs-furnace-hardening-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

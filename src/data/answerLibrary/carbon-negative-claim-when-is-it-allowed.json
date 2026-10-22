@@ -1,0 +1,51 @@
+{
+  "slug": "carbon-negative-claim-when-is-it-allowed",
+  "q": "When can a company say it is carbon negative?",
+  "title": "When is carbon negative allowed?",
+  "short": "Rarely, and only with evidence. You would need verified removals larger than all your emissions, including material Scope 3, reported separately rather than netted inside the inventory. Avoided emissions and purchased avoidance credits do not count. Indian greenwashing guidelines expect claims like this to be backed by credible, verifiable evidence.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Brands and exporters reviewing marketing claims",
+  "sections": [
+    {
+      "h": "What it takes",
+      "ul": [
+        "A full inventory, including significant Scope 3.",
+        "Durable removals, measured and verified.",
+        "A public method so others can check."
+      ]
+    },
+    {
+      "h": "Safer alternatives",
+      "p": [
+        "State your measured emissions and the reduction you achieved. Specific facts carry more weight than a label."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Can a GHG report subtract offsets?",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    },
+    {
+      "label": "Greenwashing guidelines in India",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Voluntary Carbon Markets Integrity Initiative",
+      "url": "https://vcmintegrity.org"
+    },
+    {
+      "label": "ISO",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

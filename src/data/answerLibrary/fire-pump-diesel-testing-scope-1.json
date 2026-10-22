@@ -1,0 +1,47 @@
+{
+  "slug": "fire-pump-diesel-testing-scope-1",
+  "q": "Does diesel burned testing our fire pump count in Scope 1?",
+  "title": "Fire pump diesel testing",
+  "short": "Yes. Diesel fire pumps are run for weekly or monthly tests, and the fuel they burn is Scope 1 at 2.68 kg CO2 per litre. The amounts are small, but verifiers often ask for it. Record top-ups in a log and keep the fuel invoices or issue slips.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "EHS and facility teams",
+  "sections": [
+    {
+      "h": "Similar small sources",
+      "ul": [
+        "Standby generators run for tests.",
+        "Diesel for fire tenders or emergency vehicles.",
+        "CO2 fire extinguishers refilled after use."
+      ]
+    },
+    {
+      "h": "Keep it simple",
+      "p": [
+        "If the total is below your exclusion threshold, you may list it as excluded with the reason, but measuring it costs little."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Fire extinguisher refills",
+      "to": "/answers/fire-extinguisher-refill-scope-1"
+    },
+    {
+      "label": "Diesel generator scope",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

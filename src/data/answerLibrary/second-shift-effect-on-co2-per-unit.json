@@ -1,0 +1,47 @@
+{
+  "slug": "second-shift-effect-on-co2-per-unit",
+  "q": "Will running a second shift lower our CO2 per unit?",
+  "title": "Second shift and CO2 per unit",
+  "short": "Often yes, per unit, because fixed loads such as lighting, compressors on standby, furnace holding and offices are spread over more output. Total emissions still rise with production. Report both: absolute tonnes and tonnes per unit, so a buyer does not mistake growth for a worse plant.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Manufacturers adding capacity",
+  "sections": [
+    {
+      "h": "What to track",
+      "ul": [
+        "Monthly kWh and fuel against units produced.",
+        "Base load at zero production, from idle readings.",
+        "Per unit figures before and after."
+      ]
+    },
+    {
+      "h": "When it does not help",
+      "p": [
+        "If the second shift runs older, less efficient machines, per unit emissions can rise."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills and applies IPCC 2006 factors and the CEA grid factor (0.710 kg CO2 per kWh), so you can compare Scope 1 and 2 before and after a change from the documents themselves.",
+  "links": [
+    {
+      "label": "Idle machines and base load",
+      "to": "/answers/idle-machines-base-load-electricity"
+    },
+    {
+      "label": "Seasonal factory intensity",
+      "to": "/answers/seasonal-factory-emissions-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
