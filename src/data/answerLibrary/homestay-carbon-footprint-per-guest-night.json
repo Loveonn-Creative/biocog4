@@ -1,0 +1,56 @@
+{
+  "slug": "homestay-carbon-footprint-per-guest-night",
+  "q": "How do I calculate a homestay's carbon footprint per guest night?",
+  "title": "Homestay carbon per guest night",
+  "short": "Add electricity at 0.710 kg CO2 per kWh, LPG at 2.98 kg CO2 per kg, and diesel for any backup, then divide by guest nights. Separate the family's own use where meters allow, or allocate by rooms occupied by guests.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Homestay owners and rural tourism operators",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Electricity bills.",
+        "LPG refills.",
+        "Generator diesel.",
+        "Guest nights from bookings."
+      ]
+    },
+    {
+      "h": "Firewood",
+      "p": [
+        "CO2 from burning firewood is biogenic and reported separately. Methane and nitrous oxide from burning it are counted."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Hotel stay per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Houseboat per guest night",
+      "to": "/answers/kerala-houseboat-emissions-per-guest-night"
+    },
+    {
+      "label": "Company guest house",
+      "to": "/answers/company-guest-house-emissions-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

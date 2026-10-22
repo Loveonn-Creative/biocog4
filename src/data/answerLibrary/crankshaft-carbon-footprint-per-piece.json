@@ -1,0 +1,64 @@
+{
+  "slug": "crankshaft-carbon-footprint-per-piece",
+  "q": "How do I estimate the carbon footprint of a forged crankshaft?",
+  "title": "Forged crankshaft carbon footprint",
+  "short": "Start with the steel bar mass bought, not the finished weight, since forging flash and machining remove a large share. Multiply by the steel supplier's CO2 per tonne, then add forging furnace fuel, heat treatment and machining electricity per piece.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Auto component forgers and machine shops",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Bar weight per piece, from the cut length.",
+        "Steel supplier's CO2 per tonne, with its date.",
+        "Furnace fuel and electricity per piece from monthly bills and output."
+      ]
+    },
+    {
+      "h": "Scrap",
+      "p": [
+        "Flash and turnings sold as scrap leave with your waste. Do not subtract them from the steel bought unless you follow a stated recycling method."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Bar bought: 20 kg per crankshaft.",
+      "Supplier figure: 2.2 kg CO2 per kg of steel; 20 × 2.2 = 44 kg.",
+      "Forging, heat treatment and machining: 6 kWh × 0.710 = 4.3 kg, plus 1.5 kg from furnace gas.",
+      "Total: about 50 kg CO2 per piece."
+    ]
+  },
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Forging footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Heat treatment emissions",
+      "to": "/answers/heat-treatment-emissions-per-tonne"
+    },
+    {
+      "label": "Piston footprint",
+      "to": "/answers/piston-carbon-footprint-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

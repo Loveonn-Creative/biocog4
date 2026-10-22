@@ -1,0 +1,56 @@
+{
+  "slug": "suitcase-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of a suitcase?",
+  "title": "Suitcase carbon footprint",
+  "short": "Shell material is the biggest part: polycarbonate, polypropylene or ABS for hard cases, nylon or polyester fabric for soft ones, plus aluminium handles and wheels. Weigh each part, apply supplier or secondary factors, and add moulding or stitching electricity per piece.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Luggage makers and brands",
+  "sections": [
+    {
+      "h": "Parts",
+      "ul": [
+        "Shell or fabric.",
+        "Telescopic handle, often aluminium.",
+        "Wheels and bearings.",
+        "Zips, lining and packaging."
+      ]
+    },
+    {
+      "h": "Factory",
+      "p": [
+        "Divide monthly electricity for moulding, cutting and stitching by pieces made."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Injection moulding footprint",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Aluminium extrusion footprint",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

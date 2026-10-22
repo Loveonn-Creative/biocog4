@@ -1,0 +1,63 @@
+{
+  "slug": "polysilicon-production-co2-per-kg",
+  "q": "Why is polysilicon so carbon intensive?",
+  "title": "Polysilicon production CO2",
+  "short": "Solar grade polysilicon is usually made by depositing silicon from trichlorosilane onto heated rods over several days. Electricity is the dominant input, so the grid behind the plant largely sets the footprint per kg. Ask suppliers for kWh per kg and the grid or contracts used.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Solar module makers and their buyers",
+  "sections": [
+    {
+      "h": "What to ask a supplier",
+      "ul": [
+        "Electricity per kg of polysilicon.",
+        "The grid region or power contracts behind it.",
+        "Silicon metal bought, per kg of output."
+      ]
+    },
+    {
+      "h": "Why it matters downstream",
+      "p": [
+        "Polysilicon and wafers carry a large share of a module's embodied carbon, so the country and power mix behind them often moves a panel's footprint more than module assembly does."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Electricity: 60 kWh per kg of polysilicon.",
+      "On India's grid: 60 × 0.710 = 42.6 kg CO2 per kg.",
+      "On a grid at 0.2 kg per kWh: 12 kg CO2 per kg."
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Solar panel embodied carbon",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    },
+    {
+      "label": "Solar cell plant per watt",
+      "to": "/answers/solar-cell-manufacturing-carbon-per-watt"
+    },
+    {
+      "label": "Is silicon metal in CBAM",
+      "to": "/answers/is-silicon-metal-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

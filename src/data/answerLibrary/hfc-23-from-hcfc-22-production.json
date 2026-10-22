@@ -1,0 +1,63 @@
+{
+  "slug": "hfc-23-from-hcfc-22-production",
+  "q": "Why is HFC-23 a concern at HCFC-22 plants?",
+  "title": "HFC-23 from HCFC-22 production",
+  "short": "Making HCFC-22 refrigerant produces HFC-23 as a by-product, a gas with a 100-year GWP of 14,600 under IPCC AR6. Venting even small amounts gives a large Scope 1 figure. Plants capture and destroy it in a thermal oxidiser; report generated, destroyed and vented quantities.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Fluorochemical producers and their auditors",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "HCFC-22 produced.",
+        "HFC-23 generated, from measurement or the plant's own ratio.",
+        "HFC-23 destroyed, with oxidiser running hours.",
+        "HFC-23 vented or stored."
+      ]
+    },
+    {
+      "h": "Why the hours matter",
+      "p": [
+        "When the oxidiser is down, by-product gas may be vented. A few days of venting can exceed a year of all other plant emissions, so log every outage."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "HFC-23 vented in a year: 2 tonnes.",
+      "2 × 14,600 = 29,200 tonnes CO2e in Scope 1."
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Does R22 count in Scope 1",
+      "to": "/answers/does-r22-count-in-scope-1"
+    },
+    {
+      "label": "HSN codes for refrigerants",
+      "to": "/answers/hsn-codes-for-refrigerant-gases"
+    },
+    {
+      "label": "Hydrofluoric acid plant",
+      "to": "/answers/hydrofluoric-acid-plant-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "Ozone Cell, Ministry of Environment, Forest and Climate Change",
+      "url": "https://www.ozonecell.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

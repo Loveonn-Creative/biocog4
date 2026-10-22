@@ -1,0 +1,56 @@
+{
+  "slug": "television-carbon-footprint-per-unit",
+  "q": "What makes up the carbon footprint of a television?",
+  "title": "Television carbon footprint",
+  "short": "For a TV, the display panel and electronics usually carry most of the manufacturing footprint, and electricity used over years of viewing can be larger still. Report assembly in Scope 1 and 2, bought panels and boards in Category 1, and use in Category 11.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "TV assemblers and brands in India",
+  "sections": [
+    {
+      "h": "Manufacturing",
+      "ul": [
+        "Display panel and backlight, usually bought in.",
+        "Main board, power board and chips.",
+        "Plastic or metal housing, stand and packaging.",
+        "Assembly and testing electricity."
+      ]
+    },
+    {
+      "h": "Use phase",
+      "p": [
+        "Estimate use as rated power × hours a day × days × years, using a stated grid factor. State your assumptions, because hours of viewing change the result a lot."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Refrigerator footprint",
+      "to": "/answers/refrigerator-carbon-footprint-per-unit"
+    },
+    {
+      "label": "PCB assembly footprint",
+      "to": "/answers/pcb-assembly-carbon-footprint-per-board"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

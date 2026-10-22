@@ -91,6 +91,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "acrylonitrile-plant-emissions-per-tonne",
+  "q": "What are the main emission sources in acrylonitrile production?",
+  "title": "Acrylonitrile plant emissions",
+  "short": "Acrylonitrile is made by reacting propylene, ammonia and air over a catalyst. Part of the carbon leaves as CO2 and as by-products such as hydrogen cyanide and acetonitrile, which are often burned. Count that process and off-gas CO2 with fuel in Scope 1.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "acsr-conductor-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of ACSR conductor?",
   "title": "ACSR conductor carbon footprint per tonne",
@@ -113,6 +121,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework charge each shipment on the shortest feasible distance, with detours and empty running carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "adipic-acid-plant-n2o-emissions",
+  "q": "How much N2O does an adipic acid plant emit?",
+  "title": "Adipic acid plant N2O emissions",
+  "short": "Adipic acid is made by oxidising a cyclohexanone and cyclohexanol mix with nitric acid, which releases nitrous oxide. The IPCC 2006 default is 300 kg N2O per tonne without abatement, about 82 tonnes CO2e at a GWP of 273. Abatement units destroy most of it.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "adityapur-fabricator-steel-structures-cbam-emissions",
@@ -283,6 +299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "aircraft-mro-hangar-emissions",
+  "q": "What are the main emission sources at an aircraft MRO hangar?",
+  "title": "Aircraft MRO hangar emissions",
+  "short": "Engine ground runs burning jet fuel, hangar cooling or heating, compressed air and paint shop ovens are the usual sources. Fuel the MRO buys for engine tests is its Scope 1. Customer aircraft in flight are not part of it. Divide by checks or labour hours.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "airport-ground-support-equipment-emissions",
   "q": "How do airports and ground handlers count emissions from ground equipment?",
   "title": "Airport ground equipment: emissions",
@@ -296,6 +320,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Airport shop electricity: which scope",
   "short": "If the airport bills you for your own metered electricity, report it as Scope 2. If power and cooling are built into the rent, it is still your use: get your share from the airport or estimate it by floor area, and label the estimate.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "airport-terminal-emissions-per-passenger",
+  "q": "How do I calculate an airport terminal's emissions per passenger?",
+  "title": "Airport terminal emissions per passenger",
+  "short": "Terminal electricity for cooling, lighting, baggage systems and lifts usually dominates, plus diesel backup and refrigerant leaks. Divide by passengers handled. Aircraft engines and airline ground equipment belong to airlines and handlers, so keep them out of the terminal figure.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -1851,6 +1883,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "bleaching-powder-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of bleaching powder?",
+  "title": "Bleaching powder carbon footprint",
+  "short": "Bleaching powder is made by passing chlorine over slaked lime, a reaction that releases no CO2. Its footprint comes from the lime, whose kiln released process CO2 upstream, and from the electricity behind chlorine. On site, count only your fuel and power.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "blended-finance-for-msmes",
   "q": "What is blended finance, and can an Indian MSME benefit from it?",
   "title": "Blended finance for MSMEs explained",
@@ -2283,6 +2323,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "bulk-cement-tanker-emissions-per-tonne-km",
+  "q": "How do I calculate emissions from bulk cement tankers per tonne km?",
+  "title": "Bulk cement tanker emissions",
+  "short": "Multiply the diesel used per round trip by 2.68 kg CO2 per litre, then divide by tonnes delivered times distance. Count the empty return leg, which bulk tankers usually make, and diesel for the unloading blower. Your own fleet is Scope 1; hired tankers are Scope 3.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "bulk-diesel-invoice-kilolitres-15c",
   "q": "My bulk diesel invoice is in kilolitres at 15 C. How do I get the right litres and CO2?",
   "title": "Bulk diesel invoice in kL at 15 C",
@@ -2321,6 +2369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add weaving or knitting electricity and the natural gas used in dyeing, stentering and finishing, convert them to CO2, and divide by metres finished. Then add the yarn's footprint from your spinner. Heavy upholstery and car seat fabrics weigh more per metre, so give a per kilogram figure too.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "bus-body-building-carbon-footprint-per-bus",
+  "q": "How do I calculate the carbon footprint of building a bus body?",
+  "title": "Bus body building carbon footprint",
+  "short": "Weigh the steel or aluminium sections, panels, glass, seats and paint bought for each body and apply supplier or secondary factors. Add the workshop's welding power, paint booth fuel and compressed air. The chassis is a separate purchase; report it as its own line.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "bus-operator-emissions-per-passenger-km",
@@ -2928,6 +2984,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Capital goods: count in purchase year",
   "short": "Count it all in the year of purchase. The GHG Protocol Scope 3 Standard puts capital goods in category 2 and does not depreciate them, so a big purchase makes that year's Scope 3 jump. Explain the spike in the report rather than smoothing it.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "caprolactam-plant-n2o-emissions",
+  "q": "Does a caprolactam plant emit nitrous oxide?",
+  "title": "Caprolactam plant N2O emissions",
+  "short": "Yes. Caprolactam, the raw material for nylon 6, is usually made through hydroxylamine from ammonia oxidation, which forms nitrous oxide. The IPCC 2006 default is 9.0 kg N2O per tonne of caprolactam, about 2.5 tonnes CO2e at a GWP of 273. Report it in Scope 1.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -4451,6 +4515,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "coal-tar-pitch-distillation-emissions",
+  "q": "How are emissions counted at a coal tar pitch distillation plant?",
+  "title": "Coal tar pitch distillation emissions",
+  "short": "Coal tar from coke ovens is heated in a fired still and split into pitch, oils and naphthalene. The furnace fuel is Scope 1. The tar arrives as a by-product, so ask the coke maker how it allocates emissions to it. Anode and graphite electrode makers buy the pitch.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "coal-to-biomass-boiler-carbon-credits",
   "q": "Does switching a boiler from coal to biomass qualify for carbon credits?",
   "title": "Coal to biomass boiler: carbon credits?",
@@ -5049,6 +5121,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "If you make a part, material or ingredient that someone else turns into a final product, report cradle-to-gate: you cannot know how it will be used or disposed of. If you sell a finished product to end users, standards expect cradle-to-grave unless a product rule or your buyer says otherwise.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "crankshaft-carbon-footprint-per-piece",
+  "q": "How do I estimate the carbon footprint of a forged crankshaft?",
+  "title": "Forged crankshaft carbon footprint",
+  "short": "Start with the steel bar mass bought, not the finished weight, since forging flash and machining remove a large share. Multiply by the steel supplier's CO2 per tonne, then add forging furnace fuel, heat treatment and machining electricity per piece.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "credit-guarantee-for-msme-green-loans-india",
@@ -6099,6 +6179,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "dry-cleaning-shop-carbon-footprint",
+  "q": "What is the carbon footprint of a dry cleaning shop?",
+  "title": "Dry cleaning shop carbon footprint",
+  "short": "Electricity for machines, steam and pressing usually dominates, with boiler fuel if steam is raised on site. Most dry cleaning solvents are not greenhouse gases, but losses of any HFC or other gas covered by the GHG Protocol count in Scope 1.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "dry-waste-sorting-centre-emissions-per-tonne",
   "q": "What are the emissions of a dry waste sorting centre per tonne?",
   "title": "Dry waste sorting centre per tonne",
@@ -6299,6 +6387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "ecommerce-fulfilment-centre-emissions-per-parcel",
+  "q": "How do I calculate a fulfilment centre's emissions per parcel?",
+  "title": "Fulfilment centre emissions per parcel",
+  "short": "Add the centre's electricity at 0.710 kg CO2 per kWh, diesel for backup and forklifts, and refrigerant top ups, then divide by parcels shipped. Packaging and inbound and outbound trucking are separate Scope 3 lines. A 3PL sharing a site allocates by area or volume.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "ecovadis-carbon-questions-what-evidence",
   "q": "What carbon evidence does EcoVadis ask an Indian supplier for?",
   "title": "EcoVadis carbon evidence for suppliers",
@@ -6433,6 +6529,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the aluminium soleplate, heating element, thermostat, plastic body and cord per iron with supplier figures. Add casting, moulding, assembly and testing energy, then divide by irons passed and report by wattage and type.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "electric-iron-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of an electric iron?",
+  "title": "Electric iron carbon footprint",
+  "short": "Making it is small next to using it: years of heating at a typical 750 to 2,000 watts use far more electricity than making the soleplate, heater and plastic body. Report assembly in Scope 1 and 2, parts in Category 1, and customers' electricity in Category 11.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "electric-irrigation-pump-emissions-per-acre",
@@ -6715,6 +6819,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "epoxy-resin-carbon-footprint-per-kg",
+  "q": "What makes up the carbon footprint of epoxy resin?",
+  "title": "Epoxy resin carbon footprint per kg",
+  "short": "Raw materials dominate: bisphenol A and epichlorohydrin, both made from petrochemicals, with chlorine in epichlorohydrin. The resin plant's own fuel and power are a smaller part. Ask suppliers for cradle to gate figures per kg and report purchased resin in Scope 3 Category 1.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "eps-thermocol-vs-moulded-pulp-packaging-carbon",
   "q": "Is moulded pulp lower carbon than EPS (thermocol) for protective export packaging?",
   "title": "Moulded pulp or EPS: which is lower carbon?",
@@ -6849,6 +6961,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A very low one, because almost all generation is hydro, with wind, geothermal and some solar. Expect a figure well under 0.1 kg CO2 per kWh, but take the latest official or IEA value for the reporting year and cite it. Do not borrow an East African average, which would overstate it.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ethylene-oxide-meg-plant-co2",
+  "q": "Why does an ethylene oxide plant emit CO2, and how is it counted?",
+  "title": "Ethylene oxide and MEG plant CO2",
+  "short": "Ethylene is oxidised with oxygen over a silver catalyst, and a share of it burns to CO2 inside the reactor. That CO2 is stripped from the recycle gas. Vented, it is Scope 1 process CO2. Sold to a CO2 buyer, report it separately and state where it goes.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "etp-electricity-per-kl-effluent",
@@ -7379,6 +7499,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "faecal-sludge-treatment-plant-emissions",
+  "q": "What emissions does a faecal sludge treatment plant produce?",
+  "title": "Faecal sludge treatment emissions",
+  "short": "Methane from sludge left without air is the main concern, with some nitrous oxide. Drying beds and well run aerobic stages emit less; anaerobic ponds emit more. Add electricity at 0.710 kg CO2 per kWh and diesel for desludging trucks. Capturing biogas cuts methane.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "failed-steam-trap-fuel-loss",
   "q": "How much fuel and CO2 does one failed steam trap waste?",
   "title": "Fuel and CO2 lost by a failed steam trap",
@@ -7595,6 +7723,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "fish-feed-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of fish and shrimp feed?",
+  "title": "Fish and shrimp feed footprint",
+  "short": "Ingredients usually make up most of it: soybean meal, fish meal, fish oil, wheat and rice bran. Mill steam for pelleting or extrusion, drying and electricity add the rest. Farms count it in Scope 3 Category 1, where it is often their largest line.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "fish-meal-carbon-footprint-per-tonne",
   "q": "How do I calculate the carbon footprint of fish meal per tonne?",
   "title": "Fish meal carbon footprint per tonne",
@@ -7729,6 +7865,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually almost none. Many product footprint rules and EPD programmes treat fly ash as a waste or a low value by product, so only its collection, drying, grinding and transport are counted. Some use economic allocation, which adds a small share, so ask what rule a cement or brick supplier used.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "flyover-construction-carbon-per-metre",
+  "q": "How do I estimate the carbon footprint of building a flyover?",
+  "title": "Flyover construction carbon",
+  "short": "Cement, steel rebar and prestressing strand dominate, so start with quantities from the bill of quantities and supplier factors. Add site diesel for piling rigs, cranes and batching, and divide by length. Report embodied materials separately from construction fuel.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "foam-mattress-carbon-footprint-per-unit",
@@ -7947,6 +8091,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "frozen-french-fries-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of frozen french fries?",
+  "title": "Frozen french fries carbon footprint",
+  "short": "Potatoes, frying oil and the energy to blanch, fry and freeze make up most of it. Freezing and cold storage electricity at 0.710 kg CO2 per kWh is large in India. Divide by kg packed, and count peel and trim losses in the potatoes bought.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "frozen-momos-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of frozen momos per kg?",
   "title": "Frozen momos carbon footprint per kg",
@@ -7969,6 +8121,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Per kg of packed frozen product, add the raw vegetables bought (including trimming and blanching loss) times a farm factor, blanching steam fuel, electricity for the IQF tunnel and cold store, refrigerant topped up times its GWP, and packaging. Freezing and storage power is often the largest plant line.",
   "topic": "product",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "frp-fibreglass-boat-carbon-footprint",
+  "q": "What is the carbon footprint of an FRP fibreglass boat?",
+  "title": "FRP fibreglass boat carbon footprint",
+  "short": "Glass fibre and polyester or epoxy resin make up most of it, counted by weight bought including offcuts and resin waste. Styrene vapour from open moulding is a health issue, not a greenhouse gas. Add mould shop electricity, then the engine as a separate bought part.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "fruit-jam-carbon-footprint-per-kg",
@@ -8423,6 +8583,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "What is the embodied carbon of a glass facade per square metre?",
   "title": "Glass facade embodied carbon per sq m",
   "short": "Add the glass, usually double glazed units, and the aluminium frames and brackets. Aluminium often decides the result. Multiply each by its weight per square metre and a named factor, or use the supplier's EPD. Operational savings from better glazing are a separate figure.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "glass-fibre-furnace-co2-per-tonne",
+  "q": "How do I calculate CO2 from a glass fibre furnace?",
+  "title": "Glass fibre furnace CO2",
+  "short": "Add furnace fuel CO2 to process CO2 from carbonate raw materials such as limestone and dolomite in the batch, then divide by tonnes of fibre produced. Electric boosting adds Scope 2. Binders and sizing chemicals sit in Scope 3.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -9187,6 +9355,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "hfc-23-from-hcfc-22-production",
+  "q": "Why is HFC-23 a concern at HCFC-22 plants?",
+  "title": "HFC-23 from HCFC-22 production",
+  "short": "Making HCFC-22 refrigerant produces HFC-23 as a by-product, a gas with a 100-year GWP of 14,600 under IPCC AR6. Venting even small amounts gives a large Scope 1 figure. Plants capture and destroy it in a thermal oxidiser; report generated, destroyed and vented quantities.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "higg-fem-energy-and-emissions-data",
   "q": "What energy and emissions data does the Higg FEM ask textile suppliers for?",
   "title": "Higg FEM energy and GHG data",
@@ -9248,6 +9424,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Holding company carbon footprint",
   "short": "Its own office is small. Under the control approach, subsidiaries it controls are consolidated into its Scope 1 and 2. Stakes it does not control fall in Scope 3 Category 15, investments, in proportion to its share.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "homestay-carbon-footprint-per-guest-night",
+  "q": "How do I calculate a homestay's carbon footprint per guest night?",
+  "title": "Homestay carbon per guest night",
+  "short": "Add electricity at 0.710 kg CO2 per kWh, LPG at 2.98 kg CO2 per kg, and diesel for any backup, then divide by guest nights. Separate the family's own use where meters allow, or allocate by rooms occupied by guests.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -10003,6 +10187,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "hydrofluoric-acid-plant-emissions-per-tonne",
+  "q": "Where do emissions come from at a hydrofluoric acid plant?",
+  "title": "Hydrofluoric acid plant emissions",
+  "short": "Hydrofluoric acid is made by reacting fluorspar with sulphuric acid in an indirectly heated rotary kiln. The kiln fuel is the main Scope 1 source. Purchased sulphuric acid and fluorspar, with its mining and drying, sit in Scope 3. HF feeds refrigerants and aluminium fluoride.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "hydrogen-fuel-cell-bus-emissions-per-km",
+  "q": "How do I calculate emissions for a hydrogen fuel cell bus?",
+  "title": "Hydrogen fuel cell bus emissions",
+  "short": "The bus emits only water, so the footprint lies in the hydrogen. Multiply kg of hydrogen used per km by the CO2 per kg from its production: high for hydrogen from natural gas, low for electrolysis on renewable power. Ask the supplier for that figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "hydrogen-peroxide-carbon-footprint-per-tonne",
   "q": "What is the carbon footprint of hydrogen peroxide per tonne?",
   "title": "Hydrogen peroxide per tonne",
@@ -10448,6 +10648,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Insetting vs offsetting",
   "short": "Insetting means funding reductions inside your own value chain, such as helping a supplier switch fuel; they show up as lower Scope 3 when the supplier's data changes. Offsetting means buying credits from outside it, reported separately and never subtracted from your inventory.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "instant-coffee-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of instant coffee per kg?",
+  "title": "Instant coffee carbon footprint",
+  "short": "Green beans carry the farm emissions, then roasting, extraction and drying add a lot of energy, because several kg of beans are used and much water is evaporated per kg of powder. Spray or freeze drying fuel and electricity usually dominate the factory share.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -11787,6 +11995,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "landfill-gas-methane-municipal-landfill",
+  "q": "How is methane from a municipal landfill estimated?",
+  "title": "Landfill methane estimate",
+  "short": "Landfills release methane for decades as organic waste decays. Operators estimate it with the IPCC first order decay method, using waste tonnes by type each year, then subtract gas captured and flared. Methane from waste still counts, at a GWP of 27.0 under IPCC AR6.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "landlord-reporting-tenant-emissions-industrial-sheds",
   "q": "If we lease out industrial sheds or warehouse space, do we report the tenants' electricity as Category 13?",
   "title": "Landlords and tenant electricity: Category 13",
@@ -12089,6 +12305,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Limited assurance means the assurer found nothing suggesting your emissions are materially wrong. Reasonable assurance is a positive opinion that they are fairly stated, backed by far more testing. You need whichever your regulator, lender or buyer names: CSRD asks for limited, SEBI's BRSR Core asks large listed companies for reasonable assurance or an assessment.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "lithium-ion-battery-recycling-emissions-per-tonne",
+  "q": "What are the emissions from recycling lithium ion batteries?",
+  "title": "Lithium ion battery recycling emissions",
+  "short": "It depends on the route. Shredding to black mass uses mainly electricity; furnace routes add fuel and burn the graphite and electrolyte; chemical leaching routes use acids and reagents. Report per tonne of batteries processed, and state which route you use.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "lng-invoice-co2-per-kg",
@@ -13163,6 +13387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "music-festival-carbon-footprint-per-attendee",
+  "q": "How do I calculate a music festival's carbon footprint per attendee?",
+  "title": "Music festival carbon per attendee",
+  "short": "Audience travel is usually the largest share, then diesel generators for stages and food stalls, and waste. Survey how people arrived and how far, add generator diesel at 2.68 kg CO2 per litre, and divide by attendees. Report travel separately from site energy.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "musical-instrument-maker-carbon-footprint",
   "q": "How does a musical instrument workshop estimate the carbon footprint of what it makes?",
   "title": "Musical instrument maker footprint",
@@ -13763,6 +13995,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "orthopaedic-implant-carbon-footprint",
+  "q": "What is the carbon footprint of an orthopaedic implant?",
+  "title": "Orthopaedic implant carbon footprint",
+  "short": "Titanium alloy, cobalt chrome or stainless steel bar is a large part, because machining removes much of it and titanium takes a lot of energy to make. Add CNC and polishing electricity, cleaning, sterilisation and packaging per implant. Weigh bar bought, not the finished part.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "outsourced-hotel-laundry-emissions",
   "q": "Our hotel outsources laundry. Does it go in Scope 3, and how do we estimate it?",
   "title": "Outsourced hotel laundry emissions",
@@ -14179,6 +14419,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "perfume-carbon-footprint-per-bottle",
+  "q": "What is the carbon footprint of a bottle of perfume?",
+  "title": "Perfume carbon footprint per bottle",
+  "short": "The glass bottle, cap and box often weigh more than the liquid and can carry most of the footprint. Ethanol and fragrance oils follow. Blending and filling use little energy. Weigh the packaging and ask suppliers for figures per kg.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "personal-and-business-vehicle-fuel-split",
   "q": "The owner's car is used for both business and personal trips. How much of its fuel goes in Scope 1?",
   "title": "Owner's car used for business and personal",
@@ -14225,6 +14473,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the wash line electricity at 0.710 kg CO2 per kWh and the hot wash heating fuel at its default factor, then divide by kilograms of clean flakes. Add collection and baling transport from the aggregator, and report process losses.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "pet-food-carbon-footprint-per-kg",
+  "q": "What makes up the carbon footprint of dry pet food?",
+  "title": "Pet food carbon footprint",
+  "short": "Ingredients dominate, especially meat and fish meals and grains. The factory adds steam for extrusion and gas or electricity for drying. Ask ingredient suppliers for figures per kg, then add your fuel, power and packaging per kg of finished kibble.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "pet-preform-bottle-carbon-footprint",
@@ -14427,6 +14683,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "place-of-worship-carbon-footprint",
+  "q": "How does a temple, mosque, church or gurdwara calculate its carbon footprint?",
+  "title": "Place of worship carbon footprint",
+  "short": "Start with electricity bills at 0.710 kg CO2 per kWh, then generator diesel and LPG for kitchens. Lamps and incense are small. Divide by a fixed period, and report a large community kitchen separately so it can be compared with others.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "plaster-of-paris-calcination-co2-per-tonne",
   "q": "How much CO2 does making plaster of Paris emit per tonne?",
   "title": "Plaster of Paris CO2 per tonne",
@@ -14627,6 +14891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "polysilicon-production-co2-per-kg",
+  "q": "Why is polysilicon so carbon intensive?",
+  "title": "Polysilicon production CO2",
+  "short": "Solar grade polysilicon is usually made by depositing silicon from trichlorosilane onto heated rods over several days. Electricity is the dominant input, so the grid behind the plant largely sets the footprint per kg. Ask suppliers for kWh per kg and the grid or contracts used.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "pool-msme-efficiency-projects-carbon-credits",
   "q": "Can many small MSMEs pool energy-efficiency projects into one carbon credit programme?",
   "title": "Pooling MSME efficiency projects for credits",
@@ -14745,6 +15017,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add three lines per kg of good sintered parts: iron powder issued times the powder maker's footprint, compacting and sintering electricity times the grid factor, and the LPG or natural gas cracked for the furnace atmosphere times its fuel factor. Then add sizing, steam treatment or machining if your route has them.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "power-bank-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of a power bank?",
+  "title": "Power bank carbon footprint",
+  "short": "Most of it sits in the lithium ion cells and circuit board, made upstream. Assembly, testing and the plastic or aluminium shell add less. Ask cell suppliers for kg CO2e per kWh of cell capacity, then add the board, casing, packaging and your own electricity.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "power-factor-rebate-and-penalty",
@@ -15219,6 +15499,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "quick-commerce-dark-store-emissions-per-order",
+  "q": "What is the carbon footprint of a quick commerce dark store per order?",
+  "title": "Dark store emissions per order",
+  "short": "Cold rooms and freezers usually dominate a dark store's electricity, then lighting and cooling. Divide monthly electricity at 0.710 kg CO2 per kWh, plus refrigerant leaks, by orders packed. Rider trips are a separate figure, Scope 1 or 3 depending on who runs the fleet.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "quicklime-kiln-co2-per-tonne",
   "q": "How much CO2 does a lime kiln emit per tonne of quicklime, including fuel?",
   "title": "Lime kiln CO2 per tonne of quicklime",
@@ -15257,6 +15545,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. On the default factors for India, rail freight is 0.0106 kg CO2e per tonne-km, against 0.0551 for a tractor-trailer and 0.0902 for a 12 to 20 t truck, so 81 to 88 percent lower. Door to door the gap narrows, because rail needs road legs at each end.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "railway-coach-manufacturing-carbon-footprint",
+  "q": "What drives the carbon footprint of building a railway coach?",
+  "title": "Railway coach build carbon footprint",
+  "short": "The shell material dominates: stainless steel or aluminium bought by the tonne, plus bogies, wheels and interiors. Factory emissions come from welding, paint shop ovens, compressed air and testing. Divide each by coaches completed, and keep materials in Scope 3 Category 1.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "railway-receipt-freight-emissions",
@@ -15875,6 +16171,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "road-resurfacing-milling-overlay-emissions",
+  "q": "How do I calculate emissions from milling and resurfacing a road?",
+  "title": "Road resurfacing emissions per km",
+  "short": "Add diesel for the milling machine, paver, rollers and tippers to the emissions of the hot mix laid, from the asphalt plant's fuel per tonne and the bitumen. Reusing milled material in new mix cuts virgin bitumen and aggregate. Divide by lane km.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "rock-wool-insulation-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of rock wool insulation per kg?",
   "title": "Rock wool insulation CO2 per kg",
@@ -16195,6 +16499,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "sand-mining-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of river sand or manufactured sand?",
+  "title": "Sand carbon footprint per tonne",
+  "short": "River sand's footprint is mostly diesel for excavators, pumps and trucks, so haul distance often matters most. Manufactured sand adds crushing and washing electricity. Ask suppliers for diesel and power per tonne, and add your own transport from pit or plant to site.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "sangli-sugar-distillery-spentwash-biogas-methane",
   "q": "How should a Sangli sugar mill distillery count methane from spentwash digesters?",
   "title": "Sangli distillery spentwash methane",
@@ -16337,6 +16649,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Schneider Electric's Zero Carbon Project, launched in 2021, asked its top 1,000 suppliers to halve operational CO2 by 2025; Schneider reported an average cut of 56%. Its successor, The Zero Carbon Pathway, aims for 1,500 suppliers by 2030 that measure Scope 1 and 2, set reduction targets and calculate Scope 3 or product footprints.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "school-bag-carbon-footprint-per-bag",
+  "q": "What is the carbon footprint of a school bag?",
+  "title": "School bag carbon footprint",
+  "short": "Most of it comes from the fabric, usually polyester or nylon, plus foam padding, zips and buckles. Weigh each material per bag, apply supplier or secondary factors per kg, and add cutting and stitching electricity. Fabric cut away as waste still counts in the fabric bought.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "school-carbon-footprint-how-to-calculate",
@@ -16763,6 +17083,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "shipbuilding-carbon-footprint",
+  "q": "What makes up the carbon footprint of building a ship?",
+  "title": "Shipbuilding carbon footprint",
+  "short": "Steel plate and sections are usually the largest share, followed by engines and equipment. Yard emissions come from cutting gas, welding power, shot blasting, painting and cranes. Ships themselves are not CBAM goods, but the steel plate a yard buys can carry embedded emissions data.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "shivamogga-foundry-castings-carbon-data",
   "q": "How does a foundry in Shivamogga work out carbon per tonne of castings?",
   "title": "Shivamogga foundry: carbon per tonne",
@@ -17155,6 +17483,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "sodium-bicarbonate-production-co2-balance",
+  "q": "Does making sodium bicarbonate lock up CO2?",
+  "title": "Sodium bicarbonate and CO2 uptake",
+  "short": "Bicarbonate is made by bubbling CO2 through soda ash solution, so CO2 is bound into the product. It is not a removal: the CO2 is released again when bicarbonate is heated or meets acid, in baking, fire extinguishers or flue gas cleaning. Report CO2 released, not a credit.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "sodium-hypochlorite-carbon-footprint-per-tonne",
   "q": "What is the carbon footprint of sodium hypochlorite per tonne?",
   "title": "Sodium hypochlorite per tonne",
@@ -17256,6 +17592,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Solar carport at a factory",
   "short": "Like rooftop solar: power you make and use on site never appears on the grid bill, so Scope 2 falls with no certificate needed. Read generation from the inverter to show the saving. Building the carport is Scope 3 Category 2 in the year you buy it.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "solar-cell-manufacturing-carbon-per-watt",
+  "q": "How do I calculate a solar cell plant's carbon footprint per watt?",
+  "title": "Solar cell plant carbon per watt",
+  "short": "Divide the plant's electricity and fuel emissions by the watts of cells produced, rated at standard test conditions. Electricity for furnaces, cleanrooms and chillers dominates. Purchased wafers carry most of a cell's embodied carbon, so report them separately in Scope 3.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -17867,6 +18211,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "styrene-monomer-co2-per-tonne",
+  "q": "Where does the CO2 come from when styrene monomer is made?",
+  "title": "Styrene monomer CO2 per tonne",
+  "short": "Most styrene is made by dehydrogenating ethylbenzene with superheated steam, so the main source is fuel burned in the steam superheater and boilers. Off-gas burned as fuel adds to it. Count fuel CO2 in Scope 1 and purchased benzene and ethylene in Scope 3.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "sub-metered-electricity-rented-unit",
   "q": "I pay my landlord for sub-metered electricity: is that still my Scope 2?",
   "title": "Sub-metered power in a rented unit",
@@ -17905,6 +18257,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add nitrogen fertiliser N2O with IPCC defaults, urea CO2, tractor diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes of cane per acre. Count trash burning separately if fields are burnt after harvest.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "suitcase-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of a suitcase?",
+  "title": "Suitcase carbon footprint",
+  "short": "Shell material is the biggest part: polycarbonate, polypropylene or ABS for hard cases, nylon or polyester fabric for soft ones, plus aluminium handles and wheels. Weigh each part, apply supplier or secondary factors, and add moulding or stitching electricity per piece.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "sulphuric-acid-plant-emissions-steam-export",
@@ -18283,6 +18643,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "television-carbon-footprint-per-unit",
+  "q": "What makes up the carbon footprint of a television?",
+  "title": "Television carbon footprint",
+  "short": "For a TV, the display panel and electronics usually carry most of the manufacturing footprint, and electricity used over years of viewing can be larger still. Report assembly in Scope 1 and 2, bought panels and boards in Category 1, and use in Category 11.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "tema-aluminium-smelter-cbam-figure",
   "q": "What CBAM figure should an EU buyer ask for on aluminium from Tema?",
   "title": "Tema aluminium smelter: CBAM figure",
@@ -18473,6 +18841,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the tinplate per can (body and two ends) by the steel supplier's figure, then add slitting, welding, lacquering and curing energy. Divide the plant's energy by cans made, stated by can size.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "tipper-truck-emissions-per-trip",
+  "q": "How do I count tipper truck emissions on a construction site?",
+  "title": "Tipper truck emissions per trip",
+  "short": "Record diesel issued to each tipper and trips made, multiply litres by 2.68 kg CO2, and divide by trips or tonnes moved. Tippers you operate are Scope 1; a hauling contractor paid per trip is Scope 3. Weighbridge slips give the tonnes.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "tiruppur-dyeing-unit-firewood-boiler-emissions",
@@ -19595,6 +19971,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "vinyl-chloride-monomer-plant-emissions",
+  "q": "What drives emissions at an EDC and vinyl chloride plant?",
+  "title": "EDC and vinyl chloride plant emissions",
+  "short": "Ethylene and chlorine make EDC, which is cracked in fired furnaces to vinyl chloride. Furnace fuel is the largest direct source, with vent gas incineration and oxychlorination off-gas adding CO2. Chlorine's electricity sits upstream in Scope 3 unless made on site.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "vinyl-flooring-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of vinyl flooring?",
   "title": "Vinyl flooring carbon footprint per sq m",
@@ -20403,6 +20787,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "wind-turbine-tower-carbon-footprint-cbam",
+  "q": "Is a steel wind turbine tower covered by CBAM, and what is its footprint?",
+  "title": "Wind turbine tower: footprint and CBAM",
+  "short": "Steel towers and tower sections fall under CN 7308, so they are CBAM goods when exported to the EU. Most of the footprint is the steel plate, then rolling, welding and painting. Ask the plate mill for its embedded emissions and add your own fabrication energy.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "winery-carbon-footprint-per-bottle",
   "q": "What is the carbon footprint of a bottle of wine from an Indian winery?",
   "title": "Winery CO2 per bottle",
@@ -20432,6 +20824,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Wood varnish and polish: Scope 3",
   "short": "Varnish, lacquer and polish you buy are Scope 3 Category 1, by litres or kilograms bought and a supplier or database factor. Solvent that evaporates in your shop is not counted as CO2 in Scope 1 unless it is burnt, for example in a fume incinerator.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "wooden-export-crate-heat-treatment-emissions",
+  "q": "What are the emissions from heat treating wooden export crates?",
+  "title": "Heat treated export crate emissions",
+  "short": "ISPM 15 heat treatment holds the wood core at a set temperature for a set time, usually in a chamber heated by a wood waste or diesel boiler. Count fossil fuel in Scope 1, report wood fuel CO2 separately as biogenic, and add sawn timber per crate.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {

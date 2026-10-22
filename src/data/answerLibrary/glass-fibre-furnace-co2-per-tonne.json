@@ -1,0 +1,62 @@
+{
+  "slug": "glass-fibre-furnace-co2-per-tonne",
+  "q": "How do I calculate CO2 from a glass fibre furnace?",
+  "title": "Glass fibre furnace CO2",
+  "short": "Add furnace fuel CO2 to process CO2 from carbonate raw materials such as limestone and dolomite in the batch, then divide by tonnes of fibre produced. Electric boosting adds Scope 2. Binders and sizing chemicals sit in Scope 3.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Glass fibre and composite reinforcement makers",
+  "sections": [
+    {
+      "h": "Process CO2 from the batch",
+      "ul": [
+        "Limestone: 0.440 tonnes CO2 per tonne.",
+        "Dolomite: 0.477 tonnes CO2 per tonne.",
+        "Use actual batch tonnes from stores records."
+      ]
+    },
+    {
+      "h": "Fuel and power",
+      "p": [
+        "Natural gas or oil for the furnace is Scope 1. Electric boosting, bushings and winding are Scope 2. Count fibre waste remelted or sent away in the tonnes produced."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative figures)",
+    "lines": [
+      "Limestone in batch: 300 kg per tonne of glass.",
+      "300 × 0.440 = 132 kg process CO2 per tonne."
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Glass wool footprint",
+      "to": "/answers/glass-wool-insulation-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Limestone calcination CO2",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "FRP boat footprint",
+      "to": "/answers/frp-fibreglass-boat-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

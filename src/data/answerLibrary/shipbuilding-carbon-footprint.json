@@ -1,0 +1,56 @@
+{
+  "slug": "shipbuilding-carbon-footprint",
+  "q": "What makes up the carbon footprint of building a ship?",
+  "title": "Shipbuilding carbon footprint",
+  "short": "Steel plate and sections are usually the largest share, followed by engines and equipment. Yard emissions come from cutting gas, welding power, shot blasting, painting and cranes. Ships themselves are not CBAM goods, but the steel plate a yard buys can carry embedded emissions data.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Shipyards and their buyers",
+  "sections": [
+    {
+      "h": "Yard sources",
+      "ul": [
+        "Oxy fuel cutting gas, in Scope 1.",
+        "Electricity for welding, cranes and compressors.",
+        "Shot blasting and painting.",
+        "Diesel for yard vehicles and launch."
+      ]
+    },
+    {
+      "h": "Materials",
+      "p": [
+        "Ask plate mills for CO2 per tonne. Engines and equipment are bought in and belong in Scope 3 Category 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Ship repair dry dock",
+      "to": "/answers/ship-repair-dry-dock-emissions"
+    },
+    {
+      "label": "Shot blasting emissions",
+      "to": "/answers/shot-blasting-energy-emissions-per-tonne"
+    },
+    {
+      "label": "Steel plates CBAM figure",
+      "to": "/answers/rourkela-steel-plates-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

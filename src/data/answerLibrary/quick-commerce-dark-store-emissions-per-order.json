@@ -1,0 +1,55 @@
+{
+  "slug": "quick-commerce-dark-store-emissions-per-order",
+  "q": "What is the carbon footprint of a quick commerce dark store per order?",
+  "title": "Dark store emissions per order",
+  "short": "Cold rooms and freezers usually dominate a dark store's electricity, then lighting and cooling. Divide monthly electricity at 0.710 kg CO2 per kWh, plus refrigerant leaks, by orders packed. Rider trips are a separate figure, Scope 1 or 3 depending on who runs the fleet.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Quick commerce operators and store franchisees",
+  "sections": [
+    {
+      "h": "Store figure",
+      "ul": [
+        "Electricity per month from the bill.",
+        "Refrigerant refills times their GWP.",
+        "Generator diesel during outages."
+      ]
+    },
+    {
+      "h": "Delivery figure",
+      "p": [
+        "Keep rider fuel or charging separate so the store and delivery numbers can each be improved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Gig riders: which scope",
+      "to": "/answers/gig-delivery-riders-emissions-which-scope"
+    },
+    {
+      "label": "Cloud kitchen per order",
+      "to": "/answers/cloud-kitchen-carbon-footprint-per-order"
+    },
+    {
+      "label": "Fulfilment centre per parcel",
+      "to": "/answers/ecommerce-fulfilment-centre-emissions-per-parcel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

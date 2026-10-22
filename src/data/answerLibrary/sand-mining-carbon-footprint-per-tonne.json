@@ -1,0 +1,56 @@
+{
+  "slug": "sand-mining-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of river sand or manufactured sand?",
+  "title": "Sand carbon footprint per tonne",
+  "short": "River sand's footprint is mostly diesel for excavators, pumps and trucks, so haul distance often matters most. Manufactured sand adds crushing and washing electricity. Ask suppliers for diesel and power per tonne, and add your own transport from pit or plant to site.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Builders, RMC plants and sand suppliers",
+  "sections": [
+    {
+      "h": "River sand",
+      "ul": [
+        "Excavator or pump diesel per tonne.",
+        "Truck diesel from pit to yard and site."
+      ]
+    },
+    {
+      "h": "Manufactured sand",
+      "ul": [
+        "Crusher and screen electricity.",
+        "Washing water pumps.",
+        "Loader diesel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Stone crusher aggregate CO2",
+      "to": "/answers/stone-crusher-aggregate-co2-per-tonne"
+    },
+    {
+      "label": "Silica sand washing",
+      "to": "/answers/silica-sand-washing-drying-co2-per-tonne"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "epoxy-resin-carbon-footprint-per-kg",
+  "q": "What makes up the carbon footprint of epoxy resin?",
+  "title": "Epoxy resin carbon footprint per kg",
+  "short": "Raw materials dominate: bisphenol A and epichlorohydrin, both made from petrochemicals, with chlorine in epichlorohydrin. The resin plant's own fuel and power are a smaller part. Ask suppliers for cradle to gate figures per kg and report purchased resin in Scope 3 Category 1.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Paint, adhesive and composite makers buying epoxy",
+  "sections": [
+    {
+      "h": "For the resin maker",
+      "ul": [
+        "Bisphenol A and epichlorohydrin bought, per kg of resin.",
+        "Steam and electricity for reaction and solvent recovery.",
+        "Waste and wastewater treatment."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Use the supplier's cradle to gate figure where you have one, with its date and method. Where you do not, a secondary factor is an estimate and should be labelled as one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Paint footprint",
+      "to": "/answers/paint-carbon-footprint-per-litre"
+    },
+    {
+      "label": "Carbon fibre composite",
+      "to": "/answers/carbon-fibre-composite-part-carbon-footprint"
+    },
+    {
+      "label": "FRP boat footprint",
+      "to": "/answers/frp-fibreglass-boat-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

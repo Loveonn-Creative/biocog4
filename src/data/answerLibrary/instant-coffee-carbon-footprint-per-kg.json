@@ -1,0 +1,56 @@
+{
+  "slug": "instant-coffee-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of instant coffee per kg?",
+  "title": "Instant coffee carbon footprint",
+  "short": "Green beans carry the farm emissions, then roasting, extraction and drying add a lot of energy, because several kg of beans are used and much water is evaporated per kg of powder. Spray or freeze drying fuel and electricity usually dominate the factory share.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Instant coffee makers and exporters",
+  "sections": [
+    {
+      "h": "Factory",
+      "ul": [
+        "Roaster fuel.",
+        "Steam for extraction and concentration.",
+        "Gas or electricity for spray or freeze drying.",
+        "Packaging."
+      ]
+    },
+    {
+      "h": "Beans",
+      "p": [
+        "Count kg of green beans per kg of powder from your yield records, and multiply by a farm figure from your supplier where available."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Green coffee footprint",
+      "to": "/answers/coffee-carbon-footprint-per-kg-green-coffee"
+    },
+    {
+      "label": "Coffee curing works",
+      "to": "/answers/coffee-curing-works-emissions-per-tonne"
+    },
+    {
+      "label": "Milk powder footprint",
+      "to": "/answers/milk-powder-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

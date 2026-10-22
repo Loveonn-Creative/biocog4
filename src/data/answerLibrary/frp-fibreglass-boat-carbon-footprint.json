@@ -1,0 +1,55 @@
+{
+  "slug": "frp-fibreglass-boat-carbon-footprint",
+  "q": "What is the carbon footprint of an FRP fibreglass boat?",
+  "title": "FRP fibreglass boat carbon footprint",
+  "short": "Glass fibre and polyester or epoxy resin make up most of it, counted by weight bought including offcuts and resin waste. Styrene vapour from open moulding is a health issue, not a greenhouse gas. Add mould shop electricity, then the engine as a separate bought part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Boat builders making fishing and leisure craft",
+  "sections": [
+    {
+      "h": "Materials",
+      "ul": [
+        "Glass fibre mat and roving.",
+        "Resin, gelcoat and catalyst.",
+        "Core materials, fittings and paint."
+      ]
+    },
+    {
+      "h": "Use",
+      "p": [
+        "For a powered boat, fuel burned over its life is often larger than building it. Report it separately if a buyer asks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Glass fibre furnace CO2",
+      "to": "/answers/glass-fibre-furnace-co2-per-tonne"
+    },
+    {
+      "label": "Epoxy resin footprint",
+      "to": "/answers/epoxy-resin-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Fishing vessel fuel",
+      "to": "/answers/fishing-vessel-fuel-emissions-per-tonne-catch"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

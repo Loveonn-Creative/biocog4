@@ -1,0 +1,61 @@
+{
+  "slug": "acrylonitrile-plant-emissions-per-tonne",
+  "q": "What are the main emission sources in acrylonitrile production?",
+  "title": "Acrylonitrile plant emissions",
+  "short": "Acrylonitrile is made by reacting propylene, ammonia and air over a catalyst. Part of the carbon leaves as CO2 and as by-products such as hydrogen cyanide and acetonitrile, which are often burned. Count that process and off-gas CO2 with fuel in Scope 1.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Acrylonitrile producers and acrylic fibre and ABS buyers",
+  "sections": [
+    {
+      "h": "Scope 1",
+      "ul": [
+        "CO2 formed in the reactor and vented from the absorber.",
+        "By-products and off-gas burned in an incinerator or boiler.",
+        "Fuel for any supplementary firing."
+      ]
+    },
+    {
+      "h": "Steam export",
+      "p": [
+        "The reaction gives off heat, and many plants export steam. Report the steam sent out as a separate figure; do not subtract it from your Scope 1."
+      ]
+    },
+    {
+      "h": "Upstream",
+      "p": [
+        "Propylene and ammonia are bought in and sit in Scope 3 Category 1. IPCC 2006 Volume 3 covers acrylonitrile under petrochemicals."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Acrylic sweater footprint",
+      "to": "/answers/acrylic-sweater-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Sulphuric acid steam export",
+      "to": "/answers/sulphuric-acid-plant-emissions-steam-export"
+    },
+    {
+      "label": "Styrene monomer CO2",
+      "to": "/answers/styrene-monomer-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "orthopaedic-implant-carbon-footprint",
+  "q": "What is the carbon footprint of an orthopaedic implant?",
+  "title": "Orthopaedic implant carbon footprint",
+  "short": "Titanium alloy, cobalt chrome or stainless steel bar is a large part, because machining removes much of it and titanium takes a lot of energy to make. Add CNC and polishing electricity, cleaning, sterilisation and packaging per implant. Weigh bar bought, not the finished part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Medical device makers",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Bar or forging weight per implant.",
+        "Supplier figure per kg of alloy.",
+        "Electricity for machining and finishing.",
+        "Sterilisation and packaging."
+      ]
+    },
+    {
+      "h": "Turnings",
+      "p": [
+        "Titanium turnings sold for recycling leave with your waste. Keep the bar bought in full in your figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Forged crankshaft footprint",
+      "to": "/answers/crankshaft-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Disposable syringe footprint",
+      "to": "/answers/disposable-syringe-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

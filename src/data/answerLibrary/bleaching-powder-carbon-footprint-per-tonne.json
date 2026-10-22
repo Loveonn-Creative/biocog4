@@ -1,0 +1,55 @@
+{
+  "slug": "bleaching-powder-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of bleaching powder?",
+  "title": "Bleaching powder carbon footprint",
+  "short": "Bleaching powder is made by passing chlorine over slaked lime, a reaction that releases no CO2. Its footprint comes from the lime, whose kiln released process CO2 upstream, and from the electricity behind chlorine. On site, count only your fuel and power.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Bleaching powder makers and water treatment buyers",
+  "sections": [
+    {
+      "h": "Upstream",
+      "ul": [
+        "Quicklime or hydrated lime, carrying the kiln's process CO2.",
+        "Chlorine, made by electrolysis."
+      ]
+    },
+    {
+      "h": "On site",
+      "ul": [
+        "Electricity for chlorination and handling.",
+        "Any fuel for drying."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Quicklime kiln CO2",
+      "to": "/answers/quicklime-kiln-co2-per-tonne"
+    },
+    {
+      "label": "Sodium hypochlorite footprint",
+      "to": "/answers/sodium-hypochlorite-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Caustic soda footprint",
+      "to": "/answers/caustic-soda-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

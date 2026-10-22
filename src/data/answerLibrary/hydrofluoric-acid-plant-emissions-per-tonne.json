@@ -1,0 +1,52 @@
+{
+  "slug": "hydrofluoric-acid-plant-emissions-per-tonne",
+  "q": "Where do emissions come from at a hydrofluoric acid plant?",
+  "title": "Hydrofluoric acid plant emissions",
+  "short": "Hydrofluoric acid is made by reacting fluorspar with sulphuric acid in an indirectly heated rotary kiln. The kiln fuel is the main Scope 1 source. Purchased sulphuric acid and fluorspar, with its mining and drying, sit in Scope 3. HF feeds refrigerants and aluminium fluoride.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Fluorochemical producers and their buyers",
+  "sections": [
+    {
+      "h": "Scope 1 and 2",
+      "ul": [
+        "Fuel for kiln heating.",
+        "Electricity for kiln drive, scrubbers and refrigeration for condensing HF."
+      ]
+    },
+    {
+      "h": "Scope 3",
+      "ul": [
+        "Fluorspar, including drying.",
+        "Sulphuric acid, unless made on site.",
+        "Gypsum disposal, if sent away."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Sulphuric acid plant",
+      "to": "/answers/sulphuric-acid-plant-emissions-steam-export"
+    },
+    {
+      "label": "HFC-23 by-product",
+      "to": "/answers/hfc-23-from-hcfc-22-production"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "wooden-export-crate-heat-treatment-emissions",
+  "q": "What are the emissions from heat treating wooden export crates?",
+  "title": "Heat treated export crate emissions",
+  "short": "ISPM 15 heat treatment holds the wood core at a set temperature for a set time, usually in a chamber heated by a wood waste or diesel boiler. Count fossil fuel in Scope 1, report wood fuel CO2 separately as biogenic, and add sawn timber per crate.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Packaging makers and exporters using wooden crates",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Boiler fuel per batch.",
+        "Crates or cubic metres treated per batch.",
+        "Sawn timber bought per crate."
+      ]
+    },
+    {
+      "h": "Alternatives",
+      "p": [
+        "Plywood or plastic pallets do not need treatment. Compare whole footprints, not only the treatment step."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Wooden vs plastic pallet",
+      "to": "/answers/wooden-vs-plastic-pallet-carbon-footprint"
+    },
+    {
+      "label": "EUDR and export pallets",
+      "to": "/answers/does-eudr-apply-to-export-packaging-pallets"
+    },
+    {
+      "label": "Plywood footprint",
+      "to": "/answers/plywood-carbon-footprint-per-cubic-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

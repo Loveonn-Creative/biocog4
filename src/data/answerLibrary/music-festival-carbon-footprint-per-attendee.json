@@ -1,0 +1,55 @@
+{
+  "slug": "music-festival-carbon-footprint-per-attendee",
+  "q": "How do I calculate a music festival's carbon footprint per attendee?",
+  "title": "Music festival carbon per attendee",
+  "short": "Audience travel is usually the largest share, then diesel generators for stages and food stalls, and waste. Survey how people arrived and how far, add generator diesel at 2.68 kg CO2 per litre, and divide by attendees. Report travel separately from site energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Festival organisers and event agencies",
+  "sections": [
+    {
+      "h": "Site",
+      "ul": [
+        "Generator diesel or grid connection.",
+        "Waste sent to landfill or compost.",
+        "Food and drink bought."
+      ]
+    },
+    {
+      "h": "Travel",
+      "p": [
+        "A short survey at entry or in tickets gives mode and distance. Scale it up to all attendees and say so."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Stadium match day",
+      "to": "/answers/stadium-match-day-carbon-footprint"
+    },
+    {
+      "label": "Marathon per runner",
+      "to": "/answers/marathon-carbon-footprint-per-runner"
+    },
+    {
+      "label": "Carbon neutral event claims",
+      "to": "/answers/carbon-neutral-event-claim-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

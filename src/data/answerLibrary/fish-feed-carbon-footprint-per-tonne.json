@@ -1,0 +1,55 @@
+{
+  "slug": "fish-feed-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint of fish and shrimp feed?",
+  "title": "Fish and shrimp feed footprint",
+  "short": "Ingredients usually make up most of it: soybean meal, fish meal, fish oil, wheat and rice bran. Mill steam for pelleting or extrusion, drying and electricity add the rest. Farms count it in Scope 3 Category 1, where it is often their largest line.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Aquafeed mills and fish and shrimp farmers",
+  "sections": [
+    {
+      "h": "At the mill",
+      "ul": [
+        "Ingredient tonnes per tonne of feed.",
+        "Boiler fuel and electricity.",
+        "Bags and transport to farms."
+      ]
+    },
+    {
+      "h": "On the farm",
+      "p": [
+        "Feed conversion ratio links feed to fish: kg of feed per kg of fish harvested. A lower ratio cuts the footprint per kg."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Shrimp farm emissions",
+      "to": "/answers/shrimp-farm-emissions-feed-and-aerators"
+    },
+    {
+      "label": "Fish meal footprint",
+      "to": "/answers/fish-meal-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Pet food footprint",
+      "to": "/answers/pet-food-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

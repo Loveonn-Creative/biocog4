@@ -1,0 +1,56 @@
+{
+  "slug": "airport-terminal-emissions-per-passenger",
+  "q": "How do I calculate an airport terminal's emissions per passenger?",
+  "title": "Airport terminal emissions per passenger",
+  "short": "Terminal electricity for cooling, lighting, baggage systems and lifts usually dominates, plus diesel backup and refrigerant leaks. Divide by passengers handled. Aircraft engines and airline ground equipment belong to airlines and handlers, so keep them out of the terminal figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Airport operators",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Terminal electricity, including chillers.",
+        "Generator diesel.",
+        "Refrigerant refills.",
+        "Passenger numbers."
+      ]
+    },
+    {
+      "h": "Tenants",
+      "p": [
+        "Shops and lounges on separate meters are tenants' Scope 2. On shared meters, decide who reports their share and write it down."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Airport shop tenant",
+      "to": "/answers/airport-shop-tenant-emissions-which-scope"
+    },
+    {
+      "label": "Airport ground equipment",
+      "to": "/answers/airport-ground-support-equipment-emissions"
+    },
+    {
+      "label": "Lift and escalator power",
+      "to": "/answers/lift-and-escalator-electricity-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

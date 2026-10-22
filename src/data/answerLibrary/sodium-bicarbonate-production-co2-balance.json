@@ -1,0 +1,51 @@
+{
+  "slug": "sodium-bicarbonate-production-co2-balance",
+  "q": "Does making sodium bicarbonate lock up CO2?",
+  "title": "Sodium bicarbonate and CO2 uptake",
+  "short": "Bicarbonate is made by bubbling CO2 through soda ash solution, so CO2 is bound into the product. It is not a removal: the CO2 is released again when bicarbonate is heated or meets acid, in baking, fire extinguishers or flue gas cleaning. Report CO2 released, not a credit.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Soda ash and bicarbonate producers",
+  "sections": [
+    {
+      "h": "How to report",
+      "ul": [
+        "Fuel and electricity for the plant in Scope 1 and 2.",
+        "CO2 bought or taken from your own lime kiln, as a separate line.",
+        "No negative figure for CO2 held in the product."
+      ]
+    },
+    {
+      "h": "Why",
+      "p": [
+        "The GHG Protocol counts emissions released. CO2 held for months before release is not stored in any lasting way."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Soda ash plant CO2",
+      "to": "/answers/soda-ash-plant-co2-per-tonne"
+    },
+    {
+      "label": "CO2 from soda ash neutralisation",
+      "to": "/answers/co2-from-soda-ash-or-limestone-neutralisation"
+    },
+    {
+      "label": "Fire extinguisher refill",
+      "to": "/answers/fire-extinguisher-refill-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

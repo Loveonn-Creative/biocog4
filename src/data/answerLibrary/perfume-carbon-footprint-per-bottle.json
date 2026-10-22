@@ -1,0 +1,56 @@
+{
+  "slug": "perfume-carbon-footprint-per-bottle",
+  "q": "What is the carbon footprint of a bottle of perfume?",
+  "title": "Perfume carbon footprint per bottle",
+  "short": "The glass bottle, cap and box often weigh more than the liquid and can carry most of the footprint. Ethanol and fragrance oils follow. Blending and filling use little energy. Weigh the packaging and ask suppliers for figures per kg.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fragrance brands and contract fillers",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Weigh bottle, pump, cap and box.",
+        "Multiply each by a supplier or secondary factor per kg.",
+        "Add ethanol and fragrance oil by volume.",
+        "Add filling electricity per bottle."
+      ]
+    },
+    {
+      "h": "Ethanol",
+      "p": [
+        "CO2 from ethanol made from crops and released in use is biogenic and reported separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Cosmetics footprint",
+      "to": "/answers/cosmetics-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Glass container furnace",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Grain ethanol distillery",
+      "to": "/answers/grain-ethanol-distillery-co2-per-litre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

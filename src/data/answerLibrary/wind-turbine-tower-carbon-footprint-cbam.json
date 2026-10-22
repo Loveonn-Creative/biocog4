@@ -1,0 +1,55 @@
+{
+  "slug": "wind-turbine-tower-carbon-footprint-cbam",
+  "q": "Is a steel wind turbine tower covered by CBAM, and what is its footprint?",
+  "title": "Wind turbine tower: footprint and CBAM",
+  "short": "Steel towers and tower sections fall under CN 7308, so they are CBAM goods when exported to the EU. Most of the footprint is the steel plate, then rolling, welding and painting. Ask the plate mill for its embedded emissions and add your own fabrication energy.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Tower fabricators exporting to the EU",
+  "sections": [
+    {
+      "h": "For CBAM",
+      "ul": [
+        "Plate mill's embedded emissions, as a precursor.",
+        "Your own fuel and electricity for rolling, welding and painting.",
+        "Tonnes of towers produced."
+      ]
+    },
+    {
+      "h": "For a wind developer",
+      "p": [
+        "The tower is usually one of the heaviest steel items in a turbine, so it often sits high in the turbine's embodied carbon."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Steel structures in CBAM",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    },
+    {
+      "label": "Wind blade end of life",
+      "to": "/answers/wind-turbine-blade-end-of-life-emissions"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

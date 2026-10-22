@@ -1,0 +1,63 @@
+{
+  "slug": "vinyl-chloride-monomer-plant-emissions",
+  "q": "What drives emissions at an EDC and vinyl chloride plant?",
+  "title": "EDC and vinyl chloride plant emissions",
+  "short": "Ethylene and chlorine make EDC, which is cracked in fired furnaces to vinyl chloride. Furnace fuel is the largest direct source, with vent gas incineration and oxychlorination off-gas adding CO2. Chlorine's electricity sits upstream in Scope 3 unless made on site.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "PVC producers and buyers of PVC resin",
+  "sections": [
+    {
+      "h": "Scope 1",
+      "ul": [
+        "Fuel for the EDC cracking furnaces.",
+        "Vent gas and liquid waste incinerators.",
+        "CO2 from the oxychlorination step."
+      ]
+    },
+    {
+      "h": "Scope 2 and 3",
+      "ul": [
+        "Electricity for compressors and utilities.",
+        "Chlorine, from electrolysis, bought in or made in a chlor-alkali unit on site.",
+        "Ethylene feedstock."
+      ]
+    },
+    {
+      "h": "Method",
+      "p": [
+        "IPCC 2006 Volume 3 covers EDC and vinyl chloride under petrochemicals. If chlorine is made on site, its electricity becomes your Scope 2 and should be shown as its own line."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Dahej PVC supplier data",
+      "to": "/answers/dahej-pvc-supplier-carbon-data-for-buyers"
+    },
+    {
+      "label": "Chlor-alkali captive power",
+      "to": "/answers/dahej-chlor-alkali-caustic-soda-captive-power-co2"
+    },
+    {
+      "label": "PVC pipe footprint",
+      "to": "/answers/pvc-pipe-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

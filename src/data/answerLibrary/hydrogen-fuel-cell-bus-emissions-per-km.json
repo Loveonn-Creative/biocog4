@@ -1,0 +1,53 @@
+{
+  "slug": "hydrogen-fuel-cell-bus-emissions-per-km",
+  "q": "How do I calculate emissions for a hydrogen fuel cell bus?",
+  "title": "Hydrogen fuel cell bus emissions",
+  "short": "The bus emits only water, so the footprint lies in the hydrogen. Multiply kg of hydrogen used per km by the CO2 per kg from its production: high for hydrogen from natural gas, low for electrolysis on renewable power. Ask the supplier for that figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "City transport operators trialling fuel cell buses",
+  "sections": [
+    {
+      "h": "Scopes",
+      "p": [
+        "No Scope 1 from the bus itself. Emissions from producing bought hydrogen sit in Scope 3 Category 3. If you make hydrogen on site, the electricity or gas you use is Scope 2 or Scope 1."
+      ]
+    },
+    {
+      "h": "Compare fairly",
+      "p": [
+        "Set a diesel or electric bus beside it on the same route, with the same km and passengers, before claiming a saving."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "SMR hydrogen CO2 per kg",
+      "to": "/answers/smr-hydrogen-co2-per-kg"
+    },
+    {
+      "label": "Grid hydrogen intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "Electric vs diesel bus depot",
+      "to": "/answers/electric-vs-diesel-bus-depot-indian-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

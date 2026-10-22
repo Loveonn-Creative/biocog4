@@ -1,0 +1,55 @@
+{
+  "slug": "bus-body-building-carbon-footprint-per-bus",
+  "q": "How do I calculate the carbon footprint of building a bus body?",
+  "title": "Bus body building carbon footprint",
+  "short": "Weigh the steel or aluminium sections, panels, glass, seats and paint bought for each body and apply supplier or secondary factors. Add the workshop's welding power, paint booth fuel and compressed air. The chassis is a separate purchase; report it as its own line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Bus body builders",
+  "sections": [
+    {
+      "h": "Per body",
+      "ul": [
+        "Structure: steel tube or aluminium extrusion, by weight bought.",
+        "Panels, glass, flooring and seats.",
+        "Paint, primer and sealant."
+      ]
+    },
+    {
+      "h": "Workshop",
+      "p": [
+        "Take monthly electricity and fuel, multiply by their factors, and divide by bodies completed that month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your electricity bills, fuel invoices and purchase invoices into dated, fingerprinted records, so a per unit footprint can be traced back to the documents behind it. Estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Truck body builder steel",
+      "to": "/answers/namakkal-truck-body-builder-steel-scope-3"
+    },
+    {
+      "label": "Aluminium extrusion footprint",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Paint booth emissions",
+      "to": "/answers/car-paint-booth-emissions-per-vehicle"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

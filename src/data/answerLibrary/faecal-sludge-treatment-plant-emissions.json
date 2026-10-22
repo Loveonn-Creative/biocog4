@@ -1,0 +1,56 @@
+{
+  "slug": "faecal-sludge-treatment-plant-emissions",
+  "q": "What emissions does a faecal sludge treatment plant produce?",
+  "title": "Faecal sludge treatment emissions",
+  "short": "Methane from sludge left without air is the main concern, with some nitrous oxide. Drying beds and well run aerobic stages emit less; anaerobic ponds emit more. Add electricity at 0.710 kg CO2 per kWh and diesel for desludging trucks. Capturing biogas cuts methane.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Municipal bodies and plant operators",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Methane from anaerobic tanks, ponds and stored sludge.",
+        "Nitrous oxide from treatment stages.",
+        "Electricity for pumps and dewatering.",
+        "Diesel for collection trucks."
+      ]
+    },
+    {
+      "h": "Method",
+      "p": [
+        "IPCC 2006 Volume 5 gives methods for wastewater and sludge. Methane is converted with the AR6 GWP for non-fossil methane, 27.0."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Septic tank methane",
+      "to": "/answers/septic-tank-methane-scope-1"
+    },
+    {
+      "label": "Sewage treatment electricity",
+      "to": "/answers/sewage-treatment-plant-electricity-per-kl"
+    },
+    {
+      "label": "Landfill methane",
+      "to": "/answers/landfill-gas-methane-municipal-landfill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

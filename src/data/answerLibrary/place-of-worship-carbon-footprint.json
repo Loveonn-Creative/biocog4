@@ -1,0 +1,56 @@
+{
+  "slug": "place-of-worship-carbon-footprint",
+  "q": "How does a temple, mosque, church or gurdwara calculate its carbon footprint?",
+  "title": "Place of worship carbon footprint",
+  "short": "Start with electricity bills at 0.710 kg CO2 per kWh, then generator diesel and LPG for kitchens. Lamps and incense are small. Divide by a fixed period, and report a large community kitchen separately so it can be compared with others.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Trusts and committees managing places of worship",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Electricity bills for the building and grounds.",
+        "Generator diesel.",
+        "LPG or firewood for the kitchen.",
+        "Vehicles owned by the trust."
+      ]
+    },
+    {
+      "h": "Festivals",
+      "p": [
+        "Festival days can use far more power and fuel. Keep them as a separate figure so the normal month stays comparable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Temple kitchen fuel",
+      "to": "/answers/temple-community-kitchen-fuel-emissions"
+    },
+    {
+      "label": "DG set vs grid per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
