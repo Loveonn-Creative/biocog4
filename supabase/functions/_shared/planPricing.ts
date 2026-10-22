@@ -24,11 +24,20 @@ export const LAUNCH_PRICES: Record<PaidPlan, Record<Cycle, number> & { name: str
 
 export const REGULAR_MULTIPLIER = 2.5;
 
-/** ISO date from which regular pricing applies. null: launch pricing for everyone (today). */
-export const REGULAR_PRICING_STARTS_AT: string | null = null;
+/** ISO date from which regular pricing applies. null: launch pricing for everyone.
+ *  Owner, 22 October 2026: launch prices hold through 31 December 2026 (IST). */
+export const REGULAR_PRICING_STARTS_AT: string | null = '2027-01-01T00:00:00+05:30';
+
+/** True once regular pricing is in force for new buyers. */
+export const regularPricingInForce = (now = new Date(), regularFrom: string | null = REGULAR_PRICING_STARTS_AT) =>
+  !!regularFrom && now.getTime() >= Date.parse(regularFrom);
 
 /** Regular price in paise: 2.5x launch, exact in paise (no rounding needed for current prices). */
 export const regularPrice = (plan: PaidPlan, cycle: Cycle) => Math.round(LAUNCH_PRICES[plan][cycle] * REGULAR_MULTIPLIER);
+
+/** List price a new buyer sees today, in paise (launch before the date, regular from it). */
+export const listPrice = (plan: PaidPlan, cycle: Cycle, now = new Date(), regularFrom: string | null = REGULAR_PRICING_STARTS_AT) =>
+  regularPricingInForce(now, regularFrom) ? regularPrice(plan, cycle) : LAUNCH_PRICES[plan][cycle];
 
 export interface PriceHistoryRow { tier: string; amount: number | null; expires_at: string | null }
 
@@ -41,7 +50,7 @@ export interface OrderPrice { paise: number; name: string; basis: 'launch' | 'la
  */
 export function orderPrice(plan: PaidPlan, cycle: Cycle, history: PriceHistoryRow[], now = new Date(), regularFrom: string | null = REGULAR_PRICING_STARTS_AT): OrderPrice {
   const launch = LAUNCH_PRICES[plan];
-  if (!regularFrom || now.getTime() < Date.parse(regularFrom)) return { paise: launch[cycle], name: launch.name, basis: 'launch' };
+  if (!regularPricingInForce(now, regularFrom)) return { paise: launch[cycle], name: launch.name, basis: 'launch' };
   const launchRupees = new Set([launch.monthly / 100, launch.yearly / 100]);
   const graceMs = GRACE_DAYS * 86_400_000;
   const retained = history.some((r) =>

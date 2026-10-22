@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { reconcileUser } from "../_shared/razorpayReconcile.ts";
 import { blocksNewOrder } from "../_shared/razorpayActivation.ts";
-import { LAUNCH_PRICES, orderPrice, REGULAR_PRICING_STARTS_AT } from "../_shared/planPricing.ts";
+import { LAUNCH_PRICES, orderPrice, regularPricingInForce } from "../_shared/planPricing.ts";
 import { checkoutTotal, isPaymentMethod, type CheckoutTotal } from "../_shared/checkoutTotals.ts";
 import { versionProbe } from "../_shared/versionProbe.ts";
 
@@ -163,7 +163,7 @@ serve(async (req) => {
     } else if (PLAN_PRICES[tier as keyof typeof PLAN_PRICES]) {
       // Once regular pricing is in force, a launch customer's retention must be
       // proven from their rows; if they could not be read, do not quote at all.
-      if (priceHistory === null && REGULAR_PRICING_STARTS_AT) {
+      if (priceHistory === null && regularPricingInForce()) {
         return json({ error: 'Could not check your current plan. Please try again in a moment.' }, 503);
       }
       const price = orderPrice(tier as 'basic' | 'pro', cycle, priceHistory ?? []);
