@@ -1,44 +1,38 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowRight, MessageCircle, Timer } from "lucide-react";
-import { inr, inrPaise, offerEndsLabel, timeLeft, yearlyOffer, type TimeLeft } from "@/lib/leadMagnets/launchOffer";
+import { inr, inrPaise, nextBatch, yearlyOffer, type Batch } from "@/lib/leadMagnets/launchOffer";
+import { useSession } from "@/hooks/useSession";
+import { useRazorpay } from "@/hooks/useRazorpay";
+import { usePremiumStatus } from "@/hooks/usePremiumStatus";
 import type { PaidPlan } from "../../../../supabase/functions/_shared/planPricing";
+import type { PaymentMethod } from "../../../../supabase/functions/_shared/checkoutTotals";
 
-// Launch-price urgency for the ad pages: a countdown to the real date the
-// regular price starts, a meter that drains toward it, and struck prices.
-// Everything disappears once the date passes (plans then show the regular price).
+const CheckoutSummary = lazy(() => import("@/components/pricing/CheckoutSummary"));
 
-export function useTimeLeft(): TimeLeft {
-  const [t, setT] = useState(() => timeLeft());
+// Offer pieces for the ad pages: the next onboarding batch (a real start date
+// every 10 days, the same for everyone), the yearly price against paying
+// monthly, and checkout that opens on the ad page itself.
+
+export function useBatch(): Batch {
+  const [b, setB] = useState(() => nextBatch());
   useEffect(() => {
-    const id = window.setInterval(() => setT(timeLeft()), 1000);
+    const id = window.setInterval(() => setB(nextBatch()), 1000);
     return () => window.clearInterval(id);
   }, []);
-  return t;
+  return b;
 }
 
 const pad = (n: number) => String(n).padStart(2, "0");
-export const ENDS = offerEndsLabel();
 
-/** Small hero line: the deadline and the saving, nothing else. */
-export function OfferPill({ t, plan = "basic" }: { t: TimeLeft; plan?: PaidPlan }) {
-  if (t.over) return null;
-  return (
-    <p className={`lp-offer-pill mb-5 inline-flex max-w-full items-center gap-2 rounded-full px-3.5 py-1.5 text-[13px] font-semibold ${t.finalWeek ? "is-final" : ""}`}>
-      <span className="lp-offer-dot h-2 w-2 shrink-0 rounded-full" aria-hidden="true" />
-      {t.finalWeek ? `Final week of launch prices` : `${plan === "basic" ? "Up to " : ""}${yearlyOffer(plan).percentOff}% off yearly. Launch prices change ${ENDS}.`}
-    </p>
-  );
-}
-
-/** Big clock above the plans: days, hours, minutes, seconds and a draining meter. */
-export function OfferClock({ t }: { t: TimeLeft }) {
-  if (t.over) return null;
+/** Countdown to the next batch with a meter that drains over the 10 days. */
+export function BatchClock({ b, what }: { b: Batch; what: string }) {
+  const t = b.left;
   const cells: [number, string][] = [[t.days, "days"], [t.hours, "hrs"], [t.mins, "min"], [t.secs, "sec"]];
   return (
-    <div className={`lp-clock rounded-2xl p-4 sm:p-5 ${t.finalWeek ? "is-final" : ""}`} role="timer" aria-label={`Launch prices change on ${ENDS}, in ${t.days} days ${t.hours} hours`}>
+    <div className={`lp-clock rounded-2xl p-4 sm:p-5 ${t.finalDays ? "is-final" : ""}`} role="timer" aria-label={`Next batch starts ${b.label}, in ${t.days} days ${t.hours} hours`}>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="flex items-center gap-2 text-sm font-semibold"><Timer className="h-4 w-4" /> {t.finalWeek ? "Final week of launch prices" : "Launch prices change in"}</p>
+        <p className="flex items-center gap-2 text-sm font-semibold"><Timer className="h-4 w-4" /> {t.finalDays ? `Last call for the ${b.label} batch` : `Next batch starts ${b.label}`}</p>
         <div className="flex gap-1.5 font-mono tabular-nums" aria-hidden="true">
           {cells.map(([n, l]) => (
             <span key={l} className="lp-clock-cell grid min-w-[3.1rem] place-items-center rounded-lg px-1.5 py-1 leading-none">
@@ -48,31 +42,80 @@ export function OfferClock({ t }: { t: TimeLeft }) {
         </div>
       </div>
       <div className="lp-meter mt-3 h-2 overflow-hidden rounded-full"><i style={{ width: `${Math.max(2, t.fraction * 100)}%` }} /></div>
-      <p className="mt-2 text-[13px] opacity-80">Start before {ENDS} and today's price is yours every year you renew.</p>
+      <p className="mt-2 text-[13px] opacity-80">Join by then and {what} starts on {b.label}. Miss it and you wait until {b.nextLabel}.</p>
     </div>
   );
 }
 
-/** Price block for a yearly plan: the same plan billed monthly, struck; the yearly price; a Buy now link. */
-export function OfferPrice({ plan, onBuy }: { plan: PaidPlan; onBuy?: () => void }) {
+/** Yearly plan price: monthly billing struck, the yearly price, GST total, and the buy button. */
+export function OfferPrice({ plan, onBuy }: { plan: PaidPlan; onBuy: () => void }) {
   const o = yearlyOffer(plan);
   return (
     <>
       <div className="flex flex-wrap items-center gap-2 text-sm">
-        <s className="lp-was opacity-70">{inr(o.regular)}</s><span className="text-[12px] opacity-60">billed monthly</span>
-        <span className="lp-off rounded-full px-2 py-0.5 text-[11px] font-bold">{o.percentOff}% OFF</span>
+        <s className="lp-was opacity-70">{inr(o.regular)}</s>
+        <span className="lp-off rounded-full px-2 py-0.5 text-[11px] font-bold">Save {o.percentOff}%</span>
       </div>
       <p className="lp-display text-3xl">{inr(o.launch)}<span className="text-base font-semibold opacity-70"> /yr</span></p>
-      <p className="text-[13px] opacity-75">{inr(o.perMonth)} a month, billed yearly. You keep {inr(o.save)}.</p>
-      <p className="text-[13px] font-semibold">Pay {inrPaise(o.upiTotal)} by UPI, GST included. No other fees.</p>
-      <Link to={`/pricing?plan=${plan === "basic" ? "essential" : "pro"}&buy=yearly`} onClick={onBuy}
-        className="lp-buy mt-2 inline-flex h-11 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-bold">Buy now <ArrowRight className="h-4 w-4" /></Link>
+      <p className="text-[13px] opacity-75">{inr(o.perMonth)} a month, paid yearly. {inrPaise(o.withGst)} with GST.</p>
+      <button type="button" onClick={onBuy} className="lp-buy mt-2 inline-flex h-11 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-bold">
+        Get {plan === "basic" ? "Essential" : "Pro"} <ArrowRight className="h-4 w-4" />
+      </button>
     </>
   );
 }
 
-/** Sticky bottom bar after the hero: the clock in one line and the one action. */
-export function OfferBar({ t, onBook, hidden, whatsapp, onWhatsApp }: { t: TimeLeft; onBook: () => void; hidden: boolean; whatsapp: string; onWhatsApp: () => void }) {
+/**
+ * Checkout on the ad page: the buyer never lands on another page to pay.
+ * Signed-out buyers sign in and come back here with the same plan open (?buy=).
+ */
+export function useAdCheckout(page: string, onEvent: (what: string) => void) {
+  const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
+  const { initiatePayment, isLoading: paying } = useRazorpay();
+  const { refreshTier } = usePremiumStatus();
+  const [plan, setPlan] = useState<"essential" | "pro" | null>(null);
+
+  const buy = useCallback((p: PaidPlan) => {
+    const id = p === "basic" ? "essential" : "pro";
+    onEvent(`buy_${id}`);
+    if (!isAuthenticated || !user) {
+      navigate(`/auth?next=${encodeURIComponent(`${page}?buy=${id}`)}`);
+      return;
+    }
+    setPlan(id);
+  }, [isAuthenticated, user, navigate, page, onEvent]);
+
+  const fromLink = useRef(params.get("buy"));
+  useEffect(() => {
+    const p = fromLink.current;
+    if (!p || sessionLoading || !isAuthenticated) return;
+    fromLink.current = null;
+    if (p === "essential" || p === "pro") setPlan(p);
+  }, [sessionLoading, isAuthenticated]);
+
+  const pay = async (method: PaymentMethod) => {
+    if (!plan || !user || paying) return;
+    try {
+      await initiatePayment({
+        tier: plan, billingCycle: "yearly", paymentMethod: method, userId: user.id, userEmail: user.email || "",
+        onSuccess: async () => { await refreshTier(); navigate("/dashboard"); },
+        onFailure: () => {},
+      });
+    } finally { setPlan(null); }
+  };
+
+  const checkout = plan ? (
+    <Suspense fallback={null}>
+      <CheckoutSummary open plan={plan} cycle="yearly" busy={paying} onOpenChange={(o) => { if (!o) setPlan(null); }} onPay={pay} />
+    </Suspense>
+  ) : null;
+  return { buy, checkout };
+}
+
+/** Sticky bottom bar after the hero: the batch countdown and the one action. */
+export function OfferBar({ b, onBook, hidden, whatsapp, onWhatsApp }: { b: Batch; onBook: () => void; hidden: boolean; whatsapp: string; onWhatsApp: () => void }) {
   const [shown, setShown] = useState(false);
   useEffect(() => {
     const on = () => setShown(window.scrollY > window.innerHeight * 0.7);
@@ -81,11 +124,13 @@ export function OfferBar({ t, onBook, hidden, whatsapp, onWhatsApp }: { t: TimeL
     return () => window.removeEventListener("scroll", on);
   }, []);
   if (hidden) return null;
+  const t = b.left;
   return (
-    <div className={`lp-bar fixed inset-x-0 bottom-0 z-40 transition-transform duration-300 ${shown ? "translate-y-0" : "translate-y-full"} ${t.finalWeek ? "is-final" : ""}`} aria-hidden={!shown}>
+    <div className={`lp-bar fixed inset-x-0 bottom-0 z-40 transition-transform duration-300 ${shown ? "translate-y-0" : "translate-y-full"} ${t.finalDays ? "is-final" : ""}`} aria-hidden={!shown}>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5" style={{ paddingBottom: "max(.625rem, env(safe-area-inset-bottom))" }}>
         <p className="min-w-0 text-[13px] leading-tight">
-          {t.over ? <b>Free 10-minute call</b> : <><b className="font-mono tabular-nums">{t.days}d {pad(t.hours)}h {pad(t.mins)}m {pad(t.secs)}s</b><span className="block opacity-75">left at launch price</span></>}
+          <b className="font-mono tabular-nums">{t.days}d {pad(t.hours)}h {pad(t.mins)}m {pad(t.secs)}s</b>
+          <span className="block opacity-75">to join the {b.label} batch</span>
         </p>
         <div className="flex shrink-0 items-center gap-2">
           <a href={whatsapp} target="_blank" rel="noopener noreferrer" tabIndex={shown ? 0 : -1} onClick={onWhatsApp} aria-label="Chat on WhatsApp" className="lp-wa grid h-11 w-11 place-items-center rounded-full"><MessageCircle className="h-5 w-5" /></a>

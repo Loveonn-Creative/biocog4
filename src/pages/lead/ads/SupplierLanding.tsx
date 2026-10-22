@@ -6,7 +6,7 @@ import { AdHeader } from "@/components/lead/ads/AdHeader";
 import { leadEvents } from "@/components/lead/leadEvents";
 import { CallbackForm } from "@/components/lead/ads/CallbackForm";
 import { TrustNames } from "@/components/lead/ads/TrustNames";
-import { OfferBar, OfferClock, OfferPill, OfferPrice, useTimeLeft } from "@/components/lead/ads/LaunchOffer";
+import { BatchClock, OfferBar, OfferPrice, useAdCheckout, useBatch } from "@/components/lead/ads/LaunchOffer";
 import { ProofStrip } from "@/components/lead/ads/ProofStrip";
 import { WHATSAPP_NUMBER } from "@/components/services/shell/actions";
 import { downloadKitPdf, supplierKit } from "@/lib/leadMagnets/adKits";
@@ -45,13 +45,16 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   const analyticsPage = `ad_suppliers_${variant}`;
   const theme = variant === "a" ? "lp-ent-a" : "lp-ent-b";
   const [open, setOpen] = useState(false);
-  const t = useTimeLeft();
+  const [pilot, setPilot] = useState(false);
+  const b = useBatch();
   const [suppliers, setSuppliers] = useState(200);
   const [withData, setWithData] = useState(20);
   const plan = useMemo(() => supplierEvidencePlan({ suppliers, withData, months: 6, pressure: "assurance" }), [suppliers, withData]);
   useEffect(() => { leadEvents.view(analyticsPage); }, [analyticsPage]);
   const book = useCallback((where: string) => { leadEvents.cta(analyticsPage, `call_${where}`); setOpen(true); }, [analyticsPage]);
-  const close = useCallback(() => setOpen(false), []);
+  const close = useCallback(() => { setOpen(false); setPilot(false); }, []);
+  const track = useCallback((what: string) => leadEvents.cta(analyticsPage, what), [analyticsPage]);
+  const { buy, checkout } = useAdCheckout(page, track);
   const kit = () => {
     leadEvents.cta(analyticsPage, "kit_download");
     void downloadKitPdf(supplierKit(plan, "assurance", page), "Senseible-supplier-evidence-kit.pdf", variant === "a" ? [10, 23, 48] : [22, 24, 29]);
@@ -68,10 +71,10 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   const waText = `Hi Senseible, I want to see how you get supplier emissions data. ${planSummary(plan, "assurance")}`;
   const whatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText.slice(0, 600))}`;
   const chat = (where: string) => leadEvents.cta(analyticsPage, `whatsapp_${where}`);
+  const quoteWa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi Senseible, I'd like a Scale quote. We have about ${suppliers || "100+"} suppliers.`)}`;
   const Hero = variant === "a" ? (
     <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
       <div>
-        <OfferPill t={t} plan="pro" />
         <h1 className="lp-display text-[2.6rem] leading-[1.02] sm:text-[3.5rem]">Stop chasing suppliers. <span className="lp-accent">Start getting reports.</span></h1>
         <p className="mt-5 max-w-[38ch] text-lg leading-relaxed opacity-90">Suppliers send the bills they already pay. You get structured, audit-ready Scope 3 data across tier 1, 2 and 3, inside your security rules.</p>
         <button type="button" onClick={() => book("hero")} className="lp-cta mt-7 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
@@ -98,7 +101,6 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   ) : (
     <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
       <div>
-        <OfferPill t={t} plan="pro" />
         <h1 className="lp-display text-[2.6rem] leading-[1.02] sm:text-[3.5rem]">Hundreds of suppliers. <span className="lp-accent">One clean emissions report.</span></h1>
         <p className="mt-5 max-w-[38ch] text-lg leading-relaxed opacity-90">See every supplier light up as their bills arrive, from tier 1 to tier 3. No questionnaires, no spreadsheet chase, no security exceptions.</p>
         <button type="button" onClick={() => book("hero")} className="lp-cta mt-7 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
@@ -180,13 +182,13 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
         <ProofStrip audience="enterprise" onOpen={(what) => leadEvents.cta(analyticsPage, `proof_${what}`)} />
 
         <section className="mx-auto max-w-6xl px-5 pb-20">
-          <OfferClock t={t} />
+          <BatchClock b={b} what="supplier onboarding" />
           <h2 className="mt-8 text-[12px] font-semibold uppercase tracking-[.16em] opacity-70">Start with one supplier. Scale to all of them.</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             <div className="grid content-start gap-2 rounded-2xl bg-[var(--lp-soft)] p-5">
               <span className="font-mono text-[11px] font-semibold uppercase opacity-70">Start</span>
               <h3 className="text-[13px] font-semibold uppercase tracking-wider opacity-80">Pro · yearly</h3>
-              <OfferPrice plan="pro" onBuy={() => leadEvents.cta(analyticsPage, "buy_pro")} />
+              <OfferPrice plan="pro" onBuy={() => buy("pro")} />
               <ul className="mt-1 space-y-1.5 text-sm"><li>✓ Your key suppliers, read from their bills</li><li>✓ Reports for GHG Protocol, CBAM, BRSR</li><li>✓ 10 team members</li></ul>
             </div>
             <div className="grid content-start gap-2 rounded-2xl bg-[var(--lp-pick-bg)] p-5 ring-2 ring-[var(--lp-cta)]">
@@ -194,14 +196,21 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
               <h3 className="text-[13px] font-semibold uppercase tracking-wider opacity-80">Scale</h3>
               <p className="lp-display text-3xl">Custom quote</p>
               <p className="text-[13px] opacity-70">Priced to your supplier count</p>
+              <a href={quoteWa} target="_blank" rel="noopener noreferrer" onClick={() => chat("quote")} className="lp-buy mt-2 inline-flex h-11 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-bold"><MessageCircle className="h-4 w-4" /> Get my quote</a>
               <ul className="mt-1 space-y-1.5 text-sm"><li>✓ Supplier invitations and portal</li><li>✓ ERP, email and WhatsApp intake, built to your stack</li><li>✓ Every tier, every entity</li></ul>
             </div>
+          </div>
+          {/* Pilot: the smallest yes for a buyer not ready to roll out (owner approved, 22 October 2026) */}
+          <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-dashed border-[var(--lp-line)] p-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-[52ch]"><strong>Not ready to roll out?</strong> Pilot it on 10 to 15 of your suppliers and see their real numbers before you decide.</p>
+            <button type="button" onClick={() => { setPilot(true); book("pilot"); }} className="inline-flex h-11 shrink-0 items-center gap-1.5 self-start rounded-full border border-[var(--lp-line)] px-5 text-sm font-bold sm:self-auto">Start a pilot <ArrowRight className="h-4 w-4" /></button>
           </div>
           <button type="button" onClick={() => book("plans")} className="lp-cta mt-8 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
         </section>
       </main>
-      <OfferBar t={t} onBook={() => book("bar")} hidden={open} whatsapp={whatsapp} onWhatsApp={() => chat("bar")} />
-      <CallbackForm open={open} onClose={close} page={page} analyticsPage={analyticsPage} category="enterprise" industries={INDUSTRIES} summary={planSummary(plan, "assurance")} askCompany themeClass={theme} />
+      <OfferBar b={b} onBook={() => book("bar")} hidden={open} whatsapp={whatsapp} onWhatsApp={() => chat("bar")} />
+      {checkout}
+      <CallbackForm open={open} onClose={close} page={page} analyticsPage={analyticsPage} category="enterprise" industries={INDUSTRIES} summary={`${pilot ? "Pilot request: 10 to 15 suppliers. " : ""}${planSummary(plan, "assurance")}`} askCompany themeClass={theme} />
     </div>
   );
 }
