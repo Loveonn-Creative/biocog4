@@ -1,0 +1,54 @@
+{
+  "slug": "green-loan-show-money-spent-on-project",
+  "q": "How do we show a lender that green loan money was spent only on the green project?",
+  "title": "Showing green loan use of proceeds",
+  "short": "Keep the loan money traceable: a separate account or ledger code, vendor invoices that match the approved project, payment records and commissioning reports. Report spending against the project budget when the lender asks. Mixing funds with general expenses is the most common problem.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs that have received or are applying for green loans",
+  "sections": [
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Loan sanction letter with the approved project.",
+        "Vendor quotes, purchase orders and invoices.",
+        "Bank statements showing payments to vendors.",
+        "Installation and commissioning reports."
+      ]
+    },
+    {
+      "h": "Simple control",
+      "p": [
+        "Use one ledger code for the project, so every rupee spent can be listed in minutes."
+      ]
+    },
+    {
+      "h": "If plans change",
+      "p": [
+        "Tell the lender before you spend on anything outside the approved list."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills into a dated, traceable emission record, the baseline a lender reads before it looks at a green project. Lenders decide; finance is never guaranteed.",
+  "links": [
+    {
+      "label": "Green loan reporting after disbursement",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    },
+    {
+      "label": "Green Loan Principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

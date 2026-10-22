@@ -1,0 +1,53 @@
+{
+  "slug": "mahad-chemical-unit-solvent-recovery-energy",
+  "q": "Does solvent recovery at a Mahad chemical unit change its carbon footprint?",
+  "title": "Mahad solvent recovery and footprint",
+  "short": "Yes, in two directions. Recovering solvent cuts purchased solvent, whose production carries emissions, but distillation uses steam and power. Count both: steam fuel and electricity in Scope 1 and 2, and avoided solvent purchases as lower Scope 3. Measure per batch.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Chemical units in the Mahad industrial area",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Steam and power used by recovery columns.",
+        "Litres of solvent recovered and reused.",
+        "Fresh solvent bought before and after."
+      ]
+    },
+    {
+      "h": "Where it shows",
+      "p": [
+        "Energy for recovery adds to Scope 1 and 2. Buying less fresh solvent lowers Scope 3 category 1."
+      ]
+    },
+    {
+      "h": "Factors",
+      "p": [
+        "Use solvent factors from suppliers or a labelled database."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Purchased solvent factors",
+      "to": "/answers/emission-factors-for-purchased-solvents"
+    },
+    {
+      "label": "Taloja chemical CO2 per tonne",
+      "to": "/answers/taloja-chemical-unit-steam-and-power-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

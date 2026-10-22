@@ -1,0 +1,57 @@
+{
+  "slug": "gajraula-chemical-unit-coal-boiler-co2",
+  "q": "How does a chemical plant in Gajraula count CO2 from its coal boiler and captive power?",
+  "title": "Gajraula chemical plant boiler CO2",
+  "short": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical and allied units in Gajraula and western Uttar Pradesh",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Coal for boilers and captive turbines.",
+        "Grid imports and DG sets.",
+        "Process CO2, if any."
+      ]
+    },
+    {
+      "h": "Captive power shared",
+      "p": [
+        "If steam or power goes to a neighbouring unit, allocate by MWh or tonnes of steam supplied."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Coal invoices, weighbridge slips, lab reports and turbine logs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Coal invoice for emissions",
+      "to": "/answers/coal-invoice-what-to-read-for-emissions"
+    },
+    {
+      "label": "Coal weighbridge vs invoice",
+      "to": "/answers/coal-weighbridge-weight-vs-invoice-quantity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

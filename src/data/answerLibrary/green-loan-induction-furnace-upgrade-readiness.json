@@ -1,0 +1,62 @@
+{
+  "slug": "green-loan-induction-furnace-upgrade-readiness",
+  "q": "Can upgrading an old induction furnace qualify for green or energy efficiency finance?",
+  "title": "Finance readiness for a furnace upgrade",
+  "short": "Possibly, if the new furnace uses clearly less electricity per tonne and you can prove it. Lenders look for your current kWh per tonne, the supplier's guaranteed figure, expected savings and how you will measure them. Whether it counts as green is the lender's call.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Foundries and steel melting units planning furnace replacement",
+  "sections": [
+    {
+      "h": "Build the case",
+      "ul": [
+        "Twelve months of electricity bills and melt logs.",
+        "Current kWh per tonne of liquid metal.",
+        "New furnace specification and guaranteed consumption.",
+        "Expected kWh and CO2 saved per year at 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "What lenders check after",
+      "p": [
+        "Meter readings and production after commissioning, compared with the baseline."
+      ]
+    },
+    {
+      "h": "Keep it honest",
+      "p": [
+        "If output rises, report savings per tonne, not just total bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills into a dated, traceable emission record, the baseline a lender reads before it looks at a green project. Lenders decide; finance is never guaranteed.",
+  "links": [
+    {
+      "label": "Induction furnace kWh benchmark",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    },
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Energy efficiency loan DPR",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Loan Market Association, Green Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

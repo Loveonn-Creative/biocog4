@@ -1,0 +1,55 @@
+{
+  "slug": "office-emissions-in-product-footprint",
+  "q": "Should our office and admin emissions be included in the product footprint we give a buyer?",
+  "title": "Office emissions in a product footprint",
+  "short": "Usually no for a cradle-to-gate product footprint, which covers materials, production energy and processes. Office power and business travel belong in your company inventory. If your offices share a meter with the factory, separate them or state that they are included.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Suppliers preparing product carbon figures",
+  "sections": [
+    {
+      "h": "Include",
+      "ul": [
+        "Materials and parts.",
+        "Production energy and fuels.",
+        "Process emissions and waste from production."
+      ]
+    },
+    {
+      "h": "Usually exclude",
+      "ul": [
+        "Office electricity and air conditioning.",
+        "Sales and management travel.",
+        "Head office overheads."
+      ]
+    },
+    {
+      "h": "Say what you did",
+      "p": [
+        "State the boundary in one line next to the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Office carbon footprint",
+      "to": "/answers/office-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Carbon per kg, not per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

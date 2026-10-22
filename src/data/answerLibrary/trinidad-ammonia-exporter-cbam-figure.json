@@ -1,0 +1,61 @@
+{
+  "slug": "trinidad-ammonia-exporter-cbam-figure",
+  "q": "What CBAM figure does an ammonia exporter in Trinidad need for EU buyers?",
+  "title": "Trinidad ammonia exporter CBAM figure",
+  "short": "Ammonia (CN 2814) is a CBAM good. Its figure counts direct emissions from gas used as feed and fuel, plus indirect emissions from electricity. CO2 sent to a urea or methanol plant is usually treated as emitted unless the rules allow otherwise. Methanol itself is not a CBAM good.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Ammonia and fertiliser exporters in Trinidad and Tobago",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Feed and fuel gas, metered and analysed.",
+        "Electricity, since indirect emissions count for fertilisers.",
+        "Any purchased hydrogen as a precursor."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "CBAM allows a deduction only for a carbon price effectively paid in the country of origin. Check whether any applies before claiming one."
+      ]
+    },
+    {
+      "h": "Buyers",
+      "p": [
+        "EU importers will ask for a verified actual figure per installation."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Urea plant CBAM figure",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "Blue ammonia captured CO2",
+      "to": "/answers/uae-blue-ammonia-captured-co2-cbam"
+    },
+    {
+      "label": "Bought hydrogen precursor",
+      "to": "/answers/cbam-ammonia-plant-buying-hydrogen-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

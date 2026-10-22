@@ -1,0 +1,57 @@
+{
+  "slug": "ethiopia-cement-plant-imported-coal-co2",
+  "q": "How does a cement plant in Ethiopia work out CO2 from imported coal in its kiln?",
+  "title": "Ethiopia cement plant coal CO2",
+  "short": "Multiply coal tonnes by its net calorific value and carbon factor, using lab analysis of each shipment where possible, and add calcination CO2 from clinker produced. Grid power in Ethiopia is mostly hydro, so electricity adds little; kiln fuel and calcination dominate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement producers in Ethiopia and East Africa",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Coal tonnes per shipment and lab analysis.",
+        "Clinker produced and its CaO and MgO content.",
+        "Grid electricity from bills."
+      ]
+    },
+    {
+      "h": "Default factor",
+      "p": [
+        "Without lab data, the IPCC default for bituminous coal is 94.6 kg CO2 per GJ. Shipment analysis is more accurate."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Bills of lading, weighbridge slips and lab reports."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Ethiopia grid emission factor",
+      "to": "/answers/ethiopia-grid-emission-factor-for-factories"
+    },
+    {
+      "label": "Dar es Salaam kiln CO2",
+      "to": "/answers/dar-es-salaam-cement-plant-coal-kiln-co2"
+    },
+    {
+      "label": "Nepal cement kiln CO2",
+      "to": "/answers/nepal-cement-plant-coal-kiln-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

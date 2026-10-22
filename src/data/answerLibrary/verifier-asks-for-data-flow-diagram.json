@@ -1,0 +1,59 @@
+{
+  "slug": "verifier-asks-for-data-flow-diagram",
+  "q": "Our verifier asked for a data flow diagram. What should it show?",
+  "title": "Data flow diagram for a GHG inventory",
+  "short": "A simple picture of how each emission figure is produced: where the data starts (meter, invoice, register), who records it, where it is stored, how it is calculated and who checks it. One page is enough for a small company. It helps the verifier choose what to test.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs preparing documents for a verifier",
+  "sections": [
+    {
+      "h": "One line per source",
+      "ul": [
+        "Source: grid power, diesel, coal, refrigerant.",
+        "Starting document: bill, invoice, issue register.",
+        "Who enters it and where.",
+        "How it is converted to CO2, and with which factor.",
+        "Who reviews it before reporting."
+      ]
+    },
+    {
+      "h": "Controls to mark",
+      "p": [
+        "Mark the points where someone checks the data, such as matching bills to payments. Verifiers test these."
+      ]
+    },
+    {
+      "h": "Keep it current",
+      "p": [
+        "Update it when a person, system or supplier changes."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "GHG data management plan",
+      "to": "/answers/ghg-data-management-plan-msme"
+    },
+    {
+      "label": "Internal controls for carbon data",
+      "to": "/answers/internal-controls-for-carbon-data-msme"
+    },
+    {
+      "label": "Calculation workings",
+      "to": "/answers/verifier-asks-for-calculation-workings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

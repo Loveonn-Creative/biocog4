@@ -1,0 +1,57 @@
+{
+  "slug": "giridih-sponge-iron-kiln-cbam-figure",
+  "q": "How does a sponge iron unit in Giridih work out its CBAM figure?",
+  "title": "Giridih sponge iron CBAM figure",
+  "short": "Direct reduced iron is a CBAM precursor for steel. Count CO2 from coal burnt in the rotary kiln, minus carbon left in the product and char, using a mass balance. Electricity is not charged for iron and steel goods, but keep the records for buyers' footprints.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Sponge iron and induction furnace units in Giridih and the Jharkhand belt",
+  "sections": [
+    {
+      "h": "Mass balance inputs",
+      "ul": [
+        "Coal tonnes and carbon content.",
+        "Iron ore and dolomite inputs.",
+        "Carbon in sponge iron, char and dust."
+      ]
+    },
+    {
+      "h": "Who needs it",
+      "p": [
+        "Your steel buyer needs your figure as a precursor if their goods go to the EU. Without it, they use default values."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Coal invoices, lab analysis and production logs per month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Raipur sponge iron CBAM",
+      "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions"
+    },
+    {
+      "label": "Sponge iron coal lab records",
+      "to": "/answers/sponge-iron-kiln-coal-lab-testing-records"
+    },
+    {
+      "label": "Induction furnace billet CBAM",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

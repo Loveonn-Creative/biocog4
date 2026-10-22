@@ -1,0 +1,58 @@
+{
+  "slug": "daman-plastic-moulding-unit-electricity-per-kg",
+  "q": "How does a plastic moulding unit in Daman work out CO2 per kg of product?",
+  "title": "Daman moulding unit CO2 per kg",
+  "short": "Electricity is the main source. Divide yearly kWh by kilograms moulded and multiply by 0.710 kg CO2 per kWh. For buyers asking for a product footprint, add the plastic resin itself from the resin supplier or a recognised factor, which is usually larger than the moulding energy.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plastic processing units in Daman and Silvassa",
+  "sections": [
+    {
+      "h": "Your own emissions",
+      "ul": [
+        "Grid electricity for moulding machines, chillers and compressors.",
+        "DG diesel during outages."
+      ]
+    },
+    {
+      "h": "Product footprint",
+      "ul": [
+        "Resin weight per part times the resin factor.",
+        "Moulding energy per part.",
+        "Packaging if the buyer asks."
+      ]
+    },
+    {
+      "h": "Quick wins",
+      "p": [
+        "Servo drives on machines and fixing chiller and compressed air waste cut kWh per kg."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Carbon per kg, not per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    },
+    {
+      "label": "Allocate by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

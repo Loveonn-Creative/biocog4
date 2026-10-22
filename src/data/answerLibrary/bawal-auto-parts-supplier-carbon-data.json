@@ -1,0 +1,57 @@
+{
+  "slug": "bawal-auto-parts-supplier-carbon-data",
+  "q": "What carbon data do OEMs ask auto part suppliers in Bawal for?",
+  "title": "Bawal auto parts supplier carbon data",
+  "short": "Carmakers ask for Scope 1 and 2 emissions, often per part or per kg, plus renewable share and a reduction plan. Some ask for material footprints for steel, aluminium and plastic parts. Twelve months of power and fuel bills and part-wise production are the starting point.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Auto component makers in Bawal and the Rewari belt",
+  "sections": [
+    {
+      "h": "Usually asked",
+      "ul": [
+        "Scope 1 and 2 totals and per part.",
+        "Share of renewable electricity.",
+        "Reduction targets."
+      ]
+    },
+    {
+      "h": "For material-heavy parts",
+      "p": [
+        "Steel, aluminium and plastic suppliers' figures, or labelled factors."
+      ]
+    },
+    {
+      "h": "Tip",
+      "p": [
+        "Use machine hours or weight to split plant energy across part numbers."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Chakan and Hosur auto suppliers",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Oragadam auto suppliers",
+      "to": "/answers/oragadam-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Allocate by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

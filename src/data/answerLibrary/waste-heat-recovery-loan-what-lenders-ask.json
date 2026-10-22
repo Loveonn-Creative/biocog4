@@ -1,0 +1,62 @@
+{
+  "slug": "waste-heat-recovery-loan-what-lenders-ask",
+  "q": "What does a lender want to see for a waste heat recovery project loan?",
+  "title": "Waste heat recovery loan readiness",
+  "short": "A lender usually wants proof of the heat available, the power or steam the system will produce, the fuel or grid electricity it replaces, and the expected CO2 cut. Measured flue gas data and a vendor proposal carry more weight than estimates. Approval and terms remain the lender's decision.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Cement, steel, glass and chemical units planning waste heat recovery",
+  "sections": [
+    {
+      "h": "Documents that help",
+      "ul": [
+        "Flue gas flow and temperature measurements.",
+        "Vendor proposal with expected output.",
+        "Current power or fuel bills that the project will reduce.",
+        "Simple payback and CO2 saved per year."
+      ]
+    },
+    {
+      "h": "How savings are counted",
+      "p": [
+        "Grid power displaced times 0.710 kg CO2 per kWh in India, or fuel saved times its factor."
+      ]
+    },
+    {
+      "h": "After commissioning",
+      "p": [
+        "Meter the recovered power or steam so you can report real results."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills into a dated, traceable emission record, the baseline a lender reads before it looks at a green project. Lenders decide; finance is never guaranteed.",
+  "links": [
+    {
+      "label": "Emissions saved by waste heat",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Prove savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Climate finance readiness check",
+      "to": "/answers/climate-finance-readiness-check-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

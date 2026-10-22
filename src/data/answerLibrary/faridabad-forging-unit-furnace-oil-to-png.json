@@ -1,0 +1,57 @@
+{
+  "slug": "faridabad-forging-unit-furnace-oil-to-png",
+  "q": "Does switching a Faridabad forging unit's furnace from oil to PNG cut its CO2?",
+  "title": "Faridabad forging furnace oil to PNG",
+  "short": "Yes, usually. Natural gas releases less CO2 per unit of heat than furnace oil, and gas furnaces are easier to control. Compare using your own fuel use per tonne forged before and after. IPCC defaults are about 77.4 kg CO2 per GJ for residual fuel oil and 56.1 for natural gas.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Forging and heat treatment units in Faridabad",
+  "sections": [
+    {
+      "h": "How to compare",
+      "ul": [
+        "Fuel per tonne forged, before and after.",
+        "Convert to energy with calorific values from invoices.",
+        "Apply each fuel's factor."
+      ]
+    },
+    {
+      "h": "Watch the real gain",
+      "p": [
+        "Better burners and insulation often save as much as the fuel switch. Measure both."
+      ]
+    },
+    {
+      "h": "For buyers",
+      "p": [
+        "Auto buyers ask forging suppliers for CO2 per tonne. A documented switch is a strong, simple story."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Furnace oil litres to kg",
+      "to": "/answers/furnace-oil-litres-to-kg-density"
+    },
+    {
+      "label": "Gas meter vs PNG bill",
+      "to": "/answers/gas-meter-reading-vs-png-bill-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

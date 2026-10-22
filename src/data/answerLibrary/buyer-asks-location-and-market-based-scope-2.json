@@ -1,0 +1,56 @@
+{
+  "slug": "buyer-asks-location-and-market-based-scope-2",
+  "q": "Our buyer asks for Scope 2 both location based and market based. What is the difference?",
+  "title": "Location based vs market based Scope 2",
+  "short": "Location based uses the average grid factor where you are, 0.710 kg CO2 per kWh in India. Market based uses what you contracted: green tariffs, RECs or PPAs, with a residual mix factor for the rest. Report both; without contracts, the two figures are similar.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Suppliers completing buyer carbon templates",
+  "sections": [
+    {
+      "h": "Location based",
+      "p": [
+        "Total kWh times the national grid factor. Simple and always required."
+      ]
+    },
+    {
+      "h": "Market based",
+      "ul": [
+        "kWh covered by valid contracts or certificates at their own factor.",
+        "Remaining kWh at a residual mix factor if one is available, otherwise the grid factor, stated as such."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Keep REC retirement statements, green tariff bills or PPA invoices for the claimed kWh."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "Green tariff vs RECs",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Renewable share for a buyer",
+      "to": "/answers/renewable-electricity-percentage-for-buyer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "taloja-chemical-unit-steam-and-power-co2",
+  "q": "How does a chemical unit in Taloja work out CO2 per tonne of product?",
+  "title": "Taloja chemical unit CO2 per tonne",
+  "short": "Count fuel burnt for steam and heat, grid electricity at 0.710 kg CO2 per kWh, and any process emissions from reactions. Divide by tonnes produced, or allocate by steam and power use when several products share utilities. Buyers will ask for both Scope 1 and 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical and pharma intermediate units in the Taloja industrial area",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Boiler fuel: PNG, furnace oil or coal.",
+        "Grid electricity and any DG set diesel.",
+        "Process CO2 from reactions, if any."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "Use batch records for steam and power per product, not a flat split by sales value."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Gas and fuel invoices, electricity bills and batch production logs."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Hyderabad API unit boiler CO2",
+      "to": "/answers/hyderabad-pharma-api-unit-boiler-co2"
+    },
+    {
+      "label": "Allocate by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

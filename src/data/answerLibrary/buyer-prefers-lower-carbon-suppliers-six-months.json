@@ -1,0 +1,61 @@
+{
+  "slug": "buyer-prefers-lower-carbon-suppliers-six-months",
+  "q": "Our buyer says it will prefer lower carbon suppliers. What can we do in six months?",
+  "title": "Six months to look better to a buyer",
+  "short": "Start with an honest baseline from your bills, then fix the cheap things: power factor, compressed air leaks, idle running, and switching diesel generation to grid or solar where possible. Report a credible figure with evidence, plus a short plan. Buyers value proof over promises.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME suppliers facing buyer carbon criteria",
+  "sections": [
+    {
+      "h": "Month 1 to 2",
+      "ul": [
+        "Collect twelve months of electricity, fuel and production records.",
+        "Calculate CO2 per unit you sell."
+      ]
+    },
+    {
+      "h": "Month 3 to 5",
+      "ul": [
+        "Act on low-cost savings and measure them.",
+        "Ask for a green tariff or RECs if your buyer accepts them."
+      ]
+    },
+    {
+      "h": "Month 6",
+      "ul": [
+        "Send the buyer your figure, method and a one-page plan with dates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Buyer asks reduction target",
+      "to": "/answers/buyer-asks-supplier-reduction-target"
+    },
+    {
+      "label": "Green tariff vs RECs",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Carbon per kg, not per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

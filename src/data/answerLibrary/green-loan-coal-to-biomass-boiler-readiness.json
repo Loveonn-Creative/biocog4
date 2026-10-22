@@ -1,0 +1,63 @@
+{
+  "slug": "green-loan-coal-to-biomass-boiler-readiness",
+  "q": "Can switching a coal boiler to a biomass boiler qualify for a green loan?",
+  "title": "Green loan readiness for a biomass boiler",
+  "short": "It can, if the lender accepts the project as renewable energy or fuel switching and you can show a sustainable, documented biomass supply. Expect questions on fuel source, expected CO2 cut, air pollution control and how you will report results. Lenders decide; terms are never guaranteed.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs planning to replace coal boilers with biomass",
+  "sections": [
+    {
+      "h": "What a lender usually asks",
+      "ul": [
+        "Current coal use and CO2 from bills or registers.",
+        "Biomass type, source and supply contracts.",
+        "Expected fuel use and CO2 after the switch.",
+        "Emission control equipment and consent to operate."
+      ]
+    },
+    {
+      "h": "What weakens the case",
+      "ul": [
+        "No proof the biomass is residue or sustainably sourced.",
+        "Plans to keep burning coal alongside without limits."
+      ]
+    },
+    {
+      "h": "Get ready",
+      "p": [
+        "Build a baseline of coal use for at least twelve months before you apply."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills into a dated, traceable emission record, the baseline a lender reads before it looks at a green project. Lenders decide; finance is never guaranteed.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Green Loan Principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

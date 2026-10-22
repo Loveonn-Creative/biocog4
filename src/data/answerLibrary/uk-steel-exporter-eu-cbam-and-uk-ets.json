@@ -1,0 +1,53 @@
+{
+  "slug": "uk-steel-exporter-eu-cbam-and-uk-ets",
+  "q": "Does a UK steel exporter selling into the EU face CBAM, and can it deduct UK ETS costs?",
+  "title": "UK steel exports, EU CBAM and UK ETS",
+  "short": "Yes. The UK is outside the EU ETS, so UK steel entering the EU falls under CBAM. A UK ETS price effectively paid, net of free allocation, may be deductible. Talks on linking the UK and EU systems would change this if a link comes into force.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "UK steel and aluminium exporters and their EU buyers",
+  "sections": [
+    {
+      "h": "Today",
+      "ul": [
+        "UK goods face EU CBAM like other non-EU goods.",
+        "A deduction needs evidence of UK ETS costs actually paid per tonne."
+      ]
+    },
+    {
+      "h": "Watch",
+      "ul": [
+        "Progress on linking the UK and EU emissions trading systems.",
+        "The UK's own CBAM, planned from January 2027, for imports into the UK."
+      ]
+    },
+    {
+      "h": "Indian angle",
+      "p": [
+        "Indian exporters to the UK should plan for the UK CBAM as well as the EU one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "India UK trade deal and UK CBAM",
+      "to": "/answers/india-uk-trade-deal-uk-cbam"
+    },
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

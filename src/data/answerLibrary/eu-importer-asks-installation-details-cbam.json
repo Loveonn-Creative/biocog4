@@ -1,0 +1,62 @@
+{
+  "slug": "eu-importer-asks-installation-details-cbam",
+  "q": "Our EU importer asks for our installation's name, address and coordinates for CBAM. Why?",
+  "title": "Installation details for CBAM",
+  "short": "CBAM data is tied to the installation where goods were made, not to the company. Importers must identify each installation in their declaration, so they ask for its name, address, coordinates and production route. Give details for the plant that actually made the goods.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Exporters with one or several plants supplying EU importers",
+  "sections": [
+    {
+      "h": "What to give",
+      "ul": [
+        "Installation name and full address.",
+        "Geographic coordinates of the main site.",
+        "Production processes and routes used.",
+        "Contact person for monitoring data."
+      ]
+    },
+    {
+      "h": "Several plants",
+      "p": [
+        "Each plant needs its own record. Do not send one company figure for goods made at different sites."
+      ]
+    },
+    {
+      "h": "Keep it the same",
+      "p": [
+        "Use the same details every time, so the importer's records match across periods."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "CBAM installation boundary",
+      "to": "/answers/cbam-installation-boundary-two-units"
+    },
+    {
+      "label": "Steel coil figure by route",
+      "to": "/answers/hazira-steel-coil-cbam-figure-by-route"
+    },
+    {
+      "label": "CBAM data per shipment",
+      "to": "/answers/eu-importer-wants-cbam-data-per-shipment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

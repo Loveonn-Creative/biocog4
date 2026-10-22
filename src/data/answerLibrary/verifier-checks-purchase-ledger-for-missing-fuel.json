@@ -1,0 +1,60 @@
+{
+  "slug": "verifier-checks-purchase-ledger-for-missing-fuel",
+  "q": "Why does the verifier compare our purchase ledger with the fuel in our emissions report?",
+  "title": "Purchase ledger checks for missing fuel",
+  "short": "It is a completeness test. The verifier looks for fuel, gas, refrigerant or power bought during the year that never reached the inventory. Every fuel ledger entry should match a line in your workings, or carry a reason, such as stock carried forward or fuel resold.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Accounts and plant teams preparing for verification",
+  "sections": [
+    {
+      "h": "What gets compared",
+      "ul": [
+        "Fuel and gas purchase ledgers.",
+        "Electricity bills paid.",
+        "Refrigerant and gas cylinder purchases.",
+        "Diesel bought in cash or through petty cash."
+      ]
+    },
+    {
+      "h": "Prepare a reconciliation",
+      "p": [
+        "Ledger quantity, opening and closing stock, quantity in the inventory, difference and reason."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "ul": [
+        "Cash diesel for generators.",
+        "Fuel bought by a sister unit.",
+        "Credit notes for returned fuel."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Map expense ledgers to Scope 3",
+      "to": "/answers/map-expense-ledgers-to-scope-3-categories"
+    },
+    {
+      "label": "Cash diesel without GST invoice",
+      "to": "/answers/cash-diesel-purchases-without-gst-invoice"
+    },
+    {
+      "label": "Returned fuel credit notes",
+      "to": "/answers/credit-note-returned-fuel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

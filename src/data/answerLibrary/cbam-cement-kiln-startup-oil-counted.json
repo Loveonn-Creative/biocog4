@@ -1,0 +1,62 @@
+{
+  "slug": "cbam-cement-kiln-startup-oil-counted",
+  "q": "Do kiln start-up oil and raw material dryer fuel count in a cement plant's CBAM figure?",
+  "title": "Kiln start-up oil in a CBAM figure",
+  "short": "Yes. Every fuel burnt inside the installation for making clinker and cement counts as a direct emission, including oil or diesel used to light up the kiln after a stop and fuel for raw material or coal dryers. Leaving them out understates the figure and fails a verifier's completeness check.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cement plants listing fuels for CBAM monitoring",
+  "sections": [
+    {
+      "h": "Fuels to list",
+      "ul": [
+        "Main kiln and calciner fuels: coal, pet coke, alternative fuels.",
+        "Start-up fuel: light diesel oil, furnace oil or HSD.",
+        "Dryer and hot gas generator fuel.",
+        "Diesel for mobile equipment inside the boundary, if your method includes it."
+      ]
+    },
+    {
+      "h": "How to record",
+      "p": [
+        "Take quantities from stock and issue registers, not only from purchase invoices, and convert with the fuel's net calorific value and factor."
+      ]
+    },
+    {
+      "h": "Small but checked",
+      "p": [
+        "Start-up fuel is a small share, but verifiers compare fuel registers with purchases. A missing line looks like a control gap."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Ariyalur fuel mix",
+      "to": "/answers/ariyalur-cement-plant-fuel-mix-co2"
+    },
+    {
+      "label": "Diesel issue register",
+      "to": "/answers/own-diesel-tank-issue-register-emissions"
+    },
+    {
+      "label": "CBAM installation boundary",
+      "to": "/answers/cbam-installation-boundary-two-units"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

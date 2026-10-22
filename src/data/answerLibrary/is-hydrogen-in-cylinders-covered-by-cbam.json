@@ -1,0 +1,55 @@
+{
+  "slug": "is-hydrogen-in-cylinders-covered-by-cbam",
+  "q": "We export hydrogen in small cylinders to Europe. Is that covered by CBAM?",
+  "title": "Hydrogen in cylinders under CBAM",
+  "short": "Yes. Hydrogen under CN 2804 10 00 is a CBAM good whatever the packing, and hydrogen is outside the 50 tonne yearly exemption, so even small volumes need an authorised declarant and a figure. Steel cylinders sold with the gas may be a separate covered good; ask your broker.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Industrial gas companies exporting cylinder gas to the EU",
+  "sections": [
+    {
+      "h": "The gas",
+      "p": [
+        "Report the hydrogen's direct embedded emissions per tonne, from your production route or a supplier's figure."
+      ]
+    },
+    {
+      "h": "The cylinder",
+      "p": [
+        "Steel gas containers fall under 7311, which is in Annex I. Returnable cylinders may be treated differently at customs from cylinders sold with the gas, so confirm the treatment for your shipments."
+      ]
+    },
+    {
+      "h": "Practical step",
+      "p": [
+        "Tell your EU customer early. Many small buyers do not expect CBAM on a cylinder order."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Steel drums and gas cylinders",
+      "to": "/answers/are-steel-drums-and-gas-cylinders-covered-by-cbam"
+    },
+    {
+      "label": "Hydrogen and the 50 tonne rule",
+      "to": "/answers/antwerp-hydrogen-imports-cbam-50-tonne-exemption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

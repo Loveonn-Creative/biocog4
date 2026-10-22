@@ -1,0 +1,57 @@
+{
+  "slug": "zimbabwe-ferrochrome-exporter-cbam-figure",
+  "q": "How does a ferrochrome smelter in Zimbabwe work out its CBAM figure?",
+  "title": "Zimbabwe ferrochrome CBAM figure",
+  "short": "High-carbon ferrochrome (CN 7202 41) is a CBAM good. Its figure counts direct emissions from coke, coal and electrode carbon by mass balance. Electricity is not charged for iron and steel goods, but keep the records, because buyers' footprints include it.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Ferrochrome producers in Zimbabwe and their EU buyers",
+  "sections": [
+    {
+      "h": "Mass balance",
+      "ul": [
+        "Carbon in coke, coal, anthracite and electrode paste.",
+        "Carbon left in ferrochrome, slag and dust.",
+        "Net carbon times 44/12 gives CO2."
+      ]
+    },
+    {
+      "h": "Not counted in CBAM",
+      "ul": [
+        "Grid or captive electricity for the furnaces."
+      ]
+    },
+    {
+      "h": "Data",
+      "p": [
+        "Reductant invoices, lab analysis and monthly production by grade."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "High vs low carbon ferrochrome",
+      "to": "/answers/high-carbon-vs-low-carbon-ferrochrome-cbam"
+    },
+    {
+      "label": "South Africa ferrochrome",
+      "to": "/answers/south-africa-ferrochrome-exporter-eskom-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

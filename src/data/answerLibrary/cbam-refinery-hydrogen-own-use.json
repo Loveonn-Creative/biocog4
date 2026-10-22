@@ -1,0 +1,57 @@
+{
+  "slug": "cbam-refinery-hydrogen-own-use",
+  "q": "Our refinery makes hydrogen for its own use. Does CBAM apply?",
+  "title": "Refinery hydrogen used on site and CBAM",
+  "short": "Not to the hydrogen you use yourself. CBAM charges goods imported into the EU, and refined fuels are not CBAM goods. Only hydrogen you export to the EU under CN 2804 10 00 needs a figure. Your refinery may still fall under India's carbon market rules.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Refinery energy and compliance teams",
+  "sections": [
+    {
+      "h": "When CBAM applies",
+      "ul": [
+        "You ship hydrogen, compressed or liquefied, to an EU buyer.",
+        "You sell ammonia or other covered goods made with that hydrogen to the EU."
+      ]
+    },
+    {
+      "h": "When it does not",
+      "ul": [
+        "Hydrogen consumed in hydrotreating or hydrocracking.",
+        "Diesel, petrol, jet fuel and naphtha exports."
+      ]
+    },
+    {
+      "h": "Other rules to check",
+      "p": [
+        "Indian refineries were brought into the carbon credit trading scheme's intensity targets. Check the notification for your unit."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Is a refinery covered by CCTS?",
+      "to": "/answers/is-a-refinery-covered-by-ccts"
+    },
+    {
+      "label": "Refinery emissions allocation",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    },
+    {
+      "label": "SMR hydrogen CO2 per kg",
+      "to": "/answers/smr-hydrogen-co2-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-lc3-calcined-clay-cement-figure",
+  "q": "How is the CBAM figure worked out for limestone calcined clay (LC3) cement?",
+  "title": "CBAM figure for LC3 cement",
+  "short": "LC3 cement is a hydraulic cement, so it sits in the cement goods of Annex I. Its figure is the clinker it contains, plus direct emissions from calcining the clay, plus electricity for grinding. Less clinker usually means a lower figure, but the clay kiln's fuel still counts.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Cement makers in India and Asia trialling or producing LC3 for export",
+  "sections": [
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Clinker share: tonnes of clinker per tonne of cement, times the clinker's embedded emissions.",
+        "Clay calcining: fuel burnt in the clay kiln or flash calciner. Clay releases little process CO2 because it holds no carbonate, but impurities like calcite add some.",
+        "Electricity for grinding and drying, counted as indirect emissions for cement."
+      ]
+    },
+    {
+      "h": "Calcined clay as its own good",
+      "p": [
+        "Calcined kaolinic clay (CN 2507 00 80) is itself a CBAM good. If you sell the clay separately, it needs its own figure; if you use it inside your cement, it is a precursor."
+      ]
+    },
+    {
+      "h": "Check the code",
+      "p": [
+        "Most LC3 blends are declared under 2523 29 00 or 2523 90 00. Confirm the code with your customs broker before you report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "PPC vs OPC footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "CBAM own precursor",
+      "to": "/answers/cbam-own-precursor-made-in-same-installation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, CBAM reporting rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

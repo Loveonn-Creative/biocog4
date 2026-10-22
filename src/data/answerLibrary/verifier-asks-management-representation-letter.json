@@ -1,0 +1,58 @@
+{
+  "slug": "verifier-asks-management-representation-letter",
+  "q": "The verifier wants a management representation letter. What is it?",
+  "title": "Management representation letter for GHG",
+  "short": "It is a signed letter in which your management confirms that the data and documents given to the verifier are complete and correct, and that nothing material has been withheld. It is standard in assurance work and does not replace evidence. A director or senior manager usually signs it.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs going through their first GHG verification",
+  "sections": [
+    {
+      "h": "What it usually says",
+      "ul": [
+        "All records relevant to the inventory were provided.",
+        "Known errors and estimates were disclosed.",
+        "No events after the period change the figures.",
+        "The boundary and methods are as described."
+      ]
+    },
+    {
+      "h": "Before you sign",
+      "p": [
+        "Read it line by line. If an estimate or gap exists, make sure it is listed in your report, so the letter stays true."
+      ]
+    },
+    {
+      "h": "Who signs",
+      "p": [
+        "Someone who can speak for the company, usually a director or the person who signs off the figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Who signs off carbon figures",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "Verification statement contents",
+      "to": "/answers/what-a-ghg-verification-statement-contains"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

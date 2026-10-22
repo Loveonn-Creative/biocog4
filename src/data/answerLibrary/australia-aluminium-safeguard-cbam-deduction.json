@@ -1,0 +1,57 @@
+{
+  "slug": "australia-aluminium-safeguard-cbam-deduction",
+  "q": "Can an Australian aluminium exporter deduct Safeguard Mechanism costs under CBAM?",
+  "title": "Australia's Safeguard Mechanism and CBAM",
+  "short": "Only a carbon price effectively paid can be deducted, net of any free allocation or rebate. The Safeguard Mechanism sets baselines rather than charging every tonne, so the amount actually paid per tonne of aluminium may be small. Check the Commission's rules on proving it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium and steel exporters in Australia and their EU buyers",
+  "sections": [
+    {
+      "h": "What can count",
+      "ul": [
+        "Money actually paid for emissions above a baseline, for example through buying credits.",
+        "Documented, per installation and period."
+      ]
+    },
+    {
+      "h": "What does not",
+      "ul": [
+        "Emissions covered by the baseline without payment.",
+        "Voluntary offsets bought outside the scheme."
+      ]
+    },
+    {
+      "h": "Direct only",
+      "p": [
+        "Aluminium is charged on direct emissions under CBAM, so smelter electricity, which is the largest part of its footprint, is not in the CBAM figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Quebec hydro aluminium",
+      "to": "/answers/quebec-hydro-aluminium-cbam-figure"
+    },
+    {
+      "label": "Mexico carbon tax deduction",
+      "to": "/answers/mexico-carbon-tax-cbam-deduction"
+    },
+    {
+      "label": "South Africa carbon tax deduction",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
