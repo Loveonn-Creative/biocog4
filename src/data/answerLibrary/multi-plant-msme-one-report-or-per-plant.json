@@ -1,0 +1,47 @@
+{
+  "slug": "multi-plant-msme-one-report-or-per-plant",
+  "q": "We have three plants. Should we report emissions per plant or as one company total?",
+  "title": "Several plants: report per plant or total?",
+  "short": "Both. Keep records and totals per plant, then add them up for the company. Buyers and lenders often ask about one site, and per plant figures show where energy is wasted. The company total is what disclosures and targets use.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs with more than one factory, unit or GSTIN",
+  "sections": [
+    {
+      "h": "Set it up once",
+      "ul": [
+        "One record set per plant: bills, fuel and production.",
+        "Shared costs, such as head office power, assigned to one place.",
+        "Transfers between plants not counted twice."
+      ]
+    },
+    {
+      "h": "Per plant intensity",
+      "p": [
+        "Divide each plant's emissions by its own output. A company average can hide one plant running far worse than the others."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Several plants or GSTINs on Senseible",
+      "to": "/answers/senseible-multiple-plants-or-gstins"
+    },
+    {
+      "label": "Inter-unit stock transfers",
+      "to": "/answers/inter-unit-stock-transfer-invoice-emissions"
+    },
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

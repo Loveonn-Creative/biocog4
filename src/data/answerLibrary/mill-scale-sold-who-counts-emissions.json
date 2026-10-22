@@ -1,0 +1,49 @@
+{
+  "slug": "mill-scale-sold-who-counts-emissions",
+  "q": "If my rolling mill sells mill scale, who counts its emissions?",
+  "title": "Mill scale sold: who counts it?",
+  "short": "Usually you carry no emissions out with it. Mill scale is a by-product of rolling, so your rolling emissions stay with your steel. The sinter plant or briquette maker that uses it counts the emissions of processing it. Record tonnes sold for your material balance.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Rolling and forging units selling mill scale and other residues",
+  "sections": [
+    {
+      "h": "Exceptions",
+      "p": [
+        "If mill scale earns meaningful revenue, some product footprints allocate a share of emissions to it by value. Use the same rule every year and state it."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Mill scale is not a CBAM good. The iron leaving with it matters only in a mass balance, as carbon content near zero."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Selling production scrap in Scope 3",
+      "to": "/answers/selling-production-scrap-scope-3-category-5"
+    },
+    {
+      "label": "Steel slag sold to cement plants",
+      "to": "/answers/ballari-steel-slag-sold-to-cement-plants"
+    },
+    {
+      "label": "Re-rolling mill CO2 per tonne",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

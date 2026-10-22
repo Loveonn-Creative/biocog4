@@ -1,0 +1,51 @@
+{
+  "slug": "are-refractories-covered-by-cbam",
+  "q": "Are refractory bricks and castables covered by CBAM?",
+  "title": "Are refractories covered by CBAM?",
+  "short": "Refractory bricks and shapes under 6902 and 6903 are not covered. The catch is aluminous cement: calcium aluminate cement under 2523 30 is in Annex I, so a refractory maker exporting it as cement must supply embedded emissions.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Refractory makers in Jharkhand, Odisha and Gujarat exporting to Europe",
+  "sections": [
+    {
+      "h": "Covered and not covered",
+      "ul": [
+        "Bricks, blocks and shapes: 6902 and 6903, not covered.",
+        "Monolithic castables and mortars: usually 3816, not covered.",
+        "Calcium aluminate cement sold as cement: 2523 30, covered, with indirect emissions counted."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The Commission proposed in December 2025 to extend CBAM to some downstream steel and aluminium products. As of October 2026 that is not law, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity invoices into dated, fingerprinted records, so if a buyer asks for a product footprint you can answer from documents rather than estimates.",
+  "links": [
+    {
+      "label": "Refractory maker carbon per tonne",
+      "to": "/answers/refractory-maker-carbon-per-tonne"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

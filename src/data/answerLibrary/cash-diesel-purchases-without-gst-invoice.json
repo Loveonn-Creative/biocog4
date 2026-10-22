@@ -1,0 +1,51 @@
+{
+  "slug": "cash-diesel-purchases-without-gst-invoice",
+  "q": "How do I count diesel bought for cash without a GST invoice?",
+  "title": "Cash diesel without a GST invoice",
+  "short": "Count it from the pump receipt or a fuel log: litres × 2.68 kg CO2 per litre. Mark it as lower quality evidence than an invoice. Moving regular purchases to invoices or a fuel card makes the figure checkable.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs buying diesel for generators and vehicles in cash",
+  "sections": [
+    {
+      "h": "Minimum evidence",
+      "ul": [
+        "Pump receipt with date, litres and amount.",
+        "A log of litres issued to each generator or vehicle.",
+        "Stock at the start and end of the month, if you store diesel."
+      ]
+    },
+    {
+      "h": "If receipts are missing",
+      "p": [
+        "Estimate from amount paid ÷ the pump price on that date, and label it an estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    },
+    {
+      "label": "Diesel from generator run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    },
+    {
+      "label": "Fuel card statements as evidence",
+      "to": "/answers/fleet-fuel-card-statement-as-carbon-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

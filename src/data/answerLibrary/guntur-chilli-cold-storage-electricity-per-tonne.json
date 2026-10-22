@@ -1,0 +1,58 @@
+{
+  "slug": "guntur-chilli-cold-storage-electricity-per-tonne",
+  "q": "How much electricity does a Guntur chilli cold storage use per tonne stored?",
+  "title": "Chilli cold storage: kWh per tonne",
+  "short": "Divide monthly kWh by the tonne-months stored. A store using 60,000 kWh while holding 5,000 tonnes uses 12 kWh per tonne-month, about 8.5 kg CO2. Refrigerant top-ups are Scope 1 and can add more than people expect.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chilli and spice cold storages in Guntur and nearby",
+  "sections": [
+    {
+      "h": "What drives it",
+      "ul": [
+        "Ambient heat: summer months use more.",
+        "Door opening and loading practice.",
+        "Set point and compressor efficiency."
+      ]
+    },
+    {
+      "h": "Refrigerant",
+      "p": [
+        "Kg topped up × the refrigerant's GWP gives Scope 1. Ammonia has no GWP; HFCs have high ones."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Refrigerant top-ups in a cold store",
+      "to": "/answers/agra-cold-store-hfc-top-up-emissions"
+    },
+    {
+      "label": "Cold store set point savings",
+      "to": "/answers/cold-store-temperature-setpoint-energy-measurement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Example: one summer month",
+    "lines": [
+      "60,000 kWh ÷ 5,000 tonne-months = 12 kWh",
+      "12 × 0.710 = 8.5 kg CO2 per tonne-month"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

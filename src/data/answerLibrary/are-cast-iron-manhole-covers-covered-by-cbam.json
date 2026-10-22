@@ -1,0 +1,55 @@
+{
+  "slug": "are-cast-iron-manhole-covers-covered-by-cbam",
+  "q": "Are cast iron manhole covers exported to Europe covered by CBAM?",
+  "title": "Are cast iron manhole covers in CBAM?",
+  "short": "No, not today. Manhole covers and gratings of cast iron are declared under 7325, cast articles of iron, which is not in Annex I of the CBAM Regulation. Your EU buyer files no CBAM figure for them, though some ask for a product footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Foundries in Howrah, Coimbatore, Rajkot and Kolhapur exporting manhole covers and gratings",
+  "sections": [
+    {
+      "h": "Why not",
+      "p": [
+        "Annex I covers chapter 73 only for headings 7301 to 7311, 7318 and 7326. Cast articles under 7325, such as manhole covers, gratings and counterweights, are outside it."
+      ]
+    },
+    {
+      "h": "Watch the code",
+      "p": [
+        "Covers made of steel plate or fabricated frames may be declared under 7308 or 7326, which are covered. Check what your buyer actually declares."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The Commission proposed in December 2025 to extend CBAM to some downstream steel and aluminium products. As of October 2026 that is not law, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity invoices into dated, fingerprinted records, so if a buyer asks for a product footprint you can answer from documents rather than estimates.",
+  "links": [
+    {
+      "label": "Manhole cover footprint",
+      "to": "/answers/cast-iron-manhole-cover-carbon-footprint"
+    },
+    {
+      "label": "Are cast iron castings covered?",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

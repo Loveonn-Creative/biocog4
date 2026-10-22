@@ -1,0 +1,61 @@
+{
+  "slug": "is-a-cement-plant-covered-by-ccts",
+  "q": "Is my cement plant covered by India's carbon credit trading scheme?",
+  "title": "Is a cement plant covered by CCTS?",
+  "short": "Only if it is named. Cement was in the first round of emission intensity targets under the 2025 target rules, alongside aluminium, chlor-alkali and pulp and paper, but coverage is plant by plant: a plant has a target only if its name and location appear in the notification.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Integrated cement plants and grinding units in India",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the Greenhouse Gases Emission Intensity Target Rules, 2025 and any amendment.",
+        "Search the cement schedule for your plant name and location.",
+        "If listed, note the baseline year, the product unit and the target for each compliance year."
+      ]
+    },
+    {
+      "h": "What drives the number",
+      "p": [
+        "Calcination CO2 from clinker, kiln fuel and power. The clinker factor matters most: more fly ash or slag per tonne of cement lowers intensity, so keep clinker production, additive and dispatch records by month."
+      ]
+    },
+    {
+      "h": "If you are not named",
+      "p": [
+        "You have no target, but obligated customers may ask for your energy and emissions data, and the offset mechanism lets non-obligated entities earn credits from projects under methodologies BEE has approved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "If a plant misses its target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets for more sectors under CCTS",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, GHG Emission Intensity Target Rules",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

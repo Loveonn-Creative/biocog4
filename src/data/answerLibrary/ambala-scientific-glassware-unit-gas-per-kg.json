@@ -1,0 +1,51 @@
+{
+  "slug": "ambala-scientific-glassware-unit-gas-per-kg",
+  "q": "How do I calculate CO2 per kg of glassware at an Ambala scientific glassware unit?",
+  "title": "Ambala glassware: CO2 per kg",
+  "short": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710, divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Scientific and laboratory glassware makers in Ambala",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "LPG cylinders or bulk LPG, in kg, from invoices.",
+        "Oxygen used with LPG adds no CO2 itself.",
+        "Electric lehrs: kWh from sub-meters."
+      ]
+    },
+    {
+      "h": "Purchased tubing",
+      "p": [
+        "Ask the tubing supplier for kg CO2 per kg, or use a glass factor labelled as an estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "LPG cylinder CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "Is glassware covered by CBAM?",
+      "to": "/answers/is-glassware-covered-by-cbam"
+    },
+    {
+      "label": "Glass furnace emissions per tonne",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "indore-soybean-solvent-plant-steam-co2",
+  "q": "How do I work out CO2 per tonne of soybean meal at a solvent extraction plant in Indore?",
+  "title": "Soybean solvent plant CO2 per tonne",
+  "short": "Add boiler fuel CO2 and electricity, then divide by tonnes of seed processed or meal produced. Steam for the desolventiser-toaster and hexane recovery is the largest share. Rice husk or soya husk fuel counts as biogenic, reported separately, with only its methane and nitrous oxide in Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Soybean solvent extraction plants in Indore, Dewas and Ujjain",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Boiler fuel by type and quantity per month.",
+        "Fossil fuel × its factor; biomass fuel reported as biogenic.",
+        "Electricity kWh × 0.710.",
+        "Divide by meal or seed tonnes, and say which."
+      ]
+    },
+    {
+      "h": "Hexane",
+      "p": [
+        "Hexane lost to air is a solvent loss, not combustion. Track it for cost and safety; it is not usually counted as CO2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Soybean meal footprint",
+      "to": "/answers/soybean-meal-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Biomass in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

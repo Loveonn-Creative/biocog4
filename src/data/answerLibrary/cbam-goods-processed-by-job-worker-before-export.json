@@ -1,0 +1,55 @@
+{
+  "slug": "cbam-goods-processed-by-job-worker-before-export",
+  "q": "If a job worker galvanises or heat treats my steel before export, whose emissions go into the CBAM figure?",
+  "title": "CBAM when a job worker processes goods",
+  "short": "Both. Treat the job worker's site as a separate installation: your product is its precursor, and the fuel it burns adds direct emissions. Ask the job worker for fuel per tonne processed, then add it to your own embedded emissions per tonne.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel product makers who send goods out for galvanising, heat treatment or coating",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ul": [
+        "Tonnes sent and received back, from job work challans.",
+        "The job worker's fuel and process inputs per tonne for the period.",
+        "Your own embedded emissions per tonne before dispatch."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "For steel and aluminium goods only direct emissions count, so the job worker's electricity is not added. For cement and fertilisers it would be."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Job work: which scope",
+      "to": "/answers/job-work-emissions-which-scope"
+    },
+    {
+      "label": "Installation boundary with two units",
+      "to": "/answers/cbam-installation-boundary-two-units"
+    },
+    {
+      "label": "Are steel pipes covered?",
+      "to": "/answers/are-steel-pipes-and-tubes-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, production routes and monitoring",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

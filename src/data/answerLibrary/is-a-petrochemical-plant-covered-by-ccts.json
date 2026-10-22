@@ -1,0 +1,61 @@
+{
+  "slug": "is-a-petrochemical-plant-covered-by-ccts",
+  "q": "Is my petrochemical plant covered by India's carbon credit trading scheme?",
+  "title": "Is a petrochemical plant covered by CCTS?",
+  "short": "Only if it is named. Petrochemicals were added to the emission intensity targets by the January 2026 amendment, with 11 units reported as obligated. A unit has a target only if its name appears, with a 2023-24 baseline and targets in tonnes CO2e per tonne of product.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Crackers, polymer and aromatics plants in India",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the January 2026 amendment to the Greenhouse Gases Emission Intensity Target Rules.",
+        "Search the petrochemical schedule for your plant.",
+        "Note the product unit and the targets for 2025-26 and 2026-27."
+      ]
+    },
+    {
+      "h": "What drives the number",
+      "p": [
+        "Cracker furnace fuel, steam and power per tonne of product. Where several products share a cracker, the notification's product definition decides how output is counted, so keep production by product and by month."
+      ]
+    },
+    {
+      "h": "If you are not named",
+      "p": [
+        "You have no target, but obligated customers may ask for your energy and emissions data, and the offset mechanism lets non-obligated entities earn credits from projects under methodologies BEE has approved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "CCTS and EU ETS compared",
+      "to": "/answers/india-ccts-vs-eu-ets-difference"
+    },
+    {
+      "label": "Petrochemical supplier carbon data",
+      "to": "/answers/ulsan-petrochemical-supplier-carbon-data"
+    },
+    {
+      "label": "If a plant misses its target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets for more sectors under CCTS",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, GHG Emission Intensity Target Rules",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

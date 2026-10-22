@@ -1,0 +1,64 @@
+{
+  "slug": "is-flux-limestone-co2-counted-in-steel-cbam",
+  "q": "Does CO2 from limestone and dolomite flux count in a steel plant's CBAM figure?",
+  "title": "Flux limestone CO2 in steel CBAM",
+  "short": "Yes. CO2 released from carbonates used as flux or in sinter, such as limestone and dolomite, is part of the installation's direct emissions. Use about 0.440 t CO2 per tonne of pure calcium carbonate and 0.477 for dolomite, adjusted for purity, or capture it in a mass balance.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Integrated and DRI steel plants, sinter plants and their EU buyers",
+  "sections": [
+    {
+      "h": "How to count it",
+      "ol": [
+        "Tonnes of limestone and dolomite charged in the period, from stock and consumption records.",
+        "Purity from the supplier certificate or lab.",
+        "Multiply by the carbonate factor and by purity.",
+        "Or include carbonates as carbon inputs in a mass balance."
+      ]
+    },
+    {
+      "h": "Burnt lime is different",
+      "p": [
+        "Lime you buy has already released its CO2 at the lime kiln. It is not a CBAM precursor for steel, so it adds nothing to your direct emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Process CO2 from calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Is lime covered by CBAM?",
+      "to": "/answers/katni-lime-kiln-covered-by-cbam"
+    },
+    {
+      "label": "Blast furnace steel precursors",
+      "to": "/answers/ha-tinh-bf-bof-steel-precursor-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, production routes and monitoring",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "example": {
+    "title": "Example: 12,000 t of limestone at 92% purity",
+    "lines": [
+      "12,000 × 0.92 × 0.440 = 4,858 t CO2",
+      "Add it to the plant's direct emissions for the period"
+    ],
+    "note": "Use the purity and factor from your own records where available."
+  },
+  "reviewed": "2026-10-22"
+}

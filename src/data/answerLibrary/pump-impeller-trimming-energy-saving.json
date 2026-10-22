@@ -1,0 +1,61 @@
+{
+  "slug": "pump-impeller-trimming-energy-saving",
+  "q": "How much energy does trimming a pump impeller save?",
+  "title": "Pump impeller trimming savings",
+  "short": "If a pump runs against a half-closed valve, trimming the impeller to the flow you need saves energy roughly with the cube of the diameter ratio. A 5% trim cuts power by about 14% on the affinity laws; measure real kW before and after.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plants with oversized cooling water, process and utility pumps",
+  "sections": [
+    {
+      "h": "When it fits",
+      "ul": [
+        "The pump runs at constant flow below its design point.",
+        "A discharge valve is throttled to hold flow.",
+        "Load does not vary much; if it does, a VFD fits better."
+      ]
+    },
+    {
+      "h": "Work it out",
+      "ol": [
+        "Measure kW, flow and head.",
+        "Size the trim with the pump maker's curve.",
+        "Saving kWh × 0.710 = kg CO2 saved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Borewell pumping energy",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "Motor replacement savings",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "example": {
+    "title": "Example: 30 kW pump, 6,000 hours",
+    "lines": [
+      "0.95³ = 0.857, so about 14% less power",
+      "4.3 kW × 6,000 h = 25,800 kWh",
+      "25,800 × 0.710 = 18.3 t CO2 a year"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

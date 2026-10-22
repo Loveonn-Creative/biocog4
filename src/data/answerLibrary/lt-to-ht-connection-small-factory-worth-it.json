@@ -1,0 +1,51 @@
+{
+  "slug": "lt-to-ht-connection-small-factory-worth-it",
+  "q": "Is it worth moving my small factory from an LT to an HT electricity connection?",
+  "title": "LT to HT connection: worth it?",
+  "short": "Often, once load is large enough. HT energy rates are usually lower, but you must buy and maintain a transformer, and its losses fall on your side of the meter. Emissions per kWh do not change; your Scope 2 counts the units your meter records.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Growing MSMEs near the LT load limit in their state",
+  "sections": [
+    {
+      "h": "What to compare",
+      "ul": [
+        "Energy and demand charges under both tariffs for your monthly load.",
+        "Transformer, switchgear and civil cost, and annual maintenance.",
+        "Transformer no load and load losses, metered on the HT side."
+      ]
+    },
+    {
+      "h": "Emissions view",
+      "p": [
+        "An efficient transformer cuts the extra units you pay for. Choose a high efficiency rating; the losses run every hour of the year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    },
+    {
+      "label": "Maximum demand charges",
+      "to": "/answers/maximum-demand-charges-peak-shaving"
+    },
+    {
+      "label": "Reduce contract demand?",
+      "to": "/answers/should-i-reduce-contract-demand-on-ht-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

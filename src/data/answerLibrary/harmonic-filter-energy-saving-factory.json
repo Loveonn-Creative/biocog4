@@ -1,0 +1,51 @@
+{
+  "slug": "harmonic-filter-energy-saving-factory",
+  "q": "Does a harmonic filter save electricity in a factory with many drives?",
+  "title": "Do harmonic filters save energy?",
+  "short": "A little, mostly by cutting heating losses in cables and transformers. The bigger gains are fewer drive trips, longer capacitor life and a steadier power factor. Measure total harmonic distortion and kWh before and after; do not assume a saving figure.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Factories with VFDs, induction furnaces, UPS systems or LED loads",
+  "sections": [
+    {
+      "h": "Where losses come from",
+      "p": [
+        "Harmonic currents add to RMS current, which heats cables and transformers. Removing them lowers those losses, usually a small share of total consumption."
+      ]
+    },
+    {
+      "h": "How to test",
+      "ol": [
+        "Log THD and kWh at the main incomer for a typical week.",
+        "Install the filter and log again under the same production.",
+        "Count only the measured change, multiplied by 0.710 kg CO2 per kWh for Indian grid power."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Power factor correction and emissions",
+      "to": "/answers/does-power-factor-correction-reduce-emissions"
+    },
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

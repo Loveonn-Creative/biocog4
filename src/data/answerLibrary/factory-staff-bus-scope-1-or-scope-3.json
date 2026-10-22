@@ -1,0 +1,51 @@
+{
+  "slug": "factory-staff-bus-scope-1-or-scope-3",
+  "q": "Is diesel for our factory staff bus Scope 1 or Scope 3?",
+  "title": "Staff bus: Scope 1 or Scope 3",
+  "short": "If the company owns or leases and runs the bus, its diesel is Scope 1. If a contractor runs the service and you pay per trip or per month, it is Scope 3 category 7, employee commuting. The invoice tells you which: fuel bills or a transport service bill.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories running buses or vans for shift workers",
+  "sections": [
+    {
+      "h": "Which records",
+      "ul": [
+        "Own bus: fuel invoices or fuel card statements.",
+        "Hired service: kilometres per trip and vehicle type, or the contractor's fuel figure.",
+        "Mixed fleets: split by vehicle."
+      ]
+    },
+    {
+      "h": "Estimate for hired buses",
+      "p": [
+        "Daily route kilometres × working days ÷ the bus's km per litre × 2.68 kg CO2 per litre of diesel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Night shift cabs: which scope",
+      "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3"
+    },
+    {
+      "label": "Business car travel",
+      "to": "/answers/business-car-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

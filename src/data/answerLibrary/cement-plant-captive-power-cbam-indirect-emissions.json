@@ -1,0 +1,56 @@
+{
+  "slug": "cement-plant-captive-power-cbam-indirect-emissions",
+  "q": "How does a cement plant with its own power plant count indirect emissions for CBAM?",
+  "title": "Cement captive power in CBAM",
+  "short": "Cement counts indirect emissions under CBAM, so electricity matters. For power from your own captive plant, work out that plant's emission factor from its fuel and net generation, then apply it to the kWh the cement process used. Count the captive fuel once, not as both direct and indirect.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian cement plants with captive coal, waste heat or solar power exporting to the EU",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Captive plant fuel burnt and net electricity generated in the period.",
+        "Factor = fuel CO2 / net MWh.",
+        "Electricity used by clinker and grinding, from meters.",
+        "Indirect emissions = MWh used × factor, plus grid MWh × the grid factor."
+      ]
+    },
+    {
+      "h": "Waste heat and solar",
+      "p": [
+        "Power from waste heat recovery uses heat already counted in kiln fuel, so it adds no fuel of its own. Keep generation meters for each source."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Indirect emissions for cement imports",
+      "to": "/answers/eu-importer-egyptian-cement-indirect-emissions"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, production routes and monitoring",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

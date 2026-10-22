@@ -1,0 +1,59 @@
+{
+  "slug": "led-lighting-retrofit-factory-co2-saving",
+  "q": "How much CO2 does replacing factory high-bay lights with LEDs save?",
+  "title": "LED high-bay retrofit: CO2 saved",
+  "short": "Watts saved per fitting × fittings × hours run × 0.710 kg CO2 per kWh. Replacing 100 metal halide high-bays of 250 W with 120 W LEDs, run 3,600 hours a year, saves about 46,800 kWh and 33 tonnes of CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factory and warehouse owners planning lighting upgrades",
+  "sections": [
+    {
+      "h": "Get the inputs right",
+      "ul": [
+        "Actual wattage including ballast, from a meter or the fitting label.",
+        "Run hours from shift patterns.",
+        "Light levels: fewer, better placed fittings can save more."
+      ]
+    },
+    {
+      "h": "Prove it",
+      "p": [
+        "Sub-meter the lighting circuit for a month before and after. The bill alone hides lighting inside total load."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Motor replacement savings",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Solar water heater savings",
+      "to": "/answers/solar-water-heater-factory-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "example": {
+    "title": "Example: 100 high-bays",
+    "lines": [
+      "(250 − 120) W × 100 = 13 kW",
+      "13 kW × 3,600 h = 46,800 kWh",
+      "46,800 × 0.710 = 33.2 t CO2 a year"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

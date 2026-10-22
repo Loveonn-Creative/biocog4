@@ -1,0 +1,52 @@
+{
+  "slug": "buyer-asks-third-party-verified-footprint",
+  "q": "My buyer wants a third-party verified carbon footprint. What does that involve for a small supplier?",
+  "title": "Third-party verified footprint",
+  "short": "First build a documented inventory or product footprint, then hire an accredited body to verify it: ISO 14064-3 for a company inventory, or a critical review or verification for an ISO 14067 product footprint. Verifiers sample invoices, so records matter more than reports.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSME suppliers asked for verified emissions data",
+  "sections": [
+    {
+      "h": "Order of work",
+      "ol": [
+        "Agree with the buyer: company inventory or product footprint, and which year.",
+        "Collect fuel, electricity and production records for that period.",
+        "Prepare the calculation with factors and sources.",
+        "Engage a verifier and answer their sample requests."
+      ]
+    },
+    {
+      "h": "Ask first",
+      "p": [
+        "Some buyers accept a documented calculation for the first year. Check before paying for verification."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Is ISO 14067 mandatory?",
+      "to": "/answers/is-iso-14067-certification-mandatory"
+    },
+    {
+      "label": "How many invoices a verifier samples",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3 and ISO 14067 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

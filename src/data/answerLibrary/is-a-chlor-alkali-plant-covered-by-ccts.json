@@ -1,0 +1,63 @@
+{
+  "slug": "is-a-chlor-alkali-plant-covered-by-ccts",
+  "q": "Is my chlor-alkali plant covered by India's carbon credit trading scheme?",
+  "title": "Is a chlor-alkali plant covered by CCTS?",
+  "short": "Only if it is named. Chlor-alkali was in the first round of emission intensity targets under the 2025 target rules, but coverage is plant by plant. Electricity for electrolysis is the largest part of a caustic plant's emissions, so captive power records decide the number.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Caustic soda and chlorine producers in India",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the Greenhouse Gases Emission Intensity Target Rules, 2025 and any amendment.",
+        "Search the chlor-alkali schedule for your plant name and location.",
+        "If listed, note the baseline year, product unit and target for each compliance year."
+      ]
+    },
+    {
+      "h": "What drives the number",
+      "ul": [
+        "Electricity per tonne of caustic from cell room meters, by source: grid, captive coal or gas, and renewable.",
+        "Fuel for the captive plant and for caustic concentration or flaking.",
+        "Production of caustic, chlorine and hydrogen, read from dispatch and stock records."
+      ]
+    },
+    {
+      "h": "If you are not named",
+      "p": [
+        "You have no target, but obligated customers may ask for your energy and emissions data, and the offset mechanism lets non-obligated entities earn credits from projects under methodologies BEE has approved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Captive power in a chlor-alkali plant",
+      "to": "/answers/dahej-chlor-alkali-caustic-soda-captive-power-co2"
+    },
+    {
+      "label": "Caustic soda footprint per tonne",
+      "to": "/answers/caustic-soda-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "If a plant misses its target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets for more sectors under CCTS",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, GHG Emission Intensity Target Rules",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

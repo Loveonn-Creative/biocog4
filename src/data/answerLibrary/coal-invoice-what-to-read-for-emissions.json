@@ -1,0 +1,53 @@
+{
+  "slug": "coal-invoice-what-to-read-for-emissions",
+  "q": "What should I read from a coal invoice to calculate emissions?",
+  "title": "Coal invoice: what to read",
+  "short": "The quantity received in tonnes, the grade or GCV, and the moisture basis. Emissions need tonnes burnt and energy content: tonnes × GCV converted to NCV × the IPCC factor for the coal type. If the invoice gives only a grade, use your own lab GCV.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler and kiln operators buying Indian or imported coal",
+  "sections": [
+    {
+      "h": "From the invoice",
+      "ul": [
+        "Tonnes dispatched and received, and any shortage.",
+        "Grade, GCV and the basis, such as air dried, as received or GAR.",
+        "Total moisture and ash, if stated."
+      ]
+    },
+    {
+      "h": "From your records",
+      "ul": [
+        "Tonnes actually burnt, from stock changes.",
+        "Lab GCV for each lot.",
+        "The basis used for the factor, kept consistent."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "GCV or NCV?",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "Imported coal GAR and NAR",
+      "to": "/answers/imported-coal-gar-nar-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

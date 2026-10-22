@@ -1,0 +1,49 @@
+{
+  "slug": "are-graphite-electrodes-covered-by-cbam",
+  "q": "Are graphite electrodes covered by CBAM?",
+  "title": "Are graphite electrodes in CBAM?",
+  "short": "No. Graphite electrodes are declared under 8545, which is not in Annex I. But the electrode carbon a steelmaker consumes in an arc furnace counts in that steel's direct emissions, so EU and Asian mills may ask how much carbon your electrodes hold.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Graphite electrode makers and traders supplying arc furnace steel plants",
+  "sections": [
+    {
+      "h": "Why buyers still ask",
+      "p": [
+        "An arc furnace mill reports electrode consumption in its mass balance. A figure for carbon content per tonne of electrode helps it, and a product footprint helps its Scope 3."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The Commission proposed in December 2025 to extend CBAM to some downstream steel and aluminium products. As of October 2026 that is not law, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity invoices into dated, fingerprinted records, so if a buyer asks for a product footprint you can answer from documents rather than estimates.",
+  "links": [
+    {
+      "label": "Electrode CO2 in arc furnace steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    },
+    {
+      "label": "Electrode manufacturing CO2",
+      "to": "/answers/graphite-electrode-manufacturing-co2-per-tonne"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

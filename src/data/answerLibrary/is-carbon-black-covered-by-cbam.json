@@ -1,0 +1,49 @@
+{
+  "slug": "is-carbon-black-covered-by-cbam",
+  "q": "Is carbon black exported to the EU covered by CBAM?",
+  "title": "Is carbon black in CBAM?",
+  "short": "No. Carbon black is declared under 2803, and the only chapter 28 product in Annex I is hydrogen. EU tyre and rubber buyers file no CBAM figure for it, but many ask for a product footprint because carbon black is carbon intensive.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Carbon black producers in India supplying EU tyre and rubber makers",
+  "sections": [
+    {
+      "h": "What buyers ask instead",
+      "p": [
+        "A cradle to gate footprint per tonne: feedstock oil, process gas use, tail gas combustion and power, with any exported power or steam credited by a stated method."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The Commission proposed in December 2025 to extend CBAM to some downstream steel and aluminium products. As of October 2026 that is not law, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity invoices into dated, fingerprinted records, so if a buyer asks for a product footprint you can answer from documents rather than estimates.",
+  "links": [
+    {
+      "label": "Carbon black CO2 per tonne",
+      "to": "/answers/carbon-black-co2-per-tonne"
+    },
+    {
+      "label": "Are chemicals covered?",
+      "to": "/answers/vapi-ankleshwar-chemicals-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

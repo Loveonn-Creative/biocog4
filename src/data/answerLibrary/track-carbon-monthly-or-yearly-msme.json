@@ -1,0 +1,47 @@
+{
+  "slug": "track-carbon-monthly-or-yearly-msme",
+  "q": "Should an MSME track carbon emissions monthly or just once a year?",
+  "title": "Track carbon monthly or yearly?",
+  "short": "Track monthly, report yearly. Monthly records come straight from bills, catch missing documents while they can still be found, and show changes in time to act. The annual figure is then just the sum, not a rush at year end.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs starting carbon tracking",
+  "sections": [
+    {
+      "h": "Monthly habit",
+      "ul": [
+        "Upload electricity and fuel bills when they arrive.",
+        "Note production for the month.",
+        "Check intensity against the same month last year."
+      ]
+    },
+    {
+      "h": "Annual report",
+      "p": [
+        "Add the twelve months, explain gaps and estimates, and keep the documents for checks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "How long to keep invoices",
+      "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    },
+    {
+      "label": "Financial or calendar year",
+      "to": "/answers/carbon-footprint-financial-or-calendar-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
