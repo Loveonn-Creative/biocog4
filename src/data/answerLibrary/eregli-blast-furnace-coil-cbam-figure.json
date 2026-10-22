@@ -1,0 +1,61 @@
+{
+  "slug": "eregli-blast-furnace-coil-cbam-figure",
+  "q": "What CBAM figure should an EU buyer expect for flat steel from Eregli?",
+  "title": "Eregli flat steel CBAM figure",
+  "short": "A blast furnace route figure, with coke, sinter and pig iron emissions carried into every tonne of coil, usually close to 2 tonnes of CO2 per tonne. Ask the mill for its monitored figure. A Turkish carbon price can be deducted only once it is actually paid.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of hot-rolled, cold-rolled and coated coil from Eregli and the Black Sea coast",
+  "sections": [
+    {
+      "h": "What the figure covers",
+      "ul": [
+        "Precursors made on site: sinter, pig iron and crude steel.",
+        "Direct emissions at the rolling and coating lines.",
+        "Not electricity, which is outside the charged figure for steel."
+      ]
+    },
+    {
+      "h": "Coated and cold-rolled coil",
+      "p": [
+        "Cold-rolled and galvanised coil add their own furnace gas and carry the hot-rolled coil as a precursor. Ask for a figure per product, not one number for the whole site."
+      ]
+    },
+    {
+      "h": "Carbon price deduction",
+      "p": [
+        "Turkey has legislated an emissions trading system starting with a pilot phase. A deduction from the CBAM charge needs a price effectively paid, net of free allocation, with evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Turkey ETS pilot and CBAM",
+      "to": "/answers/turkey-ets-pilot-cbam-deduction"
+    },
+    {
+      "label": "Iskenderun coil and indirect emissions",
+      "to": "/answers/iskenderun-hot-rolled-coil-indirect-emissions"
+    },
+    {
+      "label": "Specific embedded emissions explained",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "worldsteel",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

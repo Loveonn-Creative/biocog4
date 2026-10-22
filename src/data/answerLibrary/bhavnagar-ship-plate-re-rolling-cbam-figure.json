@@ -1,0 +1,63 @@
+{
+  "slug": "bhavnagar-ship-plate-re-rolling-cbam-figure",
+  "q": "What CBAM figure applies to bars re-rolled in Bhavnagar from Alang ship plates?",
+  "title": "Bhavnagar ship plate re-rolling CBAM",
+  "short": "Mostly just your reheating furnace fuel. Plates cut from ships are usually treated like scrap, with zero embedded emissions, and electricity is not counted for steel. Keep the purchase records that show the plates came from ship breaking.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Re-rolling mills in Bhavnagar and Sihor using plates from Alang ship recycling",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Furnace oil, coal or gas burned in the reheating furnace.",
+        "Any billets or ingots bought in, which carry their own embedded emissions.",
+        "Not the ship plates, if they are accepted as scrap."
+      ]
+    },
+    {
+      "h": "Confirm the treatment",
+      "p": [
+        "Plates re-rolled without melting are an unusual route. Agree with the importer and its verifier that they are treated as scrap before the figure is sent."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Purchase bills naming the ship breaking plot.",
+        "Fuel bills for the furnace by month.",
+        "Tonnes of bars produced."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "TMT re-rolling mill CO2 per tonne",
+      "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne"
+    },
+    {
+      "label": "Chattogram ship scrap re-rolling",
+      "to": "/answers/chattogram-rerolled-steel-ship-scrap-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

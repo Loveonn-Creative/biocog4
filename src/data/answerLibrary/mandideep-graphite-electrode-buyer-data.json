@@ -1,0 +1,61 @@
+{
+  "slug": "mandideep-graphite-electrode-buyer-data",
+  "q": "A steel mill asks our Mandideep plant for the carbon footprint of our graphite electrodes. What do we give?",
+  "title": "Graphite electrode footprint for steel mills",
+  "short": "Give a cradle to gate figure per tonne covering needle coke and pitch, baking and graphitisation electricity, with the power source. Electrodes are not CBAM goods, but the carbon in electrodes consumed counts in the steel mill's own CBAM figure, so mills ask about both.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Graphite electrode makers around Mandideep and Bhopal and their steel plant customers",
+  "sections": [
+    {
+      "h": "Where your footprint comes from",
+      "ul": [
+        "Needle coke and pitch, bought in: ask suppliers or use published factors.",
+        "Fuel for baking furnaces.",
+        "Electricity for graphitisation, often the largest single item."
+      ]
+    },
+    {
+      "h": "What the mill counts itself",
+      "p": [
+        "When the electrode burns away in an electric arc furnace, its carbon becomes CO2 at the mill. That is a direct emission in the mill's CBAM figure, separate from your manufacturing footprint."
+      ]
+    },
+    {
+      "h": "Make it usable",
+      "p": [
+        "State the figure per tonne and per kilogram consumed, the year, and what is inside the boundary. Mills compare suppliers, so a clear boundary avoids unfair comparisons."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Electrode CO2 in EAF steel",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    },
+    {
+      "label": "Electrode manufacturing CO2",
+      "to": "/answers/graphite-electrode-manufacturing-co2-per-tonne"
+    },
+    {
+      "label": "Are graphite electrodes covered?",
+      "to": "/answers/are-graphite-electrodes-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

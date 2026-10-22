@@ -1,0 +1,59 @@
+{
+  "slug": "jhagadia-chemical-plant-steam-co2",
+  "q": "How should a Jhagadia chemical plant count emissions from the steam it uses?",
+  "title": "Jhagadia chemical plant steam emissions",
+  "short": "Steam from your own boiler is Scope 1, worked out from the fuel burned. Steam bought from a neighbour or common utility is Scope 2, using the supplier's emissions per tonne of steam. Then share steam between products by metered use.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical, dye and pharma intermediate plants in GIDC Jhagadia and Ankleshwar",
+  "sections": [
+    {
+      "h": "Own boiler",
+      "p": [
+        "Count coal, gas or biomass burned, with the fuel's emission factor. Steam meters are useful for sharing, but the emissions come from the fuel."
+      ]
+    },
+    {
+      "h": "Bought steam",
+      "p": [
+        "Ask the supplier for kg CO2 per tonne of steam, based on its fuel and boiler efficiency. If it will not give one, estimate from the fuel it uses and a typical efficiency, and label the estimate."
+      ]
+    },
+    {
+      "h": "Sharing between products",
+      "p": [
+        "Use steam meters on each block or reactor where you have them. Where you do not, share by batch hours or by design steam use, and say which method you used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Dye intermediate steam per kg",
+      "to": "/answers/dye-intermediate-unit-steam-allocation-per-kg"
+    },
+    {
+      "label": "Multi-product chemical plant allocation",
+      "to": "/answers/multi-product-chemical-plant-emissions-allocation"
+    },
+    {
+      "label": "Steam meter or fuel records?",
+      "to": "/answers/steam-flow-meter-or-fuel-records-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

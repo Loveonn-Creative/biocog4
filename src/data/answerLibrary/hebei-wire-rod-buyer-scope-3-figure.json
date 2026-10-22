@@ -1,0 +1,61 @@
+{
+  "slug": "hebei-wire-rod-buyer-scope-3-figure",
+  "q": "Which emission factor should we use for wire rod bought from a Hebei mill?",
+  "title": "Scope 3 factor for Hebei wire rod",
+  "short": "Use the mill's own cradle to gate figure if it gives one. If not, use a published blast furnace route average and label it as an estimate. Most Hebei rod comes from blast furnaces, so a scrap based electric furnace average would understate it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Wire drawers, fastener and spring makers buying rod from Hebei mills",
+  "sections": [
+    {
+      "h": "Order of preference",
+      "ol": [
+        "Supplier-specific cradle to gate figure per tonne, with the year.",
+        "A blast furnace route average from a recognised source such as worldsteel.",
+        "A spend-based factor, only as a last resort."
+      ]
+    },
+    {
+      "h": "Cradle to gate, not CBAM",
+      "p": [
+        "A CBAM figure counts direct emissions only. For your Scope 3, ask for the cradle to gate number, which also includes electricity. The two can differ by several hundred kilograms per tonne."
+      ]
+    },
+    {
+      "h": "Record what you used",
+      "p": [
+        "Write down the factor, its source and year next to each purchase. When the mill later gives its own figure, you can swap it in and show the change."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated, fingerprinted records, so each purchased material in a Scope 3 figure traces back to its document.",
+  "links": [
+    {
+      "label": "Wire rod precursor data",
+      "to": "/answers/vizag-steel-wire-rod-buyer-precursor-data"
+    },
+    {
+      "label": "Primary data share meaning",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "Replacing spend factors with supplier data",
+      "to": "/answers/replace-us-epa-spend-factor-with-supplier-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "worldsteel",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

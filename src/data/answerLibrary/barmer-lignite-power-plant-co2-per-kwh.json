@@ -1,0 +1,60 @@
+{
+  "slug": "barmer-lignite-power-plant-co2-per-kwh",
+  "q": "How much CO2 does a lignite power plant like those in Barmer emit per kWh?",
+  "title": "Lignite power plant CO2 per kWh",
+  "short": "More than the grid average, because lignite carries more carbon per unit of energy and plants run at modest efficiency. Use the station's figure from the CEA CO2 database. A factory buying from the grid still uses the grid factor of 0.710, not the station's.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Industries and analysts in western Rajasthan and buyers of lignite power",
+  "sections": [
+    {
+      "h": "Why lignite is higher",
+      "ul": [
+        "IPCC default of about 101 kg CO2 per GJ for lignite, against about 95 for bituminous coal.",
+        "High moisture lowers plant efficiency, so more fuel is burned per kWh."
+      ]
+    },
+    {
+      "h": "Where to find the station figure",
+      "p": [
+        "The CEA CO2 Baseline Database lists emissions per kWh for each grid-connected station, including lignite plants. Use the latest version and note it."
+      ]
+    },
+    {
+      "h": "For your own Scope 2",
+      "p": [
+        "Unless you have a dedicated supply line from the plant, your electricity comes from the grid, and the national grid factor of 0.710 kg CO2 per kWh applies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Lignite emission factor India",
+      "to": "/answers/lignite-emission-factor-india"
+    },
+    {
+      "label": "CEA vs IEA grid factor",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    },
+    {
+      "label": "DG set vs grid emissions",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

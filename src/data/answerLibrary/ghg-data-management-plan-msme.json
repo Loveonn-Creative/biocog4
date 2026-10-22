@@ -1,0 +1,59 @@
+{
+  "slug": "ghg-data-management-plan-msme",
+  "q": "What should a small company's GHG data management plan contain?",
+  "title": "A GHG data management plan for MSMEs",
+  "short": "A short document saying which sources you count, where each figure comes from, who collects and checks it, which factors and methods you use, and how corrections are made. Two or three pages is enough. It is what a verifier or buyer reads first.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs setting up emissions reporting for buyers, lenders or BRSR value chain requests",
+  "sections": [
+    {
+      "h": "Contents",
+      "ol": [
+        "Boundary: sites, sources and gases included.",
+        "Data sources: bills, meters, registers, by source.",
+        "Responsibilities: who collects, who checks, who signs off.",
+        "Methods and factors, with versions and years.",
+        "Corrections: how errors are fixed and past figures restated."
+      ]
+    },
+    {
+      "h": "Keep it current",
+      "p": [
+        "Update the plan when you add a site, change a meter or switch factor sources. Note the date of each change."
+      ]
+    },
+    {
+      "h": "Why it pays off",
+      "p": [
+        "A plan shortens verification because the verifier can test your process instead of rebuilding it, and it keeps figures consistent when staff change."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, emission factor and method version, so a verifier can trace a total back to the invoice.",
+  "links": [
+    {
+      "label": "Who should sign off carbon figures?",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Restating emissions after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "Internal review before verification",
+      "to": "/answers/internal-review-before-external-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

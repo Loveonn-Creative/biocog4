@@ -1,0 +1,62 @@
+{
+  "slug": "aliaga-ship-scrap-eaf-rebar-cbam-figure",
+  "q": "How low is the CBAM figure for rebar made from ship scrap in Aliaga electric furnaces?",
+  "title": "Aliaga ship scrap rebar CBAM figure",
+  "short": "Low, because scrap carries zero embedded emissions and electricity is not counted for steel. What remains is electrode and charge carbon, natural gas for burners and reheating, and any bought billet. The total is usually a fraction of a blast furnace figure.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Electric furnace mills around Aliaga and Izmir and their EU rebar buyers",
+  "sections": [
+    {
+      "h": "What is counted",
+      "ul": [
+        "Carbon from electrodes, injected carbon and charge coal.",
+        "Natural gas for oxy-fuel burners, ladle heating and the reheating furnace.",
+        "Embedded emissions of any billets or pig iron bought in."
+      ]
+    },
+    {
+      "h": "What is not",
+      "ul": [
+        "The scrap itself, including ship scrap from the breaking yards.",
+        "Electricity for the furnace, an indirect emission outside the charged figure for steel."
+      ]
+    },
+    {
+      "h": "Keep the scrap records",
+      "p": [
+        "The low figure depends on proving the charge was scrap. Keep weighbridge tickets and scrap purchase records by heat or by month, and note any pig iron or HBI added."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Turkish rebar reheating gas",
+      "to": "/answers/turkish-rebar-reheating-furnace-gas-cbam"
+    },
+    {
+      "label": "Chattogram ship scrap re-rolling",
+      "to": "/answers/chattogram-rerolled-steel-ship-scrap-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

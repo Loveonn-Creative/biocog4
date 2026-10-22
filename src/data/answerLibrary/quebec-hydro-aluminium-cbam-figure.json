@@ -1,0 +1,61 @@
+{
+  "slug": "quebec-hydro-aluminium-cbam-figure",
+  "q": "Does hydro power make Quebec aluminium cheaper under CBAM?",
+  "title": "Quebec hydro aluminium and CBAM",
+  "short": "Not directly. For aluminium only direct emissions are charged: anode carbon and PFCs. Quebec smelters' hydro power lowers their product footprint, not the CBAM figure. A Quebec carbon market price can be deducted only to the extent it is effectively paid.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU buyers of Canadian primary aluminium and smelters in Quebec",
+  "sections": [
+    {
+      "h": "What the CBAM figure counts",
+      "ul": [
+        "CO2 from anode consumption in the pots.",
+        "PFCs from anode effects.",
+        "Fuel used in the cast house and anode baking on site."
+      ]
+    },
+    {
+      "h": "Where hydro helps",
+      "p": [
+        "Buyers' cradle to gate footprints include electricity, and hydro power makes Quebec metal one of the lowest-carbon sources on that basis. That helps with buyer targets even though the CBAM figure stays the same."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Quebec runs a cap-and-trade system in which smelters receive free allowances. Only the price effectively paid beyond that allocation can be deducted."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Puerto Madryn hydro aluminium",
+      "to": "/answers/puerto-madryn-aluminium-hydro-cbam"
+    },
+    {
+      "label": "Korba aluminium direct emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Smelter anode CO2 per tonne",
+      "to": "/answers/jharsuguda-smelter-anode-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

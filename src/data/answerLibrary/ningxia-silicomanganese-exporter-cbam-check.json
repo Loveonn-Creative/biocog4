@@ -1,0 +1,60 @@
+{
+  "slug": "ningxia-silicomanganese-exporter-cbam-check",
+  "q": "Does a Ningxia silicomanganese exporter need to give CBAM data to EU buyers?",
+  "title": "Ningxia silicomanganese and CBAM",
+  "short": "No CBAM figure is due. Silicomanganese, declared under CN 7202 30, is not in Annex I; the only ferro-alloys covered are ferro-manganese, ferro-chromium and ferro-nickel. EU steelmakers may still ask for a product footprint, which is a commercial request.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferro-alloy producers in Ningxia and Inner Mongolia and their EU customers",
+  "sections": [
+    {
+      "h": "Covered and not covered",
+      "ul": [
+        "Covered: ferro-manganese (7202 1), ferro-chromium (7202 4) and ferro-nickel (7202 6).",
+        "Not covered: silicomanganese (7202 30), ferrosilicon (7202 21 and 7202 29) and other 7202 alloys."
+      ]
+    },
+    {
+      "h": "Why buyers still ask",
+      "p": [
+        "EU steel mills build product footprints for their own customers and count purchased alloys in Scope 3. A footprint per tonne covering coke, electrodes and electricity answers that request."
+      ]
+    },
+    {
+      "h": "Plants that make both",
+      "p": [
+        "If the same furnaces switch to ferro-manganese for EU orders, that product is covered. Keep production and fuel records per campaign so the covered product can be shown on its own."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Is silico-manganese covered?",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    },
+    {
+      "label": "Silico-manganese carbon per tonne",
+      "to": "/answers/chhattisgarh-silico-manganese-carbon-per-tonne"
+    },
+    {
+      "label": "Ferro-alloy coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

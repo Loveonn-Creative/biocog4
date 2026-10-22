@@ -1,0 +1,61 @@
+{
+  "slug": "china-grid-emission-factor-for-suppliers",
+  "q": "Which grid emission factor should we use for electricity at a supplier's plant in China?",
+  "title": "China grid factor for supplier plants",
+  "short": "Use the latest national average grid factor published by China's environment ministry, which has been somewhere between 0.5 and 0.6 kg CO2 per kWh, or a regional factor if your buyer asks for one. It matters for footprints, cement and fertilisers, not for steel or aluminium CBAM figures.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Buyers and suppliers calculating Scope 2 or product footprints for plants in China",
+  "sections": [
+    {
+      "h": "Where the factor comes from",
+      "p": [
+        "China's Ministry of Ecology and Environment publishes a national average grid emission factor and updates it as the power mix changes. International databases such as the IEA's also publish country figures; state which one you used and its year."
+      ]
+    },
+    {
+      "h": "When it matters",
+      "ul": [
+        "Scope 2 and product carbon footprints asked for by buyers.",
+        "CBAM indirect emissions for cement and fertiliser goods.",
+        "Not the charged CBAM figure for iron, steel or aluminium, which counts direct emissions only."
+      ]
+    },
+    {
+      "h": "Regional differences",
+      "p": [
+        "A plant in a hydro-heavy province draws on a cleaner grid than one in a coal-heavy province. A regional factor can be more accurate, but use it only if it is published and your buyer accepts it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Free grid factors by country",
+      "to": "/answers/free-grid-emission-factors-by-country"
+    },
+    {
+      "label": "Korea grid factor for suppliers",
+      "to": "/answers/korea-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Electricity in steel CBAM figures",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

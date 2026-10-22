@@ -1,0 +1,59 @@
+{
+  "slug": "verifier-cross-checks-production-with-gst-returns",
+  "q": "Why does our verifier want to compare production data with our GST returns?",
+  "title": "Verifiers comparing production with GST",
+  "short": "To check that the production figure behind your emissions intensity is real. Sales in GST returns, adjusted for stock changes, should roughly match production. A large gap suggests the intensity is wrong, so be ready to explain stock, rejects and job work.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian manufacturers reporting emissions per tonne or per unit",
+  "sections": [
+    {
+      "h": "What is compared",
+      "ul": [
+        "Quantity sold in GST returns or e-invoices.",
+        "Opening and closing stock.",
+        "Production reported in your intensity figure."
+      ]
+    },
+    {
+      "h": "Common reasons for gaps",
+      "ul": [
+        "Job work done for others, which is not your sale.",
+        "Rejects and seconds sold under different codes.",
+        "Transfers between your own units."
+      ]
+    },
+    {
+      "h": "Be ready",
+      "p": [
+        "Prepare a short reconciliation with the main differences explained. It also helps when a buyer asks why your intensity changed."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, emission factor and method version, so a verifier can trace a total back to the invoice.",
+  "links": [
+    {
+      "label": "Can GSTR-2B be used for carbon accounting?",
+      "to": "/answers/can-gstr-2b-be-used-for-carbon-accounting"
+    },
+    {
+      "label": "What is materiality in GHG verification?",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    },
+    {
+      "label": "GST e-invoice fields for carbon accounting",
+      "to": "/answers/gst-e-invoice-fields-for-carbon-accounting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

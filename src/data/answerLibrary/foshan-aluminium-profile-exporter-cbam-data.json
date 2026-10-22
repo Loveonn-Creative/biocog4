@@ -1,0 +1,61 @@
+{
+  "slug": "foshan-aluminium-profile-exporter-cbam-data",
+  "q": "What CBAM data does an EU importer need from a Foshan aluminium profile exporter?",
+  "title": "Foshan aluminium profile CBAM data",
+  "short": "Two parts: the extruder's own direct emissions, mostly gas for billet heating and any remelting, and the embedded emissions of the unwrought aluminium it bought, which must come from the smelter or cast house. Without smelter data the importer falls back on default values.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Extruders in Foshan and Guangdong exporting profiles under CN 7604 and their EU importers",
+  "sections": [
+    {
+      "h": "The extruder's part",
+      "ul": [
+        "Natural gas or LPG for billet heating and ageing ovens.",
+        "Fuel for any remelting of scrap in its own cast house.",
+        "Production in tonnes for the same period, to give a figure per tonne."
+      ]
+    },
+    {
+      "h": "The precursor part",
+      "p": [
+        "Unwrought aluminium is a precursor for profiles. The billet supplier, often a smelter in another province, needs to give its specific embedded emissions per tonne. Ask for it in writing with the reporting period."
+      ]
+    },
+    {
+      "h": "When the smelter will not share",
+      "p": [
+        "The importer can use the default value for the precursor, which is set conservatively. That usually makes the shipment costlier than actual data would, so it pays to press for the smelter's figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Vietnam aluminium extrusion data",
+      "to": "/answers/eu-importer-vietnam-aluminium-extrusion-data"
+    },
+    {
+      "label": "Are aluminium castings covered?",
+      "to": "/answers/are-aluminium-castings-covered-by-cbam"
+    },
+    {
+      "label": "Where to find official default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

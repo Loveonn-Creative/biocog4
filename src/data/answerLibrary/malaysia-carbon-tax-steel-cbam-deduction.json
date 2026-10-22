@@ -1,0 +1,57 @@
+{
+  "slug": "malaysia-carbon-tax-steel-cbam-deduction",
+  "q": "Will Malaysia's planned carbon tax reduce the CBAM charge on Malaysian steel?",
+  "title": "Malaysia carbon tax and the CBAM charge",
+  "short": "Only once it is in force and actually paid on the emissions behind the goods. Malaysia has announced a carbon tax starting with iron, steel and energy. If the tax has rebates or a low rate, the deduction shrinks to what was effectively paid.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Malaysian steel exporters and their EU importers",
+  "sections": [
+    {
+      "h": "How the deduction works",
+      "p": [
+        "Article 9 of the CBAM Regulation allows a reduction for a carbon price effectively paid in the country of origin, net of any rebate or other compensation."
+      ]
+    },
+    {
+      "h": "Evidence needed",
+      "ul": [
+        "Tax paid by the installation for the period, with official receipts.",
+        "The emissions the tax was charged on.",
+        "A calculation linking the tax to the tonnes of goods exported."
+      ]
+    },
+    {
+      "h": "Until it starts",
+      "p": [
+        "No deduction is possible for a tax that is announced but not yet charged. Plan pricing on the full CBAM charge and check the tax's final design when it is published."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Korea ETS and the CBAM deduction",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    },
+    {
+      "label": "Kuantan steel CBAM data",
+      "to": "/answers/kuantan-blast-furnace-steel-exporter-cbam"
+    },
+    {
+      "label": "EU ETS vs CBAM",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

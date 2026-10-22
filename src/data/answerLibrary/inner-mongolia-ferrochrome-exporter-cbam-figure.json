@@ -1,0 +1,63 @@
+{
+  "slug": "inner-mongolia-ferrochrome-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for high-carbon ferrochrome from Inner Mongolia?",
+  "title": "Inner Mongolia ferrochrome CBAM figure",
+  "short": "Direct emissions only: carbon from coke and other reductants, electrode paste and any fuel, worked out by mass balance. Ferro-chromium under CN 7202 4 is covered, but the large electricity use of the furnaces is not counted, even where it comes from coal.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Ferrochrome smelters in Inner Mongolia and their EU stainless steel customers",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Carbon in coke, semi-coke and coal charged to the furnace, less carbon leaving in the alloy and slag.",
+        "Electrode paste consumed.",
+        "Fuel used for drying or preheating ore."
+      ]
+    },
+    {
+      "h": "What does not",
+      "p": [
+        "Electricity is an indirect emission, and for iron and steel goods, which include ferro-alloys, only direct emissions are charged. It still belongs in any product footprint a buyer asks for."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Reductant purchases with carbon content from lab tests.",
+        "Alloy output and its carbon content.",
+        "Slag tonnage and carbon analysis."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "High-carbon vs low-carbon ferrochrome",
+      "to": "/answers/high-carbon-vs-low-carbon-ferrochrome-cbam"
+    },
+    {
+      "label": "Odisha ferrochrome captive power",
+      "to": "/answers/odisha-ferrochrome-captive-power-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

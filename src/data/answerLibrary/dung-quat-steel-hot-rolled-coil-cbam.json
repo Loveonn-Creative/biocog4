@@ -1,0 +1,61 @@
+{
+  "slug": "dung-quat-steel-hot-rolled-coil-cbam",
+  "q": "What CBAM figure applies to hot-rolled coil from the Dung Quat blast furnace complex?",
+  "title": "Dung Quat hot-rolled coil CBAM figure",
+  "short": "A blast furnace route figure built from the complex's own coke, sinter, pig iron and steelmaking data, often close to 2 tonnes of CO2 per tonne of coil. EU importers need the plant's specific figure per product; Vietnam's pilot carbon market gives no deduction while allowances are free.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of Vietnamese hot-rolled coil and the mills in Quang Ngai",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Coke making, sintering and blast furnace emissions carried as precursors.",
+        "Converter and rolling mill direct emissions.",
+        "Not electricity, which is outside the charged figure for steel."
+      ]
+    },
+    {
+      "h": "Ask for the right number",
+      "p": [
+        "The mill should give specific embedded emissions per tonne of coil for a stated period. A company-wide average that mixes long products and coil hides the real figure for your product."
+      ]
+    },
+    {
+      "h": "Vietnam's carbon market",
+      "p": [
+        "Vietnam has started a pilot carbon market covering steel, cement and thermal power with free allowances. A deduction needs a price effectively paid, so the pilot alone usually gives none."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Vietnam carbon market pilot",
+      "to": "/answers/vietnam-carbon-market-pilot-cbam-deduction"
+    },
+    {
+      "label": "Ha Tinh steel vs cement",
+      "to": "/answers/ha-tinh-nghi-son-steel-vs-cement-cbam"
+    },
+    {
+      "label": "Vietnam galvanised coil precursors",
+      "to": "/answers/vietnam-galvanised-coil-maker-precursor-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "worldsteel",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

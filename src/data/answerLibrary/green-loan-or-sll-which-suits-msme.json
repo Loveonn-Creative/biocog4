@@ -1,0 +1,59 @@
+{
+  "slug": "green-loan-or-sll-which-suits-msme",
+  "q": "Should an MSME choose a green loan or a sustainability-linked loan?",
+  "title": "Green loan or sustainability-linked loan",
+  "short": "Choose a green loan when the money is for a specific project such as solar, efficient motors or a cleaner boiler. Choose a sustainability-linked loan when you want general funding tied to company-wide targets like emissions intensity. Many MSMEs start with a green loan.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "MSME owners and finance heads comparing climate-linked finance options",
+  "sections": [
+    {
+      "h": "Green loan",
+      "ul": [
+        "Money used only for named green projects.",
+        "Reporting on how the money was spent and the impact.",
+        "Easier to start with one clear project."
+      ]
+    },
+    {
+      "h": "Sustainability-linked loan",
+      "ul": [
+        "Money for general purposes.",
+        "Interest linked to KPIs such as emissions per tonne.",
+        "Needs a baseline, yearly reporting and usually external verification."
+      ]
+    },
+    {
+      "h": "What decides it",
+      "p": [
+        "If you do not yet track emissions monthly, a sustainability-linked loan is hard to run. A green loan for one project builds the records you would need later."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
+  "links": [
+    {
+      "label": "Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "SLL KPI examples",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "How ambitious should SLL targets be?",
+      "to": "/answers/how-ambitious-should-sll-targets-be"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

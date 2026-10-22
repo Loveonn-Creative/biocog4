@@ -1,0 +1,60 @@
+{
+  "slug": "kakinada-urea-plant-gas-feedstock-vs-fuel",
+  "q": "How does a Kakinada urea plant split natural gas between feedstock and fuel for its emissions?",
+  "title": "Kakinada urea: gas as feedstock and fuel",
+  "short": "Meter the gas to the reformer feed and to the furnaces and boilers separately, because both end up as Scope 1, but the CO2 from feedstock is partly bound into urea. Under CBAM monitoring rules, CO2 bound in urea is treated as emitted, not subtracted.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Ammonia and urea plants in Kakinada and the Godavari gas belt",
+  "sections": [
+    {
+      "h": "Two streams of gas",
+      "ul": [
+        "Feedstock: reformed to make hydrogen for ammonia, releasing process CO2.",
+        "Fuel: burned in the reformer furnace, boilers and gas turbines."
+      ]
+    },
+    {
+      "h": "The urea question",
+      "p": [
+        "Part of the process CO2 is captured and reacted with ammonia to make urea. That CO2 is released when the urea is used on fields, so the CBAM monitoring rules and the EU ETS treat it as emitted at the plant."
+      ]
+    },
+    {
+      "h": "Why separate meters still help",
+      "p": [
+        "Energy efficiency targets and benchmarks look at gas per tonne of ammonia and urea. Separate readings for feed and fuel make those figures checkable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Egypt urea plant CBAM",
+      "to": "/answers/egypt-urea-plant-cbam-embedded-emissions"
+    },
+    {
+      "label": "Urea application emissions",
+      "to": "/answers/urea-application-emissions-per-tonne"
+    },
+    {
+      "label": "Purchased urea and DAP factors",
+      "to": "/answers/emission-factor-for-purchased-urea-and-dap"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

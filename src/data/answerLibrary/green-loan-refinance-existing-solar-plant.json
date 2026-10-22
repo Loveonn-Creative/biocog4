@@ -1,0 +1,57 @@
+{
+  "slug": "green-loan-refinance-existing-solar-plant",
+  "q": "Can a green loan refinance a rooftop solar plant we already paid for?",
+  "title": "Refinancing existing solar with a green loan",
+  "short": "Often yes. The Green Loan Principles allow proceeds to refinance eligible projects, and many lenders accept it. Expect to show what was installed, when, what it cost and the power it produces, and the lender may limit how far back it will go.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs that self-funded rooftop solar or efficiency projects and now want lower-cost finance",
+  "sections": [
+    {
+      "h": "What the principles say",
+      "p": [
+        "The Green Loan Principles allow the loan to finance or refinance green projects, and ask the borrower to say which share is refinancing. Each lender then sets its own policy, including a look-back period."
+      ]
+    },
+    {
+      "h": "Documents lenders usually ask for",
+      "ul": [
+        "Invoices and commissioning certificate for the plant.",
+        "Net meter or generation records since commissioning.",
+        "The estimate of electricity and CO2 saved, with the grid factor used."
+      ]
+    },
+    {
+      "h": "Keep expectations realistic",
+      "p": [
+        "Approval and pricing depend on the lender's credit view, not only on the project being green. Treat the climate data as readiness evidence, not a promise of terms."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
+  "links": [
+    {
+      "label": "Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "Does a green loan need external review?",
+      "to": "/answers/does-a-green-loan-need-external-review"
+    },
+    {
+      "label": "Proving energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

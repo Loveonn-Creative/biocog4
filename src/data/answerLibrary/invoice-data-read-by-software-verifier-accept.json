@@ -1,0 +1,59 @@
+{
+  "slug": "invoice-data-read-by-software-verifier-accept",
+  "q": "Will a verifier accept emissions figures read from invoices by software?",
+  "title": "Software-read invoice data and verifiers",
+  "short": "Yes, if each figure can be traced back to the original invoice and the reading has been checked. Verifiers test samples against source documents, so keep the original files, the extracted values and any corrections together.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies using software or AI tools to read bills and invoices for emissions",
+  "sections": [
+    {
+      "h": "What verifiers test",
+      "ul": [
+        "A sample of figures traced back to the original invoice or bill.",
+        "Units: kWh versus kVAh, litres versus kilograms.",
+        "Duplicates and missing months."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "The original file, unchanged.",
+        "The values extracted and who checked them.",
+        "Any manual corrections, with the reason."
+      ]
+    },
+    {
+      "h": "Where software helps",
+      "p": [
+        "Reading every invoice the same way reduces typing errors and makes sampling quicker. The verifier still judges the controls around it, not the tool itself."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, emission factor and method version, so a verifier can trace a total back to the invoice.",
+  "links": [
+    {
+      "label": "OCR vs AI vision for invoices",
+      "to": "/answers/ocr-vs-ai-vision-invoice-extraction"
+    },
+    {
+      "label": "How many invoices does a verifier sample?",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "GST e-invoice fields for carbon accounting",
+      "to": "/answers/gst-e-invoice-fields-for-carbon-accounting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

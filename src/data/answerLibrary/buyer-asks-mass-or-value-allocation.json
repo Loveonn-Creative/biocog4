@@ -1,0 +1,57 @@
+{
+  "slug": "buyer-asks-mass-or-value-allocation",
+  "q": "We make several products on one line. Should we share emissions by weight or by value for our buyer?",
+  "title": "Sharing emissions by weight or value",
+  "short": "By a physical measure such as weight, machine hours or energy, where it reflects how the products use the line. Use value only when products differ so much in price that weight would mislead. State the method, and use it every year.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Manufacturers giving product footprints for several products made on shared equipment",
+  "sections": [
+    {
+      "h": "What the standards prefer",
+      "ol": [
+        "Avoid sharing where you can, by metering each product separately.",
+        "Otherwise share by a physical relationship: mass, energy or machine time.",
+        "Use economic value only when physical sharing does not reflect reality."
+      ]
+    },
+    {
+      "h": "When value makes sense",
+      "p": [
+        "A main product and a low-value by-product from the same process: sharing by weight would load too much onto the by-product."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "Use the same method each year and for each buyer. Changing it to make one product look better is the quickest way to lose a buyer's trust."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Cashew kernel and CNSL allocation",
+      "to": "/answers/cashew-kernel-and-cnsl-emissions-allocation"
+    },
+    {
+      "label": "CHP emissions allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Carbon footprint for hundreds of SKUs",
+      "to": "/answers/carbon-footprint-for-hundreds-of-skus"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol standards, including the Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14064 and ISO 14067 standards",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

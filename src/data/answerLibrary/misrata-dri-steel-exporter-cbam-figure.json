@@ -1,0 +1,63 @@
+{
+  "slug": "misrata-dri-steel-exporter-cbam-figure",
+  "q": "What goes into the CBAM figure for steel from a gas-based DRI plant in Misrata?",
+  "title": "Misrata DRI steel CBAM figure",
+  "short": "Natural gas used to reduce iron ore in the DRI plant, carried into the steel as a precursor, plus electrode and charge carbon and gas at the melt shop and rolling mill. Electricity is not counted. Gas-based DRI usually gives a lower figure than a blast furnace.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Steel exporters in Misrata and their EU importers",
+  "sections": [
+    {
+      "h": "The DRI part",
+      "p": [
+        "Reforming natural gas and reducing the ore releases CO2. Those emissions, per tonne of DRI, become precursor emissions in the steel made from it."
+      ]
+    },
+    {
+      "h": "The melt shop and rolling mill",
+      "ul": [
+        "Electrode and injected carbon in the electric furnace.",
+        "Natural gas for reheating billets.",
+        "Any scrap added counts as zero."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Gas meter readings for the DRI plant and the rolling mill.",
+        "DRI output and its carbon content.",
+        "Charge mix per heat: DRI, scrap and any pig iron."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Egypt DRI electric furnace rebar",
+      "to": "/answers/egypt-dri-eaf-rebar-mill-cbam"
+    },
+    {
+      "label": "Mesaieed DRI billets",
+      "to": "/answers/mesaieed-steel-dri-billets-cbam"
+    },
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "asansol-refractory-plant-kiln-co2-per-tonne",
+  "q": "How does an Asansol refractory plant work out its CO2 per tonne of bricks?",
+  "title": "Asansol refractory plant CO2 per tonne",
+  "short": "Add kiln and dryer fuel to any CO2 released by calcining carbonate raw materials on site, then divide by tonnes fired. Refractories are not CBAM goods, so this is for buyers' footprints and your own targets.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Refractory brick and monolithic makers around Asansol, Durgapur and Burnpur",
+  "sections": [
+    {
+      "h": "Fuel",
+      "ul": [
+        "Gas, oil or coal for tunnel and shuttle kilns.",
+        "Fuel for dryers and any calcining kilns.",
+        "Electricity separately, as Scope 2."
+      ]
+    },
+    {
+      "h": "Process CO2",
+      "p": [
+        "If you calcine magnesite or dolomite yourself, the carbonate breaks down and releases CO2: about 0.522 tonnes per tonne of MgCO3 and 0.477 per tonne of dolomite, using IPCC defaults. If you buy dead-burnt material, that CO2 sits with your supplier."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide by tonnes fired in the same month. Shapes and grades differ in firing temperature, so steel plant buyers may ask for figures by product family."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Refractory brick carbon per tonne",
+      "to": "/answers/refractory-brick-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Are refractories covered by CBAM?",
+      "to": "/answers/are-refractories-covered-by-cbam"
+    },
+    {
+      "label": "Quicklime kiln CO2 per tonne",
+      "to": "/answers/quicklime-kiln-co2-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

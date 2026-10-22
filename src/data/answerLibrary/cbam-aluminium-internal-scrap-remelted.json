@@ -1,0 +1,57 @@
+{
+  "slug": "cbam-aluminium-internal-scrap-remelted",
+  "q": "Do we count our own aluminium scrap that we remelt in our cast house in the CBAM figure?",
+  "title": "Remelting your own aluminium scrap in CBAM",
+  "short": "Not as a precursor. Scrap made and remelted inside your own installation is part of your own production loop: count the fuel used to remelt it, and do not add the scrap again as an input. Count only aluminium that leaves as product.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Extruders, rolling mills and foundries with in-house cast houses",
+  "sections": [
+    {
+      "h": "Why not count it twice",
+      "p": [
+        "Internal scrap was already counted when the metal first entered the installation. Adding it again as an input would double count the same aluminium."
+      ]
+    },
+    {
+      "h": "What does count",
+      "ul": [
+        "Fuel for remelting furnaces and holding furnaces.",
+        "Unwrought aluminium bought in, as a precursor.",
+        "Scrap bought from outside, which carries zero embedded emissions."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Track metal in and out of the cast house: purchased ingot, outside scrap, internal scrap and finished output. A simple monthly balance shows the verifier nothing is counted twice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Aluminium scrap melting fuel per tonne",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    },
+    {
+      "label": "Dubai secondary aluminium remelt",
+      "to": "/answers/dubai-secondary-aluminium-scrap-remelt-cbam"
+    },
+    {
+      "label": "Does scrap count as zero?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

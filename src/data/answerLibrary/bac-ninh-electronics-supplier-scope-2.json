@@ -1,0 +1,62 @@
+{
+  "slug": "bac-ninh-electronics-supplier-scope-2",
+  "q": "How should an electronics supplier in Bac Ninh report Scope 2 for its global buyers?",
+  "title": "Bac Ninh electronics supplier Scope 2",
+  "short": "Report location-based Scope 2 with Vietnam's published grid factor and, if you buy renewable power through a direct contract or certificates, a market-based figure as well. Electronics brands usually ask for both, plus monthly kWh by site.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Electronics and component suppliers in Bac Ninh and northern Vietnam",
+  "sections": [
+    {
+      "h": "Two figures",
+      "ul": [
+        "Location-based: kWh times Vietnam's latest grid factor from the environment ministry.",
+        "Market-based: kWh covered by contracts or certificates at their own factor, the rest at a residual or grid factor."
+      ]
+    },
+    {
+      "h": "What brands ask for",
+      "ul": [
+        "Monthly electricity use per site, from bills or meters.",
+        "Contracts or certificates, with the volume and period they cover.",
+        "A plan for raising the renewable share."
+      ]
+    },
+    {
+      "h": "Direct power contracts",
+      "p": [
+        "Vietnam allows direct power purchase agreements for large users. Keep the contract and the delivery statements; brands will ask to see that the power matches the claimed period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Vietnam grid factor",
+      "to": "/answers/vietnam-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Vietnam direct PPA and Scope 2",
+      "to": "/answers/vietnam-direct-ppa-factory-scope-2"
+    },
+    {
+      "label": "Sriperumbudur electronics Scope 2",
+      "to": "/answers/sriperumbudur-electronics-supplier-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

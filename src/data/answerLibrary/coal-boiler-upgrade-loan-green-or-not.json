@@ -1,0 +1,57 @@
+{
+  "slug": "coal-boiler-upgrade-loan-green-or-not",
+  "q": "Will a loan to replace an old coal boiler with an efficient coal boiler count as green?",
+  "title": "Is an efficient coal boiler loan green?",
+  "short": "Often not. Many lenders and taxonomies exclude new fossil fuel equipment because it locks in emissions, even if it is more efficient. Switching to biomass, electric heating or heat pumps is more likely to qualify. Ask the lender which of its categories the project fits.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs with coal-fired boilers planning a replacement",
+  "sections": [
+    {
+      "h": "Why it may not qualify",
+      "p": [
+        "Green loan frameworks focus on clear environmental benefit. A new coal boiler cuts fuel use but keeps coal burning for decades, so many banks treat it as ordinary capital expenditure."
+      ]
+    },
+    {
+      "h": "Options that qualify more often",
+      "ul": [
+        "Biomass or briquette boilers with a sustainable fuel supply.",
+        "Electric boilers or heat pumps for low-temperature heat.",
+        "Heat recovery that cuts fuel use without new fossil capacity."
+      ]
+    },
+    {
+      "h": "Check the lender's list",
+      "p": [
+        "India's climate finance taxonomy is still being finalised and each bank has its own eligible categories. Get the category in writing before you prepare the project report."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
+  "links": [
+    {
+      "label": "Coal boiler to biomass CO2",
+      "to": "/answers/faisalabad-processing-mill-coal-boiler-to-biomass-co2"
+    },
+    {
+      "label": "India climate taxonomy for MSMEs",
+      "to": "/answers/india-climate-finance-taxonomy-what-msmes-need"
+    },
+    {
+      "label": "Electric vs gas boiler emissions",
+      "to": "/answers/electric-boiler-vs-gas-boiler-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Ministry of Finance and EU sustainable finance resources",
+      "url": "https://finance.ec.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

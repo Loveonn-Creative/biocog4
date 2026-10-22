@@ -1,0 +1,61 @@
+{
+  "slug": "solar-dryer-agro-processing-co2",
+  "q": "How much CO2 does a solar dryer save in agro processing?",
+  "title": "CO2 saved by a solar dryer",
+  "short": "Whatever fuel or electricity it replaces, times that fuel's emission factor. If a solar dryer replaces 1,000 litres of diesel a year, it saves about 2.7 tonnes of CO2. Measure the fuel used before and after so the saving can be shown.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Spice, fruit, fish and grain processors considering solar drying",
+  "sections": [
+    {
+      "h": "Work it out",
+      "ol": [
+        "Record fuel or electricity used for drying before the change.",
+        "Record what is still used after, for backup or finishing.",
+        "Multiply the difference by the factor: 2.68 kg CO2 per litre of diesel, 0.710 kg per kWh of grid power."
+      ]
+    },
+    {
+      "h": "Example",
+      "p": [
+        "Illustrative only: a unit using 1,000 litres of diesel a year that cuts this to 0 saves 1,000 times 2.68, about 2.7 tonnes of CO2. Replace with your own records."
+      ]
+    },
+    {
+      "h": "Do not overclaim",
+      "p": [
+        "Solar dryers often need backup heat in monsoon months. Count only the fuel actually avoided, month by month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Grain dryer emissions per tonne",
+      "to": "/answers/grain-dryer-emissions-per-tonne"
+    },
+    {
+      "label": "Proving energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "DG set vs grid emissions",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
