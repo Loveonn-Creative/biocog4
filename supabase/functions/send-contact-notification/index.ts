@@ -4,6 +4,11 @@ import { z } from 'npm:zod@3.25.76';
 import { estimateCustomScope, formatScopeRupees, CUSTOM_WORK, type ScopeInput } from '../_shared/customScopeEstimate.ts';
 import { sendTemplateEmail } from '../_shared/transactional-email-templates/send-email.ts';
 import { internalInbox } from '../_shared/internalInbox.ts';
+import { checkContact, CONTACT_LIMITS, CONTACT_MESSAGES } from '../_shared/contactCheck.ts';
+import { mxVerdict, type DnsAnswer } from '../_shared/resourceLead.ts';
+import { guestSubject, takeUse } from '../_shared/intelligenceUsage.ts';
+import { dayIst } from '../_shared/intelligence.ts';
+import { platformIp } from '../_shared/platformIp.ts';
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -50,6 +55,27 @@ const categoryLabels: Record<string, string> = {
   'green-loan-check': 'Green Loan Check',
 };
 
+const reply = (body: Record<string, unknown>, status: number) =>
+  new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+
+/** DNS-over-HTTPS JSON, 3 s cap. null on any failure, so an outage never blocks a real person. */
+async function dnsJson(url: string): Promise<DnsAnswer | null> {
+  try {
+    const r = await fetch(url, { headers: { accept: 'application/dns-json' }, signal: AbortSignal.timeout(3000) });
+    return r.ok ? await r.json() as DnsAnswer : null;
+  } catch { return null; }
+}
+
+/** Does the email's domain receive mail? Only a definite no rejects; a failed lookup lets it through. */
+async function domainReceivesMail(domain: string): Promise<boolean> {
+  const q = (type: string) => dnsJson(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=${type}`)
+    .then((r) => r ?? dnsJson(`https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(domain)}&type=${type}`));
+  const mx = await q('MX');
+  const needAddress = mx && mx.Status === 0 && !(mx.Answer ?? []).some((a) => a.type === 15);
+  const verdict = mxVerdict(mx, needAddress ? await q('A') : null);
+  return verdict === 'ok' || verdict === 'unknown';
+}
+
 function escapeHtml(str: string | undefined | null): string {
   if (!str) return '';
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -63,7 +89,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const rawBody: ContactRequest = await req.json();
+    const rawBody: ContactRequest = await req.json().catch(() => ({} as ContactRequest));
     if (rawBody.scopeInput !== undefined) {
       const parsed = scopeRequestSchema.safeParse(rawBody);
       if (!parsed.success) return new Response(JSON.stringify({ error: 'Check your details and estimate, then try again.' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
@@ -107,12 +133,32 @@ const handler = async (req: Request): Promise<Response> => {
         return new Response(JSON.stringify({ success: true, saved: true, notified: false }), { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
       }
     }
-    const name = escapeHtml(rawBody.name);
-    const email = escapeHtml(rawBody.email);
-    const phone = escapeHtml(rawBody.phone);
+    // Plain messages: reject empty, fake and dummy details before anything is sent.
+    const checked = checkContact(rawBody as unknown as Record<string, unknown>);
+    if (!checked.ok) return reply({ error: checked.error, field: checked.field }, 400);
+    if (!(await domainReceivesMail(checked.email.slice(checked.email.lastIndexOf('@') + 1)))) {
+      return reply({ error: CONTACT_MESSAGES.emailNoMail, field: 'email' }, 400);
+    }
+    // Daily caps a real person never reaches; counted only for messages that passed the checks.
+    // A counter failure lets the message through rather than lose a lead.
+    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    if (serviceKey && supabaseUrl) {
+      const admin = createClient(supabaseUrl, serviceKey, { auth: { persistSession: false } });
+      const day = dayIst();
+      const byIp = await takeUse(admin, await guestSubject(`contact-ip|${platformIp(req.headers)}`, day, serviceKey), 'guest_scan', CONTACT_LIMITS.perIpPerDay).catch(() => ({ allowed: true }));
+      const byEmail = byIp.allowed
+        ? await takeUse(admin, await guestSubject(`contact-mail|${checked.email}`, day, serviceKey), 'guest_scan', CONTACT_LIMITS.perEmailPerDay).catch(() => ({ allowed: true }))
+        : byIp;
+      if (!byIp.allowed || !byEmail.allowed) return reply({ error: CONTACT_MESSAGES.tooMany }, 429);
+    }
+
+    const name = escapeHtml(checked.name);
+    const email = escapeHtml(checked.email);
+    const phone = escapeHtml(checked.phone ?? undefined);
     const company = escapeHtml(rawBody.company);
     const category = escapeHtml(rawBody.category);
-    const message = escapeHtml(rawBody.message);
+    const message = escapeHtml(checked.message);
     const newsletter = rawBody.newsletter;
     
     // No personal details in logs (DPDP): the category is enough to trace a request.

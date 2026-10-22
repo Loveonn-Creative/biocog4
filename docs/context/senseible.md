@@ -108,3 +108,4 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 
 - Evidence trail line (fingerprinted · factor sourced · method pinned): move from Dashboard to MRV? Not answered yet.
 - Grid factor (1.42 to 1.52 on dummy rows vs 0.710): confirm in the live OCR review before any change.
+- Contact form checks (owner, 22 October 2026): send-contact-notification rejects empty, placeholder, disposable and mistyped emails, domains with no mail server, dummy phone numbers (repeated digits, counting runs) and empty messages (`supabase/functions/_shared/contactCheck.ts`), and caps plain messages at 10 per IP and 5 per email a day. It never punishes genuine people: Indian mobiles and landlines in any common format and foreign numbers with a country code pass, a failed DNS lookup or counter error lets the message through, and invalid submissions are not counted.

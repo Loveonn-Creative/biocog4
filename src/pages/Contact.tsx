@@ -1,3 +1,4 @@
+import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { useEffect, useState, memo } from "react";
 import { revealContact } from "../../supabase/functions/_shared/publicContacts";
 import { Link, useLocation } from "react-router-dom";
@@ -75,7 +76,7 @@ const Contact = () => {
       toast.success(scopeInput ? 'Scope review saved.' : "Message sent successfully! We'll get back to you soon.");
     } catch (err) {
       console.error('Contact form error:', err);
-      toast.error("Failed to send message. Please try again.");
+      toast.error(await getFunctionErrorMessage(err, "Failed to send message. Please try again."));
     } finally {
       setIsSubmitting(false);
     }
