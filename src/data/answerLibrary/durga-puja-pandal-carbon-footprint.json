@@ -1,0 +1,48 @@
+{
+  "slug": "durga-puja-pandal-carbon-footprint",
+  "q": "How do I work out the carbon footprint of a puja pandal?",
+  "title": "Puja pandal carbon footprint",
+  "short": "Add the generator diesel or temporary grid power for lighting and sound, the materials for the structure and decoration, and waste after immersion or dismantling. Generator diesel is 2.68 kg CO2 per litre. Visitor travel is often large but optional; report it separately if you include it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Puja committees and festival organisers",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Lighting and sound: diesel litres or kWh from the temporary connection.",
+        "Structure: bamboo, cloth, plywood and steel, by quantity.",
+        "Idols and decoration materials.",
+        "Waste and transport after the festival."
+      ]
+    },
+    {
+      "h": "Reduce",
+      "p": [
+        "LED lighting and a grid connection instead of a generator usually make the biggest difference."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Carbon neutral event claim",
+      "to": "/answers/carbon-neutral-event-claim-india"
+    },
+    {
+      "label": "Event attendee travel",
+      "to": "/answers/event-attendee-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

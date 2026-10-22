@@ -1,0 +1,47 @@
+{
+  "slug": "pumped-storage-hydro-electricity-scope-2",
+  "q": "How is electricity used for pumped storage hydro counted in Scope 2?",
+  "title": "Pumped storage hydro and Scope 2",
+  "short": "The operator buys grid power to pump water uphill, so that power is the operator's Scope 2. Only part of it comes back when the water is released; round-trip efficiency is typically around 70 to 80 percent, so losses add to the operator's footprint. Customers count the power they buy at their usual grid factor.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Storage developers, discoms and large power buyers",
+  "sections": [
+    {
+      "h": "Operator",
+      "ul": [
+        "Pumping electricity: Scope 2, by the location-based grid factor.",
+        "Market-based: only with contracts or certificates for the pumping power.",
+        "Generation sold back is not subtracted from Scope 2."
+      ]
+    },
+    {
+      "h": "Buyers",
+      "p": [
+        "A factory buying stored power under a contract uses the factor that contract supports; otherwise it uses the grid factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Battery storage and Scope 2",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    },
+    {
+      "label": "Residual mix factor India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

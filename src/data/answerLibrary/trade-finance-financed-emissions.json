@@ -1,0 +1,47 @@
+{
+  "slug": "trade-finance-financed-emissions",
+  "q": "How does a bank count emissions from trade finance?",
+  "title": "Trade finance financed emissions",
+  "short": "Trade finance falls under financed emissions, reported in Scope 3 Category 15. PCAF sets methods for asset classes such as business loans; check its current edition for trade finance. If no method applies, attribute the client's emissions by the share of its trade you financed, and explain the method.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Banks and NBFCs with trade finance books",
+  "sections": [
+    {
+      "h": "A workable method",
+      "ol": [
+        "Get the client's emissions, reported or estimated.",
+        "Work out the share of its trade you financed over the period.",
+        "Multiply, and give a data quality score."
+      ]
+    },
+    {
+      "h": "Short tenor",
+      "p": [
+        "Trade finance turns over quickly, so use an average balance for the year rather than a year-end figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a borrower's own bills and invoices into dated, fingerprinted emission records, so a lender can use measured data in place of sector averages wherever the borrower shares it.",
+  "links": [
+    {
+      "label": "PCAF score for MSME borrowers",
+      "to": "/answers/pcaf-data-quality-score-for-msme-borrowers"
+    },
+    {
+      "label": "Mutual fund footprint",
+      "to": "/answers/mutual-fund-portfolio-carbon-footprint-pcaf"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PCAF, Partnership for Carbon Accounting Financials",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

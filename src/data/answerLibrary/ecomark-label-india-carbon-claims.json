@@ -1,0 +1,51 @@
+{
+  "slug": "ecomark-label-india-carbon-claims",
+  "q": "Does the Ecomark label mean my product is low carbon?",
+  "title": "Ecomark label and carbon claims",
+  "short": "No. Ecomark is the Government of India's label for environmentally preferable products, run under the Ministry of Environment, Forest and Climate Change with the Central Pollution Control Board. It checks product criteria, not a carbon footprint figure. A low carbon claim needs its own measured figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Manufacturers and buyers of consumer goods",
+  "sections": [
+    {
+      "h": "What it covers",
+      "p": [
+        "Criteria are set by product group, such as materials, recyclability or hazardous substances. Check the criteria for your product group."
+      ]
+    },
+    {
+      "h": "Carbon claims",
+      "ul": [
+        "State the figure, the unit and the boundary.",
+        "Name the method, such as ISO 14067.",
+        "Do not imply Ecomark proves the carbon figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Disclose a product footprint",
+      "to": "/answers/how-to-disclose-a-product-carbon-footprint"
+    },
+    {
+      "label": "Green credit vs carbon credit",
+      "to": "/answers/green-credit-vs-carbon-credit-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Environment, Forest and Climate Change",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "ISO, International Organization for Standardization",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

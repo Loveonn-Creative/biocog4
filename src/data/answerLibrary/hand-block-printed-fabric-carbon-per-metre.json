@@ -1,0 +1,48 @@
+{
+  "slug": "hand-block-printed-fabric-carbon-per-metre",
+  "q": "What is the carbon footprint of hand block printed fabric per metre?",
+  "title": "Hand block printed fabric per metre",
+  "short": "The printing itself is done by hand, so most emissions come from the base fabric, the dyes and pigments, and the steaming, washing and drying after printing. Boiler fuel for steaming is Scope 1 for the printer. Divide fuel and chemicals by metres printed.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Block printers and home textile buyers",
+  "sections": [
+    {
+      "h": "Per metre",
+      "ul": [
+        "Base fabric from the supplier's figure.",
+        "Dyes, pigments and binders by kg.",
+        "Steaming and washing: boiler fuel per batch.",
+        "Drying: electricity or fuel; sun drying adds none."
+      ]
+    },
+    {
+      "h": "Against screen printing",
+      "p": [
+        "Hand printing needs no machine power, but fixation and washing are similar, so compare by metre."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Printed fabric per metre",
+      "to": "/answers/printed-fabric-carbon-footprint-per-metre"
+    },
+    {
+      "label": "Textile printing per metre",
+      "to": "/answers/textile-printing-emissions-per-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

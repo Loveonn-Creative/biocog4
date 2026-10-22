@@ -1,0 +1,47 @@
+{
+  "slug": "water-softener-salt-and-power-emissions",
+  "q": "What are the emissions of running a water softener?",
+  "title": "Water softener emissions",
+  "short": "Usually small. A softener uses salt to regenerate its resin, which is a purchased material in Scope 3, and some electricity for pumps and controls in Scope 2. Measure salt bought and pump kWh per kilolitre treated. Soft water can save boiler fuel by reducing scale.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Factories, hotels and hospitals with boilers",
+  "sections": [
+    {
+      "h": "Per kilolitre",
+      "ul": [
+        "Salt kg × a salt factor.",
+        "Pump and control kWh × 0.710 kg CO2 per kWh.",
+        "Brine discharge treatment, if any."
+      ]
+    },
+    {
+      "h": "Boiler side",
+      "p": [
+        "Scale on boiler tubes raises fuel use, so softening often saves more CO2 than it uses."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "RO plant electricity per kl",
+      "to": "/answers/ro-plant-electricity-per-kl-process-water"
+    },
+    {
+      "label": "Boiler blowdown heat recovery",
+      "to": "/answers/boiler-blowdown-heat-recovery-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "golf-course-carbon-footprint-per-year",
+  "q": "What makes up a golf course's carbon footprint?",
+  "title": "Golf course carbon footprint",
+  "short": "Irrigation pumping and the clubhouse use electricity, at 0.710 kg CO2 per kWh. Mowers and carts on diesel or petrol are Scope 1, and so is nitrous oxide from fertiliser spread on the turf. Do not subtract carbon stored in grass or trees unless it is measured and reported separately.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Golf clubs and resort operators",
+  "sections": [
+    {
+      "h": "By scope",
+      "ul": [
+        "Scope 1: mower and cart fuel, fertiliser nitrous oxide, refrigerant top ups.",
+        "Scope 2: irrigation pumps, clubhouse, lighting.",
+        "Scope 3: purchased water, food, members' travel if reported."
+      ]
+    },
+    {
+      "h": "Carbon in turf and trees",
+      "p": [
+        "Removals need measurement over time and are reported separately from emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Borewell pumping per kl",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    },
+    {
+      "label": "Fertiliser emissions",
+      "to": "/answers/organic-manure-vs-urea-n2o-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

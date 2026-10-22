@@ -1,0 +1,52 @@
+{
+  "slug": "biomass-co-firing-coal-power-plant-emissions",
+  "q": "How does biomass co-firing change a coal power plant's reported emissions?",
+  "title": "Biomass co-firing at a coal plant",
+  "short": "CO2 from the biomass pellets is biogenic, so it is reported separately and not added to the plant's Scope 1. Methane and nitrous oxide from burning them still count. Fossil CO2 falls with the coal it replaces. The Ministry of Power's policy asks coal plants to co-fire biomass pellets.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Power plant operators and captive power users",
+  "sections": [
+    {
+      "h": "What to report",
+      "ul": [
+        "Scope 1 fossil CO2: coal burned, from tonnes and lab GCV.",
+        "Biogenic CO2: pellets burned, as a separate line.",
+        "Methane and nitrous oxide from both fuels, in Scope 1.",
+        "Upstream pellet processing and transport: Scope 3 Category 3."
+      ]
+    },
+    {
+      "h": "For buyers of the power",
+      "p": [
+        "Grid consumers use the CEA grid factor, which reflects the mix over time. A captive user can use the plant's own factor if it buys directly from that plant."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Torrefied biomass pellets",
+      "to": "/answers/torrefied-biomass-pellets-emissions-per-tonne"
+    },
+    {
+      "label": "Captive coal plant Category 3",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power, Government of India",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

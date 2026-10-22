@@ -1,0 +1,47 @@
+{
+  "slug": "insurance-associated-emissions-pcaf",
+  "q": "How does an insurer count the emissions of the companies it insures?",
+  "title": "Insurer: insurance-associated emissions",
+  "short": "These are insurance-associated emissions, and PCAF publishes a separate standard for them, covering commercial lines and personal motor. They are reported apart from the insurer's own Scope 1 and 2 and from financed emissions on its investments. Attribute each client's emissions by premium share.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "General insurers and brokers",
+  "sections": [
+    {
+      "h": "Three separate figures",
+      "ul": [
+        "Own operations: offices, travel, IT.",
+        "Investments: financed emissions, Category 15.",
+        "Underwriting: insurance-associated emissions, reported separately."
+      ]
+    },
+    {
+      "h": "Data",
+      "p": [
+        "Use client-reported emissions where you have them and sector estimates elsewhere, with a data quality score."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a borrower's own bills and invoices into dated, fingerprinted emission records, so a lender can use measured data in place of sector averages wherever the borrower shares it.",
+  "links": [
+    {
+      "label": "Bank charges and insurance",
+      "to": "/answers/bank-charges-and-insurance-scope-3"
+    },
+    {
+      "label": "Parametric heat insurance",
+      "to": "/answers/parametric-heat-insurance-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PCAF, Partnership for Carbon Accounting Financials",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

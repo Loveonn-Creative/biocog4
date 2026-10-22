@@ -1,0 +1,43 @@
+{
+  "slug": "donated-goods-emissions-which-scope",
+  "q": "How do we count goods we buy and donate?",
+  "title": "Donated goods: which scope",
+  "short": "Count goods you buy to donate as purchased goods, Scope 3 Category 1, in the year you buy them. If you donate your own products, their production is already in your Scope 1 and 2. Use of sold products and end of life cover sold goods, so donated items usually stay out of them.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "CSR teams and companies donating products",
+  "sections": [
+    {
+      "h": "Examples",
+      "ul": [
+        "Blankets bought for a relief drive: Category 1.",
+        "Your own food products given to a food bank: production already counted.",
+        "Transport you pay for to deliver them: Category 4."
+      ]
+    },
+    {
+      "h": "Disclose",
+      "p": [
+        "If donations are large, note them so readers see why purchases rose without sales."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps purchase invoices on the Scope 3 trail with the category, method and factor source on every line, so spend-based estimates are labelled as estimates and can be replaced with supplier data later.",
+  "links": [
+    {
+      "label": "Diwali gifts for customers",
+      "to": "/answers/diwali-gifts-for-customers-scope-3"
+    },
+    {
+      "label": "Product samples to buyers",
+      "to": "/answers/product-samples-sent-to-buyers-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

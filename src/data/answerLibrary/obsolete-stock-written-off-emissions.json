@@ -1,0 +1,47 @@
+{
+  "slug": "obsolete-stock-written-off-emissions",
+  "q": "Do we remove emissions when obsolete stock is written off?",
+  "title": "Obsolete stock written off",
+  "short": "No. The emissions from making or buying the stock were counted when that happened, and a write-off does not undo them. Do not change earlier years. If the stock is scrapped, its disposal is waste from operations, Category 5. Recording write-offs helps explain rising intensity.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Accounts and sustainability teams",
+  "sections": [
+    {
+      "h": "What to record",
+      "ul": [
+        "Quantity written off and why.",
+        "Disposal route: sold as scrap, recycled, landfilled.",
+        "Disposal invoices for Category 5."
+      ]
+    },
+    {
+      "h": "Intensity",
+      "p": [
+        "Products made and scrapped add emissions without sales, so note them when intensity per unit sold rises."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Warranty replacement parts",
+      "to": "/answers/warranty-replacement-parts-emissions-scope-3"
+    },
+    {
+      "label": "Emissions fell but intensity rose",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

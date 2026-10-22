@@ -1,0 +1,48 @@
+{
+  "slug": "vehicle-scrapping-centre-emissions-per-vehicle",
+  "q": "What are the emissions of scrapping a car at a vehicle scrapping centre?",
+  "title": "Vehicle scrapping centre per vehicle",
+  "short": "The biggest risk is the AC refrigerant: if it escapes instead of being recovered, it is the centre's Scope 1 at a high global warming potential. Add electricity for cutting, balers and shredders, and diesel for handling. Divide by vehicles scrapped. Steel and aluminium sold go to recyclers and mills.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Registered vehicle scrapping facilities and fleet owners",
+  "sections": [
+    {
+      "h": "Per vehicle",
+      "ul": [
+        "Refrigerant recovered vs released, from recovery logs.",
+        "Electricity per vehicle at 0.710 kg CO2 per kWh.",
+        "Diesel for forklifts and cranes.",
+        "Waste oil, coolant and batteries sent for treatment."
+      ]
+    },
+    {
+      "h": "For the fleet owner",
+      "p": [
+        "Scrapping is end of life for your own vehicle, Category 5 waste if you pay for it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site. Intensity per unit uses the activity count you enter, and estimates are labelled as estimates.",
+  "links": [
+    {
+      "label": "Refrigerant recovery at decommissioning",
+      "to": "/answers/ac-decommissioning-refrigerant-recovery-emissions"
+    },
+    {
+      "label": "Lead acid battery recycling",
+      "to": "/answers/lead-acid-battery-recycling-emissions-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

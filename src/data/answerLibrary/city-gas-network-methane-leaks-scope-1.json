@@ -1,0 +1,51 @@
+{
+  "slug": "city-gas-network-methane-leaks-scope-1",
+  "q": "How does a city gas distributor count methane leaks in Scope 1?",
+  "title": "City gas network methane leaks",
+  "short": "Gas lost from pipes, meters and stations is mostly methane released unburnt, so it is the distributor's Scope 1. Convert the lost volume to kilograms of methane using the gas composition, then multiply by methane's global warming potential. For fossil methane the IPCC AR6 100-year value is 29.8.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "City gas distribution companies",
+  "sections": [
+    {
+      "h": "Find the lost gas",
+      "ul": [
+        "Gas bought minus gas billed, adjusted for metering differences, gives lost and unaccounted gas.",
+        "Separate known venting, such as maintenance purging, from leaks.",
+        "Gas burned in the company's own heaters or vehicles is combustion, not a leak."
+      ]
+    },
+    {
+      "h": "Convert",
+      "p": [
+        "Use the methane share and density from your gas quality reports. Report unburnt methane as Scope 1 with the GWP you used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Gas meter reading vs bill",
+      "to": "/answers/gas-meter-reading-vs-png-bill-emissions"
+    },
+    {
+      "label": "Process flare CO2",
+      "to": "/answers/process-flare-co2-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

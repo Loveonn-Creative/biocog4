@@ -1,0 +1,47 @@
+{
+  "slug": "internal-carbon-price-small-company",
+  "q": "Should a small company set an internal carbon price?",
+  "title": "Internal carbon price for a small company",
+  "short": "It helps if you face carbon costs soon, for example EU buyers paying CBAM or a CCTS target. Use a shadow price per tonne in investment decisions, near the cost you expect to face. Many companies use the CBAM certificate price as a reference. CDP also asks whether you use one.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME owners and finance heads",
+  "sections": [
+    {
+      "h": "How to use it",
+      "ol": [
+        "Pick a price per tonne and a date to review it.",
+        "Add price × tonnes saved to each project's savings.",
+        "Compare projects on cost with and without the carbon value."
+      ]
+    },
+    {
+      "h": "Shadow price or fee",
+      "p": [
+        "A shadow price changes decisions without moving money. An internal fee charges departments and funds projects; it is harder to run in a small firm."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "CBAM carbon price proof",
+      "to": "/answers/cbam-carbon-price-paid-what-proof-is-needed"
+    },
+    {
+      "label": "PAT ESCerts after CCTS",
+      "to": "/answers/pat-escerts-after-ccts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "CDP",
+      "url": "https://www.cdp.net"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

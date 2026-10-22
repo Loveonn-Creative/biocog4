@@ -1,0 +1,47 @@
+{
+  "slug": "glass-facade-embodied-carbon-per-sq-m",
+  "q": "What is the embodied carbon of a glass facade per square metre?",
+  "title": "Glass facade embodied carbon per sq m",
+  "short": "Add the glass, usually double glazed units, and the aluminium frames and brackets. Aluminium often decides the result. Multiply each by its weight per square metre and a named factor, or use the supplier's EPD. Operational savings from better glazing are a separate figure.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Architects, developers and facade contractors",
+  "sections": [
+    {
+      "h": "Per square metre",
+      "ul": [
+        "Glass kg × float glass factor, plus coating and lamination.",
+        "Aluminium kg × the supplier's factor.",
+        "Sealants, gaskets and steel fixings."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Aluminium frames and profiles exported to the EU can fall under CBAM; check the CN code."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Aluminium windows and CBAM",
+      "to": "/answers/are-aluminium-windows-and-doors-covered-by-cbam"
+    },
+    {
+      "label": "Aluminium composite panel",
+      "to": "/answers/aluminium-composite-panel-carbon-footprint-per-sq-m"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

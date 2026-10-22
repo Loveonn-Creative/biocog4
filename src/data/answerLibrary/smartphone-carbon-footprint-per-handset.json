@@ -1,0 +1,44 @@
+{
+  "slug": "smartphone-carbon-footprint-per-handset",
+  "q": "What is the carbon footprint of a smartphone per handset?",
+  "title": "Smartphone footprint per handset",
+  "short": "Most of a phone's footprint comes from making it, mainly the chips and the display, not from charging it. Use the brand's published product report for that model if one exists. A company buying phones for staff counts them in Scope 3, usually Category 2 if they are capitalised.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Companies buying phones for staff, and phone assemblers",
+  "sections": [
+    {
+      "h": "Where the emissions sit",
+      "ul": [
+        "Manufacturing: integrated circuits, display, battery and casing.",
+        "Transport from the assembly plant.",
+        "Use: charging electricity, a small share over the phone's life.",
+        "End of life: collection and recycling."
+      ]
+    },
+    {
+      "h": "For a buyer",
+      "p": [
+        "Count each phone once, in the year you buy it, using the model's published figure. If none exists, use a spend-based factor and label it as an estimate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Laptops in Category 2",
+      "to": "/answers/it-hardware-laptops-category-2-emissions"
+    },
+    {
+      "label": "PCB assembly per board",
+      "to": "/answers/pcb-assembly-carbon-footprint-per-board"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

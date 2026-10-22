@@ -1,0 +1,47 @@
+{
+  "slug": "travel-agency-client-flights-which-scope",
+  "q": "Does a travel agency count its clients' flights in its emissions?",
+  "title": "Travel agency and client flights",
+  "short": "Not in its core inventory. The airline burns the fuel, and the trip is the client's business travel. The agency counts its offices, staff travel and commuting. It can report the emissions of trips it sold as a separate, optional figure and explain the method, which corporate clients often ask for.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Travel agencies and corporate travel desks",
+  "sections": [
+    {
+      "h": "Your inventory",
+      "ul": [
+        "Office electricity: Scope 2.",
+        "Staff travel and commuting: Categories 6 and 7.",
+        "IT and booking systems: purchased services."
+      ]
+    },
+    {
+      "h": "Client reports",
+      "p": [
+        "Give clients per-trip figures using a named factor set, so they can add them to their own Category 6."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Flights from travel agent invoice",
+      "to": "/answers/flight-emissions-from-travel-agent-invoice"
+    },
+    {
+      "label": "Hotel stay per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK Government GHG conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

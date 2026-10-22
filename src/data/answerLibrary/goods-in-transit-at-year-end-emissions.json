@@ -1,0 +1,47 @@
+{
+  "slug": "goods-in-transit-at-year-end-emissions",
+  "q": "Which year do goods in transit at year end belong to?",
+  "title": "Goods in transit at year end",
+  "short": "Pick one rule and apply it every year. Many companies count purchased goods by invoice date, the same date their books use. Transport fuel burned is counted in the period the trip happened. State the rule in your report so a verifier can test it against the records.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Accounts and sustainability teams closing the year",
+  "sections": [
+    {
+      "h": "Common rules",
+      "ul": [
+        "Purchased goods: by invoice date or by goods receipt date.",
+        "Freight: by trip date or by invoice date for the freight bill.",
+        "Imports: by bill of entry date, if that is what the books use."
+      ]
+    },
+    {
+      "h": "Avoid double counting",
+      "p": [
+        "A consignment on the water at year end must fall in one year only."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Returned fuel credit notes",
+      "to": "/answers/credit-note-returned-fuel-emissions"
+    },
+    {
+      "label": "Courier shipments from invoices",
+      "to": "/answers/courier-shipment-emissions-from-invoices"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "barter-trade-emissions-accounting",
+  "q": "How do we count emissions when goods are bartered instead of bought?",
+  "title": "Bartered goods: how to count",
+  "short": "Emissions follow the physical goods and services, not the payment. Count goods you receive as purchased goods by quantity, using a factor per kg or unit. Goods you give away were already counted when you made or bought them. A spend-based estimate needs a fair market value, so record one.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Traders and businesses settling deals in kind",
+  "sections": [
+    {
+      "h": "Received",
+      "ul": [
+        "Quantity and type from the delivery challan.",
+        "Supplier figure or a named factor per unit.",
+        "Category 1, or Category 2 if it is a capital item."
+      ]
+    },
+    {
+      "h": "Given",
+      "p": [
+        "No new emissions are created by the swap; the goods' production stays where it was counted."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps purchase invoices on the Scope 3 trail with the category, method and factor source on every line, so spend-based estimates are labelled as estimates and can be replaced with supplier data later.",
+  "links": [
+    {
+      "label": "Intercompany transactions",
+      "to": "/answers/intercompany-transactions-group-carbon-inventory"
+    },
+    {
+      "label": "Capital goods in Scope 3",
+      "to": "/answers/capital-goods-scope-3-count-in-year-of-purchase"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

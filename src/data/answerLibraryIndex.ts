@@ -3,6 +3,14 @@ import type { LibraryIndexEntry } from './answerLibraryTypes';
 
 export const answerLibraryIndex: LibraryIndexEntry[] = [
  {
+  "slug": "3d-printing-carbon-footprint-per-part",
+  "q": "How do I work out the carbon footprint of a 3D printed part?",
+  "title": "3D printed part: carbon footprint",
+  "short": "Add two things: the printer's electricity for that part and the material used. Electricity is the printer's average power times print hours, times 0.710 kg CO2 per kWh. Material is the filament or powder weight, including supports and failed prints, times a named factor for that polymer or metal.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "aac-block-vs-red-brick-carbon-footprint",
   "q": "Is an AAC block lower carbon than a red brick per square metre of wall?",
   "title": "AAC block vs red brick per m2 of wall",
@@ -1371,6 +1379,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "barter-trade-emissions-accounting",
+  "q": "How do we count emissions when goods are bartered instead of bought?",
+  "title": "Bartered goods: how to count",
+  "short": "Emissions follow the physical goods and services, not the payment. Count goods you receive as purchased goods by quantity, using a factor per kg or unit. Goods you give away were already counted when you made or bought them. A spend-based estimate needs a fair market value, so record one.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "baseline-boiler-efficiency-ccts-bm-t-006",
   "q": "How do I set the baseline efficiency of an old boiler or furnace for a CCTS offset project (BM-T-006)?",
   "title": "Baseline boiler efficiency under BM-T-006",
@@ -1433,6 +1449,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually Scope 3. With battery swapping you buy a charged battery as a service; the operator owns the batteries and stations and buys the electricity, so it is the operator's Scope 2. Report your share as a purchased service in Scope 3 Category 1, state the choice, and keep it consistent year to year.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "bauxite-mining-emissions-per-tonne",
+  "q": "What are the emissions of bauxite mining per tonne?",
+  "title": "Bauxite mining emissions per tonne",
+  "short": "Open-cast bauxite mining burns diesel in excavators, dumpers and dozers, which is Scope 1 at 2.68 kg CO2 per litre. Add blasting explosives, electricity for crushing and conveyors, and transport to the refinery. Divide by tonnes dispatched. Bauxite is not a CBAM good, but aluminium is.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "bawal-auto-parts-supplier-carbon-data",
@@ -1695,6 +1719,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Our boiler burns only biomass. Do we still have Scope 1 emissions?",
   "title": "Biomass boilers and Scope 1",
   "short": "Yes, a little. The CO2 from burning biomass is reported separately as biogenic, outside the Scope 1 total, but methane and nitrous oxide from combustion stay in Scope 1. IPCC defaults for wood are 30 kg methane and 4 kg nitrous oxide per terajoule, roughly 2 tonnes of CO2e per terajoule.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "biomass-co-firing-coal-power-plant-emissions",
+  "q": "How does biomass co-firing change a coal power plant's reported emissions?",
+  "title": "Biomass co-firing at a coal plant",
+  "short": "CO2 from the biomass pellets is biogenic, so it is reported separately and not added to the plant's Scope 1. Methane and nitrous oxide from burning them still count. Fossil CO2 falls with the coal it replaces. The Ministry of Power's policy asks coal plants to co-fire biomass pellets.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -2843,6 +2875,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "car-dealership-showroom-carbon-footprint",
+  "q": "What makes up the carbon footprint of a car dealership?",
+  "title": "Car dealership carbon footprint",
+  "short": "Showroom lighting and air conditioning are Scope 2, at 0.710 kg CO2 per kWh. Generator diesel and demo or test drive cars you own are Scope 1. The workshop adds compressors, paint and refrigerant top ups. The cars you sell keep emitting on the road, which is a separate and much larger figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "car-paint-booth-emissions-per-vehicle",
   "q": "How do I calculate the emissions of a car paint booth per vehicle painted?",
   "title": "Car paint booth emissions per job",
@@ -3089,6 +3129,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Estimate it with the average-data method: take tonnes sold by state or region, assume an average distributor to retailer distance for each, multiply by a road freight factor per tonne-km, and label the result as an estimate. Then replace the assumptions with a sample of real distributor trips each year.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "catering-carbon-footprint-per-plate",
+  "q": "What is the carbon footprint of catering per plate?",
+  "title": "Catering footprint per plate",
+  "short": "The food itself is usually the largest part, especially dairy and meat. Cooking fuel is next: LPG at 2.98 kg CO2 per kg is the caterer's Scope 1. Add transport, disposables and leftovers sent as waste, then divide by plates served. The client counts the catering bill in Scope 3.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "cattle-feed-carbon-footprint-per-tonne",
@@ -3763,6 +3811,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "charter-flight-emissions-which-scope",
+  "q": "Which scope does a chartered flight fall in?",
+  "title": "Chartered flight: which scope",
+  "short": "If you charter an aircraft with the operator's crew, the operator burns the fuel, so it is your Scope 3 Category 6. If your company owns or leases and operates the aircraft, the fuel is your Scope 1. Ask the operator for fuel burned; jet fuel is about 3.15 kg CO2 per kg.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "chattogram-rerolled-steel-ship-scrap-cbam",
   "q": "Is steel rerolled from Chattogram ship-breaking scrap low in CBAM embedded emissions?",
   "title": "Ship-breaking scrap steel and CBAM",
@@ -4075,6 +4131,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "city-gas-network-methane-leaks-scope-1",
+  "q": "How does a city gas distributor count methane leaks in Scope 1?",
+  "title": "City gas network methane leaks",
+  "short": "Gas lost from pipes, meters and stations is mostly methane released unburnt, so it is the distributor's Scope 1. Convert the lost volume to kilograms of methane using the gas composition, then multiply by methane's global warming potential. For fossil methane the IPCC AR6 100-year value is 29.8.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "claim-discom-renewable-share-in-scope-2",
   "q": "Can I claim my discom's renewable purchase share as renewable electricity in my Scope 2?",
   "title": "Claiming your discom's renewable share",
@@ -4161,6 +4225,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the mass of bar or billet you start with, finished part plus chips, by the material's emission factor. Add machine energy, kW x hours x load factor x the grid factor, then heat treatment, plating and coolant where used. Material usually dominates, so the input mass matters more than cycle time.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "cng-auto-rickshaw-emissions-per-km",
+  "q": "What are the CO2 emissions of a CNG auto rickshaw per km?",
+  "title": "CNG auto rickshaw CO2 per km",
+  "short": "Divide kilograms of CNG filled by kilometres driven, then multiply by 2.69 kg CO2 per kg of CNG. Get kilograms from refill receipts and kilometres from the meter. For the owner-driver it is Scope 1; a company paying for auto rides counts them as business travel or commuting.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "cng-station-compressor-electricity-per-kg",
+  "q": "How much CO2 does a CNG station's compressor add per kg of gas sold?",
+  "title": "CNG station compressor CO2 per kg",
+  "short": "Divide the compressor's monthly kWh by the kilograms of CNG dispensed, then multiply by 0.710 kg CO2 per kWh. That is the station's Scope 2 per kg. Gas vented during maintenance is unburnt methane and counts in Scope 1. The CO2 from burning the gas belongs to the vehicle owner.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "cng-three-wheeler-cargo-emissions",
@@ -4811,6 +4891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "cotton-fabric-bleaching-emissions-per-metre",
+  "q": "What are the emissions of bleaching cotton fabric per metre?",
+  "title": "Bleaching cotton fabric per metre",
+  "short": "Bleaching uses hydrogen peroxide and other chemicals, which are Scope 3 purchases, and steam to heat the bath, which is boiler fuel in Scope 1. Add washing water heating and machine electricity, then divide by metres or kg processed.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "cotton-farming-emissions-per-kg-seed-cotton",
   "q": "How do I calculate the carbon footprint of growing cotton per kg of seed cotton?",
   "title": "Cotton farming emissions per kg",
@@ -4923,6 +5011,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "csr-tree-plantation-net-off-emissions",
+  "q": "Can our CSR tree plantation be subtracted from our emissions?",
+  "title": "CSR tree plantation and your emissions",
+  "short": "No. The inventory reports gross emissions, and a plantation is reported separately, never subtracted. Trees planted outside your operations are not removals in your inventory. Even on your own land, removals need measurement over time and their own line. You can describe the plantation as a separate climate action.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "cuddalore-chemical-unit-buyer-carbon-data",
   "q": "What carbon data should a chemical unit in Cuddalore send to an export buyer?",
   "title": "Cuddalore chemical unit: buyer carbon data",
@@ -4969,6 +5065,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the fabric per cover, including cutting waste, and multiply by your mill's per-metre or per-kg figure. Add zips, piping, any embroidery or print, stitching, pressing and packing, then divide the unit's energy by covers passed.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "cut-flower-export-carbon-footprint-per-stem",
+  "q": "What is the carbon footprint of an exported cut flower per stem?",
+  "title": "Exported cut flower per stem",
+  "short": "For flowers flown abroad, air freight is usually the largest part. Add greenhouse energy if it is heated or cooled, fertiliser nitrous oxide, cold storage and packing. Divide by stems shipped, counting rejects. Use chargeable or actual weight consistently with your freight factor.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "dahej-agrochemical-exporter-pcf-request",
@@ -5313,6 +5417,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add a year of Scope 1 (DG diesel, refrigerant leaks, any fuel) and Scope 2 (grid electricity), then divide by the number of tests reported from your LIS. Report a second figure that adds the Scope 3 you measured, mainly reagents, sample logistics and biomedical waste, so readers can see both.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "dialysis-session-carbon-footprint",
+  "q": "What is the carbon footprint of one dialysis session?",
+  "title": "Dialysis session carbon footprint",
+  "short": "A session uses electricity for the machine and the water treatment plant, plus single-use dialysers, tubing and concentrate. Patient travel to the centre is often large too. Add the centre's power and water treatment per session, then the consumables per session from purchase records.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "diesel-forklift-vs-electric-forklift-emissions",
@@ -5819,6 +5931,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "donated-goods-emissions-which-scope",
+  "q": "How do we count goods we buy and donate?",
+  "title": "Donated goods: which scope",
+  "short": "Count goods you buy to donate as purchased goods, Scope 3 Category 1, in the year you buy them. If you donate your own products, their production is already in your Scope 1 and 2. Use of sold products and end of life cover sold goods, so donated items usually stay out of them.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "door-hinge-carbon-footprint-per-hinge",
   "q": "How do I calculate the carbon footprint of a door hinge?",
   "title": "Door hinge carbon footprint per hinge",
@@ -5872,6 +5992,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Drone crop spraying emissions",
   "short": "An electric spraying drone uses battery charge, so emissions are the charging electricity times 0.710 kg CO2 per kWh, or genset diesel if charged in the field. Per acre that is small next to tractor spraying. The pesticide itself has its own footprint.",
   "topic": "markets",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "dry-waste-sorting-centre-emissions-per-tonne",
+  "q": "What are the emissions of a dry waste sorting centre per tonne?",
+  "title": "Dry waste sorting centre per tonne",
+  "short": "Sorting itself uses little energy: conveyors, balers and lighting on electricity, plus loaders on diesel. Divide both by tonnes received. The larger figure is usually the rejects sent to landfill or incineration, which are the centre's Scope 3 waste emissions. Recyclables sold are not counted as savings in the inventory.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -5971,6 +6099,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "durga-puja-pandal-carbon-footprint",
+  "q": "How do I work out the carbon footprint of a puja pandal?",
+  "title": "Puja pandal carbon footprint",
+  "short": "Add the generator diesel or temporary grid power for lighting and sound, the materials for the structure and decoration, and waste after immersion or dismantling. Generator diesel is 2.68 kg CO2 per litre. Visitor travel is often large but optional; report it separately if you include it.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "durgapur-steel-products-cbam-figure",
   "q": "What CBAM figure should a buyer use for steel from a Durgapur blast furnace plant?",
   "title": "Durgapur steel: the CBAM figure",
@@ -6049,6 +6185,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Expect requests for Scope 1 and 2 totals with factors, a reduction target and, more often now, a figure per part. Build it from fuel and electricity bills, material purchases and an allocation by weight or machine hours. Answer every customer template from one dataset so the figures agree.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "ecomark-label-india-carbon-claims",
+  "q": "Does the Ecomark label mean my product is low carbon?",
+  "title": "Ecomark label and carbon claims",
+  "short": "No. Ecomark is the Government of India's label for environmentally preferable products, run under the Ministry of Environment, Forest and Climate Change with the Central Pollution Control Board. It checks product criteria, not a carbon footprint figure. A low carbon claim needs its own measured figure.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "ecovadis-carbon-questions-what-evidence",
@@ -6395,6 +6539,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "employee-relocation-emissions-scope-3",
+  "q": "How do we count an employee's relocation in our emissions?",
+  "title": "Employee relocation emissions",
+  "short": "Flights and train journeys for the employee and family that you pay for are business travel, Category 6. Packers and movers are a purchased service, so their trucking is Category 1 or 4 depending on how you classify it. Temporary hotel stays go with business travel.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "empty-container-repositioning-emissions",
   "q": "Should I add empty container return trips to my freight emissions?",
   "title": "Empty container trips in freight emissions",
@@ -6465,6 +6617,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Usually yes. If customers run your generators or machines and buy the fuel, that fuel is your Scope 3 Category 13, downstream leased assets, under the operational control approach. If your own crew runs the machine and you supply the diesel, it is your Scope 1. Never report the same litres in both.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "equipment-rental-emissions-which-scope",
+  "q": "Which scope does rented equipment like a crane or forklift fall in?",
+  "title": "Rented equipment: which scope",
+  "short": "It depends on who operates it and buys the fuel. If you rent the machine without an operator and fuel it yourself, the fuel is your Scope 1. If the rental company supplies the operator and fuel and bills a service, it is your Scope 3. The contract and invoice show which.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "equity-stake-in-joint-venture-scope-3",
@@ -7059,6 +7219,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "fabric-mercerising-emissions-per-metre",
+  "q": "What are the emissions of mercerising cotton fabric per metre?",
+  "title": "Mercerising cotton fabric per metre",
+  "short": "Mercerising treats cotton with caustic soda, then washes it with hot water. Emissions come from the caustic soda used, which is a Scope 3 purchase, and from steam for washing and caustic recovery, which is boiler fuel in Scope 1. Divide both by metres processed.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "fabric-singeing-gas-emissions-per-metre",
+  "q": "What are the CO2 emissions of singeing fabric per metre?",
+  "title": "Fabric singeing CO2 per metre",
+  "short": "Singeing burns off surface fibres with gas flames, so the gas burned is Scope 1. Divide the singeing machine's gas use by metres processed, then multiply by the factor: 2.98 kg CO2 per kg of LPG, or the IPCC natural gas default for PNG. Add the machine's electricity.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "fabricated-structural-steel-carbon-per-tonne",
   "q": "What is the carbon footprint of fabricated structural steel per tonne?",
   "title": "Fabricated structural steel footprint per t",
@@ -7224,6 +7400,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Field sales team travel emissions",
   "short": "Use the travel bills you already approve: train and air tickets, taxi receipts, bus fares and fuel claims. Group them by mode, take distance or fuel, and apply a factor per mode. Field sales travel is Scope 3 Category 6 unless the vehicles are company-owned.",
   "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "film-shoot-carbon-footprint-per-day",
+  "q": "How do I work out the carbon footprint of a film shoot per day?",
+  "title": "Film shoot carbon footprint per day",
+  "short": "On location, generator diesel is usually the largest item at 2.68 kg CO2 per litre. Add crew and cast travel, hotel nights, set construction materials, catering and waste. Divide by shooting days. Hired generator vans with their own operators are the production's Scope 3 unless it controls them.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -7471,6 +7655,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "What is the carbon footprint of formaldehyde?",
   "title": "Formaldehyde: carbon footprint",
   "short": "Formaldehyde is made by oxidising methanol, and the reaction gives off heat that often makes steam. So most of the footprint is the methanol you buy, in Scope 3. Your own emissions are power for blowers and pumps, any start-up fuel, and the off-gas burner.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "formwork-plywood-vs-aluminium-carbon",
+  "q": "Is plywood or aluminium formwork lower carbon?",
+  "title": "Plywood vs aluminium formwork",
+  "short": "Aluminium has far more embodied carbon per kilogram, but it is reused many more times than plywood. Divide each system's material footprint by the number of pours you expect, then compare per square metre of concrete cast. The answer depends on how many repeats the project really gets.",
   "topic": "product",
   "reviewed": "2026-10-22"
  },
@@ -7827,6 +8019,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "garment-steam-press-emissions-per-piece",
+  "q": "What are the emissions of steam pressing per garment?",
+  "title": "Garment steam pressing per piece",
+  "short": "Steam irons and pressing tables are fed by a boiler, so the boiler fuel is the main source, plus electricity for vacuum tables. Find steam or fuel used by the finishing section, divide by pieces pressed, and multiply by the fuel factor. Electric irons count in Scope 2 instead.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "garment-stitching-emissions-per-piece",
   "q": "How do I calculate emissions per garment for a cut-make-trim export unit?",
   "title": "Emissions per garment in a CMT unit",
@@ -8075,6 +8275,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "glass-facade-embodied-carbon-per-sq-m",
+  "q": "What is the embodied carbon of a glass facade per square metre?",
+  "title": "Glass facade embodied carbon per sq m",
+  "short": "Add the glass, usually double glazed units, and the aluminium frames and brackets. Aluminium often decides the result. Multiply each by its weight per square metre and a named factor, or use the supplier's EPD. Operational savings from better glazing are a separate figure.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "glass-jar-vs-pouch-food-export-carbon",
   "q": "Glass jar or retort pouch for pickles and sauces: how much carbon does the switch change per unit shipped?",
   "title": "Glass jar or retort pouch: carbon per unit",
@@ -8139,12 +8347,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "golf-course-carbon-footprint-per-year",
+  "q": "What makes up a golf course's carbon footprint?",
+  "title": "Golf course carbon footprint",
+  "short": "Irrigation pumping and the clubhouse use electricity, at 0.710 kg CO2 per kWh. Mowers and carts on diesel or petrol are Scope 1, and so is nitrous oxide from fertiliser spread on the turf. Do not subtract carbon stored in grass or trees unless it is measured and reported separately.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "goods-bought-from-trader-scope-3",
   "q": "Which emission factor applies when I buy steel or chemicals from a trader, not the mill?",
   "title": "Emission factor for goods bought via a trader",
   "short": "Use the factor of the producer that made the goods, not the trader. A trader adds little beyond storage and transport. Find the mill or plant from the mill test certificate or the trader's purchase records, then multiply your quantity by that producer's per tonne factor.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "goods-in-transit-at-year-end-emissions",
+  "q": "Which year do goods in transit at year end belong to?",
+  "title": "Goods in transit at year end",
+  "short": "Pick one rule and apply it every year. Many companies count purchased goods by invoice date, the same date their books use. Transport fuel burned is counted in the period the trip happened. State the rule in your report so a verifier can test it against the records.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "gqeberha-auto-supplier-oem-carbon-request",
@@ -8616,6 +8840,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Haiyan fasteners: wire rod precursor data",
   "short": "Ask the wire rod mill for its specific embedded emissions per tonne and add your own direct emissions, mainly gas for heat treatment and any annealing. Screws and bolts under CN 7318 are CBAM goods, and the rod is usually most of the figure.",
   "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "hand-block-printed-fabric-carbon-per-metre",
+  "q": "What is the carbon footprint of hand block printed fabric per metre?",
+  "title": "Hand block printed fabric per metre",
+  "short": "The printing itself is done by hand, so most emissions come from the base fabric, the dyes and pigments, and the steaming, washing and drying after printing. Boiler fuel for steaming is Scope 1 for the printer. Divide fuel and chemicals by metres printed.",
+  "topic": "product",
   "reviewed": "2026-10-22"
  },
  {
@@ -10035,6 +10267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "insurance-associated-emissions-pcaf",
+  "q": "How does an insurer count the emissions of the companies it insures?",
+  "title": "Insurer: insurance-associated emissions",
+  "short": "These are insurance-associated emissions, and PCAF publishes a separate standard for them, covering commercial lines and personal motor. They are reported apart from the insurer's own Scope 1 and 2 and from financed emissions on its investments. Attribute each client's emissions by premium share.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "inter-unit-stock-transfer-invoice-emissions",
   "q": "How do I treat GST stock transfer invoices between my own units in carbon accounting?",
   "title": "Stock transfer invoices between own units",
@@ -10057,6 +10297,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Split the trip into legs, calculate each one as cargo weight x leg distance x that mode's factor, then add the legs and the terminal handling in between. ISO 14083 calls this a transport chain. Use the real route and the same factor basis, well-to-wheel, for every leg.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "internal-carbon-price-small-company",
+  "q": "Should a small company set an internal carbon price?",
+  "title": "Internal carbon price for a small company",
+  "short": "It helps if you face carbon costs soon, for example EU buyers paying CBAM or a CCTS target. Use a shadow price per tonne in investment decisions, near the cost you expect to face. Many companies use the CBAM certificate price as a reference. CDP also asks whether you use one.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "internal-controls-for-carbon-data-msme",
@@ -11227,6 +11475,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "kulhad-clay-cup-carbon-footprint",
+  "q": "What is the carbon footprint of a kulhad clay tea cup?",
+  "title": "Kulhad clay cup: carbon footprint",
+  "short": "A kulhad's footprint comes almost entirely from firing it in the kiln. If the kiln burns wood or agricultural waste, that CO2 is biogenic and reported separately; coal or diesel firing is fossil CO2. Divide the kiln's fuel per firing by the number of cups that come out whole.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "kurta-carbon-footprint-per-piece",
   "q": "How do I calculate the carbon footprint of a kurta?",
   "title": "Kurta carbon footprint per piece",
@@ -11337,6 +11593,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes for Indian policy: since the Ministry of Power order of 8 March 2019, hydro plants above 25 MW are renewable energy. For Scope 2 it only matters in the market-based figure, and only if you hold the contract or certificate for that hydro power. RE100 accepts hydro, subject to its own plant and claim tests.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "law-firm-carbon-footprint-per-lawyer",
+  "q": "What is the carbon footprint of a law firm per lawyer?",
+  "title": "Law firm carbon footprint per lawyer",
+  "short": "Office electricity, mostly air conditioning and IT, is the firm's main Scope 2. Business travel, commuting, paper, IT equipment and cloud services are Scope 3 and often larger. Divide the total by lawyers or by all staff, and name the denominator so the figure compares year to year.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "lca-vs-product-carbon-footprint",
@@ -12003,6 +12267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "marathon-carbon-footprint-per-runner",
+  "q": "What is the carbon footprint of a marathon per runner?",
+  "title": "Marathon carbon footprint per runner",
+  "short": "Runners' travel to the event is usually the largest share, especially by air. The organiser adds race kits, medals, bottled water, generators and waste. Divide the total by runners. Count travel separately so the organiser can show what it controls.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "marble-slab-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of marble slabs per square metre?",
   "title": "Marble slab carbon footprint per m2",
@@ -12193,6 +12465,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the national electricity system emission factor published each year by Mexico's environment and energy authorities, for the year the power was used, and cite it. Recent figures are a little over 0.4 kg of CO2 per kWh, reflecting a gas heavy grid.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "mica-mining-and-processing-emissions",
+  "q": "What are the emissions of mica mining and processing?",
+  "title": "Mica mining and processing emissions",
+  "short": "Mining uses diesel for excavation and transport. Processing into flakes or powder uses electricity for grinding and screening, and fuel for drying. Divide each by tonnes of product. Buyers in paints, cosmetics and electronics count mica as a purchased material in Scope 3.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "microsoft-supplier-carbon-free-electricity-requirement",
@@ -12971,6 +13251,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "obsolete-stock-written-off-emissions",
+  "q": "Do we remove emissions when obsolete stock is written off?",
+  "title": "Obsolete stock written off",
+  "short": "No. The emissions from making or buying the stock were counted when that happened, and a write-off does not undo them. Do not change earlier years. If the stock is scrapped, its disposal is waste from operations, Category 5. Recording write-offs helps explain rising intensity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "ocr-vs-ai-vision-invoice-extraction",
   "q": "What is the difference between template OCR and AI vision for reading invoices?",
   "title": "Template OCR or AI vision for invoices?",
@@ -13715,6 +14003,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "petroleum-pipeline-vs-tanker-truck-emissions",
+  "q": "Is moving fuel by pipeline lower carbon than by tanker truck?",
+  "title": "Fuel by pipeline vs tanker truck",
+  "short": "Usually yes per tonne-kilometre, because pumps move far more fuel per unit of energy than trucks burning diesel. The pipeline operator counts its pumping power and fuel. A fuel buyer usually finds this transport inside the fuel's upstream emissions, Scope 3 Category 3, unless it pays for transport separately.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "pharma-brine-chilling-plant-emissions",
   "q": "How do I calculate emissions from a pharma plant's brine chilling system running below zero?",
   "title": "Brine chilling plant emissions in pharma",
@@ -14259,6 +14555,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "printed-brochures-catalogues-scope-3",
+  "q": "How do we count printed brochures and catalogues in Scope 3?",
+  "title": "Printed brochures and catalogues",
+  "short": "They are purchased goods, Scope 3 Category 1. Use the paper weight and a paper factor per kg, plus the printer's energy if it shares a figure. Without weights, use the printing bill with a spend-based factor and label it as an estimate. Distribution by courier is transport.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "printed-fabric-carbon-footprint-per-metre",
   "q": "How do I calculate the carbon footprint of rotary or screen printed fabric per metre?",
   "title": "Printed fabric carbon footprint per metre",
@@ -14487,6 +14791,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How much energy does trimming a pump impeller save?",
   "title": "Pump impeller trimming savings",
   "short": "If a pump runs against a half-closed valve, trimming the impeller to the flow you need saves energy roughly with the cube of the diameter ratio. A 5% trim cuts power by about 14% on the affinity laws; measure real kW before and after.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "pumped-storage-hydro-electricity-scope-2",
+  "q": "How is electricity used for pumped storage hydro counted in Scope 2?",
+  "title": "Pumped storage hydro and Scope 2",
+  "short": "The operator buys grid power to pump water uphill, so that power is the operator's Scope 2. Only part of it comes back when the water is released; round-trip efficiency is typically around 70 to 80 percent, so losses add to the operator's footprint. Customers count the power they buy at their usual grid factor.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -14769,6 +15081,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the mix design in kg per cubic metre, multiply each ingredient by its cradle-to-gate factor, then add batching plant electricity and transit mixer diesel divided by cubic metres delivered. Cement dominates, so the cement factor and the share replaced by fly ash or GGBS decide most of the result.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "real-estate-developer-sold-flats-scope-3",
+  "q": "How does a real estate developer count emissions from flats it sells?",
+  "title": "Developer: emissions from sold flats",
+  "short": "Materials like cement, steel and glass are the developer's purchased goods, Category 1, counted when bought. Contractors' site diesel and power are Scope 3 unless the developer runs the site. Residents' electricity after sale is use of sold products, Category 11, usually estimated over the building's expected life.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "rec-vintage-which-year-can-it-cover",
@@ -15979,6 +16299,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "sewing-machine-carbon-footprint-per-unit",
+  "q": "What is the carbon footprint of an industrial sewing machine?",
+  "title": "Industrial sewing machine per unit",
+  "short": "Most of it is in the materials: the cast iron or aluminium body, the steel parts and the motor. Assembly energy is a small share. Ask the maker for a figure per unit, or estimate from the machine's weight by material. A garment factory buying machines counts them as capital goods.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "sewing-thread-carbon-footprint-per-kg",
   "q": "What is the carbon footprint of sewing thread per kg?",
   "title": "Sewing thread per kg",
@@ -16417,6 +16745,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Take the kWh from the meter itself. Download monthly consumption from your discom's app or consumer portal, or photograph the meter's cumulative kWh reading on the same date each month and subtract. Ask the discom for a monthly statement if you need a document. Do not turn recharge rupees into kWh.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "smartphone-carbon-footprint-per-handset",
+  "q": "What is the carbon footprint of a smartphone per handset?",
+  "title": "Smartphone footprint per handset",
+  "short": "Most of a phone's footprint comes from making it, mainly the chips and the display, not from charging it. Use the brand's published product report for that model if one exists. A company buying phones for staff counts them in Scope 3, usually Category 2 if they are capitalised.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "sme-climate-commitment-what-it-means",
@@ -16913,6 +17249,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "They are purchased goods, so they belong in Scope 3 Category 1. Use quantities and materials from the invoice where you have them, such as pieces of cotton or polyester uniform and pairs of safety shoes, and a spend-based estimate for the rest. They are usually a small line.",
   "topic": "accounting",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "staffing-agency-contract-workers-scope",
+  "q": "How do we count contract workers supplied by a staffing agency?",
+  "title": "Contract workers in your inventory",
+  "short": "Energy they use at your site is already in your Scope 1 and 2, because you control the site. The agency's fee is a purchased service, Scope 3 Category 1. Many companies include contract workers' commuting in Category 7 with employees; say whether you do.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "stainless-steel-kitchen-sink-carbon-footprint-per-piece",
@@ -17563,6 +17907,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "team-offsite-emissions-scope-3",
+  "q": "How do we count a company offsite in our emissions?",
+  "title": "Company offsite emissions",
+  "short": "Travel to the venue is business travel, Category 6. Hotel nights also go in Category 6, and a per-night factor covers the venue's energy. Meals and venue hire you pay for separately are purchased services. Add them up and keep the event as one line so it is easy to compare.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "telecom-tower-diesel-emissions-per-site",
   "q": "How do I calculate the emissions of a telecom tower site?",
   "title": "Telecom tower emissions per site",
@@ -17915,6 +18267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "trade-finance-financed-emissions",
+  "q": "How does a bank count emissions from trade finance?",
+  "title": "Trade finance financed emissions",
+  "short": "Trade finance falls under financed emissions, reported in Scope 3 Category 15. PCAF sets methods for asset classes such as business loans; check its current edition for trade finance. If no method applies, attribute the client's emissions by the share of its trade you financed, and explain the method.",
+  "topic": "markets",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "train-travel-emissions-factor-india",
   "q": "What emission factor should I use for business travel by Indian Railways?",
   "title": "Emission factor for train travel in India",
@@ -17959,6 +18319,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Our container goes via a transshipment hub. How do we count the freight emissions?",
   "title": "Transshipment: counting each leg",
   "short": "Count each leg separately: the feeder ship to the hub, the handling at the hub and the mainline ship onwards. Add them for the shipment total. Using one direct distance from origin to destination understates it, because the route via the hub is longer.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "travel-agency-client-flights-which-scope",
+  "q": "Does a travel agency count its clients' flights in its emissions?",
+  "title": "Travel agency and client flights",
+  "short": "Not in its core inventory. The airline burns the fuel, and the trip is the client's business travel. The agency counts its offices, staff travel and commuting. It can report the emissions of trips it sold as a separate, optional figure and explain the method, which corporate clients often ask for.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
  },
@@ -18419,6 +18787,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "used-cooking-oil-biodiesel-emission-factor",
+  "q": "What emission factor do I use for biodiesel made from used cooking oil?",
+  "title": "Used cooking oil biodiesel factor",
+  "short": "CO2 from burning biodiesel is biogenic, so report it outside the scopes. Methane and nitrous oxide from the engine stay in Scope 1. For a blend, only the diesel share counts as fossil CO2. Collection, processing and transport of the oil go in Category 3, and published factors include them.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "used-engine-oil-re-refining-emissions",
   "q": "How do I calculate the emissions of re-refining used engine oil?",
   "title": "Used oil re-refining emissions",
@@ -18585,6 +18961,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the polycarbonate lens, housing, reflector and electronics per lamp and multiply by supplier figures. Add moulding, coating, metallising and assembly energy, then divide the plant's energy by lamps made.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "vehicle-scrapping-centre-emissions-per-vehicle",
+  "q": "What are the emissions of scrapping a car at a vehicle scrapping centre?",
+  "title": "Vehicle scrapping centre per vehicle",
+  "short": "The biggest risk is the AC refrigerant: if it escapes instead of being recovered, it is the centre's Scope 1 at a high global warming potential. Add electricity for cutting, balers and shredders, and diesel for handling. Divide by vehicles scrapped. Steel and aluminium sold go to recyclers and mills.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "vehicle-scrapping-rvsf-emissions-per-vehicle",
@@ -19041,6 +19425,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the brass or plastic body, the register and the internal parts per meter and multiply by supplier figures, adding electronics for smart meters. Add machining, moulding, assembly and calibration energy, then divide the plant's energy by meters made.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "water-softener-salt-and-power-emissions",
+  "q": "What are the emissions of running a water softener?",
+  "title": "Water softener emissions",
+  "short": "Usually small. A softener uses salt to regenerate its resin, which is a purchased material in Scope 3, and some electricity for pumps and controls in Scope 2. Measure salt bought and pump kWh per kilolitre treated. Soft water can save boiler fuel by reducing scale.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "water-tanker-purchases-which-scope",
@@ -19737,6 +20129,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Urea formaldehyde and phenolic resins are made from fossil feedstocks, so they carry a real upstream footprint. Multiply kilograms of resin bought by a per kg factor from the supplier or a database, and keep it separate from timber, which is mostly biogenic carbon.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "yarn-doubling-twisting-electricity-per-kg",
+  "q": "How much CO2 does yarn doubling and twisting add per kg?",
+  "title": "Yarn doubling and twisting CO2 per kg",
+  "short": "Doubling and twisting run on electricity, so divide the section's monthly kWh by kg of yarn produced and multiply by 0.710 kg CO2 per kWh. Finer counts and higher twist take more energy per kg. Add any humidification and compressed air the section uses.",
+  "topic": "product",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "yarn-dyeing-carbon-footprint-per-kg",

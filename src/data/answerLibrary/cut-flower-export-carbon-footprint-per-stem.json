@@ -1,0 +1,48 @@
+{
+  "slug": "cut-flower-export-carbon-footprint-per-stem",
+  "q": "What is the carbon footprint of an exported cut flower per stem?",
+  "title": "Exported cut flower per stem",
+  "short": "For flowers flown abroad, air freight is usually the largest part. Add greenhouse energy if it is heated or cooled, fertiliser nitrous oxide, cold storage and packing. Divide by stems shipped, counting rejects. Use chargeable or actual weight consistently with your freight factor.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Flower growers and exporters",
+  "sections": [
+    {
+      "h": "Per stem",
+      "ul": [
+        "Farm: fertiliser, pumps, any heating or cooling.",
+        "Packhouse: cold room electricity at 0.710 kg CO2 per kWh.",
+        "Freight: kg shipped × air freight factor per tonne-km.",
+        "Packaging."
+      ]
+    },
+    {
+      "h": "Sea freight",
+      "p": [
+        "Where flowers can travel by reefer container, transport emissions fall sharply; compare both per stem."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the energy invoices behind the making stage into a fingerprinted Scope 1 and 2 record, and keeps material invoices on the Scope 3 trail. Material factors come from your supplier or a named database and are labelled with their source, so the product figure can be traced line by line.",
+  "links": [
+    {
+      "label": "Air freight weight",
+      "to": "/answers/air-freight-actual-or-chargeable-weight"
+    },
+    {
+      "label": "Polyhouse farming per kg",
+      "to": "/answers/polyhouse-farming-emissions-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
