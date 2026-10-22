@@ -446,7 +446,7 @@ const Pricing = () => {
   }).format(n);
 
   return (
-    <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
+    <div className="canvas-stone relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
       </Helmet>
       <CarbonParticles />
@@ -603,7 +603,7 @@ const Pricing = () => {
                   aria-pressed={billingCycle === 'yearly'}
                 >
                   Billed Yearly
-                  <span className="ml-1.5 sm:ml-2 px-1.5 py-0.5 text-[10px] rounded-full bg-success/15 text-success font-semibold align-middle">
+                  <span className={cn("ml-1.5 sm:ml-2 px-1.5 py-0.5 text-[10px] rounded-full font-semibold align-middle", billingCycle === 'yearly' ? "bg-primary-foreground/20 text-primary-foreground" : "bg-success/15 text-success")}>
                     SAVE UP TO {MAX_SAVING_PERCENT}%
                   </span>
                 </button>

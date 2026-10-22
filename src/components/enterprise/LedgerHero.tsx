@@ -155,7 +155,7 @@ export const LedgerHero = ({ onSelect }: { onSelect: (index: number) => void }) 
                   <button type="button" onClick={() => pick(r.ex)} className="min-w-0 flex-1 text-left">
                     <span className="flex items-baseline justify-between gap-2 text-[11px] sm:text-xs">
                       <span className="truncate">{e.scope} · {e.activity}</span>
-                      <span className={`shrink-0 font-mono tabular-nums ${flag ? "text-warning" : ""}`}>{flag ? t("ent.hero.flagged", "Review") : e.result}</span>
+                      <span className={`shrink-0 font-mono tabular-nums ${flag ? "text-warning dark:text-amber-800" : ""}`}>{flag ? t("ent.hero.flagged", "Review") : e.result}</span>
                     </span>
                     <span className="mt-0.5 block truncate font-mono text-[10px] text-background/50">{flag ? t("ent.hero.queue", "To a person: request primary data") : `${e.source} · conf ${e.confidence}`}</span>
                   </button>
