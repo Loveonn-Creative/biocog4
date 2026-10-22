@@ -1,0 +1,61 @@
+{
+  "slug": "rustenburg-pgm-smelter-buyer-scope-3",
+  "q": "A catalyst maker asks our Rustenburg platinum smelter for carbon data. Is it a CBAM good?",
+  "title": "Rustenburg PGM smelter buyer carbon data",
+  "short": "No. Platinum group metals are not CBAM goods. The buyer wants a Scope 3 figure: emissions from mining, concentrating, smelting and refining per ounce or kilogram, where Eskom electricity is usually the largest part. Give the allocation basis between metals.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Platinum group metal miners, smelters and refiners in the Rustenburg area",
+  "sections": [
+    {
+      "h": "What drives the figure",
+      "ul": [
+        "Electricity for furnaces and concentrators, at the Eskom grid factor.",
+        "Diesel for mining equipment.",
+        "Coal or reductants in smelting."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "One ore yields platinum, palladium, rhodium and base metals. Say whether emissions are split by mass or by value; value allocation puts most of it on the precious metals."
+      ]
+    },
+    {
+      "h": "Format",
+      "p": [
+        "Car catalyst makers usually want kilograms of CO2e per kilogram of metal, with the year and the grid factor used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Eskom grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    },
+    {
+      "label": "Ferrochrome on Eskom power",
+      "to": "/answers/south-africa-ferrochrome-exporter-eskom-power-cbam"
+    },
+    {
+      "label": "Emissions share for a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

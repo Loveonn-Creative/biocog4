@@ -1,0 +1,57 @@
+{
+  "slug": "buyer-asks-scope-1-2-split-by-product-line",
+  "q": "A buyer wants our Scope 1 and 2 split by product line. How do we do it fairly?",
+  "title": "Scope 1 and 2 split by product line",
+  "short": "Split each source by what actually uses it: sub-meters for electricity where you have them, machine hours or output weight where you do not. Assign dedicated fuels to the line that burns them. Write down the basis so it stays the same each year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Manufacturers supplying several product lines to one buyer",
+  "sections": [
+    {
+      "h": "Electricity",
+      "ul": [
+        "Sub-meter readings by line.",
+        "Otherwise motor ratings times running hours.",
+        "Shared loads like lighting by floor area or output."
+      ]
+    },
+    {
+      "h": "Fuels",
+      "p": [
+        "A furnace or boiler serving one line goes to that line; shared boilers by steam use or output."
+      ]
+    },
+    {
+      "h": "Consistency",
+      "p": [
+        "Use the same basis for every buyer and every year, and say what it is."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Emissions share for a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    },
+    {
+      "label": "Carbon per kg or per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    },
+    {
+      "label": "Steam meter or fuel records",
+      "to": "/answers/steam-flow-meter-or-fuel-records-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

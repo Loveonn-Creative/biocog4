@@ -1,0 +1,57 @@
+{
+  "slug": "verifier-asks-list-of-excluded-emission-sources",
+  "q": "The verifier wants a list of the emission sources we left out. Why, and what goes in it?",
+  "title": "Excluded emission sources list",
+  "short": "Verifiers check that exclusions are small and justified. List each source left out, such as fire extinguishers, small refrigerant units or staff travel, with an estimate of its size and the reason. Keep the total of exclusions within the agreed materiality threshold.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs defining the boundary of a GHG inventory for verification",
+  "sections": [
+    {
+      "h": "For each exclusion",
+      "ul": [
+        "The source and its scope.",
+        "A rough estimate of size.",
+        "Why it is left out: size, data or relevance."
+      ]
+    },
+    {
+      "h": "Thresholds",
+      "p": [
+        "Exclusions should together stay small against the total, within the materiality level agreed with the verifier."
+      ]
+    },
+    {
+      "h": "Review",
+      "p": [
+        "Recheck the list each year; a source that grows may need to come back in."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record with its source document, fingerprint, factor and method version, so a verifier can trace any figure back to the bill it came from.",
+  "links": [
+    {
+      "label": "Materiality in verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "Internal review before verification",
+      "to": "/answers/internal-review-before-external-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

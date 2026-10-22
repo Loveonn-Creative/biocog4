@@ -1,0 +1,63 @@
+{
+  "slug": "batam-steel-fabricator-cbam-structures",
+  "q": "Our Batam yard fabricates steel structures for an EU project. Are they CBAM goods?",
+  "title": "Batam steel structures and CBAM",
+  "short": "Yes. Steel structures under CN 7308 are CBAM goods. Your figure is the yard's own direct emissions, such as fuel for cutting, welding gases and painting ovens, plus the embedded emissions of the plates, sections and tubes bought in, which usually dominate.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel fabrication yards in Batam and the Riau Islands exporting structures to EU projects",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Embedded emissions of purchased steel, from each mill or a default value.",
+        "Fuel burnt in the yard: gas cutting, preheating, ovens.",
+        "Electricity is not counted for steel goods."
+      ]
+    },
+    {
+      "h": "Records the importer needs",
+      "ul": [
+        "Mill certificates linking each plate or section to a mill.",
+        "Tonnes of each input per shipped structure.",
+        "Fuel use for the period."
+      ]
+    },
+    {
+      "h": "Offcuts",
+      "p": [
+        "Steel cut away and scrapped still came in with its embedded emissions, so the figure per tonne shipped rises with waste."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Are steel structures covered?",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    },
+    {
+      "label": "Fabricator structure emissions",
+      "to": "/answers/adityapur-fabricator-steel-structures-cbam-emissions"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

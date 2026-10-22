@@ -1,0 +1,61 @@
+{
+  "slug": "carbon-baseline-before-green-loan-application",
+  "q": "Do I need a carbon baseline before applying for a green loan?",
+  "title": "Carbon baseline before a green loan",
+  "short": "It helps. A baseline of twelve months of energy use, fuel and production shows where you start, so the project's effect can be estimated and later checked. Some lenders ask for it; even where they do not, it makes the case clearer.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs preparing a green loan or sustainability-linked loan application",
+  "sections": [
+    {
+      "h": "What to include",
+      "ul": [
+        "Twelve months of electricity bills and fuel invoices.",
+        "Production for the same months.",
+        "Emissions and intensity per unit, with factors stated."
+      ]
+    },
+    {
+      "h": "Using it",
+      "p": [
+        "Compare the baseline with the project's expected savings, labelled as an estimate, and repeat the measurement after commissioning."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "p": [
+        "Missing months and unrecorded diesel are the usual problems; fill them before applying."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns bills and fuel invoices into a dated, traceable emissions record, the kind of evidence lenders may ask for. Lenders decide, and financing is never guaranteed.",
+  "links": [
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "How lenders read GHG reports",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, green and sustainability-linked loan principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

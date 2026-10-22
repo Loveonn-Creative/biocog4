@@ -1,0 +1,61 @@
+{
+  "slug": "riau-pulp-supplier-paper-buyer-scope-3",
+  "q": "We buy pulp from Riau. What should we ask the mill for our Scope 3 figure?",
+  "title": "Riau pulp supplier Scope 3 data",
+  "short": "Ask for fossil emissions per tonne of pulp from fuels and bought electricity, biogenic CO2 from black liquor and biomass reported separately, and whether emissions from plantation land use, including any peat drainage, are included. Pulp is not a CBAM good.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Paper, tissue and packaging makers buying pulp from Riau and other Indonesian mills",
+  "sections": [
+    {
+      "h": "Ask for",
+      "ul": [
+        "Fossil Scope 1 and 2 per tonne of pulp.",
+        "Biogenic CO2 shown apart from the fossil total.",
+        "Chemicals and transport to port, if included."
+      ]
+    },
+    {
+      "h": "Land use",
+      "p": [
+        "Plantation emissions, especially from drained peat, can be larger than the mill's own. Ask whether they are counted and on what basis, and record the answer with the figure."
+      ]
+    },
+    {
+      "h": "Using the figure",
+      "p": [
+        "Put it in Scope 3 category 1. Note which parts the supplier included, so a later, fuller figure can replace it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Black liquor biogenic CO2",
+      "to": "/answers/rajahmundry-pulp-mill-black-liquor-biogenic-co2"
+    },
+    {
+      "label": "Biomass CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    },
+    {
+      "label": "Buyer questionnaire formats",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "shahabad-stone-polishing-unit-electricity",
+  "q": "How do Shahabad stone cutting and polishing units work out their carbon footprint?",
+  "title": "Shahabad stone polishing footprint",
+  "short": "Most of it is electricity for gang saws, cutters and polishers, at 0.710 kg CO2 per kWh, plus diesel for quarry machines and trucks. Divide by square metres of finished slab. Record units from bills and output from sales.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Limestone slab cutting and polishing units in Shahabad and Kalaburagi, Karnataka",
+  "sections": [
+    {
+      "h": "Sources",
+      "ul": [
+        "Electricity for cutting and polishing.",
+        "Diesel for quarry excavators, compressors and loaders.",
+        "Truck transport to buyers, if asked."
+      ]
+    },
+    {
+      "h": "Per square metre",
+      "p": [
+        "Divide by finished area at a stated thickness. Breakage and rejects raise the figure, so use good output."
+      ]
+    },
+    {
+      "h": "Reducing it",
+      "p": [
+        "Rooftop solar and efficient motors cut the largest share; show their effect against a recorded baseline."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Kota stone footprint",
+      "to": "/answers/kota-stone-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Kishangarh marble electricity",
+      "to": "/answers/kishangarh-marble-processing-electricity-per-sq-m"
+    },
+    {
+      "label": "Carbon per kg or per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

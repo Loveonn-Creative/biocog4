@@ -1,0 +1,61 @@
+{
+  "slug": "bekasi-auto-parts-supplier-carbon-data",
+  "q": "A carmaker asks our Bekasi parts plant for carbon data. Where do we start?",
+  "title": "Bekasi auto parts supplier carbon data",
+  "short": "Start with electricity bills and any diesel or LPG, which make up most of a parts plant's own footprint, then add the steel, aluminium or plastic bought in, which is usually larger. Give the carmaker a figure per part or per kilogram, with the period stated.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tier 1 and tier 2 automotive suppliers in Bekasi and Karawang",
+  "sections": [
+    {
+      "h": "Your own plant",
+      "ul": [
+        "Electricity from the grid, at the Indonesian grid factor.",
+        "Diesel for generators and forklifts; LPG for heat treatment.",
+        "Any captive power on site."
+      ]
+    },
+    {
+      "h": "Materials",
+      "p": [
+        "Steel, aluminium and resin usually outweigh the plant's own energy. Use supplier figures where you have them and stated defaults where you do not."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "If one line makes parts for several customers, split by weight or machine hours and say which."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Indian auto supplier carbon data",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Emissions share for a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    },
+    {
+      "label": "Carbon per kg or per piece",
+      "to": "/answers/buyer-wants-carbon-per-kg-not-per-piece"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

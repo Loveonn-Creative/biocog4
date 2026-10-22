@@ -1,0 +1,61 @@
+{
+  "slug": "betim-auto-parts-supplier-carbon-data",
+  "q": "We supply parts to a carmaker in Betim. How does Brazil's low-carbon grid affect our figure?",
+  "title": "Betim auto parts and Brazil's grid",
+  "short": "Brazil's grid is mostly hydro, so electricity adds less per unit than in most countries. That leaves fuels and purchased steel, aluminium and plastic as the bigger share. Use the official Brazilian grid factor for the year and show materials separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Automotive suppliers in Betim and the Minas Gerais auto cluster",
+  "sections": [
+    {
+      "h": "Electricity",
+      "p": [
+        "Use the published Brazilian grid factor for the reporting year. It changes with rainfall, so state the year."
+      ]
+    },
+    {
+      "h": "Other sources",
+      "ul": [
+        "Diesel, LPG or gas for heat treatment and forklifts.",
+        "Purchased steel, aluminium and resins, often the largest part.",
+        "Charcoal pig iron, if used, needs evidence for any biogenic claim."
+      ]
+    },
+    {
+      "h": "For the buyer",
+      "p": [
+        "Give a per part figure with materials, energy and transport shown apart."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Brazil grid factor",
+      "to": "/answers/brazil-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Indian auto supplier carbon data",
+      "to": "/answers/pune-chakan-hosur-auto-supplier-carbon-data"
+    },
+    {
+      "label": "Emissions share for a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

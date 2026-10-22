@@ -1,0 +1,62 @@
+{
+  "slug": "rooftop-solar-loan-msme-what-banks-ask",
+  "q": "What do banks usually ask an MSME for when financing rooftop solar?",
+  "title": "Rooftop solar loan: what banks ask",
+  "short": "Usually past electricity bills, the sanctioned load, a vendor quotation and design, proof the roof is owned or leased long enough, and net metering or approval status. Some also ask for expected savings, which should be labelled as an estimate.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners planning rooftop solar on factory roofs",
+  "sections": [
+    {
+      "h": "Typical documents",
+      "ul": [
+        "Twelve months of electricity bills.",
+        "Sanctioned load and connection details.",
+        "Vendor quote, design and warranty terms.",
+        "Roof ownership or lease papers."
+      ]
+    },
+    {
+      "h": "Savings",
+      "p": [
+        "Banks may want units saved and money saved per year. Base it on your bills and the system size, and call it an estimate."
+      ]
+    },
+    {
+      "h": "After installation",
+      "p": [
+        "Keep generation and import-export readings; they show the result and support any green loan reporting."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns bills and fuel invoices into a dated, traceable emissions record, the kind of evidence lenders may ask for. Lenders decide, and financing is never guaranteed.",
+  "links": [
+    {
+      "label": "Refinance an existing solar plant",
+      "to": "/answers/green-loan-refinance-existing-solar-plant"
+    },
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, green and sustainability-linked loan principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

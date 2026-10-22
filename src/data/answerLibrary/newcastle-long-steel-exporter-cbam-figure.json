@@ -1,0 +1,61 @@
+{
+  "slug": "newcastle-long-steel-exporter-cbam-figure",
+  "q": "How does a long steel mill in Newcastle, KwaZulu-Natal give EU buyers a CBAM figure?",
+  "title": "Newcastle long steel CBAM figure",
+  "short": "For a blast furnace route, add coke, coal and other carbon inputs by mass balance, plus fuels for rolling, and subtract carbon leaving in products and by-products. Divide by tonnes of bar, rod or sections. Grid electricity is not counted for steel goods.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Long steel producers in KwaZulu-Natal and their EU importers",
+  "sections": [
+    {
+      "h": "Mass balance",
+      "ul": [
+        "Carbon in coke, coal, limestone and dolomite charged.",
+        "Carbon leaving in steel, slag sold and exported gases.",
+        "Natural gas or fuel in reheating furnaces."
+      ]
+    },
+    {
+      "h": "South African specifics",
+      "p": [
+        "Load shedding diesel used for process heat counts as direct emissions. Carbon tax paid may be deductible from the CBAM cost if it meets the rules."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Use the mill's own measured figure where possible; default values are usually higher."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "South African carbon tax and CBAM",
+      "to": "/answers/south-africa-carbon-tax-cbam-deduction-steel"
+    },
+    {
+      "label": "Eskom grid factor",
+      "to": "/answers/eskom-grid-factor-for-south-african-suppliers"
+    },
+    {
+      "label": "Tangshan coil CBAM figure",
+      "to": "/answers/tangshan-steel-hot-rolled-coil-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "transition-finance-hard-to-abate-msme-readiness",
+  "q": "What is transition finance, and could a steel or cement MSME be ready for it?",
+  "title": "Transition finance for hard-to-abate MSMEs",
+  "short": "Transition finance supports companies in heavy emitting sectors to cut emissions over time, rather than only funding activities that are already green. Readiness means a measured baseline, a credible plan with milestones, and records that show progress.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs in steel, cement, ceramics, foundry and chemicals",
+  "sections": [
+    {
+      "h": "What lenders may look for",
+      "ul": [
+        "A baseline from real bills and production.",
+        "A plan: fuel switch, efficiency, electrification, with dates.",
+        "Interim targets they can check."
+      ]
+    },
+    {
+      "h": "Why baseline matters",
+      "p": [
+        "Without a measured starting point, progress cannot be shown, so most frameworks start there."
+      ]
+    },
+    {
+      "h": "Caution",
+      "p": [
+        "Definitions differ between lenders and taxonomies, and none guarantees funding."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns bills and fuel invoices into a dated, traceable emissions record, the kind of evidence lenders may ask for. Lenders decide, and financing is never guaranteed.",
+  "links": [
+    {
+      "label": "India climate finance taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-what-msmes-need"
+    },
+    {
+      "label": "MSME transition plan",
+      "to": "/answers/msme-climate-transition-plan-what-to-include"
+    },
+    {
+      "label": "Green loan or SLL",
+      "to": "/answers/green-loan-or-sll-which-suits-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, green and sustainability-linked loan principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

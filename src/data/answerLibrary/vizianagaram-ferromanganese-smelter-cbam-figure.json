@@ -1,0 +1,61 @@
+{
+  "slug": "vizianagaram-ferromanganese-smelter-cbam-figure",
+  "q": "How does a ferro-manganese smelter in Vizianagaram work out a CBAM figure for an EU buyer?",
+  "title": "Vizianagaram ferro-manganese CBAM figure",
+  "short": "Ferro-manganese (7202 1) is a CBAM good. Count direct emissions only: carbon in coke, coal and electrode paste by mass balance, less carbon in the alloy and slag. Divide by tonnes of alloy. Silico-manganese is not covered.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Ferro-alloy smelters in Vizianagaram and north coastal Andhra Pradesh",
+  "sections": [
+    {
+      "h": "Mass balance",
+      "ul": [
+        "Carbon in coke, coal and electrode paste.",
+        "Carbon leaving in the alloy and slag.",
+        "Fuels for ladle heating."
+      ]
+    },
+    {
+      "h": "Mixed plants",
+      "p": [
+        "If a furnace switches between ferro-manganese and silico-manganese, keep campaign records so the covered product's emissions can be shown apart."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Smelting uses a lot of power, but for this good it is not counted in the CBAM figure. Buyers may still want it for their footprints."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Is silico-manganese covered?",
+      "to": "/answers/is-silico-manganese-covered-by-cbam"
+    },
+    {
+      "label": "Ferro-alloy coke and coal records",
+      "to": "/answers/ferro-alloy-plant-coke-and-coal-records"
+    },
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

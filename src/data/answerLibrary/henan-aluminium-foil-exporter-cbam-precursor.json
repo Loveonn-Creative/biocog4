@@ -1,0 +1,63 @@
+{
+  "slug": "henan-aluminium-foil-exporter-cbam-precursor",
+  "q": "Our Henan foil mill rolls bought-in aluminium. What goes into the CBAM figure for foil?",
+  "title": "Henan aluminium foil CBAM precursor",
+  "short": "Foil under CN 7607 is a CBAM good. Its figure is the mill's own direct emissions, such as gas for melting, casting and annealing, plus the embedded emissions of the unwrought aluminium bought in. Ask the smelter or remelter for its figure; otherwise use the default value.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Aluminium sheet and foil rolling mills in Henan and other Chinese provinces exporting to the EU",
+  "sections": [
+    {
+      "h": "Own emissions",
+      "ul": [
+        "Natural gas in melting and holding furnaces.",
+        "Annealing furnace fuel.",
+        "Electricity is not counted for aluminium goods."
+      ]
+    },
+    {
+      "h": "Precursors",
+      "ul": [
+        "Primary ingot or slab: embedded emissions from the smelter.",
+        "Remelted scrap: secondary aluminium, with its own lower figure.",
+        "Weigh each input so the blend can be shown."
+      ]
+    },
+    {
+      "h": "Per tonne of foil",
+      "p": [
+        "Divide by tonnes of foil shipped from the period's production, and keep a yield record from slab to foil, because rolling losses raise the figure per tonne."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Foshan aluminium profile exporters",
+      "to": "/answers/foshan-aluminium-profile-exporter-cbam-data"
+    },
+    {
+      "label": "Extruders asking smelters for data",
+      "to": "/answers/uae-aluminium-extruder-smelter-data-for-cbam"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "solapur-textile-unit-steam-boiler-co2",
+  "q": "How does a Solapur textile unit work out CO2 from the steam boiler used for dyeing and sizing?",
+  "title": "Solapur textile boiler CO2",
+  "short": "Record the fuel each month: coal or lignite in full in Scope 1, wood or briquettes with CO2 reported as biogenic. Multiply by the fuel's factor, add electricity at 0.710 kg per kWh, and divide by kilograms of yarn or fabric processed.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile units in Solapur making towels, chaddars and uniform fabric",
+  "sections": [
+    {
+      "h": "Fuel records",
+      "ul": [
+        "Weight bought and stock at month end.",
+        "Supplier GCV for coal.",
+        "Moisture for briquettes and wood."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Looms and winding use most of it; take units from bills."
+      ]
+    },
+    {
+      "h": "Per kilogram",
+      "p": [
+        "Divide by output processed in the month and keep dyeing and weaving apart if buyers ask."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Terry towel footprint",
+      "to": "/answers/terry-towel-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Towel mill gas boiler",
+      "to": "/answers/denizli-towel-mill-gas-boiler-emissions"
+    },
+    {
+      "label": "Boiler logbook records",
+      "to": "/answers/boiler-logbook-what-to-record-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

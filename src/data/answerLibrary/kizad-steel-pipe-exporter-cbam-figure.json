@@ -1,0 +1,63 @@
+{
+  "slug": "kizad-steel-pipe-exporter-cbam-figure",
+  "q": "How does a pipe mill in Khalifa Industrial Zone Abu Dhabi report its CBAM figure?",
+  "title": "Abu Dhabi pipe mill CBAM figure",
+  "short": "Welded tubes and pierced tubes are CBAM goods. Add the mill's direct emissions from gas in reheating, annealing and coating ovens to the embedded emissions of the coil, plate or billet bought in. Divide by tonnes shipped. Electricity is not counted for steel.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel pipe and tube mills in Khalifa Industrial Zone and other UAE industrial zones",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Hot rolled coil or plate for welded pipe.",
+        "Billet or round bar for pierced tube.",
+        "Embedded emissions from each steel supplier, or default values."
+      ]
+    },
+    {
+      "h": "Own emissions",
+      "ul": [
+        "Natural gas in reheating and heat treatment furnaces.",
+        "Fuel for coating lines.",
+        "Process emissions are small; the steel input dominates."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "End cuts and rejects carry embedded emissions too, so record input tonnes against shipped tonnes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Cangzhou pipe CBAM figure",
+      "to": "/answers/cangzhou-steel-pipe-exporter-cbam-figure"
+    },
+    {
+      "label": "Abu Dhabi DRI and EAF rebar",
+      "to": "/answers/abu-dhabi-dri-eaf-rebar-cbam-figure"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "green-deposits-funds-for-msme-green-projects",
+  "q": "Banks in India take green deposits. Does that help an MSME get finance for a green project?",
+  "title": "Green deposits and MSME green projects",
+  "short": "Possibly. RBI's framework asks banks to lend green deposit money to listed green activities such as renewable energy and energy efficiency. An MSME with a clear project and evidence of its benefit may find more interest from lenders, but terms are the bank's decision.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners planning solar, efficiency or clean transport projects",
+  "sections": [
+    {
+      "h": "What the framework does",
+      "p": [
+        "Banks raising green deposits must allocate the money to eligible green activities and report on it, which creates demand for projects that fit."
+      ]
+    },
+    {
+      "h": "What helps",
+      "ul": [
+        "A project that matches a listed activity.",
+        "A baseline of energy use or emissions before the project.",
+        "An estimate of savings, labelled as an estimate."
+      ]
+    },
+    {
+      "h": "What it does not do",
+      "p": [
+        "It does not guarantee a loan or a lower rate. Each bank sets its own terms."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns bills and fuel invoices into a dated, traceable emissions record, the kind of evidence lenders may ask for. Lenders decide, and financing is never guaranteed.",
+  "links": [
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "How lenders read GHG reports",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "Climate finance readiness check",
+      "to": "/answers/climate-finance-readiness-check-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "Loan Market Association, green and sustainability-linked loan principles",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

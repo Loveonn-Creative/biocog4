@@ -1,0 +1,57 @@
+{
+  "slug": "verifier-asks-production-records-format",
+  "q": "The verifier asks for production records. What format do they need?",
+  "title": "Production records for the verifier",
+  "short": "Monthly output in the same unit as your intensity figure, from a source that can be cross-checked, such as dispatch registers, sales invoices or GST returns. Stock changes should reconcile. A spreadsheet is fine if it traces to these documents.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs preparing production data for verification",
+  "sections": [
+    {
+      "h": "What works",
+      "ul": [
+        "Monthly production by product.",
+        "Dispatch or sales records that match.",
+        "Opening and closing stock."
+      ]
+    },
+    {
+      "h": "Cross-checks",
+      "p": [
+        "Verifiers often compare production with GST returns or excise records. Explain differences such as job work or returns."
+      ]
+    },
+    {
+      "h": "Units",
+      "p": [
+        "Use one unit throughout: tonnes, pieces or square metres, with conversion factors written down."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record with its source document, fingerprint, factor and method version, so a verifier can trace any figure back to the bill it came from.",
+  "links": [
+    {
+      "label": "Verifier cross-checks with GST",
+      "to": "/answers/verifier-cross-checks-production-with-gst-returns"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "Materiality in verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "jaipur-bearing-maker-steel-scope-3",
+  "q": "How does a Jaipur bearing maker count the steel it buys in its footprint?",
+  "title": "Jaipur bearing maker steel Scope 3",
+  "short": "Put purchased bearing steel, tubes and rings in Scope 3 category 1, at the supplier's figure per tonne or a stated default. Add your own heat treatment fuel and electricity in Scope 1 and 2. Bearings are not CBAM goods, but buyers ask for footprints.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Bearing manufacturers in Jaipur and their component suppliers",
+  "sections": [
+    {
+      "h": "Steel",
+      "ul": [
+        "Bar, tube or forged rings bought in, by weight.",
+        "Supplier figure per tonne, or a default with its source.",
+        "Scrap sold from turning reduces nothing in Scope 3 but is worth recording."
+      ]
+    },
+    {
+      "h": "Own plant",
+      "ul": [
+        "Electricity for turning, grinding and assembly.",
+        "Gas or electricity for heat treatment furnaces."
+      ]
+    },
+    {
+      "h": "Per bearing",
+      "p": [
+        "Divide by bearings made, weighting by mass if sizes differ."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Ball bearing footprint",
+      "to": "/answers/ball-bearing-carbon-footprint-per-bearing"
+    },
+    {
+      "label": "Are bearings covered by CBAM?",
+      "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam"
+    },
+    {
+      "label": "Hebei wire rod Scope 3",
+      "to": "/answers/hebei-wire-rod-buyer-scope-3-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

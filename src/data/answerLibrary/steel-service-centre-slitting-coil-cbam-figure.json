@@ -1,0 +1,61 @@
+{
+  "slug": "steel-service-centre-slitting-coil-cbam-figure",
+  "q": "Our service centre slits and cuts coil for EU customers. What is our CBAM figure?",
+  "title": "Steel service centre slitting CBAM figure",
+  "short": "Slit coil and cut sheet are still CBAM goods. Your figure is the embedded emissions of the coil bought in, adjusted for yield, plus any direct emissions of your own, which are usually tiny. The mill's figure carries through.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Steel service centres slitting and cutting coil for export",
+  "sections": [
+    {
+      "h": "What carries through",
+      "p": [
+        "The mill's embedded emissions per tonne of coil, as reported by the mill or a default value."
+      ]
+    },
+    {
+      "h": "Yield",
+      "ul": [
+        "Edge trim and offcuts carry embedded emissions.",
+        "Divide input emissions by tonnes shipped, not tonnes bought.",
+        "Keep coil numbers linked to shipments."
+      ]
+    },
+    {
+      "h": "Own emissions",
+      "p": [
+        "Forklift fuel and any heating; electricity is not counted for steel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Service centre import records",
+      "to": "/answers/polish-steel-service-centre-cbam-import-records"
+    },
+    {
+      "label": "Specific embedded emissions",
+      "to": "/answers/cbam-specific-embedded-emissions-explained"
+    },
+    {
+      "label": "Tangshan coil CBAM figure",
+      "to": "/answers/tangshan-steel-hot-rolled-coil-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

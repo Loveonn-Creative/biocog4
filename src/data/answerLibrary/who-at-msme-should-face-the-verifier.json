@@ -1,0 +1,59 @@
+{
+  "slug": "who-at-msme-should-face-the-verifier",
+  "q": "Who in a small company should deal with the GHG verifier?",
+  "title": "Who should face the verifier",
+  "short": "One person who owns the carbon figures and can answer quickly, usually from finance or plant engineering, with access to bills, fuel records and production data. The owner or director should sign off the final statement.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Owners and managers of MSMEs going through their first verification",
+  "sections": [
+    {
+      "h": "The main contact",
+      "ul": [
+        "Knows where every record is.",
+        "Understands the calculation method.",
+        "Has time during the verification window."
+      ]
+    },
+    {
+      "h": "Others needed",
+      "ul": [
+        "Plant staff for meter readings and logbooks.",
+        "Accounts for invoices and production returns.",
+        "The director for sign off."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Leaving it to a consultant who does not know the plant slows every question down."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each record with its source document, fingerprint, factor and method version, so a verifier can trace any figure back to the bill it came from.",
+  "links": [
+    {
+      "label": "Who signs off carbon figures",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Verifier site visit preparation",
+      "to": "/answers/verifier-site-visit-what-to-prepare"
+    },
+    {
+      "label": "Internal review before verification",
+      "to": "/answers/internal-review-before-external-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

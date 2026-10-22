@@ -1,0 +1,63 @@
+{
+  "slug": "zhangjiagang-eaf-rebar-exporter-cbam-figure",
+  "q": "How does a Zhangjiagang electric arc furnace rebar mill work out its CBAM figure?",
+  "title": "Zhangjiagang EAF rebar CBAM figure",
+  "short": "Add the direct emissions of melting and rolling: electrode carbon, charge carbon, natural gas and any lime calcined on site. Add embedded emissions of any pig iron or DRI bought in. Scrap enters at zero. Divide by tonnes of rebar. Grid electricity is not counted for steel.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Electric arc furnace long steel mills in Jiangsu and their EU importers",
+  "sections": [
+    {
+      "h": "Direct emissions",
+      "ul": [
+        "Graphite electrode consumption.",
+        "Charge carbon and foaming carbon.",
+        "Natural gas or oil in ladle heaters and reheating furnaces."
+      ]
+    },
+    {
+      "h": "Inputs",
+      "ul": [
+        "Scrap: zero embedded emissions.",
+        "Pig iron, hot briquetted iron or DRI: embedded emissions as precursors, from the supplier or a default value.",
+        "Ferro-manganese: a precursor; silico-manganese is not a CBAM good."
+      ]
+    },
+    {
+      "h": "Per tonne",
+      "p": [
+        "Divide total direct and precursor emissions by tonnes of rebar produced in the period, and keep production and stock records that match shipments."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for.",
+  "links": [
+    {
+      "label": "Scrap at zero under CBAM",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Abu Dhabi DRI and EAF rebar",
+      "to": "/answers/abu-dhabi-dri-eaf-rebar-cbam-figure"
+    },
+    {
+      "label": "China ETS and the CBAM deduction",
+      "to": "/answers/china-national-ets-steel-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

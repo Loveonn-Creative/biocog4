@@ -1,0 +1,63 @@
+{
+  "slug": "saltillo-auto-casting-supplier-carbon-data",
+  "q": "Our Saltillo foundry casts engine and chassis parts. How do we give the carmaker a carbon figure?",
+  "title": "Saltillo auto casting carbon data",
+  "short": "Add melting energy, whether electricity for induction furnaces or gas, plus coke if you run a cupola, then add metal bought in: scrap at near zero, pig iron and alloys at supplier figures. Divide by good castings, not metal melted.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Iron and aluminium foundries in Saltillo and Ramos Arizpe supplying carmakers",
+  "sections": [
+    {
+      "h": "Melting",
+      "ul": [
+        "Induction furnace electricity, at the Mexican grid factor.",
+        "Gas for aluminium melting and holding.",
+        "Coke for cupolas."
+      ]
+    },
+    {
+      "h": "Metal inputs",
+      "ul": [
+        "Purchased scrap, returns and pig iron.",
+        "Alloys and inoculants.",
+        "Sand binders, if the buyer asks for a full footprint."
+      ]
+    },
+    {
+      "h": "Yield",
+      "p": [
+        "Runners, risers and rejects are remelted, so divide by good castings shipped and state the yield."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Mexico grid factor",
+      "to": "/answers/mexico-grid-emission-factor-for-suppliers"
+    },
+    {
+      "label": "Bajio parts shipments and CBAM",
+      "to": "/answers/bajio-auto-parts-shipment-cbam-goods"
+    },
+    {
+      "label": "Aluminium die casting footprint",
+      "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

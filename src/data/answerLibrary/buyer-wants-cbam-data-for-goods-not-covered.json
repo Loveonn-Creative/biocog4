@@ -1,0 +1,57 @@
+{
+  "slug": "buyer-wants-cbam-data-for-goods-not-covered",
+  "q": "Our EU buyer wants CBAM data for products that are not CBAM goods. Do we have to give it?",
+  "title": "Buyer wants CBAM data for uncovered goods",
+  "short": "There is no CBAM duty for goods outside Annex I. The buyer may still want a carbon footprint for its own reporting, which is a commercial request. Confirm the CN code, explain it is not covered, and offer an ordinary product footprint instead.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Exporters of steel, aluminium and other products outside the CBAM list",
+  "sections": [
+    {
+      "h": "Check first",
+      "ul": [
+        "Confirm the CN code with your broker.",
+        "Compare it with Annex I of the CBAM Regulation.",
+        "Note whether downstream rules may extend the list."
+      ]
+    },
+    {
+      "h": "Reply",
+      "p": [
+        "Say the product is not a CBAM good under its code, and offer a footprint with method and period. Keep it separate from any CBAM figures you send for covered goods."
+      ]
+    },
+    {
+      "h": "Why buyers ask",
+      "p": [
+        "Many buyers request data for every steel or aluminium item, without checking codes first."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Is steel furniture covered?",
+      "to": "/answers/is-steel-furniture-covered-by-cbam"
+    },
+    {
+      "label": "Are pumps and bearings covered?",
+      "to": "/answers/are-pumps-valves-and-bearings-covered-by-cbam"
+    },
+    {
+      "label": "Buyer questionnaire formats",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
