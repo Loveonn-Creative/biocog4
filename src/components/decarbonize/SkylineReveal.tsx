@@ -105,7 +105,7 @@ export function SkylineReveal() {
           </div>
         </div>
         <span className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-xs text-[#12321f] backdrop-blur">After ambassadors</span>
-        <span className="absolute right-4 top-4 rounded-full bg-black/45 px-3 py-1 text-xs text-white backdrop-blur">Today</span>
+        <span className="absolute right-4 top-4 rounded-full bg-black/65 px-3 py-1 text-xs text-white backdrop-blur">Today</span>
       </div>
       <label className="sr-only" htmlFor="skyline-range">Reveal the clean skyline</label>
       <input id="skyline-range" type="range" min={0} max={100} value={Math.round(v)} onChange={e => { touched.current = true; setV(Number(e.target.value)); }}

@@ -446,7 +446,7 @@ const Pricing = () => {
   }).format(n);
 
   return (
-    <div className="canvas-stone relative min-h-screen w-full bg-background pb-16 md:pb-0">
+    <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
       </Helmet>
       <CarbonParticles />

@@ -94,7 +94,7 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div className="canvas-stone min-h-screen bg-background flex flex-col">
+      <div className="min-h-screen bg-background flex flex-col">
         <SEOHead 
           title="Contact Us"
           description="Get in touch with Senseible for carbon intelligence, ESG solutions, and climate finance inquiries."
@@ -125,7 +125,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="canvas-stone min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <SEOHead 
         title="Contact Us"
         description="Get in touch with Senseible for carbon intelligence, ESG solutions, and climate finance inquiries. HQ: Minarch Tower, Gurugram."

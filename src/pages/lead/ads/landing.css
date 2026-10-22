@@ -60,7 +60,7 @@
 .lp-meter { background:color-mix(in srgb, var(--lp-ink) 14%, transparent); }
 .lp-meter i { display:block; height:100%; border-radius:inherit; background:var(--lp-cta); transition:width 1s linear; }
 .lp-was { text-decoration-color:var(--lp-urgent); text-decoration-thickness:2px; }
-.lp-off { background:var(--lp-urgent); color:#fff; }
+.lp-off { background:#c0321a; color:#fff; } /* white on #c0321a: 5.6:1 */
 .lp-bar { background:color-mix(in srgb, var(--lp-bg) 92%, transparent); backdrop-filter:blur(10px); border-top:1px solid var(--lp-line); color:var(--lp-ink); }
 .lp-bar.is-final { border-top:2px solid var(--lp-urgent); }
 @media (prefers-reduced-motion: reduce) { .lp-meter i, .lp-bar { transition:none } }

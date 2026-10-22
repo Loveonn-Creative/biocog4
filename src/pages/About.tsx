@@ -121,7 +121,7 @@ const About = () => {
             <IndiaAIBadge size={64} />
             <p className="text-lg sm:text-xl text-center leading-relaxed font-semibold">
               <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
-              <span style={{ color: '#FF9933' }} className="font-bold">from India.</span>
+              <span className="font-bold text-[#A85400] dark:text-[#FF9933]">from India.</span>
             </p>
           </div>
 
