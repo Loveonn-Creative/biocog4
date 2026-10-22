@@ -24,9 +24,10 @@ export const LAUNCH_PRICES: Record<PaidPlan, Record<Cycle, number> & { name: str
 
 export const REGULAR_MULTIPLIER = 2.5;
 
-/** ISO date from which regular pricing applies. null: launch pricing for everyone.
- *  Owner, 22 October 2026: launch prices hold through 31 December 2026 (IST). */
-export const REGULAR_PRICING_STARTS_AT: string | null = '2027-01-01T00:00:00+05:30';
+/** ISO date from which regular pricing applies. null: launch pricing for everyone (today).
+ *  Owner, 22 October 2026: checkout is not switched; the 31 December launch-price
+ *  review is shown on the website only (src/lib/pricing/launchWindow.ts). */
+export const REGULAR_PRICING_STARTS_AT: string | null = null;
 
 /** True once regular pricing is in force for new buyers. */
 export const regularPricingInForce = (now = new Date(), regularFrom: string | null = REGULAR_PRICING_STARTS_AT) =>

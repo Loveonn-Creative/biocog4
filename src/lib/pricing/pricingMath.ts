@@ -2,7 +2,8 @@
 // always shown; checkout amounts are set on the server (create-razorpay-order),
 // so nothing here can change what anyone is charged.
 import { PLAN_INVOICE_SCANS_PER_MONTH, type PlanTier } from '../../../supabase/functions/_shared/planLimits';
-import { REGULAR_MULTIPLIER, REGULAR_PRICING_STARTS_AT, regularPricingInForce } from '../../../supabase/functions/_shared/planPricing';
+import { REGULAR_MULTIPLIER, regularPricingInForce } from '../../../supabase/functions/_shared/planPricing';
+import { launchEndsLabel } from './launchWindow';
 
 export type BillingCycle = 'yearly' | 'monthly';
 
@@ -25,10 +26,8 @@ export function tierPricesAt(now = new Date()): Record<'essential' | 'pro', { ye
 /** Prices as of page load: the page never quotes less than checkout charges. */
 export const TIER_PRICES = tierPricesAt();
 
-/** Last day of launch pricing as shown on the page (the day before regular pricing starts, IST). */
-export const LAUNCH_ENDS_LABEL = REGULAR_PRICING_STARTS_AT
-  ? new Date(Date.parse(REGULAR_PRICING_STARTS_AT) - 1).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', timeZone: 'Asia/Kolkata' })
-  : null;
+/** Last day of launch pricing as shown on the page. */
+export const LAUNCH_ENDS_LABEL = launchEndsLabel();
 
 export type PaidTier = keyof typeof TIER_PRICES;
 
