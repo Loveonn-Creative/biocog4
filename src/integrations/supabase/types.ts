@@ -2436,6 +2436,60 @@ export type Database = {
         }
         Relationships: []
       }
+      public_library_entries: {
+        Row: {
+          body: string
+          id: string
+          kind: string
+          search: unknown
+          title: string
+          updated_at: string
+          url: string | null
+        }
+        Insert: {
+          body: string
+          id: string
+          kind: string
+          search?: unknown
+          title: string
+          updated_at?: string
+          url?: string | null
+        }
+        Update: {
+          body?: string
+          id?: string
+          kind?: string
+          search?: unknown
+          title?: string
+          updated_at?: string
+          url?: string | null
+        }
+        Relationships: []
+      }
+      public_library_state: {
+        Row: {
+          checked_at: string
+          entries: number
+          id: boolean
+          synced_at: string | null
+          version: string | null
+        }
+        Insert: {
+          checked_at?: string
+          entries?: number
+          id?: boolean
+          synced_at?: string | null
+          version?: string | null
+        }
+        Update: {
+          checked_at?: string
+          entries?: number
+          id?: boolean
+          synced_at?: string | null
+          version?: string | null
+        }
+        Relationships: []
+      }
       reduction_periods: {
         Row: {
           created_at: string
@@ -3875,6 +3929,17 @@ export type Database = {
       }
     }
     Functions: {
+      apply_public_library: {
+        Args: { p_entries: Json; p_version: string }
+        Returns: number
+      }
+      claim_public_library_check: {
+        Args: { p_min_age?: string }
+        Returns: {
+          claimed: boolean
+          version: string
+        }[]
+      }
       commit_invoice_read: {
         Args: { p_document_id?: string; p_id: string }
         Returns: boolean
@@ -4071,6 +4136,10 @@ export type Database = {
       }
       scope2_record: { Args: { p: Json }; Returns: Json }
       scope3_record_document: { Args: { p: Json }; Returns: Json }
+      search_public_library: {
+        Args: { p_limit?: number; p_terms: string[] }
+        Returns: Json
+      }
       seat_limit_for_tier: { Args: { p_tier: string }; Returns: number }
       service_accept_team_invitation: {
         Args: { p_token: string; p_user_email: string; p_user_id: string }

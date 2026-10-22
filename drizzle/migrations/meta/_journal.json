@@ -225,6 +225,13 @@
       "when": 1792682701320,
       "tag": "0031_machinery_beta",
       "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1792682730930,
+      "tag": "0032_public_library",
+      "breakpoints": true
     }
   ]
 }
