@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ArrowRight, Download, FileText, KeyRound, Lock, PhoneCall, ShieldCheck, Fingerprint, Plug } from "lucide-react";
+import { ArrowRight, Download, FileText, KeyRound, Lock, PhoneCall, ShieldCheck, Fingerprint, Plug, MessageCircle } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { CopyButton } from "@/components/lead/LeadKit";
 import { AdHeader } from "@/components/lead/ads/AdHeader";
@@ -7,6 +7,8 @@ import { leadEvents } from "@/components/lead/leadEvents";
 import { CallbackForm } from "@/components/lead/ads/CallbackForm";
 import { TrustNames } from "@/components/lead/ads/TrustNames";
 import { OfferBar, OfferClock, OfferPill, OfferPrice, useTimeLeft } from "@/components/lead/ads/LaunchOffer";
+import { ProofStrip } from "@/components/lead/ads/ProofStrip";
+import { WHATSAPP_NUMBER } from "@/components/services/shell/actions";
 import { downloadKitPdf, supplierKit } from "@/lib/leadMagnets/adKits";
 import { SUPPLIER_REQUEST, planSummary, supplierEvidencePlan } from "@/lib/leadMagnets/supplierEvidence";
 import "./landing.css";
@@ -63,13 +65,17 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
     </ol>
   );
 
+  const waText = `Hi Senseible, I want to see how you get supplier emissions data. ${planSummary(plan, "assurance")}`;
+  const whatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText.slice(0, 600))}`;
+  const chat = (where: string) => leadEvents.cta(analyticsPage, `whatsapp_${where}`);
   const Hero = variant === "a" ? (
     <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
       <div>
-        <OfferPill t={t} />
+        <OfferPill t={t} plan="pro" />
         <h1 className="lp-display text-[2.6rem] leading-[1.02] sm:text-[3.5rem]">Stop chasing suppliers. <span className="lp-accent">Start getting reports.</span></h1>
         <p className="mt-5 max-w-[38ch] text-lg leading-relaxed opacity-90">Suppliers send the bills they already pay. You get structured, audit-ready Scope 3 data across tier 1, 2 and 3, inside your security rules.</p>
         <button type="button" onClick={() => book("hero")} className="lp-cta mt-7 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => chat("hero")} className="mt-3 flex w-fit items-center gap-2 text-sm font-semibold underline underline-offset-4"><MessageCircle className="h-4 w-4" /> Or message us on WhatsApp</a>
         {Steps}
       </div>
       <div className="grid items-center gap-3 sm:grid-cols-[.75fr_24px_1.35fr]">
@@ -92,10 +98,11 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   ) : (
     <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
       <div>
-        <OfferPill t={t} />
+        <OfferPill t={t} plan="pro" />
         <h1 className="lp-display text-[2.6rem] leading-[1.02] sm:text-[3.5rem]">Hundreds of suppliers. <span className="lp-accent">One clean emissions report.</span></h1>
         <p className="mt-5 max-w-[38ch] text-lg leading-relaxed opacity-90">See every supplier light up as their bills arrive, from tier 1 to tier 3. No questionnaires, no spreadsheet chase, no security exceptions.</p>
         <button type="button" onClick={() => book("hero")} className="lp-cta mt-7 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => chat("hero")} className="mt-3 flex w-fit items-center gap-2 text-sm font-semibold underline underline-offset-4"><MessageCircle className="h-4 w-4" /> Or message us on WhatsApp</a>
         {Steps}
       </div>
       <div>
@@ -170,6 +177,8 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
           </div>
         </section>
 
+        <ProofStrip audience="enterprise" onOpen={(what) => leadEvents.cta(analyticsPage, `proof_${what}`)} />
+
         <section className="mx-auto max-w-6xl px-5 pb-20">
           <OfferClock t={t} />
           <h2 className="mt-8 text-[12px] font-semibold uppercase tracking-[.16em] opacity-70">Start with one supplier. Scale to all of them.</h2>
@@ -177,7 +186,7 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
             <div className="grid content-start gap-2 rounded-2xl bg-[var(--lp-soft)] p-5">
               <span className="font-mono text-[11px] font-semibold uppercase opacity-70">Start</span>
               <h3 className="text-[13px] font-semibold uppercase tracking-wider opacity-80">Pro · yearly</h3>
-              <OfferPrice plan="pro" t={t} />
+              <OfferPrice plan="pro" onBuy={() => leadEvents.cta(analyticsPage, "buy_pro")} />
               <ul className="mt-1 space-y-1.5 text-sm"><li>✓ Your key suppliers, read from their bills</li><li>✓ Reports for GHG Protocol, CBAM, BRSR</li><li>✓ 10 team members</li></ul>
             </div>
             <div className="grid content-start gap-2 rounded-2xl bg-[var(--lp-pick-bg)] p-5 ring-2 ring-[var(--lp-cta)]">
@@ -191,7 +200,7 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
           <button type="button" onClick={() => book("plans")} className="lp-cta mt-8 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
         </section>
       </main>
-      <OfferBar t={t} onBook={() => book("bar")} hidden={open} />
+      <OfferBar t={t} onBook={() => book("bar")} hidden={open} whatsapp={whatsapp} onWhatsApp={() => chat("bar")} />
       <CallbackForm open={open} onClose={close} page={page} analyticsPage={analyticsPage} category="enterprise" industries={INDUSTRIES} summary={planSummary(plan, "assurance")} askCompany themeClass={theme} />
     </div>
   );

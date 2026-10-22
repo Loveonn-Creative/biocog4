@@ -67,3 +67,8 @@
 .lp-bar { background:color-mix(in srgb, var(--lp-bg) 92%, transparent); backdrop-filter:blur(10px); border-top:1px solid var(--lp-line); color:var(--lp-ink); }
 .lp-bar.is-final { border-top:2px solid var(--lp-urgent); }
 @media (prefers-reduced-motion: reduce) { .lp-offer-dot { animation:none } .lp-meter i, .lp-bar { transition:none } }
+.lp-buy { background:var(--lp-cta); color:var(--lp-cta-ink); }
+.lp-buy:focus-visible, .lp-wa:focus-visible, .lp-proof:focus-visible { outline:3px solid var(--lp-cta); outline-offset:3px; }
+.lp-wa { background:#25d366; color:#06331a; }
+.lp-proof { background:var(--lp-soft); border:1px solid var(--lp-line); transition:transform .15s ease; }
+.lp-proof:hover { transform:translateY(-2px); }

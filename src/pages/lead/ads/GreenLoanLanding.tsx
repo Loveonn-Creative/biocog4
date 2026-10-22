@@ -6,6 +6,8 @@ import { leadEvents } from "@/components/lead/leadEvents";
 import { CallbackForm } from "@/components/lead/ads/CallbackForm";
 import { TrustNames } from "@/components/lead/ads/TrustNames";
 import { OfferBar, OfferClock, OfferPill, OfferPrice, useTimeLeft } from "@/components/lead/ads/LaunchOffer";
+import { ProofStrip } from "@/components/lead/ads/ProofStrip";
+import { WHATSAPP_NUMBER } from "@/components/services/shell/actions";
 import { estimateAnnual } from "@/lib/leadMagnets/msmeCarbonReply";
 import { downloadKitPdf, msmeKit } from "@/lib/leadMagnets/adKits";
 import { BUSINESS_TYPES } from "@/lib/greenLoanCheck";
@@ -55,6 +57,9 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
     ? `My business is about ${estimate.totalTonnes.toLocaleString("en-IN", { maximumFractionDigits: 1 })} tonnes CO2 a year. Green-loan readiness check: https://senseible.earth${page}`
     : "";
   const summary = estimate ? `Estimate ${estimate.totalTonnes} t CO2/yr from ${kwh || 0} kWh and ${diesel || 0} L a month` : undefined;
+  const waText = `Hi Senseible, I want my green-loan readiness file.${summary ? ` ${summary}.` : ""}`;
+  const whatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText.slice(0, 600))}`;
+  const chat = (where: string) => leadEvents.cta(analyticsPage, `whatsapp_${where}`);
   const num = (v: string) => v.replace(/[^\d.]/g, "").slice(0, 9);
 
   const Hero = variant === "a" ? (
@@ -64,6 +69,7 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
         <h1 className="lp-display text-[2.6rem] leading-[1.02] sm:text-[3.6rem]">Your bills can open the door to a <span className="lp-accent">green loan.</span></h1>
         <p className="mt-5 max-w-[34ch] text-lg leading-relaxed opacity-90">Banks want proof your business is cleaning up. Six months of electricity and fuel bills is all it takes. We turn them into that proof.</p>
         <button type="button" onClick={() => book("hero")} className="lp-cta mt-7 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => chat("hero")} className="mt-3 flex w-fit items-center gap-2 text-sm font-semibold underline underline-offset-4"><MessageCircle className="h-4 w-4" /> Or message us on WhatsApp</a>
         <ol className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm opacity-85">
           <li className="flex items-center gap-2"><PhoneCall className="h-4 w-4" /> 10-minute call</li>
           <li className="flex items-center gap-2"><Camera className="h-4 w-4" /> Share 6 months of bills</li>
@@ -97,6 +103,7 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
         <h1 className="lp-display text-[2.6rem] leading-[1.02] sm:text-[3.6rem]">The bank asked for your carbon data. <span className="lp-accent" style={{ backgroundImage: "linear-gradient(transparent 62%, #f6c9a6 62%)" }}>Send 6 photos.</span></h1>
         <p className="mt-5 max-w-[36ch] text-lg leading-relaxed opacity-90">No consultant. No forms. Snap your last six bills and get the file lenders ask for, plus the savings and finance options hiding in them.</p>
         <button type="button" onClick={() => book("hero")} className="lp-cta mt-7 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => chat("hero")} className="mt-3 flex w-fit items-center gap-2 text-sm font-semibold underline underline-offset-4"><MessageCircle className="h-4 w-4" /> Or message us on WhatsApp</a>
         <ol className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm opacity-85">
           <li className="flex items-center gap-2"><PhoneCall className="h-4 w-4" /> 10-minute call</li>
           <li className="flex items-center gap-2"><Camera className="h-4 w-4" /> 6 bill photos</li>
@@ -170,6 +177,8 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
           </div>
         </section>
 
+        <ProofStrip audience="msme" onOpen={(what) => leadEvents.cta(analyticsPage, `proof_${what}`)} />
+
         <section className="mx-auto max-w-6xl px-5 pb-20">
           <OfferClock t={t} />
           <h2 className="mt-8 text-[12px] font-semibold uppercase tracking-[.16em] opacity-70">Start small. Grow when your bank asks.</h2>
@@ -178,7 +187,7 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
               <div key={p.name} className={`grid content-start gap-2 rounded-2xl p-5 ${p.pick ? "bg-[var(--lp-pick-bg)] text-[var(--lp-pick-ink)] ring-[3px] ring-[var(--lp-cta)]" : "bg-[var(--lp-soft)]"}`}>
                 <span className="font-mono text-[11px] font-semibold uppercase opacity-70">{p.step}</span>
                 <h3 className="text-[13px] font-semibold uppercase tracking-wider opacity-80">{p.name}</h3>
-                {p.plan ? <OfferPrice plan={p.plan} t={t} /> : <><p className="lp-display text-3xl">₹0</p><p className="text-[13px] opacity-70">No card. No catch.</p></>}
+                {p.plan ? <OfferPrice plan={p.plan} onBuy={() => leadEvents.cta(analyticsPage, `buy_${p.plan}`)} /> : <><p className="lp-display text-3xl">₹0</p><p className="text-[13px] opacity-70">No card. No catch.</p></>}
                 <ul className="mt-1 space-y-1.5 text-sm">{p.points.map((x) => <li key={x}>✓ {x}</li>)}</ul>
               </div>
             ))}
@@ -187,7 +196,7 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
           <p className="mt-3 text-sm opacity-70">Banks and lenders decide on loans. We get your proof ready.</p>
         </section>
       </main>
-      <OfferBar t={t} onBook={() => book("bar")} hidden={open} />
+      <OfferBar t={t} onBook={() => book("bar")} hidden={open} whatsapp={whatsapp} onWhatsApp={() => chat("bar")} />
       <CallbackForm open={open} onClose={close} page={page} analyticsPage={analyticsPage} category="green-loan-check" industries={BUSINESS_TYPES} summary={summary} themeClass={theme} />
     </div>
   );

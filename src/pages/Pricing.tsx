@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
@@ -25,7 +25,7 @@ import { toast } from 'sonner';
 import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner';
 import { PlanMeter } from '@/components/pricing/PlanMeter';
 import { LAUNCH_ENDS_LABEL, MAX_SAVING_PERCENT, TIER_PRICES, yearlySaving } from '@/lib/pricing/pricingMath';
-import { regularPricingInForce } from '../../supabase/functions/_shared/planPricing';
+import { launchWindowOpen } from '@/lib/pricing/launchWindow';
 import type { PlanTier } from '../../supabase/functions/_shared/planLimits';
 import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTotals';
 import type { CheckoutPlan } from '@/components/pricing/CheckoutSummary';
@@ -65,7 +65,7 @@ interface PartnerTier {
 
 const Pricing = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated } = useSession();
+  const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
   const { initiatePayment, isLoading: isPaymentLoading } = useRazorpay();
   const { tier: premiumTier, refreshTier } = usePremiumStatus();
   // A guest has no plan yet: no card is "Current Plan" for them, so the free card stays a sign-up.
@@ -187,7 +187,8 @@ const Pricing = () => {
     // Check authentication
     if (!isAuthenticated || !user) {
       toast.info('Please sign in to subscribe');
-      navigate('/auth', { state: { returnTo: '/pricing', selectedTier: tierId, billingCycle: cycle } });
+      // Come back to this plan's checkout after signing in (Auth honours ?next=).
+      navigate(`/auth?next=${encodeURIComponent(`/pricing?plan=${tierId}&buy=${cycle}`)}`, { state: { returnTo: '/pricing', selectedTier: tierId, billingCycle: cycle } });
       return;
     }
 
@@ -207,6 +208,22 @@ const Pricing = () => {
       return;
     }
   };
+
+  // A "Buy now" link (/pricing?plan=essential&buy=yearly, from the ad pages or
+  // the sign-in return) opens that plan's checkout once the session is known.
+  const buyFromLink = useRef<{ plan: string; cycle: 'yearly' | 'monthly' } | null>(
+    (searchParams.get('plan') === 'essential' || searchParams.get('plan') === 'pro') && (searchParams.get('buy') === 'yearly' || searchParams.get('buy') === 'monthly')
+      ? { plan: searchParams.get('plan') as string, cycle: searchParams.get('buy') as 'yearly' | 'monthly' }
+      : null,
+  );
+  useEffect(() => {
+    const link = buyFromLink.current;
+    if (!link || sessionLoading) return;
+    buyFromLink.current = null;
+    setBillingCycle(link.cycle);
+    void handleSubscribe(link.plan, link.cycle);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionLoading]);
 
   const payWith = async (method: PaymentMethod) => {
     if (!checkout || !user || isPaymentLoading) return;
@@ -567,10 +584,10 @@ const Pricing = () => {
           <section id="plans" className="container mx-auto px-4 pb-16 scroll-mt-20">
             {/* Yearly / Monthly toggle */}
             <div className="flex flex-col items-center mb-8">
-              {LAUNCH_ENDS_LABEL && !regularPricingInForce() && (
+              {launchWindowOpen() && (
                 <p className="pr-launch mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-warning/40 bg-warning/10 px-3.5 py-1.5 text-xs font-medium sm:text-sm">
                   <span className="pr-launch-dot h-2 w-2 shrink-0 rounded-full bg-warning" aria-hidden="true" />
-                  <span>Launch prices end <strong>{LAUNCH_ENDS_LABEL}</strong>. Lock today's price for every on-time renewal.</span>
+                  <span>Launch prices change on <strong>{LAUNCH_ENDS_LABEL}</strong>. Start before then and yours won't.</span>
                 </p>
               )}
               <div className="inline-flex items-center rounded-full border bg-background p-1 shadow-sm">
