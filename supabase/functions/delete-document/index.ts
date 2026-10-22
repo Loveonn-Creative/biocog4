@@ -1,8 +1,9 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { decideDocumentDelete } from '../_shared/deletePolicy.ts';
 import { canDeleteOrganizationDocument, orgCan } from '../_shared/workspaceAccess.ts';
-import { isSourceFilePath, SOURCE_BUCKET } from '../_shared/sourceFiles.ts';
+import { SOURCE_BUCKET } from '../_shared/sourceFiles.ts';
 import { versionProbe } from '../_shared/versionProbe.ts';
+import { ownedSourcePath } from '../_shared/sourceFileAccess.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -58,8 +59,12 @@ Deno.serve(async (req) => {
     if (!found || !allowed) return json({ error: 'Invoice not found.' }, 404);
     const doc = found;
     // The deleted invoice's original file goes too (only unverified invoices get here).
-    const removeSourceFile = async (path: unknown) => {
-      if (!isSourceFilePath(path)) return;
+    const removeSourceFile = async (_path: unknown) => {
+      const path = ownedSourcePath(doc);
+      if (!path) return;
+      // A personal and a team copy of the same invoice can share one file: keep it while any row still uses it.
+      const { count } = await admin.from('documents').select('id', { count: 'exact', head: true }).eq('file_url', path);
+      if ((count ?? 0) > 0) return;
       const { error } = await admin.storage.from(SOURCE_BUCKET).remove([path]);
       if (error) console.error('Source file not removed:', error.message);
     };

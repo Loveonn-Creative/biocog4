@@ -6,11 +6,11 @@ export const FUNCTION_VERSIONS: Record<string, string> = {
   "intelligence-chat": "c8218f90a2701f14",
   "scope2-engine": "21cf48f476edaad7",
   "scope3-trail": "364eb00f5e60058d",
-  "delete-document": "8a5e1d0a5a22e9c4",
-  "document-source-url": "7084b043ffbc5f00",
+  "delete-document": "9d6e21e00a660a8f",
+  "document-source-url": "d9ab1b678049b6c6",
   "finance-application": "35e46299547d4fb6",
   "esg-report-access": "fe25b99cc35e970a",
-  "create-razorpay-order": "1453d1517e8700a8",
+  "create-razorpay-order": "db5d7f3d6b8f450b",
   "verify-razorpay-payment": "1422ed66d53ed646",
   "razorpay-webhook": "90a7c2f2a76eae9b"
 };
