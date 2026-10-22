@@ -1827,6 +1827,84 @@ export type Database = {
         }
         Relationships: []
       }
+      machinery_entries: {
+        Row: {
+          created_at: string
+          distance_m: number
+          fuel: string | null
+          geo_source: string
+          hours_per_day: number | null
+          id: string
+          live_accuracy_m: number
+          live_at: string
+          live_lat: number
+          live_lng: number
+          machine_type: string
+          make_model: string
+          photo_lat: number
+          photo_lng: number
+          photo_path: string
+          photo_sha256: string
+          photo_taken_at: string
+          power_unit: string | null
+          rated_power: number | null
+          status: string
+          user_id: string
+          verification_source: string | null
+          voice_transcript: string
+        }
+        Insert: {
+          created_at?: string
+          distance_m: number
+          fuel?: string | null
+          geo_source?: string
+          hours_per_day?: number | null
+          id?: string
+          live_accuracy_m: number
+          live_at: string
+          live_lat: number
+          live_lng: number
+          machine_type: string
+          make_model?: string
+          photo_lat: number
+          photo_lng: number
+          photo_path: string
+          photo_sha256: string
+          photo_taken_at: string
+          power_unit?: string | null
+          rated_power?: number | null
+          status?: string
+          user_id: string
+          verification_source?: string | null
+          voice_transcript: string
+        }
+        Update: {
+          created_at?: string
+          distance_m?: number
+          fuel?: string | null
+          geo_source?: string
+          hours_per_day?: number | null
+          id?: string
+          live_accuracy_m?: number
+          live_at?: string
+          live_lat?: number
+          live_lng?: number
+          machine_type?: string
+          make_model?: string
+          photo_lat?: number
+          photo_lng?: number
+          photo_path?: string
+          photo_sha256?: string
+          photo_taken_at?: string
+          power_unit?: string | null
+          rated_power?: number | null
+          status?: string
+          user_id?: string
+          verification_source?: string | null
+          voice_transcript?: string
+        }
+        Relationships: []
+      }
       marketplace_listings: {
         Row: {
           created_at: string | null
@@ -2355,6 +2433,60 @@ export type Database = {
           subscription_tier?: string | null
           trust_layer_prefs?: Json | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      public_library_entries: {
+        Row: {
+          body: string
+          id: string
+          kind: string
+          search: unknown
+          title: string
+          updated_at: string
+          url: string | null
+        }
+        Insert: {
+          body: string
+          id: string
+          kind: string
+          search?: unknown
+          title: string
+          updated_at?: string
+          url?: string | null
+        }
+        Update: {
+          body?: string
+          id?: string
+          kind?: string
+          search?: unknown
+          title?: string
+          updated_at?: string
+          url?: string | null
+        }
+        Relationships: []
+      }
+      public_library_state: {
+        Row: {
+          checked_at: string
+          entries: number
+          id: boolean
+          synced_at: string | null
+          version: string | null
+        }
+        Insert: {
+          checked_at?: string
+          entries?: number
+          id?: boolean
+          synced_at?: string | null
+          version?: string | null
+        }
+        Update: {
+          checked_at?: string
+          entries?: number
+          id?: boolean
+          synced_at?: string | null
+          version?: string | null
         }
         Relationships: []
       }
@@ -3797,6 +3929,17 @@ export type Database = {
       }
     }
     Functions: {
+      apply_public_library: {
+        Args: { p_entries: Json; p_version: string }
+        Returns: number
+      }
+      claim_public_library_check: {
+        Args: { p_min_age?: string }
+        Returns: {
+          claimed: boolean
+          version: string
+        }[]
+      }
       commit_invoice_read: {
         Args: { p_document_id?: string; p_id: string }
         Returns: boolean
@@ -3993,6 +4136,10 @@ export type Database = {
       }
       scope2_record: { Args: { p: Json }; Returns: Json }
       scope3_record_document: { Args: { p: Json }; Returns: Json }
+      search_public_library: {
+        Args: { p_limit?: number; p_terms: string[] }
+        Returns: Json
+      }
       seat_limit_for_tier: { Args: { p_tier: string }; Returns: number }
       service_accept_team_invitation: {
         Args: { p_token: string; p_user_email: string; p_user_id: string }

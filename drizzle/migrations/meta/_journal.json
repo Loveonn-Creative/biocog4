@@ -218,6 +218,27 @@
       "when": 1792513966857,
       "tag": "0030_reconcile_subscription_manual",
       "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1792682701320,
+      "tag": "0031_machinery_beta",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1792682730930,
+      "tag": "0032_public_library",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1792682752820,
+      "tag": "0033_security_hardening",
+      "breakpoints": true
     }
   ]
 }
