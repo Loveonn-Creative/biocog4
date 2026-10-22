@@ -1,0 +1,59 @@
+{
+  "slug": "buyer-asks-emissions-share-for-its-orders",
+  "q": "My buyer wants only the emissions for the goods I supplied them. How do I work that out?",
+  "title": "Emissions for one buyer's orders",
+  "short": "Share your plant's emissions for the period by a physical measure, such as tonnes or pieces, in proportion to that buyer's orders. If products differ a lot, allocate by line or by machine hours first. State the method so the buyer can compare suppliers.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers answering a buyer's request for its share of emissions",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Plant Scope 1 and 2 for the period.",
+        "Output in the chosen unit for all customers.",
+        "Buyer's output ÷ total × plant emissions."
+      ]
+    },
+    {
+      "h": "When to refine",
+      "p": [
+        "If the buyer's products use a different process or much more energy, split emissions by line first, then share within the line."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Allocating footwear emissions per pair",
+      "to": "/answers/footwear-factory-emissions-allocation-per-pair"
+    },
+    {
+      "label": "What primary data share means",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "Benchmarking plant energy",
+      "to": "/answers/how-to-benchmark-plant-energy-against-sector"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Example: one buyer",
+    "lines": [
+      "Plant emissions 1,200 t CO2 a year",
+      "Buyer's share of output: 250 of 2,000 t = 12.5%",
+      "1,200 × 12.5% = 150 t CO2"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "should-i-reduce-contract-demand-on-ht-bill",
+  "q": "Should I reduce the contract demand on my HT electricity connection?",
+  "title": "Reduce contract demand on an HT bill?",
+  "short": "If your recorded maximum demand stays well below contract demand, yes. Most tariffs bill demand charges on the higher of recorded demand or a set share of contract demand, so the gap is money paid for nothing. It saves cost, not emissions; emissions follow kWh.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs with HT connections paying demand or fixed charges",
+  "sections": [
+    {
+      "h": "How to decide",
+      "ol": [
+        "Take 12 months of recorded maximum demand from your bills.",
+        "Find the billing floor, the share of contract demand billed when usage is low, in your state tariff order.",
+        "If peak demand plus a safety margin sits under that floor, apply to the discom to reduce."
+      ]
+    },
+    {
+      "h": "Risk",
+      "p": [
+        "Exceeding contract demand often attracts penalty rates. Leave headroom for seasonal peaks and new machines."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Maximum demand charges",
+      "to": "/answers/maximum-demand-charges-peak-shaving"
+    },
+    {
+      "label": "Time of day tariff",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Power factor rebate and penalty",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

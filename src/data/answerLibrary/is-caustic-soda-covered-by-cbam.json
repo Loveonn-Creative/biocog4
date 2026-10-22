@@ -1,0 +1,49 @@
+{
+  "slug": "is-caustic-soda-covered-by-cbam",
+  "q": "Is caustic soda exported to Europe covered by CBAM?",
+  "title": "Is caustic soda covered by CBAM?",
+  "short": "No. Caustic soda (2815) and chlorine (2801) are not in Annex I. Hydrogen (2804 10) is, so a chlor-alkali plant selling hydrogen to an EU buyer would need a figure, though that is rare from India. Buyers may still ask for a caustic footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Chlor-alkali producers exporting caustic soda lye or flakes",
+  "sections": [
+    {
+      "h": "What buyers ask instead",
+      "p": [
+        "Electricity per tonne of caustic by source, steam for concentration and flaking, and how emissions are shared between caustic, chlorine and hydrogen."
+      ]
+    },
+    {
+      "h": "India's own scheme",
+      "p": [
+        "Named chlor-alkali plants have emission intensity targets under CCTS, which is separate from CBAM."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity invoices into dated, fingerprinted records, so if a buyer asks for a product footprint you can answer from documents rather than estimates.",
+  "links": [
+    {
+      "label": "Caustic soda footprint per tonne",
+      "to": "/answers/caustic-soda-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Is my chlor-alkali plant under CCTS?",
+      "to": "/answers/is-a-chlor-alkali-plant-covered-by-ccts"
+    },
+    {
+      "label": "Hydrogen and the 50 tonne exemption",
+      "to": "/answers/antwerp-hydrogen-imports-cbam-50-tonne-exemption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "are-steel-grinding-balls-covered-by-cbam",
+  "q": "Are steel grinding balls for mills covered by CBAM?",
+  "title": "Are steel grinding balls in CBAM?",
+  "short": "It depends on how they are made. Forged or stamped grinding balls are declared under 7326 11 and are covered. Cast grinding balls fall under 7325 91, which is not in Annex I. The CN code on the import declaration decides.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Grinding media makers supplying mining and cement plants in Europe",
+  "sections": [
+    {
+      "h": "Covered and not covered",
+      "ul": [
+        "Forged or stamped balls and cylpebs: 7326 11, covered.",
+        "Cast high chrome balls: 7325 91, not covered today.",
+        "Steel bar used for forging: chapter 72, covered as your precursor."
+      ]
+    },
+    {
+      "h": "If you forge",
+      "p": [
+        "Embedded emissions are the bar's emissions per tonne plus your own furnace fuel for heating and heat treatment. Get the bar mill's figure for the same period."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The Commission proposed in December 2025 to extend CBAM to some downstream steel and aluminium products. As of October 2026 that is not law, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Are steel forgings covered?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Are cast iron castings covered?",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

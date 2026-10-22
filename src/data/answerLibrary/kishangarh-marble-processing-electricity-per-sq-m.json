@@ -1,0 +1,58 @@
+{
+  "slug": "kishangarh-marble-processing-electricity-per-sq-m",
+  "q": "How much electricity and CO2 does a Kishangarh marble processing unit use per square metre?",
+  "title": "Kishangarh marble: CO2 per sq m",
+  "short": "Divide monthly kWh by square metres of finished slab or tile, then multiply by 0.710 kg CO2 per kWh. A unit using 50,000 kWh to finish 20,000 square metres runs at 2.5 kWh and about 1.8 kg CO2 per square metre. Gangsaws and polishing lines take most of it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Marble and granite processing units in Kishangarh and Makrana",
+  "sections": [
+    {
+      "h": "Where the units go",
+      "ul": [
+        "Gangsaws and block cutters.",
+        "Polishing and calibrating lines.",
+        "Water pumping and recycling."
+      ]
+    },
+    {
+      "h": "Add if relevant",
+      "p": [
+        "Diesel for generators and loaders, and quarry or transport emissions if a buyer asks for cradle to gate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Marble slab footprint",
+      "to": "/answers/marble-slab-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Kota stone footprint",
+      "to": "/answers/kota-stone-carbon-footprint-per-sq-m"
+    },
+    {
+      "label": "Diesel generator Scope 1",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Example: one month",
+    "lines": [
+      "50,000 kWh ÷ 20,000 sq m = 2.5 kWh per sq m",
+      "2.5 × 0.710 = 1.78 kg CO2 per sq m"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

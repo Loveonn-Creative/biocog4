@@ -1,0 +1,59 @@
+{
+  "slug": "namakkal-truck-body-builder-steel-scope-3",
+  "q": "What is the carbon footprint of a truck body built in Namakkal, and where does it come from?",
+  "title": "Namakkal truck body footprint",
+  "short": "Mostly from the steel. A body using 2 tonnes of steel at about 2.3 tonnes CO2 per tonne carries roughly 4.6 tonnes before your own welding, painting and power. Ask steel suppliers for their figure; use an average labelled as an estimate until they reply.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Truck body and trailer builders in Namakkal and Tiruchengode",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Steel sheet, sections and tubes by weight, from invoices.",
+        "Paint and primer, welding gas and electrodes.",
+        "Electricity and diesel used in the shed."
+      ]
+    },
+    {
+      "h": "Lower it",
+      "p": [
+        "Lighter designs with high strength steel cut tonnes per body, and buyers notice lower weight and fuel use."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which data is still missing.",
+  "links": [
+    {
+      "label": "Steel supplier benchmark",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "Welding electrode footprint",
+      "to": "/answers/welding-electrode-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Powder coating line emissions",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Example: one body",
+    "lines": [
+      "2.0 t steel × 2.3 t CO2/t = 4.6 t CO2",
+      "Add your own power, diesel and paint"
+    ],
+    "note": "2.3 is an illustrative average for blast furnace steel; replace it with supplier data."
+  },
+  "reviewed": "2026-10-22"
+}

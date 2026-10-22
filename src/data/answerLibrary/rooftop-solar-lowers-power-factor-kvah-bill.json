@@ -1,0 +1,57 @@
+{
+  "slug": "rooftop-solar-lowers-power-factor-kvah-bill",
+  "q": "Why did my power factor drop and kVAh bill stay high after installing rooftop solar?",
+  "title": "Rooftop solar and a falling power factor",
+  "short": "Solar supplies real power but not reactive power, so the grid still supplies the same reactive load while active import falls. Power factor at the meter drops, and on kVAh billing your units fall less than expected. Retune capacitors or the APFC panel.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Factories on kVAh billing that added rooftop solar",
+  "sections": [
+    {
+      "h": "What is happening",
+      "p": [
+        "Power factor is kW divided by kVA. Solar cuts kW drawn from the grid, but motors still draw kVAr, so the ratio falls."
+      ]
+    },
+    {
+      "h": "Fix",
+      "ul": [
+        "Re-size the APFC panel for the new import profile.",
+        "Check that the inverter can supply reactive power, if your discom allows it.",
+        "Watch for leading power factor at low load."
+      ]
+    },
+    {
+      "h": "For emissions",
+      "p": [
+        "Scope 2 uses the kWh imported from the grid, not kVAh. Solar you used yourself carries no grid emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Power factor rebate and penalty",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    },
+    {
+      "label": "kVAh bills and emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

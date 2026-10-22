@@ -1,0 +1,56 @@
+{
+  "slug": "hisar-stainless-strip-re-roller-cbam-precursor",
+  "q": "What CBAM data does a Hisar stainless strip re-roller need for EU buyers?",
+  "title": "Hisar stainless re-roller CBAM data",
+  "short": "Your stainless strip is covered, and so is the hot-rolled coil you buy, so the coil is your precursor. Get the coil maker's embedded emissions per tonne, add your own furnace and pickling fuel, and divide by good output. Electricity is not counted for steel.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Stainless cold rolling and strip units in Hisar exporting to Europe",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ol": [
+        "Coil tonnes consumed per period, by supplier.",
+        "Each supplier's embedded emissions per tonne.",
+        "Fuel for annealing furnaces and acid regeneration.",
+        "Good output in tonnes after edge trim and scrap."
+      ]
+    },
+    {
+      "h": "Nickel matters",
+      "p": [
+        "Coil made from nickel pig iron can carry far higher emissions than coil from scrap. Ask the mill for its own figure; defaults are high."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Stainless cold rolled coil precursors",
+      "to": "/answers/indonesian-stainless-cold-rolled-coil-precursors"
+    },
+    {
+      "label": "Purchased stainless steel factor",
+      "to": "/answers/emission-factor-for-purchased-stainless-steel"
+    },
+    {
+      "label": "Cold rolled coil embedded emissions",
+      "to": "/answers/cold-rolled-coil-cbam-embedded-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, production routes and monitoring",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

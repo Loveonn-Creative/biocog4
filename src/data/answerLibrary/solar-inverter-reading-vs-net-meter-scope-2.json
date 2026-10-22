@@ -1,0 +1,51 @@
+{
+  "slug": "solar-inverter-reading-vs-net-meter-scope-2",
+  "q": "Should I use my solar inverter reading or the net meter for Scope 2?",
+  "title": "Solar inverter or net meter for Scope 2?",
+  "short": "Use the net meter's import register for Scope 2: that is grid electricity you bought. Solar you used yourself equals generation, from the inverter or generation meter, minus units exported. Never subtract the inverter reading from the grid bill.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories with rooftop solar and net or gross metering",
+  "sections": [
+    {
+      "h": "Three numbers",
+      "ul": [
+        "Grid import, from the import register: Scope 2.",
+        "Export, from the export register.",
+        "Generation, from the generation meter or inverter."
+      ]
+    },
+    {
+      "h": "Self use",
+      "p": [
+        "Self used solar = generation minus export. Report it as renewable energy used, with no grid emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Gross metering solar claims",
+      "to": "/answers/gross-metering-solar-scope-2-claim"
+    },
+    {
+      "label": "Banked renewable units",
+      "to": "/answers/renewable-banking-units-which-month-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

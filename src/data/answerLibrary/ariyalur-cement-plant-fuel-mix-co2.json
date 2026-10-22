@@ -1,0 +1,52 @@
+{
+  "slug": "ariyalur-cement-plant-fuel-mix-co2",
+  "q": "How does an Ariyalur cement plant's mix of coal, pet coke and lignite change its CO2 per tonne of clinker?",
+  "title": "Ariyalur cement: fuel mix and CO2",
+  "short": "Calcination CO2 stays about the same, roughly half a tonne per tonne of clinker. Fuel CO2 depends on heat per tonne and the fuel's factor: IPCC defaults are about 94.6 kg CO2 per GJ for bituminous coal, 97.5 for pet coke and 101 for lignite.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement plants in Ariyalur and Tamil Nadu, and their buyers",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Heat per tonne of clinker, in GJ, from kiln fuel and output.",
+        "Share of heat from each fuel.",
+        "Fuel CO2 = heat × weighted factor.",
+        "Add calcination from clinker CaO and MgO."
+      ]
+    },
+    {
+      "h": "What lowers it",
+      "p": [
+        "Alternative fuels such as biomass or plastic waste, a lower heat rate, and less clinker per tonne of cement."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Pet coke emission factor",
+      "to": "/answers/petcoke-emission-factor-india"
+    },
+    {
+      "label": "Lignite emission factor",
+      "to": "/answers/lignite-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "billed-units-vs-meter-reading-for-emissions",
+  "q": "Should I use billed units or the meter reading for my electricity emissions?",
+  "title": "Billed units or meter reading?",
+  "short": "Use the units actually consumed in the period: the meter reading difference times the multiplying factor. Billed units can include assessed units, minimum charges or adjustments for earlier months. If the bill is in kVAh, use the kWh register for emissions.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs reading electricity bills for Scope 2",
+  "sections": [
+    {
+      "h": "Where they differ",
+      "ul": [
+        "Assessed or average billing after a meter fault.",
+        "Minimum or fixed charge units in low use months.",
+        "Arrears and credits for earlier periods.",
+        "kVAh billing, which overstates kWh when power factor is low."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Opening and closing readings, the multiplying factor, the kWh register and the billing period. That lets anyone recheck the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "kVAh bills and emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "Arrears on electricity bills",
+      "to": "/answers/electricity-bill-arrears-carbon-accounting"
+    },
+    {
+      "label": "Assessed bills after a meter fault",
+      "to": "/answers/assessed-electricity-bill-faulty-meter-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

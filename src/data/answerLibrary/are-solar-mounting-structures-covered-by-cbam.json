@@ -1,0 +1,57 @@
+{
+  "slug": "are-solar-mounting-structures-covered-by-cbam",
+  "q": "Are steel or aluminium solar mounting structures covered by CBAM?",
+  "title": "Are solar mounting structures in CBAM?",
+  "short": "Usually yes. Mounting structures shipped on their own are normally declared as steel structures under 7308 or aluminium structures under 7610, and both headings are in Annex I. The importer needs embedded emissions, which come mostly from the coil, sections or extrusions you bought.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian makers of solar module mounting structures exporting to the EU",
+  "sections": [
+    {
+      "h": "Which code applies",
+      "ul": [
+        "Galvanised steel frames, purlins and rails: usually 7308 90.",
+        "Aluminium rails and clamps: usually 7610 90 if they are structure parts, or 7604 if shipped as plain profiles.",
+        "Fasteners shipped with the kit: 7318, also covered."
+      ]
+    },
+    {
+      "h": "Where the emissions come from",
+      "p": [
+        "Precursors dominate: hot-rolled or galvanised coil, sections, or aluminium billet for extrusion. Add your own direct emissions from fuel used in galvanising or ovens. Electricity is not counted for steel and aluminium goods."
+      ]
+    },
+    {
+      "h": "Ask before you quote",
+      "p": [
+        "Confirm the CN code with your buyer's customs broker. A structure declared with modules as one system can be classified differently."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Are steel structures covered?",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    },
+    {
+      "label": "Are nuts and bolts covered?",
+      "to": "/answers/are-nuts-and-bolts-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

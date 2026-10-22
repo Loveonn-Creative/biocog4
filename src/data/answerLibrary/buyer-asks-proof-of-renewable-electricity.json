@@ -1,0 +1,52 @@
+{
+  "slug": "buyer-asks-proof-of-renewable-electricity",
+  "q": "What proof of renewable electricity will a buyer accept from my factory?",
+  "title": "Proof of renewable electricity",
+  "short": "Documents that show you own the renewable attribute for the units you claim: green tariff bills from the discom, retired renewable energy certificates, open access invoices with the certificates, or generation meter readings from your own rooftop solar.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Exporters asked to show renewable electricity use",
+  "sections": [
+    {
+      "h": "Accepted evidence",
+      "ul": [
+        "Green tariff bills naming the units and period.",
+        "REC or I-REC retirement statements in your name.",
+        "Open access or group captive contracts with generation and allocation statements.",
+        "Rooftop generation meter readings."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "p": [
+        "Certificates sold on or claimed twice, and solar units already exported to the grid. The GHG Protocol's quality criteria apply to every claim."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Green tariff and Scope 2",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Indian RECs for an SBTi target",
+      "to": "/answers/indian-recs-for-sbti-scope-2-target"
+    },
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

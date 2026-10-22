@@ -1,0 +1,51 @@
+{
+  "slug": "capital-goods-scope-3-count-in-year-of-purchase",
+  "q": "Do I spread a new machine's carbon footprint over its life or count it all in the year I buy it?",
+  "title": "Capital goods: count in purchase year",
+  "short": "Count it all in the year of purchase. The GHG Protocol Scope 3 Standard puts capital goods in category 2 and does not depreciate them, so a big purchase makes that year's Scope 3 jump. Explain the spike in the report rather than smoothing it.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs buying machines, vehicles, buildings or IT equipment",
+  "sections": [
+    {
+      "h": "How to estimate",
+      "ul": [
+        "Supplier footprint for the machine if available.",
+        "Otherwise spend times a factor for the equipment type.",
+        "Report category 2 separately from category 1 purchases."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Year-on-year comparisons can mislead. Note the purchase and show results with and without it."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns supplier invoices into a Scope 3 record with the supplier, quantity and factor behind every figure, so you can see which data is still missing.",
+  "links": [
+    {
+      "label": "Machinery: category 1 or 2",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "Choosing a base year",
+      "to": "/answers/how-to-choose-base-year-carbon-inventory"
+    },
+    {
+      "label": "Professional services in Scope 3",
+      "to": "/answers/professional-services-fees-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

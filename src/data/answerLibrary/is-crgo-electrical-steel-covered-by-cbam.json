@@ -1,0 +1,57 @@
+{
+  "slug": "is-crgo-electrical-steel-covered-by-cbam",
+  "q": "Is CRGO electrical steel covered by CBAM?",
+  "title": "Is CRGO electrical steel in CBAM?",
+  "short": "Yes. Grain oriented electrical steel coil is flat-rolled alloy steel under 7225 11 or 7226 11, and chapter 72 is in Annex I. Cut laminations and finished transformer cores are usually declared as transformer parts under 8504, which is not covered today.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "CRGO service centres, lamination cutters and transformer makers trading with the EU",
+  "sections": [
+    {
+      "h": "What is covered",
+      "ul": [
+        "CRGO and CRNO coil and slit strip: chapter 72, covered.",
+        "Laminations and stacked cores: usually 8504 90, not covered, but confirm the code.",
+        "Finished transformers: 8504, not covered."
+      ]
+    },
+    {
+      "h": "If you slit and resell coil",
+      "p": [
+        "Slitting adds little direct emissions. The figure your buyer needs is essentially the mill's embedded emissions per tonne, so ask the mill for it with the heat or coil numbers."
+      ]
+    },
+    {
+      "h": "Could coverage change",
+      "p": [
+        "The Commission proposed in December 2025 to extend CBAM to some downstream steel and aluminium products. As of October 2026 that is not law, so check Annex I again before each contract season."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Transformer footprint per unit",
+      "to": "/answers/distribution-transformer-carbon-footprint-per-unit"
+    },
+    {
+      "label": "Cold rolled coil embedded emissions",
+      "to": "/answers/cold-rolled-coil-cbam-embedded-emissions"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

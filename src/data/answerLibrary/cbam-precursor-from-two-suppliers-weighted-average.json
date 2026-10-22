@@ -1,0 +1,64 @@
+{
+  "slug": "cbam-precursor-from-two-suppliers-weighted-average",
+  "q": "How do I calculate CBAM embedded emissions when I buy the same steel input from two suppliers?",
+  "title": "One precursor from two suppliers",
+  "short": "Use each supplier's embedded emissions per tonne for the tonnes you actually consumed in the period. If you cannot trace which coil went into which product, weight the two figures by tonnes consumed. Any tonnes without supplier data take the default value.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Tube, wire and fastener makers buying coil or rod from more than one mill",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Tonnes consumed from each supplier, from issue or stock records.",
+        "Each supplier's embedded emissions per tonne for the same period.",
+        "Weighted figure = sum of tonnes × factor ÷ total tonnes.",
+        "Use the default value for any tonnes without supplier data."
+      ]
+    },
+    {
+      "h": "Keep it traceable",
+      "p": [
+        "Record the supplier, heat or coil numbers and the period of each figure. A verifier will check that the tonnes match your purchase and stock records."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Tube precursor data",
+      "to": "/answers/eu-importer-steel-tube-precursor-data"
+    },
+    {
+      "label": "Wire rod precursor data",
+      "to": "/answers/vizag-steel-wire-rod-buyer-precursor-data"
+    },
+    {
+      "label": "Official CBAM default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, production routes and monitoring",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "example": {
+    "title": "Example: coil from two mills",
+    "lines": [
+      "600 t × 2.0 t CO2/t = 1,200 t",
+      "400 t × 2.4 t CO2/t = 960 t",
+      "2,160 ÷ 1,000 = 2.16 t CO2 per tonne of coil"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

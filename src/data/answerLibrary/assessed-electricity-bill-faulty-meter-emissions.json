@@ -1,0 +1,51 @@
+{
+  "slug": "assessed-electricity-bill-faulty-meter-emissions",
+  "q": "How do I count emissions when my electricity bill is assessed because the meter was faulty?",
+  "title": "Assessed bills after a meter fault",
+  "short": "Use the assessed units for that month, mark the figure as an estimate, and correct it when the discom issues a revised bill or the new meter's readings settle. Keep the fault and replacement records so the change can be explained.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs whose bills show assessed, average or provisional units",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Record the assessed units and the reason on the bill.",
+        "Flag the month as estimated.",
+        "When a revised bill arrives, replace the estimate in the right month."
+      ]
+    },
+    {
+      "h": "Check the estimate",
+      "p": [
+        "Compare the assessed units with the same month last year and with production. A large gap is worth raising with the discom, for cost as well as accuracy."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Arrears on electricity bills",
+      "to": "/answers/electricity-bill-arrears-carbon-accounting"
+    },
+    {
+      "label": "Restating after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

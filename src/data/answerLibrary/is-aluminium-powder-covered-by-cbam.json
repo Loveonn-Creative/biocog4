@@ -1,0 +1,49 @@
+{
+  "slug": "is-aluminium-powder-covered-by-cbam",
+  "q": "Is aluminium powder or flake covered by CBAM?",
+  "title": "Is aluminium powder in CBAM?",
+  "short": "Yes. Aluminium powders and flakes are under 7603, which is in Annex I. Embedded emissions come mainly from the unwrought aluminium you atomise, a precursor, plus your own direct emissions. Electricity is not counted for aluminium goods.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Atomised aluminium powder and paste makers exporting to Europe",
+  "sections": [
+    {
+      "h": "Precursor first",
+      "p": [
+        "Ask your ingot supplier for embedded emissions per tonne. Primary metal from a coal powered smelter can carry several times the direct emissions of remelted scrap, but only direct emissions count under CBAM for aluminium."
+      ]
+    },
+    {
+      "h": "Your own emissions",
+      "p": [
+        "Fuel for melting furnaces and any inert gas production on site. Pastes with solvent may be declared under a different chapter, so confirm the code."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Are aluminium castings covered?",
+      "to": "/answers/are-aluminium-castings-covered-by-cbam"
+    },
+    {
+      "label": "Aluminium foil and containers",
+      "to": "/answers/are-aluminium-foil-and-containers-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

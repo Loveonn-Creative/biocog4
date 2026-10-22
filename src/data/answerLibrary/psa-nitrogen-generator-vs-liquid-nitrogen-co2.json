@@ -1,0 +1,51 @@
+{
+  "slug": "psa-nitrogen-generator-vs-liquid-nitrogen-co2",
+  "q": "Is an on-site PSA nitrogen generator lower carbon than buying liquid nitrogen?",
+  "title": "PSA nitrogen vs liquid nitrogen CO2",
+  "short": "Often yes for steady, moderate purity demand, but it moves emissions into your Scope 2. PSA runs on compressor electricity; liquid nitrogen carries the supplier's air separation power and road transport in your Scope 3. Compare kWh per cubic metre at the purity you need.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Food, pharma, electronics and heat treatment units using nitrogen",
+  "sections": [
+    {
+      "h": "What to compare",
+      "ul": [
+        "PSA: compressor kWh per Nm3 at your purity, from the vendor and a meter.",
+        "Liquid: the supplier's kWh per Nm3 if they share it, plus tanker trips.",
+        "Boil-off losses from liquid storage."
+      ]
+    },
+    {
+      "h": "Purity matters",
+      "p": [
+        "Very high purity needs more air per cubic metre of nitrogen, so PSA power rises. For small or very pure loads, liquid supply may still be the better choice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Industrial gases in Scope 3",
+      "to": "/answers/industrial-gases-oxygen-nitrogen-scope-3"
+    },
+    {
+      "label": "Compressor specific power",
+      "to": "/answers/air-compressor-specific-power-kw-per-cfm"
+    },
+    {
+      "label": "Compressed air leaks",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

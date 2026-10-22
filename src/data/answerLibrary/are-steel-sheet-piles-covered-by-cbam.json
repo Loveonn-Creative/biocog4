@@ -1,0 +1,51 @@
+{
+  "slug": "are-steel-sheet-piles-covered-by-cbam",
+  "q": "Are steel sheet piles covered by CBAM?",
+  "title": "Are steel sheet piles in CBAM?",
+  "short": "Yes. Sheet piling of iron or steel, whether hot-rolled or cold-formed, and welded angles and sections for it are under 7301, which is in Annex I. Cold-formed piles carry the embedded emissions of the coil they are rolled from.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Sheet pile makers and cold forming units supplying EU ports and infrastructure",
+  "sections": [
+    {
+      "h": "Where the figure comes from",
+      "ul": [
+        "Hot-rolled piles: the mill's own direct emissions and its precursors.",
+        "Cold-formed piles: hot-rolled coil as the precursor, plus any fuel you burn.",
+        "Electricity is not counted for steel goods."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "p": [
+        "Coil tonnes consumed per period, the supplier's embedded emissions per tonne, and your output in tonnes. Scrap and yield losses matter: emissions are divided over good output only."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Are steel structures covered?",
+      "to": "/answers/are-steel-structures-covered-by-cbam"
+    },
+    {
+      "label": "Railway track materials",
+      "to": "/answers/are-railway-track-materials-covered-by-cbam"
+    },
+    {
+      "label": "Check a CN code",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

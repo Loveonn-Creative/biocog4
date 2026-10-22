@@ -1,0 +1,61 @@
+{
+  "slug": "is-a-refinery-covered-by-ccts",
+  "q": "Is a petroleum refinery covered by India's carbon credit trading scheme?",
+  "title": "Is a refinery covered by CCTS?",
+  "short": "Only if it is named. Refineries were added to the emission intensity targets by the January 2026 amendment, with 21 refineries reported as obligated. Targets are set per refinery, against a 2023-24 baseline, in tonnes CO2e per unit of throughput adjusted for complexity.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Petroleum refineries in India and their energy and planning teams",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the January 2026 amendment to the Greenhouse Gases Emission Intensity Target Rules.",
+        "Search the refinery schedule for your site.",
+        "Note the baseline, the intensity unit and the targets for 2025-26 and 2026-27."
+      ]
+    },
+    {
+      "h": "What drives the number",
+      "p": [
+        "Fuel gas, fuel oil and coke burnt in heaters and boilers, hydrogen plant emissions, flaring and purchased power. Complexity adjustment means a deeper conversion unit does not count against you by itself, so keep unit-wise throughput as well as total crude."
+      ]
+    },
+    {
+      "h": "If you are not named",
+      "p": [
+        "You have no target, but obligated customers may ask for your energy and emissions data, and the offset mechanism lets non-obligated entities earn credits from projects under methodologies BEE has approved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Refinery fuel gas CO2 factor",
+      "to": "/answers/refinery-fuel-gas-co2-factor"
+    },
+    {
+      "label": "Allocating refinery emissions to products",
+      "to": "/answers/refinery-emissions-allocation-across-products"
+    },
+    {
+      "label": "If a plant misses its target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets for more sectors under CCTS",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, GHG Emission Intensity Target Rules",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

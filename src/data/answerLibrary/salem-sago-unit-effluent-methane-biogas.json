@@ -1,0 +1,52 @@
+{
+  "slug": "salem-sago-unit-effluent-methane-biogas",
+  "q": "How much methane comes from a Salem sago unit's effluent lagoon, and does biogas capture help?",
+  "title": "Sago effluent methane and biogas",
+  "short": "Open anaerobic lagoons release methane from the effluent's organic load. The IPCC method is COD removed × 0.25 kg CH4 per kg COD × a correction factor, up to 0.8 for deep anaerobic lagoons. Covering the lagoon and burning the biogas turns most of that methane into CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sago and starch units in Salem and Namakkal",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Effluent volume and COD in and out, from lab tests.",
+        "COD removed in the lagoon, in kg.",
+        "CH4 = COD removed × 0.25 × the correction factor.",
+        "CO2e = CH4 × its GWP."
+      ]
+    },
+    {
+      "h": "Capture",
+      "p": [
+        "Biogas used in a boiler can replace fuel too. Projects that capture and use it may earn carbon credits under approved methodologies."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Wastewater biogas carbon credits",
+      "to": "/answers/food-factory-wastewater-biogas-carbon-credits"
+    },
+    {
+      "label": "Sago starch footprint",
+      "to": "/answers/sago-starch-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines for National Greenhouse Gas Inventories",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

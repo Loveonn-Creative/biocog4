@@ -451,6 +451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "ambala-scientific-glassware-unit-gas-per-kg",
+  "q": "How do I calculate CO2 per kg of glassware at an Ambala scientific glassware unit?",
+  "title": "Ambala glassware: CO2 per kg",
+  "short": "LPG burnt in lampworking burners and lehrs × 2.98 kg CO2 per kg of LPG, plus electricity × 0.710, divided by kg of good glassware. Bought borosilicate tubing carries its own footprint in Scope 3, often larger than your direct emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "ambulance-fleet-emissions-scope-1",
   "q": "How do I calculate emissions from a hospital's ambulance fleet?",
   "title": "Ambulance fleet emissions",
@@ -667,6 +675,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "are-cast-iron-manhole-covers-covered-by-cbam",
+  "q": "Are cast iron manhole covers exported to Europe covered by CBAM?",
+  "title": "Are cast iron manhole covers in CBAM?",
+  "short": "No, not today. Manhole covers and gratings of cast iron are declared under 7325, cast articles of iron, which is not in Annex I of the CBAM Regulation. Your EU buyer files no CBAM figure for them, though some ask for a product footprint.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "are-ceramic-tiles-covered-by-cbam",
   "q": "Are ceramic tiles and sanitaryware covered by EU or UK CBAM?",
   "title": "Are ceramic tiles covered by CBAM?",
@@ -681,6 +697,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. An electric delivery has no tailpipe emissions, but the electricity that charged the vehicle was generated somewhere, and in India most of it from coal. Your Scope 3 transport figure is the carrier's kWh times the grid factor, which is lower than diesel but not zero.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "are-graphite-electrodes-covered-by-cbam",
+  "q": "Are graphite electrodes covered by CBAM?",
+  "title": "Are graphite electrodes in CBAM?",
+  "short": "No. Graphite electrodes are declared under 8545, which is not in Annex I. But the electrode carbon a steelmaker consumes in an arc furnace counts in that steel's direct emissions, so EU and Asian mills may ask how much carbon your electrodes hold.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "are-hand-tools-covered-by-cbam",
@@ -755,6 +779,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "are-refractories-covered-by-cbam",
+  "q": "Are refractory bricks and castables covered by CBAM?",
+  "title": "Are refractories covered by CBAM?",
+  "short": "Refractory bricks and shapes under 6902 and 6903 are not covered. The catch is aluminous cement: calcium aluminate cement under 2523 30 is in Annex I, so a refractory maker exporting it as cement must supply embedded emissions.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "are-solar-mounting-structures-covered-by-cbam",
+  "q": "Are steel or aluminium solar mounting structures covered by CBAM?",
+  "title": "Are solar mounting structures in CBAM?",
+  "short": "Usually yes. Mounting structures shipped on their own are normally declared as steel structures under 7308 or aluminium structures under 7610, and both headings are in Annex I. The importer needs embedded emissions, which come mostly from the coil, sections or extrusions you bought.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "are-steel-drums-and-gas-cylinders-covered-by-cbam",
   "q": "Are steel drums, tanks and gas cylinders covered by EU CBAM?",
   "title": "Are steel drums and cylinders under CBAM?",
@@ -769,6 +809,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Mostly yes. Flanges and pipe fittings under CN 7307, forged articles under 7326 and forged bars in Chapter 72 are iron and steel goods in CBAM Annex I. Forgings machined into recognisable machine or vehicle parts, such as crankshafts and gears under 8483 or vehicle parts under 8708, are not covered today.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "are-steel-grinding-balls-covered-by-cbam",
+  "q": "Are steel grinding balls for mills covered by CBAM?",
+  "title": "Are steel grinding balls in CBAM?",
+  "short": "It depends on how they are made. Forged or stamped grinding balls are declared under 7326 11 and are covered. Cast grinding balls fall under 7325 91, which is not in Annex I. The CN code on the import declaration decides.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "are-steel-nails-wire-and-springs-covered-by-cbam",
@@ -793,6 +841,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Rails and track material under CN 7302 are CBAM goods. Railway wheels, axles and other parts of rolling stock under chapter 86 are not in Annex I, so they need no CBAM data, even though they are made of steel. Their buyers may still ask for a product footprint.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "are-steel-sheet-piles-covered-by-cbam",
+  "q": "Are steel sheet piles covered by CBAM?",
+  "title": "Are steel sheet piles in CBAM?",
+  "short": "Yes. Sheet piling of iron or steel, whether hot-rolled or cold-formed, and welded angles and sections for it are under 7301, which is in Annex I. Cold-formed piles carry the embedded emissions of the coil they are rolled from.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "are-steel-structures-covered-by-cbam",
@@ -835,6 +891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "ariyalur-cement-plant-fuel-mix-co2",
+  "q": "How does an Ariyalur cement plant's mix of coal, pet coke and lignite change its CO2 per tonne of clinker?",
+  "title": "Ariyalur cement: fuel mix and CO2",
+  "short": "Calcination CO2 stays about the same, roughly half a tonne per tonne of clinker. Fuel CO2 depends on heat per tonne and the fuel's factor: IPCC defaults are about 94.6 kg CO2 per GJ for bituminous coal, 97.5 for pet coke and 101 for lignite.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "article-6-4-share-of-proceeds-and-omge",
   "q": "How much of an Article 6.4 project's credits go to the share of proceeds and overall mitigation?",
   "title": "Article 6.4 share of proceeds and OMGE",
@@ -865,6 +929,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The ASI Performance Standard requires certified smelters to keep Scope 1 and 2 emissions below 8 t CO2e per tonne of aluminium: at once for smelters that started after 2020, and by 2030 for older ones. An extruder is not held to that limit, but the smelter's figure drives the footprint of the metal you buy.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "assessed-electricity-bill-faulty-meter-emissions",
+  "q": "How do I count emissions when my electricity bill is assessed because the meter was faulty?",
+  "title": "Assessed bills after a meter fault",
+  "short": "Use the assessed units for that month, mark the figure as an estimate, and correct it when the discom issues a revised bill or the new meter's readings settle. Keep the fault and replacement records so the change can be explained.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "athi-river-epz-garment-factory-diesel-backup",
@@ -1297,6 +1369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, for part of the calculation. A bill of lading proves the ports, vessel, shipment date, containers and declared gross weight of the cargo. It does not give the sea distance, the route sailed or any fuel data, so add a port-to-port distance from a named source and keep the bill as your weight evidence.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "billed-units-vs-meter-reading-for-emissions",
+  "q": "Should I use billed units or the meter reading for my electricity emissions?",
+  "title": "Billed units or meter reading?",
+  "short": "Use the units actually consumed in the period: the meter reading difference times the multiplying factor. Billed units can include assessed units, minimum charges or adjustments for earlier months. If the bill is in kVAh, use the kWh register for emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "binh-duong-footwear-factory-scope-1-and-2",
@@ -1867,12 +1947,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "buyer-asks-emissions-share-for-its-orders",
+  "q": "My buyer wants only the emissions for the goods I supplied them. How do I work that out?",
+  "title": "Emissions for one buyer's orders",
+  "short": "Share your plant's emissions for the period by a physical measure, such as tonnes or pieces, in proportion to that buyer's orders. If products differ a lot, allocate by line or by machine hours first. State the method so the buyer can compare suppliers.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "buyer-asks-for-my-scope-3",
   "q": "My buyer asks for my own Scope 3, not just Scope 1 and 2. Do small suppliers really need it?",
   "title": "Buyer wants my Scope 3: do I need it?",
   "short": "Usually not all of it. A buyer asks because your Scope 1 and 2 leave out the materials and freight behind what you sell them, often the biggest part. Give measured Scope 1 and 2 plus estimates for purchased materials, inbound freight and waste. Downstream categories, such as use of sold products, rarely matter to the buyer.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "buyer-asks-proof-of-renewable-electricity",
+  "q": "What proof of renewable electricity will a buyer accept from my factory?",
+  "title": "Proof of renewable electricity",
+  "short": "Documents that show you own the renewable attribute for the units you claim: green tariff bills from the discom, retired renewable energy certificates, open access invoices with the certificates, or generation meter readings from your own rooftop solar.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "buyer-asks-third-party-verified-footprint",
+  "q": "My buyer wants a third-party verified carbon footprint. What does that involve for a small supplier?",
+  "title": "Third-party verified footprint",
+  "short": "First build a documented inventory or product footprint, then hire an accredited body to verify it: ISO 14064-3 for a company inventory, or a critical review or verification for an ISO 14067 product footprint. Verifiers sample invoices, so records matter more than reports.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "buyer-audit-rights-over-supplier-emissions-data",
@@ -2179,6 +2283,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "capital-goods-scope-3-count-in-year-of-purchase",
+  "q": "Do I spread a new machine's carbon footprint over its life or count it all in the year I buy it?",
+  "title": "Capital goods: count in purchase year",
+  "short": "Count it all in the year of purchase. The GHG Protocol Scope 3 Standard puts capital goods in category 2 and does not depreciate them, so a big purchase makes that year's Scope 3 jump. Explain the spike in the report rather than smoothing it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "car-body-shop-paint-solvents-carbon-count",
   "q": "Do paint solvents in a car body shop count in its carbon footprint?",
   "title": "Body shops: paint solvents and carbon",
@@ -2355,6 +2467,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "cash-diesel-purchases-without-gst-invoice",
+  "q": "How do I count diesel bought for cash without a GST invoice?",
+  "title": "Cash diesel without a GST invoice",
+  "short": "Count it from the pump receipt or a fuel log: litres × 2.68 kg CO2 per litre. Mark it as lower quality evidence than an invoice. Moving regular purchases to invoices or a fuel card makes the figure checkable.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "cashew-kernel-and-cnsl-emissions-allocation",
   "q": "How do I split emissions between cashew kernels and cashew nut shell liquid?",
   "title": "Splitting emissions: cashew kernels and CNSL",
@@ -2467,6 +2587,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "cbam-goods-processed-by-job-worker-before-export",
+  "q": "If a job worker galvanises or heat treats my steel before export, whose emissions go into the CBAM figure?",
+  "title": "CBAM when a job worker processes goods",
+  "short": "Both. Treat the job worker's site as a separate installation: your product is its precursor, and the fuel it burns adds direct emissions. Ask the job worker for fuel per tonne processed, then add it to your own embedded emissions per tonne.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "cbam-installation-boundary-two-units",
   "q": "Is each of my factory units a separate CBAM installation?",
   "title": "Is each factory unit a CBAM installation?",
@@ -2489,6 +2617,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Under Article 26 of the CBAM Regulation, an authorised declarant who does not surrender enough certificates pays a penalty per missing certificate equal to the EU ETS excess emissions penalty, which started at EUR 100 per tonne and is indexed to inflation. Paying the penalty does not cancel the duty to surrender the missing certificates.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cbam-precursor-from-two-suppliers-weighted-average",
+  "q": "How do I calculate CBAM embedded emissions when I buy the same steel input from two suppliers?",
+  "title": "One precursor from two suppliers",
+  "short": "Use each supplier's embedded emissions per tonne for the tonnes you actually consumed in the period. If you cannot trace which coil went into which product, weight the two figures by tonnes consumed. Any tonnes without supplier data take the default value.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "cbg-sold-under-satat-and-carbon-credits",
@@ -2705,6 +2841,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Dust removed from the kiln system, such as bypass or cement kiln dust, has been partly or fully calcined, so its CO2 was released too. Add it: tonnes of dust times its calcination degree times the CO2 factor. IPCC Tier 1 uses a 2% uplift on clinker CO2 when dust data is missing.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "cement-plant-captive-power-cbam-indirect-emissions",
+  "q": "How does a cement plant with its own power plant count indirect emissions for CBAM?",
+  "title": "Cement captive power in CBAM",
+  "short": "Cement counts indirect emissions under CBAM, so electricity matters. For power from your own captive plant, work out that plant's emission factor from its fuel and net generation, then apply it to the kWh the cement process used. Count the captive fuel once, not as both direct and indirect.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "cement-supplier-benchmark-carbon-intensity",
@@ -3265,6 +3409,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "By carbon mass balance across the gasifiers and the DRI shaft: carbon in the coal fed in, minus carbon leaving in DRI, char, tar or sold by-products, times 44/12. CO2 stripped from the syngas and vented still counts. It can be subtracted only if sent to permanent geological storage.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "coal-invoice-what-to-read-for-emissions",
+  "q": "What should I read from a coal invoice to calculate emissions?",
+  "title": "Coal invoice: what to read",
+  "short": "The quantity received in tonnes, the grade or GCV, and the moisture basis. Emissions need tonnes burnt and energy content: tonnes × GCV converted to NCV × the IPCC factor for the coal type. If the invoice gives only a grade, use your own lab GCV.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "coal-power-plant-co2-per-kwh-heat-rate",
@@ -5779,6 +5931,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "factory-staff-bus-scope-1-or-scope-3",
+  "q": "Is diesel for our factory staff bus Scope 1 or Scope 3?",
+  "title": "Staff bus: Scope 1 or Scope 3",
+  "short": "If the company owns or leases and runs the bus, its diesel is Scope 1. If a contractor runs the service and you pay per trip or per month, it is Scope 3 category 7, employee commuting. The invoice tells you which: fuel bills or a transport service bill.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "failed-steam-trap-fuel-loss",
   "q": "How much fuel and CO2 does one failed steam trap waste?",
   "title": "Fuel and CO2 lost by a failed steam trap",
@@ -6987,6 +7147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "guntur-chilli-cold-storage-electricity-per-tonne",
+  "q": "How much electricity does a Guntur chilli cold storage use per tonne stored?",
+  "title": "Chilli cold storage: kWh per tonne",
+  "short": "Divide monthly kWh by the tonne-months stored. A store using 60,000 kWh while holding 5,000 tonnes uses 12 kWh per tonne-month, about 8.5 kg CO2. Refrigerant top-ups are Scope 1 and can add more than people expect.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "gwangyang-steel-coated-sheet-precursor-data",
   "q": "What precursor data does a Gwangyang coated steel sheet need for CBAM?",
   "title": "Gwangyang coated sheet: precursor data",
@@ -7089,6 +7257,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the sugar, glucose syrup and flavours per kg with supplier figures, then the cooking, forming and wrapping energy. Divide the plant's fuel and electricity by kg packed and add the wrapper film and cartons.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "harmonic-filter-energy-saving-factory",
+  "q": "Does a harmonic filter save electricity in a factory with many drives?",
+  "title": "Do harmonic filters save energy?",
+  "short": "A little, mostly by cutting heating losses in cables and transformers. The bigger gains are fewer drive trips, longer capacitor life and a steadier power factor. Measure total harmonic distortion and kWh before and after; do not assume a saving figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "hawassa-industrial-park-apparel-scope-2",
@@ -7201,6 +7377,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Scope 3. A truck hired with its driver from a transporter is operated by the transporter, so its fuel is Scope 3, Category 4 when you pay for the transport. That holds for long-term attached trucks too. Only trucks you own, or lease and run yourself, are Scope 1.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "hisar-stainless-strip-re-roller-cbam-precursor",
+  "q": "What CBAM data does a Hisar stainless strip re-roller need for EU buyers?",
+  "title": "Hisar stainless re-roller CBAM data",
+  "short": "Your stainless strip is covered, and so is the hot-rolled coil you buy, so the coil is your precursor. Get the coil maker's embedded emissions per tonne, add your own furnace and pickling fuel, and divide by good output. Electricity is not counted for steel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "hockey-stick-carbon-footprint-per-stick",
@@ -8203,6 +8387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "indore-soybean-solvent-plant-steam-co2",
+  "q": "How do I work out CO2 per tonne of soybean meal at a solvent extraction plant in Indore?",
+  "title": "Soybean solvent plant CO2 per tonne",
+  "short": "Add boiler fuel CO2 and electricity, then divide by tonnes of seed processed or meal produced. Steam for the desolventiser-toaster and hexane recovery is the largest share. Rice husk or soya husk fuel counts as biogenic, reported separately, with only its methane and nitrous oxide in Scope 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "induction-billet-heater-vs-oil-fired-forging-furnace",
   "q": "Does replacing an oil-fired forging furnace with an induction billet heater cut CO2 in India?",
   "title": "Induction billet heater vs oil-fired furnace",
@@ -8379,12 +8571,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "is-a-cement-plant-covered-by-ccts",
+  "q": "Is my cement plant covered by India's carbon credit trading scheme?",
+  "title": "Is a cement plant covered by CCTS?",
+  "short": "Only if it is named. Cement was in the first round of emission intensity targets under the 2025 target rules, alongside aluminium, chlor-alkali and pulp and paper, but coverage is plant by plant: a plant has a target only if its name and location appear in the notification.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "is-a-ceramic-tile-unit-covered-by-ccts",
   "q": "Is a ceramic tile or sanitaryware unit an obligated entity under India's Carbon Credit Trading Scheme?",
   "title": "Is a ceramic tile unit covered by CCTS?",
   "short": "No, not as of this review. Ceramics, including tiles and sanitaryware, is not among the sectors with notified greenhouse gas emission intensity targets, so a Morbi or Thangadh unit has no CCTS target to meet. It can still earn credits through the CCTS offset mechanism if an approved methodology fits its project.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "is-a-chlor-alkali-plant-covered-by-ccts",
+  "q": "Is my chlor-alkali plant covered by India's carbon credit trading scheme?",
+  "title": "Is a chlor-alkali plant covered by CCTS?",
+  "short": "Only if it is named. Chlor-alkali was in the first round of emission intensity targets under the 2025 target rules, but coverage is plant by plant. Electricity for electrolysis is the largest part of a caustic plant's emissions, so captive power records decide the number.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "is-a-glass-unit-covered-by-ccts",
@@ -8411,6 +8619,54 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "is-a-petrochemical-plant-covered-by-ccts",
+  "q": "Is my petrochemical plant covered by India's carbon credit trading scheme?",
+  "title": "Is a petrochemical plant covered by CCTS?",
+  "short": "Only if it is named. Petrochemicals were added to the emission intensity targets by the January 2026 amendment, with 11 units reported as obligated. A unit has a target only if its name appears, with a 2023-24 baseline and targets in tonnes CO2e per tonne of product.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-a-refinery-covered-by-ccts",
+  "q": "Is a petroleum refinery covered by India's carbon credit trading scheme?",
+  "title": "Is a refinery covered by CCTS?",
+  "short": "Only if it is named. Refineries were added to the emission intensity targets by the January 2026 amendment, with 21 refineries reported as obligated. Targets are set per refinery, against a 2023-24 baseline, in tonnes CO2e per unit of throughput adjusted for complexity.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-a-secondary-aluminium-unit-covered-by-ccts",
+  "q": "Is my aluminium recycling or remelting unit covered by CCTS?",
+  "title": "Is secondary aluminium covered by CCTS?",
+  "short": "Probably not, unless it is named. Secondary aluminium was added by the January 2026 amendment, but only 3 units were reported as obligated. Most remelters and alloy makers are not on the list and have no target, though their buyers may still ask for data.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-aluminium-powder-covered-by-cbam",
+  "q": "Is aluminium powder or flake covered by CBAM?",
+  "title": "Is aluminium powder in CBAM?",
+  "short": "Yes. Aluminium powders and flakes are under 7603, which is in Annex I. Embedded emissions come mainly from the unwrought aluminium you atomise, a precursor, plus your own direct emissions. Electricity is not counted for aluminium goods.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-carbon-black-covered-by-cbam",
+  "q": "Is carbon black exported to the EU covered by CBAM?",
+  "title": "Is carbon black in CBAM?",
+  "short": "No. Carbon black is declared under 2803, and the only chapter 28 product in Annex I is hydrogen. EU tyre and rubber buyers file no CBAM figure for it, but many ask for a product footprint because carbon black is carbon intensive.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-caustic-soda-covered-by-cbam",
+  "q": "Is caustic soda exported to Europe covered by CBAM?",
+  "title": "Is caustic soda covered by CBAM?",
+  "short": "No. Caustic soda (2815) and chlorine (2801) are not in Annex I. Hydrogen (2804 10) is, so a chlor-alkali plant selling hydrogen to an EU buyer would need a figure, though that is rare from India. Buyers may still ask for a caustic footprint.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "is-cea-grid-factor-co2-or-co2e",
   "q": "Is the CEA grid emission factor CO2 only, and should I add methane and nitrous oxide?",
   "title": "Is the CEA grid factor CO2 or CO2e?",
@@ -8433,6 +8689,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. Copper is not in Annex I of the CBAM Regulation, so copper cathode (heading 7403), copper wire rod and wire (7408) and other Chapter 74 goods carry no CBAM obligation today. CBAM covers cement, electricity, fertilisers, iron and steel, aluminium and hydrogen. Copper could be added only by amending the regulation.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "is-crgo-electrical-steel-covered-by-cbam",
+  "q": "Is CRGO electrical steel covered by CBAM?",
+  "title": "Is CRGO electrical steel in CBAM?",
+  "short": "Yes. Grain oriented electrical steel coil is flat-rolled alloy steel under 7225 11 or 7226 11, and chapter 72 is in Annex I. Cut laminations and finished transformer cores are usually declared as transformer parts under 8504, which is not covered today.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "is-flux-limestone-co2-counted-in-steel-cbam",
+  "q": "Does CO2 from limestone and dolomite flux count in a steel plant's CBAM figure?",
+  "title": "Flux limestone CO2 in steel CBAM",
+  "short": "Yes. CO2 released from carbonates used as flux or in sinter, such as limestone and dolomite, is part of the installation's direct emissions. Use about 0.440 t CO2 per tonne of pure calcium carbonate and 0.477 for dolomite, adjusted for purity, or capture it in a mass balance.",
+  "topic": "regulation",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "is-freight-scope-3-category-4-or-9",
@@ -8931,6 +9203,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "kandla-edible-oil-refinery-steam-co2",
+  "q": "How do I calculate CO2 per tonne of refined oil at an edible oil refinery in Kandla?",
+  "title": "Edible oil refinery: CO2 per tonne",
+  "short": "Add boiler and thermic fluid heater fuel CO2 and electricity, then divide by tonnes of refined oil. Deodorisation needs high pressure steam and vacuum, so it takes most of the fuel. Imported crude oil carries a much larger footprint in Scope 3.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "kanpur-agra-ambur-leather-exporter-buyer-carbon-data",
   "q": "What carbon data do EU brands ask leather exporters in Kanpur, Agra and Ambur for?",
   "title": "Carbon data brands want from leather exporters",
@@ -9089,6 +9369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Per unit of heat, natural gas emits about 40% less CO2 than bituminous coal under IPCC defaults: 56.1 against 94.6 kg CO2 per GJ. The real saving also depends on kiln efficiency, so compare fuel bills before and after for the same output.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "kishangarh-marble-processing-electricity-per-sq-m",
+  "q": "How much electricity and CO2 does a Kishangarh marble processing unit use per square metre?",
+  "title": "Kishangarh marble: CO2 per sq m",
+  "short": "Divide monthly kWh by square metres of finished slab or tile, then multiply by 0.710 kg CO2 per kWh. A unit using 50,000 kWh to finish 20,000 square metres runs at 2.5 kWh and about 1.8 kg CO2 per square metre. Gangsaws and polishing lines take most of it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "kitchen-chimney-carbon-footprint-per-unit",
@@ -9475,6 +9763,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-20"
  },
  {
+  "slug": "led-lighting-retrofit-factory-co2-saving",
+  "q": "How much CO2 does replacing factory high-bay lights with LEDs save?",
+  "title": "LED high-bay retrofit: CO2 saved",
+  "short": "Watts saved per fitting × fittings × hours run × 0.710 kg CO2 per kWh. Replacing 100 metal halide high-bays of 250 W with 120 W LEDs, run 3,600 hours a year, saves about 46,800 kWh and 33 tonnes of CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "led-panel-light-carbon-footprint-per-unit",
   "q": "How do I calculate the carbon footprint of an LED panel light?",
   "title": "LED panel light carbon footprint",
@@ -9539,6 +9835,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "load-factor-incentive-on-ht-electricity-bill",
+  "q": "What is a load factor incentive on an HT electricity bill and how do I earn it?",
+  "title": "Load factor incentive on an HT bill",
+  "short": "Some state tariffs give a rebate when load factor is high: units used divided by maximum demand times hours in the month. Running steadily across shifts, instead of in peaks, raises it. It lowers cost; emissions still follow kWh.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "low-gwp-refrigerant-choice-new-chiller",
   "q": "Which refrigerant should a new chiller or cold room use to stay ahead of the HFC phase-down?",
   "title": "Low GWP refrigerant for a new chiller",
@@ -9601,6 +9905,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh the sheet steel enclosure, copper or aluminium busbars and the bought-in breakers, meters and cables per panel, and multiply each by its supplier figure. Add cutting, bending, powder coating and wiring energy, divided by panels built.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "lt-to-ht-connection-small-factory-worth-it",
+  "q": "Is it worth moving my small factory from an LT to an HT electricity connection?",
+  "title": "LT to HT connection: worth it?",
+  "short": "Often, once load is large enough. HT energy rates are usually lower, but you must buy and maintain a transformer, and its losses fall on your side of the meter. Emissions per kWh do not change; your Scope 2 counts the units your meter records.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "ludhiana-bicycle-maker-cbam-check",
@@ -10035,6 +10347,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "mill-scale-sold-who-counts-emissions",
+  "q": "If my rolling mill sells mill scale, who counts its emissions?",
+  "title": "Mill scale sold: who counts it?",
+  "short": "Usually you carry no emissions out with it. Mill scale is a by-product of rolling, so your rolling emissions stay with your steel. The sinter plant or briquette maker that uses it counts the emissions of processing it. Record tonnes sold for your material balance.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "missing-electricity-bills-carbon-footprint",
   "q": "How do I calculate my carbon footprint if some months of electricity bills are missing?",
   "title": "Footprint with missing electricity bills",
@@ -10339,6 +10659,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "multi-plant-msme-one-report-or-per-plant",
+  "q": "We have three plants. Should we report emissions per plant or as one company total?",
+  "title": "Several plants: report per plant or total?",
+  "short": "Both. Keep records and totals per plant, then add them up for the company. Buyers and lenders often ask about one site, and per plant figures show where energy is wasted. The company total is what disclosures and targets use.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "multi-product-chemical-plant-emissions-allocation",
   "q": "How do I split a chemical plant's emissions between its products?",
   "title": "Allocating emissions in a multi-product plant",
@@ -10401,6 +10729,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Mostly, yes. Kenya's grid runs largely on geothermal, hydro and wind, so its location based factor is far below most emerging market grids, well under 0.2 kg CO2 per kWh in recent years. Use the official figure for the year, and still count diesel backup as Scope 1.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "namakkal-truck-body-builder-steel-scope-3",
+  "q": "What is the carbon footprint of a truck body built in Namakkal, and where does it come from?",
+  "title": "Namakkal truck body footprint",
+  "short": "Mostly from the steel. A body using 2 tonnes of steel at about 2.3 tonnes CO2 per tonne carries roughly 4.6 tonnes before your own welding, painting and power. Ask steel suppliers for their figure; use an average labelled as an estimate until they reply.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "namkeen-carbon-footprint-per-kg",
@@ -11907,6 +12243,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "psa-nitrogen-generator-vs-liquid-nitrogen-co2",
+  "q": "Is an on-site PSA nitrogen generator lower carbon than buying liquid nitrogen?",
+  "title": "PSA nitrogen vs liquid nitrogen CO2",
+  "short": "Often yes for steady, moderate purity demand, but it moves emissions into your Scope 2. PSA runs on compressor electricity; liquid nitrogen carries the supplier's air separation power and road transport in your Scope 3. Compare kWh per cubic metre at the purity you need.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "psci-questionnaire-pharma-supplier-emissions",
   "q": "What emissions data does a PSCI questionnaire ask pharma suppliers for?",
   "title": "PSCI questionnaire: emissions data to give",
@@ -11953,6 +12297,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Measure flow, total head and input power at the pump's normal duty. Hydraulic power in kW is flow (m3/s) x head (m) x 1,000 x 9.81 / 1,000; divide it by input power for wire-to-water efficiency. The saving from a new pump is the input power difference at the same duty x hours x 0.710 kg CO2 per kWh.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "pump-impeller-trimming-energy-saving",
+  "q": "How much energy does trimming a pump impeller save?",
+  "title": "Pump impeller trimming savings",
+  "short": "If a pump runs against a half-closed valve, trimming the impeller to the flow you need saves energy roughly with the cube of the diameter ratio. A 5% trim cuts power by about 14% on the affinity laws; measure real kW before and after.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "pune-chakan-hosur-auto-supplier-carbon-data",
@@ -12675,6 +13027,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "rooftop-solar-lowers-power-factor-kvah-bill",
+  "q": "Why did my power factor drop and kVAh bill stay high after installing rooftop solar?",
+  "title": "Rooftop solar and a falling power factor",
+  "short": "Solar supplies real power but not reactive power, so the grid still supplies the same reactive load while active import falls. Power factor at the meter drops, and on kVAh billing your units fall less than expected. Retune capacitors or the APFC panel.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "rooftop-solar-net-metering-scope-2",
   "q": "How do I count rooftop solar with net metering in Scope 2?",
   "title": "Rooftop solar and net metering in Scope 2",
@@ -12851,6 +13211,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "salem-sago-unit-effluent-methane-biogas",
+  "q": "How much methane comes from a Salem sago unit's effluent lagoon, and does biogas capture help?",
+  "title": "Sago effluent methane and biogas",
+  "short": "Open anaerobic lagoons release methane from the effluent's organic load. The IPCC method is COD removed × 0.25 kg CH4 per kg COD × a correction factor, up to 0.8 for deep anaerobic lagoons. Covering the lagoon and burning the biogas turns most of that methane into CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
+ },
+ {
   "slug": "salesforce-sustainability-exhibit-for-suppliers",
   "q": "What is the Salesforce Sustainability Exhibit and what must a supplier commit to?",
   "title": "Salesforce Sustainability Exhibit explained",
@@ -13025,6 +13393,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Today, yes: the 2015 Scope 2 Guidance treats a country's grid as one market, so a REC from another Indian state counts if it is retired in your name for the year. Under the draft revision, the answer for India is not settled. The bigger risk is the proposed hourly match. Nothing in the draft is final.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "scope-3-category-10-processing-of-sold-products",
+  "q": "What is Scope 3 category 10, processing of sold products, and does my company need it?",
+  "title": "Scope 3 category 10 explained",
+  "short": "Category 10 covers emissions when customers process an intermediate product you sold, such as steel coil stamped into parts or yarn woven into fabric. It applies only to intermediate products. If you cannot know how customers use it, you may exclude it with a stated reason.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "scope-3-category-3-transmission-losses",
@@ -13305,6 +13681,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The GHG Protocol leaves it optional: you may include non-CO2 effects of flying, such as contrails and nitrogen oxides at altitude, if you disclose it. UK DESNZ factors are published with and without radiative forcing, and the with-RF figures are roughly 1.7 times higher in recent editions. Pick one basis, state it, and keep it every year.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "should-i-reduce-contract-demand-on-ht-bill",
+  "q": "Should I reduce the contract demand on my HT electricity connection?",
+  "title": "Reduce contract demand on an HT bill?",
+  "short": "If your recorded maximum demand stays well below contract demand, yes. Most tariffs bill demand charges on the higher of recorded demand or a set share of contract demand, so the gap is money paid for nothing. It saves cost, not emissions; emissions follow kWh.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "should-i-sell-or-retire-my-carbon-credits",
@@ -13601,6 +13985,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the CO2 from diesel burnt (litres x 2.68 kg) and from any grid power imported (kWh x 0.710 kg), then divide by all the kWh the site used from solar, DG and grid. On-site solar adds zero to the top line but counts in the kWh below it.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "solar-inverter-reading-vs-net-meter-scope-2",
+  "q": "Should I use my solar inverter reading or the net meter for Scope 2?",
+  "title": "Solar inverter or net meter for Scope 2?",
+  "short": "Use the net meter's import register for Scope 2: that is grid electricity you bought. Solar you used yourself equals generation, from the inverter or generation meter, minus units exported. Never subtract the inverter reading from the grid bill.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "solar-module-assembly-carbon-footprint-per-watt",
@@ -14721,6 +15113,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "They ask suppliers to cut CO2 towards carbon neutrality, report it, and run a certified environmental management system such as ISO 14001. Toyota's global guidelines were revised in January 2026; the reduction figure is set by each Toyota region and your contract, so ask Toyota Kirloskar Motor which one applies to you.",
   "topic": "regulation",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "track-carbon-monthly-or-yearly-msme",
+  "q": "Should an MSME track carbon emissions monthly or just once a year?",
+  "title": "Track carbon monthly or yearly?",
+  "short": "Track monthly, report yearly. Monthly records come straight from bills, catch missing documents while they can still be found, and show changes in time to act. The annual figure is then just the sum, not a rush at year end.",
+  "topic": "accounting",
+  "reviewed": "2026-10-22"
  },
  {
   "slug": "tractor-diesel-emissions-per-acre",

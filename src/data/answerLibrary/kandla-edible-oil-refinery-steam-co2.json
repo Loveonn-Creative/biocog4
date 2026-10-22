@@ -1,0 +1,56 @@
+{
+  "slug": "kandla-edible-oil-refinery-steam-co2",
+  "q": "How do I calculate CO2 per tonne of refined oil at an edible oil refinery in Kandla?",
+  "title": "Edible oil refinery: CO2 per tonne",
+  "short": "Add boiler and thermic fluid heater fuel CO2 and electricity, then divide by tonnes of refined oil. Deodorisation needs high pressure steam and vacuum, so it takes most of the fuel. Imported crude oil carries a much larger footprint in Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Edible oil refiners at Kandla, Mundra and Kakinada",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Fuel for boilers and thermic fluid heaters, by type.",
+        "Fuel × factor; biomass reported as biogenic.",
+        "Electricity kWh × 0.710.",
+        "Divide by tonnes of refined oil."
+      ]
+    },
+    {
+      "h": "Crude oil",
+      "p": [
+        "Palm, soybean and sunflower crude oils differ widely, and land use change can dominate palm. Ask suppliers for their figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into a dated, fingerprinted record, so each figure shows the quantity, factor and document it came from.",
+  "links": [
+    {
+      "label": "Edible oil mill footprint",
+      "to": "/answers/edible-oil-mill-carbon-footprint-per-litre"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Thermic fluid heater emissions",
+      "to": "/answers/thermic-fluid-heater-emissions-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

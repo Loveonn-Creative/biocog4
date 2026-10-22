@@ -1,0 +1,58 @@
+{
+  "slug": "load-factor-incentive-on-ht-electricity-bill",
+  "q": "What is a load factor incentive on an HT electricity bill and how do I earn it?",
+  "title": "Load factor incentive on an HT bill",
+  "short": "Some state tariffs give a rebate when load factor is high: units used divided by maximum demand times hours in the month. Running steadily across shifts, instead of in peaks, raises it. It lowers cost; emissions still follow kWh.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "HT consumers in states whose tariff orders offer load factor rebates",
+  "sections": [
+    {
+      "h": "Work out your load factor",
+      "ol": [
+        "Monthly kWh from the bill.",
+        "Recorded maximum demand in kVA, times power factor for kW.",
+        "Load factor = kWh ÷ (kW × hours in the month)."
+      ]
+    },
+    {
+      "h": "Check your tariff",
+      "p": [
+        "Thresholds and rebate rates differ by state and year. Read the current tariff order for your category."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including kVAh, demand and solar export lines, into dated records with the units, factor and year behind every Scope 2 figure.",
+  "links": [
+    {
+      "label": "Maximum demand charges",
+      "to": "/answers/maximum-demand-charges-peak-shaving"
+    },
+    {
+      "label": "Time of day tariff",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Reduce contract demand?",
+      "to": "/answers/should-i-reduce-contract-demand-on-ht-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency guides",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "example": {
+    "title": "Example: 180,000 kWh in a 30 day month",
+    "lines": [
+      "Maximum demand 400 kW",
+      "180,000 ÷ (400 × 720) = 62.5% load factor"
+    ]
+  },
+  "reviewed": "2026-10-22"
+}

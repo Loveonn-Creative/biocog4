@@ -1,0 +1,61 @@
+{
+  "slug": "is-a-secondary-aluminium-unit-covered-by-ccts",
+  "q": "Is my aluminium recycling or remelting unit covered by CCTS?",
+  "title": "Is secondary aluminium covered by CCTS?",
+  "short": "Probably not, unless it is named. Secondary aluminium was added by the January 2026 amendment, but only 3 units were reported as obligated. Most remelters and alloy makers are not on the list and have no target, though their buyers may still ask for data.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium scrap remelters, alloy ingot makers and die casters in India",
+  "sections": [
+    {
+      "h": "How to check",
+      "ol": [
+        "Find the January 2026 amendment to the Greenhouse Gases Emission Intensity Target Rules.",
+        "Search the secondary aluminium schedule for your unit.",
+        "If you are not there, you have no CCTS obligation today."
+      ]
+    },
+    {
+      "h": "What buyers ask for",
+      "p": [
+        "Fuel or electricity per tonne of metal melted, the share of scrap versus primary ingot, and dross losses. A remelter running on scrap usually has a much lower footprint than primary metal, but only records show it."
+      ]
+    },
+    {
+      "h": "If you are not named",
+      "p": [
+        "You have no target, but obligated customers may ask for your energy and emissions data, and the offset mechanism lets non-obligated entities earn credits from projects under methodologies BEE has approved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and production documents into dated, fingerprinted plant records, so the monthly intensity behind a compliance figure can be traced to its source.",
+  "links": [
+    {
+      "label": "Fuel per tonne of aluminium scrap melted",
+      "to": "/answers/aluminium-scrap-melting-fuel-per-tonne"
+    },
+    {
+      "label": "Primary smelter CCTS target",
+      "to": "/answers/angul-aluminium-smelter-ccts-target"
+    },
+    {
+      "label": "Can an MSME earn CCTS credits?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets for more sectors under CCTS",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, GHG Emission Intensity Target Rules",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
