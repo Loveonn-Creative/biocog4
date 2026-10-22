@@ -1,0 +1,54 @@
+{
+  "slug": "cbam-monitoring-methodology-document-contents",
+  "q": "What goes into a CBAM monitoring methodology document?",
+  "title": "CBAM monitoring document: what goes in",
+  "short": "It describes how your figures are made: the installation and its production processes, every source stream and emission source, the method and factors used, where each number comes from, who checks it, and how gaps are filled. A verifier reads it first, then tests your records against it.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Operators preparing for CBAM verification",
+  "sections": [
+    {
+      "h": "Sections",
+      "ul": [
+        "Installation, owner and location.",
+        "Production processes and the goods in each.",
+        "Source streams: fuels and materials, with how each is measured.",
+        "Methods, factors and their sources.",
+        "Data flow from meter or invoice to the final figure.",
+        "Control checks and how missing data is handled."
+      ]
+    },
+    {
+      "h": "Keep it real",
+      "p": [
+        "Write what you actually do. A document that describes meters you do not have will fail the first site visit."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Data flow diagram",
+      "to": "/answers/verifier-asks-for-data-flow-diagram"
+    },
+    {
+      "label": "Calculation workings",
+      "to": "/answers/verifier-asks-for-calculation-workings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

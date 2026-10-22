@@ -1,0 +1,66 @@
+{
+  "slug": "green-loan-electric-boiler-switch-readiness",
+  "q": "Is switching from a coal or oil boiler to an electric boiler a green loan project?",
+  "title": "Electric boiler switch: green loan readiness",
+  "short": "It can be, but show the numbers both ways. Fuel emissions disappear from Scope 1, while electricity adds Scope 2 at 0.710 kg CO2 per kWh on the Indian grid. With grid power alone the net cut may be small or negative; with solar or green open access it is large.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Units replacing fuel-fired boilers or thermic heaters",
+  "sections": [
+    {
+      "h": "Before the project",
+      "ul": [
+        "Fuel invoices and boiler log for 12 months.",
+        "Steam or heat output, if metered."
+      ]
+    },
+    {
+      "h": "After the project",
+      "ul": [
+        "Electricity bills including the new load.",
+        "Renewable supply contract or solar generation log, if used."
+      ]
+    },
+    {
+      "h": "What lenders look for",
+      "p": [
+        "An honest net figure. Lenders and reviewers check that the project lowers total emissions, not just moves them from Scope 1 to Scope 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Furnace oil boiler: 4,000 L a month x 2.97 kg = 11.9 t CO2",
+      "Electric boiler for the same heat: about 40,000 kWh x 0.710 kg = 28.4 t CO2 on grid power",
+      "With green open access power: Scope 2 market-based falls close to zero"
+    ],
+    "note": "Illustrative. Work out heat demand from your own steam records."
+  },
+  "senseible": "Senseible measures your baseline from your own bills before the project and keeps measuring after it, so the saving you show a lender comes from documents, not a brochure. Lenders decide on the loan.",
+  "links": [
+    {
+      "label": "Electric vs gas boiler emissions",
+      "to": "/answers/electric-boiler-vs-gas-boiler-emissions-india"
+    },
+    {
+      "label": "Heat pumps for process heat",
+      "to": "/answers/heat-pump-for-process-heat-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

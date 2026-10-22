@@ -1,0 +1,51 @@
+{
+  "slug": "cbam-ferroalloy-additions-in-steel-precursor",
+  "q": "Do ferroalloys added in steelmaking count in the steel's CBAM figure?",
+  "title": "Ferroalloy additions in steel CBAM",
+  "short": "Yes, where they are covered alloys. Ferro-manganese, ferro-chromium and ferro-nickel are relevant precursors for crude steel, so their embedded emissions are added in proportion to the tonnes used. Alloys outside CBAM, such as ferro-silicon or silico-manganese, are not added as precursors, though their carbon still enters a mass balance.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Steel melt shops and their alloy suppliers",
+  "sections": [
+    {
+      "h": "What to collect",
+      "ul": [
+        "Tonnes of each alloy used per heat or per month.",
+        "The alloy maker's embedded emissions, or the default value.",
+        "Carbon content of each alloy for the mass balance."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "For stainless and alloy grades, ferro-chromium and ferro-nickel can add a large share of the final figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Zestaponi ferroalloys check",
+      "to": "/answers/zestaponi-ferroalloy-plant-cbam-check"
+    },
+    {
+      "label": "Ferrochrome CO2 per tonne",
+      "to": "/answers/ferrochrome-co2-per-tonne-cbam"
+    },
+    {
+      "label": "Fujian stainless precursor",
+      "to": "/answers/fujian-stainless-nickel-pig-iron-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

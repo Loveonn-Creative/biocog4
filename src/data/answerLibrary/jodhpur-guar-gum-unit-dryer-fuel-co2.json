@@ -1,0 +1,51 @@
+{
+  "slug": "jodhpur-guar-gum-unit-dryer-fuel-co2",
+  "q": "How does a guar gum processing unit in Jodhpur work out CO2 per tonne?",
+  "title": "Jodhpur guar gum unit: CO2 per tonne",
+  "short": "Add fuel used for roasting and drying, often in hot air generators or boilers, and electricity for splitting, grinding and pulverising. Divide by tonnes of guar gum powder. Split between gum and meal by mass or value if both are sold, and state which method you used.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Guar gum processors in Jodhpur and western Rajasthan",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Dryer and roaster fuel: wood, coal, LPG or PNG.",
+        "Electricity for mills and pulverisers.",
+        "Seed bought, for cradle-to-gate."
+      ]
+    },
+    {
+      "h": "Co-products",
+      "p": [
+        "Guar meal is sold as feed. Allocate between powder and meal, and keep the basis the same each year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Mass or value allocation",
+      "to": "/answers/buyer-asks-mass-or-value-allocation"
+    },
+    {
+      "label": "Biomass boiler CH4 and N2O",
+      "to": "/answers/biomass-boiler-ch4-n2o-still-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

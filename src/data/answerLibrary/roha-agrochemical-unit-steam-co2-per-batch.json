@@ -1,0 +1,51 @@
+{
+  "slug": "roha-agrochemical-unit-steam-co2-per-batch",
+  "q": "How does an agrochemical unit in Roha work out CO2 per batch?",
+  "title": "Roha agrochemical unit: CO2 per batch",
+  "short": "Total the month's boiler fuel and electricity, then split by steam and power each batch used, from batch records. Add process CO2 if a reaction releases it. Divide by kg produced for each product. A flat split by tonnes hides products that need long distillation or drying.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Agrochemical and specialty chemical units in Roha MIDC",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Boiler fuel: coal, briquettes or PNG.",
+        "Electricity and chilling load.",
+        "Process CO2 from reactions, if any."
+      ]
+    },
+    {
+      "h": "Batch records",
+      "p": [
+        "Steam hours, reactor and dryer time per batch. These are the fairest basis for splitting utilities."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Dye intermediate steam per kg",
+      "to": "/answers/dye-intermediate-unit-steam-allocation-per-kg"
+    },
+    {
+      "label": "Taloja chemical unit CO2",
+      "to": "/answers/taloja-chemical-unit-steam-and-power-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "new-zealand-steel-exporter-cbam-carbon-price",
+  "q": "Can a New Zealand steel exporter use its NZ ETS costs against EU CBAM?",
+  "title": "NZ steel: ETS costs and EU CBAM",
+  "short": "The EU importer can deduct the carbon price effectively paid in New Zealand, but only the part not offset by free allocation, with certified proof of payment. Free allocation to emissions-intensive producers can make the net price small, so work out the actual figure before promising buyers a deduction.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel producers in New Zealand and their EU importers",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Units surrendered under the NZ ETS for the installation.",
+        "Minus free allocation received.",
+        "For the goods and period shipped."
+      ]
+    },
+    {
+      "h": "Proof",
+      "p": [
+        "Surrender and allocation records, certified by an independent person, sent with the embedded emissions figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Carbon price deduction proof",
+      "to": "/answers/cbam-carbon-price-paid-what-proof-is-needed"
+    },
+    {
+      "label": "Korea ETS deduction",
+      "to": "/answers/korea-ets-carbon-price-cbam-deduction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

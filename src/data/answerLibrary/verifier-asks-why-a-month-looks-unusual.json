@@ -1,0 +1,48 @@
+{
+  "slug": "verifier-asks-why-a-month-looks-unusual",
+  "q": "What should I say when a verifier asks why one month's emissions spike?",
+  "title": "Explaining a spike month to a verifier",
+  "short": "Give the operational reason with a record behind it: a big order, a breakdown that ran the diesel generator, a bill covering two months, or a fuel delivery that filled the tank. Then show the figure is right or correct it. A spike with no reason is where verifiers dig deeper.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs answering verifier queries",
+  "sections": [
+    {
+      "h": "Usual causes",
+      "ul": [
+        "Two billing periods in one bill.",
+        "Grid outage and generator use.",
+        "Bulk fuel delivery counted when bought, not burned.",
+        "Higher production that month."
+      ]
+    },
+    {
+      "h": "Evidence",
+      "p": [
+        "Production register, generator log, outage notices or the delivery challan. Note the explanation next to the figure before the audit."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure tied to its invoice, factor and method version, so a verifier can trace any number back to the document it came from.",
+  "links": [
+    {
+      "label": "Why emissions changed",
+      "to": "/answers/verifier-asks-why-emissions-changed"
+    },
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3, verification of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "armenia-ferromolybdenum-exporter-cbam-check",
+  "q": "Does ferromolybdenum from Armenia face EU CBAM?",
+  "title": "Armenian ferromolybdenum: CBAM check",
+  "short": "No, not under the current goods list. CBAM covers ferro-manganese, ferro-chromium and ferro-nickel among ferroalloys; ferro-molybdenum (CN 7202 70) is not listed. EU steel mills may still ask for a figure for their own Scope 3, so keep fuel, power and production records.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ferroalloy producers in Armenia and EU steel buyers",
+  "sections": [
+    {
+      "h": "Covered ferroalloys",
+      "ul": [
+        "7202 1: ferro-manganese.",
+        "7202 4: ferro-chromium.",
+        "7202 6: ferro-nickel."
+      ]
+    },
+    {
+      "h": "Watch",
+      "p": [
+        "The Commission has proposed extending CBAM to more downstream goods. Check the adopted annex each year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Zestaponi ferroalloys check",
+      "to": "/answers/zestaponi-ferroalloy-plant-cbam-check"
+    },
+    {
+      "label": "Ferroalloy additions in steel",
+      "to": "/answers/cbam-ferroalloy-additions-in-steel-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

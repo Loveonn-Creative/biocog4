@@ -1,0 +1,50 @@
+{
+  "slug": "cbam-installation-split-into-production-processes",
+  "q": "How do I split my plant into production processes for CBAM?",
+  "title": "Splitting a plant into CBAM processes",
+  "short": "Draw one production process for each group of CBAM goods you make, such as crude steel, iron or steel products, or cement clinker. Assign each fuel, material and meter to the process that uses it. Shared items, like a boiler, are split by measured use, never by sales value.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Plants making more than one kind of CBAM good",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "List the CBAM goods you export and their aggregated goods categories.",
+        "Draw a process boundary for each category.",
+        "Map every fuel line, meter and material store to a process.",
+        "Pick an attribution rule for shared utilities and write it down."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "One figure for the whole site when two goods categories are made.",
+        "Splitting shared steam by revenue.",
+        "Forgetting non-CBAM products that share the same furnace."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Shared utilities in parks",
+      "to": "/answers/industrial-park-shared-utilities-cbam-allocation"
+    },
+    {
+      "label": "Imported heat from a neighbour",
+      "to": "/answers/cbam-imported-heat-from-neighbouring-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

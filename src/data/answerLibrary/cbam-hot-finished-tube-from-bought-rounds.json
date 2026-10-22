@@ -1,0 +1,66 @@
+{
+  "slug": "cbam-hot-finished-tube-from-bought-rounds",
+  "q": "How does a hot-finished tube maker work out its CBAM figure when it buys steel rounds?",
+  "title": "Hot-finished tubes from rounds: CBAM",
+  "short": "Add two parts. Your own direct emissions from the reheating and heat-treatment furnaces, per tonne of tube. Then the embedded emissions of the rounds you used, taken from the steel mill's figure and scaled by tonnes of rounds per tonne of tube. Yield loss raises the second part.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Pierced and hot-finished tube makers exporting to the EU",
+  "sections": [
+    {
+      "h": "Your own part",
+      "p": [
+        "Fuel burnt in the rotary hearth or reheating furnace and in heat treatment: PNG, LPG or furnace oil times its factor, divided by tonnes of finished tube. Electricity is reported but not charged for steel."
+      ]
+    },
+    {
+      "h": "The rounds",
+      "p": [
+        "Rounds are a relevant precursor. Ask the mill for embedded emissions per tonne of rounds, with its installation details. Multiply by tonnes of rounds consumed per tonne of tube, not per tonne shipped."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Crop ends and scrap: they count as rounds consumed.",
+        "Rounds from two mills: weight each by tonnes used.",
+        "No mill figure: the default value for that precursor applies, with its mark-up."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Furnace PNG: 62 scm per tonne of tube x 2.05 kg = 127 kg CO2",
+      "Rounds used: 1.15 t per tonne of tube x 1.9 t CO2 (mill figure) = 2.19 t CO2",
+      "Embedded emissions: about 2.31 t CO2 per tonne of tube"
+    ],
+    "note": "Illustrative numbers. Use your own furnace logs and the mill's declared figure."
+  },
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Are steel pipes and tubes covered?",
+      "to": "/answers/are-steel-pipes-and-tubes-covered-by-cbam"
+    },
+    {
+      "label": "Steel tube precursor data",
+      "to": "/answers/eu-importer-steel-tube-precursor-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

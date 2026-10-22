@@ -1,0 +1,52 @@
+{
+  "slug": "ichalkaranji-processing-unit-power-and-steam-co2",
+  "q": "How does a fabric processing unit in Ichalkaranji split CO2 between its own and job work?",
+  "title": "Ichalkaranji processor: own vs job work CO2",
+  "short": "Work out total emissions from boiler fuel and electricity for the month, then split by metres processed for each party, adjusted for heavier processes like dyeing versus bleaching. Job work emissions are still yours in Scope 1 and 2; the share is what each customer may ask for in its Scope 3.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Processing houses in the Ichalkaranji powerloom and textile cluster",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Total fuel and power for the month.",
+        "Metres processed by customer and process.",
+        "Weight by steam per metre for each process, if logged.",
+        "Report each customer's share with the method."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Job cards or challans by customer, boiler log and bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Allocate by machine hours",
+      "to": "/answers/allocate-plant-emissions-by-machine-hours"
+    },
+    {
+      "label": "Your share of a buyer's orders",
+      "to": "/answers/buyer-asks-emissions-share-for-its-orders"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

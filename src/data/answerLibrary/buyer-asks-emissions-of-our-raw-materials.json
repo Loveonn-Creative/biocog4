@@ -1,0 +1,56 @@
+{
+  "slug": "buyer-asks-emissions-of-our-raw-materials",
+  "q": "Our buyer wants the emissions of the raw materials we buy. Where do we start?",
+  "title": "Buyer wants our raw material emissions",
+  "short": "List your raw materials by tonnes bought in a year. Ask your top suppliers for a figure per tonne; for the rest, use a published database factor and label it as secondary data. Multiply each by tonnes. This is your Scope 3 purchased goods, and the buyer sees it inside your product figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Manufacturers asked for cradle-to-gate product figures",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Rank materials by tonnes and spend.",
+        "Request supplier figures for the top few.",
+        "Use database factors for the rest, with the source named.",
+        "Add up by product using your bill of materials."
+      ]
+    },
+    {
+      "h": "Be clear",
+      "p": [
+        "Tell the buyer which share uses supplier data and which uses database factors. Buyers increasingly ask for that split."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Primary data share",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "Buyer asks for my Scope 3",
+      "to": "/answers/buyer-asks-for-my-scope-3"
+    },
+    {
+      "label": "Which factor database for India",
+      "to": "/answers/which-emission-factor-database-for-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

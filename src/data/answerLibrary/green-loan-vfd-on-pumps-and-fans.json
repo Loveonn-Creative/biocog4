@@ -1,0 +1,67 @@
+{
+  "slug": "green-loan-vfd-on-pumps-and-fans",
+  "q": "What records support a green loan for VFDs on pumps and fans?",
+  "title": "VFD retrofit loan: records to keep",
+  "short": "Lenders want the baseline power draw of each motor, how many hours it runs, and the quote for the drives. After fitting the VFDs, show measured kWh for the same duty. Keep both on the same meter or bill so the saving is your own number, not the catalogue claim.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Plants fitting variable frequency drives to pumps, blowers and fans",
+  "sections": [
+    {
+      "h": "Before the project",
+      "ul": [
+        "Motor list with rated kW and running hours.",
+        "Spot power readings or a sub-meter log.",
+        "Electricity bills for 6 to 12 months."
+      ]
+    },
+    {
+      "h": "After the project",
+      "ul": [
+        "Sub-meter log for the same motors.",
+        "Bills for the same season."
+      ]
+    },
+    {
+      "h": "What lenders look for",
+      "p": [
+        "A saving tied to named motors, measured on the same meter, with flow or output noted so a slow month is not mistaken for efficiency."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Cooling tower fan: 22 kW, 20 hours a day, 300 days = 132,000 kWh a year",
+      "With VFD at 70% average speed: about 34% of full power, 44,880 kWh",
+      "Saving: 87,120 kWh x 0.710 kg = 61.9 t CO2 a year"
+    ],
+    "note": "Fan power varies roughly with the cube of speed; measured readings beat this rule of thumb."
+  },
+  "senseible": "Senseible measures your baseline from your own bills before the project and keeps measuring after it, so the saving you show a lender comes from documents, not a brochure. Lenders decide on the loan.",
+  "links": [
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Loan Market Association, Green Loan and Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

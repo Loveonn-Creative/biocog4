@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-mass-balance-method-integrated-steel-plant",
+  "q": "When should a steel plant use a mass balance for its CBAM figure?",
+  "title": "Steel plant CBAM: when to use mass balance",
+  "short": "Use a carbon mass balance when carbon enters in coal, coke, ore and alloys and leaves partly in steel, slag, dust and gases. Add carbon in all inputs, subtract carbon in products and wastes, and convert the rest to CO2 by multiplying by 3.664. It suits blast furnace and DRI routes.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Integrated and DRI steel plants preparing CBAM data",
+  "sections": [
+    {
+      "h": "Inputs to count",
+      "ul": [
+        "Coking coal, coke, PCI coal, natural gas.",
+        "Iron ore and pellets if they carry carbon.",
+        "Limestone and dolomite, electrodes, ferroalloys and recarburisers."
+      ]
+    },
+    {
+      "h": "Outputs to subtract",
+      "ul": [
+        "Carbon in crude steel and pig iron sold.",
+        "Carbon in slag, dust and sludge sent out.",
+        "Carbon in gases exported to another plant, if any."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Each input needs tonnes from the weighbridge and a carbon content from lab analysis or a supplier certificate. Missing carbon contents are the most common gap."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Converting carbon to CO2",
+    "lines": [
+      "Net carbon retained as emissions: 410 kg per tonne of crude steel",
+      "410 kg C x 3.664 = 1,502 kg CO2 per tonne"
+    ],
+    "note": "3.664 is the ratio of the molecular weights of CO2 and carbon (44.01 / 12.011)."
+  },
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Measure or calculate?",
+      "to": "/answers/cbam-measurement-or-calculation-method-choice"
+    },
+    {
+      "label": "Flux limestone in steel CBAM",
+      "to": "/answers/is-flux-limestone-co2-counted-in-steel-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

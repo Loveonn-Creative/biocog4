@@ -1,0 +1,47 @@
+{
+  "slug": "gabon-silicomanganese-exporter-cbam-check",
+  "q": "Does silico-manganese from Gabon face EU CBAM?",
+  "title": "Gabon silico-manganese: CBAM check",
+  "short": "Not today. Silico-manganese (CN 7202 30) is not in the CBAM goods list; only ferro-manganese, ferro-chromium and ferro-nickel are among ferroalloys. If the plant also ships ferro-manganese, that is covered and needs a figure. Check the CN code on each shipment.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Manganese alloy producers in Gabon and EU buyers",
+  "sections": [
+    {
+      "h": "Covered or not",
+      "ul": [
+        "Ferro-manganese: covered.",
+        "Silico-manganese: not covered.",
+        "Manganese ore: not covered."
+      ]
+    },
+    {
+      "h": "Still useful",
+      "p": [
+        "EU steel mills ask for alloy footprints for their own reporting. Coke, coal and electrode records serve both."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Sarawak manganese alloy figure",
+      "to": "/answers/sarawak-manganese-alloy-smelter-cbam-figure"
+    },
+    {
+      "label": "Ferroalloy additions in steel",
+      "to": "/answers/cbam-ferroalloy-additions-in-steel-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

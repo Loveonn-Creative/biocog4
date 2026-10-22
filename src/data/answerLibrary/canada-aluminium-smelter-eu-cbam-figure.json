@@ -1,0 +1,51 @@
+{
+  "slug": "canada-aluminium-smelter-eu-cbam-figure",
+  "q": "What does a Canadian aluminium smelter report for EU CBAM?",
+  "title": "Canadian aluminium and EU CBAM",
+  "short": "Direct emissions only: anode CO2, fuels and perfluorocarbons, per tonne of aluminium. Hydropower keeps indirect emissions low, but electricity is not charged for aluminium anyway. Canada prices carbon, so the importer may deduct the price effectively paid, after free allocation, with certified proof.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Aluminium producers in Canada and their EU importers",
+  "sections": [
+    {
+      "h": "Charged",
+      "ul": [
+        "CO2 from anode consumption.",
+        "Fuel CO2.",
+        "PFCs from anode effects."
+      ]
+    },
+    {
+      "h": "Carbon price",
+      "p": [
+        "Canada's industrial carbon pricing can reduce the CBAM bill, but only for the price actually paid after output-based allocation. Keep payment records and get them certified."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Carbon price deduction proof",
+      "to": "/answers/cbam-carbon-price-paid-what-proof-is-needed"
+    },
+    {
+      "label": "Korba aluminium direct emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

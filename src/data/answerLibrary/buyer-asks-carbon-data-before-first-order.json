@@ -1,0 +1,48 @@
+{
+  "slug": "buyer-asks-carbon-data-before-first-order",
+  "q": "A new buyer wants carbon data before placing a first order. What should we send?",
+  "title": "Carbon data before a buyer's first order",
+  "short": "Send a one-page summary: last year's Scope 1 and 2 in tonnes, emissions per unit of your main product, how they were worked out, and what you are doing to cut them. Keep the bills behind it ready. New buyers screen on whether you can answer, not on the lowest number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and suppliers onboarding with new buyers",
+  "sections": [
+    {
+      "h": "The one page",
+      "ul": [
+        "Company, sites and period.",
+        "Scope 1 and Scope 2 totals and method.",
+        "Intensity per unit or per tonne.",
+        "Two or three actions under way."
+      ]
+    },
+    {
+      "h": "If you have nothing yet",
+      "p": [
+        "Say so, and give the date you will have a figure from your bills. That reads better than a guess."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Third-party verified footprint",
+      "to": "/answers/buyer-asks-third-party-verified-footprint"
+    },
+    {
+      "label": "Supplier code GHG clause",
+      "to": "/answers/supplier-code-of-conduct-ghg-clause-minimum"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

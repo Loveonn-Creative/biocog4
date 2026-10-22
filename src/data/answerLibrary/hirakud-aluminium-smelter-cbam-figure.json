@@ -1,0 +1,57 @@
+{
+  "slug": "hirakud-aluminium-smelter-cbam-figure",
+  "q": "What goes into the CBAM figure for aluminium from a smelter at Hirakud?",
+  "title": "Hirakud aluminium smelter: CBAM figure",
+  "short": "Only direct emissions are charged: CO2 from carbon anode consumption and fuels, plus perfluorocarbons from anode effects. Power from the captive plant is indirect for aluminium and not charged, though buyers may still ask for it. Rolled and extruded products add their own direct emissions on top.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Aluminium smelters in Odisha and their EU buyers",
+  "sections": [
+    {
+      "h": "Charged",
+      "ul": [
+        "Anode consumption CO2.",
+        "Fuels used in casting and the anode plant.",
+        "CF4 and C2F6 from anode effects, as CO2e."
+      ]
+    },
+    {
+      "h": "Reported but not charged",
+      "p": [
+        "Electricity for the potlines, from the captive coal plant or the grid."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Net anode consumption per tonne, anode effect minutes and frequency, and fuel invoices."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Korba aluminium direct emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Alumina is not a precursor",
+      "to": "/answers/aluminium-smelter-alumina-scope-3-not-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

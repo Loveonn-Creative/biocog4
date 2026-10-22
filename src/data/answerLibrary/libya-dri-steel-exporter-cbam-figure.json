@@ -1,0 +1,51 @@
+{
+  "slug": "libya-dri-steel-exporter-cbam-figure",
+  "q": "How does a gas-based DRI steel plant in Libya work out its CBAM figure?",
+  "title": "Libyan DRI steel: CBAM figure",
+  "short": "Count natural gas used in the DRI reformer and furnace, carbon in electrodes and charge carbon in the arc furnace, and fuel for reheating. Use a mass balance where carbon stays in the steel. Gas-based DRI usually gives a lower figure than coal or blast furnace routes, which is worth proving.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "DRI and arc furnace steel producers in Libya and North Africa",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Natural gas to the DRI module.",
+        "Electrodes, coke and lime in the arc furnace.",
+        "Gas or oil for reheating before rolling."
+      ]
+    },
+    {
+      "h": "Not charged",
+      "p": [
+        "Electricity for the arc furnace is reported but not charged for steel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Mass balance in a steel plant",
+      "to": "/answers/cbam-mass-balance-method-integrated-steel-plant"
+    },
+    {
+      "label": "Graphite electrode CO2 in EAF",
+      "to": "/answers/graphite-electrode-co2-in-eaf-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "worldsteel, CO2 data collection methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

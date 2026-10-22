@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-precursor-bought-from-several-suppliers",
+  "q": "How do I work out precursor emissions when I buy the same steel from several suppliers?",
+  "title": "CBAM precursor from several suppliers",
+  "short": "Take each supplier's embedded emissions per tonne and weight it by the tonnes you consumed from them in the period. Where a supplier gives no figure, use the default value for that share. Keep the purchase register that shows tonnes by supplier, because the verifier will check the weights.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Downstream steel and aluminium processors with several material suppliers",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "List tonnes consumed from each supplier in the reporting period.",
+        "Collect each supplier's figure and installation details.",
+        "Multiply and add, then divide by total tonnes used."
+      ]
+    },
+    {
+      "h": "Stock",
+      "p": [
+        "Use tonnes consumed, not bought. Opening and closing stock shift the weights when purchases are lumpy."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Mill A: 600 t at 2.0 t CO2 per t = 1,200 t CO2",
+      "Mill B: 400 t at 2.5 t CO2 per t = 1,000 t CO2",
+      "Weighted precursor figure: 2,200 / 1,000 t = 2.2 t CO2 per t"
+    ]
+  },
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Fuel stock: bought or burned",
+      "to": "/answers/fuel-stock-count-when-bought-or-burned"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

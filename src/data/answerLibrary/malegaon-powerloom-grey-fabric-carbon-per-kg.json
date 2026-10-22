@@ -1,0 +1,55 @@
+{
+  "slug": "malegaon-powerloom-grey-fabric-carbon-per-kg",
+  "q": "How does a powerloom unit in Malegaon work out carbon per kg of grey fabric?",
+  "title": "Malegaon powerloom: carbon per kg of fabric",
+  "short": "Electricity is nearly all of it. Take monthly kWh from the bill, add diesel if a generator runs, and divide by kg of grey fabric woven. At 0.710 kg CO2 per kWh, units per kg drive the figure, so loom speed, idle running and motor condition matter more than anything else.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Powerloom owners in Malegaon and their traders",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Electricity bill units.",
+        "Diesel for a generator during cuts.",
+        "Kg of fabric from the weaving register or sale bills."
+      ]
+    },
+    {
+      "h": "Yarn",
+      "p": [
+        "If the buyer wants cradle-to-gate, add yarn emissions from the spinner or a database factor, labelled as such."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "24 looms: 21,000 kWh a month x 0.710 kg = 14.9 t CO2",
+      "Fabric woven: 30,000 kg",
+      "About 0.50 kg CO2 per kg of grey fabric, before yarn"
+    ]
+  },
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Bhiwandi powerloom electricity",
+      "to": "/answers/bhiwandi-powerloom-electricity-per-metre"
+    },
+    {
+      "label": "Powerloom vs airjet energy",
+      "to": "/answers/powerloom-vs-airjet-loom-energy-per-metre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

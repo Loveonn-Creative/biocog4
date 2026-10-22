@@ -1,0 +1,51 @@
+{
+  "slug": "kadi-cottonseed-oil-mill-energy-co2",
+  "q": "How does a cottonseed oil mill in Kadi work out CO2 per tonne of oil?",
+  "title": "Kadi cottonseed oil mill: CO2 per tonne",
+  "short": "Add fuel for the boiler that supplies steam to cooking and solvent extraction, and electricity for expellers and refining. Divide by tonnes of oil, or split between oil and cake by mass or value if buyers want both. Husk burnt in the boiler is biogenic CO2, reported separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cotton ginning and oil mills around Kadi in north Gujarat",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Boiler fuel: husk, coal or wood.",
+        "Electricity for expellers, extraction and refining.",
+        "Hexane top-ups for solvent extraction (Scope 3)."
+      ]
+    },
+    {
+      "h": "Allocation",
+      "p": [
+        "Oil and cake come from the same seed. State whether you split by mass or by value, and keep it the same every year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Cotton ginning emissions per bale",
+      "to": "/answers/cotton-ginning-emissions-per-bale"
+    },
+    {
+      "label": "Mass or value allocation",
+      "to": "/answers/buyer-asks-mass-or-value-allocation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Product Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

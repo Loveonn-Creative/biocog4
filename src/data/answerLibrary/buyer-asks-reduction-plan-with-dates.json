@@ -1,0 +1,48 @@
+{
+  "slug": "buyer-asks-reduction-plan-with-dates",
+  "q": "A buyer wants our emissions reduction plan with dates. What should it contain?",
+  "title": "Reduction plan with dates for a buyer",
+  "short": "Start from your measured baseline year. List the actions you will take, each with a date, the expected cut in tonnes and how you will measure it: solar, fuel switch, efficient motors, compressed air fixes. Add a target for a year like 2030 and report progress against it every year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers asked for decarbonisation plans by brands and OEMs",
+  "sections": [
+    {
+      "h": "Sections",
+      "ul": [
+        "Baseline year, total and intensity.",
+        "Actions with dates and expected tonnes.",
+        "Target year and percentage cut.",
+        "How progress will be measured and shared."
+      ]
+    },
+    {
+      "h": "Keep it believable",
+      "p": [
+        "Actions you have budgets for beat a long list. Buyers check last year's promises against this year's figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Buyer asks for a reduction target",
+      "to": "/answers/buyer-asks-supplier-reduction-target"
+    },
+    {
+      "label": "UK carbon reduction plan",
+      "to": "/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SBTi Corporate Near-Term Criteria",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

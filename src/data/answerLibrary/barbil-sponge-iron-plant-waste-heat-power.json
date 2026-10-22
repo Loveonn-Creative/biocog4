@@ -1,0 +1,61 @@
+{
+  "slug": "barbil-sponge-iron-plant-waste-heat-power",
+  "q": "How does a sponge iron plant in Barbil count power from its waste heat boiler?",
+  "title": "Barbil sponge iron: waste heat power",
+  "short": "Power from a waste heat recovery boiler on the kiln adds no new fuel, because the coal is already counted in the kiln. Do not add a grid factor for it. Count the kiln coal once, by mass balance, and treat waste heat power as your own zero-fuel supply that cuts grid purchases.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Coal-based sponge iron plants in the Barbil and Keonjhar belt",
+  "sections": [
+    {
+      "h": "What to count",
+      "ul": [
+        "Coal fed to the kiln, with carbon content from lab tests.",
+        "Carbon left in sponge iron, char and dust.",
+        "Grid power bought on top, at 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Waste heat power",
+      "p": [
+        "Record generation from the turbine meter. It lowers Scope 2 by replacing grid units, but it is not a separate emission or a credit to subtract from Scope 1."
+      ]
+    },
+    {
+      "h": "For CBAM",
+      "p": [
+        "Direct reduced iron is a precursor for steel. Your steel buyer needs the kiln figure per tonne of sponge iron; electricity is not charged for iron and steel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Giridih sponge iron CBAM figure",
+      "to": "/answers/giridih-sponge-iron-kiln-cbam-figure"
+    },
+    {
+      "label": "Kiln coal lab testing records",
+      "to": "/answers/sponge-iron-kiln-coal-lab-testing-records"
+    },
+    {
+      "label": "Ferro alloy waste heat power",
+      "to": "/answers/ferro-alloy-furnace-waste-heat-power-counting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

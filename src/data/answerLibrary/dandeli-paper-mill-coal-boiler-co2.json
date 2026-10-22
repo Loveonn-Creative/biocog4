@@ -1,0 +1,58 @@
+{
+  "slug": "dandeli-paper-mill-coal-boiler-co2",
+  "q": "How does a paper mill in Dandeli split fossil and biogenic CO2?",
+  "title": "Dandeli paper mill: fossil vs biogenic CO2",
+  "short": "Coal burnt in the power boilers is fossil Scope 1. Black liquor and wood waste burnt in the recovery boiler release biogenic CO2, reported separately and not added to Scope 1, though their methane and nitrous oxide are. Divide fossil emissions and any bought power by tonnes of paper.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Integrated pulp and paper mills in Karnataka",
+  "sections": [
+    {
+      "h": "Fossil",
+      "ul": [
+        "Coal and furnace oil in power and steam boilers.",
+        "Lime kiln fuel.",
+        "Bought grid power, Scope 2."
+      ]
+    },
+    {
+      "h": "Biogenic",
+      "ul": [
+        "Black liquor solids in the recovery boiler.",
+        "Bark and wood waste."
+      ]
+    },
+    {
+      "h": "Lime kiln",
+      "p": [
+        "Lime mud recovered from the process is recycled carbon, but make-up limestone bought in adds fossil CO2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills, fuel invoices and production records into dated, fingerprinted records, so the figure you send a buyer can be traced to its documents.",
+  "links": [
+    {
+      "label": "Rajahmundry black liquor CO2",
+      "to": "/answers/rajahmundry-pulp-mill-black-liquor-biogenic-co2"
+    },
+    {
+      "label": "Paper mill footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

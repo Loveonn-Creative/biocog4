@@ -1,0 +1,59 @@
+{
+  "slug": "sihor-rerolling-mill-reheating-furnace-co2",
+  "q": "How does a re-rolling mill in Sihor work out CO2 per tonne of bars?",
+  "title": "Sihor re-rolling mill: CO2 per tonne",
+  "short": "Count fuel burnt in the reheating furnace, coal, furnace oil or gas, times its factor, and electricity for the rolling stands, divided by tonnes of bars or sections. Ship plate feed carries little or no embedded emissions under the CBAM transitional rules; check the definitive-period act before quoting that.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Re-rolling mills around Sihor and Bhavnagar using ship plate",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Reheating furnace fuel.",
+        "Electricity for rolling (recorded, not charged for steel under CBAM).",
+        "Tonnes of plate charged and bars produced."
+      ]
+    },
+    {
+      "h": "CBAM",
+      "p": [
+        "Bars, rods and sections are CBAM goods. An EU importer needs your figure or uses the default value."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Coal in furnace: 75 kg per tonne of bars x 2.42 kg = 182 kg CO2",
+      "Electricity: 110 kWh x 0.710 kg = 78 kg CO2 (Scope 2)",
+      "Direct figure for CBAM: about 0.18 t CO2 per tonne"
+    ]
+  },
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Chattogram ship scrap rerolling",
+      "to": "/answers/chattogram-rerolled-steel-ship-scrap-cbam"
+    },
+    {
+      "label": "Raipur TMT bars CBAM figure",
+      "to": "/answers/raipur-rolling-mill-tmt-bars-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}

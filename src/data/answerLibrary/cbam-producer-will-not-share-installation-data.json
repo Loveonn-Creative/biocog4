@@ -1,0 +1,57 @@
+{
+  "slug": "cbam-producer-will-not-share-installation-data",
+  "q": "What can an EU importer do when the producer will not share CBAM installation data?",
+  "title": "When the producer won't share CBAM data",
+  "short": "The importer can use the official default values for those goods. They are set high on purpose and include a mark-up, so the CBAM bill is usually larger than with actual data. Most importers use this to press suppliers, and switch to suppliers who can send real figures.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "EU importers and the exporters they buy from",
+  "sections": [
+    {
+      "h": "Options for the importer",
+      "ul": [
+        "Use the default value for the CN code and country.",
+        "Ask again with a short data template and a date.",
+        "Move volume to a producer that provides actual emissions."
+      ]
+    },
+    {
+      "h": "Why producers hesitate",
+      "p": [
+        "Fear of sharing costs or process details. The CBAM figure needs emissions per tonne and the method, not prices or recipes."
+      ]
+    },
+    {
+      "h": "For the exporter",
+      "p": [
+        "Sharing an actual figure often lowers your buyer's cost compared with the default. That is a reason to be chosen."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and production records into dated, fingerprinted installation records, the starting point for the actual emissions your EU importer asks for.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Default values in practice",
+      "to": "/answers/cilegon-steel-exporter-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-22"
+}
