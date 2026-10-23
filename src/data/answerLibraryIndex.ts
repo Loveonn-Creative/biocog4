@@ -467,6 +467,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "almm-list-ii-solar-cells-open-access-net-metering",
+  "q": "Do net metering and open access solar projects have to use ALMM List-II solar cells?",
+  "title": "ALMM List-II cells: net metering, open access",
+  "short": "Yes, with a window. Net metering and open access solar projects commissioned from 1 June 2026 must use ALMM List-I modules and List-II cells, but MNRE's July 2026 memorandum lets them commission without List-II cells until 31 December 2026. Projects commissioned after that must comply.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "almm-wind-data-centre-rule-wind-ppa",
+  "q": "What does the ALMM wind data and control rule mean for a factory buying wind power?",
+  "title": "ALMM wind data rule and wind power buyers",
+  "short": "Wind turbine makers on MNRE's ALMM (Wind) list must keep turbine data and servers in India, run turbines only from a facility in India, stop real-time operational data leaving the country and set up an R&D centre in India within a year. MNRE asked them to report compliance by 31 August 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "aluminium-anodizing-line-energy-per-square-metre",
   "q": "How does an aluminium anodizing unit work out its emissions per square metre?",
   "title": "Anodizing line emissions per square metre",
@@ -1681,6 +1697,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Mining diesel, drying fuel and grinding electricity make up most of it. Sodium activation with soda ash adds the soda ash's own footprint to Scope 3. Divide each by tonnes of finished bentonite and add them up.",
   "topic": "product",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "bess-viability-gap-funding-india",
+  "q": "Does the government offer viability gap funding for battery energy storage in India?",
+  "title": "Battery storage viability gap funding",
+  "short": "The Ministry of Power's National Framework for Promoting Energy Storage Systems of August 2023 proposes viability gap funding of up to 40% of a battery project's capital cost for the first few projects, on condition they are commissioned within 18 to 24 months. Check the current scheme before counting on it.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "betim-auto-parts-supplier-carbon-data",
@@ -3521,6 +3545,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Caprolactam, the raw material for nylon 6, is usually made through hydroxylamine from ammonia oxidation, which forms nitrous oxide. The IPCC 2006 default is 9.0 kg N2O per tonne of caprolactam, about 2.5 tonnes CO2e at a GWP of 273. Report it in Scope 1.",
   "topic": "product",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "captive-coal-plants-run-at-full-capacity-2026",
+  "q": "Do captive coal power plants have to run at full capacity until December 2026?",
+  "title": "Captive coal plants and the 2026 directions",
+  "short": "Yes, if they are 50 MW or larger. Directions issued by the Ministry of Power under section 11 of the Electricity Act on 25 September 2026 require captive coal plants of 50 MW and above to generate to the maximum of their available capacity from 1 October to 31 December 2026, and to sell surplus on power exchanges.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "captive-plant-fails-51-percent-test-what-happens",
+  "q": "What happens if a captive power plant fails the 51% consumption test in a year?",
+  "title": "If a captive plant fails the 51% test",
+  "short": "If captive users consume less than 51% of the plant's generation in the financial year, all electricity from the plant is treated as supply by a generating company, and cross-subsidy surcharge and additional surcharge apply to it. If verification later fails, those surcharges are payable with carrying cost.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "captive-power-in-cea-grid-emission-factor",
@@ -6323,6 +6363,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "consumer-owned-battery-storage-rules-india",
+  "q": "Can a factory own a battery energy storage system and lease its capacity to others in India?",
+  "title": "Battery storage owned by a consumer",
+  "short": "Yes. The Electricity (Amendment) Rules, 2025 let a consumer develop, own, lease or operate an energy storage system. A battery owned by and co-located with the consumer takes the consumer's legal status. Its owner may sell, lease or rent storage capacity to any consumer, utility, load despatch centre or other person.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "container-freight-station-handling-emissions",
   "q": "How do I count emissions from handling at a container freight station?",
   "title": "Container freight station emissions",
@@ -7155,6 +7203,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "dg-set-replace-with-solar-battery-rule",
+  "q": "Do Indian rules require factories to replace diesel generator backup with solar and batteries?",
+  "title": "Rule on replacing diesel generator backup",
+  "short": "Not as a hard ban. The Electricity (Rights of Consumers) Amendment Rules, 2022 say consumers using diesel generator sets as essential backup shall endeavour to shift to cleaner options such as renewable energy with battery storage within five years, or on the timeline their state commission sets based on supply reliability in that city.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "dhanbad-coal-washery-electricity-per-tonne",
   "q": "How do I work out CO2 per tonne of washed coal at a Dhanbad washery?",
   "title": "Dhanbad washery: CO2 per tonne of washed coal",
@@ -7459,6 +7515,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "does-almm-apply-to-factory-rooftop-solar",
+  "q": "Does the ALMM rule apply to rooftop solar on a factory?",
+  "title": "ALMM and factory rooftop solar",
+  "short": "Yes, if the rooftop system is connected under net metering or open access. MNRE amended the ALMM Order in January 2022 to cover open access and net metering projects, applying to projects that apply for open access or net metering on or after 1 October 2022. A purely captive system with neither may fall outside it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "does-aluminium-cbam-count-electricity",
   "q": "Does CBAM count electricity emissions for aluminium?",
   "title": "Aluminium CBAM and electricity",
@@ -7729,6 +7793,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No, not under current reporting rules. Location-based Scope 2 in India uses one annual CEA grid factor, so the same kWh gives the same CO2 at any hour. Shifting load lowers your bill under time of day tariffs, and it lowers market-based Scope 2 only if it lets more contracted renewable units cover your consumption.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "does-state-rpo-still-apply-under-rco",
+  "q": "If my factory is under the Renewable Consumption Obligation, does a state Renewable Purchase Obligation still apply?",
+  "title": "State RPO for designated consumers under RCO",
+  "short": "No additional one. The September 2025 notification says that for designated consumers under the Energy Conservation Act, no additional Renewable Purchase Obligation applies under the Electricity Act, 2003, and state RPO targets are subsumed within the RCO targets. Captive or open access users that are not designated consumers still follow their state commission's RPO regulations.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "does-tnfd-apply-to-indian-companies",
@@ -8513,6 +8585,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Compare the annual EMI with the measured annual saving in rupees. A saving of at least 1.3 times the EMI, our rule of thumb rather than a bank norm, leaves room for a bad year. Use your own before and after bills, not the vendor's estimate, and test a 30% shortfall.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "energy-storage-obligation-for-industry-india",
+  "q": "Is there an energy storage obligation for factories in India?",
+  "title": "Energy storage obligation and factories",
+  "short": "The Ministry of Power's July 2022 order set an energy storage obligation rising from 1% in 2023-24 to 4% in 2029-30, met only when at least 85% of stored energy is renewable. The September 2025 RCO notification for designated consumers has no separate storage component; storage counts only as a way to consume renewable power.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "enhanced-rock-weathering-carbon-removal-claims",
@@ -10883,6 +10963,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "green-open-access-multiple-connections-100-kw",
+  "q": "Can I combine several electricity connections to reach 100 kW for green energy open access?",
+  "title": "Green open access: combining connections",
+  "short": "Yes, within one electricity division. Since the May 2023 amendment, a consumer with contracted demand or sanctioned load of 100 kW or more, through one connection or several connections in the same electricity division of a discom, can take green energy open access. Captive consumers have no load limit at all.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "green-open-access-standby-charges-cap",
+  "q": "How much can a discom charge for standby power under green energy open access?",
+  "title": "Standby charges on green open access",
+  "short": "Standby charges under green energy open access are capped at 25% of the energy charges of your tariff category, after the January 2023 amendment raised the cap from 10%. They do not apply at all if you give the discom notice before the day ahead market closes on the day before delivery.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "green-shipping-book-and-claim-scope-3",
   "q": "Can an exporter count green shipping certificates in Scope 3?",
   "title": "Green shipping certificates in Scope 3",
@@ -10897,6 +10993,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if you use the certified intensity as a supplier-specific factor for the tonnes you actually bought from that plant, for the matching year. India's Green Steel Taxonomy classes steel below 2.2 t CO2e per tonne of finished steel as green. The certificate itself is not an offset.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "green-tariff-maximum-ministry-of-power-cap",
+  "q": "Is there a limit on how high a discom's green tariff can be?",
+  "title": "Green tariff limit set by the Power Ministry",
+  "short": "Yes. In May 2023 the Ministry of Power told state commissions that a green tariff should never exceed the discom's average power purchase cost of renewable energy, plus a surcharge of 20% of the average cost of supply, plus a reasonable margin of about 25 paise per unit.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "green-tariff-vs-recs-cheaper-scope-2",
@@ -11993,6 +12097,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Ask the seller for the retirement record: project ID, serial number range, quantity, vintage, retirement date and the beneficiary named. Then find that record yourself in the public Verra Registry or Gold Standard Impact Registry and check every field matches. A seller's PDF certificate alone does not prove retirement.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "how-to-check-solar-cells-on-almm-list",
+  "q": "How do I check whether my installer's solar cells are on ALMM List-II?",
+  "title": "How to check cells on ALMM List-II",
+  "short": "Open MNRE's latest ALMM List-II revision and find the cell manufacturer, the plant location and the exact model. Each entry also gives the cell type, efficiency and wattage range, enlisted capacity and a validity period, so check the model is listed and still valid on your commissioning date.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "how-to-choose-a-ghg-verifier-msme",
@@ -13385,6 +13497,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Only in part. Solar and wind projects commissioned by 30 June 2025 keep the full waiver of inter-state transmission (ISTS) charges for 25 years. Projects commissioned from 1 July 2025 pay a rising share: 25 percent in the first year, 50 percent in the second, 75 percent in the third, and full charges from 1 July 2028.",
   "topic": "markets",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "ists-waiver-co-located-battery-storage-2028",
+  "q": "Is there an inter-state transmission charge waiver for battery storage in India?",
+  "title": "ISTS charge waiver for battery storage",
+  "short": "Yes, for co-located batteries. A June 2025 Ministry of Power order gives a 100% waiver of inter-state transmission charges for battery storage connected at the same ISTS substation as a renewable project and commissioned by 30 June 2028, if its power is consumed outside the state. Batteries commissioned later get no such waiver.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "it-company-carbon-footprint-per-employee",
@@ -16331,6 +16451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "open-access-cross-subsidy-surcharge-20-percent-cap",
+  "q": "Is the cross-subsidy surcharge on open access capped at 20% of the average cost of supply?",
+  "title": "Surcharge cap at 20% of cost of supply",
+  "short": "Yes. Rule 13 of the Electricity Rules, 2005, added by the Electricity (Amendment) Rules, 2022 on 29 December 2022, says the surcharge a state commission fixes for consumers seeking open access shall not exceed 20% of the average cost of supply. Your state tariff order applies it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "open-access-deviation-units-scope-2",
   "q": "Our green open access bill shows deviation units. How do they count in Scope 2?",
   "title": "Open access deviation units",
@@ -18241,6 +18369,62 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The RBI framework is addressed to banks and large NBFCs, not to MSMEs. But a lender can only report climate risk and financed emissions if borrowers give it data. Expect questions on energy and fuel use, emissions, site location and transition plans, first from large exposures and carbon-heavy sectors.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "rco-captive-user-consumption-calculation",
+  "q": "How is a captive user's consumption calculated for the Renewable Consumption Obligation?",
+  "title": "Counting captive consumption for RCO",
+  "short": "For a captive user, the RCO base is electricity generated and self-consumed, net of auxiliary use. Nuclear power, fossil waste heat recovery and waste energy recovery are excluded, along with half of fossil co-generation and half of fossil power used in aluminium smelters. Renewable units consumed are then divided by that base.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rco-distributed-renewable-energy-component",
+  "q": "What counts as distributed renewable energy under the Renewable Consumption Obligation?",
+  "title": "Distributed renewable energy under RCO",
+  "short": "Distributed renewable energy means projects of 10 MW or less, including solar under net metering, gross metering, virtual and group net metering and behind the meter. Compliance is counted in kWh; if generation data is missing, capacity is converted at 4 kWh per kW per day. Shortfalls in this component cannot be made up elsewhere.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rco-energy-accounts-and-compliance-deadlines",
+  "q": "When must designated consumers submit RCO energy accounts and compliance reports?",
+  "title": "RCO deadlines and who certifies the figures",
+  "short": "Certified energy accounts are due by 31 July each year, and the compliance report, after covering any shortfall with RECs or buyout, by 31 December. For 2024-25 the dates were 31 October 2025 and 31 March 2026, and the Ministry of Power later extended final compliance to 31 May 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rco-group-companies-holding-level-compliance",
+  "q": "Can group companies meet the Renewable Consumption Obligation together?",
+  "title": "RCO for group companies under common control",
+  "short": "Yes. When several designated consumers are under common control, the notification assesses Renewable Consumption Obligation compliance on an aggregate basis at the holding company level, as defined in the Companies Act, 2013, or at the level of a registered cooperative society. One plant's surplus can offset another's shortfall.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rco-open-access-consumer-what-counts",
+  "q": "If my factory buys power through open access, which units count for the Renewable Consumption Obligation?",
+  "title": "Open access consumers and the RCO",
+  "short": "If your factory is a designated consumer buying through open access, the obligation applies to electricity drawn from sources other than the discom, measured at the point of drawal from the grid. You can meet the total from any renewable source, including green power, RECs or the CERC buyout price.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rco-shortfall-recs-or-buyout",
+  "q": "How can a designated consumer cover a shortfall in its Renewable Consumption Obligation?",
+  "title": "Covering an RCO shortfall: RECs or buyout",
+  "short": "A designated consumer that falls short can buy or self-generate Renewable Energy Certificates under CERC regulations, including RECs from virtual power purchase agreements, or pay the buyout price CERC sets. Any shortfall left after that is non-compliance, and penalties under section 26(3) of the Energy Conservation Act can follow.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rco-targets-2024-25-to-2029-30",
+  "q": "What are the Renewable Consumption Obligation targets for each year up to 2029-30?",
+  "title": "RCO targets by year, 2024-25 to 2029-30",
+  "short": "The Ministry of Power notification of 27 September 2025 sets the total Renewable Consumption Obligation at 29.91% for 2024-25, 33.01% for 2025-26, 35.95% for 2026-27, 38.81% for 2027-28, 41.36% for 2028-29 and 43.33% for 2029-30, split into wind, hydro, distributed and other renewable components.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "read-all-invoices-or-a-sample-for-footprint",
@@ -20379,6 +20563,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "solar-inverter-bis-certification-above-200-kw",
+  "q": "Do solar inverters above 200 kW need BIS certification in India?",
+  "title": "BIS rules for solar inverters above 200 kW",
+  "short": "They fall under the Solar Systems, Devices and Components Goods Order, 2025, but MNRE extended self-certification for inverters above 200 kW until 31 December 2026 or further orders. Manufacturers need valid IEC certificates matching the Indian standards in the order and test reports from accredited labs.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "solar-inverter-reading-vs-net-meter-scope-2",
   "q": "Should I use my solar inverter reading or the net meter for Scope 2?",
   "title": "Solar inverter or net meter for Scope 2?",
@@ -20401,6 +20593,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the bought-in cells, glass, aluminium frame, EVA, backsheet and junction box per module from supplier figures; cells are usually the largest share. Add the line's electricity for stringing, lamination and testing, then divide by watts produced.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "solar-module-model-number-country-code-suffix",
+  "q": "Why do solar module model numbers in India now end in a four-letter country code?",
+  "title": "Solar module model numbers with country codes",
+  "short": "Under an MNRE procedure of 1 October 2026, solar module model numbers registered with BIS carry a four-character suffix: two letters for the country where the module was made and two for the country that made its cells. One suffixed model cannot mix cells from different countries.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "solar-on-rented-factory-roof-who-claims",

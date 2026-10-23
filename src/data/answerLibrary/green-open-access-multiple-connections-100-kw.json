@@ -1,0 +1,67 @@
+{
+  "slug": "green-open-access-multiple-connections-100-kw",
+  "q": "Can I combine several electricity connections to reach 100 kW for green energy open access?",
+  "title": "Green open access: combining connections",
+  "short": "Yes, within one electricity division. Since the May 2023 amendment, a consumer with contracted demand or sanctioned load of 100 kW or more, through one connection or several connections in the same electricity division of a discom, can take green energy open access. Captive consumers have no load limit at all.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSMEs with several small connections, such as multi-shed units or adjoining plots",
+  "sections": [
+    {
+      "h": "What changed in 2023",
+      "p": [
+        "The 2022 Rules allowed green energy open access only to consumers with contracted demand or sanctioned load of 100 kW or more. The Second Amendment Rules, 2023 rewrote the definition: 100 kW or more either through a single connection or through multiple connections aggregating 100 kW or more located in the same electricity division of a distribution licensee."
+      ]
+    },
+    {
+      "h": "Conditions to check",
+      "ul": [
+        "All connections must be in the same electricity division of the same discom; connections in two divisions do not add up.",
+        "The connections must be yours as the consumer.",
+        "Captive consumers are exempt from the load limit, and there is no cap on supply to captive consumers through green energy open access.",
+        "Your state commission's green energy open access regulations set the technical and metering conditions."
+      ]
+    },
+    {
+      "h": "Before you apply",
+      "p": [
+        "List each connection with its consumer number, sanctioned load and division from the bills, and total them. Apply through the central green energy open access portal, which routes the application to the nodal agency your state commission names."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three connections in one division",
+    "lines": [
+      "Connection 1: 45 kW sanctioned load; connection 2: 35 kW; connection 3: 30 kW",
+      "All three in the same electricity division of the same discom",
+      "Total: 45 + 35 + 30 = 110 kW, so the consumer meets the 100 kW threshold"
+    ]
+  },
+  "senseible": "Senseible reads sanctioned load and the division or circle printed on each bill, so you can see whether your connections in one division add up to 100 kW before you start the application.",
+  "links": [
+    {
+      "label": "How to apply for green energy open access",
+      "to": "/answers/how-to-apply-green-energy-open-access-registry"
+    },
+    {
+      "label": "Green open access charges, line by line",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Green tariff limit set by the Power Ministry",
+      "to": "/answers/green-tariff-maximum-ministry-of-power-cap"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) (Second Amendment) Rules, 2023, G.S.R. 381(E)",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/b7339044416bea95913b3f755e0c6310.pdf"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, G.S.R. 418(E), 6 June 2022",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/917a6ca2a9ea54d72be3495401811f71.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Rule 2(1)(b) and rule 5(2) as substituted by the Second Amendment Rules, 2023 (checked 23 October 2026)."
+}

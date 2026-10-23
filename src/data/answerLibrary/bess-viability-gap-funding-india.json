@@ -1,0 +1,59 @@
+{
+  "slug": "bess-viability-gap-funding-india",
+  "q": "Does the government offer viability gap funding for battery energy storage in India?",
+  "title": "Battery storage viability gap funding",
+  "short": "The Ministry of Power's National Framework for Promoting Energy Storage Systems of August 2023 proposes viability gap funding of up to 40% of a battery project's capital cost for the first few projects, on condition they are commissioned within 18 to 24 months. Check the current scheme before counting on it.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Factories and developers costing a battery storage project",
+  "sections": [
+    {
+      "h": "What the framework says",
+      "ul": [
+        "Viability gap funding may be up to 40% of the capital cost of the project.",
+        "Projects must be commissioned within 18 to 24 months.",
+        "The aim is to keep the levelised cost of storage affordable, so that stored energy competes with peak prices on the power exchanges.",
+        "It is proposed for the initial few projects, while volumes are low."
+      ]
+    },
+    {
+      "h": "Other support listed in the framework",
+      "ul": [
+        "Energy storage obligation for obligated entities, rising from 1% in 2023-24 to 4% in 2029-30.",
+        "Waiver of inter-state transmission charges for storage, under separate Ministry of Power orders.",
+        "Battery storage allowed to take part in the high price day ahead segment of the power exchange.",
+        "A recommendation that electricity duty and cross-subsidy surcharge apply to final consumption, not the power used to charge storage.",
+        "Time of day tariffs for commercial and industrial consumers, which make storing cheap power for peak hours worthwhile."
+      ]
+    },
+    {
+      "h": "Reading it correctly",
+      "p": [
+        "The framework is a policy document. Who can claim viability gap funding, how much and through which agency is set in the scheme guidelines and tenders issued under it, which are usually aimed at utility scale projects. A factory battery behind the meter should not assume access to it."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not track subsidy schemes; it gives you measured consumption by time of day from your bills, which is what a battery sizing study needs.",
+  "links": [
+    {
+      "label": "Battery storage owned by a consumer",
+      "to": "/answers/consumer-owned-battery-storage-rules-india"
+    },
+    {
+      "label": "Time of day tariffs for factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "ISTS charge waiver for battery storage",
+      "to": "/answers/ists-waiver-co-located-battery-storage-2028"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power, National Framework for Promoting Energy Storage Systems, August 2023",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/fb5ee0d1ac3a305ae2ad8fbe60562d1f.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Section 6.1.1 of the National Framework for Promoting Energy Storage Systems, August 2023. Scheme terms may have changed since; check MNRE and Ministry of Power notices (checked 23 October 2026)."
+}

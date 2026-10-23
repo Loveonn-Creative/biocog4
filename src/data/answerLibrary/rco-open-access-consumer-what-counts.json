@@ -1,0 +1,61 @@
+{
+  "slug": "rco-open-access-consumer-what-counts",
+  "q": "If my factory buys power through open access, which units count for the Renewable Consumption Obligation?",
+  "title": "Open access consumers and the RCO",
+  "short": "If your factory is a designated consumer buying through open access, the obligation applies to electricity drawn from sources other than the discom, measured at the point of drawal from the grid. You can meet the total from any renewable source, including green power, RECs or the CERC buyout price.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Designated consumers buying power through open access, and their power purchase teams",
+  "sections": [
+    {
+      "h": "The rule in the notification",
+      "ul": [
+        "The obligation for open access consumers and captive users applies to consumption from sources other than the distribution licensee.",
+        "For open access consumers, consumption is counted at the point of drawal from the grid, so transmission and wheeling losses are already taken out.",
+        "Open access consumers meet the total RCO from any renewable source; the wind, hydro and distributed split is not separately imposed on them.",
+        "Nuclear power is excluded from the base."
+      ]
+    },
+    {
+      "h": "Ways to comply",
+      "ol": [
+        "Consume renewable electricity, directly or through an energy storage system.",
+        "Buy or self-generate Renewable Energy Certificates issued under CERC regulations, including RECs acquired under virtual power purchase agreements.",
+        "Pay the buyout price set by CERC for any shortfall."
+      ]
+    },
+    {
+      "h": "Units from the discom",
+      "p": [
+        "Units you buy from the discom sit outside your own obligation; the discom carries its obligation on them. If you requisition green power at the discom's green tariff, those units still count as renewable consumption in the Annexure I example of the notification."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads open access units on your HT bill separately from discom units, so the drawal figure your auditor needs for RCO is visible month by month.",
+  "links": [
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    },
+    {
+      "label": "Green open access charges, line by line",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Can an open access consumer get RECs?",
+      "to": "/answers/can-open-access-consumer-get-recs"
+    },
+    {
+      "label": "Paying for an RCO shortfall",
+      "to": "/answers/rco-shortfall-recs-or-buyout"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Paragraphs 1, 5, 6 and 9 of the 27 September 2025 notification (checked 23 October 2026)."
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "consumer-owned-battery-storage-rules-india",
+  "q": "Can a factory own a battery energy storage system and lease its capacity to others in India?",
+  "title": "Battery storage owned by a consumer",
+  "short": "Yes. The Electricity (Amendment) Rules, 2025 let a consumer develop, own, lease or operate an energy storage system. A battery owned by and co-located with the consumer takes the consumer's legal status. Its owner may sell, lease or rent storage capacity to any consumer, utility, load despatch centre or other person.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factories considering a battery at their own site or at another location",
+  "sections": [
+    {
+      "h": "What the 2025 amendment changed",
+      "ul": [
+        "Consumers were added to the list of who may develop, own, lease or operate an energy storage system, alongside generators, licensees, system operators and independent storage providers.",
+        "An energy storage system owned, operated and co-located with a consumer has the same legal status as that consumer.",
+        "If the consumer owns it but it is not co-located, it keeps the owner's legal status, but for scheduling and dispatch it is treated as a separate storage element.",
+        "The owner may sell, lease or rent storage capacity, in whole or part, to any consumer, generation, transmission or distribution utility, load despatch centre or any other person."
+      ]
+    },
+    {
+      "h": "Related rules",
+      "ul": [
+        "Rule 18 of the Electricity Rules, 2005 already treats energy storage as part of the power system and makes independent storage a delicensed activity, registered with the Central Electricity Authority.",
+        "Under the 2026 captive rules, a captive user includes someone who consumes captive power through a storage system that stored it."
+      ]
+    },
+    {
+      "h": "What it does not settle",
+      "p": [
+        "Charges for drawing grid power into a consumer battery, and how stored power is billed, come from your state commission's regulations and tariff order. The national framework of August 2023 suggests electricity duty and cross-subsidy surcharge should apply to final consumption rather than charging power, but that is a recommendation to states."
+      ]
+    }
+  ],
+  "senseible": "Senseible records grid units that charge a battery as grid electricity and solar that charges it as solar, so a battery does not change the source of the electricity you report.",
+  "links": [
+    {
+      "label": "Does battery storage reduce Scope 2?",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    },
+    {
+      "label": "Battery backup vs DG set emissions",
+      "to": "/answers/battery-backup-vs-dg-set-emissions"
+    },
+    {
+      "label": "Energy storage obligation and factories",
+      "to": "/answers/energy-storage-obligation-for-industry-india"
+    },
+    {
+      "label": "Battery storage viability gap funding",
+      "to": "/answers/bess-viability-gap-funding-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Amendment) Rules, 2025, G.S.R. 688(E), amending rule 18 of the Electricity Rules, 2005 (energy storage systems)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/07/fea95bcefde4b03216ccd880cf8902a7.pdf"
+    },
+    {
+      "label": "Electricity (Amendment) Rules, 2022, G.S.R. 911(E), 29 December 2022, inserting rules 13 to 19 in the Electricity Rules, 2005",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/4f904dacb1210dcbd4cabb75b8cf016f.pdf"
+    },
+    {
+      "label": "Electricity (Amendment) Rules, 2026, G.S.R. 186(E), substituting rule 3 of the Electricity Rules, 2005 (captive generating plants), with the Ministry of Power explanatory note",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/05/c84c643ff478be845cff8d7dd4349d67.pdf"
+    },
+    {
+      "label": "Ministry of Power, National Framework for Promoting Energy Storage Systems, August 2023",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/fb5ee0d1ac3a305ae2ad8fbe60562d1f.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Rule 18(2), (4) and (5) of the Electricity Rules, 2005 as amended by G.S.R. 688(E) in September 2025 (checked 23 October 2026)."
+}

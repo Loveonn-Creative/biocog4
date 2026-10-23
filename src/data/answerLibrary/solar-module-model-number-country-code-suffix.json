@@ -1,0 +1,66 @@
+{
+  "slug": "solar-module-model-number-country-code-suffix",
+  "q": "Why do solar module model numbers in India now end in a four-letter country code?",
+  "title": "Solar module model numbers with country codes",
+  "short": "Under an MNRE procedure of 1 October 2026, solar module model numbers registered with BIS carry a four-character suffix: two letters for the country where the module was made and two for the country that made its cells. One suffixed model cannot mix cells from different countries.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Buyers and EPC contractors checking module paperwork",
+  "sections": [
+    {
+      "h": "How the suffix works",
+      "ul": [
+        "Format: original model number, a hyphen, then MMCC.",
+        "MM is the ISO 3166-1 alpha-2 code of the country of module manufacture.",
+        "CC is the ISO 3166-1 alpha-2 code of the country where the cells in that bill of materials were made.",
+        "Example: a module made in India with Indian cells ends in -ININ."
+      ]
+    },
+    {
+      "h": "Rules for manufacturers",
+      "ul": [
+        "A model whose bills of materials use cells from different countries must be split into separate suffixed models.",
+        "Cells from more than one maker are allowed under one model only if all those makers are in the same country and the approved bill of materials names each one.",
+        "Existing BIS registered models must add the suffixed model numbers. If the change only removes or separates already approved cells, no fresh testing is needed; the lab issues a supplementary report."
+      ]
+    },
+    {
+      "h": "Why it helps a buyer",
+      "p": [
+        "The suffix lets you see from the label and datasheet where the cells came from, which matters for ALMM List-II and domestic content checks. If a datasheet shows no suffix on a model sold after the procedure, ask the seller why."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Reading two model numbers (illustrative)",
+    "lines": [
+      "XYZ-550-ININ: module made in India, cells made in India",
+      "XYZ-550-INCN: module made in India, cells made in China",
+      "The two are separate BIS registered models, each with its own bill of materials"
+    ],
+    "note": "XYZ-550 is a made-up model used only to show the suffix."
+  },
+  "senseible": "Senseible can hold your module datasheets and invoices with the solar installation record, so the model number and its suffix are on file if a lender or buyer asks.",
+  "links": [
+    {
+      "label": "How to check cells on ALMM List-II",
+      "to": "/answers/how-to-check-solar-cells-on-almm-list"
+    },
+    {
+      "label": "PM Surya Ghar domestic content modules",
+      "to": "/answers/pm-surya-ghar-domestic-content-modules"
+    },
+    {
+      "label": "BIS rules for solar inverters above 200 kW",
+      "to": "/answers/solar-inverter-bis-certification-above-200-kw"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Standard Operating Procedure for updating model numbers of solar PV modules in BIS registration, File No. 313-12/5/2025-S AND QC, 1 October 2026",
+      "url": "https://mnre.gov.in/static/uploads/2026/10/f47a18d3c3d887daca809494a5071da5.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "MNRE SOP of 1 October 2026 under the Solar Systems, Devices and Components Goods Order, 2025 (checked 23 October 2026)."
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "does-state-rpo-still-apply-under-rco",
+  "q": "If my factory is under the Renewable Consumption Obligation, does a state Renewable Purchase Obligation still apply?",
+  "title": "State RPO for designated consumers under RCO",
+  "short": "No additional one. The September 2025 notification says that for designated consumers under the Energy Conservation Act, no additional Renewable Purchase Obligation applies under the Electricity Act, 2003, and state RPO targets are subsumed within the RCO targets. Captive or open access users that are not designated consumers still follow their state commission's RPO regulations.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Captive and open access consumers checking which renewable obligation they report against",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "Paragraph 16 of the Ministry of Power notification of 27 September 2025: for all designated consumers under the Act, no additional Renewable Purchase Obligation applies under the Electricity Act, 2003, and the state level RPO targets are subsumed within the RCO targets."
+      ]
+    },
+    {
+      "h": "Who is still on a state RPO",
+      "ul": [
+        "Captive users and open access consumers that are not notified designated consumers: their state electricity regulatory commission's RPO regulations continue to define what they owe.",
+        "Distribution licensees are designated consumers under the notification and report RCO.",
+        "Whether your factory is a designated consumer depends on the Energy Conservation Act notifications for your sector and size."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Before this, a captive user could face both a state RPO under the Electricity Act and an RCO under the Energy Conservation Act. Now a designated consumer reports one obligation, to the Bureau of Energy Efficiency, using one certified energy account."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not decide which obligation applies to you; it keeps the source-wise consumption records either obligation is calculated from.",
+  "links": [
+    {
+      "label": "Does the RCO apply to my factory?",
+      "to": "/answers/renewable-consumption-obligation-who-must-comply"
+    },
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Paragraph 16 of the 27 September 2025 notification. State RPO regulations differ; check your commission's current regulation if you are not a designated consumer (checked 23 October 2026)."
+}

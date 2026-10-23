@@ -76,6 +76,26 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-1c0559f148753b50_1776061566.pdf
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-10a330f6757ffbdc_1776061631.pdf
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-39e9d29b0438ec1e_1776061669.pdf
+- https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf
+- https://www.powermin.gov.in/static/uploads/2026/05/07f01334c51fc3e842ce805979b606e1.pdf
+- https://www.powermin.gov.in/static/uploads/2026/08/06964870d76b47e26ed5a5874f3c5e4c.pdf
+- https://www.powermin.gov.in/static/uploads/2026/09/1c9e465d38785fe239f2aef55220d076.pdf
+- https://www.powermin.gov.in/static/uploads/2026/07/fea95bcefde4b03216ccd880cf8902a7.pdf
+- https://www.powermin.gov.in/static/uploads/2026/05/c84c643ff478be845cff8d7dd4349d67.pdf
+- https://mnre.gov.in/static/uploads/2025/07/93aa2d91bb7b50a83e0f85b0bf95d1dd.pdf
+- https://mnre.gov.in/static/uploads/2025/07/1f14fcff58f42eb457a9f1dc881f36c5.pdf
+- https://mnre.gov.in/static/uploads/2025/07/4f904dacb1210dcbd4cabb75b8cf016f.pdf
+- https://mnre.gov.in/static/uploads/2025/07/b7339044416bea95913b3f755e0c6310.pdf
+- https://mnre.gov.in/static/uploads/2025/07/315adf1da9034fbb1cc8acfb6dd7387a.pdf
+- https://mnre.gov.in/static/uploads/2025/07/917a6ca2a9ea54d72be3495401811f71.pdf
+- https://mnre.gov.in/static/uploads/2025/07/6793184c068360d0e5db42c56b7ec4dc.pdf
+- https://mnre.gov.in/static/uploads/2025/07/fb5ee0d1ac3a305ae2ad8fbe60562d1f.pdf
+- https://mnre.gov.in/static/uploads/2025/07/746e21ef54906bb5c4e123c36fe2821d.pdf
+- https://mnre.gov.in/static/uploads/2026/10/f5ffa3db3ba9f186679e204adceb05df.pdf
+- https://mnre.gov.in/static/uploads/2026/10/d1f27eb73e8b4201c6fb42266f109bdc.pdf
+- https://mnre.gov.in/static/uploads/2026/10/3ee4529cf2b20ea103878dce8459f2cd.pdf
+- https://mnre.gov.in/static/uploads/2026/10/f47a18d3c3d887daca809494a5071da5.pdf
+- https://mnre.gov.in/static/uploads/2026/10/a83540623f3124539af1201e2ee41e2b.pdf
 
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org

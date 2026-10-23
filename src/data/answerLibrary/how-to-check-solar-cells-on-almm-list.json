@@ -1,0 +1,69 @@
+{
+  "slug": "how-to-check-solar-cells-on-almm-list",
+  "q": "How do I check whether my installer's solar cells are on ALMM List-II?",
+  "title": "How to check cells on ALMM List-II",
+  "short": "Open MNRE's latest ALMM List-II revision and find the cell manufacturer, the plant location and the exact model. Each entry also gives the cell type, efficiency and wattage range, enlisted capacity and a validity period, so check the model is listed and still valid on your commissioning date.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Factories and EPC buyers checking a solar quotation",
+  "sections": [
+    {
+      "h": "What a List-II entry shows",
+      "ul": [
+        "Manufacturer name and the address of the manufacturing facility.",
+        "Enlisted manufacturing capacity in MW a year.",
+        "Enlisted cell models, with cell type, for example N-type TOPCon or mono PERC, and size.",
+        "Average and range of cell efficiency and wattage, as claimed by the manufacturer.",
+        "Validity from and to dates."
+      ]
+    },
+    {
+      "h": "Steps",
+      "ol": [
+        "Get the cell manufacturer and cell model number from the module datasheet or the module maker.",
+        "Open the latest List-II revision on MNRE's website; the 12th revision was dated 8 October 2026.",
+        "Match manufacturer, plant location and model exactly; a different plant of the same company is a different entry.",
+        "Check your expected commissioning date falls inside the validity dates.",
+        "Save a copy of the page showing the entry with your project documents."
+      ]
+    },
+    {
+      "h": "Things that catch people out",
+      "p": [
+        "Revisions amend earlier entries as well as adding new ones, so use the latest revision, not an old download. Capacity shown in a revision replaces the earlier capacity for that unit; it is not added to it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example entry from the 12th revision (8 October 2026)",
+    "lines": [
+      "Manufacturer: Gopin Semicon Private Limited, Kamrej, Surat, Gujarat",
+      "Capacity: 402 MW a year; cell: N-type TOPCon, G12R",
+      "Average efficiency 25.57%, range 24.60% to 25.70%",
+      "Valid from 8 October 2026 to 7 October 2030"
+    ]
+  },
+  "senseible": "Senseible stores your solar purchase documents with the installation record; checking ALMM entries stays with you and your installer.",
+  "links": [
+    {
+      "label": "ALMM List-II cells for net metering and open access",
+      "to": "/answers/almm-list-ii-solar-cells-open-access-net-metering"
+    },
+    {
+      "label": "Does ALMM apply to factory rooftop solar?",
+      "to": "/answers/does-almm-apply-to-factory-rooftop-solar"
+    },
+    {
+      "label": "Solar module model numbers with country codes",
+      "to": "/answers/solar-module-model-number-country-code-suffix"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, 12th revision of ALMM List-II for solar PV cells, 8 October 2026",
+      "url": "https://mnre.gov.in/static/uploads/2026/10/d1f27eb73e8b4201c6fb42266f109bdc.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "12th revision of ALMM List-II, 8 October 2026. New revisions are issued often (checked 23 October 2026)."
+}

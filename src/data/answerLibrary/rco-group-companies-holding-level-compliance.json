@@ -1,0 +1,67 @@
+{
+  "slug": "rco-group-companies-holding-level-compliance",
+  "q": "Can group companies meet the Renewable Consumption Obligation together?",
+  "title": "RCO for group companies under common control",
+  "short": "Yes. When several designated consumers are under common control, the notification assesses Renewable Consumption Obligation compliance on an aggregate basis at the holding company level, as defined in the Companies Act, 2013, or at the level of a registered cooperative society. One plant's surplus can offset another's shortfall.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Groups with several designated consumer plants, such as cement, steel or textile groups",
+  "sections": [
+    {
+      "h": "What the notification says",
+      "p": [
+        "Paragraph 10: compliance for multiple designated consumers under common control is considered on an aggregate basis, at the holding company level as defined in the Companies Act, 2013, or at the level of a cooperative society registered under the relevant Co-operative Societies Act."
+      ]
+    },
+    {
+      "h": "What that means in practice",
+      "ul": [
+        "Add up the eligible consumption base of every designated consumer plant in the group.",
+        "Add up their renewable consumption, RECs and buyout.",
+        "Compare the group total against the year's total RCO percentage.",
+        "Each plant still needs its own certified energy account; aggregation is about meeting the target, not skipping the paperwork."
+      ]
+    },
+    {
+      "h": "Related change in the captive rules",
+      "p": [
+        "The Electricity (Amendment) Rules, 2026 also treat a company, its subsidiaries, its holding company and the holding company's other subsidiaries as a single captive user. Groups that hold renewable plants through a separate company can use that when planning captive renewable power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two plants in one group, 2026-27",
+    "lines": [
+      "Plant A base 60 MU, renewable 30 MU; Plant B base 40 MU, renewable 6 MU",
+      "Group base 100 MU; total RCO 35.95%, so 35.95 MU needed",
+      "Group renewable 36 MU, so the group meets the target even though Plant B alone is at 15%"
+    ]
+  },
+  "senseible": "Senseible can hold several plants under one workspace with each site's bills kept separate, so a group total and the plant figures behind it come from the same records.",
+  "links": [
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    },
+    {
+      "label": "Group captive rules for solar",
+      "to": "/answers/group-captive-solar-26-percent-rule"
+    },
+    {
+      "label": "RCO deadlines and certification",
+      "to": "/answers/rco-energy-accounts-and-compliance-deadlines"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    },
+    {
+      "label": "Electricity (Amendment) Rules, 2026, G.S.R. 186(E), substituting rule 3 of the Electricity Rules, 2005 (captive generating plants), with the Ministry of Power explanatory note",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/05/c84c643ff478be845cff8d7dd4349d67.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Paragraph 10 of the 27 September 2025 notification (checked 23 October 2026)."
+}

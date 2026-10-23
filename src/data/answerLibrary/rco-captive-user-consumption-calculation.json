@@ -1,0 +1,73 @@
+{
+  "slug": "rco-captive-user-consumption-calculation",
+  "q": "How is a captive user's consumption calculated for the Renewable Consumption Obligation?",
+  "title": "Counting captive consumption for RCO",
+  "short": "For a captive user, the RCO base is electricity generated and self-consumed, net of auxiliary use. Nuclear power, fossil waste heat recovery and waste energy recovery are excluded, along with half of fossil co-generation and half of fossil power used in aluminium smelters. Renewable units consumed are then divided by that base.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Energy managers at captive power users such as steel, cement, aluminium, chemicals and paper plants",
+  "sections": [
+    {
+      "h": "What is in the base",
+      "ul": [
+        "Electricity generated and self-consumed in captive plants, excluding auxiliary consumption.",
+        "Electricity bought through open access or other sources outside the discom.",
+        "Power from a waste heat recovery steam generator inside a captive combined cycle gas plant stays in."
+      ]
+    },
+    {
+      "h": "What comes out of the base",
+      "ul": [
+        "Electricity from nuclear sources.",
+        "Electricity generated and self-consumed from waste heat recovery using fossil sources.",
+        "Electricity from waste energy recovery, including by-product gases and other residual energy from industrial processes.",
+        "50% of electricity generated and self-consumed from a fossil fuel co-generation plant.",
+        "50% of fossil fuel electricity consumed in aluminium smelters."
+      ]
+    },
+    {
+      "h": "Who certifies the numbers",
+      "p": [
+        "Captive and open access designated consumers report in the Annexure II format of the notification, certified by an accredited energy auditing firm empanelled by the Bureau of Energy Efficiency. The format asks for fossil generation, co-generation, waste heat recovery, auxiliary use, purchases, banking and renewable generation, including renewable co-firing in the captive plant."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example from Annexure I of the notification",
+    "lines": [
+      "Total consumption: 1,000 MU",
+      "Nuclear (A) 100 MU; fossil waste heat recovery (B) 300 MU; fossil co-generation (C) 300 MU; bought from the discom (D) 100 MU",
+      "Renewable from captive, behind the meter, open access or green tariff (E): 200 MU",
+      "Adjusted consumption: 1,000 minus (100 + 300 + 0.5 x 300 + 100) = 350 MU",
+      "RCO compliance: 200 / 350 x 100 = 57.14%"
+    ],
+    "note": "The example deducts discom purchases because the obligation for captive users covers consumption from sources other than the distribution licensee."
+  },
+  "senseible": "Senseible records captive generation, purchased units and fuel bills against the plant that used them, so the figures an energy auditor asks for are already sorted by source and period.",
+  "links": [
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    },
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "Captive power and the CEA grid factor",
+      "to": "/answers/captive-power-in-cea-grid-emission-factor"
+    },
+    {
+      "label": "RCO deadlines and certification",
+      "to": "/answers/rco-energy-accounts-and-compliance-deadlines"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Exclusions as in paragraphs 7 and 8 and Annexure I of the 27 September 2025 notification (checked 23 October 2026)."
+}

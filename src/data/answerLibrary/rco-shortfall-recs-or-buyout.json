@@ -1,0 +1,65 @@
+{
+  "slug": "rco-shortfall-recs-or-buyout",
+  "q": "How can a designated consumer cover a shortfall in its Renewable Consumption Obligation?",
+  "title": "Covering an RCO shortfall: RECs or buyout",
+  "short": "A designated consumer that falls short can buy or self-generate Renewable Energy Certificates under CERC regulations, including RECs from virtual power purchase agreements, or pay the buyout price CERC sets. Any shortfall left after that is non-compliance, and penalties under section 26(3) of the Energy Conservation Act can follow.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Designated consumers below their RCO target and their finance teams",
+  "sections": [
+    {
+      "h": "The three routes in the notification",
+      "ol": [
+        "Consume renewable electricity, directly or through an energy storage system.",
+        "Use Renewable Energy Certificates, bought or self-generated, issued under CERC regulations. RECs acquired under virtual power purchase agreements count.",
+        "Pay the buyout price specified by CERC."
+      ]
+    },
+    {
+      "h": "Where buyout money goes",
+      "p": [
+        "Buyout payments are credited to the Central Energy Conservation Fund under a separate head. 75% is passed to the respective State Energy Conservation Funds, to support renewable energy and storage capacity. The notification leaves the mechanism for using those sums to the appropriate government."
+      ]
+    },
+    {
+      "h": "If you still fall short",
+      "p": [
+        "A shortfall after RECs and buyout is treated as non-compliance. So is failing to submit the required information, or submitting incorrect information. The Bureau of Energy Efficiency or the State Designated Agency may then start penalty proceedings under the Act and its rules.",
+        "The notification does not itself state a penalty amount; that comes from the Energy Conservation Act and its rules."
+      ]
+    },
+    {
+      "h": "Choosing between RECs and buyout",
+      "p": [
+        "Compare the REC price on the power exchanges for the months you need against the CERC buyout price for the same year. RECs are traded instruments, so their price moves; the buyout price is fixed by CERC. Neither changes your physical consumption, so they do not lower location-based Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible tracks which of your units are renewable and which are covered by certificates as separate records, so an RCO shortfall and its cover never get mixed into your measured consumption.",
+  "links": [
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "REC multipliers by technology",
+      "to": "/answers/rec-certificate-multiplier-by-technology"
+    },
+    {
+      "label": "RCO deadlines and certification",
+      "to": "/answers/rco-energy-accounts-and-compliance-deadlines"
+    },
+    {
+      "label": "State Designated Agencies",
+      "to": "/answers/state-designated-agency-energy-conservation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Paragraphs 9, 13 and 14 of the 27 September 2025 notification. Check the current CERC buyout price and REC prices before deciding (checked 23 October 2026)."
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "open-access-cross-subsidy-surcharge-20-percent-cap",
+  "q": "Is the cross-subsidy surcharge on open access capped at 20% of the average cost of supply?",
+  "title": "Surcharge cap at 20% of cost of supply",
+  "short": "Yes. Rule 13 of the Electricity Rules, 2005, added by the Electricity (Amendment) Rules, 2022 on 29 December 2022, says the surcharge a state commission fixes for consumers seeking open access shall not exceed 20% of the average cost of supply. Your state tariff order applies it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Open access consumers and factories checking their landed power cost",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "Rule 13, Surcharge payable by consumers seeking open access: the surcharge determined by the State Commission under section 86(1)(a) of the Electricity Act, 2003 shall not exceed twenty per cent of the average cost of supply."
+      ]
+    },
+    {
+      "h": "How it interacts with the green rules",
+      "ul": [
+        "Under the Green Energy Open Access Rules, 2022, the cross-subsidy surcharge for a green open access consumer may not rise by more than 50% over the level fixed for the year open access is granted, for twelve years from the renewable plant's commissioning.",
+        "No cross-subsidy surcharge or additional surcharge applies when green power is used to make green hydrogen or green ammonia, or when it comes from a non-fossil waste-to-energy plant.",
+        "Captive users who pass the captive tests do not pay the cross-subsidy surcharge."
+      ]
+    },
+    {
+      "h": "Checking your bill or offer",
+      "p": [
+        "Find the average cost of supply in your commission's latest tariff order and multiply by 0.20. If the cross-subsidy surcharge in your open access invoice or offer is higher, ask the discom which order it is applying."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: checking the cap (illustrative figures)",
+    "lines": [
+      "Average cost of supply in the tariff order: ₹7.20 per kWh",
+      "Cap: 0.20 x 7.20 = ₹1.44 per kWh",
+      "A cross-subsidy surcharge of ₹1.80 per kWh in an offer would be above the cap; ask which order it comes from"
+    ]
+  },
+  "senseible": "Senseible keeps open access charges in the bill record but calculates emissions only from units, so surcharges change your cost analysis, not your Scope 2.",
+  "links": [
+    {
+      "label": "Green open access charges, line by line",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Green tariff limit set by the Power Ministry",
+      "to": "/answers/green-tariff-maximum-ministry-of-power-cap"
+    },
+    {
+      "label": "What if a captive plant fails the 51% test?",
+      "to": "/answers/captive-plant-fails-51-percent-test-what-happens"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Amendment) Rules, 2022, G.S.R. 911(E), 29 December 2022, inserting rules 13 to 19 in the Electricity Rules, 2005",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/4f904dacb1210dcbd4cabb75b8cf016f.pdf"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, G.S.R. 418(E), 6 June 2022",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/917a6ca2a9ea54d72be3495401811f71.pdf"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Amendment Rules, 2023, G.S.R. 59(E), 27 January 2023",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/315adf1da9034fbb1cc8acfb6dd7387a.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Rule 13 of the Electricity Rules, 2005, inserted 29 December 2022 (checked 23 October 2026)."
+}

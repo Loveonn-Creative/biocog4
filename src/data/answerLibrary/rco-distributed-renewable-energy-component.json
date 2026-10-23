@@ -1,0 +1,71 @@
+{
+  "slug": "rco-distributed-renewable-energy-component",
+  "q": "What counts as distributed renewable energy under the Renewable Consumption Obligation?",
+  "title": "Distributed renewable energy under RCO",
+  "short": "Distributed renewable energy means projects of 10 MW or less, including solar under net metering, gross metering, virtual and group net metering and behind the meter. Compliance is counted in kWh; if generation data is missing, capacity is converted at 4 kWh per kW per day. Shortfalls in this component cannot be made up elsewhere.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Discoms, captive users and open access consumers counting rooftop and small solar towards RCO",
+  "sections": [
+    {
+      "h": "What qualifies",
+      "ul": [
+        "Renewable projects not larger than 10 MW.",
+        "Solar under every configuration: net metering, gross metering, virtual net metering, group net metering, behind the meter and any other configuration.",
+        "Other renewable sources the Central Government notifies for this component."
+      ]
+    },
+    {
+      "h": "How it is counted",
+      "ul": [
+        "Ordinarily in energy terms, kWh generated.",
+        "Where the designated consumer cannot provide generation data, the reported capacity is converted at 4 kWh per kW per day.",
+        "A shortfall in this component is not fungible: wind, hydro or other renewable surplus cannot cover it.",
+        "A surplus in this component can offset shortfalls in the other components."
+      ]
+    },
+    {
+      "h": "Lower levels for some states",
+      "p": [
+        "For Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Himachal Pradesh, Uttarakhand, Jammu and Kashmir and Ladakh, the notification sets this component at 50% of the table level. Discoms serving only urban consumers get 75%. The balance moves to the other renewable component.",
+        "Open access consumers and captive users are told to meet the total obligation from any renewable source, so this component bites mainly on discoms. For a factory, rooftop solar still counts towards the total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: converting capacity when generation data is missing",
+    "lines": [
+      "Rooftop solar capacity reported: 500 kW",
+      "Conversion: 500 kW x 4 kWh per kW per day x 365 days = 7,30,000 kWh a year",
+      "That figure counts towards the RCO only when measured generation is not available"
+    ],
+    "note": "Measured generation is the default basis; the multiplier is a fallback."
+  },
+  "senseible": "Senseible can hold your rooftop solar generation readings next to your grid bills, so you report measured kWh rather than falling back on the 4 kWh per kW per day conversion.",
+  "links": [
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    },
+    {
+      "label": "Rooftop solar with net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Virtual and group net metering",
+      "to": "/answers/virtual-and-group-net-metering-scope-2"
+    },
+    {
+      "label": "RCO for open access consumers",
+      "to": "/answers/rco-open-access-consumer-what-counts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Note 1, Note 4 and paragraph 3 of the 27 September 2025 notification (checked 23 October 2026)."
+}
