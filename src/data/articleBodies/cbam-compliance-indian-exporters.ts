@@ -82,5 +82,5 @@ Commercially, yes: many buyers compare suppliers on landed cost including CBAM. 
 - [Implementing Regulation (EU) 2025/2621 (default values)](https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng)
 - [European Commission: CBAM definitive regime](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en)
 - [European Commission: price of CBAM certificates](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en)
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-database/?lang=en)
+- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
 - [PIB: CCTS obligated entities](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239)`;

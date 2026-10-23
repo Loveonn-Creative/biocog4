@@ -60,7 +60,7 @@
   "sources": [
     { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 (Stationary Combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
     { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-16"
 }

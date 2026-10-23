@@ -56,6 +56,6 @@ Calculate facility Scope 1 and 2 from 12 months of fuel and electricity bills, s
 
 - [Directive (EU) 2026/470 (Omnibus I)](https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng)
 - [Council of the EU: simplification signed off, 24 February 2026](https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/)
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-database/?lang=en)
+- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
 - [PIB: CCTS obligated entities](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239)
 - [Regulation (EU) 2023/956 (CBAM), Annex I](https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20)`;

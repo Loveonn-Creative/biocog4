@@ -59,4 +59,4 @@ The Central Electricity Authority's CO2 Baseline Database. Version 21.0 gives a 
 
 - [SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025](https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html)
 - [SEBI Master Circular, July 2023](https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf)
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-database/?lang=en)`;
+- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)`;

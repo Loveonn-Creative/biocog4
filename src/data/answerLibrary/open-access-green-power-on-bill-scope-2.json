@@ -59,7 +59,7 @@
   "sources": [
     { "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria", "url": "https://ghgprotocol.org/scope-2-guidance" },
     { "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)", "url": "https://powermin.gov.in" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance, including hourly matching; check whether the market-based test has changed."

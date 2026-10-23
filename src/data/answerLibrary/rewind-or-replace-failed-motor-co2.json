@@ -68,7 +68,7 @@
     },
     {
       "label": "CEA CO2 Baseline Database, version 21.0",
-      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
   "reviewNote": "The IE3 efficiency is a nominal IEC 60034-30-1 value (30 kW, 4-pole, 50 Hz: 93.6%) used for illustration; check the nameplate of the motor you would buy. IEC 60034-23:2019 and the EASA and AEMT rewind study are named in the text; iec.ch and easa.com are not on the sources allowlist.",

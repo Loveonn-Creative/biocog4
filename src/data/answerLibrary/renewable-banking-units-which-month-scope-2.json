@@ -75,7 +75,7 @@
     },
     {
       "label": "CEA CO2 Baseline Database, version 21.0",
-      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
   "reviewNote": "Banking periods, caps and charges are set and revised by state commission orders; check your state's current order and the Scope 2 revision.",

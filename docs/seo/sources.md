@@ -3,7 +3,6 @@
 Deep links below are known-good (used on the site already or canonical). For any other publication, cite it precisely in the label and link the publisher's home page from the second list. Never invent a deep URL.
 
 ## Deep links
-- https://cea.nic.in/cdm-co2-baseline-database/?lang=en
 - https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en
 - https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=185&lid=72
 - https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294

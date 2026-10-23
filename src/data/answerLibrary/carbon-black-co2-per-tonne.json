@@ -80,7 +80,7 @@
     },
     {
       "label": "CEA CO2 Baseline Database, version 21.0",
-      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
   "reviewNote": "IPCC 2006 Volume 3, Table 3.23 furnace black default (2.62 t CO2/t) checked 2026-10-19 via the IPCC Emission Factor Database; recheck if the 2019 Refinement is cited instead.",

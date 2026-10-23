@@ -58,7 +58,7 @@
   ],
   "sources": [
     { "label": "GHG Protocol Scope 3 Standard, Category 1 Purchased goods and services", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
-    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-17"
 }

@@ -57,7 +57,7 @@
   "sources": [
     { "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria", "url": "https://ghgprotocol.org/scope-2-guidance" },
     { "label": "CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022 (Ministry of Power)", "url": "https://powermin.gov.in" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Rules on projects registered for both I-REC and India REC, and buyer acceptance, change; check the current issuer rules before buying."

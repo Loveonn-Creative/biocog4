@@ -59,7 +59,7 @@
   ],
   "sources": [
     { "label": "GHG Protocol Mitigation Goal Standard", "url": "https://ghgprotocol.org/standards" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
     { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
   ],
   "reviewed": "2026-10-15"

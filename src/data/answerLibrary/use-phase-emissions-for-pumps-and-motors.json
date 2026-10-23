@@ -61,7 +61,7 @@
   ],
   "sources": [
     { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Technical Guidance for Calculating Scope 3 Emissions, Category 11", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Hours and lifetime are labelled assumptions; factors for export markets come from licensed or local databases."

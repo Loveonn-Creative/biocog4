@@ -58,7 +58,7 @@
   "sources": [
     { "label": "ISO 50015:2014, Measurement and verification of energy performance of organizations", "url": "https://www.iso.org" },
     { "label": "ISO 50006, Energy baselines and energy performance indicators", "url": "https://www.iso.org" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-15"
 }

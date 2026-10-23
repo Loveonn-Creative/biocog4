@@ -58,7 +58,7 @@
   "sources": [
     { "label": "2006 IPCC Guidelines, Vol. 3, Ch. 2 Mineral Industry Emissions (Table 2.1, section 2.4 Glass production)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
     { "label": "2006 IPCC Guidelines, Vol. 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-18"
 }

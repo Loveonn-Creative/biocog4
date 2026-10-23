@@ -57,7 +57,7 @@
   "sources": [
     { "label": "GHG Protocol Corporate Standard, Chapter 5 (tracking emissions over time)", "url": "https://ghgprotocol.org/corporate-standard" },
     { "label": "ISO 14064-1:2018, clause 6.4 (base year)", "url": "https://www.iso.org" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-16"
 }

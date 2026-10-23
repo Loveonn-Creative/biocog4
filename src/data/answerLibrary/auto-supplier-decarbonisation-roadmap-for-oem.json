@@ -64,7 +64,7 @@
   "sources": [
     { "label": "GHG Protocol Corporate Standard (base year and boundaries)", "url": "https://ghgprotocol.org/corporate-standard" },
     { "label": "SBTi SME target-setting route", "url": "https://sciencebasedtargets.org" },
-    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-18"
 }
