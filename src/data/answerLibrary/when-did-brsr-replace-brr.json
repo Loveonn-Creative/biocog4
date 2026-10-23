@@ -1,0 +1,64 @@
+{
+  "slug": "when-did-brsr-replace-brr",
+  "q": "When did BRSR replace the Business Responsibility Report, and what came after?",
+  "title": "When BRSR replaced the BRR",
+  "short": "SEBI prescribed the Business Responsibility Report in November 2015. Its May 2021 circular introduced BRSR: voluntary for FY 2021-22 and mandatory for the top 1,000 listed companies from FY 2022-23. BRSR Core assurance followed in July 2023, and the March 2025 circular added assessment as an option.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Company secretaries, ESG leads and suppliers to listed companies",
+  "sections": [
+    {
+      "h": "The timeline",
+      "ul": [
+        "4 November 2015: SEBI circular CIR/CFD/CMD/10/2015 prescribes the Business Responsibility Report (BRR).",
+        "10 May 2021: SEBI introduces the Business Responsibility and Sustainability Report (BRSR), with a format and a guidance note.",
+        "FY 2021-22: filing BRSR is voluntary.",
+        "FY 2022-23: BRSR is mandatory for the top 1,000 listed companies by market capitalisation and replaces the BRR.",
+        "12 July 2023: BRSR Core and value chain disclosures are introduced, with reasonable assurance on a glide path from the top 150.",
+        "28 March 2025: assessment becomes an alternative to assurance, value chain rules are eased, and a green credits line is added."
+      ]
+    },
+    {
+      "h": "What changed from BRR to BRSR",
+      "p": [
+        "BRSR reports against the nine principles of the National Guidelines on Responsible Business Conduct. Each principle has essential indicators, which are mandatory, and leadership indicators, which are voluntary. SEBI said the aim was quantitative, standardised disclosures that can be compared across companies, sectors and years."
+      ]
+    },
+    {
+      "h": "Why a supplier should care",
+      "p": [
+        "Every step since 2021 has asked listed companies for more numbers they cannot produce alone: energy, emissions, water and waste, and since 2023 the same figures for parts of their value chain. Those requests travel down to suppliers as questionnaires."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Does an unlisted company need BRSR?",
+      "to": "/answers/do-unlisted-companies-need-brsr"
+    },
+    {
+      "label": "The nine BRSR Core attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "BRSR vs GRI vs ISSB",
+      "to": "/answers/brsr-vs-gri-vs-issb-which-framework"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CMD-2/P/CIR/2021/562, 10 May 2021: Business Responsibility and Sustainability Reporting",
+      "url": "https://www.sebi.gov.in/legal/circulars/may-2021/business-responsibility-and-sustainability-reporting-by-listed-entities_50096.html"
+    },
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122, 12 July 2023: BRSR Core",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "brsr-recycled-input-material-share",
+  "q": "How do we calculate the share of recycled or reused input material for BRSR?",
+  "title": "Recycled input share in BRSR",
+  "short": "Divide the value of recycled or reused input material by the value of total material used in production, for each input material you report, for this year and last year. It is a Principle 2 leadership indicator, so voluntary, and SEBI's format measures it by value.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Manufacturers filing BRSR and their material suppliers",
+  "sections": [
+    {
+      "h": "The question",
+      "p": [
+        "Principle 2, leadership indicator 3: percentage of recycled or reused input material to total material, by value, used in production for manufacturers or in providing services for service companies. The table has one row per input material, with current and previous financial year."
+      ]
+    },
+    {
+      "h": "Worked steps",
+      "ol": [
+        "List input materials by spend: for example, steel, aluminium, paper, plastic resin.",
+        "For each, total the purchase value of recycled or reused material, backed by supplier declarations.",
+        "Divide by the total purchase value of that material.",
+        "Repeat for the previous year so the trend is visible."
+      ]
+    },
+    {
+      "h": "Evidence that holds up",
+      "p": [
+        "A supplier's recycled content declaration per invoice or per batch is the usual proof. A general brochure claim is not. If you supply recycled material, put the recycled share on your invoice or certificate so the buyer can use it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Aluminium bought: Rs 8.0 crore, of which Rs 2.4 crore is recycled ingot with declarations.",
+      "Recycled share for aluminium = 2.4 / 8.0 = 30%."
+    ],
+    "note": "Illustrative figures."
+  },
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "BRSR life cycle assessment question",
+      "to": "/answers/brsr-life-cycle-assessment-question"
+    },
+    {
+      "label": "Sustainable sourcing question",
+      "to": "/answers/brsr-sustainable-sourcing-percentage-question"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

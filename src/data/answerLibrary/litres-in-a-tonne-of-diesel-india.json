@@ -1,0 +1,67 @@
+{
+  "slug": "litres-in-a-tonne-of-diesel-india",
+  "q": "How many litres are there in a tonne of diesel in India?",
+  "title": "Litres in a tonne of diesel",
+  "short": "PPAC's conversion table gives 1,210 litres per tonne of diesel, measured at 29.5 C. To move that volume to the 15 C basis used on bulk invoices, multiply by 0.9879, which gives about 1,195 litres. That implies a density near 0.837 kg per litre at 15 C.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Fleet owners, factories with DG sets, fuel buyers",
+  "sections": [
+    {
+      "h": "The official figures",
+      "ul": [
+        "Weight to volume: 1 tonne of diesel = 1.2100 kilolitres = 7.61 barrels (PPAC Ready Reckoner FY 2025-26, Table 9.2).",
+        "Temperature: to convert volume at 29.5 C to volume at 15 C, multiply by 0.9879.",
+        "PPAC notes that petrol and diesel figures are as per BS-IV norms."
+      ]
+    },
+    {
+      "h": "When to use it",
+      "p": [
+        "Use it when a supplier invoices diesel in tonnes or kilolitres and you need the other unit, or to sanity-check a quantity. If the invoice or test certificate prints a density, use that instead: it describes your actual batch."
+      ]
+    },
+    {
+      "h": "Then to CO2",
+      "p": [
+        "Once you have kilograms, multiply by the IPCC default of about 3.19 kg CO2 per kg of diesel. Working in mass avoids most temperature and density errors."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Invoice: 12 tonnes of HSD.",
+      "Volume at 29.5 C: 12 x 1,210 = 14,520 litres.",
+      "Volume at 15 C: 14,520 x 0.9879 = 14,344 litres.",
+      "CO2: 12,000 kg x 3.19 = 38,280 kg, about 38.3 t."
+    ],
+    "note": "Illustrative quantity."
+  },
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "Diesel kg to litres",
+      "to": "/answers/diesel-kg-to-litres-conversion"
+    },
+    {
+      "label": "Bulk diesel invoice in kilolitres at 15 C",
+      "to": "/answers/bulk-diesel-invoice-kilolitres-15c"
+    },
+    {
+      "label": "Fuel volume at 29.5 C vs 15 C",
+      "to": "/answers/fuel-volume-at-29-5-c-vs-15-c"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

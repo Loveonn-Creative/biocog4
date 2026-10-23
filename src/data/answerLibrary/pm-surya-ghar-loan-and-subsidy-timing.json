@@ -1,0 +1,51 @@
+{
+  "slug": "pm-surya-ghar-loan-and-subsidy-timing",
+  "q": "How do loans and subsidy payments work under PM Surya Ghar?",
+  "title": "PM Surya Ghar loans and subsidy payment",
+  "short": "Loans are offered through the national portal, and MNRE expects banks to offer standard low-interest loans around repo plus 0.5% for systems up to 3 kW. The subsidy is processed within 15 days of discom approval and goes first to the loan account, with any balance to your bank account.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Households and RWAs financing rooftop solar",
+  "sections": [
+    {
+      "h": "Financing",
+      "ul": [
+        "Loan products from banks and financial institutions are listed on the national portal, including through the Jan Samarth portal.",
+        "MNRE envisages standard low-interest products around repo plus 50 basis points for residential systems up to 3 kW.",
+        "Similar standard products are expected for systems above 3 kW, which get no extra subsidy."
+      ]
+    },
+    {
+      "h": "Subsidy payment",
+      "ol": [
+        "The vendor installs; the discom inspects and approves.",
+        "The claim is processed within 15 days of discom approval.",
+        "If you took a loan, the subsidy goes to the loan account up to the amount outstanding, and any remainder to your bank account."
+      ]
+    },
+    {
+      "h": "Keep the records",
+      "p": [
+        "Keep the commissioning report, net meter agreement and generation readings. They are the evidence for any solar claim later, including on a housing society's or home office's electricity figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including net metering lines, so grid import, export and solar generation sit in one monthly record with the factor and source shown. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Subsidy per kW",
+      "to": "/answers/pm-surya-ghar-subsidy-per-kw"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana, Central Financial Assistance to Residential Consumers",
+      "url": "https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

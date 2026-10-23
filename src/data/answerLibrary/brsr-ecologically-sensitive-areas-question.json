@@ -1,0 +1,50 @@
+{
+  "slug": "brsr-ecologically-sensitive-areas-question",
+  "q": "What does BRSR ask about operations in ecologically sensitive areas?",
+  "title": "BRSR ecologically sensitive areas question",
+  "short": "Principle 6 essential indicator 10 asks for operations or offices in or around ecologically sensitive areas, such as national parks, sanctuaries, biosphere reserves, wetlands, forests and coastal regulation zones, where clearances are needed. For each: location, type of operation, and whether clearance conditions are met.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Companies with plants, mines or offices near protected or coastal areas",
+  "sections": [
+    {
+      "h": "The table",
+      "ul": [
+        "Location of operations or offices.",
+        "Type of operations.",
+        "Whether the conditions of environmental approval or clearance are being complied with, and if not, the reasons and corrective action."
+      ]
+    },
+    {
+      "h": "Related questions",
+      "ul": [
+        "Essential indicator 11: environmental impact assessments of projects in the current year, with notification number, date, whether done by an independent agency and whether results are public.",
+        "Leadership indicator 5: for these sites, the significant direct and indirect impact on biodiversity and the prevention and remediation steps."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "p": [
+        "Map each site against protected area and coastal zone boundaries, then list the clearance and its conditions. A plant near a wetland with a clean compliance record is a short, factual answer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Check flood risk for a factory site",
+      "to": "/answers/check-flood-risk-for-factory-site-india"
+    },
+    {
+      "label": "Environmental compliance question",
+      "to": "/answers/brsr-environmental-compliance-question"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

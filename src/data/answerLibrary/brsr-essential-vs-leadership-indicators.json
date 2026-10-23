@@ -1,0 +1,56 @@
+{
+  "slug": "brsr-essential-vs-leadership-indicators",
+  "q": "What is the difference between essential and leadership indicators in BRSR?",
+  "title": "BRSR essential vs leadership indicators",
+  "short": "Essential indicators are mandatory for every company filing BRSR. Leadership indicators are voluntary, though SEBI asks companies to try to report them. Scope 1 and 2 emissions are essential; Scope 3 emissions, value chain impacts and life cycle assessments sit in the leadership indicators.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "First-time BRSR preparers and suppliers filling customer forms",
+  "sections": [
+    {
+      "h": "What SEBI said",
+      "p": [
+        "SEBI's May 2021 circular splits reporting under each of the nine principles into essential and leadership indicators. Essential indicators must be reported; leadership indicators are voluntary, and listed entities should endeavour to report them as well."
+      ]
+    },
+    {
+      "h": "Where common environment items sit (Principle 6)",
+      "ul": [
+        "Essential: total energy and energy intensity, water, air emissions other than GHG, Scope 1 and 2 emissions and intensity, waste, environmental compliance.",
+        "Leadership: renewable and non-renewable energy split, water in stressed areas, Scope 3 emissions and intensity, business continuity plans, value chain impacts, and the share of value chain partners assessed."
+      ]
+    },
+    {
+      "h": "Why a supplier gets asked leadership questions",
+      "p": [
+        "A customer that chooses to report Scope 3 or value chain impacts can only do it with supplier data. So a voluntary line for the listed company becomes a data request for you. Answer the parts you have records for and say which parts are estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Does BRSR require Scope 3?",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "Renewable vs non-renewable energy in BRSR",
+      "to": "/answers/brsr-renewable-vs-non-renewable-energy"
+    },
+    {
+      "label": "Supplier questionnaire, field by field",
+      "to": "/answers/brsr-supplier-questionnaire-field-by-field"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CMD-2/P/CIR/2021/562, 10 May 2021: Business Responsibility and Sustainability Reporting",
+      "url": "https://www.sebi.gov.in/legal/circulars/may-2021/business-responsibility-and-sustainability-reporting-by-listed-entities_50096.html"
+    },
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

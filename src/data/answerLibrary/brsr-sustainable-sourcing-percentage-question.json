@@ -1,0 +1,54 @@
+{
+  "slug": "brsr-sustainable-sourcing-percentage-question",
+  "q": "How should a company answer the BRSR question on sustainable sourcing and the share of inputs sourced sustainably?",
+  "title": "BRSR sustainable sourcing question",
+  "short": "Principle 2 asks two things: whether you have procedures for sustainable sourcing, and if yes, what percentage of inputs were sourced sustainably. Define what counts in writing first, then compute the share by value or volume from purchase records, and say which basis you used.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Procurement heads at listed companies and their suppliers",
+  "sections": [
+    {
+      "h": "The question in the BRSR format",
+      "p": [
+        "Principle 2, essential indicator 2: (a) Does the entity have procedures in place for sustainable sourcing? (b) If yes, what percentage of inputs were sourced sustainably?"
+      ]
+    },
+    {
+      "h": "How to build the answer",
+      "ol": [
+        "Write the criteria: for example, certified material, recycled content, suppliers that report energy and emissions, or local sourcing.",
+        "Tag purchase lines that meet the criteria, with evidence for each supplier.",
+        "Compute the share by purchase value, or by volume for a single material, and state which.",
+        "Keep the list of qualifying suppliers for the assessor."
+      ]
+    },
+    {
+      "h": "What this means for suppliers",
+      "p": [
+        "If your customer counts suppliers who report their emissions as sustainable sourcing, your Scope 1 and 2 figures move you into the qualifying share. That is a practical reason to have them ready."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Supplier questionnaire, field by field",
+      "to": "/answers/brsr-supplier-questionnaire-field-by-field"
+    },
+    {
+      "label": "Essential vs leadership indicators",
+      "to": "/answers/brsr-essential-vs-leadership-indicators"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CMD-2/P/CIR/2021/562, 10 May 2021: Business Responsibility and Sustainability Reporting",
+      "url": "https://www.sebi.gov.in/legal/circulars/may-2021/business-responsibility-and-sustainability-reporting-by-listed-entities_50096.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

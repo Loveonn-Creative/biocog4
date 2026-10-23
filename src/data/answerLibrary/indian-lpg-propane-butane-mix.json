@@ -1,0 +1,51 @@
+{
+  "slug": "indian-lpg-propane-butane-mix",
+  "q": "Is LPG in India propane or butane?",
+  "title": "Indian LPG: propane and butane mix",
+  "short": "Both. PPAC's Ready Reckoner describes LPG as about 40% propane and 60% butane. That is why Indian factories use the general LPG emission factor, about 2.98 kg CO2 per kg from IPCC, rather than a pure propane or pure butane figure.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Factories, kitchens and dryers running on LPG",
+  "sections": [
+    {
+      "h": "What PPAC says",
+      "ul": [
+        "LPG contains propane (40%) and butane (60%).",
+        "Natural gas contains 60 to 95% methane.",
+        "Source: PPAC Ready Reckoner FY 2025-26, Table 9.4."
+      ]
+    },
+    {
+      "h": "Why it matters for your numbers",
+      "p": [
+        "Propane and butane have slightly different carbon content per kilogram, so a pure-gas factor from a foreign database can be a little off for Indian LPG. Bill quantities in kilograms times the LPG factor is the standard route."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "CO2 from a 19 kg cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "Propane vs natural gas in kilns",
+      "to": "/answers/propane-vs-natural-gas-tile-kiln-co2"
+    },
+    {
+      "label": "LPG or PNG per unit of heat",
+      "to": "/answers/lpg-or-png-lower-co2-per-unit-of-heat"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

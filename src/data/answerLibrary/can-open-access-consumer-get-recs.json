@@ -1,0 +1,52 @@
+{
+  "slug": "can-open-access-consumer-get-recs",
+  "q": "Can an open access consumer earn RECs for buying extra green power?",
+  "title": "RECs for open access consumers",
+  "short": "Yes, for renewable power bought above its renewable purchase obligation. CERC's 2022 regulations let an open access consumer get certificates for that excess, if it applies within three months of the financial year end with certification from its state commission.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Industrial open access buyers of renewable power",
+  "sections": [
+    {
+      "h": "The conditions",
+      "ul": [
+        "You are an obligated open access consumer.",
+        "Your renewable purchases exceed the obligation set by your state commission.",
+        "The state commission certifies the excess.",
+        "You apply to the Central Agency within three months of the year end."
+      ]
+    },
+    {
+      "h": "Think before you sell",
+      "p": [
+        "Selling those certificates passes the renewable attribute of the excess units to the buyer. Your own market-based Scope 2 can then no longer count those units as renewable. Decide whether the sale price is worth more than the claim to your customers."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps electricity bills and renewable purchase records side by side, so location-based and market-based Scope 2 figures can be reported from the same data. Certificate retirement proof stays with the buyer.",
+  "links": [
+    {
+      "label": "Green open access charges",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Green power on an open access bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "REC application deadline",
+      "to": "/answers/rec-application-deadline-six-months"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022, notified 9 May 2022",
+      "url": "https://www.cercind.gov.in/regulations/REC-Regulations-2022.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

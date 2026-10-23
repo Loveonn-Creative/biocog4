@@ -1,0 +1,49 @@
+{
+  "slug": "ldo-tonne-to-litres-conversion",
+  "q": "How many litres of light diesel oil are in a tonne?",
+  "title": "Light diesel oil: tonnes to litres",
+  "short": "PPAC gives 1 tonne of light diesel oil = 1.1720 kilolitres at 29.5 C, or 7.37 barrels. Multiply by 0.9877 for volume at 15 C, about 1,158 litres. Use the mass for CO2, since emission factors for oils are most reliable per kilogram.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Small industrial units and plants using LDO for start-up or heating",
+  "sections": [
+    {
+      "h": "The official figures",
+      "ul": [
+        "1 tonne of LDO = 1.1720 kilolitres = 7.37 barrels (PPAC Ready Reckoner FY 2025-26, Table 9.2).",
+        "Volume correction from 29.5 C to 15 C: multiply by 0.9877.",
+        "PPAC lists LDO uses as fuel for agricultural pumpsets, small industrial units and start-up fuel for power generation."
+      ]
+    },
+    {
+      "h": "Steps",
+      "ol": [
+        "Take litres from the invoice and note the temperature basis if printed.",
+        "Divide by 1,172 litres per tonne at 29.5 C, or 1,158 at 15 C.",
+        "Apply a gas oil factor per kg, since LDO is a distillate close to diesel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "LDO and LSHS emission factors",
+      "to": "/answers/ldo-and-lshs-emission-factor"
+    },
+    {
+      "label": "Litres in a tonne of diesel",
+      "to": "/answers/litres-in-a-tonne-of-diesel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -2315,12 +2315,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "brsr-core-estimates-and-industry-adjustments",
+  "q": "Can a listed company use estimates or its own method in BRSR Core?",
+  "title": "Estimates and own methods in BRSR Core",
+  "short": "Yes, if it says so. SEBI calls the BRSR Core data and approach a base methodology only. Any change, industry-specific adjustment or estimate must be disclosed. For value chain figures, the scope of reporting and any assumptions or estimates must also be clearly disclosed.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "brsr-core-nine-attributes-explained",
   "q": "What are the nine BRSR Core attributes and the KPIs that need assurance?",
   "title": "BRSR Core: the nine attributes and KPIs",
   "short": "BRSR Core is SEBI's short list of key indicators, grouped under nine attributes: GHG footprint, water footprint, energy footprint, circularity and waste, employee wellbeing and safety, gender diversity, inclusive development, fairness to customers and suppliers, and openness of business. Listed companies in the glide path get these indicators assured or assessed.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "brsr-core-rules-2023-vs-2025-changes",
+  "q": "What changed in SEBI's BRSR Core rules between July 2023 and March 2025?",
+  "title": "BRSR Core: 2023 rules vs 2025 rules",
+  "short": "Four things changed. Assessment is now allowed instead of reasonable assurance. Value chain partners are those at 2% or more of purchases or sales, not the top 75% cumulatively. Value chain reporting moved from comply-or-explain in FY 2024-25 to voluntary from FY 2025-26. A green credits line was added.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "brsr-core-value-chain-assurance-timeline",
@@ -2343,6 +2359,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Which documents should back each BRSR environment figure?",
   "title": "Documents behind BRSR environment figures",
   "short": "Every number needs a record: electricity bills for Scope 2 and grid energy, fuel invoices for Scope 1, meter logs and tanker invoices for water, weighbridge slips and recycler receipts for waste, and production registers for intensity. Keep them filed by figure and month.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "brsr-ecologically-sensitive-areas-question",
+  "q": "What does BRSR ask about operations in ecologically sensitive areas?",
+  "title": "BRSR ecologically sensitive areas question",
+  "short": "Principle 6 essential indicator 10 asks for operations or offices in or around ecologically sensitive areas, such as national parks, sanctuaries, biosphere reserves, wetlands, forests and coastal regulation zones, where clearances are needed. For each: location, type of operation, and whether clearance conditions are met.",
   "topic": "regulation",
   "reviewed": "2026-10-23"
  },
@@ -2379,6 +2403,38 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "brsr-environmental-compliance-question",
+  "q": "How do we answer the BRSR question on compliance with environmental laws?",
+  "title": "BRSR environmental compliance question",
+  "short": "Principle 6 essential indicator 12 asks whether the company complies with environmental laws such as the Water Act, the Air Act and the Environment Protection Act and rules. If not, list each non-compliance: the law, the details, any fines or penalties from pollution control boards or courts, and corrective action.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "brsr-epr-plastic-packaging-question",
+  "q": "What does BRSR ask about Extended Producer Responsibility for plastic and e-waste?",
+  "title": "BRSR question on EPR",
+  "short": "Principle 2 essential indicator 4 asks whether Extended Producer Responsibility applies to the company, and if so, whether its waste collection plan matches the EPR plan submitted to pollution control boards; if not, the steps taken. Indicator 3 asks how products are reclaimed at end of life.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "brsr-essential-vs-leadership-indicators",
+  "q": "What is the difference between essential and leadership indicators in BRSR?",
+  "title": "BRSR essential vs leadership indicators",
+  "short": "Essential indicators are mandatory for every company filing BRSR. Leadership indicators are voluntary, though SEBI asks companies to try to report them. Scope 1 and 2 emissions are essential; Scope 3 emissions, value chain impacts and life cycle assessments sit in the leadership indicators.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "brsr-ghg-reduction-projects-question",
+  "q": "How should we answer the BRSR question on projects to reduce greenhouse gas emissions?",
+  "title": "BRSR question on GHG reduction projects",
+  "short": "Principle 6 essential indicator 7 asks whether the company has any project to reduce GHG emissions and, if yes, for details. Give each project with its site, what changed, the year, and the tonnes CO2 saved, calculated from metered energy or fuel before and after.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "brsr-green-credits-disclosure",
   "q": "What is the voluntary green credits disclosure in BRSR, and what counts?",
   "title": "Green credits disclosure in BRSR",
@@ -2395,11 +2451,27 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "brsr-life-cycle-assessment-question",
+  "q": "What does the BRSR life cycle assessment question ask for?",
+  "title": "BRSR life cycle assessment question",
+  "short": "It is a Principle 2 leadership indicator, so voluntary. It asks whether you have done a life cycle perspective or assessment for any product or service, and for each: NIC code, product name, share of turnover, the boundary, whether an independent agency did it, and whether results are public.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "brsr-principle-6-worked-example-from-bills",
   "q": "How do I work out BRSR environment energy and emissions from a year of bills?",
   "title": "BRSR energy and emissions from bills",
   "short": "Total each fuel and electricity for April to March, multiply by its emission factor for Scope 1 and 2, and by its energy content for GJ. 480,000 kWh, 12,000 litres of diesel and 3,000 kg of LPG give about 382 t CO2 and about 2,301 GJ.",
   "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "brsr-recycled-input-material-share",
+  "q": "How do we calculate the share of recycled or reused input material for BRSR?",
+  "title": "Recycled input share in BRSR",
+  "short": "Divide the value of recycled or reused input material by the value of total material used in production, for each input material you report, for this year and last year. It is a Principle 2 leadership indicator, so voluntary, and SEBI's format measures it by value.",
+  "topic": "regulation",
   "reviewed": "2026-10-23"
  },
  {
@@ -2443,6 +2515,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "brsr-sustainable-sourcing-percentage-question",
+  "q": "How should a company answer the BRSR question on sustainable sourcing and the share of inputs sourced sustainably?",
+  "title": "BRSR sustainable sourcing question",
+  "short": "Principle 2 asks two things: whether you have procedures for sustainable sourcing, and if yes, what percentage of inputs were sourced sustainably. Define what counts in writing first, then compute the share by value or volume from purchase records, and say which basis you used.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "brsr-value-chain-data-request-msme-supplier",
   "q": "My listed customer asked for BRSR value chain data. Am I required to give it, and what do they need from an MSME supplier?",
   "title": "BRSR value chain data from MSME suppliers",
@@ -2459,12 +2539,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "brsr-value-chain-environment-assessment-share",
+  "q": "What does BRSR mean by the percentage of value chain partners assessed for environmental impacts?",
+  "title": "Share of value chain partners assessed",
+  "short": "It is Principle 6 leadership indicator 9: the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Leadership indicator 8 asks for significant adverse environmental impacts from the value chain and the steps taken.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "brsr-value-chain-estimate-when-supplier-silent",
   "q": "How does a listed company report BRSR value chain emissions when an MSME supplier gives no data?",
   "title": "Value chain BRSR when a supplier is silent",
   "short": "Report what partners actually sent, state the coverage you reached, and either leave silent suppliers out with that gap named or add a clearly labelled estimate with its method. Never fold estimates into partner-reported totals without saying so. The disclosure is voluntary from FY 2025-26, so partial, clearly stated coverage is a legitimate answer.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "brsr-value-chain-first-year-prior-year-data",
+  "q": "Do we need last year's figures in our first BRSR value chain disclosure?",
+  "title": "First-year BRSR value chain disclosure",
+  "short": "No. In the first year of value chain reporting, previous year figures are voluntary. For FY 2025-26 value chain disclosures, FY 2024-25 data is optional. But you must state what share of your purchases and sales the reported partners cover.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "brsr-vs-gri-vs-issb-which-framework",
@@ -2483,6 +2579,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "brsr-waste-figures-from-vendor-certificates",
+  "q": "Can BRSR Core waste figures rely on certificates from our waste vendors?",
+  "title": "BRSR waste figures from vendor certificates",
+  "short": "Yes, and SEBI expects you to say so. Since March 2025 the BRSR Core note on waste reads that disclosure may be provided if certificates from vendors were relied on for assessment or assurance of waste KPIs. Keep the certificates matched to quantities and dates.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "brsr-water-withdrawal-vs-consumption",
   "q": "What is the difference between water withdrawal and water consumption in BRSR?",
   "title": "Water withdrawal vs consumption",
@@ -2497,6 +2601,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "All seven Kyoto gases, reported together in tonnes of CO2e: carbon dioxide, methane, nitrous oxide, HFCs, PFCs, sulphur hexafluoride and nitrogen trifluoride. BRSR asks for a breakdown by gas if available. For most Indian manufacturers, CO2 from fuel and electricity dominates, with HFCs from refrigerant top-ups next.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "brsr-zero-liquid-discharge-question",
+  "q": "What does BRSR ask about zero liquid discharge, and how do we answer it?",
+  "title": "BRSR zero liquid discharge question",
+  "short": "Principle 6 essential indicator 4 asks whether the company has a mechanism for zero liquid discharge, and if yes, for details of its coverage and implementation. Answer site by site: which plants run ZLD, since when, what the system treats, and how much water it recovers.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "bulk-cement-tanker-emissions-per-tonne-km",
@@ -3035,6 +3147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "can-captive-solar-plant-get-recs",
+  "q": "Can a captive solar plant get Renewable Energy Certificates in India?",
+  "title": "RECs for captive solar plants",
+  "short": "Yes, if it meets the same conditions as other generators, including no waiver or concession on transmission or wheeling charges. But certificates for power the plant's owner consumes itself cannot be sold. They stand redeemed against the owner's renewable purchase obligation.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "can-carbon-accounting-be-fully-automated",
   "q": "Can carbon accounting be fully automated, or what still needs a human?",
   "title": "Can carbon accounting be fully automated?",
@@ -3171,6 +3291,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "can-open-access-consumer-get-recs",
+  "q": "Can an open access consumer earn RECs for buying extra green power?",
+  "title": "RECs for open access consumers",
+  "short": "Yes, for renewable power bought above its renewable purchase obligation. CERC's 2022 regulations let an open access consumer get certificates for that excess, if it applies within three months of the financial year end with certification from its state commission.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "can-our-chartered-accountant-prepare-the-ghg-inventory",
   "q": "Can our chartered accountant prepare our carbon inventory?",
   "title": "Can our CA prepare the inventory?",
@@ -3185,6 +3313,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, when the paperwork carries the numbers. Senseible reads freight bills and lorry receipts and files transport lines under Scope 3 Category 4. A line is calculated only from printed weight, distance and mode, times an approved factor for that mode. If any of these is missing, the line stays as evidence marked Needs Data.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "can-statutory-auditor-assure-brsr-core",
+  "q": "Can our statutory auditor or ESG consultant do the BRSR Core assurance or assessment?",
+  "title": "Who can assure or assess BRSR Core",
+  "short": "Not if they also sell you other services. SEBI requires that the assessment or assurance provider and its associates do not sell products or provide any non-audit, non-assessment or non-assurance service, including consulting, to the listed company or its group. The board must also confirm the provider has the expertise.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "can-unused-cbam-certificates-be-sold-back",
@@ -9387,6 +9523,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "fuel-oil-and-kerosene-calorific-value-kcal",
+  "q": "What calorific value should I use for furnace oil, kerosene and petrol in kcal per kg?",
+  "title": "Calorific value of oils in kcal per kg",
+  "short": "PPAC's Ready Reckoner lists average calorific values of 10,440 kcal per kg for fuel oil, 10,638 for kerosene, 11,135 for motor gasoline and 12,135 for NGL. Multiply by 4.19 to get kJ. Use these for energy totals when the supplier gives no test value.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "fuel-paid-in-advance-which-year-to-count",
   "q": "We paid for fuel in advance. Which year do the emissions go in?",
   "title": "Fuel paid in advance: which year",
@@ -9443,6 +9587,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "fuel-volume-at-29-5-c-vs-15-c",
+  "q": "Why do fuel volumes differ at 29.5 C and 15 C, and which should I use?",
+  "title": "Fuel volume at 29.5 C vs 15 C",
+  "short": "Oil expands when warm, so the same tonne fills more litres at 29.5 C than at 15 C. PPAC publishes correction factors from 0.9830 for petrol to 0.9899 for furnace oil. Use whatever basis your invoice states, convert to mass, and never mix a 15 C invoice with an ambient tank dip.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "fueleu-maritime-surcharge-on-freight-invoice",
   "q": "What is the FuelEU Maritime surcharge on my sea freight invoice?",
   "title": "FuelEU Maritime surcharge explained",
@@ -9497,6 +9649,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. A more efficient boiler saves more per unit of steam: about 32% in an illustrative case of 80% rising to 85%. Confirm with fuel bills before and after.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "furnace-oil-tonne-to-kilolitre-ppac",
+  "q": "What is the official tonne to kilolitre conversion for furnace oil in India?",
+  "title": "Furnace oil tonnes to kilolitres",
+  "short": "PPAC gives 1 tonne of furnace oil = 1.0424 kilolitres at 29.5 C, or 6.74 barrels. Multiply by 0.9899 for volume at 15 C, about 1.032 kilolitres. That is a density near 0.969 kg per litre at 15 C, a little heavier than the 0.95 often assumed.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "furniture-factory-wood-waste-boiler-biogenic-co2",
@@ -9569,6 +9729,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use the bill for emissions. The supplier corrects the raw meter volume for pressure and temperature to standard cubic metres, and states the calorific value used for billing. Your own reading is useful to check the bill, but it is not on the same basis until the same correction is applied.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "gas-power-co2-per-kwh-at-1720-kcal",
+  "q": "How much CO2 does gas-based power emit per kWh at a 1,720 kcal heat rate?",
+  "title": "Gas power CO2 per kWh",
+  "short": "About 0.40 kg CO2 per kWh. PPAC's gas conversions assume a station heat rate of about 1,720 kcal per kWh on a net calorific basis, equal to 50% efficiency. That is 7.21 MJ per kWh, times the IPCC natural gas default of 56.1 kg CO2 per GJ.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "gas-stove-carbon-footprint-per-unit",
@@ -10017,6 +10185,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "SEBI requires a listed green debt security to fund an eligible green category, and the issuer to appoint an independent reviewer and disclose its environmental objectives, project selection, proceeds tracking and the review's scope in the offer document, then report use of proceeds and impact every year.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "green-deposit-excluded-projects",
+  "q": "Which projects cannot be funded from green deposits in India?",
+  "title": "Projects excluded from green deposits",
+  "short": "RBI's framework excludes fossil fuel extraction, production and distribution, or projects whose core energy source is fossil; nuclear power; direct waste incineration; alcohol, weapons, tobacco, gaming and palm oil; biomass from protected areas; landfill projects; and hydropower plants larger than 25 MW.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "green-deposit-impact-data-banks-ask",
+  "q": "What impact data will a bank ask for if my project is funded from green deposits?",
+  "title": "Green deposit impact data banks ask for",
+  "short": "RBI's green deposit framework has banks report impact yearly, mandatory from FY 2024-25. Its examples: for renewable energy, energy generated per year in MWh and tonnes CO2e avoided; for energy efficiency, MWh saved and CO2e avoided; for waste, tonnes diverted from landfill.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "green-deposits-funds-for-msme-green-projects",
@@ -11771,6 +11955,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "india-domestic-gas-price-october-2026",
+  "q": "What is the domestic natural gas price in India for October 2026?",
+  "title": "India gas price, October 2026",
+  "short": "PPAC notified US$ 11.22 per MMBtu on gross calorific value for 1 to 31 October 2026. For gas from ONGC and OIL nomination fields this APM price is capped at US$ 7.00 per MMBtu. A separate ceiling of US$ 9.89 per MMBtu applies to deepwater and HPHT gas from October 2026 to March 2027.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "india-green-hydrogen-standard-2kg-threshold",
   "q": "What does India's Green Hydrogen Standard require (the 2 kg CO2e per kg limit)?",
   "title": "India's green hydrogen 2 kg CO2e limit",
@@ -11827,6 +12019,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "india-natural-gas-gcv-10000-kcal-per-scm",
+  "q": "What calorific value does India use for natural gas per SCM?",
+  "title": "Natural gas GCV per SCM in India",
+  "short": "PPAC's gas conversions, sourced from GAIL, use a gross calorific value of 10,000 kcal per SCM, with net calorific value at 90% of that. One MMBtu equals 25.2 SCM on this basis. Domestic production averages 8,000 to 9,480 kcal per SCM, so use the GCV on your own bill when it is printed.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "india-ndc-targets-for-business",
   "q": "What do India's NDC targets mean for an Indian business?",
   "title": "India's NDC targets and your business",
@@ -11873,6 +12073,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Your EU importer declares by calendar year, January to December, so plan to give calendar-year figures. The safest route is to keep fuel, power and production data month by month, then total January to December. Use your April to March year for installation data only if the current CBAM rules and your verifier accept it, and say so.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "indian-lpg-propane-butane-mix",
+  "q": "Is LPG in India propane or butane?",
+  "title": "Indian LPG: propane and butane mix",
+  "short": "Both. PPAC's Ready Reckoner describes LPG as about 40% propane and 60% butane. That is why Indian factories use the general LPG emission factor, about 2.98 kg CO2 per kg from IPCC, rather than a pure propane or pure butane figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "indian-recs-for-sbti-scope-2-target",
@@ -13539,6 +13747,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "ldo-tonne-to-litres-conversion",
+  "q": "How many litres of light diesel oil are in a tonne?",
+  "title": "Light diesel oil: tonnes to litres",
+  "short": "PPAC gives 1 tonne of light diesel oil = 1.1720 kilolitres at 29.5 C, or 7.37 barrels. Multiply by 0.9877 for volume at 15 C, about 1,158 litres. Use the mass for CO2, since emission factors for oils are most reliable per kilogram.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "lead-acid-battery-carbon-footprint-per-unit",
   "q": "How do I calculate the carbon footprint of a lead-acid battery?",
   "title": "Lead-acid battery carbon footprint",
@@ -13811,6 +14027,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "litres-in-a-tonne-of-diesel-india",
+  "q": "How many litres are there in a tonne of diesel in India?",
+  "title": "Litres in a tonne of diesel",
+  "short": "PPAC's conversion table gives 1,210 litres per tonne of diesel, measured at 29.5 C. To move that volume to the 15 C basis used on bulk invoices, multiply by 0.9879, which gives about 1,195 litres. That implies a density near 0.837 kg per litre at 15 C.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "litres-in-a-tonne-of-petrol-india",
+  "q": "How many litres are there in a tonne of petrol in India?",
+  "title": "Litres in a tonne of petrol",
+  "short": "PPAC's conversion table gives 1,411 litres per tonne of petrol at 29.5 C. Multiply by 0.9830 to move to 15 C, which gives about 1,387 litres. Use it to convert petrol bought by volume into mass, then apply a per-kg CO2 factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "lng-invoice-co2-per-kg",
   "q": "How do I calculate CO2 from an LNG tanker invoice in tonnes or MMBtu?",
   "title": "CO2 from an LNG tanker invoice",
@@ -13825,6 +14057,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. Some LNG engines let a little unburned methane escape, called methane slip. Methane traps far more heat than CO2 (fossil methane GWP 29.8 under AR6), so slip can erase part of LNG's CO2 advantage. The ship operator reports it in Scope 1; shippers count it in Category 4.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "lng-tonne-to-scm-conversion",
+  "q": "How many SCM of gas are in a tonne of LNG?",
+  "title": "LNG: tonnes to SCM",
+  "short": "PPAC, citing GAIL, gives 1 tonne of LNG = 1,314 SCM of gas, based on a molecular weight of 18. One million tonnes a year of LNG equals 3.60 million SCM a day. Use it to compare LNG invoices in tonnes with pipeline gas billed in SCM.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "load-factor-incentive-on-ht-electricity-bill",
@@ -16459,6 +16699,54 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "pm-surya-ghar-benchmark-cost",
+  "q": "What is the benchmark cost of rooftop solar under PM Surya Ghar?",
+  "title": "PM Surya Ghar benchmark cost",
+  "short": "MNRE fixed the benchmark at Rs 50,000 per kW for the first 2 kW and Rs 45,000 for the additional kW, from 13 February 2024. Special category states use Rs 55,000 and Rs 49,500. The subsidy is 60% of benchmark for the first 2 kW and 40% for the next kW.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "pm-surya-ghar-domestic-content-modules",
+  "q": "Do PM Surya Ghar systems have to use Indian-made solar modules?",
+  "title": "PM Surya Ghar domestic content rule",
+  "short": "Yes. To get the subsidy, modules must meet the Domestic Content Requirement: modules made in India from cells made in India. MNRE's guidelines say using non-DCR modules in any form makes the installation ineligible. Check the module datasheet and invoice before you sign.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "pm-surya-ghar-housing-society-common-areas",
+  "q": "Can a housing society get PM Surya Ghar subsidy for solar on common areas?",
+  "title": "PM Surya Ghar for housing societies",
+  "short": "Yes. Group housing societies and RWAs get Rs 18,000 per kW, or Rs 19,800 in special category states, for common facilities including EV charging, up to 500 kW at 3 kW per house. Individual residents' own rooftop systems count within that 500 kW limit.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "pm-surya-ghar-loan-and-subsidy-timing",
+  "q": "How do loans and subsidy payments work under PM Surya Ghar?",
+  "title": "PM Surya Ghar loans and subsidy payment",
+  "short": "Loans are offered through the national portal, and MNRE expects banks to offer standard low-interest loans around repo plus 0.5% for systems up to 3 kW. The subsidy is processed within 15 days of discom approval and goes first to the loan account, with any balance to your bank account.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "pm-surya-ghar-subsidy-for-factories-or-shops",
+  "q": "Can a factory, shop or office get the PM Surya Ghar rooftop solar subsidy?",
+  "title": "PM Surya Ghar for factories and shops",
+  "short": "No. MNRE's guidelines say no central financial assistance will be provided to non-residential consumers, including government, commercial and industrial connections. The subsidy is only for grid-connected rooftop systems tagged to a residential electricity connection, and for common facilities of housing societies.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "pm-surya-ghar-subsidy-per-kw",
+  "q": "How much subsidy does PM Surya Ghar give per kW of rooftop solar?",
+  "title": "PM Surya Ghar subsidy per kW",
+  "short": "Rs 30,000 per kW for the first 2 kW and Rs 18,000 for the third kW, so the most a household gets is Rs 78,000 for 3 kW or more. Special category states get Rs 33,000 and Rs 19,800. Housing societies get Rs 18,000 per kW for common facilities, up to 500 kW.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "pneumatic-vs-electric-tools-energy-co2",
   "q": "Are pneumatic tools higher carbon than electric tools?",
   "title": "Pneumatic vs electric tools",
@@ -17369,6 +17657,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Materials like cement, steel and glass are the developer's purchased goods, Category 1, counted when bought. Contractors' site diesel and power are Scope 3 unless the developer runs the site. Residents' electricity after sale is use of sold products, Category 11, usually estimated over the building's expected life.",
   "topic": "accounting",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "rec-application-deadline-six-months",
+  "q": "How soon after generation must a generator apply for RECs in India?",
+  "title": "REC application deadline",
+  "short": "Within six months of the generation. Under CERC's 2022 regulations no certificate is issued for an application made later. Discoms and open access consumers buying renewable power beyond their obligation must apply within three months of the financial year end. Grid-India decides within 15 days.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "rec-certificate-multiplier-by-technology",
+  "q": "How many RECs does one MWh earn for solar, wind, hydro or biomass in India?",
+  "title": "REC multiplier by technology",
+  "short": "Under CERC's 2022 REC regulations, onshore wind and solar earn 1 certificate per MWh, hydro 1.5, municipal solid waste and non-fossil cogeneration 2, and biomass and biofuel 2.5. The multiplier applies to plants commissioned after the regulations took effect and lasts 15 years from commissioning.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "rec-vintage-which-year-can-it-cover",
@@ -22521,6 +22825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add nitrogen fertiliser N2O with IPCC Tier 1 defaults, urea CO2, tractor and harvester diesel at 2.68 kg CO2 per litre and irrigation electricity at 0.710 kg per kWh, then divide by tonnes harvested per acre. Fertiliser N2O is often the largest field source.",
   "topic": "product",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "when-did-brsr-replace-brr",
+  "q": "When did BRSR replace the Business Responsibility Report, and what came after?",
+  "title": "When BRSR replaced the BRR",
+  "short": "SEBI prescribed the Business Responsibility Report in November 2015. Its May 2021 circular introduced BRSR: voluntary for FY 2021-22 and mandatory for the top 1,000 listed companies from FY 2022-23. BRSR Core assurance followed in July 2023, and the March 2025 circular added assessment as an option.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "when-is-a-scope-3-target-required-sbti",

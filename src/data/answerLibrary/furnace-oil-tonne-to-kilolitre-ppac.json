@@ -1,0 +1,66 @@
+{
+  "slug": "furnace-oil-tonne-to-kilolitre-ppac",
+  "q": "What is the official tonne to kilolitre conversion for furnace oil in India?",
+  "title": "Furnace oil tonnes to kilolitres",
+  "short": "PPAC gives 1 tonne of furnace oil = 1.0424 kilolitres at 29.5 C, or 6.74 barrels. Multiply by 0.9899 for volume at 15 C, about 1.032 kilolitres. That is a density near 0.969 kg per litre at 15 C, a little heavier than the 0.95 often assumed.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Boiler and furnace operators, foundries, forging units",
+  "sections": [
+    {
+      "h": "The official figures",
+      "ul": [
+        "1 tonne of furnace oil = 1.0424 kilolitres = 6.74 barrels (PPAC Ready Reckoner FY 2025-26, Table 9.2).",
+        "Volume correction from 29.5 C to 15 C: multiply by 0.9899.",
+        "Average calorific value of fuel oil: 10,440 kcal per kg (Table 9.1)."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Furnace oil is often bought by the tonne and issued by the litre, or the reverse. Using a rounded density of 0.95 kg per litre instead of about 0.97 understates mass, and so CO2, by around 2%. The supplier's test certificate density is still the best figure for your batch."
+      ]
+    },
+    {
+      "h": "To CO2",
+      "p": [
+        "Work in kilograms and use the IPCC default for residual fuel oil, about 3.13 kg CO2 per kg."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Tank issues for the month: 18,000 litres at about 15 C.",
+      "Mass: 18,000 / 1,032 = 17.44 tonnes.",
+      "CO2: 17,440 kg x 3.13 = 54,587 kg, about 54.6 t."
+    ],
+    "note": "Illustrative quantity."
+  },
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "Furnace oil litres to kg",
+      "to": "/answers/furnace-oil-litres-to-kg-density"
+    },
+    {
+      "label": "LDO and LSHS emission factors",
+      "to": "/answers/ldo-and-lshs-emission-factor"
+    },
+    {
+      "label": "Fuel volume at 29.5 C vs 15 C",
+      "to": "/answers/fuel-volume-at-29-5-c-vs-15-c"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

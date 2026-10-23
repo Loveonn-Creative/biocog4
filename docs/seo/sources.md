@@ -33,6 +33,15 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239
 - https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html
 - https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf
+- https://www.sebi.gov.in/legal/circulars/may-2021/business-responsibility-and-sustainability-reporting-by-listed-entities_50096.html
+- https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html
+- https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf
+- https://ppac.gov.in/download.php?file=whatsnew/1790767900_Domestic_Natural_Gas_Price_October_2026.pdf
+- https://ppac.gov.in/download.php?file=whatsnew/1790767903_Gas_Price_Ceiling_October2026-March2027.pdf
+- https://ppac.gov.in/natural-gas/gas-price
+- https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf
+- https://www.cercind.gov.in/regulations/REC-Regulations-2022.pdf
+- https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12487&Mode=0
 - https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/
 
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")

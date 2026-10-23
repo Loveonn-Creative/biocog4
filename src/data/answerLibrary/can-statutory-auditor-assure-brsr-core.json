@@ -1,0 +1,58 @@
+{
+  "slug": "can-statutory-auditor-assure-brsr-core",
+  "q": "Can our statutory auditor or ESG consultant do the BRSR Core assurance or assessment?",
+  "title": "Who can assure or assess BRSR Core",
+  "short": "Not if they also sell you other services. SEBI requires that the assessment or assurance provider and its associates do not sell products or provide any non-audit, non-assessment or non-assurance service, including consulting, to the listed company or its group. The board must also confirm the provider has the expertise.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "CFOs, company secretaries and audit committees",
+  "sections": [
+    {
+      "h": "The two tests",
+      "ol": [
+        "Expertise: the board must ensure the provider has the expertise to do the assessment or assurance.",
+        "No conflict of interest: the provider and its associates must not sell products or provide non-audit, non-assessment or non-assurance services, including consulting, to the company or its group entities."
+      ]
+    },
+    {
+      "h": "What this means in practice",
+      "ul": [
+        "The consultant who built your BRSR data system should not then assess or assure it.",
+        "A firm that only does audit or assurance work for you is not excluded by this rule, but check its other engagements across your group.",
+        "BRSR Section A asks for the provider's name and the type of assessment or assurance obtained, so the choice is public."
+      ]
+    },
+    {
+      "h": "Where the rule comes from",
+      "p": [
+        "The July 2023 BRSR Core circular set the rule for assurance providers. The March 2025 circular kept it and extended the wording to assessment providers, and made the process profession agnostic."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares records and draft figures from a company's own bills; it does not assess or assure them. Keeping preparation separate from verification is what SEBI's conflict rule expects.",
+  "links": [
+    {
+      "label": "Assessment or assurance: which to choose",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122, 12 July 2023: BRSR Core",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

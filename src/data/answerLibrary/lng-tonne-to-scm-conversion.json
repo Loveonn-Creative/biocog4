@@ -1,0 +1,44 @@
+{
+  "slug": "lng-tonne-to-scm-conversion",
+  "q": "How many SCM of gas are in a tonne of LNG?",
+  "title": "LNG: tonnes to SCM",
+  "short": "PPAC, citing GAIL, gives 1 tonne of LNG = 1,314 SCM of gas, based on a molecular weight of 18. One million tonnes a year of LNG equals 3.60 million SCM a day. Use it to compare LNG invoices in tonnes with pipeline gas billed in SCM.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Industrial LNG buyers, gas traders, CGD planners",
+  "sections": [
+    {
+      "h": "The reference values",
+      "ul": [
+        "1 tonne of LNG = 1,314 SCM.",
+        "1 MMTPA of LNG = 3.60 MMSCMD at 365 days a year.",
+        "1 BCM a year = 2.74 MMSCMD.",
+        "1 cubic metre = 35.31 cubic feet."
+      ]
+    },
+    {
+      "h": "For emissions, prefer the invoice energy",
+      "p": [
+        "LNG cargoes vary in composition, so the energy per tonne varies too. If the invoice states MMBtu or GJ, use that with the IPCC natural gas factor. The 1,314 figure is for volume planning and cross-checks."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "LNG invoice CO2 per kg",
+      "to": "/answers/lng-invoice-co2-per-kg"
+    },
+    {
+      "label": "PNG bill in MMBtu to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

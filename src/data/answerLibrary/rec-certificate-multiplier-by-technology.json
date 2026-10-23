@@ -1,0 +1,67 @@
+{
+  "slug": "rec-certificate-multiplier-by-technology",
+  "q": "How many RECs does one MWh earn for solar, wind, hydro or biomass in India?",
+  "title": "REC multiplier by technology",
+  "short": "Under CERC's 2022 REC regulations, onshore wind and solar earn 1 certificate per MWh, hydro 1.5, municipal solid waste and non-fossil cogeneration 2, and biomass and biofuel 2.5. The multiplier applies to plants commissioned after the regulations took effect and lasts 15 years from commissioning.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Renewable generators and companies buying RECs for Scope 2",
+  "sections": [
+    {
+      "h": "The table",
+      "ul": [
+        "Onshore wind and solar: 1",
+        "Hydro: 1.5",
+        "Municipal solid waste and non-fossil fuel based cogeneration: 2",
+        "Biomass and biofuel: 2.5",
+        "Other technologies: notified by CERC case by case."
+      ]
+    },
+    {
+      "h": "How long it lasts",
+      "p": [
+        "The multiplier is assigned to generating stations and captive plants commissioned after the regulations came into force, and stays for 15 years from commissioning. After that, the plant gets one certificate per MWh for the rest of its registration. CERC set the table for three years and can revise it."
+      ]
+    },
+    {
+      "h": "Why a buyer must care",
+      "p": [
+        "With a multiplier, certificates no longer equal MWh. If you buy 250 certificates from a biomass plant, they may represent 100 MWh of generation. For a market-based Scope 2 claim, count the MWh the certificates represent, not the number of certificates, and ask the seller for the generation behind them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "A biomass plant generates 400 MWh: 400 x 2.5 = 1,000 certificates.",
+      "A buyer of 100 of those certificates holds 40 MWh of renewable attributes."
+    ],
+    "note": "Illustrative quantities."
+  },
+  "senseible": "Senseible keeps electricity bills and renewable purchase records side by side, so location-based and market-based Scope 2 figures can be reported from the same data. Certificate retirement proof stays with the buyer.",
+  "links": [
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "Prove REC retirement to a buyer",
+      "to": "/answers/prove-rec-retirement-to-buyer"
+    },
+    {
+      "label": "I-REC vs India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022, notified 9 May 2022",
+      "url": "https://www.cercind.gov.in/regulations/REC-Regulations-2022.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

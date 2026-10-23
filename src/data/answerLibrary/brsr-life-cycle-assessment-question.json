@@ -1,0 +1,51 @@
+{
+  "slug": "brsr-life-cycle-assessment-question",
+  "q": "What does the BRSR life cycle assessment question ask for?",
+  "title": "BRSR life cycle assessment question",
+  "short": "It is a Principle 2 leadership indicator, so voluntary. It asks whether you have done a life cycle perspective or assessment for any product or service, and for each: NIC code, product name, share of turnover, the boundary, whether an independent agency did it, and whether results are public.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Product, sustainability and R&D teams at listed companies",
+  "sections": [
+    {
+      "h": "The fields",
+      "ul": [
+        "NIC code and name of the product or service.",
+        "Percentage of total turnover it contributes.",
+        "Boundary for which the life cycle perspective or assessment was done.",
+        "Whether it was conducted by an independent external agency.",
+        "Whether results are communicated in the public domain, with a web link."
+      ]
+    },
+    {
+      "h": "The follow-up question",
+      "p": [
+        "Leadership indicator 2 asks for any significant social or environmental concerns found through the assessment, or by other means, and the action taken. So an LCA that finds a hotspot should come with a plan."
+      ]
+    },
+    {
+      "h": "Start with the products that matter",
+      "p": [
+        "Pick the products with the largest share of turnover or the most customer requests. A cradle-to-gate boundary is common for manufacturers and is honest to state. Supplier data on materials and energy is usually the largest gap."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Essential vs leadership indicators",
+      "to": "/answers/brsr-essential-vs-leadership-indicators"
+    },
+    {
+      "label": "Recycled input share in BRSR",
+      "to": "/answers/brsr-recycled-input-material-share"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

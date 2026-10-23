@@ -1,0 +1,43 @@
+{
+  "slug": "pm-surya-ghar-benchmark-cost",
+  "q": "What is the benchmark cost of rooftop solar under PM Surya Ghar?",
+  "title": "PM Surya Ghar benchmark cost",
+  "short": "MNRE fixed the benchmark at Rs 50,000 per kW for the first 2 kW and Rs 45,000 for the additional kW, from 13 February 2024. Special category states use Rs 55,000 and Rs 49,500. The subsidy is 60% of benchmark for the first 2 kW and 40% for the next kW.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Households, RWAs and rooftop solar vendors",
+  "sections": [
+    {
+      "h": "How the subsidy is built",
+      "ul": [
+        "First 2 kW: 60% of the benchmark cost of Rs 50,000 = Rs 30,000 per kW.",
+        "Next 1 kW: 40% of Rs 45,000 = Rs 18,000 per kW.",
+        "Special category states: Uttarakhand, Himachal Pradesh, J&K, Ladakh, the North Eastern states including Sikkim, Andaman and Nicobar, and Lakshadweep."
+      ]
+    },
+    {
+      "h": "What the benchmark is not",
+      "p": [
+        "It is not a price cap. Under the scheme the household and the vendor agree the price, and there is no tendering by discoms to empanel vendors. MNRE says it will publish benchmark prices of modules, inverters and other equipment each year to help buyers avoid overcharging, and the benchmark can be revised at the scheme's midterm review."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including net metering lines, so grid import, export and solar generation sit in one monthly record with the factor and source shown. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Subsidy per kW",
+      "to": "/answers/pm-surya-ghar-subsidy-per-kw"
+    },
+    {
+      "label": "Solar panel embodied carbon per kWp",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana, Central Financial Assistance to Residential Consumers",
+      "url": "https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

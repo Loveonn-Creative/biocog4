@@ -1,0 +1,58 @@
+{
+  "slug": "brsr-value-chain-environment-assessment-share",
+  "q": "What does BRSR mean by the percentage of value chain partners assessed for environmental impacts?",
+  "title": "Share of value chain partners assessed",
+  "short": "It is Principle 6 leadership indicator 9: the percentage of value chain partners, by value of business done with them, that were assessed for environmental impacts. Leadership indicator 8 asks for significant adverse environmental impacts from the value chain and the steps taken.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Procurement and ESG teams at listed companies, and their suppliers",
+  "sections": [
+    {
+      "h": "How to compute it",
+      "ol": [
+        "Total the value of business with all value chain partners.",
+        "Total the value of business with partners you assessed: a questionnaire with evidence, a site audit, or their own verified report.",
+        "Divide the second by the first."
+      ]
+    },
+    {
+      "h": "What counts as an assessment",
+      "p": [
+        "SEBI does not prescribe one. A filled questionnaire backed by bills or permits is more defensible than a self-declaration with no documents. State your method next to the percentage."
+      ]
+    },
+    {
+      "h": "For suppliers",
+      "p": [
+        "If you send your customer energy, emissions, water and waste figures with evidence, you move into the assessed share. That makes you easier to keep on an approved vendor list."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Business with value chain partners: Rs 400 crore.",
+      "Partners assessed with documents: Rs 260 crore.",
+      "Share assessed = 260 / 400 = 65%."
+    ],
+    "note": "Illustrative figures."
+  },
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "What a supplier is asked for",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Supplier questionnaire, field by field",
+      "to": "/answers/brsr-supplier-questionnaire-field-by-field"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

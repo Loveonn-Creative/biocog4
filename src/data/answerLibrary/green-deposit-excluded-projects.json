@@ -1,0 +1,57 @@
+{
+  "slug": "green-deposit-excluded-projects",
+  "q": "Which projects cannot be funded from green deposits in India?",
+  "title": "Projects excluded from green deposits",
+  "short": "RBI's framework excludes fossil fuel extraction, production and distribution, or projects whose core energy source is fossil; nuclear power; direct waste incineration; alcohol, weapons, tobacco, gaming and palm oil; biomass from protected areas; landfill projects; and hydropower plants larger than 25 MW.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSMEs and project developers approaching banks for green finance",
+  "sections": [
+    {
+      "h": "The exclusion list",
+      "ul": [
+        "New or existing extraction, production and distribution of fossil fuels, including upgrades, or where the core energy source is fossil fuel based.",
+        "Nuclear power generation.",
+        "Direct waste incineration.",
+        "Alcohol, weapons, tobacco, gaming or palm oil industries.",
+        "Renewable energy from biomass using feedstock from protected areas.",
+        "Landfill projects.",
+        "Hydropower plants larger than 25 MW."
+      ]
+    },
+    {
+      "h": "Grey areas for factories",
+      "p": [
+        "A more efficient gas-fired furnace may cut emissions, but its core energy source is still fossil, so it is a weak fit for green deposit money. An electric induction furnace or a heat pump is a clearer fit under energy efficiency or pollution prevention. Ask the bank how its own financing framework reads your project."
+      ]
+    },
+    {
+      "h": "Where the list comes from",
+      "p": [
+        "Until India's official green taxonomy is final, RBI asks banks to allocate green deposits to an interim list adopted from the Government of India's Framework for Sovereign Green Bonds, with these exclusions."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a dated record of energy use and emissions from a borrower's own bills, with the factor and source on every line, which a lender can read alongside a project proposal. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Green deposits and MSME projects",
+      "to": "/answers/green-deposits-funds-for-msme-green-projects"
+    },
+    {
+      "label": "Green deposit impact data",
+      "to": "/answers/green-deposit-impact-data-banks-ask"
+    },
+    {
+      "label": "Is a coal boiler upgrade loan green?",
+      "to": "/answers/coal-boiler-upgrade-loan-green-or-not"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular DOR.SFG.REC.10/30.01.021/2023-24, 11 April 2023: Framework for acceptance of Green Deposits",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12487&Mode=0"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
