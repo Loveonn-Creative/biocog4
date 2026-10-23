@@ -1,0 +1,58 @@
+{
+  "slug": "carbon-per-rupee-of-electricity-bill",
+  "q": "Can I estimate emissions from the rupee amount of my electricity bill?",
+  "title": "Carbon per rupee of electricity",
+  "short": "Only as a rough check. Divide 0.710 kg CO2 per kWh by your all-in cost per kWh: at about ₹8 per kWh that is roughly 0.09 kg per rupee. Fixed charges, demand charges and taxes distort it, so for reporting always use the kWh printed on the bill.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Owners sanity-checking a footprint",
+  "sections": [
+    {
+      "h": "When the shortcut helps",
+      "ul": [
+        "A quick check that a calculated figure is in the right range.",
+        "A first estimate before bills are collected, labelled as an estimate."
+      ]
+    },
+    {
+      "h": "When it misleads",
+      "ul": [
+        "Bills with high demand or fixed charges.",
+        "Months with arrears, rebates or tariff changes.",
+        "Sites with rooftop solar netting off imports."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "State-wise grid factors",
+      "to": "/answers/state-wise-grid-emission-factor-india"
+    },
+    {
+      "label": "Read an HT bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "example": {
+    "title": "Illustrative rough check",
+    "lines": [
+      "Bill: ₹80,000 for the month; all-in cost about ₹8 per kWh.",
+      "Implied use: 80,000 / 8 = 10,000 kWh.",
+      "Emissions: 10,000 × 0.710 = 7,100 kg CO2.",
+      "Replace with the kWh on the bill when you have it."
+    ],
+    "note": "Illustrative figures, not a real bill."
+  }
+}

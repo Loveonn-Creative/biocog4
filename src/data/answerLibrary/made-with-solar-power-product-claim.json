@@ -1,0 +1,52 @@
+{
+  "slug": "made-with-solar-power-product-claim",
+  "q": "Can we say our product is made with solar power?",
+  "title": "\"Made with solar power\" claims",
+  "short": "Only for the share that is true. If rooftop solar covered 30 percent of the electricity used to make it, say that, with the period. Calling it made with solar power when the grid supplied most of the energy is the kind of vague claim India's 2024 greenwashing guidelines ask companies to avoid.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Manufacturers adding green claims to packaging or websites",
+  "sections": [
+    {
+      "h": "What backs the claim",
+      "ul": [
+        "Solar generation used on site for the period, from meter or inverter records.",
+        "Total electricity use for the same period.",
+        "Any RECs or green tariff units, kept separate and named."
+      ]
+    },
+    {
+      "h": "Safer wording",
+      "ul": [
+        "30 percent of our factory electricity in 2025-26 came from our rooftop solar.",
+        "Avoid made with solar power or solar-powered product unless it is close to all of it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Proof of renewable electricity",
+      "to": "/answers/buyer-asks-proof-of-renewable-electricity"
+    },
+    {
+      "label": "Renewable electricity percentage",
+      "to": "/answers/renewable-electricity-percentage-for-buyer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021, Environmental labels and declarations: self-declared claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

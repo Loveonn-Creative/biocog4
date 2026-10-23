@@ -1,0 +1,50 @@
+{
+  "slug": "employee-ev-home-charging-reimbursed-scope",
+  "q": "We reimburse staff for charging company EVs at home. Which scope is that?",
+  "title": "Reimbursed home EV charging",
+  "short": "If the vehicles are owned or leased and controlled by your company, count the reimbursed kWh as your Scope 2, using the claims as activity data and the grid factor. If staff drive their own cars, charging for business trips is Scope 3 Category 6 and commuting is Category 7.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies with electric vehicle fleets",
+  "sections": [
+    {
+      "h": "Activity data",
+      "ul": [
+        "kWh claimed per vehicle per month, from the charger app or a meter.",
+        "If only rupees are claimed, divide by the employee's tariff and label it as an estimate."
+      ]
+    },
+    {
+      "h": "Avoid double counting",
+      "p": [
+        "Do not count the same charging session again in fleet fuel or in commuting estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "EV charging at the office",
+      "to": "/answers/employee-ev-charging-at-office-scope"
+    },
+    {
+      "label": "Work from home emissions",
+      "to": "/answers/work-from-home-emissions-category-7"
+    },
+    {
+      "label": "Own car on business",
+      "to": "/answers/employee-own-car-business-mileage-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

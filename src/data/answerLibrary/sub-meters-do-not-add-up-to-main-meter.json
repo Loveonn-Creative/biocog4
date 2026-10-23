@@ -1,0 +1,47 @@
+{
+  "slug": "sub-meters-do-not-add-up-to-main-meter",
+  "q": "Our sub-meters add up to less than the main electricity meter. Which do we report?",
+  "title": "Sub-meters below the main meter",
+  "short": "Report the main meter, the discom bill. The gap is normal: cable and transformer losses, unmetered loads such as lighting, and meter error. For allocating emissions to lines or tenants, share the gap in proportion to sub-meter readings and say so. A gap that keeps growing is worth investigating.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers and finance teams",
+  "sections": [
+    {
+      "h": "Typical causes",
+      "ul": [
+        "Losses in internal cables and transformers.",
+        "Loads not on any sub-meter.",
+        "Sub-meters not calibrated or read on different days."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Monthly main meter total, sum of sub-meters and the difference in percent. A verifier will ask why it moved."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Sub-metered rented units",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

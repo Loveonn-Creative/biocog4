@@ -1,0 +1,53 @@
+{
+  "slug": "four-eyes-check-on-carbon-calculations",
+  "q": "Should a second person check our carbon calculations before we send them?",
+  "title": "A second check on carbon figures",
+  "short": "Yes. A second person checking units, factors and totals catches most errors before a buyer or verifier does. Keep it simple: one preparer, one reviewer, a short checklist and a dated record of what was checked. ISO 14064-1 expects data management procedures like this.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs preparing figures for buyers",
+  "sections": [
+    {
+      "h": "Reviewer checklist",
+      "ul": [
+        "Litres versus kg and kWh versus kVAh conversions.",
+        "Every factor has a source and version.",
+        "Monthly totals match the purchase ledger.",
+        "No invoice counted twice.",
+        "Estimates are labelled."
+      ]
+    },
+    {
+      "h": "Record it",
+      "p": [
+        "Note the reviewer's name, date and what changed. A verifier will ask how errors are prevented."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "Who should sign off",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    },
+    {
+      "label": "Duplicate invoices",
+      "to": "/answers/duplicate-invoices-double-counting-emissions"
+    },
+    {
+      "label": "Restate after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

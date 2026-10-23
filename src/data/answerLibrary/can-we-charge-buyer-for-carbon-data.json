@@ -1,0 +1,48 @@
+{
+  "slug": "can-we-charge-buyer-for-carbon-data",
+  "q": "Can a supplier charge its buyer for preparing carbon data?",
+  "title": "Charging buyers for carbon data",
+  "short": "You can, but most suppliers treat it as part of serving the account because the same data serves every buyer. Charging makes sense for buyer-specific work: a product footprint to their method, a custom questionnaire or their chosen verifier. Agree it before you start, not after.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Suppliers receiving many data requests",
+  "sections": [
+    {
+      "h": "Usually included",
+      "ul": [
+        "Annual Scope 1 and 2 totals.",
+        "A standard product carbon figure you already have."
+      ]
+    },
+    {
+      "h": "Reasonable to charge",
+      "ul": [
+        "A footprint to a method only that buyer uses.",
+        "Data in a paid portal or format you would not use otherwise.",
+        "A verification only that buyer requires."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Do buyers pay more for low carbon?",
+      "to": "/answers/do-buyers-pay-more-for-low-carbon-suppliers"
+    },
+    {
+      "label": "Buyer sends own questionnaire",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

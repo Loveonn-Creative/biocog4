@@ -1,0 +1,55 @@
+{
+  "slug": "customer-audit-climate-questions-to-prepare",
+  "q": "A customer auditor is coming. What climate evidence should we have ready?",
+  "title": "Climate evidence for a customer audit",
+  "short": "Have twelve months of electricity bills and fuel invoices by site, your Scope 1 and 2 calculation with factor sources, any energy audit report, a short climate or energy policy, and evidence of actions such as solar or efficiency upgrades. Auditors look for records, not slides.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers facing social and environmental audits",
+  "sections": [
+    {
+      "h": "Folder to prepare",
+      "ul": [
+        "Bills and invoices, by month.",
+        "Calculation sheet and method note.",
+        "Policy signed by management.",
+        "Targets, if any, and progress.",
+        "Photos or invoices for completed actions."
+      ]
+    },
+    {
+      "h": "Common gaps",
+      "ul": [
+        "No record of refrigerant top-ups.",
+        "Diesel issued to generators not logged.",
+        "No one able to explain the calculation."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "EcoVadis carbon questions",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "Sedex SMETA environment questions",
+      "to": "/answers/sedex-smeta-environment-carbon-questions"
+    },
+    {
+      "label": "One-page climate policy",
+      "to": "/answers/one-page-climate-policy-for-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

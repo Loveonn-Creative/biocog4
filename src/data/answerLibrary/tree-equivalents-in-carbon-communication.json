@@ -1,0 +1,47 @@
+{
+  "slug": "tree-equivalents-in-carbon-communication",
+  "q": "Should we explain our emissions as the number of trees needed to absorb them?",
+  "title": "Tree equivalents in carbon messaging",
+  "short": "Better not. How much CO2 a tree absorbs varies with species, age, climate and soil, so any single number misleads, and it hints that planting can cancel emissions. State the figure in tonnes of CO2e, compare it with your own last year, and show what you are doing to cut it.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Teams writing reports and posts",
+  "sections": [
+    {
+      "h": "Clearer comparisons",
+      "ul": [
+        "Against your own previous year.",
+        "Per unit of product, for example kg CO2e per kg.",
+        "By source: electricity, diesel, purchased materials."
+      ]
+    },
+    {
+      "h": "If you plant trees",
+      "p": [
+        "Report the plantation separately. It is not subtracted from your inventory."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Can tree planting net off emissions?",
+      "to": "/answers/csr-tree-plantation-net-off-emissions"
+    },
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Science Based Targets initiative",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

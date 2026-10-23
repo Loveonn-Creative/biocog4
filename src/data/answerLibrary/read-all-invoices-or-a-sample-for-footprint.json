@@ -1,0 +1,54 @@
+{
+  "slug": "read-all-invoices-or-a-sample-for-footprint",
+  "q": "Should we read every invoice for our footprint, or is a sample enough?",
+  "title": "Every invoice or a sample?",
+  "short": "For Scope 1 and 2, use every fuel invoice and electricity bill: they are few and they are the inventory. Sampling is a verifier's tool for checking your records, not a way to build them. For thousands of small Scope 3 purchases, cover the largest spend fully and estimate the long tail, saying so.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Finance teams building a footprint from invoices",
+  "sections": [
+    {
+      "h": "Read in full",
+      "ul": [
+        "All electricity bills for every meter.",
+        "All fuel invoices: diesel, LPG, gas, coal, biomass.",
+        "Refrigerant top-ups."
+      ]
+    },
+    {
+      "h": "Estimate with a note",
+      "ul": [
+        "Small stationery and consumables purchases.",
+        "Low-value services below a threshold you state."
+      ]
+    },
+    {
+      "h": "Why completeness matters",
+      "p": [
+        "Missing a few fuel invoices understates Scope 1 directly. A verifier will compare your fuel totals with the purchase ledger."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "How many invoices a verifier samples",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "Duplicate invoices",
+      "to": "/answers/duplicate-invoices-double-counting-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

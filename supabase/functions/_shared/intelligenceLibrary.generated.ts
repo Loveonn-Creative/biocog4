@@ -1265,6 +1265,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does a small factory need a BEE certified energy manager?",
+  "text": "Only designated consumers under the Energy Conservation Act must appoint or designate a certified energy manager. A small factory that is not notified has no such duty. Many still give one person the job of tracking energy and fuel, which also makes carbon reporting and buyer requests easier.",
+  "url": "https://senseible.earth/answers/bee-certified-energy-manager-small-factory"
+ },
+ {
+  "kind": "answer",
   "title": "What is BEE's SME energy efficiency programme, and does my industrial cluster qualify?",
   "text": "BEE's SME programme works at cluster level in energy-intensive MSME clusters, such as foundries, brass, ceramics, forging and textiles, through energy mapping, audits, project reports and local capacity building. For individual units, BEE's ADEETIE scheme offers interest subvention to Udyam-registered MSMEs in 60 identified clusters.",
   "url": "https://senseible.earth/answers/bee-sme-programme-cluster-energy-efficiency"
@@ -2027,6 +2033,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "My buyer asked for an ISO 14064 certificate. What do I actually send?",
+  "text": "ISO does not issue certificates to companies. What exists is a GHG inventory prepared under ISO 14064-1 and a verification statement from an independent body under ISO 14064-3, ideally accredited under ISO 14065. Send the statement, the inventory summary and the level of assurance it gives.",
+  "url": "https://senseible.earth/answers/buyer-asks-for-iso-14064-certificate"
+ },
+ {
+  "kind": "answer",
   "title": "My buyer asks for my own Scope 3, not just Scope 1 and 2. Do small suppliers really need it?",
   "text": "Usually not all of it. A buyer asks because your Scope 1 and 2 leave out the materials and freight behind what you sell them, often the biggest part. Give measured Scope 1 and 2 plus estimates for purchased materials, inbound freight and waste. Downstream categories, such as use of sold products, rarely matter to the buyer.",
   "url": "https://senseible.earth/answers/buyer-asks-for-my-scope-3"
@@ -2093,6 +2105,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "The buyer's supplier portal charges a fee to submit carbon data. Must we pay?",
+  "text": "No carbon standard requires a paid portal. Whether you pay is between you and the buyer. Ask whether they accept the same data by email or template, or whether they will cover the fee. The figures themselves should be the same wherever you submit them.",
+  "url": "https://senseible.earth/answers/buyer-portal-charges-fee-for-carbon-data"
+ },
+ {
+  "kind": "answer",
   "title": "Our buyer says it will prefer lower carbon suppliers. What can we do in six months?",
   "text": "Start with an honest baseline from your bills, then fix the cheap things: power factor, compressed air leaks, idle running, and switching diesel generation to grid or solar where possible. Report a credible figure with evidence, plus a short plan. Buyers value proof over promises.",
   "url": "https://senseible.earth/answers/buyer-prefers-lower-carbon-suppliers-six-months"
@@ -2114,6 +2132,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How can a supplier qualify for a buyer's sustainable supply chain finance programme?",
   "text": "Get onboarded to the buyer's supply chain finance programme, then meet the sustainability criteria it prices on. These are usually set by the buyer and its bank: sharing emissions data, an external sustainability rating, a reduction target or certifications. Ask the buyer for the written criteria and keep the evidence current every year.",
   "url": "https://senseible.earth/answers/buyer-sustainable-supply-chain-finance"
+ },
+ {
+  "kind": "answer",
+  "title": "A buyer wants our carbon data in a week. What can we send that holds up?",
+  "text": "Send Scope 1 and 2 from last year's electricity bills and fuel invoices, which most firms can total in days. Add a short note on what is included, what is estimated and when Scope 3 will follow. A smaller, sourced figure on time beats a full but guessed one.",
+  "url": "https://senseible.earth/answers/buyer-wants-carbon-data-in-a-week"
  },
  {
   "kind": "answer",
@@ -2249,6 +2273,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can our buyer share our carbon data with its own customers?",
+  "text": "Only as far as your agreement allows. Many buyers use supplier figures inside their own product footprints, which their customers then see in aggregated form. If you do not want your figures shown on their own, say so in writing: share for inventory use, no onward disclosure by name.",
+  "url": "https://senseible.earth/answers/can-buyer-pass-our-carbon-data-on"
+ },
+ {
+  "kind": "answer",
   "title": "Can carbon accounting be fully automated, or what still needs a human?",
   "text": "No. Reading documents, classifying lines, applying published factors and checking arithmetic can be automated. Setting the boundary, choosing a base year, deciding which Scope 3 categories matter, accepting renewable energy claims and resolving flagged lines need a person who can be held to the decision.",
   "url": "https://senseible.earth/answers/can-carbon-accounting-be-fully-automated"
@@ -2366,6 +2396,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can an EU importer sell back unused CBAM certificates, and what happens to them after a year?",
   "text": "Partly. An authorised CBAM declarant can ask the Commission to repurchase certificates left over after the annual surrender, within a cap and a deadline set in Article 23. Certificates that are neither surrendered nor repurchased in time are cancelled under Article 24. They cannot be sold to other importers.",
   "url": "https://senseible.earth/answers/can-unused-cbam-certificates-be-sold-back"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a supplier charge its buyer for preparing carbon data?",
+  "text": "You can, but most suppliers treat it as part of serving the account because the same data serves every buyer. Charging makes sense for buyer-specific work: a product footprint to their method, a custom questionnaire or their chosen verifier. Agree it before you start, not after.",
+  "url": "https://senseible.earth/answers/can-we-charge-buyer-for-carbon-data"
  },
  {
   "kind": "answer",
@@ -2495,6 +2531,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "The person who kept our carbon records is leaving. What should the handover cover?",
+  "text": "Four things: where the source documents are, the method note that says which factors and rules were used, the list of estimates and why they were made, and the open questions from buyers or verifiers. With those, a new person can repeat last year's numbers instead of starting again.",
+  "url": "https://senseible.earth/answers/carbon-data-handover-when-accountant-leaves"
+ },
+ {
+  "kind": "answer",
   "title": "How do I estimate the carbon footprint of a carbon fibre composite part?",
   "text": "Start with the fibre, which is energy hungry to make and usually dominates; published life cycle studies give figures in the tens of kilograms of CO2e per kilogram of fibre, varying with the power behind it. Add resin, prepreg scrap, autoclave or oven energy, and tooling, using supplier data wherever possible.",
   "url": "https://senseible.earth/answers/carbon-fibre-composite-part-carbon-footprint"
@@ -2531,9 +2573,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is a carbon handprint, and how is it different from a footprint?",
+  "text": "A footprint is the emissions your company causes. A handprint is a loose term for the positive effect your products or services have on others' emissions, close to avoided emissions. There is no single standard for it, so show it separately, explain the method and keep the footprint complete beside it.",
+  "url": "https://senseible.earth/answers/carbon-handprint-vs-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "Why should we keep a change log for our carbon inventory?",
   "text": "Because figures change: a late bill arrives, a factor is updated, a duplicate is found. A change log records what changed, why, who changed it, the date and the effect in tonnes. Verifiers use it to follow the trail, and it stops two versions of your number reaching buyers.",
   "url": "https://senseible.earth/answers/carbon-inventory-change-log-for-verifier"
+ },
+ {
+  "kind": "answer",
+  "title": "What carbon KPI should we give plant managers?",
+  "text": "Use energy or emissions per unit of output, measured monthly, plus a data completeness target. Per unit avoids rewarding a manager for a slow month. Pair it with a few action targets, such as leaks fixed or idle hours cut, that the manager controls directly.",
+  "url": "https://senseible.earth/answers/carbon-kpi-for-plant-managers"
  },
  {
   "kind": "answer",
@@ -2549,6 +2603,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our carbon footprint jumped after we added supplier emissions. Did we get worse?",
+  "text": "No. You counted more of what was always there. Scope 3 is usually the largest part of a manufacturer's footprint, so adding it raises the total even if nothing changed on site. Compare like with like: Scope 1 and 2 against last year, and restate last year with Scope 3 if you want a trend.",
+  "url": "https://senseible.earth/answers/carbon-number-went-up-after-adding-suppliers"
+ },
+ {
+  "kind": "answer",
+  "title": "Can an online seller offer a carbon offset option at checkout?",
+  "text": "Yes, if each sale buys and retires real credits and you can show it. Name the registry and project, retire credits in batches with serial numbers, and say offset, not zero emissions. Those credits do not reduce your own inventory; report them separately. Vague or unretired offsets risk breaching greenwashing rules.",
+  "url": "https://senseible.earth/answers/carbon-offset-at-checkout-for-online-sellers"
+ },
+ {
+  "kind": "answer",
   "title": "How long does rooftop solar take to pay back its own carbon?",
   "text": "Divide the embodied emissions of the system by the CO2 it avoids each year. Get embodied emissions per kW from the panel and inverter maker or an environmental product declaration. Avoided CO2 is yearly generation in kWh times 0.710. On the Indian grid, the carbon payback is usually much shorter than the financial one.",
   "url": "https://senseible.earth/answers/carbon-payback-of-rooftop-solar-panels"
@@ -2558,6 +2624,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "A buyer wants a carbon figure on every invoice line. How do I do that?",
   "text": "Work out kg CO2e per unit for each product once, from your yearly Scope 1 and 2 and the inputs each product uses, then multiply by the quantity on each line. Update the per-unit figure when your inventory changes, and state the period and method on the invoice.",
   "url": "https://senseible.earth/answers/carbon-per-invoice-line-for-quotes"
+ },
+ {
+  "kind": "answer",
+  "title": "Can I estimate emissions from the rupee amount of my electricity bill?",
+  "text": "Only as a rough check. Divide 0.710 kg CO2 per kWh by your all-in cost per kWh: at about ₹8 per kWh that is roughly 0.09 kg per rupee. Fixed charges, demand charges and taxes distort it, so for reporting always use the kWh printed on the bill.",
+  "url": "https://senseible.earth/answers/carbon-per-rupee-of-electricity-bill"
  },
  {
   "kind": "answer",
@@ -3809,6 +3881,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Only a quarter of staff answered our commuting survey. Can we still estimate Category 7?",
+  "text": "Yes. Use the answers you have to find average distance and mode by site or role, then scale up to total headcount and working days. State the response rate and assumptions. Improve it next year with a two-question form at attendance or payroll time.",
+  "url": "https://senseible.earth/answers/commute-survey-low-response-what-to-do"
+ },
+ {
+  "kind": "answer",
   "title": "Do our company's bank deposits and mutual funds count in Scope 3?",
   "text": "They fall under Category 15, investments, which the GHG Protocol frames mainly around equity, debt and project finance. For most manufacturers these holdings are small next to fuel, power and purchased goods. Note them as excluded with a reason, or estimate fund emissions from the fund house disclosures if a buyer asks.",
   "url": "https://senseible.earth/answers/company-fixed-deposits-and-mutual-funds-scope-3"
@@ -4196,6 +4274,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a cushion cover?",
   "text": "Take the fabric per cover, including cutting waste, and multiply by your mill's per-metre or per-kg figure. Add zips, piping, any embroidery or print, stitching, pressing and packing, then divide the unit's energy by covers passed.",
   "url": "https://senseible.earth/answers/cushion-cover-carbon-footprint-per-piece"
+ },
+ {
+  "kind": "answer",
+  "title": "A customer auditor is coming. What climate evidence should we have ready?",
+  "text": "Have twelve months of electricity bills and fuel invoices by site, your Scope 1 and 2 calculation with factor sources, any energy audit report, a short climate or energy policy, and evidence of actions such as solar or efficiency upgrades. Auditors look for records, not slides.",
+  "url": "https://senseible.earth/answers/customer-audit-climate-questions-to-prepare"
+ },
+ {
+  "kind": "answer",
+  "title": "We want to say we cut emissions by 20 percent. What do we need to back it?",
+  "text": "A base year and a current year calculated the same way, with the same boundary and factors, and a statement of whether the cut is absolute or per unit of output. If you sold a unit or changed method, recalculate the base year first. Keep the workings so anyone can repeat the 20 percent.",
+  "url": "https://senseible.earth/answers/cut-emissions-by-percent-claim-evidence"
  },
  {
   "kind": "answer",
@@ -5261,9 +5351,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "I only have payment receipts for electricity, not the bills. Can I work out emissions?",
+  "text": "Not reliably. The amount includes fixed charges, demand charges, duty and taxes, so rupees do not convert cleanly to kWh. Download the bills from your discom's portal or ask the office for duplicates; the units consumed on the bill are what you multiply by 0.710 kg CO2 per kWh.",
+  "url": "https://senseible.earth/answers/electricity-bill-shows-only-amount-paid"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of an electricity meter?",
   "text": "Add the circuit board, current sensor, display, relay and plastic case per meter with supplier figures. Add assembly, calibration and testing electricity, then divide by meters passed. Smart meters add a communication module.",
   "url": "https://senseible.earth/answers/electricity-meter-carbon-footprint-per-meter"
+ },
+ {
+  "kind": "answer",
+  "title": "Our electricity meter was replaced mid-year. How do we total the year's units?",
+  "text": "Add both meters for the year: units on the old meter up to its final reading, plus units on the new meter from its first reading. The bill for the change month usually shows both. Watch for a month billed on an average while the meter was out, and replace it with actual readings if the discom revises it.",
+  "url": "https://senseible.earth/answers/electricity-meter-replaced-mid-year-readings"
  },
  {
   "kind": "answer",
@@ -5321,6 +5423,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our year closes before some fuel invoices arrive. How do we count those emissions?",
+  "text": "Count emissions in the period the fuel was received or used, not when the invoice comes. Use the delivery challan, tank dip or meter reading to estimate the quantity at year end, label it as an estimate, and replace it with the invoice figure when it arrives.",
+  "url": "https://senseible.earth/answers/emissions-accrual-before-invoices-arrive"
+ },
+ {
+  "kind": "answer",
   "title": "Our total emissions fell but emission intensity rose. How do we explain it to a buyer?",
   "text": "Explain that output fell faster than emissions, because part of your energy use is fixed and does not drop when production does. Show both figures, split the change into an output effect and an efficiency effect, and say what you are doing about the fixed load.",
   "url": "https://senseible.earth/answers/emissions-fell-but-intensity-rose"
@@ -5354,6 +5462,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Employees charge their own EVs at our office. Whose emissions are they?",
   "text": "Yours, in Scope 2. The electricity is bought on your meter and used at your site, so it stays in your Scope 2 like any other load. To avoid counting it twice, leave those kWh out when you calculate employee commuting in Scope 3 Category 7. Sub-meter the chargers if you want it shown separately.",
   "url": "https://senseible.earth/answers/employee-ev-charging-at-office-scope"
+ },
+ {
+  "kind": "answer",
+  "title": "We reimburse staff for charging company EVs at home. Which scope is that?",
+  "text": "If the vehicles are owned or leased and controlled by your company, count the reimbursed kWh as your Scope 2, using the claims as activity data and the grid factor. If staff drive their own cars, charging for business trips is Scope 3 Category 6 and commuting is Category 7.",
+  "url": "https://senseible.earth/answers/employee-ev-home-charging-reimbursed-scope"
  },
  {
   "kind": "answer",
@@ -5855,6 +5969,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "For a hot shopfloor, is an evaporative cooler lower carbon than air conditioning?",
+  "text": "Usually yes in dry heat. An evaporative cooler runs only a fan and a small pump, so it draws far less electricity than a compressor-based air conditioner. It cools less in humid weather and uses water. Compare the two on kWh per month from the nameplate and running hours, times 0.710.",
+  "url": "https://senseible.earth/answers/evaporative-cooler-vs-ac-shopfloor-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "As an event organiser, do attendee travel emissions go in our Scope 3?",
   "text": "It is optional. The GHG Protocol's Category 6 covers your own employees' travel, and attendees are not your employees, so their travel is outside the minimum boundary. You can still include it, reported separately with the method stated. If you make any claim about the event's footprint, include it.",
   "url": "https://senseible.earth/answers/event-attendee-travel-which-scope"
@@ -5894,6 +6014,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of our stall at a trade exhibition?",
   "text": "For an exhibitor, the big items are usually team travel and hotel nights, then building the stall and shipping samples. Stall electricity is often small. Reusing a modular stall instead of a one-time build is the easiest cut.",
   "url": "https://senseible.earth/answers/exhibition-stall-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How do we explain our carbon footprint to factory workers?",
+  "text": "Use what they see every day. Show that the footprint comes mostly from electricity and fuel they run, then link actions to it: switching off idle compressors, fixing air leaks, closing furnace doors. Put one monthly number on the notice board, kWh or litres per unit, rather than tonnes of CO2.",
+  "url": "https://senseible.earth/answers/explain-carbon-footprint-to-factory-workers"
  },
  {
   "kind": "answer",
@@ -6077,6 +6203,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do we count emissions from technicians visiting customer sites?",
+  "text": "It follows who owns the vehicle. Company vehicles are Scope 1 from their fuel invoices. Technicians using their own vehicles and claiming mileage are Scope 3 Category 6, as are taxis, trains and hotel nights. A contracted service partner's emissions are part of what you buy, Scope 3 Category 1.",
+  "url": "https://senseible.earth/answers/field-service-technician-visits-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "How do I work out the carbon footprint of a film shoot per day?",
   "text": "On location, generator diesel is usually the largest item at 2.68 kg CO2 per litre. Add crew and cast travel, hotel nights, set construction materials, catering and waste. Divide by shooting days. Hired generator vans with their own operators are the production's Scope 3 unless it controls them.",
   "url": "https://senseible.earth/answers/film-shoot-carbon-footprint-per-day"
@@ -6128,6 +6260,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "We only have a few months of bills for our first carbon footprint. Can we still report it?",
   "text": "Yes, report the months you have and label the period clearly, for example September to March. Do not present it as a full year. If someone needs an annual figure, annualise it as a labelled estimate and say how. Use a full 12 month period, normally the April to March financial year, as your base year.",
   "url": "https://senseible.earth/answers/first-carbon-inventory-less-than-12-months"
+ },
+ {
+  "kind": "answer",
+  "title": "Our first carbon footprint looks high. How do we present it to a buyer?",
+  "text": "Present it plainly with context. Show the total, the biggest two or three sources, what share comes from bills versus estimates, and one or two concrete actions with dates. Buyers mostly judge whether the number is credible and whether you have a plan, not whether it is small.",
+  "url": "https://senseible.earth/answers/first-carbon-results-look-bad-how-to-present"
  },
  {
   "kind": "answer",
@@ -6326,6 +6464,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does reclaiming foundry sand lower or raise a foundry's carbon footprint?",
   "text": "Usually lower overall, but not on site. Mechanical reclamation adds electricity and thermal reclamation adds gas or oil to your Scope 1 and 2, while it cuts new sand mining, transport and landfill, which sit in Scope 3. Count both sides with your own figures before claiming a saving.",
   "url": "https://senseible.earth/answers/foundry-sand-reclamation-energy-and-carbon"
+ },
+ {
+  "kind": "answer",
+  "title": "Should a second person check our carbon calculations before we send them?",
+  "text": "Yes. A second person checking units, factors and totals catches most errors before a buyer or verifier does. Keep it simple: one preparer, one reviewer, a short checklist and a dated record of what was checked. ISO 14064-1 expects data management procedures like this.",
+  "url": "https://senseible.earth/answers/four-eyes-check-on-carbon-calculations"
  },
  {
   "kind": "answer",
@@ -6881,6 +7025,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does a government office or department calculate its carbon footprint?",
+  "text": "Start with what the office controls: diesel for official vehicles and generators as Scope 1, and electricity for its buildings as Scope 2 at 0.710 kg CO2 per kWh. Add official travel and major purchases as Scope 3 later. Departments with many buildings should report each site separately, then total.",
+  "url": "https://senseible.earth/answers/government-office-carbon-footprint-calculation"
+ },
+ {
+  "kind": "answer",
   "title": "Our Gqeberha plant supplies a European carmaker. What carbon data do they usually ask for?",
   "text": "Usually Scope 1 and 2 for the plant, a footprint per part with material emissions, and a renewable electricity plan. Eskom power makes Scope 2 large, so record units and any wheeled renewable power or certificates separately. Give the period and factors.",
   "url": "https://senseible.earth/answers/gqeberha-auto-supplier-oem-carbon-request"
@@ -7373,6 +7523,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our electricity use spiked in a heatwave month. How do we explain it in our report?",
+  "text": "Show it, do not smooth it. Note the month, the cause such as extra cooling or longer running hours, and the kWh involved. Cooling degree days for your location help show weather, not waste, drove it. A verifier or buyer accepts a spike with a reason far more readily than a gap.",
+  "url": "https://senseible.earth/answers/heatwave-month-electricity-spike-explained"
+ },
+ {
+  "kind": "answer",
   "title": "Which emission factor should we use for wire rod bought from a Hebei mill?",
   "text": "Use the mill's own cradle to gate figure if it gives one. If not, use a published blast furnace route average and label it as an estimate. Most Hebei rod comes from blast furnaces, so a scrap based electric furnace average would understate it.",
   "url": "https://senseible.earth/answers/hebei-wire-rod-buyer-scope-3-figure"
@@ -7418,6 +7574,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What goes into the CBAM figure for aluminium from a smelter at Hirakud?",
   "text": "Only direct emissions are charged: CO2 from carbon anode consumption and fuels, plus perfluorocarbons from anode effects. Power from the captive plant is indirect for aluminium and not charged, though buyers may still ask for it. Rolled and extruded products add their own direct emissions on top.",
   "url": "https://senseible.earth/answers/hirakud-aluminium-smelter-cbam-figure"
+ },
+ {
+  "kind": "answer",
+  "title": "Should an MSME hire a carbon consultant or prepare the footprint itself?",
+  "text": "Do Scope 1 and 2 yourself if your bills are in order: it is arithmetic on your own documents. Bring in help for a product footprint under ISO 14067, a large Scope 3 exercise or an assurance-ready inventory. Either way, keep the documents and method note in your own hands so the work is repeatable.",
+  "url": "https://senseible.earth/answers/hire-carbon-consultant-or-do-it-yourself"
  },
  {
   "kind": "answer",
@@ -7628,6 +7790,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How long does a GHG verification take for a small company?",
   "text": "For a single-site MSME with organised records, often a few weeks from contract to statement: planning, document review, a site visit of a day or two, then questions and the report. Most delay comes from slow answers to the verifier's queries, not the verifier's own work.",
   "url": "https://senseible.earth/answers/how-long-does-ghg-verification-take"
+ },
+ {
+  "kind": "answer",
+  "title": "How long does a small company take to prepare its first carbon footprint?",
+  "text": "It depends mostly on how easy your records are to find. If twelve months of electricity bills and fuel invoices are in one place, Scope 1 and 2 can be done quickly. Scope 3 takes longer because supplier data has to be collected and checked. Gathering documents is usually the slowest step.",
+  "url": "https://senseible.earth/answers/how-long-first-carbon-footprint-takes"
  },
  {
   "kind": "answer",
@@ -8483,6 +8651,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can an invoice in Hindi, Marathi or Tamil be used for carbon records?",
+  "text": "Yes. The language does not matter; the facts do. The record needs the supplier, date, item, quantity and unit to be readable. Add a short English note of the item and quantity next to each such invoice so a verifier or foreign buyer can follow it without a translator.",
+  "url": "https://senseible.earth/answers/invoice-in-regional-language-carbon-records"
+ },
+ {
+  "kind": "answer",
   "title": "My invoice gives fuel in kg but the factor is per litre: how do I convert?",
   "text": "Divide the kilograms by the fuel's density in kg per litre to get litres, then apply the per-litre factor. For diesel, density is about 0.83 to 0.84 kg per litre, so 1,000 kg is about 1,200 litres. Better still, use the supplier's measured density from the invoice or test certificate, and record which value you used.",
   "url": "https://senseible.earth/answers/invoice-unit-mismatch-litres-kg"
@@ -9203,6 +9377,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What emission factor should we use for kerosene?",
+  "text": "Use the IPCC 2006 default for other kerosene: 71,900 kg CO2 per TJ at a net calorific value of 43.8 TJ per thousand tonnes, about 3.15 kg CO2 per kg. At a density near 0.8 kg per litre that is roughly 2.5 kg CO2 per litre; use your supplier's density if stated.",
+  "url": "https://senseible.earth/answers/kerosene-emission-factor-per-litre"
+ },
+ {
+  "kind": "answer",
   "title": "What is the Key Facts Statement my bank must give for an MSME loan, and what should I check on it?",
   "text": "A Key Facts Statement is a standard summary RBI requires lenders to give before you sign a retail or MSME term loan sanctioned from 1 October 2024. It shows the annual percentage rate, all fees, the repayment schedule and grievance contacts. Check the APR, the fee list and the EMI table first.",
   "url": "https://senseible.earth/answers/key-facts-statement-msme-loan"
@@ -9683,6 +9863,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do greenwashing rules apply to a LinkedIn post about our carbon footprint?",
+  "text": "Treat them as if they do. A company post promoting its products or credentials is communication to customers, and India's 2024 greenwashing guidelines expect environmental claims to be specific and backed by evidence. Post the figure, the year and the scope, and link to where the method is explained.",
+  "url": "https://senseible.earth/answers/linkedin-post-carbon-footprint-claim-rules"
+ },
+ {
+  "kind": "answer",
   "title": "What are the emissions from recycling lithium ion batteries?",
   "text": "It depends on the route. Shredding to black mass uses mainly electricity; furnace routes add fuel and burn the graphite and electrolyte; chemical leaching routes use acids and reagents. Report per tonne of batteries processed, and state which route you use.",
   "url": "https://senseible.earth/answers/lithium-ion-battery-recycling-emissions-per-tonne"
@@ -9836,6 +10022,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does buying a new machine go in Scope 3 Category 1 or Category 2, and in which year?",
   "text": "A machine you capitalise as a fixed asset goes in Category 2, capital goods, with all its cradle-to-gate emissions in the year you acquire it. Parts, tools and consumables you expense go in Category 1. Follow your own accounts: the GHG Protocol tells companies to use their financial accounting treatment to draw the line.",
   "url": "https://senseible.earth/answers/machinery-purchase-scope-3-category-1-or-2"
+ },
+ {
+  "kind": "answer",
+  "title": "Can we say our product is made with solar power?",
+  "text": "Only for the share that is true. If rooftop solar covered 30 percent of the electricity used to make it, say that, with the period. Calling it made with solar power when the grid supplied most of the energy is the kind of vague claim India's 2024 greenwashing guidelines ask companies to avoid.",
+  "url": "https://senseible.earth/answers/made-with-solar-power-product-claim"
  },
  {
   "kind": "answer",
@@ -10295,6 +10487,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What should a monthly carbon review meeting cover in a small factory?",
+  "text": "Keep it to 30 minutes: last month's electricity and fuel against the month before and the same month last year, anything unusual and why, missing documents, progress on one or two actions, and buyer requests due. The point is to catch gaps monthly rather than scramble at year end.",
+  "url": "https://senseible.earth/answers/monthly-carbon-review-meeting-agenda"
+ },
+ {
+  "kind": "answer",
   "title": "Can a Moradabad brassware exporter claim recycled content for brass melted from scrap?",
   "text": "Yes, for scrap that would otherwise have been waste: pre consumer scrap from other factories and post consumer scrap. Your own runners, risers and rejects melted again do not count. Keep purchase invoices showing scrap type and weight, and state the percentage by weight under ISO 14021.",
   "url": "https://senseible.earth/answers/moradabad-brass-scrap-recycled-content-claim"
@@ -10715,6 +10913,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does an NGO or trust work out its carbon footprint?",
+  "text": "The same way a company does. Under operational control, count fuel for your vehicles and generators as Scope 1 and electricity in your offices and centres as Scope 2. Add staff travel and major purchases as Scope 3. Donors mostly want a clear, sourced figure and what you plan to change.",
+  "url": "https://senseible.earth/answers/ngo-carbon-footprint-how-to-start"
+ },
+ {
+  "kind": "answer",
   "title": "Is electricity from a Nigerian cement plant's own gas turbines Scope 1 or Scope 2?",
   "text": "If the plant owns or controls the turbines, the gas burnt is Scope 1, and there is no Scope 2 for that power. Only power bought from the grid or a third party is Scope 2. Report the gas by volume and heat content from the supply invoices or meters, with the factor and its source.",
   "url": "https://senseible.earth/answers/nigeria-cement-plant-captive-gas-power-scope-1"
@@ -10916,6 +11120,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Several buyers send different carbon questionnaires. Can I use one set of figures for all of them?",
   "text": "Yes. Keep one master set of figures for each year, built from your invoices and bills, and map it into each questionnaire. What changes from buyer to buyer is presentation: period, units, boundary, factor source and detail. Recalculate only when a buyer insists on a different factor, and keep both versions with their sources.",
   "url": "https://senseible.earth/answers/one-carbon-dataset-for-several-buyers"
+ },
+ {
+  "kind": "answer",
+  "title": "We buy LPG on one bill for both the canteen and the process. Do we need to split it?",
+  "text": "Not for your company footprint: all LPG you burn is Scope 1 either way. Split it only for a product footprint, where canteen gas is usually left out as not attributable. Use a cylinder issue log or separate regulators to see how much goes where, and note the split method.",
+  "url": "https://senseible.earth/answers/one-lpg-bill-for-canteen-and-process"
  },
  {
   "kind": "answer",
@@ -12287,6 +12497,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Should we read every invoice for our footprint, or is a sample enough?",
+  "text": "For Scope 1 and 2, use every fuel invoice and electricity bill: they are few and they are the inventory. Sampling is a verifier's tool for checking your records, not a way to build them. For thousands of small Scope 3 purchases, cover the largest spend fully and estimate the long tail, saying so.",
+  "url": "https://senseible.earth/answers/read-all-invoices-or-a-sample-for-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint per cubic metre of ready-mix concrete?",
   "text": "Take the mix design in kg per cubic metre, multiply each ingredient by its cradle-to-gate factor, then add batching plant electricity and transit mixer diesel divided by cubic metres delivered. Cement dominates, so the cement factor and the share replaced by fly ash or GGBS decide most of the result.",
   "url": "https://senseible.earth/answers/ready-mix-concrete-carbon-footprint-per-cubic-metre"
@@ -12302,6 +12518,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can RECs generated last year cover this year's electricity in my Scope 2?",
   "text": "Usually not for a claim buyers will accept. The GHG Protocol asks for certificates issued and redeemed as close as possible to the period of consumption, and RE100 and many buyers set their own vintage window. Match the generation date to your reporting year. An Indian REC staying valid until sold does not change that.",
   "url": "https://senseible.earth/answers/rec-vintage-which-year-can-it-cover"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the difference between a REC and a carbon credit?",
+  "text": "A REC is the claim to one megawatt-hour of renewable electricity, used for a market-based Scope 2 figure. A carbon credit represents one tonne of CO2e reduced or removed somewhere else. RECs change how you report electricity; carbon credits never reduce your inventory and are reported separately.",
+  "url": "https://senseible.earth/answers/rec-vs-carbon-credit-difference"
  },
  {
   "kind": "answer",
@@ -12881,6 +13103,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What should our sales team say when a buyer asks about our carbon footprint?",
+  "text": "Give them three approved lines: our latest Scope 1 and 2 figure with the year, how it was calculated, and the next step such as Scope 3 or a target. Anything beyond that goes to the person who owns the data. Sales should never promise a figure, label or certificate you do not have.",
+  "url": "https://senseible.earth/answers/sales-team-answering-carbon-questions"
+ },
+ {
+  "kind": "answer",
   "title": "What is the Salesforce Sustainability Exhibit and what must a supplier commit to?",
   "text": "The Salesforce Sustainability Exhibit is a set of climate terms in Salesforce supplier contracts, introduced in 2021. It asks suppliers to set a science-based target, publicly disclose Scope 1, 2 and 3 emissions, and deliver to Salesforce on a carbon neutral basis, with a climate positive remedy if they fall short.",
   "url": "https://senseible.earth/answers/salesforce-sustainability-exhibit-for-suppliers"
@@ -13193,6 +13421,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How can a self-help group work out the carbon footprint of its products?",
+  "text": "Keep it simple and record-based. Note the fuel, electricity and main materials used for a batch, divide by the units made, and apply standard factors. A buyer or support agency can help with factors; the group's job is accurate records of what went into each batch.",
+  "url": "https://senseible.earth/answers/self-help-group-product-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "Can a reverse charge self-invoice for an unregistered supplier count as carbon evidence?",
   "text": "Yes, but it is your own document, so it is weaker evidence than a supplier's bill. Use its quantity only when something independent backs it, such as a weighbridge slip, delivery challan, gate entry or payment record. Where the two differ, use the measured quantity and note why.",
   "url": "https://senseible.earth/answers/self-invoice-unregistered-supplier-carbon-evidence"
@@ -13358,6 +13592,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do group companies sharing one office split its emissions?",
   "text": "Split the office's electricity and fuel by a fair key, such as floor area or headcount, and use the same key every year. Each company reports its share. The group's consolidated report counts the office once, not once per company.",
   "url": "https://senseible.earth/answers/shared-office-between-group-companies-split"
+ },
+ {
+  "kind": "answer",
+  "title": "Our industrial estate has a shared solar plant. Can we claim its power in Scope 2?",
+  "text": "Only the units allocated to you, and only if the allocation is documented. You need a contract or estate statement showing your monthly kWh, and proof that the same units are not also claimed by the estate or other tenants. Units you cannot trace stay in your grid figure.",
+  "url": "https://senseible.earth/answers/shared-solar-on-industrial-estate-scope-2"
  },
  {
   "kind": "answer",
@@ -13817,6 +14057,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our rooftop solar monitoring was offline for a month. What do we do?",
+  "text": "Your Scope 2 still comes from the grid units on your electricity bill, so it is unaffected. What is missing is the solar figure for any renewable share you report. Estimate it from the same month last year or from neighbouring months, label it as an estimate, and fix the monitoring.",
+  "url": "https://senseible.earth/answers/solar-generation-data-missing-for-a-month"
+ },
+ {
+  "kind": "answer",
   "title": "Should I use my solar inverter reading or the net meter for Scope 2?",
   "text": "Use the net meter's import register for Scope 2: that is grid electricity you bought. Solar you used yourself equals generation, from the inverter or generation meter, minus units exported. Never subtract the inverter reading from the grid bill.",
   "url": "https://senseible.earth/answers/solar-inverter-reading-vs-net-meter-scope-2"
@@ -13880,6 +14126,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do lenders account for financed emissions on a solar project loan, and can they subtract avoided emissions?",
   "text": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
   "url": "https://senseible.earth/answers/solar-project-finance-financed-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Should a factory buy solar or wind power through open access?",
+  "text": "Both count the same way in a market-based Scope 2 if contracts and certificates meet the quality criteria. The choice is about cost and timing: solar matches day shifts, wind often runs strongest at night and in the monsoon. A hybrid or banking can fill the gaps where your state rules allow it.",
+  "url": "https://senseible.earth/answers/solar-vs-wind-open-access-factory-choice"
  },
  {
   "kind": "answer",
@@ -14291,6 +14543,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our sub-meters add up to less than the main electricity meter. Which do we report?",
+  "text": "Report the main meter, the discom bill. The gap is normal: cable and transformer losses, unmetered loads such as lighting, and meter error. For allocating emissions to lines or tenants, share the gap in proportion to sub-meter readings and say so. A gap that keeps growing is worth investigating.",
+  "url": "https://senseible.earth/answers/sub-meters-do-not-add-up-to-main-meter"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the cradle-to-gate carbon footprint of a submersible pump for an export buyer?",
   "text": "Weigh each material in the pump's bill of materials, as bought including scrap, and multiply by its emission factor: copper winding, stainless steel, cast iron, electrical steel, plastics and cable. Then add your factory's fuel and electricity per pump. Materials usually make up most of a cradle to gate figure; use phase is reported separately.",
   "url": "https://senseible.earth/answers/submersible-pump-carbon-footprint-per-unit"
@@ -14342,6 +14600,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much refrigerant does a supermarket's display cases leak each year, and how do I report it?",
   "text": "Supermarket systems with central racks feeding display cases are among the leakiest refrigeration equipment: IPCC 2006 gives 10% to 35% of the charge a year for medium and large commercial refrigeration. Report the kg of gas topped up each year times its GWP as Scope 1, and use the default rate only when you have no service records.",
   "url": "https://senseible.earth/answers/supermarket-refrigerant-leak-rate"
+ },
+ {
+  "kind": "answer",
+  "title": "A supplier shut down mid-year before sending carbon data. What do we use?",
+  "text": "Use what you have for the months you bought from them: quantities from your own purchase invoices times an average or spend-based factor, labelled as secondary data. Do not leave the purchases out. Use the new supplier's data from when you switched, and note the change in your method log.",
+  "url": "https://senseible.earth/answers/supplier-closes-mid-year-scope-3-data"
  },
  {
   "kind": "answer",
@@ -14930,6 +15194,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does a travel agency count its clients' flights in its emissions?",
   "text": "Not in its core inventory. The airline burns the fuel, and the trip is the client's business travel. The agency counts its offices, staff travel and commuting. It can report the emissions of trips it sold as a separate, optional figure and explain the method, which corporate clients often ask for.",
   "url": "https://senseible.earth/answers/travel-agency-client-flights-which-scope"
+ },
+ {
+  "kind": "answer",
+  "title": "Should we explain our emissions as the number of trees needed to absorb them?",
+  "text": "Better not. How much CO2 a tree absorbs varies with species, age, climate and soil, so any single number misleads, and it hints that planting can cancel emissions. State the figure in tonnes of CO2e, compare it with your own last year, and show what you are doing to cut it.",
+  "url": "https://senseible.earth/answers/tree-equivalents-in-carbon-communication"
  },
  {
   "kind": "answer",
@@ -15671,6 +15941,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do customer and visitor trips to our factory count in our carbon footprint?",
+  "text": "Generally no. A customer's travel to your site is in their inventory, as their business travel. The electricity and fuel used while they are on site are already in your Scope 1 and 2. If you pay for a visitor's travel or hotel, count it in Scope 3 Category 6.",
+  "url": "https://senseible.earth/answers/visitors-and-guests-in-carbon-footprint"
+ },
+ {
+  "kind": "answer",
   "title": "How much do polishing and squaring add to a vitrified tile's footprint?",
   "text": "Sub-meter the polishing, squaring and calibration line, multiply its kWh by 0.710 kg CO2 per kWh and divide by square metres polished. Add it to the kiln and press figure for polished tiles only, since unpolished tiles skip this stage.",
   "url": "https://senseible.earth/answers/vitrified-tile-polishing-line-electricity"
@@ -16025,6 +16301,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is Scope 4, and should we report it?",
+  "text": "Scope 4 is an informal name for avoided emissions: the emissions a product helps customers avoid compared with an alternative. It is not a GHG Protocol scope. Report it, if at all, separately from Scope 1, 2 and 3, with the comparison scenario stated, and never subtract it from your footprint.",
+  "url": "https://senseible.earth/answers/what-is-scope-4-avoided-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "What should I check on a specific carbon credit before buying it?",
   "text": "Check that the credit sits on a recognised registry with unique serial numbers, has not been retired, comes from a project with a current methodology and a recent vintage, carries an ICVCM CCP label where available, has a buffer for reversal risk if it is nature-based, and matches the claim you plan to make.",
   "url": "https://senseible.earth/answers/what-to-check-before-buying-carbon-credits"
@@ -16040,6 +16322,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What should a renewable PPA contract say so my buyer accepts the carbon claim?",
   "text": "The PPA should name the generating plant, transfer all environmental attributes of each MWh to you alone, bar the generator from selling those attributes again, match delivery to your consumption period and grid, and give you the metering data and certificate retirement records. Without these, a buyer can reject the market-based Scope 2 claim.",
   "url": "https://senseible.earth/answers/what-to-put-in-ppa-for-carbon-claim"
+ },
+ {
+  "kind": "answer",
+  "title": "Is a WhatsApp photo of an invoice good enough as carbon evidence?",
+  "text": "It works if every field is readable: supplier, date, invoice number, quantity and unit. Forwarded images are compressed, so small print often blurs. Ask the supplier for the original PDF or e-invoice, keep it as the record and treat the photo as a working copy only.",
+  "url": "https://senseible.earth/answers/whatsapp-forwarded-invoice-photo-carbon-evidence"
  },
  {
   "kind": "answer",
@@ -16145,6 +16433,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "We sell products made for us under our brand by another factory. Who reports their emissions?",
+  "text": "Both, in different places. The maker reports its fuel and electricity in its own Scope 1 and 2. You, as the brand owner, report the products you buy in Scope 3 Category 1, and their use and disposal in Categories 11 and 12 where relevant. Ask the maker for its per-unit footprint.",
+  "url": "https://senseible.earth/answers/white-label-products-who-reports-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "Who in a small company should deal with the GHG verifier?",
   "text": "One person who owns the carbon figures and can answer quickly, usually from finance or plant engineering, with access to bills, fuel records and production data. The owner or director should sign off the final statement.",
   "url": "https://senseible.earth/answers/who-at-msme-should-face-the-verifier"
@@ -16172,6 +16466,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Who owns the carbon credits when equipment is supplied, financed or leased by someone else?",
   "text": "Whoever can prove the right to the emission reductions, and that is decided by contract, not by who owns the machine. Verra and Gold Standard both require the project proponent to show documented rights. If the supplier, lender, lessor and user have not agreed in writing, expect no one to be able to register the credits.",
   "url": "https://senseible.earth/answers/who-owns-carbon-credits-from-equipment"
+ },
+ {
+  "kind": "answer",
+  "title": "Our buyer wants our carbon figures verified. Who should pay for it?",
+  "text": "There is no rule; it is a commercial question. Suppliers usually pay to verify their own inventory because they can reuse the statement with every buyer. If one buyer insists on its own verifier or format, it is fair to ask that buyer to share the cost, and to write it into the contract.",
+  "url": "https://senseible.earth/answers/who-pays-for-supplier-carbon-verification"
  },
  {
   "kind": "answer",

@@ -1,0 +1,49 @@
+{
+  "slug": "evaporative-cooler-vs-ac-shopfloor-emissions",
+  "q": "For a hot shopfloor, is an evaporative cooler lower carbon than air conditioning?",
+  "title": "Evaporative cooler vs AC on a shopfloor",
+  "short": "Usually yes in dry heat. An evaporative cooler runs only a fan and a small pump, so it draws far less electricity than a compressor-based air conditioner. It cools less in humid weather and uses water. Compare the two on kWh per month from the nameplate and running hours, times 0.710.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Factory owners in hot regions",
+  "sections": [
+    {
+      "h": "Where each fits",
+      "ul": [
+        "Evaporative: dry, hot inland regions; open sheds; spot cooling at workstations.",
+        "Air conditioning: humid coasts, sealed rooms, processes that need set humidity."
+      ]
+    },
+    {
+      "h": "How to compare",
+      "ol": [
+        "Find rated power for each option.",
+        "Multiply by expected running hours a month.",
+        "Multiply kWh by 0.710 kg CO2 per kWh.",
+        "Add water use for the evaporative option as a separate line."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Chiller efficiency kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Heat stress and productivity",
+      "to": "/answers/heat-stress-factory-productivity-loss-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "whatsapp-forwarded-invoice-photo-carbon-evidence",
+  "q": "Is a WhatsApp photo of an invoice good enough as carbon evidence?",
+  "title": "WhatsApp invoice photos as evidence",
+  "short": "It works if every field is readable: supplier, date, invoice number, quantity and unit. Forwarded images are compressed, so small print often blurs. Ask the supplier for the original PDF or e-invoice, keep it as the record and treat the photo as a working copy only.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs collecting supplier bills on WhatsApp",
+  "sections": [
+    {
+      "h": "What the photo must show",
+      "ul": [
+        "Supplier name and GSTIN, invoice number and date.",
+        "Each line with quantity and unit, not only the amount.",
+        "The whole page, uncropped, so the verifier can match totals."
+      ]
+    },
+    {
+      "h": "Why the original matters",
+      "p": [
+        "A verifier samples records against source documents. A compressed copy that cannot be read at full size will be queried, and an e-invoice with an IRN can be checked against the GST system."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "Blurred bill photos",
+      "to": "/answers/blurred-bill-photo-what-to-do"
+    },
+    {
+      "label": "Check an e-invoice IRN",
+      "to": "/answers/verify-e-invoice-irn-for-carbon-evidence"
+    },
+    {
+      "label": "Delivery challans as evidence",
+      "to": "/answers/delivery-challan-as-carbon-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

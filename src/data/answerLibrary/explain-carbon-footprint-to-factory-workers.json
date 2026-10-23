@@ -1,0 +1,53 @@
+{
+  "slug": "explain-carbon-footprint-to-factory-workers",
+  "q": "How do we explain our carbon footprint to factory workers?",
+  "title": "Explaining carbon to factory staff",
+  "short": "Use what they see every day. Show that the footprint comes mostly from electricity and fuel they run, then link actions to it: switching off idle compressors, fixing air leaks, closing furnace doors. Put one monthly number on the notice board, kWh or litres per unit, rather than tonnes of CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant managers and supervisors",
+  "sections": [
+    {
+      "h": "Messages that work",
+      "ul": [
+        "Every hour a machine runs idle costs power and adds carbon.",
+        "A leak you can hear wastes compressed air all shift.",
+        "Logging fuel correctly keeps our buyer numbers right."
+      ]
+    },
+    {
+      "h": "What to measure",
+      "ul": [
+        "kWh per unit made.",
+        "Litres of diesel per day.",
+        "Leaks fixed per month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Compressed air leaks",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Boiler logbook",
+      "to": "/answers/boiler-logbook-what-to-record-for-emissions"
+    },
+    {
+      "label": "Idle machines base load",
+      "to": "/answers/idle-machines-base-load-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

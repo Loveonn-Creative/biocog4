@@ -1,0 +1,47 @@
+{
+  "slug": "buyer-portal-charges-fee-for-carbon-data",
+  "q": "The buyer's supplier portal charges a fee to submit carbon data. Must we pay?",
+  "title": "Paid portals for carbon data",
+  "short": "No carbon standard requires a paid portal. Whether you pay is between you and the buyer. Ask whether they accept the same data by email or template, or whether they will cover the fee. The figures themselves should be the same wherever you submit them.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Suppliers asked to join paid platforms",
+  "sections": [
+    {
+      "h": "Questions for the buyer",
+      "ul": [
+        "Is the portal mandatory for all suppliers?",
+        "Will you accept our verified figures in a standard template?",
+        "Who pays the fee, and for how long?"
+      ]
+    },
+    {
+      "h": "Keep one source",
+      "p": [
+        "Hold one master dataset and copy from it to each portal, so figures never drift between buyers."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Buyer sends own questionnaire",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    },
+    {
+      "label": "One dataset for several buyers",
+      "to": "/answers/one-carbon-dataset-for-several-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

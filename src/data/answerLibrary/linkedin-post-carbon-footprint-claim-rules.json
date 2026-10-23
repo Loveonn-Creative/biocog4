@@ -1,0 +1,47 @@
+{
+  "slug": "linkedin-post-carbon-footprint-claim-rules",
+  "q": "Do greenwashing rules apply to a LinkedIn post about our carbon footprint?",
+  "title": "Carbon claims in social media posts",
+  "short": "Treat them as if they do. A company post promoting its products or credentials is communication to customers, and India's 2024 greenwashing guidelines expect environmental claims to be specific and backed by evidence. Post the figure, the year and the scope, and link to where the method is explained.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Founders and marketing teams",
+  "sections": [
+    {
+      "h": "Safer post",
+      "ul": [
+        "Our 2025-26 Scope 1 and 2 emissions were 420 t CO2e, from our fuel invoices and electricity bills.",
+        "Link to a page with the method and data sources."
+      ]
+    },
+    {
+      "h": "Riskier post",
+      "ul": [
+        "We are now a green company.",
+        "Carbon neutral factory, without retired credits and full scope."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "US FTC Green Guides",
+      "to": "/answers/us-ftc-green-guides-carbon-claims"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021, Environmental labels and declarations: self-declared claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

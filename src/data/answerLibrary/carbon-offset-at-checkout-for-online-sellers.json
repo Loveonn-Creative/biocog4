@@ -1,0 +1,57 @@
+{
+  "slug": "carbon-offset-at-checkout-for-online-sellers",
+  "q": "Can an online seller offer a carbon offset option at checkout?",
+  "title": "Offset option at checkout",
+  "short": "Yes, if each sale buys and retires real credits and you can show it. Name the registry and project, retire credits in batches with serial numbers, and say offset, not zero emissions. Those credits do not reduce your own inventory; report them separately. Vague or unretired offsets risk breaching greenwashing rules.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "D2C brands and online sellers",
+  "sections": [
+    {
+      "h": "How to run it",
+      "ol": [
+        "Choose credits that meet a recognised quality bar.",
+        "Calculate the delivery footprint you are offsetting and how.",
+        "Retire credits at least monthly and publish serial numbers.",
+        "Show customers what they paid for and where it went."
+      ]
+    },
+    {
+      "h": "Words to avoid",
+      "ul": [
+        "Carbon neutral delivery, unless the calculation and retirements cover all of it.",
+        "Planet positive or climate positive without evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "What to check before buying credits",
+      "to": "/answers/what-to-check-before-buying-carbon-credits"
+    },
+    {
+      "label": "Check a retirement",
+      "to": "/answers/how-to-check-carbon-credit-retirement"
+    },
+    {
+      "label": "Can a report subtract offsets?",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ICVCM Core Carbon Principles",
+      "url": "https://icvcm.org"
+    },
+    {
+      "label": "Verra registry",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

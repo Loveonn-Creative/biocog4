@@ -1,0 +1,48 @@
+{
+  "slug": "carbon-handprint-vs-carbon-footprint",
+  "q": "What is a carbon handprint, and how is it different from a footprint?",
+  "title": "Carbon handprint vs footprint",
+  "short": "A footprint is the emissions your company causes. A handprint is a loose term for the positive effect your products or services have on others' emissions, close to avoided emissions. There is no single standard for it, so show it separately, explain the method and keep the footprint complete beside it.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Marketing and sustainability teams",
+  "sections": [
+    {
+      "h": "Footprint",
+      "ul": [
+        "Scope 1, 2 and 3 under the GHG Protocol.",
+        "Always reported gross."
+      ]
+    },
+    {
+      "h": "Handprint",
+      "ul": [
+        "Effects on customers or society, for example energy saved by an efficient pump.",
+        "Calculated against a stated alternative.",
+        "Never netted against the footprint."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "What is Scope 4?",
+      "to": "/answers/what-is-scope-4-avoided-emissions"
+    },
+    {
+      "label": "Calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "WBCSD Guidance on Avoided Emissions (2023)",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

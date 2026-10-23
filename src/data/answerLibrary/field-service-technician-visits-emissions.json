@@ -1,0 +1,48 @@
+{
+  "slug": "field-service-technician-visits-emissions",
+  "q": "How do we count emissions from technicians visiting customer sites?",
+  "title": "Field service visit emissions",
+  "short": "It follows who owns the vehicle. Company vehicles are Scope 1 from their fuel invoices. Technicians using their own vehicles and claiming mileage are Scope 3 Category 6, as are taxis, trains and hotel nights. A contracted service partner's emissions are part of what you buy, Scope 3 Category 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies with installation and service teams",
+  "sections": [
+    {
+      "h": "Data to keep",
+      "ul": [
+        "Fuel invoices for company vehicles.",
+        "Mileage claims with km per trip.",
+        "Travel and hotel bills.",
+        "Invoices from service partners."
+      ]
+    },
+    {
+      "h": "Per visit figure",
+      "p": [
+        "Divide the year's service emissions by the number of visits if a customer asks for a per-visit number, and say what is included."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated records with the quantity, unit and factor on each line, and marks lines without a usable quantity as needing data instead of guessing.",
+  "links": [
+    {
+      "label": "Field sales travel",
+      "to": "/answers/field-sales-team-travel-emissions"
+    },
+    {
+      "label": "Business car travel scope",
+      "to": "/answers/business-car-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

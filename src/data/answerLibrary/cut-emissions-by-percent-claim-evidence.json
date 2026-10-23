@@ -1,0 +1,54 @@
+{
+  "slug": "cut-emissions-by-percent-claim-evidence",
+  "q": "We want to say we cut emissions by 20 percent. What do we need to back it?",
+  "title": "Backing a \"we cut emissions by X%\" claim",
+  "short": "A base year and a current year calculated the same way, with the same boundary and factors, and a statement of whether the cut is absolute or per unit of output. If you sold a unit or changed method, recalculate the base year first. Keep the workings so anyone can repeat the 20 percent.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Companies publishing reduction claims",
+  "sections": [
+    {
+      "h": "Checklist",
+      "ul": [
+        "Base year figure and current year figure, same scopes.",
+        "Same emission factors, or both years recalculated with new ones.",
+        "Absolute or intensity named, with the unit.",
+        "Main reasons for the change listed."
+      ]
+    },
+    {
+      "h": "Common errors",
+      "ul": [
+        "Comparing a year with Scope 3 to a year without.",
+        "A cut that comes only from lower production, reported as efficiency.",
+        "Netting carbon credits off the inventory."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Recalculate the base year",
+      "to": "/answers/recalculate-base-year-after-selling-a-unit"
+    },
+    {
+      "label": "Absolute or intensity target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    },
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14021, Environmental labels and declarations: self-declared claims (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

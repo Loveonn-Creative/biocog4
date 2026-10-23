@@ -1,0 +1,48 @@
+{
+  "slug": "commute-survey-low-response-what-to-do",
+  "q": "Only a quarter of staff answered our commuting survey. Can we still estimate Category 7?",
+  "title": "Low response to a commuting survey",
+  "short": "Yes. Use the answers you have to find average distance and mode by site or role, then scale up to total headcount and working days. State the response rate and assumptions. Improve it next year with a two-question form at attendance or payroll time.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HR and sustainability teams",
+  "sections": [
+    {
+      "h": "Scaling up",
+      "ol": [
+        "Group responses by site and by mode.",
+        "Find average km per day per mode.",
+        "Apply the mode split to all staff.",
+        "Multiply by working days and mode factors."
+      ]
+    },
+    {
+      "h": "Watch for bias",
+      "p": [
+        "People who drive long distances may answer more often, or less. If the sample looks skewed, say so and test a range."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated records with the quantity, unit and factor on each line, and marks lines without a usable quantity as needing data instead of guessing.",
+  "links": [
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Work from home emissions",
+      "to": "/answers/work-from-home-emissions-category-7"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

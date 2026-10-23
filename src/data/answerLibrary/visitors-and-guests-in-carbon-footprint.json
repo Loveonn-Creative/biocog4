@@ -1,0 +1,46 @@
+{
+  "slug": "visitors-and-guests-in-carbon-footprint",
+  "q": "Do customer and visitor trips to our factory count in our carbon footprint?",
+  "title": "Visitor travel in your footprint",
+  "short": "Generally no. A customer's travel to your site is in their inventory, as their business travel. The electricity and fuel used while they are on site are already in your Scope 1 and 2. If you pay for a visitor's travel or hotel, count it in Scope 3 Category 6.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories hosting audits and buyer visits",
+  "sections": [
+    {
+      "h": "Count it when",
+      "ul": [
+        "You book and pay for the visitor's flights, trains or hotel.",
+        "You send a company car to collect them: already in your Scope 1 fuel."
+      ]
+    },
+    {
+      "h": "Leave it out when",
+      "ul": [
+        "The visitor's own company pays and arranges travel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated records with the quantity, unit and factor on each line, and marks lines without a usable quantity as needing data instead of guessing.",
+  "links": [
+    {
+      "label": "Business car travel scope",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Field sales travel",
+      "to": "/answers/field-sales-team-travel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

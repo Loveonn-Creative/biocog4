@@ -1,0 +1,47 @@
+{
+  "slug": "carbon-number-went-up-after-adding-suppliers",
+  "q": "Our carbon footprint jumped after we added supplier emissions. Did we get worse?",
+  "title": "Footprint jumped after adding Scope 3",
+  "short": "No. You counted more of what was always there. Scope 3 is usually the largest part of a manufacturer's footprint, so adding it raises the total even if nothing changed on site. Compare like with like: Scope 1 and 2 against last year, and restate last year with Scope 3 if you want a trend.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Companies reporting Scope 3 for the first time",
+  "sections": [
+    {
+      "h": "How to show it",
+      "ul": [
+        "Keep Scope 1 and 2 as a separate line with last year beside it.",
+        "Show Scope 3 as a new line, with a note on which categories are included.",
+        "If you restate the earlier year, say so and say why."
+      ]
+    },
+    {
+      "h": "What a buyer reads",
+      "p": [
+        "Buyers expect Scope 3 to be large. A clear note that the increase comes from wider coverage reads as better reporting, not worse performance."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated records with the quantity, unit and factor on each line, and marks lines without a usable quantity as needing data instead of guessing.",
+  "links": [
+    {
+      "label": "Restate after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "Why tools give different Scope 3",
+      "to": "/answers/why-two-tools-give-different-scope-3-numbers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

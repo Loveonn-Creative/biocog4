@@ -1,0 +1,47 @@
+{
+  "slug": "shared-solar-on-industrial-estate-scope-2",
+  "q": "Our industrial estate has a shared solar plant. Can we claim its power in Scope 2?",
+  "title": "Shared estate solar in Scope 2",
+  "short": "Only the units allocated to you, and only if the allocation is documented. You need a contract or estate statement showing your monthly kWh, and proof that the same units are not also claimed by the estate or other tenants. Units you cannot trace stay in your grid figure.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Tenants in industrial estates and parks",
+  "sections": [
+    {
+      "h": "Documents",
+      "ul": [
+        "Agreement with the estate or developer.",
+        "Monthly allocation statement by tenant.",
+        "Meter readings behind the allocation."
+      ]
+    },
+    {
+      "h": "How to report",
+      "p": [
+        "Location-based Scope 2 uses all your grid kWh. The market-based figure uses the allocated solar kWh at zero and the rest at the residual or grid factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Group captive solar",
+      "to": "/answers/group-captive-solar-scope-2"
+    },
+    {
+      "label": "Sub-metered rented units",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

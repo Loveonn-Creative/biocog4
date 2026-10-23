@@ -1,0 +1,51 @@
+{
+  "slug": "solar-vs-wind-open-access-factory-choice",
+  "q": "Should a factory buy solar or wind power through open access?",
+  "title": "Solar or wind open access?",
+  "short": "Both count the same way in a market-based Scope 2 if contracts and certificates meet the quality criteria. The choice is about cost and timing: solar matches day shifts, wind often runs strongest at night and in the monsoon. A hybrid or banking can fill the gaps where your state rules allow it.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Factories considering green energy open access",
+  "sections": [
+    {
+      "h": "Compare on",
+      "ul": [
+        "Landed cost per kWh after wheeling, banking and surcharges.",
+        "How well the generation profile matches your load.",
+        "Contract tenure and exit terms."
+      ]
+    },
+    {
+      "h": "For the Scope 2 claim",
+      "p": [
+        "Keep the contract, monthly energy statements and proof that the renewable attributes are not sold or claimed by anyone else."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Maharashtra green energy open access",
+      "to": "/answers/maharashtra-green-energy-open-access"
+    },
+    {
+      "label": "How much solar can I bank?",
+      "to": "/answers/how-much-solar-power-can-i-bank-with-discom"
+    },
+    {
+      "label": "Group captive solar",
+      "to": "/answers/group-captive-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

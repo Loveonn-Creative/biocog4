@@ -1,0 +1,50 @@
+{
+  "slug": "buyer-wants-carbon-data-in-a-week",
+  "q": "A buyer wants our carbon data in a week. What can we send that holds up?",
+  "title": "Carbon data needed in a week",
+  "short": "Send Scope 1 and 2 from last year's electricity bills and fuel invoices, which most firms can total in days. Add a short note on what is included, what is estimated and when Scope 3 will follow. A smaller, sourced figure on time beats a full but guessed one.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Suppliers facing tight buyer deadlines",
+  "sections": [
+    {
+      "h": "Week plan",
+      "ol": [
+        "Day 1 to 2: collect twelve months of bills and fuel invoices.",
+        "Day 3: calculate Scope 1 and 2 by site.",
+        "Day 4: second person checks units and factors.",
+        "Day 5: send with a method note and a date for Scope 3."
+      ]
+    },
+    {
+      "h": "Say clearly",
+      "ul": [
+        "Reporting year and sites covered.",
+        "Factors used and their sources.",
+        "Anything estimated."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Buyer asks data every quarter",
+      "to": "/answers/buyer-asks-carbon-data-every-quarter"
+    },
+    {
+      "label": "One dataset for several buyers",
+      "to": "/answers/one-carbon-dataset-for-several-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

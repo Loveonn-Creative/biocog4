@@ -1,0 +1,52 @@
+{
+  "slug": "who-pays-for-supplier-carbon-verification",
+  "q": "Our buyer wants our carbon figures verified. Who should pay for it?",
+  "title": "Who pays for supplier verification?",
+  "short": "There is no rule; it is a commercial question. Suppliers usually pay to verify their own inventory because they can reuse the statement with every buyer. If one buyer insists on its own verifier or format, it is fair to ask that buyer to share the cost, and to write it into the contract.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Suppliers negotiating with large buyers",
+  "sections": [
+    {
+      "h": "Points to raise",
+      "ul": [
+        "Will the buyer accept a statement any accredited verifier issues?",
+        "Is limited assurance enough?",
+        "How often: every year or once?",
+        "Can other buyers rely on the same statement?"
+      ]
+    },
+    {
+      "h": "Keep the cost down",
+      "p": [
+        "Clean records and a method note cut verifier days. Ask several buyers to accept one verified dataset."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "Verification cost in India",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    },
+    {
+      "label": "Climate clause in a buyer contract",
+      "to": "/answers/climate-clause-in-buyer-contract-what-to-check"
+    },
+    {
+      "label": "One dataset for several buyers",
+      "to": "/answers/one-carbon-dataset-for-several-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

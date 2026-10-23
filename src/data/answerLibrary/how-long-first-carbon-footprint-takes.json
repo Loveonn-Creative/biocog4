@@ -1,0 +1,50 @@
+{
+  "slug": "how-long-first-carbon-footprint-takes",
+  "q": "How long does a small company take to prepare its first carbon footprint?",
+  "title": "Time for a first carbon footprint",
+  "short": "It depends mostly on how easy your records are to find. If twelve months of electricity bills and fuel invoices are in one place, Scope 1 and 2 can be done quickly. Scope 3 takes longer because supplier data has to be collected and checked. Gathering documents is usually the slowest step.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "MSMEs starting carbon accounting",
+  "sections": [
+    {
+      "h": "Steps in order",
+      "ol": [
+        "Collect twelve months of electricity bills and fuel invoices for each site.",
+        "Calculate Scope 1 and 2 and check unit conversions.",
+        "List purchases by spend and pick the largest for Scope 3.",
+        "Write a short method note and an estimates log."
+      ]
+    },
+    {
+      "h": "What speeds it up",
+      "ul": [
+        "One person owning the folder.",
+        "Discom portal logins for every meter.",
+        "Suppliers who send e-invoices with quantities."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Inventory for under 12 months",
+      "to": "/answers/first-carbon-inventory-less-than-12-months"
+    },
+    {
+      "label": "How long verification takes",
+      "to": "/answers/how-long-does-ghg-verification-take"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
