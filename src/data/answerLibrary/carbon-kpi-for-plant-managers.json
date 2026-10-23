@@ -1,0 +1,48 @@
+{
+  "slug": "carbon-kpi-for-plant-managers",
+  "q": "What carbon KPI should we give plant managers?",
+  "title": "Carbon KPIs for plant managers",
+  "short": "Use energy or emissions per unit of output, measured monthly, plus a data completeness target. Per unit avoids rewarding a manager for a slow month. Pair it with a few action targets, such as leaks fixed or idle hours cut, that the manager controls directly.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Owners setting targets for operations",
+  "sections": [
+    {
+      "h": "Good KPIs",
+      "ul": [
+        "kWh per unit and fuel per unit, monthly.",
+        "Share of fuel and electricity backed by invoices and bills.",
+        "Actions completed on time."
+      ]
+    },
+    {
+      "h": "KPIs to avoid",
+      "ul": [
+        "Absolute tonnes alone, which fall when orders fall.",
+        "Targets the manager cannot influence, such as the grid factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Which intensity metric",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Absolute or intensity target",
+      "to": "/answers/absolute-or-intensity-reduction-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

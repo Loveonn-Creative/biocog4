@@ -1,0 +1,51 @@
+{
+  "slug": "monthly-carbon-review-meeting-agenda",
+  "q": "What should a monthly carbon review meeting cover in a small factory?",
+  "title": "Monthly carbon review agenda",
+  "short": "Keep it to 30 minutes: last month's electricity and fuel against the month before and the same month last year, anything unusual and why, missing documents, progress on one or two actions, and buyer requests due. The point is to catch gaps monthly rather than scramble at year end.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant heads and owners",
+  "sections": [
+    {
+      "h": "Agenda",
+      "ol": [
+        "kWh, diesel, LPG and gas for the month, per unit made.",
+        "Unusual months: breakdowns, outages, new machines.",
+        "Bills or invoices still missing.",
+        "Actions: status and next step.",
+        "Buyer or bank requests due."
+      ]
+    },
+    {
+      "h": "Who attends",
+      "ul": [
+        "The person who keeps the records.",
+        "Maintenance or utilities in charge.",
+        "The owner or plant head, to decide."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Track carbon monthly or yearly",
+      "to": "/answers/track-carbon-monthly-or-yearly-msme"
+    },
+    {
+      "label": "Why a month looks unusual",
+      "to": "/answers/verifier-asks-why-a-month-looks-unusual"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

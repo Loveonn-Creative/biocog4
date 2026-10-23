@@ -1,0 +1,47 @@
+{
+  "slug": "electricity-bill-shows-only-amount-paid",
+  "q": "I only have payment receipts for electricity, not the bills. Can I work out emissions?",
+  "title": "Electricity receipts without the bill",
+  "short": "Not reliably. The amount includes fixed charges, demand charges, duty and taxes, so rupees do not convert cleanly to kWh. Download the bills from your discom's portal or ask the office for duplicates; the units consumed on the bill are what you multiply by 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Small businesses with incomplete electricity records",
+  "sections": [
+    {
+      "h": "Where to get the bills",
+      "ul": [
+        "The discom consumer portal or app, using the consumer number.",
+        "The local subdivision office, for duplicates.",
+        "Your bank statement only to confirm which months were paid."
+      ]
+    },
+    {
+      "h": "If a month is truly missing",
+      "p": [
+        "Estimate it from the months either side or from meter readings, label it as an estimate and replace it when the bill turns up."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Read an HT electricity bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

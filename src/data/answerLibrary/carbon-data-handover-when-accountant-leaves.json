@@ -1,0 +1,49 @@
+{
+  "slug": "carbon-data-handover-when-accountant-leaves",
+  "q": "The person who kept our carbon records is leaving. What should the handover cover?",
+  "title": "Carbon records handover checklist",
+  "short": "Four things: where the source documents are, the method note that says which factors and rules were used, the list of estimates and why they were made, and the open questions from buyers or verifiers. With those, a new person can repeat last year's numbers instead of starting again.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners and finance teams",
+  "sections": [
+    {
+      "h": "Handover checklist",
+      "ul": [
+        "Folder of invoices and bills by month and site.",
+        "Method note: boundary, factors and their versions, unit conversions.",
+        "Estimates log with reasons.",
+        "Buyer and verifier correspondence still open.",
+        "Logins for discom portals and any carbon tool, transferred to a company account."
+      ]
+    },
+    {
+      "h": "A quick test",
+      "p": [
+        "Ask the new person to recalculate one month from the documents. If they get the same number, the handover worked."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "How long to keep records",
+      "to": "/answers/how-long-to-keep-carbon-accounting-records"
+    },
+    {
+      "label": "Who should sign off",
+      "to": "/answers/who-should-sign-off-company-carbon-figures"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

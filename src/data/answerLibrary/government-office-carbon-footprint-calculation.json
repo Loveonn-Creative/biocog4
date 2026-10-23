@@ -1,0 +1,48 @@
+{
+  "slug": "government-office-carbon-footprint-calculation",
+  "q": "How does a government office or department calculate its carbon footprint?",
+  "title": "Carbon footprint for a government office",
+  "short": "Start with what the office controls: diesel for official vehicles and generators as Scope 1, and electricity for its buildings as Scope 2 at 0.710 kg CO2 per kWh. Add official travel and major purchases as Scope 3 later. Departments with many buildings should report each site separately, then total.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Government departments and public offices",
+  "sections": [
+    {
+      "h": "Records to collect",
+      "ul": [
+        "Electricity bills for each building.",
+        "Fuel slips for official vehicles and generators.",
+        "Travel claims for flights and trains.",
+        "Refrigerant refills for air conditioners."
+      ]
+    },
+    {
+      "h": "Boundary",
+      "p": [
+        "Buildings shared with other departments: count the share on your bill or meter. Contractors running services keep their own fuel, which you can add as Scope 3."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Bank branch footprint",
+      "to": "/answers/bank-branch-carbon-footprint-calculation"
+    },
+    {
+      "label": "NGO carbon footprint",
+      "to": "/answers/ngo-carbon-footprint-how-to-start"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

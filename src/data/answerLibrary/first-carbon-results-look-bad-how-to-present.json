@@ -1,0 +1,50 @@
+{
+  "slug": "first-carbon-results-look-bad-how-to-present",
+  "q": "Our first carbon footprint looks high. How do we present it to a buyer?",
+  "title": "Presenting a high first footprint",
+  "short": "Present it plainly with context. Show the total, the biggest two or three sources, what share comes from bills versus estimates, and one or two concrete actions with dates. Buyers mostly judge whether the number is credible and whether you have a plan, not whether it is small.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Suppliers sharing a first footprint",
+  "sections": [
+    {
+      "h": "A one-page layout",
+      "ol": [
+        "Total for the year, Scope 1, 2 and 3 split.",
+        "Top sources, for example grid electricity and diesel.",
+        "Data quality: share from invoices and bills, share estimated.",
+        "Two actions with dates and the expected effect."
+      ]
+    },
+    {
+      "h": "What not to do",
+      "ul": [
+        "Do not leave sources out to make the total smaller.",
+        "Do not subtract carbon credits from the inventory.",
+        "Do not compare with another company without the same boundary."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Buyer asks for a reduction plan",
+      "to": "/answers/buyer-asks-reduction-plan-with-dates"
+    },
+    {
+      "label": "Buyer says our figure is too low",
+      "to": "/answers/buyer-says-my-carbon-footprint-is-too-low"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

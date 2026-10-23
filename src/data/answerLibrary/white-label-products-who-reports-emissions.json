@@ -1,0 +1,47 @@
+{
+  "slug": "white-label-products-who-reports-emissions",
+  "q": "We sell products made for us under our brand by another factory. Who reports their emissions?",
+  "title": "White-label products: who reports what",
+  "short": "Both, in different places. The maker reports its fuel and electricity in its own Scope 1 and 2. You, as the brand owner, report the products you buy in Scope 3 Category 1, and their use and disposal in Categories 11 and 12 where relevant. Ask the maker for its per-unit footprint.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brand owners using contract manufacturers",
+  "sections": [
+    {
+      "h": "What to ask the maker",
+      "ul": [
+        "Emissions per unit or per kg for your products, with the year.",
+        "Which scopes and stages are included.",
+        "The share of its output that your orders represent."
+      ]
+    },
+    {
+      "h": "If the maker cannot answer",
+      "p": [
+        "Use your purchase quantities with an industry average factor, label it as secondary data, and ask again next year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated records with the quantity, unit and factor on each line, and marks lines without a usable quantity as needing data instead of guessing.",
+  "links": [
+    {
+      "label": "Goods bought from a trader",
+      "to": "/answers/goods-bought-from-trader-scope-3"
+    },
+    {
+      "label": "Merchant exporter footprint",
+      "to": "/answers/merchant-exporter-carbon-footprint-without-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

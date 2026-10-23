@@ -1,0 +1,47 @@
+{
+  "slug": "bee-certified-energy-manager-small-factory",
+  "q": "Does a small factory need a BEE certified energy manager?",
+  "title": "BEE energy manager for small factories",
+  "short": "Only designated consumers under the Energy Conservation Act must appoint or designate a certified energy manager. A small factory that is not notified has no such duty. Many still give one person the job of tracking energy and fuel, which also makes carbon reporting and buyer requests easier.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSME owners and plant heads",
+  "sections": [
+    {
+      "h": "If you are a designated consumer",
+      "ul": [
+        "Appoint or designate a BEE certified energy manager.",
+        "Get mandatory energy audits done and report energy use as required."
+      ]
+    },
+    {
+      "h": "If you are not",
+      "ul": [
+        "Name one person to own energy and fuel records.",
+        "Use BEE resources for MSMEs and cluster programmes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Am I a designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "Carbon, energy and ESG audits",
+      "to": "/answers/carbon-audit-vs-energy-audit-vs-esg-audit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation Act, 2001, as amended in 2022",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

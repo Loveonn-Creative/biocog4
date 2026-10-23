@@ -1,0 +1,51 @@
+{
+  "slug": "emissions-accrual-before-invoices-arrive",
+  "q": "Our year closes before some fuel invoices arrive. How do we count those emissions?",
+  "title": "Fuel used before the invoice arrives",
+  "short": "Count emissions in the period the fuel was received or used, not when the invoice comes. Use the delivery challan, tank dip or meter reading to estimate the quantity at year end, label it as an estimate, and replace it with the invoice figure when it arrives.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance teams closing the year",
+  "sections": [
+    {
+      "h": "Evidence for the estimate",
+      "ul": [
+        "Delivery challan or gate entry with quantity.",
+        "Tank dip or meter reading on the last day.",
+        "Purchase order with agreed quantity."
+      ]
+    },
+    {
+      "h": "True-up",
+      "p": [
+        "When the invoice arrives, correct the figure. If the difference is material and the report has gone out, note the correction next year."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "Year-end invoice cut-off",
+      "to": "/answers/verifier-checks-year-end-invoice-cut-off"
+    },
+    {
+      "label": "Estimated bill true-up",
+      "to": "/answers/estimated-bill-true-up-next-year"
+    },
+    {
+      "label": "Delivery challans as evidence",
+      "to": "/answers/delivery-challan-as-carbon-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

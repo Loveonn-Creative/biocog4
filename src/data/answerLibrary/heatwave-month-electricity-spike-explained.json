@@ -1,0 +1,47 @@
+{
+  "slug": "heatwave-month-electricity-spike-explained",
+  "q": "Our electricity use spiked in a heatwave month. How do we explain it in our report?",
+  "title": "Explaining a heatwave spike",
+  "short": "Show it, do not smooth it. Note the month, the cause such as extra cooling or longer running hours, and the kWh involved. Cooling degree days for your location help show weather, not waste, drove it. A verifier or buyer accepts a spike with a reason far more readily than a gap.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories in hot regions",
+  "sections": [
+    {
+      "h": "What to write",
+      "ul": [
+        "Month and kWh against the same month last year.",
+        "Main cause: cooling, ventilation, process cooling.",
+        "Any one-off, such as a breakdown that shifted load."
+      ]
+    },
+    {
+      "h": "Comparing years",
+      "p": [
+        "If you compare years, normalise cooling energy with degree days and show both raw and normalised figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Degree days for cooling",
+      "to": "/answers/degree-days-to-normalise-cooling-energy"
+    },
+    {
+      "label": "Why a month looks unusual",
+      "to": "/answers/verifier-asks-why-a-month-looks-unusual"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

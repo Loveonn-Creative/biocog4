@@ -1,0 +1,48 @@
+{
+  "slug": "ngo-carbon-footprint-how-to-start",
+  "q": "How does an NGO or trust work out its carbon footprint?",
+  "title": "Carbon footprint for an NGO",
+  "short": "The same way a company does. Under operational control, count fuel for your vehicles and generators as Scope 1 and electricity in your offices and centres as Scope 2. Add staff travel and major purchases as Scope 3. Donors mostly want a clear, sourced figure and what you plan to change.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "NGOs, trusts and foundations",
+  "sections": [
+    {
+      "h": "Start with",
+      "ul": [
+        "Electricity bills for every office, school or clinic you run.",
+        "Fuel for vehicles and generators.",
+        "Flights and trains for staff."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Programmes run by partners: their emissions are theirs, unless you control the site.",
+        "Donated goods: count only if you choose to include them, and say how."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Bank branch footprint",
+      "to": "/answers/bank-branch-carbon-footprint-calculation"
+    },
+    {
+      "label": "IT company footprint per employee",
+      "to": "/answers/it-company-carbon-footprint-per-employee"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

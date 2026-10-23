@@ -1,0 +1,47 @@
+{
+  "slug": "solar-generation-data-missing-for-a-month",
+  "q": "Our rooftop solar monitoring was offline for a month. What do we do?",
+  "title": "Missing a month of solar data",
+  "short": "Your Scope 2 still comes from the grid units on your electricity bill, so it is unaffected. What is missing is the solar figure for any renewable share you report. Estimate it from the same month last year or from neighbouring months, label it as an estimate, and fix the monitoring.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with rooftop solar",
+  "sections": [
+    {
+      "h": "Sources for the estimate",
+      "ul": [
+        "Inverter display or log stored locally.",
+        "Net meter export readings on the bill.",
+        "Same month last year, adjusted for panel degradation if large."
+      ]
+    },
+    {
+      "h": "Report it",
+      "p": [
+        "Say which month was estimated and how. Do not use the estimate to raise a renewable claim beyond what the evidence supports."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Inverter reading vs net meter",
+      "to": "/answers/solar-inverter-reading-vs-net-meter-scope-2"
+    },
+    {
+      "label": "Rooftop solar net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "what-is-scope-4-avoided-emissions",
+  "q": "What is Scope 4, and should we report it?",
+  "title": "What is \"Scope 4\"?",
+  "short": "Scope 4 is an informal name for avoided emissions: the emissions a product helps customers avoid compared with an alternative. It is not a GHG Protocol scope. Report it, if at all, separately from Scope 1, 2 and 3, with the comparison scenario stated, and never subtract it from your footprint.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Companies selling efficient or low-carbon products",
+  "sections": [
+    {
+      "h": "How to report it",
+      "ul": [
+        "State the reference product or scenario.",
+        "Show the calculation and its assumptions.",
+        "Keep it outside the inventory totals."
+      ]
+    },
+    {
+      "h": "When it is credible",
+      "p": [
+        "When the product clearly performs better than what it replaces, the reference is realistic, and your own Scope 1, 2 and 3 are reported in full beside it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    },
+    {
+      "label": "Can recycling be deducted?",
+      "to": "/answers/recycling-avoided-emissions-can-i-deduct"
+    }
+  ],
+  "sources": [
+    {
+      "label": "WBCSD Guidance on Avoided Emissions (2023)",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

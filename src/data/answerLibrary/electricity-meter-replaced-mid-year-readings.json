@@ -1,0 +1,47 @@
+{
+  "slug": "electricity-meter-replaced-mid-year-readings",
+  "q": "Our electricity meter was replaced mid-year. How do we total the year's units?",
+  "title": "Meter replaced mid-year",
+  "short": "Add both meters for the year: units on the old meter up to its final reading, plus units on the new meter from its first reading. The bill for the change month usually shows both. Watch for a month billed on an average while the meter was out, and replace it with actual readings if the discom revises it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance and maintenance teams",
+  "sections": [
+    {
+      "h": "Check the change month",
+      "ul": [
+        "Final reading of the old meter and the replacement date.",
+        "Initial reading of the new meter.",
+        "Any multiplying factor on the new meter, if it changed."
+      ]
+    },
+    {
+      "h": "If units look wrong",
+      "p": [
+        "Compare with the months either side. A sudden drop often means an average bill; a jump may mean an old-meter arrear."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Split a bill across months",
+      "to": "/answers/split-electricity-bill-across-months-for-carbon"
+    },
+    {
+      "label": "Estimated bill true-up",
+      "to": "/answers/estimated-bill-true-up-next-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

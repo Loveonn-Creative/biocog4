@@ -1,0 +1,47 @@
+{
+  "slug": "one-lpg-bill-for-canteen-and-process",
+  "q": "We buy LPG on one bill for both the canteen and the process. Do we need to split it?",
+  "title": "One LPG bill for canteen and process",
+  "short": "Not for your company footprint: all LPG you burn is Scope 1 either way. Split it only for a product footprint, where canteen gas is usually left out as not attributable. Use a cylinder issue log or separate regulators to see how much goes where, and note the split method.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories with staff canteens",
+  "sections": [
+    {
+      "h": "Ways to split",
+      "ul": [
+        "Cylinder issue log by user.",
+        "Separate manifolds or flow meters.",
+        "Canteen use estimated from meals served, the rest to process."
+      ]
+    },
+    {
+      "h": "Factor",
+      "p": [
+        "LPG at 2.98 kg CO2 per kg, from IPCC 2006 defaults, whichever way it is split."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Induction vs LPG canteen",
+      "to": "/answers/induction-vs-lpg-canteen-kitchen-emissions"
+    },
+    {
+      "label": "Staff canteen meals",
+      "to": "/answers/staff-canteen-meals-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

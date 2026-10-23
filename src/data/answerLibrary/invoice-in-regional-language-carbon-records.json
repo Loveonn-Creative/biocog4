@@ -1,0 +1,47 @@
+{
+  "slug": "invoice-in-regional-language-carbon-records",
+  "q": "Can an invoice in Hindi, Marathi or Tamil be used for carbon records?",
+  "title": "Regional-language invoices as evidence",
+  "short": "Yes. The language does not matter; the facts do. The record needs the supplier, date, item, quantity and unit to be readable. Add a short English note of the item and quantity next to each such invoice so a verifier or foreign buyer can follow it without a translator.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs whose suppliers bill in a regional language",
+  "sections": [
+    {
+      "h": "What to add",
+      "ul": [
+        "A one-line English description of the item, for example high speed diesel or coal.",
+        "The quantity and unit as printed.",
+        "Your initials and date on the note, so the translation is traceable."
+      ]
+    },
+    {
+      "h": "Where it helps",
+      "p": [
+        "Verifiers and EU buyers often review records in English. A consistent note avoids the same invoice being read two different ways."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "Handwritten fuel bills",
+      "to": "/answers/handwritten-fuel-bill-as-carbon-evidence"
+    },
+    {
+      "label": "Proforma invoices in records",
+      "to": "/answers/proforma-invoice-in-carbon-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

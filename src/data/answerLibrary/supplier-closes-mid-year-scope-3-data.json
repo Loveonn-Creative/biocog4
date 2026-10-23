@@ -1,0 +1,52 @@
+{
+  "slug": "supplier-closes-mid-year-scope-3-data",
+  "q": "A supplier shut down mid-year before sending carbon data. What do we use?",
+  "title": "Supplier closed before sending data",
+  "short": "Use what you have for the months you bought from them: quantities from your own purchase invoices times an average or spend-based factor, labelled as secondary data. Do not leave the purchases out. Use the new supplier's data from when you switched, and note the change in your method log.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Procurement teams collecting Scope 3 data",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Total the quantities bought from the closed supplier in the year.",
+        "Apply an industry average factor for that material, with the source.",
+        "Mark those lines as secondary data.",
+        "Switch to the new supplier's figures from the change date."
+      ]
+    },
+    {
+      "h": "Keep for later",
+      "p": [
+        "If the closed supplier's data appears later, for example through a buyer or industry body, replace the estimate and note it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices into dated records with the quantity, unit and factor on each line, and marks lines without a usable quantity as needing data instead of guessing.",
+  "links": [
+    {
+      "label": "Supplier switched to green power mid-year",
+      "to": "/answers/supplier-switched-to-green-power-mid-year"
+    },
+    {
+      "label": "Which suppliers to engage first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    },
+    {
+      "label": "Goods bought from a trader",
+      "to": "/answers/goods-bought-from-trader-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

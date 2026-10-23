@@ -1,0 +1,58 @@
+{
+  "slug": "hire-carbon-consultant-or-do-it-yourself",
+  "q": "Should an MSME hire a carbon consultant or prepare the footprint itself?",
+  "title": "Carbon consultant or do it yourself",
+  "short": "Do Scope 1 and 2 yourself if your bills are in order: it is arithmetic on your own documents. Bring in help for a product footprint under ISO 14067, a large Scope 3 exercise or an assurance-ready inventory. Either way, keep the documents and method note in your own hands so the work is repeatable.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners deciding how to start",
+  "sections": [
+    {
+      "h": "Do it yourself when",
+      "ul": [
+        "You need an annual Scope 1 and 2 figure for a buyer.",
+        "Your fuels and meters are few and well documented."
+      ]
+    },
+    {
+      "h": "Get help when",
+      "ul": [
+        "A buyer wants a product footprint to a named standard.",
+        "You are preparing for third-party verification.",
+        "You have many sites, processes or process emissions."
+      ]
+    },
+    {
+      "h": "If you hire",
+      "p": [
+        "Ask for the calculation file, factor sources and assumptions, not only a PDF. You should be able to update it next year without them."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "Red flags in a consultant report",
+      "to": "/answers/carbon-report-red-flags-from-consultant"
+    },
+    {
+      "label": "Can our CA prepare it?",
+      "to": "/answers/can-our-chartered-accountant-prepare-the-ghg-inventory"
+    },
+    {
+      "label": "Excel or software",
+      "to": "/answers/excel-or-carbon-accounting-software"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

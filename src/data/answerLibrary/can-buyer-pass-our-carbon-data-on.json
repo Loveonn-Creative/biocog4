@@ -1,0 +1,47 @@
+{
+  "slug": "can-buyer-pass-our-carbon-data-on",
+  "q": "Can our buyer share our carbon data with its own customers?",
+  "title": "Can a buyer pass your data on?",
+  "short": "Only as far as your agreement allows. Many buyers use supplier figures inside their own product footprints, which their customers then see in aggregated form. If you do not want your figures shown on their own, say so in writing: share for inventory use, no onward disclosure by name.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Suppliers sharing emissions data",
+  "sections": [
+    {
+      "h": "What to agree",
+      "ul": [
+        "Purpose: the buyer's own inventory or product footprint.",
+        "Whether your name and figures may appear in reports.",
+        "Retention and deletion when the relationship ends."
+      ]
+    },
+    {
+      "h": "Practical step",
+      "p": [
+        "Share totals and intensities rather than raw invoices where you can."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Will a buyer keep data confidential?",
+      "to": "/answers/will-buyer-keep-my-emissions-data-confidential"
+    },
+    {
+      "label": "Buyer audit rights",
+      "to": "/answers/buyer-audit-rights-over-supplier-emissions-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "kerosene-emission-factor-per-litre",
+  "q": "What emission factor should we use for kerosene?",
+  "title": "Kerosene emission factor",
+  "short": "Use the IPCC 2006 default for other kerosene: 71,900 kg CO2 per TJ at a net calorific value of 43.8 TJ per thousand tonnes, about 3.15 kg CO2 per kg. At a density near 0.8 kg per litre that is roughly 2.5 kg CO2 per litre; use your supplier's density if stated.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Users of kerosene in heaters, lamps or cleaning",
+  "sections": [
+    {
+      "h": "Where it shows up",
+      "ul": [
+        "Space heaters and lamps at remote sites.",
+        "Parts cleaning, if it is burned afterwards.",
+        "Small furnaces in some crafts."
+      ]
+    },
+    {
+      "h": "Scope",
+      "p": [
+        "Kerosene burned in your equipment is Scope 1. Kerosene used only as a cleaning solvent and not burned is not combustion; see the solvent page."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Diesel or kerosene as solvent",
+      "to": "/answers/diesel-or-kerosene-as-cleaning-solvent"
+    },
+    {
+      "label": "LDO and LSHS factors",
+      "to": "/answers/ldo-and-lshs-emission-factor"
+    },
+    {
+      "label": "HSN codes for fuels",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "example": {
+    "title": "Illustrative calculation",
+    "lines": [
+      "200 litres of kerosene.",
+      "200 × 0.8 = 160 kg.",
+      "160 × 3.15 = 504 kg CO2."
+    ],
+    "note": "Illustrative quantity."
+  }
+}

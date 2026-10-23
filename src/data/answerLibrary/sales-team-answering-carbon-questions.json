@@ -1,0 +1,49 @@
+{
+  "slug": "sales-team-answering-carbon-questions",
+  "q": "What should our sales team say when a buyer asks about our carbon footprint?",
+  "title": "Carbon answers for the sales team",
+  "short": "Give them three approved lines: our latest Scope 1 and 2 figure with the year, how it was calculated, and the next step such as Scope 3 or a target. Anything beyond that goes to the person who owns the data. Sales should never promise a figure, label or certificate you do not have.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Sales and export teams",
+  "sections": [
+    {
+      "h": "Approved lines",
+      "ul": [
+        "Our 2025-26 Scope 1 and 2 emissions were X t CO2e, from our fuel invoices and electricity bills.",
+        "We follow the GHG Protocol.",
+        "We are adding Scope 3 this year; the data owner can share details."
+      ]
+    },
+    {
+      "h": "Do not say",
+      "ul": [
+        "We are carbon neutral, unless it is true and documented.",
+        "We are ISO 14064 certified.",
+        "Our footprint is lower than competitors, without a like-for-like basis."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Buyer asks for ISO 14064 certificate",
+      "to": "/answers/buyer-asks-for-iso-14064-certificate"
+    },
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14021, Environmental labels and declarations: self-declared claims (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

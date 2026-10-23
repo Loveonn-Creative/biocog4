@@ -1,0 +1,57 @@
+{
+  "slug": "rec-vs-carbon-credit-difference",
+  "q": "What is the difference between a REC and a carbon credit?",
+  "title": "REC vs carbon credit",
+  "short": "A REC is the claim to one megawatt-hour of renewable electricity, used for a market-based Scope 2 figure. A carbon credit represents one tonne of CO2e reduced or removed somewhere else. RECs change how you report electricity; carbon credits never reduce your inventory and are reported separately.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Buyers comparing green certificates",
+  "sections": [
+    {
+      "h": "REC",
+      "ul": [
+        "Unit: 1 MWh.",
+        "Use: market-based Scope 2.",
+        "In India: issued under the REC mechanism."
+      ]
+    },
+    {
+      "h": "Carbon credit",
+      "ul": [
+        "Unit: 1 t CO2e.",
+        "Use: claims beyond your inventory, after retirement.",
+        "Issued by registries for verified projects."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "Green tariff or RECs",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Can a report subtract offsets?",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

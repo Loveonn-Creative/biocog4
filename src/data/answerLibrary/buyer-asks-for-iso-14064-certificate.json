@@ -1,0 +1,51 @@
+{
+  "slug": "buyer-asks-for-iso-14064-certificate",
+  "q": "My buyer asked for an ISO 14064 certificate. What do I actually send?",
+  "title": "Buyer asks for an ISO 14064 certificate",
+  "short": "ISO does not issue certificates to companies. What exists is a GHG inventory prepared under ISO 14064-1 and a verification statement from an independent body under ISO 14064-3, ideally accredited under ISO 14065. Send the statement, the inventory summary and the level of assurance it gives.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Suppliers asked for carbon certification by buyers",
+  "sections": [
+    {
+      "h": "The three pieces",
+      "ul": [
+        "ISO 14064-1: how you build the inventory.",
+        "ISO 14064-3: how a verifier checks it.",
+        "ISO 14065: how verification bodies are accredited."
+      ]
+    },
+    {
+      "h": "What to check before you pay",
+      "p": [
+        "Ask the buyer whether limited assurance is enough, which year and boundary they want, and whether a statement from any accredited body is accepted."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every invoice and bill it reads, so the same document is never counted twice, and each emission line links back to the page, quantity and factor it came from.",
+  "links": [
+    {
+      "label": "ISO 14064-1 vs 14064-2",
+      "to": "/answers/iso-14064-1-vs-iso-14064-2"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "Who can verify in India",
+      "to": "/answers/who-can-verify-iso-14064-1-inventory-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1 and 14064-3 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
