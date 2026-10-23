@@ -1,0 +1,82 @@
+{
+  "slug": "cbam-cn-2507-calcined-clay-vs-kaolin",
+  "q": "Is calcined clay or kaolin under CN 2507 covered by CBAM?",
+  "title": "CBAM CN 2507: calcined clay vs kaolin",
+  "short": "It depends on the subheading. Annex I covers other kaolinic clays, CN 2507 00 80, under cement. Kaolin itself, 2507 00 20, is not listed. Cement goods count direct and indirect emissions, CO2 only. Classification decides whether your buyer declares anything.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian kaolin and calcined clay suppliers to EU cement and ceramic buyers",
+  "sections": [
+    {
+      "h": "Is it covered?",
+      "p": [
+        "Annex I lists CN 2507 00 80, other kaolinic clays, in the cement group. CN 2507 00 20, kaolin, is not listed, so it is outside CBAM. For cement goods, both direct emissions and the indirect emissions of electricity count, and the gas is CO2."
+      ]
+    },
+    {
+      "h": "Precursors to report",
+      "p": [
+        "None. Calcined clay has no covered precursor before it. Its figure is the fuel burnt in the calciner plus the electricity used, per tonne."
+      ]
+    },
+    {
+      "h": "Default value",
+      "p": [
+        "The Commission sets default values by CN code and country of origin in the annex to Implementing Regulation (EU) 2025/2621, with a mark-up that rises over the first years. We do not quote the figure here. Open the annex, find your code and India, and treat it as the number your buyer pays on if you send nothing usable."
+      ]
+    },
+    {
+      "h": "What to send your EU importer",
+      "ul": [
+        "The CN subheading with the lab report or specification that supports it.",
+        "Direct emissions per tonne from calciner fuel.",
+        "Electricity used per tonne and its source, since indirect emissions count for cement goods.",
+        "Whether a CBAM-accredited verifier has checked the figure."
+      ]
+    },
+    {
+      "h": "The common mistake",
+      "p": [
+        "Picking the code by name. A material sold as kaolin may be classified as other kaolinic clay, or the reverse, depending on composition and processing. Agree the subheading with the importer and their customs broker before shipping."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Calcined clay cement CBAM figure",
+      "to": "/answers/cbam-lc3-calcined-clay-cement-figure"
+    },
+    {
+      "label": "Is cement covered by CBAM?",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, methods and precursors",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

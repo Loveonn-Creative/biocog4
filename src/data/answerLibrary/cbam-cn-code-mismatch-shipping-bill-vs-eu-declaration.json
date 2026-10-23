@@ -1,0 +1,71 @@
+{
+  "slug": "cbam-cn-code-mismatch-shipping-bill-vs-eu-declaration",
+  "q": "What if my shipping bill code differs from the EU CN code?",
+  "title": "When your code and the EU CN code differ",
+  "short": "CBAM coverage follows the 8-digit CN code on the EU import declaration, not your Indian ITC-HS code. The first six digits usually match; the last two can differ. Agree the CN code with your buyer before shipping and use it on the emissions data you send.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters of steel, aluminium, cement and fertiliser goods",
+  "sections": [
+    {
+      "h": "Why codes differ",
+      "ul": [
+        "India's ITC-HS and the EU's Combined Nomenclature share the first six digits of the Harmonized System.",
+        "The last two digits are national, so 7208 51 can be split differently on each side.",
+        "Customs in the EU can also reclassify a product on import."
+      ]
+    },
+    {
+      "h": "Why it matters for CBAM",
+      "ul": [
+        "Annex I lists goods by CN code, sometimes down to eight digits.",
+        "Default values in Implementing Regulation (EU) 2025/2621 are set per CN code.",
+        "Emissions data the importer files must match the code they declared."
+      ]
+    },
+    {
+      "h": "What to do",
+      "ul": [
+        "Ask the buyer or their customs broker for the 8-digit CN code they will declare.",
+        "Put that code on your invoice description and on the emissions data.",
+        "If it changes, resend the data under the new code."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Assuming a product is out because the Indian code looks different. Check the CN code against Annex I, not your shipping bill."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "What an EU steel buyer asks for",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

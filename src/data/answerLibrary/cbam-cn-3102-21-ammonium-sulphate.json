@@ -1,0 +1,83 @@
+{
+  "slug": "cbam-cn-3102-21-ammonium-sulphate",
+  "q": "Is ammonium sulphate under CN 3102 21 covered by CBAM?",
+  "title": "CBAM CN 3102 21: ammonium sulphate",
+  "short": "Yes. Annex I covers all of heading 3102, so ammonium sulphate, CN 3102 21, is in. Fertilisers count direct and indirect emissions. The covered precursor is the ammonia that went in, whether you made it or recovered it as a by-product.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ammonium sulphate makers, including caprolactam and coke oven by-product units",
+  "sections": [
+    {
+      "h": "Is it covered?",
+      "p": [
+        "Yes. Heading 3102, mineral or chemical nitrogenous fertilisers, is covered in full. Ammonium sulphate under 3102 21 is part of it. The gases listed for 3102 are CO2 and nitrous oxide."
+      ]
+    },
+    {
+      "h": "Precursors to report",
+      "ul": [
+        "Ammonia (2814), with its maker's embedded emissions, or your own figure if you make it.",
+        "Sulphuric acid is not a CBAM good and needs no figure."
+      ]
+    },
+    {
+      "h": "Default value",
+      "p": [
+        "The Commission sets default values by CN code and country of origin in the annex to Implementing Regulation (EU) 2025/2621, with a mark-up that rises over the first years. We do not quote the figure here. Open the annex, find your code and India, and treat it as the number your buyer pays on if you send nothing usable."
+      ]
+    },
+    {
+      "h": "What to send your EU importer",
+      "ul": [
+        "Direct embedded emissions per tonne of ammonium sulphate, from fuel, feedstock and process.",
+        "Electricity used per tonne and its source, because fertiliser goods count indirect emissions too.",
+        "Each precursor's embedded emissions per tonne and its supplier if bought in.",
+        "Whether a verifier accredited for CBAM has checked the figure."
+      ]
+    },
+    {
+      "h": "The common mistake",
+      "p": [
+        "Treating by-product ammonium sulphate as free of emissions. It is still a covered good. The question is how the ammonia and the process energy are allocated, under the methods in Implementing Regulation (EU) 2023/1773. Agree the approach with your verifier first."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Urea and DAP under CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Ammonia under CBAM",
+      "to": "/answers/cbam-cn-2814-aqueous-ammonia"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, methods and precursors",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

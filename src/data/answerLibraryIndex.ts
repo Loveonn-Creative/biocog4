@@ -3683,6 +3683,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "cbam-50-tonne-threshold-how-counted",
+  "q": "How is the CBAM 50-tonne threshold counted?",
+  "title": "How the CBAM 50-tonne threshold works",
+  "short": "Per importer, per calendar year, by net mass, across steel, aluminium, cement and fertiliser goods combined. An importer bringing in 50 tonnes or less a year in total is exempt. Hydrogen and electricity have no threshold. The rule came in with Regulation (EU) 2025/2083.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "cbam-actual-emissions-need-verification-importer",
   "q": "Do actual emissions in a CBAM declaration need to be verified?",
   "title": "CBAM actual emissions: verification",
@@ -3731,6 +3739,174 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "cbam-cn-2507-calcined-clay-vs-kaolin",
+  "q": "Is calcined clay or kaolin under CN 2507 covered by CBAM?",
+  "title": "CBAM CN 2507: calcined clay vs kaolin",
+  "short": "It depends on the subheading. Annex I covers other kaolinic clays, CN 2507 00 80, under cement. Kaolin itself, 2507 00 20, is not listed. Cement goods count direct and indirect emissions, CO2 only. Classification decides whether your buyer declares anything.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-2814-aqueous-ammonia",
+  "q": "Is anhydrous or aqueous ammonia under CN 2814 covered by CBAM?",
+  "title": "CBAM CN 2814: ammonia, liquid or aqueous",
+  "short": "Yes. Annex I covers ammonia under CN 2814, both anhydrous (2814 10) and in aqueous solution (2814 20), in the fertiliser group. The gas listed is CO2. Fertiliser goods count direct and indirect emissions. Ammonia is also the main precursor for most other covered fertilisers.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-2834-21-potassium-nitrate",
+  "q": "Is potassium nitrate under CN 2834 21 covered by CBAM?",
+  "title": "CBAM CN 2834 21: potassium nitrate",
+  "short": "Yes. Potassium nitrate, CN 2834 21 00, is listed in the fertiliser group of Annex I, with CO2 and nitrous oxide as the gases. Fertilisers count direct and indirect emissions. The covered precursor is the nitric acid, or ammonia behind it, used to make the nitrate.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-3102-21-ammonium-sulphate",
+  "q": "Is ammonium sulphate under CN 3102 21 covered by CBAM?",
+  "title": "CBAM CN 3102 21: ammonium sulphate",
+  "short": "Yes. Annex I covers all of heading 3102, so ammonium sulphate, CN 3102 21, is in. Fertilisers count direct and indirect emissions. The covered precursor is the ammonia that went in, whether you made it or recovered it as a by-product.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7205-iron-steel-powders",
+  "q": "Are iron and steel powders and granules under CN 7205 covered by CBAM?",
+  "title": "CBAM CN 7205: iron and steel powders",
+  "short": "Yes. Granules and powders of pig iron, spiegeleisen, iron or steel, CN 7205, are covered under the Chapter 72 line. Direct emissions only. Atomisers pass on the melted steel or iron's figure; sponge iron powder makers report their DRI route.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7206-steel-ingots",
+  "q": "Are steel ingots under CN 7206 covered by CBAM?",
+  "title": "CBAM CN 7206: steel ingots",
+  "short": "Yes. Iron and non-alloy steel in ingots and other primary forms, CN 7206, falls under the Chapter 72 iron and steel line of Annex I. Only direct emissions count, CO2 only. Your EU buyer needs a per-tonne figure for the melt shop plus the iron and ferro-alloys that went in.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7207-billets-slabs-india-exporter",
+  "q": "Are steel billets, blooms and slabs under CN 7207 covered by CBAM?",
+  "title": "CBAM CN 7207: billets, blooms, slabs",
+  "short": "Yes. Semi-finished iron or non-alloy steel, CN 7207, is covered under the Chapter 72 line of Annex I. Direct emissions only, CO2 only. If you sell billets to an EU re-roller, they need your per-tonne figure because your billet becomes their precursor.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7208-hot-rolled-coil-plate-india",
+  "q": "Is hot-rolled coil and plate under CN 7208 covered by CBAM?",
+  "title": "CBAM CN 7208: hot-rolled coil and plate",
+  "short": "Yes. Flat-rolled iron or non-alloy steel, hot-rolled, 600 mm or wider, is CN 7208 and covered under the Chapter 72 line of Annex I. Direct emissions only. A rolling mill that buys slabs passes on the slab maker's figure as a precursor and adds its own reheating fuel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7210-galvanised-ppgi-tinplate",
+  "q": "Are galvanised, colour-coated and tinplate sheets under CN 7210 covered by CBAM?",
+  "title": "CBAM CN 7210: GI, PPGI and tinplate",
+  "short": "Yes. Coated flat steel 600 mm or wider, CN 7210, covers tinplate, galvanised (GI, GL) and painted sheet (PPGI), and is covered under the Chapter 72 line. Direct emissions only. The zinc and paint are not CBAM precursors; the steel substrate is.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7211-7212-narrow-steel-strip",
+  "q": "Is narrow steel strip under CN 7211 and 7212 covered by CBAM?",
+  "title": "CBAM CN 7211, 7212: narrow strip",
+  "short": "Yes. Flat-rolled iron or non-alloy steel under 600 mm wide, uncoated (7211) or coated (7212), is covered under the Chapter 72 line. Direct emissions only. Slitters and re-rollers pass on the coil maker's figure and add their own furnace fuel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7215-bright-steel-bars",
+  "q": "Are bright and cold-finished steel bars under CN 7215 covered by CBAM?",
+  "title": "CBAM CN 7215: bright steel bars",
+  "short": "Yes. Other bars and rods of iron or non-alloy steel, CN 7215, which includes cold-drawn and bright bars, is covered under the Chapter 72 line. Direct emissions only. Your figure is the hot-rolled bar's embedded emissions plus any fuel you burn while finishing.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7216-angles-channels-beams",
+  "q": "Are steel angles, channels and beams under CN 7216 covered by CBAM?",
+  "title": "CBAM CN 7216: angles, channels, beams",
+  "short": "Yes. Angles, shapes and sections of iron or non-alloy steel, CN 7216, are covered under the Chapter 72 line. Direct emissions only. Structural mills rolling bought billets pass on the billet maker's figure and add their reheating furnace fuel per tonne of section.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7218-7219-stainless-slab-sheet",
+  "q": "Are stainless steel slabs and sheets under CN 7218 and 7219 covered by CBAM?",
+  "title": "CBAM CN 7218, 7219: stainless flat",
+  "short": "Yes. Stainless steel in primary and semi-finished forms (7218) and flat-rolled stainless 600 mm or wider (7219) are covered under the Chapter 72 line. Direct emissions only. Ferro-chrome and ferro-nickel are covered precursors and usually the largest share.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7221-7223-stainless-bars-wire",
+  "q": "Are stainless steel bars, rods and wire under CN 7221 to 7223 covered by CBAM?",
+  "title": "CBAM CN 7221 to 7223: stainless long",
+  "short": "Yes. Stainless wire rod (7221), bars, rods, angles and sections (7222) and stainless wire (7223) are covered under the Chapter 72 line. Direct emissions only. Wire drawers pass on the rod maker's figure, including its ferro-chrome and ferro-nickel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7224-7229-alloy-steel-bars-wire",
+  "q": "Are alloy steel bars, sections and wire under CN 7224 to 7229 covered by CBAM?",
+  "title": "CBAM CN 7224 to 7229: alloy steel",
+  "short": "Yes. Other alloy steel, from semi-finished (7224) through flat products (7225, 7226), bars and rods (7227, 7228) to wire (7229), is covered under the Chapter 72 line. Direct emissions only. Forging and auto-component suppliers ship a lot of 7228.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7303-ductile-iron-pipes",
+  "q": "Are cast iron and ductile iron pipes under CN 7303 covered by CBAM?",
+  "title": "CBAM CN 7303: ductile iron pipes",
+  "short": "Yes. Tubes, pipes and hollow profiles of cast iron, CN 7303, are a covered Chapter 73 heading in Annex I. Direct emissions only. For ductile iron pipe the main precursor is the pig iron or hot metal you melt, plus your cupola or furnace fuel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7601-unwrought-aluminium-ingots-billets",
+  "q": "Are aluminium ingots, billets and slabs under CN 7601 covered by CBAM?",
+  "title": "CBAM CN 7601: unwrought aluminium",
+  "short": "Yes. Unwrought aluminium, CN 7601, covers primary and alloyed ingots, billets, slabs and sows, and is listed in Annex I. Direct emissions only, but the gases are CO2 and PFCs. A smelter reports anode and anode-effect emissions; a remelter reports its furnace fuel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7606-aluminium-sheet-plate-coil",
+  "q": "Are aluminium sheet, plate and coil under CN 7606 covered by CBAM?",
+  "title": "CBAM CN 7606: aluminium sheet and coil",
+  "short": "Yes. Aluminium plates, sheets and strip over 0.2 mm thick, CN 7606, are covered under the aluminium line of Annex I. Direct emissions only, CO2 and PFCs. Rolling mills pass on the slab maker's figure and add their own furnace and annealing fuel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7608-aluminium-tubes-pipes",
+  "q": "Are aluminium tubes and pipes under CN 7608 covered by CBAM?",
+  "title": "CBAM CN 7608: aluminium tubes and pipes",
+  "short": "Yes. Aluminium tubes and pipes, CN 7608, are covered under the aluminium line of Annex I. Direct emissions only, CO2 and PFCs. Tube makers pass on the billet or coil maker's figure and add their own furnace fuel. Fittings for those tubes fall under 7609, also covered.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-7609-7611-7613-aluminium-fittings-tanks-cylinders",
+  "q": "Are aluminium tube fittings, tanks and gas cylinders covered by CBAM?",
+  "title": "CBAM CN 7609, 7611, 7613: fittings",
+  "short": "Yes. Aluminium tube fittings (7609), tanks and vats over 300 litres (7611) and containers for compressed or liquefied gas (7613) are all covered in Annex I. Direct emissions only, CO2 and PFCs. The precursor is the aluminium you bought.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cn-code-mismatch-shipping-bill-vs-eu-declaration",
+  "q": "What if my shipping bill code differs from the EU CN code?",
+  "title": "When your code and the EU CN code differ",
+  "short": "CBAM coverage follows the 8-digit CN code on the EU import declaration, not your Indian ITC-HS code. The first six digits usually match; the last two can differ. Agree the CN code with your buyer before shipping and use it on the emissions data you send.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "cbam-communication-template-for-suppliers",
   "q": "Is there an official template for sending CBAM emissions data to my EU buyer?",
   "title": "CBAM communication template for suppliers",
@@ -3745,6 +3921,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "With verified actual data, scrap-based EAF and gas-based DRI steel can owe little or no CBAM in 2026, while blast furnace steel pays on emissions above the benchmark. By 2034, when free allocation ends, EAF scrap steel costs roughly a fifth of BF-BOF. The saving only appears with verified actual emissions, not default values.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cbam-cost-per-tonne-indian-aluminium-imports",
+  "q": "What does CBAM cost per tonne of aluminium imported from India?",
+  "title": "CBAM cost per tonne of Indian aluminium",
+  "short": "It is embedded emissions per tonne, minus the free allocation adjustment, times the certificate price. Aluminium counts direct emissions only, CO2 and PFCs, so captive coal power does not enter the figure. Primary metal costs more than recycled. Use the calculator for your code and tonnes.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-cost-per-tonne-indian-steel-imports",
+  "q": "What does CBAM cost per tonne of steel imported from India?",
+  "title": "CBAM cost per tonne of Indian steel",
+  "short": "It is embedded emissions per tonne, minus the free allocation adjustment, times the certificate price. India has no deductible carbon price. The cost depends most on route: blast furnace and coal-based DRI steel carry far more than scrap-based EAF. Use the calculator rather than one headline number.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "cbam-electricity-imports-cn-2716",
@@ -3995,12 +4187,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "cbam-timeline-what-indian-exporters-send-when",
+  "q": "When must Indian exporters send CBAM data to EU buyers?",
+  "title": "CBAM timeline for Indian exporters",
+  "short": "The definitive regime runs from 1 January 2026. Your buyer declares 2026 imports by 30 September 2027, so they need your verified figures for 2026 before then. Keep monthly records from January 2026 and agree a delivery date with each buyer.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "cbam-uan-solution-precursors-urea-ammonium-nitrate",
   "q": "How is the CBAM figure for urea ammonium nitrate solution built from its precursors?",
   "title": "UAN solution CBAM precursors",
   "short": "UAN is a mix of urea and ammonium nitrate in water. Its figure adds the embedded emissions of the urea and ammonium nitrate used, by weight, plus direct and indirect emissions of mixing. Ammonia and nitric acid sit behind both, with nitric acid N2O often the largest part.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "cbam-urea-technical-grade-and-def-covered",
+  "q": "Is technical-grade urea or diesel exhaust fluid covered by CBAM?",
+  "title": "CBAM urea: technical grade and DEF",
+  "short": "Urea is covered under CN 3102 10 whether or not in aqueous solution, so fertiliser, technical and automotive grades are in when declared there. Diesel exhaust fluid is often classified elsewhere, so check its code. Fertilisers count direct and indirect emissions. CO2 bound in urea is not subtracted.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "cbg-sold-under-satat-and-carbon-credits",
@@ -4361,6 +4569,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "It can be. Ship plate and other ferrous scrap brings no embedded emissions into the calculation under the transitional rules; check the definitive-period act. The reroller still counts direct emissions from its reheating furnace and any induction or arc melting, and any pig iron or DRI it adds.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "check-eu-buyer-is-authorised-cbam-declarant",
+  "q": "How do I check my EU buyer is an authorised CBAM declarant?",
+  "title": "Check your EU buyer is a CBAM declarant",
+  "short": "Ask for their CBAM account number and the member state that authorised them, and put the duty to hold the status in your contract. There is no public register to search. Without the status, EU customs can hold CBAM goods above the 50-tonne yearly threshold at the border.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "check-flood-risk-for-factory-site-india",
@@ -6585,6 +6801,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Almost certainly not, as the rules read today. CBAM deducts only a carbon price effectively paid under a scheme priced on the greenhouse gases released in making the goods. GST on coal is a general tax on the coal's value, mostly recovered as input tax credit, so it does not fit.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "does-indian-exporter-need-cbam-registration",
+  "q": "Does an Indian exporter need CBAM registration?",
+  "title": "Do Indian exporters need CBAM registration?",
+  "short": "No, registration as a declarant is for EU importers. An Indian producer may choose to register its installation in the CBAM Registry as a third-country operator, so EU declarants can see its verified emissions. It is optional, but it saves sending the same figures to every buyer.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "does-iso-14001-require-climate-change",
@@ -21929,6 +22153,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A project is additional if its emission cuts would not have happened without carbon credit revenue. It is tested by showing the project is not required by law, is not the cheapest option without credits, faces real barriers, and is not already common practice, or by qualifying for an approved positive list.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "what-is-an-authorised-cbam-declarant",
+  "q": "What is an authorised CBAM declarant?",
+  "title": "What is an authorised CBAM declarant?",
+  "short": "The person in the EU authorised to import CBAM goods, file the annual CBAM declaration and surrender certificates. It must be established in an EU member state and authorised by that country's competent authority. An Indian exporter cannot be one, but can register its installation.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "what-is-embodied-carbon-a1-a3",

@@ -1,0 +1,69 @@
+{
+  "slug": "cbam-50-tonne-threshold-how-counted",
+  "q": "How is the CBAM 50-tonne threshold counted?",
+  "title": "How the CBAM 50-tonne threshold works",
+  "short": "Per importer, per calendar year, by net mass, across steel, aluminium, cement and fertiliser goods combined. An importer bringing in 50 tonnes or less a year in total is exempt. Hydrogen and electricity have no threshold. The rule came in with Regulation (EU) 2025/2083.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters selling small volumes to many EU buyers",
+  "sections": [
+    {
+      "h": "What is counted",
+      "ul": [
+        "Net mass of goods, not the embedded emissions.",
+        "All iron and steel, aluminium, cement and fertiliser goods the importer brings in during the year, added together.",
+        "Per importer, not per exporter. Your 30 tonnes and another supplier's 30 tonnes to the same buyer make 60."
+      ]
+    },
+    {
+      "h": "What is not counted",
+      "p": [
+        "Hydrogen and electricity. Any import of those needs the full CBAM process, whatever the volume."
+      ]
+    },
+    {
+      "h": "What it means for you",
+      "ul": [
+        "A buyer near the line may ask you for data in case they cross it.",
+        "A buyer well under it needs no CBAM data and no declarant status for these goods.",
+        "Ask buyers each year; volumes move."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Counting per shipment or per product. The threshold is the importer's yearly total across the four sectors, so many small orders can still add up."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check a buyer's declarant status",
+      "to": "/answers/check-eu-buyer-is-authorised-cbam-declarant"
+    },
+    {
+      "label": "Hydrogen and the threshold",
+      "to": "/answers/antwerp-hydrogen-imports-cbam-50-tonne-exemption"
+    },
+    {
+      "label": "What an authorised declarant is",
+      "to": "/answers/what-is-an-authorised-cbam-declarant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

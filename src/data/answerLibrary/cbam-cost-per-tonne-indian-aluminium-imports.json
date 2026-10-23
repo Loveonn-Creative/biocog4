@@ -1,0 +1,82 @@
+{
+  "slug": "cbam-cost-per-tonne-indian-aluminium-imports",
+  "q": "What does CBAM cost per tonne of aluminium imported from India?",
+  "title": "CBAM cost per tonne of Indian aluminium",
+  "short": "It is embedded emissions per tonne, minus the free allocation adjustment, times the certificate price. Aluminium counts direct emissions only, CO2 and PFCs, so captive coal power does not enter the figure. Primary metal costs more than recycled. Use the calculator for your code and tonnes.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of Indian aluminium and the smelters and extruders pricing to them",
+  "sections": [
+    {
+      "h": "The formula",
+      "ul": [
+        "Certificates owed per tonne = embedded emissions per tonne minus the free allocation adjustment.",
+        "Free allocation adjustment = the EU benchmark for the product times the CBAM factor for the year. That factor shrinks each year and reaches zero by 2034.",
+        "Cost per tonne = certificates owed per tonne times the CBAM certificate price.",
+        "India has no carbon price the declarant can deduct, so nothing comes off for carbon paid at origin."
+      ]
+    },
+    {
+      "h": "Where each number comes from",
+      "ul": [
+        "Embedded emissions: your verified actual figure, or the default value for the CN code and India in Implementing Regulation (EU) 2025/2621. For aluminium, direct emissions only.",
+        "Benchmark and CBAM factor: set in EU implementing acts and listed on the Commission's CBAM pages.",
+        "Certificate price: published by the Commission, tied to EU ETS auction prices."
+      ]
+    },
+    {
+      "h": "What changes the result for aluminium",
+      "p": [
+        "Primary or secondary metal matters most. Smelter metal carries anode CO2 and PFCs; remelted scrap carries only furnace fuel. Electricity does not count for aluminium, so a smelter on captive coal power and one on hydro can show similar direct figures."
+      ]
+    },
+    {
+      "h": "Run it",
+      "p": [
+        "Use the Senseible CBAM calculator to plug in your tonnes, CN code and either your actual figure or the default. It shows the cost from 2026 to 2034. Sector context is on the aluminium CBAM cost page."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "A smelter's CBAM figure",
+      "to": "/answers/hirakud-aluminium-smelter-cbam-figure"
+    },
+    {
+      "label": "Unwrought aluminium under CBAM",
+      "to": "/answers/cbam-cn-7601-unwrought-aluminium-ingots-billets"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "CBAM cost of aluminium",
+      "to": "/cbam-cost/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

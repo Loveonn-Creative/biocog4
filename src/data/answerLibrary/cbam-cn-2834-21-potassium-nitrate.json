@@ -1,0 +1,84 @@
+{
+  "slug": "cbam-cn-2834-21-potassium-nitrate",
+  "q": "Is potassium nitrate under CN 2834 21 covered by CBAM?",
+  "title": "CBAM CN 2834 21: potassium nitrate",
+  "short": "Yes. Potassium nitrate, CN 2834 21 00, is listed in the fertiliser group of Annex I, with CO2 and nitrous oxide as the gases. Fertilisers count direct and indirect emissions. The covered precursor is the nitric acid, or ammonia behind it, used to make the nitrate.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Potassium nitrate makers selling technical and fertiliser grades to the EU",
+  "sections": [
+    {
+      "h": "Is it covered?",
+      "p": [
+        "Yes, whichever grade you sell. Annex I lists 2834 21 00 under fertilisers regardless of whether the buyer uses it on fields, in glass or in food. Other nitrates under 2834 29 are not listed."
+      ]
+    },
+    {
+      "h": "Precursors to report",
+      "ul": [
+        "Nitric acid (2808), if your route uses it, with its maker's figure including N2O.",
+        "Ammonia (2814), if you make the nitric acid yourself.",
+        "Potassium chloride is not a CBAM good and needs no figure."
+      ]
+    },
+    {
+      "h": "Default value",
+      "p": [
+        "The Commission sets default values by CN code and country of origin in the annex to Implementing Regulation (EU) 2025/2621, with a mark-up that rises over the first years. We do not quote the figure here. Open the annex, find your code and India, and treat it as the number your buyer pays on if you send nothing usable."
+      ]
+    },
+    {
+      "h": "What to send your EU importer",
+      "ul": [
+        "Direct embedded emissions per tonne of potassium nitrate, from fuel, feedstock and process.",
+        "Electricity used per tonne and its source, because fertiliser goods count indirect emissions too.",
+        "Each precursor's embedded emissions per tonne and its supplier if bought in.",
+        "Whether a verifier accredited for CBAM has checked the figure."
+      ]
+    },
+    {
+      "h": "The common mistake",
+      "p": [
+        "Assuming a technical grade is out because it is not sold as fertiliser. Coverage follows the CN code, not the end use. If it is declared under 2834 21, it is covered."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Urea and DAP under CBAM",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Fertiliser precursor chains",
+      "to": "/answers/cbam-uan-solution-precursors-urea-ammonium-nitrate"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, methods and precursors",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
