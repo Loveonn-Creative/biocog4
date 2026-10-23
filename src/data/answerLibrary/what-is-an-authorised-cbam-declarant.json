@@ -1,0 +1,72 @@
+{
+  "slug": "what-is-an-authorised-cbam-declarant",
+  "q": "What is an authorised CBAM declarant?",
+  "title": "What is an authorised CBAM declarant?",
+  "short": "The person in the EU authorised to import CBAM goods, file the annual CBAM declaration and surrender certificates. It must be established in an EU member state and authorised by that country's competent authority. An Indian exporter cannot be one, but can register its installation.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters whose EU buyers mention declarant status",
+  "sections": [
+    {
+      "h": "Who it is",
+      "p": [
+        "Usually the EU importer, or an indirect customs representative acting for them. Only a person established in the EU can hold the status. Customs will not release CBAM goods above the yearly threshold to anyone without it."
+      ]
+    },
+    {
+      "h": "What it does",
+      "ul": [
+        "Applies to its national competent authority for the status through the CBAM Registry.",
+        "Buys CBAM certificates and surrenders them for the embedded emissions of goods imported each year.",
+        "Files the annual CBAM declaration. The first, for 2026 imports, is due by 30 September 2027.",
+        "Keeps the emissions data and verification reports behind each figure."
+      ]
+    },
+    {
+      "h": "Where the exporter fits",
+      "p": [
+        "You supply the embedded emissions data. You can also register your installation in the CBAM Registry as an operator so declarants can see your verified figures, but that does not make you a declarant."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Shipping DDP and assuming you can file because you pay the duty. Delivered duty paid does not change who must be established in the EU. You would need an EU entity or a representative that holds the status."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check your buyer has the status",
+      "to": "/answers/check-eu-buyer-is-authorised-cbam-declarant"
+    },
+    {
+      "label": "Can a non-EU exporter be a declarant?",
+      "to": "/answers/can-non-eu-exporter-be-cbam-declarant-ddp"
+    },
+    {
+      "label": "Register as a non-EU producer",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "Germany: registering with DEHSt",
+      "to": "/answers/german-importer-cbam-registration-dehst"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

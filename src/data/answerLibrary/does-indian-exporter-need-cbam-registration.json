@@ -1,0 +1,72 @@
+{
+  "slug": "does-indian-exporter-need-cbam-registration",
+  "q": "Does an Indian exporter need CBAM registration?",
+  "title": "Do Indian exporters need CBAM registration?",
+  "short": "No, registration as a declarant is for EU importers. An Indian producer may choose to register its installation in the CBAM Registry as a third-country operator, so EU declarants can see its verified emissions. It is optional, but it saves sending the same figures to every buyer.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian manufacturers asked about CBAM registration by EU buyers",
+  "sections": [
+    {
+      "h": "Two different registrations",
+      "ul": [
+        "Authorised CBAM declarant: only for persons established in the EU. Your buyer or its representative applies.",
+        "Operator and installation registration: open to producers outside the EU. You register your installations and can share verified emissions with declarants through the Registry."
+      ]
+    },
+    {
+      "h": "When operator registration is worth it",
+      "ul": [
+        "You sell covered goods to several EU buyers.",
+        "You already have, or plan to get, emissions verified by a CBAM-accredited verifier.",
+        "Buyers keep sending you their own spreadsheets for the same data."
+      ]
+    },
+    {
+      "h": "When to skip it for now",
+      "p": [
+        "If you sell to one buyer, under small volumes, and they are content to use default values, registration adds little yet. Keep fuel, electricity and production records month by month so you can move to actual values later."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Paying an agent to make you a CBAM declarant. An Indian company cannot be one. Check what is actually being registered before you pay."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "How a non-EU producer registers",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "What an authorised declarant is",
+      "to": "/answers/what-is-an-authorised-cbam-declarant"
+    },
+    {
+      "label": "What an EU steel buyer asks for",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

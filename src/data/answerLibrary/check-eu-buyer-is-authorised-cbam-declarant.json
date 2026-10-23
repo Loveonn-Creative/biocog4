@@ -1,0 +1,73 @@
+{
+  "slug": "check-eu-buyer-is-authorised-cbam-declarant",
+  "q": "How do I check my EU buyer is an authorised CBAM declarant?",
+  "title": "Check your EU buyer is a CBAM declarant",
+  "short": "Ask for their CBAM account number and the member state that authorised them, and put the duty to hold the status in your contract. There is no public register to search. Without the status, EU customs can hold CBAM goods above the 50-tonne yearly threshold at the border.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters onboarding new EU buyers of steel, aluminium, cement or fertilisers",
+  "sections": [
+    {
+      "h": "Ask the buyer for",
+      "ul": [
+        "Their CBAM account number from the CBAM Registry, and the member state whose authority granted it.",
+        "Who files: the buyer itself, or an indirect customs representative acting for it.",
+        "Whether they expect to cross 50 tonnes a year across steel, aluminium, cement and fertiliser goods combined."
+      ]
+    },
+    {
+      "h": "Put it in the contract",
+      "ul": [
+        "The buyer holds declarant status, or appoints a representative who does, before goods arrive.",
+        "What emissions data you send, by when, and in what format.",
+        "Who bears the cost if the default value applies because data was late or unverified."
+      ]
+    },
+    {
+      "h": "Why it matters to you",
+      "p": [
+        "If a shipment is held at EU customs for lack of status, the cargo sits on your timeline even though the duty is the buyer's. A written answer before the first order saves that."
+      ]
+    },
+    {
+      "h": "When the buyer is small",
+      "p": [
+        "A buyer importing under 50 tonnes a year of these goods combined is exempt and does not need the status. Hydrogen and electricity have no such threshold. Ask them to confirm their yearly volume in writing."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "What an authorised declarant is",
+      "to": "/answers/what-is-an-authorised-cbam-declarant"
+    },
+    {
+      "label": "How the 50-tonne threshold works",
+      "to": "/answers/cbam-50-tonne-threshold-how-counted"
+    },
+    {
+      "label": "CBAM clause for export contracts",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    },
+    {
+      "label": "Importer status, worked case",
+      "to": "/answers/eu-importer-vietnam-steel-authorised-declarant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

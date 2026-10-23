@@ -1,0 +1,82 @@
+{
+  "slug": "cbam-cn-7609-7611-7613-aluminium-fittings-tanks-cylinders",
+  "q": "Are aluminium tube fittings, tanks and gas cylinders covered by CBAM?",
+  "title": "CBAM CN 7609, 7611, 7613: fittings",
+  "short": "Yes. Aluminium tube fittings (7609), tanks and vats over 300 litres (7611) and containers for compressed or liquefied gas (7613) are all covered in Annex I. Direct emissions only, CO2 and PFCs. The precursor is the aluminium you bought.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Makers of aluminium fittings, storage tanks and gas cylinders",
+  "sections": [
+    {
+      "h": "Is it covered?",
+      "p": [
+        "Yes. Annex I lists 7603 to 7614 and 7616 for aluminium. Casks and cans of 300 litres or less fall under 7612, also covered. Kitchenware under 7615 is the main aluminium article left out."
+      ]
+    },
+    {
+      "h": "Precursors to report",
+      "ul": [
+        "Unwrought aluminium, sheet, tube or extrusion you bought, with each maker's embedded emissions per tonne."
+      ]
+    },
+    {
+      "h": "Default value",
+      "p": [
+        "The Commission sets default values by CN code and country of origin in the annex to Implementing Regulation (EU) 2025/2621, with a mark-up that rises over the first years. We do not quote the figure here. Open the annex, find your code and India, and treat it as the number your buyer pays on if you send nothing usable."
+      ]
+    },
+    {
+      "h": "What to send your EU importer",
+      "ul": [
+        "Direct embedded emissions per tonne of finished article: CO2 from fuel and anodes, and PFCs from the smelter if you smelt.",
+        "The installation's name, location and production route.",
+        "Each precursor's embedded emissions per tonne and its supplier: unwrought aluminium, or alumina if you smelt.",
+        "Whether a verifier accredited for CBAM has checked the figure."
+      ]
+    },
+    {
+      "h": "The common mistake",
+      "p": [
+        "Declaring the gas valve or fittings as aluminium. Steel or brass valves are not part of the aluminium figure. Report per tonne of the aluminium article, based on the aluminium input, and note other materials separately for the importer."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Aluminium containers under CBAM",
+      "to": "/answers/are-aluminium-foil-and-containers-covered-by-cbam"
+    },
+    {
+      "label": "Hydrogen shipped in cylinders",
+      "to": "/answers/is-hydrogen-in-cylinders-covered-by-cbam"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, methods and precursors",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

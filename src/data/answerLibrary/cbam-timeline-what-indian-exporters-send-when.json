@@ -1,0 +1,69 @@
+{
+  "slug": "cbam-timeline-what-indian-exporters-send-when",
+  "q": "When must Indian exporters send CBAM data to EU buyers?",
+  "title": "CBAM timeline for Indian exporters",
+  "short": "The definitive regime runs from 1 January 2026. Your buyer declares 2026 imports by 30 September 2027, so they need your verified figures for 2026 before then. Keep monthly records from January 2026 and agree a delivery date with each buyer.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters planning their first CBAM data deliveries",
+  "sections": [
+    {
+      "h": "The dates that bind",
+      "ul": [
+        "1 January 2026: definitive regime starts. Imports from this date count.",
+        "Calendar year 2026: the first reporting year, January to December.",
+        "30 September 2027: first annual CBAM declaration due, for 2026 imports, with certificates surrendered."
+      ]
+    },
+    {
+      "h": "Work back from the declaration",
+      "ul": [
+        "Verification by a CBAM-accredited verifier takes time; book it early in 2027.",
+        "Your buyer needs the verified figure with time to buy certificates and file.",
+        "Agree in writing when you will deliver, per installation and product."
+      ]
+    },
+    {
+      "h": "What to collect now",
+      "p": [
+        "Monthly fuel, electricity, raw material and production records for each installation, kept by calendar month so they total cleanly for January to December."
+      ]
+    },
+    {
+      "h": "Common mistake",
+      "p": [
+        "Waiting for the buyer's template. Most will arrive late. Records you keep from January are what make any template answerable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Fiscal year vs CBAM period",
+      "to": "/answers/indian-fiscal-year-vs-cbam-reporting-period"
+    },
+    {
+      "label": "What an EU steel buyer asks for",
+      "to": "/answers/eu-importer-indian-steel-cbam-data-request"
+    },
+    {
+      "label": "CBAM clause for export contracts",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

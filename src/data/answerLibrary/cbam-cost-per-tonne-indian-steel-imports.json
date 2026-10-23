@@ -1,0 +1,82 @@
+{
+  "slug": "cbam-cost-per-tonne-indian-steel-imports",
+  "q": "What does CBAM cost per tonne of steel imported from India?",
+  "title": "CBAM cost per tonne of Indian steel",
+  "short": "It is embedded emissions per tonne, minus the free allocation adjustment, times the certificate price. India has no deductible carbon price. The cost depends most on route: blast furnace and coal-based DRI steel carry far more than scrap-based EAF. Use the calculator rather than one headline number.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of Indian steel and the Indian mills pricing to them",
+  "sections": [
+    {
+      "h": "The formula",
+      "ul": [
+        "Certificates owed per tonne = embedded emissions per tonne minus the free allocation adjustment.",
+        "Free allocation adjustment = the EU benchmark for the product times the CBAM factor for the year. That factor shrinks each year and reaches zero by 2034.",
+        "Cost per tonne = certificates owed per tonne times the CBAM certificate price.",
+        "India has no carbon price the declarant can deduct, so nothing comes off for carbon paid at origin."
+      ]
+    },
+    {
+      "h": "Where each number comes from",
+      "ul": [
+        "Embedded emissions: your verified actual figure, or the default value for the CN code and India in Implementing Regulation (EU) 2025/2621. For steel, direct emissions only.",
+        "Benchmark and CBAM factor: set in EU implementing acts and listed on the Commission's CBAM pages.",
+        "Certificate price: published by the Commission, tied to EU ETS auction prices."
+      ]
+    },
+    {
+      "h": "What changes the result for steel",
+      "p": [
+        "Route matters most. Blast furnace and coal-based DRI steel carry far more direct emissions per tonne than scrap-fed EAF or induction furnace steel. Whether you send verified actual values or let the default apply, with its yearly mark-up, matters next."
+      ]
+    },
+    {
+      "h": "Run it",
+      "p": [
+        "Use the Senseible CBAM calculator to plug in your tonnes, CN code and either your actual figure or the default. It shows the cost from 2026 to 2034. Sector context is on the CBAM cost page."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
+  "links": [
+    {
+      "label": "Cost by steel route",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Does coal GST count as a carbon price?",
+      "to": "/answers/does-india-coal-gst-count-as-carbon-price-cbam"
+    },
+    {
+      "label": "Where official default values sit",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "CBAM cost by sector",
+      "to": "/cbam-cost"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, Annex I (consolidated)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
