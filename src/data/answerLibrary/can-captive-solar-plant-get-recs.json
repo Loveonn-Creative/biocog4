@@ -1,0 +1,59 @@
+{
+  "slug": "can-captive-solar-plant-get-recs",
+  "q": "Can a captive solar plant get Renewable Energy Certificates in India?",
+  "title": "RECs for captive solar plants",
+  "short": "Yes, if it meets the same conditions as other generators, including no waiver or concession on transmission or wheeling charges. But certificates for power the plant's owner consumes itself cannot be sold. They stand redeemed against the owner's renewable purchase obligation.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factories with captive or group captive renewable plants",
+  "sections": [
+    {
+      "h": "Eligibility under the 2022 regulations",
+      "ul": [
+        "Eligible entities: renewable generators, captive renewable plants, distribution licensees and open access consumers.",
+        "A generator qualifies only if its tariff was not set or adopted by a commission for that capacity, and the power was not sold for another entity's RPO compliance.",
+        "It must not have taken any waiver of, or concession on, transmission or wheeling charges."
+      ]
+    },
+    {
+      "h": "The captive catch",
+      "ul": [
+        "Certificates are issued for power injected into the grid, or deemed injected where the captive owner consumes it.",
+        "Certificates for self-consumption are not eligible for sale.",
+        "They stand redeemed on compliance of the owner's RPO, and the registry extinguishes them."
+      ]
+    },
+    {
+      "h": "For Scope 2",
+      "p": [
+        "Power from your own captive plant already lowers grid electricity on your bill. Selling certificates for exported units would pass those attributes to someone else, so do not count the same units in your own market-based figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps electricity bills and renewable purchase records side by side, so location-based and market-based Scope 2 figures can be reported from the same data. Certificate retirement proof stays with the buyer.",
+  "links": [
+    {
+      "label": "Group captive solar and Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    },
+    {
+      "label": "REC multiplier by technology",
+      "to": "/answers/rec-certificate-multiplier-by-technology"
+    },
+    {
+      "label": "REC application deadline",
+      "to": "/answers/rec-application-deadline-six-months"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022, notified 9 May 2022",
+      "url": "https://www.cercind.gov.in/regulations/REC-Regulations-2022.pdf"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

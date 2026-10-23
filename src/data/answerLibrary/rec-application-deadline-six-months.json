@@ -1,0 +1,49 @@
+{
+  "slug": "rec-application-deadline-six-months",
+  "q": "How soon after generation must a generator apply for RECs in India?",
+  "title": "REC application deadline",
+  "short": "Within six months of the generation. Under CERC's 2022 regulations no certificate is issued for an application made later. Discoms and open access consumers buying renewable power beyond their obligation must apply within three months of the financial year end. Grid-India decides within 15 days.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Renewable generators, captive plant owners and open access consumers",
+  "sections": [
+    {
+      "h": "Deadlines",
+      "ul": [
+        "Generators and captive plants: within six months from the corresponding generation.",
+        "Distribution licensees and open access consumers with renewable purchases above their RPO: within three months from the end of the financial year, with certification from the state commission.",
+        "The Central Agency issues or rejects within fifteen days of a complete application."
+      ]
+    },
+    {
+      "h": "Other rules worth knowing",
+      "ul": [
+        "Each certificate represents one MWh, times any technology multiplier.",
+        "Certificates stay valid until redeemed.",
+        "Prices are discovered on power exchanges or agreed with traders; there is no floor price."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps electricity bills and renewable purchase records side by side, so location-based and market-based Scope 2 figures can be reported from the same data. Certificate retirement proof stays with the buyer.",
+  "links": [
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "REC vintage and reporting year",
+      "to": "/answers/rec-vintage-which-year-can-it-cover"
+    },
+    {
+      "label": "RECs for captive plants",
+      "to": "/answers/can-captive-solar-plant-get-recs"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022, notified 9 May 2022",
+      "url": "https://www.cercind.gov.in/regulations/REC-Regulations-2022.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "pm-surya-ghar-subsidy-per-kw",
+  "q": "How much subsidy does PM Surya Ghar give per kW of rooftop solar?",
+  "title": "PM Surya Ghar subsidy per kW",
+  "short": "Rs 30,000 per kW for the first 2 kW and Rs 18,000 for the third kW, so the most a household gets is Rs 78,000 for 3 kW or more. Special category states get Rs 33,000 and Rs 19,800. Housing societies get Rs 18,000 per kW for common facilities, up to 500 kW.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Households and housing societies planning rooftop solar",
+  "sections": [
+    {
+      "h": "The rates, from 13 February 2024",
+      "ul": [
+        "First 2 kW: Rs 30,000 per kW (Rs 33,000 in special category states).",
+        "Additional capacity up to 1 kW more: Rs 18,000 per kW (Rs 19,800).",
+        "Beyond 3 kW: no additional assistance.",
+        "Housing societies and RWAs, common facilities including EV charging: Rs 18,000 per kW (Rs 19,800), up to 500 kW at 3 kW per house."
+      ]
+    },
+    {
+      "h": "MNRE's own examples",
+      "ul": [
+        "1.5 kW: Rs 30,000 x 1.5 = Rs 45,000.",
+        "2.5 kW: Rs 30,000 x 2 + Rs 18,000 x 0.5 = Rs 69,000.",
+        "6 kW: Rs 30,000 x 2 + Rs 18,000 x 1 = Rs 78,000.",
+        "RWA with 100 kW and 20 houses: Rs 18,000 x 60 kW = Rs 10,80,000, since the cap is 3 kW per house."
+      ]
+    },
+    {
+      "h": "Conditions that catch people out",
+      "ul": [
+        "The subsidy follows the DC capacity of the modules, not the inverter rating.",
+        "Modules must meet the domestic content requirement.",
+        "A system gets the subsidy only once; a relocated system does not qualify again."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including net metering lines, so grid import, export and solar generation sit in one monthly record with the factor and source shown. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Benchmark cost under PM Surya Ghar",
+      "to": "/answers/pm-surya-ghar-benchmark-cost"
+    },
+    {
+      "label": "Domestic content rule",
+      "to": "/answers/pm-surya-ghar-domestic-content-modules"
+    },
+    {
+      "label": "Is it open to factories?",
+      "to": "/answers/pm-surya-ghar-subsidy-for-factories-or-shops"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana, Central Financial Assistance to Residential Consumers",
+      "url": "https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

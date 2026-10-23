@@ -1,0 +1,55 @@
+{
+  "slug": "pm-surya-ghar-housing-society-common-areas",
+  "q": "Can a housing society get PM Surya Ghar subsidy for solar on common areas?",
+  "title": "PM Surya Ghar for housing societies",
+  "short": "Yes. Group housing societies and RWAs get Rs 18,000 per kW, or Rs 19,800 in special category states, for common facilities including EV charging, up to 500 kW at 3 kW per house. Individual residents' own rooftop systems count within that 500 kW limit.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "RWA committees and housing society managers",
+  "sections": [
+    {
+      "h": "The rules",
+      "ul": [
+        "Rate: Rs 18,000 per kW for common facilities, including EV charging.",
+        "Cap: the lower of 3 kW per house and the installed capacity, up to 500 kW in total.",
+        "The upper limit includes individual plants installed by residents in the society.",
+        "The common-facility connection must serve common facilities only, not supply residents."
+      ]
+    },
+    {
+      "h": "MNRE's examples",
+      "ul": [
+        "100 kW with 20 houses: subsidy on 60 kW = Rs 10,80,000.",
+        "100 kW with 50 houses: subsidy on 100 kW = Rs 18,00,000."
+      ]
+    },
+    {
+      "h": "Metering",
+      "p": [
+        "Group net metering and virtual net metering installations are eligible if the system is on a roof or elevated structure and the discom approves the metering arrangement. That lets a society share solar units across connections where the state allows it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including net metering lines, so grid import, export and solar generation sit in one monthly record with the factor and source shown. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Virtual and group net metering",
+      "to": "/answers/virtual-and-group-net-metering-scope-2"
+    },
+    {
+      "label": "Shared solar on an industrial estate",
+      "to": "/answers/shared-solar-on-industrial-estate-scope-2"
+    },
+    {
+      "label": "Subsidy per kW",
+      "to": "/answers/pm-surya-ghar-subsidy-per-kw"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana, Central Financial Assistance to Residential Consumers",
+      "url": "https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

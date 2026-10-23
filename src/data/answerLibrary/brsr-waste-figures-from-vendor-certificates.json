@@ -1,0 +1,58 @@
+{
+  "slug": "brsr-waste-figures-from-vendor-certificates",
+  "q": "Can BRSR Core waste figures rely on certificates from our waste vendors?",
+  "title": "BRSR waste figures from vendor certificates",
+  "short": "Yes, and SEBI expects you to say so. Since March 2025 the BRSR Core note on waste reads that disclosure may be provided if certificates from vendors were relied on for assessment or assurance of waste KPIs. Keep the certificates matched to quantities and dates.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EHS and ESG teams at listed companies and their plants",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "In the BRSR Core format, for the parameter covering each category of waste generated and waste recovered through recycling, re-use or other recovery, the note now says disclosure may be provided if certificates from vendors have been relied upon for the assessment or assurance of waste KPIs."
+      ]
+    },
+    {
+      "h": "What makes a vendor certificate usable",
+      "ul": [
+        "The waste category and quantity in tonnes, matching your manifest or weighbridge slips.",
+        "The treatment route: recycled, re-used, other recovery, incinerated, landfilled.",
+        "The period covered and your site name.",
+        "The vendor's authorisation from the pollution control board, where one is needed."
+      ]
+    },
+    {
+      "h": "Where it goes wrong",
+      "p": [
+        "Certificates that state only \"disposed as per norms\", or that cover a different period, cannot support a recovery figure. Ask vendors for the treatment route by category before the year ends, not during the assessment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "BRSR waste categories",
+      "to": "/answers/brsr-waste-categories-how-to-fill"
+    },
+    {
+      "label": "Documents behind each figure",
+      "to": "/answers/brsr-documents-behind-each-environment-figure"
+    },
+    {
+      "label": "Common BRSR environment errors",
+      "to": "/answers/brsr-environment-disclosure-common-errors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

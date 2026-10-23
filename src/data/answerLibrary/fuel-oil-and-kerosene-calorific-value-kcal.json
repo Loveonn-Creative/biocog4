@@ -1,0 +1,59 @@
+{
+  "slug": "fuel-oil-and-kerosene-calorific-value-kcal",
+  "q": "What calorific value should I use for furnace oil, kerosene and petrol in kcal per kg?",
+  "title": "Calorific value of oils in kcal per kg",
+  "short": "PPAC's Ready Reckoner lists average calorific values of 10,440 kcal per kg for fuel oil, 10,638 for kerosene, 11,135 for motor gasoline and 12,135 for NGL. Multiply by 4.19 to get kJ. Use these for energy totals when the supplier gives no test value.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Energy managers filling BRSR energy tables or boiler records",
+  "sections": [
+    {
+      "h": "PPAC Table 9.1 (oil products)",
+      "ul": [
+        "Fuel oil: 10,440 kcal per kg, about 43.7 GJ per tonne.",
+        "Kerosene: 10,638 kcal per kg, about 44.6 GJ per tonne.",
+        "Motor gasoline: 11,135 kcal per kg, about 46.7 GJ per tonne.",
+        "NGL: 12,135 kcal per kg.",
+        "Conversion: 1 kcal = 4.19 kJ."
+      ]
+    },
+    {
+      "h": "Gross or net?",
+      "p": [
+        "PPAC labels these average international calorific values without saying gross or net. Values in this range are typically gross. IPCC emission factors are per unit of net energy, so for CO2 use mass times the IPCC per-kg factor, and use these values for energy reporting with the basis stated."
+      ]
+    },
+    {
+      "h": "Where they help",
+      "p": [
+        "BRSR asks for total energy in joules. Tonnes of each fuel times a calorific value gives that figure, and stating the source makes it checkable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "GCV vs NCV in fuel calculations",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "Energy intensity in BRSR",
+      "to": "/answers/brsr-energy-intensity-calculation"
+    },
+    {
+      "label": "Kerosene factor per litre",
+      "to": "/answers/kerosene-emission-factor-per-litre"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "litres-in-a-tonne-of-petrol-india",
+  "q": "How many litres are there in a tonne of petrol in India?",
+  "title": "Litres in a tonne of petrol",
+  "short": "PPAC's conversion table gives 1,411 litres per tonne of petrol at 29.5 C. Multiply by 0.9830 to move to 15 C, which gives about 1,387 litres. Use it to convert petrol bought by volume into mass, then apply a per-kg CO2 factor.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Fleet managers and companies reporting vehicle fuel",
+  "sections": [
+    {
+      "h": "The official figures",
+      "ul": [
+        "Weight to volume: 1 tonne of petrol = 1.4110 kilolitres = 8.88 barrels (PPAC Ready Reckoner FY 2025-26, Table 9.2).",
+        "Temperature: to convert volume at 29.5 C to volume at 15 C, multiply by 0.9830.",
+        "Average calorific value of motor gasoline: 11,135 kcal per kg (Table 9.1)."
+      ]
+    },
+    {
+      "h": "Going from litres to CO2",
+      "ol": [
+        "Total litres from pump receipts or fuel card statements.",
+        "Divide by 1,411 to get tonnes, or by about 1.387 if your litres are at 15 C.",
+        "Multiply kilograms by the IPCC default for motor gasoline, about 3.07 kg CO2 per kg."
+      ]
+    },
+    {
+      "h": "A note on retail pumps",
+      "p": [
+        "Retail pumps sell at ambient temperature, so receipts are closer to the 29.5 C basis than to 15 C in most of India. The difference is under 2%, smaller than most gaps in fuel records, but state which basis you used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "Does E20 petrol lower Scope 1?",
+      "to": "/answers/does-e20-petrol-lower-scope-1"
+    },
+    {
+      "label": "Litres in a tonne of diesel",
+      "to": "/answers/litres-in-a-tonne-of-diesel-india"
+    },
+    {
+      "label": "Invoice in litres, factor in kg",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

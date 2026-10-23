@@ -1,0 +1,70 @@
+{
+  "slug": "india-natural-gas-gcv-10000-kcal-per-scm",
+  "q": "What calorific value does India use for natural gas per SCM?",
+  "title": "Natural gas GCV per SCM in India",
+  "short": "PPAC's gas conversions, sourced from GAIL, use a gross calorific value of 10,000 kcal per SCM, with net calorific value at 90% of that. One MMBtu equals 25.2 SCM on this basis. Domestic production averages 8,000 to 9,480 kcal per SCM, so use the GCV on your own bill when it is printed.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories on piped natural gas, CGD customers",
+  "sections": [
+    {
+      "h": "The reference values",
+      "ul": [
+        "1 SCM = 1 cubic metre at 1 atmosphere and 15.56 C.",
+        "Gross calorific value: 10,000 kcal per SCM. Net calorific value: 90% of GCV.",
+        "1 MMBtu = 25.2 SCM at 10,000 kcal per SCM; 1 MMBtu = 252,000 kcal.",
+        "Density of gas: 0.76 kg per SCM; specific gravity 0.62.",
+        "Average natural gas production in India: 8,000 to 9,480 kcal per SCM (Table 9.1)."
+      ]
+    },
+    {
+      "h": "From SCM to CO2",
+      "ol": [
+        "Multiply SCM by the GCV on your bill, or 10,000 kcal if none is printed.",
+        "Take 90% for net calorific value and convert to GJ (1 kcal = 4.19 kJ per PPAC).",
+        "Multiply by the IPCC natural gas default of 56.1 kg CO2 per GJ."
+      ]
+    },
+    {
+      "h": "Why your figure may differ",
+      "p": [
+        "On these PPAC values one SCM works out to about 2.12 kg CO2, while 0.76 kg per SCM times the IPCC per-kg factor gives about 2.05. The two reference values imply slightly different gas. A bill that prints GCV settles it for your supply."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "1,000 SCM x 10,000 kcal = 10,000,000 kcal GCV.",
+      "NCV = 9,000,000 kcal x 4.19 kJ = 37.71 GJ.",
+      "CO2 = 37.71 x 56.1 = 2,116 kg."
+    ],
+    "note": "Uses PPAC reference values, not a specific bill."
+  },
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "PNG bill in MMBtu to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "GCV vs NCV in fuel calculations",
+      "to": "/answers/gcv-vs-ncv-in-fuel-emission-calculation"
+    },
+    {
+      "label": "SCM vs Nm3",
+      "to": "/answers/natural-gas-scm-vs-nm3-conversion"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "brsr-environmental-compliance-question",
+  "q": "How do we answer the BRSR question on compliance with environmental laws?",
+  "title": "BRSR environmental compliance question",
+  "short": "Principle 6 essential indicator 12 asks whether the company complies with environmental laws such as the Water Act, the Air Act and the Environment Protection Act and rules. If not, list each non-compliance: the law, the details, any fines or penalties from pollution control boards or courts, and corrective action.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EHS heads and company secretaries",
+  "sections": [
+    {
+      "h": "The format",
+      "ul": [
+        "Compliant: Yes or No.",
+        "If No, for each case: the law, regulation or guideline not complied with.",
+        "Details of the non-compliance.",
+        "Fines, penalties or action by regulators such as pollution control boards, or by courts.",
+        "Corrective action taken."
+      ]
+    },
+    {
+      "h": "Build it from records you already keep",
+      "ul": [
+        "Consent to establish and consent to operate for each plant, with expiry dates.",
+        "Show cause notices and closure directions received in the year.",
+        "Stack and effluent monitoring reports against consent limits.",
+        "Hazardous waste and EPR filings."
+      ]
+    },
+    {
+      "h": "Answer plainly",
+      "p": [
+        "A notice that was resolved still belongs in the table with its outcome. An honest list with corrective action reads better to investors than a bare Yes that a news story later contradicts."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Common BRSR environment errors",
+      "to": "/answers/brsr-environment-disclosure-common-errors"
+    },
+    {
+      "label": "Air emissions in BRSR",
+      "to": "/answers/brsr-air-emissions-nox-sox-pm"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

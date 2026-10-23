@@ -1,0 +1,57 @@
+{
+  "slug": "india-domestic-gas-price-october-2026",
+  "q": "What is the domestic natural gas price in India for October 2026?",
+  "title": "India gas price, October 2026",
+  "short": "PPAC notified US$ 11.22 per MMBtu on gross calorific value for 1 to 31 October 2026. For gas from ONGC and OIL nomination fields this APM price is capped at US$ 7.00 per MMBtu. A separate ceiling of US$ 9.89 per MMBtu applies to deepwater and HPHT gas from October 2026 to March 2027.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "CGD customers, gas-using factories and fertiliser and power buyers",
+  "sections": [
+    {
+      "h": "The three numbers",
+      "ul": [
+        "Domestic natural gas price, 1 to 31 October 2026: US$ 11.22 per MMBtu, GCV basis.",
+        "Ceiling for APM gas from ONGC and OIL nomination fields: US$ 7.00 per MMBtu, GCV basis, same period.",
+        "Ceiling for gas from deepwater, ultra deepwater and high pressure high temperature areas, 1 October 2026 to 31 March 2027: US$ 9.89 per MMBtu, GCV basis."
+      ]
+    },
+    {
+      "h": "How the price is set",
+      "p": [
+        "The monthly price follows the Ministry of Petroleum and Natural Gas notification of 7 April 2023, and PPAC notifies it each month. The deepwater ceiling follows the ministry's notification of 21 March 2016 and is set for six months at a time."
+      ]
+    },
+    {
+      "h": "What it means for a factory",
+      "p": [
+        "Your PNG bill price is set by your city gas distributor and includes their costs and taxes, so it will not equal these figures. They explain the direction of cost changes, not your tariff. Your emissions depend on the quantity of gas, not its price."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads quantities, not prices, from gas bills to calculate emissions, so a price change never changes a carbon figure. The bill amount stays on the record for reference.",
+  "links": [
+    {
+      "label": "PNG bill in MMBtu to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Natural gas GCV per SCM",
+      "to": "/answers/india-natural-gas-gcv-10000-kcal-per-scm"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC notification, 30 September 2026: Domestic Natural Gas Price, 1 to 31 October 2026",
+      "url": "https://ppac.gov.in/download.php?file=whatsnew/1790767900_Domestic_Natural_Gas_Price_October_2026.pdf"
+    },
+    {
+      "label": "PPAC notification, 30 September 2026: Gas Price Ceiling, October 2026 to March 2027",
+      "url": "https://ppac.gov.in/download.php?file=whatsnew/1790767903_Gas_Price_Ceiling_October2026-March2027.pdf"
+    },
+    {
+      "label": "PPAC gas price page",
+      "url": "https://ppac.gov.in/natural-gas/gas-price"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

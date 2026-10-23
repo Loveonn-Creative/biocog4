@@ -1,0 +1,58 @@
+{
+  "slug": "gas-power-co2-per-kwh-at-1720-kcal",
+  "q": "How much CO2 does gas-based power emit per kWh at a 1,720 kcal heat rate?",
+  "title": "Gas power CO2 per kWh",
+  "short": "About 0.40 kg CO2 per kWh. PPAC's gas conversions assume a station heat rate of about 1,720 kcal per kWh on a net calorific basis, equal to 50% efficiency. That is 7.21 MJ per kWh, times the IPCC natural gas default of 56.1 kg CO2 per GJ.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plants running gas engines or turbines for captive power",
+  "sections": [
+    {
+      "h": "The reference values",
+      "ul": [
+        "Station heat rate: about 1,720 kcal per kWh, net calorific value basis, at 50% thermal efficiency.",
+        "Gas needed for 1 MW of generation: 4,541 SCM per day at a GCV of 10,000 kcal per SCM.",
+        "Source: PPAC Ready Reckoner FY 2025-26, Table 9.5, citing GAIL."
+      ]
+    },
+    {
+      "h": "The arithmetic",
+      "ol": [
+        "1,720 kcal x 4.19 kJ per kcal = 7,207 kJ = 7.21 MJ per kWh.",
+        "7.21 MJ x 56.1 g CO2 per MJ = 404 g CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Use your own heat rate",
+      "p": [
+        "Small gas engines often run well below 50% electrical efficiency, so their CO2 per kWh is higher. Divide your metered gas by your metered kWh to get your real heat rate. The emissions are your Scope 1, since you burn the gas."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "Trigeneration gas engine",
+      "to": "/answers/trigeneration-gas-engine-scope-1-and-2"
+    },
+    {
+      "label": "Natural gas GCV per SCM",
+      "to": "/answers/india-natural-gas-gcv-10000-kcal-per-scm"
+    },
+    {
+      "label": "Coal power CO2 per kWh by heat rate",
+      "to": "/answers/coal-power-plant-co2-per-kwh-heat-rate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

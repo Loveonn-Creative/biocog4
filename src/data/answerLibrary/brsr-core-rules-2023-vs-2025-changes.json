@@ -1,0 +1,60 @@
+{
+  "slug": "brsr-core-rules-2023-vs-2025-changes",
+  "q": "What changed in SEBI's BRSR Core rules between July 2023 and March 2025?",
+  "title": "BRSR Core: 2023 rules vs 2025 rules",
+  "short": "Four things changed. Assessment is now allowed instead of reasonable assurance. Value chain partners are those at 2% or more of purchases or sales, not the top 75% cumulatively. Value chain reporting moved from comply-or-explain in FY 2024-25 to voluntary from FY 2025-26. A green credits line was added.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Listed company ESG teams and their suppliers",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Verification of BRSR Core: 2023 said reasonable assurance; 2025 says assessment or assurance, with assessment done to Industry Standards Forum standards.",
+        "Who is a value chain partner: 2023 said top partners cumulatively making up 75% of purchases or sales; 2025 says partners that individually make up 2% or more, and coverage may stop at 75%.",
+        "Value chain disclosure: 2023 said top 250, comply-or-explain from FY 2024-25; 2025 says top 250, voluntary from FY 2025-26.",
+        "Value chain verification: 2023 said limited assurance, comply-or-explain from FY 2025-26; 2025 says assessment or assurance, voluntary from FY 2026-27.",
+        "Green credits: none in 2023; 2025 adds a Principle 6 leadership indicator from FY 2024-25."
+      ]
+    },
+    {
+      "h": "What did not change",
+      "p": [
+        "The glide path for the listed company itself is the same: top 150 for FY 2023-24, top 250 for FY 2024-25, top 500 for FY 2025-26 and top 1,000 for FY 2026-27. The conflict of interest rule for the provider also stayed, now worded for assessment or assurance."
+      ]
+    },
+    {
+      "h": "Two new value chain rules",
+      "ul": [
+        "In the first year of value chain reporting, prior year figures are voluntary.",
+        "A company that reports value chain data must state what share of its purchases and sales the covered partners represent."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Value chain timeline for suppliers",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    },
+    {
+      "label": "Assessment or assurance: which to choose",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    },
+    {
+      "label": "Green credits line in BRSR",
+      "to": "/answers/brsr-green-credits-disclosure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122, 12 July 2023: BRSR Core",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

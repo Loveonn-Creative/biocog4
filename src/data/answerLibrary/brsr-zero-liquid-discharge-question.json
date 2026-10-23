@@ -1,0 +1,50 @@
+{
+  "slug": "brsr-zero-liquid-discharge-question",
+  "q": "What does BRSR ask about zero liquid discharge, and how do we answer it?",
+  "title": "BRSR zero liquid discharge question",
+  "short": "Principle 6 essential indicator 4 asks whether the company has a mechanism for zero liquid discharge, and if yes, for details of its coverage and implementation. Answer site by site: which plants run ZLD, since when, what the system treats, and how much water it recovers.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Plant heads and EHS teams at listed companies",
+  "sections": [
+    {
+      "h": "The question",
+      "p": [
+        "BRSR Principle 6, essential indicator 4: Has the entity implemented a mechanism for Zero Liquid Discharge? If yes, provide details of its coverage and implementation."
+      ]
+    },
+    {
+      "h": "A clear answer",
+      "ul": [
+        "Plants covered and plants not covered, with the reason.",
+        "Treatment steps: for example, effluent treatment, reverse osmosis, evaporator and crystalliser.",
+        "Water recovered and reused in kilolitres, from flow meters.",
+        "Whether ZLD is a consent condition from the pollution control board."
+      ]
+    },
+    {
+      "h": "Link it to the water table",
+      "p": [
+        "The ZLD answer should agree with the water discharge figures in the same principle. A plant claiming ZLD with discharge to surface water in the table will be questioned. ZLD evaporators also use energy, which shows up in your energy and Scope 1 or 2 figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Water withdrawal vs consumption",
+      "to": "/answers/brsr-water-withdrawal-vs-consumption"
+    },
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

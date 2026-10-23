@@ -1,0 +1,61 @@
+{
+  "slug": "brsr-core-estimates-and-industry-adjustments",
+  "q": "Can a listed company use estimates or its own method in BRSR Core?",
+  "title": "Estimates and own methods in BRSR Core",
+  "short": "Yes, if it says so. SEBI calls the BRSR Core data and approach a base methodology only. Any change, industry-specific adjustment or estimate must be disclosed. For value chain figures, the scope of reporting and any assumptions or estimates must also be clearly disclosed.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "ESG and finance teams preparing BRSR Core",
+  "sections": [
+    {
+      "h": "What the circulars say",
+      "ul": [
+        "BRSR Core specifies the data and the approach for reporting and verification, but this is only a base methodology.",
+        "Any changes, industry-specific adjustments or estimations shall be disclosed.",
+        "For value chain reporting, the scope and any assumptions or estimates shall be clearly disclosed.",
+        "Where vendor certificates were relied on for waste figures, that may be disclosed."
+      ]
+    },
+    {
+      "h": "How to disclose an estimate well",
+      "ol": [
+        "Name the figure that is estimated and the share of the total it represents.",
+        "State the method: for example, spend times a published factor, or run hours times a generator's fuel rate.",
+        "Give the source of every factor and the period of the data.",
+        "Say what you will replace the estimate with next year."
+      ]
+    },
+    {
+      "h": "What an assessor will look for",
+      "p": [
+        "An estimate that is disclosed, reasoned and consistent from year to year can be checked. One that is silent, or that changes method without saying so, is where findings come from."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Estimate when a supplier is silent",
+      "to": "/answers/brsr-value-chain-estimate-when-supplier-silent"
+    },
+    {
+      "label": "Documents behind each environment figure",
+      "to": "/answers/brsr-documents-behind-each-environment-figure"
+    },
+    {
+      "label": "Explaining a big change in emissions",
+      "to": "/answers/explain-big-change-in-brsr-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122, 12 July 2023: BRSR Core",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/brsr-core-framework-for-assurance-and-esg-disclosures-for-value-chain_73854.html"
+    },
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

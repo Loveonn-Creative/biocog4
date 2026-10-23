@@ -1,0 +1,57 @@
+{
+  "slug": "green-deposit-impact-data-banks-ask",
+  "q": "What impact data will a bank ask for if my project is funded from green deposits?",
+  "title": "Green deposit impact data banks ask for",
+  "short": "RBI's green deposit framework has banks report impact yearly, mandatory from FY 2024-25. Its examples: for renewable energy, energy generated per year in MWh and tonnes CO2e avoided; for energy efficiency, MWh saved and CO2e avoided; for waste, tonnes diverted from landfill.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "MSMEs seeking green loans for solar, efficiency or clean transport",
+  "sections": [
+    {
+      "h": "RBI's illustrative indicators",
+      "ul": [
+        "Renewable energy: total renewable capacity, energy generated per year (MWh), GHG emissions avoided per year (tCO2e).",
+        "Energy efficiency: energy savings per year (MWh), GHG emissions avoided per year.",
+        "Clean transportation: GHG emissions avoided, infrastructure built, electric or low emission vehicles produced.",
+        "Waste management: waste diverted from landfill per year (tonnes).",
+        "Afforestation: GHG reduced or carbon sequestered (tCO2e)."
+      ]
+    },
+    {
+      "h": "Why the bank needs it from you",
+      "p": [
+        "Banks must get the allocation of green deposit funds verified by a third party every year and publish an impact assessment report. Impact assessment was voluntary for FY 2023-24 and is mandatory from FY 2024-25. The bank can only report your project's impact if you measure it."
+      ]
+    },
+    {
+      "h": "What to prepare",
+      "ol": [
+        "A baseline: a year of electricity and fuel bills before the project.",
+        "Metered output after: solar generation, or kWh and fuel after the upgrade.",
+        "The factor and source used to turn kWh or fuel saved into tCO2e."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a dated record of energy use and emissions from a borrower's own bills, with the factor and source on every line, which a lender can read alongside a project proposal. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Green deposits and MSME projects",
+      "to": "/answers/green-deposits-funds-for-msme-green-projects"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "What banks ask for a solar loan",
+      "to": "/answers/rooftop-solar-loan-msme-what-banks-ask"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular DOR.SFG.REC.10/30.01.021/2023-24, 11 April 2023: Framework for acceptance of Green Deposits",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12487&Mode=0"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

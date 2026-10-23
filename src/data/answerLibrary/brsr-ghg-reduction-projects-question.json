@@ -1,0 +1,55 @@
+{
+  "slug": "brsr-ghg-reduction-projects-question",
+  "q": "How should we answer the BRSR question on projects to reduce greenhouse gas emissions?",
+  "title": "BRSR question on GHG reduction projects",
+  "short": "Principle 6 essential indicator 7 asks whether the company has any project to reduce GHG emissions and, if yes, for details. Give each project with its site, what changed, the year, and the tonnes CO2 saved, calculated from metered energy or fuel before and after.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies and plant heads preparing BRSR",
+  "sections": [
+    {
+      "h": "The question",
+      "p": [
+        "Does the entity have any project related to reducing Green House Gas emission? If Yes, then provide details."
+      ]
+    },
+    {
+      "h": "What good details look like",
+      "ul": [
+        "Project and site: for example, 400 kWp rooftop solar at the Pune plant.",
+        "Start date and status.",
+        "Measured effect: kWh generated or fuel saved in the year, from meters or bills.",
+        "Tonnes CO2 avoided, with the factor and its source.",
+        "Whether it is reflected in this year's Scope 1 or 2 figures."
+      ]
+    },
+    {
+      "h": "Keep it consistent",
+      "p": [
+        "A reduction claimed here should show up in your energy and emissions tables. If emissions rose overall because output rose, say so and give intensity per unit of output alongside."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Explaining a big change in emissions",
+      "to": "/answers/explain-big-change-in-brsr-emissions"
+    },
+    {
+      "label": "BRSR Principle 6 worked example",
+      "to": "/answers/brsr-principle-6-worked-example-from-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

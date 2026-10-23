@@ -1,0 +1,55 @@
+{
+  "slug": "brsr-value-chain-first-year-prior-year-data",
+  "q": "Do we need last year's figures in our first BRSR value chain disclosure?",
+  "title": "First-year BRSR value chain disclosure",
+  "short": "No. In the first year of value chain reporting, previous year figures are voluntary. For FY 2025-26 value chain disclosures, FY 2024-25 data is optional. But you must state what share of your purchases and sales the reported partners cover.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Listed company ESG teams starting value chain reporting",
+  "sections": [
+    {
+      "h": "The two rules from March 2025",
+      "ul": [
+        "For the first year of value chain reporting, previous year numbers are voluntary. SEBI's own example: for FY 2025-26 disclosures, FY 2024-25 data is voluntary.",
+        "If you provide value chain disclosures, you must disclose the percentage of total purchases and sales covered by the partners included."
+      ]
+    },
+    {
+      "h": "Who is in scope",
+      "p": [
+        "Value chain partners are upstream and downstream partners that individually make up 2% or more of purchases or sales by value. You may stop once covered partners reach 75% of purchases and sales. Reporting is voluntary for the top 250 listed companies from FY 2025-26."
+      ]
+    },
+    {
+      "h": "A sensible first year",
+      "ol": [
+        "List partners at 2% or more of purchases and of sales.",
+        "Ask each for Scope 1 and 2, energy, water and waste attributable to your business with them.",
+        "Report what you receive, with coverage percentages, and mark estimates.",
+        "Ask for prior year data only where it is easy, since it is optional."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "What a supplier is asked for",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Downstream partners in BRSR",
+      "to": "/answers/brsr-value-chain-downstream-partners"
+    },
+    {
+      "label": "2023 rules vs 2025 rules",
+      "to": "/answers/brsr-core-rules-2023-vs-2025-changes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

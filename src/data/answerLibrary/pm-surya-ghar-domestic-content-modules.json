@@ -1,0 +1,53 @@
+{
+  "slug": "pm-surya-ghar-domestic-content-modules",
+  "q": "Do PM Surya Ghar systems have to use Indian-made solar modules?",
+  "title": "PM Surya Ghar domestic content rule",
+  "short": "Yes. To get the subsidy, modules must meet the Domestic Content Requirement: modules made in India from cells made in India. MNRE's guidelines say using non-DCR modules in any form makes the installation ineligible. Check the module datasheet and invoice before you sign.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Households, RWAs and rooftop installers",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "Solar modules in the installation must satisfy the Domestic Content Requirement, meaning domestically manufactured modules made from domestically manufactured cells, to be eligible for central financial assistance."
+      ]
+    },
+    {
+      "h": "What to ask your vendor",
+      "ul": [
+        "The module make and model, and confirmation that it is a DCR module.",
+        "Serial numbers on the invoice, since documentation is uploaded to the national portal.",
+        "A system warranty: the scheme requires the complete system to be warranted for 5 years from commissioning, with 5 years of comprehensive operation and maintenance."
+      ]
+    },
+    {
+      "h": "Carbon angle",
+      "p": [
+        "Where the modules are made changes the embodied emissions of the system, not the Scope 2 saving from the electricity it produces. Most buyers report the saving; product carbon footprints count the embodied part."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including net metering lines, so grid import, export and solar generation sit in one monthly record with the factor and source shown. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Subsidy per kW",
+      "to": "/answers/pm-surya-ghar-subsidy-per-kw"
+    },
+    {
+      "label": "Solar panel embodied carbon",
+      "to": "/answers/solar-panel-embodied-carbon-per-kwp"
+    },
+    {
+      "label": "Solar cell manufacturing carbon per watt",
+      "to": "/answers/solar-cell-manufacturing-carbon-per-watt"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana, Central Financial Assistance to Residential Consumers",
+      "url": "https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

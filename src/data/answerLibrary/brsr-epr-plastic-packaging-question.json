@@ -1,0 +1,49 @@
+{
+  "slug": "brsr-epr-plastic-packaging-question",
+  "q": "What does BRSR ask about Extended Producer Responsibility for plastic and e-waste?",
+  "title": "BRSR question on EPR",
+  "short": "Principle 2 essential indicator 4 asks whether Extended Producer Responsibility applies to the company, and if so, whether its waste collection plan matches the EPR plan submitted to pollution control boards; if not, the steps taken. Indicator 3 asks how products are reclaimed at end of life.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Brand owners, producers and importers filing BRSR, and packaging suppliers",
+  "sections": [
+    {
+      "h": "The two questions",
+      "ul": [
+        "Essential indicator 3: the processes to safely reclaim products for reuse, recycling and disposal at end of life, for plastics including packaging, e-waste, hazardous waste and other waste.",
+        "Essential indicator 4: whether EPR applies; if yes, whether the waste collection plan is in line with the EPR plan submitted to pollution control boards; if not, steps taken to address it."
+      ]
+    },
+    {
+      "h": "Leadership follow-ups",
+      "ul": [
+        "Tonnes of reclaimed products and packaging reused, recycled and safely disposed, by plastics, e-waste, hazardous and other waste.",
+        "Reclaimed products and packaging as a percentage of products sold, by category."
+      ]
+    },
+    {
+      "h": "For packaging suppliers",
+      "p": [
+        "Brand owners need packaging weights by material and recycled content to plan EPR collection. Supplying those on invoices or a yearly statement makes their BRSR answer and their EPR filing easier, and keeps you in the vendor list."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures for the financial year, with each bill linked to its line, so a customer's questionnaire can be answered from records. Figures are self-declared.",
+  "links": [
+    {
+      "label": "BRSR waste categories",
+      "to": "/answers/brsr-waste-categories-how-to-fill"
+    },
+    {
+      "label": "Recycled input share in BRSR",
+      "to": "/answers/brsr-recycled-input-material-share"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI LODR Master Circular, 11 July 2023, Annexure 16 (BRSR format)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

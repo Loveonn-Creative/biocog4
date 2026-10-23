@@ -1,0 +1,58 @@
+{
+  "slug": "fuel-volume-at-29-5-c-vs-15-c",
+  "q": "Why do fuel volumes differ at 29.5 C and 15 C, and which should I use?",
+  "title": "Fuel volume at 29.5 C vs 15 C",
+  "short": "Oil expands when warm, so the same tonne fills more litres at 29.5 C than at 15 C. PPAC publishes correction factors from 0.9830 for petrol to 0.9899 for furnace oil. Use whatever basis your invoice states, convert to mass, and never mix a 15 C invoice with an ambient tank dip.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Accounts and stores teams reconciling fuel purchases and tank dips",
+  "sections": [
+    {
+      "h": "PPAC correction factors, 29.5 C to 15 C",
+      "ul": [
+        "Petrol: 0.9830",
+        "Diesel: 0.9879",
+        "Kerosene: 0.9864",
+        "ATF: 0.9862",
+        "Light diesel oil: 0.9877",
+        "Furnace oil: 0.9899"
+      ]
+    },
+    {
+      "h": "Which one applies to you",
+      "ul": [
+        "Bulk invoices from oil companies usually state volume at 15 C, or print a density at 15 C.",
+        "Retail pump receipts are at ambient temperature.",
+        "Your tank dips are at whatever the tank temperature is that day."
+      ]
+    },
+    {
+      "h": "The safe method",
+      "p": [
+        "Convert every quantity to kilograms with the density for its own basis, then apply a per-kg CO2 factor. A summer reconciliation that compares ambient dips with 15 C invoices can show a 1 to 2% gap that is temperature, not theft."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and unit printed on each fuel invoice, converts it with a stated density or calorific value, and shows the factor and source on every line, so a litre or kilogram is never guessed.",
+  "links": [
+    {
+      "label": "Bulk diesel invoice in kilolitres at 15 C",
+      "to": "/answers/bulk-diesel-invoice-kilolitres-15c"
+    },
+    {
+      "label": "Own diesel tank issue register",
+      "to": "/answers/own-diesel-tank-issue-register-emissions"
+    },
+    {
+      "label": "Litres in a tonne of diesel",
+      "to": "/answers/litres-in-a-tonne-of-diesel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PPAC Ready Reckoner FY 2025-26, Chapter 9 conversion tables",
+      "url": "https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

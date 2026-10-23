@@ -1,0 +1,55 @@
+{
+  "slug": "pm-surya-ghar-subsidy-for-factories-or-shops",
+  "q": "Can a factory, shop or office get the PM Surya Ghar rooftop solar subsidy?",
+  "title": "PM Surya Ghar for factories and shops",
+  "short": "No. MNRE's guidelines say no central financial assistance will be provided to non-residential consumers, including government, commercial and industrial connections. The subsidy is only for grid-connected rooftop systems tagged to a residential electricity connection, and for common facilities of housing societies.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSME owners, shopkeepers and building owners considering rooftop solar",
+  "sections": [
+    {
+      "h": "Who qualifies",
+      "ul": [
+        "A residential consumer with a grid-connected system on a roof, terrace, balcony or elevated structure, tagged to their residential connection.",
+        "Group housing societies and resident welfare associations, for common facilities including EV charging.",
+        "Not commercial, industrial or government connections."
+      ]
+    },
+    {
+      "h": "What a business can do instead",
+      "ul": [
+        "Fund rooftop solar itself, or through a RESCO or a solar loan; many banks offer products for MSMEs.",
+        "Look at state schemes and net metering rules, which are set by your state commission.",
+        "Count accelerated depreciation and the bill saving in the payback, since there is no central subsidy to count."
+      ]
+    },
+    {
+      "h": "For your carbon figures",
+      "p": [
+        "Whether subsidised or not, a factory's own rooftop solar reduces the grid electricity on its bill, which lowers location-based Scope 2. Keep inverter and net meter readings for each month."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including net metering lines, so grid import, export and solar generation sit in one monthly record with the factor and source shown. Figures are self-declared.",
+  "links": [
+    {
+      "label": "Rooftop solar payback for a factory",
+      "to": "/answers/rooftop-solar-payback-for-a-factory"
+    },
+    {
+      "label": "What banks ask for a solar loan",
+      "to": "/answers/rooftop-solar-loan-msme-what-banks-ask"
+    },
+    {
+      "label": "Net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana, Central Financial Assistance to Residential Consumers",
+      "url": "https://mnre.gov.in/static/uploads/2025/08/f20f6d61628866e66b612810b49abd78.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
