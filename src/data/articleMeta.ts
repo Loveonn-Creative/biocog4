@@ -110,3 +110,15 @@ export const articleMetaTitles: Record<string, string> = {
   'how-to-calculate-carbon-footprint-electricity-bills': "Carbon Footprint From Electricity Bills: Worked Example",
   'logistics-scope-1-emissions-india': "Logistics Scope 1 Emissions in India: Fleet Guide",
 };
+
+// Search descriptions for articles whose opening paragraph reads as a story
+// rather than an answer. Chosen from Search Console (October 2026): pages on
+// page one with impressions but almost no clicks. Facts are taken from each
+// article body; keep them in step when the article changes.
+export const articleMetaDescriptions: Record<string, string> = {
+  'eu-steel-import-quota-2026': 'From 1 July 2026 the EU cut duty-free steel quotas by about 47% and set a 50% duty above quota. What it means for exporters and how it stacks with CBAM.',
+  'carbon-credit-pricing-explained-vcm-compliance-2026': 'EU ETS allowances, CBAM certificates, India CCTS credits and voluntary credits are priced very differently. What sets the price of a carbon credit in 2026.',
+  'adeetie-scheme': 'ADEETIE gives MSMEs in 60 energy-intensive clusters 5% or 3% interest subvention on energy-efficient equipment loans. Eligibility and how to apply.',
+  'become-cbam-authorised-declarant': 'Since 1 January 2026 only an authorised CBAM declarant can import CBAM goods above 50 tonnes a year. Who needs it, how to apply and what is checked.',
+  'india-carbon-credit-trading-scheme-targets': "India's CCTS targets cover aluminium, cement, chlor-alkali, paper, refineries, petrochemicals, textiles and secondary aluminium. What it means for suppliers.",
+};
