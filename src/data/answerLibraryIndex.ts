@@ -21702,7 +21702,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "vizag-steel-wire-rod-buyer-precursor-data",
   "q": "What does an EU wire or fastener maker need from a Visakhapatnam wire rod supplier for CBAM?",
   "title": "Vizag wire rod: what EU buyers need",
-  "short": "Wire rod under CN 7213 is a CBAM good. The importer needs direct and indirect emissions per tonne, the production period and the installation. If the buyer then draws wire or makes fasteners outside the EU, its own figure carries the wire rod as a precursor, so the rod figure has to be passed down.",
+  "short": "Wire rod under CN 7213 is a CBAM good. The importer needs specific direct emissions per tonne (indirect emissions are not counted for steel), the production period and the installation. If the buyer draws wire or makes fasteners outside the EU, its own figure includes the rod as a precursor, so pass the rod figure down.",
   "topic": "regulation",
   "reviewed": "2026-10-21"
  },
