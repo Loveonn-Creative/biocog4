@@ -1,0 +1,61 @@
+{
+  "slug": "who-should-own-brsr-core-data",
+  "q": "Who in a company should own each BRSR Core figure?",
+  "title": "Who owns each BRSR Core figure",
+  "short": "Give each figure one owner who holds the source records: plant heads or maintenance for fuel and electricity, EHS for water, waste and safety, HR for wages and gender data, finance for revenue and payables, and the company secretary for the final filing. One person checks the whole set.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "CFOs and company secretaries of listed companies",
+  "sections": [
+    {
+      "h": "A simple owner map",
+      "ul": [
+        "Energy and emissions: plant or maintenance heads, from fuel invoices and electricity bills.",
+        "Water and waste: EHS, from meter logs, tanker invoices, weighbridge slips and recycler receipts.",
+        "Employee safety and wellbeing: EHS and HR, from incident registers and payroll.",
+        "Gender and inclusive development: HR and procurement, from payroll and purchase ledgers.",
+        "Revenue, payables and related parties: finance, from the audited accounts."
+      ]
+    },
+    {
+      "h": "Rules that keep it clean",
+      "ul": [
+        "The owner signs off their figure with the period, unit and source.",
+        "A second person who did not prepare it checks it against the records.",
+        "Owners keep their evidence in one shared folder, named by figure and month."
+      ]
+    },
+    {
+      "h": "When to set it up",
+      "p": [
+        "At the start of the financial year, so data is collected monthly. Chasing a year of bills after the year ends is where most errors come in."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "BRSR Core's nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "Assurance or assessment",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    },
+    {
+      "label": "What auditors check",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

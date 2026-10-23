@@ -1,0 +1,69 @@
+{
+  "slug": "brsr-environment-disclosure-common-errors",
+  "q": "What are the most common errors in BRSR environmental disclosures?",
+  "title": "Common BRSR environment errors",
+  "short": "Mixed units, a wrong intensity denominator, diesel generator power counted as Scope 2, renewable claims without contracts, water bills in rupees, and figures that do not match the previous year's method. Most are caught by checking each line against the bill it came from.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Companies reviewing a BRSR draft",
+  "sections": [
+    {
+      "h": "Emissions and energy",
+      "ul": [
+        "Kilograms reported as tonnes, or the reverse.",
+        "Electricity from your own diesel generator added to Scope 2. It is Scope 1 fuel; only bought electricity is Scope 2.",
+        "Energy totals that add kWh and litres without converting both to GJ.",
+        "A renewable share with no open access contract or certificate behind it."
+      ]
+    },
+    {
+      "h": "Intensity",
+      "ul": [
+        "Total income used instead of revenue from operations.",
+        "Scope 3 added to a Scope 1 plus 2 intensity.",
+        "Emissions for one plant divided by revenue for the whole company."
+      ]
+    },
+    {
+      "h": "Water and waste",
+      "ul": [
+        "Bills in rupees instead of kL.",
+        "Recycled water counted as fresh withdrawal.",
+        "Waste estimated by eye instead of weighed, with no recycler receipts."
+      ]
+    },
+    {
+      "h": "Consistency",
+      "ul": [
+        "A new emission factor or boundary this year with no restated comparison.",
+        "Different plants using different factor sources for the same fuel."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Common carbon accounting mistakes",
+      "to": "/answers/common-carbon-accounting-mistakes-smes"
+    },
+    {
+      "label": "Diesel generator energy in BRSR",
+      "to": "/answers/brsr-dg-set-diesel-energy-and-scope-1"
+    },
+    {
+      "label": "Emission intensity per rupee",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

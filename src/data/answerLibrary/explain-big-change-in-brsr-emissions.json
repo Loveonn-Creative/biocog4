@@ -1,0 +1,61 @@
+{
+  "slug": "explain-big-change-in-brsr-emissions",
+  "q": "How should we explain a big change in BRSR emissions from last year?",
+  "title": "Explain a big change in BRSR emissions",
+  "short": "Split the change into its causes: more or less production, a different fuel or power mix, a new emission factor, a change in boundary, or a corrected error. Give the size of each in tonnes and restate last year if the method changed, so readers compare like with like.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Companies writing BRSR commentary",
+  "sections": [
+    {
+      "h": "Five usual causes",
+      "ul": [
+        "Activity: output went up or down.",
+        "Mix: a fuel switch, solar added, or more grid power.",
+        "Factor: a new CEA database version or a new fuel factor.",
+        "Boundary: a plant added, closed or sold.",
+        "Correction: last year's figure had an error."
+      ]
+    },
+    {
+      "h": "How to write it",
+      "ul": [
+        "One line per cause with the tonnes it explains.",
+        "Show intensity alongside the total, since output changes move totals.",
+        "If a factor or boundary changed, restate last year's figure on the new basis and say so."
+      ]
+    },
+    {
+      "h": "What not to do",
+      "p": [
+        "Do not credit reductions to projects when the drop came from lower output or a new factor. A reviewer will check."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Emissions fell but intensity rose",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    },
+    {
+      "label": "Restate after finding an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

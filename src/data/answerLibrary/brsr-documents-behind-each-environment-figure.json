@@ -1,0 +1,66 @@
+{
+  "slug": "brsr-documents-behind-each-environment-figure",
+  "q": "Which documents should back each BRSR environment figure?",
+  "title": "Documents behind BRSR environment figures",
+  "short": "Every number needs a record: electricity bills for Scope 2 and grid energy, fuel invoices for Scope 1, meter logs and tanker invoices for water, weighbridge slips and recycler receipts for waste, and production registers for intensity. Keep them filed by figure and month.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Teams preparing for BRSR Core assessment or assurance",
+  "sections": [
+    {
+      "h": "Energy and emissions",
+      "ul": [
+        "Electricity: monthly bills for every connection, plus open access settlement statements.",
+        "Fuels: purchase invoices with quantity and unit, and stock registers for coal or furnace oil.",
+        "Diesel generators: fuel issue registers and run-hour logs."
+      ]
+    },
+    {
+      "h": "Water",
+      "ul": [
+        "Supply bills, borewell meter readings, tanker invoices in kL.",
+        "Discharge meter logs and CETP invoices."
+      ]
+    },
+    {
+      "h": "Waste",
+      "ul": [
+        "Weighbridge slips, hazardous waste manifests, recycler and co-processor receipts.",
+        "Authorisations from the pollution control board where they apply."
+      ]
+    },
+    {
+      "h": "Denominators",
+      "ul": [
+        "Production registers for physical intensity.",
+        "Audited accounts for revenue from operations."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "What auditors check",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "Assurance or assessment",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    },
+    {
+      "label": "BRSR waste categories",
+      "to": "/answers/brsr-waste-categories-how-to-fill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

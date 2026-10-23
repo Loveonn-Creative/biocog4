@@ -1,0 +1,73 @@
+{
+  "slug": "brsr-supplier-questionnaire-field-by-field",
+  "q": "How do I fill a customer's BRSR supplier questionnaire field by field?",
+  "title": "BRSR supplier questionnaire, field by field",
+  "short": "Answer in the order the form asks: company details and period, the boundary you used, then Scope 1 by fuel, Scope 2 from electricity, total energy, water and waste. Put the unit and factor source beside every number and keep the bill behind each line.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "MSME suppliers to listed companies",
+  "sections": [
+    {
+      "h": "Header fields",
+      "ul": [
+        "Legal name and GSTIN of the entity you invoice the customer from.",
+        "Reporting period: April to March, matching the customer's financial year unless they ask otherwise.",
+        "Boundary: which plants or offices the figures cover, and whether anything is left out and why."
+      ]
+    },
+    {
+      "h": "Emissions fields",
+      "ul": [
+        "Scope 1: one line per fuel (diesel, LPG, PNG, coal, furnace oil) with quantity, unit, factor, source and tonnes CO2e.",
+        "Scope 2: grid kWh from bills times the CEA grid factor, 0.710 kg CO2 per kWh, with the database version.",
+        "Leave Scope 3 blank unless the form asks for it, and say so rather than guessing."
+      ]
+    },
+    {
+      "h": "Energy, water and waste fields",
+      "ul": [
+        "Energy: the same fuel and electricity quantities converted to GJ, with renewable and non-renewable shown separately.",
+        "Water: withdrawal by source (municipal, borewell, tanker) and, if asked, consumption.",
+        "Waste: tonnes by category from weighbridge slips and recycler receipts."
+      ]
+    },
+    {
+      "h": "Before you send it",
+      "ol": [
+        "Check units: kg against tonnes is the most common slip.",
+        "Attach or offer the evidence list, not the bills themselves, unless the contract requires them.",
+        "Name a contact who can answer follow-up questions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "What a listed customer asks MSME suppliers",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Unit mistakes on carbon forms",
+      "to": "/answers/emissions-form-unit-mistakes-kg-tonnes-co2e"
+    },
+    {
+      "label": "BRSR waste categories",
+      "to": "/answers/brsr-waste-categories-how-to-fill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

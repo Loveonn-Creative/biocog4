@@ -1,0 +1,67 @@
+{
+  "slug": "brsr-intensity-per-tonne-of-product",
+  "q": "How do I calculate emission intensity per tonne of product for BRSR?",
+  "title": "Emission intensity per tonne of product",
+  "short": "Divide Scope 1 plus Scope 2 emissions for the year by the tonnes of product made in the same year and boundary. 9,000 t CO2e over 30,000 t of output gives 0.30 t CO2e per tonne. Name the product and unit, and keep the same denominator every year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Manufacturers adding a physical intensity to BRSR",
+  "sections": [
+    {
+      "h": "Pick the denominator",
+      "ul": [
+        "Tonnes of finished product from production records, not sales, so stock changes do not distort it.",
+        "For several products, use a common unit (tonnes, or tonnes of a reference product) and explain it.",
+        "Keep the same plants in the numerator and denominator."
+      ]
+    },
+    {
+      "h": "Why add it",
+      "p": [
+        "Revenue intensity moves with prices. A physical intensity shows whether the plant actually makes each tonne with less carbon, which buyers and lenders understand."
+      ]
+    },
+    {
+      "h": "Watch for",
+      "ul": [
+        "Seasonal or partial years: compare like with like.",
+        "Captive power sold outside: subtract its share before dividing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Scope 1: 3,600 t CO2e. Scope 2: 5,400 t CO2e. Total 9,000 t CO2e.",
+      "Output: 30,000 t of castings.",
+      "Intensity = 9,000 / 30,000 = 0.30 t CO2e per tonne."
+    ],
+    "note": "Illustrative figures."
+  },
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Emissions fell but intensity rose",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    },
+    {
+      "label": "Seasonal factory intensity",
+      "to": "/answers/seasonal-factory-emissions-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
