@@ -1,0 +1,66 @@
+{
+  "slug": "adeetie-budget-and-second-phase",
+  "q": "How large is the ADEETIE scheme, and will more clusters be added?",
+  "title": "ADEETIE budget and phase 2 plans",
+  "short": "ADEETIE has a total outlay of Rs 1,000 crore over FY 2025-26 to FY 2027-28: Rs 875 crore for interest subvention, Rs 50 crore for audits and Rs 75 crore for hand-holding. BEE plans a second phase of about 100 more clusters after the first 60.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Industry associations, lenders and MSMEs outside the first 60 clusters",
+  "sections": [
+    {
+      "h": "Where the Rs 1,000 crore goes",
+      "ul": [
+        "Rs 875 crore: interest subvention.",
+        "Rs 50 crore: investment grade energy audits.",
+        "Rs 75 crore: hand-holding and implementation support."
+      ]
+    },
+    {
+      "h": "What BEE expects it to mobilise",
+      "ul": [
+        "About Rs 9,000 crore of energy efficiency investment.",
+        "About Rs 6,750 crore of MSME lending."
+      ]
+    },
+    {
+      "h": "Phases",
+      "ul": [
+        "Phase 1: 60 clusters across 14 sectors.",
+        "Phase 2: about 100 additional clusters, based on learnings from phase 1.",
+        "Each project is tracked with a unique project ID in the scheme's MIS run by the project management unit."
+      ]
+    },
+    {
+      "h": "If your cluster is not yet listed",
+      "p": [
+        "Ask your association to register interest with BEE, and build your baseline now. A cluster that already has audited energy data is easier to bring into the next phase."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each unit's energy baseline from its own bills, which an association can use to show a cluster's energy intensity when it asks to be included.",
+  "links": [
+    {
+      "label": "ADEETIE eligible clusters",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    },
+    {
+      "label": "ADEETIE interest rates",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "ADEETIE scheme explained",
+      "to": "/climate-intelligence/adeetie-scheme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=234&lid=384"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

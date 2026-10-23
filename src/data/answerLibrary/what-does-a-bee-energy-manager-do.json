@@ -1,0 +1,57 @@
+{
+  "slug": "what-does-a-bee-energy-manager-do",
+  "q": "What does a BEE certified energy manager actually do in a factory?",
+  "title": "What a BEE energy manager does",
+  "short": "BEE lists the job as planning cost-saving energy projects for management, setting up an energy cell, improving monitoring and metering down to shop level, working out specific energy consumption per product, and running audits and training. It is a continuous role, not a one-off audit.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factory owners deciding whether to appoint an energy manager",
+  "sections": [
+    {
+      "h": "Duties BEE lists",
+      "ul": [
+        "Prepare an annual plan of financially attractive energy saving investments.",
+        "Set up an energy conservation cell with a management mandate.",
+        "Improve monitoring and process control, and check equipment efficiency.",
+        "Keep energy instruments working and calibrated.",
+        "Break energy use down to shop or profit centre level.",
+        "Set a method for specific energy consumption per product or activity.",
+        "Run internal training and coordinate external audits and projects."
+      ]
+    },
+    {
+      "h": "When the law requires one",
+      "p": [
+        "Designated consumers must appoint or designate a certified energy manager. For other factories it is optional, though many give one person the job."
+      ]
+    },
+    {
+      "h": "How it links to carbon reporting",
+      "p": [
+        "The same data an energy manager builds, kWh and fuel per unit of output by month, is the base for Scope 1 and 2 figures and buyer questionnaires."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills and fuel invoices into monthly records by site and fuel, which gives an energy manager the shop-floor data base the role depends on.",
+  "links": [
+    {
+      "label": "Does a small factory need one?",
+      "to": "/answers/bee-certified-energy-manager-small-factory"
+    },
+    {
+      "label": "Exam eligibility",
+      "to": "/answers/bee-energy-manager-exam-eligibility"
+    },
+    {
+      "label": "Is my factory a designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, energy auditors and energy managers page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=204&lid=57"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

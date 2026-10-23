@@ -1,0 +1,67 @@
+{
+  "slug": "adeetie-interest-subvention-rate-msme",
+  "q": "What interest subvention does ADEETIE give, and what rate will my factory actually pay?",
+  "title": "ADEETIE interest subvention rates",
+  "short": "ADEETIE cuts the interest on an energy efficiency loan by 5 percentage points for micro and small enterprises and 3 points for medium enterprises. The scheme keeps your net rate at 2 percent or more, so a loan already near that floor gets a smaller cut.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners and finance heads planning an energy efficiency loan",
+  "sections": [
+    {
+      "h": "The two rates",
+      "ul": [
+        "Micro and small enterprises: 5 percent interest subvention on the eligible loan amount.",
+        "Medium enterprises: 3 percent interest subvention.",
+        "The net borrowing rate after subvention cannot fall below 2 percent."
+      ]
+    },
+    {
+      "h": "What the subvention applies to",
+      "ul": [
+        "Loans of Rs 10 lakh to Rs 15 crore from banks or financial institutions.",
+        "Up to 75 percent debt funding of the project cost.",
+        "Projects that achieve and keep at least 10 percent energy savings; the subvention is paid each year the saving holds."
+      ]
+    },
+    {
+      "h": "How the money reaches you",
+      "p": [
+        "You pay your lender as usual. The lender files subvention claims with BEE, which disburses through a nodal bank every quarter. Empanelled auditors verify the actual savings first, so a project that slips below 10 percent puts that year's subvention at risk."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example (illustrative)",
+    "lines": [
+      "Small unit, Rs 1 crore loan at 10 percent: subvention 5 points, net about 5 percent",
+      "Same loan at 6 percent: 5 points would leave 1 percent, so the cut stops at the 2 percent floor (4 points)"
+    ],
+    "note": "Illustrative rates. Your lender and the scheme rules decide the eligible amount."
+  },
+  "senseible": "Senseible keeps a dated, fingerprinted record of every electricity bill and fuel invoice before and after the project, which is the evidence trail you need when the yearly 10 percent saving is checked.",
+  "links": [
+    {
+      "label": "ADEETIE scheme explained",
+      "to": "/climate-intelligence/adeetie-scheme"
+    },
+    {
+      "label": "ADEETIE application steps",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=234&lid=384"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

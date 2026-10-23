@@ -143,6 +143,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the difference between a certified and an accredited energy auditor?",
+  "text": "A certified energy auditor has passed BEE's exam. An accredited energy auditor has also logged five years of audits, three in energy intensive industries, and passed a BEE interview on five audit reports. BEE listed 304 accredited auditors in October 2026.",
+  "url": "https://senseible.earth/answers/accredited-vs-certified-energy-auditor"
+ },
+ {
+  "kind": "answer",
   "title": "What are the emissions of producing acetic acid per tonne?",
   "text": "Most acetic acid is made by reacting methanol with carbon monoxide. Your Scope 1 and 2 are steam, fuel and electricity for reaction and purification; the methanol and CO bought in, or the syngas you make for them, carry most of the footprint.",
   "url": "https://senseible.earth/answers/acetic-acid-production-co2-per-tonne"
@@ -182,6 +188,48 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Should freight emissions use the actual route distance or the shortest distance?",
   "text": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework charge each shipment on the shortest feasible distance, with detours and empty running carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
   "url": "https://senseible.earth/answers/actual-vs-shortest-distance-freight-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I apply for the ADEETIE scheme, step by step?",
+  "text": "Register on the ADEETIE portal, get an investment grade energy audit and detailed project report from an empanelled auditor, win BEE technical committee approval, then take the loan and install. Audit costs up to Rs 75,000 (micro, small) or Rs 1 lakh (medium) are reimbursed.",
+  "url": "https://senseible.earth/answers/adeetie-application-steps"
+ },
+ {
+  "kind": "answer",
+  "title": "How large is the ADEETIE scheme, and will more clusters be added?",
+  "text": "ADEETIE has a total outlay of Rs 1,000 crore over FY 2025-26 to FY 2027-28: Rs 875 crore for interest subvention, Rs 50 crore for audits and Rs 75 crore for hand-holding. BEE plans a second phase of about 100 more clusters after the first 60.",
+  "url": "https://senseible.earth/answers/adeetie-budget-and-second-phase"
+ },
+ {
+  "kind": "answer",
+  "title": "Which industrial clusters are eligible for the ADEETIE scheme?",
+  "text": "ADEETIE covers Udyam-registered MSMEs in 60 named clusters across 14 energy-intensive sectors, from Morbi ceramics and Firozabad glass to Ludhiana forging and Tirupur textiles. If your unit sits outside these clusters, it does not qualify in the first phase.",
+  "url": "https://senseible.earth/answers/adeetie-eligible-clusters-list"
+ },
+ {
+  "kind": "answer",
+  "title": "How does an energy auditor or firm get empanelled under ADEETIE?",
+  "text": "Firms need five years of operations, at least one BEE certified energy auditor with five years of experience, and audit instruments. Individuals must be BEE certified energy auditors with five years in industrial or MSME audits. Empanelment lasts up to three years.",
+  "url": "https://senseible.earth/answers/adeetie-energy-auditor-empanelment"
+ },
+ {
+  "kind": "answer",
+  "title": "What interest subvention does ADEETIE give, and what rate will my factory actually pay?",
+  "text": "ADEETIE cuts the interest on an energy efficiency loan by 5 percentage points for micro and small enterprises and 3 points for medium enterprises. The scheme keeps your net rate at 2 percent or more, so a loan already near that floor gets a smaller cut.",
+  "url": "https://senseible.earth/answers/adeetie-interest-subvention-rate-msme"
+ },
+ {
+  "kind": "answer",
+  "title": "What loan size and debt share qualify for ADEETIE interest subvention?",
+  "text": "Loans between Rs 10 lakh and Rs 15 crore qualify, and the subvention covers up to 75 percent debt funding of the project cost. The project must reach and hold at least 10 percent energy savings, or the yearly subvention stops.",
+  "url": "https://senseible.earth/answers/adeetie-loan-size-and-debt-share"
+ },
+ {
+  "kind": "answer",
+  "title": "Which technologies are on the ADEETIE list, and how much energy do they save?",
+  "text": "BEE lists 69 indicative technologies with expected savings, such as lost foam casting in foundries at 50 to 60 percent, induction billet heaters in forging at 20 to 25 percent and CNC machine tools at 20 to 40 percent. The list is open: other technologies can qualify.",
+  "url": "https://senseible.earth/answers/adeetie-technology-list-energy-savings"
  },
  {
   "kind": "answer",
@@ -1307,9 +1355,45 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does BEE rate chillers, and what minimum efficiency must a chiller meet?",
+  "text": "BEE's voluntary chiller scheme rates vapour compression chillers on ISEER, a seasonal efficiency figure, after a minimum full-load COP. A water-cooled chiller under 260 kW of cooling needs COP 4.2 to qualify; an air-cooled one needs 2.4.",
+  "url": "https://senseible.earth/answers/bee-chiller-star-rating-minimum-cop"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the difference between BEE's energy manager and energy auditor exams?",
+  "text": "Both sit the same three written papers on energy management, thermal utilities and electrical utilities, 150 marks each. Auditors also sit a fourth, open book paper on performance assessment of equipment. Every paper needs at least 50 percent to pass.",
+  "url": "https://senseible.earth/answers/bee-energy-auditor-vs-energy-manager-exam"
+ },
+ {
+  "kind": "answer",
+  "title": "Who is eligible to sit BEE's energy manager and energy auditor exams?",
+  "text": "A graduate engineer with three years of energy-related work qualifies for both exams, as does a post-graduate engineer, or an engineer with a management post-graduate degree, with two years. Diploma engineers with six years and physics, electronics or chemistry post-graduates with three years qualify only for the manager exam.",
+  "url": "https://senseible.earth/answers/bee-energy-manager-exam-eligibility"
+ },
+ {
+  "kind": "answer",
+  "title": "Which products must carry a BEE star label, and which are voluntary?",
+  "text": "Eleven products need a BEE star label by law, including distribution transformers, room ACs, ceiling fans, LED lamps and refrigerators. Industrial motors, pumps, air compressors, diesel generators and chillers are still voluntary, so an unlabelled one is legal but tells you less.",
+  "url": "https://senseible.earth/answers/bee-mandatory-vs-voluntary-star-label"
+ },
+ {
+  "kind": "answer",
+  "title": "What did BEE's MSME energy mapping study cover, and is my sector included?",
+  "text": "BEE mapped energy use in 55 MSME clusters with more than 550 detailed audits across foundry, forging, paper, steel re-rolling, pharma, bricks, glass and refractory, chemicals, food processing, textiles and leather. A further 15 clusters in textiles, food processing and leather are being mapped with over 150 audits.",
+  "url": "https://senseible.earth/answers/bee-msme-energy-mapping-study-clusters"
+ },
+ {
+  "kind": "answer",
   "title": "What is BEE's SME energy efficiency programme, and does my industrial cluster qualify?",
   "text": "BEE's SME programme works at cluster level in energy-intensive MSME clusters, such as foundries, brass, ceramics, forging and textiles, through energy mapping, audits, project reports and local capacity building. For individual units, BEE's ADEETIE scheme offers interest subvention to Udyam-registered MSMEs in 60 identified clusters.",
   "url": "https://senseible.earth/answers/bee-sme-programme-cluster-energy-efficiency"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a BEE star label on a diesel generator set mean?",
+  "text": "BEE's voluntary scheme rates diesel generator sets on specific fuel consumption in grams of diesel per kWh. In the 2014 schedule, 5 stars means 220 g/kWh or less and 1 star means above 302 up to 336 g/kWh. The pilot covered sets up to 19 kW.",
+  "url": "https://senseible.earth/answers/bee-star-label-diesel-generator"
  },
  {
   "kind": "answer",
@@ -1319,9 +1403,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does BEE star rate air compressors?",
+  "text": "BEE rates fixed speed screw and reciprocating compressors of 0.37 to 500 kW on isentropic efficiency at full load. In the 2020 schedule, an air-cooled 11 to 30 kW unit needed 54 percent for 1 star and 78 percent for 5 stars. Labelling is voluntary.",
+  "url": "https://senseible.earth/answers/bee-star-rating-air-compressor"
+ },
+ {
+  "kind": "answer",
   "title": "How does the BEE star rating for office buildings work?",
   "text": "The BEE star rating gives an existing office building one to five stars based on its Energy Performance Index (EPI): annual kWh divided by built-up area. Fewer kWh per square metre earns more stars. The bands differ by climate zone and by how much of the building is air-conditioned.",
   "url": "https://senseible.earth/answers/bee-star-rating-for-commercial-buildings"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a BEE star rating on an induction motor mean?",
+  "text": "BEE rates three phase induction motors from 1 star (IE2) to 5 star (IE3++, equivalent to IE4) by full-load efficiency. A 7.5 kW, 4 pole motor needs 88.7 percent for 1 star, 90.4 for 3 stars and 92.6 for 5 stars. Labelling is voluntary.",
+  "url": "https://senseible.earth/answers/bee-star-rating-induction-motor"
  },
  {
   "kind": "answer",
@@ -2528,6 +2624,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can AI read my electricity bill accurately enough for a carbon report?",
   "text": "Yes for the figure that matters, the kWh billed, provided the reading is checked rather than trusted. A carbon report needs units consumed and the billing period. Good systems read these into fixed fields, leave a field empty when it is unclear, and flag it, so a person checks the few doubtful bills instead of all of them.",
   "url": "https://senseible.earth/answers/can-ai-read-my-electricity-bill-accurately"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a company that is not a designated consumer buy energy saving or carbon credit certificates?",
+  "text": "Yes. The 2022 amendment to the Energy Conservation Act added that any person may buy energy saving certificates or carbon credit certificates on a voluntary basis. Designated consumers and registered entities trade them to meet obligations; others can buy without an obligation.",
+  "url": "https://senseible.earth/answers/can-any-company-buy-energy-saving-certificates"
  },
  {
   "kind": "answer",
@@ -5609,6 +5711,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is BEE star labelling mandatory for distribution transformers, and what does the star mean?",
+  "text": "Yes. Distribution transformers are on BEE's mandatory list. The star level is set by total losses at 50 percent and 100 percent load, so a higher star means fewer watts lost. Labels must show capacity, losses, star level, label period and year of manufacture.",
+  "url": "https://senseible.earth/answers/distribution-transformer-star-label-rules"
+ },
+ {
+  "kind": "answer",
   "title": "Is chilled water bought from a district cooling plant Scope 2?",
   "text": "Yes. Purchased cooling is Scope 2, like purchased electricity and steam. Ask the provider for the emissions per unit of cooling, usually per TR-hour or kWh of cooling, based on their electricity and fuel. Without it, estimate from their chiller efficiency and the grid factor, and label it an estimate.",
   "url": "https://senseible.earth/answers/district-cooling-chilled-water-scope-2"
@@ -5810,6 +5918,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does the Energy Conservation Building Code apply to my commercial building?",
   "text": "The Energy Conservation Building Code applies to a commercial building with a connected load of 100 kW or more, or a contract demand of 120 kVA or more, but it is enforceable only where your state has notified it. It mainly covers new buildings and major additions, checked at plan approval.",
   "url": "https://senseible.earth/answers/does-ecbc-apply-to-my-building"
+ },
+ {
+  "kind": "answer",
+  "title": "Does ECSBC 2024 apply to a factory or its office block?",
+  "text": "ECSBC 2024 covers commercial and office buildings with a connected load of 100 kW or a contract demand of 120 kVA or more. It does not apply to equipment and parts of buildings that use energy for manufacturing processes, so it reaches offices and commercial blocks, not production lines.",
+  "url": "https://senseible.earth/answers/does-ecsbc-2024-apply-to-a-factory"
  },
  {
   "kind": "answer",
@@ -6191,6 +6305,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What changed from ECBC 2017 to ECSBC 2024?",
+  "text": "ECSBC 2024 replaces ECBC 2017 for commercial and office buildings. BEE says it tightens energy thresholds slightly and adds sustainability measures such as water, waste and site requirements. It keeps three tiers: ECSBC (mandatory baseline), ECSBC Plus and Super ECSBC (voluntary).",
+  "url": "https://senseible.earth/answers/ecsbc-2024-vs-ecbc-2017"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of an electrocoating (ED) line per square metre?",
   "text": "Add the oven and tank heating fuel, PNG at 2.05 kg CO2 per scm, and the line electricity at 0.710 kg CO2 per kWh, including the rectifier and chiller. Divide by square metres coated, and add the paint from the supplier's factor.",
   "url": "https://senseible.earth/answers/ed-coating-line-carbon-per-square-metre"
@@ -6506,6 +6626,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "My pharma customer invited us to the Energize programme. What is it and what do I commit to?",
   "text": "Energize is a programme run by Schneider Electric with large pharmaceutical companies, launched in November 2021, to help their suppliers buy renewable electricity. It offers education and access to individual or group renewable power deals. Joining is free for suppliers of the sponsoring companies; read the participation terms before you sign.",
   "url": "https://senseible.earth/answers/energize-pharma-supplier-renewable-electricity"
+ },
+ {
+  "kind": "answer",
+  "title": "What are the penalties under the Energy Conservation Act after the 2022 amendment?",
+  "text": "Most failures under the Act now carry a penalty of up to Rs 10 lakh, plus up to Rs 10,000 a day while they continue. Selling equipment below standard adds Rs 2,000 to Rs 5,000 per unit, and an industrial unit over its norm can pay up to twice the price of each excess tonne of oil equivalent.",
+  "url": "https://senseible.earth/answers/energy-conservation-act-penalties-2022"
+ },
+ {
+  "kind": "answer",
+  "title": "What did the Energy Conservation (Amendment) Act, 2022 change for industry?",
+  "text": "The 2022 amendment let the government set up a carbon credit trading scheme, require designated consumers to use a minimum share of non-fossil energy, bring large residential buildings, vehicles and vessels under the Act, and raise penalties to up to Rs 10 lakh.",
+  "url": "https://senseible.earth/answers/energy-conservation-amendment-act-2022-changes"
  },
  {
   "kind": "answer",
@@ -9230,6 +9362,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I get emissions data from tier-2 suppliers I don't buy from directly?",
   "text": "Mostly through your tier-1 supplier. Ask them for a cradle-to-gate footprint of what they sell you, which already includes their own suppliers, and ask them to request material-level data from their key sub-suppliers. Go to tier 2 directly only for a few high-impact materials, such as steel, aluminium, resins or chemicals.",
   "url": "https://senseible.earth/answers/how-to-get-emissions-data-from-tier-2-suppliers"
+ },
+ {
+  "kind": "answer",
+  "title": "How should an MSME choose and hire an energy auditor?",
+  "text": "Start from BEE's lists: certified auditors, accredited auditors for regulated work, or ADEETIE-empanelled auditors if you want the scheme. Ask for calibrated instruments, two or three past reports from your sector, and a scope that ends in costed projects, not a generic checklist.",
+  "url": "https://senseible.earth/answers/how-to-hire-an-energy-auditor-msme"
  },
  {
   "kind": "answer",
@@ -17705,6 +17843,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a BEE certified energy manager actually do in a factory?",
+  "text": "BEE lists the job as planning cost-saving energy projects for management, setting up an energy cell, improving monitoring and metering down to shop level, working out specific energy consumption per product, and running audits and training. It is a continuous role, not a one-off audit.",
+  "url": "https://senseible.earth/answers/what-does-a-bee-energy-manager-do"
+ },
+ {
+  "kind": "answer",
   "title": "How big is a tonne of CO2, in terms staff can picture?",
   "text": "At room temperature and normal pressure a tonne of CO2 fills about 556 cubic metres, a cube a little over 8 metres on each side. For a factory, it is about 373 litres of diesel burned, or about 1,408 kWh of grid electricity at India's 0.710 kg per kWh.",
   "url": "https://senseible.earth/answers/what-does-a-tonne-of-co2-look-like"
@@ -17942,6 +18086,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Which sectors are covered by India's PAT scheme?",
   "text": "PAT began with eight: aluminium, cement, chlor-alkali, fertiliser, iron and steel, pulp and paper, thermal power and textiles. Cycle II added refineries, railways and electricity DISCOMs. BEE now also lists petrochemicals and commercial buildings such as hotels, each notified with its own energy threshold.",
   "url": "https://senseible.earth/answers/which-sectors-are-in-the-pat-scheme"
+ },
+ {
+  "kind": "answer",
+  "title": "Which sectors have BEE designated consumers, and when did mandatory energy audits start?",
+  "text": "Designated consumers were first notified in 2007 in nine sectors: aluminium, cement, chlor-alkali, fertiliser, iron and steel, pulp and paper, railways, thermal power and textiles. Mandatory energy audits for them were notified in May 2014 under S.O. 1378(E).",
+  "url": "https://senseible.earth/answers/which-sectors-have-bee-designated-consumers"
  },
  {
   "kind": "answer",

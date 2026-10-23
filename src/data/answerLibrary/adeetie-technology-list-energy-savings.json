@@ -1,0 +1,59 @@
+{
+  "slug": "adeetie-technology-list-energy-savings",
+  "q": "Which technologies are on the ADEETIE list, and how much energy do they save?",
+  "title": "ADEETIE technology list and savings",
+  "short": "BEE lists 69 indicative technologies with expected savings, such as lost foam casting in foundries at 50 to 60 percent, induction billet heaters in forging at 20 to 25 percent and CNC machine tools at 20 to 40 percent. The list is open: other technologies can qualify.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Plant heads and maintenance engineers choosing an energy efficiency project",
+  "sections": [
+    {
+      "h": "Examples by sector (saving potential as listed)",
+      "ul": [
+        "Foundry: divided blast cupola 20 to 25 percent; natural gas fired boiler 20 to 30; lost foam casting 50 to 60.",
+        "Forging: forging furnace 15 to 20 percent; hydraulic hammer 30 to 40; induction billet heater 20 to 25.",
+        "Bricks: vertical shaft brick kilns 15 to 20 percent; zig-zag firing 20 to 25.",
+        "Ceramics: gas engine based co-generation 30 to 40 percent; low thermal mass tunnel kiln cars 10 to 13.",
+        "Textile: gas fired stenters 30 to 40 percent; high-speed carding 30 to 40; auto loom 25 to 30.",
+        "Steel re-rolling: direct rolling 30 to 40 percent.",
+        "Buildings: BEE 5 star rated AC 20 to 45 percent."
+      ]
+    },
+    {
+      "h": "How to use the list",
+      "ol": [
+        "Shortlist two or three technologies for your largest energy use, such as the furnace, kiln or compressor house.",
+        "Let the empanelled auditor test them in the investment grade energy audit.",
+        "Take the saving from your audit, not the list. The list gives ranges; your loan and subvention depend on the measured saving."
+      ]
+    },
+    {
+      "h": "Not on the list?",
+      "p": [
+        "The booklet states the scheme is open beyond the indicative list. A technology outside it still needs the detailed project report and BEE technical committee approval."
+      ]
+    }
+  ],
+  "senseible": "Senseible separates power and fuel by month from your invoices, so you can see which utility drives your energy bill before choosing what to replace.",
+  "links": [
+    {
+      "label": "ADEETIE application steps",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "IE2 to IE4 motors",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Air compressor specific power",
+      "to": "/answers/air-compressor-specific-power-kw-per-cfm"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

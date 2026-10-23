@@ -1,0 +1,75 @@
+{
+  "slug": "adeetie-eligible-clusters-list",
+  "q": "Which industrial clusters are eligible for the ADEETIE scheme?",
+  "title": "ADEETIE eligible clusters by sector",
+  "short": "ADEETIE covers Udyam-registered MSMEs in 60 named clusters across 14 energy-intensive sectors, from Morbi ceramics and Firozabad glass to Ludhiana forging and Tirupur textiles. If your unit sits outside these clusters, it does not qualify in the first phase.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs in energy-intensive clusters and their industry associations",
+  "sections": [
+    {
+      "h": "Clusters by sector",
+      "ul": [
+        "Brass: Jagadhari, Jamnagar, Moradabad, Salem.",
+        "Bricks: Bengaluru, Begusarai, Indore, Nagpur, Tripura.",
+        "Ceramics: Morbi region, Thangadh, Khurja.",
+        "Chemicals: Ankleshwar and Panoli, Jamshedpur, Karnal, Thane, Vapi.",
+        "Fisheries: Kochi, Bhubaneswar, West Godavari.",
+        "Food processing: Ganjam and Nayagarh, Kaithal, Ludhiana, Pune.",
+        "Forging: Bengaluru, Pune, Delhi-NCR, Chennai, Ludhiana."
+      ]
+    },
+    {
+      "h": "More clusters by sector",
+      "ul": [
+        "Foundry: Batala, Jalandhar, Ludhiana, Howrah, Rajkot, Belgaum, Coimbatore.",
+        "Glass and refractory: Ambala, Chirkunda, East and West Godavari, Firozabad.",
+        "Leather: Kanpur, Kolkata, Pallavaram and Vaniyambadi, Jalandhar.",
+        "Paper: Muzaffarnagar-Saharanpur, Kashipur, Vapi, Coimbatore and Erode.",
+        "Pharma: Baddi, Medak, Madgaon, Ahmedabad, Bidar.",
+        "Steel re-rolling: Mandi Gobindgarh and Ludhiana, Jaipur, Jalna, Raipur.",
+        "Textile: Ludhiana, Surat, Tirupur, Solapur, Panipat."
+      ]
+    },
+    {
+      "h": "Other conditions",
+      "ul": [
+        "Udyam registration and manufacturing operations inside the cluster.",
+        "A loan from a bank or financial institution for the project.",
+        "At least 10 percent energy savings from the chosen technology."
+      ]
+    },
+    {
+      "h": "Outside the list?",
+      "p": [
+        "BEE's booklet says a second phase is planned for about 100 more clusters, based on learnings from the first 60. Until then, look at your state's efficiency schemes and SIDBI's energy saving loans."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads twelve months of electricity bills and fuel invoices into a baseline of energy per tonne or per piece, the starting point an auditor needs to size a 10 percent saving.",
+  "links": [
+    {
+      "label": "ADEETIE interest rates",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "BEE SME programme",
+      "to": "/answers/bee-sme-programme-cluster-energy-efficiency"
+    },
+    {
+      "label": "State MSME efficiency subsidies",
+      "to": "/answers/state-subsidies-msme-energy-efficiency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=234&lid=384"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

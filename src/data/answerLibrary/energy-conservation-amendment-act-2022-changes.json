@@ -1,0 +1,60 @@
+{
+  "slug": "energy-conservation-amendment-act-2022-changes",
+  "q": "What did the Energy Conservation (Amendment) Act, 2022 change for industry?",
+  "title": "Energy Conservation Amendment Act 2022",
+  "short": "The 2022 amendment let the government set up a carbon credit trading scheme, require designated consumers to use a minimum share of non-fossil energy, bring large residential buildings, vehicles and vessels under the Act, and raise penalties to up to Rs 10 lakh.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Plant heads, energy managers and compliance teams",
+  "sections": [
+    {
+      "h": "The main changes",
+      "ul": [
+        "Carbon credit trading: the government may specify a carbon credit trading scheme and issue carbon credit certificates to registered entities (new section 14AA).",
+        "Non-fossil share: designated consumers can be told to meet a minimum share of energy or feedstock from non-fossil sources (section 14(x)).",
+        "Energy now covers fossil, non-fossil and renewable sources.",
+        "Buildings: the energy code becomes the Energy Conservation and Sustainable Building Code and can cover residential buildings with 100 kW connected load or 120 kVA contract demand; states may set lower limits.",
+        "Vehicles and vessels are brought under energy consumption standards.",
+        "Industrial units that miss notified norms can be ordered to close, but not within two years of the norms being notified."
+      ]
+    },
+    {
+      "h": "Voluntary buyers",
+      "p": [
+        "Anyone, not only designated consumers, may now buy energy saving certificates or carbon credit certificates on a voluntary basis."
+      ]
+    },
+    {
+      "h": "Penalties",
+      "p": [
+        "Penalties were replaced with higher amounts, covered in the penalties page linked below."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a dated, sourced record of energy and fuel use from invoices, the kind of data a registered entity needs when its energy use is reported or questioned.",
+  "links": [
+    {
+      "label": "EC Act penalties",
+      "to": "/answers/energy-conservation-act-penalties-2022"
+    },
+    {
+      "label": "Is my factory a designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "RCO targets",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation (Amendment) Act, 2022 (No. 19 of 2022), Gazette of 20 December 2022",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1772711141.pdf"
+    },
+    {
+      "label": "BEE, Energy Conservation Act, 2001 chapters",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=164&lid=39"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

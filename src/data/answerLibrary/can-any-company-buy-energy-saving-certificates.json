@@ -1,0 +1,55 @@
+{
+  "slug": "can-any-company-buy-energy-saving-certificates",
+  "q": "Can a company that is not a designated consumer buy energy saving or carbon credit certificates?",
+  "title": "Voluntary buyers of ESCerts and CCCs",
+  "short": "Yes. The 2022 amendment to the Energy Conservation Act added that any person may buy energy saving certificates or carbon credit certificates on a voluntary basis. Designated consumers and registered entities trade them to meet obligations; others can buy without an obligation.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Companies exploring voluntary climate action in India",
+  "sections": [
+    {
+      "h": "What the law says",
+      "p": [
+        "Section 14A(2) gained a proviso: any other person may also purchase an energy saving certificate or carbon credit certificate voluntarily. Carbon credit certificates are issued under section 14AA to registered entities that meet the carbon credit trading scheme."
+      ]
+    },
+    {
+      "h": "What it does not say",
+      "ul": [
+        "It does not make a voluntary purchase count toward any obligation you do not have.",
+        "It does not set a price; trading follows the scheme's rules.",
+        "It does not turn certificates into offsets for your own footprint claims; follow your reporting framework on that."
+      ]
+    },
+    {
+      "h": "Before you buy",
+      "ol": [
+        "Measure and report your own emissions first.",
+        "Check how the trading procedure lets non-obligated buyers participate.",
+        "Record the certificate details and the purpose of the purchase."
+      ]
+    }
+  ],
+  "senseible": "Senseible measures your Scope 1 and 2 emissions from bills and invoices, so any certificate purchase can be shown next to the footprint it relates to.",
+  "links": [
+    {
+      "label": "How ESCerts trading worked",
+      "to": "/answers/how-escerts-trading-worked-under-pat"
+    },
+    {
+      "label": "CCTS certificate formula",
+      "to": "/answers/ccts-carbon-credit-certificates-formula"
+    },
+    {
+      "label": "2022 amendment changes",
+      "to": "/answers/energy-conservation-amendment-act-2022-changes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation (Amendment) Act, 2022 (No. 19 of 2022), Gazette of 20 December 2022",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1772711141.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

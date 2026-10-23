@@ -1,0 +1,60 @@
+{
+  "slug": "accredited-vs-certified-energy-auditor",
+  "q": "What is the difference between a certified and an accredited energy auditor?",
+  "title": "Accredited vs certified energy auditor",
+  "short": "A certified energy auditor has passed BEE's exam. An accredited energy auditor has also logged five years of audits, three in energy intensive industries, and passed a BEE interview on five audit reports. BEE listed 304 accredited auditors in October 2026.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Designated consumers, MSMEs hiring an auditor, and auditors",
+  "sections": [
+    {
+      "h": "Requirements for accreditation",
+      "ul": [
+        "Certified energy manager who has passed Paper IV, the performance assessment paper.",
+        "Five years of energy audit experience after certification, at least three in energy intensive industries.",
+        "Five detailed audit reports with client feedback.",
+        "At least four calibrated instruments: clip-on power meter, flue gas analyser, temperature and lux meters, calibrated by an NABL lab.",
+        "An interview by BEE's accreditation advisory committee."
+      ]
+    },
+    {
+      "h": "Fees and validity",
+      "p": [
+        "The application fee is Rs 1,000 and the annual accreditation fee is Rs 1,000. Accreditation stays valid until cancelled under the regulations."
+      ]
+    },
+    {
+      "h": "Which you need",
+      "ul": [
+        "Designated consumers: mandatory energy audits by an accredited energy auditor.",
+        "MSMEs not under the Act: a certified auditor is usually enough, unless a scheme asks for an empanelled or accredited one."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares a clean record of a client's bills and invoices, so the auditor you hire spends less time collecting data.",
+  "links": [
+    {
+      "label": "How an MSME hires an auditor",
+      "to": "/answers/how-to-hire-an-energy-auditor-msme"
+    },
+    {
+      "label": "Exam papers",
+      "to": "/answers/bee-energy-auditor-vs-energy-manager-exam"
+    },
+    {
+      "label": "ADEETIE auditor empanelment",
+      "to": "/answers/adeetie-energy-auditor-empanelment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, procedures for accreditation of energy auditors (summary of the 2010 regulations)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5a2b0c94b44fdf26_1776845687.pdf"
+    },
+    {
+      "label": "BEE, list of accredited energy auditors (updated 21 October 2026)",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=203&lid=56"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "does-ecsbc-2024-apply-to-a-factory",
+  "q": "Does ECSBC 2024 apply to a factory or its office block?",
+  "title": "Does ECSBC 2024 apply to a factory?",
+  "short": "ECSBC 2024 covers commercial and office buildings with a connected load of 100 kW or a contract demand of 120 kVA or more. It does not apply to equipment and parts of buildings that use energy for manufacturing processes, so it reaches offices and commercial blocks, not production lines.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factory owners planning new offices, warehouses or campuses",
+  "sections": [
+    {
+      "h": "What the code covers",
+      "ul": [
+        "Building envelope, HVAC and hot water, lighting, electrical power and motors, renewable energy systems.",
+        "Site area, water supply and controls, and waste management.",
+        "Commercial or office buildings at or above 100 kW connected load or 120 kVA contract demand."
+      ]
+    },
+    {
+      "h": "What it leaves out",
+      "ul": [
+        "Plug loads.",
+        "Equipment and parts of buildings that use energy for manufacturing processes, unless the code says otherwise.",
+        "Residential buildings, which have their own code."
+      ]
+    },
+    {
+      "h": "Will it apply to my project?",
+      "p": [
+        "The code is enforced through state rules and building bye-laws. Check whether your state has notified it, and whether your office or commercial block on its own crosses the load threshold."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills by meter, so an office block on its own connection can be tracked separately from production.",
+  "links": [
+    {
+      "label": "Does ECBC apply to my building?",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    },
+    {
+      "label": "ECSBC 2024 vs ECBC 2017",
+      "to": "/answers/ecsbc-2024-vs-ecbc-2017"
+    },
+    {
+      "label": "State designated agencies",
+      "to": "/answers/state-designated-agency-energy-conservation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation and Sustainable Building Code 2024 (commercial and office buildings)",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/7534511430467336.pdf"
+    },
+    {
+      "label": "BEE, ECSBC commercial buildings page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=201&lid=327"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "adeetie-loan-size-and-debt-share",
+  "q": "What loan size and debt share qualify for ADEETIE interest subvention?",
+  "title": "ADEETIE loan size and debt limits",
+  "short": "Loans between Rs 10 lakh and Rs 15 crore qualify, and the subvention covers up to 75 percent debt funding of the project cost. The project must reach and hold at least 10 percent energy savings, or the yearly subvention stops.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners, CFOs and bank relationship managers",
+  "sections": [
+    {
+      "h": "The limits",
+      "ul": [
+        "Minimum loan: Rs 10 lakh. Maximum: Rs 15 crore.",
+        "Debt share: up to 75 percent of project cost counts for subvention, so plan at least 25 percent from your own funds or other sources.",
+        "Saving: at least 10 percent energy saving, achieved and sustained during the scheme period."
+      ]
+    },
+    {
+      "h": "Why the 10 percent matters every year",
+      "p": [
+        "Subvention is annual. Empanelled auditors verify the saving after commissioning and report to BEE before lenders claim the subvention. Keep production, power and fuel records monthly so a fall in output is not mistaken for a fall in efficiency."
+      ]
+    },
+    {
+      "h": "Timing",
+      "p": [
+        "The scheme runs for three years, FY 2025-26 to FY 2027-28, which is the disbursement window for subvention and hand-holding support. A project sanctioned late in the window gets fewer years of support."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example (illustrative)",
+    "lines": [
+      "Project cost Rs 80 lakh; eligible debt up to 75 percent = Rs 60 lakh",
+      "Loan of Rs 60 lakh sits inside the Rs 10 lakh to Rs 15 crore band"
+    ],
+    "note": "Illustrative. The lender and BEE's technical committee approve the final amount."
+  },
+  "senseible": "Senseible records energy use per unit of output from your bills and invoices, so a verified 10 percent saving can be shown month by month rather than reconstructed at claim time.",
+  "links": [
+    {
+      "label": "ADEETIE interest rates",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "ADEETIE application steps",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "Green loan for VFDs",
+      "to": "/answers/green-loan-vfd-on-pumps-and-fans"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=234&lid=384"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
