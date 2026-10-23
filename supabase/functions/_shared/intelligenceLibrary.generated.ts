@@ -473,6 +473,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does it matter for CBAM if an extruder uses primary or secondary aluminium billet?",
+  "text": "Yes. For aluminium products, unwrought aluminium is the precursor, and the Commission's guidance says to tell primary from secondary where known. Primary comes from electrolytic smelting, secondary from remelting scrap, and their embedded emissions differ, so the billet mix shapes your profile's figure.",
+  "url": "https://senseible.earth/answers/aluminium-extruder-primary-or-secondary-billet-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of an aluminium extrusion per kg?",
   "text": "Per kg of good extrusion, multiply the billet bought per kg of good profile by the billet's footprint from your supplier, then add press, oven and finishing energy per kg. The billet usually makes up most of the result, so whether it is primary or recycled metal changes the answer more than anything you do in the plant.",
   "url": "https://senseible.earth/answers/aluminium-extrusion-carbon-footprint-per-kg"
@@ -947,6 +953,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does an Austrian importer's CBAM authority mean for an Indian supplier?",
+  "text": "Austria handles CBAM through the Office for the National Emissions Trading System (AnEH), which sits within the customs authority under the Ministry of Finance. An Austrian importer above 50 tonnes a year needs authorised declarant status and will need your installation level emissions data.",
+  "url": "https://senseible.earth/answers/austrian-importer-cbam-indian-supplier"
+ },
+ {
+  "kind": "answer",
   "title": "What is the difference between an authorised Article 6 credit and a mitigation contribution unit?",
   "text": "An authorised Article 6 credit is one the host country lets a buyer count toward another country's target or a scheme such as CORSIA, and the host makes a corresponding adjustment. A mitigation contribution unit is not authorised: the reduction stays in the host's own total, so the buyer can claim it financed climate action, not an offset.",
   "url": "https://senseible.earth/answers/authorised-vs-mitigation-contribution-credits"
@@ -1316,6 +1328,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "A European pump maker wants carbon data for castings from our Belagavi foundry. What do we give?",
   "text": "A product footprint per kg of casting: your melting energy, coke or electricity, sand and binders, and the metal charge, divided by good castings. Iron castings are mostly outside CBAM, so this is a buyer request, not a legal filing, but the buyer will use it in its own declarations.",
   "url": "https://senseible.earth/answers/belagavi-foundry-export-castings-buyer-data"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a Belgian importer's CBAM authority mean for an Indian supplier?",
+  "text": "Belgian importers above 50 tonnes a year need authorised CBAM declarant status. Belgium handles CBAM at federal level, through the Climate Change Service of the Federal Public Service for Health, Food Chain Safety and Environment. Its guidance comes in Dutch, French and English, and your buyer will still need your installation data.",
+  "url": "https://senseible.earth/answers/belgian-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -2471,6 +2489,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can an importer's CBAM obligation come out at zero?",
+  "text": "Yes. The number of certificates is embedded emissions minus the free allocation adjustment, minus any carbon price paid abroad. If that is negative, the obligation is zero. This happens when emissions are below the adjustment, or a carbon price at least equal to the CBAM price was paid.",
+  "url": "https://senseible.earth/answers/can-cbam-obligation-be-zero"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a CBAM verifier tell us how to fix our monitoring?",
+  "text": "No. A verifier can point out misstatements and non-conformities and recommend improvements, but must not tell you in detail how to make them. Consulting would compromise its impartiality and could cost it its accreditation. Use a separate adviser for fixes.",
+  "url": "https://senseible.earth/answers/can-cbam-verifier-advise-on-fixes"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a CBAM verifier skip the site visit entirely?",
+  "text": "Yes, but only after physical site visits in the two preceding reporting periods, and only if the other conditions for a virtual visit also hold. The Commission's guidance mentions very small and simple installations. The verifier must record its reasons and still reach reasonable assurance.",
+  "url": "https://senseible.earth/answers/can-cbam-verifier-waive-site-visit"
+ },
+ {
+  "kind": "answer",
   "title": "Can carbon credit certificates issued under India's CCTS be sold to foreign buyers?",
   "text": "Not under the rules published as of October 2026. Carbon credit certificates under India's Carbon Credit Trading Scheme are issued to entities registered in India and traded on Indian power exchanges for the domestic scheme. A transfer abroad would need India's authorisation under Article 6 of the Paris Agreement, and the published rules set out no such route yet.",
   "url": "https://senseible.earth/answers/can-ccts-carbon-credits-be-sold-abroad"
@@ -3359,6 +3395,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does CBAM cost a German buyer of Indian steel?",
+  "text": "One CBAM certificate per tonne of CO2e left after deductions: embedded emissions minus the free allocation adjustment, minus any carbon price paid in India, times the tonnes imported. In 2026 the certificate price is set quarterly; it was €82.32 for the third quarter.",
+  "url": "https://senseible.earth/answers/cbam-kosten-indian-steel-german-buyer"
+ },
+ {
+  "kind": "answer",
   "title": "How is the CBAM figure worked out for limestone calcined clay (LC3) cement?",
   "text": "LC3 cement is a hydraulic cement, so it sits in the cement goods of Annex I. Its figure is the clinker it contains, plus direct emissions from calcining the clay, plus electricity for grinding. Less clinker usually means a lower figure, but the clay kiln's fuel still counts.",
   "url": "https://senseible.earth/answers/cbam-lc3-calcined-clay-cement-figure"
@@ -3401,6 +3443,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is the Commission's CBAM emissions report template mandatory for suppliers?",
+  "text": "Yes. Where embedded emissions are based on actual data, the operator must prepare an annual operator's emissions report and a summary using the Commission's template. It is in English, so buyers in any member state find the same data in the same fields.",
+  "url": "https://senseible.earth/answers/cbam-operator-emissions-report-template-mandatory"
+ },
+ {
+  "kind": "answer",
   "title": "We make our own billets and roll them in the same plant. Do we count the billets as a precursor?",
   "text": "You can either treat billet making and rolling as one production process, or keep them separate and pass the billets' figure into rolling as a precursor. Either works if each tonne of CO2 is counted once. The usual error is adding the billet emissions twice: once as direct emissions and again as a precursor.",
   "url": "https://senseible.earth/answers/cbam-own-precursor-made-in-same-installation"
@@ -3434,6 +3482,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Our refinery makes hydrogen for its own use. Does CBAM apply?",
   "text": "Not to the hydrogen you use yourself. CBAM charges goods imported into the EU, and refined fuels are not CBAM goods. Only hydrogen you export to the EU under CN 2804 10 00 needs a figure. Your refinery may still fall under India's carbon market rules.",
   "url": "https://senseible.earth/answers/cbam-refinery-hydrogen-own-use"
+ },
+ {
+  "kind": "answer",
+  "title": "Should an Indian supplier share CBAM data through the Registry or by email?",
+  "text": "Through the CBAM Registry if you can. A registered operator uploads verified data once and declarants see only a summary. Without registration you must send your full emissions report and verification report to every buyer, and the Commission advises email only for non-confidential material unless encrypted.",
+  "url": "https://senseible.earth/answers/cbam-registry-vs-email-supplier-data-confidential"
  },
  {
   "kind": "answer",
@@ -3473,9 +3527,27 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "When can a CBAM operator skip a monitoring method as too costly?",
+  "text": "Only with a justification in the monitoring plan, tested against a reference price of €80 per tonne of CO2e and an accumulated limit of €4,000 a year. The Commission's steel guidance sets out this test, and the verifier will check it.",
+  "url": "https://senseible.earth/answers/cbam-unreasonable-cost-rule-monitoring"
+ },
+ {
+  "kind": "answer",
   "title": "Is technical-grade urea or diesel exhaust fluid covered by CBAM?",
   "text": "Urea is covered under CN 3102 10 whether or not in aqueous solution, so fertiliser, technical and automotive grades are in when declared there. Diesel exhaust fluid is often classified elsewhere, so check its code. Fertilisers count direct and indirect emissions. CO2 bound in urea is not subtracted.",
   "url": "https://senseible.earth/answers/cbam-urea-technical-grade-and-def-covered"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the materiality level in CBAM verification?",
+  "text": "5% of the specific embedded emissions per tonne, for each good by CN code, and 5% of the specific embedded free allocation. Misstatements above that, alone or together, are material. Every misstatement found still has to be corrected; materiality is not a tolerance band.",
+  "url": "https://senseible.earth/answers/cbam-verification-materiality-5-percent"
+ },
+ {
+  "kind": "answer",
+  "title": "When can a CBAM verifier do a virtual site visit?",
+  "text": "Only when all conditions in the Verification Principles Act are met. A verifier must have visited physically in the previous reporting period, the installation must be simple enough and unchanged, and all evidence must be obtainable remotely. The first verification of an Indian plant needs a physical visit.",
+  "url": "https://senseible.earth/answers/cbam-virtual-site-visit-when-allowed"
  },
  {
   "kind": "answer",
@@ -3638,6 +3710,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a ceiling fan, including its use?",
   "text": "Add the materials (copper or aluminium winding, electrical steel, aluminium or steel body and blades, capacitor, packaging) and your assembly energy per fan for the cradle-to-gate figure. Use is usually far larger: rated watts x hours a year x years of life x the grid factor. BLDC fans cut use-phase emissions sharply.",
   "url": "https://senseible.earth/answers/ceiling-fan-carbon-footprint-per-unit"
+ },
+ {
+  "kind": "answer",
+  "title": "Why is a cement exporter's CBAM figure per tonne of clinker content?",
+  "text": "Because the Commission's rules express cement emissions per tonne of clinker contained, not per tonne of cement. Clinker carries most of the emissions. Where you sell cements with different clinker contents, the figure is averaged by composition, and your EU buyer must also report the clinker content.",
+  "url": "https://senseible.earth/answers/cement-exporter-cbam-per-tonne-clinker-content"
  },
  {
   "kind": "answer",
@@ -4853,6 +4931,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a Czech importer's CBAM authority mean for an Indian supplier?",
+  "text": "Czechia lists two CBAM authorities: the Customs Administration and the Ministry of the Environment, each with its own contact address. A Czech importer above 50 tonnes a year needs authorised declarant status and will ask Indian suppliers for verified emissions per installation.",
+  "url": "https://senseible.earth/answers/czech-importer-cbam-indian-supplier"
+ },
+ {
+  "kind": "answer",
   "title": "What should a Dahej or Jhagadia agrochemical exporter send when a European buyer asks for a product carbon footprint?",
   "text": "A cradle to gate figure per kg of active ingredient or formulation, covering purchased intermediates, solvents, steam, electricity and waste treatment, with the year, boundary and allocation method. Agrochemicals are not CBAM goods, so this is a buyer request under ISO 14067 or the buyer's own template, not a customs declaration.",
   "url": "https://senseible.earth/answers/dahej-agrochemical-exporter-pcf-request"
@@ -4916,6 +5000,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a paper mill in Dandeli split fossil and biogenic CO2?",
   "text": "Coal burnt in the power boilers is fossil Scope 1. Black liquor and wood waste burnt in the recovery boiler release biogenic CO2, reported separately and not added to Scope 1, though their methane and nitrous oxide are. Divide fossil emissions and any bought power by tonnes of paper.",
   "url": "https://senseible.earth/answers/dandeli-paper-mill-coal-boiler-co2"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a Danish importer's CBAM authority mean for an Indian supplier?",
+  "text": "Denmark splits CBAM across three agencies: the Danish Energy Agency for monitoring and reporting, the Danish Business Authority for authorisation and certificates, and the Danish Customs Agency for registry access. A Danish importer above 50 tonnes a year will still ask you for verified emissions.",
+  "url": "https://senseible.earth/answers/danish-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -5261,6 +5351,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do iron ore pellets count electricity emissions under CBAM?",
+  "text": "Yes. Sintered ore, which includes pellets under CN 2601 12 00, is the one iron and steel good not listed in Annex II, so its electricity emissions count. Steel goods made from pellets carry those indirect emissions in their own figure too.",
+  "url": "https://senseible.earth/answers/do-iron-ore-pellets-cbam-count-electricity"
+ },
+ {
+  "kind": "answer",
   "title": "Do lubricating oils count in Scope 1 emissions?",
   "text": "Only the small share of lubricating oil that oxidises inside your own engines and machines counts, and it is Scope 1. IPCC assumes 20 percent of lube oil oxidises in use, which works out to about 0.59 tonnes of CO2 per tonne bought. For most plants this is small enough to exclude, if you say so.",
   "url": "https://senseible.earth/answers/do-lubricants-count-in-scope-1"
@@ -5324,6 +5420,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does AdBlue or DEF used in BS-VI trucks add to CO2 emissions?",
   "text": "Yes, a little. The urea in AdBlue (DEF) breaks down in the exhaust and releases about 0.26 kg CO2 per litre. At a typical dose of a few litres per 100 litres of diesel it adds well under 1% to a truck's CO2, so you can report it or record it as immaterial.",
   "url": "https://senseible.earth/answers/does-adblue-def-emit-co2"
+ },
+ {
+  "kind": "answer",
+  "title": "Does CBAM count electricity emissions for aluminium?",
+  "text": "No. In the definitive period, aluminium goods are listed in Annex II of the CBAM Regulation, so only direct emissions count in their embedded emissions. Electricity used by a smelter or extruder is left out, even though smelting uses a lot of it. Cement and fertilisers are different: their electricity counts.",
+  "url": "https://senseible.earth/answers/does-aluminium-cbam-count-electricity"
  },
  {
   "kind": "answer",
@@ -5696,6 +5798,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What CBAM figure should a buyer use for steel from a Durgapur blast furnace plant?",
   "text": "Ask the plant for its actual embedded emissions per tonne of the product you buy, calculated under the CBAM method. A blast furnace and converter route usually lands around two tonnes of CO2 per tonne of crude steel. Default values apply only if actual data is missing, and they are set high on purpose.",
   "url": "https://senseible.earth/answers/durgapur-steel-products-cbam-figure"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a Dutch importer's CBAM authority mean for an Indian supplier?",
+  "text": "A Dutch importer bringing in more than 50 tonnes of CBAM goods a year applies for authorised declarant status through the CBAM Registry. The Dutch Emissions Authority (NEa) handles CBAM, and registry user access runs through Dutch Customs. Expect the importer to ask you for installation level emissions data.",
+  "url": "https://senseible.earth/answers/dutch-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -6419,6 +6527,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does steel or aluminium bought from the EU count as zero in an Indian exporter's CBAM figure?",
+  "text": "Yes. Where a precursor originates in the EU or an exempted country, its embedded emissions count as zero in the complex good's figure. You still have to monitor and report the precursor and the quantity used, so keep the origin evidence for each lot.",
+  "url": "https://senseible.earth/answers/eu-made-precursor-indian-export-cbam-zero"
+ },
+ {
+  "kind": "answer",
   "title": "What does the EU Net-Zero Industry Act require in public tenders for solar, batteries and heat pumps?",
   "text": "It makes EU public buyers and renewable energy auctions look beyond price for net-zero technologies such as solar, batteries and heat pumps. Public tenders must set minimum environmental sustainability requirements and, where the EU depends on one non-EU country for over half of supply, a resilience condition. Auctions add non-price criteria.",
   "url": "https://senseible.earth/answers/eu-net-zero-industry-act-public-tenders"
@@ -6713,6 +6827,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Why do fastener makers count steel lost as scrap in CBAM?",
+  "text": "Because the embedded emissions of every tonne of wire rod you use go into the fasteners, even the part cut away. The Commission's steel guidance gives the example: if 20% is cut away as scrap, 100 tonnes of rod carry their emissions into 80 tonnes of screws and nuts.",
+  "url": "https://senseible.earth/answers/fastener-cbam-scrap-loss-precursor-mass"
+ },
+ {
+  "kind": "answer",
   "title": "What is the CO2 per tonne of ground feldspar?",
   "text": "Grinding electricity is most of it: mill kWh times 0.710 kg CO2, divided by tonnes of powder. Finer mesh sizes take more energy per tonne. Add quarry diesel and any dryer fuel if the feed is wet.",
   "url": "https://senseible.earth/answers/feldspar-grinding-electricity-co2-per-tonne"
@@ -6746,6 +6866,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do slag and dust enter a ferro alloy plant's carbon mass balance?",
   "text": "Carbon leaving in slag, bag filter dust or sludge was not emitted, so subtract it in the mass balance. Multiply tonnes of each stream by its measured carbon content. If you assume zero, say so and show it is small.",
   "url": "https://senseible.earth/answers/ferro-alloy-slag-and-dust-carbon-in-balance"
+ },
+ {
+  "kind": "answer",
+  "title": "What CBAM data must an Indian ferro-alloy supplier give a steel exporter?",
+  "text": "Ferro-manganese, ferro-chromium and ferro-nickel are CBAM goods and precursors for steel. An Indian steel mill exporting to the EU needs each supplier's verified embedded emissions per tonne, the installation and the production year. Other ferro-alloys under CN 7202 8 are outside CBAM.",
+  "url": "https://senseible.earth/answers/ferro-alloy-supplier-data-for-indian-steel-exporter"
  },
  {
   "kind": "answer",
@@ -7142,6 +7268,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can I use my freight forwarder's emissions report for Category 4 or 9?",
   "text": "Yes, if the report states its method (ISO 14083 or the GLEC Framework), the weight and distance basis, the factors used and which shipments it covers, and a sample of shipments recomputes close to its figures. Then it is better data than your own default estimate. Put each shipment in Category 4 or 9 by who paid for it.",
   "url": "https://senseible.earth/answers/freight-forwarder-emissions-report-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a French importer's CBAM authority mean for an Indian supplier?",
+  "text": "In France CBAM is called MACF. An importer above 50 tonnes a year needs authorised declarant status, and the competent authority is the Directorate General for Energy and Climate (DGEC). If a French buyer's email mentions MACF, it is asking for the same CBAM emissions data.",
+  "url": "https://senseible.earth/answers/french-importer-cbam-macf-indian-supplier"
  },
  {
   "kind": "answer",
@@ -7688,6 +7820,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of manufacturing graphite electrodes per tonne?",
   "text": "Work it out cradle to gate: graphitisation and other plant electricity times the grid factor, plus fuel for baking, plus the footprints of needle coke and pitch from your suppliers, all divided by tonnes of finished electrode. Graphitisation is the most electricity-hungry step, so measure its kWh per tonne with care.",
   "url": "https://senseible.earth/answers/graphite-electrode-manufacturing-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a Greek importer's CBAM authority mean for an Indian supplier?",
+  "text": "Greece handles CBAM through the General Directorate of Customs and Excise Duty of the Independent Authority for Public Revenue (IAPR). A Greek importer above 50 tonnes of CBAM goods a year needs authorised declarant status and will ask its Indian supplier for installation level emissions.",
+  "url": "https://senseible.earth/answers/greek-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -8723,6 +8861,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I find a CBAM accredited verifier?",
+  "text": "Check the verifier's accreditation certificate from an EU national accreditation body, covering your sector. The European cooperation for Accreditation lists bodies offering CBAM accreditation, the Commission plans to publish a list of accredited verifiers, and the CBAM Registry will let you search for one.",
+  "url": "https://senseible.earth/answers/how-to-find-cbam-accredited-verifier"
+ },
+ {
+  "kind": "answer",
   "title": "How do I find which Verra, Gold Standard or CDM methodology fits my project?",
   "text": "Start from what physically changes in your project, such as grid power replaced by solar or furnace oil replaced by biomass. Search each standard's approved methodology list for that activity, then test the applicability conditions, size limits, baseline and monitoring rules against your site. Finally check the standard still accepts that project type in India.",
   "url": "https://senseible.earth/answers/how-to-find-the-right-carbon-methodology"
@@ -9131,6 +9275,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What CBAM data does an Indian cement grinding unit need from its clinker supplier?",
+  "text": "The clinker supplier's verified embedded emissions per tonne, direct and indirect, for the year the clinker was made, plus the installation it came from. Clinker is a precursor for cement, so a grinding unit adds the clinker's emissions to its own grinding electricity and fuel.",
+  "url": "https://senseible.earth/answers/indian-cement-grinding-unit-cbam-clinker-data"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate emissions from Indian coal when my bill shows grade or GCV, not tonnes of standard coal?",
   "text": "Convert the coal's calorific value into energy, then multiply by an IPCC CO2 factor per terajoule. Take GCV from the lab report or the grade's band, convert kcal/kg to MJ/kg, reduce GCV to NCV, and apply the IPCC default for the coal type, such as 94.6 t CO2 per TJ for other bituminous coal.",
   "url": "https://senseible.earth/answers/indian-coal-emissions-by-gcv"
@@ -9404,6 +9554,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "My report says IPCC Tier 1 default factors. Will a buyer or verifier accept that?",
   "text": "Usually yes for diesel, petrol, LPG and natural gas, because their carbon content barely varies, so a named IPCC default is hard to fault. Expect questions for coal, biomass and other fuels whose quality varies, and for large process emissions. There, a factor from your own fuel analysis (Tier 2) is safer.",
   "url": "https://senseible.earth/answers/ipcc-tier-1-default-factor-good-enough"
+ },
+ {
+  "kind": "answer",
+  "title": "What does an Irish importer's CBAM authority mean for an Indian supplier?",
+  "text": "Ireland's competent authority for CBAM is the Environmental Protection Agency (EPA), with Revenue listed as the contact for import policy. An Irish importer above 50 tonnes of CBAM goods a year needs authorised declarant status and will need your verified emissions per tonne.",
+  "url": "https://senseible.earth/answers/irish-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -9722,6 +9878,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Our IT park bills electricity, DG power and chilled water through CAM charges. How do we report that?",
   "text": "Under operational control, report the grid power, the landlord's DG power and the chilled water billed to your leased space as Scope 2: all three are energy you buy and do not generate. Split the CAM bill into kWh, DG kWh and TR-hours, apply a factor to each, and treat any area-based split as an estimate.",
   "url": "https://senseible.earth/answers/it-park-cam-charges-electricity-scope-2"
+ },
+ {
+  "kind": "answer",
+  "title": "What does an Italian importer's CBAM authority mean for an Indian supplier?",
+  "text": "An Italian importer above 50 tonnes a year applies for authorised CBAM declarant status in the CBAM Registry. Italy's competent authority is the ETS Committee, based at the Ministry of the Environment and Energy Security in Rome. The importer will ask you for verified emissions per tonne and installation details.",
+  "url": "https://senseible.earth/answers/italian-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -11177,6 +11339,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How does CBAM handle mixed fertilisers with different nitrogen contents?",
+  "text": "Emissions are averaged by composition, in nitrogen-content ranges no wider than 10%, under the Commission's rules. Electricity and precursors such as ammonia, nitric acid and urea count. Fertilisers with only phosphorus and potassium, CN 3105 60 00, are outside CBAM.",
+  "url": "https://senseible.earth/answers/mixed-fertiliser-cbam-nitrogen-content-ranges"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of a mixer grinder?",
   "text": "Weigh the motor's copper and steel, the stainless steel jars and blades, the plastic body and the packaging, apply supplier or database factors, and add assembly and testing electricity per unit. Report use-phase electricity separately. Motor and jars are usually the largest parts.",
   "url": "https://senseible.earth/answers/mixer-grinder-carbon-footprint-per-unit"
@@ -11888,6 +12056,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What should a one-page climate policy for an MSME say?",
   "text": "Keep it short and specific. Say what you measure (Scope 1 and 2 from bills, Scope 3 where buyers ask), your reduction goal with a year, the actions you are taking, who owns it, and how often you report. Buyers and lenders trust a short policy backed by numbers over a long statement.",
   "url": "https://senseible.earth/answers/one-page-climate-policy-for-msme"
+ },
+ {
+  "kind": "answer",
+  "title": "Can the same imported tonne be declared by two CBAM declarants?",
+  "text": "No. Every tonne of imported goods is the responsibility of exactly one authorised CBAM declarant: the person lodging the customs declaration, usually the importer or an indirect customs representative. It must not be reported twice or left out.",
+  "url": "https://senseible.earth/answers/one-tonne-one-cbam-declarant"
  },
  {
   "kind": "answer",
@@ -12689,6 +12863,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a Polish importer's CBAM authority mean for an Indian supplier?",
+  "text": "Poland splits CBAM between two bodies: the National Centre for Emissions Management (KOBiZE) and the Chamber of Tax Administration in Poznań. A Polish importer above 50 tonnes a year needs authorised declarant status and will ask Indian suppliers for verified emissions per tonne.",
+  "url": "https://senseible.earth/answers/polish-importer-cbam-kobize-indian-supplier"
+ },
+ {
+  "kind": "answer",
   "title": "What CBAM records does a Polish steel service centre need for imported coil?",
   "text": "For each import: CN code, tonnes, country and installation of origin, and the supplier's embedded emissions or a note that default values apply. Keep supplier verification reports. Slitting and cutting in Poland adds nothing to CBAM, since it happens after import.",
   "url": "https://senseible.earth/answers/polish-steel-service-centre-cbam-import-records"
@@ -12758,6 +12938,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Who counts the electricity for reefer containers plugged in at a port?",
   "text": "The terminal pays the power bill, so the electricity for reefer plugs is in the terminal's Scope 2 unless it is billed on to the shipping line as metered use. The cargo owner sees it inside the reefer freight figure. Count it once.",
   "url": "https://senseible.earth/answers/port-reefer-plug-electricity-who-counts"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a Portuguese importer's CBAM authority mean for an Indian supplier?",
+  "text": "Portugal's competent authority for CBAM is the Climate Agency (Agência para o Clima) in Lisbon. A Portuguese importer bringing in more than 50 tonnes of CBAM goods a year needs authorised declarant status, and will ask its Indian supplier for installation level emissions data.",
+  "url": "https://senseible.earth/answers/portuguese-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -13760,6 +13946,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a roller chain?",
   "text": "Chains are mostly steel: multiply the steel strip and wire used per kg of chain by the supplier's figure, then add stamping, heat treatment, assembly and finishing energy per kg made.",
   "url": "https://senseible.earth/answers/roller-chain-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a Romanian importer's CBAM authority mean for an Indian supplier?",
+  "text": "Romania handles CBAM in the Ministry of Finance, through a dedicated CBAM and Green Taxation Directorate in Bucharest. A Romanian importer above 50 tonnes of CBAM goods a year needs authorised declarant status, and will ask its Indian supplier for verified emissions data per installation.",
+  "url": "https://senseible.earth/answers/romanian-importer-cbam-indian-supplier"
  },
  {
   "kind": "answer",
@@ -15053,6 +15245,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a Spanish importer's CBAM authority mean for an Indian supplier?",
+  "text": "A Spanish importer above 50 tonnes a year applies for authorised CBAM declarant status through the CBAM Registry, and Spain's competent authority is the Ministry for Ecological Transition and Demographic Challenge (MITECO) in Madrid. The importer will ask its Indian suppliers for installation level, verified emissions data.",
+  "url": "https://senseible.earth/answers/spanish-importer-cbam-indian-supplier"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of a spanner or other hand tool?",
   "text": "Take the steel bar per tool, including flash and scale lost in forging, and multiply by the steel supplier's per-kg figure. Add forging furnace fuel, heat treatment, machining and plating electricity, then divide by tools passed.",
   "url": "https://senseible.earth/answers/spanner-hand-tool-carbon-footprint-per-piece"
@@ -15569,6 +15767,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a Swedish importer's CBAM authority mean for an Indian supplier?",
+  "text": "Sweden's competent authority for CBAM is the Swedish Environmental Protection Agency (Naturvårdsverket). A Swedish importer above 50 tonnes of CBAM goods a year needs authorised declarant status and will need verified, installation level emissions from its Indian supplier to avoid default values.",
+  "url": "https://senseible.earth/answers/swedish-importer-cbam-indian-supplier"
+ },
+ {
+  "kind": "answer",
   "title": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
   "text": "On India's grid average of 0.710 kg CO2 per kWh, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
   "url": "https://senseible.earth/answers/switch-delivery-fleet-to-electric-two-wheelers"
@@ -15998,6 +16202,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a bank count emissions from trade finance?",
   "text": "Trade finance falls under financed emissions, reported in Scope 3 Category 15. PCAF sets methods for asset classes such as business loans; check its current edition for trade finance. If no method applies, attribute the client's emissions by the share of its trade you financed, and explain the method.",
   "url": "https://senseible.earth/answers/trade-finance-financed-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Who sends CBAM data when a trader sits between an Indian mill and the EU buyer?",
+  "text": "The mill does. Goods sold through traders still fall under CBAM, and the EU declarant's data request has to be passed back to the installation that made the goods. A trader can forward the request and the report, but cannot produce or verify the figure itself.",
+  "url": "https://senseible.earth/answers/trader-between-indian-mill-and-eu-buyer-cbam"
  },
  {
   "kind": "answer",
@@ -17057,6 +17267,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Besides emissions, what CBAM data does an Indian supplier send its EU buyer?",
+  "text": "Three more items: the free allocation data used to cut the certificate count, any carbon price paid in India, certified by an independent person, and qualifying parameters such as clinker content for cement or nitrogen forms for fertilisers. Each verified figure also needs its installation and year.",
+  "url": "https://senseible.earth/answers/what-cbam-data-besides-emissions-supplier-sends"
+ },
+ {
+  "kind": "answer",
   "title": "What does a '1-in-100-year flood' zone mean for my plant, and how does climate change shift it?",
   "text": "A 1-in-100-year flood zone is land that a flood of that size has a 1% chance of reaching in any single year. It does not mean once a century: over a 20-year loan the chance of at least one such flood is about 18%, and climate change can make that flood more frequent.",
   "url": "https://senseible.earth/answers/what-does-1-in-100-year-flood-mean-for-site"
@@ -17207,6 +17423,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "When will CBAM accredited verifiers be available?",
+  "text": "The Commission expected the first accreditations around September 2026, when accredited verifiers can register in the CBAM Registry and start documentation reviews and site visits. The first verification reports can be issued from January 2027.",
+  "url": "https://senseible.earth/answers/when-are-cbam-accredited-verifiers-available"
+ },
+ {
+  "kind": "answer",
+  "title": "When can EU importers buy CBAM certificates?",
+  "text": "From February 2027, on the common central platform. Certificates for goods imported in 2026 are priced at the 2026 quarterly price for the quarter of import. From 2027 the Commission publishes a weekly price. The first annual declaration, for 2026 imports, is due by 30 September 2027.",
+  "url": "https://senseible.earth/answers/when-can-eu-importers-buy-cbam-certificates"
+ },
+ {
+  "kind": "answer",
   "title": "When did BRSR replace the Business Responsibility Report, and what came after?",
   "text": "SEBI prescribed the Business Responsibility Report in November 2015. Its May 2021 circular introduced BRSR: voluntary for FY 2021-22 and mandatory for the top 1,000 listed companies from FY 2022-23. BRSR Core assurance followed in July 2023, and the March 2025 circular added assessment as an option.",
   "url": "https://senseible.earth/answers/when-did-brsr-replace-brr"
@@ -17252,6 +17480,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Which emission factors should an Indian company use for its carbon inventory?",
   "text": "Use the most specific official source for each activity: CEA for grid electricity, supplier data or IPCC 2006 defaults for fuels, and your suppliers' own figures for purchased goods where they have them. Fill gaps with published sets such as the UK government's, labelled as defaults, and keep one list of sources.",
   "url": "https://senseible.earth/answers/which-emission-factor-database-for-india"
+ },
+ {
+  "kind": "answer",
+  "title": "Which EU authority handles my buyer's CBAM?",
+  "text": "The national competent authority of the EU country where your buyer is established. Each member state names one, or splits the role between agencies, in the Commission's list of competent authorities. Your buyer applies for declarant status and buys certificates there, but declarations go through one EU-wide CBAM Registry.",
+  "url": "https://senseible.earth/answers/which-eu-authority-handles-my-buyers-cbam"
  },
  {
   "kind": "answer",
@@ -17363,6 +17597,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Who reviews CBAM declarations and what happens if they are wrong?",
+  "text": "The European Commission and the competent authority of the declarant's member state. The Commission checks declarations against customs data and can spot-check. If it finds irregularities it tells the national authority, which follows up and can impose a financial penalty.",
+  "url": "https://senseible.earth/answers/who-reviews-cbam-declarations"
+ },
+ {
+  "kind": "answer",
   "title": "Who runs India's carbon market registry and trading platform?",
   "text": "Grid Controller of India Limited is the registry for India's Carbon Credit Trading Scheme. The Bureau of Energy Efficiency (BEE) administers the scheme, the Central Electricity Regulatory Commission (CERC) regulates trading, and carbon credit certificates trade on CERC-registered power exchanges. A national steering committee oversees it all.",
   "url": "https://senseible.earth/answers/who-runs-india-carbon-market-registry"
@@ -17390,6 +17630,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Why did my buyer reject my product carbon footprint, and how do I fix it?",
   "text": "Usually because the figure cannot be checked, not because it is too high. The common reasons are an unclear declared unit or boundary, factors with no source or year, missing stages such as raw materials, offsets netted out, or a total that does not reconcile with your plant's emissions. Each has a direct fix.",
   "url": "https://senseible.earth/answers/why-buyer-rejected-product-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "Why won't a CBAM verifier quote a fixed fee?",
+  "text": "Because accreditation rules do not let verifiers accept lump sum contracts. If errors turn up, the verifier must widen its sampling, and that extra work has to be paid for. A fixed price would put pressure on its independence. A strong control system keeps the work, and the bill, down.",
+  "url": "https://senseible.earth/answers/why-cbam-verifier-wont-quote-fixed-fee"
  },
  {
   "kind": "answer",

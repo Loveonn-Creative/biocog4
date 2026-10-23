@@ -1,0 +1,56 @@
+{
+  "slug": "does-aluminium-cbam-count-electricity",
+  "q": "Does CBAM count electricity emissions for aluminium?",
+  "title": "Aluminium CBAM and electricity",
+  "short": "No. In the definitive period, aluminium goods are listed in Annex II of the CBAM Regulation, so only direct emissions count in their embedded emissions. Electricity used by a smelter or extruder is left out, even though smelting uses a lot of it. Cement and fertilisers are different: their electricity counts.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian aluminium smelters, extruders and foil makers, and EU buyers checking their figures",
+  "sections": [
+    {
+      "h": "What still counts",
+      "ul": [
+        "Direct emissions from anodes, fuels and process emissions, including PFCs at primary smelters.",
+        "The direct embedded emissions of precursor unwrought aluminium."
+      ]
+    },
+    {
+      "h": "Why captive power still matters",
+      "p": [
+        "It does not enter the CBAM figure for aluminium, but some buyers also ask for a full product carbon footprint, where electricity is the largest part. Keep both sets of records."
+      ]
+    },
+    {
+      "h": "How this differs from the transitional period",
+      "p": [
+        "Until 2025 importers reported indirect emissions separately. From 2026 they are dropped for aluminium."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Korba aluminium and PFC emissions",
+      "to": "/answers/korba-aluminium-cbam-direct-emissions-pfc"
+    },
+    {
+      "label": "Does CBAM count electricity for steel",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Jharsuguda smelter and renewable power",
+      "to": "/answers/jharsuguda-smelter-renewable-power-cbam-effect"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5e, aluminium",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/590e983b-c937-41ea-bb9f-810c29e70e1e_en?filename=Guidance%20No.%205e%20-%20Sector-specific%20guidance%20document%20on%20aluminium.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

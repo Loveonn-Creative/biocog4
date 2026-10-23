@@ -1,0 +1,63 @@
+{
+  "slug": "cbam-registry-vs-email-supplier-data-confidential",
+  "q": "Should an Indian supplier share CBAM data through the Registry or by email?",
+  "title": "CBAM data: Registry or email",
+  "short": "Through the CBAM Registry if you can. A registered operator uploads verified data once and declarants see only a summary. Without registration you must send your full emissions report and verification report to every buyer, and the Commission advises email only for non-confidential material unless encrypted.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian steel, aluminium, cement and fertiliser producers deciding how to send CBAM data to several EU buyers",
+  "sections": [
+    {
+      "h": "Registered in the Registry",
+      "ul": [
+        "Upload installation and emissions data once in the O3CI portal.",
+        "Share with each declarant who gives you its EORI number.",
+        "Buyers see a summary, not your full report."
+      ]
+    },
+    {
+      "h": "Not registered",
+      "ul": [
+        "Send each buyer the full report and the verifier's PDF report.",
+        "Each buyer uploads them by hand when preparing its declaration.",
+        "Your full data travels by email or file share."
+      ]
+    },
+    {
+      "h": "From 2027",
+      "p": [
+        "The Registry is due to let operators share data with other producers who use their goods as precursors."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "How a non-EU producer registers",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "Producer will not share installation data",
+      "to": "/answers/cbam-producer-will-not-share-installation-data"
+    },
+    {
+      "label": "Operator emissions report template",
+      "to": "/answers/cbam-operator-emissions-report-template-mandatory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Registry page",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-registry_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

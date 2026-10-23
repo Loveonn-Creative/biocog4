@@ -1,0 +1,58 @@
+{
+  "slug": "eu-made-precursor-indian-export-cbam-zero",
+  "q": "Does steel or aluminium bought from the EU count as zero in an Indian exporter's CBAM figure?",
+  "title": "EU-made precursors count as zero",
+  "short": "Yes. Where a precursor originates in the EU or an exempted country, its embedded emissions count as zero in the complex good's figure. You still have to monitor and report the precursor and the quantity used, so keep the origin evidence for each lot.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Indian manufacturers who import EU or Norwegian steel and aluminium and export finished goods back to the EU",
+  "sections": [
+    {
+      "h": "Where this helps",
+      "ul": [
+        "Fabricators making structures from imported EU plate.",
+        "Extruders using billet from an exempted country.",
+        "Tube and fitting makers using EU-made coil."
+      ]
+    },
+    {
+      "h": "What to keep",
+      "ul": [
+        "Certificates of origin or mill certificates naming the producing country.",
+        "Purchase records by lot and the tonnes consumed in each production process."
+      ]
+    },
+    {
+      "h": "What does not change",
+      "p": [
+        "Your own direct emissions still count, and Indian-made precursors used alongside still carry their figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Norway, Iceland and Switzerland exemption",
+      "to": "/answers/norway-iceland-switzerland-goods-cbam-exempt"
+    },
+    {
+      "label": "Precursors from several suppliers",
+      "to": "/answers/cbam-precursor-bought-from-several-suppliers"
+    },
+    {
+      "label": "Does scrap count as zero",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

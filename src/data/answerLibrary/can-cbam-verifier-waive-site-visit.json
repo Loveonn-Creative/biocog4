@@ -1,0 +1,47 @@
+{
+  "slug": "can-cbam-verifier-waive-site-visit",
+  "q": "Can a CBAM verifier skip the site visit entirely?",
+  "title": "Can a CBAM site visit be waived",
+  "short": "Yes, but only after physical site visits in the two preceding reporting periods, and only if the other conditions for a virtual visit also hold. The Commission's guidance mentions very small and simple installations. The verifier must record its reasons and still reach reasonable assurance.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Small Indian CBAM goods producers with simple, stable operations",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "Physical visits in the two preceding reporting periods.",
+        "No significant change to the installation or monitoring plan.",
+        "Low risk and complexity, with all evidence available remotely."
+      ]
+    },
+    {
+      "h": "What stays the same",
+      "p": [
+        "The verifier still has to be satisfied the report is free from material misstatement, and can insist on a visit if evidence falls short."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices behind each fuel and electricity figure in one fingerprinted record, so a verifier can sample them without a hunt through files. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    {
+      "label": "CBAM virtual site visits",
+      "to": "/answers/cbam-virtual-site-visit-when-allowed"
+    },
+    {
+      "label": "CBAM materiality level",
+      "to": "/answers/cbam-verification-materiality-5-percent"
+    },
+    {
+      "label": "Who can verify records in Senseible",
+      "to": "/answers/who-can-verify-records-in-senseible"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, guidance on CBAM verification and accreditation (24 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

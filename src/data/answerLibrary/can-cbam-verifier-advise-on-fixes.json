@@ -1,0 +1,52 @@
+{
+  "slug": "can-cbam-verifier-advise-on-fixes",
+  "q": "Can a CBAM verifier tell us how to fix our monitoring?",
+  "title": "Can a CBAM verifier advise you",
+  "short": "No. A verifier can point out misstatements and non-conformities and recommend improvements, but must not tell you in detail how to make them. Consulting would compromise its impartiality and could cost it its accreditation. Use a separate adviser for fixes.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian operators working through findings from a CBAM verification",
+  "sections": [
+    {
+      "h": "What the verifier can do",
+      "ul": [
+        "Ask you to correct misstatements before issuing the report.",
+        "Note non-material findings and recommendations.",
+        "Check your monitoring plan against the rules."
+      ]
+    },
+    {
+      "h": "What it cannot do",
+      "ul": [
+        "Write or redesign your monitoring plan.",
+        "Do calculations for you."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices behind each fuel and electricity figure in one fingerprinted record, so a verifier can sample them without a hunt through files. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    {
+      "label": "Verifier independence",
+      "to": "/answers/verifier-independence-who-cannot-verify"
+    },
+    {
+      "label": "Corrective action after a finding",
+      "to": "/answers/verifier-finding-corrective-action-what-to-do"
+    },
+    {
+      "label": "Why verifiers avoid fixed fees",
+      "to": "/answers/why-cbam-verifier-wont-quote-fixed-fee"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, guidance on CBAM verification and accreditation (24 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

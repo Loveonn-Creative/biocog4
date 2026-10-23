@@ -1,0 +1,52 @@
+{
+  "slug": "when-are-cbam-accredited-verifiers-available",
+  "q": "When will CBAM accredited verifiers be available?",
+  "title": "When CBAM verifiers become available",
+  "short": "The Commission expected the first accreditations around September 2026, when accredited verifiers can register in the CBAM Registry and start documentation reviews and site visits. The first verification reports can be issued from January 2027.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters planning verification of their 2026 data",
+  "sections": [
+    {
+      "h": "Commission timeline",
+      "ul": [
+        "April 2026: national accreditation bodies begin CBAM accreditation.",
+        "September 2026: accredited verifiers can register; first verifications start.",
+        "January 2027: first verification reports; operators can share them with declarants.",
+        "September 2027: declarants finalise declarations for 2026."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "p": [
+        "Book a verifier early. The Commission warns of capacity bottlenecks near the end of the reporting period."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices behind each fuel and electricity figure in one fingerprinted record, so a verifier can sample them without a hunt through files. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    {
+      "label": "How to find an accredited verifier",
+      "to": "/answers/how-to-find-cbam-accredited-verifier"
+    },
+    {
+      "label": "Importer needs verified actual emissions",
+      "to": "/answers/cbam-actual-emissions-need-verification-importer"
+    },
+    {
+      "label": "What Indian exporters send and when",
+      "to": "/answers/cbam-timeline-what-indian-exporters-send-when"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, verification of CBAM emissions page",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

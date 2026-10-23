@@ -1,0 +1,59 @@
+{
+  "slug": "cement-exporter-cbam-per-tonne-clinker-content",
+  "q": "Why is a cement exporter's CBAM figure per tonne of clinker content?",
+  "title": "Cement CBAM per tonne of clinker content",
+  "short": "Because the Commission's rules express cement emissions per tonne of clinker contained, not per tonne of cement. Clinker carries most of the emissions. Where you sell cements with different clinker contents, the figure is averaged by composition, and your EU buyer must also report the clinker content.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian cement and clinker exporters, including grinding units, selling to EU buyers",
+  "sections": [
+    {
+      "h": "What counts for cement",
+      "ul": [
+        "Direct emissions, including calcination and kiln fuel.",
+        "Indirect emissions from electricity: cement is not in Annex II, so electricity counts.",
+        "Embedded emissions of clinker and calcined clay bought in as precursors."
+      ]
+    },
+    {
+      "h": "What to send the buyer",
+      "ul": [
+        "Specific embedded emissions, direct and indirect, per tonne of clinker content.",
+        "The clinker content of each cement shipped.",
+        "The installation and year of production."
+      ]
+    },
+    {
+      "h": "Aluminous cement",
+      "p": [
+        "Aluminous (calcium aluminate) cement has its own category and is reported per tonne of product."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "OPC and PPC from the same clinker",
+      "to": "/answers/cbam-opc-and-ppc-from-same-clinker-split"
+    },
+    {
+      "label": "India default values for cement and clinker",
+      "to": "/answers/cbam-default-value-india-cement-clinker"
+    },
+    {
+      "label": "Indian cement grinding units",
+      "to": "/answers/indian-cement-grinding-unit-cbam-clinker-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5a, cement",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/f87a2022-9dcb-45cb-a415-4c460e5ad672_en?filename=Guidance%20No.%205a%20-%20Sector-specific%20guidance%20document%20on%20cement.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

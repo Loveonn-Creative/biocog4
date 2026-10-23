@@ -1,0 +1,54 @@
+{
+  "slug": "what-cbam-data-besides-emissions-supplier-sends",
+  "q": "Besides emissions, what CBAM data does an Indian supplier send its EU buyer?",
+  "title": "CBAM data beyond emissions",
+  "short": "Three more items: the free allocation data used to cut the certificate count, any carbon price paid in India, certified by an independent person, and qualifying parameters such as clinker content for cement or nitrogen forms for fertilisers. Each verified figure also needs its installation and year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters building their first full CBAM data pack for EU buyers",
+  "sections": [
+    {
+      "h": "The full pack",
+      "ul": [
+        "Installation identity, production route and reporting period.",
+        "Specific embedded emissions, direct and, where in scope, indirect.",
+        "Specific embedded free allocation.",
+        "Carbon price paid, if any, with certification.",
+        "Qualifying parameters listed in Annex IV of the Methodology Act.",
+        "Precursor details and their verification reports."
+      ]
+    },
+    {
+      "h": "Free allocation is new",
+      "p": [
+        "It did not exist in the transitional period. Operators now work out the free allocation they would get inside the EU, either from default benchmarks or from actual data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Free allocation phase-out by year",
+      "to": "/answers/cbam-free-allocation-phase-out-by-year"
+    },
+    {
+      "label": "Benchmark values",
+      "to": "/answers/cbam-benchmark-values-steel-cement-aluminium"
+    },
+    {
+      "label": "Carbon price paid: proof needed",
+      "to": "/answers/cbam-carbon-price-paid-what-proof-is-needed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

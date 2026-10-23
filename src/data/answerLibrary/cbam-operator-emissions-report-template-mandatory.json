@@ -1,0 +1,57 @@
+{
+  "slug": "cbam-operator-emissions-report-template-mandatory",
+  "q": "Is the Commission's CBAM emissions report template mandatory for suppliers?",
+  "title": "CBAM operator emissions report template",
+  "short": "Yes. Where embedded emissions are based on actual data, the operator must prepare an annual operator's emissions report and a summary using the Commission's template. It is in English, so buyers in any member state find the same data in the same fields.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian installation operators preparing CBAM data for EU buyers",
+  "sections": [
+    {
+      "h": "What the template holds",
+      "ul": [
+        "Emissions by production process and by 8-digit CN code.",
+        "Free allocation adjustment data.",
+        "A summary report generated automatically from the Excel version."
+      ]
+    },
+    {
+      "h": "Electricity exporters",
+      "p": [
+        "Where electricity emissions are based on actual data, a declarant-specific addendum is also needed."
+      ]
+    },
+    {
+      "h": "When to send it",
+      "p": [
+        "After the calendar year closes and verification is complete. Until the next year's report is ready, the latest verified one is used."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM communication template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Registry or email",
+      "to": "/answers/cbam-registry-vs-email-supplier-data-confidential"
+    },
+    {
+      "label": "Monitoring methodology for operators",
+      "to": "/answers/cbam-monitoring-methodology-documentation-for-operators"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
