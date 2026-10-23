@@ -1,0 +1,72 @@
+{
+  "slug": "sebi-social-bond-eligible-categories",
+  "q": "What counts as a social bond under SEBI's 2025 ESG debt framework?",
+  "title": "SEBI social bond categories",
+  "short": "Under SEBI's June 2025 framework a social bond funds projects that address a specific social issue or seek positive social outcomes, in six categories: affordable basic infrastructure, essential services, affordable housing, employment generation including SME finance, food security, and socioeconomic advancement. The issuer must appoint an independent reviewer.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Issuers, NBFCs and lenders to MSMEs considering labelled debt",
+  "sections": [
+    {
+      "h": "The definition",
+      "p": [
+        "A social bond is a debt security whose proceeds go to social projects that directly aim to address or mitigate a specific social issue, or seek positive social outcomes, especially but not only for a target population. It must align with a recognised standard such as the ICMA principles, the Climate Bonds Standard, ASEAN or EU standards, or a framework set by an Indian financial regulator."
+      ]
+    },
+    {
+      "h": "The six eligible categories",
+      "ol": [
+        "Affordable basic infrastructure, such as clean drinking water, sewers, sanitation, transport and energy.",
+        "Access to essential services, such as health, education and vocational training.",
+        "Affordable housing.",
+        "Employment generation, including programmes for a just transition; SEBI notes this can include SME financing and microfinance.",
+        "Food security and sustainable food systems, including resilient farming and better productivity of small-scale producers.",
+        "Socioeconomic advancement, such as equitable access to assets, services and markets."
+      ]
+    },
+    {
+      "h": "What the offer document must show",
+      "ul": [
+        "The social objectives, the target population and the intended benefits to it.",
+        "How projects are evaluated and selected, and the taxonomies or standards referenced.",
+        "How proceeds will be tracked; SEBI allows a sustainability or ESG committee for this.",
+        "The split between new projects and refinancing, with details of any debt being refinanced.",
+        "Social risks and the mitigation plan."
+      ]
+    },
+    {
+      "h": "After listing",
+      "p": [
+        "Use of proceeds must be verified by an external auditor, unutilised money reported per ISIN, and the annual report must list the projects funded with amounts and expected impact, project-level social impact reporting and the methods behind the indicators. If confidentiality agreements apply, the information can be given in aggregate. An issuer eligible for an SME exchange reports these items twice a year."
+      ]
+    },
+    {
+      "h": "Purpose-washing",
+      "p": [
+        "SEBI applies its seven greenwashing rules to social bonds under the name purpose-washing: false, misleading or incomplete claims about the purpose of the bond. Misused proceeds must be disclosed and, if a majority of debenture holders require it, the bonds redeemed early."
+      ]
+    }
+  ],
+  "senseible": "Senseible is a carbon and climate finance platform for MSMEs and does not structure or review social bonds. Lenders using such bonds for SME finance may use its records to see a borrower's energy and emissions.",
+  "links": [
+    {
+      "label": "Sustainability bonds under SEBI",
+      "to": "/answers/sebi-sustainability-bond-rules"
+    },
+    {
+      "label": "Which standards an ESG bond can follow",
+      "to": "/answers/which-standards-can-an-indian-esg-bond-follow"
+    },
+    {
+      "label": "SEBI greenwashing rules for green bonds",
+      "to": "/answers/green-bond-greenwashing-dos-and-donts-sebi"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Framework for ESG Debt Securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

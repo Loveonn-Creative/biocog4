@@ -1,0 +1,62 @@
+{
+  "slug": "esg-fund-65-percent-brsr-core-assurance",
+  "q": "Why must ESG mutual funds hold 65% of assets in companies with BRSR Core assurance?",
+  "title": "ESG funds and the 65% BRSR Core rule",
+  "short": "SEBI requires ESG mutual fund schemes to keep at least 65% of assets in companies that file a comprehensive BRSR and have BRSR Core assurance, from 1 October 2024. Non-compliant schemes had until 30 September 2025, and could not add companies lacking assurance meanwhile. Unassured companies can fill only the remaining 35%.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Listed companies weighing BRSR Core assurance, and their suppliers",
+  "sections": [
+    {
+      "h": "The rule and its dates",
+      "ul": [
+        "Before July 2023, ESG schemes could invest only in companies with comprehensive BRSR disclosures.",
+        "From 1 October 2024, at least 65% of an ESG scheme's assets must be in companies that report a comprehensive BRSR and provide assurance on BRSR Core disclosures.",
+        "Schemes not meeting this on 1 October 2024 had until 30 September 2025, and during that year could make no fresh investment in companies without BRSR Core assurance.",
+        "The balance may be invested in companies with BRSR disclosures."
+      ]
+    },
+    {
+      "h": "Why SEBI did it",
+      "p": [
+        "The circular says ESG investing needs consistent, comparable disclosures to help investors and prevent greenwashing. Tying most of an ESG fund's money to assured data means the fund's ESG claim rests on figures someone outside the company has checked."
+      ]
+    },
+    {
+      "h": "Effect on listed companies",
+      "ul": [
+        "Without BRSR Core assurance, a company can be held only within the smaller 35% portion of ESG funds.",
+        "Funds publish each holding's BRSR Core score monthly, so weak or unassured data is visible to investors.",
+        "Funds track ESG rating movements of their holdings every year in the fund manager commentary."
+      ]
+    },
+    {
+      "h": "Effect on suppliers",
+      "p": [
+        "BRSR Core includes energy, emissions and waste figures, and its value chain disclosures reach into suppliers. A listed buyer that wants ESG fund money has a reason to ask MSME suppliers for figures backed by documents."
+      ]
+    }
+  ],
+  "senseible": "Senseible traces each energy and fuel figure to its source bill, the kind of record a buyer's assurer can check when value chain data is reviewed.",
+  "links": [
+    {
+      "label": "SEBI rules for ESG mutual funds",
+      "to": "/answers/sebi-esg-mutual-fund-scheme-rules"
+    },
+    {
+      "label": "BRSR Core value chain timeline",
+      "to": "/answers/brsr-core-value-chain-assurance-timeline"
+    },
+    {
+      "label": "Core ESG rating and BRSR Core",
+      "to": "/answers/core-esg-rating-uses-assured-brsr-core-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, New category of mutual fund schemes for ESG investing and related disclosures, 20 July 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/new-category-of-mutual-fund-schemes-for-environmental-social-and-governance-esg-investing-and-related-disclosures-by-mutual-funds_74186.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

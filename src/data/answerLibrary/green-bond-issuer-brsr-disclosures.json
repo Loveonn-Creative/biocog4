@@ -1,0 +1,67 @@
+{
+  "slug": "green-bond-issuer-brsr-disclosures",
+  "q": "Which BRSR disclosures must a green bond issuer report with its annual report?",
+  "title": "BRSR items a green bond issuer reports",
+  "short": "SEBI requires a listed green debt issuer to disclose major BRSR elements set out in Annex I of the February 2023 circular: energy and water use and intensity, PAT status, air emissions, Scope 1 and 2 emissions, waste, ecologically sensitive sites and compliance, plus leadership items such as Scope 3 and the share of value chain partners assessed.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Green bond issuers and the suppliers they collect data from",
+  "sections": [
+    {
+      "h": "Why a bond issuer reports BRSR items",
+      "p": [
+        "Paragraph 2.5 of the continuous disclosure rules for green debt securities requires the issuer to provide disclosures of major BRSR elements in the format in Annex I, along with its annual report and financial results."
+      ]
+    },
+    {
+      "h": "Essential indicators in Annex I",
+      "ul": [
+        "Total energy consumption and energy intensity per rupee of turnover.",
+        "Whether any site is a designated consumer under the PAT scheme, and whether targets were met.",
+        "Water withdrawal by source, consumption and intensity, and any zero liquid discharge mechanism.",
+        "Air emissions other than GHG: NOx, SOx, particulate matter and others.",
+        "Scope 1 and Scope 2 emissions in tonnes CO2e and intensity per rupee of turnover, and any GHG reduction projects.",
+        "Waste by category, how much was recycled or reused, and how the rest was disposed of.",
+        "Operations in ecologically sensitive areas, EIAs undertaken and compliance with environmental laws."
+      ]
+    },
+    {
+      "h": "Leadership indicators in Annex I",
+      "ul": [
+        "Energy split between renewable and non-renewable sources.",
+        "Water discharge by destination and treatment level, and data for sites in water-stressed areas.",
+        "Total Scope 3 emissions and intensity.",
+        "Biodiversity impact, resource efficiency initiatives and a business continuity plan.",
+        "Significant adverse environmental impacts from the value chain, and the percentage of value chain partners by value of business that were assessed for environmental impacts."
+      ]
+    },
+    {
+      "h": "Where suppliers come in",
+      "p": [
+        "Each table carries a note asking whether an external agency assessed or assured the figure. The Scope 3 and value chain items can only be filled with data from suppliers, so an MSME selling to a green bond issuer may be asked for its energy, fuel and waste figures."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a supplier's fuel and electricity bills into Scope 1 and 2 figures with the source bill attached, which is the data a buyer needs for these value chain items.",
+  "links": [
+    {
+      "label": "Share of value chain partners assessed",
+      "to": "/answers/brsr-value-chain-environment-assessment-share"
+    },
+    {
+      "label": "SEBI rules for green debt securities",
+      "to": "/answers/green-debt-securities-sebi-requirements"
+    },
+    {
+      "label": "Your listed buyer issued a green bond",
+      "to": "/answers/msme-supplier-listed-buyer-green-bond"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Revised disclosure requirements for issuance and listing of green debt securities, 6 February 2023 (now Chapter IX of the NCS Master Circular)",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

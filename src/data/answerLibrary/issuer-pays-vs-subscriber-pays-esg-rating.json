@@ -1,0 +1,65 @@
+{
+  "slug": "issuer-pays-vs-subscriber-pays-esg-rating",
+  "q": "What is the difference between issuer-pays and subscriber-pays ESG ratings in India?",
+  "title": "Issuer-pays vs subscriber-pays ESG ratings",
+  "short": "Under issuer-pays, the rated company pays under a written contract and must share information; under subscriber-pays, investors or lenders pay. SEBI bans mixing the two in one provider. They differ on what is published, how comments work and when a rating can be withdrawn.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Listed companies and investors using ESG ratings",
+  "sections": [
+    {
+      "h": "The two models",
+      "ul": [
+        "Subscriber-pays: revenue comes from subscribers such as banks, insurers, pension funds or the rated company itself.",
+        "Issuer-pays: revenue comes from the rated company under a written agreement that sets fees, rights and duties, and obliges the company to give true, timely information within 7 days of a request.",
+        "Hybrid models are banned: a provider cannot rate some companies on one model and others on the other."
+      ]
+    },
+    {
+      "h": "What gets published",
+      "p": [
+        "Issuer-pays providers publish full rating rationales. Subscriber-pays providers may share detailed rationales only with subscribers, but must list on their website the rated company, sector, rating and date, year by year with the BRSR the rating is based on. Stock exchanges show ESG ratings on the listed company's or security's page, including the provider's name and business model."
+      ]
+    },
+    {
+      "h": "Withdrawing a rating",
+      "ul": [
+        "Subscriber-pays: allowed when no one subscribes to the rating, unless it is part of a package such as an index that still has subscribers; also allowed if the company has no BRSR.",
+        "Issuer-pays, rating of a company: only after rating it continuously for three years.",
+        "Issuer-pays, rating of a security: after three years or half the tenure, whichever is higher, plus a no-objection from 75% of bondholders by value."
+      ]
+    },
+    {
+      "h": "Non-cooperation",
+      "p": [
+        "Only the issuer-pays model has a formal non-cooperation route. A company that stops cooperating is still rated on best available information with an ISSUER NOT COOPERATING suffix, and if it is non-cooperative with all issuer-pays providers for 12 months, none may give it a new rating until it cooperates."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not involved in ESG rating contracts. It helps companies and their suppliers keep evidence-backed energy and emissions data that any rater can use.",
+  "links": [
+    {
+      "label": "How to dispute an ESG rating",
+      "to": "/answers/how-to-dispute-an-esg-rating-in-india"
+    },
+    {
+      "label": "Can an ESG rater review your bond?",
+      "to": "/answers/can-esg-rating-provider-review-a-bond"
+    },
+    {
+      "label": "ESG rating products SEBI requires",
+      "to": "/answers/sebi-esg-rating-products-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    },
+    {
+      "label": "SEBI circular, Clarificatory and procedural changes to aid and strengthen ESG Rating Providers, 29 April 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/apr-2025/clarificatory-and-procedural-changes-to-aid-and-strengthen-esg-rating-providers-erps-_93704.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

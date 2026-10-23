@@ -1,0 +1,61 @@
+{
+  "slug": "which-standards-can-an-indian-esg-bond-follow",
+  "q": "Which international standards can an Indian social, sustainability or sustainability-linked bond follow?",
+  "title": "Standards an Indian ESG bond can follow",
+  "short": "SEBI lets social, sustainability and sustainability-linked bonds carry the label only if the funded projects align with a recognised standard: ICMA principles or guidelines, the Climate Bonds Standard, ASEAN standards, EU standards, or any framework set by an Indian financial sector regulator. The issuer still follows that standard's own obligations.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Issuers and arrangers choosing a framework for labelled debt",
+  "sections": [
+    {
+      "h": "The five accepted reference points",
+      "ol": [
+        "International Capital Market Association principles and guidelines.",
+        "The Climate Bonds Standard.",
+        "ASEAN standards.",
+        "European Union standards.",
+        "Any framework or methodology specified by a financial sector regulator in India."
+      ]
+    },
+    {
+      "h": "Two layers of rules",
+      "p": [
+        "The SEBI framework is in addition to the NCS Regulations and the LODR Regulations. An issuer must make SEBI's disclosures and also meet the pre-issue and post-issue obligations of whichever standard the bond is aligned with. For sustainability-linked bonds, SEBI explicitly asks issuers to follow the post-issuance obligations of the chosen international standard."
+      ]
+    },
+    {
+      "h": "What the reviewer confirms",
+      "p": [
+        "The independent third-party reviewer's job is to ascertain that the labelled bond is in alignment with one of these recognised standards, including the project evaluation and selection process. The review can be a second party opinion, a verification, a certification or a scoring or rating, as recommended by ICMA or the chosen standard."
+      ]
+    },
+    {
+      "h": "Small issuers",
+      "p": [
+        "An issuer eligible to list on an SME exchange that issues ESG debt securities must meet the continuous disclosure requirements twice a year."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not advise on bond frameworks. Its role is upstream: verified energy and emissions records from MSME bills that issuers and lenders can use as evidence.",
+  "links": [
+    {
+      "label": "SEBI social bond categories",
+      "to": "/answers/sebi-social-bond-eligible-categories"
+    },
+    {
+      "label": "What an SLB reviewer must check",
+      "to": "/answers/sustainability-linked-bond-reviewer-checks-sebi"
+    },
+    {
+      "label": "India climate taxonomy vs EU Taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Framework for ESG Debt Securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

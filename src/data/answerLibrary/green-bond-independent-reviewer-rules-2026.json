@@ -1,0 +1,69 @@
+{
+  "slug": "green-bond-independent-reviewer-rules-2026",
+  "q": "Who can be the independent reviewer for a green bond in India after SEBI's 2026 change?",
+  "title": "Green bond reviewer rules from 2026",
+  "short": "Since 27 February 2026 every green debt issuer must appoint an independent third-party reviewer that is independent of the issuer and its management, paid in a way that avoids conflicts and expert in ESG debt. Its scope goes in the offer document, and the review can be a second party opinion, verification, certification or rating.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Issuers, merchant bankers and debenture trustees on green debt issues",
+  "sections": [
+    {
+      "h": "What changed",
+      "p": [
+        "Under the February 2023 rules, appointing a reviewer for the pre-issue processes was on a comply or explain basis for two years. SEBI's circular of 27 February 2026 deleted that paragraph and inserted a new paragraph 5 in Chapter IX of the NCS Master Circular, bringing green bonds in line with the rules for social and sustainability bonds issued in June 2025. It applied with immediate effect."
+      ]
+    },
+    {
+      "h": "The three conditions",
+      "ol": [
+        "The reviewer is independent of the issuer, its directors, senior management and key managerial personnel.",
+        "It is paid in a way that prevents conflicts of interest.",
+        "It has expertise in assessing ESG debt securities."
+      ]
+    },
+    {
+      "h": "What the reviewer checks",
+      "p": [
+        "The reviewer confirms the issue meets the definition of green debt security in Regulation 2(1)(q) of the NCS Regulations, including the project evaluation and selection process and whether the project categories are eligible. The scope of its review must be stated in the offer document, along with adequate details about the reviewer."
+      ]
+    },
+    {
+      "h": "Forms the review can take",
+      "p": [
+        "SEBI points to the ICMA external review guidelines and allows one or more of: a second party opinion, a verification (including where proceeds refinance existing assets), a certification, or a scoring or rating."
+      ]
+    },
+    {
+      "h": "After listing",
+      "p": [
+        "Separately, the 2023 rules ask for a third-party reviewer for post-issue management of proceeds and verification of internal tracking and impact reporting, and for an external auditor's report verifying the use of proceeds alongside the annual report and results."
+      ]
+    }
+  ],
+  "senseible": "Senseible's records of energy and fuel use at financed sites can give a reviewer evidence to test against. Senseible is not an external reviewer or certifier for bonds.",
+  "links": [
+    {
+      "label": "SEBI rules for green debt securities",
+      "to": "/answers/green-debt-securities-sebi-requirements"
+    },
+    {
+      "label": "Can an ESG rater review your bond?",
+      "to": "/answers/can-esg-rating-provider-review-a-bond"
+    },
+    {
+      "label": "SEBI greenwashing rules for green bonds",
+      "to": "/answers/green-bond-greenwashing-dos-and-donts-sebi"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Revised norms for appointment of an independent third-party reviewer/certifier for green debt security, 27 February 2026",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2026/revised-norms-for-appointment-of-an-independent-third-party-reviewer-certifier-for-green-debt-security_100043.html"
+    },
+    {
+      "label": "SEBI circular, Revised disclosure requirements for issuance and listing of green debt securities, 6 February 2023 (now Chapter IX of the NCS Master Circular)",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

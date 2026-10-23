@@ -1,0 +1,70 @@
+{
+  "slug": "india-sovereign-green-bonds-first-issue",
+  "q": "How did India issue its sovereign green bonds in 2022-23?",
+  "title": "India's sovereign green bonds, 2022-23",
+  "short": "India planned ₹16,000 crore of sovereign green bonds for 2022-23 under its November 2022 framework, to fund public sector projects that cut the carbon intensity of the economy. The first auction, on 25 January 2023, sold ₹4,000 crore each of 5-year and 10-year bonds at cut-off yields of 7.10% and 7.29%.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Treasury teams, investors and anyone tracking India's green finance",
+  "sections": [
+    {
+      "h": "Why the government issued them",
+      "p": [
+        "The Union Budget 2022-23 announced that the Government of India would issue Sovereign Green Bonds as part of its market borrowing, to raise money for green infrastructure. Proceeds go to public sector projects that help reduce the carbon intensity of the economy. The government issued its Sovereign Green Bond Framework on 9 November 2022."
+      ]
+    },
+    {
+      "h": "The 2022-23 calendar",
+      "ul": [
+        "25 January 2023: ₹8,000 crore, split into a 5-year and a 10-year bond of ₹4,000 crore each.",
+        "9 February 2023: another ₹8,000 crore in the same split.",
+        "Total planned for the year: ₹16,000 crore."
+      ]
+    },
+    {
+      "h": "The first auction",
+      "p": [
+        "The two bonds were named NEW GOI SGrB 2028 and NEW GOI SGrB 2033, repayable on 27 January 2028 and 27 January 2033, and settled on 27 January 2023. They were sold through RBI's E-Kuber system by uniform price auction. The full ₹4,000 crore of each was accepted, at cut-off yields of 7.10% for the 2028 bond and 7.29% for the 2033 bond, with nothing devolving on primary dealers."
+      ]
+    },
+    {
+      "h": "Features",
+      "ul": [
+        "Five per cent of the notified amount reserved for retail investors through non-competitive bidding.",
+        "Eligible for repo and counted as SLR investments for banks.",
+        "Tradable in the secondary market and open to non-residents under the Fully Accessible Route."
+      ]
+    }
+  ],
+  "senseible": "Sovereign green bonds fund public projects, not private firms. Senseible works on the other side of climate finance, helping MSMEs build energy and emissions records for green loans.",
+  "links": [
+    {
+      "label": "SEBI rules for green debt securities",
+      "to": "/answers/green-debt-securities-sebi-requirements"
+    },
+    {
+      "label": "India climate taxonomy vs EU Taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
+    },
+    {
+      "label": "Green loans, SLLs and green bonds",
+      "to": "/green-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI press release, Issuance calendar for marketable Sovereign Green Bonds: FY 2022-23, 6 January 2023",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55004"
+    },
+    {
+      "label": "RBI press release, Auction of Sovereign Green Bonds, 19 January 2023",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55077"
+    },
+    {
+      "label": "RBI press release, Sovereign Green Bonds auction results: cut-off, 25 January 2023",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55104"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Later sovereign green bond auctions and the framework document itself (Department of Economic Affairs) were not opened for this page."
+}

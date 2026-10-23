@@ -3491,6 +3491,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "can-esg-rating-provider-review-a-bond",
+  "q": "Can a SEBI-registered ESG rating provider act as the reviewer for an ESG bond?",
+  "title": "Can an ESG rater review your bond?",
+  "short": "Yes. SEBI lets a registered ESG rating provider act as independent reviewer for social, sustainability and sustainability-linked bonds if it meets the independence, conflict-free fee and expertise conditions. But for any client group an ESG rater may offer either ESG ratings or green debt certification, or audit and assurance, not both.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "can-ghg-verification-be-done-remotely",
   "q": "Can a GHG verification be done remotely, without a site visit?",
   "title": "Remote GHG verification",
@@ -6699,6 +6707,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "core-esg-rating-uses-assured-brsr-core-data",
+  "q": "What is a Core ESG rating and how is it linked to BRSR Core assurance?",
+  "title": "Core ESG rating and BRSR Core",
+  "short": "A Core ESG rating is built only on data a company has had assured or audited by a third party. SEBI-registered raters offer it once the company has a BRSR Core. Unverified data can only appear as commentary in the rationale, so assured figures directly decide the score.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "corex-ironmaking-unit-co2-calculation",
   "q": "How is CO2 calculated for a COREX ironmaking unit?",
   "title": "COREX ironmaking: CO2 calculation",
@@ -8891,6 +8907,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "esg-fund-65-percent-brsr-core-assurance",
+  "q": "Why must ESG mutual funds hold 65% of assets in companies with BRSR Core assurance?",
+  "title": "ESG funds and the 65% BRSR Core rule",
+  "short": "SEBI requires ESG mutual fund schemes to keep at least 65% of assets in companies that file a comprehensive BRSR and have BRSR Core assurance, from 1 October 2024. Non-compliant schemes had until 30 September 2025, and could not add companies lacking assurance meanwhile. Unassured companies can fill only the remaining 35%.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "esg-rating-review-after-brsr-or-controversy",
+  "q": "How soon must an ESG rating be reviewed after a company publishes its BRSR or faces a controversy?",
+  "title": "When an ESG rating must be reviewed",
+  "short": "SEBI requires ESG rating providers to review a rating within 10 days of a material event, such as an environmental, social or governance controversy or penalty. After a company publishes its BRSR, the review must happen within 45 days, a relaxation SEBI made in January 2025.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "eskom-grid-factor-for-south-african-suppliers",
   "q": "Which grid factor should a South African supplier use for Scope 2?",
   "title": "Grid factor for South African suppliers",
@@ -10971,12 +11003,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "green-bond-greenwashing-dos-and-donts-sebi",
+  "q": "What are SEBI's dos and don'ts for green bond issuers to avoid greenwashing?",
+  "title": "SEBI greenwashing rules for green bonds",
+  "short": "SEBI's February 2023 circular binds every green debt issuer to seven rules: keep checking the green impact, never use the money outside the green definition, disclose any misuse and redeem early if holders demand it, avoid misleading labels and cherry-picked data, quantify negative externalities and never imply a certification it does not have.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "green-bond-impact-reporting-metrics",
   "q": "What impact metrics must a green bond issuer report, and how is CO2 avoided calculated?",
   "title": "Green bond impact metrics and CO2 avoided",
   "short": "Report, at least once a year, the energy and climate results of the projects the bond paid for: for renewable power, MWh generated, MW installed and tonnes CO2 avoided; for efficiency, MWh saved. CO2 avoided is the clean or saved energy times a stated baseline grid factor, counted for your financed share.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "green-bond-independent-reviewer-rules-2026",
+  "q": "Who can be the independent reviewer for a green bond in India after SEBI's 2026 change?",
+  "title": "Green bond reviewer rules from 2026",
+  "short": "Since 27 February 2026 every green debt issuer must appoint an independent third-party reviewer that is independent of the issuer and its management, paid in a way that avoids conflicts and expert in ESG debt. Its scope goes in the offer document, and the review can be a second party opinion, verification, certification or rating.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "green-bond-issuer-brsr-disclosures",
+  "q": "Which BRSR disclosures must a green bond issuer report with its annual report?",
+  "title": "BRSR items a green bond issuer reports",
+  "short": "SEBI requires a listed green debt issuer to disclose major BRSR elements set out in Annex I of the February 2023 circular: energy and water use and intensity, PAT status, air emissions, Scope 1 and 2 emissions, waste, ecologically sensitive sites and compliance, plus leadership items such as Scope 3 and the share of value chain partners assessed.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "green-climate-fund-for-small-businesses",
@@ -12363,6 +12419,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "how-to-dispute-an-esg-rating-in-india",
+  "q": "How can a company challenge an ESG rating given by a SEBI-registered rating provider?",
+  "title": "How to dispute an ESG rating",
+  "short": "A rated company can ask the provider to review or appeal its rating. SEBI requires the review panel to be mostly different from the original rating team, with at least a third independent. Under the subscriber-pays model, comments use a standard format and must reach the provider within two working days of receiving the rationale.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "how-to-file-carbon-evidence-documents",
   "q": "How should we file bills and invoices so a verifier can check our carbon figures?",
   "title": "Filing carbon evidence documents",
@@ -12928,6 +12992,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "India power sector CO2 emissions, FY 2025-26",
   "short": "About 1,189 million tonnes of CO2 from grid electricity generation in FY 2025-26, by CEA's database version 22.0. That is down from about 1,236 million tonnes in FY 2024-25, the first fall since FY 2020-21, while net generation including renewables rose to 1,761 BU.",
   "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "india-sovereign-green-bonds-first-issue",
+  "q": "How did India issue its sovereign green bonds in 2022-23?",
+  "title": "India's sovereign green bonds, 2022-23",
+  "short": "India planned ₹16,000 crore of sovereign green bonds for 2022-23 under its November 2022 framework, to fund public sector projects that cut the carbon intensity of the economy. The first auction, on 25 January 2023, sold ₹4,000 crore each of 5-year and 10-year bonds at cut-off yields of 7.10% and 7.29%.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "india-specific-esg-rating-parameters",
+  "q": "Which India-specific parameters do SEBI-registered ESG ratings look at?",
+  "title": "Indian parameters in ESG ratings",
+  "short": "SEBI's list of India-specific ESG parameters includes PAT scheme status, zero liquid discharge, EPR compliance, operations near ecologically sensitive areas, CSR spending, jobs in smaller towns, the share of inputs bought from MSMEs and from within India, gender pay disclosure, and governance items like related-party deals and royalty growth.",
+  "topic": "regulation",
   "reviewed": "2026-10-23"
  },
  {
@@ -13713,6 +13793,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "It depends on who gives the opinion and on what. Accountancy firms use IAASB standards: ISAE 3410 for a GHG statement, and ISSA 5000 for sustainability information as a whole. Verification bodies use ISO 14064-3 for GHG statements. You usually do not pick the standard; your regulator, buyer or assurance provider does.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "issuer-pays-vs-subscriber-pays-esg-rating",
+  "q": "What is the difference between issuer-pays and subscriber-pays ESG ratings in India?",
+  "title": "Issuer-pays vs subscriber-pays ESG ratings",
+  "short": "Under issuer-pays, the rated company pays under a written contract and must share information; under subscriber-pays, investors or lenders pay. SEBI bans mixing the two in one provider. They differ on what is published, how comments work and when a rating can be withdrawn.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "ists-charge-waiver-green-open-access",
@@ -16017,6 +16105,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "RBI requires banks to link new floating rate loans to micro and small enterprises to an external benchmark, most often the repo rate, so rate changes pass through. After a cut, your rate falls on your loan's next reset date, which must come at least once every three months.",
   "topic": "markets",
   "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "msme-supplier-listed-buyer-green-bond",
+  "q": "My listed buyer has issued a green bond. What will it ask me as an MSME supplier?",
+  "title": "Your listed buyer issued a green bond",
+  "short": "Expect requests for energy, fuel, emissions and waste figures. A green bond issuer reports project impact and BRSR items, including Scope 3 and the share of suppliers assessed, and must avoid cherry-picked data. Its ESG rating also counts MSME sourcing, so documented data helps you stay on its list.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "msme-supplier-to-ccts-obligated-plant",
@@ -19851,6 +19947,46 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "sebi-esg-mutual-fund-scheme-rules",
+  "q": "What rules must an ESG mutual fund follow under SEBI's 2023 circular?",
+  "title": "SEBI rules for ESG mutual funds",
+  "short": "Since July 2023 an AMC can run several ESG schemes, each with one of six strategies named in the scheme title. At least 80% of assets must follow that strategy, 65% must sit in companies with assured BRSR Core, and the fund must disclose ESG scores, voting reasons and an annual independent assurance.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "sebi-esg-rating-products-list",
+  "q": "What ESG rating products must a SEBI-registered ESG rating provider offer?",
+  "title": "ESG rating products SEBI requires",
+  "short": "SEBI requires every registered ESG rating provider to offer at least six products: an ESG rating, a Transition or Parivartan score, a Combined score, and Core versions of all three built only on assured data. All ratings use a 0 to 100 scale, must be comparable across sectors and must reflect Indian context.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "sebi-social-bond-eligible-categories",
+  "q": "What counts as a social bond under SEBI's 2025 ESG debt framework?",
+  "title": "SEBI social bond categories",
+  "short": "Under SEBI's June 2025 framework a social bond funds projects that address a specific social issue or seek positive social outcomes, in six categories: affordable basic infrastructure, essential services, affordable housing, employment generation including SME finance, food security, and socioeconomic advancement. The issuer must appoint an independent reviewer.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "sebi-sustainability-bond-rules",
+  "q": "What is a sustainability bond in India and which SEBI rules apply to it?",
+  "title": "Sustainability bonds under SEBI",
+  "short": "A sustainability bond funds a mix of eligible green and social projects. SEBI's June 2025 framework makes the issuer meet both rule sets: the green debt disclosures in Chapter IX of the NCS Master Circular and the social bond disclosures in Annexure A, with an independent reviewer and the anti-purpose-washing duties.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "sebi-transition-bond-disclosure-requirements",
+  "q": "What must an Indian issuer disclose to issue a transition bond under SEBI rules?",
+  "title": "SEBI disclosure rules for transition bonds",
+  "short": "A transition bond is a green debt security, so it carries all of SEBI's green disclosures. On top, the offer document must explain how the issue's objective aligns with India's Nationally Determined Contributions, and the issuer must keep monitoring that the transition is actually cutting environmental harm.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "sec-climate-rule-indian-suppliers",
   "q": "Does the US SEC climate disclosure rule apply to Indian suppliers?",
   "title": "SEC climate rule and Indian suppliers",
@@ -21777,6 +21913,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "If the issuer misses its sustainability performance target on the observation date, the bond's coupon rises by a fixed margin, often quoted in basis points, from the next coupon period, usually until maturity. The money raised can be used for any purpose; the penalty is the only link to the target.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "sustainability-linked-bond-reviewer-checks-sebi",
+  "q": "What does the independent reviewer check on a sustainability-linked bond under SEBI rules?",
+  "title": "What an SLB reviewer must check",
+  "short": "SEBI requires a sustainability-linked bond issuer to appoint an independent reviewer who assesses whether the KPIs are relevant and reliable, tied to core strategy, whether targets are ambitious, whether baselines are sound, whether the plan to hit them is credible, any later method change, and the yearly performance report that moves the coupon.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "sustainability-linked-loan-interest-discount",
@@ -23963,6 +24107,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "what-is-esg-transition-parivartan-score",
+  "q": "What is the Transition or Parivartan score in SEBI's ESG rating rules?",
+  "title": "What a Parivartan score measures",
+  "short": "The Transition or Parivartan score measures how fast a company is moving towards net zero or better ESG risk management, and what it invests to get there, rather than judging only its current emissions. SEBI requires ESG raters to offer it so Indian firms cutting emissions are not scored only on today's level.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "what-is-materiality-in-ghg-verification",
   "q": "What is the materiality threshold in a GHG verification, and is 5% the rule?",
   "title": "Materiality in GHG verification: is it 5%?",
@@ -24177,6 +24329,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Pick the smallest plan whose monthly invoice reads cover your normal month: Snapshot is free for 10, Essential covers 100, Pro covers 1,000 and Scale covers 10,000. For a month that runs over, Extra Invoice Scans at ₹79 per 100 are usually cheaper than moving up a plan.",
   "topic": "product",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "which-standards-can-an-indian-esg-bond-follow",
+  "q": "Which international standards can an Indian social, sustainability or sustainability-linked bond follow?",
+  "title": "Standards an Indian ESG bond can follow",
+  "short": "SEBI lets social, sustainability and sustainability-linked bonds carry the label only if the funded projects align with a recognised standard: ICMA principles or guidelines, the Climate Bonds Standard, ASEAN standards, EU standards, or any framework set by an Indian financial sector regulator. The issuer still follows that standard's own obligations.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "which-steel-plant-upgrades-cut-cbam-most",

@@ -1,0 +1,64 @@
+{
+  "slug": "sebi-transition-bond-disclosure-requirements",
+  "q": "What must an Indian issuer disclose to issue a transition bond under SEBI rules?",
+  "title": "SEBI disclosure rules for transition bonds",
+  "short": "A transition bond is a green debt security, so it carries all of SEBI's green disclosures. On top, the offer document must explain how the issue's objective aligns with India's Nationally Determined Contributions, and the issuer must keep monitoring that the transition is actually cutting environmental harm.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Hard-to-abate companies considering transition finance",
+  "sections": [
+    {
+      "h": "Same base rules as any green bond",
+      "p": [
+        "SEBI's February 2023 circular covers transition bonds within the green debt framework. The offer document must state the environmental objectives, how projects were selected and fit the eligible categories, the taxonomies or standards referenced, how proceeds will be tracked, the split between new financing and refinancing, where unallocated money will be parked and the social and environmental risks with a mitigation plan."
+      ]
+    },
+    {
+      "h": "The extra disclosure",
+      "p": [
+        "Paragraph 1.2(d) of the initial disclosure rules asks issuers raising money through transition bonds to give details of how the objective of the issue aligns with India's Intended Nationally Determined Contributions. The bond has to show its place in the national pathway, not only that the project is cleaner than before."
+      ]
+    },
+    {
+      "h": "The monitoring duty",
+      "p": [
+        "SEBI's greenwashing rules add a specific duty for transition finance: while raising funds for a transition towards a greener pathway, the issuer must continuously monitor whether that path is actually reducing adverse environmental impact as envisaged in the offer document. Negative externalities must be quantified."
+      ]
+    },
+    {
+      "h": "Practical preparation",
+      "ol": [
+        "Set a baseline for the process being changed, such as fuel use and emissions per tonne, before the issue.",
+        "Write the NDC link in plain terms: which national goal the project serves and how.",
+        "Plan yearly impact reporting that compares actual results against the baseline, project by project."
+      ]
+    }
+  ],
+  "senseible": "Senseible can build the energy and fuel baseline for a plant from its bills and track the change after a project, giving dated evidence for transition impact reporting.",
+  "links": [
+    {
+      "label": "SEBI rules for green debt securities",
+      "to": "/answers/green-debt-securities-sebi-requirements"
+    },
+    {
+      "label": "SEBI greenwashing rules for green bonds",
+      "to": "/answers/green-bond-greenwashing-dos-and-donts-sebi"
+    },
+    {
+      "label": "India climate taxonomy vs EU Taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Revised disclosure requirements for issuance and listing of green debt securities, 6 February 2023 (now Chapter IX of the NCS Master Circular)",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html"
+    },
+    {
+      "label": "SEBI circular, Dos and don'ts relating to green debt securities to avoid occurrences of greenwashing, 3 February 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/dos-and-don-ts-relating-to-green-debt-securities-to-avoid-occurrences-of-greenwashing_67828.html"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "SEBI's regulations define transition bonds and other sub-labels; this page relies on the disclosure circular and greenwashing circular, not the regulation text itself."
+}

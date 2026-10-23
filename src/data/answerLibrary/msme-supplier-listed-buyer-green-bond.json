@@ -1,0 +1,81 @@
+{
+  "slug": "msme-supplier-listed-buyer-green-bond",
+  "q": "My listed buyer has issued a green bond. What will it ask me as an MSME supplier?",
+  "title": "Your listed buyer issued a green bond",
+  "short": "Expect requests for energy, fuel, emissions and waste figures. A green bond issuer reports project impact and BRSR items, including Scope 3 and the share of suppliers assessed, and must avoid cherry-picked data. Its ESG rating also counts MSME sourcing, so documented data helps you stay on its list.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "MSME suppliers to listed companies",
+  "sections": [
+    {
+      "h": "Why the request lands on you",
+      "ul": [
+        "SEBI requires listed green debt issuers to report major BRSR items, including total Scope 3 emissions and the percentage of value chain partners, by value of business, assessed for environmental impact.",
+        "Impact must be reported project by project, with methods and assumptions, and negative externalities quantified.",
+        "SEBI's greenwashing rules forbid cherry-picking data, so buyers need numbers that hold up rather than estimates."
+      ]
+    },
+    {
+      "h": "What is likely to be asked",
+      "ol": [
+        "Monthly electricity use in kWh and fuel use by type, with bills or invoices.",
+        "Scope 1 and Scope 2 emissions, or the data to calculate them.",
+        "Waste generated, recycled and disposed of, and water withdrawn.",
+        "Whether any figure was checked by an outside party.",
+        "For supplies to a funded project, the materials and transport behind your product."
+      ]
+    },
+    {
+      "h": "Where it can help you",
+      "p": [
+        "SEBI's list of India-specific ESG rating parameters includes the share of a company's inputs bought directly from MSMEs and small producers. ESG mutual funds must hold mostly companies with assured BRSR Core data. A supplier that answers quickly with traceable figures makes its buyer's reporting easier, which is a practical edge when contracts are renewed."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "ul": [
+        "Keep 12 months of electricity bills and fuel invoices in one place.",
+        "Use one method and state the emission factors you used.",
+        "Answer only what you can support; mark estimates as estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads a supplier's electricity bills and fuel invoices into Scope 1 and 2 figures with the source document attached, ready to share with a buyer.",
+  "links": [
+    {
+      "label": "BRSR items a green bond issuer reports",
+      "to": "/answers/green-bond-issuer-brsr-disclosures"
+    },
+    {
+      "label": "Share of value chain partners assessed",
+      "to": "/answers/brsr-value-chain-environment-assessment-share"
+    },
+    {
+      "label": "Indian parameters in ESG ratings",
+      "to": "/answers/india-specific-esg-rating-parameters"
+    },
+    {
+      "label": "SEBI greenwashing rules for green bonds",
+      "to": "/answers/green-bond-greenwashing-dos-and-donts-sebi"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Revised disclosure requirements for issuance and listing of green debt securities, 6 February 2023 (now Chapter IX of the NCS Master Circular)",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html"
+    },
+    {
+      "label": "SEBI circular, Dos and don'ts relating to green debt securities to avoid occurrences of greenwashing, 3 February 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/dos-and-don-ts-relating-to-green-debt-securities-to-avoid-occurrences-of-greenwashing_67828.html"
+    },
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    },
+    {
+      "label": "SEBI circular, New category of mutual fund schemes for ESG investing and related disclosures, 20 July 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/new-category-of-mutual-fund-schemes-for-environmental-social-and-governance-esg-investing-and-related-disclosures-by-mutual-funds_74186.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

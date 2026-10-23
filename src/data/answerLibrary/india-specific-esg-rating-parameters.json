@@ -1,0 +1,72 @@
+{
+  "slug": "india-specific-esg-rating-parameters",
+  "q": "Which India-specific parameters do SEBI-registered ESG ratings look at?",
+  "title": "Indian parameters in ESG ratings",
+  "short": "SEBI's list of India-specific ESG parameters includes PAT scheme status, zero liquid discharge, EPR compliance, operations near ecologically sensitive areas, CSR spending, jobs in smaller towns, the share of inputs bought from MSMEs and from within India, gender pay disclosure, and governance items like related-party deals and royalty growth.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Listed companies, their MSME suppliers and ESG teams",
+  "sections": [
+    {
+      "h": "Environment",
+      "ul": [
+        "Whether any site is a designated consumer under the PAT scheme and whether its targets were met.",
+        "Whether a zero liquid discharge mechanism is in place.",
+        "Whether Extended Producer Responsibility applies and the waste collection plan matches the EPR plan filed with pollution control boards.",
+        "Operations in or near national parks, sanctuaries, wetlands, forests or coastal regulation zones."
+      ]
+    },
+    {
+      "h": "Social",
+      "ul": [
+        "CSR spent as a share of the legal requirement, checked through to the trusts that spend it.",
+        "Job creation in smaller towns.",
+        "The share of input material by value sourced directly from MSMEs and small producers, and from within India.",
+        "Wages and salaries by gender, and jobs and infrastructure for differently abled people."
+      ]
+    },
+    {
+      "h": "Governance",
+      "ul": [
+        "Whether the company uses a RegTech or systems solution to monitor and evidence compliance.",
+        "Share of votes against independent director appointments and related-party transactions among non-promoter shareholders.",
+        "Whether royalty growth over five years has outpaced profit growth.",
+        "Related-party share of purchases, sales, loans and investments."
+      ]
+    },
+    {
+      "h": "Indian standards raters should use",
+      "p": [
+        "SEBI's guidance tells raters to consider Indian standards: GRIHA, IGBC or ECBC for buildings; ZED certification, Air Act rules and continuous emissions monitoring for air; PAT, NAPCC and the India GHG Programme for emissions; Indian waste rules including plastic, e-waste and fly ash; zero liquid discharge and CETP rules for effluent; and CGWB over-exploited areas for water. Intensity ratios should be adjusted for purchasing power parity."
+      ]
+    },
+    {
+      "h": "Why it matters to MSMEs",
+      "p": [
+        "Because a listed buyer's rating counts how much it sources from MSMEs, buying from Indian small suppliers can help its score, which gives suppliers with clean, documented data an argument in negotiations."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives MSME suppliers bill-based energy and emissions records they can share with listed buyers. It does not compute ESG ratings or the buyer's MSME sourcing share.",
+  "links": [
+    {
+      "label": "ESG rating products SEBI requires",
+      "to": "/answers/sebi-esg-rating-products-list"
+    },
+    {
+      "label": "Share of value chain partners assessed",
+      "to": "/answers/brsr-value-chain-environment-assessment-share"
+    },
+    {
+      "label": "Your listed buyer issued a green bond",
+      "to": "/answers/msme-supplier-listed-buyer-green-bond"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "sustainability-linked-bond-reviewer-checks-sebi",
+  "q": "What does the independent reviewer check on a sustainability-linked bond under SEBI rules?",
+  "title": "What an SLB reviewer must check",
+  "short": "SEBI requires a sustainability-linked bond issuer to appoint an independent reviewer who assesses whether the KPIs are relevant and reliable, tied to core strategy, whether targets are ambitious, whether baselines are sound, whether the plan to hit them is credible, any later method change, and the yearly performance report that moves the coupon.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Issuers designing KPIs and targets for sustainability-linked bonds",
+  "sections": [
+    {
+      "h": "Why the reviewer matters more here",
+      "p": [
+        "Proceeds of a sustainability-linked bond can be used for any purpose. What makes it sustainable is that its financial or structural features change depending on whether predefined sustainability targets are met. SEBI's June 2025 framework therefore puts weight on how credible the KPIs and targets are."
+      ]
+    },
+    {
+      "h": "The seven things the reviewer assesses",
+      "ol": [
+        "The relevance, robustness and reliability of the selected KPIs.",
+        "Whether the KPIs are materially linked to the issuer's core sustainability and business strategy.",
+        "The rationale and level of ambition of the sustainability performance targets.",
+        "The relevance and reliability of the benchmarks and baselines.",
+        "The credibility of the strategy to reach the targets, using scenario analysis where relevant.",
+        "Any material change to the KPI method or target calibration.",
+        "The report on performance against the targets and how it affects the bond's financial or structural features."
+      ]
+    },
+    {
+      "h": "How targets should be set",
+      "p": [
+        "SEBI's footnote, drawn from ICMA's principles, recommends benchmarking targets against the issuer's own track record, with at least three years of KPI history where feasible, against peers, and against science-based or official goals such as the Paris Agreement and net zero."
+      ]
+    },
+    {
+      "h": "Disclosures across the life of the bond",
+      "ul": [
+        "Before issue: KPI definitions and calculation methods, targets and timelines, the trigger events, what varies if targets are missed, fallback mechanisms and factors outside the issuer's control.",
+        "Every year: up-to-date KPI performance with baselines, and the independent reviewer's verification report on performance against targets.",
+        "The reviewer must meet the same independence, conflict-free payment and expertise conditions as for other ESG debt."
+      ]
+    }
+  ],
+  "senseible": "If a KPI is energy or emissions intensity, Senseible's bill-based records give a dated history that can serve as a baseline. Senseible does not verify KPIs for bondholders.",
+  "links": [
+    {
+      "label": "How an SLB coupon step-up works",
+      "to": "/answers/sustainability-linked-bond-coupon-step-up"
+    },
+    {
+      "label": "Can an ESG rater review your bond?",
+      "to": "/answers/can-esg-rating-provider-review-a-bond"
+    },
+    {
+      "label": "Sustainability bonds under SEBI",
+      "to": "/answers/sebi-sustainability-bond-rules"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Framework for ESG Debt Securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "esg-rating-review-after-brsr-or-controversy",
+  "q": "How soon must an ESG rating be reviewed after a company publishes its BRSR or faces a controversy?",
+  "title": "When an ESG rating must be reviewed",
+  "short": "SEBI requires ESG rating providers to review a rating within 10 days of a material event, such as an environmental, social or governance controversy or penalty. After a company publishes its BRSR, the review must happen within 45 days, a relaxation SEBI made in January 2025.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Listed companies and investor relations teams",
+  "sections": [
+    {
+      "h": "What counts as a material event",
+      "p": [
+        "A material development is any event that changes the ESG profile of the rated company. SEBI lists publication of the BRSR and controversies or penalties in environmental, social or governance areas as examples, without limiting it to those. Providers must have systems to track such developments."
+      ]
+    },
+    {
+      "h": "The timelines",
+      "ul": [
+        "Controversy, penalty or other material event: review immediately, and no later than 10 days after it occurs or is announced.",
+        "Publication of BRSR: review immediately, and no later than 45 days after publication."
+      ]
+    },
+    {
+      "h": "Why the BRSR timeline changed",
+      "p": [
+        "Originally all reviews had a 10-day limit. Rating providers told SEBI it was hard to review a large pool of listed companies within 10 days of BRSR season, so on 17 January 2025 SEBI extended the limit for BRSR-triggered reviews to 45 days."
+      ]
+    },
+    {
+      "h": "What companies can do",
+      "ul": [
+        "Expect rating changes within weeks of filing a BRSR, so check figures before publishing.",
+        "Disclose a penalty or incident with context and remediation, since raters will react within 10 days.",
+        "Under an issuer-pays contract, provide information the rater asks for within 7 days."
+      ]
+    }
+  ],
+  "senseible": "Senseible helps companies and suppliers keep energy and emissions figures reconciled to bills before BRSR filing. It has no role in ESG rating reviews.",
+  "links": [
+    {
+      "label": "How to dispute an ESG rating",
+      "to": "/answers/how-to-dispute-an-esg-rating-in-india"
+    },
+    {
+      "label": "ESG rating products SEBI requires",
+      "to": "/answers/sebi-esg-rating-products-list"
+    },
+    {
+      "label": "Core ESG rating and BRSR Core",
+      "to": "/answers/core-esg-rating-uses-assured-brsr-core-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Timeline for review of ESG rating pursuant to occurrence of material events, 17 January 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/jan-2025/timeline-for-review-of-esg-rating-pursuant-to-occurrence-of-material-events-_90930.html"
+    },
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

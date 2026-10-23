@@ -1,0 +1,67 @@
+{
+  "slug": "how-to-dispute-an-esg-rating-in-india",
+  "q": "How can a company challenge an ESG rating given by a SEBI-registered rating provider?",
+  "title": "How to dispute an ESG rating",
+  "short": "A rated company can ask the provider to review or appeal its rating. SEBI requires the review panel to be mostly different from the original rating team, with at least a third independent. Under the subscriber-pays model, comments use a standard format and must reach the provider within two working days of receiving the rationale.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies unhappy with an ESG score",
+  "sections": [
+    {
+      "h": "Who hears the appeal",
+      "p": [
+        "SEBI's master circular says a review or appeal request must be heard by a team where a majority of members did not take part in the original rating and at least one third are independent, meaning they have no financial relationship with the provider or its staff. Every provider must publish its review and appeal policy on its website."
+      ]
+    },
+    {
+      "h": "Subscriber-pays providers",
+      "ol": [
+        "The provider shares the rating rationale with the rated company along with the standard comment format.",
+        "Send one consolidated response within two working days of receiving the rationale, to the email address the provider publishes.",
+        "In the format, give the date of the rationale, the rating, the points or data you dispute, and a public link to the data that supports your view.",
+        "The provider answers in writing. It will explain data sources and point to its published method, but will not reveal proprietary models, weights or peer data."
+      ]
+    },
+    {
+      "h": "Issuer-pays providers",
+      "p": [
+        "Here the company has a written agreement with the provider. It must cooperate with periodic reviews and give requested information within 7 days. If it does not cooperate, the provider keeps rating it on the best available information, adds the suffix ISSUER NOT COOPERATING, and any new provider must disclose that history."
+      ]
+    },
+    {
+      "h": "What the rationale must show you",
+      "ul": [
+        "Current score, direction of change and last review date.",
+        "Key qualitative and quantitative drivers, including controversies.",
+        "Pillar-wise E, S and G scores and their weights.",
+        "Rating sensitivities: what level of performance would move the rating up or down."
+      ]
+    }
+  ],
+  "senseible": "Senseible's bill-linked energy and emissions records can be the public-ready evidence a company cites when it disputes an environmental figure. Senseible does not rate companies.",
+  "links": [
+    {
+      "label": "When an ESG rating must be reviewed",
+      "to": "/answers/esg-rating-review-after-brsr-or-controversy"
+    },
+    {
+      "label": "Issuer-pays vs subscriber-pays ESG ratings",
+      "to": "/answers/issuer-pays-vs-subscriber-pays-esg-rating"
+    },
+    {
+      "label": "ESG rating products SEBI requires",
+      "to": "/answers/sebi-esg-rating-products-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    },
+    {
+      "label": "SEBI circular, Clarificatory and procedural changes to aid and strengthen ESG Rating Providers, 29 April 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/apr-2025/clarificatory-and-procedural-changes-to-aid-and-strengthen-esg-rating-providers-erps-_93704.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

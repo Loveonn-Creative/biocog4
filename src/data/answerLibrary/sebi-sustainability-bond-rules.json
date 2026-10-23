@@ -1,0 +1,65 @@
+{
+  "slug": "sebi-sustainability-bond-rules",
+  "q": "What is a sustainability bond in India and which SEBI rules apply to it?",
+  "title": "Sustainability bonds under SEBI",
+  "short": "A sustainability bond funds a mix of eligible green and social projects. SEBI's June 2025 framework makes the issuer meet both rule sets: the green debt disclosures in Chapter IX of the NCS Master Circular and the social bond disclosures in Annexure A, with an independent reviewer and the anti-purpose-washing duties.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Listed companies and NBFCs choosing a sustainable debt label",
+  "sections": [
+    {
+      "h": "The definition",
+      "p": [
+        "SEBI defines a sustainability bond as a debt security whose proceeds finance or refinance a combination of eligible green projects and social projects, as defined for green debt securities and social bonds respectively. Social bonds, sustainability bonds, sustainability-linked bonds and green debt securities together make up ESG debt securities under Regulation 2(1)(oa) of the NCS Regulations."
+      ]
+    },
+    {
+      "h": "Choosing the label",
+      "p": [
+        "SEBI recognises that social projects can have environmental co-benefits and green projects social co-benefits. The issuer decides whether the bond is green, social or sustainability based on the primary objective of the underlying projects."
+      ]
+    },
+    {
+      "h": "Disclosures that apply",
+      "ul": [
+        "Everything required for green debt securities: environmental objectives, project eligibility, proceeds tracking, refinancing split, risk mitigation, and post-issue impact reporting and BRSR elements.",
+        "Everything required for social bonds: social objectives and target population, social risks, and project-level social impact reporting.",
+        "External auditor verification of the use of proceeds, and unutilised money reported per ISIN."
+      ]
+    },
+    {
+      "h": "Issuer responsibilities",
+      "ul": [
+        "Keep a decision process that checks projects remain eligible.",
+        "Make sure every funded project meets the documented objectives and use proceeds only for the stated purpose.",
+        "Follow the purpose-washing rules: monitor real impact, quantify negative externalities and never imply a certification that does not exist."
+      ]
+    }
+  ],
+  "senseible": "Senseible supplies energy and emissions records for MSME sites, which can support the green half of impact reporting. It does not review or label bonds.",
+  "links": [
+    {
+      "label": "SEBI social bond categories",
+      "to": "/answers/sebi-social-bond-eligible-categories"
+    },
+    {
+      "label": "SEBI rules for green debt securities",
+      "to": "/answers/green-debt-securities-sebi-requirements"
+    },
+    {
+      "label": "Which standards an ESG bond can follow",
+      "to": "/answers/which-standards-can-an-indian-esg-bond-follow"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Framework for ESG Debt Securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html"
+    },
+    {
+      "label": "SEBI circular, Revised disclosure requirements for issuance and listing of green debt securities, 6 February 2023 (now Chapter IX of the NCS Master Circular)",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
