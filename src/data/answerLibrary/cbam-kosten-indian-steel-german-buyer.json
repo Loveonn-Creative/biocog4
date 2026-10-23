@@ -1,0 +1,65 @@
+{
+  "slug": "cbam-kosten-indian-steel-german-buyer",
+  "q": "What does CBAM cost a German buyer of Indian steel?",
+  "title": "CBAM Kosten for German buyers of Indian steel",
+  "short": "One CBAM certificate per tonne of CO2e left after deductions: embedded emissions minus the free allocation adjustment, minus any carbon price paid in India, times the tonnes imported. In 2026 the certificate price is set quarterly; it was €82.32 for the third quarter.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "German importers searching CBAM Kosten for Indian steel, and Indian mills quoting them",
+  "sections": [
+    {
+      "h": "The calculation the Commission sets out",
+      "ul": [
+        "Start with specific embedded emissions per tonne (for steel, direct emissions only).",
+        "Deduct the specific embedded free allocation, which shrinks each year to 2034.",
+        "Deduct any effective carbon price paid where the steel was made, converted at the certificate price.",
+        "Multiply by the tonnes imported. If the result is negative, the obligation is zero."
+      ]
+    },
+    {
+      "h": "2026 certificate prices",
+      "ul": [
+        "First quarter 2026: €75.36.",
+        "Second quarter 2026: €75.28.",
+        "Third quarter 2026: €82.32.",
+        "From 2027 the Commission publishes a weekly price."
+      ]
+    },
+    {
+      "h": "What moves the bill most",
+      "p": [
+        "Whether your figure is actual and verified or a default value. Default values carry a mark-up, so verified data from the Indian mill usually lowers the German buyer's cost."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Worked example: Indian rebar",
+      "to": "/answers/cbam-cost-worked-example-indian-rebar"
+    },
+    {
+      "label": "German importers and DEHSt",
+      "to": "/answers/german-importer-cbam-registration-dehst"
+    },
+    {
+      "label": "India default value mark-up by year",
+      "to": "/answers/cbam-default-value-mark-up-by-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

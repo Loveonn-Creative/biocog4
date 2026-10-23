@@ -1,0 +1,62 @@
+{
+  "slug": "when-can-eu-importers-buy-cbam-certificates",
+  "q": "When can EU importers buy CBAM certificates?",
+  "title": "When EU importers can buy CBAM certificates",
+  "short": "From February 2027, on the common central platform. Certificates for goods imported in 2026 are priced at the 2026 quarterly price for the quarter of import. From 2027 the Commission publishes a weekly price. The first annual declaration, for 2026 imports, is due by 30 September 2027.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers of Indian steel, aluminium, cement and fertiliser, and their Indian suppliers planning data timelines",
+  "sections": [
+    {
+      "h": "Key dates",
+      "ul": [
+        "January 2026: definitive period starts; importers apply for authorisation.",
+        "January 2027: first verification reports can be issued.",
+        "February 2027: declarants can buy certificates on the central platform.",
+        "30 September 2027: declaration for 2026 imports due."
+      ]
+    },
+    {
+      "h": "How the price is set",
+      "p": [
+        "The Commission takes the weighted average of EU ETS auction clearing prices: a quarterly average in 2026 and a weekly one from 2027."
+      ]
+    },
+    {
+      "h": "What it means for an Indian supplier",
+      "p": [
+        "Your verified figure for 2026 has to reach the buyer well before its September 2027 declaration, and ideally before it buys certificates."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "How the certificate price is set",
+      "to": "/answers/how-is-the-cbam-certificate-price-set"
+    },
+    {
+      "label": "How many certificates to hold each quarter",
+      "to": "/answers/how-many-cbam-certificates-to-hold-each-quarter"
+    },
+    {
+      "label": "What Indian exporters send and when",
+      "to": "/answers/cbam-timeline-what-indian-exporters-send-when"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    },
+    {
+      "label": "European Commission, verification of CBAM emissions page",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

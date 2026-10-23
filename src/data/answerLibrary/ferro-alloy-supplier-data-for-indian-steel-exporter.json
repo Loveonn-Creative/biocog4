@@ -1,0 +1,58 @@
+{
+  "slug": "ferro-alloy-supplier-data-for-indian-steel-exporter",
+  "q": "What CBAM data must an Indian ferro-alloy supplier give a steel exporter?",
+  "title": "Ferro-alloy suppliers: data for steel mills",
+  "short": "Ferro-manganese, ferro-chromium and ferro-nickel are CBAM goods and precursors for steel. An Indian steel mill exporting to the EU needs each supplier's verified embedded emissions per tonne, the installation and the production year. Other ferro-alloys under CN 7202 8 are outside CBAM.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian ferro-alloy producers selling to domestic steel mills that export to the EU",
+  "sections": [
+    {
+      "h": "What the steel mill asks for",
+      "ul": [
+        "Specific embedded emissions per tonne, for the year of production.",
+        "The installation identity and production route.",
+        "A verification report from an accredited verifier, if actual data is used.",
+        "The specific embedded free allocation of the ferro-alloy."
+      ]
+    },
+    {
+      "h": "Electricity",
+      "p": [
+        "Ferro-alloys are iron and steel goods in Annex II, so only direct emissions count in their figure."
+      ]
+    },
+    {
+      "h": "If you cannot provide it",
+      "p": [
+        "The mill uses default values for your ferro-alloy, usually higher, and may move to a supplier with verified data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "High vs low carbon ferrochrome",
+      "to": "/answers/high-carbon-vs-low-carbon-ferrochrome-cbam"
+    },
+    {
+      "label": "Ferro-alloy additions in steel",
+      "to": "/answers/cbam-ferroalloy-additions-in-steel-precursor"
+    },
+    {
+      "label": "India default values for ferro-alloys",
+      "to": "/answers/cbam-default-value-india-ferro-alloys"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5d, iron and steel",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3eb64513-8255-4c71-875a-bd0a8c7ff772_en?filename=Guidance%20No.%205d%20-%20Sector-specific%20guidance%20document%20on%20iron%20and%20steel.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

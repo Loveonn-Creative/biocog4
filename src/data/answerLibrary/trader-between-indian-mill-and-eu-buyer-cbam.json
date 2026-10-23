@@ -1,0 +1,53 @@
+{
+  "slug": "trader-between-indian-mill-and-eu-buyer-cbam",
+  "q": "Who sends CBAM data when a trader sits between an Indian mill and the EU buyer?",
+  "title": "Traders between mill and EU buyer",
+  "short": "The mill does. Goods sold through traders still fall under CBAM, and the EU declarant's data request has to be passed back to the installation that made the goods. A trader can forward the request and the report, but cannot produce or verify the figure itself.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian merchant exporters and trading houses selling steel and aluminium to EU importers",
+  "sections": [
+    {
+      "h": "How the chain works",
+      "ol": [
+        "The EU importer asks the trader for embedded emissions data.",
+        "The trader forwards the request to the producing installation.",
+        "The installation sends its operator emissions report and verification report, or discloses them in the CBAM Registry.",
+        "The trader passes on the installation details with each shipment."
+      ]
+    },
+    {
+      "h": "Where traders slip",
+      "ul": [
+        "Mixing lots from two mills without keeping the split.",
+        "Dropping the installation name from invoices and packing lists."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Importer asks installation details",
+      "to": "/answers/eu-importer-asks-installation-details-cbam"
+    },
+    {
+      "label": "Importer wants data per shipment",
+      "to": "/answers/eu-importer-wants-cbam-data-per-shipment"
+    },
+    {
+      "label": "CBAM Registry or email",
+      "to": "/answers/cbam-registry-vs-email-supplier-data-confidential"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

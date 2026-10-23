@@ -1,0 +1,63 @@
+{
+  "slug": "dutch-importer-cbam-indian-supplier",
+  "q": "What does a Dutch importer's CBAM authority mean for an Indian supplier?",
+  "title": "Dutch importers: CBAM authority",
+  "short": "A Dutch importer bringing in more than 50 tonnes of CBAM goods a year applies for authorised declarant status through the CBAM Registry. The Dutch Emissions Authority (NEa) handles CBAM, and registry user access runs through Dutch Customs. Expect the importer to ask you for installation level emissions data.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters of steel, aluminium, cement and fertiliser selling to buyers in the Netherlands, and the buyers' purchasing teams",
+  "sections": [
+    {
+      "h": "How the Dutch set-up works",
+      "ul": [
+        "The NEa is the competent authority. It reviews declarations and can impose penalties.",
+        "Requests for user access to the CBAM Registry go to the Dutch Customs national helpdesk, not to the NEa.",
+        "Where an indirect customs representative lodges the customs declaration, that representative can carry the CBAM obligation instead of the importer."
+      ]
+    },
+    {
+      "h": "What your buyer will ask you for",
+      "ul": [
+        "The installation that made the goods and the calendar year of production.",
+        "Specific embedded emissions per tonne, with a verification report from an EU-accredited verifier if actual data is used.",
+        "The data for the free allocation adjustment and, where one applies, the carbon price paid in India."
+      ]
+    },
+    {
+      "h": "If you cannot send verified data",
+      "p": [
+        "Your buyer can still declare using the Commission's default values, which carry a mark-up and usually cost more. A Dutch buyer facing that bill will push for your actual figures or compare you with suppliers who have them."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Rotterdam imports: who files",
+      "to": "/answers/rotterdam-steel-imports-who-files-cbam-declaration"
+    },
+    {
+      "label": "Which EU authority handles your buyer",
+      "to": "/answers/which-eu-authority-handles-my-buyers-cbam"
+    },
+    {
+      "label": "What Indian exporters send and when",
+      "to": "/answers/cbam-timeline-what-indian-exporters-send-when"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, list of national competent authorities for CBAM (26 June 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/5595ce5b-9fd2-42f6-9908-ed6325338ffa_en?filename=20260626%20Updated-list-of-NCAs-for-CBAM.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

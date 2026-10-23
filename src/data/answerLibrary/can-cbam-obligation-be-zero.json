@@ -1,0 +1,47 @@
+{
+  "slug": "can-cbam-obligation-be-zero",
+  "q": "Can an importer's CBAM obligation come out at zero?",
+  "title": "Can a CBAM obligation be zero",
+  "short": "Yes. The number of certificates is embedded emissions minus the free allocation adjustment, minus any carbon price paid abroad. If that is negative, the obligation is zero. This happens when emissions are below the adjustment, or a carbon price at least equal to the CBAM price was paid.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Low-emission Indian producers and their EU buyers",
+  "sections": [
+    {
+      "h": "When it can happen",
+      "ul": [
+        "Very low verified emissions, for example scrap-based steel with clean fuel.",
+        "An effective carbon price paid where the goods were made, at or above the CBAM price.",
+        "Both together."
+      ]
+    },
+    {
+      "h": "What does not go away",
+      "p": [
+        "The importer still declares the goods, and above 50 tonnes still needs authorisation. A zero needs verified data; default values will not get you there."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Carbon price paid: proof needed",
+      "to": "/answers/cbam-carbon-price-paid-what-proof-is-needed"
+    },
+    {
+      "label": "Which plant upgrades cut CBAM most",
+      "to": "/answers/which-steel-plant-upgrades-cut-cbam-most"
+    },
+    {
+      "label": "Free allocation phase-out by year",
+      "to": "/answers/cbam-free-allocation-phase-out-by-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

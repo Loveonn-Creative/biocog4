@@ -1,0 +1,61 @@
+{
+  "slug": "fastener-cbam-scrap-loss-precursor-mass",
+  "q": "Why do fastener makers count steel lost as scrap in CBAM?",
+  "title": "Fasteners: counting rod lost as scrap",
+  "short": "Because the embedded emissions of every tonne of wire rod you use go into the fasteners, even the part cut away. The Commission's steel guidance gives the example: if 20% is cut away as scrap, 100 tonnes of rod carry their emissions into 80 tonnes of screws and nuts.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Fastener makers in Ludhiana and other Indian clusters exporting screws, bolts and nuts under CN 7318",
+  "sections": [
+    {
+      "h": "What goes into a fastener figure",
+      "ul": [
+        "The wire rod's embedded emissions, for the full mass consumed.",
+        "Your own process emissions, such as heating for forming and annealing.",
+        "For steel goods, direct emissions only; electricity is not counted."
+      ]
+    },
+    {
+      "h": "Why the mass matters",
+      "p": [
+        "Rod and fasteners sit in the same CBAM category, iron or steel products, but their masses differ. Divide the rod's total emissions by the tonnes of fasteners produced, not the tonnes of rod bought."
+      ]
+    },
+    {
+      "h": "What to ask your rod supplier",
+      "p": [
+        "A verified figure per tonne for the year of production, with the installation named. Without it, you or your buyer fall back on default values."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ludhiana forging figure and bar share",
+      "to": "/answers/ludhiana-forging-cbam-figure-steel-bar-share"
+    },
+    {
+      "label": "Taiwan fastener exporters and CN 7318",
+      "to": "/answers/taiwan-fastener-exporter-cbam-cn-7318"
+    },
+    {
+      "label": "India default values for fasteners",
+      "to": "/answers/cbam-default-value-india-fasteners"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5d, iron and steel",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3eb64513-8255-4c71-875a-bd0a8c7ff772_en?filename=Guidance%20No.%205d%20-%20Sector-specific%20guidance%20document%20on%20iron%20and%20steel.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "cbam-verification-materiality-5-percent",
+  "q": "What is the materiality level in CBAM verification?",
+  "title": "CBAM verification materiality: 5%",
+  "short": "5% of the specific embedded emissions per tonne, for each good by CN code, and 5% of the specific embedded free allocation. Misstatements above that, alone or together, are material. Every misstatement found still has to be corrected; materiality is not a tolerance band.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian operators preparing CBAM emissions reports and the consultants helping them",
+  "sections": [
+    {
+      "h": "How verifiers use it",
+      "ul": [
+        "To plan how much data to sample.",
+        "To judge whether the report can get a positive verification statement.",
+        "For other parameters, the verifier uses expert judgement."
+      ]
+    },
+    {
+      "h": "Smaller errors can still matter",
+      "p": [
+        "A verifier can treat a smaller error as material for qualitative reasons, for example if it points to a weak control system."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices behind each fuel and electricity figure in one fingerprinted record, so a verifier can sample them without a hunt through files. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    {
+      "label": "Materiality in GHG verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    },
+    {
+      "label": "Why a verifier will not quote a fixed fee",
+      "to": "/answers/why-cbam-verifier-wont-quote-fixed-fee"
+    },
+    {
+      "label": "Importer rejected emissions data",
+      "to": "/answers/why-eu-importer-rejected-cbam-emissions-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, guidance on CBAM verification and accreditation (24 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "do-iron-ore-pellets-cbam-count-electricity",
+  "q": "Do iron ore pellets count electricity emissions under CBAM?",
+  "title": "Pellets and sinter: electricity counts",
+  "short": "Yes. Sintered ore, which includes pellets under CN 2601 12 00, is the one iron and steel good not listed in Annex II, so its electricity emissions count. Steel goods made from pellets carry those indirect emissions in their own figure too.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian pellet plant operators and the steel mills buying their pellets for EU export products",
+  "sections": [
+    {
+      "h": "What a pellet plant reports",
+      "ul": [
+        "Direct emissions from induration fuel and additives.",
+        "Indirect emissions from electricity used for grinding and balling.",
+        "Output in tonnes for the calendar year."
+      ]
+    },
+    {
+      "h": "Why the steel mill cares",
+      "p": [
+        "Pellets are a precursor for pig iron and DRI. Their full embedded emissions, electricity included, flow into the mill's figure even though the mill's own electricity is not counted."
+      ]
+    },
+    {
+      "h": "Fines and lump ore",
+      "p": [
+        "Non-agglomerated ore is not a CBAM good and carries no embedded emissions into the figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are iron ore pellets covered",
+      "to": "/answers/are-iron-ore-pellets-covered-by-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Ukraine pellet exporter figure",
+      "to": "/answers/ukraine-iron-ore-pellets-cbam-figure"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5d, iron and steel",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3eb64513-8255-4c71-875a-bd0a8c7ff772_en?filename=Guidance%20No.%205d%20-%20Sector-specific%20guidance%20document%20on%20iron%20and%20steel.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

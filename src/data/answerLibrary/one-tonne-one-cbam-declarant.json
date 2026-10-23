@@ -1,0 +1,46 @@
+{
+  "slug": "one-tonne-one-cbam-declarant",
+  "q": "Can the same imported tonne be declared by two CBAM declarants?",
+  "title": "One tonne, one CBAM declarant",
+  "short": "No. Every tonne of imported goods is the responsibility of exactly one authorised CBAM declarant: the person lodging the customs declaration, usually the importer or an indirect customs representative. It must not be reported twice or left out.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters selling through EU distributors, agents and customs representatives",
+  "sections": [
+    {
+      "h": "Why it matters to you",
+      "ul": [
+        "Send your data to the party that actually lodges the customs declaration.",
+        "If an agent clears goods for several buyers, make sure each shipment's data reaches the right declarant."
+      ]
+    },
+    {
+      "h": "How customs links it",
+      "p": [
+        "Each import declaration carries the declarant's CBAM account number, and customs data flows into the CBAM Registry to check declarations."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Who files for Rotterdam imports",
+      "to": "/answers/rotterdam-steel-imports-who-files-cbam-declaration"
+    },
+    {
+      "label": "Can a non-EU exporter be the declarant",
+      "to": "/answers/can-non-eu-exporter-be-cbam-declarant-ddp"
+    },
+    {
+      "label": "What an authorised declarant is",
+      "to": "/answers/what-is-an-authorised-cbam-declarant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

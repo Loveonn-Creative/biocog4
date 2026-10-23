@@ -1,0 +1,61 @@
+{
+  "slug": "indian-cement-grinding-unit-cbam-clinker-data",
+  "q": "What CBAM data does an Indian cement grinding unit need from its clinker supplier?",
+  "title": "Grinding units: clinker supplier data",
+  "short": "The clinker supplier's verified embedded emissions per tonne, direct and indirect, for the year the clinker was made, plus the installation it came from. Clinker is a precursor for cement, so a grinding unit adds the clinker's emissions to its own grinding electricity and fuel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian cement grinding units buying clinker from another plant and exporting cement to the EU",
+  "sections": [
+    {
+      "h": "What the grinding unit adds",
+      "ul": [
+        "Electricity for grinding, since indirect emissions count for cement.",
+        "Any fuel for drying additives.",
+        "Calcined clay bought in, which is also a precursor."
+      ]
+    },
+    {
+      "h": "If the supplier sends nothing",
+      "p": [
+        "Default values can be used for the clinker as a last resort, but they include a mark-up and usually raise the buyer's cost. Ask before you sign the clinker contract."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "p": [
+        "Clinker receipts by supplier, tonnes ground, and cement output by clinker content, for at least six years."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Marmara grinding with imported clinker",
+      "to": "/answers/marmara-grinding-imported-clinker-cbam"
+    },
+    {
+      "label": "Cement figure per tonne of clinker content",
+      "to": "/answers/cement-exporter-cbam-per-tonne-clinker-content"
+    },
+    {
+      "label": "Precursors bought from several suppliers",
+      "to": "/answers/cbam-precursor-bought-from-several-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5a, cement",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/f87a2022-9dcb-45cb-a415-4c460e5ad672_en?filename=Guidance%20No.%205a%20-%20Sector-specific%20guidance%20document%20on%20cement.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

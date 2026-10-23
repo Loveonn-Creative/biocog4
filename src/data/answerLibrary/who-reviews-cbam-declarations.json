@@ -1,0 +1,58 @@
+{
+  "slug": "who-reviews-cbam-declarations",
+  "q": "Who reviews CBAM declarations and what happens if they are wrong?",
+  "title": "Who reviews CBAM declarations",
+  "short": "The European Commission and the competent authority of the declarant's member state. The Commission checks declarations against customs data and can spot-check. If it finds irregularities it tells the national authority, which follows up and can impose a financial penalty.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers of Indian goods and Indian suppliers whose data feeds their declarations",
+  "sections": [
+    {
+      "h": "How a review runs",
+      "ol": [
+        "Customs data on each import reaches the CBAM Registry.",
+        "The Commission checks completeness and may spot-check declarations.",
+        "Irregularities go to the national competent authority.",
+        "The authority follows up and can impose penalties."
+      ]
+    },
+    {
+      "h": "Your part",
+      "p": [
+        "The Commission suggests a penalised importer tell the supplier what went wrong. Keep your records ready to answer quickly."
+      ]
+    },
+    {
+      "h": "Verifier issues",
+      "p": [
+        "Authorities can ask national accreditation bodies to follow up on weak verification reports."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps supplier invoices and the emissions data that comes with them in one dated, fingerprinted record per shipment, and its CBAM cost calculator estimates certificate cost from 2026 to 2034. Senseible does not verify emissions, register declarants or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Penalty for not surrendering",
+      "to": "/answers/cbam-penalty-for-not-surrendering-certificates"
+    },
+    {
+      "label": "Importer rejected emissions data",
+      "to": "/answers/why-eu-importer-rejected-cbam-emissions-data"
+    },
+    {
+      "label": "How long to keep records",
+      "to": "/answers/how-long-to-keep-cbam-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, list of national competent authorities for CBAM (26 June 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/5595ce5b-9fd2-42f6-9908-ed6325338ffa_en?filename=20260626%20Updated-list-of-NCAs-for-CBAM.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

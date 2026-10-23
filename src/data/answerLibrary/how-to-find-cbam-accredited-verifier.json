@@ -1,0 +1,51 @@
+{
+  "slug": "how-to-find-cbam-accredited-verifier",
+  "q": "How do I find a CBAM accredited verifier?",
+  "title": "Finding a CBAM accredited verifier",
+  "short": "Check the verifier's accreditation certificate from an EU national accreditation body, covering your sector. The European cooperation for Accreditation lists bodies offering CBAM accreditation, the Commission plans to publish a list of accredited verifiers, and the CBAM Registry will let you search for one.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian installation operators choosing a CBAM verifier",
+  "sections": [
+    {
+      "h": "Checks before signing",
+      "ul": [
+        "Accreditation from an EU national accreditation body, valid when the final report is issued.",
+        "Scope covering your sector, such as iron and steel or cement.",
+        "Registration in the CBAM Registry."
+      ]
+    },
+    {
+      "h": "Verifiers outside the EU",
+      "p": [
+        "Verification companies established outside the EU may apply for accreditation with any national accreditation body that offers it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices behind each fuel and electricity figure in one fingerprinted record, so a verifier can sample them without a hunt through files. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    {
+      "label": "When verifiers become available",
+      "to": "/answers/when-are-cbam-accredited-verifiers-available"
+    },
+    {
+      "label": "Choosing a GHG verifier",
+      "to": "/answers/how-to-choose-a-ghg-verifier-msme"
+    },
+    {
+      "label": "Verifier independence",
+      "to": "/answers/verifier-independence-who-cannot-verify"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (definitive period)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, verification of CBAM emissions page",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

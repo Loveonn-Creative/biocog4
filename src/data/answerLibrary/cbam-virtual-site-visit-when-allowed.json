@@ -1,0 +1,53 @@
+{
+  "slug": "cbam-virtual-site-visit-when-allowed",
+  "q": "When can a CBAM verifier do a virtual site visit?",
+  "title": "CBAM virtual site visits",
+  "short": "Only when all conditions in the Verification Principles Act are met. A verifier must have visited physically in the previous reporting period, the installation must be simple enough and unchanged, and all evidence must be obtainable remotely. The first verification of an Indian plant needs a physical visit.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian installation operators planning their first CBAM verification",
+  "sections": [
+    {
+      "h": "All conditions must hold",
+      "ul": [
+        "A physical visit took place in the immediately preceding reporting period.",
+        "The verifier understands the installation, its processes and its control system.",
+        "Risk and complexity do not require a physical visit.",
+        "All information, including precursors used, can be assessed remotely.",
+        "No significant change to the installation or monitoring plan since the last physical visit."
+      ]
+    },
+    {
+      "h": "What a virtual visit looks like",
+      "p": [
+        "A video conference plus documents. Staff may be asked to walk to a meter and show its reading on camera."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices behind each fuel and electricity figure in one fingerprinted record, so a verifier can sample them without a hunt through files. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    {
+      "label": "Can a verifier waive the site visit",
+      "to": "/answers/can-cbam-verifier-waive-site-visit"
+    },
+    {
+      "label": "Verifier site visit: what to prepare",
+      "to": "/answers/verifier-site-visit-what-to-prepare"
+    },
+    {
+      "label": "Can GHG verification be done remotely",
+      "to": "/answers/can-ghg-verification-be-done-remotely"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, guidance on CBAM verification and accreditation (24 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    },
+    {
+      "label": "European Commission, verification of CBAM emissions page",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

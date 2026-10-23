@@ -1,0 +1,52 @@
+{
+  "slug": "cbam-unreasonable-cost-rule-monitoring",
+  "q": "When can a CBAM operator skip a monitoring method as too costly?",
+  "title": "CBAM unreasonable cost rule",
+  "short": "Only with a justification in the monitoring plan, tested against a reference price of €80 per tonne of CO2e and an accumulated limit of €4,000 a year. The Commission's steel guidance sets out this test, and the verifier will check it.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian MSME steel, forging and foundry units writing their first CBAM monitoring plan",
+  "sections": [
+    {
+      "h": "How to use it",
+      "ol": [
+        "Identify the more accurate method you are not using, such as a new meter.",
+        "Estimate its cost and the improvement in accuracy.",
+        "Write the justification into the monitoring plan.",
+        "Keep the workings for the verifier."
+      ]
+    },
+    {
+      "h": "What it does not allow",
+      "p": [
+        "Skipping monitoring altogether. You still need a method for every parameter; the rule only lets you choose a less costly one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Monitoring methodology document contents",
+      "to": "/answers/cbam-monitoring-methodology-document-contents"
+    },
+    {
+      "label": "Measurement or calculation method",
+      "to": "/answers/cbam-measurement-or-calculation-method-choice"
+    },
+    {
+      "label": "CBAM virtual site visits",
+      "to": "/answers/cbam-virtual-site-visit-when-allowed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5d, iron and steel",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3eb64513-8255-4c71-875a-bd0a8c7ff772_en?filename=Guidance%20No.%205d%20-%20Sector-specific%20guidance%20document%20on%20iron%20and%20steel.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

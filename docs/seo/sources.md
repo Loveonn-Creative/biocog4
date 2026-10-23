@@ -12,6 +12,15 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf
 - https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf
 - https://taxation-customs.ec.europa.eu/document/download/9877523c-2a02-4926-a211-aefae7cf6d0d_en?filename=CBAM%20Benchmarks_20260206.xlsx
+- https://taxation-customs.ec.europa.eu/document/download/5595ce5b-9fd2-42f6-9908-ed6325338ffa_en?filename=20260626%20Updated-list-of-NCAs-for-CBAM.pdf
+- https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf
+- https://taxation-customs.ec.europa.eu/document/download/f87a2022-9dcb-45cb-a415-4c460e5ad672_en?filename=Guidance%20No.%205a%20-%20Sector-specific%20guidance%20document%20on%20cement.pdf
+- https://taxation-customs.ec.europa.eu/document/download/8fd0542b-e67d-4183-bb20-a19de510f53c_en?filename=Guidance%20No.%205c%20-%20Sector-specific%20guidance%20document%20on%20fertilisers.pdf
+- https://taxation-customs.ec.europa.eu/document/download/3eb64513-8255-4c71-875a-bd0a8c7ff772_en?filename=Guidance%20No.%205d%20-%20Sector-specific%20guidance%20document%20on%20iron%20and%20steel.pdf
+- https://taxation-customs.ec.europa.eu/document/download/590e983b-c937-41ea-bb9f-810c29e70e1e_en?filename=Guidance%20No.%205e%20-%20Sector-specific%20guidance%20document%20on%20aluminium.pdf
+- https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf
+- https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-registry_en
+- https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en
 - https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng
 - https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20
 - https://eur-lex.europa.eu/eli/reg/2023/956/oj

@@ -1,0 +1,57 @@
+{
+  "slug": "mixed-fertiliser-cbam-nitrogen-content-ranges",
+  "q": "How does CBAM handle mixed fertilisers with different nitrogen contents?",
+  "title": "Mixed fertilisers and nitrogen ranges",
+  "short": "Emissions are averaged by composition, in nitrogen-content ranges no wider than 10%, under the Commission's rules. Electricity and precursors such as ammonia, nitric acid and urea count. Fertilisers with only phosphorus and potassium, CN 3105 60 00, are outside CBAM.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian NPK and complex fertiliser producers exporting to the EU",
+  "sections": [
+    {
+      "h": "What counts",
+      "ul": [
+        "Direct emissions of the production process.",
+        "Indirect emissions from electricity, since fertilisers are not in Annex II.",
+        "Embedded emissions of ammonia, nitric acid, urea and mixed fertilisers used as inputs."
+      ]
+    },
+    {
+      "h": "Mixed fertiliser as its own precursor",
+      "p": [
+        "A blend can use another mixed fertiliser, for example an ammonium salt, as an input. Its embedded emissions are added like any other precursor."
+      ]
+    },
+    {
+      "h": "What the buyer reports",
+      "p": [
+        "The contents of the different forms of nitrogen, alongside the emissions figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads an exporter's fuel and electricity invoices into dated, fingerprinted records that a monitoring plan and a verifier can trace back to source. Senseible does not verify emissions, register operators in the CBAM Registry or file CBAM declarations.",
+  "links": [
+    {
+      "label": "Urea and DAP coverage",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Fertiliser figure per tonne or per nitrogen",
+      "to": "/answers/cbam-fertiliser-figure-per-tonne-product-or-nitrogen"
+    },
+    {
+      "label": "India default values for DAP and NPK",
+      "to": "/answers/cbam-default-value-india-dap-npk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5c, fertilisers",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/8fd0542b-e67d-4183-bb20-a19de510f53c_en?filename=Guidance%20No.%205c%20-%20Sector-specific%20guidance%20document%20on%20fertilisers.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 2, quick guide for non-EU operators (14 August 2026)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
