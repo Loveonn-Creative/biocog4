@@ -1,0 +1,55 @@
+{
+  "slug": "india-installed-power-capacity-mix-2026",
+  "q": "What is India's installed power capacity mix as of March 2026?",
+  "title": "India installed power capacity mix, March 2026",
+  "short": "532,739.72 MW on 31 March 2026, as reported in CEA's CO2 database version 22.0. Coal was 221,940 MW, renewables 223,273 MW, large hydro 51,415 MW, gas 20,122 MW, nuclear 8,780 MW and lignite 6,620 MW. Private companies owned about 278,632 MW, most of it renewable.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Analysts and companies explaining India grid trends to buyers and lenders",
+  "sections": [
+    {
+      "h": "By source, MW",
+      "ul": [
+        "Coal: 221,940.01",
+        "Renewable energy sources: 223,273.43",
+        "Hydro: 51,414.66",
+        "Gas: 20,122.41",
+        "Nuclear: 8,780",
+        "Lignite: 6,620",
+        "Diesel: 589.20"
+      ]
+    },
+    {
+      "h": "By owner, MW",
+      "ul": [
+        "State: 129,999.99",
+        "Central: 124,107.92",
+        "Private: 278,631.81, of which renewables 191,655.91"
+      ]
+    },
+    {
+      "h": "Capacity is not generation",
+      "p": [
+        "Renewables now match coal in capacity but supplied about 17.6% of net generation in FY 2025-26. Use generation-based figures, such as the CEA grid factor, when you estimate emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated kWh records per meter and site, so whichever CEA factor and version you apply, each Scope 2 figure traces back to the bill and the factor behind it.",
+  "links": [
+    {
+      "label": "Renewable share of generation",
+      "to": "/answers/renewable-share-of-india-grid-generation"
+    },
+    {
+      "label": "Grid factor for FY 2025-26",
+      "to": "/answers/india-grid-emission-factor-2025-26"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

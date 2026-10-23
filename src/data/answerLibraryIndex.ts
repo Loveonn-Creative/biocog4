@@ -1891,6 +1891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "biomass-cofiring-thermal-power-india-co2-saved",
+  "q": "How much CO2 did biomass co-firing in Indian thermal plants save in FY 2025-26?",
+  "title": "Biomass co-firing in Indian power plants",
+  "short": "About 3.7 million tonnes of CO2, as assessed by the National Biomass Mission and reported in CEA's database version 22.0. Seventy-five thermal plants with 100,071 MW of capacity co-fired about 3.07 million tonnes of biomass in FY 2025-26, up from about 1.62 million tonnes the year before.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "biomass-fuel-supplier-evidence",
   "q": "What documents prove my boiler biomass is agricultural residue?",
   "title": "Proving boiler biomass is crop residue",
@@ -3259,6 +3267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "captive-power-in-cea-grid-emission-factor",
+  "q": "Does CEA's grid emission factor include captive power plants?",
+  "title": "Captive power in CEA's grid factor",
+  "short": "Partly. Since FY 2022-23 CEA includes electricity that grid-connected captive plants inject into the grid: 18,882 GWh in FY 2025-26. Captive power a factory generates and uses itself is not in the grid factor, so count that from your own fuel records, not at 0.675.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "captured-co2-how-to-report-ghg-inventory",
   "q": "If my plant captures CO2, can I subtract it from Scope 1?",
   "title": "Captured CO2 in your inventory",
@@ -3723,6 +3739,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "cbam-benchmark-values-steel-cement-aluminium",
+  "q": "What are the CBAM benchmark values for steel, cement, aluminium and fertilisers?",
+  "title": "CBAM benchmark values by product",
+  "short": "The CBAM benchmark sets the free allocation deducted per tonne. For default-value imports, rebar and wire rod on the blast furnace route use 1.364 t CO2e per tonne, grey clinker 0.666, unwrought primary aluminium 1.423, anhydrous ammonia 1.522 and hydrogen 5.089.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "cbam-carbon-price-paid-what-proof-is-needed",
   "q": "What proof does an EU importer need to deduct a carbon price paid in the producer's country?",
   "title": "CBAM carbon price deduction: the proof",
@@ -3939,6 +3963,142 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "cbam-cost-worked-example-indian-rebar",
+  "q": "How much CBAM would an EU importer pay on Indian rebar using default values in 2026?",
+  "title": "CBAM worked example: Indian rebar, 2026",
+  "short": "About 3.37 certificates per tonne, or roughly EUR 277 at the third-quarter 2026 price of EUR 82.32. That is the India default of 4.270 plus the 10% mark-up, minus a free allocation adjustment of 0.975 x 1.364, assuming a correction factor of 1.0.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-aluminium",
+  "q": "What is the CBAM default value for aluminium from India?",
+  "title": "CBAM default value: Indian aluminium",
+  "short": "Indian unwrought aluminium under CN 7601 carries 1.870 t CO2e per tonne. Wire is 2.594, bars and rods 3.413, profiles and tubes 3.444, and sheet, strip and foil 4.126. Aluminium counts direct emissions only, so the coal power used in smelting is outside these figures.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-billets-ingots",
+  "q": "What is the CBAM default value for Indian steel billets and ingots?",
+  "title": "CBAM default value: Indian billets, ingots",
+  "short": "Indian non-alloy semi-finished steel under CN 7207 carries 4.270 or 4.320 t CO2e per tonne depending on the subheading, and ingots under CN 7206 carry 2.640. Direct emissions only. Add the 10% mark-up for goods imported in 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-cement-clinker",
+  "q": "What is the CBAM default value for cement and clinker from India?",
+  "title": "CBAM default value: Indian cement, clinker",
+  "short": "Indian grey clinker carries 1.440 t CO2e per tonne and grey Portland cement 1.480, both including indirect emissions from electricity. White clinker is 1.410, white Portland cement 1.470 and aluminous cement 2.290. Cement counts indirect emissions, unlike steel and aluminium.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-dap-npk",
+  "q": "What is the CBAM default value for DAP, MAP and NPK fertilisers from India?",
+  "title": "CBAM default value: Indian DAP, MAP, NPK",
+  "short": "Indian DAP under CN 3105 30 00 carries 0.810 t CO2e per tonne and MAP under 3105 40 00 carries 0.530, including indirect emissions. NPK with 10% nitrogen or less is 0.770 and ammonium sulphate 1.010. The fertiliser mark-up is 1% from 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-fasteners",
+  "q": "What is the CBAM default value for nuts, bolts and screws from India?",
+  "title": "CBAM default value: Indian fasteners",
+  "short": "Under CN 7318, Indian threaded screws and bolts carry 5.720 t CO2e per tonne, nuts 5.140, washers 5.140, most other screws and non-threaded parts 4.270, and stainless wood and self-tapping screws 5.770. Direct emissions only, plus the 10% mark-up for 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-ferro-alloys",
+  "q": "What is the CBAM default value for Indian ferro-manganese, ferro-chrome and ferro-nickel?",
+  "title": "CBAM default value: Indian ferro-alloys",
+  "short": "For India: high-carbon ferro-manganese 1.690, low-carbon ferro-manganese 5.590, high-carbon ferro-chrome 2.350 and ferro-nickel 3.480 t CO2e per tonne. Low-carbon ferro-chrome shows no India value, so the table for other countries applies. Direct emissions only.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-hot-rolled-steel",
+  "q": "What is the CBAM default value for hot-rolled and flat steel from India?",
+  "title": "CBAM default value: Indian flat steel",
+  "short": "4.280 t CO2e per tonne for Indian flat-rolled iron and non-alloy steel under CN 7208 to 7212, direct emissions only. With the 10% mark-up for 2026 that is about 4.708 t. The benchmark route for India is blast furnace and basic oxygen furnace.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-hydrogen",
+  "q": "What is the CBAM default value for hydrogen from India?",
+  "title": "CBAM default value: Indian hydrogen",
+  "short": "14.030 t CO2e per tonne of hydrogen under CN 2804 10 00, direct emissions only. That is far above what electrolysis on renewable power emits directly. Indian green hydrogen made by electrolysis should show far lower direct emissions, but only a verified actual figure lets the importer use it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-pig-iron-dri",
+  "q": "What is the CBAM default value for Indian pig iron and sponge iron?",
+  "title": "CBAM default value: Indian pig iron, DRI",
+  "short": "Indian pig iron under CN 7201 carries 2.530 t CO2e per tonne and direct reduced iron, sponge iron, under CN 7203 carries 4.200. Agglomerated iron ore, pellets and sinter, carries 0.340 including indirect emissions. Steel takes direct emissions only.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-rebar-wire-rod",
+  "q": "What is the CBAM default value for Indian rebar and wire rod?",
+  "title": "CBAM default value: Indian rebar, wire rod",
+  "short": "4.270 t CO2e per tonne for Indian wire rod under CN 7213 and for ribbed rebar under CN 7214 20 00. Plain forged bars under CN 7214 10 00 carry 4.320. With the 2026 mark-up of 10%, the rebar and wire rod value is about 4.697 t.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-stainless-steel",
+  "q": "What is the CBAM default value for stainless steel from India?",
+  "title": "CBAM default value: Indian stainless steel",
+  "short": "Between 6.480 and 6.530 t CO2e per tonne for Indian stainless steel, depending on the product. Flat-rolled stainless under CN 7219 and 7220 is 6.490 or 6.500, bars and wire 6.480, and ingots 6.530. Direct emissions only, plus the 10% mark-up in 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-steel-pipes-tubes",
+  "q": "What is the CBAM default value for steel pipes and tubes from India?",
+  "title": "CBAM default value: Indian steel pipes",
+  "short": "Most Indian carbon steel pipes and tubes under CN 7304, 7305 and 7306 carry 4.320 t CO2e per tonne. Stainless line pipe, casing and tubing carry 6.490 or 6.500. Cast iron pipes under CN 7303 carry 2.840. Direct emissions only, plus the 2026 mark-up of 10%.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-steel-structures",
+  "q": "What is the CBAM default value for Indian steel structures, tanks and forgings?",
+  "title": "CBAM default value: Indian steel structures",
+  "short": "Indian steel structures and parts under CN 7308 carry 5.930 t CO2e per tonne. Large tanks under CN 7309 carry 6.650, gas cylinders under 7311 carry 6.640, and forged or stamped articles under 7326 carry 4.910. Direct emissions only, plus the 2026 mark-up.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-india-urea-ammonia",
+  "q": "What is the CBAM default value for urea and ammonia from India?",
+  "title": "CBAM default value: Indian urea, ammonia",
+  "short": "Indian solid urea under CN 3102 10 19 carries 2.220 t CO2e per tonne and anhydrous ammonia 3.280, both including indirect emissions. Fertilisers get a lower mark-up than other sectors: 1% from 2026, against 10% for steel in 2026.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-value-mark-up-by-year",
+  "q": "What mark-up is added to CBAM default values in 2026, 2027 and 2028?",
+  "title": "CBAM default value mark-up by year",
+  "short": "Default values are increased by 10% in 2026, 20% in 2027 and 30% from 2028 onwards. Fertilisers get a 1% mark-up from 2026. The year is normally the year of import, and goods imported in 2026 always use the 2026 mark-up.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cbam-default-values-corrected-july-2026",
+  "q": "Were the CBAM default values corrected in 2026?",
+  "title": "CBAM default values corrected in 2026",
+  "short": "Yes. Implementing Regulation (EU) 2026/1740, adopted on 20 July 2026, corrected Annexes I and IV of the default values regulation (EU) 2025/2621. The Commission's Excel file was updated to version 2 on 6 August 2026. Check that any default value you quote comes from the corrected set.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "cbam-electricity-imports-cn-2716",
   "q": "Is electricity exported to the EU covered by CBAM?",
   "title": "Electricity exports and CBAM",
@@ -3995,6 +4155,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "cbam-free-allocation-phase-out-by-year",
+  "q": "How fast is EU free allocation phased out under CBAM, year by year?",
+  "title": "CBAM free allocation phase-out by year",
+  "short": "The CBAM factor that sets how much free allocation is deducted falls from 97.5% in 2026 to 95% in 2027, 90% in 2028, 77.5% in 2029, 51.5% in 2030, 39% in 2031, 26.5% in 2032, 14% in 2033 and zero in 2034. As it falls, more of each tonne is charged.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "cbam-goods-processed-by-job-worker-before-export",
   "q": "If a job worker galvanises or heat treats my steel before export, whose emissions go into the CBAM figure?",
   "title": "CBAM when a job worker processes goods",
@@ -4025,6 +4193,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Heat you import is added to your production process with the emissions of producing it. Use the supplier's actual fuel and boiler efficiency data where you can get it; without it, the monitoring rules give a fallback factor. Heat counts for every CBAM good, including steel and aluminium, unlike grid electricity.",
   "topic": "regulation",
   "reviewed": "2026-10-22"
+ },
+ {
+  "slug": "cbam-india-default-value-shows-a-dash",
+  "q": "What if the CBAM default value table shows a dash for my product from India?",
+  "title": "When India's CBAM default value is a dash",
+  "short": "Then the declarant must use the value from the table for other countries and territories in the same annex. A dash means the Commission found no reliable India data for that good. For India this applies to low-carbon ferro-chrome, calcined clay and some hydraulic cements.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "cbam-indirect-emissions-electricity-factor-india",
@@ -4385,6 +4561,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "CDP Water Security asks for total water withdrawal, discharge and consumption in megalitres, withdrawal split by source, discharge split by destination and treatment, how much you draw from water-stressed areas, and your water risks, targets and pollutant controls. For a dyeing unit or tannery, effluent quality is central.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "cea-co2-baseline-database-version-22",
+  "q": "What changed in CEA CO2 Baseline Database version 22.0?",
+  "title": "CEA CO2 database version 22.0: what changed",
+  "short": "Version 22.0, published August 2026, adds FY 2025-26: a weighted average of 0.675 t CO2 per MWh, down from 0.710 for FY 2024-25. It also revises FY 2024-25 using actual captive power data in place of provisional figures, and counts renewable generation in the build and combined margins.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "cea-version-21-vs-22-grid-factor-revisions",
+  "q": "Did CEA version 22.0 change the grid factors for earlier years?",
+  "title": "CEA version 21.0 vs 22.0: past-year revisions",
+  "short": "No, not at the published precision. The FY 2024-25 weighted average stays at 0.710 t CO2 per MWh in both versions, the combined margin stays at 0.736, and FY 2021-22 to FY 2023-24 are also unchanged. Version 22.0 adds FY 2025-26 at 0.675, so past footprints need no restating.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "cea-vs-iea-grid-emission-factor-india",
@@ -5163,6 +5355,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-21"
  },
  {
+  "slug": "coal-power-plant-co2-per-kwh-india",
+  "q": "How much CO2 does an Indian coal power plant emit per kWh?",
+  "title": "Coal power CO2 per kWh in India",
+  "short": "About 0.971 kg CO2 per kWh of net generation on average in FY 2025-26, by CEA's database. Lignite plants averaged 1.348 and gas plants 0.470. These are station averages for the fuel, useful for comparing a captive plant against the grid average of 0.675.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "coal-rail-freight-mine-to-plant-emissions",
   "q": "How do I estimate emissions from moving coal by rail from the mine to my plant?",
   "title": "Coal by rail: freight emissions",
@@ -5905,6 +6105,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Add the willow cleft, cane handle, rubber grip, glue, stickers and packing, then seasoning, pressing and finishing energy. Divide by bats made. Most of a bat is wood, whose stored carbon is reported separately, so its fossil footprint is small compared with metal or plastic goods.",
   "topic": "product",
   "reviewed": "2026-10-20"
+ },
+ {
+  "slug": "cross-border-electricity-and-india-grid-factor",
+  "q": "Do electricity imports from Bhutan and Nepal change India's grid emission factor?",
+  "title": "Electricity imports and India's grid factor",
+  "short": "Only a little. CEA counts imports at zero emissions. In FY 2025-26 the weighted average was 0.678 t CO2 per MWh excluding cross-border transfers and 0.675 including them, with net imports of 7,622 GWh. Use the adjusted figure, 0.675, which is the one CEA headlines.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "crude-glycerine-refining-emissions-per-tonne",
@@ -10043,6 +10251,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "grid-factor-for-wind-solar-project-india",
+  "q": "Which grid emission factor does a wind or solar project in India use for emission reductions?",
+  "title": "Grid factor for Indian wind and solar projects",
+  "short": "A large project under ACM0002 must use the combined margin. For wind and solar, CEA's own worked example weights the operating margin 75% and build margin 25%: 0.75 x 0.962 + 0.25 x 0.446 gives 0.833 t CO2 per MWh, using a three-year operating margin.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "griha-requirement-government-building-suppliers",
   "q": "What does a GRIHA-rated government building ask from cement, steel and material suppliers?",
   "title": "GRIHA asks for building material suppliers",
@@ -10723,6 +10939,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-19"
  },
  {
+  "slug": "how-escerts-trading-worked-under-pat",
+  "q": "How did ESCerts trading work under PAT, and how much was traded?",
+  "title": "How ESCerts trading worked under PAT",
+  "short": "Plants that beat their PAT target received Energy Saving Certificates, or ESCerts, for the extra energy saved. Plants that missed bought them on the power exchanges. Trading started in September 2017; for cycle I about 12.98 lakh ESCerts traded, worth about INR 100 crore, according to BEE.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "how-is-cdp-score-calculated",
   "q": "How is a CDP climate score calculated, from D to A?",
   "title": "How a CDP climate score is calculated",
@@ -10849,6 +11073,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "One dry tonne of biochar with 75% organic carbon holds 2.75 tonnes of CO2. After the IPCC permanence factor for high-temperature biochar (0.89), about 2.4 tonnes count as stored for 100 years. Subtract production and transport emissions to get the net removal.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "how-much-co2-has-pat-saved",
+  "q": "How much CO2 has India's PAT scheme saved so far?",
+  "title": "How much CO2 the PAT scheme has saved",
+  "short": "More than 106 million tonnes of CO2 from 2015 to June 2024, according to the Bureau of Energy Efficiency. Cycle I alone accounted for about 31 million tonnes and cycle II for about 68 million tonnes. These are BEE's estimates from the energy saved by designated consumers.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "how-much-of-my-credits-go-to-buffer-pool",
@@ -11555,6 +11787,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "india-grid-emission-factor-2025-26",
+  "q": "What is India's grid emission factor for FY 2025-26?",
+  "title": "India grid emission factor for FY 2025-26",
+  "short": "0.675 tonnes of CO2 per MWh, or 0.675 kg per kWh. That is the weighted average for the Indian grid in CEA's CO2 Baseline Database version 22.0, published August 2026, adjusted for cross-border trade and including renewable and captive power fed into the grid.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "india-grid-emission-factor-trend-since-2014",
+  "q": "How has India's grid emission factor changed since 2014?",
+  "title": "India grid emission factor trend since 2014",
+  "short": "It fell from 0.774 t CO2 per MWh in FY 2013-14 to 0.675 in FY 2025-26, by CEA's weighted average including renewables. The drop was not steady: it reached 0.703 in FY 2020-21, rose to 0.727 in FY 2023-24, then fell to 0.710 and 0.675.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "india-hfc-phase-down-schedule-kigali",
   "q": "What is India's HFC phase-down schedule under the Kigali Amendment, and what does it mean for chillers bought now?",
   "title": "India's HFC phase-down under Kigali",
@@ -11571,12 +11819,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "india-installed-power-capacity-mix-2026",
+  "q": "What is India's installed power capacity mix as of March 2026?",
+  "title": "India installed power capacity mix, March 2026",
+  "short": "532,739.72 MW on 31 March 2026, as reported in CEA's CO2 database version 22.0. Coal was 221,940 MW, renewables 223,273 MW, large hydro 51,415 MW, gas 20,122 MW, nuclear 8,780 MW and lignite 6,620 MW. Private companies owned about 278,632 MW, most of it renewable.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "india-ndc-targets-for-business",
   "q": "What do India's NDC targets mean for an Indian business?",
   "title": "India's NDC targets and your business",
   "short": "India's NDC targets are national, not company targets. India has committed to cut the emissions intensity of its GDP 45 percent from 2005 levels by 2030 and 47 percent by 2035, and to reach net zero by 2070. Businesses feel them through carbon market intensity targets, a cleaner grid, disclosure rules and lending criteria.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "india-operating-build-combined-margin-2025-26",
+  "q": "What are India's operating, build and combined margin factors for FY 2025-26?",
+  "title": "India OM, BM and CM grid factors, FY 2025-26",
+  "short": "For FY 2025-26 CEA gives an operating margin of 0.963, a build margin of 0.446 and a combined margin of 0.705 t CO2 per MWh, adjusted for cross-border transfers. These describe the power a project displaces. They are for carbon project baselines, not for a company's Scope 2 footprint.",
+  "topic": "markets",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "india-power-sector-co2-emissions-2025-26",
+  "q": "How much CO2 did India's power sector emit in FY 2025-26?",
+  "title": "India power sector CO2 emissions, FY 2025-26",
+  "short": "About 1,189 million tonnes of CO2 from grid electricity generation in FY 2025-26, by CEA's database version 22.0. That is down from about 1,236 million tonnes in FY 2024-25, the first fall since FY 2020-21, while net generation including renewables rose to 1,761 BU.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "india-uk-trade-deal-uk-cbam",
@@ -15683,6 +15955,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "pat-scheme-cycle-1-results",
+  "q": "What did the first PAT cycle achieve?",
+  "title": "PAT cycle I results",
+  "short": "PAT cycle I ran from 2012-13 to 2014-15 for 478 plants in eight sectors. It targeted 6.686 million tonnes of oil equivalent of energy savings and achieved 8.67, which BEE puts at about 31 million tonnes of CO2 avoided. Over-achievers earned Energy Saving Certificates, or ESCerts, to sell.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "pat-scheme-cycle-2-results",
+  "q": "What did PAT cycle II achieve?",
+  "title": "PAT cycle II results",
+  "short": "PAT cycle II ran from April 2016 to March 2019 for 621 designated consumers in 11 sectors. It saved about 14.08 million tonnes of oil equivalent, which BEE puts at about 68 million tonnes of CO2 avoided. About 57.38 lakh ESCerts went to 349 plants, and 193 plants had to buy 36.68 lakh.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "paver-block-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of concrete paver blocks per square metre?",
   "title": "Paver block carbon footprint per m2",
@@ -17369,6 +17657,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. A REC and a carbon credit from the same MWh are two claims on the same clean electricity, which is double claiming. Carbon standards such as Verra's require a project to show that output it credits has not also been sold as certificates. A buyer checks by matching the project's metered MWh against both registries.",
   "topic": "markets",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "renewable-share-of-india-grid-generation",
+  "q": "What share of India's grid electricity came from renewables in FY 2025-26?",
+  "title": "Renewable share of India grid generation",
+  "short": "About 17.6% of net generation. CEA's database version 22.0 counts 310.58 BU of renewable generation out of 1,761.28 BU total net generation in FY 2025-26. Renewables were about 41.9% of installed capacity on 31 March 2026, so their share of energy is much lower than their share of capacity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "rented-diesel-generator-scope-1-or-scope-3",
@@ -22323,6 +22619,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "which-sectors-are-in-the-pat-scheme",
+  "q": "Which sectors are covered by India's PAT scheme?",
+  "title": "Sectors covered by the PAT scheme",
+  "short": "PAT began with eight: aluminium, cement, chlor-alkali, fertiliser, iron and steel, pulp and paper, thermal power and textiles. Cycle II added refineries, railways and electricity DISCOMs. BEE now also lists petrochemicals and commercial buildings such as hotels, each notified with its own energy threshold.",
+  "topic": "regulation",
+  "reviewed": "2026-10-23"
+ },
+ {
   "slug": "which-senseible-plan-do-i-need",
   "q": "Which Senseible plan do I need for the number of bills and invoices I upload each month?",
   "title": "Which Senseible plan fits my monthly volume",
@@ -22497,6 +22801,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Indian primary aluminium is carbon-intensive because smelting needs about 14 to 15 MWh of electricity per tonne, and Indian smelters mostly run on their own coal-fired captive power plants. At about 1 t CO2 per MWh, power alone adds roughly 14 to 15 t CO2 per tonne, several times the smelter's direct emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "why-some-sources-say-0-82-for-india-grid",
+  "q": "Why do some sources quote about 0.82 for India's grid emission factor?",
+  "title": "Why some sources quote 0.82 for India's grid",
+  "short": "Because they use CEA's weighted average without renewables. In version 22.0 that figure is about 0.818 t CO2 per MWh for FY 2025-26, against 0.675 when renewable and captive power fed into the grid are included. For a company's electricity footprint, use the figure that includes renewables.",
+  "topic": "accounting",
+  "reviewed": "2026-10-23"
  },
  {
   "slug": "why-two-carbon-reports-give-different-totals",

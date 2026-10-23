@@ -1,0 +1,53 @@
+{
+  "slug": "how-much-co2-has-pat-saved",
+  "q": "How much CO2 has India's PAT scheme saved so far?",
+  "title": "How much CO2 the PAT scheme has saved",
+  "short": "More than 106 million tonnes of CO2 from 2015 to June 2024, according to the Bureau of Energy Efficiency. Cycle I alone accounted for about 31 million tonnes and cycle II for about 68 million tonnes. These are BEE's estimates from the energy saved by designated consumers.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Analysts, lenders and companies citing India energy efficiency outcomes",
+  "sections": [
+    {
+      "h": "What BEE reports",
+      "ul": [
+        "Cycle I (2012-13 to 2014-15): 8.67 MTOE saved, about 31 Mt CO2",
+        "Cycle II (2016-17 to 2018-19): about 14.08 MTOE saved, about 68 Mt CO2",
+        "All cycles, 2015 to June 2024: more than 106 Mt CO2"
+      ]
+    },
+    {
+      "h": "Context",
+      "p": [
+        "India revised its Nationally Determined Contribution in August 2022 to cut the emission intensity of GDP by 45% by 2030 from 2005 levels. PAT is one of the instruments, alongside renewable energy certificates and now the Carbon Credit Trading Scheme."
+      ]
+    },
+    {
+      "h": "Using the figure",
+      "p": [
+        "Quote it as BEE's estimate with its date. It is a national figure; a plant claiming its own share needs its own measured savings."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel and electricity invoices into monthly energy and emission records per site, the raw material for tracking specific energy consumption against a target.",
+  "links": [
+    {
+      "label": "Carbon pricing in India",
+      "to": "/answers/carbon-pricing-mechanisms-in-india"
+    },
+    {
+      "label": "PAT cycle II results",
+      "to": "/answers/pat-scheme-cycle-2-results"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, Perform Achieve and Trade (PAT) programme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=185&lid=72"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Market programme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "cbam-default-value-india-aluminium",
+  "q": "What is the CBAM default value for aluminium from India?",
+  "title": "CBAM default value: Indian aluminium",
+  "short": "Indian unwrought aluminium under CN 7601 carries 1.870 t CO2e per tonne. Wire is 2.594, bars and rods 3.413, profiles and tubes 3.444, and sheet, strip and foil 4.126. Aluminium counts direct emissions only, so the coal power used in smelting is outside these figures.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian aluminium smelters, extruders, rolling mills and foil makers exporting to the EU",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 7601 unwrought aluminium: 1.870",
+        "CN 7603 powders and flakes: 3.071",
+        "CN 7604 bars and rods: 3.413; profiles and hollow profiles: 3.444",
+        "CN 7605 wire: 2.594",
+        "CN 7606 plates, sheets and strip over 0.2 mm: 4.126",
+        "CN 7607 foil up to 0.2 mm: 4.126",
+        "CN 7608 tubes and pipes: 3.444",
+        "CN 7616 99 10 cast articles: 3.071"
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "Why sheet is higher than ingot",
+      "p": [
+        "Downstream products carry the ingot as a precursor plus their own casting, rolling or extrusion fuel, and the default assumes yield losses along the way. An extruder using recycled billet, or buying verified primary metal, can show a much lower actual figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CN 7601 coverage",
+      "to": "/answers/cbam-cn-7601-unwrought-aluminium-ingots-billets"
+    },
+    {
+      "label": "CN 7606 sheet and coil",
+      "to": "/answers/cbam-cn-7606-aluminium-sheet-plate-coil"
+    },
+    {
+      "label": "CBAM cost for Indian aluminium",
+      "to": "/answers/cbam-cost-per-tonne-indian-aluminium-imports"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

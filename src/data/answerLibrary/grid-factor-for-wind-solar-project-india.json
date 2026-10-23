@@ -1,0 +1,55 @@
+{
+  "slug": "grid-factor-for-wind-solar-project-india",
+  "q": "Which grid emission factor does a wind or solar project in India use for emission reductions?",
+  "title": "Grid factor for Indian wind and solar projects",
+  "short": "A large project under ACM0002 must use the combined margin. For wind and solar, CEA's own worked example weights the operating margin 75% and build margin 25%: 0.75 x 0.962 + 0.25 x 0.446 gives 0.833 t CO2 per MWh, using a three-year operating margin.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Developers of grid-connected wind and solar projects preparing carbon credit baselines",
+  "sections": [
+    {
+      "h": "CEA's worked example, version 22.0",
+      "ol": [
+        "Project: 100 MW wind farm, 312,500 MWh a year to the grid.",
+        "Operating margin fixed ex ante as the generation-weighted average of FY 2023-24 to FY 2025-26: 0.962.",
+        "Build margin for FY 2025-26: 0.446.",
+        "Combined margin with 75:25 weights for intermittent sources: 0.833.",
+        "Projected reductions: 312,500 x 0.833 = 260,312.5 t CO2 a year."
+      ]
+    },
+    {
+      "h": "Small projects",
+      "p": [
+        "A project under 15 MW using AMS-I.D may choose the weighted average instead. CEA's example for a 5 MW hydro station uses 0.675 for FY 2025-26, giving 11,812.5 t CO2 a year on 17,500 MWh."
+      ]
+    },
+    {
+      "h": "Check before you use it",
+      "p": [
+        "Methodology versions and weights change. Confirm the rules of the programme you register under, whether CCTS, Verra or Gold Standard, before fixing a factor in the project design document."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps dated, site-level records from invoices and meter documents, useful as monitoring evidence. It does not register projects or issue carbon credits.",
+  "links": [
+    {
+      "label": "OM, BM and CM for FY 2025-26",
+      "to": "/answers/india-operating-build-combined-margin-2025-26"
+    },
+    {
+      "label": "CCTS offset or Verra",
+      "to": "/answers/ccts-offset-or-verra-gold-standard-which"
+    },
+    {
+      "label": "CCTS tool BM-T-003",
+      "to": "/answers/ccts-tool-bm-t-003-electricity-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

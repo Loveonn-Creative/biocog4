@@ -4,6 +4,14 @@ Deep links below are known-good (used on the site already or canonical). For any
 
 ## Deep links
 - https://cea.nic.in/cdm-co2-baseline-database/?lang=en
+- https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en
+- https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=185&lid=72
+- https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294
+- https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx
+- https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf
+- https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf
+- https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf
+- https://taxation-customs.ec.europa.eu/document/download/9877523c-2a02-4926-a211-aefae7cf6d0d_en?filename=CBAM%20Benchmarks_20260206.xlsx
 - https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng
 - https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20
 - https://eur-lex.europa.eu/eli/reg/2023/956/oj

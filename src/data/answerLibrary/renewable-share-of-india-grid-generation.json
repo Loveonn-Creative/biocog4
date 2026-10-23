@@ -1,0 +1,49 @@
+{
+  "slug": "renewable-share-of-india-grid-generation",
+  "q": "What share of India's grid electricity came from renewables in FY 2025-26?",
+  "title": "Renewable share of India grid generation",
+  "short": "About 17.6% of net generation. CEA's database version 22.0 counts 310.58 BU of renewable generation out of 1,761.28 BU total net generation in FY 2025-26. Renewables were about 41.9% of installed capacity on 31 March 2026, so their share of energy is much lower than their share of capacity.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Companies explaining grid factor changes or renewable sourcing in India",
+  "sections": [
+    {
+      "h": "The figures",
+      "ul": [
+        "Renewable net generation: 310.58 BU, up from 255.01 BU in FY 2024-25",
+        "Total net generation including renewables, imports and captive: 1,761.28 BU",
+        "Renewable installed capacity: 223,273.43 MW of 532,739.72 MW on 31 March 2026"
+      ]
+    },
+    {
+      "h": "Why energy share trails capacity share",
+      "p": [
+        "Solar and wind run fewer hours a year than coal. A megawatt of solar produces far fewer units than a megawatt of coal, so capacity share overstates what renewables supply."
+      ]
+    },
+    {
+      "h": "What it means for your factor",
+      "p": [
+        "The grid average fell to 0.675 t CO2 per MWh because renewables grew faster than demand. To go below the grid average in your own reporting, buy renewable power through open access, a green tariff or certificates and report market-based Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated kWh records per meter and site, so whichever CEA factor and version you apply, each Scope 2 figure traces back to the bill and the factor behind it.",
+  "links": [
+    {
+      "label": "Open access renewable power",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Installed capacity mix",
+      "to": "/answers/india-installed-power-capacity-mix-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

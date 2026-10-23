@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-benchmark-values-steel-cement-aluminium",
+  "q": "What are the CBAM benchmark values for steel, cement, aluminium and fertilisers?",
+  "title": "CBAM benchmark values by product",
+  "short": "The CBAM benchmark sets the free allocation deducted per tonne. For default-value imports, rebar and wire rod on the blast furnace route use 1.364 t CO2e per tonne, grey clinker 0.666, unwrought primary aluminium 1.423, anhydrous ammonia 1.522 and hydrogen 5.089.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Exporters and importers estimating the free allocation adjustment",
+  "sections": [
+    {
+      "h": "Default CBAM benchmarks (Column B), t CO2e per tonne",
+      "ul": [
+        "CN 7213 and 7214 20 00 bars and rods, BF/BOF route: 1.364; DRI/EAF route: 0.475",
+        "CN 7208 hot-rolled flat, BF/BOF route: 1.370; DRI/EAF route: 0.481",
+        "CN 7201 pig iron: 1.21",
+        "CN 7203 10 00 DRI: 0.397",
+        "CN 2523 10 00 grey clinker: 0.666; white clinker: 0.859",
+        "CN 7601 unwrought aluminium, primary route: 1.423; unwrought alloys, secondary route: 0.091",
+        "CN 2814 10 00 anhydrous ammonia: 1.522",
+        "CN 3102 10 19 urea: 0.902",
+        "CN 2804 10 00 hydrogen: 5.089"
+      ]
+    },
+    {
+      "h": "Which route applies to India",
+      "p": [
+        "The India table in the default values annex flags the route that sets the benchmark. For most Indian carbon steel it is the blast furnace and basic oxygen furnace route, marked (C)."
+      ]
+    },
+    {
+      "h": "Column A and Column B",
+      "p": [
+        "Column A applies to a production process when actual data are used and precursors are counted separately. Column B is the default benchmark that already includes precursors, used with default values."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Free allocation phase-out",
+      "to": "/answers/cbam-free-allocation-phase-out-by-year"
+    },
+    {
+      "label": "CBAM cost worked example",
+      "to": "/answers/cbam-cost-worked-example-indian-rebar"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM benchmarks definitive period (Excel), from Implementing Regulation (EU) 2025/2620",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/9877523c-2a02-4926-a211-aefae7cf6d0d_en?filename=CBAM%20Benchmarks_20260206.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 4, calculation of the free allocation adjustment (14 August 2026), Tables 2-1 and 2-2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "coal-power-plant-co2-per-kwh-india",
+  "q": "How much CO2 does an Indian coal power plant emit per kWh?",
+  "title": "Coal power CO2 per kWh in India",
+  "short": "About 0.971 kg CO2 per kWh of net generation on average in FY 2025-26, by CEA's database. Lignite plants averaged 1.348 and gas plants 0.470. These are station averages for the fuel, useful for comparing a captive plant against the grid average of 0.675.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Plants with captive coal, lignite or gas generation comparing it with grid supply",
+  "sections": [
+    {
+      "h": "Weighted average by fuel, FY 2025-26, t CO2 per MWh net",
+      "ul": [
+        "Coal: 0.971",
+        "Lignite: 1.348",
+        "Gas: 0.470",
+        "Grid average including renewables: 0.675"
+      ]
+    },
+    {
+      "h": "A year earlier, FY 2024-25",
+      "ul": [
+        "Coal: 0.969",
+        "Lignite: 1.32",
+        "Gas: 0.452"
+      ]
+    },
+    {
+      "h": "For your own captive plant",
+      "p": [
+        "Do not apply these averages to your own boiler or turbine if you have fuel data. Use the coal, lignite or gas you actually burned from purchase invoices, with its calorific value, and divide by the units you generated. The CEA averages are a benchmark to check against."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, lignite and gas purchase invoices and electricity bills into dated records per site, so a captive plant's figure is built from the fuel actually bought.",
+  "links": [
+    {
+      "label": "DG set vs grid per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Grid factor for FY 2025-26",
+      "to": "/answers/india-grid-emission-factor-2025-26"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

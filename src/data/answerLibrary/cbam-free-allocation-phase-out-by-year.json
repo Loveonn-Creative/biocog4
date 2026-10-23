@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-free-allocation-phase-out-by-year",
+  "q": "How fast is EU free allocation phased out under CBAM, year by year?",
+  "title": "CBAM free allocation phase-out by year",
+  "short": "The CBAM factor that sets how much free allocation is deducted falls from 97.5% in 2026 to 95% in 2027, 90% in 2028, 77.5% in 2029, 51.5% in 2030, 39% in 2031, 26.5% in 2032, 14% in 2033 and zero in 2034. As it falls, more of each tonne is charged.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters and EU importers modelling CBAM cost from 2026 to 2034",
+  "sections": [
+    {
+      "h": "CBAM factor by year",
+      "ul": [
+        "2026: 97.5%",
+        "2027: 95.0%",
+        "2028: 90.0%",
+        "2029: 77.5%",
+        "2030: 51.5%",
+        "2031: 39.0%",
+        "2032: 26.5%",
+        "2033: 14.0%",
+        "2034: 0%"
+      ]
+    },
+    {
+      "h": "How it enters the calculation",
+      "p": [
+        "Certificates owed per tonne equal embedded emissions minus the specific embedded free allocation. With default values, that allocation is the CBAM factor times the cross-sectoral correction factor times the CBAM benchmark for the good."
+      ]
+    },
+    {
+      "h": "Why 2030 is the step to plan for",
+      "p": [
+        "The factor drops from 77.5% to 51.5% in one year. For a product near its benchmark, the cost per tonne can nearly double between 2029 and 2030 even if nothing at the plant changes."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "CBAM cost for Indian steel",
+      "to": "/answers/cbam-cost-per-tonne-indian-steel-imports"
+    },
+    {
+      "label": "CBAM benchmarks",
+      "to": "/answers/cbam-benchmark-values-steel-cement-aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance No. 4, calculation of the free allocation adjustment (14 August 2026), Tables 2-1 and 2-2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

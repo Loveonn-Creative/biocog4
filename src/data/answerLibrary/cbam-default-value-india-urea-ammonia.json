@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-default-value-india-urea-ammonia",
+  "q": "What is the CBAM default value for urea and ammonia from India?",
+  "title": "CBAM default value: Indian urea, ammonia",
+  "short": "Indian solid urea under CN 3102 10 19 carries 2.220 t CO2e per tonne and anhydrous ammonia 3.280, both including indirect emissions. Fertilisers get a lower mark-up than other sectors: 1% from 2026, against 10% for steel in 2026.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian urea, ammonia and nitrogen fertiliser producers and traders selling to the EU",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne (direct + indirect = total)",
+      "ul": [
+        "CN 2814 10 00 anhydrous ammonia: 3.060 + 0.220 = 3.280",
+        "CN 2814 20 00 aqueous ammonia: 0.920 + 0.070 = 0.990",
+        "CN 3102 10 19 urea, over 45% nitrogen: 2.050 + 0.170 = 2.220",
+        "CN 3102 10 90 urea, 45% nitrogen or less: 2.000 + 0.160 = 2.170",
+        "CN 3102 30 90 ammonium nitrate: 2.180 + 0.160 = 2.340",
+        "CN 2808 00 00 nitric acid: 1.940 + 0.070 = 2.010"
+      ]
+    },
+    {
+      "h": "Mark-up for fertilisers",
+      "p": [
+        "The default value mark-up for fertilisers is 1% from 2026 onwards, much lower than the 10% to 30% for other sectors, according to the Commission's guidance."
+      ]
+    },
+    {
+      "h": "Why actual data wins",
+      "p": [
+        "Defaults are set so they do not understate emissions, and the mark-up adds more. A plant with good fuel and production records will usually come in lower, and only a verified actual figure lets the importer use it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are urea and DAP covered?",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Technical urea and DEF",
+      "to": "/answers/cbam-urea-technical-grade-and-def-covered"
+    },
+    {
+      "label": "Indian DAP and NPK defaults",
+      "to": "/answers/cbam-default-value-india-dap-npk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

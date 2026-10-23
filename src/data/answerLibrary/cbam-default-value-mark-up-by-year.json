@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-default-value-mark-up-by-year",
+  "q": "What mark-up is added to CBAM default values in 2026, 2027 and 2028?",
+  "title": "CBAM default value mark-up by year",
+  "short": "Default values are increased by 10% in 2026, 20% in 2027 and 30% from 2028 onwards. Fertilisers get a 1% mark-up from 2026. The year is normally the year of import, and goods imported in 2026 always use the 2026 mark-up.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters and EU importers deciding whether to rely on default values",
+  "sections": [
+    {
+      "h": "Mark-up schedule",
+      "ul": [
+        "2026: 10%",
+        "2027: 20%",
+        "2028 onwards: 30%",
+        "Fertilisers: 1% from 2026"
+      ]
+    },
+    {
+      "h": "Which year applies",
+      "ul": [
+        "For a final good using defaults, the year of import.",
+        "For a precursor, by default the year the complex good was produced, unless evidence shows the actual production period.",
+        "No data from before 2026 is used, so 2026 imports take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "What it does to cost",
+      "p": [
+        "Indian rebar at 4.270 becomes about 4.697 t in 2026, 5.124 t in 2027 and 5.551 t from 2028 before any free allocation adjustment. Each step makes actual, verified data more valuable."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Default values vs actual data",
+      "to": "/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide"
+    },
+    {
+      "label": "Indian rebar defaults",
+      "to": "/answers/cbam-default-value-india-rebar-wire-rod"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

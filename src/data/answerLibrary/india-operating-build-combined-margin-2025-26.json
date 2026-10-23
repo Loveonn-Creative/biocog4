@@ -1,0 +1,55 @@
+{
+  "slug": "india-operating-build-combined-margin-2025-26",
+  "q": "What are India's operating, build and combined margin factors for FY 2025-26?",
+  "title": "India OM, BM and CM grid factors, FY 2025-26",
+  "short": "For FY 2025-26 CEA gives an operating margin of 0.963, a build margin of 0.446 and a combined margin of 0.705 t CO2 per MWh, adjusted for cross-border transfers. These describe the power a project displaces. They are for carbon project baselines, not for a company's Scope 2 footprint.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Renewable and efficiency project developers preparing baselines in India",
+  "sections": [
+    {
+      "h": "What each margin means",
+      "ul": [
+        "Operating margin: average emissions of stations excluding low-cost and must-run sources, such as hydro and nuclear.",
+        "Build margin: average emissions of the most recent 20% of capacity additions by net generation, including renewables.",
+        "Combined margin: weighted average of the two, 50:50 by default."
+      ]
+    },
+    {
+      "h": "Five-year trend, t CO2 per MWh",
+      "ul": [
+        "Build margin: 0.869, 0.867, 0.552, 0.512, 0.446 from FY 2021-22 to FY 2025-26",
+        "Combined margin: 0.915, 0.919, 0.757, 0.736, 0.705",
+        "Operating margin: between 0.960 and 0.971 throughout"
+      ]
+    },
+    {
+      "h": "Why the build margin fell",
+      "p": [
+        "From FY 2023-24 CEA counts renewable generation in the build margin. New capacity is now mostly solar and wind, so the build margin nearly halved and pulled the combined margin down with it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity and fuel invoices into dated, site-level records, useful as monitoring evidence for the project's own consumption and output. It does not register or issue carbon credits.",
+  "links": [
+    {
+      "label": "Weighted average vs combined margin",
+      "to": "/answers/cea-weighted-average-vs-combined-margin"
+    },
+    {
+      "label": "CCTS tool BM-T-003",
+      "to": "/answers/ccts-tool-bm-t-003-electricity-emission-factor"
+    },
+    {
+      "label": "Wind and solar project factor",
+      "to": "/answers/grid-factor-for-wind-solar-project-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "cbam-default-value-india-pig-iron-dri",
+  "q": "What is the CBAM default value for Indian pig iron and sponge iron?",
+  "title": "CBAM default value: Indian pig iron, DRI",
+  "short": "Indian pig iron under CN 7201 carries 2.530 t CO2e per tonne and direct reduced iron, sponge iron, under CN 7203 carries 4.200. Agglomerated iron ore, pellets and sinter, carries 0.340 including indirect emissions. Steel takes direct emissions only.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian sponge iron, pig iron and pellet producers selling to steelmakers who export to the EU",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 2601 12 00 agglomerated iron ore (pellets, sinter): 0.290 direct, 0.050 indirect, 0.340 total",
+        "CN 7201 pig iron: 2.530",
+        "CN 7203 direct reduced iron (sponge iron): 4.200",
+        "CN 7205 granules and powders: 2.540"
+      ]
+    },
+    {
+      "h": "Sponge iron against pig iron",
+      "p": [
+        "The India default for sponge iron is 4.200, well above pig iron at 2.530. A DRI plant with good coal, gas and electricity records may be able to show a lower actual value, and should check before letting buyers use the default."
+      ]
+    },
+    {
+      "h": "Where it shows up",
+      "p": [
+        "Most sponge iron is not exported to the EU directly. It becomes a precursor in billets, bars and wire, so the steelmaker's EU buyer will ask the steelmaker, and the steelmaker will ask you."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CN 7205 powders",
+      "to": "/answers/cbam-cn-7205-iron-steel-powders"
+    },
+    {
+      "label": "BF vs EAF vs DRI cost",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Indian billet defaults",
+      "to": "/answers/cbam-default-value-india-billets-ingots"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

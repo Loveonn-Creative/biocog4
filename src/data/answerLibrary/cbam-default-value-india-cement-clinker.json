@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-default-value-india-cement-clinker",
+  "q": "What is the CBAM default value for cement and clinker from India?",
+  "title": "CBAM default value: Indian cement, clinker",
+  "short": "Indian grey clinker carries 1.440 t CO2e per tonne and grey Portland cement 1.480, both including indirect emissions from electricity. White clinker is 1.410, white Portland cement 1.470 and aluminous cement 2.290. Cement counts indirect emissions, unlike steel and aluminium.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian cement and clinker exporters and their EU importers",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne (direct + indirect = total)",
+      "ul": [
+        "CN 2523 10 00 90 grey clinker: 1.390 + 0.050 = 1.440",
+        "CN 2523 10 00 10 white clinker: 1.350 + 0.070 = 1.410",
+        "CN 2523 29 00 grey Portland cement: 1.390 + 0.090 = 1.480",
+        "CN 2523 21 00 white Portland cement: 1.330 + 0.140 = 1.470",
+        "CN 2523 30 00 aluminous cement: 2.050 + 0.240 = 2.290",
+        "Calcined clay and other hydraulic cements: no India value listed"
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "Blended cements",
+      "p": [
+        "Portland pozzolana and slag cements contain less clinker, so their actual embedded emissions are usually well below 1.480. The importer must report clinker content, so keep it on record per batch."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "OPC and PPC from the same clinker",
+      "to": "/answers/cbam-opc-and-ppc-from-same-clinker-split"
+    },
+    {
+      "label": "Calcined clay vs kaolin",
+      "to": "/answers/cbam-cn-2507-calcined-clay-vs-kaolin"
+    },
+    {
+      "label": "Indirect emissions factor",
+      "to": "/answers/cbam-indirect-emissions-electricity-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

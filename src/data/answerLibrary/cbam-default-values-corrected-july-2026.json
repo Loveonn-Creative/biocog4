@@ -1,0 +1,56 @@
+{
+  "slug": "cbam-default-values-corrected-july-2026",
+  "q": "Were the CBAM default values corrected in 2026?",
+  "title": "CBAM default values corrected in 2026",
+  "short": "Yes. Implementing Regulation (EU) 2026/1740, adopted on 20 July 2026, corrected Annexes I and IV of the default values regulation (EU) 2025/2621. The Commission's Excel file was updated to version 2 on 6 August 2026. Check that any default value you quote comes from the corrected set.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters, consultants and EU importers who copied default values earlier in 2026",
+  "sections": [
+    {
+      "h": "Timeline",
+      "ul": [
+        "16 December 2025: Implementing Regulation (EU) 2025/2621 adopted with the original default values.",
+        "4 February 2026: Excel file version 1 published.",
+        "20 July 2026: correcting act (EU) 2026/1740 adopted for Annexes I and IV.",
+        "6 August 2026: Excel file version 2 with the corrected values."
+      ]
+    },
+    {
+      "h": "What the Excel file does not include",
+      "p": [
+        "The informational Excel file does not contain the grid emission factors for indirect emissions in Annex II or the electricity default values in Annex III. Those stay in the regulation itself."
+      ]
+    },
+    {
+      "h": "What to do",
+      "ol": [
+        "Re-check any default figure in your price quotes or contracts against version 2.",
+        "Record the regulation, the correcting act and the date you looked it up.",
+        "Treat the Excel file as a convenience; the legally binding values are in the regulation."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Where to find default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Default value mark-up by year",
+      "to": "/answers/cbam-default-value-mark-up-by-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
