@@ -3,7 +3,7 @@
 export const FUNCTION_VERSIONS: Record<string, string> = {
   "extract-document": "b7a7681a8d0c1762",
   "verify-carbon": "2ff3a85299aeaa0b",
-  "intelligence-chat": "f4491df7fd43eb91",
+  "intelligence-chat": "d002d5253159fd95",
   "scope2-engine": "21cf48f476edaad7",
   "scope3-trail": "364eb00f5e60058d",
   "delete-document": "9d6e21e00a660a8f",

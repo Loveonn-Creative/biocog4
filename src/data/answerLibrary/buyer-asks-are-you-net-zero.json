@@ -1,0 +1,51 @@
+{
+  "slug": "buyer-asks-are-you-net-zero",
+  "q": "A buyer asks if we are net zero. What should we say if we are not?",
+  "title": "Buyer asks if you are net zero",
+  "short": "Say no, and say what you do have: your measured footprint, the year, and the steps you are taking. Net zero means cutting emissions deeply and removing what is left, so very few companies can claim it today. An honest no with a real figure reads better than a vague yes.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Suppliers replying to buyer questionnaires",
+  "sections": [
+    {
+      "h": "A reply that works",
+      "p": [
+        "We are not net zero. Our Scope 1 and 2 emissions for 2025-26 were X tonnes CO2e, measured from our bills. We are working on Y and will update you next year."
+      ]
+    },
+    {
+      "h": "Do not",
+      "ul": [
+        "Claim net zero because you bought some credits.",
+        "Promise a date nobody has planned for.",
+        "Confuse carbon neutral with net zero."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    },
+    {
+      "label": "Residual emissions",
+      "to": "/answers/residual-emissions-meaning-net-zero"
+    },
+    {
+      "label": "SME Climate Commitment",
+      "to": "/answers/sme-climate-commitment-what-it-means"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO Net Zero Guidelines, IWA 42 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

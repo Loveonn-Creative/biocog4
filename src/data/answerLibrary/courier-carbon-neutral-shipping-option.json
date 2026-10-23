@@ -1,0 +1,53 @@
+{
+  "slug": "courier-carbon-neutral-shipping-option",
+  "q": "Our courier offers a carbon neutral shipping option. Does it cut our emissions?",
+  "title": "Courier carbon neutral shipping option",
+  "short": "Not in your inventory. The courier usually pays for carbon credits to match the delivery's estimated emissions. Your shipping emissions stay in Scope 3 at their gross value; the credits can be reported separately. Ask the courier which credits, how many and where they are retired.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Exporters and online sellers using courier services",
+  "sections": [
+    {
+      "h": "How to report it",
+      "ul": [
+        "Shipping emissions: Scope 3, category 4 or 9 depending on who pays.",
+        "Credits bought on your behalf: a separate line, never subtracted.",
+        "Wording: say the courier offset the delivery, not that you are carbon neutral."
+      ]
+    },
+    {
+      "h": "What to ask the courier",
+      "ul": [
+        "Emissions estimate per shipment and the method.",
+        "Credit registry, project and serial numbers.",
+        "Proof the credits were retired."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Courier shipments from invoices",
+      "to": "/answers/courier-shipment-emissions-from-invoices"
+    },
+    {
+      "label": "Offset at checkout",
+      "to": "/answers/carbon-offset-at-checkout-for-online-sellers"
+    },
+    {
+      "label": "Insetting vs offsetting",
+      "to": "/answers/insetting-vs-offsetting-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

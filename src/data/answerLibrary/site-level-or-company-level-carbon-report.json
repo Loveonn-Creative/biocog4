@@ -1,0 +1,47 @@
+{
+  "slug": "site-level-or-company-level-carbon-report",
+  "q": "Should we report emissions for each site or only for the whole company?",
+  "title": "Site level or company level report",
+  "short": "Build it by site, report the company total. Each site has its own bills, so a site-by-site record is easier to check and shows where to act. Buyers often want the figure for the site that makes their product; lenders and annual reports usually want the company total.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Companies with more than one factory, warehouse or office",
+  "sections": [
+    {
+      "h": "Why build by site",
+      "ul": [
+        "Each bill belongs to one site, so errors are easy to trace.",
+        "A buyer can get the figure for the plant that supplies them.",
+        "Site trends show where energy is going."
+      ]
+    },
+    {
+      "h": "Keep the boundary clear",
+      "p": [
+        "List every site in the company total and say which control approach you used, so nothing is missed or counted twice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Multiple connections, one company",
+      "to": "/answers/multiple-electricity-connections-one-company"
+    },
+    {
+      "label": "Operational vs equity control",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Product footprint request",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

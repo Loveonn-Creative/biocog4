@@ -1,0 +1,55 @@
+{
+  "slug": "commute-survey-personal-data-dpdp",
+  "q": "Our staff commute survey collects personal details. What should we watch under India's data protection law?",
+  "title": "Commute surveys and personal data",
+  "short": "Collect as little as you need. For commuting emissions you need mode and distance, not names, phone numbers or home addresses. Tell staff why you ask and how the answers are used, keep the raw responses secure, and report only totals. India's Digital Personal Data Protection Act, 2023 expects this kind of care.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HR and admin teams running commute surveys",
+  "sections": [
+    {
+      "h": "Ask for",
+      "ul": [
+        "Usual travel mode.",
+        "One-way distance band.",
+        "Days at the site per week."
+      ]
+    },
+    {
+      "h": "Avoid",
+      "ul": [
+        "Names linked to answers.",
+        "Exact home addresses.",
+        "Vehicle numbers."
+      ]
+    },
+    {
+      "h": "Reporting",
+      "p": [
+        "Report totals by mode under Scope 3, category 7, and keep the survey method on file."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Low survey response",
+      "to": "/answers/commute-survey-low-response-what-to-do"
+    },
+    {
+      "label": "Commute estimate for MSMEs",
+      "to": "/answers/employee-commute-msme-scope-3-estimate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "green-loan-for-etp-or-zld-upgrade",
+  "q": "Can an effluent treatment or ZLD upgrade be financed as a green loan?",
+  "title": "Green loan for an ETP or ZLD upgrade",
+  "short": "Often, yes. The Green Loan Principles include pollution prevention and sustainable water and wastewater management. Be clear about the energy side: ZLD systems use a lot of electricity, so show the extra kWh and emissions alongside the water benefit rather than leaving them out.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Textile, chemical and food units upgrading effluent treatment",
+  "sections": [
+    {
+      "h": "What the bank will ask",
+      "ul": [
+        "Current water use and discharge.",
+        "Design capacity and expected recovery.",
+        "Electricity and steam the system will use."
+      ]
+    },
+    {
+      "h": "Report both sides",
+      "ul": [
+        "Water recovered per year.",
+        "Extra kWh and the Scope 2 emissions at 0.710 kg per kWh.",
+        "Any heat or fuel for evaporators."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into a dated, fingerprinted emissions record a lender can trace line by line. The lender makes its own credit decision.",
+  "links": [
+    {
+      "label": "ZLD energy and carbon per kl",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    },
+    {
+      "label": "CETP emissions scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Green Loan Principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Green Loan Principles (lma.eu.com)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

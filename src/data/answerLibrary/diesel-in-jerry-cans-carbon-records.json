@@ -1,0 +1,58 @@
+{
+  "slug": "diesel-in-jerry-cans-carbon-records",
+  "q": "We buy diesel in jerry cans for forklifts and small engines. How do we record it for carbon?",
+  "title": "Diesel bought in jerry cans",
+  "short": "Count it like any other diesel: litres bought times 2.68 kg CO2 per litre, in Scope 1. Keep the pump bill for each fill, or a cash memo with litres, date and amount. A simple can issue log shows which machine used it if a buyer asks.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Workshops and factories with forklifts, pumps and small generators",
+  "sections": [
+    {
+      "h": "What to keep",
+      "ul": [
+        "Pump bill or memo with litres for each fill.",
+        "A log: date, can, litres, machine.",
+        "Cans still full at year end, if you count consumption rather than purchases."
+      ]
+    },
+    {
+      "h": "Factor",
+      "p": [
+        "Diesel at 2.68 kg CO2 per litre, from IPCC 2006 defaults. It is Scope 1 because you burn it in your own equipment."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Cash diesel without GST invoice",
+      "to": "/answers/cash-diesel-purchases-without-gst-invoice"
+    },
+    {
+      "label": "Diesel tank issue register",
+      "to": "/answers/own-diesel-tank-issue-register-emissions"
+    },
+    {
+      "label": "Fuel bought vs burned",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "15 fills of a 20 litre can = 300 litres",
+      "300 × 2.68 = 804 kg CO2, Scope 1"
+    ]
+  },
+  "reviewed": "2026-10-23"
+}

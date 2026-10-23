@@ -1,0 +1,51 @@
+{
+  "slug": "gate-to-gate-footprint-meaning",
+  "q": "What does a gate-to-gate carbon footprint mean?",
+  "title": "Gate-to-gate footprint meaning",
+  "short": "It covers only what happens inside your own plant: the energy and fuel used from the moment materials arrive to the moment the product leaves. It leaves out raw materials and delivery. Buyers often want cradle-to-gate, so say clearly which one you are sending.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Manufacturers asked for product footprints",
+  "sections": [
+    {
+      "h": "The common boundaries",
+      "ul": [
+        "Gate-to-gate: your own processes only.",
+        "Cradle-to-gate: raw materials plus your processes.",
+        "Cradle-to-grave: adds use and disposal."
+      ]
+    },
+    {
+      "h": "Why it is useful",
+      "p": [
+        "It is the part you control and can measure from your own bills. It is a good starting point before you collect supplier data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Declared unit vs functional unit",
+      "to": "/answers/declared-unit-vs-functional-unit"
+    },
+    {
+      "label": "Product footprint request",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "LCA vs product footprint",
+      "to": "/answers/lca-vs-product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

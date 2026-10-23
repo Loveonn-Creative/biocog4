@@ -1,0 +1,52 @@
+{
+  "slug": "buyer-asks-carbon-per-dollar-of-revenue",
+  "q": "A buyer wants our emissions per US dollar of revenue. How do we calculate it?",
+  "title": "Emissions per dollar of revenue",
+  "short": "Divide total emissions for the year by revenue for the same year converted to US dollars. Use one exchange rate, such as the year's average, and state it. Give the result with the scopes included, and note that price or currency changes move the figure even when emissions do not.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters answering buyer questionnaires",
+  "sections": [
+    {
+      "h": "State alongside the figure",
+      "ul": [
+        "Scopes included.",
+        "Reporting year.",
+        "Exchange rate and its source.",
+        "Whether revenue is gross or net of taxes."
+      ]
+    },
+    {
+      "h": "Limits",
+      "p": [
+        "Revenue intensity is easy to compare but moves with prices. Offer a physical intensity, such as per tonne of product, as well."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Which intensity metric",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "BRSR intensity per rupee",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative rate)",
+    "lines": [
+      "Emissions: 1,200 t CO2e; revenue ₹40 crore",
+      "At ₹84 per USD: about USD 4.76 million",
+      "1,200 ÷ 4.76 = 252 t CO2e per USD million (0.252 kg per USD)"
+    ]
+  },
+  "reviewed": "2026-10-23"
+}

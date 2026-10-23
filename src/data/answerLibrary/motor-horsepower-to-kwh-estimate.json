@@ -1,0 +1,56 @@
+{
+  "slug": "motor-horsepower-to-kwh-estimate",
+  "q": "How do we estimate a motor's electricity use from its horsepower rating?",
+  "title": "Motor horsepower to kWh",
+  "short": "Convert horsepower to kilowatts (1 hp is 0.746 kW), multiply by how loaded the motor runs, divide by its efficiency, then multiply by running hours. It is an estimate; a meter or the electricity bill beats it. Use it to split a bill between machines, not to replace the bill.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Maintenance and plant teams",
+  "sections": [
+    {
+      "h": "Inputs",
+      "ul": [
+        "Nameplate rating in hp or kW (this is output power).",
+        "Typical load as a share of rating.",
+        "Efficiency from the nameplate.",
+        "Running hours from a log."
+      ]
+    },
+    {
+      "h": "When to use it",
+      "p": [
+        "To allocate a known bill across machines or to size a saving. Your reported Scope 2 still comes from the bill."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Idle machines base load",
+      "to": "/answers/idle-machines-base-load-electricity"
+    },
+    {
+      "label": "Sub-meters below the main meter",
+      "to": "/answers/sub-meters-do-not-add-up-to-main-meter"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "15 hp × 0.746 = 11.19 kW output",
+      "At 75% load and 90% efficiency: 11.19 × 0.75 ÷ 0.90 = 9.33 kW input",
+      "3,000 hours: about 27,975 kWh × 0.710 = 19.9 t CO2"
+    ]
+  },
+  "reviewed": "2026-10-23"
+}

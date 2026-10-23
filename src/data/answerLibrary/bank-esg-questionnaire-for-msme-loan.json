@@ -1,0 +1,54 @@
+{
+  "slug": "bank-esg-questionnaire-for-msme-loan",
+  "q": "Our bank sent an ESG questionnaire with our loan renewal. How should we answer the climate part?",
+  "title": "Bank ESG questionnaire for a loan",
+  "short": "Answer only what your records show. Give Scope 1 and 2 from your fuel and electricity bills, the period and the method, and say plainly where you have no data yet. A short, sourced answer reads better to a credit team than a long one that cannot be checked.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME borrowers renewing working capital or term loans",
+  "sections": [
+    {
+      "h": "Climate questions banks often ask",
+      "ul": [
+        "Annual electricity and fuel use.",
+        "Scope 1 and 2 emissions.",
+        "Any energy saving or renewable projects.",
+        "Exposure to floods, heat or water shortage."
+      ]
+    },
+    {
+      "h": "How to answer",
+      "ul": [
+        "Attach the calculation, not just totals.",
+        "Mark estimates as estimates.",
+        "Keep the same figures you give buyers, so they match."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into a dated, fingerprinted emissions record a lender can trace line by line. The lender makes its own credit decision.",
+  "links": [
+    {
+      "label": "How lenders read a GHG report",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "Climate finance readiness",
+      "to": "/answers/climate-finance-readiness-check-msme"
+    },
+    {
+      "label": "Lender asks about flood and heat",
+      "to": "/answers/lender-asks-flood-and-heat-risk-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard (carbonaccountingfinancials.com)",
+      "url": "https://carbonaccountingfinancials.com"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

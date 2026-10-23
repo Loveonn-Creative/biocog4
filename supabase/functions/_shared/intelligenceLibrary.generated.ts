@@ -587,6 +587,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What carbon tasks should a small company do each month and quarter?",
+  "text": "Monthly: file every electricity and fuel bill and enter it. Quarterly: check totals against production and fix gaps. Yearly: close the inventory, have a second person check it, then answer buyer and bank requests from that one figure. Small, regular steps beat a rush at year end.",
+  "url": "https://senseible.earth/answers/annual-calendar-of-carbon-tasks"
+ },
+ {
+  "kind": "answer",
   "title": "My German OEM customer wants product carbon footprints via Catena-X. What does an Indian or Turkish auto parts supplier need?",
   "text": "You need three things: a cradle-to-gate footprint per part calculated to the Catena-X PCF Rulebook, which follows ISO 14067 and the PACT methodology; a Catena-X identity, the Business Partner Number; and a certified Catena-X application or service provider that sends the data through a dataspace connector.",
   "url": "https://senseible.earth/answers/answer-a-catena-x-pcf-request-auto-parts"
@@ -1142,6 +1148,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is on a bank's ESG exclusion list for MSME loans?",
   "text": "An exclusion list names activities a lender will not finance at all. Lists used for MSME loans, especially credit lines funded by development banks, usually exclude forced or harmful child labour, illegal products, banned chemicals and pesticides, ozone-depleting substances, unbonded asbestos, trade in protected wildlife, weapons, tobacco and gambling. Many now restrict new coal power.",
   "url": "https://senseible.earth/answers/bank-esg-exclusion-list-msme-loan"
+ },
+ {
+  "kind": "answer",
+  "title": "Our bank sent an ESG questionnaire with our loan renewal. How should we answer the climate part?",
+  "text": "Answer only what your records show. Give Scope 1 and 2 from your fuel and electricity bills, the period and the method, and say plainly where you have no data yet. A short, sourced answer reads better to a credit team than a long one that cannot be checked.",
+  "url": "https://senseible.earth/answers/bank-esg-questionnaire-for-msme-loan"
  },
  {
   "kind": "answer",
@@ -1985,6 +1997,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "A buyer asks if we are net zero. What should we say if we are not?",
+  "text": "Say no, and say what you do have: your measured footprint, the year, and the steps you are taking. Net zero means cutting emissions deeply and removing what is left, so very few companies can claim it today. An honest no with a real figure reads better than a vague yes.",
+  "url": "https://senseible.earth/answers/buyer-asks-are-you-net-zero"
+ },
+ {
+  "kind": "answer",
   "title": "A new buyer wants carbon data before placing a first order. What should we send?",
   "text": "Send a one-page summary: last year's Scope 1 and 2 in tonnes, emissions per unit of your main product, how they were worked out, and what you are doing to cut them. Keep the bills behind it ready. New buyers screen on whether you can answer, not on the lowest number.",
   "url": "https://senseible.earth/answers/buyer-asks-carbon-data-before-first-order"
@@ -2000,6 +2018,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "A buyer's RFQ asks for a carbon figure per unit. What do we put?",
   "text": "Give a cradle-to-gate figure per unit from your last 12 months of bills and production, with the boundary stated. If you have not measured it, give a clearly labelled estimate and the date you will have a measured figure. A number you cannot back up can cost you the contract later.",
   "url": "https://senseible.earth/answers/buyer-asks-carbon-figure-in-rfq"
+ },
+ {
+  "kind": "answer",
+  "title": "A buyer wants our emissions per US dollar of revenue. How do we calculate it?",
+  "text": "Divide total emissions for the year by revenue for the same year converted to US dollars. Use one exchange rate, such as the year's average, and state it. Give the result with the scopes included, and note that price or currency changes move the figure even when emissions do not.",
+  "url": "https://senseible.earth/answers/buyer-asks-carbon-per-dollar-of-revenue"
  },
  {
   "kind": "answer",
@@ -2495,6 +2519,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do we explain Scope 1, 2 and 3 to our staff in Hindi?",
+  "text": "Keep it to what staff handle. Scope 1 is ईंधन जो हम खुद जलाते हैं (fuel we burn ourselves), Scope 2 is खरीदी गई बिजली (electricity we buy), and Scope 3 is बाकी सप्लाई चेन (the rest of the supply chain). Tie each term to a bill they already file.",
+  "url": "https://senseible.earth/answers/carbon-accounting-terms-in-hindi"
+ },
+ {
+  "kind": "answer",
   "title": "Carbon audit vs energy audit vs ESG audit: which one does my company need?",
   "text": "An energy audit finds where you waste energy and money, and is mandatory for BEE designated consumers. A carbon audit measures and checks your greenhouse gas emissions, which buyers, lenders and CBAM ask for. An ESG audit reviews environmental, social and governance practices, usually because a buyer or listing rule demands it.",
   "url": "https://senseible.earth/answers/carbon-audit-vs-energy-audit-vs-esg-audit"
@@ -2591,6 +2621,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What should we say about carbon in our company profile or pitch deck?",
+  "text": "One or two sentences you can prove: what you measure, for which year, and one real action. For example, Scope 1 and 2 measured from our bills for 2025-26, and a figure you can share on request. Leave out green, eco friendly or neutral unless you can back them up.",
+  "url": "https://senseible.earth/answers/carbon-line-in-company-profile"
+ },
+ {
+  "kind": "answer",
+  "title": "What should a one-page methodology note sent to buyers include?",
+  "text": "The boundary, the period, the scopes covered, the data sources, the factors and their versions, and what was estimated. One page is enough. It lets a buyer understand your figure without a call, and it keeps your answers the same from one buyer to the next.",
+  "url": "https://senseible.earth/answers/carbon-methodology-note-for-buyers"
+ },
+ {
+  "kind": "answer",
   "title": "When can a company say it is carbon negative?",
   "text": "Rarely, and only with evidence. You would need verified removals larger than all your emissions, including material Scope 3, reported separately rather than netted inside the inventory. Avoided emissions and purchased avoidance credits do not count. Indian greenwashing guidelines expect claims like this to be backed by credible, verifiable evidence.",
   "url": "https://senseible.earth/answers/carbon-negative-claim-when-is-it-allowed"
@@ -2645,9 +2687,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our bills and invoices were lost in a fire or flood. Can we still report emissions?",
+  "text": "Yes. Rebuild what you can: duplicate bills from the discom portal, invoice copies from suppliers, and your GST purchase records. Estimate the gaps from months you still have, mark them as estimates, and note the event and date so a verifier understands the gap.",
+  "url": "https://senseible.earth/answers/carbon-records-lost-in-fire-or-flood"
+ },
+ {
+  "kind": "answer",
   "title": "What are the warning signs in a carbon footprint report from a consultant?",
   "text": "The main warning signs are totals with no activity data behind them, factors with no source or version, a missing boundary, carbon credits subtracted from emissions, spend-based Scope 3 presented as precise, and suspiciously round numbers. Any one of these means you cannot check the figure yourself.",
   "url": "https://senseible.earth/answers/carbon-report-red-flags-from-consultant"
+ },
+ {
+  "kind": "answer",
+  "title": "Should we link staff incentives to a carbon target?",
+  "text": "Only once the figure is reliable. Reward what a team controls, such as diesel per tonne or kWh per piece, measured from bills and meters. Avoid rewarding a total that can fall because output fell, and check the data before paying out.",
+  "url": "https://senseible.earth/answers/carbon-target-in-staff-incentives"
  },
  {
   "kind": "answer",
@@ -3635,6 +3689,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the difference between CO2 and CO2e?",
+  "text": "CO2 is carbon dioxide alone. CO2e, carbon dioxide equivalent, adds other greenhouse gases converted by their warming effect. One kilogram of fossil methane counts as 29.8 kg CO2e under IPCC AR6, and one kilogram of nitrous oxide as 273 kg. For most fuel burning the two are close.",
+  "url": "https://senseible.earth/answers/co2-vs-co2e-difference"
+ },
+ {
+  "kind": "answer",
   "title": "Does CO2 used as welding shielding gas count in Scope 1?",
   "text": "Yes. CO2 released at your site from cylinders or bulk tanks is a direct emission, so it is Scope 1 at its mass, usually small next to fuel and power. For mixed gases count only the CO2 share. Argon is not a greenhouse gas. Welder electricity is Scope 2.",
   "url": "https://senseible.earth/answers/co2-welding-shielding-gas-scope-1"
@@ -3875,6 +3935,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can we use a state energy efficiency subsidy and a green loan for the same project?",
+  "text": "Often, yes, but read both terms. Many subsidies reimburse part of the cost and the loan funds the rest. Check whether the subsidy bars other public support, tell the bank about the subsidy, and count the energy saving once, not once for each scheme.",
+  "url": "https://senseible.earth/answers/combine-state-subsidy-and-green-loan"
+ },
+ {
+  "kind": "answer",
   "title": "What are the most common carbon accounting mistakes Indian SMEs make?",
   "text": "The most common mistakes are using kVAh as kWh, counting the same bill twice, putting GST-inclusive amounts into spend-based factors, mixing up billing date and consumption period, putting diesel generators and rented space in the wrong scope, and using a grid factor without naming its source and edition.",
   "url": "https://senseible.earth/answers/common-carbon-accounting-mistakes-smes"
@@ -3884,6 +3950,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Only a quarter of staff answered our commuting survey. Can we still estimate Category 7?",
   "text": "Yes. Use the answers you have to find average distance and mode by site or role, then scale up to total headcount and working days. State the response rate and assumptions. Improve it next year with a two-question form at attendance or payroll time.",
   "url": "https://senseible.earth/answers/commute-survey-low-response-what-to-do"
+ },
+ {
+  "kind": "answer",
+  "title": "Our staff commute survey collects personal details. What should we watch under India's data protection law?",
+  "text": "Collect as little as you need. For commuting emissions you need mode and distance, not names, phone numbers or home addresses. Tell staff why you ask and how the answers are used, keep the raw responses secure, and report only totals. India's Digital Personal Data Protection Act, 2023 expects this kind of care.",
+  "url": "https://senseible.earth/answers/commute-survey-personal-data-dpdp"
  },
  {
   "kind": "answer",
@@ -4154,6 +4226,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What are the emissions from delinting cottonseed?",
   "text": "Delinting strips short fibres from cottonseed, by machine or with acid. Machine delinting uses electricity at 0.710 kg CO2 per kWh. Acid delinting adds the bought acid, a Scope 3 material, plus heat for drying the seed. Divide by tonnes of seed processed.",
   "url": "https://senseible.earth/answers/cottonseed-delinting-emissions-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "Our courier offers a carbon neutral shipping option. Does it cut our emissions?",
+  "text": "Not in your inventory. The courier usually pays for carbon credits to match the delivery's estimated emissions. Your shipping emissions stay in Scope 3 at their gross value; the credits can be reported separately. Ask the courier which credits, how many and where they are retired.",
+  "url": "https://senseible.earth/answers/courier-carbon-neutral-shipping-option"
  },
  {
   "kind": "answer",
@@ -4595,6 +4673,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "We buy diesel in jerry cans for forklifts and small engines. How do we record it for carbon?",
+  "text": "Count it like any other diesel: litres bought times 2.68 kg CO2 per litre, in Scope 1. Keep the pump bill for each fill, or a cash memo with litres, date and amount. A simple can issue log shows which machine used it if a buyer asks.",
+  "url": "https://senseible.earth/answers/diesel-in-jerry-cans-carbon-records"
+ },
+ {
+  "kind": "answer",
   "title": "How do I convert diesel, LDO or furnace oil from kg to litres for emissions?",
   "text": "Divide the mass in kg by the density in kg per litre at 15 C: litres = kg / density. Take the density from the supplier's test certificate or invoice. Or skip the conversion and use a per-kg factor: about 3.19 kg CO2 per kg of diesel and 3.13 per kg of furnace oil, from IPCC 2006 defaults.",
   "url": "https://senseible.earth/answers/diesel-kg-to-litres-conversion"
@@ -4982,6 +5066,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a door hinge?",
   "text": "Weigh each hinge and multiply by the steel, stainless steel or brass supplier's figure, then add stamping, pin making, plating or polishing and assembly energy. Divide the plant's energy by hinges made.",
   "url": "https://senseible.earth/answers/door-hinge-carbon-footprint-per-hinge"
+ },
+ {
+  "kind": "answer",
+  "title": "We get diesel delivered to our site by a doorstep delivery service. Is their receipt enough evidence?",
+  "text": "Usually, if it shows the date, litres delivered, price and supplier. Keep the tax invoice and any dispenser printout. Match deliveries to your tank or DG log, so you can show the diesel went into your own equipment, and count it in Scope 1 at 2.68 kg CO2 per litre.",
+  "url": "https://senseible.earth/answers/doorstep-diesel-delivery-receipt-evidence"
  },
  {
   "kind": "answer",
@@ -5534,6 +5624,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can crushed rock spread on farms count as carbon removal for my company?",
   "text": "Enhanced weathering spreads crushed silicate rock, such as basalt, on fields so it reacts with CO2 over years. The removal is slow and hard to measure. Count it only through credits with measured results, and subtract crushing and transport emissions. Never deduct it from Scope 1, 2 or 3.",
   "url": "https://senseible.earth/answers/enhanced-rock-weathering-carbon-removal-claims"
+ },
+ {
+  "kind": "answer",
+  "title": "Does the annual environment statement to the pollution board cover our carbon emissions?",
+  "text": "No. The environment statement in Form V, filed under the Environment (Protection) Rules, covers water and raw material use, pollutants discharged and waste. It does not ask for greenhouse gas emissions. Its consumption figures can still be a useful cross check for your carbon inventory.",
+  "url": "https://senseible.earth/answers/environment-statement-form-v-and-carbon"
  },
  {
   "kind": "answer",
@@ -6539,6 +6635,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is a free online carbon calculator good enough for a buyer or bank?",
+  "text": "For a first rough number, yes. For a buyer or bank, usually not on its own. They want to see which bills went in, which factors were used and for what period. If the calculator gives you none of that, rebuild the figure from your records so you can show the working.",
+  "url": "https://senseible.earth/answers/free-online-carbon-calculator-good-enough"
+ },
+ {
+  "kind": "answer",
   "title": "My freight bill shows only the amount, not weight or distance. How do I estimate emissions?",
   "text": "First rebuild the missing numbers from other papers for the same shipment: weight from your sales or purchase invoice and packing list, distance from the e-way bill or the two pincodes. Then use tonne-km times a mode factor. Fall back to a spend-based estimate only when that fails, and label it as one.",
   "url": "https://senseible.earth/answers/freight-bill-has-no-weight-or-distance"
@@ -6776,6 +6878,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of an LPG gas stove?",
   "text": "Weigh the stainless steel or toughened glass top, brass or aluminium burners, valves and pipes, and multiply each by its supplier's figure. Add pressing, assembly and leak testing energy per unit and packing. Metals are usually most of the total.",
   "url": "https://senseible.earth/answers/gas-stove-carbon-footprint-per-unit"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a gate-to-gate carbon footprint mean?",
+  "text": "It covers only what happens inside your own plant: the energy and fuel used from the moment materials arrive to the moment the product leaves. It leaves out raw materials and delivery. Buyers often want cradle-to-gate, so say clearly which one you are sending.",
+  "url": "https://senseible.earth/answers/gate-to-gate-footprint-meaning"
  },
  {
   "kind": "answer",
@@ -7136,6 +7244,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What evidence does a lender want for a green loan to buy electric delivery vehicles?",
   "text": "A lender will want proof the vehicles are fully electric, a quotation and later the invoices, registration certificates showing electric fuel type, the fuel records of the vehicles they replace as a baseline, a charging plan, and a yearly report of kilometres, kWh and CO2 avoided. Clean transport is an eligible green loan category.",
   "url": "https://senseible.earth/answers/green-loan-electric-delivery-vehicles"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a biogas plant at our factory or farm be funded with a green loan?",
+  "text": "It can fit. The Green Loan Principles list renewable energy and waste-to-energy among eligible project types. The bank will want the feed and gas estimate, what fuel the gas replaces, and a way to report the result after commissioning, such as LPG or diesel no longer bought.",
+  "url": "https://senseible.earth/answers/green-loan-for-biogas-plant"
+ },
+ {
+  "kind": "answer",
+  "title": "Can an effluent treatment or ZLD upgrade be financed as a green loan?",
+  "text": "Often, yes. The Green Loan Principles include pollution prevention and sustainable water and wastewater management. Be clear about the energy side: ZLD systems use a lot of electricity, so show the extra kWh and emissions alongside the water benefit rather than leaving them out.",
+  "url": "https://senseible.earth/answers/green-loan-for-etp-or-zld-upgrade"
  },
  {
   "kind": "answer",
@@ -7613,6 +7733,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Our workshop and the owner's home share one electricity meter. What do we report?",
+  "text": "Report only the workshop's share. Fit a sub-meter if you can; until then, estimate the household share from appliances and hours, subtract it from the bill, and write down how you split it. Use the same method every year so the trend stays honest.",
+  "url": "https://senseible.earth/answers/home-and-workshop-on-one-electricity-meter"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate a homestay's carbon footprint per guest night?",
   "text": "Add electricity at 0.710 kg CO2 per kWh, LPG at 2.98 kg CO2 per kg, and diesel for any backup, then divide by guest nights. Separate the family's own use where meters allow, or allocate by rooms occupied by guests.",
   "url": "https://senseible.earth/answers/homestay-carbon-footprint-per-guest-night"
@@ -8036,6 +8162,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What should a carbon footprint claim on a product or website disclose so buyers trust it?",
   "text": "State the number with its unit and what it covers: kg CO2e per declared unit, the life cycle stages included, the standard followed, the year of data, the GWP set, what was excluded and whether it was independently reviewed. A bare figure with no boundary cannot be compared or checked, so a careful buyer will discount it.",
   "url": "https://senseible.earth/answers/how-to-disclose-a-product-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How should we file bills and invoices so a verifier can check our carbon figures?",
+  "text": "One folder per year, one subfolder per site, then one per source: electricity, diesel, LPG, gas, purchases. Name each file with date and supplier. Keep a sheet that lists every document and the figure it fed, so a checker can go from total to bill in a minute.",
+  "url": "https://senseible.earth/answers/how-to-file-carbon-evidence-documents"
  },
  {
   "kind": "answer",
@@ -10607,6 +10739,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do we estimate a motor's electricity use from its horsepower rating?",
+  "text": "Convert horsepower to kilowatts (1 hp is 0.746 kW), multiply by how loaded the motor runs, divide by its efficiency, then multiply by running hours. It is an estimate; a meter or the electricity bill beats it. Use it to split a bill between machines, not to replace the bill.",
+  "url": "https://senseible.earth/answers/motor-horsepower-to-kwh-estimate"
+ },
+ {
+  "kind": "answer",
   "title": "How does an NBFC calculate financed emissions for two-wheeler and commercial vehicle loans?",
   "text": "Under PCAF, a motor vehicle loan's financed emissions are the vehicle's annual emissions times an attribution factor: the outstanding loan amount divided by the vehicle's total value at origination. Vehicle emissions come from fuel used, or from distance and fuel economy, multiplied by a fuel factor. Most NBFC books start with estimated data.",
   "url": "https://senseible.earth/answers/motor-vehicle-loan-financed-emissions"
@@ -11309,6 +11447,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "A website offers a carbon or green certificate for a fee. Is it worth buying?",
+  "text": "Usually not. A buyer or lender values numbers that can be traced to your bills, and a verification statement from an accredited body. A certificate issued after a short online form, with no evidence checked, proves little. Check who issues it and whether anyone looked at your data.",
+  "url": "https://senseible.earth/answers/paid-online-green-certificate-worth-it"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of paint per litre?",
   "text": "Add the titanium dioxide, binder, extenders, solvents, additives and containers from supplier or database factors, then your mixing and dispersion electricity and any boiler or generator fuel. Divide by litres filled. Pigment and binder usually outweigh plant energy by a wide margin.",
   "url": "https://senseible.earth/answers/paint-carbon-footprint-per-litre"
@@ -11792,6 +11936,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of a plastic lunch box?",
   "text": "Weigh each box and lid, multiply the PP or other resin by the supplier's figure, and add seals and any steel containers inside. Add moulding and assembly energy, then divide the plant's energy by boxes made.",
   "url": "https://senseible.earth/answers/plastic-lunch-box-carbon-footprint-per-box"
+ },
+ {
+  "kind": "answer",
+  "title": "Can we call our brand plastic neutral?",
+  "text": "Only with care. Plastic neutral usually means you paid for plastic collected or recycled elsewhere to match what you put on the market. Say exactly that, name the scheme, and keep the proof. It says nothing about carbon, so never present it as a climate claim.",
+  "url": "https://senseible.earth/answers/plastic-neutral-claim-what-to-check"
  },
  {
   "kind": "answer",
@@ -12764,6 +12914,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "My US customer estimates my emissions with EPA spend-based factors. How do I give them a better figure?",
   "text": "Send your customer supplier-specific emissions: your Scope 1 and 2 for the year, allocated to the goods they bought from you, with the method stated. The GHG Protocol Scope 3 Standard prefers supplier-specific data over spend-based estimates, so a documented figure from your bills normally replaces the EPA factor in their inventory.",
   "url": "https://senseible.earth/answers/replace-us-epa-spend-factor-with-supplier-data"
+ },
+ {
+  "kind": "answer",
+  "title": "How should we reply by email to a buyer's first carbon data request?",
+  "text": "Confirm what they need, by when and for which period, then send what you have: the figure, the scopes, the method note and what is missing. If you need time, say when you will send it. A short, specific reply builds trust faster than a long promise.",
+  "url": "https://senseible.earth/answers/reply-to-buyer-carbon-request-by-email"
  },
  {
   "kind": "answer",
@@ -13805,6 +13961,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Should we report emissions for each site or only for the whole company?",
+  "text": "Build it by site, report the company total. Each site has its own bills, so a site-by-site record is easier to check and shows where to act. Buyers often want the figure for the site that makes their product; lenders and annual reports usually want the company total.",
+  "url": "https://senseible.earth/answers/site-level-or-company-level-carbon-report"
+ },
+ {
+  "kind": "answer",
   "title": "Is site-mixed concrete higher or lower carbon than ready-mix concrete?",
   "text": "Start with the cement per cubic metre in each mix, times the supplier's factor. Then add mixing energy: site mixer diesel at 2.68 kg CO2 per litre, and for ready mix the plant electricity and truck mixer diesel.",
   "url": "https://senseible.earth/answers/site-mixed-vs-ready-mix-concrete-carbon"
@@ -14726,6 +14888,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
   "text": "On India's grid average of 0.710 kg CO2 per kWh, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
   "url": "https://senseible.earth/answers/switch-delivery-fleet-to-electric-two-wheelers"
+ },
+ {
+  "kind": "answer",
+  "title": "We want to switch carbon accounting tools halfway through the year. How do we keep the numbers consistent?",
+  "text": "Export everything from the old tool first: inputs, factors and results by month. Load the same months into the new tool and compare totals before you stop using the old one. Explain any difference, note the date you switched, and use one set of factors for the whole year.",
+  "url": "https://senseible.earth/answers/switching-carbon-software-mid-year"
  },
  {
   "kind": "answer",
@@ -16187,6 +16355,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What does a bank check when it visits a site funded by a green loan?",
+  "text": "That the asset exists and runs as described: the solar plant, motor or boiler named in the loan, installed and in use. Expect requests for invoices, commissioning papers and meter readings. Have before and after energy bills ready to show the expected saving is happening.",
+  "url": "https://senseible.earth/answers/what-bank-checks-on-green-loan-site-visit"
+ },
+ {
+  "kind": "answer",
   "title": "What can I leave out of an LCA or product footprint, and what are the cut-off rules?",
   "text": "You can leave out small inputs only if you set cut-off criteria in your goal and scope, test them against mass, energy and environmental significance, and report what you excluded. ISO 14044 and ISO 14067 do not fix one percentage. An input that is light but carbon heavy may still have to stay in.",
   "url": "https://senseible.earth/answers/what-can-i-leave-out-of-an-lca"
@@ -16208,6 +16382,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What does a 42 percent emissions cut by 2030 mean for my factory in real numbers?",
   "text": "It means your Scope 1 and 2 emissions in 2030 must be 58 percent of your base year, in absolute tonnes, whatever happens to output. For a factory at 500 tonnes that is about 290 tonnes, a cut of about 210 tonnes, which is the same as about 296,000 kWh of grid power a year.",
   "url": "https://senseible.earth/answers/what-does-42-percent-by-2030-mean"
+ },
+ {
+  "kind": "answer",
+  "title": "How big is a tonne of CO2, in terms staff can picture?",
+  "text": "At room temperature and normal pressure a tonne of CO2 fills about 556 cubic metres, a cube a little over 8 metres on each side. For a factory, it is about 373 litres of diesel burned, or about 1,408 kWh of grid electricity at India's 0.710 kg per kWh.",
+  "url": "https://senseible.earth/answers/what-does-a-tonne-of-co2-look-like"
  },
  {
   "kind": "answer",

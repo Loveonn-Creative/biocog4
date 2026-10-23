@@ -1,0 +1,55 @@
+{
+  "slug": "carbon-methodology-note-for-buyers",
+  "q": "What should a one-page methodology note sent to buyers include?",
+  "title": "Methodology note for buyers",
+  "short": "The boundary, the period, the scopes covered, the data sources, the factors and their versions, and what was estimated. One page is enough. It lets a buyer understand your figure without a call, and it keeps your answers the same from one buyer to the next.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and suppliers sharing carbon data",
+  "sections": [
+    {
+      "h": "Sections",
+      "ol": [
+        "Company, sites and control approach.",
+        "Reporting period.",
+        "Scopes and Scope 3 categories included.",
+        "Data sources: bills, invoices, meters.",
+        "Emission factors with source and version.",
+        "Estimates and how they were made.",
+        "Changes since last year."
+      ]
+    },
+    {
+      "h": "Keep it current",
+      "p": [
+        "Update it each year and date it, so a buyer knows which version applies."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "ISO 14064-1 report contents",
+      "to": "/answers/what-goes-in-an-iso-14064-1-ghg-report"
+    },
+    {
+      "label": "Share emissions without invoices",
+      "to": "/answers/share-emissions-with-buyer-without-invoices"
+    },
+    {
+      "label": "AR5 vs AR6 GWP",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

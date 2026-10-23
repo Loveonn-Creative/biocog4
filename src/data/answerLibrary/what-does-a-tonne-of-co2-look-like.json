@@ -1,0 +1,55 @@
+{
+  "slug": "what-does-a-tonne-of-co2-look-like",
+  "q": "How big is a tonne of CO2, in terms staff can picture?",
+  "title": "What a tonne of CO2 looks like",
+  "short": "At room temperature and normal pressure a tonne of CO2 fills about 556 cubic metres, a cube a little over 8 metres on each side. For a factory, it is about 373 litres of diesel burned, or about 1,408 kWh of grid electricity at India's 0.710 kg per kWh.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Teams explaining carbon figures to staff",
+  "sections": [
+    {
+      "h": "Ways to picture it",
+      "ul": [
+        "Volume: about 556 cubic metres of gas at 25°C.",
+        "Diesel: 1,000 ÷ 2.68 = about 373 litres.",
+        "Grid electricity: 1,000 ÷ 0.710 = about 1,408 kWh."
+      ]
+    },
+    {
+      "h": "Use your own numbers",
+      "p": [
+        "Staff remember a figure tied to their work, such as how many days of DG running make a tonne, better than a general comparison."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Tree equivalents",
+      "to": "/answers/tree-equivalents-in-carbon-communication"
+    },
+    {
+      "label": "kg vs tonnes mistakes",
+      "to": "/answers/emissions-form-unit-mistakes-kg-tonnes-co2e"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "example": {
+    "title": "How the volume is worked out",
+    "lines": [
+      "CO2 density at 25°C and 1 atm: about 1.80 kg per cubic metre",
+      "1,000 ÷ 1.80 = about 556 cubic metres",
+      "Cube root of 556: about 8.2 metres a side"
+    ]
+  },
+  "reviewed": "2026-10-23"
+}

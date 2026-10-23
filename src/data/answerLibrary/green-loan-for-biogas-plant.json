@@ -1,0 +1,51 @@
+{
+  "slug": "green-loan-for-biogas-plant",
+  "q": "Can a biogas plant at our factory or farm be funded with a green loan?",
+  "title": "Green loan for a biogas plant",
+  "short": "It can fit. The Green Loan Principles list renewable energy and waste-to-energy among eligible project types. The bank will want the feed and gas estimate, what fuel the gas replaces, and a way to report the result after commissioning, such as LPG or diesel no longer bought.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Dairies, food processors and farms planning biogas",
+  "sections": [
+    {
+      "h": "What to prepare",
+      "ul": [
+        "Feed quantity per day and expected gas output, from the supplier or a DPR.",
+        "Current fuel bills for what the gas will replace.",
+        "Digestate handling plan."
+      ]
+    },
+    {
+      "h": "Reporting afterwards",
+      "p": [
+        "Fuel bills before and after, with gas meter readings, show the saving. Keep methane leaks in mind: an unmanaged leak can cancel part of the benefit."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into a dated, fingerprinted emissions record a lender can trace line by line. The lender makes its own credit decision.",
+  "links": [
+    {
+      "label": "Green Loan Principles",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "Dairy biogas carbon credits",
+      "to": "/answers/dairy-biogas-plant-carbon-credits"
+    },
+    {
+      "label": "Food waste: landfill, compost, biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Green Loan Principles (lma.eu.com)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "IPCC AR6 Working Group I (global warming potentials)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
