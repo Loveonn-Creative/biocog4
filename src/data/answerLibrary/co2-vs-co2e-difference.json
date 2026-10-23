@@ -1,0 +1,51 @@
+{
+  "slug": "co2-vs-co2e-difference",
+  "q": "What is the difference between CO2 and CO2e?",
+  "title": "CO2 vs CO2e",
+  "short": "CO2 is carbon dioxide alone. CO2e, carbon dioxide equivalent, adds other greenhouse gases converted by their warming effect. One kilogram of fossil methane counts as 29.8 kg CO2e under IPCC AR6, and one kilogram of nitrous oxide as 273 kg. For most fuel burning the two are close.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Anyone reading or filling in a carbon form",
+  "sections": [
+    {
+      "h": "When it matters",
+      "ul": [
+        "Fuel and electricity: CO2e is only slightly higher than CO2.",
+        "Refrigerant leaks, livestock, wastewater and landfill: methane, nitrous oxide or HFCs dominate.",
+        "Biomass fuels: CH4 and N2O matter because the CO2 is reported separately."
+      ]
+    },
+    {
+      "h": "Label it right",
+      "p": [
+        "Write CO2 when your factor covers CO2 only, such as the CEA grid factor, and CO2e when other gases are included."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Is the CEA grid factor CO2 or CO2e",
+      "to": "/answers/is-cea-grid-factor-co2-or-co2e"
+    },
+    {
+      "label": "CO2-only or CO2e fuel factors",
+      "to": "/answers/fuel-emission-factors-co2-only-or-co2e"
+    },
+    {
+      "label": "AR5 vs AR6 GWP",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I (global warming potentials)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

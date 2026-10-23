@@ -1,0 +1,49 @@
+{
+  "slug": "carbon-target-in-staff-incentives",
+  "q": "Should we link staff incentives to a carbon target?",
+  "title": "Carbon targets in staff incentives",
+  "short": "Only once the figure is reliable. Reward what a team controls, such as diesel per tonne or kWh per piece, measured from bills and meters. Avoid rewarding a total that can fall because output fell, and check the data before paying out.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Plant heads and owners setting team goals",
+  "sections": [
+    {
+      "h": "Good incentive measures",
+      "ul": [
+        "Energy or fuel per unit of output.",
+        "Compressed air leaks fixed per month.",
+        "Share of bills recorded on time."
+      ]
+    },
+    {
+      "h": "Risks",
+      "ul": [
+        "Totals that drop when production drops.",
+        "Estimates replaced by guesses to hit a number.",
+        "Paying before a second person checks the data."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Monthly review agenda",
+      "to": "/answers/monthly-carbon-review-meeting-agenda"
+    },
+    {
+      "label": "Four-eyes check",
+      "to": "/answers/four-eyes-check-on-carbon-calculations"
+    },
+    {
+      "label": "Which intensity metric",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

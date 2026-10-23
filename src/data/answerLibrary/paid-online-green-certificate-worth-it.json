@@ -1,0 +1,52 @@
+{
+  "slug": "paid-online-green-certificate-worth-it",
+  "q": "A website offers a carbon or green certificate for a fee. Is it worth buying?",
+  "title": "Paid online green certificates",
+  "short": "Usually not. A buyer or lender values numbers that can be traced to your bills, and a verification statement from an accredited body. A certificate issued after a short online form, with no evidence checked, proves little. Check who issues it and whether anyone looked at your data.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs approached with paid certificates",
+  "sections": [
+    {
+      "h": "Questions to ask before paying",
+      "ul": [
+        "Which standard does it follow, for example ISO 14064-1?",
+        "Is the issuer accredited to verify under ISO 14065?",
+        "Will they look at your bills and invoices, or only a form?",
+        "Will the result name your figures, boundary and period?"
+      ]
+    },
+    {
+      "h": "What holds up instead",
+      "p": [
+        "An inventory built from your own records, and if a buyer asks, a verification statement from an accredited verifier."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Buyer asks for an ISO 14064 certificate",
+      "to": "/answers/buyer-asks-for-iso-14064-certificate"
+    },
+    {
+      "label": "Who can verify in India",
+      "to": "/answers/who-can-verify-iso-14064-1-inventory-india"
+    },
+    {
+      "label": "Choosing a verifier",
+      "to": "/answers/how-to-choose-a-ghg-verifier-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3 and ISO 14065 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

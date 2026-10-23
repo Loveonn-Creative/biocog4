@@ -1,0 +1,58 @@
+{
+  "slug": "home-and-workshop-on-one-electricity-meter",
+  "q": "Our workshop and the owner's home share one electricity meter. What do we report?",
+  "title": "Home and workshop on one meter",
+  "short": "Report only the workshop's share. Fit a sub-meter if you can; until then, estimate the household share from appliances and hours, subtract it from the bill, and write down how you split it. Use the same method every year so the trend stays honest.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Small workshops run from a family property",
+  "sections": [
+    {
+      "h": "Ways to split",
+      "ul": [
+        "Sub-meter on the workshop circuit: best evidence.",
+        "Appliance list with wattage and daily hours for the house.",
+        "Readings on a holiday when the workshop is shut, as a household baseline."
+      ]
+    },
+    {
+      "h": "What a reader expects",
+      "p": [
+        "The full bill, the split method and the share you kept. The household part is not business emissions, so leave it out rather than guessing high."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Sub-metered rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Personal and business fuel split",
+      "to": "/answers/personal-and-business-vehicle-fuel-split"
+    },
+    {
+      "label": "Multiple connections",
+      "to": "/answers/multiple-electricity-connections-one-company"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "example": {
+    "title": "Worked example (illustrative)",
+    "lines": [
+      "Annual bill: 6,000 kWh; household estimate: 1,800 kWh",
+      "Workshop: 4,200 kWh × 0.710 = 2,982 kg CO2, Scope 2"
+    ]
+  },
+  "reviewed": "2026-10-23"
+}

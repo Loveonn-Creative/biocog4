@@ -1,0 +1,53 @@
+{
+  "slug": "carbon-records-lost-in-fire-or-flood",
+  "q": "Our bills and invoices were lost in a fire or flood. Can we still report emissions?",
+  "title": "Records lost in a fire or flood",
+  "short": "Yes. Rebuild what you can: duplicate bills from the discom portal, invoice copies from suppliers, and your GST purchase records. Estimate the gaps from months you still have, mark them as estimates, and note the event and date so a verifier understands the gap.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Businesses recovering from a fire, flood or theft",
+  "sections": [
+    {
+      "h": "Where copies live",
+      "ul": [
+        "Discom consumer portal: past bills.",
+        "Suppliers: copies of fuel and material invoices.",
+        "GST portal: your purchase register, to list what you bought."
+      ]
+    },
+    {
+      "h": "Filling the gaps",
+      "p": [
+        "Use the average of comparable months, adjusted for production if it changed. Label each estimate and keep the method on file."
+      ]
+    },
+    {
+      "h": "For next time",
+      "p": [
+        "Keep a digital copy of every bill outside the premises."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "GSTR-2B for carbon accounting",
+      "to": "/answers/can-gstr-2b-be-used-for-carbon-accounting"
+    },
+    {
+      "label": "Conservative estimates",
+      "to": "/answers/should-carbon-estimates-be-conservative"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

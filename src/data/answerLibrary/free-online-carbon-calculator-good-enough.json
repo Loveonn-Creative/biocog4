@@ -1,0 +1,59 @@
+{
+  "slug": "free-online-carbon-calculator-good-enough",
+  "q": "Is a free online carbon calculator good enough for a buyer or bank?",
+  "title": "Is a free carbon calculator enough?",
+  "short": "For a first rough number, yes. For a buyer or bank, usually not on its own. They want to see which bills went in, which factors were used and for what period. If the calculator gives you none of that, rebuild the figure from your records so you can show the working.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "MSME owners answering their first carbon request",
+  "sections": [
+    {
+      "h": "What a reader will ask",
+      "ul": [
+        "Which months and sites are included?",
+        "Which emission factors, and from where?",
+        "Can you show the bills behind the total?"
+      ]
+    },
+    {
+      "h": "Where free tools fall short",
+      "ul": [
+        "Averages in place of your actual consumption.",
+        "No record of inputs you can show later.",
+        "Factors that are not Indian or not dated."
+      ]
+    },
+    {
+      "h": "A fair use",
+      "p": [
+        "Use a quick calculator to see which source is biggest, then build the reported figure from bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Excel or software",
+      "to": "/answers/excel-or-carbon-accounting-software"
+    },
+    {
+      "label": "How to spot a wrong factor",
+      "to": "/answers/how-to-spot-a-wrong-emission-factor"
+    },
+    {
+      "label": "Two tools, different numbers",
+      "to": "/answers/why-two-tools-give-different-scope-3-numbers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "doorstep-diesel-delivery-receipt-evidence",
+  "q": "We get diesel delivered to our site by a doorstep delivery service. Is their receipt enough evidence?",
+  "title": "Doorstep diesel delivery receipts",
+  "short": "Usually, if it shows the date, litres delivered, price and supplier. Keep the tax invoice and any dispenser printout. Match deliveries to your tank or DG log, so you can show the diesel went into your own equipment, and count it in Scope 1 at 2.68 kg CO2 per litre.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and sites that receive diesel by bowser",
+  "sections": [
+    {
+      "h": "What the receipt should show",
+      "ul": [
+        "Date and delivery address.",
+        "Litres delivered and the meter reading.",
+        "Supplier name and GST details."
+      ]
+    },
+    {
+      "h": "Match it",
+      "p": [
+        "Tie each delivery to your tank dip or DG log. If you resell or pass diesel to a contractor, note it separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Diesel tank issue register",
+      "to": "/answers/own-diesel-tank-issue-register-emissions"
+    },
+    {
+      "label": "Bulk diesel invoice in kilolitres",
+      "to": "/answers/bulk-diesel-invoice-kilolitres-15c"
+    },
+    {
+      "label": "Fuel bought vs burned",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

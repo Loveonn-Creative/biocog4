@@ -1,0 +1,57 @@
+{
+  "slug": "annual-calendar-of-carbon-tasks",
+  "q": "What carbon tasks should a small company do each month and quarter?",
+  "title": "A year of carbon tasks",
+  "short": "Monthly: file every electricity and fuel bill and enter it. Quarterly: check totals against production and fix gaps. Yearly: close the inventory, have a second person check it, then answer buyer and bank requests from that one figure. Small, regular steps beat a rush at year end.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Owners and accountants running carbon records",
+  "sections": [
+    {
+      "h": "Monthly",
+      "ul": [
+        "Collect electricity, diesel, LPG and gas bills.",
+        "Enter them the same week.",
+        "Note any estimate."
+      ]
+    },
+    {
+      "h": "Quarterly",
+      "ul": [
+        "Compare emissions with output.",
+        "Chase missing bills.",
+        "Review big changes."
+      ]
+    },
+    {
+      "h": "Yearly",
+      "ul": [
+        "Close the year and freeze the figures.",
+        "Second person checks.",
+        "Update the methodology note and share the result."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Monthly review agenda",
+      "to": "/answers/monthly-carbon-review-meeting-agenda"
+    },
+    {
+      "label": "Monthly or yearly tracking",
+      "to": "/answers/track-carbon-monthly-or-yearly-msme"
+    },
+    {
+      "label": "Financial or calendar year",
+      "to": "/answers/carbon-footprint-financial-or-calendar-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

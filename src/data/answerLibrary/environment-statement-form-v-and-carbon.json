@@ -1,0 +1,51 @@
+{
+  "slug": "environment-statement-form-v-and-carbon",
+  "q": "Does the annual environment statement to the pollution board cover our carbon emissions?",
+  "title": "Environment statement and carbon",
+  "short": "No. The environment statement in Form V, filed under the Environment (Protection) Rules, covers water and raw material use, pollutants discharged and waste. It does not ask for greenhouse gas emissions. Its consumption figures can still be a useful cross check for your carbon inventory.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factories that file an annual environment statement",
+  "sections": [
+    {
+      "h": "What it shares with a carbon inventory",
+      "ul": [
+        "Raw material and production quantities.",
+        "Fuel used where it is reported for air emissions.",
+        "The same site boundary."
+      ]
+    },
+    {
+      "h": "What it does not cover",
+      "p": [
+        "Scope 1, 2 or 3 emissions. These come from your fuel, electricity and purchase records under the GHG Protocol."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills (CEA grid factor 0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) and diesel, LPG and gas invoices (IPCC 2006 defaults) into a dated, fingerprinted Scope 1 and 2 record for each site, and labels estimates as estimates.",
+  "links": [
+    {
+      "label": "Red category vs high carbon",
+      "to": "/answers/cpcb-red-category-vs-high-carbon-emitter"
+    },
+    {
+      "label": "Annual report disclosure",
+      "to": "/answers/should-msme-publish-emissions-in-annual-report"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Environment (Protection) Rules, 1986, Rule 14 and Form V (moef.gov.in)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Central Pollution Control Board (cpcb.nic.in)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

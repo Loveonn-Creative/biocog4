@@ -1,0 +1,53 @@
+{
+  "slug": "reply-to-buyer-carbon-request-by-email",
+  "q": "How should we reply by email to a buyer's first carbon data request?",
+  "title": "Replying to a buyer carbon email",
+  "short": "Confirm what they need, by when and for which period, then send what you have: the figure, the scopes, the method note and what is missing. If you need time, say when you will send it. A short, specific reply builds trust faster than a long promise.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Sales and export teams",
+  "sections": [
+    {
+      "h": "Ask first",
+      "ul": [
+        "Which period and which sites?",
+        "Company total or per product?",
+        "Their template, or yours?"
+      ]
+    },
+    {
+      "h": "Then send",
+      "ul": [
+        "Emissions by scope with the year.",
+        "A one-page methodology note.",
+        "What is estimated or missing, and when it will be ready."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Buyer asks before first order",
+      "to": "/answers/buyer-asks-carbon-data-before-first-order"
+    },
+    {
+      "label": "Product footprint request",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Sales team answering carbon questions",
+      "to": "/answers/sales-team-answering-carbon-questions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

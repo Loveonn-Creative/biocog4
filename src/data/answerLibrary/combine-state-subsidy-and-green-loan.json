@@ -1,0 +1,51 @@
+{
+  "slug": "combine-state-subsidy-and-green-loan",
+  "q": "Can we use a state energy efficiency subsidy and a green loan for the same project?",
+  "title": "Subsidy and green loan together",
+  "short": "Often, yes, but read both terms. Many subsidies reimburse part of the cost and the loan funds the rest. Check whether the subsidy bars other public support, tell the bank about the subsidy, and count the energy saving once, not once for each scheme.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs funding energy efficiency projects",
+  "sections": [
+    {
+      "h": "Check before applying",
+      "ul": [
+        "Does the subsidy scheme allow bank finance for the balance?",
+        "Does the bank deduct the subsidy from the loan amount?",
+        "Who receives the subsidy and when?"
+      ]
+    },
+    {
+      "h": "Report once",
+      "p": [
+        "The same kWh saving supports both, so report one figure and use it for both."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into a dated, fingerprinted emissions record a lender can trace line by line. The lender makes its own credit decision.",
+  "links": [
+    {
+      "label": "State subsidies for energy efficiency",
+      "to": "/answers/state-subsidies-msme-energy-efficiency"
+    },
+    {
+      "label": "Energy efficiency DPR",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    },
+    {
+      "label": "Udyam registration for a bank loan",
+      "to": "/answers/udyam-registration-needed-for-bank-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Green Loan Principles (lma.eu.com)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "Bureau of Energy Efficiency (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

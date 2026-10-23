@@ -1,0 +1,49 @@
+{
+  "slug": "switching-carbon-software-mid-year",
+  "q": "We want to switch carbon accounting tools halfway through the year. How do we keep the numbers consistent?",
+  "title": "Switching carbon tools mid-year",
+  "short": "Export everything from the old tool first: inputs, factors and results by month. Load the same months into the new tool and compare totals before you stop using the old one. Explain any difference, note the date you switched, and use one set of factors for the whole year.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Teams changing carbon software or moving off spreadsheets",
+  "sections": [
+    {
+      "h": "Before you switch",
+      "ul": [
+        "Download raw inputs, not only totals.",
+        "Note the factor versions used.",
+        "Keep the old reports as files."
+      ]
+    },
+    {
+      "h": "After you switch",
+      "ul": [
+        "Rerun at least two past months in the new tool.",
+        "Record any difference and its cause.",
+        "State the switch in your methodology note."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Excel or software",
+      "to": "/answers/excel-or-carbon-accounting-software"
+    },
+    {
+      "label": "Restate after an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "Data governance policy",
+      "to": "/answers/carbon-data-governance-policy-what-to-include"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

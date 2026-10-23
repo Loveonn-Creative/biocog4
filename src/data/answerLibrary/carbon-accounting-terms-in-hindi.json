@@ -1,0 +1,49 @@
+{
+  "slug": "carbon-accounting-terms-in-hindi",
+  "q": "How do we explain Scope 1, 2 and 3 to our staff in Hindi?",
+  "title": "Carbon terms explained in Hindi",
+  "short": "Keep it to what staff handle. Scope 1 is ईंधन जो हम खुद जलाते हैं (fuel we burn ourselves), Scope 2 is खरीदी गई बिजली (electricity we buy), and Scope 3 is बाकी सप्लाई चेन (the rest of the supply chain). Tie each term to a bill they already file.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Owners training accounts and stores staff",
+  "sections": [
+    {
+      "h": "Simple Hindi terms",
+      "ul": [
+        "उत्सर्जन (utsarjan): emissions.",
+        "Scope 1: डीज़ल, पेट्रोल, LPG, कोयला जो हमारी मशीनों में जलता है.",
+        "Scope 2: बिजली का बिल.",
+        "Scope 3: खरीदा गया माल, ढुलाई, कर्मचारियों का आना जाना.",
+        "उत्सर्जन कारक (emission factor): हर लीटर या यूनिट पर कितना CO2."
+      ]
+    },
+    {
+      "h": "Link each term to a document",
+      "p": [
+        "Diesel bills for Scope 1, the electricity bill for Scope 2, purchase and freight invoices for Scope 3. Staff then know what to keep."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Invoice in a regional language",
+      "to": "/answers/invoice-in-regional-language-carbon-records"
+    },
+    {
+      "label": "Sales team answering carbon questions",
+      "to": "/answers/sales-team-answering-carbon-questions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

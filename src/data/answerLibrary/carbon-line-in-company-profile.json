@@ -1,0 +1,49 @@
+{
+  "slug": "carbon-line-in-company-profile",
+  "q": "What should we say about carbon in our company profile or pitch deck?",
+  "title": "Carbon line in a company profile",
+  "short": "One or two sentences you can prove: what you measure, for which year, and one real action. For example, Scope 1 and 2 measured from our bills for 2025-26, and a figure you can share on request. Leave out green, eco friendly or neutral unless you can back them up.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs writing a profile for buyers or investors",
+  "sections": [
+    {
+      "h": "Good lines",
+      "ul": [
+        "We measure Scope 1 and 2 from our electricity and fuel bills each year.",
+        "Our 2025-26 footprint and method are available on request.",
+        "We cut diesel use by fitting a new compressor in 2025."
+      ]
+    },
+    {
+      "h": "Lines to avoid",
+      "ul": [
+        "Eco friendly or green, with no detail.",
+        "Carbon neutral, without the offset evidence.",
+        "Targets nobody has agreed internally."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "One-page climate policy",
+      "to": "/answers/one-page-climate-policy-for-msme"
+    },
+    {
+      "label": "Sales team answering carbon questions",
+      "to": "/answers/sales-team-answering-carbon-questions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

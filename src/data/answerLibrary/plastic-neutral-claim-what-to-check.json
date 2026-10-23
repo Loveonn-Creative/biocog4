@@ -1,0 +1,47 @@
+{
+  "slug": "plastic-neutral-claim-what-to-check",
+  "q": "Can we call our brand plastic neutral?",
+  "title": "Is a plastic neutral claim safe?",
+  "short": "Only with care. Plastic neutral usually means you paid for plastic collected or recycled elsewhere to match what you put on the market. Say exactly that, name the scheme, and keep the proof. It says nothing about carbon, so never present it as a climate claim.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Consumer brands and packaging users",
+  "sections": [
+    {
+      "h": "What the claim rests on",
+      "ul": [
+        "Tonnes of plastic you placed on the market.",
+        "Tonnes collected or recycled for you, with documents.",
+        "Who checked the collection."
+      ]
+    },
+    {
+      "h": "Keep it separate",
+      "p": [
+        "Plastic credits and carbon credits measure different things. A plastic claim does not lower your emissions, and India's greenwashing guidelines expect claims to be specific and backed by evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure behind a claim traceable to the invoices and bills it came from, so a reader can check the number rather than take the wording on trust.",
+  "links": [
+    {
+      "label": "Plastic credits vs carbon credits",
+      "to": "/answers/plastic-credits-vs-carbon-credits-epr"
+    },
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Biodegradable packaging claims",
+      "to": "/answers/biodegradable-packaging-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021, Environmental labels and declarations: self-declared claims (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

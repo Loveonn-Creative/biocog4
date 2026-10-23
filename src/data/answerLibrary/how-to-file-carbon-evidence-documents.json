@@ -1,0 +1,51 @@
+{
+  "slug": "how-to-file-carbon-evidence-documents",
+  "q": "How should we file bills and invoices so a verifier can check our carbon figures?",
+  "title": "Filing carbon evidence documents",
+  "short": "One folder per year, one subfolder per site, then one per source: electricity, diesel, LPG, gas, purchases. Name each file with date and supplier. Keep a sheet that lists every document and the figure it fed, so a checker can go from total to bill in a minute.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accounts teams preparing for verification",
+  "sections": [
+    {
+      "h": "A simple structure",
+      "ul": [
+        "2026-27 / Plant 1 / Electricity / 2026-04 discom bill.pdf",
+        "2026-27 / Plant 1 / Diesel / 2026-04-12 pump name.pdf",
+        "2026-27 / Calculations / inventory and method note."
+      ]
+    },
+    {
+      "h": "The index sheet",
+      "p": [
+        "One row per document: date, source, quantity, unit and the emissions it produced. This is what a verifier samples from."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps every bill, invoice and calculation in one dated, fingerprinted record, so the evidence behind each figure can be found again by anyone who checks it.",
+  "links": [
+    {
+      "label": "Verifier site visit",
+      "to": "/answers/verifier-site-visit-what-to-prepare"
+    },
+    {
+      "label": "How long to keep records",
+      "to": "/answers/how-long-to-keep-carbon-accounting-records"
+    },
+    {
+      "label": "Forwarded invoice photos",
+      "to": "/answers/whatsapp-forwarded-invoice-photo-carbon-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1 (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

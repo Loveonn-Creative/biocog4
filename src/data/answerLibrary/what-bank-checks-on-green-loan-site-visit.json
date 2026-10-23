@@ -1,0 +1,48 @@
+{
+  "slug": "what-bank-checks-on-green-loan-site-visit",
+  "q": "What does a bank check when it visits a site funded by a green loan?",
+  "title": "Bank site visit on a green loan",
+  "short": "That the asset exists and runs as described: the solar plant, motor or boiler named in the loan, installed and in use. Expect requests for invoices, commissioning papers and meter readings. Have before and after energy bills ready to show the expected saving is happening.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Borrowers with a green or energy efficiency loan",
+  "sections": [
+    {
+      "h": "Have ready",
+      "ul": [
+        "Equipment invoices and serial numbers.",
+        "Commissioning report.",
+        "Meter or generation readings since start-up.",
+        "Energy bills before and after."
+      ]
+    },
+    {
+      "h": "If results are lower than planned",
+      "p": [
+        "Say so and explain why, such as lower output or downtime. A clear explanation is better than a figure that does not match the bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns invoices and bills into a dated, fingerprinted emissions record a lender can trace line by line. The lender makes its own credit decision.",
+  "links": [
+    {
+      "label": "Green loan reporting",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    },
+    {
+      "label": "Energy efficiency DPR",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    },
+    {
+      "label": "Green Loan Principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Green Loan Principles (lma.eu.com)",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
