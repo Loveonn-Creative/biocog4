@@ -138,10 +138,10 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
 
       {/* Act */}
       <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <div className="rounded-3xl bg-foreground text-background p-6 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="rounded-3xl bg-primary text-primary-foreground p-6 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.act.title", "Start with one bill.")}</h2>
-            <p className="mt-2 text-background/70">{t("home.act.body", "Your first carbon report is free, with every evidence tied to the bill.")}</p>
+            <p className="mt-2 text-primary-foreground/85">{t("home.act.body", "Your first carbon report is free, with every evidence tied to the bill.")}</p>
           </div>
           <button onClick={onUpload} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
             <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}

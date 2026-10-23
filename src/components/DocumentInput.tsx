@@ -44,6 +44,10 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
     <div className="flex flex-col items-center gap-3">
       <div
         onClick={handleClick}
+        role="button"
+        tabIndex={0}
+        aria-label="Upload a document"
+        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(); } }}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
@@ -54,10 +58,11 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
           transition-all duration-300 ease-out
           ${isDragging 
             ? "scale-105 bg-primary/5 border-primary/40" 
-            : "bg-background border-border/60 hover:border-primary/30 hover:bg-secondary/30"
+            : "bg-primary/[0.06] border-primary/45 hover:border-primary/70 hover:bg-primary/10"
           }
           ${isProcessing ? "animate-pulse" : ""}
           border-2 border-dashed
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background
           group
         `}
       >
@@ -72,13 +77,13 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
         <Upload 
           className={`
             w-8 h-8 sm:w-10 sm:h-10 transition-all duration-300
-            ${isDragging ? "text-primary" : "text-muted-foreground group-hover:text-primary"}
+            text-primary
           `}
           strokeWidth={1.5}
         />
       </div>
       
-      <span className="text-sm text-muted-foreground font-medium tracking-wide">
+      <span className="text-sm text-foreground font-medium tracking-wide">
         Document
       </span>
     </div>
