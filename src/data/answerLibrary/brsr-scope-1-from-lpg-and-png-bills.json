@@ -1,0 +1,67 @@
+{
+  "slug": "brsr-scope-1-from-lpg-and-png-bills",
+  "q": "How do I work out BRSR Scope 1 from LPG and PNG bills?",
+  "title": "BRSR Scope 1 from LPG and PNG",
+  "short": "Multiply LPG kilograms by 2.98 kg CO2 per kg, and PNG standard cubic metres by about 2.05 kg CO2 per scm, or use the calorific value printed on the gas bill. Forty 19 kg cylinders are 760 kg of LPG, or about 2.26 t CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories using LPG or piped natural gas",
+  "sections": [
+    {
+      "h": "LPG",
+      "ul": [
+        "Add up kilograms from invoices: cylinders times net weight, or bulk delivery weight.",
+        "Factor: 2.98 kg CO2 per kg, from IPCC 2006 defaults (63.1 t CO2 per TJ at 47.3 TJ per thousand tonnes)."
+      ]
+    },
+    {
+      "h": "PNG",
+      "ul": [
+        "Take standard cubic metres from monthly bills.",
+        "If the bill states calorific value, convert scm to GJ and multiply by the IPCC natural gas default, 56.1 kg CO2 per GJ.",
+        "Without it, use about 2.05 kg CO2 per scm and note that it is a default."
+      ]
+    },
+    {
+      "h": "For the energy field",
+      "p": [
+        "The same quantities go into total energy in GJ. LPG is about 0.0473 GJ per kg from the IPCC net calorific value."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "LPG: 40 cylinders x 19 kg = 760 kg x 2.98 = 2,264.8 kg CO2.",
+      "PNG: 10,000 scm x 2.05 = 20,500 kg CO2.",
+      "Scope 1 from gas = about 22.8 t CO2."
+    ],
+    "note": "Illustrative quantities."
+  },
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "CO2 from a 19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "LPG or PNG per unit of heat",
+      "to": "/answers/lpg-or-png-lower-co2-per-unit-of-heat"
+    },
+    {
+      "label": "Energy intensity in BRSR",
+      "to": "/answers/brsr-energy-intensity-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

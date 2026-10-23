@@ -1,0 +1,59 @@
+{
+  "slug": "combine-plants-into-one-brsr-figure",
+  "q": "How do we combine several plants' bills into one BRSR figure?",
+  "title": "Combine several plants for BRSR",
+  "short": "Build one sheet per plant for the same April to March period, using the same factors, then add them up. Remove anything counted twice, such as power one plant sells to another, and list the plants included so the total matches the BRSR boundary.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies with more than one site",
+  "sections": [
+    {
+      "h": "Per plant",
+      "ul": [
+        "Electricity kWh from each connection's bills.",
+        "Fuel quantities from each plant's invoices.",
+        "Water, waste and production, each with its own records."
+      ]
+    },
+    {
+      "h": "When adding up",
+      "ul": [
+        "Use one factor source per fuel across all plants.",
+        "Remove internal transfers: power or steam sold between your own plants is counted once, where it is generated.",
+        "Note any plant opened, closed or sold during the year and the months it covers."
+      ]
+    },
+    {
+      "h": "Keep the trail",
+      "p": [
+        "The company total should trace back to each plant sheet, and each plant line to a bill. That is what an assessor will sample."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Several plants or GSTINs in Senseible",
+      "to": "/answers/senseible-multiple-plants-or-gstins"
+    },
+    {
+      "label": "Energy intensity in BRSR",
+      "to": "/answers/brsr-energy-intensity-calculation"
+    },
+    {
+      "label": "Fleet fuel card statements",
+      "to": "/answers/fleet-fuel-card-statement-as-carbon-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

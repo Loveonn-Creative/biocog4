@@ -1,0 +1,70 @@
+{
+  "slug": "brsr-principle-6-worked-example-from-bills",
+  "q": "How do I work out BRSR environment energy and emissions from a year of bills?",
+  "title": "BRSR energy and emissions from bills",
+  "short": "Total each fuel and electricity for April to March, multiply by its emission factor for Scope 1 and 2, and by its energy content for GJ. 480,000 kWh, 12,000 litres of diesel and 3,000 kg of LPG give about 382 t CO2 and about 2,301 GJ.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs and listed companies filling BRSR environment fields",
+  "sections": [
+    {
+      "h": "Steps",
+      "ol": [
+        "Add up kWh from twelve electricity bills.",
+        "Add up litres and kilograms from fuel invoices.",
+        "Emissions: grid kWh x 0.710 kg CO2 per kWh (CEA); diesel litres x 2.68; LPG kg x 2.98.",
+        "Energy: kWh x 0.0036 GJ; diesel litres x about 0.0359 GJ; LPG kg x 0.0473 GJ.",
+        "Report Scope 1, Scope 2, total energy and the renewable share separately."
+      ]
+    },
+    {
+      "h": "Check before filing",
+      "ul": [
+        "Twelve months present for every connection.",
+        "Diesel used in generators counted as Scope 1, not Scope 2.",
+        "Units shown on every figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Grid: 480,000 kWh x 0.710 = 340.8 t CO2 (Scope 2); 480,000 x 0.0036 = 1,728 GJ.",
+      "Diesel: 12,000 L x 2.68 = 32.16 t CO2; 12,000 x 0.0359 = 430.8 GJ.",
+      "LPG: 3,000 kg x 2.98 = 8.94 t CO2; 3,000 x 0.0473 = 141.9 GJ.",
+      "Scope 1 = 41.1 t; Scope 2 = 340.8 t; total about 381.9 t CO2.",
+      "Total energy about 2,300.7 GJ, all non-renewable."
+    ],
+    "note": "Illustrative quantities."
+  },
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Energy intensity in BRSR",
+      "to": "/answers/brsr-energy-intensity-calculation"
+    },
+    {
+      "label": "Diesel generator energy in BRSR",
+      "to": "/answers/brsr-dg-set-diesel-energy-and-scope-1"
+    },
+    {
+      "label": "Emission intensity per rupee",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), default factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

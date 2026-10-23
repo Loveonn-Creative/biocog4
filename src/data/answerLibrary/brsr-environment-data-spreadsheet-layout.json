@@ -1,0 +1,66 @@
+{
+  "slug": "brsr-environment-data-spreadsheet-layout",
+  "q": "How should we lay out a spreadsheet for BRSR environment data?",
+  "title": "Spreadsheet layout for BRSR data",
+  "short": "One row per bill or record, with columns for site, month, document type and number, quantity, unit, factor, factor source, result and an evidence link. Totals then come from filters, not retyping, and every BRSR figure traces back to the rows behind it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Small teams collecting BRSR data in Excel",
+  "sections": [
+    {
+      "h": "Columns",
+      "ol": [
+        "Site",
+        "Month (April to March)",
+        "Category: electricity, fuel, water, waste, production",
+        "Document type and number",
+        "Quantity",
+        "Unit",
+        "Factor and factor source with version",
+        "Result in t CO2e, GJ or kL",
+        "Evidence file name or link",
+        "Prepared by and checked by"
+      ]
+    },
+    {
+      "h": "Rules",
+      "ul": [
+        "Never type a total by hand; sum the rows.",
+        "Lock factors in one table and look them up, so a change applies everywhere.",
+        "Keep a change log tab when a row is corrected."
+      ]
+    },
+    {
+      "h": "When it outgrows Excel",
+      "p": [
+        "Many sites or hundreds of bills a month make manual entry the weak point. Reading quantities straight from bills cuts typing errors."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Energy intensity in BRSR",
+      "to": "/answers/brsr-energy-intensity-calculation"
+    },
+    {
+      "label": "Restate after finding an error",
+      "to": "/answers/restate-emissions-after-finding-an-error"
+    },
+    {
+      "label": "Unit mistakes on carbon forms",
+      "to": "/answers/emissions-form-unit-mistakes-kg-tonnes-co2e"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

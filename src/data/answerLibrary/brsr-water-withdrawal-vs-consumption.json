@@ -1,0 +1,68 @@
+{
+  "slug": "brsr-water-withdrawal-vs-consumption",
+  "q": "What is the difference between water withdrawal and water consumption in BRSR?",
+  "title": "Water withdrawal vs consumption",
+  "short": "Withdrawal is all the water you take in from every source. Consumption is the part that does not leave as discharge: withdrawal minus discharge, adjusted if stored water changes a lot. A plant that takes 10,000 kL and discharges 6,500 kL consumes 3,500 kL.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Plant and EHS teams filling water fields",
+  "sections": [
+    {
+      "h": "Where each number comes from",
+      "ul": [
+        "Withdrawal: municipal or industrial supply bills, borewell meter readings, tanker invoices in kL, and harvested rainwater if metered.",
+        "Discharge: effluent meter readings, CETP invoices, and ETP outlet logs.",
+        "Consumption: the difference, usually water lost in evaporation, product and cooling towers."
+      ]
+    },
+    {
+      "h": "Mistakes to avoid",
+      "ul": [
+        "Reporting bills in rupees instead of kL.",
+        "Counting recycled ETP water as new withdrawal; it is reuse, not a new source.",
+        "Leaving out tanker water because it arrives without a meter. The invoice quantity is the record."
+      ]
+    },
+    {
+      "h": "Why both matter",
+      "p": [
+        "Withdrawal shows pressure on local sources. Consumption shows how much water the site removes from the area for good, which is what water-stressed regions care about."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "lines": [
+      "Municipal supply 6,000 kL + borewell 3,000 kL + tanker 1,000 kL = withdrawal 10,000 kL.",
+      "Discharge to CETP 6,500 kL.",
+      "Consumption = 10,000 kL minus 6,500 kL = 3,500 kL."
+    ],
+    "note": "Illustrative figures."
+  },
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    },
+    {
+      "label": "Water tanker purchases",
+      "to": "/answers/water-tanker-purchases-which-scope"
+    },
+    {
+      "label": "Borewell pumping energy",
+      "to": "/answers/borewell-pumping-energy-per-kl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GRI Standards, GRI 303 Water and Effluents (globalreporting.org)",
+      "url": "https://www.globalreporting.org"
+    },
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

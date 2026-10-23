@@ -1835,6 +1835,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Which documents should back each BRSR environment figure?",
+  "text": "Every number needs a record: electricity bills for Scope 2 and grid energy, fuel invoices for Scope 1, meter logs and tanker invoices for water, weighbridge slips and recycler receipts for waste, and production registers for intensity. Keep them filed by figure and month.",
+  "url": "https://senseible.earth/answers/brsr-documents-behind-each-environment-figure"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate BRSR emission intensity per rupee of turnover adjusted for PPP?",
   "text": "Divide total Scope 1 plus Scope 2 emissions in tonnes of CO2e by revenue from operations converted to international dollars at the PPP conversion rate for India. Turnover of Rs 500 crore and 10,000 tonnes at about 20.5 rupees per PPP dollar gives roughly 41 tonnes per million PPP dollars.",
   "url": "https://senseible.earth/answers/brsr-emission-intensity-per-rupee-ppp"
@@ -1847,15 +1853,57 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How should we lay out a spreadsheet for BRSR environment data?",
+  "text": "One row per bill or record, with columns for site, month, document type and number, quantity, unit, factor, factor source, result and an evidence link. Totals then come from filters, not retyping, and every BRSR figure traces back to the rows behind it.",
+  "url": "https://senseible.earth/answers/brsr-environment-data-spreadsheet-layout"
+ },
+ {
+  "kind": "answer",
+  "title": "What are the most common errors in BRSR environmental disclosures?",
+  "text": "Mixed units, a wrong intensity denominator, diesel generator power counted as Scope 2, renewable claims without contracts, water bills in rupees, and figures that do not match the previous year's method. Most are caught by checking each line against the bill it came from.",
+  "url": "https://senseible.earth/answers/brsr-environment-disclosure-common-errors"
+ },
+ {
+  "kind": "answer",
   "title": "What is the voluntary green credits disclosure in BRSR, and what counts?",
   "text": "It is a voluntary BRSR line, added by SEBI in March 2025, where a listed company reports Green Credits generated or procured by itself and by its top ten value chain partners. Only Green Credits under MoEFCC's Green Credit Rules, 2023 count; carbon credits and RECs do not.",
   "url": "https://senseible.earth/answers/brsr-green-credits-disclosure"
  },
  {
   "kind": "answer",
+  "title": "How do I calculate emission intensity per tonne of product for BRSR?",
+  "text": "Divide Scope 1 plus Scope 2 emissions for the year by the tonnes of product made in the same year and boundary. 9,000 t CO2e over 30,000 t of output gives 0.30 t CO2e per tonne. Name the product and unit, and keep the same denominator every year.",
+  "url": "https://senseible.earth/answers/brsr-intensity-per-tonne-of-product"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I work out BRSR environment energy and emissions from a year of bills?",
+  "text": "Total each fuel and electricity for April to March, multiply by its emission factor for Scope 1 and 2, and by its energy content for GJ. 480,000 kWh, 12,000 litres of diesel and 3,000 kg of LPG give about 382 t CO2 and about 2,301 GJ.",
+  "url": "https://senseible.earth/answers/brsr-principle-6-worked-example-from-bills"
+ },
+ {
+  "kind": "answer",
   "title": "How do I split energy into renewable and non-renewable in BRSR?",
   "text": "In BRSR Principle 6, list electricity, fuel and other energy twice: once from renewable sources and once from non-renewable sources, all in gigajoules. Grid power, DG diesel, coal and gas are non-renewable. Self-consumed solar, contracted green power with supply proof and biomass are renewable. Convert kWh to GJ by multiplying by 0.0036.",
   "url": "https://senseible.earth/answers/brsr-renewable-vs-non-renewable-energy"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I work out BRSR Scope 1 from LPG and PNG bills?",
+  "text": "Multiply LPG kilograms by 2.98 kg CO2 per kg, and PNG standard cubic metres by about 2.05 kg CO2 per scm, or use the calorific value printed on the gas bill. Forty 19 kg cylinders are 760 kg of LPG, or about 2.26 t CO2.",
+  "url": "https://senseible.earth/answers/brsr-scope-1-from-lpg-and-png-bills"
+ },
+ {
+  "kind": "answer",
+  "title": "Should BRSR Scope 2 emissions be location-based or market-based?",
+  "text": "Report the location-based figure from grid kWh and the CEA grid factor as your base, and state the method next to the number. If you buy renewable power through contracts or certificates, add the market-based figure as a separate, labelled line with the instruments behind it.",
+  "url": "https://senseible.earth/answers/brsr-scope-2-location-or-market-based"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I fill a customer's BRSR supplier questionnaire field by field?",
+  "text": "Answer in the order the form asks: company details and period, the boundary you used, then Scope 1 by fuel, Scope 2 from electricity, total energy, water and waste. Put the unit and factor source beside every number and keep the bill behind each line.",
+  "url": "https://senseible.earth/answers/brsr-supplier-questionnaire-field-by-field"
  },
  {
   "kind": "answer",
@@ -1892,6 +1940,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I fill the BRSR waste table by category?",
   "text": "Enter tonnes of waste generated in each BRSR category (plastic, e-waste, bio-medical, construction and demolition, battery, radioactive, other hazardous, other non-hazardous) from manifests and recycler invoices. Then split the same waste into recovered (recycled, reused, other recovery) and disposed (incinerated, landfilled, other), and divide the total by turnover for waste intensity.",
   "url": "https://senseible.earth/answers/brsr-waste-categories-how-to-fill"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the difference between water withdrawal and water consumption in BRSR?",
+  "text": "Withdrawal is all the water you take in from every source. Consumption is the part that does not leave as discharge: withdrawal minus discharge, adjusted if stored water changes a lot. A plant that takes 10,000 kL and discharges 6,500 kL consumes 3,500 kL.",
+  "url": "https://senseible.earth/answers/brsr-water-withdrawal-vs-consumption"
  },
  {
   "kind": "answer",
@@ -3932,6 +3986,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What are the emissions from combine harvesting per acre?",
   "text": "Multiply diesel per acre by 2.68 kg CO2 per litre. Owners report it in Scope 1. Farmers who hire a harvester count it in Scope 3, from the hire invoice. Diesel per acre varies with crop, yield and field size, so measure it from fill-ups over a season.",
   "url": "https://senseible.earth/answers/combine-harvester-diesel-per-acre"
+ },
+ {
+  "kind": "answer",
+  "title": "How do we combine several plants' bills into one BRSR figure?",
+  "text": "Build one sheet per plant for the same April to March period, using the same factors, then add them up. Remove anything counted twice, such as power one plant sells to another, and list the plants included so the total matches the BRSR boundary.",
+  "url": "https://senseible.earth/answers/combine-plants-into-one-brsr-figure"
  },
  {
   "kind": "answer",
@@ -6110,6 +6170,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of our stall at a trade exhibition?",
   "text": "For an exhibitor, the big items are usually team travel and hotel nights, then building the stall and shipping samples. Stall electricity is often small. Reusing a modular stall instead of a one-time build is the easiest cut.",
   "url": "https://senseible.earth/answers/exhibition-stall-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How should we explain a big change in BRSR emissions from last year?",
+  "text": "Split the change into its causes: more or less production, a different fuel or power mix, a new emission factor, a change in boundary, or a corrected error. Give the size of each in tonnes and restate last year if the method changed, so readers compare like with like.",
+  "url": "https://senseible.earth/answers/explain-big-change-in-brsr-emissions"
  },
  {
   "kind": "answer",
@@ -16664,6 +16730,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Who runs India's carbon market registry and trading platform?",
   "text": "Grid Controller of India Limited is the registry for India's Carbon Credit Trading Scheme. The Bureau of Energy Efficiency (BEE) administers the scheme, the Central Electricity Regulatory Commission (CERC) regulates trading, and carbon credit certificates trade on CERC-registered power exchanges. A national steering committee oversees it all.",
   "url": "https://senseible.earth/answers/who-runs-india-carbon-market-registry"
+ },
+ {
+  "kind": "answer",
+  "title": "Who in a company should own each BRSR Core figure?",
+  "text": "Give each figure one owner who holds the source records: plant heads or maintenance for fuel and electricity, EHS for water, waste and safety, HR for wages and gender data, finance for revenue and payables, and the company secretary for the final filing. One person checks the whole set.",
+  "url": "https://senseible.earth/answers/who-should-own-brsr-core-data"
  },
  {
   "kind": "answer",

@@ -1,0 +1,65 @@
+{
+  "slug": "brsr-scope-2-location-or-market-based",
+  "q": "Should BRSR Scope 2 emissions be location-based or market-based?",
+  "title": "BRSR Scope 2: location or market-based",
+  "short": "Report the location-based figure from grid kWh and the CEA grid factor as your base, and state the method next to the number. If you buy renewable power through contracts or certificates, add the market-based figure as a separate, labelled line with the instruments behind it.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Companies preparing BRSR environmental disclosures",
+  "sections": [
+    {
+      "h": "The two methods",
+      "ul": [
+        "Location-based: kWh times the average grid factor. In India that is the CEA factor, 0.710 kg CO2 per kWh.",
+        "Market-based: kWh times the factor of the power you contracted, such as open access renewable supply or certificates retired for you, with a residual figure for the rest.",
+        "The GHG Protocol Scope 2 Guidance asks companies with contractual instruments to report both."
+      ]
+    },
+    {
+      "h": "What to write in BRSR",
+      "ul": [
+        "Give one Scope 2 total and say which method it uses.",
+        "If you add the other method, keep it on its own line so readers do not add the two together.",
+        "Use the same method every year, or restate the earlier year when you switch."
+      ]
+    },
+    {
+      "h": "Evidence for a market-based claim",
+      "ul": [
+        "Open access or captive supply contracts and monthly settlement statements.",
+        "Certificate retirement records in your name for the same period.",
+        "Without these, a renewable claim falls back to the location-based figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices into a dated record per site, with the factor and source on every line, and prepares BRSR drafts from that data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Location and market-based Scope 2",
+      "to": "/answers/buyer-asks-location-and-market-based-scope-2"
+    },
+    {
+      "label": "Residual mix factor in India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "Renewable vs non-renewable energy in BRSR",
+      "to": "/answers/brsr-renewable-vs-non-renewable-energy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "SEBI, BRSR and BRSR Core circulars (sebi.gov.in)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
