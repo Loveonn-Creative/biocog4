@@ -1,0 +1,71 @@
+{
+  "slug": "fmap-eligible-energy-efficiency-technologies",
+  "q": "Which energy efficiency technologies can SIDBI's FMAP programme fund across sectors?",
+  "title": "Technologies SIDBI's FMAP can fund",
+  "short": "SIDBI's sector documents for its GCF-backed FMAP programme list 64 cross-sector technologies it will fund. They include variable frequency drives, efficient transformers, motors, pumps, fans and compressors, power factor and maximum demand controllers, efficient boilers, recuperators, regenerative burners, waste heat recovery boilers, heat pumps, cogeneration, thermal insulation and energy management systems.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME plant heads and energy auditors scoping a fundable project",
+  "sections": [
+    {
+      "h": "Electrical and motor systems",
+      "ul": [
+        "Variable frequency drives and soft starters for motors.",
+        "Energy-efficient transformers, servo stabilisers and a separate transformer for lighting.",
+        "Energy-efficient air compressors, blowers, fans and pumps, and screw compressors.",
+        "Capacitors, automatic power factor controllers and maximum demand controllers.",
+        "LED and other efficient lighting, electronic ballasts and induction lighting."
+      ]
+    },
+    {
+      "h": "Heat and steam",
+      "ul": [
+        "Energy-efficient boilers, and water-tube boilers replacing conventional smoke-tube boilers.",
+        "Economisers and air preheaters, condensate recovery, and automatic combustion control for boilers and furnaces.",
+        "Recuperators, regenerative burners and waste heat recovery boilers.",
+        "Thermal insulation for hot and cold systems, heat pumps and cogeneration.",
+        "High-frequency melting furnaces, responsive arc furnaces and high-performance electrolytic furnaces."
+      ]
+    },
+    {
+      "h": "Controls and monitoring",
+      "ul": [
+        "SCADA, energy management systems and building energy management systems.",
+        "Microprocessor-based controls, automatic temperature controllers and PLC-controlled machines.",
+        "ERP with a production planning module."
+      ]
+    },
+    {
+      "h": "How the list is used",
+      "p": [
+        "SIDBI says these technologies apply across all eligible sectors and also to backward and forward integration within them. Being on the list does not make a project eligible by itself: the unit still goes through the exclusion list, due diligence checklist and ESG rating, and the risk category of the technology depends on the process it is used in. If a project mixes mitigation and adaptation, SIDBI tags each part separately for reporting to the Green Climate Fund."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows which loads dominate your bills, such as power-hungry motors, poor power factor or a fuel-heavy furnace, which helps pick the technology from this list with the biggest saving.",
+  "links": [
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    },
+    {
+      "label": "Green loan for VFDs on pumps and fans",
+      "to": "/answers/green-loan-vfd-on-pumps-and-fans"
+    },
+    {
+      "label": "SIDBI 4E loan terms",
+      "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Foundry sector (24 July 2026), Annexure 3: List of Cross Functional Technology",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESIA_and_ESMP_Foundry_Direct_Finance.pdf"
+    },
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Textile sector, Annexure 3",
+      "url": "https://www.sidbi.in/assets/front/pdf/Textile_ESIA_ESM_Direct_Finance.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "psl-renewable-energy-loan-limit-2025",
+  "q": "What is the priority sector loan limit for renewable energy under RBI's 2025 directions?",
+  "title": "Priority sector limit for renewable loans",
+  "short": "Under RBI's Priority Sector Lending Directions, 2025, in force from 1 April 2025, bank loans of up to ₹35 crore for renewable energy power generators and renewable public utilities such as street lighting and village electrification count as priority sector. For individual households the limit is ₹10 lakh per borrower.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs, solar developers, households and lenders checking how a renewable energy loan is classified",
+  "sections": [
+    {
+      "h": "The renewable energy category",
+      "p": [
+        "Paragraph 15 of the 2025 Directions covers loans to borrowers for renewable energy-based power generators and renewable energy-based public utilities, such as street lighting systems and remote village electrification. The ceiling is ₹35 crore per borrower, and ₹10 lakh for an individual household."
+      ]
+    },
+    {
+      "h": "MSMEs usually do not need this category",
+      "p": [
+        "The same Directions say all bank loans to MSMEs qualify as priority sector lending, with no separate cap for what the loan funds. So a Udyam-registered unit borrowing for rooftop solar is normally classified under MSME, not under the renewable energy ceiling. The renewable energy limit matters mainly for project companies, larger firms that are not MSMEs, and households."
+      ]
+    },
+    {
+      "h": "Limits for some banks",
+      "p": [
+        "For regional rural banks, lending to medium enterprises, social infrastructure and renewable energy together counts towards their priority sector target only up to 15 percent of adjusted net bank credit. Check with a rural bank whether it has room in that bucket."
+      ]
+    },
+    {
+      "h": "Why the classification matters to you",
+      "p": [
+        "Banks must lend 40 percent of adjusted net bank credit to the priority sector, and domestic banks must lend 7.5 percent to micro enterprises. Loans that count towards these targets are ones banks actively look for, so a correctly classified solar or efficiency loan can be easier to place. Classification does not by itself set a lower rate."
+      ]
+    }
+  ],
+  "senseible": "Senseible estimates the units and emissions a solar plant would displace from your past bills, which supports the project report a bank reviews for a renewable energy loan.",
+  "links": [
+    {
+      "label": "Is a renewable energy loan priority sector",
+      "to": "/answers/is-renewable-energy-loan-priority-sector"
+    },
+    {
+      "label": "Solar pump loans as farm credit",
+      "to": "/answers/solar-pump-loan-priority-sector-agriculture"
+    },
+    {
+      "label": "Do all MSME loans count as priority sector",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Directions (Priority Sector Lending, Targets and Classification) Directions, 2025, effective 1 April 2025, updated 11 September 2026: paras 7.1 and 15",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

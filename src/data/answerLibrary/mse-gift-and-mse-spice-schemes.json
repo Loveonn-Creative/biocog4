@@ -1,0 +1,65 @@
+{
+  "slug": "mse-gift-and-mse-spice-schemes",
+  "q": "What are the MSE-GIFT and MSE-SPICE schemes for green and circular MSME projects?",
+  "title": "MSE-GIFT and MSE-SPICE explained",
+  "short": "Both are sub-schemes of the Ministry of MSME's World Bank supported RAMP programme, offered through SIDBI as incentives on green loans. MSE-GIFT helps MSMEs get institutional finance at a concessional rate for clean and green technology. MSE-SPICE supports micro and small enterprises adopting circular practices such as recycling and reuse.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs planning green technology or recycling investments",
+  "sections": [
+    {
+      "h": "Where they come from",
+      "p": [
+        "RAMP, Raising and Accelerating MSME Performance, is a World Bank supported central sector scheme of the Ministry of MSME aimed at improving MSMEs' access to credit, markets and technology. MSE-GIFT and MSE-SPICE are two of its sub-schemes. SIDBI lists both on its page of incentives for green loans."
+      ]
+    },
+    {
+      "h": "MSE-GIFT",
+      "p": [
+        "MSME Green Investment and Financing for Transformation. Its stated objective is to support MSMEs in accessing institutional finance at a concessional rate for adopting clean or green technologies, so they can move to greener operations. SIDBI presents it as an incentive on green loans, so it is tied to borrowing rather than paid on its own."
+      ]
+    },
+    {
+      "h": "MSE-SPICE",
+      "p": [
+        "MSE Scheme for Promotion and Investment in Circular Economy. It is aimed at micro and small enterprises, not medium ones, and supports circular practices: recycling, reuse, responsible consumption and better resource efficiency."
+      ]
+    },
+    {
+      "h": "What to ask before you plan around them",
+      "ul": [
+        "The current support rate and cap, which sit in each scheme circular rather than on the summary page.",
+        "Whether your project and enterprise size qualify, especially for MSE-SPICE, which covers micro and small units only.",
+        "Whether the incentive applies only to loans from SIDBI or also from other lenders.",
+        "The application window, since sub-schemes run for a set period."
+      ]
+    }
+  ],
+  "senseible": "Senseible records the energy, fuel and material evidence behind a green or circular project from your invoices, which helps when a scheme asks you to show what changed.",
+  "links": [
+    {
+      "label": "SIDBI Green Finance Scheme terms",
+      "to": "/answers/sidbi-green-finance-scheme-loan-terms"
+    },
+    {
+      "label": "Credit guarantees for green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "Climate finance",
+      "to": "/climate-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, Incentive schemes for green loans: MSE-GIFT and MSE-SPICE under RAMP",
+      "url": "https://www.sidbi.in/en/pages/incentive-schemes-for-green-loans"
+    },
+    {
+      "label": "SIDBI, Green Finance FAQs, Q7 on incentives",
+      "url": "https://www.sidbi.in/en/green-finance"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "The scheme circulars with support rates were linked through a URL shortener that could not be opened; rates are deliberately not stated."
+}

@@ -115,6 +115,21 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5a2b0c94b44fdf26_1776845687.pdf
 - https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=235&lid=383
 - https://beeindia.gov.in/show_content.php?lang=1&level=3&ls_id=168&lid=19
+- https://www.sidbi.in/en/green-finance
+- https://www.sidbi.in/en/pages/incentive-schemes-for-green-loans
+- https://www.sidbi.in/en/machinery-loan
+- https://www.sidbi.in/en/green-pathways-e-series
+- https://www.sidbi.in/assets/front/pdf/ESMS-FMAP-E.pdf
+- https://www.sidbi.in/assets/front/pdf/Textile_ESIA_ESM_Direct_Finance.pdf
+- https://www.sidbi.in/assets/front/pdf/ESIA_and_ESMP_Foundry_Direct_Finance.pdf
+- https://www.sidbi.in/assets/front/pdf/Steel_re-rolling_ESIA_ESMP_Direct_Finance_12082026_Clean.pdf
+- https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799
+- https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=291&lid=400
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bac8f462abfda032_1776144952.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-0fb0a619fe31e227_1776145133.pdf
+- https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=344&lid=419
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5be3d06b9b369ad0_1775212788.pdf
+- https://beeindia.gov.in/view_content.php?lid=739&lang=1
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org
 - https://ghgprotocol.org

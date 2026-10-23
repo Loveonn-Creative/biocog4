@@ -1,0 +1,59 @@
+{
+  "slug": "solar-pump-loan-priority-sector-agriculture",
+  "q": "Does a farmer's loan for a solar pump or solar plant on farm land count as priority sector?",
+  "title": "Solar pump loans as priority sector",
+  "short": "Yes. RBI's Priority Sector Lending Directions, 2025 list, under farm credit to individual farmers, loans for stand-alone solar agriculture pumps, for solarising grid-connected pumps, and for solar power plants on barren or fallow land or built on stilts over farmland the farmer owns. These count as agriculture lending, not renewable energy.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Farmers, agri businesses, solar installers and rural lenders",
+  "sections": [
+    {
+      "h": "What the Directions list",
+      "ul": [
+        "Loans to farmers for stand-alone solar agriculture pumps.",
+        "Loans to farmers for solarisation of grid-connected agriculture pumps.",
+        "Loans to farmers for solar power plants on barren or fallow land, or in stilt fashion on agricultural land owned by the farmer."
+      ]
+    },
+    {
+      "h": "Why it matters that it is agriculture",
+      "p": [
+        "These loans sit in paragraph 9.1, farm credit to individual farmers. Agriculture has its own target, 18 percent of adjusted net bank credit for most banks, with 10 percent for small and marginal farmers. That makes these loans attractive for banks to book, and they are not limited by the ₹35 crore renewable energy ceiling."
+      ]
+    },
+    {
+      "h": "Who this covers",
+      "p": [
+        "The listed solar items are under individual farmers, including groups of farmers such as SHGs and JLGs, and proprietorship firms of farmers. Loans to companies, FPOs and partnership firms fall under a different part of farm credit with its own limits, so a solar installer or an agri company should check which paragraph applies to it."
+      ]
+    },
+    {
+      "h": "Scheme subsidies are separate",
+      "p": [
+        "Priority sector status is about how the bank classifies the loan. Central and state solar pump subsidies, where available, are separate and come with their own rules and timing. Plan the loan around the subsidy release dates."
+      ]
+    }
+  ],
+  "senseible": "Senseible can record diesel saved when a pump moves to solar, from fuel bills, for a farmer producer organisation or agri business that reports emissions.",
+  "links": [
+    {
+      "label": "Diesel pump to solar pump CO2 saving",
+      "to": "/answers/diesel-pump-to-solar-pump-co2-saving"
+    },
+    {
+      "label": "Priority sector limit for renewable loans",
+      "to": "/answers/psl-renewable-energy-loan-limit-2025"
+    },
+    {
+      "label": "Is a renewable energy loan priority sector",
+      "to": "/answers/is-renewable-energy-loan-priority-sector"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Priority Sector Lending Directions, 2025: para 9.1 A (farm credit, solar pumps and solar plants on farm land) and para 7.1 targets",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

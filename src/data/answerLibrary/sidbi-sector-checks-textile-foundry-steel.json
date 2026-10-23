@@ -1,0 +1,72 @@
+{
+  "slug": "sidbi-sector-checks-textile-foundry-steel",
+  "q": "What environmental risks does SIDBI look for in textile, foundry and steel re-rolling loans?",
+  "title": "SIDBI checks for textile, foundry, steel",
+  "short": "SIDBI's sector assessments for its GCF-backed FMAP programme name the risks it screens for. Textile wet processing: water use, dye and chemical effluent, sludge. Foundries: furnace energy, dust and fumes, waste sand and slag. Steel re-rolling: reheating furnace fuel and emissions, mill scale and oily wastewater. Worker heat and safety recur in all three.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Textile processors, foundries and re-rolling mills applying for SIDBI green finance",
+  "sections": [
+    {
+      "h": "Textile processing",
+      "ul": [
+        "Risks: heavy water and energy use in dyeing, bleaching, printing and washing; wastewater with dyes, salts and alkalis; effluent treatment sludge and fabric waste; worker exposure to chemicals, heat, dust and noise.",
+        "Mitigation SIDBI points to: effluent treatment plants, zero liquid discharge, water recycling, efficient machinery and solar, safer chemicals, PPE and dust extraction, PLC-based controls."
+      ]
+    },
+    {
+      "h": "Foundry",
+      "ul": [
+        "Risks: energy-intensive melting and heat treatment largely on fossil fuels; particulate, silica dust and metal fumes from melting, sand handling and pouring; oily cooling water; used foundry sand, slag and refractory waste; heat, molten metal and noise for workers.",
+        "Mitigation SIDBI points to: efficient furnaces such as induction furnaces, waste heat recovery, bag filters, wet scrubbers and dust extraction, closed-loop cooling, safe reuse or disposal of used sand, slag and refractory waste, PPE and better ventilation."
+      ]
+    },
+    {
+      "h": "Steel re-rolling",
+      "ul": [
+        "Risks: fossil-fuel reheating furnaces emitting particulates, nitrogen and sulphur oxides, carbon monoxide and metal fumes; mill scale, slag, refractory waste and oily sludge; cooling and descaling water with oil and solids; burns, heat stress and machinery injuries.",
+        "Mitigation SIDBI points to: efficient reheating furnaces, waste heat recovery, continuous rolling mills, cleaner fuels and renewables, bag filters and scrubbers, closed-loop cooling, safe handling and reuse of mill scale and slag."
+      ]
+    },
+    {
+      "h": "What to fix before applying",
+      "p": [
+        "In all three sectors the questions that trip up small units are the same: a current Consent to Operate, pollution control equipment that matches the consent, records of how waste is stored and sent out, and visible safety practice. The energy project you want financed is judged alongside these, not instead of them."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives fuel and electricity per tonne from your bills for a re-rolling mill or foundry, or per metre or kg for a textile unit, the energy figures the climate review starts from.",
+  "links": [
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    },
+    {
+      "label": "Technologies SIDBI can fund",
+      "to": "/answers/fmap-eligible-energy-efficiency-technologies"
+    },
+    {
+      "label": "Induction furnace upgrade finance",
+      "to": "/answers/green-loan-induction-furnace-upgrade-readiness"
+    },
+    {
+      "label": "Finance for ETP or ZLD upgrades",
+      "to": "/answers/green-loan-for-etp-or-zld-upgrade"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Textile sector, sections 1.1.6 and 1.1.7",
+      "url": "https://www.sidbi.in/assets/front/pdf/Textile_ESIA_ESM_Direct_Finance.pdf"
+    },
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Foundry sector (24 July 2026), sections 1.1.1 and 1.1.7",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESIA_and_ESMP_Foundry_Direct_Finance.pdf"
+    },
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Steel re-rolling sector, sections 1.1.6 and 1.1.7",
+      "url": "https://www.sidbi.in/assets/front/pdf/Steel_re-rolling_ESIA_ESMP_Direct_Finance_12082026_Clean.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

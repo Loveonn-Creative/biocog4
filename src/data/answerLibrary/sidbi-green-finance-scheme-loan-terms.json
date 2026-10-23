@@ -1,0 +1,75 @@
+{
+  "slug": "sidbi-green-finance-scheme-loan-terms",
+  "q": "What are the terms of SIDBI's Green Finance Scheme loan for MSMEs?",
+  "title": "SIDBI Green Finance Scheme loan terms",
+  "short": "SIDBI's Green Finance Scheme is a term loan for green projects: renewable energy, energy-efficient buildings, waste management, resource and energy efficiency, wastewater treatment and cleaner production. It can fund up to 100 percent of the project, up to ₹20 crore for an MSME, repayable over up to 10 years.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners and finance heads planning a solar, efficiency or effluent project",
+  "sections": [
+    {
+      "h": "What the scheme pays for",
+      "ul": [
+        "Renewable energy, such as rooftop or ground-mounted solar for your own use.",
+        "Energy-efficient buildings.",
+        "Waste management and resource efficiency measures.",
+        "Energy efficiency measures.",
+        "Wastewater treatment.",
+        "Cleaner production."
+      ]
+    },
+    {
+      "h": "How much and for how long",
+      "ul": [
+        "Up to 100 percent financing of the project.",
+        "Maximum loan ₹20 crore for an MSME.",
+        "Maximum ₹50 crore for a service provider or aggregator with an established MSME linkage, such as a company that installs solar for many small units.",
+        "Repayment over up to 10 years."
+      ]
+    },
+    {
+      "h": "Who can apply",
+      "p": [
+        "SIDBI lists three conditions: Udyam registration in manufacturing or services, a satisfactory credit history, and no default to any bank or financial institution. Every unit must also comply with SIDBI's Environment and Social Management Framework, so expect questions on your pollution control consents and worker safety alongside the usual financial checks."
+      ]
+    },
+    {
+      "h": "GFS or the 4E scheme",
+      "p": [
+        "Both are SIDBI direct loans. The 4E scheme is narrower: it finances energy efficiency measures that come out of an energy audit, end to end, from equipment to commissioning. GFS covers a wider set of green projects, including solar and effluent treatment, and allows a larger loan. If your project is a single efficiency retrofit backed by an audit, compare both before you choose."
+      ]
+    },
+    {
+      "h": "What SIDBI does not publish",
+      "p": [
+        "The green finance page does not state an interest rate or collateral rule for GFS. Ask the branch or apply through SIDBI's online portal to get a sanction letter with the rate and security before you commit to an equipment order."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your electricity bills and fuel invoices into a dated baseline and a before and after record of the project, the evidence a green loan appraisal and later reporting ask for.",
+  "links": [
+    {
+      "label": "SIDBI 4E loan terms",
+      "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Carbon baseline before a green loan",
+      "to": "/answers/carbon-baseline-before-green-loan-application"
+    },
+    {
+      "label": "What SIDBI will not finance",
+      "to": "/answers/what-sidbi-will-not-finance-exclusion-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, Green Finance Products and FAQs (GFS scope, 100% financing, ₹20 crore and ₹50 crore caps, 10-year repayment, eligibility)",
+      "url": "https://www.sidbi.in/en/green-finance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

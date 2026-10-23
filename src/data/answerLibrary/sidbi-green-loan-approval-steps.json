@@ -1,0 +1,65 @@
+{
+  "slug": "sidbi-green-loan-approval-steps",
+  "q": "What steps does a SIDBI green loan application go through before sanction?",
+  "title": "SIDBI green loan approval steps",
+  "short": "Under SIDBI's GCF-backed FMAP programme a direct loan goes through three stages. The branch checks completeness and screens against the exclusion list. Due diligence follows: KYC, credit and financial checks, the environmental checklist, ESG rating, and climate and technical review. A credit appraisal memorandum then goes to a sanctioning committee.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs applying directly to SIDBI for green or energy efficiency finance",
+  "sections": [
+    {
+      "h": "Stage 1: application and screening",
+      "p": [
+        "The SIDBI relationship manager at the branch checks that the application is complete, including climate, environmental and social safeguard documents. Incomplete files are rejected or returned for completion. Complete files are screened against the exclusion list and for signs of a high-risk project: an outlay above USD 60 million, impacts that are diverse, irreversible or unprecedented, or risks that normal policies and workplace standards cannot manage."
+      ]
+    },
+    {
+      "h": "Stage 2: due diligence",
+      "ul": [
+        "At the branch, the processing officer handles KYC, financial viability, credit due diligence and the promoter-signed due diligence checklist.",
+        "In parallel, climate, technical and environmental and social experts in SIDBI's programme unit check the project's technical soundness and climate case and run the ESG rating tool.",
+        "Before sanction, SIDBI visits the site: a walkthrough, interviews with workers and management, photographs with geo-tags, and an exclusion list cross-check."
+      ]
+    },
+    {
+      "h": "Stage 3: appraisal and sanction",
+      "p": [
+        "A maker and checker team prepares the credit appraisal memorandum for the loan sanctioning committee. Nobody involved in screening or due diligence sits on that committee."
+      ]
+    },
+    {
+      "h": "What slows files down",
+      "ul": [
+        "Missing or expired Consent to Operate.",
+        "An energy audit or project report that does not show baseline use and expected savings.",
+        "Worker safety gaps found at the pre-sanction visit."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares the baseline and expected saving from your own bills, the part of the climate review that small units most often cannot document.",
+  "links": [
+    {
+      "label": "SIDBI's due diligence checklist",
+      "to": "/answers/sidbi-environmental-due-diligence-checklist"
+    },
+    {
+      "label": "SIDBI's ESG and green rating",
+      "to": "/answers/sidbi-esg-and-green-rating-for-msme"
+    },
+    {
+      "label": "Monitoring after a SIDBI green loan",
+      "to": "/answers/sidbi-green-loan-monitoring-after-disbursement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Foundry sector, section 3.1 Loan Screening and Approval Process and section 5.1 monitoring",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESIA_and_ESMP_Foundry_Direct_Finance.pdf"
+    },
+    {
+      "label": "SIDBI, ESMS for FMAP, screening steps",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESMS-FMAP-E.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

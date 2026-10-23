@@ -1,0 +1,58 @@
+{
+  "slug": "sidbi-machinery-loan-replace-old-machines",
+  "q": "Can I use a SIDBI machinery loan to replace old, energy-hungry machines?",
+  "title": "SIDBI machinery loan for new machines",
+  "short": "Yes, if the new machine belongs to your existing line of business. SIDBI's machinery loans fund new equipment for modernisation and technology upgrades: EXPRESS up to ₹3 crore and 100 percent of cost; SPEED up to 100 percent, capped at ₹1 crore for new customers and ₹2 crore for existing ones. Second-hand machines are not eligible.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME owners replacing old motors, compressors, furnaces or production machines",
+  "sections": [
+    {
+      "h": "The two schemes",
+      "ul": [
+        "EXPRESS: a digitally assessed term loan with quick sanction, up to ₹3 crore, covering up to 100 percent of machinery cost, repayable over up to 60 months.",
+        "SPEED: up to 100 percent of machinery cost, maximum ₹1 crore for enterprises new to SIDBI and ₹2 crore for existing customers, repayable over 2 to 5 years including a 3 to 6 month moratorium. Needs at least three years of operations with stable sales and cash profits in the past two years."
+      ]
+    },
+    {
+      "h": "Who qualifies",
+      "p": [
+        "Udyam-registered MSMEs with a satisfactory operating track record and credit history. The machine must relate to your existing line of business, and second-hand or refurbished machinery is not eligible."
+      ]
+    },
+    {
+      "h": "Machinery loan or a green loan",
+      "p": [
+        "A machinery loan does not ask whether the machine saves energy. If the replacement is mainly an efficiency upgrade backed by an energy audit, SIDBI's 4E scheme or Green Finance Scheme may fit better and lets you show the project as green. If you are adding capacity and the new machine happens to be efficient, the machinery loan is simpler."
+      ]
+    },
+    {
+      "h": "How to apply",
+      "p": [
+        "Apply online through the Apply Now option on SIDBI's website, which opens its loan portal, or through a referral partner registered with SIDBI if you want help with the form."
+      ]
+    }
+  ],
+  "senseible": "Senseible compares energy per unit of output before and after a machine change from your bills and production records, so you can see whether the new machine delivered the saving you paid for.",
+  "links": [
+    {
+      "label": "SIDBI 4E loan terms",
+      "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
+    },
+    {
+      "label": "Induction furnace upgrade finance",
+      "to": "/answers/green-loan-induction-furnace-upgrade-readiness"
+    },
+    {
+      "label": "Udyam registration for bank loans",
+      "to": "/answers/udyam-registration-needed-for-bank-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, Machinery Loan FAQs: EXPRESS and SPEED amounts, eligibility, repayment, second-hand exclusion",
+      "url": "https://www.sidbi.in/en/machinery-loan"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

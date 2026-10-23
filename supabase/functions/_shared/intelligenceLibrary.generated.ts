@@ -1361,9 +1361,27 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What do BEE's ESCO grades mean, and how do I pick an energy service company?",
+  "text": "BEE empanels energy service companies after grading by CRISIL, ICRA or CARE on a 100-point scale: 40 percent business risk, 25 percent organisational risk, 35 percent financial risk. Grade 1 means a score of 85 or more, grade 5 below 40. Empanelment lasts two years, and BEE opened a 2026 window for new and renewing ESCOs.",
+  "url": "https://senseible.earth/answers/bee-empanelled-esco-grades-explained"
+ },
+ {
+  "kind": "answer",
   "title": "What is the difference between BEE's energy manager and energy auditor exams?",
   "text": "Both sit the same three written papers on energy management, thermal utilities and electrical utilities, 150 marks each. Auditors also sit a fourth, open book paper on performance assessment of equipment. Every paper needs at least 50 percent to pass.",
   "url": "https://senseible.earth/answers/bee-energy-auditor-vs-energy-manager-exam"
+ },
+ {
+  "kind": "answer",
+  "title": "What is BEE's facilitation centre for energy efficiency financing, and can an MSME use it?",
+  "text": "BEE runs an online facilitation centre under its Energy Efficiency Financing Facility that brings lenders and borrowing units onto one platform. Units submit a willingness form and project details; BEE lists 27 registered financial institutions, 179 efficient technologies, more than 190 projects received and 14 sanctioned. It also runs state Investment Bazaar events.",
+  "url": "https://senseible.earth/answers/bee-energy-efficiency-financing-facilitation-centre"
+ },
+ {
+  "kind": "answer",
+  "title": "What is BEE's grading of energy efficiency projects, and does it help get a loan?",
+  "text": "BEE launched grading of energy efficiency projects in July 2021, with CRISIL and SMERA empanelled to prepare grading reports that lenders can rely on. BEE is reimbursing the grading fee for the first 100 projects that are both graded and financed, through lenders registered with its facilitation centre. SIDBI, IREDA, Central Bank of India and YES Bank have signed up.",
+  "url": "https://senseible.earth/answers/bee-energy-efficiency-project-grading"
  },
  {
   "kind": "answer",
@@ -5735,6 +5753,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do all bank loans to MSMEs count as priority sector lending, including green loans?",
+  "text": "Yes. RBI's Priority Sector Lending Directions, 2025 say all bank loans to MSMEs qualify, whatever they fund, so a green or efficiency loan to a Udyam-registered unit counts. Invoice discounting on TReDS and with-recourse factoring for an MSME seller also qualify. Banks must lend 7.5 percent of adjusted net bank credit to micro enterprises.",
+  "url": "https://senseible.earth/answers/do-all-msme-loans-count-as-priority-sector"
+ },
+ {
+  "kind": "answer",
   "title": "Will lowering my carbon footprint win orders or better terms from big buyers?",
   "text": "Sometimes, but do not plan on a price premium. The reliable gains are staying on approved supplier lists as buyers chase their own Scope 3 targets, lower CBAM cost for EU importers of covered goods, and better loan terms. Fund reductions that pay back on energy savings alone, and treat any buyer reward as extra.",
   "url": "https://senseible.earth/answers/do-buyers-pay-more-for-low-carbon-suppliers"
@@ -7544,6 +7568,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I estimate the carbon footprint of building a flyover?",
   "text": "Cement, steel rebar and prestressing strand dominate, so start with quantities from the bill of quantities and supplier factors. Add site diesel for piling rigs, cranes and batching, and divide by length. Report embodied materials separately from construction fuel.",
   "url": "https://senseible.earth/answers/flyover-construction-carbon-per-metre"
+ },
+ {
+  "kind": "answer",
+  "title": "Which energy efficiency technologies can SIDBI's FMAP programme fund across sectors?",
+  "text": "SIDBI's sector documents for its GCF-backed FMAP programme list 64 cross-sector technologies it will fund. They include variable frequency drives, efficient transformers, motors, pumps, fans and compressors, power factor and maximum demand controllers, efficient boilers, recuperators, regenerative burners, waste heat recovery boilers, heat pumps, cogeneration, thermal insulation and energy management systems.",
+  "url": "https://senseible.earth/answers/fmap-eligible-energy-efficiency-technologies"
  },
  {
   "kind": "answer",
@@ -12047,6 +12077,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the MSE-GIFT and MSE-SPICE schemes for green and circular MSME projects?",
+  "text": "Both are sub-schemes of the Ministry of MSME's World Bank supported RAMP programme, offered through SIDBI as incentives on green loans. MSE-GIFT helps MSMEs get institutional finance at a concessional rate for clean and green technology. MSE-SPICE supports micro and small enterprises adopting circular practices such as recycling and reuse.",
+  "url": "https://senseible.earth/answers/mse-gift-and-mse-spice-schemes"
+ },
+ {
+  "kind": "answer",
   "title": "How do I opt for MSEDCL's green power tariff, and what extra do I pay per unit?",
   "text": "Apply on MSEDCL's online green power portal, choosing 25, 50, 75 or 100 percent of your consumption for at least a year. You pay a premium per kWh on top of your normal tariff. MERC's 2025 tariff order cut it from Rs 0.66 to Rs 0.25 per kWh; confirm the rate on your bill.",
   "url": "https://senseible.earth/answers/msedcl-green-power-tariff-how-to-apply"
@@ -13703,6 +13739,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much does the Partial Risk Sharing Facility guarantee on an energy efficiency loan?",
+  "text": "The Partial Risk Sharing Facility partly guarantees energy saving loans from participating lenders: 40 to 75 percent of the loan amount, or up to ₹15 crore per project, for a tenure of up to 5 years. The World Bank implements it with Clean Technology Fund and Global Environment Facility money, and SIDBI executes it.",
+  "url": "https://senseible.earth/answers/prsf-guarantee-cover-energy-efficiency-loans"
+ },
+ {
+  "kind": "answer",
   "title": "Is an on-site PSA nitrogen generator lower carbon than buying liquid nitrogen?",
   "text": "Often yes for steady, moderate purity demand, but it moves emissions into your Scope 2. PSA runs on compressor electricity; liquid nitrogen carries the supplier's air separation power and road transport in your Scope 3. Compare kWh per cubic metre at the purity you need.",
   "url": "https://senseible.earth/answers/psa-nitrogen-generator-vs-liquid-nitrogen-co2"
@@ -13712,6 +13754,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What emissions data does a PSCI questionnaire ask pharma suppliers for?",
   "text": "Expect to give Scope 1 and Scope 2 emissions and energy use for each manufacturing site, how you calculated them, any reduction target, and how you manage solvents, refrigerants, air emissions and waste. Answer per site, not only as a group total, and keep the bills and records behind every figure ready.",
   "url": "https://senseible.earth/answers/psci-questionnaire-pharma-supplier-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the priority sector loan limit for renewable energy under RBI's 2025 directions?",
+  "text": "Under RBI's Priority Sector Lending Directions, 2025, in force from 1 April 2025, bank loans of up to ₹35 crore for renewable energy power generators and renewable public utilities such as street lighting and village electrification count as priority sector. For individual households the limit is ₹10 lakh per borrower.",
+  "url": "https://senseible.earth/answers/psl-renewable-energy-loan-limit-2025"
  },
  {
   "kind": "answer",
@@ -15299,9 +15347,69 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much does SIDBI's 4E energy efficiency loan cover, and who qualifies?",
+  "text": "SIDBI's 4E scheme lends up to 90 percent of an energy efficiency project, with a minimum loan of ₹10 lakh, or up to 100 percent if you place 20 percent cash collateral as a SIDBI fixed deposit. The detailed route needs a year of operation and a detailed energy audit by BEE-certified auditors.",
+  "url": "https://senseible.earth/answers/sidbi-4e-loan-terms-and-eligibility"
+ },
+ {
+  "kind": "answer",
   "title": "What energy efficiency loans does SIDBI offer MSMEs?",
   "text": "SIDBI's dedicated energy efficiency product is the 4E scheme, End to End Energy Efficiency: an energy audit and project report, then a SIDBI loan for the measures the audit recommends. SIDBI also ran the Partial Risk Sharing Facility, which guarantees part of other lenders' energy efficiency loans. Check current terms on sidbi.in.",
   "url": "https://senseible.earth/answers/sidbi-energy-efficiency-loan-for-msme"
+ },
+ {
+  "kind": "answer",
+  "title": "What is on SIDBI's environmental and social due diligence checklist for a green loan?",
+  "text": "Under SIDBI's GCF-backed FMAP programme the promoter fills in and signs a 14-point checklist with the loan application. It asks for environmental clearance and valid pollution control consents, any non-compliance notices, child or forced labour, worker safety, ESI and EPF, facilities for women, land acquisition, and distance from eco-sensitive areas.",
+  "url": "https://senseible.earth/answers/sidbi-environmental-due-diligence-checklist"
+ },
+ {
+  "kind": "answer",
+  "title": "How does SIDBI rate an MSME on ESG and green performance before a loan?",
+  "text": "Under its GCF-backed FMAP programme, SIDBI's ESG rating tool scores management, industry, operational and financial risk, then adds a separate green rating from a site check of air emissions, waste, water, energy use, renewables, consents and worker safety. The two combine into an integrated grade, from IR SME 1A to 8C.",
+  "url": "https://senseible.earth/answers/sidbi-esg-and-green-rating-for-msme"
+ },
+ {
+  "kind": "answer",
+  "title": "What are SIDBI's risk sharing facilities for electric vehicles and solid waste projects?",
+  "text": "Both are partial credit guarantees, not loans to you. Under the Electric Vehicle Risk Sharing Facility SIDBI shares part of the credit risk of lenders financing electric two and three wheelers. A separate facility covers lending for municipal solid waste management. You borrow from the lender; SIDBI shares that lender's loss.",
+  "url": "https://senseible.earth/answers/sidbi-ev-and-waste-risk-sharing-facilities"
+ },
+ {
+  "kind": "answer",
+  "title": "What is SIDBI's FMAP programme with the Green Climate Fund, and can my MSME borrow under it?",
+  "text": "FMAP, Financing Mitigation and Adaptation Projects in Indian MSMEs, is SIDBI's programme for lending Green Climate Fund concessional money to MSMEs, directly and through partner lenders. It funds energy efficiency, rooftop solar and new technology, plus adaptation such as effluent treatment, zero liquid discharge and water recycling. Only low and medium risk projects qualify.",
+  "url": "https://senseible.earth/answers/sidbi-fmap-green-climate-fund-programme"
+ },
+ {
+  "kind": "answer",
+  "title": "What are the terms of SIDBI's Green Finance Scheme loan for MSMEs?",
+  "text": "SIDBI's Green Finance Scheme is a term loan for green projects: renewable energy, energy-efficient buildings, waste management, resource and energy efficiency, wastewater treatment and cleaner production. It can fund up to 100 percent of the project, up to ₹20 crore for an MSME, repayable over up to 10 years.",
+  "url": "https://senseible.earth/answers/sidbi-green-finance-scheme-loan-terms"
+ },
+ {
+  "kind": "answer",
+  "title": "What steps does a SIDBI green loan application go through before sanction?",
+  "text": "Under SIDBI's GCF-backed FMAP programme a direct loan goes through three stages. The branch checks completeness and screens against the exclusion list. Due diligence follows: KYC, credit and financial checks, the environmental checklist, ESG rating, and climate and technical review. A credit appraisal memorandum then goes to a sanctioning committee.",
+  "url": "https://senseible.earth/answers/sidbi-green-loan-approval-steps"
+ },
+ {
+  "kind": "answer",
+  "title": "What monitoring and reporting does a SIDBI green loan need after the money is paid out?",
+  "text": "Under SIDBI's GCF-backed FMAP programme the borrower signs undertakings to carry out a project-specific environmental and social plan. SIDBI then runs annual supervision visits, high and moderate risk projects get semi-annual or annual monitoring, and independent agencies check a sample of units, including the energy, emissions and water savings claimed.",
+  "url": "https://senseible.earth/answers/sidbi-green-loan-monitoring-after-disbursement"
+ },
+ {
+  "kind": "answer",
+  "title": "Can I use a SIDBI machinery loan to replace old, energy-hungry machines?",
+  "text": "Yes, if the new machine belongs to your existing line of business. SIDBI's machinery loans fund new equipment for modernisation and technology upgrades: EXPRESS up to ₹3 crore and 100 percent of cost; SPEED up to 100 percent, capped at ₹1 crore for new customers and ₹2 crore for existing ones. Second-hand machines are not eligible.",
+  "url": "https://senseible.earth/answers/sidbi-machinery-loan-replace-old-machines"
+ },
+ {
+  "kind": "answer",
+  "title": "What environmental risks does SIDBI look for in textile, foundry and steel re-rolling loans?",
+  "text": "SIDBI's sector assessments for its GCF-backed FMAP programme name the risks it screens for. Textile wet processing: water use, dye and chemical effluent, sludge. Foundries: furnace energy, dust and fumes, waste sand and slag. Steel re-rolling: reheating furnace fuel and emissions, mill scale and oily wastewater. Worker heat and safety recur in all three.",
+  "url": "https://senseible.earth/answers/sidbi-sector-checks-textile-foundry-steel"
  },
  {
   "kind": "answer",
@@ -15722,6 +15830,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do lenders account for financed emissions on a solar project loan, and can they subtract avoided emissions?",
   "text": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
   "url": "https://senseible.earth/answers/solar-project-finance-financed-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Does a farmer's loan for a solar pump or solar plant on farm land count as priority sector?",
+  "text": "Yes. RBI's Priority Sector Lending Directions, 2025 list, under farm credit to individual farmers, loans for stand-alone solar agriculture pumps, for solarising grid-connected pumps, and for solar power plants on barren or fallow land or built on stilts over farmland the farmer owns. These count as agriculture lending, not renewable energy.",
+  "url": "https://senseible.earth/answers/solar-pump-loan-priority-sector-agriculture"
  },
  {
   "kind": "answer",
@@ -17954,6 +18068,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is Scope 4, and should we report it?",
   "text": "Scope 4 is an informal name for avoided emissions: the emissions a product helps customers avoid compared with an alternative. It is not a GHG Protocol scope. Report it, if at all, separately from Scope 1, 2 and 3, with the comparison scenario stated, and never subtract it from your footprint.",
   "url": "https://senseible.earth/answers/what-is-scope-4-avoided-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "What will SIDBI refuse to finance under its exclusion list?",
+  "text": "SIDBI's exclusion list rules out illegal products, weapons, tobacco, spirits other than beer and wine, gambling, asbestos fibres, ozone-depleting substances, banned pesticides, child or forced labour, and coal mining or coal-fired power. It also excludes trading, storing or moving significant volumes of hazardous chemicals, or using them at commercial scale, and counts petrol and kerosene as hazardous.",
+  "url": "https://senseible.earth/answers/what-sidbi-will-not-finance-exclusion-list"
  },
  {
   "kind": "answer",

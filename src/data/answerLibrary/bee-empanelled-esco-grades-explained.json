@@ -1,0 +1,77 @@
+{
+  "slug": "bee-empanelled-esco-grades-explained",
+  "q": "What do BEE's ESCO grades mean, and how do I pick an energy service company?",
+  "title": "BEE ESCO grades explained",
+  "short": "BEE empanels energy service companies after grading by CRISIL, ICRA or CARE on a 100-point scale: 40 percent business risk, 25 percent organisational risk, 35 percent financial risk. Grade 1 means a score of 85 or more, grade 5 below 40. Empanelment lasts two years, and BEE opened a 2026 window for new and renewing ESCOs.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSMEs choosing an ESCO for a performance contract or efficiency project",
+  "sections": [
+    {
+      "h": "The five grades",
+      "ul": [
+        "Grade 1, very high: 85 and above.",
+        "Grade 2, high: 70 to 84.",
+        "Grade 3, good: 55 to 69.",
+        "Grade 4, average: 40 to 54.",
+        "Grade 5, below average: less than 40."
+      ]
+    },
+    {
+      "h": "What is scored",
+      "ul": [
+        "Business risk (40 percent): years in ESCO business, detailed audits and ESCO clients in the last five years, sectors covered, customer feedback, projects completed with at least a year of repayment, order book, time and cost overruns, and the share of projects where actual savings met or beat the guaranteed savings.",
+        "Organisational risk (25 percent): staff in ESCO work, their qualifications and experience, number of certified energy auditors, management and internal controls, projects handled at once, certifications and R&D.",
+        "Financial risk (35 percent): ESCO revenue and its share of turnover, margins, cash accruals to debt, gearing, receivables, growth, CIBIL score and banker feedback."
+      ]
+    },
+    {
+      "h": "How to use this when choosing",
+      "p": [
+        "The grade measures the company's capability and strength, not the quality of the proposal in front of you. Ask any ESCO for its BEE grade and validity, then for references on projects like yours, and look closely at the savings record, because the score already rewards ESCOs whose actual savings met their guarantees. BEE's published list of 72 ESCOs ran to 15 August 2026, so ask for current empanelment."
+      ]
+    },
+    {
+      "h": "Contract basics to check",
+      "ul": [
+        "How the baseline is fixed and who measures savings.",
+        "What happens if savings fall short of the guarantee.",
+        "Who owns the equipment during and after the contract."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the pre-project baseline from your bills, so you have your own record to agree with the ESCO before the contract starts.",
+  "links": [
+    {
+      "label": "ESCO shared savings model",
+      "to": "/answers/esco-shared-savings-model-msme"
+    },
+    {
+      "label": "Partial Risk Sharing Facility terms",
+      "to": "/answers/prsf-guarantee-cover-energy-efficiency-loans"
+    },
+    {
+      "label": "Accredited vs certified energy auditor",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ESCO Grading Process: grading scale, criteria and weights",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bac8f462abfda032_1776144952.pdf"
+    },
+    {
+      "label": "BEE, ESCOs page: empanelment through CRISIL, CARE and ICRA",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=291&lid=400"
+    },
+    {
+      "label": "BEE, list of 72 ESCOs empaneled from 16 August 2024, valid till 15 August 2026",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-0fb0a619fe31e227_1776145133.pdf"
+    },
+    {
+      "label": "BEE, opening of ESCO empanelment and re-empanelment window 2026",
+      "url": "https://beeindia.gov.in/view_content.php?lid=739&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
