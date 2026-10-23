@@ -1,0 +1,56 @@
+{
+  "slug": "captive-coal-plants-run-at-full-capacity-2026",
+  "q": "Do captive coal power plants have to run at full capacity until December 2026?",
+  "title": "Captive coal plants and the 2026 directions",
+  "short": "Yes, if they are 50 MW or larger. Directions issued by the Ministry of Power under section 11 of the Electricity Act on 25 September 2026 require captive coal plants of 50 MW and above to generate to the maximum of their available capacity from 1 October to 31 December 2026, and to sell surplus on power exchanges.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Heavy industry with captive coal plants, and buyers who track their suppliers' power mix",
+  "sections": [
+    {
+      "h": "What the directions require",
+      "ul": [
+        "Captive coal generating stations of 50 MW and above operate and generate to the maximum extent of their available capacity.",
+        "After meeting their own captive demand, they offer surplus power through the power exchanges, under the market regulations.",
+        "They keep enough coal stock to run at maximum generation.",
+        "They send a weekly report to the Central Electricity Authority on generation, captive consumption, sales, available capacity and coal stock.",
+        "The directions apply from 1 October 2026 to 31 December 2026."
+      ]
+    },
+    {
+      "h": "Who is on the list",
+      "p": [
+        "The annexure names the plants addressed, mostly steel, cement, aluminium, alumina, zinc, fertiliser, refinery, paper and ferro alloy units."
+      ]
+    },
+    {
+      "h": "What it means for emissions accounting",
+      "p": [
+        "Coal burnt in a captive plant is the owner's Scope 1. Running harder for the grid raises the owner's Scope 1 for those months; power sold on the exchange leaves with that coal's emissions, which matters if the plant's owner reports emissions per tonne of product. Buyers of that power on the exchange report it as grid electricity."
+      ]
+    }
+  ],
+  "senseible": "Senseible records captive generation, coal bills and exported units separately, so a plant that sells surplus power can show product emissions with and without the exported share.",
+  "links": [
+    {
+      "label": "Captive power and the CEA grid factor",
+      "to": "/answers/captive-power-in-cea-grid-emission-factor"
+    },
+    {
+      "label": "Category 3 for captive coal power plants",
+      "to": "/answers/category-3-for-captive-coal-power-plant"
+    },
+    {
+      "label": "If a captive plant fails the 51% test",
+      "to": "/answers/captive-plant-fails-51-percent-test-what-happens"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power directions under Section 11 of the Electricity Act, 2003 to owners of captive generating plants, No. 23/13/2021-R&R (Pt-1), 25 September 2026",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/09/1c9e465d38785fe239f2aef55220d076.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Directions of 25 September 2026, valid to 31 December 2026. Check for an extension in January 2027 (checked 23 October 2026)."
+}

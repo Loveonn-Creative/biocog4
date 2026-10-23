@@ -1,0 +1,60 @@
+{
+  "slug": "does-almm-apply-to-factory-rooftop-solar",
+  "q": "Does the ALMM rule apply to rooftop solar on a factory?",
+  "title": "ALMM and factory rooftop solar",
+  "short": "Yes, if the rooftop system is connected under net metering or open access. MNRE amended the ALMM Order in January 2022 to cover open access and net metering projects, applying to projects that apply for open access or net metering on or after 1 October 2022. A purely captive system with neither may fall outside it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSMEs planning rooftop solar and the installers quoting for them",
+  "sections": [
+    {
+      "h": "Who ALMM covers",
+      "ul": [
+        "Government projects, government assisted projects and projects under government schemes and programmes, including Component A of PM-KUSUM.",
+        "Projects selling power to government under section 63 bidding guidelines.",
+        "Open access and net metering projects, added by the memorandum of 13 January 2022."
+      ]
+    },
+    {
+      "h": "From when",
+      "ul": [
+        "The January 2022 amendment first applied to projects applying for open access or net metering from 1 April 2022.",
+        "A memorandum of 28 March 2022 moved that to projects applying on or after 1 October 2022.",
+        "List-II for cells applies to net metering and open access projects commissioned after 31 December 2026, under the July 2026 window."
+      ]
+    },
+    {
+      "h": "What to ask your installer",
+      "p": [
+        "Ask which ALMM list entry covers the module model being quoted, who makes the cells and whether they are on List-II, and whether your discom checks this at net metering approval. Get the answers in the quotation."
+      ]
+    }
+  ],
+  "senseible": "Senseible records rooftop solar generation alongside grid imports, so the system shows up correctly in Scope 2 whatever modules it uses; ALMM compliance is between you, your installer and the discom.",
+  "links": [
+    {
+      "label": "ALMM List-II cells for net metering and open access",
+      "to": "/answers/almm-list-ii-solar-cells-open-access-net-metering"
+    },
+    {
+      "label": "How to check cells on ALMM List-II",
+      "to": "/answers/how-to-check-solar-cells-on-almm-list"
+    },
+    {
+      "label": "Rooftop solar with net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE office memoranda amending the ALMM Order, 2019: 2 February 2021, 13 January 2022 and 28 March 2022 (No. 283/54/2018-GRID SOLAR)",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/746e21ef54906bb5c4e123c36fe2821d.pdf"
+    },
+    {
+      "label": "MNRE office memorandum No. 283/53/2026-GRID SOLAR, 18 July 2026: ALMM List-II window for net-metering and open access projects till 31 December 2026",
+      "url": "https://mnre.gov.in/static/uploads/2026/10/f5ffa3db3ba9f186679e204adceb05df.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "MNRE office memoranda of 2 February 2021, 13 January 2022 and 28 March 2022 amending the ALMM Order, 2019 (checked 23 October 2026)."
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "dg-set-replace-with-solar-battery-rule",
+  "q": "Do Indian rules require factories to replace diesel generator backup with solar and batteries?",
+  "title": "Rule on replacing diesel generator backup",
+  "short": "Not as a hard ban. The Electricity (Rights of Consumers) Amendment Rules, 2022 say consumers using diesel generator sets as essential backup shall endeavour to shift to cleaner options such as renewable energy with battery storage within five years, or on the timeline their state commission sets based on supply reliability in that city.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factories and commercial sites in cities that run diesel generator backup",
+  "sections": [
+    {
+      "h": "What the 2022 amendment says",
+      "ul": [
+        "In metros and cities with a population of 100,000 or more, the discom must ensure 24x7 uninterrupted supply so diesel generators are not needed, and the state commission sets reliability targets for those cities.",
+        "Consumers using diesel generator sets as essential backup shall endeavour to shift to cleaner technology, such as renewable energy with battery storage, within five years of the amendment or on the state commission's timeline.",
+        "Temporary connections, for construction and similar use, must be given within 48 hours, or seven days if the network needs augmenting, so diesel sets are not used for temporary work."
+      ]
+    },
+    {
+      "h": "How strong is it",
+      "p": [
+        "The wording is endeavour, and the timeline can be set by the state commission according to how reliable supply is in your city. Air pollution rules for diesel generators sit separately with pollution control boards. Check your state commission's orders for any dated requirement."
+      ]
+    },
+    {
+      "h": "Why it is worth acting on anyway",
+      "p": [
+        "Diesel burnt in a generator is your Scope 1. Measuring generator hours and diesel litres for a few months tells you how much backup you really need before you size a battery, and what the switch would remove from Scope 1."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads diesel purchase bills and generator log entries, so you can see your generator's litres, hours and Scope 1 emissions month by month before you plan a battery.",
+  "links": [
+    {
+      "label": "Battery backup vs DG set emissions",
+      "to": "/answers/battery-backup-vs-dg-set-emissions"
+    },
+    {
+      "label": "DG set emissions per kWh vs the grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Battery storage owned by a consumer",
+      "to": "/answers/consumer-owned-battery-storage-rules-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Rights of Consumers) Amendment Rules, 2022, G.S.R. 306(E), 20 April 2022",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/6793184c068360d0e5db42c56b7ec4dc.pdf"
+    },
+    {
+      "label": "Ministry of Power, National Framework for Promoting Energy Storage Systems, August 2023",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/fb5ee0d1ac3a305ae2ad8fbe60562d1f.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Rule 10(3) to (8) of the Electricity (Rights of Consumers) Rules, 2020 as inserted on 20 April 2022 (checked 23 October 2026)."
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "green-tariff-maximum-ministry-of-power-cap",
+  "q": "Is there a limit on how high a discom's green tariff can be?",
+  "title": "Green tariff limit set by the Power Ministry",
+  "short": "Yes. In May 2023 the Ministry of Power told state commissions that a green tariff should never exceed the discom's average power purchase cost of renewable energy, plus a surcharge of 20% of the average cost of supply, plus a reasonable margin of about 25 paise per unit.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factories comparing a discom green tariff offer with open access or RECs",
+  "sections": [
+    {
+      "h": "How the green tariff is built",
+      "p": [
+        "Under the Green Energy Open Access Rules, 2022, the state commission sets the green tariff from three parts: the average pooled power purchase cost of renewable energy, cross-subsidy charges if any, and service charges covering the discom's prudent cost of supplying green energy."
+      ]
+    },
+    {
+      "h": "The ceiling",
+      "ul": [
+        "Average power purchase cost of renewable energy.",
+        "Plus surcharge at 20% of the average cost of supply; the Electricity Rules, 2005 as amended in December 2022 cap the open access surcharge at that level.",
+        "Plus a reasonable margin, given in the letter as 25 paise.",
+        "The letter notes that the few states that had set green tariffs had set them well above the average renewable purchase cost."
+      ]
+    },
+    {
+      "h": "How a factory can use this",
+      "p": [
+        "Ask your discom or commission for the average renewable power purchase cost and average cost of supply in the latest tariff order, work out the ceiling, and compare it with the green premium you are quoted. The letter is a direction to commissions; your tariff order is what the discom bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the ceiling (illustrative figures)",
+    "lines": [
+      "Average power purchase cost of renewable energy: ₹4.00 per kWh",
+      "Average cost of supply: ₹7.00 per kWh, so a 20% surcharge is ₹1.40",
+      "Margin: ₹0.25",
+      "Ceiling: 4.00 + 1.40 + 0.25 = ₹5.65 per kWh"
+    ],
+    "note": "Both input figures are assumed; take them from your state tariff order."
+  },
+  "senseible": "Senseible reads the green tariff line separately on your bill, so units bought at green tariff can be shown apart from ordinary discom units in market-based Scope 2.",
+  "links": [
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Green tariff or RECs: which is cheaper?",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Surcharge cap at 20% of cost of supply",
+      "to": "/answers/open-access-cross-subsidy-surcharge-20-percent-cap"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power letter F. No. 13/02/2023-RCM, 13 May 2023, to state commissions on determination of green tariff",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/1f14fcff58f42eb457a9f1dc881f36c5.pdf"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, G.S.R. 418(E), 6 June 2022",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/917a6ca2a9ea54d72be3495401811f71.pdf"
+    },
+    {
+      "label": "Electricity (Amendment) Rules, 2022, G.S.R. 911(E), 29 December 2022, inserting rules 13 to 19 in the Electricity Rules, 2005",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/4f904dacb1210dcbd4cabb75b8cf016f.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Ministry of Power letter of 13 May 2023 to SERCs; rule 4(2)(C)(c) of the 2022 Rules; rule 13 of the Electricity Rules, 2005 (checked 23 October 2026)."
+}

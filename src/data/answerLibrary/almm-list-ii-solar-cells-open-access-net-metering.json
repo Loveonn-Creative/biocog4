@@ -1,0 +1,65 @@
+{
+  "slug": "almm-list-ii-solar-cells-open-access-net-metering",
+  "q": "Do net metering and open access solar projects have to use ALMM List-II solar cells?",
+  "title": "ALMM List-II cells: net metering, open access",
+  "short": "Yes, with a window. Net metering and open access solar projects commissioned from 1 June 2026 must use ALMM List-I modules and List-II cells, but MNRE's July 2026 memorandum lets them commission without List-II cells until 31 December 2026. Projects commissioned after that must comply.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factories installing rooftop or open access solar, and their EPC contractors",
+  "sections": [
+    {
+      "h": "The rule and the window",
+      "ul": [
+        "MNRE's memoranda of 9 December 2024 and 28 July 2025: net metering and open access projects commissioned on or after 1 June 2026 must source modules from ALMM List-I and cells from ALMM List-II.",
+        "MNRE's memorandum of 18 July 2026: no blanket extension of List-II, but a limited window lets net metering and open access projects commission with exemption from List-II until 31 December 2026.",
+        "Before this, the dispensation for these projects ran until 31 May 2026.",
+        "Projects commissioned after 31 December 2026 must comply with List-II."
+      ]
+    },
+    {
+      "h": "What it means for a project now",
+      "ol": [
+        "If commissioning will slip past 31 December 2026, specify List-II cells in the purchase order now.",
+        "Ask the EPC contractor for the module model, its ALMM List-I entry, and the cell manufacturer and model.",
+        "Keep the module datasheets and invoices; the discom may check them at net metering or open access approval."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "ALMM List-II covers solar cells made by enlisted manufacturers at enlisted plants. A project that misses the window with non-listed cells risks delays in its net metering or open access approval."
+      ]
+    }
+  ],
+  "senseible": "Senseible can store your solar installation documents, module datasheets and commissioning certificate next to the generation readings, so the evidence for both compliance and Scope 2 sits in one record.",
+  "links": [
+    {
+      "label": "Does ALMM apply to factory rooftop solar?",
+      "to": "/answers/does-almm-apply-to-factory-rooftop-solar"
+    },
+    {
+      "label": "How to check cells on ALMM List-II",
+      "to": "/answers/how-to-check-solar-cells-on-almm-list"
+    },
+    {
+      "label": "PM Surya Ghar domestic content modules",
+      "to": "/answers/pm-surya-ghar-domestic-content-modules"
+    },
+    {
+      "label": "Rooftop solar with net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE office memorandum No. 283/53/2026-GRID SOLAR, 18 July 2026: ALMM List-II window for net-metering and open access projects till 31 December 2026",
+      "url": "https://mnre.gov.in/static/uploads/2026/10/f5ffa3db3ba9f186679e204adceb05df.pdf"
+    },
+    {
+      "label": "MNRE office memoranda amending the ALMM Order, 2019: 2 February 2021, 13 January 2022 and 28 March 2022 (No. 283/54/2018-GRID SOLAR)",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/746e21ef54906bb5c4e123c36fe2821d.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "MNRE office memorandum of 18 July 2026. MNRE has changed these dates several times; check for a newer memorandum before ordering (checked 23 October 2026)."
+}

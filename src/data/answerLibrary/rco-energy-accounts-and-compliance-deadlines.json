@@ -1,0 +1,72 @@
+{
+  "slug": "rco-energy-accounts-and-compliance-deadlines",
+  "q": "When must designated consumers submit RCO energy accounts and compliance reports?",
+  "title": "RCO deadlines and who certifies the figures",
+  "short": "Certified energy accounts are due by 31 July each year, and the compliance report, after covering any shortfall with RECs or buyout, by 31 December. For 2024-25 the dates were 31 October 2025 and 31 March 2026, and the Ministry of Power later extended final compliance to 31 May 2026.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Energy managers and compliance teams at designated consumers",
+  "sections": [
+    {
+      "h": "The calendar",
+      "ul": [
+        "FY 2024-25 energy accounts: by 31 October 2025.",
+        "FY 2024-25 compliance report: by 31 March 2026, extended to 31 May 2026 by the Ministry of Power letter of 16 April 2026.",
+        "FY 2025-26 onwards: energy accounts by 31 July after the year ends, compliance report by 31 December."
+      ]
+    },
+    {
+      "h": "Who certifies",
+      "ul": [
+        "Distribution licensees: certified by the State Load Despatch Centre.",
+        "Captive users, open access consumers and other designated consumers: certified by an accredited energy auditing firm empanelled by the Bureau of Energy Efficiency.",
+        "All submissions use the formats in Annexure II of the notification."
+      ]
+    },
+    {
+      "h": "Who checks",
+      "p": [
+        "The Bureau of Energy Efficiency monitors compliance and reports to the Central Government, copying the State Electricity Regulatory Commissions. The Bureau is also to issue detailed implementation guidelines."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Timeline for FY 2025-26",
+    "lines": [
+      "Year ends: 31 March 2026",
+      "Certified energy accounts due: 31 July 2026",
+      "Buy RECs or pay buyout for any shortfall, then file the compliance report: by 31 December 2026"
+    ]
+  },
+  "senseible": "Senseible keeps a year of bills and captive generation records in one place with their sources, which shortens the evidence hunt when the energy auditor signs off your RCO accounts.",
+  "links": [
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    },
+    {
+      "label": "Counting captive consumption for RCO",
+      "to": "/answers/rco-captive-user-consumption-calculation"
+    },
+    {
+      "label": "Covering an RCO shortfall",
+      "to": "/answers/rco-shortfall-recs-or-buyout"
+    },
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    },
+    {
+      "label": "Ministry of Power letter F.No. 09/01/2024-RCM, 16 April 2026: RCO compliance for FY 2024-25 extended to 31 May 2026",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/05/07f01334c51fc3e842ce805979b606e1.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Paragraphs 11 and 12 of the 27 September 2025 notification and the Ministry of Power letter of 16 April 2026. Watch for further extensions (checked 23 October 2026)."
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "almm-wind-data-centre-rule-wind-ppa",
+  "q": "What does the ALMM wind data and control rule mean for a factory buying wind power?",
+  "title": "ALMM wind data rule and wind power buyers",
+  "short": "Wind turbine makers on MNRE's ALMM (Wind) list must keep turbine data and servers in India, run turbines only from a facility in India, stop real-time operational data leaving the country and set up an R&D centre in India within a year. MNRE asked them to report compliance by 31 August 2026.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Factories buying wind power through open access or group captive arrangements",
+  "sections": [
+    {
+      "h": "The requirements",
+      "ul": [
+        "Data centre and servers located in India, with all wind turbine data stored and maintained in India.",
+        "No transfer of real-time operational data outside India; turbines operated only from a facility in India.",
+        "An R&D centre in India within one year of the amendment of 31 July 2025."
+      ]
+    },
+    {
+      "h": "The compliance call",
+      "p": [
+        "MNRE's memorandum of 20 August 2026 asked all manufacturers on the ALMM (Wind) list to submit compliance status with documents in a set format by 31 August 2026, so that random checks and inspections can follow."
+      ]
+    },
+    {
+      "h": "Why a wind buyer should care",
+      "p": [
+        "If you contract wind power from a developer, the turbine maker's listing affects whether the project can proceed on time. Ask the developer which ALMM (Wind) model the project uses and whether its maker has reported compliance. The rule does not change how you count wind units in Scope 2."
+      ]
+    }
+  ],
+  "senseible": "Senseible counts wind units from your open access or captive statements in market-based Scope 2 when you hold the attributes; the turbine supplier's ALMM status does not change that calculation.",
+  "links": [
+    {
+      "label": "Solar or wind open access for a factory",
+      "to": "/answers/solar-vs-wind-open-access-factory-choice"
+    },
+    {
+      "label": "Chennai data centre wind open access",
+      "to": "/answers/chennai-data-centre-wind-open-access-scope-2"
+    },
+    {
+      "label": "ALMM and factory rooftop solar",
+      "to": "/answers/does-almm-apply-to-factory-rooftop-solar"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE office memorandum No. 233/1/2018-Wind, 20 August 2026: compliance with the ALMM (Wind) procedure amendment",
+      "url": "https://mnre.gov.in/static/uploads/2026/10/a83540623f3124539af1201e2ee41e2b.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "MNRE memorandum No. 233/1/2018-Wind of 20 August 2026 (checked 23 October 2026)."
+}

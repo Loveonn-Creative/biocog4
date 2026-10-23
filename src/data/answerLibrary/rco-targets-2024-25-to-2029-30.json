@@ -1,0 +1,71 @@
+{
+  "slug": "rco-targets-2024-25-to-2029-30",
+  "q": "What are the Renewable Consumption Obligation targets for each year up to 2029-30?",
+  "title": "RCO targets by year, 2024-25 to 2029-30",
+  "short": "The Ministry of Power notification of 27 September 2025 sets the total Renewable Consumption Obligation at 29.91% for 2024-25, 33.01% for 2025-26, 35.95% for 2026-27, 38.81% for 2027-28, 41.36% for 2028-29 and 43.33% for 2029-30, split into wind, hydro, distributed and other renewable components.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Designated consumers under the Energy Conservation Act: captive users, open access consumers and their energy managers",
+  "sections": [
+    {
+      "h": "The table in the notification",
+      "ul": [
+        "2024-25: wind 0.67%, hydro 0.38%, distributed renewable 1.50%, other renewable 27.36%, total 29.91%.",
+        "2025-26: wind 1.45%, hydro 1.22%, distributed 2.10%, other 28.24%, total 33.01%.",
+        "2026-27: wind 1.97%, hydro 1.34%, distributed 2.70%, other 29.94%, total 35.95%.",
+        "2027-28: wind 2.45%, hydro 1.42%, distributed 3.30%, other 31.64%, total 38.81%.",
+        "2028-29: wind 2.95%, hydro 1.42%, distributed 3.90%, other 33.09%, total 41.36%.",
+        "2029-30: wind 3.48%, hydro 1.33%, distributed 4.50%, other 34.02%, total 43.33%."
+      ]
+    },
+    {
+      "h": "Which column applies to a factory",
+      "p": [
+        "Paragraph 5 of the notification says open access consumers and captive users that are designated consumers meet the total obligation from any renewable source. The component split matters to distribution licensees; for a captive or open access factory the number to plan against is the total column.",
+        "The percentage is applied to electricity consumed from sources other than the discom, after the exclusions the notification lists for captive users. Nuclear power is excluded for everyone."
+      ]
+    },
+    {
+      "h": "What this replaced",
+      "p": [
+        "The September 2025 notification supersedes the earlier RCO notification S.O. 4617(E) of 20 October 2023. For designated consumers, it also says no additional Renewable Purchase Obligation applies under the Electricity Act, 2003, and state RPO targets are subsumed within these numbers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: renewable units a captive user needs in 2026-27",
+    "lines": [
+      "Consumption from sources other than the discom, after exclusions: 100 million units (MU)",
+      "Total RCO for 2026-27: 35.95%",
+      "Renewable consumption needed: 100 x 0.3595 = 35.95 MU",
+      "Any shortfall: covered by RECs or the buyout price set by CERC"
+    ]
+  },
+  "senseible": "Senseible keeps your bills split by source, so the units from the discom, from captive plants and from open access stay separate. That split is the starting point for working out which consumption the RCO percentage applies to.",
+  "links": [
+    {
+      "label": "Does the RCO apply to my factory?",
+      "to": "/answers/renewable-consumption-obligation-who-must-comply"
+    },
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "How captive consumption is counted for RCO",
+      "to": "/answers/rco-captive-user-consumption-calculation"
+    },
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Targets are as notified on 27 September 2025. Check for a later amendment before relying on a future year (checked 23 October 2026)."
+}

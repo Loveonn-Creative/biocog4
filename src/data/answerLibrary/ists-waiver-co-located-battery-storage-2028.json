@@ -1,0 +1,57 @@
+{
+  "slug": "ists-waiver-co-located-battery-storage-2028",
+  "q": "Is there an inter-state transmission charge waiver for battery storage in India?",
+  "title": "ISTS charge waiver for battery storage",
+  "short": "Yes, for co-located batteries. A June 2025 Ministry of Power order gives a 100% waiver of inter-state transmission charges for battery storage connected at the same ISTS substation as a renewable project and commissioned by 30 June 2028, if its power is consumed outside the state. Batteries commissioned later get no such waiver.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Industrial buyers and developers planning renewable power with battery storage across states",
+  "sections": [
+    {
+      "h": "The 10 June 2025 order",
+      "ul": [
+        "Co-located battery storage commissioned on or before 30 June 2028: 100% waiver of ISTS charges, if the power is consumed outside the state where the battery is commissioned.",
+        "Co-located means the battery and the renewable project are connected at the same ISTS substation.",
+        "No waiver for co-located batteries commissioned after 30 June 2028.",
+        "Batteries that are not co-located follow the earlier orders and CERC regulations.",
+        "Pumped storage: 100% waiver where construction is awarded on or before 30 June 2028."
+      ]
+    },
+    {
+      "h": "From the 2023 orders",
+      "ul": [
+        "An entity that draws power from a storage project is exempt from ISTS charges if at least 51% of the annual energy it contracts with or consumes from storage is renewable.",
+        "The waiver covers ISTS charges only, not ISTS losses."
+      ]
+    },
+    {
+      "h": "What a factory should check",
+      "p": [
+        "Ask the developer for the battery's scheduled commissioning date, the substation it connects at, and whether the power will cross state lines. The waiver shapes the landed price of round the clock renewable power; your state's own charges still apply."
+      ]
+    }
+  ],
+  "senseible": "Senseible counts units drawn from a storage project by where the stored energy came from, using the developer's monthly statement, so a renewable battery supply is not treated as grid power by default.",
+  "links": [
+    {
+      "label": "ISTS charge waiver for green open access",
+      "to": "/answers/ists-charge-waiver-green-open-access"
+    },
+    {
+      "label": "Battery storage owned by a consumer",
+      "to": "/answers/consumer-owned-battery-storage-rules-india"
+    },
+    {
+      "label": "Does battery storage reduce Scope 2?",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power order F.No. 12/07/2023-RCM-Part(1), 10 June 2025: waiver of inter-state transmission charges for energy storage systems, with the orders of 29 May and 9 June 2023",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/06964870d76b47e26ed5a5874f3c5e4c.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Ministry of Power orders of 29 May 2023, 9 June 2023 and 10 June 2025 (checked 23 October 2026)."
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "green-open-access-standby-charges-cap",
+  "q": "How much can a discom charge for standby power under green energy open access?",
+  "title": "Standby charges on green open access",
+  "short": "Standby charges under green energy open access are capped at 25% of the energy charges of your tariff category, after the January 2023 amendment raised the cap from 10%. They do not apply at all if you give the discom notice before the day ahead market closes on the day before delivery.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Green open access consumers whose generator or line may be unavailable",
+  "sections": [
+    {
+      "h": "What standby means",
+      "p": [
+        "Standby power is what the discom supplies when your open access source fails, for example a generator outage or a transmission fault. The Rules say the charge should reflect the discom's cost of keeping that support ready."
+      ]
+    },
+    {
+      "h": "The cap and the exemption",
+      "ul": [
+        "Cap: not more than 25% of the energy charges applicable to your consumer tariff category (G.S.R. 59(E), 27 January 2023). The original 2022 Rules set 10%.",
+        "Exemption: no standby charge if you notify the discom at least a day ahead, before the closure time of the Day Ahead Market on the day before delivery.",
+        "Your state commission specifies the actual charge within that cap."
+      ]
+    },
+    {
+      "h": "What to do with it",
+      "p": [
+        "Build the standby charge into your landed cost comparison only for the outage days you expect, and agree with your developer how they will warn you of planned maintenance early enough to give notice and avoid it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the cap in rupees (illustrative rates)",
+    "lines": [
+      "Energy charge for your HT industrial category: ₹7.00 per kWh",
+      "Maximum standby charge: 25% x 7.00 = ₹1.75 per kWh, on top of the energy charge for those units",
+      "With day ahead notice given in time: no standby charge"
+    ],
+    "note": "The rate is assumed; your state commission sets the actual charge."
+  },
+  "senseible": "Senseible keeps standby units on the bill as discom units, so they appear in location-based Scope 2 on the grid factor rather than being counted as green.",
+  "links": [
+    {
+      "label": "Green open access charges, line by line",
+      "to": "/answers/green-open-access-charges-india"
+    },
+    {
+      "label": "Open access power curtailed: which factor?",
+      "to": "/answers/open-access-power-curtailed-which-factor"
+    },
+    {
+      "label": "Green open access with several connections",
+      "to": "/answers/green-open-access-multiple-connections-100-kw"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Amendment Rules, 2023, G.S.R. 59(E), 27 January 2023",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/315adf1da9034fbb1cc8acfb6dd7387a.pdf"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, G.S.R. 418(E), 6 June 2022",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/917a6ca2a9ea54d72be3495401811f71.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Rule 9(4) as substituted on 27 January 2023 (checked 23 October 2026)."
+}

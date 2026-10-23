@@ -1,0 +1,70 @@
+{
+  "slug": "energy-storage-obligation-for-industry-india",
+  "q": "Is there an energy storage obligation for factories in India?",
+  "title": "Energy storage obligation and factories",
+  "short": "The Ministry of Power's July 2022 order set an energy storage obligation rising from 1% in 2023-24 to 4% in 2029-30, met only when at least 85% of stored energy is renewable. The September 2025 RCO notification for designated consumers has no separate storage component; storage counts only as a way to consume renewable power.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Captive and open access consumers planning batteries alongside renewable power",
+  "sections": [
+    {
+      "h": "The 2022 trajectory",
+      "ul": [
+        "2023-24: 1.0% of total energy consumed.",
+        "2024-25: 1.5%.",
+        "2025-26: 2.0%.",
+        "2026-27: 2.5%.",
+        "2027-28: 3.0%.",
+        "2028-29: 3.5%.",
+        "2029-30: 4.0%."
+      ]
+    },
+    {
+      "h": "How it was meant to work",
+      "p": [
+        "The order defines the obligation as solar or wind energy consumed along with or through storage, calculated in energy terms as a share of total consumption. It is treated as fulfilled only when at least 85% of the energy stored in the system over the year comes from renewable sources, and it counts as part of the total renewable obligation, not on top of it."
+      ]
+    },
+    {
+      "h": "Where designated consumers stand now",
+      "p": [
+        "The RCO notification of 27 September 2025 lets designated consumers meet their obligation by consuming renewable electricity directly or through an energy storage system, and says no additional RPO under the Electricity Act applies to them. It does not set a separate storage percentage. For an obligated entity outside the designated consumer list, check your state commission's RPO regulation for any storage requirement."
+      ]
+    }
+  ],
+  "senseible": "Senseible treats battery discharge as the electricity that charged it: grid charging stays grid electricity, solar charging stays solar. That keeps your RCO and Scope 2 figures consistent when a battery sits in between.",
+  "links": [
+    {
+      "label": "Does battery storage reduce Scope 2?",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    },
+    {
+      "label": "RCO targets by year",
+      "to": "/answers/rco-targets-2024-25-to-2029-30"
+    },
+    {
+      "label": "Battery storage owned by a consumer",
+      "to": "/answers/consumer-owned-battery-storage-rules-india"
+    },
+    {
+      "label": "State RPO for designated consumers",
+      "to": "/answers/does-state-rpo-still-apply-under-rco"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power order F. No. 09/13/2021-RCM, 22 July 2022, on Renewable Purchase Obligation and Energy Storage Obligation trajectory till 2029-30, with corrigendum of 19 September 2022",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/93aa2d91bb7b50a83e0f85b0bf95d1dd.pdf"
+    },
+    {
+      "label": "Ministry of Power notification S.O. dated 27 September 2025 on Renewable Consumption Obligation for designated consumers under the Energy Conservation Act, 2001 (supersedes S.O. 4617(E) of 20 October 2023)",
+      "url": "https://www.powermin.gov.in/static/uploads/2026/08/894fb6d8fb18baec1c5d47f02d7777f4.pdf"
+    },
+    {
+      "label": "Ministry of Power, National Framework for Promoting Energy Storage Systems, August 2023",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/fb5ee0d1ac3a305ae2ad8fbe60562d1f.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "Paragraphs 15 to 18 of the 22 July 2022 order and paragraphs 9 and 16 of the 27 September 2025 notification (checked 23 October 2026)."
+}

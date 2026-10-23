@@ -1,0 +1,55 @@
+{
+  "slug": "solar-inverter-bis-certification-above-200-kw",
+  "q": "Do solar inverters above 200 kW need BIS certification in India?",
+  "title": "BIS rules for solar inverters above 200 kW",
+  "short": "They fall under the Solar Systems, Devices and Components Goods Order, 2025, but MNRE extended self-certification for inverters above 200 kW until 31 December 2026 or further orders. Manufacturers need valid IEC certificates matching the Indian standards in the order and test reports from accredited labs.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factories buying large solar plants and their EPC contractors",
+  "sections": [
+    {
+      "h": "The order and the extension",
+      "ul": [
+        "The Solar Systems, Devices and Components Goods Order, 2025 (S.O. 492(E), 27 January 2025) covers five products, including solar PV inverters, and requires the BIS Standard Mark.",
+        "Self-certification for inverters above 200 kW was first extended to 30 June 2026 (S.O. 3597(E), 5 August 2025).",
+        "S.O. 3706(E) of 3 July 2026 extends it to 31 December 2026 or further orders, whichever is earlier."
+      ]
+    },
+    {
+      "h": "Conditions for self-certification",
+      "ul": [
+        "Valid IEC certificates corresponding to the Indian standards in the order, such as IS 16221 (Part 2) / IEC 62109-2 and IS/IEC 61683 for one inverter type, and IS 16221 (Part 2), IS 16169 / IEC 62116 and IS 17980 / IEC 62891 for the other.",
+        "Test reports from accredited test laboratories."
+      ]
+    },
+    {
+      "h": "What to put in the contract",
+      "p": [
+        "For inverters above 200 kW delivered before 31 December 2026, ask for the IEC certificates and lab reports. For later deliveries, ask for the BIS registration unless MNRE extends self-certification again."
+      ]
+    }
+  ],
+  "senseible": "Senseible records your solar plant's generation and keeps the inverter and module paperwork with it, so its effect on Scope 2 is measured and the documents are on file; equipment approval stays with BIS and your supplier.",
+  "links": [
+    {
+      "label": "ALMM List-II cells for net metering and open access",
+      "to": "/answers/almm-list-ii-solar-cells-open-access-net-metering"
+    },
+    {
+      "label": "Solar module model numbers with country codes",
+      "to": "/answers/solar-module-model-number-country-code-suffix"
+    },
+    {
+      "label": "Does ALMM apply to factory rooftop solar?",
+      "to": "/answers/does-almm-apply-to-factory-rooftop-solar"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE notification S.O. 3706(E), 3 July 2026, on the Solar Systems, Devices and Components Goods Order, 2025 for inverters above 200 kW",
+      "url": "https://mnre.gov.in/static/uploads/2026/10/3ee4529cf2b20ea103878dce8459f2cd.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23",
+  "reviewNote": "MNRE notification S.O. 3706(E), 3 July 2026 (checked 23 October 2026)."
+}
