@@ -1,0 +1,77 @@
+{
+  "slug": "cbam-cost-worked-example-indian-rebar",
+  "q": "How much CBAM would an EU importer pay on Indian rebar using default values in 2026?",
+  "title": "CBAM worked example: Indian rebar, 2026",
+  "short": "About 3.37 certificates per tonne, or roughly EUR 277 at the third-quarter 2026 price of EUR 82.32. That is the India default of 4.270 plus the 10% mark-up, minus a free allocation adjustment of 0.975 x 1.364, assuming a correction factor of 1.0.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU importers of Indian TMT bar and the Indian mills that supply them",
+  "sections": [
+    {
+      "h": "The steps, per tonne of CN 7214 20 00",
+      "ol": [
+        "Default embedded emissions: 4.270 t CO2e",
+        "With the 2026 mark-up: 4.270 x 1.10 = 4.697",
+        "Free allocation adjustment: 0.975 (CBAM factor) x 1.0 (correction factor) x 1.364 (benchmark, BF/BOF route) = 1.330",
+        "Certificates owed: 4.697 minus 1.330 = 3.367",
+        "Cost at EUR 82.32: about EUR 277"
+      ]
+    },
+    {
+      "h": "Assumptions to check",
+      "ul": [
+        "The cross-sectoral correction factor is taken as 1.0, as listed in the Commission's Guidance No. 4. If the published 2026 value is lower, the deduction shrinks and the cost rises.",
+        "No carbon price paid in India is deducted, because India has none that qualifies.",
+        "The quarterly price depends on the quarter of import: EUR 75.36 for Q1, EUR 75.28 for Q2 and EUR 82.32 for Q3 2026."
+      ]
+    },
+    {
+      "h": "With actual data",
+      "p": [
+        "Every tonne of verified emissions below the marked-up default removes about one certificate, because the free allocation deduction is set by benchmarks, not by the plant's own emissions. That gap is what an Indian supplier can offer in price negotiations."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "CBAM certificate price",
+      "to": "/climate-intelligence/cbam-certificate-price"
+    },
+    {
+      "label": "Indian rebar defaults",
+      "to": "/answers/cbam-default-value-india-rebar-wire-rod"
+    },
+    {
+      "label": "Is coal GST a carbon price?",
+      "to": "/answers/does-india-coal-gst-count-as-carbon-price-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Guidance No. 4, calculation of the free allocation adjustment (14 August 2026), Tables 2-1 and 2-2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
+    },
+    {
+      "label": "European Commission, CBAM benchmarks definitive period (Excel), from Implementing Regulation (EU) 2025/2620",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/9877523c-2a02-4926-a211-aefae7cf6d0d_en?filename=CBAM%20Benchmarks_20260206.xlsx"
+    },
+    {
+      "label": "European Commission, Price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

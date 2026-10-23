@@ -1,0 +1,50 @@
+{
+  "slug": "biomass-cofiring-thermal-power-india-co2-saved",
+  "q": "How much CO2 did biomass co-firing in Indian thermal plants save in FY 2025-26?",
+  "title": "Biomass co-firing in Indian power plants",
+  "short": "About 3.7 million tonnes of CO2, as assessed by the National Biomass Mission and reported in CEA's database version 22.0. Seventy-five thermal plants with 100,071 MW of capacity co-fired about 3.07 million tonnes of biomass in FY 2025-26, up from about 1.62 million tonnes the year before.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Biomass pellet and briquette suppliers, agri-residue aggregators and thermal plant buyers",
+  "sections": [
+    {
+      "h": "FY 2025-26 figures",
+      "ul": [
+        "Plants that started co-firing: 75, with 100,071 MW of capacity",
+        "Biomass used: 3,071,938 tonnes",
+        "Cumulative biomass used to 31 March 2026: 5,183,757 tonnes",
+        "CO2 saved in the year: 3,686,326 tonnes"
+      ]
+    },
+    {
+      "h": "Why it matters to suppliers",
+      "p": [
+        "Thermal plants buying pellets need consistent delivery records: tonnes, moisture, calorific value and source of residue. A supplier who can show those per lot is easier to contract and easier to audit."
+      ]
+    },
+    {
+      "h": "Effect on the grid factor",
+      "p": [
+        "Co-firing replaces some coal, so it lowers plant emissions slightly. At about 3.7 million tonnes against roughly 1,189 million tonnes from the sector, it is a small part of the fall in the FY 2025-26 grid factor."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase and sales invoices into dated records per site, so tonnes delivered, fuel type and dates are on file for each lot.",
+  "links": [
+    {
+      "label": "Biomass boiler CCTS credits",
+      "to": "/answers/bm-en01-003-biomass-boiler-ccts-credits"
+    },
+    {
+      "label": "Power sector CO2 in FY 2025-26",
+      "to": "/answers/india-power-sector-co2-emissions-2025-26"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "india-grid-emission-factor-trend-since-2014",
+  "q": "How has India's grid emission factor changed since 2014?",
+  "title": "India grid emission factor trend since 2014",
+  "short": "It fell from 0.774 t CO2 per MWh in FY 2013-14 to 0.675 in FY 2025-26, by CEA's weighted average including renewables. The drop was not steady: it reached 0.703 in FY 2020-21, rose to 0.727 in FY 2023-24, then fell to 0.710 and 0.675.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Companies setting baselines and targets that depend on grid electricity in India",
+  "sections": [
+    {
+      "h": "Weighted average including renewables, t CO2 per MWh",
+      "ul": [
+        "FY 2013-14: 0.774",
+        "FY 2015-16: 0.774",
+        "FY 2017-18: 0.754",
+        "FY 2019-20: 0.713",
+        "FY 2020-21: 0.703",
+        "FY 2021-22: 0.715",
+        "FY 2022-23: 0.716",
+        "FY 2023-24: 0.727",
+        "FY 2024-25: 0.710",
+        "FY 2025-26: 0.675"
+      ]
+    },
+    {
+      "h": "Why it moves",
+      "p": [
+        "Absolute emissions rose from 727.4 to about 1,189 million tonnes over the period as demand grew. Net generation from renewables rose from 53.06 BU to 310.58 BU, which is what pulls the average down. Years with high coal use, like FY 2023-24, push it back up."
+      ]
+    },
+    {
+      "h": "Note on the series",
+      "p": [
+        "These are the figures in Annexure I of CEA's user guide. From FY 2022-23 the figures are adjusted for cross-border transfers and include power injected by grid-connected captive plants, so the earlier and later years are not built in exactly the same way."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated kWh records per meter and site, so whichever CEA factor and version you apply, each Scope 2 figure traces back to the bill and the factor behind it.",
+  "links": [
+    {
+      "label": "Falling grid factor and targets",
+      "to": "/answers/falling-grid-factor-and-reduction-targets"
+    },
+    {
+      "label": "Grid factor for FY 2025-26",
+      "to": "/answers/india-grid-emission-factor-2025-26"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

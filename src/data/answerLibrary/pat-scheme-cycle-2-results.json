@@ -1,0 +1,56 @@
+{
+  "slug": "pat-scheme-cycle-2-results",
+  "q": "What did PAT cycle II achieve?",
+  "title": "PAT cycle II results",
+  "short": "PAT cycle II ran from April 2016 to March 2019 for 621 designated consumers in 11 sectors. It saved about 14.08 million tonnes of oil equivalent, which BEE puts at about 68 million tonnes of CO2 avoided. About 57.38 lakh ESCerts went to 349 plants, and 193 plants had to buy 36.68 lakh.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Energy managers and compliance teams at PAT and CCTS designated consumers",
+  "sections": [
+    {
+      "h": "What changed from cycle I",
+      "ul": [
+        "Deepening: 89 new designated consumers added from existing sectors.",
+        "Widening: refineries, railways and electricity DISCOMs added as new sectors.",
+        "Total: 621 plants across 11 sectors."
+      ]
+    },
+    {
+      "h": "Results",
+      "ul": [
+        "Energy saved: about 14.08 MTOE",
+        "CO2 avoided: about 68 million tonnes",
+        "ESCerts issued: about 57.38 lakh to 349 plants",
+        "Plants directed to buy: 193, for about 36.68 lakh ESCerts"
+      ]
+    },
+    {
+      "h": "Reading the numbers",
+      "p": [
+        "More plants had to buy in cycle II than in cycle I. A shortfall is a cost, so plants entering CCTS should track intensity monthly rather than find out at the end of the cycle."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel and electricity invoices into monthly energy and emission records per site, the raw material for tracking specific energy consumption against a target.",
+  "links": [
+    {
+      "label": "PAT cycle I results",
+      "to": "/answers/pat-scheme-cycle-1-results"
+    },
+    {
+      "label": "PAT ESCerts after CCTS",
+      "to": "/answers/pat-escerts-after-ccts"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, Perform Achieve and Trade (PAT) programme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=185&lid=72"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

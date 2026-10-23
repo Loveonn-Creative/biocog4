@@ -1,0 +1,50 @@
+{
+  "slug": "cross-border-electricity-and-india-grid-factor",
+  "q": "Do electricity imports from Bhutan and Nepal change India's grid emission factor?",
+  "title": "Electricity imports and India's grid factor",
+  "short": "Only a little. CEA counts imports at zero emissions. In FY 2025-26 the weighted average was 0.678 t CO2 per MWh excluding cross-border transfers and 0.675 including them, with net imports of 7,622 GWh. Use the adjusted figure, 0.675, which is the one CEA headlines.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability teams reconciling slightly different CEA figures in reports",
+  "sections": [
+    {
+      "h": "FY 2025-26, t CO2 per MWh",
+      "ul": [
+        "Weighted average: 0.678 excluding transfers, 0.675 including",
+        "Operating margin: 0.969 excluding, 0.963 including",
+        "Combined margin: 0.708 excluding, 0.705 including",
+        "Build margin: 0.446 either way"
+      ]
+    },
+    {
+      "h": "Why two versions exist",
+      "p": [
+        "The CDM grid tool lets the database show both. India trades power with Bhutan, Nepal, Bangladesh and Myanmar, and CEA applies an emission factor of zero to imports from other countries."
+      ]
+    },
+    {
+      "h": "Which to use",
+      "p": [
+        "Use the adjusted 0.675 for Scope 2. If a buyer quotes 0.678 they are reading the unadjusted row; the difference is under half a percent."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated kWh records per meter and site, so whichever CEA factor and version you apply, each Scope 2 figure traces back to the bill and the factor behind it.",
+  "links": [
+    {
+      "label": "Grid factor for FY 2025-26",
+      "to": "/answers/india-grid-emission-factor-2025-26"
+    },
+    {
+      "label": "Is the CEA factor CO2 or CO2e?",
+      "to": "/answers/is-cea-grid-factor-co2-or-co2e"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

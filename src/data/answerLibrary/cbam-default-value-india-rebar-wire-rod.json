@@ -1,0 +1,60 @@
+{
+  "slug": "cbam-default-value-india-rebar-wire-rod",
+  "q": "What is the CBAM default value for Indian rebar and wire rod?",
+  "title": "CBAM default value: Indian rebar, wire rod",
+  "short": "4.270 t CO2e per tonne for Indian wire rod under CN 7213 and for ribbed rebar under CN 7214 20 00. Plain forged bars under CN 7214 10 00 carry 4.320. With the 2026 mark-up of 10%, the rebar and wire rod value is about 4.697 t.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian TMT bar, rebar and wire rod exporters and their EU importers",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 7213 wire rod, hot-rolled in coils: 4.270",
+        "CN 7214 20 00 rebar with ribs or indentations: 4.270",
+        "CN 7214 10 00 forged bars: 4.320",
+        "CN 7214 91 and 7214 99 other hot-rolled bars: 4.270",
+        "CN 7215 cold-finished bars: 4.270",
+        "CN 7217 non-alloy wire: 4.270"
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "Secondary steel makers",
+      "p": [
+        "Many Indian TMT makers run induction furnaces on sponge iron or scrap. The India default assumes the blast furnace route for its benchmark, so a plant on a different route has even more reason to measure its own figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Vizag wire rod data",
+      "to": "/answers/vizag-steel-wire-rod-buyer-precursor-data"
+    },
+    {
+      "label": "CBAM cost worked example",
+      "to": "/answers/cbam-cost-worked-example-indian-rebar"
+    },
+    {
+      "label": "Induction furnace kWh per tonne",
+      "to": "/answers/induction-furnace-kwh-per-tonne-benchmark"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

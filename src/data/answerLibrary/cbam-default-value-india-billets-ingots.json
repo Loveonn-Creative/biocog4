@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-default-value-india-billets-ingots",
+  "q": "What is the CBAM default value for Indian steel billets and ingots?",
+  "title": "CBAM default value: Indian billets, ingots",
+  "short": "Indian non-alloy semi-finished steel under CN 7207 carries 4.270 or 4.320 t CO2e per tonne depending on the subheading, and ingots under CN 7206 carry 2.640. Direct emissions only. Add the 10% mark-up for goods imported in 2026.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian billet, bloom, slab and ingot producers and their EU buyers",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 7206 10 00 ingots of iron and non-alloy steel: 2.640",
+        "CN 7207 subheadings such as 7207 11 14 and 7207 12 10: 4.270",
+        "CN 7207 subheadings such as 7207 11 90 and 7207 12 90: 4.320",
+        "CN 7224 alloy steel ingots and semi-finished: 7.320 to 7.350",
+        "CN 7218 stainless ingots and semi-finished: 6.490 to 6.530"
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "Check the eight digits",
+      "p": [
+        "Within CN 7207 the value changes by subheading, which depends on carbon content and cross-section. Get the exact eight-digit code from your EU importer's customs declaration before quoting a figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CN 7207 coverage",
+      "to": "/answers/cbam-cn-7207-billets-slabs-india-exporter"
+    },
+    {
+      "label": "CN 7206 ingots",
+      "to": "/answers/cbam-cn-7206-steel-ingots"
+    },
+    {
+      "label": "Shipping bill vs CN code",
+      "to": "/answers/cbam-cn-code-mismatch-shipping-bill-vs-eu-declaration"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

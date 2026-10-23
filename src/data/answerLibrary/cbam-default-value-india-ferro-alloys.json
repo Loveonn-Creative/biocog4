@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-default-value-india-ferro-alloys",
+  "q": "What is the CBAM default value for Indian ferro-manganese, ferro-chrome and ferro-nickel?",
+  "title": "CBAM default value: Indian ferro-alloys",
+  "short": "For India: high-carbon ferro-manganese 1.690, low-carbon ferro-manganese 5.590, high-carbon ferro-chrome 2.350 and ferro-nickel 3.480 t CO2e per tonne. Low-carbon ferro-chrome shows no India value, so the table for other countries applies. Direct emissions only.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian ferro-alloy producers in Odisha, Andhra Pradesh and elsewhere, and steelmakers buying from them",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 7202 11 ferro-manganese, more than 2% carbon: 1.690",
+        "CN 7202 19 ferro-manganese, 2% carbon or less: 5.590",
+        "CN 7202 41 ferro-chromium, more than 4% carbon: 2.350",
+        "CN 7202 49 ferro-chromium, 4% carbon or less: no India value listed",
+        "CN 7202 60 00 ferro-nickel: 3.480"
+      ]
+    },
+    {
+      "h": "Where no India value is listed",
+      "p": [
+        "When the India table shows a dash, the declarant uses the value for other countries and territories in the same annex, which is usually higher. A smelter in that position gains the most from measuring its own figure."
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Ferro-alloys in steel precursors",
+      "to": "/answers/cbam-ferroalloy-additions-in-steel-precursor"
+    },
+    {
+      "label": "Aktobe ferrochrome smelter",
+      "to": "/answers/aktobe-ferrochrome-smelter-cbam-figure"
+    },
+    {
+      "label": "When the India value is a dash",
+      "to": "/answers/cbam-india-default-value-shows-a-dash"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

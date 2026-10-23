@@ -1,0 +1,56 @@
+{
+  "slug": "how-escerts-trading-worked-under-pat",
+  "q": "How did ESCerts trading work under PAT, and how much was traded?",
+  "title": "How ESCerts trading worked under PAT",
+  "short": "Plants that beat their PAT target received Energy Saving Certificates, or ESCerts, for the extra energy saved. Plants that missed bought them on the power exchanges. Trading started in September 2017; for cycle I about 12.98 lakh ESCerts traded, worth about INR 100 crore, according to BEE.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Finance and energy teams at designated consumers comparing ESCerts with CCTS credits",
+  "sections": [
+    {
+      "h": "The mechanics",
+      "ol": [
+        "BEE sets each plant's specific energy consumption target for the cycle.",
+        "After the cycle, the plant's performance is checked through its assessment documents.",
+        "The Ministry of Power issues ESCerts for savings beyond target.",
+        "Plants short of target buy ESCerts on the Indian Energy Exchange or Power Exchange India, with POSOCO as registry."
+      ]
+    },
+    {
+      "h": "Cycle I in numbers",
+      "ul": [
+        "Issued: about 38.25 lakh ESCerts to 306 plants",
+        "Required purchases: about 14.25 lakh by 110 plants",
+        "Traded: about 12.98 lakh, about INR 100 crore"
+      ]
+    },
+    {
+      "h": "What carries over",
+      "p": [
+        "The carbon credit market under CCTS follows the same logic in tonnes of CO2 equivalent instead of energy. Plants with PAT trading experience already have exchange accounts and know the timing pressure at the end of a cycle."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel and electricity invoices into monthly energy and emission records per site, the raw material for tracking specific energy consumption against a target.",
+  "links": [
+    {
+      "label": "PAT ESCerts after CCTS",
+      "to": "/answers/pat-escerts-after-ccts"
+    },
+    {
+      "label": "Carbon pricing in India",
+      "to": "/answers/carbon-pricing-mechanisms-in-india"
+    },
+    {
+      "label": "PAT cycle II results",
+      "to": "/answers/pat-scheme-cycle-2-results"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, Perform Achieve and Trade (PAT) programme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=185&lid=72"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

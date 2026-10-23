@@ -1,0 +1,55 @@
+{
+  "slug": "cbam-default-value-india-dap-npk",
+  "q": "What is the CBAM default value for DAP, MAP and NPK fertilisers from India?",
+  "title": "CBAM default value: Indian DAP, MAP, NPK",
+  "short": "Indian DAP under CN 3105 30 00 carries 0.810 t CO2e per tonne and MAP under 3105 40 00 carries 0.530, including indirect emissions. NPK with 10% nitrogen or less is 0.770 and ammonium sulphate 1.010. The fertiliser mark-up is 1% from 2026.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian complex fertiliser producers and traders exporting DAP, MAP and NPK grades",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne (direct + indirect = total)",
+      "ul": [
+        "CN 3105 30 00 DAP: 0.720 + 0.090 = 0.810",
+        "CN 3105 40 00 MAP: 0.450 + 0.070 = 0.530",
+        "CN 3105 20 90 NPK, nitrogen 10% or less: 0.660 + 0.110 = 0.770",
+        "CN 3105 20 10 NPK, nitrogen over 10%: 0.970 + 0.150 = 1.120",
+        "CN 3105 51 00 nitrogen and phosphorus, nitrates and phosphates: 1.310 + 0.180 = 1.490",
+        "CN 3102 21 00 ammonium sulphate: 0.890 + 0.120 = 1.010",
+        "CN 2834 21 00 potassium nitrate: 1.860 + 0.100 = 1.960"
+      ]
+    },
+    {
+      "h": "Where the emissions sit",
+      "p": [
+        "For DAP and MAP most embedded emissions come from the ammonia used. If you buy ammonia, ask the supplier for its verified figure; it is the precursor value that moves your result most."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Are urea and DAP covered?",
+      "to": "/answers/are-urea-and-dap-covered-by-cbam"
+    },
+    {
+      "label": "Ammonium sulphate",
+      "to": "/answers/cbam-cn-3102-21-ammonium-sulphate"
+    },
+    {
+      "label": "Indian urea and ammonia defaults",
+      "to": "/answers/cbam-default-value-india-urea-ammonia"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

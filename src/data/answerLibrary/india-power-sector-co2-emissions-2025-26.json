@@ -1,0 +1,53 @@
+{
+  "slug": "india-power-sector-co2-emissions-2025-26",
+  "q": "How much CO2 did India's power sector emit in FY 2025-26?",
+  "title": "India power sector CO2 emissions, FY 2025-26",
+  "short": "About 1,189 million tonnes of CO2 from grid electricity generation in FY 2025-26, by CEA's database version 22.0. That is down from about 1,236 million tonnes in FY 2024-25, the first fall since FY 2020-21, while net generation including renewables rose to 1,761 BU.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Analysts, lenders and companies tracking India power sector emissions",
+  "sections": [
+    {
+      "h": "Total emissions, million tonnes CO2",
+      "ul": [
+        "FY 2021-22: 1,002.42",
+        "FY 2022-23: 1,108.11",
+        "FY 2023-24: 1,203.36",
+        "FY 2024-25: 1,235.96",
+        "FY 2025-26: 1,189.04"
+      ]
+    },
+    {
+      "h": "What drove the fall",
+      "ul": [
+        "Gross thermal generation fell from 1,363,890 MU to 1,306,951 MU.",
+        "Renewable generation rose from 255,009 MU to 310,585 MU.",
+        "Hydro rose from 148,634 MU to 167,166 MU."
+      ]
+    },
+    {
+      "h": "Boundary",
+      "p": [
+        "From FY 2022-23 the totals cover electricity injected into the grid, including grid-connected captive plants. CEA's annexure table shows 1,189.29 for FY 2025-26 against 1,189.04 in its main results table; the difference is small and both round to about 1,189."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into dated kWh records per meter and site, so whichever CEA factor and version you apply, each Scope 2 figure traces back to the bill and the factor behind it.",
+  "links": [
+    {
+      "label": "Grid factor trend since 2014",
+      "to": "/answers/india-grid-emission-factor-trend-since-2014"
+    },
+    {
+      "label": "Renewable share of generation",
+      "to": "/answers/renewable-share-of-india-grid-generation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

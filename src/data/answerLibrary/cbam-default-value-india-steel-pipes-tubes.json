@@ -1,0 +1,56 @@
+{
+  "slug": "cbam-default-value-india-steel-pipes-tubes",
+  "q": "What is the CBAM default value for steel pipes and tubes from India?",
+  "title": "CBAM default value: Indian steel pipes",
+  "short": "Most Indian carbon steel pipes and tubes under CN 7304, 7305 and 7306 carry 4.320 t CO2e per tonne. Stainless line pipe, casing and tubing carry 6.490 or 6.500. Cast iron pipes under CN 7303 carry 2.840. Direct emissions only, plus the 2026 mark-up of 10%.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian pipe and tube exporters, welded and non-welded, and their EU importers",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 7303 cast iron tubes and pipes: 2.840",
+        "CN 7304 non-welded, carbon steel (such as 7304 19, 7304 31, 7304 39): 4.320",
+        "CN 7304 non-welded, stainless (such as 7304 11 00, 7304 41 00): 6.490",
+        "CN 7305 large welded pipes over 406.4 mm: 4.320",
+        "CN 7306 welded, carbon steel (such as 7306 30 and 7306 61 92): 4.320",
+        "CN 7306 welded, stainless (such as 7306 40 20, 7306 61 10): 6.500"
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "Pipe makers buying coil",
+      "p": [
+        "A welded pipe mill buying HR coil can use the coil maker's verified figure as its precursor value instead of a default, then add its own forming and welding energy. Ask for the coil figure in the purchase contract."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CN 7303 ductile iron pipes",
+      "to": "/answers/cbam-cn-7303-ductile-iron-pipes"
+    },
+    {
+      "label": "Indian flat steel defaults",
+      "to": "/answers/cbam-default-value-india-hot-rolled-steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "captive-power-in-cea-grid-emission-factor",
+  "q": "Does CEA's grid emission factor include captive power plants?",
+  "title": "Captive power in CEA's grid factor",
+  "short": "Partly. Since FY 2022-23 CEA includes electricity that grid-connected captive plants inject into the grid: 18,882 GWh in FY 2025-26. Captive power a factory generates and uses itself is not in the grid factor, so count that from your own fuel records, not at 0.675.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories with captive coal, gas or diesel generation that also draw from the grid",
+  "sections": [
+    {
+      "h": "What CEA counts",
+      "ul": [
+        "Captive power injected into the grid: 17,342 GWh in FY 2022-23, 16,400 in FY 2023-24, 18,695 in FY 2024-25 and 18,882 in FY 2025-26.",
+        "Emissions attributed to that injection: about 17.5 million tonnes CO2 in FY 2025-26.",
+        "Version 22.0 replaced provisional captive data for FY 2024-25 with actual data."
+      ]
+    },
+    {
+      "h": "How to split your own electricity",
+      "ol": [
+        "Grid units from the DISCOM bill: apply the CEA weighted average for that year.",
+        "Captive units generated and used on site: calculate from the fuel burned, as Scope 1.",
+        "Units bought from another company's captive plant: use that plant's figure if you have it, or the grid factor if you do not, and say which."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads DISCOM bills and fuel invoices into separate dated records, so grid units and captive generation are counted once, in the right scope.",
+  "links": [
+    {
+      "label": "DG set vs grid per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Coal power CO2 per kWh",
+      "to": "/answers/coal-power-plant-co2-per-kwh-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, User Guide and database, Version 22.0 (August 2026)",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

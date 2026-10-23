@@ -1,0 +1,56 @@
+{
+  "slug": "cbam-default-value-india-hydrogen",
+  "q": "What is the CBAM default value for hydrogen from India?",
+  "title": "CBAM default value: Indian hydrogen",
+  "short": "14.030 t CO2e per tonne of hydrogen under CN 2804 10 00, direct emissions only. That is far above what electrolysis on renewable power emits directly. Indian green hydrogen made by electrolysis should show far lower direct emissions, but only a verified actual figure lets the importer use it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian green and grey hydrogen producers and their EU offtakers",
+  "sections": [
+    {
+      "h": "India default value, t CO2e per tonne",
+      "ul": [
+        "CN 2804 10 00 hydrogen: 14.030, direct only",
+        "Indirect emissions: not counted for hydrogen in the definitive period"
+      ]
+    },
+    {
+      "h": "What it means for green hydrogen",
+      "p": [
+        "Because hydrogen counts only direct emissions, electrolysis on renewable power has very low direct emissions. The default sits at 14.030, so a green producer loses most of its advantage if it lets the importer fall back on the default."
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "Electrolytic hydrogen, direct only",
+      "to": "/answers/cbam-electrolytic-hydrogen-direct-emissions-only"
+    },
+    {
+      "label": "Grey hydrogen steps",
+      "to": "/answers/cbam-grey-hydrogen-smr-installation-steps"
+    },
+    {
+      "label": "Ammonia plant buying hydrogen",
+      "to": "/answers/cbam-ammonia-plant-buying-hydrogen-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

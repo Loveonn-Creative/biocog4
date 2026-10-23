@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-default-value-india-hot-rolled-steel",
+  "q": "What is the CBAM default value for hot-rolled and flat steel from India?",
+  "title": "CBAM default value: Indian flat steel",
+  "short": "4.280 t CO2e per tonne for Indian flat-rolled iron and non-alloy steel under CN 7208 to 7212, direct emissions only. With the 10% mark-up for 2026 that is about 4.708 t. The benchmark route for India is blast furnace and basic oxygen furnace.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian HR coil, CR coil, galvanised and plate exporters and their EU importers",
+  "sections": [
+    {
+      "h": "India default values, t CO2e per tonne",
+      "ul": [
+        "CN 7208 hot-rolled flat, 600 mm and wider: 4.280",
+        "CN 7209 cold-rolled flat: 4.280",
+        "CN 7210 coated or plated flat, including galvanised: 4.280",
+        "CN 7211 and 7212 narrow flat products: 4.280",
+        "Indirect emissions: not counted for iron and steel"
+      ]
+    },
+    {
+      "h": "Mark-up on top",
+      "p": [
+        "The listed values are increased by a mark-up: 10% for 2026, 20% for 2027 and 30% from 2028. Goods imported in 2026 always take the 2026 mark-up."
+      ]
+    },
+    {
+      "h": "Why actual data wins",
+      "p": [
+        "Defaults are set so they do not understate emissions, and the mark-up adds more. A plant with good fuel and production records will usually come in lower, and only a verified actual figure lets the importer use it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "1,000 t of HR coil imported in 2026 on the default",
+    "lines": [
+      "4.280 x 1.10 = 4.708 t CO2e per tonne",
+      "Embedded emissions: 4,708 t CO2e",
+      "Before the free allocation adjustment"
+    ]
+  },
+  "senseible": "Senseible reads coal, coke, gas, electricity and freight invoices into a dated, fingerprinted record per site, so an actual figure you send an EU buyer can be traced back to the documents behind it. It does not file CBAM declarations.",
+  "links": [
+    {
+      "label": "CN 7208 coverage",
+      "to": "/answers/cbam-cn-7208-hot-rolled-coil-plate-india"
+    },
+    {
+      "label": "CN 7210 galvanised and tinplate",
+      "to": "/answers/cbam-cn-7210-galvanised-ppgi-tinplate"
+    },
+    {
+      "label": "CBAM cost for Indian steel",
+      "to": "/answers/cbam-cost-per-tonne-indian-steel-imports"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Default values definitive period (Excel, version 2 of 6 August 2026), India sheet; legally binding values in Implementing Regulation (EU) 2026/1740 correcting (EU) 2025/2621",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx"
+    },
+    {
+      "label": "European Commission, Guidance No. 3, CBAM methods for the calculation of emissions embedded in goods (14 August 2026), section 4.10",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
