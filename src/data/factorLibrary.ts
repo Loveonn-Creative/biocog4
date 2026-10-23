@@ -80,7 +80,7 @@ export const FACTOR_PAGES: FactorPage[] = [
     caveat: 'The 0.80 kg per litre density is an assumption; supplier density should replace it when available.',
   },
   {
-    slug: 'grid-electricity', name: 'Grid electricity', noun: 'grid electricity', value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kWh', unitPlural: 'kWh', scope: 2,
+    slug: 'grid-electricity', name: 'Grid electricity', titleName: 'Grid', noun: 'grid electricity', value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kWh', unitPlural: 'kWh', scope: 2,
     hsn: '2716', hsnLabel: 'Electrical energy', invoiceTerms: 'units consumed, billed units, kWh (1 unit = 1 kWh on Indian bills)', exampleQty: 5000,
     basis: 'India weighted-average grid factor from the CEA CO2 Baseline Database, applied location-based to the billed units on the electricity bill.',
     caveat: 'Check the current CEA user guide for the latest edition before using the figure in an audit. Rooftop solar or a green tariff is reported separately and never netted off.',
