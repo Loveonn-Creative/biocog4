@@ -45,7 +45,7 @@
   "sources": [
     {
       "label": "CEA CO2 Baseline Database",
-      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     },
     {
       "label": "IPCC 2006 Guidelines, Volume 2 Energy",

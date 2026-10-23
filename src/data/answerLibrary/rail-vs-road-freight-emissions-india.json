@@ -64,7 +64,7 @@
   "sources": [
     { "label": "GLEC Framework, logistics emissions accounting method", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
     { "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains (iso.org)", "url": "https://www.iso.org" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-17",
   "reviewNote": "The default intensities for Indian road and rail are subject to revision; recheck them before each reporting year."

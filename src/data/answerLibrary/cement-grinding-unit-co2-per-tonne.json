@@ -84,7 +84,7 @@
     },
     {
       "label": "CEA CO2 Baseline Database, version 21.0",
-      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
   "reviewNote": "Checked 18 October 2026: cement counts direct and indirect emissions (not on Annex II of Regulation (EU) 2023/956); calculation rules in Implementing Regulation (EU) 2025/2547, default values in 2025/2621, from 1 January 2026. Check for revisions.",

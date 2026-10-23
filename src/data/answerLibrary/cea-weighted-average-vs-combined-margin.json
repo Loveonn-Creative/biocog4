@@ -46,7 +46,7 @@
     { "label": "How to calculate avoided emissions", "to": "/answers/how-to-calculate-avoided-emissions" }
   ],
   "sources": [
-    { "label": "CEA CO2 Baseline Database for the Indian Power Sector, User Guide", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "CEA CO2 Baseline Database for the Indian Power Sector, User Guide", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
     { "label": "UNFCCC CDM Tool 07, Tool to calculate the emission factor for an electricity system", "url": "https://unfccc.int" },
     { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
   ],

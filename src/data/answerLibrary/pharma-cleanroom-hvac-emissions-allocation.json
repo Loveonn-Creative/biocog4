@@ -58,7 +58,7 @@
   "sources": [
     { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), allocation chapter", "url": "https://ghgprotocol.org/standards" },
     { "label": "ISO 14067:2018 and ISO 14044:2006, allocation procedure", "url": "https://www.iso.org" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-18"
 }

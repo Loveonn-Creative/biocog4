@@ -58,7 +58,7 @@
     { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
   ],
   "sources": [
-    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
     { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
   ],
   "reviewed": "2026-10-18"

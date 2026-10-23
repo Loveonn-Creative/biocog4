@@ -67,7 +67,7 @@ CEA publishes the CO2 Baseline Database annually. Version 21.0 covers FY 2024-25
 
 ## Sources
 
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-database/?lang=en)
+- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
 - [GHG Protocol Scope 2 Guidance](https://ghgprotocol.org/scope_2_guidance)
 
 ## Related guides

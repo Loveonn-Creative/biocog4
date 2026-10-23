@@ -51,7 +51,7 @@
   "sources": [
     { "label": "CDM methodologies AMS-II.C and AMS-II.D (UNFCCC)", "url": "https://unfccc.int" },
     { "label": "Verra VCS Standard", "url": "https://verra.org" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Registries have been retiring or revising CDM methods they accept; confirm AMS-II.C and AMS-II.D are still eligible before starting."

@@ -61,7 +61,7 @@
     },
     {
       "label": "CEA CO2 Baseline Database",
-      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
   "reviewNote": "Checked October 2026 against the amfori BEPI Code of Conduct (January 2024) and amfori's news item on BEPI climate and energy upgrades (myclimate factors, biogenic CO2); amfori updates the self-assessment, so check the current version on the platform before an assessment.",
