@@ -1,0 +1,55 @@
+{
+  "slug": "bm-ag04-002-rice-cultivation-ccts-credits",
+  "q": "Which rice farms can earn CCTS credits under methodology BM AG04.002?",
+  "title": "Rice cultivation under BM AG04.002",
+  "short": "BM AG04.002 credits irrigated, flooded rice farms that cut methane by flooding less, for example with alternate wetting and drying, aerobic rice or direct seeded rice. Fields need controlled irrigation and drainage, and farmers must get training during the season. Upland, rainfed and deep water farms are generally excluded.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Agri project developers, FPOs and rice processors",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "Rice in the project area is mainly grown on irrigated fields flooded for a long time, shown by a regional survey or national data.",
+        "Fields have controlled irrigation and drainage so dry and flooded conditions can be set in both seasons.",
+        "No switch to a new cultivar unless it is a low emission one with no yield loss.",
+        "Training and technical support on field preparation, irrigation, drainage and fertiliser is part of the project and documented."
+      ]
+    },
+    {
+      "h": "Flexibility in the Indian text",
+      "p": [
+        "Footnotes allow upland and rainfed farms, and farms that cannot yet control irrigation, to make a case to BEE as administrator, at its discretion."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AMS-III.AU (version valid from 28 November 2014).",
+        "Added to BEE's list in July 2026; version 1.0 effective from 30 June 2026."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not monitor field practices; it reads invoices for processors, such as a rice mill's power and fuel.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "AWD rice methane calculation",
+      "to": "/answers/awd-rice-methane-reduction-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM AG04.002 Emission reduction through improved management practices in rice cultivation, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-6928edf26e7d04da_1783086710.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

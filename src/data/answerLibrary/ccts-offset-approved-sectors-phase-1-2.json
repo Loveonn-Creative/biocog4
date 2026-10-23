@@ -1,0 +1,67 @@
+{
+  "slug": "ccts-offset-approved-sectors-phase-1-2",
+  "q": "Which sectors are approved for the CCTS offset mechanism in phase 1 and phase 2?",
+  "title": "CCTS offset approved sectors",
+  "short": "BEE's September 2024 memorandum lists six phase 1 sectors: energy, industries, waste handling and disposal, agriculture, forestry and transport. Phase 2 adds four more: construction, fugitive emissions, solvent use, and carbon capture, utilisation and storage, making ten sectors in all.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Developers deciding whether a project type can enter the Indian Carbon Market",
+  "sections": [
+    {
+      "h": "Phase 1 sectors and the example technologies BEE gives",
+      "ul": [
+        "Energy: green hydrogen by electrolysis or from biomass, renewable energy with storage, offshore wind, compressed biogas, a more efficient lime kiln.",
+        "Industries: green ammonia use, feed switch in integrated ammonia-urea plants.",
+        "Waste handling and disposal: biochar, landfill gas capture.",
+        "Agriculture: systematic rice intensification, biochar, agroforestry.",
+        "Forestry: afforestation, institutional forestry.",
+        "Transport: modal shift, electric vehicles and buses."
+      ]
+    },
+    {
+      "h": "Phase 2 examples",
+      "ul": [
+        "Construction: limestone calcined clay cement (LC3).",
+        "Fugitive emissions, from fuels and from industrial gases: CF4 reduction in semiconductor plants, recovery and use of gas from oil fields.",
+        "Solvent use: no example technology listed.",
+        "Carbon capture, utilisation and storage, and other removals: post-combustion CCS."
+      ]
+    },
+    {
+      "h": "A sector is not a methodology",
+      "p": [
+        "A project also needs an approved methodology. BEE's list had 12 methodologies on 7 July 2026, so many technologies named above still have no method to register under."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the invoices behind energy and fuel projects; it does not decide sector eligibility.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "CCTS offset registration steps",
+      "to": "/answers/ccts-offset-project-registration-steps"
+    },
+    {
+      "label": "Can an MSME earn CCTS credits",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Office Memorandum No. 45/02/NMEEE/Energy Efficiency-CCTS/2024, Approved Sectors in Offset Mechanism (20 September 2024)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-4edb9be54a4b43e6_1776057028.pdf"
+    },
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

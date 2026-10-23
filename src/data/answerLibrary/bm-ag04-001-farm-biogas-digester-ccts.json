@@ -1,0 +1,62 @@
+{
+  "slug": "bm-ag04-001-farm-biogas-digester-ccts",
+  "q": "Can household or small farm biogas digesters earn CCTS credits under BM AG04.001?",
+  "title": "Farm biogas digesters under BM AG04.001",
+  "short": "Yes, under BM AG04.001, for digesters at individual households or small farms that capture methane from manure that would otherwise decay without air. All collected methane must be burnt, for example for cooking, the digestate handled aerobically, and the site's average temperature above 5 degrees C.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Dairy cooperatives, biogas programme developers and NGOs",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "Digesters or methane recovery and combustion systems at individual households or small farms.",
+        "Credits only for the share of manure that would have decayed anaerobically, established by a survey.",
+        "Annual average temperature above 5 degrees C where manure would have decomposed.",
+        "Final digestate handled aerobically, for example by land application, as described in the PDD.",
+        "All methane collected is combusted.",
+        "Digesters sized for manure input and household energy use, built to standards with QA/QC, and users trained before commissioning."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AMS-III.R (version valid from 24 March 2023).",
+        "Effective from 27 March 2025, sectoral scope: agriculture.",
+        "A small amount of other farm waste can be mixed in, but it earns no credit."
+      ]
+    },
+    {
+      "h": "How it is usually run",
+      "p": [
+        "One household digester is tiny, so these projects are usually grouped under one PDD with every site geotagged."
+      ]
+    }
+  ],
+  "senseible": "Senseible is built for factories and does not monitor household digesters.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Dairy biogas plant carbon credits",
+      "to": "/answers/dairy-biogas-plant-carbon-credits"
+    },
+    {
+      "label": "Grouping small CCTS projects",
+      "to": "/answers/ccts-offset-bundling-small-projects"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM AG04.001 Methane recovery from livestock and manure management at households and small farms, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-e0da265a40736c0d_1776061252.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "ccts-monitoring-plan-deadline-and-contents",
+  "q": "When must a CCTS obligated plant submit its monitoring plan, and what goes in it?",
+  "title": "CCTS monitoring plan deadline and contents",
+  "short": "Within three months of the start of the first trajectory period, then every year within three months of the compliance year starting. BEE reviews and approves it. It lists emission sources and source streams, meters and sampling points, methods, activity data sources, data flow controls and who is responsible.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Energy managers at obligated plants",
+  "sections": [
+    {
+      "h": "Deadlines",
+      "ul": [
+        "First plan: within three months of the start of the first trajectory period.",
+        "Later plans: annually, within three months of the start of each compliance year.",
+        "BEE reviews and approves the plan and can ask for changes; the latest approved plan goes to the verifier."
+      ]
+    },
+    {
+      "h": "Minimum contents (Section 5.6)",
+      "ul": [
+        "Activities, emission sources and source streams to be monitored.",
+        "A diagram of sources, streams, metering and sampling points and indirect energy flows.",
+        "Monitoring methodology, activity data and emission factors, with traceable references for energy, production and other parameters.",
+        "Written data flow and control procedures, fuel sampling and testing procedures.",
+        "Meters used, their range, uncertainty and location, and the analysis methods.",
+        "Who is responsible, and how the plan is reviewed."
+      ]
+    },
+    {
+      "h": "BEE's template",
+      "p": [
+        "BEE publishes an Excel-based template that walks through seven steps: set the gate-to-gate boundary, list activities and sources, identify source streams, set methods, write procedures, review, and keep it updated."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "Emissions left out of CCTS intensity",
+      "to": "/answers/ccts-emissions-excluded-from-intensity"
+    },
+    {
+      "label": "If a CCTS plant does not file",
+      "to": "/answers/ccts-plant-fails-to-submit-documents"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    },
+    {
+      "label": "BEE, Monitoring Plan Template under Compliance Mechanism (instructions)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5c5d4497fb37c51b_1780903047.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

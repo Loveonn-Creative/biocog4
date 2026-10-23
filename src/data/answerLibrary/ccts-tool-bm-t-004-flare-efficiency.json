@@ -1,0 +1,54 @@
+{
+  "slug": "ccts-tool-bm-t-004-flare-efficiency",
+  "q": "What flare efficiency does CCTS tool BM-T-004 allow for methane flaring?",
+  "title": "BM-T-004 flare efficiency rules",
+  "short": "For an open flare, 50 per cent in any minute a flame is detected and zero otherwise. For an enclosed flare, a 90 per cent default when the flame is detected and temperature and gas flow are within the maker's specification, or a measured value. Low height flares lose 10 points.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Biogas, landfill and wastewater projects that flare methane",
+  "sections": [
+    {
+      "h": "Scope",
+      "ul": [
+        "Flaring of residual gas where methane is the largest component and the source is biogenic: biogas, landfill gas or wastewater treatment gas.",
+        "Not applicable where auxiliary fuel is added to the residual gas.",
+        "Efficiency is worked out minute by minute."
+      ]
+    },
+    {
+      "h": "The efficiency rules",
+      "ul": [
+        "Open flare: 50 per cent when a flame is detected in the minute, otherwise 0.",
+        "Enclosed flare, Option A: 90 per cent when the flame is detected and the flare temperature and gas flow are within the manufacturer's operating specification, otherwise 0.",
+        "Enclosed low height flare: subtract 10 percentage points from the default.",
+        "Enclosed flare, Option B: measured efficiency, by an accredited entity at least twice a year or measured every minute, under the same operating conditions."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not log flare data; it keeps the plant's power and fuel invoices that sit alongside it in a monitoring report.",
+  "links": [
+    {
+      "label": "CBG plant credits under BM WA03.003",
+      "to": "/answers/bm-wa03-003-cbg-plant-ccts-credits"
+    },
+    {
+      "label": "Landfill gas under BM WA03.002",
+      "to": "/answers/bm-wa03-002-landfill-gas-flaring-or-use"
+    },
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-004 Project emissions from flaring",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-1c0559f148753b50_1776061566.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

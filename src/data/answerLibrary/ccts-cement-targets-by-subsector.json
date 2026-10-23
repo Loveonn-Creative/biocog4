@@ -1,0 +1,49 @@
+{
+  "slug": "ccts-cement-targets-by-subsector",
+  "q": "How many cement plants have CCTS targets, and in which sub-sectors?",
+  "title": "CCTS cement targets by sub-sector",
+  "short": "186 cement units have targets under the October 2025 rules, against a 2023-24 baseline, in six sub-sectors: Portland pozzolana cement, ordinary Portland cement, composite cement, clinkerisation, white cement and grinding. The 55 grinding units have their own very low intensity values.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Cement plant teams and their suppliers",
+  "sections": [
+    {
+      "h": "What the schedule shows",
+      "ul": [
+        "131 integrated or clinker plants across PPC, OPC, composite, clinkerisation and white cement, plus 55 grinding units.",
+        "Intensities are tonnes CO2e per tonne of equivalent product, with targets for 2025-26 and 2026-27.",
+        "Example: one Karnataka PPC plant has a baseline of 0.4455, a 2025-26 target of 0.4440 and a 2026-27 target of 0.4402.",
+        "Some units have a target only for 2026-27."
+      ]
+    },
+    {
+      "h": "Checking your own plant",
+      "p": [
+        "Find your registration number (CMTOE or CGUOE plus a state code) in the schedule of G.S.R. 739(E). A unit not listed has no target, though it can still develop offset projects."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "Is my cement plant covered",
+      "to": "/answers/is-a-cement-plant-covered-by-ccts"
+    },
+    {
+      "label": "How many plants have CCTS targets",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    },
+    {
+      "label": "CCTS certificates earned or bought",
+      "to": "/answers/ccts-carbon-credit-certificates-formula"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    }
+  ],
+  "reviewNote": "Sub-sector headings and unique CMTOE and CGUOE numbers read from the English schedule of G.S.R. 739(E) on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

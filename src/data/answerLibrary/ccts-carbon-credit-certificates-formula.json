@@ -1,0 +1,64 @@
+{
+  "slug": "ccts-carbon-credit-certificates-formula",
+  "q": "How many carbon credit certificates does a CCTS plant earn or have to buy?",
+  "title": "CCTS certificates earned or bought",
+  "short": "Under the 2025 target rules, a plant earns certificates equal to its target intensity minus its achieved intensity, multiplied by its equivalent product output that year. If it misses, it buys certificates equal to achieved minus target, times output. One certificate equals one tonne of CO2e.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Obligated plants and their finance and energy teams",
+  "sections": [
+    {
+      "h": "The two formulas in Rule 5",
+      "ul": [
+        "Certificates issued = (target intensity minus achieved intensity) x equivalent product produced in the compliance year.",
+        "Certificates to buy = (achieved intensity minus target intensity) x equivalent product produced in the compliance year.",
+        "Intensity is in tonnes CO2e per tonne of equivalent product."
+      ]
+    },
+    {
+      "h": "Timing in BEE's compliance procedure",
+      "ul": [
+        "Form A, verified by an accredited agency, is due within four months after the compliance year ends.",
+        "BEE sends the report to NSC-ICM within two months of the Form A deadline.",
+        "NSC-ICM recommends issuance within two weeks, and BEE issues within two weeks after that, into the ICM registry."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a cement plant beating its target",
+    "lines": [
+      "Notified 2025-26 target for one Karnataka PPC plant: 0.4440 t CO2e per tonne",
+      "Assumed achieved intensity: 0.4400 t CO2e per tonne",
+      "Baseline output used as an assumption for 2025-26: 35,32,948 tonnes",
+      "Certificates: (0.4440 minus 0.4400) x 35,32,948 = 14,132 certificates"
+    ],
+    "note": "The target is from the October 2025 schedule. Achieved intensity and output are assumptions; real figures come from the verified Form A."
+  },
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "What if a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "Banking CCTS certificates",
+      "to": "/answers/ccts-banking-carbon-credit-certificates"
+    },
+    {
+      "label": "CCTS environmental compensation",
+      "to": "/answers/ccts-environmental-compensation-penalty"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    },
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    }
+  ],
+  "reviewNote": "Rule 5 of G.S.R. 739(E); Section 8 of the scanned compliance procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "ccts-emissions-excluded-from-intensity",
+  "q": "Which emissions are left out of a CCTS plant's emission intensity?",
+  "title": "Emissions left out of CCTS intensity",
+  "short": "BEE's compliance procedure leaves out biomass and biogenic energy, renewable energy, approved co-processed waste fuels, captured and stored CO2, energy for the staff colony, construction and outside transport, office refrigerant leaks, and captive power or heat exported out of the boundary. Biogenic emissions are reported separately.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Energy managers and consultants preparing CCTS monitoring plans",
+  "sections": [
+    {
+      "h": "What is counted",
+      "ul": [
+        "Direct energy emissions, direct process emissions and indirect emissions from purchased electricity and heat, inside the gate-to-gate boundary.",
+        "Gases covered: CO2 and perfluorocarbons, converted with IPCC global warming potentials.",
+        "Notional emissions for intermediate products or raw materials brought in, where sector guidelines say so."
+      ]
+    },
+    {
+      "h": "What is not counted",
+      "ul": [
+        "Emissions from biomass or biogenic energy (reported separately as biogenic).",
+        "Energy from renewables.",
+        "Co-processed alternate fuels such as hazardous waste, where the technical committee approves. Petcoke, carbon black, petro polymer fuel, peat and dolochar are not alternate fuels.",
+        "CO2 captured, transferred or used through CCUS.",
+        "Energy for the attached colony, temporary or major construction, and transport outside the plant.",
+        "Refrigerant leaks in office buildings and processes.",
+        "Captive electricity or heat exported out of the boundary."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "CCTS grid factor for obligated plants",
+      "to": "/answers/ccts-grid-emission-factor-frozen-baseline"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "CCTS monitoring plan deadline",
+      "to": "/answers/ccts-monitoring-plan-deadline-and-contents"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    }
+  ],
+  "reviewNote": "Sections 4.2 and 4.4 of the scanned compliance procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "ccts-offset-validator-verifier-must-differ",
+  "q": "Can the same agency validate and verify a CCTS offset project?",
+  "title": "CCTS validator and verifier must differ",
+  "short": "No. Under BEE's offset procedure the accredited agency that verifies a project's emission reductions must be different from the one that validated it, for any crediting period. You pick both agencies and record each choice on the ICM portal before the work starts.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Project developers appointing verification agencies",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "Step 6 of the project cycle says the non-obligated entity appoints an Accredited Carbon Verification Agency for verification, and that agency must differ from the one assigned for validation. Section A6.2.2 repeats it."
+      ]
+    },
+    {
+      "h": "Reporting duties on the agencies",
+      "ul": [
+        "Validation: the agency updates its status on the portal every 90 days until it files the report.",
+        "Verification: the agency posts a status update every 30 calendar days until it files the issuance request, naming open corrective action or clarification requests, delays, termination or a negative opinion."
+      ]
+    },
+    {
+      "h": "Planning tip",
+      "p": [
+        "Only agencies accredited for your sector scope can do either job, and some are accredited only for the compliance mechanism. Check BEE's list for two agencies that cover your scope before you sign with the first."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fuel and electricity invoices as dated, fingerprinted monthly records, the consumption data a project's monitoring report and its verifier will ask to trace.",
+  "links": [
+    {
+      "label": "CCTS verification agencies list",
+      "to": "/answers/ccts-accredited-verification-agencies-list"
+    },
+    {
+      "label": "Accredited verification agencies",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    },
+    {
+      "label": "CCTS offset registration steps",
+      "to": "/answers/ccts-offset-project-registration-steps"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    },
+    {
+      "label": "BEE, List of Accredited Carbon Verification Agencies empanelled under CCTS (page updated 21 October 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=568&lang=1"
+    }
+  ],
+  "reviewNote": "Sections A3.1.6, A4.2.3, A6.2.2 and A6.3.1 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

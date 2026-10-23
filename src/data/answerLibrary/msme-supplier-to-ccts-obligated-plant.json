@@ -1,0 +1,61 @@
+{
+  "slug": "msme-supplier-to-ccts-obligated-plant",
+  "q": "What will a CCTS obligated plant ask its MSME suppliers for?",
+  "title": "MSME supplier to a CCTS plant",
+  "short": "Nothing is required of suppliers by the CCTS rules: a plant's target covers its own gate-to-gate emissions. But plants count notional emissions for some intermediate products they bring in, and they look for cuts, so expect requests for energy use per unit, fuel type and cleaner inputs.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSMEs supplying cement, steel, aluminium, paper, textile and chemical plants",
+  "sections": [
+    {
+      "h": "What the rules cover",
+      "ul": [
+        "Targets apply only to plants named in the gazette schedules.",
+        "Intensity covers direct energy, process and purchased electricity and heat emissions inside the plant's gate-to-gate boundary.",
+        "Where intermediate products or raw materials are brought into the plant, notional emissions are added as sector monitoring guidelines specify, so buyers of clinker, sponge iron or pulp may need figures for what they buy."
+      ]
+    },
+    {
+      "h": "What buyers tend to ask for",
+      "ul": [
+        "Monthly electricity and fuel use, with invoices.",
+        "Energy or emissions per tonne of what you supply.",
+        "Whether you use grid power, captive power or renewable supply.",
+        "Plans to switch fuel or improve efficiency."
+      ]
+    },
+    {
+      "h": "Be ready",
+      "p": [
+        "Twelve months of clean invoice data answers most of these requests and also serves CBAM, BRSR value chain questions and green loan applications."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns an MSME's electricity and fuel invoices into monthly emissions records with each figure linked to its bill, ready to share with a buyer.",
+  "links": [
+    {
+      "label": "How many plants have CCTS targets",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    },
+    {
+      "label": "Emissions left out of CCTS intensity",
+      "to": "/answers/ccts-emissions-excluded-from-intensity"
+    },
+    {
+      "label": "Can an MSME earn CCTS credits",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    },
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    }
+  ],
+  "reviewNote": "Section 4.4 (2) (vi) of the scanned compliance procedure on notional emissions, read on 23 October 2026. What buyers ask for is practice, not a rule.",
+  "reviewed": "2026-10-23"
+}

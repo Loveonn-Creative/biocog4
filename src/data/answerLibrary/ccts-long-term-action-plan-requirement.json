@@ -1,0 +1,57 @@
+{
+  "slug": "ccts-long-term-action-plan-requirement",
+  "q": "Does a CCTS obligated plant need a long-term emission reduction plan?",
+  "title": "CCTS long-term action plan",
+  "short": "Yes. BEE's compliance procedure asks each obligated plant for an action plan covering at least five years, submitted within one year of the first compliance year starting, with annual planned activities. It lists reduction measures, their cost and savings, and an implementation plan.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Plant heads and energy managers at obligated plants",
+  "sections": [
+    {
+      "h": "Deadlines",
+      "ul": [
+        "Long-term action plan, at least five years: within one year of the start of the first compliance year, with the planned activities for that year.",
+        "Annual planned activities for each later year: within three months of that year starting, with any revised long-term plan.",
+        "Compliance status in Form D: within one month of the last trading session of the compliance year."
+      ]
+    },
+    {
+      "h": "Minimum contents",
+      "ul": [
+        "Identified GHG reduction measures to meet the intensity targets.",
+        "Estimated cost and savings of each measure.",
+        "An implementation plan.",
+        "Measures identified for the next five years."
+      ]
+    },
+    {
+      "h": "Building it from data",
+      "p": [
+        "Start from twelve months of fuel and power data by source, find the largest streams, and cost the measures that cut them: heat recovery, motor and pump upgrades, fuel switching, renewable supply."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "CCTS monitoring plan deadline",
+      "to": "/answers/ccts-monitoring-plan-deadline-and-contents"
+    },
+    {
+      "label": "What if a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "CCTS certificates earned or bought",
+      "to": "/answers/ccts-carbon-credit-certificates-formula"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    }
+  ],
+  "reviewNote": "Section 11 of the scanned compliance procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

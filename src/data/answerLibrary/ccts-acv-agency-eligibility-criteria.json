@@ -1,0 +1,56 @@
+{
+  "slug": "ccts-acv-agency-eligibility-criteria",
+  "q": "What does an agency need to become a CCTS Accredited Carbon Verification Agency?",
+  "title": "CCTS verification agency eligibility",
+  "short": "A registered firm or company with turnover of at least INR 50 lakh in one of the last three years, or net worth of INR 20 lakh if newer. Per mechanism it needs one full-time lead verifier and two full-time verifiers, sector experts, and ISO 14065 accreditation within a year.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Energy auditing firms and certification bodies planning to apply",
+  "sections": [
+    {
+      "h": "Legal and financial",
+      "ul": [
+        "A partnership, company, society or other legal entity able to sue and contract.",
+        "No pending judicial enquiry for malpractice or fraud.",
+        "Minimum turnover INR 50 lakh in at least one of the previous three years; net worth INR 20 lakh for entities under three years old."
+      ]
+    },
+    {
+      "h": "People",
+      "ul": [
+        "Compliance mechanism lead verifier: a BEE Accredited Energy Auditor with ISO 14064 lead verifier certification.",
+        "Compliance verifiers: BEE Certified Energy Auditors with ISO 14064 lead verifier certification.",
+        "Sector expert: an engineering graduate with at least 10 years of process experience in the sector.",
+        "Offset mechanism technical experts need at least 5 years in the sector."
+      ]
+    },
+    {
+      "h": "Standards",
+      "p": [
+        "ISO 14065:2020 applies. An agency without it can get provisional accreditation but must obtain ISO 14065 within one year to become final, and only a finally accredited agency may validate or verify."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not a verification agency.",
+  "links": [
+    {
+      "label": "Accredited verification agencies",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    },
+    {
+      "label": "CCTS verification agency fees",
+      "to": "/answers/ccts-acv-accreditation-fees-and-validity"
+    },
+    {
+      "label": "CCTS verification agencies list",
+      "to": "/answers/ccts-accredited-verification-agencies-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Accreditation Procedure and Eligibility Criteria for Accredited Carbon Verification Agency, Version 1.0 (July 2024)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-6bc4092848da03f9_1776056999.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

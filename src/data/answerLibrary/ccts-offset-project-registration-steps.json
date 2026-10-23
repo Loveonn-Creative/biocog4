@@ -1,0 +1,66 @@
+{
+  "slug": "ccts-offset-project-registration-steps",
+  "q": "What are the steps to register a carbon offset project under India's CCTS?",
+  "title": "CCTS offset project registration steps",
+  "short": "Seven steps: open an account on the ICM portal, write the project design document, publish it for 30 days of comments, get it validated by an accredited agency, register it with BEE, monitor, then get each period verified and the credits issued. Validation and verification must be done by two different agencies.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Indian project developers, factory owners and consultants planning a CCTS offset project",
+  "sections": [
+    {
+      "h": "The seven steps in BEE's procedure",
+      "ol": [
+        "Account registration on the ICM portal as a non-obligated entity. Only Indian firms can register projects.",
+        "Project design document (PDD) on BEE's template. BEE publishes the draft on the portal and anyone can comment for 30 calendar days.",
+        "Validation by an Accredited Carbon Verification Agency (ACVA) you choose. The agency reports its status on the portal every 90 days until it files the validation report.",
+        "Registration. The ACVA files the request, BEE checks completeness, a subject matter expert reviews it, and the Technical Committee for the offset mechanism, which meets in the last week of each month, approves it.",
+        "Monitoring by you, against the monitoring plan in the registered PDD.",
+        "Verification by a second ACVA, which must be different from the one that validated the project.",
+        "Issuance. BEE sends the request to the National Steering Committee for the Indian Carbon Market (NSC-ICM) and issues carbon credit certificates (CCCs) on its recommendation, after you pay the issuance fee."
+      ]
+    },
+    {
+      "h": "Time limits written into the procedure",
+      "ul": [
+        "Public comments on the draft PDD: 30 calendar days.",
+        "An ACVA has 5 calendar days to resubmit an incomplete registration request, and 15 calendar days to answer the expert's queries.",
+        "The expert sends a positive or negative summary note within 30 calendar days.",
+        "After the registration fee is paid, the project appears on the portal as registered within 5 working days.",
+        "A rejected request is removed from the portal within 60 calendar days."
+      ]
+    },
+    {
+      "h": "Before you start",
+      "p": [
+        "Check the project fits an approved methodology and one of the approved sectors, that it started on or after 1 January 2025, and that it is not registered in any other carbon market. A project the law already requires you to carry out does not qualify."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fuel and electricity invoices as dated, fingerprinted monthly records, the consumption data a project's monitoring report and its verifier will ask to trace.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "What goes in a CCTS project design document",
+      "to": "/answers/ccts-offset-project-design-document-contents"
+    },
+    {
+      "label": "CCTS offset fees",
+      "to": "/answers/ccts-offset-project-fees"
+    },
+    {
+      "label": "Accredited verification agencies",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Read from the scanned Detailed Procedure for Offset Mechanism, Section A (pages 10 to 19), downloaded from beeindia.gov.in on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

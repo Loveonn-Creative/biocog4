@@ -1,0 +1,54 @@
+{
+  "slug": "bm-fr05-001-mangrove-afforestation-ccts",
+  "q": "Can mangrove planting earn CCTS credits under methodology BM FR05.001?",
+  "title": "Mangrove planting under BM FR05.001",
+  "short": "Yes, if the land is degraded mangrove habitat. BM FR05.001 needs more than 90 per cent of the project area planted with mangrove species, soil disturbance on no more than 10 per cent of the area, and no change to the hydrology of connected wetlands if other species are planted.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Coastal states, CSR teams and forestry developers",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "Land is degraded mangrove habitat.",
+        "More than 90 per cent of the area is planted with mangrove species. If over 10 per cent is non-mangrove, the project must not alter the hydrology of the area or of connected wetlands up- and down-gradient.",
+        "Soil disturbance from the project covers no more than 10 per cent of the area.",
+        "The applicability conditions of the forestry tools used also apply."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AR-AM0014 (version valid from 4 October 2013).",
+        "Effective from 27 March 2025.",
+        "Forestry credits are issued as temporary or long-term credits; long-term ones expire at the end of the crediting period, as the methodology sets out."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not measure forest carbon stocks.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Afforestation under BM FR05.002",
+      "to": "/answers/bm-fr05-002-afforestation-ccts-credits"
+    },
+    {
+      "label": "CCTS offset approved sectors",
+      "to": "/answers/ccts-offset-approved-sectors-phase-1-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM FR05.001 Afforestation and reforestation of degraded mangrove habitats, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-0a5abd883df41e53_1776061263.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

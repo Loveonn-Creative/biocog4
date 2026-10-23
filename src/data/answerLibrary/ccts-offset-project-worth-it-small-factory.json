@@ -1,0 +1,66 @@
+{
+  "slug": "ccts-offset-project-worth-it-small-factory",
+  "q": "Is a CCTS offset project worth the cost for a small factory?",
+  "title": "Is a CCTS project worth it for a small factory",
+  "short": "Only if the reductions are large enough to cover fixed costs. BEE's fees alone start near INR 57,000 before any credits, plus INR 5 per credit, and two accredited agencies charge for validation and verification. A factory saving a few hundred tonnes a year usually does better grouping with others.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME owners weighing a CCTS offset project",
+  "sections": [
+    {
+      "h": "Fixed costs you can count on",
+      "ul": [
+        "Account registration INR 5,000 and maintenance INR 2,000 a year.",
+        "Registration INR 50,000 for up to 15,000 t CO2e a year.",
+        "Issuance INR 5 per credit, and INR 25,000 for each post-registration change.",
+        "Validation and verification by two different accredited agencies, at their own rates."
+      ]
+    },
+    {
+      "h": "Questions that decide it",
+      "ul": [
+        "Is there an approved methodology for the project? Standalone grid-connected solar and wind are excluded from BM EN01.001.",
+        "Did it start on or after 1 January 2025, and is it beyond what the law requires?",
+        "How many tonnes a year, honestly estimated, over a ten or fifteen year crediting period?",
+        "What will certificates sell for? Trading had not yet set a price on 23 October 2026, so do not plan on a number."
+      ]
+    },
+    {
+      "h": "Ways to make it work",
+      "p": [
+        "Group similar projects across a cluster in one PDD, which shares fees and verification. Or treat the energy savings as the main return and credits as a bonus."
+      ]
+    }
+  ],
+  "senseible": "Senseible's invoice records give the before and after fuel and power figures you need to estimate tonnes honestly before paying anyone.",
+  "links": [
+    {
+      "label": "CCTS offset fees",
+      "to": "/answers/ccts-offset-project-fees"
+    },
+    {
+      "label": "Grouping small CCTS projects",
+      "to": "/answers/ccts-offset-bundling-small-projects"
+    },
+    {
+      "label": "Can an MSME earn CCTS credits",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Which projects qualify under BM IN02.001",
+      "to": "/answers/which-projects-qualify-under-bm-in02-001"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    },
+    {
+      "label": "BEE, BM EN01.001 Grid-connected electricity generation from renewable sources, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-7142dfb1cb5c2361_1776061176.pdf"
+    }
+  ],
+  "reviewNote": "Fees from Annexure 2 of the offset procedure; methodology scope from BM EN01.001. No certificate price is stated because none was published by an official source when written.",
+  "reviewed": "2026-10-23"
+}

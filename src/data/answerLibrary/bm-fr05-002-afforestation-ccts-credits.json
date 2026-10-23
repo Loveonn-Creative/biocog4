@@ -1,0 +1,53 @@
+{
+  "slug": "bm-fr05-002-afforestation-ccts-credits",
+  "q": "Which land can be planted for CCTS credits under methodology BM FR05.002?",
+  "title": "Afforestation under BM FR05.002",
+  "short": "Any land that is not wetland, and it need not be degraded. BM FR05.002 limits soil disturbance to 10 per cent of the area on organic soils and on land whose soil carbon is expected to be higher than under forestry. It is adapted from the UN CDM method AR-ACM0003.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Forestry developers, farmers with agroforestry plans and CSR teams",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "The land does not fall in the wetland category.",
+        "Soil disturbance from the project covers no more than 10 per cent of the area on organic soils, and on land whose baseline use is expected to hold more soil organic carbon than forestry would.",
+        "The applicability conditions of the forestry tools used also apply."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AR-ACM0003 (version valid from 4 October 2013).",
+        "Effective from 8 September 2025.",
+        "Uses BEE's A/R tools for baseline and additionality, burning, dead wood and litter, trees and shrubs, displaced farming, and soil carbon."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not measure forest carbon stocks.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Mangrove planting under BM FR05.001",
+      "to": "/answers/bm-fr05-001-mangrove-afforestation-ccts"
+    },
+    {
+      "label": "Insetting vs offsetting",
+      "to": "/answers/insetting-vs-offsetting-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM FR05.002 Afforestation and reforestation of lands except wetlands, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-497b2256ef03c1de_1776061272.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

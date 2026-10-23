@@ -1,0 +1,66 @@
+{
+  "slug": "bm-wa03-002-landfill-gas-flaring-or-use",
+  "q": "Which landfill gas projects qualify under CCTS methodology BM WA03.002?",
+  "title": "Landfill gas under BM WA03.002",
+  "short": "BM WA03.002 covers a new landfill gas capture system, or investment that raises recovery at an existing one where the gas was only vented or flared. The gas can be flared, burnt for power or heat, or supplied through a gas network, by truck or by dedicated pipeline.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Landfill operators, city bodies and gas buyers",
+  "sections": [
+    {
+      "h": "Allowed uses of the captured gas",
+      "ul": [
+        "Flaring.",
+        "Electricity generation.",
+        "Heat in a boiler, air heater, brick kiln or glass melting furnace.",
+        "Supply to consumers through a natural gas distribution network or a dedicated pipeline.",
+        "Compressed or liquefied gas delivered by truck."
+      ]
+    },
+    {
+      "h": "Conditions",
+      "ul": [
+        "Either a new capture system where none would have been installed, or an investment in an existing system whose gas was vented or flared and not used.",
+        "For an existing system whose gas cannot be measured separately, historical data on gas captured and flared is needed.",
+        "The project must not reduce organic waste that would have been recycled."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology ACM0001 (version valid from 14 June 2019).",
+        "Effective from 27 March 2025."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity and fuel invoices behind a project's monitoring data as dated monthly records a verifier can trace.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Landfill methane under BM WA03.001",
+      "to": "/answers/bm-wa03-001-landfill-methane-recovery-ccts"
+    },
+    {
+      "label": "BM-T-004 flare efficiency",
+      "to": "/answers/ccts-tool-bm-t-004-flare-efficiency"
+    },
+    {
+      "label": "Food waste landfill vs compost vs biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM WA03.002 Flaring or use of landfill gas, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-a0e3f856720a5c57_1776061241.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

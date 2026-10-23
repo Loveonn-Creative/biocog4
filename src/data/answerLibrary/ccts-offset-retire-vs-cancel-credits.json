@@ -1,0 +1,54 @@
+{
+  "slug": "ccts-offset-retire-vs-cancel-credits",
+  "q": "What is the difference between retiring and cancelling a CCTS carbon credit?",
+  "title": "Retired vs cancelled CCTS credits",
+  "short": "A credit in an ICM registry account is active, retired or cancelled. Retiring is what the holder does to use a credit for a claim, and it removes the credit for good. Cancellation is a permanent removal made by BEE for its own stated reasons, not a claim.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Companies buying CCTS credits for climate claims and project owners",
+  "sections": [
+    {
+      "h": "The three statuses",
+      "ul": [
+        "Active: verified, issued and available to trade or use.",
+        "Retired: permanently removed from circulation in the ICM registry because the holder used it in a claim. It cannot be sold, traded or used again.",
+        "Cancelled: permanently removed by BEE, the administrator, for reasons it specifies."
+      ]
+    },
+    {
+      "h": "Who acts",
+      "p": [
+        "Retirements are started by the account holder through the ICM portal. Cancellations are BEE's decision."
+      ]
+    },
+    {
+      "h": "For a voluntary claim",
+      "p": [
+        "Only a retired credit backs a claim. Keep the retirement record from the registry with your report, and do not count the same tonnes again in your own inventory."
+      ]
+    }
+  ],
+  "senseible": "Senseible tracks your own emissions from invoices and keeps any credit retirement you record separate from them, so the two are never netted silently.",
+  "links": [
+    {
+      "label": "Buying CCTS credits voluntarily",
+      "to": "/answers/can-a-company-buy-ccts-credits-voluntarily"
+    },
+    {
+      "label": "Can a GHG report subtract offsets",
+      "to": "/answers/can-a-ghg-report-subtract-carbon-offsets"
+    },
+    {
+      "label": "Who runs the carbon market registry",
+      "to": "/answers/who-runs-india-carbon-market-registry"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section A9 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

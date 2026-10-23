@@ -1,0 +1,50 @@
+{
+  "slug": "ccts-offset-project-start-date-rule",
+  "q": "Can a project that started before 2025 earn credits under India's CCTS offset mechanism?",
+  "title": "CCTS offset project start date rule",
+  "short": "No. BEE set 1 January 2025 as the start date for registering CCTS offset projects and says no retrospective projects will be considered. The start date is when the project began reducing emissions, and validation must be finished within two years of that date.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factories and developers with projects commissioned before or after January 2025",
+  "sections": [
+    {
+      "h": "What the procedure says",
+      "ul": [
+        "Project start date: the date the project began generating emission reductions, avoidance or removals.",
+        "January 1, 2025 is the start date for ICM project registrations. No retrospective projects.",
+        "Validation must be completed within two years of the project start date."
+      ]
+    },
+    {
+      "h": "What this means in practice",
+      "ul": [
+        "A boiler, solar plant or biogas unit commissioned in 2024 cannot enter the offset mechanism.",
+        "For a project commissioned now, the two-year validation clock is already running, so start the PDD and choose an agency early.",
+        "Keep dated proof of commissioning: the purchase order, installation report and first meter readings."
+      ]
+    }
+  ],
+  "senseible": "Senseible's records are dated by invoice, so the first month a new boiler or fuel shows up on your bills is easy to find.",
+  "links": [
+    {
+      "label": "CCTS offset crediting period",
+      "to": "/answers/ccts-offset-crediting-period-length"
+    },
+    {
+      "label": "CCTS offset registration steps",
+      "to": "/answers/ccts-offset-project-registration-steps"
+    },
+    {
+      "label": "CCTS offset or Verra and Gold Standard",
+      "to": "/answers/ccts-offset-or-verra-gold-standard-which"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section B3.2 and B4.10.3 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

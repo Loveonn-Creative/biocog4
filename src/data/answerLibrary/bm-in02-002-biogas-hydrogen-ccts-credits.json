@@ -1,0 +1,55 @@
+{
+  "slug": "bm-in02-002-biogas-hydrogen-ccts-credits",
+  "q": "Which projects qualify under CCTS methodology BM IN02.002 for hydrogen from biogas?",
+  "title": "Biogas to hydrogen under BM IN02.002",
+  "short": "BM IN02.002 covers a purification unit that separates methane from biogas that was being flared, to make hydrogen in place of LPG used as fuel and feedstock. It can be combined with new methane recovery at a wastewater plant or landfill, but not with biogas already used for energy.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Industrial units with flared biogas and LPG-based hydrogen plants",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "The biogas was flared before the project, and the hydrogen it makes displaces LPG used both as feedstock and fuel in a hydrogen unit.",
+        "Or the purification is combined with new methane recovery from wastewater treatment plants or landfills under BM WA03.001, whose rules then apply to that part.",
+        "No diversion of biogas already used for heat, power or another chemical process.",
+        "Not applicable where it would displace hydrogen made by electrolysis.",
+        "The project must meet all local regulations, including safety."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AMS-III.O (version valid from 24 July 2015).",
+        "Sectoral scope: Industries. Effective from 27 March 2025.",
+        "Uses tools BM-T-001 (baseline and additionality), BM-T-002 (fossil fuel) and BM-T-003 (electricity)."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity and fuel invoices behind a project's monitoring data as dated monthly records a verifier can trace.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Food factory wastewater biogas credits",
+      "to": "/answers/food-factory-wastewater-biogas-carbon-credits"
+    },
+    {
+      "label": "BM-T-002 fossil fuel tool",
+      "to": "/answers/ccts-tool-bm-t-002-fossil-fuel-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM IN02.002 Hydrogen production using methane extracted from biogas, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-11086e8d63989765_1776061213.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

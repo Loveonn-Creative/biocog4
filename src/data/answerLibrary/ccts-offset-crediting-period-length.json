@@ -1,0 +1,57 @@
+{
+  "slug": "ccts-offset-crediting-period-length",
+  "q": "How long is the crediting period for a CCTS offset project in India?",
+  "title": "CCTS offset crediting period",
+  "short": "You choose one of two options in the project design document: a fixed crediting period of ten years, or a renewable period of five years that can be renewed twice, for fifteen years in all. The period starts on the registration date or the project start date, whichever is later.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Project developers and MSMEs planning CCTS offset revenue",
+  "sections": [
+    {
+      "h": "The two options",
+      "ul": [
+        "Fixed: ten years, no renewal.",
+        "Renewable: five years at a time, with at most two renewals, so fifteen years in total.",
+        "Each renewal is validated by an accredited agency and processed like a registration, with a revised PDD in track-change mode and the registration fee slabs."
+      ]
+    },
+    {
+      "h": "Rules that tie to the period",
+      "ul": [
+        "Validation must be completed within two years of the project start date.",
+        "Issuance requests for a crediting period must be filed within two years after that period ends, or credits for it are no longer issued.",
+        "A project cannot be registered again once its final crediting period has expired.",
+        "Monitored data must be kept electronically for two years after the crediting period or the last issuance, whichever is later."
+      ]
+    },
+    {
+      "h": "How to choose",
+      "p": [
+        "A renewable period suits equipment that will run well beyond five years, but each renewal re-tests additionality against the rules then in force. A fixed period gives certainty for ten years with no re-test."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fuel and electricity invoices as dated, fingerprinted monthly records, the consumption data a project's monitoring report and its verifier will ask to trace.",
+  "links": [
+    {
+      "label": "CCTS offset registration steps",
+      "to": "/answers/ccts-offset-project-registration-steps"
+    },
+    {
+      "label": "Deadline to claim CCTS credits",
+      "to": "/answers/ccts-offset-issuance-two-year-deadline"
+    },
+    {
+      "label": "CCTS project start date rule",
+      "to": "/answers/ccts-offset-project-start-date-rule"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section B4.10 and A8 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "ccts-offset-regulatory-surplus-rule",
+  "q": "Can a project required by law earn CCTS offset credits?",
+  "title": "CCTS offset regulatory surplus rule",
+  "short": "No. BEE excludes projects that are mandated by law, so credits only go to reductions beyond the business-as-usual case. A project also cannot be registered in another carbon market at the same time, except under the Green Credit Programme, and CSR projects must follow Section 135 of the Companies Act.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factories and developers checking whether a project is eligible",
+  "sections": [
+    {
+      "h": "Eligibility rules in the project standard",
+      "ul": [
+        "Regulatory surplus: activities mandated by law are not eligible. The developer shows this at validation and at every crediting period renewal.",
+        "Exclusivity: no concurrent registration in any other carbon market or market mechanism, including renewable energy mechanisms where the reduction is traded as credits or certificates. The only exception is the Green Credit Programme notified by MoEFCC on 12 October 2023.",
+        "No double counting or double claiming with other mechanisms.",
+        "CSR projects must follow Section 135 of the Companies Act, 2013.",
+        "No significant harm to the environment, with an EIA where the law requires one."
+      ]
+    },
+    {
+      "h": "Examples to check carefully",
+      "p": [
+        "A pollution control unit ordered by a State Pollution Control Board, or equipment needed to meet a notified efficiency norm, is likely to fail the surplus test. A renewable plant already selling renewable energy certificates fails exclusivity."
+      ]
+    }
+  ],
+  "senseible": "Senseible's records separate what a unit used before and after a change, which helps show the change was not already required.",
+  "links": [
+    {
+      "label": "Green credit vs carbon credit",
+      "to": "/answers/green-credit-vs-carbon-credit-india"
+    },
+    {
+      "label": "CCTS additionality common practice test",
+      "to": "/answers/ccts-additionality-common-practice-test"
+    },
+    {
+      "label": "CCTS offset or Verra and Gold Standard",
+      "to": "/answers/ccts-offset-or-verra-gold-standard-which"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section B3 and B4.7 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

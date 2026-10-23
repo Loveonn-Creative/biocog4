@@ -1,0 +1,47 @@
+{
+  "slug": "ccts-acv-accreditation-fees-and-validity",
+  "q": "How much does CCTS verification agency accreditation cost and how long does it last?",
+  "title": "CCTS verification agency fees",
+  "short": "Applying costs INR 10,000, then INR 2,000 a year. Each extra sector scope costs INR 5,000, and so does renewal. Accreditation lasts five years unless BEE withdraws it, and renewal must be applied for six months before it ends. Missing the annual fee can lead to suspension.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Verification agencies and auditing firms",
+  "sections": [
+    {
+      "h": "Fees",
+      "ul": [
+        "Application: INR 10,000.",
+        "Annual accreditation fee: INR 2,000 until renewal.",
+        "Additional sector scope: INR 5,000 per application.",
+        "Renewal: INR 5,000."
+      ]
+    },
+    {
+      "h": "Process and validity",
+      "ul": [
+        "BEE flags missing documents within 15 days; the applicant has 15 days to fix them.",
+        "The agency's name is published for 15 days of stakeholder comments before assessment.",
+        "Accreditation is valid for five years, renewed by applying six months before expiry.",
+        "Suspension can follow poor verification, unreported changes, pending fraud cases or unpaid fees; withdrawal follows if the cause is not fixed within six months."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not a verification agency.",
+  "links": [
+    {
+      "label": "CCTS verification agency eligibility",
+      "to": "/answers/ccts-acv-agency-eligibility-criteria"
+    },
+    {
+      "label": "CCTS verification agencies list",
+      "to": "/answers/ccts-accredited-verification-agencies-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Accreditation Procedure and Eligibility Criteria for Accredited Carbon Verification Agency, Version 1.0 (July 2024)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-6bc4092848da03f9_1776056999.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

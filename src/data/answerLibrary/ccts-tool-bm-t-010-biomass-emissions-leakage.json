@@ -1,0 +1,61 @@
+{
+  "slug": "ccts-tool-bm-t-010-biomass-emissions-leakage",
+  "q": "What emissions does CCTS tool BM-T-010 count when a project uses biomass?",
+  "title": "BM-T-010 biomass emissions and leakage",
+  "short": "BM-T-010 counts emissions along the biomass value chain: growing it in a dedicated plantation, transporting it and processing it. It adds leakage, such as residues diverted from other uses or farming pushed elsewhere. Only increases outside the project count, and the project region is 250 km around the site.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Biomass boiler, cogeneration and CBG projects",
+  "sections": [
+    {
+      "h": "What the tool covers",
+      "ul": [
+        "Projects that use biomass from dedicated plantations and biomass residues, as fuel or feedstock.",
+        "Project emissions from cultivating biomass in a dedicated plantation, transporting biomass and residues, and processing them.",
+        "Leakage from shifting pre-project activities off plantation land, diverting residues from other applications, and transporting or processing residues outside the project boundary.",
+        "The methodology that calls the tool says which of these sources to include.",
+        "Only positive leakage counts unless the methodology allows otherwise; a negative result is taken as zero."
+      ]
+    },
+    {
+      "h": "Definitions that change the result",
+      "ul": [
+        "Project region: the area within 250 km of the project activity.",
+        "Organic soils are defined by carbon content and thickness thresholds taken from IPCC guidance.",
+        "Wetlands, including peatland, are treated as their own land category."
+      ]
+    },
+    {
+      "h": "Practical point",
+      "p": [
+        "Keep biomass purchase invoices with source and quantity, and transport records with distances. They are the activity data for the transport and residue checks."
+      ]
+    }
+  ],
+  "senseible": "Senseible can read biomass purchase and freight invoices into monthly records with the supplier and quantity attached.",
+  "links": [
+    {
+      "label": "Biomass boiler under BM EN01.003",
+      "to": "/answers/bm-en01-003-biomass-boiler-ccts-credits"
+    },
+    {
+      "label": "CBG plant credits under BM WA03.003",
+      "to": "/answers/bm-wa03-003-cbg-plant-ccts-credits"
+    },
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-010 Project and leakage emissions from biomass",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-10a330f6757ffbdc_1776061631.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

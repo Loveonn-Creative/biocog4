@@ -1631,9 +1631,63 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can household or small farm biogas digesters earn CCTS credits under BM AG04.001?",
+  "text": "Yes, under BM AG04.001, for digesters at individual households or small farms that capture methane from manure that would otherwise decay without air. All collected methane must be burnt, for example for cooking, the digestate handled aerobically, and the site's average temperature above 5 degrees C.",
+  "url": "https://senseible.earth/answers/bm-ag04-001-farm-biogas-digester-ccts"
+ },
+ {
+  "kind": "answer",
+  "title": "Which rice farms can earn CCTS credits under methodology BM AG04.002?",
+  "text": "BM AG04.002 credits irrigated, flooded rice farms that cut methane by flooding less, for example with alternate wetting and drying, aerobic rice or direct seeded rice. Fields need controlled irrigation and drainage, and farmers must get training during the season. Upland, rainfed and deep water farms are generally excluded.",
+  "url": "https://senseible.earth/answers/bm-ag04-002-rice-cultivation-ccts-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a solar or wind power plant earn CCTS credits under BM EN01.001?",
+  "text": "Not as a standalone grid-connected solar or wind plant: BM EN01.001 excludes those. It covers other grid-connected renewable plants, new or upgraded, and hybrids where solar or wind is paired with battery storage or pumped storage. It is adapted from the UN CDM method ACM0002.",
+  "url": "https://senseible.earth/answers/bm-en01-001-renewable-power-ccts-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a green hydrogen plant earn CCTS credits under BM EN01.002?",
+  "text": "BM EN01.002 credits a new electrolyser that makes hydrogen from water using a new captive solar or wind plant, supplying an existing user that made hydrogen from coal, gas or oil before. Grid power can be at most a tenth of the captive renewable power used, measured each year.",
+  "url": "https://senseible.earth/answers/bm-en01-002-green-hydrogen-ccts-credits"
+ },
+ {
+  "kind": "answer",
   "title": "Can a factory biomass boiler or cogeneration plant earn CCTS credits under BM EN01.003, and what biomass is allowed?",
   "text": "Possibly. BM EN01.003 is BEE's CCTS methodology for electricity and heat generation from biomass, so a factory biomass boiler or cogeneration plant is the kind of project it is written for. Which biomass qualifies, and what gets deducted, is set in the methodology and in BEE's biomass tool BM-T-010, so read both before you spend.",
   "url": "https://senseible.earth/answers/bm-en01-003-biomass-boiler-ccts-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "Can mangrove planting earn CCTS credits under methodology BM FR05.001?",
+  "text": "Yes, if the land is degraded mangrove habitat. BM FR05.001 needs more than 90 per cent of the project area planted with mangrove species, soil disturbance on no more than 10 per cent of the area, and no change to the hydrology of connected wetlands if other species are planted.",
+  "url": "https://senseible.earth/answers/bm-fr05-001-mangrove-afforestation-ccts"
+ },
+ {
+  "kind": "answer",
+  "title": "Which land can be planted for CCTS credits under methodology BM FR05.002?",
+  "text": "Any land that is not wetland, and it need not be degraded. BM FR05.002 limits soil disturbance to 10 per cent of the area on organic soils and on land whose soil carbon is expected to be higher than under forestry. It is adapted from the UN CDM method AR-ACM0003.",
+  "url": "https://senseible.earth/answers/bm-fr05-002-afforestation-ccts-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "Which projects qualify under CCTS methodology BM IN02.002 for hydrogen from biogas?",
+  "text": "BM IN02.002 covers a purification unit that separates methane from biogas that was being flared, to make hydrogen in place of LPG used as fuel and feedstock. It can be combined with new methane recovery at a wastewater plant or landfill, but not with biogas already used for energy.",
+  "url": "https://senseible.earth/answers/bm-in02-002-biogas-hydrogen-ccts-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "What does CCTS methodology BM WA03.001 cover for landfill methane?",
+  "text": "BM WA03.001 credits capturing and burning methane from landfills that hold municipal, industrial or other waste with biodegradable matter. It is not allowed if the project cuts the waste that would have been recycled, or if the site is managed to make more methane.",
+  "url": "https://senseible.earth/answers/bm-wa03-001-landfill-methane-recovery-ccts"
+ },
+ {
+  "kind": "answer",
+  "title": "Which landfill gas projects qualify under CCTS methodology BM WA03.002?",
+  "text": "BM WA03.002 covers a new landfill gas capture system, or investment that raises recovery at an existing one where the gas was only vented or flared. The gas can be flared, burnt for power or heat, or supplied through a gas network, by truck or by dedicated pipeline.",
+  "url": "https://senseible.earth/answers/bm-wa03-002-landfill-gas-flaring-or-use"
  },
  {
   "kind": "answer",
@@ -3569,15 +3623,93 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Which agencies are accredited to verify under India's CCTS?",
+  "text": "BEE's register, updated 21 October 2026, lists 18 agencies: 3 with final accreditation and 15 provisional. Twelve are accredited for the compliance mechanism only, five for offsets only and one for both. Check the agency's mechanism and sector scope before appointing it.",
+  "url": "https://senseible.earth/answers/ccts-accredited-verification-agencies-list"
+ },
+ {
+  "kind": "answer",
+  "title": "How much does CCTS verification agency accreditation cost and how long does it last?",
+  "text": "Applying costs INR 10,000, then INR 2,000 a year. Each extra sector scope costs INR 5,000, and so does renewal. Accreditation lasts five years unless BEE withdraws it, and renewal must be applied for six months before it ends. Missing the annual fee can lead to suspension.",
+  "url": "https://senseible.earth/answers/ccts-acv-accreditation-fees-and-validity"
+ },
+ {
+  "kind": "answer",
+  "title": "What does an agency need to become a CCTS Accredited Carbon Verification Agency?",
+  "text": "A registered firm or company with turnover of at least INR 50 lakh in one of the last three years, or net worth of INR 20 lakh if newer. Per mechanism it needs one full-time lead verifier and two full-time verifiers, sector experts, and ISO 14065 accreditation within a year.",
+  "url": "https://senseible.earth/answers/ccts-acv-agency-eligibility-criteria"
+ },
+ {
+  "kind": "answer",
   "title": "How does the common practice test work in BEE's CCTS additionality tool BM-T-001?",
   "text": "The common practice test in BM-T-001 asks whether the technology is already widespread among similar plants in your region. If it is, the project is not additional. BEE's tool sets the exact test; the CDM common practice tool most consultants start from fails a project when over 20 percent of similar plants, and more than three, already use it.",
   "url": "https://senseible.earth/answers/ccts-additionality-common-practice-test"
  },
  {
   "kind": "answer",
+  "title": "Can CCTS carbon credit certificates be banked for future years?",
+  "text": "Yes. Certificates a plant earns and still holds after a compliance year can be banked, then sold in the Indian Carbon Market or used for a later year's target. Under BEE's October 2026 draft trading procedure, certificates bought on an exchange cannot be resold, and voluntary buyers can only retire them.",
+  "url": "https://senseible.earth/answers/ccts-banking-carbon-credit-certificates"
+ },
+ {
+  "kind": "answer",
   "title": "What must a factory measure and keep to monitor a BM IN02.001 energy efficiency or fuel switch project?",
   "text": "BM IN02.001 projects work out their reductions from measured fuel, electricity and, where heat is the saving, steam data, using BEE tools BM-T-002 for fuel and BM-T-003 for electricity. The exact parameter list, units and frequencies sit in the methodology's monitoring section, so read that first and set up meters and records to match.",
   "url": "https://senseible.earth/answers/ccts-bm-in02-001-monitoring-records"
+ },
+ {
+  "kind": "answer",
+  "title": "How many carbon credit certificates does a CCTS plant earn or have to buy?",
+  "text": "Under the 2025 target rules, a plant earns certificates equal to its target intensity minus its achieved intensity, multiplied by its equivalent product output that year. If it misses, it buys certificates equal to achieved minus target, times output. One certificate equals one tonne of CO2e.",
+  "url": "https://senseible.earth/answers/ccts-carbon-credit-certificates-formula"
+ },
+ {
+  "kind": "answer",
+  "title": "How many cement plants have CCTS targets, and in which sub-sectors?",
+  "text": "186 cement units have targets under the October 2025 rules, against a 2023-24 baseline, in six sub-sectors: Portland pozzolana cement, ordinary Portland cement, composite cement, clinkerisation, white cement and grinding. The 55 grinding units have their own very low intensity values.",
+  "url": "https://senseible.earth/answers/ccts-cement-targets-by-subsector"
+ },
+ {
+  "kind": "answer",
+  "title": "How will CCTS carbon credit certificates trade on India's power exchanges?",
+  "text": "Under BEE's October 2026 draft procedure, buyers and sellers bid on CERC-registered power exchanges in a closed, double-sided auction with one uniform clearing price per session. The registry checks sellers hold the certificates first. Bilateral deals, even within a corporate group, are not allowed.",
+  "url": "https://senseible.earth/answers/ccts-certificate-trading-power-exchange"
+ },
+ {
+  "kind": "answer",
+  "title": "Which emissions are left out of a CCTS plant's emission intensity?",
+  "text": "BEE's compliance procedure leaves out biomass and biogenic energy, renewable energy, approved co-processed waste fuels, captured and stored CO2, energy for the staff colony, construction and outside transport, office refrigerant leaks, and captive power or heat exported out of the boundary. Biogenic emissions are reported separately.",
+  "url": "https://senseible.earth/answers/ccts-emissions-excluded-from-intensity"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the penalty if a CCTS plant does not surrender enough certificates?",
+  "text": "The Central Pollution Control Board imposes environmental compensation equal to twice the average price at which certificates traded in that compliance year's trading cycle, for the shortfall. BEE sets the average price. It is payable within 90 days, after a hearing, and non-payment draws Environment Protection Act penalties.",
+  "url": "https://senseible.earth/answers/ccts-environmental-compensation-penalty"
+ },
+ {
+  "kind": "answer",
+  "title": "Which grid emission factor does a CCTS obligated plant use for purchased electricity?",
+  "text": "The latest CEA average grid factor applied in the baseline year, kept fixed for every compliance year, so a plant gets no benefit from the grid getting cleaner. With a dedicated power purchase deal it uses the supplier's verified factor, or 1.19 t CO2 per MWh as default.",
+  "url": "https://senseible.earth/answers/ccts-grid-emission-factor-frozen-baseline"
+ },
+ {
+  "kind": "answer",
+  "title": "What do India's draft CCTS targets for iron and steel plants say?",
+  "text": "A draft published in the Gazette on 26 June 2026 proposes targets for 255 iron and steel plants, for the 2026-27 compliance year only, against a 2023-24 baseline. For example, it proposes 2.1695 t CO2e per tonne for AM/NS Hazira, down from 2.2701. Comments were open for 60 days.",
+  "url": "https://senseible.earth/answers/ccts-iron-steel-draft-targets-2026"
+ },
+ {
+  "kind": "answer",
+  "title": "Does a CCTS obligated plant need a long-term emission reduction plan?",
+  "text": "Yes. BEE's compliance procedure asks each obligated plant for an action plan covering at least five years, submitted within one year of the first compliance year starting, with annual planned activities. It lists reduction measures, their cost and savings, and an implementation plan.",
+  "url": "https://senseible.earth/answers/ccts-long-term-action-plan-requirement"
+ },
+ {
+  "kind": "answer",
+  "title": "When must a CCTS obligated plant submit its monitoring plan, and what goes in it?",
+  "text": "Within three months of the start of the first trajectory period, then every year within three months of the compliance year starting. BEE reviews and approves it. It lists emission sources and source streams, meters and sampling points, methods, activity data sources, data flow controls and who is responsible.",
+  "url": "https://senseible.earth/answers/ccts-monitoring-plan-deadline-and-contents"
  },
  {
   "kind": "answer",
@@ -3593,9 +3725,45 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Which sectors are approved for the CCTS offset mechanism in phase 1 and phase 2?",
+  "text": "BEE's September 2024 memorandum lists six phase 1 sectors: energy, industries, waste handling and disposal, agriculture, forestry and transport. Phase 2 adds four more: construction, fugitive emissions, solvent use, and carbon capture, utilisation and storage, making ten sectors in all.",
+  "url": "https://senseible.earth/answers/ccts-offset-approved-sectors-phase-1-2"
+ },
+ {
+  "kind": "answer",
+  "title": "Can several small projects be grouped into one CCTS offset project?",
+  "text": "Yes. BEE's project standard lets a developer combine several activities into one offset project, described in a single project design document. All of them must use similar technology, share the same crediting period and stay the same over time, and the PDD gives each site's location.",
+  "url": "https://senseible.earth/answers/ccts-offset-bundling-small-projects"
+ },
+ {
+  "kind": "answer",
+  "title": "How long is the crediting period for a CCTS offset project in India?",
+  "text": "You choose one of two options in the project design document: a fixed crediting period of ten years, or a renewable period of five years that can be renewed twice, for fifteen years in all. The period starts on the registration date or the project start date, whichever is later.",
+  "url": "https://senseible.earth/answers/ccts-offset-crediting-period-length"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a CCTS offset project be deregistered, and what happens to its credits?",
+  "text": "Yes. The project owner can ask BEE to deregister a registered offset project through the ICM portal, with written consent from all participants. No credits are issued from the date BEE receives the request, credits issued earlier stay valid, and the project can never be registered again.",
+  "url": "https://senseible.earth/answers/ccts-offset-deregister-a-project"
+ },
+ {
+  "kind": "answer",
+  "title": "Is there a deadline to claim CCTS offset credits after the monitoring period?",
+  "text": "Yes. Issuance requests must be filed in date order, starting with the first monitoring period, and every request for a crediting period must be submitted within two years after that period ends. Miss the deadline and BEE no longer issues credits for that crediting period.",
+  "url": "https://senseible.earth/answers/ccts-offset-issuance-two-year-deadline"
+ },
+ {
+  "kind": "answer",
   "title": "Can an MSME earn carbon credit certificates under India's CCTS offset mechanism?",
   "text": "Yes, in principle. The offset mechanism, added to the Carbon Credit Trading Scheme in December 2023, lets non-obligated entities register projects that reduce, remove or avoid emissions and earn carbon credit certificates. The project must follow a BEE-approved methodology and pass verification by an accredited agency, so it only works where an approved method fits.",
   "url": "https://senseible.earth/answers/ccts-offset-mechanism-can-msme-earn-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "What metering and calibration rules apply to a CCTS offset project's monitoring plan?",
+  "text": "Readings that change all the time, such as fuel used or power generated, must be measured continuously. Fixed values like emission factors are updated at least once a year. Meters must meet BIS, national or IEC standards and be calibrated by an NABL accredited lab, and data is kept for two years after the last issuance.",
+  "url": "https://senseible.earth/answers/ccts-offset-monitoring-plan-meter-rules"
  },
  {
   "kind": "answer",
@@ -3611,9 +3779,99 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much does it cost to register a project and get credits under India's CCTS offset mechanism?",
+  "text": "BEE charges INR 5,000 to open an account, INR 2,000 a year to keep it, a registration fee of INR 50,000, 1,00,000 or 1,50,000 depending on expected annual reductions, INR 25,000 per post-registration change and INR 5 per credit issued. All fees are non-refundable. Verification agency fees are extra.",
+  "url": "https://senseible.earth/answers/ccts-offset-project-fees"
+ },
+ {
+  "kind": "answer",
+  "title": "What are the steps to register a carbon offset project under India's CCTS?",
+  "text": "Seven steps: open an account on the ICM portal, write the project design document, publish it for 30 days of comments, get it validated by an accredited agency, register it with BEE, monitor, then get each period verified and the credits issued. Validation and verification must be done by two different agencies.",
+  "url": "https://senseible.earth/answers/ccts-offset-project-registration-steps"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a project that started before 2025 earn credits under India's CCTS offset mechanism?",
+  "text": "No. BEE set 1 January 2025 as the start date for registering CCTS offset projects and says no retrospective projects will be considered. The start date is when the project began reducing emissions, and validation must be finished within two years of that date.",
+  "url": "https://senseible.earth/answers/ccts-offset-project-start-date-rule"
+ },
+ {
+  "kind": "answer",
+  "title": "Is a CCTS offset project worth the cost for a small factory?",
+  "text": "Only if the reductions are large enough to cover fixed costs. BEE's fees alone start near INR 57,000 before any credits, plus INR 5 per credit, and two accredited agencies charge for validation and verification. A factory saving a few hundred tonnes a year usually does better grouping with others.",
+  "url": "https://senseible.earth/answers/ccts-offset-project-worth-it-small-factory"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a project required by law earn CCTS offset credits?",
+  "text": "No. BEE excludes projects that are mandated by law, so credits only go to reductions beyond the business-as-usual case. A project also cannot be registered in another carbon market at the same time, except under the Green Credit Programme, and CSR projects must follow Section 135 of the Companies Act.",
+  "url": "https://senseible.earth/answers/ccts-offset-regulatory-surplus-rule"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the difference between retiring and cancelling a CCTS carbon credit?",
+  "text": "A credit in an ICM registry account is active, retired or cancelled. Retiring is what the holder does to use a credit for a claim, and it removes the credit for good. Cancellation is a permanent removal made by BEE for its own stated reasons, not a claim.",
+  "url": "https://senseible.earth/answers/ccts-offset-retire-vs-cancel-credits"
+ },
+ {
+  "kind": "answer",
+  "title": "Can the same agency validate and verify a CCTS offset project?",
+  "text": "No. Under BEE's offset procedure the accredited agency that verifies a project's emission reductions must be different from the one that validated it, for any crediting period. You pick both agencies and record each choice on the ICM portal before the work starts.",
+  "url": "https://senseible.earth/answers/ccts-offset-validator-verifier-must-differ"
+ },
+ {
+  "kind": "answer",
+  "title": "Which petrochemical plants have CCTS emission intensity targets?",
+  "text": "11 petrochemical units, gas or naphtha crackers or both, got targets in the January 2026 amendment. They include complexes at Panipat, Haldia, Vadodara, Hazira, Pata, Nagothane, Dahej, Dibrugarh, Jamnagar and Bathinda, each with a 2023-24 baseline and targets for 2025-26 and 2026-27.",
+  "url": "https://senseible.earth/answers/ccts-petrochemical-cracker-targets"
+ },
+ {
+  "kind": "answer",
+  "title": "What happens if an obligated CCTS plant does not submit its documents?",
+  "text": "Its shortfall is calculated as if it achieved its baseline intensity, so it must buy certificates for the full gap between baseline and target. The 2025 target rules say this in an explanation to Rule 4, and missing the obligation can then lead to environmental compensation.",
+  "url": "https://senseible.earth/answers/ccts-plant-fails-to-submit-documents"
+ },
+ {
+  "kind": "answer",
+  "title": "Which pulp and paper mills have CCTS targets, and in which sub-sectors?",
+  "text": "51 pulp and paper mills have targets under the October 2025 rules, in four sub-sectors: integrated plants, recycled fibre or imported pulp plants, agro based plants and speciality paper plants. Each mill has a 2023-24 baseline and targets for 2025-26 and 2026-27.",
+  "url": "https://senseible.earth/answers/ccts-pulp-paper-targets-by-subsector"
+ },
+ {
+  "kind": "answer",
+  "title": "How many textile units have CCTS targets, and in which sub-sectors?",
+  "text": "173 textile units got targets in the January 2026 amendment, in four sub-sectors: spinning, processing, fibre and composite. Each has a 2023-24 baseline. Many have targets for both 2025-26 and 2026-27, while some are set only for 2026-27.",
+  "url": "https://senseible.earth/answers/ccts-textile-targets-by-subsector"
+ },
+ {
+  "kind": "answer",
+  "title": "How does CCTS tool BM-T-002 calculate emissions from fuel a project burns?",
+  "text": "BM-T-002 multiplies the quantity of each fuel burnt by its CO2 emission coefficient. The coefficient comes from the fuel's carbon content, which is preferred, or from its net calorific value times an emission factor. For those values the tool ranks the fuel supplier's invoice first.",
+  "url": "https://senseible.earth/answers/ccts-tool-bm-t-002-fossil-fuel-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "Which grid emission factor does a CCTS offset project use for electricity saved or consumed under BM-T-003?",
   "text": "Use the grid factor that BEE tool BM-T-003 sets, not the 0.710 kg CO2 per kWh weighted average from your company footprint. BM-T-003 covers baseline, project and leakage emissions from electricity consumption, so read the version you register under for the factor and loss treatment it requires, and record its source and edition.",
   "url": "https://senseible.earth/answers/ccts-tool-bm-t-003-electricity-emission-factor"
+ },
+ {
+  "kind": "answer",
+  "title": "What flare efficiency does CCTS tool BM-T-004 allow for methane flaring?",
+  "text": "For an open flare, 50 per cent in any minute a flame is detected and zero otherwise. For an enclosed flare, a 90 per cent default when the flame is detected and temperature and gas flow are within the maker's specification, or a measured value. Low height flares lose 10 points.",
+  "url": "https://senseible.earth/answers/ccts-tool-bm-t-004-flare-efficiency"
+ },
+ {
+  "kind": "answer",
+  "title": "What emissions does CCTS tool BM-T-010 count when a project uses biomass?",
+  "text": "BM-T-010 counts emissions along the biomass value chain: growing it in a dedicated plantation, transporting it and processing it. It adds leakage, such as residues diverted from other uses or farming pushed elsewhere. Only increases outside the project count, and the project region is 250 km around the site.",
+  "url": "https://senseible.earth/answers/ccts-tool-bm-t-010-biomass-emissions-leakage"
+ },
+ {
+  "kind": "answer",
+  "title": "How do you prove an old machine's remaining lifetime for a CCTS offset project?",
+  "text": "BEE's tool BM-T-015 offers three options: the manufacturer's technical lifetime compared with the first commissioning date, an expert evaluation, or default values. The default option needs proof the equipment was maintained as the supplier recommends, with no scheduled early replacement and no design fault or accident.",
+  "url": "https://senseible.earth/answers/ccts-tool-bm-t-015-equipment-remaining-lifetime"
  },
  {
   "kind": "answer",
@@ -8651,6 +8909,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How many plants have greenhouse gas intensity targets under India's CCTS?",
+  "text": "488 plants have notified targets: 280 under the October 2025 rules (aluminium, cement, chlor-alkali, pulp and paper) and 208 added in January 2026 (secondary aluminium, refineries, petrochemicals, textiles). A June 2026 draft proposes 255 iron and steel plants on top.",
+  "url": "https://senseible.earth/answers/how-many-plants-have-ccts-targets"
+ },
+ {
+  "kind": "answer",
   "title": "How many years of historical data does a carbon project baseline need?",
   "text": "For an existing factory, many energy efficiency and fuel switch methodologies ask for about three years of historical data before the project starts, taken from the same plant and boundary. The exact period is set by the methodology you register under, so read its baseline section before collecting records.",
   "url": "https://senseible.earth/answers/how-many-years-of-data-for-carbon-project-baseline"
@@ -11570,6 +11834,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Why is my MSME loan rate linked to the repo rate, and when should it fall after an RBI rate cut?",
   "text": "RBI requires banks to link new floating rate loans to micro and small enterprises to an external benchmark, most often the repo rate, so rate changes pass through. After a cut, your rate falls on your loan's next reset date, which must come at least once every three months.",
   "url": "https://senseible.earth/answers/msme-loan-rate-linked-to-repo-rate"
+ },
+ {
+  "kind": "answer",
+  "title": "What will a CCTS obligated plant ask its MSME suppliers for?",
+  "text": "Nothing is required of suppliers by the CCTS rules: a plant's target covers its own gate-to-gate emissions. But plants count notional emissions for some intermediate products they bring in, and they look for cuts, so expect requests for energy use per unit, fuel type and cleaner inputs.",
+  "url": "https://senseible.earth/answers/msme-supplier-to-ccts-obligated-plant"
  },
  {
   "kind": "answer",
