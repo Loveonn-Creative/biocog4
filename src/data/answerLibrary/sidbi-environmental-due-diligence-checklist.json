@@ -1,0 +1,63 @@
+{
+  "slug": "sidbi-environmental-due-diligence-checklist",
+  "q": "What is on SIDBI's environmental and social due diligence checklist for a green loan?",
+  "title": "SIDBI due diligence checklist for loans",
+  "short": "Under SIDBI's GCF-backed FMAP programme the promoter fills in and signs a 14-point checklist with the loan application. It asks for environmental clearance and valid pollution control consents, any non-compliance notices, child or forced labour, worker safety, ESI and EPF, facilities for women, land acquisition, and distance from eco-sensitive areas.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME promoters preparing a SIDBI green loan application",
+  "sections": [
+    {
+      "h": "Environmental questions",
+      "ul": [
+        "Environmental clearance from MoEFCC or the state impact assessment authority, if your activity needs one. Attach a copy, or the application if it is pending.",
+        "Valid Consent to Establish and Consent to Operate from the state pollution control board. Attach copies or the application and fee receipt.",
+        "Any notice for regulatory non-compliance, violation of consent conditions, litigation or court settlement, with reasons and whether it is resolved.",
+        "Whether the pollution control measures your consent requires are installed, listing any deviations."
+      ]
+    },
+    {
+      "h": "Social questions",
+      "ul": [
+        "Whether the unit employs child or forced labour.",
+        "Occupational health and safety: gloves, helmets and masks, especially during welding, and working fire extinguishers with the gauge in the green zone.",
+        "Compliance with labour welfare requirements such as ESI and EPF.",
+        "Canteen, rest room and toilets for workers, and separate facilities if women are employed."
+      ]
+    },
+    {
+      "h": "Location questions",
+      "p": [
+        "Whether the unit is in a notified industrial area, cluster or SEZ. If not, further questions follow: compulsory land acquisition or displacement, location in areas of tribal or indigenous settlement, damage to critical cultural heritage, and whether the site is close to an eco-sensitive zone or within 10 km of a national park, wildlife sanctuary or reserved forest."
+      ]
+    },
+    {
+      "h": "Who checks it",
+      "p": [
+        "The checklist is signed by the promoter, then checked and signed by the lending officer of SIDBI or the participating lender, and approved by SIDBI's Green Climate Finance Vertical. A false answer found at a site visit is a much bigger problem than an honest gap with a plan to close it."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not handle consents or labour records. It covers the energy and emissions part of a green loan file, a dated baseline built from your bills.",
+  "links": [
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    },
+    {
+      "label": "What SIDBI will not finance",
+      "to": "/answers/what-sidbi-will-not-finance-exclusion-list"
+    },
+    {
+      "label": "Bank ESG exclusion lists",
+      "to": "/answers/bank-esg-exclusion-list-msme-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, ESMS for FMAP, Annexure 4: Environmental and Social Due Diligence Checklist",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESMS-FMAP-E.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

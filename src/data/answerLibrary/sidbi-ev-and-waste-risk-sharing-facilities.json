@@ -1,0 +1,59 @@
+{
+  "slug": "sidbi-ev-and-waste-risk-sharing-facilities",
+  "q": "What are SIDBI's risk sharing facilities for electric vehicles and solid waste projects?",
+  "title": "SIDBI EV and waste risk sharing",
+  "short": "Both are partial credit guarantees, not loans to you. Under the Electric Vehicle Risk Sharing Facility SIDBI shares part of the credit risk of lenders financing electric two and three wheelers. A separate facility covers lending for municipal solid waste management. You borrow from the lender; SIDBI shares that lender's loss.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "EV fleet operators, aggregators, waste management firms and their lenders",
+  "sections": [
+    {
+      "h": "How a risk sharing facility works",
+      "p": [
+        "The facility sits between SIDBI and a bank or NBFC. If an eligible borrower defaults, SIDBI absorbs part of the lender's loss. The lender is then more willing to lend to a segment it sees as risky, such as electric three wheelers whose resale value is uncertain. You still owe the full loan."
+      ]
+    },
+    {
+      "h": "Electric two and three wheelers",
+      "p": [
+        "SIDBI describes the EV facility as a partial credit guarantee arrangement meant to improve the flow of finance to electric mobility. It also says fleet operators and aggregators seeking finance for electric vehicles can contact SIDBI directly under its EV lending initiative, which is separate from the guarantee."
+      ]
+    },
+    {
+      "h": "Municipal solid waste",
+      "p": [
+        "SIDBI lists a Risk Sharing Facility for Municipal Solid Waste Management among its green finance products. It works the same way, covering part of a lender's exposure on waste projects."
+      ]
+    },
+    {
+      "h": "What to ask your lender",
+      "ul": [
+        "Is this loan covered under a SIDBI risk sharing facility?",
+        "Is a guarantee fee charged, and is it passed on to you?",
+        "Does the cover change the collateral the lender asks for?"
+      ]
+    }
+  ],
+  "senseible": "Senseible can record the fuel saved by moving delivery vehicles to electric, from fuel and charging bills, for the lender's impact reporting.",
+  "links": [
+    {
+      "label": "Green loans for electric delivery vehicles",
+      "to": "/answers/green-loan-electric-delivery-vehicles"
+    },
+    {
+      "label": "Credit guarantees for MSME green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "Partial Risk Sharing Facility terms",
+      "to": "/answers/prsf-guarantee-cover-energy-efficiency-loans"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, Green Finance Products: Electric Vehicle Risk Sharing Facility and Risk Sharing Facility for Municipal Solid Waste Management (FAQ Q1, Q6)",
+      "url": "https://www.sidbi.in/en/green-finance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

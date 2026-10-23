@@ -1,0 +1,61 @@
+{
+  "slug": "bee-energy-efficiency-financing-facilitation-centre",
+  "q": "What is BEE's facilitation centre for energy efficiency financing, and can an MSME use it?",
+  "title": "BEE efficiency financing help centre",
+  "short": "BEE runs an online facilitation centre under its Energy Efficiency Financing Facility that brings lenders and borrowing units onto one platform. Units submit a willingness form and project details; BEE lists 27 registered financial institutions, 179 efficient technologies, more than 190 projects received and 14 sanctioned. It also runs state Investment Bazaar events.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs, commercial buildings and industries looking for efficiency finance",
+  "sections": [
+    {
+      "h": "How the facilitation centre works",
+      "p": [
+        "The centre is part of BEE's Framework for Energy Efficient Economic Development. It collects willingness forms and technical details from large industries, designated consumers under PAT, MSMEs, commercial and institutional buildings and municipalities, keeps a list of energy efficient technologies, and connects projects with registered lenders. BEE's brochure shows 27 financial institutions registered, 179 technologies listed, more than 190 projects received and 14 sanctioned."
+      ]
+    },
+    {
+      "h": "Investment Bazaar events",
+      "p": [
+        "With state designated agencies, BEE organises state-level Investment Bazaar for Energy Efficiency events where bankable projects and technologies are shown to lenders, OEMs, ESCOs and industry. BEE's page reports 34 events so far, showcasing projects worth more than ₹2,700 crore."
+      ]
+    },
+    {
+      "h": "UNNATEE tool with SIDBI",
+      "p": [
+        "Under a November 2022 agreement, BEE and SIDBI launched UNNATEE, a free online tool and mobile app on energy efficiency for MSMEs, in December 2022."
+      ]
+    },
+    {
+      "h": "Is it worth using",
+      "p": [
+        "It is a matchmaking channel, not a loan or subsidy. It helps most when you have a clear project with an audit behind it and want more than one lender to look at it, or when your usual bank is unfamiliar with efficiency projects."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills into the energy baseline and project numbers a willingness form or lender asks for.",
+  "links": [
+    {
+      "label": "BEE grading of efficiency projects",
+      "to": "/answers/bee-energy-efficiency-project-grading"
+    },
+    {
+      "label": "SIDBI 4E loan terms",
+      "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
+    },
+    {
+      "label": "ADEETIE scheme explained",
+      "to": "/climate-intelligence/adeetie-scheme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Efficiency Financing Platform: Investment Bazaar, training, SIDBI MoU and UNNATEE",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=344&lid=419"
+    },
+    {
+      "label": "BEE, Financing Energy Efficiency Programme brochure: Facilitation Centre figures",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5be3d06b9b369ad0_1775212788.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

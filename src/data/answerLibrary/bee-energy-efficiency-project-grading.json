@@ -1,0 +1,63 @@
+{
+  "slug": "bee-energy-efficiency-project-grading",
+  "q": "What is BEE's grading of energy efficiency projects, and does it help get a loan?",
+  "title": "BEE grading of efficiency projects",
+  "short": "BEE launched grading of energy efficiency projects in July 2021, with CRISIL and SMERA empanelled to prepare grading reports that lenders can rely on. BEE is reimbursing the grading fee for the first 100 projects that are both graded and financed, through lenders registered with its facilitation centre. SIDBI, IREDA, Central Bank of India and YES Bank have signed up.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs and ESCOs seeking bank finance for efficiency projects",
+  "sections": [
+    {
+      "h": "What a grading report does",
+      "p": [
+        "Banks often hesitate on efficiency projects because the repayment comes from savings that have not happened yet. A grading report from an empanelled agency gives the lender an independent view of the project's technical and financial soundness, which makes it easier to appraise. BEE approved the first grading report, for a project at UE Press Tools prepared by CRISIL, and SIDBI financed it. CRISIL has prepared two more, financed by Central Bank of India."
+      ]
+    },
+    {
+      "h": "Who pays",
+      "p": [
+        "BEE runs a pilot to reimburse the grading fee for the first 100 energy efficiency projects that are graded and then financed. The reimbursement goes through financial institutions registered with BEE's facilitation centre, so ask your lender whether it is registered before ordering a report."
+      ]
+    },
+    {
+      "h": "Which lenders are in",
+      "p": [
+        "BEE has signed agreements for this initiative with IREDA, Central Bank of India, YES Bank and SIDBI."
+      ]
+    },
+    {
+      "h": "When it is worth doing",
+      "ul": [
+        "Larger projects where the bank wants third-party comfort on savings.",
+        "Projects delivered by an ESCO under a performance contract.",
+        "Units without a long credit history whose project case needs to stand on its own."
+      ]
+    }
+  ],
+  "senseible": "Senseible supplies the measured baseline from twelve months of bills that a grading agency and lender will ask for at the start of an appraisal.",
+  "links": [
+    {
+      "label": "BEE ESCO grades explained",
+      "to": "/answers/bee-empanelled-esco-grades-explained"
+    },
+    {
+      "label": "BEE's efficiency financing facilitation centre",
+      "to": "/answers/bee-energy-efficiency-financing-facilitation-centre"
+    },
+    {
+      "label": "SIDBI 4E loan terms",
+      "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Efficiency Financing Platform: grading of EE projects, first grading report, reimbursement pilot, MoAs",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=344&lid=419"
+    },
+    {
+      "label": "BEE, Financing Energy Efficiency Programme brochure",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5be3d06b9b369ad0_1775212788.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

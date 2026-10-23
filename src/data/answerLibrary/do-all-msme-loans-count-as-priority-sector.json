@@ -1,0 +1,56 @@
+{
+  "slug": "do-all-msme-loans-count-as-priority-sector",
+  "q": "Do all bank loans to MSMEs count as priority sector lending, including green loans?",
+  "title": "Do all MSME loans count as priority sector",
+  "short": "Yes. RBI's Priority Sector Lending Directions, 2025 say all bank loans to MSMEs qualify, whatever they fund, so a green or efficiency loan to a Udyam-registered unit counts. Invoice discounting on TReDS and with-recourse factoring for an MSME seller also qualify. Banks must lend 7.5 percent of adjusted net bank credit to micro enterprises.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners and finance teams dealing with banks",
+  "sections": [
+    {
+      "h": "What the Directions say",
+      "ul": [
+        "All bank loans to MSMEs qualify as priority sector, using RBI's MSME definition as updated.",
+        "Loans up to ₹50 crore to start-ups that meet the MSME definition also qualify.",
+        "Factoring through TReDS, and with-recourse factoring where the seller is an MSME, qualify on the reporting dates (not for regional rural banks and urban co-operative banks).",
+        "All loans to Khadi and Village Industries units count as lending to micro enterprises."
+      ]
+    },
+    {
+      "h": "Targets banks are measured on",
+      "p": [
+        "Most banks must lend 40 percent of adjusted net bank credit to the priority sector, and 7.5 percent to micro enterprises specifically. A bank short of its micro target has a reason to want your loan."
+      ]
+    },
+    {
+      "h": "What priority sector status does not do",
+      "ul": [
+        "It does not set a lower interest rate; pricing still depends on the bank's lending rate and your risk.",
+        "It does not replace Udyam registration, which is how the bank shows you are an MSME.",
+        "It does not label a loan as green. Green classification follows the lender's green loan framework or a scheme such as SIDBI's Green Finance Scheme."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares the energy and emissions evidence for the green side of a loan file, which priority sector status does not cover.",
+  "links": [
+    {
+      "label": "Udyam registration for bank loans",
+      "to": "/answers/udyam-registration-needed-for-bank-loan"
+    },
+    {
+      "label": "Priority sector limit for renewable loans",
+      "to": "/answers/psl-renewable-energy-loan-limit-2025"
+    },
+    {
+      "label": "Why MSME loan rates follow the repo rate",
+      "to": "/answers/msme-loan-rate-linked-to-repo-rate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Priority Sector Lending Directions, 2025: paras 7.1, 10, 10.1 and 10.2",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "sidbi-green-loan-monitoring-after-disbursement",
+  "q": "What monitoring and reporting does a SIDBI green loan need after the money is paid out?",
+  "title": "Monitoring after a SIDBI green loan",
+  "short": "Under SIDBI's GCF-backed FMAP programme the borrower signs undertakings to carry out a project-specific environmental and social plan. SIDBI then runs annual supervision visits, high and moderate risk projects get semi-annual or annual monitoring, and independent agencies check a sample of units, including the energy, emissions and water savings claimed.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs with or seeking SIDBI green loans, and their consultants",
+  "sections": [
+    {
+      "h": "What SIDBI checks after sanction",
+      "ul": [
+        "Whether the mitigation measures in your project plan are in place: effluent treatment, air pollution control devices, sludge handling.",
+        "PPE and safety practice on the shop floor.",
+        "Chemical management and hazardous waste disposal.",
+        "Gender, harassment and labour compliance, including the new labour codes.",
+        "Corrective actions from earlier visits."
+      ]
+    },
+    {
+      "h": "How often",
+      "p": [
+        "Site visits are proportionate to risk: high and moderate risk projects get semi-annual or annual monitoring, low risk projects get annual or desk-based checks. SIDBI also runs annual supervision missions with site audits and document checks, and expects submissions from MSMEs under the undertakings signed when the plan was rolled out."
+      ]
+    },
+    {
+      "h": "Third-party verification",
+      "p": [
+        "For the first six years of the programme an independent monitoring agency designs the tools and runs verification audits; from years 7 to 13 SIDBI's own team uses those tools. Sample-based evaluations look at environmental plan implementation and also at climate benefits: greenhouse gas reductions, energy savings and water efficiency."
+      ]
+    },
+    {
+      "h": "Records to keep from day one",
+      "ul": [
+        "Energy and fuel bills before and after the project.",
+        "Effluent and emission test reports.",
+        "Waste disposal manifests.",
+        "Safety training and incident records.",
+        "A short log of any changes to the equipment financed."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the before and after energy record from bills in one place with sources, which is what a verifier asks for when checking a claimed saving.",
+  "links": [
+    {
+      "label": "Green loan reporting after disbursement",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    },
+    {
+      "label": "Showing green loan money was spent on the project",
+      "to": "/answers/green-loan-show-money-spent-on-project"
+    },
+    {
+      "label": "SIDBI green loan approval steps",
+      "to": "/answers/sidbi-green-loan-approval-steps"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Foundry sector, section 2.6 Management and Monitoring Requirements and section 5.1 Continuous Monitoring",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESIA_and_ESMP_Foundry_Direct_Finance.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "sidbi-4e-loan-terms-and-eligibility",
+  "q": "How much does SIDBI's 4E energy efficiency loan cover, and who qualifies?",
+  "title": "SIDBI 4E loan: cover and eligibility",
+  "short": "SIDBI's 4E scheme lends up to 90 percent of an energy efficiency project, with a minimum loan of ₹10 lakh, or up to 100 percent if you place 20 percent cash collateral as a SIDBI fixed deposit. The detailed route needs a year of operation and a detailed energy audit by BEE-certified auditors.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs planning efficiency retrofits after an energy audit",
+  "sections": [
+    {
+      "h": "What 4E finances",
+      "p": [
+        "4E finances energy efficiency measures end to end: buying the equipment and machinery, installation, civil works and commissioning. Typical projects are the ones an audit recommends, such as efficient motors and pumps, compressors, furnace upgrades and waste heat recovery."
+      ]
+    },
+    {
+      "h": "Two ways to apply",
+      "ul": [
+        "Detailed Appraisal Mode: the unit has been operating for at least one year and has had a Detailed Energy Audit by a technical agency or consultant with BEE-certified Energy Auditors. Funding up to 90 percent of project cost, minimum loan ₹10 lakh.",
+        "Quick Dispensation Mode: up to 100 percent funding against a SIDBI fixed deposit of at least 20 percent as cash collateral. The unit needs at least three years of operations and cash profit in the past two years, based on audited balance sheets."
+      ]
+    },
+    {
+      "h": "Conditions in both modes",
+      "ul": [
+        "Udyam registration, a satisfactory credit history and no defaults to any bank or financial institution.",
+        "Compliance with SIDBI's Environment and Social Management Framework.",
+        "Repayment period, including any moratorium, is set in the sanction terms rather than fixed in the scheme."
+      ]
+    },
+    {
+      "h": "Getting the audit right",
+      "p": [
+        "Because the detailed route depends on the audit, the audit report is the core of your application. It should give the baseline energy use, each measure's cost, expected saving and payback. An audit by someone who is not a BEE-certified energy auditor will not meet the stated condition, so check the auditor's certificate number before you pay for the study."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads twelve months of bills into energy per month and per unit of output, which gives the auditor and SIDBI the same baseline and makes the saving after commissioning easy to show.",
+  "links": [
+    {
+      "label": "SIDBI energy efficiency loans overview",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "SIDBI Green Finance Scheme terms",
+      "to": "/answers/sidbi-green-finance-scheme-loan-terms"
+    },
+    {
+      "label": "How an MSME hires an energy auditor",
+      "to": "/answers/how-to-hire-an-energy-auditor-msme"
+    },
+    {
+      "label": "ADEETIE interest subvention",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, Green Finance FAQs: 4E scope, 90% and 100% funding, ₹10 lakh minimum, Detailed Appraisal and Quick Dispensation modes",
+      "url": "https://www.sidbi.in/en/green-finance"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

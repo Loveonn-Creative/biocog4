@@ -1,0 +1,72 @@
+{
+  "slug": "sidbi-fmap-green-climate-fund-programme",
+  "q": "What is SIDBI's FMAP programme with the Green Climate Fund, and can my MSME borrow under it?",
+  "title": "SIDBI FMAP: Green Climate Fund loans",
+  "short": "FMAP, Financing Mitigation and Adaptation Projects in Indian MSMEs, is SIDBI's programme for lending Green Climate Fund concessional money to MSMEs, directly and through partner lenders. It funds energy efficiency, rooftop solar and new technology, plus adaptation such as effluent treatment, zero liquid discharge and water recycling. Only low and medium risk projects qualify.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs in energy-intensive and polluting sectors looking for concessional climate finance",
+  "sections": [
+    {
+      "h": "How the money reaches you",
+      "p": [
+        "SIDBI is both the accredited entity and the executing entity for the Green Climate Fund here. It uses GCF's concessional funds for loans to MSMEs in two ways: direct lending by SIDBI, and indirect lending through participating financial institutions such as banks and NBFCs that follow the same screening rules. You apply to SIDBI or to a participating lender, not to the Green Climate Fund."
+      ]
+    },
+    {
+      "h": "What it finances",
+      "ul": [
+        "Mitigation: energy efficiency through technology upgrades, renewable energy mainly through rooftop solar, and new and innovative technologies.",
+        "Adaptation: zero liquid discharge, effluent treatment plants, reverse osmosis, water-efficient and recycling processes, climate-smart precision irrigation, and early warning systems."
+      ]
+    },
+    {
+      "h": "Which sectors",
+      "p": [
+        "SIDBI's programme document says it covers 13 sectors, seven of which, textile, chemicals, leather, pulp and paper, cement, steel re-rolling and sponge iron, are in CPCB's red category for polluting potential. SIDBI has published sector impact assessments for textile, foundry, plastic, steel re-rolling, brick kiln and pulp and paper, and one for agriculture adaptation."
+      ]
+    },
+    {
+      "h": "The risk limit",
+      "p": [
+        "Every sub-project must fall in GCF Category B or lower: limited, site-specific, largely reversible impacts that standard mitigation can handle. Projects with diverse, irreversible or unprecedented impacts, or an outlay above USD 60 million, are screened out at the branch before any appraisal."
+      ]
+    },
+    {
+      "h": "What this means for your application",
+      "p": [
+        "Expect more environmental and social paperwork than an ordinary term loan: a due diligence checklist signed by the promoter, an ESG and green rating, and later monitoring visits. Valid pollution control consents and basic worker safety are the usual stumbling blocks for small units, so sort them out first."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares the energy and emissions side of the file, a baseline from your bills and the expected and actual saving, so the climate benefit a GCF-funded loan must report is backed by your own records.",
+  "links": [
+    {
+      "label": "Green Climate Fund for small businesses",
+      "to": "/answers/green-climate-fund-for-small-businesses"
+    },
+    {
+      "label": "SIDBI's due diligence checklist",
+      "to": "/answers/sidbi-environmental-due-diligence-checklist"
+    },
+    {
+      "label": "SIDBI's ESG and green rating",
+      "to": "/answers/sidbi-esg-and-green-rating-for-msme"
+    },
+    {
+      "label": "Finance for ETP or ZLD upgrades",
+      "to": "/answers/green-loan-for-etp-or-zld-upgrade"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, ESMS for 'Financing Mitigation & Adaptation Projects (FMAP) in Indian MSMEs': executive summary, screening and categorisation, Annexure 3, project types",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESMS-FMAP-E.pdf"
+    },
+    {
+      "label": "SIDBI, Green Pathways e-series: GCF-FMAP sector ESIA and ESMP documents",
+      "url": "https://www.sidbi.in/en/green-pathways-e-series"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "sidbi-esg-and-green-rating-for-msme",
+  "q": "How does SIDBI rate an MSME on ESG and green performance before a loan?",
+  "title": "SIDBI ESG and green rating for MSMEs",
+  "short": "Under its GCF-backed FMAP programme, SIDBI's ESG rating tool scores management, industry, operational and financial risk, then adds a separate green rating from a site check of air emissions, waste, water, energy use, renewables, consents and worker safety. The two combine into an integrated grade, from IR SME 1A to 8C.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners and CFOs applying for SIDBI green finance",
+  "sections": [
+    {
+      "h": "The financial and business score",
+      "p": [
+        "The SME score, out of 100, is built from four blocks: management risk (track record, promoter experience, organisation, succession, finance function, governance), industry risk (demand, competition, cyclicality, regulation, raw materials), operational risk, and financial risk (growth, margins, return on capital, gearing, interest and debt service cover, current ratio). It maps to a grade from 1, the strongest, to 8, default."
+      ]
+    },
+    {
+      "h": "The green score",
+      "p": [
+        "A separate green input sheet is filled largely by physical verification at site and interviews. It asks whether air emissions meet consent norms, how waste is stored and disposed, whether water use is mapped and process wastewater treated and tested against standards, whether rainwater harvesting exists, whether energy is metered at process level, whether heat is recovered, whether efficient lighting and appliances rated 4 star or above are used, whether there is an energy manager, and whether renewable energy is installed. Consents and worker safety are scored too."
+      ]
+    },
+    {
+      "h": "How the two combine",
+      "p": [
+        "The green score gives a letter, A, B or C. The integrated matrix pairs financial strength (1 to 8) with green capability (A to C), so a unit might be IR SME 3B. SIDBI's worked example also shows the score raised after credit is given for green measures being implemented, so the project itself can lift the rating."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "ul": [
+        "Keep consents, effluent test reports and waste disposal records on file and current.",
+        "Install or log energy meters on major loads, since metered energy use is a scored item.",
+        "Document any heat recovery, solar or efficient equipment already in place.",
+        "Have audited accounts for at least the last three years ready."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives you monthly energy and fuel use, emissions and per-unit intensity from your bills, which answers the energy questions on the green sheet with records rather than estimates.",
+  "links": [
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    },
+    {
+      "label": "SIDBI's due diligence checklist",
+      "to": "/answers/sidbi-environmental-due-diligence-checklist"
+    },
+    {
+      "label": "Does ZED certification help get a loan",
+      "to": "/answers/does-zed-certification-help-get-a-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, ESMS for FMAP, Annexure 7: ESG Rating input sheets, green input sheet and rating output matrix",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESMS-FMAP-E.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

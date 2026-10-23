@@ -1,0 +1,60 @@
+{
+  "slug": "prsf-guarantee-cover-energy-efficiency-loans",
+  "q": "How much does the Partial Risk Sharing Facility guarantee on an energy efficiency loan?",
+  "title": "PRSF guarantee cover on efficiency loans",
+  "short": "The Partial Risk Sharing Facility partly guarantees energy saving loans from participating lenders: 40 to 75 percent of the loan amount, or up to ₹15 crore per project, for a tenure of up to 5 years. The World Bank implements it with Clean Technology Fund and Global Environment Facility money, and SIDBI executes it.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs, ESCOs and lenders financing energy efficiency projects",
+  "sections": [
+    {
+      "h": "Who does what",
+      "ul": [
+        "World Bank: implementing agency, with funding from the Clean Technology Fund and the Global Environment Facility.",
+        "SIDBI: project executing agency.",
+        "BEE: co-chairs the advisory committee and gives policy guidance.",
+        "Participating financial institutions: make the loans that the facility partly guarantees."
+      ]
+    },
+    {
+      "h": "The cover",
+      "p": [
+        "Each energy saving loan from a participating lender is partially guaranteed for a maximum tenure of 5 years, with coverage of 40 to 75 percent of the loan amount or ₹15 crore per project. The guarantee protects the lender against part of its loss on default."
+      ]
+    },
+    {
+      "h": "What it means for the borrower",
+      "p": [
+        "You do not apply to PRSF. You borrow from a participating bank or NBFC, often for a project delivered by an ESCO, and the lender seeks the guarantee. It can make a lender more willing to finance a project with limited collateral, but you still owe the full amount. Ask whether any guarantee fee is passed on to you."
+      ]
+    },
+    {
+      "h": "Check before you plan around it",
+      "p": [
+        "Facilities like this run in funding rounds. BEE points to SIDBI's PRSF website for current terms, so confirm with SIDBI or your lender that it is taking new projects."
+      ]
+    }
+  ],
+  "senseible": "Senseible records energy before and after the project from your bills, the savings evidence lenders under a guarantee programme report on.",
+  "links": [
+    {
+      "label": "Credit guarantees for MSME green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "ESCO shared savings model",
+      "to": "/answers/esco-shared-savings-model-msme"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Financing Energy Efficiency Programme brochure: Partial Risk Sharing Facility (40 to 75% cover, ₹15 crore per project, 5-year tenure)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5be3d06b9b369ad0_1775212788.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

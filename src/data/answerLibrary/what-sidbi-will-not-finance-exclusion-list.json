@@ -1,0 +1,68 @@
+{
+  "slug": "what-sidbi-will-not-finance-exclusion-list",
+  "q": "What will SIDBI refuse to finance under its exclusion list?",
+  "title": "What SIDBI will not finance",
+  "short": "SIDBI's exclusion list rules out illegal products, weapons, tobacco, spirits other than beer and wine, gambling, asbestos fibres, ozone-depleting substances, banned pesticides, child or forced labour, and coal mining or coal-fired power. It also excludes trading, storing or moving significant volumes of hazardous chemicals, or using them at commercial scale, and counts petrol and kerosene as hazardous.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs checking whether their business or project can get SIDBI finance",
+  "sections": [
+    {
+      "h": "Products and activities",
+      "ul": [
+        "Anything illegal under Indian law or international conventions; weapons and munitions.",
+        "Alcoholic beverages other than beer and wine; tobacco; gambling and casinos.",
+        "Wildlife trade regulated under CITES; radioactive materials; unbonded asbestos fibres; products containing PCBs.",
+        "Pharmaceuticals, pesticides and ozone-depleting substances subject to international phase-outs or bans; persistent organic pollutants.",
+        "Production, trade, storage or transport of significant volumes of hazardous chemicals, or their commercial scale use. The list names gasoline, kerosene and other petroleum products as hazardous chemicals."
+      ]
+    },
+    {
+      "h": "Energy and resources",
+      "ul": [
+        "Prospecting, exploring or mining coal, transport infrastructure essentially used for coal, and power or heating plants essentially fired with coal.",
+        "Oil from shale, tar sands or oil sands.",
+        "Nuclear power plants, apart from measures that reduce hazards at existing assets.",
+        "Logging in primary tropical moist forest, and wood not from sustainably managed forests.",
+        "Waste trade across borders unless it complies with the Basel Convention."
+      ]
+    },
+    {
+      "h": "People and places",
+      "ul": [
+        "Harmful or exploitative child labour, forced labour, and blocking workers from lawful association and collective bargaining.",
+        "Projects needing land acquisition or causing displacement or loss of livelihoods.",
+        "Projects affecting tribal or indigenous peoples without their documented consent.",
+        "Projects in sensitive ecological areas or heritage sites; within 1 km of such an area, the required permissions must be obtained first."
+      ]
+    },
+    {
+      "h": "Where this applies",
+      "p": [
+        "The list is SIDBI's organisation-wide exclusion list, reproduced in its environmental and social system for the GCF-backed FMAP programme. The hazardous chemicals line does not define significant volumes or commercial scale, so a fuel trading or storage business, or a plant burning large amounts of furnace oil or diesel, should ask SIDBI how it applies before preparing a full application."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not screen businesses for lender exclusions. It records the fuel and electricity a unit uses, which shows what a fuel-switch or efficiency project would change.",
+  "links": [
+    {
+      "label": "Bank ESG exclusion lists for MSME loans",
+      "to": "/answers/bank-esg-exclusion-list-msme-loan"
+    },
+    {
+      "label": "SIDBI's due diligence checklist",
+      "to": "/answers/sidbi-environmental-due-diligence-checklist"
+    },
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, ESMS for FMAP, Annexure 2: Exclusion List",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESMS-FMAP-E.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
