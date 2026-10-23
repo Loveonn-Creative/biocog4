@@ -1,0 +1,50 @@
+{
+  "slug": "ccts-environmental-compensation-penalty",
+  "q": "What is the penalty if a CCTS plant does not surrender enough certificates?",
+  "title": "CCTS environmental compensation",
+  "short": "The Central Pollution Control Board imposes environmental compensation equal to twice the average price at which certificates traded in that compliance year's trading cycle, for the shortfall. BEE sets the average price. It is payable within 90 days, after a hearing, and non-payment draws Environment Protection Act penalties.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Obligated plants, CFOs and compliance teams",
+  "sections": [
+    {
+      "h": "Rule 6 of the 2025 target rules",
+      "ul": [
+        "Applies when a plant fails to meet its duties under Rule 4, such as achieving its target or surrendering certificates for the shortfall.",
+        "Amount: twice the average traded price of a certificate in that compliance year's trading cycle, for the shortfall.",
+        "BEE determines the average price.",
+        "The plant must get a reasonable opportunity to be heard first.",
+        "Pay within 90 days of the order, or face penalty under the Environment Protection Act, 1986.",
+        "The money goes to a separate account used for the scheme on NSC-ICM's recommendation."
+      ]
+    },
+    {
+      "h": "Missing paperwork costs too",
+      "p": [
+        "If a plant fails to submit its documents, its achieved intensity is taken as its baseline intensity when the shortfall is worked out."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "What if a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "CCTS certificates earned or bought",
+      "to": "/answers/ccts-carbon-credit-certificates-formula"
+    },
+    {
+      "label": "If a CCTS plant does not file",
+      "to": "/answers/ccts-plant-fails-to-submit-documents"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "ccts-grid-emission-factor-frozen-baseline",
+  "q": "Which grid emission factor does a CCTS obligated plant use for purchased electricity?",
+  "title": "CCTS grid factor for obligated plants",
+  "short": "The latest CEA average grid factor applied in the baseline year, kept fixed for every compliance year, so a plant gets no benefit from the grid getting cleaner. With a dedicated power purchase deal it uses the supplier's verified factor, or 1.19 t CO2 per MWh as default.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Energy managers at obligated plants",
+  "sections": [
+    {
+      "h": "Purchased electricity in BEE's compliance procedure",
+      "ul": [
+        "Use the latest average grid emission factor from CEA's CO2 Baseline Database for the Indian power sector.",
+        "The factor applied in the baseline year applies across the compliance years. There is no normalisation for power mix, so credit comes only from the plant's own actions.",
+        "With a dedicated power purchase agreement, use the supplier-specific factor with documents verified by an accredited agency. If none is available, use the default of 1.19 t CO2 per MWh published by CEA.",
+        "Purchased or exported heat uses the emission factor of the steam generation fuel mix, in g CO2 per kcal."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Cutting grid electricity, or moving to verified renewable supply, still lowers reported intensity. A newer, lower CEA factor does not."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "India grid factor 2025-26",
+      "to": "/answers/india-grid-emission-factor-2025-26"
+    },
+    {
+      "label": "Which CEA grid factor for which year",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    },
+    {
+      "label": "BM-T-003 electricity emission factor",
+      "to": "/answers/ccts-tool-bm-t-003-electricity-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    }
+  ],
+  "reviewNote": "Section 5.7 (vi) to (viii) of the scanned compliance procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

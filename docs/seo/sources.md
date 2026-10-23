@@ -52,6 +52,30 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://www.cercind.gov.in/regulations/REC-Regulations-2022.pdf
 - https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12487&Mode=0
 - https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-4edb9be54a4b43e6_1776057028.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-6bc4092848da03f9_1776056999.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-de57eb4cfcc5ab0c_1776057184.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bbce4f833a613eae_1783081829.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5c5d4497fb37c51b_1780903047.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-ff98b7dece646232_1792561430.pdf
+- https://beeindia.gov.in/view_content.php?lid=568&lang=1
+- https://beeindia.gov.in/view_content.php?lid=571&lang=1
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-7142dfb1cb5c2361_1776061176.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-99e511d259391bd9_1776061190.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-11086e8d63989765_1776061213.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-90e2162fc0bbcb7c_1776061229.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-a0e3f856720a5c57_1776061241.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-e0da265a40736c0d_1776061252.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-6928edf26e7d04da_1783086710.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-0a5abd883df41e53_1776061263.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-497b2256ef03c1de_1776061272.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-b56f90cf720778bb_1776061539.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-1c0559f148753b50_1776061566.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-10a330f6757ffbdc_1776061631.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-39e9d29b0438ec1e_1776061669.pdf
 
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org

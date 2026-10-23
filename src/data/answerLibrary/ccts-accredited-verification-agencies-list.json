@@ -1,0 +1,59 @@
+{
+  "slug": "ccts-accredited-verification-agencies-list",
+  "q": "Which agencies are accredited to verify under India's CCTS?",
+  "title": "CCTS verification agencies list",
+  "short": "BEE's register, updated 21 October 2026, lists 18 agencies: 3 with final accreditation and 15 provisional. Twelve are accredited for the compliance mechanism only, five for offsets only and one for both. Check the agency's mechanism and sector scope before appointing it.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Obligated plants and offset developers choosing a verifier",
+  "sections": [
+    {
+      "h": "What the register shows",
+      "ul": [
+        "Final accreditation: Bureau Veritas India (both mechanisms), TUV India (offsets) and KBS Certification Services (offsets).",
+        "Provisional accreditation for the rest, including VKU Certification, Earthood, PGS Energy Services, FICCI, CII and URS Certification.",
+        "Each entry gives the mechanism and the sectors covered, for example cement, iron and steel or textile under compliance, or energy, industries and waste under offsets.",
+        "One agency was marked on hold."
+      ]
+    },
+    {
+      "h": "Why final versus provisional matters",
+      "p": [
+        "BEE's accreditation procedure lets an agency validate or verify only after final accreditation; provisional agencies must get ISO 14065 within one year. Ask the agency for its current certificate and scope."
+      ]
+    },
+    {
+      "h": "Remember",
+      "p": [
+        "An offset project needs two different agencies, one to validate and one to verify, both accredited for its sector scope."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not on this list and does not verify.",
+  "links": [
+    {
+      "label": "CCTS verification agency eligibility",
+      "to": "/answers/ccts-acv-agency-eligibility-criteria"
+    },
+    {
+      "label": "CCTS validator and verifier must differ",
+      "to": "/answers/ccts-offset-validator-verifier-must-differ"
+    },
+    {
+      "label": "Accredited verification agencies",
+      "to": "/answers/ccts-accredited-carbon-verification-agency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, List of Accredited Carbon Verification Agencies empanelled under CCTS (page updated 21 October 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=568&lang=1"
+    },
+    {
+      "label": "BEE, Accreditation Procedure and Eligibility Criteria for Accredited Carbon Verification Agency, Version 1.0 (July 2024)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-6bc4092848da03f9_1776056999.pdf"
+    }
+  ],
+  "reviewNote": "Counts taken from the BEE register table on 23 October 2026. The register changes as agencies are added.",
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "bm-en01-002-green-hydrogen-ccts-credits",
+  "q": "How does a green hydrogen plant earn CCTS credits under BM EN01.002?",
+  "title": "Green hydrogen under BM EN01.002",
+  "short": "BM EN01.002 credits a new electrolyser that makes hydrogen from water using a new captive solar or wind plant, supplying an existing user that made hydrogen from coal, gas or oil before. Grid power can be at most a tenth of the captive renewable power used, measured each year.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Green hydrogen developers, refineries and ammonia plants",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "Both the captive renewable plant and the electrolyser must be new. Retrofits and capacity additions are not covered.",
+        "The hydrogen goes to an existing dedicated consumer named in the PDD, such as an ammonia plant or refinery, which used grey hydrogen from coal gasification or steam reforming of gas or oil before.",
+        "Renewable power comes from captive solar or wind. Renewable energy certificates do not count.",
+        "Grid electricity consumed divided by captive renewable electricity consumed must stay below 0.1 each year, checked by the verifier.",
+        "The project may use no more than 5 per cent of the drinking water available locally.",
+        "A contract with the consumer must rule out double counting."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AM0124 (version valid from 27 September 2023).",
+        "Sectoral scope: Energy. Version 1.0."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity and fuel invoices behind a project's monitoring data as dated monthly records a verifier can trace.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "India green hydrogen standard threshold",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "Grid electricity hydrogen intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM EN01.002 Hydrogen production from electrolysis of water, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-99e511d259391bd9_1776061190.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

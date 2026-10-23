@@ -1,0 +1,59 @@
+{
+  "slug": "ccts-plant-fails-to-submit-documents",
+  "q": "What happens if an obligated CCTS plant does not submit its documents?",
+  "title": "If a CCTS plant does not file",
+  "short": "Its shortfall is calculated as if it achieved its baseline intensity, so it must buy certificates for the full gap between baseline and target. The 2025 target rules say this in an explanation to Rule 4, and missing the obligation can then lead to environmental compensation.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Obligated plants, energy managers and company secretaries",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "Rule 4 requires every obligated plant to register on the ICM portal and submit all documents in the manner set by BEE's detailed procedure. The explanation says that if a plant fails to submit them, the certificates to be bought are worked out with achieved intensity taken as the baseline intensity."
+      ]
+    },
+    {
+      "h": "What that can cost",
+      "ul": [
+        "Shortfall = (baseline intensity minus target intensity) x equivalent product.",
+        "A plant that improved but did not file gets no credit for the improvement.",
+        "Unmet obligations can then attract environmental compensation at twice the average traded price."
+      ]
+    },
+    {
+      "h": "Documents in the yearly cycle",
+      "ul": [
+        "Monitoring plan within three months of the start of the trajectory period, then yearly within three months of each compliance year.",
+        "Form A with verification certificate (Form B) within four months after the compliance year.",
+        "Compliance status in Form D within one month of the last trading session of the year."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "CCTS environmental compensation",
+      "to": "/answers/ccts-environmental-compensation-penalty"
+    },
+    {
+      "label": "CCTS monitoring plan deadline",
+      "to": "/answers/ccts-monitoring-plan-deadline-and-contents"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    },
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

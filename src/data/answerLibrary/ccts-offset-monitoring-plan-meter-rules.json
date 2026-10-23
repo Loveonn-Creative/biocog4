@@ -1,0 +1,57 @@
+{
+  "slug": "ccts-offset-monitoring-plan-meter-rules",
+  "q": "What metering and calibration rules apply to a CCTS offset project's monitoring plan?",
+  "title": "CCTS offset metering and calibration rules",
+  "short": "Readings that change all the time, such as fuel used or power generated, must be measured continuously. Fixed values like emission factors are updated at least once a year. Meters must meet BIS, national or IEC standards and be calibrated by an NABL accredited lab, and data is kept for two years after the last issuance.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Plant engineers and consultants writing a CCTS monitoring plan",
+  "sections": [
+    {
+      "h": "The requirements in the project standard",
+      "ul": [
+        "Continuously varying data (fuel inputs, heat or electricity produced, gas captured): measured continuously and recorded at set intervals.",
+        "Generally constant data (emission factors, calorific values, efficiencies): taken from published sources at least once a year, unless the methodology asks for more.",
+        "Measuring equipment certified to BIS, national or IEC standards.",
+        "Calibration by an NABL accredited organisation.",
+        "Uncertain readings cross-checked against other data sources.",
+        "Methods, accuracy, intervals, responsible people and QA/QC procedures written into the plan."
+      ]
+    },
+    {
+      "h": "Record keeping",
+      "p": [
+        "All monitored data is archived electronically for two years after the crediting period or the last issuance of credits, whichever is later."
+      ]
+    },
+    {
+      "h": "Where invoices help",
+      "p": [
+        "Fuel supplier invoices and electricity bills are the usual cross-check for meter readings, and BEE's fossil fuel tool prefers calorific values printed by the supplier on the invoice."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fuel and electricity invoices as dated, fingerprinted monthly records, the consumption data a project's monitoring report and its verifier will ask to trace.",
+  "links": [
+    {
+      "label": "BM-T-002 fossil fuel tool",
+      "to": "/answers/ccts-tool-bm-t-002-fossil-fuel-emissions"
+    },
+    {
+      "label": "Monitoring a BM IN02.001 project",
+      "to": "/answers/ccts-bm-in02-001-monitoring-records"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section B4.9 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

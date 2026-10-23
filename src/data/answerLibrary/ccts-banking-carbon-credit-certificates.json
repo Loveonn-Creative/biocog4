@@ -1,0 +1,57 @@
+{
+  "slug": "ccts-banking-carbon-credit-certificates",
+  "q": "Can CCTS carbon credit certificates be banked for future years?",
+  "title": "Banking CCTS certificates",
+  "short": "Yes. Certificates a plant earns and still holds after a compliance year can be banked, then sold in the Indian Carbon Market or used for a later year's target. Under BEE's October 2026 draft trading procedure, certificates bought on an exchange cannot be resold, and voluntary buyers can only retire them.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Obligated plants deciding whether to sell or hold certificates",
+  "sections": [
+    {
+      "h": "What the rules say",
+      "ul": [
+        "2025 target rules: banked means certificates left with a plant after it completes compliance for the year; they may be banked as the detailed procedure provides.",
+        "Compliance procedure: remaining certificates may be banked for later compliance years, and banked certificates issued to the plant may be sold within the Indian Carbon Market or used for future compliance."
+      ]
+    },
+    {
+      "h": "Limits in the draft trading procedure (October 2026)",
+      "ul": [
+        "Certificates bought through a power exchange cannot be resold under any circumstances.",
+        "Certificates bought by a non-obligated entity are for retirement only, with no resale or banking.",
+        "Issued certificates can be banked or sold up to their validity, set by the compliance procedure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "CCTS certificate trading",
+      "to": "/answers/ccts-certificate-trading-power-exchange"
+    },
+    {
+      "label": "CCTS certificates earned or bought",
+      "to": "/answers/ccts-carbon-credit-certificates-formula"
+    },
+    {
+      "label": "Buying CCTS credits voluntarily",
+      "to": "/answers/can-a-company-buy-ccts-credits-voluntarily"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    },
+    {
+      "label": "BEE, Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-d9cc8e301df47417_1776057016.pdf"
+    },
+    {
+      "label": "BEE, Draft Detailed Procedure for Transaction of Carbon Credit Certificates under Compliance Mechanism (October 2026, for public comment)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-ff98b7dece646232_1792561430.pdf"
+    }
+  ],
+  "reviewNote": "The trading procedure was a draft for public comment on BEE's carbon market page on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

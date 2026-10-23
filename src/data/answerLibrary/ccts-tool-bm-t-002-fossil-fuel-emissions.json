@@ -1,0 +1,60 @@
+{
+  "slug": "ccts-tool-bm-t-002-fossil-fuel-emissions",
+  "q": "How does CCTS tool BM-T-002 calculate emissions from fuel a project burns?",
+  "title": "BM-T-002 fossil fuel emissions tool",
+  "short": "BM-T-002 multiplies the quantity of each fuel burnt by its CO2 emission coefficient. The coefficient comes from the fuel's carbon content, which is preferred, or from its net calorific value times an emission factor. For those values the tool ranks the fuel supplier's invoice first.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Engineers calculating project or leakage emissions for a CCTS offset project",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ul": [
+        "Emissions from process j = sum over fuels of fuel quantity x CO2 emission coefficient.",
+        "Option A, preferred when data exists: coefficient = carbon mass fraction x 44/12, times density if the fuel is measured by volume.",
+        "Option B: coefficient = net calorific value x CO2 emission factor per GJ."
+      ]
+    },
+    {
+      "h": "Where the values come from, in the tool's order",
+      "ol": [
+        "Values the fuel supplier gives in invoices.",
+        "The project's own measurements.",
+        "Regional or national default values, for liquid fuels only, from well documented sources such as national energy balances.",
+        "IPCC default values at the upper limit of the 95 per cent confidence interval."
+      ]
+    },
+    {
+      "h": "Why this matters",
+      "p": [
+        "If your supplier prints calorific value or carbon content, keep every invoice: it is the first-choice source, and IPCC defaults at the upper limit give a more conservative, usually higher, figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the quantity and any calorific value printed on fuel invoices into a monthly record linked to each source document.",
+  "links": [
+    {
+      "label": "Monitoring a BM IN02.001 project",
+      "to": "/answers/ccts-bm-in02-001-monitoring-records"
+    },
+    {
+      "label": "BM-T-003 electricity emission factor",
+      "to": "/answers/ccts-tool-bm-t-003-electricity-emission-factor"
+    },
+    {
+      "label": "CCTS metering and calibration rules",
+      "to": "/answers/ccts-offset-monitoring-plan-meter-rules"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-002 Tool to calculate project or leakage CO2 emissions from fossil fuel combustion",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-b56f90cf720778bb_1776061539.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

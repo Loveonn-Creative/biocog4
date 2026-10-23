@@ -1,0 +1,60 @@
+{
+  "slug": "bm-en01-001-renewable-power-ccts-credits",
+  "q": "Can a solar or wind power plant earn CCTS credits under BM EN01.001?",
+  "title": "Renewable power under BM EN01.001",
+  "short": "Not as a standalone grid-connected solar or wind plant: BM EN01.001 excludes those. It covers other grid-connected renewable plants, new or upgraded, and hybrids where solar or wind is paired with battery storage or pumped storage. It is adapted from the UN CDM method ACM0002.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Renewable developers and factories with grid-connected generation",
+  "sections": [
+    {
+      "h": "What BM EN01.001 covers",
+      "ul": [
+        "Greenfield plants, capacity additions, retrofits, rehabilitation or replacement of renewable plants that supply the grid, excluding standalone grid-connected wind and solar in every case.",
+        "A greenfield renewable plant together with a new grid-connected pumped storage plant.",
+        "Hybrid systems that combine renewable technologies with a battery energy storage system (BESS) or pumped storage. Technologies other than standalone wind and solar qualify without storage too.",
+        "Adding a BESS to an existing solar PV or wind plant, with or without a capacity addition or retrofit."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology ACM0002 (version valid from 31 May 2024).",
+        "Sectoral scope: Energy. Version 1.0, adopted 27 March 2025.",
+        "Credits come from displacing grid electricity, so the grid emission factor tool BM-T-003 applies."
+      ]
+    },
+    {
+      "h": "What it means for a factory",
+      "p": [
+        "A rooftop or ground solar plant exporting to the grid on its own does not qualify under this method. Pairing new solar with storage might, subject to additionality and the other conditions in the text."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity and fuel invoices behind a project's monitoring data as dated monthly records a verifier can trace.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "BM-T-003 electricity emission factor",
+      "to": "/answers/ccts-tool-bm-t-003-electricity-emission-factor"
+    },
+    {
+      "label": "Is a CCTS project worth it for a small factory",
+      "to": "/answers/ccts-offset-project-worth-it-small-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM EN01.001 Grid-connected electricity generation from renewable sources, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-7142dfb1cb5c2361_1776061176.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

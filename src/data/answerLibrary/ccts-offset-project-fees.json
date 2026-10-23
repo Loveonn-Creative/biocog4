@@ -1,0 +1,64 @@
+{
+  "slug": "ccts-offset-project-fees",
+  "q": "How much does it cost to register a project and get credits under India's CCTS offset mechanism?",
+  "title": "CCTS offset mechanism fees",
+  "short": "BEE charges INR 5,000 to open an account, INR 2,000 a year to keep it, a registration fee of INR 50,000, 1,00,000 or 1,50,000 depending on expected annual reductions, INR 25,000 per post-registration change and INR 5 per credit issued. All fees are non-refundable. Verification agency fees are extra.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Developers and MSMEs pricing a CCTS offset project",
+  "sections": [
+    {
+      "h": "BEE's fee schedule (Annexure 2, Version 1.0)",
+      "ul": [
+        "Account registration: INR 5,000.",
+        "Account maintenance: INR 2,000 a year.",
+        "Project registration: INR 50,000 if average annual reductions over the first crediting period are up to 15,000 t CO2e; INR 1,00,000 for 15,001 to 50,000 t; INR 1,50,000 above 50,000 t.",
+        "Post-registration change: INR 25,000 per request.",
+        "Credit issuance: INR 5 per carbon credit certificate issued.",
+        "Renewal of a crediting period: the same slabs as registration."
+      ]
+    },
+    {
+      "h": "What the schedule leaves out",
+      "ul": [
+        "Validation and verification are paid to the accredited agency you hire, at its own rates.",
+        "Registry and power exchange charges for selling credits are set separately by CERC.",
+        "BEE says the schedule will be revised from time to time, so check the current version before you budget."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: BEE fees for a small project over its first year",
+    "lines": [
+      "Account registration: INR 5,000",
+      "Account maintenance, first year: INR 2,000",
+      "Registration, expected 4,000 t CO2e a year (up to 15,000 t slab): INR 50,000",
+      "Issuance of 4,000 credits at INR 5: INR 20,000",
+      "BEE fees in year one: INR 77,000, before validation and verification fees"
+    ],
+    "note": "The 4,000 t figure is an assumption. Agency fees and any trading charges come on top."
+  },
+  "senseible": "Senseible does not charge these fees or register projects. It keeps the invoice records that show the fuel and electricity a project actually used.",
+  "links": [
+    {
+      "label": "CCTS offset registration steps",
+      "to": "/answers/ccts-offset-project-registration-steps"
+    },
+    {
+      "label": "Is a CCTS project worth it for a small factory",
+      "to": "/answers/ccts-offset-project-worth-it-small-factory"
+    },
+    {
+      "label": "Can an MSME earn CCTS credits",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Fee schedule read from Annexure 2 (page 52) of the scanned procedure on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

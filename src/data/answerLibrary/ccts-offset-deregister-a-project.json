@@ -1,0 +1,56 @@
+{
+  "slug": "ccts-offset-deregister-a-project",
+  "q": "Can a CCTS offset project be deregistered, and what happens to its credits?",
+  "title": "Deregistering a CCTS offset project",
+  "short": "Yes. The project owner can ask BEE to deregister a registered offset project through the ICM portal, with written consent from all participants. No credits are issued from the date BEE receives the request, credits issued earlier stay valid, and the project can never be registered again.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "CCTS offset project owners weighing a move or shutdown",
+  "sections": [
+    {
+      "h": "How it works",
+      "ul": [
+        "Submit the deregistration request on the ICM portal with written consent from all activity participants.",
+        "BEE informs the Technical Committee for the offset mechanism and NSC-ICM and updates the project status.",
+        "The deregistration takes effect on the date BEE receives the request."
+      ]
+    },
+    {
+      "h": "Consequences",
+      "ul": [
+        "No credits for the project from that date.",
+        "Credits issued before it remain valid and listed in the registry.",
+        "A deregistered project cannot be registered again in the ICM."
+      ]
+    },
+    {
+      "h": "Think first",
+      "p": [
+        "The offset mechanism does not allow the same activity to be registered in another carbon market at the same time, so plan any move with the rules of the other programme in hand before you file."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fuel and electricity invoices as dated, fingerprinted monthly records, the consumption data a project's monitoring report and its verifier will ask to trace.",
+  "links": [
+    {
+      "label": "CCTS offset or Verra and Gold Standard",
+      "to": "/answers/ccts-offset-or-verra-gold-standard-which"
+    },
+    {
+      "label": "Retired vs cancelled CCTS credits",
+      "to": "/answers/ccts-offset-retire-vs-cancel-credits"
+    },
+    {
+      "label": "CCTS offset registration steps",
+      "to": "/answers/ccts-offset-project-registration-steps"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section A10 and B3.4 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

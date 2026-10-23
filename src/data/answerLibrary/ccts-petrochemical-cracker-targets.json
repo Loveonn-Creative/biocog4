@@ -1,0 +1,43 @@
+{
+  "slug": "ccts-petrochemical-cracker-targets",
+  "q": "Which petrochemical plants have CCTS emission intensity targets?",
+  "title": "CCTS petrochemical cracker targets",
+  "short": "11 petrochemical units, gas or naphtha crackers or both, got targets in the January 2026 amendment. They include complexes at Panipat, Haldia, Vadodara, Hazira, Pata, Nagothane, Dahej, Dibrugarh, Jamnagar and Bathinda, each with a 2023-24 baseline and targets for 2025-26 and 2026-27.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Petrochemical plant teams and their suppliers",
+  "sections": [
+    {
+      "h": "What the schedule shows",
+      "ul": [
+        "Sector heading: Petrochemical units (gas or naphtha crackers or both).",
+        "Registration numbers PCOE001 to PCOE011.",
+        "Example: the Panipat refinery and petrochemical complex, baseline 0.8566, 2025-26 target 0.8523, 2026-27 target 0.8262, in tonnes CO2e per tonne of equivalent product."
+      ]
+    },
+    {
+      "h": "What it means down the chain",
+      "p": [
+        "Gate-to-gate boundaries mean the cracker counts its own fuel, process and purchased energy emissions. Suppliers are not inside the target, but buyers aiming to cut intensity often ask them for cleaner inputs."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "Is a petrochemical plant covered",
+      "to": "/answers/is-a-petrochemical-plant-covered-by-ccts"
+    },
+    {
+      "label": "How many plants have CCTS targets",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target (Amendment) Rules, 2025, G.S.R. 25(E), Gazette of India, 13 January 2026",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-de57eb4cfcc5ab0c_1776057184.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

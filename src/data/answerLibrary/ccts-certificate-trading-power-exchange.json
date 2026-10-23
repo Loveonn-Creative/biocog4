@@ -1,0 +1,53 @@
+{
+  "slug": "ccts-certificate-trading-power-exchange",
+  "q": "How will CCTS carbon credit certificates trade on India's power exchanges?",
+  "title": "How CCTS certificates trade",
+  "short": "Under BEE's October 2026 draft procedure, buyers and sellers bid on CERC-registered power exchanges in a closed, double-sided auction with one uniform clearing price per session. The registry checks sellers hold the certificates first. Bilateral deals, even within a corporate group, are not allowed.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Obligated plants, traders and voluntary buyers",
+  "sections": [
+    {
+      "h": "How a session works in the draft",
+      "ol": [
+        "Registered entities place sell or buy bids on one or more power exchanges.",
+        "After the window closes, each exchange sends sell bids to the Grid-India registry.",
+        "The registry checks each seller's total bids across exchanges against the certificates in its account.",
+        "The exchange discovers the market clearing price and volume by closed double-sided uniform price auction.",
+        "The registry debits sellers and credits buyers, and exchanges publish results and demand-supply curves."
+      ]
+    },
+    {
+      "h": "Rules worth knowing",
+      "ul": [
+        "Entities registered on the ICM portal are registered with the registry automatically.",
+        "Issued certificates are credited to a plant's account after it pays a crediting fee set by CERC.",
+        "A seller whose bids exceed its holdings is treated as a defaulter for that session; more than three defaults in a quarter bars it for six months.",
+        "The underlying CERC regulations on purchase and sale of certificates were issued on 27 February 2026."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not trade certificates. It keeps the plant-level energy records behind the emissions figure.",
+  "links": [
+    {
+      "label": "Who runs the carbon market registry",
+      "to": "/answers/who-runs-india-carbon-market-registry"
+    },
+    {
+      "label": "Banking CCTS certificates",
+      "to": "/answers/ccts-banking-carbon-credit-certificates"
+    },
+    {
+      "label": "Buying CCTS credits voluntarily",
+      "to": "/answers/can-a-company-buy-ccts-credits-voluntarily"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Draft Detailed Procedure for Transaction of Carbon Credit Certificates under Compliance Mechanism (October 2026, for public comment)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-ff98b7dece646232_1792561430.pdf"
+    }
+  ],
+  "reviewNote": "Draft for public comment published by BEE in October 2026; final terms may differ.",
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "ccts-textile-targets-by-subsector",
+  "q": "How many textile units have CCTS targets, and in which sub-sectors?",
+  "title": "CCTS textile targets by sub-sector",
+  "short": "173 textile units got targets in the January 2026 amendment, in four sub-sectors: spinning, processing, fibre and composite. Each has a 2023-24 baseline. Many have targets for both 2025-26 and 2026-27, while some are set only for 2026-27.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Textile mill owners and their suppliers in Gujarat, Rajasthan, Tamil Nadu and beyond",
+  "sections": [
+    {
+      "h": "What the schedule shows",
+      "ul": [
+        "Registration numbers TXTOE001 to TXTOE173, with a state code.",
+        "Sub-sectors: spinning, processing, fibre and composite.",
+        "Example: one Tamil Nadu spinning unit, baseline 0.4355, 2025-26 target 0.4352, 2026-27 target 0.4329."
+      ]
+    },
+    {
+      "h": "If your mill is not on it",
+      "p": [
+        "It has no target. It can still cut costs and earn offset credits under an approved methodology, and its buyers may still ask for its energy data."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "Is my textile mill covered",
+      "to": "/answers/is-my-textile-mill-covered-by-ccts"
+    },
+    {
+      "label": "How many plants have CCTS targets",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    },
+    {
+      "label": "MSME supplier to a CCTS plant",
+      "to": "/answers/msme-supplier-to-ccts-obligated-plant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target (Amendment) Rules, 2025, G.S.R. 25(E), Gazette of India, 13 January 2026",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-de57eb4cfcc5ab0c_1776057184.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

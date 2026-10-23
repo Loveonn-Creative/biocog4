@@ -1,0 +1,54 @@
+{
+  "slug": "ccts-iron-steel-draft-targets-2026",
+  "q": "What do India's draft CCTS targets for iron and steel plants say?",
+  "title": "CCTS iron and steel draft targets",
+  "short": "A draft published in the Gazette on 26 June 2026 proposes targets for 255 iron and steel plants, for the 2026-27 compliance year only, against a 2023-24 baseline. For example, it proposes 2.1695 t CO2e per tonne for AM/NS Hazira, down from 2.2701. Comments were open for 60 days.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel plants, sponge iron units and their suppliers",
+  "sections": [
+    {
+      "h": "What the draft contains",
+      "ul": [
+        "G.S.R. 517(E), a draft amendment adding a Third Schedule for iron and steel.",
+        "255 plants with registration numbers INSOE0001 onward, from integrated plants to smaller units.",
+        "No 2025-26 target; only 2026-27.",
+        "Examples: Tata Steel Jamshedpur 2.3630 to 2.2540; JSW Vijayanagar 2.6178 to 2.4840; Bhilai 3.1487 to 2.9551."
+      ]
+    },
+    {
+      "h": "Status",
+      "p": [
+        "It is a draft for public comment, taken up after 60 days. Check the Gazette or BEE's carbon market page for the final version before planning on these numbers."
+      ]
+    },
+    {
+      "h": "Same data, two uses",
+      "p": [
+        "The fuel, power and production records a steel plant keeps for CCTS also feed its CBAM emissions report for EU buyers, though the two systems draw boundaries differently."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "Raipur and Durg steel plant targets",
+      "to": "/answers/chhattisgarh-steel-plant-ccts-target"
+    },
+    {
+      "label": "How many plants have CCTS targets",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    },
+    {
+      "label": "CCTS vs EU ETS",
+      "to": "/answers/india-ccts-vs-eu-ets-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Draft Greenhouse Gases Emission Intensity Target (Amendment) Rules for iron and steel, G.S.R. 517(E), Gazette of India, 26 June 2026",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bbce4f833a613eae_1783081829.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

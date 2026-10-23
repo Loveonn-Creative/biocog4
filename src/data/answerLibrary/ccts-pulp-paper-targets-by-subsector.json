@@ -1,0 +1,47 @@
+{
+  "slug": "ccts-pulp-paper-targets-by-subsector",
+  "q": "Which pulp and paper mills have CCTS targets, and in which sub-sectors?",
+  "title": "CCTS pulp and paper targets",
+  "short": "51 pulp and paper mills have targets under the October 2025 rules, in four sub-sectors: integrated plants, recycled fibre or imported pulp plants, agro based plants and speciality paper plants. Each mill has a 2023-24 baseline and targets for 2025-26 and 2026-27.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Paper mill teams and their suppliers",
+  "sections": [
+    {
+      "h": "The sub-sectors in the schedule",
+      "ul": [
+        "Integrated plants.",
+        "RCF based plants or imported pulp.",
+        "Agro based plants.",
+        "Speciality paper plants."
+      ]
+    },
+    {
+      "h": "Reading a row",
+      "ul": [
+        "Registration number PNPOE plus a serial and state code.",
+        "Baseline equivalent product output for 2023-24, in tonnes.",
+        "Baseline intensity and targets, in tonnes CO2e per tonne of equivalent product.",
+        "Example: one Maharashtra speciality paper plant, baseline 1.7547, target 1.7275 for 2025-26 and 1.6567 for 2026-27."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a plant's fuel and electricity invoices as dated, fingerprinted monthly records, the activity data its monitoring plan and verifier work from.",
+  "links": [
+    {
+      "label": "Is a paper mill covered by CCTS",
+      "to": "/answers/is-a-paper-mill-covered-by-ccts"
+    },
+    {
+      "label": "How many plants have CCTS targets",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "ccts-tool-bm-t-015-equipment-remaining-lifetime",
+  "q": "How do you prove an old machine's remaining lifetime for a CCTS offset project?",
+  "title": "BM-T-015 equipment remaining lifetime",
+  "short": "BEE's tool BM-T-015 offers three options: the manufacturer's technical lifetime compared with the first commissioning date, an expert evaluation, or default values. The default option needs proof the equipment was maintained as the supplier recommends, with no scheduled early replacement and no design fault or accident.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Factories replacing or retrofitting boilers, motors, furnaces and other equipment",
+  "sections": [
+    {
+      "h": "Why it matters",
+      "p": [
+        "When a project replaces or retrofits existing equipment, credits can be limited by how long the old equipment would have kept running. If the project extends the life of equipment that stays in use, crediting is limited to the shortest estimated remaining lifetime."
+      ]
+    },
+    {
+      "h": "The three options",
+      "ol": [
+        "Manufacturer's information on technical lifetime, compared with the date of first commissioning.",
+        "An expert evaluation.",
+        "Default technical lifetime values, minus the operational time so far."
+      ]
+    },
+    {
+      "h": "Rules to follow",
+      "ul": [
+        "Determine remaining lifetime before the project is implemented and document it in the PDD.",
+        "If you get a range, pick the conservative end, confirmed by the verifier.",
+        "For relocated equipment, count its operating history at earlier sites too.",
+        "Policy-driven replacement and changes in demand are not considered by this tool."
+      ]
+    }
+  ],
+  "senseible": "Senseible's dated invoice history can show when a machine's fuel or power use began, one piece of operating history a verifier may ask for.",
+  "links": [
+    {
+      "label": "Baseline boiler efficiency BM-T-006",
+      "to": "/answers/baseline-boiler-efficiency-ccts-bm-t-006"
+    },
+    {
+      "label": "Which projects qualify under BM IN02.001",
+      "to": "/answers/which-projects-qualify-under-bm-in02-001"
+    },
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-015 Tool to determine the remaining lifetime of equipment",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-39e9d29b0438ec1e_1776061669.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

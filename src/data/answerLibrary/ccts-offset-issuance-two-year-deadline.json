@@ -1,0 +1,50 @@
+{
+  "slug": "ccts-offset-issuance-two-year-deadline",
+  "q": "Is there a deadline to claim CCTS offset credits after the monitoring period?",
+  "title": "Deadline to claim CCTS offset credits",
+  "short": "Yes. Issuance requests must be filed in date order, starting with the first monitoring period, and every request for a crediting period must be submitted within two years after that period ends. Miss the deadline and BEE no longer issues credits for that crediting period.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Registered CCTS offset projects and their verifiers",
+  "sections": [
+    {
+      "h": "The conditions on issuance",
+      "ul": [
+        "Requests go in chronological order, starting from the first monitoring period.",
+        "Requests for reductions in a crediting period must be submitted within two years after it ends.",
+        "BEE checks the monitoring report for completeness within 10 working days; an incomplete request can be resubmitted within 15 working days.",
+        "A subject matter expert reviews it within 30 calendar days, then the Technical Committee and NSC-ICM decide.",
+        "Credits are issued after the INR 5 per credit issuance fee is paid."
+      ]
+    },
+    {
+      "h": "How not to miss it",
+      "p": [
+        "Book verification for each monitoring period soon after it closes. A verifier who raises queries can take months, and any gap in metering or invoices for a month leaves nothing for the verifier to test."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps fuel and electricity invoices as dated, fingerprinted monthly records, the consumption data a project's monitoring report and its verifier will ask to trace.",
+  "links": [
+    {
+      "label": "CCTS offset crediting period",
+      "to": "/answers/ccts-offset-crediting-period-length"
+    },
+    {
+      "label": "CCTS offset fees",
+      "to": "/answers/ccts-offset-project-fees"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    }
+  ],
+  "reviewNote": "Section A7 of the scanned procedure, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "ccts-offset-bundling-small-projects",
+  "q": "Can several small projects be grouped into one CCTS offset project?",
+  "title": "Grouping small CCTS offset projects",
+  "short": "Yes. BEE's project standard lets a developer combine several activities into one offset project, described in a single project design document. All of them must use similar technology, share the same crediting period and stay the same over time, and the PDD gives each site's location.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Aggregators, cluster associations and ESCOs working with many small units",
+  "sections": [
+    {
+      "h": "Conditions for a grouped project",
+      "ul": [
+        "One PDD that explains why the activities are grouped.",
+        "Similar technology, measures and other relevant attributes across all of them.",
+        "The composition does not change over time, and all share one crediting period.",
+        "Geolocation for every sub-project."
+      ]
+    },
+    {
+      "h": "Fees and registration",
+      "p": [
+        "The accredited agency files one registration request for the bundle. The registration fee is set by the total expected average annual reductions of all activities in the bundle, and BEE gives the bundle one reference number."
+      ]
+    },
+    {
+      "h": "Programme of activities",
+      "p": [
+        "BEE has also invited comments on a draft procedure for programmes of activities, which lets units join over time. Check whether it has been finalised before you rely on it."
+      ]
+    }
+  ],
+  "senseible": "Senseible can hold invoice records for many units under one workspace, so the fuel and power data for each site in a bundle sits in one place.",
+  "links": [
+    {
+      "label": "CCTS offset fees",
+      "to": "/answers/ccts-offset-project-fees"
+    },
+    {
+      "label": "Which projects qualify under BM IN02.001",
+      "to": "/answers/which-projects-qualify-under-bm-in02-001"
+    },
+    {
+      "label": "Can an MSME earn CCTS credits",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for Offset Mechanism under CCTS, Version 1.0 (effective 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-dd26de202535b101_1776055896.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewNote": "Sections B4.3 and A5.1.3 of the scanned procedure, read on 23 October 2026. The programme of activities procedure was a draft for comments on the BEE carbon market page.",
+  "reviewed": "2026-10-23"
+}

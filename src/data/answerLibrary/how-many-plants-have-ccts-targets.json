@@ -1,0 +1,65 @@
+{
+  "slug": "how-many-plants-have-ccts-targets",
+  "q": "How many plants have greenhouse gas intensity targets under India's CCTS?",
+  "title": "How many plants have CCTS targets",
+  "short": "488 plants have notified targets: 280 under the October 2025 rules (aluminium, cement, chlor-alkali, pulp and paper) and 208 added in January 2026 (secondary aluminium, refineries, petrochemicals, textiles). A June 2026 draft proposes 255 iron and steel plants on top.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Plant heads, ESG teams and suppliers to large industry",
+  "sections": [
+    {
+      "h": "Notified targets",
+      "ul": [
+        "G.S.R. 739(E), 8 October 2025: aluminium 13, cement 186, chlor-alkali 30, pulp and paper 51. Total 280.",
+        "G.S.R. 25(E), 13 January 2026: secondary aluminium 3, petroleum refineries 21, petrochemical crackers 11, textiles 173. Total 208."
+      ]
+    },
+    {
+      "h": "Proposed",
+      "ul": [
+        "G.S.R. 517(E), published 26 June 2026 as a draft for 60 days of comments: 255 iron and steel plants, with targets for 2026-27 only. Check whether final rules have followed before you rely on these figures."
+      ]
+    },
+    {
+      "h": "How the counts were made",
+      "p": [
+        "Each plant has a registration number in the schedules (for example ALMOE001OD for the first aluminium plant). The totals here are unique registration numbers in each gazette notification. Every target uses 2023-24 as the baseline year."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads invoices for plants and their suppliers; it is not part of the CCTS process.",
+  "links": [
+    {
+      "label": "CCTS cement targets",
+      "to": "/answers/ccts-cement-targets-by-subsector"
+    },
+    {
+      "label": "CCTS steel draft targets",
+      "to": "/answers/ccts-iron-steel-draft-targets-2026"
+    },
+    {
+      "label": "CCTS textile targets",
+      "to": "/answers/ccts-textile-targets-by-subsector"
+    },
+    {
+      "label": "CCTS vs EU ETS",
+      "to": "/answers/india-ccts-vs-eu-ets-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, G.S.R. 739(E), Gazette of India, 8 October 2025",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f0db112734284168_1776057153.pdf"
+    },
+    {
+      "label": "Greenhouse Gases Emission Intensity Target (Amendment) Rules, 2025, G.S.R. 25(E), Gazette of India, 13 January 2026",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-de57eb4cfcc5ab0c_1776057184.pdf"
+    },
+    {
+      "label": "Draft Greenhouse Gases Emission Intensity Target (Amendment) Rules for iron and steel, G.S.R. 517(E), Gazette of India, 26 June 2026",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bbce4f833a613eae_1783081829.pdf"
+    }
+  ],
+  "reviewNote": "Counts are unique registration numbers in the English schedules of G.S.R. 739(E) and G.S.R. 25(E), and of the G.S.R. 517(E) draft, read on 23 October 2026.",
+  "reviewed": "2026-10-23"
+}

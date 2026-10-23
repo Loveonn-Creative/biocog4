@@ -1,0 +1,59 @@
+{
+  "slug": "bm-wa03-001-landfill-methane-recovery-ccts",
+  "q": "What does CCTS methodology BM WA03.001 cover for landfill methane?",
+  "title": "Landfill methane under BM WA03.001",
+  "short": "BM WA03.001 credits capturing and burning methane from landfills that hold municipal, industrial or other waste with biodegradable matter. It is not allowed if the project cuts the waste that would have been recycled, or if the site is managed to make more methane.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Municipal bodies, waste operators and landfill gas developers",
+  "sections": [
+    {
+      "h": "Conditions",
+      "ul": [
+        "Covers capture and combustion of methane from solid waste disposal sites holding residues with biodegradable organic matter.",
+        "The project must not reduce the organic waste that would have been recycled without it.",
+        "Not applicable if the site is deliberately changed to raise methane generation, for example by adding liquids, seeding waste with bacteria or reshaping the site, other than to meet a technical or legal requirement."
+      ]
+    },
+    {
+      "h": "Key facts",
+      "ul": [
+        "Adapted from UNFCCC CDM methodology AMS-III.G (version valid from 14 July 2019).",
+        "Effective from 27 March 2025, sectoral scope: waste handling and disposal.",
+        "Flaring is calculated with BEE tool BM-T-004."
+      ]
+    },
+    {
+      "h": "Which landfill method to use",
+      "p": [
+        "BM WA03.002 is the broader method for flaring or using landfill gas, including selling it through gas networks or by truck. Compare both texts against your project before you write the PDD."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity and fuel invoices behind a project's monitoring data as dated monthly records a verifier can trace.",
+  "links": [
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    },
+    {
+      "label": "Landfill gas under BM WA03.002",
+      "to": "/answers/bm-wa03-002-landfill-gas-flaring-or-use"
+    },
+    {
+      "label": "BM-T-004 flare efficiency",
+      "to": "/answers/ccts-tool-bm-t-004-flare-efficiency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM WA03.001 Landfill methane recovery, Version 1.0",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-90e2162fc0bbcb7c_1776061229.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under Offset Mechanism (list updated 7 July 2026)",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
