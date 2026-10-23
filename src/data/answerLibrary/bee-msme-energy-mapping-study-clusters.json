@@ -1,0 +1,62 @@
+{
+  "slug": "bee-msme-energy-mapping-study-clusters",
+  "q": "What did BEE's MSME energy mapping study cover, and is my sector included?",
+  "title": "BEE MSME energy mapping study",
+  "short": "BEE mapped energy use in 55 MSME clusters with more than 550 detailed audits across foundry, forging, paper, steel re-rolling, pharma, bricks, glass and refractory, chemicals, food processing, textiles and leather. A further 15 clusters in textiles, food processing and leather are being mapped with over 150 audits.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs and industry associations in energy-intensive clusters",
+  "sections": [
+    {
+      "h": "Completed study",
+      "ul": [
+        "55 energy-intensive MSME clusters.",
+        "More than 550 detailed energy audits.",
+        "Sectors: foundry, forging, paper, steel re-rolling, pharma, bricks, glass and refractory, chemicals, food processing, textile and leather."
+      ]
+    },
+    {
+      "h": "Ongoing study",
+      "ul": [
+        "15 clusters in textiles, food processing and leather.",
+        "More than 150 detailed energy audits."
+      ]
+    },
+    {
+      "h": "What follows from it",
+      "ul": [
+        "Scaling up efficiency and renewable technologies in foundry, forging, steel re-rolling and paper.",
+        "Urja Mitra: an experienced certified energy auditor placed in a cluster to advise units and link them with BEE.",
+        "Support through state designated agencies for audits, demonstrations and capacity building."
+      ]
+    },
+    {
+      "h": "Where to find the material",
+      "p": [
+        "BEE hosts reports and resources for MSMEs on its SIDHIEE knowledge portal and the SME programme pages."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives a unit its own energy per tonne or per piece from its bills, which it can compare with what cluster studies report for its sector.",
+  "links": [
+    {
+      "label": "BEE SME programme",
+      "to": "/answers/bee-sme-programme-cluster-energy-efficiency"
+    },
+    {
+      "label": "ADEETIE eligible clusters",
+      "to": "/answers/adeetie-eligible-clusters-list"
+    },
+    {
+      "label": "How an MSME hires an auditor",
+      "to": "/answers/how-to-hire-an-energy-auditor-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, SME programme highlights",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=235&lid=383"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

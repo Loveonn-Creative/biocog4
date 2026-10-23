@@ -1,0 +1,58 @@
+{
+  "slug": "bee-chiller-star-rating-minimum-cop",
+  "q": "How does BEE rate chillers, and what minimum efficiency must a chiller meet?",
+  "title": "BEE chiller star rating and minimum COP",
+  "short": "BEE's voluntary chiller scheme rates vapour compression chillers on ISEER, a seasonal efficiency figure, after a minimum full-load COP. A water-cooled chiller under 260 kW of cooling needs COP 4.2 to qualify; an air-cooled one needs 2.4.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Plant engineers and facility managers buying chillers",
+  "sections": [
+    {
+      "h": "Minimum full-load COP to qualify",
+      "ul": [
+        "Water cooled: under 260 kW cooling 4.2; 260 to under 530 kW 4.7; 530 to under 1,050 kW 5.0; 1,050 to under 1,580 kW 5.2; 1,580 kW and above 5.6.",
+        "Air cooled: under 260 kW 2.4; 260 kW and above 2.6."
+      ]
+    },
+    {
+      "h": "Star levels",
+      "p": [
+        "Stars are set on ISEER, worked out from COP at 25, 50, 75 and 100 percent load under IS 16590. In the revision BEE publishes, the star tables carry a validity of 1 January 2019 to 31 December 2022; for example a water-cooled chiller under 260 kW needed ISEER 4.80 for 1 star and 6.60 for 5 stars. Check the current table before using it in a tender."
+      ]
+    },
+    {
+      "h": "When you compare quotes",
+      "ul": [
+        "Ask for COP at part load, since chillers spend most hours below full load.",
+        "Ask whether the test lab is accredited for IS 16590.",
+        "Convert to kW per TR if your team works in those units."
+      ]
+    }
+  ],
+  "senseible": "Senseible tracks your electricity bills month by month, so a chiller replacement shows up as a measured change in cooling-season kWh.",
+  "links": [
+    {
+      "label": "Chiller kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Green loan for chiller replacement",
+      "to": "/answers/green-loan-efficient-chiller-replacement"
+    },
+    {
+      "label": "Mandatory vs voluntary labels",
+      "to": "/answers/bee-mandatory-vs-voluntary-star-label"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Schedule 21, chillers (revision 2, 20 September 2021)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-e001292e8b45ff99_1777956151.pdf"
+    },
+    {
+      "label": "BEE, Standards and Labelling programme overview",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

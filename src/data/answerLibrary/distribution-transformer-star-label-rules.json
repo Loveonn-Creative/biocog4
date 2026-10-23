@@ -1,0 +1,61 @@
+{
+  "slug": "distribution-transformer-star-label-rules",
+  "q": "Is BEE star labelling mandatory for distribution transformers, and what does the star mean?",
+  "title": "Distribution transformer star labels",
+  "short": "Yes. Distribution transformers are on BEE's mandatory list. The star level is set by total losses at 50 percent and 100 percent load, so a higher star means fewer watts lost. Labels must show capacity, losses, star level, label period and year of manufacture.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factories buying their own transformer and transformer makers",
+  "sections": [
+    {
+      "h": "What the label shows",
+      "ul": [
+        "Maker, model and transformer capacity in kVA.",
+        "Total losses at 50 percent and 100 percent loading, in watts.",
+        "Star level and label period.",
+        "Year of manufacture."
+      ]
+    },
+    {
+      "h": "Rules for makers",
+      "ul": [
+        "No star label without BEE permission.",
+        "Brand registration with a label security fee of Rs 1 lakh (Rs 25,000 for small scale industry), and Rs 2,000 per model.",
+        "A label fee of Rs 100 per transformer, paid annually.",
+        "When standards are revised, older-standard units cannot be produced and labels must show the revised star level."
+      ]
+    },
+    {
+      "h": "Why a factory buyer should care",
+      "p": [
+        "Transformer losses are paid for every hour the transformer is energised. Compare the rated losses at the load your plant actually runs, not only the price, and keep the label details with the purchase record."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your HT electricity bills into Scope 2 records, so transformer losses inside your metering point are counted in the kWh you report.",
+  "links": [
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    },
+    {
+      "label": "Mandatory vs voluntary labels",
+      "to": "/answers/bee-mandatory-vs-voluntary-star-label"
+    },
+    {
+      "label": "Transformer carbon footprint",
+      "to": "/answers/distribution-transformer-carbon-footprint-per-unit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE distribution transformer labelling regulations, 2022, and S.O. 5(E) of 2 January 2023",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-836ba593a69c599b_1777957043.pdf"
+    },
+    {
+      "label": "BEE, Standards and Labelling programme overview",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

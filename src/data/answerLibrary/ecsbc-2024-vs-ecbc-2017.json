@@ -1,0 +1,59 @@
+{
+  "slug": "ecsbc-2024-vs-ecbc-2017",
+  "q": "What changed from ECBC 2017 to ECSBC 2024?",
+  "title": "ECSBC 2024 vs ECBC 2017",
+  "short": "ECSBC 2024 replaces ECBC 2017 for commercial and office buildings. BEE says it tightens energy thresholds slightly and adds sustainability measures such as water, waste and site requirements. It keeps three tiers: ECSBC (mandatory baseline), ECSBC Plus and Super ECSBC (voluntary).",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Architects, developers and owners of commercial buildings",
+  "sections": [
+    {
+      "h": "What stays the same",
+      "ul": [
+        "Scope: commercial and office buildings at 100 kW connected load or 120 kVA contract demand and above.",
+        "Three performance tiers, now called ECSBC, ECSBC Plus and Super ECSBC.",
+        "Two compliance routes: the Integrative Compliance Method and the Standardized Compliance Method."
+      ]
+    },
+    {
+      "h": "What is new",
+      "ul": [
+        "Energy efficiency thresholds tightened slightly.",
+        "Sustainability requirements: site area, water supply and controls, and waste management are now in scope.",
+        "The name follows the 2022 amendment: energy conservation and sustainable building code."
+      ]
+    },
+    {
+      "h": "For reference, ECBC 2017",
+      "p": [
+        "BEE describes ECBC 2017 buildings as saving about 25 percent, ECBC Plus about 35 percent and Super ECBC 50 percent or more against a conventional building."
+      ]
+    }
+  ],
+  "senseible": "Senseible tracks building electricity from bills, so a new code-compliant block can be compared with older ones on real kWh per square metre.",
+  "links": [
+    {
+      "label": "Does ECSBC apply to a factory?",
+      "to": "/answers/does-ecsbc-2024-apply-to-a-factory"
+    },
+    {
+      "label": "Does ECBC apply to my building?",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    },
+    {
+      "label": "BEE star rating for offices",
+      "to": "/answers/bee-star-rating-for-commercial-buildings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation and Sustainable Building Code 2024 (commercial and office buildings)",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/7534511430467336.pdf"
+    },
+    {
+      "label": "BEE, ECSBC commercial buildings page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=201&lid=327"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

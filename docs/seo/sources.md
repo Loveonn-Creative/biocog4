@@ -97,6 +97,24 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://mnre.gov.in/static/uploads/2026/10/f47a18d3c3d887daca809494a5071da5.pdf
 - https://mnre.gov.in/static/uploads/2026/10/a83540623f3124539af1201e2ee41e2b.pdf
 
+- https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=234&lid=384
+- https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf
+- https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f81c87cff95e6518_1777956483.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-8b79065349e153b0_1777955998.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-836ba593a69c599b_1777957043.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-cedda8105770290b_1777956234.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-e001292e8b45ff99_1777956151.pdf
+- https://beeindia.gov.in/WriteReadData/L45218/1772711141.pdf
+- https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=164&lid=39
+- https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=201&lid=327
+- https://beeindia.gov.in/WriteReadData/L45218/7534511430467336.pdf
+- https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=204&lid=57
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-DOC-bd8a393a2b952e0d_1776406183.docx
+- https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=203&lid=56
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5a2b0c94b44fdf26_1776845687.pdf
+- https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=235&lid=383
+- https://beeindia.gov.in/show_content.php?lang=1&level=3&ls_id=168&lid=19
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org
 - https://ghgprotocol.org

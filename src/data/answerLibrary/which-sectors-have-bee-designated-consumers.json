@@ -1,0 +1,54 @@
+{
+  "slug": "which-sectors-have-bee-designated-consumers",
+  "q": "Which sectors have BEE designated consumers, and when did mandatory energy audits start?",
+  "title": "BEE designated consumer sectors",
+  "short": "Designated consumers were first notified in 2007 in nine sectors: aluminium, cement, chlor-alkali, fertiliser, iron and steel, pulp and paper, railways, thermal power and textiles. Mandatory energy audits for them were notified in May 2014 under S.O. 1378(E).",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Plant managers and suppliers to large industry",
+  "sections": [
+    {
+      "h": "The notifications",
+      "ul": [
+        "S.O. 394(E), 12 March 2007: criteria for designated consumers in nine energy-intensive sectors.",
+        "S.O. 1378(E), 27 May 2014: mandatory energy audit for designated consumers."
+      ]
+    },
+    {
+      "h": "The nine original sectors",
+      "ul": [
+        "Aluminium, cement, chlor-alkali, fertiliser.",
+        "Iron and steel, pulp and paper, textiles.",
+        "Railways and thermal power stations."
+      ]
+    },
+    {
+      "h": "What it means for an MSME supplier",
+      "p": [
+        "You are not a designated consumer unless your own unit is notified. But designated consumers increasingly ask suppliers for energy and emissions data, especially under the carbon credit trading scheme. Keeping your own records ready makes those requests simple."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares Scope 1 and 2 figures from your own bills and invoices, the data a designated consumer is likely to ask its suppliers for.",
+  "links": [
+    {
+      "label": "Is my factory a designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "MSME supplier to a CCTS plant",
+      "to": "/answers/msme-supplier-to-ccts-obligated-plant"
+    },
+    {
+      "label": "Accredited vs certified auditors",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, designated consumers page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=3&ls_id=168&lid=19"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

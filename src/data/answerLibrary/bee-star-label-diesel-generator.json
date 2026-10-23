@@ -1,0 +1,59 @@
+{
+  "slug": "bee-star-label-diesel-generator",
+  "q": "What does a BEE star label on a diesel generator set mean?",
+  "title": "BEE star label for diesel generators",
+  "short": "BEE's voluntary scheme rates diesel generator sets on specific fuel consumption in grams of diesel per kWh. In the 2014 schedule, 5 stars means 220 g/kWh or less and 1 star means above 302 up to 336 g/kWh. The pilot covered sets up to 19 kW.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Shops, small factories and offices buying a DG set",
+  "sections": [
+    {
+      "h": "The star bands (specific fuel consumption)",
+      "ul": [
+        "5 star: 220 g/kWh or less.",
+        "4 star: above 220 up to 245.",
+        "3 star: above 245 up to 272.",
+        "2 star: above 272 up to 302.",
+        "1 star: above 302 up to 336."
+      ]
+    },
+    {
+      "h": "How it is tested",
+      "p": [
+        "The set runs at full load until stable, then at 75 percent load and 0.8 power factor, and the average fuel use over four hours gives the specific fuel consumption. The engine must carry the ISI mark and the set must meet CPCB norms."
+      ]
+    },
+    {
+      "h": "Using it",
+      "p": [
+        "Lower grams per kWh means less diesel for every unit generated. Check your own set by dividing logged kWh by litres used, then compare with the band. Existing and retrofitted sets are not required to change under this schedule."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads diesel invoices into Scope 1 records and can set them against DG meter readings, so you can see grams or litres per kWh for your own set.",
+  "links": [
+    {
+      "label": "DG specific fuel consumption",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "DG vs grid emissions per kWh",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Is my DG set oversized?",
+      "to": "/answers/is-my-dg-set-oversized-wasting-diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Schedule 18, voluntary labelling of diesel generator sets (2014; fee amendment 2016)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-cedda8105770290b_1777956234.pdf"
+    },
+    {
+      "label": "BEE, Standards and Labelling programme overview",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

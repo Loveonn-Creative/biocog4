@@ -1,0 +1,71 @@
+{
+  "slug": "adeetie-application-steps",
+  "q": "How do I apply for the ADEETIE scheme, step by step?",
+  "title": "How to apply for ADEETIE",
+  "short": "Register on the ADEETIE portal, get an investment grade energy audit and detailed project report from an empanelled auditor, win BEE technical committee approval, then take the loan and install. Audit costs up to Rs 75,000 (micro, small) or Rs 1 lakh (medium) are reimbursed.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners and plant managers in ADEETIE clusters",
+  "sections": [
+    {
+      "h": "The nine steps BEE lists",
+      "ol": [
+        "Register on the scheme portal and identify high energy use areas.",
+        "An empanelled energy auditor runs an investment grade energy audit.",
+        "The auditor prepares a detailed project report with technologies, costs, savings, payback and returns.",
+        "BEE's technical committee reviews the report for feasibility and scheme compliance.",
+        "You apply for the loan; on sanction the audit fee is credited to you.",
+        "You buy and install the approved technology.",
+        "Empanelled auditors verify the actual savings and report to BEE.",
+        "Your lender claims the subvention from BEE, paid quarterly through the nodal bank.",
+        "BEE records the project and tracks its impact."
+      ]
+    },
+    {
+      "h": "Audit cost reimbursement",
+      "p": [
+        "BEE reimburses the investment grade audit and project report at actual cost, up to Rs 75,000 per project or loan for micro and small units and up to Rs 1 lakh for medium units."
+      ]
+    },
+    {
+      "h": "What to have ready",
+      "ul": [
+        "Udyam registration showing your enterprise category.",
+        "Twelve months of electricity bills, fuel invoices and monthly production.",
+        "A shortlist of equipment you want to replace, with nameplate data."
+      ]
+    },
+    {
+      "h": "Where to apply",
+      "p": [
+        "BEE's page lists the ADEETIE portal at adeetie.beeindia.gov.in and a helpdesk for scheme queries."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns a year of bills and invoices into a monthly energy and fuel record per unit of output, which shortens the data-gathering part of the audit and gives the auditor a baseline to check.",
+  "links": [
+    {
+      "label": "ADEETIE interest rates",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "ADEETIE technology list",
+      "to": "/answers/adeetie-technology-list-energy-savings"
+    },
+    {
+      "label": "ADEETIE scheme explained",
+      "to": "/climate-intelligence/adeetie-scheme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=234&lid=384"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

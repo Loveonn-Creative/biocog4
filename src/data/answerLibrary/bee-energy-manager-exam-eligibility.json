@@ -1,0 +1,67 @@
+{
+  "slug": "bee-energy-manager-exam-eligibility",
+  "q": "Who is eligible to sit BEE's energy manager and energy auditor exams?",
+  "title": "BEE energy manager exam eligibility",
+  "short": "A graduate engineer with three years of energy-related work qualifies for both exams, as does a post-graduate engineer, or an engineer with a management post-graduate degree, with two years. Diploma engineers with six years and physics, electronics or chemistry post-graduates with three years qualify only for the manager exam.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Engineers in factories and consultancies",
+  "sections": [
+    {
+      "h": "Energy manager exam",
+      "ul": [
+        "Graduate engineer (BE or BTech) with three years of work involving energy use.",
+        "Post-graduate engineer (ME or MTech) with two years.",
+        "Graduate engineer with a management post-graduate degree, two years.",
+        "Diploma engineer with six years.",
+        "Post-graduate in physics, electronics or chemistry, with physics and maths at graduation, three years."
+      ]
+    },
+    {
+      "h": "Energy auditor exam",
+      "ul": [
+        "Graduate engineer with three years.",
+        "Post-graduate engineer with two years.",
+        "Graduate engineer with a management post-graduate degree, two years."
+      ]
+    },
+    {
+      "h": "Experience rules",
+      "p": [
+        "Experience must involve energy use in operation, maintenance or planning and be complete by the application closing date. BEE registers candidates only on receipt of an experience certificate."
+      ]
+    },
+    {
+      "h": "Keeping the certificate",
+      "p": [
+        "BEE has required certified managers and auditors to attend a refresher course to retain certification; check the refresher course site for the current deadline."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives an energy manager monthly energy and fuel data from invoices, organised by site and source, which saves time on the reporting side of the job.",
+  "links": [
+    {
+      "label": "Exam papers and pass marks",
+      "to": "/answers/bee-energy-auditor-vs-energy-manager-exam"
+    },
+    {
+      "label": "Accredited vs certified auditors",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    },
+    {
+      "label": "Does a small factory need one?",
+      "to": "/answers/bee-certified-energy-manager-small-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, eligibility criteria for certified energy managers and auditors",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-DOC-bd8a393a2b952e0d_1776406183.docx"
+    },
+    {
+      "label": "BEE, energy auditors and energy managers page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=204&lid=57"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "how-to-hire-an-energy-auditor-msme",
+  "q": "How should an MSME choose and hire an energy auditor?",
+  "title": "How an MSME hires an energy auditor",
+  "short": "Start from BEE's lists: certified auditors, accredited auditors for regulated work, or ADEETIE-empanelled auditors if you want the scheme. Ask for calibrated instruments, two or three past reports from your sector, and a scope that ends in costed projects, not a generic checklist.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners and plant managers",
+  "sections": [
+    {
+      "h": "Pick the right list",
+      "ul": [
+        "ADEETIE: you need an empanelled auditor for the investment grade audit, and the cost can be reimbursed.",
+        "Designated consumer duties: you need an accredited energy auditor.",
+        "Everything else: a BEE certified energy auditor, ideally with audits in your sector."
+      ]
+    },
+    {
+      "h": "Questions to ask",
+      "ul": [
+        "Which instruments will you bring, and when were they calibrated by an NABL lab?",
+        "Can you show a past report from my sector, with names removed?",
+        "Will the report give savings in kWh and fuel per unit of output, with cost and payback for each measure?",
+        "Will you come back to measure savings after we implement?"
+      ]
+    },
+    {
+      "h": "What to give the auditor",
+      "ul": [
+        "Twelve months of electricity bills and fuel invoices.",
+        "Monthly production in tonnes or pieces.",
+        "Single line diagram and a list of major motors, compressors, furnaces and boilers."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your bills and fuel invoices into a monthly energy record per unit of output, which you can hand to the auditor on day one.",
+  "links": [
+    {
+      "label": "Accredited vs certified auditors",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    },
+    {
+      "label": "ADEETIE application steps",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "Carbon vs energy audit",
+      "to": "/answers/carbon-audit-vs-energy-audit-vs-esg-audit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, list of accredited energy auditors (updated 21 October 2026)",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=203&lid=56"
+    },
+    {
+      "label": "BEE, procedures for accreditation of energy auditors (summary of the 2010 regulations)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5a2b0c94b44fdf26_1776845687.pdf"
+    },
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "bee-star-rating-induction-motor",
+  "q": "What does a BEE star rating on an induction motor mean?",
+  "title": "BEE star rating for induction motors",
+  "short": "BEE rates three phase induction motors from 1 star (IE2) to 5 star (IE3++, equivalent to IE4) by full-load efficiency. A 7.5 kW, 4 pole motor needs 88.7 percent for 1 star, 90.4 for 3 stars and 92.6 for 5 stars. Labelling is voluntary.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Maintenance heads and motor buyers in factories",
+  "sections": [
+    {
+      "h": "Stars and efficiency classes",
+      "ul": [
+        "1 star: IE2 up to IE2(+).",
+        "2 star: IE2(+) up to IE3.",
+        "3 star: IE3 up to IE3(+).",
+        "4 star: IE3(+) up to IE3(++).",
+        "5 star: IE3(++), which BEE equates to IE4 values."
+      ]
+    },
+    {
+      "h": "What it covers",
+      "p": [
+        "Schedule 6 covers 2, 4 and 6 pole squirrel cage motors for continuous duty, as per IS 12615:2011, from 0.37 kW to 375 kW. IE2 is the entry level for a label. There is no tolerance on the star band: the motors tested must meet the threshold."
+      ]
+    },
+    {
+      "h": "Using it when you buy",
+      "ol": [
+        "Find your motor's rating and poles in the schedule table.",
+        "Compare the efficiency at each star level.",
+        "Weigh the price difference against running hours, as in the IE2 to IE4 replacement page."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Schedule 6, 4 pole motors (nominal efficiency, percent)",
+    "lines": [
+      "7.5 kW: 1 star 88.7, 2 star 89.6, 3 star 90.4, 4 star 91.5, 5 star 92.6",
+      "37 kW: 1 star 92.7, 2 star 93.3, 3 star 93.9, 4 star 94.6, 5 star 95.3"
+    ],
+    "note": "From BEE Schedule 6, Table 2. Check the table for your rating and pole count."
+  },
+  "senseible": "Senseible reads your electricity bills into monthly Scope 2 records, so a motor upgrade appears as a measured drop in kWh at the same production.",
+  "links": [
+    {
+      "label": "IE2 to IE4 motors",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Rewind or replace a motor",
+      "to": "/answers/rewind-or-replace-failed-motor-co2"
+    },
+    {
+      "label": "Mandatory vs voluntary labels",
+      "to": "/answers/bee-mandatory-vs-voluntary-star-label"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Schedule 6, energy efficient three phase induction motors (revision 2, 2013; fee amendment 2016)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-f81c87cff95e6518_1777956483.pdf"
+    },
+    {
+      "label": "BEE, Standards and Labelling programme overview",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

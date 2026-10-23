@@ -1,0 +1,66 @@
+{
+  "slug": "bee-energy-auditor-vs-energy-manager-exam",
+  "q": "What is the difference between BEE's energy manager and energy auditor exams?",
+  "title": "BEE energy auditor vs manager exam",
+  "short": "Both sit the same three written papers on energy management, thermal utilities and electrical utilities, 150 marks each. Auditors also sit a fourth, open book paper on performance assessment of equipment. Every paper needs at least 50 percent to pass.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Engineers preparing for the BEE national certification exam",
+  "sections": [
+    {
+      "h": "The papers",
+      "ul": [
+        "Paper I: General aspects of energy management and energy audit, 3 hours, 150 marks.",
+        "Paper II: Energy efficiency in thermal utilities, 3 hours, 150 marks.",
+        "Paper III: Energy efficiency in electrical utilities, 3 hours, 150 marks.",
+        "Paper IV: Energy performance assessment for equipment and utility systems, open book, 2 hours, 100 marks."
+      ]
+    },
+    {
+      "h": "Who sits what",
+      "ul": [
+        "Energy manager: Papers I, II and III, with at least 50 percent in each.",
+        "Energy auditor: all four papers, with at least 50 percent in each.",
+        "Papers I to III are common to both."
+      ]
+    },
+    {
+      "h": "Study material",
+      "p": [
+        "BEE publishes guide books for each paper and a question bank by topic on its energy auditors and managers page."
+      ]
+    },
+    {
+      "h": "Which one an employer needs",
+      "p": [
+        "Designated consumers must appoint a certified energy manager. Mandatory energy audits must be done by an accredited energy auditor, which needs the auditor certificate plus experience and BEE accreditation."
+      ]
+    }
+  ],
+  "senseible": "Senseible organises bills and fuel invoices into monthly records that energy managers and auditors can use as the measured base for their analysis.",
+  "links": [
+    {
+      "label": "Exam eligibility",
+      "to": "/answers/bee-energy-manager-exam-eligibility"
+    },
+    {
+      "label": "Accredited vs certified auditors",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    },
+    {
+      "label": "Energy manager duties",
+      "to": "/answers/what-does-a-bee-energy-manager-do"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, eligibility criteria for certified energy managers and auditors",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-DOC-bd8a393a2b952e0d_1776406183.docx"
+    },
+    {
+      "label": "BEE, energy auditors and energy managers page",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=204&lid=57"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

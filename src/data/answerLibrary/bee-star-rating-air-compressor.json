@@ -1,0 +1,59 @@
+{
+  "slug": "bee-star-rating-air-compressor",
+  "q": "How does BEE star rate air compressors?",
+  "title": "BEE star rating for air compressors",
+  "short": "BEE rates fixed speed screw and reciprocating compressors of 0.37 to 500 kW on isentropic efficiency at full load. In the 2020 schedule, an air-cooled 11 to 30 kW unit needed 54 percent for 1 star and 78 percent for 5 stars. Labelling is voluntary.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Utility engineers and compressor buyers",
+  "sections": [
+    {
+      "h": "What it covers",
+      "p": [
+        "Schedule 27 covers electrically driven, fixed speed, oil-lubricated rotary and reciprocating compressors, air or water cooled, at 5 bar(g) or more, rated 0.37 to 500 kW. The rating is isentropic efficiency: the ideal compression power divided by the measured packaged input power, tested to IS/ISO 1217."
+      ]
+    },
+    {
+      "h": "Air-cooled bands in the 2020 schedule (isentropic efficiency)",
+      "ul": [
+        "0.37 to under 11 kW: 1 star 44 to 50 percent; 5 star 68 or more.",
+        "11 to 30 kW: 1 star 54 to 60; 5 star 78 or more.",
+        "37 to 55 kW: 1 star 66 to 70; 5 star 82 or more.",
+        "75 to 185 kW: 1 star 71 to 75; 5 star 87 or more.",
+        "200 to 500 kW: 1 star 73 to 77; 5 star 89 or more."
+      ]
+    },
+    {
+      "h": "Before you rely on the bands",
+      "p": [
+        "The schedule BEE publishes marks these as voluntary phase tables valid to 31 December 2022. Check the current table on BEE's star label portal before using a band in a tender. Your site saving still depends on pressure, leaks and controls more than on the label."
+      ]
+    }
+  ],
+  "senseible": "Senseible tracks compressor house electricity through your bills, so the effect of a new machine or a leak fix shows up in monthly kWh.",
+  "links": [
+    {
+      "label": "Compressor specific power",
+      "to": "/answers/air-compressor-specific-power-kw-per-cfm"
+    },
+    {
+      "label": "Compressor sequencing",
+      "to": "/answers/multiple-air-compressors-sequencing-savings"
+    },
+    {
+      "label": "Mandatory vs voluntary labels",
+      "to": "/answers/bee-mandatory-vs-voluntary-star-label"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Schedule 27, positive displacement air compressors (29 May 2020)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-8b79065349e153b0_1777955998.pdf"
+    },
+    {
+      "label": "BEE, Standards and Labelling programme overview",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

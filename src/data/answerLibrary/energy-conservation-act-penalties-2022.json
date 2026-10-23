@@ -1,0 +1,55 @@
+{
+  "slug": "energy-conservation-act-penalties-2022",
+  "q": "What are the penalties under the Energy Conservation Act after the 2022 amendment?",
+  "title": "Energy Conservation Act penalties",
+  "short": "Most failures under the Act now carry a penalty of up to Rs 10 lakh, plus up to Rs 10,000 a day while they continue. Selling equipment below standard adds Rs 2,000 to Rs 5,000 per unit, and an industrial unit over its norm can pay up to twice the price of each excess tonne of oil equivalent.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Designated consumers, equipment makers and building owners",
+  "sections": [
+    {
+      "h": "General failures (section 26(1))",
+      "p": [
+        "Failing to get a directed energy audit done by an accredited auditor, to report energy use and action taken to the state designated agency, or to appoint an energy manager or auditor and file the yearly energy report: up to Rs 10 lakh, plus up to Rs 10,000 a day for continuing failure."
+      ]
+    },
+    {
+      "h": "Products and industrial units (section 26(2))",
+      "ul": [
+        "Making or importing equipment that breaks energy standards: Rs 10 lakh plus Rs 2,000 to Rs 5,000 per appliance.",
+        "Industrial unit or vessel over its norms: also up to twice the price of every tonne of oil equivalent consumed above the norm.",
+        "Vehicle makers missing fuel norms: Rs 25,000 per vehicle up to 0.2 litres per 100 km over, Rs 50,000 above that."
+      ]
+    },
+    {
+      "h": "Other penalties",
+      "ul": [
+        "Ignoring directions on energy norms or the non-fossil share (section 26(3)): up to Rs 10 lakh per failure, plus up to twice the price of each excess tonne of oil equivalent.",
+        "Using a name resembling BEE's, or not giving information BEE asks for: up to Rs 50,000, then up to Rs 10,000 a day.",
+        "Unpaid penalties can be recovered as arrears of land revenue."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps monthly energy and fuel records with their source documents, which makes it easier to answer an information request from BEE or a state agency on time.",
+  "links": [
+    {
+      "label": "2022 amendment changes",
+      "to": "/answers/energy-conservation-amendment-act-2022-changes"
+    },
+    {
+      "label": "State designated agencies",
+      "to": "/answers/state-designated-agency-energy-conservation"
+    },
+    {
+      "label": "Is my factory a designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation (Amendment) Act, 2022 (No. 19 of 2022), Gazette of 20 December 2022",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1772711141.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

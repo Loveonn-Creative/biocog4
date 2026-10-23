@@ -1,0 +1,62 @@
+{
+  "slug": "bee-mandatory-vs-voluntary-star-label",
+  "q": "Which products must carry a BEE star label, and which are voluntary?",
+  "title": "BEE star label: mandatory vs voluntary",
+  "short": "Eleven products need a BEE star label by law, including distribution transformers, room ACs, ceiling fans, LED lamps and refrigerators. Industrial motors, pumps, air compressors, diesel generators and chillers are still voluntary, so an unlabelled one is legal but tells you less.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Factory buyers, procurement teams and equipment makers",
+  "sections": [
+    {
+      "h": "Mandatory (11)",
+      "ul": [
+        "Frost free refrigerator and direct cool refrigerator.",
+        "Stationary storage electric water heater.",
+        "Colour television.",
+        "Room air conditioners: variable speed, fixed speed, and cassette, floor standing, ceiling and corner units.",
+        "Tubular fluorescent lamps and LED lamps.",
+        "Distribution transformers.",
+        "Ceiling fans."
+      ]
+    },
+    {
+      "h": "Voluntary, relevant to factories",
+      "ul": [
+        "General purpose industrial motors (Schedule 6).",
+        "Submersible and agricultural pump sets.",
+        "Air compressors (Schedule 27).",
+        "Diesel generator sets (Schedule 18).",
+        "Chillers (Schedule 21) and light commercial ACs.",
+        "Solid state inverters, solar water heaters and Li-ion traction batteries."
+      ]
+    },
+    {
+      "h": "What this means when you buy",
+      "p": [
+        "For voluntary products, ask for the star label or the test data behind it. BEE accepts test reports only from accredited labs, and there is no negative tolerance on star bands, so a labelled model must meet its band when check tested."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads equipment invoices onto your Scope 3 trail and electricity bills into Scope 2, so the effect of a higher-star purchase shows up in metered kWh rather than on the label alone.",
+  "links": [
+    {
+      "label": "Motor star ratings",
+      "to": "/answers/bee-star-rating-induction-motor"
+    },
+    {
+      "label": "Air compressor star ratings",
+      "to": "/answers/bee-star-rating-air-compressor"
+    },
+    {
+      "label": "Counting star label savings",
+      "to": "/answers/bee-star-labelled-equipment-saving-count"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Standards and Labelling programme overview",
+      "url": "https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=916&lid=750"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

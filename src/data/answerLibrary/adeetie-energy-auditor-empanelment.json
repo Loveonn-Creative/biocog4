@@ -1,0 +1,63 @@
+{
+  "slug": "adeetie-energy-auditor-empanelment",
+  "q": "How does an energy auditor or firm get empanelled under ADEETIE?",
+  "title": "ADEETIE energy auditor empanelment",
+  "short": "Firms need five years of operations, at least one BEE certified energy auditor with five years of experience, and audit instruments. Individuals must be BEE certified energy auditors with five years in industrial or MSME audits. Empanelment lasts up to three years.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Energy auditors, ESCOs and consulting firms",
+  "sections": [
+    {
+      "h": "Firms",
+      "ul": [
+        "At least five years of operational experience.",
+        "At least one BEE certified energy auditor with five or more years of experience.",
+        "Their own energy audit instruments."
+      ]
+    },
+    {
+      "h": "Individuals",
+      "ul": [
+        "BEE certified energy auditor.",
+        "Five or more years in industrial or MSME energy audits.",
+        "Skilled in using energy audit instruments."
+      ]
+    },
+    {
+      "h": "What empanelled auditors do",
+      "ul": [
+        "Investment grade energy audits.",
+        "Detailed project reports for the chosen technology.",
+        "Measurement and verification after installation."
+      ]
+    },
+    {
+      "h": "How to apply",
+      "p": [
+        "Submit the form on adeetie.beeindia.gov.in and email the facilitation centre named in the booklet. One firm or person can be empanelled for several clusters. Tenure is up to three years, subject to performance reviews."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives an MSME client a clean, sourced record of its bills and invoices, so an auditor starts from organised data instead of a shoebox of paper.",
+  "links": [
+    {
+      "label": "Accredited vs certified auditors",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    },
+    {
+      "label": "ADEETIE application steps",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "Energy auditor exam papers",
+      "to": "/answers/bee-energy-auditor-vs-energy-manager-exam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme booklet (clusters, technologies, process, FAQs)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/1772790517.pdf"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
