@@ -1,0 +1,46 @@
+/* India climate data hub. Chart colours follow the validated reference palette
+   (dataviz skill): six categorical slots, light and dark steps chosen per mode.
+   Text never wears a series colour; the light slots under 3:1 always ship with
+   a visible legend and the CSV. */
+.dh-root {
+  --dh-s1: #2a78d6; --dh-s2: #eb6834; --dh-s3: #1baf7a; --dh-s4: #eda100; --dh-s5: #e87ba4; --dh-s6: #008300;
+  --dh-line: hsl(var(--primary));
+  --dh-wash: hsl(var(--primary) / 0.10);
+  --dh-grid: hsl(var(--border));
+  --dh-ink: hsl(var(--foreground));
+  --dh-ink-2: hsl(var(--muted-foreground));
+  --dh-surface: hsl(var(--card));
+  --dh-alt: #8a8a86;
+}
+.dark .dh-root {
+  --dh-s1: #3987e5; --dh-s2: #d95926; --dh-s3: #199e70; --dh-s4: #c98500; --dh-s5: #d55181; --dh-s6: #008300;
+  --dh-alt: #8f8e88;
+}
+
+.dh-hero-chart { touch-action: pan-y; cursor: crosshair; }
+.dh-hero-chart path.dh-trend { stroke: var(--dh-line); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.dh-hero-chart path.dh-area { fill: var(--dh-wash); }
+.dh-hero-chart line.dh-gridline { stroke: var(--dh-grid); stroke-width: 1; }
+.dh-hero-chart text { fill: var(--dh-ink-2); font-size: 11px; font-variant-numeric: tabular-nums; }
+.dh-hero-chart .dh-dot { fill: var(--dh-line); stroke: var(--dh-surface); stroke-width: 2; }
+.dh-hero-chart .dh-cross { stroke: var(--dh-ink-2); stroke-width: 1; }
+
+.dh-draw { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: dh-draw 1.8s cubic-bezier(.3,.7,.2,1) .2s forwards; }
+@keyframes dh-draw { to { stroke-dashoffset: 0; } }
+.dh-fade { opacity: 0; animation: dh-fade .6s ease 1.6s forwards; }
+@keyframes dh-fade { to { opacity: 1; } }
+
+.dh-bar { transition: width .9s cubic-bezier(.3,.7,.2,1); }
+.dh-seg { transition: flex-grow 1s cubic-bezier(.3,.7,.2,1); }
+.dh-hatch { background-image: repeating-linear-gradient(135deg, var(--dh-alt) 0 2px, transparent 2px 6px); }
+
+.dh-chip[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); border-color: hsl(var(--foreground)); }
+
+.dh-source summary { cursor: pointer; list-style: none; }
+.dh-source summary::-webkit-details-marker { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dh-draw { animation: none; stroke-dashoffset: 0; }
+  .dh-fade { animation: none; opacity: 1; }
+  .dh-bar, .dh-seg { transition: none; }
+}
