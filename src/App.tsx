@@ -59,6 +59,8 @@ const CbamCost = lazy(() => import("./pages/CbamCost"));
 const About = lazy(() => import("./pages/About"));
 const Principles = lazy(() => import("./pages/Principles"));
 const CarbonCredits = lazy(() => import("./pages/CarbonCredits"));
+const CarbonCreditsIndia = lazy(() => import("./pages/CarbonCreditsIndia"));
+const SoftwareChooser = lazy(() => import("./pages/SoftwareChooser"));
 const ClimateFinance = lazy(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazy(() => import("./pages/GreenLoan"));
 const GreenLoanCheck = lazy(() => import("./pages/GreenLoanCheck"));
@@ -213,6 +215,8 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/principles" element={<Principles />} />
               <Route path="/carbon-credits" element={<CarbonCredits />} />
+              <Route path="/carbon-credits-india" element={<CarbonCreditsIndia />} />
+              <Route path="/carbon-accounting-software-india" element={<SoftwareChooser />} />
               <Route path="/climate-finance" element={<ClimateFinance />} />
               <Route path="/green-loan" element={<GreenLoan />} />
               <Route path="/green-loan-check" element={<GreenLoanCheck />} />

@@ -44,6 +44,7 @@ import { STATIC_CONTENT } from './staticContent';
 import { markdownToBlocks, type Block } from './render';
 import { DE_PAGES_REVIEWED, DE_PATHS } from './dePages';
 import { DATA_PACK, DE_META, KOSTEN_FAQ } from '@/data/de/cbamDe';
+import { CCI_FAQS, CCI_PATH } from '@/data/carbonCreditsIndia';
 
 export * from './seoMeta';
 export { blocksToHtml, blocksToMarkdown, escapeHtml } from './render';
@@ -294,6 +295,7 @@ function coreRoutes(): SeoRoute[] {
     ['/marketplace', 'core', 0.5], ['/intelligence', 'tool', 0.5],
     ...servicePages.map(sp => [`/${sp.slug}`, 'core', 0.8] as [string, RouteSection, number]),
     ['/scope-3-supplier-evidence', 'tool', 0.7], ['/msme-carbon-number', 'tool', 0.7], ['/green-loan-check', 'tool', 0.7],
+    ['/carbon-accounting-software-india', 'tool', 0.7],
   ];
   const calculators = Object.keys(STATIC_PAGE_META)
     .filter(p => p.startsWith('/calculators/'))
@@ -301,8 +303,11 @@ function coreRoutes(): SeoRoute[] {
       breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Calculators', path: '/calculators' }, { name: STATIC_CONTENT[p]?.h1 ?? p, path: p }],
     }));
 
+  const cciCrumbs = [{ name: 'Home', path: '/' }, { name: 'Carbon credits in India', path: CCI_PATH }];
+  const carbonCreditsIndia = staticRoute(CCI_PATH, 'core', 0.8, { jsonLd: [breadcrumbLd(cciCrumbs), faqLd(CCI_FAQS)] });
+
   return [
-    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample,
+    home, pricing, careers, guidesHub, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];
