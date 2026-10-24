@@ -206,7 +206,14 @@ function Hub() {
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Templates", url: TEMPLATES_PATH }]} />
       <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12">
         <div className="min-w-0 lg:pt-6">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Free templates</p>
+          {/* Reference price: the only published per-supplier consultant rate for CBAM supplier data
+              collection, MAYGREEN Consulting, EUR 250 per supplier (cbamguide.com/compliance/cbam-consultants,
+              checked 24 Oct 2026). Owner approved showing it struck through. */}
+          <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <s className="text-lg font-medium text-muted-foreground decoration-2" aria-label="Consultants charge 250 euros a supplier">€250 a supplier</s>
+            <span className="text-2xl font-semibold tracking-tight text-primary">Free</span>
+            <span className="text-sm text-muted-foreground">What consultants charge to collect this data</span>
+          </p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight [text-wrap:balance] sm:text-5xl">The ESG forms your customers send, already laid out.</h1>
           <p className="mt-4 max-w-xl text-lg text-muted-foreground">Four templates for Indian MSMEs and the companies that buy from them. Watch every field fill in, then download. No sign-up.</p>
           <div className="mt-6"><RoleSwitch role={role} setRole={setRole} /></div>
