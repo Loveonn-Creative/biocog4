@@ -127,6 +127,9 @@ const CarbonPricingCalculator = lazy(() => import("./pages/calculators/CarbonPri
 const CloudEmissionsCalculator = lazy(() => import("./pages/calculators/CloudEmissionsCalculator"));
 const ElectricityBillCarbon = lazy(() => import("./pages/calculators/ElectricityBillCarbon"));
 const FuelCarbon = lazy(() => import("./pages/calculators/FuelCarbon"));
+const DeCbamKosten = lazy(() => import("./pages/de/CbamKosten"));
+const DeCbamRechner = lazy(() => import("./pages/de/CbamRechner"));
+const DeCbamLieferanten = lazy(() => import("./pages/de/CbamLieferanten"));
 
 // Shown only on a first visit to a page whose code is still loading (in-app
 // navigation keeps the current page on screen instead, see BrowserRouter).
@@ -248,6 +251,9 @@ const App = () => (
               <Route path="/emission-factors/:slug" element={<EmissionFactors />} />
               <Route path="/cbam-cost" element={<CbamCost />} />
               <Route path="/cbam-cost/:sector" element={<CbamCost />} />
+              <Route path="/de/cbam-kosten" element={<DeCbamKosten />} />
+              <Route path="/de/cbam-rechner" element={<DeCbamRechner />} />
+              <Route path="/de/cbam-indische-lieferanten" element={<DeCbamLieferanten />} />
               <Route path="/net-zero" element={<NetZero />} />
               <Route path="/trust" element={<Trust />} />
               <Route path="/platform" element={<Platform />} />

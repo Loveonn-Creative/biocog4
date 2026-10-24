@@ -42,6 +42,8 @@ import {
 import { articleMeta, extractFaqs } from './articleSeo';
 import { STATIC_CONTENT } from './staticContent';
 import { markdownToBlocks, type Block } from './render';
+import { DE_PAGES_REVIEWED, DE_PATHS } from './dePages';
+import { DATA_PACK, DE_META, KOSTEN_FAQ } from '@/data/de/cbamDe';
 
 export * from './seoMeta';
 export { blocksToHtml, blocksToMarkdown, escapeHtml } from './render';
@@ -63,6 +65,8 @@ export interface SeoRoute {
   lastmod?: string;
   priority: number;
   changefreq: 'weekly' | 'monthly' | 'yearly';
+  /** Page language; omitted means English. */
+  lang?: 'de';
 }
 
 
@@ -634,6 +638,40 @@ function legalRoutes(): SeoRoute[] {
   });
 }
 
+// German CBAM pages: prerendered and listed only after the native review
+// (DE_PAGES_REVIEWED in ./dePages). Until then they are noindex app routes.
+function germanRoutes(): SeoRoute[] {
+  if (!DE_PAGES_REVIEWED) return [];
+  const blocks: Record<string, Block[]> = {
+    '/de/cbam-kosten': [
+      { p: 'Seit Januar 2026 kostet jede Tonne Stahl, Aluminium, Zement oder Dünger aus Indien CBAM-Zertifikate. Wie viele, entscheidet vor allem der Emissionswert, den Ihr Lieferant liefert.' },
+      { h2: 'Häufige Fragen' },
+      ...KOSTEN_FAQ.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+      { p: '[CBAM-Rechner](/de/cbam-rechner) · [Daten vom indischen Lieferanten](/de/cbam-indische-lieferanten)' },
+    ],
+    '/de/cbam-rechner': [
+      { p: 'Zertifikatskosten je Einfuhrjahr, 2026 bis 2034, für Stahl, Aluminium, Zement, Düngemittel und Wasserstoff aus Indien, mit Standardwert oder geprüftem Ist-Wert.' },
+      { p: '[Was CBAM kostet](/de/cbam-kosten) · [English calculator](/cbam-calculator)' },
+    ],
+    '/de/cbam-indische-lieferanten': [
+      { p: 'Ohne diese Angaben rechnen Sie mit Standardwerten plus Aufschlag.' },
+      { ul: DATA_PACK.map(d => d.label) },
+      { p: '[CBAM-Rechner](/de/cbam-rechner) · [Was CBAM kostet](/de/cbam-kosten)' },
+    ],
+  };
+  return DE_PATHS.map(path => {
+    const m = DE_META[path];
+    const crumbs = [{ name: 'Senseible', path: '/' }, { name: m.h1, path }];
+    return {
+      path, section: 'tool' as const, lang: 'de' as const,
+      title: fitTitle(m.title), description: m.description, h1: m.h1,
+      blocks: blocks[path], breadcrumbs: crumbs,
+      jsonLd: [breadcrumbLd(crumbs), ...(path === '/de/cbam-kosten' ? [{ ...faqLd(KOSTEN_FAQ), inLanguage: 'de' }] : [])],
+      priority: 0.7, changefreq: 'monthly' as const,
+    };
+  });
+}
+
 export function getSeoRoutes(): SeoRoute[] {
   return [
     ...coreRoutes(),
@@ -646,6 +684,7 @@ export function getSeoRoutes(): SeoRoute[] {
     ...factorRoutes(),
     ...cbamCostRoutes(),
     ...legalRoutes(),
+    ...germanRoutes(),
   ];
 }
 
@@ -661,5 +700,8 @@ export function getRedirects(): SeoRedirect[] {
 
 /** Live pages that render with noindex (reachable, linkable, not in the sitemap). */
 export function getNoIndexPaths(): string[] {
-  return solutionPages.filter(s => !s.indexed).map(s => `/solutions/${s.slug}`);
+  return [
+    ...solutionPages.filter(s => !s.indexed).map(s => `/solutions/${s.slug}`),
+    ...(DE_PAGES_REVIEWED ? [] : DE_PATHS),
+  ];
 }
