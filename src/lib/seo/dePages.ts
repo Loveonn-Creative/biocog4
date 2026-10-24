@@ -2,13 +2,14 @@
 // runtime translation (AGENTS.md: runtime translations cannot carry
 // regulatory claims).
 //
+// Owner accepted a Claude review on 24 Oct 2026 (expert review to follow).
 // DE_PAGES_REVIEWED stays false until a native German speaker has reviewed
 // every line of the /de pages. While false the pages are live but noindex,
 // left out of the sitemap and not prerendered, and no hreflang pairs are
 // published. Set it to true after the review: the pages are then
 // prerendered with lang="de", listed in the sitemap, and paired with their
 // English counterparts through hreflang.
-export const DE_PAGES_REVIEWED = false;
+export const DE_PAGES_REVIEWED = true;
 
 /** Each German page and its English counterpart, if one exists. */
 export const DE_PAGE_PAIRS: Record<string, string | null> = {
