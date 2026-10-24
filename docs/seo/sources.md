@@ -3,6 +3,17 @@
 Deep links below are known-good (used on the site already or canonical). For any other publication, cite it precisely in the label and link the publisher's home page from the second list. Never invent a deep URL.
 
 ## Deep links
+- https://www.sebi.gov.in/legal/circulars/feb-2023/dos-and-don-ts-relating-to-green-debt-securities-to-avoid-occurrences-of-greenwashing_67828.html
+- https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html
+- https://www.sebi.gov.in/legal/circulars/feb-2026/revised-norms-for-appointment-of-an-independent-third-party-reviewer-certifier-for-green-debt-security_100043.html
+- https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html
+- https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html
+- https://www.sebi.gov.in/legal/circulars/apr-2025/clarificatory-and-procedural-changes-to-aid-and-strengthen-esg-rating-providers-erps-_93704.html
+- https://www.sebi.gov.in/legal/circulars/jan-2025/timeline-for-review-of-esg-rating-pursuant-to-occurrence-of-material-events-_90930.html
+- https://www.sebi.gov.in/legal/circulars/jul-2023/new-category-of-mutual-fund-schemes-for-environmental-social-and-governance-esg-investing-and-related-disclosures-by-mutual-funds_74186.html
+- https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55004
+- https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55077
+- https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=55104
 - https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en
 - https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=185&lid=72
 - https://beeindia.gov.in/show_content.php?lang=1&level=1&ls_id=189&lid=294

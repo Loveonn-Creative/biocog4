@@ -1,0 +1,66 @@
+{
+  "slug": "sebi-esg-mutual-fund-scheme-rules",
+  "q": "What rules must an ESG mutual fund follow under SEBI's 2023 circular?",
+  "title": "SEBI rules for ESG mutual funds",
+  "short": "Since July 2023 an AMC can run several ESG schemes, each with one of six strategies named in the scheme title. At least 80% of assets must follow that strategy, 65% must sit in companies with assured BRSR Core, and the fund must disclose ESG scores, voting reasons and an annual independent assurance.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Investors, listed companies and suppliers to listed companies",
+  "sections": [
+    {
+      "h": "Six permitted strategies",
+      "ol": [
+        "Exclusion: leaving out activities or practices, with the threshold and reference standard stated.",
+        "Integration: weighing material ESG factors alongside financial ones.",
+        "Best-in-class and positive screening: picking companies that beat peers on disclosed ESG metrics.",
+        "Impact investing: seeking measurable social or environmental impact, with the method to assess it.",
+        "Sustainable objectives: investing in sectors expected to benefit from long-term ESG trends.",
+        "Transition or transition-related investments: backing companies that support environmental and just transition."
+      ]
+    },
+    {
+      "h": "Where the money must go",
+      "ul": [
+        "At least 80% of assets in equity of that strategy, and the rest not contrary to it.",
+        "From 1 October 2024, at least 65% of assets in companies that report a comprehensive BRSR and have assurance on BRSR Core; the rest may be in companies with BRSR disclosures.",
+        "The strategy must appear in the scheme name, for example an ESG Exclusionary Strategy Fund."
+      ]
+    },
+    {
+      "h": "What the fund must disclose",
+      "ul": [
+        "Monthly: security-wise BRSR Core and BRSR scores from SEBI-registered ESG rating providers, the provider's name, and the reason if the provider changes.",
+        "Voting: whether each resolution was supported or opposed for environmental, social or governance reasons, from AGMs held on or after 1 April 2024.",
+        "Annually: a fund manager commentary on how the strategy was applied, engagement case studies and the number of engagements."
+      ]
+    },
+    {
+      "h": "Checks on the fund itself",
+      "p": [
+        "The AMC must obtain independent reasonable assurance each year that the portfolio follows the stated strategy, from a provider with no conflict of interest, meaning it does not sell products or consulting services to the AMC group. The AMC board must also certify compliance based on an internal ESG audit."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not advise on investments. For companies, the takeaway is that assured BRSR Core data decides whether ESG funds can hold their shares, and Senseible helps suppliers provide traceable data for it.",
+  "links": [
+    {
+      "label": "ESG funds and the 65% BRSR Core rule",
+      "to": "/answers/esg-fund-65-percent-brsr-core-assurance"
+    },
+    {
+      "label": "Core ESG rating and BRSR Core",
+      "to": "/answers/core-esg-rating-uses-assured-brsr-core-data"
+    },
+    {
+      "label": "The nine BRSR Core attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, New category of mutual fund schemes for ESG investing and related disclosures, 20 July 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/new-category-of-mutual-fund-schemes-for-environmental-social-and-governance-esg-investing-and-related-disclosures-by-mutual-funds_74186.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

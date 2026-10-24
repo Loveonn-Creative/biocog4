@@ -1,0 +1,63 @@
+{
+  "slug": "core-esg-rating-uses-assured-brsr-core-data",
+  "q": "What is a Core ESG rating and how is it linked to BRSR Core assurance?",
+  "title": "Core ESG rating and BRSR Core",
+  "short": "A Core ESG rating is built only on data a company has had assured or audited by a third party. SEBI-registered raters offer it once the company has a BRSR Core. Unverified data can only appear as commentary in the rationale, so assured figures directly decide the score.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Listed companies preparing BRSR Core and their suppliers",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "SEBI's master circular requires ESG rating providers to offer a Core ESG rating based on third-party assured or audited data disclosed by the company. Core ratings, the Core transition score and the Core combined score are offered once a Business Responsibility and Sustainability Report Core is available for the rated entity."
+      ]
+    },
+    {
+      "h": "What happens to unverified data",
+      "p": [
+        "The rationale for a Core rating may include commentary on data that has not been assured, so users know about it, but that data does not enter the Core rating itself. The aim is that users can act on the unverified information if they choose, without it changing the score."
+      ]
+    },
+    {
+      "h": "Why assurance now has a price",
+      "ul": [
+        "Figures without assurance cannot lift a Core rating.",
+        "SEBI's ESG mutual fund rules require ESG schemes to hold at least 65% of assets in companies that report a full BRSR and have assurance on BRSR Core, and to show BRSR Core scores from registered raters in monthly portfolios.",
+        "So assured BRSR Core data affects both a company's Core rating and whether ESG funds can hold it."
+      ]
+    },
+    {
+      "h": "Where suppliers fit",
+      "p": [
+        "BRSR Core attributes include energy, emissions and waste figures. When a listed company extends assurance to its value chain, suppliers are asked for figures that can stand up to an assurer, with source documents behind them."
+      ]
+    }
+  ],
+  "senseible": "Senseible links every energy and fuel figure to the bill it came from, so an assurer can trace numbers back to documents. The assurance itself comes from an independent provider.",
+  "links": [
+    {
+      "label": "BRSR Core: assurance or assessment",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    },
+    {
+      "label": "The nine BRSR Core attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "ESG funds and the 65% BRSR Core rule",
+      "to": "/answers/esg-fund-65-percent-brsr-core-assurance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    },
+    {
+      "label": "SEBI circular, New category of mutual fund schemes for ESG investing and related disclosures, 20 July 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/jul-2023/new-category-of-mutual-fund-schemes-for-environmental-social-and-governance-esg-investing-and-related-disclosures-by-mutual-funds_74186.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

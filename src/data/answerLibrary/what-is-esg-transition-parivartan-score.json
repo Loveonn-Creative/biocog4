@@ -1,0 +1,59 @@
+{
+  "slug": "what-is-esg-transition-parivartan-score",
+  "q": "What is the Transition or Parivartan score in SEBI's ESG rating rules?",
+  "title": "What a Parivartan score measures",
+  "short": "The Transition or Parivartan score measures how fast a company is moving towards net zero or better ESG risk management, and what it invests to get there, rather than judging only its current emissions. SEBI requires ESG raters to offer it so Indian firms cutting emissions are not scored only on today's level.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Hard-to-abate listed companies and their suppliers",
+  "sections": [
+    {
+      "h": "Why SEBI created it",
+      "p": [
+        "SEBI's master circular notes that many Indian companies may be rated on their current emission levels as they align with India's commitment to net zero by 2070, despite large year-on-year reductions. Judging them only on an absolute yardstick may not create the right incentives for transition finance."
+      ]
+    },
+    {
+      "h": "What it measures",
+      "p": [
+        "The score reflects the velocity of, and investment in, the transition: incremental changes the company has made in recent years, or concrete plans and targets to manage transition risks and opportunities. SEBI says it could track changes in quantitative metrics over time, or revenue from environmental or social products and services, depending on the provider's model."
+      ]
+    },
+    {
+      "h": "How it combines with the ESG rating",
+      "p": [
+        "Providers must also issue a Combined score that reflects both the current ESG status and the ability to transition. SEBI writes it as ESG score plus transition score, but notes the plus sign is not simple addition: each provider combines them according to its published methodology. A Core version uses only assured data and is offered once BRSR Core is available for the company."
+      ]
+    },
+    {
+      "h": "What it means for a company",
+      "ul": [
+        "A falling emissions trend can earn credit even when absolute emissions are still high.",
+        "Plans with dates and numbers carry weight; vague ambitions do not.",
+        "Year-on-year data on energy, fuel and emissions, ideally assured, is what the trend is measured on."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps month-by-month energy and fuel records from bills, which show a trend over time. It does not calculate ESG or Parivartan scores.",
+  "links": [
+    {
+      "label": "ESG rating products SEBI requires",
+      "to": "/answers/sebi-esg-rating-products-list"
+    },
+    {
+      "label": "Core ESG rating and BRSR Core",
+      "to": "/answers/core-esg-rating-uses-assured-brsr-core-data"
+    },
+    {
+      "label": "SEBI transition bond disclosures",
+      "to": "/answers/sebi-transition-bond-disclosure-requirements"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "sebi-esg-rating-products-list",
+  "q": "What ESG rating products must a SEBI-registered ESG rating provider offer?",
+  "title": "ESG rating products SEBI requires",
+  "short": "SEBI requires every registered ESG rating provider to offer at least six products: an ESG rating, a Transition or Parivartan score, a Combined score, and Core versions of all three built only on assured data. All ratings use a 0 to 100 scale, must be comparable across sectors and must reflect Indian context.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Listed companies, investors and suppliers asked about ESG scores",
+  "sections": [
+    {
+      "h": "The six required products",
+      "ol": [
+        "ESG rating.",
+        "Transition or Parivartan score.",
+        "Combined score, joining the ESG rating and the transition score.",
+        "Core ESG rating, based only on third-party assured or audited data.",
+        "Core Transition or Parivartan score.",
+        "Core Combined score."
+      ]
+    },
+    {
+      "h": "Rules that apply to all six",
+      "ul": [
+        "Scores run from 0 to 100, where 100 is the best.",
+        "Each product needs a distinct name, prefix or suffix so users can tell them apart.",
+        "Ratings must be sector-agnostic so companies in different sectors can be compared.",
+        "They must reflect environmental, social and governance aspects that matter in India; SEBI gives an indicative list of Indian parameters."
+      ]
+    },
+    {
+      "h": "When fewer products are allowed",
+      "p": [
+        "If a provider's ESG rating already uses only assured data, it need not issue a separate Core version. If transition assessment is built into the ESG rating, it need not offer a separate Combined score. In both cases the provider must say so in its rationale and methodology."
+      ]
+    },
+    {
+      "h": "What legally counts as an ESG rating",
+      "p": [
+        "The CRA Regulations define ESG ratings broadly: any rating product marketed as an opinion on an issuer's or security's ESG profile, exposure to ESG, climate or environmental risk, or impact on society and the environment, issued using a ranking system, whether or not it is called an ESG rating. Since 4 July 2023 these providers are regulated under the CRA Regulations."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not an ESG rating provider. For a supplier, its bill-based energy and emissions records are the kind of evidence a listed buyer uses when its own ESG rating is assessed.",
+  "links": [
+    {
+      "label": "What a Parivartan score measures",
+      "to": "/answers/what-is-esg-transition-parivartan-score"
+    },
+    {
+      "label": "Core ESG rating and BRSR Core",
+      "to": "/answers/core-esg-rating-uses-assured-brsr-core-data"
+    },
+    {
+      "label": "Indian parameters in ESG ratings",
+      "to": "/answers/india-specific-esg-rating-parameters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for ESG Rating Providers, 11 July 2025",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-esg-rating-providers-erps-_95219.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}

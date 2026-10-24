@@ -1,0 +1,73 @@
+{
+  "slug": "green-bond-greenwashing-dos-and-donts-sebi",
+  "q": "What are SEBI's dos and don'ts for green bond issuers to avoid greenwashing?",
+  "title": "SEBI greenwashing rules for green bonds",
+  "short": "SEBI's February 2023 circular binds every green debt issuer to seven rules: keep checking the green impact, never use the money outside the green definition, disclose any misuse and redeem early if holders demand it, avoid misleading labels and cherry-picked data, quantify negative externalities and never imply a certification it does not have.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Listed companies, NBFCs and their finance teams issuing green debt",
+  "sections": [
+    {
+      "h": "How SEBI defines greenwashing",
+      "p": [
+        "SEBI accepts that there is no universal taxonomy, and uses the common definition: making false, misleading, unsubstantiated or otherwise incomplete claims about the sustainability of a product, service or business operation. The rules apply to every issuer that has listed or proposes to list green debt securities."
+      ]
+    },
+    {
+      "h": "The seven obligations",
+      "ol": [
+        "When raising money for a transition, keep monitoring whether the path taken is actually reducing adverse environmental impact as promised in the offer document.",
+        "Do not use green bond money for anything outside the definition of green debt security in the NCS Regulations.",
+        "If such misuse comes to light on bonds already issued, disclose it to investors and, if a majority of debenture holders require it, redeem the bonds early.",
+        "Do not use misleading labels, hide trade-offs or cherry-pick research data to highlight green practices while obscuring unfavourable ones.",
+        "Maintain the highest standards associated with a green issue while adhering to the rating assigned to it.",
+        "Quantify the negative externalities of how the money is used.",
+        "Do not make untrue claims that give a false impression of third-party certification."
+      ]
+    },
+    {
+      "h": "Where the rule now sits",
+      "p": [
+        "The dos and don'ts were appended as Chapter IX-A of SEBI's operational circular for non-convertible securities, and the February 2023 disclosure circular makes compliance with them one of the issuer's stated responsibilities. The June 2025 framework applies the same seven-point list, renamed purpose-washing, to social and sustainability bonds."
+      ]
+    },
+    {
+      "h": "What this means in practice",
+      "ul": [
+        "Keep project-level records that tie each rupee spent to an eligible category, because early redemption is a real remedy, not a fine.",
+        "Report the downsides, such as construction emissions or land use, alongside the benefits. SEBI asks for negative externalities to be quantified, not just mentioned.",
+        "Describe an external review exactly as it was done. Calling a second party opinion a certification is the kind of claim rule 7 targets."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps dated, fingerprinted fuel and electricity records for financed sites, which helps issuers back impact figures with evidence. It does not review, rate or label bonds.",
+  "links": [
+    {
+      "label": "SEBI rules for green debt securities",
+      "to": "/answers/green-debt-securities-sebi-requirements"
+    },
+    {
+      "label": "Green bond impact reporting metrics",
+      "to": "/answers/green-bond-impact-reporting-metrics"
+    },
+    {
+      "label": "Green bond reviewer rules from 2026",
+      "to": "/answers/green-bond-independent-reviewer-rules-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular, Dos and don'ts relating to green debt securities to avoid occurrences of greenwashing, 3 February 2023",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/dos-and-don-ts-relating-to-green-debt-securities-to-avoid-occurrences-of-greenwashing_67828.html"
+    },
+    {
+      "label": "SEBI circular, Revised disclosure requirements for issuance and listing of green debt securities, 6 February 2023 (now Chapter IX of the NCS Master Circular)",
+      "url": "https://www.sebi.gov.in/legal/circulars/feb-2023/revised-disclosure-requirements-for-issuance-and-listing-of-green-debt-securities_67837.html"
+    },
+    {
+      "label": "SEBI circular, Framework for ESG Debt Securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html"
+    }
+  ],
+  "reviewed": "2026-10-23"
+}
