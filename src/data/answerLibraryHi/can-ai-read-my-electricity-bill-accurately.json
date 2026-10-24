@@ -1,0 +1,70 @@
+{
+  "slug": "can-ai-read-my-electricity-bill-accurately",
+  "q": "क्या AI मेरा बिजली का bill carbon report के लायक सही पढ़ सकता है?",
+  "title": "क्या AI बिजली का bill सही पढ़ सकता है?",
+  "short": "जो आँकड़ा मायने रखता है, यानी bill की गई kWh, उसके लिए हाँ, बशर्ते reading पर आँख मूँदकर भरोसा न करके उसे जाँचा जाए। Carbon report को खपत की units और billing period चाहिए। अच्छे systems इन्हें तय fields में पढ़ते हैं, साफ़ न हो तो field ख़ाली छोड़ते हैं और flag करते हैं, ताकि इंसान सारे bills की जगह सिर्फ़ कुछ शक वाले bills जाँचे।",
+  "sections": [
+    {
+      "h": "Carbon report को bill से क्या चाहिए",
+      "ul": [
+        "kWh में खपत की units। GHG Protocol Scope 2 Guidance में यही activity data है।",
+        "Billing period, ताकि units सही महीने और साल में जाएँ।",
+        "Tariff category और sanctioned load, जाँच के लिए काम का संदर्भ पर हिसाब का हिस्सा नहीं।",
+        "कुछ भी निजी नहीं। Emissions के लिए consumer का नाम, पता, फ़ोन, और consumer, account या meter numbers नहीं चाहिए।"
+      ]
+    },
+    {
+      "h": "भारतीय bills पर reading कहाँ ग़लत होती है",
+      "ul": [
+        "kVAh billing। कई HT और कुछ LT bills kVAh में charge करते हैं। kVAh, kWh नहीं है, इसलिए kg CO2 प्रति kWh वाला grid factor उस पर नहीं लग सकता।",
+        "Multiplying factor। CT-operated meters पर units = (मौजूदा reading घटा पिछली reading) x multiplying factor। इसके बिना meter का अंतर पढ़ने से खपत कम दिखती है।",
+        "Net metering। Export और import के columns साथ-साथ होते हैं; सिर्फ़ import की गई units grid खपत हैं।",
+        "Arrears और revised bills। पिछले महीनों का adjustment इस महीने की खपत की तरह पढ़ा जा सकता है।",
+        "ख़राब scans और हाथ से लिखे bills, जहाँ अंक सच में पढ़े नहीं जा सकते।"
+      ]
+    },
+    {
+      "h": "Reading ख़ुद कैसे जाँचें",
+      "ol": [
+        "Meter readings और multiplying factor से units दोबारा निकालें, और bill की units से मिलाएँ।",
+        "पिछले साल के उसी महीने से तुलना करें। कई गुना की छलांग का मतलब आम तौर पर ग़लत पढ़ा decimal या kVAh वाली line है।",
+        "देखें कि billing period पिछले bill से overlap न करे।",
+        "Bill की file आँकड़े के साथ रखें ताकि auditor आपकी जाँच दोहरा सके।"
+      ]
+    },
+    {
+      "h": "कोई एक accuracy percentage क्यों नहीं है",
+      "p": [
+        "Accuracy bill के format, scan की quality और discom पर निर्भर है। किसी एक test set का छपा percentage आपके bills के बारे में ज़्यादा नहीं बताता। Auditor जिस पर भरोसा करता है वह यह है कि हर आँकड़ा उस page तक जाँचा जा सके जहाँ से आया, साफ़ न दिखने वाले fields पर अंदाज़े की जगह निशान लगा हो, और हिसाब दोबारा किया जा सके।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "जाँच का उदाहरण: एक HT bill",
+    "lines": [
+      "पिछली reading 45,210, मौजूदा reading 48,390, multiplying factor 10",
+      "(48,390 घटा 45,210) x 10 = 3,180 x 10 = 31,800 kWh, bill की units से मेल खाता है",
+      "31,800 x 0.710 kg CO2 प्रति kWh = 22,578 kg CO2, महीने के लिए लगभग 22.6 t"
+    ],
+    "note": "अगर multiplying factor छूट जाता, तो आँकड़ा 3,180 kWh पढ़ा जाता और emissions दस गुना कम दिखते।"
+  },
+  "senseible": "Senseible billing period, tariff category, sanctioned load और units को temperature 0 पर एक तय schema में पढ़ता है; साफ़ न दिखने वाला field ख़ाली छोड़ा जाता है और कम भरोसे वाली reading को rule checks में कम अंक मिलते हैं। यह निजी जानकारी नहीं निकालता, kVAh lines पर grid factor नहीं लगाता और net-metered export को खपत नहीं गिनता। यह कोई accuracy percentage नहीं छापता।",
+  "links": [
+    {
+      "label": "बिजली के bill से footprint",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "एक ही bill पर AI अलग आँकड़े क्यों देता है",
+      "to": "/answers/why-ai-gives-different-numbers-for-same-bill"
+    },
+    {
+      "label": "अस्पष्ट और हाथ से लिखे bills",
+      "to": "/answers/handwritten-bills"
+    },
+    {
+      "label": "Senseible white paper",
+      "to": "/white-paper"
+    }
+  ]
+}

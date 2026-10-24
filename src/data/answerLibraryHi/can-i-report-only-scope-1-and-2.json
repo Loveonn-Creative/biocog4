@@ -1,0 +1,61 @@
+{
+  "slug": "can-i-report-only-scope-1-and-2",
+  "q": "क्या मैं सिर्फ़ Scope 1 और Scope 2 report कर सकता हूँ, या buyers और regulators को Scope 3 चाहिए?",
+  "title": "क्या सिर्फ़ Scope 1 और 2 report कर सकते हैं?",
+  "short": "GHG Protocol Corporate Standard के तहत, हाँ: Scope 1 और 2 ज़रूरी हैं और Scope 3 वैकल्पिक है। BRSR Core भी सिर्फ़ Scope 1 और 2 माँगता है। Scope 3 की उम्मीद IFRS S2, EU ESRS, और SBTi targets के तहत होती है जब Scope 3 आपके कुल का 40% या ज़्यादा हो।",
+  "sections": [
+    {
+      "h": "हर framework असल में क्या माँगता है",
+      "ul": [
+        "GHG Protocol Corporate Standard (2004): Scope 1 और Scope 2 report करने ज़रूरी हैं। Scope 3 एक वैकल्पिक reporting category है।",
+        "SEBI BRSR Core (12 July 2023 का circular): Principle 6 के KPIs Scope 1 और Scope 2 emissions और उनकी intensity हैं। Scope 3 व्यापक BRSR में leadership indicator के रूप में है, जो voluntary है।",
+        "IFRS S2 (ISSB, 2023): Scope 1, 2 और 3 तीनों ज़रूरी हैं, इस छूट के साथ कि कंपनी standard के तहत reporting के पहले साल में Scope 3 छोड़ सकती है।",
+        "ESRS E1 (EU CSRD): दायरे की कंपनियों के लिए gross Scope 1, 2 और 3 ज़रूरी हैं। February 2026 में Council की मंज़ूरी वाला EU Omnibus simplification दायरे की कंपनियों को सीमित करता है और standards बदल रहा है, इसलिए मौजूदा text देखें।",
+        "SBTi near-term criteria: target में Scope 3 तब शामिल होना चाहिए जब Scope 3 कुल Scope 1, 2 और 3 emissions का 40% या ज़्यादा हो। SME route के नियम हल्के हैं।"
+      ]
+    },
+    {
+      "h": "Buyers आम तौर पर supplier से क्या चाहते हैं",
+      "p": [
+        "ज़्यादातर buyer questionnaires supplier से उसका अपना Scope 1 और Scope 2 माँगते हैं, क्योंकि वही आँकड़े buyer के Scope 3 का हिस्सा बनते हैं। वे यह भी पूछ सकते हैं कि आप अपना Scope 3 नापते हैं या नहीं, पर साफ़, स्रोत वाला Scope 1 और 2 आँकड़ा मुख्य माँग का जवाब है।",
+        "EU CBAM फिर अलग है। यह सामान के direct emissions और, कुछ सामान के लिए, उन्हें बनाने में लगी बिजली को ढकता है। यह Scope 3 नहीं माँगता।"
+      ]
+    },
+    {
+      "h": "फ़ैसले का आसान नियम",
+      "ol": [
+        "हर साल fuel और बिजली के records से Scope 1 और 2 पूरा report करें।",
+        "अगर आप भारत में listed हैं और BRSR Core के तहत आते हैं, तो वही assured ज़रूरत है; Scope 3 सिर्फ़ voluntary disclosure के रूप में जोड़ें।",
+        "अगर कोई buyer, lender या parent IFRS S2 या ESRS के तहत report करता है, तो अभी अपने Scope 1 और 2 और बाद में Scope 3 की माँग की उम्मीद रखें।",
+        "अगर SBTi target की योजना है, तो पहले Scope 3 का अनुमान लगाएँ। अगर यह आपके कुल का 40% या ज़्यादा है, तो आपको Scope 3 target चाहिए।",
+        "जब Scope 3 छोड़ें, तो report में साफ़ लिखें। चुपचाप छोड़ी गई कमी, बताई गई boundary से बुरी लगती है।"
+      ]
+    },
+    {
+      "h": "कुछ Scope 3 नापना फिर भी क्यों मदद करता है",
+      "p": [
+        "ज़्यादातर manufacturers के लिए खरीदा गया सामान और transport, Scope 1 और 2 को मिलाकर भी उनसे बड़े होते हैं। खरीद के records से Scope 3 की मोटी जाँच दिखा देती है कि कौन सी categories मायने रखती हैं, ताकि आप पूरी inventory बनाए बिना 40% test का जवाब दे सकें और buyer के सवालों के लिए तैयार रहें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible आपके fuel और बिजली records से Scope 1 और Scope 2 निकालता है और Scope 3 की lines अलग supplier evidence trail में रखता है। यह तय नहीं करता कि आप पर कौन सा framework लागू है, और अपने आप पूरी Scope 3 inventory नहीं बनाता।",
+  "links": [
+    {
+      "label": "Senseible के साथ Scope 1, 2 और 3",
+      "to": "/answers/scope-1-2-3-with-senseible"
+    },
+    {
+      "label": "क्या BRSR में Scope 3 ज़रूरी है?",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "कौन सी Scope 3 categories ज़रूरी हैं?",
+      "to": "/answers/which-scope-3-categories-are-mandatory"
+    },
+    {
+      "label": "SBTi कब Scope 3 target माँगता है",
+      "to": "/answers/when-is-a-scope-3-target-required-sbti"
+    }
+  ],
+  "reviewNote": "EU Omnibus simplification के तहत ESRS E1 का दायरा और सामग्री बदली जा रही है; हर नए delegated act के बाद EU वाला हिस्सा दोबारा जाँचें।"
+}

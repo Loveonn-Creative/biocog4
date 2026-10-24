@@ -1,0 +1,71 @@
+{
+  "slug": "diesel-generator-scope-1-or-scope-2",
+  "q": "Diesel generator (DG set) की बिजली Scope 1 है या Scope 2, और इसे कैसे निकालें?",
+  "title": "DG set की बिजली Scope 1 या Scope 2?",
+  "short": "आपके अपने या आपके चलाए DG set की बिजली Scope 1 है, क्योंकि diesel आप ख़ुद जलाते हैं। इसे kWh से नहीं, litre से निकालें: litre x 2.68 kg CO2 प्रति litre। यह Scope 2 सिर्फ़ तब है जब आप DG की बिजली किसी और से खरीदते हैं, जैसे मकान मालिक जो set चलाता है और आपसे प्रति unit पैसे लेता है।",
+  "sections": [
+    {
+      "h": "कौन सा scope, हर स्थिति में",
+      "ul": [
+        "आपका अपना DG set, आपका diesel: Scope 1, stationary combustion।",
+        "किराए का DG set जिसे आप चलाते हैं और जिसमें diesel आप डालते हैं: operational control के तहत Scope 1, क्योंकि combustion आपके नियंत्रण में है।",
+        "मकान मालिक, mall या industrial park की प्रति kWh bill की गई backup बिजली: Scope 2, खरीदी गई बिजली, अगर मिल सके तो उस supply का factor लगाकर।",
+        "गाड़ियों या forklifts के लिए खरीदा diesel: Scope 1 mobile combustion, DG set से अलग रखें।"
+      ]
+    },
+    {
+      "h": "Units से नहीं, fuel से निकालें",
+      "ol": [
+        "उस period के fuel slips या invoices से DG set के लिए खरीदे गए diesel के litre जोड़ें।",
+        "Stock के हिसाब से adjust करें: शुरुआत का tank level + खरीद घटा आख़िर का level = जलाए गए litre।",
+        "2.68 kg CO2 प्रति litre से गुणा करें, जो diesel के लिए IPCC 2006 का default है।",
+        "DG के kWh को Scope 2 में दोबारा न गिनें। kWh सिर्फ़ grid बिजली से लागत और intensity की तुलना के काम आते हैं।"
+      ]
+    },
+    {
+      "h": "प्रति kWh DG बिजली बनाम grid बिजली",
+      "p": [
+        "ठीक हालत का DG set अच्छे load पर आम तौर पर लगभग 3 से 3.5 kWh प्रति litre देता है, जो BEE guidance की specific fuel consumption range है। इससे लगभग 0.77 से 0.89 kg CO2 प्रति kWh बनता है (2.68 को 3.5 और 3.0 से भाग देकर), जो भारत के grid आँकड़े 0.710 kg CO2 प्रति kWh से ज़्यादा है। हल्के load पर set सिर्फ़ 2.5 kWh प्रति litre दे सकता है, जो लगभग 1.07 kg CO2 प्रति kWh है। ये अनुमान हैं; असली आँकड़ा आपके अपने litre और meter reading से निकलता है।"
+      ]
+    },
+    {
+      "h": "आम ग़लतियाँ",
+      "ul": [
+        "Litre की जगह diesel पर ख़र्च हुए रुपये लेना।",
+        "Diesel दो बार गिनना: एक बार slip से और फिर Scope 2 में DG kWh के रूप में।",
+        "गाड़ी का diesel DG के diesel में मिलाना, जिससे छिप जाता है कि backup बिजली emissions में कितनी महँगी है।",
+        "नकद में बिना invoice खरीदा diesel छोड़ देना; उसे एक note के साथ record करें।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: backup बिजली का एक महीना",
+    "lines": [
+      "DG set में जला diesel: 1,200 litre",
+      "Scope 1: 1,200 x 2.68 = 3,216 kg CO2",
+      "DG meter reading: 3,900 kWh, यानी 3,900 / 1,200 = 3.25 kWh प्रति litre",
+      "प्रति kWh: 3,216 / 3,900 = लगभग 0.825 kg CO2 प्रति kWh",
+      "Grid से उतनी ही units: 3,900 x 0.710 = 2,769 kg CO2, लगभग 447 kg कम"
+    ],
+    "note": "2.68 का factor सिर्फ़ CO2 का है; अगर आपका framework माँगे तो diesel से methane और nitrous oxide थोड़ा और जोड़ते हैं।"
+  },
+  "senseible": "Senseible fuel slips और invoices से diesel की quantity पढ़ता है और Scope 1 को 2.68 kg CO2 प्रति litre पर निकालता है, जो IPCC 2006 का default है, और हर line पर स्रोत दिखाता है। यह DG meters नहीं पढ़ता और kWh से litre का अंदाज़ा नहीं लगाता।",
+  "links": [
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "भारतीय manufacturing में Scope 1 emissions",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    },
+    {
+      "label": "किराए का DG set: Scope 1 या Scope 3?",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "भारत का grid बिजली factor",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ]
+}

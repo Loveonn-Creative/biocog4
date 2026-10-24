@@ -1,0 +1,54 @@
+{
+  "slug": "india-grid-emission-factor-2025-26",
+  "q": "FY 2025-26 के लिए भारत का grid emission factor क्या है?",
+  "title": "FY 2025-26 का भारत grid emission factor",
+  "short": "0.675 tonne CO2 प्रति MWh, यानी 0.675 kg प्रति kWh। यह CEA के CO2 Baseline Database version 22.0 में, जो August 2026 में छपा, भारतीय grid का weighted average है, cross-border trade के हिसाब से adjust किया हुआ और grid में डाली गई renewable और captive बिजली सहित।",
+  "sections": [
+    {
+      "h": "FY 2025-26 के चार आँकड़े",
+      "ul": [
+        "Weighted average: 0.675 t CO2 प्रति MWh। Location-based Scope 2 footprint के लिए यही लें।",
+        "Simple operating margin: 0.963।",
+        "Build margin: 0.446।",
+        "Combined margin (50:50): 0.705। Operating, build और combined margins project baselines के लिए हैं, footprint के लिए नहीं।"
+      ]
+    },
+    {
+      "h": "इसे कैसे लगाएँ",
+      "ol": [
+        "April 2025 से March 2026 तक के अपने बिजली bills से grid kWh लें।",
+        "0.675 kg CO2 प्रति kWh से गुणा करें।",
+        "स्रोत लिखें: CEA CO2 Baseline Database version 22.0, FY 2025-26 weighted average।"
+      ]
+    },
+    {
+      "h": "यह किसकी जगह लेता है",
+      "p": [
+        "Version 21.0 ने FY 2024-25 के लिए 0.710 दिया था। Version 22.0 उस साल के लिए 0.710 ही रखता है और FY 2025-26 को 0.675 पर जोड़ता है, जो FY 2013-14 से series का सबसे कम आँकड़ा है।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "FY 2025-26 में 1,20,000 kWh इस्तेमाल करने वाली factory",
+    "lines": [
+      "1,20,000 kWh x 0.675 kg CO2 प्रति kWh = 81,000 kg",
+      "Location-based Scope 2: 81.0 t CO2",
+      "पहले वाले 0.710 पर उतनी ही खपत से 85.2 t CO2 बनता है"
+    ]
+  },
+  "senseible": "Senseible बिजली के bills को हर meter और site के लिए तारीख वाले kWh records में बदलता है, ताकि आप CEA का जो भी factor और version लगाएँ, हर Scope 2 आँकड़ा bill और उसके पीछे के factor तक जाँचा जा सके।",
+  "links": [
+    {
+      "label": "Weighted average बनाम combined margin",
+      "to": "/answers/cea-weighted-average-vs-combined-margin"
+    },
+    {
+      "label": "किस साल के लिए कौन सा CEA version",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    },
+    {
+      "label": "CEA factor CO2 है या CO2e?",
+      "to": "/answers/is-cea-grid-factor-co2-or-co2e"
+    }
+  ]
+}

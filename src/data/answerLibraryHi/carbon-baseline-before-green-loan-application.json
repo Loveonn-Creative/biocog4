@@ -1,0 +1,43 @@
+{
+  "slug": "carbon-baseline-before-green-loan-application",
+  "q": "Green loan के लिए आवेदन से पहले क्या मुझे carbon baseline चाहिए?",
+  "title": "Green loan से पहले carbon baseline",
+  "short": "इससे मदद मिलती है। बारह महीने की energy खपत, fuel और production की baseline दिखाती है कि आप कहाँ से शुरू कर रहे हैं, ताकि project के असर का अनुमान लग सके और बाद में जाँचा जा सके। कुछ lenders इसे माँगते हैं; जहाँ नहीं माँगते, वहाँ भी इससे बात साफ़ होती है।",
+  "sections": [
+    {
+      "h": "इसमें क्या शामिल करें",
+      "ul": [
+        "बारह महीने के बिजली bills और fuel invoices।",
+        "उन्हीं महीनों का production।",
+        "Factors बताकर emissions और प्रति unit intensity।"
+      ]
+    },
+    {
+      "h": "इसका इस्तेमाल",
+      "p": [
+        "Baseline की तुलना project की उम्मीद की गई बचत से करें, उस पर अनुमान लिखकर, और commissioning के बाद नाप दोहराएँ।"
+      ]
+    },
+    {
+      "h": "आम कमियाँ",
+      "p": [
+        "छूटे महीने और बिना record का diesel आम समस्याएँ हैं; आवेदन से पहले इन्हें भर लें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible bills और fuel invoices को तारीख वाले, जाँचे जा सकने वाले emissions record में बदलता है, वैसा सबूत जो lenders माँग सकते हैं। फ़ैसला lenders करते हैं, और financing की कभी गारंटी नहीं होती।",
+  "links": [
+    {
+      "label": "Lender को energy बचत कैसे साबित करें",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Lenders GHG reports कैसे पढ़ते हैं",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "Green loan principles",
+      "to": "/answers/green-loan-principles-explained"
+    }
+  ]
+}

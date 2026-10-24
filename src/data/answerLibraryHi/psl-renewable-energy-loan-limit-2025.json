@@ -1,0 +1,47 @@
+{
+  "slug": "psl-renewable-energy-loan-limit-2025",
+  "q": "RBI के 2025 directions के तहत renewable energy के लिए priority sector loan की सीमा क्या है?",
+  "title": "Renewable loans के लिए priority sector सीमा",
+  "short": "RBI के Priority Sector Lending Directions, 2025 के तहत, जो 1 April 2025 से लागू हैं, renewable energy power generators और street lighting और गाँवों के विद्युतीकरण जैसी renewable public utilities के लिए ₹35 crore तक के bank loans priority sector में गिने जाते हैं। अलग-अलग घरों के लिए सीमा प्रति borrower ₹10 lakh है।",
+  "sections": [
+    {
+      "h": "Renewable energy की category",
+      "p": [
+        "2025 Directions का Paragraph 15 renewable energy पर आधारित power generators और renewable energy पर आधारित public utilities, जैसे street lighting systems और दूर के गाँवों का विद्युतीकरण, के लिए borrowers को loans ढकता है। सीमा प्रति borrower ₹35 crore है, और किसी एक घर के लिए ₹10 lakh।"
+      ]
+    },
+    {
+      "h": "MSMEs को आम तौर पर इस category की ज़रूरत नहीं",
+      "p": [
+        "वही Directions कहते हैं कि MSMEs को सभी bank loans priority sector lending में आते हैं, loan किस चीज़ के लिए है इसकी कोई अलग सीमा नहीं। इसलिए rooftop solar के लिए उधार लेने वाली Udyam-registered unit आम तौर पर MSME में classify होती है, renewable energy की सीमा में नहीं। Renewable energy की सीमा मुख्य रूप से project companies, MSME न होने वाली बड़ी कंपनियों और घरों के लिए मायने रखती है।"
+      ]
+    },
+    {
+      "h": "कुछ banks के लिए सीमाएँ",
+      "p": [
+        "Regional rural banks के लिए medium enterprises, social infrastructure और renewable energy को मिलाकर उधार उनके priority sector target में adjusted net bank credit के सिर्फ़ 15 percent तक गिना जाता है। किसी rural bank से पूछें कि क्या उस हिस्से में जगह है।"
+      ]
+    },
+    {
+      "h": "Classification आपके लिए क्यों मायने रखता है",
+      "p": [
+        "Banks को adjusted net bank credit का 40 percent priority sector को देना होता है, और domestic banks को 7.5 percent micro enterprises को। इन targets में गिने जाने वाले loans banks ख़ुद ढूँढते हैं, इसलिए सही classify हुआ solar या efficiency loan देना आसान हो सकता है। Classification अपने आप कम दर तय नहीं करता।"
+      ]
+    }
+  ],
+  "senseible": "Senseible आपके पुराने bills से अनुमान लगाता है कि solar plant कितनी units और emissions हटाएगा, जो renewable energy loan के लिए bank के देखे जाने वाले project report में मदद करता है।",
+  "links": [
+    {
+      "label": "क्या renewable energy loan priority sector है",
+      "to": "/answers/is-renewable-energy-loan-priority-sector"
+    },
+    {
+      "label": "Farm credit के रूप में solar pump loans",
+      "to": "/answers/solar-pump-loan-priority-sector-agriculture"
+    },
+    {
+      "label": "क्या सभी MSME loans priority sector में आते हैं",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    }
+  ]
+}

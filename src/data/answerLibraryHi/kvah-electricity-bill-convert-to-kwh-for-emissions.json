@@ -1,0 +1,70 @@
+{
+  "slug": "kvah-electricity-bill-convert-to-kwh-for-emissions",
+  "q": "मेरा बिजली का bill kVAh में है। Emissions कैसे निकालूँ?",
+  "title": "kVAh वाला बिजली bill: emissions",
+  "short": "पहले kWh में बदलें, फिर grid factor से गुणा करें। अगर उसी bill पर kWh reading छपी है तो वही लें। न हो तो kWh = kVAh x उस billing period का छपा हुआ power factor। 0.710 kg CO2 प्रति kWh का factor सीधे kVAh पर लगाने से आपके emissions ज़्यादा दिखेंगे।",
+  "sections": [
+    {
+      "h": "kVAh और kWh एक जैसे क्यों नहीं हैं",
+      "p": [
+        "kWh active energy है, यानी वह energy जो आपकी मशीनों ने सच में इस्तेमाल की। kVAh apparent energy है, जिसमें वह reactive power भी गिनी जाती है जो motors, transformers और welding sets बिना कोई काम किए आगे-पीछे खींचते हैं। दोनों का अनुपात power factor है: kWh = kVAh x power factor।",
+        "Power factor कभी 1 से ज़्यादा नहीं होता, इसलिए kVAh हमेशा kWh के बराबर या उससे ज़्यादा होता है। Grid emission factors, CEA का आँकड़ा भी, बनाई और भेजी गई बिजली के प्रति kWh पर होते हैं, इसलिए वे सिर्फ़ kWh पर लगते हैं।"
+      ]
+    },
+    {
+      "h": "kVAh वाले bill पर kWh कहाँ मिलेगा",
+      "ol": [
+        "Meter readings वाले हिस्से में देखें। ज़्यादातर HT meters kWh, kVAh और kvarh तीनों साथ record करते हैं, और कई bills energy charge kVAh पर होने पर भी तीनों छापते हैं।",
+        "अगर सिर्फ़ kVAh और औसत power factor छपे हैं, तो उसी billing period के लिए दोनों को गुणा करें।",
+        "अगर दोनों में से कुछ भी नहीं छपा, तो discom से उस period की kWh reading या meter data download माँगें। Power factor अपने आप मान न लें।",
+        "नतीजा जाँचें: kWh कभी kVAh से ज़्यादा नहीं हो सकता। अगर bill पर kWh, kVAh से बड़ा दिखे तो कोई एक reading ग़लत है; किसी को भी इस्तेमाल करने से पहले पूछें।"
+      ]
+    },
+    {
+      "h": "आँकड़ा बदलने वाली ख़ास स्थितियाँ",
+      "ul": [
+        "Leading और lagging power factor: कुछ राज्य kVAh billing में दोनों गिनते हैं। पूरे period का वह औसत power factor लें जो bill पर छपा है, किसी एक time block का नहीं।",
+        "Time of day blocks: अगर kVAh blocks में बँटा है, तो कुल को बदलें, या हर block को उसके अपने power factor से, अगर छपा हो। कुल और blocks को मिलाएँ नहीं।",
+        "Rooftop solar या open access: bill का kVAh adjust की गई units घटाकर हो सकता है। Scope 2 के लिए आपकी खपत = meter पर कुल import + adjust की गई units, kWh में बदलकर।",
+        "Power factor penalties और rebates: ये सिर्फ़ रुपये की रकम बदलते हैं। kWh या emissions नहीं बदलते।"
+      ]
+    },
+    {
+      "h": "Auditor के लिए क्या record करें",
+      "ul": [
+        "kVAh, आपने जो kWh या power factor लिया, और bill पर हर एक कहाँ छपा था।",
+        "kWh bill से पढ़ा गया या kVAh x power factor से निकाला गया। दूसरे वाले पर लिखें कि यह निकाला गया आँकड़ा है।",
+        "Factor और स्रोत: 0.710 kg CO2 प्रति kWh, CEA CO2 Baseline Database version 21.0, location-based Scope 2।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: kVAh tariff पर एक महीना",
+    "lines": [
+      "Bill की energy: 50,000 kVAh; bill पर छपा औसत power factor: 0.96",
+      "kWh = 50,000 x 0.96 = 48,000 kWh",
+      "Emissions = 48,000 x 0.710 = 34,080 kg CO2, लगभग 34.1 tonne",
+      "ग़लत तरीका: 50,000 x 0.710 = 35,500 kg CO2, जो 1,420 kg, यानी लगभग 4.2% ज़्यादा दिखाता है"
+    ],
+    "note": "Power factor जितना कम, ग़लती उतनी बड़ी। 0.90 पर ग़लती लगभग 11% होती है।"
+  },
+  "senseible": "Senseible kVAh के आँकड़े पर कोई grid factor नहीं लगाता। यह उसी bill पर छपा kWh लेता है; वह न हो तो उस पर छपे power factor से kVAh x power factor, अनुमान के label के साथ, और power factor 0.5 से कम हो तो इसका भी इस्तेमाल नहीं; दोनों न छपे हों तो आपका डाला हुआ kWh, \"आपके द्वारा डाला गया\" label के साथ। यह कभी power factor मानकर नहीं चलता; वरना line पर Needs Data दिखता है।",
+  "links": [
+    {
+      "label": "HT बिजली bill कैसे पढ़ें",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "क्या AI बिजली का bill पढ़ सकता है?",
+      "to": "/answers/can-ai-read-my-electricity-bill-accurately"
+    },
+    {
+      "label": "भारत का grid बिजली factor",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Power factor penalty और rebate",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    }
+  ]
+}

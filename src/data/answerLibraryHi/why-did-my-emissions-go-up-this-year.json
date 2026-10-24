@@ -1,0 +1,65 @@
+{
+  "slug": "why-did-my-emissions-go-up-this-year",
+  "q": "इस साल की report में मेरे emissions बढ़ गए। वजह कैसे पता करूँ?",
+  "title": "इस साल मेरे emissions क्यों बढ़े?",
+  "short": "बढ़त को चार हिस्सों में बाँटें: ज़्यादा activity, बदले हुए emission factors, बड़ी boundary, और बदला हुआ method। Fuel और बिजली के लिए line-by-line activity और factor का असर निकालें, और जो बचे वह नए स्रोतों या method के बदलाव से है।",
+  "sections": [
+    {
+      "h": "दो formulas",
+      "ul": [
+        "Activity का असर = (इस साल की quantity घटा पिछले साल की quantity) x पिछले साल का factor।",
+        "Factor का असर = इस साल की quantity x (इस साल का factor घटा पिछले साल का factor)।",
+        "हर line के लिए दोनों मिलकर ठीक-ठीक बदलाव के बराबर होते हैं। हर fuel और बिजली के लिए यह करें।"
+      ]
+    },
+    {
+      "h": "फिर boundary और method के बदलाव देखें",
+      "ul": [
+        "नए स्रोत: नया plant, canteen की LPG line, पिछले साल छूटा DG set, अब शामिल किया गया contractor का diesel।",
+        "Method: Scope 3 spend-based से activity-based पर गया, refrigerant leaks अब गिने गए, अलग GWP set।",
+        "Period: पिछले साल की report कुछ स्रोतों के लिए 12 महीने से कम ढकती थी।"
+      ]
+    },
+    {
+      "h": "देखें कि base year दोबारा निकालना है या नहीं",
+      "p": [
+        "अगर बढ़त किसी ढाँचागत बदलाव से है, जैसे कोई unit खरीदना, या method के बदलाव या ग़लती ठीक करने से, तो असर बड़ा होने पर GHG Protocol base year दोबारा निकालने को कहता है। ज़्यादा production या बाद के साल के लिए नए factor version से हुई बढ़त असली है और trend में रहती है।"
+      ]
+    },
+    {
+      "h": "Buyer या lender को कैसे समझाएँ",
+      "p": [
+        "कुल बदलाव बताएँ, फिर tonne में हर हिस्सा, फिर output की प्रति unit emissions। बताएँ कि कौन से हिस्से आपके नियंत्रण में हैं। अगर output emissions से तेज़ बढ़ा, तो intensity घटी, और आप दोनों आँकड़ों के साथ यह कह सकते हैं।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: 22.42 t की बढ़त को खोलकर देखना",
+    "lines": [
+      "Diesel: पिछले साल 10,000 L, इस साल 12,000 L, दोनों साल factor 2.68 kg CO2/L",
+      "Activity का असर: 2,000 x 2.68 = 5,360 kg = 5.36 t",
+      "बिजली: पिछले साल 200,000 kWh 0.690 पर (समझाने के लिए पुराना factor), इस साल 210,000 kWh 0.710 पर",
+      "Activity का असर: 10,000 x 0.690 = 6,900 kg = 6.90 t",
+      "Factor का असर: 210,000 x (0.710 घटा 0.690) = 4,200 kg = 4.20 t",
+      "नया स्रोत: canteen की LPG, 2,000 kg x 2.98 = 5,960 kg = 5.96 t",
+      "पिछला साल: 26.80 + 138.00 = 164.80 t; इस साल: 32.16 + 149.10 + 5.96 = 187.22 t",
+      "बदलाव: 5.36 + 6.90 + 4.20 + 5.96 = 22.42 t, लगभग 13.6%"
+    ],
+    "note": "0.690 का factor उदाहरण के लिए मान लिया गया है। Diesel और LPG factors IPCC 2006 के defaults हैं।"
+  },
+  "senseible": "Senseible हर document और period के records उनमें लगे factor और स्रोत के साथ रखता है, ताकि आप दो साल की वही fuel और बिजली lines निकालकर देख सकें कि कौन सी quantities और factors बदले।",
+  "links": [
+    {
+      "label": "Emissions घटे पर intensity बढ़ी",
+      "to": "/answers/emissions-fell-but-intensity-rose"
+    },
+    {
+      "label": "Factor बदलने के बाद पिछले साल दोबारा निकालना",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "Unit बेचने के बाद base year दोबारा निकालना",
+      "to": "/answers/recalculate-base-year-after-selling-a-unit"
+    }
+  ]
+}

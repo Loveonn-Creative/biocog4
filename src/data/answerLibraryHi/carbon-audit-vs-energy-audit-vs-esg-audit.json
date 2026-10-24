@@ -1,0 +1,57 @@
+{
+  "slug": "carbon-audit-vs-energy-audit-vs-esg-audit",
+  "q": "Carbon audit बनाम energy audit बनाम ESG audit: मेरी कंपनी को कौन सा चाहिए?",
+  "title": "Carbon, energy या ESG audit: कौन सा?",
+  "short": "Energy audit बताता है कि आप energy और पैसा कहाँ बर्बाद करते हैं, और BEE designated consumers के लिए ज़रूरी है। Carbon audit आपकी greenhouse gas emissions नापता और जाँचता है, जो buyers, lenders और CBAM माँगते हैं। ESG audit पर्यावरण, सामाजिक और governance के तौर-तरीकों की समीक्षा करता है, आम तौर पर इसलिए कि कोई buyer या listing नियम इसे माँगता है।",
+  "sections": [
+    {
+      "h": "तीनों साथ-साथ",
+      "ul": [
+        "Energy audit: सवाल, हम energy खपत और लागत कहाँ घटा सकते हैं। नतीजा, payback के साथ बचत के उपायों की सूची। आधार, ISO 50002 और, designated consumers के लिए, 2010 के BEE energy audit regulations, जो accredited energy auditor करता है।",
+        "Carbon audit: सवाल, हम कितने tonne greenhouse gas छोड़ते हैं और क्या वह आँकड़ा टिकता है। नतीजा, GHG inventory और, verify हुआ हो तो, verification statement। आधार, GHG Protocol और ISO 14064-1, ISO 14064-3 के तहत verification के साथ।",
+        "ESG audit: सवाल, क्या पर्यावरण, श्रम, सुरक्षा और governance पर हमारे तौर-तरीके किसी buyer या regulator के code पर खरे उतरते हैं। नतीजा, उस code के सामने निष्कर्ष। आधार, buyer का supplier code या BRSR जैसा कोई disclosure framework; ESG audit का कोई एक standard नहीं है।"
+      ]
+    },
+    {
+      "h": "किस वजह से कौन सा चाहिए",
+      "ul": [
+        "BEE designated consumer घोषित हुए: energy audit, तय चक्र पर।",
+        "Buyer emissions, product footprint या CBAM data माँगे: carbon audit।",
+        "Bank green loan के लिए impact के आँकड़े माँगे: carbon audit, अक्सर energy data के साथ।",
+        "बिजली के bills ज़्यादा और बाहर से कोई माँग नहीं: पहले energy audit; बचत से इसका ख़र्च निकल आता है।",
+        "किसी brand का supplier code of conduct या listed customer की BRSR value chain माँग: ESG audit या questionnaire।"
+      ]
+    },
+    {
+      "h": "ये एक-दूसरे को कैसे data देते हैं",
+      "p": [
+        "तीनों की नींव वही बिजली और fuel के bills हैं। Energy audit बताता है कि kWh और litre कहाँ जाते हैं; carbon audit उन्हीं kWh और litre को tonne में बदलता है; ESG audit का पर्यावरण वाला हिस्सा आम तौर पर दोनों माँगता है। Data एक बार जुटाएँ और एक जगह रखें।"
+      ]
+    },
+    {
+      "h": "इनमें से कोई क्या नहीं है",
+      "p": [
+        "Carbon audit, carbon credit नहीं है। Energy audit report, verified emissions statement नहीं है। ESG audit, credit rating नहीं है। हर एक अलग सवाल का जवाब देता है, इसलिए किसी को रखने से पहले साफ़ कर लें कि पूछने वाले को असल में कौन सा चाहिए।"
+      ]
+    }
+  ],
+  "senseible": "Senseible bills और invoices से carbon inventory बनाता है, जो carbon audit का data वाला हिस्सा है। यह energy audits या ESG audits नहीं करता, और इसके Verified status का मतलब है कि rule checks पास हुए, किसी स्वतंत्र auditor की राय नहीं।",
+  "links": [
+    {
+      "label": "भारत में MSMEs के लिए energy audit",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "भारतीय छोटे कारोबार के लिए carbon audit guide",
+      "to": "/climate-intelligence/carbon-audit-small-business-india-complete-guide"
+    },
+    {
+      "label": "Carbon audit checklist, Singapore manufacturing",
+      "to": "/climate-intelligence/carbon-audit-checklist-singapore-manufacturing"
+    },
+    {
+      "label": "क्या मेरी factory BEE designated consumer है",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    }
+  ]
+}

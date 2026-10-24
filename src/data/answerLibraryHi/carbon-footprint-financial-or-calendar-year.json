@@ -1,0 +1,63 @@
+{
+  "slug": "carbon-footprint-financial-or-calendar-year",
+  "q": "मेरा carbon footprint April से March वाले financial year पर हो या calendar year पर?",
+  "title": "Footprint financial year पर या calendar year पर?",
+  "short": "उसका साल लें जो इस आँकड़े पर सबसे ज़्यादा निर्भर है। BRSR और भारतीय lenders April से March वाले financial year पर काम करते हैं। CBAM और कई EU buyers calendar year पर। GHG Protocol दोनों मानता है अगर आप उसे एक जैसा रखें। अगर दोनों को सेवा देते हैं, तो data हर महीने record करें और दोनों तरह से जोड़ें।",
+  "sections": [
+    {
+      "h": "हर framework क्या उम्मीद करता है",
+      "ul": [
+        "GHG Protocol Corporate Standard: एक सालाना reporting period, कोई तय calendar नहीं। एक चुनें और उसी पर टिके रहें।",
+        "SEBI BRSR: financial year, April से March, annual report से मेल खाता।",
+        "EU CBAM: importer की सालाना declaration calendar year, January से December, ढकती है।",
+        "Buyer questionnaires और CDP: आम तौर पर आपको अपना 12 महीने का period बताने देते हैं, पर पूछते हैं कि कौन सा लिया।"
+      ]
+    },
+    {
+      "h": "फ़ैसले का नियम",
+      "ol": [
+        "Listed हैं, BRSR भरते हैं, या किसी भारतीय bank को report करते हैं: मुख्य साल April से March रखें।",
+        "CBAM वाला सामान export करते हैं, या ज़्यादातर data की माँग EU buyers से आती है: उनके लिए calendar-year के आँकड़े बनाएँ।",
+        "दोनों: मुख्य report April से March पर रखें और उसी monthly data से calendar-year का हिस्सा निकालें। एक साल को खींचकर या scale करके दूसरे में कभी न बदलें।"
+      ]
+    },
+    {
+      "h": "Monthly data से दोनों आसान",
+      "p": [
+        "अगर हर invoice और bill उस महीने के सामने record हो जिसका वह है, तो कोई भी 12 महीने की खिड़की बस एक जोड़ है। दो महीनों के हिस्से वाले bills, जैसे 15 March से 14 April का बिजली bill, दिनों के हिसाब से बाँटें ताकि हर महीने को उसका हिस्सा मिले। Fuel उस महीने में गिना जाता है जिसमें खरीदा गया या stock से दिया गया, एक जैसे तरीके से।"
+      ]
+    },
+    {
+      "h": "बाद में अपना period बदलना",
+      "p": [
+        "आप बदल सकते हैं, पर इसे methodology का बदलाव मानें: report में बताएँ, target हो तो base year नए period पर दोबारा बताएँ, और पुरानी और नई reports के बीच महीनों का अंतर या overlap न छोड़ें।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: एक data set, दो साल",
+    "lines": [
+      "January से March 2025: 300 t CO2",
+      "April से December 2025: 900 t CO2",
+      "January से March 2026: 320 t CO2",
+      "Calendar year 2025: 300 + 900 = 1,200 t CO2",
+      "Financial year 2025-26: 900 + 320 = 1,220 t CO2"
+    ],
+    "note": "दोनों कुल अलग हैं क्योंकि वे अलग महीने ढकते हैं; दोनों अपने period के लिए सही हैं।"
+  },
+  "senseible": "Senseible हर document का billing period और तारीख रखता है, ताकि वही records financial year या calendar year के हिसाब से जोड़े जा सकें; इसका Scope 2 summary दोनों में से किसी के हिसाब से group करता है। Period यह आपके लिए नहीं चुनता।",
+  "links": [
+    {
+      "label": "भारतीय fiscal year बनाम CBAM reporting period",
+      "to": "/answers/indian-fiscal-year-vs-cbam-reporting-period"
+    },
+    {
+      "label": "Bill को महीनों में बाँटना",
+      "to": "/answers/split-electricity-bill-across-months-for-carbon"
+    },
+    {
+      "label": "Carbon footprint कितनी बार नापें",
+      "to": "/climate-intelligence/carbon-accounting-frequency-msme-when-to-measure"
+    }
+  ]
+}

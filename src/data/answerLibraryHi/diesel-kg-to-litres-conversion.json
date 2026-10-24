@@ -1,0 +1,64 @@
+{
+  "slug": "diesel-kg-to-litres-conversion",
+  "q": "Emissions के लिए diesel, LDO या furnace oil को kg से litre में कैसे बदलूँ?",
+  "title": "Diesel या furnace oil: kg से litre",
+  "short": "kg में वज़न को 15 C पर kg प्रति litre की density से भाग दें: litre = kg / density। Density supplier के test certificate या invoice से लें। या conversion छोड़कर प्रति kg factor लें: IPCC 2006 defaults से diesel के लिए लगभग 3.19 kg CO2 प्रति kg और furnace oil के लिए 3.13 प्रति kg।",
+  "sections": [
+    {
+      "h": "Density कहाँ मिलेगी",
+      "ul": [
+        "Oil companies के bulk tanker invoices और test certificates पर आम तौर पर 15 C की density छपी होती है। उस delivery के लिए वही आँकड़ा लें।",
+        "Diesel के लिए IS 1460:2017 15 C पर density की अनुमत range तय करता है। कुछ भी न छपा हो तभी range का बीच का मान लें, और उस पर लिखें।",
+        "Furnace oil और LDO की density refinery और grade के हिसाब से ज़्यादा बदलती है। मानकर चलने की बजाय supplier से test certificate माँगें।"
+      ]
+    },
+    {
+      "h": "Temperature क्यों मायने रखता है",
+      "p": [
+        "तेल गरम होने पर फैलता है। 35 C पर दिए गए एक litre में 15 C के एक litre से कम fuel होता है। Bulk fuel के invoices अक्सर 15 C पर सुधारा गया volume बताते हैं; अगर आपके invoice पर दोनों हैं तो 15 C की density के साथ सुधारा गया volume लें। मौसम के तापमान वाले volume को 15 C की density से मिलाने पर लगभग 1 से 2 percent की छोटी ग़लती आती है।"
+      ]
+    },
+    {
+      "h": "प्रति litre या प्रति kg factor, एक रास्ता चुनें",
+      "p": [
+        "IPCC 2006 के defaults energy के हिसाब से हैं, और बदलने पर diesel के लिए 74,100 kg CO2 प्रति TJ x 43.0 GJ प्रति t = लगभग 3.19 kg CO2 प्रति kg, और residual fuel oil के लिए 77,400 x 40.4 = लगभग 3.13 kg CO2 प्रति kg बनते हैं। प्रति litre वाले आँकड़े, diesel के लिए 2.68 kg CO2 प्रति litre और furnace oil के लिए 2.97, एक औसत density मानते हैं। दोनों रास्तों के नतीजों में 1 percent से कम का फ़र्क होता है; साल भर एक ही रास्ता लें और उसे लिखें।"
+      ]
+    },
+    {
+      "h": "LDO और दूसरी units",
+      "p": [
+        "LDO एक distillate है, इसलिए ज़्यादातर inventories इसके लिए IPCC का gas या diesel oil factor लेती हैं, certificate की density के साथ वज़न के हिसाब से। 1 kL = 1,000 litre, और 1 MT = 1,000 kg। बदलने से पहले देखें कि invoice की quantity 15 C पर है या मौसम के तापमान पर।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: fuel के दो invoices",
+    "lines": [
+      "Furnace oil: 12,500 kg, 15 C पर density 0.950 kg प्रति litre (test certificate)",
+      "12,500 / 0.950 = 13,157.9 litre x 2.97 = 39,079 kg CO2",
+      "प्रति kg रास्ता: 12.5 t x 3.127 = 39.09 t CO2, rounding को छोड़कर वही",
+      "Diesel: 5,000 kg, 15 C पर density 0.835 kg प्रति litre",
+      "5,000 / 0.835 = 5,988 litre x 2.68 = 16,048 kg CO2",
+      "प्रति kg रास्ता: 5 t x 3.186 = 15.93 t CO2, लगभग 0.7% कम"
+    ]
+  },
+  "senseible": "Senseible fuel के invoices और slips पढ़ता है और IPCC 2006 के defaults लगाता है, जैसे diesel 2.68 kg CO2 प्रति litre और furnace oil 2.97 kg CO2 प्रति litre, और बिजली पर CEA का 0.710 factor। जिस line पर quantity छपी न हो, उस पर अंदाज़े की जगह Needs Data दिखता है।",
+  "links": [
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    },
+    {
+      "label": "Scope 1 में fuels के HSN codes",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    },
+    {
+      "label": "खरीदा गया fuel बनाम जलाया गया fuel",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    }
+  ]
+}

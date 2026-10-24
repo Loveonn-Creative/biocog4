@@ -1,0 +1,34 @@
+{
+  "slug": "does-cbam-cost-depend-on-invoice-value",
+  "q": "क्या CBAM की लागत मेरे सामान की invoice value पर निर्भर करती है?",
+  "title": "CBAM की लागत और invoice value",
+  "short": "नहीं। CBAM embedded emissions पर लगता है, दाम पर नहीं। Importer सामान में embedded tonne CO2e के लिए certificates खरीदता है, इसलिए लागत वज़न और प्रति tonne emissions के साथ चलती है। एक जैसे embedded emissions वाले सस्ते और महँगे product पर CBAM की लागत एक जैसी होती है।",
+  "sections": [
+    {
+      "h": "लागत किससे तय होती है",
+      "ul": [
+        "Import हुए सामान के tonnes।",
+        "प्रति tonne embedded emissions, actual या default।",
+        "Certificate का दाम, EU ETS auction के दामों से जुड़ा।",
+        "विदेश में पहले से चुकाई गई कोई carbon price, जो घटाई जा सकती है।"
+      ]
+    },
+    {
+      "h": "Pricing के लिए यह क्यों मायने रखता है",
+      "p": [
+        "ज़्यादा embedded emissions वाला कम margin का product, ज़्यादा value वाले product से ज़्यादा competitiveness खोता है। आपका असली emissions data आँकड़े को default से नीचे ला सकता है।"
+      ]
+    }
+  ],
+  "senseible": "Senseible bills, fuel invoices और production records को तारीख और fingerprint वाले records में बदलता है, ताकि आप buyer को जो आँकड़ा भेजें वह उसके documents तक जाँचा जा सके।",
+  "links": [
+    {
+      "label": "Certificate का दाम कैसे तय होता है",
+      "to": "/answers/how-is-the-cbam-certificate-price-set"
+    },
+    {
+      "label": "Steel route के हिसाब से CBAM लागत",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    }
+  ]
+}

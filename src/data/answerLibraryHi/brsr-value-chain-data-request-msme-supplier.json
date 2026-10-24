@@ -1,0 +1,78 @@
+{
+  "slug": "brsr-value-chain-data-request-msme-supplier",
+  "q": "मेरे listed customer ने BRSR value chain data माँगा है। क्या देना ज़रूरी है, और उन्हें MSME supplier से क्या चाहिए?",
+  "title": "MSME suppliers से BRSR value chain data",
+  "short": "कोई कानून MSME supplier को यह देने के लिए बाध्य नहीं करता। SEBI के नियम listed company पर लागू होते हैं, और March 2025 से value chain disclosure top 250 के लिए भी voluntary है। आपका customer आम तौर पर financial year के लिए आपका Scope 1 और Scope 2 emissions, energy, पानी और waste, सबूत के साथ चाहेगा।",
+  "sections": [
+    {
+      "h": "Value chain partner कौन माना जाता है",
+      "p": [
+        "SEBI के July 2023 circular ने value chain को listed company के top upstream और downstream partners के रूप में परिभाषित किया, जो मिलकर value के हिसाब से उसकी 75% खरीद या बिक्री बनाते हैं। March 2025 के circular ने test बदल दिया: value chain partner वह है जो अकेले listed company की value के हिसाब से 2% या ज़्यादा खरीद या बिक्री बनाता है। कंपनी अपना disclosure उन partners तक सीमित रख सकती है जो मिलकर 75% ढकते हैं।",
+        "अगर आप customer की खरीद के 2% से नीचे हैं, तो आप SEBI की परिभाषा से बाहर हैं, हालाँकि customer अपने Scope 3 के काम के लिए फिर भी माँग सकता है।"
+      ]
+    },
+    {
+      "h": "क्या voluntary है, और कब से",
+      "ul": [
+        "Value chain disclosures: market capitalisation के हिसाब से top 250 listed companies के लिए voluntary, FY 2025-26 से।",
+        "उन disclosures का assurance या assessment: voluntary, FY 2026-27 से।",
+        "दोनों में से कोई भी circular supplier पर ख़ुद reporting की ज़िम्मेदारी नहीं डालता।"
+      ],
+      "p": [
+        "Contract या supplier code फिर भी इसे व्यापारिक शर्त बना सकता है। मना करने से पहले अपने purchase order की शर्तें पढ़ें।"
+      ]
+    },
+    {
+      "h": "Customer आम तौर पर क्या माँगता है",
+      "ul": [
+        "Scope 1 emissions, आपके जलाए fuels से: diesel, कोयला, furnace oil, LPG, PNG।",
+        "Scope 2 emissions, kWh में grid बिजली से।",
+        "कुल energy, और renewables का हिस्सा।",
+        "पानी निकालना और खपत, और बना और वापस लिया गया waste।",
+        "कभी-कभी safety और कर्मचारियों के आँकड़े जो दूसरे BRSR Core attributes में आते हैं।"
+      ],
+      "p": [
+        "Customer का template माँगें। उसमें period, लगभग हमेशा April से March, और units तय होते हैं।"
+      ]
+    },
+    {
+      "h": "ज़रूरत से ज़्यादा बताए बिना जवाब कैसे दें",
+      "ol": [
+        "Financial year के कुल आँकड़े भेजें, हर line के emission factor और उसके स्रोत के साथ।",
+        "मूल bills देखने के लिए दें, रखने के लिए नहीं। Invoices में दाम होते हैं, जो शायद आप buyer के पास नहीं छोड़ना चाहें।",
+        "बताएँ कि क्या छोड़ा, जैसे Scope 3, और क्यों।",
+        "जो भेजा उसकी copy और तारीख रखें, ताकि अगले साल के आँकड़े उसी आधार पर मिलाए जा सकें।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: क्या यह supplier दायरे में है, और यह क्या भेजता है?",
+    "lines": [
+      "Customer की सालाना खरीद: Rs 2,000 crore; उसे आपकी बिक्री: Rs 45 crore",
+      "हिस्सा: 45 / 2,000 = 2.25%, यानी 2% test से ऊपर",
+      "Grid बिजली: 1,20,000 kWh x 0.710 kg CO2 प्रति kWh = 85.2 t CO2 (Scope 2)",
+      "DG set और forklifts के लिए diesel: 6,000 L x 2.68 kg CO2 प्रति L = 16.08 t CO2 (Scope 1)",
+      "Scope 1 और 2 का कुल: financial year के लिए 101.28 t CO2"
+    ]
+  },
+  "senseible": "Senseible supplier के अपने fuel invoices और बिजली bills से उसकी energy खपत और Scope 1 और Scope 2 आँकड़े बनाता है, हर आँकड़ा अपने document तक जाँचा जा सकता है, और उस data का self-declared BRSR view draft करता है। पानी, waste, safety और दूसरे BRSR Core attributes Senseible के दायरे से बाहर हैं।",
+  "links": [
+    {
+      "label": "क्या BRSR में Scope 3 ज़रूरी है?",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "भारत में BRSR reporting की ज़रूरतें",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "BRSR Core के नौ attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "Senseible के साथ BRSR report",
+      "to": "/answers/brsr-report-senseible"
+    }
+  ],
+  "reviewNote": "SEBI BRSR value chain के नियम अक्सर बदलता है; 2% test या voluntary स्थिति पर भरोसा करने से पहले ताज़ा circular देखें।"
+}

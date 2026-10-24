@@ -1,0 +1,72 @@
+{
+  "slug": "is-my-dg-set-oversized-wasting-diesel",
+  "q": "क्या ज़रूरत से बड़ा DG set diesel बर्बाद कर रहा है, और उसका load कैसे जाँचूँ?",
+  "title": "क्या मेरा DG set ज़रूरत से बड़ा है?",
+  "short": "अक्सर, हाँ। Diesel generator अपनी rating के छोटे हिस्से पर चले तो rating के पास चलने की तुलना में प्रति litre कम kWh बनाता है। जाँचने के लिए, उसकी बनाई kWh को run hours गुणा उसकी kW rating से भाग दें। औसत कम हो तो उसकी प्रति litre kWh को निर्माता के curve से मिलाएँ और छोटे set पर विचार करें।",
+  "sections": [
+    {
+      "h": "औसत load निकालें",
+      "ol": [
+        "एक महीने के लिए DG के energy meter और hour meter से बनी kWh और run hours पढ़ें।",
+        "Rating को kW में बदलें: 0.8 power factor पर rated ज़्यादातर sets के लिए kVA x 0.8।",
+        "औसत load % = kWh / (run hours x rated kW) x 100।",
+        "उसी महीने DG को दिए गए litre से kWh को भाग दें, प्रति litre kWh मिल जाएगी।"
+      ]
+    },
+    {
+      "h": "कम load पर diesel क्यों ज़्यादा लगता है",
+      "p": [
+        "Engine के कुछ fixed losses होते हैं, friction, cooling और auxiliaries, जो load घटने पर नहीं घटते। चौथाई load पर ये losses थोड़ी सी kWh पर बँट जाते हैं, इसलिए प्रति kWh fuel बढ़ जाता है। 25, 50, 75 और 100 percent load पर निर्माता के fuel curves आपके model के लिए यह दिखाते हैं। बहुत कम load पर लंबे समय तक चलाने से wet stacking भी होता है: बिना जला fuel और कालिख exhaust में जमती है, जिससे maintenance बढ़ता है और efficiency और गिरती है।"
+      ]
+    },
+    {
+      "h": "Set बहुत बड़ा हो तो विकल्प",
+      "ul": [
+        "अपनी असली peak के हिसाब से छोटा set लगाएँ, सबसे बड़े motor का starting current मिलाकर।",
+        "दो छोटे sets parallel में चलाएँ और load कम हो तो एक बंद कर दें।",
+        "बड़े set को पूरे plant के कभी-कभार के power cut के लिए रखें और रोज़ के power cut और रात के load के लिए एक छोटा set जोड़ें।",
+        "Power cut के दौरान ग़ैर-ज़रूरी loads DG से हटाएँ ताकि छोटा set बाकी उठा सके।"
+      ],
+      "p": [
+        "Size घटाने से पहले peak demand जाँचें। जो set press का motor चालू होते ही trip हो जाए, वह कोई diesel नहीं बचाता।"
+      ]
+    },
+    {
+      "h": "इससे क्या पता नहीं चलता",
+      "p": [
+        "औसत load peaks को छिपा देता है। 25 percent औसत वाला set भी हर घंटे कुछ मिनट 90 percent तक जा सकता है। Size तय करने से पहले एक हफ़्ते तक छोटे अंतराल पर demand log करें।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "एक छोटे plant में 250 kVA का set, समझाने के लिए",
+    "lines": [
+      "Rating: 250 kVA x 0.8 = 200 kW",
+      "महीना: 600 run hours, 30,000 kWh बनी, 12,000 litre diesel",
+      "औसत load: 30,000 / (600 x 200) = 25%; output 30,000 / 12,000 = 2.5 kWh प्रति litre",
+      "100 kVA (80 kW) का set 30,000 / (600 x 80) = 62.5% पर चलेगा; उसके curve से मान लिया 3.3 kWh प्रति litre पर उसे 30,000 / 3.3 = 9,091 litre चाहिए",
+      "बचा diesel: 12,000 घटा 9,091 = हर महीने 2,909 litre",
+      "बची CO2: 2,909 x 2.68 = 7,796 kg, यानी हर महीने लगभग 7.8 t CO2"
+    ],
+    "note": "3.3 kWh प्रति litre समझाने के लिए मान लिया गया है; अपने निर्माता का curve पढ़ें, और पक्का करें कि छोटा set peak और motor starting load उठा ले।"
+  },
+  "senseible": "Senseible आपके diesel invoices से 2.68 kg CO2 प्रति litre पर DG की CO2 निकालता है और हर महीने के litre एक record में रखता है, ताकि सही size का बदलाव उतने ही power cut घंटों में कम litre के रूप में दिखे।",
+  "links": [
+    {
+      "label": "DG set की specific fuel consumption",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Run hours से DG diesel का अनुमान",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    },
+    {
+      "label": "DG emissions प्रति kWh बनाम grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ]
+}

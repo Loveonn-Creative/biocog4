@@ -1,0 +1,71 @@
+{
+  "slug": "lpg-to-png-switch-emissions-saving",
+  "q": "उतनी ही गर्मी के लिए LPG से PNG पर जाने से factory कितनी CO2 बचाती है?",
+  "title": "LPG से PNG पर जाना: कितनी CO2 बचती है",
+  "short": "उसी burner efficiency पर उतनी ही गर्मी के लिए लगभग 11 percent कम CO2। IPCC 2006 के defaults LPG के लिए 63.1 kg CO2 प्रति GJ और natural gas के लिए 56.1 kg हैं, और 56.1 / 63.1 = 0.889। जो burner gas पर ज़्यादा efficiently चलता है, वह थोड़ा और बचाता है।",
+  "sections": [
+    {
+      "h": "बचत oil या कोयले से कम क्यों है",
+      "p": [
+        "LPG पहले से ही एक हल्की gas है जिसमें प्रति unit energy carbon कम है, इसलिए natural gas पर जाने से furnace oil या कोयले से बदलने जितनी कमी नहीं होती। फ़र्क सिर्फ़ fuel की chemistry से आता है: natural gas ज़्यादातर methane है, जिसमें propane और butane की तुलना में प्रति carbon atom ज़्यादा hydrogen होता है।"
+      ]
+    },
+    {
+      "h": "तुलना से पहले दोनों fuels को energy में बदलें",
+      "ol": [
+        "LPG energy: kg x 47.3 MJ प्रति kg, IPCC की default net calorific value।",
+        "PNG energy: scm x bill पर छपी gross calorific value, MJ में बदलकर और net calorific value के लिए 0.90 से गुणा करके।",
+        "CO2: LPG के GJ x 63.1, और PNG के GJ x 56.1।",
+        "Product के प्रति tonne पर तुलना करें, ताकि output बदलने से बचत ग़लत न दिखे।"
+      ],
+      "p": [
+        "2.98 kg CO2 प्रति kg LPG की सीधी तुलना 2.05 kg CO2 प्रति scm PNG से करना बेमतलब है, क्योंकि एक kg और एक scm में अलग energy होती है।"
+      ]
+    },
+    {
+      "h": "असली आँकड़ा किससे बदलता है",
+      "ul": [
+        "Burner efficiency: सही air control वाला अच्छी तरह tune किया gas burner पुराने LPG burners से थोड़ा ज़्यादा efficiently चल सकता है, जिससे बचत बढ़ती है। मानने की बजाय पहले और बाद में प्रति tonne fuel नापें।",
+        "Vaporisers: बड़े LPG installations अक्सर liquid को बिजली या गरम पानी से गरम करते हैं। Pipeline की gas को vaporiser नहीं चाहिए, इसलिए वह बिजली ख़त्म हो जाती है।",
+        "Calorific value: city gas की supply महीने-दर-महीने बदलती है; हर bill पर छपी GCV लें।",
+        "CBG blending: अगर आपका gas supplier compressed biogas मिलाता है, तो biogenic हिस्सा Scope 1 से बाहर बताया जाता है। Blend लिखित में माँगें।"
+      ]
+    },
+    {
+      "h": "कौन सा सबूत रखें",
+      "p": [
+        "LPG के 12 महीने के kg वाले invoices production records के साथ रखें, फिर उसके बाद के महीनों के PNG bills उनकी छपी GCV के साथ। दोनों periods के लिए नाम वाले factors से Scope 1 निकालें। अगर burners भी बदले, तो तारीख लिखें, क्योंकि बचत का कुछ हिस्सा efficiency से है, fuel से नहीं।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: हर महीने 10,000 kg LPG",
+    "lines": [
+      "LPG CO2: 10,000 kg x 2.98 = 29,800 kg CO2",
+      "LPG energy: 10,000 x 47.3 MJ = 473 GJ (net आधार)",
+      "PNG से उतनी ही गर्मी: 473 GJ x 56.1 kg = 26,535 kg CO2",
+      "बचत: 29,800 घटा 26,535 = हर महीने 3,265 kg CO2, लगभग 11 percent, या साल में लगभग 39 t",
+      "9,500 kcal प्रति scm की छपी GCV पर ज़रूरी gas: 9,500 x 4.1868 / 10,00,000 x 0.90 = 0.0358 GJ प्रति scm; 473 / 0.0358 = हर महीने लगभग 13,200 scm"
+    ],
+    "note": "दोनों fuels पर एक जैसी burner efficiency मानी गई है। 47.3 MJ प्रति kg और natural gas के लिए 0.90 का net से gross अनुपात IPCC 2006 के defaults हैं; जहाँ supplier के आँकड़े हों, वही लें।"
+  },
+  "senseible": "Senseible LPG invoices को 2.98 kg CO2 प्रति kg और PNG bills को 2.05 kg CO2 प्रति scm पर पढ़ता है, ताकि बदलाव से पहले और बाद के महीनों का Scope 1 साथ-साथ दिखे, हर line अपने invoice तक जाँची जा सके। ये records green loan की तैयारी की जाँच में भी काम आ सकते हैं।",
+  "links": [
+    {
+      "label": "Furnace oil से PNG पर जाने की बचत",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "19 kg LPG cylinder से CO2",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "MMBtu वाले PNG bill से CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ]
+}

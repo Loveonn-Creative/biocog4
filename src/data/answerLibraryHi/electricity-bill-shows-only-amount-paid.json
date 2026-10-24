@@ -1,0 +1,33 @@
+{
+  "slug": "electricity-bill-shows-only-amount-paid",
+  "q": "मेरे पास बिजली की सिर्फ़ भुगतान की रसीदें हैं, bill नहीं। क्या emissions निकल सकते हैं?",
+  "title": "Bill के बिना बिजली की रसीदें",
+  "short": "भरोसे से नहीं। रकम में fixed charges, demand charges, duty और taxes शामिल होते हैं, इसलिए रुपये साफ़-साफ़ kWh में नहीं बदलते। अपने discom के portal से bills download करें या office से duplicate माँगें; bill पर खपत की units ही 0.710 kg CO2 प्रति kWh से गुणा होती हैं।",
+  "sections": [
+    {
+      "h": "Bills कहाँ से मिलेंगे",
+      "ul": [
+        "Discom का consumer portal या app, consumer number डालकर।",
+        "Duplicate के लिए अपना स्थानीय subdivision office।",
+        "Bank statement सिर्फ़ यह पक्का करने के लिए कि किन महीनों का भुगतान हुआ।"
+      ]
+    },
+    {
+      "h": "अगर किसी महीने का bill सच में नहीं है",
+      "p": [
+        "उसे आगे-पीछे के महीनों से या meter readings से अनुमान लगाएँ, उस पर अनुमान लिखें और bill मिलने पर बदल दें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बिजली के bills (CEA grid factor 0.710 kg CO2 प्रति kWh, CO2 Baseline Database version 21.0) और diesel, LPG और gas invoices (IPCC 2006 defaults) को हर site के लिए तारीख और fingerprint वाले Scope 1 और 2 record में बदलता है, और अनुमान पर अनुमान ही लिखता है।",
+  "links": [
+    {
+      "label": "बिजली के bills खो गए हों तो",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "HT बिजली bill पढ़ें",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    }
+  ]
+}

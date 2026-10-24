@@ -1,0 +1,61 @@
+{
+  "slug": "green-loan-principles-explained",
+  "q": "Green Loan Principles क्या हैं, और lender हर एक को कैसे जाँचता है?",
+  "title": "Green Loan Principles, आसान भाषा में",
+  "short": "Green Loan Principles, जो LMA, APLMA और LSTA ने छापे हैं, चार मुख्य हिस्सों वाला एक voluntary framework है: पैसे का इस्तेमाल, project का आकलन और चुनाव, पैसे का प्रबंधन, और reporting। Lender हर एक को documents से जाँचता है, जैसे ख़र्च के लिए invoices और reporting के लिए सालाना impact के आँकड़े।",
+  "sections": [
+    {
+      "h": "1. पैसे का इस्तेमाल",
+      "p": [
+        "पैसा किसी योग्य green project में जाना चाहिए, जैसे renewable energy, energy efficiency, साफ़ transport, प्रदूषण रोकथाम, green buildings या पानी का टिकाऊ प्रबंधन। Lender project का विवरण, quotations और, पैसा जारी होने के बाद, वे supplier invoices जाँचता है जो दिखाते हैं कि पैसा उसी उपकरण या काम पर गया।"
+      ]
+    },
+    {
+      "h": "2. Project का आकलन और चुनाव",
+      "p": [
+        "Borrower अपने पर्यावरण के लक्ष्य बताता है, उसने project को योग्य कैसे माना, और कोई पर्यावरण या सामाजिक जोखिम। MSME के लिए यह एक छोटा note हो सकता है: समस्या, project, energy या emissions में उम्मीद की गई बचत, और अनुमान कैसे लगाया।"
+      ]
+    },
+    {
+      "h": "3. पैसे का प्रबंधन",
+      "p": [
+        "Green loan का पैसा एक अलग account में जमा होना चाहिए या ऐसे track होना चाहिए कि दूसरे उधार से अलग दिखाया जा सके। Lender account statement या borrower की अंदरूनी tracking को disbursements से मिलाता है।"
+      ]
+    },
+    {
+      "h": "4. Reporting",
+      "p": [
+        "Loan बकाया रहने तक borrower साल में कम से कम एक बार report करता है: किन projects को पैसा मिला, कितना ख़र्च हुआ, और उम्मीद या असली impact, जैसे बनी kWh, बची energy या टाली गई tonne CO2, method बताकर। Principles एक green loan framework और, जहाँ ठीक हो, external review की भी सिफ़ारिश करते हैं, जिस पर MSME borrower को अपने lender से पहले ही सहमति बना लेनी चाहिए।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "Rooftop solar loan के impact आँकड़े का उदाहरण",
+    "lines": [
+      "System: 100 kW rooftop solar",
+      "उम्मीद की गई generation: लगभग 1,400 kWh प्रति kW प्रति साल (अनुमान; installer का site का अनुमान लें) = 140,000 kWh",
+      "हटाई गई grid बिजली: 140,000 x 0.710 kg CO2 प्रति kWh (CEA version 21.0) = 99,400 kg",
+      "बताया गया impact: साल में लगभग 99.4 tonne CO2, location-based, पूरे साल का data आने पर meter की generation से बदला जाएगा"
+    ]
+  },
+  "senseible": "Senseible का green loan readiness check और finance application उन invoices और बिजली records को व्यवस्थित करते हैं जो lender पैसे के इस्तेमाल और reporting के तहत माँगता है। यह lender नहीं है, principles के तहत पात्रता तय नहीं करता और external review नहीं देता।",
+  "links": [
+    {
+      "label": "Green finance",
+      "to": "/green-finance"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Carbon data से green loan कैसे लें",
+      "to": "/climate-intelligence/how-to-get-green-loans-india-carbon-data"
+    },
+    {
+      "label": "Disbursement के बाद green loan reporting",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    }
+  ],
+  "reviewNote": "Green Loan Principles कुछ सालों में बदले जाते हैं; हिस्सों के शब्द quote करने से पहले LMA की site पर ताज़ा edition देखें।"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "msme-supplier-to-ccts-obligated-plant",
+  "q": "CCTS के दायरे वाला plant अपने MSME suppliers से क्या माँगेगा?",
+  "title": "CCTS plant का MSME supplier",
+  "short": "CCTS के नियम suppliers से कुछ ज़रूरी नहीं करते: plant का target उसके अपने gate-to-gate emissions को ढकता है। पर plants कुछ बाहर से लाए intermediate products के लिए notional emissions गिनते हैं, और कमी ढूँढते हैं, इसलिए प्रति unit energy खपत, fuel के प्रकार और साफ़ inputs की माँग की उम्मीद रखें।",
+  "sections": [
+    {
+      "h": "नियम क्या ढकते हैं",
+      "ul": [
+        "Targets सिर्फ़ gazette schedules में नाम वाले plants पर लागू हैं।",
+        "Intensity plant की gate-to-gate boundary के अंदर direct energy, process और खरीदी गई बिजली और heat के emissions ढकती है।",
+        "जहाँ intermediate products या कच्चा माल plant में लाया जाता है, वहाँ sector monitoring guidelines के हिसाब से notional emissions जोड़े जाते हैं, इसलिए clinker, sponge iron या pulp खरीदने वालों को अपनी खरीद के आँकड़े चाहिए हो सकते हैं।"
+      ]
+    },
+    {
+      "h": "Buyers आम तौर पर क्या माँगते हैं",
+      "ul": [
+        "Invoices के साथ हर महीने की बिजली और fuel खपत।",
+        "आप जो supply करते हैं उसकी प्रति tonne energy या emissions।",
+        "आप grid बिजली, captive बिजली या renewable supply इस्तेमाल करते हैं।",
+        "Fuel बदलने या efficiency सुधारने की योजनाएँ।"
+      ]
+    },
+    {
+      "h": "तैयार रहें",
+      "p": [
+        "बारह महीने का साफ़ invoice data इनमें से ज़्यादातर माँगों का जवाब देता है और CBAM, BRSR value chain के सवालों और green loan आवेदनों के भी काम आता है।"
+      ]
+    }
+  ],
+  "senseible": "Senseible MSME के बिजली और fuel invoices को हर महीने के emissions records में बदलता है, हर आँकड़ा अपने bill से जुड़ा, buyer के साथ साझा करने के लिए तैयार।",
+  "links": [
+    {
+      "label": "कितने plants के CCTS targets हैं",
+      "to": "/answers/how-many-plants-have-ccts-targets"
+    },
+    {
+      "label": "CCTS intensity से बाहर रखे emissions",
+      "to": "/answers/ccts-emissions-excluded-from-intensity"
+    },
+    {
+      "label": "क्या MSME CCTS credits कमा सकती है",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "reviewNote": "Notional emissions पर scan की हुई compliance procedure का Section 4.4 (2) (vi), 23 October 2026 को पढ़ा। Buyers क्या माँगते हैं यह चलन है, नियम नहीं।"
+}

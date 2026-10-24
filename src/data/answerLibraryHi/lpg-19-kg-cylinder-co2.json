@@ -1,0 +1,65 @@
+{
+  "slug": "lpg-19-kg-cylinder-co2",
+  "q": "19 kg का एक commercial LPG cylinder कितनी CO2 छोड़ता है?",
+  "title": "19 kg LPG cylinder से कितनी CO2",
+  "short": "भरा हुआ 19 kg का commercial LPG cylinder पूरी gas जलने पर लगभग 56.6 kg CO2 छोड़ता है: 19 kg x 2.98 kg CO2 प्रति kg LPG। 14.2 kg का घरेलू cylinder लगभग 42.3 kg और 47.5 kg का cylinder लगभग 141.6 kg देता है।",
+  "sections": [
+    {
+      "h": "भारत के आम sizes के लिए प्रति cylinder आँकड़े",
+      "ul": [
+        "5 kg cylinder: 5 x 2.98 = 14.9 kg CO2",
+        "14.2 kg घरेलू cylinder: 14.2 x 2.98 = 42.3 kg CO2",
+        "19 kg commercial cylinder: 19 x 2.98 = 56.6 kg CO2",
+        "47.5 kg commercial cylinder: 47.5 x 2.98 = 141.6 kg CO2"
+      ],
+      "p": [
+        "2.98 kg CO2 प्रति kg, LPG के लिए IPCC 2006 के default से आता है, 63,100 kg CO2 प्रति TJ, गुणा उसकी net calorific value 47.3 TJ प्रति हज़ार tonne। यह Scope 1 है क्योंकि gas आप अपने चूल्हों, ovens या furnaces में जलाते हैं।"
+      ]
+    },
+    {
+      "h": "Cylinder का वज़न नहीं, gas का net वज़न लें",
+      "p": [
+        "Cylinder और invoice पर छपा size LPG का net वज़न है। तराज़ू पर भरा cylinder steel के खोल की वजह से काफ़ी भारी होता है। सिर्फ़ gas के net kg को 2.98 से गुणा करें।",
+        "अगर distributor cylinder की गिनती से bill करता है, तो पहले kg में बदलें: गिनती x प्रति cylinder net kg। अगर invoice पर पहले से कुल kg है, तो वही आँकड़ा लें।"
+      ]
+    },
+    {
+      "h": "गैस बची रहते लौटाए गए cylinders",
+      "p": [
+        "Emissions जलाई गई gas से होते हैं, खरीदी गई से नहीं। अगर cylinder gas बची रहते लौटता है और supplier बचे हिस्से का credit देता है, तो credit किए गए kg घटाएँ। Credit न मिले तो ज़्यादातर छोटे कारोबार पूरा cylinder गिनते हैं, जो थोड़ा ज़्यादा दिखाता है और सुरक्षित तरफ़ है।",
+        "साल के कुल के लिए सभी invoices के kg जोड़ें, फिर साल की शुरुआत और आख़िर में stock में रखे भरे cylinders के हिसाब से adjust करें।"
+      ]
+    },
+    {
+      "h": "LPG से methane और nitrous oxide बहुत कम हैं",
+      "p": [
+        "LPG जलाने से थोड़ी सी methane और nitrous oxide भी निकलती है। Commercial इस्तेमाल के IPCC defaults पर ये CO2 के आँकड़े में 1% से भी काफ़ी कम जोड़ती हैं, इसलिए ज़्यादातर inventories LPG को सिर्फ़ CO2 के रूप में बताती हैं और method note में यह लिखती हैं।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: एक restaurant के महीने भर के LPG invoices",
+    "lines": [
+      "19 kg cylinders: 30 x 19 = 570 kg LPG",
+      "47.5 kg cylinders: 2 x 47.5 = 95 kg LPG",
+      "कुल LPG: 570 + 95 = 665 kg",
+      "665 x 2.98 = 1,981.7 kg CO2, महीने के लिए लगभग 1.98 tonne (Scope 1)"
+    ],
+    "note": "अगर एक 19 kg cylinder आधा भरा 9.5 kg के credit के साथ लौटा, तो 655.5 kg लें: 655.5 x 2.98 = 1,953.4 kg CO2।"
+  },
+  "senseible": "Senseible LPG invoices से net kg पढ़ता है, या line पर cylinder का size छपा हो तो cylinder की गिनती को kg में बदलता है, इसे Scope 1 में रखता है और 2.98 kg CO2 प्रति kg लगाता है, जो IPCC 2006 का default है, line पर factor का स्रोत दिखाते हुए। हाथ में रखे भरे cylinders का stock adjustment आपको करना होता है।",
+  "links": [
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    },
+    {
+      "label": "खरीदा गया fuel बनाम जलाया गया fuel",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    },
+    {
+      "label": "Scope 1 में fuels के HSN codes",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    }
+  ]
+}

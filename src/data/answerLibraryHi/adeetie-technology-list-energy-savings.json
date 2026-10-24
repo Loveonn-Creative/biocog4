@@ -1,0 +1,49 @@
+{
+  "slug": "adeetie-technology-list-energy-savings",
+  "q": "ADEETIE की सूची में कौन सी technologies हैं, और वे कितनी energy बचाती हैं?",
+  "title": "ADEETIE technology सूची और बचत",
+  "short": "BEE उम्मीद की गई बचत के साथ 69 सांकेतिक technologies बताता है, जैसे foundries में lost foam casting 50 से 60 percent, forging में induction billet heaters 20 से 25 percent और CNC machine tools 20 से 40 percent। सूची खुली है: दूसरी technologies भी योग्य हो सकती हैं।",
+  "sections": [
+    {
+      "h": "Sector के हिसाब से उदाहरण (सूची में दी बचत की संभावना)",
+      "ul": [
+        "Foundry: divided blast cupola 20 से 25 percent; natural gas से चलने वाला boiler 20 से 30; lost foam casting 50 से 60।",
+        "Forging: forging furnace 15 से 20 percent; hydraulic hammer 30 से 40; induction billet heater 20 से 25।",
+        "Bricks: vertical shaft brick kilns 15 से 20 percent; zig-zag firing 20 से 25।",
+        "Ceramics: gas engine आधारित co-generation 30 से 40 percent; low thermal mass tunnel kiln cars 10 से 13।",
+        "Textile: gas से चलने वाले stenters 30 से 40 percent; high-speed carding 30 से 40; auto loom 25 से 30।",
+        "Steel re-rolling: direct rolling 30 से 40 percent।",
+        "Buildings: BEE 5 star rated AC 20 से 45 percent।"
+      ]
+    },
+    {
+      "h": "सूची का इस्तेमाल कैसे करें",
+      "ol": [
+        "अपनी सबसे बड़ी energy खपत के लिए दो या तीन technologies चुनें, जैसे furnace, kiln या compressor house।",
+        "Empanelled auditor को investment grade energy audit में उन्हें परखने दें।",
+        "बचत अपने audit से लें, सूची से नहीं। सूची ranges देती है; आपका loan और subvention नापी गई बचत पर निर्भर करते हैं।"
+      ]
+    },
+    {
+      "h": "सूची में नहीं है?",
+      "p": [
+        "Booklet कहती है कि scheme सांकेतिक सूची से आगे भी खुली है। सूची से बाहर की technology को भी detailed project report और BEE technical committee की मंज़ूरी चाहिए।"
+      ]
+    }
+  ],
+  "senseible": "Senseible आपके invoices से बिजली और fuel को महीने के हिसाब से अलग करता है, ताकि क्या बदलें यह चुनने से पहले आप देख सकें कि कौन सी utility आपका energy bill बढ़ाती है।",
+  "links": [
+    {
+      "label": "ADEETIE आवेदन के कदम",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "IE2 से IE4 motors",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Air compressor की specific power",
+      "to": "/answers/air-compressor-specific-power-kw-per-cfm"
+    }
+  ]
+}

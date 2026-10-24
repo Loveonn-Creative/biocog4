@@ -1,0 +1,53 @@
+{
+  "slug": "litres-in-a-tonne-of-diesel-india",
+  "q": "भारत में एक tonne diesel में कितने litre होते हैं?",
+  "title": "एक tonne diesel में कितने litre",
+  "short": "PPAC की conversion table के हिसाब से एक tonne diesel में 1,210 litre होते हैं, 29.5 C पर नापे हुए। इस volume को bulk invoices पर इस्तेमाल होने वाले 15 C के आधार पर लाने के लिए 0.9879 से गुणा करें, जिससे लगभग 1,195 litre बनते हैं। इसका मतलब 15 C पर density लगभग 0.837 kg प्रति litre।",
+  "sections": [
+    {
+      "h": "Official आँकड़े",
+      "ul": [
+        "वज़न से volume: 1 tonne diesel = 1.2100 kilolitre = 7.61 barrel (PPAC Ready Reckoner FY 2025-26, Table 9.2)।",
+        "Temperature: 29.5 C के volume को 15 C के volume में बदलने के लिए 0.9879 से गुणा करें।",
+        "PPAC के अनुसार petrol और diesel के आँकड़े BS-IV norms के हिसाब से हैं।"
+      ]
+    },
+    {
+      "h": "कब इस्तेमाल करें",
+      "p": [
+        "जब supplier diesel का bill tonne या kilolitre में दे और आपको दूसरी unit चाहिए, या quantity की जाँच करनी हो। अगर invoice या test certificate पर density छपी है, तो वही लें: वह आपके असली batch की है।"
+      ]
+    },
+    {
+      "h": "फिर CO2 में",
+      "p": [
+        "Kilogram मिल जाने पर IPCC के default, लगभग 3.19 kg CO2 प्रति kg diesel, से गुणा करें। वज़न में हिसाब करने से temperature और density की ज़्यादातर ग़लतियाँ बच जाती हैं।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण",
+    "lines": [
+      "Invoice: 12 tonne HSD।",
+      "29.5 C पर volume: 12 x 1,210 = 14,520 litre।",
+      "15 C पर volume: 14,520 x 0.9879 = 14,344 litre।",
+      "CO2: 12,000 kg x 3.19 = 38,280 kg, लगभग 38.3 t।"
+    ],
+    "note": "Quantity सिर्फ़ समझाने के लिए है।"
+  },
+  "senseible": "Senseible हर fuel invoice पर छपी quantity और unit पढ़ता है, बताई गई density या calorific value से बदलता है, और हर line पर factor और स्रोत दिखाता है, ताकि litre या kilogram कभी अंदाज़े से न लिया जाए।",
+  "links": [
+    {
+      "label": "Diesel kg से litre",
+      "to": "/answers/diesel-kg-to-litres-conversion"
+    },
+    {
+      "label": "15 C पर kilolitre वाला bulk diesel invoice",
+      "to": "/answers/bulk-diesel-invoice-kilolitres-15c"
+    },
+    {
+      "label": "Fuel volume 29.5 C बनाम 15 C",
+      "to": "/answers/fuel-volume-at-29-5-c-vs-15-c"
+    }
+  ]
+}

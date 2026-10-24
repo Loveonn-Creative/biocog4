@@ -1,0 +1,49 @@
+{
+  "slug": "pm-surya-ghar-subsidy-per-kw",
+  "q": "PM Surya Ghar rooftop solar के प्रति kW कितनी subsidy देता है?",
+  "title": "PM Surya Ghar subsidy प्रति kW",
+  "short": "पहले 2 kW के लिए Rs 30,000 प्रति kW और तीसरे kW के लिए Rs 18,000, इसलिए किसी घर को 3 kW या ज़्यादा के लिए अधिकतम Rs 78,000 मिलते हैं। Special category राज्यों में Rs 33,000 और Rs 19,800 मिलते हैं। Housing societies को साझा सुविधाओं के लिए Rs 18,000 प्रति kW मिलते हैं, 500 kW तक।",
+  "sections": [
+    {
+      "h": "दरें, 13 February 2024 से",
+      "ul": [
+        "पहले 2 kW: Rs 30,000 प्रति kW (special category राज्यों में Rs 33,000)।",
+        "1 kW और तक की अतिरिक्त क्षमता: Rs 18,000 प्रति kW (Rs 19,800)।",
+        "3 kW से ऊपर: कोई अतिरिक्त सहायता नहीं।",
+        "Housing societies और RWAs, साझा सुविधाएँ EV charging सहित: Rs 18,000 प्रति kW (Rs 19,800), 3 kW प्रति घर के हिसाब से 500 kW तक।"
+      ]
+    },
+    {
+      "h": "MNRE के अपने उदाहरण",
+      "ul": [
+        "1.5 kW: Rs 30,000 x 1.5 = Rs 45,000।",
+        "2.5 kW: Rs 30,000 x 2 + Rs 18,000 x 0.5 = Rs 69,000।",
+        "6 kW: Rs 30,000 x 2 + Rs 18,000 x 1 = Rs 78,000।",
+        "100 kW और 20 घरों वाली RWA: Rs 18,000 x 60 kW = Rs 10,80,000, क्योंकि सीमा 3 kW प्रति घर है।"
+      ]
+    },
+    {
+      "h": "शर्तें जिनमें लोग फँस जाते हैं",
+      "ul": [
+        "Subsidy modules की DC क्षमता के हिसाब से है, inverter की rating से नहीं।",
+        "Modules को domestic content की शर्त पूरी करनी होती है।",
+        "किसी system को subsidy सिर्फ़ एक बार मिलती है; जगह बदला गया system दोबारा योग्य नहीं होता।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बिजली bills पढ़ता है, net metering lines सहित, ताकि grid import, export और solar generation एक monthly record में factor और स्रोत के साथ दिखें। आँकड़े self-declared हैं।",
+  "links": [
+    {
+      "label": "PM Surya Ghar के तहत benchmark लागत",
+      "to": "/answers/pm-surya-ghar-benchmark-cost"
+    },
+    {
+      "label": "Domestic content का नियम",
+      "to": "/answers/pm-surya-ghar-domestic-content-modules"
+    },
+    {
+      "label": "क्या यह factories के लिए है?",
+      "to": "/answers/pm-surya-ghar-subsidy-for-factories-or-shops"
+    }
+  ]
+}

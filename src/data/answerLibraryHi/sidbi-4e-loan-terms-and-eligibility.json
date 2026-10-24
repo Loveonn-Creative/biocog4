@@ -1,0 +1,54 @@
+{
+  "slug": "sidbi-4e-loan-terms-and-eligibility",
+  "q": "SIDBI का 4E energy efficiency loan कितना ढकता है, और कौन योग्य है?",
+  "title": "SIDBI 4E loan: कितना और किसे",
+  "short": "SIDBI की 4E scheme energy efficiency project का 90 percent तक उधार देती है, कम से कम ₹10 lakh का loan, या अगर आप 20 percent नकद collateral SIDBI fixed deposit के रूप में रखें तो 100 percent तक। Detailed रास्ते के लिए एक साल का कामकाज और BEE-certified auditors से detailed energy audit चाहिए।",
+  "sections": [
+    {
+      "h": "4E किसके लिए पैसा देता है",
+      "p": [
+        "4E energy efficiency के उपायों के लिए शुरू से आख़िर तक पैसा देता है: उपकरण और मशीनरी की खरीद, लगाना, civil works और commissioning। आम projects वे हैं जिनकी audit सिफ़ारिश करता है, जैसे efficient motors और pumps, compressors, furnace upgrades और waste heat recovery।"
+      ]
+    },
+    {
+      "h": "आवेदन के दो तरीके",
+      "ul": [
+        "Detailed Appraisal Mode: unit कम से कम एक साल से चल रही हो और BEE-certified Energy Auditors वाली किसी technical agency या consultant से Detailed Energy Audit हुआ हो। Project लागत का 90 percent तक पैसा, कम से कम ₹10 lakh का loan।",
+        "Quick Dispensation Mode: कम से कम 20 percent के SIDBI fixed deposit को नकद collateral रखकर 100 percent तक पैसा। Unit का कम से कम तीन साल का कामकाज और audited balance sheets के आधार पर पिछले दो साल में cash profit होना चाहिए।"
+      ]
+    },
+    {
+      "h": "दोनों तरीकों की शर्तें",
+      "ul": [
+        "Udyam registration, संतोषजनक credit history और किसी bank या financial institution का कोई default नहीं।",
+        "SIDBI के Environment and Social Management Framework का पालन।",
+        "भुगतान की अवधि, किसी moratorium सहित, scheme में तय नहीं बल्कि sanction की शर्तों में तय होती है।"
+      ]
+    },
+    {
+      "h": "Audit सही करवाना",
+      "p": [
+        "Detailed रास्ता audit पर टिका है, इसलिए audit report आपके आवेदन का मुख्य हिस्सा है। इसमें baseline energy खपत, हर उपाय की लागत, उम्मीद की गई बचत और payback होना चाहिए। जो व्यक्ति BEE-certified energy auditor नहीं है, उसका audit बताई गई शर्त पूरी नहीं करेगा, इसलिए study के पैसे देने से पहले auditor का certificate number जाँचें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बारह महीने के bills को हर महीने की और output की प्रति unit energy में पढ़ता है, जिससे auditor और SIDBI को एक ही baseline मिलती है और commissioning के बाद की बचत दिखाना आसान होता है।",
+  "links": [
+    {
+      "label": "SIDBI energy efficiency loans का परिचय",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "SIDBI Green Finance Scheme की शर्तें",
+      "to": "/answers/sidbi-green-finance-scheme-loan-terms"
+    },
+    {
+      "label": "MSME energy auditor कैसे रखे",
+      "to": "/answers/how-to-hire-an-energy-auditor-msme"
+    },
+    {
+      "label": "ADEETIE interest subvention",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    }
+  ]
+}

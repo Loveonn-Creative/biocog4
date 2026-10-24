@@ -52,7 +52,7 @@ function headTags(route, R) {
     `<meta property="og:image:width" content="${R.OG_IMAGE_WIDTH}" data-rh="true" />`,
     `<meta property="og:image:height" content="${R.OG_IMAGE_HEIGHT}" data-rh="true" />`,
     `<meta property="og:image:alt" content="${e(og.alt)}" data-rh="true" />`,
-    `<meta property="og:locale" content="${route.lang === 'de' ? 'de_DE' : 'en_IN'}" data-rh="true" />`,
+    `<meta property="og:locale" content="${route.lang === 'de' ? 'de_DE' : route.lang === 'hi' ? 'hi_IN' : 'en_IN'}" data-rh="true" />`,
     `<meta name="twitter:card" content="summary_large_image" data-rh="true" />`,
     `<meta name="twitter:site" content="@senseible_earth" data-rh="true" />`,
     `<meta name="twitter:title" content="${e(route.title)}" data-rh="true" />`,

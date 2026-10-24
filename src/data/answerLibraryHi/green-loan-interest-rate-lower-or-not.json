@@ -1,0 +1,45 @@
+{
+  "slug": "green-loan-interest-rate-lower-or-not",
+  "q": "क्या भारत में green loan से मेरी MSME को कम ब्याज दर मिलेगी?",
+  "title": "क्या green loans पर ब्याज कम होता है?",
+  "short": "कभी-कभी, हमेशा नहीं। कुछ banks green projects के लिए थोड़ी छूट देते हैं, और renewable energy loans priority sector lending में गिने जा सकते हैं, जिससे banks को उधार देने में मदद मिलती है। दर फिर भी ज़्यादातर आपकी credit profile पर निर्भर करती है। किसी भी बचत को संभव मानें, पक्का नहीं।",
+  "sections": [
+    {
+      "h": "किससे मदद मिल सकती है",
+      "ul": [
+        "Energy efficiency और renewable energy के लिए bank या SIDBI की schemes।",
+        "योग्य renewable energy loans को priority sector का दर्जा।",
+        "Credit guarantee schemes जो ज़रूरी collateral घटाती हैं।"
+      ]
+    },
+    {
+      "h": "दर फिर भी किससे तय होती है",
+      "ul": [
+        "आपका भुगतान का इतिहास, cash flow और collateral।",
+        "Bank का benchmark rate और spread।",
+        "Project की quality: वास्तविक बचत के साथ साफ़ report।"
+      ]
+    },
+    {
+      "h": "पूरी लागत की तुलना करें",
+      "p": [
+        "सिर्फ़ ऊपर दिखने वाली दर नहीं, processing fees, किसी external review की लागत और reporting की मेहनत भी देखें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible invoices और bills को तारीख और fingerprint वाले emission records में बदलता है, यही वह सबूत है जो lender आम तौर पर सबसे पहले देखना चाहता है।",
+  "links": [
+    {
+      "label": "क्या renewable energy lending priority sector है?",
+      "to": "/answers/is-renewable-energy-loan-priority-sector"
+    },
+    {
+      "label": "SIDBI energy efficiency loan",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "Green loans के लिए credit guarantee",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "does-cbam-count-electricity-emissions-steel",
+  "q": "क्या CBAM मेरे steel या aluminium plant में इस्तेमाल हुई बिजली के emissions गिनता है?",
+  "title": "क्या CBAM steel के लिए बिजली गिनता है?",
+  "short": "Definitive period में नहीं। Iron और steel, aluminium और hydrogen के लिए CBAM Regulation सिर्फ़ direct emissions गिनता है, जो उसके Annex II में दिए हैं। बिजली के emissions (indirect) cement और fertilisers के लिए गिने जाते हैं, steel या aluminium के लिए नहीं। 2023 से 2025 के transitional period में आपने सभी सामान के लिए indirect emissions report किए थे, और Commission इन्हें बाद में बढ़ा सकता है।",
+  "sections": [
+    {
+      "h": "किस सामान में बिजली गिनी जाती है",
+      "ul": [
+        "सिर्फ़ direct emissions (Annex II): iron और steel, aluminium, hydrogen।",
+        "Direct और indirect emissions: cement और fertilisers।",
+        "सामान के रूप में import हुई बिजली: उसे बनाने के emissions।"
+      ],
+      "p": [
+        "Regulation (EU) 2023/956 का Article 7 और Annex IV method तय करते हैं। Definitive period 1 January 2026 से शुरू हुआ, और 2026 के imports पहले हैं जिनके लिए certificates चाहिए, जो 2027 में खरीदे और जमा किए जाते हैं।"
+      ]
+    },
+    {
+      "h": "Captive बिजली भी indirect गिनी जाती है",
+      "p": [
+        "Annex IV indirect emissions को production में इस्तेमाल हुई बिजली बनाने के emissions के रूप में परिभाषित करता है, बिजली जहाँ भी बनी हो। इसलिए आपके अपने कोयले वाले captive plant की बिजली भी CBAM के लिए indirect है और steel या aluminium पर charge नहीं होती। Process में लगने वाली heat और steam अलग हैं: इन्हें बनाने के लिए जले fuel के emissions direct हैं और गिने जाते हैं।"
+      ]
+    },
+    {
+      "h": "Steel और aluminium के लिए क्या फिर भी गिना जाता है",
+      "p": [
+        "आपके अपने processes के direct emissions: furnaces और boilers में fuel जलना, coke और limestone की reactions जैसे process emissions, और aluminium smelting में anode की खपत। Precursors के embedded emissions भी गिने जाते हैं, जैसे किसी दूसरे plant से खरीदा pig iron, DRI या unwrought aluminium, फिर से direct emissions के आधार पर।"
+      ]
+    },
+    {
+      "h": "फिर भी बिजली का data क्यों रखें",
+      "ul": [
+        "Article 30 Commission से Annex II के सामान के लिए indirect emissions शामिल करने का आकलन करने को कहता है, इसलिए नियम बदल सकता है।",
+        "EU buyers अक्सर अपने Scope 3 और product दावों के लिए पूरा footprint चाहते हैं, सिर्फ़ CBAM का आँकड़ा नहीं।",
+        "Transitional reports में indirect emissions पहले से थे, और कुछ buyers साल-दर-साल आँकड़े मिलाते हैं।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "समझाने के लिए: EAF rolling route में बिजली",
+    "lines": [
+      "मानी गई बिजली खपत: 500 kWh प्रति tonne steel (समझाने के लिए, कोई benchmark नहीं)",
+      "Indirect emissions: 500 x 0.710 kg CO2/kWh = 355 kg CO2 प्रति tonne",
+      "CBAM definitive period: steel के लिए ये 355 kg नहीं गिने जाते",
+      "Buyer के पूरे footprint के लिए गिने जाते हैं: इन्हें CEA स्रोत के साथ अलग से बताएँ"
+    ],
+    "note": "Cement और fertiliser exporters यही indirect आँकड़ा CBAM embedded emissions में शामिल करेंगे।"
+  },
+  "senseible": "Senseible आपके बिजली bills से kWh पढ़ता है और CEA का 0.710 kg CO2 प्रति kWh grid factor लगाता है, ताकि अगर कोई buyer या बाद का नियम माँगे तो indirect आँकड़ा तैयार रहे। यह किसी installation की verified CBAM embedded emissions report नहीं बनाता।",
+  "links": [
+    {
+      "label": "भारतीय exporters के लिए CBAM compliance",
+      "to": "/climate-intelligence/cbam-compliance-indian-exporters"
+    },
+    {
+      "label": "CBAM के तहत steel के embedded emissions",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Aluminium के लिए CBAM लागत",
+      "to": "/cbam-cost/aluminium"
+    }
+  ],
+  "reviewNote": "Commission Article 30 के तहत और सामान पर indirect emissions बढ़ा सकता है; इस पर भरोसा करने से पहले संशोधित Annex II देखें।"
+}
