@@ -1,0 +1,65 @@
+{
+  "slug": "waste-heat-recovery-rate-furnace-flue-gas",
+  "q": "How much heat should I recover from furnace flue gas, and how is the recovery rate calculated?",
+  "title": "Waste heat recovery rate for furnaces",
+  "short": "Waste heat recovery rate is the heat recovered divided by the sensible heat in the exhaust gas, times 100. BEE's MSME guidelines expect at least 30% from forging, aluminium and galvanizing furnaces, with targets of 38 to 49%, and flue gas leaving at 250 to 300 °C with natural draft or 150 to 250 °C with induced draft.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Furnace and boiler engineers planning a recuperator, air preheater or economiser",
+  "sections": [
+    {
+      "h": "Standard and target recovery rates",
+      "ul": [
+        "Forging furnace, exhaust 600 to 1,000 °C: standard 30%, target 49%",
+        "Heat treatment furnace, exhaust up to 600 °C: standard 30%, target 38%",
+        "Aluminium bulk melting furnace, exhaust 500 to 600 °C: standard 30%, target 49%",
+        "Galvanizing furnace, exhaust up to 600 °C: standard 30%, target 38%",
+        "Glass tank furnace, exhaust 1,200 to 1,300 °C: standard 47%, target 57%",
+        "Glass pot furnace, exhaust 800 to 1,000 °C: standard 37%, target 49%",
+        "Boiler in a chemicals or dye unit, exhaust 400 to 600 °C: standard 22%, target 43%"
+      ]
+    },
+    {
+      "h": "How BEE set the numbers",
+      "p": [
+        "The standard assumes the top of the exhaust temperature range and a heat exchanger working at 60% efficiency. The target assumes the bottom of the range and 65% efficiency. Natural draft systems leave flue gas hotter than induced draft ones."
+      ]
+    },
+    {
+      "h": "Where to put the heat",
+      "ul": [
+        "Air preheater or recuperator: heats combustion air with flue gas",
+        "Charge preheater: heats the material going in, such as aluminium scrap, billets or glass cullet",
+        "Economiser on a boiler: heats feedwater"
+      ]
+    },
+    {
+      "h": "Keep it working",
+      "p": [
+        "Recovery equipment fouls. BEE asks chemical and dye units to clean and maintain flue path recovery systems every six months to stop scale cutting performance."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into monthly totals, so the fuel saved after fitting a recuperator or economiser shows in the record against the months before.",
+  "links": [
+    {
+      "label": "Recuperator fuel savings",
+      "to": "/answers/recuperator-combustion-air-preheat-fuel-saving"
+    },
+    {
+      "label": "Boiler economiser fuel saving",
+      "to": "/answers/boiler-economiser-fuel-saving"
+    },
+    {
+      "label": "Which scope is waste heat power",
+      "to": "/answers/waste-heat-recovery-power-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): Tables 6.9, 6.23, 6.40, 6.67 and 6.72, with the waste heat recovery rate formula",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

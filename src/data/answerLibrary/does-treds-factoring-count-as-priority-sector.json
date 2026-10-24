@@ -1,0 +1,61 @@
+{
+  "slug": "does-treds-factoring-count-as-priority-sector",
+  "q": "Do invoice factoring and TReDS discounting count as priority sector lending for banks?",
+  "title": "Factoring, TReDS and priority sector",
+  "short": "Yes, in two cases. With recourse factoring done by a bank's own factoring department counts under the MSME category when the seller of the invoices is an MSME. Factoring of MSME invoices on the Trade Receivables Discounting System (TReDS) also counts as priority sector. Regional rural banks and urban co-operative banks are left out.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME suppliers selling to large buyers, and bank trade finance teams",
+  "sections": [
+    {
+      "h": "What the rule says",
+      "p": [
+        "Para 10.1 of RBI's 2025 Directions covers factoring. Departmental factoring by banks counts on the reporting dates when the assignor, the business selling its receivables, is a micro, small or medium enterprise and the factoring is with recourse. Factoring transactions for MSMEs on TReDS are eligible without that condition in the text."
+      ]
+    },
+    {
+      "h": "With recourse, in plain words",
+      "p": [
+        "With recourse means that if your buyer does not pay the invoice, the bank can come back to you for the money. Without recourse, the bank takes that risk itself."
+      ]
+    },
+    {
+      "h": "What it means for an MSME supplier",
+      "p": [
+        "When a bank finances your invoice on TReDS, the amount counts towards the bank's priority sector target. That gives banks a reason to finance MSME invoices on the platforms."
+      ]
+    },
+    {
+      "h": "Your buyer still owes on time",
+      "p": [
+        "Discounting an invoice does not change the buyer's legal deadline. Under the MSMED Act, a buyer must pay a micro or small supplier within the agreed period, which cannot exceed 45 days from acceptance."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads tax invoices for their energy and emissions content. It does not discount invoices or connect to any TReDS platform.",
+  "links": [
+    {
+      "label": "How TReDS invoice discounting works",
+      "to": "/answers/how-treds-invoice-discounting-works"
+    },
+    {
+      "label": "Section 43B(h) and the 45-day rule",
+      "to": "/answers/section-43b-h-msme-payment-45-days"
+    },
+    {
+      "label": "Do all MSME loans count as priority sector",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Directions (Priority Sector Lending, Targets and Classification) Directions, 2025, updated 11 September 2026: para 10.1 (factoring transactions)",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    },
+    {
+      "label": "RBI, Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026: para 5.6 (delayed payment under the MSMED Act)",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

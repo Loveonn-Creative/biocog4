@@ -140,6 +140,10 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://beeindia.gov.in/show_content.php?lang=1&level=2&ls_id=344&lid=419
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5be3d06b9b369ad0_1775212788.pdf
 - https://beeindia.gov.in/view_content.php?lid=739&lang=1
+- https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060
+- https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10304&Mode=0
+- https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10000&Mode=0
+- https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org
 - https://ghgprotocol.org

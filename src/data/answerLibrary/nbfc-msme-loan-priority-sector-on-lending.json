@@ -1,0 +1,64 @@
+{
+  "slug": "nbfc-msme-loan-priority-sector-on-lending",
+  "q": "Does an NBFC loan to my MSME count as priority sector lending for the bank that funds the NBFC?",
+  "title": "NBFC loans to MSMEs and priority sector",
+  "short": "It can. When a bank lends to a registered NBFC that lends on to micro and small enterprises, the bank may count it as priority sector up to ₹20 lakh per end borrower. All such on-lending through NBFCs, housing finance companies and NCDC is capped at 5% of the bank's priority sector lending in the previous year.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners borrowing from NBFCs, and NBFC and bank treasury teams",
+  "sections": [
+    {
+      "h": "The ₹20 lakh per borrower limit",
+      "p": [
+        "Under para 23 of RBI's 2025 Directions, bank credit to registered NBFCs, other than microfinance institutions, for on-lending to micro and small enterprises counts as priority sector up to ₹20 lakh per borrower. The bank must keep borrower-level data and get an external auditor's certificate from the NBFC that no other bank has claimed the same loans."
+      ]
+    },
+    {
+      "h": "The 5% cap",
+      "p": [
+        "Para 25 limits all on-lending through NBFCs, housing finance companies and NCDC to 5% of the bank's total priority sector lending of the previous financial year, averaged across the four quarters of the current year."
+      ]
+    },
+    {
+      "h": "Microfinance and co-lending",
+      "ul": [
+        "Loans to NBFC-MFIs and other MFIs that belong to an RBI-recognised self-regulatory organisation, for on-lending to individuals and members of SHGs and JLGs, can count under MSME, subject to para 22.",
+        "Banks may also co-lend with NBFCs to priority sectors under RBI's Transfer and Distribution of Credit Risk Directions, 2025."
+      ]
+    },
+    {
+      "h": "Who it does not cover",
+      "p": [
+        "The NBFC on-lending route in para 23 is not open to regional rural banks, urban co-operative banks, small finance banks or local area banks."
+      ]
+    },
+    {
+      "h": "What it means for you",
+      "p": [
+        "Nothing changes in your loan agreement with the NBFC. The classification sits between the bank and the NBFC, but it gives banks a reason to fund NBFCs that lend small amounts to micro and small units."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives an NBFC and its MSME borrower the same monthly energy and emissions figures from bills, useful when the loan funds solar, efficient machines or a fuel switch.",
+  "links": [
+    {
+      "label": "Do all MSME loans count as priority sector",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    },
+    {
+      "label": "Credit guarantees for MSME green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "How TReDS invoice discounting works",
+      "to": "/answers/how-treds-invoice-discounting-works"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Directions (Priority Sector Lending, Targets and Classification) Directions, 2025, updated 11 September 2026: paras 10.2, 22, 23, 25 and 26",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

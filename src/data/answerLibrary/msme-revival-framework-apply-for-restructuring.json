@@ -1,0 +1,74 @@
+{
+  "slug": "msme-revival-framework-apply-for-restructuring",
+  "q": "Can a struggling MSME ask its bank for a corrective action plan or restructuring before the loan turns NPA?",
+  "title": "Asking your bank for an MSME revival plan",
+  "short": "Yes. RBI's Framework for Revival and Rehabilitation of MSMEs, for loan limits up to ₹25 crore, lets a borrower apply on its own if it expects business failure, cannot pay its debts, or lost 50% of its net worth to accumulated losses in the previous year. Cases above ₹10 lakh go to a bank committee.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME promoters facing a cash crunch, and their chartered accountants",
+  "sections": [
+    {
+      "h": "Where to apply",
+      "p": [
+        "Apply at your branch or directly to the bank's Committee for Stressed MSMEs. If your aggregate loan limits are above ₹10 lakh, the committee must meet within five working days of receiving the application. Up to ₹10 lakh, the branch manager or a designated official handles it. With several lenders, you can file with the largest lender."
+      ]
+    },
+    {
+      "h": "What to put in the application",
+      "ul": [
+        "Latest audited accounts, including net worth.",
+        "All liabilities, including amounts owed to the Central or State Government and to unsecured creditors.",
+        "The nature of the stress.",
+        "The remedial actions you suggest."
+      ]
+    },
+    {
+      "h": "Timelines",
+      "ul": [
+        "The committee decides the corrective action plan within 30 days of its first meeting and tells you within five working days of deciding.",
+        "It may take up to 30 more days if information on statutory dues is missing.",
+        "The bank implements the plan within 30 days for rectification and 90 days for restructuring."
+      ]
+    },
+    {
+      "h": "What the committee can decide",
+      "ul": [
+        "Rectification: a borrower-led plan to regularise the account. Any extra working capital should be ad hoc and repaid or regularised within six months.",
+        "Restructuring: for viable units with no wilful default, fraud or diversion of funds. Promoters may have to give personal guarantees. A decision backed by 75% of creditors by value and 50% by number binds all lenders.",
+        "Recovery: when neither works."
+      ]
+    },
+    {
+      "h": "If the decision is recovery",
+      "p": [
+        "You can ask the committee to review it within ten working days, on the ground of an error on the record or new facts you could not produce earlier. The committee decides the review within 30 days."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows where your fuel and power money goes, month by month, from bills. That helps when a revival plan includes cutting energy costs. It does not deal with banks or committees for you.",
+  "links": [
+    {
+      "label": "SMA-0, SMA-1 and SMA-2 explained",
+      "to": "/answers/msme-loan-sma-0-sma-1-sma-2-meaning"
+    },
+    {
+      "label": "Raising MSE working capital mid-year",
+      "to": "/answers/msme-working-capital-mid-year-review-ad-hoc-limit"
+    },
+    {
+      "label": "Collateral-free MSME loan limits",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular FIDD.MSME & NFS.BC.No.21/06.02.31/2015-16, Framework for Revival and Rehabilitation of MSMEs, 17 March 2016: paras 1, 2.3, 4, 5, 6, 7 and 11",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10304&Mode=0"
+    },
+    {
+      "label": "RBI, Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026: paras 4.5 and 4.6",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

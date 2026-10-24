@@ -1,0 +1,70 @@
+{
+  "slug": "rice-mill-energy-per-tonne-benchmark",
+  "q": "How much energy should a rice mill use per tonne of rice?",
+  "title": "Rice mill energy per tonne benchmark",
+  "short": "BEE's energy conservation guidelines for MSMEs give 25 to 50 kWh per tonne for raw rice and 0.93 to 1.60 Gcal per tonne for parboiled rice, where soaking, steaming and drying add heat. Log paddy processed, rice produced, husk or fuel burnt and units used every day.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Owners and operators of raw and parboiled rice mills",
+  "sections": [
+    {
+      "h": "Raw rice and parboiled rice",
+      "p": [
+        "Raw rice milling is mostly electricity for de-husking, polishing and grading. Parboiled rice adds soaking, steaming and drying, usually with a husk-fired boiler, so heat dominates."
+      ]
+    },
+    {
+      "h": "Working out heat per tonne",
+      "p": [
+        "Multiply husk or other fuel burnt by its calorific value and divide by tonnes of rice. BEE quotes 3,100 to 4,500 kcal per kg for biomass fuels, so test your husk or use a figure from your supplier."
+      ]
+    },
+    {
+      "h": "BEE practices for parboiling",
+      "ul": [
+        "Keep soaking water at about 60 °C; hotter water overcooks paddy.",
+        "Cut off steam once soaking or steaming is done, automatically if possible.",
+        "Make soaking water with a solar water heater where you can.",
+        "Interlock the boiler blower with husk feeding so it stops when feeding stops.",
+        "Recover condensate and recycle treated soaking water."
+      ]
+    },
+    {
+      "h": "Motors",
+      "p": [
+        "Move from several belts on a common shaft to individual motors for each load."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a parboiling mill (illustrative)",
+    "lines": [
+      "Rice produced in a day: 10 tonnes",
+      "Husk burnt: 4 tonnes at an assumed 3,500 kcal per kg = 14 million kcal = 14 Gcal",
+      "14 / 10 = 1.4 Gcal per tonne, inside the 0.93 to 1.60 range"
+    ],
+    "note": "Husk calorific value is assumed within BEE's biomass range; test yours."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Parboiled rice mill husk steam",
+      "to": "/answers/nellore-parboiled-rice-mill-husk-steam"
+    },
+    {
+      "label": "Rice mill footprint per tonne",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    },
+    {
+      "label": "Air ratio targets for boilers",
+      "to": "/answers/furnace-air-ratio-oxygen-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.21 and Table 6.99; biomass calorific value from the note to Table 6.71",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

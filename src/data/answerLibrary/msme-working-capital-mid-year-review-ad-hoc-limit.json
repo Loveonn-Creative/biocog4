@@ -1,0 +1,67 @@
+{
+  "slug": "msme-working-capital-mid-year-review-ad-hoc-limit",
+  "q": "Can my bank raise my working capital limit mid-year when orders jump?",
+  "title": "Raising MSE working capital mid-year",
+  "short": "Yes. RBI asks banks to build three tools into their lending policy for micro and small enterprises: a separate additional limit for unforeseen or seasonal demand, ad hoc limits to be regularised within three months, and a mid-term review of regular limits based on sales since the last review, without waiting for audited accounts.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Owners and accountants of micro and small enterprises with seasonal or lumpy orders",
+  "sections": [
+    {
+      "h": "Additional limit for demand spikes",
+      "p": [
+        "At sanction or renewal, banks may fix a separate additional limit for temporary rises in working capital caused by unforeseen or seasonal demand. It is released mainly where there is sufficient evidence that demand for your products has gone up."
+      ]
+    },
+    {
+      "h": "Ad hoc limits",
+      "p": [
+        "Banks may also sanction ad hoc limits within prudential norms. These must be regularised within three months of sanction."
+      ]
+    },
+    {
+      "h": "Mid-term review",
+      "p": [
+        "Banks normally review working capital once a year from audited accounts, which arrive late. If your demand pattern has changed, the bank can review mid-term on the basis of your sales since the last review. The next regular review, with audited accounts, then confirms it."
+      ]
+    },
+    {
+      "h": "Standby credit for capital spending",
+      "p": [
+        "When funding capital expenditure, banks may sanction a standby credit facility up front to cover unforeseen cost increases, drawn only if costs overrun, so your project does not stall."
+      ]
+    },
+    {
+      "h": "What to take to the branch",
+      "p": [
+        "Confirmed orders, your sales since the last review and the stock and debtor position. A clear trail makes the evidence the circular asks for easy to accept."
+      ]
+    }
+  ],
+  "senseible": "Senseible tracks energy use against output from your bills, so a rise in production shows up alongside the orders you present. It does not assess credit limits.",
+  "links": [
+    {
+      "label": "Working capital at 20% of turnover",
+      "to": "/answers/msme-working-capital-20-percent-turnover"
+    },
+    {
+      "label": "Can a working capital loan be green",
+      "to": "/answers/can-working-capital-loan-be-green"
+    },
+    {
+      "label": "How long a bank can take on an MSME loan",
+      "to": "/answers/how-long-should-bank-take-msme-loan"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular FIDD.MSME & NFS.BC.No.60/06.02.31/2015-16, timely credit to MSEs during their life cycle, 27 August 2015: para 3 (i) to (iv)",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10000&Mode=0"
+    },
+    {
+      "label": "RBI, Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026: para 4.4",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

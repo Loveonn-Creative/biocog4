@@ -1,0 +1,57 @@
+{
+  "slug": "furnace-wall-surface-temperature-limits",
+  "q": "What surface temperature should a furnace or boiler wall run at?",
+  "title": "Furnace and boiler wall temperature targets",
+  "short": "BEE's MSME guidelines set average skin temperatures. A fuel-fired forging furnace should run at about 120 °C on the ceiling and 100 °C on side walls, with targets of 110 and 85. Electric and induction furnaces aim for 70 °C. Boilers and thermic fluid heaters target ambient plus 20 °C.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plant engineers in forging, glass, aluminium, galvanizing and process heating units",
+  "sections": [
+    {
+      "h": "Standard and target skin temperatures",
+      "ul": [
+        "Forging furnace: standard 120 °C ceiling and 100 °C side wall; target 110 and 85",
+        "Heat treatment furnace: standard 100 and 90; target 90 and 75",
+        "Aluminium bulk melting furnace: standard 100 and 90; target 90 and 75",
+        "Glass tank, pot and reheating furnaces: target 120 ceiling and 80 side wall",
+        "Galvanizing furnace side wall: standard 80, target 70; lead bath furnace: standard 100, target 80",
+        "Electric and induction furnaces: standard 90, target 70",
+        "Boilers, thermic fluid heaters and hot air generators: standard ambient plus 30, target ambient plus 20"
+      ]
+    },
+    {
+      "h": "How to measure",
+      "p": [
+        "Use an infrared thermometer on the walls and ceiling under steady operation and average the readings. BEE suggests quarterly checks for most furnaces and monthly for induction forging furnaces."
+      ]
+    },
+    {
+      "h": "What a hot wall tells you",
+      "p": [
+        "A wall above target is losing heat that you paid for in fuel. BEE's fixes are thicker insulation, lower conductivity insulating material, veneering on inside surfaces where it suits, and fewer and better sealed openings."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices into monthly totals, so fuel per tonne before and after an insulation job sits in one record.",
+  "links": [
+    {
+      "label": "Reheating furnace insulation savings",
+      "to": "/answers/reheating-furnace-insulation-fuel-savings"
+    },
+    {
+      "label": "Heat lost through furnace doors",
+      "to": "/answers/furnace-door-opening-heat-loss-fuel"
+    },
+    {
+      "label": "Steam pipe insulation heat loss",
+      "to": "/answers/steam-pipe-insulation-heat-loss"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): Tables 6.10, 6.11, 6.21, 6.35, 6.41, 6.68 and 6.73",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

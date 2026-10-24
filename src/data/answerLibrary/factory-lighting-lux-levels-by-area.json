@@ -1,0 +1,65 @@
+{
+  "slug": "factory-lighting-lux-levels-by-area",
+  "q": "How many lux of light does each area of a factory need?",
+  "title": "Lux levels for factory areas",
+  "short": "BEE's energy conservation guidelines for MSMEs, based on IS 6665, set average levels such as 100 lux for furnace rooms and corridors, 150 lux for stores and maintenance workshops, 200 lux for general inspection, 700 lux for fine inspection and 20 lux for outdoor areas. Lighting well above these levels is wasted power.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plant managers and maintenance heads planning lighting changes",
+  "sections": [
+    {
+      "h": "Average illumination by area",
+      "ul": [
+        "Furnace rooms, bending, annealing lehrs: 100 lux",
+        "Mixing rooms and forming (blowing, drawing, pressing, rolling): 150 lux",
+        "Cutting to size, grinding, polishing, toughening: 200 lux",
+        "Finishing (bevelling, decorating, etching, silvering): 300 lux",
+        "General inspection: 200 lux; fine inspection and brilliant cutting: 700 lux",
+        "Storage areas and maintenance workshops: 150 lux",
+        "Entrance, corridors and stairs: 100 lux; outdoor areas: 20 lux"
+      ]
+    },
+    {
+      "h": "Glare matters too",
+      "p": [
+        "The same table gives a limiting glare index for each area, from 28 for furnace rooms and corridors down to 19 for inspection and brilliant cutting. Fine work needs light that is bright and also low in glare."
+      ]
+    },
+    {
+      "h": "How to check",
+      "p": [
+        "Measure illumination with a lux meter every quarter and read the lighting energy daily from a meter. Clean window panes, fittings and lamps on a schedule, because dirt cuts light before the lamp itself fails."
+      ]
+    },
+    {
+      "h": "Cutting the bill without losing light",
+      "ul": [
+        "Switch to LED fittings and use daylight through skylights or translucent sheets.",
+        "Fit motion sensors, timers and dimming so lights go off when nobody needs them.",
+        "Remove lighting that serves no task, then check watts per square metre against BEE's lighting power density range."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows your monthly electricity use from bills, so you can see whether a lighting change moved the total. It does not measure lux.",
+  "links": [
+    {
+      "label": "Lighting watts per square metre",
+      "to": "/answers/lighting-power-density-factory-shop-floor"
+    },
+    {
+      "label": "LED retrofit in a factory",
+      "to": "/answers/led-lighting-retrofit-factory-co2-saving"
+    },
+    {
+      "label": "Skylights and daylight savings",
+      "to": "/answers/factory-skylights-daylight-lighting-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 5.7, Table 5.14 (from IS 6665:1972, code of practice for industrial lighting)",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

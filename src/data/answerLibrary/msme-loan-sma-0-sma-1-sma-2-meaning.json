@@ -1,0 +1,75 @@
+{
+  "slug": "msme-loan-sma-0-sma-1-sma-2-meaning",
+  "q": "What do SMA-0, SMA-1 and SMA-2 mean on my MSME loan, and what does the bank do next?",
+  "title": "SMA-0, SMA-1 and SMA-2 on an MSME loan",
+  "short": "They are early warning stages before a loan becomes an NPA. Under RBI's MSME revival framework, SMA-1 means principal or interest is 31 to 60 days overdue and SMA-2 means 61 to 90 days. SMA-0 means not more than 30 days overdue but showing signs of stress. Every SMA-2 account must be examined for a corrective action plan.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners with term loans or cash credit, and their finance staff",
+  "sections": [
+    {
+      "h": "The three stages",
+      "ul": [
+        "SMA-0: principal or interest not overdue for more than 30 days, but the account shows signs of incipient stress.",
+        "SMA-1: principal or interest overdue for 31 to 60 days.",
+        "SMA-2: principal or interest overdue for 61 to 90 days."
+      ]
+    },
+    {
+      "h": "Signs that can put you in SMA-0",
+      "ul": [
+        "Stock statements or financial statements delayed by 90 days or more.",
+        "Sales or operating profit 40% or more below the projections the loan was sanctioned on.",
+        "Drawing power cut by 20% or more after a stock audit.",
+        "Three or more cheques or debit instructions returned in 30 days for lack of balance.",
+        "A third request for more time to create security or meet a sanction condition."
+      ]
+    },
+    {
+      "h": "What happens at SMA-2",
+      "p": [
+        "For loan limits above ₹10 lakh, the branch must send the account to the bank's Committee for Stressed MSMEs, normally within five working days. For limits up to ₹10 lakh, the branch manager or a designated official must examine it. Recovery as the chosen option needs the committee's agreement."
+      ]
+    },
+    {
+      "h": "The three possible outcomes",
+      "ul": [
+        "Rectification: you commit to clear the overdue with identifiable cash flows, sometimes with short ad hoc finance.",
+        "Restructuring: if the business is viable and you are not a wilful defaulter.",
+        "Recovery: only when the first two are not feasible."
+      ]
+    },
+    {
+      "h": "Act before SMA-2",
+      "p": [
+        "The framework covers MSMEs with loan limits up to ₹25 crore, and you do not have to wait for the bank. You can apply yourself if you see trouble coming."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not see or report loan status. If high fuel or power costs are part of the stress, its bill-based records show where the energy money goes.",
+  "links": [
+    {
+      "label": "Asking your bank for an MSME revival plan",
+      "to": "/answers/msme-revival-framework-apply-for-restructuring"
+    },
+    {
+      "label": "Penal charges on MSME loans",
+      "to": "/answers/penal-charges-msme-loan-rbi-rule"
+    },
+    {
+      "label": "Raising MSE working capital mid-year",
+      "to": "/answers/msme-working-capital-mid-year-review-ad-hoc-limit"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular FIDD.MSME & NFS.BC.No.21/06.02.31/2015-16, Framework for Revival and Rehabilitation of MSMEs, 17 March 2016: paras 1, 2.1, 2.2, 5.3 and Annex I",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10304&Mode=0"
+    },
+    {
+      "label": "RBI, Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026: para 4.6",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

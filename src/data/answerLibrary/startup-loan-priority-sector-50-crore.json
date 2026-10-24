@@ -1,0 +1,63 @@
+{
+  "slug": "startup-loan-priority-sector-50-crore",
+  "q": "Do bank loans to start-ups count as priority sector lending in India?",
+  "title": "Start-up loans and priority sector",
+  "short": "Yes, up to ₹50 crore per start-up, with start-up as defined by the Ministry of Commerce and Industry. The loan sits in the category that fits the business: agriculture and allied services, MSME if the start-up meets the MSME definition, or the Others category for start-ups outside both.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Start-up founders and CFOs raising bank debt, and their lenders",
+  "sections": [
+    {
+      "h": "Three places a start-up loan can sit",
+      "ul": [
+        "Agriculture, ancillary services: loans up to ₹50 crore to start-ups engaged in agriculture and allied services (para 9.3).",
+        "MSME: loans up to ₹50 crore to start-ups that conform to the MSME definition (para 10). All bank loans to MSMEs already qualify, so Udyam registration is what the bank will check.",
+        "Others: loans up to ₹50 crore to start-ups in activities other than agriculture or MSME (para 16)."
+      ]
+    },
+    {
+      "h": "What defines a start-up here",
+      "p": [
+        "The Directions use the definition set by the Ministry of Commerce and Industry, not a separate RBI test. Ask your bank which recognition document it wants on file, and keep it with your loan papers."
+      ]
+    },
+    {
+      "h": "MSME thresholds to check",
+      "p": [
+        "Under the notification of 21 March 2025, a micro enterprise has up to ₹2.5 crore in plant and machinery and ₹10 crore turnover, a small enterprise up to ₹25 crore and ₹100 crore, and a medium enterprise up to ₹125 crore and ₹500 crore."
+      ]
+    },
+    {
+      "h": "What it does for you",
+      "p": [
+        "A loan that counts towards a bank's priority sector target is one the bank is keen to make. It does not by itself mean a lower rate or a smaller collateral demand."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives a climate or hardware start-up a bill-based energy and emissions record that lenders and investors can trace, without a consultant building it by hand.",
+  "links": [
+    {
+      "label": "Udyam registration for bank loans",
+      "to": "/answers/udyam-registration-needed-for-bank-loan"
+    },
+    {
+      "label": "Do all MSME loans count as priority sector",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    },
+    {
+      "label": "Carbon data investors ask start-ups for",
+      "to": "/answers/startup-carbon-data-for-investor-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Directions (Priority Sector Lending, Targets and Classification) Directions, 2025, updated 11 September 2026: paras 9.3, 10 and 16",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    },
+    {
+      "label": "RBI, Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026: para 2.1 (MSME definition under S.O. 1364(E), 21 March 2025)",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}
