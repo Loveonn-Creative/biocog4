@@ -81,6 +81,9 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
             animation: chakra-pulse 3s ease-in-out infinite;
             transform-origin: ${cx}px ${cy}px;
           }
+          @media (prefers-reduced-motion: reduce) {
+            .spoke-group, .chakra-center, .chakra-pulse { animation: none; }
+          }
           @keyframes spoke-rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -107,7 +110,6 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
               stroke={`url(#${id}-${['saffron', 'green', 'navy', 'brand'][i % 4]})`}
               strokeWidth={s * 0.02}
               strokeLinecap="round"
-              opacity={0.8}
             />
           ))}
         </g>
