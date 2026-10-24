@@ -1,0 +1,63 @@
+{
+  "slug": "ice-plant-kwh-per-tonne-benchmark",
+  "q": "How many kWh per tonne of ice should a block ice plant use?",
+  "title": "Ice plant kWh per tonne benchmark",
+  "short": "BEE's energy conservation guidelines for MSMEs set a target of 70 to 100 kWh per tonne of block ice. Divide the plant's daily metered units by the tonnes of ice pulled. If you are above the range, BEE's checklist points to part load running, insulation, refrigerant leaks and old reciprocating compressors.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Block ice plant owners and fish processors running their own ice plant",
+  "sections": [
+    {
+      "h": "How the plant works",
+      "p": [
+        "Cans of fresh water sit in brine, salt and water mixed about 1:3, chilled to minus 10 to minus 11 °C by an ammonia refrigeration system, with agitators keeping the brine moving. Electricity for the refrigeration system is the main energy use."
+      ]
+    },
+    {
+      "h": "What to log every day",
+      "ul": [
+        "Ice produced, in tonnes",
+        "Electricity used, from the meter",
+        "Chilled water inlet and outlet temperature, and sump temperature"
+      ]
+    },
+    {
+      "h": "BEE checklist when the figure is high",
+      "ul": [
+        "Match the load to compressor capacity; part load raises kWh per tonne.",
+        "Insulate cold pipes, valves and the tank properly.",
+        "Inspect for leaks daily and check refrigerant charge and seals monthly.",
+        "Use stepped capacity control on reciprocating compressors, or replace them with screw or scroll compressors.",
+        "Keep power factor near unity with an automatic controller."
+      ]
+    },
+    {
+      "h": "If you also process fish",
+      "p": [
+        "The same guidelines give 1,100 to 1,500 kWh per tonne of fish processed, with about 2 tonnes of flake ice and 5 of water per tonne of fish."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Fish processing and ice plant emissions",
+      "to": "/answers/veraval-fish-processing-ice-plant-electricity"
+    },
+    {
+      "label": "Ammonia or HFC refrigeration",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): sections 6.22 and 6.23, Tables 6.100, 6.101 and 6.103",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

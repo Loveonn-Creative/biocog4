@@ -4158,6 +4158,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What efficiency should an industrial centrifugal fan or blower reach?",
+  "text": "BEE gives peak efficiency ranges by fan type: 79 to 83% for airfoil, backward curved or inclined blades, 72 to 79% for modified radial, 69 to 75% for radial, 58 to 68% for pressure blowers and 60 to 65% for forward curved. Measure your fan's flow, pressure and shaft power and compare.",
+  "url": "https://senseible.earth/answers/centrifugal-fan-efficiency-by-type"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint per kg of ceramic frit or glaze?",
   "text": "Add three parts for a period: fuel CO2 from the frit furnace, process CO2 released by carbonates in the batch (mass of each carbonate times its IPCC factor), and electricity at 0.710 kg CO2 per kWh. Divide by kg of frit made. Then add bought raw materials for a cradle-to-gate figure.",
   "url": "https://senseible.earth/answers/ceramic-frit-carbon-footprint-per-kg"
@@ -5412,6 +5418,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much energy per kg of milk should a dairy processing plant use?",
+  "text": "BEE's energy conservation guidelines for MSMEs set a target of 90 to 120 kcal per kg of milk processed. Add the day's fuel heat and electricity as equivalent kcal and divide by the kg of milk handled that day.",
+  "url": "https://senseible.earth/answers/dairy-plant-energy-per-kg-milk-benchmark"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of dal per tonne at a pulse mill?",
   "text": "Add the mill's electricity for cleaning, dehusking, splitting and polishing, plus any dryer fuel, and divide by tonnes of pulses processed. Allocate between dal and by-products such as husk and brokens, by mass or value. Then add the raw pulses' farm and transport emissions as a bought-in input.",
   "url": "https://senseible.earth/answers/dal-mill-carbon-footprint-per-tonne"
@@ -5982,6 +5994,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does a bank's export credit to my company count as priority sector lending?",
+  "text": "If your company is an MSME, yes: export credit to MSMEs counts under the MSME category, like any other MSME loan. For larger exporters, a domestic bank can count only the rise in export credit over the same date last year, up to 2% of its adjusted net bank credit, for borrowers with sanctioned limits up to ₹50 crore.",
+  "url": "https://senseible.earth/answers/does-export-credit-count-as-priority-sector"
+ },
+ {
+  "kind": "answer",
   "title": "Do GeM tenders ask for a carbon footprint or green certificate?",
   "text": "Only if the bid says so. A GeM bid's requirements come from the category specification and any additional terms the buyer uploads. Those can call for a BEE star label, a BIS standard or, from some buyers, environmental conditions. Search both documents for carbon, footprint and certificate before you quote.",
   "url": "https://senseible.earth/answers/does-gem-ask-for-carbon-footprint"
@@ -6093,6 +6111,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does TNFD apply to Indian companies, and how does it relate to BRSR?",
   "text": "No Indian law or SEBI rule makes TNFD mandatory today. It reaches Indian companies through investors and buyers who have adopted it and ask for nature data. A listed company filing BRSR already reports several of the same facts, such as sites near ecologically sensitive areas, water withdrawal and waste.",
   "url": "https://senseible.earth/answers/does-tnfd-apply-to-indian-companies"
+ },
+ {
+  "kind": "answer",
+  "title": "Do invoice factoring and TReDS discounting count as priority sector lending for banks?",
+  "text": "Yes, in two cases. With recourse factoring done by a bank's own factoring department counts under the MSME category when the seller of the invoices is an MSME. Factoring of MSME invoices on the Trade Receivables Discounting System (TReDS) also counts as priority sector. Regional rural banks and urban co-operative banks are left out.",
+  "url": "https://senseible.earth/answers/does-treds-factoring-count-as-priority-sector"
  },
  {
   "kind": "answer",
@@ -7266,6 +7290,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How many lux of light does each area of a factory need?",
+  "text": "BEE's energy conservation guidelines for MSMEs, based on IS 6665, set average levels such as 100 lux for furnace rooms and corridors, 150 lux for stores and maintenance workshops, 200 lux for general inspection, 700 lux for fine inspection and 20 lux for outdoor areas. Lighting well above these levels is wasted power.",
+  "url": "https://senseible.earth/answers/factory-lighting-lux-levels-by-area"
+ },
+ {
+  "kind": "answer",
   "title": "Do skylights and daylight panels cut factory lighting emissions?",
   "text": "Yes, if lights actually switch off when daylight is enough. Daylight sheets or light pipes replace lighting kWh during the day, at 0.710 kg CO2 per kWh. Add daylight sensors or zoned switching, or people leave lights on. In air-conditioned areas, check the extra heat gain.",
   "url": "https://senseible.earth/answers/factory-skylights-daylight-lighting-savings"
@@ -7275,6 +7305,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is diesel for our factory staff bus Scope 1 or Scope 3?",
   "text": "If the company owns or leases and runs the bus, its diesel is Scope 1. If a contractor runs the service and you pay per trip or per month, it is Scope 3 category 7, employee commuting. The invoice tells you which: fuel bills or a transport service bill.",
   "url": "https://senseible.earth/answers/factory-staff-bus-scope-1-or-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "How should a factory run its transformer to keep losses and failures down?",
+  "text": "Load it close to its best efficiency point, keep the power factor near unity at the transformer, and switch off a lightly loaded unit running in parallel. BEE's MSME guidelines target winding temperature within 100 to 120 °C and oil within 90 °C, with daily logs of voltage, current and temperatures.",
+  "url": "https://senseible.earth/answers/factory-transformer-loading-and-temperature"
  },
  {
   "kind": "answer",
@@ -7650,6 +7686,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much fuel or electricity per tonne should a forging furnace use?",
+  "text": "BEE's energy conservation guidelines for MSMEs give 70 to 100 litres of fuel per tonne for fuel-fired forging furnaces and 400 to 600 kWh per tonne for induction forging furnaces. Divide a month's fuel or metered kWh by the tonnes you heated to see where you stand.",
+  "url": "https://senseible.earth/answers/forging-furnace-fuel-per-tonne-benchmark"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint of formaldehyde?",
   "text": "Formaldehyde is made by oxidising methanol, and the reaction gives off heat that often makes steam. So most of the footprint is the methanol you buy, in Scope 3. Your own emissions are power for blowers and pumps, any start-up fuel, and the off-gas burner.",
   "url": "https://senseible.earth/answers/formaldehyde-plant-emissions-per-tonne"
@@ -7944,6 +7986,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What air ratio or flue gas oxygen should my furnace or boiler run at?",
+  "text": "Air ratio is 21 divided by (21 minus the percent oxygen in flue gas). BEE's MSME guidelines target 1.15 to 1.20 for oil-fired and 1.12 to 1.15 for gas-fired furnaces. For boilers the targets are 1.32 to 1.38 on coal and 1.32 to 1.39 on biomass, with carbon monoxide kept within 200 ppm.",
+  "url": "https://senseible.earth/answers/furnace-air-ratio-oxygen-target"
+ },
+ {
+  "kind": "answer",
   "title": "How much fuel do furnace door openings waste, and how do I measure it?",
   "text": "Every minute a hot furnace door stands open, radiant heat escapes and cold air rushes in, so burners fire harder. Log door-open minutes for a few weeks, compare fuel per tonne on low and high days, then fix with faster doors, curtains or smaller charging openings.",
   "url": "https://senseible.earth/answers/furnace-door-opening-heat-loss-fuel"
@@ -7968,6 +8016,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What surface temperature should a furnace or boiler wall run at?",
+  "text": "BEE's MSME guidelines set average skin temperatures. A fuel-fired forging furnace should run at about 120 °C on the ceiling and 100 °C on side walls, with targets of 110 and 85. Electric and induction furnaces aim for 70 °C. Boilers and thermic fluid heaters target ambient plus 20 °C.",
+  "url": "https://senseible.earth/answers/furnace-wall-surface-temperature-limits"
+ },
+ {
+  "kind": "answer",
   "title": "How do I report CO2 from burning wood offcuts in a furniture factory boiler?",
   "text": "Report the CO2 from wood as biogenic, outside Scopes 1, 2 and 3, and show it separately. Methane and nitrous oxide from the fire do count in Scope 1, using IPCC defaults for wood. Keep a log of tonnes burnt and any fossil fuel used to start or support the boiler.",
   "url": "https://senseible.earth/answers/furniture-factory-wood-waste-boiler-biogenic-co2"
@@ -7989,6 +8043,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a chemical plant in Gajraula count CO2 from its coal boiler and captive power?",
   "text": "Coal burnt for steam and captive power is Scope 1. Work it out from coal tonnes, calorific value and factor, using lab analysis where available. If the captive plant supplies power to other units, split its emissions by energy delivered, and count grid imports separately at 0.710 kg CO2 per kWh.",
   "url": "https://senseible.earth/answers/gajraula-chemical-unit-coal-boiler-co2"
+ },
+ {
+  "kind": "answer",
+  "title": "How much energy per tonne should a hot-dip galvanizing or wire drawing unit use?",
+  "text": "BEE's energy conservation guidelines for MSMEs give 0.03 to 0.17 tonnes of oil equivalent per tonne for galvanizing and 0.01 to 0.07 toe per tonne for wire drawing. One toe is 10 million kcal, so convert your fuel and power to kcal and divide by tonnes processed.",
+  "url": "https://senseible.earth/answers/galvanizing-plant-energy-per-tonne-benchmark"
  },
  {
   "kind": "answer",
@@ -8211,6 +8271,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate CO2 from a glass fibre furnace?",
   "text": "Add furnace fuel CO2 to process CO2 from carbonate raw materials such as limestone and dolomite in the batch, then divide by tonnes of fibre produced. Electric boosting adds Scope 2. Binders and sizing chemicals sit in Scope 3.",
   "url": "https://senseible.earth/answers/glass-fibre-furnace-co2-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How much natural gas per tonne of melt should a glass furnace use?",
+  "text": "BEE's energy conservation guidelines for MSMEs give 120 to 170 standard cubic metres of natural gas per tonne of melt for tank furnaces and 300 to 350 for pot furnaces. Small glassware and bangle units can check theirs from gas bills and daily melt records.",
+  "url": "https://senseible.earth/answers/glass-furnace-gas-per-tonne-benchmark"
  },
  {
   "kind": "answer",
@@ -8781,6 +8847,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate the carbon footprint of hard boiled candy per kg?",
   "text": "Add the sugar, glucose syrup and flavours per kg with supplier figures, then the cooking, forming and wrapping energy. Divide the plant's fuel and electricity by kg packed and add the wrapper film and cartons.",
   "url": "https://senseible.earth/answers/hard-boiled-candy-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
+  "title": "What harmonic distortion limits should my factory meet at the supply point?",
+  "text": "BEE's MSME guidelines adopt IEEE 519-1992 limits at the point of common coupling: total voltage distortion of 8%, with 5% for any single harmonic, at 1 kV and below, and 5% total with 3% individual from 1 kV to 69 kV. Current limits depend on the ratio of short circuit current to load current.",
+  "url": "https://senseible.earth/answers/harmonic-distortion-limits-factory-thd"
  },
  {
   "kind": "answer",
@@ -9645,6 +9717,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much electricity and CO2 goes into a tonne of ice for fish handling?",
   "text": "Take the ice plant's metered kWh for a period, divide by tonnes of ice made in those days, and multiply by 0.710 kg CO2 per kWh. Then add generator diesel (2.68 kg CO2 per litre) and any HFC refrigerant top-ups. No Indian public benchmark exists, so your own meter and block count decide it.",
   "url": "https://senseible.earth/answers/ice-plant-electricity-per-tonne-of-ice"
+ },
+ {
+  "kind": "answer",
+  "title": "How many kWh per tonne of ice should a block ice plant use?",
+  "text": "BEE's energy conservation guidelines for MSMEs set a target of 70 to 100 kWh per tonne of block ice. Divide the plant's daily metered units by the tonnes of ice pulled. If you are above the range, BEE's checklist points to part load running, insulation, refrigerant leaks and old reciprocating compressors.",
+  "url": "https://senseible.earth/answers/ice-plant-kwh-per-tonne-benchmark"
  },
  {
   "kind": "answer",
@@ -11334,6 +11412,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How many watts of lighting per square metre should a factory shop floor use?",
+  "text": "BEE's MSME guidelines, drawing on the Energy Conservation Building Code, give lighting power density ranges of 6.0 to 12.0 W per square metre for process shop floors lit to 150 to 300 lux, 7.1 to 14.1 for workshops, 3.5 to 7.08 for warehouses and 5.0 to 9.5 for office buildings.",
+  "url": "https://senseible.earth/answers/lighting-power-density-factory-shop-floor"
+ },
+ {
+  "kind": "answer",
   "title": "What emission factor should I use for lignite burned in a boiler or thermic fluid heater in India?",
   "text": "Build it from the lignite's own calorific value: kg CO2 per kg = net calorific value in TJ per kg x 101,000, the IPCC 2006 default for lignite. With the IPCC default of 11.9 TJ per thousand tonnes, that gives about 1.20 kg CO2 per kg. Never apply a coal factor to lignite tonnes.",
   "url": "https://senseible.earth/answers/lignite-emission-factor-india"
@@ -11523,6 +11607,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does buying a new machine go in Scope 3 Category 1 or Category 2, and in which year?",
   "text": "A machine you capitalise as a fixed asset goes in Category 2, capital goods, with all its cradle-to-gate emissions in the year you acquire it. Parts, tools and consumables you expense go in Category 1. Follow your own accounts: the GHG Protocol tells companies to use their financial accounting treatment to draw the line.",
   "url": "https://senseible.earth/answers/machinery-purchase-scope-3-category-1-or-2"
+ },
+ {
+  "kind": "answer",
+  "title": "How many kWh per tonne should a machine shop or machine tools unit use?",
+  "text": "BEE's energy conservation guidelines for MSMEs give typical figures of 550 to 650 kWh per tonne for machining and 5,100 to 6,900 kWh per tonne for making components and accessories in the machine tools industry. Divide monthly units by tonnes of finished output to compare.",
+  "url": "https://senseible.earth/answers/machining-kwh-per-tonne-benchmark"
  },
  {
   "kind": "answer",
@@ -12162,9 +12252,27 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a micro or small enterprise get its term loan and working capital in one composite loan?",
+  "text": "Yes. RBI's MSME Master Direction lets banks sanction a composite loan limit of up to ₹1 crore, so a micro or small enterprise gets its term loan and working capital through a single window. Separately, banks must not take collateral security on loans up to ₹20 lakh to micro and small units.",
+  "url": "https://senseible.earth/answers/msme-composite-loan-1-crore-single-window"
+ },
+ {
+  "kind": "answer",
   "title": "Why is my MSME loan rate linked to the repo rate, and when should it fall after an RBI rate cut?",
   "text": "RBI requires banks to link new floating rate loans to micro and small enterprises to an external benchmark, most often the repo rate, so rate changes pass through. After a cut, your rate falls on your loan's next reset date, which must come at least once every three months.",
   "url": "https://senseible.earth/answers/msme-loan-rate-linked-to-repo-rate"
+ },
+ {
+  "kind": "answer",
+  "title": "What do SMA-0, SMA-1 and SMA-2 mean on my MSME loan, and what does the bank do next?",
+  "text": "They are early warning stages before a loan becomes an NPA. Under RBI's MSME revival framework, SMA-1 means principal or interest is 31 to 60 days overdue and SMA-2 means 61 to 90 days. SMA-0 means not more than 30 days overdue but showing signs of stress. Every SMA-2 account must be examined for a corrective action plan.",
+  "url": "https://senseible.earth/answers/msme-loan-sma-0-sma-1-sma-2-meaning"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a struggling MSME ask its bank for a corrective action plan or restructuring before the loan turns NPA?",
+  "text": "Yes. RBI's Framework for Revival and Rehabilitation of MSMEs, for loan limits up to ₹25 crore, lets a borrower apply on its own if it expects business failure, cannot pay its debts, or lost 50% of its net worth to accumulated losses in the previous year. Cases above ₹10 lakh go to a bank committee.",
+  "url": "https://senseible.earth/answers/msme-revival-framework-apply-for-restructuring"
  },
  {
   "kind": "answer",
@@ -12183,6 +12291,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How much working capital can an MSME get from a bank: is it 20 percent of turnover?",
   "text": "Often, yes. For micro and small enterprises needing fund-based working capital up to Rs 5 crore, banks assess the limit at a minimum of 20 percent of projected annual turnover, with you bringing 5 percent as margin. Above that, or if your operating cycle needs more, banks use other methods.",
   "url": "https://senseible.earth/answers/msme-working-capital-20-percent-turnover"
+ },
+ {
+  "kind": "answer",
+  "title": "Can my bank raise my working capital limit mid-year when orders jump?",
+  "text": "Yes. RBI asks banks to build three tools into their lending policy for micro and small enterprises: a separate additional limit for unforeseen or seasonal demand, ad hoc limits to be regularised within three months, and a mid-term review of regular limits based on sales since the last review, without waiting for audited accounts.",
+  "url": "https://senseible.earth/answers/msme-working-capital-mid-year-review-ad-hoc-limit"
  },
  {
   "kind": "answer",
@@ -12345,6 +12459,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a Navi Mumbai data centre calculate Scope 2 emissions per kW of IT load?",
   "text": "Multiply total facility electricity, which is IT load times PUE, by 0.710 kg CO2 per kWh for the location-based figure, then divide by average IT load in kW. Report a market-based figure separately for renewable power bought under open access or certificates.",
   "url": "https://senseible.earth/answers/navi-mumbai-data-centre-scope-2-per-kw"
+ },
+ {
+  "kind": "answer",
+  "title": "Does an NBFC loan to my MSME count as priority sector lending for the bank that funds the NBFC?",
+  "text": "It can. When a bank lends to a registered NBFC that lends on to micro and small enterprises, the bank may count it as priority sector up to ₹20 lakh per end borrower. All such on-lending through NBFCs, housing finance companies and NCDC is capped at 5% of the bank's priority sector lending in the previous year.",
+  "url": "https://senseible.earth/answers/nbfc-msme-loan-priority-sector-on-lending"
  },
  {
   "kind": "answer",
@@ -14556,6 +14676,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much energy should a rice mill use per tonne of rice?",
+  "text": "BEE's energy conservation guidelines for MSMEs give 25 to 50 kWh per tonne for raw rice and 0.93 to 1.60 Gcal per tonne for parboiled rice, where soaking, steaming and drying add heat. Log paddy processed, rice produced, husk or fuel burnt and units used every day.",
+  "url": "https://senseible.earth/answers/rice-mill-energy-per-tonne-benchmark"
+ },
+ {
+  "kind": "answer",
   "title": "How do rice exporters estimate Scope 3 emissions from rice bought from farmers?",
   "text": "Rice exporters estimate it per tonne of paddy: work out methane from flooded fields and nitrous oxide from fertiliser per hectare using IPCC methods, divide by the paddy yield per hectare, then multiply by the tonnes bought. It is GHG Protocol Scope 3 Category 1, and methane usually dominates.",
   "url": "https://senseible.earth/answers/rice-procurement-scope-3-emissions"
@@ -16176,6 +16302,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do bank loans to start-ups count as priority sector lending in India?",
+  "text": "Yes, up to ₹50 crore per start-up, with start-up as defined by the Ministry of Commerce and Industry. The loan sits in the category that fits the business: agriculture and allied services, MSME if the start-up meets the MSME definition, or the Others category for start-ups outside both.",
+  "url": "https://senseible.earth/answers/startup-loan-priority-sector-50-crore"
+ },
+ {
+  "kind": "answer",
   "title": "What is a State Designated Agency for energy conservation, and when should my factory contact it?",
   "text": "A State Designated Agency is the body your state government names under Section 15 of the Energy Conservation Act, 2001 to coordinate, regulate and enforce the Act in the state. Contact it if you are a designated consumer, if your building must meet the state energy code, or if you want a state energy efficiency programme.",
   "url": "https://senseible.earth/answers/state-designated-agency-energy-conservation"
@@ -16671,6 +16803,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "A buyer asked a Tarapur chemical unit for a product carbon footprint: what do we send?",
   "text": "Send emissions per kg of product from steam, power and solvents used, allocated by batch hours or steam use, with the factors and year. Add raw materials from supplier data or databases, and say what is estimated. A clear, checkable figure beats a polished one.",
   "url": "https://senseible.earth/answers/tarapur-chemical-unit-product-footprint-request"
+ },
+ {
+  "kind": "answer",
+  "title": "What power factor should each type of equipment in my factory run at?",
+  "text": "BEE's MSME guidelines list target power factors of 0.95 for induction motors after correction and for induction furnaces, 0.99 for the distribution system, 0.90 or above for welding machines and DC drives, and 0.95 or above for fluorescent lamps. Automatic power factor controllers and capacitor banks get you there.",
+  "url": "https://senseible.earth/answers/target-power-factor-by-equipment"
  },
  {
   "kind": "answer",
@@ -17892,6 +18030,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much heat should I recover from furnace flue gas, and how is the recovery rate calculated?",
+  "text": "Waste heat recovery rate is the heat recovered divided by the sensible heat in the exhaust gas, times 100. BEE's MSME guidelines expect at least 30% from forging, aluminium and galvanizing furnaces, with targets of 38 to 49%, and flue gas leaving at 250 to 300 °C with natural draft or 150 to 250 °C with induced draft.",
+  "url": "https://senseible.earth/answers/waste-heat-recovery-rate-furnace-flue-gas"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the CO2 from incinerating waste?",
   "text": "Use IPCC Equation 5.1: waste burnt x dry matter share x carbon share x fossil carbon share x oxidation factor x 44/12. Only fossil carbon, mainly from plastics and synthetics, counts in the CO2 total; carbon in food, paper and wood is biogenic.",
   "url": "https://senseible.earth/answers/waste-incineration-fossil-co2-calculation"
@@ -18015,6 +18159,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What are the ICVCM Core Carbon Principles, and how do I know a credit has the CCP label?",
   "text": "The Core Carbon Principles are ten integrity tests for carbon credits set by the Integrity Council for the Voluntary Carbon Market (ICVCM). A credit carries the CCP label only when its programme is CCP-eligible and its methodology category is CCP-approved. Check the label on the programme's registry entry, not in a seller's brochure.",
   "url": "https://senseible.earth/answers/what-are-icvcm-core-carbon-principles"
+ },
+ {
+  "kind": "answer",
+  "title": "What are priority sector lending certificates, and how do banks use them?",
+  "text": "PSLCs let a bank that has lent more than its priority sector target sell the surplus to a bank that is short. No loan or credit risk moves: the buyer pays a market-set fee and counts the certificate towards its target. They trade on RBI's e-Kuber portal in lots of ₹25 lakh and all expire on 31 March.",
+  "url": "https://senseible.earth/answers/what-are-priority-sector-lending-certificates"
  },
  {
   "kind": "answer",

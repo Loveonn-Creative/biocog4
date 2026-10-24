@@ -1,0 +1,66 @@
+{
+  "slug": "what-are-priority-sector-lending-certificates",
+  "q": "What are priority sector lending certificates, and how do banks use them?",
+  "title": "Priority sector lending certificates (PSLCs)",
+  "short": "PSLCs let a bank that has lent more than its priority sector target sell the surplus to a bank that is short. No loan or credit risk moves: the buyer pays a market-set fee and counts the certificate towards its target. They trade on RBI's e-Kuber portal in lots of ₹25 lakh and all expire on 31 March.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Bank, small finance bank and co-operative bank treasury teams, and MSME lenders",
+  "sections": [
+    {
+      "h": "Four kinds of certificate",
+      "ul": [
+        "PSLC Agriculture: counts towards the agriculture target and the overall target.",
+        "PSLC SF/MF: loans to small and marginal farmers; counts towards that sub-target and several others above it.",
+        "PSLC Micro Enterprises: counts towards the micro enterprise sub-target and the overall target.",
+        "PSLC General: the remaining priority sector loans; counts only towards the overall target."
+      ]
+    },
+    {
+      "h": "How the market works",
+      "ul": [
+        "Sellers and buyers: scheduled commercial banks, regional rural banks, local area banks, small finance banks and urban co-operative banks that originate priority sector loans.",
+        "A bank short on a sub-target, such as micro enterprises, must buy that specific certificate. A bank short only on the overall target can buy any kind.",
+        "A bank may issue certificates up to 50% of its previous year's achievement without holding the loans, but must still meet its target on the reporting date.",
+        "The buyer books the fee as an expense, the seller as miscellaneous income, and both disclose amounts in the notes to the balance sheet.",
+        "Small finance banks may buy only to meet sub-targets."
+      ]
+    },
+    {
+      "h": "Why micro enterprise loans have extra value",
+      "p": [
+        "Domestic banks must lend 7.5% of adjusted net bank credit to micro enterprises. A bank with a surplus there can sell PSLC Micro Enterprises to banks that fall short, so a strong book of micro loans earns a fee on top of interest."
+      ]
+    }
+  ],
+  "example": {
+    "title": "RBI's own illustration",
+    "lines": [
+      "Bank A sells PSLCs worth ₹100 crore to Bank B on 15 July 2025",
+      "Bank B counts ₹100 crore on the reporting dates of 30 September, 31 December and 31 March; Bank A subtracts it",
+      "The certificate expires on 31 March 2026"
+    ]
+  },
+  "senseible": "Senseible does not trade or advise on PSLCs. It helps micro and small borrowers bring an energy and emissions record from their bills when they apply for green or efficiency loans.",
+  "links": [
+    {
+      "label": "Do all MSME loans count as priority sector",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    },
+    {
+      "label": "NBFC loans to MSMEs and priority sector",
+      "to": "/answers/nbfc-msme-loan-priority-sector-on-lending"
+    },
+    {
+      "label": "Export credit and priority sector lending",
+      "to": "/answers/does-export-credit-count-as-priority-sector"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Directions (Priority Sector Lending, Targets and Classification) Directions, 2025, updated 11 September 2026: para 7.1, para 21 and Annex IIIA (PSLC scheme)",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

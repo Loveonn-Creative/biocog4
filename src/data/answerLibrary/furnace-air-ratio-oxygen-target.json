@@ -1,0 +1,66 @@
+{
+  "slug": "furnace-air-ratio-oxygen-target",
+  "q": "What air ratio or flue gas oxygen should my furnace or boiler run at?",
+  "title": "Air ratio targets for furnaces and boilers",
+  "short": "Air ratio is 21 divided by (21 minus the percent oxygen in flue gas). BEE's MSME guidelines target 1.15 to 1.20 for oil-fired and 1.12 to 1.15 for gas-fired furnaces. For boilers the targets are 1.32 to 1.38 on coal and 1.32 to 1.39 on biomass, with carbon monoxide kept within 200 ppm.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Boiler operators and furnace in-charges with a flue gas analyser",
+  "sections": [
+    {
+      "h": "Furnace targets",
+      "ul": [
+        "Forging, heat treatment and glass furnaces: 1.15 to 1.20 on liquid fuel, 1.12 to 1.15 on natural gas",
+        "Aluminium pit furnace: 1.32 to 1.38 on coal, 1.15 to 1.20 on furnace oil",
+        "Galvanizing and lead bath furnaces: 1.18 to 1.24 on liquid fuel"
+      ]
+    },
+    {
+      "h": "Boilers, thermic fluid heaters and hot air generators",
+      "ul": [
+        "Coal: standard 1.35 to 1.40, target 1.32 to 1.38",
+        "Biomass such as wood, bagasse and rice husk: standard 1.49 to 1.56, target 1.32 to 1.39",
+        "Liquid fuel: standard 1.26 to 1.33, target 1.18 to 1.24",
+        "Natural gas: standard 1.15 to 1.18, target 1.12 to 1.15",
+        "These apply at 50 to 100% load."
+      ]
+    },
+    {
+      "h": "Turning it into an oxygen reading",
+      "p": [
+        "Rearranged, oxygen % = 21 minus 21 divided by the air ratio. An air ratio of 1.15 is about 2.7% oxygen, 1.20 is 3.5% and 1.38 is about 5.8%. Read oxygen and carbon monoxide together: low oxygen with carbon monoxide above 200 ppm means too little air."
+      ]
+    },
+    {
+      "h": "How to hold the target",
+      "ul": [
+        "Use an online or portable oxygen analyser and adjust air to the reading.",
+        "Fit automatic air to fuel ratio control on the burner.",
+        "Size the blower correctly and place it close to the burner.",
+        "Seal openings so cold air does not leak in."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel invoices into monthly fuel use and emissions, so a combustion tune-up shows up as less fuel for the same output.",
+  "links": [
+    {
+      "label": "Boiler excess air fuel saving",
+      "to": "/answers/boiler-excess-air-fuel-saving"
+    },
+    {
+      "label": "Thermic fluid heater emissions",
+      "to": "/answers/thermic-fluid-heater-emissions-scope-1"
+    },
+    {
+      "label": "Recuperator fuel savings",
+      "to": "/answers/recuperator-combustion-air-preheat-fuel-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): Tables 6.8, 6.22, 6.39, 6.66 and 6.71, with the air ratio formula",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

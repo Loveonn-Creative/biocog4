@@ -1,0 +1,66 @@
+{
+  "slug": "lighting-power-density-factory-shop-floor",
+  "q": "How many watts of lighting per square metre should a factory shop floor use?",
+  "title": "Lighting watts per square metre in a factory",
+  "short": "BEE's MSME guidelines, drawing on the Energy Conservation Building Code, give lighting power density ranges of 6.0 to 12.0 W per square metre for process shop floors lit to 150 to 300 lux, 7.1 to 14.1 for workshops, 3.5 to 7.08 for warehouses and 5.0 to 9.5 for office buildings.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factory owners, electrical contractors and energy auditors sizing a lighting retrofit",
+  "sections": [
+    {
+      "h": "The ranges",
+      "ul": [
+        "Administrative building, 50 to 400 lux: 5.0 to 9.5 W per square metre",
+        "Administrative corridor, 100 lux: 2.3 to 7.1",
+        "Shop floor process lighting, 150 to 300 lux: 6.0 to 12.0",
+        "Workshop, 150 to 300 lux: 7.1 to 14.1",
+        "Warehouse storage area, 100 to 150 lux: 3.5 to 7.08"
+      ]
+    },
+    {
+      "h": "How to work out yours",
+      "p": [
+        "Add up the rated watts of every fitting in the area, including drivers or ballasts, and divide by the floor area in square metres. Then check the light level with a lux meter: a low figure with dark corners is not a win."
+      ]
+    },
+    {
+      "h": "If you are above the range",
+      "ul": [
+        "Replace old tube lights, mercury vapour and metal halide fittings with LEDs.",
+        "Re-space fittings to the task instead of lighting every square metre evenly.",
+        "Add daylight and controls; BEE also suggests solar tubes and solar PV lighting where feasible."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a 1,000 square metre shop floor (illustrative)",
+    "lines": [
+      "Before: 100 fittings of 150 W = 15,000 W; 15,000 / 1,000 = 15 W per square metre, above the 6.0 to 12.0 range",
+      "After: 100 LED high-bays of 90 W = 9,000 W; 9 W per square metre, inside the range",
+      "At 3,000 hours a year the change saves 6 kW x 3,000 = 18,000 kWh"
+    ],
+    "note": "Wattages and hours are illustrative. Confirm the light level on the floor after the change."
+  },
+  "senseible": "Senseible reads your electricity bills month by month, so an 18,000 kWh a year cut shows up in the record without anyone keying it in.",
+  "links": [
+    {
+      "label": "Lux levels for factory areas",
+      "to": "/answers/factory-lighting-lux-levels-by-area"
+    },
+    {
+      "label": "Proving a high-bay LED saving",
+      "to": "/answers/high-bay-led-retrofit-co2-saving-proof"
+    },
+    {
+      "label": "Does ECBC apply to my building",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 5.7, Table 5.15 (from the Energy Conservation Building Code)",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

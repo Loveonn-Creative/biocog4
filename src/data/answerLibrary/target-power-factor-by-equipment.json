@@ -1,0 +1,64 @@
+{
+  "slug": "target-power-factor-by-equipment",
+  "q": "What power factor should each type of equipment in my factory run at?",
+  "title": "Target power factor by equipment type",
+  "short": "BEE's MSME guidelines list target power factors of 0.95 for induction motors after correction and for induction furnaces, 0.99 for the distribution system, 0.90 or above for welding machines and DC drives, and 0.95 or above for fluorescent lamps. Automatic power factor controllers and capacitor banks get you there.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factory electricians and owners paying kVAh or power factor charges",
+  "sections": [
+    {
+      "h": "Targets by load",
+      "ul": [
+        "Induction motor, measured after the correction system: 0.95",
+        "Distribution system: 0.99",
+        "Induction furnace: 0.95 (capacitors usually come with the furnace)",
+        "Welding machine: 0.90 and above",
+        "DC drives: 0.90 and above",
+        "Fluorescent lamp: 0.95 and above"
+      ]
+    },
+    {
+      "h": "How to reach them",
+      "p": [
+        "Install an automatic power factor controller with capacitor banks at the receiving end, and check the induction furnace's own capacitors. Measure power factor daily on furnaces and other large loads."
+      ]
+    },
+    {
+      "h": "Motor starters in the same guidance",
+      "ul": [
+        "Direct online starters for motors up to 5 hp",
+        "Star-delta starters from 5 to 20 hp",
+        "Soft starters above 20 hp"
+      ]
+    },
+    {
+      "h": "Why it shows on the bill",
+      "p": [
+        "On a kVAh bill, a low power factor raises the units you pay for. On a kWh bill, many tariffs add a penalty or give a rebate around a set power factor. Your state tariff order sets the numbers."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the power factor printed on kVAh bills and flags a low one as a saving to look at, with the estimate labelled as an estimate.",
+  "links": [
+    {
+      "label": "Power factor rebates and penalties",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    },
+    {
+      "label": "Converting kVAh bills to kWh",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "Does power factor correction cut emissions",
+      "to": "/answers/does-power-factor-correction-reduce-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.6, Table 6.36 (from Improving Motor and Drive System Performance, A Sourcebook for Industry) and starter guidance",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

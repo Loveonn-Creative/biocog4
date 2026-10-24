@@ -1,0 +1,69 @@
+{
+  "slug": "does-export-credit-count-as-priority-sector",
+  "q": "Does a bank's export credit to my company count as priority sector lending?",
+  "title": "Export credit and priority sector lending",
+  "short": "If your company is an MSME, yes: export credit to MSMEs counts under the MSME category, like any other MSME loan. For larger exporters, a domestic bank can count only the rise in export credit over the same date last year, up to 2% of its adjusted net bank credit, for borrowers with sanctioned limits up to ₹50 crore.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Exporters, their finance heads and bank relationship managers",
+  "sections": [
+    {
+      "h": "What counts as export credit",
+      "p": [
+        "RBI's 2025 Directions define export credit as pre-shipment and post-shipment credit, as set out in its Credit Facilities Directions. Off-balance sheet items are excluded, so a guarantee or an unfunded letter of credit does not count."
+      ]
+    },
+    {
+      "h": "MSME and farm exporters",
+      "p": [
+        "Export credit to MSMEs and to agriculture is classified in those categories. Since all bank loans to MSMEs qualify as priority sector, a Udyam-registered exporter's packing credit or bill discounting counts in full under MSME, with no export-specific ceiling."
+      ]
+    },
+    {
+      "h": "Larger exporters",
+      "ul": [
+        "Domestic banks, wholly owned subsidiaries of foreign banks, small finance banks and urban co-operative banks: only incremental export credit over the corresponding date of the previous year counts, up to 2% of adjusted net bank credit or the off-balance sheet equivalent, whichever is higher, and only for borrowers with a sanctioned limit up to ₹50 crore.",
+        "Foreign banks with 20 or more branches: incremental export credit up to the same 2% ceiling, with no per-borrower limit in the table.",
+        "Foreign banks with fewer than 20 branches: export credit can make up to 32% of adjusted net bank credit within their 40% priority sector target.",
+        "Regional rural banks and local area banks: this export credit rule does not apply."
+      ]
+    },
+    {
+      "h": "Why it matters to you",
+      "p": [
+        "Banks must lend 40% of adjusted net bank credit to the priority sector. A loan that counts towards that target is one a bank wants on its books, which helps when you negotiate limits. Classification alone does not fix your interest rate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a large exporter at a domestic bank (illustrative)",
+    "lines": [
+      "Export credit outstanding on 30 June last year: ₹30 crore",
+      "Export credit outstanding on 30 June this year: ₹38 crore, sanctioned limit ₹45 crore",
+      "Eligible as priority sector: the ₹8 crore increase, within the bank's overall 2% ceiling"
+    ],
+    "note": "Figures are illustrative. A borrower with a sanctioned limit above ₹50 crore would not qualify at a domestic bank."
+  },
+  "senseible": "Senseible does not classify loans. For exporters it turns fuel and power bills into a dated emissions record that you can share with EU buyers who ask for one.",
+  "links": [
+    {
+      "label": "Do all MSME loans count as priority sector",
+      "to": "/answers/do-all-msme-loans-count-as-priority-sector"
+    },
+    {
+      "label": "Udyam registration for bank loans",
+      "to": "/answers/udyam-registration-needed-for-bank-loan"
+    },
+    {
+      "label": "Priority sector limit for renewable loans",
+      "to": "/answers/psl-renewable-energy-loan-limit-2025"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Directions (Priority Sector Lending, Targets and Classification) Directions, 2025, updated 11 September 2026: para 7.1 (targets), para 10 (MSME) and para 11 (export credit)",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12799"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

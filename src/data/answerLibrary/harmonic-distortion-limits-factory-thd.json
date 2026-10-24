@@ -1,0 +1,69 @@
+{
+  "slug": "harmonic-distortion-limits-factory-thd",
+  "q": "What harmonic distortion limits should my factory meet at the supply point?",
+  "title": "Harmonic distortion limits for a factory",
+  "short": "BEE's MSME guidelines adopt IEEE 519-1992 limits at the point of common coupling: total voltage distortion of 8%, with 5% for any single harmonic, at 1 kV and below, and 5% total with 3% individual from 1 kV to 69 kV. Current limits depend on the ratio of short circuit current to load current.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Electrical engineers and plant heads of factories with many drives, furnaces or UPS loads",
+  "sections": [
+    {
+      "h": "Voltage distortion limits",
+      "ul": [
+        "Bus voltage up to 1.0 kV: 5.0% individual harmonic, 8.0% total harmonic distortion (THD)",
+        "Above 1 kV up to 69 kV: 3.0% individual, 5.0% THD"
+      ]
+    },
+    {
+      "h": "Current distortion limits",
+      "ul": [
+        "Short circuit to load current ratio below 20: total demand distortion (TDD) 5.0%, with 4.0% for odd harmonics from the 3rd up to the 9th",
+        "Ratio from 20 to 50: TDD 8.0%, with 7.0% for odd harmonics from the 3rd up to the 9th",
+        "Higher harmonic orders have tighter limits in the same table"
+      ]
+    },
+    {
+      "h": "Where and how often to measure",
+      "p": [
+        "Measure at the point of common coupling, which BEE places between the plant and the supply network and between non-linear loads and other loads. Log voltage and current THD with a power analyser every month and check that filters are working."
+      ]
+    },
+    {
+      "h": "Ways to bring distortion down",
+      "ul": [
+        "Pulse width modulation AC drives and drives with good choke filtering",
+        "Tuned LC filters, shunt filters or harmonic traps, and active filters",
+        "Proper cabling and earthing",
+        "For new low voltage systems, transformers with built-in passive harmonic filtering"
+      ]
+    },
+    {
+      "h": "Check your own supply terms",
+      "p": [
+        "Your discom's supply code or connection agreement may set its own limits. Use those where they differ."
+      ]
+    }
+  ],
+  "senseible": "Senseible works from bills, so it sees the effect of harmonics only through units and power factor. Distortion itself needs a power analyser at the incomer.",
+  "links": [
+    {
+      "label": "Do harmonic filters save electricity",
+      "to": "/answers/harmonic-filter-energy-saving-factory"
+    },
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Power factor rebates and penalties",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 5.9, Tables 5.18 and 5.19 (from IEEE 519-1992)",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

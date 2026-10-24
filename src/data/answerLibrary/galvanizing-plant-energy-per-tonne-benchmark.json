@@ -1,0 +1,69 @@
+{
+  "slug": "galvanizing-plant-energy-per-tonne-benchmark",
+  "q": "How much energy per tonne should a hot-dip galvanizing or wire drawing unit use?",
+  "title": "Galvanizing energy per tonne benchmark",
+  "short": "BEE's energy conservation guidelines for MSMEs give 0.03 to 0.17 tonnes of oil equivalent per tonne for galvanizing and 0.01 to 0.07 toe per tonne for wire drawing. One toe is 10 million kcal, so convert your fuel and power to kcal and divide by tonnes processed.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Hot-dip galvanizers, wire drawing units and their energy auditors",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "p": [
+        "Multiply each fuel's kg by its calorific value, add electricity converted on the basis your energy auditor uses, and divide the total kcal by 10 million to get toe. Divide by tonnes galvanized or drawn in the same period."
+      ]
+    },
+    {
+      "h": "Furnace targets",
+      "ul": [
+        "Air ratio on liquid fuel: target 1.18 to 1.24, against a standard of 1.26 to 1.33",
+        "Exit flue gas: 250 to 300 °C, with waste heat recovery of 38% as the target",
+        "Side wall temperature: galvanizing furnace target 70 °C, lead bath furnace 80 °C"
+      ]
+    },
+    {
+      "h": "Process practices",
+      "ul": [
+        "Hold the zinc bath within plus or minus 2 °C of its set temperature.",
+        "Cover hot baths with floating balls to cut evaporation losses.",
+        "Use the right quantity of acid, and regenerate or reclaim spent pickling acid.",
+        "Clean and reuse drawing lubricant, and treat spent lubricant before discharge."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: fuel use at a galvanizing unit (illustrative)",
+    "lines": [
+      "Furnace oil in the month: 12,000 kg x 10,500 kcal per kg = 126 million kcal = 12.6 toe",
+      "Steel galvanized: 300 tonnes",
+      "12.6 / 300 = 0.042 toe per tonne from fuel, inside the 0.03 to 0.17 range before adding electricity"
+    ],
+    "note": "Quantities are illustrative; the 10,500 kcal per kg figure is the low end of BEE's range for liquid fuels."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Galvanizing footprint per tonne",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "How to calculate specific energy",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "Air ratio targets for furnaces",
+      "to": "/answers/furnace-air-ratio-oxygen-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.7, Tables 6.39 to 6.41 and 6.44; liquid fuel calorific value from the note to Table 6.71",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    },
+    {
+      "label": "BEE, Perform, Achieve and Trade scheme documents: 1 toe = 10 million kcal (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

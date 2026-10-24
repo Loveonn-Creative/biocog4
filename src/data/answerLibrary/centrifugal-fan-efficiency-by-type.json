@@ -1,0 +1,72 @@
+{
+  "slug": "centrifugal-fan-efficiency-by-type",
+  "q": "What efficiency should an industrial centrifugal fan or blower reach?",
+  "title": "Centrifugal fan efficiency by type",
+  "short": "BEE gives peak efficiency ranges by fan type: 79 to 83% for airfoil, backward curved or inclined blades, 72 to 79% for modified radial, 69 to 75% for radial, 58 to 68% for pressure blowers and 60 to 65% for forward curved. Measure your fan's flow, pressure and shaft power and compare.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Maintenance engineers and energy auditors in plants with ID, FD and process fans",
+  "sections": [
+    {
+      "h": "Peak efficiency by type",
+      "ul": [
+        "Airfoil, backward curved or inclined: 79 to 83%",
+        "Modified radial: 72 to 79%",
+        "Radial: 69 to 75%",
+        "Pressure blower: 58 to 68%",
+        "Forward curved: 60 to 65%"
+      ]
+    },
+    {
+      "h": "How to measure your fan",
+      "ol": [
+        "Measure average velocity pressure across the duct with a pitot tube and inclined manometer, in mm water column.",
+        "Velocity (m/s) = Cp x square root of (2 x 9.81 x velocity pressure / gas density). Use the pitot maker's Cp, or 0.85.",
+        "Flow (m3/s) = velocity x duct area.",
+        "Shaft power (kW) = electrical input (kW) x motor efficiency.",
+        "Static efficiency (%) = flow x static pressure (mm WC) / (102 x shaft kW) x 100. Use total pressure for mechanical efficiency."
+      ]
+    },
+    {
+      "h": "Usual fixes when a fan is low",
+      "ul": [
+        "Fit a VFD where flow varies, instead of throttling with a damper.",
+        "Replace an oversized fan with one sized for the real load.",
+        "Keep the suction clean and clear, and plug duct leaks.",
+        "Replace rewound motors with IE3 motors."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a backward curved process fan (illustrative)",
+    "lines": [
+      "Flow 10 m3/s, static pressure 150 mm WC",
+      "Electrical input 25 kW, motor efficiency 92%: shaft power 23.0 kW",
+      "Static efficiency = 10 x 150 / (102 x 23.0) x 100 = 63.9%",
+      "That is well below the 79 to 83% peak for this fan type, so look at dampers, sizing and leaks"
+    ],
+    "note": "Readings are illustrative."
+  },
+  "senseible": "Senseible tracks your plant's monthly units from bills, which shows whether a fan fix moved the total. It does not take fan readings.",
+  "links": [
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "IE2 to IE4 motor replacement",
+      "to": "/answers/ie2-to-ie4-motor-replacement-savings"
+    },
+    {
+      "label": "Pump efficiency tests",
+      "to": "/answers/pump-efficiency-test-and-replacement-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 5.3 and Table 5.6 (from BEE guide book for energy managers and auditors, chapter 3.5)",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "msme-composite-loan-1-crore-single-window",
+  "q": "Can a micro or small enterprise get its term loan and working capital in one composite loan?",
+  "title": "Composite loan for MSEs up to ₹1 crore",
+  "short": "Yes. RBI's MSME Master Direction lets banks sanction a composite loan limit of up to ₹1 crore, so a micro or small enterprise gets its term loan and working capital through a single window. Separately, banks must not take collateral security on loans up to ₹20 lakh to micro and small units.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Owners of new or growing micro and small units buying machinery and needing stock finance",
+  "sections": [
+    {
+      "h": "What a composite loan is",
+      "p": [
+        "One sanction that covers both the machine or building you are buying and the working capital to run it. It saves two separate appraisals and two sets of paperwork."
+      ]
+    },
+    {
+      "h": "How collateral rules apply",
+      "ul": [
+        "No collateral security for loans up to ₹20 lakh to micro and small enterprises, including units financed under PMEGP.",
+        "Banks may raise the collateral-free limit to ₹25 lakh for units with a good track record, under their own policy.",
+        "Banks may cover the loan under a credit guarantee scheme where applicable.",
+        "Gold or silver you pledge voluntarily within the collateral-free limit is not a breach."
+      ]
+    },
+    {
+      "h": "How fast the bank must decide",
+      "p": [
+        "For loans up to ₹25 lakh to micro and small enterprises, the credit decision should take no more than 14 working days. Banks must acknowledge your application with a number, give a document checklist and put rejection reasons in writing."
+      ]
+    },
+    {
+      "h": "A General Credit Card for running costs",
+      "p": [
+        "Banks that issue credit cards may give a General Credit Card to businesses with working capital limits for non-farm activities that qualify as priority sector, on their board-approved terms."
+      ]
+    }
+  ],
+  "senseible": "If the term loan buys more efficient machinery, Senseible turns your bills before and after into energy per unit of output, so you can show the bank the saving the project promised.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limits",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "How long a bank can take on an MSME loan",
+      "to": "/answers/how-long-should-bank-take-msme-loan"
+    },
+    {
+      "label": "Why a bank rejected your MSME loan",
+      "to": "/answers/bank-rejected-msme-loan-reason"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026: paras 4.1, 4.2, 4.3, 4.4 and 4.7",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "machining-kwh-per-tonne-benchmark",
+  "q": "How many kWh per tonne should a machine shop or machine tools unit use?",
+  "title": "Machine shop kWh per tonne benchmark",
+  "short": "BEE's energy conservation guidelines for MSMEs give typical figures of 550 to 650 kWh per tonne for machining and 5,100 to 6,900 kWh per tonne for making components and accessories in the machine tools industry. Divide monthly units by tonnes of finished output to compare.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Machine shops, auto component job workers and machine tool makers",
+  "sections": [
+    {
+      "h": "Where the units go",
+      "p": [
+        "Machine tool units run milling, grinding, drilling and turning, and often heat treatment furnaces. Electricity is the main energy, so one meter reading and one weighbridge figure a month give you the number."
+      ]
+    },
+    {
+      "h": "Electrical targets in the same guidance",
+      "ul": [
+        "Power factor 0.95 for induction motors and induction furnaces, 0.99 for the distribution system",
+        "Starters: direct online up to 5 hp, star-delta from 5 to 20 hp, soft starter above 20 hp",
+        "Induction heat treatment furnace skin temperature: target 70 °C"
+      ]
+    },
+    {
+      "h": "Practices that lower kWh per tonne",
+      "ul": [
+        "Plan production to raise output and cut rejections.",
+        "Use the right quantity of cutting fluid, or solid lubricant for end milling and turning.",
+        "Reduce tool wear with coatings or advanced machining where it pays.",
+        "Fix compressed air leaks and run air at the pressure the job needs."
+      ]
+    },
+    {
+      "h": "Compare like with like",
+      "p": [
+        "Tonnes do not capture precision or cycle time. Track your own figure month by month with the same product mix before you read much into a gap with the BEE range."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Target power factor by equipment",
+      "to": "/answers/target-power-factor-by-equipment"
+    },
+    {
+      "label": "Compressed air leak cost",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "How to calculate specific energy",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.6, Tables 6.35, 6.36 and 6.38",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

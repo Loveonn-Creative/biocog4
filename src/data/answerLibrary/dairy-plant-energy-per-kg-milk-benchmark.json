@@ -1,0 +1,66 @@
+{
+  "slug": "dairy-plant-energy-per-kg-milk-benchmark",
+  "q": "How much energy per kg of milk should a dairy processing plant use?",
+  "title": "Dairy plant energy per kg of milk",
+  "short": "BEE's energy conservation guidelines for MSMEs set a target of 90 to 120 kcal per kg of milk processed. Add the day's fuel heat and electricity as equivalent kcal and divide by the kg of milk handled that day.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Dairy plant managers, milk unions and private processors",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "ul": [
+        "Fuel heat: kg of fuel x gross calorific value. BEE quotes 10,500 to 10,800 kcal per kg for furnace oil and diesel, up to 5,000 for Indian coal and 3,100 to 4,500 for biomass.",
+        "Electricity: convert kWh to kcal on a stated basis. The heat equivalent is 860 kcal per kWh.",
+        "Specific energy = total kcal a day / kg of milk processed a day."
+      ]
+    },
+    {
+      "h": "Boiler checks",
+      "ul": [
+        "Hold the air ratio with an oxygen analyser and automatic air to fuel control.",
+        "Recover heat from flue gas and condensate; blow down to the TDS the maker recommends.",
+        "Keep feedwater quality to the Indian Boiler Regulations and keep pipes insulated."
+      ]
+    },
+    {
+      "h": "Refrigeration and cold rooms",
+      "ul": [
+        "Track the refrigeration system's COP: cooling effect divided by power input.",
+        "Close cold rooms when not in use and fit strip curtains.",
+        "Put cooling tower fans on a timer so they stop at the set temperature."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a 50,000 kg a day plant (illustrative)",
+    "lines": [
+      "Furnace oil: 400 kg x 10,500 kcal = 4.2 million kcal",
+      "Electricity: 2,500 kWh x 860 = 2.15 million kcal",
+      "Total 6.35 million kcal / 50,000 kg = 127 kcal per kg, just above the 90 to 120 range"
+    ],
+    "note": "Quantities are illustrative. If your energy auditor converts electricity on another basis, say so when you compare."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Dairy plant emissions per litre",
+      "to": "/answers/dairy-plant-emissions-per-litre-of-milk"
+    },
+    {
+      "label": "Milk powder footprint per kg",
+      "to": "/answers/milk-powder-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Air ratio targets for boilers",
+      "to": "/answers/furnace-air-ratio-oxygen-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.24 and Table 6.109; fuel calorific values from the note to Table 6.71",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

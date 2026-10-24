@@ -1,0 +1,67 @@
+{
+  "slug": "forging-furnace-fuel-per-tonne-benchmark",
+  "q": "How much fuel or electricity per tonne should a forging furnace use?",
+  "title": "Forging furnace energy per tonne benchmark",
+  "short": "BEE's energy conservation guidelines for MSMEs give 70 to 100 litres of fuel per tonne for fuel-fired forging furnaces and 400 to 600 kWh per tonne for induction forging furnaces. Divide a month's fuel or metered kWh by the tonnes you heated to see where you stand.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Owners and plant heads of forging units running oil, gas or induction furnaces",
+  "sections": [
+    {
+      "h": "How to calculate",
+      "ul": [
+        "Fuel-fired: litres of fuel used in the period / tonnes of material heated. For kcal per tonne, multiply fuel kg by its calorific value first.",
+        "Induction: kWh from a dedicated meter on the furnace / tonnes heated. BEE asks for a meter reading every batch."
+      ]
+    },
+    {
+      "h": "Other targets for fuel-fired furnaces",
+      "ul": [
+        "Air ratio: 1.15 to 1.20 on liquid fuel, 1.12 to 1.15 on natural gas",
+        "Waste heat recovery: target 49% of the heat in exhaust gas at 600 to 1,000 °C, leaving flue gas at 250 to 300 °C",
+        "Skin temperature: target 110 °C on the ceiling and 85 °C on side walls",
+        "Induction furnace skin: target 70 °C"
+      ]
+    },
+    {
+      "h": "Where the extra fuel goes",
+      "ul": [
+        "Excess air and cold air leaking in through openings and poor seals",
+        "Hot walls from thin or damaged insulation",
+        "Exhaust heat that no recuperator recovers",
+        "Holding the furnace hot while the press waits"
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: an oil-fired forging furnace (illustrative)",
+    "lines": [
+      "Furnace oil used in the month: 9,000 litres",
+      "Steel forged: 100 tonnes",
+      "9,000 / 100 = 90 litres per tonne, inside the 70 to 100 range but near the top"
+    ],
+    "note": "Figures are illustrative; use your own logbook and weighbridge records."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Induction billet heater or oil furnace",
+      "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace"
+    },
+    {
+      "label": "Recuperator fuel savings",
+      "to": "/answers/recuperator-combustion-air-preheat-fuel-saving"
+    },
+    {
+      "label": "Carbon footprint of steel forgings",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.2, Tables 6.8 to 6.11 and 6.14",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

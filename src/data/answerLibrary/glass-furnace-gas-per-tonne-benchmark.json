@@ -1,0 +1,69 @@
+{
+  "slug": "glass-furnace-gas-per-tonne-benchmark",
+  "q": "How much natural gas per tonne of melt should a glass furnace use?",
+  "title": "Glass furnace gas per tonne benchmark",
+  "short": "BEE's energy conservation guidelines for MSMEs give 120 to 170 standard cubic metres of natural gas per tonne of melt for tank furnaces and 300 to 350 for pot furnaces. Small glassware and bangle units can check theirs from gas bills and daily melt records.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Owners of glass container, glassware and bangle units running tank or pot furnaces",
+  "sections": [
+    {
+      "h": "Furnace types",
+      "p": [
+        "Tank furnaces run continuously at 25 to 200 tonnes a day. Pot furnaces in smaller units melt 4 to 7 tonnes a day. Melt is held at about 1,400 to 1,450 °C."
+      ]
+    },
+    {
+      "h": "How to calculate",
+      "p": [
+        "Divide the day's gas use in standard cubic metres by tonnes melted. Use the corrected volume from your gas bill or meter, and weigh batch and cullet charged so the tonnes are real."
+      ]
+    },
+    {
+      "h": "Other targets",
+      "ul": [
+        "Air ratio on gas: 1.12 to 1.15",
+        "Skin temperature: 120 °C ceiling, 80 °C side wall",
+        "Exit flue gas: 150 to 250 °C with induced draft, 250 to 300 °C with natural draft",
+        "Waste heat recovery: target 57% for tank furnaces and 49% for pot furnaces"
+      ]
+    },
+    {
+      "h": "Cullet",
+      "p": [
+        "BEE asks units to collect their own broken glass and maximise cullet of consistent quality, either in-house or bought, since remelting cullet takes less energy than making glass from raw batch."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a pot furnace unit (illustrative)",
+    "lines": [
+      "Gas used in a day: 1,600 standard cubic metres",
+      "Glass melted: 5 tonnes",
+      "1,600 / 5 = 320 per tonne, inside the 300 to 350 range for pot furnaces"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills into monthly energy totals. Add your production figures and you get energy per tonne to set against these benchmarks, month after month.",
+  "links": [
+    {
+      "label": "Cullet and CO2 in glass",
+      "to": "/answers/glass-cullet-use-co2-saving"
+    },
+    {
+      "label": "Float glass furnace CO2 per tonne",
+      "to": "/answers/float-glass-furnace-co2-per-tonne"
+    },
+    {
+      "label": "Natural gas calorific value in India",
+      "to": "/answers/india-natural-gas-gcv-10000-kcal-per-scm"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 6.12, Tables 6.63, 6.66 to 6.68 and 6.70",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}

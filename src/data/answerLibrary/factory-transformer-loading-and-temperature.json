@@ -1,0 +1,64 @@
+{
+  "slug": "factory-transformer-loading-and-temperature",
+  "q": "How should a factory run its transformer to keep losses and failures down?",
+  "title": "Running a factory transformer efficiently",
+  "short": "Load it close to its best efficiency point, keep the power factor near unity at the transformer, and switch off a lightly loaded unit running in parallel. BEE's MSME guidelines target winding temperature within 100 to 120 °C and oil within 90 °C, with daily logs of voltage, current and temperatures.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with their own HT transformer and the electricians who look after it",
+  "sections": [
+    {
+      "h": "Loading",
+      "p": [
+        "Transformer loading (%) = measured kVA / rated kVA x 100. Run close to the best efficiency point on the maker's data. Where two transformers run in parallel, switch one off at light load and make sure voltage ratio, impedance and polarity match."
+      ]
+    },
+    {
+      "h": "What to log",
+      "ul": [
+        "Daily: voltage, current, oil and winding temperature, tap position, room temperature and moisture",
+        "Weekly: load in kVA from a power analyser",
+        "Monthly: harmonics"
+      ]
+    },
+    {
+      "h": "Maintenance",
+      "ul": [
+        "Check oil level and leaks, OLTC oil, earth resistance, the relief diaphragm and seals, as the maker specifies.",
+        "Replace silica gel when it turns pink.",
+        "Use the tap changer to correct voltage drop on long cable runs."
+      ]
+    },
+    {
+      "h": "Buying a new transformer",
+      "ul": [
+        "Size it from a load study, including seasonal operation.",
+        "Choose low no-load losses, such as an amorphous core, if it will often run lightly loaded.",
+        "Choose low eddy losses if you have many drives or other non-linear loads.",
+        "BEE suggests oil-filled over dry type for efficiency and life, and an on-load tap changer for new installations."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads HT bills, including kVAh, kWh and power factor where printed, so changes after transformer or power factor work show in the monthly record.",
+  "links": [
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    },
+    {
+      "label": "Moving from LT to HT supply",
+      "to": "/answers/lt-to-ht-connection-small-factory-worth-it"
+    },
+    {
+      "label": "Target power factor by equipment",
+      "to": "/answers/target-power-factor-by-equipment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Conservation Guidelines for MSME Sector (2019): section 5.6 and Table 5.12",
+      "url": "https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf"
+    }
+  ],
+  "reviewed": "2026-10-24"
+}
