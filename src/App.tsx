@@ -65,6 +65,7 @@ const ClimateFinance = lazy(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazy(() => import("./pages/GreenLoan"));
 const GreenLoanCheck = lazy(() => import("./pages/GreenLoanCheck"));
 const WhitePaper = lazy(() => import("./pages/WhitePaper"));
+const IndiaClimateData = lazy(() => import("./pages/IndiaClimateData"));
 const Help = lazy(() => import("./pages/Help"));
 const EsgReportSample = lazy(() => import("./pages/lead/EsgReportSample"));
 const CaseStudies = lazy(() => import("./pages/stories/CaseStudies"));
@@ -221,6 +222,7 @@ const App = () => (
               <Route path="/green-loan" element={<GreenLoan />} />
               <Route path="/green-loan-check" element={<GreenLoanCheck />} />
               <Route path="/white-paper" element={<WhitePaper />} />
+              <Route path="/india-climate-data" element={<IndiaClimateData />} />
               <Route path="/help" element={<Help />} />
               <Route path="/help/:slug" element={<Help />} />
               <Route path="/esg-report-sample" element={<EsgReportSample />} />

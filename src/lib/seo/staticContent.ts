@@ -11,6 +11,7 @@ import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { whitePaperBlocks } from './whitePaperBlocks';
 import * as cci from '@/data/carbonCreditsIndia';
 import * as sc from '@/data/softwareChooser';
+import * as icd from '@/data/indiaClimateData';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
@@ -119,6 +120,25 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
         '[Decarbonise](/net-zero): a baseline becomes a sector-aware reduction roadmap.',
         '[Monetise](/carbon-credits): records that clear additionality become credit-readiness signals.',
       ] },
+    ],
+  },
+  '/india-climate-data': {
+    h1: "A unit of India's grid power now carries 13% less CO2 than in FY 2013-14. Here is the data.",
+    blocks: [
+      { p: `Official figures on India's power sector, carbon market and EU CBAM exposure, each with a free CSV. Updated ${icd.DATA_UPDATED}. Senseible's calculator uses ${icd.SENSEIBLE_GRID_FACTOR.value.toFixed(3)} t CO2 per MWh, the FY ${icd.SENSEIBLE_GRID_FACTOR.fy} figure, while the switch to FY 2025-26 is reviewed.` },
+      { h2: 'Grid emission factor, power-sector CO2 and generation' },
+      { table: { head: ['Financial year', 'Grid factor (t CO2/MWh)', 'Total CO2 (Mt)', 'Renewable generation (BU)', 'Total net generation (BU)'], rows: icd.GRID_SERIES.map(y => [y.fy, y.factor.toFixed(3), String(y.co2Mt), String(y.reBU), String(y.totalBU)]) } },
+      { p: `FY 2025-26 margins: weighted average ${icd.GRID_MARGINS_2025_26.average}, simple operating margin ${icd.GRID_MARGINS_2025_26.om}, build margin ${icd.GRID_MARGINS_2025_26.bm}, combined margin ${icd.GRID_MARGINS_2025_26.cm}. From FY 2022-23 figures are adjusted for cross-border transfers and include captive injection. Source: [${icd.GRID_SOURCE.label}](${icd.GRID_SOURCE.url}), ${icd.GRID_SOURCE.where}.` },
+      { h2: 'Installed capacity, 31 March 2026' },
+      { table: { head: ['Source', 'MW', 'Share'], rows: icd.CAPACITY_2026.map(c => [c.label, c.mw.toFixed(2), `${((c.mw / icd.CAPACITY_TOTAL_MW) * 100).toFixed(1)}%`]).concat([['Total', icd.CAPACITY_TOTAL_MW.toFixed(2), '100%']]) } },
+      { h2: 'Carbon Credit Trading Scheme: plants with intensity targets' },
+      { table: { head: ['Sector', 'Plants', 'Notification'], rows: icd.CCTS_SECTORS.map(c => [c.sector, String(c.plants), c.notification]) } },
+      { p: 'Counts are unique registration numbers in each Gazette schedule, counted by Senseible. Targets use a 2023-24 baseline.' },
+      { h2: 'EU CBAM default values for goods from India' },
+      { table: { head: ['CN code', 'Good', 'Listed (t CO2e/t)', '2026', '2027', '2028 on'], rows: icd.CBAM_GOODS.map(g => [g.cn, g.name, (icd.CBAM_COUNTS_INDIRECT.includes(g.sector) ? g.total : g.direct).toFixed(3), ...([2026, 2027, 2028] as const).map(y => icd.cbamWithMarkup(g, y).toFixed(3))]) } },
+      { p: 'Steel, aluminium and hydrogen count direct emissions only; cement and fertilisers include indirect emissions. Mark-up 10%, 20% and 30% for 2026, 2027 and 2028 on; 1% for fertilisers.' },
+      { h2: 'Fuel weight to volume (PPAC)' },
+      { table: { head: ['Fuel', 'kL per tonne at 29.5 C', 'Multiply for 15 C'], rows: icd.FUEL_CONVERSIONS.map(f => [f.fuel, f.klPerTonne.toFixed(4), String(f.to15C)]) } },
     ],
   },
   '/white-paper': {

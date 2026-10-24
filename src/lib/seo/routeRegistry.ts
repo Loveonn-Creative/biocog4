@@ -18,6 +18,7 @@ import { trustSafeguards } from '@/data/trustSafeguards';
 import { articleRedirects } from '@/data/articleRedirects';
 import * as di from '@/data/decarbonizeIndia';
 import { WP_PATH, WP_PUBLISHED } from '@/data/whitePaper';
+import * as ICD from '@/data/indiaClimateData';
 import { ESG_SAMPLE_META, ESG_SAMPLE_OBJECTIONS } from '@/data/esgReportSample';
 import { ORGANIZATION, ORG_REF, entityJsonLd } from './entity';
 import { HELP_ARTICLES, HELP_SECTIONS } from '../../../supabase/functions/_shared/helpArticles';
@@ -228,6 +229,31 @@ function coreRoutes(): SeoRoute[] {
     ],
   });
 
+  const icdCrumbs = [{ name: 'Home', path: '/' }, { name: 'India climate data', path: ICD.DATA_PATH }];
+  const indiaClimateData = staticRoute(ICD.DATA_PATH, 'core', 0.8, {
+    breadcrumbs: icdCrumbs,
+    lastmod: ICD.DATA_UPDATED,
+    jsonLd: [
+      ...ICD.DATASETS.map(d => ({
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: d.name,
+        description: d.description,
+        url: `${canonicalUrl(ICD.DATA_PATH)}#${d.id}`,
+        creator: ORG_REF,
+        publisher: ORG_REF,
+        dateModified: ICD.DATA_UPDATED,
+        isAccessibleForFree: true,
+        license: 'https://creativecommons.org/licenses/by/4.0/',
+        ...(d.temporal ? { temporalCoverage: d.temporal } : {}),
+        spatialCoverage: { '@type': 'Place', name: 'India' },
+        isBasedOn: d.sources.map(s => s.url),
+        distribution: [{ '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${canonicalUrl(ICD.DATA_PATH)}#${d.id}` }],
+      })),
+      breadcrumbLd(icdCrumbs),
+    ],
+  });
+
   const esgCrumbs = [{ name: 'Home', path: '/' }, { name: 'Sample ESG report', path: ESG_SAMPLE_META.path }];
   const esgReportSample = staticRoute(ESG_SAMPLE_META.path, 'core', 0.7, {
     breadcrumbs: esgCrumbs,
@@ -307,7 +333,7 @@ function coreRoutes(): SeoRoute[] {
   const carbonCreditsIndia = staticRoute(CCI_PATH, 'core', 0.8, { jsonLd: [breadcrumbLd(cciCrumbs), faqLd(CCI_FAQS)] });
 
   return [
-    home, pricing, careers, guidesHub, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample,
+    home, pricing, careers, guidesHub, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];
