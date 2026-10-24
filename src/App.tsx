@@ -115,6 +115,7 @@ const PartnerReports = lazyPage(() => import("./pages/PartnerReports"));
 const CompetitorComparison = lazyPage(() => import("./pages/CompetitorComparison"));
 const Grants = lazyPage(() => import("./pages/Grants"));
 const DecarbonizeIndia = lazyPage(() => import("./pages/DecarbonizeIndia"));
+const CbamIndia = lazyPage(() => import("./pages/CbamIndia"));
 const CBAMCalculator = lazyPage(() => import("./pages/CBAMCalculator"));
 const NetZero = lazyPage(() => import("./pages/NetZero"));
 const Solutions = lazyPage(() => import("./pages/Solutions"));
@@ -258,6 +259,7 @@ const App = () => (
               <Route path="/admin" element={<Admin />} />
               <Route path="/grants" element={<Grants />} />
               <Route path="/decarbonize-india" element={<DecarbonizeIndia />} />
+              <Route path="/cbam" element={<CbamIndia />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
               <Route path="/emission-factors" element={<EmissionFactors />} />
               <Route path="/emission-factors/:slug" element={<EmissionFactors />} />
