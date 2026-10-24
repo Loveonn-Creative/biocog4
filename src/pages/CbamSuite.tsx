@@ -137,7 +137,7 @@ export default function CbamSuite() {
           d.processes[0].electricity.evidence = `Senseible verified records: ${n2} electricity item${n2 > 1 ? 's' : ''}`;
         }
       }, `Imported verified records: ${s1.size} scope 1 group(s), ${mwh.toFixed(3)} MWh scope 2`);
-      setMsg({ tone: 'ok', text: `Added ${s1.size} fuel group${s1.size === 1 ? '' : 's'}${mwh ? `, ${mwh.toLocaleString('en-IN', { maximumFractionDigits: 3 })} MWh electricity${w.processes.length === 1 ? '' : ' to split by process'}` : ''}.` });
+      setMsg({ tone: 'ok', text: `Added ${s1.size} fuel group${s1.size === 1 ? '' : 's'}${mwh ? `, ${mwh.toLocaleString('en-GB', { maximumFractionDigits: 3 })} MWh electricity${w.processes.length === 1 ? '' : ' to split by process'}` : ''}.` });
     } catch {
       setMsg({ tone: 'bad', text: 'Could not read your records. Try again.' });
     }
@@ -187,8 +187,8 @@ export default function CbamSuite() {
         <section className="mt-6" aria-label="Plant flow">
           <PlantFlow w={w} r={r} />
           <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted-foreground">
-            <span>Direct <b className="font-mono text-foreground">{r.totals.direct.toLocaleString('en-IN', { maximumFractionDigits: 1 })}</b> t CO2e</span>
-            <span>Indirect <b className="font-mono text-foreground">{r.totals.indirect.toLocaleString('en-IN', { maximumFractionDigits: 1 })}</b> t CO2e</span>
+            <span>Direct <b className="font-mono text-foreground">{r.totals.direct.toLocaleString('en-GB', { maximumFractionDigits: 1 })}</b> t CO2e</span>
+            <span>Indirect <b className="font-mono text-foreground">{r.totals.indirect.toLocaleString('en-GB', { maximumFractionDigits: 1 })}</b> t CO2e</span>
           </div>
         </section>
 

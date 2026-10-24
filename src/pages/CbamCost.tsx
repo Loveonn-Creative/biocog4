@@ -125,7 +125,7 @@ function Hub() {
           </tbody>
         </table>
       </div>
-      <p className="mt-3 text-sm text-muted-foreground">€ per tonne of product, EU default values, certificate price {eur(CBAM_PRICE)}, origin India. Related: <Link to="/cbam-calculator" className="underline">CBAM calculator</Link> · <Link to="/emission-factors" className="underline">Emission factors</Link></p>
+      <p className="mt-3 text-sm text-muted-foreground">€ per tonne of product, EU default values, certificate price {eur(CBAM_PRICE)}, origin India. Related: <Link to="/cbam-suite" className="underline">Your plant's CBAM report</Link> · <Link to="/cbam-calculator" className="underline">CBAM calculator</Link> · <Link to="/emission-factors" className="underline">Emission factors</Link></p>
     </>
   );
 }

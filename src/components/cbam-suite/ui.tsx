@@ -64,7 +64,7 @@ export function Trail({ lines, children, title = 'How this is calculated' }: { l
   );
 }
 
-export const t = (v: number | null | undefined, d = 3) => (v === null || v === undefined || !Number.isFinite(v) ? '–' : v.toLocaleString('en-IN', { maximumFractionDigits: d }));
+export const t = (v: number | null | undefined, d = 3) => (v === null || v === undefined || !Number.isFinite(v) ? '–' : v.toLocaleString('en-GB', { maximumFractionDigits: d }));
 
 export function Pill({ tone, children }: { tone: 'ok' | 'warn' | 'bad' | 'muted' | 'brand'; children: ReactNode }) {
   const c = {

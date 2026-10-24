@@ -38,6 +38,7 @@ const footerLinks = {
   solutions: [
     { name: 'Calculators', path: '/calculators' },
     { name: 'CBAM Calculator', path: '/cbam-calculator' },
+    { name: 'CBAM Report', path: '/cbam-suite' },
     { name: 'Net-Zero Engine', path: '/net-zero' },
     { name: 'Green Loans', path: '/climate-finance' },
     { name: 'Industries', path: '/industries' },

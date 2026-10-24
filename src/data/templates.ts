@@ -282,7 +282,7 @@ export const TEMPLATE_NEXT: Record<string, TemplateNext> = {
     line: 'Tell us your plant and what you ship to the EU. We work through the data your buyer needs with you, from your own bills.',
     cta: 'Get my data pack',
     phoneRequired: true,
-    link: { to: '/cbam-calculator', label: 'Estimate your CBAM cost first' },
+    link: { to: '/cbam-suite/supplier-pack', label: 'Build your supplier data pack' },
   },
   'monthly-emissions-register': {
     title: 'Get this register filled from your bills',
