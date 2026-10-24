@@ -26,6 +26,7 @@ import { fillContacts } from '../../../supabase/functions/_shared/publicContacts
 import { TIER_PRICES } from '@/lib/pricing/pricingMath';
 import { HELP_HUB_META, helpArticleMeta } from '@/lib/help/meta';
 import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
+import { TEMPLATES, TEMPLATES_META, TEMPLATES_PATH, templatePath } from '@/data/templates';
 import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
 import {
   STATIC_PAGE_META,
@@ -580,6 +581,44 @@ function factorRoutes(): SeoRoute[] {
   })];
 }
 
+function templateRoutes(): SeoRoute[] {
+  const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'Templates', path: TEMPLATES_PATH }];
+  const hub: SeoRoute = {
+    path: TEMPLATES_PATH, section: 'tool', ...TEMPLATES_META, h1: 'The ESG forms your customers send, already laid out.',
+    blocks: [
+      { p: 'Four free templates for Indian MSMEs and the companies that buy from them. Preview every field, then download. No sign-up.' },
+      { ul: TEMPLATES.map(t => `[${t.name}](${templatePath(t.slug)}): ${t.whoFor}`) },
+      { p: '[Emission factors](/emission-factors) · [All calculators](/calculators) · [Upload a bill](/)' },
+    ],
+    breadcrumbs: hubCrumbs, jsonLd: [breadcrumbLd(hubCrumbs)], priority: 0.8, changefreq: 'monthly',
+  };
+  return [hub, ...TEMPLATES.map(t => {
+    const path = templatePath(t.slug);
+    const crumbs = [...hubCrumbs, { name: t.name, path }];
+    return {
+      path, section: 'tool' as const, title: t.title, description: t.description, h1: t.h1,
+      blocks: [
+        { p: t.answer },
+        { p: `**For:** ${t.whoFor} **Saves you:** ${t.saves}` },
+        ...t.sections.flatMap(s => [{ h2: s.name } as Block, { table: { head: ['Field', 'Example', 'How to fill it'], rows: s.fields.map(f => [f.label, f.example, f.hint ?? '']) } } as Block]),
+        { h2: 'How to use it' },
+        { ol: t.steps.map(s => `**${s.title}:** ${s.text}`) },
+        { p: `[All templates](${TEMPLATES_PATH}) · [Upload a bill](/)` },
+      ],
+      breadcrumbs: crumbs,
+      jsonLd: [
+        breadcrumbLd(crumbs),
+        {
+          '@context': 'https://schema.org', '@type': 'HowTo', name: `How to use the ${t.name.toLowerCase()}`,
+          tool: [{ '@type': 'HowToTool', name: t.fileName }],
+          step: t.steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.text })),
+        },
+      ],
+      priority: 0.7, changefreq: 'monthly' as const,
+    };
+  })];
+}
+
 function cbamCostRoutes(): SeoRoute[] {
   const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'CBAM cost by sector', path: CBAM_HUB_PATH }];
   const eur = (n: number) => `€${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
@@ -713,6 +752,7 @@ export function getSeoRoutes(): SeoRoute[] {
     ...answerRoutes(),
     ...helpRoutes(),
     ...factorRoutes(),
+    ...templateRoutes(),
     ...cbamCostRoutes(),
     ...legalRoutes(),
     ...germanRoutes(),

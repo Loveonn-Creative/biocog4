@@ -146,6 +146,7 @@ const LASTMOD_SOURCES = [
   ['/solutions/', 'src/data/solutionsData.ts'],
   ['/industries', 'src/data/industriesData.ts'],
   ['/emission-factors', 'src/data/factorLibrary.ts'],
+  ['/templates', 'src/data/templates.ts'],
   ['/cbam-cost', 'src/data/cbamSectorCosts.ts'],
 ];
 const gitDates = new Map();
