@@ -1,0 +1,45 @@
+{
+  "slug": "pm-surya-ghar-subsidy-for-factories-or-shops",
+  "q": "क्या factory, दुकान या office को PM Surya Ghar rooftop solar subsidy मिल सकती है?",
+  "title": "Factories और दुकानों के लिए PM Surya Ghar",
+  "short": "नहीं। MNRE की guidelines कहती हैं कि non-residential consumers को, सरकारी, commercial और industrial connections सहित, कोई central financial assistance नहीं दी जाएगी। Subsidy सिर्फ़ residential बिजली connection से जुड़े grid-connected rooftop systems के लिए है, और housing societies की साझा सुविधाओं के लिए।",
+  "sections": [
+    {
+      "h": "कौन योग्य है",
+      "ul": [
+        "Residential consumer, जिसका grid-connected system छत, terrace, balcony या ऊँचे ढाँचे पर लगा हो और उसके residential connection से जुड़ा हो।",
+        "Group housing societies और resident welfare associations, साझा सुविधाओं के लिए, EV charging सहित।",
+        "Commercial, industrial या सरकारी connections नहीं।"
+      ]
+    },
+    {
+      "h": "इसकी जगह कारोबार क्या कर सकता है",
+      "ul": [
+        "Rooftop solar का पैसा ख़ुद लगाएँ, या RESCO या solar loan से; कई banks MSMEs के लिए products देते हैं।",
+        "राज्य की schemes और net metering के नियम देखें, जो आपका state commission तय करता है।",
+        "Payback में accelerated depreciation और bill की बचत गिनें, क्योंकि गिनने के लिए कोई central subsidy नहीं है।"
+      ]
+    },
+    {
+      "h": "आपके carbon आँकड़ों के लिए",
+      "p": [
+        "Subsidy मिले या नहीं, factory का अपना rooftop solar उसके bill की grid बिजली घटाता है, जिससे location-based Scope 2 कम होता है। हर महीने की inverter और net meter readings रखें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बिजली bills पढ़ता है, net metering lines सहित, ताकि grid import, export और solar generation एक monthly record में factor और स्रोत के साथ दिखें। आँकड़े self-declared हैं।",
+  "links": [
+    {
+      "label": "Factory के लिए rooftop solar payback",
+      "to": "/answers/rooftop-solar-payback-for-a-factory"
+    },
+    {
+      "label": "Solar loan के लिए banks क्या माँगते हैं",
+      "to": "/answers/rooftop-solar-loan-msme-what-banks-ask"
+    },
+    {
+      "label": "Net metering और Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ]
+}

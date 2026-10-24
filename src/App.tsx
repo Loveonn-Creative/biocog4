@@ -137,6 +137,7 @@ const DeCbamRechner = lazyPage(() => import("./pages/de/CbamRechner"));
 const DeCbamLieferanten = lazyPage(() => import("./pages/de/CbamLieferanten"));
 const CbamSuite = lazyPage(() => import("./pages/CbamSuite"));
 const CbamSupplierPack = lazyPage(() => import("./pages/CbamSupplierPack"));
+const AnswersHi = lazyPage(() => import("./pages/AnswersHi"));
 
 // Shown only on a first visit to a page whose code is still loading (in-app
 // navigation keeps the current page on screen instead, see BrowserRouter).
@@ -191,6 +192,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/answers" element={<Answers />} />
               <Route path="/answers/:slug" element={<Answers />} />
+              <Route path="/hi/answers/:slug" element={<AnswersHi />} />
               <Route path="/scope-3-supplier-evidence" element={<SupplierEvidence />} />
               <Route path="/msme-carbon-number" element={<MsmeCarbonNumber />} />
               {/* Ad landing pages (A/B colour tests), noindex */}

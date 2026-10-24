@@ -841,3 +841,14 @@ html:not(.dark) .text-accent:not(.bg-foreground *) { color: hsl(200 80% 30%); }
   -webkit-box-decoration-break: clone;
 }
 @media (forced-colors: active) { .india-ribbon { background-image: none; text-decoration: underline; } }
+
+/* Hindi pages: Latin letters stay in Space Grotesk; Devanagari falls back to
+   the system's Devanagari face (Noto Sans Devanagari on Android and Linux,
+   Kohinoor Devanagari on Apple, Nirmala UI or Mangal on Windows). Nothing is
+   downloaded, so English pages are not slowed down. */
+:lang(hi) {
+  font-family: 'Space Grotesk', 'Noto Sans Devanagari', 'Kohinoor Devanagari', 'Nirmala UI', 'Mangal', system-ui, sans-serif;
+  line-height: 1.7;
+}
+/* Letter-spacing splits Devanagari syllables; keep it natural on Hindi pages. */
+:lang(hi) [class*="tracking-"] { letter-spacing: normal; }

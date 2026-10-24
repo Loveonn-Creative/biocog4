@@ -1,0 +1,55 @@
+{
+  "slug": "brsr-supplier-questionnaire-field-by-field",
+  "q": "Customer का BRSR supplier questionnaire field-by-field कैसे भरूँ?",
+  "title": "BRSR supplier questionnaire, हर field",
+  "short": "उसी क्रम में जवाब दें जिसमें form पूछता है: कंपनी की जानकारी और period, आपकी ली गई boundary, फिर fuel के हिसाब से Scope 1, बिजली से Scope 2, कुल energy, पानी और waste। हर आँकड़े के साथ unit और factor का स्रोत लिखें और हर line के पीछे का bill संभालकर रखें।",
+  "sections": [
+    {
+      "h": "ऊपर के fields",
+      "ul": [
+        "उस entity का कानूनी नाम और GSTIN जिससे आप customer को invoice करते हैं।",
+        "Reporting period: April से March, customer के financial year से मेल खाता, जब तक वे कुछ और न कहें।",
+        "Boundary: आँकड़े किन plants या offices के हैं, और कुछ छोड़ा गया है तो क्या और क्यों।"
+      ]
+    },
+    {
+      "h": "Emissions के fields",
+      "ul": [
+        "Scope 1: हर fuel की एक line (diesel, LPG, PNG, कोयला, furnace oil), quantity, unit, factor, स्रोत और tonne CO2e के साथ।",
+        "Scope 2: bills से grid kWh गुणा CEA grid factor, 0.710 kg CO2 प्रति kWh, database version के साथ।",
+        "Scope 3 ख़ाली छोड़ें जब तक form न माँगे, और अंदाज़ा लगाने की बजाय यह लिख दें।"
+      ]
+    },
+    {
+      "h": "Energy, पानी और waste के fields",
+      "ul": [
+        "Energy: वही fuel और बिजली की quantities GJ में बदलकर, renewable और non-renewable अलग-अलग।",
+        "पानी: स्रोत के हिसाब से निकाला गया पानी (municipal, borewell, tanker) और माँगा जाए तो खपत।",
+        "Waste: weighbridge slips और recycler की रसीदों से category के हिसाब से tonne।"
+      ]
+    },
+    {
+      "h": "भेजने से पहले",
+      "ol": [
+        "Units जाँचें: kg और tonne की गड़बड़ सबसे आम ग़लती है।",
+        "Bills ख़ुद नहीं, सबूतों की सूची लगाएँ या देने की पेशकश करें, जब तक contract में bills ज़रूरी न हों।",
+        "एक contact का नाम दें जो आगे के सवालों के जवाब दे सके।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बिजली के bills और fuel invoices से kWh, litre और kg को हर site के लिए तारीख वाले record में पढ़ता है, हर line पर factor और स्रोत के साथ, और उसी data से BRSR drafts तैयार करता है। Reports self-declared drafts हैं।",
+  "links": [
+    {
+      "label": "Listed customer MSME suppliers से क्या माँगता है",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Carbon forms पर unit की ग़लतियाँ",
+      "to": "/answers/emissions-form-unit-mistakes-kg-tonnes-co2e"
+    },
+    {
+      "label": "BRSR waste categories",
+      "to": "/answers/brsr-waste-categories-how-to-fill"
+    }
+  ]
+}

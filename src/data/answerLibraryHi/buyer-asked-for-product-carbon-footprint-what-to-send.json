@@ -1,0 +1,65 @@
+{
+  "slug": "buyer-asked-for-product-carbon-footprint-what-to-send",
+  "q": "मेरे EU buyer ने product carbon footprint माँगा है। ठीक-ठीक क्या भेजूँ?",
+  "title": "Buyer की PCF माँग पर क्या भेजें",
+  "short": "हर product का एक आँकड़ा kg CO2e प्रति declared unit में भेजें (प्रति kg, प्रति piece या प्रति metre), cradle-to-gate, reference period, अपनाया गया standard (ISO 14067 या GHG Protocol Product Standard), primary data का हिस्सा, factor के स्रोत और verify हुआ या नहीं, के साथ। कंपनी का footprint, product footprint नहीं है।",
+  "sections": [
+    {
+      "h": "ज़्यादातर buyers किन fields की उम्मीद करते हैं",
+      "p": [
+        "कई बड़े buyers product footprints के लेन-देन के लिए WBCSD PACT data model अपनाते हैं। इसके मुख्य fields हैं:"
+      ],
+      "ul": [
+        "Product की पहचान और विवरण, buyer के item या part number से मेल खाता।",
+        "Declared unit और मात्रा, जैसे 1 kg रंगा हुआ cotton कपड़ा या 1 piece।",
+        "Biogenic emissions को छोड़कर PCF, kg CO2e प्रति declared unit में, और जहाँ लागू हो वहाँ biogenic आँकड़े।",
+        "Boundary: cradle-to-gate, कच्चे माल के निकालने से आपकी factory के gate तक।",
+        "Reference period: वे 12 महीने जिनका data है।",
+        "अपनाए गए standards, primary data का हिस्सा, data quality notes, और verification की स्थिति।"
+      ]
+    },
+    {
+      "h": "आँकड़ा कैसे बनाएँ",
+      "ol": [
+        "Reference period के लिए factory का fuel और बिजली लें और Scope 1 और 2 emissions निकालें।",
+        "उन्हें product पर बाँटें, machine hours, वज़न या किसी दूसरे physical आधार पर, और बताएँ कौन सा।",
+        "Materials जोड़ें: हर input के kg प्रति declared unit गुणा cradle-to-gate factor, बेहतर हो कि आपके supplier से।",
+        "अगर buyer की boundary में शामिल हो तो inbound transport और packaging जोड़ें।",
+        "Declared units में output से भाग दें, और हर factor और स्रोत record करें।"
+      ]
+    },
+    {
+      "h": "Primary data का हिस्सा मायने रखता है",
+      "p": [
+        "Buyers अब ज़्यादा पूछते हैं कि footprint का कितना हिस्सा database के औसत की जगह आपके अपने नापे data से आता है। आपके अपने energy bills primary data गिने जाते हैं; cotton yarn का generic factor नहीं। Primary हिस्सा बढ़ाने से, जैसे yarn supplier का अपना आँकड़ा लेकर, आपका footprint ज़्यादा भरोसेमंद बनता है, भले आँकड़ा मुश्किल से हिले।"
+      ]
+    },
+    {
+      "h": "क्या न भेजें",
+      "ul": [
+        "आपकी कंपनी का कुल Scope 1 और 2 भाग revenue। वह organisation intensity है, PCF नहीं।",
+        "बिना boundary या period का आँकड़ा। Buyer उसकी तुलना नहीं कर सकता।",
+        "Footprint की जगह carbon neutral का दावा। Buyers को gross emissions चाहिए।"
+      ]
+    }
+  ],
+  "senseible": "Senseible का product carbon footprint calculator हर factor के स्रोत के साथ प्रति unit cradle-to-gate आँकड़ा देता है, और आप जो factory kWh और fuel डालते हैं वे Senseible में पहले से पढ़े गए bills से आ सकते हैं। यह footprint verify नहीं करता और उसे PACT exchange format में नहीं भेजता।",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "EU buyers के लिए textile footprints",
+      "to": "/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers"
+    },
+    {
+      "label": "Factory की बिजली products पर बाँटना",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "PACT Pathfinder Framework, आसान भाषा में",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    }
+  ]
+}

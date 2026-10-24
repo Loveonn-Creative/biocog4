@@ -1,0 +1,59 @@
+{
+  "slug": "why-eu-importer-rejected-cbam-emissions-data",
+  "q": "मेरे EU importer ने हमारा CBAM emissions data क्यों ठुकरा दिया?",
+  "title": "EU importers CBAM data क्यों ठुकराते हैं",
+  "short": "आम तौर पर इसलिए कि data installation और सामान के हिसाब से होने की जगह कंपनी स्तर का है, ग़लत period का है, खरीदे billets या coil जैसे precursors छोड़ देता है, उसके पीछे कोई monitoring method नहीं है, या verify नहीं हुआ। 2026 से importer सिर्फ़ वही actual emissions इस्तेमाल कर सकता है जिन्हें accredited verifier ने जाँचा हो; वरना वह default values पर लौट जाता है।",
+  "sections": [
+    {
+      "h": "आम वजहें, और हर एक का इलाज",
+      "ul": [
+        "पूरी कंपनी का आँकड़ा: CBAM को किसी नाम वाली installation और production route से हर सामान के प्रति tonne emissions चाहिए। Plant के कुल को process के हिसाब से बाँटें।",
+        "कुल output से भाग: सारे emissions को सारे tonnes से भाग देना, जिसमें दायरे से बाहर का सामान भी है, CBAM सामान को कम दिखाता है। सिर्फ़ दायरे के सामान पर बाँटें।",
+        "Precursors छूटे: खरीदे wire rod या coil से बना fastener या pipe उस material के embedded emissions साथ लाता है। इन्हें अपने steel supplier से लें या default लें।",
+        "ग़लत period: आपका importer calendar year के हिसाब से declare करता है, जबकि आपके खाते April से March चलते हैं। आँकड़े January से December के लिए दोबारा बनाएँ, जब तक मौजूदा नियम और आपका verifier आपका fiscal year न मानें।",
+        "Form पर ग़लत CN code या production route, जिससे आँकड़ों की defaults से तुलना नामुमकिन हो जाती है।"
+      ]
+    },
+    {
+      "h": "अब verification ही फ़ैसले की जगह है",
+      "p": [
+        "Transitional period में, 1 October 2023 से 31 December 2025 तक, importers supplier के आँकड़े थोड़ी जाँच के साथ आगे बढ़ा सकते थे। 1 January 2026 से definitive period में, अगर importer actual values लेता है तो CBAM declaration के embedded emissions किसी accredited verifier से verify होने चाहिए। इस नियम का सामना करने वाला importer उन आँकड़ों को मना कर देगा जिन्हें कोई verifier meters, invoices और लिखित monitoring method तक वापस न जाँच सके।"
+      ]
+    },
+    {
+      "h": "बिना सबूत के carbon price के दावे",
+      "p": [
+        "अगर आप दावा करते हैं कि भारत में carbon price चुकाई गई, तो importer को सबूत चाहिए कि वह सच में चुकाई गई और वापस नहीं मिली। CBAM carbon emissions reduction scheme के तहत चुकाई गई price गिनता है; fuel पर GST जैसा आम tax सिर्फ़ इसलिए नहीं गिना जाता कि उससे fuel का दाम बढ़ता है। जो document न कर सकें, उसका दावा करने की बजाय field ख़ाली छोड़ें।"
+      ]
+    },
+    {
+      "h": "दोबारा भेजने से पहले",
+      "ol": [
+        "Installation data के लिए Commission का communication template इस्तेमाल करें।",
+        "अपना monitoring method लगाएँ: boundaries, meters, factors और आप कैसे बाँटते हैं।",
+        "Calendar year के लिए हर सामान, हर installation के आँकड़े दें।",
+        "बताएँ कि आँकड़े verified हैं या नहीं, और किसने किए, या उन पर unverified लिखें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible का CBAM cost calculator 2026 से 2034 तक आपके buyer की CBAM लागत का अनुमान लगाता है, default value mark-ups सहित, और fingerprint वाले bills और fuel invoices से बना उसका plant का Scope 1 और 2 record verifier को आपके direct और बिजली के आँकड़ों के पीछे के मूल documents देता है।",
+  "links": [
+    {
+      "label": "CBAM के तहत steel के embedded emissions",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Suppliers के लिए CBAM communication template",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "भारतीय fiscal year बनाम CBAM period",
+      "to": "/answers/indian-fiscal-year-vs-cbam-reporting-period"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "reviewNote": "Verification और default values पर definitive period के implementing acts अभी जारी हो रहे हैं; Commission का CBAM guidance page देखें।"
+}

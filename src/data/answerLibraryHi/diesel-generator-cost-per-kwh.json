@@ -1,0 +1,69 @@
+{
+  "slug": "diesel-generator-cost-per-kwh",
+  "q": "भारत में diesel generator की बिजली प्रति kWh कितने की पड़ती है?",
+  "title": "भारत में DG की बिजली की लागत प्रति kWh",
+  "short": "Diesel के प्रति litre दाम को आपके DG set के प्रति litre kWh से भाग दें। मान लें Rs 90 litre और 3.3 kWh प्रति litre, तो maintenance से पहले सिर्फ़ fuel लगभग Rs 27 प्रति kWh पड़ता है, और हल्के load पर Rs 35 से ज़्यादा। असली आँकड़ा आपके अपने fuel log और DG meter से मिलता है।",
+  "sections": [
+    {
+      "h": "Formula",
+      "ol": [
+        "प्रति kWh fuel लागत = diesel का प्रति litre दाम / प्रति litre बनी kWh।",
+        "प्रति kWh maintenance लागत = साल भर की service, AMC, oil, filters और repairs / साल में बनी kWh।",
+        "प्रति kWh कुल चलाने की लागत = fuel लागत + maintenance लागत। Capital recovery तभी जोड़ें जब नया DG खरीदने की तुलना किसी दूसरे विकल्प से कर रहे हों।"
+      ]
+    },
+    {
+      "h": "प्रति litre kWh कहाँ से लें",
+      "p": [
+        "उसी period में DG energy meter और डाला गया diesel पढ़ें, शुरुआत और आख़िर के tank level के हिसाब से adjust करके। ठीक हालत का set अच्छे load पर अक्सर लगभग 3 से 3.5 kWh प्रति litre देता है; इसे planning range मानें, standard नहीं, और अपने set को उसकी data sheet से मिलाएँ। हल्के load पर यह 2.5 kWh प्रति litre या उससे भी कम हो सकता है, जिससे प्रति kWh लागत एक तिहाई या ज़्यादा बढ़ जाती है। अगर set पर energy meter नहीं है, तो प्रति kWh लागत ईमानदारी से नहीं निकल सकती; meter लगवाएँ।"
+      ]
+    },
+    {
+      "h": "Grid और solar से तुलना कैसे करें",
+      "ul": [
+        "Grid: बिजली के कुल bill को, fixed और demand charges सहित, bill की गई kWh से भाग दें। वह सब-कुछ-मिलाकर rate ही सही तुलना है।",
+        "DG की fuel लागत आम तौर पर grid rate से कई गुना होती है, इसलिए backup का business case बिजली चालू रहना है, लागत नहीं।",
+        "Solar: उन घंटों से तुलना करें जब आप सच में DG चलाते हैं। Storage के बिना solar रात के power cut नहीं ढकता।",
+        "किसी छोटे ज़रूरी circuit के लिए DG को बहुत कम load पर चलाना अक्सर plant की सबसे महँगी kWh होती है। उस circuit के लिए छोटा set या UPS सस्ता पड़ सकता है।"
+      ]
+    },
+    {
+      "h": "लागत और carbon साथ चलते हैं",
+      "p": [
+        "जलाया गया हर litre Scope 1 में लगभग 2.68 kg CO2 जोड़ता है, जो diesel के लिए IPCC 2006 का default है। हल्के load पर fuel बर्बाद करने वाला set रुपये की लागत और प्रति kWh kg CO2 दोनों बढ़ाता है, इसलिए वही fuel log लागत की जाँच और carbon record दोनों के काम आता है।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: एक साल में 125 kVA का set",
+    "lines": [
+      "इस्तेमाल हुआ diesel: 18,000 litre, मान लिया Rs 90 प्रति litre = Rs 16,20,000",
+      "DG meter: 59,400 kWh, यानी 59,400 / 18,000 = 3.3 kWh प्रति litre",
+      "Fuel लागत: 90 / 3.3 = Rs 27.3 प्रति kWh",
+      "Maintenance और AMC: Rs 1,50,000 / 59,400 kWh = Rs 2.5 प्रति kWh",
+      "चलाने की लागत: 27.3 + 2.5 = लगभग Rs 29.8 प्रति kWh",
+      "Scope 1: 18,000 x 2.68 = 48,240 kg CO2"
+    ],
+    "note": "Rs 90 प्रति litre समझाने के लिए मान लिया दाम है; diesel के दाम राज्य के हिसाब से अलग हैं और अक्सर बदलते हैं, इसलिए अपने invoices का दाम लें।"
+  },
+  "senseible": "Senseible आपके diesel invoices और fuel slips से litre और दाम पढ़ता है और 2.68 kg CO2 प्रति litre पर Scope 1 आँकड़ा देता है। यह DG energy meters नहीं पढ़ता, इसलिए प्रति kWh लागत के लिए आपकी अपनी meter reading चाहिए।",
+  "links": [
+    {
+      "label": "DG set प्रति kWh kg CO2 बनाम grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Diesel generator की specific fuel consumption",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    }
+  ],
+  "reviewNote": "उदाहरण में diesel का मान लिया दाम है; retail diesel के दाम बदलते हैं, इसलिए अपने invoices के तारीख वाले दाम से हिसाब दोबारा करें।"
+}

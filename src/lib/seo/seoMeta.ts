@@ -2,8 +2,16 @@ import { serviceNav } from '@/data/services/nav';
 import { OG_VERSION } from './ogVersion';
 import { MSME_CARBON_META, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 import { ESG_SAMPLE_META } from '@/data/esgReportSample';
-import { isUnreviewedGermanPath } from './dePages';
+import { isUnreviewedGermanPath, hreflangFor as germanHreflangFor, type Alternate } from './dePages';
+import { isUnreviewedHindiPath, hindiHreflangFor } from './hiPages';
 export * from './dePages';
+export * from './hiPages';
+
+/** hreflang pairs for German and Hindi pages and their English counterparts. */
+export function hreflangFor(path: string): Alternate[] {
+  const de = germanHreflangFor(path);
+  return de.length ? de : hindiHreflangFor(path);
+}
 // Single source of truth for page metadata, shared by the client (SEOHead,
 // RouteSEO) and the build-time prerender + validator (scripts/). Keep this file
 // free of large data imports so it stays cheap in the client bundle; the full
@@ -118,7 +126,7 @@ export const NOINDEX_PREFIXES = [
 
 export function isNoIndexPath(pathname: string): boolean {
   const p = canonicalPath(pathname);
-  return isUnreviewedGermanPath(p) || NOINDEX_PREFIXES.some(prefix => p === prefix || p.startsWith(`${prefix}/`));
+  return isUnreviewedGermanPath(p) || isUnreviewedHindiPath(p) || NOINDEX_PREFIXES.some(prefix => p === prefix || p.startsWith(`${prefix}/`));
 }
 
 /** Duplicate routes that render the same page as another URL. */

@@ -1,0 +1,38 @@
+{
+  "slug": "why-some-sources-say-0-82-for-india-grid",
+  "q": "कुछ स्रोत भारत के grid emission factor के लिए लगभग 0.82 क्यों बताते हैं?",
+  "title": "कुछ स्रोत भारत grid के लिए 0.82 क्यों बताते हैं",
+  "short": "क्योंकि वे CEA का renewables के बिना वाला weighted average लेते हैं। Version 22.0 में FY 2025-26 के लिए वह आँकड़ा लगभग 0.818 t CO2 प्रति MWh है, जबकि grid में डाली गई renewable और captive बिजली को शामिल करने पर 0.675। किसी कंपनी के बिजली footprint के लिए renewables वाला आँकड़ा लें।",
+  "sections": [
+    {
+      "h": "एक ही database में दो औसत",
+      "ul": [
+        "Weighted average emission rate, सिर्फ़ conventional stations: FY 2025-26 के लिए लगभग 0.818 t CO2 प्रति MWh, imports के हिसाब से adjust किया हुआ।",
+        "Renewables और captive injection सहित weighted average: 0.675। User guide की Table S में CEA यही आँकड़ा सबसे ऊपर देता है।"
+      ]
+    },
+    {
+      "h": "कौन सा लें",
+      "p": [
+        "आपकी grid बिजली पूरे mix से आती है, renewables सहित, इसलिए FY 2025-26 के location-based Scope 2 footprint में 0.675 लगता है। ज़्यादा वाला आँकड़ा आम grid बिजली खरीदने वाले हर किसी के grid emissions को बढ़ा-चढ़ाकर दिखाता है।"
+      ]
+    },
+    {
+      "h": "और आँकड़े जो दिख सकते हैं",
+      "p": [
+        "IEA और दूसरे international datasets भारत के अपने factors छापते हैं, जिनकी सीमाएँ और साल अलग होते हैं। जो भी लें, उसका स्रोत, version और साल लिखें, और एक ही inventory में उन्हें मिलाएँ नहीं।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बिजली के bills को हर meter और site के लिए तारीख वाले kWh records में बदलता है, ताकि आप CEA का जो भी factor और version लगाएँ, हर Scope 2 आँकड़ा bill और उसके पीछे के factor तक जाँचा जा सके।",
+  "links": [
+    {
+      "label": "CEA बनाम IEA factor",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    },
+    {
+      "label": "FY 2025-26 का grid factor",
+      "to": "/answers/india-grid-emission-factor-2025-26"
+    }
+  ]
+}

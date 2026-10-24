@@ -1,0 +1,57 @@
+{
+  "slug": "adeetie-application-steps",
+  "q": "ADEETIE scheme के लिए कदम-दर-कदम आवेदन कैसे करूँ?",
+  "title": "ADEETIE के लिए आवेदन कैसे करें",
+  "short": "ADEETIE portal पर register करें, empanelled auditor से investment grade energy audit और detailed project report लें, BEE की technical committee की मंज़ूरी पाएँ, फिर loan लेकर उपकरण लगाएँ। Audit का ख़र्च Rs 75,000 (micro, small) या Rs 1 lakh (medium) तक वापस मिलता है।",
+  "sections": [
+    {
+      "h": "BEE के बताए नौ कदम",
+      "ol": [
+        "Scheme portal पर register करें और ज़्यादा energy खपत वाले हिस्से पहचानें।",
+        "एक empanelled energy auditor investment grade energy audit करता है।",
+        "Auditor technologies, लागत, बचत, payback और returns के साथ detailed project report बनाता है।",
+        "BEE की technical committee report को व्यवहार्यता और scheme के पालन के लिए जाँचती है।",
+        "आप loan के लिए आवेदन करते हैं; sanction होने पर audit fee आपको credit हो जाती है।",
+        "आप मंज़ूर technology खरीदकर लगाते हैं।",
+        "Empanelled auditors असली बचत verify करके BEE को report करते हैं।",
+        "आपका lender BEE से subvention claim करता है, जो nodal bank के ज़रिए हर तिमाही मिलती है।",
+        "BEE project दर्ज करता है और उसका असर track करता है।"
+      ]
+    },
+    {
+      "h": "Audit के ख़र्च की वापसी",
+      "p": [
+        "BEE investment grade audit और project report का असली ख़र्च वापस करता है, micro और small units के लिए प्रति project या loan Rs 75,000 तक और medium units के लिए Rs 1 lakh तक।"
+      ]
+    },
+    {
+      "h": "क्या तैयार रखें",
+      "ul": [
+        "आपकी enterprise category दिखाने वाला Udyam registration।",
+        "बारह महीने के बिजली bills, fuel invoices और हर महीने का production।",
+        "जिन उपकरणों को बदलना चाहते हैं उनकी छोटी सूची, nameplate data के साथ।"
+      ]
+    },
+    {
+      "h": "आवेदन कहाँ करें",
+      "p": [
+        "BEE के page पर ADEETIE portal adeetie.beeindia.gov.in और scheme के सवालों के लिए एक helpdesk दिया है।"
+      ]
+    }
+  ],
+  "senseible": "Senseible साल भर के bills और invoices को output की प्रति unit हर महीने के energy और fuel record में बदलता है, जिससे audit का data जुटाने वाला हिस्सा छोटा होता है और auditor को जाँचने के लिए baseline मिलती है।",
+  "links": [
+    {
+      "label": "ADEETIE की ब्याज दरें",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "ADEETIE technology सूची",
+      "to": "/answers/adeetie-technology-list-energy-savings"
+    },
+    {
+      "label": "ADEETIE scheme, आसान भाषा में",
+      "to": "/climate-intelligence/adeetie-scheme"
+    }
+  ]
+}

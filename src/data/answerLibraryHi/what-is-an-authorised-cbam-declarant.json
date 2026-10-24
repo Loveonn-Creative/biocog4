@@ -1,0 +1,54 @@
+{
+  "slug": "what-is-an-authorised-cbam-declarant",
+  "q": "Authorised CBAM declarant क्या होता है?",
+  "title": "Authorised CBAM declarant क्या है?",
+  "short": "EU में वह व्यक्ति जिसे CBAM वाला सामान import करने, सालाना CBAM declaration भरने और certificates जमा करने का अधिकार है। उसे किसी EU member state में स्थापित होना चाहिए और उस देश की competent authority से अधिकृत होना चाहिए। भारतीय exporter declarant नहीं बन सकता, पर अपनी installation register कर सकता है।",
+  "sections": [
+    {
+      "h": "यह कौन है",
+      "p": [
+        "आम तौर पर EU importer, या उनकी तरफ़ से काम करने वाला indirect customs representative। यह दर्जा सिर्फ़ EU में स्थापित व्यक्ति रख सकता है। सालाना सीमा से ऊपर के CBAM सामान को customs इस दर्जे के बिना किसी को नहीं छोड़ता।"
+      ]
+    },
+    {
+      "h": "यह क्या करता है",
+      "ul": [
+        "CBAM Registry के ज़रिए अपनी national competent authority से दर्जे के लिए आवेदन करता है।",
+        "CBAM certificates खरीदता है और हर साल import हुए सामान के embedded emissions के लिए उन्हें जमा करता है।",
+        "सालाना CBAM declaration भरता है। पहली, 2026 के imports के लिए, 30 September 2027 तक देनी है।",
+        "हर आँकड़े के पीछे का emissions data और verification reports रखता है।"
+      ]
+    },
+    {
+      "h": "Exporter कहाँ आता है",
+      "p": [
+        "आप embedded emissions का data देते हैं। आप CBAM Registry में operator के रूप में अपनी installation भी register कर सकते हैं ताकि declarants आपके verified आँकड़े देख सकें, पर इससे आप declarant नहीं बनते।"
+      ]
+    },
+    {
+      "h": "आम ग़लती",
+      "p": [
+        "DDP पर माल भेजकर यह मान लेना कि duty आप भरते हैं तो filing भी आप कर सकते हैं। Delivered duty paid से यह नहीं बदलता कि EU में स्थापित कौन होना चाहिए। आपको एक EU entity या यह दर्जा रखने वाला representative चाहिए।"
+      ]
+    }
+  ],
+  "senseible": "Senseible fuel, बिजली और खरीद के invoices को तारीख और fingerprint वाले installation records में बदलता है, जो उन actual emissions की शुरुआत है जो EU importer माँगता है। यह CBAM declarations नहीं भरता और emissions verify नहीं करता।",
+  "links": [
+    {
+      "label": "जाँचें कि आपके buyer के पास यह दर्जा है",
+      "to": "/answers/check-eu-buyer-is-authorised-cbam-declarant"
+    },
+    {
+      "label": "क्या non-EU exporter declarant बन सकता है?",
+      "to": "/answers/can-non-eu-exporter-be-cbam-declarant-ddp"
+    },
+    {
+      "label": "Non-EU producer के रूप में register करें",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "Germany: DEHSt के साथ registration",
+      "to": "/answers/german-importer-cbam-registration-dehst"
+    }
+  ]
+}

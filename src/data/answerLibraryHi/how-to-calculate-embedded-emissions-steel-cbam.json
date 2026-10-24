@@ -1,0 +1,70 @@
+{
+  "slug": "how-to-calculate-embedded-emissions-steel-cbam",
+  "q": "CBAM के लिए प्रति tonne steel के embedded emissions कैसे निकालें, उदाहरण के साथ?",
+  "title": "प्रति tonne steel के embedded emissions",
+  "short": "Plant के product पर लगने वाले direct emissions (fuel जलना और process emissions) में इस्तेमाल हुए precursors, जैसे खरीदा गया pig iron या DRI, के embedded emissions जोड़ें, फिर बने tonnes से भाग दें। Steel के लिए CBAM सिर्फ़ direct emissions गिनता है; बिजली के emissions इस ज़िम्मेदारी का हिस्सा नहीं हैं।",
+  "sections": [
+    {
+      "h": "Annex IV का formula",
+      "p": [
+        "Specific embedded emissions = (attributed direct emissions + precursors के embedded emissions) / activity level। तीनों एक ही production process और एक ही reporting period के होते हैं। Activity level उस process में बने सामान के tonnes हैं।",
+        "Attributed direct emissions process की boundary के अंदर जले fuels और process inputs (limestone, electrodes, charge materials में carbon) से निकली CO2 है, दूसरे processes को भेजी या उनसे ली गई heat और waste gases के हिसाब से adjust की हुई।"
+      ]
+    },
+    {
+      "h": "हर आँकड़ा कहाँ से आता है",
+      "ul": [
+        "Fuel जलना: invoices और stock records से हर fuel की quantity, गुणा एक emission factor। Verifier पूछेगा कि आपने defaults लिए या अपने कोयले का lab analysis।",
+        "Process emissions: अंदर आने और बाहर जाने वाले carbon के mass balance से (scrap, pig iron, electrodes, lime, alloys, product और slag)। यह fuel invoices से नहीं आता।",
+        "Precursors: इस्तेमाल हुए हर precursor के tonnes, गुणा उसके specific embedded emissions, supplier के verified data या EU default value से।",
+        "Activity level: उस period के production records से बने tonnes।"
+      ]
+    },
+    {
+      "h": "आम ग़लतियाँ",
+      "ul": [
+        "इस्तेमाल हुए fuel की जगह खरीदा गया fuel लेना। Opening और closing stock से adjust करें।",
+        "Precursor दो बार गिनना: एक बार खरीद के रूप में और फिर plant के अपने direct emissions के अंदर।",
+        "Grid बिजली जोड़ना। Iron और steel के लिए CBAM सिर्फ़ direct emissions लेता है।",
+        "Periods मिलाना, जैसे financial-year का fuel कुल calendar-year के production के साथ।"
+      ]
+    },
+    {
+      "h": "Defaults की जगह actual data कब लें",
+      "p": [
+        "Actual data के लिए monitoring और एक accredited verifier चाहिए, जिसका हर साल ख़र्च होता है। यह तब फ़ायदेमंद है जब आपकी intensity EU default value से कम हो, क्योंकि steel के defaults पर 2026 में 10%, 2027 में 20% और 2028 से 30% का mark-up लगता है। फ़ैसला करने से पहले दोनों को cost calculator में चलाएँ।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: खरीदे pig iron वाली rolling mill का एक महीना (समझाने के लिए)",
+    "lines": [
+      "कोयला: 500 t = 500,000 kg x 2.42 kg CO2 प्रति kg = 1,210.0 t CO2",
+      "Furnace oil: 100,000 L x 2.97 kg CO2 प्रति litre = 297.0 t CO2",
+      "Diesel: 20,000 L x 2.68 kg CO2 प्रति litre = 53.6 t CO2",
+      "Fuel जलने का कुल: 1,210.0 + 297.0 + 53.6 = 1,560.6 t CO2",
+      "Carbon mass balance से process emissions (plant data, माना गया): 100.0 t CO2",
+      "Attributed direct emissions: 1,560.6 + 100.0 = 1,660.6 t CO2",
+      "Precursor: 300 t pig iron x 1.5 t CO2 प्रति t (supplier का आँकड़ा, माना गया) = 450.0 t CO2",
+      "Output: 1,000 t hot-rolled product",
+      "Specific embedded emissions: (1,660.6 + 450.0) / 1,000 = 2.11 t CO2 प्रति tonne"
+    ],
+    "note": "Factors IPCC 2006 के defaults हैं; process और precursor के आँकड़े समझाने के लिए माने गए हैं। कम grade का भारतीय कोयला अक्सर 2.42 के default से प्रति kg कम emissions देता है, इसलिए GCV-आधारित factor नतीजा घटा सकता है।"
+  },
+  "senseible": "Senseible fuel invoices (कोयला 2.42 kg CO2 प्रति kg, furnace oil 2.97 kg प्रति litre, diesel 2.68 kg प्रति litre) को हर period के documented direct emissions में बदलता है। Process emissions, carbon mass balance, production tonnes और precursor values plant से आते हैं; Senseible इन्हें invoices से नहीं पढ़ता।",
+  "links": [
+    {
+      "label": "CBAM की लागत कैसे निकालें",
+      "to": "/answers/how-to-calculate-cbam-cost"
+    },
+    {
+      "label": "क्या CBAM steel के लिए बिजली गिनता है?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "भारत के steel exporters के लिए CBAM",
+      "to": "/solutions/cbam-steel-india"
+    }
+  ],
+  "reviewNote": "Definitive period के monitoring नियम Commission के implementing acts में तय होते हैं; हर declaration से पहले अनुमत default factors और boundaries दोबारा जाँचें।"
+}

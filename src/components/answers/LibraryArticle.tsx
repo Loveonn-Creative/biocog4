@@ -2,24 +2,41 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { LIBRARY_TOPICS } from '@/data/answerLibraryTypes';
 import type { AnswerPageData } from '@/lib/answerData';
+import { HI_PAGES_REVIEWED, hasHindi, hindiPath } from '@/lib/seo/hiPages';
+
+// Interface words for the English page and its Hindi edition.
+const UI = {
+  en: { answers: 'Answers', short: 'Short answer', does: 'What Senseible does here', sources: 'Sources', reviewed: 'Last reviewed', related: 'Related', outdated: 'Spotted something out of date?', tell: 'Tell us', check: 'and we will check it against the source.', dateLocale: 'en-IN' },
+  hi: { answers: 'जवाब', short: 'छोटा जवाब', does: 'Senseible यहाँ क्या करता है', sources: 'स्रोत', reviewed: 'आख़िरी बार जाँचा', related: 'इससे जुड़े सवाल', outdated: 'कुछ पुराना लगा?', tell: 'हमें बताइए,', check: 'हम स्रोत से मिलाकर देखेंगे।', dateLocale: 'hi-IN' },
+} as const;
 
 // One answer library page. Its data (the page and its related links) arrives
 // as one small JSON file, or embedded in the prerendered HTML on first visit,
 // so the browser never downloads the whole library.
-export function LibraryArticle({ data }: { data: AnswerPageData }) {
+export function LibraryArticle({ data, locale = 'en' }: { data: AnswerPageData; locale?: 'en' | 'hi' }) {
   const { page, related: more } = data;
   const entry = page;
+  const t = UI[locale];
+  // The Hindi edition is linked from the English page only after its native review.
+  const otherLang = locale === 'hi'
+    ? { to: `/answers/${page.slug}`, label: 'Read in English', lang: 'en' }
+    : HI_PAGES_REVIEWED && hasHindi(page.slug) ? { to: hindiPath(page.slug), label: 'हिन्दी में पढ़ें', lang: 'hi' } : null;
+  const relatedHref = (slug: string) => (locale === 'hi' && hasHindi(slug) ? hindiPath(slug) : `/answers/${slug}`);
   return (
     <article className="container max-w-2xl mx-auto px-5 pt-10 pb-20 md:pt-16">
-      <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
-        <Link to="/answers" className="hover:text-foreground">Answers</Link>
-        <span className="mx-2" aria-hidden="true">/</span>
-        <span>{LIBRARY_TOPICS[entry.topic].label}</span>
-      </nav>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
+          <Link to="/answers" className="hover:text-foreground">{t.answers}</Link>
+          {locale === 'en' && <><span className="mx-2" aria-hidden="true">/</span><span>{LIBRARY_TOPICS[entry.topic].label}</span></>}
+        </nav>
+        {otherLang && (
+          <Link to={otherLang.to} lang={otherLang.lang} hrefLang={otherLang.lang} className="rounded-full border border-border px-3 py-1 text-sm font-medium hover:border-primary/50 hover:text-primary">{otherLang.label}</Link>
+        )}
+      </div>
       <h1 className="mt-5 text-[2rem] leading-[1.15] font-semibold tracking-tight md:text-[2.6rem] [text-wrap:balance]">{entry.q}</h1>
 
       <div className="mt-8 rounded-3xl border-l-4 border-primary bg-primary/5 p-6">
-        <div className="text-xs font-medium uppercase tracking-[0.14em] text-primary">Short answer</div>
+        <div className="text-xs font-medium uppercase tracking-[0.14em] text-primary">{t.short}</div>
         <p data-speakable className="mt-2 text-[19px] leading-relaxed text-foreground [text-wrap:pretty]">{entry.short}</p>
       </div>
 
@@ -48,7 +65,7 @@ export function LibraryArticle({ data }: { data: AnswerPageData }) {
           )}
 
           <div className="mt-10 rounded-2xl border border-border p-5">
-            <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-primary">What Senseible does here</h2>
+            <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-primary">{t.does}</h2>
             <p className="mt-2 text-[16px] leading-relaxed">{page.senseible}</p>
           </div>
 
@@ -61,7 +78,7 @@ export function LibraryArticle({ data }: { data: AnswerPageData }) {
           </div>
 
           <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
-            <h2 className="font-medium text-foreground">Sources</h2>
+            <h2 className="font-medium text-foreground">{t.sources}</h2>
             <ul className="mt-2 space-y-1.5">
               {page.sources.map((s) => (
                 <li key={s.url + s.label}>
@@ -71,21 +88,21 @@ export function LibraryArticle({ data }: { data: AnswerPageData }) {
                 </li>
               ))}
             </ul>
-            <p className="mt-4">Last reviewed <time dateTime={page.reviewed}>{new Date(page.reviewed).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>.{page.reviewNote ? ` ${page.reviewNote}` : ''}</p>
+            <p className="mt-4">{t.reviewed} <time dateTime={page.reviewed}>{new Date(page.reviewed).toLocaleDateString(t.dateLocale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>.{page.reviewNote ? ` ${page.reviewNote}` : ''}</p>
           </div>
       </>
 
       {more.length > 0 && (
         <aside className="mt-14 border-t border-border pt-8">
-          <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground">Related</h2>
+          <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground">{t.related}</h2>
           <ul className="mt-3 divide-y divide-border">
             {more.map((r) => (
-              <li key={r.slug}><Link to={`/answers/${r.slug}`} className="group flex items-center justify-between gap-4 py-3.5 text-[16px] hover:text-primary">{r.q}<ArrowRight className="h-4 w-4 shrink-0 opacity-50 group-hover:opacity-100" aria-hidden="true" /></Link></li>
+              <li key={r.slug}><Link to={relatedHref(r.slug)} className="group flex items-center justify-between gap-4 py-3.5 text-[16px] hover:text-primary">{r.q}<ArrowRight className="h-4 w-4 shrink-0 opacity-50 group-hover:opacity-100" aria-hidden="true" /></Link></li>
             ))}
           </ul>
         </aside>
       )}
-      <p className="mt-10 text-sm text-muted-foreground">Spotted something out of date? <Link to="/contact?topic=climate" className="text-primary underline underline-offset-2">Tell us</Link> and we will check it against the source.</p>
+      <p className="mt-10 text-sm text-muted-foreground">{t.outdated} <Link to="/contact?topic=climate" className="text-primary underline underline-offset-2">{t.tell}</Link> {t.check}</p>
     </article>
   );
 }

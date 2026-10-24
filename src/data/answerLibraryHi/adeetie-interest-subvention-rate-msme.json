@@ -1,0 +1,53 @@
+{
+  "slug": "adeetie-interest-subvention-rate-msme",
+  "q": "ADEETIE कितनी interest subvention देता है, और मेरी factory असल में कितनी दर चुकाएगी?",
+  "title": "ADEETIE interest subvention की दरें",
+  "short": "ADEETIE energy efficiency loan पर ब्याज को micro और small enterprises के लिए 5 percentage points और medium enterprises के लिए 3 points घटाता है। Scheme आपकी net दर 2 percent या उससे ज़्यादा रखती है, इसलिए पहले से उस सीमा के पास वाले loan पर कटौती कम होती है।",
+  "sections": [
+    {
+      "h": "दो दरें",
+      "ul": [
+        "Micro और small enterprises: योग्य loan रकम पर 5 percent interest subvention।",
+        "Medium enterprises: 3 percent interest subvention।",
+        "Subvention के बाद net उधार दर 2 percent से नीचे नहीं जा सकती।"
+      ]
+    },
+    {
+      "h": "Subvention किस पर लगती है",
+      "ul": [
+        "Banks या financial institutions से Rs 10 lakh से Rs 15 crore तक के loans।",
+        "Project लागत का 75 percent तक debt funding।",
+        "ऐसे projects जो कम से कम 10 percent energy बचत हासिल करें और बनाए रखें; subvention हर उस साल मिलती है जब बचत बनी रहे।"
+      ]
+    },
+    {
+      "h": "पैसा आप तक कैसे पहुँचता है",
+      "p": [
+        "आप अपने lender को हमेशा की तरह भुगतान करते हैं। Lender BEE के पास subvention के claims भरता है, जो हर तिमाही एक nodal bank के ज़रिए पैसा देता है। पहले empanelled auditors असली बचत verify करते हैं, इसलिए जो project 10 percent से नीचे फिसले, उसकी उस साल की subvention ख़तरे में पड़ती है।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण (समझाने के लिए)",
+    "lines": [
+      "छोटी unit, 10 percent पर Rs 1 crore का loan: subvention 5 points, net लगभग 5 percent",
+      "वही loan 6 percent पर: 5 points से 1 percent बचता, इसलिए कटौती 2 percent की सीमा पर रुकती है (4 points)"
+    ],
+    "note": "दरें समझाने के लिए हैं। योग्य रकम आपका lender और scheme के नियम तय करते हैं।"
+  },
+  "senseible": "Senseible project से पहले और बाद के हर बिजली bill और fuel invoice का तारीख और fingerprint वाला record रखता है, वही सबूत जो सालाना 10 percent बचत की जाँच के समय चाहिए।",
+  "links": [
+    {
+      "label": "ADEETIE scheme, आसान भाषा में",
+      "to": "/climate-intelligence/adeetie-scheme"
+    },
+    {
+      "label": "ADEETIE आवेदन के कदम",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    }
+  ]
+}

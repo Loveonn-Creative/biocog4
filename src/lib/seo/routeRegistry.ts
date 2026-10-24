@@ -32,6 +32,7 @@ import {
   STATIC_PAGE_META,
   SITE_URL,
   fitTitle,
+  clampDescription,
   solutionMeta,
   competitorMeta,
   industryMeta,
@@ -45,6 +46,8 @@ import { articleMeta, extractFaqs } from './articleSeo';
 import { STATIC_CONTENT } from './staticContent';
 import { markdownToBlocks, type Block } from './render';
 import { DE_PAGES_REVIEWED, DE_PATHS } from './dePages';
+import { HI_PAGES_REVIEWED, HI_PATHS, hindiPath } from './hiPages';
+import { HINDI_ANSWERS } from '@/data/answerLibraryHi';
 import { DATA_PACK, DE_META, KOSTEN_FAQ } from '@/data/de/cbamDe';
 import { CCI_FAQS, CCI_PATH } from '@/data/carbonCreditsIndia';
 
@@ -69,7 +72,7 @@ export interface SeoRoute {
   priority: number;
   changefreq: 'weekly' | 'monthly' | 'yearly';
   /** Page language; omitted means English. */
-  lang?: 'de';
+  lang?: 'de' | 'hi';
 }
 
 
@@ -755,6 +758,50 @@ function germanRoutes(): SeoRoute[] {
   });
 }
 
+// Hindi answer pages: prerendered and listed only after the native review
+// (HI_PAGES_REVIEWED in ./hiPages). Until then they are noindex app routes.
+// Facts, sources and the review date come from the English page; only the
+// reader-facing text is Hindi.
+function hindiRoutes(): SeoRoute[] {
+  if (!HI_PAGES_REVIEWED) return [];
+  const english = new Map(answerLibraryAll.map(a => [a.slug, a]));
+  return HINDI_ANSWERS.flatMap(h => {
+    const en = english.get(h.slug);
+    if (!en) return [];
+    const a: LibraryAnswer = { ...en, q: h.q, title: h.title, short: h.short, sections: h.sections, example: h.example, senseible: h.senseible, links: h.links, reviewNote: h.reviewNote ?? en.reviewNote };
+    const path = hindiPath(h.slug);
+    const crumbs = [{ name: 'Senseible', path: '/' }, { name: 'जवाब', path: '/answers' }, { name: a.title, path }];
+    const text = [a.short, ...a.sections.flatMap(s => [...(s.p ?? []), ...(s.ul ?? []), ...(s.ol ?? [])])].join(' ');
+    return [{
+      path, section: 'guide' as const, lang: 'hi' as const,
+      title: fitTitle(a.title), description: clampDescription(a.short), h1: a.q,
+      blocks: [
+        { p: a.short } as Block,
+        ...a.sections.flatMap(s => [
+          { h2: s.h } as Block,
+          ...(s.p ?? []).map(p => ({ p }) as Block),
+          ...(s.ul?.length ? [{ ul: s.ul } as Block] : []),
+          ...(s.ol?.length ? [{ ol: s.ol } as Block] : []),
+        ]),
+        ...(a.example ? [{ h2: a.example.title } as Block, { ul: a.example.lines } as Block, ...(a.example.note ? [{ p: a.example.note } as Block] : [])] : []),
+        { h2: 'Senseible यहाँ क्या करता है' } as Block, { p: a.senseible } as Block,
+        { ul: a.links.map(l => `[${l.label}](${l.to})`) } as Block,
+        { p: `स्रोत: ${a.sources.map(s => `[${s.label}](${s.url})`).join(', ')}` } as Block,
+        { p: `[Read in English](/answers/${a.slug})` } as Block,
+      ],
+      breadcrumbs: crumbs,
+      jsonLd: [breadcrumbLd(crumbs), {
+        '@context': 'https://schema.org', '@type': 'QAPage', inLanguage: 'hi', dateModified: a.reviewed,
+        mainEntity: {
+          '@type': 'Question', name: a.q, answerCount: 1, inLanguage: 'hi',
+          acceptedAnswer: { '@type': 'Answer', text, inLanguage: 'hi', dateModified: a.reviewed, author: ORG_REF, citation: a.sources.map(s => s.url) },
+        },
+      }],
+      lastmod: a.reviewed, priority: 0.5, changefreq: 'monthly' as const,
+    }];
+  });
+}
+
 export function getSeoRoutes(): SeoRoute[] {
   return [
     ...coreRoutes(),
@@ -769,6 +816,7 @@ export function getSeoRoutes(): SeoRoute[] {
     ...cbamCostRoutes(),
     ...legalRoutes(),
     ...germanRoutes(),
+    ...hindiRoutes(),
   ];
 }
 
@@ -787,5 +835,6 @@ export function getNoIndexPaths(): string[] {
   return [
     ...solutionPages.filter(s => !s.indexed).map(s => `/solutions/${s.slug}`),
     ...(DE_PAGES_REVIEWED ? [] : DE_PATHS),
+    ...(HI_PAGES_REVIEWED ? [] : HI_PATHS),
   ];
 }

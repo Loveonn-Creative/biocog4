@@ -1,0 +1,68 @@
+{
+  "slug": "is-my-factory-bee-designated-consumer",
+  "q": "क्या मेरी factory BEE designated consumer है, और इससे क्या ज़रूरी होता है?",
+  "title": "क्या मेरी factory BEE designated consumer है?",
+  "short": "आपकी factory designated consumer तभी है जब उसका sector Energy Conservation Act के तहत listed हो और सरकार ने उसे notify किया हो, जो sector की सीमा पार करने वाली सालाना energy खपत पर निर्भर करता है। Designated consumers को energy manager रखना, accredited energy audits करवाना, energy खपत report करना और notified norms पूरे करने होते हैं।",
+  "sections": [
+    {
+      "h": "सीमा की जाँच कैसे होती है",
+      "p": [
+        "Energy Conservation Act, 2001 की Schedule energy-intensive उद्योगों और प्रतिष्ठानों की सूची देती है। Ministry of Power की 12 March 2007 की notification S.O. 394(E) ने हर sector के लिए tonne of oil equivalent (toe) में न्यूनतम सालाना energy खपत तय की। Listed sector की जो unit अपने sector की सीमा से ज़्यादा इस्तेमाल करे, उसे designated consumer notify किया जा सकता है।",
+        "जाँच में plant में लाई गई सारी energy गिनी जाती है: कोयला, furnace oil, gas, biomass और खरीदी गई बिजली, हर एक toe में बदलकर। एक toe 10 million kcal है।"
+      ]
+    },
+    {
+      "h": "2007 की notification की सीमाएँ",
+      "ul": [
+        "Aluminium: साल में 7,500 toe।",
+        "Chlor-alkali: साल में 12,000 toe।",
+        "Textiles: साल में 3,000 toe।",
+        "Cement, fertiliser, iron और steel, pulp और paper, और thermal power stations: साल में 30,000 toe।"
+      ],
+      "p": [
+        "बाद की notifications ने refineries, petrochemicals, railways और बिजली distribution companies जैसे sectors जोड़े, और Energy Conservation (Amendment) Act, 2022 ने Act का दायरा बढ़ाया। यहाँ के किसी आँकड़े पर भरोसा करने से पहले अपने sector की मौजूदा notification पढ़ें।"
+      ]
+    },
+    {
+      "h": "Designated consumer को क्या करना होता है",
+      "ol": [
+        "एक certified energy manager नियुक्त करें और BEE और State Designated Agency को बताएँ।",
+        "BEE (Manner and Intervals for Conduct of Energy Audit) Regulations, 2010 में तय अंतराल पर accredited energy auditor से energy audit करवाएँ।",
+        "खपत हुई energy और auditor की सिफ़ारिशों पर की गई कार्रवाई पर सालाना returns भरें।",
+        "Unit के लिए notified energy खपत norms पूरे करें, जो Perform, Achieve and Trade (PAT) scheme के तहत specific energy consumption के targets हैं।"
+      ]
+    },
+    {
+      "h": "अगर आप सीमा से नीचे हैं",
+      "p": [
+        "Notify होने तक Section 14 के तहत कुछ लागू नहीं होता, पर वही toe का हिसाब बताता है कि आप कितने क़रीब हैं। तेज़ी से बढ़ता plant, या नई furnace जोड़ने वाला plant, एक-दो साल में सीमा पार कर सकता है। उस आकार के कई plants Carbon Credit Trading Scheme के तहत obligated entities के रूप में भी नामित हैं, जो PAT की सूची पर आधारित है।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: एक textile processing unit",
+    "lines": [
+      "कोयला: 6,000 t, 4,000 kcal/kg पर = 24,000 million kcal = 2,400 toe",
+      "Furnace oil: 500 kL, 0.95 kg/L पर = 475 t, 10,000 kcal/kg पर = 4,750 million kcal = 475 toe",
+      "Grid बिजली: 5,000,000 kWh, 860 kcal/kWh पर = 4,300 million kcal = 430 toe",
+      "कुल: 2,400 + 475 + 430 = 3,305 toe, textile की 3,000 toe सीमा से ऊपर"
+    ],
+    "note": "Calorific values, density और बिजली का 860 kcal/kWh conversion समझाने के लिए अनुमान हैं। अपनी fuel test reports की gross calorific values और BEE के forms में बताया conversion लें।"
+  },
+  "senseible": "Senseible आपके invoices और bills से fuel और बिजली की quantities (tonne, litre, kWh) पढ़ता है, ताकि हर energy स्रोत का documented सालाना कुल आपके पास हो। यह उन्हें toe में नहीं बदलता और यह तय नहीं करता कि आप designated consumer हैं या नहीं।",
+  "links": [
+    {
+      "label": "भारत में MSMEs के लिए energy audits",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "Specific energy consumption कैसे निकालें",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "CCTS के बाद PAT और ESCerts",
+      "to": "/answers/pat-escerts-after-ccts"
+    }
+  ],
+  "reviewNote": "Designated consumer के sectors और सीमाएँ 2007 के बाद बदली गई हैं; अपने sector के लिए Ministry of Power की ताज़ा notification देखें।"
+}

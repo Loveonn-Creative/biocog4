@@ -1,0 +1,70 @@
+{
+  "slug": "buyer-asks-for-my-scope-3",
+  "q": "मेरा buyer सिर्फ़ Scope 1 और 2 नहीं, मेरा अपना Scope 3 माँग रहा है। क्या छोटे suppliers को सच में इसकी ज़रूरत है?",
+  "title": "Buyer मेरा Scope 3 माँग रहा है: क्या ज़रूरी है?",
+  "short": "आम तौर पर पूरा नहीं। Buyer इसलिए माँगता है क्योंकि आपका Scope 1 और 2, जो आप उसे बेचते हैं उसके पीछे के materials और freight को छोड़ देता है, जो अक्सर सबसे बड़ा हिस्सा होता है। नापा हुआ Scope 1 और 2 दें, साथ में खरीदे materials, inbound freight और waste के अनुमान। Downstream categories, जैसे बेचे गए products का इस्तेमाल, buyer के लिए कम ही मायने रखती हैं।",
+  "sections": [
+    {
+      "h": "Buyer आपके Scope 3 का क्या करता है",
+      "p": [
+        "आपका माल buyer के Scope 3 Category 1 में आता है। वहाँ उसे जो आँकड़ा चाहिए वह आपके बेचे सामान का cradle-to-gate footprint है, जिसमें आपका कच्चा माल और उसका transport शामिल है। आपका Scope 1 और 2 सिर्फ़ आपके अपने fuel और बिजली को ढकता है। Garment, forging या casting बनाने वाले के लिए खरीदा गया yarn, कपड़ा या metal factory से कई गुना भारी पड़ सकता है।"
+      ]
+    },
+    {
+      "h": "छोटे supplier को कौन सी categories ढकनी चाहिए",
+      "ul": [
+        "Category 1, खरीदा गया सामान: मुख्य materials का वज़न x factor, material supplier से या किसी नाम वाले database से; spend-based सिर्फ़ वहाँ जहाँ वज़न न हो, और label के साथ।",
+        "Category 3, fuel और energy से जुड़ा: grid transmission losses और upstream fuel emissions, आपके Scope 1 और 2 data से जोड़ना आसान।",
+        "Category 4, inbound transport जिसके पैसे आप देते हैं।",
+        "Category 5, आपके काम से निकला waste।",
+        "आम तौर पर छोड़ें: बेचे गए products का इस्तेमाल, end of life और दूसरी downstream categories। ये cradle-to-gate आँकड़े में नहीं जातीं।"
+      ]
+    },
+    {
+      "h": "नियम छोटे supplier से क्या माँगते हैं",
+      "ul": [
+        "EFRAG का VSME Basic Module Scope 1 और location-based Scope 2 माँगता है और Scope 3 ज़रूरी नहीं करता।",
+        "EU value chain cap, जो Omnibus I Directive से CSRD में जोड़ा गया: CSRD के तहत report करने वाली कंपनी 1,000 या उससे कम कर्मचारियों वाले value chain partner से उस report के लिए voluntary standard से ज़्यादा नहीं माँग सकती। European Commission ने 6 May 2026 को इस पर समझाने वाली सामग्री छापी। दूसरे कामों के लिए माँग, जैसे buyer के अपने targets, इस cap से बाहर है।",
+        "BRSR Scope 3 को voluntary leadership indicator मानता है।",
+        "SBTi supplier engagement target वाला buyer चाहता है कि आप अपना target तय करें; SBTi SME route के अपने scope नियम हैं।"
+      ]
+    },
+    {
+      "h": "पूरी inventory से बेहतर पेशकश",
+      "p": [
+        "अक्सर buyer को असल में आपके बेचे सामान का प्रति kg या प्रति piece footprint चाहिए, आपका पूरा Scope 3 नहीं। नापा हुआ Scope 1 और 2, Categories 1, 3 और 4 के label वाले अनुमान, या product footprint दें। बताएँ कि कौन सी categories छोड़ीं और क्यों।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: forging unit के लिए materials क्यों हावी हैं",
+    "lines": [
+      "Scope 1: 10,000 L diesel x 2.68 kg CO2 प्रति litre = 26.8 t CO2",
+      "Scope 2: 300,000 kWh x 0.710 kg CO2 प्रति kWh = 213.0 t CO2",
+      "Category 1: 1,200 t steel bar x 2.0 t CO2e प्रति t (समझाने के लिए; अपनी mill का आँकड़ा लें) = 2,400 t CO2e",
+      "कुल: 26.8 + 213.0 + 2,400 = 2,639.8 t",
+      "Scope 1 और 2 हैं 239.8 t, कुल का लगभग 9%"
+    ],
+    "note": "Fuel और grid factors CO2 factors हैं (IPCC 2006, CEA version 21.0); steel का आँकड़ा CO2e है। जोड़ते समय यह बताएँ।"
+  },
+  "senseible": "Senseible आपके invoices और bills से Scope 1 और 2 निकालता है और Scope 3 की lines, जैसे खरीदे materials और freight, अलग supplier evidence trail में रखता है। जहाँ सिर्फ़ spend मौजूद हो, यह spend-based अनुमान देता है जिस पर ज़्यादा अनिश्चितता का label होता है।",
+  "links": [
+    {
+      "label": "छोटे suppliers के लिए VSME standard",
+      "to": "/answers/vsme-standard-for-small-suppliers"
+    },
+    {
+      "label": "क्या BRSR में Scope 3 ज़रूरी है",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "Product footprint के लिए क्या भेजें",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "SBTi SME route की पात्रता",
+      "to": "/answers/sbti-sme-route-eligibility"
+    }
+  ],
+  "reviewNote": "Value chain cap वाला Commission का voluntary standard 2026 में अभी तय हो रहा था; finance.ec.europa.eu और EUR-Lex पर देखें कि यह लागू हुआ या नहीं और क्या यह Scope 3 माँगता है।"
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "cbam-default-value-mark-up-by-year",
+  "q": "2026, 2027 और 2028 में CBAM default values पर कितना mark-up लगता है?",
+  "title": "साल के हिसाब से CBAM default value mark-up",
+  "short": "Default values 2026 में 10%, 2027 में 20% और 2028 से आगे 30% बढ़ाई जाती हैं। Fertilisers पर 2026 से 1% mark-up है। साल आम तौर पर import का साल होता है, और 2026 में import हुए सामान पर हमेशा 2026 वाला mark-up लगता है।",
+  "sections": [
+    {
+      "h": "Mark-up की सूची",
+      "ul": [
+        "2026: 10%",
+        "2027: 20%",
+        "2028 से आगे: 30%",
+        "Fertilisers: 2026 से 1%"
+      ]
+    },
+    {
+      "h": "कौन सा साल लागू होता है",
+      "ul": [
+        "Defaults इस्तेमाल करने वाले final सामान के लिए, import का साल।",
+        "Precursor के लिए, default रूप से वह साल जब complex सामान बना, जब तक सबूत असली production period न दिखाए।",
+        "2026 से पहले का कोई data इस्तेमाल नहीं होता, इसलिए 2026 के imports पर 2026 का mark-up लगता है।"
+      ]
+    },
+    {
+      "h": "लागत पर इसका क्या असर है",
+      "p": [
+        "4.270 वाला भारतीय rebar, किसी free allocation adjustment से पहले, 2026 में लगभग 4.697 t, 2027 में 5.124 t और 2028 से 5.551 t हो जाता है। हर कदम actual, verified data को ज़्यादा कीमती बनाता है।"
+      ]
+    }
+  ],
+  "senseible": "Senseible कोयले, coke, gas, बिजली और freight के invoices को हर site के लिए तारीख और fingerprint वाले record में बदलता है, ताकि EU buyer को भेजा गया actual आँकड़ा उसके पीछे के documents तक जाँचा जा सके। यह CBAM declarations नहीं भरता।",
+  "links": [
+    {
+      "label": "Default values कहाँ मिलेंगी",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Default values बनाम actual data",
+      "to": "/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide"
+    },
+    {
+      "label": "भारतीय rebar के defaults",
+      "to": "/answers/cbam-default-value-india-rebar-wire-rod"
+    }
+  ]
+}

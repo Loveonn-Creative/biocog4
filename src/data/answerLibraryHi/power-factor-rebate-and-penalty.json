@@ -1,0 +1,73 @@
+{
+  "slug": "power-factor-rebate-and-penalty",
+  "q": "भारत के बिजली bills पर power factor penalty और rebate कैसे लगते हैं?",
+  "title": "Power factor penalty और rebate, आसान भाषा में",
+  "short": "kWh पर bill होने वाले tariffs में आपका state commission एक power factor band तय करता है: एक सीमा से नीचे, अक्सर 0.90, discom surcharge जोड़ता है, और ऊपर के एक निशान से ऊपर, अक्सर 0.95, कुछ राज्य rebate देते हैं। kVAh पर bill होने वाले tariffs में आम तौर पर अलग charge नहीं होता, क्योंकि कम power factor पहले ही bill की units बढ़ा देता है।",
+  "sections": [
+    {
+      "h": "Power factor क्या नापता है",
+      "p": [
+        "Power factor = real power भाग apparent power: kW / kVA, या billing period में kWh / kVAh। Motors, transformers और welding sets reactive power खींचते हैं, जो discom की lines पर बोझ डालती है पर कोई काम नहीं करती। 0.80 power factor का मतलब है कि आप जो हर kW इस्तेमाल करते हैं, उसके लिए network 1.25 kVA ढोता है।"
+      ]
+    },
+    {
+      "h": "Surcharge और rebate कैसे तय होते हैं",
+      "ul": [
+        "हर State Electricity Regulatory Commission अपने tariff order में bands, हर step का प्रतिशत और किन consumer categories पर लागू होगा, यह तय करता है। कोई एक national slab नहीं है।",
+        "आम ढाँचे में औसत power factor सीमा से जितने 0.01 नीचे गिरता है, हर 0.01 पर energy bill का कुछ प्रतिशत लिया जाता है, और ऊपर के निशान से हर 0.01 ज़्यादा पर थोड़ा कम प्रतिशत rebate मिलता है।",
+        "कुछ orders leading power factor (ज़्यादा capacitors लगाकर over-compensation) को भी lagging जैसा मानते हैं, इसलिए ज़्यादा capacitors हमेशा बेहतर नहीं होते।",
+        "जहाँ demand kVA में bill होती है, वहाँ कम power factor demand charge भी बढ़ाता है, क्योंकि उतने ही kW के लिए ज़्यादा kVA चाहिए।"
+      ]
+    },
+    {
+      "h": "kVAh billing से तस्वीर क्यों बदलती है",
+      "p": [
+        "कई राज्य अब industrial consumers को kVAh में bill करते हैं। क्योंकि kVAh = kWh / power factor, ख़राब power factor से आपकी चुकाई जाने वाली units बढ़ जाती हैं, जो अपने आप penalty का काम करता है, और unity power factor पर bill सबसे कम आता है। ऐसे कई tariff orders अलग surcharge और rebate हटा देते हैं। अपना order देखें: प्रति kVAh rate और बचा हुआ कोई incentive राज्य के हिसाब से अलग है।"
+      ]
+    },
+    {
+      "h": "इसे ठीक करने के लिए capacitor का size",
+      "p": [
+        "ज़रूरी capacitor rating है kVAr = kW x (tan phi1 घटा tan phi2), जहाँ phi1 अभी के power factor का angle है और phi2 target का। BEE की electrical utilities में energy efficiency वाली guide book बताती है कि capacitor कहाँ लगाएँ: बड़े motors पर correction से plant के अंदर के losses भी घटते हैं और bill भी, जबकि main incomer पर एक ही bank सिर्फ़ bill ठीक करता है।"
+      ]
+    },
+    {
+      "h": "क्या बेहतर power factor से आपके emissions घटते हैं?",
+      "p": [
+        "बहुत कम। Scope 2 kWh पर आधारित है, यानी असली इस्तेमाल हुई energy, और capacitors लगाने से वह नहीं बदलती। Plant के अंदर cable और transformer के कम losses से थोड़ी kWh बच सकती है। Bill काफ़ी गिर सकता है, पर location-based emission का आँकड़ा लगभग वही रहता है।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: 500 kW load, power factor 0.80 से 0.95",
+    "lines": [
+      "0.80 पर tan phi1 = 0.750; 0.95 पर tan phi2 = 0.329",
+      "Capacitor size: 500 x (0.750 घटा 0.329) = 500 x 0.421 = लगभग 211 kVAr",
+      "Demand: पहले 500 / 0.80 = 625 kVA; बाद में 500 / 0.95 = लगभग 526 kVA",
+      "1,00,000 kWh का kVAh bill: 0.80 पर 1,25,000 kVAh; 0.95 पर लगभग 1,05,263 kVAh; 19,737 units कम",
+      "मान लिया ₹8 प्रति kVAh: 19,737 x 8 = हर महीने ₹1,57,896 की बचत",
+      "दोनों हालत में Scope 2: 1,00,000 kWh x 0.710 kg CO2 प्रति kWh = 71,000 kg CO2"
+    ],
+    "note": "Tariff rate मान लिया गया है। अपने राज्य के मौजूदा tariff order का rate और power factor नियम लें।"
+  },
+  "senseible": "Senseible बिजली के bill से billing details पढ़ता है (period, tariff category, sanctioned load, units) और kWh पर CEA का 0.710 kg CO2 प्रति kWh grid factor लगाता है। kVAh bill पर यह छपा हुआ kWh लेता है, या kVAh गुणा छपा हुआ power factor, अनुमान के label के साथ।",
+  "links": [
+    {
+      "label": "kVAh वाला बिजली bill: emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "HT industrial bill कैसे पढ़ें",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Factories के लिए time of day tariff",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "reviewNote": "Power factor bands और kVAh billing के नियम राज्य के हिसाब से अलग हैं और हर tariff order के साथ बदलते हैं; मौजूदा order देखें।"
+}

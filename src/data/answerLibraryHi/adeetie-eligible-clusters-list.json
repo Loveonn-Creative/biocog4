@@ -1,0 +1,61 @@
+{
+  "slug": "adeetie-eligible-clusters-list",
+  "q": "ADEETIE scheme के लिए कौन से industrial clusters योग्य हैं?",
+  "title": "Sector के हिसाब से ADEETIE के योग्य clusters",
+  "short": "ADEETIE 14 energy-intensive sectors के 60 नाम वाले clusters की Udyam-registered MSMEs को ढकता है, Morbi के ceramics और Firozabad के glass से लेकर Ludhiana की forging और Tirupur के textiles तक। अगर आपकी unit इन clusters से बाहर है, तो पहले phase में योग्य नहीं है।",
+  "sections": [
+    {
+      "h": "Sector के हिसाब से clusters",
+      "ul": [
+        "Brass: Jagadhari, Jamnagar, Moradabad, Salem।",
+        "Bricks: Bengaluru, Begusarai, Indore, Nagpur, Tripura।",
+        "Ceramics: Morbi क्षेत्र, Thangadh, Khurja।",
+        "Chemicals: Ankleshwar और Panoli, Jamshedpur, Karnal, Thane, Vapi।",
+        "Fisheries: Kochi, Bhubaneswar, West Godavari।",
+        "Food processing: Ganjam और Nayagarh, Kaithal, Ludhiana, Pune।",
+        "Forging: Bengaluru, Pune, Delhi-NCR, Chennai, Ludhiana।"
+      ]
+    },
+    {
+      "h": "Sector के हिसाब से और clusters",
+      "ul": [
+        "Foundry: Batala, Jalandhar, Ludhiana, Howrah, Rajkot, Belgaum, Coimbatore।",
+        "Glass और refractory: Ambala, Chirkunda, East और West Godavari, Firozabad।",
+        "Leather: Kanpur, Kolkata, Pallavaram और Vaniyambadi, Jalandhar।",
+        "Paper: Muzaffarnagar-Saharanpur, Kashipur, Vapi, Coimbatore और Erode।",
+        "Pharma: Baddi, Medak, Madgaon, Ahmedabad, Bidar।",
+        "Steel re-rolling: Mandi Gobindgarh और Ludhiana, Jaipur, Jalna, Raipur।",
+        "Textile: Ludhiana, Surat, Tirupur, Solapur, Panipat।"
+      ]
+    },
+    {
+      "h": "दूसरी शर्तें",
+      "ul": [
+        "Udyam registration और cluster के अंदर manufacturing का काम।",
+        "Project के लिए किसी bank या financial institution से loan।",
+        "चुनी गई technology से कम से कम 10 percent energy बचत।"
+      ]
+    },
+    {
+      "h": "सूची से बाहर हैं?",
+      "p": [
+        "BEE की booklet कहती है कि पहले 60 के अनुभव के आधार पर लगभग 100 और clusters के लिए दूसरा phase योजना में है। तब तक अपने राज्य की efficiency schemes और SIDBI के energy बचत वाले loans देखें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible बारह महीने के बिजली bills और fuel invoices को प्रति tonne या प्रति piece energy की baseline में पढ़ता है, वही शुरुआत जो auditor को 10 percent बचत का आकार तय करने के लिए चाहिए।",
+  "links": [
+    {
+      "label": "ADEETIE की ब्याज दरें",
+      "to": "/answers/adeetie-interest-subvention-rate-msme"
+    },
+    {
+      "label": "BEE SME programme",
+      "to": "/answers/bee-sme-programme-cluster-energy-efficiency"
+    },
+    {
+      "label": "राज्यों की MSME efficiency subsidies",
+      "to": "/answers/state-subsidies-msme-energy-efficiency"
+    }
+  ]
+}

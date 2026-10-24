@@ -1,0 +1,71 @@
+{
+  "slug": "how-to-calculate-carbon-footprint-from-invoices",
+  "q": "क्या मैं खरीद के invoices से अपना carbon footprint निकाल सकता हूँ, और invoice के कौन से fields काम के हैं?",
+  "title": "खरीद के invoices से carbon footprint",
+  "short": "हाँ। Fuel invoices और बिजली के bill से Scope 1 और Scope 2 का activity data मिलता है, और खरीद के invoices से आपका Scope 3 शुरू होता है। काम के fields हैं: quantity, unit, item का विवरण, HSN या SAC code, invoice या billing की तारीख और supplier का GSTIN। Emissions = quantity गुणा उस unit का published factor।",
+  "sections": [
+    {
+      "h": "Invoice के कौन से fields लें, और क्यों",
+      "ul": [
+        "Quantity और unit: यही activity data है। 1,000 litre diesel या 12,000 kWh को factor से गुणा किया जा सकता है; सिर्फ़ रुपये की रकम को नहीं, जब तक spend-based method न लगाएँ।",
+        "विवरण और HSN या SAC code: इनसे पता चलता है कि item क्या है, और इसलिए कौन सा factor और कौन सा scope लगेगा। HSN 2710 का मतलब petroleum oils, SAC 9964 का मतलब passenger transport।",
+        "तारीख या billing period: activity को सही महीने और financial year में रखती है।",
+        "Supplier का GSTIN और invoice number: document की पहचान करते हैं, ताकि एक ही invoice दो बार न गिना जाए।",
+        "Taxable value: सिर्फ़ तब चाहिए जब Scope 3 के लिए spend-based factors लगाएँ, और हमेशा GST से पहले की रकम।"
+      ]
+    },
+    {
+      "h": "कौन सा invoice किस scope में जाता है",
+      "ul": [
+        "Scope 1: वह fuel जो आप अपनी मशीनों या गाड़ियों में जलाते हैं: diesel, petrol, LPG, PNG, CNG, कोयला, furnace oil।",
+        "Scope 2: खरीदी गई बिजली, discom के bill या open access invoice से।",
+        "Scope 3: बाकी सब कुछ जो आप खरीदते हैं: कच्चा माल, packaging, freight, यात्रा, waste services, मशीनरी।"
+      ]
+    },
+    {
+      "h": "Activity data, spend data से बेहतर है",
+      "p": [
+        "GHG Protocol की Scope 3 Technical Guidance supplier-specific और quantity-based methods को spend-based methods से ऊपर रखती है। Spend-based factor रुपये को पूरी अर्थव्यवस्था के औसत से emissions में बदलता है, इसलिए दाम बढ़ने पर emissions भी बढ़े हुए दिखते हैं। जहाँ invoice पर quantity छपी हो वहाँ quantity लें, और spend-based अनुमान सिर्फ़ उन lines के लिए रखें जिन पर केवल रकम है।"
+      ]
+    },
+    {
+      "h": "ध्यान रखने वाली ख़ास स्थितियाँ",
+      "ul": [
+        "Stock के लिए खरीदा fuel: emissions fuel जलने पर होते हैं, इसलिए बड़ी खरीद को opening और closing stock से adjust करें।",
+        "Credit notes और returns: लौटाई गई quantity घटाएँ।",
+        "Unit factor से मेल न खाए: invoice पर litre और factor प्रति kg हो तो density चाहिए; अंदाज़ा न लगाएँ।",
+        "Duplicates: एक ही bill दो बार upload, या scan की हुई copy और असली PDF दोनों।",
+        "बिजली का bill सिर्फ़ kVAh में: grid factor के लिए kWh का आँकड़ा चाहिए।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण: एक छोटी factory का एक महीना",
+    "lines": [
+      "Diesel invoice: 1,000 L x 2.68 kg CO2 प्रति litre = 2,680 kg CO2 (Scope 1)",
+      "LPG invoice: 500 kg x 2.98 kg CO2 प्रति kg = 1,490 kg CO2 (Scope 1)",
+      "बिजली का bill: 12,000 kWh x 0.710 kg CO2 प्रति kWh = 8,520 kg CO2 (Scope 2)",
+      "कुल Scope 1 और 2: 2,680 + 1,490 + 8,520 = 12,690 kg CO2, लगभग 12.7 tonne"
+    ],
+    "note": "Fuel factors IPCC 2006 के default हैं; grid factor CEA CO2 Baseline Database, version 21.0 से है।"
+  },
+  "senseible": "यही Senseible का मुख्य काम है: यह invoice की lines पढ़ता है, पहले HSN या tax code से classify करता है और keyword से तभी जब unit मेल खाए, और quantity को published factor से गुणा करता है; जहाँ कोई factor फ़िट न हो वहाँ कोई आँकड़ा नहीं देता। Scope 3 की lines अलग supplier evidence trail में जाती हैं; reader अपने आप spend-based factors नहीं लगाता, और जहाँ सिर्फ़ spend मौजूद हो वहाँ Senseible spend-based अनुमान दे सकता है, जिस पर साफ़ लिखा होता है कि यह अनुमान है।",
+  "links": [
+    {
+      "label": "Senseible emissions कैसे निकालता है",
+      "to": "/answers/how-senseible-calculates-emissions"
+    },
+    {
+      "label": "Spend-based बनाम activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    },
+    {
+      "label": "HSN codes से factor तय करना",
+      "to": "/answers/hsn-code-emission-factor-mapping"
+    },
+    {
+      "label": "Invoice litre में, factor kg में",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    }
+  ]
+}

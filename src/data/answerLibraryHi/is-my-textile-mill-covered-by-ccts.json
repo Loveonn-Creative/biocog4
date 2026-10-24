@@ -1,0 +1,57 @@
+{
+  "slug": "is-my-textile-mill-covered-by-ccts",
+  "q": "क्या मेरी textile mill भारत की Carbon Credit Trading Scheme के दायरे में है?",
+  "title": "क्या मेरी textile mill CCTS के दायरे में है?",
+  "short": "सिर्फ़ तब जब आपकी mill obligated textile entities की notified सूची में नामित हो। Textile targets 13 January 2026 को सिर्फ़ नामित plants के लिए notify हुए। अगर आपका plant उस सूची में नहीं है, तो आपका कोई CCTS target नहीं है, पर आप BEE की मंज़ूर methodology के तहत offset mechanism से credits कमा सकते हैं।",
+  "sections": [
+    {
+      "h": "दायरा कैसे तय होता है",
+      "p": [
+        "Carbon Credit Trading Scheme, 2023 के तहत obligated entities GHG emission intensity target notifications में plant-दर-plant नामित होती हैं। किसी sector के notify होने से उसकी हर mill दायरे में नहीं आती। आपकी mill तभी दायरे में है जब उसका नाम और जगह सूची में हो, product की प्रति unit tonne CO2e में baseline और target intensity के साथ।"
+      ]
+    },
+    {
+      "h": "जल्दी की जाँच",
+      "ol": [
+        "देखें कि क्या आप textiles के लिए PAT के तहत BEE designated consumer हैं। सीमा साल में 3,000 toe है।",
+        "13 January 2026 की textile target notification, और उसके किसी बाद के संशोधन, में अपने plant का नाम खोजें।",
+        "अगर आप हैं, तो अपना baseline year, हर compliance year के targets और इस्तेमाल हुई product unit पढ़ें।",
+        "अगर आप नहीं हैं, तो आज आपकी कोई CCTS ज़िम्मेदारी नहीं है।"
+      ]
+    },
+    {
+      "h": "अपना toe निकालना",
+      "p": [
+        "1 toe = 10 million kcal, या 41.868 GJ। Lab reports की GCV से fuel energy जोड़ें, और बिजली को उस conversion पर जो BEE आपके sector के लिए इस्तेमाल करता है। साल में 4,000 kcal प्रति kg वाला 6,000 t कोयला जलाने वाली mill 24,000 million kcal इस्तेमाल करती है, जो बिजली से पहले सिर्फ़ कोयले से 2,400 toe है।"
+      ]
+    },
+    {
+      "h": "अगर आप दायरे में नहीं हैं",
+      "ul": [
+        "दायरे वाले बड़े customers अपनी intensity घटाने के लिए आपसे energy और emissions data माँग सकते हैं।",
+        "Offset mechanism ग़ैर-obligated entities को BEE की मंज़ूर methodologies वाले projects से carbon credit certificates कमाने देता है; project की योजना से पहले उसकी मौजूदा सूची देखें।",
+        "आगे की notifications सीमाएँ घटा सकती हैं; सालाना energy records तैयार रखें।"
+      ]
+    }
+  ],
+  "senseible": "Senseible आपके fuel invoices और बिजली bills पढ़ता है और सालाना energy quantities और emissions जोड़ता है, वही सबूत जो किसी सीमा से ख़ुद को जाँचने या दायरे वाले customer को जवाब देने के लिए चाहिए। यह उन्हीं records से carbon credit की पात्रता के संकेत भी दिखाता है।",
+  "links": [
+    {
+      "label": "क्या मेरी factory BEE designated consumer है?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "Sector के हिसाब से CCTS targets",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    },
+    {
+      "label": "क्या MSME CCTS offset credits कमा सकती है?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Plant CCTS target चूक जाए तो क्या",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    }
+  ],
+  "reviewNote": "CCTS की sector notifications अभी आ रही हैं; textile सूची और compliance years के लिए ताज़ा gazette देखें।"
+}

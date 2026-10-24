@@ -1,0 +1,53 @@
+{
+  "slug": "bank-rejected-msme-loan-reason",
+  "q": "क्या bank को बताना ज़रूरी है कि उसने मेरा MSME loan क्यों ठुकराया, और क्या मैं appeal कर सकता हूँ?",
+  "title": "Bank ने MSME loan ठुकराया: आपके अधिकार",
+  "short": "हाँ। RBI के fair practices नियमों के तहत lenders को किसी भी loan आवेदन को ठुकराने की मुख्य वजहें लिखित में देनी होती हैं। आप पहले bank से शिकायत कर सकते हैं और, अगर वह 30 दिन में जवाब न दे या आप जवाब से नाख़ुश हों, तो RBI Ombudsman के पास जा सकते हैं, जो सेवा की कमियाँ देखता है पर ख़ुद उधार देने का फ़ैसला नहीं।",
+  "sections": [
+    {
+      "h": "Bank को आपको क्या बताना होगा",
+      "p": [
+        "Lenders के Fair Practices Code के तहत bank को loan आवेदन ठुकराने की मुख्य वजहें लिखित में बतानी होती हैं, हर तरह के loan और हर loan size के लिए। Branch पर मुँह से ना कहना काफ़ी नहीं है। Letter माँगें और संभालकर रखें।",
+        "वजह आम हो सकती है, जैसे कमज़ोर cash flow, कम credit score या अपर्याप्त security। आपका अधिकार वजह जानने का है, bank के पूरे अंदरूनी appraisal का नहीं।"
+      ]
+    },
+    {
+      "h": "दोबारा आवेदन से पहले जो ठीक हो सके, ठीक करें",
+      "ul": [
+        "अपनी credit reports निकालें। Credit information companies को साल में एक बार पूरी credit report मुफ़्त देनी होती है; ग़लत overdue entries जाँचें और उन पर आपत्ति करें।",
+        "वजह को किसी document से मिलाएँ: audited accounts, GST returns, bank statements, project report या quotation जो bank को नहीं मिला।",
+        "पूछें कि क्या loan CGTMSE guarantee के लायक हो सकता है, जिससे bank की collateral की ज़रूरत घटती है।"
+      ]
+    },
+    {
+      "h": "बात आगे कैसे बढ़ाएँ",
+      "ol": [
+        "Branch manager को लिखें, फिर bank की website पर दिए grievance redressal officer या principal nodal officer को।",
+        "अगर bank आपकी शिकायत ठुकराए, ऐसा जवाब दे जिससे आप नाख़ुश हों, या 30 दिन में जवाब न दे, तो RBI complaint portal पर RBI Ombudsman के पास शिकायत करें। Integrated Ombudsman Scheme, 2026 के तहत, जो 1 July 2026 से लागू है, bank के जवाब के या 30 दिन पूरे होने के 90 दिन के अंदर शिकायत करें।",
+        "Ombudsman सेवा की कमियों पर कार्रवाई कर सकता है, जैसे वजह न बताना, आवेदन की पावती न देना या bank का अपनी policy न मानना। Lender के व्यापारिक फ़ैसलों की शिकायतें, जैसे उधार देना है या नहीं या किस दर पर, उसके दायरे से बाहर हैं।"
+      ]
+    },
+    {
+      "h": "फ़ैसला lender का कहाँ है",
+      "p": [
+        "उधार देना है या नहीं, कितना, और किस security पर, यह bank की board-approved credit policy के तहत bank का फ़ैसला रहता है। नियम आपके वजह जानने और निष्पक्ष प्रक्रिया के अधिकार की रक्षा करते हैं। कोई दूसरा bank या SIDBI scheme उसी file को अलग तरह से देख सकती है, इसलिए एक lender की ना आख़िरी बात नहीं है।"
+      ]
+    }
+  ],
+  "senseible": "Energy या green loan के लिए Senseible का green loan readiness check bills पर आधारित energy और emissions के वे सबूत व्यवस्थित करता है जो lender देखता है, ताकि दोबारा आवेदन से पहले आप सबूत की कमियाँ भर सकें। फ़ैसला फिर भी lender करता है।",
+  "links": [
+    {
+      "label": "Green loan ठुकराने की वजहें और इलाज",
+      "to": "/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them"
+    },
+    {
+      "label": "बिना collateral MSME loan की सीमा",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "reviewNote": "Integrated Ombudsman Scheme, 2026 ने 1 July 2026 से 2021 की Scheme की जगह ली (30 दिन इंतज़ार, 90 दिन में शिकायत, व्यापारिक फ़ैसले बाहर)। Fair practices code अब RBI के Responsible Business Conduct Directions, 2025 में है। 2026-10-19 को जाँचा।"
+}

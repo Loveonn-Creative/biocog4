@@ -1,0 +1,48 @@
+{
+  "slug": "how-to-hire-an-energy-auditor-msme",
+  "q": "MSME energy auditor कैसे चुने और रखे?",
+  "title": "MSME energy auditor कैसे रखे",
+  "short": "BEE की सूचियों से शुरू करें: certified auditors, नियमित काम के लिए accredited auditors, या scheme चाहिए तो ADEETIE-empanelled auditors। Calibrated instruments, अपने sector की दो-तीन पुरानी reports, और ऐसा scope माँगें जो लागत सहित projects पर ख़त्म हो, न कि किसी आम checklist पर।",
+  "sections": [
+    {
+      "h": "सही सूची चुनें",
+      "ul": [
+        "ADEETIE: investment grade audit के लिए empanelled auditor चाहिए, और ख़र्च वापस मिल सकता है।",
+        "Designated consumer की ज़िम्मेदारियाँ: accredited energy auditor चाहिए।",
+        "बाकी सब: BEE certified energy auditor, बेहतर हो कि आपके sector में audits का अनुभव हो।"
+      ]
+    },
+    {
+      "h": "पूछने वाले सवाल",
+      "ul": [
+        "आप कौन से instruments लाएँगे, और उन्हें आख़िरी बार NABL lab से कब calibrate किया गया?",
+        "क्या आप मेरे sector की कोई पुरानी report नाम हटाकर दिखा सकते हैं?",
+        "क्या report output की प्रति unit kWh और fuel में बचत, हर उपाय की लागत और payback के साथ देगी?",
+        "क्या लागू करने के बाद आप बचत नापने वापस आएँगे?"
+      ]
+    },
+    {
+      "h": "Auditor को क्या दें",
+      "ul": [
+        "बारह महीने के बिजली bills और fuel invoices।",
+        "Tonne या pieces में हर महीने का production।",
+        "Single line diagram और बड़े motors, compressors, furnaces और boilers की सूची।"
+      ]
+    }
+  ],
+  "senseible": "Senseible आपके bills और fuel invoices को output की प्रति unit हर महीने के energy record में बदलता है, जिसे आप पहले ही दिन auditor को दे सकते हैं।",
+  "links": [
+    {
+      "label": "Accredited बनाम certified auditors",
+      "to": "/answers/accredited-vs-certified-energy-auditor"
+    },
+    {
+      "label": "ADEETIE आवेदन के कदम",
+      "to": "/answers/adeetie-application-steps"
+    },
+    {
+      "label": "Carbon बनाम energy audit",
+      "to": "/answers/carbon-audit-vs-energy-audit-vs-esg-audit"
+    }
+  ]
+}

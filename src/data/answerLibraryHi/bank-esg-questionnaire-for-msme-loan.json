@@ -1,0 +1,40 @@
+{
+  "slug": "bank-esg-questionnaire-for-msme-loan",
+  "q": "हमारे bank ने loan renewal के साथ ESG questionnaire भेजा है। Climate वाले हिस्से का जवाब कैसे दें?",
+  "title": "Loan के लिए bank का ESG questionnaire",
+  "short": "सिर्फ़ उतना जवाब दें जितना आपके records दिखाते हैं। अपने fuel और बिजली bills से Scope 1 और 2, period और method दें, और साफ़ बताएँ कि कहाँ अभी data नहीं है। Credit team को छोटा, स्रोत वाला जवाब उस लंबे जवाब से बेहतर लगता है जिसे जाँचा न जा सके।",
+  "sections": [
+    {
+      "h": "Banks अक्सर climate के कौन से सवाल पूछते हैं",
+      "ul": [
+        "सालाना बिजली और fuel की खपत।",
+        "Scope 1 और 2 emissions।",
+        "कोई energy बचत या renewable projects।",
+        "बाढ़, गर्मी या पानी की कमी का जोखिम।"
+      ]
+    },
+    {
+      "h": "जवाब कैसे दें",
+      "ul": [
+        "सिर्फ़ कुल नहीं, हिसाब लगाएँ।",
+        "अनुमान पर अनुमान लिखें।",
+        "वही आँकड़े रखें जो buyers को देते हैं, ताकि मेल खाएँ।"
+      ]
+    }
+  ],
+  "senseible": "Senseible invoices और bills को तारीख और fingerprint वाले emissions record में बदलता है जिसे lender line-by-line जाँच सके। Credit का फ़ैसला lender ख़ुद करता है।",
+  "links": [
+    {
+      "label": "Lender GHG report कैसे पढ़ता है",
+      "to": "/answers/how-lenders-read-msme-borrower-ghg-report"
+    },
+    {
+      "label": "Climate finance की तैयारी",
+      "to": "/answers/climate-finance-readiness-check-msme"
+    },
+    {
+      "label": "Lender बाढ़ और गर्मी के बारे में पूछे तो",
+      "to": "/answers/lender-asks-flood-and-heat-risk-msme"
+    }
+  ]
+}

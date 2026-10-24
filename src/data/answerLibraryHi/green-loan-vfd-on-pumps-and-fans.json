@@ -1,0 +1,49 @@
+{
+  "slug": "green-loan-vfd-on-pumps-and-fans",
+  "q": "Pumps और fans पर VFD के green loan के लिए कौन से records काम आते हैं?",
+  "title": "VFD retrofit loan: कौन से records रखें",
+  "short": "Lenders हर motor का baseline power draw, वह कितने घंटे चलता है, और drives का quotation चाहते हैं। VFD लगाने के बाद उसी काम के लिए नापी गई kWh दिखाएँ। दोनों एक ही meter या bill पर रखें ताकि बचत आपका अपना आँकड़ा हो, catalogue का दावा नहीं।",
+  "sections": [
+    {
+      "h": "Project से पहले",
+      "ul": [
+        "Rated kW और चलने के घंटों के साथ motors की सूची।",
+        "Spot power readings या sub-meter log।",
+        "6 से 12 महीने के बिजली bills।"
+      ]
+    },
+    {
+      "h": "Project के बाद",
+      "ul": [
+        "उन्हीं motors का sub-meter log।",
+        "उसी मौसम के bills।"
+      ]
+    },
+    {
+      "h": "Lenders क्या देखते हैं",
+      "p": [
+        "नाम वाले motors से जुड़ी, उसी meter पर नापी गई बचत, flow या output के note के साथ, ताकि कम काम वाले महीने को efficiency न समझ लिया जाए।"
+      ]
+    }
+  ],
+  "example": {
+    "title": "उदाहरण",
+    "lines": [
+      "Cooling tower fan: 22 kW, दिन में 20 घंटे, 300 दिन = साल में 132,000 kWh",
+      "70% औसत speed पर VFD के साथ: पूरी power का लगभग 34%, 44,880 kWh",
+      "बचत: 87,120 kWh x 0.710 kg = साल में 61.9 t CO2"
+    ],
+    "note": "Fan की power मोटे तौर पर speed के cube के साथ बदलती है; नापी गई readings इस अंदाज़े से बेहतर हैं।"
+  },
+  "senseible": "Senseible project से पहले आपके अपने bills से baseline नापता है और बाद में भी नापता रहता है, ताकि lender को दिखाई गई बचत documents से आए, brochure से नहीं। Loan का फ़ैसला lenders करते हैं।",
+  "links": [
+    {
+      "label": "Pumps और fans पर VFD की बचत",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Lender को energy बचत कैसे साबित करें",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    }
+  ]
+}
