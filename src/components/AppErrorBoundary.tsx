@@ -1,5 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
 import { isChunkLoadError, reloadOnceForNewBuild } from "@/lib/reliability/chunkRecovery";
+import { logPageError } from "@/lib/reliability/errorLog";
+import { ErrorLogPanel } from "./ErrorLogPanel";
 
 interface Props { children: ReactNode; resetKey?: string }
 interface State { error: Error | null; reloading: boolean }
@@ -16,6 +18,7 @@ export class AppErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
+    logPageError(error, info.componentStack);
     // A new build went live: load it quietly instead of showing an error.
     if (isChunkLoadError(error) && reloadOnceForNewBuild()) { this.setState({ reloading: true }); return; }
     console.error("[AppErrorBoundary]", error, info.componentStack);
@@ -26,7 +29,7 @@ export class AppErrorBoundary extends Component<Props, State> {
   }
 
   render() {
-    if (!this.state.error) return this.props.children;
+    if (!this.state.error) return <>{this.props.children}<ErrorLogPanel /></>;
     if (this.state.reloading || isChunkLoadError(this.state.error)) return <div className="min-h-[60vh]" aria-busy="true" />;
     return (
       <main role="alert" className="min-h-[60vh] flex flex-col items-center justify-center gap-4 px-6 text-center">
