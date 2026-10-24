@@ -38,7 +38,9 @@ function headTags(route, R) {
     `<title>${e(route.title)}</title>`,
     `<meta name="description" content="${e(route.description)}" data-rh="true" />`,
     `<link rel="canonical" href="${url}" data-rh="true" />`,
-    `<link rel="alternate" hreflang="x-default" href="${url}" data-rh="true" />`,
+    ...(R.hreflangFor(route.path).length
+      ? R.hreflangFor(route.path).map(a => `<link rel="alternate" hreflang="${a.hreflang}" href="${R.canonicalUrl(a.path)}" data-rh="true" />`)
+      : [`<link rel="alternate" hreflang="x-default" href="${url}" data-rh="true" />`]),
     `<link rel="alternate" type="text/markdown" href="${R.SITE_URL}${mdPathFor(route.path)}" />`,
     `<meta property="og:type" content="${route.ogType ?? (route.section === 'guide' ? 'article' : 'website')}"data-rh="true" />`,
     `<meta property="og:site_name" content="Senseible" data-rh="true" />`,
@@ -50,7 +52,7 @@ function headTags(route, R) {
     `<meta property="og:image:width" content="${R.OG_IMAGE_WIDTH}" data-rh="true" />`,
     `<meta property="og:image:height" content="${R.OG_IMAGE_HEIGHT}" data-rh="true" />`,
     `<meta property="og:image:alt" content="${e(og.alt)}" data-rh="true" />`,
-    `<meta property="og:locale" content="en_IN" data-rh="true" />`,
+    `<meta property="og:locale" content="${route.lang === 'de' ? 'de_DE' : 'en_IN'}" data-rh="true" />`,
     `<meta name="twitter:card" content="summary_large_image" data-rh="true" />`,
     `<meta name="twitter:site" content="@senseible_earth" data-rh="true" />`,
     `<meta name="twitter:title" content="${e(route.title)}" data-rh="true" />`,
@@ -119,6 +121,7 @@ function renderPage(template, route, R, chunks = []) {
   if (start === -1 || end === -1) throw new Error('index.html is missing the <!--seo:head--> markers');
   let html = template.slice(0, start + HEAD_START.length) + '\n    ' + headTags(route, R) + '\n    ' + template.slice(end);
   if (!html.includes('<div id="root"></div>')) throw new Error('index.html is missing <div id="root"></div>');
+  if (route.lang) html = html.replace('<html lang="en">', `<html lang="${route.lang}">`);
   html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml(route, R)}</div>${answerDataTag(route)}`);
   return withPreloads(html, chunks);
 }
