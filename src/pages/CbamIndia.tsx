@@ -86,7 +86,7 @@ export default function CbamIndia() {
                 <span className="cbi-bill-v cbi-good">{eur(y26a)}</span>
                 <i className="cbi-bar cbi-bar-act" style={{ width: `${(y26a / max) * 100}%` }} />
               </div>
-              <p className="cbi-gap"><b>{eur(Math.max(0, y26d - y26a))}</b> your buyer stops paying on this shipment, and stops asking you to absorb.</p>
+              <p className="cbi-gap"><b>{eur(Math.max(0, y26d - y26a))}</b> off your buyer's CBAM bill on this shipment. Money they would otherwise ask you to cut from your price.</p>
             </div>
             <p className="cbi-fine">Commission default value for India and benchmarks, certificate price {eur(DEFAULT_EU_ETS_PRICE)} (Q3 2026). Your figure is an example: move it to your plant.</p>
           </div>
