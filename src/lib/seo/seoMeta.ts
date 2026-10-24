@@ -60,6 +60,7 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   '/answers': { slug: 'guides', alt: 'Answers: straight answers about Senseible, carbon data and CBAM' },
   '/enterprise': { slug: 'enterprise', alt: 'Every supplier’s emissions in one record: Scope 3 for enterprise buyers' },
   '/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026': { slug: 'credit-pricing', alt: 'How carbon credits are actually priced in 2026, voluntary and compliance markets' },
+  '/cbam': { slug: 'cbam-calculator', alt: 'CBAM for Indian exporters: pay on your real number, not the EU default' },
   '/carbon-credits-india': { slug: 'credit-pricing', alt: 'Carbon credits in India: find the route that fits you' },
   '/carbon-accounting-software-india': { slug: 'calculators', alt: 'Choose carbon accounting software in India with your own scorecard' },
   '/marketplace': { slug: 'marketplace', alt: 'Carbon credit marketplace: MSME credit listings with provenance and verification status' },
@@ -231,6 +232,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/careers': {
     title: 'Careers at Senseible: Build Climate Infrastructure',
     description: 'Open roles at Senseible across engineering, applied AI, climate research, design and growth, plus intern and fresher tracks. See how to apply.',
+  },
+  '/cbam': {
+    title: 'CBAM India: Compliance for Steel and Aluminium Exporters',
+    description: 'Your EU buyer pays CBAM on your emissions. Without verified plant data it is the EU default plus a mark-up. Measure, verify and share your real figure.',
   },
   '/carbon-credits-india': {
     title: 'Carbon Credits in India: How to Earn Them, What It Takes',

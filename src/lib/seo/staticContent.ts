@@ -10,6 +10,7 @@ import * as esg from '@/data/esgReportSample';
 import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { whitePaperBlocks } from './whitePaperBlocks';
 import * as cci from '@/data/carbonCreditsIndia';
+import * as cbi from '@/data/cbamIndia';
 import * as sc from '@/data/softwareChooser';
 import * as icd from '@/data/indiaClimateData';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
@@ -368,6 +369,21 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       ] },
       { h2: 'Straight answers' },
       ...cci.CCI_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+    ],
+  },
+  '/cbam': {
+    h1: 'CBAM for Indian exporters: make your EU buyer pay on your real number',
+    blocks: [
+      { p: 'Since 1 January 2026 EU importers pay CBAM on the embedded emissions of the steel, aluminium, cement and fertilisers they buy from India. Without verified plant data they pay on the EU default value for India, raised by 10% in 2026, 20% in 2027 and 30% from 2028. Senseible measures your actual figure at the source, builds the file a verifier checks, and gets it to your buyer.' },
+      { h2: 'Key dates' },
+      { ul: cbi.CBAM_MILESTONES.map(m => `${m.when}: ${m.what}`) },
+      { h2: 'Measured at the source' },
+      { ul: cbi.DATA_SOURCES.map(d => `${d.name}: ${d.reads}`) },
+      { h2: 'What a verifier checks' },
+      { ul: cbi.VERIFIER_CHECKS },
+      { h2: 'Straight answers' },
+      ...cbi.CBAM_INDIA_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector.' },
     ],
   },
   '/carbon-accounting-software-india': {
