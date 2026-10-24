@@ -455,6 +455,7 @@ const CBAMCalculator = () => {
           )}
           <p className="mt-10 text-sm text-muted-foreground">
             Per-tonne costs by sector and production route, 2026 to 2034: <Link to="/cbam-cost" className="underline">CBAM cost by sector</Link>.
+            {" "}Ready for real numbers? <Link to="/cbam-suite" className="underline font-medium text-foreground">Turn this estimate into your plant's CBAM report</Link>.
           </p>
         </div>
       </main>

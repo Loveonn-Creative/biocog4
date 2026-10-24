@@ -135,6 +135,8 @@ const FuelCarbon = lazyPage(() => import("./pages/calculators/FuelCarbon"));
 const DeCbamKosten = lazyPage(() => import("./pages/de/CbamKosten"));
 const DeCbamRechner = lazyPage(() => import("./pages/de/CbamRechner"));
 const DeCbamLieferanten = lazyPage(() => import("./pages/de/CbamLieferanten"));
+const CbamSuite = lazyPage(() => import("./pages/CbamSuite"));
+const CbamSupplierPack = lazyPage(() => import("./pages/CbamSupplierPack"));
 
 // Shown only on a first visit to a page whose code is still loading (in-app
 // navigation keeps the current page on screen instead, see BrowserRouter).
@@ -259,6 +261,8 @@ const App = () => (
               <Route path="/emission-factors/:slug" element={<EmissionFactors />} />
               <Route path="/templates" element={<Templates />} />
               <Route path="/templates/:slug" element={<Templates />} />
+              <Route path="/cbam-suite" element={<CbamSuite />} />
+              <Route path="/cbam-suite/supplier-pack" element={<CbamSupplierPack />} />
               <Route path="/cbam-cost" element={<CbamCost />} />
               <Route path="/cbam-cost/:sector" element={<CbamCost />} />
               <Route path="/de/cbam-kosten" element={<DeCbamKosten />} />
