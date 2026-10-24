@@ -1,19 +1,19 @@
 // Article body (markdown subset). Metadata lives in ../articleIndex.ts.
 // === 25 Country-Specific Problem-First SEO Articles ===
-export default `For 1,000 tonnes of Indian blast-furnace steel at 2.1 tCO2 per tonne, the estimated CBAM cost to the EU importer is about €51,000 in 2026 with verified data, rising to about €173,000 in 2034, at the Q3 2026 certificate price of €82.32. With default values instead, 2026 is about €68,000.
+export default `For 1,000 tonnes of Indian blast-furnace steel at 2.1 tCO2 per tonne, the estimated CBAM cost to the EU importer is about €63,000 in 2026 with verified data, rising to about €173,000 in 2034, at the Q3 2026 certificate price of €82.32. With default values instead, 2026 is about €278,000.
 
 ## At a glance (1,000 tonnes, €82.32 per certificate)
 
 | Year | Free allocation kept | Verified actual (2.1 tCO2/t) | Default value + mark-up |
 |---|---|---|---|
-| 2026 | 97.5% | €50,874 | €68,161 |
-| 2027 | 95% | €54,002 | €88,576 |
-| 2028 | 90% | €60,258 | €112,120 |
-| 2030 | 51.5% | €108,432 | €160,294 |
-| 2032 | 26.5% | €139,714 | €191,575 |
-| 2034 | 0% | €172,872 | €224,734 |
+| 2026 | 97.5% | €62,913 | €277,604 |
+| 2027 | 95% | €65,733 | €315,656 |
+| 2028 | 90% | €71,371 | €356,528 |
+| 2030 | 51.5% | €114,791 | €399,948 |
+| 2032 | 26.5% | €142,986 | €428,142 |
+| 2034 | 0% | €172,872 | €458,028 |
 
-Figures come from the Senseible CBAM engine using an indicative EU benchmark of 1.52 tCO2 per tonne and a default intensity of 2.1 tCO2 per tonne before mark-up. The official product benchmark and default value for your exact CN code decide the real number.
+Figures come from the Senseible CBAM engine using an indicative EU benchmark of 1.37 tCO2 per tonne and a default intensity of 4.28 tCO2 per tonne before mark-up. The official product benchmark and default value for your exact CN code decide the real number.
 
 ## How each year is calculated
 
@@ -24,10 +24,10 @@ Certificates owed = embedded emissions − (EU benchmark × share of free alloca
 | Step | Value |
 |---|---|
 | Embedded emissions: 1,000 t × 2.1 | 2,100 tCO2 |
-| Adjustment: 1.52 × 1,000 × 97.5% | 1,482 tCO2 |
-| Certificates owed | 618 |
-| × €82.32 | €50,874 |
-| Per tonne of steel | ≈ €51 |
+| Adjustment: 1.37 × 1,000 × 97.5% | 1,335.75 tCO2 |
+| Certificates owed | 764.25 |
+| × €82.32 | €62,913 |
+| Per tonne of steel | ≈ €63 |
 
 ## What changes the number most
 

@@ -40,17 +40,17 @@ describe('CBAM cost pages', () => {
 });
 
 describe('CBAM worked example in the Answers hub', () => {
-  test('the €6,816 example equals the calculator', async () => {
+  test('the €27,760 example equals the calculator', async () => {
     const { answers } = await import('../src/data/answers');
     const a = answers.find(x => x.slug === 'how-to-calculate-cbam-cost')!;
     const res = calculateCBAM({ sectorId: 'steel', productionRouteId: 'bf-bof', countryCode: 'IN', supplierName: '', tonnage: 100, actualEmissionsIntensity: null, carbonPricePaid: null, euEtsPrice: DEFAULT_EU_ETS_PRICE });
     const y = res.yearlyResults.find(r => r.year === 2026)!;
-    expect(y.totalEmissions).toBe(231);
-    expect(y.freeAllowances).toBe(148.2);
-    expect(y.netLiableEmissions).toBe(82.8);
-    expect(Math.round(y.netCbamCost)).toBe(6816);
+    expect(y.totalEmissions).toBe(470.8);
+    expect(y.freeAllowances).toBe(133.57);
+    expect(y.netLiableEmissions).toBe(337.23);
+    expect(Math.round(y.netCbamCost)).toBe(27760);
     expect(DEFAULT_EU_ETS_PRICE).toBe(82.32);
-    expect(a.short).toContain('€6,816');
-    expect(a.body.join(' ')).toContain('82.8 t × €82.32 = €6,816');
+    expect(a.short).toContain('€27,760');
+    expect(a.body.join(' ')).toContain('337.23 t × €82.32 = €27,760');
   });
 });

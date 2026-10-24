@@ -421,7 +421,7 @@ export const articleIndex: CMSArticleMeta[] = [
     slug: 'cbam-compliance-cost-indian-steel-exporters-2026-2034',
     title: 'CBAM Cost for Indian Steel Exporters: 2026 to 2034, Year by Year',
     subtitle: 'Carbon Regulations',
-    excerpt: "For 1,000 tonnes of Indian blast-furnace steel at 2.1 tCO2 per tonne, the estimated CBAM cost to the EU importer is about €51,000 in 2026 with verified data, rising to about €173,000 in 2034, at the…",
+    excerpt: "For 1,000 tonnes of Indian blast-furnace steel at 2.1 tCO2 per tonne, the estimated CBAM cost to the EU importer is about €63,000 in 2026 with verified data, rising to about €173,000 in 2034, at the…",
 
     tags: ['CBAM cost', 'steel', 'India', 'BF-BOF', 'EAF', 'CBAM calculator'],
     category: 'regulations',

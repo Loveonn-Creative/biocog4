@@ -12,6 +12,7 @@
 //   competent authorities, 26 June 2026.
 // - One declarant per tonne; supplier data pack: Guidance No. 1 and No. 2.
 // Every line here waits for a native review (DE_PAGES_REVIEWED).
+import { CERTIFICATE_PRICES } from '@/lib/cbam/official';
 
 export interface DeMeta { title: string; description: string; h1: string }
 
@@ -66,11 +67,9 @@ export const ROUTE_DE: Record<string, string> = {
 };
 
 /** Quarterly certificate prices for 2026 imports, € per tonne CO2e. */
-export const PRICES_2026 = [
-  { q: '1. Quartal 2026', eur: 75.36 },
-  { q: '2. Quartal 2026', eur: 75.28 },
-  { q: '3. Quartal 2026', eur: 82.32 },
-];
+export const PRICES_2026 = CERTIFICATE_PRICES
+  .filter((p) => p.period.startsWith('2026-Q'))
+  .map((p) => ({ q: `${p.period.slice(-1)}. Quartal 2026`, eur: p.eur }));
 
 export const DE_DATES = [
   { when: 'Januar 2026', what: 'Die endgültige Phase beginnt. Importeure beantragen den Status als zugelassener CBAM-Anmelder.' },

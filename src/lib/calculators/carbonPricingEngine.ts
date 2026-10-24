@@ -4,7 +4,7 @@
  * Reuses CBAM phase-in schedule from cbamEngine for consistency
  */
 
-import { PHASE_IN_SCHEDULE, FREE_ALLOCATION_PCT } from '@/lib/cbamEngine';
+import { PHASE_IN_SCHEDULE, FREE_ALLOCATION_PCT, CBAM_SECTORS } from '@/lib/cbamEngine';
 
 export type PriceScenario = 'best' | 'base' | 'worst';
 
@@ -14,14 +14,18 @@ export const EU_ETS_CURVE: Record<number, number> = {
   2031: 118, 2032: 125, 2033: 130, 2034: 135,
 };
 
+// CBAM sectors read their benchmark from the CBAM engine, which takes it from
+// the Commission's benchmarks file (src/lib/cbam/official.ts).
+const cbamBm = (id: string) => CBAM_SECTORS.find((s) => s.id === id)!.euBenchmark;
+
 // Sector EU benchmarks (free allowance — tCO2/t output)
 export const SECTOR_BENCHMARKS: Record<string, { name: string; benchmark: number; cbamCovered: boolean }> = {
-  steel:        { name: 'Iron & Steel',  benchmark: 1.520, cbamCovered: true },
-  aluminium:    { name: 'Aluminium',     benchmark: 1.514, cbamCovered: true },
-  cement:       { name: 'Cement',        benchmark: 0.766, cbamCovered: true },
-  fertilizers:  { name: 'Fertilizers',   benchmark: 1.619, cbamCovered: true },
-  electricity:  { name: 'Electricity',   benchmark: 0.225, cbamCovered: true },
-  hydrogen:     { name: 'Hydrogen',      benchmark: 8.850, cbamCovered: true },
+  steel:        { name: 'Iron & Steel',  benchmark: cbamBm('steel'), cbamCovered: true },
+  aluminium:    { name: 'Aluminium',     benchmark: cbamBm('aluminium'), cbamCovered: true },
+  cement:       { name: 'Cement',        benchmark: cbamBm('cement'), cbamCovered: true },
+  fertilizers:  { name: 'Fertilizers',   benchmark: cbamBm('fertilizers'), cbamCovered: true },
+  electricity:  { name: 'Electricity',   benchmark: cbamBm('electricity'), cbamCovered: true },
+  hydrogen:     { name: 'Hydrogen',      benchmark: cbamBm('hydrogen'), cbamCovered: true },
   chemicals:    { name: 'Chemicals',     benchmark: 0.500, cbamCovered: false },
   textiles:     { name: 'Textiles',      benchmark: 0.300, cbamCovered: false },
   food:         { name: 'Food Processing', benchmark: 0.200, cbamCovered: false },

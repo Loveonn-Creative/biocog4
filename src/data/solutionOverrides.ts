@@ -55,7 +55,7 @@ export const solutionOverrides: Record<string, SolutionOverride> = {
     costBreakdown: cbamRows('steel', 'bf-bof', 'IN'),
     faqs: [
       CBAM_FAQ_WHO_PAYS,
-      { question: 'Why does verified data matter so much?', answer: 'Without it the importer uses the EU default value plus a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028 (Implementing Regulation (EU) 2025/2621). In this example that adds about €17 per tonne in 2026.' },
+      { question: 'Why does verified data matter so much?', answer: 'Without it the importer uses the EU default value plus a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028 (Implementing Regulation (EU) 2025/2621). In this example that adds about €35 per tonne in 2026.' },
       { question: 'Which India grid factor applies?', answer: 'For steel, CBAM counts direct emissions only. For your own Scope 2, the Central Electricity Authority CO2 Baseline Database v21.0 gives 0.710 tCO2 per MWh for FY 2024-25.' },
     ],
   },

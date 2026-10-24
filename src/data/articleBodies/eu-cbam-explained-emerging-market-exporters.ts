@@ -37,10 +37,10 @@ An Indian mill ships 1,000 tonnes of blast-furnace (BF-BOF) steel to an EU buyer
 |---|---|
 | Emission intensity (verified actual) | 2.1 tCO2 per tonne |
 | Embedded emissions | 2,100 tCO2 |
-| Free-allocation adjustment (indicative benchmark 1.52 × 97.5%) | 1,482 tCO2 |
-| Certificates owed | 618 |
-| Cost at €82.32 per certificate | ≈ €50,900 (≈ €51 per tonne) |
-| Same shipment using a default value of 2.1 + 10% mark-up | ≈ €68,200 |
+| Free-allocation adjustment (indicative benchmark 1.37 × 97.5%) | 1,335.75 tCO2 |
+| Certificates owed | 764.25 |
+| Cost at €82.32 per certificate | ≈ €62,900 (≈ €63 per tonne) |
+| Same shipment using a default value of 4.28 + 10% mark-up | ≈ €277,600 |
 
 The benchmark here is indicative; the official product benchmarks and default values decide the real figure. Run your own numbers in the [CBAM cost calculator](/cbam-calculator).
 
