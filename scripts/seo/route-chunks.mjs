@@ -10,7 +10,7 @@
 /** [{ pattern, module }] for every lazily loaded page route in App.tsx. */
 export function routeModulesFromApp(appSource) {
   const lazies = new Map();
-  for (const m of appSource.matchAll(/const (\w+) = lazy\(\(\) => import\("\.\/([^"]+)"\)\);/g)) {
+  for (const m of appSource.matchAll(/const (\w+) = (?:lazy|lazyPage)\(\(\) => import\("\.\/([^"]+)"\)\);/g)) {
     lazies.set(m[1], `src/${m[2]}`);
   }
   const out = [];
