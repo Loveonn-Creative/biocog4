@@ -265,9 +265,9 @@ export const answers: Answer[] = [
   {
     slug: 'how-to-calculate-cbam-cost', topic: 'compliance', title: 'How to calculate CBAM cost (worked example)',
     q: 'How do you calculate CBAM cost?',
-    short: '100 t of blast-furnace steel from India in 2026 costs about €6,816 in CBAM at default values: (231 t embedded − 148.2 t free allocation) × €82.32 certificate price. In general, CBAM cost = (embedded emissions − EU benchmark × free share still granted) × certificate price − carbon price paid abroad.',
+    short: '100 t of blast-furnace steel from India in 2026 costs about €27,760 in CBAM at default values: (470.8 t embedded − 133.57 t free allocation) × €82.32 certificate price. In general, CBAM cost = (embedded emissions − EU benchmark × free share still granted) × certificate price − carbon price paid abroad.',
     body: [
-      'Step by step for that example: the calculator’s default intensity for blast-furnace steel is 2.1 tCO2 per tonne, plus the 10% default-value mark-up for 2026, so 2.31 t per tonne, or 231 t in all. The calculator’s EU benchmark of 1.52 t per tonne, at the 97.5% free share still granted in 2026, removes 148.2 t. The remaining 82.8 t × €82.32 = €6,816.',
+      'Step by step for that example: the calculator’s default intensity for blast-furnace steel is 4.28 tCO2 per tonne, plus the 10% default-value mark-up for 2026, so 4.708 t per tonne, or 470.8 t in all. The calculator’s EU benchmark of 1.37 t per tonne, at the 97.5% free share still granted in 2026, removes 133.57 t. The remaining 337.23 t × €82.32 = €27,760.',
       'India has no explicit carbon price yet, so nothing is deducted for carbon paid at origin. Verified actual emissions from the producer replace the default value and its mark-up, which rises to 30% from 2028.',
       'The intensity above is the calculator’s default for this production route; official EU default values are set per product and should be checked before a declaration. Certificates for 2026 imports go on sale on 1 February 2027. Costs for every covered sector and year are on [CBAM cost per tonne by sector](/cbam-cost).',
     ],

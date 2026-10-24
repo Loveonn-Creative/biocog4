@@ -2,6 +2,7 @@
 // from the official file named in its dataset's `source` (re-opened 24 October
 // 2026). Keep sources here, not as citation lines on the page; the page shows
 // them in a collapsed "Source" detail next to each dataset.
+import { defaultFor as officialDefaultFor, DEFAULT_MARKUP, FERTILISER_MARKUP } from '@/lib/cbam/official';
 
 export const DATA_PATH = '/india-climate-data';
 export const DATA_UPDATED = '2026-10-24';
@@ -111,31 +112,40 @@ export type CbamSector = 'Iron and steel' | 'Aluminium' | 'Cement' | 'Fertiliser
 
 export interface CbamGood { cn: string; name: string; sector: CbamSector; direct: number; indirect: number | null; total: number }
 
-export const CBAM_GOODS: CbamGood[] = [
-  { cn: '7208', name: 'Hot-rolled flat steel', sector: 'Iron and steel', direct: 4.280, indirect: null, total: 4.280 },
-  { cn: '7213', name: 'Wire rod', sector: 'Iron and steel', direct: 4.270, indirect: null, total: 4.270 },
-  { cn: '7214 20 00', name: 'Rebar', sector: 'Iron and steel', direct: 4.270, indirect: null, total: 4.270 },
-  { cn: '7207 11 14', name: 'Billets (rolled or cast)', sector: 'Iron and steel', direct: 4.270, indirect: null, total: 4.270 },
-  { cn: '7206 10 00', name: 'Ingots', sector: 'Iron and steel', direct: 2.640, indirect: null, total: 2.640 },
-  { cn: '7201', name: 'Pig iron', sector: 'Iron and steel', direct: 2.530, indirect: null, total: 2.530 },
-  { cn: '7203', name: 'Sponge iron (DRI)', sector: 'Iron and steel', direct: 4.200, indirect: null, total: 4.200 },
-  { cn: '7218 10 00', name: 'Stainless steel ingots', sector: 'Iron and steel', direct: 6.530, indirect: null, total: 6.530 },
-  { cn: '7318 15', name: 'Screws and bolts', sector: 'Iron and steel', direct: 5.720, indirect: null, total: 5.720 },
-  { cn: '2601 12 00', name: 'Iron ore pellets and sinter', sector: 'Iron and steel', direct: 0.290, indirect: 0.050, total: 0.340 },
-  { cn: '7601', name: 'Unwrought aluminium', sector: 'Aluminium', direct: 1.870, indirect: null, total: 1.870 },
-  { cn: '7605', name: 'Aluminium wire', sector: 'Aluminium', direct: 2.594, indirect: null, total: 2.594 },
-  { cn: '7606', name: 'Aluminium sheet and strip', sector: 'Aluminium', direct: 4.126, indirect: null, total: 4.126 },
-  { cn: '2523 10 00 90', name: 'Grey clinker', sector: 'Cement', direct: 1.390, indirect: 0.050, total: 1.440 },
-  { cn: '2523 29 00', name: 'Grey Portland cement', sector: 'Cement', direct: 1.390, indirect: 0.090, total: 1.480 },
-  { cn: '2814 10 00', name: 'Anhydrous ammonia', sector: 'Fertilisers', direct: 3.060, indirect: 0.220, total: 3.280 },
-  { cn: '3102 10 19', name: 'Urea (over 45% nitrogen)', sector: 'Fertilisers', direct: 2.050, indirect: 0.170, total: 2.220 },
-  { cn: '3105 30 00', name: 'DAP', sector: 'Fertilisers', direct: 0.720, indirect: 0.090, total: 0.810 },
-  { cn: '2804 10 00', name: 'Hydrogen', sector: 'Hydrogen', direct: 14.030, indirect: null, total: 14.030 },
+// The goods shown and their names are Senseible's selection; every number is
+// read from the Commission file through src/lib/cbam/official.ts (generated,
+// tested cell by cell), so this list cannot drift from the source.
+const CBAM_GOOD_PICKS: { cn: string; name: string; sector: CbamSector }[] = [
+  { cn: '7208', name: 'Hot-rolled flat steel', sector: 'Iron and steel' },
+  { cn: '7213', name: 'Wire rod', sector: 'Iron and steel' },
+  { cn: '7214 20 00', name: 'Rebar', sector: 'Iron and steel' },
+  { cn: '7207 11 14', name: 'Billets (rolled or cast)', sector: 'Iron and steel' },
+  { cn: '7206 10 00', name: 'Ingots', sector: 'Iron and steel' },
+  { cn: '7201', name: 'Pig iron', sector: 'Iron and steel' },
+  { cn: '7203', name: 'Sponge iron (DRI)', sector: 'Iron and steel' },
+  { cn: '7218 10 00', name: 'Stainless steel ingots', sector: 'Iron and steel' },
+  { cn: '7318 15', name: 'Screws and bolts', sector: 'Iron and steel' },
+  { cn: '2601 12 00', name: 'Iron ore pellets and sinter', sector: 'Iron and steel' },
+  { cn: '7601', name: 'Unwrought aluminium', sector: 'Aluminium' },
+  { cn: '7605', name: 'Aluminium wire', sector: 'Aluminium' },
+  { cn: '7606', name: 'Aluminium sheet and strip', sector: 'Aluminium' },
+  { cn: '2523 10 00 90', name: 'Grey clinker', sector: 'Cement' },
+  { cn: '2523 29 00', name: 'Grey Portland cement', sector: 'Cement' },
+  { cn: '2814 10 00', name: 'Anhydrous ammonia', sector: 'Fertilisers' },
+  { cn: '3102 10 19', name: 'Urea (over 45% nitrogen)', sector: 'Fertilisers' },
+  { cn: '3105 30 00', name: 'DAP', sector: 'Fertilisers' },
+  { cn: '2804 10 00', name: 'Hydrogen', sector: 'Hydrogen' },
 ];
 
+export const CBAM_GOODS: CbamGood[] = CBAM_GOOD_PICKS.map(({ cn, name, sector }) => {
+  const d = officialDefaultFor(cn);
+  if (!d || d.cn !== cn.replace(/\D/g, '') || d.direct === null || d.total === null) throw new Error(`CBAM default for ${cn} missing from the Commission file`);
+  return { cn, name, sector, direct: d.direct, indirect: d.indirect, total: d.total };
+});
+
 /** Default value mark-up by year of import. Fertilisers take 1% from 2026. */
-export const CBAM_MARKUP: Record<2026 | 2027 | 2028, number> = { 2026: 0.10, 2027: 0.20, 2028: 0.30 };
-export const CBAM_FERTILISER_MARKUP = 0.01;
+export const CBAM_MARKUP: Record<2026 | 2027 | 2028, number> = { 2026: DEFAULT_MARKUP[2026], 2027: DEFAULT_MARKUP[2027], 2028: DEFAULT_MARKUP[2028] };
+export const CBAM_FERTILISER_MARKUP = FERTILISER_MARKUP;
 
 /** Sectors whose CBAM figure counts indirect emissions in the definitive period. */
 export const CBAM_COUNTS_INDIRECT: CbamSector[] = ['Cement', 'Fertilisers'];

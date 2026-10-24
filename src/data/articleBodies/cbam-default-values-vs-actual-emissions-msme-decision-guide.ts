@@ -17,13 +17,13 @@ Choose verified data when: (default value × (1 + mark-up) − your actual inten
 
 ## Worked example
 
-A supplier ships 1,000 tonnes of steel a year. The default value for its product is 2.1 tCO2 per tonne; its verified intensity is 1.9.
+A supplier ships 1,000 tonnes of steel a year. The default value for its product is 4.28 tCO2 per tonne; its verified intensity is 1.9.
 
 | Year | Default with mark-up | Actual | Tonnes of CO2 avoided | Value at €82.32 |
 |---|---|---|---|---|
-| 2026 | 2.31 | 1.9 | 410 | ≈ €33,800 |
-| 2027 | 2.52 | 1.9 | 620 | ≈ €51,000 |
-| 2028 | 2.73 | 1.9 | 830 | ≈ €68,300 |
+| 2026 | 4.708 | 1.9 | 2,808 | ≈ €231,200 |
+| 2027 | 5.136 | 1.9 | 3,236 | ≈ €266,400 |
+| 2028 | 5.564 | 1.9 | 3,664 | ≈ €301,600 |
 
 Even a supplier slightly above the default can benefit once the mark-up reaches 30%. Check your own case in the [CBAM cost calculator](/cbam-calculator).
 

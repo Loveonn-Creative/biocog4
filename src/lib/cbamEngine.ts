@@ -11,6 +11,11 @@
  * Benchmarks below are indicative; results are estimates, not a declaration.
  */
 
+import {
+  defaultFor, benchmarkFor, markupFor, BENCHMARKS, CBAM_FACTOR, CSCF_PRELIMINARY, CERTIFICATE_PRICES, INDIRECT_COUNTED,
+  type CbamSector,
+} from './cbam/official';
+
 // Share of EU free allocation removed each year (display only: it is the
 // complement of FREE_ALLOCATION_PCT and is NOT a multiplier on cost).
 export const PHASE_IN_SCHEDULE: Record<number, number> = {
@@ -25,34 +30,73 @@ export const PHASE_IN_SCHEDULE: Record<number, number> = {
   2034: 1.0,
 };
 
-// Free allocation decline (% of benchmark still given free)
-export const FREE_ALLOCATION_PCT: Record<number, number> = {
-  2026: 0.975,
-  2027: 0.95,
-  2028: 0.90,
-  2029: 0.775,
-  2030: 0.515,
-  2031: 0.39,
-  2032: 0.265,
-  2033: 0.14,
-  2034: 0.0,
-};
+// Free allocation decline (% of benchmark still given free): CBAM factor x
+// cross-sectoral correction factor, both from Guidance No. 4, Table 2-1
+// (src/lib/cbam/official.ts).
+export const FREE_ALLOCATION_PCT: Record<number, number> = Object.fromEntries(
+  Object.entries(CBAM_FACTOR).map(([y, f]) => [Number(y), f * (CSCF_PRELIMINARY[Number(y)] ?? 1)]),
+);
 
 // Default price: the official Q3 2026 CBAM certificate price (€82.32,
 // published 5 Oct 2026, taxation-customs.ec.europa.eu "Price of CBAM
 // certificates"). Users can change it in the calculator.
-export const DEFAULT_EU_ETS_PRICE = 82.32;
+export const DEFAULT_EU_ETS_PRICE = CERTIFICATE_PRICES[CERTIFICATE_PRICES.length - 1].eur;
 
 // Mark-up applied to default values when actual verified data is not used
 // (Implementing Regulation (EU) 2025/2621 as corrected by 2026/1740):
 // 10% in 2026, 20% in 2027, 30% from 2028 for cement, iron and steel,
 // aluminium and hydrogen; 1% for fertilisers.
+const SECTOR_KEY: Record<string, CbamSector> = {
+  steel: 'iron_steel', aluminium: 'aluminium', cement: 'cement', fertilizers: 'fertilisers', electricity: 'electricity', hydrogen: 'hydrogen',
+};
 export function defaultValueMarkup(sectorId: string, year: number): number {
-  if (sectorId === 'fertilizers') return 0.01;
-  if (['steel', 'aluminium', 'cement', 'hydrogen'].includes(sectorId)) {
-    return year <= 2026 ? 0.10 : year === 2027 ? 0.20 : 0.30;
+  const key = SECTOR_KEY[sectorId];
+  return key ? markupFor(key, year) : 0;
+}
+
+/**
+ * Official India default value for a representative CN code, as the CBAM
+ * figure counts it: total (direct + indirect) for cement and fertilisers,
+ * direct only for the other sectors (Guidance No. 3, section 4.1.3).
+ * Throws if the code has no published value, so a missing number can never
+ * fall back to a guess.
+ */
+function officialDefault(cn: string): number {
+  const d = defaultFor(cn);
+  if (!d) throw new Error(`No Commission India default value for CN ${cn}`);
+  const v = INDIRECT_COUNTED.includes(d.sector) ? d.total : d.direct;
+  if (v === null) throw new Error(`Commission India default value for CN ${cn} is not given`);
+  return v;
+}
+
+/** The route indicator the default values file names for this CN (which Column B value applies with defaults). */
+function officialDefaultRoute(cn: string): string | null {
+  return defaultFor(cn)?.route ?? null;
+}
+
+/**
+ * Column B benchmark (whole production chain, Guidance No. 4 section
+ * 2.2.1.3) for a CN code. With route given, the value for that route
+ * indicator; production-year variants (1)/(2) pick by year; a single value
+ * applies to every route.
+ */
+export function officialBenchmark(cn: string, route: string | null, year = 2026): number {
+  // An exact or broader code first; for a heading shorter than the
+  // benchmark codes (e.g. 7601), its sub-codes must all agree or it throws.
+  let b = benchmarkFor(cn);
+  if (!b) {
+    const subs = BENCHMARKS.filter((x) => x.cn.startsWith(cn.replace(/\D/g, '')));
+    const same = subs.length > 0 && subs.every((x) => JSON.stringify(x.colB) === JSON.stringify(subs[0].colB));
+    if (same) b = subs[0];
   }
-  return 0;
+  if (!b || b.colB.length === 0) throw new Error(`No single CBAM benchmark for CN ${cn}`);
+  if (b.colB.length === 1) return b.colB[0].value;
+  const yearCode = year <= 2027 ? '(1)' : '(2)';
+  const match = b.colB.filter((e) => e.route !== null && (route === null || e.route.includes(route)));
+  const byYear = match.find((e) => e.route!.includes(yearCode));
+  const chosen = byYear ?? (match.length === 1 ? match[0] : null);
+  if (!chosen) throw new Error(`CBAM benchmark for CN ${cn} needs a route indicator (got ${route ?? 'none'})`);
+  return chosen.value;
 }
 
 // CBAM-covered sectors with CN codes, benchmarks, and production routes
@@ -62,10 +106,30 @@ export interface CBAMSector {
   cnCodes: { code: string; description: string }[];
   /** 'product' when defaults differ by product form rather than production route. */
   routeKind?: 'route' | 'product';
-  productionRoutes: { id: string; name: string; defaultIntensity: number }[];
+  productionRoutes: {
+    id: string; name: string; defaultIntensity: number;
+    /** CN code whose official India default value and benchmark this option uses. */
+    cn?: string;
+    /** Route indicator (Guidance No. 4, Table 2-2) for the benchmark when actual data are used. */
+    benchmarkRoute?: string | null;
+  }[];
   euBenchmark: number; // tCO2/tonne product
   defaultIntensity: number; // tCO2/tonne (EU default value if no actual data)
 }
+
+const route = (id: string, name: string, cn: string, benchmarkRoute: string | null = null) =>
+  ({ id, name, cn, benchmarkRoute, defaultIntensity: officialDefault(cn) });
+
+// Representative CN codes. Commission default values are set per product
+// (CN code), not per production route, so every route of one product shares
+// the product's default; the route only changes the benchmark used with
+// actual data. Values: src/lib/cbam/official.ts (Commission files).
+const STEEL_CN = '72081000';        // hot-rolled flat products, the headline steel good
+const CLINKER_GREY = '2523100090';
+const CLINKER_WHITE = '2523100010';
+const CEMENT_PORTLAND = '25232900'; // grey Portland cement
+const AMMONIA = '28141000';
+const HYDROGEN = '28041000';
 
 export const CBAM_SECTORS: CBAMSector[] = [
   {
@@ -84,13 +148,13 @@ export const CBAM_SECTORS: CBAMSector[] = [
       { code: '7304', description: 'Seamless tubes & pipes' },
     ],
     productionRoutes: [
-      { id: 'bf-bof', name: 'Blast Furnace (BF-BOF)', defaultIntensity: 2.1 },
-      { id: 'eaf-scrap', name: 'Electric Arc Furnace (Scrap)', defaultIntensity: 0.4 },
-      { id: 'eaf-dri', name: 'EAF with DRI', defaultIntensity: 1.2 },
-      { id: 'dri-gas', name: 'DRI (Natural Gas)', defaultIntensity: 1.1 },
+      route('bf-bof', 'Blast Furnace (BF-BOF)', STEEL_CN, '(C)'),
+      route('eaf-scrap', 'Electric Arc Furnace (Scrap)', STEEL_CN, '(E)'),
+      route('eaf-dri', 'EAF with DRI', STEEL_CN, '(D)'),
+      route('dri-gas', 'DRI (Natural Gas)', STEEL_CN, '(D)'),
     ],
-    euBenchmark: 1.52,
-    defaultIntensity: 2.1,
+    euBenchmark: officialBenchmark(STEEL_CN, officialDefaultRoute(STEEL_CN)),
+    defaultIntensity: officialDefault(STEEL_CN),
   },
   {
     id: 'aluminium',
@@ -113,13 +177,13 @@ export const CBAM_SECTORS: CBAMSector[] = [
     // lowers the charge through verified actual emissions.
     routeKind: 'product',
     productionRoutes: [
-      { id: 'unwrought', name: 'Unwrought aluminium (CN 7601)', defaultIntensity: 1.87 },
-      { id: 'wire', name: 'Wire (CN 7605)', defaultIntensity: 2.59 },
-      { id: 'bars-profiles', name: 'Bars, rods and profiles (CN 7604)', defaultIntensity: 3.41 },
-      { id: 'plates-sheets', name: 'Plates, sheets and strip (CN 7606)', defaultIntensity: 4.13 },
+      route('unwrought', 'Unwrought aluminium (CN 7601)', '7601', '(K)'),
+      route('wire', 'Wire (CN 7605)', '7605', '(K)'),
+      route('bars-profiles', 'Bars, rods and profiles (CN 7604)', '76041010', '(K)'),
+      route('plates-sheets', 'Plates, sheets and strip (CN 7606)', '7606', '(K)'),
     ],
-    euBenchmark: 1.514,
-    defaultIntensity: 1.87,
+    euBenchmark: officialBenchmark('7601', '(K)'),
+    defaultIntensity: officialDefault('7601'),
   },
   {
     id: 'cement',
@@ -131,12 +195,12 @@ export const CBAM_SECTORS: CBAMSector[] = [
       { code: '252390', description: 'Other hydraulic cements' },
     ],
     productionRoutes: [
-      { id: 'grey-clinker', name: 'Grey Clinker (Dry Process)', defaultIntensity: 0.84 },
-      { id: 'white-clinker', name: 'White Clinker', defaultIntensity: 0.92 },
-      { id: 'blended', name: 'Blended Cement (PPC)', defaultIntensity: 0.58 },
+      route('grey-clinker', 'Grey Clinker (Dry Process)', CLINKER_GREY, '(A)'),
+      route('white-clinker', 'White Clinker', CLINKER_WHITE, '(B)'),
+      route('blended', 'Blended Cement (PPC)', CEMENT_PORTLAND, null),
     ],
-    euBenchmark: 0.766,
-    defaultIntensity: 0.84,
+    euBenchmark: officialBenchmark(CLINKER_GREY, '(A)'),
+    defaultIntensity: officialDefault(CLINKER_GREY),
   },
   {
     id: 'fertilizers',
@@ -150,12 +214,12 @@ export const CBAM_SECTORS: CBAMSector[] = [
       { code: '310260', description: 'Calcium ammonium nitrate' },
     ],
     productionRoutes: [
-      { id: 'haber-bosch-gas', name: 'Haber-Bosch (Natural Gas)', defaultIntensity: 1.8 },
-      { id: 'haber-bosch-coal', name: 'Haber-Bosch (Coal)', defaultIntensity: 3.5 },
-      { id: 'haber-bosch-naphtha', name: 'Haber-Bosch (Naphtha)', defaultIntensity: 2.5 },
+      route('haber-bosch-gas', 'Haber-Bosch (Natural Gas)', AMMONIA),
+      route('haber-bosch-coal', 'Haber-Bosch (Coal)', AMMONIA),
+      route('haber-bosch-naphtha', 'Haber-Bosch (Naphtha)', AMMONIA),
     ],
-    euBenchmark: 1.619,
-    defaultIntensity: 2.5,
+    euBenchmark: officialBenchmark(AMMONIA, null),
+    defaultIntensity: officialDefault(AMMONIA),
   },
   {
     id: 'electricity',
@@ -168,7 +232,11 @@ export const CBAM_SECTORS: CBAMSector[] = [
       { id: 'gas', name: 'Gas-fired (CCGT)', defaultIntensity: 0.37 },
       { id: 'mixed', name: 'Mixed Grid', defaultIntensity: 0.45 },
     ],
-    euBenchmark: 0.225,
+    // No free allocation adjustment for electrical energy (CN 2716 00 00):
+    // Guidance No. 4, section 2.2.1 (EU electricity producers get no free
+    // allocation). The intensities above are unchanged: the Commission's
+    // default values file has no India value for electricity (Annex III).
+    euBenchmark: 0,
     defaultIntensity: 0.45,
   },
   {
@@ -178,12 +246,12 @@ export const CBAM_SECTORS: CBAMSector[] = [
       { code: '280410', description: 'Hydrogen' },
     ],
     productionRoutes: [
-      { id: 'grey-smr', name: 'Grey (SMR, Natural Gas)', defaultIntensity: 9.0 },
-      { id: 'blue-ccs', name: 'Blue (SMR + CCS)', defaultIntensity: 2.5 },
-      { id: 'green-electrolysis', name: 'Green (Electrolysis)', defaultIntensity: 0.5 },
+      route('grey-smr', 'Grey (SMR, Natural Gas)', HYDROGEN),
+      route('blue-ccs', 'Blue (SMR + CCS)', HYDROGEN),
+      route('green-electrolysis', 'Green (Electrolysis)', HYDROGEN),
     ],
-    euBenchmark: 8.85,
-    defaultIntensity: 9.0,
+    euBenchmark: officialBenchmark(HYDROGEN, null),
+    defaultIntensity: officialDefault(HYDROGEN),
   },
 ];
 
@@ -259,6 +327,14 @@ export function calculateCBAM(input: CBAMInput): CBAMResult {
 
   const carbonPrice = input.carbonPricePaid ?? (CARBON_PRICES[input.countryCode]?.price ?? 0);
 
+  // Benchmark: with default values, the Column B value for the route the
+  // default values file names for the CN; with actual data, the Column B
+  // value for the chosen route (whole chain, precursors included, as a
+  // single actual intensity is). Options without a CN keep the sector value.
+  const benchmarkFor_ = (year: number) => route.cn
+    ? officialBenchmark(route.cn, isUsingDefault ? officialDefaultRoute(route.cn) : (route.benchmarkRoute ?? officialDefaultRoute(route.cn)), year)
+    : sector.euBenchmark;
+
   const yearlyResults: CBAMYearResult[] = [];
 
   for (let year = 2026; year <= 2034; year++) {
@@ -269,7 +345,7 @@ export function calculateCBAM(input: CBAMInput): CBAMResult {
       ? emissionsIntensity * (1 + defaultValueMarkup(sector.id, year))
       : emissionsIntensity;
     const totalEmissions = input.tonnage * intensityThisYear;
-    const freeAllowances = sector.euBenchmark * input.tonnage * freeAllocationPct;
+    const freeAllowances = benchmarkFor_(year) * input.tonnage * freeAllocationPct;
     const netLiableEmissions = Math.max(0, totalEmissions - freeAllowances);
 
     // Certificates are owed on every net liable tonne; the phase-out is
@@ -303,7 +379,7 @@ export function calculateCBAM(input: CBAMInput): CBAMResult {
     sectorName: sector.name,
     routeName: route.name,
     emissionsIntensityUsed: emissionsIntensity,
-    euBenchmark: sector.euBenchmark,
+    euBenchmark: benchmarkFor_(2026),
     isUsingDefault,
     yearlyResults,
     totalCost9Year: Math.round(totalCost9Year),

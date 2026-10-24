@@ -10,9 +10,11 @@ describe('CBAM engine', () => {
   test('charges every tonne above the free-allocation adjustment, without a second phase-in', () => {
     const r = calculateCBAM({ ...base, actualEmissionsIntensity: 2.1 });
     const y2026 = r.yearlyResults[0];
-    // 2,100 t embedded − 1.52 × 1,000 × 97.5% free allocation = 618 t liable
-    expect(y2026.netLiableEmissions).toBeCloseTo(618, 1);
-    expect(y2026.netCbamCost).toBe(49440);
+    // Actual data on the BF-BOF route: Column B benchmark (C) for hot-rolled
+    // flat steel is 1.37 (Commission benchmarks file).
+    // 2,100 t embedded − 1.37 × 1,000 × 97.5% free allocation = 764.25 t liable
+    expect(y2026.netLiableEmissions).toBeCloseTo(764.25, 1);
+    expect(y2026.netCbamCost).toBe(61140);
     const y2034 = r.yearlyResults[8];
     expect(y2034.netCbamCost).toBe(168000);
   });
@@ -23,8 +25,9 @@ describe('CBAM engine', () => {
     expect(defaultValueMarkup('cement', 2030)).toBe(0.30);
     expect(defaultValueMarkup('fertilizers', 2028)).toBe(0.01);
     const r = calculateCBAM({ ...base, actualEmissionsIntensity: null });
-    // 2.1 × 1.1 = 2.31 tCO2/t → 2,310 − 1,482 = 828 t liable × €80
-    expect(r.yearlyResults[0].netCbamCost).toBe(66240);
+    // Commission India default for hot-rolled flat steel (CN 7208) is 4.28:
+    // 4.28 × 1.1 = 4.708 tCO2/t → 4,708 − 1,335.75 = 3,372.25 t liable × €80
+    expect(r.yearlyResults[0].netCbamCost).toBe(269780);
   });
 
   test('deducts carbon price paid abroad, never below zero', () => {
