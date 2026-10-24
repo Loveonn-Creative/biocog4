@@ -34,7 +34,7 @@ export function sampleWorkbook(): Workbook {
   return {
     schema: WORKBOOK_SCHEMA, id: 'sample', sample: true, createdAt: now, updatedAt: now,
     installation: {
-      nameEn: 'Sample re-rolling mill (illustrative)', street: 'Plot 0, Industrial Area', city: 'Example City', postcode: '000000',
+      nameEn: 'Example re-rolling mill', street: 'Plot 0, Industrial Area', city: 'Example City', postcode: '000000',
       country: 'IN', economicActivity: 'Hot rolling of steel billets', periodStart: '2026-01-01', periodEnd: '2026-12-31',
     },
     streams: [
