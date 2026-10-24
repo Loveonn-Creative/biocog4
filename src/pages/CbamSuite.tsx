@@ -162,9 +162,9 @@ export default function CbamSuite() {
       <main className="container mx-auto max-w-5xl px-4 pb-24 pt-24 sm:px-6 sm:pt-28">
         <header className="grid gap-4">
           <div className="flex flex-wrap items-center gap-2">
-            {w.sample && <Pill tone="warn">Sample plant, illustrative numbers</Pill>}
-            {locked ? <Pill tone="ok">Signed off</Pill> : errors ? <Pill tone="bad">{errors} to fix</Pill> : <Pill tone="muted">Draft</Pill>}
-            <span className="text-xs text-muted-foreground">Saved on this device</span>
+            {w.sample && <Pill tone="warn">Example plant. Swap in your own figures</Pill>}
+            {locked ? <Pill tone="ok">Signed off</Pill> : errors ? <Pill tone="bad">{errors} to fix</Pill> : <Pill tone="muted">Not signed off yet</Pill>}
+            <span className="text-xs text-muted-foreground">Stays on this device. Nothing is uploaded</span>
           </div>
           <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">{w.installation.nameEn || 'Your plant'}</h1>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
