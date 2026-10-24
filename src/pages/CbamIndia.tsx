@@ -8,6 +8,7 @@ import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { calculateCBAM, CBAM_SECTORS, DEFAULT_EU_ETS_PRICE } from "@/lib/cbamEngine";
 import { CBAM_INDIA_FAQS, CBAM_INDIA_PATH, CBAM_MILESTONES, CBAM_PRODUCTS, DATA_SOURCES, VERIFIER_CHECKS, type CbamProduct } from "@/data/cbamIndia";
 import { sectorHref } from "@/data/cbamSectorCosts";
+import { CbamTalkButton } from "@/components/cbam/CbamTalk";
 import "./cbamIndia.css";
 
 // /cbam. For Indian steel and aluminium exporters whose EU buyers now ask for
@@ -56,7 +57,7 @@ export default function CbamIndia() {
             <p className="cbi-lede">Without verified plant data, every tonne you ship is charged at the EU's default value for India, plus a mark-up that rises every year. Senseible gets your actual figure measured, verified and in your buyer's hands.</p>
             <div className="cbi-ctas">
               <Link to="/cbam-suite" className="cbi-btn cbi-btn-primary">Start my CBAM data <ArrowRight className="h-4 w-4" /></Link>
-              <Link to={`/contact?topic=enterprise&msg=${encodeURIComponent("CBAM: our EU buyer is asking for installation emissions data.")}`} className="cbi-btn">Talk to us</Link>
+              <CbamTalkButton page="cbam" label="Talk to us" className="cbi-btn" />
             </div>
           </div>
 
@@ -149,6 +150,7 @@ export default function CbamIndia() {
           <h2>Your buyer's declaration is due 30 September 2027. Your data has to be ready first.</h2>
           <div className="cbi-ctas">
             <Link to="/cbam-suite" className="cbi-btn cbi-btn-primary">Start my CBAM data <ArrowRight className="h-4 w-4" /></Link>
+            <CbamTalkButton page="cbam" label="Discuss pricing or your plant" className="cbi-btn cbi-btn-ghost" />
             <Link to="/cbam-calculator" className="cbi-btn cbi-btn-ghost">Estimate my cost first <ArrowUpRight className="h-4 w-4" /></Link>
           </div>
         </section>

@@ -15,6 +15,7 @@ import type { Workbook } from '@/lib/cbam/suite/types';
 import { PlantFlow } from '@/components/cbam-suite/PlantFlow';
 import { ElectricityPanel, PlantPanel, PrecursorsPanel, ProcessesPanel, ReportPanel, ResultsPanel, StreamsPanel, VerifyPanel, type Edit } from '@/components/cbam-suite/panels';
 import { Pill } from '@/components/cbam-suite/ui';
+import { CbamTalkButton } from '@/components/cbam/CbamTalk';
 import '@/components/cbam-suite/suite.css';
 
 // /cbam-suite: an installation's CBAM model, kept on this device (IndexedDB).
@@ -176,6 +177,7 @@ export default function CbamSuite() {
             <input ref={fileRef} type="file" accept="application/json,.json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) void onImportFile(f); e.target.value = ''; }} />
             <Link to="/cbam-suite/supplier-pack" className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"><Package className="h-4 w-4" /> Supplier pack</Link>
             <Link to="/cbam-calculator" className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"><Calculator className="h-4 w-4" /> Quick estimate</Link>
+            <CbamTalkButton page="cbam-suite" label="Talk to us" className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 font-semibold text-foreground hover:border-primary/50" />
           </div>
           <AnimatePresence>
             {msg && (
@@ -228,6 +230,11 @@ export default function CbamSuite() {
           ) : (
             <Link to="/cbam-suite/supplier-pack" className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background">Supplier pack <ArrowRight className="h-4 w-4" /></Link>
           )}
+        </div>
+
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 rounded-2xl border border-border bg-card p-5 sm:flex-row sm:items-center">
+          <p className="text-[15px] text-foreground"><b>Want us to set this up with you?</b> <span className="text-muted-foreground">We'll map your plant, connect your meters and quote for it.</span></p>
+          <CbamTalkButton page="cbam-suite" label="Talk to our CBAM team" className="shrink-0 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground" />
         </div>
 
         {w.log.length > 0 && (

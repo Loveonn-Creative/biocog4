@@ -13,7 +13,7 @@ const ROWS: { key: string; label: string; to: string }[][] = [
     { key: "first", label: "First Report Free", to: "/msme-carbon-number" },
     { key: "finance", label: "Climate Finance", to: "/climate-finance" },
     { key: "credits", label: "Carbon Credits", to: "/carbon-credits" },
-    { key: "cbam", label: "CBAM Report", to: "/cbam-suite" },
+    { key: "cbam", label: "CBAM Report", to: "/cbam" },
     { key: "netzero", label: "Net Zero", to: "/net-zero" },
   ],
   [
