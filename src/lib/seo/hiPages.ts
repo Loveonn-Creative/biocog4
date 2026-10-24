@@ -2,11 +2,12 @@
 // (src/data/answerLibraryHi/), never a runtime translation (AGENTS.md:
 // runtime translations cannot carry regulatory claims).
 //
-// HI_PAGES_REVIEWED stays false until a native Hindi speaker has reviewed
-// every line. While false the pages are live but noindex, left out of the
-// sitemap and not prerendered, no hreflang pairs are published and the
-// English pages do not link to them. Set it to true after the review.
-export const HI_PAGES_REVIEWED = false;
+// HI_PAGES_REVIEWED: true publishes the pages (prerendered, indexed, in the
+// sitemap and llms.txt, hreflang en/hi pairs, English pages link to them).
+// False makes them noindex app routes the English pages do not link to.
+// Owner accepted Claude's review on 24 October 2026; expert review to follow
+// (docs/context/senseible.md, section 8).
+export const HI_PAGES_REVIEWED = true;
 
 /** English answer pages that have a Hindi edition (top MSME questions). */
 export const HI_ANSWER_SLUGS: readonly string[] = [
