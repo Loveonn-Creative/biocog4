@@ -1,14 +1,14 @@
 // A tab left open (or restored by a phone browser) keeps running the build it
 // first loaded, so two devices can show different prices or wording after a
 // deploy. Each build writes /version.json with its id; when the tab becomes
-// visible again (at most every 5 minutes) we compare it with the id compiled
+// visible again or the visitor moves to another page (at most once a minute) we compare it with the id compiled
 // into this bundle. If a newer build is live, the next in-app navigation loads
 // the new page with a full reload. Never reloads in the middle of a page, so an
 // upload or a payment in progress is not interrupted.
 
 declare const __BUILD_ID__: string;
 
-const CHECK_EVERY_MS = 5 * 60_000;
+const CHECK_EVERY_MS = 60_000;
 let lastCheck = 0;
 let stale = false;
 
