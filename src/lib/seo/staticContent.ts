@@ -206,6 +206,22 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: '[All calculators](/calculators) · [CBAM cost calculator](/cbam-calculator)' },
     ],
   },
+  '/calculators/electricity-bill-carbon': {
+    h1: 'Your electricity bill, in kilograms of CO2.',
+    blocks: [
+      { p: 'Type the units (kWh) printed on your electricity bill, for one bill or twelve months, and get kg CO2 at the CEA grid factor Senseible uses in its calculations: 0.71 kg CO2 per kWh.' },
+      { p: 'Use the kWh line, not kVAh: kVAh includes reactive power and is always higher. Grid electricity is Scope 2; this is the location-based figure.' },
+      { p: '[All calculators](/calculators) · [Fuel to CO2](/calculators/fuel-carbon) · [Upload a bill](/)' },
+    ],
+  },
+  '/calculators/fuel-carbon': {
+    h1: 'Litres of diesel in. Kilograms of CO2 out.',
+    blocks: [
+      { p: 'Convert diesel, petrol, LPG, CNG, PNG, furnace oil, kerosene, coal and naphtha into kg CO2 with the same factors Senseible applies to fuel invoices, and see quantity x factor = kg for each line.' },
+      { p: 'Fuel burnt in your own generators, boilers, furnaces or vehicles is Scope 1. Figures are CO2 only; at IPCC defaults methane and nitrous oxide add well under one percent.' },
+      { p: '[All calculators](/calculators) · [Electricity bill to CO2](/calculators/electricity-bill-carbon) · [Upload a fuel invoice](/)' },
+    ],
+  },
   '/calculators/cloud-data-centre-emissions': {
     h1: 'Cloud and data centre emissions calculator',
     blocks: [

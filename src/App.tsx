@@ -125,6 +125,8 @@ const EnergyTransitionCalculator = lazy(() => import("./pages/calculators/Energy
 const LogisticsCalculator = lazy(() => import("./pages/calculators/LogisticsCalculator"));
 const CarbonPricingCalculator = lazy(() => import("./pages/calculators/CarbonPricingCalculator"));
 const CloudEmissionsCalculator = lazy(() => import("./pages/calculators/CloudEmissionsCalculator"));
+const ElectricityBillCarbon = lazy(() => import("./pages/calculators/ElectricityBillCarbon"));
+const FuelCarbon = lazy(() => import("./pages/calculators/FuelCarbon"));
 
 // Shown only on a first visit to a page whose code is still loading (in-app
 // navigation keeps the current page on screen instead, see BrowserRouter).
@@ -261,6 +263,8 @@ const App = () => (
               <Route path="/calculators/logistics-emissions" element={<LogisticsCalculator />} />
               <Route path="/calculators/carbon-pricing-impact" element={<CarbonPricingCalculator />} />
               <Route path="/calculators/cloud-data-centre-emissions" element={<CloudEmissionsCalculator />} />
+              <Route path="/calculators/electricity-bill-carbon" element={<ElectricityBillCarbon />} />
+              <Route path="/calculators/fuel-carbon" element={<FuelCarbon />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

@@ -268,6 +268,14 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Carbon Pricing Impact Calculator: EU ETS and CBAM',
     description: 'Estimate carbon cost exposure from 2026 to 2034 using EU ETS price scenarios, the CBAM phase-in and free allocation phase-out, with sensitivity ranges.',
   },
+  '/calculators/electricity-bill-carbon': {
+    title: 'Electricity Bill to CO2 Calculator (India)',
+    description: 'Type the kWh units on your electricity bill and get kg CO2 at the CEA grid factor Senseible uses. One bill or twelve months, free.',
+  },
+  '/calculators/fuel-carbon': {
+    title: 'Fuel to CO2 Calculator: Diesel, LPG, CNG, PNG',
+    description: 'Convert litres of diesel or petrol, kg of LPG or CNG, scm of PNG, furnace oil or coal into kg CO2, with the factor and the arithmetic shown.',
+  },
   '/calculators/cloud-data-centre-emissions': {
     title: 'Cloud and Data Centre Emissions Calculator',
     description: 'Calculate server, cloud and data-centre emissions by region with location-based and market-based Scope 2 figures, using published PUE and grid factors.',
