@@ -45,7 +45,7 @@ export function lineFromQuick(g: QuickGood, country: string, year: number): Pack
   if (g.basis === 'default') {
     return {
       cn: g.cn, name: g.name, tonnes: g.tonnes, basis: 'default',
-      seeDirect: d ? d.direct * (1 + mk) : null, seeIndirect: d ? d.indirect * (1 + mk) : null,
+      seeDirect: d ? d.direct * (1 + mk) : null, seeIndirect: d && d.indirectListed ? d.indirect * (1 + mk) : null,
       source: d ? `EU default value, ${d.source}, with ${Math.round(mk * 100)}% mark-up for ${year}` : 'No EU default value listed for this CN code',
       defaultSee, markup: mk,
     };

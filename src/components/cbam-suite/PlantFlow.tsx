@@ -7,6 +7,8 @@ import { Trail, t } from './ui';
 // CN goods on the right. Link widths follow tonnes of CO2e; particles travel
 // along the links so you see emissions moving into goods. Under reduced motion
 // the particles are not drawn and the diagram is a still.
+// Gradients use user space: a level link has a zero-height bounding box, which
+// would make an objectBoundingBox gradient (and the stroke) disappear.
 
 interface Node { id: string; label: string; sub: string; x: number; y: number; h: number; kind: 'stream' | 'precursor' | 'electricity' | 'process' | 'good'; trail: string[] }
 interface Link { from: string; to: string; tco2e: number; tone: 'direct' | 'precursor' | 'indirect' }
@@ -57,9 +59,9 @@ export function PlantFlow({ w, r }: { w: Workbook; r: Result }) {
     <div className="cbam-flow relative overflow-x-auto rounded-2xl border border-border bg-card">
       <svg viewBox={`0 0 ${W} ${height}`} className="block h-auto w-full min-w-[720px]" role="img" aria-label="Plant flow: inputs, production processes and goods, with tonnes of CO2e on each link">
         <defs>
-          <linearGradient id="cbf-direct" x1="0" x2="1"><stop offset="0" stopColor="hsl(var(--primary))" stopOpacity=".18" /><stop offset="1" stopColor="hsl(var(--primary))" stopOpacity=".42" /></linearGradient>
-          <linearGradient id="cbf-precursor" x1="0" x2="1"><stop offset="0" stopColor="hsl(30 90% 45%)" stopOpacity=".2" /><stop offset="1" stopColor="hsl(30 90% 45%)" stopOpacity=".45" /></linearGradient>
-          <linearGradient id="cbf-indirect" x1="0" x2="1"><stop offset="0" stopColor="hsl(200 80% 45%)" stopOpacity=".18" /><stop offset="1" stopColor="hsl(200 80% 45%)" stopOpacity=".42" /></linearGradient>
+          <linearGradient id="cbf-direct" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2={W} y2="0"><stop offset="0" stopColor="hsl(var(--primary))" stopOpacity=".18" /><stop offset="1" stopColor="hsl(var(--primary))" stopOpacity=".42" /></linearGradient>
+          <linearGradient id="cbf-precursor" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2={W} y2="0"><stop offset="0" stopColor="hsl(30 90% 45%)" stopOpacity=".2" /><stop offset="1" stopColor="hsl(30 90% 45%)" stopOpacity=".45" /></linearGradient>
+          <linearGradient id="cbf-indirect" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2={W} y2="0"><stop offset="0" stopColor="hsl(200 80% 45%)" stopOpacity=".18" /><stop offset="1" stopColor="hsl(200 80% 45%)" stopOpacity=".42" /></linearGradient>
         </defs>
         {links.map((l, k) => {
           const a = byId.get(l.from), b = byId.get(l.to);

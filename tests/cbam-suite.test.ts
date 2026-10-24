@@ -235,6 +235,7 @@ describe('CBAM suite outputs', () => {
     const d = defaultFor('72071114')!;
     const def = lineFromQuick({ cn: '72071114', name: 'Billets', tonnes: 10, basis: 'default' }, 'IN', 2026);
     expect(def.seeDirect).toBeCloseTo((d.direct ?? d.total!) * 1.1, 9);
+    expect(def.seeIndirect).toBeNull(); // Annex I lists no indirect value for this code: not filled in
     const act = lineFromQuick({ cn: '72071114', name: 'Billets', tonnes: 10, basis: 'actual' }, 'IN', 2026);
     expect(act.seeDirect).toBeNull();
     expect(packIssues([act]).length).toBe(1);

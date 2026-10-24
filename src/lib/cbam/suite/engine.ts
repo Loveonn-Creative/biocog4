@@ -148,18 +148,18 @@ export function benchmarkForGood(cn: string): Benchmark | null {
   return under.every((b) => key(b) === key(under[0])) ? { ...under[0], cn: q } : null;
 }
 
-export interface DefaultSee { direct: number; indirect: number; total: number; source: string; sector: CbamSector; route: string | null }
+export interface DefaultSee { direct: number; indirect: number; indirectListed: boolean; total: number; source: string; sector: CbamSector; route: string | null }
 
 /** Default SEE for a CN code produced in a country, before mark-up. India: Annex I; elsewhere Annex IV (highest value). */
 export function defaultSeeFor(cn: string, country: string): DefaultSee | null {
   if ((country || '').toUpperCase() === 'IN') {
     const d = defaultFor(cn);
     if (!d || d.total === null) return null;
-    return { direct: d.direct ?? d.total, indirect: d.indirect ?? 0, total: d.total, source: `Annex I, India, CN ${d.cn}`, sector: d.sector, route: d.route };
+    return { direct: d.direct ?? d.total, indirect: d.indirect ?? 0, indirectListed: d.indirect !== null, total: d.total, source: `Annex I, India, CN ${d.cn}`, sector: d.sector, route: d.route };
   }
   const a = annexIVFor(cn);
   if (!a || a.highest === null) return null;
-  return { direct: a.highest, indirect: 0, total: a.highest, source: `Annex IV (highest value), CN ${a.cn}`, sector: a.sector, route: a.route };
+  return { direct: a.highest, indirect: 0, indirectListed: false, total: a.highest, source: `Annex IV (highest value), CN ${a.cn}`, sector: a.sector, route: a.route };
 }
 
 export function categoryForCn(cn: string): string | null {
