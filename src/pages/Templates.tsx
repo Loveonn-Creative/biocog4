@@ -142,7 +142,7 @@ function RegisterPreview() {
                   className="w-24 rounded-md border border-dashed border-primary/50 bg-background px-2 py-1 text-right font-mono text-sm text-foreground" />
                 {l.unit}
               </label>
-              <span className="col-span-2 text-right font-mono text-sm tabular-nums sm:col-span-1">{kg ? `${fmt(kg)} kg` : "–"}</span>
+              <span className="col-span-2 text-right font-mono text-sm tabular-nums sm:col-span-1">{`${fmt(kg)} kg`}</span>
             </li>
           );
         })}
