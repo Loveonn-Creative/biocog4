@@ -164,6 +164,19 @@ function coreRoutes(): SeoRoute[] {
     ],
   });
 
+  // CBAM Suite: public product pages; the app itself keeps data on the device.
+  const cbamApp = (path: string, name: string) => {
+    const crumbs = path === '/cbam-suite' ? null : [{ name: 'Home', path: '/' }, { name: 'CBAM Suite', path: '/cbam-suite' }, { name: STATIC_CONTENT[path]?.h1 ?? path, path }];
+    const r = staticRoute(path, 'tool', path === '/cbam-suite' ? 0.9 : 0.8, crumbs ? { breadcrumbs: crumbs, jsonLd: [breadcrumbLd(crumbs)] } : {});
+    r.jsonLd.push({
+      '@context': 'https://schema.org', '@type': 'SoftwareApplication', name, applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+      url: `${SITE_URL}${path}`, description: STATIC_PAGE_META[path].description, publisher: ORG_REF,
+    });
+    return r;
+  };
+  const cbamSuite = cbamApp('/cbam-suite', 'Senseible CBAM Suite');
+  const cbamSupplierPack = cbamApp('/cbam-suite/supplier-pack', 'Senseible CBAM Supplier Data Pack');
+
   const guidesHub = staticRoute('/climate-intelligence', 'core', 0.9, {
     changefreq: 'weekly',
     blocks: [
@@ -334,7 +347,7 @@ function coreRoutes(): SeoRoute[] {
   const carbonCreditsIndia = staticRoute(CCI_PATH, 'core', 0.8, { jsonLd: [breadcrumbLd(cciCrumbs), faqLd(CCI_FAQS)] });
 
   return [
-    home, pricing, careers, guidesHub, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
+    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];

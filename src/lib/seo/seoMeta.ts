@@ -236,6 +236,14 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Net-Zero Roadmap Builder for MSMEs',
     description: 'Turn an emissions baseline into a sector-specific net-zero roadmap with reduction tasks you can track. Free five-step planner for MSMEs.',
   },
+  '/cbam-suite': {
+    title: 'CBAM Suite: Embedded Emissions Report for Installations',
+    description: 'Model your plant, attribute emissions to each CN code, add precursors and electricity, and export the CBAM operator report, verifier pack and buyer summary.',
+  },
+  '/cbam-suite/supplier-pack': {
+    title: 'CBAM Supplier Data Pack for EU Buyers',
+    description: 'Build the CBAM data pack your EU buyer asks for: embedded emissions per CN code, the basis for each number, and its verification status.',
+  },
   '/cbam-calculator': {
     title: 'Free CBAM Calculator and Cost Estimator, 2026 to 2034',
     description: 'Free CBAM calculator: estimate EU certificate cost per tonne for steel, aluminium, cement, fertiliser and hydrogen imports, year by year from 2026 to 2034.',

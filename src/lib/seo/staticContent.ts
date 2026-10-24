@@ -168,6 +168,38 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.' },
     ],
   },
+  '/cbam-suite': {
+    h1: 'CBAM Suite: the embedded emissions report for your installation',
+    blocks: [
+      { p: 'Model the plant once: fuels and materials, production processes, tonnes produced per CN code, purchased and own precursors, and electricity. The suite attributes emissions to each good and returns specific embedded emissions (SEE), the free-allocation adjustment and an estimate of certificates.' },
+      { h2: 'What you get' },
+      { ul: [
+        'Operator emissions report in .xlsx, structured to the European Commission communication template for installations.',
+        'Verifier pack: evidence index, sampling by largest contributor, checklist, misstatements against 5% materiality per good.',
+        'One-page summary for EU importers, and the workbook as a file with its SHA-256.',
+        'Verification by Senseible or by an external accredited verifier you appoint.',
+      ] },
+      { h2: 'How it calculates' },
+      { ol: [
+        'Source streams: platform emission factors by default, or plant-measured NCV, emission factor and oxidation with evidence.',
+        'Attributed emissions per process; precursors added at supplier values or EU default values with the year\'s mark-up.',
+        'SEE = attributed emissions plus embedded precursor emissions, divided by the activity level. Indirect emissions count for cement and fertilisers.',
+      ] },
+      { p: 'Your workbook stays on your device. [Quick CBAM estimate](/cbam-calculator) · [Supplier data pack](/cbam-suite/supplier-pack)' },
+    ],
+  },
+  '/cbam-suite/supplier-pack': {
+    h1: 'CBAM supplier data pack for EU buyers',
+    blocks: [
+      { p: 'EU importers need embedded emissions per CN code from each installation they buy from. The pack gives them the numbers, the basis for each (actual or default), the reporting period and the verification status, in one file.' },
+      { ul: [
+        'Per CN code: SEE direct and indirect, tonnes, and the default value it replaces.',
+        'Marked draft until verified by Senseible or by an external verifier.',
+        'Built from your CBAM Suite workbook or entered per good.',
+      ] },
+      { p: '[CBAM Suite](/cbam-suite) · [Quick CBAM estimate](/cbam-calculator)' },
+    ],
+  },
   '/cbam-calculator': {
     h1: 'CBAM cost calculator for EU imports, 2026 to 2034',
     blocks: [
