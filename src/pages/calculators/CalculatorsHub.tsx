@@ -22,6 +22,8 @@ interface CalcCard {
 }
 
 const CALCULATORS: CalcCard[] = [
+  { href: '/calculators/electricity-bill-carbon', title: 'Electricity Bill to CO2', description: 'Units on your bill in, kg CO2 out. One bill or a full year.', category: 'Operations', icon: Zap, keywords: 'electricity bill kwh units carbon co2 grid factor india scope 2', standard: 'CEA grid factor' },
+  { href: '/calculators/fuel-carbon', title: 'Fuel to CO2', description: 'Diesel, petrol, LPG, CNG, PNG, furnace oil and coal to kg CO2.', category: 'Operations', icon: Leaf, keywords: 'diesel petrol lpg cng png furnace oil coal litres kg co2 scope 1', standard: 'IPCC 2006' },
   { href: '/calculators/product-carbon-footprint', title: 'Product Carbon Footprint', description: 'Cradle-to-gate emissions per product unit. ISO 14067.', category: 'Compliance', icon: Factory, keywords: 'pcf product footprint iso 14067 cradle gate', standard: 'ISO 14067' },
   { href: '/calculators/supplier-emissions-risk', title: 'Supplier Emissions & Risk', description: 'Score every vendor on emissions and risk. GHG Scope 3 Cat 1.', category: 'Compliance', icon: Building2, keywords: 'supplier scope 3 vendor risk eora', standard: 'GHGP Scope 3' },
   { href: '/calculators/energy-transition-savings', title: 'Energy Transition Savings', description: 'Solar / PPA / hybrid ROI, payback, IRR, NPV and CO₂ avoided.', category: 'Finance', icon: Zap, keywords: 'solar roi payback ppa renewable mnre iea', standard: 'MNRE / IEA' },
