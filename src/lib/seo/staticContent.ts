@@ -9,6 +9,8 @@ import { MSME_CARBON_FAQS, MSME_CARBON_META, SUPPLIER_EVIDENCE_FAQS, SUPPLIER_EV
 import * as esg from '@/data/esgReportSample';
 import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { whitePaperBlocks } from './whitePaperBlocks';
+import * as cci from '@/data/carbonCreditsIndia';
+import * as sc from '@/data/softwareChooser';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
@@ -292,4 +294,38 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       ...s.faqs.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
     ] as Block[],
   }])),
+  '/carbon-credits-india': {
+    h1: 'Carbon credits in India: the route that fits you',
+    blocks: [
+      { p: 'Four markets get called carbon credits in India: the CCTS compliance mechanism for plants with notified targets, the CCTS offset mechanism for projects of non-obligated Indian firms, PAT energy saving certificates, and renewable energy certificates. Which one applies depends on who you are and what changed at your site. India\'s carbon market had not set a price on 23 October 2026, so no route here promises an income.' },
+      ...cci.SITUATIONS.flatMap(s => [
+        { h2: s.who } as Block,
+        ...s.choices.map(c => {
+          const r = cci.ROUTES[`${s.id}:${c.id}`];
+          return { p: `${c.label}: ${r.market}. ${r.verdict} Watch for: ${r.watch}` } as Block;
+        }),
+      ]),
+      { h2: 'Four things called carbon credits' },
+      { ul: cci.INSTRUMENTS.map(i => `${i.name}: one certificate is ${i.unit}. Earned by ${i.who.toLowerCase()}; trades on ${i.where.toLowerCase()}.`) },
+      { h2: 'BEE fees for an offset project' },
+      { ul: [
+        'Account registration INR 5,000 and maintenance INR 2,000 a year.',
+        'Project registration INR 50,000 up to 15,000 t CO2e a year, INR 1,00,000 up to 50,000 t, INR 1,50,000 above.',
+        'Issuance INR 5 per credit; INR 25,000 per post-registration change.',
+        'Validation and verification by two different accredited agencies, at their own rates.',
+      ] },
+      { h2: 'Straight answers' },
+      ...cci.CCI_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+    ],
+  },
+  '/carbon-accounting-software-india': {
+    h1: 'How to choose carbon accounting software in India',
+    blocks: [
+      { p: 'A buyer\'s scorecard: weigh what matters to your business, get a checklist of questions to ask in every vendor demo, and score your shortlist against the same weights. A must-have answered No is flagged whatever the total.' },
+      { h2: 'What to weigh, and what to ask' },
+      ...sc.CRITERIA.flatMap(c => [{ h3: c.label } as Block, { p: `${c.why} Ask: ${c.ask} Red flag: ${c.redFlag}` } as Block]),
+      { h2: 'How Senseible answers the same questions' },
+      { ul: sc.CRITERIA.map(c => `${c.label}: ${c.senseible ?? 'No claim made yet; ask us, as you would ask anyone.'}`) },
+    ],
+  },
 };
