@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowRight, Check, Copy, Download, FileSpreadsheet, FileText } from "lucide-react";
+import { ArrowRight, Check, Copy, Download, FileSpreadsheet, FileText, Loader2 } from "lucide-react";
+import { TemplateNextStep } from "@/components/lead/TemplateNextStep";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -30,7 +31,7 @@ function useTypedRows(total: number, key: string) {
   return shown;
 }
 
-function DownloadButton({ t, letter, compact }: { t: TemplateDoc; letter?: LetterInputs; compact?: boolean }) {
+function DownloadButton({ t, letter, compact, onDone }: { t: TemplateDoc; letter?: LetterInputs; compact?: boolean; onDone?: () => void }) {
   const [state, setState] = useState<"idle" | "busy" | "done">("idle");
   const go = async () => {
     setState("busy");
@@ -38,14 +39,15 @@ function DownloadButton({ t, letter, compact }: { t: TemplateDoc; letter?: Lette
       const { downloadTemplate } = await import("@/lib/templates/buildTemplate");
       await downloadTemplate(t, letter);
       setState("done");
+      onDone?.();
       window.setTimeout(() => setState("idle"), 2200);
     } catch { setState("idle"); }
   };
-  const Icon = state === "done" ? Check : Download;
+  const Icon = state === "done" ? Check : state === "busy" ? Loader2 : Download;
   return (
-    <button type="button" onClick={go} disabled={state === "busy"} data-download={t.slug}
+    <button type="button" onClick={go} disabled={state === "busy"} data-download={t.slug} aria-live="polite"
       className={`inline-flex items-center justify-center gap-2 rounded-full bg-primary font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-60 ${compact ? "h-9 px-4 text-sm" : "h-11 px-5 text-sm"}`}>
-      <Icon className="h-4 w-4" aria-hidden="true" />
+      <Icon className={`h-4 w-4 ${state === "busy" ? "animate-spin motion-reduce:animate-none" : ""}`} aria-hidden="true" />
       {state === "done" ? "Downloaded" : state === "busy" ? "Building file" : `Download .${t.format}`}
     </button>
   );
@@ -196,6 +198,7 @@ const NextStep = () => (
 function Hub() {
   const [slug, setSlug] = useState(TEMPLATES[0].slug);
   const [role, setRole] = useState<Audience>("supplier");
+  const [nextFor, setNextFor] = useState<string | null>(null);
   const t = findTemplate(slug) ?? TEMPLATES[0];
   return (
     <>
@@ -216,16 +219,25 @@ function Hub() {
         <h2 id="all-templates" className="text-2xl font-semibold tracking-tight">Pick one and take it with you</h2>
         <ol className="mt-6 border-t border-border">
           {TEMPLATES.map((x, i) => (
-            <li key={x.slug} className="grid gap-3 border-b border-border py-5 sm:grid-cols-[3rem_minmax(0,1fr)_auto] sm:items-center">
+            <li key={x.slug} className="border-b border-border py-5">
+              <div className="grid gap-3 sm:grid-cols-[3rem_minmax(0,1fr)_auto] sm:items-center">
               <span className="font-mono text-sm text-muted-foreground">0{i + 1}</span>
               <div className="min-w-0">
                 <Link to={templatePath(x.slug)} className="text-lg font-semibold hover:text-primary">{x.name}</Link>
                 <p className="mt-1 text-sm text-muted-foreground">{x.whoFor} {x.saves}</p>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
-                <Link to={templatePath(x.slug)} className="inline-flex h-9 items-center rounded-full border border-border px-4 text-sm font-medium hover:border-primary/50">Preview</Link>
-                {x.format === "xlsx" && <DownloadButton t={x} compact />}
+              <div className="flex flex-wrap items-center gap-3">
+                {x.format === "xlsx" ? (
+                  <>
+                    <Link to={templatePath(x.slug)} className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">Preview</Link>
+                    <DownloadButton t={x} compact onDone={() => setNextFor(x.slug)} />
+                  </>
+                ) : (
+                  <Link to={templatePath(x.slug)} className="inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground hover:opacity-90">Write the letter <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+                )}
               </div>
+              </div>
+              {nextFor === x.slug && <TemplateNextStep t={x} onClose={() => setNextFor(null)} />}
             </li>
           ))}
         </ol>
@@ -238,6 +250,7 @@ function Hub() {
 function Detail({ t }: { t: TemplateDoc }) {
   const [role, setRole] = useState<Audience>(t.sections.some(s => s.fields.some(f => f.by === "supplier")) ? "supplier" : "buyer");
   const [letter, setLetter] = useState<LetterInputs>({ buyer: "", supplier: "", period: "", replyBy: "" });
+  const [showNext, setShowNext] = useState(false);
   const hasBoth = t.sections.some(s => s.fields.some(f => f.by === "buyer")) && t.sections.some(s => s.fields.some(f => f.by === "supplier"));
   const crumbs = [{ name: "Home", url: "/" }, { name: "Templates", url: TEMPLATES_PATH }, { name: t.name, url: templatePath(t.slug) }];
   return (
@@ -254,9 +267,10 @@ function Detail({ t }: { t: TemplateDoc }) {
             <div><dt className="font-semibold">Saves you</dt><dd className="text-muted-foreground">{t.saves}</dd></div>
           </dl>
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <DownloadButton t={t} letter={letter} />
+            <DownloadButton t={t} letter={letter} onDone={() => setShowNext(true)} />
             {hasBoth && <RoleSwitch role={role} setRole={setRole} />}
           </div>
+          {showNext && <TemplateNextStep t={t} onClose={() => setShowNext(false)} />}
         </div>
         <div className="min-w-0">
           {t.slug === "monthly-emissions-register" ? <RegisterPreview />
@@ -300,7 +314,7 @@ export default function Templates() {
     <div className="min-h-screen bg-background">
       <MinimalNav />
       <main className="mx-auto max-w-6xl overflow-x-clip px-4 pb-16 pt-24 sm:px-6">
-        {t ? <Detail t={t} /> : <Hub />}
+        {t ? <Detail key={t.slug} t={t} /> : <Hub />}
       </main>
       <Footer />
     </div>

@@ -256,3 +256,51 @@ export function registerRow(q: Record<string, number>): { scope1: number; scope2
   const scope2 = Number.isFinite(q.GRID) ? q.GRID * REGISTER_GRID.factor : 0;
   return { scope1, scope2 };
 }
+
+/** The high-intent next step offered after each download. The file itself is never gated. */
+export interface TemplateNext {
+  title: string;
+  line: string;
+  /** Submit button label. */
+  cta: string;
+  /** WhatsApp is required where the next step is a conversation. */
+  phoneRequired: boolean;
+  /** A self-serve route for people who would rather not talk yet. */
+  link: { to: string; label: string };
+}
+
+export const TEMPLATE_NEXT: Record<string, TemplateNext> = {
+  'brsr-supplier-questionnaire': {
+    title: 'Want it filled from your bills?',
+    line: 'Send a year of electricity and fuel bills. We fill the emissions rows and keep each bill behind its figure, so your customer can check it.',
+    cta: 'Fill it for me',
+    phoneRequired: false,
+    link: { to: '/', label: 'Or upload a bill now' },
+  },
+  'cbam-supplier-data-template': {
+    title: "Get your plant's CBAM data pack",
+    line: 'Tell us your plant and what you ship to the EU. We work through the data your buyer needs with you, from your own bills.',
+    cta: 'Get my data pack',
+    phoneRequired: true,
+    link: { to: '/cbam-calculator', label: 'Estimate your CBAM cost first' },
+  },
+  'monthly-emissions-register': {
+    title: 'Get this register filled from your bills',
+    line: 'Upload a year of bills and the twelve months fill themselves in, with the bill behind every number.',
+    cta: 'Have us fill it',
+    phoneRequired: false,
+    link: { to: '/', label: 'Upload a bill' },
+  },
+  'scope-3-supplier-request-letter': {
+    title: 'Send this to 20 suppliers in one go',
+    line: 'Tell us how many suppliers you need data from. We set up the requests with you and track who has replied.',
+    cta: 'Talk to us',
+    phoneRequired: true,
+    link: { to: '/', label: 'See how a bill is read' },
+  },
+};
+
+/** The message the team receives for a template lead. No free text from the visitor. */
+export function templateLeadMessage(t: { name: string; slug: string }, next: TemplateNext): string {
+  return [`Template lead: ${t.name}`, `Asked for: ${next.title}`, `Page: ${templatePath(t.slug)}`].join('\n');
+}
