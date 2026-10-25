@@ -202,9 +202,6 @@ const Enterprise = () => {
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl">
             {t("ent.hero.line", "Scope 3 programmes stall on supplier chasing and spreadsheets that never reconcile. Senseible collects what suppliers already have, ties each figure to its source document, and keeps estimates labelled until real data replaces them, so reporting holds up as your supplier base grows.")}
           </p>
-          <p className="mt-4 text-sm text-muted-foreground max-w-xl">
-            {t("ent.hero.status", "Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability on this page is labelled.")}
-          </p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <button onClick={toForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
               {t("ent.cta.talk", "Talk to us about your suppliers")} <ArrowRight className="w-4 h-4" />
