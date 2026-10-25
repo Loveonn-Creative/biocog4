@@ -1,0 +1,66 @@
+{
+  "slug": "who-needs-green-hydrogen-certificate-india",
+  "q": "Does my green hydrogen plant need a certificate under India's GHCI scheme?",
+  "title": "Who needs a green hydrogen certificate",
+  "short": "Yes, if you take a central or state incentive such as SIGHT, get any government exemption or concession, or sell any of the hydrogen in India. Plants of 10 tonnes a year or less are exempt, and a plant that exports everything without incentives skips the final certificate.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Green hydrogen developers, SIGHT awardees and exporters of hydrogen and derivatives",
+  "sections": [
+    {
+      "h": "When the certificate is mandatory",
+      "p": [
+        "MNRE's Green Hydrogen Certification Scheme of India (GHCI), issued on 29 April 2025, makes the certificate compulsory for a producer that:"
+      ],
+      "ul": [
+        "Receives any incentive or subsidy from the central government, including SIGHT awardees, or from a state government, for producing green hydrogen.",
+        "Intends to sell or use green hydrogen in India.",
+        "Receives any other exemption or concession from the central or a state government.",
+        "Sells part of its output to a consumer in India and exports the rest."
+      ]
+    },
+    {
+      "h": "The two exemptions",
+      "ul": [
+        "A facility with an annual production capacity of 10 tonnes or less does not need the certificate, though it can apply voluntarily.",
+        "A producer that exports its entire output and takes no central or state incentive or concession does not have to apply for the final certificate. It must still report the quantity and emissions of its hydrogen under the standard of the importing country."
+      ]
+    },
+    {
+      "h": "What the certificate tests",
+      "p": [
+        "Hydrogen is green under the scheme if its non-biogenic emissions, averaged over the evaluation cycle, are at most 2.0 kg CO2e per kg of hydrogen. Only carbon dioxide, methane and nitrous oxide are counted. The boundary runs up to compression, purification and onsite storage.",
+        "Two routes are eligible today: electrolysis, and conversion of biomass, which covers gasification, pyrolysis, dark fermentation and photobiological production. Anyone can ask MNRE to add a new route, with evidence."
+      ]
+    },
+    {
+      "h": "For exporters: two rulebooks",
+      "p": [
+        "An export plant that sells even a small share in India falls under the mandatory case. Its buyers abroad will still apply their own thresholds and boundaries, so plan the metering once and report it both ways."
+      ]
+    }
+  ],
+  "senseible": "Senseible has no role in MNRE's green hydrogen scheme. It reads electricity bills and fuel invoices into a dated record, which a plant can keep beside the metered data its verification agency asks for.",
+  "links": [
+    {
+      "label": "India's 2 kg green hydrogen limit",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "India green hydrogen vs EU RFNBO",
+      "to": "/answers/india-green-hydrogen-vs-eu-rfnbo-threshold"
+    },
+    {
+      "label": "Steps and dates for the certificate",
+      "to": "/answers/green-hydrogen-certification-steps-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 1.5, 2.2, 2.9, 5 and 6",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25",
+  "reviewNote": "Applicability and exemptions read from the 29 April 2025 scheme; MNRE may modify it (para 18)."
+}

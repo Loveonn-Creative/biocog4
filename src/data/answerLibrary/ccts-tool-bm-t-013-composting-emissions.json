@@ -1,0 +1,79 @@
+{
+  "slug": "ccts-tool-bm-t-013-composting-emissions",
+  "q": "What emissions must a composting project deduct under CCTS tool BM-T-013?",
+  "title": "BM-T-013 composting project emissions",
+  "short": "Methane and nitrous oxide from the compost, power and fuel used, and methane from run-off in co-composting. Without measurements, BM-T-013 sets 0.002 t of methane and 0.0002 t of nitrous oxide per tonne of wet waste, 0.01 MWh of power and 0.0207 t CO2 from fuel.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Municipal and agri-waste composting operators, and biogas plants composting digestate",
+  "sections": [
+    {
+      "h": "What is counted",
+      "ul": [
+        "Methane and nitrous oxide from the composting process.",
+        "CO2 from fossil fuel and electricity used for composting.",
+        "Methane from run-off wastewater in co-composting. It is zero if run-off is collected and recirculated, as in tunnel co-composting.",
+        "Leakage if compost is dumped or stored anaerobically, worked out with BM-T-011. Compost used as landfill cover is not leakage, and transport is not counted."
+      ]
+    },
+    {
+      "h": "Weighing the waste",
+      "p": [
+        "Use a calibrated weighbridge or belt scale. Without one, add up the nameplate carrying capacity of every truck delivering waste. For household, community and SME projects, a weighbridge gap of up to 30 consecutive days in six months can be filled from truck capacities or the highest figure for the same period in earlier years."
+      ]
+    },
+    {
+      "h": "Measuring instead of defaults",
+      "p": [
+        "Measure at least three composting cycles a year. In closed halls, measure the exhaust pipe or use BM-T-005. For windrows, use a flux box at at least 10 sites per windrow, two cross sections of five points, with at least five measurement events per site, so 50 or more readings per cycle."
+      ]
+    },
+    {
+      "h": "Run-off defaults",
+      "p": [
+        "Methane = COD in the run-off x 0.25 t methane per t COD x the treatment system's methane conversion factor x 1.12. If you only monitor the wastewater you co-compost, run-off COD can be taken as 0.02 of its COD. The conversion factor is 0 for well managed aerobic treatment, 0.8 for anaerobic reactors or deep lagoons without recovery, and 1 if unknown."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 t of wet waste a year",
+    "lines": [
+      "Methane: 10,000 x 0.002 = 20 t x 29.8 = 596 t CO2e",
+      "Nitrous oxide: 10,000 x 0.0002 = 2 t x 273 = 546 t CO2e",
+      "Fuel: 10,000 x 0.0207 = 207 t CO2",
+      "Power: 10,000 x 0.01 = 100 MWh, at the grid factor BM-T-003 sets",
+      "Total before power: 1,349 t CO2e a year to deduct"
+    ],
+    "note": "BM-T-013 leaves the GWP blank; 29.8 is the methane value BEE applies in BM-T-008 and 273 is the IPCC AR6 value for nitrous oxide. Use what your methodology version sets."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Methane from dump sites BM-T-011",
+      "to": "/answers/ccts-tool-bm-t-011-waste-disposal-methane"
+    },
+    {
+      "label": "Landfill vs compost vs biogas",
+      "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+    },
+    {
+      "label": "Approved CCTS methodologies",
+      "to": "/answers/ccts-offset-approved-methodologies"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-013 Project and leakage emissions from composting (CCTS Offset Mechanism, version 1.0, 27 March 2025): data and parameter tables 1 to 14",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5f949cdf849d668d_1776061649.pdf"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

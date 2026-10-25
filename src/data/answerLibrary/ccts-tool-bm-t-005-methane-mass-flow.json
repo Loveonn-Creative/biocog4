@@ -1,0 +1,75 @@
+{
+  "slug": "ccts-tool-bm-t-005-methane-mass-flow",
+  "q": "How do you measure methane flow in biogas or flare gas for a CCTS offset project?",
+  "title": "BM-T-005 measuring greenhouse gas flow",
+  "short": "BEE's tool BM-T-005 works out the mass flow of a gas such as methane from the gas stream's flow, the gas's volume fraction and the water content. It offers six combinations of dry or wet basis and volume or mass flow, and uses normal conditions of 0 °C and 1 atm.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Biogas, CBG, landfill gas and composting projects registering under CCTS",
+  "sections": [
+    {
+      "h": "What you measure",
+      "ul": [
+        "The total volume or mass flow of the gas stream.",
+        "The volume fraction of the greenhouse gas, such as methane.",
+        "Gas composition and water content where the option needs it.",
+        "The stream must be below 10 atm, and gases other than the listed ones must stay under 1% by volume. Landfill gas is assumed to meet this."
+      ]
+    },
+    {
+      "h": "The six options",
+      "ul": [
+        "A: volume flow on a dry basis.",
+        "B: volume flow on a wet basis, fraction on a dry basis.",
+        "C: volume flow and fraction both on a wet basis.",
+        "D: mass flow on a dry basis.",
+        "E: mass flow on a wet basis, fraction on a dry basis.",
+        "F: mass flow and fraction both on a wet basis."
+      ]
+    },
+    {
+      "h": "Dry or wet: the 60 °C rule",
+      "p": [
+        "Option A needs proof the gas is dry: either measured moisture of 0.05 kg of water per m3 of dry gas or less, or a gas temperature below 60 °C at the flow meter. Otherwise treat the flow as wet. Where humidity is needed and not measured, assume the gas is dry or saturated, whichever is conservative."
+      ]
+    },
+    {
+      "h": "A useful simplification",
+      "p": [
+        "You only need to monitor the volume fractions of the greenhouse gases used in the calculation and may treat the rest as nitrogen, unless the methodology says otherwise. It does not hold where the stream is mostly another gas. CO2-only methodologies keep using material balances instead of this tool."
+      ]
+    },
+    {
+      "h": "Where you meet it",
+      "p": [
+        "BM-T-008 uses it to measure methane from a digester, with flow logged hourly or more often and a methane density of 0.00067 t per m3 at reference conditions. BM-T-013 uses it for exhaust from closed composting halls."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Digester methane leakage BM-T-008",
+      "to": "/answers/ccts-tool-bm-t-008-digester-methane-leakage"
+    },
+    {
+      "label": "CCTS monitoring plan meter rules",
+      "to": "/answers/ccts-offset-monitoring-plan-meter-rules"
+    },
+    {
+      "label": "Flare efficiency BM-T-004",
+      "to": "/answers/ccts-tool-bm-t-004-flare-efficiency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-005 Tool to determine the mass flow of a greenhouse gas in a gaseous stream (CCTS Offset Mechanism, version 1.0, 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-157e6104a661d58e_1776061592.pdf"
+    },
+    {
+      "label": "BEE, BM-T-008 Project and leakage emissions from anaerobic digesters (CCTS Offset Mechanism, version 1.0, 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-95ad1fffaacae725_1776061617.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

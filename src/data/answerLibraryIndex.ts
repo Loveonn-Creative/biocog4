@@ -2115,6 +2115,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "biomass-green-hydrogen-emissions-boundary",
+  "q": "What counts in the emissions of green hydrogen made from biomass or biogas in India?",
+  "title": "Biomass green hydrogen: what counts",
+  "short": "Non-biogenic emissions from biomass processing, heat and steam generation, conversion to hydrogen, gas purification, drying, compression and onsite storage. Biogenic CO2 from the biomass is outside the 2 kg CO2e per kg limit. Plants using carbon capture must wait for separate MNRE guidelines.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
+ },
+ {
   "slug": "biomass-or-waste-fuel-in-boiler-scope-1",
   "q": "Are emissions from burning rice husk, biomass or waste in my boiler counted in Scope 1?",
   "title": "Biomass and waste boilers in Scope 1",
@@ -4955,6 +4963,46 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "ccts-afforestation-dead-wood-litter-defaults",
+  "q": "Can a CCTS afforestation project count dead wood and litter without measuring them?",
+  "title": "Dead wood and litter in CCTS afforestation",
+  "short": "Yes, if dead wood and litter stay on site. Tool BM-T-AR-0003 lets you take them as a fixed share of tree carbon. In tropical areas below 2,000 m that is 2%, 1% or 6% for dead wood and 4%, 1% or 1% for litter, depending on rainfall.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "ccts-afforestation-displaced-farming-leakage",
+  "q": "Do CCTS afforestation credits shrink if farming moves elsewhere because of the project?",
+  "title": "Displaced farming leakage in CCTS projects",
+  "short": "Only if the move cuts carbon stocks on the land that receives the farming. Under tool BM-T-AR-0005, displaced grazing counts as zero in five cases, such as staying within the receiving land's carrying capacity. Otherwise leakage is the tree, shrub and soil carbon lost on that land.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "ccts-afforestation-fire-emissions",
+  "q": "How does a fire on a CCTS afforestation project affect its credits?",
+  "title": "Fires on CCTS afforestation projects",
+  "short": "Under tool BM-T-AR-0002, fires count once the area burnt in a year reaches 5% of the project. Methane and nitrous oxide are estimated from biomass at the last verification, and fires before the first verification count as zero. Burning for site preparation is zero where slash-and-burn is already practised.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "ccts-afforestation-soil-carbon-tool",
+  "q": "How much soil carbon can a CCTS afforestation project claim under tool BM-T-AR-0006?",
+  "title": "Soil carbon in CCTS afforestation projects",
+  "short": "The tool assumes soil carbon rises from its pre-project level to the native forest reference over 20 years, at a constant rate capped at 0.8 t of carbon per hectare a year. Reference stocks and change factors are IPCC defaults, and disturbing over 10% of a stratum costs 10% upfront.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "ccts-afforestation-tree-carbon-uncertainty-discount",
+  "q": "How does sampling uncertainty cut tree carbon credits in a CCTS afforestation project?",
+  "title": "Tree carbon uncertainty discount in CCTS",
+  "short": "Tool BM-T-AR-0004 measures uncertainty as the standard error expanded to 90% confidence, divided by the mean. Up to 10% there is no discount. Above that, project tree carbon is cut by 25%, 50%, 75% or 100% of the uncertainty, in bands up to and beyond 30%.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
   "slug": "ccts-banking-carbon-credit-certificates",
   "q": "Can CCTS carbon credit certificates be banked for future years?",
   "title": "Banking CCTS certificates",
@@ -5219,6 +5267,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "ccts-tool-bm-t-001-baseline-and-additionality",
+  "q": "How does BEE's tool BM-T-001 decide a CCTS project's baseline and additionality?",
+  "title": "BM-T-001 baseline and additionality steps",
+  "short": "Two mandatory checks come first: no law already requires the project, and it does not lock in high-emission technology. Then four steps: list the alternatives, drop those blocked by barriers, compare finances where needed, and test whether similar projects are already common in India or a justified smaller area.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
   "slug": "ccts-tool-bm-t-002-fossil-fuel-emissions",
   "q": "How does CCTS tool BM-T-002 calculate emissions from fuel a project burns?",
   "title": "BM-T-002 fossil fuel emissions tool",
@@ -5243,12 +5299,44 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-23"
  },
  {
+  "slug": "ccts-tool-bm-t-005-methane-mass-flow",
+  "q": "How do you measure methane flow in biogas or flare gas for a CCTS offset project?",
+  "title": "BM-T-005 measuring greenhouse gas flow",
+  "short": "BEE's tool BM-T-005 works out the mass flow of a gas such as methane from the gas stream's flow, the gas's volume fraction and the water content. It offers six combinations of dry or wet basis and volume or mass flow, and uses normal conditions of 0 °C and 1 atm.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "ccts-tool-bm-t-008-digester-methane-leakage",
+  "q": "How much methane leakage must a biogas digester deduct under CCTS tool BM-T-008?",
+  "title": "BM-T-008 biogas digester methane leakage",
+  "short": "BM-T-008 deducts a fixed share of the methane a digester produces: 2.8% for steel, lined concrete or fibreglass digesters with a gas holder, 5% for UASB and floating gas holders without a water seal, and 10% for unlined masonry, fixed dome digesters, covered lagoons or an unknown type.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
   "slug": "ccts-tool-bm-t-010-biomass-emissions-leakage",
   "q": "What emissions does CCTS tool BM-T-010 count when a project uses biomass?",
   "title": "BM-T-010 biomass emissions and leakage",
   "short": "BM-T-010 counts emissions along the biomass value chain: growing it in a dedicated plantation, transporting it and processing it. It adds leakage, such as residues diverted from other uses or farming pushed elsewhere. Only increases outside the project count, and the project region is 250 km around the site.",
   "topic": "markets",
   "reviewed": "2026-10-23"
+ },
+ {
+  "slug": "ccts-tool-bm-t-011-waste-disposal-methane",
+  "q": "How does CCTS count methane from waste sent to, or kept out of, a dump site?",
+  "title": "BM-T-011 methane from waste dump sites",
+  "short": "BEE's tool BM-T-011 uses a first order decay model: each year's waste decays at a rate set by waste type and climate, so methane continues for years after disposal. Defaults include 0.5 for the methane share of landfill gas, 0.1 oxidised in the cover, and set correction factors for baselines.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "ccts-tool-bm-t-013-composting-emissions",
+  "q": "What emissions must a composting project deduct under CCTS tool BM-T-013?",
+  "title": "BM-T-013 composting project emissions",
+  "short": "Methane and nitrous oxide from the compost, power and fuel used, and methane from run-off in co-composting. Without measurements, BM-T-013 sets 0.002 t of methane and 0.0002 t of nitrous oxide per tonne of wet waste, 0.01 MWh of power and 0.0207 t CO2 from fuel.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "ccts-tool-bm-t-015-equipment-remaining-lifetime",
@@ -11179,6 +11267,70 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-22"
  },
  {
+  "slug": "green-hydrogen-certificate-ccts-credits",
+  "q": "Can a green hydrogen certificate be used to claim CCTS carbon credits or be transferred?",
+  "title": "Green hydrogen certificate, CCTS and transfer",
+  "short": "Yes to both, with conditions. The certificate can be used to claim carbon credits under India's Carbon Credit Trading Scheme if the project also meets the CCTS rules, such as methodology BM EN01.002. It is also transferable, as a guarantee of origin with chain of custody, under an MNRE procedure.",
+  "topic": "markets",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-certification-steps-india",
+  "q": "What are the steps and deadlines to get a green hydrogen certificate in India?",
+  "title": "Green hydrogen certificate steps and dates",
+  "short": "There are four certificates. A voluntary concept certificate checks the design after FEED approval, a mandatory facility certificate follows consent to operate and an on-site check, provisional certificates cover months as you produce, and the final certificate covers the financial year, with verified data due by 30 June.",
+  "topic": "regulation",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-emissions-materiality-exclusions",
+  "q": "Which emissions can a green hydrogen plant leave out of its 2 kg calculation?",
+  "title": "What green hydrogen emissions can be left out",
+  "short": "Capital goods, construction, decommissioning, business travel, commuting and the emissions of making and transmitting renewable power are outside the boundary. Inside it, a source under 1% of the 2 kg limit, 0.02 kg per kg, can be dropped if all dropped sources together stay under 5%, 0.1 kg.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-grid-power-t-and-d-losses",
+  "q": "How is grid electricity counted in a green hydrogen plant's emissions under GHCI?",
+  "title": "Grid power in green hydrogen emissions",
+  "short": "Divide the grid emission factor by one minus the transmission and distribution loss, multiply by the grid kWh, and divide by the hydrogen produced. GHCI uses CEA's weighted average grid factor for the year and CEA's loss data, so each grid kWh weighs more than the plain factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-oxygen-co-product-emissions",
+  "q": "Can a green hydrogen plant allocate some of its emissions to the oxygen it sells?",
+  "title": "Green hydrogen emissions and oxygen sales",
+  "short": "No. GHCI shares emissions with co-products by energy content, and a co-product with no calorific value gets no emissions. Oxygen is not a fuel and has no calorific value, so every kilogram of emissions stays on the hydrogen. Allocation only helps where a co-product carries energy.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-plant-over-2kg-what-happens",
+  "q": "What happens if a green hydrogen plant goes over 2 kg CO2e per kg in a year?",
+  "title": "Green hydrogen plant over the 2 kg limit",
+  "short": "None of that financial year's hydrogen is certified green, and provisional certificates issued for the year are withdrawn. A second breach within three years bars provisional certificates for the next cycle and means applying for the facility certificate again. The test is the annual average.",
+  "topic": "regulation",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-plant-records-to-keep",
+  "q": "What records must a green hydrogen plant keep for certification in India?",
+  "title": "Green hydrogen plant records to keep",
+  "short": "Daily records of hydrogen output, its physical and chemical parameters and energy use by source, plus water, feedstock and losses, kept for at least five evaluation cycles. A monitoring plan must set out emission sources, instruments, calibration, data control and factors for the verification agency.",
+  "topic": "regulation",
+  "reviewed": "2026-10-25"
+ },
+ {
+  "slug": "green-hydrogen-recs-green-tariff-allowed",
+  "q": "Can a green hydrogen plant in India count RECs, green tariff or exchange power as renewable?",
+  "title": "Renewable power proof for green hydrogen",
+  "short": "Green tariff power and renewable power bought on exchanges such as the green day-ahead market count. Renewable energy certificates and carbon credits do not. A PPA counts if the renewable plants generate at least what you claim plus transmission losses, shown with load dispatch centre certificates.",
+  "topic": "regulation",
+  "reviewed": "2026-10-25"
+ },
+ {
   "slug": "green-loan-coal-to-biomass-boiler-readiness",
   "q": "Can switching a coal boiler to a biomass boiler qualify for a green loan?",
   "title": "Green loan readiness for a biomass boiler",
@@ -13297,6 +13449,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Draw the installation boundary first, then use metered flows. Measurable heat or steam bought from a park utility counts in your direct emissions at the utility's emission factor; electricity bought from the park is indirect. Allocate shared kilns or lines by metered input, not by sales value.",
   "topic": "accounting",
   "reviewed": "2026-10-21"
+ },
+ {
+  "slug": "industrial-refrigeration-leak-rate-food-processing",
+  "q": "What refrigerant leak rate should a food processing plant or cold store use without service records?",
+  "title": "Industrial refrigeration leak rate",
+  "short": "IPCC 2006 gives 7% to 25% of the charge a year for industrial refrigeration, including food processing and cold storage, where charges run from 10 kg to 10,000 kg. Developing countries sit toward the upper end. Use top-up records where you have them; ammonia leaks add no CO2e.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "industrial-valve-carbon-footprint-per-unit",
@@ -16555,6 +16715,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "new-ac-installation-refrigerant-leak-scope-1",
+  "q": "Does refrigerant lost while installing new ACs or chillers count in our Scope 1?",
+  "title": "Refrigerant lost during new installations",
+  "short": "Yes, if your own team does the charging, though it is usually small. IPCC 2006 puts installation losses at 0.2% to 1% of the charge for ACs and chillers, and 0.5% to 3% for commercial and industrial refrigeration. Measure it as gas bought for the new units minus their rated charge.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
+ },
+ {
   "slug": "new-plant-construction-phase-emissions",
   "q": "How do we count emissions while our new plant is being built?",
   "title": "Emissions while building a new plant",
@@ -19081,6 +19249,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Calculate the leg as if it were a dry container, then use a reefer-specific factor or apply a reefer uplift for the power the refrigeration unit draws. Add refrigerant leakage only if the carrier reports it, converted to CO2e with a stated GWP. Label any default uplift as an estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "reefer-truck-refrigerant-leak-rate-default",
+  "q": "What refrigerant leak rate should I assume for reefer trucks with no service records?",
+  "title": "Reefer truck refrigerant leak rate",
+  "short": "IPCC 2006 gives 15% to 50% of the charge a year for transport refrigeration, the leakiest category in its table, with charges of 3 to 8 kg and lifetimes of 6 to 9 years. Developing countries sit nearer the top. Multiply the charge by the rate and the gas's GWP.",
+  "topic": "accounting",
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "reefer-truck-refrigeration-unit-emissions",
@@ -24601,6 +24777,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "After Directive (EU) 2026/470, CSRD covers EU companies with more than 1,000 employees and net turnover above €450 million, and non-EU groups with EU turnover above €450 million and a large EU subsidiary or branch. Start years depend on the company and on national transposition, so check both.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "who-needs-green-hydrogen-certificate-india",
+  "q": "Does my green hydrogen plant need a certificate under India's GHCI scheme?",
+  "title": "Who needs a green hydrogen certificate",
+  "short": "Yes, if you take a central or state incentive such as SIGHT, get any government exemption or concession, or sell any of the hydrogen in India. Plants of 10 tonnes a year or less are exempt, and a plant that exports everything without incentives skips the final certificate.",
+  "topic": "regulation",
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "who-owns-carbon-credits-from-equipment",

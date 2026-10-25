@@ -1,0 +1,62 @@
+{
+  "slug": "green-hydrogen-oxygen-co-product-emissions",
+  "q": "Can a green hydrogen plant allocate some of its emissions to the oxygen it sells?",
+  "title": "Green hydrogen emissions and oxygen sales",
+  "short": "No. GHCI shares emissions with co-products by energy content, and a co-product with no calorific value gets no emissions. Oxygen is not a fuel and has no calorific value, so every kilogram of emissions stays on the hydrogen. Allocation only helps where a co-product carries energy.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Electrolyser project developers selling oxygen, and their emissions consultants",
+  "sections": [
+    {
+      "h": "The allocation rule",
+      "p": [
+        "Total energy output is the sum of each co-product's mass times its energy content in MJ per kg. A co-product's share is its mass times energy content divided by that total, and the emissions allocated to it are total emissions times that share. The allocated amount is subtracted before dividing by the hydrogen produced.",
+        "The scheme says plainly that any co-product with no calorific value is not assigned any emissions."
+      ]
+    },
+    {
+      "h": "Why oxygen gets nothing",
+      "p": [
+        "Electrolysis splits water into hydrogen and oxygen, and the oxygen can be sold to hospitals or industry. It earns money but carries no energy content in this formula, so its share is zero. Selling it does not lower your kg CO2e per kg of hydrogen."
+      ]
+    },
+    {
+      "h": "Heat taken from another process",
+      "p": [
+        "If your plant takes heat from a process outside your control, the emissions charged to you are the increase in that process's emissions caused by exporting the heat. Truly waste heat carries no emissions. If extra fuel has to be burnt to replace the heat in the other process, those emissions are yours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: electrolysis with oxygen sales",
+    "lines": [
+      "Hydrogen produced: 1,000 t (illustrative)",
+      "Oxygen produced: about 8,000 t, since water splits 8 kg of oxygen to 1 kg of hydrogen by mass",
+      "Total emissions in the boundary: 1,900 t CO2e (illustrative)",
+      "Oxygen's energy content: zero, so its share is zero",
+      "Emission intensity: 1,900 t / 1,000 t = 1.9 kg CO2e per kg of hydrogen"
+    ]
+  },
+  "senseible": "Senseible records the electricity and fuel behind these emissions from your bills and invoices. Oxygen sales do not change the figure, so they do not need a separate entry in your energy record.",
+  "links": [
+    {
+      "label": "What can be left out",
+      "to": "/answers/green-hydrogen-emissions-materiality-exclusions"
+    },
+    {
+      "label": "Co-product apportioning in CCTS",
+      "to": "/answers/co-product-apportioning-ccts-bm-t-014"
+    },
+    {
+      "label": "India's 2 kg green hydrogen limit",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 11.8 and 11.9, Annexure B equations 1 and 9",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "green-hydrogen-emissions-materiality-exclusions",
+  "q": "Which emissions can a green hydrogen plant leave out of its 2 kg calculation?",
+  "title": "What green hydrogen emissions can be left out",
+  "short": "Capital goods, construction, decommissioning, business travel, commuting and the emissions of making and transmitting renewable power are outside the boundary. Inside it, a source under 1% of the 2 kg limit, 0.02 kg per kg, can be dropped if all dropped sources together stay under 5%, 0.1 kg.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Engineers and consultants building a green hydrogen emissions model under GHCI",
+  "sections": [
+    {
+      "h": "Outside the boundary by rule",
+      "ul": [
+        "Construction, manufacturing and decommissioning of capital goods, including the electrolyser.",
+        "Business travel and employee commuting.",
+        "Emissions from generating and transmitting the renewable electricity.",
+        "Drawing water from its natural source.",
+        "Transport and storage of hydrogen outside the plant, conversion into carriers, reconversion and use.",
+        "Gases other than carbon dioxide, methane and nitrous oxide, and biogenic emissions."
+      ]
+    },
+    {
+      "h": "Inside the boundary for electrolysis",
+      "ul": [
+        "Water treatment, electrolysis, gas purification, drying and compression, and onsite storage.",
+        "Onsite treatment of raw ground, river or sea water. For a water treatment plant outside your control, MNRE may prescribe a default factor and has said it will issue separate guidelines.",
+        "Input materials brought in from outside, such as salts, catalysts, solvents and acids. Water and steam count as feedstock."
+      ]
+    },
+    {
+      "h": "The materiality test",
+      "p": [
+        "A single source is immaterial if it is below 1% of the 2.0 kg CO2e per kg threshold, that is 0.02 kg per kg, and all immaterial sources together stay below 5%, 0.1 kg per kg. If dropping one more small source would take the total over 5%, that source must be counted.",
+        "Similar sources are grouped before the test, so you cannot split one source into pieces to make each look small. The verification agency checks the materiality assessment."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three small sources",
+    "lines": [
+      "Catalyst replacement: 0.008 kg CO2e per kg of hydrogen (illustrative)",
+      "Process chemicals: 0.012 kg per kg (illustrative)",
+      "Nitrogen for purging: 0.015 kg per kg (illustrative)",
+      "Each is under 0.02, and together 0.035 is under 0.1, so all three may be left out",
+      "A plant already close to 2.0 kg may prefer to count them anyway, since leaving them out does not change any other evidence requirement"
+    ]
+  },
+  "senseible": "Senseible reads the fuel and electricity invoices behind the larger sources in this model. Small inputs such as catalysts are bought on invoices too, so keeping them in one dated record makes the materiality check easier to show.",
+  "links": [
+    {
+      "label": "India's 2 kg green hydrogen limit",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "Emissions on oxygen sales",
+      "to": "/answers/green-hydrogen-oxygen-co-product-emissions"
+    },
+    {
+      "label": "Biomass green hydrogen boundary",
+      "to": "/answers/biomass-green-hydrogen-emissions-boundary"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 2.9, 5.1, 7 and 8",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25",
+  "reviewNote": "MNRE's separate guidelines on offsite water treatment were not yet in force when this page was written."
+}

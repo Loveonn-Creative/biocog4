@@ -1,0 +1,70 @@
+{
+  "slug": "green-hydrogen-grid-power-t-and-d-losses",
+  "q": "How is grid electricity counted in a green hydrogen plant's emissions under GHCI?",
+  "title": "Grid power in green hydrogen emissions",
+  "short": "Divide the grid emission factor by one minus the transmission and distribution loss, multiply by the grid kWh, and divide by the hydrogen produced. GHCI uses CEA's weighted average grid factor for the year and CEA's loss data, so each grid kWh weighs more than the plain factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Green hydrogen plants that draw some grid or non-renewable power",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Grid emissions per kg of hydrogen = grid kWh x [grid factor / (1 minus T&D losses)] / (hydrogen in tonnes x 1,000), with the grid factor in kg CO2 per kWh. Power from a non-renewable captive plant is counted separately from its fuel use and fuel emission factors."
+      ]
+    },
+    {
+      "h": "Which numbers to use",
+      "ul": [
+        "Grid factor: CEA's weighted average grid emission factor for the financial year. If that year's figure is not out when you certify, use the latest available.",
+        "Losses: the scheme text says to use CEA's latest central-level T&D loss data, while the annexure refers to the losses of the state where the plant is set up. Agree with your verification agency which one applies and record it.",
+        "Any electricity not proven renewable is treated this way, not only power bought from the DISCOM."
+      ]
+    },
+    {
+      "h": "Rounding",
+      "p": [
+        "The final intensity is rounded to one decimal place. So 1.950 to 2.049 kg CO2e per kg is reported as 2.0 and passes, while 2.05 rounds to 2.1 and fails."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,500 MWh of grid power",
+    "lines": [
+      "Hydrogen produced in the year: 1,000 t (illustrative)",
+      "Grid electricity: 1,500 MWh = 1,500,000 kWh (illustrative)",
+      "Grid factor: 0.710 kg CO2 per kWh (CEA version 21.0, FY 2024-25)",
+      "T&D losses: 15% (illustrative; use CEA's published figure)",
+      "Loss-adjusted factor: 0.710 / 0.85 = 0.835 kg per kWh",
+      "Grid emissions: 1,500,000 x 0.835 = 1,253,000 kg, or 1.25 kg CO2e per kg of hydrogen",
+      "Without the loss adjustment it would have been 1.07 kg per kg"
+    ],
+    "note": "CEA's version 22.0 gives 0.675 kg per kWh for FY 2025-26; use the figure for the year you certify."
+  },
+  "senseible": "Senseible reads grid units from your electricity bills each month and applies the CEA grid factor of 0.710 kg CO2 per kWh for Scope 2. It does not apply the GHCI loss adjustment, so treat its Scope 2 figure as an input, not your certified intensity.",
+  "links": [
+    {
+      "label": "Renewable power proof",
+      "to": "/answers/green-hydrogen-recs-green-tariff-allowed"
+    },
+    {
+      "label": "Hydrogen from grid power",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "Plant over the 2 kg limit",
+      "to": "/answers/green-hydrogen-plant-over-2kg-what-happens"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 11.2, 11.6 and 11.7, Annexure B equations 3 to 5",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

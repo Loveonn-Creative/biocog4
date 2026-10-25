@@ -1,0 +1,74 @@
+{
+  "slug": "ccts-afforestation-soil-carbon-tool",
+  "q": "How much soil carbon can a CCTS afforestation project claim under tool BM-T-AR-0006?",
+  "title": "Soil carbon in CCTS afforestation projects",
+  "short": "The tool assumes soil carbon rises from its pre-project level to the native forest reference over 20 years, at a constant rate capped at 0.8 t of carbon per hectare a year. Reference stocks and change factors are IPCC defaults, and disturbing over 10% of a stratum costs 10% upfront.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Afforestation developers, FPOs and landowners planning CCTS projects",
+  "sections": [
+    {
+      "h": "When the tool applies",
+      "ul": [
+        "Not on wetlands or organic soils.",
+        "Not on land already under the high-input or improved practices the tool lists, such as well managed, non-degraded grassland.",
+        "Litter stays on site.",
+        "Soil is disturbed only for site preparation, along the contours, and not again within 20 years."
+      ]
+    },
+    {
+      "h": "The steps",
+      "ol": [
+        "Initial soil carbon = reference stock x land use factor x management factor x input factor.",
+        "If the project disturbs more than 10% of a stratum's area beyond the baseline, deduct 10% of the initial stock in the year of site preparation.",
+        "Yearly gain = (reference stock minus what remains) / 20, capped at 0.8 t C per hectare a year.",
+        "Multiply by area and by 44/12 to get t CO2."
+      ]
+    },
+    {
+      "h": "Defaults for Indian conditions",
+      "ul": [
+        "Reference stock, top 30 cm, t C per ha: tropical dry 38 for high activity clay soils, 35 for low activity clay, 31 for sandy; tropical moist 65, 47 and 39; tropical wet 44, 60 and 66; tropical montane 88, 63 and 34.",
+        "Land use factor for cropland cultivated over 20 years: 0.58 in tropical dry, 0.48 in tropical moist or wet climates.",
+        "Low input factor: 0.95 in dry, 0.92 in moist climates. Severely degraded grassland: 0.70."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 ha of old cropland, tropical dry",
+    "lines": [
+      "Initial stock: 38 x 0.58 x 1.00 (full tillage) x 0.95 (low input) = 20.9 t C per ha",
+      "Gap to reference: 38 minus 20.9 = 17.1 t C per ha",
+      "Rate: 17.1 / 20 = 0.85, capped at 0.8 t C per ha a year",
+      "Per hectare: 0.8 x 44/12 = 2.93 t CO2 a year",
+      "100 ha: about 293 t CO2 a year for 20 years, before other deductions"
+    ],
+    "note": "Land and soil type are illustrative; use your own soil classification."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Afforestation CCTS credits",
+      "to": "/answers/bm-fr05-002-afforestation-ccts-credits"
+    },
+    {
+      "label": "Soil carbon sampling depth",
+      "to": "/answers/soil-carbon-baseline-sampling-depth"
+    },
+    {
+      "label": "Displaced farming leakage",
+      "to": "/answers/ccts-afforestation-displaced-farming-leakage"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-AR-0006 Tool for estimation of change in soil organic carbon stocks due to A/R ICM project activities (CCTS Offset Mechanism, version 1.0, 27 March 2025): Tables 4 to 7",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bab2189eb243ca93_1776061843.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

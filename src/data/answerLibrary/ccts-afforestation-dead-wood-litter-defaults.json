@@ -1,0 +1,75 @@
+{
+  "slug": "ccts-afforestation-dead-wood-litter-defaults",
+  "q": "Can a CCTS afforestation project count dead wood and litter without measuring them?",
+  "title": "Dead wood and litter in CCTS afforestation",
+  "short": "Yes, if dead wood and litter stay on site. Tool BM-T-AR-0003 lets you take them as a fixed share of tree carbon. In tropical areas below 2,000 m that is 2%, 1% or 6% for dead wood and 4%, 1% or 1% for litter, depending on rainfall.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Afforestation and agroforestry project developers under CCTS",
+  "sections": [
+    {
+      "h": "Default shares of tree carbon",
+      "ul": [
+        "Tropical below 2,000 m, rainfall under 1,000 mm: dead wood 2%, litter 4%.",
+        "Tropical below 2,000 m, 1,000 to 1,600 mm: dead wood 1%, litter 1%.",
+        "Tropical below 2,000 m, over 1,600 mm: dead wood 6%, litter 1%.",
+        "Tropical above 2,000 m: dead wood 7%, litter 1%.",
+        "Temperate or boreal: dead wood 8%, litter 4%."
+      ]
+    },
+    {
+      "h": "The condition",
+      "p": [
+        "The default method only works if dead wood and litter are not removed from the project area by any human activity, such as fuelwood or leaf collection. Where villagers collect them, measure or leave these pools out."
+      ]
+    },
+    {
+      "h": "Measuring instead",
+      "ul": [
+        "Standing dead trees that have lost only leaves and twigs count at 0.975 of whole tree biomass; those that have also lost branches under 10 cm count at 0.80.",
+        "Lying dead wood and litter are sampled in the same plots as living trees.",
+        "The default carbon fraction of litter is 0.37 t C per t of dry matter."
+      ]
+    },
+    {
+      "h": "Change over time",
+      "p": [
+        "Change is assumed to be linear between two estimates: the yearly rate is the difference in stock divided by the years between them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: adding the two pools",
+    "lines": [
+      "Tree carbon at verification: 10,000 t CO2e (illustrative)",
+      "Site at 1,200 mm rainfall, below 2,000 m: 1% + 1% = 200 t CO2e more",
+      "Same trees on a site under 1,000 mm: 2% + 4% = 600 t CO2e more"
+    ]
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Afforestation CCTS credits",
+      "to": "/answers/bm-fr05-002-afforestation-ccts-credits"
+    },
+    {
+      "label": "Soil carbon in afforestation",
+      "to": "/answers/ccts-afforestation-soil-carbon-tool"
+    },
+    {
+      "label": "Fires on afforestation projects",
+      "to": "/answers/ccts-afforestation-fire-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-AR-0003 Estimation of carbon stocks and change in carbon stocks in dead wood and litter in A/R ICM project activities (CCTS Offset Mechanism, version 1.0, 27 March 2025): data tables 5 and 6",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-4d7a8de20747aee3_1776061816.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "industrial-refrigeration-leak-rate-food-processing",
+  "q": "What refrigerant leak rate should a food processing plant or cold store use without service records?",
+  "title": "Industrial refrigeration leak rate",
+  "short": "IPCC 2006 gives 7% to 25% of the charge a year for industrial refrigeration, including food processing and cold storage, where charges run from 10 kg to 10,000 kg. Developing countries sit toward the upper end. Use top-up records where you have them; ammonia leaks add no CO2e.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cold stores, dairies, meat, seafood and frozen food processors",
+  "sections": [
+    {
+      "h": "IPCC defaults for industrial systems",
+      "ul": [
+        "Charge: 10 kg to 10,000 kg.",
+        "Lifetime: 15 to 30 years.",
+        "Installation loss: 0.5% to 3% of the charge.",
+        "Operating leakage: 7% to 25% of the charge a year.",
+        "End of life: recovery of 0% to 90% of the gas, with 50% to 100% of the charge still in the system."
+      ]
+    },
+    {
+      "h": "Picking a rate in India",
+      "p": [
+        "IPCC notes the lower values reflect developed countries and the higher values developing countries. An older plant with long pipe runs and breakdown-only servicing belongs near 25%. A newer plant with scheduled leak checks can justify a lower figure if it keeps the check reports. Write down the rate and keep it for the base year."
+      ]
+    },
+    {
+      "h": "Ammonia and HFC plants",
+      "p": [
+        "Many Indian cold stores and dairies run on ammonia, whose GWP is zero, so leaks add nothing to CO2e, though they still matter for safety. HFC systems do count: R-404A is 4,728 and R-134a is 1,530 under AR6."
+      ]
+    },
+    {
+      "h": "Better than a default",
+      "p": [
+        "The kilograms topped up in a year, from service invoices, are a direct measure of what leaked. A default rate is a starting estimate until you have a year of records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 500 kg R-404A cold store",
+    "lines": [
+      "Charge: 500 kg of R-404A (illustrative)",
+      "At 25%: 125 kg x 4,728 = 591 t CO2e a year",
+      "At 7%: 35 kg x 4,728 = 165 t CO2e a year",
+      "The range shows why a year of top-up records is worth more than any default"
+    ]
+  },
+  "senseible": "Senseible records refrigerant top-up invoices as Scope 1 lines, with the gas and kilograms where the invoice prints them, and keeps the plant's electricity bills for Scope 2 beside them.",
+  "links": [
+    {
+      "label": "Cold store HFC top-up emissions",
+      "to": "/answers/agra-cold-store-hfc-top-up-emissions"
+    },
+    {
+      "label": "Ammonia or HFC refrigeration",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Leakage without top-up records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9: charge, lifetime and emission factors for refrigeration and air conditioning",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_7_Ch7_ODS_Substitutes.pdf"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

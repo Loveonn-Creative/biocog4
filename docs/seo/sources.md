@@ -144,6 +144,18 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10304&Mode=0
 - https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10000&Mode=0
 - https://beeindia.gov.in/WriteReadData/L45218/1734411984.pdf
+- https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-c3aec9f87c079b9a_1776061527.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-157e6104a661d58e_1776061592.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-95ad1fffaacae725_1776061617.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-39324557592c02c2_1776061640.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-5f949cdf849d668d_1776061649.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-0b574a382aba0e6b_1776061802.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-4d7a8de20747aee3_1776061816.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-cbeb6b67d811aec8_1776061824.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bf23969b1e527913_1776061833.pdf
+- https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bab2189eb243ca93_1776061843.pdf
+- https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_7_Ch7_ODS_Substitutes.pdf
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org
 - https://ghgprotocol.org

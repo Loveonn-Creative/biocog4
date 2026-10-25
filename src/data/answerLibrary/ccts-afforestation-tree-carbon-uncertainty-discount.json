@@ -1,0 +1,67 @@
+{
+  "slug": "ccts-afforestation-tree-carbon-uncertainty-discount",
+  "q": "How does sampling uncertainty cut tree carbon credits in a CCTS afforestation project?",
+  "title": "Tree carbon uncertainty discount in CCTS",
+  "short": "Tool BM-T-AR-0004 measures uncertainty as the standard error expanded to 90% confidence, divided by the mean. Up to 10% there is no discount. Above that, project tree carbon is cut by 25%, 50%, 75% or 100% of the uncertainty, in bands up to and beyond 30%.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Afforestation developers designing sample plots and their verifiers",
+  "sections": [
+    {
+      "h": "How uncertainty is measured",
+      "p": [
+        "Take the standard error of the mean, multiply it by the t value for 90% confidence, and divide by the mean. The tool's own example: a mean of 45.328 t dry matter per ha from 34 plots with a standard deviation of 12.776 gives a standard error of 2.191, expanded to 3.707, an uncertainty of 8.18%. Only sampling uncertainty is counted."
+      ]
+    },
+    {
+      "h": "Discount bands",
+      "ul": [
+        "Up to 10%: no discount.",
+        "Over 10% to 15%: 25% of the uncertainty.",
+        "Over 15% to 20%: 50%.",
+        "Over 20% to 30%: 75%.",
+        "Over 30%: 100%."
+      ]
+    },
+    {
+      "h": "Which way it cuts",
+      "p": [
+        "The discount lowers project estimates and raises baseline estimates, so both sides move against you. The tool's example: 60 plus or minus 9 t dry matter per ha is 15% uncertainty, a discount of 25% x 9 = 2.25, so the project mean becomes 57.75 and a baseline mean would become 62.25."
+      ]
+    },
+    {
+      "h": "Ways to keep it low",
+      "ul": [
+        "Lay enough plots and stratify by species, age and site so each stratum is uniform.",
+        "Baseline tree and shrub change may be taken as zero on visibly degraded land, such as eroded, saline or mine spoil land, with documents or participatory rural appraisal.",
+        "Shrub strata with crown cover under 5% count as zero shrub biomass. Defaults: carbon fraction 0.47, root-shoot ratio 0.40 for shrubs."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Afforestation CCTS credits",
+      "to": "/answers/bm-fr05-002-afforestation-ccts-credits"
+    },
+    {
+      "label": "Dead wood and litter defaults",
+      "to": "/answers/ccts-afforestation-dead-wood-litter-defaults"
+    },
+    {
+      "label": "Soil carbon in afforestation",
+      "to": "/answers/ccts-afforestation-soil-carbon-tool"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-AR-0004 Estimation of carbon stocks and change in carbon stocks of trees and shrubs in A/R ICM project activities (CCTS Offset Mechanism, version 1.0, 27 March 2025): Appendix 2",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-cbeb6b67d811aec8_1776061824.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

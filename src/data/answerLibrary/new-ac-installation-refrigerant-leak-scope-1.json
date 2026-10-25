@@ -1,0 +1,70 @@
+{
+  "slug": "new-ac-installation-refrigerant-leak-scope-1",
+  "q": "Does refrigerant lost while installing new ACs or chillers count in our Scope 1?",
+  "title": "Refrigerant lost during new installations",
+  "short": "Yes, if your own team does the charging, though it is usually small. IPCC 2006 puts installation losses at 0.2% to 1% of the charge for ACs and chillers, and 0.5% to 3% for commercial and industrial refrigeration. Measure it as gas bought for the new units minus their rated charge.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Facility and EHS managers adding ACs, chillers or cold rooms",
+  "sections": [
+    {
+      "h": "The mass balance",
+      "p": [
+        "Installation loss (kg) = refrigerant bought or used for the new equipment minus the full rated charge of that equipment. Multiply by the gas's GWP from one IPCC report and add it to Scope 1 for the year. The first charge itself is not an emission; only what escapes is."
+      ]
+    },
+    {
+      "h": "IPCC defaults when you have no figures",
+      "ul": [
+        "Residential and commercial AC, including heat pumps: 0.2% to 1% of the charge.",
+        "Chillers: 0.2% to 1%.",
+        "Stand-alone commercial units and medium or large commercial refrigeration: 0.5% to 3%.",
+        "Industrial refrigeration, including food processing and cold storage: 0.5% to 3%.",
+        "Transport refrigeration and domestic refrigerators: 0.2% to 1%. Vehicle AC: 0.2% to 0.5%.",
+        "The lower end reflects developed countries and the upper end developing countries, so justify the point you pick."
+      ]
+    },
+    {
+      "h": "Whose emission it is",
+      "ul": [
+        "Your technicians charge from your cylinders: yours, in Scope 1.",
+        "A contractor charges from its own cylinders and hands over a working system: the loss is the contractor's.",
+        "Units that arrive pre-charged from the factory carry little loss at your site; any extra gas added for long pipe runs is charging you do."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an office fit-out and a chiller",
+    "lines": [
+      "40 split ACs on R-32, 1.2 kg charge each (illustrative): 48 kg in total",
+      "At 1% installation loss: 0.48 kg x 771 (AR6) = 370 kg CO2e",
+      "One 400 kg R-134a chiller at 1%: 4 kg x 1,530 (AR6) = 6.1 t CO2e"
+    ]
+  },
+  "senseible": "Senseible records refrigerant top-up and gas purchase invoices as Scope 1 lines with the gas and kilograms shown on the bill, where the invoice prints them. Mark first-charge purchases so they are not read as leakage.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Leakage without top-up records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Refrigerant lost at disposal",
+      "to": "/answers/ac-decommissioning-refrigerant-recovery-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9: charge, lifetime and emission factors for refrigeration and air conditioning",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_7_Ch7_ODS_Substitutes.pdf"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "reefer-truck-refrigerant-leak-rate-default",
+  "q": "What refrigerant leak rate should I assume for reefer trucks with no service records?",
+  "title": "Reefer truck refrigerant leak rate",
+  "short": "IPCC 2006 gives 15% to 50% of the charge a year for transport refrigeration, the leakiest category in its table, with charges of 3 to 8 kg and lifetimes of 6 to 9 years. Developing countries sit nearer the top. Multiply the charge by the rate and the gas's GWP.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cold chain fleet owners and food exporters running their own reefer trucks",
+  "sections": [
+    {
+      "h": "IPCC defaults for transport refrigeration",
+      "ul": [
+        "Charge: 3 kg to 8 kg per unit.",
+        "Lifetime: 6 to 9 years.",
+        "Installation loss: 0.2% to 1% of the charge.",
+        "Operating leakage: 15% to 50% of the charge a year.",
+        "End of life: recovery of 0% to 70%, with up to 50% of the charge left."
+      ]
+    },
+    {
+      "h": "Whose scope",
+      "p": [
+        "Leaks from reefer units on trucks you own or lease and run are your Scope 1. If you hire a carrier's reefer trucks, the leaks are the carrier's, and sit in your Scope 3 through the transport you buy."
+      ]
+    },
+    {
+      "h": "Move to measured figures",
+      "p": [
+        "Ask your service vendor to print the gas and kilograms charged on each invoice. A year of top-ups per truck replaces the default and usually narrows a very wide range."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 trucks on R-404A",
+    "lines": [
+      "Charge: 20 trucks x 6 kg = 120 kg (illustrative)",
+      "At 50%: 60 kg x 4,728 (AR6) = 284 t CO2e a year",
+      "At 15%: 18 kg x 4,728 = 85 t CO2e a year"
+    ]
+  },
+  "senseible": "Senseible reads diesel slips for the trucks and their refrigeration units, and refrigerant service invoices, into Scope 1 lines, so a fleet's fuel and gas sit in one dated record.",
+  "links": [
+    {
+      "label": "Reefer truck emissions",
+      "to": "/answers/reefer-truck-refrigeration-unit-emissions"
+    },
+    {
+      "label": "Reefer containers for exporters",
+      "to": "/answers/reefer-container-emissions-food-exporters"
+    },
+    {
+      "label": "Leakage without top-up records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9: charge, lifetime and emission factors for refrigeration and air conditioning",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_7_Ch7_ODS_Substitutes.pdf"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}
