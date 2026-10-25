@@ -257,6 +257,11 @@ const Reports = () => {
       totalKg: shown.total,
       categories,
       evidence: evidence.map(e => ({
+        // Id, activity and factor make each register line checkable against its document.
+        emissionId: e.emissionId,
+        activityData: e.activityData,
+        activityUnit: e.activityUnit,
+        emissionFactor: e.emissionFactor,
         documentHash: e.documentHash,
         invoiceNumber: e.invoiceNumber,
         vendor: e.vendor,
@@ -302,13 +307,13 @@ const Reports = () => {
     [activeFrameworks, availability],
   );
 
-  // The certificate names a standard only when the records evidence part of
-  // it, with the share evidenced, never as a blanket conformance mark.
+  // The certificate names a standard only when the records cover part of it,
+  // with the count covered, never as a blanket conformance mark.
   const standardBadges = useMemo(
     () => (['GHG_PROTOCOL', 'ISO_14064'] as const)
       .map(id => assessFramework(FRAMEWORKS[id], availability))
       .filter(a => a.coverage !== 'not_covered')
-      .map(a => `${a.framework.shortName}: ${a.completeness}% evidenced`),
+      .map(a => `${a.framework.shortName}: ${a.satisfied.length} of ${a.satisfied.length + a.missing.length} disclosures`),
     [availability],
   );
 
@@ -386,210 +391,40 @@ const Reports = () => {
 
   const generateComplianceCertificate = async () => {
     setIsGenerating(true);
-    
     try {
-      const { default: jsPDF } = await import('jspdf');
+      const [{ default: jsPDF }, { drawCertificate }] = await Promise.all([import('jspdf'), import('@/lib/certificatePdf')]);
       const doc = new jsPDF({ orientation: 'landscape' });
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const pageHeight = doc.internal.pageSize.getHeight();
-      const centerX = pageWidth / 2;
-      
-      // Decorative border
-      doc.setDrawColor(34, 82, 54);
-      doc.setLineWidth(3);
-      doc.rect(10, 10, pageWidth - 20, pageHeight - 20);
-      doc.setLineWidth(0.5);
-      doc.rect(15, 15, pageWidth - 30, pageHeight - 30);
-      
-      // Corner decorations
-      const cornerSize = 20;
-      [[15, 15], [pageWidth - 35, 15], [15, pageHeight - 35], [pageWidth - 35, pageHeight - 35]].forEach(([x, y]) => {
-        doc.setDrawColor(34, 82, 54);
-        doc.line(x, y, x + cornerSize, y);
-        doc.line(x, y, x, y + cornerSize);
-      });
-      
-      // Certificate title - centered
-      doc.setFontSize(28);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(34, 82, 54);
-      doc.text('INDEPENDENTLY REVIEWED', centerX, 45, { align: 'center' });
-      
-      // Decorative line
-      doc.setDrawColor(34, 82, 54);
-      doc.setLineWidth(1);
-      doc.line(70, 55, pageWidth - 70, 55);
-      
-      // Certificate text - centered
-      doc.setFontSize(12);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(60);
-      doc.text('This record confirms that', centerX, 72, { align: 'center' });
-      
-      // Organization name - centered with text wrapping
-      doc.setFontSize(20);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(0);
-      // Identity comes from the stored profile record, not browser storage.
-      const businessName = organizationName;
-      const gstin = dbProfile?.gstin || null;
-      const sector = dbProfile?.sector || null;
-
-      
-      const displayName = businessName.charAt(0).toUpperCase() + businessName.slice(1);
-      const maxNameWidth = pageWidth - 80;
-      const nameLines = doc.splitTextToSize(displayName, maxNameWidth);
-      doc.text(nameLines, centerX, 88, { align: 'center' });
-      
-      // Add GSTIN if available
-      let gstinOffset = 0;
-      if (gstin) {
-        gstinOffset = 8;
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'normal');
-        doc.setTextColor(80);
-        doc.text(`GSTIN: ${gstin}`, centerX, 88 + (nameLines.length * 8) + 3, { align: 'center' });
-      }
-      
-      // Certificate body - centered (adjust for GSTIN if present)
-      const bodyY = 88 + (nameLines.length * 8) + 5 + gstinOffset;
-      doc.setFontSize(11);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(60);
-      // States only what the records show: emissions recorded from source
-      // documents and checked by the platform's own integrity control.
-      doc.text(`has recorded its greenhouse gas emissions from ${verifiedDocCount} source document${verifiedDocCount === 1 ? '' : 's'}`, centerX, bodyY, { align: 'center' });
-      doc.text('reviewed by a Senseible analyst or subject expert against the source evidence.', centerX, bodyY + 9, { align: 'center' });
-      
-      // Verification details box - centered with equal columns
-      const boxY = bodyY + 25;
-      const boxWidth = 200;
-      const boxHeight = 55;
-      const boxX = centerX - boxWidth / 2;
-      
-      doc.setFillColor(248, 252, 248);
-      doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 5, 5, 'F');
-      doc.setDrawColor(34, 82, 54);
-      doc.setLineWidth(0.5);
-      doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 5, 5, 'S');
-      
-      // Three equal columns for metrics
-      const colWidth = boxWidth / 3;
-      const col1Center = boxX + colWidth * 0.5;
-      const col2Center = boxX + colWidth * 1.5;
-      const col3Center = boxX + colWidth * 2.5;
-      
-      // Column dividers
-      doc.setDrawColor(220, 230, 220);
-      doc.setLineWidth(0.3);
-      doc.line(boxX + colWidth, boxY + 8, boxX + colWidth, boxY + boxHeight - 8);
-      doc.line(boxX + colWidth * 2, boxY + 8, boxX + colWidth * 2, boxY + boxHeight - 8);
-      
-      // Column 1: Verified Emissions
-      doc.setFontSize(8);
-      doc.setTextColor(100);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Verified Emissions', col1Center, boxY + 14, { align: 'center' });
-      doc.setFontSize(16);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(34, 82, 54);
-      const emissionText = summary.total >= 1000 
-        ? `${(summary.total / 1000).toFixed(2)} t` 
-        : `${summary.total.toFixed(1)} kg`;
-      doc.text(emissionText, col1Center, boxY + 32, { align: 'center' });
-      doc.setFontSize(7);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(120);
-      doc.text('CO₂ equivalent', col1Center, boxY + 42, { align: 'center' });
-      
-      // Column 2: Quality Grade
-      doc.setFontSize(8);
-      doc.setTextColor(100);
-      doc.text('Quality Grade', col2Center, boxY + 14, { align: 'center' });
-      doc.setFontSize(24);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(34, 82, 54);
+      const verifiedHashes = evidence.filter((e) => e.verificationStatus === 'verified').map((e) => e.documentHash);
       const grade = analysis?.creditEligibility?.qualityGrade;
-      if (!grade) doc.setFontSize(12);
-      doc.text(grade || 'Not assessed', col2Center, boxY + 35, { align: 'center' });
-      
-      // Column 3: Green Score
-      doc.setFontSize(8);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(100);
-      doc.text('Green Score', col3Center, boxY + 14, { align: 'center' });
-      doc.setFontSize(16);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(34, 82, 54);
-      const greenScore = typeof analysis?.greenScore === 'number' ? analysis.greenScore : null;
-      if (greenScore === null) doc.setFontSize(12);
-      doc.text(greenScore === null ? 'Not assessed' : `${greenScore}`, col3Center, boxY + 32, { align: 'center' });
-      doc.setFontSize(7);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(120);
-      if (greenScore !== null) doc.text('out of 100', col3Center, boxY + 42, { align: 'center' });
-      
-      // Compliance badges - centered with consistent sizing
-      const badgeY = boxY + boxHeight + 12;
-      const badges: string[] = [];
-      badges.push(...standardBadges);
-      
-      doc.setFontSize(8);
-      doc.setFont('helvetica', 'bold');
-      const badgePadding = 10;
-      const badgeHeight = 16;
-      const badgeGap = 8;
-      const badgeWidths = badges.map(b => doc.getTextWidth(b) + badgePadding * 2);
-      const totalBadgeWidth = badgeWidths.reduce((a, b) => a + b, 0) + (badges.length - 1) * badgeGap;
-      let badgeX = centerX - totalBadgeWidth / 2;
-      
-      badges.forEach((badge, i) => {
-        const bw = badgeWidths[i];
-        doc.setFillColor(34, 82, 54);
-        doc.roundedRect(badgeX, badgeY, bw, badgeHeight, 3, 3, 'F');
-        doc.setTextColor(255, 255, 255);
-        doc.text(badge, badgeX + bw / 2, badgeY + 11, { align: 'center' });
-        badgeX += bw + badgeGap;
+      drawCertificate(doc, {
+        // Identity comes from the stored profile record, not browser storage.
+        organizationName,
+        gstin: dbProfile?.gstin || null,
+        sector: dbProfile?.sector || null,
+        verifiedDocCount,
+        totalDocCount: new Set(evidence.map((e) => e.documentHash)).size,
+        recordedKg: summary.total + pendingSummary.total,
+        // Same files, same fingerprint: the record ID is derived from it.
+        fingerprint: await evidenceFingerprint(verifiedHashes),
+        totalKg: summary.total,
+        scope1Kg: summary.scope1,
+        scope2Kg: summary.scope2,
+        scope3Kg: summary.scope3,
+        periodStart: dataset.periodStart,
+        periodEnd: dataset.periodEnd,
+        qualityGrade: typeof grade === 'string' && grade ? grade : null,
+        greenScore: typeof analysis?.greenScore === 'number' ? analysis.greenScore : null,
+        badges: standardBadges,
+        reviewedAt: latestVerification?.created_at ?? null,
+        issuedAt: new Date().toISOString(),
+        methodologyVersion,
+        formatDate,
       });
-      
-      // Evidence fingerprint: SHA-256 over the sorted hashes of the source
-      // documents behind this certificate, so anyone holding the same
-      // documents can recompute it. Omitted when there is no evidence.
-      const fingerprint = await evidenceFingerprint(evidence.map(e => e.documentHash));
-      if (fingerprint) {
-        doc.setFontSize(7);
-        doc.setFont('helvetica', 'normal');
-        doc.setTextColor(140);
-        doc.text(`Evidence fingerprint (SHA-256 of ${evidence.length} document hashes): ${fingerprint.slice(0, 16).toUpperCase()}`, centerX, badgeY + 26, { align: 'center' });
-      }
-      
-      // Signature area - properly aligned
-      const sigY = pageHeight - 55;
-      doc.setDrawColor(34, 82, 54);
-      doc.setLineWidth(0.5);
-      doc.line(centerX - 60, sigY, centerX + 60, sigY);
-      doc.setFontSize(9);
-      doc.setTextColor(80);
-      doc.text('Authorized Signature', centerX, sigY + 8, { align: 'center' });
-      
-      // Certificate metadata - right aligned ID, centered date
-      const certId = `REV-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
-      doc.setFontSize(8);
-      doc.setTextColor(100);
-      doc.text(`Record ID: ${certId}`, pageWidth - 25, pageHeight - 30, { align: 'right' });
-      doc.text(`Issued: ${formatDate(new Date().toISOString())}`, 25, pageHeight - 30, { align: 'left' });
-      doc.text(`Methodology: ${methodologyVersion}`, centerX, pageHeight - 22, { align: 'center' });
-      
-      // Footer disclaimer - centered
-      doc.setFontSize(6);
-      doc.setTextColor(130);
-      doc.text('Powered by Senseible Carbon Platform | Decision-support record, not a regulatory certification or statutory filing', centerX, pageHeight - 15, { align: 'center' });
-      
-      doc.save(`independently-reviewed-${new Date().toISOString().split('T')[0]}.pdf`);
-      toast.success('Independently Reviewed record downloaded');
+      doc.save(`verified-emissions-record-${new Date().toISOString().split('T')[0]}.pdf`);
+      toast.success('Verified emissions record downloaded');
     } catch (error) {
       console.error('Certificate generation error:', error);
-      toast.error('Could not generate the reviewed record');
+      toast.error('Could not generate the verified emissions record');
     } finally {
       setIsGenerating(false);
     }
@@ -813,11 +648,9 @@ const Reports = () => {
                         <Badge
                           variant={a.coverage === 'covered' ? 'default' : a.coverage === 'partial' ? 'secondary' : 'outline'}
                         >
-                          {a.coverage === 'covered'
-                            ? 'Fully evidenced'
-                            : a.coverage === 'partial'
-                              ? `${a.completeness}% evidenced`
-                              : 'No evidence yet'}
+                          {a.coverage === 'not_covered'
+                            ? 'No evidence yet'
+                            : `${a.satisfied.length} of ${a.satisfied.length + a.missing.length} covered`}
                         </Badge>
                       </div>
 
@@ -827,12 +660,12 @@ const Reports = () => {
 
                       {a.dataGaps.length > 0 && (
                         <p className="text-xs text-muted-foreground">
-                          Data gaps (closeable by adding records): {a.dataGaps.map(g => g.reference).join(', ')}
+                          Data gaps, closed by adding records: {a.dataGaps.map(g => g.reference).join(', ')}
                         </p>
                       )}
                       {a.notApplicable.length > 0 && (
                         <p className="text-xs text-muted-foreground">
-                          Not applicable to this platform (entity-authored): {a.notApplicable.map(g => g.reference).join(', ')}
+                          Not covered by documents: {a.notApplicable.map(g => g.reference).join(', ')}
                         </p>
                       )}
                       {a.coverage === 'not_covered' && (
@@ -1024,15 +857,15 @@ const Reports = () => {
             </TabsContent>
             
             <TabsContent value="certificates" className="space-y-6">
-              {/* Independently Reviewed record */}
+              {/* Verified emissions record (certificatePdf.ts) */}
               <Card className="border-success/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <Award className="h-4 w-4 shrink-0 text-success" />
                     <div>
-                      <span>Independently Reviewed</span>
+                      <span>Verified Emissions Record</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
-                        Emissions record reviewed by a Senseible analyst or subject expert
+                        Verified by Senseible, expert-supervised
                       </p>
                     </div>
                   </CardTitle>

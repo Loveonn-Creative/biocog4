@@ -303,7 +303,7 @@ export const industryFaqs: SEOFaq[] = [
   {
     id: 'industry-3',
     question: 'How to prove to a European buyer that my steel is Low-Carbon using Senseible?',
-    answer: 'Share an Independently Reviewed emissions record from Senseible: Scope 1, 2 and 3 with each line traced to its source document. A product-level footprint needs HSN/CN coded evidence for that product.',
+    answer: 'Share a Verified Emissions Record from Senseible: Scope 1, 2 and 3 with each line traced to its source document. A product-level footprint needs HSN/CN coded evidence for that product.',
     category: 'industry',
     tags: ['steel', 'low-carbon', 'European buyer'],
     priority: 'high'

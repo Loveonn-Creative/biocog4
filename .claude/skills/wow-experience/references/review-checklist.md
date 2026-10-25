@@ -40,6 +40,14 @@ Patterns:
 - Exclamation marks to manufacture excitement.
 - Closing lines that restate the paragraph.
 
+## Generated documents (PDFs, exports, emails)
+- [ ] Rendered and read as the recipient (bank, auditor, buyer), not as the builder.
+- [ ] `bun test tests/report-copy.test.ts` passes; any new weak phrase found in review is added to its BANNED list.
+- [ ] An independent agent has reviewed the rendered text and every finding is fixed.
+- [ ] Each fact is stated once per document; no note restates a table or the footer.
+- [ ] Numbers are consistent across sections, rounded for reading (tCO2e to 2 decimals) and free of NaN, garbled glyphs or wrong scales.
+- [ ] No internal words: platform, recompute, mapped, rendered, export, dataset.
+
 ## Before shipping
 - [ ] The project's own rules (AGENTS.md, brand and copy docs) are met.
 - [ ] Build, tests and any SEO or accessibility gates pass.

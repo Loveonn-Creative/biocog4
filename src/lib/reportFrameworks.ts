@@ -23,7 +23,7 @@ export interface FrameworkCoverage {
 
 
 /**
- * Disclosure inputs the platform can evidence today.
+ * Disclosure inputs the documents can evidence today.
  * Anything absent here must be declared as a gap in the report, never inferred.
  */
 export interface DataAvailability {
@@ -77,24 +77,17 @@ const METRIC_REQUIREMENTS: Record<string, Requirement> = {
   environmentalResponsibility: ANY_SCOPE,
   climateAction: ANY_SCOPE,
   emissionIntensity: 'intensity',
-  reductionInitiatives: 'targets',
   reductionTargets: 'targets',
   targetReductions: 'targets',
   targetYear: 'targets',
-  baselineYear: 'targets',
   responsibleConsumption: 'targets',
   governanceProcess: 'governance',
   governanceLeadership: 'governance',
-  companyOverview: 'governance',
   climateStrategy: 'governance',
   climateRisks: 'risks',
   riskProcess: 'risks',
   transitionRisks: 'risks',
   physicalRisks: 'risks',
-  natureRisks: 'risks',
-  natureDependencies: 'risks',
-  natureActions: 'risks',
-  operationsLocation: 'governance',
   energyConsumption: 'energy',
   cleanEnergy: 'energy',
   productEmissions: 'productLevel',
@@ -103,8 +96,33 @@ const METRIC_REQUIREMENTS: Record<string, Requirement> = {
   ghgIntensity: 'intensity',
   evidenceTraceability: ANY_SCOPE,
   emissionsBaseline: ANY_SCOPE,
-  valueChainEmissions: 'scope3',
+  // Company profile details printed with the figures; only meaningful once there are figures.
+  entityProfile: ANY_SCOPE,
 };
+
+/**
+ * How a covered disclosure is backed. Targets are set by the company, so they
+ * are "stated", never "evidenced"; profile details and the document trail are
+ * "provided". Only document-derived figures are "evidenced".
+ */
+export type CoveredKind = 'evidenced' | 'stated' | 'provided';
+const STATED_METRICS = new Set(['reductionTargets', 'targetReductions', 'targetYear', 'responsibleConsumption']);
+const PROVIDED_BASIS: Record<string, string> = {
+  entityProfile: 'From the company profile',
+  evidenceTraceability: 'Document hash, activity and factor on every record',
+};
+export function coveredKind(metric: string | undefined): CoveredKind {
+  if (metric && STATED_METRICS.has(metric)) return 'stated';
+  if (metric && PROVIDED_BASIS[metric]) return 'provided';
+  return 'evidenced';
+}
+export function coveredBasis(metric: string | undefined): string {
+  if (metric && PROVIDED_BASIS[metric]) return PROVIDED_BASIS[metric];
+  if (metric && STATED_METRICS.has(metric)) return 'Set by the company; not externally validated';
+  if (metric === 'energyConsumption' || metric === 'cleanEnergy') return 'Quantities on bills and invoices';
+  if (metric === 'emissionsBaseline') return 'Earliest year in the documents';
+  return 'From invoices and bills';
+}
 
 /**
  * Disclosures that GHG evidence can never satisfy, whatever is uploaded.
@@ -112,9 +130,30 @@ const METRIC_REQUIREMENTS: Record<string, Requirement> = {
  * and others) measured by stack or ambient monitoring under the Air and Water
  * Acts; invoices and GHG totals say nothing about them.
  */
+const NATURE_DATA = 'No site location or nature data on record.';
 const NOT_EVIDENCEABLE: Record<string, string> = {
-  pollutantEmissionNorms:
-    'Not applicable to this platform: CPCB emission norms cover pollutants (such as particulate matter, SO2 and NOx) measured by stack or ambient monitoring, which greenhouse gas records cannot evidence.',
+  pollutantEmissionNorms: 'Needs stack or ambient monitoring by an accredited laboratory; invoices cannot show it.',
+  operationsLocation: NATURE_DATA,
+  natureDependencies: NATURE_DATA,
+  natureRisks: NATURE_DATA,
+  natureActions: NATURE_DATA,
+};
+
+/** Narrative disclosures the company writes, each with what it covers. */
+const COMPANY_WRITTEN: Record<string, string> = {
+  governanceProcess: 'Written by the company: oversight by the board and management.',
+  governanceLeadership: 'Written by the company: policies, governance and oversight.',
+  climateStrategy: 'Written by the company: climate strategy and its resilience.',
+  riskProcess: 'Written by the company: how climate risks are found and managed.',
+  climateRisks: 'Written by the company: how climate risks are found and managed.',
+  transitionRisks: 'Written by the company: transition risk assessment.',
+  physicalRisks: 'Written by the company: physical risk assessment.',
+};
+
+/** Gaps no upload type closes yet, with the reason in the reader's words. */
+const METRIC_GAP_REASONS: Record<string, string> = {
+  achievedReductions: 'No achieved reduction on record. A reduction shows in later bills against the base year.',
+  marketBasedScope2: 'No renewable certificates or green power contracts recorded.',
 };
 
 function requirementMet(req: Requirement, availability: DataAvailability): boolean {
@@ -131,13 +170,13 @@ function missingFlags(req: Requirement, availability: DataAvailability): Array<k
 }
 
 /**
- * Why a mapped disclosure could not be evidenced.
+ * Why a listed disclosure is not covered.
  *
- * "Not applicable" is used only where the disclosure is structurally outside
- * the platform boundary (narrative governance, risk and nature disclosures the
- * entity must author itself). Everything else is a data gap — a disclosure the
- * platform could evidence once the underlying records exist. Neither case is
- * ever filled with an estimate.
+ * 'not_applicable' marks disclosures documents can never cover: narratives the
+ * company writes (governance, strategy, risk) and data Senseible does not hold
+ * (nature, stack monitoring). They still apply to the company, so outputs label
+ * them "Not covered", never "Not applicable". Everything else is a data gap,
+ * closed once the record is uploaded. Neither case is ever filled with an estimate.
  */
 export type MissingClassification = 'not_applicable' | 'data_gap';
 
@@ -150,13 +189,13 @@ export interface MissingDisclosure {
 const OUT_OF_BOUNDARY: Array<keyof DataAvailability> = ['governance', 'risks'];
 
 const GAP_REASONS: Partial<Record<keyof DataAvailability, string>> = {
-  scope1: 'No Scope 1 activity has been evidenced by an uploaded document.',
-  scope2: 'No purchased-energy record has been evidenced.',
-  scope3: 'No value-chain activity has been evidenced.',
-  intensity: 'No output or revenue denominator is recorded, so an intensity figure cannot be derived.',
-  targets: 'No reduction target with a baseline and target year is recorded.',
-  energy: 'No metered or invoiced energy consumption is recorded.',
-  productLevel: 'No product-level (HSN/CN coded) evidence is recorded, so per-product emissions cannot be allocated.',
+  scope1: 'No fuel or other direct-emission document uploaded yet.',
+  scope2: 'No electricity bill uploaded yet.',
+  scope3: 'No value chain document (freight, purchased goods) uploaded yet.',
+  intensity: 'Needs turnover or production output, which is not recorded.',
+  targets: 'No reduction target recorded.',
+  energy: 'No electricity bill or fuel invoice recorded.',
+  productLevel: 'Needs production data per product (HSN/CN code), which is not recorded.',
 };
 
 export function classifyMissing(
@@ -174,15 +213,12 @@ export function classifyMissing(
     return {
       reference,
       classification: 'not_applicable',
-      reason:
-        outOfBoundary === 'governance'
-          ? 'Not applicable to this platform: governance and oversight narratives are authored by the entity and are not derived from documents.'
-          : 'Not applicable to this platform: climate risk and nature assessments are authored by the entity and are not derived from documents.',
+      reason: (metric && COMPANY_WRITTEN[metric]) || 'Written by the company.',
     };
   }
-  let reason = 'No supporting record exists for this disclosure.';
+  let reason = (metric && METRIC_GAP_REASONS[metric]) || 'No supporting record on file.';
   if (requirement && typeof requirement !== 'string' && 'any' in requirement) {
-    reason = 'No emissions have been evidenced by an uploaded document yet.';
+    reason = 'No emissions recorded from documents yet.';
   } else if (lacking.length > 0) {
     reason = lacking.map((k) => GAP_REASONS[k]).filter(Boolean).join(' ') || reason;
   }
@@ -200,14 +236,14 @@ export interface FrameworkAssessment {
   missingDetail: MissingDisclosure[];
   /** Missing because the entity has no record yet — closeable */
   dataGaps: MissingDisclosure[];
-  /** Missing because the disclosure sits outside the platform boundary */
+  /** Missing because documents can never cover it (company-written or data Senseible does not hold) */
   notApplicable: MissingDisclosure[];
   coverage: 'covered' | 'partial' | 'not_covered';
   /** 0-100, share of the framework's mapped references that are evidenced */
   completeness: number;
   /**
-   * 0-100 measured only against references the platform can evidence, i.e.
-   * excluding narrative disclosures that are outside its boundary.
+   * 0-100 measured only against references documents can cover, i.e.
+   * excluding company-written narratives and data Senseible does not hold.
    */
   evidenceableCompleteness: number;
 }
@@ -273,11 +309,13 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'voluntary',
     applicableWhen: [],
     metricsMapping: {
-      'Ch.4 Scope 1': 'scope1',
-      'Ch.4 Scope 2': 'scope2',
-      'Ch.4 Scope 3': 'scope3',
-      'Ch.7 Base year & targets': 'reductionTargets',
-      'Ch.9 Energy consumption': 'energyConsumption',
+      // Chapters of the Corporate Standard (revised edition): 4 operational boundaries,
+      // 5 tracking emissions over time, 6 calculating, 11 setting targets.
+      'Scope 1 emissions (Ch. 4 and 6)': 'scope1',
+      'Scope 2 emissions, location-based (Ch. 4 and 6)': 'scope2',
+      'Scope 3 emissions (Ch. 4 and 6)': 'scope3',
+      'Base year (Ch. 5)': 'emissionsBaseline',
+      'Reduction target (Ch. 11)': 'reductionTargets',
     },
     status: 'partial',
   },
@@ -288,11 +326,12 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'voluntary',
     applicableWhen: [],
     metricsMapping: {
-      '5.2 Direct GHG emissions': 'scope1',
-      '5.2 Indirect from energy': 'scope2',
-      '5.2 Other indirect': 'scope3',
-      '6.4 Quantification methodology': 'totalEmissions',
-      '9.3.1 Reduction initiatives': 'reductionInitiatives',
+      // ISO 14064-1:2018: clause 5 inventory boundaries and categories, 6 quantification.
+      'Category 1: Direct GHG emissions': 'scope1',
+      'Category 2: Indirect emissions from imported energy': 'scope2',
+      'Categories 3 to 6: Other indirect emissions': 'scope3',
+      'Quantification of CO2 (clause 6)': 'totalEmissions',
+      'Reduction target': 'reductionTargets',
     },
     status: 'partial',
   },
@@ -308,7 +347,8 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
       'GRI 305-2': 'scope2',
       'GRI 305-3': 'scope3',
       'GRI 305-4': 'emissionIntensity',
-      'GRI 305-5': 'reductionInitiatives',
+      // 305-5 asks for reductions achieved, not a target.
+      'GRI 305-5': 'achievedReductions',
     },
     status: 'covered',
   },
@@ -319,8 +359,9 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'investor',
     applicableWhen: ['seekingFinance'],
     metricsMapping: {
-      'RT-EE-130a.1': 'scope1',
-      'RT-EE-130a.2': 'scope2',
+      // SASB metric codes depend on the company's industry standard, so none are printed.
+      'Gross global Scope 1 emissions': 'scope1',
+      'Total energy consumed (recorded units, not converted to GJ)': 'energyConsumption',
     },
     status: 'partial',
   },
@@ -331,69 +372,74 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'voluntary',
     applicableWhen: ['seekingFinance', 'exportsToEU'],
     metricsMapping: {
-      'Metrics': 'totalEmissions',
+      'Governance': 'governanceProcess',
+      'Strategy': 'climateStrategy',
+      'Risk management': 'climateRisks',
+      'Metrics: Scope 1, 2 and 3 emissions': 'totalEmissions',
       'Targets': 'reductionTargets',
-      'RiskManagement': 'climateRisks',
     },
     status: 'partial',
     supersededBy: 'ISSB_S2',
-    note: 'The TCFD framework was disbanded in 2023 and its recommendations are carried forward in IFRS S2. Retained here for readers who still request the TCFD structure; the same evidence maps to ISSB S2.',
+    note: 'TCFD closed in 2023 and IFRS S2 replaced it. Same figures, older layout.',
   },
 
   ISSB_S1: {
     id: 'ISSB_S1',
-    name: 'ISSB S1: General Sustainability Disclosures',
+    name: 'IFRS S1: General Requirements for Disclosure of Sustainability-related Financial Information',
     shortName: 'ISSB S1',
     category: 'mandatory',
     applicableWhen: ['exportsToEU', 'seekingFinance'],
     metricsMapping: {
       'Governance': 'governanceProcess',
       'Strategy': 'climateStrategy',
-      'RiskManagement': 'riskProcess',
-      'MetricsTargets': 'totalEmissions',
+      'Risk management': 'riskProcess',
+      'Metrics: Scope 1, 2 and 3 emissions': 'totalEmissions',
+      'Targets': 'reductionTargets',
     },
     status: 'partial',
   },
   ISSB_S2: {
     id: 'ISSB_S2',
-    name: 'ISSB S2: Climate-related Disclosures',
+    name: 'IFRS S2: Climate-related Disclosures',
     shortName: 'ISSB S2',
     category: 'mandatory',
     applicableWhen: ['exportsToEU', 'seekingFinance'],
     metricsMapping: {
-      'Scope1': 'scope1',
-      'Scope2': 'scope2',
-      'Scope3': 'scope3',
-      'TransitionRisks': 'transitionRisks',
-      'PhysicalRisks': 'physicalRisks',
+      'Scope 1 emissions': 'scope1',
+      'Scope 2 emissions, location-based': 'scope2',
+      'Scope 3 emissions': 'scope3',
+      'Transition risks': 'transitionRisks',
+      'Physical risks': 'physicalRisks',
     },
     status: 'covered',
   },
   CDP: {
     id: 'CDP',
-    name: 'Carbon Disclosure Project',
+    name: 'CDP climate questionnaire: emissions data',
     shortName: 'CDP',
     category: 'investor',
     applicableWhen: ['seekingFinance', 'hasNetZeroTarget'],
     metricsMapping: {
-      'C6.1': 'scope1',
-      'C6.2': 'scope2',
-      'C6.3': 'scope3',
-      'C6.5': 'emissionsBreakdown',
+      // CDP renumbers its questions each cycle, so references are by content.
+      'Scope 1 emissions': 'scope1',
+      'Scope 2 emissions, location-based': 'scope2',
+      'Scope 3 emissions': 'scope3',
+      'Emissions by activity': 'emissionsBreakdown',
     },
     status: 'covered',
   },
   CSRD_ESRS: {
     id: 'CSRD_ESRS',
-    name: 'EU Corporate Sustainability Reporting Directive (ESRS)',
+    name: 'CSRD: ESRS E1 Climate change',
     shortName: 'CSRD/ESRS',
     category: 'mandatory',
     applicableWhen: ['exportsToEU'],
     metricsMapping: {
-      'ESRS_E1': 'climateChange',
-      'ESRS_E1-4': 'targetReductions',
-      'ESRS_E1-5': 'energyConsumption',
-      'ESRS_E1-6': 'scope1_2_3',
+      'E1-4 Targets': 'targetReductions',
+      'E1-5 Energy consumption and mix': 'energyConsumption',
+      'E1-6 Gross Scope 1, 2, 3 and total emissions': 'scope1_2_3',
+      'E1-6 Market-based Scope 2': 'marketBasedScope2',
+      'E1-6 GHG intensity per net revenue': 'emissionIntensity',
     },
     status: 'partial',
   },
@@ -413,15 +459,15 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
   },
   SBTI: {
     id: 'SBTI',
-    name: 'Science Based Targets initiative',
+    name: 'SBTi target-setting inputs',
     shortName: 'SBTi',
     category: 'voluntary',
     applicableWhen: ['hasNetZeroTarget'],
     metricsMapping: {
-      'Scope1+2': 'scope1_2Combined',
-      'Scope3': 'scope3Categories',
-      'TargetYear': 'targetYear',
-      'BaselineYear': 'baselineYear',
+      'Scope 1 and 2 base year emissions': 'scope1_2Combined',
+      'Scope 3 base year emissions': 'scope3Categories',
+      'Base year': 'emissionsBaseline',
+      'Target year': 'targetYear',
     },
     status: 'partial',
   },
@@ -432,21 +478,21 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'voluntary',
     applicableWhen: ['hasNetZeroTarget', 'seekingFinance'],
     metricsMapping: {
-      'SDG7': 'cleanEnergy',
-      'SDG12': 'responsibleConsumption',
-      'SDG13': 'climateAction',
+      'SDG 13 Climate action: emissions measured': 'climateAction',
+      'SDG 13 Climate action: reduction target': 'responsibleConsumption',
+      'SDG 7 Affordable and clean energy: energy use recorded': 'cleanEnergy',
     },
     status: 'covered',
   },
   INDIA_CPCB: {
     id: 'INDIA_CPCB',
-    name: 'CPCB Environmental Compliance',
+    name: 'CPCB environmental record: energy and fuel',
     shortName: 'CPCB',
     category: 'mandatory',
     applicableWhen: ['country_IN'],
     metricsMapping: {
-      'EmissionNorms': 'pollutantEmissionNorms',
-      'EnergyAudit': 'energyConsumption',
+      'Emission norms (stack and ambient monitoring)': 'pollutantEmissionNorms',
+      'Energy and fuel records': 'energyConsumption',
     },
     status: 'covered',
   },
@@ -457,9 +503,9 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'mandatory',
     applicableWhen: ['country_IN', 'size_large'],
     metricsMapping: {
-      'Section_A': 'companyOverview',
-      'Section_B': 'governanceLeadership',
-      'Section_C_P6': 'environmentalResponsibility',
+      'Section A: General disclosures': 'entityProfile',
+      'Section B: Management and process': 'governanceLeadership',
+      'Section C, Principle 6: GHG emissions': 'environmentalResponsibility',
     },
     status: 'partial',
   },
@@ -470,27 +516,26 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'mandatory',
     applicableWhen: ['exportsToEU'],
     metricsMapping: {
-      'DirectEmissions': 'scope1',
-      'IndirectEmissions': 'scope2',
-      'EmbeddedEmissions': 'productEmissions',
+      'Direct emissions': 'scope1',
+      'Indirect emissions (electricity)': 'scope2',
+      'Embedded emissions per good (CN code)': 'productEmissions',
     },
     status: 'covered',
   },
   ISO_14067: {
     id: 'ISO_14067',
-    name: 'ISO 14067: Greenhouse gases, Carbon footprint of products',
+    name: 'ISO 14067: Product carbon footprint',
     shortName: 'ISO 14067',
     category: 'voluntary',
     applicableWhen: ['productLevel'],
     metricsMapping: {
-      '6.3 Functional unit': 'functionalUnit',
-      '6.4 Product system boundary': 'productCarbonFootprint',
-      '6.4 Upstream materials': 'scope3',
-      '6.4 Energy in production': 'scope2',
-      '6.4 Direct process emissions': 'scope1',
+      // Site totals are context, not a product footprint, so only product items are listed.
+      'Functional unit': 'functionalUnit',
+      'Product system boundary': 'productCarbonFootprint',
+      'Carbon footprint per functional unit': 'productEmissions',
     },
     status: 'partial',
-    note: 'Requires product-level (HSN/CN coded) evidence. Without it the product footprint is reported as a gap, never allocated by assumption.',
+    note: 'Needs production data per product (HSN/CN code). Without it the product footprint is left as a gap, never estimated.',
   },
   INDIA_BRSR_CORE: {
     id: 'INDIA_BRSR_CORE',
@@ -499,14 +544,14 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'mandatory',
     applicableWhen: ['country_IN'],
     metricsMapping: {
+      // SEBI BRSR Core (12 July 2023), Annexure I: attribute 1 GHG footprint, 3 energy footprint.
       'Attribute 1: GHG footprint (Scope 1)': 'scope1',
       'Attribute 1: GHG footprint (Scope 2)': 'scope2',
       'Attribute 1: GHG intensity': 'ghgIntensity',
-      'Attribute 2: Energy footprint': 'energyConsumption',
-      'Attribute 9: Value chain emissions': 'valueChainEmissions',
+      'Attribute 3: Energy footprint': 'energyConsumption',
     },
     status: 'partial',
-    note: 'BRSR Core KPIs are subject to reasonable assurance or a third-party assessment when filed. This output is unassured and is source data for that filing, not the filing itself.',
+    note: 'BRSR Core KPIs need reasonable assurance when filed. This report is the unassured source data.',
   },
   LENDER_VIEW: {
     id: 'LENDER_VIEW',
@@ -515,14 +560,14 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'reader_view',
     applicableWhen: ['seekingFinance'],
     metricsMapping: {
-      'Financed baseline: Scope 1': 'scope1',
-      'Financed baseline: Scope 2': 'scope2',
-      'Value chain exposure': 'scope3',
-      'Reduction commitment': 'reductionTargets',
-      'Evidence traceability': 'evidenceTraceability',
+      'Baseline: Scope 1': 'scope1',
+      'Baseline: Scope 2': 'scope2',
+      'Scope 3': 'scope3',
+      'Reduction target': 'reductionTargets',
+      'Document trail for every figure': 'evidenceTraceability',
     },
     status: 'partial',
-    note: 'A reader view of the same verified dataset, ordered for credit assessment. It is not a credit rating or an eligibility decision.',
+    note: 'The same verified records, ordered for credit review. Not a credit rating or an eligibility decision.',
   },
   INVESTOR_VIEW: {
     id: 'INVESTOR_VIEW',
@@ -531,11 +576,11 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'reader_view',
     applicableWhen: ['seekingFinance'],
     metricsMapping: {
-      'Absolute emissions': 'totalEmissions',
-      'Scope 3 coverage': 'scope3',
+      'Total emissions': 'totalEmissions',
+      'Scope 3 emissions': 'scope3',
       'Emissions intensity': 'emissionIntensity',
-      'Targets and progress': 'reductionTargets',
-      'Data quality and assurance': 'evidenceTraceability',
+      'Target and progress': 'reductionTargets',
+      'Document trail for every figure': 'evidenceTraceability',
     },
     status: 'partial',
   },
@@ -546,7 +591,7 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'reader_view',
     applicableWhen: [],
     metricsMapping: {
-      'Entity identification': 'evidenceTraceability',
+      'Entity identification': 'entityProfile',
       'Direct emissions': 'scope1',
       'Energy indirect emissions': 'scope2',
       'Energy consumption': 'energyConsumption',
@@ -568,7 +613,7 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
       'Reduction target': 'reductionTargets',
     },
     status: 'partial',
-    note: 'The platform\'s own summary view of the verified dataset. Every framework export below renders the same records in that framework\'s structure.',
+    note: 'Your verified records on one page. Every framework report uses the same figures.',
   },
 };
 
@@ -664,7 +709,7 @@ export function assessMarketCompatibility(input: {
     disclosureCriteria,
     creditProjectEligible: false,
     creditStatement:
-      'Carbon-credit project eligibility is a separate question and is not established by this dataset. Credits require a recognised project methodology, additionality testing and accredited third-party validation and verification. This platform reports disclosure readiness only.',
+      'Carbon-credit project eligibility is a separate question and is not established by this dataset. Credits require a recognised project methodology, additionality testing and accredited third-party validation and verification. This report shows disclosure readiness only.',
   };
 }
 

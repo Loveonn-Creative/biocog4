@@ -224,10 +224,11 @@ export async function downloadPdf(w: Workbook, r: Result, hash: string, filename
   y += 6;
   for (const g of r.goods) {
     line(`CN ${g.cn}  ${g.name}`, 11, 16);
-    line(`SEE direct ${n(g.seeDirect, 4)}  |  indirect ${n(g.seeIndirect, 4)}${g.indirectCounted ? '' : ' (not counted)'}  |  t CO2e per t`, 10);
+    line(`Embedded emissions per tonne (SEE): direct ${n(g.seeDirect, 4)}  |  indirect ${n(g.seeIndirect, 4)}${g.indirectCounted ? '' : ' (not counted)'}  |  t CO2e per t`, 10);
     line(`Default value with ${Math.round(g.markup * 100)}% mark-up: ${g.defaultSee === null ? 'not listed' : n(g.defaultSee, 4)}  |  SEFA ${g.sefa === null ? 'n/a' : n(g.sefa, 4)}`, 10, 20);
   }
-  line(`Totals: direct ${n(r.totals.direct, 1)} t CO2e, indirect ${n(r.totals.indirect, 1)} t CO2e`);
+  // Site totals differ from SEE x tonnes: SEE also carries the emissions embedded in purchased precursors.
+  line(`Installation totals, this site only: direct ${n(r.totals.direct, 1)} t CO2e, indirect ${n(r.totals.indirect, 1)} t CO2e. Per-tonne figures also include purchased precursors.`);
   y += 6;
   line(`Structured to the ${TEMPLATE_SOURCE.title} (${TEMPLATE_SOURCE.version}). Report SHA-256 ${hash}`, 8, 11);
   doc.save(filename);
