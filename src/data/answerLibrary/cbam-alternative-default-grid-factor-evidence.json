@@ -1,0 +1,55 @@
+{
+  "slug": "cbam-alternative-default-grid-factor-evidence",
+  "q": "Can a country get a lower default grid emission factor under CBAM?",
+  "title": "CBAM alternative default grid factor",
+  "short": "Yes, but only through the Commission. A third country can submit official data showing its grid is cleaner than the default. The factor is a five-year average, the data is due by 30 June, and the new value is adopted by amending the Default Values Act. A plant cannot apply it on its own.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian cement and fertiliser exporters and their associations",
+  "sections": [
+    {
+      "h": "The default today",
+      "p": [
+        "Annex II of the Default Values Act gives an average grid factor per country, for about 126 countries, from licensed IEA data. A country not listed uses the 'Other countries and territories' value."
+      ]
+    },
+    {
+      "h": "How an alternative value is set",
+      "ul": [
+        "The country, or a group of countries, gives the Commission evidence that its average CO2 or grid emission factor is lower than the default.",
+        "The evidence must be reliable official data, such as national statistics.",
+        "The country calculates the factor as an average of the most recent 5 years, using equations 39 and 40 in section D.4.4 of Annex II to the Methodology Act.",
+        "The data goes to the Commission by 30 June of the year. The Commission aims to publish the modified value by 30 June of the following year.",
+        "If the Commission accepts the data, the value applies from the year the data was provided, through amendments to Annex II of the Default Values Act."
+      ]
+    },
+    {
+      "h": "What it means for a plant",
+      "p": [
+        "Your monitoring method does not change. Check the Commission's website for the latest Default Values Act and emissions report template before you fill the annual report. The Commission has said the Default Values Act will be revised by 2027 at the latest."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills into monthly kWh by connection, so whichever grid factor applies, the consumption side of the sum is ready. Senseible does not set the CBAM grid factor.",
+  "links": [
+    {
+      "label": "Electricity factor choices for cement and fertilisers",
+      "to": "/answers/cbam-indirect-emissions-electricity-factor-india"
+    },
+    {
+      "label": "Where to find the official default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CEA and IEA grid factors compared",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.10.1 and 4.10.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

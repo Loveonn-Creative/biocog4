@@ -1,0 +1,64 @@
+{
+  "slug": "cbam-steel-categories-stainless-alloy-carbon",
+  "q": "How does CBAM define carbon, low alloy, high alloy and stainless steel?",
+  "title": "CBAM steel categories defined",
+  "short": "Stainless steel has 1.2% carbon or less and 10.5% chromium or more by weight. High alloy steel has 8% or more metallic alloying elements, or needs high surface quality and processability. Low alloy is other alloy steel. Carbon steel is everything else. The category and route select your free allocation benchmark.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian steel makers, re-rollers and exporters of alloy and stainless products",
+  "sections": [
+    {
+      "h": "The four definitions",
+      "ul": [
+        "Stainless steel: alloy steel with 1.2% or less carbon and 10.5% or more chromium by weight, with or without other elements.",
+        "High alloy steel: steel other than stainless that has 8% or more metallic alloying elements, or steel where high surface quality and processability is required.",
+        "Low alloy steel: alloy steel other than high alloy.",
+        "Carbon steel: steel other than stainless, high alloy or low alloy."
+      ]
+    },
+    {
+      "h": "Why the category matters",
+      "p": [
+        "Some CN codes carry several benchmark values, and the right one depends on a letter code. The code is chosen from the steel category and the production route."
+      ]
+    },
+    {
+      "h": "The letter codes",
+      "ul": [
+        "C: carbon steel, blast furnace and basic oxygen furnace route.",
+        "D: carbon steel, direct reduced iron and electric arc furnace route.",
+        "E: carbon steel, scrap and electric arc furnace route.",
+        "F, G, H: low alloy steel on the same three routes.",
+        "J: high alloy steel, made in an electric arc furnace with scrap as main input."
+      ]
+    },
+    {
+      "h": "Where the route comes from",
+      "p": [
+        "With actual data, you know your own route. With default values, the route is read from the last column of the Default Values Act table for the country and CN code, or from the 'Other countries and territories' table or Annex IV if the origin is unknown."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads mill test certificates and purchase invoices into records of grade and quantity, which helps you sort goods by steel type. The category call itself comes from your product specification and verifier.",
+  "links": [
+    {
+      "label": "CBAM benchmark values",
+      "to": "/answers/cbam-benchmark-values-steel-cement-aluminium"
+    },
+    {
+      "label": "Free allocation with actual data",
+      "to": "/answers/cbam-free-allocation-actual-data-formula"
+    },
+    {
+      "label": "Which annex of the default values to use",
+      "to": "/answers/which-annex-of-cbam-default-values-act-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 4, free allocation adjustment (14 August 2026), section 2.1.2 (steel category definitions) and Table 2-2 (route codes)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "cbam-verification-when-to-start-timeline",
+  "q": "When should an Indian exporter start CBAM verification in the year?",
+  "title": "When to start CBAM verification",
+  "short": "Early in the reporting year. There is no fixed verification deadline, but a calendar-year report cannot be finished before January, importers file by 30 September, and the verification guidance says declarants need reports by mid-August at the latest. Suppliers of precursors should verify first, so their customers can use the results.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "The fixed points",
+      "ul": [
+        "The reporting period is the calendar year, 1 January to 31 December. Verification can start during the year but cannot conclude before January.",
+        "Authorised declarants submit the annual CBAM declaration by 30 September.",
+        "Declarants need time to compile it and buy certificates, so the guidance says verification reports should reach them by mid-August at the latest."
+      ]
+    },
+    {
+      "h": "If you make a precursor",
+      "p": [
+        "Aim to have your report verified as early in the year as possible. The operator who uses your product as input needs your verification report before its own verification."
+      ]
+    },
+    {
+      "h": "If you make a complex good",
+      "p": [
+        "Agree a timeline with your verifier and finalise the emissions report early, for example in the second quarter. The guidance example: if verification is to finish by the end of July, compile your report by the end of June. If precursor reports have not arrived by then, use the Commission's defaults for those inputs."
+      ]
+    },
+    {
+      "h": "Why begin before year end",
+      "p": [
+        "The verifier can do the strategic analysis, risk analysis and a site visit during the year. That brings problems to light while there is still time to fix them. Changes to your systems must still leave time for the verified report to be shared."
+      ]
+    },
+    {
+      "h": "Capacity",
+      "p": [
+        "Contract a verifier early. Accreditation is on a rolling basis and verifier capacity may tighten near the end of the reporting period."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel, power and purchase documents month by month into dated records, so the year's data builds up as you go instead of in a rush after December. It does not schedule or perform verification.",
+  "links": [
+    {
+      "label": "What exporters send and when",
+      "to": "/answers/cbam-timeline-what-indian-exporters-send-when"
+    },
+    {
+      "label": "Finding an accredited verifier",
+      "to": "/answers/how-to-find-cbam-accredited-verifier"
+    },
+    {
+      "label": "When accredited verifiers are available",
+      "to": "/answers/when-are-cbam-accredited-verifiers-available"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, Introduction to CBAM concepts (14 August 2026), sections 2.4.4 and 2.4.5",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

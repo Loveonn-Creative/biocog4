@@ -1,0 +1,70 @@
+{
+  "slug": "cbam-verifier-strategic-analysis-risk-analysis",
+  "q": "What does a CBAM verifier do before testing my numbers?",
+  "title": "CBAM verifier: strategic and risk analysis",
+  "short": "First a strategic analysis of your plant: size, processes, sources, meters, precursors, electricity and control system. Then a risk analysis of inherent and control risks. These set the verification plan: a programme of activities, a test plan for your controls and a data sampling plan. Manual data transfers and weak checking raise the work.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "Strategic analysis",
+      "ul": [
+        "Size and complexity: number of goods, processes and routes.",
+        "The monitoring plan and its methods, including plant diagrams and flow charts.",
+        "Number of source streams, any continuous emission measurement systems, and heat, waste gas or CO2 transfers between units.",
+        "Whether meters are under your control, and whether factors come from lab analyses or constant values.",
+        "Number and variety of bought precursors.",
+        "For goods where electricity counts: where power comes from and how you set its factor.",
+        "The data flow and control system."
+      ]
+    },
+    {
+      "h": "Is your plan current?",
+      "p": [
+        "The verifier checks whether the plan is the latest version and whether the plant or plan has changed. If the plan does not reflect what you do, the verifier asks for an update and may put verification on hold. Minor issues can go into the report instead of waiting."
+      ]
+    },
+    {
+      "h": "Risk analysis",
+      "ul": [
+        "Inherent risk examples: many sources and fuels, manual transfers from paper logs to spreadsheets to reports, linked spreadsheets, unit conversions such as volume to mass, meter or IT failure.",
+        "Control risk examples: missing automated controls, no meter maintenance, the same person entering and checking data, reviews not done, a reviewer who lacks the knowledge."
+      ]
+    },
+    {
+      "h": "The verification plan",
+      "p": [
+        "Three parts: a verification programme describing what is done, when and how; a test plan for your controls; and a data sampling plan. The plan is revised if the work shows risks higher or lower than first judged."
+      ]
+    },
+    {
+      "h": "What you can do",
+      "p": [
+        "A working control system lowers the risk the verifier finds, which reduces the effort and cost of verification."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns paper bills and invoices into structured, fingerprinted records, which removes one manual transfer step from your data flow. Verification itself is done by an accredited verifier.",
+  "links": [
+    {
+      "label": "Control system in three steps",
+      "to": "/answers/cbam-control-system-risk-assessment-three-steps"
+    },
+    {
+      "label": "How many invoices a verifier samples",
+      "to": "/answers/how-many-invoices-does-a-verifier-sample"
+    },
+    {
+      "label": "How a verifier tests unusual figures",
+      "to": "/answers/cbam-verifier-analytical-procedures-unusual-figures"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.4 to 4.6",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

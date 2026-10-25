@@ -1,0 +1,79 @@
+{
+  "slug": "cbam-monitoring-plan-minimum-elements-list",
+  "q": "What must a CBAM monitoring plan contain for 2026?",
+  "title": "CBAM monitoring plan: minimum contents",
+  "short": "The Commission's guidance lists 22 minimum elements, from the date and version number to a control system. They include goods by CN code, production processes, source streams, precursors with supplier names, electricity and heat details, and a diagram with no gaps or double counting. You may adapt the layout but keep every element.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "Plan basics (items 1 to 6)",
+      "ul": [
+        "Date and version number of the plan.",
+        "Description of the installation and its production processes.",
+        "Every CBAM good you make, by CN code and functional unit. For cement add clinker content, for fertilisers the nitrogen content.",
+        "Each production process and route, with the goods delivered from it.",
+        "Non-CBAM goods made in each process and their quantity, where relevant.",
+        "The CBAM benchmarks you will use for the free allocation adjustment."
+      ]
+    },
+    {
+      "h": "Methods and flows (items 7 to 21)",
+      "ul": [
+        "How data is monitored in each process: calculation formulae and input data, or measurement systems and exact meter locations.",
+        "How calculation factors are set, and the sampling plan.",
+        "Source streams and emission sources, split by method: standard or mass balance, or measurement-based.",
+        "A method for PFC emissions if you make primary aluminium.",
+        "A diagram and process description with system boundaries that shows no double counting and no data gaps.",
+        "Precursors used in each process, with the supplier name and country where bought from another installation.",
+        "Zero-rated fuels, and how you show they qualify.",
+        "Measurable heat imported or exported, and which installations are involved.",
+        "Electricity made on site: cogeneration or separate, fossil or renewable, exported or not.",
+        "Evidence for any actual electricity factor, and for imported electricity if you export power to the EU.",
+        "Waste gases used, imported or exported.",
+        "CO2 capture, storage or use, with a contact at the receiving site."
+      ]
+    },
+    {
+      "h": "The control system (item 22)",
+      "p": [
+        "The last item is the control system: calibration of meters, a risk assessment of the data flow, quality assurance of IT systems, separation of duties, internal reviews, corrective action, control of outsourced work, and record keeping with document versions."
+      ]
+    },
+    {
+      "h": "Worth knowing",
+      "ul": [
+        "The plan must be available to the verifier in English. Keep a local-language copy for your staff.",
+        "In August 2026 the Commission said no ready-made electronic template for the plan was available, so you build your own.",
+        "A summary of the plan now goes into the operator's annual emissions report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel bills, electricity bills and purchase invoices into dated, fingerprinted records, so the source documents your plan points to are easy to find. It does not write your monitoring plan or file anything in the CBAM Registry.",
+  "links": [
+    {
+      "label": "Older overview of the monitoring document",
+      "to": "/answers/cbam-monitoring-methodology-document-contents"
+    },
+    {
+      "label": "What goes in the plan and what in procedures",
+      "to": "/answers/cbam-monitoring-plan-or-written-procedures"
+    },
+    {
+      "label": "Setting up the control system",
+      "to": "/answers/cbam-control-system-risk-assessment-three-steps"
+    },
+    {
+      "label": "The mandatory emissions report template",
+      "to": "/answers/cbam-operator-emissions-report-template-mandatory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.5.1, Table 4-4 (minimum elements from Annex II, section A.5, of the Methodology Act)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

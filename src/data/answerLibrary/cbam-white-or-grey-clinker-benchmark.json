@@ -1,0 +1,68 @@
+{
+  "slug": "cbam-white-or-grey-clinker-benchmark",
+  "q": "What counts as white cement clinker under CBAM, and why does it matter?",
+  "title": "CBAM white or grey clinker",
+  "short": "White cement clinker has at most 0.4% Fe2O3, 0.003% Cr2O3 and 0.03% Mn2O3 by mass and is used for products like tile adhesives and joint fillers. Any other clinker is grey. They carry separate TARIC codes, separate embedded emissions figures and separate free allocation benchmarks.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian cement and white cement exporters",
+  "sections": [
+    {
+      "h": "The definition",
+      "p": [
+        "The Free Allocation Adjustment Act defines white cement clinker as clinker for use as the main binding component in materials such as joint fillers, ceramic tile adhesives, insulation and anchorage mortars, industrial floor mortars, ready mixed plaster, repair mortars and water-tight coatings, with maximum average contents of 0.4 mass-% Fe2O3, 0.003 mass-% Cr2O3 and 0.03 mass-% Mn2O3. Grey clinker is any other clinker."
+      ]
+    },
+    {
+      "h": "Codes",
+      "ul": [
+        "Clinker: TARIC 2523 10 00 10 (white) and 2523 10 00 90 (other, including grey).",
+        "Hydraulic cement: TARIC 2523 90 00 10 (white) and 2523 90 00 90 (other, including grey)."
+      ]
+    },
+    {
+      "h": "What you calculate separately",
+      "p": [
+        "Embedded emissions for clinker goods must be worked out separately for white and for other clinkers. The same applies to hydraulic cements."
+      ]
+    },
+    {
+      "h": "Mixed cements",
+      "p": [
+        "For other hydraulic cements (CN 2523 90 00) that blend white clinker with grey clinker and/or calcined clay, the benchmark is a weighted average reflecting the composition."
+      ]
+    },
+    {
+      "h": "Calcined clay",
+      "p": [
+        "CN 2507 00 80 also covers non-calcined kaolinic clays. Only calcined clays, TARIC 2507 00 80 80, are reported."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads dispatch and sales invoices into quantities by product, which you can split between white and grey lines. It does not classify clinker.",
+  "links": [
+    {
+      "label": "Is cement covered by CBAM",
+      "to": "/answers/is-cement-covered-by-cbam"
+    },
+    {
+      "label": "CBAM benchmark values",
+      "to": "/answers/cbam-benchmark-values-steel-cement-aluminium"
+    },
+    {
+      "label": "OPC and PPC from the same clinker",
+      "to": "/answers/cbam-opc-and-ppc-from-same-clinker-split"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 4, free allocation adjustment (14 August 2026), section 2.1.2 (white clinker definition and Fe2O3, Cr2O3, Mn2O3 limits)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 5a, cement (14 August 2026), section 3.1.2 and Table 3-1 (white and grey TARIC split)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/f87a2022-9dcb-45cb-a415-4c460e5ad672_en?filename=Guidance%20No.%205a%20-%20Sector-specific%20guidance%20document%20on%20cement.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

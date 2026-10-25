@@ -1,0 +1,66 @@
+{
+  "slug": "which-annex-of-cbam-default-values-act-to-use",
+  "q": "Which annex of the CBAM default values do I use for goods, electricity and precursors?",
+  "title": "Which CBAM default values annex",
+  "short": "Annex I gives goods and precursor defaults by country and CN code, Annex II grid factors for a plant's own electricity, Annex III factors for electricity imported into the EU, and Annex IV the highest precursor values when the origin is unknown. Marked-up values apply to Annex I and IV.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters, traders and EU importers working with default values",
+  "sections": [
+    {
+      "h": "The four annexes",
+      "ul": [
+        "Annex I: t CO2e per tonne of good by CN code, one table per country, for about 120 countries. Used for final goods and for precursors where actual data is used for the complex good.",
+        "Annex II: average grid factor in t CO2e per MWh for about 126 countries, for the electricity a plant consumes. Based on licensed IEA data.",
+        "Annex III: factors for electricity imported into the EU as a good, for 17 countries, plus an EU value for any country not listed.",
+        "Annex IV: the highest default values per CN code, for precursors whose country of production cannot be identified."
+      ]
+    },
+    {
+      "h": "Reading the CN code",
+      "p": [
+        "A 4-digit code applies to every 8-digit code that starts with it, a 6-digit code to every 8-digit code under it, and an 8-digit code only to that product."
+      ]
+    },
+    {
+      "h": "When the country shows a dash",
+      "p": [
+        "If the good is not listed for the country, or its field shows a dash, use the 'Other countries and territories' table in Annex I."
+      ]
+    },
+    {
+      "h": "Mark-ups",
+      "p": [
+        "Values in Annexes I and IV are increased by 10% in 2026, 20% in 2027 and 30% from 2028, and by 1% for fertilisers. They already reflect whether indirect emissions count for the good. The Commission's report template fills in defaults and mark-ups largely automatically."
+      ]
+    },
+    {
+      "h": "Revision",
+      "p": [
+        "The Default Values Act is to be revised by 2027 at the latest."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your invoices into quantities by product, which you can set against the CN codes in these tables. Senseible does not publish or supply the Commission's default values.",
+  "links": [
+    {
+      "label": "Where to find the official default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "India default shows a dash",
+      "to": "/answers/cbam-india-default-value-shows-a-dash"
+    },
+    {
+      "label": "Default value mark-ups by year",
+      "to": "/answers/cbam-default-value-mark-up-by-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.10.1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "cbam-electricity-from-several-sources-weighted",
+  "q": "How does CBAM treat a plant that uses grid power and its own captive power?",
+  "title": "CBAM electricity from several sources",
+  "short": "When a plant draws power from more than one source, the default is a weighted average of each source's emission factor, weighted by its share of the plant's total electricity use. If you can show a production process used only one source, or a subset, that process may use that source's factor instead.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian cement and fertiliser plants with grid and captive or directly connected power",
+  "sections": [
+    {
+      "h": "The default rule",
+      "p": [
+        "Article 9 of the Methodology Act sets it. Take the emission factor of each source (grid, your own plant, a directly connected plant or a power purchase agreement supplier) and weight it by the share of the installation's total electricity that source supplied."
+      ]
+    },
+    {
+      "h": "The exception",
+      "p": [
+        "If you can show the verifier that a given production process used electricity from one source only, or from a subset of sources, the indirect emissions of goods from that process use that source's factor, or the weighted average of that subset."
+      ]
+    },
+    {
+      "h": "What proves it",
+      "ul": [
+        "Smart metering at generation and at consumption can show which source fed which process.",
+        "Electricity cannot be stored across years for this purpose. It counts in the period it was produced, so there are no stocks to carry over, unlike precursors."
+      ]
+    },
+    {
+      "h": "Where it applies",
+      "p": [
+        "Indirect emissions only count for goods outside Annex II of the CBAM Regulation, which in practice means cement and fertilisers. For iron and steel, aluminium and hydrogen only direct emissions count, except for precursors not listed in Annex II."
+      ]
+    },
+    {
+      "h": "What the verifier checks",
+      "p": [
+        "That electricity use is metered and attributed to each process, that the right default factor is used for grid power, that your own plant's emissions follow the monitoring rules, and that the weighting is correct."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads grid electricity bills into monthly units per connection, which gives you the grid side of the weighting. Your captive plant's meter data stays in your plant systems.",
+  "links": [
+    {
+      "label": "Electricity factor choices for cement and fertilisers",
+      "to": "/answers/cbam-indirect-emissions-electricity-factor-india"
+    },
+    {
+      "label": "What does not count as an actual factor",
+      "to": "/answers/cbam-green-certificates-virtual-ppa-not-allowed"
+    },
+    {
+      "label": "Captive power in cement CBAM figures",
+      "to": "/answers/cement-plant-captive-power-cbam-indirect-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, Quick guide for non-EU operators (14 August 2026), step 3, indirect emissions",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.7 and 4.8.3.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 7.4.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

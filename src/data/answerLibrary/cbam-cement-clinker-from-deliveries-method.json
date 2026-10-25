@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-cement-clinker-from-deliveries-method",
+  "q": "Can a cement plant work out clinker output from cement deliveries for CBAM?",
+  "title": "CBAM clinker output from deliveries",
+  "short": "Yes. If you cannot weigh clinker directly, a stock-adjusted balance from cement deliveries is allowed, using your clinker to cement ratio. Process emissions then use a standard 0.525 t CO2 per tonne of clinker unless you analyse it. The two process methods are treated as equivalent, so pick the more reliable one.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian cement plants and clinker grinding units exporting to the EU",
+  "sections": [
+    {
+      "h": "Method B inputs",
+      "p": [
+        "Method B is the output-based method. Clinker produced equals (cement delivered minus cement stock change) x clinker to cement ratio, minus clinker supplied to you, plus clinker you dispatched, minus clinker stock change. Direct weighing of clinker is the first choice if technically feasible."
+      ]
+    },
+    {
+      "h": "Factors",
+      "ul": [
+        "Minimum requirement: a standard emission factor of 0.525 t CO2 per tonne of clinker. Analysing the clinker is the recommended improvement.",
+        "The conversion factor may always be set at 1, the conservative assumption, to cut monitoring effort."
+      ]
+    },
+    {
+      "h": "Method A or B",
+      "p": [
+        "Method A uses the carbonate content of process inputs, with an adjustment for discarded cement kiln dust or bypass dust. Method B uses clinker output. They are treated as equivalent, so choose the one that gives more reliable data, suits your equipment and avoids unreasonable costs."
+      ]
+    },
+    {
+      "h": "Clinker to cement ratio",
+      "ul": [
+        "Derive it by lab analysis for each cement product, or by calculation from deliveries, stock changes and all additives including bypass dust and kiln dust.",
+        "For Portland cement it typically runs from 80 to 95%.",
+        "For CN 2523 10 00, 2523 21 00, 2523 29 00 and 2523 90 00 the functional unit is tonnes of clinker contained in the goods.",
+        "Gypsum, blast furnace slag and fly ash are not precursors for cement and count as zero embedded emissions."
+      ]
+    },
+    {
+      "h": "Made-to-order blends",
+      "p": [
+        "For cement sold in custom compositions, you must issue a declaration of clinker content for each consignment, and that consignment's clinker content goes into the calculation."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads dispatch invoices and fuel and power bills into dated, fingerprinted records, which supports the delivery and energy lines of this balance. Clinker stock counts come from your plant records.",
+  "links": [
+    {
+      "label": "Kiln dust and bypass dust correction",
+      "to": "/answers/cement-kiln-bypass-dust-calcination-correction"
+    },
+    {
+      "label": "White or grey clinker",
+      "to": "/answers/cbam-white-or-grey-clinker-benchmark"
+    },
+    {
+      "label": "OPC and PPC from the same clinker",
+      "to": "/answers/cbam-opc-and-ppc-from-same-clinker-split"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5a, cement (14 August 2026), section 3.1.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/f87a2022-9dcb-45cb-a415-4c460e5ad672_en?filename=Guidance%20No.%205a%20-%20Sector-specific%20guidance%20document%20on%20cement.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

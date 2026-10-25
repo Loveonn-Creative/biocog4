@@ -1,0 +1,69 @@
+{
+  "slug": "cbam-hydrogen-from-electrolysis-as-precursor",
+  "q": "If I buy hydrogen made by electrolysis as an input, what does CBAM need from the supplier?",
+  "title": "CBAM: electrolysis hydrogen as an input",
+  "short": "Hydrogen routes with only electricity emissions give a direct figure of zero, but if you use that hydrogen as a precursor you must still name its production route. Using the zero as an actual value needs the producer's installation to be verified under CBAM rules, though a verifier may simplify the work, for example for hydrogen certified as RFNBO.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian ammonia, DRI and steel producers planning to buy green hydrogen",
+  "sections": [
+    {
+      "h": "Why zero needs proof",
+      "p": [
+        "For hydrogen as a CBAM good only direct emissions count, and electrolysis has minimal direct emissions. But a buyer who uses that hydrogen as a precursor claims an actual value of zero, and the guidance says that requires verification of the producing installation under CBAM rules."
+      ]
+    },
+    {
+      "h": "What to get from the supplier",
+      "ul": [
+        "The production route, named.",
+        "The producer's verification report for the production year.",
+        "The sector parameters and identity of the installation, as for any precursor."
+      ]
+    },
+    {
+      "h": "Simpler verification",
+      "p": [
+        "Using a risk-based approach, verifiers may simplify the work for hydrogen free of direct emissions. The guidance gives an example: hydrogen certified as a renewable fuel of non-biological origin (RFNBO) under the EU Renewable Energy Directive, a certification needed to import green hydrogen under the EU's renewable energy framework."
+      ]
+    },
+    {
+      "h": "Indirect emissions of this hydrogen",
+      "p": [
+        "If you make ammonia, hydrogen from a separate process such as electrolysis on your site is a precursor listed in Annex II. Its electricity emissions are then left out of the ammonia figure."
+      ]
+    },
+    {
+      "h": "Changed since the transitional period",
+      "p": [
+        "Until 2025, hydrogen certified under Delegated Regulation (EU) 2023/1184 could use a zero electricity factor. In the definitive period hydrogen's electricity emissions are not counted at all."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and purchase invoices into dated records for a plant that buys or makes hydrogen. It does not issue hydrogen certificates or verify a producer's route.",
+  "links": [
+    {
+      "label": "Electrolytic hydrogen: direct emissions only",
+      "to": "/answers/cbam-electrolytic-hydrogen-direct-emissions-only"
+    },
+    {
+      "label": "India green hydrogen and the EU RFNBO threshold",
+      "to": "/answers/india-green-hydrogen-vs-eu-rfnbo-threshold"
+    },
+    {
+      "label": "When a precursor's electricity emissions count",
+      "to": "/answers/cbam-precursor-indirect-emissions-annex-ii-rule"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5b, hydrogen (14 August 2026), sections 2.3.3.3 and 3.1.3",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/04ceca3b-466e-4ed9-a1a5-a47c2e5e5be0_en?filename=Guidance%20No.%205b%20-%20Sector-specific%20guidance%20document%20on%20hydrogen.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.9.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

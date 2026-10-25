@@ -1,0 +1,62 @@
+{
+  "slug": "cbam-verifier-pre-contract-checks-before-accepting",
+  "q": "What does a CBAM verifier check before accepting my engagement?",
+  "title": "What a CBAM verifier checks first",
+  "short": "Before accepting, the verifier reviews your monitoring plan and last report, risks to its own independence, time needed, and whether it can work in your country: office, language, travel, visas, security. It must have competent staff and set time from the risks found. If more time is needed later, the contract must allow an adjustment.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "The pre-contract review",
+      "ul": [
+        "Risks in the engagement, judged from your plan and your report (this year's if ready, otherwise last year's).",
+        "Risks to its impartiality and independence.",
+        "Time risks.",
+        "Whether it can verify in your country: an office there helps but is not mandatory, staff who can communicate in your language if English is not enough, and whether travel is possible, including security, visas and travel time."
+      ]
+    },
+    {
+      "h": "Competence and time",
+      "p": [
+        "The verifier must have the personnel, competence and resources for a team suited to your plant, and must set the time from the risks found. No minimum number of days is set in the rules. Insufficient contracted time must not lead to less work than the risks need, and travel time to remote plants needs special attention."
+      ]
+    },
+    {
+      "h": "What you can expect in the contract",
+      "p": [
+        "The evaluation is documented, along with how its risks are handled in the contract. The time allocated is not a fixed number of person-days: the contract must include a provision to adjust it if the detailed work needs more."
+      ]
+    },
+    {
+      "h": "What you should do",
+      "ul": [
+        "Contract early in the reporting year.",
+        "Give the verifier your plan and last year's emissions report at this stage.",
+        "Ask how the contract handles extra days."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not verify emissions or choose a verifier for you. It keeps fuel, power and purchase records in dated, fingerprinted form, ready to hand over once the engagement starts.",
+  "links": [
+    {
+      "label": "Finding an accredited verifier",
+      "to": "/answers/how-to-find-cbam-accredited-verifier"
+    },
+    {
+      "label": "Why a verifier will not quote a fixed fee",
+      "to": "/answers/why-cbam-verifier-wont-quote-fixed-fee"
+    },
+    {
+      "label": "Who cannot act as your verifier",
+      "to": "/answers/verifier-independence-who-cannot-verify"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-meter-failure-data-gap-conservative-estimate",
+  "q": "What do I do under CBAM when a meter fails or a reading is missing?",
+  "title": "CBAM data gaps: conservative estimates",
+  "short": "Fill the gap with a conservative estimate: one that cannot understate emissions or overstate production. Replace a broken meter quickly, write your gap method into the monitoring plan, and review how to prevent a repeat. A verifier treats a data gap as a misstatement that must be closed, even if it is small.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "How to fill each kind of gap",
+      "ul": [
+        "Missing calculation factor, such as a late fuel analysis: use a standard value.",
+        "Missing activity data, such as a truck not weighed: use the average mass of similar loads in the same period plus a supplement, for example one standard deviation.",
+        "Meter not working: replace it as soon as possible. Meanwhile use another instrument, even one with higher uncertainty. If none exists, estimate conservatively.",
+        "Flow meter: use the average flow rate for the period plus a supplement.",
+        "Heat: estimate from the process efficiency measured over the period, plus a supplement."
+      ]
+    },
+    {
+      "h": "Put the method in the plan",
+      "p": [
+        "The method you choose goes into the monitoring plan for future use. Review regularly how to avoid the same gap, for example by keeping spare units of critical instruments."
+      ]
+    },
+    {
+      "h": "What the verifier does",
+      "p": [
+        "The verifier checks that your gap method was appropriate and applied correctly. If the method was not in the plan beforehand, the verifier checks that it cannot understate emissions or overstate production. Data gaps count as misstatements, so you must close them with surrogate data before a verification statement is issued, even when the gap is below the materiality threshold."
+      ]
+    }
+  ],
+  "senseible": "Senseible flags a bill or invoice line with a missing quantity or unit as needing data instead of filling in a number, so a gap stays visible until you resolve it. The estimate method is still yours to document.",
+  "links": [
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "CBAM materiality threshold",
+      "to": "/answers/cbam-verification-materiality-5-percent"
+    },
+    {
+      "label": "When a verifier asks about an unusual month",
+      "to": "/answers/verifier-asks-why-a-month-looks-unusual"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.10.3",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.8",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}
