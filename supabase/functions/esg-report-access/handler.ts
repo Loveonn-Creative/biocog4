@@ -11,6 +11,7 @@ import {
   RESOURCE, ROLES, labelOf, maskEmail, mxVerdict, validateLead, type DnsAnswer,
 } from '../_shared/resourceLead.ts';
 import { sha256Hex, signLink, verifyLink } from '../_shared/resourceLink.ts';
+import { platformIp } from '../_shared/platformIp.ts';
 
 export const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -266,7 +267,7 @@ export function createHandler(deps: Deps) {
       if (action === 'download') return await download((raw as Record<string, unknown>).token);
       if (action === 'account') return await account(req);
       if (action !== 'request') return json({ error: 'Something went wrong. Please try again.' }, 400);
-      const ip = req.headers.get('cf-connecting-ip') || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+      const ip = platformIp(req.headers);
       return await request(raw as Record<string, unknown>, await sha256Hex(`${deps.ipSalt}:${ip}`));
     } catch (error) {
       // No personal details in logs (DPDP).

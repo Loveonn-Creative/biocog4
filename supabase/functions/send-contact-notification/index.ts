@@ -102,7 +102,7 @@ const handler = async (req: Request): Promise<Response> => {
       const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
       if (!url || !key) throw new Error('Scope review storage is unavailable');
       const db = createClient(url, key, { auth: { persistSession: false } });
-      const ip = req.headers.get('cf-connecting-ip') || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+      const ip = platformIp(req.headers);
       const secret = Deno.env.get('LOVABLE_API_KEY');
       if (!secret) throw new Error('Notification service unavailable');
       const payload = new TextEncoder().encode(`${secret}:${ip}`);
@@ -156,8 +156,9 @@ const handler = async (req: Request): Promise<Response> => {
     const name = escapeHtml(checked.name);
     const email = escapeHtml(checked.email);
     const phone = escapeHtml(checked.phone ?? undefined);
-    const company = escapeHtml(rawBody.company);
-    const category = escapeHtml(rawBody.category);
+    // Company and category were passed through unchecked: cap the one, allow-list the other.
+    const company = escapeHtml(typeof rawBody.company === 'string' ? rawBody.company.trim().slice(0, 160) : undefined);
+    const category = typeof rawBody.category === 'string' && rawBody.category in categoryLabels ? rawBody.category : 'general';
     const message = escapeHtml(checked.message);
     const newsletter = rawBody.newsletter;
     
@@ -175,7 +176,7 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Email service not configured");
     }
 
-    const categoryLabel = categoryLabels[category] || category;
+    const categoryLabel = categoryLabels[category];
     
     const emailHtml = `
       <!DOCTYPE html>
@@ -239,7 +240,7 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "Senseible Contact <onboarding@resend.dev>",
         to: [inbox],
-        reply_to: email,
+        reply_to: checked.email,
         subject: `[${categoryLabel}] New inquiry from ${name}`,
         html: emailHtml,
       }),
@@ -263,7 +264,8 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in send-contact-notification:", error?.message ?? "unknown");
     return new Response(
-      JSON.stringify({ error: error.message }),
+      // Internal details (missing secrets, provider status) stay in the log.
+      JSON.stringify({ error: "We could not send your message right now. Please try again, or write to us on WhatsApp." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

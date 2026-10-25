@@ -4,6 +4,7 @@
 
 import { canonicalPlan, effectivePlanTier, type PlanTier } from './planLimits.ts';
 import { dayIst, monthStartDayIst } from './intelligence.ts';
+import { platformIp } from './platformIp.ts';
 
 // The query builder's chain is typed loosely on purpose: this file must not
 // import supabase-js (it runs in the website tests with a fake client).
@@ -35,10 +36,14 @@ export async function guestSubject(ip: string, day: string, secret: string): Pro
   return 'g:' + [...sig.slice(0, 16)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-/** The caller's address as the platform's proxy reports it. Unknown callers share one guest count. */
+/**
+ * The caller's address as the platform's proxy reports it. Unknown callers
+ * share one guest count. Delegates to platformIp: the first X-Forwarded-For
+ * entry is whatever the caller sent, so trusting it let a script rotate it
+ * and reset the guest limits.
+ */
 export function clientIp(headers: Headers): string {
-  const fwd = headers.get('x-forwarded-for')?.split(',')[0]?.trim();
-  return fwd || headers.get('cf-connecting-ip') || headers.get('x-real-ip') || 'unknown';
+  return platformIp(headers);
 }
 
 export type UseKind = 'message' | 'voice_session' | 'guest_scan';

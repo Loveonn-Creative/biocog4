@@ -529,7 +529,7 @@ serve(async (req) => {
   } catch (error: any) {
     console.error("Invoice generation error:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Invoice could not be generated" }),
       { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }

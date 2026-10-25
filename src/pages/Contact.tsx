@@ -60,8 +60,23 @@ const Contact = () => {
     newsletter: false
   });
 
+  // Inline errors under each field instead of the browser's bubble, which
+  // sat under the sticky header on phones.
+  const [errors, setErrors] = useState<Partial<Record<'name' | 'email' | 'message', string>>>({});
+  const setField = (k: keyof typeof form, v: string) => {
+    setForm({ ...form, [k]: v });
+    if (k in errors) setErrors((prev) => ({ ...prev, [k]: undefined }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const found: typeof errors = {};
+    if (form.name.trim().length < 2) found.name = 'Add your name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.trim())) found.email = 'Add an email we can reply to, like you@company.com.';
+    if (!form.message.trim()) found.message = 'Tell us what you need, even in one line.';
+    setErrors(found);
+    const first = (['name', 'email', 'message'] as const).find((k) => found[k]);
+    if (first) { document.getElementById(first)?.focus(); return; }
     setIsSubmitting(true);
 
     try {
@@ -150,17 +165,21 @@ const Contact = () => {
               {scopeInput ? 'Review the scope and your contact details before sending.' : 'We respond within 24-72 hours.'}
             </p>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name *</Label>
                   <Input
                     id="name"
                     required
+                    className="scroll-mt-28"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                     value={form.name}
-                    onChange={(e) => setForm({...form, name: e.target.value})}
+                    onChange={(e) => setField('name', e.target.value)}
                     placeholder="Your name"
                   />
+                  {errors.name && <p id="name-error" role="alert" className="text-sm text-destructive">{errors.name}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email *</Label>
@@ -168,10 +187,14 @@ const Contact = () => {
                     id="email"
                     type="email"
                     required
+                    className="scroll-mt-28"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     value={form.email}
-                    onChange={(e) => setForm({...form, email: e.target.value})}
+                    onChange={(e) => setField('email', e.target.value)}
                     placeholder="you@company.com"
                   />
+                  {errors.email && <p id="email-error" role="alert" className="text-sm text-destructive">{errors.email}</p>}
                 </div>
               </div>
               
@@ -220,10 +243,14 @@ const Contact = () => {
                   id="message"
                   required
                   rows={4}
+                  className="scroll-mt-28"
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
                   value={form.message}
-                  onChange={(e) => setForm({...form, message: e.target.value})}
+                  onChange={(e) => setField('message', e.target.value)}
                   placeholder="Tell us about your carbon and ESG needs..."
                 />
+                {errors.message && <p id="message-error" role="alert" className="text-sm text-destructive">{errors.message}</p>}
               </div>
               
               {/* Newsletter opt-in */}

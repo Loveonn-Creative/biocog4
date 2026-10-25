@@ -11,6 +11,7 @@ import {
 } from '../_shared/caseStudy.ts';
 import { checkEmail } from '../_shared/resourceLead.ts';
 import { sha256Hex, signLink, verifyLink } from '../_shared/resourceLink.ts';
+import { platformIp } from '../_shared/platformIp.ts';
 
 export const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -98,7 +99,7 @@ export function createHandler(deps: Deps) {
 
     const t = now();
     const iso = new Date(t).toISOString();
-    const ip = req.headers.get('cf-connecting-ip') || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    const ip = platformIp(req.headers);
     const ipHash = await sha256Hex(`${deps.ipSalt}:${ip}`);
 
     // Withdrawn stories: content erased after 30 days, consent record kept.
