@@ -22,6 +22,15 @@ export function reloadOnceForNewBuild(): boolean {
   return true;
 }
 
+/** True on the page load that reloadOnceForNewBuild just started. */
+export function justReloadedForNewBuild(): boolean {
+  try {
+    return Date.now() - Number(sessionStorage.getItem(KEY) || 0) < 15_000;
+  } catch {
+    return false;
+  }
+}
+
 export function installChunkRecovery(): void {
   // Vite fires this when a preload or dynamic import fails.
   window.addEventListener("vite:preloadError", (event) => {
