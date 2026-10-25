@@ -37,7 +37,7 @@ export type AssumptionValues = Record<string, number>;
 export const IPCC_CO2_KG_PER_TJ = { diesel: 74_100, naturalGas: 56_100 } as const;
 
 const C = {
-  grid: { label: 'Grid emission factor', value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kgCO2/kWh', kind: 'constant', source: 'CEA CO2 Baseline Database, India weighted average (the factor the platform applies to electricity bills)' },
+  grid: { label: 'Grid emission factor', value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kgCO2/kWh', kind: 'constant', source: 'CEA CO2 Baseline Database, India weighted average; the factor Senseible applies to electricity bills' },
   diesel: { label: 'Diesel emission factor', value: FUEL_FACTORS.DIESEL.value, unit: 'kgCO2/L', kind: 'constant', source: 'Platform factor for diesel (IPCC 2006 basis)' },
   dieselCo2PerTj: { label: 'Diesel CO2 per energy', value: IPCC_CO2_KG_PER_TJ.diesel, unit: 'kgCO2/TJ', kind: 'constant', source: 'IPCC 2006, Vol. 2, Table 2.2 (gas/diesel oil)' },
   gasCo2PerTj: { label: 'Natural gas CO2 per energy', value: IPCC_CO2_KG_PER_TJ.naturalGas, unit: 'kgCO2/TJ', kind: 'constant', source: 'IPCC 2006, Vol. 2, Table 2.2 (natural gas)' },

@@ -75,7 +75,7 @@ export interface SupplierCoverage {
   currency: string;
 }
 
-const normaliseVendor = (v: string | null | undefined): string =>
+export const normaliseVendor = (v: string | null | undefined): string =>
   (v || '').trim().toLowerCase().replace(/\s+/g, ' ').replace(/[.,]+$/, '');
 
 const titleCase = (v: string): string =>
@@ -124,7 +124,8 @@ export function buildSupplierLedger(records: SupplierSourceRecord[]): SupplierRe
     if (!s) {
       s = {
         key,
-        name: titleCase(key),
+        // Keep the supplier's own spelling (MSEDCL, not Msedcl); title-case only all-lowercase OCR text.
+        name: /[A-Z]/.test(r.vendor) ? r.vendor.trim().replace(/\s+/g, ' ') : titleCase(key),
         documentCount: 0,
         verifiedCount: 0,
         spend: 0,

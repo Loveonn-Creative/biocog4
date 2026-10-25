@@ -9,10 +9,13 @@
 
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
-import { buildSupplierLedger, summariseCoverage, TIER_LABEL } from '@/lib/supplierLedger';
+import { buildSupplierLedger, normaliseVendor, summariseCoverage, TIER_LABEL } from '@/lib/supplierLedger';
+import { pdfSafe } from '@/lib/pdfText';
 import {
   FRAMEWORKS,
   assessFramework,
+  coveredBasis,
+  coveredKind,
   type DataAvailability,
   type FrameworkAssessment,
 } from '@/lib/reportFrameworks';
@@ -107,14 +110,25 @@ const numFmt = (locale: string, digits: number) => {
 /** Mass in the reader's locale, with the unit always spelled out. */
 const kgL = (v: number, locale: string) =>
   v >= 1000
-    ? `${numFmt(locale, 3).format(v / 1000)} tCO2e`
+    ? `${numFmt(locale, 2).format(v / 1000)} tCO2e`
     : `${numFmt(locale, 1).format(v)} kgCO2e`;
 
 /** Tonnes as a locale-formatted string for table cells. */
-const tL = (v: number, locale: string) => numFmt(locale, 4).format(v / 1000);
+const tL = (v: number, locale: string) => numFmt(locale, 2).format(v / 1000);
 
 /** Raw tonnes for spreadsheet cells that must stay numeric. */
 const tNum = (v: number) => Number((v / 1000).toFixed(4));
+
+/** Activity quantities: grouped digits, at most two decimals. */
+const qtyL = (v: number, locale: string) => {
+  try { return new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(v); } catch { return String(v); }
+};
+
+const countryName = (code: string) => {
+  try { return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) || code; } catch { return code; }
+};
+
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const pctL = (part: number, whole: number, locale: string) => {
   const value = whole > 0 ? (part / whole) * 100 : 0;
@@ -154,10 +168,10 @@ const entitySection = (ds: ReportDataset): Section => ({
   title: 'Reporting entity and boundary',
   rows: [
     ['Organization', ds.organizationName],
-    ['Tax / registration ID', ds.gstin || 'Not recorded'],
+    ['GSTIN', ds.gstin || 'Not recorded'],
     ['Sector', ds.sector || 'Not recorded'],
     ['Organization size', ds.size || 'Not recorded'],
-    ['Country of operation', ds.country],
+    ['Country of operation', countryName(ds.country)],
     ['Reporting period', ds.periodStart && ds.periodEnd
       ? `${fmtDate(ds.periodStart, ds.locale)} to ${fmtDate(ds.periodEnd, ds.locale)}`
       : 'All recorded activity to date'],
@@ -165,9 +179,15 @@ const entitySection = (ds: ReportDataset): Section => ({
     ['Organizational boundary', 'Operational control'],
     ['Operational boundary', 'Scope 1, Scope 2 (location-based) and evidenced Scope 3 categories'],
     ['Report generated', fmtDate(ds.generatedAt, ds.locale)],
-    ['Output locale', ds.locale],
   ],
 });
+
+// The Scope 3 line names the categories actually on record (e.g. road
+// freight), so it never reads as purchased goods or precursors it is not.
+const scope3Label = (ds: ReportDataset, label: string): string => {
+  const cats = [...new Set(ds.categories.filter((c) => c.scope === 3 && c.co2Kg > 0).map((c) => c.category.toLowerCase()))];
+  return cats.length ? `${label}: ${cats.join(', ')}` : label;
+};
 
 const inventorySection = (ds: ReportDataset, labels: [string, string, string]): Section => ({
   kind: 'table',
@@ -176,7 +196,7 @@ const inventorySection = (ds: ReportDataset, labels: [string, string, string]): 
   rows: [
     ['Scope 1', labels[0], tL(ds.scope1Kg, ds.locale), pctL(ds.scope1Kg, ds.totalKg, ds.locale)],
     ['Scope 2', labels[1], tL(ds.scope2Kg, ds.locale), pctL(ds.scope2Kg, ds.totalKg, ds.locale)],
-    ['Scope 3', labels[2], tL(ds.scope3Kg, ds.locale), pctL(ds.scope3Kg, ds.totalKg, ds.locale)],
+    ['Scope 3', scope3Label(ds, labels[2]), tL(ds.scope3Kg, ds.locale), pctL(ds.scope3Kg, ds.totalKg, ds.locale)],
     ['Total', '', tL(ds.totalKg, ds.locale), pctL(ds.totalKg, ds.totalKg, ds.locale)],
   ],
 });
@@ -184,15 +204,15 @@ const inventorySection = (ds: ReportDataset, labels: [string, string, string]): 
 const categorySection = (ds: ReportDataset): Section => ({
   kind: 'table',
   title: 'Emissions by activity category',
-  head: ['Category', 'Scope', 'Activity data', 'Unit', 'Factor', 'tCO2e', 'Data quality'],
+  head: ['Category', 'Scope', 'Activity data', 'Unit', 'Factor', 'tCO2e', 'Source'],
   rows: ds.categories.map((c) => [
     c.category,
     `Scope ${c.scope}`,
-    c.activityData ?? '-',
+    c.activityData != null ? qtyL(c.activityData, ds.locale) : '-',
     c.activityUnit ?? '-',
     c.emissionFactor ?? '-',
     tL(c.co2Kg, ds.locale),
-    c.dataQuality || 'unrated',
+    c.dataQuality ? cap(c.dataQuality) : 'Not rated',
   ]),
 });
 
@@ -202,41 +222,36 @@ const methodologySection = (ds: ReportDataset): Section => ({
   rows: [
     ['Methodology version', ds.methodologyVersion],
     ['Emission factor sources', ds.factorSources.length ? ds.factorSources.join(', ') : 'Not recorded'],
-    ['Activity data source', 'Supplier invoices and metered records uploaded by the entity'],
-    ['Calculation basis', 'Activity data × published emission factor; no spend-based proxy is applied'],
-    ['Gases covered', 'CO2. The grid factor (CEA) and the IPCC fuel factors cover CO2 only; CH4 and N2O are not included'],
-    ['Scope 2 method', 'Location-based (grid average where the electricity is used). A market-based figure is reported only from recorded, retired certificates or contracts and is not included in this report'],
-    ['Exclusions', 'Any activity without a supporting document is excluded and declared in the disclosure index'],
-    ['Recalculation policy', 'Restated when source evidence is corrected or a factor set is superseded'],
-    ['Independent assurance', 'Not obtained: this report is unassured unless separately verified'],
+    ['Activity data source', 'Supplier invoices, bills and meter records uploaded by the company'],
+    ['Calculation', 'Activity data × published emission factor. No spend-based estimates'],
+    ['Gases covered', 'CO2 only. Methane and nitrous oxide from fuels add under 1% and are not included'],
+    ['Scope 2 method', 'Location-based (grid average). No market-based figure'],
+    ['Exclusions', 'Activity without a supporting document is left out'],
+    ['Recalculation policy', 'Restated when a source document is corrected or a factor is superseded'],
   ],
 });
 
 /** Completeness, quality and assurance, stated uniformly for every framework. */
-const dataQualitySection = (ds: ReportDataset, assessment: FrameworkAssessment): Section => {
+const dataQualitySection = (ds: ReportDataset): Section => {
   const verified = ds.evidence.filter((e) => e.verificationStatus === 'verified').length;
   const rated = ds.categories.filter((c) => Boolean(c.dataQuality)).length;
   return {
     kind: 'kv',
-    title: 'Completeness, data quality and assurance',
+    title: 'Data quality and assurance',
     rows: [
       ['Evidence records', String(ds.evidence.length)],
-      ['Of which integrity-checked', `${verified} of ${ds.evidence.length}`],
+      ['Of which verified', `${verified} of ${ds.evidence.length}`],
       ['Activity categories', String(ds.categories.length)],
-      ['Categories carrying a data-quality rating', `${rated} of ${ds.categories.length}`],
-      ['Disclosure completeness (all mapped references)', `${assessment.completeness}%`],
-      ['Disclosure completeness (references the platform can evidence)', `${assessment.evidenceableCompleteness}%`],
-      ['Declared data gaps', String(assessment.dataGaps.length)],
-      ['Declared not applicable', String(assessment.notApplicable.length)],
-      ['Assurance status', 'Self-reported, unassured'],
-      ['Uncertainty treatment', 'Expressed qualitatively through per-record data-quality ratings; no numeric uncertainty range is asserted'],
+      ['Categories with a source type', `${rated} of ${ds.categories.length}`],
+      ['Assurance', 'None. Self-reported'],
+      ['Uncertainty', 'No numeric range. Each category is rated by source type (invoice, bill or meter)'],
     ],
   };
 };
 
 // Verified records only, so the register adds up to the verified totals above.
 // Each line carries its emission id, activity and factor so it can be
-// recomputed and matched to the audit ledger export (full ids and hashes there).
+// checked and matched to the audit ledger export (full ids and hashes there).
 const evidenceSection = (ds: ReportDataset): Section => {
   // A draft lists the unverified records its figures come from, each marked as such.
   const rows = ds.draft ? ds.evidence : ds.evidence.filter((e) => e.verificationStatus === 'verified');
@@ -245,7 +260,7 @@ const evidenceSection = (ds: ReportDataset): Section => {
     ds.draft ? 'Pre-verification: these records are awaiting verification.' : '',
     rows.length > 200 ? `Showing first 200 of ${rows.length} ${ds.draft ? '' : 'verified '}records.` : '',
     left > 0 ? `${left} unverified ${left === 1 ? 'record is' : 'records are'} not listed and not counted.` : '',
-    'IDs and hashes show their first characters; the audit ledger export has them in full.',
+    'IDs and hashes show their first characters. The company holds the full values.',
   ].filter(Boolean).join(' ');
   return {
     kind: 'table',
@@ -253,12 +268,12 @@ const evidenceSection = (ds: ReportDataset): Section => {
     head: ['Emission ID', 'Evidence hash', 'Document', 'Vendor', 'Date', 'Scope', 'Activity', 'Factor', 'tCO2e'],
     rows: rows.slice(0, 200).map((e) => [
       (e.emissionId || '-').substring(0, 8),
-      e.documentHash.substring(0, 16),
+      e.documentHash.substring(0, 12),
       e.invoiceNumber || '-',
       e.vendor || '-',
       e.invoiceDate ? fmtDate(e.invoiceDate, ds.locale) : '-',
       `Scope ${e.scope}`,
-      e.activityData != null ? `${e.activityData} ${e.activityUnit || ''}`.trim() : '-',
+      e.activityData != null ? `${qtyL(e.activityData, ds.locale)} ${e.activityUnit || ''}`.trim() : '-',
       e.emissionFactor != null ? String(e.emissionFactor) : '-',
       tL(e.co2Kg, ds.locale),
     ]),
@@ -266,14 +281,41 @@ const evidenceSection = (ds: ReportDataset): Section => {
   };
 };
 
+/** "x of y listed disclosures covered": counts only what this report lists, never the standard's full list. */
+const mappedLine = (a: FrameworkAssessment): string =>
+  `${a.satisfied.length} of ${a.satisfied.length + a.missingDetail.length} listed disclosures covered`;
+
+const ENERGY_UNITS = /^(kwh|mwh|kvah|litres?|liters?|l|kg|tonnes?|t|scm|m3|mmbtu|gj)$/i;
+
 /**
- * Scope 3 supplier annex — the same verified evidence, grouped by counterparty.
+ * Energy use as recorded on the documents, so a framework row marked
+ * "Evidenced" for energy always has the quantities behind it. Quantities are
+ * shown in their recorded units; no calorific conversion is applied here.
+ */
+const energySection = (ds: ReportDataset): Section | null => {
+  const rows = ds.categories
+    .filter((c) => c.activityData != null && c.activityUnit && ENERGY_UNITS.test(c.activityUnit.trim()) && (c.scope === 1 || c.scope === 2))
+    .map((c) => [c.category, `Scope ${c.scope}`, numFmt(ds.locale, 0).format(c.activityData as number), c.activityUnit as string, tL(c.co2Kg, ds.locale)]);
+  if (rows.length === 0) return null;
+  return {
+    kind: 'table',
+    title: 'Energy use recorded',
+    head: ['Energy source', 'Scope', 'Quantity', 'Unit', 'tCO2e'],
+    rows,
+    note: 'Quantities as shown on bills and invoices.',
+  };
+};
+
+/**
+ * Supplier evidence annex: the same verified evidence, grouped by counterparty,
+ * with emissions split by scope.
  * Suppliers without usable evidence are listed as declared gaps rather than
  * estimated, so a buyer or auditor can see exactly what is covered.
  */
 const supplierAnnexSection = (ds: ReportDataset): Section | null => {
+  const rows = ds.draft ? ds.evidence : ds.evidence.filter((e) => e.verificationStatus === 'verified');
   const suppliers = buildSupplierLedger(
-    ds.evidence.map((e) => ({
+    rows.map((e) => ({
       vendor: e.vendor,
       invoiceDate: e.invoiceDate,
       amount: null,
@@ -289,26 +331,29 @@ const supplierAnnexSection = (ds: ReportDataset): Section | null => {
   );
   if (suppliers.length === 0) return null;
 
+  // Emissions per supplier and scope, from the same rows, so no supplier is
+  // shown under a scope it does not belong to.
+  const byScope = new Map<string, [number, number, number]>();
+  rows.forEach((e) => {
+    const key = normaliseVendor(e.vendor);
+    if (!key) return;
+    const t = byScope.get(key) ?? [0, 0, 0];
+    if (e.scope >= 1 && e.scope <= 3) t[e.scope - 1] += e.co2Kg;
+    byScope.set(key, t);
+  });
   const coverage = summariseCoverage(suppliers);
-  const scope3Total = suppliers.reduce((t, s) => t + s.scope3Co2Kg, 0);
+  const cell = (kg: number) => (kg > 0 ? tL(kg, ds.locale) : '-');
 
   return {
     kind: 'table',
-    title: 'Scope 3 supplier annex',
-    head: ['Supplier', 'Documents', 'Verified', 'tCO2e', 'Share of Scope 3', 'Evidence basis'],
-    rows: suppliers.slice(0, 100).map((s) => [
-      s.name,
-      s.documentCount,
-      s.verifiedCount,
-      tL(s.co2Kg, ds.locale),
-      pctL(s.scope3Co2Kg, scope3Total, ds.locale),
-      TIER_LABEL[s.tier],
-    ]),
+    title: 'Supplier evidence annex',
+    head: ['Supplier', 'Documents', 'Verified', 'Scope 1 tCO2e', 'Scope 2 tCO2e', 'Scope 3 tCO2e', 'Evidence basis'],
+    rows: suppliers.slice(0, 100).map((s) => {
+      const [s1, s2, s3] = byScope.get(s.key) ?? [0, 0, 0];
+      return [s.name, s.documentCount, s.verifiedCount, cell(s1), cell(s2), cell(s3), TIER_LABEL[s.tier]];
+    }),
     note:
-      `${coverage.supplierCount} suppliers identified from the entity's own documents; ` +
-      `${coverage.evidencedCount} carry usable evidence. ` +
-      `Verified share of supplier-attributed emissions: ${coverage.emissionsCoveragePct.toFixed(1)}%. ` +
-      'Suppliers with no verified document are reported as coverage gaps and are not estimated.' +
+      `${coverage.evidencedCount} of ${coverage.supplierCount} suppliers carry usable evidence.` +
       (suppliers.length > 100 ? ` Showing the first 100 of ${suppliers.length} suppliers.` : ''),
   };
 };
@@ -319,13 +364,14 @@ const verificationSection = (ds: ReportDataset): Section => ({
   title: 'Verification status',
   rows: ds.verification
     ? [
-        ['Status', ds.verification.status],
-        ['Verification score', ds.verification.score === null ? 'Not scored' : `${Math.round(ds.verification.score * 100)}%`],
-        ['Greenwashing risk flag', ds.verification.greenwashingRisk || 'Not assessed'],
-        ['Verified at', fmtDate(ds.verification.verifiedAt, ds.locale)],
-        ['Note', 'Platform verification is a data-integrity check, not third-party assurance.'],
+        ds.verification.status === 'verified'
+          ? ['Verified by', 'Senseible, expert-supervised']
+          : ['Status', cap(ds.verification.status)],
+        ['Records passing evidence checks', ds.verification.score === null ? 'Not scored' : `${Math.round(ds.verification.score * 100)}%`],
+        ['Overclaim risk (Senseible check)', ds.verification.greenwashingRisk ? cap(ds.verification.greenwashingRisk) : 'Not assessed'],
+        ['Verified on', fmtDate(ds.verification.verifiedAt, ds.locale)],
       ]
-    : [['Status', 'No verification run recorded for this dataset']],
+    : [['Status', 'Not verified yet']],
 });
 
 const targetSection = (ds: ReportDataset): Section =>
@@ -337,32 +383,34 @@ const targetSection = (ds: ReportDataset): Section =>
           ['Baseline emissions', kgL(ds.target.baselineCo2Kg, ds.locale)],
           ['Target reduction', `${ds.target.targetReductionPct}%`],
           ['Target date', fmtDate(ds.target.targetDate, ds.locale)],
-          ['Progress recorded', ds.target.progressPct === null ? 'Not tracked' : `${ds.target.progressPct}%`],
-          ['Target validation', 'Self-declared; not validated by any target-setting body'],
+          // progress_pct comes from Net Zero actions marked done: a planning estimate, not a measured cut.
+          ...(ds.target.progressPct ? [['Planned cut from actions marked done', `${ds.target.progressPct}% of the target (estimate, not yet measured)`] as [string, string]] : []),
+          ['Validation', 'Set by the company. Not externally validated'],
         ],
       }
     : {
         kind: 'text',
         title: 'Reduction target',
-        body: 'No reduction target is recorded for this entity. Target-related disclosures under this framework are reported as a gap rather than estimated.',
+        body: 'No reduction target recorded.',
       };
 
-const gapSection = (assessment: FrameworkAssessment): Section => ({
-  kind: 'table',
-  title: 'Disclosure index',
-  head: ['Disclosure reference', 'Status', 'Basis'],
-  rows: [
-    ...assessment.satisfied.map((r) => [r, 'Evidenced', 'Computed from the entity\'s own recorded evidence']),
-    ...assessment.missingDetail.map((m) => [
-      m.reference,
-      m.classification === 'data_gap' ? 'Data gap' : 'Not applicable',
-      m.reason,
-    ]),
-  ],
-  note:
-    `Evidenced: ${assessment.satisfied.length}. Data gaps: ${assessment.dataGaps.length}. Not applicable: ${assessment.notApplicable.length}. ` +
-    'A data gap is a disclosure that can be closed by adding the underlying record. Not applicable means the disclosure is authored by the entity and sits outside this platform. Neither is estimated or filled in.',
-});
+const COVERED_STATUS = { evidenced: 'Evidenced', stated: 'Stated by company', provided: 'Provided' } as const;
+
+const gapSection = (assessment: FrameworkAssessment): Section => {
+  const metricOf = (ref: string) => assessment.framework.metricsMapping[ref];
+  return {
+    kind: 'table',
+    title: 'Disclosure index',
+    head: ['Disclosure', 'Status', 'Basis'],
+    rows: [
+      ...assessment.satisfied.map((r) => [r, COVERED_STATUS[coveredKind(metricOf(r))], coveredBasis(metricOf(r))]),
+      ...assessment.missingDetail.map((m) => [m.reference, m.classification === 'data_gap' ? 'Data gap' : 'Not covered', m.reason]),
+    ],
+    note:
+      'Limited to the disclosures listed, not every disclosure in the standard.' +
+      (assessment.dataGaps.length ? ' A data gap closes when the missing record is uploaded.' : ''),
+  };
+};
 
 
 /** Framework-specific narrative and section order. */
@@ -375,14 +423,16 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
     verification: verificationSection(ds),
     target: targetSection(ds),
     index: gapSection(assessment),
-    quality: dataQualitySection(ds, assessment),
+    quality: dataQualitySection(ds),
   };
 
   const note = (title: string, body: string): Section => ({ kind: 'text', title, body });
 
   /** Standard tail every framework view shares. */
-  const supplierAnnex = ds.scope3Kg > 0 ? supplierAnnexSection(ds) : null;
+  const supplierAnnex = supplierAnnexSection(ds);
+  const energy = energySection(ds);
   const tail: Section[] = [
+    ...(energy ? [energy] : []),
     common.index,
     common.quality,
     ...(supplierAnnex ? [supplierAnnex] : []),
@@ -400,9 +450,9 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'Basis of preparation',
-          'Emissions are compiled following the GHG Protocol Corporate Accounting and Reporting Standard using the operational control approach. Scope 2 is reported on a location-based basis using the grid average where the electricity is used; a market-based figure is not included in this report.',
+          'Prepared using the GHG Protocol Corporate Standard, with operational control as the boundary.',
         ),
-        inventorySection(ds, ['Direct combustion and process emissions', 'Purchased electricity (location-based)', 'Value chain activities from purchased goods and services']),
+        inventorySection(ds, ['Direct emissions', 'Purchased electricity (location-based)', 'Value chain']),
         common.categories,
         common.methodology,
         common.target,
@@ -413,20 +463,20 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'Clause 5: Boundaries and GHG inventory',
-          'The organizational boundary is set by operational control. Direct emissions, indirect emissions from imported energy, and other indirect emissions are quantified separately in line with ISO 14064-1 categorisation. Emissions arising outside evidenced activity are excluded and declared in the disclosure index.',
+          'Clause 5: Boundaries',
+          'The organizational boundary is operational control. Emissions are split by ISO 14064-1 category.',
         ),
-        inventorySection(ds, ['Category 1: Direct GHG emissions', 'Category 2: Indirect from imported energy', 'Categories 3-6: Other indirect emissions']),
+        inventorySection(ds, ['Category 1: Direct GHG emissions', 'Category 2: Indirect from imported energy', 'Categories 3 to 6: Other indirect']),
         common.categories,
         note(
-          'Clause 6: Quantification approach',
-          'Emissions are quantified as activity data multiplied by a published emission factor. Activity data is drawn from invoices and metered records; no modelled or extrapolated activity is included. Uncertainty is expressed qualitatively through per-record data-quality ratings.',
+          'Clause 6: Quantification',
+          'Activity data from invoices, bills and meter records, multiplied by a published emission factor. No modelled or extrapolated activity.',
         ),
         common.methodology,
         common.target,
         note(
-          'Clause 7: Verification',
-          'This inventory has not undergone third-party verification to ISO 14064-3. The platform verification result below is an internal data-integrity control and must not be presented as a validation or verification statement.',
+          'Verification (ISO 14064-3)',
+          'Not verified to ISO 14064-3. Senseible\'s own check is described under Verification status.',
         ),
         ...tail,
       ];
@@ -435,17 +485,16 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'Clause 6.3: Functional unit and product system',
+          'Functional unit and product system',
           ds.availability.productLevel
-            ? 'Product-level evidence (HSN/CN coded purchase and dispatch records) is present, so emissions are attributed to the goods those records identify. The functional unit is the unit of the good stated on the dispatch evidence; where a dispatch quantity is absent for a given good, the per-product figure for that good is declared a gap.'
-            : 'No product-level (HSN/CN coded) evidence is recorded for this entity, so a product carbon footprint cannot be produced. The organizational inventory below is provided as context only and must not be presented as a product footprint.',
+            ? 'Emissions are attributed to the goods named on HSN/CN coded purchase and dispatch records. The functional unit is the unit on the dispatch record; a good without a dispatch quantity is left as a gap.'
+            : 'No product footprint: there is no production data per product (HSN/CN code). The site totals below are context, not a product footprint.',
         ),
-        inventorySection(ds, ['Direct process emissions in the product system', 'Energy used in production', 'Upstream materials and inputs']),
+        inventorySection(ds, ['Site direct emissions', 'Site electricity', 'Site value chain']),
         common.categories,
-        note(
-          'Clause 6.4: Life cycle stages covered',
-          'Coverage is cradle-to-gate and limited to stages evidenced by documents: purchased materials, production energy and direct process fuel. Use phase, distribution beyond evidenced freight, and end-of-life are outside the evidence set and are declared as gaps rather than modelled.',
-        ),
+        ...(ds.availability.productLevel
+          ? [note('Life cycle stages', 'Cradle-to-gate, limited to stages backed by documents. Use phase, distribution beyond recorded freight and end-of-life are not covered and not modelled.')]
+          : []),
         common.methodology,
         ...tail,
       ];
@@ -455,16 +504,11 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'GRI 305: Reporting approach',
-          'Disclosures 305-1 to 305-5 are reported against the entity\'s own evidenced activity. Biogenic emissions, ozone-depleting substances (305-6) and NOx/SOx (305-7) are not captured by this platform and are not asserted.',
+          'Reported with reference to GRI 305. Not covered: 305-6 ozone-depleting substances and 305-7 NOx and SOx. Biogenic CO2 is not recorded.',
         ),
         inventorySection(ds, ['305-1 Direct (Scope 1) GHG emissions', '305-2 Energy indirect (Scope 2) GHG emissions', '305-3 Other indirect (Scope 3) GHG emissions']),
         common.categories,
-        note(
-          '305-4 GHG emissions intensity',
-          ds.availability.intensity
-            ? 'Intensity is derived from an evidenced output denominator.'
-            : 'No output or revenue denominator is recorded, so an intensity ratio is reported as a data gap rather than divided by an assumed figure.',
-        ),
+        ...(ds.availability.intensity ? [note('305-4 GHG emissions intensity', 'Intensity uses the recorded production output.')] : []),
         common.target,
         common.methodology,
         ...tail,
@@ -475,9 +519,9 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'SASB: Applicability',
-          'SASB metrics are industry-specific. The greenhouse-gas metrics below are the subset this platform can evidence. Industry topics outside GHG accounting are not covered here and must be reported separately by the entity.',
+          'SASB metric codes depend on your industry standard. This report covers emissions and energy only.',
         ),
-        inventorySection(ds, ['Gross global Scope 1 emissions', 'Purchased energy emissions', 'Value chain emissions (where the applicable standard requires them)']),
+        inventorySection(ds, ['Gross global Scope 1 emissions', 'Electricity (context)', 'Value chain (context)']),
         common.categories,
         common.methodology,
         ...tail,
@@ -488,11 +532,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         ...supersededNote,
         note(
-          'Governance and Strategy',
-          'Governance of climate issues and strategic resilience are narrative disclosures authored by the entity. They are not derived from documents and are therefore reported as not applicable to this platform rather than drafted on the entity\'s behalf.',
+          'Governance, strategy and risk management',
+          'You write these three pillars. This report covers metrics and targets.',
         ),
-        note('Risk management', 'No climate risk assessment is recorded by this platform. This pillar is reported as a gap.'),
-        inventorySection(ds, ['Scope 1', 'Scope 2 (location-based)', 'Scope 3']),
+        inventorySection(ds, ['Direct emissions', 'Electricity (location-based)', 'Value chain']),
         common.categories,
         common.target,
         common.methodology,
@@ -503,10 +546,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'IFRS S1: General requirements',
-          'IFRS S1 requires sustainability-related risks and opportunities that could reasonably affect prospects, disclosed alongside the financial statements. This output supplies the metrics pillar from verified evidence. Governance, strategy and risk-management narratives are authored by the entity and are marked accordingly in the disclosure index.',
+          'What this report covers',
+          'Metrics and targets, from your own records. You write governance, strategy and risk management.',
         ),
-        inventorySection(ds, ['Scope 1', 'Scope 2 (location-based)', 'Scope 3']),
+        inventorySection(ds, ['Direct emissions', 'Electricity (location-based)', 'Value chain']),
         common.categories,
         common.target,
         common.methodology,
@@ -517,10 +560,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'IFRS S2: Climate-related disclosures',
-          'IFRS S2 carries forward the TCFD recommendations. Cross-industry metrics for absolute gross Scope 1, 2 and 3 emissions are reported below from evidenced records. Scenario analysis, transition planning and physical risk exposure are entity-authored and are not asserted here.',
+          'What this report covers',
+          'Scope 1, 2 and 3 totals from your records. Scope 2 is location-based only. You write scenario analysis, the transition plan and physical risk.',
         ),
-        inventorySection(ds, ['Absolute gross Scope 1', 'Absolute gross Scope 2 (location-based)', 'Absolute gross Scope 3']),
+        inventorySection(ds, ['Direct emissions', 'Electricity (location-based)', 'Value chain']),
         common.categories,
         common.target,
         common.methodology,
@@ -531,10 +574,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'CDP: Response basis',
-          'The figures below correspond to CDP module C6 (emissions data). Responses to governance (C1), risks and opportunities (C2-C3) and verification (C10) modules require entity input and third-party assurance respectively; they are not answered from this dataset.',
+          'What this report covers',
+          'Figures for CDP\'s emissions questions only. Governance, risk and strategy answers are yours; verification needs a third party.',
         ),
-        inventorySection(ds, ['C6.1 Scope 1', 'C6.3 Scope 2 (location-based)', 'C6.5 Scope 3']),
+        inventorySection(ds, ['Direct emissions', 'Electricity (location-based)', 'Value chain']),
         common.categories,
         common.target,
         common.methodology,
@@ -546,7 +589,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'ESRS E1: Climate change',
-          'This output covers the quantitative datapoints of ESRS E1-5 (energy) and E1-6 (gross Scopes 1, 2, 3 and total). E1-1 transition plan, E1-2 policies and E1-3 actions are entity-authored. Double materiality assessment is a prerequisite of CSRD reporting and is not performed by this platform.',
+          'This report covers energy (E1-5), gross Scope 1, 2 and 3 emissions (E1-6) and any target you set (E1-4). You write the transition plan (E1-1), policies (E1-2), actions (E1-3) and the double materiality assessment.',
         ),
         inventorySection(ds, ['E1-6 Gross Scope 1', 'E1-6 Gross Scope 2 (location-based)', 'E1-6 Gross Scope 3']),
         common.categories,
@@ -559,12 +602,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'TNFD: LEAP applicability',
-          'The TNFD LEAP approach requires location-level nature dependency and impact assessment. This platform records financial and energy evidence, not ecosystem or biodiversity data, so the Evaluate, Assess and Prepare stages are reported as not applicable to this platform rather than estimated. The GHG inventory below is supplied as contextual data only.',
+          'What this report covers',
+          'No nature disclosures: TNFD needs site location and nature data, which Senseible does not hold. Your emissions are in the GHG Protocol report.',
         ),
-        inventorySection(ds, ['Direct emissions', 'Purchased energy', 'Value chain emissions']),
-        common.methodology,
-        ...tail,
+        common.index,
       ];
 
     case 'SBTI':
@@ -572,7 +613,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'Target-setting basis',
-          'SBTi validation requires submission to, and approval by, the initiative. Nothing here constitutes a validated science-based target. The evidenced baseline and any recorded target are provided as the inputs an entity would use to prepare a submission.',
+          'Not an SBTi target. SBTi validates targets after submission; this report gives your base year emissions and any target you set.',
         ),
         inventorySection(ds, ['Scope 1 (base year)', 'Scope 2 (base year, location-based)', 'Scope 3 (base year)']),
         common.target,
@@ -585,10 +626,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'SDG contribution reporting',
-          'Emissions data is mapped to SDG 7 (affordable and clean energy), SDG 12 (responsible consumption and production) and SDG 13 (climate action) only where an evidenced record exists. No contribution is claimed for a goal without supporting data.',
+          'What this report covers',
+          'Measured emissions and any reduction target for SDG 13, recorded energy use for SDG 7. It claims no progress on any goal.',
         ),
-        inventorySection(ds, ['SDG 13: direct emissions', 'SDG 7: purchased energy emissions', 'SDG 12: value chain emissions']),
+        inventorySection(ds, ['Direct emissions', 'Electricity', 'Value chain']),
         common.categories,
         common.target,
         common.methodology,
@@ -599,8 +640,8 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'CPCB context',
-          'CPCB consent and environmental compliance obligations cover stack emissions, effluent and waste parameters that are measured by accredited laboratories, not derived from invoices. This output supplies the energy and combustion record that supports an energy audit; it does not evidence compliance with any consent condition.',
+          'What this report covers',
+          'The fuel and energy record an energy audit needs. It does not show compliance with any consent condition: stack, effluent and waste readings come from accredited laboratories.',
         ),
         inventorySection(ds, ['Fuel combustion (direct)', 'Purchased electricity', 'Other indirect']),
         common.categories,
@@ -625,13 +666,13 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         },
         note(
           'Section B: Management and process disclosures',
-          'Policy, governance and oversight narratives for the NGRBC principles are not captured by this platform and are therefore not asserted here. Section B must be completed by the entity before filing.',
+          'Section B is yours to write before filing.',
         ),
         note(
           'Section C, Principle 6: Environment',
-          'The quantitative environmental disclosures below cover greenhouse gas emissions computed from invoice-level evidence. Water, waste and biodiversity indicators under Principle 6 are outside the platform boundary and are reported as gaps.',
+          'Greenhouse gas emissions from your invoices and bills. Not covered: water, waste and biodiversity indicators.',
         ),
-        inventorySection(ds, ['Direct emissions (P6 essential indicator 1)', 'Energy indirect emissions (P6 essential indicator 1)', 'Other indirect emissions (P6 leadership indicator)']),
+        inventorySection(ds, ['Principle 6: Scope 1 emissions', 'Principle 6: Scope 2 emissions', 'Principle 6: Scope 3 emissions (leadership indicator)']),
         common.categories,
         common.methodology,
         common.target,
@@ -643,15 +684,10 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'BRSR Core: basis and assurance',
-          'BRSR Core specifies a set of KPIs subject to reasonable assurance or a third-party assessment when filed with the exchange. This output is the underlying, unassured source data for those KPIs. It is not an assurance statement and does not itself satisfy the assurance or assessment requirement.',
+          'BRSR Core KPIs need reasonable assurance when filed. This report is the unassured source data.',
         ),
-        inventorySection(ds, ['Attribute 1: Scope 1 emissions', 'Attribute 1: Scope 2 emissions', 'Attribute 9: value chain emissions']),
-        note(
-          'Attribute 1: GHG intensity',
-          ds.availability.intensity
-            ? 'Intensity is computed from an evidenced output denominator.'
-            : 'Turnover-adjusted GHG intensity requires a revenue or output denominator, which is not recorded here. It is declared a data gap and must be completed by the entity from its audited financials.',
-        ),
+        inventorySection(ds, ['Attribute 1: Scope 1 emissions', 'Attribute 1: Scope 2 emissions', 'Scope 3 (outside BRSR Core)']),
+        ...(ds.availability.intensity ? [note('Attribute 1: GHG intensity', 'Intensity uses the recorded production output.')] : []),
         common.categories,
         common.target,
         common.methodology,
@@ -662,14 +698,14 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'Declarant basis',
-          'Embedded emissions are derived from invoice-evidenced direct and indirect emissions for the reporting entity. Where product-level (HSN/CN mapped) data is absent, embedded emissions per good cannot be stated and are reported as a gap rather than allocated by assumption.',
+          'What these figures are',
+          'Site-level direct and electricity emissions from your invoices and bills. Embedded emissions per good need production data by CN code; without it they are left as a gap, not allocated.',
         ),
-        inventorySection(ds, ['Direct embedded emissions', 'Indirect (electricity) embedded emissions', 'Upstream precursor activity']),
+        inventorySection(ds, ['Direct emissions', 'Electricity (indirect)', 'Other value chain (not part of CBAM)']),
         common.categories,
         note(
           'Default values',
-          'Where an actual value is not evidenced, the EU transitional default applies at the border. This report states the evidenced actual figures only; it does not substitute a default value into the entity\'s own inventory.',
+          'Without actual data per good, EU default values apply at the border. This report uses actual figures only and adds no default.',
         ),
         common.methodology,
         ...tail,
@@ -680,13 +716,13 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'Purpose of this pack',
-          'Prepared for a bank or lender assessing climate data as part of credit or sustainability-linked loan review. It states the borrower\'s evidenced emissions baseline, how each figure can be traced to a source document, and where data is missing. It is not a credit assessment, a rating, or a statement of eligibility for any facility.',
+          'For credit or sustainability-linked loan review: the borrower\'s emissions baseline from its own documents, and what is missing. Not a credit assessment, a rating or a statement of eligibility for any facility.',
         ),
-        inventorySection(ds, ['Direct emissions baseline', 'Purchased energy baseline', 'Value chain exposure']),
+        inventorySection(ds, ['Direct emissions baseline', 'Electricity baseline', 'Value chain']),
         common.target,
         note(
-          'What a KPI can be written against',
-          'A sustainability-linked KPI needs a baseline the lender can re-derive. Every verified figure above is reproducible from the evidence register: each record carries its emission id, document hash, activity data and emission factor, and the audit ledger export adds the factor source. Figures marked as data gaps must not be used as KPI baselines.',
+          'Using these figures as a KPI baseline',
+          'Each figure traces to the evidence register: document hash, activity data and emission factor. Write a KPI only against figures marked Evidenced.',
         ),
         common.categories,
         common.methodology,
@@ -698,9 +734,9 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'Purpose of this pack',
-          'Prepared for an investor or portfolio manager collecting issuer climate data. It reports absolute emissions, the share of the value chain covered, target progress where recorded, and the completeness of the underlying evidence, so the data can be assessed rather than taken on trust.',
+          'For investors reviewing the company\'s climate data: total emissions, Scope 3, any target, and the document behind each figure.',
         ),
-        inventorySection(ds, ['Absolute gross Scope 1', 'Absolute gross Scope 2', 'Absolute gross Scope 3']),
+        inventorySection(ds, ['Direct emissions', 'Electricity (location-based)', 'Value chain']),
         common.target,
         common.categories,
         common.methodology,
@@ -712,7 +748,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'Purpose of this pack',
-          'Prepared as source data for a submission to a government body or registry. Entity identification, evidenced emissions and the evidence register are stated in full so the receiving body can trace any figure back to a document. This is not a filing and does not substitute for a prescribed statutory form.',
+          'Supporting data for a government submission. Every figure traces to a document in the evidence register.',
         ),
         inventorySection(ds, ['Direct emissions', 'Energy indirect emissions', 'Other indirect emissions']),
         common.categories,
@@ -725,9 +761,9 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'What this summary is',
-          'The platform\'s own view of the verified dataset: every framework export renders these same records in that framework\'s structure. Nothing in a framework report is recomputed or restated, only reorganised and labelled to that standard\'s disclosure index.',
+          'Your verified records on one page. Every framework report uses the same figures.',
         ),
-        inventorySection(ds, ['Direct emissions', 'Purchased energy', 'Value chain emissions']),
+        inventorySection(ds, ['Direct emissions', 'Electricity', 'Value chain']),
         common.categories,
         common.target,
         common.methodology,
@@ -737,7 +773,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
     default:
       return [
         common.entity,
-        inventorySection(ds, ['Direct emissions', 'Purchased energy', 'Value chain emissions']),
+        inventorySection(ds, ['Direct emissions', 'Electricity', 'Value chain']),
         common.categories,
         common.methodology,
         common.target,
@@ -749,7 +785,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
 
 const DRAFT_NOTE = 'PRE-VERIFICATION: these figures are measured from your uploaded documents and are awaiting verification. Do not submit this as a verified report.';
 const FOOTER_NOTE =
-  'Decision-support disclosure generated from the entity\'s own evidence. Not a statutory filing and not an assurance or certification statement. Unevidenced disclosures are declared as gaps in the disclosure index.';
+  'Decision-support disclosure from the company\'s own documents. Not a statutory filing, assurance or certification statement.';
 
 export function getFrameworkAssessment(fwId: string, availability: DataAvailability) {
   const fw = FRAMEWORKS[fwId];
@@ -788,7 +824,7 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
   doc.text(doc.splitTextToSize(ds.draft ? `Pre-verification: ${fw.name}` : fw.name, width), margin, 20);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
-  doc.text(`${ds.organizationName} · ${kgL(ds.totalKg, ds.locale)} total · ${assessment.completeness}% of mapped references evidenced`, margin, 35);
+  doc.text(pdfSafe(`${ds.organizationName} · ${kgL(ds.totalKg, ds.locale)} total · ${mappedLine(assessment)}`), margin, 35);
   y = 54;
   if (ds.draft) {
     doc.setFillColor(255, 243, 214);
@@ -806,14 +842,14 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
     doc.setTextColor(24, 60, 42);
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(12);
-    doc.text(section.title, margin, y);
+    doc.text(pdfSafe(section.title), margin, y);
     y += 7;
     doc.setTextColor(45);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
 
     if (section.kind === 'text') {
-      const lines = doc.splitTextToSize(section.body, width);
+      const lines = doc.splitTextToSize(pdfSafe(section.body), width);
       ensure(lines.length * 4.6 + 4);
       doc.text(lines, margin, y);
       y += lines.length * 4.6 + 8;
@@ -824,9 +860,9 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
       section.rows.forEach(([k, v]) => {
         ensure(8);
         doc.setTextColor(110);
-        doc.text(k, margin, y);
+        doc.text(pdfSafe(k), margin, y);
         doc.setTextColor(25);
-        const vLines = doc.splitTextToSize(String(v), width - 70);
+        const vLines = doc.splitTextToSize(pdfSafe(String(v)), width - 70);
         doc.text(vLines, margin + 68, y);
         y += Math.max(6, vLines.length * 4.6);
       });
@@ -834,17 +870,28 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
       return;
     }
 
-    // table
-    const colCount = section.head.length;
-    const colWidth = width / colCount;
+    // table: columns sized to their content, cells wrap (up to 3 lines) instead of being cut
+    const cellText = (v: unknown) => pdfSafe(String(v));
+    doc.setFontSize(8);
+    const natural = section.head.map((h, i) => {
+      let w = doc.getTextWidth(cellText(h));
+      section.rows.slice(0, 60).forEach((r) => { w = Math.max(w, doc.getTextWidth(cellText(r[i] ?? ''))); });
+      return Math.min(Math.max(w + 4, 14), 70);
+    });
+    const naturalTotal = natural.reduce((a, b) => a + b, 0);
+    const widths = natural.map((w) => (w / naturalTotal) * width);
+    const xs = widths.map((_, i) => margin + widths.slice(0, i).reduce((a, b) => a + b, 0));
+    const lineH = 3.6;
     const drawHead = () => {
-      doc.setFillColor(24, 60, 42);
-      doc.rect(margin, y, width, 8, 'F');
-      doc.setTextColor(255);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8);
-      section.head.forEach((h, i) => doc.text(String(h), margin + 2 + i * colWidth, y + 5.5));
-      y += 10;
+      doc.setFontSize(7.5);
+      const headLines = section.head.map((h, i) => (doc.splitTextToSize(cellText(h), widths[i] - 3) as string[]).slice(0, 2));
+      const hh = Math.max(...headLines.map((l) => l.length)) * lineH + 4.4;
+      doc.setFillColor(24, 60, 42);
+      doc.rect(margin, y, width, hh, 'F');
+      doc.setTextColor(255);
+      headLines.forEach((l, i) => doc.text(l, xs[i] + 1.5, y + 4.8));
+      y += hh + 2.5;
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(35);
     };
@@ -858,23 +905,22 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
     }
 
     section.rows.forEach((row, idx) => {
-      if (y + 8 > pageHeight - 22) {
+      doc.setFontSize(8);
+      const cellLines = row.map((cell, i) => (doc.splitTextToSize(cellText(cell), widths[i] - 3) as string[]).slice(0, 3));
+      const rh = Math.max(1, ...cellLines.map((l) => l.length)) * lineH + 3.2;
+      if (y + rh > pageHeight - 22) {
         doc.addPage();
         y = 22;
         drawHead();
       }
       if (idx % 2 === 0) {
         doc.setFillColor(246, 249, 246);
-        doc.rect(margin, y - 3.5, width, 7.5, 'F');
+        doc.rect(margin, y - 3.2, width, rh, 'F');
       }
       doc.setTextColor(35);
       doc.setFontSize(8);
-      row.forEach((cell, i) => {
-        const text = String(cell);
-        const clipped = doc.splitTextToSize(text, colWidth - 3)[0] ?? '';
-        doc.text(clipped, margin + 2 + i * colWidth, y + 1.5);
-      });
-      y += 7.5;
+      cellLines.forEach((l, i) => doc.text(l, xs[i] + 1.5, y + 0.6));
+      y += rh;
     });
 
     y += 4;
@@ -882,7 +928,7 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
       ensure(10);
       doc.setFontSize(7.5);
       doc.setTextColor(120);
-      const noteLines = doc.splitTextToSize(section.note, width);
+      const noteLines = doc.splitTextToSize(pdfSafe(section.note), width);
       doc.text(noteLines, margin, y);
       y += noteLines.length * 4 + 6;
     }
@@ -915,7 +961,7 @@ export function generateFrameworkExcel(fwId: string, ds: ReportDataset): boolean
   const wb = XLSX.utils.book_new();
   const used = new Set<string>();
   const sheetName = (title: string) => {
-    let base = title.replace(/[\\/?*[\]:]/g, '-').substring(0, 28) || 'Sheet';
+    const base = title.replace(/[\\/?*[\]:]/g, '-').substring(0, 28) || 'Sheet';
     let name = base;
     let n = 2;
     while (used.has(name)) name = `${base.substring(0, 26)}_${n++}`;
@@ -934,12 +980,10 @@ export function generateFrameworkExcel(fwId: string, ds: ReportDataset): boolean
     ['Emission factor sources', ds.factorSources.join(', ') || 'Not recorded'],
     ['Total emissions (tCO2e)', tNum(ds.totalKg)],
     ['Base year', baseYear(ds)],
-    ['Reporting locale', ds.locale],
-    ['Assurance status', 'Self-reported, unassured'],
-    ['Evidenced disclosure references', `${assessment.completeness}%`],
-    ['Evidenced, excluding disclosures outside the platform boundary', `${assessment.evidenceableCompleteness}%`],
-    ['Declared data gaps', assessment.dataGaps.length],
-    ['Declared not applicable', assessment.notApplicable.length],
+    ['Assurance', 'None. Self-reported'],
+    ['Listed disclosures covered', mappedLine(assessment)],
+    ['Data gaps', assessment.dataGaps.length],
+    ['Not covered', assessment.notApplicable.length],
     [],
     [FOOTER_NOTE],
   ];

@@ -32,9 +32,9 @@ describe('CCTS / CBAM claims need a documented review', () => {
     expect(src).toContain("cctsStatus: 'not_assessed';");
   });
 
-  test('the reviewed record is titled Independently Reviewed, not a compliance certificate', () => {
-    const src = readFileSync('src/pages/Reports.tsx', 'utf8');
-    expect(src).toContain("'INDEPENDENTLY REVIEWED'");
-    expect(src).not.toMatch(/COMPLIANCE CERTIFICATE|This is to certify|Compliant with Indian/);
+  test('the record is titled Verified Emissions Record (owner, 25 Oct 2026), not a compliance certificate', () => {
+    const src = readFileSync('src/pages/Reports.tsx', 'utf8') + readFileSync('src/lib/certificatePdf.ts', 'utf8');
+    expect(src).toContain("'VERIFIED EMISSIONS RECORD'");
+    expect(src).not.toMatch(/COMPLIANCE CERTIFICATE|This is to certify|Compliant with Indian|INDEPENDENTLY REVIEWED/);
   });
 });

@@ -34,6 +34,10 @@ export interface ReportProfile {
 }
 
 export interface EvidenceRecord {
+  emissionId: string | null;
+  activityData: number | null;
+  activityUnit: string | null;
+  emissionFactor: number | null;
   documentHash: string;
   invoiceNumber: string | null;
   vendor: string | null;
