@@ -61,6 +61,27 @@ GRANT USAGE ON SCHEMA private TO authenticated;
 REVOKE ALL ON FUNCTION private.is_enterprise_member(uuid) FROM PUBLIC, anon;
 GRANT EXECUTE ON FUNCTION private.is_enterprise_member(uuid) TO authenticated;
 
+-- Who may ask, remind or cancel suppliers: owner, admin and data manager.
+-- Analysts, carbon auditors and viewers read and download only.
+CREATE OR REPLACE FUNCTION private.enterprise_can_ask(_org uuid, _user uuid)
+RETURNS boolean
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1
+    FROM public.enterprise_access ea
+    JOIN public.organization_members m ON m.organization_id = ea.organization_id
+    WHERE ea.organization_id = _org
+      AND ea.status = 'active'
+      AND m.user_id = _user
+      AND m.role IN ('owner', 'admin', 'data_manager')
+  )
+$$;
+REVOKE ALL ON FUNCTION private.enterprise_can_ask(uuid, uuid) FROM PUBLIC, anon, authenticated;
+
 -- Staff only: grant or re-activate access for an email.
 CREATE OR REPLACE FUNCTION private.grant_enterprise_access(
   p_email text, p_company text, p_supplier_limit integer DEFAULT 100, p_granted_by text DEFAULT NULL
@@ -137,18 +158,18 @@ GRANT EXECUTE ON FUNCTION public.claim_enterprise_access() TO authenticated;
 
 -- What the app reads to decide whether to open the enterprise dashboard.
 CREATE OR REPLACE FUNCTION public.my_enterprise()
-RETURNS TABLE (organization_id uuid, company_name text, supplier_limit integer, claimable boolean)
+RETURNS TABLE (organization_id uuid, company_name text, supplier_limit integer, claimable boolean, role text)
 LANGUAGE sql
 STABLE
 SECURITY DEFINER
 SET search_path = public
 AS $$
-  SELECT ea.organization_id, ea.company_name, ea.supplier_limit, false
+  SELECT ea.organization_id, ea.company_name, ea.supplier_limit, false, m.role::text
   FROM public.enterprise_access ea
   JOIN public.organization_members m ON m.organization_id = ea.organization_id
   WHERE ea.status = 'active' AND m.user_id = auth.uid()
   UNION ALL
-  SELECT NULL::uuid, ea.company_name, ea.supplier_limit, true
+  SELECT NULL::uuid, ea.company_name, ea.supplier_limit, true, NULL::text
   FROM public.enterprise_access ea
   JOIN auth.users u ON lower(u.email) = ea.email
   WHERE ea.status = 'active' AND ea.organization_id IS NULL
@@ -233,10 +254,9 @@ SET search_path = public, extensions
 AS $$
 DECLARE v_token text := encode(gen_random_bytes(32), 'hex'); v_id uuid;
 BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM public.organization_members m JOIN public.enterprise_access ea ON ea.organization_id = m.organization_id
-    WHERE m.organization_id = p_org AND m.user_id = p_created_by AND ea.status = 'active'
-  ) THEN RAISE EXCEPTION 'not an enterprise member' USING ERRCODE = '42501'; END IF;
+  IF NOT private.enterprise_can_ask(p_org, p_created_by) THEN
+    RAISE EXCEPTION 'this role cannot ask suppliers' USING ERRCODE = '42501';
+  END IF;
   INSERT INTO public.supplier_requests (enterprise_org_id, supplier_name, supplier_email, supplier_gstin, buys,
     purchase_share_pct, scope3_category, period_start, period_end, token_hash, expires_at, created_by)
   VALUES (p_org, btrim(p_name), nullif(lower(btrim(coalesce(p_email, ''))), ''), nullif(upper(btrim(coalesce(p_gstin, ''))), ''),
@@ -263,7 +283,9 @@ BEGIN
   SELECT ea.company_name INTO v_company FROM public.enterprise_access ea
   JOIN public.organization_members m ON m.organization_id = ea.organization_id
   WHERE ea.organization_id = r.enterprise_org_id AND ea.status = 'active' AND m.user_id = p_caller;
-  IF r.id IS NULL OR v_company IS NULL THEN RAISE EXCEPTION 'not an enterprise member' USING ERRCODE = '42501'; END IF;
+  IF r.id IS NULL OR v_company IS NULL OR NOT private.enterprise_can_ask(r.enterprise_org_id, p_caller) THEN
+    RAISE EXCEPTION 'this role cannot remind suppliers' USING ERRCODE = '42501';
+  END IF;
   IF r.status NOT IN ('sent', 'opened') THEN RAISE EXCEPTION 'only open requests can be reminded' USING ERRCODE = 'P0001'; END IF;
   IF r.last_reminded_at > now() - interval '3 days' THEN RAISE EXCEPTION 'reminded in the last 3 days' USING ERRCODE = 'P0001'; END IF;
   UPDATE public.supplier_requests
@@ -286,7 +308,7 @@ SET search_path = public
 AS $$
 BEGIN
   UPDATE public.supplier_requests SET status = 'revoked'
-  WHERE id = p_request_id AND status IN ('sent', 'opened') AND private.is_enterprise_member(enterprise_org_id);
+  WHERE id = p_request_id AND status IN ('sent', 'opened') AND private.enterprise_can_ask(enterprise_org_id, auth.uid());
   IF NOT FOUND THEN RAISE EXCEPTION 'request not found or already closed' USING ERRCODE = '42501'; END IF;
   RETURN true;
 END;

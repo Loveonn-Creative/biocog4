@@ -28,6 +28,7 @@ DROP FUNCTION IF EXISTS public.my_enterprise();
 DROP FUNCTION IF EXISTS public.claim_enterprise_access();
 DROP FUNCTION IF EXISTS private.revoke_enterprise_access(text);
 DROP FUNCTION IF EXISTS private.grant_enterprise_access(text, text, integer, text);
+DROP FUNCTION IF EXISTS private.enterprise_can_ask(uuid, uuid);
 DROP FUNCTION IF EXISTS private.is_enterprise_member(uuid);
 DROP TABLE IF EXISTS public.enterprise_access;
 COMMIT;

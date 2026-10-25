@@ -107,9 +107,18 @@ BEGIN
     FROM public.enterprise_access ea WHERE ea.email = 'head@buyer.in';
     RAISE EXCEPTION 'FAIL: outsider created a request';
   EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  BEGIN
+    PERFORM public.service_create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e2', 'Supplier E', 'e@e.in', NULL, NULL, '2025-04-01', '2026-03-31')
+    FROM public.enterprise_access ea WHERE ea.email = 'head@buyer.in';
+    RAISE EXCEPTION 'FAIL: analyst asked a supplier';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  BEGIN
+    PERFORM public.service_reissue_supplier_link((SELECT request_id FROM t_tokens WHERE who = 'steel'), '00000000-0000-4000-8000-0000000000e2');
+    RAISE EXCEPTION 'FAIL: analyst reminded a supplier';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
   IF EXISTS (SELECT 1 FROM public.supplier_requests WHERE token_hash = (SELECT token FROM t_tokens LIMIT 1)) THEN
     RAISE EXCEPTION 'FAIL: plain token stored'; END IF;
-  RAISE NOTICE 'ok: requests respect the supplier limit, need an enterprise member, and store only a token hash';
+  RAISE NOTICE 'ok: requests respect the supplier limit, need an owner, admin or data manager, and store only a token hash';
 END $$;
 GRANT SELECT ON t_tokens TO anon, authenticated;
 
@@ -181,6 +190,10 @@ BEGIN
   PERFORM pg_temp.as_user('00000000-0000-4000-8000-0000000000e2');
   IF (SELECT count(*) FROM public.supplier_snapshots) <> 1 THEN RAISE EXCEPTION 'FAIL: teammate cannot read the snapshot'; END IF;
   IF (SELECT count(*) FROM public.supplier_requests) <> 2 THEN RAISE EXCEPTION 'FAIL: teammate cannot read requests'; END IF;
+  IF (SELECT role FROM public.my_enterprise() WHERE NOT claimable) <> 'analyst' THEN RAISE EXCEPTION 'FAIL: my_enterprise role'; END IF;
+  BEGIN PERFORM public.cancel_supplier_request((SELECT request_id FROM t_tokens WHERE who = 'castings'));
+    RAISE EXCEPTION 'FAIL: analyst cancelled a request';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
   IF (SELECT count(*) FROM public.emissions WHERE user_id = '00000000-0000-4000-8000-0000000000f1') <> 0 THEN
     RAISE EXCEPTION 'FAIL: enterprise reads supplier emissions'; END IF;
   IF (SELECT count(*) FROM public.documents WHERE user_id = '00000000-0000-4000-8000-0000000000f1') <> 0 THEN
@@ -189,7 +202,7 @@ BEGIN
   IF (SELECT count(*) FROM public.supplier_snapshots) <> 0 OR (SELECT count(*) FROM public.supplier_requests) <> 0 THEN
     RAISE EXCEPTION 'FAIL: Scale user reads enterprise data'; END IF;
   RESET ROLE;
-  RAISE NOTICE 'ok: the enterprise reads only shared snapshots; supplier bills and emission rows stay private';
+  RAISE NOTICE 'ok: the enterprise reads only shared snapshots; supplier bills and emission rows stay private; an analyst reads but cannot cancel';
 END $$;
 
 -- 8. Withdrawn consent and revoked access stop further sharing.
