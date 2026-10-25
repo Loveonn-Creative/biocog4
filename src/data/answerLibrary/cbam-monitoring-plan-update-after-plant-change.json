@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-monitoring-plan-update-after-plant-change",
+  "q": "Do I have to update my CBAM monitoring plan every time the plant changes?",
+  "title": "CBAM plan updates after plant changes",
+  "short": "Only significant changes force an update, and you must make it without undue delay. Minor changes can go into a change log shared at the next verification. The Commission still advises asking the verifier early, because a wrong method can create material misstatements. Review the plan at least once a year anyway.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "Three levels of change",
+      "ul": [
+        "No plan change: many changes, such as a like-for-like meter swap.",
+        "Minor: keep a changes log and tell the verifier at the next regular verification.",
+        "Significant: update the plan without undue delay and apply it at once. The Verification Principles Act, Article 3(1)(g), has a non-exhaustive list of what counts as significant."
+      ]
+    },
+    {
+      "h": "What the guidance recommends",
+      "ul": [
+        "Ask the verifier to assess a significant change as soon as possible.",
+        "There is no fixed deadline. If your own risk assessment shows the update meets the Methodology Act, you may report it at the next regular verification.",
+        "Even minor changes can cause non-compliance, so change carefully and aim for more accurate methods, fewer error-prone data flows and fewer data gaps."
+      ]
+    },
+    {
+      "h": "The yearly review",
+      "p": [
+        "Review the plan at least once a year and whenever the plant changes significantly. Record every change, and keep it objectively justifiable. Check each year whether a more accurate data source has become available; if so, put it in the plan and use it from the earliest date possible."
+      ]
+    },
+    {
+      "h": "Records",
+      "p": [
+        "Keep monitoring records and supporting documents for at least six years after the reporting period. The transitional period rule was four years."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel bills, electricity bills and purchase invoices into dated, fingerprinted records, so the source documents your plan points to are easy to find. It does not write your monitoring plan or file anything in the CBAM Registry.",
+  "links": [
+    {
+      "label": "What goes in the plan and what in procedures",
+      "to": "/answers/cbam-monitoring-plan-or-written-procedures"
+    },
+    {
+      "label": "How long to keep CBAM records",
+      "to": "/answers/how-long-to-keep-cbam-records"
+    },
+    {
+      "label": "Change log for a verifier",
+      "to": "/answers/carbon-inventory-change-log-for-verifier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.5.2 and 4.5.7, and Table 2-1 on the data retention period",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

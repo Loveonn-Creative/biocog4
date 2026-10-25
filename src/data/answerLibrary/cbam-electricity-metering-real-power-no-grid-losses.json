@@ -1,0 +1,59 @@
+{
+  "slug": "cbam-electricity-metering-real-power-no-grid-losses",
+  "q": "Which electricity units count for CBAM: kWh or kVAh, and what about line losses?",
+  "title": "CBAM electricity: kWh, not kVAh",
+  "short": "The Commission's guidance says to meter real (active) power, not apparent power, and to ignore transmission and distribution losses before your plant boundary. Many Indian bills charge in kVAh, so use the kWh reading. Meter each process where you can, since the factor applies per production process.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian cement and fertiliser plants preparing CBAM electricity data",
+  "sections": [
+    {
+      "h": "What to measure",
+      "ul": [
+        "Active power only: the energy your plant actually consumes. Reactive or apparent power is disregarded.",
+        "Losses between the grid supply point and your boundary are disregarded.",
+        "Meter electricity per production process where possible, because indirect emissions are attributed to processes."
+      ]
+    },
+    {
+      "h": "What this means for an Indian bill",
+      "p": [
+        "Where a tariff bills in kVAh, the bill usually also prints kWh. Use that. Converting kVAh with a power factor adds an estimate you would have to defend."
+      ]
+    },
+    {
+      "h": "Which factor you multiply by",
+      "p": [
+        "Indirect emissions equal electricity consumed in MWh times the emission factor. For grid power the default factor is the Commission's country figure in Annex II of the Default Values Act. Annex III has different factors, used only for electricity imported into the EU as a good."
+      ]
+    },
+    {
+      "h": "Who has to do this",
+      "p": [
+        "Only goods for which indirect emissions count: cement and fertilisers. For steel, aluminium and hydrogen, electricity is not part of the embedded emissions figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the printed kWh from electricity bills. On a kVAh bill it uses printed kWh when there is one, and otherwise marks any conversion as an estimate. It does not meter your plant.",
+  "links": [
+    {
+      "label": "Electricity factor choices for cement and fertilisers",
+      "to": "/answers/cbam-indirect-emissions-electricity-factor-india"
+    },
+    {
+      "label": "Fertiliser indirect emissions",
+      "to": "/answers/cbam-fertiliser-indirect-emissions-electricity"
+    },
+    {
+      "label": "Several electricity sources",
+      "to": "/answers/cbam-electricity-from-several-sources-weighted"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.7 and 4.8.3.1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

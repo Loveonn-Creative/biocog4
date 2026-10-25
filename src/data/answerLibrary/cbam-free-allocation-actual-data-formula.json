@@ -1,0 +1,71 @@
+{
+  "slug": "cbam-free-allocation-actual-data-formula",
+  "q": "How is the free allocation adjustment worked out when I use actual CBAM data?",
+  "title": "CBAM free allocation with actual data",
+  "short": "For each process, specific free allocation equals the CBAM factor times the cross-sectoral correction factor times the process benchmark. A simple good takes that figure. A complex good adds, for each bought or own precursor, its mass per tonne times that precursor's own figure. EU-made precursors count as zero.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "Step 1: the process figure",
+      "p": [
+        "SFA = CBAM factor x CSCF x BM*. The CBAM factor is 97.5% for 2026, 95% for 2027 and 90% for 2028. BM* is the process-related benchmark from column A of the Free Allocation Adjustment Act, the same for every country. The year is the year the good was produced."
+      ]
+    },
+    {
+      "h": "Step 2: simple good",
+      "p": [
+        "No precursors, so the specific embedded free allocation (SEFA) equals the process figure."
+      ]
+    },
+    {
+      "h": "Step 3: complex good",
+      "p": [
+        "SEFA = process figure + sum of (mass of precursor i per tonne of good x SEFA of precursor i). Mass per tonne is the total precursor mass used in the process divided by the tonnes of good made in it. Repeat down the chain until a precursor has no precursors."
+      ]
+    },
+    {
+      "h": "Which precursor values",
+      "ul": [
+        "Own precursor or a supplier's verified report: use the actual value.",
+        "No verification report: use the default benchmark from column B, for the production year of your good.",
+        "Precursor made in the EU, or in Iceland, Liechtenstein, Norway, Switzerland or the listed territories: zero, though the quantity must still be reported."
+      ]
+    },
+    {
+      "h": "About the correction factor",
+      "p": [
+        "The guidance table shows 1.0 for every year and calls those values preliminary. Its footnote says the 2026 to 2030 values are in Implementing Decision (EU) 2026/1862, so check that decision for the final figure."
+      ]
+    },
+    {
+      "h": "Who uses the result",
+      "p": [
+        "The importer deducts SEFA times the tonnes imported from the embedded emissions to get the CBAM obligation. As operator you supply SEFA in the verified emissions report."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your production and purchase documents into quantities by product, which feeds the mass figures. The benchmark look-up and the calculation are done in the Commission's template.",
+  "links": [
+    {
+      "label": "CBAM factor by year",
+      "to": "/answers/cbam-free-allocation-phase-out-by-year"
+    },
+    {
+      "label": "CBAM benchmark values",
+      "to": "/answers/cbam-benchmark-values-steel-cement-aluminium"
+    },
+    {
+      "label": "Steel categories and route letters",
+      "to": "/answers/cbam-steel-categories-stainless-alloy-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 4, free allocation adjustment (14 August 2026), section 2.2.1, equations 1 to 5, and Table 2-1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

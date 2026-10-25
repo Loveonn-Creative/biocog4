@@ -3234,6 +3234,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a country get a lower default grid emission factor under CBAM?",
+  "text": "Yes, but only through the Commission. A third country can submit official data showing its grid is cleaner than the default. The factor is a five-year average, the data is due by 30 June, and the new value is adopted by amending the Default Values Act. A plant cannot apply it on its own.",
+  "url": "https://senseible.earth/answers/cbam-alternative-default-grid-factor-evidence"
+ },
+ {
+  "kind": "answer",
   "title": "Do we count our own aluminium scrap that we remelt in our cast house in the CBAM figure?",
   "text": "Not as a precursor. Scrap made and remelted inside your own installation is part of your own production loop: count the fuel used to remelt it, and do not add the scrap again as an input. Count only aluminium that leaves as product.",
   "url": "https://senseible.earth/answers/cbam-aluminium-internal-scrap-remelted"
@@ -3255,6 +3261,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What proof does an EU importer need to deduct a carbon price paid in the producer's country?",
   "text": "The importer can only reduce CBAM certificates for a carbon price effectively paid where the goods were made. That needs documents showing the price, the payment, and any rebate or free allocation that cut it, with the producer's information certified by an independent person. A tax with no proof gives no deduction.",
   "url": "https://senseible.earth/answers/cbam-carbon-price-paid-what-proof-is-needed"
+ },
+ {
+  "kind": "answer",
+  "title": "Can a cement plant work out clinker output from cement deliveries for CBAM?",
+  "text": "Yes. If you cannot weigh clinker directly, a stock-adjusted balance from cement deliveries is allowed, using your clinker to cement ratio. Process emissions then use a standard 0.525 t CO2 per tonne of clinker unless you analyse it. The two process methods are treated as equivalent, so pick the more reliable one.",
+  "url": "https://senseible.earth/answers/cbam-cement-clinker-from-deliveries-method"
  },
  {
   "kind": "answer",
@@ -3396,6 +3408,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I set up a CBAM control system without a big team?",
+  "text": "Map your data flow from the first invoice or meter reading to the figure you send the importer, mark where errors are likely or costly, put a control on each high-risk point, then check yearly that the controls work. A second person checking the first is a cheap start. Fewer errors also means a lighter verification.",
+  "url": "https://senseible.earth/answers/cbam-control-system-risk-assessment-three-steps"
+ },
+ {
+  "kind": "answer",
   "title": "How much lower is CBAM cost for electric arc furnace or DRI steel than blast furnace steel?",
   "text": "With verified actual data, scrap-based EAF and gas-based DRI steel can owe little or no CBAM in 2026, while blast furnace steel pays on emissions above the benchmark. By 2034, when free allocation ends, EAF scrap steel costs roughly a fifth of BF-BOF. The saving only appears with verified actual emissions, not default values.",
   "url": "https://senseible.earth/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
@@ -3516,9 +3534,27 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What documents must I give a CBAM verifier?",
+  "text": "The accreditation and verification rules list the monitoring plan, installation description, change records, sampling plan, the report to verify, last year's report and verification report, precursor verification reports, electricity evidence and data source details. Verifiers may also ask for IT system overviews and calibration certificates.",
+  "url": "https://senseible.earth/answers/cbam-documents-to-give-your-verifier"
+ },
+ {
+  "kind": "answer",
+  "title": "How does CBAM treat a plant that uses grid power and its own captive power?",
+  "text": "When a plant draws power from more than one source, the default is a weighted average of each source's emission factor, weighted by its share of the plant's total electricity use. If you can show a production process used only one source, or a subset, that process may use that source's factor instead.",
+  "url": "https://senseible.earth/answers/cbam-electricity-from-several-sources-weighted"
+ },
+ {
+  "kind": "answer",
   "title": "Is electricity exported to the EU covered by CBAM?",
   "text": "Yes. Electricity, CN 2716 00 00, is one of the CBAM goods. It matters only where a grid connects to the EU's. Default values are used unless strict conditions for actual emissions, such as a direct contract with a named plant, are met. Indian exporters are not affected directly.",
   "url": "https://senseible.earth/answers/cbam-electricity-imports-cn-2716"
+ },
+ {
+  "kind": "answer",
+  "title": "Which electricity units count for CBAM: kWh or kVAh, and what about line losses?",
+  "text": "The Commission's guidance says to meter real (active) power, not apparent power, and to ignore transmission and distribution losses before your plant boundary. Many Indian bills charge in kVAh, so use the kWh reading. Meter each process where you can, since the factor applies per production process.",
+  "url": "https://senseible.earth/answers/cbam-electricity-metering-real-power-no-grid-losses"
  },
  {
   "kind": "answer",
@@ -3558,6 +3594,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How is the free allocation adjustment worked out when I use actual CBAM data?",
+  "text": "For each process, specific free allocation equals the CBAM factor times the cross-sectoral correction factor times the process benchmark. A simple good takes that figure. A complex good adds, for each bought or own precursor, its mass per tonne times that precursor's own figure. EU-made precursors count as zero.",
+  "url": "https://senseible.earth/answers/cbam-free-allocation-actual-data-formula"
+ },
+ {
+  "kind": "answer",
   "title": "How fast is EU free allocation phased out under CBAM, year by year?",
   "text": "The CBAM factor that sets how much free allocation is deducted falls from 97.5% in 2026 to 95% in 2027, 90% in 2028, 77.5% in 2029, 51.5% in 2030, 39% in 2031, 26.5% in 2032, 14% in 2033 and zero in 2034. As it falls, more of each tonne is charged.",
   "url": "https://senseible.earth/answers/cbam-free-allocation-phase-out-by-year"
@@ -3570,6 +3612,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can green certificates or a virtual PPA lower my CBAM electricity emission factor?",
+  "text": "No. The Commission's guidance says market-based instruments such as guarantees of origin or green certificates cannot set a specific emission factor, and a virtual PPA is a financial instrument, not a PPA for physical delivery. An actual factor needs a direct technical link or a physical PPA, with metering and contracts.",
+  "url": "https://senseible.earth/answers/cbam-green-certificates-virtual-ppa-not-allowed"
+ },
+ {
+  "kind": "answer",
   "title": "What steps does a gas-based hydrogen plant follow to report its CBAM emissions?",
   "text": "Hydrogen (CN 2804 10 00) is charged on direct emissions only. Measure feed and fuel gas, apply the gas analysis and factor, subtract only CO2 that leaves for permanent storage under the rules, and divide by tonnes of hydrogen produced. Keep metering and lab records for a verifier.",
   "url": "https://senseible.earth/answers/cbam-grey-hydrogen-smr-installation-steps"
@@ -3579,6 +3627,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How does a hot-finished tube maker work out its CBAM figure when it buys steel rounds?",
   "text": "Add two parts. Your own direct emissions from the reheating and heat-treatment furnaces, per tonne of tube. Then the embedded emissions of the rounds you used, taken from the steel mill's figure and scaled by tonnes of rounds per tonne of tube. Yield loss raises the second part.",
   "url": "https://senseible.earth/answers/cbam-hot-finished-tube-from-bought-rounds"
+ },
+ {
+  "kind": "answer",
+  "title": "How does CBAM split emissions when hydrogen is a by-product?",
+  "text": "Where hydrogen comes out of a process that also makes other products, such as a steam cracker or chlor-alkali cell, emissions are split by moles of each co-product, not by mass. If a molar mass is unknown, mass is used instead. Hydrogen kept inside a refinery or organic chemical site is outside CBAM.",
+  "url": "https://senseible.earth/answers/cbam-hydrogen-co-product-molar-attribution"
+ },
+ {
+  "kind": "answer",
+  "title": "If I buy hydrogen made by electrolysis as an input, what does CBAM need from the supplier?",
+  "text": "Hydrogen routes with only electricity emissions give a direct figure of zero, but if you use that hydrogen as a precursor you must still name its production route. Using the zero as an actual value needs the producer's installation to be verified under CBAM rules, though a verifier may simplify the work, for example for hydrogen certified as RFNBO.",
+  "url": "https://senseible.earth/answers/cbam-hydrogen-from-electrolysis-as-precursor"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a CBAM calculation for steam reforming hydrogen look like?",
+  "text": "The Commission's example: a steam reformer burning 190,000 tonnes of natural gas and exporting 800 TJ of heat emits 461,765 t CO2 net, over 55,000 t of hydrogen. That is 8.396 t CO2 per tonne. With 2028 free allocation of 4.580, importing 100 tonnes leaves 381.6 certificates.",
+  "url": "https://senseible.earth/answers/cbam-hydrogen-worked-example-steam-reforming"
  },
  {
   "kind": "answer",
@@ -3636,6 +3702,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What do I do under CBAM when a meter fails or a reading is missing?",
+  "text": "Fill the gap with a conservative estimate: one that cannot understate emissions or overstate production. Replace a broken meter quickly, write your gap method into the monitoring plan, and review how to prevent a repeat. A verifier treats a data gap as a misstatement that must be closed, even if it is small.",
+  "url": "https://senseible.earth/answers/cbam-meter-failure-data-gap-conservative-estimate"
+ },
+ {
+  "kind": "answer",
   "title": "What goes into a CBAM monitoring methodology document?",
   "text": "It describes how your figures are made: the installation and its production processes, every source stream and emission source, the method and factors used, where each number comes from, who checks it, and how gaps are filled. A verifier reads it first, then tests your records against it.",
   "url": "https://senseible.earth/answers/cbam-monitoring-methodology-document-contents"
@@ -3645,6 +3717,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What monitoring methodology documentation must a non-EU CBAM installation keep?",
   "text": "A non-EU installation reporting actual emissions in the CBAM definitive period needs a written monitoring plan, in English, covering at least the elements in Annex II, point A.5 of Implementing Regulation (EU) 2025/2547: the installation, goods by CN code, boundaries, source streams, methods, precursors and data controls. Keep every version.",
   "url": "https://senseible.earth/answers/cbam-monitoring-methodology-documentation-for-operators"
+ },
+ {
+  "kind": "answer",
+  "title": "What must a CBAM monitoring plan contain for 2026?",
+  "text": "The Commission's guidance lists 22 minimum elements, from the date and version number to a control system. They include goods by CN code, production processes, source streams, precursors with supplier names, electricity and heat details, and a diagram with no gaps or double counting. You may adapt the layout but keep every element.",
+  "url": "https://senseible.earth/answers/cbam-monitoring-plan-minimum-elements-list"
+ },
+ {
+  "kind": "answer",
+  "title": "What goes in the CBAM monitoring plan and what goes in written procedures?",
+  "text": "Put stable facts in the plan: boundaries, methods, instruments by position and type. Put what changes often in written procedures: who does what, checks, gap-filling, review routines. Use job titles instead of names and do not list meter serial numbers, so a like-for-like swap does not force a plan update.",
+  "url": "https://senseible.earth/answers/cbam-monitoring-plan-or-written-procedures"
+ },
+ {
+  "kind": "answer",
+  "title": "Do I have to update my CBAM monitoring plan every time the plant changes?",
+  "text": "Only significant changes force an update, and you must make it without undue delay. Minor changes can go into a change log shared at the next verification. The Commission still advises asking the verifier early, because a wrong method can create material misstatements. Review the plan at least once a year anyway.",
+  "url": "https://senseible.earth/answers/cbam-monitoring-plan-update-after-plant-change"
  },
  {
   "kind": "answer",
@@ -3690,6 +3780,30 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "When do a precursor's electricity emissions count in a CBAM figure?",
+  "text": "It depends on the finished good. If the good is in Annex II (steel, aluminium, hydrogen), a precursor outside Annex II still brings its indirect emissions. If the good is outside Annex II (cement, fertilisers), a precursor that is in Annex II, such as hydrogen, does not bring its indirect emissions.",
+  "url": "https://senseible.earth/answers/cbam-precursor-indirect-emissions-annex-ii-rule"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I track bought precursors and old stock for CBAM?",
+  "text": "Group each precursor by CN code and use a weighted average across suppliers and years. Your figures must pass one balance: bought plus made plus last year's stock equals used plus exported plus new stock. FIFO is allowed but optional, and not in 2026, when all earlier stock is treated as made in 2026.",
+  "url": "https://senseible.earth/answers/cbam-precursor-mass-balance-fifo-stocks"
+ },
+ {
+  "kind": "answer",
+  "title": "What if my precursor supplier cannot give me a verification report for CBAM?",
+  "text": "Use the Commission's default values for that precursor, including the mark-up. Actual data counts only if it comes from a positive verification report that covers the precursor's production year and was issued by a verifier accredited for that sector. You may mix default and actual data, even for the same precursor.",
+  "url": "https://senseible.earth/answers/cbam-precursor-supplier-no-verification-report-defaults"
+ },
+ {
+  "kind": "answer",
+  "title": "What are primary and corroborating data sources in CBAM monitoring?",
+  "text": "Where you have two sources for one figure, the most accurate and least error-prone becomes the primary source in your plan. The other stays as a corroborating source, used for routine cross-checks and for filling gaps. A supplier's weighbridge or lab result is allowed, though your own measurement is preferred.",
+  "url": "https://senseible.earth/answers/cbam-primary-and-corroborating-data-source"
+ },
+ {
+  "kind": "answer",
   "title": "What can an EU importer do when the producer will not share CBAM installation data?",
   "text": "The importer can use the official default values for those goods. They are set high on purpose and include a mark-up, so the CBAM bill is usually larger than with actual data. Most importers use this to press suppliers, and switch to suppliers who can send real figures.",
   "url": "https://senseible.earth/answers/cbam-producer-will-not-share-installation-data"
@@ -3723,6 +3837,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What are specific embedded emissions in CBAM, and how is the number built?",
   "text": "It is the CO2 per tonne of a CBAM good: the direct emissions attributed to its production process, plus the embedded emissions of any precursors consumed, divided by the tonnes produced. For cement and fertilisers, indirect emissions from electricity are added too. The importer declares this figure per tonne imported.",
   "url": "https://senseible.earth/answers/cbam-specific-embedded-emissions-explained"
+ },
+ {
+  "kind": "answer",
+  "title": "How does CBAM define carbon, low alloy, high alloy and stainless steel?",
+  "text": "Stainless steel has 1.2% carbon or less and 10.5% chromium or more by weight. High alloy steel has 8% or more metallic alloying elements, or needs high surface quality and processability. Low alloy is other alloy steel. Carbon steel is everything else. The category and route select your free allocation benchmark.",
+  "url": "https://senseible.earth/answers/cbam-steel-categories-stainless-alloy-carbon"
  },
  {
   "kind": "answer",
@@ -3762,9 +3882,45 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "When should an Indian exporter start CBAM verification in the year?",
+  "text": "Early in the reporting year. There is no fixed verification deadline, but a calendar-year report cannot be finished before January, importers file by 30 September, and the verification guidance says declarants need reports by mid-August at the latest. Suppliers of precursors should verify first, so their customers can use the results.",
+  "url": "https://senseible.earth/answers/cbam-verification-when-to-start-timeline"
+ },
+ {
+  "kind": "answer",
+  "title": "How does a CBAM verifier spot unusual figures in my data?",
+  "text": "The verifier runs analytical procedures at three stages: on totals before the work starts, on the data behind them, and on the final totals. They compare years, production against emissions, and nameplate capacity. Any outlier needs your explanation plus evidence, and can lead to wider testing.",
+  "url": "https://senseible.earth/answers/cbam-verifier-analytical-procedures-unusual-figures"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a CBAM verifier check on my supplier's verification report?",
+  "text": "Four things: the supplier's report is for the right production year, it contains a positive verification statement, its verifier was accredited at the time of issue with all relevant sectors covered, and your figures match the report exactly. If any check fails, you must replace the data with the right default value.",
+  "url": "https://senseible.earth/answers/cbam-verifier-checks-precursor-supplier-report"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a CBAM verifier check before accepting my engagement?",
+  "text": "Before accepting, the verifier reviews your monitoring plan and last report, risks to its own independence, time needed, and whether it can work in your country: office, language, travel, visas, security. It must have competent staff and set time from the risks found. If more time is needed later, the contract must allow an adjustment.",
+  "url": "https://senseible.earth/answers/cbam-verifier-pre-contract-checks-before-accepting"
+ },
+ {
+  "kind": "answer",
+  "title": "What does a CBAM verifier do before testing my numbers?",
+  "text": "First a strategic analysis of your plant: size, processes, sources, meters, precursors, electricity and control system. Then a risk analysis of inherent and control risks. These set the verification plan: a programme of activities, a test plan for your controls and a data sampling plan. Manual data transfers and weak checking raise the work.",
+  "url": "https://senseible.earth/answers/cbam-verifier-strategic-analysis-risk-analysis"
+ },
+ {
+  "kind": "answer",
   "title": "When can a CBAM verifier do a virtual site visit?",
   "text": "Only when all conditions in the Verification Principles Act are met. A verifier must have visited physically in the previous reporting period, the installation must be simple enough and unchanged, and all evidence must be obtainable remotely. The first verification of an Indian plant needs a physical visit.",
   "url": "https://senseible.earth/answers/cbam-virtual-site-visit-when-allowed"
+ },
+ {
+  "kind": "answer",
+  "title": "What counts as white cement clinker under CBAM, and why does it matter?",
+  "text": "White cement clinker has at most 0.4% Fe2O3, 0.003% Cr2O3 and 0.03% Mn2O3 by mass and is used for products like tile adhesives and joint fillers. Any other clinker is grey. They carry separate TARIC codes, separate embedded emissions figures and separate free allocation benchmarks.",
+  "url": "https://senseible.earth/answers/cbam-white-or-grey-clinker-benchmark"
  },
  {
   "kind": "answer",
@@ -18537,6 +18693,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of whey protein powder?",
   "text": "Whey is a co-product of cheese or paneer, so first decide how much of the milk's footprint it carries, by mass or by value, and state the rule. Then add membrane filtration, evaporation and spray drying energy, flavours and packaging. Spray drying is usually the largest plant energy use.",
   "url": "https://senseible.earth/answers/whey-protein-powder-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "Which annex of the CBAM default values do I use for goods, electricity and precursors?",
+  "text": "Annex I gives goods and precursor defaults by country and CN code, Annex II grid factors for a plant's own electricity, Annex III factors for electricity imported into the EU, and Annex IV the highest precursor values when the origin is unknown. Marked-up values apply to Annex I and IV.",
+  "url": "https://senseible.earth/answers/which-annex-of-cbam-default-values-act-to-use"
  },
  {
   "kind": "answer",

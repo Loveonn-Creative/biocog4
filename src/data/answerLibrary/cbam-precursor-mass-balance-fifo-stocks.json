@@ -1,0 +1,65 @@
+{
+  "slug": "cbam-precursor-mass-balance-fifo-stocks",
+  "q": "How do I track bought precursors and old stock for CBAM?",
+  "title": "CBAM precursor stock and FIFO",
+  "short": "Group each precursor by CN code and use a weighted average across suppliers and years. Your figures must pass one balance: bought plus made plus last year's stock equals used plus exported plus new stock. FIFO is allowed but optional, and not in 2026, when all earlier stock is treated as made in 2026.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian fabricators, re-rollers and fertiliser blenders using bought CBAM inputs",
+  "sections": [
+    {
+      "h": "The balance a verifier checks",
+      "ul": [
+        "Mass purchased + mass produced + mass of stock from the previous year = total mass consumed + mass exported + new stock remaining.",
+        "If you attribute specific precursors to specific processes, total consumed must equal the sum consumed in each process."
+      ]
+    },
+    {
+      "h": "Weighted average by CN code",
+      "p": [
+        "Precursors under the same CN code, from different suppliers or different years, are averaged by weight by default. You may depart from that only with evidence that particular precursors went into particular production processes."
+      ]
+    },
+    {
+      "h": "What counts as evidence",
+      "ul": [
+        "You can tell the different precursors apart: separate tanks, separate warehouse areas, or labels or QR codes fixed to the material.",
+        "Their use is tracked separately, with procedures in the monitoring plan that you actually follow."
+      ]
+    },
+    {
+      "h": "FIFO and old stock",
+      "ul": [
+        "First in, first out is voluntary: last year's stock is used before this year's purchases.",
+        "FIFO cannot be used in 2026. All stock from earlier years is treated as if produced in 2026, and 2026 default values apply to bought stock.",
+        "From 2027, enter year-end stock in the next year's report as received material, using the average embedded emissions of the stock shown in the Commission's template."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into dated records with quantity, unit and supplier, which feeds the 'mass purchased' line. Stock counts and the balance itself stay in your own records.",
+  "links": [
+    {
+      "label": "Two suppliers, weighted average",
+      "to": "/answers/cbam-precursor-from-two-suppliers-weighted-average"
+    },
+    {
+      "label": "Supplier has no verification report",
+      "to": "/answers/cbam-precursor-supplier-no-verification-report-defaults"
+    },
+    {
+      "label": "The mandatory emissions report template",
+      "to": "/answers/cbam-operator-emissions-report-template-mandatory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.9.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 7.4.1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

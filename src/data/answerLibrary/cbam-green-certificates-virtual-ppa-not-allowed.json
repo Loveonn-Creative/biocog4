@@ -1,0 +1,73 @@
+{
+  "slug": "cbam-green-certificates-virtual-ppa-not-allowed",
+  "q": "Can green certificates or a virtual PPA lower my CBAM electricity emission factor?",
+  "title": "CBAM: certificates and virtual PPAs",
+  "short": "No. The Commission's guidance says market-based instruments such as guarantees of origin or green certificates cannot set a specific emission factor, and a virtual PPA is a financial instrument, not a PPA for physical delivery. An actual factor needs a direct technical link or a physical PPA, with metering and contracts.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian cement and fertiliser plants buying renewable power or certificates",
+  "sections": [
+    {
+      "h": "What is ruled out",
+      "ul": [
+        "Guarantees of origin, green certificates and similar market-based instruments cannot be used to set a specific emission factor.",
+        "Virtual PPAs are purely financial. The Commission says they fall outside the definition of a power purchase agreement.",
+        "The guidance does not name Indian RECs. They are the same kind of instrument, so confirm with your verifier before assuming otherwise."
+      ]
+    },
+    {
+      "h": "Route 1: direct technical link",
+      "ul": [
+        "A single line diagram showing the link between the generator and your installation.",
+        "Smart meter data showing generation and consumption reconcile within the same period of one hour or less.",
+        "If the link connects more than two installations, a contract between the two operators covering at least the electricity you consumed, or an intra-company offtake agreement if both belong to one legal entity."
+      ]
+    },
+    {
+      "h": "Route 2: a physical PPA",
+      "ul": [
+        "Documents from a public authority, the transmission system operator or another reliable public source confirming a physical grid connection between generator and plant.",
+        "Smart meter data reconciling generation and consumption within periods of one hour or less.",
+        "One contract between all parties: your plant, the generator, and an intermediary if there is one. Generator and consumer must both be parties, and the subject must be physical delivery."
+      ]
+    },
+    {
+      "h": "Either route is enough",
+      "p": [
+        "The two routes are not cumulative. Meeting one suffices. The generator's emissions must also be monitored under the same rules and verified."
+      ]
+    },
+    {
+      "h": "Otherwise",
+      "p": [
+        "Grid power uses the Commission's default factor for the country of production. That factor comes from licensed IEA data in Annex II of the Default Values Act, not from the CEA database."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads green tariff bills and open access bills into dated records, which are the paper trail a physical PPA claim needs. Whether a claim meets the CBAM tests is for your verifier to decide.",
+  "links": [
+    {
+      "label": "Electricity factor choices for cement and fertilisers",
+      "to": "/answers/cbam-indirect-emissions-electricity-factor-india"
+    },
+    {
+      "label": "Guarantees of origin and Indian factories",
+      "to": "/answers/can-guarantees-of-origin-cover-indian-factory"
+    },
+    {
+      "label": "Several electricity sources",
+      "to": "/answers/cbam-electricity-from-several-sources-weighted"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.7 and 4.8.3.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 7.5",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

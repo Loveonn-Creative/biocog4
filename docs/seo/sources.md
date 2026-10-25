@@ -156,6 +156,7 @@ Deep links below are known-good (used on the site already or canonical). For any
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bf23969b1e527913_1776061833.pdf
 - https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bab2189eb243ca93_1776061843.pdf
 - https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_7_Ch7_ODS_Substitutes.pdf
+- https://taxation-customs.ec.europa.eu/document/download/04ceca3b-466e-4ed9-a1a5-a47c2e5e5be0_en?filename=Guidance%20No.%205b%20-%20Sector-specific%20guidance%20document%20on%20hydrogen.pdf
 ## Publisher home pages (use with a precise label, e.g. "ISO 14067:2018 (iso.org)")
 - https://www.iso.org
 - https://ghgprotocol.org

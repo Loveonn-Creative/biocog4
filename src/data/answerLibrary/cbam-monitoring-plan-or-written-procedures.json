@@ -1,0 +1,65 @@
+{
+  "slug": "cbam-monitoring-plan-or-written-procedures",
+  "q": "What goes in the CBAM monitoring plan and what goes in written procedures?",
+  "title": "CBAM plan or written procedures?",
+  "short": "Put stable facts in the plan: boundaries, methods, instruments by position and type. Put what changes often in written procedures: who does what, checks, gap-filling, review routines. Use job titles instead of names and do not list meter serial numbers, so a like-for-like swap does not force a plan update.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "Why split them",
+      "p": [
+        "The Commission's guidance borrows the EU ETS approach. There, a plan change needs formal approval, so frequently changing detail sits in separate procedures. For CBAM the same split helps you keep the plan steady and helps the verifier focus."
+      ]
+    },
+    {
+      "h": "What belongs in written procedures",
+      "ul": [
+        "Roles, responsibilities and staff competence.",
+        "Data flow and control procedures.",
+        "Quality assurance checks.",
+        "How you estimate data when there is a gap.",
+        "The regular review of the monitoring methodology.",
+        "The sampling plan and how it is revised.",
+        "Lab analysis methods, and how you show a lab is equivalent to ISO/IEC 17025 accreditation.",
+        "Routines for keeping the list of products and precursors current."
+      ]
+    },
+    {
+      "h": "Two habits that avoid constant updates",
+      "ul": [
+        "Name posts, not people: 'shift master' or 'environmental plant manager'.",
+        "Identify a meter by its position on the flow chart, its principle (for example ultrasonic flow meter), its range and, if known, its uncertainty. You need not name the model or serial number, so replacing it with a very similar meter does not trigger a plan change."
+      ]
+    },
+    {
+      "h": "Keep versions straight",
+      "p": [
+        "Every version of the plan and the procedures must be identifiable, and everyone must work from the latest. If you already run an ISO 14001 system, the guidance suggests folding both documents into it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your fuel, power and purchase records in dated, fingerprinted form, which gives a written procedure something fixed to point to. Senseible does not draft the plan or the procedures for you.",
+  "links": [
+    {
+      "label": "The 22 minimum elements of the plan",
+      "to": "/answers/cbam-monitoring-plan-minimum-elements-list"
+    },
+    {
+      "label": "When a plant change forces a plan update",
+      "to": "/answers/cbam-monitoring-plan-update-after-plant-change"
+    },
+    {
+      "label": "Control system in three steps",
+      "to": "/answers/cbam-control-system-risk-assessment-three-steps"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.5.3 and 4.5.7",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

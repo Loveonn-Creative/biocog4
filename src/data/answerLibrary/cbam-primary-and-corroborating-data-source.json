@@ -1,0 +1,61 @@
+{
+  "slug": "cbam-primary-and-corroborating-data-source",
+  "q": "What are primary and corroborating data sources in CBAM monitoring?",
+  "title": "CBAM primary and corroborating data",
+  "short": "Where you have two sources for one figure, the most accurate and least error-prone becomes the primary source in your plan. The other stays as a corroborating source, used for routine cross-checks and for filling gaps. A supplier's weighbridge or lab result is allowed, though your own measurement is preferred.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "What best available means",
+      "ul": [
+        "Best: the lowest measurement uncertainty and the lowest risk of error in the data flow. A meter feeding a database beats a handwritten log typed into an unprotected spreadsheet.",
+        "Where an instrument is under legal metrological control, prefer it.",
+        "Available: something you already have, such as a meter you use for process control or billing."
+      ]
+    },
+    {
+      "h": "Data not under your control",
+      "p": [
+        "The rules let you use measurements you do not control. If your fuel supplier sets the calorific value and emission factor, or owns the weighbridge or flow meter, those data can be used and you need not buy equipment. Your own monitoring is still preferred where possible."
+      ]
+    },
+    {
+      "h": "Three kinds of determination",
+      "ul": [
+        "Direct: reading a flow meter, weighing a truck, or a lab analysis.",
+        "Indirect: an estimate from sound reasoning, such as boiler efficiency used to get heat from fuel.",
+        "Correlation: for example coal emission factor from ash content and calorific value. It must be confirmed by lab analysis every year."
+      ]
+    },
+    {
+      "h": "What to do with the second source",
+      "p": [
+        "Name the best one as primary. Keep the others as corroborating sources: compare them regularly with the primary one, and use them first when the primary source fails."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices and fuel bills into dated, fingerprinted records, which often make a useful corroborating source next to your own meter readings. The choice of primary source stays with you and your verifier.",
+  "links": [
+    {
+      "label": "Measurement or calculation method",
+      "to": "/answers/cbam-measurement-or-calculation-method-choice"
+    },
+    {
+      "label": "Calibration certificates for a verifier",
+      "to": "/answers/verifier-asks-meter-calibration-certificates"
+    },
+    {
+      "label": "When a meter fails",
+      "to": "/answers/cbam-meter-failure-data-gap-conservative-estimate"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.5.4",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

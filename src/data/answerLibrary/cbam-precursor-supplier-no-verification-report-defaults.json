@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-precursor-supplier-no-verification-report-defaults",
+  "q": "What if my precursor supplier cannot give me a verification report for CBAM?",
+  "title": "Precursor without a verification report",
+  "short": "Use the Commission's default values for that precursor, including the mark-up. Actual data counts only if it comes from a positive verification report that covers the precursor's production year and was issued by a verifier accredited for that sector. You may mix default and actual data, even for the same precursor.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian fabricators and re-rollers that buy CBAM goods as inputs",
+  "sections": [
+    {
+      "h": "When actual supplier data is not usable",
+      "ul": [
+        "No verification report was given to you.",
+        "The report covers the wrong reporting period.",
+        "The verifier gave a negative opinion, for example because the report was incomplete or had material misstatements.",
+        "The verifier did not hold an active accreditation for the sector and activities."
+      ]
+    },
+    {
+      "h": "What you use instead",
+      "ul": [
+        "Embedded emissions, free allocation and any carbon price paid all switch to default values.",
+        "Country known: the Annex I default for that country and CN code, plus the mark-up.",
+        "Country unknown: the higher Annex IV value, plus the mark-up.",
+        "The mark-up is 10% in 2026, 20% in 2027 and 30% from 2028, and 1% for fertilisers."
+      ]
+    },
+    {
+      "h": "Mixing is allowed",
+      "p": [
+        "Default values can be used for each quantity of precursor that lacks supplier data, together with actual data from your own plant. Even for one precursor type, some batches can use actual data and others defaults. Your emissions report shows the split."
+      ]
+    },
+    {
+      "h": "Set your own cut-off date",
+      "p": [
+        "The verification guidance suggests agreeing a deadline with your verifier. For example, if verification ends in July, compile your report by the end of June. If a precursor report has not arrived by then, substitute defaults and proceed."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads purchase invoices into dated, fingerprinted records, so the quantity of each bought input and its supplier are easy to list for the precursor table. It does not hold your supplier's verification reports.",
+  "links": [
+    {
+      "label": "Default value mark-ups by year",
+      "to": "/answers/cbam-default-value-mark-up-by-year"
+    },
+    {
+      "label": "Two suppliers, weighted average",
+      "to": "/answers/cbam-precursor-from-two-suppliers-weighted-average"
+    },
+    {
+      "label": "Which annex of the default values to use",
+      "to": "/answers/which-annex-of-cbam-default-values-act-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), sections 4.9.2 and 4.10.1, footnote 77",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.1",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-hydrogen-co-product-molar-attribution",
+  "q": "How does CBAM split emissions when hydrogen is a by-product?",
+  "title": "CBAM hydrogen as a by-product",
+  "short": "Where hydrogen comes out of a process that also makes other products, such as a steam cracker or chlor-alkali cell, emissions are split by moles of each co-product, not by mass. If a molar mass is unknown, mass is used instead. Hydrogen kept inside a refinery or organic chemical site is outside CBAM.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian chlor-alkali, refinery, fertiliser and green hydrogen producers",
+  "sections": [
+    {
+      "h": "The rule",
+      "p": [
+        "Equation 43 of the Methodology Act: emissions of co-product i equal the process total times (mass of i divided by its molar mass), divided by the sum of the same ratio for all co-products. It applies whether or not the other co-products are CBAM goods."
+      ]
+    },
+    {
+      "h": "If a molar mass is unknown",
+      "p": [
+        "Attribute by the mass of the co-products instead."
+      ]
+    },
+    {
+      "h": "Steam crackers",
+      "ul": [
+        "Define which co-products are high value chemicals: those used for economic purposes. Others, usually burnt as fuel, are left out.",
+        "The guidance suggests using the high value chemicals from the EU ETS free allocation rules: hydrogen, acetylene, ethylene, propylene, butadiene and benzene.",
+        "Toluene, xylenes and butenes may also count where they are separated and used."
+      ]
+    },
+    {
+      "h": "Chlor-alkali and water electrolysis",
+      "ul": [
+        "Chlor-alkali and chlorate plants make chlorine, sodium hydroxide and hydrogen. Hydrogen's share follows molar proportions.",
+        "Water electrolysis: if oxygen is vented, all emissions go to hydrogen. If oxygen is collected and used or sold, molar proportions apply.",
+        "Both routes now fall under the general cross-sector rules. Their direct emissions are small, and electricity emissions do not count for hydrogen."
+      ]
+    },
+    {
+      "h": "What is out of scope",
+      "p": [
+        "Synthesis gas, and hydrogen made within refineries or organic chemical plants and used only there, are not the hydrogen CBAM good. Only pure hydrogen, or hydrogen and nitrogen mixtures usable for ammonia, count."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel and electricity bills into dated records for a plant, but the molar split of co-products is worked out from your production data, not from invoices.",
+  "links": [
+    {
+      "label": "Electrolytic hydrogen: direct emissions only",
+      "to": "/answers/cbam-electrolytic-hydrogen-direct-emissions-only"
+    },
+    {
+      "label": "Refinery hydrogen for own use",
+      "to": "/answers/cbam-refinery-hydrogen-own-use"
+    },
+    {
+      "label": "Worked example: steam reforming",
+      "to": "/answers/cbam-hydrogen-worked-example-steam-reforming"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5b, hydrogen (14 August 2026), sections 2.3.3 and 3.1.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/04ceca3b-466e-4ed9-a1a5-a47c2e5e5be0_en?filename=Guidance%20No.%205b%20-%20Sector-specific%20guidance%20document%20on%20hydrogen.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

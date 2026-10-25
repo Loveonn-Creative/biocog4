@@ -1,0 +1,68 @@
+{
+  "slug": "cbam-verifier-analytical-procedures-unusual-figures",
+  "q": "How does a CBAM verifier spot unusual figures in my data?",
+  "title": "CBAM verifier: unusual figures",
+  "short": "The verifier runs analytical procedures at three stages: on totals before the work starts, on the data behind them, and on the final totals. They compare years, production against emissions, and nameplate capacity. Any outlier needs your explanation plus evidence, and can lead to wider testing.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "What the checks look like",
+      "ul": [
+        "Emissions from the same source over several years.",
+        "Expected production and emission levels.",
+        "Reported figures against production and other operating data.",
+        "Figures against the installation's nameplate capacity and design efficiency."
+      ]
+    },
+    {
+      "h": "Three stages",
+      "ul": [
+        "Preliminary: on aggregated data, as part of the strategic analysis and inherent risk assessment.",
+        "Substantive: on the aggregates and the data points behind them, to find structural errors and outliers.",
+        "Final: on the totals, to confirm every error found was resolved properly."
+      ]
+    },
+    {
+      "h": "When something stands out",
+      "p": [
+        "The verifier must obtain an explanation backed by additional evidence, then judge the impact on the verification plan. That can mean more detailed testing of that area."
+      ]
+    },
+    {
+      "h": "Where it works best",
+      "p": [
+        "Where detailed data is readily available and comes from well-controlled sources, such as a financial system that is also audited, or fuel invoices entered into accounts payable the same way as other invoice data."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "p": [
+        "Before the verifier asks, check your own year-on-year and month-on-month figures and write a short note for any jump: a shutdown, a new fuel, a product mix change."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows your fuel and power use by month, drawn from the bills themselves, so a spike is easy to spot and trace to the document behind it before a verifier asks.",
+  "links": [
+    {
+      "label": "When a verifier asks why a month looks unusual",
+      "to": "/answers/verifier-asks-why-a-month-looks-unusual"
+    },
+    {
+      "label": "When a verifier asks why emissions changed",
+      "to": "/answers/verifier-asks-why-emissions-changed"
+    },
+    {
+      "label": "Estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.7.3",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

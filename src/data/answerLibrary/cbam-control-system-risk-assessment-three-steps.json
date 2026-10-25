@@ -1,0 +1,68 @@
+{
+  "slug": "cbam-control-system-risk-assessment-three-steps",
+  "q": "How do I set up a CBAM control system without a big team?",
+  "title": "CBAM control system in three steps",
+  "short": "Map your data flow from the first invoice or meter reading to the figure you send the importer, mark where errors are likely or costly, put a control on each high-risk point, then check yearly that the controls work. A second person checking the first is a cheap start. Fewer errors also means a lighter verification.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "Step 1: a simple risk assessment",
+      "p": [
+        "Trace every data flow: where a number first appears (fuel invoice, instrument reading), how it is written down or entered, how it is calculated, and where it ends as embedded emissions. A point is high risk if the chance of error is high, or the effect on emissions is very large, or both are at least medium."
+      ]
+    },
+    {
+      "h": "Step 2: add controls",
+      "ul": [
+        "Cover every high-risk point, and ideally the medium ones too.",
+        "Examples from the guidance: a meter that may fail, copy and paste errors from a paper production log into a spreadsheet, data open to all staff, fuel invoices that arrive late.",
+        "Four-eyes principle: a second, independent person checks every data flow. Independent means, for example, an accountant checking the environment and safety head who compiles the data. Both need basic training in CBAM monitoring."
+      ]
+    },
+    {
+      "h": "Step 3: check they work",
+      "p": [
+        "Review the controls with internal checks and the verifier's findings. If they are ineffective, improve them and update the plan and the written procedures."
+      ]
+    },
+    {
+      "h": "Other areas to cover",
+      "ul": [
+        "Meter calibration and maintenance. Parts that cannot be calibrated must be named in the plan with another control.",
+        "Quality of IT systems, separation of duties, staff competence.",
+        "Internal reviews: completeness, primary against corroborating source, comparison with last year, production against sales and stock figures.",
+        "Corrections and corrective action without undue delay.",
+        "Outsourced work such as outside labs or meters you do not control: define what you need from them and check what they return.",
+        "Records and document versions."
+      ]
+    }
+  ],
+  "senseible": "Senseible ties each figure to the bill or invoice it came from and does not count a duplicate file twice, which gives a second person something concrete to check. It does not replace your own review or the verifier's.",
+  "links": [
+    {
+      "label": "Four-eyes check on calculations",
+      "to": "/answers/four-eyes-check-on-carbon-calculations"
+    },
+    {
+      "label": "Data flow diagram for a verifier",
+      "to": "/answers/verifier-asks-for-data-flow-diagram"
+    },
+    {
+      "label": "Minimum contents of the plan",
+      "to": "/answers/cbam-monitoring-plan-minimum-elements-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, Quick guide for non-EU operators (14 August 2026), step 7",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.5.6",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "cbam-hydrogen-worked-example-steam-reforming",
+  "q": "What does a CBAM calculation for steam reforming hydrogen look like?",
+  "title": "CBAM hydrogen worked example",
+  "short": "The Commission's example: a steam reformer burning 190,000 tonnes of natural gas and exporting 800 TJ of heat emits 461,765 t CO2 net, over 55,000 t of hydrogen. That is 8.396 t CO2 per tonne. With 2028 free allocation of 4.580, importing 100 tonnes leaves 381.6 certificates.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian chlor-alkali, refinery, fertiliser and green hydrogen producers",
+  "sections": [
+    {
+      "h": "What is monitored",
+      "p": [
+        "One production process. The only source stream is natural gas, used as feedstock and fuel. Hydrogen is a simple good, so there are no precursors, and only direct emissions count. Heat exported to the rest of the plant or a district network is subtracted. For heat of unknown origin the default is natural gas at 90% boiler efficiency, which is 62.3 t CO2 per TJ."
+      ]
+    },
+    {
+      "h": "Free allocation and the import",
+      "p": [
+        "Hydrogen has one benchmark whatever the route: 5.089 t CO2 per tonne of hydrogen. The example assumes year 2028, CSCF 1.00 and CBAM factor 90%. Captured CO2 sent to storage could also be deducted, if the receiving site monitors under CBAM."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Steam reforming, hydrogen, import in 2028 (Commission's example)",
+    "lines": [
+      "Natural gas: 190,000 t x 48 GJ/t = 9,120 TJ; x 56.1 t CO2/TJ = 511,632 t CO2",
+      "Heat export: 800 TJ x 62.3 t CO2/TJ = about 49,867 t CO2, subtracted",
+      "Total direct emissions: 461,765 t CO2",
+      "Hydrogen made: 55,000 t, so specific embedded emissions = 8.396 t CO2 per t",
+      "Free allocation: 5.089 x 0.90 x 1.00 = 4.580 t CO2 per t",
+      "Import of 100 t: 839.6 t CO2 less 458.0 t CO2 = 381.6 certificates, before any carbon price deduction"
+    ],
+    "note": "Figures are the Commission's own worked example in Guidance No. 5b, not a real plant. Your numbers will differ."
+  },
+  "senseible": "Senseible reads natural gas invoices into dated, fingerprinted quantities, which is the largest input line in a reformer's calculation. The heat export, free allocation and import steps are done in the Commission's template.",
+  "links": [
+    {
+      "label": "Default value for Indian hydrogen",
+      "to": "/answers/cbam-default-value-india-hydrogen"
+    },
+    {
+      "label": "Grey hydrogen: installation steps",
+      "to": "/answers/cbam-grey-hydrogen-smr-installation-steps"
+    },
+    {
+      "label": "Free allocation with actual data",
+      "to": "/answers/cbam-free-allocation-actual-data-formula"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 5b, hydrogen (14 August 2026), sections 3.1 and 4",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/04ceca3b-466e-4ed9-a1a5-a47c2e5e5be0_en?filename=Guidance%20No.%205b%20-%20Sector-specific%20guidance%20document%20on%20hydrogen.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

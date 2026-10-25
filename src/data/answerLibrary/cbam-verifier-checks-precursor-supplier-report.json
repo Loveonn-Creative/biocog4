@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-verifier-checks-precursor-supplier-report",
+  "q": "What does a CBAM verifier check on my supplier's verification report?",
+  "title": "CBAM: checks on a supplier's report",
+  "short": "Four things: the supplier's report is for the right production year, it contains a positive verification statement, its verifier was accredited at the time of issue with all relevant sectors covered, and your figures match the report exactly. If any check fails, you must replace the data with the right default value.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian fabricators and re-rollers using bought steel, aluminium or other CBAM inputs",
+  "sections": [
+    {
+      "h": "The four checks",
+      "ol": [
+        "The report is from the installation where the precursor was made, for the production year confirmed.",
+        "It contains a positive verification statement.",
+        "The supplier's verifier held an accreditation from a national accreditation body for that period, not suspended or withdrawn, covering all relevant sectors when the statement was issued.",
+        "The actual data you use are identical to the values in that report."
+      ]
+    },
+    {
+      "h": "If a check fails",
+      "p": [
+        "The verifier asks you to replace the actual data with the default value and checks that the right country and year were used. That check on the default value also applies whenever you chose defaults from the start."
+      ]
+    },
+    {
+      "h": "How the verifier gets the report",
+      "p": [
+        "For now the report can be given to your verifier outside the CBAM Registry. Later the supplier's report will be available to your verifier directly in the Registry."
+      ]
+    },
+    {
+      "h": "What to ask your supplier for",
+      "ul": [
+        "The verification report for the year the material was made.",
+        "Installation identity and country, the production route, and the specific direct and, where relevant, indirect embedded emissions.",
+        "The specific embedded free allocation, and any carbon price paid.",
+        "The sector-specific parameters listed in Annex IV of the Methodology Act."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads supplier invoices and delivery documents into dated records of what you bought and from whom. It does not obtain or check your supplier's verification report.",
+  "links": [
+    {
+      "label": "Supplier has no verification report",
+      "to": "/answers/cbam-precursor-supplier-no-verification-report-defaults"
+    },
+    {
+      "label": "What a supplier sends besides emissions",
+      "to": "/answers/what-cbam-data-besides-emissions-supplier-sends"
+    },
+    {
+      "label": "Finding an accredited verifier",
+      "to": "/answers/how-to-find-cbam-accredited-verifier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 7.3",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.9.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

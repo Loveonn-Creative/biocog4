@@ -1,0 +1,66 @@
+{
+  "slug": "cbam-documents-to-give-your-verifier",
+  "q": "What documents must I give a CBAM verifier?",
+  "title": "Documents to give a CBAM verifier",
+  "short": "The accreditation and verification rules list the monitoring plan, installation description, change records, sampling plan, the report to verify, last year's report and verification report, precursor verification reports, electricity evidence and data source details. Verifiers may also ask for IT system overviews and calibration certificates.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Operators of Indian plants exporting CBAM goods to the EU",
+  "sections": [
+    {
+      "h": "The listed items",
+      "ul": [
+        "Latest monitoring plan.",
+        "Description of the installation, procedures, processes or flowcharts kept outside the plan.",
+        "Record of changes to the installation and plan since the last verification.",
+        "Sampling plan, if you have one.",
+        "The emissions report to be verified.",
+        "Last year's emissions report and verification report, if a different verifier did it.",
+        "How you corrected non-conformities or acted on recommendations from last year.",
+        "Verification reports for precursors you use but do not make.",
+        "Evidence of the actual production time of a precursor, if you used it instead of the default year.",
+        "How precursors were attributed to production processes.",
+        "If you use neither the default electricity factor nor your own plant's: the electricity producer's verification report and the direct link or PPA evidence.",
+        "If you export electricity to the EU: single line diagrams, smart meter data and similar evidence.",
+        "Databases and data sources used for monitoring and reporting."
+      ]
+    },
+    {
+      "h": "Often asked in addition",
+      "ul": [
+        "An overview of IT systems showing the data flow.",
+        "Evidence of meter maintenance and accuracy, such as calibration certificates.",
+        "Evidence of product composition where the benchmark or functional unit depends on it.",
+        "Findings from inspections under another carbon pricing scheme, if any."
+      ]
+    },
+    {
+      "h": "When the verifier needs them",
+      "p": [
+        "Some are needed at the pre-contract stage, where the verifier reviews the plan and last year's report to judge risk and time. The rest are needed during the verification itself."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the bills and invoices behind your figures in dated, fingerprinted records, so the source documents a verifier asks for can be pulled up quickly. The plan, calibration certificates and plant diagrams remain yours to supply.",
+  "links": [
+    {
+      "label": "Preparing for the site visit",
+      "to": "/answers/verifier-site-visit-what-to-prepare"
+    },
+    {
+      "label": "Data flow diagram",
+      "to": "/answers/verifier-asks-for-data-flow-diagram"
+    },
+    {
+      "label": "Calibration certificates",
+      "to": "/answers/verifier-asks-meter-calibration-certificates"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.3 (Annex II, section 2.3 of the accreditation and verification delegated act)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

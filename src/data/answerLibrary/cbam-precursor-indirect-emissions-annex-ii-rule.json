@@ -1,0 +1,67 @@
+{
+  "slug": "cbam-precursor-indirect-emissions-annex-ii-rule",
+  "q": "When do a precursor's electricity emissions count in a CBAM figure?",
+  "title": "CBAM precursor electricity emissions rule",
+  "short": "It depends on the finished good. If the good is in Annex II (steel, aluminium, hydrogen), a precursor outside Annex II still brings its indirect emissions. If the good is outside Annex II (cement, fertilisers), a precursor that is in Annex II, such as hydrogen, does not bring its indirect emissions.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian steel, fertiliser and ammonia producers",
+  "sections": [
+    {
+      "h": "Annex II goods",
+      "p": [
+        "Annex II of the CBAM Regulation lists goods for which only direct emissions count: aluminium, hydrogen, electricity, and iron and steel."
+      ]
+    },
+    {
+      "h": "Case 1: finished good in Annex II",
+      "p": [
+        "If its production uses a precursor not listed in Annex II, that precursor's indirect emissions are still included. Example from the guidance: agglomerated iron ore (CN 26011200) feeding pig iron. Iron ore is in Annex I but not Annex II, so its indirect emissions travel up the chain."
+      ]
+    },
+    {
+      "h": "Case 2: finished good not in Annex II",
+      "p": [
+        "If its production uses a precursor that is listed in Annex II, the precursor's indirect emissions are left out. Example: hydrogen made separately, for instance by electrolysis on the ammonia site, then used to make ammonia."
+      ]
+    },
+    {
+      "h": "The integrated plant exception",
+      "p": [
+        "In a generic Haber-Bosch plant, hydrogen is only an intermediate step and its indirect emissions cannot be separated. Then the indirect emissions of the whole process are included."
+      ]
+    },
+    {
+      "h": "Why it matters",
+      "p": [
+        "Ammonia and fertilisers carry electricity emissions; steel does not, except through precursors such as ore. Check which case you are in before asking suppliers for electricity data."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and purchase invoices into dated records. Which precursor rule applies to your goods depends on the CN codes, which you or your verifier confirm.",
+  "links": [
+    {
+      "label": "Ammonia plant buying hydrogen",
+      "to": "/answers/cbam-ammonia-plant-buying-hydrogen-precursor"
+    },
+    {
+      "label": "Fertiliser indirect emissions",
+      "to": "/answers/cbam-fertiliser-indirect-emissions-electricity"
+    },
+    {
+      "label": "Hydrogen from electrolysis as a precursor",
+      "to": "/answers/cbam-hydrogen-from-electrolysis-as-precursor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Guidance No. 2, Quick guide for non-EU operators (14 August 2026), step 3, precursors",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/91e1056c-4524-4705-aaa7-e25c1439a87a_en?filename=Guidance%20No.%202%20-%20Quick%20guide%20for%20non-EU%20operators%20on%20CBAM%20implementation.pdf"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 3, methods for calculating embedded emissions (14 August 2026), section 4.9.2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/29b9eec7-1a4b-4eb6-ab85-96a0c9e35fd0_en?filename=Guidance%20No.%203%20-%20CBAM%20methods%20for%20the%20calculation%20of%20emissions%20embedded%20in%20goods.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}
