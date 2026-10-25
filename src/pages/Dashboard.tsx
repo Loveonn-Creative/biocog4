@@ -9,7 +9,9 @@ import { useOrganization } from '@/hooks/useOrganization';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { applyScope, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
 import { readOrganizationProfile } from '@/lib/organizationProfile';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, Navigate } from 'react-router-dom';
+import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
+import { BuyerRequestsCard } from '@/components/supplier/BuyerRequestsCard';
 import { Navigation } from '@/components/Navigation';
 import { StandSection } from '@/components/dashboard/StandSection';
 import { FinancePathways } from '@/components/dashboard/FinancePathways';
@@ -68,6 +70,8 @@ const Dashboard = () => {
   const { scope, ready: workspaceReady, organization } = useWorkspace();
   const workspaceKey = scopeKey(scope);
   const { isEnterprise } = useEnterpriseMode();
+  // Staff-granted enterprise access opens the supplier dashboard instead.
+  const { access: enterpriseAccess } = useEnterpriseAccess();
   const scope3 = useScope3Visibility();
   const financeSwitch = useFinanceInsightsSwitch();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch, error: emissionsError } = useEmissions();
@@ -289,6 +293,8 @@ const Dashboard = () => {
   // Green-finance readiness is shown on the green-loan row, not repeated as an alert.
   const otherAlerts = alerts.filter((a) => a.id !== 'green_finance').slice(0, 3);
 
+  if (enterpriseAccess) return <Navigate to="/enterprise/dashboard" replace />;
+
   return (
     <div className="min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
@@ -301,6 +307,7 @@ const Dashboard = () => {
 
       <main className="mx-auto w-full max-w-7xl px-4 py-6 md:px-6 md:py-8">
         <GraceNotice className="mb-4" />
+        <BuyerRequestsCard />
         <header className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div className="min-w-0 space-y-1">
             <div className="flex flex-wrap items-center gap-3">

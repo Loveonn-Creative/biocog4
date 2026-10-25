@@ -19,6 +19,7 @@ that assumes:
 - `05_dashboard_realtime.py` — dashboard summary updates within 5s of a verify in another tab.
 - `06_monetize.py` — verified green invoice surfaces in /monetize with payout preview.
 - `07_bulk.py` — 5-invoice bulk upload dedupes on SHA256.
+- `section_link_after_reload.mjs` — `/pricing?plan=scale#plans` lands on the plans after a click, a deploy reload and a direct open; Back keeps position. `node tests/e2e/section_link_after_reload.mjs [base]`.
 
 ## Fixtures
 
