@@ -1229,37 +1229,55 @@ export type Database = {
       enterprise_access: {
         Row: {
           company_name: string
+          contract_start: string
           email: string
           granted_at: string
           granted_by: string
           id: string
           notes: string | null
           organization_id: string | null
+          questions_per_month: number
+          reads_per_supplier: number
+          reminders_per_request: number
+          reports_included: number
           revoked_at: string | null
+          seats_included: number
           status: string
           supplier_limit: number
         }
         Insert: {
           company_name: string
+          contract_start?: string
           email: string
           granted_at?: string
           granted_by: string
           id?: string
           notes?: string | null
           organization_id?: string | null
+          questions_per_month?: number
+          reads_per_supplier?: number
+          reminders_per_request?: number
+          reports_included?: number
           revoked_at?: string | null
+          seats_included?: number
           status?: string
           supplier_limit?: number
         }
         Update: {
           company_name?: string
+          contract_start?: string
           email?: string
           granted_at?: string
           granted_by?: string
           id?: string
           notes?: string | null
           organization_id?: string | null
+          questions_per_month?: number
+          reads_per_supplier?: number
+          reminders_per_request?: number
+          reports_included?: number
           revoked_at?: string | null
+          seats_included?: number
           status?: string
           supplier_limit?: number
         }
@@ -1268,6 +1286,65 @@ export type Database = {
             foreignKeyName: "enterprise_access_organization_id_fkey"
             columns: ["organization_id"]
             isOneToOne: true
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      enterprise_rates: {
+        Row: {
+          kind: string
+          unit_paise: number
+          updated_at: string
+        }
+        Insert: {
+          kind: string
+          unit_paise: number
+          updated_at?: string
+        }
+        Update: {
+          kind?: string
+          unit_paise?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      enterprise_usage: {
+        Row: {
+          billable: boolean
+          created_at: string
+          enterprise_org_id: string
+          id: string
+          kind: string
+          quantity: number
+          ref: string | null
+          unit_paise: number | null
+        }
+        Insert: {
+          billable: boolean
+          created_at?: string
+          enterprise_org_id: string
+          id?: string
+          kind: string
+          quantity: number
+          ref?: string | null
+          unit_paise?: number | null
+        }
+        Update: {
+          billable?: boolean
+          created_at?: string
+          enterprise_org_id?: string
+          id?: string
+          kind?: string
+          quantity?: number
+          ref?: string | null
+          unit_paise?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "enterprise_usage_enterprise_org_id_fkey"
+            columns: ["enterprise_org_id"]
+            isOneToOne: false
             referencedRelation: "organizations"
             referencedColumns: ["id"]
           },
@@ -1631,6 +1708,7 @@ export type Database = {
           created_at: string
           credits: number
           expires_at: string | null
+          funded_by_org: string | null
           id: string
           packs: number
           paid_at: string | null
@@ -1647,6 +1725,7 @@ export type Database = {
           created_at?: string
           credits: number
           expires_at?: string | null
+          funded_by_org?: string | null
           id?: string
           packs: number
           paid_at?: string | null
@@ -1663,6 +1742,7 @@ export type Database = {
           created_at?: string
           credits?: number
           expires_at?: string | null
+          funded_by_org?: string | null
           id?: string
           packs?: number
           paid_at?: string | null
@@ -1673,7 +1753,15 @@ export type Database = {
           user_id?: string
           validity?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "invoice_credit_packs_funded_by_org_fkey"
+            columns: ["funded_by_org"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       invoice_read_counting: {
         Row: {
@@ -3715,6 +3803,7 @@ export type Database = {
           period_end: string
           period_start: string
           purchase_share_pct: number | null
+          reminders_sent: number
           scope3_category: number
           shared_at: string | null
           status: string
@@ -3736,6 +3825,7 @@ export type Database = {
           period_end: string
           period_start: string
           purchase_share_pct?: number | null
+          reminders_sent?: number
           scope3_category?: number
           shared_at?: string | null
           status?: string
@@ -3757,6 +3847,7 @@ export type Database = {
           period_end?: string
           period_start?: string
           purchase_share_pct?: number | null
+          reminders_sent?: number
           scope3_category?: number
           shared_at?: string | null
           status?: string
@@ -4357,6 +4448,14 @@ export type Database = {
           supplier_limit: number
         }[]
       }
+      my_enterprise_usage: {
+        Args: never
+        Returns: {
+          included: number
+          kind: string
+          used: number
+        }[]
+      }
       my_finance_insights: { Args: never; Returns: Json }
       my_org_permissions: { Args: { p_organization_id: string }; Returns: Json }
       my_private_records: { Args: never; Returns: Json }
@@ -4407,6 +4506,7 @@ export type Database = {
         }
         Returns: string
       }
+      record_enterprise_download: { Args: { p_what?: string }; Returns: Json }
       release_invoice_read: { Args: { p_id: string }; Returns: boolean }
       remove_member: {
         Args: { p_organization_id: string; p_user_id: string }
@@ -4484,6 +4584,10 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      service_enterprise_cover_reads: {
+        Args: { p_units: number; p_user: string }
+        Returns: Json
       }
       service_org_can: {
         Args: {
