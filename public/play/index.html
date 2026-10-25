@@ -102,6 +102,40 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
 #tiles .t{cursor:pointer}
 #tiles .t:focus-visible rect{stroke:var(--masala);stroke-width:4}
 .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0 12px 14px}
+.city{margin:4px 0 22px;border:2.5px solid var(--line);border-radius:20px;background:var(--card);box-shadow:5px 6px 0 var(--shadow);overflow:hidden}
+.city svg{display:block;width:100%;height:auto}
+.cityrow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 14px;border-top:2.5px solid var(--line)}
+.cityrow b{font-size:1.05rem;font-variant-numeric:tabular-nums}
+.cityrow .next{color:var(--ink2);font-size:.92rem;margin-right:auto}
+.prog{height:10px;flex-basis:100%;border:2px solid var(--line);border-radius:999px;background:var(--paper2);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--leaf);transition:width .6s ease}
+.streak{display:flex;gap:4px;align-items:center;font-weight:700;font-size:.9rem}
+.streak svg{width:22px;height:22px}
+.modal{position:fixed;inset:0;z-index:20;background:rgba(20,15,10,.45);display:grid;place-items:center;padding:16px}
+.modal[hidden]{display:none}
+.sheet{width:min(560px,100%);max-height:88svh;overflow:auto;background:var(--paper);border:2.5px solid var(--line);border-radius:20px;padding:6px 16px 18px;box-shadow:6px 8px 0 var(--shadow)}
+.stampgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px}
+.stamp-c{text-align:center;font-size:.82rem;color:var(--ink2);min-width:0}
+.stamp-c b{display:block;color:var(--ink);font-size:.9rem;margin-top:4px}
+.stamp-c svg{width:86px;height:86px}
+.stamp-c.off svg{opacity:.35;filter:grayscale(1)}
+#toasts{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:30;display:grid;gap:8px;justify-items:center;pointer-events:none;width:min(92vw,420px)}
+.toast{background:var(--card);border:2.5px solid var(--line);border-radius:14px;padding:8px 14px;font-weight:800;box-shadow:4px 5px 0 var(--shadow);display:flex;gap:10px;align-items:center;animation:slam .45s cubic-bezier(.2,1.6,.4,1)}
+.toast svg{width:40px;height:40px;flex:none}
+.toast small{display:block;font-weight:600;color:var(--ink2)}
+@keyframes slam{0%{transform:scale(1.8) rotate(-8deg);opacity:0}100%{transform:none;opacity:1}}
+.skins{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.skin{border:2.5px solid var(--line);border-radius:999px;padding:4px 10px 4px 6px;background:var(--card);font-weight:700;font-size:.85rem;display:flex;gap:6px;align-items:center}
+.skin i{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);display:block}
+.skin[aria-pressed="true"]{outline:3px solid var(--masala);outline-offset:1px}
+.skin:disabled{opacity:.45;cursor:not-allowed}
+.deck.fever{background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--haldi) 30%,transparent) 0 14px,transparent 14px 28px)}
+.deck.fever .habit{border-color:var(--haldi);box-shadow:0 0 0 4px color-mix(in srgb,var(--haldi) 55%,transparent),4px 5px 0 var(--shadow)}
+.meter.hurry i{background:repeating-linear-gradient(90deg,var(--masala) 0 8px,var(--haldi) 8px 16px)}
+.levels{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:0 12px 12px}
+.lv{border:2px solid var(--line);border-radius:10px;background:var(--card);padding:3px 8px;font-weight:800;font-size:.8rem;line-height:1.1}
+.lv small{display:block;color:var(--haldi);letter-spacing:1px;font-size:.7rem}
+.lv[aria-current="true"]{background:var(--ink);color:var(--paper)}
 .foot{margin-top:28px;color:var(--ink2);font-size:.92rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .foot a{color:var(--ink);font-weight:700}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -128,6 +162,16 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
     <span class="sticker" data-t="sticker"></span>
     <h1 data-t="title" data-html></h1>
     <p class="lede" data-t="lede"></p>
+    <section class="city" aria-labelledby="city-h">
+      <h2 id="city-h" class="sr" data-t="city_title"></h2>
+      <svg id="city" viewBox="0 0 600 190" role="img"></svg>
+      <div class="cityrow">
+        <b id="hawa"></b><span class="next" id="cnext"></span>
+        <span class="streak" id="streak"></span>
+        <button class="pill" id="stampsBtn"></button>
+        <div class="prog" aria-hidden="true"><i id="cprog"></i></div>
+      </div>
+    </section>
     <div class="shelf">
       <button class="ticket" data-open="runner">
         <svg viewBox="0 0 240 110" aria-hidden="true">
@@ -167,7 +211,7 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
     <div class="bar"><button class="back" data-back data-t="back"></button><h2 id="r-h" data-t="g1"></h2><span class="hud" id="r-hud"></span></div>
     <div class="board">
       <canvas id="r-cv" width="800" height="320" aria-label="Dhuaan Dhoom" role="img"></canvas>
-      <div class="overlay" id="r-ov"><h3 id="r-msg"></h3><p id="r-sub"></p><button class="go" id="r-go"></button></div>
+      <div class="overlay" id="r-ov"><h3 id="r-msg"></h3><p id="r-sub"></p><div class="skins" id="r-skins" role="group"></div><button class="go" id="r-go"></button></div>
     </div>
     <p class="hint" data-t="g1h"></p>
   </section>
@@ -190,11 +234,16 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
     <div class="board">
       <div class="gridwrap"><svg id="tiles" role="group" aria-label="Chimney Chill"></svg></div>
       <div class="row"><button class="pill" id="c-daily" data-t="daily"></button><button class="pill" id="c-next" data-t="next"></button></div>
-      <div class="overlay" id="c-ov" hidden><h3 id="c-msg"></h3><p id="c-sub"></p><button class="go" id="c-go"></button></div>
+      <div class="levels" id="c-levels" role="group"></div>
+      <div class="overlay" id="c-ov" hidden><h3 id="c-msg"></h3><p id="c-sub"></p><button class="pill" id="c-share" hidden data-t="c_share"></button><button class="go" id="c-go"></button></div>
     </div>
     <p class="hint" data-t="g3h"></p>
   </section>
 
+  <div class="modal" id="stampModal" hidden role="dialog" aria-modal="true" aria-labelledby="stTitle">
+    <div class="sheet"><div class="bar"><h2 id="stTitle"></h2><button class="back" id="stClose" data-t="close"></button></div><div class="stampgrid" id="stampGrid"></div></div>
+  </div>
+  <div id="toasts" aria-live="polite"></div>
   <footer class="foot">
     <span data-t="foot"></span>
     <a href="/" data-online-only data-t="cta"></a>
@@ -207,6 +256,18 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
 // ---------- copy ----------
 const T = {
   hx: {
+    city_title: 'Tumhara shehar', close: 'Band karo', stamps_btn: 'Stamp book',
+    hawa: (n) => `${n} saaf hawa points`, city_next: (n, w) => `Agla: ${w} (${n} aur)`, city_done: 'Shehar ekdum saaf. Saans lo, mast raho.',
+    unlocks: ['Ped', 'Chhat pe solar', 'Panchhi', 'Patang', 'Metro', 'Neela aasmaan'], unlock_toast: (w) => `Shehar mein naya: ${w}!`,
+    streak: (n) => (n ? `Chai streak: ${n} din` : 'Aaj ki pehli chai?'), stamps_title: (a, b) => `Stamp book · ${a}/${b}`, stamp_new: 'Naya stamp!',
+    earned: (p) => `+${p} saaf hawa`, city_alt: 'Tumhara shehar: jitna khelo, utna saaf',
+    r_near: ['Baal baal bache!', 'Uff, close tha!', 'Itna paas? Dil dhak dhak.'], r_shield: 'Solar dhaal mili!', r_saved: 'Dhaal ne bacha liya!', r_gust: 'Hawa ka jhonka! Suraj khinche chale aa rahe',
+    r_combo: (k) => `Combo x${k}`, skin_lock: (n) => `${n} points pe khulega`, skin_disco: 'Genset Slayer stamp chahiye', skins: ['Hara', 'Haldi', 'Neela', 'Disco'],
+    s_fever: 'FEVER! Ab double points', s_hurry: 'Jaldi jaldi!', c_share: 'Result copy karo', c_copied: 'Copy ho gaya. Group mein bhejo!', c_level: (l) => `Level ${l}`,
+    stamps: [['first', 'Pehla Kadam', 'Koi bhi game khatam karo'], ['slayer', 'Genset Slayer', 'Dhuaan Dhoom mein 500 m'], ['suns', 'Suraj Collector', 'Ek run mein 20 suraj'],
+      ['close', 'Baal Baal Bache', 'Ek run mein 5 close calls'], ['shield', 'Dhaal Wala', 'Solar dhaal se jaan bachao'], ['baba', 'Bill Bachao Baba', 'Bill Bachao mein 18 sahi'],
+      ['fever', 'Fever Pitch', 'Fever mode tak pahuncho'], ['wire', 'Taar Ustaad', 'Kisi level pe 3 star'], ['daily', 'Roz Ka Riyaaz', 'Aaj ki paheli suljhao'],
+      ['streak', 'Teen Din Chai', '3 din lagatar khelo'], ['all', 'Teeno Khel', 'Teeno games khelo'], ['city', 'Saaf Shehar', 'Poora shehar saaf karo']],
     sticker: 'Net ho na ho, khel chalu', sound: 'Awaaz', offline: 'Net chala gaya? Koi baat nahi. Chai pakdo, game khelo.',
     title: 'Chai Break <em>Arcade</em>', lede: 'Teen chhote games. Dhuaan bhagao, bill bachao, factory ko thanda karo. Bas tap karo aur khelo.',
     g1: 'Dhuaan Dhoom', g1s: 'E-rickshaw chalao, dhuaan se bacho, suraj pakdo.',
@@ -233,6 +294,18 @@ const T = {
     c_sub: (m, p, s) => `${m} moves mein (target ${p}). ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'Agla level',
   },
   en: {
+    city_title: 'Your city', close: 'Close', stamps_btn: 'Stamp book',
+    hawa: (n) => `${n} clean-air points`, city_next: (n, w) => `Next: ${w} (${n} to go)`, city_done: 'The city is spotless. Breathe easy.',
+    unlocks: ['Trees', 'Rooftop solar', 'Birds', 'Kites', 'Metro', 'Blue sky'], unlock_toast: (w) => `New in your city: ${w}!`,
+    streak: (n) => (n ? `Chai streak: ${n} day${n === 1 ? '' : 's'}` : 'First chai today?'), stamps_title: (a, b) => `Stamp book · ${a}/${b}`, stamp_new: 'New stamp!',
+    earned: (p) => `+${p} clean air`, city_alt: 'Your city: the more you play, the cleaner it gets',
+    r_near: ['That was close!', 'Phew, by a whisker!', 'That close? Heart attack.'], r_shield: 'Solar shield!', r_saved: 'The shield saved you!', r_gust: 'Wind gust! The suns are coming to you',
+    r_combo: (k) => `Combo x${k}`, skin_lock: (n) => `Unlocks at ${n} points`, skin_disco: 'Needs the Genset Slayer stamp', skins: ['Green', 'Haldi', 'Blue', 'Disco'],
+    s_fever: 'FEVER! Double points now', s_hurry: 'Hurry!', c_share: 'Copy result', c_copied: 'Copied. Send it to the group!', c_level: (l) => `Level ${l}`,
+    stamps: [['first', 'First Step', 'Finish any game'], ['slayer', 'Genset Slayer', '500 m in Dhuaan Dhoom'], ['suns', 'Sun Collector', '20 suns in one run'],
+      ['close', 'By a Whisker', '5 close calls in one run'], ['shield', 'Shield Bearer', 'Survive a hit with the solar shield'], ['baba', 'Bill Bachao Baba', '18 right in Bill Bachao'],
+      ['fever', 'Fever Pitch', 'Reach fever mode'], ['wire', 'Wire Wizard', '3 stars on any level'], ['daily', 'Daily Habit', 'Solve a daily puzzle'],
+      ['streak', 'Three-Day Chai', 'Play 3 days in a row'], ['all', 'All Three', 'Play all three games'], ['city', 'Clean City', 'Clean the whole city']],
     sticker: 'Works with or without internet', sound: 'Sound', offline: 'No internet? No problem. Grab a chai and play.',
     title: 'Chai Break <em>Arcade</em>', lede: 'Three tiny games. Outrun the smoke, save the bill, cool the factory. Just tap and play.',
     g1: 'Dhuaan Dhoom', g1s: 'Drive the e-rickshaw, dodge the smoke, catch the sun.',
@@ -259,6 +332,18 @@ const T = {
     c_sub: (m, p, s) => `${m} moves (target ${p}). ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'Next level',
   },
   hi: {
+    city_title: 'तुम्हारा शहर', close: 'बंद करो', stamps_btn: 'स्टैम्प बुक',
+    hawa: (n) => `${n} साफ़ हवा पॉइंट`, city_next: (n, w) => `अगला: ${w} (${n} और)`, city_done: 'शहर एकदम साफ़। साँस लो, मस्त रहो।',
+    unlocks: ['पेड़', 'छत पर सोलर', 'पंछी', 'पतंग', 'मेट्रो', 'नीला आसमान'], unlock_toast: (w) => `शहर में नया: ${w}!`,
+    streak: (n) => (n ? `चाय स्ट्रीक: ${n} दिन` : 'आज की पहली चाय?'), stamps_title: (a, b) => `स्टैम्प बुक · ${a}/${b}`, stamp_new: 'नया स्टैम्प!',
+    earned: (p) => `+${p} साफ़ हवा`, city_alt: 'तुम्हारा शहर: जितना खेलो, उतना साफ़',
+    r_near: ['बाल-बाल बचे!', 'उफ़, क़रीब था!', 'इतना पास? दिल धक-धक।'], r_shield: 'सोलर ढाल मिली!', r_saved: 'ढाल ने बचा लिया!', r_gust: 'हवा का झोंका! सूरज खिंचे चले आ रहे',
+    r_combo: (k) => `कॉम्बो x${k}`, skin_lock: (n) => `${n} पॉइंट पर खुलेगा`, skin_disco: 'जेनसेट स्लेयर स्टैम्प चाहिए', skins: ['हरा', 'हल्दी', 'नीला', 'डिस्को'],
+    s_fever: 'फ़ीवर! अब डबल पॉइंट', s_hurry: 'जल्दी जल्दी!', c_share: 'रिज़ल्ट कॉपी करो', c_copied: 'कॉपी हो गया। ग्रुप में भेजो!', c_level: (l) => `लेवल ${l}`,
+    stamps: [['first', 'पहला क़दम', 'कोई भी खेल ख़त्म करो'], ['slayer', 'जेनसेट स्लेयर', 'धुआँ धूम में 500 मी'], ['suns', 'सूरज कलेक्टर', 'एक रन में 20 सूरज'],
+      ['close', 'बाल-बाल बचे', 'एक रन में 5 बार बाल-बाल बचे'], ['shield', 'ढाल वाला', 'सोलर ढाल से जान बचाओ'], ['baba', 'बिल बचाओ बाबा', 'बिल बचाओ में 18 सही'],
+      ['fever', 'फ़ीवर पिच', 'फ़ीवर मोड तक पहुँचो'], ['wire', 'तार उस्ताद', 'किसी लेवल पर 3 स्टार'], ['daily', 'रोज़ का रियाज़', 'आज की पहेली सुलझाओ'],
+      ['streak', 'तीन दिन चाय', '3 दिन लगातार खेलो'], ['all', 'तीनों खेल', 'तीनों खेल खेलो'], ['city', 'साफ़ शहर', 'पूरा शहर साफ़ करो']],
     sticker: 'नेट हो न हो, खेल चालू', sound: 'आवाज़', offline: 'नेट चला गया? कोई बात नहीं। चाय उठाओ, खेलो।',
     title: 'चाय ब्रेक <em>आर्केड</em>', lede: 'तीन छोटे खेल। धुआँ भगाओ, बिल बचाओ, फ़ैक्ट्री को ठंडा करो। बस टैप करो और खेलो।',
     g1: 'धुआँ धूम', g1s: 'ई-रिक्शा चलाओ, धुएँ से बचो, सूरज पकड़ो।',
@@ -345,9 +430,118 @@ function paint() {
   $('[data-best="swipe"]').textContent = best.swipe ? `${t('best')} ${best.swipe}` : '';
   $('[data-best="grid"]').textContent = best.grid ? `${t('best')} L${best.grid}` : '';
   $('#s-bad').textContent = '← ' + t('s_bad'); $('#s-good').textContent = t('s_good') + ' →';
-  Runner.label(); Swipe.label(); Grid.label();
+  Runner.label(); Swipe.label(); Grid.label(); if (typeof Meta !== 'undefined') Meta.home();
 }
 function saveBest(k, v) { const b = store.get('best', {}); if (!b[k] || v > b[k]) { b[k] = v; store.set('best', b); return true; } return false; }
+
+// ---------- progress: one city, one streak, one stamp book ----------
+// Everything is kept in this browser only. Points from any game clean the
+// same city; thresholds add things a cleaner city has.
+const Meta = (() => {
+  const CITY = [60, 160, 320, 520, 800, 1200];
+  const STAMP_IDS = ['first', 'slayer', 'suns', 'close', 'shield', 'baba', 'fever', 'wire', 'daily', 'streak', 'all', 'city'];
+  const get = () => Object.assign({ hawa: 0, days: [], stamps: {}, played: {}, skin: 0 }, store.get('meta', {}));
+  const put = (m) => store.set('meta', m);
+  const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  function streak(m = get()) {
+    const set = new Set(m.days); let n = 0; const d = new Date();
+    if (!set.has(dayKey(d))) d.setDate(d.getDate() - 1);
+    while (set.has(dayKey(d))) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function stamp(id) {
+    const m = get(); if (m.stamps[id]) return false;
+    m.stamps[id] = dayKey(); put(m);
+    const row = t('stamps').find((x) => x[0] === id);
+    toast(stampSvg(id, true), t('stamp_new'), row ? row[1] : id);
+    [660, 880, 1320].forEach((f, k) => setTimeout(() => beep(f, 0.1, 'triangle', 0.05), k * 80));
+    return true;
+  }
+  function finish(game, pts) {
+    const m = get(), before = m.hawa;
+    m.hawa += Math.max(0, Math.round(pts)); m.played[game] = true;
+    const today = dayKey(); if (!m.days.includes(today)) m.days = [...m.days, today].slice(-60);
+    put(m);
+    if (pts > 0) toast(kulhad(true), t('earned')(Math.round(pts)), t('hawa')(m.hawa));
+    CITY.forEach((th, i) => { if (before < th && m.hawa >= th) setTimeout(() => toast(citySpark(), t('unlock_toast')(t('unlocks')[i]), ''), 700); });
+    stamp('first');
+    if (['runner', 'swipe', 'grid'].every((g) => m.played[g])) stamp('all');
+    if (streak(m) >= 3) stamp('streak');
+    if (m.hawa >= CITY[CITY.length - 1]) stamp('city');
+    home();
+  }
+  function toast(svg, title, sub) {
+    const el = document.createElement('div'); el.className = 'toast';
+    el.innerHTML = `${svg}<div>${title}${sub ? `<small>${sub}</small>` : ''}</div>`;
+    $('#toasts').appendChild(el); setTimeout(() => el.remove(), 3200);
+  }
+  const kulhad = (full) => `<svg viewBox="0 0 30 30" aria-hidden="true"><path d="M6 12h15v8a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6z" fill="${full ? 'var(--haldi)' : 'var(--paper2)'}" stroke="var(--line)" stroke-width="2.2"/><path d="M21 14h2.5a3 3 0 0 1 0 6H21" fill="none" stroke="var(--line)" stroke-width="2.2"/>${full ? '<path d="M10 9c-1-2 1-3 0-5M14.5 9c-1-2 1-3 0-5" fill="none" stroke="var(--line)" stroke-width="1.8" stroke-linecap="round"/>' : ''}</svg>`;
+  const citySpark = () => `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 34V20h8v-6h8v20M20 34V10h10v24M30 34V22h6v12" fill="var(--paper2)" stroke="var(--line)" stroke-width="2.2" stroke-linejoin="round"/><circle cx="33" cy="8" r="4" fill="var(--haldi)" stroke="var(--line)" stroke-width="2"/></svg>`;
+  // Hand-drawn stamp glyphs: wavy postal edge, one picture each.
+  const GLYPH = {
+    first: '<ellipse cx="31" cy="44" rx="5" ry="8" fill="var(--leaf)" transform="rotate(-12 31 44)"/><ellipse cx="45" cy="32" rx="5" ry="8" fill="var(--leaf)" transform="rotate(12 45 32)"/>',
+    slayer: '<rect x="27" y="30" width="22" height="16" fill="var(--masala)"/><path d="M24 26l28 24M52 26L24 50" stroke-width="3"/>',
+    suns: '<circle cx="38" cy="38" r="8" fill="var(--haldi)"/><path d="M38 22v5M38 49v5M22 38h5M49 38h5M27 27l3 3M46 46l3 3M27 49l3-3M46 30l3-3"/>',
+    close: '<path d="M22 46h32" stroke-width="3"/><path d="M28 40q10-18 20 0" fill="none"/><path d="M36 26c2-4 6-4 8 0" />',
+    shield: '<path d="M38 22l13 5v10c0 9-6 14-13 17-7-3-13-8-13-17V27z" fill="var(--sky)"/><path d="M31 38l5 5 9-10" stroke-width="3"/>',
+    baba: '<path d="M30 30a8 8 0 0 1 16 0c0 5-4 7-4 11h-8c0-4-4-6-4-11z" fill="var(--haldi)"/><path d="M34 45h8M35 49h6"/>',
+    fever: '<path d="M38 22c6 8 10 12 10 19a10 10 0 0 1-20 0c0-5 3-8 5-11 1 4 3 5 5 5-2-5-1-9 0-13z" fill="var(--masala)"/>',
+    wire: '<path d="M22 44h10V32h12v12h10" fill="none" stroke="var(--haldi)" stroke-width="5"/><path d="M22 44h10V32h12v12h10" fill="none"/>',
+    daily: '<rect x="26" y="26" width="24" height="24" rx="3" fill="var(--card)"/><path d="M26 33h24M31 22v7M45 22v7"/><path d="M32 41l4 4 8-8" stroke-width="2.6"/>',
+    streak: '<path d="M27 32h18v8a6 6 0 0 1-6 6h-6a6 6 0 0 1-6-6z" fill="var(--haldi)"/><path d="M45 34h3a3 3 0 0 1 0 6h-3M32 28c-1-2 1-3 0-5M38 28c-1-2 1-3 0-5"/>',
+    all: '<circle cx="28" cy="38" r="5" fill="var(--leaf)"/><circle cx="38" cy="38" r="5" fill="var(--haldi)"/><circle cx="48" cy="38" r="5" fill="var(--masala)"/>',
+    city: '<path d="M24 50V36h7v-6h7v20M38 50V28h8v22M46 50V40h6v10" fill="var(--paper2)"/><circle cx="48" cy="26" r="4" fill="var(--haldi)"/>',
+  };
+  function stampSvg(id, on) {
+    let edge = ''; for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2, r = i % 2 ? 31 : 34; edge += `${i ? 'L' : 'M'}${(38 + Math.cos(a) * r).toFixed(1)} ${(38 + Math.sin(a) * r).toFixed(1)}`; }
+    return `<svg viewBox="0 0 76 76" aria-hidden="true"><g stroke="var(--line)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="${edge}Z" fill="${on ? 'var(--card)' : 'var(--paper2)'}" ${on ? '' : 'stroke-dasharray="3 4"'}/>
+      <circle cx="38" cy="38" r="24" ${on ? 'stroke="var(--masala)"' : ''}/>${GLYPH[id] || ''}</g></svg>`;
+  }
+  function renderStamps() {
+    const m = get(), rows = t('stamps'), got = STAMP_IDS.filter((id) => m.stamps[id]).length;
+    $('#stTitle').textContent = t('stamps_title')(got, STAMP_IDS.length);
+    $('#stampGrid').innerHTML = rows.map(([id, name, how]) => `<div class="stamp-c ${m.stamps[id] ? '' : 'off'}">${stampSvg(id, !!m.stamps[id])}<b>${name}</b>${how}</div>`).join('');
+  }
+  // The city: smog lifts and things appear as points grow.
+  function drawCity(m) {
+    const n = CITY.filter((th) => m.hawa >= th).length, k = Math.max(0, 1 - m.hawa / CITY[CITY.length - 1]);
+    const ink = 'var(--line)', sw = 'stroke="var(--line)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"';
+    const blds = [[20, 70], [70, 105], [128, 60], [170, 120], [228, 80], [290, 95], [350, 65], [400, 115], [462, 75], [520, 100]];
+    let g = `<rect width="600" height="190" fill="${n >= 6 ? 'var(--sky)' : 'color-mix(in srgb, var(--sky) ' + Math.round((1 - k) * 100) + '%, var(--smog))'}"/>`;
+    g += `<circle cx="520" cy="42" r="20" fill="var(--haldi)" ${sw} opacity="${0.35 + 0.65 * (1 - k)}"/>`;
+    if (n >= 4) g += `<g ${sw}><path d="M110 40l12 12-12 12-12-12z" fill="var(--masala)"/><path d="M110 64q-6 20 6 40" fill="none"/><path d="M420 30l10 10-10 10-10-10z" fill="var(--leaf)"/><path d="M420 50q8 18-4 34" fill="none"/></g>`;
+    if (n >= 3) g += `<g fill="none" ${sw}><path d="M250 46q5-5 10 0q5-5 10 0"/><path d="M280 34q4-4 8 0q4-4 8 0"/><path d="M330 52q4-4 8 0q4-4 8 0"/></g>`;
+    blds.forEach(([x, h], i) => {
+      const w = 46, y = 160 - h;
+      g += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="var(--paper2)" ${sw}/>`;
+      for (let r = y + 10; r < 150; r += 18) g += `<rect x="${x + 9}" y="${r}" width="9" height="8" fill="${n >= 6 ? 'var(--haldi)' : 'var(--card)'}" ${sw} stroke-width="1.4"/><rect x="${x + 27}" y="${r}" width="9" height="8" fill="var(--card)" ${sw} stroke-width="1.4"/>`;
+      if (i % 3 === 1) { g += `<rect x="${x + 34}" y="${y - 18}" width="7" height="18" fill="var(--paper2)" ${sw}/>`; if (k > 0.05) g += `<g fill="var(--smog)" ${sw} opacity="${k}"><circle cx="${x + 40}" cy="${y - 28}" r="7"/><circle cx="${x + 48}" cy="${y - 40}" r="9"/></g>`; }
+      if (n >= 2 && i % 2 === 0) g += `<path d="M${x + 4} ${y}l6-9h26l6 9z" fill="var(--sky)" ${sw}/>`;
+    });
+    if (n >= 1) [60, 160, 270, 385, 505].forEach((x) => { g += `<path d="M${x} 162v-12" ${sw}/><circle cx="${x}" cy="${142}" r="11" fill="var(--leaf)" ${sw}/>`; });
+    g += `<path d="M0 162h600" ${sw}/>`;
+    if (n >= 5) g += `<g ${sw}><path d="M0 176h600" stroke-dasharray="10 6"/><rect x="200" y="164" width="120" height="16" rx="6" fill="var(--leaf)"/><rect x="212" y="167" width="14" height="7" fill="var(--card)" stroke-width="1.4"/><rect x="234" y="167" width="14" height="7" fill="var(--card)" stroke-width="1.4"/><rect x="256" y="167" width="14" height="7" fill="var(--card)" stroke-width="1.4"/><rect x="278" y="167" width="14" height="7" fill="var(--card)" stroke-width="1.4"/></g>`;
+    if (k > 0) g += `<rect width="600" height="190" fill="var(--smog)" opacity="${(k * 0.45).toFixed(2)}"/>`;
+    $('#city').innerHTML = g; $('#city').setAttribute('aria-label', t('city_alt'));
+    return n;
+  }
+  function home() {
+    const m = get(), n = drawCity(m), next = CITY[n];
+    $('#hawa').textContent = t('hawa')(m.hawa);
+    $('#cnext').textContent = next ? t('city_next')(next - m.hawa, t('unlocks')[n]) : t('city_done');
+    $('#cprog').style.width = `${Math.min(100, (m.hawa / CITY[CITY.length - 1]) * 100)}%`;
+    const st = streak(m), set = new Set(m.days), cups = [];
+    for (let i = 6; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); cups.push(kulhad(set.has(dayKey(d)))); }
+    $('#streak').innerHTML = `${cups.join('')}<span>${t('streak')(st)}</span>`;
+    $('#stampsBtn').textContent = `${t('stamps_btn')} ${STAMP_IDS.filter((id) => m.stamps[id]).length}/${STAMP_IDS.length}`;
+  }
+  $('#stampsBtn').addEventListener('click', () => { renderStamps(); $('#stampModal').hidden = false; $('#stClose').focus(); });
+  $('#stClose').addEventListener('click', () => { $('#stampModal').hidden = true; $('#stampsBtn').focus(); });
+  $('#stampModal').addEventListener('click', (e) => { if (e.target.id === 'stampModal') $('#stampModal').hidden = true; });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('#stampModal').hidden) $('#stampModal').hidden = true; });
+  return { get, put, finish, stamp, toast, home, dayKey, has: (id) => !!get().stamps[id] };
+})();
 
 // ---------- 1. Dhuaan Dhoom ----------
 const Runner = (() => {
@@ -356,12 +550,18 @@ const Runner = (() => {
   let pops = [], nextMile = 250;
   function fit() { const r = cv.parentElement.clientWidth || 800; W = r < 560 ? 440 : 800; if (cv.width !== W) cv.width = W; }
   let st = 'idle', raf = 0, last = 0, speed, dist, suns, smog, py, vy, holding, holdT, obs, items, spawnIn, puffs, cause, shake, wheel, hills;
+  let shield = false, gustT = 0, combo = 0, sunPts = 0, near = 0, curSkin = 0;
+  // Paint jobs: [body, canopy, unlock points or stamp id].
+  const SKINS = [['#2f7a4c', '#e9a92a', 0], ['#e9a92a', '#2f7a4c', 150], ['#3b7fc4', '#f3e9d8', 400], [null, '#d9572a', 'slayer']];
+  const skinOk = (i) => { const u = SKINS[i][2]; return typeof u === 'number' ? Meta.get().hawa >= u : Meta.has(u); };
   function reset() {
     speed = reduce ? 260 : 320; dist = 0; suns = 0; smog = 20; py = GROUND; vy = 0; holding = false; holdT = 0;
     obs = []; items = []; spawnIn = 1.1; puffs = []; cause = null; shake = 0; wheel = 0; pops = []; nextMile = 250; fit();
+    shield = false; gustT = 0; combo = 0; sunPts = 0; near = 0; { const sv = Meta.get().skin; curSkin = skinOk(sv) ? sv : 0; }
     hills = Array.from({ length: 6 }, (_, i) => ({ x: i * 180, h: 30 + (i * 37) % 50 }));
   }
-  function jump() { if (st !== 'run') return start(); if (py >= GROUND - 0.5) { vy = -560; holding = true; holdT = 0; beep(520, 0.09, 'square', 0.04, 260); } }
+  let deadAt = 0;
+  function jump() { if (st === 'dead' && performance.now() - deadAt < 700) return; if (st !== 'run') return start(); if (py >= GROUND - 0.5) { vy = -560; holding = true; holdT = 0; beep(520, 0.09, 'square', 0.04, 260); } }
   function release() { holding = false; }
   function spawn() {
     const r = Math.random(), x = W + 40;
@@ -369,7 +569,10 @@ const Runner = (() => {
     else if (r < 0.6) obs.push({ k: 'tyre', x, w: 70, h: 26, y: GROUND - 26 });
     else if (r < 0.82 && dist > 120) obs.push({ k: 'cloud', x, w: 90, h: 46, y: GROUND - 175 });
     else obs.push({ k: 'genset', x, w: 46, h: 38, y: GROUND - 38 });
-    if (Math.random() < 0.55) items.push({ x: x + 120 + Math.random() * 120, y: GROUND - 70 - Math.random() * 90, r: 13, got: false, t: 0 });
+    const pr = Math.random(), ix = x + 120 + Math.random() * 120, iy = GROUND - 70 - Math.random() * 90;
+    if (dist > 80 && !shield && pr < 0.07) items.push({ k: 'shield', x: ix, y: iy, r: 14, got: false, t: 0 });
+    else if (dist > 80 && gustT <= 0 && pr < 0.13) items.push({ k: 'gust', x: ix, y: iy, r: 14, got: false, t: 0 });
+    else if (pr < 0.62) items.push({ k: 'sun', x: ix, y: iy, r: 13, got: false, t: 0 });
     spawnIn = Math.max(0.62, 1.35 - speed / 1400) + Math.random() * 0.55;
   }
   function hit(o) {
@@ -377,11 +580,14 @@ const Runner = (() => {
     return px + w - 8 > o.x + 6 && px + 8 < o.x + o.w - 6 && py - 4 > o.y + 6 && top + 4 < o.y + o.h - 4;
   }
   function over(c) {
-    st = 'dead'; cause = c; shake = reduce ? 0 : 10; beep(150, 0.35, 'sawtooth', 0.06, -90);
+    st = 'dead'; deadAt = performance.now(); cause = c; shake = reduce ? 0 : 10; beep(150, 0.35, 'sawtooth', 0.06, -90);
     const m = Math.floor(dist), rec = saveBest('runner', m);
     $('#r-msg').textContent = rec && m > 0 ? t('r_best') : pick(t('r_' + c));
-    $('#r-sub').textContent = t('r_hud')(m, suns);
-    $('#r-go').textContent = t('again'); $('#r-ov').hidden = false; $('#r-go').focus({ preventScroll: true });
+    const pts = Math.floor(m / 10) + sunPts + near * 3;
+    $('#r-sub').textContent = `${t('r_hud')(m, suns)} · ${t('earned')(pts)}`;
+    $('#r-go').textContent = t('again'); skins(); $('#r-ov').hidden = false; $('#r-go').focus({ preventScroll: true });
+    if (m >= 500) Meta.stamp('slayer'); if (suns >= 20) Meta.stamp('suns'); if (near >= 5) Meta.stamp('close');
+    Meta.finish('runner', pts);
   }
   function step(dt) {
     speed += dt * (reduce ? 4 : 7); dist += speed * dt / 40; wheel += speed * dt / 14;
@@ -389,12 +595,34 @@ const Runner = (() => {
     vy += 1900 * dt; py = Math.min(GROUND, py + vy * dt); if (py >= GROUND) vy = 0;
     smog = Math.min(100, smog + dt * (2.2 + speed / 500));
     if ((spawnIn -= dt) <= 0) spawn();
-    for (const o of obs) { o.x -= speed * dt; if (hit(o)) return over(o.k); }
-    obs = obs.filter((o) => o.x + o.w > -20);
+    for (const o of obs) {
+      o.x -= speed * dt;
+      if (o.dead) continue;
+      if (hit(o)) {
+        if (!shield) return over(o.k);
+        shield = false; o.dead = true; shake = reduce ? 0 : 5; beep(300, 0.2, 'triangle', 0.06, 300);
+        pops.push({ x: 160, y: py - 70, a: 1.3, txt: t('r_saved') }); Meta.stamp('shield'); continue;
+      }
+      // Near miss: how close the rickshaw came while passing the obstacle.
+      if (o.x < 182 && o.x + o.w > 120) { const gap = o.k === 'cloud' ? (py - 40) - (o.y + o.h) : o.y - py; o.min = Math.min(o.min ?? 99, gap); }
+      if (!o.passed && o.x + o.w < 120) { o.passed = true; if (o.min != null && o.min < 16) { near++; pops.push({ x: 150, y: py - 64, a: 1.1, txt: pick(t('r_near')) }); beep(1200, 0.05, 'square', 0.03); } }
+    }
+    obs = obs.filter((o) => o.x + o.w > -20 && !o.dead);
+    if (gustT > 0) gustT -= dt;
     for (const s of items) {
       s.x -= speed * dt; s.t += dt;
-      if (!s.got && Math.abs(s.x - 150) < 40 && Math.abs(s.y - (py - 22)) < 40) { s.got = true; suns++; smog = Math.max(0, smog - 16); beep(880, 0.07, 'triangle', 0.05, 440); pops.push({ x: s.x, y: s.y - 10, a: 1, txt: pick(t('r_pop')) }); }
+      // The wind gust pulls suns towards the rickshaw.
+      if (gustT > 0 && s.k === 'sun' && s.x < 520 && s.x > 120) { s.x += (150 - s.x) * dt * 3; s.y += ((py - 22) - s.y) * dt * 4; }
+      if (!s.got && Math.abs(s.x - 150) < 40 && Math.abs(s.y - (py - 22)) < 40) {
+        s.got = true;
+        if (s.k === 'shield') { shield = true; pops.push({ x: s.x, y: s.y - 10, a: 1.2, txt: t('r_shield') }); beep(520, 0.15, 'triangle', 0.05, 520); continue; }
+        if (s.k === 'gust') { gustT = 5; pops.push({ x: W / 2, y: 120, a: 1.4, big: true, txt: t('r_gust') }); beep(400, 0.25, 'sine', 0.05, 600); continue; }
+        suns++; combo++; const mult = Math.min(4, 1 + Math.floor(combo / 5)); sunPts += 5 * mult;
+        smog = Math.max(0, smog - 16); beep(880 + Math.min(combo, 10) * 30, 0.07, 'triangle', 0.05, 440);
+        pops.push({ x: s.x, y: s.y - 10, a: 1, txt: mult > 1 && combo % 5 === 0 ? t('r_combo')(mult) : pick(t('r_pop')) });
+      }
     }
+    if (items.some((s) => s.k === 'sun' && !s.got && s.x <= -30)) combo = 0;
     items = items.filter((s) => s.x > -30 && !s.got);
     if (py >= GROUND && Math.random() < dt * 9) puffs.push({ x: 104, y: GROUND - 10, r: 4, a: 0.5 });
     for (const p of puffs) { p.x -= speed * dt * 0.6; p.r += dt * 14; p.a -= dt * 0.8; }
@@ -421,9 +649,18 @@ const Runner = (() => {
     ctx.beginPath(); ctx.moveTo(0, GROUND); ctx.lineTo(W, GROUND); ctx.stroke();
     ctx.setLineDash([18, 22]); ctx.lineDashOffset = (dist * 40) % 40; ctx.beginPath(); ctx.moveTo(0, GROUND + 28); ctx.lineTo(W, GROUND + 28); ctx.stroke(); ctx.setLineDash([]);
     for (const s of items) {
-      const bob = Math.sin(s.t * 5) * 4; ctx.save(); ctx.translate(s.x, s.y + bob); ctx.rotate(s.t * 1.5);
-      for (let i = 0; i < 8; i++) { ctx.rotate(Math.PI / 4); ctx.beginPath(); ctx.moveTo(0, s.r + 3); ctx.lineTo(0, s.r + 9); ctx.stroke(); }
-      blob(0, 0, s.r, css('--haldi')); ctx.restore();
+      const bob = Math.sin(s.t * 5) * 4; ctx.save(); ctx.translate(s.x, s.y + bob);
+      if (s.k === 'shield') {
+        ctx.rotate(Math.sin(s.t * 3) * 0.2); ctx.fillStyle = css('--sky'); ctx.beginPath(); ctx.moveTo(-14, 10); ctx.lineTo(-8, -12); ctx.lineTo(14, -12); ctx.lineTo(8, 10); ctx.closePath(); ctx.fill(); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(-11, -1); ctx.lineTo(11, -1); ctx.moveTo(-1, -12); ctx.lineTo(-5, 10); ctx.moveTo(7, -12); ctx.lineTo(3, 10); ctx.stroke();
+      } else if (s.k === 'gust') {
+        ctx.rotate(s.t * 3); ctx.beginPath(); for (let i = 0; i < 3; i++) { ctx.moveTo(0, 0); ctx.arc(0, 0, 6 + i * 5, i * 2, i * 2 + 2.2); } ctx.stroke();
+      } else {
+        ctx.rotate(s.t * 1.5);
+        for (let i = 0; i < 8; i++) { ctx.rotate(Math.PI / 4); ctx.beginPath(); ctx.moveTo(0, s.r + 3); ctx.lineTo(0, s.r + 9); ctx.stroke(); }
+        blob(0, 0, s.r, css('--haldi'));
+      }
+      ctx.restore();
     }
     for (const o of obs) {
       if (o.k === 'genset') {
@@ -446,8 +683,11 @@ const Runner = (() => {
     // The e-rickshaw, drawn by hand: green body, haldi canopy, a driver who has seen things.
     const x = 120, y = py, tilt = Math.max(-0.12, Math.min(0.12, vy / 4000));
     ctx.save(); ctx.translate(x + 31, y - 20); ctx.rotate(tilt); ctx.translate(-31, 20 - 0);
-    ctx.fillStyle = css('--leaf'); ctx.beginPath(); ctx.moveTo(4, -14); ctx.lineTo(4, -34); ctx.lineTo(44, -34); ctx.lineTo(60, -18); ctx.lineTo(62, -14); ctx.closePath(); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = css('--haldi'); ctx.beginPath(); ctx.moveTo(0, -34); ctx.quadraticCurveTo(24, -60, 50, -36); ctx.closePath(); ctx.fill(); ctx.stroke();
+    const sk = SKINS[curSkin];
+    const body = sk[0] || ['#d9572a', '#e9a92a', '#2f7a4c', '#3b7fc4'][Math.floor(performance.now() / 180) % 4];
+    if (shield) { ctx.save(); ctx.setLineDash([6, 6]); ctx.strokeStyle = css('--sky'); ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(32, -24, 46, 38, 0, 0, 7); ctx.stroke(); ctx.restore(); }
+    ctx.fillStyle = body; ctx.beginPath(); ctx.moveTo(4, -14); ctx.lineTo(4, -34); ctx.lineTo(44, -34); ctx.lineTo(60, -18); ctx.lineTo(62, -14); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = sk[1]; ctx.beginPath(); ctx.moveTo(0, -34); ctx.quadraticCurveTo(24, -60, 50, -36); ctx.closePath(); ctx.fill(); ctx.stroke();
     ctx.fillStyle = css('--card'); ctx.fillRect(28, -32, 14, 12); ctx.strokeRect(28, -32, 14, 12);
     blob(36, -40, 6, '#c98a5c'); ctx.beginPath(); ctx.moveTo(33, -38); ctx.lineTo(39, -38); ctx.stroke();
     ctx.fillStyle = css('--card'); ctx.font = '700 9px system-ui'; ctx.fillText('EV', 10, -20);
@@ -457,6 +697,8 @@ const Runner = (() => {
     // Smog meter, drawn into the scene so it reads at a glance.
     ctx.fillStyle = css('--card'); ctx.fillRect(16, 16, 160, 16); ctx.fillStyle = mix('2f7a4c', 'd9572a', k); ctx.fillRect(16, 16, 160 * k, 16); ctx.strokeRect(16, 16, 160, 16);
     ctx.fillStyle = ink; ctx.font = '800 13px system-ui'; ctx.fillText('SMOG', 184, 29);
+    if (combo >= 5) { ctx.font = '900 15px system-ui'; ctx.fillStyle = css('--masala'); ctx.fillText(t('r_combo')(Math.min(4, 1 + Math.floor(combo / 5))), 16, 54); }
+    if (gustT > 0) { ctx.fillStyle = css('--sky'); ctx.fillRect(16, 60, 80 * (gustT / 5), 6); ctx.strokeRect(16, 60, 80, 6); }
     ctx.restore();
     $('#r-hud').textContent = t('r_hud')(Math.floor(dist), suns);
   }
@@ -464,8 +706,14 @@ const Runner = (() => {
   function start() { if (st === 'run') return; reset(); st = 'run'; $('#r-ov').hidden = true; last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }
   function stop() { st = 'idle'; cancelAnimationFrame(raf); }
   addEventListener('resize', () => { if (st !== 'run' && hills && document.body.dataset.view === 'runner') { fit(); draw(); } });
-  function open() { reset(); st = 'idle'; draw(); $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); $('#r-ov').hidden = false; }
-  function label() { if (st !== 'run' && !$('#r-ov').hidden && cause == null) { $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); } }
+  function skins() {
+    const m = Meta.get(), box = $('#r-skins'); box.setAttribute('aria-label', t('skins').join(', '));
+    box.innerHTML = SKINS.map((k, i) => { const ok = skinOk(i), u = k[2];
+      return `<button class="skin" data-skin="${i}" aria-pressed="${m.skin === i && ok}" ${ok ? '' : 'disabled'} title="${ok ? '' : (typeof u === 'number' ? t('skin_lock')(u) : t('skin_disco'))}"><i style="background:${k[0] || 'conic-gradient(#d9572a,#e9a92a,#2f7a4c,#3b7fc4,#d9572a)'}"></i>${t('skins')[i]}</button>`; }).join('');
+    $$('[data-skin]', box).forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); const mm = Meta.get(); mm.skin = +b.dataset.skin; Meta.put(mm); curSkin = mm.skin; skins(); draw(); beep(700, 0.05, 'triangle'); }));
+  }
+  function open() { reset(); st = 'idle'; skins(); draw(); $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); $('#r-ov').hidden = false; }
+  function label() { if (st !== 'run' && !$('#r-ov').hidden) skins(); if (st !== 'run' && !$('#r-ov').hidden && cause == null) { $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); } }
   cv.addEventListener('pointerdown', (e) => { e.preventDefault(); jump(); });
   addEventListener('pointerup', release);
   $('#r-go').addEventListener('click', start);
@@ -477,7 +725,7 @@ const Runner = (() => {
 // ---------- 2. Bill Bachao ----------
 const Swipe = (() => {
   const deck = $('#s-deck'), LIMIT = 45;
-  let finished = false, order = [], i = 0, right = 0, streak = 0, bestStreak = 0, timeLeft = LIMIT, timer = 0, live = false, card = null;
+  let pts = 0, fever = false, finished = false, order = [], i = 0, right = 0, streak = 0, bestStreak = 0, timeLeft = LIMIT, timer = 0, live = false, card = null;
   const L = () => (lang === 'en' ? 1 : lang === 'hi' ? 2 : 0);
   // A neutral doodle (an electricity meter) so the picture never gives the answer away.
   const METER = '<svg width="90" height="56" viewBox="0 0 90 56" aria-hidden="true"><rect x="22" y="6" width="46" height="44" rx="8" fill="var(--paper2)" stroke="currentColor" stroke-width="2.4"/><path d="M31 32a14 14 0 0 1 28 0" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M45 32l8-9" stroke="var(--masala)" stroke-width="3" stroke-linecap="round"/><rect x="32" y="38" width="26" height="7" rx="2" fill="var(--card)" stroke="currentColor" stroke-width="1.8"/></svg>';
@@ -493,8 +741,11 @@ const Swipe = (() => {
   function answer(saysGood) {
     if (!live || !card) return;
     const h = HABITS[order[i]], ok = saysGood === h[0];
-    if (ok) { right++; streak++; bestStreak = Math.max(bestStreak, streak); beep(660 + Math.min(streak, 8) * 60, 0.08, 'triangle', 0.05); }
-    else { streak = 0; timeLeft = Math.max(0, timeLeft - 2); beep(180, 0.16, 'sawtooth', 0.05); }
+    if (ok) {
+      right++; streak++; bestStreak = Math.max(bestStreak, streak); pts += fever ? 6 : 3; beep(660 + Math.min(streak, 8) * 60, 0.08, 'triangle', 0.05);
+      // Five in a row lights fever mode: double points until the next miss.
+      if (streak === 5 && !fever) { fever = true; deck.classList.add('fever'); Meta.toast('<svg viewBox="0 0 76 76" aria-hidden="true"><path d="M38 14c10 13 16 19 16 30a16 16 0 0 1-32 0c0-8 5-13 8-18 2 6 5 8 8 8-3-8-2-14 0-20z" fill="var(--masala)" stroke="var(--line)" stroke-width="2.4"/></svg>', t('s_fever'), ''); Meta.stamp('fever'); }
+    } else { streak = 0; fever = false; deck.classList.remove('fever'); timeLeft = Math.max(0, timeLeft - 2); beep(180, 0.16, 'sawtooth', 0.05); }
     $('#s-why').textContent = `${ok ? t('s_right') : t('s_wrong')} ${h[4 + L()]}`;
     $('#s-hud').textContent = t('s_hud')(right, streak);
     const out = card; card = null; out.style.transition = reduce ? 'none' : 'transform .25s ease, opacity .25s ease';
@@ -511,17 +762,20 @@ const Swipe = (() => {
   }
   function tick() {
     timeLeft -= 0.1; $('#s-time').style.width = `${Math.max(0, timeLeft / LIMIT) * 100}%`;
+    const hurry = timeLeft < 10; $('#s-time').parentElement.classList.toggle('hurry', hurry);
+    if (hurry && Math.abs(timeLeft - 9.95) < 0.06) { $('#s-why').textContent = t('s_hurry'); beep(990, 0.06, 'square', 0.04); }
     if (timeLeft <= 0) finish();
   }
   function finish() {
     live = false; finished = true; clearInterval(timer); deck.innerHTML = '';
     const titles = t('s_titles'); let ti = titles[0]; for (const x of titles) if (right >= x[0]) ti = x;
-    saveBest('swipe', right);
-    $('#s-msg').textContent = ti[1]; $('#s-sub').textContent = `${ti[2]} ${t('s_score')(right, bestStreak)}`;
+    saveBest('swipe', right); deck.classList.remove('fever'); $('#s-time').parentElement.classList.remove('hurry');
+    $('#s-msg').textContent = ti[1]; $('#s-sub').textContent = `${ti[2]} ${t('s_score')(right, bestStreak)} · ${t('earned')(pts)}`;
+    if (right >= 18) Meta.stamp('baba'); Meta.finish('swipe', pts);
     $('#s-go').textContent = t('again'); $('#s-ov').hidden = false; beep(523, 0.1, 'triangle'); setTimeout(() => beep(784, 0.18, 'triangle'), 110);
   }
   function start() {
-    order = shuffle(HABITS.map((_, n) => n)); i = 0; right = 0; streak = 0; bestStreak = 0; timeLeft = LIMIT; live = true; finished = false;
+    order = shuffle(HABITS.map((_, n) => n)); i = 0; right = 0; streak = 0; bestStreak = 0; timeLeft = LIMIT; live = true; finished = false; pts = 0; fever = false; deck.classList.remove('fever');
     $('#s-ov').hidden = true; $('#s-why').textContent = ''; $('#s-hud').textContent = t('s_hud')(0); deal();
     clearInterval(timer); timer = setInterval(tick, 100);
   }
@@ -542,7 +796,7 @@ function shuffle(a) { for (let k = a.length - 1; k > 0; k--) { const j = Math.fl
 // can be solved.
 const Grid = (() => {
   const svg = $('#tiles'), NS = 'http://www.w3.org/2000/svg';
-  let n, cells, src, dst, moves, par, level, daily, solved;
+  let n, cells, src, dst, moves, par, level, daily, solved, shareText = '';
   const rot = (m) => ((m << 1) | (m >> 3)) & 15;
   function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
   function build(seed, size) {
@@ -632,13 +886,28 @@ const Grid = (() => {
   }
   function win() {
     solved = true; const stars = moves <= par ? 3 : moves <= par + 4 ? 2 : 1;
-    if (!daily) saveBest('grid', level);
+    const m = Meta.get(); m.stars = m.stars || {}; let pts = 0;
+    if (daily) { const key = 'd' + Meta.dayKey(); if (!m.stars[key]) pts = stars * 10 + 10; m.stars[key] = Math.max(m.stars[key] || 0, stars); }
+    else { const prev = m.stars[level] || 0; pts = Math.max(0, stars - prev) * 10 + (prev ? 0 : 5); m.stars[level] = Math.max(prev, stars); saveBest('grid', level); }
+    Meta.put(m); if (stars === 3) Meta.stamp('wire'); if (daily) Meta.stamp('daily');
+    $('#c-share').hidden = !daily; shareText = `Chimney Chill ${Meta.dayKey()}\n${moves} moves (target ${par}) ${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}\nsenseible.earth/play/`;
+    setTimeout(() => Meta.finish('grid', pts), reduce ? 0 : 500); levels();
     [523, 659, 784, 1046].forEach((f, k) => setTimeout(() => beep(f, 0.12, 'triangle', 0.05), k * 90));
     setTimeout(() => { $('#c-msg').textContent = pick(t('c_win')); $('#c-sub').textContent = t('c_sub')(moves, par, stars); $('#c-go').textContent = t('c_go'); $('#c-ov').hidden = false; }, reduce ? 0 : 450);
   }
+  function levels() {
+    const st = (Meta.get().stars) || {}, top = Math.max(1, ...Object.keys(st).filter((k) => /^\d+$/.test(k)).map(Number)) + 1;
+    const box = $('#c-levels'); box.setAttribute('aria-label', t('c_level')(''));
+    box.innerHTML = Array.from({ length: Math.min(top, 30) }, (_, i) => i + 1).map((l) => `<button class="lv" data-lv="${l}" aria-current="${!daily && l === level}">L${l}<small>${st[l] ? '★'.repeat(st[l]) : '·'}</small></button>`).join('');
+    $$('[data-lv]', box).forEach((b) => b.addEventListener('click', () => playLevel(+b.dataset.lv)));
+  }
+  $('#c-share').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(shareText); $('#c-share').textContent = t('c_copied'); }
+    catch { $('#c-share').textContent = shareText.split('\n')[1]; }
+  });
   function today() { const d = new Date(); return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
-  function playDaily() { daily = true; build(today() * 7919, 5); $('#c-ov').hidden = true; render(); }
-  function playLevel(l) { daily = false; level = l; store.set('level', l); build(l * 104729 + 17, Math.min(7, 4 + Math.floor((l + 1) / 3))); $('#c-ov').hidden = true; render(); }
+  function playDaily() { daily = true; build(today() * 7919, 5); $('#c-ov').hidden = true; $('#c-share').textContent = t('c_share'); render(); levels(); }
+  function playLevel(l) { daily = false; level = l; store.set('level', l); build(l * 104729 + 17, Math.min(7, 4 + Math.floor((l + 1) / 3))); $('#c-ov').hidden = true; render(); levels(); }
   function open() { playLevel(store.get('level', 1)); }
   function label() { if (cells) $('#c-hud').textContent = t('c_hud')(moves, par); }
   $('#c-daily').addEventListener('click', playDaily);
@@ -651,7 +920,7 @@ const Grid = (() => {
 const views = { runner: Runner, swipe: Swipe, grid: Grid };
 function show(v, push = true) {
   Object.values(views).forEach((g) => g.stop());
-  document.body.dataset.view = v; if (views[v]) views[v].open();
+  document.body.dataset.view = v; if (views[v]) views[v].open(); else Meta.home();
   if (push) history.pushState({ v }, '', v === 'home' ? location.pathname : `#${v}`);
   scrollTo({ top: 0 });
 }
