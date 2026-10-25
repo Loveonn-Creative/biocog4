@@ -23,8 +23,10 @@ describe('guest limits and file checks', () => {
     const t = guestFileCheck('AAAA', 'application/zip');
     expect(t.ok).toBe(false);
     if (!t.ok) expect(t.status).toBe(415);
-    expect(guestFileCheck('AAAA', 'image/png').ok).toBe(true);
-    expect(guestFileCheck('AAAA', undefined).ok).toBe(true); // defaults to image/jpeg as the server does
+    const jpeg = Buffer.from([0xff, 0xd8, 0xff, 0xe0, 0, 0, 0, 0]).toString('base64');
+    expect(guestFileCheck(jpeg, 'image/png').ok).toBe(true);
+    expect(guestFileCheck(jpeg, undefined).ok).toBe(true); // defaults to image/jpeg as the server does
+    expect(guestFileCheck(Buffer.from('PK\x03\x04 not a bill').toString('base64'), 'image/png')).toMatchObject({ ok: false, status: 415 });
   });
 });
 

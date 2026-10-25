@@ -2,6 +2,7 @@
 // words, what an invoice is missing. No I/O, so it is unit tested.
 
 import { KVAH_GUIDANCE, SINGLE_READING_GUIDANCE, type ElectricityBlocker } from './electricityBill.ts';
+import { detectFileKind } from './fileSignature.ts';
 
 /** "1,250.5", "₹ 12,345", "Rs. 900", 42 -> number; anything else -> null. Never guesses. */
 export function parseAmount(v: unknown): number | null {
@@ -115,6 +116,9 @@ export function fileCheck(b64: string, mimeType: unknown, maxBytes = SIGNED_IN_M
   const bytes = base64Size(b64);
   if (bytes > maxBytes) {
     return { ok: false, status: 413, code: 'file_too_large', message: `This file is ${(bytes / 1048576).toFixed(1)} MB; the limit is ${Math.round(maxBytes / 1048576)} MB. Take a photo of the page, or save the PDF at a lower quality.` };
+  }
+  if (!detectFileKind(b64)) {
+    return { ok: false, status: 415, code: 'unsupported_type', message: 'This file is not a PDF or a photo. Upload a PDF or a photo (JPG, PNG, WEBP or HEIC) of the invoice or bill.' };
   }
   return { ok: true };
 }
