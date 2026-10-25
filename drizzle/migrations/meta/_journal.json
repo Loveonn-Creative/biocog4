@@ -239,6 +239,20 @@
       "when": 1792682752820,
       "tag": "0033_security_hardening",
       "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1792948440622,
+      "tag": "0034_enterprise_pilot",
+      "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1792948496534,
+      "tag": "0035_enterprise_billing",
+      "breakpoints": true
     }
   ]
 }
