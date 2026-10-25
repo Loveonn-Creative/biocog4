@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useSession } from '@/hooks/useSession';
 import { usePersonalization } from '@/hooks/usePersonalization';
 import { useOrganization } from '@/hooks/useOrganization';
+import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -36,6 +37,12 @@ const msmeNavItems = [
 // the MSME pages sit under More, so nothing is removed from phones.
 const MOBILE_PRIMARY = ['/', '/dashboard', '/history', '/reports'];
 
+// Enterprise accounts (granted by Senseible) only track suppliers: no uploads,
+// verification, monetisation or MSME reports.
+const enterpriseNavItems = [
+  { path: '/enterprise/dashboard', label: 'Suppliers', icon: Building2 },
+];
+
 // Partner navigation items
 const partnerNavItems = [
   { path: '/partner-dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -49,6 +56,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
   const { user, isAuthenticated, signOut } = useSession();
   const { greeting, isPersonalized } = usePersonalization();
   const { activeContext } = useOrganization();
+  const { access: enterprise } = useEnterpriseAccess();
   // Read once per account and kept across pages; Profile and Settings refresh it on save.
   const { data: businessName = '' } = useQuery({
     queryKey: accountKey(user?.id, 'business_name'),
@@ -72,7 +80,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
 
   // Determine which nav items to show based on context
   const isPartnerContext = activeContext?.context_type === 'partner';
-  const navItems = isPartnerContext ? partnerNavItems : msmeNavItems;
+  const navItems = enterprise ? enterpriseNavItems : isPartnerContext ? partnerNavItems : msmeNavItems;
 
   return (
     <>
@@ -85,7 +93,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
             </Link>
             
             {/* Role Context Badge - Shows MSME or Partner */}
-            {isAuthenticated && activeContext && (
+            {isAuthenticated && activeContext && !enterprise && (
               <Badge 
                 variant={activeContext.context_type === 'partner' ? 'default' : 'secondary'}
                 className={`hidden md:flex items-center gap-1.5 ${
@@ -139,6 +147,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
                 email={user.email || ''} 
                 businessName={businessName}
                 onSignOut={handleSignOut} 
+                enterprise={!!enterprise}
               />
             ) : (
               <Button variant="outline" size="sm" asChild>
@@ -152,8 +161,8 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
         </div>
       </header>
 
-      {/* Mobile Bottom Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-sm safe-area-inset-bottom">
+      {/* Mobile Bottom Nav: enterprise accounts have one page, so none */}
+      {!enterprise && <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-sm safe-area-inset-bottom">
         <div className="flex justify-around py-2">
           {(navItems.length > 5 ? navItems.filter((i) => MOBILE_PRIMARY.includes(i.path)) : navItems).map((item) => {
             const Icon = item.icon;
@@ -201,7 +210,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
             );
           })()}
         </div>
-      </nav>
+      </nav>}
     </>
   );
 };
