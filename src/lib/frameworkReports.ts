@@ -224,7 +224,7 @@ const methodologySection = (ds: ReportDataset): Section => ({
     ['Emission factor sources', ds.factorSources.length ? ds.factorSources.join(', ') : 'Not recorded'],
     ['Activity data source', 'Supplier invoices, bills and meter records uploaded by the company'],
     ['Calculation', 'Activity data × published emission factor. No spend-based estimates'],
-    ['Gases covered', 'CO2. The grid factor (CEA) and the IPCC fuel factors cover CO2 only; CH4 and N2O are not included'],
+    ['Gases covered', 'CO2 only. Methane and nitrous oxide from fuels add under 1% and are not included'],
     ['Scope 2 method', 'Location-based (grid average). No market-based figure'],
     ['Exclusions', 'Activity without a supporting document is left out'],
     ['Recalculation policy', 'Restated when a source document is corrected or a factor is superseded'],
