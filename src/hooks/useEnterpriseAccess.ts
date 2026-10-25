@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { untypedRpc } from '@/hooks/useOrganization';
 import { useSession } from '@/hooks/useSession';
 import { accountKey, ACCOUNT_STALE_MS } from '@/lib/queryClient';
+import { accessLoading } from '@/lib/enterprise/access';
 
 export interface EnterpriseAccess {
   organizationId: string;
@@ -17,7 +18,7 @@ export interface EnterpriseAccess {
  * and this returns null, so nothing changes for anyone.
  */
 export function useEnterpriseAccess() {
-  const { user } = useSession();
+  const { user, isLoading: sessionLoading } = useSession();
   const qc = useQueryClient();
   const key = accountKey(user?.id, 'enterprise_access');
 
@@ -47,5 +48,8 @@ export function useEnterpriseAccess() {
   // eslint-disable-next-line react-hooks/exhaustive-deps -- key follows user id
   }, [claimable]);
 
-  return { access: query.data?.access ?? null, isLoading: !!user?.id && (query.isPending || claimable) };
+  return {
+    access: query.data?.access ?? null,
+    isLoading: accessLoading({ sessionLoading, userId: user?.id, queryPending: query.isPending, claiming: claimable }),
+  };
 }

@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { buildLines, financialYears, gradeFor, nextActions, overview, supplierCsv, type SupplierRequestRow, type SupplierSnapshotRow } from '../src/lib/enterprise/supplierPilot';
+import { accessLoading } from '../src/lib/enterprise/access';
 import { checkPeriod, cleanSupplier, requestEmail } from '../supabase/functions/_shared/supplierRequests';
 
 const NOW = Date.parse('2026-10-25T10:00:00Z');
@@ -38,8 +39,8 @@ describe('enterprise supplier dashboard numbers', () => {
     expect(o.top5Pct).toBeNull(); // fewer than 6 sharing: concentration says nothing
 
     const acts = nextActions(lines);
-    expect(acts[0]).toMatchObject({ kind: 'big_missing', names: ['Supplier c'] });
-    expect(acts.map((a) => a.kind)).toEqual(['big_missing', 'remind', 'ask_bills']);
+    expect(acts[0]).toMatchObject({ kind: 'big_missing', names: ['Supplier c'], overdueIds: ['c'] });
+    expect(acts.map((a) => a.kind)).toEqual(['big_missing', 'ask_bills']);
   });
 
   test('a later snapshot replaces an earlier one; a reminder waits 3 days', () => {
@@ -89,8 +90,18 @@ describe('supplier request inputs and email', () => {
       periodStart: '2025-04-01', periodEnd: '2026-03-31', expiresAt: '2026-11-24T00:00:00Z' });
     expect(m.subject).toBe('Buyer Ltd asks for your emissions, 1 Apr 2025 to 31 Mar 2026');
     expect(m.html).toContain('https://senseible.earth/supplier-request/tok');
-    expect(m.html).toContain('Your bills stay with you.');
+    expect(m.html).toContain('your bills stay private.');
     expect(m.html).not.toContain('<b>Acme</b>');
     expect(m.html).not.toMatch(/—/);
+  });
+});
+
+describe('enterprise access loading', () => {
+  test('is loading while the session resolves, so pages never redirect on a guess', () => {
+    expect(accessLoading({ sessionLoading: true, queryPending: false, claiming: false })).toBe(true);
+    expect(accessLoading({ sessionLoading: false, userId: 'u', queryPending: true, claiming: false })).toBe(true);
+    expect(accessLoading({ sessionLoading: false, userId: 'u', queryPending: false, claiming: true })).toBe(true);
+    expect(accessLoading({ sessionLoading: false, userId: 'u', queryPending: false, claiming: false })).toBe(false);
+    expect(accessLoading({ sessionLoading: false, queryPending: true, claiming: false })).toBe(false); // signed out: settled
   });
 });

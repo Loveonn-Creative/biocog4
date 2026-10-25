@@ -51,7 +51,7 @@ export default function SupplierRequestLanding() {
           <section className="rounded-xl border p-6 space-y-4">
             <p className="text-sm text-muted-foreground">Request for {p.supplier_name}</p>
             <h1 className="text-xl font-semibold">{p.company_name} asks for your emissions, {fmt(p.period_start)} to {fmt(p.period_end)}</h1>
-            <p className="text-sm">Upload your electricity, fuel and freight bills. Senseible works out your emissions, and you decide whether to share the totals. Your bills stay with you.</p>
+            <p className="text-sm">Upload your electricity, fuel and freight bills. Senseible works out your emissions, and you decide whether to share. Only totals are shared; your bills stay private.</p>
             <div className="flex flex-wrap gap-2">
               <Button asChild><Link to={`/auth?mode=signup&next=${encodeURIComponent(`/supplier-request/${token}`)}`}>Create a free account</Link></Button>
               <Button asChild variant="outline"><Link to={`/auth?next=${encodeURIComponent(`/supplier-request/${token}`)}`}>Sign in</Link></Button>

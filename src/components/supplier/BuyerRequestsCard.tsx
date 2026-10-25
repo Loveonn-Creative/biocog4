@@ -32,7 +32,7 @@ export function BuyerRequestsCard() {
         {rows.slice(0, 3).map((r) => (
           <li key={r.request_id} className="flex flex-wrap items-center gap-3 text-sm">
             <Building2 className="h-4 w-4 text-primary shrink-0" />
-            <span className="flex-1 min-w-0"><strong>{r.company_name}</strong> asks for your emissions{r.buys ? ` for ${r.buys.toLowerCase()}` : ''}, {r.period_start.slice(0, 4)}-{r.period_end.slice(2, 4)}.</span>
+            <span className="flex-1 min-w-0"><strong>{r.company_name}</strong> wants your {r.period_start.slice(0, 4)}-{r.period_end.slice(2, 4)} emissions{r.buys ? ` for ${r.buys.toLowerCase()}` : ''}.</span>
             <Link to={`/supplier-share/${r.request_id}`} className="inline-flex items-center gap-1 font-medium text-primary">Review and share<ArrowRight className="h-3.5 w-3.5" /></Link>
           </li>
         ))}

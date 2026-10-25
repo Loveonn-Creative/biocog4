@@ -159,7 +159,7 @@ export function overview(lines: SupplierLine[]): Overview {
 export type NextAction =
   | { kind: 'remind'; count: number; requestIds: string[] }
   | { kind: 'ask_bills'; count: number; names: string[] }
-  | { kind: 'big_missing'; count: number; names: string[] };
+  | { kind: 'big_missing'; count: number; purchasePct: number; names: string[]; overdueIds: string[] };
 
 /** At most three actions, most useful first. */
 export function nextActions(lines: SupplierLine[]): NextAction[] {
@@ -167,9 +167,12 @@ export function nextActions(lines: SupplierLine[]): NextAction[] {
   // Missing suppliers that matter most by purchase share.
   const bigMissing = lines.filter((l) => l.status !== 'shared' && (l.purchaseSharePct ?? 0) >= 2)
     .sort((a, b) => (b.purchaseSharePct ?? 0) - (a.purchaseSharePct ?? 0));
-  if (bigMissing.length) out.push({ kind: 'big_missing', count: bigMissing.length, names: bigMissing.slice(0, 3).map((l) => l.name) });
-  const remind = lines.filter((l) => l.canRemind && l.status === 'overdue');
-  if (remind.length) out.push({ kind: 'remind', count: remind.length, requestIds: remind.map((l) => l.requestId) });
+  const overdueIds = lines.filter((l) => l.canRemind && l.status === 'overdue').map((l) => l.requestId);
+  // One line for missing suppliers; its reminder covers every overdue one, so nobody is counted twice.
+  if (bigMissing.length) {
+    const purchasePct = Math.round(bigMissing.reduce((a, l) => a + (l.purchaseSharePct ?? 0), 0));
+    out.push({ kind: 'big_missing', count: bigMissing.length, purchasePct, names: bigMissing.slice(0, 3).map((l) => l.name), overdueIds });
+  } else if (overdueIds.length) out.push({ kind: 'remind', count: overdueIds.length, requestIds: overdueIds });
   const top = lines.filter((l) => l.status === 'shared').slice(0, 10);
   const ownNumbers = top.filter((l) => l.proof === 'own_number');
   if (ownNumbers.length) out.push({ kind: 'ask_bills', count: ownNumbers.length, names: ownNumbers.slice(0, 3).map((l) => l.name) });

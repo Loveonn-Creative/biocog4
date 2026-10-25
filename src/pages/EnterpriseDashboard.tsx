@@ -21,7 +21,7 @@ const STATUS_TONE: Record<SupplierLine['status'], string> = {
   shared: 'bg-primary/10 text-primary', opened: 'bg-muted text-muted-foreground', waiting: 'bg-muted text-muted-foreground',
   overdue: 'bg-destructive/10 text-destructive', declined: 'bg-muted text-muted-foreground',
 };
-const PROOF_LABEL: Record<SupplierLine['proof'], string> = { bills: 'Bills', own_number: 'Own number', none: 'None' };
+const PROOF_LABEL: Record<SupplierLine['proof'], string> = { bills: 'Bills', own_number: 'Own number', none: '-' };
 
 function download(name: string, text: string, type = 'text/csv') {
   const url = URL.createObjectURL(new Blob([text], { type }));
@@ -144,7 +144,7 @@ export default function EnterpriseDashboard() {
         ) : (
           <>
             <section className="grid grid-cols-2 md:grid-cols-4 gap-3" aria-label="Summary">
-              <Kpi label="Scope 3 from suppliers" value={`${tonnes(o.totalKg)} t`} note={`CO2e from the ${o.sharing} who shared`} />
+              <Kpi label="Scope 3 from suppliers" value={`${tonnes(o.totalKg)} t`} note={`CO₂e from the ${o.sharing} who shared`} />
               <Kpi label="Suppliers sharing" value={`${o.sharing} of ${o.asked}`} note={o.overdue ? `${o.overdue} overdue` : 'None overdue'} />
               <Kpi label="Purchases covered" value={o.purchasesCoveredPct != null ? `${o.purchasesCoveredPct}%` : 'Not set'}
                 note={o.purchasesCoveredPct != null ? 'of spend, from suppliers who shared' : 'Add share of purchases per supplier'} />
@@ -165,7 +165,7 @@ export default function EnterpriseDashboard() {
                     ))}
                   </ul>
                 )}
-                <p className="text-xs text-muted-foreground mt-3">Green: from the supplier's bills. Amber: the supplier's own number, no bills.</p>
+                {hot.some((l) => l.proof === 'own_number') && <p className="text-xs text-muted-foreground mt-3">Amber: the supplier's own number, no bills.</p>}
               </div>
               <div className="rounded-xl border p-4">
                 <h2 className="text-sm font-semibold mb-3">Do next</h2>
@@ -174,7 +174,7 @@ export default function EnterpriseDashboard() {
                     {actions.map((a) => (
                       <li key={a.kind} className="rounded-lg border p-3 text-sm flex items-start gap-3">
                         <span className="font-semibold text-primary min-w-6">{a.count}</span>
-                        {a.kind === 'big_missing' && <span>{a.count === 1 ? 'supplier' : 'suppliers'} at 2% or more of purchases {a.count === 1 ? 'has' : 'have'} not shared: {a.names.join(', ')}.</span>}
+                        {a.kind === 'big_missing' && <span className="flex-1">{a.count === 1 ? 'supplier' : 'suppliers'} ({a.purchasePct}% of purchases) {a.count === 1 ? 'has' : 'have'} not shared: {a.names.join(', ')}{a.count > a.names.length ? ` and ${a.count - a.names.length} more` : ''}.{a.overdueIds.length > 0 && <> {a.overdueIds.length} overdue. <button className="font-semibold underline" onClick={() => void remind(a.overdueIds)}>Remind {a.overdueIds.length === 1 ? 'them' : 'all'}</button></>}</span>}
                         {a.kind === 'remind' && <span className="flex-1">{a.count === 1 ? 'supplier is' : 'suppliers are'} overdue. <button className="font-semibold underline" onClick={() => void remind(a.requestIds)}>Remind {a.count === 1 ? 'them' : 'all'}</button></span>}
                         {a.kind === 'ask_bills' && <span>of your largest suppliers gave numbers without bills: {a.names.join(', ')}. Ask them to upload bills.</span>}
                       </li>
@@ -194,7 +194,7 @@ export default function EnterpriseDashboard() {
                   <thead><tr className="text-left text-xs text-muted-foreground border-b">
                     <th className="py-2 pr-3 font-medium">Supplier</th><th className="py-2 pr-3 font-medium">You buy</th><th className="py-2 pr-3 font-medium">Share of purchases</th>
                     <th className="py-2 pr-3 font-medium">Status</th><th className="py-2 pr-3 font-medium">Proof</th><th className="py-2 pr-3 font-medium text-right">Scope 1</th>
-                    <th className="py-2 pr-3 font-medium text-right">Scope 2</th><th className="py-2 pr-3 font-medium text-right">t CO2e</th><th className="py-2 font-medium" />
+                    <th className="py-2 pr-3 font-medium text-right">Scope 2</th><th className="py-2 pr-3 font-medium text-right">t CO₂e</th><th className="py-2 font-medium" />
                   </tr></thead>
                   <tbody>
                     {lines.map((l) => (
@@ -213,7 +213,7 @@ export default function EnterpriseDashboard() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-muted-foreground mt-3">Grade A to D: share of a supplier's figure backed by verified bills. Each shared figure carries a SHA-256 in the CSV, so an auditor can match it to the supplier's record.</p>
+              <p className="text-xs text-muted-foreground mt-3">Grade A to D: how much of a supplier's figure comes from verified bills. Each figure in the CSV has a fingerprint an auditor can match to the supplier's record.</p>
             </section>
           </>
         )}
@@ -223,13 +223,13 @@ export default function EnterpriseDashboard() {
         <DialogContent className="max-w-lg">
           <DialogHeader>
             <DialogTitle>Ask suppliers for {period.label}</DialogTitle>
-            <DialogDescription>One supplier per line: name, email or GSTIN, what you buy, share of your purchases (%). Paste from a spreadsheet.</DialogDescription>
+            <DialogDescription>One per line: name, email or GSTIN, what you buy, % of purchases. Pasting from a spreadsheet works.</DialogDescription>
           </DialogHeader>
           <div className="space-y-2">
             <Label htmlFor="supplier-rows">Suppliers</Label>
             <Textarea id="supplier-rows" rows={7} value={rowsText} onChange={(e) => setRowsText(e.target.value)}
               placeholder={'Supplier A, accounts@supplier-a.in, Steel coils, 18\nSupplier B, 27AAFCP1234Q1Z2, Forgings, 6'} />
-            <p className="text-xs text-muted-foreground">Suppliers with an email get the request by email. Suppliers already on Senseible also see it when they sign in, matched by email or GSTIN.</p>
+            <p className="text-xs text-muted-foreground">Suppliers get it by email, and on Senseible when they sign in.</p>
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setAdding(false)}>Cancel</Button>

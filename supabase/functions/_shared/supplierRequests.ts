@@ -71,15 +71,15 @@ export interface RequestEmail {
 export function requestEmail(e: RequestEmail): { subject: string; html: string } {
   const link = `${e.siteUrl}/supplier-request/${encodeURIComponent(e.token)}`;
   const period = `${fmt(e.periodStart)} to ${fmt(e.periodEnd)}`;
-  const what = e.buys ? ` for the ${esc(e.buys.toLowerCase())} you supply` : '';
+  const what = e.buys ? `the emissions from the ${esc(e.buys.toLowerCase())} you supply, for` : 'your emissions for';
   const subject = `${e.reminder ? 'Reminder: ' : ''}${e.companyName} asks for your emissions, ${period}`;
   const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#17231b;max-width:560px;margin:0 auto;padding:20px">
 <p>Hello ${esc(e.supplierName)},</p>
-<p><strong>${esc(e.companyName)}</strong> is collecting emissions from its suppliers${what}, for ${period}.</p>
-<p>Upload your electricity, fuel and freight bills to Senseible. We work out your emissions, and you choose to share the totals with ${esc(e.companyName)}. Your bills stay with you.</p>
+<p><strong>${esc(e.companyName)}</strong> needs ${what} ${period}.</p>
+<p>Upload your electricity, fuel and freight bills to Senseible. We work out your emissions, and you choose whether to share them with ${esc(e.companyName)}. Only totals are shared; your bills stay private.</p>
 <p style="margin:28px 0"><a href="${link}" style="background:#1d4a33;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600">Open the request</a></p>
-<p style="color:#5d6b61;font-size:13px">The link works until ${fmt(e.expiresAt.slice(0, 10))}. If you did not expect this, you can ignore it.</p>
+<p style="color:#5d6b61;font-size:13px">The link works until ${fmt(e.expiresAt.slice(0, 10))}. Not expecting this? Ignore it.</p>
 <p style="color:#9aa59d;font-size:12px">Senseible · senseible.earth</p>
 </body></html>`;
   return { subject, html };

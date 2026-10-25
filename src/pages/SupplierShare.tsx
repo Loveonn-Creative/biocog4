@@ -16,7 +16,7 @@ const fmt = (iso: string) => new Date(`${iso}T00:00:00Z`).toLocaleDateString('en
 
 /** The exact words the supplier agrees to; its SHA-256 is stored with the consent. */
 const consentText = (company: string, start: string, end: string) =>
-  `I share with ${company} my emissions totals for ${fmt(start)} to ${fmt(end)}, by scope and category, the energy quantities on my bills, how many bills are behind them and their fingerprints. Not my bills, amounts or any other record. I can stop sharing at any time; what was already shared stays with ${company}.`;
+  `I share with ${company}, for ${fmt(start)} to ${fmt(end)}: my emissions by scope and category, the energy units on my bills, how many bills, and each bill's fingerprint. Not the bills, their amounts or any other record. I can stop sharing at any time; what was already shared stays with ${company}.`;
 
 async function sha256Hex(text: string) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
@@ -101,14 +101,14 @@ export default function SupplierShare() {
               <dl className="grid grid-cols-3 gap-3 text-sm">
                 <div className="rounded-lg border p-3"><dt className="text-xs text-muted-foreground">Total</dt><dd className="text-lg font-semibold tabular-nums">{(m.total / 1000).toFixed(2)} t</dd></div>
                 <div className="rounded-lg border p-3"><dt className="text-xs text-muted-foreground">From</dt><dd className="text-lg font-semibold tabular-nums">{m.bills} bills</dd></div>
-                <div className="rounded-lg border p-3"><dt className="text-xs text-muted-foreground">Verified</dt><dd className="text-lg font-semibold tabular-nums">{m.total ? Math.round((m.verified / m.total) * 100) : 0}%</dd></div>
+                <div className="rounded-lg border p-3"><dt className="text-xs text-muted-foreground">Backed by verified bills</dt><dd className="text-lg font-semibold tabular-nums">{m.total ? Math.round((m.verified / m.total) * 100) : 0}%</dd></div>
               </dl>
             ) : (
               <div className="rounded-lg border p-4 text-sm space-y-3">
                 <p>No bills dated in this period yet.</p>
                 <Button asChild size="sm"><Link to="/dashboard">Upload bills</Link></Button>
                 <div className="space-y-1.5 pt-1">
-                  <Label htmlFor="declared">Or enter your own figure (t CO2e)</Label>
+                  <Label htmlFor="declared">Or enter your own figure (t CO₂e)</Label>
                   <Input id="declared" inputMode="decimal" value={declared} onChange={(e) => setDeclared(e.target.value)} placeholder="120.5" />
                   <p className="text-xs text-muted-foreground">{r.company_name} sees it marked as your own number, without bills.</p>
                 </div>
