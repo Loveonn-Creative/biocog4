@@ -110,6 +110,7 @@ const CMSAdmin = lazyPage(() => import("./pages/CMSAdmin"));
 const Billing = lazyPage(() => import("./pages/Billing"));
 const Team = lazyPage(() => import("./pages/Team"));
 const EnterpriseDashboard = lazyPage(() => import("./pages/EnterpriseDashboard"));
+const EnterprisePricing = lazyPage(() => import("./pages/EnterprisePricing"));
 const SupplierShare = lazyPage(() => import("./pages/SupplierShare"));
 const SupplierRequestLanding = lazyPage(() => import("./pages/SupplierRequestLanding"));
 const Partners = lazyPage(() => import("./pages/Partners"));
@@ -220,8 +221,10 @@ const App = () => (
               <Route path="/go/suppliers-b" element={<SupplierLanding variant="b" />} />
               {serviceNav.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
+              <Route path="/enterprise/sign-in" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+              <Route path="/enterprise/pricing" element={<EnterprisePricing />} />
               <Route path="/enterprise/dashboard" element={<RequireAuth><EnterpriseDashboard /></RequireAuth>} />
               <Route path="/supplier-share/:requestId" element={<RequireAuth><SupplierShare /></RequireAuth>} />
               <Route path="/supplier-request/:token" element={<SupplierRequestLanding />} />

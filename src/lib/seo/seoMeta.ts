@@ -58,6 +58,7 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   // Hubs
   '/climate-intelligence': { slug: 'guides', alt: 'Climate Intelligence: guides on CBAM, Scope 3, BRSR and green finance' },
   '/answers': { slug: 'guides', alt: 'Answers: straight answers about Senseible, carbon data and CBAM' },
+  '/enterprise/pricing': { slug: 'enterprise', alt: 'Enterprise pricing: pay as you add suppliers' },
   '/enterprise': { slug: 'enterprise', alt: 'Every supplier’s emissions in one record: Scope 3 for enterprise buyers' },
   '/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026': { slug: 'credit-pricing', alt: 'How carbon credits are actually priced in 2026, voluntary and compliance markets' },
   '/cbam': { slug: 'cbam-calculator', alt: 'CBAM for Indian exporters: pay on your real number, not the EU default' },
@@ -224,6 +225,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/trust': {
     title: 'Trust and Technical Validation',
     description: 'How Senseible verifies emission data: evidence hashing, methodology versioning, confidence bands, framework coverage and greenwashing safeguards.',
+  },
+  '/enterprise/pricing': {
+    title: 'Enterprise Pricing: Pay As You Add Suppliers',
+    description: 'Supplier emissions priced on three things: suppliers you add, team seats and any integration you ask for. Role-based access for every team. Pilot on 10 to 15.',
   },
   '/enterprise': {
     title: 'Supplier Emissions and Scope 3 for Enterprises',

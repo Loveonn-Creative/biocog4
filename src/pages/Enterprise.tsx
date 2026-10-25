@@ -59,8 +59,8 @@ const CapabilityList = ({ items, prefix }: { items: Capability[]; prefix: string
 
 /**
  * Pricing in context: what the visitor has told us so far (supplier count,
- * the topics they picked across the page, their stack) is what a Scale quote
- * starts from. Rows fill in as the form does; the link opens the Scale plan.
+ * the topics they picked across the page, their stack) is what an enterprise quote
+ * starts from. Rows fill in as the form does; the link opens enterprise pricing.
  */
 const ScaleFit = ({ suppliers, interests, stack }: { suppliers: string; interests: string[]; stack: string }) => {
   const t = useT();
@@ -71,7 +71,7 @@ const ScaleFit = ({ suppliers, interests, stack }: { suppliers: string; interest
   ];
   return (
     <div className="mt-8 rounded-2xl bg-secondary/50 p-4 sm:p-5">
-      <p className="text-sm font-medium">{t("ent.fit.title", "Your Scale quote starts here")}</p>
+      <p className="text-sm font-medium">{t("ent.fit.title2", "Your quote starts here")}</p>
       <dl className="mt-3 grid gap-2 text-sm" aria-live="polite">
         {rows.map(r => (
           <div key={r.k} className="grid grid-cols-[7.5rem_1fr] gap-3">
@@ -80,9 +80,9 @@ const ScaleFit = ({ suppliers, interests, stack }: { suppliers: string; interest
           </div>
         ))}
       </dl>
-      <p className="mt-3 text-xs text-muted-foreground">{t("ent.fit.note", "Your quote starts from these. Team seats, entities and integrations are set in it.")}</p>
-      <Link to="/pricing?plan=scale#plans" className="group mt-3 inline-flex items-center gap-1 text-sm underline underline-offset-4">
-        {t("ent.fit.link", "See what Scale includes")}
+      <p className="mt-3 text-xs text-muted-foreground">{t("ent.fit.note2", "Suppliers, team seats and integrations set the price.")}</p>
+      <Link to="/enterprise/pricing" className="group mt-3 inline-flex items-center gap-1 text-sm underline underline-offset-4">
+        {t("ent.fit.link2", "See how pricing works")}
         <ArrowRight className="w-3.5 h-3.5 transition-transform duration-[var(--motion-fast)] ease-[var(--ease-out)] group-hover:translate-x-0.5" aria-hidden="true" />
       </Link>
     </div>
@@ -211,9 +211,9 @@ const Enterprise = () => {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            {t("ent.hero.pricing", "Scale is built around your team, entities and integrations, and priced to match.")}{" "}
-            <Link to="/pricing?plan=scale#plans" className="group inline-flex items-center gap-1 whitespace-nowrap text-foreground underline underline-offset-4">
-              {t("ent.hero.pricing.link", "Explore plans")}
+            {t("ent.hero.pricing2", "Pay as you add suppliers.")}{" "}
+            <Link to="/enterprise/pricing" className="group inline-flex items-center gap-1 whitespace-nowrap text-foreground underline underline-offset-4">
+              {t("ent.hero.pricing.link2", "See pricing")}
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-[var(--motion-fast)] ease-[var(--ease-out)] group-hover:translate-x-0.5" aria-hidden="true" />
             </Link>
           </p>
