@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useSession } from '@/hooks/useSession';
+import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization, getFunctionErrorMessage, isMissingRpcError, untypedRpc } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
@@ -94,6 +95,7 @@ const ROLE_ORDER: Record<string, number> = Object.fromEntries(ALL_ROLE_ORDER.map
 const PENDING_MIGRATION_MESSAGE = 'Available after the team access update is applied.';
 
 const Team = () => {
+  const { access: enterprise } = useEnterpriseAccess();
   const navigate = useNavigate();
   const { user, isLoading: sessionLoading, isAuthenticated } = useSession();
   const { tier, isLoading: premiumLoading } = usePremiumStatus();
@@ -153,7 +155,8 @@ const Team = () => {
 
   // Members of someone else's organization can see their team even on a free personal plan.
   const isMemberOfOtherOrg = !!organization && organization.owner_id !== user?.id;
-  const showUpgradeWall = !premiumLoading && !planIncludesTeam(tier) && !isMemberOfOtherOrg;
+  // Enterprise seats come from their agreement with Senseible, not an MSME plan.
+  const showUpgradeWall = !premiumLoading && !planIncludesTeam(tier) && !isMemberOfOtherOrg && !enterprise;
 
   useEffect(() => {
     if (!sessionLoading && !isAuthenticated) {

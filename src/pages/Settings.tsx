@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useSession } from '@/hooks/useSession';
+import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
 import { supabase } from '@/integrations/supabase/client';
 import { Settings as SettingsIcon, Building2, Globe, Target, Shield, Save, Check, Layers, Lock } from 'lucide-react';
 import { toast } from 'sonner';
@@ -49,6 +50,7 @@ const DEFAULT_PROFILE: CompanyProfile = {
 const SECTORS = COMPANY_SECTORS;
 
 const Settings = () => {
+  const { access: enterprise } = useEnterpriseAccess();
   const { user, sessionId } = useSession();
   const [profile, setProfile] = useState<CompanyProfile>(DEFAULT_PROFILE);
   const [isSaving, setIsSaving] = useState(false);
@@ -267,6 +269,7 @@ const Settings = () => {
             </CardContent>
           </Card>
 
+          {!enterprise && (<>
           {/* Framework Triggers */}
           <Card>
             <CardHeader>
@@ -451,6 +454,7 @@ const Settings = () => {
           </Card>
           )}
 
+          </>)}
           {/* Data Storage Info */}
           <Card className="bg-muted/30">
             <CardContent className="p-5">

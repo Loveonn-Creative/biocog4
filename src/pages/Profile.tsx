@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useSession } from '@/hooks/useSession';
+import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
@@ -78,6 +79,7 @@ interface ProfileData {
 }
 
 const Profile = () => {
+  const { access: enterprise } = useEnterpriseAccess();
   const navigate = useNavigate();
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
   const { tier, isPremium } = usePremiumStatus();
@@ -260,6 +262,7 @@ const Profile = () => {
         </div>
 
         <div className="grid gap-6">
+          {!enterprise && (<>
           {/* Subscription Card */}
           <Card className={`${tierColors[tier] || tierColors.snapshot} border`}>
             <CardContent className="p-6">
@@ -293,6 +296,7 @@ const Profile = () => {
             <Link to="/subscription" className="font-medium text-foreground underline underline-offset-2">Top up on Subscription</Link>
           </p>
 
+          </>)}
           {/* Account Info */}
           <Card>
             <CardHeader>
@@ -489,9 +493,8 @@ const Profile = () => {
             </CardContent>
           </Card>
 
-          {/* Enterprise Mode */}
-          <EnterpriseModeCard />
-          <Scope3FullTrailCard />
+          {/* Enterprise Mode (an MSME display setting, not enterprise access) */}
+          {!enterprise && <><EnterpriseModeCard /><Scope3FullTrailCard /></>}
 
           {/* Security */}
           <ChangePasswordCard user={user} />
