@@ -6,6 +6,8 @@ export interface ReadRow { plan_units: number; status: string; created_at: strin
 export interface PackRow {
   id: string; packs: number; credits: number; used: number; validity: string; status: string;
   paid_at: string | null; expires_at: string | null; created_at: string;
+  /** 'enterprise-…' for reads a buyer covers (enterprise billing). */
+  razorpay_order_id?: string | null;
 }
 
 const RESERVATION_MS = 15 * 60_000;

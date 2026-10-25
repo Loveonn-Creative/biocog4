@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
+import { untypedRpc } from '@/hooks/useOrganization';
 import { canAskSuppliers, canDownload } from '@/lib/enterprise/access';
 import {
   buildLines, financialYears, nextActions, overview, supplierCsv, tonnes,
@@ -75,6 +76,14 @@ export default function EnterpriseDashboard() {
   if (!access) return <Navigate to="/dashboard" replace />;
   const mayAsk = canAskSuppliers(access.role);
   const mayDownload = canDownload(access.role);
+
+  // Each download is counted against the quote (billed past it). Before the
+  // billing migration the call is missing and the download goes ahead.
+  const downloadSheet = async () => {
+    const { error } = await untypedRpc('record_enterprise_download', { p_what: 'supplier_sheet' });
+    if (error?.code === '42501') { toast.error('Your role can view suppliers but not download.'); return; }
+    download(csvName, supplierCsv(lines, period));
+  };
 
   const invoke = async (body: Record<string, unknown>) => {
     const { data: res, error } = await supabase.functions.invoke('supplier-requests', { body });
@@ -190,7 +199,7 @@ export default function EnterpriseDashboard() {
             <section className="rounded-xl border p-4">
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <h2 className="text-sm font-semibold mr-auto">Suppliers, largest first</h2>
-                {mayDownload && <Button variant="outline" size="sm" onClick={() => download(csvName, supplierCsv(lines, period))}><Download className="w-4 h-4 mr-2" />Supplier sheet (CSV)</Button>}
+                {mayDownload && <Button variant="outline" size="sm" onClick={() => void downloadSheet()}><Download className="w-4 h-4 mr-2" />Supplier sheet (CSV)</Button>}
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm min-w-[760px]">

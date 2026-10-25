@@ -40,7 +40,7 @@ export function useInvoiceAllowance() {
     if (ledgerStart && ledgerStart > since) n += await docsBetween(since, ledgerStart);
     setUsed(n);
     const [p, o, c] = await Promise.all([
-      db.from('invoice_credit_packs').select('id, packs, credits, used, validity, status, paid_at, expires_at, created_at').eq('user_id', user.id).neq('status', 'pending').order('created_at', { ascending: false }),
+      db.from('invoice_credit_packs').select('id, packs, credits, used, validity, status, paid_at, expires_at, created_at, razorpay_order_id').eq('user_id', user.id).neq('status', 'pending').order('created_at', { ascending: false }),
       db.from('service_orders').select('id, kind, quantity, status, paid_at, due_at, delivered_at, created_at').eq('user_id', user.id).neq('status', 'pending').order('created_at', { ascending: false }),
       db.from('invoice_read_counting').select('page_counting_from').maybeSingle(),
     ]);

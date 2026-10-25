@@ -373,3 +373,17 @@ Enterprise supplier pilot (owner approved 25 Oct 2026). New tables only; no exis
 Tested: `tests/run_enterprise_pilot.sh` replays every migration plus the applied pending chain, applies this file, proves the rollback restores the same catalog, re-applies, runs `tests/20261107100000_enterprise_pilot.test.sql` (10 groups: no browser or Scale grant, staff grant and one-time claim, unconfirmed email refused, supplier limit, token hash only, link preview, email and GSTIN matching, outsiders blocked, server-computed totals, enterprise cannot read supplier rows, withdraw and revoke), then shows the rollback refusing while shared data exists and restoring the catalog once confirmed.
 
 Roll back with `rollback/20261107100000_enterprise_pilot.rollback.sql` (needs `SET senseible.confirm_enterprise_rollback = 'yes'` once suppliers have shared).
+
+## 20261108100000_enterprise_billing.sql
+
+Apply after `20261030100000_invoice_reads_and_purchases` and `20261107100000_enterprise_pilot` (it refuses to run otherwise).
+
+- **What it adds:** included limits per enterprise on `enterprise_access` (10 seats, 150 bill reads per supplier a year, 120 report downloads a year, 2 reminders per request, 2,000 questions a month, contract start), internal rates in `enterprise_rates` (server only, never published), and an append-only `enterprise_usage` ledger.
+- **Nothing is blocked:** suppliers past the quote are added and billed; reminders past 2 per request are billed; downloads past the quote are billed (viewers cannot download).
+- **Supplier bill reads:** when an invited supplier has no reads left (their own free reads and any top-ups they bought), `extract-document` calls `service_enterprise_cover_reads`: the enterprise's 150 included reads are added as a credit pack (`funded_by_org`), then billed packs of 100. The supplier is never stopped or charged for them.
+- **Staff billing:** `SELECT * FROM private.enterprise_bill('<org id>', '<from>', '<to>');` returns billable quantities and amounts in paise. Members see counts only through `my_enterprise_usage()`.
+- **Deploy with it:** redeploy `extract-document` (one added step: ask for cover, then retry the reservation once).
+
+Tested: `tests/run_enterprise_billing.sh` replays every migration plus the applied pending chain, applies 20261030 and 20261107, applies this file, proves the rollback restores the same catalog, re-applies, and runs `tests/20261108100000_enterprise_billing.test.sql` (6 groups: suppliers past the quote billed, reads covered only after acceptance, 150 included then billed packs of 100, third reminder billed, downloads billed past the quote with viewers refused and rates private, staff bill totals), then shows the rollback refusing while billable usage exists.
+
+Roll back with `rollback/20261108100000_enterprise_billing.rollback.sql` (needs `SET senseible.confirm_enterprise_billing_rollback = 'yes'` once billable usage exists). Reads already added stay with the suppliers as ordinary credits.

@@ -793,11 +793,18 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
       // produces something. Deleting a document never gives a read back.
       // Plan reads run out first, then purchased credits.
       if (scanLimit !== null && !rereadDocId) {
-        const { data: r, error: rErr } = await authClient.rpc('reserve_invoice_read', {
+        const reserve = () => authClient.rpc('reserve_invoice_read', {
           p_user: userId, p_org: organizationId || null, p_hash: documentHash, p_pages: pdfPageCount ?? 1,
           p_plan_limit: scanLimit, p_period_start: monthStartIst(),
           p_page_counting_from: pageCountingFrom({ cycle: planCycle, expiresAt: planExpiresAt }),
         });
+        let { data: r, error: rErr } = await reserve();
+        // A supplier invited by an enterprise is never stopped here: once their own
+        // reads and top-ups run out, the enterprise covers the rest (and is billed).
+        if (!rErr && r && r.ok === false) {
+          const { data: cover } = await authClient.rpc('service_enterprise_cover_reads', { p_user: userId, p_units: r.units ?? 1 });
+          if (cover?.covered) ({ data: r, error: rErr } = await reserve());
+        }
         if (rErr && (rErr.code === 'PGRST202' || rErr.code === '42883')) {
           // Ledger not migrated yet: count stored documents, as before.
           const { count, error: countError } = await authClient

@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { BuyerNote } from '@/components/supplier/BuyerNote';
 import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -337,6 +338,7 @@ const Monetize = () => {
             <div>
               <h1 className="text-3xl font-semibold mb-2 tracking-tight">Monetize Your Carbon Data</h1>
               <p className="text-muted-foreground">Turn verified emissions into real climate value</p>
+              {!isPremium && <BuyerNote className="mt-1" />}
             </div>
             {!isPremium && (
               <Button variant="outline" asChild className="gap-2">
