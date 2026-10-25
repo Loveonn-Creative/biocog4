@@ -99,7 +99,7 @@ export function QuickPurchases({ planEnd }: { planEnd: string | null }) {
               const until = packUsableUntil(p, planEnd);
               return (
                 <li key={p.id}>
-                  {p.credits.toLocaleString('en-IN')} credits, {p.used.toLocaleString('en-IN')} used
+                  {p.credits.toLocaleString('en-IN')} {p.razorpay_order_id?.startsWith('enterprise-') ? 'reads covered by your buyer' : 'credits'}, {p.used.toLocaleString('en-IN')} used
                   {p.status === 'refunded' ? ' · refunded' : until ? ` · valid until ${day(until)}` : ''}
                 </li>
               );

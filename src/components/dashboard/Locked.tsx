@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Lock } from 'lucide-react';
+import { BuyerNote } from '@/components/supplier/BuyerNote';
 
 // A module the current plan does not open: its shape, never its data. The
 // bars are a fixed placeholder, not a chart, and nothing is loaded for it.
@@ -22,6 +23,7 @@ export function LockedBody({ plan }: { plan: string }) {
           <Lock className="h-3.5 w-3.5" aria-hidden="true" />Opens on {plan}
         </Link>
       </div>
+      <BuyerNote className="px-4 pb-3 text-center" />
     </div>
   );
 }

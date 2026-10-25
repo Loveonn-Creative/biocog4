@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BuyerNote } from '@/components/supplier/BuyerNote';
 import { BasisTag } from './AnswerReceipt';
 import type { Audience } from '@/lib/intelligenceClient';
 
@@ -101,6 +102,7 @@ export function ContextCard({ data, className = '' }: { data: ContextBrief; clas
         <span className="text-xs text-muted-foreground">· not your data</span>
       </span>
       <Link to="/pricing" className="shrink-0 font-semibold text-primary hover:underline">See plans</Link>
+      <BuyerNote className="basis-full" />
     </div>
   );
 }
