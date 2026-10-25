@@ -90,20 +90,20 @@ SELECT organization_id, '00000000-0000-4000-8000-0000000000e2', 'analyst', now()
 -- 3. The supplier-requests function (service role) creates requests.
 CREATE TEMP TABLE t_tokens (request_id uuid, token text, who text);
 INSERT INTO t_tokens SELECT r.request_id, r.token, 'steel' FROM public.enterprise_access ea,
-  private.create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'Supplier A steel', 'SUP@steel.in', NULL,
+  public.service_create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'Supplier A steel', 'SUP@steel.in', NULL,
     'Steel coils', '2025-04-01', '2026-03-31', 30, 12.5, 1::smallint) r WHERE ea.email = 'head@buyer.in';
 INSERT INTO t_tokens SELECT r.request_id, r.token, 'castings' FROM public.enterprise_access ea,
-  private.create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'Supplier B castings', NULL, '27aabco1234f1z5',
+  public.service_create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'Supplier B castings', NULL, '27aabco1234f1z5',
     'Castings', '2025-04-01', '2026-03-31') r WHERE ea.email = 'head@buyer.in';
 DO $$
 BEGIN
   BEGIN
-    PERFORM private.create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'Supplier C', 'c@c.in', NULL, NULL, '2025-04-01', '2026-03-31')
+    PERFORM public.service_create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'Supplier C', 'c@c.in', NULL, NULL, '2025-04-01', '2026-03-31')
     FROM public.enterprise_access ea WHERE ea.email = 'head@buyer.in';
     RAISE EXCEPTION 'FAIL: supplier limit not enforced';
   EXCEPTION WHEN check_violation THEN NULL; END;
   BEGIN
-    PERFORM private.create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000f3', 'Supplier D', 'd@d.in', NULL, NULL, '2025-04-01', '2026-03-31')
+    PERFORM public.service_create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000f3', 'Supplier D', 'd@d.in', NULL, NULL, '2025-04-01', '2026-03-31')
     FROM public.enterprise_access ea WHERE ea.email = 'head@buyer.in';
     RAISE EXCEPTION 'FAIL: outsider created a request';
   EXCEPTION WHEN insufficient_privilege THEN NULL; END;
@@ -203,6 +203,37 @@ BEGIN
   EXCEPTION WHEN no_data_found THEN NULL; END;
   RESET ROLE;
   RAISE NOTICE 'ok: after withdrawing, nothing new can be shared on that request';
+END $$;
+DO $$
+BEGIN
+  SET LOCAL ROLE authenticated;
+  PERFORM pg_temp.as_user('00000000-0000-4000-8000-0000000000e1');
+  BEGIN PERFORM public.service_create_supplier_request(ea.organization_id, '00000000-0000-4000-8000-0000000000e1', 'X', 'x@x.in', NULL, NULL, '2025-04-01', '2026-03-31')
+    FROM (SELECT '00000000-0000-4000-8000-000000000000'::uuid AS organization_id) ea;
+    RAISE EXCEPTION 'FAIL: browser called the service-only create function';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  PERFORM public.cancel_supplier_request((SELECT request_id FROM t_tokens WHERE who = 'castings'));
+  IF (SELECT status FROM public.supplier_requests WHERE id = (SELECT request_id FROM t_tokens WHERE who = 'castings')) <> 'revoked' THEN
+    RAISE EXCEPTION 'FAIL: cancel'; END IF;
+  RESET ROLE;
+  RAISE NOTICE 'ok: create is service-only; the enterprise can cancel an open request';
+END $$;
+DO $$
+DECLARE t text;
+BEGIN
+  -- Re-issue for reminders: works once for an open request, then waits 3 days.
+  UPDATE public.supplier_requests SET status = 'sent' WHERE id = (SELECT request_id FROM t_tokens WHERE who = 'castings');
+  SELECT token INTO t FROM public.service_reissue_supplier_link((SELECT request_id FROM t_tokens WHERE who = 'castings'), '00000000-0000-4000-8000-0000000000e1');
+  IF t IS NULL OR t = (SELECT token FROM t_tokens WHERE who = 'castings') THEN RAISE EXCEPTION 'FAIL: reissue token'; END IF;
+  IF EXISTS (SELECT 1 FROM public.supplier_request_preview((SELECT token FROM t_tokens WHERE who = 'castings'))) THEN
+    RAISE EXCEPTION 'FAIL: old link still works after reissue'; END IF;
+  BEGIN PERFORM public.service_reissue_supplier_link((SELECT request_id FROM t_tokens WHERE who = 'castings'), '00000000-0000-4000-8000-0000000000e1');
+    RAISE EXCEPTION 'FAIL: reminder twice in 3 days';
+  EXCEPTION WHEN raise_exception THEN NULL; END;
+  BEGIN PERFORM public.service_reissue_supplier_link((SELECT request_id FROM t_tokens WHERE who = 'castings'), '00000000-0000-4000-8000-0000000000f3');
+    RAISE EXCEPTION 'FAIL: outsider reissued';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  RAISE NOTICE 'ok: reminders send a fresh link, retire the old one, and wait 3 days';
 END $$;
 SELECT private.revoke_enterprise_access('head@buyer.in');
 DO $$

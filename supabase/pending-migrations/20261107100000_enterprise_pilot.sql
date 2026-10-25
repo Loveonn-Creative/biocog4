@@ -220,9 +220,9 @@ $$;
 CREATE TRIGGER supplier_requests_limit BEFORE INSERT ON public.supplier_requests
   FOR EACH ROW EXECUTE FUNCTION private.check_supplier_limit();
 
--- Server side (service role, from the supplier-requests function): create a
+-- Server side (service role only, from the supplier-requests function): create a
 -- request and return its one-time link token. The token is never stored.
-CREATE OR REPLACE FUNCTION private.create_supplier_request(
+CREATE OR REPLACE FUNCTION public.service_create_supplier_request(
   p_org uuid, p_created_by uuid, p_name text, p_email text, p_gstin text, p_buys text,
   p_period_start date, p_period_end date, p_valid_days integer DEFAULT 30,
   p_purchase_share_pct numeric DEFAULT NULL, p_scope3_category smallint DEFAULT 1
@@ -246,7 +246,53 @@ BEGIN
   RETURN QUERY SELECT v_id, v_token;
 END;
 $$;
-REVOKE ALL ON FUNCTION private.create_supplier_request(uuid, uuid, text, text, text, text, date, date, integer, numeric, smallint) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.service_create_supplier_request(uuid, uuid, text, text, text, text, date, date, integer, numeric, smallint) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.service_create_supplier_request(uuid, uuid, text, text, text, text, date, date, integer, numeric, smallint) TO service_role;
+
+-- Server side: a reminder sends a fresh link (the old token is unknown by design).
+CREATE OR REPLACE FUNCTION public.service_reissue_supplier_link(p_request_id uuid, p_caller uuid, p_valid_days integer DEFAULT 30)
+RETURNS TABLE (token text, supplier_email text, supplier_name text, company_name text, period_start date, period_end date)
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public, extensions
+AS $$
+#variable_conflict use_column
+DECLARE v_token text := encode(gen_random_bytes(32), 'hex'); r public.supplier_requests%ROWTYPE; v_company text;
+BEGIN
+  SELECT * INTO r FROM public.supplier_requests WHERE id = p_request_id FOR UPDATE;
+  SELECT ea.company_name INTO v_company FROM public.enterprise_access ea
+  JOIN public.organization_members m ON m.organization_id = ea.organization_id
+  WHERE ea.organization_id = r.enterprise_org_id AND ea.status = 'active' AND m.user_id = p_caller;
+  IF r.id IS NULL OR v_company IS NULL THEN RAISE EXCEPTION 'not an enterprise member' USING ERRCODE = '42501'; END IF;
+  IF r.status NOT IN ('sent', 'opened') THEN RAISE EXCEPTION 'only open requests can be reminded' USING ERRCODE = 'P0001'; END IF;
+  IF r.last_reminded_at > now() - interval '3 days' THEN RAISE EXCEPTION 'reminded in the last 3 days' USING ERRCODE = 'P0001'; END IF;
+  UPDATE public.supplier_requests
+  SET token_hash = encode(sha256(convert_to(v_token, 'UTF8')), 'hex'),
+      expires_at = now() + make_interval(days => greatest(1, least(p_valid_days, 90))),
+      last_reminded_at = now()
+  WHERE id = r.id;
+  RETURN QUERY SELECT v_token, r.supplier_email, r.supplier_name, v_company, r.period_start, r.period_end;
+END;
+$$;
+REVOKE ALL ON FUNCTION public.service_reissue_supplier_link(uuid, uuid, integer) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.service_reissue_supplier_link(uuid, uuid, integer) TO service_role;
+
+-- The enterprise cancels a request it no longer needs. Shared snapshots stay.
+CREATE OR REPLACE FUNCTION public.cancel_supplier_request(p_request_id uuid)
+RETURNS boolean
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  UPDATE public.supplier_requests SET status = 'revoked'
+  WHERE id = p_request_id AND status IN ('sent', 'opened') AND private.is_enterprise_member(enterprise_org_id);
+  IF NOT FOUND THEN RAISE EXCEPTION 'request not found or already closed' USING ERRCODE = '42501'; END IF;
+  RETURN true;
+END;
+$$;
+REVOKE ALL ON FUNCTION public.cancel_supplier_request(uuid) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.cancel_supplier_request(uuid) TO authenticated;
 
 -- Before sign-in: the link shows only who is asking and for which period.
 CREATE OR REPLACE FUNCTION public.supplier_request_preview(p_token text)
