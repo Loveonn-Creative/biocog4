@@ -2,6 +2,8 @@
 // it too. Guests are never stored on the server (extract-document); these
 // limits keep "try as many as you like" from becoming an open AI bill.
 
+import { detectFileKind } from './fileSignature.ts';
+
 /** Invoices one device may read in a day without an account (owner decision, October 2026). */
 export const GUEST_DAILY_SCANS = 30;
 /** Backstop per network address, for scripts that mint new guest sessions. Shared office or mobile networks stay well under it. */
@@ -28,6 +30,9 @@ export function guestFileCheck(imageBase64: string, mimeType: unknown): GuestFil
   const bytes = base64Bytes(imageBase64);
   if (bytes > GUEST_MAX_BYTES) {
     return { ok: false, status: 413, code: 'file_too_large', message: `This file is ${(bytes / 1048576).toFixed(1)} MB. Without an account the limit is 10 MB; try a smaller scan or a photo of the bill.` };
+  }
+  if (!detectFileKind(imageBase64)) {
+    return { ok: false, status: 415, code: 'unsupported_type', message: 'This file is not a PDF or a photo. Upload a PDF or a photo (JPG, PNG, WEBP or HEIC) of the bill.' };
   }
   return { ok: true, bytes };
 }

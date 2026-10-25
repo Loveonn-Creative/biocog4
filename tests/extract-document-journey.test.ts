@@ -103,7 +103,8 @@ globalThis.fetch = (async (url: string, init?: RequestInit) => {
 
 await import('../supabase/functions/extract-document/index.ts');
 
-const file = (seed: string) => Buffer.from(`fake-image-${seed}-`.repeat(20)).toString('base64');
+// A JPEG header so the content check passes; the rest stands in for the image.
+const file = (seed: string) => Buffer.concat([Buffer.from([0xff, 0xd8, 0xff, 0xe0]), Buffer.from(`fake-image-${seed}-`.repeat(20))]).toString('base64');
 const upload = async (seed: string, extra: Row = {}) => {
   const res = await handler(new Request('http://fn/extract-document', {
     method: 'POST',

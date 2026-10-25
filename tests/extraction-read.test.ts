@@ -53,9 +53,27 @@ describe('same invoice, different file', () => {
 
 describe('file checks and our-side failures', () => {
   test('type and size', () => {
-    expect(fileCheck('aGVsbG8=', 'application/pdf').ok).toBe(true);
+    expect(fileCheck(Buffer.from('%PDF-1.7 hello').toString('base64'), 'application/pdf').ok).toBe(true);
     expect(fileCheck('aGVsbG8=', 'text/plain')).toMatchObject({ ok: false, status: 415 });
     expect(fileCheck('A'.repeat(24), 'image/png', 10)).toMatchObject({ ok: false, status: 413 });
+  });
+
+  test('the content must really be a PDF or photo, whatever the declared type', () => {
+    const b64 = (b: number[] | string) => Buffer.from(b as any).toString('base64');
+    const tail = 'x'.repeat(40);
+    expect(fileCheck(b64([0xff, 0xd8, 0xff, 0xe1, ...Buffer.from(tail)]), 'image/jpeg').ok).toBe(true);
+    expect(fileCheck(b64([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, ...Buffer.from(tail)]), 'image/png').ok).toBe(true);
+    expect(fileCheck(b64('RIFF\x00\x00\x00\x00WEBPVP8 ' + tail), 'image/webp').ok).toBe(true);
+    expect(fileCheck(b64('\x00\x00\x00\x18ftypheic' + tail), 'image/heic').ok).toBe(true);
+    // A phone that labels a HEIC photo as JPEG still gets read.
+    expect(fileCheck(b64('\x00\x00\x00\x18ftypmif1' + tail), 'image/jpeg').ok).toBe(true);
+    // A PDF header after a few junk bytes, as some scanners write.
+    expect(fileCheck(b64('\r\n%PDF-1.4 ' + tail), 'application/pdf').ok).toBe(true);
+    // Anything else is refused before any read or storage write.
+    expect(fileCheck(b64('MZ\x90\x00 windows program ' + tail), 'application/pdf')).toMatchObject({ ok: false, status: 415 });
+    expect(fileCheck(b64('PK\x03\x04 zip or xlsx ' + tail), 'application/pdf')).toMatchObject({ ok: false, status: 415 });
+    expect(fileCheck(b64('<script>alert(1)</script>' + tail), 'image/png')).toMatchObject({ ok: false, status: 415 });
+    expect(fileCheck('', 'image/jpeg')).toMatchObject({ ok: false, status: 415 });
   });
   test('provider failures never blame the image', () => {
     for (const s of [undefined, 400, 404, 500, 503]) {
