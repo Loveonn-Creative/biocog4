@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
+import { AskSupplierData } from '@/components/enterprise/AskSupplierData';
 import { untypedRpc } from '@/hooks/useOrganization';
 import { canAskSuppliers, canDownload } from '@/lib/enterprise/access';
 import {
@@ -195,6 +196,8 @@ export default function EnterpriseDashboard() {
                 )}
               </div>
             </section>
+
+            <AskSupplierData key={period.start} period={period} />
 
             <section className="rounded-xl border p-4">
               <div className="flex flex-wrap items-center gap-2 mb-3">

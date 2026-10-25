@@ -29,7 +29,7 @@ async function send(to: string, subject: string, html: string): Promise<boolean>
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from: 'Senseible <onboarding@resend.dev>', to: [to], subject, html }),
+      body: JSON.stringify({ from: 'Senseible <noreply@senseible.earth>', to: [to], subject, html }),
     });
     return r.ok;
   } catch {
