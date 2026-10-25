@@ -63,10 +63,20 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'Senseible (senseible.earth) is a carbon accounting platform. Sensibull is an unrelated options-trading platform. [Read the difference](/vs/sensibull).' },
     ],
   },
+  '/enterprise/pricing': {
+    h1: 'Pay as you add suppliers',
+    blocks: [
+      { p: 'Enterprise pricing follows three things: the suppliers you add, team seats and any integration you ask for. No plan tiers. Suppliers do not pay to share with you. Pilots start with 10 to 15 suppliers.' },
+      { h2: 'One record, every team' },
+      { p: 'Supplier requests with consent, bills read into Scope 1 and 2, coverage by share of purchases, a supplier sheet with fingerprints, BRSR, GHG Protocol, CDP and ESRS reports, CBAM product emissions, net-zero roadmaps, and Tally, ERP and API integrations built for you.' },
+      { h2: 'Seats by team, access by role' },
+      { p: 'Admins manage the team. Procurement and supply chain ask and remind suppliers. ESG, sustainability and exports download sheets and build reports. Finance sees totals and supplier detail. Auditors check the evidence.' },
+    ],
+  },
   '/enterprise': {
     h1: 'Every supplier\'s emissions, in one record you can defend',
     blocks: [
-      { p: 'Scope 3 programmes stall on supplier chasing and spreadsheets that never reconcile. Senseible collects what suppliers already have, ties each figure to its source document, and keeps estimates labelled until real data replaces them, so reporting holds up as your supplier base grows. Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability below is marked Live, Pilot or Custom.' },
+      { p: 'Scope 3 programmes stall on supplier chasing and spreadsheets that never reconcile. Senseible collects what suppliers already have, ties each figure to its source document, and keeps estimates labelled until real data replaces them, so reporting holds up as your supplier base grows. Every capability below is marked Live, Pilot or Custom. [Enterprise pricing](/enterprise/pricing).' },
       { h2: 'Unstructured data in. The simplest next decision out.' },
       { p: 'Supply chains and enterprise systems produce data in every shape: bills in several languages, photos, ERP exports, meter files and spend lines. Each becomes one record with its scope, kgCO2e, the factor used, a confidence score and the hash of its source, and the ledger ranks what to act on first.' },
       { h2: 'The full suite, on one verified ledger' },

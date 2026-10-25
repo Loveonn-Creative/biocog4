@@ -335,7 +335,7 @@ function coreRoutes(): SeoRoute[] {
     ['/platform', 'core', 0.9], ['/about', 'core', 0.6], ['/mission', 'core', 0.5],
     ['/principles', 'core', 0.5], ['/contact', 'core', 0.6], ['/carbon-credits', 'core', 0.8],
     ['/climate-finance', 'core', 0.8], ['/partners', 'core', 0.6], ['/grants', 'core', 0.4],
-    ['/net-zero', 'tool', 0.7], ['/enterprise', 'core', 0.8], ['/cbam-calculator', 'tool', 0.9],
+    ['/net-zero', 'tool', 0.7], ['/enterprise', 'core', 0.8], ['/enterprise/pricing', 'core', 0.7], ['/cbam-calculator', 'tool', 0.9],
     ['/marketplace', 'core', 0.5], ['/intelligence', 'tool', 0.5],
     ...servicePages.map(sp => [`/${sp.slug}`, 'core', 0.8] as [string, RouteSection, number]),
     ['/scope-3-supplier-evidence', 'tool', 0.7], ['/msme-carbon-number', 'tool', 0.7], ['/green-loan-check', 'tool', 0.7],
