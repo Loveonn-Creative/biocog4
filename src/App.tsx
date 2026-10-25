@@ -108,6 +108,9 @@ const PaymentSuccess = lazyPage(() => import("./pages/PaymentSuccess"));
 const CMSAdmin = lazyPage(() => import("./pages/CMSAdmin"));
 const Billing = lazyPage(() => import("./pages/Billing"));
 const Team = lazyPage(() => import("./pages/Team"));
+const EnterpriseDashboard = lazyPage(() => import("./pages/EnterpriseDashboard"));
+const SupplierShare = lazyPage(() => import("./pages/SupplierShare"));
+const SupplierRequestLanding = lazyPage(() => import("./pages/SupplierRequestLanding"));
 const Partners = lazyPage(() => import("./pages/Partners"));
 const Admin = lazyPage(() => import("./pages/Admin"));
 const AcceptInvite = lazyPage(() => import("./pages/AcceptInvite"));
@@ -218,6 +221,9 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+              <Route path="/enterprise/dashboard" element={<RequireAuth><EnterpriseDashboard /></RequireAuth>} />
+              <Route path="/supplier-share/:requestId" element={<RequireAuth><SupplierShare /></RequireAuth>} />
+              <Route path="/supplier-request/:token" element={<SupplierRequestLanding />} />
               <Route path="/history" element={<RequireAuth><History /></RequireAuth>} />
               <Route path="/verify" element={<Verify />} />
               <Route path="/monetize" element={<Monetize />} />

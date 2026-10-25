@@ -65,3 +65,5 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.finance-application]
     verify_jwt = false
+  [functions.supplier-requests]
+    verify_jwt = false
