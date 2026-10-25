@@ -114,6 +114,9 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 
 - Deferred by the owner (21 October 2026), do not start without a go-ahead: OCR accuracy test on 50 to 100 real documents, fix-in-place units for needs-data bills, a coverage line under every total, closing a reporting period, a lender share link, a CBAM supplier export.
 
+- CBAM suite footer (owner, 25 October 2026): /cbam-suite and /cbam-suite/supplier-pack show the standard site footer, unchanged.
+- Dr. Elena Varga (owner, 25 October 2026): her role is an expert audit of reports and their accuracy, not a per-page reviewer credit. Do not show her name on any page or in PAGE_REVIEWS unless it is critical or the owner permits it.
+
 ## 9. Open decisions (ask before acting)
 
 - Evidence trail line (fingerprinted · factor sourced · method pinned): move from Dashboard to MRV? Not answered yet.

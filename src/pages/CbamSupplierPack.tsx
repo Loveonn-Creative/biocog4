@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, Calculator, FileSpreadsheet, FileText } from 'lucide-react';
 import { MinimalNav } from '@/components/MinimalNav';
+import { Footer } from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
 import { STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { compute, reportHash, reportingYear } from '@/lib/cbam/suite/engine';
@@ -163,6 +164,7 @@ export default function CbamSupplierPack() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

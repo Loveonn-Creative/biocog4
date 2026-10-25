@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calculator, Package, RotateCcw, Upload } from 'lucide-react';
 import { MinimalNav } from '@/components/MinimalNav';
+import { Footer } from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
 import { STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { useSession } from '@/hooks/useSession';
@@ -246,6 +247,7 @@ export default function CbamSuite() {
           </details>
         )}
       </main>
+      <Footer />
     </div>
   );
 }
