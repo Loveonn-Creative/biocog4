@@ -20,6 +20,7 @@ const cors = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+const ROLE_MSG = 'Your role can view suppliers but not ask them. An admin can change it.';
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json', ...cors } });
 
 async function send(to: string, subject: string, html: string): Promise<boolean> {
@@ -78,6 +79,7 @@ serve(async (req) => {
         p_purchase_share_pct: s.purchaseSharePct, p_scope3_category: s.scope3Category,
       });
       if (error) {
+        if (error.code === '42501') return json({ error: ROLE_MSG }, 403);
         const msg = /limit/i.test(error.message) ? 'Supplier limit reached. Ask Senseible to raise it.'
           : error.code === '23505' ? 'Already asked for this period.' : 'Could not create this request.';
         results.push({ name: s.name, ok: false, error: msg });
@@ -103,7 +105,7 @@ serve(async (req) => {
     const { data, error } = await admin.rpc('service_reissue_supplier_link', { p_request_id: body.requestId, p_caller: callerId, p_valid_days: 30 });
     if (error) {
       const status = error.code === '42501' ? 403 : 409;
-      return json({ error: /3 days/.test(error.message) ? 'Already reminded in the last 3 days.' : /open requests/.test(error.message) ? 'This request is already closed.' : 'Not allowed.' }, status);
+      return json({ error: /3 days/.test(error.message) ? 'Already reminded in the last 3 days.' : /open requests/.test(error.message) ? 'This request is already closed.' : ROLE_MSG }, status);
     }
     const r = Array.isArray(data) ? data[0] : data;
     if (!r?.supplier_email) return json({ ok: true, emailed: false });

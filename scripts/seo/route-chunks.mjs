@@ -8,6 +8,9 @@
 // prefetching (src/lib/routePrefetch.ts).
 
 /** [{ pattern, module }] for every lazily loaded page route in App.tsx. */
+// Guards that wrap a route's page; the page is the first component that is not one.
+const ROUTE_WRAPPERS = new Set(['RequireAuth', 'MsmeOnly']);
+
 export function routeModulesFromApp(appSource) {
   const lazies = new Map();
   for (const m of appSource.matchAll(/const (\w+) = (?:lazy|lazyPage)\(\(\) => import\("\.\/([^"]+)"\)\);/g)) {
@@ -15,7 +18,7 @@ export function routeModulesFromApp(appSource) {
   }
   const out = [];
   for (const m of appSource.matchAll(/<Route path="([^"]+)" element=\{(.*?)\} \/>/g)) {
-    const comp = [...m[2].matchAll(/<(\w+)/g)].map(x => x[1]).find(c => c !== 'RequireAuth');
+    const comp = [...m[2].matchAll(/<(\w+)/g)].map(x => x[1]).find(c => !ROUTE_WRAPPERS.has(c));
     if (lazies.has(comp)) out.push({ pattern: m[1], module: lazies.get(comp) });
   }
   // Service pages are mapped from their nav list.

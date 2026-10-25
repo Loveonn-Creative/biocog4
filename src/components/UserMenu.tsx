@@ -23,6 +23,8 @@ interface UserMenuProps {
   email: string;
   businessName?: string;
   onSignOut: () => void;
+  /** Enterprise accounts: Senseible bills them directly, so no MSME plan badge, Subscription or Billing. */
+  enterprise?: boolean;
 }
 
 const tierColors: Record<string, string> = {
@@ -41,7 +43,7 @@ const tierLabels: Record<string, string> = {
   scale: 'Scale',
 };
 
-export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
+export const UserMenu = ({ email, businessName, onSignOut, enterprise = false }: UserMenuProps) => {
   const { tier, isPremium } = usePremiumStatus();
   const { user } = useSession();
   const { hasOrganization } = useOrganization();
@@ -76,10 +78,12 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             <span className="text-sm font-medium max-w-[120px] truncate">
               {businessName || email.split('@')[0]}
             </span>
-            <Badge variant="secondary" className={`text-[10px] px-1.5 py-0 ${tierColors[tier]}`}>
-              {isPremium && <Crown className="w-2.5 h-2.5 mr-0.5" />}
-              {tierLabels[tier]}
-            </Badge>
+            {!enterprise && (
+              <Badge variant="secondary" className={`text-[10px] px-1.5 py-0 ${tierColors[tier]}`}>
+                {isPremium && <Crown className="w-2.5 h-2.5 mr-0.5" />}
+                {tierLabels[tier]}
+              </Badge>
+            )}
           </div>
           <ChevronDown className="w-4 h-4 text-muted-foreground hidden sm:block" />
         </Button>
@@ -110,6 +114,7 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             </Link>
           </DropdownMenuItem>
         )}
+        {!enterprise && <>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <Link to="/subscription" className="flex items-center gap-2 cursor-pointer">
@@ -126,6 +131,7 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             Billing
           </Link>
         </DropdownMenuItem>
+        </>}
         {isAdmin && (
           <>
             <DropdownMenuSeparator />

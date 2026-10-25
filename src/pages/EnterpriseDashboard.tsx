@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
+import { canAskSuppliers, canDownload } from '@/lib/enterprise/access';
 import {
   buildLines, financialYears, nextActions, overview, supplierCsv, tonnes,
   type SupplierLine, type SupplierRequestRow, type SupplierSnapshotRow,
@@ -72,6 +73,8 @@ export default function EnterpriseDashboard() {
 
   if (accessLoading) return <div className="min-h-screen flex items-center justify-center bg-background"><Loader2 className="w-8 h-8 animate-spin text-primary" /></div>;
   if (!access) return <Navigate to="/dashboard" replace />;
+  const mayAsk = canAskSuppliers(access.role);
+  const mayDownload = canDownload(access.role);
 
   const invoke = async (body: Record<string, unknown>) => {
     const { data: res, error } = await supabase.functions.invoke('supplier-requests', { body });
@@ -128,7 +131,7 @@ export default function EnterpriseDashboard() {
             className="h-10 rounded-md border bg-background px-3 text-sm">
             {years.map((y) => <option key={y.start} value={y.start}>{y.label}</option>)}
           </select>
-          <Button onClick={() => setAdding(true)}><UserPlus className="w-4 h-4 mr-2" />Ask suppliers</Button>
+          {mayAsk && <Button onClick={() => setAdding(true)}><UserPlus className="w-4 h-4 mr-2" />Ask suppliers</Button>}
         </header>
 
         {data.isPending ? (
@@ -139,7 +142,7 @@ export default function EnterpriseDashboard() {
           <section className="rounded-xl border p-8 text-center space-y-3">
             <h2 className="text-lg font-semibold">Start with the suppliers you buy most from</h2>
             <p className="text-sm text-muted-foreground max-w-md mx-auto">Each one gets an email, uploads their bills, and shares their totals with you. You see who has shared, who is late and where your Scope 3 sits.</p>
-            <Button onClick={() => setAdding(true)}><UserPlus className="w-4 h-4 mr-2" />Ask suppliers</Button>
+            {mayAsk && <Button onClick={() => setAdding(true)}><UserPlus className="w-4 h-4 mr-2" />Ask suppliers</Button>}
           </section>
         ) : (
           <>
@@ -174,8 +177,8 @@ export default function EnterpriseDashboard() {
                     {actions.map((a) => (
                       <li key={a.kind} className="rounded-lg border p-3 text-sm flex items-start gap-3">
                         <span className="font-semibold text-primary min-w-6">{a.count}</span>
-                        {a.kind === 'big_missing' && <span className="flex-1">{a.count === 1 ? 'supplier' : 'suppliers'} ({a.purchasePct}% of purchases) {a.count === 1 ? 'has' : 'have'} not shared: {a.names.join(', ')}{a.count > a.names.length ? ` and ${a.count - a.names.length} more` : ''}.{a.overdueIds.length > 0 && <> {a.overdueIds.length} overdue. <button className="font-semibold underline" onClick={() => void remind(a.overdueIds)}>Remind {a.overdueIds.length === 1 ? 'them' : 'all'}</button></>}</span>}
-                        {a.kind === 'remind' && <span className="flex-1">{a.count === 1 ? 'supplier is' : 'suppliers are'} overdue. <button className="font-semibold underline" onClick={() => void remind(a.requestIds)}>Remind {a.count === 1 ? 'them' : 'all'}</button></span>}
+                        {a.kind === 'big_missing' && <span className="flex-1">{a.count === 1 ? 'supplier' : 'suppliers'} ({a.purchasePct}% of purchases) {a.count === 1 ? 'has' : 'have'} not shared: {a.names.join(', ')}{a.count > a.names.length ? ` and ${a.count - a.names.length} more` : ''}.{a.overdueIds.length > 0 && <> {a.overdueIds.length} overdue.{mayAsk && <> <button className="font-semibold underline" onClick={() => void remind(a.overdueIds)}>Remind {a.overdueIds.length === 1 ? 'them' : 'all'}</button></>}</>}</span>}
+                        {a.kind === 'remind' && <span className="flex-1">{a.count === 1 ? 'supplier is' : 'suppliers are'} overdue.{mayAsk && <> <button className="font-semibold underline" onClick={() => void remind(a.requestIds)}>Remind {a.count === 1 ? 'them' : 'all'}</button></>}</span>}
                         {a.kind === 'ask_bills' && <span>of your largest suppliers gave numbers without bills: {a.names.join(', ')}. Ask them to upload bills.</span>}
                       </li>
                     ))}
@@ -187,7 +190,7 @@ export default function EnterpriseDashboard() {
             <section className="rounded-xl border p-4">
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <h2 className="text-sm font-semibold mr-auto">Suppliers, largest first</h2>
-                <Button variant="outline" size="sm" onClick={() => download(csvName, supplierCsv(lines, period))}><Download className="w-4 h-4 mr-2" />Supplier sheet (CSV)</Button>
+                {mayDownload && <Button variant="outline" size="sm" onClick={() => download(csvName, supplierCsv(lines, period))}><Download className="w-4 h-4 mr-2" />Supplier sheet (CSV)</Button>}
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm min-w-[760px]">
@@ -207,7 +210,7 @@ export default function EnterpriseDashboard() {
                         <td className="py-2 pr-3 text-right tabular-nums">{l.proof === 'bills' ? tonnes(l.scope1Kg, 2) : '-'}</td>
                         <td className="py-2 pr-3 text-right tabular-nums">{l.proof === 'bills' ? tonnes(l.scope2Kg, 2) : '-'}</td>
                         <td className="py-2 pr-3 text-right tabular-nums font-medium">{l.kg > 0 ? tonnes(l.kg, 2) : '-'}</td>
-                        <td className="py-2 text-right">{l.canRemind && <Button variant="ghost" size="sm" onClick={() => void remind([l.requestId])}><Send className="w-3.5 h-3.5 mr-1" />Remind</Button>}</td>
+                        <td className="py-2 text-right">{mayAsk && l.canRemind && <Button variant="ghost" size="sm" onClick={() => void remind([l.requestId])}><Send className="w-3.5 h-3.5 mr-1" />Remind</Button>}</td>
                       </tr>
                     ))}
                   </tbody>

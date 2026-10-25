@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useSession } from '@/hooks/useSession';
+import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
 import { chooseWorkspace, useWorkspace } from '@/hooks/useWorkspace';
 import { ROLE_LABELS, type TeamRole } from '@/lib/teamRoles';
 
@@ -18,9 +19,11 @@ import { ROLE_LABELS, type TeamRole } from '@/lib/teamRoles';
  * is nothing to switch.
  */
 export function WorkspaceSwitcher() {
+  const { access: enterprise } = useEnterpriseAccess();
   const { user } = useSession();
   const { workspacesAvailable, organizations, organization, role, scope } = useWorkspace();
-  if (!user || !workspacesAvailable || organizations.length === 0) return null;
+  // An enterprise organisation tracks suppliers, not a records workspace to switch into.
+  if (!user || !workspacesAvailable || organizations.length === 0 || enterprise) return null;
 
   const current = organization?.name || 'Personal';
   const CurrentIcon = scope.kind === 'organization' ? Building2 : User;

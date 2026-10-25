@@ -30,6 +30,7 @@ function InAppHelpGate() {
   if (!IN_APP_HELP_PATHS.has(pathname)) return null;
   return <Suspense fallback={null}><InAppHelp /></Suspense>;
 }
+import { MsmeOnly } from "@/components/MsmeOnly";
 import { RequireAuth } from "./components/RequireAuth";
 import { MACHINERY_BETA } from "./lib/betaFlags";
 import { RouteSEO } from "./components/RouteSEO";
@@ -206,7 +207,7 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <FirstPageRendered />
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<MsmeOnly><Index /></MsmeOnly>} />
               <Route path="/answers" element={<Answers />} />
               <Route path="/answers/:slug" element={<Answers />} />
               <Route path="/hi/answers/:slug" element={<AnswersHi />} />
@@ -224,20 +225,20 @@ const App = () => (
               <Route path="/enterprise/dashboard" element={<RequireAuth><EnterpriseDashboard /></RequireAuth>} />
               <Route path="/supplier-share/:requestId" element={<RequireAuth><SupplierShare /></RequireAuth>} />
               <Route path="/supplier-request/:token" element={<SupplierRequestLanding />} />
-              <Route path="/history" element={<RequireAuth><History /></RequireAuth>} />
-              <Route path="/verify" element={<Verify />} />
-              <Route path="/monetize" element={<Monetize />} />
+              <Route path="/history" element={<RequireAuth><MsmeOnly><History /></MsmeOnly></RequireAuth>} />
+              <Route path="/verify" element={<MsmeOnly><Verify /></MsmeOnly>} />
+              <Route path="/monetize" element={<MsmeOnly><Monetize /></MsmeOnly>} />
               <Route path="/solar-signal" element={<SolarSignal />} />
               {MACHINERY_BETA && <Route path="/beta/machinery" element={<RequireAuth><MachineryBeta /></RequireAuth>} />}
               <Route path="/reduction-signal" element={<ReductionSignal />} />
-              <Route path="/reports" element={<RequireAuth><Reports /></RequireAuth>} />
-              <Route path="/mrv-dashboard" element={<RequireAuth><MRVDashboard /></RequireAuth>} />
+              <Route path="/reports" element={<RequireAuth><MsmeOnly><Reports /></MsmeOnly></RequireAuth>} />
+              <Route path="/mrv-dashboard" element={<RequireAuth><MsmeOnly><MRVDashboard /></MsmeOnly></RequireAuth>} />
               <Route path="/partner" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
               <Route path="/partner-dashboard" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
               <Route path="/settings" element={<RequireAuth><Settings /></RequireAuth>} />
               <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
               <Route path="/partner-profile" element={<RequireAuth><PartnerProfile /></RequireAuth>} />
-              <Route path="/subscription" element={<RequireAuth><Subscription /></RequireAuth>} />
+              <Route path="/subscription" element={<RequireAuth><MsmeOnly><Subscription /></MsmeOnly></RequireAuth>} />
               <Route path="/mission" element={<Mission />} />
               <Route path="/about" element={<About />} />
               <Route path="/principles" element={<Principles />} />
@@ -258,7 +259,7 @@ const App = () => (
               <Route path="/case-studies/:slug" element={<CaseStudy />} />
               <Route path="/admin/stories" element={<StoryReview />} />
               <Route path="/pricing" element={<Pricing />} />
-              <Route path="/intelligence" element={<Intelligence />} />
+              <Route path="/intelligence" element={<MsmeOnly><Intelligence /></MsmeOnly>} />
               <Route path="/legal" element={<Legal />} />
               <Route path="/legal/:slug" element={<Legal />} />
               <Route path="/contact" element={<Contact />} />
@@ -269,7 +270,7 @@ const App = () => (
               <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/marketplace" element={<PartnerMarketplace />} />
               <Route path="/cms-admin" element={<CMSAdmin />} />
-              <Route path="/billing" element={<RequireAuth><Billing /></RequireAuth>} />
+              <Route path="/billing" element={<RequireAuth><MsmeOnly><Billing /></MsmeOnly></RequireAuth>} />
               <Route path="/team" element={<RequireAuth><Team /></RequireAuth>} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/accept-invite" element={<AcceptInvite />} />

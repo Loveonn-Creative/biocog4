@@ -9,6 +9,8 @@ export interface EnterpriseAccess {
   organizationId: string;
   companyName: string;
   supplierLimit: number;
+  /** The member's Team role; decides who may ask suppliers and download. */
+  role: string | null;
 }
 
 /**
@@ -29,9 +31,9 @@ export function useEnterpriseAccess() {
     queryFn: async (): Promise<{ access: EnterpriseAccess | null; claimable: boolean }> => {
       const { data, error } = await untypedRpc('my_enterprise');
       if (error) return { access: null, claimable: false };
-      const rows = (data ?? []) as Array<{ organization_id: string | null; company_name: string; supplier_limit: number; claimable: boolean }>;
+      const rows = (data ?? []) as Array<{ organization_id: string | null; company_name: string; supplier_limit: number; claimable: boolean; role?: string | null }>;
       const member = rows.find((r) => r.organization_id && !r.claimable);
-      if (member) return { access: { organizationId: member.organization_id!, companyName: member.company_name, supplierLimit: member.supplier_limit }, claimable: false };
+      if (member) return { access: { organizationId: member.organization_id!, companyName: member.company_name, supplierLimit: member.supplier_limit, role: member.role ?? null }, claimable: false };
       return { access: null, claimable: rows.some((r) => r.claimable) };
     },
   });
