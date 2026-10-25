@@ -266,7 +266,7 @@ function QuoteForm() {
         </div>
       </div>
       <Link to={`/contact?topic=enterprise&msg=${encodeURIComponent(msg)}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-medium whitespace-nowrap">
-        Get your quote <ArrowRight className="h-4 w-4" />
+        Talk to our experts <ArrowRight className="h-4 w-4" />
       </Link>
     </div>
   );
@@ -290,7 +290,7 @@ export default function EnterprisePricing() {
             ))}
           </ul>
           <a href="#ep-get" className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
-            Get your quote <ArrowRight className="h-4 w-4" />
+            Talk to our experts <ArrowRight className="h-4 w-4" />
           </a>
         </div>
         <BillTable />
@@ -322,9 +322,8 @@ export default function EnterprisePricing() {
         </div>
       </section>
 
-      <section id="ep-get" aria-label="Get your quote" className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-6 pb-28 sm:pb-24 scroll-mt-16 grid gap-4">
+      <section id="ep-get" aria-label="Talk to our experts" className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-6 pb-28 sm:pb-24 scroll-mt-16 grid gap-4">
         <QuoteForm />
-        <p className="text-sm text-muted-foreground">One company, several factories? <Link to="/pricing?plan=scale#plans" className="text-foreground underline underline-offset-4">See the Scale plan</Link></p>
       </section>
 
       <Footer />

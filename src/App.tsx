@@ -221,6 +221,7 @@ const App = () => (
               <Route path="/go/suppliers-b" element={<SupplierLanding variant="b" />} />
               {serviceNav.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
+              <Route path="/enterprise/sign-in" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
               <Route path="/enterprise/pricing" element={<EnterprisePricing />} />

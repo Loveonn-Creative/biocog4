@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { BusinessIdField, type BusinessIdResult } from "@/components/auth/BusinessIdField";
 import { MinimalNav } from "@/components/MinimalNav";
 import { ArrowLeft, ArrowRight, Loader2, Eye, EyeOff, Briefcase } from "lucide-react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuthStatus, useSession } from "@/hooks/useSession";
@@ -32,6 +32,13 @@ const AUTH_ASSURANCES = [
   { key: "src", short: "Every number shows its source.", href: "", linkText: "" },
 ];
 
+/** /enterprise/sign-in: the same form, framed for an enterprise team (no MSME plan copy). */
+const ENTERPRISE_ASSURANCES = [
+  { key: "suppliers", short: "Every supplier's figure, traced to its bills.", href: "", linkText: "" },
+  { key: "bills", short: "Suppliers keep their bills. You get totals with proof.", href: "", linkText: "" },
+  { key: "dpa", short: "Your records stay in your account.", href: "/legal/dpa", linkText: "DPA" },
+];
+
 type AuthMode = "signin" | "signup" | "forgot";
 
 const Auth = () => {
@@ -39,7 +46,8 @@ const Auth = () => {
   const [searchParams] = useSearchParams();
   const isPartnerMode = searchParams.get('mode') === 'partner';
   const initialMode = searchParams.get('mode');
-  const nextPath = searchParams.get('next');
+  const forEnterprise = useLocation().pathname === '/enterprise/sign-in';
+  const nextPath = searchParams.get('next') ?? (forEnterprise ? '/enterprise/dashboard' : null);
   
   const { isAuthenticated, isLoading: sessionLoading, user: sessionUser } = useSession();
   const authStatus = useAuthStatus();
@@ -763,7 +771,7 @@ const Auth = () => {
 
             {/* Reassurance on phones, where the side panel is hidden */}
             <p className="mt-8 text-center text-xs text-muted-foreground lg:hidden">
-              Free to start · No card · <Link to="/legal/dpa" className="underline underline-offset-2">DPA</Link> for India’s DPDP Act, 2023
+              {forEnterprise ? "Supplier emissions for your team" : "Free to start · No card"} · <Link to="/legal/dpa" className="underline underline-offset-2">DPA</Link> for India’s DPDP Act, 2023
             </p>
           </div>
         </main>
@@ -772,11 +780,15 @@ const Auth = () => {
         <aside className="relative hidden overflow-hidden border-l border-border bg-secondary/40 lg:flex lg:items-center lg:justify-center" aria-label="What you get">
           <div className="w-full max-w-[460px] px-10 py-24">
             <h2 className="text-[1.9rem] font-semibold leading-tight tracking-tight [text-wrap:balance]">
-              {mode === "signin" ? "Every number, still traced to its bill." : "One bill in. A record a lender can check, out."}
+              {forEnterprise
+                ? (mode === "signin" ? "Your suppliers' emissions, ready." : "Every supplier's emissions, in one record.")
+                : (mode === "signin" ? "Every number, still traced to its bill." : "One bill in. A record a lender can check, out.")}
             </h2>
 
             <div className="mt-10"><AccountStack layers={layers} /></div>
 
+            {/* An MSME sample record; an enterprise sees its supplier view right after signing in. */}
+            {!forEnterprise && (
             <div className={`mt-8 rounded-3xl border p-5 transition-all duration-700 ${layers.filter(l => !l.optional).every(l => l.done) ? "border-primary/50 bg-background" : "border-border bg-background/70"} shadow-[0_40px_70px_-50px_hsl(var(--foreground)/.5)] [transform:perspective(1000px)_rotateY(-6deg)_rotateX(3deg)] hover:[transform:perspective(1000px)_rotateY(0deg)_rotateX(0deg)]`}>
               <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                 <span>Sample record</span>
@@ -791,9 +803,10 @@ const Auth = () => {
                 <dt className="text-muted-foreground">Fingerprint</dt><dd className="text-right font-mono">sha256 · 9f2c…e41a</dd>
               </dl>
             </div>
+            )}
 
             <ul className="mt-10 space-y-3 text-[15px] text-foreground/80">
-              {AUTH_ASSURANCES.map(a => (
+              {(forEnterprise ? ENTERPRISE_ASSURANCES : AUTH_ASSURANCES).map(a => (
                 <li key={a.key} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                   <span>{a.short}{a.href && <> <Link to={a.href} target="_blank" className="text-primary underline-offset-4 hover:underline">{a.linkText}</Link></>}</span>
