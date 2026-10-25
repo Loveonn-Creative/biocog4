@@ -217,7 +217,9 @@ describe('usage counts', () => {
     expect(await guestSubject('203.0.113.7', '2026-10-14', 'other')).not.toBe(a);
   });
   test('the first forwarded address is used', () => {
-    expect(clientIp(new Headers({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }))).toBe('203.0.113.7');
+    // The first X-Forwarded-For entry is caller-controlled: never trust it.
+    expect(clientIp(new Headers({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }))).toBe('10.0.0.1');
+    expect(clientIp(new Headers({ 'cf-connecting-ip': '198.51.100.4', 'x-forwarded-for': '203.0.113.7' }))).toBe('198.51.100.4');
     expect(clientIp(new Headers())).toBe('unknown');
   });
 });

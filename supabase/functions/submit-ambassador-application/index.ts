@@ -1,6 +1,7 @@
 import { createClient } from 'npm:@supabase/supabase-js@2';
 import { COMMITMENTS, LANES, PROGRAM_CONTACT, validateApplication } from '../_shared/ambassadorApplication.ts';
 import { sendTemplateEmail } from '../_shared/transactional-email-templates/send-email.ts';
+import { platformIp } from '../_shared/platformIp.ts';
 
 /**
  * Decarbonize India: stores one Impact Ambassador application and tells the
@@ -32,7 +33,7 @@ Deno.serve(async (req) => {
     if (!url || !key || !secret) throw new Error('Application service unavailable');
     const db = createClient(url, key, { auth: { persistSession: false } });
 
-    const ip = req.headers.get('cf-connecting-ip') || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    const ip = platformIp(req.headers);
     const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${secret}:${ip}`));
     const ipHash = Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
 
