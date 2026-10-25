@@ -1,0 +1,76 @@
+{
+  "slug": "ccts-afforestation-displaced-farming-leakage",
+  "q": "Do CCTS afforestation credits shrink if farming moves elsewhere because of the project?",
+  "title": "Displaced farming leakage in CCTS projects",
+  "short": "Only if the move cuts carbon stocks on the land that receives the farming. Under tool BM-T-AR-0005, displaced grazing counts as zero in five cases, such as staying within the receiving land's carrying capacity. Otherwise leakage is the tree, shrub and soil carbon lost on that land.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Afforestation developers, FPOs and landowners converting farmland or grazing land",
+  "sections": [
+    {
+      "h": "Grazing that counts as zero",
+      "ul": [
+        "Animals moved to existing grazing land without exceeding its carrying capacity.",
+        "Animals moved to non-grazing grassland, within its carrying capacity.",
+        "Animals moved to cropland abandoned within the last five years.",
+        "Animals moved to forest, with no tree clearing or loss of crown cover.",
+        "Animals moved to a zero-grazing system."
+      ]
+    },
+    {
+      "h": "The calculation otherwise",
+      "ol": [
+        "Biomass lost per hectare = [1.1 x tree biomass x (1 + 0.25) + shrub biomass x (1 + 0.40)] x 0.47, where 1.1 adds dead wood and litter, 0.25 and 0.40 are root-shoot ratios and 0.47 is the carbon fraction.",
+        "Soil carbon lost per hectare = reference stock x (factors before minus factors after), using the BM-T-AR-0006 tables. It is zero if only grazing moves in, or if the result is negative.",
+        "Add the two, multiply by the displaced area and by 44/12."
+      ]
+    },
+    {
+      "h": "If you do not know where farming went",
+      "p": [
+        "Use the mean above-ground forest biomass for the region from the IPCC Good Practice Guidance for land use, unless you can justify another value."
+      ]
+    },
+    {
+      "h": "Limits of the tool",
+      "ul": [
+        "It does not apply if displacement drains wetlands or peat.",
+        "Market effects, such as changes in crop prices or supply, are treated as zero."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 ha of crops moved onto scrub",
+    "lines": [
+      "Tree biomass on the receiving land: 20 t dry matter per ha, no shrubs (illustrative)",
+      "Biomass carbon lost: 1.1 x 20 x 1.25 x 0.47 = 12.9 t C per ha",
+      "Over 10 ha: 129 t C x 44/12 = about 474 t CO2e of leakage, soil change aside"
+    ]
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Soil carbon in afforestation",
+      "to": "/answers/ccts-afforestation-soil-carbon-tool"
+    },
+    {
+      "label": "Afforestation CCTS credits",
+      "to": "/answers/bm-fr05-002-afforestation-ccts-credits"
+    },
+    {
+      "label": "FPO developer contract checklist",
+      "to": "/answers/fpo-carbon-credit-developer-contract-checklist"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-AR-0005 Estimation of the increase in GHG emissions attributable to displacement of pre-project agricultural activities in A/R ICM project activity (CCTS Offset Mechanism, version 1.0, 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bf23969b1e527913_1776061833.pdf"
+    },
+    {
+      "label": "BEE, BM-T-AR-0006 Tool for estimation of change in soil organic carbon stocks (CCTS Offset Mechanism, version 1.0, 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-bab2189eb243ca93_1776061843.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

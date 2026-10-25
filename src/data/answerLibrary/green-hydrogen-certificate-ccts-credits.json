@@ -1,0 +1,67 @@
+{
+  "slug": "green-hydrogen-certificate-ccts-credits",
+  "q": "Can a green hydrogen certificate be used to claim CCTS carbon credits or be transferred?",
+  "title": "Green hydrogen certificate, CCTS and transfer",
+  "short": "Yes to both, with conditions. The certificate can be used to claim carbon credits under India's Carbon Credit Trading Scheme if the project also meets the CCTS rules, such as methodology BM EN01.002. It is also transferable, as a guarantee of origin with chain of custody, under an MNRE procedure.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Green hydrogen producers, offtakers and carbon credit advisers",
+  "sections": [
+    {
+      "h": "What the certificate holds",
+      "ul": [
+        "A unique identification number for each 100 kg of hydrogen.",
+        "Project details, production year and emission intensity, with the product carbon footprint.",
+        "The hydrogen's composition and the pressure at which it was produced.",
+        "Optional value chain emissions beyond the boundary, if the producer asks and the agency has verified them."
+      ]
+    },
+    {
+      "h": "Using it for CCTS credits",
+      "p": [
+        "GHCI says the certificate can be used to claim carbon credits under the CCTS, but the developer must meet any additional CCTS requirements. For electrolysis that means registering under BEE's methodology BM EN01.002 and meeting its conditions, with its own validation and verification."
+      ]
+    },
+    {
+      "h": "Transfer and chain of custody",
+      "p": [
+        "The certificate works as a guarantee of origin and tracks chain of custody, and it is transferable under a procedure MNRE lays down. Before you sell certificates and credits from the same hydrogen, confirm with BEE and the buyer how the two claims are kept apart, so the same 100 kg block is not claimed twice."
+      ]
+    },
+    {
+      "h": "What it does not do",
+      "ul": [
+        "It is not a statutory clearance to set up a hydrogen plant.",
+        "It does not make the hydrogen qualify under an importing country's rules.",
+        "It does not disclose sensitive commercial data such as offtake contracts."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not issue or trade carbon credits. It keeps a dated record of the electricity and fuel bills behind a plant's emissions, the kind of activity evidence both schemes start from.",
+  "links": [
+    {
+      "label": "BM EN01.002 green hydrogen credits",
+      "to": "/answers/bm-en01-002-green-hydrogen-ccts-credits"
+    },
+    {
+      "label": "Who needs the certificate",
+      "to": "/answers/who-needs-green-hydrogen-certificate-india"
+    },
+    {
+      "label": "India green hydrogen vs EU RFNBO",
+      "to": "/answers/india-green-hydrogen-vs-eu-rfnbo-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 3.1.7, 5.4, 7.7, 12.5, 14.7 and 16",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25",
+  "reviewNote": "MNRE's transfer procedure and BEE's treatment of double claims were not published when this page was written; recheck both."
+}

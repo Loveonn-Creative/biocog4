@@ -1,0 +1,71 @@
+{
+  "slug": "ccts-tool-bm-t-011-waste-disposal-methane",
+  "q": "How does CCTS count methane from waste sent to, or kept out of, a dump site?",
+  "title": "BM-T-011 methane from waste dump sites",
+  "short": "BEE's tool BM-T-011 uses a first order decay model: each year's waste decays at a rate set by waste type and climate, so methane continues for years after disposal. Defaults include 0.5 for the methane share of landfill gas, 0.1 oxidised in the cover, and set correction factors for baselines.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Municipal waste, composting, biogas and landfill gas projects under CCTS",
+  "sections": [
+    {
+      "h": "Two uses",
+      "ul": [
+        "Application A: capturing methane at an existing dump site. The tool gives only the up-front estimate; methane captured is then measured.",
+        "Application B: keeping waste out of a dump, for example by composting or digestion. The tool is used before and after, with weighed and sampled waste."
+      ]
+    },
+    {
+      "h": "Default factors",
+      "ul": [
+        "Model correction factor: 1 for project and leakage emissions; for baselines 0.75 under Application A, and 0.85 in humid or wet and 0.80 in dry conditions under Application B.",
+        "Oxidation in the cover: 0.1. Methane share of site gas: 0.5. Share of degradable carbon that decomposes: 0.5 for mixed municipal waste.",
+        "Methane correction factor: 1.0 for anaerobic managed sites, 0.5 for semi-aerobic managed sites, 0.8 for unmanaged sites 5 m or deeper, 0.4 for shallower unmanaged sites and stockpiles that count as dump sites."
+      ]
+    },
+    {
+      "h": "Degradable carbon by waste type (wet basis)",
+      "ul": [
+        "Wood 43%, paper and cardboard 40%, textiles 24%, garden waste 20%, food 15%, glass, plastic and metal 0%.",
+        "Industrial sludge 9% and domestic sludge 5% by default, or scaled to measured organic dry matter."
+      ]
+    },
+    {
+      "h": "Decay rates in tropical climates",
+      "p": [
+        "For sites with mean annual temperature above 20 °C, the yearly decay rate is 0.085 for food waste where rainfall is under 1,000 mm and 0.40 above it, 0.065 and 0.17 for garden waste, 0.045 and 0.07 for paper and textiles, and 0.025 and 0.035 for wood. Wet coastal sites therefore release food waste methane much faster."
+      ]
+    },
+    {
+      "h": "Quantities",
+      "p": [
+        "Under Application A, old waste can be estimated from the site's area and depth at 1 to 1.2 t per m3, using records and interviews. Under Application B, weigh the waste and sample its composition. A stockpile counts as a dump site only if its volume to surface ratio is 1.5 or more and it is visibly anaerobic."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Landfill methane recovery credits",
+      "to": "/answers/bm-wa03-001-landfill-methane-recovery-ccts"
+    },
+    {
+      "label": "Composting emissions BM-T-013",
+      "to": "/answers/ccts-tool-bm-t-013-composting-emissions"
+    },
+    {
+      "label": "Methane from a municipal landfill",
+      "to": "/answers/landfill-gas-methane-municipal-landfill"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-011 Emissions from solid waste disposal sites (CCTS Offset Mechanism, version 1.0, 27 March 2025): data and parameter tables 1 to 7",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-39324557592c02c2_1776061640.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

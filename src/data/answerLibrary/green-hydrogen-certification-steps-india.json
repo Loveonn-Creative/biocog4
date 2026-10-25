@@ -1,0 +1,76 @@
+{
+  "slug": "green-hydrogen-certification-steps-india",
+  "q": "What are the steps and deadlines to get a green hydrogen certificate in India?",
+  "title": "Green hydrogen certificate steps and dates",
+  "short": "There are four certificates. A voluntary concept certificate checks the design after FEED approval, a mandatory facility certificate follows consent to operate and an on-site check, provisional certificates cover months as you produce, and the final certificate covers the financial year, with verified data due by 30 June.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Green hydrogen project teams planning certification under GHCI",
+  "sections": [
+    {
+      "h": "The four certificates",
+      "ol": [
+        "Concept certificate (voluntary): shows the design meets the scheme's MRV requirements. Apply any time after design or FEED approval, after an accredited agency has verified your documents. Phased plants can take one per phase.",
+        "Facility certificate (mandatory before any provisional or final certificate): apply after consent to operate, once an accredited agency has checked the plant on site.",
+        "Provisional certificate (voluntary, generated on the portal from your production data): covers at least one calendar month, applied for by the end of the following month, for 1 to 11 months of the cycle.",
+        "Final certificate: covers the whole financial year, issued after verification by an agency accredited by the Bureau of Energy Efficiency."
+      ]
+    },
+    {
+      "h": "The yearly calendar for the final certificate",
+      "ul": [
+        "By 31 March: appoint the accredited verification agency for that evaluation cycle.",
+        "By 30 June after the year ends: upload verified evidence and data on the Green Hydrogen portal.",
+        "By 31 July: certificate issued, or clarifications requested.",
+        "By 31 August: resubmit if clarifications were asked for.",
+        "By 30 September: certificate issued on the resubmission. If the committee still rejects it, the data can be verified by another agency, and the committee's decision is final."
+      ]
+    },
+    {
+      "h": "Rules for provisional certificates",
+      "ul": [
+        "The first month runs from the start of operations to the end of that calendar month.",
+        "You can apply for a later month but not for any period before the last one certified in the same cycle.",
+        "If the facility certificate comes after operations start, no provisional certificate covers the period before it.",
+        "A provisional certificate holds only until the final certificate confirms it."
+      ]
+    },
+    {
+      "h": "Fees",
+      "p": [
+        "Only the final certificate carries a fee: Rs 5 per 100 kg of certified hydrogen, or part of 100 kg. Concept, facility and provisional certificates are free. Certificates are issued in multiples of 100 kg, each block with its own identification number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the final certificate fee",
+    "lines": [
+      "Certified output for the year: 2,000 t = 2,000,000 kg (illustrative)",
+      "Blocks of 100 kg: 2,000,000 / 100 = 20,000",
+      "Fee: 20,000 x Rs 5 = Rs 1,00,000"
+    ],
+    "note": "MNRE may revise the fee from time to time."
+  },
+  "senseible": "Senseible reads electricity bills, green tariff bills and fuel invoices into a dated, fingerprinted record, which helps when a verification agency asks for a year of energy evidence by the June deadline.",
+  "links": [
+    {
+      "label": "Who needs the certificate",
+      "to": "/answers/who-needs-green-hydrogen-certificate-india"
+    },
+    {
+      "label": "Plant over the 2 kg limit",
+      "to": "/answers/green-hydrogen-plant-over-2kg-what-happens"
+    },
+    {
+      "label": "Records a plant must keep",
+      "to": "/answers/green-hydrogen-plant-records-to-keep"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 13, 14 and 16.4",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "ccts-afforestation-fire-emissions",
+  "q": "How does a fire on a CCTS afforestation project affect its credits?",
+  "title": "Fires on CCTS afforestation projects",
+  "short": "Under tool BM-T-AR-0002, fires count once the area burnt in a year reaches 5% of the project. Methane and nitrous oxide are estimated from biomass at the last verification, and fires before the first verification count as zero. Burning for site preparation is zero where slash-and-burn is already practised.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Afforestation developers and community forestry groups under CCTS",
+  "sections": [
+    {
+      "h": "When a fire counts",
+      "ul": [
+        "Each fire larger than India's minimum area for defining forest is counted, provided the area burnt in the year adds up to 5% or more of the project area.",
+        "Tree biomass is treated as giving no significant non-CO2 emissions if the fire stays in the understorey, or singes trees without killing them and leaves regrow within six months.",
+        "The tool assumes 60% of dead organic matter burns completely in any fire."
+      ]
+    },
+    {
+      "h": "Burning to prepare the site",
+      "p": [
+        "Zero where slash-and-burn is common in the baseline and fire was used on the land at least once in the 10 years before the project. Otherwise, emissions are 0.07 x burnt area x 44/12 x the carbon in trees and shrubs burnt, with 0.07 the IPCC ratio of methane and nitrous oxide to CO2 from burning biomass."
+      ]
+    },
+    {
+      "h": "Burning harvest residue",
+      "p": [
+        "Uses the biomass harvested, with 25% of it assumed left on site in tropical forests and 10% in temperate forests, and a carbon fraction of 0.50. Where harvest data is missing, biomass is estimated from the regional forest default divided by an expansion factor of 1.25."
+      ]
+    },
+    {
+      "h": "Forest fires after planting",
+      "p": [
+        "Tree emissions use the burnt area, tree biomass at the last verification, a combustion factor and emission factors for methane and nitrous oxide. The tool as published sets GWPs of 21 and 310, older values than the 29.8 BEE uses in BM-T-008, so record which version you applied. Dead wood and litter add 0.07 x their carbon at the last verification. The CO2 from burnt trees is not in this tool; it shows up as lower tree carbon at the next verification."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Dead wood and litter defaults",
+      "to": "/answers/ccts-afforestation-dead-wood-litter-defaults"
+    },
+    {
+      "label": "Afforestation CCTS credits",
+      "to": "/answers/bm-fr05-002-afforestation-ccts-credits"
+    },
+    {
+      "label": "Tree carbon uncertainty discount",
+      "to": "/answers/ccts-afforestation-tree-carbon-uncertainty-discount"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-AR-0002 Estimation of non-CO2 GHG emissions resulting from burning of biomass attributable to an A/R ICM project activity (CCTS Offset Mechanism, version 1.0, 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-0b574a382aba0e6b_1776061802.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "biomass-green-hydrogen-emissions-boundary",
+  "q": "What counts in the emissions of green hydrogen made from biomass or biogas in India?",
+  "title": "Biomass green hydrogen: what counts",
+  "short": "Non-biogenic emissions from biomass processing, heat and steam generation, conversion to hydrogen, gas purification, drying, compression and onsite storage. Biogenic CO2 from the biomass is outside the 2 kg CO2e per kg limit. Plants using carbon capture must wait for separate MNRE guidelines.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Biogas reforming and biomass gasification hydrogen developers",
+  "sections": [
+    {
+      "h": "Eligible biomass routes",
+      "p": [
+        "GHCI's conversion of biomass pathway covers gasification, pyrolysis, dark fermentation and photobiological hydrogen production, and the scheme names biogas reforming and biomass gasification as examples."
+      ]
+    },
+    {
+      "h": "How the calculation is built",
+      "ul": [
+        "Upstream: biomass pre-treatment and treatment, counting electricity, fuel, steam and input materials.",
+        "Production: feedstock, electricity, fuel, steam and input materials used to make the hydrogen.",
+        "Minus the share allocated to co-products by energy content.",
+        "Divide by the hydrogen produced to get kg CO2e per kg."
+      ]
+    },
+    {
+      "h": "Points that catch biomass projects",
+      "ul": [
+        "Diesel for shredders, loaders and dryers inside the boundary counts.",
+        "Grid power for pre-treatment is counted with the CEA grid factor, grossed up for losses.",
+        "An input material with a negative emission intensity is recorded as zero, so it cannot pull the total down.",
+        "A co-product with calorific value takes a share of emissions; one without takes none.",
+        "If carbon capture and storage is used, separate guidelines apply."
+      ]
+    },
+    {
+      "h": "Where the factors come from",
+      "p": [
+        "The annexure points to the UK Low Carbon Hydrogen Standard for feedstock and input material factors, IPCC factors for fuels and steam, and CEA for grid electricity and losses. Agree the exact factor table with your verification agency before the year starts."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads diesel, LPG and electricity invoices into Scope 1 and 2 figures with IPCC and CEA factors. Biomass purchase bills can sit in the same record, though biogenic CO2 is kept out of the fossil totals.",
+  "links": [
+    {
+      "label": "Biogas to hydrogen CCTS credits",
+      "to": "/answers/bm-in02-002-biogas-hydrogen-ccts-credits"
+    },
+    {
+      "label": "Emissions on oxygen and co-products",
+      "to": "/answers/green-hydrogen-oxygen-co-product-emissions"
+    },
+    {
+      "label": "What can be left out",
+      "to": "/answers/green-hydrogen-emissions-materiality-exclusions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 2.2, 6, 7.3 and 7.6, Annexure B equations 8 and 10 to 14",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

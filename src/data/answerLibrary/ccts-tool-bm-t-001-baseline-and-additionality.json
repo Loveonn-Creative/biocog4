@@ -1,0 +1,70 @@
+{
+  "slug": "ccts-tool-bm-t-001-baseline-and-additionality",
+  "q": "How does BEE's tool BM-T-001 decide a CCTS project's baseline and additionality?",
+  "title": "BM-T-001 baseline and additionality steps",
+  "short": "Two mandatory checks come first: no law already requires the project, and it does not lock in high-emission technology. Then four steps: list the alternatives, drop those blocked by barriers, compare finances where needed, and test whether similar projects are already common in India or a justified smaller area.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Factories and developers preparing a CCTS offset project design document",
+  "sections": [
+    {
+      "h": "The two mandatory checks",
+      "ul": [
+        "Regulatory analysis: no law or regulation directly or indirectly requires the project, and no support scheme with a quantitative target would deliver the same reductions anyway. Laws that formally use the offset mechanism are the exception. Redo it at each renewal of the crediting period.",
+        "Lock-in risk: the project must not prolong technology incompatible with the Paris Agreement's long-term goals, long-lived technology must be among the lowest GHG intensity in the region, and it must not waste a resource important for mitigation. Technology with a lifetime of 10 years or less may be assumed to carry no lock-in risk."
+      ]
+    },
+    {
+      "h": "Step 1: list the alternatives",
+      "ul": [
+        "Include the project without CCTS registration, the same output supplied by others, continuing as now with or without spending, other credible options, and the project done later.",
+        "Survey about ten facilities giving the same output in the applicable area, which is India unless you justify a smaller one. Widen the area if you find fewer. Other CCTS projects do not count toward the ten.",
+        "Drop alternatives that break mandatory law, unless non-compliance is widespread. If only the project without CCTS is left, it is not additional."
+      ]
+    },
+    {
+      "h": "Step 2: barriers",
+      "p": [
+        "Investment barriers (similar activities only built with grants, or no capital available) and technological barriers (no skilled labour, no infrastructure such as a gas network, higher failure risk, technology not available locally) remove alternatives. The tool notes that sectors made up of small and medium enterprises may have fewer means to overcome technological barriers. Back every barrier with documents such as studies, market data, board minutes or expert statements."
+      ]
+    },
+    {
+      "h": "Step 3: investment analysis",
+      "p": [
+        "Compare IRR, NPV or unit cost across the remaining alternatives using market-standard parameters, with a sensitivity analysis. Doing nothing is valued at NPV zero, or at the benchmark if you use IRR. Benchmark analysis is mandatory for grid power portfolios and monopoly suppliers."
+      ]
+    },
+    {
+      "h": "Step 4: common practice",
+      "p": [
+        "If similar activities of similar scale are already running in the area and you cannot show an essential distinction, such as an ended subsidy or a new barrier, the project is common practice and not additional. Version 1.0 of BM-T-001 sets no percentage threshold for this test."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "Common practice test",
+      "to": "/answers/ccts-additionality-common-practice-test"
+    },
+    {
+      "label": "Regulatory surplus rule",
+      "to": "/answers/ccts-offset-regulatory-surplus-rule"
+    },
+    {
+      "label": "What goes in a CCTS PDD",
+      "to": "/answers/ccts-offset-project-design-document-contents"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-001 Combined tool to identify the baseline scenario and demonstrate additionality (CCTS Offset Mechanism, version 1.0, 27 March 2025)",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-c3aec9f87c079b9a_1776061527.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

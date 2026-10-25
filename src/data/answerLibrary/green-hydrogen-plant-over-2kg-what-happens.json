@@ -1,0 +1,69 @@
+{
+  "slug": "green-hydrogen-plant-over-2kg-what-happens",
+  "q": "What happens if a green hydrogen plant goes over 2 kg CO2e per kg in a year?",
+  "title": "Green hydrogen plant over the 2 kg limit",
+  "short": "None of that financial year's hydrogen is certified green, and provisional certificates issued for the year are withdrawn. A second breach within three years bars provisional certificates for the next cycle and means applying for the facility certificate again. The test is the annual average.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Green hydrogen producers and offtakers relying on certified volumes",
+  "sections": [
+    {
+      "h": "The yearly test",
+      "p": [
+        "GHCI evaluates emissions over a financial year, the evaluation cycle. In the first year of operation it runs from the start of operations to the end of that financial year, and no cycle may run longer than 12 months. If the year's average is above 2.0 kg CO2e per kg, no hydrogen produced that year by the facility is certified green."
+      ]
+    },
+    {
+      "h": "Consequences of a breach",
+      "ol": [
+        "First occurrence: provisional certificates already issued for that cycle are withdrawn.",
+        "Second occurrence within three years of the first: no provisional certificates for the next evaluation cycle, provisional certificates for these cycles are cancelled, and the facility certificate must be applied for again.",
+        "Third or later occurrence: MNRE may go further, including barring the producer from applying for a set period."
+      ]
+    },
+    {
+      "h": "Missing the final certificate counts too",
+      "p": [
+        "A producer holding at least one provisional certificate that fails to apply for the final certificate on time is treated the same way. There is a one-month extension, to 31 July, on payment of a late fee equal to the final certification fee."
+      ]
+    },
+    {
+      "h": "Force majeure",
+      "p": [
+        "No action is taken for events such as floods, cyclones, earthquakes or war, but only if the event is declared or notified by the competent state or central authority."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two bad months",
+    "lines": [
+      "Ten months: 900 t of hydrogen at 1.7 kg CO2e per kg = 1,530 t CO2e (illustrative)",
+      "Two months on extra grid power: 100 t at 4.0 kg per kg = 400 t CO2e",
+      "Year: 1,930 / 1,000 = 1.93 kg per kg, so the year is certified",
+      "If those two months had run at 6.0 kg per kg: 1,530 + 600 = 2,130 t, or 2.13 kg per kg, rounded to 2.1",
+      "Result: none of the 1,000 t is green for that year, not just the two bad months"
+    ]
+  },
+  "senseible": "Senseible's monthly record of grid and fuel use from your bills can flag a month with unusually high grid units early, while there is still time to make up the year's average.",
+  "links": [
+    {
+      "label": "Steps and dates for the certificate",
+      "to": "/answers/green-hydrogen-certification-steps-india"
+    },
+    {
+      "label": "Grid power and T&D losses",
+      "to": "/answers/green-hydrogen-grid-power-t-and-d-losses"
+    },
+    {
+      "label": "India's 2 kg green hydrogen limit",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 2.5, 10, 15 and 16",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

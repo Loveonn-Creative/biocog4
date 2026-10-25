@@ -1,0 +1,78 @@
+{
+  "slug": "ccts-tool-bm-t-008-digester-methane-leakage",
+  "q": "How much methane leakage must a biogas digester deduct under CCTS tool BM-T-008?",
+  "title": "BM-T-008 biogas digester methane leakage",
+  "short": "BM-T-008 deducts a fixed share of the methane a digester produces: 2.8% for steel, lined concrete or fibreglass digesters with a gas holder, 5% for UASB and floating gas holders without a water seal, and 10% for unlined masonry, fixed dome digesters, covered lagoons or an unknown type.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Biogas, CBG and effluent treatment projects seeking CCTS credits",
+  "sections": [
+    {
+      "h": "What the tool counts",
+      "ul": [
+        "Project emissions: electricity and fossil fuel used to run the digester, methane lost through maintenance, roof and wall leaks and safety valves, and methane from flaring.",
+        "Leakage: methane from digestate stored in a lagoon deeper than one metre or dumped, and methane and nitrous oxide from composting the digestate.",
+        "Not counted: nitrous oxide from leaks, transport of feed and digestate, gas pipelines and land application."
+      ]
+    },
+    {
+      "h": "Methane produced",
+      "p": [
+        "Either measure methane flow with BM-T-005, logged hourly or more often, or measure biogas volume and apply defaults: methane = biogas m3 x 0.6 x 0.00067 t per m3. The global warming potential the tool applies to methane is 29.8, from IPCC AR6."
+      ]
+    },
+    {
+      "h": "Digestate storage defaults",
+      "ul": [
+        "Liquid digestate, remaining methane capacity as a share of methane produced: 0.10 for covered lagoons, 0.15 for UASB, filter bed and fluidised bed digesters, 0.20 for conventional digesters, 0.05 for two-stage digesters.",
+        "Or measure: stored volume x COD x 0.25 t methane per t COD x a methane conversion factor of 0.8 for storage 2 m or deeper, 0.2 for 1 to 2 m, and 0 below 1 m.",
+        "Solid digestate sent to a dump: 0.15 for two-phase digesters, 0.35 for all others."
+      ]
+    },
+    {
+      "h": "Electricity defaults when not metered",
+      "ul": [
+        "0 for gravity-fed covered lagoons and conventional digesters.",
+        "0.01 MWh per t of methane for UASB, filter bed and fluidised bed reactors.",
+        "1.02 MWh per t for stirred tank digesters treating wastewater.",
+        "1.54 MWh per t for solid waste digesters with pre-processing such as pulverising."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: digester type changes the deduction",
+    "lines": [
+      "Biogas collected: 1,000,000 m3 a year (illustrative)",
+      "Methane: 1,000,000 x 0.6 x 0.00067 = 402 t",
+      "Fixed dome digester, 10% leak: 40.2 t x 29.8 = 1,198 t CO2e deducted",
+      "Steel digester with gas holder, 2.8% leak: 11.3 t x 29.8 = 335 t CO2e deducted",
+      "Difference: about 863 t CO2e of credits a year"
+    ]
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from your records; it does not register projects or issue credits. It keeps dated, fingerprinted fuel and electricity invoices that a project's monitoring records can draw on.",
+  "links": [
+    {
+      "label": "CBG plant CCTS credits",
+      "to": "/answers/bm-wa03-003-cbg-plant-ccts-credits"
+    },
+    {
+      "label": "Farm biogas digester credits",
+      "to": "/answers/bm-ag04-001-farm-biogas-digester-ccts"
+    },
+    {
+      "label": "Measuring methane flow BM-T-005",
+      "to": "/answers/ccts-tool-bm-t-005-methane-mass-flow"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, BM-T-008 Project and leakage emissions from anaerobic digesters (CCTS Offset Mechanism, version 1.0, 27 March 2025): data and parameter tables 1 to 10",
+      "url": "https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-95ad1fffaacae725_1776061617.pdf"
+    },
+    {
+      "label": "BEE, Methodologies and Tools under the CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in/view_content.php?lid=571&lang=1"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}

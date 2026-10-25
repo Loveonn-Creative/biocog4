@@ -1,0 +1,77 @@
+{
+  "slug": "green-hydrogen-plant-records-to-keep",
+  "q": "What records must a green hydrogen plant keep for certification in India?",
+  "title": "Green hydrogen plant records to keep",
+  "short": "Daily records of hydrogen output, its physical and chemical parameters and energy use by source, plus water, feedstock and losses, kept for at least five evaluation cycles. A monitoring plan must set out emission sources, instruments, calibration, data control and factors for the verification agency.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Plant managers and EHS teams at green hydrogen facilities",
+  "sections": [
+    {
+      "h": "Daily records",
+      "ul": [
+        "Hydrogen produced, with its physical and chemical parameters.",
+        "Energy consumed from each source, both aggregated and broken down.",
+        "Fuel and electricity consumption in detail.",
+        "Water consumption, feedstock consumption and losses.",
+        "Sales up to the first purchaser, or captive use, and whether the hydrogen was converted into a carrier."
+      ]
+    },
+    {
+      "h": "The monitoring plan",
+      "p": [
+        "GHCI calls it the Green Hydrogen MRV framework. It must cover:"
+      ],
+      "ul": [
+        "Emission source streams and activity data.",
+        "Monitoring instruments and how often they are calibrated.",
+        "Written procedures on data control.",
+        "Frequency of monitoring and recording.",
+        "Emission factors used.",
+        "Calibration of all critical instruments by certifying agencies."
+      ]
+    },
+    {
+      "h": "How long to keep them",
+      "p": [
+        "At least five evaluation cycles, or since the start of operations if the plant is younger. MNRE or its agency may run random or sample audits during or after the year."
+      ]
+    },
+    {
+      "h": "Renewable power evidence",
+      "ul": [
+        "PPAs and load dispatch centre certificates showing generation against consumption.",
+        "Green tariff bills and power exchange records.",
+        "Storage and banking records where renewable power was stored or banked."
+      ]
+    },
+    {
+      "h": "What you need not disclose",
+      "p": [
+        "Offtake data is kept for record only and does not affect the certificate. The verification agency may not insist on sensitive commercial data such as offtake contracts."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, including green tariff bills, and fuel invoices into a dated, fingerprinted record, so the energy side of these files stays easy to find years later. Metered production data stays in your plant systems.",
+  "links": [
+    {
+      "label": "Steps and dates for the certificate",
+      "to": "/answers/green-hydrogen-certification-steps-india"
+    },
+    {
+      "label": "Renewable power proof",
+      "to": "/answers/green-hydrogen-recs-green-tariff-allowed"
+    },
+    {
+      "label": "CCTS monitoring plan meter rules",
+      "to": "/answers/ccts-offset-monitoring-plan-meter-rules"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 9.4, 11.3, 12 and 14.8",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
+    }
+  ],
+  "reviewed": "2026-10-25"
+}
