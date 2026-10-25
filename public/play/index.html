@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chai Break Arcade | Senseible</title>
+<meta name="description" content="Three tiny games about clean air and smaller bills. Tap and play, online or offline.">
+<meta name="theme-color" content="#f3e9d8">
+<link rel="icon" href="/favicon.png">
+<link rel="canonical" href="https://senseible.earth/play/">
+<!--
+  Chai Break Arcade. One self-contained file: no libraries, no fonts to fetch,
+  no AI, no uploads, nothing sent anywhere. The service worker (/sw.js) keeps
+  this file so it also opens when the visitor has no internet.
+  Facts used in the copy (kept here, not on screen):
+  - India grid: 0.710 kg CO2 per kWh (supabase/functions/_shared/emissionFactors.ts).
+  - Each 1 C higher on an AC saves about 6% electricity (Bureau of Energy
+    Efficiency / Ministry of Power advisory, June 2018).
+  - ENERGY STAR LEDs use at least 75% less energy than incandescent bulbs (US DOE,
+    energy.gov "LED Lighting"); the copy says "about 75%" and compares with filament bulbs only.
+  - Compressed-air leaks can waste 20-30% of a compressor's output (US DOE,
+    "Improving Compressed Air System Performance" sourcebook).
+-->
+<style>
+:root{
+  --paper:#f3e9d8;--paper2:#eadcc4;--ink:#2a2018;--ink2:#5b4b3c;--masala:#d9572a;--haldi:#e9a92a;
+  --leaf:#2f7a4c;--sky:#9fd0e2;--smog:#8b857a;--card:#fffaf0;--line:#2a2018;--shadow:rgba(42,32,24,.18);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#1d1914;--paper2:#2a241c;--ink:#f3e9d8;--ink2:#c9b9a2;--masala:#f07a4a;--haldi:#f2bd4a;
+  --leaf:#5bb27c;--sky:#2c5566;--smog:#4d4840;--card:#27211a;--line:#f3e9d8;--shadow:rgba(0,0,0,.4);color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink)}
+body{font:16px/1.45 ui-rounded,"SF Pro Rounded","Segoe UI",system-ui,-apple-system,"Noto Sans","Noto Sans Devanagari",sans-serif;
+  min-height:100svh;padding:env(safe-area-inset-top) max(16px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(16px,env(safe-area-inset-left));
+  background-image:radial-gradient(var(--paper2) 1px,transparent 1.2px);background-size:22px 22px;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:860px;margin:0 auto;padding-block:16px 40px}
+header.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.02em;text-decoration:none;color:var(--ink);margin-right:auto;display:flex;align-items:center;gap:8px}
+.pill{border:2px solid var(--line);border-radius:999px;background:var(--card);padding:6px 12px;font-size:14px;font-weight:700}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.langs{display:flex;gap:4px}
+@media (max-width:440px){.pill{padding:5px 9px;font-size:13px}.brand span{display:none}}
+.sticker{display:inline-block;transform:rotate(-3deg);background:var(--haldi);color:#2a2018;border:2.5px solid var(--line);border-radius:10px;padding:4px 10px;font-weight:800;font-size:.9rem;box-shadow:3px 3px 0 var(--shadow);margin-top:14px}
+.steam path{animation:rise 2.6s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:.8s}
+@keyframes rise{0%{transform:translateY(4px);opacity:0}40%{opacity:1}100%{transform:translateY(-8px);opacity:0}}
+.offline{display:none;margin-top:12px;border:2px dashed var(--line);border-radius:14px;padding:10px 14px;font-weight:600}
+body.is-offline .offline{display:block}
+h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1.02;margin:22px 0 8px;letter-spacing:-.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--masala)}
+.lede{color:var(--ink2);max-width:34ch;margin:0 0 20px;font-size:1.05rem}
+.shelf{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.ticket{position:relative;text-align:left;border:2.5px solid var(--line);border-radius:18px;background:var(--card);padding:14px 14px 16px;
+  box-shadow:5px 6px 0 var(--shadow);transition:transform .15s ease,box-shadow .15s ease;min-width:0}
+.ticket:hover,.ticket:focus-visible{transform:translate(-2px,-3px) rotate(-.6deg);box-shadow:8px 10px 0 var(--shadow);outline:none}
+.ticket:nth-child(2):hover{transform:translate(-2px,-3px) rotate(.6deg)}
+.ticket svg{width:100%;height:auto;display:block;margin-bottom:8px}
+.ticket b{display:block;font-size:1.3rem;letter-spacing:-.01em}
+.ticket span{display:block;color:var(--ink2);font-size:.95rem}
+.ticket .best{margin-top:8px;font-size:.8rem;font-weight:700;color:var(--masala);letter-spacing:.04em;text-transform:uppercase}
+.stage{display:none}
+body[data-view="runner"] #runner,body[data-view="swipe"] #swipe,body[data-view="grid"] #grid{display:block}
+body:not([data-view="home"]) #home{display:none}
+.bar{display:flex;align-items:center;gap:10px;margin:16px 0 10px;flex-wrap:wrap}
+.bar h2{margin:0 auto 0 0;font-size:1.5rem;letter-spacing:-.01em}
+.back{border:2px solid var(--line);background:var(--card);border-radius:12px;padding:6px 12px;font-weight:700}
+.hud{font-weight:800;font-variant-numeric:tabular-nums}
+.board{position:relative;border:2.5px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);box-shadow:5px 6px 0 var(--shadow)}
+canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:16px;
+  background:color-mix(in srgb,var(--paper) 82%,transparent)}
+.overlay[hidden]{display:none}
+.overlay h3{margin:0;font-size:clamp(1.3rem,4.5vw,1.9rem);letter-spacing:-.01em;max-width:24ch;text-wrap:balance}
+.overlay p{margin:0;color:var(--ink2);max-width:34ch}
+.go{border:2.5px solid var(--line);background:var(--masala);color:#fff8ee;border-radius:14px;padding:10px 20px;font-weight:800;font-size:1.05rem;box-shadow:3px 4px 0 var(--shadow)}
+.go:active{transform:translate(2px,3px);box-shadow:1px 1px 0 var(--shadow)}
+.hint{color:var(--ink2);font-size:.9rem;margin:10px 2px 0}
+/* Bill Bachao */
+.deck{position:relative;height:340px;display:grid;place-items:center;overflow:hidden;background:
+  repeating-linear-gradient(-45deg,transparent 0 14px,color-mix(in srgb,var(--paper2) 60%,transparent) 14px 15px)}
+.habit{position:absolute;width:min(300px,82%);min-height:230px;border:2.5px solid var(--line);border-radius:20px;background:var(--card);
+  box-shadow:4px 5px 0 var(--shadow);padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px;touch-action:none;cursor:grab;will-change:transform}
+.habit .tag{align-self:flex-start;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--line);border-radius:999px;padding:2px 8px}
+.habit p{margin:0;font-size:1.25rem;font-weight:700;line-height:1.3}
+.habit svg{margin-top:auto;align-self:center}
+.stamp{position:absolute;top:18px;font-weight:900;font-size:1.3rem;border:3px solid;border-radius:10px;padding:2px 10px;opacity:0;letter-spacing:.04em}
+.stamp.l{left:14px;color:var(--masala);transform:rotate(-12deg)}
+.stamp.r{right:14px;color:var(--leaf);transform:rotate(12deg)}
+.choices{display:flex;gap:10px;justify-content:center;padding:12px;border-top:2.5px solid var(--line)}
+.choice{flex:1;max-width:200px;border:2.5px solid var(--line);border-radius:14px;padding:10px;font-weight:800;background:var(--card);box-shadow:3px 4px 0 var(--shadow)}
+.choice.bad{color:var(--masala)}.choice.good{color:var(--leaf)}
+.choice:active{transform:translate(2px,3px);box-shadow:1px 1px 0 var(--shadow)}
+.meter{height:14px;border:2px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper2);flex:1;min-width:120px;max-width:260px}
+.meter i{display:block;height:100%;background:var(--masala);transition:width .35s ease}
+.why{min-height:3em;margin:10px 4px 0;font-weight:600;color:var(--ink2)}
+/* Chimney Chill */
+.gridwrap{padding:14px;display:grid;place-items:center}
+#tiles{width:min(100%,460px);height:auto;touch-action:manipulation}
+#tiles .t{cursor:pointer}
+#tiles .t:focus-visible rect{stroke:var(--masala);stroke-width:4}
+.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0 12px 14px}
+.foot{margin-top:28px;color:var(--ink2);font-size:.92rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.foot a{color:var(--ink);font-weight:700}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body data-view="home">
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/" data-online-only>
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M6 12h15v8a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6z" fill="var(--haldi)" stroke="var(--line)" stroke-width="2.2"/><path d="M21 14h2.5a3 3 0 0 1 0 6H21" fill="none" stroke="var(--line)" stroke-width="2.2"/><g class="steam"><path d="M10 9c-1-2 1-3 0-5" fill="none" stroke="var(--line)" stroke-width="1.8" stroke-linecap="round"/><path d="M14.5 9c-1-2 1-3 0-5" fill="none" stroke="var(--line)" stroke-width="1.8" stroke-linecap="round"/></g></svg>
+      <span>Senseible</span>
+    </a>
+    <div class="langs" role="group" aria-label="Language">
+      <button class="pill" data-lang="hx">Hinglish</button>
+      <button class="pill" data-lang="en">English</button>
+      <button class="pill" data-lang="hi">हिंदी</button>
+    </div>
+    <button class="pill" id="snd" aria-pressed="true" data-t="sound"></button>
+  </header>
+  <p class="offline" data-t="offline"></p>
+
+  <section id="home">
+    <span class="sticker" data-t="sticker"></span>
+    <h1 data-t="title" data-html></h1>
+    <p class="lede" data-t="lede"></p>
+    <div class="shelf">
+      <button class="ticket" data-open="runner">
+        <svg viewBox="0 0 240 110" aria-hidden="true">
+          <path d="M0 92 Q60 86 120 92 T240 90" fill="none" stroke="var(--line)" stroke-width="2.5"/>
+          <g fill="var(--smog)" stroke="var(--line)" stroke-width="2"><circle cx="190" cy="40" r="14"/><circle cx="206" cy="34" r="11"/><circle cx="214" cy="48" r="10"/></g>
+          <circle cx="150" cy="22" r="10" fill="var(--haldi)" stroke="var(--line)" stroke-width="2"/>
+          <g stroke="var(--line)" stroke-width="2.4" stroke-linejoin="round"><path d="M38 58 h48 l14 14 v12 H34 v-20z" fill="var(--leaf)"/><path d="M40 58 q20-16 46 0" fill="var(--haldi)"/></g>
+          <g fill="var(--card)" stroke="var(--line)" stroke-width="2.4"><circle cx="46" cy="86" r="8"/><circle cx="92" cy="86" r="8"/></g>
+        </svg>
+        <b data-t="g1"></b><span data-t="g1s"></span><span class="best" data-best="runner"></span>
+      </button>
+      <button class="ticket" data-open="swipe">
+        <svg viewBox="0 0 240 110" aria-hidden="true">
+          <rect x="70" y="14" width="80" height="86" rx="10" fill="var(--paper2)" stroke="var(--line)" stroke-width="2.4" transform="rotate(-10 110 57)"/>
+          <rect x="84" y="10" width="80" height="86" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="2.4" transform="rotate(7 124 53)"/>
+          <path d="M112 40l-6 16h10l-6 16" fill="none" stroke="var(--masala)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(7 124 53)"/>
+          <path d="M30 55h26M38 47l-8 8 8 8" fill="none" stroke="var(--masala)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M184 55h26M202 47l8 8-8 8" fill="none" stroke="var(--leaf)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <b data-t="g2"></b><span data-t="g2s"></span><span class="best" data-best="swipe"></span>
+      </button>
+      <button class="ticket" data-open="grid">
+        <svg viewBox="0 0 240 110" aria-hidden="true">
+          <g stroke="var(--line)" stroke-width="2.4"><rect x="20" y="40" width="40" height="28" fill="var(--sky)"/><path d="M20 54h40M33 40v28M46 40v28" /></g>
+          <path d="M60 54 H110 V80 H160 V54 H180" fill="none" stroke="var(--haldi)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M60 54 H110 V80 H160 V54 H180" fill="none" stroke="var(--line)" stroke-width="1.6" stroke-dasharray="4 5"/>
+          <g stroke="var(--line)" stroke-width="2.4" stroke-linejoin="round"><path d="M180 92V58l14 8v-8l14 8V34h12v58z" fill="var(--paper2)"/></g>
+          <path d="M214 28c-4-6 4-8 0-14" fill="none" stroke="var(--leaf)" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <b data-t="g3"></b><span data-t="g3s"></span><span class="best" data-best="grid"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 1. Dhuaan Dhoom: one-tap runner -->
+  <section id="runner" class="stage" aria-labelledby="r-h">
+    <div class="bar"><button class="back" data-back data-t="back"></button><h2 id="r-h" data-t="g1"></h2><span class="hud" id="r-hud"></span></div>
+    <div class="board">
+      <canvas id="r-cv" width="800" height="320" aria-label="Dhuaan Dhoom" role="img"></canvas>
+      <div class="overlay" id="r-ov"><h3 id="r-msg"></h3><p id="r-sub"></p><button class="go" id="r-go"></button></div>
+    </div>
+    <p class="hint" data-t="g1h"></p>
+  </section>
+
+  <!-- 2. Bill Bachao: swipe habits -->
+  <section id="swipe" class="stage" aria-labelledby="s-h">
+    <div class="bar"><button class="back" data-back data-t="back"></button><h2 id="s-h" data-t="g2"></h2>
+      <div class="meter" aria-hidden="true"><i id="s-time" style="width:100%"></i></div><span class="hud" id="s-hud"></span></div>
+    <div class="board">
+      <div class="deck" id="s-deck"></div>
+      <div class="choices"><button class="choice bad" id="s-bad"></button><button class="choice good" id="s-good"></button></div>
+      <div class="overlay" id="s-ov"><h3 id="s-msg"></h3><p id="s-sub"></p><button class="go" id="s-go"></button></div>
+    </div>
+    <p class="why" id="s-why" aria-live="polite"></p>
+  </section>
+
+  <!-- 3. Chimney Chill: rotate the wires -->
+  <section id="grid" class="stage" aria-labelledby="c-h">
+    <div class="bar"><button class="back" data-back data-t="back"></button><h2 id="c-h" data-t="g3"></h2><span class="hud" id="c-hud"></span></div>
+    <div class="board">
+      <div class="gridwrap"><svg id="tiles" role="group" aria-label="Chimney Chill"></svg></div>
+      <div class="row"><button class="pill" id="c-daily" data-t="daily"></button><button class="pill" id="c-next" data-t="next"></button></div>
+      <div class="overlay" id="c-ov" hidden><h3 id="c-msg"></h3><p id="c-sub"></p><button class="go" id="c-go"></button></div>
+    </div>
+    <p class="hint" data-t="g3h"></p>
+  </section>
+
+  <footer class="foot">
+    <span data-t="foot"></span>
+    <a href="/" data-online-only data-t="cta"></a>
+  </footer>
+</div>
+
+<script>
+(() => {
+'use strict';
+// ---------- copy ----------
+const T = {
+  hx: {
+    sticker: 'Net ho na ho, khel chalu', sound: 'Awaaz', offline: 'Net chala gaya? Koi baat nahi. Chai pakdo, game khelo.',
+    title: 'Chai Break <em>Arcade</em>', lede: 'Teen chhote games. Dhuaan bhagao, bill bachao, factory ko thanda karo. Bas tap karo aur khelo.',
+    g1: 'Dhuaan Dhoom', g1s: 'E-rickshaw chalao, dhuaan se bacho, suraj pakdo.',
+    g2: 'Bill Bachao', g2s: '45 second. Factory ki aadat: bekaar ya badhiya?',
+    g3: 'Chimney Chill', g3s: 'Taar ghumao, solar ko factory se jodo.',
+    back: 'Wapas', best: 'Best', foot: 'Na sign-in, na upload. Sab isi device pe.', cta: 'Asli bills ka dhuaan naapo',
+    g1h: 'Tap, Space ya Up: jump. Zyada der dabao, zyada uncha. Kaale baadal ke neeche se niklo.',
+    r_start: 'Rickshaw ready hai, bhai', r_startSub: 'Suraj pakdo toh smog saaf hota hai. Smog full, game khatam.', play: 'Chalo!', again: 'Ek aur round',
+    r_best: 'Naya record! Ekdum jhakaas.',
+    r_genset: ['Genset se takkar? Classic galti.', 'Diesel genset jeet gaya. Is baar.', 'Genset bola: "Main kahin nahi jaane wala."'],
+    r_tyre: ['Jalte tyre pe jump bhool gaye?', 'Tyre ka dhuaan, rickshaw pareshaan.'],
+    r_cloud: ['Kaale baadal mein ghus gaye. Kyun bhai, kyun?', 'Upar dhuaan tha. Thoda neeche rehna tha.'],
+    r_smog: ['Smog itna ki rasta hi gayab. Suraj pakdo yaar!', 'Saans lena mushkil. Agli baar zyada suraj.'],
+    r_hud: (m, s) => `${m} m · Suraj ${s}`,
+    r_pop: ['Saaf hawa!', 'Suraj aaya!', 'Dhoop OP', 'Smog bye bye'],
+    r_mile: (m) => [`${m} m! Rickshaw on fire (electric wala)`, `${m} m. Uncle log impressed`, `${m} m. Petrol pump ro raha hai`][Math.floor(m / 250) % 3],
+    g3h: 'Tile pe tap karo, ghoom jayegi. Suraj se factory tak bijli pahunchao.',
+    s_bad: 'Bekaar', s_good: 'Badhiya', s_start: 'Factory ka round lagao', s_startSub: 'Har aadat: left swipe bekaar, right swipe badhiya. 45 second.',
+    s_right: 'Sahi!', s_wrong: 'Arre nahi.', s_hud: (n, k) => `${n} sahi${k > 1 ? ` · streak ${k}` : ''}`,
+    s_titles: [[0, 'Bijli ka Dushman', 'Meter ghoom raha hai, aap bhi.'], [6, 'Thoda Samajhdaar', 'Bill thoda halka hua. Shaabash.'], [12, 'Watt-a-Legend', 'Accountant khush, chimney khush.'], [18, 'Bill Bachao Baba', 'Aapki factory mein bijli sharma rahi hai.']],
+    s_score: (n, k) => `${n} sahi jawab · lambi streak ${k}`,
+    daily: 'Aaj ki paheli', next: 'Agla level', c_hud: (m, p) => `Moves ${m} · Target ${p}`,
+    c_win: ['Genset ko chhutti de di!', 'Chimney ab chill kar rahi hai.', 'Factory chalu, dhuaan band. Waah.'],
+    c_sub: (m, p, s) => `${m} moves mein (target ${p}). ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'Agla level',
+  },
+  en: {
+    sticker: 'Works with or without internet', sound: 'Sound', offline: 'No internet? No problem. Grab a chai and play.',
+    title: 'Chai Break <em>Arcade</em>', lede: 'Three tiny games. Outrun the smoke, save the bill, cool the factory. Just tap and play.',
+    g1: 'Dhuaan Dhoom', g1s: 'Drive the e-rickshaw, dodge the smoke, catch the sun.',
+    g2: 'Bill Bachao', g2s: '45 seconds. Factory habits: waste or smart?',
+    g3: 'Chimney Chill', g3s: 'Turn the wires, connect solar to the factory.',
+    back: 'Back', best: 'Best', foot: 'No sign-in, no upload. Everything stays on this device.', cta: 'Measure your real bills',
+    g1h: 'Tap, Space or Up to jump. Hold longer to jump higher. Stay under the black clouds.',
+    r_start: 'Your rickshaw is ready', r_startSub: 'Catch suns to clear the smog. If the smog fills up, game over.', play: 'Go!', again: 'One more round',
+    r_best: 'New record. Seriously good.',
+    r_genset: ['Crashed into a genset. Classic.', 'The diesel genset wins. This time.', 'The genset says: "I am not going anywhere."'],
+    r_tyre: ['Forgot to jump the burning tyres?', 'Tyre smoke, unhappy rickshaw.'],
+    r_cloud: ['Straight into a black cloud. Why, friend, why?', 'The smoke was up there. Stay low next time.'],
+    r_smog: ['So much smog the road vanished. Catch the suns!', 'Hard to breathe. More suns next time.'],
+    r_hud: (m, s) => `${m} m · Suns ${s}`,
+    r_pop: ['Clean air!', 'Sun caught!', 'Sunshine OP', 'Bye bye smog'],
+    r_mile: (m) => [`${m} m! Rickshaw on fire (the electric kind)`, `${m} m. The uncles are impressed`, `${m} m. The petrol pump is crying`][Math.floor(m / 250) % 3],
+    g3h: 'Tap a tile to turn it. Get power from the sun to the factory.',
+    s_bad: 'Waste', s_good: 'Smart', s_start: 'Walk the factory floor', s_startSub: 'Swipe left for waste, right for smart. 45 seconds.',
+    s_right: 'Right!', s_wrong: 'Oops.', s_hud: (n, k) => `${n} right${k > 1 ? ` · streak ${k}` : ''}`,
+    s_titles: [[0, 'Enemy of the Meter', 'The meter is spinning, and so are you.'], [6, 'Getting There', 'The bill got a little lighter. Nice.'], [12, 'Watt-a-Legend', 'Accountant happy, chimney happy.'], [18, 'Bill Bachao Baba', 'Electricity is shy around your factory.']],
+    s_score: (n, k) => `${n} right · best streak ${k}`,
+    daily: "Today's puzzle", next: 'Next level', c_hud: (m, p) => `Moves ${m} · Target ${p}`,
+    c_win: ['The genset gets the day off!', 'The chimney is chilling now.', 'Factory on, smoke off. Lovely.'],
+    c_sub: (m, p, s) => `${m} moves (target ${p}). ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'Next level',
+  },
+  hi: {
+    sticker: 'नेट हो न हो, खेल चालू', sound: 'आवाज़', offline: 'नेट चला गया? कोई बात नहीं। चाय उठाओ, खेलो।',
+    title: 'चाय ब्रेक <em>आर्केड</em>', lede: 'तीन छोटे खेल। धुआँ भगाओ, बिल बचाओ, फ़ैक्ट्री को ठंडा करो। बस टैप करो और खेलो।',
+    g1: 'धुआँ धूम', g1s: 'ई-रिक्शा चलाओ, धुएँ से बचो, सूरज पकड़ो।',
+    g2: 'बिल बचाओ', g2s: '45 सेकंड। फ़ैक्ट्री की आदत: बेकार या बढ़िया?',
+    g3: 'चिमनी चिल', g3s: 'तार घुमाओ, सोलर को फ़ैक्ट्री से जोड़ो।',
+    back: 'वापस', best: 'बेस्ट', foot: 'न साइन-इन, न अपलोड। सब इसी डिवाइस पर।', cta: 'असली बिलों का धुआँ नापें',
+    g1h: 'टैप, स्पेस या ऊपर: छलांग। ज़्यादा देर दबाओ, ज़्यादा ऊँचा। काले बादल के नीचे से निकलो।',
+    r_start: 'रिक्शा तैयार है', r_startSub: 'सूरज पकड़ो तो स्मॉग साफ़ होता है। स्मॉग भरा, खेल ख़त्म।', play: 'चलो!', again: 'एक और राउंड',
+    r_best: 'नया रिकॉर्ड! एकदम झकास।',
+    r_genset: ['जेनसेट से टक्कर? वही पुरानी ग़लती।', 'डीज़ल जेनसेट जीत गया। इस बार।'],
+    r_tyre: ['जलते टायर पर छलांग भूल गए?', 'टायर का धुआँ, रिक्शा परेशान।'],
+    r_cloud: ['काले बादल में घुस गए। क्यों भाई, क्यों?', 'ऊपर धुआँ था। थोड़ा नीचे रहना था।'],
+    r_smog: ['इतना स्मॉग कि रास्ता ही ग़ायब। सूरज पकड़ो!', 'साँस लेना मुश्किल। अगली बार ज़्यादा सूरज।'],
+    r_hud: (m, s) => `${m} मी · सूरज ${s}`,
+    r_pop: ['साफ़ हवा!', 'सूरज आया!', 'धूप ज़िंदाबाद', 'स्मॉग बाय-बाय'],
+    r_mile: (m) => [`${m} मी! रिक्शा ने आग लगा दी (बिजली से)`, `${m} मी। अंकल लोग इम्प्रेस्ड`, `${m} मी। पेट्रोल पंप रो रहा है`][Math.floor(m / 250) % 3],
+    g3h: 'टाइल पर टैप करो, घूम जाएगी। सूरज से फ़ैक्ट्री तक बिजली पहुँचाओ।',
+    s_bad: 'बेकार', s_good: 'बढ़िया', s_start: 'फ़ैक्ट्री का चक्कर लगाओ', s_startSub: 'बाएँ स्वाइप बेकार, दाएँ स्वाइप बढ़िया। 45 सेकंड।',
+    s_right: 'सही!', s_wrong: 'अरे नहीं।', s_hud: (n, k) => `${n} सही${k > 1 ? ` · स्ट्रीक ${k}` : ''}`,
+    s_titles: [[0, 'बिजली का दुश्मन', 'मीटर घूम रहा है, आप भी।'], [6, 'थोड़ा समझदार', 'बिल थोड़ा हल्का हुआ। शाबाश।'], [12, 'वॉट-अ-लेजेंड', 'अकाउंटेंट ख़ुश, चिमनी ख़ुश।'], [18, 'बिल बचाओ बाबा', 'आपकी फ़ैक्ट्री में बिजली शर्मा रही है।']],
+    s_score: (n, k) => `${n} सही · सबसे लंबी स्ट्रीक ${k}`,
+    daily: 'आज की पहेली', next: 'अगला लेवल', c_hud: (m, p) => `चालें ${m} · टारगेट ${p}`,
+    c_win: ['जेनसेट को छुट्टी दे दी!', 'चिमनी अब चिल कर रही है।', 'फ़ैक्ट्री चालू, धुआँ बंद। वाह।'],
+    c_sub: (m, p, s) => `${m} चालों में (टारगेट ${p})। ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'अगला लेवल',
+  },
+};
+// Habit cards: [good?, hinglish, english, hindi, why-hinglish, why-english, why-hindi]
+const HABITS = [
+  [false, 'AC 18° pe, bahar 30°', 'AC set to 18°, 30° outside', 'बाहर 30°, AC 18° पर', 'Har 1° upar karne se lagbhag 6% bijli bachti hai. 24° bhi thanda hai.', 'Each degree warmer saves about 6% electricity. 24° is still cool.', 'हर 1° ऊपर करने से लगभग 6% बिजली बचती है। 24° भी ठंडा है।'],
+  [true, 'Peele filament bulb hata ke LED', 'Old filament bulbs swapped for LED', 'पुराने फ़िलामेंट बल्ब हटाकर LED', 'Filament wale bulb ke muqable LED lagbhag 75% kam bijli khata hai.', 'LEDs use about 75% less energy than old filament bulbs.', 'फ़िलामेंट वाले बल्ब के मुक़ाबले LED लगभग 75% कम बिजली खाता है।'],
+  [false, 'Compressed air ki "ssss" sab ignore karte hain', 'Everyone ignores the compressed-air "ssss"', 'कंप्रेस्ड एयर की "स्स्स" सब अनदेखा करते हैं', 'Leaks compressor ki 20-30% tak hawa uda sakte hain. Woh "ssss" paisa hai.', 'Leaks can waste 20-30% of a compressor\'s output. That hiss is money.', 'लीक कंप्रेसर की 20-30% तक हवा उड़ा सकते हैं। वह "स्स्स" पैसा है।'],
+  [true, 'Lunch break mein machines off', 'Machines off at lunch break', 'लंच ब्रेक में मशीनें बंद', 'Khaali chalti machine sirf bill ke liye kaam karti hai.', 'An idle machine only works for the electricity bill.', 'ख़ाली चलती मशीन सिर्फ़ बिल के लिए काम करती है।'],
+  [false, 'Generator tab bhi chalu jab grid aa gaya', 'Genset still running after grid power returns', 'ग्रिड आने के बाद भी जेनसेट चालू', 'Diesel ka dhuaan bhi, diesel ka bill bhi. Double nuksaan.', 'Diesel smoke and a diesel bill. Double loss.', 'डीज़ल का धुआँ भी, डीज़ल का बिल भी। दोहरा नुक़सान।'],
+  [true, 'Chhat pe solar panel', 'Solar panels on the roof', 'छत पर सोलर पैनल', 'Khaali chhat ab bijli banati hai. Dhoop free hai.', 'An empty roof that now makes power. Sunshine is free.', 'ख़ाली छत अब बिजली बनाती है। धूप मुफ़्त है।'],
+  [false, 'Boiler ki pipe nangi, insulation "baad mein"', 'Bare boiler pipes, insulation "later"', 'बॉयलर की पाइप नंगी, इंसुलेशन "बाद में"', 'Pipe free mein garmi baant rahi hai. Bill aap bhar rahe ho.', 'The pipes are handing out free heat. You are paying for it.', 'पाइप मुफ़्त में गर्मी बाँट रही है। बिल आप भर रहे हैं।'],
+  [true, 'Pump pe VFD laga diya', 'Fitted a VFD on the pump', 'पंप पर VFD लगा दिया', 'Motor utna hi ghoomti hai jitna kaam hai. Na zyada, na kam.', 'The motor spins only as fast as the job needs.', 'मोटर उतना ही घूमती है जितना काम है।'],
+  [false, 'Fan, light, AC: khaali cabin mein full on', 'Fan, light, AC: all on in an empty cabin', 'ख़ाली केबिन में पंखा, लाइट, AC सब चालू', 'Cabin khush, boss ka bill dukhi.', 'The cabin is happy. The bill is not.', 'केबिन ख़ुश, बिल दुखी।'],
+  [true, 'Power factor theek kiya, capacitor lagaye', 'Fixed power factor with capacitors', 'कैपेसिटर लगाकर पावर फ़ैक्टर ठीक किया', 'Kai tariff mein kam power factor pe penalty lagti hai. Penalty gayi.', 'Many tariffs penalise low power factor. Penalty gone.', 'कई टैरिफ़ में कम पावर फ़ैक्टर पर पेनल्टी लगती है। पेनल्टी गई।'],
+  [false, 'Steam trap leak kar raha, "chalta hai"', 'Steam trap leaking, "it\'s fine"', 'स्टीम ट्रैप लीक, "चलता है"', 'Steam paisa hai. Leak matlab paisa hawa mein.', 'Steam is money. A leak is money in the air.', 'भाप पैसा है। लीक मतलब पैसा हवा में।'],
+  [true, 'Har mahine bijli bill check', 'Checking the power bill every month', 'हर महीने बिजली बिल देखना', 'Har mahine dekhoge toh bill ka achanak uchhaal chhup nahi payega.', 'Read it every month and a sudden jump has nowhere to hide.', 'हर महीने देखोगे तो बिल का अचानक उछाल छिप नहीं पाएगा।'],
+  [false, 'Motor jal gayi, sabse sasti wali rewind', 'Burnt motor, cheapest rewind possible', 'मोटर जली, सबसे सस्ती रिवाइंडिंग', 'Sasti rewind wali motor saalon tak zyada bijli kha sakti hai.', 'A cheap rewind can eat more power for years.', 'सस्ती रिवाइंडिंग वाली मोटर सालों तक ज़्यादा बिजली खा सकती है।'],
+  [true, 'Din mein skylight, tube light off', 'Skylights by day, tube lights off', 'दिन में स्काइलाइट, ट्यूबलाइट बंद', 'Suraj free mein light deta hai. Usse kaam lo.', 'The sun is free lighting. Use it.', 'सूरज मुफ़्त रोशनी देता है।'],
+  [false, 'Truck khaali wapas, har baar', 'Trucks come back empty, every trip', 'ट्रक हर बार ख़ाली वापस', 'Wapsi ka poora diesel sirf hawa dho raha hai.', 'The whole trip back burns diesel to carry nothing.', 'वापसी का पूरा डीज़ल सिर्फ़ हवा ढो रहा है।'],
+  [true, 'Delivery routes plan karke', 'Planned delivery routes', 'डिलीवरी रूट प्लान करके', 'Kam kilometre, kam diesel, kam dhuaan.', 'Fewer kilometres, less diesel, less smoke.', 'कम किलोमीटर, कम डीज़ल, कम धुआँ।'],
+  [false, 'Chiller ka door khula chhod diya', 'Chiller door left open', 'चिलर का दरवाज़ा खुला छोड़ दिया', 'Chiller poore mohalle ko thanda kar raha hai.', 'The chiller is now cooling the whole street.', 'चिलर पूरे मोहल्ले को ठंडा कर रहा है।'],
+  [true, 'Purani motor ki jagah IE3 motor', 'Old motor replaced with an IE3 motor', 'पुरानी मोटर की जगह IE3 मोटर', 'Efficient motor, wahi kaam, kam bijli.', 'An efficient motor does the same job on less power.', 'एफ़िशिएंट मोटर, वही काम, कम बिजली।'],
+  [false, 'Furnace khol ke baar baar jhaankna', 'Opening the furnace to peek, again and again', 'भट्ठी बार-बार खोलकर झाँकना', 'Har jhaank mein garmi bhaag jaati hai.', 'Every peek lets the heat run away.', 'हर झाँक में गर्मी भाग जाती है।'],
+  [true, 'Waste heat se paani garam', 'Heating water with waste heat', 'वेस्ट हीट से पानी गरम', 'Jo garmi faltu jaati thi, ab kaam aa rahi hai.', 'Heat that was wasted now does a job.', 'जो गर्मी फ़ालतू जाती थी, अब काम आ रही है।'],
+  [false, 'Ek machine chal rahi, poore shed ki light chalu', 'Whole shed powered for one machine', 'एक मशीन के लिए पूरा शेड चालू', 'Ek machine, sau bulb. Hisaab gadbad.', 'One machine, a hundred lights. The maths is off.', 'एक मशीन, सौ बल्ब। हिसाब गड़बड़।'],
+  [true, 'Staff ko switch-off duty di', 'Gave staff a switch-off duty', 'स्टाफ़ को स्विच-ऑफ़ ड्यूटी दी', 'Sabse sasta upgrade: ek zimmedaar insaan.', 'The cheapest upgrade: one responsible person.', 'सबसे सस्ता अपग्रेड: एक ज़िम्मेदार इंसान।'],
+];
+
+// ---------- helpers ----------
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const store = { get(k, d) { try { const v = localStorage.getItem('cba:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('cba:' + k, JSON.stringify(v)); } catch { /* private mode */ } } };
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pick = (a) => a[Math.floor(Math.random() * a.length)];
+let lang = store.get('lang', 'hx');
+const t = (k) => T[lang][k] ?? T.hx[k];
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// Tiny synth so nothing is downloaded.
+let sound = store.get('sound', true), ac = null;
+function beep(f = 440, d = 0.08, type = 'square', vol = 0.05, slide = 0) {
+  if (!sound) return;
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = type; o.frequency.value = f; if (slide) o.frequency.linearRampToValueAtTime(f + slide, ac.currentTime + d);
+    g.gain.value = vol; g.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + d);
+    o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime + d);
+  } catch { /* no audio */ }
+}
+
+function paint() {
+  document.documentElement.lang = lang === 'en' ? 'en' : lang === 'hi' ? 'hi' : 'hi-Latn';
+  $$('[data-t]').forEach((el) => { const v = t(el.dataset.t); if (typeof v === 'string') el[el.hasAttribute('data-html') ? 'innerHTML' : 'textContent'] = v; });
+  $$('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  $('#snd').setAttribute('aria-pressed', String(sound));
+  const best = store.get('best', {});
+  $('[data-best="runner"]').textContent = best.runner ? `${t('best')} ${best.runner} m` : '';
+  $('[data-best="swipe"]').textContent = best.swipe ? `${t('best')} ${best.swipe}` : '';
+  $('[data-best="grid"]').textContent = best.grid ? `${t('best')} L${best.grid}` : '';
+  $('#s-bad').textContent = '← ' + t('s_bad'); $('#s-good').textContent = t('s_good') + ' →';
+  Runner.label(); Swipe.label(); Grid.label();
+}
+function saveBest(k, v) { const b = store.get('best', {}); if (!b[k] || v > b[k]) { b[k] = v; store.set('best', b); return true; } return false; }
+
+// ---------- 1. Dhuaan Dhoom ----------
+const Runner = (() => {
+  const cv = $('#r-cv'), ctx = cv.getContext('2d');
+  let W = 800; const H = 320, GROUND = 262;
+  let pops = [], nextMile = 250;
+  function fit() { const r = cv.parentElement.clientWidth || 800; W = r < 560 ? 440 : 800; if (cv.width !== W) cv.width = W; }
+  let st = 'idle', raf = 0, last = 0, speed, dist, suns, smog, py, vy, holding, holdT, obs, items, spawnIn, puffs, cause, shake, wheel, hills;
+  function reset() {
+    speed = reduce ? 260 : 320; dist = 0; suns = 0; smog = 20; py = GROUND; vy = 0; holding = false; holdT = 0;
+    obs = []; items = []; spawnIn = 1.1; puffs = []; cause = null; shake = 0; wheel = 0; pops = []; nextMile = 250; fit();
+    hills = Array.from({ length: 6 }, (_, i) => ({ x: i * 180, h: 30 + (i * 37) % 50 }));
+  }
+  function jump() { if (st !== 'run') return start(); if (py >= GROUND - 0.5) { vy = -560; holding = true; holdT = 0; beep(520, 0.09, 'square', 0.04, 260); } }
+  function release() { holding = false; }
+  function spawn() {
+    const r = Math.random(), x = W + 40;
+    if (r < 0.38) obs.push({ k: 'genset', x, w: 46, h: 38, y: GROUND - 38 });
+    else if (r < 0.6) obs.push({ k: 'tyre', x, w: 70, h: 26, y: GROUND - 26 });
+    else if (r < 0.82 && dist > 120) obs.push({ k: 'cloud', x, w: 90, h: 46, y: GROUND - 175 });
+    else obs.push({ k: 'genset', x, w: 46, h: 38, y: GROUND - 38 });
+    if (Math.random() < 0.55) items.push({ x: x + 120 + Math.random() * 120, y: GROUND - 70 - Math.random() * 90, r: 13, got: false, t: 0 });
+    spawnIn = Math.max(0.62, 1.35 - speed / 1400) + Math.random() * 0.55;
+  }
+  function hit(o) {
+    const px = 120, w = 62, h = 40, top = py - h;
+    return px + w - 8 > o.x + 6 && px + 8 < o.x + o.w - 6 && py - 4 > o.y + 6 && top + 4 < o.y + o.h - 4;
+  }
+  function over(c) {
+    st = 'dead'; cause = c; shake = reduce ? 0 : 10; beep(150, 0.35, 'sawtooth', 0.06, -90);
+    const m = Math.floor(dist), rec = saveBest('runner', m);
+    $('#r-msg').textContent = rec && m > 0 ? t('r_best') : pick(t('r_' + c));
+    $('#r-sub').textContent = t('r_hud')(m, suns);
+    $('#r-go').textContent = t('again'); $('#r-ov').hidden = false; $('#r-go').focus({ preventScroll: true });
+  }
+  function step(dt) {
+    speed += dt * (reduce ? 4 : 7); dist += speed * dt / 40; wheel += speed * dt / 14;
+    if (holding && vy < 0 && holdT < 0.18) { vy -= 1500 * dt; holdT += dt; }
+    vy += 1900 * dt; py = Math.min(GROUND, py + vy * dt); if (py >= GROUND) vy = 0;
+    smog = Math.min(100, smog + dt * (2.2 + speed / 500));
+    if ((spawnIn -= dt) <= 0) spawn();
+    for (const o of obs) { o.x -= speed * dt; if (hit(o)) return over(o.k); }
+    obs = obs.filter((o) => o.x + o.w > -20);
+    for (const s of items) {
+      s.x -= speed * dt; s.t += dt;
+      if (!s.got && Math.abs(s.x - 150) < 40 && Math.abs(s.y - (py - 22)) < 40) { s.got = true; suns++; smog = Math.max(0, smog - 16); beep(880, 0.07, 'triangle', 0.05, 440); pops.push({ x: s.x, y: s.y - 10, a: 1, txt: pick(t('r_pop')) }); }
+    }
+    items = items.filter((s) => s.x > -30 && !s.got);
+    if (py >= GROUND && Math.random() < dt * 9) puffs.push({ x: 104, y: GROUND - 10, r: 4, a: 0.5 });
+    for (const p of puffs) { p.x -= speed * dt * 0.6; p.r += dt * 14; p.a -= dt * 0.8; }
+    puffs = puffs.filter((p) => p.a > 0);
+    for (const h of hills) { h.x -= speed * dt * 0.25; if (h.x < -200) h.x += 6 * 180; }
+    for (const q of pops) { q.y -= dt * 40; q.a -= dt * 0.9; }
+    pops = pops.filter((q) => q.a > 0);
+    if (dist >= nextMile) { pops.push({ x: W / 2, y: 90, a: 1.4, big: true, txt: t('r_mile')(nextMile) }); nextMile += 250; beep(988, 0.12, 'triangle', 0.05); }
+    if (smog >= 100) over('smog');
+  }
+  const mix = (a, b, k) => { const pa = a.match(/\w\w/g).map((x) => parseInt(x, 16)), pb = b.match(/\w\w/g).map((x) => parseInt(x, 16));
+    return `rgb(${pa.map((v, i) => Math.round(v + (pb[i] - v) * k)).join(',')})`; };
+  function blob(x, y, r, fill) { ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fillStyle = fill; ctx.fill(); ctx.stroke(); }
+  function draw() {
+    const ink = css('--line'), k = smog / 100, dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    ctx.save(); if (shake > 0) { ctx.translate((Math.random() - 0.5) * shake, (Math.random() - 0.5) * shake); shake *= 0.86; }
+    // Sky clears as smog falls: the whole point of the game.
+    ctx.fillStyle = mix(dark ? '2c5566' : 'a9daea', dark ? '3d3a34' : '9a948a', k); ctx.fillRect(-20, -20, W + 40, H + 40);
+    ctx.lineWidth = 2.4; ctx.strokeStyle = ink; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    blob(W - 120, 60, 26, `rgba(233,169,42,${1 - k * 0.75})`);
+    ctx.fillStyle = mix(dark ? '24402f' : 'bfd8a8', dark ? '35322c' : '8f8a7e', k);
+    for (const h of hills) { ctx.beginPath(); ctx.moveTo(h.x, GROUND); ctx.quadraticCurveTo(h.x + 90, GROUND - h.h * 2, h.x + 180, GROUND); ctx.fill(); ctx.stroke(); }
+    ctx.fillStyle = dark ? '#2a241c' : '#e9dcc3'; ctx.fillRect(0, GROUND, W, H - GROUND);
+    ctx.beginPath(); ctx.moveTo(0, GROUND); ctx.lineTo(W, GROUND); ctx.stroke();
+    ctx.setLineDash([18, 22]); ctx.lineDashOffset = (dist * 40) % 40; ctx.beginPath(); ctx.moveTo(0, GROUND + 28); ctx.lineTo(W, GROUND + 28); ctx.stroke(); ctx.setLineDash([]);
+    for (const s of items) {
+      const bob = Math.sin(s.t * 5) * 4; ctx.save(); ctx.translate(s.x, s.y + bob); ctx.rotate(s.t * 1.5);
+      for (let i = 0; i < 8; i++) { ctx.rotate(Math.PI / 4); ctx.beginPath(); ctx.moveTo(0, s.r + 3); ctx.lineTo(0, s.r + 9); ctx.stroke(); }
+      blob(0, 0, s.r, css('--haldi')); ctx.restore();
+    }
+    for (const o of obs) {
+      if (o.k === 'genset') {
+        ctx.fillStyle = css('--masala'); ctx.fillRect(o.x, o.y, o.w, o.h); ctx.strokeRect(o.x, o.y, o.w, o.h);
+        ctx.beginPath(); for (let i = 0; i < 3; i++) { ctx.moveTo(o.x + 8, o.y + 10 + i * 8); ctx.lineTo(o.x + 26, o.y + 10 + i * 8); } ctx.stroke();
+        ctx.fillStyle = ink; ctx.fillRect(o.x + 34, o.y - 12, 7, 12);
+        const tt = performance.now() / 300; blob(o.x + 38 + Math.sin(tt) * 2, o.y - 20, 7, css('--smog')); blob(o.x + 44, o.y - 32, 9, css('--smog'));
+      } else if (o.k === 'tyre') {
+        for (let i = 0; i < 3; i++) { ctx.fillStyle = '#3a332b'; ctx.beginPath(); ctx.ellipse(o.x + 12 + i * 23, o.y + 13, 12, 13, 0, 0, 7); ctx.fill(); ctx.stroke(); }
+        const tt = performance.now() / 120; ctx.fillStyle = css('--haldi');
+        for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(o.x + 4 + i * 23, o.y); ctx.quadraticCurveTo(o.x + 12 + i * 23 + Math.sin(tt + i) * 4, o.y - 22, o.x + 20 + i * 23, o.y); ctx.fill(); ctx.stroke(); }
+      } else {
+        ctx.fillStyle = dark ? '#191512' : '#3b3530';
+        blob(o.x + 20, o.y + 26, 20, ctx.fillStyle); blob(o.x + 46, o.y + 18, 24, ctx.fillStyle); blob(o.x + 72, o.y + 28, 18, ctx.fillStyle);
+        ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(o.x + 38, o.y + 18, 3, 0, 7); ctx.arc(o.x + 54, o.y + 18, 3, 0, 7); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(o.x + 36, o.y + 30); ctx.quadraticCurveTo(o.x + 46, o.y + 24, o.x + 56, o.y + 30); ctx.strokeStyle = '#fff'; ctx.stroke(); ctx.strokeStyle = ink;
+      }
+    }
+    for (const p of puffs) { ctx.globalAlpha = Math.max(0, p.a) * 0.6; blob(p.x, p.y, p.r, '#cfe8d5'); ctx.globalAlpha = 1; }
+    // The e-rickshaw, drawn by hand: green body, haldi canopy, a driver who has seen things.
+    const x = 120, y = py, tilt = Math.max(-0.12, Math.min(0.12, vy / 4000));
+    ctx.save(); ctx.translate(x + 31, y - 20); ctx.rotate(tilt); ctx.translate(-31, 20 - 0);
+    ctx.fillStyle = css('--leaf'); ctx.beginPath(); ctx.moveTo(4, -14); ctx.lineTo(4, -34); ctx.lineTo(44, -34); ctx.lineTo(60, -18); ctx.lineTo(62, -14); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = css('--haldi'); ctx.beginPath(); ctx.moveTo(0, -34); ctx.quadraticCurveTo(24, -60, 50, -36); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = css('--card'); ctx.fillRect(28, -32, 14, 12); ctx.strokeRect(28, -32, 14, 12);
+    blob(36, -40, 6, '#c98a5c'); ctx.beginPath(); ctx.moveTo(33, -38); ctx.lineTo(39, -38); ctx.stroke();
+    ctx.fillStyle = css('--card'); ctx.font = '700 9px system-ui'; ctx.fillText('EV', 10, -20);
+    for (const wx of [14, 52]) { ctx.save(); ctx.translate(wx, -6); ctx.rotate(wheel); blob(0, 0, 8, css('--card')); ctx.beginPath(); ctx.moveTo(-6, 0); ctx.lineTo(6, 0); ctx.moveTo(0, -6); ctx.lineTo(0, 6); ctx.stroke(); ctx.restore(); }
+    ctx.restore();
+    for (const q of pops) { ctx.globalAlpha = Math.min(1, q.a); ctx.font = q.big ? (W < 560 ? '900 15px system-ui' : '900 22px system-ui') : '800 15px system-ui'; ctx.textAlign = 'center'; ctx.lineWidth = 4; ctx.strokeStyle = css('--card'); ctx.strokeText(q.txt, q.x, q.y); ctx.fillStyle = q.big ? css('--masala') : ink; ctx.fillText(q.txt, q.x, q.y); ctx.textAlign = 'left'; ctx.lineWidth = 2.4; ctx.strokeStyle = ink; ctx.globalAlpha = 1; }
+    // Smog meter, drawn into the scene so it reads at a glance.
+    ctx.fillStyle = css('--card'); ctx.fillRect(16, 16, 160, 16); ctx.fillStyle = mix('2f7a4c', 'd9572a', k); ctx.fillRect(16, 16, 160 * k, 16); ctx.strokeRect(16, 16, 160, 16);
+    ctx.fillStyle = ink; ctx.font = '800 13px system-ui'; ctx.fillText('SMOG', 184, 29);
+    ctx.restore();
+    $('#r-hud').textContent = t('r_hud')(Math.floor(dist), suns);
+  }
+  function loop(ts) { const dt = Math.min(0.033, (ts - last) / 1000 || 0); last = ts; if (st === 'run') step(dt); draw(); if (st === 'run' || shake > 0.3) raf = requestAnimationFrame(loop); }
+  function start() { if (st === 'run') return; reset(); st = 'run'; $('#r-ov').hidden = true; last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }
+  function stop() { st = 'idle'; cancelAnimationFrame(raf); }
+  addEventListener('resize', () => { if (st !== 'run' && hills && document.body.dataset.view === 'runner') { fit(); draw(); } });
+  function open() { reset(); st = 'idle'; draw(); $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); $('#r-ov').hidden = false; }
+  function label() { if (st !== 'run' && !$('#r-ov').hidden && cause == null) { $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); } }
+  cv.addEventListener('pointerdown', (e) => { e.preventDefault(); jump(); });
+  addEventListener('pointerup', release);
+  $('#r-go').addEventListener('click', start);
+  addEventListener('keydown', (e) => { if (document.body.dataset.view !== 'runner') return; if (e.code === 'Space' || e.code === 'ArrowUp') { e.preventDefault(); if (!e.repeat) jump(); } });
+  addEventListener('keyup', (e) => { if (e.code === 'Space' || e.code === 'ArrowUp') release(); });
+  return { open, stop, label };
+})();
+
+// ---------- 2. Bill Bachao ----------
+const Swipe = (() => {
+  const deck = $('#s-deck'), LIMIT = 45;
+  let finished = false, order = [], i = 0, right = 0, streak = 0, bestStreak = 0, timeLeft = LIMIT, timer = 0, live = false, card = null;
+  const L = () => (lang === 'en' ? 1 : lang === 'hi' ? 2 : 0);
+  // A neutral doodle (an electricity meter) so the picture never gives the answer away.
+  const METER = '<svg width="90" height="56" viewBox="0 0 90 56" aria-hidden="true"><rect x="22" y="6" width="46" height="44" rx="8" fill="var(--paper2)" stroke="currentColor" stroke-width="2.4"/><path d="M31 32a14 14 0 0 1 28 0" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M45 32l8-9" stroke="var(--masala)" stroke-width="3" stroke-linecap="round"/><rect x="32" y="38" width="26" height="7" rx="2" fill="var(--card)" stroke="currentColor" stroke-width="1.8"/></svg>';
+  function deal() {
+    deck.innerHTML = '';
+    if (i >= order.length) { order = shuffle(HABITS.map((_, n) => n)); i = 0; }
+    const h = HABITS[order[i]];
+    card = document.createElement('div'); card.className = 'habit'; card.tabIndex = 0;
+    card.innerHTML = `<span class="stamp l">${t('s_bad')}</span><span class="stamp r">${t('s_good')}</span><span class="tag">#${right + 1}</span><p>${h[1 + L()]}</p>${METER}`;
+    deck.appendChild(card); drag(card);
+    if (!reduce) { card.animate([{ transform: 'translateY(30px) scale(.94)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 180, easing: 'ease-out' }); }
+  }
+  function answer(saysGood) {
+    if (!live || !card) return;
+    const h = HABITS[order[i]], ok = saysGood === h[0];
+    if (ok) { right++; streak++; bestStreak = Math.max(bestStreak, streak); beep(660 + Math.min(streak, 8) * 60, 0.08, 'triangle', 0.05); }
+    else { streak = 0; timeLeft = Math.max(0, timeLeft - 2); beep(180, 0.16, 'sawtooth', 0.05); }
+    $('#s-why').textContent = `${ok ? t('s_right') : t('s_wrong')} ${h[4 + L()]}`;
+    $('#s-hud').textContent = t('s_hud')(right, streak);
+    const out = card; card = null; out.style.transition = reduce ? 'none' : 'transform .25s ease, opacity .25s ease';
+    out.style.transform = `translateX(${saysGood ? 140 : -140}%) rotate(${saysGood ? 18 : -18}deg)`; out.style.opacity = '0';
+    i++; setTimeout(() => live && deal(), reduce ? 0 : 200);
+  }
+  function drag(el) {
+    let x0 = 0, dx = 0, down = false;
+    el.addEventListener('pointerdown', (e) => { down = true; x0 = e.clientX; dx = 0; el.setPointerCapture(e.pointerId); el.style.transition = 'none'; });
+    el.addEventListener('pointermove', (e) => { if (!down) return; dx = e.clientX - x0; el.style.transform = `translateX(${dx}px) rotate(${dx / 14}deg)`;
+      $('.stamp.r', el).style.opacity = Math.max(0, dx / 90); $('.stamp.l', el).style.opacity = Math.max(0, -dx / 90); });
+    const end = () => { if (!down) return; down = false; if (Math.abs(dx) > 80) answer(dx > 0); else { el.style.transition = 'transform .2s ease'; el.style.transform = ''; $$('.stamp', el).forEach((s) => (s.style.opacity = 0)); } };
+    el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+  }
+  function tick() {
+    timeLeft -= 0.1; $('#s-time').style.width = `${Math.max(0, timeLeft / LIMIT) * 100}%`;
+    if (timeLeft <= 0) finish();
+  }
+  function finish() {
+    live = false; finished = true; clearInterval(timer); deck.innerHTML = '';
+    const titles = t('s_titles'); let ti = titles[0]; for (const x of titles) if (right >= x[0]) ti = x;
+    saveBest('swipe', right);
+    $('#s-msg').textContent = ti[1]; $('#s-sub').textContent = `${ti[2]} ${t('s_score')(right, bestStreak)}`;
+    $('#s-go').textContent = t('again'); $('#s-ov').hidden = false; beep(523, 0.1, 'triangle'); setTimeout(() => beep(784, 0.18, 'triangle'), 110);
+  }
+  function start() {
+    order = shuffle(HABITS.map((_, n) => n)); i = 0; right = 0; streak = 0; bestStreak = 0; timeLeft = LIMIT; live = true; finished = false;
+    $('#s-ov').hidden = true; $('#s-why').textContent = ''; $('#s-hud').textContent = t('s_hud')(0); deal();
+    clearInterval(timer); timer = setInterval(tick, 100);
+  }
+  function stop() { live = false; clearInterval(timer); }
+  function open() { stop(); finished = false; deck.innerHTML = ''; $('#s-time').style.width = '100%'; $('#s-msg').textContent = t('s_start'); $('#s-sub').textContent = t('s_startSub'); $('#s-go').textContent = t('play'); $('#s-ov').hidden = false; $('#s-hud').textContent = ''; $('#s-why').textContent = ''; }
+  function label() { if (!live && !finished && !$('#s-ov').hidden) open(); else if (finished) $('#s-go').textContent = t('again'); }
+  $('#s-go').addEventListener('click', start);
+  $('#s-bad').addEventListener('click', () => answer(false)); $('#s-good').addEventListener('click', () => answer(true));
+  addEventListener('keydown', (e) => { if (document.body.dataset.view !== 'swipe' || !live) return; if (e.key === 'ArrowLeft') answer(false); if (e.key === 'ArrowRight') answer(true); });
+  return { open, stop, label };
+})();
+function shuffle(a) { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+
+// ---------- 3. Chimney Chill ----------
+// Tiles are bitmasks of open sides: 1 up, 2 right, 4 down, 8 left. Power enters
+// from the solar panel on the left of the source row and must leave on the
+// right of the factory row. Every puzzle is built from a real path, so each one
+// can be solved.
+const Grid = (() => {
+  const svg = $('#tiles'), NS = 'http://www.w3.org/2000/svg';
+  let n, cells, src, dst, moves, par, level, daily, solved;
+  const rot = (m) => ((m << 1) | (m >> 3)) & 15;
+  function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
+  function build(seed, size) {
+    const r = rng(seed); n = size;
+    src = Math.floor(r() * n); dst = Math.floor(r() * n);
+    // Random self-avoiding walk from (src,0) to the right edge, ending on dst.
+    let path;
+    for (let tries = 0; tries < 400 && !path; tries++) {
+      const p = [[src, 0]], seen = new Set([`${src},0`]);
+      while (p.length < n * n) {
+        const [y, x] = p[p.length - 1];
+        if (x === n - 1 && y === dst) { path = p; break; }
+        const opts = [[y - 1, x], [y + 1, x], [y, x + 1], [y, x + 1]].filter(([a, b]) => a >= 0 && a < n && b >= 0 && b < n && !seen.has(`${a},${b}`));
+        if (!opts.length) break;
+        const nx = opts[Math.floor(r() * opts.length)]; p.push(nx); seen.add(nx.join(','));
+      }
+    }
+    if (!path) { path = []; for (let x = 0; x < n; x++) path.push([src, x]); for (let y = src; y !== dst; y += dst > src ? 1 : -1) path.push([y + (dst > src ? 1 : -1), n - 1]); dst = path[path.length - 1][0]; }
+    const solvedMask = Array.from({ length: n }, () => Array(n).fill(0));
+    const dirTo = (a, b) => (b[0] < a[0] ? 1 : b[1] > a[1] ? 2 : b[0] > a[0] ? 4 : 8);
+    const opp = { 1: 4, 2: 8, 4: 1, 8: 2 };
+    path.forEach((c, k) => {
+      let m = 0;
+      m |= k === 0 ? 8 : opp[dirTo(path[k - 1], c)];
+      m |= k === path.length - 1 ? 2 : dirTo(c, path[k + 1]);
+      solvedMask[c[0]][c[1]] = m;
+    });
+    const shapes = [5, 3, 7, 3, 5, 11];
+    cells = solvedMask.map((row) => row.map((m) => {
+      let base = m || shapes[Math.floor(r() * shapes.length)], turns = Math.floor(r() * 4);
+      let cur = base; for (let q = 0; q < turns; q++) cur = rot(cur);
+      return { m: cur, on: false, need: m ? needTurns(cur, m) : 0 };
+    }));
+    par = cells.flat().reduce((s, c) => s + c.need, 0);
+    if (par === 0) { cells[src][0].m = rot(cells[src][0].m); par = needTurns(cells[src][0].m, solvedMask[src][0]); }
+    moves = 0; solved = false;
+  }
+  function needTurns(cur, want) { let m = cur; for (let q = 0; q < 4; q++) { if (m === want) return q; m = rot(m); } return 0; }
+  function flow() {
+    cells.flat().forEach((c) => (c.on = false));
+    if (!(cells[src][0].m & 8)) return false;
+    const q = [[src, 0]]; cells[src][0].on = true;
+    const D = [[1, -1, 0, 4], [2, 0, 1, 8], [4, 1, 0, 1], [8, 0, -1, 2]];
+    while (q.length) {
+      const [y, x] = q.shift(), c = cells[y][x];
+      for (const [bit, dy, dx, back] of D) {
+        if (!(c.m & bit)) continue;
+        const a = y + dy, b = x + dx; if (a < 0 || b < 0 || a >= n || b >= n) continue;
+        const d = cells[a][b]; if (d.on || !(d.m & back)) continue; d.on = true; q.push([a, b]);
+      }
+    }
+    return cells[dst][n - 1].on && !!(cells[dst][n - 1].m & 2);
+  }
+  function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; }
+  function render() {
+    const S = 64, pad = 56, w = n * S + pad * 2, h = n * S + 20;
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`); svg.innerHTML = '';
+    const ok = flow(), ink = css('--line');
+    // Solar panel (source) and factory (sink), hand drawn.
+    const sy = 10 + src * S + S / 2, fy = 10 + dst * S + S / 2;
+    const sp = el('g', {}, svg);
+    el('path', { d: `M8 ${sy + 10}l6-28h30l-6 28z`, fill: css('--sky'), stroke: ink, 'stroke-width': 2.4, 'stroke-linejoin': 'round' }, sp);
+    el('path', { d: `M11 ${sy - 4}h30M24 ${sy - 18}l-6 28M34 ${sy - 18}l-6 28`, stroke: ink, 'stroke-width': 1.6 }, sp);
+    el('line', { x1: 38, y1: sy, x2: pad + 2, y2: sy, stroke: css('--haldi'), 'stroke-width': 7, 'stroke-linecap': 'round' }, sp);
+    el('circle', { cx: 24, cy: sy - 30, r: 7, fill: css('--haldi'), stroke: ink, 'stroke-width': 2 }, sp);
+    const fx = pad + n * S + 4, fg = el('g', {}, svg);
+    el('line', { x1: pad + n * S - 2, y1: fy, x2: fx + 2, y2: fy, stroke: ok ? css('--haldi') : css('--smog'), 'stroke-width': 7, 'stroke-linecap': 'round' }, fg);
+    el('path', { d: `M${fx} ${fy + 22}V${fy - 2}l12 7v-7l12 7V${fy - 26}h10v48z`, fill: ok ? css('--paper2') : css('--paper2'), stroke: ink, 'stroke-width': 2.4, 'stroke-linejoin': 'round' }, fg);
+    if (!ok) { [0, 1].forEach((k) => el('circle', { cx: fx + 39 + k * 5, cy: fy - 34 - k * 10, r: 5 + k * 2, fill: css('--smog'), stroke: ink, 'stroke-width': 1.8 }, fg)); }
+    else { el('path', { d: `M${fx + 39} ${fy - 30}c-4-6 4-8 0-14`, fill: 'none', stroke: css('--leaf'), 'stroke-width': 2.6, 'stroke-linecap': 'round' }, fg);
+      el('path', { d: `M${fx + 10} ${fy - 44}q4-4 8 0q4-4 8 0`, fill: 'none', stroke: ink, 'stroke-width': 1.8, 'stroke-linecap': 'round' }, fg); }
+    cells.forEach((row, y) => row.forEach((c, x) => {
+      const g = el('g', { class: 't', tabindex: 0, role: 'button', 'aria-label': `Tile ${y + 1}, ${x + 1}`, transform: `translate(${pad + x * S},${10 + y * S})` }, svg);
+      el('rect', { x: 2, y: 2, width: S - 4, height: S - 4, rx: 10, fill: c.on ? 'color-mix(in srgb, var(--haldi) 22%, var(--card))' : css('--card'), stroke: ink, 'stroke-width': 2 }, g);
+      const inner = el('g', { transform: `translate(${S / 2},${S / 2})` }, g);
+      const ends = [[1, 0, -S / 2 + 2], [2, S / 2 - 2, 0], [4, 0, S / 2 - 2], [8, -S / 2 + 2, 0]];
+      for (const [bit, ex, ey] of ends) if (c.m & bit) {
+        el('line', { x1: 0, y1: 0, x2: ex, y2: ey, stroke: c.on ? css('--haldi') : css('--smog'), 'stroke-width': 9, 'stroke-linecap': 'round' }, inner);
+        el('line', { x1: 0, y1: 0, x2: ex, y2: ey, stroke: ink, 'stroke-width': 1.4, 'stroke-dasharray': c.on ? '3 5' : '0', 'stroke-linecap': 'round' }, inner);
+      }
+      el('circle', { cx: 0, cy: 0, r: 6, fill: c.on ? css('--haldi') : css('--card'), stroke: ink, 'stroke-width': 2 }, inner);
+      const turn = (kb) => { if (solved) return; c.m = rot(c.m); moves++; beep(330 + (moves % 5) * 40, 0.05, 'square', 0.03); if (!reduce) inner.animate([{ transform: `translate(${S / 2}px,${S / 2}px) rotate(-90deg)` }, { transform: `translate(${S / 2}px,${S / 2}px) rotate(0deg)` }], { duration: 140, easing: 'ease-out' }); setTimeout(() => { render(); if (kb === true) svg.querySelectorAll('.t')[y * n + x]?.focus(); }, reduce ? 0 : 140); };
+      g.addEventListener('click', () => turn(false)); g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); turn(true); } });
+    }));
+    $('#c-hud').textContent = t('c_hud')(moves, par);
+    if (ok && !solved) win();
+  }
+  function win() {
+    solved = true; const stars = moves <= par ? 3 : moves <= par + 4 ? 2 : 1;
+    if (!daily) saveBest('grid', level);
+    [523, 659, 784, 1046].forEach((f, k) => setTimeout(() => beep(f, 0.12, 'triangle', 0.05), k * 90));
+    setTimeout(() => { $('#c-msg').textContent = pick(t('c_win')); $('#c-sub').textContent = t('c_sub')(moves, par, stars); $('#c-go').textContent = t('c_go'); $('#c-ov').hidden = false; }, reduce ? 0 : 450);
+  }
+  function today() { const d = new Date(); return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
+  function playDaily() { daily = true; build(today() * 7919, 5); $('#c-ov').hidden = true; render(); }
+  function playLevel(l) { daily = false; level = l; store.set('level', l); build(l * 104729 + 17, Math.min(7, 4 + Math.floor((l + 1) / 3))); $('#c-ov').hidden = true; render(); }
+  function open() { playLevel(store.get('level', 1)); }
+  function label() { if (cells) $('#c-hud').textContent = t('c_hud')(moves, par); }
+  $('#c-daily').addEventListener('click', playDaily);
+  $('#c-next').addEventListener('click', () => playLevel((level || 1) + 1));
+  $('#c-go').addEventListener('click', () => playLevel((level || 0) + 1));
+  return { open, stop() {}, label };
+})();
+
+// ---------- shell ----------
+const views = { runner: Runner, swipe: Swipe, grid: Grid };
+function show(v, push = true) {
+  Object.values(views).forEach((g) => g.stop());
+  document.body.dataset.view = v; if (views[v]) views[v].open();
+  if (push) history.pushState({ v }, '', v === 'home' ? location.pathname : `#${v}`);
+  scrollTo({ top: 0 });
+}
+$$('[data-open]').forEach((b) => b.addEventListener('click', () => { beep(600, 0.06, 'triangle'); show(b.dataset.open); }));
+$$('[data-back]').forEach((b) => b.addEventListener('click', () => show('home')));
+addEventListener('popstate', () => show((location.hash || '').slice(1) in views ? location.hash.slice(1) : 'home', false));
+$$('[data-lang]').forEach((b) => b.addEventListener('click', () => { lang = b.dataset.lang; store.set('lang', lang); paint(); }));
+$('#snd').addEventListener('click', () => { sound = !sound; store.set('sound', sound); paint(); });
+const net = () => document.body.classList.toggle('is-offline', !navigator.onLine);
+addEventListener('online', net); addEventListener('offline', net); net();
+paint();
+const start = (location.hash || '').slice(1);
+show(start in views ? start : 'home', false);
+// Keep this page for offline visits (the worker caches nothing else).
+if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('/sw.js').catch(() => {});
+})();
+</script>
+</body>
+</html>

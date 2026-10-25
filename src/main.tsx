@@ -27,3 +27,9 @@ if (css) {
   css.addEventListener("error", start, { once: true });
 }
 whenStyled();
+
+// Offline games: the worker keeps only /play/ and shows it when a visit fails
+// for lack of internet (public/sw.js). It never caches the app's own files.
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  addEventListener("load", () => { navigator.serviceWorker.register("/sw.js").catch(() => {}); }, { once: true });
+}
