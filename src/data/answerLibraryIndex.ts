@@ -11784,7 +11784,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Carbon intensity of grid-powered hydrogen",
   "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "grid-factor-for-wind-solar-project-india",
@@ -13384,7 +13384,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Indian green hydrogen as EU RFNBO?",
   "short": "Not automatically. India's 2 kg CO2e per kg limit is stricter in number than the EU's RFNBO limit of about 3.38 kg CO2e per kg, but it covers only production up to the plant gate. The EU counts transport and delivery too, and adds rules on new renewable capacity and timing, checked under an EU-recognised scheme.",
   "topic": "regulation",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "india-grid-emission-factor-2025-26",
@@ -19608,7 +19608,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Solar or wind MW per tonne of hydrogen",
   "short": "Roughly 30 kW of solar or 20 kW of wind for each tonne of green hydrogen a year, before storage and curtailment. That assumes 52 kWh per kg for the electrolyser system and capacity factors of 20 percent for solar and 30 percent for wind. Capacity rises in step with consumption, so use your own figures.",
   "topic": "accounting",
-  "reviewed": "2026-10-17"
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "renewable-consumption-obligation-who-must-comply",

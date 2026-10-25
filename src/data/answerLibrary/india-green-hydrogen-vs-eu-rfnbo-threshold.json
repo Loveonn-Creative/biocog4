@@ -12,7 +12,7 @@
       "ul": [
         "EU: Delegated Regulation (EU) 2023/1185 requires at least a 70% saving against a fossil comparator of 94 g CO2e per MJ. That leaves 94 x 0.30 = 28.2 g CO2e per MJ.",
         "Converted with hydrogen's lower heating value of 120 MJ per kg: 28.2 x 120 = 3,384 g, about 3.38 kg CO2e per kg of hydrogen.",
-        "India: MNRE's Green Hydrogen Standard allows 2 kg CO2e per kg, as a 12-month average."
+        "India: MNRE's Green Hydrogen Standard allows 2 kg CO2e per kg, averaged over the financial year."
       ]
     },
     {
@@ -30,7 +30,7 @@
         "Additionality: renewable plants supplying the electrolyser should be new, not existing capacity diverted from the grid, with transition rules for early projects.",
         "Temporal correlation: renewable supply must match electrolyser use within the same calendar month, moving to the same hour from 2030.",
         "Geographic correlation: the renewable plant must be in the same bidding zone as the electrolyser, or an interconnected one under set conditions.",
-        "India's standard uses a 12-month average and accepts banked renewable power, so a plant can pass India's test and still fail the monthly or hourly match."
+        "India's standard uses a financial-year average and accepts banked renewable power, so a plant can pass India's test and still fail the monthly or hourly match."
       ]
     },
     {
@@ -61,8 +61,9 @@
   ],
   "sources": [
     { "label": "Commission Delegated Regulations (EU) 2023/1184 and 2023/1185 on renewable fuels of non-biological origin (EUR-Lex)", "url": "https://eur-lex.europa.eu" },
-    { "label": "MNRE, Green Hydrogen Standard for India (August 2023); BEE is the nodal accreditation authority (beeindia.gov.in)", "url": "https://beeindia.gov.in" }
+    { "label": "MNRE, Green Hydrogen Standard for India (August 2023); BEE is the nodal accreditation authority (beeindia.gov.in)", "url": "https://beeindia.gov.in" },
+    { "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 2.5, 10, 15 and 16", "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf" }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-25",
   "reviewNote": "The list of EU-recognised certification schemes and the transition rules for additionality change over time; re-check before quoting to a buyer."
 }
