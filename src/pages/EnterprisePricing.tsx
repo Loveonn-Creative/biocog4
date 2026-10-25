@@ -1,20 +1,21 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Minus, Plus, Plug } from "lucide-react";
+import { ArrowRight, Check, Minus, Plus } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { StatusBadge } from "@/components/enterprise/StatusBadge";
 import {
-  ingestionChannels, outputs, suiteModules, controlAndSecurity, supplierCountOptions, type Capability, type CapabilityStatus,
+  ingestionChannels, outputs, suiteModules, controlAndSecurity, supplierCountOptions, type Capability,
 } from "@/data/enterpriseCapabilities";
+import { ROLE_LABELS, type TeamRole } from "@/lib/teamRoles";
 
-// Pricing terms come from the owner's decisions in docs/context/senseible.md
-// ("Enterprise pilot", 25 October 2026): custom terms, billed per supplier
-// (bill reads and data shared by suppliers already verified on Senseible),
-// team size and custom integrations, invoiced through a direct payment link,
-// separate from the MSME plans; pilots start on 10 to 15 suppliers. No prices
-// are published. Capability statuses come from enterpriseCapabilities.ts.
+// Pricing terms are the owner's decisions in docs/context/senseible.md
+// ("Enterprise pricing", 25 October 2026): one custom quote per enterprise,
+// set by suppliers, team seats, report downloads and supplier invites; past
+// the quote's limits, pay as you go. Suppliers share at no cost; their own
+// extras (Monetize and the rest) are on their own Senseible plan. No prices
+// are published. Capabilities come from enterpriseCapabilities.ts; only
+// custom builds carry a label.
 
 const reduced = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -67,212 +68,206 @@ function BillTable() {
           <button type="button" onClick={remove} disabled={n <= 1} aria-label="Remove a supplier" className="p-2 disabled:opacity-40"><Minus className="h-4 w-4" /></button>
           <button type="button" onClick={add} disabled={n >= EXAMPLE.length} className="flex items-center gap-1 border-l border-border px-3 py-1.5 text-sm font-medium disabled:opacity-40"><Plus className="h-4 w-4" />Add supplier</button>
         </div>
-        <p className="text-xs text-muted-foreground basis-full order-last">A to D: how much of each figure comes from verified bills.</p>
         <p className="ml-auto text-sm" aria-live="polite">On your bill: <strong className="tabular-nums">{n} {n === 1 ? "supplier" : "suppliers"}</strong></p>
+        <p className="basis-full text-xs text-muted-foreground">A to D: how much of each figure comes from verified bills.</p>
       </div>
+    </div>
+  );
+}
+
+// ------------------------------------------------------------- Quote meter
+const DIALS = [
+  { k: "Suppliers", w: 1 },
+  { k: "Team seats", w: 0.8 },
+  { k: "Report downloads", w: 1.15 },
+  { k: "Supplier invites", w: 0.9 },
+];
+
+/** What the quote sets, and what happens past it. */
+function QuoteMeter() {
+  const [use, setUse] = useState(70);
+  return (
+    <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-center">
+      <div>
+        <h2 id="ep-quote-h" className="text-2xl sm:text-3xl font-semibold tracking-tight [text-wrap:balance]">One quote. Four things set it.</h2>
+        <p className="mt-3 text-muted-foreground max-w-sm">Go past any of them and you pay as you go, only for the extra.</p>
+        <label className="mt-6 grid gap-2 text-sm max-w-sm">
+          <span className="text-muted-foreground">Your year so far</span>
+          <input type="range" min={20} max={140} value={use} onChange={(e) => setUse(Number(e.target.value))} className="accent-[hsl(var(--primary))]" aria-label="Use this year, compared with your quote" />
+        </label>
+      </div>
+      <ul className="grid gap-4" aria-live="polite">
+        {DIALS.map((d) => {
+          const pct = Math.min(150, use * d.w);
+          const inQuote = Math.min(pct, 100);
+          const over = Math.max(0, pct - 100);
+          return (
+            <li key={d.k} className="grid gap-1.5">
+              <div className="flex items-baseline justify-between text-sm">
+                <span className="font-medium">{d.k}</span>
+                <span className={over > 0 ? "text-primary font-medium" : "text-muted-foreground"}>{over > 0 ? "Pay as you go" : "In your quote"}</span>
+              </div>
+              <div className="relative h-3 rounded-full bg-muted">
+                <span className="absolute inset-y-0 left-0 rounded-full bg-foreground/80 transition-[width] duration-[var(--motion-base)]" style={{ width: `${(inQuote / 150) * 100}%` }} />
+                {over > 0 && <span className="absolute inset-y-0 rounded-r-full bg-primary transition-[width] duration-[var(--motion-base)]" style={{ left: `${(100 / 150) * 100}%`, width: `${(over / 150) * 100}%` }} />}
+                <span className="absolute -top-1 -bottom-1 w-px bg-foreground" style={{ left: `${(100 / 150) * 100}%` }} aria-hidden="true" />
+              </div>
+            </li>
+          );
+        })}
+        <li className="text-xs text-muted-foreground">The line is your quote.</li>
+      </ul>
     </div>
   );
 }
 
 // ---------------------------------------------------------- Capability wall
-type Fn = "finance" | "esg" | "exports" | "procurement" | "supply";
-const FUNCTIONS: { id: Fn; label: string }[] = [
-  { id: "finance", label: "Finance" },
-  { id: "esg", label: "ESG and sustainability" },
-  { id: "exports", label: "Exports" },
-  { id: "procurement", label: "Procurement" },
-  { id: "supply", label: "Supply chain" },
-];
-
+type Area = "Suppliers" | "Emissions" | "Reports" | "Exports" | "Insight" | "Integrations";
+const AREAS: Area[] = ["Suppliers", "Emissions", "Reports", "Exports", "Insight", "Integrations"];
+interface Tile { key: string; label: string; custom: boolean; area: Area }
 const pick = (list: Capability[], key: string) => list.find((c) => c.key === key)!;
-interface Tile { key: string; label: string; status: CapabilityStatus; area: string; fns: Fn[] }
-const tile = (c: Capability, label: string, area: string, fns: Fn[]): Tile => ({ key: c.key, label, status: c.status, area, fns });
+const tile = (c: Capability, label: string, area: Area): Tile => ({ key: c.key, label, custom: c.status === "custom", area });
 
-// Every tile's status comes from enterpriseCapabilities.ts; labels are shortened for the wall.
 const TILES: Tile[] = [
-  tile(pick(controlAndSecurity, "consent"), "Supplier requests, with consent", "Supplier data", ["procurement", "supply", "esg", "exports"]),
-  { key: "reminders", label: "Reminders and overdue list", status: "pilot", area: "Supplier data", fns: ["procurement", "supply"] },
-  tile(pick(ingestionChannels, "docs"), "Supplier bills read into their emissions", "Supplier data", ["supply", "esg"]),
-  tile(pick(outputs, "portfolio"), "Coverage by share of purchases", "Supply-chain emissions", ["esg", "finance", "procurement"]),
-  tile(pick(outputs, "lineage"), "Every figure traced to its bill", "Supply-chain emissions", ["esg", "exports", "finance"]),
-  tile(pick(controlAndSecurity, "proofs"), "Supplier totals with proof, never their invoices", "Supplier data", ["finance", "esg", "exports", "procurement"]),
-  tile(pick(outputs, "frameworks"), "Your own BRSR, GHG Protocol, CDP and ESRS reports", "Reporting", ["esg"]),
-  tile(pick(outputs, "audittrail"), "Audit-trail export", "Reporting", ["esg", "finance"]),
-  tile(pick(outputs, "cbam"), "CBAM: product emissions and EU report", "Exports", ["exports", "finance"]),
-  tile(pick(suiteModules, "pcf"), "Product carbon footprint", "Exports", ["exports"]),
-  tile(pick(suiteModules, "decarb"), "Net-zero roadmap with costs", "ESG", ["esg", "finance"]),
-  tile(pick(suiteModules, "dma"), "Double materiality", "ESG", ["esg"]),
-  tile(pick(ingestionChannels, "erp"), "Tally, SAP, Oracle, Zoho feeds", "Integrations", ["finance", "supply", "procurement"]),
-  tile(pick(ingestionChannels, "api"), "API and webhooks", "Integrations", ["supply"]),
-  tile(pick(controlAndSecurity, "rbac"), "Roles per team member", "Access", ["finance", "esg", "exports", "procurement", "supply"]),
-  tile(pick(controlAndSecurity, "sso"), "Single sign-on", "Access", ["finance", "esg", "exports", "procurement", "supply"]),
+  tile(pick(controlAndSecurity, "consent"), "Supplier requests, with consent", "Suppliers"),
+  { key: "reminders", label: "Reminders and overdue list", custom: false, area: "Suppliers" },
+  tile(pick(controlAndSecurity, "proofs"), "Supplier totals with proof, never their invoices", "Suppliers"),
+  tile(pick(ingestionChannels, "docs"), "Supplier bills read into their emissions", "Emissions"),
+  tile(pick(outputs, "portfolio"), "Coverage by share of purchases", "Emissions"),
+  tile(pick(outputs, "lineage"), "Every figure traced to its bill", "Emissions"),
+  { key: "history", label: "Supplier history, year by year", custom: false, area: "Emissions" },
+  tile(pick(outputs, "frameworks"), "Your BRSR, GHG Protocol, CDP and ESRS reports", "Reports"),
+  tile(pick(outputs, "audittrail"), "Audit-trail export", "Reports"),
+  tile(pick(outputs, "cbam"), "CBAM product emissions and EU report", "Exports"),
+  tile(pick(suiteModules, "pcf"), "Product carbon footprint", "Exports"),
+  // Biocog Superintelligence over supplier records: owner-requested, built for each enterprise.
+  { key: "mind", label: "Biocog Superintelligence on your supplier data", custom: true, area: "Insight" },
+  tile(pick(suiteModules, "decarb"), "Net-zero roadmap with costs", "Insight"),
+  tile(pick(suiteModules, "dma"), "Double materiality", "Insight"),
+  tile(pick(ingestionChannels, "erp"), "Tally, SAP, Oracle, Zoho feeds", "Integrations"),
+  tile(pick(ingestionChannels, "api"), "API and webhooks", "Integrations"),
+  tile(pick(controlAndSecurity, "sso"), "Single sign-on", "Integrations"),
 ];
 
-/** Pick a team; the tiles it works with light up. */
+/** Every capability on one wall; pick an area to bring it forward. */
 function CapabilityWall() {
-  const [fn, setFn] = useState<Fn | null>(null);
+  const [area, setArea] = useState<Area | null>(null);
+  const chip = (on: boolean) => `rounded-full px-4 py-2 text-sm transition-colors ${on ? "bg-foreground text-background" : "border border-border hover:bg-secondary"}`;
   return (
     <div className="grid gap-6">
-      <div role="group" aria-label="Show what a team uses" className="flex flex-wrap gap-2">
-        <button type="button" aria-pressed={fn === null} onClick={() => setFn(null)}
-          className={`rounded-full px-4 py-2 text-sm transition-colors ${fn === null ? "bg-foreground text-background" : "border border-border hover:bg-secondary"}`}>All</button>
-        {FUNCTIONS.map((f) => (
-          <button key={f.id} type="button" aria-pressed={fn === f.id} onClick={() => setFn(f.id)}
-            className={`rounded-full px-4 py-2 text-sm transition-colors ${fn === f.id ? "bg-foreground text-background" : "border border-border hover:bg-secondary"}`}>{f.label}</button>
-        ))}
+      <div role="group" aria-label="Filter by area" className="flex flex-wrap gap-2">
+        <button type="button" aria-pressed={area === null} onClick={() => setArea(null)} className={chip(area === null)}>All</button>
+        {AREAS.map((a) => <button key={a} type="button" aria-pressed={area === a} onClick={() => setArea(a)} className={chip(area === a)}>{a}</button>)}
       </div>
       <ul className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {TILES.map((t) => {
-          const on = fn === null || t.fns.includes(fn);
+          const on = area === null || t.area === area;
           return (
-            <li key={t.key} className={`min-h-[6.5rem] flex-col justify-between gap-3 rounded-xl border p-4 transition-all duration-[var(--motion-base)] ${on ? "flex border-border bg-card" : "hidden sm:flex border-transparent bg-muted/40 opacity-50"}`}>
+            <li key={t.key} className={`min-h-[6rem] flex-col justify-between gap-3 rounded-xl border p-4 transition-all duration-[var(--motion-base)] ${on ? "flex border-border bg-card" : "hidden sm:flex border-transparent bg-muted/40 opacity-50"}`}>
               <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{t.area}</p>
               <div className="flex items-end justify-between gap-3">
                 <p className="text-sm font-medium leading-snug">{t.label}</p>
-                <StatusBadge status={t.status} />
+                {t.custom && <span className="shrink-0 rounded-full border border-foreground/30 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider">Custom</span>}
               </div>
             </li>
           );
         })}
       </ul>
-      <p className="text-xs text-muted-foreground">Live: works today. Pilot: in use, still growing. Custom: built for you.</p>
     </div>
   );
 }
 
-// ------------------------------------------------------------- Team builder
-type Access = "totals" | "suppliers" | "download" | "ask" | "team";
-const ACCESS: { id: Access; label: string }[] = [
-  { id: "totals", label: "Totals" },
-  { id: "suppliers", label: "Supplier detail" },
-  { id: "download", label: "Downloads and reports" },
-  { id: "ask", label: "Ask and remind suppliers" },
-  { id: "team", label: "Manage team" },
+// ------------------------------------------------------------------- Roles
+// The enterprise's own Team roles (supabase/functions/_shared/teamRoles.ts).
+// Asking suppliers is enforced by private.enterprise_can_ask; downloads are
+// hidden for viewers; managing the team is owner and admin only.
+type Action = "ask" | "remind" | "download" | "team";
+const ROLE_ACTIONS: { role: TeamRole; can: Action[]; line: string }[] = [
+  { role: "admin", can: ["ask", "remind", "download", "team"], line: "Everything, including who joins and their roles." },
+  { role: "data_manager", can: ["ask", "remind", "download"], line: "Asks, reminds and cancels suppliers. Downloads the sheet." },
+  { role: "analyst", can: ["download"], line: "Sees every supplier. Downloads sheets and reports." },
+  { role: "carbon_auditor", can: ["download"], line: "Checks figures against their evidence." },
+  { role: "viewer", can: [], line: "Reads totals and suppliers on screen. Changes nothing." },
 ];
-// Each team maps to an existing Team role (supabase/functions/_shared/teamRoles.ts).
-const ROLE_ACCESS: Record<string, { role: string; access: Access[] }> = {
-  admin: { role: "Admin", access: ["totals", "suppliers", "download", "ask", "team"] },
-  finance: { role: "Analyst", access: ["totals", "suppliers", "download"] },
-  leadership: { role: "Viewer", access: ["totals", "suppliers"] },
-  esg: { role: "Analyst", access: ["totals", "suppliers", "download"] },
-  exports: { role: "Data manager", access: ["totals", "suppliers", "download", "ask"] },
-  procurement: { role: "Data manager", access: ["totals", "suppliers", "download", "ask"] },
-  supply: { role: "Data manager", access: ["totals", "suppliers", "download", "ask"] },
-  auditor: { role: "Carbon auditor", access: ["totals", "suppliers", "download"] },
-};
-const TEAM_ROWS: { id: string; label: string; start: number }[] = [
-  { id: "admin", label: "Admin", start: 1 },
-  { id: "finance", label: "Finance", start: 1 },
-  { id: "esg", label: "ESG and sustainability", start: 2 },
-  { id: "exports", label: "Exports", start: 0 },
-  { id: "procurement", label: "Procurement", start: 1 },
-  { id: "supply", label: "Supply chain", start: 0 },
-  { id: "leadership", label: "Leadership", start: 0 },
-  { id: "auditor", label: "Auditor", start: 0 },
-];
+
+/** Pick a role; the preview shows exactly what that person can press. */
+function RolePreview() {
+  const [r, setR] = useState(ROLE_ACTIONS[0]);
+  const btn = (a: Action, label: string, solid = false) => {
+    const on = r.can.includes(a);
+    return (
+      <span className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-[var(--motion-base)] ${on ? (solid ? "bg-primary text-primary-foreground" : "border border-border bg-background") : "border border-dashed border-border text-muted-foreground/60 line-through"}`}>{label}</span>
+    );
+  };
+  return (
+    <div className="grid gap-6 md:grid-cols-[minmax(0,15rem)_1fr] md:items-start">
+      <div role="radiogroup" aria-label="Role" className="grid gap-2">
+        {ROLE_ACTIONS.map((x) => (
+          <button key={x.role} type="button" role="radio" aria-checked={x.role === r.role} onClick={() => setR(x)}
+            className={`rounded-xl border px-4 py-3 text-left transition-colors ${x.role === r.role ? "border-foreground bg-foreground text-background" : "border-border hover:bg-secondary"}`}>
+            <span className="block text-sm font-medium">{ROLE_LABELS[x.role]}</span>
+          </button>
+        ))}
+      </div>
+      <div className="rounded-2xl border border-border bg-card overflow-hidden min-w-0" aria-live="polite">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-4 py-3">
+          <p className="text-sm font-medium">Your suppliers</p>
+          <div className="flex flex-wrap gap-2">{btn("team", "Team")}{btn("download", "Supplier sheet")}{btn("ask", "Ask suppliers", true)}</div>
+        </div>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 text-sm">
+          <span className="min-w-0 truncate">Bluehill Packaging <span className="text-xs text-muted-foreground">· overdue</span></span>
+          {btn("remind", "Remind")}
+        </div>
+        <p className="border-t border-border bg-muted/40 px-4 py-3 text-sm">{r.line}</p>
+      </div>
+    </div>
+  );
+}
+
+// -------------------------------------------------------------- Quote form
 const INTEGRATIONS = ["Tally", "SAP, Oracle or Zoho", "API", "Single sign-on"];
 
-/** Seats by team, the access each gets, and the shape of the quote. */
-function TeamBuilder() {
-  const [seats, setSeats] = useState<Record<string, number>>(() => Object.fromEntries(TEAM_ROWS.map((r) => [r.id, r.start])));
+function QuoteForm() {
   const [suppliers, setSuppliers] = useState(supplierCountOptions[0]);
+  const [seats, setSeats] = useState(5);
   const [ints, setInts] = useState<string[]>([]);
-  const total = Object.values(seats).reduce((a, b) => a + b, 0);
-  const step = (id: string, d: number) => setSeats((s) => ({ ...s, [id]: Math.max(id === "admin" ? 1 : 0, Math.min(50, s[id] + d)) }));
-
   const msg = useMemo(() => [
     "Enterprise quote",
     `Suppliers: ${suppliers}`,
-    `Team: ${total} (${TEAM_ROWS.filter((r) => seats[r.id] > 0).map((r) => `${r.label} ${seats[r.id]}`).join(", ")})`,
+    `Team seats: ${seats}`,
     `Integrations: ${ints.length ? ints.join(", ") : "none"}`,
-  ].join("\n"), [suppliers, total, seats, ints]);
-
+  ].join("\n"), [suppliers, seats, ints]);
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr] lg:items-start">
-      <div className="hidden sm:block rounded-2xl border border-border overflow-hidden min-w-0">
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-sm">
-            <thead>
-              <tr className="border-b border-border text-left text-xs text-muted-foreground">
-                <th className="py-3 pl-4 pr-3 font-medium">Team</th>
-                <th className="py-3 pr-3 font-medium">Seats</th>
-                {ACCESS.map((a) => <th key={a.id} className="py-3 pr-3 font-medium text-center">{a.label}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {TEAM_ROWS.map((r) => {
-                const ra = ROLE_ACCESS[r.id];
-                const off = seats[r.id] === 0;
-                return (
-                  <tr key={r.id} className={`border-b border-border last:border-0 ${off ? "text-muted-foreground" : ""}`}>
-                    <td className="py-2.5 pl-4 pr-3"><span className="font-medium">{r.label}</span>{ra.role !== r.label && <span className="block text-xs text-muted-foreground">{ra.role}</span>}</td>
-                    <td className="py-2.5 pr-3">
-                      <div className="inline-flex items-center rounded-full border border-border">
-                        <button type="button" onClick={() => step(r.id, -1)} aria-label={`One fewer ${r.label} seat`} className="p-1.5"><Minus className="h-3.5 w-3.5" /></button>
-                        <span className="w-6 text-center tabular-nums" aria-live="polite">{seats[r.id]}</span>
-                        <button type="button" onClick={() => step(r.id, 1)} aria-label={`One more ${r.label} seat`} className="p-1.5"><Plus className="h-3.5 w-3.5" /></button>
-                      </div>
-                    </td>
-                    {ACCESS.map((a) => (
-                      <td key={a.id} className="py-2.5 pr-3 text-center">
-                        {ra.access.includes(a.id) ? <Check className={`mx-auto h-4 w-4 ${off ? "opacity-40" : "text-primary"}`} aria-label="Yes" /> : <span className="text-muted-foreground/50" aria-label="No">-</span>}
-                      </td>
-                    ))}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+    <div className="rounded-3xl bg-foreground text-background p-5 sm:p-8 grid gap-6 md:grid-cols-[1fr_1fr_1.3fr_auto] md:items-end">
+      <label className="grid gap-1.5 text-sm">
+        <span className="text-background/70">Suppliers</span>
+        <select value={suppliers} onChange={(e) => setSuppliers(e.target.value)} className="rounded-lg bg-background text-foreground px-3 py-2.5">
+          {supplierCountOptions.map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <div className="grid gap-1.5 text-sm">
+        <span className="text-background/70">Team seats</span>
+        <div className="inline-flex w-fit items-center rounded-lg bg-background text-foreground">
+          <button type="button" onClick={() => setSeats((s) => Math.max(1, s - 1))} aria-label="One fewer seat" className="p-2.5"><Minus className="h-4 w-4" /></button>
+          <span className="w-10 text-center tabular-nums" aria-live="polite">{seats}</span>
+          <button type="button" onClick={() => setSeats((s) => Math.min(500, s + 1))} aria-label="One more seat" className="p-2.5"><Plus className="h-4 w-4" /></button>
         </div>
       </div>
-
-      {/* Phones: one card per team, access as plain chips. */}
-      <ul className="sm:hidden grid gap-3">
-        {TEAM_ROWS.map((r) => {
-          const ra = ROLE_ACCESS[r.id];
-          return (
-            <li key={r.id} className={`rounded-xl border border-border p-4 ${seats[r.id] === 0 ? "opacity-60" : ""}`}>
-              <div className="flex items-center justify-between gap-3">
-                <p><span className="font-medium">{r.label}</span>{ra.role !== r.label && <span className="block text-xs text-muted-foreground">{ra.role}</span>}</p>
-                <div className="inline-flex items-center rounded-full border border-border">
-                  <button type="button" onClick={() => step(r.id, -1)} aria-label={`One fewer ${r.label} seat`} className="p-2"><Minus className="h-3.5 w-3.5" /></button>
-                  <span className="w-6 text-center tabular-nums">{seats[r.id]}</span>
-                  <button type="button" onClick={() => step(r.id, 1)} aria-label={`One more ${r.label} seat`} className="p-2"><Plus className="h-3.5 w-3.5" /></button>
-                </div>
-              </div>
-              <p className="mt-3 flex flex-wrap gap-1.5">
-                {ACCESS.filter((x) => ra.access.includes(x.id)).map((x) => <span key={x.id} className="rounded-full bg-muted px-2 py-0.5 text-xs">{x.label}</span>)}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-
-      <aside className="rounded-2xl bg-foreground text-background p-5 sm:p-6 grid gap-5" aria-label="Your quote">
-        <p className="font-mono text-[11px] uppercase tracking-widest text-background/60">Your quote covers</p>
-        <label className="grid gap-1.5 text-sm">
-          <span className="text-background/70">Suppliers</span>
-          <select value={suppliers} onChange={(e) => setSuppliers(e.target.value)} className="rounded-lg bg-background text-foreground px-3 py-2">
-            {supplierCountOptions.map((o) => <option key={o}>{o}</option>)}
-          </select>
-        </label>
-        <div className="text-sm"><span className="text-background/70">Team</span><p className="text-2xl font-semibold tabular-nums">{total} {total === 1 ? "seat" : "seats"}</p></div>
-        <div className="grid gap-2 text-sm">
-          <span className="text-background/70">Integrations</span>
-          <div className="flex flex-wrap gap-2">
-            {INTEGRATIONS.map((i) => {
-              const on = ints.includes(i);
-              return (
-                <button key={i} type="button" aria-pressed={on} onClick={() => setInts((x) => (on ? x.filter((y) => y !== i) : [...x, i]))}
-                  className={`rounded-full px-3 py-1.5 text-xs transition-colors ${on ? "bg-background text-foreground" : "border border-background/30 text-background/80"}`}>{i}</button>
-              );
-            })}
-          </div>
+      <div className="grid gap-1.5 text-sm">
+        <span className="text-background/70">Integrations</span>
+        <div className="flex flex-wrap gap-2">
+          {INTEGRATIONS.map((i) => {
+            const on = ints.includes(i);
+            return (
+              <button key={i} type="button" aria-pressed={on} onClick={() => setInts((x) => (on ? x.filter((y) => y !== i) : [...x, i]))}
+                className={`rounded-full px-3 py-1.5 text-xs transition-colors ${on ? "bg-background text-foreground" : "border border-background/30 text-background/80"}`}>{i}</button>
+            );
+          })}
         </div>
-        <Link to={`/contact?topic=enterprise&msg=${encodeURIComponent(msg)}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
-          Get this quote <ArrowRight className="h-4 w-4" />
-        </Link>
-      </aside>
+      </div>
+      <Link to={`/contact?topic=enterprise&msg=${encodeURIComponent(msg)}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-medium whitespace-nowrap">
+        Get your quote <ArrowRight className="h-4 w-4" />
+      </Link>
     </div>
   );
 }
@@ -288,44 +283,48 @@ export default function EnterprisePricing() {
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Enterprise pricing</p>
           <h1 className="mt-3 text-[clamp(2.25rem,6vw,3.75rem)] font-semibold leading-[1.04] tracking-tight [text-wrap:balance]">Pay as you add suppliers.</h1>
-          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-md">Your price follows three things: suppliers, team seats and any integration you ask for. Nothing else.</p>
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-md">One quote, built around your suppliers and your team.</p>
           <ul className="mt-6 grid gap-2 text-sm">
-            {["No plan tiers to climb", "Invoiced, paid by link", "Start with 10 to 15 suppliers"].map((x) => (
+            {["No plan tiers to climb", "Suppliers share with you free", "Your team, your roles"].map((x) => (
               <li key={x} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" aria-hidden="true" />{x}</li>
             ))}
           </ul>
-          <a href="#ep-quote" className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
-            Shape your quote <ArrowRight className="h-4 w-4" />
+          <a href="#ep-get" className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
+            Get your quote <ArrowRight className="h-4 w-4" />
           </a>
         </div>
         <BillTable />
       </header>
 
+      <section aria-labelledby="ep-quote-h" className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-16 border-t border-border">
+        <QuoteMeter />
+      </section>
+
       <section aria-labelledby="ep-what" className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-16 border-t border-border">
-        <h2 id="ep-what" className="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">One record, every team</h2>
+        <h2 id="ep-what" className="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">Everything on one record</h2>
         <CapabilityWall />
       </section>
 
-      <section id="ep-quote" aria-labelledby="ep-team" className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-16 border-t border-border scroll-mt-16">
-        <h2 id="ep-team" className="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">Seats by team, access by role</h2>
-        <TeamBuilder />
+      <section aria-labelledby="ep-roles" className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-16 border-t border-border">
+        <h2 id="ep-roles" className="text-2xl sm:text-3xl font-semibold tracking-tight">Your team, your roles</h2>
+        <p className="mt-2 mb-8 text-muted-foreground">You pick each person's role when you invite them.</p>
+        <RolePreview />
       </section>
 
-      <section aria-labelledby="ep-start" className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-10 pb-28 sm:pb-24 grid gap-8 md:grid-cols-2 border-t border-border">
+      <section aria-label="Suppliers" className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-16 border-t border-border grid gap-6 md:grid-cols-2">
         <div>
-          <h2 id="ep-start" className="text-2xl sm:text-3xl font-semibold tracking-tight">Start with your biggest suppliers.</h2>
-          <p className="mt-3 text-muted-foreground">Pilot on 10 to 15. Add the rest as you go.</p>
-          <Link to={`/contact?topic=enterprise&msg=${encodeURIComponent("Pilot on 10 to 15 suppliers")}`} className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
-            Plan your pilot <ArrowRight className="h-4 w-4" />
-          </Link>
+          <p className="text-2xl sm:text-3xl font-semibold tracking-tight">Suppliers keep their own account.</p>
         </div>
-        <div className="grid gap-4 text-sm">
-          <div className="rounded-2xl border border-dashed border-border p-5">
-            <p className="flex items-center gap-2 font-medium"><Plug className="h-4 w-4" aria-hidden="true" />Already verified on Senseible?</p>
-            <p className="mt-1 text-muted-foreground">Those suppliers count the same. Their data reaches you sooner.</p>
-          </div>
-          <p className="text-muted-foreground">One company, several factories? <Link to="/pricing?plan=scale#plans" className="text-foreground underline underline-offset-4">See the Scale plan</Link></p>
+        <div className="grid gap-3 text-sm">
+          <p className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />Sharing with you costs them nothing.</p>
+          <p className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />Monetize and other extras are on their own Senseible plan.</p>
+          <p className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />Your roles cover your team, never theirs.</p>
         </div>
+      </section>
+
+      <section id="ep-get" aria-label="Get your quote" className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-6 pb-28 sm:pb-24 scroll-mt-16 grid gap-4">
+        <QuoteForm />
+        <p className="text-sm text-muted-foreground">One company, several factories? <Link to="/pricing?plan=scale#plans" className="text-foreground underline underline-offset-4">See the Scale plan</Link></p>
       </section>
 
       <Footer />

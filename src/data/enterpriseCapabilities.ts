@@ -49,7 +49,7 @@ export const suiteModules: SuiteModule[] = [
 ];
 
 export const pipelineStages: Capability[] = [
-  { key: 'invite', label: 'Invite', status: 'pilot', note: 'Supplier requests by email or GSTIN' },
+  { key: 'invite', label: 'Invite', status: 'live', note: 'Supplier requests by email or GSTIN' },
   { key: 'collect', label: 'Collect', status: 'pilot', note: 'Documents today; other channels later' },
   { key: 'clean', label: 'Clean', status: 'live', note: 'Line items extracted and classified to Scope 1, 2 or 3' },
   { key: 'verify', label: 'Verify', status: 'live', note: 'Hash, factor, confidence score' },
@@ -61,7 +61,7 @@ export const scaleControls: Capability[] = [
   { key: 'quality', label: 'Data-quality view per supplier', status: 'pilot', note: 'Tier and named gaps; numeric score per document' },
   { key: 'exceptions', label: 'Exception queue for flagged records', status: 'pilot', note: 'Needs-review status today; queue and assignment later' },
   { key: 'waves', label: 'Onboarding in waves', status: 'custom' },
-  { key: 'reminders', label: 'Supplier reminders', status: 'pilot', note: 'One click per supplier or all overdue' },
+  { key: 'reminders', label: 'Supplier reminders', status: 'live', note: 'One click per supplier or all overdue' },
   { key: 'dedupe', label: 'Duplicate documents caught by hash', status: 'live' },
   { key: 'idempotent', label: 'Idempotent verification (no double counting)', status: 'live' },
   { key: 'queues', label: 'Large uploads queued and processed in order', status: 'custom' },
@@ -69,9 +69,9 @@ export const scaleControls: Capability[] = [
 
 export const controlAndSecurity: Capability[] = [
   { key: 'isolation', label: 'Row-level isolation of every record', status: 'live', note: 'Per account today' },
-  { key: 'consent', label: 'Supplier owns its record and consents per buyer', status: 'pilot' },
-  { key: 'proofs', label: 'Buyers receive figures and proof hashes, not invoices', status: 'pilot' },
-  { key: 'rbac', label: 'Team roles (owner, admin, analyst, viewer)', status: 'pilot', note: 'Team management today' },
+  { key: 'consent', label: 'Supplier owns its record and consents per buyer', status: 'live' },
+  { key: 'proofs', label: 'Buyers receive figures and proof hashes, not invoices', status: 'live' },
+  { key: 'rbac', label: 'Team roles with set permissions (admin, data manager, analyst, carbon auditor, viewer)', status: 'live' },
   { key: 'audit', label: 'Audit log', status: 'pilot' },
   { key: 'sso', label: 'Single sign-on (SAML, OIDC)', status: 'custom' },
 ];
@@ -83,7 +83,7 @@ export const outputs: Capability[] = [
   { key: 'audittrail', label: 'Audit-trail export (XLSX)', status: 'live' },
   { key: 'cbam', label: 'CBAM product emissions and EU report (CBAM suite)', status: 'live' },
   { key: 'reviewer', label: 'Named reviewer sign-off on records', status: 'custom' },
-  { key: 'portfolio', label: 'Roll-up across hundreds of suppliers', status: 'pilot', note: 'Supplier dashboard with coverage and grades' },
+  { key: 'portfolio', label: 'Roll-up across hundreds of suppliers', status: 'live', note: 'Supplier dashboard with coverage and grades' },
 ];
 
 export const supplierCountOptions = ['Under 100', '100 to 250', '250 to 500', '500 to 1,000', 'Over 1,000'];
