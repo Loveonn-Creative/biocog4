@@ -136,4 +136,16 @@ BEGIN
   RAISE NOTICE 'ok: the staff bill totals only billable usage at the stored rates';
 END $$;
 
+-- 7. Questions past the monthly quote are billed per 1,000 at the stored rate (written by enterprise-intelligence).
+DO $$
+DECLARE v_org uuid := (SELECT organization_id FROM public.enterprise_access WHERE email = 'head@buyer.in'); v_q bigint;
+BEGIN
+  INSERT INTO public.enterprise_usage (enterprise_org_id, kind, quantity, billable, unit_paise)
+  SELECT v_org, 'question', 1, true, (SELECT unit_paise FROM public.enterprise_rates WHERE kind = 'questions_1000') FROM generate_series(1, 1000);
+  INSERT INTO public.enterprise_usage (enterprise_org_id, kind, quantity, billable, unit_paise) VALUES (v_org, 'question', 1, false, NULL);
+  SELECT amount_paise INTO v_q FROM private.enterprise_bill(v_org, now() - interval '1 day', now() + interval '1 year') WHERE kind = 'question';
+  IF v_q <> 299900 THEN RAISE EXCEPTION 'FAIL: 1,000 questions billed %', v_q; END IF;
+  RAISE NOTICE 'ok: questions past the quote bill at the rate per 1,000; included ones are free';
+END $$;
+
 \echo ALL ENTERPRISE BILLING TESTS PASSED

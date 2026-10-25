@@ -283,9 +283,9 @@ export default function EnterprisePricing() {
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Enterprise pricing</p>
           <h1 className="mt-3 text-[clamp(2.25rem,6vw,3.75rem)] font-semibold leading-[1.04] tracking-tight [text-wrap:balance]">Pay as you add suppliers.</h1>
-          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-md">One quote, built around your suppliers and your team.</p>
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-md">Suppliers upload their bills. You get Scope 3 numbers an auditor can trace.</p>
           <ul className="mt-6 grid gap-2 text-sm">
-            {["No plan tiers to climb", "Suppliers share with you free", "Your team, your roles"].map((x) => (
+            {["No ERP access needed", "Encrypted storage and transfer", "Isolated from other companies", "Supplier bills stay private"].map((x) => (
               <li key={x} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" aria-hidden="true" />{x}</li>
             ))}
           </ul>

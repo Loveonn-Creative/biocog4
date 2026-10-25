@@ -265,7 +265,9 @@ SECURITY DEFINER
 SET search_path = public
 AS $$
   SELECT u.kind, sum(u.quantity)::integer,
-         sum(CASE WHEN u.kind = 'reads' THEN (u.quantity / 100.0) * u.unit_paise ELSE u.quantity * u.unit_paise END)::bigint
+         sum(CASE WHEN u.kind = 'reads' THEN (u.quantity / 100.0) * u.unit_paise
+                  WHEN u.kind = 'question' THEN (u.quantity / 1000.0) * u.unit_paise
+                  ELSE u.quantity * u.unit_paise END)::bigint
   FROM public.enterprise_usage u
   WHERE u.enterprise_org_id = p_org AND u.billable AND u.created_at >= p_from AND u.created_at < p_to
   GROUP BY u.kind
