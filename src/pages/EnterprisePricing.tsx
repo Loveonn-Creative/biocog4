@@ -58,7 +58,7 @@ function BillTable() {
             <li key={r.name} className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-3 px-4 py-2.5 text-sm motion-safe:animate-[ent-fade-up_var(--motion-base)_var(--ease-out)_both]">
               <span className="min-w-0"><span className="block truncate font-medium">{r.name}</span><span className="block text-xs text-muted-foreground">{r.buys}</span></span>
               <span className={`rounded-full px-2 py-0.5 text-[11px] ${asked ? "bg-muted text-muted-foreground" : "bg-primary/10 text-primary"}`}>{asked ? "Asked" : `Shared · ${r.grade}`}</span>
-              <span className="w-20 text-right tabular-nums">{asked ? "-" : `${r.t.toFixed(1)} t CO₂e`}</span>
+              <span className="w-24 text-right tabular-nums whitespace-nowrap">{asked ? "-" : `${r.t.toFixed(1)} t CO₂e`}</span>
             </li>
           );
         })}
