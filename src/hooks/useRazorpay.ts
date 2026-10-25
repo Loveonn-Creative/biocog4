@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { toast } from 'sonner';
 import { checkoutDisplayConfig } from '@/lib/pricing/checkoutDisplay';
 import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTotals';
@@ -8,6 +8,7 @@ import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTot
 const FN = (name: string) => `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/${name}`;
 
 export async function authedPost(name: string, body: unknown): Promise<{ status: number; data: any }> {
+  const supabase = await loadSupabase();
   const { data: { session } } = await supabase.auth.getSession();
   const res = await fetch(FN(name), {
     method: 'POST',
@@ -92,6 +93,7 @@ export const useRazorpay = () => {
     try {
       
       // Create order (server derives user identity from the session JWT)
+      const supabase = await loadSupabase();
       const { data: { session } } = await supabase.auth.getSession();
       if (!session?.access_token) {
         throw new Error('Please sign in to subscribe');

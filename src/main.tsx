@@ -3,6 +3,7 @@ import "./lib/authLinkSnapshot";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { keepPrerenderedPage } from "./lib/reliability/firstPaint";
 
 // The main stylesheet loads without blocking the first paint (vite.config.ts,
 // nonBlockingCss), so slow networks see the prerendered page text early. The
@@ -11,6 +12,7 @@ let started = false;
 const start = () => {
   if (started) return;
   started = true;
+  keepPrerenderedPage();
   createRoot(document.getElementById("root")!).render(<App />);
 };
 const css = document.getElementById("app-css") as HTMLLinkElement | null;

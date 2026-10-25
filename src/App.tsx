@@ -1,4 +1,4 @@
-import { Suspense, type ReactNode } from "react";
+import { Suspense, useEffect, type ReactNode } from "react";
 import { lazyPage } from "@/lib/reliability/lazyPage";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -39,6 +39,7 @@ import { serviceNav } from "@/data/services/nav";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
 import { installNewBuildCheck } from "@/lib/reliability/newBuild";
+import { prerenderedPage, releasePrerenderedPage } from "@/lib/reliability/firstPaint";
 import { NewBuildReload } from "./components/NewBuildReload";
 import { RoutePrefetcher } from "./components/RoutePrefetcher";
 import { ScrollManager } from "./components/ScrollManager";
@@ -142,11 +143,22 @@ const AnswersHi = lazyPage(() => import("./pages/AnswersHi"));
 
 // Shown only on a first visit to a page whose code is still loading (in-app
 // navigation keeps the current page on screen instead, see BrowserRouter).
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-background">
-    <Loader2 className="w-8 h-8 animate-spin text-primary reveal-after-delay" />
-  </div>
-);
+// On the first load the page's prerendered text stays up instead (firstPaint.ts).
+const PageLoader = () => {
+  const first = prerenderedPage();
+  if (first) return <div ref={(el) => { if (el && first.parentNode !== el) el.appendChild(first); }} />;
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <Loader2 className="w-8 h-8 animate-spin text-primary reveal-after-delay" />
+    </div>
+  );
+};
+
+/** Rendered with the routes: once they commit, the first page is on screen. */
+const FirstPageRendered = () => {
+  useEffect(() => { releasePrerenderedPage(); }, []);
+  return null;
+};
 
 installChunkRecovery();
 installNewBuildCheck();
@@ -189,6 +201,7 @@ const App = () => (
           <TranslationScope />
           <RoutedBoundary>
           <Suspense fallback={<PageLoader />}>
+            <FirstPageRendered />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/answers" element={<Answers />} />

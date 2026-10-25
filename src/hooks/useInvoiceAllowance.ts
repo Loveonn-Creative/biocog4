@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { useSession } from './useSession';
 import { usePremiumStatus } from './usePremiumStatus';
 import { monthStartIst } from '../../supabase/functions/_shared/planLimits';
@@ -22,6 +22,7 @@ export function useInvoiceAllowance() {
 
   const refresh = useCallback(async () => {
     if (!user) { setUsed(null); setPacks([]); setOrders([]); return; }
+    const supabase = await loadSupabase();
     const since = monthStartIst();
     const docsBetween = async (from: string, to?: string) => {
       let q = supabase.from('documents').select('id', { count: 'exact', head: true }).eq('user_id', user.id).gte('created_at', from);
@@ -67,6 +68,7 @@ export function useInvoiceAllowance() {
  */
 export async function pageCountingActive(userId: string | null | undefined): Promise<boolean> {
   if (!userId) return true;
+  const supabase = await loadSupabase();
   const db = supabase as unknown as { from: (t: string) => any };
   const { data, error } = await db.from('invoice_read_counting').select('page_counting_from').eq('user_id', userId).maybeSingle();
   const from = !error && data?.page_counting_from ? data.page_counting_from : PAGE_COUNTING_STARTS;
