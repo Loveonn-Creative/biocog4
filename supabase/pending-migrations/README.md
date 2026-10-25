@@ -360,3 +360,16 @@ Closes browser write paths found in the October 2026 security audit. No data cha
 Tested on the local replay: applies, rolls back to the same catalog, re-applies, 14 behaviour checks (`tests/run_security_hardening.sh`). Roll back with `rollback/20261106100000_security_hardening.rollback.sql`.
 
 `security_followup_checks.sql` (read-only counts: plan orders paid without GST since 15 Oct, translation-cache rows that look personal, legacy guest rows, bucket privacy, grant_applications policy) and `guest_rows_purge.sql` (optional, owner-approved; deletes only rows with no account and rolls back if any account-owned count changes) sit next to it.
+
+## 20261107100000_enterprise_pilot.sql
+
+Enterprise supplier pilot (owner approved 25 Oct 2026). New tables only; no existing table, policy or row changes.
+
+- `enterprise_access`: granted by Senseible staff only, from the SQL editor: `SELECT private.grant_enterprise_access('head@buyer.com', 'Buyer Ltd', 100, 'staff name');` (revoke with `private.revoke_enterprise_access(email)`). No browser role can call these or read the table, whatever the plan, Scale included. The granted person signs in with that confirmed email and the app calls `claim_enterprise_access()`, which creates the enterprise organisation with them as owner.
+- `supplier_requests`: one per supplier and period, created by the supplier-requests function (service role) through `private.create_supplier_request`, capped at the supplier limit staff set. Only a SHA-256 of the link token is stored. Records the share of purchases (BRSR value chain) and the Scope 3 category.
+- Suppliers are ordinary accounts. `my_supplier_requests()` shows requests addressed to their confirmed email or profile GSTIN, so an existing MSME sees them in the app without a link. `accept_supplier_request` links one; `share_with_enterprise` records consent and writes a snapshot computed on the server from their own in-period records (scope totals, verified share, activity by unit, document counts, evidence hashes). `withdraw_supplier_consent` stops further sharing.
+- Enterprise members read only `supplier_requests`, `supplier_consents` and `supplier_snapshots` for their organisation, never supplier documents or emission rows. Revoking access closes all of it.
+
+Tested: `tests/run_enterprise_pilot.sh` replays every migration plus the applied pending chain, applies this file, proves the rollback restores the same catalog, re-applies, runs `tests/20261107100000_enterprise_pilot.test.sql` (10 groups: no browser or Scale grant, staff grant and one-time claim, unconfirmed email refused, supplier limit, token hash only, link preview, email and GSTIN matching, outsiders blocked, server-computed totals, enterprise cannot read supplier rows, withdraw and revoke), then shows the rollback refusing while shared data exists and restoring the catalog once confirmed.
+
+Roll back with `rollback/20261107100000_enterprise_pilot.rollback.sql` (needs `SET senseible.confirm_enterprise_rollback = 'yes'` once suppliers have shared).
