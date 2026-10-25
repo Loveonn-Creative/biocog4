@@ -5,7 +5,15 @@
 // phrase to BANNED when a review finds a new one.
 /* eslint-disable @typescript-eslint/no-explicit-any, no-control-regex -- test harness wraps the untyped jsPDF instance; the regex lists printable ranges */
 import { describe, expect, it, mock } from 'bun:test';
-import * as real from 'jspdf';
+
+// jsPDF's node build takes `window` as its global when one exists and binds
+// window.atob at load. Another test file can leave a stub window behind (the
+// CI file order differs from local runs), so load it with the real global.
+const g = globalThis as any;
+const priorWindow = g.window;
+g.window = globalThis;
+const real = await import('jspdf');
+g.window = priorWindow;
 
 const captured: string[] = [];
 // jsPDF defines text() and save() per instance, so wrap the class itself.
