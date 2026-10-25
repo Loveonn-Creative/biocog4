@@ -117,6 +117,7 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - CBAM suite footer (owner, 25 October 2026): /cbam-suite and /cbam-suite/supplier-pack show the standard site footer, unchanged.
 - Dr. Elena Varga (owner, 25 October 2026): her role is an expert audit of reports and their accuracy, not a per-page reviewer credit. Do not show her name on any page or in PAGE_REVIEWS unless it is critical or the owner permits it.
 - Verified emissions record (owner, 25 October 2026): the certificate is titled "VERIFIED EMISSIONS RECORD"; who verified is stated once, in the footer, as "Verified by Senseible, expert-supervised" (never "independently reviewed", "analyst or subject expert" or "Senseible carbon platform"). It shows a coverage line (verified documents of all recorded, and share of recorded emissions) and the quality grade with its pass-rate note.
+- Report units (owner, 25 October 2026): keep tCO2e, the unit every framework expects. The methodology states the factors are CO2 only and that methane and nitrous oxide from fuels add under 1%. Adding those gases is a calculation change that needs separate approval.
 - Output quality gate (owner, 25 October 2026): the owner must not be the one who catches weak copy. Generated documents pass `tests/report-copy.test.ts`; new or changed pages, reports and certificates are rendered and reviewed by an independent agent, and every finding is fixed, before the owner sees visuals. Reports name Senseible or the documents, never "the platform".
 
 ## 9. Open decisions (ask before acting)
