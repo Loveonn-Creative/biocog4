@@ -4,7 +4,7 @@ import { queryClient } from '@/lib/queryClient';
 import { useRealtimeRefresh } from '@/lib/sharedRealtime';
 import { reconcilePayments } from './useRazorpay';
 import { useSession } from './useSession';
-import { supabase } from '@/integrations/supabase/client';
+import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { canonicalPlan, PLAN_INVOICE_SCANS_PER_MONTH, planStatus, type PlanState } from '../../supabase/functions/_shared/planLimits';
 
 export type PremiumTier = 'snapshot' | 'essential' | 'pro' | 'scale';
@@ -213,6 +213,7 @@ export const planQueryKey = (userId: string) => ['plan', userId] as const;
  * fails shows Snapshot: fail closed).
  */
 async function readPlan(userId: string): Promise<PlanRead> {
+  const supabase = await loadSupabase();
   const [{ data: profile, error: profileError }, { data: subscriptions, error: subscriptionError }] = await Promise.all([
     supabase.from('profiles').select('subscription_tier, subscription_expires_at').eq('id', userId).single(),
     supabase.from('subscriptions').select('tier, expires_at, status').eq('user_id', userId).eq('status', 'active'),

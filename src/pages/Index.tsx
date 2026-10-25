@@ -54,10 +54,14 @@ const SignedInNextStep = lazy(loadSignedInNextStep);
 // Start fetching the below-the-fold chunk with the page instead of after the
 // sign-in check: a stored Supabase sign-in token means the signed-in strip,
 // otherwise the story. A wrong guess only costs one small extra chunk.
+// Only on the homepage itself: this module is in the startup bundle, so
+// without the check every first visit to any page downloaded the story
+// (and the CBAM tables it imports) alongside that page's own code.
 try {
+  if (window.location.pathname !== "/") throw new Error("not the homepage");
   const signedInHint = Object.keys(localStorage).some((k) => /^sb-.*-auth-token$/.test(k));
   void (signedInHint ? loadSignedInNextStep() : loadHomeStory()).catch(() => {});
-} catch { /* storage blocked: the chunk loads on render instead */ }
+} catch { /* not the homepage, or storage blocked: the chunk loads on render instead */ }
 
 /** Opens the upload picker from anywhere on the page (must run in a click handler). */
 const openUploadPicker = () => {
