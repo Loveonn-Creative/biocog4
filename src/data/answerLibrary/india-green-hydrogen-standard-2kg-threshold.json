@@ -2,7 +2,7 @@
   "slug": "india-green-hydrogen-standard-2kg-threshold",
   "q": "What does India's Green Hydrogen Standard require (the 2 kg CO2e per kg limit)?",
   "title": "India's green hydrogen 2 kg CO2e limit",
-  "short": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the last 12 months. The Bureau of Energy Efficiency accredits the agencies that check it.",
+  "short": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the financial year. The Bureau of Energy Efficiency accredits the agencies that check it.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Hydrogen project developers and industrial offtakers in India",
@@ -15,9 +15,9 @@
       ]
     },
     {
-      "h": "Why the 12-month average matters",
+      "h": "Why the yearly average matters",
       "p": [
-        "The test is an average over the last 12 months, not a check of each hour or each batch. A single bad month, say during a renewable outage, does not by itself fail the plant if the 12-month total stays within the limit; a run of bad months will. Renewable power stored in batteries or banked with the grid under the applicable regulations counts as renewable energy. How the first year of a new plant is treated depends on the certification rules, so ask your accredited agency early."
+        "The test is an average over the financial year, not a check of each hour or each batch. A single bad month, say during a renewable outage, does not by itself fail the plant if the year's average stays within the limit; a run of bad months will. Renewable power stored in batteries or banked with the grid under the applicable regulations counts as renewable energy. In the first year of operation, the period runs from the start of operations to the end of that financial year."
       ]
     },
     {
@@ -38,12 +38,12 @@
     }
   ],
   "example": {
-    "title": "Worked example: a rolling 12-month check",
+    "title": "Worked example: a financial year check",
     "lines": [
-      "Hydrogen made in the last 12 months: 1,000 t (illustrative)",
+      "Hydrogen made in the financial year: 1,000 t (illustrative)",
       "Eleven normal months: 920 t at 1.8 kg CO2e per kg = 1,656 t CO2e",
       "One month with a renewable shortfall: 80 t at 3.0 kg per kg = 240 t CO2e",
-      "12-month average: (1,656 + 240) / 1,000 = 1.90 kg CO2e per kg, within the 2 kg limit",
+      "Year average: (1,656 + 240) / 1,000 = 1.90 kg CO2e per kg, within the 2 kg limit",
       "If that month had been 6.0 kg per kg: 80 x 6.0 = 480 t, so (1,656 + 480) / 1,000 = 2.14 kg per kg, over the limit"
     ],
     "note": "All figures are illustrative. For how much grid power fits under 2 kg, see the page on grid-powered hydrogen."
@@ -71,8 +71,12 @@
     {
       "label": "MNRE, Green Hydrogen Standard for India (August 2023); BEE is the nodal authority for accreditation (beeindia.gov.in)",
       "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 2.5, 10, 15 and 16",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-25",
   "reviewNote": "MNRE issued certification scheme rules after the 2023 standard and may revise them; re-check the boundary and verification steps."
 }

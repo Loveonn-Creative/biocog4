@@ -4766,9 +4766,9 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cbam-indirect-emissions-electricity-factor-india",
   "q": "Which electricity emission factor should an Indian exporter use for CBAM indirect emissions?",
   "title": "Electricity factor for CBAM in India",
-  "short": "For cement and fertilisers, start with the default electricity factor the Commission sets for India. A lower actual factor needs a direct technical link to a generator or a qualifying power purchase agreement, with evidence. Check whether the importer's verifier accepts the CEA factor of 0.710 before relying on it.",
+  "short": "For cement and fertilisers, indirect emissions count, and the default electricity factor for India comes from the EU implementing act on CBAM default values, not from the CEA. A lower actual factor needs a direct technical link to a generator or a power purchase agreement that meets the CBAM conditions, with evidence.",
   "topic": "regulation",
-  "reviewed": "2026-10-22"
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "cbam-installation-boundary-two-units",
@@ -5166,9 +5166,9 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ccts-additionality-common-practice-test",
   "q": "How does the common practice test work in BEE's CCTS additionality tool BM-T-001?",
   "title": "Common practice test in BM-T-001",
-  "short": "The common practice test in BM-T-001 asks whether the technology is already widespread among similar plants in your region. If it is, the project is not additional. BEE's tool sets the exact test; the CDM common practice tool most consultants start from fails a project when over 20 percent of similar plants, and more than three, already use it.",
+  "short": "The common practice test in BM-T-001 asks whether the technology is already widespread among similar plants in your region. If it is, the project is not additional. BM-T-001 version 1.0 sets no percentage threshold. The 20 percent rule belongs to the older UN CDM tool, not BEE.",
   "topic": "markets",
-  "reviewed": "2026-10-18"
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "ccts-afforestation-dead-wood-litter-defaults",
@@ -13374,9 +13374,9 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "india-green-hydrogen-standard-2kg-threshold",
   "q": "What does India's Green Hydrogen Standard require (the 2 kg CO2e per kg limit)?",
   "title": "India's green hydrogen 2 kg CO2e limit",
-  "short": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the last 12 months. The Bureau of Energy Efficiency accredits the agencies that check it.",
+  "short": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the financial year. The Bureau of Energy Efficiency accredits the agencies that check it.",
   "topic": "regulation",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-25"
  },
  {
   "slug": "india-green-hydrogen-vs-eu-rfnbo-threshold",
