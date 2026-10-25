@@ -26,7 +26,7 @@
       "h": "Points that trip up first calculations",
       "ul": [
         "The CEA grid factor is CO2 only; the hydrogen threshold is in CO2e. The difference is small for electricity but should be stated.",
-        "Annual averages hide hours when the electrolyser runs on grid power at night. The Green Hydrogen Standard for India averages emissions over the preceding 12 months; check how your certifying scheme measures it.",
+        "Annual averages hide hours when the electrolyser runs on grid power at night. The Green Hydrogen Standard for India averages emissions over the financial year; check how your certifying scheme measures it.",
         "Rated stack efficiency is better than real system consumption. Use measured or guaranteed system kWh per kg.",
         "The Indian standard is framed around renewable energy, including renewable power banked with the grid. Check whether unmatched grid power is allowed at all before planning around the 5% figure."
       ]
@@ -69,8 +69,12 @@
     {
       "label": "IRENA, Green Hydrogen Cost Reduction (2020), electrolyser efficiency ranges",
       "url": "https://www.irena.org"
+    },
+    {
+      "label": "MNRE, Green Hydrogen Certification Scheme of India, O.M. F.No. 353/69/2024-NT, 29 April 2025: paras 2.5, 10, 15 and 16",
+      "url": "https://mnre.gov.in/static/uploads/2025/07/32b58a9bc0457251b6fefa9577a28479.pdf"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-25",
   "reviewNote": "The Green Hydrogen Standard for India and its certification rules may be revised; recheck the boundary and grid power rules before relying on the 5% ceiling."
 }
