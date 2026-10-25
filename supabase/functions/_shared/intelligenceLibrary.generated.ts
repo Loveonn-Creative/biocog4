@@ -3661,7 +3661,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "Which electricity emission factor should an Indian exporter use for CBAM indirect emissions?",
-  "text": "For cement and fertilisers, start with the default electricity factor the Commission sets for India. A lower actual factor needs a direct technical link to a generator or a qualifying power purchase agreement, with evidence. Check whether the importer's verifier accepts the CEA factor of 0.710 before relying on it.",
+  "text": "For cement and fertilisers, indirect emissions count, and the default electricity factor for India comes from the EU implementing act on CBAM default values, not from the CEA. A lower actual factor needs a direct technical link to a generator or a power purchase agreement that meets the CBAM conditions, with evidence.",
   "url": "https://senseible.earth/answers/cbam-indirect-emissions-electricity-factor-india"
  },
  {
@@ -3961,7 +3961,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "How does the common practice test work in BEE's CCTS additionality tool BM-T-001?",
-  "text": "The common practice test in BM-T-001 asks whether the technology is already widespread among similar plants in your region. If it is, the project is not additional. BEE's tool sets the exact test; the CDM common practice tool most consultants start from fails a project when over 20 percent of similar plants, and more than three, already use it.",
+  "text": "The common practice test in BM-T-001 asks whether the technology is already widespread among similar plants in your region. If it is, the project is not additional. BM-T-001 version 1.0 sets no percentage threshold. The 20 percent rule belongs to the older UN CDM tool, not BEE.",
   "url": "https://senseible.earth/answers/ccts-additionality-common-practice-test"
  },
  {
@@ -10117,7 +10117,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "What does India's Green Hydrogen Standard require (the 2 kg CO2e per kg limit)?",
-  "text": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the last 12 months. The Bureau of Energy Efficiency accredits the agencies that check it.",
+  "text": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the financial year. The Bureau of Energy Efficiency accredits the agencies that check it.",
   "url": "https://senseible.earth/answers/india-green-hydrogen-standard-2kg-threshold"
  },
  {

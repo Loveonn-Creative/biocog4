@@ -2,7 +2,7 @@
   "slug": "cbam-indirect-emissions-electricity-factor-india",
   "q": "Which electricity emission factor should an Indian exporter use for CBAM indirect emissions?",
   "title": "Electricity factor for CBAM in India",
-  "short": "For cement and fertilisers, start with the default electricity factor the Commission sets for India. A lower actual factor needs a direct technical link to a generator or a qualifying power purchase agreement, with evidence. Check whether the importer's verifier accepts the CEA factor of 0.710 before relying on it.",
+  "short": "For cement and fertilisers, indirect emissions count, and the default electricity factor for India comes from the EU implementing act on CBAM default values, not from the CEA. A lower actual factor needs a direct technical link to a generator or a power purchase agreement that meets the CBAM conditions, with evidence.",
   "topic": "regulation",
   "intent": "decision",
   "audience": "Indian cement and fertiliser exporters",
@@ -10,7 +10,7 @@
     {
       "h": "The options",
       "ul": [
-        "Default factor for India, from the Commission's default values.",
+        "Default factor for India, set in the EU implementing act on default values (Implementing Regulation (EU) 2025/2621, corrected by 2026/1740).",
         "Actual factor from a captive or directly linked plant, backed by metering and fuel records.",
         "Actual factor under a power purchase agreement that meets the CBAM conditions."
       ]
@@ -24,7 +24,7 @@
     {
       "h": "What to keep",
       "p": [
-        "Monthly units by source, contracts, renewable certificates if any, and a note of which factor you used and why."
+        "Monthly units by source, power purchase agreements and metering records, and a note of which factor you used and why. Renewable certificates do not lower the factor."
       ]
     }
   ],
@@ -51,11 +51,7 @@
     {
       "label": "Implementing Regulation (EU) 2023/1773, monitoring rules",
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
-    },
-    {
-      "label": "CEA CO2 Baseline Database",
-      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
-  "reviewed": "2026-10-22"
+  "reviewed": "2026-10-25"
 }
