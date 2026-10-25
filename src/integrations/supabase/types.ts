@@ -1226,6 +1226,53 @@ export type Database = {
         }
         Relationships: []
       }
+      enterprise_access: {
+        Row: {
+          company_name: string
+          email: string
+          granted_at: string
+          granted_by: string
+          id: string
+          notes: string | null
+          organization_id: string | null
+          revoked_at: string | null
+          status: string
+          supplier_limit: number
+        }
+        Insert: {
+          company_name: string
+          email: string
+          granted_at?: string
+          granted_by: string
+          id?: string
+          notes?: string | null
+          organization_id?: string | null
+          revoked_at?: string | null
+          status?: string
+          supplier_limit?: number
+        }
+        Update: {
+          company_name?: string
+          email?: string
+          granted_at?: string
+          granted_by?: string
+          id?: string
+          notes?: string | null
+          organization_id?: string | null
+          revoked_at?: string | null
+          status?: string
+          supplier_limit?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "enterprise_access_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: true
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       finance_application_documents: {
         Row: {
           application_id: string
@@ -3617,6 +3664,211 @@ export type Database = {
         }
         Relationships: []
       }
+      supplier_consents: {
+        Row: {
+          agreed_at: string
+          consent_text_hash: string
+          consent_version: string
+          id: string
+          request_id: string
+          supplier_user_id: string
+          withdrawn_at: string | null
+        }
+        Insert: {
+          agreed_at?: string
+          consent_text_hash: string
+          consent_version: string
+          id?: string
+          request_id: string
+          supplier_user_id: string
+          withdrawn_at?: string | null
+        }
+        Update: {
+          agreed_at?: string
+          consent_text_hash?: string
+          consent_version?: string
+          id?: string
+          request_id?: string
+          supplier_user_id?: string
+          withdrawn_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "supplier_consents_request_id_fkey"
+            columns: ["request_id"]
+            isOneToOne: false
+            referencedRelation: "supplier_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      supplier_requests: {
+        Row: {
+          buys: string | null
+          created_at: string
+          created_by: string | null
+          enterprise_org_id: string
+          expires_at: string
+          id: string
+          last_reminded_at: string | null
+          opened_at: string | null
+          period_end: string
+          period_start: string
+          purchase_share_pct: number | null
+          scope3_category: number
+          shared_at: string | null
+          status: string
+          supplier_email: string | null
+          supplier_gstin: string | null
+          supplier_name: string
+          supplier_user_id: string | null
+          token_hash: string
+        }
+        Insert: {
+          buys?: string | null
+          created_at?: string
+          created_by?: string | null
+          enterprise_org_id: string
+          expires_at: string
+          id?: string
+          last_reminded_at?: string | null
+          opened_at?: string | null
+          period_end: string
+          period_start: string
+          purchase_share_pct?: number | null
+          scope3_category?: number
+          shared_at?: string | null
+          status?: string
+          supplier_email?: string | null
+          supplier_gstin?: string | null
+          supplier_name: string
+          supplier_user_id?: string | null
+          token_hash: string
+        }
+        Update: {
+          buys?: string | null
+          created_at?: string
+          created_by?: string | null
+          enterprise_org_id?: string
+          expires_at?: string
+          id?: string
+          last_reminded_at?: string | null
+          opened_at?: string | null
+          period_end?: string
+          period_start?: string
+          purchase_share_pct?: number | null
+          scope3_category?: number
+          shared_at?: string | null
+          status?: string
+          supplier_email?: string | null
+          supplier_gstin?: string | null
+          supplier_name?: string
+          supplier_user_id?: string | null
+          token_hash?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "supplier_requests_enterprise_org_id_fkey"
+            columns: ["enterprise_org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      supplier_snapshots: {
+        Row: {
+          activity: Json
+          by_category: Json
+          created_at: string
+          declared_kg: number | null
+          declared_note: string | null
+          documents_total: number
+          documents_verified: number
+          enterprise_org_id: string
+          evidence_hashes: string[]
+          id: string
+          method_version: string
+          period_end: string
+          period_start: string
+          request_id: string
+          scope1_kg: number
+          scope2_kg: number
+          scope3_kg: number
+          snapshot_hash: string
+          supplier_gstin: string | null
+          supplier_name: string
+          supplier_user_id: string | null
+          total_kg: number
+          verified_kg: number
+        }
+        Insert: {
+          activity?: Json
+          by_category?: Json
+          created_at?: string
+          declared_kg?: number | null
+          declared_note?: string | null
+          documents_total?: number
+          documents_verified?: number
+          enterprise_org_id: string
+          evidence_hashes?: string[]
+          id?: string
+          method_version?: string
+          period_end: string
+          period_start: string
+          request_id: string
+          scope1_kg?: number
+          scope2_kg?: number
+          scope3_kg?: number
+          snapshot_hash: string
+          supplier_gstin?: string | null
+          supplier_name: string
+          supplier_user_id?: string | null
+          total_kg?: number
+          verified_kg?: number
+        }
+        Update: {
+          activity?: Json
+          by_category?: Json
+          created_at?: string
+          declared_kg?: number | null
+          declared_note?: string | null
+          documents_total?: number
+          documents_verified?: number
+          enterprise_org_id?: string
+          evidence_hashes?: string[]
+          id?: string
+          method_version?: string
+          period_end?: string
+          period_start?: string
+          request_id?: string
+          scope1_kg?: number
+          scope2_kg?: number
+          scope3_kg?: number
+          snapshot_hash?: string
+          supplier_gstin?: string | null
+          supplier_name?: string
+          supplier_user_id?: string | null
+          total_kg?: number
+          verified_kg?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "supplier_snapshots_enterprise_org_id_fkey"
+            columns: ["enterprise_org_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "supplier_snapshots_request_id_fkey"
+            columns: ["request_id"]
+            isOneToOne: false
+            referencedRelation: "supplier_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       team_invitations: {
         Row: {
           accepted_at: string | null
@@ -3929,9 +4181,25 @@ export type Database = {
       }
     }
     Functions: {
+      accept_supplier_request: {
+        Args: { p_request_id?: string; p_token?: string }
+        Returns: string
+      }
       apply_public_library: {
         Args: { p_entries: Json; p_version: string }
         Returns: number
+      }
+      cancel_supplier_request: {
+        Args: { p_request_id: string }
+        Returns: boolean
+      }
+      claim_enterprise_access: {
+        Args: never
+        Returns: {
+          company_name: string
+          organization_id: string
+          supplier_limit: number
+        }[]
       }
       claim_public_library_check: {
         Args: { p_min_age?: string }
@@ -4079,9 +4347,32 @@ export type Database = {
         Returns: string
       }
       ledger_row_digest: { Args: { r: Json }; Returns: string }
+      my_enterprise: {
+        Args: never
+        Returns: {
+          claimable: boolean
+          company_name: string
+          organization_id: string
+          role: string
+          supplier_limit: number
+        }[]
+      }
       my_finance_insights: { Args: never; Returns: Json }
       my_org_permissions: { Args: { p_organization_id: string }; Returns: Json }
       my_private_records: { Args: never; Returns: Json }
+      my_supplier_requests: {
+        Args: never
+        Returns: {
+          buys: string
+          company_name: string
+          expires_at: string
+          period_end: string
+          period_start: string
+          request_id: string
+          shared_at: string
+          status: string
+        }[]
+      }
       owner_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
@@ -4149,6 +4440,25 @@ export type Database = {
           organization_name: string
         }[]
       }
+      service_create_supplier_request: {
+        Args: {
+          p_buys: string
+          p_created_by: string
+          p_email: string
+          p_gstin: string
+          p_name: string
+          p_org: string
+          p_period_end: string
+          p_period_start: string
+          p_purchase_share_pct?: number
+          p_scope3_category?: number
+          p_valid_days?: number
+        }
+        Returns: {
+          request_id: string
+          token: string
+        }[]
+      }
       service_create_team_invitation: {
         Args: {
           p_actor_id: string
@@ -4182,6 +4492,37 @@ export type Database = {
           p_user_id: string
         }
         Returns: boolean
+      }
+      service_reissue_supplier_link: {
+        Args: { p_caller: string; p_request_id: string; p_valid_days?: number }
+        Returns: {
+          company_name: string
+          period_end: string
+          period_start: string
+          supplier_email: string
+          supplier_name: string
+          token: string
+        }[]
+      }
+      share_with_enterprise: {
+        Args: {
+          p_consent_text_hash: string
+          p_consent_version: string
+          p_declared_kg?: number
+          p_declared_note?: string
+          p_request_id: string
+        }
+        Returns: string
+      }
+      supplier_request_preview: {
+        Args: { p_token: string }
+        Returns: {
+          company_name: string
+          expired: boolean
+          period_end: string
+          period_start: string
+          supplier_name: string
+        }[]
       }
       switch_user_context: {
         Args: { p_context_id: string; p_context_type: string }
@@ -4224,6 +4565,10 @@ export type Database = {
           ok: boolean
           problem: string
         }[]
+      }
+      withdraw_supplier_consent: {
+        Args: { p_request_id: string }
+        Returns: boolean
       }
     }
     Enums: {
