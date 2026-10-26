@@ -8,6 +8,15 @@
 <meta name="theme-color" content="#f3e9d8">
 <link rel="icon" href="/favicon.png">
 <link rel="canonical" href="https://senseible.earth/play/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://senseible.earth/play/">
+<meta property="og:title" content="Beat my score? Chai Break Arcade">
+<meta property="og:description" content="Three tiny games about clean air and smaller bills. Tap and play, online or offline.">
+<meta property="og:image" content="https://senseible.earth/og/chai-break.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://senseible.earth/og/chai-break.png">
 <!--
   Chai Break Arcade. One self-contained file: no libraries, no fonts to fetch,
   no AI, no uploads, nothing sent anywhere. The service worker (/sw.js) keeps
@@ -137,6 +146,17 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
 .lv{border:2px solid var(--line);border-radius:10px;background:var(--card);padding:3px 8px;font-weight:800;font-size:.8rem;line-height:1.1}
 .lv small{display:block;color:var(--haldi);letter-spacing:1px;font-size:.7rem}
 .lv[aria-current="true"]{background:var(--ink);color:var(--paper)}
+.shareSheet .sheet{max-width:440px}
+#shareCv{display:block;width:100%;height:auto;border:2.5px solid var(--line);border-radius:16px;box-shadow:5px 6px 0 var(--shadow);background:var(--paper)}
+.shareRow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.shareBtn{border:2.5px solid var(--line);border-radius:14px;background:var(--card);padding:8px 4px;font-weight:800;font-size:.82rem;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--ink);text-decoration:none;box-shadow:3px 3px 0 var(--shadow)}
+.shareBtn svg{width:26px;height:26px}
+.shareBtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+.shareMain{width:100%;margin-top:12px}
+.brag{display:block;margin-top:8px}
+.vs{display:none;margin:14px 0 4px;border:2.5px solid var(--line);border-radius:16px;background:var(--haldi);color:#2a2018;padding:10px 14px;font-weight:800;box-shadow:4px 4px 0 var(--shadow);transform:rotate(-.6deg)}
+.vs.on{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.vs button{margin-left:auto}
 .foot{margin-top:28px;color:var(--ink2);font-size:.92rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .foot a{color:var(--ink);font-weight:700}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -160,6 +180,7 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
   <p class="offline" data-t="offline"></p>
 
   <section id="home">
+    <div class="vs" id="vs" role="status"><span id="vsText"></span><button class="go" id="vsGo"></button></div>
     <span class="sticker" data-t="sticker"></span>
     <h1 data-t="title" data-html></h1>
     <p class="lede" data-t="lede"></p>
@@ -212,7 +233,7 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
     <div class="bar"><button class="back" data-back data-t="back"></button><h2 id="r-h" data-t="g1"></h2><span class="hud" id="r-hud"></span></div>
     <div class="board">
       <canvas id="r-cv" width="800" height="320" aria-label="Dhuaan Dhoom" role="img"></canvas>
-      <div class="overlay" id="r-ov"><h3 id="r-msg"></h3><p id="r-sub"></p><div class="skins" id="r-skins" role="group"></div><button class="go" id="r-go"></button></div>
+      <div class="overlay" id="r-ov"><h3 id="r-msg"></h3><p id="r-sub"></p><div class="skins" id="r-skins" role="group"></div><button class="go" id="r-go"></button><button class="pill brag" id="r-share" hidden data-t="share_btn"></button></div>
     </div>
     <p class="hint" data-t="g1h"></p>
   </section>
@@ -224,7 +245,7 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
     <div class="board">
       <div class="deck" id="s-deck"></div>
       <div class="choices"><button class="choice bad" id="s-bad"></button><button class="choice good" id="s-good"></button></div>
-      <div class="overlay" id="s-ov"><h3 id="s-msg"></h3><p id="s-sub"></p><button class="go" id="s-go"></button></div>
+      <div class="overlay" id="s-ov"><h3 id="s-msg"></h3><p id="s-sub"></p><button class="go" id="s-go"></button><button class="pill brag" id="s-share" hidden data-t="share_btn"></button></div>
     </div>
     <p class="why" id="s-why" aria-live="polite"></p>
   </section>
@@ -236,13 +257,21 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
       <div class="gridwrap"><svg id="tiles" role="group" aria-label="Chimney Chill"></svg></div>
       <div class="row"><button class="pill" id="c-daily" data-t="daily"></button><button class="pill" id="c-next" data-t="next"></button></div>
       <div class="levels" id="c-levels" role="group"></div>
-      <div class="overlay" id="c-ov" hidden><h3 id="c-msg"></h3><p id="c-sub"></p><button class="pill" id="c-share" hidden data-t="c_share"></button><button class="go" id="c-go"></button></div>
+      <div class="overlay" id="c-ov" hidden><h3 id="c-msg"></h3><p id="c-sub"></p><button class="go" id="c-go"></button><button class="pill brag" id="c-share" hidden data-t="share_btn"></button></div>
     </div>
     <p class="hint" data-t="g3h"></p>
   </section>
 
   <div class="modal" id="stampModal" hidden role="dialog" aria-modal="true" aria-labelledby="stTitle">
     <div class="sheet"><div class="bar"><h2 id="stTitle"></h2><button class="back" id="stClose" data-t="close"></button></div><div class="stampgrid" id="stampGrid"></div></div>
+  </div>
+  <div class="modal shareSheet" id="shareModal" hidden role="dialog" aria-modal="true" aria-labelledby="shTitle">
+    <div class="sheet"><div class="bar"><h2 id="shTitle" data-t="share_title"></h2><button class="back" id="shClose" data-t="close"></button></div>
+      <canvas id="shareCv" width="1080" height="1350" role="img"></canvas>
+      <button class="go shareMain" id="shNative" data-t="share_native"></button>
+      <div class="shareRow" id="shRow"></div>
+      <p class="hint" id="shNote" aria-live="polite"></p>
+    </div>
   </div>
   <div id="toasts" aria-live="polite"></div>
   <footer class="foot">
@@ -257,6 +286,15 @@ canvas{display:block;width:100%;touch-action:manipulation;user-select:none;-webk
 // ---------- copy ----------
 const T = {
   hx: {
+    share_btn: 'Dosto ko dikhao', share_title: 'Apna score dikhao', share_native: 'Share karo', share_save: 'Photo save', share_copy: 'Copy', share_copied: 'Copy ho gaya. Ab chipkao!', share_saved: 'Photo save ho gayi. Story pe daalo!',
+    share_challenge: 'Beat karke dikhao', share_link: 'Khelo: ',
+    sh_runner: (m, s) => `Maine Dhuaan Dhoom mein ${m} m e-rickshaw chalaya${s ? ` aur ${s} suraj pakde` : ''}. Tumse hoga?`,
+    sh_swipe: (n, ti) => `Bill Bachao mein ${n} sahi, title mila "${ti}". Tumhara kitna?`,
+    sh_grid: (l, st, m) => `Chimney Chill level ${l} ${st} sirf ${m} moves mein. Tum kitne mein karoge?`,
+    sh_beat: (them, me) => `Tumhara ${them} beat kar diya, mera ${me}. Ab tumhari baari.`,
+    vs_runner: (n) => `Ek dost ne Dhuaan Dhoom mein ${n} m maare. Tum beat kar paoge?`, vs_swipe: (n) => `Ek dost ne Bill Bachao mein ${n} sahi kiye. Beat karoge?`, vs_grid: (n) => `Ek dost ne Chimney Chill level ${n} paar kiya. Tumhari baari.`,
+    vs_go: 'Challenge accept', vs_won: 'Dost ko hara diya! Ab share karke chidhao.',
+    rank_runner: [[0, 'Gully Rider'], [150, 'Signal Jumper (legal wala)'], [400, 'Rickshaw Rockstar'], [800, 'Dhuaan ka Dushman No. 1']],
     city_title: 'Tumhara shehar', close: 'Band karo', stamps_btn: 'Stamp book',
     hawa: (n) => `${n} saaf hawa points`, city_next: (n, w) => `Agla: ${w} (${n} aur)`, city_done: 'Shehar ekdum saaf. Saans lo, mast raho.',
     unlocks: ['Ped', 'Chhat pe solar', 'Panchhi', 'Patang', 'Metro', 'Neela aasmaan'], unlock_toast: (w) => `Shehar mein naya: ${w}!`,
@@ -295,6 +333,15 @@ const T = {
     c_sub: (m, p, s) => `${m} moves mein (target ${p}). ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'Agla level',
   },
   en: {
+    share_btn: 'Show your friends', share_title: 'Show off your score', share_native: 'Share', share_save: 'Save photo', share_copy: 'Copy', share_copied: 'Copied. Paste it anywhere!', share_saved: 'Photo saved. Post it to your story!',
+    share_challenge: 'Beat this', share_link: 'Play: ',
+    sh_runner: (m, s) => `I drove ${m} m in Dhuaan Dhoom${s ? ` and caught ${s} suns` : ''}. Can you beat it?`,
+    sh_swipe: (n, ti) => `${n} right in Bill Bachao, and the title "${ti}". What's your score?`,
+    sh_grid: (l, st, m) => `Chimney Chill level ${l} ${st} in just ${m} moves. How many will you need?`,
+    sh_beat: (them, me) => `Beat your ${them} with ${me}. Your turn.`,
+    vs_runner: (n) => `A friend drove ${n} m in Dhuaan Dhoom. Can you beat it?`, vs_swipe: (n) => `A friend got ${n} right in Bill Bachao. Can you beat it?`, vs_grid: (n) => `A friend cleared Chimney Chill level ${n}. Your turn.`,
+    vs_go: 'Accept the challenge', vs_won: 'You beat your friend! Share it and rub it in.',
+    rank_runner: [[0, 'Lane Rider'], [150, 'Smooth Operator'], [400, 'Rickshaw Rockstar'], [800, 'Smoke Enemy No. 1']],
     city_title: 'Your city', close: 'Close', stamps_btn: 'Stamp book',
     hawa: (n) => `${n} clean-air points`, city_next: (n, w) => `Next: ${w} (${n} to go)`, city_done: 'The city is spotless. Breathe easy.',
     unlocks: ['Trees', 'Rooftop solar', 'Birds', 'Kites', 'Metro', 'Blue sky'], unlock_toast: (w) => `New in your city: ${w}!`,
@@ -333,6 +380,15 @@ const T = {
     c_sub: (m, p, s) => `${m} moves (target ${p}). ${'★'.repeat(s)}${'☆'.repeat(3 - s)}`, c_go: 'Next level',
   },
   hi: {
+    share_btn: 'दोस्तों को दिखाओ', share_title: 'अपना स्कोर दिखाओ', share_native: 'शेयर करो', share_save: 'फ़ोटो सेव', share_copy: 'कॉपी', share_copied: 'कॉपी हो गया। अब चिपकाओ!', share_saved: 'फ़ोटो सेव हो गई। स्टोरी पर डालो!',
+    share_challenge: 'हराकर दिखाओ', share_link: 'खेलो: ',
+    sh_runner: (m, s) => `मैंने धुआँ धूम में ${m} मी ई-रिक्शा चलाया${s ? ` और ${s} सूरज पकड़े` : ''}। तुमसे होगा?`,
+    sh_swipe: (n, ti) => `बिल बचाओ में ${n} सही, ख़िताब मिला "${ti}"। तुम्हारा कितना?`,
+    sh_grid: (l, st, m) => `चिमनी चिल लेवल ${l} ${st} सिर्फ़ ${m} चालों में। तुम कितनी में करोगे?`,
+    sh_beat: (them, me) => `तुम्हारा ${them} हरा दिया, मेरा ${me}। अब तुम्हारी बारी।`,
+    vs_runner: (n) => `एक दोस्त ने धुआँ धूम में ${n} मी मारे। हरा पाओगे?`, vs_swipe: (n) => `एक दोस्त ने बिल बचाओ में ${n} सही किए। हराओगे?`, vs_grid: (n) => `एक दोस्त ने चिमनी चिल लेवल ${n} पार किया। तुम्हारी बारी।`,
+    vs_go: 'चैलेंज मंज़ूर', vs_won: 'दोस्त को हरा दिया! शेयर करके चिढ़ाओ।',
+    rank_runner: [[0, 'गली राइडर'], [150, 'सिग्नल जम्पर (क़ानूनी वाला)'], [400, 'रिक्शा रॉकस्टार'], [800, 'धुएँ का दुश्मन नंबर 1']],
     city_title: 'तुम्हारा शहर', close: 'बंद करो', stamps_btn: 'स्टैम्प बुक',
     hawa: (n) => `${n} साफ़ हवा पॉइंट`, city_next: (n, w) => `अगला: ${w} (${n} और)`, city_done: 'शहर एकदम साफ़। साँस लो, मस्त रहो।',
     unlocks: ['पेड़', 'छत पर सोलर', 'पंछी', 'पतंग', 'मेट्रो', 'नीला आसमान'], unlock_toast: (w) => `शहर में नया: ${w}!`,
@@ -436,6 +492,7 @@ function paint() {
   $('[data-best="grid"]').textContent = best.grid ? `${t('best')} L${best.grid}` : '';
   $('#s-bad').textContent = '← ' + t('s_bad'); $('#s-good').textContent = t('s_good') + ' →';
   Runner.label(); Swipe.label(); Grid.label(); if (typeof Meta !== 'undefined') { Meta.home(); Meta.relabel(); }
+  if (typeof Share !== 'undefined' && Share.vs) { $('#vsText').textContent = t('vs_' + Share.vs.game)(Share.vs.val); $('#vsGo').textContent = t('vs_go'); }
 }
 function saveBest(k, v) { const b = store.get('best', {}); if (!b[k] || v > b[k]) { b[k] = v; store.set('best', b); return true; } return false; }
 
@@ -550,6 +607,146 @@ const Meta = (() => {
   return { get, put, finish, stamp, toast, home, dayKey, has: (id) => !!get().stamps[id], relabel: () => { if (!$('#stampModal').hidden) renderStamps(); } };
 })();
 
+// ---------- sharing: an animated card, the phone's share sheet, and a challenge link ----------
+// The card is drawn on a canvas (1080 x 1350, the shape stories and chats like)
+// and saved as a picture. The link carries the score, so a friend who opens it
+// is challenged to beat it. Nothing is uploaded; the browser shares directly.
+const Share = (() => {
+  const cv = $('#shareCv'), ctx = cv.getContext('2d'), W = 1080, H = 1350;
+  let cur = null, raf = 0, blob = null;
+  const BASE = 'https://senseible.earth/play/';
+  const link = (game, val) => `${BASE}?vs=${game}.${encodeURIComponent(val)}`;
+  // Literal colours: the card must look the same in a chat, whatever theme made it.
+  const C = { paper: '#f3e9d8', ink: '#2a2018', ink2: '#5b4b3c', masala: '#d9572a', haldi: '#e9a92a', leaf: '#2f7a4c', sky: '#9fd0e2', smog: '#8b857a', card: '#fffaf0', paper2: '#eadcc4' };
+  const ease = (x) => 1 - Math.pow(1 - Math.min(1, Math.max(0, x)), 3);
+  function wrapText(text, x, y, maxW, lh) {
+    const words = text.split(' '); let line = '', yy = y;
+    for (const w of words) { const test = line ? line + ' ' + w : w; if (ctx.measureText(test).width > maxW && line) { ctx.fillText(line, x, yy); line = w; yy += lh; } else line = test; }
+    ctx.fillText(line, x, yy); return yy;
+  }
+  function skyline(y, k) {
+    // Smog lifts as the card animates: the city behind every score.
+    ctx.fillStyle = mixHex(C.sky, C.smog, k); ctx.fillRect(60, y - 300, W - 120, 300);
+    ctx.lineWidth = 5; ctx.strokeStyle = C.ink; ctx.lineJoin = 'round';
+    const bl = [[80, 170], [190, 230], [320, 150], [420, 260], [560, 190], [680, 240], [810, 160], [910, 210]];
+    for (const [x, h] of bl) {
+      ctx.fillStyle = C.paper2; ctx.fillRect(x, y - h, 92, h); ctx.strokeRect(x, y - h, 92, h);
+      for (let r = y - h + 24; r < y - 20; r += 40) { ctx.fillStyle = k < 0.3 ? C.haldi : C.card; ctx.fillRect(x + 18, r, 18, 16); ctx.fillRect(x + 56, r, 18, 16); }
+    }
+    if (k > 0.05) { ctx.globalAlpha = k; ctx.fillStyle = C.smog; for (const [x] of bl.filter((_, i) => i % 3 === 1)) { ctx.beginPath(); ctx.arc(x + 70, y - 290, 22, 0, 7); ctx.arc(x + 96, y - 318, 28, 0, 7); ctx.fill(); } ctx.globalAlpha = 1; }
+    if (k < 0.3) { ctx.fillStyle = C.leaf; for (const x of [140, 380, 620, 860]) { ctx.beginPath(); ctx.arc(x, y - 34, 30, 0, 7); ctx.fill(); ctx.stroke(); } }
+    ctx.strokeRect(60, y - 300, W - 120, 300);
+  }
+  function mixHex(a, b, k) { const pa = a.slice(1).match(/../g).map((x) => parseInt(x, 16)), pb = b.slice(1).match(/../g).map((x) => parseInt(x, 16)); return `rgb(${pa.map((v, i) => Math.round(v + (pb[i] - v) * k)).join(',')})`; }
+  function stamp(x, y, r, text, p) {
+    if (p <= 0) return; const s = 1 + (1 - ease(p)) * 1.6;
+    ctx.save(); ctx.translate(x, y); ctx.rotate(-0.18); ctx.scale(s, s); ctx.globalAlpha = Math.min(1, p * 2);
+    ctx.strokeStyle = C.masala; ctx.lineWidth = 8; ctx.beginPath();
+    for (let i = 0; i <= 28; i++) { const a = (i / 28) * Math.PI * 2, rr = i % 2 ? r - 10 : r; ctx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); }
+    ctx.closePath(); ctx.stroke(); ctx.beginPath(); ctx.arc(0, 0, r - 26, 0, 7); ctx.stroke();
+    ctx.fillStyle = C.masala; ctx.font = '900 34px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.fillText(text, 0, 12); ctx.restore();
+  }
+  // Each game's own doodle beside the score, drawn by hand on the card.
+  function doodle(kind, x, y, p) {
+    if (p <= 0) return; ctx.save(); ctx.translate(x + (1 - p) * 200, y); ctx.globalAlpha = p; ctx.lineWidth = 6; ctx.strokeStyle = C.ink; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    if (kind === 'runner') {
+      ctx.fillStyle = C.leaf; ctx.beginPath(); ctx.moveTo(-90, 40); ctx.lineTo(-90, -20); ctx.lineTo(30, -20); ctx.lineTo(80, 25); ctx.lineTo(85, 40); ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = C.haldi; ctx.beginPath(); ctx.moveTo(-100, -20); ctx.quadraticCurveTo(-20, -100, 60, -24); ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = C.card; for (const wx of [-55, 55]) { ctx.beginPath(); ctx.arc(wx, 50, 24, 0, 7); ctx.fill(); ctx.stroke(); }
+      ctx.fillStyle = C.haldi; ctx.beginPath(); ctx.arc(110, -110, 28, 0, 7); ctx.fill(); ctx.stroke();
+    } else if (kind === 'swipe') {
+      ctx.fillStyle = C.paper2; ctx.save(); ctx.rotate(-0.2); ctx.fillRect(-90, -100, 130, 170); ctx.strokeRect(-90, -100, 130, 170); ctx.restore();
+      ctx.fillStyle = C.card; ctx.save(); ctx.rotate(0.15); ctx.fillRect(-40, -110, 130, 170); ctx.strokeRect(-40, -110, 130, 170);
+      ctx.strokeStyle = C.masala; ctx.beginPath(); ctx.moveTo(30, -70); ctx.lineTo(10, -20); ctx.lineTo(40, -20); ctx.lineTo(20, 30); ctx.stroke(); ctx.restore();
+    } else {
+      ctx.strokeStyle = C.haldi; ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(-110, 20); ctx.lineTo(-40, 20); ctx.lineTo(-40, -50); ctx.lineTo(40, -50); ctx.lineTo(40, 20); ctx.lineTo(110, 20); ctx.stroke();
+      ctx.strokeStyle = C.ink; ctx.lineWidth = 4; ctx.setLineDash([10, 12]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = C.sky; ctx.fillRect(-150, -10, 50, 40); ctx.strokeRect(-150, -10, 50, 40);
+      ctx.fillStyle = C.paper2; ctx.beginPath(); ctx.moveTo(110, 60); ctx.lineTo(110, -10); ctx.lineTo(140, 5); ctx.lineTo(140, -60); ctx.lineTo(165, -60); ctx.lineTo(165, 60); ctx.closePath(); ctx.fill(); ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function frame(t) {
+    const d = cur, kk = ease(t / 1.1);
+    ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = C.paper2; for (let y = 20; y < H; y += 44) for (let x = 20; x < W; x += 44) { ctx.beginPath(); ctx.arc(x, y, 3, 0, 7); ctx.fill(); }
+    ctx.fillStyle = C.ink; ctx.textAlign = 'left'; ctx.font = '800 38px system-ui, sans-serif'; ctx.fillText('CHAI BREAK ARCADE', 80, 110);
+    ctx.fillStyle = C.haldi; ctx.strokeStyle = C.ink; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(900, 70); ctx.lineTo(980, 70); ctx.lineTo(972, 130); ctx.lineTo(908, 130); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.font = '900 92px system-ui, sans-serif'; ctx.fillStyle = C.ink; ctx.fillText(d.game, 80, 240);
+    // Score counts up.
+    const shown = d.num != null ? Math.round(d.num * ease(t / 0.9)).toLocaleString('en-IN') : d.big;
+    ctx.font = '900 230px system-ui, sans-serif'; ctx.fillStyle = C.masala; ctx.fillText(shown, 70, 480);
+    const sw = ctx.measureText(shown).width; ctx.font = '800 70px system-ui, sans-serif'; ctx.fillStyle = C.ink; ctx.fillText(d.unit || '', 90 + sw, 480);
+    ctx.font = '700 46px system-ui, sans-serif'; ctx.fillStyle = C.ink2; if (d.sub) ctx.fillText(d.sub, 80, 560);
+    // The title slides in.
+    const tx = 80 - (1 - ease((t - 0.5) / 0.4)) * 400; ctx.globalAlpha = ease((t - 0.5) / 0.4);
+    ctx.font = '900 52px system-ui, sans-serif'; const tw = Math.min(920, ctx.measureText(d.title).width + 80);
+    ctx.fillStyle = C.ink; ctx.fillRect(tx, 600, tw, 90);
+    ctx.fillStyle = C.paper; ctx.fillText(d.title, tx + 40, 662); ctx.globalAlpha = 1;
+    doodle(d.kind, 830, 300, ease((t - 0.2) / 0.5));
+    skyline(1060, Math.max(0, 0.8 - kk * 0.8) + 0.0);
+    stamp(860, 820, 120, d.stampText, (t - 0.9) / 0.35);
+    ctx.fillStyle = C.ink; ctx.font = '800 50px system-ui, sans-serif'; ctx.textAlign = 'left';
+    wrapText(t_('share_challenge') + ' →', 80, 1150, 900, 60);
+    ctx.font = '700 40px system-ui, sans-serif'; ctx.fillStyle = C.ink2; ctx.fillText('senseible.earth/play', 80, 1220);
+    ctx.font = '600 30px system-ui, sans-serif'; ctx.fillText(d.foot || '', 80, 1280);
+  }
+  const t_ = (k) => t(k);
+  function animate() {
+    cancelAnimationFrame(raf); const t0 = performance.now(), dur = reduce ? 0 : 1600;
+    const step = (now) => { const tt = dur ? Math.min(1.6, (now - t0) / 1000) : 1.6; frame(tt); if (tt < 1.6) raf = requestAnimationFrame(step); else toBlob(); };
+    raf = requestAnimationFrame(step);
+  }
+  function toBlob() { blob = null; try { cv.toBlob((b) => { blob = b; }, 'image/png'); } catch { blob = null; } }
+  const ICON = {
+    wa: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 27l2-6a11 11 0 1 1 4 4z" fill="#2f7a4c" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 12c0 5 4 8 8 8l1-2-3-1-1 1c-2-1-3-2-4-4l1-1-1-3z" fill="#fffaf0"/></svg>',
+    x: '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="6" fill="#2a2018"/><path d="M10 9l12 14M22 9L10 23" stroke="#fffaf0" stroke-width="2.6" stroke-linecap="round"/></svg>',
+    li: '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="6" fill="#3b7fc4" stroke="currentColor" stroke-width="2"/><path d="M11 14v8M11 10v.5M15 22v-8M15 17c0-3 6-4 6 0v5" stroke="#fffaf0" stroke-width="2.6" stroke-linecap="round"/></svg>',
+    tg: '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="#9fd0e2" stroke="currentColor" stroke-width="2"/><path d="M9 16l14-6-3 13-4-3-2 3v-4l6-5-8 4z" fill="#fffaf0" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+    save: '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="7" width="22" height="18" rx="4" fill="#e9a92a" stroke="currentColor" stroke-width="2.2"/><circle cx="16" cy="16" r="5" fill="#fffaf0" stroke="currentColor" stroke-width="2"/></svg>',
+    copy: '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="10" y="10" width="15" height="17" rx="3" fill="#fffaf0" stroke="currentColor" stroke-width="2.2"/><rect x="6" y="5" width="15" height="17" rx="3" fill="#eadcc4" stroke="currentColor" stroke-width="2.2"/></svg>',
+  };
+  function open(d) {
+    cur = d; const text = `${d.text}\n${t('share_link')}${d.url}`;
+    const enc = encodeURIComponent;
+    const links = [
+      ['wa', 'WhatsApp', `https://wa.me/?text=${enc(text)}`], ['x', 'X', `https://twitter.com/intent/tweet?text=${enc(d.text)}&url=${enc(d.url)}`],
+      ['li', 'LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${enc(d.url)}`], ['tg', 'Telegram', `https://t.me/share/url?url=${enc(d.url)}&text=${enc(d.text)}`],
+    ];
+    $('#shRow').innerHTML = links.map(([k, name, href]) => `<a class="shareBtn" href="${href}" target="_blank" rel="noopener" data-sh="${k}">${ICON[k]}${name}</a>`).join('')
+      + `<button class="shareBtn" id="shSave">${ICON.save}${t('share_save')}</button><button class="shareBtn" id="shCopy">${ICON.copy}${t('share_copy')}</button>`;
+    $('#shSave').addEventListener('click', save); $('#shCopy').addEventListener('click', () => copy(text));
+    $('#shNative').hidden = !navigator.share; $('#shNote').textContent = '';
+    cv.setAttribute('aria-label', d.text);
+    $('#shareModal').hidden = false; pageInert(true); $('#shClose').focus();
+    beep(523, 0.08, 'triangle'); animate();
+    $('#shNative').onclick = async () => {
+      try {
+        const file = blob ? new File([blob], 'chai-break-score.png', { type: 'image/png' }) : null;
+        if (file && navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], text, title: 'Chai Break Arcade' });
+        else await navigator.share({ text: d.text, url: d.url, title: 'Chai Break Arcade' });
+      } catch { /* closed the sheet */ }
+    };
+  }
+  function save() {
+    if (!blob) return; const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'chai-break-score.png';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); $('#shNote').textContent = t('share_saved');
+  }
+  async function copy(text) {
+    try { await navigator.clipboard.writeText(text); $('#shNote').textContent = t('share_copied'); }
+    catch { $('#shNote').textContent = text; }
+  }
+  const page = () => [...document.querySelectorAll('.wrap > :not(#shareModal):not(#stampModal):not(#toasts)')];
+  function pageInert(on) { page().forEach((el) => (el.inert = on)); }
+  function close() { cancelAnimationFrame(raf); $('#shareModal').hidden = true; pageInert(false); }
+  $('#shClose').addEventListener('click', close);
+  $('#shareModal').addEventListener('click', (e) => { if (e.target.id === 'shareModal') close(); });
+  addEventListener('keydown', (e) => { if (!$('#shareModal').hidden && e.key === 'Escape') close(); });
+  // A challenge from a friend's link: ?vs=runner.423
+  const vs = (() => { const m = /^(runner|swipe|grid)\.(\d{1,5})$/.exec(new URLSearchParams(location.search).get('vs') || ''); return m ? { game: m[1], val: +m[2] } : null; })();
+  return { open, link, vs };
+})();
+
 // ---------- 1. Dhuaan Dhoom ----------
 const Runner = (() => {
   const cv = $('#r-cv'), ctx = cv.getContext('2d');
@@ -567,7 +764,8 @@ const Runner = (() => {
     shield = false; gustT = 0; combo = 0; sunPts = 0; near = 0; { const sv = Meta.get().skin; curSkin = skinOk(sv) ? sv : 0; }
     hills = Array.from({ length: 6 }, (_, i) => ({ x: i * 180, h: 30 + (i * 37) % 50 }));
   }
-  let deadAt = 0;
+  let deadAt = 0, lastShare = null;
+  $('#r-share').addEventListener('click', (e) => { e.stopPropagation(); if (lastShare) Share.open(lastShare()); });
   function jump() { if (st === 'dead' && performance.now() - deadAt < 700) return; if (st !== 'run') return start(); if (py >= GROUND - 0.5) { vy = -560; holding = true; holdT = 0; beep(520, 0.09, 'square', 0.04, 260); } }
   function release() { holding = false; }
   function spawn() {
@@ -595,6 +793,12 @@ const Runner = (() => {
     $('#r-go').textContent = t('again'); $('#r-ov').hidden = false; $('#r-go').focus({ preventScroll: true });
     if (m >= 500) Meta.stamp('slayer'); if (suns >= 20) Meta.stamp('suns'); if (near >= 5) Meta.stamp('close');
     Meta.finish('runner', pts); skins();
+    const rankOf = () => { const ranks = t('rank_runner'); let r = ranks[0][1]; for (const [min, name] of ranks) if (m >= min) r = name; return r; };
+    const beat = Share.vs && Share.vs.game === 'runner' && m > Share.vs.val;
+    if (beat) $('#r-msg').textContent = t('vs_won');
+    lastShare = () => ({ game: t('g1'), num: m, unit: ' m', sub: [suns ? `${suns} ${lang === 'en' ? 'suns' : lang === 'hi' ? 'सूरज' : 'suraj'}` : '', near ? `${near}x ${t('r_near')[0].replace(/[!.?।]$/, '')}` : ''].filter(Boolean).join(' · '), title: rankOf(), kind: 'runner',
+      stampText: rec ? 'BEST!' : 'SAAF!', text: beat ? t('sh_beat')(`${Share.vs.val} m`, `${m} m`) : t('sh_runner')(m, suns), url: Share.link('runner', m), foot: t('sticker') });
+    $('#r-share').hidden = m < 1;
   }
   function step(dt) {
     speed += dt * (reduce ? 4 : 7); dist += speed * dt / 40; wheel += speed * dt / 14;
@@ -710,7 +914,7 @@ const Runner = (() => {
     const hud = t('r_hud')(Math.floor(dist), suns); if (hud !== lastHud) { lastHud = hud; $('#r-hud').textContent = hud; }
   }
   function loop(ts) { const dt = Math.min(0.033, (ts - last) / 1000 || 0); last = ts; if (st === 'run') step(dt); draw(); if (st === 'run' || shake > 0.3) raf = requestAnimationFrame(loop); }
-  function start() { if (st === 'run') return; reset(); st = 'run'; $('#r-ov').hidden = true; last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }
+  function start() { if (st === 'run') return; reset(); st = 'run'; $('#r-ov').hidden = true; $('#r-share').hidden = true; last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }
   function stop() { st = 'idle'; cancelAnimationFrame(raf); }
   addEventListener('resize', () => { if (st !== 'run' && hills && document.body.dataset.view === 'runner') { fit(); draw(); } });
   function skins() {
@@ -719,7 +923,7 @@ const Runner = (() => {
       return `<button class="skin" data-skin="${i}" aria-pressed="${m.skin === i && ok}" ${ok ? '' : 'aria-disabled="true"'}><i style="background:${k[0] || 'conic-gradient(#d9572a,#e9a92a,#2f7a4c,#3b7fc4,#d9572a)'}"></i>${t('skins')[i]}${ok ? '' : `<small>${typeof u === 'number' ? t('skin_lock')(u) : t('skin_disco')}</small>`}</button>`; }).join('');
     $$('[data-skin]', box).forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); if (b.getAttribute('aria-disabled') === 'true') { beep(160, 0.08, 'sawtooth', 0.03); return; } const mm = Meta.get(); mm.skin = +b.dataset.skin; Meta.put(mm); curSkin = mm.skin; skins(); draw(); beep(700, 0.05, 'triangle'); }));
   }
-  function open() { reset(); st = 'idle'; skins(); draw(); $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); $('#r-ov').hidden = false; }
+  function open() { reset(); st = 'idle'; skins(); $('#r-share').hidden = true; draw(); $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); $('#r-ov').hidden = false; }
   function label() { if (st !== 'run' && !$('#r-ov').hidden) skins(); if (st !== 'run' && !$('#r-ov').hidden && cause == null) { $('#r-msg').textContent = t('r_start'); $('#r-sub').textContent = t('r_startSub'); $('#r-go').textContent = t('play'); } }
   cv.addEventListener('pointerdown', (e) => { e.preventDefault(); jump(); });
   addEventListener('pointerup', release);
@@ -732,7 +936,7 @@ const Runner = (() => {
 // ---------- 2. Bill Bachao ----------
 const Swipe = (() => {
   const deck = $('#s-deck'), LIMIT = 45;
-  let pts = 0, fever = false, hurried = false, finished = false, order = [], i = 0, right = 0, streak = 0, bestStreak = 0, timeLeft = LIMIT, timer = 0, live = false, card = null;
+  let lastShare = null, pts = 0, fever = false, hurried = false, finished = false, order = [], i = 0, right = 0, streak = 0, bestStreak = 0, timeLeft = LIMIT, timer = 0, live = false, card = null;
   const L = () => (lang === 'en' ? 1 : lang === 'hi' ? 2 : 0);
   // A neutral doodle (an electricity meter) so the picture never gives the answer away.
   const METER = '<svg width="90" height="56" viewBox="0 0 90 56" aria-hidden="true"><rect x="22" y="6" width="46" height="44" rx="8" fill="var(--paper2)" stroke="currentColor" stroke-width="2.4"/><path d="M31 32a14 14 0 0 1 28 0" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M45 32l8-9" stroke="var(--masala)" stroke-width="3" stroke-linecap="round"/><rect x="32" y="38" width="26" height="7" rx="2" fill="var(--card)" stroke="currentColor" stroke-width="1.8"/></svg>';
@@ -779,17 +983,22 @@ const Swipe = (() => {
     saveBest('swipe', right); deck.classList.remove('fever'); $('#s-time').parentElement.classList.remove('hurry');
     $('#s-msg').textContent = ti[1]; $('#s-sub').textContent = `${ti[2]} ${t('s_score')(right, bestStreak)} · ${t('earned')(pts)}`;
     if (right >= 18) Meta.stamp('baba'); Meta.finish('swipe', pts);
+    const beat = Share.vs && Share.vs.game === 'swipe' && right > Share.vs.val; if (beat) $('#s-msg').textContent = t('vs_won');
+    lastShare = () => { const tl = t('s_titles'); let ti = tl[0]; for (const x of tl) if (right >= x[0]) ti = x; return { game: t('g2'), num: right, unit: lang === 'hi' ? ' सही' : lang === 'en' ? ' right' : ' sahi', sub: t('s_score')(right, bestStreak).split(' · ').slice(1).join(' · '), title: ti[1], kind: 'swipe', stampText: right >= 12 ? 'WATT!' : 'SHABASH',
+      text: beat ? t('sh_beat')(String(Share.vs.val), String(right)) : t('sh_swipe')(right, ti[1]), url: Share.link('swipe', right), foot: t('sticker') }; };
+    $('#s-share').hidden = false;
     $('#s-go').textContent = t('again'); $('#s-ov').hidden = false; beep(523, 0.1, 'triangle'); setTimeout(() => beep(784, 0.18, 'triangle'), 110);
   }
   function start() {
-    order = shuffle(HABITS.map((_, n) => n)); i = 0; right = 0; streak = 0; bestStreak = 0; timeLeft = LIMIT; live = true; finished = false; pts = 0; fever = false; hurried = false; deck.classList.remove('fever');
+    order = shuffle(HABITS.map((_, n) => n)); i = 0; right = 0; streak = 0; bestStreak = 0; $('#s-share').hidden = true; timeLeft = LIMIT; live = true; finished = false; pts = 0; fever = false; hurried = false; deck.classList.remove('fever');
     $('#s-ov').hidden = true; $('#s-why').textContent = ''; $('#s-hud').textContent = t('s_hud')(0); deal();
     clearInterval(timer); timer = setInterval(tick, 100);
   }
   function stop() { live = false; clearInterval(timer); }
-  function open() { stop(); finished = false; deck.innerHTML = ''; $('#s-time').style.width = '100%'; $('#s-msg').textContent = t('s_start'); $('#s-sub').textContent = t('s_startSub'); $('#s-go').textContent = t('play'); $('#s-ov').hidden = false; $('#s-hud').textContent = ''; $('#s-why').textContent = ''; }
+  function open() { stop(); finished = false; $('#s-share').hidden = true; deck.innerHTML = ''; $('#s-time').style.width = '100%'; $('#s-msg').textContent = t('s_start'); $('#s-sub').textContent = t('s_startSub'); $('#s-go').textContent = t('play'); $('#s-ov').hidden = false; $('#s-hud').textContent = ''; $('#s-why').textContent = ''; }
   function label() { if (!live && !finished && !$('#s-ov').hidden) open(); else if (finished) $('#s-go').textContent = t('again'); }
   $('#s-go').addEventListener('click', start);
+  $('#s-share').addEventListener('click', () => { if (lastShare) Share.open(lastShare()); });
   $('#s-bad').addEventListener('click', () => answer(false)); $('#s-good').addEventListener('click', () => answer(true));
   addEventListener('keydown', (e) => { if (document.body.dataset.view !== 'swipe' || !live) return; if (e.key === 'ArrowLeft') answer(false); if (e.key === 'ArrowRight') answer(true); });
   return { open, stop, label };
@@ -803,7 +1012,7 @@ function shuffle(a) { for (let k = a.length - 1; k > 0; k--) { const j = Math.fl
 // can be solved.
 const Grid = (() => {
   const svg = $('#tiles'), NS = 'http://www.w3.org/2000/svg';
-  let n, cells, src, dst, moves, par, level, daily, solved, shareText = '';
+  let n, cells, src, dst, moves, par, level, daily, solved, shareData = null;
   const rot = (m) => ((m << 1) | (m >> 3)) & 15;
   function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
   function build(seed, size) {
@@ -897,7 +1106,11 @@ const Grid = (() => {
     if (daily) { const key = 'd' + Meta.dayKey(); if (!m.stars[key]) pts = stars * 10 + 10; m.stars[key] = Math.max(m.stars[key] || 0, stars); }
     else { const prev = m.stars[level] || 0; pts = Math.max(0, stars - prev) * 10 + (prev ? 0 : 5); m.stars[level] = Math.max(prev, stars); saveBest('grid', level); }
     Meta.put(m); if (stars === 3) Meta.stamp('wire'); if (daily) Meta.stamp('daily');
-    $('#c-share').hidden = !daily; shareText = `${t('g3')} ${Meta.dayKey()}\n${t('c_sub')(moves, par, stars)}\nsenseible.earth/play/`;
+    const starTxt = '★'.repeat(stars) + '☆'.repeat(3 - stars), lv = daily ? Meta.dayKey() : level;
+    const beat = !daily && Share.vs && Share.vs.game === 'grid' && level >= Share.vs.val;
+    shareData = () => ({ game: t('g3'), big: daily ? starTxt : `L${level}`, unit: daily ? '' : ` ${starTxt}`, sub: t('c_sub')(moves, par, stars), title: daily ? t('daily') : t('c_level')(level), kind: 'grid', stampText: stars === 3 ? 'PERFECT' : 'CHILL',
+      text: beat ? t('sh_beat')(`L${Share.vs.val}`, `L${level}`) : t('sh_grid')(lv, starTxt, moves), url: Share.link('grid', daily ? 1 : level), foot: t('sticker') });
+    $('#c-share').hidden = false;
     setTimeout(() => Meta.finish('grid', pts), reduce ? 0 : 500); levels();
     [523, 659, 784, 1046].forEach((f, k) => setTimeout(() => beep(f, 0.12, 'triangle', 0.05), k * 90));
     setTimeout(() => { $('#c-msg').textContent = pick(t('c_win')); $('#c-sub').textContent = t('c_sub')(moves, par, stars); $('#c-go').textContent = t('c_go'); $('#c-ov').hidden = false; }, reduce ? 0 : 450);
@@ -908,13 +1121,10 @@ const Grid = (() => {
     box.innerHTML = Array.from({ length: top - from + 1 }, (_, i) => from + i).map((l) => `<button class="lv" data-lv="${l}" aria-current="${!daily && l === level}">L${l}<small>${st[l] ? '★'.repeat(st[l]) : '·'}</small></button>`).join('');
     $$('[data-lv]', box).forEach((b) => b.addEventListener('click', () => playLevel(+b.dataset.lv)));
   }
-  $('#c-share').addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(shareText); $('#c-share').textContent = t('c_copied'); }
-    catch { const ta = document.createElement('textarea'); ta.readOnly = true; ta.value = shareText; ta.rows = 3; ta.style.cssText = 'width:min(320px,90%);font:inherit;border:2px solid var(--line);border-radius:10px;padding:6px'; $('#c-share').replaceWith(ta); ta.select(); }
-  });
+  $('#c-share').addEventListener('click', () => { if (shareData) Share.open(shareData()); });
   function today() { const d = new Date(); return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); }
-  function playDaily() { daily = true; build(today() * 7919, 5); $('#c-ov').hidden = true; $('#c-share').textContent = t('c_share'); render(); levels(); }
-  function playLevel(l) { daily = false; level = l; store.set('level', l); build(l * 104729 + 17, Math.min(7, 4 + Math.floor((l + 1) / 3))); $('#c-ov').hidden = true; render(); levels(); }
+  function playDaily() { daily = true; build(today() * 7919, 5); $('#c-ov').hidden = true; $('#c-share').hidden = true; render(); levels(); }
+  function playLevel(l) { daily = false; level = l; store.set('level', l); build(l * 104729 + 17, Math.min(7, 4 + Math.floor((l + 1) / 3))); $('#c-ov').hidden = true; $('#c-share').hidden = true; render(); levels(); }
   function open() { playLevel(store.get('level', 1)); }
   function label() { if (cells) $('#c-hud').textContent = t('c_hud')(moves, par); }
   $('#c-daily').addEventListener('click', playDaily);
@@ -939,6 +1149,10 @@ $('#snd').addEventListener('click', () => { sound = !sound; store.set('sound', s
 const net = () => document.body.classList.toggle('is-offline', !navigator.onLine);
 addEventListener('online', net); addEventListener('offline', net); net();
 paint();
+if (Share.vs) {
+  const v = Share.vs; $('#vsText').textContent = t('vs_' + v.game)(v.val); $('#vsGo').textContent = t('vs_go'); $('#vs').classList.add('on');
+  $('#vsGo').addEventListener('click', () => { beep(700, 0.08, 'triangle'); if (v.game === 'grid') { store.set('level', v.val); } show(v.game); });
+}
 const start = (location.hash || '').slice(1);
 show(start in views ? start : 'home', false);
 // Keep this page for offline visits (the worker caches nothing else).
