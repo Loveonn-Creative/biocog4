@@ -448,7 +448,7 @@ const Reports = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-semibold mb-2 tracking-tight">Carbon Reports</h1>
           <p className="text-muted-foreground">
-            Reports and a certificate from your verified records, ready for banks, buyers and investors.
+            Generate ESG compliance reports and certificates for banks, regulators, and carbon buyers
           </p>
         </div>
         
@@ -883,8 +883,8 @@ const Reports = () => {
                   </div>
                   
                   <p className="text-sm text-muted-foreground mb-6">
-                    Share it with banks, investors and buyers. It shows the emissions your documents prove, how much
-                    of each standard they cover, and a fingerprint of the source files.
+                    Share with banks, investors, carbon buyers or regulators. It shows the emissions your documents
+                    evidence, how much of each standard they cover, and a fingerprint of the source files.
                   </p>
                   
                   <Button 
@@ -900,9 +900,9 @@ const Reports = () => {
                     Download certificate
                   </Button>
                   
-                  {latestVerification?.verification_status !== 'verified' && (
+                  {!latestVerification?.verification_status && (
                     <p className="text-xs text-muted-foreground text-center mt-2">
-                      Verify your records to download the certificate
+                      Complete verification to download the certificate
                     </p>
                   )}
                 </CardContent>
