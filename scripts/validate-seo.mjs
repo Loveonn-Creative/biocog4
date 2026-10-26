@@ -138,6 +138,17 @@ async function main() {
     }
   }
   if (!robots.includes(`Sitemap: ${R.SITE_URL}/sitemap.xml`)) fail('robots.txt', 'missing Sitemap line');
+  // No page we ask Google to index may sit under a Disallow rule (rules match by prefix).
+  const disallow = [...robots.matchAll(/^Disallow:\s*(\S+)/gm)].map(m => m[1]);
+  for (const url of expected) {
+    const p = url.slice(R.SITE_URL.length) || '/';
+    const rule = disallow.find(d => p.startsWith(d));
+    if (rule) fail('robots.txt', `${p} is in the sitemap but blocked by "Disallow: ${rule}"`);
+  }
+  // Answer pages are owner-written: QAPage (for user-posted answers) must not come back.
+  for (const file of walk(DIST).filter(f => f.endsWith('.html'))) {
+    if (fs.readFileSync(file, 'utf8').includes('"QAPage"')) { fail(path.relative(DIST, file), 'uses QAPage markup; answers are Article + FAQPage'); break; }
+  }
 
   // Claims gate across everything a visitor or crawler can receive. CSS is
   // skipped because durations like ".47s" are not claims.

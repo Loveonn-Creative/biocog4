@@ -494,13 +494,39 @@ function answerRoutes(): SeoRoute[] {
         ...(a.sources?.length ? [{ p: `Sources: ${a.sources.map(s => `[${s.label}](${s.url})`).join(', ')}` } as Block] : []),
       ],
       breadcrumbs: crumbs,
-      jsonLd: [breadcrumbLd(crumbs), {
-        '@context': 'https://schema.org', '@type': 'QAPage',
-        mainEntity: { '@type': 'Question', name: a.q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: [a.short, ...a.body].join(' '), author: ORG_REF } },
-      }],
+      jsonLd: [breadcrumbLd(crumbs), ...answerJsonLd({ path, question: a.q, answer: [a.short, ...a.body].join(' '), description: a.short })],
       priority: 0.6, changefreq: 'monthly' as const,
     };
   }), ...answerLibraryAll.map(a => libraryRoute(a, hubCrumbs))];
+}
+
+/** A reviewed date (YYYY-MM-DD) as a full date-time in India time: Google rejects date-only values here. */
+export const istDateTime = (d?: string) => (d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d}T00:00:00+05:30` : undefined);
+
+/**
+ * Senseible writes these answers itself, so each page is an Article with a
+ * one-question FAQ. QAPage is only for pages where users post answers, and
+ * Search Console flags it here for forum fields (votes, answer URLs) that
+ * owner-written pages cannot honestly carry.
+ */
+export function answerJsonLd(o: { path: string; question: string; answer: string; description?: string; reviewed?: string; citations?: string[]; lang?: string }) {
+  const when = istDateTime(o.reviewed);
+  const lang = o.lang ? { inLanguage: o.lang } : {};
+  return [
+    {
+      '@context': 'https://schema.org', '@type': 'Article', ...lang,
+      headline: o.question.length > 110 ? `${o.question.slice(0, 107).trimEnd()}...` : o.question,
+      ...(o.description ? { description: o.description } : {}),
+      author: ORG_REF, publisher: { ...ORG_REF, logo: ORGANIZATION.logo },
+      mainEntityOfPage: canonicalUrl(o.path),
+      ...(when ? { datePublished: when, dateModified: when } : {}),
+      ...(o.citations?.length ? { citation: o.citations } : {}),
+    },
+    {
+      '@context': 'https://schema.org', '@type': 'FAQPage', ...lang,
+      mainEntity: [{ '@type': 'Question', name: o.question, acceptedAnswer: { '@type': 'Answer', text: o.answer } }],
+    },
+  ];
 }
 
 /** One answer library page: sections, worked example, what Senseible does, links and sources. */
@@ -529,13 +555,7 @@ function libraryRoute(a: LibraryAnswer, hubCrumbs: { name: string; path: string 
     path, section: 'guide', ...answerMeta(a), h1: a.q,
     blocks: libraryBlocks(a),
     breadcrumbs: crumbs,
-    jsonLd: [breadcrumbLd(crumbs), {
-      '@context': 'https://schema.org', '@type': 'QAPage', dateModified: a.reviewed,
-      mainEntity: {
-        '@type': 'Question', name: a.q, answerCount: 1,
-        acceptedAnswer: { '@type': 'Answer', text, dateModified: a.reviewed, author: ORG_REF, citation: a.sources.map(s => s.url) },
-      },
-    }],
+    jsonLd: [breadcrumbLd(crumbs), ...answerJsonLd({ path, question: a.q, answer: text, description: a.short, reviewed: a.reviewed, citations: a.sources.map(s => s.url) })],
     lastmod: a.reviewed, priority: 0.6, changefreq: 'monthly',
   };
 }
@@ -792,13 +812,7 @@ function hindiRoutes(): SeoRoute[] {
         { p: `[Read in English](/answers/${a.slug})` } as Block,
       ],
       breadcrumbs: crumbs,
-      jsonLd: [breadcrumbLd(crumbs), {
-        '@context': 'https://schema.org', '@type': 'QAPage', inLanguage: 'hi', dateModified: a.reviewed,
-        mainEntity: {
-          '@type': 'Question', name: a.q, answerCount: 1, inLanguage: 'hi',
-          acceptedAnswer: { '@type': 'Answer', text, inLanguage: 'hi', dateModified: a.reviewed, author: ORG_REF, citation: a.sources.map(s => s.url) },
-        },
-      }],
+      jsonLd: [breadcrumbLd(crumbs), ...answerJsonLd({ path, question: a.q, answer: text, description: a.short, reviewed: a.reviewed, citations: a.sources.map(s => s.url), lang: 'hi' })],
       lastmod: a.reviewed, priority: 0.5, changefreq: 'monthly' as const,
     }];
   });
