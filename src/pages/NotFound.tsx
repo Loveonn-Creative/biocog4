@@ -152,6 +152,16 @@ const NotFound = () => {
           <Link to="/" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Upload an invoice</Link>
           <Link to="/platform" className="px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">Show me what my business can gain</Link>
         </div>
+
+        {/* Chai Break Arcade is a static page (public/play), so a full page load, not a router link. */}
+        <a href="/play/" className="group inline-flex items-center gap-2 mt-9 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <svg width="22" height="22" viewBox="0 0 30 30" aria-hidden="true" className="shrink-0">
+            <path d="M6 12h15v8a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6z" fill="#e9a92a" stroke="currentColor" strokeWidth="2.2" />
+            <path d="M21 14h2.5a3 3 0 0 1 0 6H21" fill="none" stroke="currentColor" strokeWidth="2.2" />
+            <path d="M10 9c-1-2 1-3 0-5M14.5 9c-1-2 1-3 0-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+          <span>Raasta bhatak gaye? Chai break le lo. <span className="font-medium text-foreground underline underline-offset-4 decoration-dotted group-hover:decoration-solid">Teen chhote games</span></span>
+        </a>
       </main>
     </div>
   );
