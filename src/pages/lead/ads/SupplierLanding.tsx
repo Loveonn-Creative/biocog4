@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Download, FileText, KeyRound, Lock, PhoneCall, ShieldCheck, Fingerprint, Plug, MessageCircle } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { CopyButton } from "@/components/lead/LeadKit";
@@ -6,7 +7,7 @@ import { AdHeader } from "@/components/lead/ads/AdHeader";
 import { leadEvents } from "@/components/lead/leadEvents";
 import { CallbackForm } from "@/components/lead/ads/CallbackForm";
 import { TrustNames } from "@/components/lead/ads/TrustNames";
-import { BatchClock, OfferBar, OfferPrice, useAdCheckout, useBatch } from "@/components/lead/ads/LaunchOffer";
+import { BatchClock, OfferBar, useBatch } from "@/components/lead/ads/LaunchOffer";
 import { ProofStrip } from "@/components/lead/ads/ProofStrip";
 import { WHATSAPP_NUMBER } from "@/components/services/shell/actions";
 import { downloadKitPdf, supplierKit } from "@/lib/leadMagnets/adKits";
@@ -54,7 +55,6 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   const book = useCallback((where: string) => { leadEvents.cta(analyticsPage, `call_${where}`); setOpen(true); }, [analyticsPage]);
   const close = useCallback(() => { setOpen(false); setPilot(false); }, []);
   const track = useCallback((what: string) => leadEvents.cta(analyticsPage, what), [analyticsPage]);
-  const { buy, checkout } = useAdCheckout(page, track);
   const kit = () => {
     leadEvents.cta(analyticsPage, "kit_download");
     void downloadKitPdf(supplierKit(plan, "assurance", page), "Senseible-supplier-evidence-kit.pdf", variant === "a" ? [10, 23, 48] : [22, 24, 29]);
@@ -71,7 +71,6 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   const waText = `Hi Senseible, I want to see how you get supplier emissions data. ${planSummary(plan, "assurance")}`;
   const whatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText.slice(0, 600))}`;
   const chat = (where: string) => leadEvents.cta(analyticsPage, `whatsapp_${where}`);
-  const quoteWa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi Senseible, I'd like a Scale quote. We have about ${suppliers || "100+"} suppliers.`)}`;
   const Hero = variant === "a" ? (
     <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
       <div>
@@ -183,34 +182,24 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
 
         <section className="mx-auto max-w-6xl px-5 pb-20">
           <BatchClock b={b} what="supplier onboarding" />
-          <h2 className="mt-8 text-[12px] font-semibold uppercase tracking-[.16em] opacity-70">Start with one supplier. Scale to all of them.</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="grid content-start gap-2 rounded-2xl bg-[var(--lp-soft)] p-5">
-              <span className="font-mono text-[11px] font-semibold uppercase opacity-70">Start</span>
-              <h3 className="text-[13px] font-semibold uppercase tracking-wider opacity-80">Pro · yearly</h3>
-              <OfferPrice plan="pro" onBuy={() => buy("pro")} />
-              <ul className="mt-1 space-y-1.5 text-sm"><li>✓ Your key suppliers, read from their bills</li><li>✓ Reports for GHG Protocol, CBAM, BRSR</li><li>✓ 10 team members</li></ul>
+          {/* Enterprise buyers see enterprise pricing, never MSME plans (owner, 26 October 2026). */}
+          <div className="mt-8 flex flex-col gap-4 rounded-2xl bg-[var(--lp-pick-bg)] p-6 ring-2 ring-[var(--lp-cta)] sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="lp-display text-3xl">Pay as you add suppliers.</h2>
+              <p className="mt-1 text-[15px] opacity-80">One quote for your suppliers and your team. No ERP access needed.</p>
             </div>
-            <div className="grid content-start gap-2 rounded-2xl bg-[var(--lp-pick-bg)] p-5 ring-2 ring-[var(--lp-cta)]">
-              <span className="font-mono text-[11px] font-semibold uppercase opacity-70">For 100+ suppliers</span>
-              <h3 className="text-[13px] font-semibold uppercase tracking-wider opacity-80">Scale</h3>
-              <p className="lp-display text-3xl">Custom quote</p>
-              <p className="text-[13px] opacity-70">Priced to your supplier count</p>
-              <a href={quoteWa} target="_blank" rel="noopener noreferrer" onClick={() => chat("quote")} className="lp-buy mt-2 inline-flex h-11 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-bold"><MessageCircle className="h-4 w-4" /> Get my quote</a>
-              <ul className="mt-1 space-y-1.5 text-sm"><li>✓ Supplier invitations and portal</li><li>✓ ERP, email and WhatsApp intake, built to your stack</li><li>✓ Every tier, every entity</li></ul>
-            </div>
+            <Link to="/enterprise/pricing" onClick={() => track("enterprise_pricing")} className="lp-buy inline-flex h-12 shrink-0 items-center justify-center gap-1.5 self-start rounded-full px-6 text-sm font-bold sm:self-auto">See enterprise pricing <ArrowRight className="h-4 w-4" /></Link>
           </div>
           {/* Pilot: the smallest yes for a buyer not ready to roll out (owner approved, 22 October 2026) */}
           <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-dashed border-[var(--lp-line)] p-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-[52ch]"><strong>Not ready to roll out?</strong> Pilot it on 10 to 15 of your suppliers and see their real numbers before you decide.</p>
+            <p className="max-w-[52ch]"><strong>Not ready to roll out?</strong> Start with a few of your suppliers and see their real numbers before you decide.</p>
             <button type="button" onClick={() => { setPilot(true); book("pilot"); }} className="inline-flex h-11 shrink-0 items-center gap-1.5 self-start rounded-full border border-[var(--lp-line)] px-5 text-sm font-bold sm:self-auto">Start a pilot <ArrowRight className="h-4 w-4" /></button>
           </div>
           <button type="button" onClick={() => book("plans")} className="lp-cta mt-8 inline-flex h-14 items-center gap-2 rounded-full px-7 text-base font-bold">Book a 10-minute call <ArrowRight className="h-5 w-5" /></button>
         </section>
       </main>
       <OfferBar b={b} onBook={() => book("bar")} hidden={open} whatsapp={whatsapp} onWhatsApp={() => chat("bar")} />
-      {checkout}
-      <CallbackForm open={open} onClose={close} page={page} analyticsPage={analyticsPage} category="enterprise" industries={INDUSTRIES} summary={`${pilot ? "Pilot request: 10 to 15 suppliers. " : ""}${planSummary(plan, "assurance")}`} askCompany themeClass={theme} />
+      <CallbackForm open={open} onClose={close} page={page} analyticsPage={analyticsPage} category="enterprise" industries={INDUSTRIES} summary={`${pilot ? "Pilot request: a few suppliers first. " : ""}${planSummary(plan, "assurance")}`} askCompany themeClass={theme} />
     </div>
   );
 }
