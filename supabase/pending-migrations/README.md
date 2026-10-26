@@ -390,14 +390,14 @@ Roll back with `rollback/20261108100000_enterprise_billing.rollback.sql` (needs 
 
 ## 20261109100000_enterprise_seats_and_question_billing.sql
 
-Owner approved, 26 October 2026. Enterprise teams are no longer held to the owner's personal plan seats (ceiling 1,000; seats past the quote are billed yearly), and extra Superintelligence questions are billed per 1,000 instead of 1,000 times over. Tested: `tests/run_enterprise_seats_questions.sh`. Roll back with `rollback/20261109100000_enterprise_seats_and_question_billing.rollback.sql`.
+Enterprise teams are no longer held to the owner's personal plan seats (ceiling 1,000; seats past the quote are billed yearly), and extra Superintelligence questions are billed per 1,000 instead of 1,000 times over. Tested: `tests/run_enterprise_seats_questions.sh`. Roll back with `rollback/20261109100000_enterprise_seats_and_question_billing.rollback.sql`.
 
 ## 20261110100000_enterprise_limits_and_supplier_claims.sql
 
-Owner approved, 26 October 2026. Apply after 20261109.
+Apply after 20261109.
 
 - **Custom limits.** Each enterprise's quote sets its numbers and, per item, whether it stops at the limit or carries on and bills the extra. Existing enterprises keep billing everything at the stored rates until staff set their terms, for example:
-  `UPDATE public.enterprise_access SET supplier_limit = 120, seats_included = 15, questions_per_month = 3000, over_limit = '{"suppliers":"bill","seats":"stop","questions":"stop"}', rates = '{"supplier":99900}' WHERE email = '<enterprise email>';`
+  `UPDATE public.enterprise_access SET supplier_limit = <n>, seats_included = <n>, questions_per_month = <n>, over_limit = '{"seats":"stop","questions":"stop"}', rates = '{"supplier":<paise>}' WHERE email = '<enterprise email>';`
   Items: suppliers, seats, reads, reports, reminders, questions. Rates: supplier, seat, reads_100, report, reminder, questions_1000 (paise). A supplier counts once per contract year. Covered supplier reads stop when the request expires. `my_enterprise_usage()` feeds the usage card on Profile (amounts for owners and admins only).
 - **Supplier claims.** A link claims only its own request. Forwarded links still work; the buyer sees the email that opened the request and can press Send new link (`service_reset_supplier_link`, once a day), which removes that account, stops its shares counting and sends the supplier a fresh link. Reminders keep the earlier links working.
 
