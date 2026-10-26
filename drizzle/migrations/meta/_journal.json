@@ -253,6 +253,13 @@
       "when": 1792948496534,
       "tag": "0035_enterprise_billing",
       "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1793039528582,
+      "tag": "0036_enterprise_seats_and_question_billing",
+      "breakpoints": true
     }
   ]
 }

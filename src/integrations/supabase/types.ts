@@ -4472,6 +4472,7 @@ export type Database = {
           status: string
         }[]
       }
+      owner_plan_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owner_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
