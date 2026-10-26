@@ -22,6 +22,7 @@ import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages, chunkPagesFor } from '@/lib/pdfLimit';
 import { pageCountingActive } from '@/hooks/useInvoiceAllowance';
 import { prepareImageForUpload } from '@/lib/imageUpload';
+import { GUEST_MAX_BYTES } from '../../supabase/functions/_shared/guestScan';
 import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
@@ -119,6 +120,7 @@ interface ExtractedData {
 
 // Signed-in files above this are refused by the server (inline AI requests top out near 20 MB).
 const MAX_UPLOAD_BYTES = 15 * 1024 * 1024;
+const mb = (bytes: number) => (bytes / 1048576).toFixed(1);
 // The read runs inside a 150 s edge limit; stop waiting a little after it.
 const READ_TIMEOUT_MS = 160_000;
 
@@ -524,7 +526,12 @@ const Index = () => {
   const processDocument = async (file: File, opts: { reread?: boolean; enteredKwh?: number } = {}) => {
     lastFileRef.current = file;
     if (file.size > MAX_UPLOAD_BYTES) {
-      toast.error(`This file is ${(file.size / 1048576).toFixed(1)} MB; the limit is 15 MB. Take a photo of the page, or save the PDF at a lower quality.`, { duration: 7000 });
+      toast.error(`This file is ${mb(file.size)} MB; the limit is 15 MB. Take a photo of the page, or save the PDF at a lower quality.`, { duration: 7000 });
+      return;
+    }
+    // Guests: photos are shrunk to fit below; a PDF must already fit.
+    if (!user && file.size > GUEST_MAX_BYTES && !file.type.startsWith('image/')) {
+      toast.error(`This file is ${mb(file.size)} MB. Without an account the limit is ${GUEST_MAX_BYTES / 1048576} MB; take a photo of the bill, or sign in for 15 MB.`, { duration: 7000 });
       return;
     }
     const chunk = chunkPagesFor(await pageCountingActive(user?.id));
@@ -566,7 +573,12 @@ const Index = () => {
         }
       }
       // Large photos are resized first, so the upload is quick on mobile networks.
-      const sendFile = await prepareImageForUpload(file);
+      const sendFile = await prepareImageForUpload(file, user ? undefined : GUEST_MAX_BYTES);
+      if (!user && sendFile.size > GUEST_MAX_BYTES) {
+        setState("idle");
+        toast.error(`This photo is ${mb(sendFile.size)} MB even after shrinking. Without an account the limit is ${GUEST_MAX_BYTES / 1048576} MB; sign in for 15 MB.`, { duration: 7000 });
+        return;
+      }
       const imageBase64 = await fileToBase64(sendFile);
       const mimeType = sendFile.type || 'image/jpeg';
 

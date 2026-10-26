@@ -96,7 +96,7 @@
     "what-can-i-upload": {
       "q": "Tôi có thể tải lên những gì?",
       "a": "Tệp PDF hoặc ảnh chụp hóa đơn.",
-      "facts": [["Loại tệp", "PDF, JPG, PNG, WEBP, HEIC"], ["Dung lượng", "10 MB khi chưa có tài khoản, 15 MB khi đã đăng nhập"], ["Cùng lúc", "Tối đa 10 tệp"]],
+      "facts": [["Loại tệp", "PDF, JPG, PNG, WEBP, HEIC"], ["Dung lượng", "2 MB khi chưa có tài khoản, 15 MB khi đã đăng nhập"], ["Cùng lúc", "Tối đa 10 tệp"]],
       "steps": ["Hóa đơn thuế, hóa đơn tiền điện, phiếu nhiên liệu và chứng từ vận chuyển hàng hóa đều được đọc.", "Tài liệu khác sẽ nhận một thông báo và không tốn lượt đọc."],
       "cta": "Tải hóa đơn lên",
       "keywords": ["tệp", "ảnh", "dung lượng", "định dạng"]
@@ -205,7 +205,7 @@
     "could not read this file": "Chụp ảnh rõ hơn và thấy toàn bộ trang, hoặc tải lên tệp PDF gốc.",
     "not supported for carbon accounting": "Hãy tải lên hóa đơn, hóa đơn tiền điện, phiếu nhiên liệu hoặc chứng từ vận chuyển hàng hóa.",
     "invoices today without an account": "Đó là giới hạn mỗi ngày khi chưa có tài khoản. Đăng nhập miễn phí để tiếp tục và lưu kết quả.",
-    "the limit is 10 mb": "Khi chưa có tài khoản, tệp tối đa 10 MB. Hãy chụp ảnh trang, hoặc đăng nhập để dùng 15 MB.",
+    "the limit is 2 mb": "Khi chưa có tài khoản, tệp tối đa 2 MB. Hãy chụp ảnh trang, hoặc đăng nhập để dùng 15 MB.",
     "the limit is 15 mb": "Chụp ảnh trang, hoặc lưu PDF với chất lượng thấp hơn.",
     "already in your records": "Không cần làm gì. Hóa đơn đó đã được lưu và chỉ tính một lần.",
     "session has expired": "Đăng nhập lại rồi thử lại.",

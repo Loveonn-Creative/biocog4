@@ -52,7 +52,7 @@ Not to report Scope 1. GLEC and ISO 14083 matter when customers ask for emission
 
 - [GLEC Framework explained](/climate-intelligence/glec-framework-explained-msme-freight-emissions)
 - [Scope 1 emissions for manufacturers in India](/climate-intelligence/manufacturing-scope-1-emissions-india)
-- [Carbon audit for logistics businesses in India](/solutions/carbon-audit-logistics-india)
+- [Emissions for logistics businesses](/industries/logistics)
 
 ## Sources
 

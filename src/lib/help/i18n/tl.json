@@ -96,7 +96,7 @@
     "what-can-i-upload": {
       "q": "Ano ang puwede kong i-upload?",
       "a": "PDF o litrato ng bill mo.",
-      "facts": [["Uri ng file", "PDF, JPG, PNG, WEBP, HEIC"], ["Laki ng file", "10 MB kung walang account, 15 MB kung naka-sign in"], ["Sabay-sabay", "Hanggang 10 file"]],
+      "facts": [["Uri ng file", "PDF, JPG, PNG, WEBP, HEIC"], ["Laki ng file", "2 MB kung walang account, 15 MB kung naka-sign in"], ["Sabay-sabay", "Hanggang 10 file"]],
       "steps": ["Binabasa ang mga tax invoice, bill sa kuryente, resibo ng gasolina at record ng padala ng kargamento.", "Ang ibang dokumento ay makakatanggap ng message at hindi gagamit ng read."],
       "cta": "Mag-upload ng bill",
       "keywords": ["file", "litrato", "laki"]
@@ -205,7 +205,7 @@
     "could not read this file": "Kumuha ng mas malinaw na litrato na kita ang buong page, o i-upload ang orihinal na PDF.",
     "not supported for carbon accounting": "Mag-upload ng invoice, bill sa kuryente, resibo ng gasolina o record ng padala ng kargamento.",
     "invoices today without an account": "Iyan ang araw-araw na limit kung walang account. Mag-sign in nang libre para magpatuloy at maitago ang mga resulta mo.",
-    "the limit is 10 mb": "Kung walang account, hanggang 10 MB ang file. Kunan ng litrato ang page, o mag-sign in para sa 15 MB.",
+    "the limit is 2 mb": "Kung walang account, hanggang 2 MB ang file. Kunan ng litrato ang page, o mag-sign in para sa 15 MB.",
     "the limit is 15 mb": "Kunan ng litrato ang page, o i-save ang PDF sa mas mababang kalidad.",
     "already in your records": "Wala kang kailangang gawin. Naka-save na ang invoice na iyan at isang beses lang bibilangin.",
     "session has expired": "Mag-sign in ulit, saka subukan ulit.",

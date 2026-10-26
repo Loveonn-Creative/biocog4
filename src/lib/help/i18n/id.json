@@ -96,7 +96,7 @@
     "what-can-i-upload": {
       "q": "Apa saja yang bisa saya unggah?",
       "a": "PDF atau foto tagihan Anda.",
-      "facts": [["Jenis file", "PDF, JPG, PNG, WEBP, HEIC"], ["Ukuran file", "10 MB tanpa akun, 15 MB jika masuk"], ["Sekaligus", "Hingga 10 file"]],
+      "facts": [["Jenis file", "PDF, JPG, PNG, WEBP, HEIC"], ["Ukuran file", "2 MB tanpa akun, 15 MB jika masuk"], ["Sekaligus", "Hingga 10 file"]],
       "steps": ["Faktur pajak, tagihan listrik, struk bahan bakar, dan catatan pengiriman barang dapat dibaca.", "Dokumen lain mendapat pesan dan tidak memakai bacaan."],
       "cta": "Unggah tagihan",
       "keywords": ["file", "foto", "ukuran", "format"]
@@ -205,7 +205,7 @@
     "could not read this file": "Ambil foto yang lebih tajam dengan seluruh halaman terlihat, atau unggah PDF aslinya.",
     "not supported for carbon accounting": "Unggah faktur, tagihan listrik, struk bahan bakar, atau catatan pengiriman barang.",
     "invoices today without an account": "Itu batas harian tanpa akun. Masuk gratis untuk melanjutkan dan menyimpan hasil Anda.",
-    "the limit is 10 mb": "Tanpa akun, file bisa sampai 10 MB. Foto halamannya, atau masuk untuk 15 MB.",
+    "the limit is 2 mb": "Tanpa akun, file bisa sampai 2 MB. Foto halamannya, atau masuk untuk 15 MB.",
     "the limit is 15 mb": "Foto halamannya, atau simpan PDF dengan kualitas lebih rendah.",
     "already in your records": "Tidak perlu apa-apa. Faktur itu sudah tersimpan dan dihitung sekali.",
     "session has expired": "Masuk lagi, lalu coba kembali.",
