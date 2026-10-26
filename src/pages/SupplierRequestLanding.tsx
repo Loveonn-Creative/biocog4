@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useQuery } from '@tanstack/react-query';
 import { Loader2 } from 'lucide-react';
-import { toast } from 'sonner';
 import { untypedRpc } from '@/hooks/useOrganization';
 import { useSession } from '@/hooks/useSession';
 import { Button } from '@/components/ui/button';
@@ -26,15 +25,23 @@ export default function SupplierRequestLanding() {
     },
   });
   const [opening, setOpening] = useState(false);
+  // Tried once per visit; a refused link shows why instead of retrying.
+  const [refused, setRefused] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!user || !preview.data || preview.data.expired || opening) return;
+    if (!user || !preview.data || preview.data.expired || opening || refused) return;
     setOpening(true);
     void untypedRpc('accept_supplier_request', { p_token: token }).then(({ data, error }) => {
-      if (error) { toast.error(error.message.includes('another supplier') ? 'This request was sent to a different email or GSTIN. Sign in with that account.' : 'This request is closed or has expired.'); setOpening(false); return; }
+      if (error) {
+        setRefused(error.message.includes('another supplier')
+          ? `Someone else has already opened this request. Ask ${preview.data?.company_name ?? 'the buyer'} to send you a new link.`
+          : 'This request is closed or has expired.');
+        setOpening(false);
+        return;
+      }
       navigate(`/supplier-share/${data as string}`, { replace: true });
     });
-  }, [user, preview.data, token, navigate, opening]);
+  }, [user, preview.data, token, navigate, opening, refused]);
 
   const p = preview.data;
   return (
@@ -45,6 +52,8 @@ export default function SupplierRequestLanding() {
           <div className="flex justify-center py-16"><Loader2 className="w-6 h-6 animate-spin text-primary" /></div>
         ) : !p ? (
           <p className="rounded-xl border p-6 text-sm">This link does not work. Ask the buyer to send it again.</p>
+        ) : refused ? (
+          <p className="rounded-xl border p-6 text-sm">{refused}</p>
         ) : p.expired ? (
           <p className="rounded-xl border p-6 text-sm">This request from {p.company_name} has closed. Ask them to send a new one.</p>
         ) : (

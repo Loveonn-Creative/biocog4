@@ -105,13 +105,31 @@ serve(async (req) => {
     const { data, error } = await admin.rpc('service_reissue_supplier_link', { p_request_id: body.requestId, p_caller: callerId, p_valid_days: 30 });
     if (error) {
       const status = error.code === '42501' ? 403 : 409;
-      return json({ error: /3 days/.test(error.message) ? 'Already reminded in the last 3 days.' : /open requests/.test(error.message) ? 'This request is already closed.' : ROLE_MSG }, status);
+      return json({ error: /3 days/.test(error.message) ? 'Already reminded in the last 3 days.' : /open requests/.test(error.message) ? 'This request is already closed.'
+        : /reminder limit/.test(error.message) ? 'You’ve used the reminders in your quote. Contact us to add more.' : ROLE_MSG }, status);
     }
     const r = Array.isArray(data) ? data[0] : data;
     if (!r?.supplier_email) return json({ ok: true, emailed: false });
     const mail = requestEmail({
       siteUrl: SITE_URL, token: r.token, companyName: r.company_name, supplierName: r.supplier_name, buys: null,
       periodStart: r.period_start, periodEnd: r.period_end, expiresAt: new Date(Date.now() + 30 * 86400000).toISOString(), reminder: true,
+    });
+    return json({ ok: true, emailed: await send(r.supplier_email, mail.subject, mail.html) });
+  }
+
+  // Send new link: removes whoever opened the request and sends the supplier a fresh link.
+  if (body?.action === 'reset') {
+    if (typeof body.requestId !== 'string') return json({ error: 'Pick a request.' }, 400);
+    const { data, error } = await admin.rpc('service_reset_supplier_link', { p_request_id: body.requestId, p_caller: callerId, p_valid_days: 30 });
+    if (error) {
+      const status = error.code === '42501' ? 403 : 409;
+      return json({ error: /last day/.test(error.message) ? 'You sent a new link today. Try again tomorrow.' : /open requests/.test(error.message) ? 'This request is already closed.' : ROLE_MSG }, status);
+    }
+    const r = Array.isArray(data) ? data[0] : data;
+    if (!r?.supplier_email) return json({ ok: true, emailed: false });
+    const mail = requestEmail({
+      siteUrl: SITE_URL, token: r.token, companyName: r.company_name, supplierName: r.supplier_name, buys: null,
+      periodStart: r.period_start, periodEnd: r.period_end, expiresAt: new Date(Date.now() + 30 * 86400000).toISOString(),
     });
     return json({ ok: true, emailed: await send(r.supplier_email, mail.subject, mail.html) });
   }

@@ -18,6 +18,10 @@ export interface SupplierRequestRow {
   expires_at: string;
   shared_at: string | null;
   last_reminded_at: string | null;
+  /** Email of the account that opened the request (set once claimed). */
+  claimed_email?: string | null;
+  /** When the buyer last used Send new link; shares from before it no longer count. */
+  link_reset_at?: string | null;
 }
 
 export interface SupplierSnapshotRow {
@@ -61,6 +65,8 @@ export interface SupplierLine {
   grade: 'A' | 'B' | 'C' | 'D' | null;
   canRemind: boolean;
   snapshotHash: string | null;
+  /** Email of whoever opened the request, when it is not the address it was sent to. */
+  openedBy: string | null;
 }
 
 /** Days after sending before an unshared request counts as overdue. */
@@ -92,8 +98,10 @@ export function gradeFor(verifiedKg: number, kg: number): SupplierLine['grade'] 
 }
 
 export function buildLines(requests: SupplierRequestRow[], snapshots: SupplierSnapshotRow[], now = Date.now()): SupplierLine[] {
+  const resetAt = new Map(requests.filter((r) => r.link_reset_at).map((r) => [r.id, Date.parse(r.link_reset_at!)]));
   const latest = new Map<string, SupplierSnapshotRow>();
   for (const s of snapshots) {
+    if (Date.parse(s.created_at) < (resetAt.get(s.request_id) ?? -Infinity)) continue;
     const prev = latest.get(s.request_id);
     if (!prev || s.created_at > prev.created_at) latest.set(s.request_id, s);
   }
@@ -123,6 +131,7 @@ export function buildLines(requests: SupplierRequestRow[], snapshots: SupplierSn
         grade: proof === 'bills' ? gradeFor(Number(snap!.verified_kg), billKg) : proof === 'own_number' ? 'D' : null,
         canRemind: (status === 'waiting' || status === 'opened' || status === 'overdue') && !!r.supplier_email && !remindedRecently,
         snapshotHash: snap?.snapshot_hash ?? null,
+        openedBy: r.claimed_email && r.claimed_email !== r.supplier_email ? r.claimed_email : null,
       };
     })
     .sort((a, b) => b.kg - a.kg || (b.purchaseSharePct ?? 0) - (a.purchaseSharePct ?? 0) || a.name.localeCompare(b.name));

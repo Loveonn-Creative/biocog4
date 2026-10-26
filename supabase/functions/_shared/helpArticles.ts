@@ -22,7 +22,7 @@
 //   service_reissue_supplier_link in the pilot migration; included reminders
 //   and overage: count_supplier_reminder in the billing migration); overdue after 14 days and grades
 //   _shared/supplierPilot.ts; Ask questions _shared/enterpriseBrief.ts and
-//   enterprise-intelligence (counted monthly, extra billed, never blocked);
+//   enterprise-intelligence (counted monthly; past the quote it stops or bills, per enterprise_access.over_limit);
 //   quote and overage: owner decision, 25 October 2026 (rates never shown)
 //   encryption and isolation: src/pages/Trust.tsx and src/pages/EnterprisePricing.tsx
 //   supplier side: what is shared is share_with_enterprise and the consent text in
@@ -304,7 +304,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
     section: 'enterprise',
     q: 'How do I get enterprise access?',
     a: 'We set it up for your company. Then sign in with the email we set it up for.',
-    steps: ['New to Senseible? Create an account with that email and confirm it first.', 'Your supplier dashboard opens as soon as you sign in.', 'Ask us to add your team. We set up the seats in your quote.'],
+    steps: ['New to Senseible? Create an account with that email and confirm it first.', 'Your supplier dashboard opens as soon as you sign in.', 'Add your team on the Team page and give each person a role.'],
     cta: { label: 'Enterprise sign-in', to: '/enterprise/sign-in' },
     keywords: ['enterprise', 'access', 'sign in', 'login', 'set up', 'onboarding', 'company account', 'buyer account'],
     pages: ['/enterprise/dashboard', '/enterprise/pricing'],
@@ -315,7 +315,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
     section: 'enterprise',
     q: 'How do I ask suppliers for their emissions?',
     a: 'Pick the reporting year at the top, press Ask suppliers, and add one supplier per line.',
-    steps: ['Each line: name, email or GSTIN, what you buy, and % of purchases. Pasting from a spreadsheet works.', 'Suppliers with an email get a private link. Suppliers added by GSTIN see the request when they sign in.', 'Remind a supplier with an email once every 3 days. Each reminder sends a fresh 30-day link.'],
+    steps: ['Each line: name, email or GSTIN, what you buy, and % of purchases. Pasting from a spreadsheet works.', 'Suppliers with an email get a private link. Suppliers added by GSTIN see the request when they sign in.', 'You can remind suppliers you added by email once every 3 days. Reminders use the same link.', 'If someone else opens the link, you see their email next to the supplier. Press Send new link to cut their access, drop anything they shared and send your supplier a new link.'],
     facts: [['Link valid for', '30 days'], ['Marked overdue', 'After 14 days, or when the link expires']],
     keywords: ['invite suppliers', 'ask suppliers', 'request', 'supplier email', 'remind', 'reminder', 'gstin', 'onboard suppliers'],
     pages: ['/enterprise/dashboard'],
@@ -354,7 +354,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
     section: 'enterprise',
     q: 'What can I ask about my suppliers?',
     a: 'Where to focus, whom to chase first, and which change cuts the most, answered from your supplier records.',
-    steps: ['Answers use only the suppliers and figures on your dashboard for the year you picked.', 'It answers only from those figures and never puts a number on savings or costs. If something is missing, it says what to collect.', 'Your quote includes a number of questions each month, shown above the box. Past it you can keep asking; the extra goes on your next bill.'],
+    steps: ['Answers use only the suppliers and figures on your dashboard for the year you picked.', 'It answers only from those figures and never puts a number on savings or costs. If something is missing, it says what to collect.', 'You can see how many questions you have left this month above where you type. Past that, they stop or go on your invoice, as agreed.'],
     keywords: ['superintelligence', 'ask', 'ai', 'question', 'where to focus', 'hotspot', 'reduce', 'investment', 'chat'],
     pages: ['/enterprise/dashboard'],
   },
@@ -362,8 +362,8 @@ export const HELP_ARTICLES: HelpArticle[] = [
     slug: 'enterprise-quote',
     section: 'enterprise',
     q: 'What does my quote include, and what if we go past it?',
-    a: 'Your quote sets your suppliers, team seats, report downloads, reminders, bill reads for your suppliers and questions each month.',
-    steps: ['Go past suppliers, downloads, reminders, reads or questions and nothing stops: you pay only for the extra, on your next bill.', 'Suppliers never pay to share with you.'],
+    a: 'We agree your limits before you start: suppliers, team seats, report downloads, reminders, supplier bills read and questions each month.',
+    steps: ['For each one we also agree what happens at the limit: it stops, or the extra goes on your invoice.', 'Profile shows what your team has used and any extra so far this contract year.', 'Suppliers never pay to share with you.'],
     cta: { label: 'Enterprise pricing', to: '/enterprise/pricing' },
     keywords: ['quote', 'price', 'pricing', 'limit', 'overage', 'extra', 'seats', 'bill', 'invoice', 'pay as you go'],
     pages: ['/enterprise/dashboard', '/enterprise/pricing'],
