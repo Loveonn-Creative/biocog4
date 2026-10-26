@@ -420,11 +420,11 @@ const Reports = () => {
         methodologyVersion,
         formatDate,
       });
-      doc.save(`verified-emissions-record-${new Date().toISOString().split('T')[0]}.pdf`);
-      toast.success('Verified emissions record downloaded');
+      doc.save(`verified-emissions-certificate-${new Date().toISOString().split('T')[0]}.pdf`);
+      toast.success('Certificate downloaded');
     } catch (error) {
       console.error('Certificate generation error:', error);
-      toast.error('Could not generate the verified emissions record');
+      toast.error('Could not create the certificate. Try again.');
     } finally {
       setIsGenerating(false);
     }
@@ -477,7 +477,7 @@ const Reports = () => {
             ) : null}
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="reports">Reports</TabsTrigger>
-              <TabsTrigger value="certificates">Reviewed record</TabsTrigger>
+              <TabsTrigger value="certificates">Certificate</TabsTrigger>
             </TabsList>
             
             <TabsContent value="reports" className="space-y-6">
@@ -857,13 +857,13 @@ const Reports = () => {
             </TabsContent>
             
             <TabsContent value="certificates" className="space-y-6">
-              {/* Verified emissions record (certificatePdf.ts) */}
+              {/* Verified Emissions Certificate (certificatePdf.ts) */}
               <Card className="border-success/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <Award className="h-4 w-4 shrink-0 text-success" />
                     <div>
-                      <span>Verified Emissions Record</span>
+                      <span>Verified Emissions Certificate</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
                         Verified by Senseible, expert-supervised
                       </p>
@@ -897,12 +897,12 @@ const Reports = () => {
                     ) : (
                       <Award className="h-4 w-4" />
                     )}
-                    Download reviewed record
+                    Download certificate
                   </Button>
                   
                   {!latestVerification?.verification_status && (
                     <p className="text-xs text-muted-foreground text-center mt-2">
-                      Complete verification to download the reviewed record
+                      Complete verification to download the certificate
                     </p>
                   )}
                 </CardContent>
