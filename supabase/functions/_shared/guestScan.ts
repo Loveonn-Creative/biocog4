@@ -8,8 +8,8 @@ import { detectFileKind } from './fileSignature.ts';
 export const GUEST_DAILY_SCANS = 30;
 /** Backstop per network address, for scripts that mint new guest sessions. Shared office or mobile networks stay well under it. */
 export const GUEST_IP_DAILY_SCANS = 300;
-/** Largest file a guest may send, after base64 decoding. */
-export const GUEST_MAX_BYTES = 10 * 1024 * 1024;
+/** Largest file a guest may send, after base64 decoding (owner, 26 October 2026). Photos are shrunk in the browser to fit. */
+export const GUEST_MAX_BYTES = 2 * 1024 * 1024;
 /** File types the reader accepts from guests. */
 export const GUEST_MIME_TYPES = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/heic', 'image/heif'] as const;
 
@@ -29,7 +29,7 @@ export function guestFileCheck(imageBase64: string, mimeType: unknown): GuestFil
   }
   const bytes = base64Bytes(imageBase64);
   if (bytes > GUEST_MAX_BYTES) {
-    return { ok: false, status: 413, code: 'file_too_large', message: `This file is ${(bytes / 1048576).toFixed(1)} MB. Without an account the limit is 10 MB; try a smaller scan or a photo of the bill.` };
+    return { ok: false, status: 413, code: 'file_too_large', message: `This file is ${(bytes / 1048576).toFixed(1)} MB. Without an account the limit is ${GUEST_MAX_BYTES / 1048576} MB; take a photo of the bill, or sign in for 15 MB.` };
   }
   if (!detectFileKind(imageBase64)) {
     return { ok: false, status: 415, code: 'unsupported_type', message: 'This file is not a PDF or a photo. Upload a PDF or a photo (JPG, PNG, WEBP or HEIC) of the bill.' };

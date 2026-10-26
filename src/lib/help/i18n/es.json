@@ -96,7 +96,7 @@
     "what-can-i-upload": {
       "q": "¿Qué puedo subir?",
       "a": "Un PDF o una foto de tu factura.",
-      "facts": [["Tipos de archivo", "PDF, JPG, PNG, WEBP, HEIC"], ["Tamaño", "10 MB sin cuenta, 15 MB con sesión iniciada"], ["A la vez", "Hasta 10 archivos"]],
+      "facts": [["Tipos de archivo", "PDF, JPG, PNG, WEBP, HEIC"], ["Tamaño", "2 MB sin cuenta, 15 MB con sesión iniciada"], ["A la vez", "Hasta 10 archivos"]],
       "steps": ["Se leen facturas fiscales, recibos de luz, comprobantes de combustible y registros de transporte.", "Cualquier otro documento recibe un mensaje y no gasta ninguna lectura."],
       "cta": "Subir una factura",
       "keywords": ["archivo", "foto", "tamaño", "formato"]
@@ -205,7 +205,7 @@
     "could not read this file": "Toma una foto más nítida con la página completa a la vista, o sube el PDF original.",
     "not supported for carbon accounting": "Sube una factura, un recibo de luz, un comprobante de combustible o un registro de transporte.",
     "invoices today without an account": "Es el límite diario sin cuenta. Inicia sesión gratis para seguir y guardar tus resultados.",
-    "the limit is 10 mb": "Sin cuenta, los archivos pueden pesar hasta 10 MB. Toma una foto de la página o inicia sesión para 15 MB.",
+    "the limit is 2 mb": "Sin cuenta, los archivos pueden pesar hasta 2 MB. Toma una foto de la página o inicia sesión para 15 MB.",
     "the limit is 15 mb": "Toma una foto de la página o guarda el PDF con menos calidad.",
     "already in your records": "No tienes que hacer nada. Esa factura ya está guardada y se cuenta una sola vez.",
     "session has expired": "Vuelve a iniciar sesión y prueba otra vez.",

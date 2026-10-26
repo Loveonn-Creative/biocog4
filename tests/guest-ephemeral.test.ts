@@ -15,11 +15,11 @@ describe('guest limits and file checks', () => {
     expect(base64Bytes(Buffer.from('hello world').toString('base64'))).toBe(11);
     expect(base64Bytes(Buffer.alloc(1000).toString('base64'))).toBe(1000);
   });
-  test('over 10 MB is refused with the size in the message; types outside the list are refused', () => {
+  test('over the guest limit is refused with the size in the message; types outside the list are refused', () => {
     const big = 'A'.repeat(Math.ceil(((GUEST_MAX_BYTES + 1024) * 4) / 3));
     const r = guestFileCheck(big, 'application/pdf');
     expect(r.ok).toBe(false);
-    if (!r.ok) { expect(r.status).toBe(413); expect(r.message).toMatch(/10\.0 MB|10 MB/); }
+    if (!r.ok) { expect(r.status).toBe(413); expect(r.message).toMatch(/2 MB/); }
     const t = guestFileCheck('AAAA', 'application/zip');
     expect(t.ok).toBe(false);
     if (!t.ok) expect(t.status).toBe(415);

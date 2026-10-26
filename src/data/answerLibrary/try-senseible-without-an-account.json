@@ -12,7 +12,7 @@
       "ul": [
         "Up to 30 invoices or bills per device per day, counted on India time. Only reads that succeed count towards it.",
         "One network address, such as a shared office connection, has a separate cap of 300 reads a day.",
-        "Up to 10 MB per file.",
+        "Up to 2 MB per file. Phone photos are shrunk to fit.",
         "PDF, JPEG, PNG, WebP or HEIC files, such as a phone photo of a bill.",
         "These limits are checked on the server and can change."
       ]

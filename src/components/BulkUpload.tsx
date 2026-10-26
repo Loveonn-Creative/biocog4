@@ -26,6 +26,7 @@ import { useInvoiceAllowance } from '@/hooks/useInvoiceAllowance';
 import { prepareImageForUpload } from '@/lib/imageUpload';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
+import { GUEST_MAX_BYTES } from '../../supabase/functions/_shared/guestScan';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
 import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
@@ -148,7 +149,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
       ));
 
       try {
-        const sendFile = await prepareImageForUpload(fileStatus.file);
+        const sendFile = await prepareImageForUpload(fileStatus.file, user ? undefined : GUEST_MAX_BYTES);
         const imageBase64 = await fileToBase64(sendFile);
         const mimeType = sendFile.type || 'image/jpeg';
 
