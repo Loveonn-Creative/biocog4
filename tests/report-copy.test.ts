@@ -116,7 +116,7 @@ describe('copy gate: net-zero report', () => {
   });
 });
 
-describe('copy gate: verified emissions record', () => {
+describe('copy gate: verified emissions certificate', () => {
   it('certificate', async () => {
     const { drawCertificate } = await import('../src/lib/certificatePdf');
     captured.length = 0;

@@ -20,7 +20,7 @@ Owner rule (21 October 2026). Check every design, page, copy change and deployme
 - Internal or non-user words on pages: "illustrative", "sample data", "pro user", "in pipeline", "MRV workspace", "Private to your account · Settings", instructions, disclaimers repeated where the legal pages already cover them.
 - Visible citation lines or reference links on product pages (sources stay in code or data files).
 - Fabricated proof, customers, logos, numbers, integrations, certifications, compliance claims or guarantees of financing.
-- "Simulation" for a user figure (use "Estimate"); "Certificate" for a review badge.
+- "Simulation" for a user figure (use "Estimate"); "Certificate" for a review badge (exception, owner 26 October 2026: the Verified Emissions Certificate on Reports, which always carries its "not an accredited third-party verification" footer).
 
 ## Product and data
 - Dummy logic, placeholder modules, dead buttons, dummy links, half-finished features, fake success states.

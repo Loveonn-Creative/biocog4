@@ -1,4 +1,6 @@
-// The "Verified Emissions Record" (Reports page; title per owner, 25 Oct 2026). Layout flows top to
+// The "Verified Emissions Certificate" (Reports page; title per owner, 26 Oct 2026, was
+// "Verified Emissions Record"). The footer says plainly it is issued by Senseible and is
+// not an accredited third-party verification, so the word cannot be read as one. Layout flows top to
 // bottom from measured text instead of fixed heights, so long names, many
 // standards or a missing GSTIN never overlap the footer. Every line states
 // something the records show:
@@ -72,7 +74,7 @@ export function drawCertificate(doc: jsPDF, c: CertificateInput): { contentBotto
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(26);
   doc.setTextColor(...GREEN);
-  doc.text('VERIFIED EMISSIONS RECORD', cx, y, { align: 'center' });
+  doc.text('VERIFIED EMISSIONS CERTIFICATE', cx, y, { align: 'center' });
   y += 6;
   doc.setLineWidth(0.8);
   doc.line(cx - 70, y, cx + 70, y);
@@ -94,7 +96,7 @@ function drawBody(doc: jsPDF, c: CertificateInput, y0: number, cx: number, inner
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(11);
   doc.setTextColor(70);
-  doc.text('This record shows that', cx, y, { align: 'center' });
+  doc.text('This certificate shows that', cx, y, { align: 'center' });
 
   const name = c.organizationName.charAt(0).toUpperCase() + c.organizationName.slice(1);
   let nameSize = 20;
@@ -211,7 +213,7 @@ function drawFooter(doc: jsPDF, c: CertificateInput, { contentBottom, footerTop,
   label(24, 'left', 'ISSUED', [c.formatDate(c.issuedAt), `Methodology ${c.methodologyVersion}`]);
   label(cx, 'center', 'VERIFIED BY SENSEIBLE', ['Expert-supervised', c.reviewedAt ? `Verified ${c.formatDate(c.reviewedAt)}` : 'Verification date not recorded']);
   const recordId = certificateRecordId(c.fingerprint);
-  label(W - 24, 'right', 'RECORD ID', [recordId ?? 'Not available']);
+  label(W - 24, 'right', 'CERTIFICATE ID', [recordId ?? 'Not available']);
 
   if (c.fingerprint) {
     doc.setFont('helvetica', 'normal'); doc.setFontSize(6.2); doc.setTextColor(120);
@@ -219,7 +221,7 @@ function drawFooter(doc: jsPDF, c: CertificateInput, { contentBottom, footerTop,
     doc.text(`Document fingerprint (SHA-256 of ${of}): ${c.fingerprint}`, cx, H - 21, { align: 'center' });
   }
   doc.setFontSize(6.2); doc.setTextColor(130);
-  doc.text('Decision-support record, not a regulatory certification or statutory filing.', cx, H - 17, { align: 'center' });
+  doc.text('Issued by Senseible on verified source documents. Not an accredited third-party verification or a statutory filing.', cx, H - 17, { align: 'center' });
 
   return { contentBottom, footerTop };
 }

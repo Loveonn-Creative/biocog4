@@ -32,9 +32,10 @@ describe('CCTS / CBAM claims need a documented review', () => {
     expect(src).toContain("cctsStatus: 'not_assessed';");
   });
 
-  test('the record is titled Verified Emissions Record (owner, 25 Oct 2026), not a compliance certificate', () => {
+  test('titled Verified Emissions Certificate (owner, 26 Oct 2026), never a compliance or accredited certification', () => {
     const src = readFileSync('src/pages/Reports.tsx', 'utf8') + readFileSync('src/lib/certificatePdf.ts', 'utf8');
-    expect(src).toContain("'VERIFIED EMISSIONS RECORD'");
+    expect(src).toContain("'VERIFIED EMISSIONS CERTIFICATE'");
+    expect(src).toContain('Not an accredited third-party verification');
     expect(src).not.toMatch(/COMPLIANCE CERTIFICATE|This is to certify|Compliant with Indian|INDEPENDENTLY REVIEWED/);
   });
 });
