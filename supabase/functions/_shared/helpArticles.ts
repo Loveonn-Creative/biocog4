@@ -15,10 +15,26 @@
 //   refunds and cancelling: owner decision, October 2026
 //   features named on Pricing or in the terms but not in the product: owner
 //   decision, October 2026: built on request, at extra cost
+//   enterprise: access granted by Senseible staff (private.grant_enterprise_access),
+//   claimed on sign-in at /enterprise/sign-in; ask/remind roles
+//   src/lib/enterprise/access.ts (ASK_ROLES; viewers cannot download);
+//   request links valid 30 days, reminders 3 days apart (supplier-requests;
+//   service_reissue_supplier_link in the pilot migration; included reminders
+//   and overage: count_supplier_reminder in the billing migration); overdue after 14 days and grades
+//   _shared/supplierPilot.ts; Ask questions _shared/enterpriseBrief.ts and
+//   enterprise-intelligence (counted monthly, extra billed, never blocked);
+//   quote and overage: owner decision, 25 October 2026 (rates never shown)
+//   encryption and isolation: src/pages/Trust.tsx and src/pages/EnterprisePricing.tsx
+//   supplier side: what is shared is share_with_enterprise and the consent text in
+//   src/pages/SupplierShare.tsx (totals by scope and category, energy units, bill
+//   count and fingerprints, never the bills), masked features
+//   stay on the supplier's own plan (src/components/supplier/BuyerNote.tsx)
+//   financial documents: AGENTS.md (private, allow-listed figures only, opt-in insights)
+//   team roles: _shared/teamRoles.ts (ROLE_DESCRIPTIONS)
 //   voice: src/pages/Index.tsx (ask by voice, answer read aloud);
 //   _shared/intelligence.ts (real-time voice on Pro and Scale)
 
-export type HelpSection = 'start' | 'upload' | 'numbers' | 'billing';
+export type HelpSection = 'start' | 'upload' | 'numbers' | 'billing' | 'enterprise';
 export type HelpVisual = 'formula' | 'score' | 'gst' | 'split';
 export type ContactTopic = 'technical' | 'sales' | 'general';
 
@@ -57,6 +73,7 @@ export const HELP_SECTIONS: { id: HelpSection; title: string; blurb: string }[] 
   { id: 'upload', title: 'Upload a bill', blurb: 'Files, long PDFs, repeats' },
   { id: 'numbers', title: 'My numbers and Verify', blurb: 'How a figure is worked out' },
   { id: 'billing', title: 'Plans and payments', blurb: 'Reads, credits, GST, receipts' },
+  { id: 'enterprise', title: 'Enterprise', blurb: 'Suppliers, your team, your quote' },
 ];
 
 export const HELP_ARTICLES: HelpArticle[] = [
@@ -251,6 +268,120 @@ export const HELP_ARTICLES: HelpArticle[] = [
     contact: 'general',
   },
   {
+    slug: 'buyer-asked-for-my-emissions',
+    section: 'start',
+    q: 'A buyer asked for my emissions. What do I do?',
+    a: 'Open the link in their email (or sign in, if they asked by GSTIN), upload your bills and press Share.',
+    steps: ['They see your emissions, the energy units on your bills and how many bills you uploaded. Never the bills or their amounts.', 'No bills yet? You can share your own figure. Your buyer sees it marked as your own number.', 'Your buyer covers extra reads once your own run out. You can also top up yourself.', 'Monetize, Superintelligence and finance insights stay on your own plan.'],
+    facts: [['Link valid for', '30 days'], ['You share', 'Totals, never bills']],
+    keywords: ['buyer', 'customer', 'supplier request', 'brand asked', 'share emissions', 'email link', 'invited', 'scope 3 request'],
+    pages: ['/', '/dashboard', '/monetize', '/intelligence'],
+  },
+  {
+    slug: 'bank-and-financial-statements',
+    section: 'upload',
+    q: 'What happens to my bank or financial statements?',
+    a: 'They are stored privately and never shown in your records.',
+    steps: ['We keep only monthly totals: money in, money out, balances and spending by type. Never names, account numbers or transactions. We use them to assess climate finance and risk.', 'History lists them as Private records, with no view or download.', 'Turn on Finance insights in Settings to see your own monthly totals on your Dashboard, depending on your plan.'],
+    facts: [['Without an account', 'Never kept'], ['Figures shown as', 'From your documents, never verified']],
+    keywords: ['bank statement', 'financial statement', 'itr', 'balance sheet', 'private', 'finance insights', 'cash flow'],
+    pages: ['/history', '/settings', '/dashboard'],
+    contact: 'general',
+  },
+  {
+    slug: 'team-roles',
+    section: 'start',
+    q: 'What can each team role do?',
+    a: 'You pick a role for each person when you invite them.',
+    facts: [['Admin', 'Everything except making admins'], ['Data manager', 'Adds, corrects and verifies invoices'], ['Analyst', 'Adds invoices and builds reports'], ['Carbon auditor', 'Verifies and builds reports'], ['Viewer', 'Reads only']],
+    steps: ['An analyst cannot verify, so a second person checks the numbers.', 'Your plan sets how many seats you have.'],
+    cta: { label: 'Open Team', to: '/team' },
+    keywords: ['team', 'role', 'invite', 'member', 'permission', 'access', 'admin', 'viewer', 'auditor', 'seat'],
+    pages: ['/team', '/settings'],
+  },
+  {
+    slug: 'enterprise-access',
+    section: 'enterprise',
+    q: 'How do I get enterprise access?',
+    a: 'We set it up for your company. Then sign in with the email we set it up for.',
+    steps: ['New to Senseible? Create an account with that email and confirm it first.', 'Your supplier dashboard opens as soon as you sign in.', 'Ask us to add your team. We set up the seats in your quote.'],
+    cta: { label: 'Enterprise sign-in', to: '/enterprise/sign-in' },
+    keywords: ['enterprise', 'access', 'sign in', 'login', 'set up', 'onboarding', 'company account', 'buyer account'],
+    pages: ['/enterprise/dashboard', '/enterprise/pricing'],
+    contact: 'sales',
+  },
+  {
+    slug: 'ask-suppliers',
+    section: 'enterprise',
+    q: 'How do I ask suppliers for their emissions?',
+    a: 'Pick the reporting year at the top, press Ask suppliers, and add one supplier per line.',
+    steps: ['Each line: name, email or GSTIN, what you buy, and % of purchases. Pasting from a spreadsheet works.', 'Suppliers with an email get a private link. Suppliers added by GSTIN see the request when they sign in.', 'Remind a supplier with an email once every 3 days. Each reminder sends a fresh 30-day link.'],
+    facts: [['Link valid for', '30 days'], ['Marked overdue', 'After 14 days, or when the link expires']],
+    keywords: ['invite suppliers', 'ask suppliers', 'request', 'supplier email', 'remind', 'reminder', 'gstin', 'onboard suppliers'],
+    pages: ['/enterprise/dashboard'],
+  },
+  {
+    slug: 'supplier-status-and-grades',
+    section: 'enterprise',
+    q: 'What do the supplier statuses and grades mean?',
+    a: 'Status shows where each request is. The grade shows how much of a figure comes from verified bills.',
+    facts: [['A', '90% or more from verified bills'], ['B', '75% or more'], ['C', '50% or more'], ['D', 'Under half, or their own number']],
+    steps: ['Sent: not opened yet. Opened: they followed the link. Shared: their figure is in. Overdue: no share after 14 days. Declined: they stopped sharing.', '"Own number" (amber in the chart) means the supplier typed a figure without bills. Ask them for the bills.'],
+    keywords: ['status', 'grade', 'overdue', 'declined', 'opened', 'shared', 'own number', 'amber', 'quality'],
+    pages: ['/enterprise/dashboard'],
+  },
+  {
+    slug: 'enterprise-roles',
+    section: 'enterprise',
+    q: 'Who in my team can ask suppliers and download?',
+    a: 'Owners, admins and data managers can ask and remind suppliers. Everyone except viewers can download.',
+    steps: ['You decide each person’s role when you invite them.', 'Viewers see everything on screen but download nothing.'],
+    cta: { label: 'Open Team', to: '/team' },
+    keywords: ['roles', 'permissions', 'who can', 'download', 'viewer', 'analyst', 'data manager', 'team access'],
+    pages: ['/enterprise/dashboard', '/team'],
+  },
+  {
+    slug: 'supplier-sheet',
+    section: 'enterprise',
+    q: 'What is in the supplier sheet?',
+    a: 'A CSV with one row per supplier: emissions, proof, grade and status, for your BRSR value chain workings or your auditor.',
+    steps: ['It covers Scope 1, Scope 2, the counted total and the part backed by verified bills.', 'Each row carries a fingerprint of what the supplier shared, so the figure can be traced.', 'Each download counts towards the downloads in your quote. Viewers can’t download.'],
+    keywords: ['csv', 'download', 'sheet', 'export', 'brsr', 'value chain', 'auditor', 'workpaper', 'excel'],
+    pages: ['/enterprise/dashboard'],
+  },
+  {
+    slug: 'ask-about-your-suppliers',
+    section: 'enterprise',
+    q: 'What can I ask about my suppliers?',
+    a: 'Where to focus, whom to chase first, and which change cuts the most, answered from your supplier records.',
+    steps: ['Answers use only the suppliers and figures on your dashboard for the year you picked.', 'It answers only from those figures and never puts a number on savings or costs. If something is missing, it says what to collect.', 'Your quote includes a number of questions each month, shown above the box. Past it you can keep asking; the extra goes on your next bill.'],
+    keywords: ['superintelligence', 'ask', 'ai', 'question', 'where to focus', 'hotspot', 'reduce', 'investment', 'chat'],
+    pages: ['/enterprise/dashboard'],
+  },
+  {
+    slug: 'enterprise-quote',
+    section: 'enterprise',
+    q: 'What does my quote include, and what if we go past it?',
+    a: 'Your quote sets your suppliers, team seats, report downloads, reminders, bill reads for your suppliers and questions each month.',
+    steps: ['Go past suppliers, downloads, reminders, reads or questions and nothing stops: you pay only for the extra, on your next bill.', 'Suppliers never pay to share with you.'],
+    cta: { label: 'Enterprise pricing', to: '/enterprise/pricing' },
+    keywords: ['quote', 'price', 'pricing', 'limit', 'overage', 'extra', 'seats', 'bill', 'invoice', 'pay as you go'],
+    pages: ['/enterprise/dashboard', '/enterprise/pricing'],
+    contact: 'sales',
+  },
+  {
+    slug: 'is-our-data-safe',
+    section: 'enterprise',
+    q: 'Is our company data safe?',
+    a: 'Yes. We never connect to your ERP, and your records are isolated from every other company.',
+    facts: [['ERP access', 'Not needed'], ['Storage and transfer', 'Encrypted'], ['Supplier bills', 'Stay with the supplier']],
+    steps: ['Suppliers share totals only. Their bills never reach you.'],
+    cta: { label: 'Read our DPA', to: '/legal/dpa' },
+    keywords: ['security', 'safe', 'privacy', 'erp', 'encryption', 'isolation', 'data protection', 'infosec', 'compliance'],
+    pages: ['/enterprise/dashboard', '/enterprise/pricing'],
+    contact: 'sales',
+  },
+  {
     slug: 'feature-not-in-the-app',
     section: 'billing',
     q: 'I saw a feature on Pricing that I can’t find in the app',
@@ -285,6 +416,8 @@ export const HELP_FIXES: HelpFix[] = [
   { match: 'could not confirm it yet', fix: 'Don’t pay again. Your plan turns on once the payment is confirmed.', slug: 'paid-but-plan-not-active' },
   { match: 'microphone access', fix: 'Allow the microphone for this site in your browser settings, then try again.', slug: 'ask-by-voice' },
   { match: 'not supported in your browser', fix: 'Voice needs Chrome or Edge.', slug: 'ask-by-voice' },
+  { match: 'can view suppliers but not', fix: 'Your role can see suppliers but not ask, remind or download. Ask the owner or an admin to change it.', slug: 'enterprise-roles' },
+  { match: 'reminded in the last 3 days', fix: 'Each supplier can be reminded once every 3 days. Try again later.', slug: 'ask-suppliers' },
   { match: 'cannot be deleted', fix: 'This is expected. Verified records stay in your audit trail.', slug: 'what-verified-means' },
 ];
 

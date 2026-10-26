@@ -24,6 +24,11 @@ describe("help search", () => {
     expect(top("where can I download receipts")).toBe("where-are-my-receipts");
     expect(top("kvah electricity bill")).toBe("electricity-bill");
     expect(top("speak with microphone")).toBe("ask-by-voice");
+    expect(top("how do I invite my suppliers")).toBe("ask-suppliers");
+    expect(top("a buyer asked for my emissions")).toBe("buyer-asked-for-my-emissions");
+    expect(top("what does grade D mean for a supplier")).toBe("supplier-status-and-grades");
+    expect(top("do you need access to our ERP")).toBe("is-our-data-safe");
+    expect(top("bank statement private")).toBe("bank-and-financial-statements");
   });
 
   test("returns nothing for words no article covers, and drops weak matches", () => {

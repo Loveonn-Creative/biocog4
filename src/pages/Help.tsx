@@ -3,7 +3,7 @@
 
 import { useMemo, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import { AlertCircle, ArrowRight, BarChart3, ChevronRight, CreditCard, MessageCircle, PlayCircle, Upload, type LucideIcon } from 'lucide-react';
+import { AlertCircle, ArrowRight, BarChart3, Building2, ChevronRight, CreditCard, MessageCircle, PlayCircle, Upload, type LucideIcon } from 'lucide-react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
@@ -15,7 +15,7 @@ import { HelpAsk } from '@/components/help/HelpAsk';
 import { HelpFixer } from '@/components/help/HelpFixer';
 import { HelpArticleBody } from '@/components/help/HelpArticleView';
 
-const ICONS: Record<HelpSection, LucideIcon> = { start: PlayCircle, upload: Upload, numbers: BarChart3, billing: CreditCard };
+const ICONS: Record<HelpSection, LucideIcon> = { start: PlayCircle, upload: Upload, numbers: BarChart3, billing: CreditCard, enterprise: Building2 };
 
 function StillStuck({ content, topic = 'general', about }: { content: HelpContent; topic?: string; about?: string }) {
   const { ui } = content;
