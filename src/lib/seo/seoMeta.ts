@@ -124,6 +124,9 @@ export const NOINDEX_PREFIXES = [
   '/reports', '/mrv-dashboard', '/partner', '/partner-dashboard', '/partner-profile',
   '/partner-reports', '/settings', '/profile', '/subscription', '/billing', '/team',
   '/payment-success', '/accept-invite', '/admin', '/cms-admin', '/calculators/history',
+  // Private links and enterprise sign-in (owner, 26 October 2026): a supplier's
+  // emailed request link must never be indexed, even if it is forwarded.
+  '/supplier-request', '/supplier-share', '/enterprise/sign-in', '/enterprise/dashboard',
 ];
 
 export function isNoIndexPath(pathname: string): boolean {

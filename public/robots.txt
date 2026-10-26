@@ -43,5 +43,9 @@ Disallow: /admin
 Disallow: /cms-admin
 Disallow: /calculators/history
 Disallow: /beta/
+Disallow: /supplier-request/
+Disallow: /supplier-share/
+Disallow: /enterprise/sign-in
+Disallow: /enterprise/dashboard
 
 Sitemap: https://senseible.earth/sitemap.xml
