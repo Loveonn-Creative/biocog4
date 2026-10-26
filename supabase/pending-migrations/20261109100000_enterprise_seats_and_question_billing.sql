@@ -1,5 +1,5 @@
 -- 20261109100000_enterprise_seats_and_question_billing.sql
--- Owner approved, 26 October 2026. Two fixes on top of the applied enterprise
+-- Two fixes on top of the applied enterprise
 -- pilot (0034) and billing (0035) migrations:
 --
 -- 1. Seats. An organisation's seat limit came only from its owner's own plan

@@ -1,5 +1,5 @@
 -- 20261110100000_enterprise_limits_and_supplier_claims.sql
--- Owner approved, 26 October 2026. Apply after 20261109100000_enterprise_seats_and_question_billing.
+-- Apply after 20261109100000_enterprise_seats_and_question_billing.
 --
 -- 1. Custom enterprise limits. Every enterprise number is agreed in its quote,
 --    and for each one whether it stops at the limit or carries on and bills the
@@ -12,7 +12,7 @@
 --    returns the rule and the extra billed so far, for the enterprise's Profile.
 -- 2. Supplier claims. A link claims only the request its code belongs to (a
 --    request id with any other code finds nothing). Forwarded links still work
---    (owner decision), but the buyer sees which email claimed the request and
+--    and the buyer sees which email claimed the request and
 --    can reset it: the claim is removed, earlier shares stop counting and a
 --    fresh link goes to the supplier. A reminder no longer breaks the links
 --    already sent.

@@ -4,11 +4,11 @@
 
 import { detectFileKind } from './fileSignature.ts';
 
-/** Invoices one device may read in a day without an account (owner decision, October 2026). */
+/** Invoices one device may read in a day without an account. */
 export const GUEST_DAILY_SCANS = 30;
 /** Backstop per network address, for scripts that mint new guest sessions. Shared office or mobile networks stay well under it. */
 export const GUEST_IP_DAILY_SCANS = 300;
-/** Largest file a guest may send, after base64 decoding (owner, 26 October 2026). Photos are shrunk in the browser to fit. */
+/** Largest file a guest may send, after base64 decoding. Photos are shrunk in the browser to fit. */
 export const GUEST_MAX_BYTES = 2 * 1024 * 1024;
 /** File types the reader accepts from guests. */
 export const GUEST_MIME_TYPES = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/heic', 'image/heif'] as const;
