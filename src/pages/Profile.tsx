@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
+import { EnterpriseUsageCard } from '@/components/enterprise/EnterpriseUsageCard';
 import { Scope3FullTrailCard } from '@/components/scope3/Scope3FullTrailCard';
 import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
 import { SecurityDataCard } from '@/components/settings/SecurityDataCard';
@@ -262,6 +263,7 @@ const Profile = () => {
         </div>
 
         <div className="grid gap-6">
+          {enterprise && <EnterpriseUsageCard />}
           {!enterprise && (<>
           {/* Subscription Card */}
           <Card className={`${tierColors[tier] || tierColors.snapshot} border`}>

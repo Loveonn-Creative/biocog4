@@ -22,7 +22,10 @@ export function AskSupplierData({ period }: { period: { start: string; end: stri
       body: { messages: next, periodStart: period.start, periodEnd: period.end },
     });
     setBusy(false);
-    const message = (data as { error?: string } | null)?.error;
+    // A non-2xx reply arrives as an error with the server's message in its body.
+    const ctx = (err as { context?: Response } | null)?.context;
+    const fromServer = ctx ? ((await ctx.json().catch(() => null)) as { error?: string } | null)?.error : undefined;
+    const message = (data as { error?: string } | null)?.error ?? fromServer;
     if (err || message || !data?.answer) {
       setError(message ?? 'No answer came back. Try again.');
       setTurns(turns);

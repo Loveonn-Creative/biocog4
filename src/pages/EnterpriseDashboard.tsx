@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { useEnterpriseAccess } from '@/hooks/useEnterpriseAccess';
 import { AskSupplierData } from '@/components/enterprise/AskSupplierData';
 import { untypedRpc } from '@/hooks/useOrganization';
@@ -49,6 +50,7 @@ export default function EnterpriseDashboard() {
   const years = useMemo(() => financialYears(new Date(), 3), []);
   const [period, setPeriod] = useState(years[1] ?? years[0]);
   const [adding, setAdding] = useState(false);
+  const [resetLine, setResetLine] = useState<SupplierLine | null>(null);
   const [rowsText, setRowsText] = useState('');
   const [sending, setSending] = useState(false);
 
@@ -83,6 +85,7 @@ export default function EnterpriseDashboard() {
   const downloadSheet = async () => {
     const { error } = await untypedRpc('record_enterprise_download', { p_what: 'supplier_sheet' });
     if (error?.code === '42501') { toast.error('Your role can view suppliers but not download.'); return; }
+    if (error?.message?.includes('download limit')) { toast.error('You’ve used the downloads in your quote. Contact us to add more.'); return; }
     download(csvName, supplierCsv(lines, period));
   };
 
@@ -122,6 +125,17 @@ export default function EnterpriseDashboard() {
       try { await invoke({ action: 'remind', requestId: id }); sent += 1; } catch (e) { toast.error(e instanceof Error ? e.message : 'Not sent'); }
     }
     if (sent) toast.success(`Reminder sent to ${sent} ${sent === 1 ? 'supplier' : 'suppliers'}`);
+    void qc.invalidateQueries({ queryKey: ['enterprise-suppliers', org] });
+  };
+
+  // Send new link: whoever opened a forwarded request loses it; the supplier gets a fresh link.
+  const resetLink = async (l: SupplierLine) => {
+    try {
+      const res = await invoke({ action: 'reset', requestId: l.requestId });
+      toast.success(res.emailed ? `New link sent to ${l.name}` : `${l.name} can open the request again when they sign in`);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : 'Not sent');
+    }
     void qc.invalidateQueries({ queryKey: ['enterprise-suppliers', org] });
   };
 
@@ -217,12 +231,15 @@ export default function EnterpriseDashboard() {
                         <td className="py-2 pr-3"><div className="font-medium">{l.name}</div>{l.gstin && <div className="text-xs text-muted-foreground">{l.gstin}</div>}</td>
                         <td className="py-2 pr-3">{l.buys ?? '-'}</td>
                         <td className="py-2 pr-3 tabular-nums">{l.purchaseSharePct != null ? `${l.purchaseSharePct}%` : '-'}</td>
-                        <td className="py-2 pr-3"><span className={`text-xs font-medium rounded-full px-2 py-0.5 ${STATUS_TONE[l.status]}`}>{STATUS_LABEL[l.status]}</span></td>
+                        <td className="py-2 pr-3"><span className={`text-xs font-medium rounded-full px-2 py-0.5 ${STATUS_TONE[l.status]}`}>{STATUS_LABEL[l.status]}</span>{l.openedBy && <div className="text-xs text-muted-foreground mt-1 break-all">Opened by {l.openedBy}</div>}</td>
                         <td className="py-2 pr-3">{PROOF_LABEL[l.proof]}{l.grade && <span className="text-xs text-muted-foreground"> · {l.grade}</span>}</td>
                         <td className="py-2 pr-3 text-right tabular-nums">{l.proof === 'bills' ? tonnes(l.scope1Kg, 2) : '-'}</td>
                         <td className="py-2 pr-3 text-right tabular-nums">{l.proof === 'bills' ? tonnes(l.scope2Kg, 2) : '-'}</td>
                         <td className="py-2 pr-3 text-right tabular-nums font-medium">{l.kg > 0 ? tonnes(l.kg, 2) : '-'}</td>
-                        <td className="py-2 text-right">{mayAsk && l.canRemind && <Button variant="ghost" size="sm" onClick={() => void remind([l.requestId])}><Send className="w-3.5 h-3.5 mr-1" />Remind</Button>}</td>
+                        <td className="py-2 text-right whitespace-nowrap">
+                          {mayAsk && l.canRemind && <Button variant="ghost" size="sm" onClick={() => void remind([l.requestId])}><Send className="w-3.5 h-3.5 mr-1" />Remind</Button>}
+                          {mayAsk && l.openedBy && l.status !== 'declined' && <Button variant="ghost" size="sm" onClick={() => setResetLine(l)}>Send new link</Button>}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -233,6 +250,19 @@ export default function EnterpriseDashboard() {
           </>
         )}
       </main>
+
+      <AlertDialog open={!!resetLine} onOpenChange={(o) => { if (!o) setResetLine(null); }}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Send {resetLine?.name} a new link?</AlertDialogTitle>
+            <AlertDialogDescription>{resetLine?.openedBy} loses access, and anything they shared comes out of your figures. {resetLine?.name} gets a new link.</AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={() => { if (resetLine) void resetLink(resetLine); setResetLine(null); }}>Send new link</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       <Dialog open={adding} onOpenChange={setAdding}>
         <DialogContent className="max-w-lg">

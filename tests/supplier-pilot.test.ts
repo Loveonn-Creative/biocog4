@@ -105,3 +105,19 @@ describe('enterprise access loading', () => {
     expect(accessLoading({ sessionLoading: false, queryPending: true, claiming: false })).toBe(false); // signed out: settled
   });
 });
+
+describe('supplier claims on the dashboard', () => {
+  test('shows who opened a forwarded request, and drops shares made before Resend link', () => {
+    const [own] = buildLines([req('a', { status: 'opened', claimed_email: 'a@x.in' })], [], NOW);
+    expect(own.openedBy).toBeNull();
+    const [fwd] = buildLines([req('b', { status: 'shared', claimed_email: 'accounts@other.in' })], [snap('b', { total_kg: 500 })], NOW);
+    expect(fwd.openedBy).toBe('accounts@other.in');
+    expect(fwd.kg).toBe(500);
+    const [reset] = buildLines([req('c', { status: 'sent', link_reset_at: '2026-10-22T00:00:00Z' })], [snap('c', { total_kg: 500 })], NOW);
+    expect(reset.kg).toBe(0);
+    expect(reset.proof).toBe('none');
+    const [after] = buildLines([req('d', { status: 'shared', link_reset_at: '2026-10-22T00:00:00Z' })],
+      [snap('d', { total_kg: 500 }), snap('d', { id: 's2', total_kg: 300, created_at: '2026-10-23T00:00:00Z' })], NOW);
+    expect(after.kg).toBe(300);
+  });
+});
