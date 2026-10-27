@@ -46,7 +46,7 @@ export function clientIp(headers: Headers): string {
   return platformIp(headers);
 }
 
-export type UseKind = 'message' | 'voice_session' | 'guest_scan';
+export type UseKind = 'message' | 'voice_session' | 'guest_scan' | 'report_download';
 export interface UseResult { allowed: boolean; used: number; limit: number; store: 'database' | 'memory' }
 
 // Until the intelligence_usage migration is applied, counts are kept per
@@ -56,15 +56,16 @@ const memory = new Map<string, number>();
 const missing = (e: { code?: string; message?: string } | null) =>
   !!e && (e.code === 'PGRST202' || e.code === '42883' || e.code === '42P01' || /intelligence_(take|used)/.test(e.message ?? ''));
 
-function window(kind: UseKind, now: Date) {
+/** The India-time counting window for a kind: { day, start } as YYYY-MM-DD. */
+export function usageWindow(kind: UseKind, now: Date) {
   const day = dayIst(now);
-  // Questions and voice are monthly pools; guest invoice reads are daily.
+  // Questions, voice and report downloads are monthly pools; guest invoice reads are daily.
   return { day, start: kind === 'guest_scan' ? day : monthStartDayIst(now) };
 }
 
 /** Counts one use if under the limit. */
 export async function takeUse(admin: Client, subject: string, kind: UseKind, limit: number, now = new Date()): Promise<UseResult> {
-  const { day, start } = window(kind, now);
+  const { day, start } = usageWindow(kind, now);
   const { data, error } = await admin.rpc('intelligence_take', { p_subject: subject, p_kind: kind, p_day: day, p_window_start: start, p_limit: limit });
   if (!error) {
     const row = (Array.isArray(data) ? data[0] : data) as { allowed?: boolean; used?: number } | null;
@@ -80,7 +81,7 @@ export async function takeUse(admin: Client, subject: string, kind: UseKind, lim
 
 /** Reads the count without taking a use. */
 export async function readUse(admin: Client, subject: string, kind: UseKind, limit: number, now = new Date()): Promise<UseResult> {
-  const { day, start } = window(kind, now);
+  const { day, start } = usageWindow(kind, now);
   const { data, error } = await admin.rpc('intelligence_used', { p_subject: subject, p_kind: kind, p_day: day, p_window_start: start });
   if (!error) return { allowed: Number(data ?? 0) < limit, used: Number(data ?? 0), limit, store: 'database' };
   if (!missing(error)) throw new Error(`usage read failed: ${error.code ?? error.message}`);

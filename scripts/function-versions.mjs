@@ -24,7 +24,7 @@ const GENERATED = join(FN, '_shared/functionVersions.generated.ts');
 export const VERSIONED = [
   'extract-document', 'verify-carbon', 'intelligence-chat', 'scope2-engine', 'scope3-trail',
   'delete-document', 'document-source-url', 'finance-application', 'esg-report-access',
-  'create-razorpay-order', 'verify-razorpay-payment', 'razorpay-webhook',
+  'create-razorpay-order', 'verify-razorpay-payment', 'razorpay-webhook', 'report-allowance',
 ];
 
 const IMPORT = /(?:from\s+|import\s*\(?\s*)['"](\.{1,2}\/[^'"]+)['"]/g;

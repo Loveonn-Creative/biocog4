@@ -404,3 +404,23 @@ Apply after 20261109.
 Then deploy `supplier-requests` and `enterprise-intelligence` (both work before the migration too, with the old behaviour).
 
 Tested: `tests/run_enterprise_limits_claims.sh` replays every migration, applies 20261109, applies this file, proves the rollback restores the same catalog, re-applies, and runs `tests/20261110100000_enterprise_limits_and_supplier_claims.test.sql` (9 groups: default billing and once-a-year supplier count, term validation with stop and custom rates, downloads and questions, seats, link claims and forwarding, reminders and Send new link, covered reads, Profile usage, server-only functions). Roll back with `rollback/20261110100000_enterprise_limits_and_supplier_claims.rollback.sql`.
+
+## 20261112100000_report_downloads.sql (report downloads on the free plan)
+
+Counts report downloads (any framework report as PDF or Excel, and the certificate) for signed-in users on the free plan, per India-time month, on the server. Paid plans are never counted or limited. Viewing reports on screen is not counted. Guests are not affected.
+
+- Widens the kind check on `intelligence_usage` to accept `report_download`, only when that table exists. The monthly count lives there, beside questions and voice.
+- `report_downloads(user_id, month, report_key)`: the reports already downloaded this month, so the same report and period in the same format is counted once, however many times it is downloaded (double clicks included). RLS on, no browser grants; rows go with the account and `report_downloads_purge()` removes those older than 400 days.
+- `report_download_take(user, key, day, window_start, limit)`: one locked step. A key already recorded this month is let through without counting; otherwise one download is counted through `intelligence_take`, and the key is recorded only when allowed.
+
+Only the `report-allowance` edge function (service role) calls it. When the function, the table or the plan cannot be read, `report-allowance` allows the download.
+
+**Apply order**
+1. `20261024100000_intelligence_usage.sql`, if it is not live yet (check: `SELECT to_regclass('public.intelligence_usage');`).
+2. This file. It is safe to run again; if `intelligence_usage` is applied after it, run this file again so the kind check accepts `report_download`. Until both are in place every download is allowed.
+3. Deploy the `report-allowance` edge function. The shared usage file it reads (`_shared/intelligenceUsage.ts`) gained the new kind with no change in behaviour, so `node scripts/function-versions.mjs --live` will show `extract-document` and `intelligence-chat` as different from the repo until their next redeploy; redeploying them is not needed for this feature.
+4. Ship the website (Reports asks `report-allowance` before building a file and allows the download whenever the function does not answer).
+
+Tested with `tests/run_report_downloads.sh`. It replays every migration and proves this file both without `intelligence_usage` (applies twice, rolls back to the identical catalog) and with it (widens the check, rolls back to the identical catalog and original check, re-applies, runs `tests/20261112100000_report_downloads.test.sql`: first download counted, repeats not counted, Excel and certificate counted apart, refused downloads not stored, new month, per account, malformed keys refused, purge, account deletion, no browser or anonymous access), then checks the rollback refuses while `report_download` counts exist and restores the identical catalog once they are deleted.
+
+Roll back with `rollback/20261112100000_report_downloads.rollback.sql`. It refuses while `report_download` counts exist; delete them first with `DELETE FROM public.intelligence_usage WHERE kind = 'report_download';`. After rollback every download is allowed.
