@@ -7,9 +7,9 @@
 // - totals are verified rows only (the caller passes the verified summary);
 // - the record ID and fingerprint come from the verified source files, so
 //   anyone holding the same files can recompute them (no random IDs);
-// - "Verified by Senseible AI, checked for greenwashing": Senseible's AI
-//   verifies the records and checks them for greenwashing. The date is when the
-//   verification was recorded; there is no signature line.
+// - "Verified by Senseible, expert-supervised" (owner wording, 25 Oct 2026):
+//   Senseible's infrastructure verifies, under expert supervision. The date is
+//   when the verification was recorded; there is no signature line.
 import { jsPDF } from 'jspdf';
 
 export interface CertificateInput {
@@ -211,7 +211,7 @@ function drawFooter(doc: jsPDF, c: CertificateInput, { contentBottom, footerTop,
     lines.forEach((l, i) => doc.text(l, x, fy + 5 + i * 4.2, { align }));
   };
   label(24, 'left', 'ISSUED', [c.formatDate(c.issuedAt), `Methodology ${c.methodologyVersion}`]);
-  label(cx, 'center', 'VERIFIED BY SENSEIBLE AI', ['Checked for greenwashing', c.reviewedAt ? `Verified ${c.formatDate(c.reviewedAt)}` : 'Verification date not recorded']);
+  label(cx, 'center', 'VERIFIED BY SENSEIBLE', ['Expert-supervised', c.reviewedAt ? `Verified ${c.formatDate(c.reviewedAt)}` : 'Verification date not recorded']);
   const recordId = certificateRecordId(c.fingerprint);
   label(W - 24, 'right', 'CERTIFICATE ID', [recordId ?? 'Not available']);
 

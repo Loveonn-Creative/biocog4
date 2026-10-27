@@ -865,7 +865,7 @@ const Reports = () => {
                     <div>
                       <span>Verified Emissions Certificate</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
-                        Verified by Senseible AI and checked for greenwashing
+                        Verified by Senseible, expert-supervised
                       </p>
                     </div>
                   </CardTitle>
