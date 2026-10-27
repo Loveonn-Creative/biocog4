@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { analyticsEvents } from "@/lib/analytics";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Copy, Download, Plus, X } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
@@ -30,6 +31,7 @@ function Receipt({ w }: { w: Weights }) {
     const a = document.createElement("a");
     a.href = url; a.download = "carbon-software-checklist.txt"; a.click();
     URL.revokeObjectURL(url);
+    analyticsEvents.resourceDownload("software-checklist", "txt", "software-chooser");
   };
   return (
     <aside className="sc-receipt" aria-label="Your checklist">

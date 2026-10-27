@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { analyticsEvents } from "@/lib/analytics";
 import { Link } from "react-router-dom";
 import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { useSession } from "@/hooks/useSession";
@@ -48,6 +49,7 @@ async function fetchReport(body: Record<string, unknown>): Promise<{ ok: true; s
     return { ok: false, status, code: b?.error, message: b?.error };
   }
   saveReport(data);
+  analyticsEvents.resourceDownload("esg-report-sample", "pdf", "esg-report-sample");
   return { ok: true };
 }
 

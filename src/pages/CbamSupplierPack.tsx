@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { analyticsEvents } from '@/lib/analytics';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, Calculator, FileSpreadsheet, FileText } from 'lucide-react';
@@ -62,6 +63,7 @@ export default function CbamSupplierPack() {
     }
     if (header.workbookHash) line(`Workbook SHA-256 ${header.workbookHash}`, 8, 11);
     doc.save(`cbam-supplier-pack-${file}.pdf`);
+    analyticsEvents.resourceDownload('cbam-supplier-pack', 'pdf', 'cbam-supplier-pack');
   };
 
   return (
@@ -157,7 +159,7 @@ export default function CbamSupplierPack() {
               </ul>
               {issues.length > 0 && <ul className="mt-3 grid gap-0.5 text-xs text-muted-foreground">{issues.slice(0, 4).map((x) => <li key={x}>{x}</li>)}</ul>}
               <div className="mt-5 grid gap-2 sm:grid-cols-2">
-                <button type="button" disabled={issues.length > 0} onClick={() => void downloadXlsx(packSheets(header, lines), `cbam-supplier-pack-${file}.xlsx`)} className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2.5 text-sm font-semibold text-background disabled:opacity-40"><FileSpreadsheet className="h-4 w-4" /> .xlsx</button>
+                <button type="button" disabled={issues.length > 0} onClick={() => void downloadXlsx(packSheets(header, lines), `cbam-supplier-pack-${file}.xlsx`).then(() => analyticsEvents.resourceDownload('cbam-supplier-pack', 'xlsx', 'cbam-supplier-pack'))} className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2.5 text-sm font-semibold text-background disabled:opacity-40"><FileSpreadsheet className="h-4 w-4" /> .xlsx</button>
                 <button type="button" disabled={issues.length > 0} onClick={() => void pdf()} className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold disabled:opacity-40"><FileText className="h-4 w-4" /> .pdf</button>
               </div>
             </div>

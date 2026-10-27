@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { analyticsEvents } from "@/lib/analytics";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, FileText, KeyRound, Lock, PhoneCall, ShieldCheck, Fingerprint, Plug, MessageCircle } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
@@ -57,7 +58,8 @@ export default function SupplierLanding({ variant }: { variant: Variant }) {
   const track = useCallback((what: string) => leadEvents.cta(analyticsPage, what), [analyticsPage]);
   const kit = () => {
     leadEvents.cta(analyticsPage, "kit_download");
-    void downloadKitPdf(supplierKit(plan, "assurance", page), "Senseible-supplier-evidence-kit.pdf", variant === "a" ? [10, 23, 48] : [22, 24, 29]);
+    void downloadKitPdf(supplierKit(plan, "assurance", page), "Senseible-supplier-evidence-kit.pdf", variant === "a" ? [10, 23, 48] : [22, 24, 29])
+      .then(() => analyticsEvents.resourceDownload("supplier-evidence-kit", "pdf", "supplier-ads"));
   };
 
   const Steps = (

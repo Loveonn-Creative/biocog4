@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { analyticsEvents } from "@/lib/analytics";
 import { Link, useParams } from "react-router-dom";
 import { ArrowRight, Check, Copy, Download, FileSpreadsheet, FileText, Loader2 } from "lucide-react";
 import { TemplateNextStep } from "@/components/lead/TemplateNextStep";
@@ -38,6 +39,7 @@ function DownloadButton({ t, letter, compact, onDone }: { t: TemplateDoc; letter
     try {
       const { downloadTemplate } = await import("@/lib/templates/buildTemplate");
       await downloadTemplate(t, letter);
+      analyticsEvents.resourceDownload(`template-${t.slug}`, t.format, "templates");
       setState("done");
       onDone?.();
       window.setTimeout(() => setState("idle"), 2200);

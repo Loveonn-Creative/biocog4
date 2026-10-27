@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { analyticsEvents } from '@/lib/analytics';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Copy, Download } from 'lucide-react';
 import { Navigation } from '@/components/Navigation';
@@ -33,6 +34,7 @@ function downloadCsv(id: string) {
   document.body.appendChild(a);
   a.click();
   a.remove();
+  analyticsEvents.resourceDownload(`india-data-${id}`, 'csv', 'india-climate-data');
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 

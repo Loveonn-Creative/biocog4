@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { analyticsEvents } from "@/lib/analytics";
 import { ArrowRight, Camera, Download, FileCheck2, Lock, MessageCircle, PhoneCall } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { AdHeader } from "@/components/lead/ads/AdHeader";
@@ -53,7 +54,8 @@ export default function GreenLoanLanding({ variant }: { variant: Variant }) {
   const { buy, checkout } = useAdCheckout(page, track);
   const kit = () => {
     leadEvents.cta(analyticsPage, "kit_download");
-    void downloadKitPdf(msmeKit(estimate, page), "Senseible-green-loan-readiness-kit.pdf", variant === "a" ? [13, 59, 46] : [196, 83, 43]);
+    void downloadKitPdf(msmeKit(estimate, page), "Senseible-green-loan-readiness-kit.pdf", variant === "a" ? [13, 59, 46] : [196, 83, 43])
+      .then(() => analyticsEvents.resourceDownload("green-loan-readiness-kit", "pdf", "green-loan-ads"));
   };
   const share = estimate
     ? `My business is about ${estimate.totalTonnes.toLocaleString("en-IN", { maximumFractionDigits: 1 })} tonnes CO2 a year. Green-loan readiness check: https://senseible.earth${page}`
