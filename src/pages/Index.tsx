@@ -29,15 +29,13 @@ import { offsetSourcePages } from '../../supabase/functions/_shared/extractionCh
 import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
 import { getGuestResult, guestDocumentId, guestRowsFor, putGuestResult } from '@/lib/guestResults';
+import { SAMPLE_BILL_ENABLED, SAMPLE_BILL_RESULT } from '@/lib/sampleBill';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
-// - OnboardingTour renders nothing until a 5s timer fires.
 // - BulkUpload only appears for signed-in users after a click.
 // - ResultState (and its trust widgets) only appears after processing.
-const OnboardingTour = lazy(() =>
-  import("@/components/OnboardingTour").then((m) => ({ default: m.OnboardingTour }))
-);
+const SampleVerify = lazy(() => import("@/components/SampleVerify"));
 const BulkUpload = lazy(() =>
   import("@/components/BulkUpload").then((m) => ({ default: m.BulkUpload }))
 );
@@ -72,7 +70,7 @@ const openUploadPicker = () => {
 };
 
 
-type State = "idle" | "processing" | "result";
+type State = "idle" | "processing" | "result" | "sampleVerify";
 
 interface ExtractedLineItem {
   description: string;
@@ -274,6 +272,8 @@ const Index = () => {
   const uploadOrganizationId = () =>
     uploadScopeRef.current?.kind === 'organization' ? uploadScopeRef.current.organizationId : undefined;
   const [state, setState] = useState<State>("idle");
+  const [sample, setSample] = useState(false);
+  const sampleTimer = useRef<number>();
   // The first view paints at once: it holds the largest text on the page, and a
   // fade from opacity 0 delays when browsers count it as shown (LCP). Coming
   // back to the start after a result still fades in.
@@ -866,6 +866,7 @@ const Index = () => {
   };
 
   const handleConfirm = () => {
+    if (sample) { setState("sampleVerify"); return; }
     // Say what actually happened: guests keep results in this browser; a
     // result with no countable line saved nothing to verify.
     if (!user) toast.info("Checking your result. It stays in this browser until you sign in.");
@@ -882,9 +883,24 @@ const Index = () => {
   };
 
   const handleReset = () => {
+    window.clearTimeout(sampleTimer.current);
+    setSample(false);
     setState("idle");
     setResult(null);
     setDocumentType("");
+  };
+
+  // Sample bill run: the real reading and result screens on a stored result.
+  // Nothing is uploaded, read by AI, counted or saved (src/lib/sampleBill.ts).
+  const startSample = () => {
+    setSample(true);
+    setDocumentType("Electricity bill");
+    setState("processing");
+    window.clearTimeout(sampleTimer.current);
+    sampleTimer.current = window.setTimeout(() => {
+      setResult({ type: "revenue", amount: 0, documentType: "Electricity bill", extractedData: SAMPLE_BILL_RESULT as unknown as ExtractedData, recordCount: 1 });
+      setState("result");
+    }, 3600);
   };
 
   // A different person signed in or out: drop the previous person's result,
@@ -901,10 +917,6 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-clip">
-      <Suspense fallback={null}>
-        <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
-      </Suspense>
-      
       {/* First viewport: what it is, who it is for, why trust it, and the action. */}
       <div id="hero" className={`relative flex flex-col ${user ? 'min-h-[calc(100dvh-7.5rem)]' : 'min-h-[100dvh]'}`}>
       
@@ -990,6 +1002,11 @@ const Index = () => {
             <p className="-mt-2 text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
               {t("home.hero.action", "Upload an invoice, get an evidence-linked carbon report")}
             </p>
+            {SAMPLE_BILL_ENABLED && (
+              <button type="button" onClick={startSample} className="-mt-5 text-sm font-medium text-primary underline-offset-4 hover:underline">
+                Try a sample bill
+              </button>
+            )}
 
 
             {/* India AI Innovation Badge */}
@@ -1050,9 +1067,16 @@ const Index = () => {
               onReset={handleReset}
               hasRecords={result.recordCount !== 0}
               readMs={result.readMs}
-              onReread={user && lastFileRef.current ? handleReread : undefined}
-              onEnterKwh={lastFileRef.current ? handleEnterKwh : undefined}
+              onReread={!sample && user && lastFileRef.current ? handleReread : undefined}
+              onEnterKwh={!sample && lastFileRef.current ? handleEnterKwh : undefined}
+              sample={sample}
             />
+          </Suspense>
+        )}
+
+        {state === "sampleVerify" && (
+          <Suspense fallback={null}>
+            <SampleVerify onOwnBill={() => { handleReset(); window.setTimeout(openUploadPicker, 50); }} />
           </Suspense>
         )}
       </main>
