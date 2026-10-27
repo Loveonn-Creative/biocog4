@@ -503,7 +503,7 @@ const Index = () => {
       lineItems: done.flatMap(d => d.extracted.lineItems || []),
       totalCO2Kg: done.reduce((t, d) => t + (d.extracted.totalCO2Kg || 0), 0),
       validationFlags: [
-        `Long PDF read in ${split.parts.length} parts of up to 10 pages; ${done.length} read`,
+        `Long PDF read in ${split.parts.length} parts of up to ${chunk} pages; ${done.length} read`,
         ...notes,
         ...done.flatMap(d => d.extracted.validationFlags || []),
       ],
@@ -593,7 +593,7 @@ const Index = () => {
       const { data, error } = await Promise.race([invoke, timedOut]) as Awaited<typeof invoke> | { data: null; error: 'timeout' };
 
       if (error === 'timeout') {
-        toast.error('Reading this file is taking too long. Try again, or upload a photo of just the page with the totals. Nothing was counted.', { duration: 8000 });
+        toast.error('Reading this file is taking longer than usual. It may still finish: check History in a minute before uploading it again.', { duration: 10000 });
         setState("idle");
         return;
       }

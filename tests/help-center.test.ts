@@ -44,6 +44,7 @@ describe("help search", () => {
     expect(findFix("This file is 12.3 MB. Without an account the limit is 2 MB; take a photo of the bill, or sign in for 15 MB.")?.slug).toBe("what-can-i-upload");
     expect(findFix("This invoice has verified records. They stay for your audit trail and cannot be deleted.")?.slug).toBe("what-verified-means");
     expect(findFix("Your team role cannot add invoices to this organisation. Ask an admin for analyst or data manager access.")).toBeTruthy();
+    expect(findFix("Reading this file is taking longer than usual. It may still finish: check History in a minute before uploading it again.")?.slug).toBe("long-pdfs");
     expect(findFix("abc")).toBeUndefined();
     expect(findFix("something nobody has ever seen")).toBeUndefined();
   });

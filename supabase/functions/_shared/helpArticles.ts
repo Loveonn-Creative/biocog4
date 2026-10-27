@@ -403,7 +403,7 @@ export const HELP_FIXES: HelpFix[] = [
   { match: "couldn't finish reading", fix: 'Try again. If it happens again, upload a clear photo of the page.' },
   { match: 'busy right now', fix: 'Reading is busy on our side. Wait a minute and try again. Nothing was counted.' },
   { match: 'paused on our side', fix: 'Reading is paused on our side. Your account is fine. Try again later. Nothing was counted.' },
-  { match: 'taking too long', fix: 'Try again, or upload a photo of just the page with the totals. Nothing was counted.', slug: 'long-pdfs' },
+  { match: 'taking longer than usual', fix: 'It may still be saved. Check History in a minute before uploading the file again; a photo of just the page with the totals reads faster.', slug: 'long-pdfs' },
   { match: 'could not read this file', fix: 'Take a sharper photo with the whole page in view, or upload the original PDF.', slug: 'blurry-or-handwritten-bill' },
   { match: 'not supported for carbon accounting', fix: 'Upload an invoice, electricity bill, fuel slip or freight record.', slug: 'what-can-i-upload' },
   { match: 'invoices today without an account', fix: 'That is the daily limit without an account. Sign in free to keep going and save your results.', slug: 'try-without-an-account' },
