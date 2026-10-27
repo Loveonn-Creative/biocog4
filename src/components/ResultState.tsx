@@ -80,6 +80,8 @@ interface ResultStateProps {
   onEnterKwh?: (kwh: number) => void;
   /** How long this read took, for a fresh read only (not a saved or repeated one). */
   readMs?: number;
+  /** Sample bill run: labelled Sample, nothing to share. */
+  sample?: boolean;
 }
 
 /**
@@ -90,7 +92,7 @@ interface ResultStateProps {
  * without it (a kVAh bill with no printed kWh or power factor). Every figure,
  * factor, check and score is still here, folded under the result.
  */
-export const ResultState = ({ type: _type, amount: _amount, extractedData, onConfirm, onReset, hasRecords = true, onReread, onEnterKwh, readMs }: ResultStateProps) => {
+export const ResultState = ({ type: _type, amount: _amount, extractedData, onConfirm, onReset, hasRecords = true, onReread, onEnterKwh, readMs, sample = false }: ResultStateProps) => {
   const { isEnabled } = useTrustLayerSettings();
   const [kwhInput, setKwhInput] = useState("");
 
@@ -280,7 +282,9 @@ export const ResultState = ({ type: _type, amount: _amount, extractedData, onCon
               <p className="truncate font-semibold text-foreground">{docTitle}{extractedData?.vendor ? ` · ${extractedData.vendor}` : ""}</p>
               {docSub && <p className="truncate text-xs text-muted-foreground">{docSub}</p>}
             </div>
-            <span className="ml-auto flex shrink-0 items-center gap-1 text-xs font-medium text-success"><Check className="h-3.5 w-3.5" aria-hidden="true" />{readMs ? `Read in ${(readMs / 1000).toLocaleString('en-IN', { maximumFractionDigits: 1 })} s` : 'Read'}</span>
+            {sample
+              ? <span className="ml-auto shrink-0 rounded-full bg-warning/15 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-warning-foreground dark:text-warning">Sample</span>
+              : <span className="ml-auto flex shrink-0 items-center gap-1 text-xs font-medium text-success"><Check className="h-3.5 w-3.5" aria-hidden="true" />{readMs ? `Read in ${(readMs / 1000).toLocaleString('en-IN', { maximumFractionDigits: 1 })} s` : 'Read'}</span>}
           </div>
 
           {/* The result */}
@@ -357,7 +361,7 @@ export const ResultState = ({ type: _type, amount: _amount, extractedData, onCon
               </details>
             ))}
           </div>
-          {co2Value > 0 && (
+          {co2Value > 0 && !sample && (
             <a
               href={`https://wa.me/?text=${encodeURIComponent(
                 `My ${extractedData?.documentType ?? 'document'} came to ${co2Value.toFixed(1)} kg CO2e on Senseible, with the emission factor and source for every line. Try it: https://senseible.earth/`
