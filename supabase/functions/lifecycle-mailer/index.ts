@@ -6,7 +6,8 @@
 //   nothing at all while that secret is unset.
 // * LIFECYCLE_EMAILS=off stops all sending at once.
 // * Each email is claimed in email_log (unique key) before it is sent, so a
-//   repeated run never sends it twice; a failed send releases the claim.
+//   repeated run never sends it twice. A temporary failure releases the
+//   claim; a refused address keeps it (marked failed) so it is not retried.
 // * dryRun returns counts only and sends nothing.
 // * Only confirmed emails; enterprise accounts are left to the team.
 // Touches no other email function.
@@ -90,7 +91,17 @@ serve(async (req) => {
         headers: { Authorization: `Bearer ${RESEND}`, 'Content-Type': 'application/json', 'Idempotency-Key': due.dedupeKey },
         body: JSON.stringify({ from: FROM, to: [email], subject: mail.subject, html: mail.html, text: mail.text }),
       });
-      if (!res.ok) throw new Error(`resend ${res.status}`);
+      if (!res.ok) {
+        // A refused address (4xx other than rate limiting) will fail every day:
+        // keep the claim, marked failed, so it is not retried. Anything else
+        // (rate limit, 5xx, network) releases the claim for the next run.
+        if (res.status >= 400 && res.status < 500 && res.status !== 429) {
+          await admin.from('email_log').update({ provider_id: `failed:${res.status}` }).eq('id', claim.data.id);
+          result.failed++;
+          continue;
+        }
+        throw new Error(`resend ${res.status}`);
+      }
       const out = await res.json().catch(() => ({}));
       await admin.from('email_log').update({ provider_id: typeof out?.id === 'string' ? out.id : null }).eq('id', claim.data.id);
       result.sent++;

@@ -127,6 +127,8 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - Chai Break Arcade (owner, 25 October 2026): three small games at /play/ (Dhuaan Dhoom, Bill Bachao, Chimney Chill) in Hinglish, English and Hindi, humorous but honest. Tap and play: no sign-in, no upload, no AI, nothing sent anywhere. One self-contained file; the service worker (public/sw.js) keeps only that page and shows it when any visit fails for lack of internet, and never caches the app itself. Footer placement still needs the owner's Yes/No.
 - Report units (owner, 25 October 2026): keep tCO2e, the unit every framework expects. The methodology states the factors are CO2 only and that methane and nitrous oxide from fuels add under 1%. Adding those gases is a calculation change that needs separate approval.
 - Output quality gate (owner, 25 October 2026): the owner must not be the one who catches weak copy. Generated documents pass `tests/report-copy.test.ts`; new or changed pages, reports and certificates are rendered and reviewed by an independent agent, and every finding is fixed, before the owner sees visuals. Reports name Senseible or the documents, never "the platform".
+- Contact form newsletter tick box (owner, 27 October 2026): keep it as it is. The standalone newsletter box was removed from Contact, Climate Intelligence and articles because it stored nothing.
+- Page counting (owner, 27 October 2026): each invoice page in a PDF counts as one read. Do not change how pages are counted or split.
 
 ## 9. Open decisions (ask before acting)
 
