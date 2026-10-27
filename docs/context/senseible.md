@@ -129,6 +129,7 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - Output quality gate (owner, 25 October 2026): the owner must not be the one who catches weak copy. Generated documents pass `tests/report-copy.test.ts`; new or changed pages, reports and certificates are rendered and reviewed by an independent agent, and every finding is fixed, before the owner sees visuals. Reports name Senseible or the documents, never "the platform".
 - Contact form newsletter tick box (owner, 27 October 2026): keep it as it is. The standalone newsletter box was removed from Contact, Climate Intelligence and articles because it stored nothing.
 - Page counting (owner, 27 October 2026): each invoice page in a PDF counts as one read. Do not change how pages are counted or split.
+- Report downloads on the free plan (owner, 27 October 2026): signed-in Snapshot users have a monthly report download allowance (India-time month, like other monthly usage), checked on the server by `report-allowance` before Reports builds any file. Any framework report (PDF or Excel) or the certificate counts; the same report, period and format again in the same month counts once. Viewing on screen stays free, paid plans are never blocked, guests keep today's behaviour, and if the count cannot be read the download is allowed. When the month is used, Reports says when the next one is free and links to /pricing.
 
 ## 9. Open decisions (ask before acting)
 

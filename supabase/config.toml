@@ -55,6 +55,8 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.document-source-url]
     verify_jwt = false
+  [functions.report-allowance]
+    verify_jwt = false
   [functions.solar-signal]
     verify_jwt = false
   [functions.machinery-beta]

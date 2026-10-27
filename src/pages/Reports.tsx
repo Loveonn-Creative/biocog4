@@ -39,6 +39,8 @@ import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
+import { askReportAllowance, limitMessage } from '@/lib/reportAllowance';
+import { CERTIFICATE_REPORT, reportIdFor, type ReportFileKind } from '../../supabase/functions/_shared/reportDownloadKey';
 interface Verification {
   id: string;
   total_co2_kg: number;
@@ -339,13 +341,32 @@ const Reports = () => {
 
 
 
-  const downloadFramework = async (fwId: string, kind: 'pdf' | 'xlsx') => {
+  // Signed-in users on the free plan have a monthly download allowance, which
+  // the server checks before any file is built. Viewing stays free, paid plans
+  // skip the check, and guests download as before.
+  const mayDownload = async (report: string, kind: ReportFileKind): Promise<boolean> => {
+    if (!user || isPremium) return true;
+    const answer = await askReportAllowance(
+      (name, options) => supabase.functions.invoke(name, options),
+      reportIdFor(report, dataset.periodStart, dataset.periodEnd),
+      kind,
+    );
+    if (answer.allowed) return true;
+    toast(limitMessage(answer, dateLocale), {
+      duration: 10000,
+      action: { label: 'See plans', onClick: () => navigate('/pricing') },
+    });
+    return false;
+  };
+
+  const downloadFramework = async (fwId: string, kind: ReportFileKind) => {
     if (isEmpty) {
       toast.error('Add a bill or invoice first; reports are built from your records');
       return;
     }
     setIsGenerating(true);
     try {
+      if (!(await mayDownload(fwId, kind))) return;
       const { generateFrameworkPDF, generateFrameworkExcel } = await import('@/lib/frameworkReports');
       const ok = kind === 'pdf'
         ? generateFrameworkPDF(fwId, dataset)
@@ -392,6 +413,7 @@ const Reports = () => {
   const generateComplianceCertificate = async () => {
     setIsGenerating(true);
     try {
+      if (!(await mayDownload(CERTIFICATE_REPORT, 'pdf'))) return;
       const [{ default: jsPDF }, { drawCertificate }] = await Promise.all([import('jspdf'), import('@/lib/certificatePdf')]);
       const doc = new jsPDF({ orientation: 'landscape' });
       const verifiedHashes = evidence.filter((e) => e.verificationStatus === 'verified').map((e) => e.documentHash);
