@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n/useT";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
@@ -8,6 +8,8 @@ import { UseCaseTyper } from "@/components/UseCaseTyper";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { getLocaleMeta } from "@/lib/i18n/locales";
+import { useI18nContext } from "@/lib/i18n/LanguageProvider";
+import { speechLangFor } from "@/lib/voice/speechLang";
 import { toast } from "sonner";
 import { useAuthStatus, useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
@@ -37,6 +39,7 @@ import { SampleSteps } from '@/components/SampleSteps';
 // - BulkUpload only appears for signed-in users after a click.
 // - ResultState (and its trust widgets) only appears after processing.
 const SampleVerify = lazy(() => import("@/components/SampleVerify"));
+const VoicePanel = lazy(() => import("@/components/VoicePanel"));
 const BulkUpload = lazy(() =>
   import("@/components/BulkUpload").then((m) => ({ default: m.BulkUpload }))
 );
@@ -274,6 +277,12 @@ const Index = () => {
     uploadScopeRef.current?.kind === 'organization' ? uploadScopeRef.current.organizationId : undefined;
   const [state, setState] = useState<State>("idle");
   const [sample, setSample] = useState(false);
+  const [voice, setVoice] = useState<{ q: string; id: number } | null>(null);
+  const [voiceHush, setVoiceHush] = useState(0);
+  const hushVoice = useCallback(() => setVoiceHush((n) => n + 1), []);
+  const { locale: siteLocale } = useI18nContext();
+  const siteLang = getLocaleMeta(siteLocale);
+  const voiceLang = speechLangFor(siteLocale);
   const sampleTimer = useRef<number>();
   // The first view paints at once: it holds the largest text on the page, and a
   // fade from opacity 0 delays when browsers count it as shown (LCP). Coming
@@ -788,83 +797,12 @@ const Index = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.state, sessionLoading]);
 
-  const handleVoiceInput = async (transcript: string) => {
-    setState("processing");
-    setDocumentType("Processing voice query...");
-    
-    try {
-      // Send to intelligence-chat with stream: false for voice queries.
-      // invoke() forwards the signed-in user's JWT, so the assistant can
-      // ground its answer in that user's own records.
-      const response = await (await loadSupabase()).functions.invoke('intelligence-chat', {
-        body: { 
-          messages: [{ role: 'user', content: transcript }],
-          context: { isHomepage: true, type: 'voice_query' },
-          language: getLocaleMeta(localStorage.getItem('senseible_locale') || 'en').name,
-          stream: false  // Non-streaming for voice - returns JSON directly
-        }
-      });
-
-
-      setState("idle");
-
-      if (response.error) {
-        // Daily question limit or our AI being unavailable: say which, never a made-up answer.
-        let reason = "";
-        try { const body = await (response.error as { context?: Response }).context?.json(); reason = body?.message || ""; } catch { /* no body */ }
-        toast.error(reason || "Voice answers are unavailable right now. You can still upload a bill.");
-        return;
-      }
-
-      // Get the AI response from OpenAI-compatible format
-      const data = response.data;
-      if (data) {
-        let responseText = '';
-        
-        // Handle OpenAI-compatible response format
-        if (data.choices?.[0]?.message?.content) {
-          responseText = data.choices[0].message.content;
-        } else if (typeof data === 'string') {
-          responseText = data;
-        } else if (data.error) {
-          toast.error(data.error);
-          return;
-        }
-
-        if (responseText) {
-          // Clean response: remove markdown formatting for voice
-          responseText = responseText
-            .replace(/\*\*/g, '')
-            .replace(/\*/g, '')
-            .replace(/_/g, '')
-            .replace(/#{1,6}\s/g, '')
-            .replace(/\n- /g, '. ')
-            .replace(/\n\d+\. /g, '. ')
-            .trim();
-          
-          // Show response in toast (truncated for UI)
-          toast.info(responseText.substring(0, 200) + (responseText.length > 200 ? '...' : ''));
-          
-          // Use browser TTS to speak the response
-          if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            
-            const utterance = new SpeechSynthesisUtterance(responseText);
-            utterance.lang = 'en-IN';
-            utterance.rate = 0.9;
-            utterance.pitch = 1;
-            window.speechSynthesis.speak(utterance);
-          }
-        } else {
-          toast.info("I understood your query. For carbon accounting, please upload an invoice or bill.");
-        }
-      }
-    } catch (error) {
-      console.error("Voice processing error:", error);
-      setState("idle");
-      toast.error("Voice is unavailable right now. Upload a bill instead.");
-    }
-  };
+  // Voice questions open the answer panel (loaded on first use); each new
+  // question gets a new id so follow-ups keep the conversation.
+  const handleVoiceInput = useCallback((transcript: string) => {
+    if (!transcript.trim()) return;
+    setVoice((v) => ({ q: transcript.trim(), id: (v?.id ?? 0) + 1 }));
+  }, []);
 
   const handleConfirm = () => {
     if (sample) { setState("sampleVerify"); return; }
@@ -886,6 +824,7 @@ const Index = () => {
   const handleReset = () => {
     window.clearTimeout(sampleTimer.current);
     setSample(false);
+    setVoice(null);
     setState("idle");
     setResult(null);
     setDocumentType("");
@@ -965,8 +904,16 @@ const Index = () => {
               <VoiceInput 
                 onVoiceInput={handleVoiceInput} 
                 isProcessing={false} 
+                lang={voiceLang}
+                onListenStart={hushVoice}
               />
             </div>
+
+            {voice && (
+              <Suspense fallback={null}>
+                <VoicePanel question={voice.q} askId={voice.id} hush={voiceHush} lang={voiceLang} languageName={siteLang.name} onClose={() => setVoice(null)} />
+              </Suspense>
+            )}
             
             {/* Retry button when save failed but extraction succeeded */}
             {pendingRetry && (

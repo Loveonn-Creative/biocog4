@@ -367,7 +367,7 @@ export function cleanText(v: unknown, max = 80): string {
 
 /** Marker placed at the top of the instructions; an answer containing it is cut off. */
 export const PROMPT_CANARY = 'BIOCOG-INTERNAL-7f3a';
-const LEAK_MARKERS = [PROMPT_CANARY, 'GROUNDING RULES (NON-NEGOTIABLE)', '# WHAT THE PLATFORM DOES AND WHERE'];
+const LEAK_MARKERS = [PROMPT_CANARY, 'GROUNDING RULES (NON-NEGOTIABLE)', '# WHAT THE PLATFORM DOES AND WHERE', '# THIS REPLY IS SPOKEN ALOUD'];
 export function looksLikePromptLeak(text: string): boolean {
   return LEAK_MARKERS.some((m) => text.includes(m));
 }

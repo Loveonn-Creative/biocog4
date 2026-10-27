@@ -121,6 +121,27 @@ const VOICE_FORMAT = `
 - Plain text only: no asterisks, no markdown headings, no bullet characters.
 `;
 
+// Added only when the question was asked by voice on the home page. The flag is
+// a yes/no from the client; no client text reaches the instructions.
+const SPOKEN_FORMAT = `
+# THIS REPLY IS SPOKEN ALOUD
+These rules replace the length, closing-step and page-path rules of HOW TO TALK. The grounding
+rules and guardrails still apply in full.
+- They asked by voice and will hear you, so sound like a quick, warm person, not a page of text.
+- Under 45 words in two or three short sentences. Answer in the first sentence.
+- When you give one of their figures, still say whether it is verified, an estimate or a
+  projection and how many records it comes from. That is part of the answer, not filler.
+- No greetings, no "Great question", no filler. Never repeat the question back.
+- Name pages in words ("the Pricing page"), never as paths. Keep record IDs after figures as usual;
+  they are not read aloud.
+- If they ask what you can do, name two or three things that matter to a small business, such as
+  reading an electricity or fuel bill, showing where their emissions come from, or preparing a
+  report they can share with a buyer or lender, then say where to try it, for example by
+  uploading a bill on the home page. You cannot open pages, read files or act for them here.
+- End with one short question they can answer by voice that moves them forward, unless the
+  answer is a simple fact.
+`;
+
 // ---------------------------------------------------------------- records
 
 const PAGE = 1000;
@@ -318,6 +339,7 @@ Deno.serve(async (req) => {
     if (!input.ok) return json({ error: input.error }, 400);
     const { messages, language } = input;
     const stream = body?.stream !== false;
+    const spoken = body?.context?.type === "voice_query";
     const question = messages[messages.length - 1].content;
 
     // Obvious probes: a short canned reply, no model call, no question used.
@@ -382,6 +404,7 @@ You can be wrong; when unsure, say so rather than guess.
 ${PLATFORM_KNOWLEDGE}
 ${GUARDRAILS}
 ${VOICE_FORMAT}
+${spoken ? SPOKEN_FORMAT : ""}
 ${userData}
 ${resourcesBlock(resources)}
 
