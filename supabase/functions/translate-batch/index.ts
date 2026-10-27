@@ -118,7 +118,9 @@ Deno.serve(async (req) => {
     // 2. Translate misses via Lovable AI Gateway
     if (missing.length > 0) {
       const ip = platformIp(req.headers);
-      const allowed = ip === "unknown" ? { allowed: true } : await takeUse(
+      // Callers with no known address share one daily count instead of
+      // skipping it, so the AI cost of new strings stays capped.
+      const allowed = await takeUse(
         supabase, await guestSubject(`translate|${ip}`, dayIst(), Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!),
         "guest_scan", AI_CALLS_PER_ADDRESS_PER_DAY,
       ).catch(() => ({ allowed: true }));
@@ -192,7 +194,8 @@ Deno.serve(async (req) => {
           if (rowsToInsert.length > 0) {
             await supabase
               .from("translation_cache")
-              .upsert(rowsToInsert, { onConflict: "locale,source_hash" });
+              // Add only: a translation already stored is never replaced by a new batch.
+              .upsert(rowsToInsert, { onConflict: "locale,source_hash", ignoreDuplicates: true });
           }
         }
       }
