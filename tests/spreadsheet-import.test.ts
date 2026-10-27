@@ -2,9 +2,10 @@ import { describe, expect, test } from 'bun:test';
 import * as XLSX from 'xlsx';
 import { parseCsv, toCsv } from '../src/lib/import/csv';
 import { parseDocType, unitProblem, DOC_TYPES } from '../src/lib/import/schema';
-import { checkSheet, duplicateKey, matchHeaders, parseAmount, MAX_ROWS } from '../src/lib/import/validate';
+import { checkSheet, duplicateKey, gstinProblem, matchHeaders, parseAmount, parseImportDate, MAX_ROWS } from '../src/lib/import/validate';
 import { readWorkbookRows, fileKind } from '../src/lib/import/readFile';
-import { guideRows, templateCsv, templateHeader } from '../src/lib/import/templates';
+import { guideRows, templateCsv, templateHeader, TEMPLATE_NAMES } from '../src/lib/import/templates';
+import { gstinCheckChar } from '../src/lib/indiaBusinessIds';
 import { calculateEmissions } from '../supabase/functions/_shared/emissionFactors';
 
 const NOW = new Date('2026-10-27T00:00:00Z');
@@ -32,8 +33,9 @@ describe('CSV', () => {
 
 describe('templates', () => {
   test('activity template has the agreed columns in order and no example rows', () => {
-    expect(templateHeader('activity')).toEqual(['Date', 'Document type', 'Quantity', 'Unit', 'Supplier name', 'Supplier GSTIN', 'Invoice number', 'Amount (INR)', 'Notes']);
+    expect(templateHeader('activity')).toEqual(['Date', 'Bill type', 'Quantity', 'Unit', 'Supplier name', 'Supplier GSTIN', 'Invoice number', 'Amount (INR)', 'Notes']);
     expect(parseCsv(templateCsv('activity'))).toHaveLength(1);
+    expect(TEMPLATE_NAMES.activity).toBe('senseible-bills');
   });
   test('supplier template has the agreed columns', () => {
     expect(templateHeader('suppliers')).toEqual(['Name', 'GSTIN', 'Contact email', 'Category', 'Annual spend (INR)']);
@@ -41,9 +43,11 @@ describe('templates', () => {
   test('a downloaded template is recognised on upload', () => {
     expect(matchHeaders(templateHeader('activity'))).toMatchObject({ ok: true, kind: 'activity' });
     expect(matchHeaders(templateHeader('suppliers'))).toMatchObject({ ok: true, kind: 'suppliers' });
+    expect(matchHeaders(['Date', 'Document type', 'Quantity', 'Unit', 'Supplier name'])).toMatchObject({ ok: true, kind: 'activity' });
   });
   test('the units guide lists every document type', () => {
     const text = guideRows('activity').flat().join(' ');
+    expect(text).toContain('Must match the bill type. See the How to fill sheet.');
     for (const k of Object.values(DOC_TYPES)) expect(text).toContain(k.label);
   });
 });
@@ -54,9 +58,8 @@ describe('headers', () => {
     expect(m).toMatchObject({ ok: true, kind: 'activity', columnIndex: { quantity: 0, unit: 1, type: 2, supplier: 3, date: 4 } });
   });
   test('names the missing required column', () => {
-    const m = matchHeaders(['Date', 'Document type', 'Quantity', 'Supplier name']);
-    expect(m.ok).toBe(false);
-    if (!m.ok) expect(m.message).toContain('Unit');
+    const m = matchHeaders(['Date', 'Bill type', 'Quantity', 'Supplier name']);
+    expect(m).toEqual({ ok: false, message: 'This file has no Unit column. Add it, or paste your rows into the template above.' });
   });
   test('rejects a file that matches neither template', () => {
     expect(matchHeaders(['foo', 'bar']).ok).toBe(false);
@@ -76,8 +79,9 @@ describe('units follow the shared factor file', () => {
   });
   test('wrong units are named, and kVAh is never read as kWh', () => {
     expect(unitProblem('diesel', 'kg')).toBe('Diesel needs litre or kl.');
-    expect(unitProblem('lpg', 'cylinder')).toBe('LPG needs kg or tonne.');
-    expect(unitProblem('png', 'litre')).toBe('PNG needs scm.');
+    expect(unitProblem('lpg', 'cylinder')).toBe('LPG needs kg or tonne. Multiply cylinders by the kg printed on each one.');
+    expect(unitProblem('png', 'litre')).toBe('PNG needs scm. Use the scm figure on the gas bill.');
+    expect(unitProblem('coal', 'bags')).toBe('Coal needs kg or tonne.');
     expect(unitProblem('electricity', 'kVAh')).toContain('kVAh is not kWh');
   });
   test('document types are read case-insensitively and unknown ones are rejected', () => {
@@ -126,21 +130,48 @@ describe('row checks', () => {
     const r = check([row({ quantity: '0' }), row({ quantity: '-4' }), row({ amount: '0' })]);
     expect(r.rows.map(x => x.status)).toEqual(['fix', 'fix', 'fix']);
     expect(r.rows[0].issues[0].message).toBe('Quantity must be more than 0.');
-    expect(r.rows[2].issues[0].field).toBe('amount');
+    expect(r.rows[2].issues[0]).toEqual({ field: 'amount', message: 'Amount must be more than 0, or leave it empty.' });
   });
-  test('dates must be real YYYY-MM-DD dates; day-first text is not guessed', () => {
-    const r = check([row({ date: '30/04/2026' }), row({ date: '2026-02-30' }), row({ date: '2027-06-01' }), row({ date: '2026-02-28' })]);
-    expect(r.rows.map(x => x.status)).toEqual(['fix', 'fix', 'fix', 'ready']);
+  test('dates: YYYY-MM-DD or day-first DD/MM/YYYY and DD-MM-YYYY; impossible dates rejected', () => {
+    expect(parseImportDate('30/05/2026', NOW)).toBe('2026-05-30');
+    expect(parseImportDate('3-5-2026', NOW)).toBe('2026-05-03');
+    expect(parseImportDate('2026-05-30', NOW)).toBe('2026-05-30');
+    expect(parseImportDate('31/02/2026', NOW)).toBeNull();
+    expect(parseImportDate('30/05-2026', NOW)).toBeNull();
+    expect(parseImportDate('05/30/2026', NOW)).toBeNull();
+    expect(parseImportDate('30 May 2026', NOW)).toBeNull();
+    expect(parseImportDate('30/05/26', NOW)).toBeNull();
+    const r = check([row({ date: '30/04/2026' }), row({ date: '2026-02-30' }), row({ date: '2027-06-01' }), row({ date: '31/02/2026' })]);
+    expect(r.rows.map(x => x.status)).toEqual(['ready', 'fix', 'fix', 'fix']);
+    expect(r.rows[3].issues[0].message).toBe('Write the date as DD/MM/YYYY or YYYY-MM-DD, for example 30/05/2026.');
+  });
+  test('the same bill with the date written two ways is a duplicate', () => {
+    const r = check([row({ gstin: GOOD_GSTIN, invoice: 'A1', date: '2026-05-30' }), row({ gstin: GOOD_GSTIN, invoice: 'A1', date: '30/05/2026' })]);
+    expect(r.rows[1].status).toBe('duplicate');
+  });
+  test('number cells with words explain what to write', () => {
+    const r = check([row({ quantity: '850 litre' }), row({ amount: 'Rs 76k' })]);
+    expect(r.rows[0].issues[0].message).toBe('Quantity should be a number only, like 850. Put the unit in the Unit column.');
+    expect(r.rows[1].issues[0].message).toBe('Amount should be a number only, like 76500.');
   });
   test('GSTIN format and check character are checked', () => {
     const wrongCheck = GOOD_GSTIN.slice(0, 14) + (GOOD_GSTIN[14] === 'A' ? 'B' : 'A');
     const r = check([row({ gstin: GOOD_GSTIN }), row({ gstin: wrongCheck }), row({ gstin: '27ABC' })]);
     expect(r.rows.map(x => x.status)).toEqual(['ready', 'fix', 'fix']);
-    expect(r.rows[1].issues[0].message).toContain('check character');
+    expect(r.rows[1].issues[0].message).toBe('This GSTIN has a typo. Copy it again from the bill.');
+    expect(r.rows[2].issues[0].message).toBe('A GSTIN has 15 characters, like 27AAPFU0939F1ZV. Copy it from the bill.');
+  });
+  test('a valid shape with an unknown state code names the state code', () => {
+    // Shape and check character are fine, only the state code is unknown.
+    const body = '45AAPFU0939F1Z';
+    expect(gstinProblem(body + gstinCheckChar(body))).toBe('The first two digits should be the state code, like 27 for Maharashtra.');
+    expect(gstinProblem('')).toBeNull();
+    expect(gstinProblem(GOOD_GSTIN)).toBeNull();
   });
   test('unknown type and wrong unit need fixing', () => {
     const r = check([row({ type: 'Steam' }), row({ type: 'LPG', unit: 'cylinder' })]);
     expect(r.rows.map(x => x.status)).toEqual(['fix', 'fix']);
+    expect(r.rows[0].issues[0].message).toBe('"Steam" is not on the list. Use Electricity, Diesel, Petrol, LPG, PNG, CNG, Coal or Freight.');
   });
   test('blank rows are skipped and line numbers match the sheet', () => {
     const r = check([row({}), ['', '', ''], row({ quantity: 'x' })]);
@@ -183,10 +214,13 @@ describe('supplier list', () => {
     ]);
     expect(r.rows.map(x => x.status)).toEqual(['ready', 'fix', 'fix', 'fix', 'fix']);
     expect(r.rows[0].estimateKg).toBeUndefined();
+    expect(r.rows[2].issues[0].message).toBe('Add their email or GSTIN.');
+    expect(r.rows[4].issues[0].message).toBe('Annual spend must be more than 0, or leave it empty.');
   });
-  test('the same GSTIN twice is a duplicate', () => {
-    const r = run([['A', GOOD_GSTIN, '', '', ''], ['A again', GOOD_GSTIN, '', '', '']]);
-    expect(r.counts.duplicate).toBe(1);
+  test('same GSTIN and name is a duplicate; two units sharing a GSTIN are not', () => {
+    const r = run([['Shree Castings', GOOD_GSTIN, '', '', ''], ['SHREE  CASTINGS.', GOOD_GSTIN, '', '', ''], ['Shree Castings Unit 2', GOOD_GSTIN, '', '', '']]);
+    expect(r.rows.map(x => x.status)).toEqual(['ready', 'duplicate', 'ready']);
+    expect(duplicateKey('suppliers', { name: 'A', gstin: '' })).toBeNull();
   });
 });
 
@@ -194,7 +228,7 @@ describe('file limits', () => {
   test('more than 1000 rows is refused before checking', () => {
     const many = Array.from({ length: MAX_ROWS + 1 }, () => row({}));
     const r = checkSheet([HEADER, ...many], NOW);
-    expect(r.ok).toBe(false);
+    expect(r).toEqual({ ok: false, message: 'This file has 1,001 rows. Split it into files of 1,000 rows or fewer.' });
   });
   test('exactly 1000 rows is fine', () => {
     expect(checkSheet([HEADER, ...Array.from({ length: MAX_ROWS }, () => row({}))], NOW).ok).toBe(true);

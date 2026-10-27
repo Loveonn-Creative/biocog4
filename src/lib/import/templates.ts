@@ -4,7 +4,7 @@ import { toCsv } from './csv';
 import { COLUMNS, DOC_TYPE_KEYS, DOC_TYPES, type ImportKind } from './schema';
 
 export const TEMPLATE_NAMES: Record<ImportKind, string> = {
-  activity: 'senseible-activity-data',
+  activity: 'senseible-bills',
   suppliers: 'senseible-supplier-list',
 };
 
@@ -17,7 +17,7 @@ export function guideRows(kind: ImportKind): string[][] {
   const rows: string[][] = [['Column', 'Required', 'What to enter']];
   for (const c of COLUMNS[kind]) rows.push([c.label, c.required ? 'Yes' : 'No', c.hint]);
   if (kind === 'activity') {
-    rows.push([], ['Document type', 'Units accepted']);
+    rows.push([], ['Bill type', 'Units accepted']);
     for (const k of DOC_TYPE_KEYS) rows.push([DOC_TYPES[k].label, DOC_TYPES[k].unitsShown]);
   }
   rows.push([], ['Leave a cell empty if you do not have the value. Empty is never read as 0.']);
@@ -45,10 +45,10 @@ export async function downloadTemplate(kind: ImportKind, format: 'csv' | 'xlsx')
   const wb = XLSX.utils.book_new();
   const data = XLSX.utils.aoa_to_sheet([templateHeader(kind)]);
   data['!cols'] = COLUMNS[kind].map(c => ({ wch: Math.max(14, c.label.length + 4) }));
-  XLSX.utils.book_append_sheet(wb, data, kind === 'activity' ? 'Activity data' : 'Suppliers');
+  XLSX.utils.book_append_sheet(wb, data, kind === 'activity' ? 'Bills' : 'Suppliers');
   const guide = XLSX.utils.aoa_to_sheet(guideRows(kind));
   guide['!cols'] = [{ wch: 22 }, { wch: 18 }, { wch: 60 }];
-  XLSX.utils.book_append_sheet(wb, guide, kind === 'activity' ? 'Units' : 'How to fill');
+  XLSX.utils.book_append_sheet(wb, guide, 'How to fill');
   const out = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
   save(new Blob([out], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), `${base}.xlsx`);
 }

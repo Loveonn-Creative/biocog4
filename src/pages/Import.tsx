@@ -50,13 +50,13 @@ function TemplateLine({ kind, title, line }: { kind: ImportKind; title: string; 
 function rowEstimate(r: CheckedRow): string {
   if (r.status === "fix") return "After fixing";
   if (r.status === "duplicate") return "Counted once";
-  return typeof r.estimateKg === "number" ? kg(r.estimateKg) : "Calculated after import";
+  return typeof r.estimateKg === "number" ? kg(r.estimateKg) : "Not estimated here";
 }
 
 const rowLabel = (s: RowStatus) => (s === "duplicate" ? "Duplicate" : STATUS[s].label);
 
 function rowProblem(r: CheckedRow, kind: ImportKind): string {
-  if (r.status === "duplicate") return `Same ${kind === "suppliers" ? "GSTIN" : "bill"} as row ${r.duplicateOf}`;
+  if (r.status === "duplicate") return `Same ${kind === "suppliers" ? "supplier" : "bill"} as row ${r.duplicateOf}`;
   return r.issues.map(i => i.message).join(" ");
 }
 
@@ -90,7 +90,7 @@ function Rows({ result, filter }: { result: CheckResult; filter: RowStatus | "al
   const visible = rows.slice(0, shown);
   const activity = result.kind === "activity";
   const cols = activity
-    ? ["Row", "Status", "Bill", "Supplier", "Estimate, kg CO2e", "What to fix"]
+    ? ["Row", "Status", "Bill", "Supplier", "Carbon, kg CO2e", "What to fix"]
     : ["Row", "Status", "Supplier", "Contact", "Annual spend", "What to fix"];
   const cell = "px-3 py-2.5 align-top";
   if (!rows.length) return <p className="py-6 text-sm text-muted-foreground">No rows here.</p>;
@@ -113,7 +113,7 @@ function Rows({ result, filter }: { result: CheckResult; filter: RowStatus | "al
               {activity ? [r.values.supplier, r.values.date].filter(Boolean).join(", ") : [r.values.gstin, r.values.email].filter(Boolean).join(", ")}
             </p>
             {r.status === "ready"
-              ? activity && <p className="mt-1">Estimate: <span className="font-medium tabular-nums">{rowEstimate(r)}{typeof r.estimateKg === "number" ? " kg CO2e" : ""}</span></p>
+              ? activity && <p className="mt-1">Carbon: <span className="font-medium tabular-nums">{rowEstimate(r)}{typeof r.estimateKg === "number" ? " kg CO2e" : ""}</span></p>
               : <p className={`mt-1 break-words ${STATUS[r.status].text}`}>{rowProblem(r, result.kind)}</p>}
           </li>
         ))}
@@ -198,6 +198,8 @@ export default function Import() {
   const onDrop = (e: DragEvent) => { e.preventDefault(); setDragging(false); void handle(e.dataTransfer.files?.[0]); };
 
   const ready = result?.counts.ready ?? 0;
+  // Ready activity rows with no factor in the shared file (freight).
+  const unestimated = result?.kind === "activity" && result.rows.some(r => r.status === "ready" && r.estimateKg === null);
   const noun = result?.kind === "suppliers" ? (ready === 1 ? "supplier" : "suppliers") : (ready === 1 ? "row" : "rows");
 
   return (
@@ -208,7 +210,7 @@ export default function Import() {
         <header className="max-w-2xl">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Import your spreadsheet</h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg">
-            Already track bills in Excel? Check every row here first, so only clean rows become records.
+            Already keep bills in Excel? Upload the sheet and see which rows are ready and which need fixing.
           </p>
         </header>
 
@@ -218,7 +220,7 @@ export default function Import() {
             <section aria-labelledby="step-template">
               <h2 id="step-template" className="text-lg font-semibold">Start from a template</h2>
               <div className="mt-1 divide-y divide-border">
-                <TemplateLine kind="activity" title="Activity data" line="One row per bill: power, fuel or freight." />
+                <TemplateLine kind="activity" title="Fuel and power bills" line="One row per bill: power, fuel or freight." />
                 <TemplateLine kind="suppliers" title="Supplier list" line="Who you buy from, with GSTIN and yearly spend." />
               </div>
             </section>
@@ -262,24 +264,23 @@ export default function Import() {
 
                   <Summary result={result} filter={filter} onFilter={setFilter} />
 
-                  {result.kind === "activity" && (
-                    <p className="text-sm">
-                      {result.readyEstimateKg !== null
-                        ? <>Estimate from ready rows: <span className="font-semibold tabular-nums">{kg(result.readyEstimateKg)} kg CO2e</span>. </>
-                        : <>No estimate yet for these rows. </>}
-                      <span className="text-muted-foreground">Preview only. Nothing is saved.</span>
-                    </p>
-                  )}
+                  <p className="text-sm">
+                    {result.readyEstimateKg !== null && (
+                      <>Carbon from ready rows: <span className="font-semibold tabular-nums">{kg(result.readyEstimateKg)} kg CO2e</span>. </>
+                    )}
+                    {unestimated && <>Freight rows are not included. </>}
+                    <span className="text-muted-foreground">Preview only. Nothing is saved.</span>
+                  </p>
 
                   <Rows key={`${fileName}-${filter}`} result={result} filter={filter} />
 
                   <div className="rounded-2xl border border-border bg-card p-5">
                     <button type="button" disabled aria-describedby="import-next"
                       className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground opacity-50">
-                      Import {ready} {noun}
+                      Import {ready} {noun} (coming soon)
                     </button>
                     <p id="import-next" className="mt-3 max-w-xl text-sm text-muted-foreground">
-                      Saving is the next step. When it opens, our server checks every row again and saves ready rows as unverified records. They then go through Verify like any bill you upload.
+                      Importing opens soon. Ready rows will then be added to your records and checked like any bill you upload.
                     </p>
                   </div>
                 </div>

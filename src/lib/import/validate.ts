@@ -3,8 +3,8 @@
 // filled in or read as zero.
 import { calculateEmissions } from '../../../supabase/functions/_shared/emissionFactors';
 import { parseInvoiceDate } from '../../../supabase/functions/_shared/invoiceDate';
-import { checkGstin, normalizeId } from '../indiaBusinessIds';
-import { COLUMNS, DOC_TYPES, normalizeHeader, parseDocType, unitProblem, type DocType, type ImportKind } from './schema';
+import { checkGstin, gstinCheckChar, normalizeId } from '../indiaBusinessIds';
+import { COLUMNS, DOC_TYPE_LIST, DOC_TYPES, normalizeHeader, parseDocType, unitProblem, type DocType, type ImportKind } from './schema';
 
 export const MAX_FILE_BYTES = 2 * 1024 * 1024;
 export const MAX_ROWS = 1000;
@@ -55,7 +55,7 @@ export function matchHeaders(header: string[]): HeaderMatch {
   if (!kind) return { ok: false, message: 'We could not match the columns. Start from one of the templates above.' };
   const columnIndex = kind === 'activity' ? activity : suppliers;
   const missing = COLUMNS[kind].filter(c => c.required && !(c.key in columnIndex)).map(c => c.label);
-  if (missing.length) return { ok: false, message: `This file has no ${missing.join(', ')} column. Start from the template.` };
+  if (missing.length) return { ok: false, message: `This file has no ${missing.join(', ')} column. Add it, or paste your rows into the template above.` };
   return { ok: true, kind, columnIndex };
 }
 
@@ -67,6 +67,39 @@ export function parseAmount(raw: string): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+/**
+ * A bill date as YYYY-MM-DD, or null. Accepts YYYY-MM-DD and, following the
+ * Indian convention, day-first DD/MM/YYYY or DD-MM-YYYY. The range rule
+ * (2000 to a month ahead, real calendar dates) is the server's parseInvoiceDate.
+ */
+export function parseImportDate(raw: string, now = new Date()): string | null {
+  const v = raw.trim();
+  const dayFirst = /^(\d{1,2})([/-])(\d{1,2})\2(\d{4})$/.exec(v);
+  const iso = dayFirst ? `${dayFirst[4]}-${dayFirst[3].padStart(2, '0')}-${dayFirst[1].padStart(2, '0')}` : v;
+  return parseInvoiceDate(iso, now);
+}
+
+const DATE_HELP = 'Write the date as DD/MM/YYYY or YYYY-MM-DD, for example 30/05/2026.';
+
+/** Example shown when a number cell holds something else. */
+const NUMBER_HELP: Record<string, string> = {
+  quantity: 'like 850. Put the unit in the Unit column.',
+  amount: 'like 76500.',
+  spend: 'like 1200000.',
+};
+
+const GSTIN_SHAPE = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/;
+
+/** Plain GSTIN messages for this page. The checks themselves are checkGstin's. */
+export function gstinProblem(raw: string): string | null {
+  const v = normalizeId(raw);
+  if (!v) return null;
+  if (checkGstin(v).status === 'format_ok') return null;
+  if (!GSTIN_SHAPE.test(v)) return 'A GSTIN has 15 characters, like 27AAPFU0939F1ZV. Copy it from the bill.';
+  if (gstinCheckChar(v.slice(0, 14)) === v[14]) return 'The first two digits should be the state code, like 27 for Maharashtra.';
+  return 'This GSTIN has a typo. Copy it again from the bill.';
+}
+
 const EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
 function positive(values: Record<string, string>, key: string, label: string, required: boolean, issues: Issue[]): number | null {
@@ -76,28 +109,26 @@ function positive(values: Record<string, string>, key: string, label: string, re
     return null;
   }
   const n = parseAmount(raw);
-  if (n === null) { issues.push({ field: key, message: `${label} is not a number.` }); return null; }
-  if (n <= 0) { issues.push({ field: key, message: `${label} must be more than 0.` }); return null; }
+  if (n === null) { issues.push({ field: key, message: `${label} should be a number only, ${NUMBER_HELP[key] ?? 'like 100.'}` }); return null; }
+  if (n <= 0) { issues.push({ field: key, message: required ? `${label} must be more than 0.` : `${label} must be more than 0, or leave it empty.` }); return null; }
   return n;
 }
 
 function checkGstinCell(values: Record<string, string>, issues: Issue[]) {
-  const raw = values.gstin ?? '';
-  if (!raw.trim()) return;
-  const r = checkGstin(raw);
-  if (r.status !== 'format_ok') issues.push({ field: 'gstin', message: r.reason ?? 'This GSTIN is not valid.' });
+  const problem = gstinProblem(values.gstin ?? '');
+  if (problem) issues.push({ field: 'gstin', message: problem });
 }
 
 function checkActivity(values: Record<string, string>, now: Date): { issues: Issue[]; estimateKg: number | null } {
   const issues: Issue[] = [];
   const date = (values.date ?? '').trim();
   if (!date) issues.push({ field: 'date', message: 'Date is missing.' });
-  else if (!parseInvoiceDate(date, now)) issues.push({ field: 'date', message: 'Use a real date as YYYY-MM-DD, for example 2026-04-30.' });
+  else if (!parseImportDate(date, now)) issues.push({ field: 'date', message: DATE_HELP });
 
   const rawType = (values.type ?? '').trim();
   let type: DocType | null = null;
   if (!rawType) issues.push({ field: 'type', message: 'Document type is missing.' });
-  else if (!(type = parseDocType(rawType))) issues.push({ field: 'type', message: `"${rawType}" is not a type we read yet.` });
+  else if (!(type = parseDocType(rawType))) issues.push({ field: 'type', message: `"${rawType}" is not on the list. Use ${DOC_TYPE_LIST}.` });
 
   const qty = positive(values, 'quantity', 'Quantity', true, issues);
 
@@ -128,17 +159,24 @@ function checkSupplier(values: Record<string, string>): Issue[] {
   checkGstinCell(values, issues);
   const email = (values.email ?? '').trim();
   if (email && !EMAIL.test(email)) issues.push({ field: 'email', message: 'This email does not look right.' });
-  if (!email && !(values.gstin ?? '').trim()) issues.push({ field: 'email', message: 'Add an email or a GSTIN so a request can reach them.' });
+  if (!email && !(values.gstin ?? '').trim()) issues.push({ field: 'email', message: 'Add their email or GSTIN.' });
   positive(values, 'spend', 'Annual spend', false, issues);
   return issues;
 }
 
-/** Key that marks two rows as the same bill or supplier, or null when a part is missing. */
+/**
+ * Key that marks two rows as the same bill or supplier, or null when a part is missing.
+ * Suppliers match on GSTIN plus name, since two units can share one GSTIN in a state.
+ */
 export function duplicateKey(kind: ImportKind, values: Record<string, string>): string | null {
   const gstin = normalizeId(values.gstin ?? '');
-  if (kind === 'suppliers') return gstin || null;
+  if (kind === 'suppliers') {
+    const name = (values.name ?? '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return gstin && name ? `${gstin}|${name}` : null;
+  }
   const invoice = (values.invoice ?? '').trim().toUpperCase().replace(/\s+/g, '');
-  const date = (values.date ?? '').trim();
+  const rawDate = (values.date ?? '').trim();
+  const date = parseImportDate(rawDate) ?? rawDate;
   if (!gstin || !invoice || !date) return null;
   return `${gstin}|${invoice}|${date}`;
 }
@@ -193,6 +231,6 @@ export function checkSheet(sheet: string[][], now = new Date()): SheetCheck {
   const data = sheet.slice(headerAt + 1);
   const filled = data.filter(r => !isBlank(r)).length;
   if (!filled) return { ok: false, message: 'The columns are right but there are no rows yet.' };
-  if (filled > MAX_ROWS) return { ok: false, message: `This file has ${filled.toLocaleString('en-IN')} rows. Split it into files of up to ${MAX_ROWS.toLocaleString('en-IN')}.` };
+  if (filled > MAX_ROWS) return { ok: false, message: `This file has ${filled.toLocaleString('en-IN')} rows. Split it into files of ${MAX_ROWS.toLocaleString('en-IN')} rows or fewer.` };
   return { ok: true, result: checkRows(match.kind, match.columnIndex, data, now, headerAt + 2) };
 }
