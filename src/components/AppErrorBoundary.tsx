@@ -1,5 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
-import { isChunkLoadError, reloadOnceForNewBuild } from "@/lib/reliability/chunkRecovery";
+import { isChunkLoadError, isReloadingForNewBuild, reloadOnceForNewBuild } from "@/lib/reliability/chunkRecovery";
 import { logPageError } from "@/lib/reliability/errorLog";
 import { ErrorLogPanel } from "./ErrorLogPanel";
 
@@ -20,7 +20,7 @@ export class AppErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, info: ErrorInfo) {
     logPageError(error, info.componentStack);
     // A new build went live: load it quietly instead of showing an error.
-    if (isChunkLoadError(error) && reloadOnceForNewBuild()) { this.setState({ reloading: true }); return; }
+    if ((isChunkLoadError(error) && reloadOnceForNewBuild()) || isReloadingForNewBuild()) { this.setState({ reloading: true }); return; }
     console.error("[AppErrorBoundary]", error, info.componentStack);
   }
 
@@ -30,7 +30,8 @@ export class AppErrorBoundary extends Component<Props, State> {
 
   render() {
     if (!this.state.error) return <>{this.props.children}<ErrorLogPanel /></>;
-    if (this.state.reloading || isChunkLoadError(this.state.error)) return <div className="min-h-[60vh]" aria-busy="true" />;
+    // Waiting for the new build to load; otherwise say so, never a blank screen.
+    if (this.state.reloading || isReloadingForNewBuild()) return <div className="min-h-[60vh]" aria-busy="true" />;
     return (
       <main role="alert" className="min-h-[60vh] flex flex-col items-center justify-center gap-4 px-6 text-center">
         <h1 className="text-xl font-semibold text-foreground">This page could not load.</h1>

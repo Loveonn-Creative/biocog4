@@ -21,8 +21,8 @@ export function isNewerBuild(live: unknown, current: string): boolean {
   return current !== 'dev' && typeof live === 'string' && live.length > 0 && live !== current;
 }
 
-export async function checkForNewBuild(now = Date.now(), fetcher: typeof fetch = fetch): Promise<boolean> {
-  if (stale || currentBuildId() === 'dev' || now - lastCheck < CHECK_EVERY_MS) return stale;
+export async function checkForNewBuild(now = Date.now(), fetcher: typeof fetch = fetch, force = false): Promise<boolean> {
+  if (stale || currentBuildId() === 'dev' || (!force && now - lastCheck < CHECK_EVERY_MS)) return stale;
   lastCheck = now;
   try {
     const res = await fetcher('/version.json', { cache: 'no-store' });
@@ -40,4 +40,9 @@ export function installNewBuildCheck(): void {
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') void checkForNewBuild();
   });
+  // A tab left open and in view also notices a deploy, so the next click
+  // loads the new build whole instead of asking for code that is gone.
+  window.setInterval(() => {
+    if (document.visibilityState === 'visible') void checkForNewBuild();
+  }, 3 * CHECK_EVERY_MS);
 }

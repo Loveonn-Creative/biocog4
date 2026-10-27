@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { closestRoutes, normalisePath, type RouteEntry, type RouteMatch } from "@/lib/routeMatch";
+import { checkForNewBuild } from "@/lib/reliability/newBuild";
+import { reloadOnceForNewBuild } from "@/lib/reliability/chunkRecovery";
 
 // 404 "reader": the wrong address arrives as a crumpled slip; it unfolds and is
 // read the way Senseible reads an invoice, then the page the visitor most
@@ -45,6 +47,21 @@ const NotFound = () => {
   const [step, setStep] = useState(0);
   const [query, setQuery] = useState("");
   const timers = useRef<number[]>([]);
+  // Reached by a link inside the site: the address may be a page added since
+  // this tab loaded. Ask for the live build first and load the page fresh if a
+  // newer one is out; show the 404 only when the address is really missing.
+  const [checking, setChecking] = useState(() => typeof window !== "undefined" && Number(window.history.state?.idx ?? 0) > 0);
+  useEffect(() => {
+    if (!checking) return;
+    let live = true;
+    const done = () => { if (live) setChecking(false); };
+    const giveUp = window.setTimeout(done, 1500);
+    void checkForNewBuild(Date.now(), fetch, true).then((newer) => {
+      if (newer && reloadOnceForNewBuild()) return;
+      done();
+    });
+    return () => { live = false; window.clearTimeout(giveUp); };
+  }, [checking]);
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
@@ -75,6 +92,8 @@ const NotFound = () => {
   const best = top[0];
   const results = query.trim().length >= 2 ? closestRoutes(query, routes, 5, true) : [];
   const time = new Date().toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" });
+
+  if (checking) return <div className="min-h-screen bg-background" aria-busy="true" />;
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center px-4">
