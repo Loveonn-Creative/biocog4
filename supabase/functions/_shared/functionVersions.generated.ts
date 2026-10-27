@@ -12,5 +12,6 @@ export const FUNCTION_VERSIONS: Record<string, string> = {
   "esg-report-access": "948598ee76e61a83",
   "create-razorpay-order": "680e6ee02ce288fc",
   "verify-razorpay-payment": "1422ed66d53ed646",
-  "razorpay-webhook": "90a7c2f2a76eae9b"
+  "razorpay-webhook": "90a7c2f2a76eae9b",
+  "import-records": "8f8a00999cc388fd"
 };

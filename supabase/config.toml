@@ -13,6 +13,8 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.extract-document]
     verify_jwt = false
+  [functions.import-records]
+    verify_jwt = false
   [functions.generate-sitemap]
     verify_jwt = false
   [functions.intelligence-chat]
