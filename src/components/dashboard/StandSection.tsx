@@ -2,7 +2,6 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Upload, ShieldCheck, FileBarChart, Shield, Coins } from 'lucide-react';
 import type { EmissionsSummary } from '@/hooks/useEmissions';
-import { SAMPLE_BILL_ENABLED } from '@/lib/sampleBill';
 
 // Where the account stands: the verified total and its scopes, the evidence
 // score and credibility, the one next action, and the everyday actions. It
@@ -171,10 +170,6 @@ export function StandSection(p: Props) {
             {action.label}<ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
         </div>
-        {/* A new account with nothing read yet can walk the whole path on a sample first. */}
-        {SAMPLE_BILL_ENABLED && p.recordCount === 0 && (p.documentCount ?? 0) === 0 && (
-          <Link to="/?sample=1" className="self-start text-sm font-medium text-primary underline-offset-4 hover:underline">See the full path on a sample bill</Link>
-        )}
       </div>
       {p.moment && <div className="lg:col-span-2">{p.moment}</div>}
     </section>
