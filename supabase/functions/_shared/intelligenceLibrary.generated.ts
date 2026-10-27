@@ -3403,7 +3403,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "answer",
   "title": "Is there an official template for sending CBAM emissions data to my EU buyer?",
-  "text": "Yes, but it is voluntary. The European Commission publishes an Excel communication template, with guidance, for installation operators outside the EU to send embedded emissions data to EU importers. Your buyer may accept another format, but using the Commission template makes the data easier for them to check and file.",
+  "text": "Yes, and when you report actual emissions it is mandatory: the Commission's operator emissions report template (Article 10 of the Methodology Act) is the common format your EU buyer uses to check and file your data.",
   "url": "https://senseible.earth/answers/cbam-communication-template-for-suppliers"
  },
  {

@@ -904,7 +904,7 @@ const Index = () => {
     }, 3600);
   };
 
-  // The Dashboard's "Try a sample bill" link opens / with ?sample=1.
+  // /?sample=1 opens straight into the sample run (shareable for demos).
   useEffect(() => {
     if (!SAMPLE_BILL_ENABLED || new URLSearchParams(location.search).get('sample') !== '1') return;
     navigate(location.pathname, { replace: true });
@@ -1011,7 +1011,7 @@ const Index = () => {
             <p className="-mt-2 text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
               {t("home.hero.action", "Upload an invoice, get an evidence-linked carbon report")}
             </p>
-            {SAMPLE_BILL_ENABLED && (
+            {SAMPLE_BILL_ENABLED && authStatus === 'signedOut' && (
               <button type="button" onClick={startSample} className="-mt-5 text-sm font-medium text-primary underline-offset-4 hover:underline">
                 Try a sample bill
               </button>
