@@ -2,7 +2,8 @@
 // client as an argument (no Deno or esm.sh imports), so the website tests run
 // it with a fake client.
 //
-// Rules: paid plans are never limited. On the free plan (Snapshot) each new
+// Rules: paid plans and enterprise accounts (custom terms, granted by
+// Senseible staff) are never limited. On the free plan (Snapshot) each new
 // report download in the India-time month counts once; the same report key
 // again in the same month is not counted (report_download_take). Whenever the
 // plan or the count cannot be read, the download is allowed (degraded), so a
@@ -55,10 +56,22 @@ export async function planOrNull(admin: Client, userId: string, now = new Date()
 }
 
 /** Decides one download for a signed-in user. `key` comes from reportDownloadKey. */
-export async function reportAllowance(admin: Client, userId: string, key: string, now = new Date()): Promise<Allowance> {
+export async function reportAllowance(admin: Client, userId: string, key: string, now = new Date(), email?: string | null): Promise<Allowance> {
   const plan = await planOrNull(admin, userId, now);
   if (plan === null) return { allowed: true, degraded: true };
   if (plan !== 'snapshot') return { allowed: true, unlimited: true };
+  // Enterprise terms are custom: the free-plan limit never applies to them.
+  if (email) {
+    try {
+      const ent = await admin.from('enterprise_access').select('id').eq('email', email.trim().toLowerCase()).eq('status', 'active').maybeSingle();
+      // No enterprise table yet means no enterprise accounts; any other error allows the download.
+      const missing = ent?.error && ['42P01', 'PGRST205', 'PGRST200'].includes(ent.error.code ?? '');
+      if (ent?.error && !missing) return { allowed: true, degraded: true };
+      if (ent?.data) return { allowed: true, unlimited: true };
+    } catch {
+      return { allowed: true, degraded: true };
+    }
+  }
 
   const { day, start } = usageWindow('report_download', now);
   const limit = FREE_REPORT_DOWNLOADS_PER_MONTH;

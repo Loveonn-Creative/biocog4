@@ -19,7 +19,7 @@ import { FRAMEWORKS } from '../src/lib/reportFrameworks';
 
 type Err = { code?: string; message?: string } | null;
 function fakeAdmin(opts: {
-  profile?: any; subs?: any[]; profileError?: Err; subsError?: Err; throwOnRead?: boolean;
+  profile?: any; subs?: any[]; profileError?: Err; subsError?: Err; throwOnRead?: boolean; enterprise?: any; enterpriseError?: Err;
   rpc?: (fn: string, a: any) => { data: any; error: Err };
 } = {}) {
   const calls: Array<[string, any]> = [];
@@ -29,7 +29,9 @@ function fakeAdmin(opts: {
       if (opts.throwOnRead) throw new Error('network');
       const q: any = {
         select: () => q, eq: () => q,
-        maybeSingle: async () => ({ data: opts.profile ?? null, error: opts.profileError ?? null }),
+        maybeSingle: async () => (t === 'enterprise_access'
+          ? { data: opts.enterprise ?? null, error: opts.enterpriseError ?? null }
+          : { data: opts.profile ?? null, error: opts.profileError ?? null }),
         then: (r: any) => r({ data: t === 'subscriptions' ? opts.subs ?? [] : [], error: t === 'subscriptions' ? opts.subsError ?? null : null }),
       };
       return q;
@@ -118,6 +120,19 @@ describe('allowance', () => {
   test('a user with no profile row is on the free plan', async () => {
     const admin = fakeAdmin({ rpc: () => ({ data: [{ allowed: false, used: 1 }], error: null }) });
     expect((await reportAllowance(admin, USER, KEY, OCT)).allowed).toBe(false);
+  });
+  test('enterprise accounts (custom terms) are never limited', async () => {
+    const admin = fakeAdmin({ ...FREE, enterprise: { id: 'e1' }, rpc: () => ({ data: [{ allowed: false, used: 1 }], error: null }) });
+    expect(await reportAllowance(admin, USER, KEY, OCT, 'Owner@Example.com')).toEqual({ allowed: true, unlimited: true });
+    expect(admin.calls).toEqual([]);
+  });
+  test('without the enterprise table yet, free users are still limited', async () => {
+    const admin = fakeAdmin({ ...FREE, enterpriseError: { code: '42P01' }, rpc: () => ({ data: [{ allowed: false, used: 1 }], error: null }) });
+    expect((await reportAllowance(admin, USER, KEY, OCT, 'a@b.co')).allowed).toBe(false);
+  });
+  test('an enterprise lookup fault allows the download', async () => {
+    const admin = fakeAdmin({ ...FREE, enterpriseError: { code: '57014' }, rpc: () => ({ data: [{ allowed: false, used: 1 }], error: null }) });
+    expect(await reportAllowance(admin, USER, KEY, OCT, 'a@b.co')).toEqual({ allowed: true, degraded: true });
   });
   test('paid plans are never limited and never counted', async () => {
     for (const tier of ['essential', 'pro', 'scale']) {

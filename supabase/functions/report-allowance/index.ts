@@ -37,7 +37,7 @@ Deno.serve(async (req) => {
 
   try {
     const admin = createClient(url, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
-    return json(await reportAllowance(admin, user.id, key));
+    return json(await reportAllowance(admin, user.id, key, new Date(), user.email ?? null));
   } catch (error) {
     console.error('report-allowance failed:', error instanceof Error ? error.message : 'unknown');
     return json({ allowed: true, degraded: true });
