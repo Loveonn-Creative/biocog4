@@ -359,6 +359,12 @@ const Reports = () => {
     return false;
   };
 
+  // Gov-Ready exports count toward the same monthly allowance as reports.
+  const exportGov = async (format: GovFormat) => {
+    if (!(await mayDownload(`GOV_${format}`, 'xlsx'))) return;
+    exportGovFormat(format);
+  };
+
   const downloadFramework = async (fwId: string, kind: ReportFileKind) => {
     if (isEmpty) {
       toast.error('Add a bill or invoice first; reports are built from your records');
@@ -794,7 +800,7 @@ const Reports = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => exportGovFormat('GCP')}
+                        onClick={() => exportGov('GCP')}
                         className="gap-1"
                       >
                         <Download className="h-3 w-3" />
@@ -803,7 +809,7 @@ const Reports = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => exportGovFormat('BRSR')}
+                        onClick={() => exportGov('BRSR')}
                         className="gap-1"
                       >
                         <Download className="h-3 w-3" />
@@ -812,7 +818,7 @@ const Reports = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => exportGovFormat('CCTS')}
+                        onClick={() => exportGov('CCTS')}
                         className="gap-1"
                       >
                         <Download className="h-3 w-3" />

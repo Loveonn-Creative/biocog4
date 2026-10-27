@@ -248,3 +248,13 @@ describe('Reports page contract', () => {
     expect(fnSrc).toContain("return json({ allowed: true, degraded: true });");
   });
 });
+
+describe('Gov-Ready exports', () => {
+  test('count toward the same monthly allowance before any file is built', async () => {
+    const page = await Bun.file(new URL('../src/pages/Reports.tsx', import.meta.url)).text();
+    expect(page).toContain("if (!(await mayDownload(`GOV_${format}`, 'xlsx'))) return;");
+    expect(page).not.toMatch(/onClick=\{\(\) => exportGovFormat\(/);
+    const { reportDownloadKey, reportIdFor } = await import('../supabase/functions/_shared/reportDownloadKey');
+    for (const f of ['GCP', 'BRSR', 'CCTS']) expect(reportDownloadKey(reportIdFor(`GOV_${f}`, null, null), 'xlsx')).toBe(`GOV_${f}:none:none:xlsx`);
+  });
+});
