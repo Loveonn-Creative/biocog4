@@ -1,0 +1,35 @@
+name: lifecycle-email
+
+# Runs the lifecycle-mailer function once a day at 10:30 India time.
+# Does nothing until both repository secrets are set:
+#   LIFECYCLE_MAILER_URL   the function URL (.../functions/v1/lifecycle-mailer)
+#   LIFECYCLE_CRON_SECRET  the same value as the function's LIFECYCLE_CRON_SECRET
+# Run it by hand from the Actions tab; a manual run is a dry run unless "send" is chosen.
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'dry-run lists who is due without sending; send sends'
+        type: choice
+        options: [dry-run, send]
+        default: dry-run
+
+permissions: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Call lifecycle-mailer
+        env:
+          URL: ${{ secrets.LIFECYCLE_MAILER_URL }}
+          SECRET: ${{ secrets.LIFECYCLE_CRON_SECRET }}
+          DRY: ${{ github.event_name == 'workflow_dispatch' && inputs.mode != 'send' }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$SECRET" ]; then echo "Secrets not set; nothing to do."; exit 0; fi
+          body='{"dryRun":false}'; [ "$DRY" = "true" ] && body='{"dryRun":true}'
+          curl -sS --fail-with-body -X POST "$URL" -H "x-cron-secret: $SECRET" -H "Content-Type: application/json" -d "$body"
