@@ -280,7 +280,7 @@ export default function Import() {
                       Import {ready} {noun} (coming soon)
                     </button>
                     <p id="import-next" className="mt-3 max-w-xl text-sm text-muted-foreground">
-                      Importing opens soon. Ready rows will then be added to your records and checked like any bill you upload.
+                      {noun.startsWith('supplier') ? 'Importing opens soon. Ready suppliers will then be added to your supplier list.' : 'Importing opens soon. Ready rows will then be added to your records and checked like any bill you upload.'}
                     </p>
                   </div>
                 </div>
