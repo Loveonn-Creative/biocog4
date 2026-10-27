@@ -365,7 +365,7 @@ const verificationSection = (ds: ReportDataset): Section => ({
   rows: ds.verification
     ? [
         ds.verification.status === 'verified'
-          ? ['Verified by', 'Senseible, expert-supervised']
+          ? ['Verified by', 'Senseible AI, checked for greenwashing']
           : ['Status', cap(ds.verification.status)],
         ['Records passing evidence checks', ds.verification.score === null ? 'Not scored' : `${Math.round(ds.verification.score * 100)}%`],
         ['Overclaim risk (Senseible check)', ds.verification.greenwashingRisk ? cap(ds.verification.greenwashingRisk) : 'Not assessed'],

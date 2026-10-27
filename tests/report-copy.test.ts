@@ -37,7 +37,7 @@ const BANNED: Array<[RegExp, string]> = [
   [/same files?,? same id/i, 'developer jargon'],
   [/platform-mapped|mapped references/i, 'internal jargon'],
   [/not applicable to this platform/i, 'use "Not reported" for disclosures that apply to the company'],
-  [/analyst or subject expert/i, 'vague: use "Verified by Senseible, expert-supervised"'],
+  [/analyst or subject expert/i, 'vague: use "Verified by Senseible AI, checked for greenwashing"'],
   [/senseible carbon platform|\bplatform\b|platform boundary/i, 'internal word: name Senseible or the documents'],
   [/net-zero engine/i, 'internal word'],
   [/independently reviewed/i, 'overclaim: review is in-house'],
