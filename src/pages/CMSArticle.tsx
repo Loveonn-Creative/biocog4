@@ -9,7 +9,6 @@ import { articleRedirects } from "@/data/articleRedirects";
 import { PAGE_REVIEWS, REVIEWERS } from "@/lib/seo/seoMeta";
 import { FormattedContent } from "@/components/FormattedContent";
 import { SocialShare } from "@/components/SocialShare";
-import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { articleFunnel, FUNNEL_LABEL } from "@/data/articleFunnel";
 import { getArticleBySlug, getArticlesByCategory } from "@/data/articleIndex";
 import { loadArticleBody } from "@/data/articleBody";
@@ -222,11 +221,6 @@ const CMSArticle = () => {
               title={article.title}
               description={article.excerpt}
             />
-          </div>
-          
-          {/* Newsletter */}
-          <div className="mt-12">
-            <NewsletterSignup />
           </div>
           
           {/* Related Articles */}

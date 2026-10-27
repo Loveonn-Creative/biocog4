@@ -4,7 +4,6 @@ import { ArrowLeft, Search, ArrowRight, Filter, X, Scale } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { getFeaturedArticles, searchArticles, getArticlesByCategory, cmsCategories, articleIndex as cmsArticles, type CMSArticleMeta as CMSArticle } from "@/data/articleIndex";
@@ -188,11 +187,6 @@ const ClimateStack = () => {
               </Button>
             </div>
           )}
-          
-          {/* Newsletter */}
-          <div className="mt-16 max-w-xl mx-auto">
-            <NewsletterSignup />
-          </div>
         </div>
       </main>
       

@@ -8,7 +8,6 @@ import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import contactOg from "@/assets/og/contact.jpg";
-import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -343,12 +342,6 @@ const Contact = () => {
                 </Link>
               </div>
             </div>
-            
-            {/* Newsletter */}
-            <NewsletterSignup 
-              title="Stay updated on climate tech"
-              subtitle="Weekly notes on carbon accounting, ESG compliance and climate finance."
-            />
           </div>
         </div>
       </main>

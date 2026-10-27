@@ -1,6 +1,8 @@
 project_id = "kobsfphgfvyjozjwkuhp"
 
 [functions]
+  [functions.lifecycle-mailer]
+    verify_jwt = false
   [functions.auth-email-hook]
     verify_jwt = false
   [functions.calculate-monetization]

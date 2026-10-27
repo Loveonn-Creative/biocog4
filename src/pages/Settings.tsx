@@ -20,6 +20,7 @@ import { COMPANY_SECTORS } from '@/lib/organizationProfile';
 import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
 import { Link } from 'react-router-dom';
 import { LanguagePreference } from '@/components/settings/LanguagePreference';
+import { EmailPreferences } from '@/components/settings/EmailPreferences';
 import { useFinanceDetail } from '@/hooks/useFinanceDetail';
 import { useScope3Visibility } from '@/hooks/useScope3Trail';
 import { useFinanceInsights, useFinanceInsightsSwitch } from '@/hooks/useFinanceInsights';
@@ -455,6 +456,8 @@ const Settings = () => {
           )}
 
           </>)}
+          {user?.id && <EmailPreferences userId={user.id} enterprise={!!enterprise} />}
+
           {/* Data Storage Info */}
           <Card className="bg-muted/30">
             <CardContent className="p-5">
