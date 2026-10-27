@@ -129,7 +129,6 @@ Related rules that stay in their own files: `AGENTS.md` (data, privacy, footer, 
 - Output quality gate (owner, 25 October 2026): the owner must not be the one who catches weak copy. Generated documents pass `tests/report-copy.test.ts`; new or changed pages, reports and certificates are rendered and reviewed by an independent agent, and every finding is fixed, before the owner sees visuals. Reports name Senseible or the documents, never "the platform".
 - Contact form newsletter tick box (owner, 27 October 2026): keep it as it is. The standalone newsletter box was removed from Contact, Climate Intelligence and articles because it stored nothing.
 - Page counting (owner, 27 October 2026): each invoice page in a PDF counts as one read. Do not change how pages are counted or split.
-- Spreadsheet importer (owner, 27 October 2026): /import checks a CSV or Excel file (activity data or supplier list, 2 MB and 1,000 rows at most) in the browser and shows ready, needs-fixing and duplicate rows, with a preview estimate from the shared factor functions only. This first version saves nothing and writes no emissions; the Import button stays disabled until a server step re-checks rows and saves them as unverified records that go through Verify. Not linked from navigation or the footer until the owner says so.
 
 ## 9. Open decisions (ask before acting)
 
