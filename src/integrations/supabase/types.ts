@@ -2799,6 +2799,27 @@ export type Database = {
         }
         Relationships: []
       }
+      report_downloads: {
+        Row: {
+          created_at: string
+          month: string
+          report_key: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          month: string
+          report_key: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          month?: string
+          report_key?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       reporting_frameworks: {
         Row: {
           applicability: Json
@@ -4582,6 +4603,21 @@ export type Database = {
         Args: { p_organization_id: string; p_user_id: string }
         Returns: undefined
       }
+      report_download_take: {
+        Args: {
+          p_day: string
+          p_limit: number
+          p_report_key: string
+          p_user: string
+          p_window_start: string
+        }
+        Returns: {
+          allowed: boolean
+          repeat: boolean
+          used: number
+        }[]
+      }
+      report_downloads_purge: { Args: never; Returns: number }
       reserve_invoice_read: {
         Args: {
           p_hash: string
