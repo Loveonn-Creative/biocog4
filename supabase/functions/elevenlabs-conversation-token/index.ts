@@ -6,7 +6,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { accessFor, VOICE_SESSION_MAX_MINUTES, voiceSessionsPerMonth } from "../_shared/intelligence.ts";
-import { planForUser, takeUse } from "../_shared/intelligenceUsage.ts";
+import { planForUser, readUse, takeUse } from "../_shared/intelligenceUsage.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -44,10 +44,10 @@ serve(async (req) => {
     if (!ELEVENLABS_API_KEY || !ELEVENLABS_AGENT_ID) return json({ error: 'Voice AI not configured' }, 500);
 
     const sessions = voiceSessionsPerMonth(plan);
-    const take = await takeUse(admin, `u:${userId}`, 'voice_session', sessions);
-    if (!take.allowed) {
-      return json({ error: 'voice_limit', message: `You have used this month's ${sessions} voice sessions. They reset on the 1st.`, sessionsPerMonth: sessions }, 429);
-    }
+    const limitReached = () => json({ error: 'voice_limit', message: `You have used this month's ${sessions} voice sessions. They reset on the 1st.`, sessionsPerMonth: sessions }, 429);
+    // Check first, count only once a token is issued: a failed token request
+    // no longer uses up a session.
+    if (!(await readUse(admin, `u:${userId}`, 'voice_session', sessions)).allowed) return limitReached();
 
     // Always use the server-configured agent — never trust client overrides.
     const response = await fetch(
@@ -61,6 +61,9 @@ serve(async (req) => {
     }
 
     const data = await response.json();
+    if (typeof data?.token !== 'string' || !data.token) return json({ error: 'Failed to get voice token' }, 502);
+    const take = await takeUse(admin, `u:${userId}`, 'voice_session', sessions);
+    if (!take.allowed) return limitReached();
     return json({ token: data.token, sessionsLeft: Math.max(0, sessions - take.used), sessionMaxMinutes: VOICE_SESSION_MAX_MINUTES });
   } catch (error) {
     console.error('Voice token error:', error instanceof Error ? error.message : 'unknown');
