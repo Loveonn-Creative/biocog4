@@ -80,7 +80,6 @@ const Monetize = () => {
   const verified = getVerifiedEmissions();
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [applyingPathway, setApplyingPathway] = useState<string | null>(null);
   const [pathwayStatuses, setPathwayStatuses] = useState<Record<string, string>>({});
   // The same server-side Estimate the green loan application shows, from the
   // latest submitted application. Null until one exists; never computed here.
@@ -180,46 +179,16 @@ const Monetize = () => {
     }
   };
 
-  const handleApply = async (pathwayType: string, partnerName: string, estimatedValue: number | null) => {
+  // Apply opens the Contact form with the request filled in. The form stores
+  // the enquiry and alerts the Senseible inbox, so every request reaches a person.
+  const handleApply = (title: string, partnerName: string) => {
     if (!verifications.length) {
       toast.error('Please verify your emissions first');
       navigate('/verify');
       return;
     }
-
-    setApplyingPathway(pathwayType);
-    
-    try {
-      const { data, error } = await supabase
-        .from('monetization_pathways')
-        .insert({
-          // The row's owner: required by the table's access rule (user_id = auth.uid()).
-          ...(user ? { user_id: user.id } : { session_id: sessionId }),
-          verification_id: verifications[0].id,
-          pathway_type: pathwayType,
-          partner_name: partnerName,
-          estimated_value: estimatedValue,
-          status: 'applied',
-          applied_at: new Date().toISOString(),
-          partner_details: {
-            applicationDate: new Date().toISOString(),
-            applicationType: pathwayType,
-          }
-        })
-        .select()
-        .single();
-
-      if (error) throw error;
-
-      // The Senseible team follows up on each request by hand; there is no direct partner link.
-      toast.success(`Request received. The Senseible team will contact you about ${partnerName}.`);
-      setPathwayStatuses(prev => ({ ...prev, [pathwayType]: 'applied' }));
-    } catch (err) {
-      console.error('Error applying for pathway:', (err as { code?: string })?.code ?? 'error');
-      toast.error('Could not send your request. Check your connection and try again.');
-    } finally {
-      setApplyingPathway(null);
-    }
+    const msg = `I would like to apply for ${title} (${partnerName}). My emissions are verified.`;
+    navigate(`/contact?topic=monetization&ref=monetize&msg=${encodeURIComponent(msg)}`);
   };
 
   const pathways: MonetizationPathway[] = [
@@ -447,18 +416,11 @@ const Monetize = () => {
                         </div>
                         {p.status === 'available' ? (
                           canAccessFeature('carbonMonetization') ? (
-                            <Button 
-                              onClick={() => handleApply(p.type, p.partner, p.value)}
-                              disabled={applyingPathway === p.type}
+                            <Button
+                              onClick={() => handleApply(p.title, p.partner)}
                               className="min-w-[120px]"
                             >
-                              {applyingPathway === p.type ? (
-                                <Loader2 className="h-4 w-4 animate-spin" />
-                              ) : (
-                                <>
-                                  Apply Now
-                                </>
-                              )}
+                              Apply Now
                             </Button>
                           ) : (
                             <Button variant="outline" asChild className="min-w-[120px]">
