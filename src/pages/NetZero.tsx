@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { analyticsEvents } from "@/lib/analytics";
 import { grossKg } from '@/lib/emissionLedger';
 import { ORG_REF } from "@/lib/seo/entity";
 import { Helmet } from "react-helmet-async";
@@ -297,6 +298,7 @@ const NetZero = () => {
     try {
       const { downloadNetZeroReport } = await import("@/lib/netZeroReport");
       downloadNetZeroReport({ sectorName, baselineFromRecords: hasData, timelineLabel, feasibility, statuses: taskStatuses, pace, cutKg, progressPct });
+      analyticsEvents.resourceDownload("net-zero-report", "pdf", "net-zero");
       const at = new Date().toISOString();
       setReportExportedAt(at);
       void saveGoal(taskStatuses, { reportExportedAt: at });

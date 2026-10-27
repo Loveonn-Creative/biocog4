@@ -85,6 +85,17 @@ export const analyticsEvents = {
   reportExport: (framework: string, format: string) =>
     trackEvent('report_export', { framework, format }),
 
+  /**
+   * A free resource saved to the visitor's device (template, kit, data file,
+   * sample report). GA4's standard file_download event, one per file saved,
+   * so repeat downloads count; GA4 shows unique users alongside. `resource`
+   * is a fixed slug from code, never user text.
+   */
+  resourceDownload: (resource: string, format: string, page: string) => {
+    if (!/^[a-z0-9-]{2,64}$/.test(resource)) return;
+    trackEvent('file_download', { resource, file_extension: format.slice(0, 8), page: page.slice(0, 64) });
+  },
+
   documentUpload: (source: string, count = 1) =>
     trackEvent('document_upload', { source, count }),
 

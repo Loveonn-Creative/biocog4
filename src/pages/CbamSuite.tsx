@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { analyticsEvents } from '@/lib/analytics';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calculator, Package, RotateCcw, Upload } from 'lucide-react';
@@ -87,13 +88,14 @@ export default function CbamSuite() {
 
   const name = slug(w.installation.nameEn);
   const exportsGo = {
-    report: async () => { const h = await reportHash(w); await downloadXlsx(reportSheets(w, r, h), `cbam-report-${name}.xlsx`); edit(() => {}, 'Exported operator emissions report'); },
-    pdf: async () => { const h = await reportHash(w); await downloadPdf(w, r, h, `cbam-summary-${name}.pdf`); edit(() => {}, 'Exported PDF summary'); },
-    verifier: async () => { const h = await reportHash(w); await downloadXlsx([...verifierSheets(w, r, h), ...reportSheets(w, r, h)], `cbam-verifier-pack-${name}.xlsx`); edit(() => {}, 'Exported verifier pack'); },
+    report: async () => { const h = await reportHash(w); await downloadXlsx(reportSheets(w, r, h), `cbam-report-${name}.xlsx`); analyticsEvents.resourceDownload('cbam-operator-report', 'xlsx', 'cbam-suite'); edit(() => {}, 'Exported operator emissions report'); },
+    pdf: async () => { const h = await reportHash(w); await downloadPdf(w, r, h, `cbam-summary-${name}.pdf`); analyticsEvents.resourceDownload('cbam-summary', 'pdf', 'cbam-suite'); edit(() => {}, 'Exported PDF summary'); },
+    verifier: async () => { const h = await reportHash(w); await downloadXlsx([...verifierSheets(w, r, h), ...reportSheets(w, r, h)], `cbam-verifier-pack-${name}.xlsx`); analyticsEvents.resourceDownload('cbam-verifier-pack', 'xlsx', 'cbam-suite'); edit(() => {}, 'Exported verifier pack'); },
     json: async () => {
       const text = JSON.stringify({ workbook: w }, null, 2);
       const h = await sha256Hex(text);
       downloadText(text, `cbam-workbook-${name}.json`);
+      analyticsEvents.resourceDownload('cbam-workbook', 'json', 'cbam-suite');
       edit(() => {}, `Exported workbook file, SHA-256 ${h}`);
       setMsg({ tone: 'ok', text: `Saved. File SHA-256 ${h}` });
     },
