@@ -78,15 +78,35 @@ function processTextNode(locale: string, node: Text) {
   anyNode[lastKey] = next;
 }
 
+// What the translator last wrote to each attribute. When the current value
+// differs, the page (React) has set a new label since, e.g. "Ask by voice" ->
+// "Stop listening", and that new value is the source, not the stashed one.
+const lastWritten = new WeakMap<Element, Partial<Record<string, string>>>();
+
+function remember(el: Element, attr: string, value: string) {
+  const seen = lastWritten.get(el) ?? {};
+  seen[attr] = value;
+  lastWritten.set(el, seen);
+}
+
 function processAttr(locale: string, el: Element, attr: string) {
   if (shouldSkip(el)) return;
   const cur = el.getAttribute(attr);
   if (!cur || !hasLetters(cur)) return;
   const stashKey = `${ORIG_ATTR}-${attr}`;
+  const last = lastWritten.get(el)?.[attr];
+  if (last !== undefined && cur !== last) el.removeAttribute(stashKey);
+  // Already from a reviewed static bundle: leave it as is, like text.
+  if (staticValues.has(cur.trim())) {
+    el.removeAttribute(stashKey);
+    remember(el, attr, cur);
+    return;
+  }
   const original = el.getAttribute(stashKey) ?? cur;
   if (!el.getAttribute(stashKey)) el.setAttribute(stashKey, original);
   const translated = translateSync(locale, original);
   if (cur !== translated) el.setAttribute(attr, translated);
+  remember(el, attr, translated);
 }
 
 function walk(locale: string, root: Node) {
@@ -184,7 +204,10 @@ export function stopDomTranslator() {
       for (const a of ATTRS) {
         const stash = el.getAttribute(`${ORIG_ATTR}-${a}`);
         if (stash) {
-          el.setAttribute(a, stash);
+          // Put the English back only if the label is still the one we wrote;
+          // a label the page changed since is already current.
+          const last = lastWritten.get(el)?.[a];
+          if (last === undefined || el.getAttribute(a) === last) el.setAttribute(a, stash);
           el.removeAttribute(`${ORIG_ATTR}-${a}`);
         }
       }
