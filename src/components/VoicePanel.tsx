@@ -40,6 +40,7 @@ export function VoicePanel({ question, askId, hush, lang, languageName, onClose 
   const [turns, setTurns] = useState<VoiceTurn[]>([]);
   const [current, setCurrent] = useState<Current>({ q: "", a: "", busy: false, error: null });
   const [finished, setFinished] = useState("");
+  const [cutOff, setCutOff] = useState<string | null>(null);
   const [speaking, setSpeaking] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const turnsRef = useRef<VoiceTurn[]>([]);
@@ -58,7 +59,6 @@ export function VoicePanel({ question, askId, hush, lang, languageName, onClose 
   }, []);
 
   // The visitor tapped Voice again: go quiet so the mic does not hear us.
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once per tap
   useEffect(() => { if (hush) stop(); }, [hush]);
 
   useEffect(() => {
@@ -77,6 +77,7 @@ export function VoicePanel({ question, askId, hush, lang, languageName, onClose 
     arm();
     setCurrent({ q: question, a: "", busy: true, error: null });
     setFinished("");
+    setCutOff(null);
     const live = () => !controller.signal.aborted;
 
     // Errors are written in English, so they are read in English.
@@ -141,7 +142,14 @@ export function VoicePanel({ question, askId, hush, lang, languageName, onClose 
         // Stopped, closed or replaced by a newer question: say nothing.
         if (controller.signal.aborted && !timedOut) return;
         if (!answer) fail(timedOut ? TIMEOUT_FAILURE.message : NETWORK_FAILURE.message);
-        else setCurrent((c) => ({ ...c, busy: false }));
+        else {
+          // Part of the answer arrived, then it stopped: say so instead of passing it off as whole.
+          const note = t("home.voice.cutOff", "The answer was cut off. Try again.");
+          setCurrent((c) => ({ ...c, busy: false }));
+          setFinished(`${readable(answer)} ${note}`);
+          setCutOff(note);
+          speak(note, lang);
+        }
       } finally {
         window.clearTimeout(timer);
       }
@@ -171,7 +179,10 @@ export function VoicePanel({ question, askId, hush, lang, languageName, onClose 
         {current.error
           ? <p role="alert" className="text-destructive">{current.error}</p>
           : current.a
-            ? <p className="whitespace-pre-line">{readable(current.a)}</p>
+            ? <>
+                <p className="whitespace-pre-line">{readable(current.a)}</p>
+                {cutOff && <p className="mt-2 text-sm text-muted-foreground">{cutOff}</p>}
+              </>
             : current.busy && <p className="flex items-center gap-2 text-muted-foreground"><Loader2 className="h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />{t("home.voice.thinking", "Thinking…")}</p>}
       </div>
       {/* Screen readers hear the finished answer once, not every streamed word. */}
