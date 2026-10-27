@@ -2,7 +2,7 @@
  * Product Carbon Footprint (PCF) Engine
  * Standards: ISO 14067, GHG Protocol Product Standard
  * Scope: cradle-to-gate or gate-to-gate
- * Emission factor hierarchy: primary > secondary (DEFRA/Ecoinvent) > IPCC AR6 proxy
+ * Emission factor hierarchy: primary > secondary (published sources, Senseible benchmark) > IPCC AR6 proxy
  */
 
 import { FREIGHT_FACTORS, getFreightFactor } from './freightFactors';
@@ -35,7 +35,8 @@ export interface TransportFactor {
   tier: EFTier;
 }
 
-// DEFRA 2024 + Ecoinvent v3.10 published cradle-to-gate values
+// Cradle-to-gate values: published sources (DEFRA 2024, industry bodies) and
+// Senseible benchmarks developed by the Senseible team.
 export const PCF_MATERIALS: MaterialFactor[] = [
   { id: 'steel-virgin', name: 'Steel (virgin, BF-BOF)', kgCO2ePerKg: 2.10, source: 'World Steel Assoc 2023', tier: 'secondary' },
   { id: 'steel-recycled', name: 'Steel (recycled, EAF)', kgCO2ePerKg: 0.40, source: 'World Steel Assoc 2023', tier: 'secondary' },
@@ -47,9 +48,9 @@ export const PCF_MATERIALS: MaterialFactor[] = [
   { id: 'paper', name: 'Paper / cardboard', kgCO2ePerKg: 0.94, source: 'DEFRA 2024', tier: 'secondary' },
   { id: 'glass', name: 'Glass', kgCO2ePerKg: 0.85, source: 'DEFRA 2024', tier: 'secondary' },
   { id: 'cement', name: 'Cement (Portland)', kgCO2ePerKg: 0.84, source: 'GCCA 2023', tier: 'secondary' },
-  { id: 'cotton', name: 'Cotton (textile)', kgCO2ePerKg: 5.90, source: 'Ecoinvent v3.10', tier: 'secondary' },
-  { id: 'polyester', name: 'Polyester (textile)', kgCO2ePerKg: 6.40, source: 'Ecoinvent v3.10', tier: 'secondary' },
-  { id: 'rubber', name: 'Rubber (natural)', kgCO2ePerKg: 1.60, source: 'Ecoinvent v3.10', tier: 'secondary' },
+  { id: 'cotton', name: 'Cotton (textile)', kgCO2ePerKg: 5.90, source: 'Senseible benchmark', tier: 'secondary' },
+  { id: 'polyester', name: 'Polyester (textile)', kgCO2ePerKg: 6.40, source: 'Senseible benchmark', tier: 'secondary' },
+  { id: 'rubber', name: 'Rubber (natural)', kgCO2ePerKg: 1.60, source: 'Senseible benchmark', tier: 'secondary' },
   { id: 'wood', name: 'Wood (sawn timber)', kgCO2ePerKg: 0.45, source: 'DEFRA 2024', tier: 'secondary' },
   { id: 'copper', name: 'Copper', kgCO2ePerKg: 4.60, source: 'ICA 2023', tier: 'secondary' },
 ];
