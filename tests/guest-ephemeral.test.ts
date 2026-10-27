@@ -105,8 +105,10 @@ describe('source contracts', () => {
 });
 
 describe('flow contracts (audit fixes)', () => {
-  test('Monetize sends the owner so the access rule accepts the request', () => {
-    expect(src('src/pages/Monetize.tsx')).toContain('...(user ? { user_id: user.id } : { session_id: sessionId })');
+  test('Monetize Apply opens the Contact form and writes nothing from the browser', () => {
+    const page = src('src/pages/Monetize.tsx');
+    expect(page).toContain('/contact?topic=monetization&ref=monetize&msg=');
+    expect(page).not.toMatch(/from\('monetization_pathways'\)\s*\.(insert|update|upsert)\(/);
   });
   test('an invoice already in the account is never recorded twice (import and bulk upload)', () => {
     expect(src('src/lib/guestImportLocal.ts')).toContain(".in('document_id', (docs ?? []).map(");
