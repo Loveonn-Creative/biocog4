@@ -205,7 +205,10 @@ export function useReportEvidence() {
       hasGovernanceNarrative: false,
       hasRiskAssessment: false,
       hasEnergyRecords,
-      hasProductLevelData: evidence.some((e) => Boolean(e.hsnCode)),
+      // An HSN code says what was bought, not what was made. A product
+      // footprint needs production output and a bill of materials per
+      // product, which are not recorded yet, so it stays a gap.
+      hasProductLevelData: false,
     });
   }, [emissions, summary, target, evidence, user?.id]);
 
