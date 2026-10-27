@@ -30,6 +30,7 @@ import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
 import { getGuestResult, guestDocumentId, guestRowsFor, putGuestResult } from '@/lib/guestResults';
 import { SAMPLE_BILL_ENABLED, SAMPLE_BILL_RESULT } from '@/lib/sampleBill';
+import { SampleSteps } from '@/components/SampleSteps';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -903,6 +904,14 @@ const Index = () => {
     }, 3600);
   };
 
+  // The Dashboard's "Try a sample bill" link opens / with ?sample=1.
+  useEffect(() => {
+    if (!SAMPLE_BILL_ENABLED || new URLSearchParams(location.search).get('sample') !== '1') return;
+    navigate(location.pathname, { replace: true });
+    startSample();
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- run once per arrival
+  }, [location.search]);
+
   // A different person signed in or out: drop the previous person's result,
   // pending retry and upload workspace so nothing is shown or saved for them.
   useEffect(() => {
@@ -1053,6 +1062,10 @@ const Index = () => {
           </div>
         )}
 
+        {sample && (state === "processing" || state === "result") && (
+          <div className="mb-6 flex w-full justify-center"><SampleSteps at={0} /></div>
+        )}
+
         {state === "processing" && (
           <ProcessingState documentType={documentType} />
         )}
@@ -1091,7 +1104,7 @@ const Index = () => {
           ) : (
             <>
               <HomeStory onUpload={openUploadPicker} />
-              <StickyCta heroId="hero" onUpload={openUploadPicker} />
+              {!sample && <StickyCta heroId="hero" onUpload={openUploadPicker} />}
             </>
           )}
         </Suspense>
