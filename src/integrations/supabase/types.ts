@@ -1284,7 +1284,9 @@ export type Database = {
           id: string
           notes: string | null
           organization_id: string | null
+          over_limit: Json
           questions_per_month: number
+          rates: Json
           reads_per_supplier: number
           reminders_per_request: number
           reports_included: number
@@ -1302,7 +1304,9 @@ export type Database = {
           id?: string
           notes?: string | null
           organization_id?: string | null
+          over_limit?: Json
           questions_per_month?: number
+          rates?: Json
           reads_per_supplier?: number
           reminders_per_request?: number
           reports_included?: number
@@ -1320,7 +1324,9 @@ export type Database = {
           id?: string
           notes?: string | null
           organization_id?: string | null
+          over_limit?: Json
           questions_per_month?: number
+          rates?: Json
           reads_per_supplier?: number
           reminders_per_request?: number
           reports_included?: number
@@ -3841,12 +3847,16 @@ export type Database = {
       supplier_requests: {
         Row: {
           buys: string | null
+          claimed_at: string | null
+          claimed_email: string | null
           created_at: string
           created_by: string | null
           enterprise_org_id: string
           expires_at: string
           id: string
           last_reminded_at: string | null
+          link_reset_at: string | null
+          old_token_hashes: string[]
           opened_at: string | null
           period_end: string
           period_start: string
@@ -3863,12 +3873,16 @@ export type Database = {
         }
         Insert: {
           buys?: string | null
+          claimed_at?: string | null
+          claimed_email?: string | null
           created_at?: string
           created_by?: string | null
           enterprise_org_id: string
           expires_at: string
           id?: string
           last_reminded_at?: string | null
+          link_reset_at?: string | null
+          old_token_hashes?: string[]
           opened_at?: string | null
           period_end: string
           period_start: string
@@ -3885,12 +3899,16 @@ export type Database = {
         }
         Update: {
           buys?: string | null
+          claimed_at?: string | null
+          claimed_email?: string | null
           created_at?: string
           created_by?: string | null
           enterprise_org_id?: string
           expires_at?: string
           id?: string
           last_reminded_at?: string | null
+          link_reset_at?: string | null
+          old_token_hashes?: string[]
           opened_at?: string | null
           period_end?: string
           period_start?: string
@@ -4499,8 +4517,11 @@ export type Database = {
       my_enterprise_usage: {
         Args: never
         Returns: {
+          extra_paise: number
           included: number
           kind: string
+          over_limit: string
+          period: string
           used: number
         }[]
       }
@@ -4638,6 +4659,10 @@ export type Database = {
         Args: { p_units: number; p_user: string }
         Returns: Json
       }
+      service_enterprise_question: {
+        Args: { p_org: string; p_record: boolean }
+        Returns: Json
+      }
       service_org_can: {
         Args: {
           p_capability: string
@@ -4647,6 +4672,17 @@ export type Database = {
         Returns: boolean
       }
       service_reissue_supplier_link: {
+        Args: { p_caller: string; p_request_id: string; p_valid_days?: number }
+        Returns: {
+          company_name: string
+          period_end: string
+          period_start: string
+          supplier_email: string
+          supplier_name: string
+          token: string
+        }[]
+      }
+      service_reset_supplier_link: {
         Args: { p_caller: string; p_request_id: string; p_valid_days?: number }
         Returns: {
           company_name: string
