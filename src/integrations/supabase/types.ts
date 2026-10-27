@@ -1123,6 +1123,54 @@ export type Database = {
           },
         ]
       }
+      email_log: {
+        Row: {
+          dedupe_key: string
+          id: string
+          kind: string
+          provider_id: string | null
+          sent_at: string
+          user_id: string
+        }
+        Insert: {
+          dedupe_key: string
+          id?: string
+          kind: string
+          provider_id?: string | null
+          sent_at?: string
+          user_id: string
+        }
+        Update: {
+          dedupe_key?: string
+          id?: string
+          kind?: string
+          provider_id?: string | null
+          sent_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      email_preferences: {
+        Row: {
+          record_tips: boolean
+          supplier_summary: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          record_tips?: boolean
+          supplier_summary?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          record_tips?: boolean
+          supplier_summary?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       emissions: {
         Row: {
           activity_data: number | null
