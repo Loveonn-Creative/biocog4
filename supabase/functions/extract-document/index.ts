@@ -3,6 +3,7 @@ import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
+import { dropRepeatedLines, fillMissingHeader, lineSignature, parseSplitPart, shiftPages } from '../_shared/splitPart.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, canonicalPlan, strongestRow } from '../_shared/planLimits.ts';
 import { pageCountingFrom } from '../_shared/addonPurchases.ts';
@@ -310,6 +311,10 @@ interface LineItem {
 }
 
 interface ExtractedData {
+  /** Set for a part of a long PDF: the original file and this part's pages. */
+  split?: { sourceHash: string; fromPage: number; toPage: number; totalPages: number };
+  /** Line page numbers already refer to the original PDF. */
+  pagesFromOriginal?: boolean;
   documentType: 'invoice' | 'bill' | 'certificate' | 'receipt' | 'unknown';
   /** Rules-library label (documentKind.ts); credit notes and purchase orders are evidence only. */
   documentKind: DocumentKind;
@@ -563,7 +568,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
   }
 
   try {
-    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId, reread, enteredKwh: rawEnteredKwh } = await req.json();
+    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId, reread, enteredKwh: rawEnteredKwh, split: rawSplit } = await req.json();
+    // A part of a long PDF split in the browser (splitPart.ts); null otherwise.
+    const split = parseSplitPart(rawSplit);
     // kWh the owner typed for a kVAh bill that prints neither kWh nor a power
     // factor. Used only in that case, checked against the printed kVAh, and
     // labelled "Entered by you" (electricityBill.ts kwhForKvahBill).
@@ -733,12 +740,27 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
           .from('documents')
           .select('id, vendor, invoice_number, created_at, cached_result')
           .eq('document_hash', documentHash);
-        const { data: existingDoc } = await (organizationId
+        let { data: existingDoc } = await (organizationId
           ? dupLookup.eq('organization_id', organizationId)
           : dupLookup.eq('user_id', userId))
           .order('created_at', { ascending: false })
           .limit(1)
           .maybeSingle();
+        // A part of a long PDF is the same part when it comes from the same
+        // original file and pages, even if splitting produced different bytes.
+        if (!existingDoc && split) {
+          const partLookup = supabase
+            .from('documents')
+            .select('id, vendor, invoice_number, created_at, cached_result')
+            .eq('cached_result->split->>sourceHash', split.sourceHash)
+            .eq('cached_result->split->>fromPage', String(split.fromPage));
+          ({ data: existingDoc } = await (organizationId
+            ? partLookup.eq('organization_id', organizationId)
+            : partLookup.eq('user_id', userId))
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .maybeSingle());
+        }
 
         // "Read again" is allowed only while the stored read produced no
         // emissions, so a counted invoice can never change under the user.
@@ -1078,9 +1100,59 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
       })) : [],
     } : null;
 
+    // ============= PARTS OF A LONG PDF =============
+    // A continuation page with no header of its own takes the supplier,
+    // number and date read from the first part; lines already read from an
+    // earlier part of the same PDF (a printed duplicate or triplicate copy)
+    // are counted once. Lines are always read from this part's own pages.
+    const splitNotes: string[] = [];
+    if (split) {
+      if (fillMissingHeader(ocrData, split.header).length > 0) {
+        splitNotes.push(`Supplier, invoice number and date taken from the first pages of the same PDF (pages ${split.fromPage}-${split.toPage} do not print them)`);
+      }
+      if (supabaseUrl && supabaseKey && isAuthenticated && userId && Array.isArray(ocrData.lineItems) && ocrData.lineItems.length > 0) {
+        try {
+          const key = invoiceIdentity({
+            supplierGstin: ocrData.supplierGstin, vendor: ocrData.vendor, invoiceNumber: ocrData.invoiceNumber,
+            date: parseInvoiceDate(ocrData.date) ?? undefined, billingPeriodStart: ocrData.billingPeriodStart,
+            billingPeriodEnd: ocrData.billingPeriodEnd, unitsConsumedKwh: ocrData.unitsConsumedKwh, amount: ocrData.amount,
+          });
+          if (key) {
+            const db = createClient(supabaseUrl, supabaseKey);
+            const siblingQuery = db.from('documents').select('cached_result')
+              .eq('cached_result->split->>sourceHash', split.sourceHash)
+              .neq('cached_result->split->>fromPage', String(split.fromPage));
+            const { data: siblings } = await (organizationId ? siblingQuery.eq('organization_id', organizationId) : siblingQuery.eq('user_id', userId)).limit(100);
+            const seen = new Set<string>();
+            for (const d of siblings ?? []) {
+              const c = (d as { cached_result?: { invoiceKey?: string; lineItems?: Array<Record<string, unknown>> } }).cached_result;
+              if (!c?.invoiceKey || !(c.invoiceKey === key || c.invoiceKey.endsWith(`|${key}`))) continue;
+              for (const l of c.lineItems ?? []) seen.add(lineSignature(l));
+            }
+            if (seen.size > 0) {
+              const before = ocrData.lineItems.length;
+              const { kept, dropped } = dropRepeatedLines(ocrData.lineItems, seen);
+              if (dropped === before) {
+                return new Response(JSON.stringify({
+                  success: true, repeatedCopy: true, isDuplicate: true, duplicateReason: 'repeated_copy',
+                  message: `Pages ${split.fromPage}-${split.toPage} repeat an invoice already read from this PDF (for example a duplicate or triplicate copy). It is counted once.`,
+                }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+              }
+              if (dropped > 0) {
+                ocrData.lineItems = kept;
+                splitNotes.push(`${dropped} line${dropped === 1 ? '' : 's'} on pages ${split.fromPage}-${split.toPage} repeat lines already read from this PDF and are counted once`);
+              }
+            }
+          }
+        } catch (e) {
+          console.error('Long PDF part check failed:', (e as Error)?.name ?? 'error');
+        }
+      }
+    }
+
     // ============= RULE-BASED CLASSIFICATION & CALCULATION =============
     // This is where all math happens - deterministic, no AI
-    const validationFlags: string[] = [];
+    const validationFlags: string[] = [...splitNotes];
     // Electricity bills: read printed billed units; "units" means kWh there.
     // kVAh bills use the printed kWh, else kVAh x the printed power factor
     // (labelled estimate); meter photos use two readings (later - earlier).
@@ -1385,7 +1457,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
       buyerGstin: ocrData.buyerGstin,
       amount: ocrData.amount,
       currency: ocrData.currency || 'INR',
-      lineItems: classifiedItems,
+      // Page numbers of a long PDF's part are stored as pages of the original PDF.
+      lineItems: split ? shiftPages(classifiedItems, split.fromPage) : classifiedItems,
+      ...(split ? { split: { sourceHash: split.sourceHash, fromPage: split.fromPage, toPage: split.toPage, totalPages: split.totalPages }, pagesFromOriginal: true } : {}),
       taxAmount: ocrData.taxAmount,
       subtotal: ocrData.subtotal,
       primaryScope: primaryScope ? parseInt(primaryScope) : undefined,
@@ -1424,18 +1498,21 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         const owned = (q: any) => (organizationId ? q.eq('organization_id', organizationId) : q.eq('user_id', userId));
         const cols = 'id, document_hash, created_at, cached_result';
         let twin: any = null;
+        // Other parts of the same long PDF are not a second copy of the
+        // invoice: their repeated lines were already removed above.
+        const otherFile = (d: any) => !(split && d?.cached_result?.split?.sourceHash === split.sourceHash);
         if (extractedData.invoiceKey) {
-          const byKey = await owned(db.from('documents').select(cols).eq('cached_result->>invoiceKey', extractedData.invoiceKey).neq('document_hash', documentHash)).limit(1);
-          twin = (byKey.data ?? [])[0] ?? null;
+          const byKey = await owned(db.from('documents').select(cols).eq('cached_result->>invoiceKey', extractedData.invoiceKey).neq('document_hash', documentHash)).limit(split ? 20 : 1);
+          twin = (byKey.data ?? []).find(otherFile) ?? null;
         }
         if (!twin && extractedData.billKey) {
-          const byBill = await owned(db.from('documents').select(cols).eq('cached_result->>billKey', extractedData.billKey).neq('document_hash', documentHash)).limit(1);
-          twin = (byBill.data ?? [])[0] ?? null;
+          const byBill = await owned(db.from('documents').select(cols).eq('cached_result->>billKey', extractedData.billKey).neq('document_hash', documentHash)).limit(split ? 20 : 1);
+          twin = (byBill.data ?? []).find(otherFile) ?? null;
         }
         // Invoices stored before invoiceKey existed: match number and date, then compare identities.
         if (!twin && extractedData.invoiceNumber && parseInvoiceDate(extractedData.date)) {
           const byNumber = await owned(db.from('documents').select(cols).eq('invoice_number', extractedData.invoiceNumber).eq('invoice_date', parseInvoiceDate(extractedData.date)).neq('document_hash', documentHash)).limit(5);
-          twin = (byNumber.data ?? []).find((d: any) => d.cached_result && invoiceIdentity({
+          twin = (byNumber.data ?? []).find((d: any) => d.cached_result && otherFile(d) && invoiceIdentity({
             supplierGstin: d.cached_result.supplierGstin, vendor: d.cached_result.vendor, invoiceNumber: d.cached_result.invoiceNumber,
             date: parseInvoiceDate(d.cached_result.date) ?? undefined,
           }) === extractedData.invoiceKey) ?? null;

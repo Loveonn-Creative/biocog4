@@ -26,6 +26,7 @@ import { pageCountingActive } from '@/hooks/useInvoiceAllowance';
 import { prepareImageForUpload } from '@/lib/imageUpload';
 import { GUEST_MAX_BYTES } from '../../supabase/functions/_shared/guestScan';
 import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
+import { fileFingerprint, headerOf, retryablePartError, type SplitHeader } from '@/lib/longPdf';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
@@ -468,16 +469,25 @@ const Index = () => {
     }
     const done: { extracted: ExtractedData; saved: { documentId: string; emissionIds: string[] }; from?: number }[] = [];
     const notes: string[] = [];
-    // Two parts at a time; results are put back in page order below.
+    // The original file's fingerprint keeps its parts together on the server:
+    // a re-upload is still a duplicate, a printed copy is counted once, and
+    // continuation pages are never mistaken for a second copy.
+    const sourceHash = await fileFingerprint(file).catch(() => null);
+    let header: SplitHeader | undefined;
     let stopped = false;
-    await runPool(split.parts, 2, async (part) => {
+    const readPart = async (part: (typeof split.parts)[number]) => {
       const range = `pages ${part.fromPage}-${part.toPage}`;
       setDocumentType(`Reading ${range} of ${part.totalPages}...`);
       try {
         const imageBase64 = await fileToBase64(part.file);
-        const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
-          body: { imageBase64, mimeType: 'application/pdf', sessionId, organizationId: uploadOrganizationId() },
-        });
+        const body = {
+          imageBase64, mimeType: 'application/pdf', sessionId, organizationId: uploadOrganizationId(),
+          ...(sourceHash ? { split: { sourceHash, fromPage: part.fromPage, toPage: part.toPage, totalPages: part.totalPages, ...(header ? { header } : {}) } } : {}),
+        };
+        const send = async () => (await loadSupabase()).functions.invoke('extract-document', { body });
+        let { data, error } = await send();
+        // One more try when the connection dropped or the server was briefly busy.
+        if (error && retryablePartError(functionErrorStatus(error))) ({ data, error } = await send());
         if (error) {
           const msg = await getFunctionErrorMessage(error, 'could not be read');
           notes.push(`${range}: ${msg}`);
@@ -485,12 +495,14 @@ const Index = () => {
           if (await stopsBatch(error)) stopped = true;
           return;
         }
+        if (data?.repeatedCopy) { notes.push(`${range}: repeats a copy of this invoice already read, counted once`); return; }
         if (data?.financialDocument) { notes.push(`${range}: ${data.stored ? 'financial document, stored securely' : 'financial document, not kept'}`); return; }
         if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); return; }
         if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); return; }
-        // Page numbers of this part, mapped back to the original PDF.
-        const partData = data.data as ExtractedData;
-        const extracted: ExtractedData = { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
+        const partData = data.data as ExtractedData & { pagesFromOriginal?: boolean };
+        if (!header) header = headerOf(partData);
+        // Page numbers of this part, mapped back to the original PDF (the server does it when it can).
+        const extracted: ExtractedData = partData.pagesFromOriginal ? partData : { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
         const saved = user ? (serverSaved(data) ?? await saveEmissionToDatabase(extracted, data.documentHash)) : await keepGuestResult(extracted, data.documentHash, part.file.name);
         if (!user) void cacheGuestSource(data.documentHash, part.file, part.file.name);
         if (!saved) { notes.push(`${range}: could not be saved`); return; }
@@ -498,7 +510,12 @@ const Index = () => {
       } catch {
         notes.push(`${range}: could not be read`);
       }
-    }, () => stopped, (part) => notes.push(`pages ${part.fromPage}-${part.toPage}: not sent`));
+    };
+    // The first part is read alone so later parts can use its supplier, number
+    // and date when their pages do not print them; then two at a time.
+    const [firstPart, ...restParts] = split.parts;
+    await readPart(firstPart);
+    await runPool(restParts, 2, (part) => readPart(part), () => stopped, (part) => notes.push(`pages ${part.fromPage}-${part.toPage}: not sent`));
     done.sort((a, b) => (a.from ?? 0) - (b.from ?? 0));
     if (done.length === 0) {
       toast.error(notes[0] ? `Nothing could be read from this PDF (${notes[0]}).` : 'Nothing could be read from this PDF.', { duration: 8000 });

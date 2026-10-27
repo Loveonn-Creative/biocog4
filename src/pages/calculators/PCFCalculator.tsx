@@ -92,19 +92,19 @@ const PCFCalculatorPage = () => {
       howToSteps={[
         'Name your product and define the functional unit (e.g. 1 kg, 1 unit).',
         'Choose system boundary: cradle-to-gate (raw material to factory exit) or gate-to-gate (your facility only).',
-        'Add each raw material with its mass in kilograms; the calculator picks DEFRA / Ecoinvent factors automatically.',
+        'Add each raw material with its mass in kilograms; the calculator picks the matching factor automatically.',
         'Enter electricity, fuel, and transport inputs used in production.',
         'Choose allocation method (mass / energy / economic) if your process produces co-products.',
         'Click Calculate to see emissions per functional unit and a full breakdown.',
         'Sign in to save the result and download as CSV for buyer disclosures.',
       ]}
       faqs={[
-        { q: 'Which standards does this PCF calculator follow?', a: 'ISO 14067 and the GHG Protocol Product Standard. Emission factors are sourced from DEFRA 2024, Ecoinvent v3.10, World Steel Association, IAI, GCCA and IPCC AR6 where primary data is unavailable.' },
+        { q: 'Which standards does this PCF calculator follow?', a: 'ISO 14067 and the GHG Protocol Product Standard. Emission factors come from DEFRA 2024, the World Steel Association, IAI, GCCA, Senseible benchmarks and IPCC AR6 where primary data is unavailable.' },
         { q: 'What is a functional unit?', a: 'A functional unit is the reference quantity for which emissions are reported, for example "1 kg of finished steel" or "1 pair of shoes". It lets buyers compare products fairly.' },
         { q: 'When should I use mass vs economic allocation?', a: 'Use mass allocation when co-products have similar value per kg. Use economic allocation when the main product has much higher market value than by-products.' },
         { q: 'Can I use my own emission factors?', a: 'Yes. Each material line accepts a custom kgCO₂e/kg value and source label, which is preserved in the audit trail.' },
       ]}
-      factorSources={['ISO 14067', 'GHG Protocol Product Standard', 'DEFRA 2024', 'Ecoinvent v3.10', 'IPCC AR6']}
+      factorSources={['ISO 14067', 'GHG Protocol Product Standard', 'DEFRA 2024', 'Senseible benchmark', 'IPCC AR6']}
       related={[
         { href: '/calculators/supplier-emissions-risk', label: 'Supplier Emissions & Risk →' },
         { href: '/calculators/logistics-emissions', label: 'Logistics & Freight Emissions →' },

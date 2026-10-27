@@ -25,6 +25,7 @@ import { checkUploadPages, chunkPagesFor, estimateReads, pageCountOf } from '@/l
 import { useInvoiceAllowance } from '@/hooks/useInvoiceAllowance';
 import { prepareImageForUpload } from '@/lib/imageUpload';
 import { splitPdf } from '@/lib/pdfSplit';
+import { fileFingerprint } from '@/lib/longPdf';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { GUEST_MAX_BYTES } from '../../supabase/functions/_shared/guestScan';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
@@ -40,6 +41,8 @@ interface FileStatus {
   fromPage?: number;
   toPage?: number;
   totalPages?: number;
+  /** Fingerprint of the original PDF, so the server keeps its parts together. */
+  sourceHash?: string;
 }
 
 /** Files read at the same time. Each part of a long PDF counts as one. */
@@ -128,7 +131,10 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
       if (check.ok) { queue.push(f); continue; }
       if (check.reason === 'unknown_page_count') { queue.push({ ...f, status: 'error' as const, message: check.message }); continue; }
       const split = await splitPdf(f.file, chunk);
-      if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const, fromPage: p.fromPage, toPage: p.toPage, totalPages: p.totalPages })));
+      if (split.ok && split.parts) {
+        const sourceHash = await fileFingerprint(f.file).catch(() => undefined);
+        queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const, fromPage: p.fromPage, toPage: p.toPage, totalPages: p.totalPages, sourceHash })));
+      }
       else queue.push({ ...f, status: 'error' as const, message: split.message });
     }
     setFiles(queue);
@@ -154,7 +160,12 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
         const mimeType = sendFile.type || 'image/jpeg';
 
         const { data, error } = await supabase.functions.invoke('extract-document', {
-          body: { imageBase64, mimeType, sessionId, organizationId }
+          body: {
+            imageBase64, mimeType, sessionId, organizationId,
+            ...(fileStatus.sourceHash && fileStatus.fromPage && fileStatus.toPage && fileStatus.totalPages
+              ? { split: { sourceHash: fileStatus.sourceHash, fromPage: fileStatus.fromPage, toPage: fileStatus.toPage, totalPages: fileStatus.totalPages } }
+              : {}),
+          }
         });
 
         if (error) {
@@ -174,6 +185,10 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           // Kept privately on the server for climate finance; not a record.
           setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: data.stored ? 'success' as const : 'error' as const, message: data.stored ? 'Financial document, stored securely' : 'Financial document, not kept' } : f));
           if (data.stored) results.processed++; else results.errors++;
+        } else if (data?.repeatedCopy) {
+          // Pages that repeat a printed copy of an invoice already read from this PDF.
+          setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'duplicate' as const, message: 'Copy of an invoice already read, counted once' } : f));
+          results.duplicates++;
         } else if (data?.isDuplicate && !data?.success) {
           // Duplicate blocked
           setFiles(prev => prev.map((f, idx) => 
@@ -190,7 +205,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           if (!user) void cacheGuestSource(data.documentHash, fileStatus.file, fileStatus.file.name);
           const partData = data.data as PersistableExtraction;
           // Split parts: page numbers mapped back to the original PDF.
-          const extractedData: PersistableExtraction = fileStatus.fromPage
+          const extractedData: PersistableExtraction = fileStatus.fromPage && !(partData as { pagesFromOriginal?: boolean }).pagesFromOriginal
             ? { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], fileStatus.fromPage) }
             : partData;
           // Stored by the server with its emission rows: nothing to write here.
