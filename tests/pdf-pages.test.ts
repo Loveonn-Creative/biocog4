@@ -19,5 +19,11 @@ describe('countPdfPages', () => {
     expect(isPdf(pdf(1))).toBe(true);
     expect(isPdf(enc('\x89PNG....'))).toBe(false);
   });
+  test('a header after a few leading bytes is still a PDF, so it is page-counted', () => {
+    const junk = new Uint8Array([10, 10, 32, 32, ...pdf(12)]);
+    expect(isPdf(junk)).toBe(true);
+    expect(countPdfPages(junk)).toBe(12);
+    expect(isPdf(enc(' '.repeat(1100) + '%PDF-1.4'))).toBe(false);
+  });
   test('limit is 10 pages', () => { expect(MAX_PDF_PAGES).toBe(10); });
 });

@@ -28,8 +28,15 @@ export function countPdfPages(bytes: Uint8Array): number {
   return Math.max(pageObjects, maxCount);
 }
 
+// The same rule as the file check (fileSignature.ts): PDF readers accept the
+// %PDF- header anywhere in the first 1 KB. Checking only byte 0 let a file
+// with a few leading bytes pass as a PDF without being page-counted.
 export function isPdf(bytes: Uint8Array): boolean {
-  return bytes.length > 4 && bytes[0] === 0x25 && bytes[1] === 0x50 && bytes[2] === 0x44 && bytes[3] === 0x46; // %PDF
+  const end = Math.min(bytes.length, 1024) - 5;
+  for (let i = 0; i <= end; i++) {
+    if (bytes[i] === 0x25 && bytes[i + 1] === 0x50 && bytes[i + 2] === 0x44 && bytes[i + 3] === 0x46 && bytes[i + 4] === 0x2d) return true; // %PDF-
+  }
+  return false;
 }
 
 export function pageLimitMessage(pages: number): string {
