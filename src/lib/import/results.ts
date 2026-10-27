@@ -11,7 +11,9 @@ export type Outcome =
 export type FinalStatus = "saved" | "duplicate" | "fix" | "failed";
 export interface FinalRow { line: number; status: FinalStatus; reason: string }
 /** Every row of the file, each with one final status, so the counts add up to the file. */
-export interface SaveSummary { rows: FinalRow[]; counts: Record<FinalStatus, number>; error: string | null }
+export interface SaveSummary { rows: FinalRow[]; counts: Record<FinalStatus, number>; error: string | null; limitReached: boolean }
+
+export const LIMIT_ROW = "Monthly bill limit reached. Not saved.";
 
 export const NOT_SAVED = "Not saved. Try again.";
 
@@ -22,7 +24,7 @@ export function finalRows(all: CheckedRow[], outcomes: Map<number, Outcome>, uns
     if (r.status === "duplicate") return { line: r.line, status: "duplicate", reason: `Same bill as row ${r.duplicateOf}.` };
     const o = outcomes.get(r.line);
     if (!o) return { line: r.line, status: "failed", reason: unsentReason };
-    if (o.status === "saved") return { line: r.line, status: "saved", reason: o.emissions ? "" : "Saved. No carbon figure for freight yet." };
+    if (o.status === "saved") return { line: r.line, status: "saved", reason: o.emissions ? "" : "No carbon figure for freight yet." };
     if (o.status === "invalid") return { line: r.line, status: "fix", reason: o.reason };
     return { line: r.line, status: o.status, reason: o.reason };
   });

@@ -33,8 +33,8 @@ export interface DocTypeRule {
   canonicalUnit: string;
   /** Units shown to people. Any spelling normalizeUnit maps to canonicalUnit is accepted. */
   unitsShown: string;
-  /** Extra how-to added to the wrong-unit message, where one helps. */
-  unitTip?: string;
+  /** The whole wrong-unit message, where a how-to helps; else "<Type> needs <units>." */
+  unitHelp?: string;
   /**
    * Category, scope and fuel, from the invoice reader's own keyword
    * classification of the bill type's name (classifyByKeyword).
@@ -48,24 +48,24 @@ const classify = (label: string): KeywordClass => {
   return c;
 };
 
-const fuel = (label: string, unitsShown: string, unitTip?: string): DocTypeRule => {
+const fuel = (label: string, unitsShown: string, unitHelp?: string): DocTypeRule => {
   const calc = classify(label);
-  return { label, unitTip, canonicalUnit: normalizeUnit(FUEL_FACTORS[calc.fuelType!].unit)!.unit, unitsShown, calc };
+  return { label, unitHelp, canonicalUnit: normalizeUnit(FUEL_FACTORS[calc.fuelType!].unit)!.unit, unitsShown, calc };
 };
 
 export const DOC_TYPES: Record<DocType, DocTypeRule> = {
-  electricity: { label: 'Electricity', canonicalUnit: 'kWh', unitsShown: 'kWh or MWh', unitTip: 'Use the units consumed on the bill.', calc: classify('Electricity') },
+  electricity: { label: 'Electricity', canonicalUnit: 'kWh', unitsShown: 'kWh or MWh', unitHelp: 'Electricity is counted in kWh. Enter the units consumed on the bill, then set Unit to kWh (or MWh).', calc: classify('Electricity') },
   diesel: fuel('Diesel', 'litre or kl'),
   petrol: fuel('Petrol', 'litre or kl'),
-  lpg: fuel('LPG', 'kg or tonne', 'Multiply cylinders by the kg printed on each one.'),
-  png: fuel('PNG', 'scm', 'Use the scm figure on the gas bill.'),
+  lpg: fuel('LPG', 'kg or tonne', 'LPG is counted in kg. Enter the total kg (cylinders times the kg printed on each), then set Unit to kg.'),
+  png: fuel('PNG', 'scm', 'PNG is counted in scm. Enter the scm figure from the gas bill, then set Unit to scm.'),
   cng: fuel('CNG', 'kg or tonne'),
   coal: fuel('Coal', 'kg or tonne'),
   // Freight is Scope 3 and has no factor in emissionFactors.ts: Scope 3 lines
   // are calculated in the supplier evidence trail (scope3.ts), so an imported
   // freight row is kept as a record with no emission figure, as an uploaded
   // freight invoice is.
-  freight: { label: 'Freight', canonicalUnit: 'ton-km', unitsShown: 'tonne-km', unitTip: 'Multiply tonnes carried by km travelled.', calc: classify('Freight') },
+  freight: { label: 'Freight', canonicalUnit: 'ton-km', unitsShown: 'tonne-km', unitHelp: 'Freight is counted in tonne-km. Enter tonnes carried times km travelled, then set Unit to tonne-km.', calc: classify('Freight') },
 };
 
 export const DOC_TYPE_KEYS = Object.keys(DOC_TYPES) as DocType[];
@@ -80,7 +80,7 @@ export const ACTIVITY_COLUMNS: Column[] = [
   { key: 'date', label: 'Date', required: true, aliases: ['invoicedate', 'billdate'], hint: 'DD/MM/YYYY or YYYY-MM-DD, for example 30/05/2026' },
   { key: 'type', label: 'Bill type', required: true, aliases: ['type', 'doctype', 'documenttype'], hint: DOC_TYPE_LIST },
   { key: 'quantity', label: 'Quantity', required: true, aliases: ['qty', 'units'], hint: 'More than 0, as printed on the bill' },
-  { key: 'unit', label: 'Unit', required: true, aliases: ['uom'], hint: 'Must match the bill type. See the How to fill sheet.' },
+  { key: 'unit', label: 'Unit', required: true, aliases: ['uom'], hint: 'Must match the bill type. See the units list below.' },
   { key: 'supplier', label: 'Supplier name', required: true, aliases: ['supplier', 'vendor', 'vendorname'], hint: 'Who issued the bill' },
   { key: 'gstin', label: 'Supplier GSTIN', required: false, aliases: ['gstin', 'gst', 'gstno', 'suppliergst'], hint: '15 characters, if the bill shows one' },
   { key: 'invoice', label: 'Invoice number', required: false, aliases: ['invoice', 'invoiceno', 'billnumber', 'billno'], hint: 'As printed on the bill' },
@@ -113,8 +113,28 @@ export function unitProblem(type: DocType, rawUnit: string): string | null {
   const rule = DOC_TYPES[type];
   const n = normalizeUnit(rawUnit);
   if (n && n.unit === rule.canonicalUnit) return null;
-  if (type === 'electricity' && /^\s*kvah\s*$/i.test(rawUnit)) return 'kVAh is not kWh. Use the kWh figure on the bill.';
-  return `${rule.label} needs ${rule.unitsShown}.${rule.unitTip ? ` ${rule.unitTip}` : ''}`;
+  if (type === 'electricity' && /^\s*kvah\s*$/i.test(rawUnit)) return 'kVAh is not kWh. Enter the kWh figure from the bill, then set Unit to kWh.';
+  return rule.unitHelp ?? `${rule.label} needs ${rule.unitsShown}.`;
+}
+
+/**
+ * A fix that changes a row's unit but keeps its number usually means the
+ * number is still in the old unit (4 cylinders typed as 4 kg). Such a fix
+ * needs the quantity confirmed or changed too. Returns the fixed values, or
+ * a message when the quantity has not been confirmed. Pure, so it is tested.
+ */
+export function applyRowFix(
+  before: Record<string, string>,
+  draft: Record<string, string>,
+  opts: { quantityConfirmed: boolean },
+): { ok: true; values: Record<string, string> } | { ok: false; message: string } {
+  const values = { ...before, ...draft };
+  const unitChanged = (values.unit ?? '').trim().toLowerCase() !== (before.unit ?? '').trim().toLowerCase();
+  const qtySame = (values.quantity ?? '').trim() === (before.quantity ?? '').trim();
+  if (unitChanged && qtySame && (before.quantity ?? '').trim() && !opts.quantityConfirmed) {
+    return { ok: false, message: `You changed the unit. Check that ${before.quantity.trim()} is in ${values.unit.trim() || 'the new unit'}, or change the quantity.` };
+  }
+  return { ok: true, values };
 }
 
 // ---------------------------------------------------------------------------
@@ -168,10 +188,13 @@ export function matchHeaders(header: string[]): HeaderMatch {
   const activity = locate('activity');
   const suppliers = locate('suppliers');
   const kind: ImportKind | null = 'type' in activity ? 'activity' : ('name' in suppliers || 'email' in suppliers || 'spend' in suppliers) ? 'suppliers' : null;
-  if (!kind) return { ok: false, message: 'We could not match the columns. Start from one of the templates above.' };
+  if (!kind) return { ok: false, message: 'We could not find a Bill type column. Download the template above and paste your rows into it.' };
   const columnIndex = kind === 'activity' ? activity : suppliers;
   const missing = COLUMNS[kind].filter(c => c.required && !(c.key in columnIndex)).map(c => c.label);
-  if (missing.length) return { ok: false, message: `This file has no ${missing.join(', ')} column. Add it, or paste your rows into the template above.` };
+  if (missing.length) {
+    const names = missing.length === 1 ? missing[0] : `${missing.slice(0, -1).join(', ')} and ${missing[missing.length - 1]}`;
+    return { ok: false, message: `This file is missing the ${names} column${missing.length === 1 ? '' : 's'}. Add ${missing.length === 1 ? 'it' : 'them'}, or paste your rows into the template above.` };
+  }
   return { ok: true, kind, columnIndex };
 }
 
@@ -196,6 +219,25 @@ export function parseImportDate(raw: string, now = new Date()): string | null {
 }
 
 const DATE_HELP = 'Write the date as DD/MM/YYYY or YYYY-MM-DD, for example 30/05/2026.';
+
+/** Why a date cell is not accepted, by cause, or null when it is. */
+export function dateProblem(raw: string, now = new Date()): string | null {
+  const v = raw.trim();
+  if (parseImportDate(v, now)) return null;
+  const dayFirst = /^(\d{1,2})([/-])(\d{1,2})\2(\d{4})$/.exec(v);
+  const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v);
+  if (!dayFirst && !iso) return DATE_HELP;
+  const [y, m, d] = dayFirst ? [+dayFirst[4], +dayFirst[3], +dayFirst[1]] : [+iso![1], +iso![2], +iso![3]];
+  const t = new Date(Date.UTC(y, m - 1, d));
+  if (t.getUTCFullYear() !== y || t.getUTCMonth() !== m - 1 || t.getUTCDate() !== d) return `${v} is not a real date. Check the day and month.`;
+  return 'Use a bill date from 2000 up to next month.';
+}
+
+/** A stored YYYY-MM-DD shown the Indian way, DD/MM/YYYY; anything else as typed. */
+export function displayDate(raw: string): string {
+  const iso = parseImportDate(raw);
+  return iso ? `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}` : raw;
+}
 
 /** Example shown when a number cell holds something else. */
 const NUMBER_HELP: Record<string, string> = {
@@ -240,12 +282,15 @@ function checkActivity(values: Record<string, string>, now: Date): { issues: Iss
   const issues: Issue[] = [];
   const date = (values.date ?? '').trim();
   if (!date) issues.push({ field: 'date', message: 'Date is missing.' });
-  else if (!parseImportDate(date, now)) issues.push({ field: 'date', message: DATE_HELP });
+  else {
+    const problem = dateProblem(date, now);
+    if (problem) issues.push({ field: 'date', message: problem });
+  }
 
   const rawType = (values.type ?? '').trim();
   let type: DocType | null = null;
   if (!rawType) issues.push({ field: 'type', message: 'Bill type is missing.' });
-  else if (!(type = parseDocType(rawType))) issues.push({ field: 'type', message: `"${rawType}" is not on the list. Use ${DOC_TYPE_LIST}.` });
+  else if (!(type = parseDocType(rawType))) issues.push({ field: 'type', message: `"${rawType}" is not a bill type we accept. Use ${DOC_TYPE_LIST}.` });
 
   const qty = positive(values, 'quantity', 'Quantity', true, issues);
 
@@ -370,7 +415,7 @@ export function checkSheet(sheet: string[][], now = new Date()): SheetCheck {
   if (match.ok === false) return { ok: false, message: match.message };
   const data = sheet.slice(headerAt + 1);
   const filled = data.filter(r => !isBlank(r)).length;
-  if (!filled) return { ok: false, message: 'The columns are right but there are no rows yet.' };
+  if (!filled) return { ok: false, message: 'The headings match, but there are no bills under them yet.' };
   if (filled > MAX_ROWS) return { ok: false, message: `This file has ${filled.toLocaleString('en-IN')} rows. Split it into files of ${MAX_ROWS.toLocaleString('en-IN')} rows or fewer.` };
   return { ok: true, result: checkRows(match.kind, match.columnIndex, data, now, headerAt + 2) };
 }

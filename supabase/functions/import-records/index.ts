@@ -16,7 +16,7 @@ serve(async (req) => {
     });
   } catch (error) {
     console.error('import-records failed:', error instanceof Error ? error.name : 'error');
-    return new Response(JSON.stringify({ error: 'Something went wrong while saving. Nothing more was saved; try again.', code: 'internal' }), {
+    return new Response(JSON.stringify({ error: 'We could not save these rows. Try again in a minute.', code: 'internal' }), {
       status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }

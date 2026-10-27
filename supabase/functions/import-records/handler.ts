@@ -11,7 +11,7 @@
 // Supplier lists are not saved by this function.
 // The database client is passed in, so the tests run this handler directly.
 import { UUID_RE, orgCan } from '../_shared/workspaceAccess.ts';
-import { canonicalPlan, invoiceScanLimit, monthStartIst, monthlyLimitMessage, strongestRow } from '../_shared/planLimits.ts';
+import { canonicalPlan, invoiceScanLimit, monthStartIst, strongestRow } from '../_shared/planLimits.ts';
 import { pageCountingFrom } from '../_shared/addonPurchases.ts';
 import { gridCountryFor } from '../_shared/electricity.ts';
 import { invoiceIdentity } from '../_shared/extractionRead.ts';
@@ -60,9 +60,13 @@ function jwtRole(token: string): string | null {
 }
 
 export const MESSAGES = {
+  /** Shown for any request problem that is not the person's to fix; the code says which. */
+  generic: 'We could not save these rows. Try again in a minute.',
   signIn: 'Sign in to import your bills.',
   expired: 'Your session has expired. Please sign in again.',
-  role: 'Your team role cannot add invoices to this organisation. Ask an admin for analyst or data manager access.',
+  role: 'Your team role cannot add bills to this organisation. Ask an admin for analyst or data manager access.',
+  limit: 'Monthly bill limit reached. Not saved.',
+  unreadable: 'We could not read this row. Check the quantity and unit.',
   suppliers: 'Supplier lists cannot be saved yet.',
   tooMany: `Send up to ${SAVE_BATCH_MAX} rows at a time.`,
   stored: 'Already in your records.',
@@ -72,19 +76,20 @@ export const MESSAGES = {
 
 export async function handleImportRecords(req: Request, deps: ImportDeps): Promise<Response> {
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
-  if (req.method !== 'POST') return json({ error: 'Use POST' }, 405);
+  const fail = (code: string, status: number) => json({ error: MESSAGES.generic, code }, status);
+  if (req.method !== 'POST') return fail('method_not_allowed', 405);
 
   let body: { kind?: unknown; rows?: unknown; organizationId?: unknown };
-  try { body = await req.json(); } catch { return json({ error: 'Send rows as JSON.' }, 400); }
+  try { body = await req.json(); } catch { return fail('bad_json', 400); }
 
   if (body.kind === 'suppliers') return json({ error: MESSAGES.suppliers, code: 'suppliers_not_saved' }, 400);
-  if (body.kind !== 'bills') return json({ error: 'Unknown import kind.' }, 400);
-  if (!Array.isArray(body.rows) || body.rows.length === 0) return json({ error: 'No rows to import.' }, 400);
+  if (body.kind !== 'bills') return fail('unknown_kind', 400);
+  if (!Array.isArray(body.rows) || body.rows.length === 0) return fail('no_rows', 400);
   if (body.rows.length > SAVE_BATCH_MAX) return json({ error: MESSAGES.tooMany, code: 'too_many_rows' }, 413);
 
   const rawOrg = body.organizationId;
   const organizationId = typeof rawOrg === 'string' && UUID_RE.test(rawOrg) ? rawOrg : null;
-  if (rawOrg != null && !organizationId) return json({ error: 'Invalid workspace' }, 400);
+  if (rawOrg != null && !organizationId) return fail('invalid_organization', 400);
 
   // Signed-in only. A guest or anon key is refused; a user token that fails
   // validation is refused rather than downgraded.
@@ -96,7 +101,7 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
   if (!bearer || bearer === anonKey || bearer === req.headers.get('apikey') || jwtRole(bearer) === 'anon') {
     return json({ error: MESSAGES.signIn, code: 'sign_in' }, 401);
   }
-  if (!url || !key) return json({ error: 'Authentication service not configured' }, 500);
+  if (!url || !key) return fail('not_configured', 500);
   const db = deps.makeClient(url, key);
   const { data: authData, error: authError } = await db.auth.getUser(bearer);
   if (authError || !authData?.user) return json({ error: MESSAGES.expired, code: 'sign_in' }, 401);
@@ -142,12 +147,12 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
 
   for (const row of checked.rows) {
     const line = row.line;
-    if (row.status === 'fix') { results.push({ line, status: 'invalid', reason: row.issues[0]?.message ?? 'Check this row.' }); continue; }
+    if (row.status === 'fix') { results.push({ line, status: 'invalid', reason: row.issues[0]?.message ?? MESSAGES.unreadable }); continue; }
     if (row.status === 'duplicate') { results.push({ line, status: 'duplicate', reason: `Same bill as row ${row.duplicateOf}.` }); continue; }
 
     const supply = gridCountryFor({ vendor: row.values.supplier, currency: 'INR' }, profileLocation);
     const built = buildImportedRecord(row.values, { gridCountry: supply.country ?? 'IN', gridSource: supply.source, line });
-    if (!built) { results.push({ line, status: 'invalid', reason: 'Check this row.' }); continue; }
+    if (!built) { results.push({ line, status: 'invalid', reason: MESSAGES.unreadable }); continue; }
     const documentHash = await importDocumentHash(row.values);
     const invoiceKey = built.cachedResult.invoiceKey;
 
@@ -174,7 +179,7 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
       continue;
     }
 
-    if (limitReached) { results.push({ line, status: 'failed', reason: monthlyLimitMessage(scanLimit ?? 0), code: 'monthly_limit' }); continue; }
+    if (limitReached) { results.push({ line, status: 'failed', reason: MESSAGES.limit, code: 'monthly_limit' }); continue; }
 
     // One read per saved row, reserved before saving.
     const read = { id: null as string | null, commit: false, documentId: null as string | null };
@@ -194,7 +199,7 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
       } else {
         read.id = res.id;
       }
-      if (limitReached) { results.push({ line, status: 'failed', reason: monthlyLimitMessage(scanLimit), code: 'monthly_limit' }); continue; }
+      if (limitReached) { results.push({ line, status: 'failed', reason: MESSAGES.limit, code: 'monthly_limit' }); continue; }
     }
 
     const { data: saved, error: saveError } = await db.from('documents').insert({

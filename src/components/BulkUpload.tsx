@@ -96,9 +96,9 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
     // to the invoice reader; PDFs and photos are queued as before.
     const { reader: selectedFiles, sheets } = splitUploads(Array.from(e.target.files || []));
     if (sheets.length) {
-      const openSheet = () => { handOffSpreadsheet(sheets[0]); navigate('/import'); };
+      const openSheet = () => { if (isProcessing) return; handOffSpreadsheet(sheets[0]); navigate('/import'); };
       if (selectedFiles.length === 0 && sheets.length === 1) { e.target.value = ''; openSheet(); return; }
-      toast.info(sheets.length > 1 ? 'Check one sheet at a time.' : 'Sheets are checked on their own page.', { action: { label: 'Check sheet', onClick: openSheet } });
+      toast.info(sheets.length > 1 ? `Spreadsheets open one at a time. We'll open ${sheets[0].name} first.` : 'Spreadsheets open on the import page.', { action: { label: 'Open spreadsheet', onClick: openSheet } });
     }
     if (selectedFiles.length === 0) { e.target.value = ''; return; }
     
@@ -114,7 +114,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
 
     setFiles(prev => [...prev, ...newFiles]);
     e.target.value = ''; // Reset input
-  }, [files.length, maxFiles, navigate]);
+  }, [files.length, maxFiles, navigate, isProcessing]);
 
   const removeFile = (index: number) => {
     setFiles(prev => prev.filter((_, i) => i !== index));
@@ -367,7 +367,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             Drop multiple invoices here or click to select
           </p>
           <p className="text-xs text-muted-foreground mt-1">
-            Up to {maxFiles} files • JPG, PNG, PDF, CSV or Excel
+            Up to {maxFiles} JPG, PNG or PDF files. Spreadsheets open on the import page.
           </p>
           <input
             type="file"

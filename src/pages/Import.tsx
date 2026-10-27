@@ -7,10 +7,10 @@ import { SEOHead } from "@/components/SEOHead";
 import { readSpreadsheet } from "@/lib/import/readFile";
 import { checkRecords, checkSheet, SAVE_BATCH_MAX, type CheckedRow, type CheckResult, type RowRecord, type RowStatus } from "@/lib/import/validate";
 import { downloadTemplate } from "@/lib/import/templates";
-import { COLUMNS, DOC_TYPES, parseDocType, type ImportKind } from "@/lib/import/schema";
+import { applyRowFix, COLUMNS, displayDate, DOC_TYPES, parseDocType, type ImportKind } from "@/lib/import/schema";
 import { toCsv } from "@/lib/import/csv";
 import { takeHandedOffSpreadsheet } from "@/lib/import/handoff";
-import { finalRows, NOT_SAVED, type FinalStatus, type Outcome, type SaveSummary } from "@/lib/import/results";
+import { finalRows, LIMIT_ROW, NOT_SAVED, type FinalStatus, type Outcome, type SaveSummary } from "@/lib/import/results";
 import { useAuthStatus } from "@/hooks/useSession";
 import { emitRecordsChanged } from "@/lib/recordsEvents";
 
@@ -26,7 +26,7 @@ const kg = (n: number) => n.toLocaleString("en-IN", { maximumFractionDigits: 2 }
 
 const STATUS: Record<RowStatus, { label: string; text: string; fill: string }> = {
   ready: { label: "Ready", text: "text-success", fill: "bg-success" },
-  fix: { label: "Needs fixing", text: "text-destructive", fill: "bg-destructive" },
+  fix: { label: "Need fixing", text: "text-destructive", fill: "bg-destructive" },
   duplicate: { label: "Duplicates", text: "text-warning", fill: "bg-warning" },
 };
 const ORDER: RowStatus[] = ["ready", "fix", "duplicate"];
@@ -57,12 +57,12 @@ function TemplateLine({ kind, title, line }: { kind: ImportKind; title: string; 
 }
 
 function rowEstimate(r: CheckedRow): string {
-  if (r.status === "fix") return "After fixing";
-  if (r.status === "duplicate") return "Counted once";
-  return typeof r.estimateKg === "number" ? kg(r.estimateKg) : "Not estimated here";
+  if (r.status === "fix") return "Fix first";
+  if (r.status === "duplicate") return "Not counted";
+  return typeof r.estimateKg === "number" ? kg(r.estimateKg) : "No figure yet";
 }
 
-const rowLabel = (s: RowStatus) => (s === "duplicate" ? "Duplicate" : STATUS[s].label);
+const rowLabel = (s: RowStatus) => (s === "duplicate" ? "Duplicate" : s === "fix" ? "Needs fixing" : STATUS[s].label);
 
 function rowProblem(r: CheckedRow, kind: ImportKind): string {
   if (r.status === "duplicate") return `Same ${kind === "suppliers" ? "supplier" : "bill"} as row ${r.duplicateOf}`;
@@ -84,7 +84,7 @@ function Summary({ result, filter, onFilter }: { result: CheckResult; filter: Ro
         {ORDER.map(s => (
           <button key={s} type="button" onClick={() => onFilter(filter === s ? "all" : s)} aria-pressed={filter === s}
             className={`text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded ${filter !== "all" && filter !== s ? "opacity-50" : ""}`}>
-            <span className={`block text-2xl font-semibold tabular-nums ${STATUS[s].text}`}>{counts[s]}</span>
+            <span className={`block text-2xl font-semibold tabular-nums ${counts[s] ? STATUS[s].text : "text-muted-foreground"}`}>{counts[s]}</span>
             <span className="text-sm text-muted-foreground">{STATUS[s].label}</span>
           </button>
         ))}
@@ -93,21 +93,44 @@ function Summary({ result, filter, onFilter }: { result: CheckResult; filter: Ro
   );
 }
 
-/** Inputs for the cells a row needs fixed; "Check again" runs the same checks. */
+/**
+ * Inputs for the cells a row needs fixed; "Check again" runs the same checks.
+ * When the unit is wrong, Quantity is shown with it: changing only the unit
+ * would keep a number counted in the old unit (4 cylinders saved as 4 kg),
+ * so that needs the quantity confirmed or changed (applyRowFix).
+ */
 function RowEditor({ row, kind, onSave, onCancel }: { row: CheckedRow; kind: ImportKind; onSave: (values: Record<string, string>) => void; onCancel: () => void }) {
-  const fields = [...new Set(row.issues.map(i => i.field))];
+  const flagged = [...new Set(row.issues.map(i => i.field))];
+  const unitFlagged = flagged.includes("unit");
+  const fields = unitFlagged ? ["quantity", "unit", ...flagged.filter(f => f !== "quantity" && f !== "unit")] : flagged;
   const [draft, setDraft] = useState<Record<string, string>>(() => Object.fromEntries(fields.map(f => [f, row.values[f] ?? ""])));
+  const [confirmed, setConfirmed] = useState(false);
+  const [problem, setProblem] = useState<string | null>(null);
   const label = (key: string) => COLUMNS[kind].find(c => c.key === key)?.label ?? key;
-  const submit = (e: FormEvent) => { e.preventDefault(); onSave({ ...row.values, ...draft }); };
+  const submit = (e: FormEvent) => {
+    e.preventDefault();
+    const fixed = applyRowFix(row.values, draft, { quantityConfirmed: confirmed });
+    if (fixed.ok === false) { setProblem(fixed.message); return; }
+    onSave(fixed.values);
+  };
+  const needsConfirm = unitFlagged && applyRowFix(row.values, draft, { quantityConfirmed: false }).ok === false;
   return (
     <form onSubmit={submit} className="mt-2 space-y-3 rounded-xl border border-border bg-background p-3" aria-label={`Fix row ${row.line}`}>
       {fields.map(f => (
         <label key={f} className="block text-sm">
           <span className="font-medium">{label(f)}</span>
-          <input value={draft[f]} onChange={e => setDraft(d => ({ ...d, [f]: e.target.value }))}
+          <input value={draft[f]} onChange={e => { setDraft(d => ({ ...d, [f]: e.target.value })); setProblem(null); }}
+            inputMode={f === "quantity" ? "decimal" : undefined}
             className="mt-1 block h-10 w-full rounded-lg border border-input bg-card px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
         </label>
       ))}
+      {needsConfirm && (
+        <label className="flex items-start gap-2 text-sm">
+          <input type="checkbox" checked={confirmed} onChange={e => { setConfirmed(e.target.checked); setProblem(null); }} className="mt-1 h-4 w-4" />
+          <span>{draft.quantity || "This quantity"} is already in {draft.unit || "the new unit"}</span>
+        </label>
+      )}
+      {problem && <p role="alert" className="text-sm text-destructive">{problem}</p>}
       <div className="flex gap-2">
         <button type="submit" className="inline-flex h-9 items-center rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground hover:opacity-90">Check again</button>
         <button type="button" onClick={onCancel} className="inline-flex h-9 items-center rounded-full border border-border px-4 text-sm font-medium hover:bg-muted">Cancel</button>
@@ -132,7 +155,7 @@ function Rows({ result, filter, onFix }: { result: CheckResult; filter: RowStatu
   const visible = rows.slice(0, shown);
   const activity = result.kind === "activity";
   const cols = activity
-    ? ["Row", "Status", "Bill", "Supplier", "Carbon, kg CO2e", "What to fix"]
+    ? ["Row", "Status", "Bill", "Supplier", "Estimated carbon, kg CO2e", "What to fix"]
     : ["Row", "Status", "Supplier", "Contact", "Annual spend", "What to fix"];
   const cell = "px-3 py-2.5 align-top";
   if (!rows.length) return <p className="py-6 text-sm text-muted-foreground">No rows here.</p>;
@@ -152,10 +175,10 @@ function Rows({ result, filter, onFix }: { result: CheckResult; filter: RowStatu
                 : r.values.name || "No name"}
             </p>
             <p className="break-words text-muted-foreground">
-              {activity ? [r.values.supplier, r.values.date].filter(Boolean).join(", ") : [r.values.gstin, r.values.email].filter(Boolean).join(", ")}
+              {activity ? [r.values.supplier, displayDate(r.values.date)].filter(Boolean).join(", ") : [r.values.gstin, r.values.email].filter(Boolean).join(", ")}
             </p>
             {r.status === "ready"
-              ? activity && <p className="mt-1">Carbon: <span className="font-medium tabular-nums">{rowEstimate(r)}{typeof r.estimateKg === "number" ? " kg CO2e" : ""}</span></p>
+              ? activity && <p className="mt-1">Estimated carbon: <span className="font-medium tabular-nums">{rowEstimate(r)}{typeof r.estimateKg === "number" ? " kg CO2e" : ""}</span></p>
               : <p className={`mt-1 break-words ${STATUS[r.status].text}`}>{rowProblem(r, result.kind)}</p>}
             {r.status === "fix" && onFix && (editing === r.line
               ? <RowEditor row={r} kind={result.kind} onSave={save(r.line)} onCancel={() => setEditing(null)} />
@@ -180,7 +203,7 @@ function Rows({ result, filter, onFix }: { result: CheckResult; filter: RowStatu
                     <td className={cell}>
                       <span className="block font-medium">{typeLabel(r.values.type) || "No type"}</span>
                       <span className="block tabular-nums">{[r.values.quantity, r.values.unit].filter(Boolean).join(" ")}</span>
-                      <span className="block whitespace-nowrap text-muted-foreground">{r.values.date}</span>
+                      <span className="block whitespace-nowrap text-muted-foreground">{displayDate(r.values.date)}</span>
                     </td>
                     <td className={`${cell} max-w-[200px] break-words`}>
                       <span className="block">{r.values.supplier}</span>
@@ -242,14 +265,18 @@ function takeCarriedRows(): { fileName: string; kind: ImportKind; records: RowRe
   } catch { return null; }
 }
 
-function downloadFlagged(result: CheckResult, fileName: string | null) {
+/** The rows that need fixing (or, after saving, also those that failed) as a CSV with the reason. */
+function downloadFlagged(result: CheckResult, fileName: string | null, reasons?: Map<number, string>) {
   const cols = COLUMNS[result.kind];
   const rows = [[...cols.map(c => c.label), "What to fix"]];
-  for (const r of result.rows) if (r.status === "fix") rows.push([...cols.map(c => r.values[c.key] ?? ""), r.issues.map(i => i.message).join(" ")]);
+  for (const r of result.rows) {
+    const reason = reasons ? reasons.get(r.line) : r.status === "fix" ? r.issues.map(i => i.message).join(" ") : undefined;
+    if (reason !== undefined) rows.push([...cols.map(c => r.values[c.key] ?? ""), reason]);
+  }
   const url = URL.createObjectURL(new Blob([toCsv(rows)], { type: "text/csv;charset=utf-8" }));
   const a = document.createElement("a");
   a.href = url;
-  a.download = `${(fileName ?? "sheet").replace(/\.(csv|xlsx|xls)$/i, "")}-rows-to-fix.csv`;
+  a.download = `${(fileName ?? "sheet").replace(/\.(csv|xlsx)$/i, "")}-rows-to-fix.csv`;
   document.body.appendChild(a); a.click(); a.remove();
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
@@ -257,13 +284,14 @@ function downloadFlagged(result: CheckResult, fileName: string | null) {
 async function saveRows(all: CheckedRow[], onProgress: (done: number) => void): Promise<SaveSummary> {
   const { supabase } = await import("@/integrations/supabase/client");
   const { resolveWorkspaceScope } = await import("@/lib/workspaceChoice");
-  const { getFunctionErrorMessage } = await import("@/lib/functionErrors");
+  const { functionErrorStatus, getFunctionErrorMessage } = await import("@/lib/functionErrors");
   const outcomes = new Map<number, Outcome>();
+  let limitReached = false;
   const finish = (error: string | null, unsentReason = NOT_SAVED): SaveSummary => {
     const rows = finalRows(all, outcomes, unsentReason);
     const counts: Record<FinalStatus, number> = { saved: 0, duplicate: 0, fix: 0, failed: 0 };
     for (const r of rows) counts[r.status]++;
-    return { rows, counts, error };
+    return { rows, counts, error, limitReached };
   };
   const ready = all.filter(r => r.status === "ready");
   const { data: auth } = await supabase.auth.getUser();
@@ -272,23 +300,31 @@ async function saveRows(all: CheckedRow[], onProgress: (done: number) => void): 
   try {
     const scope = await resolveWorkspaceScope(supabase, auth.user.id);
     if (scope.kind === "organization") {
-      if (!scope.capabilities.includes("records.upload")) return finish("Your team role cannot add bills to this organisation. Ask an admin for access.");
+      if (!scope.capabilities.includes("records.upload")) return finish(ROLE_MESSAGE);
       organizationId = scope.organizationId;
     }
   } catch {
-    return finish("We could not check your workspace. Try again.");
+    return finish("We could not check your account. Try again.");
   }
   for (let i = 0; i < ready.length; i += SAVE_BATCH_MAX) {
     const batch = ready.slice(i, i + SAVE_BATCH_MAX).map(r => ({ line: r.line, values: r.values }));
     const { data, error } = await supabase.functions.invoke("import-records", { body: { kind: "bills", rows: batch, organizationId } });
-    if (error) return finish(await getFunctionErrorMessage(error, "Saving stopped. Try again."));
+    if (error) {
+      // Sign-in and team-role answers are the person's to act on; anything else is "try again".
+      const status = functionErrorStatus(error);
+      return finish(status === 401 || status === 403 ? await getFunctionErrorMessage(error, STOPPED) : STOPPED);
+    }
     for (const o of (data?.results ?? []) as Outcome[]) outcomes.set(o.line, o);
     onProgress(Math.min(i + SAVE_BATCH_MAX, ready.length));
     // The rest would be refused too: they are reported without being sent.
-    if (data?.limitReached) return finish(null, "Monthly limit reached. Not saved.");
+    if (data?.limitReached) { limitReached = true; return finish(null, LIMIT_ROW); }
   }
   return finish(null);
 }
+
+const ROLE_MESSAGE = "Your team role cannot add bills to this organisation. Ask an admin for analyst or data manager access.";
+const STOPPED = "Saving stopped. Upload the same file again; rows already saved are skipped.";
+const LIMIT_NOTE = "You have used this month's bills. Top up or upgrade on your Subscription page, then upload the file again. Saved rows are skipped.";
 
 const FINAL: Record<FinalStatus, { label: string; text: string }> = {
   saved: { label: "Saved", text: "text-success" },
@@ -297,7 +333,7 @@ const FINAL: Record<FinalStatus, { label: string; text: string }> = {
   failed: { label: "Failed", text: "text-destructive" },
 };
 
-function SavedPanel({ summary }: { summary: SaveSummary }) {
+function SavedPanel({ summary, onDownload, onReset }: { summary: SaveSummary; onDownload: (reasons: Map<number, string>) => void; onReset: () => void }) {
   const [shown, setShown] = useState(PAGE);
   const { counts } = summary;
   const items: Array<[number, string, string]> = [
@@ -309,30 +345,45 @@ function SavedPanel({ summary }: { summary: SaveSummary }) {
   // Rows that were not saved first, then the saved ones.
   const order: Record<FinalStatus, number> = { failed: 0, fix: 1, duplicate: 2, saved: 3 };
   const rows = [...summary.rows].sort((a, b) => order[a.status] - order[b.status] || a.line - b.line);
+  const toFix = summary.rows.filter(r => r.status === "fix" || r.status === "failed");
   return (
     <div className="space-y-4" data-testid="import-saved">
-      <h3 className="text-lg font-semibold">{counts.saved > 0 ? "Added to your records" : "Nothing new was saved"}</h3>
+      <div>
+        <h3 className="text-lg font-semibold">Your import</h3>
+        {counts.saved > 0 && <p className="mt-1 text-sm text-muted-foreground">Saved as Entered by you. Review them in Verify to confirm them.</p>}
+      </div>
       <div className="flex flex-wrap gap-x-6 gap-y-2">
         {items.map(([n, label, color]) => (
           <div key={label}>
-            <span className={`block text-2xl font-semibold tabular-nums ${color}`}>{n}</span>
+            <span className={`block text-2xl font-semibold tabular-nums ${n ? color : "text-muted-foreground"}`}>{n}</span>
             <span className="text-sm text-muted-foreground">{label}</span>
           </div>
         ))}
       </div>
+      {summary.limitReached && <p role="alert" className="text-sm text-destructive">{LIMIT_NOTE}</p>}
       {summary.error && <p role="alert" className="text-sm text-destructive">{summary.error}</p>}
-      {counts.saved > 0 && (
-        <div className="flex flex-wrap gap-3">
-          <Link to="/verify" className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90">Review in Verify</Link>
-          <Link to="/history" className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-card px-6 text-sm font-semibold hover:bg-muted">See in History</Link>
-        </div>
-      )}
+      <div className="flex flex-wrap items-center gap-3">
+        {counts.saved > 0 && (
+          <>
+            <Link to="/verify" className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90">Review in Verify</Link>
+            <Link to="/history" className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-card px-6 text-sm font-semibold hover:bg-muted">See in History</Link>
+          </>
+        )}
+        {toFix.length > 0 && (
+          <button type="button" onClick={() => onDownload(new Map(toFix.map(r => [r.line, r.reason])))} className="text-sm font-medium text-primary underline-offset-4 hover:underline">
+            Download the {toFix.length} {toFix.length === 1 ? "row" : "rows"} to fix
+          </button>
+        )}
+      </div>
       <ul className="divide-y divide-border text-sm">
         {rows.slice(0, shown).map(r => (
-          <li key={r.line} className="flex flex-wrap items-baseline gap-x-3 py-2">
-            <span className="w-16 shrink-0 tabular-nums text-muted-foreground">Row {r.line}</span>
-            <span className={`w-28 shrink-0 font-medium ${FINAL[r.status].text}`}>{FINAL[r.status].label}</span>
-            {r.reason && <span className="min-w-0 flex-1 break-words text-muted-foreground">{r.reason}</span>}
+          <li key={r.line} className="py-2 sm:flex sm:items-baseline sm:gap-3">
+            <span className="block sm:contents">
+              <span className="tabular-nums text-muted-foreground sm:w-16 sm:shrink-0">Row {r.line}</span>
+              <span className="sm:hidden" aria-hidden="true"> · </span>
+              <span className={`font-medium sm:w-28 sm:shrink-0 ${FINAL[r.status].text}`}>{FINAL[r.status].label}</span>
+            </span>
+            {r.reason && <span className="mt-0.5 block break-words text-muted-foreground sm:mt-0 sm:min-w-0 sm:flex-1">{r.reason}</span>}
           </li>
         ))}
       </ul>
@@ -341,6 +392,7 @@ function SavedPanel({ summary }: { summary: SaveSummary }) {
           Show {Math.min(PAGE, rows.length - shown)} more of {rows.length - shown}
         </button>
       )}
+      <button type="button" onClick={onReset} className="block text-sm font-medium text-primary underline-offset-4 hover:underline">Upload another file</button>
     </div>
   );
 }
@@ -408,7 +460,7 @@ export default function Import() {
   // Ready activity rows with no factor in the shared file (freight).
   const unestimated = result?.kind === "activity" && result.rows.some(r => r.status === "ready" && r.estimateKg === null);
   const suppliers = result?.kind === "suppliers";
-  const noun = suppliers ? (ready === 1 ? "supplier" : "suppliers") : (ready === 1 ? "row" : "rows");
+  const noun = ready === 1 ? "bill" : "bills";
   const actionBtn = "inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground";
 
   return (
@@ -419,7 +471,7 @@ export default function Import() {
         <header className="max-w-2xl">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Import your spreadsheet</h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg">
-            Already keep bills in Excel? Upload the sheet and see which rows are ready and which need fixing.
+            Already track bills in Excel? Add them all at once. We flag any row that needs a fix before anything is saved.
           </p>
         </header>
 
@@ -430,8 +482,10 @@ export default function Import() {
               <h2 id="step-template" className="text-lg font-semibold">Start from a template</h2>
               <div className="mt-1 divide-y divide-border">
                 <TemplateLine kind="activity" title="Fuel and power bills" line="One row per bill: power, fuel or freight." />
-                <TemplateLine kind="suppliers" title="Supplier list" line="Who you buy from, with GSTIN and yearly spend." />
+                {/* The supplier list template stays in code (templates.ts) and is
+                    shown again once supplier lists can be saved. */}
               </div>
+              <p className="text-sm text-muted-foreground">The Excel template includes a How to fill sheet.</p>
             </section>
           </li>
 
@@ -447,8 +501,8 @@ export default function Import() {
                   className={`mt-4 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-6 py-10 text-center transition ${dragging ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/60"}`}>
                   {busy ? <Loader2 className="h-6 w-6 animate-spin text-primary motion-reduce:animate-none" aria-hidden="true" /> : <Upload className="h-6 w-6 text-primary" aria-hidden="true" />}
                   <span className="font-medium">{busy ? "Checking rows" : "Drop a file or choose one"}</span>
-                  <span className="text-sm text-muted-foreground">CSV or Excel, up to 2 MB and 1,000 rows. The file stays in this browser.</span>
-                  <input ref={input} type="file" accept=".csv,.xlsx,.xls,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" className="sr-only"
+                  <span className="text-sm text-muted-foreground">CSV or Excel, up to 2 MB and 1,000 rows. We never upload the file, only the rows you choose to import.</span>
+                  <input ref={input} type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" className="sr-only"
                     onChange={e => void handle(e.target.files?.[0])} data-testid="import-file" />
                 </label>
               )}
@@ -460,8 +514,7 @@ export default function Import() {
 
               {result && summary && (
                 <div className="mt-4 rounded-2xl border border-border bg-card p-5">
-                  <SavedPanel summary={summary} />
-                  <button type="button" onClick={reset} className="mt-4 text-sm font-medium text-primary underline-offset-4 hover:underline">Check another file</button>
+                  <SavedPanel summary={summary} onReset={reset} onDownload={(reasons) => downloadFlagged(result, fileName, reasons)} />
                 </div>
               )}
 
@@ -474,19 +527,44 @@ export default function Import() {
                       <span className="shrink-0 text-muted-foreground">{result.counts.total} {result.counts.total === 1 ? "row" : "rows"}</span>
                     </p>
                     <button type="button" onClick={reset} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline">
-                      <X className="h-4 w-4" aria-hidden="true" /> Check another file
+                      <X className="h-4 w-4" aria-hidden="true" /> Upload another file
                     </button>
                   </div>
 
                   <Summary result={result} filter={filter} onFilter={setFilter} />
 
-                  <p className="text-sm">
-                    {result.readyEstimateKg !== null && (
-                      <>Carbon from ready rows: <span className="font-semibold tabular-nums">{kg(result.readyEstimateKg)} kg CO2e</span>. </>
+                  <div className="rounded-2xl border border-border bg-card p-5">
+                    {suppliers ? (
+                      <p className="text-sm text-muted-foreground">Only bill sheets can be imported.</p>
+                    ) : !signedIn ? (
+                      <>
+                        <Link to="/auth?next=/import" onClick={() => sheet && carryRows({ fileName: fileName ?? "sheet", ...sheet })} className={`${actionBtn} hover:opacity-90`} data-testid="import-sign-in">
+                          Sign in to import {ready} {noun}
+                        </Link>
+                        <p className="mt-3 max-w-xl text-sm text-muted-foreground">Sign in in this tab and your checked rows will be here when you return.</p>
+                      </>
+                    ) : (
+                      <>
+                        <button type="button" onClick={() => void save()} disabled={ready === 0 || !!saving} aria-describedby="import-next"
+                          className={`${actionBtn} hover:opacity-90 disabled:opacity-50`} data-testid="import-save">
+                          {saving ? <><Loader2 className="mr-2 h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />Saving {saving.done} of {saving.total}</> : `Import ${ready} ${noun}`}
+                        </button>
+                        <p id="import-next" className="mt-3 max-w-xl text-sm text-muted-foreground">
+                          Ready rows are saved as Entered by you and stay unverified until you review them in Verify. Each saved row uses one bill from your monthly allowance.
+                        </p>
+                      </>
                     )}
-                    {unestimated && <>Freight rows are not included. </>}
-                    <span className="text-muted-foreground">Nothing is saved until you import.</span>
-                  </p>
+                  </div>
+
+                  {!suppliers && (
+                    <p className="text-sm">
+                      {result.readyEstimateKg !== null && (
+                        <>Estimated carbon from ready rows, using your figures: <span className="font-semibold tabular-nums">{kg(result.readyEstimateKg)} kg CO2e</span>. </>
+                      )}
+                      {unestimated && <>Freight has no carbon figure yet, so it is left out of this total. </>}
+                      <span className="text-muted-foreground">Nothing is saved until you import.</span>
+                    </p>
+                  )}
 
                   {fixCount > 0 && (
                     <p className="text-sm text-muted-foreground">
@@ -499,34 +577,6 @@ export default function Import() {
                   )}
 
                   <Rows key={`${fileName}-${filter}`} result={result} filter={filter} onFix={fixRow} />
-
-                  <div className="rounded-2xl border border-border bg-card p-5">
-                    {suppliers ? (
-                      <>
-                        <button type="button" disabled aria-describedby="import-next" className={`${actionBtn} opacity-50`}>
-                          Import {ready} {noun} (coming soon)
-                        </button>
-                        <p id="import-next" className="mt-3 max-w-xl text-sm text-muted-foreground">Importing opens soon. Ready suppliers will then be added to your supplier list.</p>
-                      </>
-                    ) : !signedIn ? (
-                      <>
-                        <Link to="/auth?next=/import" onClick={() => sheet && carryRows({ fileName: fileName ?? "sheet", ...sheet })} className={`${actionBtn} hover:opacity-90`}>
-                          Sign in to import
-                        </Link>
-                        <p className="mt-3 max-w-xl text-sm text-muted-foreground">Your checked rows wait here while you sign in.</p>
-                      </>
-                    ) : (
-                      <>
-                        <button type="button" onClick={() => void save()} disabled={ready === 0 || !!saving} aria-describedby="import-next"
-                          className={`${actionBtn} hover:opacity-90 disabled:opacity-50`} data-testid="import-save">
-                          {saving ? <><Loader2 className="mr-2 h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />Saving {saving.done} of {saving.total}</> : `Import ${ready} ${noun}`}
-                        </button>
-                        <p id="import-next" className="mt-3 max-w-xl text-sm text-muted-foreground">
-                          Ready rows are added to your records and checked like any bill you upload. Each saved row uses one bill from your monthly allowance.
-                        </p>
-                      </>
-                    )}
-                  </div>
                 </div>
               )}
             </section>

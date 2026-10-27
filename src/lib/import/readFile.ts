@@ -42,7 +42,8 @@ export function readWorkbookRows(XLSX: XLSXModule, data: Uint8Array): string[][]
 export function fileKind(name: string): 'csv' | 'xlsx' | null {
   const n = name.toLowerCase();
   if (n.endsWith('.csv')) return 'csv';
-  if (n.endsWith('.xlsx') || n.endsWith('.xls')) return 'xlsx';
+  // The old binary .xls format is not accepted: only .xlsx.
+  if (n.endsWith('.xlsx')) return 'xlsx';
   return null;
 }
 

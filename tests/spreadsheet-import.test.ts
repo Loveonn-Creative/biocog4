@@ -47,7 +47,7 @@ describe('templates', () => {
   });
   test('the units guide lists every document type', () => {
     const text = guideRows('activity').flat().join(' ');
-    expect(text).toContain('Must match the bill type. See the How to fill sheet.');
+    expect(text).toContain('Must match the bill type. See the units list below.');
     for (const k of Object.values(DOC_TYPES)) expect(text).toContain(k.label);
   });
 });
@@ -59,7 +59,9 @@ describe('headers', () => {
   });
   test('names the missing required column', () => {
     const m = matchHeaders(['Date', 'Bill type', 'Quantity', 'Supplier name']);
-    expect(m).toEqual({ ok: false, message: 'This file has no Unit column. Add it, or paste your rows into the template above.' });
+    expect(m).toEqual({ ok: false, message: 'This file is missing the Unit column. Add it, or paste your rows into the template above.' });
+    expect(matchHeaders(['Bill type', 'Unit', 'Supplier name'])).toEqual({ ok: false, message: 'This file is missing the Date and Quantity columns. Add them, or paste your rows into the template above.' });
+    expect(matchHeaders(['foo'])).toEqual({ ok: false, message: 'We could not find a Bill type column. Download the template above and paste your rows into it.' });
   });
   test('rejects a file that matches neither template', () => {
     expect(matchHeaders(['foo', 'bar']).ok).toBe(false);
@@ -79,8 +81,9 @@ describe('units follow the shared factor file', () => {
   });
   test('wrong units are named, and kVAh is never read as kWh', () => {
     expect(unitProblem('diesel', 'kg')).toBe('Diesel needs litre or kl.');
-    expect(unitProblem('lpg', 'cylinder')).toBe('LPG needs kg or tonne. Multiply cylinders by the kg printed on each one.');
-    expect(unitProblem('png', 'litre')).toBe('PNG needs scm. Use the scm figure on the gas bill.');
+    expect(unitProblem('lpg', 'cylinder')).toBe('LPG is counted in kg. Enter the total kg (cylinders times the kg printed on each), then set Unit to kg.');
+    expect(unitProblem('png', 'litre')).toBe('PNG is counted in scm. Enter the scm figure from the gas bill, then set Unit to scm.');
+    expect(unitProblem('freight', 'tonne')).toBe('Freight is counted in tonne-km. Enter tonnes carried times km travelled, then set Unit to tonne-km.');
     expect(unitProblem('coal', 'bags')).toBe('Coal needs kg or tonne.');
     expect(unitProblem('electricity', 'kVAh')).toContain('kVAh is not kWh');
   });
@@ -143,7 +146,11 @@ describe('row checks', () => {
     expect(parseImportDate('30/05/26', NOW)).toBeNull();
     const r = check([row({ date: '30/04/2026' }), row({ date: '2026-02-30' }), row({ date: '2027-06-01' }), row({ date: '31/02/2026' })]);
     expect(r.rows.map(x => x.status)).toEqual(['ready', 'fix', 'fix', 'fix']);
-    expect(r.rows[3].issues[0].message).toBe('Write the date as DD/MM/YYYY or YYYY-MM-DD, for example 30/05/2026.');
+    expect(r.rows[3].issues[0].message).toBe('31/02/2026 is not a real date. Check the day and month.');
+    expect(r.rows[1].issues[0].message).toBe('2026-02-30 is not a real date. Check the day and month.');
+    expect(r.rows[2].issues[0].message).toBe('Use a bill date from 2000 up to next month.');
+    expect(check([row({ date: '30 May 2026' })]).rows[0].issues[0].message).toBe('Write the date as DD/MM/YYYY or YYYY-MM-DD, for example 30/05/2026.');
+    expect(check([row({ date: '01/01/1999' })]).rows[0].issues[0].message).toBe('Use a bill date from 2000 up to next month.');
   });
   test('the same bill with the date written two ways is a duplicate', () => {
     const r = check([row({ gstin: GOOD_GSTIN, invoice: 'A1', date: '2026-05-30' }), row({ gstin: GOOD_GSTIN, invoice: 'A1', date: '30/05/2026' })]);
@@ -171,7 +178,7 @@ describe('row checks', () => {
   test('unknown type and wrong unit need fixing', () => {
     const r = check([row({ type: 'Steam' }), row({ type: 'LPG', unit: 'cylinder' })]);
     expect(r.rows.map(x => x.status)).toEqual(['fix', 'fix']);
-    expect(r.rows[0].issues[0].message).toBe('"Steam" is not on the list. Use Electricity, Diesel, Petrol, LPG, PNG, CNG, Coal or Freight.');
+    expect(r.rows[0].issues[0].message).toBe('"Steam" is not a bill type we accept. Use Electricity, Diesel, Petrol, LPG, PNG, CNG, Coal or Freight.');
   });
   test('blank rows are skipped and line numbers match the sheet', () => {
     const r = check([row({}), ['', '', ''], row({ quantity: 'x' })]);
@@ -254,5 +261,35 @@ describe('Excel files', () => {
     expect(rows[1].slice(0, 5)).toEqual(['2026-04-30', 'Diesel', '100', 'litre', 'Indian Oil']);
     const r = checkSheet(rows, NOW);
     expect(r.ok && r.result.counts.ready).toBe(1);
+  });
+});
+
+describe('fixing a row in place', () => {
+  const lpg = { date: '2026-05-10', type: 'LPG', quantity: '4', unit: 'cylinder', supplier: 'HP Gas', gstin: '', invoice: 'HPG-118', amount: '', notes: '' };
+  test('changing only the unit cannot make a ready row unless the quantity is confirmed or changed', async () => {
+    const { applyRowFix, checkRecords } = await import('../src/lib/import/validate');
+    const onlyUnit = applyRowFix(lpg, { quantity: '4', unit: 'kg' }, { quantityConfirmed: false });
+    expect(onlyUnit.ok).toBe(false);
+    if (onlyUnit.ok === false) expect(onlyUnit.message).toBe('You changed the unit. Check that 4 is in kg, or change the quantity.');
+    // The row stays as it was, so it is still flagged.
+    expect(checkRecords('activity', [{ line: 5, values: lpg }], NOW).rows[0].status).toBe('fix');
+    const changed = applyRowFix(lpg, { quantity: '56.8', unit: 'kg' }, { quantityConfirmed: false });
+    expect(changed.ok && checkRecords('activity', [{ line: 5, values: changed.values }], NOW).rows[0].status).toBe('ready');
+    const confirmed = applyRowFix(lpg, { quantity: '4', unit: 'kg' }, { quantityConfirmed: true });
+    expect(confirmed.ok).toBe(true);
+  });
+  test('the same guard covers freight, MWh and kVAh', async () => {
+    const { applyRowFix } = await import('../src/lib/import/validate');
+    expect(applyRowFix({ ...lpg, type: 'Freight', quantity: '12', unit: 'tonne' }, { quantity: '12', unit: 'tonne-km' }, { quantityConfirmed: false }).ok).toBe(false);
+    expect(applyRowFix({ ...lpg, type: 'Electricity', quantity: '3100', unit: 'kVAh' }, { quantity: '3100', unit: 'kWh' }, { quantityConfirmed: false }).ok).toBe(false);
+    expect(applyRowFix({ ...lpg, type: 'Electricity', quantity: '12.4', unit: 'units' }, { quantity: '12.4', unit: 'MWh' }, { quantityConfirmed: false }).ok).toBe(false);
+    // A fix that does not touch the unit needs no confirmation.
+    expect(applyRowFix({ ...lpg, quantity: '', unit: 'kg' }, { quantity: '20' }, { quantityConfirmed: false }).ok).toBe(true);
+  });
+  test('dates show the Indian way', async () => {
+    const { displayDate } = await import('../src/lib/import/validate');
+    expect(displayDate('2026-05-30')).toBe('30/05/2026');
+    expect(displayDate('30-5-2026')).toBe('30/05/2026');
+    expect(displayDate('soon')).toBe('soon');
   });
 });

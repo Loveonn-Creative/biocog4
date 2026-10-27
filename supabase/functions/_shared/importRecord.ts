@@ -119,7 +119,7 @@ export function buildImportedRecord(
   } else {
     const reason = calc.productCategory === 'ELECTRICITY' && ctx.gridCountry !== 'IN'
       ? `No approved grid factor for ${ctx.gridCountry} yet; this electricity is not calculated`
-      : `No verified factor for ${calc.productCategory}${calc.fuelType ? ` (${calc.fuelType})` : ''} with unit ${unit}`;
+      : 'No carbon factor for this bill type and unit yet.';
     (item.validationFlags as string[]).push(reason);
     flags.push(`${reason}: ${description.substring(0, 40)}`);
   }

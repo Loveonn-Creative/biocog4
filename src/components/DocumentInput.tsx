@@ -27,7 +27,7 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
     const file = e.dataTransfer.files[0];
     if (!file) return;
     if (file.type.includes("image") || file.type === "application/pdf" || isSpreadsheetFile(file)) onFileSelect(file);
-    else toast.error("Upload a PDF or a photo (JPG, PNG, WEBP or HEIC) of the invoice or bill, or a CSV or Excel sheet of your bills.");
+    else toast.error("Upload a PDF or photo of the bill, or a CSV or Excel (.xlsx) sheet.");
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

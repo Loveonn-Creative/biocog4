@@ -133,6 +133,25 @@ describe('access', () => {
   });
 });
 
+describe('request problems', () => {
+  test('technical problems give one plain message and a code', async () => {
+    const send = async (init: RequestInit) => {
+      const res = await handleImportRecords(new Request('http://fn/import-records', init), deps);
+      return { status: res.status, body: await res.json() };
+    };
+    const auth = { Authorization: 'Bearer token-a', apikey: 'anon', 'Content-Type': 'application/json' };
+    const cases = [
+      [await send({ method: 'GET' }), 'method_not_allowed'],
+      [await send({ method: 'POST', headers: auth, body: 'not json' }), 'bad_json'],
+      [await send({ method: 'POST', headers: auth, body: JSON.stringify({ kind: 'other', rows: [] }) }), 'unknown_kind'],
+      [await send({ method: 'POST', headers: auth, body: JSON.stringify({ kind: 'bills', rows: [] }) }), 'no_rows'],
+      [await send({ method: 'POST', headers: auth, body: JSON.stringify({ ...bills(values()), organizationId: 'x' }) }), 'invalid_organization'],
+    ] as const;
+    for (const [r, code] of cases) expect(r.body).toEqual({ error: MESSAGES.generic, code });
+    expect(MESSAGES.generic).toBe('We could not save these rows. Try again in a minute.');
+  });
+});
+
 describe('saving rows', () => {
   test('a ready diesel row becomes one document and one unverified emission row, like an uploaded bill', async () => {
     const r = await call(bills(values()));
@@ -277,7 +296,7 @@ describe('plan allowance', () => {
     const r = await call(bills(values({ invoice: 'A1' }), values({ invoice: 'A2' }), values({ invoice: 'A3' }), values({ invoice: 'A4' })));
     expect(r.body.results.map((x: Row) => x.status)).toEqual(['saved', 'saved', 'failed', 'failed']);
     expect(r.body.counts).toEqual({ saved: 2, duplicate: 0, invalid: 0, failed: 2 });
-    expect(r.body.results[2]).toMatchObject({ code: 'monthly_limit' });
+    expect(r.body.results[2]).toMatchObject({ code: 'monthly_limit', reason: 'Monthly bill limit reached. Not saved.' });
     expect(r.body.limitReached).toBe(true);
     const reserves = rpcCalls.filter((c) => c.name === 'reserve_invoice_read');
     expect(reserves).toHaveLength(3);
