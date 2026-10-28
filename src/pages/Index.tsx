@@ -371,6 +371,13 @@ const Index = () => {
         }
       }
       
+      // Signed in: the server saves the document and its records. The browser
+      // never writes them, so an unchecked copy can never stand in for one.
+      if (user && !documentId) {
+        toast.error("We couldn't save this bill. Upload it again.");
+        return null;
+      }
+
       // If no document found (shouldn't happen), create one
       if (!documentId) {
         console.warn('[MRV] No cached document found, creating new one');
@@ -427,6 +434,11 @@ const Index = () => {
         console.info('[MRV] No independently calculable line items; document retained for review without an emissions row');
         emitRecordsChanged('upload'); // History lists the document
         return { documentId, emissionIds: [] };
+      }
+
+      if (user) {
+        toast.error("We couldn't save this bill. Upload it again.");
+        return null;
       }
 
       const { data: emissionData, error: emissionError } = await (await loadSupabase())
