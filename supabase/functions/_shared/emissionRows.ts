@@ -7,6 +7,7 @@
 // below a printed reading, and the basis travels in the provenance notes.
 import { LOWER_QUALITY_BASES } from './electricityBill.ts';
 import { isEvidenceOnlyKind } from './documentKind.ts';
+import { factorCitationFor } from './emissionFactors.ts';
 export interface PersistableLineItem {
   description: string;
   hsn_code?: string;
@@ -98,6 +99,8 @@ export interface StoredProvenance {
   factorSetVersion?: string;
   sourcePage?: number;
   assumptions?: string[];
+  /** The published source behind the factor (emissionFactors.ts); current methodology rows only. */
+  factorCitation?: string;
 }
 
 export function encodeEmissionProvenance(
@@ -114,6 +117,7 @@ export function encodeEmissionProvenance(
     ...(factorSetVersion ? { factorSetVersion } : {}),
     ...(typeof item.sourcePage === 'number' ? { sourcePage: item.sourcePage } : {}),
     ...(Array.isArray(item.assumptions) ? { assumptions: item.assumptions.slice(0, 8).map((a) => String(a).slice(0, 200)) } : {}),
+    ...((c) => (c ? { factorCitation: c } : {}))(factorCitationFor(item.factorSource)),
   } satisfies StoredProvenance);
 }
 

@@ -20,6 +20,7 @@ import { gridCountryFor } from '../_shared/electricity.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import { buildEmissionRows } from '../_shared/emissionRows.ts';
+import { buildBillEvidence, deterministicConfidence, withoutEvidence, OVERLAP_LOOKUP_LIMIT, type ConfidenceReason } from '../_shared/billChecks.ts';
 import { documentKind, isEvidenceOnlyKind, DOCUMENT_KIND_LABEL, EVIDENCE_ONLY_NOTE, type DocumentKind } from '../_shared/documentKind.ts';
 import { priceCheck, type PriceCheck } from '../_shared/priceCheck.ts';
 import { financialKind, financialPath, readFinancialFigures, readMonthlyCashflow, FINANCIAL_BUCKET, FINANCIAL_GUEST_MESSAGE, FINANCIAL_STORED_MESSAGE, FINANCIAL_UNAVAILABLE_MESSAGE } from '../_shared/financialDocuments.ts';
@@ -107,54 +108,9 @@ const METHODOLOGY_VERSION = {
 // ../_shared/emissionFactors.ts so they can be unit tested.
 
 // ============= DETERMINISTIC CONFIDENCE SCORING (NO AI INFLUENCE) =============
-// Per BIOCOG MRV spec: Base 100, fixed penalties, same input = same output
-const CONFIDENCE_PENALTIES = {
-  MISSING_QUANTITY: 20,
-  MISSING_UNIT: 15,
-  MISSING_INVOICE_NUMBER: 10,
-  MISSING_SUPPLIER_GSTIN: 10,
-  MISSING_DATE: 5,
-  MISSING_AMOUNT: 5,
-  UNVERIFIABLE_ITEM: 15,
-  MISSING_EMISSION_FACTOR: 10,
-  NO_LINE_ITEMS: 30,
-  LOW_EXTRACTION_RATE: 15,
-  HSN_CLASSIFICATION_BONUS: 5,
-} as const;
-
-function calculateDeterministicConfidence(params: {
-  hasQuantity: boolean;
-  hasUnit: boolean;
-  hasInvoiceNumber: boolean;
-  hasSupplierGstin: boolean;
-  hasDate: boolean;
-  hasAmount: boolean;
-  lineItemCount: number;
-  unverifiableCount: number;
-  missingEmissionFactorCount: number;
-  hsnClassifiedCount: number;
-  extractedFieldRatio: number;
-}): number {
-  let confidence = 100;
-
-  if (!params.hasQuantity) confidence -= CONFIDENCE_PENALTIES.MISSING_QUANTITY;
-  if (!params.hasUnit) confidence -= CONFIDENCE_PENALTIES.MISSING_UNIT;
-  if (!params.hasInvoiceNumber) confidence -= CONFIDENCE_PENALTIES.MISSING_INVOICE_NUMBER;
-  if (!params.hasSupplierGstin) confidence -= CONFIDENCE_PENALTIES.MISSING_SUPPLIER_GSTIN;
-  if (!params.hasDate) confidence -= CONFIDENCE_PENALTIES.MISSING_DATE;
-  if (!params.hasAmount) confidence -= CONFIDENCE_PENALTIES.MISSING_AMOUNT;
-
-  confidence -= params.unverifiableCount * CONFIDENCE_PENALTIES.UNVERIFIABLE_ITEM;
-  confidence -= params.missingEmissionFactorCount * CONFIDENCE_PENALTIES.MISSING_EMISSION_FACTOR;
-
-  if (params.lineItemCount === 0) confidence -= CONFIDENCE_PENALTIES.NO_LINE_ITEMS;
-  if (params.extractedFieldRatio < 0.5) confidence -= CONFIDENCE_PENALTIES.LOW_EXTRACTION_RATE;
-
-  const hsnBonus = Math.min(params.hsnClassifiedCount * CONFIDENCE_PENALTIES.HSN_CLASSIFICATION_BONUS, 10);
-  confidence += hsnBonus;
-
-  return Math.max(0, Math.min(100, Math.round(confidence)));
-}
+// Base 100, fixed penalties, same input = same output. Lives in
+// ../_shared/billChecks.ts, which also returns the penalties behind the score
+// (stored as evidence only).
 
 // ============= DOCUMENT RELEVANCE CHECK =============
 const VALID_DOCUMENT_TYPES = ['invoice', 'bill', 'certificate', 'receipt'];
@@ -535,6 +491,60 @@ async function createEmissionRows(
   }
 }
 
+// The stored copy of a signed-in read, with the bill checks added as
+// cached_result.evidence (billChecks.ts). One bounded lookup of earlier
+// documents from the same supplier; any failure stores the read without
+// evidence. The read itself is never changed.
+async function withEvidence(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  db: SupabaseClient<any, any, any>,
+  extracted: ExtractedData,
+  ctx: {
+    userId: string; organizationId: string | null; documentHash: string; rereadDocId: string | null;
+    accountGstin: string | null; electricityBill: boolean;
+    duplicates: { repeatedLinesDropped: number; twinDocumentId: string | null }; confidenceReasons: ConfidenceReason[];
+  },
+): Promise<ExtractedData | (ExtractedData & { evidence: ReturnType<typeof buildBillEvidence> })> {
+  try {
+    let earlier: Array<{ id: string; cached_result: unknown }> | null = null;
+    const gstin = typeof extracted.supplierGstin === 'string' && extracted.supplierGstin.trim() ? extracted.supplierGstin : null;
+    const vendor = typeof extracted.vendor === 'string' && extracted.vendor.trim() ? extracted.vendor : null;
+    if (gstin || vendor) {
+      const base = db.from('documents').select('id, cached_result');
+      const scoped = ctx.organizationId ? base.eq('organization_id', ctx.organizationId) : base.eq('user_id', ctx.userId);
+      const bySupplier = gstin ? scoped.eq('cached_result->>supplierGstin', gstin) : scoped.eq('vendor', vendor);
+      const { data, error } = await bySupplier.neq('document_hash', ctx.documentHash)
+        .order('created_at', { ascending: false }).limit(OVERLAP_LOOKUP_LIMIT);
+      if (!error) earlier = ((data ?? []) as Array<{ id: string; cached_result: unknown }>).filter((d) => d.id !== ctx.rereadDocId);
+    } else {
+      earlier = [];
+    }
+    const evidence = buildBillEvidence({
+      supplierGstin: extracted.supplierGstin, buyerGstin: extracted.buyerGstin, vendor: extracted.vendor,
+      accountGstin: ctx.accountGstin,
+      amount: extracted.amount, subtotal: extracted.subtotal, taxAmount: extracted.taxAmount,
+      lineItems: extracted.lineItems ?? [],
+      electricityBill: ctx.electricityBill,
+      invoiceDate: parseInvoiceDate(extracted.date),
+      now: new Date(),
+      billingPeriodStart: extracted.electricityBill?.billingPeriodStart ?? null,
+      billingPeriodEnd: extracted.electricityBill?.billingPeriodEnd ?? null,
+      tariffCategory: extracted.electricityBill?.tariffCategory ?? null,
+      sanctionedLoadKw: extracted.electricityBill?.sanctionedLoadKw ?? null,
+      billKey: extracted.billKey ?? null,
+      invoiceKey: extracted.invoiceKey ?? null,
+      splitSourceHash: extracted.split?.sourceHash ?? null,
+      earlier,
+      duplicates: ctx.duplicates,
+      confidenceReasons: ctx.confidenceReasons,
+    });
+    return { ...extracted, evidence };
+  } catch (e) {
+    console.error('Bill checks skipped:', (e as Error)?.name ?? 'error');
+    return extracted;
+  }
+}
+
 // The read reserved for this request (signed-in uploads). It is committed
 // when the read produced something and released (nothing counted, credits
 // back) when it failed, was empty or was a duplicate; see the invoice_reads
@@ -672,6 +682,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     let planCycle: 'monthly' | 'yearly' | null = null;
     let planExpiresAt: string | null = null;
     let sourcePath: string | null = null; // stored original file (signed-in only)
+    // GSTIN saved on the account, compared with the buyer GSTIN for the stored
+    // evidence only; never stored or returned. Personal workspace only.
+    let accountGstin: string | null = null;
     const authHeader = req.headers.get('Authorization');
     const bearer = authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
     const isGuestKey = !bearer || bearer === anonKey || bearer === req.headers.get('apikey') || jwtRole(bearer) === 'anon';
@@ -710,10 +723,11 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         const supabase = authClient;
         const { data: profile } = await supabase
           .from('profiles')
-          .select('subscription_tier, subscription_expires_at, location')
+          .select('subscription_tier, subscription_expires_at, location, gstin')
           .eq('id', userId)
           .single();
         profileLocation = typeof profile?.location === 'string' ? profile.location : null;
+        accountGstin = !organizationId && typeof profile?.gstin === 'string' && profile.gstin.trim() ? profile.gstin : null;
 
         // The active subscription rows are the record of the plan; the profile
         // copy counts only when no row is in force (planLimits.canonicalPlan).
@@ -781,7 +795,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
             return new Response(
               JSON.stringify({
                 success: true,
-                data: existingDoc.cached_result,
+                data: withoutEvidence(existingDoc.cached_result),
                 cached: true,
                 isDuplicate: true,
                 originalDocumentId: existingDoc.id,
@@ -1106,6 +1120,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     // earlier part of the same PDF (a printed duplicate or triplicate copy)
     // are counted once. Lines are always read from this part's own pages.
     const splitNotes: string[] = [];
+    // Duplicate outcome, copied into the stored evidence (never changes a decision).
+    let repeatedLinesDropped = 0;
+    let uncountedTwinId: string | null = null;
     if (split) {
       if (fillMissingHeader(ocrData, split.header).length > 0) {
         splitNotes.push(`Supplier, invoice number and date taken from the first pages of the same PDF (pages ${split.fromPage}-${split.toPage} do not print them)`);
@@ -1139,6 +1156,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
                 }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
               }
               if (dropped > 0) {
+                repeatedLinesDropped = dropped;
                 ocrData.lineItems = kept;
                 splitNotes.push(`${dropped} line${dropped === 1 ? '' : 's'} on pages ${split.fromPage}-${split.toPage} repeat lines already read from this PDF and are counted once`);
               }
@@ -1432,7 +1450,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     if (ocrData.amount) extractedFields++;
     if (ocrData.lineItems?.length > 0) extractedFields++;
 
-    const finalConfidence = calculateDeterministicConfidence({
+    const { score: finalConfidence, reasons: confidenceReasons } = deterministicConfidence({
       hasQuantity: hasAnyQuantity,
       hasUnit: hasAnyUnit,
       hasInvoiceNumber: !!ocrData.invoiceNumber,
@@ -1520,10 +1538,11 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         // Only a copy that is already counted blocks this one; a clearer copy
         // of an invoice that produced nothing is read and saved normally.
         const twinCounted = twin ? ((await db.from('emissions').select('id', { count: 'exact', head: true }).eq('document_id', twin.id)).count ?? 0) > 0 : false;
+        if (twin?.id && !twinCounted) uncountedTwinId = twin.id;
         if (twin?.cached_result && twinCounted) {
           return new Response(JSON.stringify({
             success: true, cached: true, isDuplicate: true, duplicateReason: 'same_invoice',
-            data: twin.cached_result, originalDocumentId: twin.id, documentHash: twin.document_hash,
+            data: withoutEvidence(twin.cached_result), originalDocumentId: twin.id, documentHash: twin.document_hash,
             message: `This invoice is already in your records (uploaded ${new Date(twin.created_at).toLocaleDateString('en-IN')} as a different file). It is counted once.`,
           }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
         }
@@ -1543,6 +1562,12 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     if (supabaseUrl && supabaseKey && isAuthenticated && userId) {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
+        // Bill checks, stored as evidence in cached_result only: the reply to
+        // the browser, the rows, the figures and the confidence are unchanged.
+        const storedResult = await withEvidence(supabase, extractedData, {
+          userId, organizationId, documentHash, rereadDocId, accountGstin, electricityBill: elecBill,
+          duplicates: { repeatedLinesDropped, twinDocumentId: uncountedTwinId }, confidenceReasons,
+        });
         // Original file as evidence.
         if (rereadDocId) {
           // Read again: replace the stored read of the same file (it had no
@@ -1550,7 +1575,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
           const { error: updError } = await supabase.from('documents').update({
             document_type: extractedData.documentType, vendor: extractedData.vendor, invoice_number: extractedData.invoiceNumber,
             invoice_date: parseInvoiceDate(extractedData.date), amount: extractedData.amount,
-            confidence: Math.min(extractedData.confidence, 999.99), cached_result: extractedData,
+            confidence: Math.min(extractedData.confidence, 999.99), cached_result: storedResult,
           }).eq('id', rereadDocId);
           if (updError) console.error('Re-read update failed:', updError.code);
           else {
@@ -1569,7 +1594,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
             invoice_date: parseInvoiceDate(extractedData.date),
             amount: extractedData.amount,
             confidence: Math.min(extractedData.confidence, 999.99),
-            cached_result: extractedData,
+            cached_result: storedResult,
             cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
             user_id: userId,
             file_url: sourcePath,
