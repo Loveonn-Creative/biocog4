@@ -112,9 +112,11 @@ describe('row checks', () => {
     const server = calculateEmissions(1000, 'kl', 1, 'FUEL', 'DIESEL');
     expect(r.rows[0].estimateKg).toBe(server && server.kind === 'emission' ? server.co2Kg : -1);
   });
-  test('electricity uses the shared India grid factor', () => {
+  test('electricity uses the shared India grid factor of the row date', () => {
     const r = check([row({ type: 'Electricity', quantity: '1000', unit: 'kWh', supplier: 'MSEDCL' })]);
-    expect(r.rows[0].estimateKg).toBe(710);
+    expect(r.rows[0].estimateKg).toBe(675); // 30 Apr 2026: FY 2026-27, latest CEA figure (FY 2025-26)
+    const march = check([row({ date: '31/03/2025', type: 'Electricity', quantity: '1000', unit: 'kWh', supplier: 'MSEDCL' })]);
+    expect(march.rows[0].estimateKg).toBe(710); // FY 2024-25
   });
   test('freight is ready but has no estimate in the preview', () => {
     const r = check([row({ type: 'Freight', quantity: '500', unit: 'tkm', supplier: 'VRL' })]);
@@ -204,7 +206,7 @@ describe('duplicates', () => {
   test('only ready rows count toward the estimate total', () => {
     const a = row({ gstin: GOOD_GSTIN, invoice: 'X', quantity: '100' });
     const r = check([a, a, row({ quantity: '0' })]);
-    expect(r.readyEstimateKg).toBe(268);
+    expect(r.readyEstimateKg).toBe(264.5);
   });
 });
 

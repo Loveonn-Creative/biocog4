@@ -195,14 +195,47 @@ describe('invoice to stored records, through the real handler', () => {
     expect(db.emissions).toHaveLength(1);
   });
 
-  test('electricity bill in kWh: Scope 2 row at the CEA factor', async () => {
+  test('electricity bill in kWh: Scope 2 row at the CEA factor of the bill year (FY 2026-27: latest, FY 2025-26, 0.675)', async () => {
     ocr = { documentType: 'Electricity Bill', vendor: 'MSEDCL', date: '2026-09-05', invoiceNumber: 'B-77', amount: '9,000', currency: 'INR',
       unitsConsumedKwh: 1000, unitsConsumedUnit: 'kWh', unitsConsumedText: 'Units Consumed: 1000',
       lineItems: [{ description: 'Electricity consumed', quantity: 1000, unit: 'kWh', hsn_code: '2716' }] };
     const r = await upload('f');
     expect(r.body.emissionIds).toHaveLength(1);
     expect(db.emissions[0]).toMatchObject({ scope: 2, activity_data: 1000, activity_unit: 'kWh' });
-    expect(db.emissions[0].co2_kg).toBeCloseTo(710, 6);
+    expect(db.emissions[0].co2_kg).toBeCloseTo(675, 6);
+    const notes = JSON.parse(db.emissions[0].verification_notes);
+    expect(notes.factorSource).toBe('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26');
+    expect(notes.factorSetVersion).toBe('IND_EF_2026_11');
+    expect(notes.factorCitation).toBe('CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average');
+    expect(notes.assumptions).toContain('CEA FY 2025-26 factor');
+  });
+
+  test('grid factor follows the bill year: 31 March 2025 is FY 2024-25 (0.710), 1 April 2025 is FY 2025-26 (0.675)', async () => {
+    const bill = (date: string, no: string) => ({ documentType: 'Electricity Bill', vendor: 'MSEDCL', date, invoiceNumber: no, amount: '9,000', currency: 'INR',
+      unitsConsumedKwh: 1000, unitsConsumedUnit: 'kWh', unitsConsumedText: 'Units Consumed: 1000',
+      lineItems: [{ description: 'Electricity consumed', quantity: 1000, unit: 'kWh', hsn_code: '2716' }] });
+    ocr = bill('2025-03-31', 'B-331');
+    await upload('fy-a');
+    ocr = bill('2025-04-01', 'B-401');
+    await upload('fy-b');
+    expect(db.emissions).toHaveLength(2);
+    const [a, b] = db.emissions;
+    expect(a).toMatchObject({ emission_factor: 0.71, co2_kg: 710 });
+    expect(b).toMatchObject({ emission_factor: 0.675, co2_kg: 675 });
+    expect(JSON.parse(a.verification_notes)).toMatchObject({ factorSource: 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25', factorCitation: 'CEA CO2 Baseline Database v21.0 (Nov 2025), Table S, FY 2024-25 weighted average' });
+    expect(JSON.parse(b.verification_notes)).toMatchObject({ factorSource: 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26', factorCitation: 'CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average' });
+  });
+
+  test('coal: the rule applied is stored with the line', async () => {
+    ocr = { documentType: 'Tax Invoice', vendor: 'Coal Traders', date: '2026-09-05', invoiceNumber: 'C-1', amount: '1,20,000', currency: 'INR',
+      lineItems: [{ description: 'Steam coal, GCV 5500 kcal/kg', hsn_code: '2701', quantity: 10, unit: 'MT', total: '1,20,000' }] };
+    await upload('coal-gcv');
+    expect(db.emissions).toHaveLength(1);
+    expect(db.emissions[0]).toMatchObject({ activity_data: 10000, activity_unit: 'kg', emission_factor: 2.0863, co2_kg: 20863 });
+    const notes = JSON.parse(db.emissions[0].verification_notes);
+    expect(notes.factorSource).toBe('BIOCOG_MVR_INDIA_v1.2:COAL_GCV_5500');
+    expect(notes.assumptions).toContain('From bill: 5500 kcal/kg');
+    expect(notes.factorCitation).toContain('90.6 gCO2/MJ x gross calorific value 5,500 kcal/kg');
   });
 
   test('AI provider down: a clear our-side error, nothing stored', async () => {
@@ -312,7 +345,7 @@ describe('electricity bill reader: kVAh, charges, handwritten bills and meter ph
     const r = await upload('ht-kwh');
     expect(r.body.emissionIds).toHaveLength(1);
     expect(db.emissions[0]).toMatchObject({ scope: 2, activity_data: 19100, activity_unit: 'kWh' });
-    expect(db.emissions[0].co2_kg).toBeCloseTo(19100 * 0.71, 6);
+    expect(db.emissions[0].co2_kg).toBeCloseTo(19100 * 0.675, 6);
     const [line] = counted(r);
     expect(line).toMatchObject({ basis: 'read_from_bill', basisLabel: 'Read from the bill' });
     expect(line.evidence.kvah).toBe(20000);
@@ -408,7 +441,7 @@ describe('electricity bill reader: kVAh, charges, handwritten bills and meter ph
     expect(b.body.data.lineItems.find((l: any) => l.description === 'Energy Charges')?.guidance?.status).not.toBe('bill_charge');
     for (const r of [a, b]) {
       expect(r.body.data.guidance.billCharges).toBe(3);
-      expect(r.body.data.totalCO2Kg).toBeCloseTo(2982, 6);
+      expect(r.body.data.totalCO2Kg).toBeCloseTo(4200 * 0.675, 6);
     }
   });
 
@@ -641,7 +674,7 @@ describe('bill checks: stored evidence only', () => {
     expect(ev.confidenceReasons.reduce((s: number, x: Row) => s + x.points, 100)).toBe(stored.confidence);
     // The emission row is as before, plus the factor citation in its notes.
     expect(db.emissions[0]).toMatchObject({ activity_data: 1250, activity_unit: 'litre' });
-    expect(JSON.parse(db.emissions[0].verification_notes).factorCitation).toBe('BIOCOG_MVR_INDIA v1.0 (unchanged)');
+    expect(JSON.parse(db.emissions[0].verification_notes).factorCitation).toBe('IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 43.0 TJ/Gg x Table 1.4 74,100 kgCO2/TJ = 3.186 kgCO2/kg x 0.83 kg/L (CEA CO2 Baseline Database v22.0, Appendix B) = 2.645 kgCO2/L');
   });
 
   test('the same file again replies with the stored result, without the evidence', async () => {

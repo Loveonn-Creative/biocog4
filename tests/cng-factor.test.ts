@@ -21,7 +21,8 @@ describe('CNG factor correction', () => {
   });
   test('other fuels have no earlier values', () => {
     const source = (calculateEmissions(1, 'litre', 1, 'FUEL', 'DIESEL', { gridCountry: 'IN' }) as { factorSource: string }).factorSource;
-    expect(isPublishedFactor(source, 2.68)).toBe(true);
+    expect(isPublishedFactor(source, 2.645)).toBe(true);
+    expect(isPublishedFactor(source, 2.68)).toBe(false);
     expect(isPublishedFactor(source, 2.75)).toBe(false);
   });
 });

@@ -336,17 +336,17 @@ export function projectTrend(monthly: MonthTotal[]): Projection | null {
 /**
  * Labelled sample for guests, Snapshot and Essential, so they can see what an
  * analysis looks like. A fictional business; every figure is activity x the
- * factor in _shared/emissionFactors.ts (grid 0.710 kg/kWh, diesel 2.68 kg/L).
+ * factor in _shared/emissionFactors.ts (grid 0.710 kg/kWh, diesel 2.645 kg/L).
  */
 export const SAMPLE_BRIEF = {
   label: 'Sample data, not your records',
   business: 'A fictional textile unit',
   lines: [
     { category: 'electricity', scope: 2, activity: { quantity: 12000, unit: 'kWh' }, factor: 0.710, kg: 8520 },
-    { category: 'diesel', scope: 1, activity: { quantity: 900, unit: 'litre' }, factor: 2.68, kg: 2412 },
+    { category: 'diesel', scope: 1, activity: { quantity: 900, unit: 'litre' }, factor: 2.645, kg: 2381 },
   ],
-  totalKg: 10932,
-  calculation: '12,000 kWh x 0.710 = 8,520 kg; 900 L x 2.68 = 2,412 kg; total 10,932 kg CO2e.',
+  totalKg: 10901,
+  calculation: '12,000 kWh x 0.710 = 8,520 kg; 900 L x 2.645 = 2,381 kg; total 10,901 kg CO2e.',
 } as const;
 
 // ---------------------------------------------------------------- prompt safety

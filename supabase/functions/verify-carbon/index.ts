@@ -694,7 +694,8 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
           validation_result: validationResult,
           validation_failure_reason: validationFailureReason,
           greenwashing_risk: greenwashingRisk,
-          methodology_version: `BIOCOG_MVR_IN_${METHODOLOGY_VERSION_TAG}`,
+          // The version the record was calculated with (v1.1 rows stay v1.1).
+          methodology_version: `BIOCOG_MVR_IN_${/^BIOCOG_MVR_INDIA_(v\d+\.\d+):/.exec(factorSource ?? '')?.[1] ?? METHODOLOGY_VERSION_TAG}`,
           classification_method: classificationMethod,
           gstin: supplierGstin,
           hsn_code: hsnCode,

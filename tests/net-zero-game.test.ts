@@ -58,7 +58,7 @@ describe('baseline and roadmap', () => {
   test('baseline from usage uses the platform factors', () => {
     const b = baselineFromUsage(10_000, 500);
     expect(Math.round(b.scope2Kg)).toBe(Math.round(10_000 * 12 * 0.71));
-    expect(Math.round(b.scope1Kg)).toBe(Math.round(500 * 12 * 2.68));
+    expect(Math.round(b.scope1Kg)).toBe(Math.round(500 * 12 * 2.645));
     expect(b.scope3Kg).toBe(0);
   });
   test('actions on the same electricity are not double counted', () => {

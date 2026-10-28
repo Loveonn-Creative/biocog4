@@ -5,8 +5,8 @@ describe('decarbonisation pathway', () => {
   test('baseline from monthly bills x shared factors', () => {
     const b = baselineTonnes({ kwhPerMonth: 1000, dieselLPerMonth: 100 });
     expect(b.grid).toBeCloseTo(8.52, 5);    // 12,000 kWh x 0.710 kg
-    expect(b.diesel).toBeCloseTo(3.216, 5); // 1,200 L x 2.68 kg
-    expect(b.total).toBeCloseTo(11.736, 5);
+    expect(b.diesel).toBeCloseTo(3.174, 5); // 1,200 L x 2.645 kg
+    expect(b.total).toBeCloseTo(11.694, 5);
   });
   test('known annual total leaves grid and diesel unknown', () => {
     expect(baselineTonnes({ kwhPerMonth: 0, dieselLPerMonth: 0, knownT: 150 })).toEqual({ total: 150, grid: null, diesel: null });

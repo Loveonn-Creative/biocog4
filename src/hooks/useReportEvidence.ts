@@ -7,6 +7,7 @@ import { readOrganizationProfile } from '@/lib/organizationProfile';
 import { countryCodeFromLocation } from '@/lib/countryConfig';
 import { useEmissions } from '@/hooks/useEmissions';
 import { grossKg, latestLedgerRowPerEmission, type LedgerRowLike } from '@/lib/emissionLedger';
+import { factorCitationOf, reportFactorSources } from '@/lib/factorCitation';
 import {
   availabilityFromRecords,
   determineApplicableFrameworks,
@@ -46,6 +47,8 @@ export interface EvidenceRecord {
   scope: number;
   category: string;
   factorSource: string | null;
+  /** Published citation stored with the record (verification_notes.factorCitation), when kept. */
+  factorCitation?: string | null;
   methodologyVersion: string;
   verificationStatus: string;
   hsnCode: string | null;
@@ -233,10 +236,14 @@ export function useReportEvidence() {
     [profileContext],
   );
 
-  const factorSources = useMemo(
-    () => [...new Set(evidence.map((e) => e.factorSource).filter(Boolean) as string[])],
-    [evidence],
-  );
+  // Reports print the published citation stored with each record; records
+  // saved before citations were kept show their source key.
+  const citedEvidence = useMemo(() => {
+    const byId = new Map(emissions.map((e) => [e.id, factorCitationOf(e.verification_notes)] as const));
+    return evidence.map((e) => ({ ...e, factorCitation: e.emissionId ? byId.get(e.emissionId) ?? null : null }));
+  }, [evidence, emissions]);
+
+  const factorSources = useMemo(() => reportFactorSources(citedEvidence), [citedEvidence]);
 
   const methodologyVersion = evidence[0]?.methodologyVersion || 'BIOCOG MRV v1.0';
 
@@ -245,7 +252,7 @@ export function useReportEvidence() {
     profileContext,
     availability,
     applicableFrameworks,
-    evidence,
+    evidence: citedEvidence,
     target,
     exportsToEU,
     factorSources,

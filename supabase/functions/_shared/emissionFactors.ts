@@ -6,9 +6,16 @@
 // Avoided emissions from green purchases are reported separately and are
 // never subtracted from gross emissions.
 
+import { fiscalPeriod } from './invoiceDate.ts';
+
 export const METHODOLOGY_NAME = 'BIOCOG_MVR_INDIA';
-export const METHODOLOGY_VERSION_TAG = 'v1.1';
-export const FACTOR_SET_VERSION = 'IND_EF_2026_10';
+// v1.2 / IND_EF_2026_11 (owner approved, November 2026): diesel, petrol and
+// coal from published IPCC, CEA and PPAC values with the arithmetic stored as
+// the citation, and grid electricity by the financial year of the bill. Rows
+// written by v1.1 and earlier keep the factors they were saved with and are
+// not re-derived (publishedFactorFor returns null for them).
+export const METHODOLOGY_VERSION_TAG = 'v1.2';
+export const FACTOR_SET_VERSION = 'IND_EF_2026_11';
 const SRC = `${METHODOLOGY_NAME}_${METHODOLOGY_VERSION_TAG}`;
 
 // ---------------------------------------------------------------------------
@@ -34,13 +41,25 @@ export interface Factor {
 }
 
 export const FUEL_FACTORS: Record<FuelType, Factor> = {
-  // Unchanged from v1.0 (not part of the 2026-10 review).
-  DIESEL: { value: 2.68, unit: 'litre', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
-  PETROL: { value: 2.31, unit: 'litre', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
+  // Was 2.68 (v1.0, unsourced). IPCC gas/diesel oil: NCV 43.0 TJ/Gg x
+  // 74,100 kgCO2/TJ = 3.1863 kgCO2/kg, x 0.83 kg/L, the diesel density in CEA
+  // CO2 Baseline Database v22.0 (Aug 2026) Appendix B = 2.6446.
+  DIESEL: { value: 2.645, unit: 'litre', source: 'IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 43.0 TJ/Gg x Table 1.4 74,100 kgCO2/TJ = 3.186 kgCO2/kg x 0.83 kg/L (CEA CO2 Baseline Database v22.0, Appendix B) = 2.645 kgCO2/L' },
+  // Was 2.31 (v1.0, unsourced). IPCC motor gasoline: NCV 44.3 TJ/Gg x
+  // 69,300 kgCO2/TJ = 3.0700 kgCO2/kg. Density: PPAC Ready Reckoner FY 2025-26
+  // (Ministry of Petroleum and Natural Gas, Aug 2026), Table 9.2 "Weight to
+  // volume conversion": petrol 1 MT = 1.4110 KL (volume at 29.5 C, the retail
+  // ambient basis), i.e. 0.7087 kg/L. 3.06999 / 1.411 = 2.1758. Source PDF:
+  // https://ppac.gov.in/download.php?file=rep_studies/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf
+  PETROL: { value: 2.176, unit: 'litre', source: 'IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 44.3 TJ/Gg x Table 1.4 69,300 kgCO2/TJ = 3.070 kgCO2/kg, at 1.411 kL per tonne (PPAC Ready Reckoner FY 2025-26, Table 9.2) = 2.176 kgCO2/L' },
   // Was 2.75 (v1.0, unsourced). CNG is natural gas sold by mass; IPCC natural
   // gas: 56,100 kgCO2/TJ x 48.0 TJ/Gg = 2.693 kgCO2/kg, the same basis as PNG.
   CNG: { value: 2.69, unit: 'kg', source: 'IPCC 2006 V2 Tables 1.2/1.4: natural gas (CNG, per kg)' },
-  COAL: { value: 2.42, unit: 'kg', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
+  // Was 2.42 (v1.0, unsourced). Indian coal default, used when the bill states
+  // no calorific value or grade (coalFactorFor): CEA CO2 Baseline Database
+  // v21.0/v22.0 Appendix B, Indian coal 90.6 gCO2/MJ (GCV basis, oxidation
+  // 0.98 included) x GCV 3,755 kcal/kg x 4.1868 kJ/kcal = 1.4244 kgCO2/kg.
+  COAL: { value: 1.42, unit: 'kg', source: 'CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg' },
   // Was 1.51. IPCC LPG: 63,100 kgCO2/TJ x 47.3 TJ/Gg = 2.985 kgCO2/kg.
   LPG: { value: 2.98, unit: 'kg', source: 'IPCC 2006 V2 Tables 1.2/1.4: LPG' },
   // Was 2.30. IPCC natural gas: 56,100 kgCO2/TJ x 48.0 TJ/Gg = 2.693 kgCO2/kg,
@@ -62,15 +81,177 @@ export const FUEL_FACTORS: Record<FuelType, Factor> = {
 };
 
 // ---------------------------------------------------------------------------
-// Grid electricity (Scope 2)
-// Was 0.708 with the comment "CEA India" and no edition. 0.710 kgCO2/kWh is
-// the owner-specified India weighted-average grid factor. The CEA CO2
-// Baseline Database edition and fiscal year behind it have NOT been confirmed
-// in code review; confirm against the current CEA user guide before relying
-// on it for an audit.
+// Grid electricity (Scope 2), by the financial year of the bill
+//
+// CEA CO2 Baseline Database, weighted average emission factor of the Indian
+// grid including renewable generation (tCO2/MWh = kgCO2/kWh):
+//   v21.0 (Nov 2025), Table S: FY 2024-25 = 0.710; Annexure-I lists each
+//     year from FY 2013-14 to FY 2024-25.
+//   v22.0 (Aug 2026), Table S: FY 2025-26 = 0.675.
+//   https://cea.nic.in/api/cdm-report-version/view-pdf/en/78 (v21.0)
+//   https://cea.nic.in/api/cdm-report-version/view-pdf/en/82 (v22.0)
+// A bill dated in FY 2025-26 or later uses 0.675 (the latest published year);
+// FY 2013-14 to FY 2024-25 use that year's own value; earlier bills, for which
+// CEA lists no value, use 0.710. The bill's year comes from its invoice date,
+// else its upload date (invoiceDate.ts activityDate and fiscalPeriod).
 // ---------------------------------------------------------------------------
-export const INDIA_GRID_FACTOR_KG_PER_KWH = 0.710;
-export const INDIA_GRID_FACTOR_SOURCE = 'CEA CO2 Baseline Database, India weighted average (edition to be confirmed)';
+const V21_ANNEX = (fy: string) => `CEA CO2 Baseline Database v21.0 (Nov 2025), Annexure-I, FY ${fy} weighted average`;
+export const INDIA_GRID_BY_FY: Readonly<Record<string, { value: number; source: string }>> = {
+  FY2013_14: { value: 0.774, source: V21_ANNEX('2013-14') },
+  FY2014_15: { value: 0.779, source: V21_ANNEX('2014-15') },
+  FY2015_16: { value: 0.774, source: V21_ANNEX('2015-16') },
+  FY2016_17: { value: 0.770, source: V21_ANNEX('2016-17') },
+  FY2017_18: { value: 0.754, source: V21_ANNEX('2017-18') },
+  FY2018_19: { value: 0.744, source: V21_ANNEX('2018-19') },
+  FY2019_20: { value: 0.713, source: V21_ANNEX('2019-20') },
+  FY2020_21: { value: 0.703, source: V21_ANNEX('2020-21') },
+  FY2021_22: { value: 0.715, source: V21_ANNEX('2021-22') },
+  FY2022_23: { value: 0.716, source: V21_ANNEX('2022-23') },
+  FY2023_24: { value: 0.727, source: V21_ANNEX('2023-24') },
+  FY2024_25: { value: 0.710, source: 'CEA CO2 Baseline Database v21.0 (Nov 2025), Table S, FY 2024-25 weighted average' },
+  FY2025_26: { value: 0.675, source: 'CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average' },
+};
+const GRID_FIRST_FY = 2013;
+const GRID_LATEST_FY = 2025;
+const GRID_BEFORE_FIRST_FY = 2024;
+
+export interface GridFactorChoice {
+  /** factorSource key, e.g. INDIA_GRID_FY2025_26 (the CEA year whose value applies). */
+  key: string;
+  value: number;
+  source: string;
+  /** The bill's financial year, e.g. 'FY 2026-27'. */
+  billYear: string;
+  /** The CEA year applied, e.g. 'FY 2025-26'. */
+  factorYear: string;
+}
+
+const fyLabel = (start: number) => `FY ${start}-${String(start + 1).slice(-2)}`;
+const fyKey = (start: number) => `FY${start}_${String(start + 1).slice(-2)}`;
+
+/** The India grid factor for a record dated `iso` (YYYY-MM-DD or a timestamp), by Indian financial year. */
+export function gridFactorFor(iso: string): GridFactorChoice {
+  const start = Number(fiscalPeriod(iso).fiscalYear.slice(2, 6));
+  const use = start >= GRID_LATEST_FY ? GRID_LATEST_FY : start >= GRID_FIRST_FY ? start : GRID_BEFORE_FIRST_FY;
+  const f = INDIA_GRID_BY_FY[fyKey(use)];
+  return { key: `INDIA_GRID_${fyKey(use)}`, value: f.value, source: f.source, billYear: fyLabel(start), factorYear: fyLabel(use) };
+}
+
+/** The plain statement stored with a grid line: which year the bill fell in and which CEA year applied. */
+export function gridAssumption(choice: GridFactorChoice, dateFrom: 'invoice' | 'upload'): string {
+  // Owner-approved short labels.
+  const beforeCea = choice.billYear !== choice.factorYear && Number(choice.billYear.slice(3, 7)) <= GRID_LATEST_FY;
+  const applied = beforeCea ? `${choice.factorYear} factor used` : `CEA ${choice.factorYear} factor`;
+  return dateFrom === 'invoice' ? applied : `${applied} · Dated by upload`;
+}
+
+// The national constant the website's estimators and the avoided-emission
+// factors use (FY 2024-25, CEA v21.0 Table S). Records use gridFactorFor.
+export const INDIA_GRID_FACTOR_KG_PER_KWH = INDIA_GRID_BY_FY.FY2024_25.value;
+export const INDIA_GRID_FACTOR_SOURCE = INDIA_GRID_BY_FY.FY2024_25.source;
+
+// ---------------------------------------------------------------------------
+// Coal: the rule depends on what the bill says (owner rule, November 2026)
+//  1. A gross or net calorific value on the line (GCV, GAR, GAD or ADB; NCV
+//     or NAR; in kcal/kg or MJ/kg): GCV x 90.6 gCO2/MJ (CEA v22.0 Appendix B,
+//     coal, GCV basis with oxidation) or NCV x 94,600 kgCO2/TJ (IPCC 2006
+//     Vol 2 Ch 1 Table 1.4, other bituminous coal).
+//  2. Named imported, bituminous or steam coal: IPCC other bituminous coal,
+//     25.8 TJ/Gg x 94,600 kgCO2/TJ = 2.4407 kgCO2/kg.
+//  3. Otherwise the Indian coal default, FUEL_FACTORS.COAL (1.42).
+// Lignite, anthracite, coking and sub-bituminous coal have their own factors,
+// which this set does not hold: such lines get no factor and are flagged.
+// The reader returns no calorific value field, so only the line text is read.
+// ---------------------------------------------------------------------------
+export const COAL_BITUMINOUS: Factor = { value: 2.44, unit: 'kg', source: 'IPCC 2006 Vol 2 Ch 1, other bituminous coal, Table 1.2 NCV 25.8 TJ/Gg x Table 1.4 94,600 kgCO2/TJ = 2.44 kgCO2/kg' };
+const KJ_PER_KCAL = 4.1868;
+const CEA_COAL_G_PER_MJ_GCV = 90.6;
+const IPCC_BITUMINOUS_KG_PER_TJ_NCV = 94600;
+// Plausible coal calorific values; anything outside is treated as not stated.
+const CV_MIN_KCAL = 1500;
+const CV_MAX_KCAL = 8500;
+const round4 = (n: number) => Math.round(n * 1e4) / 1e4;
+const fmtInt = (n: number) => n.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+
+function coalCvFactor(basis: 'GCV' | 'NCV', kcal: number): Factor | null {
+  if (!Number.isInteger(kcal) || kcal < CV_MIN_KCAL || kcal > CV_MAX_KCAL) return null;
+  const mj = kcal * KJ_PER_KCAL / 1000;
+  if (basis === 'GCV') {
+    const v = round4(CEA_COAL_G_PER_MJ_GCV * mj / 1000);
+    return { value: v, unit: 'kg', source: `CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, coal 90.6 gCO2/MJ x gross calorific value ${fmtInt(kcal)} kcal/kg x 4.1868 kJ/kcal = ${v} kgCO2/kg` };
+  }
+  const v = round4(IPCC_BITUMINOUS_KG_PER_TJ_NCV * mj / 1e6);
+  return { value: v, unit: 'kg', source: `IPCC 2006 Vol 2 Ch 1, Table 1.4 94,600 kgCO2/TJ x net calorific value ${fmtInt(kcal)} kcal/kg x 4.1868 kJ/kcal = ${v} kgCO2/kg` };
+}
+
+export interface CoalChoice {
+  /** factorSource key: COAL, COAL_BITUMINOUS, COAL_GCV_<kcal> or COAL_NCV_<kcal>. */
+  key: string;
+  factor: Factor;
+  /** Which rule applied, stored with the line. */
+  assumption: string;
+}
+
+const CV_NUM = '(\\d{1,2}(?:,\\d{3})+|\\d+(?:\\.\\d+)?)';
+const CV_UNIT = '(kcal\\s*/\\s*kg|kcal|k\\.?\\s?cal|mj\\s*/\\s*kg|mj)?';
+const CV_WORD = '(gcv|gar|gad|adb|gross\\s+calorific(?:\\s+value)?|ncv|nar|net\\s+calorific(?:\\s+value)?)';
+const CV_AFTER = new RegExp(`(?:^|[^a-z])${CV_WORD}[^0-9a-z]{0,6}(?:(?:value|of|approx|about)[^0-9a-z]{0,4})?${CV_NUM}\\s*${CV_UNIT}`, 'i');
+const CV_BEFORE = new RegExp(`${CV_NUM}\\s*${CV_UNIT}[^0-9a-z]{0,4}${CV_WORD}(?:[^a-z]|$)`, 'i');
+
+/** A calorific value stated in the line text, in whole kcal/kg, or null. */
+export function statedCoalCv(text: string | null | undefined): { basis: 'GCV' | 'NCV'; kcal: number; printed: string } | null {
+  const t = String(text ?? '');
+  let word: string, num: string, unit: string | undefined;
+  const a = CV_AFTER.exec(t);
+  if (a) [word, num, unit] = [a[1], a[2], a[3]];
+  else {
+    const b = CV_BEFORE.exec(t);
+    if (!b) return null;
+    [num, unit, word] = [b[1], b[2], b[3]];
+  }
+  const n = Number(num.replace(/,/g, ''));
+  if (!Number.isFinite(n) || n <= 0) return null;
+  const u = (unit ?? '').toLowerCase();
+  // MJ/kg when stated, or a bare number in the MJ/kg range (8 to 36).
+  const isMj = u.startsWith('mj') || (!u && n >= 8 && n <= 36);
+  const kcal = Math.round(isMj ? n * 1000 / KJ_PER_KCAL : n);
+  if (kcal < CV_MIN_KCAL || kcal > CV_MAX_KCAL) return null;
+  const basis = /^(ncv|nar|net)/i.test(word) ? 'NCV' : 'GCV';
+  return { basis, kcal, printed: `${num} ${isMj ? 'MJ/kg' : 'kcal/kg'}` };
+}
+
+// "Non-coking coal" is ordinary Indian thermal coal, so it is not excluded.
+const COAL_OTHER_RANK = /(^|[^a-z])(lignite|anthracite|(?<!non[\s-]?)coking|sub[\s-]?bituminous)([^a-z]|$)/i;
+const COAL_BITUMINOUS_WORDS = /(^|[^a-z])(imported|bituminous|steam\s+coal)([^a-z]|$)/i;
+
+/** The coal factor for a line from its text, or null when the rule cannot be determined. */
+export function coalFactorFor(description: string | null | undefined): CoalChoice | null {
+  const text = String(description ?? '');
+  const cv = statedCoalCv(text);
+  if (cv) {
+    const f = coalCvFactor(cv.basis, cv.kcal);
+    if (f) {
+      return {
+        key: `COAL_${cv.basis}_${cv.kcal}`,
+        factor: f,
+        assumption: `From bill: ${cv.printed}`,
+      };
+    }
+  }
+  if (COAL_OTHER_RANK.test(text)) return null;
+  if (COAL_BITUMINOUS_WORDS.test(text)) {
+    return { key: 'COAL_BITUMINOUS', factor: COAL_BITUMINOUS, assumption: 'Bituminous coal factor' };
+  }
+  return { key: 'COAL', factor: FUEL_FACTORS.COAL, assumption: 'Indian coal average' };
+}
+
+/** The coal factor a factorSource key names (COAL, COAL_BITUMINOUS, COAL_GCV_5500, ...), or null. */
+function coalFactorForKey(key: string): Factor | null {
+  if (key === 'COAL') return FUEL_FACTORS.COAL;
+  if (key === 'COAL_BITUMINOUS') return COAL_BITUMINOUS;
+  const m = /^COAL_(GCV|NCV)_(\d{4})$/.exec(key);
+  return m ? coalCvFactor(m[1] as 'GCV' | 'NCV', Number(m[2])) : null;
+}
 
 // Scope 3 has no factors here. The former road-freight (0.18 kg/t-km) and
 // landfill-organic (1.90 kg/kg) values had no publication, mode, material or
@@ -346,6 +527,8 @@ export interface EmissionCalc {
   emissionFactor: number;
   co2Kg: number;
   factorSource: string;
+  /** Which factor rule applied (grid year, coal rule), to store with the line. */
+  assumption?: string;
 }
 
 export interface AvoidedCalc {
@@ -386,6 +569,11 @@ const GRID_DEPENDENT = new Set(['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY']);
  * grid factor (and the avoided-emission factors built on it) applies only to
  * 'IN'; any other country, or null, gets no factor. Omitted = India, for
  * callers that only ever handle Indian data.
+ * opts.activityDate: the record's date for its period (invoice date, else
+ * upload date; YYYY-MM-DD or a timestamp). Grid electricity takes the factor
+ * of that financial year; omitted = today (an upload with no invoice date).
+ * opts.activityDateFrom says which of the two it is, for the stored note.
+ * opts.description: the line text, read for a coal calorific value or grade.
  */
 export function calculateEmissions(
   quantity: number,
@@ -393,10 +581,18 @@ export function calculateEmissions(
   scope: number,
   productCategory: string,
   fuelType?: string,
-  opts?: { gridCountry?: string | null },
+  opts?: { gridCountry?: string | null; activityDate?: string | null; activityDateFrom?: 'invoice' | 'upload'; description?: string | null },
 ): EmissionCalc | AvoidedCalc | null {
   if (!Number.isFinite(quantity) || quantity <= 0 || !unit) return null;
-  if (opts && GRID_DEPENDENT.has(productCategory) && !GRID_FACTOR_COUNTRIES.includes(String(opts.gridCountry ?? ''))) return null;
+  if (opts && 'gridCountry' in opts && GRID_DEPENDENT.has(productCategory) && !GRID_FACTOR_COUNTRIES.includes(String(opts.gridCountry ?? ''))) return null;
+
+  if (scope === 1 && productCategory === 'FUEL' && fuelType === 'COAL') {
+    const choice = coalFactorFor(opts?.description);
+    if (!choice) return null;
+    const r = applyFactor(quantity, unit, choice.factor);
+    if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:${choice.key}`, assumption: choice.assumption };
+    return null;
+  }
 
   if (scope === 1 && productCategory === 'FUEL' && fuelType && fuelType in FUEL_FACTORS) {
     const f = FUEL_FACTORS[fuelType as FuelType];
@@ -406,8 +602,11 @@ export function calculateEmissions(
   }
 
   if (scope === 2 && productCategory === 'ELECTRICITY') {
-    const r = applyFactor(quantity, unit, { value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kWh', source: INDIA_GRID_FACTOR_SOURCE });
-    if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:INDIA_GRID_AVG` };
+    const dated = opts?.activityDate ? String(opts.activityDate) : new Date().toISOString();
+    const grid = gridFactorFor(dated);
+    const r = applyFactor(quantity, unit, { value: grid.value, unit: 'kWh', source: grid.source });
+    const from = opts?.activityDateFrom ?? (opts?.activityDate ? 'invoice' : 'upload');
+    if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:${grid.key}`, assumption: gridAssumption(grid, from) };
     return null;
   }
 
@@ -421,18 +620,29 @@ export function calculateEmissions(
 
 /**
  * The published factor (per canonical unit) behind a factorSource this
- * methodology version writes, e.g. 'BIOCOG_MVR_INDIA_v1.1:DIESEL'. null for
- * sources from other versions or methods, which are checked elsewhere.
+ * methodology version writes, e.g. 'BIOCOG_MVR_INDIA_v1.2:DIESEL',
+ * 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26' or
+ * 'BIOCOG_MVR_INDIA_v1.2:COAL_GCV_5500'. null for sources from other
+ * versions (v1.1 and earlier keep their saved factors and are not
+ * re-derived) or methods, which are checked elsewhere.
  */
 export function publishedFactorFor(factorSource: string | null | undefined): number | null {
+  const f = currentFactorFor(factorSource);
+  if (!f) return null;
+  const u = normalizeUnit(f.unit);
+  return u ? round6(f.value / u.multiplier) : null;
+}
+
+function currentFactorFor(factorSource: string | null | undefined): Factor | null {
   const [src, key] = String(factorSource ?? '').split(':');
   if (src !== SRC || !key) return null;
-  if (key === 'INDIA_GRID_AVG') return INDIA_GRID_FACTOR_KG_PER_KWH;
-  if (key in FUEL_FACTORS) {
-    const f = FUEL_FACTORS[key as FuelType];
-    const u = normalizeUnit(f.unit);
-    return u ? round6(f.value / u.multiplier) : null;
+  const own = (o: object, k: string) => Object.prototype.hasOwnProperty.call(o, k);
+  if (key.startsWith('INDIA_GRID_')) {
+    const fy = key.slice('INDIA_GRID_'.length);
+    return own(INDIA_GRID_BY_FY, fy) ? { value: INDIA_GRID_BY_FY[fy].value, unit: 'kWh', source: INDIA_GRID_BY_FY[fy].source } : null;
   }
+  if (key.startsWith('COAL')) return coalFactorForKey(key);
+  if (own(FUEL_FACTORS, key)) return FUEL_FACTORS[key as FuelType];
   return null;
 }
 
@@ -442,11 +652,7 @@ export function publishedFactorFor(factorSource: string | null | undefined): num
  * Tables 1.2/1.4: LPG'. null for sources from other versions or methods.
  */
 export function factorCitationFor(factorSource: string | null | undefined): string | null {
-  const [src, key] = String(factorSource ?? '').split(':');
-  if (src !== SRC || !key) return null;
-  if (key === 'INDIA_GRID_AVG') return INDIA_GRID_FACTOR_SOURCE;
-  if (key in FUEL_FACTORS) return FUEL_FACTORS[key as FuelType].source;
-  return null;
+  return currentFactorFor(factorSource)?.source ?? null;
 }
 
 // Factors a source key carried before a correction. Rows saved with them stay

@@ -2,7 +2,7 @@
 // invoices. Every number is read from the live factor table (src/lib/factors),
 // so a page can never drift from the calculation. Basis lines repeat the
 // derivations documented in supabase/functions/_shared/emissionFactors.ts.
-import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG } from '@/lib/factors';
+import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 import { clampDescription, fitTitle, type PageMeta } from '@/lib/seo/seoMeta';
 
 export interface FactorPage {
@@ -26,18 +26,17 @@ export interface FactorPage {
 }
 
 const IPCC = 'IPCC 2006 Guidelines, Vol. 2, Tables 1.2 and 1.4';
-const V1 = `Senseible methodology (${METHODOLOGY_VERSION_TAG}) value, carried into the current factor set`;
 
 export const FACTOR_PAGES: FactorPage[] = [
   {
     slug: 'diesel', name: 'Diesel', noun: 'diesel', value: FUEL_FACTORS.DIESEL.value, unit: 'litre', unitPlural: 'litres', scope: 1,
     hsn: '2710', hsnLabel: 'Petroleum oils', invoiceTerms: 'HSD, High Speed Diesel, diesel', exampleQty: 500,
-    basis: `${V1}. Published diesel factors fall in a narrow band of about 2.65 to 2.7 kg CO2 per litre; the spread comes from assumed density and calorific value.`,
+    basis: `${IPCC}: gas/diesel oil 74,100 kg CO2 per TJ × 43.0 TJ per Gg = 3.19 kg CO2 per kg, × 0.83 kg per litre (CEA CO2 Baseline Database, Appendix B) = 2.645 kg CO2 per litre.`,
   },
   {
     slug: 'petrol', name: 'Petrol', noun: 'petrol', value: FUEL_FACTORS.PETROL.value, unit: 'litre', unitPlural: 'litres', scope: 1,
     hsn: '2710', hsnLabel: 'Petroleum oils', invoiceTerms: 'MS, Motor Spirit, petrol', exampleQty: 200,
-    basis: `${V1}.`,
+    basis: `${IPCC}: motor gasoline 69,300 kg CO2 per TJ × 44.3 TJ per Gg = 3.07 kg CO2 per kg, at 1.411 kilolitres per tonne (PPAC Ready Reckoner, Table 9.2) = 2.176 kg CO2 per litre.`,
   },
   {
     slug: 'lpg', name: 'LPG', noun: 'LPG', value: FUEL_FACTORS.LPG.value, unit: 'kg', unitPlural: 'kg', scope: 1,
@@ -58,7 +57,7 @@ export const FACTOR_PAGES: FactorPage[] = [
   {
     slug: 'coal', name: 'Coal', noun: 'coal', value: FUEL_FACTORS.COAL.value, unit: 'kg', unitPlural: 'kg', scope: 1,
     hsn: '2701', hsnLabel: 'Coal', invoiceTerms: 'coal, steam coal, non-coking coal', exampleQty: 10000,
-    basis: `${V1}.`,
+    basis: 'CEA CO2 Baseline Database, Appendix B: Indian coal 90.6 g CO2 per MJ × 3,755 kcal per kg × 4.1868 kJ per kcal = 1.42 kg CO2 per kg. A bill that states a calorific value is calculated from it; imported, bituminous or steam coal uses the IPCC bituminous coal factor, 2.44 kg CO2 per kg.',
     caveat: 'Coal varies widely by grade and moisture. Use the supplier’s gross calorific value when the invoice or test certificate gives it.',
   },
   {

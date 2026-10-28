@@ -14,6 +14,7 @@ export const METHODOLOGY_VERSION = {
   name: METHODOLOGY_NAME,
   // v1.1.0: corrected LPG, PNG, furnace oil, naphtha, kerosene and grid
   // factors; unit aliases; avoided emissions reported separately; full-file hash.
+  // v1.2.0: sourced diesel, petrol and coal factors; grid by bill year.
   version: `${METHODOLOGY_VERSION_TAG}.0`,
   country: 'IN',
   factorVersion: FACTOR_SET_VERSION,

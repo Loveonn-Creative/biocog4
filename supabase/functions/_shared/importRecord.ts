@@ -94,7 +94,10 @@ export function buildImportedRecord(
     validationFlags: [] as string[],
   };
   const flags: string[] = [];
-  const result = calculateEmissions(qty, unit, calc.scope, calc.productCategory, calc.fuelType, { gridCountry: ctx.gridCountry });
+  // The row's date is its bill date: grid electricity takes that year's factor.
+  const result = calculateEmissions(qty, unit, calc.scope, calc.productCategory, calc.fuelType, {
+    gridCountry: ctx.gridCountry, activityDate: date, activityDateFrom: 'invoice', description,
+  });
   let co2Kg: number | null = null;
   if (result && result.kind === 'emission') {
     if (result.quantity !== qty || result.unit !== unit) {
@@ -112,6 +115,7 @@ export function buildImportedRecord(
     const a: string[] = [];
     if (item.originalQuantity !== undefined) a.push(`Converted ${item.originalQuantity} ${item.originalUnit} to ${item.quantity} ${item.unit}`);
     if (calc.productCategory === 'ELECTRICITY') a.push(ctx.gridSource === 'unknown' ? 'India grid factor: no country set in Settings' : `Grid factor for ${ctx.gridCountry}`);
+    if (result.assumption) a.push(result.assumption);
     a.push(BASIS_LABEL.entered_by_you);
     a.push(`Imported from spreadsheet row ${ctx.line}`);
     item.assumptions = a;

@@ -33,10 +33,10 @@ describe('intelligentActions', () => {
     expect(intelligentActions(bills(['2026-05']), [doc({ cached_result: { lineItems: [{ evidence: { powerFactor: 0.4 } }] } })]).find((x) => x.id === 'power_factor')).toBeUndefined();
   });
 
-  test('diesel with grid power: saving uses 2.68 kg/L against 3 kWh x 0.710', () => {
+  test('diesel with grid power: saving uses 2.645 kg/L against 3 kWh x 0.710', () => {
     const a = intelligentActions([...bills(['2026-05']), em({ scope: 1, category: 'diesel', activity_data: 1000, activity_unit: 'L', co2_kg: 2680 })], [doc({})]);
     const g = a.find((x) => x.id === 'generator')!;
-    expect(g.kg).toBeCloseTo(1000 * (2.68 - 3 * 0.71), 6);
+    expect(g.kg).toBeCloseTo(1000 * (2.645 - 3 * 0.71), 6);
     expect(g.effect).toContain('estimate');
   });
 

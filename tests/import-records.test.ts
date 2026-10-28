@@ -167,7 +167,7 @@ describe('saving rows', () => {
     expect(e).toMatchObject({ document_id: d.id, user_id: USER, session_id: null, scope: 1, category: 'fuel', activity_data: 1250, activity_unit: 'litre', emission_factor: FUEL_FACTORS.DIESEL.value, verified: false, data_quality: 'medium' });
     expect(e.co2_kg).toBeCloseTo(1250 * FUEL_FACTORS.DIESEL.value, 6);
     const notes = JSON.parse(e.verification_notes);
-    expect(notes).toMatchObject({ factorSource: 'BIOCOG_MVR_INDIA_v1.1:DIESEL', classificationMethod: 'KEYWORD', basis: 'entered_by_you', basisLabel: 'Entered by you', factorSetVersion: 'IND_EF_2026_10' });
+    expect(notes).toMatchObject({ factorSource: 'BIOCOG_MVR_INDIA_v1.2:DIESEL', classificationMethod: 'KEYWORD', basis: 'entered_by_you', basisLabel: 'Entered by you', factorSetVersion: 'IND_EF_2026_11' });
     expect(notes.assumptions).toContain('Imported from spreadsheet row 2');
     // Verify holds a typed row back until its bill is uploaded; the same
     // record from an uploaded bill would pass.
@@ -180,7 +180,7 @@ describe('saving rows', () => {
   test('units are converted to the factor unit and the typed figures kept', async () => {
     await call(bills(values({ type: 'Electricity', quantity: '12.48', unit: 'MWh', supplier: 'MSEDCL', invoice: 'EB-1' })));
     const e = db.emissions[0];
-    expect(e).toMatchObject({ scope: 2, category: 'electricity', activity_data: 12480, activity_unit: 'kWh', emission_factor: INDIA_GRID_FACTOR_KG_PER_KWH });
+    expect(e).toMatchObject({ scope: 2, category: 'electricity', activity_data: 12480, activity_unit: 'kWh', emission_factor: 0.675 });
     const item = db.documents[0].cached_result.lineItems[0];
     expect(item).toMatchObject({ originalQuantity: 12.48, originalUnit: 'MWh', quantity: 12480, unit: 'kWh' });
     expect(item.assumptions).toContain('Grid factor for IN');
@@ -347,7 +347,7 @@ describe('same writer and allowance as an upload (contract)', () => {
     expect(block).toContain("country: 'IN'");
     expect(block).toContain("confidenceVersion: 'CONF_v1.0'");
     expect(block).toContain('version: `${METHODOLOGY_VERSION_TAG}.0`');
-    expect(METHODOLOGY_VERSION).toMatchObject({ name: 'BIOCOG_MVR_INDIA', version: 'v1.1.0', country: 'IN', factorVersion: 'IND_EF_2026_10', confidenceVersion: 'CONF_v1.0' });
+    expect(METHODOLOGY_VERSION).toMatchObject({ name: 'BIOCOG_MVR_INDIA', version: 'v1.2.0', country: 'IN', factorVersion: 'IND_EF_2026_11', confidenceVersion: 'CONF_v1.0' });
   });
   test('reads use the same RPCs and arguments as extract-document', () => {
     for (const name of ['reserve_invoice_read', 'service_enterprise_cover_reads', 'commit_invoice_read', 'release_invoice_read']) {

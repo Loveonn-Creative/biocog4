@@ -12,8 +12,8 @@ describe('emission factor pages', () => {
   });
   test('worked example and answer agree', () => {
     const d = FACTOR_PAGES.find(f => f.slug === 'diesel')!;
-    expect(factorKg(d, 500)).toBe(1340);
-    expect(factorAnswer(d)).toContain('1,340 kg CO2');
+    expect(factorKg(d, 500)).toBe(1322.5);
+    expect(factorAnswer(d)).toContain('1,322.5 kg CO2');
   });
   test('titles fit the 60 character limit and are unique', () => {
     const titles = FACTOR_PAGES.map(f => factorMeta(f).title);
