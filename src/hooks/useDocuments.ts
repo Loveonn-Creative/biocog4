@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from './useSession';
 import { useWorkspace } from './useWorkspace';
-import { applyScope, ownerColumns, scopeKey } from '@/lib/workspaceScope';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import type { Json } from '@/integrations/supabase/types';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
@@ -72,33 +72,6 @@ export function useDocuments() {
     fetchDocuments();
   }, [fetchDocuments]);
 
-  const saveDocument = async (documentData: Omit<Document, 'id' | 'created_at' | 'session_id' | 'user_id'>): Promise<Document | null> => {
-    try {
-      const insertData = {
-        ...documentData,
-        ...ownerColumns(scope),
-      };
-
-      const { data, error: insertError } = await supabase
-        .from('documents')
-        .insert(insertData)
-        .select()
-        .single();
-
-      if (insertError) {
-        console.error('Error saving document:', insertError);
-        return null;
-      }
-
-      const newDoc = data as Document;
-      setDocuments(prev => [newDoc, ...prev]);
-      return newDoc;
-    } catch (err) {
-      console.error('Save document error:', err);
-      return null;
-    }
-  };
-
   // Refetch when records change anywhere (verify, delete, upload).
   useRecordsChanged(() => { void fetchDocuments(); });
 
@@ -107,6 +80,5 @@ export function useDocuments() {
     isLoading: isLoading || sessionLoading || !ready,
     error,
     refetch: fetchDocuments,
-    saveDocument
   };
 }

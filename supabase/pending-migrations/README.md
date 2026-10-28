@@ -472,3 +472,46 @@ SET senseible.confirm_record_events_rollback = 'yes';
 ```
 
 The append-only trigger is dropped with the table, so no history row is ever updated or deleted on the way out. `is_trusted_db_writer()` is dropped only if this file created it and nothing else calls it.
+
+## 20261114100000_server_only_records.sql (documents and emissions created only on the server)
+
+Add-only. No existing row, policy or function body changes; edge functions using the service role work exactly as today.
+
+- **What it closes.** The live policies `Owners can insert documents` and `Owners can insert emissions` (`TO anon, authenticated`) let any browser session store a document with a made-up `document_hash` and matching emission rows through the public API, without any file being read. A `BEFORE INSERT` trigger, `refuse_browser_record_insert`, on `documents` and on `emissions` now refuses (error `42501`) every insert from a browser session (anon or signed-in JWT), upserts included.
+- **Who still writes.** Service role (extract-document, import-records, merge-session) and direct database sessions pass through `is_trusted_db_writer()`. Updates and deletes are untouched. The website no longer inserts either table: signed-in uploads use the rows extract-document saves, signing in after a guest visit re-reads each kept file through extract-document, and guests store nothing (their results stay in their browser).
+- **Policies kept.** The two insert policies stay as they are, so the rollback only removes the trigger; the trigger is the guard.
+- **Helper.** Reuses `is_trusted_db_writer()` from `20261011120000_protect_privileged_columns` or `20261113100000_evidence_lock`. If it is missing, this file creates it with the identical definition and a comment marking it as its own; any order works.
+- **Verify gate (code, ships with it).** `evidenceGaps` in `supabase/functions/_shared/verifyGate.ts` adds the gap `invoice read from the uploaded file` for a document created on or after `SERVER_READ_REQUIRED_FROM` (`2026-11-01T00:00:00Z`) that carries none of the marks only a server read writes: `cached_result.evidence`, `cached_result.source = 'import'` (gated separately) or a `file_url`. Documents created before the cutoff are not re-checked, so no record loses verification. The guest preview has no `created_at` and is unchanged.
+
+**Before applying, check the live database (read-only, changes nothing):**
+
+```sql
+SELECT 'is_trusted_db_writer' AS item,
+       CASE WHEN to_regprocedure('public.is_trusted_db_writer()') IS NULL THEN 'missing' ELSE 'present' END AS detail
+UNION ALL
+SELECT 'trigger ' || c.relname, t.tgname || CASE WHEN t.tgenabled = 'D' THEN ' (disabled)' ELSE '' END
+FROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE n.nspname = 'public' AND c.relname IN ('documents', 'emissions') AND NOT t.tgisinternal
+UNION ALL
+SELECT 'policy ' || tablename, policyname || ' (' || cmd || ' to ' || array_to_string(roles, ',') || ')'
+FROM pg_policies
+WHERE schemaname = 'public' AND tablename IN ('documents', 'emissions') AND cmd = 'INSERT'
+UNION ALL
+SELECT 'browser-shaped documents in the last 7 days', count(*)::text
+FROM public.documents
+WHERE created_at > now() - interval '7 days' AND file_url IS NULL
+  AND NOT (coalesce(cached_result, '{}'::jsonb) ? 'evidence') AND coalesce(cached_result ->> 'source', '') <> 'import'
+ORDER BY 1, 2;
+```
+
+The last line counts recent documents with no server mark; it should be zero or close to it once the website change is live (a few may come from the old website still open in a tab).
+
+**Apply order**
+1. Deploy the website change first (no browser inserts; Lovable deploys the site and verify-carbon separately) and run `node scripts/function-versions.mjs --live` until verify-carbon matches.
+2. Run the check above. Note whether `is_trusted_db_writer` and `refuse_browser_record_insert` are present.
+3. Apply this file once. It is safe to run again. `20261011120000`, `20261022100000` and `20261113100000` may be applied before or after it.
+4. Run the check again: `refuse_browser_record_insert` should be listed on both `documents` and `emissions`. Then upload one invoice signed in and verify it (core-flow runbook): it is read, saved, counted once and verifies. As a guest, upload one invoice: the result shows and nothing is stored.
+
+Tested with `tests/run_server_only_records.sh`. It replays every migration and proves this file with nothing else applied, with `20261011120000`, `20261022100000` and `20261113100000` applied first, and with `20261113100000` alone: applies twice, rolls back to the identical catalog, re-applies, runs `tests/20261114100000_server_only_records.test.sql` (16 checks: trigger on both tables and the insert policies kept; browser roles cannot call the trigger function; a signed-in session cannot insert or upsert a made-up document or a consistent emission row, even on its own server-read document; guests cannot insert either table; service role and direct sessions insert both; browser reads, policy-allowed updates, service role verification updates and deletes still work), rolls back again with rows present to the identical catalog, and checks the rollback keeps the shared helper whenever another migration uses it and drops it when only this file created it. `tests/run_import_records.sh` (upload and import through the real handlers) also passes with this file applied.
+
+Roll back with `rollback/20261114100000_server_only_records.rollback.sql`. It drops the two triggers and the function; no data is touched. `is_trusted_db_writer()` is dropped only if this file created it and nothing else calls it.
