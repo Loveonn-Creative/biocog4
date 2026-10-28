@@ -3,15 +3,15 @@ export default `Solar installations reduce grid electricity consumption, which m
 
 **How Solar Creates Carbon Value:**
 Every kWh of solar power displaces grid electricity. In India:
-- Grid average: 0.710 kg CO2/kWh (CEA CO2 Baseline Database v21.0, FY 2024-25)
+- Grid average: 0.675 kg CO2/kWh (CEA CO2 Baseline Database v22.0, FY 2025-26)
 - Solar: 0 kg CO2e/kWh (operational)
-- Difference: 0.710 kg CO2 saved per kWh
+- Difference: 0.675 kg CO2 saved per kWh
 
 **Example Calculation:**
 Suppose a 100 kW rooftop solar system generates 150,000 kWh/year:
-- Emission reduction: 150,000 × 0.710 = 106,500 kg CO2
-- Annual reduction: about 106 tonnes CO2
-- Potential value: 106 tonnes × the price a buyer will actually pay, which varies widely by standard, vintage and project type
+- Emission reduction: 150,000 × 0.675 = 101,250 kg CO2
+- Annual reduction: about 101 tonnes CO2
+- Potential value: 101 tonnes × the price a buyer will actually pay, which varies widely by standard, vintage and project type
 
 **Eligibility Requirements:**
 1. **Additionality**: Would you have installed solar without credit revenue?

@@ -27,8 +27,8 @@ interface Particle {
 }
 
 const SCOPES = [
-  { scope: 1 as const, factor: 2.68e-3, weight: 0.3 },   // diesel, tCO2 per litre
-  { scope: 2 as const, factor: 0.710e-3, weight: 0.5 },  // grid power, tCO2 per kWh (CEA v21.0)
+  { scope: 1 as const, factor: 2.645e-3, weight: 0.3 },  // diesel, tCO2 per litre
+  { scope: 2 as const, factor: 0.675e-3, weight: 0.5 },  // grid power, tCO2 per kWh (CEA v22.0, FY 2025-26)
   { scope: 3 as const, factor: 1.2e-3, weight: 0.2 },    // purchased goods, illustrative
 ];
 

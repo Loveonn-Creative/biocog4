@@ -58,7 +58,8 @@ export function detectMarket(available: string[]): string {
   return available.includes("IN") ? "IN" : available[0];
 }
 
-const gridFactorOf = (text: string) => /\(([\d.]+) kgCO₂e\/kWh\)/.exec(text)?.[1] ?? null;
+// The factor and its unit as the example states them (India: kgCO₂/kWh, CEA).
+const gridFactorOf = (text: string) => { const m = /\(([\d.]+ kgCO₂e?\/kWh)\)/.exec(text); return m ? m[1] : null; };
 
 /**
  * Pick a market by its tax identifier; the supply-chain flow redraws for it:
@@ -82,7 +83,7 @@ export function Scope3Explorer({ examples, countryIds, nameOf, value, onChange }
   const steps = [
     { label: "Supplier invoice", value: m.name },
     { label: "Tax identifier", value: m.taxId },
-    { label: "Grid factor", value: factor ? `${factor} kgCO₂e/kWh` : "Country factor" },
+    { label: "Grid factor", value: factor ?? "Country factor" },
     { label: "Frameworks", value: ex.frameworks },
   ];
 

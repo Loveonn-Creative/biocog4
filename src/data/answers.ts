@@ -165,7 +165,7 @@ export const answers: Answer[] = [
     short: 'Quantity times emission factor. Senseible reads the quantity on each line (kWh, litres, kg), classifies it by HSN code to Scope 1, 2 or 3, multiplies it by the published factor for your country, and shows the factor and its source against the line.',
     body: [
       'If a bill shows an amount but no quantity, Senseible reports a data gap instead of guessing from the amount. Each document is fingerprinted with SHA-256, so the same evidence cannot be counted twice.',
-      'For example, 4,200 kWh of grid electricity in India at 0.710 kg CO₂ per kWh is 2,982 kg CO₂.',
+      'For example, 4,200 kWh of grid electricity in India at 0.675 kg CO₂ per kWh is 2,835 kg CO₂.',
     ],
     links: [{ label: 'Methodology and trust', to: '/trust' }],
   },

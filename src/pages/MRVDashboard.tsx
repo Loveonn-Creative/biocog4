@@ -477,7 +477,8 @@ const MRVDashboard = () => {
                       {/* Legacy CCTS / CBAM flags are not shown: a readiness claim needs a
                           documented review, which no verification record carries yet. */}
                       <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                        BIOCOG_MVR_INDIA v1.1
+                        {/* The version this verification was recorded with; older ones keep theirs. */}
+                        BIOCOG_MVR_INDIA {(verifications[0]?.ai_analysis as { methodology?: { version?: string } } | null)?.methodology?.version || 'v1.1'}
                       </span>
                     </div>
                   </CardContent>

@@ -37,7 +37,7 @@ export const LenderLens = ({ properties }: { properties: Property[] }) => {
           <span>Verified record · Scope 2</span>
           <span>Illustration</span>
         </div>
-        <p className="mt-2 text-3xl font-semibold tabular-nums">2,982 <span className="text-base font-normal text-muted-foreground">kgCO2e</span></p>
+        <p className="mt-2 text-3xl font-semibold tabular-nums">2,835 <span className="text-base font-normal text-muted-foreground">kgCO2e</span></p>
 
         <div className="mt-5 grid gap-3">
           <div className={`rounded-xl bg-background px-3 py-2.5 transition-all duration-300 ${on("hash")}`}>
@@ -52,12 +52,12 @@ export const LenderLens = ({ properties }: { properties: Property[] }) => {
               <rect x="78" y="5" width="56" height="12" rx="6" fill="hsl(var(--primary))" opacity="0.2" />
               <line x1="106" y1="3" x2="106" y2="19" stroke="hsl(var(--primary))" strokeWidth="2" />
             </svg>
-            <p className="font-mono text-[11px] text-muted-foreground">2,833 to 3,131 kg · confidence 0.95</p>
+            <p className="font-mono text-[11px] text-muted-foreground">2,693 to 2,977 kg · confidence 0.95</p>
           </div>
 
           <div className={`rounded-xl bg-background px-3 py-2.5 transition-all duration-300 ${on("lock")}`}>
             <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Method, frozen with the figure</p>
-            <p className="font-mono text-xs mt-0.5">BIOCOG_MVR_INDIA v1.1 · CEA v21.0 grid factor 0.710</p>
+            <p className="font-mono text-xs mt-0.5">BIOCOG_MVR_INDIA v1.2 · CEA v22.0 grid factor 0.675</p>
           </div>
 
           <div className="grid grid-cols-2 gap-3">

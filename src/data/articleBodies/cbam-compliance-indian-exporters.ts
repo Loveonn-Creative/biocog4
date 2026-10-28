@@ -10,7 +10,7 @@ export default `From 1 January 2026, EU buyers of Indian steel, aluminium, cemen
 | What you supply | Installation-level emissions per tonne, ideally verified |
 | Certificate price | €82.32 per tCO2 in Q3 2026 (European Commission) |
 | First declaration | 30 September 2027, for 2026 imports |
-| India grid factor | 0.710 tCO2 per MWh (CEA CO2 Baseline Database v21.0, FY 2024-25) |
+| India grid factor | 0.675 tCO2 per MWh (CEA CO2 Baseline Database v22.0, FY 2025-26) |
 
 ## Why Indian exporters are exposed
 
@@ -31,10 +31,10 @@ Fertiliser imports count indirect emissions. A unit drawing 12,000 MWh a year fr
 | Step | Value |
 |---|---|
 | Grid electricity | 12,000 MWh |
-| India grid factor (CEA v21.0) | 0.710 tCO2 per MWh |
-| Indirect emissions | 8,520 tCO2 |
+| India grid factor (CEA v22.0) | 0.675 tCO2 per MWh |
+| Indirect emissions | 8,100 tCO2 |
 | Product output | 60,000 tonnes |
-| Indirect intensity | 0.142 tCO2 per tonne |
+| Indirect intensity | 0.135 tCO2 per tonne |
 
 The same plant on a lower-carbon supply contract can show a lower figure only if it meets CBAM's rules for using actual electricity emissions. Try your own inputs in the [CBAM cost calculator](/cbam-calculator).
 
@@ -82,5 +82,5 @@ Commercially, yes: many buyers compare suppliers on landed cost including CBAM. 
 - [Implementing Regulation (EU) 2025/2621 (default values)](https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng)
 - [European Commission: CBAM definitive regime](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en)
 - [European Commission: price of CBAM certificates](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en)
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
+- [Central Electricity Authority: CO2 Baseline Database v22.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
 - [PIB: CCTS obligated entities](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239)`;

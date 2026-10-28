@@ -4,7 +4,7 @@ export default `Scope 2 looks deceptively simple ("electricity emissions") until
 ## The two methods
 
 ### Location-based
-Multiply your kWh consumed by the average grid emission factor of the country or sub-region where consumption occurs. India national grid factor: 0.710 kgCO2/kWh (CEA CO2 Baseline Database v21.0, FY 2024-25).
+Multiply your kWh consumed by the average grid emission factor of the country or sub-region where consumption occurs. India national grid factor: 0.675 kgCO2/kWh (CEA CO2 Baseline Database v22.0, FY 2025-26).
 
 ### Market-based
 Reflects emissions from electricity that you have contractually purchased (green PPAs, RECs, I-RECs), which can be lower. If you have no contracts, you use the residual mix factor (typically slightly higher than the grid average).

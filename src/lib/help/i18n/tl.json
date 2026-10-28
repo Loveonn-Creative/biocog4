@@ -49,7 +49,7 @@
     "quantity": "Dami sa bill mo",
     "factor": "Emission factor",
     "result": "kg CO₂",
-    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "formulaExample": "1,000 kWh × 0.675 = 675 kg CO₂",
     "scoreStart": "Nagsisimula sa 100",
     "scorePass": "Pasado sa 80",
     "scoreGaps": "Nababawasan ng puntos ang kulang",
@@ -130,7 +130,7 @@
     "how-is-my-number-worked-out": {
       "q": "Paano kinukuwenta ang numero ko?",
       "a": "Ang dami sa bill mo × isang nailathalang emission factor.",
-      "facts": [["Kuryente mula sa grid, India", "0.710 kg CO₂ kada kWh (CEA)"]],
+      "facts": [["Kuryente mula sa grid, India", "0.675 kg CO₂ kada kWh (CEA)"]],
       "steps": ["Ipinapakita ng bawat linya ang factor na ginamit, para masuri mo.", "Walang dami sa bill, walang numero. Hindi kailanman pinupunan ng hula ang kulang."],
       "keywords": ["kuwenta", "formula", "carbon", "emissions"]
     },

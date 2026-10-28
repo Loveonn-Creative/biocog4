@@ -226,7 +226,7 @@ describe('public resources', () => {
     const facts = productFacts(readFileSync(join(import.meta.dir, '../docs/seo/brief.md'), 'utf8'));
     expect(facts.length).toBeGreaterThan(5);
     expect(facts.join('\n')).not.toMatch(/owner|Never write|Plan terms|penalties/i);
-    expect(facts.join('\n')).toContain('0.710 kg CO2/kWh');
+    expect(facts.join('\n')).toContain('0.675 kg CO2/kWh for FY 2025-26');
   });
   test('the generated module is up to date (run: bun scripts/build-intelligence-library.ts)', () => {
     expect(readFileSync(OUT, 'utf8')).toBe(renderLibrary(buildLibrary()));

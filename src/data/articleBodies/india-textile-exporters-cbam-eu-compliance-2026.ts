@@ -23,10 +23,10 @@ export default `Textiles and garments are not covered by EU CBAM. What does reac
 | Step | Value |
 |---|---|
 | Grid electricity in a year | 2,400 MWh |
-| India grid factor (CEA v21.0, FY 2024-25) | 0.710 tCO2 per MWh |
-| Scope 2 (location-based) | 1,704 tCO2 |
+| India grid factor (CEA v22.0, FY 2025-26) | 0.675 tCO2 per MWh |
+| Scope 2 (location-based) | 1,620 tCO2 |
 | Fabric output | 3,000 tonnes |
-| Scope 2 per kg of fabric | 0.57 kgCO2 |
+| Scope 2 per kg of fabric | 0.54 kgCO2 |
 
 Add boiler fuel (Scope 1) to complete the facility figure. You can produce this from your electricity and fuel bills on the [Senseible homepage](/).
 
@@ -56,6 +56,6 @@ Calculate facility Scope 1 and 2 from 12 months of fuel and electricity bills, s
 
 - [Directive (EU) 2026/470 (Omnibus I)](https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng)
 - [Council of the EU: simplification signed off, 24 February 2026](https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/)
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
+- [Central Electricity Authority: CO2 Baseline Database v22.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
 - [PIB: CCTS obligated entities](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239)
 - [Regulation (EU) 2023/956 (CBAM), Annex I](https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20)`;

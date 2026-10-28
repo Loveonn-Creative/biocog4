@@ -49,7 +49,7 @@
     "quantity": "Cantidad en tu factura",
     "factor": "Factor de emisión",
     "result": "kg CO₂",
-    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "formulaExample": "1,000 kWh × 0.675 = 675 kg CO₂",
     "scoreStart": "Empieza en 100",
     "scorePass": "Aprueba con 80",
     "scoreGaps": "Los vacíos restan puntos",
@@ -130,7 +130,7 @@
     "how-is-my-number-worked-out": {
       "q": "¿Cómo se calcula mi cifra?",
       "a": "La cantidad de tu factura × un factor de emisión publicado.",
-      "facts": [["Electricidad de red, India", "0.710 kg CO₂ por kWh (CEA)"]],
+      "facts": [["Electricidad de red, India", "0.675 kg CO₂ por kWh (CEA)"]],
       "steps": ["Cada línea muestra el factor usado, para que puedas comprobarlo.", "Sin cantidad en la factura no hay cifra. Los vacíos nunca se rellenan con suposiciones."],
       "keywords": ["cálculo", "fórmula", "carbono", "emisiones"]
     },

@@ -88,7 +88,7 @@ const EnergyTransitionCalculator = () => {
       faqs={[
         { q: 'What payback period should I aim for?', a: 'For commercial solar in India, 4–6 years is typical with current MNRE benchmarks. PPA models have zero payback because there is no upfront capex.' },
         { q: 'What is capacity utilization factor (CUF)?', a: 'The fraction of theoretical maximum output a solar system actually delivers. India averages 0.17–0.20. Higher CUF means more annual generation.' },
-        { q: 'How is CO₂ avoided calculated?', a: 'Annual generation (kWh) × country grid factor (kgCO₂e/kWh from IEA 2023). For India this is 0.708 kgCO₂e per kWh of grid electricity displaced.' },
+        { q: 'How is CO₂ avoided calculated?', a: 'Annual generation (kWh) × country grid factor (kgCO₂e/kWh from IEA 2023). For India this is 0.675 kg CO₂ per kWh (CEA, FY 2025-26) of grid electricity displaced.' },
         { q: 'Is the IRR pre-tax or post-tax?', a: 'Pre-tax. Apply your effective tax rate separately or consult your CA for accelerated depreciation benefits.' },
       ]}
       factorSources={['IEA 2023', 'MNRE benchmarks', 'Standard IRR/NPV math']}

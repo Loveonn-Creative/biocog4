@@ -5,7 +5,7 @@ export default `Two companies can report the same Scope 1 emissions and have wil
 
 | Tier | What it uses | Relative uncertainty | Example |
 |---|---|---|---|
-| Tier 1 | Default IPCC factors + national activity data | Highest | Diesel × 2.68 kgCO2e/L |
+| Tier 1 | Default IPCC factors + national activity data | Highest | Diesel × 2.645 kgCO2e/L |
 | Tier 2 | Country or technology-specific factors + activity data | Medium | Diesel factor using India-specific fuel properties |
 | Tier 3 | Direct measurement or facility-specific factors | Lowest | CEMS-measured stack CO2 + flow |
 

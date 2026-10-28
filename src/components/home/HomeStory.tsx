@@ -25,7 +25,7 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
     {
       n: "02",
       title: t("home.how.2.title", "Calculate"),
-      body: t("home.how.2.body", "Every line is multiplied by a published emission factor. One kWh of Indian grid power is 0.710 kgCO2 (CEA CO2 Baseline Database v21.0)."),
+      body: t("home.how.2.body", "Every line is multiplied by a published emission factor. One kWh of Indian grid power is 0.675 kgCO2 (CEA CO2 Baseline Database v22.0, FY 2025-26)."),
     },
     {
       n: "03",

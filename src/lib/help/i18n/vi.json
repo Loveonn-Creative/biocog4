@@ -49,7 +49,7 @@
     "quantity": "Số lượng trên hóa đơn",
     "factor": "Hệ số phát thải",
     "result": "kg CO₂",
-    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "formulaExample": "1,000 kWh × 0.675 = 675 kg CO₂",
     "scoreStart": "Bắt đầu từ 100",
     "scorePass": "Đạt ở 80",
     "scoreGaps": "Thiếu sót bị trừ điểm",
@@ -130,7 +130,7 @@
     "how-is-my-number-worked-out": {
       "q": "Số liệu của tôi được tính thế nào?",
       "a": "Số lượng trên hóa đơn × một hệ số phát thải đã công bố.",
-      "facts": [["Điện lưới, Ấn Độ", "0.710 kg CO₂ mỗi kWh (CEA)"]],
+      "facts": [["Điện lưới, Ấn Độ", "0.675 kg CO₂ mỗi kWh (CEA)"]],
       "steps": ["Mỗi dòng đều ghi hệ số đã dùng để bạn kiểm tra.", "Không có số lượng trên hóa đơn thì không có số liệu. Chỗ trống không bao giờ được điền bằng phỏng đoán."],
       "keywords": ["tính toán", "công thức", "carbon", "phát thải"]
     },

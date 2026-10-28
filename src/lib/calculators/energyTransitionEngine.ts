@@ -3,6 +3,8 @@
  * Sources: MNRE benchmarks (India), IEA grid factors 2023, standard IRR/NPV/payback math
  */
 
+import { INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
+
 export type EnergyScenario = 'on-grid-solar' | 'off-grid-solar' | 'hybrid' | 'ppa';
 
 export interface EnergyInput {
@@ -23,9 +25,10 @@ export interface EnergyInput {
   subsidyPct: number;        // 0-1
 }
 
-// Grid emission factor table (kgCO2e / kWh) — IEA 2023
+// Grid emission factor table (kgCO2e / kWh): IEA 2023; India uses the CEA
+// factor Senseible applies (CEA v22.0, FY 2025-26).
 const GRID_FACTORS: Record<string, number> = {
-  IN: 0.708, CN: 0.555, VN: 0.681, ID: 0.760, BD: 0.650,
+  IN: INDIA_GRID_FACTOR_KG_PER_KWH, CN: 0.555, VN: 0.681, ID: 0.760, BD: 0.650,
   PH: 0.640, TH: 0.510, MY: 0.540, US: 0.371, EU: 0.230,
   GB: 0.207, JP: 0.480, KR: 0.450, BR: 0.110,
 };

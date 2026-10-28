@@ -47,7 +47,7 @@ No. Since the March 2025 circular it is voluntary for the top 250 from FY 2025-2
 Upstream and downstream partners that each account for 2% or more of the listed company's purchases or sales by value, with disclosure allowed to stop once 75% of value is covered.
 
 ### Which grid factor should Indian companies use?
-The Central Electricity Authority's CO2 Baseline Database. Version 21.0 gives a weighted average of 0.710 tCO2 per MWh for FY 2024-25; check whether a newer version has been published before filing.
+The Central Electricity Authority's CO2 Baseline Database. Version 22.0 gives a weighted average of 0.675 tCO2 per MWh for FY 2025-26; check whether a newer version has been published before filing.
 
 ## Related
 

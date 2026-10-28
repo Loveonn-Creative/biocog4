@@ -56,7 +56,7 @@ export const solutionOverrides: Record<string, SolutionOverride> = {
     faqs: [
       CBAM_FAQ_WHO_PAYS,
       { question: 'Why does verified data matter so much?', answer: 'Without it the importer uses the EU default value plus a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028 (Implementing Regulation (EU) 2025/2621). In this example that adds about €35 per tonne in 2026.' },
-      { question: 'Which India grid factor applies?', answer: 'For steel, CBAM counts direct emissions only. For your own Scope 2, the Central Electricity Authority CO2 Baseline Database v21.0 gives 0.710 tCO2 per MWh for FY 2024-25.' },
+      { question: 'Which India grid factor applies?', answer: 'For steel, CBAM counts direct emissions only. For your own Scope 2, the Central Electricity Authority CO2 Baseline Database v22.0 gives 0.675 tCO2 per MWh for FY 2025-26.' },
     ],
   },
   'cbam-chemicals-india': {
@@ -96,7 +96,7 @@ export const solutionOverrides: Record<string, SolutionOverride> = {
     painStatement: 'Steel buyers and lenders increasingly ask for value-chain emissions: purchased iron ore, coal, ferro-alloys and freight. Measuring them starts with purchase invoices and supplier data, with Scope 1 and 2 calculated from fuel and power bills.',
     costBreakdown: [
       { item: 'Main Scope 3 categories for steel', value: 'Cat 1 (purchased goods), Cat 4 (inbound freight)' },
-      { item: 'India grid factor for Scope 2', value: '0.710 tCO2/MWh (CEA v21.0, FY 2024-25)' },
+      { item: 'India grid factor for Scope 2', value: '0.675 tCO2/MWh (CEA v22.0, FY 2025-26)' },
       { item: 'Method guidance', value: 'GHG Protocol Corporate Value Chain (Scope 3) Standard' },
     ],
     faqs: [
@@ -107,8 +107,8 @@ export const solutionOverrides: Record<string, SolutionOverride> = {
     painStatement: 'EU brands reporting under CSRD need emissions data from their suppliers. For an Indian textile exporter, that usually means facility Scope 1 and 2 from fuel and electricity bills, allocated to the garments or fabric each buyer purchases.',
     costBreakdown: [
       { item: 'What buyers ask first', value: 'Facility Scope 1 and 2, with factors and sources' },
-      { item: 'India grid factor', value: '0.710 tCO2/MWh (CEA v21.0, FY 2024-25)' },
-      { item: 'Worked example: 2,400 MWh a year', value: '1,704 tCO2 Scope 2 (location-based)' },
+      { item: 'India grid factor', value: '0.675 tCO2/MWh (CEA v22.0, FY 2025-26)' },
+      { item: 'Worked example: 2,400 MWh a year', value: '1,620 tCO2 Scope 2 (location-based)' },
       { item: 'CBAM', value: 'Does not apply to textiles' },
     ],
     faqs: [VSME_FAQ, { question: 'Do Indian textile exporters fall under CBAM?', answer: 'No. CBAM covers iron and steel, aluminium, cement, fertilisers, hydrogen and electricity only.' }],
@@ -117,7 +117,7 @@ export const solutionOverrides: Record<string, SolutionOverride> = {
     painStatement: 'Chemical buyers and lenders ask for value-chain emissions, especially purchased feedstocks and freight. Start from purchase and logistics invoices, and calculate your own Scope 1 and 2 from fuel and power records.',
     costBreakdown: [
       { item: 'Main Scope 3 categories', value: 'Cat 1 (feedstocks), Cat 4 (inbound freight), Cat 12 (end of life, where relevant)' },
-      { item: 'India grid factor', value: '0.710 tCO2/MWh (CEA v21.0, FY 2024-25)' },
+      { item: 'India grid factor', value: '0.675 tCO2/MWh (CEA v22.0, FY 2025-26)' },
       { item: 'Method guidance', value: 'GHG Protocol Scope 3 Standard' },
     ],
     faqs: [{ question: 'Are my chemicals covered by CBAM?', answer: 'Only ammonia, nitric acid, nitrogen and mixed fertilisers, potassium nitrates and hydrogen are CBAM goods. Other chemicals are not, but buyers may still ask for product footprints.' }],
@@ -145,7 +145,7 @@ export const solutionOverrides: Record<string, SolutionOverride> = {
     painStatement: 'A carbon audit sets your baseline: Scope 1 from fuel, Scope 2 from electricity, and the main Scope 3 sources from purchases. It is the starting point for buyer questionnaires, BRSR customers and green loan applications.',
     costBreakdown: [
       { item: 'Documents needed', value: '12 months of electricity, fuel and freight bills; key purchase invoices' },
-      { item: 'India grid factor', value: '0.710 tCO2/MWh (CEA v21.0, FY 2024-25)' },
+      { item: 'India grid factor', value: '0.675 tCO2/MWh (CEA v22.0, FY 2025-26)' },
       { item: 'Method', value: 'GHG Protocol Corporate Standard' },
     ],
     faqs: [{ question: 'What documents do I need for a carbon audit?', answer: 'Electricity bills, fuel purchase invoices, freight receipts and raw material purchase orders for the reporting period, usually 12 months.' }],

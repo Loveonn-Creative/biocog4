@@ -1,6 +1,7 @@
 // Copy shared by the two lead magnet pages and their prerendered SEO content.
 // Every answer is checked against the code: capability statuses come from
 // src/data/enterpriseCapabilities.ts, factors from src/lib/factors.ts.
+import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 
 export const SUPPLIER_EVIDENCE_META = {
   path: '/scope-3-supplier-evidence',
@@ -29,7 +30,7 @@ export const MSME_CARBON_FAQS = [
   { q: 'Is it really free?', a: 'Yes, to start. This estimate needs no sign-up. The Snapshot plan is free and reads up to 10 bills a month for a bill-by-bill record.' },
   { q: 'Is the estimate enough for my buyer?', a: 'It is enough to reply quickly. Buyers and banks that check will want the bill-by-bill record, which shows the emission factor and its source for every line.' },
   { q: 'Do I need a consultant?', a: 'No. You upload the electricity bills and fuel invoices you already have, and the record is built from them.' },
-  { q: 'Which numbers does the estimate use?', a: 'Grid electricity at 0.710 kg CO₂ per kWh, the India grid average Senseible uses, and diesel at 2.68 kg CO₂ per litre. The full product uses the same factors.' },
+  { q: 'Which numbers does the estimate use?', a: `Grid electricity at ${INDIA_GRID_FACTOR_KG_PER_KWH.toFixed(3)} kg CO₂ per kWh, the India grid average Senseible uses, and diesel at ${FUEL_FACTORS.DIESEL.value} kg CO₂ per litre. The full product uses the same factors.` },
   { q: 'What if my bill is handwritten or hard to read?', a: 'An unclear number is flagged for you to check instead of being guessed.' },
   { q: 'Who sees my bills?', a: 'Your records sit in your own account. You decide what to send to a buyer or a bank.' },
 ];

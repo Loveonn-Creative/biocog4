@@ -4,7 +4,7 @@ import { annualFootprint, scope3Hotspots } from '../src/components/services/carb
 describe('carbon accounting tool', () => {
   test('annual Scope 1 and 2 from monthly bills x shared factors', () => {
     const r = annualFootprint({ kwhPerMonth: 1000, dieselLPerMonth: 100, lpgKgPerMonth: 0 });
-    expect(Math.round(r.s2)).toBe(8520);   // 12,000 kWh x 0.710
+    expect(Math.round(r.s2)).toBe(8100);   // 12,000 kWh x 0.675
     expect(Math.round(r.s1)).toBe(3174);   // 1,200 L x 2.645
   });
   test('hotspots depend on sector', () => {

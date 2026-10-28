@@ -9,7 +9,7 @@ import {
 import { gstinCheckChar, gstinFault } from '../supabase/functions/_shared/gstin';
 import { buildEmissionRows } from '../supabase/functions/_shared/emissionRows';
 import { evidenceGaps } from '../supabase/functions/_shared/verifyGate';
-import { FUEL_FACTORS, INDIA_GRID_FACTOR_SOURCE, factorCitationFor } from '../supabase/functions/_shared/emissionFactors';
+import { FUEL_FACTORS, INDIA_GRID_BY_FY, factorCitationFor } from '../supabase/functions/_shared/emissionFactors';
 
 const NOW = new Date('2026-10-28T06:00:00Z'); // 28 Oct 2026, 11:30 IST
 const VALID = '27AAPFU0939F1ZV';
@@ -330,7 +330,7 @@ describe('emission rows gain only factorCitation', () => {
     // The fixture is v1.1: since v1.2 (IND_EF_2026_11) only current-version keys carry a citation.
     expect(cite).toEqual([undefined, undefined, undefined, undefined]);
     expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:DIESEL')).toBe(FUEL_FACTORS.DIESEL.source);
-    expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25')).toBe(INDIA_GRID_FACTOR_SOURCE);
+    expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25')).toBe(INDIA_GRID_BY_FY.FY2024_25.source);
     expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:LPG')).toBe(FUEL_FACTORS.LPG.source);
     expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.0:DIESEL')).toBeNull();
     expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.1:SOLAR_AVOIDED_GRID')).toBeNull();

@@ -5,7 +5,7 @@ import { SAMPLE_LINES } from "@/lib/sampleInvoice";
 /**
  * The product, as one 3D scene. Every movement is a real step the platform
  * performs on an uploaded bill, using the built-in sample invoice and its
- * published factors (CEA v21.0 grid, IPCC diesel):
+ * published factors (CEA v22.0 grid, IPCC diesel):
  *   0 Read      the bill is scanned; GSTIN, HSN and quantities are picked up
  *   1 Classify  each line lifts off and gets a scope from its HSN code
  *   2 Calculate quantity x factor = kgCO2e, shown as the actual equation

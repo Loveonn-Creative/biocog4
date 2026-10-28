@@ -196,7 +196,7 @@ const SupplierEvidence = () => {
             </div>
             <div className="relative rounded-2xl border border-border bg-background p-6">
               <div className="text-sm text-muted-foreground">Senseible records</div>
-              <div className="mt-3 rounded-lg bg-secondary p-3 font-mono text-[13px] leading-relaxed"><CountUp to={4200} start={flowView.inView} /> kWh × 0.710 kg/kWh<br />= <CountUp to={2982} start={flowView.inView} ms={1500} /> kg CO₂, Scope 2<br />factor source shown, file hashed</div>
+              <div className="mt-3 rounded-lg bg-secondary p-3 font-mono text-[13px] leading-relaxed"><CountUp to={4200} start={flowView.inView} /> kWh × 0.675 kg/kWh<br />= <CountUp to={2835} start={flowView.inView} ms={1500} /> kg CO₂, Scope 2<br />factor source shown, file hashed</div>
             </div>
             <div className="relative rounded-2xl border border-primary/40 bg-background p-6">
               <div className="text-sm text-muted-foreground">You can show</div>

@@ -147,7 +147,7 @@ export const servicePages: ServiceConfig[] = [
     ],
     faqs: [
       { q: 'Can an MSME set an SBTi target?', a: 'Yes. SMEs have a streamlined route with a fixed near-term target, validated without the full corporate process.' },
-      { q: 'How much does rooftop solar cut?', a: 'Each MWh of solar replacing grid power avoids about 0.71 tCO₂, the CEA grid factor.' },
+      { q: 'How much does rooftop solar cut?', a: 'Each MWh of solar replacing grid power avoids about 0.675 tCO₂, the CEA grid factor.' },
       { q: 'Do you help procure renewable power?', a: 'Yes: rooftop and open-access solar, green tariffs and renewable energy certificates, compared on cost and emissions.' },
     ],
     contactTopic: 'climate',
@@ -243,7 +243,7 @@ export const servicePages: ServiceConfig[] = [
     tool: { title: 'Score your audit readiness', cta: 'Check my score' },
     deliverable: {
       title: 'Assurance evidence index',
-      rows: [['Figures in scope', '214'], ['Linked to a source document', '214 of 214'], ['Evidence hash (SHA-256)', 'Per document'], ['Methodology version', 'v1.1.0'], ['Reviewer and approval date', 'Per figure'], ['Changes since last period', 'Logged']],
+      rows: [['Figures in scope', '214'], ['Linked to a source document', '214 of 214'], ['Evidence hash (SHA-256)', 'Per document'], ['Methodology version', 'v1.2'], ['Reviewer and approval date', 'Per figure'], ['Changes since last period', 'Logged']],
     },
     objections: { price: PRICE_SELF_SERVE, time: 'The score takes a minute. Data set-up is planned on the scoping call.', data: 'Where your ESG data sits today: spreadsheets, bills, ERP exports.', who: WHO_BOTH },
     plan: 'pro',

@@ -34,11 +34,11 @@ describe('physics and accounting behind each cut', () => {
     expect(GAS_SWITCH_FRACTION).toBeCloseTo(0.2429, 4);
     expect(DIESEL_KG_PER_KWH_FUEL).toBeCloseTo(0.26676, 5);
   });
-  test('heat pumps cut emissions above a COP of about 2; resistance heating adds them', () => {
-    expect(heatPumpFraction(3, 0.75)).toBeCloseTo(1 - (0.71 / 3) / (0.26676 / 0.75), 4);
+  test('heat pumps cut emissions above a COP of about 1.9; resistance heating adds them', () => {
+    expect(heatPumpFraction(3, 0.75)).toBeCloseTo(1 - (0.675 / 3) / (0.26676 / 0.75), 4);
     expect(heatPumpFraction(3, 0.75)).toBeGreaterThan(0.3);
-    expect(heatPumpFraction(1, 0.75)).toBeLessThan(0); // resistive heating on a 0.71 grid
-    expect(heatPumpFraction(2.0, 0.75)).toBeCloseTo(0, 1);
+    expect(heatPumpFraction(1, 0.75)).toBeLessThan(0); // resistive heating on a 0.675 grid
+    expect(heatPumpFraction(1.9, 0.75)).toBeCloseTo(0, 1);
   });
   test('efficiency ratios', () => {
     expect(action('led-lighting').fraction).toBeCloseTo(0.10 * (1 - 18 / 36), 10); // 5% of Scope 2
@@ -57,7 +57,7 @@ describe('physics and accounting behind each cut', () => {
 describe('baseline and roadmap', () => {
   test('baseline from usage uses the platform factors', () => {
     const b = baselineFromUsage(10_000, 500);
-    expect(Math.round(b.scope2Kg)).toBe(Math.round(10_000 * 12 * 0.71));
+    expect(Math.round(b.scope2Kg)).toBe(Math.round(10_000 * 12 * 0.675));
     expect(Math.round(b.scope1Kg)).toBe(Math.round(500 * 12 * 2.645));
     expect(b.scope3Kg).toBe(0);
   });

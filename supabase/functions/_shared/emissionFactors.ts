@@ -148,9 +148,10 @@ export function gridAssumption(choice: GridFactorChoice, dateFrom: 'invoice' | '
 }
 
 // The national constant the website's estimators and the avoided-emission
-// factors use (FY 2024-25, CEA v21.0 Table S). Records use gridFactorFor.
-export const INDIA_GRID_FACTOR_KG_PER_KWH = INDIA_GRID_BY_FY.FY2024_25.value;
-export const INDIA_GRID_FACTOR_SOURCE = INDIA_GRID_BY_FY.FY2024_25.source;
+// factors use: the latest published year, FY 2025-26 (CEA v22.0 Table S), the
+// same value a bill dated today gets. Records use gridFactorFor.
+export const INDIA_GRID_FACTOR_KG_PER_KWH = INDIA_GRID_BY_FY.FY2025_26.value;
+export const INDIA_GRID_FACTOR_SOURCE = INDIA_GRID_BY_FY.FY2025_26.source;
 
 // ---------------------------------------------------------------------------
 // Coal: the rule depends on what the bill says (owner rule, November 2026)

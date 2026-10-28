@@ -58,7 +58,7 @@ export const HELP_UI = {
   quantity: 'Quantity on your bill',
   factor: 'Emission factor',
   result: 'kg CO₂',
-  formulaExample: '1,000 kWh × 0.710 = 710 kg CO₂',
+  formulaExample: '1,000 kWh × 0.675 = 675 kg CO₂',
   scoreStart: 'Starts at 100',
   scorePass: 'Passes at 80',
   scoreGaps: 'Gaps take points off',
