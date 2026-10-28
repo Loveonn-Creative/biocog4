@@ -48,7 +48,7 @@ Use the kWh (active energy) figure for emissions. If only kVAh appears, ask your
 It reduces market-based Scope 2 if it comes with valid contractual instruments. Location-based Scope 2 still uses the grid factor.
 
 ### Is a newer Indian factor available?
-CEA publishes the CO2 Baseline Database annually. Version 22.0 (August 2026) covers FY 2025-26; check the CEA site for a newer version before final reporting.
+CEA publishes the CO2 Baseline Database annually. Version 22.0 covers FY 2025-26; check the CEA site for a newer version before final reporting.
 
 ## Related
 

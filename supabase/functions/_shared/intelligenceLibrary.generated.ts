@@ -19,7 +19,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "fact",
   "title": "Senseible platform: Emissions = activity x published factor",
-  "text": "Emissions = activity x published factor. Fuel factors from IPCC 2006 defaults (diesel 2.645 kg/L, petrol 2.176 kg/L (IPCC carbon content at Indian density, PPAC), LPG 2.98 kg/kg, PNG 2.05 kg/scm, furnace oil 2.97 kg/L, coal 1.76 kg/kg Indian / 2.44 kg/kg imported, kerosene 2.52 kg/L, naphtha 3.26 kg/kg, CNG 2.69 kg/kg). No factor, no figure.",
+  "text": "Emissions = activity x published factor. Fuel factors from IPCC 2006 carbon contents, except coal (diesel 2.645 kg/L, petrol 2.176 kg/L (IPCC carbon content at Indian density, PPAC), LPG 2.98 kg/kg, PNG 2.05 kg/scm, furnace oil 2.97 kg/L, coal 1.76 kg/kg Indian (India BUR-2, 2018) / 2.44 kg/kg imported (IPCC), kerosene 2.52 kg/L, naphtha 3.26 kg/kg, CNG 2.69 kg/kg). No factor, no figure.",
   "url": null
  },
  {

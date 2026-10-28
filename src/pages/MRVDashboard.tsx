@@ -31,7 +31,6 @@ import { MRVEmptyState } from '@/components/mrv/MRVEmptyState';
 import { useShowMore } from '@/hooks/useShowMore';
 import { ShowMoreButton } from '@/components/ShowMore';
 import { intelligentActions } from '@/lib/intelligentActions';
-import { METHODOLOGY_VERSION_TAG } from '@/lib/factors';
 import { IntelligentActionsList } from '@/components/mrv/IntelligentActions';
 import { sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
@@ -479,7 +478,7 @@ const MRVDashboard = () => {
                           documented review, which no verification record carries yet. */}
                       <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
                         {/* The version this verification was recorded with; older ones keep theirs. */}
-                        BIOCOG_MVR_INDIA {(verifications[0]?.ai_analysis as { methodology?: { version?: string } } | null)?.methodology?.version || METHODOLOGY_VERSION_TAG}
+                        BIOCOG_MVR_INDIA {(verifications[0]?.ai_analysis as { methodology?: { version?: string } } | null)?.methodology?.version || 'v1.1'}
                       </span>
                     </div>
                   </CardContent>

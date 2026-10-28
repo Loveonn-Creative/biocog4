@@ -15,7 +15,7 @@ export default `A fleet's Scope 1 emissions are the fuel its own vehicles burn. 
 
 Scope 1 (kgCO2) = litres of fuel × emission factor for that fuel (kgCO2 per litre).
 
-Diesel factors from common sources fall in a narrow band of about 2.65 to 2.7 kgCO2 per litre; the difference comes from assumed density and calorific value. Use one source consistently and state it.
+Diesel factors from common sources fall in a narrow band of about 2.64 to 2.7 kgCO2 per litre; the difference comes from assumed density and calorific value. Use one source consistently and state it.
 
 ## Worked example: a 5-truck fleet
 
