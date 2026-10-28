@@ -7,6 +7,7 @@ import { useWorkspace } from '@/hooks/useWorkspace';
 import { supabase } from '@/integrations/supabase/client';
 import { chunk, runBulkVerify } from '@/lib/bulkVerify';
 import { verifyBuckets } from '@/lib/emissionLedger';
+import { isImportedEmission } from '@/lib/import/imported';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
 
@@ -41,7 +42,8 @@ export default function AutoVerifier() {
   useEffect(() => {
     if (!user || !canVerify || isLoading || running.current) return;
     const attempted = readAttempted(user.id);
-    const { toVerify } = verifyBuckets(emissions, new Set<string>());
+    // Typed spreadsheet rows wait for their bill (owner rule); they are not sent.
+    const { toVerify } = verifyBuckets(emissions.filter((e) => !isImportedEmission(e)), new Set<string>());
     const fresh = toVerify.filter((e) => !attempted.has(e.id));
     if (fresh.length === 0) return;
 

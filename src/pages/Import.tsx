@@ -350,7 +350,7 @@ function SavedPanel({ summary, onDownload, onReset }: { summary: SaveSummary; on
     <div className="space-y-4" data-testid="import-saved">
       <div>
         <h3 className="text-lg font-semibold">Your import</h3>
-        {counts.saved > 0 && <p className="mt-1 text-sm text-muted-foreground">Saved as Entered by you. Review them in Verify to confirm them.</p>}
+        {counts.saved > 0 && <p className="mt-1 text-sm text-muted-foreground">Saved as Entered by you. Upload the bill to verify a row.</p>}
       </div>
       <div className="flex flex-wrap gap-x-6 gap-y-2">
         {items.map(([n, label, color]) => (
@@ -365,8 +365,8 @@ function SavedPanel({ summary, onDownload, onReset }: { summary: SaveSummary; on
       <div className="flex flex-wrap items-center gap-3">
         {counts.saved > 0 && (
           <>
-            <Link to="/verify" className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90">Review in Verify</Link>
-            <Link to="/history" className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-card px-6 text-sm font-semibold hover:bg-muted">See in History</Link>
+            <Link to="/history" className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground hover:opacity-90">See in History</Link>
+            <Link to="/" className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-card px-6 text-sm font-semibold hover:bg-muted">Upload a bill</Link>
           </>
         )}
         {toFix.length > 0 && (
@@ -550,7 +550,7 @@ export default function Import() {
                           {saving ? <><Loader2 className="mr-2 h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />Saving {saving.done} of {saving.total}</> : `Import ${ready} ${noun}`}
                         </button>
                         <p id="import-next" className="mt-3 max-w-xl text-sm text-muted-foreground">
-                          Ready rows are saved as Entered by you and stay unverified until you review them in Verify. Each saved row uses one bill from your monthly allowance.
+                          Ready rows are saved as Entered by you. They stay unverified until you upload the bill. Each saved row uses one bill from your monthly allowance.
                         </p>
                       </>
                     )}

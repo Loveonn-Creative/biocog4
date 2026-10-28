@@ -81,12 +81,16 @@ run('upload and import on the replayed schema', () => {
       from public.emissions e join public.documents d on d.id = e.document_id where e.user_id = ${USER} order by e.created_at`;
     expect(ems).toHaveLength(2);
     expect(filled(ems[1])).toEqual(filled(ems[0]).filter((k) => !['doc_confidence'].includes(k)));
-    for (const e of ems) {
+    const gaps = ems.map((e: Record<string, unknown>) => {
       expect(e).toMatchObject({ scope: 1, category: 'fuel', activity_unit: 'litre', verified: false });
-      const record = { ...e, documents: { vendor: e.vendor, invoice_number: e.invoice_number, amount: e.amount, confidence: e.doc_confidence, document_hash: e.document_hash, invoice_date: e.invoice_date, cached_result: e.cached_result } };
-      expect(evidenceGaps(record, false)).toEqual([]);
+      const record = { ...e, documents: { vendor: e.vendor, invoice_number: e.invoice_number, amount: e.amount, confidence: e.doc_confidence, document_hash: e.document_hash, invoice_date: e.invoice_date, cached_result: e.cached_result } } as never;
       expect(validateEmission(record).valid).toBe(true);
-    }
+      return evidenceGaps(record, false);
+    });
+    // The uploaded bill passes Verify's evidence gate; the typed row is held
+    // back until its bill is uploaded.
+    expect(gaps[0]).toEqual([]);
+    expect(gaps[1]).toEqual(['bill: typed figures are verified only from the uploaded bill']);
     expect(ems[1].emission_factor).toBe(ems[0].emission_factor);
 
     const reads = await sql`select status, document_id, pages, units from public.invoice_reads where user_id = ${USER} order by created_at`;

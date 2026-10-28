@@ -139,10 +139,20 @@ export function calculateGreenwashingRisk(emissions: EmissionRecord[], validatio
  * What a record still needs before it can be verified. The same gate runs on
  * stored records and on a guest's browser-held preview. Pure.
  */
+/** True when a stored document came from a spreadsheet import (cached_result.source 'import'). */
+export function isImportedDocument(cached: unknown): boolean {
+  let c: unknown = cached;
+  if (typeof c === 'string') { try { c = JSON.parse(c); } catch { return false; } }
+  return !!c && typeof c === 'object' && (c as { source?: unknown }).source === 'import';
+}
+
 export function evidenceGaps(emission: EmissionRecord & { document_id?: string | null }, repairOnly: boolean): string[] {
   const fields: string[] = [];
   const doc = emission.documents;
   if (!emission.document_id || !doc) fields.push('source invoice');
+  // Rows imported from a spreadsheet carry typed figures: they are verified
+  // only from the uploaded bill (owner rule, October 2026).
+  if (isImportedDocument(doc?.cached_result)) fields.push('bill: typed figures are verified only from the uploaded bill');
   if (!doc?.document_hash) fields.push('document fingerprint');
   if (!Number.isInteger(emission.scope) || emission.scope < 1 || emission.scope > 3) fields.push('scope');
   // Scope 3 is verified line by line in the supplier evidence trail

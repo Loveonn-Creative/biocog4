@@ -169,9 +169,12 @@ describe('saving rows', () => {
     const notes = JSON.parse(e.verification_notes);
     expect(notes).toMatchObject({ factorSource: 'BIOCOG_MVR_INDIA_v1.1:DIESEL', classificationMethod: 'KEYWORD', basis: 'entered_by_you', basisLabel: 'Entered by you', factorSetVersion: 'IND_EF_2026_10' });
     expect(notes.assumptions).toContain('Imported from spreadsheet row 2');
-    // Verify's evidence gate finds nothing missing on the stored record.
+    // Verify holds a typed row back until its bill is uploaded; the same
+    // record from an uploaded bill would pass.
     const record = { ...e, documents: { vendor: d.vendor, invoice_number: d.invoice_number, amount: d.amount, confidence: d.confidence, document_hash: d.document_hash, invoice_date: d.invoice_date, cached_result: d.cached_result } };
-    expect(evidenceGaps(record, false)).toEqual([]);
+    expect(evidenceGaps(record, false)).toEqual(['bill: typed figures are verified only from the uploaded bill']);
+    const asUploaded = { ...record, documents: { ...record.documents, cached_result: { ...d.cached_result, source: undefined } } };
+    expect(evidenceGaps(asUploaded, false)).toEqual([]);
     expect(validateEmission(record).valid).toBe(true);
   });
   test('units are converted to the factor unit and the typed figures kept', async () => {

@@ -9,6 +9,8 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { toast } from 'sonner';
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
+import { isImportedDocument } from '@/lib/import/imported';
+import { ReplaceWithBill } from '@/components/import/ReplaceWithBill';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -469,6 +471,10 @@ const History = () => {
                         </Button>
                       )}
                       {user && documentRows.length > 0 && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
+                      {/* Typed spreadsheet row: replace it with the bill (removed through the same delete flow). */}
+                      {user && status.kind !== 'verified' && canDelete(doc) && isImportedDocument(doc.cached_result) && (
+                        <ReplaceWithBill documentId={doc.id} label={doc.vendor || 'this row'} />
+                      )}
                       {/* Remove a wrongly parsed or duplicate invoice. Verified records are never deletable. */}
                       {user && status.kind !== 'verified' && canDelete(doc) && (
                         <AlertDialog>

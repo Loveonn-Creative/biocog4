@@ -32,6 +32,8 @@ import { useTrustLayerSettings } from '@/hooks/useTrustLayerSettings';
 import { chunk, runBulkVerify, type InvoiceOutcome } from '@/lib/bulkVerify';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
+import { isImportedEmission } from '@/lib/import/imported';
+import { ReplaceWithBill } from '@/components/import/ReplaceWithBill';
 
 interface NavigationState {
   emissionId?: string;
@@ -133,10 +135,21 @@ const Verify = () => {
 
   // Verify works on every open Scope 1 and 2 record on the account (all
   // invoices), including the one just uploaded.
-  const { toVerify: pending, reviewed, scope3Held, done: allVerified } = useMemo(
-    () => verifyBuckets(emissions, checkedIds),
-    [emissions, checkedIds],
-  );
+  // Rows typed into a spreadsheet stay unverified until the bill is uploaded
+  // (owner rule): they are kept out of the verify set, so they never hold up
+  // uploaded bills, and listed on their own below.
+  const isEntered = (e: (typeof emissions)[number]) => isImportedEmission(e, e.document_id ? cachedByDocument.get(e.document_id) : undefined);
+  const { pending, reviewed, scope3Held, allVerified, entered } = useMemo(() => {
+    const billRows = emissions.filter((e) => !isEntered(e));
+    const b = verifyBuckets(billRows, checkedIds);
+    return { pending: b.toVerify, reviewed: b.reviewed, scope3Held: b.scope3Held, allVerified: b.done, entered: emissions.filter((e) => e.verified !== true && isEntered(e)) };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- isEntered reads cachedByDocument
+  }, [emissions, checkedIds, cachedByDocument]);
+  const enteredByDocument = useMemo(() => {
+    const m = new Map<string, typeof entered>();
+    for (const e of entered) { const k = e.document_id ?? e.id; m.set(k, [...(m.get(k) ?? []), e]); }
+    return [...m.entries()];
+  }, [entered]);
   const scoped = emissions;
 
   // Just after upload, the stored rows may not be readable yet. Refetch a few
@@ -331,7 +344,7 @@ const Verify = () => {
                   <CheckCircle className="h-8 w-8 text-success" />
                 </div>
                 <p className="font-medium text-lg mb-2">
-                  {reviewed.length || scope3Held.length ? 'Everything that can be checked here is verified' : 'All emissions verified'}
+                  {entered.length ? 'Every uploaded bill is verified' : reviewed.length || scope3Held.length ? 'Everything that can be checked here is verified' : 'All emissions verified'}
                 </p>
                 <p className="text-sm text-muted-foreground mb-4">Verified records are listed in History and the audit ledger</p>
                 <Button onClick={() => navigate('/monetize')} size="lg">
@@ -359,7 +372,7 @@ const Verify = () => {
                   <Button variant="ghost" onClick={() => navigate('/history')}>Open History</Button>
                 </div>
               </div>
-            ) : reviewed.length || scope3Held.length ? (
+            ) : reviewed.length || scope3Held.length || entered.length ? (
               <p className="py-4 text-sm text-muted-foreground">Nothing left to check here. The records below need something else first.</p>
             ) : (
               <div className="text-center py-8">
@@ -379,6 +392,33 @@ const Verify = () => {
                   <Button size="sm" variant="outline" onClick={() => navigate('/history')}>Open History</Button>
                   <Button size="sm" variant="ghost" onClick={() => navigate('/contact?topic=support&msg=' + encodeURIComponent('Please review my verification result.'))}>Ask for a review</Button>
                 </div>
+              </div>
+            )}
+
+            {/* Typed rows from a spreadsheet: verified only from the uploaded bill. */}
+            {!emissionsError && entered.length > 0 && (
+              <div className="mt-4 rounded-lg border border-border bg-secondary/30 p-4 text-sm" data-testid="verify-entered">
+                <p className="font-medium">Entered by you</p>
+                <p className="mt-1 text-muted-foreground">Upload the bill to verify these.</p>
+                <ul className="mt-3 divide-y divide-border">
+                  {enteredByDocument.map(([key, rows]) => (
+                    <li key={key} className="flex flex-col gap-2 py-3 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0 space-y-1">
+                        {rows.map((e) => (
+                          <div key={e.id}>
+                            <div className="flex flex-wrap items-baseline gap-x-2">
+                              <span className="capitalize font-medium">{e.category}</span>
+                              <span className="text-xs text-muted-foreground">Scope {e.scope}</span>
+                              <span className="font-mono">{e.co2_kg.toFixed(1)} kg</span>
+                            </div>
+                            <RecordCalculationLine row={e} cachedResult={e.document_id ? cachedByDocument.get(e.document_id) : undefined} />
+                          </div>
+                        ))}
+                      </div>
+                      {rows[0].document_id && <div className="shrink-0"><ReplaceWithBill documentId={rows[0].document_id} label={rows[0].category} /></div>}
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
