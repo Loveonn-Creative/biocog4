@@ -203,3 +203,30 @@ export function previewVerification(rows: Array<EmissionRecord & { document_id?:
     totalCO2Kg: Math.round((scopeBreakdown.scope1 + scopeBreakdown.scope2 + scopeBreakdown.scope3) * 1000) / 1000,
   };
 }
+
+/**
+ * A stored verification replayed for the same record set: each record it
+ * verified is checked again against its current values before it is flagged
+ * verified once more. A record edited since then so that it no longer passes
+ * stays unverified and is reported with its reasons. Uses the same evidence
+ * gate as the request (repairOnly keeps History's "Restore audit entries"
+ * semantics) and the same per-record validation as a new verification. Pure.
+ */
+export function replayGate(
+  emissions: Array<EmissionRecord & { document_id?: string | null }>,
+  replayIds: string[],
+  repairOnly: boolean,
+): { reflagIds: string[]; failed: Array<{ emissionId: string; flags: string[] }> } {
+  const byId = new Map(emissions.map((e) => [e.id, e] as const));
+  const reflagIds: string[] = [];
+  const failed: Array<{ emissionId: string; flags: string[] }> = [];
+  for (const id of replayIds) {
+    const emission = byId.get(id);
+    if (!emission) { failed.push({ emissionId: id, flags: ['source invoice'] }); continue; }
+    const gaps = evidenceGaps(emission, repairOnly);
+    const validation = validateEmission(emission);
+    if (!gaps.length && validation.valid) reflagIds.push(id);
+    else failed.push({ emissionId: id, flags: [...gaps, ...validation.flags] });
+  }
+  return { reflagIds, failed };
+}

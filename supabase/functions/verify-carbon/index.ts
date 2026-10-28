@@ -6,7 +6,7 @@ import { creditValuation, CREDIT_VALUE_WITHHELD } from "../_shared/carbonValue.t
 import { activityDate, fiscalPeriod } from "../_shared/invoiceDate.ts";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
 import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
-import { calculateGreenwashingRisk, evidenceGaps, previewVerification, validateEmission, type EmissionRecord } from "../_shared/verifyGate.ts";
+import { calculateGreenwashingRisk, evidenceGaps, previewVerification, replayGate, validateEmission, type EmissionRecord } from "../_shared/verifyGate.ts";
 import { versionProbe } from "../_shared/versionProbe.ts";
 
 const corsHeaders = {
@@ -335,17 +335,27 @@ serve(async (req) => {
       }
       if (previous && evidenceComplete) {
         // Re-flag only the records that passed when this set was first verified.
-        const replayIds: string[] = Array.isArray(previous.ai_analysis?.verifiedEmissionIds) ? previous.ai_analysis.verifiedEmissionIds : emissionIds;
+        const storedIds: string[] = Array.isArray(previous.ai_analysis?.verifiedEmissionIds) ? previous.ai_analysis.verifiedEmissionIds : emissionIds;
+        // Each one is checked again on its current values with the same gate
+        // as a new verification: a record changed since so that it now fails
+        // stays unverified and is reported in the flags.
+        const replayed = previous.verification_status === 'verified' ? replayGate(emissions, storedIds, repairOnly) : { reflagIds: [], failed: [] };
+        const replayIds = replayed.reflagIds;
         const { error: statusError } = previous.verification_status === 'verified' && replayIds.length
           ? await (orgId
             ? supabase.from('emissions').update({ verified: true }).in('id', replayIds).eq('organization_id', orgId)
             : supabase.from('emissions').update({ verified: true }).in('id', replayIds).eq('user_id', userId))
           : { error: null };
         if (statusError) throw statusError;
+        const analysis = replayAnalysis(previous.ai_analysis);
+        if (replayed.failed.length) {
+          analysis.flags = [...new Set([...(Array.isArray(analysis.flags) ? analysis.flags : []), ...replayed.failed.flatMap((f) => f.flags)])];
+          analysis.verifiedEmissionIds = replayIds;
+        }
         return new Response(JSON.stringify({ success: true, data: {
           verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
           greenwashingRisk: previous.greenwashing_risk,
-          greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [], analysis: replayAnalysis(previous.ai_analysis), cctsEligible: false,
+          greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [], analysis, cctsEligible: false,
           cbamCompliant: false, totalCO2Kg: previous.total_co2_kg,
           netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
           verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,

@@ -371,6 +371,11 @@ const Index = () => {
         }
       }
       
+      // Signed in: the server saves the document and its records. The browser
+      // never writes them, so an unchecked copy can never stand in for one.
+      // The caller shows the existing "Retry" message, so no second toast here.
+      if (user && !documentId) return null;
+
       // If no document found (shouldn't happen), create one
       if (!documentId) {
         console.warn('[MRV] No cached document found, creating new one');
@@ -428,6 +433,8 @@ const Index = () => {
         emitRecordsChanged('upload'); // History lists the document
         return { documentId, emissionIds: [] };
       }
+
+      if (user) return null;
 
       const { data: emissionData, error: emissionError } = await (await loadSupabase())
         .from('emissions')

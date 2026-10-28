@@ -256,8 +256,9 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
               const next = (extractedData as { guidance?: { nextStep?: string | null } }).guidance?.nextStep;
               reviewNote = `Saved, nothing counted yet${next ? `. ${next}` : ''}`;
             } else {
-              const { error: saveError } = await supabase.from('emissions').insert(rows);
-              if (saveError) throw saveError;
+              // The server saves records; the browser never writes them. Only a
+              // signed-in owner's document is found above, so guests never reach here.
+              throw new Error("Unable to save this bill. Upload it again.");
             }
           }
 
