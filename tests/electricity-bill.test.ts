@@ -16,7 +16,7 @@ function pipeline(ocr: RawOcr, opts: { gridCountry?: string | null } = {}) {
     else { const k = classifyByKeyword(it.description); if (k) { it.productCategory = k.productCategory; it.scope = k.scope; it.fuelType = k.fuelType; it.classificationMethod = 'KEYWORD'; } }
     if (isGridRenewableLine(utilityBill, it.productCategory, it.unit)) { it.productCategory = 'ELECTRICITY'; it.scope = 2; }
     if (it.productCategory && it.quantity && it.unit && it.scope) {
-      const r = calculateEmissions(it.quantity, it.unit, it.scope, it.productCategory, it.fuelType, { gridCountry: 'gridCountry' in opts ? opts.gridCountry : 'IN' });
+      const r = calculateEmissions(it.quantity, it.unit, it.scope, it.productCategory, it.fuelType, { gridCountry: 'gridCountry' in opts ? opts.gridCountry : 'IN', activityDate: '2025-01-15' });
       if (r && r.kind === 'emission') { it.quantity = r.quantity; it.unit = r.unit; it.co2Kg = r.co2Kg; it.emissionFactor = r.emissionFactor; it.factorSource = r.factorSource; }
     }
     return it;

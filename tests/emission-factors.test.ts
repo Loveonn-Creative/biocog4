@@ -53,13 +53,13 @@ describe('unit aliases', () => {
   });
 
   test('MWh is converted to kWh and quantity x factor = co2', () => {
-    const r = calculateEmissions(2.5, 'MWh', 2, 'ELECTRICITY');
+    const r = calculateEmissions(2.5, 'MWh', 2, 'ELECTRICITY', undefined, { activityDate: '2024-11-30' });
     expect(r).toMatchObject({ kind: 'emission', quantity: 2500, unit: 'kWh', emissionFactor: 0.71, co2Kg: 1775 });
   });
 
   test('kL of diesel and tonnes of coal', () => {
-    expect(calculateEmissions(2, 'kl', 1, 'FUEL', 'DIESEL')).toMatchObject({ quantity: 2000, co2Kg: 5360 });
-    expect(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL')).toMatchObject({ quantity: 1500, co2Kg: 3630 });
+    expect(calculateEmissions(2, 'kl', 1, 'FUEL', 'DIESEL')).toMatchObject({ quantity: 2000, co2Kg: 5290 });
+    expect(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL')).toMatchObject({ quantity: 1500, co2Kg: 2130 });
   });
 
   test('wrong dimension gives no factor', () => {
@@ -118,13 +118,17 @@ describe('no generic Scope 3 factors', () => {
 
 describe('publishedFactorFor (verification re-derives the factor)', () => {
   test('current sources map to their published factor', () => {
-    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG')).toBe(0.71);
-    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:DIESEL')).toBe(2.68);
-    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:LPG')).toBe(2.98);
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25')).toBe(0.71);
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26')).toBe(0.675);
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.2:DIESEL')).toBe(2.645);
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.2:LPG')).toBe(2.98);
   });
   test('earlier versions and unknown keys are not re-derived here', () => {
     expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.0:INDIA_GRID_AVG')).toBeNull();
-    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:SOLAR_AVOIDED_GRID')).toBeNull();
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG')).toBeNull();
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:DIESEL')).toBeNull();
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_AVG')).toBeNull();
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.2:SOLAR_AVOIDED_GRID')).toBeNull();
     expect(publishedFactorFor(null)).toBeNull();
   });
   test('every factor the calculator writes re-derives to itself', () => {

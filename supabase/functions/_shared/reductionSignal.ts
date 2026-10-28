@@ -69,8 +69,9 @@ interface Range { default: number; lower: number; upper: number }
 interface FuelSpec { unit: 'litre' | 'kg' | 'scm'; kgPerUnit: number; ncv: Range; co2PerTj: Range; label: string }
 
 export const FUEL_SPECS: Record<Fuel, FuelSpec> = {
-  // Gas/Diesel Oil. 0.84 kg/L assumed (gives the platform's 2.68 kgCO2/L).
-  DIESEL: { unit: 'litre', kgPerUnit: 0.84, label: 'Diesel', ncv: { default: 43.0, lower: 41.4, upper: 43.3 }, co2PerTj: { default: 74_100, lower: 72_600, upper: 74_800 } },
+  // Gas/Diesel Oil. 0.83 kg/L, CEA CO2 Baseline Database v22.0 Appendix B
+  // (gives the 2.645 kgCO2/L in emissionFactors.ts).
+  DIESEL: { unit: 'litre', kgPerUnit: 0.83, label: 'Diesel', ncv: { default: 43.0, lower: 41.4, upper: 43.3 }, co2PerTj: { default: 74_100, lower: 72_600, upper: 74_800 } },
   // Residual Fuel Oil. 0.95 kg/L assumed (emissionFactors.ts).
   FURNACE_OIL: { unit: 'litre', kgPerUnit: 0.95, label: 'Furnace oil', ncv: { default: 40.4, lower: 39.8, upper: 41.7 }, co2PerTj: { default: 77_400, lower: 75_500, upper: 78_800 } },
   // Other Kerosene. 0.80 kg/L assumed (emissionFactors.ts).

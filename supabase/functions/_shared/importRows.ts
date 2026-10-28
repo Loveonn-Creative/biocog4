@@ -309,7 +309,9 @@ function checkActivity(values: Record<string, string>, now: Date): { issues: Iss
   if (!issues.length && type && qty !== null) {
     const calc = DOC_TYPES[type].calc;
     // Same call the invoice reader makes; India grid for electricity.
-    const r = calculateEmissions(qty, unit, calc.scope, calc.productCategory, calc.fuelType);
+    const r = calculateEmissions(qty, unit, calc.scope, calc.productCategory, calc.fuelType, {
+      activityDate: parseImportDate(date, now), activityDateFrom: 'invoice', description: DOC_TYPES[type].label,
+    });
     estimateKg = r && r.kind === 'emission' ? r.co2Kg : null;
   }
   return { issues, estimateKg };

@@ -98,6 +98,7 @@ const METHODOLOGY_VERSION = {
   name: METHODOLOGY_NAME,
   // v1.1.0: corrected LPG, PNG, furnace oil, naphtha, kerosene and grid
   // factors; unit aliases; avoided emissions reported separately; full-file hash.
+  // v1.2.0: sourced diesel, petrol and coal factors; grid by bill year.
   version: `${METHODOLOGY_VERSION_TAG}.0`,
   country: 'IN',
   factorVersion: FACTOR_SET_VERSION,
@@ -1198,7 +1199,15 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     let hsnClassifiedCount = 0;
     let hasAnyQuantity = false;
     let hasAnyUnit = false;
-    
+    // Grid electricity takes the factor of the bill's financial year, from the
+    // invoice date, else the upload date (the rule record periods follow).
+    const billDate = parseInvoiceDate(ocrData.date);
+    const factorDate = billDate
+      ? { activityDate: billDate, activityDateFrom: 'invoice' as const }
+      : { activityDate: new Date().toISOString(), activityDateFrom: 'upload' as const };
+    // Which factor rule applied (grid year, coal rule), stored in assumptions.
+    const factorNotes = new Map<LineItem, string>();
+
     const classifiedItems: LineItem[] = (ocrData.lineItems || []).map((item: any) => {
       const classifiedItem: LineItem = {
         description: item.description || '',
@@ -1309,8 +1318,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
           classifiedItem.scope,
           classifiedItem.productCategory,
           classifiedItem.fuelType,
-          { gridCountry }
+          { gridCountry, ...factorDate, description: classifiedItem.description }
         );
+        if (result?.kind === 'emission' && result.assumption) factorNotes.set(classifiedItem, result.assumption);
         if (!gridNoteAdded && classifiedItem.productCategory === 'ELECTRICITY' && supply.source === 'unknown') {
           gridNoteAdded = true;
           validationFlags.push('India grid factor used: no country is set in Settings');
@@ -1379,6 +1389,8 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
       if (item.originalQuantity !== undefined) a.push(`Converted ${item.originalQuantity} ${item.originalUnit ?? ''} to ${item.quantity} ${item.unit ?? ''}`.replace(/\s+/g, ' ').trim());
       for (const f of item.validationFlags ?? []) if (/^Converted .* cylinder size/.test(f)) a.push(f);
       if (item.productCategory === 'ELECTRICITY') a.push(supply.source === 'unknown' ? 'India grid factor: no country set in Settings' : `Grid factor for ${gridCountry}`);
+      const factorNote = factorNotes.get(item);
+      if (factorNote) a.push(factorNote);
       if (item.basisLabel && item.basis !== 'read_from_bill') a.push(item.basisLabel);
       if (!item.hsn_code && item.classificationMethod === 'KEYWORD') a.push('Classified from the line description (no HSN code printed)');
       item.assumptions = a;

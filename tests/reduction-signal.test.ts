@@ -20,11 +20,11 @@ const fsBase: FuelSwitchInput = {
 
 describe('fuel data (IPCC 2006 V2 Ch.1 Tables 1.2 and 1.4)', () => {
   test('default per-unit factors equal the platform footprint factors', () => {
-    for (const f of Object.keys(FUEL_SPECS) as Fuel[]) expect(Math.round(fuelKgCo2PerUnit(f) * 100) / 100).toBe(footprintFactor(f));
+    for (const f of Object.keys(FUEL_SPECS) as Fuel[]) expect(Math.abs(fuelKgCo2PerUnit(f) - footprintFactor(f))).toBeLessThan(0.005);
   });
-  test('diesel: 74,100 kgCO2/TJ x 43.0 MJ/kg x 0.84 kg/L', () => {
-    expect(fuelKgCo2PerUnit('DIESEL')).toBeCloseTo(2.676492, 6);
-    expect(fuelMjPerUnit('DIESEL')).toBeCloseTo(36.12, 6);
+  test('diesel: 74,100 kgCO2/TJ x 43.0 MJ/kg x 0.83 kg/L (CEA v22.0 Appendix B)', () => {
+    expect(fuelKgCo2PerUnit('DIESEL')).toBeCloseTo(2.644629, 6);
+    expect(fuelMjPerUnit('DIESEL')).toBeCloseTo(35.69, 6);
   });
   test('lower and upper limits bracket the default', () => {
     for (const f of Object.keys(FUEL_SPECS) as Fuel[]) {
@@ -61,7 +61,7 @@ describe('fuel switch', () => {
     const pe = 980 * fuelKgCo2PerUnit('PNG');
     expect(s.status).toBe('ready');
     expect(s.centralTco2e).toBeCloseTo(Math.round((be - pe)) / 1000, 3);
-    expect(s.centralTco2e).toBeCloseTo(0.634, 3);
+    expect(s.centralTco2e).toBeCloseTo(0.603, 3);
     expect(s.baselineDays).toBe(365);
     expect(s.monitoringDays).toBe(30);
     expect(s.quantitySaved).toBeCloseTo(hist, 0);

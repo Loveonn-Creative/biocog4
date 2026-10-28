@@ -102,6 +102,27 @@ describe('copy gate: framework reports', async () => {
   }
 });
 
+// Reports print the citation stored with each record (verification_notes.factorCitation)
+// instead of an internal source key; records without one show the key.
+describe('copy gate: framework report with stored factor citations', async () => {
+  const { generateFrameworkPDF } = await import('../src/lib/frameworkReports');
+  const { reportFactorSources } = await import('../src/lib/factorCitation');
+  const { FUEL_FACTORS, INDIA_GRID_BY_FY } = await import('../supabase/functions/_shared/emissionFactors');
+  it('prints the citations, not BIOCOG_MVR_INDIA keys', () => {
+    const evidence = [
+      { ...ds.evidence[0], factorSource: 'BIOCOG_MVR_INDIA_v1.2:DIESEL', factorCitation: FUEL_FACTORS.DIESEL.source },
+      { ...ds.evidence[1], factorSource: 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26', factorCitation: INDIA_GRID_BY_FY.FY2025_26.source },
+    ];
+    captured.length = 0;
+    generateFrameworkPDF('GHG_PROTOCOL', { ...ds, evidence, factorSources: reportFactorSources(evidence) });
+    const text = captured.join(' ').replace(/\s+/g, ' '); // lines wrap in the PDF
+    expect(text).toContain('CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average');
+    expect(text).toContain('74,100 kgCO2/TJ');
+    expect(text).not.toContain('BIOCOG_MVR_INDIA');
+    check('framework report with citations', [...captured]);
+  });
+});
+
 describe('copy gate: net-zero report', () => {
   it('net zero', async () => {
     const { downloadNetZeroReport } = await import('../src/lib/netZeroReport');

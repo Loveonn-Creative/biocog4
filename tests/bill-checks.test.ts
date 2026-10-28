@@ -327,7 +327,11 @@ describe('emission rows gain only factorCitation', () => {
   });
   test('the citation is the source defined with the factor', () => {
     const cite = rows.map((r) => JSON.parse(r.verification_notes).factorCitation);
-    expect(cite).toEqual([FUEL_FACTORS.DIESEL.source, INDIA_GRID_FACTOR_SOURCE, FUEL_FACTORS.LPG.source, undefined]);
+    // The fixture is v1.1: since v1.2 (IND_EF_2026_11) only current-version keys carry a citation.
+    expect(cite).toEqual([undefined, undefined, undefined, undefined]);
+    expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:DIESEL')).toBe(FUEL_FACTORS.DIESEL.source);
+    expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25')).toBe(INDIA_GRID_FACTOR_SOURCE);
+    expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.2:LPG')).toBe(FUEL_FACTORS.LPG.source);
     expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.0:DIESEL')).toBeNull();
     expect(factorCitationFor('BIOCOG_MVR_INDIA_v1.1:SOLAR_AVOIDED_GRID')).toBeNull();
     expect(factorCitationFor(null)).toBeNull();

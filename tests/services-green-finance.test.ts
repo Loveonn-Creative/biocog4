@@ -15,7 +15,7 @@ describe('sustainability-linked loan saving', () => {
   });
   test('baseline from tonnes or bills x shared factors', () => {
     expect(baselineKg({ mode: 'tonnes', tonnesPerYear: 160.9 })).toBeCloseTo(160_900);
-    expect(Math.round(baselineKg({ mode: 'bills', kwhPerMonth: 1000, dieselLPerMonth: 100 }))).toBe(8520 + 3216);
+    expect(Math.round(baselineKg({ mode: 'bills', kwhPerMonth: 1000, dieselLPerMonth: 100 }))).toBe(8520 + 3174);
     expect(kpiCutKg(100_000, 12)).toBeCloseTo(12_000);
     expect(kpiCutKg(100_000, 150)).toBe(100_000);
   });
