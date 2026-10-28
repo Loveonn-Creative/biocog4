@@ -82,10 +82,10 @@ SELECT pg_temp.ok('diesel notes: v1.2 key, citation with the arithmetic, IND_EF_
      FROM pg_temp.notes_of('001') n));
 SELECT pg_temp.ok('petrol 50 L: 2.176 and 108.8 kg, PPAC citation', (SELECT emission_factor = 2.176 AND co2_kg = 108.8 FROM pg_temp.row_of('003'))
   AND (SELECT n ->> 'factorCitation' LIKE '%1.411 kL per tonne (PPAC Ready Reckoner FY 2025-26, Table 9.2) = 2.176 kgCO2/L' FROM pg_temp.notes_of('003') n));
-SELECT pg_temp.ok('coal with no calorific value or grade: Indian default 1.42, rule recorded', (SELECT emission_factor = 1.42 AND co2_kg = 1420 FROM pg_temp.row_of('004'))
+SELECT pg_temp.ok('coal with no calorific value or grade: Indian default 1.76, rule recorded', (SELECT emission_factor = 1.76 AND co2_kg = 1760 FROM pg_temp.row_of('004'))
   AND (SELECT n ->> 'factorSource' = 'BIOCOG_MVR_INDIA_v1.2:COAL'
           AND n -> 'assumptions' = '["Converted 1 t to 1000 kg", "Indian coal average"]'::jsonb FROM pg_temp.notes_of('004') n));
-SELECT pg_temp.ok('non-coking coal is ordinary Indian coal: 1.42', (SELECT emission_factor = 1.42 AND co2_kg = 2840 FROM pg_temp.row_of('020')));
+SELECT pg_temp.ok('non-coking coal is ordinary Indian coal: 1.76', (SELECT emission_factor = 1.76 AND co2_kg = 3520 FROM pg_temp.row_of('020')));
 SELECT pg_temp.ok('coal naming a calorific value left as it is', (SELECT emission_factor = 2.42 AND co2_kg = 2420 FROM pg_temp.row_of('005')));
 SELECT pg_temp.ok('coal named imported or steam left as it is', (SELECT emission_factor = 2.42 FROM pg_temp.row_of('006')));
 SELECT pg_temp.ok('lignite under a coal key left as it is', (SELECT emission_factor = 2.42 FROM pg_temp.row_of('019')));

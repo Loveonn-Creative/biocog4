@@ -53,10 +53,10 @@ describe('fuel factors and their arithmetic', () => {
     expect(FUEL_FACTORS.PETROL.source).toContain('PPAC Ready Reckoner FY 2025-26, Table 9.2');
     expect(emission(calculateEmissions(50, 'litre', 1, 'FUEL', 'PETROL'))).toMatchObject({ emissionFactor: 2.176, co2Kg: 108.8 });
   });
-  test('Indian coal default: 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42', () => {
-    expect(Math.round(90.6 * 3755 * 4.1868 / 1e6 * 100) / 100).toBe(1.42);
-    expect(FUEL_FACTORS.COAL).toMatchObject({ value: 1.42, unit: 'kg' });
-    expect(FUEL_FACTORS.COAL.source).toContain('Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal');
+  test('Indian coal default: BUR-2 non-coking coal 18.26 TJ/kt x 26.28 tC/TJ x 44/12 = 1.76', () => {
+    expect(Math.round(18.26 * 26.28 * 44 / 12 / 1000 * 100) / 100).toBe(1.76);
+    expect(FUEL_FACTORS.COAL).toMatchObject({ value: 1.76, unit: 'kg' });
+    expect(FUEL_FACTORS.COAL.source).toContain('Table 2.3, non-coking coal NCV 18.26 TJ/kt x 26.28 tC/TJ x 44/12');
   });
   test('bituminous coal: 25.8 TJ/Gg x 94,600 kgCO2/TJ = 2.44', () => {
     expect(Math.round(25.8 * 94_600 / 1e6 * 100) / 100).toBe(2.44);
@@ -119,11 +119,11 @@ describe('coal rule selection', () => {
       expect(coalFactorFor(t)).toMatchObject({ key: 'COAL_BITUMINOUS', assumption: 'Bituminous coal factor' });
     }
   });
-  test('otherwise the Indian coal default, 1.42', () => {
+  test('otherwise the Indian coal default, 1.76', () => {
     expect(coalFactorFor('Coal')).toMatchObject({ key: 'COAL', assumption: 'Indian coal average' });
     expect(coalFactorFor('Non coking coal ROM')?.key).toBe('COAL');
     expect(coalFactorFor(undefined)?.key).toBe('COAL');
-    expect(emission(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL', { description: 'Coal' }))).toMatchObject({ quantity: 1500, emissionFactor: 1.42, co2Kg: 2130 });
+    expect(emission(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL', { description: 'Coal' }))).toMatchObject({ quantity: 1500, emissionFactor: 1.76, co2Kg: 2640 });
   });
   test('lignite, anthracite, coking and sub-bituminous coal are not guessed: no factor', () => {
     for (const t of ['Lignite coal', 'Anthracite coal', 'Coking coal', 'Sub-bituminous coal']) {
@@ -209,12 +209,12 @@ describe('emission rows (golden)', () => {
     expect(rows.map((r) => [r.category, r.activity_data, r.activity_unit, r.emission_factor, r.co2_kg])).toEqual([
       ['fuel', 1250, 'litre', 2.645, 3306.25],
       ['electricity', 4200, 'kWh', 0.675, 2835],
-      ['fuel', 10000, 'kg', 1.42, 14200],
+      ['fuel', 10000, 'kg', 1.76, 17600],
     ]);
     expect(rows.map((r) => r.verification_notes)).toEqual([
       '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:DIESEL","classificationMethod":"HSN","hsnCode":"2710","sourceDescription":"HSD Diesel","basis":"read_from_bill","basisLabel":"Read from bill","factorSetVersion":"IND_EF_2026_11","assumptions":[],"factorCitation":"IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 43.0 TJ/Gg x Table 1.4 74,100 kgCO2/TJ = 3.186 kgCO2/kg x 0.83 kg/L (CEA CO2 Baseline Database v22.0, Appendix B) = 2.645 kgCO2/L"}',
       '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26","classificationMethod":"HSN","hsnCode":"2716","sourceDescription":"Units consumed","factorSetVersion":"IND_EF_2026_11","assumptions":["Grid factor for IN","CEA FY 2025-26 factor"],"factorCitation":"CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average"}',
-      '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:COAL","classificationMethod":"KEYWORD","hsnCode":null,"sourceDescription":"Coal","factorSetVersion":"IND_EF_2026_11","assumptions":["Indian coal average"],"factorCitation":"CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg"}',
+      '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:COAL","classificationMethod":"KEYWORD","hsnCode":null,"sourceDescription":"Coal","factorSetVersion":"IND_EF_2026_11","assumptions":["Indian coal average"],"factorCitation":"India Second Biennial Update Report to the UNFCCC (MoEFCC, 2018), Table 2.3, non-coking coal NCV 18.26 TJ/kt x 26.28 tC/TJ x 44/12 = 1.76 kgCO2/kg"}',
     ]);
   });
 });
@@ -260,7 +260,7 @@ describe('pending migration matches the code', () => {
     for (const k of ['DIESEL', 'PETROL', 'COAL'] as const) expect(sql).toContain(`'${k}', `);
     expect(sql).toContain(`'litre', 2.645, '${FUEL_FACTORS.DIESEL.source}'`);
     expect(sql).toContain(`'litre', 2.176, '${FUEL_FACTORS.PETROL.source}'`);
-    expect(sql).toContain(`'kg', 1.42, '${FUEL_FACTORS.COAL.source}'`);
+    expect(sql).toContain(`'kg', 1.76, '${FUEL_FACTORS.COAL.source}'`);
     expect(sql).toContain(`'${coalFactorFor('Coal')!.assumption}'`);
     expect(sql).toContain("SET LOCAL app.change_reason = 'factor correction IND_EF_2026_11'");
     expect(sql).toContain("'factorSetVersion', 'IND_EF_2026_11'");

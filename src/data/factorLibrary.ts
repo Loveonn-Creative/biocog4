@@ -57,7 +57,7 @@ export const FACTOR_PAGES: FactorPage[] = [
   {
     slug: 'coal', name: 'Coal', noun: 'coal', value: FUEL_FACTORS.COAL.value, unit: 'kg', unitPlural: 'kg', scope: 1,
     hsn: '2701', hsnLabel: 'Coal', invoiceTerms: 'coal, steam coal, non-coking coal', exampleQty: 10000,
-    basis: 'CEA CO2 Baseline Database, Appendix B: Indian coal 90.6 g CO2 per MJ × 3,755 kcal per kg × 4.1868 kJ per kcal = 1.42 kg CO2 per kg. A bill that states a calorific value is calculated from it; imported, bituminous or steam coal uses the IPCC bituminous coal factor, 2.44 kg CO2 per kg.',
+    basis: 'India Second Biennial Update Report (2018), Table 2.3: non-coking coal 18.26 TJ per kt × 26.28 t carbon per TJ × 44/12 = 1.76 kg CO2 per kg. A bill that states a calorific value is calculated from it; imported, bituminous or steam coal uses the IPCC bituminous coal factor, 2.44 kg CO2 per kg.',
     caveat: 'Coal varies widely by grade and moisture. Use the supplier’s gross calorific value when the invoice or test certificate gives it.',
   },
   {
