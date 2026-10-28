@@ -125,9 +125,13 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
   let planCycle: 'monthly' | 'yearly' | null = null;
   let planExpiresAt: string | null = null;
   let profileLocation: string | null = null;
+  // The business's sector (organisation profile in a workspace, else the
+  // account profile); it only picks the cement coal default.
+  let businessSector: string | null = null;
   try {
-    const { data: profile } = await db.from('profiles').select('subscription_tier, subscription_expires_at, location').eq('id', userId).single();
+    const { data: profile } = await db.from('profiles').select('subscription_tier, subscription_expires_at, location, sector').eq('id', userId).single();
     profileLocation = typeof profile?.location === 'string' ? profile.location : null;
+    businessSector = !organizationId && typeof profile?.sector === 'string' ? profile.sector : null;
     const { data: activeRows } = await db.from('subscriptions').select('tier, expires_at, billing_cycle').eq('user_id', userId).eq('status', 'active');
     const activeSub = strongestRow(activeRows ?? []);
     planCycle = activeSub ? (activeSub.billing_cycle === 'monthly' ? 'monthly' : 'yearly') : null;
@@ -136,6 +140,16 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
     scanLimit = invoiceScanLimit(plan.tier, plan.expiresAt);
   } catch (e) {
     console.error('Plan lookup failed:', (e as { code?: string })?.code ?? 'error');
+  }
+
+  if (organizationId) {
+    try {
+      const { data: org } = await db.from('organizations').select('metadata').eq('id', organizationId).maybeSingle();
+      const orgSector = (org?.metadata as { profile?: { sector?: unknown } } | null)?.profile?.sector;
+      businessSector = typeof orgSector === 'string' ? orgSector : null;
+    } catch {
+      businessSector = null; // no sector: the Indian coal default applies
+    }
   }
 
   // deno-lint-ignore no-explicit-any
@@ -151,7 +165,7 @@ export async function handleImportRecords(req: Request, deps: ImportDeps): Promi
     if (row.status === 'duplicate') { results.push({ line, status: 'duplicate', reason: `Same bill as row ${row.duplicateOf}.` }); continue; }
 
     const supply = gridCountryFor({ vendor: row.values.supplier, currency: 'INR' }, profileLocation);
-    const built = buildImportedRecord(row.values, { gridCountry: supply.country ?? 'IN', gridSource: supply.source, line });
+    const built = buildImportedRecord(row.values, { gridCountry: supply.country ?? 'IN', gridSource: supply.source, line, sector: businessSector });
     if (!built) { results.push({ line, status: 'invalid', reason: MESSAGES.unreadable }); continue; }
     const documentHash = await importDocumentHash(row.values);
     const invoiceKey = built.cachedResult.invoiceKey;
