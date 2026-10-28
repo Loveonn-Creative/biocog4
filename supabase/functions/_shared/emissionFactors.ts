@@ -139,13 +139,10 @@ export function gridFactorFor(iso: string): GridFactorChoice {
 
 /** The plain statement stored with a grid line: which year the bill fell in and which CEA year applied. */
 export function gridAssumption(choice: GridFactorChoice, dateFrom: 'invoice' | 'upload'): string {
-  const from = dateFrom === 'invoice' ? 'invoice date' : 'upload date, no invoice date read';
-  const applied = choice.billYear === choice.factorYear
-    ? 'CEA grid factor for that year'
-    : Number(choice.billYear.slice(3, 7)) > GRID_LATEST_FY
-      ? `latest CEA grid factor, ${choice.factorYear}`
-      : `CEA lists no factor for that year; ${choice.factorYear} factor used`;
-  return `Bill year ${choice.billYear} (${from}): ${applied}`;
+  // Owner-approved short labels.
+  const beforeCea = choice.billYear !== choice.factorYear && Number(choice.billYear.slice(3, 7)) <= GRID_LATEST_FY;
+  const applied = beforeCea ? `${choice.factorYear} factor used` : `CEA ${choice.factorYear} factor`;
+  return dateFrom === 'invoice' ? applied : `${applied} · Dated by upload`;
 }
 
 // The national constant the website's estimators and the avoided-emission
@@ -237,15 +234,15 @@ export function coalFactorFor(description: string | null | undefined): CoalChoic
       return {
         key: `COAL_${cv.basis}_${cv.kcal}`,
         factor: f,
-        assumption: `Coal factor from the ${cv.basis === 'GCV' ? 'gross' : 'net'} calorific value on the bill: ${cv.printed}`,
+        assumption: `From bill: ${cv.printed}`,
       };
     }
   }
   if (COAL_OTHER_RANK.test(text)) return null;
   if (COAL_BITUMINOUS_WORDS.test(text)) {
-    return { key: 'COAL_BITUMINOUS', factor: COAL_BITUMINOUS, assumption: 'Imported, bituminous or steam coal on the bill: bituminous coal factor' };
+    return { key: 'COAL_BITUMINOUS', factor: COAL_BITUMINOUS, assumption: 'Bituminous coal factor' };
   }
-  return { key: 'COAL', factor: FUEL_FACTORS.COAL, assumption: 'No calorific value or coal grade on the bill: Indian coal average' };
+  return { key: 'COAL', factor: FUEL_FACTORS.COAL, assumption: 'Indian coal average' };
 }
 
 /** The coal factor a factorSource key names (COAL, COAL_BITUMINOUS, COAL_GCV_5500, ...), or null. */

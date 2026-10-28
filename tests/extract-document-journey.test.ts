@@ -207,7 +207,7 @@ describe('invoice to stored records, through the real handler', () => {
     expect(notes.factorSource).toBe('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26');
     expect(notes.factorSetVersion).toBe('IND_EF_2026_11');
     expect(notes.factorCitation).toBe('CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average');
-    expect(notes.assumptions).toContain('Bill year FY 2026-27 (invoice date): latest CEA grid factor, FY 2025-26');
+    expect(notes.assumptions).toContain('CEA FY 2025-26 factor');
   });
 
   test('grid factor follows the bill year: 31 March 2025 is FY 2024-25 (0.710), 1 April 2025 is FY 2025-26 (0.675)', async () => {
@@ -234,7 +234,7 @@ describe('invoice to stored records, through the real handler', () => {
     expect(db.emissions[0]).toMatchObject({ activity_data: 10000, activity_unit: 'kg', emission_factor: 2.0863, co2_kg: 20863 });
     const notes = JSON.parse(db.emissions[0].verification_notes);
     expect(notes.factorSource).toBe('BIOCOG_MVR_INDIA_v1.2:COAL_GCV_5500');
-    expect(notes.assumptions).toContain('Coal factor from the gross calorific value on the bill: 5500 kcal/kg');
+    expect(notes.assumptions).toContain('From bill: 5500 kcal/kg');
     expect(notes.factorCitation).toContain('90.6 gCO2/MJ x gross calorific value 5,500 kcal/kg');
   });
 

@@ -58,7 +58,9 @@ const UNPRINTABLE = /[^\x09\x0a\x0d\x20-\x7e¡-ÿ‘’“”•…€]/;
 function check(name: string, strings: string[]) {
   const problems: string[] = [];
   const whole = strings.join('\n');
-  for (const [re, why] of BANNED) { const m = whole.match(re); if (m) problems.push(`${why}: "${m[0]}"`); }
+  // The Biocog engine factor key (e.g. BIOCOG_MVR_INDIA_v1.2:DIESEL) is shown on purpose (owner decision).
+  const forRules = whole.replace(/\bBIOCOG_MVR_IN(?:DIA)?_v\d+(?:\.\d+)?(?::[A-Z0-9_]+)?/g, 'Biocog key');
+  for (const [re, why] of BANNED) { const m = forRules.match(re); if (m) problems.push(`${why}: "${m[0]}"`); }
   const bad = whole.match(UNPRINTABLE); if (bad) problems.push(`unprintable character U+${bad[0].codePointAt(0)!.toString(16)}`);
   // A sentence of 40+ characters appearing in two different places says the same thing twice.
   // Identical whole strings (running footers, page numbers, table headers) are page furniture and allowed.
@@ -108,7 +110,7 @@ describe('copy gate: framework report with stored factor citations', async () =>
   const { generateFrameworkPDF } = await import('../src/lib/frameworkReports');
   const { reportFactorSources } = await import('../src/lib/factorCitation');
   const { FUEL_FACTORS, INDIA_GRID_BY_FY } = await import('../supabase/functions/_shared/emissionFactors');
-  it('prints the citations, not BIOCOG_MVR_INDIA keys', () => {
+  it('prints the Biocog engine key with its citation', () => {
     const evidence = [
       { ...ds.evidence[0], factorSource: 'BIOCOG_MVR_INDIA_v1.2:DIESEL', factorCitation: FUEL_FACTORS.DIESEL.source },
       { ...ds.evidence[1], factorSource: 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26', factorCitation: INDIA_GRID_BY_FY.FY2025_26.source },
@@ -118,7 +120,7 @@ describe('copy gate: framework report with stored factor citations', async () =>
     const text = captured.join(' ').replace(/\s+/g, ' '); // lines wrap in the PDF
     expect(text).toContain('CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average');
     expect(text).toContain('74,100 kgCO2/TJ');
-    expect(text).not.toContain('BIOCOG_MVR_INDIA');
+    expect(text).toContain('BIOCOG_MVR_INDIA_v1.2');
     check('framework report with citations', [...captured]);
   });
 });

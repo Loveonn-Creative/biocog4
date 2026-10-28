@@ -18,7 +18,13 @@ export function factorCitationOf(verificationNotes: unknown): string | null {
   }
 }
 
-/** The distinct factor sources a report lists, citation first, in record order. */
+/**
+ * The distinct factor sources a report lists, in record order. The Biocog
+ * engine key always leads (owner decision: the core engine stays named); the
+ * published citation follows in brackets when the record keeps one.
+ */
 export function reportFactorSources(rows: Array<{ factorSource: string | null; factorCitation?: string | null }>): string[] {
-  return [...new Set(rows.map((r) => r.factorCitation || r.factorSource).filter(Boolean) as string[])];
+  const label = (r: { factorSource: string | null; factorCitation?: string | null }) =>
+    r.factorSource && r.factorCitation ? `${r.factorSource} (${r.factorCitation})` : r.factorSource || r.factorCitation || null;
+  return [...new Set(rows.map(label).filter(Boolean) as string[])];
 }

@@ -83,7 +83,7 @@ CREATE TEMP TABLE _fc_fuel (factor_key text PRIMARY KEY, old_factors numeric[] N
 INSERT INTO _fc_fuel VALUES
   ('DIESEL', '{2.68}', 'litre', 2.645, 'IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 43.0 TJ/Gg x Table 1.4 74,100 kgCO2/TJ = 3.186 kgCO2/kg x 0.83 kg/L (CEA CO2 Baseline Database v22.0, Appendix B) = 2.645 kgCO2/L', NULL),
   ('PETROL', '{2.31}', 'litre', 2.176, 'IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 44.3 TJ/Gg x Table 1.4 69,300 kgCO2/TJ = 3.070 kgCO2/kg, at 1.411 kL per tonne (PPAC Ready Reckoner FY 2025-26, Table 9.2) = 2.176 kgCO2/L', NULL),
-  ('COAL', '{2.42}', 'kg', 1.42, 'CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg', 'No calorific value or coal grade on the bill: Indian coal average');
+  ('COAL', '{2.42}', 'kg', 1.42, 'CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg', 'Indian coal average');
 
 -- One planned correction per matching row (the dry run builds the same view).
 CREATE TEMP VIEW _fc_plan AS
@@ -118,11 +118,9 @@ WITH base AS (
      AND (f.factor_key <> 'COAL' OR regexp_replace(k.line_text, 'non[ -]?coking', '', 'gi') !~* '(\m(gcv|gar|gad|adb|ncv|nar|calorific|imported|bituminous|steam|lignite|anthracite|coking)\M|kcal|k\.cal|mj)')
 ), grid AS (
   SELECT k.*, g.factor_key AS new_key, g.factor AS new_factor, g.citation,
-         'Bill year FY ' || k.fy || '-' || lpad(((k.fy + 1) % 100)::text, 2, '0')
-           || ' (' || CASE WHEN k.by_invoice THEN 'invoice date' ELSE 'upload date, no invoice date read' END || '): '
-           || CASE WHEN g.fy_start = k.fy THEN 'CEA grid factor for that year'
-                   WHEN k.fy > 2025 THEN 'latest CEA grid factor, FY 2025-26'
-                   ELSE 'CEA lists no factor for that year; FY 2024-25 factor used' END AS assumption,
+         CASE WHEN k.fy < 2013 THEN 'FY 2024-25 factor used'
+              ELSE 'CEA FY ' || g.fy_start || '-' || lpad(((g.fy_start + 1) % 100)::text, 2, '0') || ' factor' END
+           || CASE WHEN k.by_invoice THEN '' ELSE ' · Dated by upload' END AS assumption,
          'grid ' || g.factor_key AS rule
     FROM keyed k
     JOIN _fc_grid g ON g.fy_start = CASE WHEN k.fy >= 2025 THEN 2025 WHEN k.fy >= 2013 THEN k.fy ELSE 2024 END

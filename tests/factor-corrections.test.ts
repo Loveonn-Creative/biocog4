@@ -92,7 +92,7 @@ describe('grid electricity by Indian financial year', () => {
   test('the upload timestamp is used when there is no invoice date, and the note says so', () => {
     const r = emission(calculateEmissions(100, 'kWh', 2, 'ELECTRICITY', undefined, { activityDate: '2026-03-31T20:00:00.000Z', activityDateFrom: 'upload' }));
     expect(r.factorSource).toBe('BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26');
-    expect(r.assumption).toBe('Bill year FY 2025-26 (upload date, no invoice date read): CEA grid factor for that year');
+    expect(r.assumption).toBe('CEA FY 2025-26 factor · Dated by upload');
   });
   test('electricity outside India still gets no factor', () => {
     expect(calculateEmissions(100, 'kWh', 2, 'ELECTRICITY', undefined, { gridCountry: 'DE', activityDate: '2025-05-01' })).toBeNull();
@@ -104,7 +104,7 @@ describe('coal rule selection', () => {
     const c = coalFactorFor('Steam coal GCV 5500 kcal/kg')!;
     expect(c.key).toBe('COAL_GCV_5500');
     expect(c.factor.value).toBe(Math.round(90.6 * 5500 * 4.1868 / 1e6 * 1e4) / 1e4);
-    expect(c.assumption).toBe('Coal factor from the gross calorific value on the bill: 5500 kcal/kg');
+    expect(c.assumption).toBe('From bill: 5500 kcal/kg');
     expect(coalFactorFor('Coal 5,800 GAR')?.key).toBe('COAL_GCV_5800');
     expect(coalFactorFor('Coal, Gross Calorific Value: 6000 kcal')?.key).toBe('COAL_GCV_6000');
   });
@@ -116,11 +116,11 @@ describe('coal rule selection', () => {
   });
   test('imported, bituminous or steam coal without a calorific value: 2.44', () => {
     for (const t of ['Imported coal', 'Bituminous coal', 'Steam coal 10 MT']) {
-      expect(coalFactorFor(t)).toMatchObject({ key: 'COAL_BITUMINOUS', assumption: 'Imported, bituminous or steam coal on the bill: bituminous coal factor' });
+      expect(coalFactorFor(t)).toMatchObject({ key: 'COAL_BITUMINOUS', assumption: 'Bituminous coal factor' });
     }
   });
   test('otherwise the Indian coal default, 1.42', () => {
-    expect(coalFactorFor('Coal')).toMatchObject({ key: 'COAL', assumption: 'No calorific value or coal grade on the bill: Indian coal average' });
+    expect(coalFactorFor('Coal')).toMatchObject({ key: 'COAL', assumption: 'Indian coal average' });
     expect(coalFactorFor('Non coking coal ROM')?.key).toBe('COAL');
     expect(coalFactorFor(undefined)?.key).toBe('COAL');
     expect(emission(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL', { description: 'Coal' }))).toMatchObject({ quantity: 1500, emissionFactor: 1.42, co2Kg: 2130 });
@@ -197,8 +197,8 @@ describe('verification: published factors, new and old', () => {
 describe('emission rows (golden)', () => {
   const items = [
     { description: 'HSD Diesel', hsn_code: '2710', quantity: 1250, unit: 'litre', productCategory: 'FUEL', scope: 1, ...pick(calculateEmissions(1250, 'litre', 1, 'FUEL', 'DIESEL')), classificationMethod: 'HSN' as const, basis: 'read_from_bill', basisLabel: 'Read from bill', assumptions: [] },
-    { description: 'Units consumed', hsn_code: '2716', quantity: 4200, unit: 'kWh', productCategory: 'ELECTRICITY', scope: 2, ...pick(calculateEmissions(4200, 'kWh', 2, 'ELECTRICITY', undefined, { activityDate: '2025-04-01' })), classificationMethod: 'HSN' as const, assumptions: ['Grid factor for IN', 'Bill year FY 2025-26 (invoice date): CEA grid factor for that year'] },
-    { description: 'Coal', quantity: 10000, unit: 'kg', productCategory: 'FUEL', scope: 1, ...pick(calculateEmissions(10, 't', 1, 'FUEL', 'COAL', { description: 'Coal' })), classificationMethod: 'KEYWORD' as const, assumptions: ['No calorific value or coal grade on the bill: Indian coal average'] },
+    { description: 'Units consumed', hsn_code: '2716', quantity: 4200, unit: 'kWh', productCategory: 'ELECTRICITY', scope: 2, ...pick(calculateEmissions(4200, 'kWh', 2, 'ELECTRICITY', undefined, { activityDate: '2025-04-01' })), classificationMethod: 'HSN' as const, assumptions: ['Grid factor for IN', 'CEA FY 2025-26 factor'] },
+    { description: 'Coal', quantity: 10000, unit: 'kg', productCategory: 'FUEL', scope: 1, ...pick(calculateEmissions(10, 't', 1, 'FUEL', 'COAL', { description: 'Coal' })), classificationMethod: 'KEYWORD' as const, assumptions: ['Indian coal average'] },
   ];
   function pick(c: ReturnType<typeof calculateEmissions>) {
     const e = emission(c);
@@ -213,14 +213,14 @@ describe('emission rows (golden)', () => {
     ]);
     expect(rows.map((r) => r.verification_notes)).toEqual([
       '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:DIESEL","classificationMethod":"HSN","hsnCode":"2710","sourceDescription":"HSD Diesel","basis":"read_from_bill","basisLabel":"Read from bill","factorSetVersion":"IND_EF_2026_11","assumptions":[],"factorCitation":"IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 43.0 TJ/Gg x Table 1.4 74,100 kgCO2/TJ = 3.186 kgCO2/kg x 0.83 kg/L (CEA CO2 Baseline Database v22.0, Appendix B) = 2.645 kgCO2/L"}',
-      '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26","classificationMethod":"HSN","hsnCode":"2716","sourceDescription":"Units consumed","factorSetVersion":"IND_EF_2026_11","assumptions":["Grid factor for IN","Bill year FY 2025-26 (invoice date): CEA grid factor for that year"],"factorCitation":"CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average"}',
-      '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:COAL","classificationMethod":"KEYWORD","hsnCode":null,"sourceDescription":"Coal","factorSetVersion":"IND_EF_2026_11","assumptions":["No calorific value or coal grade on the bill: Indian coal average"],"factorCitation":"CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg"}',
+      '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26","classificationMethod":"HSN","hsnCode":"2716","sourceDescription":"Units consumed","factorSetVersion":"IND_EF_2026_11","assumptions":["Grid factor for IN","CEA FY 2025-26 factor"],"factorCitation":"CEA CO2 Baseline Database v22.0 (Aug 2026), Table S, FY 2025-26 weighted average"}',
+      '{"factorSource":"BIOCOG_MVR_INDIA_v1.2:COAL","classificationMethod":"KEYWORD","hsnCode":null,"sourceDescription":"Coal","factorSetVersion":"IND_EF_2026_11","assumptions":["Indian coal average"],"factorCitation":"CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg"}',
     ]);
   });
 });
 
 describe('reports print the stored citation', () => {
-  test('the citation from the notes, else the stored key', () => {
+  test('the Biocog key leads, with the stored citation in brackets', () => {
     const rows = [
       { factorSource: 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26', factorCitation: factorCitationOf(JSON.stringify({ factorCitation: INDIA_GRID_BY_FY.FY2025_26.source })) },
       { factorSource: 'BIOCOG_MVR_INDIA_v1.2:DIESEL', factorCitation: factorCitationOf(JSON.stringify({ factorCitation: FUEL_FACTORS.DIESEL.source })) },
@@ -228,7 +228,11 @@ describe('reports print the stored citation', () => {
       { factorSource: 'BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG', factorCitation: null },
       { factorSource: null, factorCitation: null },
     ];
-    expect(reportFactorSources(rows)).toEqual([INDIA_GRID_BY_FY.FY2025_26.source, FUEL_FACTORS.DIESEL.source, 'BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG']);
+    expect(reportFactorSources(rows)).toEqual([
+      `BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26 (${INDIA_GRID_BY_FY.FY2025_26.source})`,
+      `BIOCOG_MVR_INDIA_v1.2:DIESEL (${FUEL_FACTORS.DIESEL.source})`,
+      'BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG',
+    ]);
   });
   test('reading the notes: method names and broken notes are not citations', () => {
     expect(factorCitationOf('{"factorCitation":"BIOCOG_MVR_INDIA v1.0 (unchanged)"}')).toBeNull();
@@ -263,10 +267,10 @@ describe('pending migration matches the code', () => {
   });
   test('the grid notes the migration writes are the code\'s wording', () => {
     const a = (d: string, from: 'invoice' | 'upload') => emission(calculateEmissions(1, 'kWh', 2, 'ELECTRICITY', undefined, { activityDate: d, activityDateFrom: from })).assumption!;
-    expect(a('2025-03-31', 'invoice')).toBe('Bill year FY 2024-25 (invoice date): CEA grid factor for that year');
-    expect(a('2026-10-20', 'upload')).toBe('Bill year FY 2026-27 (upload date, no invoice date read): latest CEA grid factor, FY 2025-26');
-    expect(a('2010-06-01', 'invoice')).toBe('Bill year FY 2010-11 (invoice date): CEA lists no factor for that year; FY 2024-25 factor used');
-    for (const s of ['CEA grid factor for that year', 'latest CEA grid factor, FY 2025-26', 'CEA lists no factor for that year; FY 2024-25 factor used', 'upload date, no invoice date read']) expect(sql).toContain(s);
+    expect(a('2025-03-31', 'invoice')).toBe('CEA FY 2024-25 factor');
+    expect(a('2026-10-20', 'upload')).toBe('CEA FY 2025-26 factor · Dated by upload');
+    expect(a('2010-06-01', 'invoice')).toBe('FY 2024-25 factor used');
+    for (const s of ['FY 2024-25 factor used', ' factor', ' · Dated by upload', 'Indian coal average']) expect(sql).toContain(s);
   });
   test('the dry run builds exactly the migration\'s plan', () => {
     const block = (s: string) => s.slice(s.indexOf('CREATE OR REPLACE FUNCTION pg_temp.try_jsonb'), s.indexOf('FROM planned p;') + 'FROM planned p;'.length);

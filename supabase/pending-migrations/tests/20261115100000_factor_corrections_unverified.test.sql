@@ -84,7 +84,7 @@ SELECT pg_temp.ok('petrol 50 L: 2.176 and 108.8 kg, PPAC citation', (SELECT emis
   AND (SELECT n ->> 'factorCitation' LIKE '%1.411 kL per tonne (PPAC Ready Reckoner FY 2025-26, Table 9.2) = 2.176 kgCO2/L' FROM pg_temp.notes_of('003') n));
 SELECT pg_temp.ok('coal with no calorific value or grade: Indian default 1.42, rule recorded', (SELECT emission_factor = 1.42 AND co2_kg = 1420 FROM pg_temp.row_of('004'))
   AND (SELECT n ->> 'factorSource' = 'BIOCOG_MVR_INDIA_v1.2:COAL'
-          AND n -> 'assumptions' = '["Converted 1 t to 1000 kg", "No calorific value or coal grade on the bill: Indian coal average"]'::jsonb FROM pg_temp.notes_of('004') n));
+          AND n -> 'assumptions' = '["Converted 1 t to 1000 kg", "Indian coal average"]'::jsonb FROM pg_temp.notes_of('004') n));
 SELECT pg_temp.ok('non-coking coal is ordinary Indian coal: 1.42', (SELECT emission_factor = 1.42 AND co2_kg = 2840 FROM pg_temp.row_of('020')));
 SELECT pg_temp.ok('coal naming a calorific value left as it is', (SELECT emission_factor = 2.42 AND co2_kg = 2420 FROM pg_temp.row_of('005')));
 SELECT pg_temp.ok('coal named imported or steam left as it is', (SELECT emission_factor = 2.42 FROM pg_temp.row_of('006')));
@@ -95,7 +95,7 @@ SELECT pg_temp.ok('grid, invoice 31 Mar 2025: FY 2024-25, 0.710, v21 Table S cit
   (SELECT emission_factor = 0.71 AND co2_kg = 710 FROM pg_temp.row_of('007'))
   AND (SELECT n ->> 'factorSource' = 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25'
           AND n ->> 'factorCitation' = 'CEA CO2 Baseline Database v21.0 (Nov 2025), Table S, FY 2024-25 weighted average'
-          AND n -> 'assumptions' = '["Grid factor for IN", "Bill year FY 2024-25 (invoice date): CEA grid factor for that year"]'::jsonb FROM pg_temp.notes_of('007') n));
+          AND n -> 'assumptions' = '["Grid factor for IN", "CEA FY 2024-25 factor"]'::jsonb FROM pg_temp.notes_of('007') n));
 SELECT pg_temp.ok('grid, invoice 1 Apr 2025: FY 2025-26, 0.675, v22 Table S citation',
   (SELECT emission_factor = 0.675 AND co2_kg = 675 FROM pg_temp.row_of('008'))
   AND (SELECT n ->> 'factorSource' = 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2025_26'
@@ -105,11 +105,11 @@ SELECT pg_temp.ok('grid, invoice in FY 2023-24: that year''s 0.727 from v21 Anne
   AND (SELECT n ->> 'factorCitation' = 'CEA CO2 Baseline Database v21.0 (Nov 2025), Annexure-I, FY 2023-24 weighted average' FROM pg_temp.notes_of('009') n));
 SELECT pg_temp.ok('grid, no invoice date: upload date (FY 2026-27), latest 0.675, said so',
   (SELECT emission_factor = 0.675 AND co2_kg = 675 FROM pg_temp.row_of('010'))
-  AND (SELECT n -> 'assumptions' = '["Bill year FY 2026-27 (upload date, no invoice date read): latest CEA grid factor, FY 2025-26"]'::jsonb FROM pg_temp.notes_of('010') n));
+  AND (SELECT n -> 'assumptions' = '["CEA FY 2025-26 factor · Dated by upload"]'::jsonb FROM pg_temp.notes_of('010') n));
 SELECT pg_temp.ok('grid, invoice in 2010: no CEA year, 0.710 (FY 2024-25)',
   (SELECT emission_factor = 0.71 AND co2_kg = 710 FROM pg_temp.row_of('011'))
   AND (SELECT n ->> 'factorSource' = 'BIOCOG_MVR_INDIA_v1.2:INDIA_GRID_FY2024_25'
-          AND n -> 'assumptions' = '["Bill year FY 2010-11 (invoice date): CEA lists no factor for that year; FY 2024-25 factor used"]'::jsonb FROM pg_temp.notes_of('011') n));
+          AND n -> 'assumptions' = '["FY 2024-25 factor used"]'::jsonb FROM pg_temp.notes_of('011') n));
 SELECT pg_temp.ok('grid v1.0 row at 0.708, FY 2025-26: 342 kWh x 0.675 = 230.85', (SELECT emission_factor = 0.675 AND co2_kg = 230.85 FROM pg_temp.row_of('012')));
 
 -- Not touched
