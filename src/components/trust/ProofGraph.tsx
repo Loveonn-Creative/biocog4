@@ -1,4 +1,5 @@
 import { FileText, ArrowRight, BarChart3, Target, Leaf, Coins } from "lucide-react";
+import { METHODOLOGY_NAME, METHODOLOGY_VERSION_TAG } from "@/lib/factors";
 
 interface ProofGraphProps {
   totalCO2Kg: number;
@@ -21,7 +22,7 @@ export const ProofGraph = ({ totalCO2Kg, scopeBreakdown, eligibleCredits, verifi
     switch (key) {
       case 'invoice': return 'OCR extracted';
       case 'activity': return `${totalCO2Kg > 0 ? 'Detected' : 'None'}`;
-      case 'factor': return 'BIOCOG v1.0';
+      case 'factor': return `BIOCOG ${METHODOLOGY_VERSION_TAG}`;
       case 'co2': return `${totalCO2Kg.toFixed(1)} kg`;
       case 'credit': return eligibleCredits > 0 ? `${eligibleCredits} tCO₂e` : 'Pending';
       default: return '';
@@ -53,7 +54,7 @@ export const ProofGraph = ({ totalCO2Kg, scopeBreakdown, eligibleCredits, verifi
       </div>
 
       <div className="mt-3 pt-3 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
-        <span>Methodology: BIOCOG_MVR_INDIA v1.0</span>
+        <span>Methodology: {METHODOLOGY_NAME} {METHODOLOGY_VERSION_TAG}</span>
         <span>Score: {(verificationScore * 100).toFixed(0)}% • Grade {qualityGrade}</span>
       </div>
     </div>

@@ -6,6 +6,7 @@
  */
 
 import { FREIGHT_FACTORS, getFreightFactor } from './freightFactors';
+import { INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 
 export type AllocationMethod = 'mass' | 'energy' | 'economic' | 'none';
 export type SystemBoundary = 'cradle-to-gate' | 'gate-to-gate' | 'cradle-to-grave';
@@ -57,7 +58,7 @@ export const PCF_MATERIALS: MaterialFactor[] = [
 
 // Common grid factors (kgCO2e/kWh) — IEA 2023 / national grids
 export const PCF_ENERGY: EnergyFactor[] = [
-  { id: 'grid-in', name: 'Electricity: India grid', kgCO2ePerKWh: 0.708, source: 'CEA 2023', tier: 'secondary' },
+  { id: 'grid-in', name: 'Electricity: India grid', kgCO2ePerKWh: INDIA_GRID_FACTOR_KG_PER_KWH, source: 'CEA v22.0, FY 2025-26', tier: 'secondary' },
   { id: 'grid-cn', name: 'Electricity: China grid', kgCO2ePerKWh: 0.555, source: 'IEA 2023', tier: 'secondary' },
   { id: 'grid-eu', name: 'Electricity: EU avg grid', kgCO2ePerKWh: 0.230, source: 'EEA 2023', tier: 'secondary' },
   { id: 'grid-us', name: 'Electricity: US grid', kgCO2ePerKWh: 0.371, source: 'EPA 2023', tier: 'secondary' },

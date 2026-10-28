@@ -33,10 +33,10 @@ describe('intelligentActions', () => {
     expect(intelligentActions(bills(['2026-05']), [doc({ cached_result: { lineItems: [{ evidence: { powerFactor: 0.4 } }] } })]).find((x) => x.id === 'power_factor')).toBeUndefined();
   });
 
-  test('diesel with grid power: saving uses 2.645 kg/L against 3 kWh x 0.710', () => {
+  test('diesel with grid power: saving uses 2.645 kg/L against 3 kWh x 0.675', () => {
     const a = intelligentActions([...bills(['2026-05']), em({ scope: 1, category: 'diesel', activity_data: 1000, activity_unit: 'L', co2_kg: 2680 })], [doc({})]);
     const g = a.find((x) => x.id === 'generator')!;
-    expect(g.kg).toBeCloseTo(1000 * (2.645 - 3 * 0.71), 6);
+    expect(g.kg).toBeCloseTo(1000 * (2.645 - 3 * 0.675), 6);
     expect(g.effect).toContain('estimate');
   });
 
@@ -45,7 +45,7 @@ describe('intelligentActions', () => {
     expect(intelligentActions(bills(six.slice(0, 5), 3000), [doc({})]).find((x) => x.id === 'solar')).toBeUndefined();
     const s = intelligentActions(bills(six, 3000), [doc({ cached_result: { electricityBill: { sanctionedLoadKw: 15 } } })]).find((x) => x.id === 'solar')!;
     expect(s.title).toContain('15 kWp'); // 36,000 kWh / 1,500 = 24, capped at 15
-    expect(s.kg).toBeCloseTo(15 * 1500 * 0.71, 6);
+    expect(s.kg).toBeCloseTo(15 * 1500 * 0.675, 6);
     expect(s.effect).toContain('estimate');
   });
 

@@ -18,16 +18,16 @@ export const SAMPLE_LINES: SampleLine[] = [
     quantity: 4200,
     unit: 'kWh',
     scope: 2,
-    factor: 0.710,
-    factorSource: 'CEA CO2 Baseline Database v21.0, FY 2024-25 weighted average',
+    factor: 0.675,
+    factorSource: 'CEA CO2 Baseline Database v22.0, FY 2025-26 weighted average',
   },
   {
     description: 'Diesel for standby generator',
     quantity: 120,
     unit: 'litre',
     scope: 1,
-    factor: 2.68,
-    factorSource: 'Diesel combustion, about 2.68 kgCO2 per litre (IPCC 2006 default basis)',
+    factor: 2.645,
+    factorSource: 'Diesel combustion, about 2.645 kgCO2 per litre (IPCC 2006 default basis)',
   },
 ];
 

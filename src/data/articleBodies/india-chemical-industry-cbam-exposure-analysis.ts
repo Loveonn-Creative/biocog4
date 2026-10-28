@@ -23,10 +23,10 @@ Fertiliser emissions are counted with their precursors. Ammonia made from natura
 | Step | Value |
 |---|---|
 | Electricity used by a urea unit | 12,000 MWh a year |
-| India grid factor (CEA v21.0, FY 2024-25) | 0.710 tCO2 per MWh |
-| Indirect emissions | 8,520 tCO2 |
+| India grid factor (CEA v22.0, FY 2025-26) | 0.675 tCO2 per MWh |
+| Indirect emissions | 8,100 tCO2 |
 | Urea output | 60,000 tonnes |
-| Indirect intensity added | 0.142 tCO2 per tonne |
+| Indirect intensity added | 0.135 tCO2 per tonne |
 
 Add direct process and combustion emissions, plus precursor ammonia, to get the full figure your EU buyer declares. Test the cost in the [CBAM cost calculator](/cbam-calculator).
 
@@ -69,5 +69,5 @@ Under the definitive rules, hydrogen counts direct emissions only; fertilisers a
 - [Implementing Regulation (EU) 2025/2621 (default values)](https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng)
 - [European Commission: CBAM definitive regime](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en)
 - [European Commission: price of CBAM certificates](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en)
-- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
+- [Central Electricity Authority: CO2 Baseline Database v22.0](https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en)
 - [IPCC AR5/AR6 global warming potentials](https://www.ipcc.ch/report/ar6/wg1/)`;

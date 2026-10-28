@@ -3,7 +3,7 @@ export default `The honest answer most carbon platforms will not give you: for a
 
 ## The math, in one paragraph
 
-Revenue per year ≈ (verified tonnes of CO2e reduced or removed) × (per-tonne clearing price in your registry) − (verification + registry + intermediary fees). For example, a small unit installing a 10 kW rooftop solar system displacing grid electricity in India (CEA grid factor 0.710 tCO2/MWh) might reduce roughly **10–14 tCO2/year**, depending on generation. Multiply that by the price small renewable credits actually clear at and the gross revenue is modest, *before* you subtract verification costs for a first issuance, which can easily exceed it.
+Revenue per year ≈ (verified tonnes of CO2e reduced or removed) × (per-tonne clearing price in your registry) − (verification + registry + intermediary fees). For example, a small unit installing a 10 kW rooftop solar system displacing grid electricity in India (CEA grid factor 0.675 tCO2/MWh) might reduce roughly **9–13 tCO2/year**, depending on generation. Multiply that by the price small renewable credits actually clear at and the gross revenue is modest, *before* you subtract verification costs for a first issuance, which can easily exceed it.
 
 This is why "stack into a programme" matters more than "list your project solo".
 

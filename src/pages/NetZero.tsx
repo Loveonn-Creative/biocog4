@@ -32,6 +32,7 @@ import {
 } from "@/lib/netZeroEngine";
 import { SummitTrail, CarbonBudget, BadgeShelf, PathwayChart, ScopeDonut, Burst } from "@/components/netzero/GameParts";
 import { AssumptionField } from "@/components/netzero/AssumptionField";
+import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from "@/lib/factors";
 
 const STEPS = [
   { id: 'baseline', label: 'Baseline' },
@@ -411,7 +412,7 @@ const NetZero = () => {
                     {feasibility && (
                       <p className="text-sm">
                         Baseline <span className="font-semibold tabular-nums">{formatCo2(feasibility.baselineCo2Kg)}</span> a year
-                        <span className="block text-xs text-muted-foreground mt-1">= 12 × ({monthlyKwh.toLocaleString('en-IN')} kWh × 0.710 kgCO2/kWh CEA grid factor + {monthlyDiesel.toLocaleString('en-IN')} L × 2.68 kgCO2/L diesel)</span>
+                        <span className="block text-xs text-muted-foreground mt-1">= 12 × ({monthlyKwh.toLocaleString('en-IN')} kWh × {INDIA_GRID_FACTOR_KG_PER_KWH.toFixed(3)} kgCO2/kWh CEA grid factor + {monthlyDiesel.toLocaleString('en-IN')} L × {FUEL_FACTORS.DIESEL.value} kgCO2/L diesel)</span>
                       </p>
                     )}
                     <button onClick={() => navigate('/')} className={backBtn}><Upload className="w-4 h-4 mr-1.5" />Upload Invoice</button>

@@ -7,7 +7,7 @@ import { useMotionGate } from "@/components/services/motion/kit";
 // What each channel would put on the feed. Illustrative events; the first
 // matches the worked invoice example used elsewhere on the page.
 const EVENTS: Record<string, string[]> = {
-  docs: ["Electricity bill read → Scope 2 · 2,982 kgCO2e · confidence 0.95", "Freight invoice read → Scope 3, Category 4"],
+  docs: ["Electricity bill read → Scope 2 · 2,835 kgCO2e · confidence 0.95", "Freight invoice read → Scope 3, Category 4"],
   bulk: ["Batch of 10 supplier invoices → 10 records, 1 duplicate caught by hash"],
   csv: ["Spend file imported → 312 lines classified to scope"],
   erp: ["Purchase orders synced → Category 1 updated for 18 suppliers"],

@@ -64,7 +64,7 @@ export const REGISTER_FUELS = (['DIESEL', 'LPG', 'PNG', 'CNG', 'PETROL', 'FURNAC
   factor: FUEL_FACTORS[k].value,
   source: FUEL_FACTORS[k].source,
 }));
-export const REGISTER_GRID = { label: 'Grid electricity', unit: 'kWh', factor: INDIA_GRID_FACTOR_KG_PER_KWH, source: 'CEA CO2 Baseline Database, India weighted average, FY 2024-25 (0.710)' };
+export const REGISTER_GRID = { label: 'Grid electricity', unit: 'kWh', factor: INDIA_GRID_FACTOR_KG_PER_KWH, source: 'CEA CO2 Baseline Database, India weighted average, FY 2025-26 (0.675)' };
 export const REGISTER_MONTHS = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'];
 
 const S = (by: Audience) => (label: string, example: string, hint?: string): TemplateField => ({ label, example, hint, by });
@@ -91,9 +91,9 @@ const docs: Omit<TemplateDoc, 'title' | 'description'>[] = [
         sup('Contact for questions', 'Plant manager, name and email'),
       ] },
       { name: 'Emissions', fields: [
-        sup('Scope 1: diesel', '4,200 litres × 2.68 = 11.26 t CO2', 'One line per fuel, with quantity, unit, factor and source'),
+        sup('Scope 1: diesel', '4,200 litres × 2.645 = 11.11 t CO2', 'One line per fuel, with quantity, unit, factor and source'),
         sup('Scope 1: LPG', '1,900 kg × 2.98 = 5.66 t CO2'),
-        sup('Scope 2: grid electricity', '312,000 kWh × 0.710 = 221.52 t CO2', 'CEA grid factor, with the database version'),
+        sup('Scope 2: grid electricity', '312,000 kWh × 0.675 = 210.60 t CO2', 'CEA grid factor, with the database version'),
         sup('Scope 3', 'Not asked', 'Leave blank unless the form asks; say so rather than guess'),
       ] },
       { name: 'Energy, water, waste', fields: [

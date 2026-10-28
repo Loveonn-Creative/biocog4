@@ -162,7 +162,7 @@ export function buildActions(values: AssumptionValues = {}): ReductionAction[] {
       note: 'Combustion CO2 only, at equal energy per km. Electric vehicles are assessed separately against the grid factor.' },
     { id: 'process-heat', title: 'Electrify low-temperature process heat with heat pumps', scope: 1, effort: 'high', applicableSectors: ['steel', 'chemical', 'auto', 'textile', 'pharma', 'agriculture'],
       formula: 'Scope 1 × heat share × (1 − (grid factor ÷ COP) ÷ (diesel CO2 per kWh ÷ boiler efficiency))', params: [heatShare, cop, C.grid, eff0], fraction: pct(heatShare.value) * Math.max(0, heatPumpFraction(cop.value, pct(eff0.value))),
-      note: 'Plain electric resistance heating would raise emissions on a 0.71 kg/kWh grid; only heat pumps with a COP above about 2 cut them (break-even COP = grid factor ÷ (diesel CO2 per kWh ÷ boiler efficiency)).' },
+      note: 'Plain electric resistance heating would raise emissions on a 0.675 kg/kWh grid; only heat pumps with a COP above about 1.9 cut them (break-even COP = grid factor ÷ (diesel CO2 per kWh ÷ boiler efficiency)).' },
     { id: 'local-sourcing', title: 'Shift to local/regional suppliers', scope: 3, effort: 'medium', applicableSectors: ['all'],
       formula: 'Scope 3 × freight share × shorter distance', params: [freightShare, distanceCut], fraction: pct(freightShare.value) * pct(distanceCut.value),
       note: 'Freight emissions scale with tonne-kilometres.' },

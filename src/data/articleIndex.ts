@@ -181,7 +181,7 @@ export const articleIndex: CMSArticleMeta[] = [
     slug: 'logistics-scope-1-emissions-india',
     title: 'Fleet and Logistics Scope 1 Emissions in India: How to Measure From Fuel Invoices',
     subtitle: 'Logistics Scope 1 Calculation in India',
-    excerpt: "A fleet's Scope 1 emissions are the fuel its own vehicles burn. Multiply litres of diesel from fuel invoices by an emission factor of about 2.68 kgCO2 per litre: a truck using 3,000 litres a month…",
+    excerpt: "A fleet's Scope 1 emissions are the fuel its own vehicles burn. Multiply litres of diesel from fuel invoices by an emission factor of about 2.645 kgCO2 per litre: a truck using 3,000 litres a month…",
 
     tags: ['logistics', 'Scope 1', 'fleet', 'diesel', 'India', 'GLEC'],
     category: 'logistics',
@@ -288,7 +288,7 @@ export const articleIndex: CMSArticleMeta[] = [
     slug: 'how-to-calculate-carbon-footprint-electricity-bills',
     title: 'How to Calculate a Carbon Footprint From Electricity Bills (With a Worked Example)',
     subtitle: 'Step-by-Step Scope 2 Calculation',
-    excerpt: "To turn an electricity bill into emissions, multiply the kWh billed by your country's grid emission factor. In India, the Central Electricity Authority's CO2 Baseline Database v21.0 gives 0.710 tCO2…",
+    excerpt: "To turn an electricity bill into emissions, multiply the kWh billed by your country's grid emission factor. In India, the Central Electricity Authority's CO2 Baseline Database v22.0 gives 0.675 tCO2…",
 
     tags: ['Scope 2', 'electricity', 'grid emission factor', 'India', 'CEA', 'carbon footprint'],
     category: 'manufacturing',

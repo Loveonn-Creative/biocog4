@@ -1,5 +1,5 @@
 // Article body (markdown subset). Metadata lives in ../articleIndex.ts.
-export default `A fleet's Scope 1 emissions are the fuel its own vehicles burn. Multiply litres of diesel from fuel invoices by an emission factor of about 2.68 kgCO2 per litre: a truck using 3,000 litres a month emits about 8 tonnes of CO2. Hired transport is Scope 3, not Scope 1.
+export default `A fleet's Scope 1 emissions are the fuel its own vehicles burn. Multiply litres of diesel from fuel invoices by an emission factor of about 2.645 kgCO2 per litre: a truck using 3,000 litres a month emits about 8 tonnes of CO2. Hired transport is Scope 3, not Scope 1.
 
 ## At a glance
 
@@ -7,8 +7,8 @@ export default `A fleet's Scope 1 emissions are the fuel its own vehicles burn. 
 |---|---|
 | Scope 1 for logistics | Fuel burned in vehicles you own or control |
 | Scope 3 for logistics | Freight carried by hired transporters (Categories 4 and 9) |
-| Diesel factor used here | 2.68 kgCO2 per litre (combustion only; check your chosen factor source) |
-| Example | 3,000 litres a month = 8.04 tCO2 |
+| Diesel factor used here | 2.645 kgCO2 per litre (combustion only; check your chosen factor source) |
+| Example | 3,000 litres a month = 7.94 tCO2 |
 | Framework for freight | GLEC Framework and ISO 14083 |
 
 ## The formula
@@ -19,16 +19,16 @@ Diesel factors from common sources fall in a narrow band of about 2.65 to 2.7 kg
 
 ## Worked example: a 5-truck fleet
 
-| Truck | Litres in the year | kgCO2 at 2.68 |
+| Truck | Litres in the year | kgCO2 at 2.645 |
 |---|---|---|
-| Truck 1 | 36,000 | 96,480 |
-| Truck 2 | 32,500 | 87,100 |
-| Truck 3 | 40,200 | 107,736 |
-| Truck 4 | 28,800 | 77,184 |
-| Truck 5 | 34,500 | 92,460 |
-| **Fleet** | **172,000** | **460,960 (≈ 461 t)** |
+| Truck 1 | 36,000 | 95,220 |
+| Truck 2 | 32,500 | 85,963 |
+| Truck 3 | 40,200 | 106,329 |
+| Truck 4 | 28,800 | 76,176 |
+| Truck 5 | 34,500 | 91,252 |
+| **Fleet** | **172,000** | **454,940 (≈ 455 t)** |
 
-If the fleet moved 9.2 million tonne-kilometres, intensity is about 50 gCO2 per tonne-kilometre. Compare routes and modes with the [freight emissions calculator](/calculators/logistics-emissions).
+If the fleet moved 9.2 million tonne-kilometres, intensity is about 49 gCO2 per tonne-kilometre. Compare routes and modes with the [freight emissions calculator](/calculators/logistics-emissions).
 
 ## Data that holds up in an audit
 

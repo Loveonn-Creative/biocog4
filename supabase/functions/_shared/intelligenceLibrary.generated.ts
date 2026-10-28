@@ -13,13 +13,13 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "fact",
   "title": "Senseible platform: Classifies lines by HSN/tax code first, then keyword match…",
-  "text": "Classifies lines by HSN/tax code first, then keyword match only when the unit agrees. Scope 1 (fuels), Scope 2 (grid electricity, India grid factor 0.710 kg CO2/kWh from the CEA CO2 Baseline Database version 21.0), Scope 3 lines go to a separate supplier evidence trail.",
+  "text": "Classifies lines by HSN/tax code first, then keyword match only when the unit agrees. Scope 1 (fuels), Scope 2 (grid electricity, India grid factor by the bill's financial year from the CEA CO2 Baseline Database: 0.675 kg CO2/kWh for FY 2025-26, version 22.0), Scope 3 lines go to a separate supplier evidence trail.",
   "url": null
  },
  {
   "kind": "fact",
   "title": "Senseible platform: Emissions = activity x published factor",
-  "text": "Emissions = activity x published factor. Fuel factors from IPCC 2006 defaults (diesel 2.68 kg/L, petrol 2.31 kg/L, LPG 2.98 kg/kg, PNG 2.05 kg/scm, furnace oil 2.97 kg/L, coal 2.42 kg/kg, kerosene 2.52 kg/L, naphtha 3.26 kg/kg, CNG 2.69 kg/kg). No factor, no figure.",
+  "text": "Emissions = activity x published factor. Fuel factors from IPCC 2006 defaults (diesel 2.645 kg/L, petrol 2.176 kg/L (IPCC carbon content at Indian density, PPAC), LPG 2.98 kg/kg, PNG 2.05 kg/scm, furnace oil 2.97 kg/L, coal 1.76 kg/kg Indian / 2.44 kg/kg imported, kerosene 2.52 kg/L, naphtha 3.26 kg/kg, CNG 2.69 kg/kg). No factor, no figure.",
   "url": null
  },
  {
@@ -19249,7 +19249,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "article",
   "title": "Fleet and Logistics Scope 1 Emissions in India: How to Measure From Fuel Invoices",
-  "text": "A fleet's Scope 1 emissions are the fuel its own vehicles burn. Multiply litres of diesel from fuel invoices by an emission factor of about 2.68 kgCO2 per litre: a truck using 3,000 litres a month… logistics, Scope 1, fleet, diesel, India, GLEC",
+  "text": "A fleet's Scope 1 emissions are the fuel its own vehicles burn. Multiply litres of diesel from fuel invoices by an emission factor of about 2.645 kgCO2 per litre: a truck using 3,000 litres a month… logistics, Scope 1, fleet, diesel, India, GLEC",
   "url": "https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india"
  },
  {
@@ -19303,7 +19303,7 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  {
   "kind": "article",
   "title": "How to Calculate a Carbon Footprint From Electricity Bills (With a Worked Example)",
-  "text": "To turn an electricity bill into emissions, multiply the kWh billed by your country's grid emission factor. In India, the Central Electricity Authority's CO2 Baseline Database v21.0 gives 0.710 tCO2… Scope 2, electricity, grid emission factor, India, CEA, carbon footprint",
+  "text": "To turn an electricity bill into emissions, multiply the kWh billed by your country's grid emission factor. In India, the Central Electricity Authority's CO2 Baseline Database v22.0 gives 0.675 tCO2… Scope 2, electricity, grid emission factor, India, CEA, carbon footprint",
   "url": "https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
  },
  {

@@ -10,7 +10,7 @@
 //   credits, validity, page counting: _shared/addonPurchases.ts
 //   GST and payment fee: _shared/checkoutTotals.ts
 //   Verify score: _shared/verifyGate.ts (starts at 100, passes at 80)
-//   grid factor: _shared/emissionFactors.ts (0.710, CEA CO2 Baseline Database v21.0)
+//   grid factor: _shared/emissionFactors.ts (0.675, CEA CO2 Baseline Database v22.0, FY 2025-26)
 //   data kept: src/data/legalContent.ts (Privacy Policy, section 9), as written
 //   refunds and cancelling: owner decision, October 2026
 //   features named on Pricing or in the terms but not in the product: owner
@@ -178,7 +178,7 @@ export const HELP_ARTICLES: HelpArticle[] = [
     q: 'How is my number worked out?',
     a: 'The quantity on your bill × a published emission factor.',
     visual: 'formula',
-    facts: [['Grid electricity, India', '0.710 kg CO₂ per kWh (CEA)']],
+    facts: [['Grid electricity, India', '0.675 kg CO₂ per kWh (CEA)']],
     steps: ['Every line shows the factor used, so you can check it.', 'No quantity on the bill means no figure. Gaps are never filled with guesses.'],
     keywords: ['calculate', 'calculation', 'formula', 'factor', 'emission factor', 'co2', 'carbon', 'how', 'number', 'wrong', 'grid'],
     pages: ['/dashboard', '/history', '/mrv-dashboard', '/reports'],

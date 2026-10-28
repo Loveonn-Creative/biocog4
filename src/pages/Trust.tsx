@@ -97,7 +97,7 @@ const countryIds = [
 const scope3Examples: Record<string, { headline: string; example: string; frameworks: string }> = {
   IN: {
     headline: "India: GSTIN-anchored supplier chain",
-    example: "A Tiruppur textile exporter pulls a yarn purchase invoice carrying the supplier's GSTIN. The line item is matched to the IEA 2023 India grid factor (0.708 kgCO₂e/kWh) for upstream electricity, and the supplier hash links it to a verified peer cluster.",
+    example: "A Tiruppur textile exporter pulls a yarn purchase invoice carrying the supplier's GSTIN. The line item is matched to the CEA FY 2025-26 India grid factor (0.675 kgCO₂/kWh) for upstream electricity, and the supplier hash links it to a verified peer cluster.",
     frameworks: "BRSR · CBAM · ISSB",
   },
   ID: {

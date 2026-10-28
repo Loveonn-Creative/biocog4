@@ -8,7 +8,7 @@ describe('carbon price stress test', () => {
   });
   test('emissions from bills x shared factors', () => {
     const e = annualEmissions({ kwhPerMonth: 1000, dieselLPerMonth: 100 });
-    expect(e.s2).toBeCloseTo(8.52, 6);
+    expect(e.s2).toBeCloseTo(8.1, 6);
     expect(e.s1).toBeCloseTo(3.174, 6);
   });
   test('cost = tonnes x price; INR only when a rate is entered', () => {

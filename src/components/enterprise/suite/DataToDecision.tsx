@@ -3,13 +3,13 @@ import { useScrollProgress, prefersReducedMotion } from "@/components/decarboniz
 import { useT } from "@/lib/i18n/useT";
 
 // Illustrative records only. The first two match the worked examples in
-// RecordTransform (CEA v21.0 grid factor, IPCC diesel basis).
+// RecordTransform (CEA v22.0 grid factor, IPCC diesel basis).
 const FRAGMENTS = [
-  { key: "bill", kind: "Electricity bill, Hindi", raw: "बिजली बिल · 4,200 यूनिट", src: "PDF", scope: "Scope 2", kg: "2,982", conf: "0.95", x: 2, y: 4, r: -6, edge: "hsl(var(--primary))" },
-  { key: "fuel", kind: "Fuel slip photo", raw: "HSD 120.00 L · 14-09-26", src: "Photo", scope: "Scope 1", kg: "322", conf: "0.81", x: 51, y: 0, r: 5, edge: "hsl(var(--accent))" },
+  { key: "bill", kind: "Electricity bill, Hindi", raw: "बिजली बिल · 4,200 यूनिट", src: "PDF", scope: "Scope 2", kg: "2,835", conf: "0.95", x: 2, y: 4, r: -6, edge: "hsl(var(--primary))" },
+  { key: "fuel", kind: "Fuel slip photo", raw: "HSD 120.00 L · 14-09-26", src: "Photo", scope: "Scope 1", kg: "317", conf: "0.81", x: 51, y: 0, r: 5, edge: "hsl(var(--accent))" },
   { key: "freight", kind: "Freight invoice", raw: "LR 0921 · 18 t · 640 km", src: "PDF", scope: "Scope 3 · Cat 4", kg: "1,210", conf: "0.88", x: 26, y: 28, r: -2, edge: "hsl(var(--success))" },
   { key: "erp", kind: "ERP export", raw: "PO_4471.xlsx · 312 lines", src: "ERP", scope: "Scope 3 · Cat 1", kg: "8,460", conf: "0.72", x: 51, y: 44, r: 7, edge: "hsl(var(--warning))" },
-  { key: "meter", kind: "Meter readings", raw: "ts,kwh · 2,880 rows", src: "CSV", scope: "Scope 2", kg: "932", conf: "0.98", x: 3, y: 54, r: 4, edge: "hsl(var(--primary))" },
+  { key: "meter", kind: "Meter readings", raw: "ts,kwh · 2,880 rows", src: "CSV", scope: "Scope 2", kg: "886", conf: "0.98", x: 3, y: 54, r: 4, edge: "hsl(var(--primary))" },
   { key: "spend", kind: "Long-tail supplier", raw: "Packaging · Rs 2.4 L", src: "Spend", scope: "Scope 3 · Cat 1", kg: "1,950", conf: "0.40", x: 30, y: 72, r: -5, edge: "hsl(var(--muted-foreground))" },
 ] as const;
 

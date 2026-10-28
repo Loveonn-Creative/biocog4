@@ -55,7 +55,7 @@ export const GRID_SERIES: GridYear[] = [
 export const GRID_MARGINS_2025_26 = { average: 0.675, om: 0.963, bm: 0.446, cm: 0.705 };
 
 /** The factor Senseible's calculator applies today (supabase/functions/_shared/emissionFactors.ts). */
-export const SENSEIBLE_GRID_FACTOR = { value: 0.710, fy: '2024-25' };
+export const SENSEIBLE_GRID_FACTOR = { value: 0.675, fy: '2025-26' };
 
 export const GRID_SOURCE: DataSource = CEA_V22;
 export const GRID_MARGIN_SOURCE: DataSource = { ...CEA_V22, where: 'Table S, page 1' };

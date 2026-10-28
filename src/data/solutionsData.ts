@@ -105,12 +105,12 @@ const rawSolutionPages: SolutionPage[] = [
     [{ item: 'Estimated CBAM cost, 2026 (BF-BOF, 2.1 tCO2/t, actual data)', value: '≈ €51 per tonne' }, { item: 'Same, using default value (+10% mark-up)', value: '≈ €68 per tonne' }, { item: 'Estimated cost, 2034 (no free allocation)', value: '≈ €173 per tonne' }, { item: 'Certificate price used', value: '€82.32 (Q3 2026, European Commission)' }],
     [{ question: 'What is the CBAM cost for steel exports from India in 2026?', answer: 'Certificates are owed on embedded emissions above the free-allocation adjustment (the EU benchmark × 97.5% in 2026). In our estimate, 1,000 tonnes of BF-BOF steel at 2.1 tCO2 per tonne and the Q3 2026 certificate price of €82.32 comes to about €51,000 for 2026 with verified actual data, or about €68,000 using a default value with its 10% mark-up. The EU importer pays; benchmarks used are indicative, so run the calculator with your own figures.' },
      { question: 'Do Indian steel MSMEs need to file CBAM reports?', answer: 'Yes. From 2026, EU importers must declare embedded emissions for all CBAM-covered steel products. Indian exporters need to provide verified emission intensity data per tonne of product.' },
-     { question: 'How can Senseible help with CBAM compliance for steel?', answer: 'Senseible calculates emission intensity from your invoices using India-specific grid factors (0.708 kgCO₂/kWh), generates CBAM-ready reports, and projects costs through 2034.' }],
+     { question: 'How can Senseible help with CBAM compliance for steel?', answer: 'Senseible calculates emission intensity from your invoices using India-specific grid factors (0.675 kgCO₂/kWh), generates CBAM-ready reports, and projects costs through 2034.' }],
     '/cbam-calculator', 'steel', ['cbam-steel-bangladesh', 'scope3-steel-india', 'cbam-chemicals-india'], 'cbam-compliance-indian-exporters'),
 
   sol('IN', 'India', 'textile', 'Textile & Apparel', 'cbam', 'CBAM Readiness', 'India exports $14B in textiles to the EU annually. While textiles are not yet CBAM-covered, CSRD supply chain requirements mean EU buyers increasingly demand emission data from Indian suppliers.', 'cbam-estimator',
     cbamSteps('India', 'textile'),
-    [{ item: 'Emission intensity (typical)', value: '3.2 kgCO₂/₹1000 revenue' }, { item: 'Grid factor (India)', value: '0.708 kgCO₂/kWh' }, { item: 'Compliance prep cost', value: '₹2-8 lakh' }],
+    [{ item: 'Emission intensity (typical)', value: '3.2 kgCO₂/₹1000 revenue' }, { item: 'Grid factor (India)', value: '0.675 kgCO₂/kWh' }, { item: 'Compliance prep cost', value: '₹2-8 lakh' }],
     [{ question: 'Are Indian textile exports covered under CBAM?', answer: 'Not directly in the current CBAM scope, but EU CSRD requires large importers to report Scope 3 emissions from their supply chain, which includes Indian textile suppliers.' },
      { question: 'Why should textile MSMEs prepare for carbon reporting now?', answer: 'EU buyers are already requesting emission data from suppliers. Early movers get preferred vendor status and access to green finance.' }],
     '/cbam-calculator', 'textile', ['scope3-textile-india', 'scope3-textile-bangladesh', 'green-finance-textile-india'], 'green-finance-textile-exporters-step-by-step'),
@@ -148,7 +148,7 @@ const rawSolutionPages: SolutionPage[] = [
 
   sol('IN', 'India', 'chemicals', 'Chemical SMEs', 'scope3', 'Scope 3 Reporting', 'Indian chemical manufacturers export $18B annually but cannot quantify supply chain emissions. Scope 3 Category 1 (purchased chemicals) dominates at 50-60% of total.', 'scope-estimator',
     scope3Steps('India', 'chemicals'),
-    [{ item: 'Scope 3 share', value: '50-60%' }, { item: 'Grid factor', value: '0.708 kgCO₂/kWh' }, { item: 'Key categories', value: 'Cat 1, Cat 4, Cat 12' }],
+    [{ item: 'Scope 3 share', value: '50-60%' }, { item: 'Grid factor', value: '0.675 kgCO₂/kWh' }, { item: 'Key categories', value: 'Cat 1, Cat 4, Cat 12' }],
     [{ question: 'How do chemical companies calculate Scope 3 in India?', answer: 'Upload raw material and logistics invoices. Senseible applies IPCC-aligned emission factors specific to Indian chemical manufacturing.' }],
     '/verify', 'chemical', ['cbam-chemicals-india', 'scope3-chemicals-indonesia'], 'manufacturing-scope-3-emissions-india'),
 
@@ -229,7 +229,7 @@ const rawSolutionPages: SolutionPage[] = [
 
   sol('PH', 'Philippines', 'logistics', 'Logistics & Shipping', 'carbon-audit', 'Fleet Carbon Audit', 'Philippine logistics companies need fleet emission data for ISO 14083 compliance and international shipping carbon reporting requirements.', 'audit-checklist',
     auditSteps('Philippines', 'logistics'),
-    [{ item: 'Fleet diesel benchmark', value: '2.68 kgCO₂/liter' }, { item: 'ISO standard', value: 'ISO 14083 (transport)' }, { item: 'Audit scope', value: 'Fleet + warehousing' }],
+    [{ item: 'Fleet diesel benchmark', value: '2.645 kgCO₂/liter' }, { item: 'ISO standard', value: 'ISO 14083 (transport)' }, { item: 'Audit scope', value: 'Fleet + warehousing' }],
     [{ question: 'How do logistics companies in the Philippines track carbon?', answer: 'Upload fuel purchase receipts and electricity bills. Senseible calculates fleet Scope 1 emissions and warehouse Scope 2 using Philippine grid factors.' }],
     '/verify', 'automobile', ['carbon-audit-logistics-vietnam', 'carbon-audit-manufacturing-philippines'], 'logistics-scope-1-emissions-india'),
 
@@ -452,14 +452,14 @@ const rawSolutionPages: SolutionPage[] = [
 
   sol('IN', 'India', 'logistics', 'Logistics & Transport', 'carbon-audit', 'Fleet Carbon Audit', 'Indian logistics sector contributes 13% of national emissions. E-way bill data combined with fuel invoices enables precise fleet emission measurement.', 'audit-checklist',
     auditSteps('India', 'logistics'),
-    [{ item: 'Sector share', value: '13% of national emissions' }, { item: 'Diesel benchmark', value: '2.68 kgCO₂/liter' }, { item: 'E-way bill integration', value: 'Available' }],
+    [{ item: 'Sector share', value: '13% of national emissions' }, { item: 'Diesel benchmark', value: '2.645 kgCO₂/liter' }, { item: 'E-way bill integration', value: 'Available' }],
     [{ question: 'How do Indian logistics companies measure fleet emissions?', answer: 'Upload diesel/petrol invoices and e-way bill data. Senseible calculates per-trip and per-km emission intensity using India-specific fuel factors.' }],
     '/verify', 'automobile', ['carbon-audit-logistics-philippines', 'carbon-audit-logistics-singapore'], 'logistics-scope-1-emissions-india'),
 
   sol('IN', 'India', 'food-processing', 'Food Processing', 'scope3', 'Scope 3 Calculator', 'India $50B food processing industry faces growing export compliance needs. Agricultural inputs, packaging, and cold chain logistics dominate Scope 3 emissions.', 'scope-estimator',
     scope3Steps('India', 'food processing'),
     [{ item: 'Industry size', value: '$50B and growing' }, { item: 'Scope 3 share', value: '65-75%' }, { item: 'Key categories', value: 'Agricultural inputs, logistics' }],
-    [{ question: 'How do Indian food processors calculate Scope 3?', answer: 'Agricultural raw material procurement, packaging, cold storage electricity, and distribution logistics are primary categories. India grid factor (0.708) applies to cold chain.' }],
+    [{ question: 'How do Indian food processors calculate Scope 3?', answer: 'Agricultural raw material procurement, packaging, cold storage electricity, and distribution logistics are primary categories. India grid factor (0.675) applies to cold chain.' }],
     '/verify', 'automobile', ['scope3-food-processing-thailand', 'scope3-food-processing-indonesia'], 'manufacturing-scope-3-emissions-india'),
 ];
 

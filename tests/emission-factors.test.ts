@@ -17,7 +17,7 @@ describe('fuel factors', () => {
     expect(FUEL_FACTORS.FURNACE_OIL).toMatchObject({ value: 2.97, unit: 'litre' });
     expect(FUEL_FACTORS.NAPHTHA).toMatchObject({ value: 3.26, unit: 'kg' });
     expect(FUEL_FACTORS.KEROSENE).toMatchObject({ value: 2.52, unit: 'litre' });
-    expect(INDIA_GRID_FACTOR_KG_PER_KWH).toBe(0.71);
+    expect(INDIA_GRID_FACTOR_KG_PER_KWH).toBe(0.675);
   });
 
   test('kerosene has its own factor, not diesel', () => {
@@ -100,7 +100,7 @@ describe('keyword classification', () => {
 describe('avoided emissions are separate', () => {
   test('green items return a non-negative avoided amount, not negative emissions', () => {
     const r = calculateEmissions(1000, 'kWh', 2, 'SOLAR_ENERGY');
-    expect(r).toMatchObject({ kind: 'avoided', avoidedCo2Kg: 710 });
+    expect(r).toMatchObject({ kind: 'avoided', avoidedCo2Kg: 675 });
     expect(r && 'co2Kg' in r).toBe(false);
   });
   test('totals keep gross and avoided apart; a positive gross stays positive', () => {

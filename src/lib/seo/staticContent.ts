@@ -13,6 +13,7 @@ import * as cci from '@/data/carbonCreditsIndia';
 import * as cbi from '@/data/cbamIndia';
 import * as sc from '@/data/softwareChooser';
 import * as icd from '@/data/indiaClimateData';
+import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
@@ -136,7 +137,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/india-climate-data': {
     h1: "A unit of India's grid power now carries 13% less CO2 than in FY 2013-14. Here is the data.",
     blocks: [
-      { p: `Official figures on India's power sector, carbon market and EU CBAM exposure, each with a free CSV. Updated ${icd.DATA_UPDATED}. Senseible's calculator uses ${icd.SENSEIBLE_GRID_FACTOR.value.toFixed(3)} t CO2 per MWh, the FY ${icd.SENSEIBLE_GRID_FACTOR.fy} figure, while the switch to FY 2025-26 is reviewed.` },
+      { p: `Official figures on India's power sector, carbon market and EU CBAM exposure, each with a free CSV. Updated ${icd.DATA_UPDATED}. Senseible's calculator uses ${icd.SENSEIBLE_GRID_FACTOR.value.toFixed(3)} t CO2 per MWh, the FY ${icd.SENSEIBLE_GRID_FACTOR.fy} figure.` },
       { h2: 'Grid emission factor, power-sector CO2 and generation' },
       { table: { head: ['Financial year', 'Grid factor (t CO2/MWh)', 'Total CO2 (Mt)', 'Renewable generation (BU)', 'Total net generation (BU)'], rows: icd.GRID_SERIES.map(y => [y.fy, y.factor.toFixed(3), String(y.co2Mt), String(y.reBU), String(y.totalBU)]) } },
       { p: `FY 2025-26 margins: weighted average ${icd.GRID_MARGINS_2025_26.average}, simple operating margin ${icd.GRID_MARGINS_2025_26.om}, build margin ${icd.GRID_MARGINS_2025_26.bm}, combined margin ${icd.GRID_MARGINS_2025_26.cm}. From FY 2022-23 figures are adjusted for cross-border transfers and include captive injection. Source: [${icd.GRID_SOURCE.label}](${icd.GRID_SOURCE.url}), ${icd.GRID_SOURCE.where}.` },
@@ -274,7 +275,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/calculators/electricity-bill-carbon': {
     h1: 'Your electricity bill, in kilograms of CO2.',
     blocks: [
-      { p: 'Type the units (kWh) printed on your electricity bill, for one bill or twelve months, and get kg CO2 at the CEA grid factor Senseible uses in its calculations: 0.71 kg CO2 per kWh.' },
+      { p: `Type the units (kWh) printed on your electricity bill, for one bill or twelve months, and get kg CO2 at the CEA grid factor Senseible uses in its calculations: ${INDIA_GRID_FACTOR_KG_PER_KWH.toFixed(3)} kg CO2 per kWh.` },
       { p: 'Use the kWh line, not kVAh: kVAh includes reactive power and is always higher. Grid electricity is Scope 2; this is the location-based figure.' },
       { p: '[All calculators](/calculators) · [Fuel to CO2](/calculators/fuel-carbon) · [Upload a bill](/)' },
     ],
@@ -312,7 +313,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
     blocks: [
       { p: 'If a buyer, a large customer or a bank has asked for your carbon footprint, type the monthly units from your electricity bill and any diesel you use. You see an estimated annual figure in tonnes of CO₂ straight away, what the person asking usually needs, and a short reply you can send. No sign-up.' },
       { h2: 'How the estimate is worked out' },
-      { p: 'Annual emissions = monthly kWh × 12 × 0.710 kg CO₂ per kWh (India grid average used by Senseible) + monthly diesel litres × 12 × 2.68 kg CO₂ per litre. It is an estimate from typed numbers; a Senseible record built from the bills shows the factor and source for every line.' },
+      { p: `Annual emissions = monthly kWh × 12 × ${INDIA_GRID_FACTOR_KG_PER_KWH.toFixed(3)} kg CO₂ per kWh (India grid average used by Senseible) + monthly diesel litres × 12 × ${FUEL_FACTORS.DIESEL.value} kg CO₂ per litre. It is an estimate from typed numbers; a Senseible record built from the bills shows the factor and source for every line.` },
       { h2: 'Questions' },
       ...MSME_CARBON_FAQS.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
     ] as Block[],

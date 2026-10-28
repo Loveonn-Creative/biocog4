@@ -1,4 +1,4 @@
-import { INDIA_GRID_FACTOR_KG_PER_KWH, INDIA_GRID_FACTOR_SOURCE } from "../../supabase/functions/_shared/emissionFactors";
+import { gridFactorFor } from "../../supabase/functions/_shared/emissionFactors";
 
 // Sample bill run: the whole journey (read, result, verify, certificate) on one
 // fictional electricity bill. It runs in the browser from this stored result:
@@ -7,14 +7,17 @@ import { INDIA_GRID_FACTOR_KG_PER_KWH, INDIA_GRID_FACTOR_SOURCE } from "../../su
 export const SAMPLE_BILL_ENABLED = import.meta.env.VITE_SAMPLE_BILL !== "off";
 
 export const SAMPLE_COMPANY = "Sample Castings Pvt Ltd";
+const BILL_DATE = "2026-09-30";
+// The CEA factor for the bill's financial year, as a real upload would get.
+const GRID = gridFactorFor(BILL_DATE);
 const KWH = 12_400;
-const KG = Math.round(KWH * INDIA_GRID_FACTOR_KG_PER_KWH);
+const KG = Math.round(KWH * GRID.value);
 
 /** Shaped exactly like a real reader result, so the real result screen shows it. */
 export const SAMPLE_BILL_RESULT = {
   documentType: "electricity_bill",
   vendor: "Sample Power Distribution Co.",
-  date: "2026-09-30",
+  date: BILL_DATE,
   amount: 118_400,
   currency: "INR",
   emissionCategory: "electricity",
@@ -32,8 +35,8 @@ export const SAMPLE_BILL_RESULT = {
       unit: "kWh",
       scope: 2,
       co2Kg: KG,
-      emissionFactor: INDIA_GRID_FACTOR_KG_PER_KWH,
-      factorSource: INDIA_GRID_FACTOR_SOURCE,
+      emissionFactor: GRID.value,
+      factorSource: GRID.source,
       classificationMethod: "KEYWORD" as const,
       guidance: { status: "counted" as const, need: null, nextStep: null },
     },
@@ -42,4 +45,4 @@ export const SAMPLE_BILL_RESULT = {
   guidance: { counted: 1, needsData: 0, notCovered: 0, unclassified: 0, nextStep: null, billCharges: 1 },
 };
 
-export const SAMPLE_BILL = { kwh: KWH, kg: KG, factor: INDIA_GRID_FACTOR_KG_PER_KWH, periodLabel: "1 Sep to 30 Sep 2026" };
+export const SAMPLE_BILL = { kwh: KWH, kg: KG, factor: GRID.value, periodLabel: "1 Sep to 30 Sep 2026" };

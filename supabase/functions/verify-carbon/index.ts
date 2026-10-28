@@ -4,7 +4,7 @@ import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { creditValuation, CREDIT_VALUE_WITHHELD } from "../_shared/carbonValue.ts";
 import { activityDate, fiscalPeriod } from "../_shared/invoiceDate.ts";
-import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
+import { INDIA_GRID_BY_FY, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
 import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
 import { calculateGreenwashingRisk, evidenceGaps, previewVerification, replayGate, validateEmission, type EmissionRecord } from "../_shared/verifyGate.ts";
 import { versionProbe } from "../_shared/versionProbe.ts";
@@ -24,7 +24,10 @@ const METHODOLOGY = {
   version: METHODOLOGY_VERSION_TAG,
   country: 'IN',
   factorVersion: FACTOR_SET_VERSION,
-  gridFactor: INDIA_GRID_FACTOR_KG_PER_KWH,
+  // Pinned to the value this label has always carried (FY 2024-25) so stored
+  // verification metadata is unchanged when the website's display constant
+  // moves; records themselves use the factor for the bill's year (gridFactorFor).
+  gridFactor: INDIA_GRID_BY_FY.FY2024_25.value,
 } as const;
 
 // Industry benchmarks (kgCO₂e per INR of revenue)

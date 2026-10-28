@@ -4,6 +4,8 @@
  * Method: Hybrid spend-based (EEIO) with activity-based override
  */
 
+import { INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
+
 export type DataSource = 'activity' | 'spend' | 'industry-avg';
 export type ConfidenceBand = 'high' | 'medium' | 'low';
 export type SupplierTier = 1 | 2 | 3;
@@ -26,7 +28,7 @@ export const SPEND_EF_BY_SECTOR: Record<string, { name: string; kgCO2ePerUSD: nu
 
 // Country risk multiplier — proxy for grid carbon intensity & disclosure maturity
 export const COUNTRY_RISK: Record<string, { name: string; gridIntensity: number; riskScore: number }> = {
-  IN: { name: 'India',          gridIntensity: 0.708, riskScore: 70 },
+  IN: { name: 'India',          gridIntensity: INDIA_GRID_FACTOR_KG_PER_KWH, riskScore: 70 },
   CN: { name: 'China',          gridIntensity: 0.555, riskScore: 65 },
   VN: { name: 'Vietnam',        gridIntensity: 0.681, riskScore: 75 },
   ID: { name: 'Indonesia',      gridIntensity: 0.760, riskScore: 80 },

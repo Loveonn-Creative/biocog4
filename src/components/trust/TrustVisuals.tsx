@@ -13,7 +13,7 @@ export interface TrustLayer { name: string; desc: string }
 
 const SEAL_MARKS = ["M15 24 l6 6 l12 -13", "M14 23 h18 M23 14 v18", "M14 30 l6 -8 l5 4 l8 -11", "M15 16 h16 M15 23 h16 M15 30 h10"];
 const ORIGINAL_UNITS = "1240";
-const billText = (units: string) => `Sample electricity bill|units_kwh=${units}|factor=0.710`;
+const billText = (units: string) => `Sample electricity bill|units_kwh=${units}|factor=0.675`;
 
 async function sha256Hex(text: string): Promise<string> {
   if (typeof crypto === "undefined" || !crypto.subtle) return "";
@@ -50,8 +50,8 @@ export function SealChain({ layers }: { layers: TrustLayer[] }) {
             <input id="tr-units" inputMode="decimal" value={units} onChange={(e) => setUnits(e.target.value)}
               className="w-28 rounded-md border border-dashed border-border bg-background px-2 py-1 text-right font-mono text-sm" />
           </div>
-          <div className="mt-2 flex justify-between gap-3 text-sm"><span>Grid factor (kg/kWh)</span><span className="font-mono">0.710</span></div>
-          <div className="mt-2 flex justify-between gap-3 text-sm font-medium"><span>Emissions</span><span className="font-mono">{Number.isFinite(n) ? (n * 0.71).toLocaleString("en-IN", { maximumFractionDigits: 1 }) : "-"} kg</span></div>
+          <div className="mt-2 flex justify-between gap-3 text-sm"><span>Grid factor (kg/kWh)</span><span className="font-mono">0.675</span></div>
+          <div className="mt-2 flex justify-between gap-3 text-sm font-medium"><span>Emissions</span><span className="font-mono">{Number.isFinite(n) ? (n * 0.675).toLocaleString("en-IN", { maximumFractionDigits: 1 }) : "-"} kg</span></div>
           <div className="mt-4 border-t border-border pt-3 font-mono text-[11px] leading-relaxed text-muted-foreground break-all">
             <span className="block font-sans text-xs text-foreground/80">SHA-256 at upload</span>{original || "..."}
             <span className="mt-2 block font-sans text-xs text-foreground/80">SHA-256 now</span>

@@ -28,7 +28,7 @@ export const trustSafeguards: TrustSafeguard[] = [
     title: 'Proof graph: every number traced to its source',
     summary: 'Every figure can be followed from the source document through the line item, emission factor and scope classification to the CO2e result, with the factor source and methodology version shown at each step.',
     points: [
-      'Example: 1,200 litres of diesel × 2.68 kgCO2e per litre = 3,216 kgCO2e, classified as Scope 1 direct combustion.',
+      'Example: 1,200 litres of diesel × 2.645 kgCO2e per litre = 3,174 kgCO2e, classified as Scope 1 direct combustion.',
       'The same documents and methodology version reproduce the same number later.',
       'Auditors and buyers can check provenance without asking for the underlying spreadsheets.',
     ],

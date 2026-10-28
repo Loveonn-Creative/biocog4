@@ -3,7 +3,7 @@ export default `Tamil Nadu hosts a large share of India's MSMEs and a large shar
 
 ## The grid advantage
 
-CEA publishes a single national grid emission factor (0.710 kgCO2/kWh in CO2 Baseline Database v21.0, FY 2024-25), so use it for location-based Scope 2 even though Tamil Nadu has a large share of renewable generation. For MSMEs in Coimbatore, Tirupur and Chennai, the state's renewable resources make captive and rooftop solar worth evaluating.
+CEA publishes a single national grid emission factor (0.675 kgCO2/kWh in CO2 Baseline Database v22.0, FY 2025-26), so use it for location-based Scope 2 even though Tamil Nadu has a large share of renewable generation. For MSMEs in Coimbatore, Tirupur and Chennai, the state's renewable resources make captive and rooftop solar worth evaluating.
 
 ## State-specific schemes
 

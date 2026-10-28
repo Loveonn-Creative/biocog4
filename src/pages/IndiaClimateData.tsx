@@ -439,7 +439,7 @@ export default function IndiaClimateData() {
           <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-balance md:text-5xl">A unit of India's grid power now carries {Math.round((1 - GRID_SERIES[GRID_SERIES.length - 1].factor / GRID_SERIES[0].factor) * 100)}% less CO2 than in FY 2013‑14. Here is the data.</h1>
           <div className="mt-10"><HeroChart /></div>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-            CEA's weighted average including renewables. FY 2025-26 margins: operating {GRID_MARGINS_2025_26.om}, build {GRID_MARGINS_2025_26.bm}, combined {GRID_MARGINS_2025_26.cm}. Senseible's calculator still uses {SENSEIBLE_GRID_FACTOR.value.toFixed(3)}, the FY {SENSEIBLE_GRID_FACTOR.fy} figure, while the switch is reviewed.
+            CEA's weighted average including renewables. FY 2025-26 margins: operating {GRID_MARGINS_2025_26.om}, build {GRID_MARGINS_2025_26.bm}, combined {GRID_MARGINS_2025_26.cm}. Senseible's calculator uses {SENSEIBLE_GRID_FACTOR.value.toFixed(3)}, the FY {SENSEIBLE_GRID_FACTOR.fy} figure.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <button type="button" onClick={() => downloadCsv('grid-emission-factor')} className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground hover:opacity-90"><Download className="h-4 w-4" aria-hidden="true" />Download the series</button>

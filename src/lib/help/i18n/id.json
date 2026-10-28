@@ -49,7 +49,7 @@
     "quantity": "Jumlah di tagihan Anda",
     "factor": "Faktor emisi",
     "result": "kg CO₂",
-    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "formulaExample": "1,000 kWh × 0.675 = 675 kg CO₂",
     "scoreStart": "Mulai dari 100",
     "scorePass": "Lulus di 80",
     "scoreGaps": "Kekurangan mengurangi poin",
@@ -130,7 +130,7 @@
     "how-is-my-number-worked-out": {
       "q": "Bagaimana angka saya dihitung?",
       "a": "Jumlah di tagihan Anda × faktor emisi yang dipublikasikan.",
-      "facts": [["Listrik jaringan, India", "0.710 kg CO₂ per kWh (CEA)"]],
+      "facts": [["Listrik jaringan, India", "0.675 kg CO₂ per kWh (CEA)"]],
       "steps": ["Setiap baris menampilkan faktor yang dipakai, jadi Anda bisa memeriksanya.", "Tanpa jumlah di tagihan, tidak ada angka. Kekosongan tidak pernah diisi dengan tebakan."],
       "keywords": ["hitung", "rumus", "karbon", "emisi"]
     },

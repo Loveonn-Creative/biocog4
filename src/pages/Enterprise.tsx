@@ -311,10 +311,10 @@ const Enterprise = () => {
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <ol className="relative border-l border-foreground/20 pl-5 space-y-5">
             {[
-              { k: t("ent.trail.figure", "Reported figure"), v: "2,982 kgCO2e", s: "live" as const },
+              { k: t("ent.trail.figure", "Reported figure"), v: "2,835 kgCO2e", s: "live" as const },
               { k: t("ent.trail.document", "Source document"), v: "sha256 9f2c…a71e", s: "live" as const },
-              { k: t("ent.trail.factor", "Factor"), v: "0.710 kgCO2/kWh, CEA v21.0", s: "live" as const },
-              { k: t("ent.trail.method", "Method version"), v: "BIOCOG_MVR_INDIA_v1.0", s: "live" as const },
+              { k: t("ent.trail.factor", "Factor"), v: "0.675 kgCO2/kWh, CEA v22.0", s: "live" as const },
+              { k: t("ent.trail.method", "Method version"), v: "BIOCOG_MVR_INDIA_v1.2", s: "live" as const },
               { k: t("ent.trail.confidence", "Confidence"), v: "0.95 (CONF_v1.0)", s: "live" as const },
               { k: t("ent.trail.reviewer", "Reviewer"), v: t("ent.trail.reviewer.v", "Named sign-off"), s: "custom" as const },
             ].map(row => (
@@ -344,10 +344,10 @@ webhook  record.verified
 {
   "supplier_id": "sup_…",
   "scope": 2,
-  "co2e_kg": 2982,
+  "co2e_kg": 2835,
   "confidence": 0.95,
   "source_sha256": "9f2c…a71e",
-  "method": "BIOCOG_MVR_INDIA_v1.0"
+  "method": "BIOCOG_MVR_INDIA_v1.2"
 }`}</pre>
           </div>
           <div>
