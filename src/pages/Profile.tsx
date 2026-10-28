@@ -352,17 +352,22 @@ const Profile = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2 min-w-0">
-                  <Label>Business</Label>
-                  <p className={`text-sm break-words ${business.name ? '' : 'text-muted-foreground'}`}>{business.name || 'Not added'}</p>
+              {/* Read-only here: business name and GSTIN are edited only in Settings. */}
+              <div className="rounded-md border bg-muted/30 p-3 space-y-3">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2 min-w-0">
+                    <Label>Business</Label>
+                    <p className={`text-sm break-words ${business.name ? '' : 'text-muted-foreground'}`}>{business.name || 'Not added'}</p>
+                  </div>
+                  <div className="space-y-2 min-w-0">
+                    <Label>GSTIN</Label>
+                    <p className={`text-sm break-all ${business.gstin ? 'font-mono' : 'text-muted-foreground'}`}>{business.gstin || 'Not added'}</p>
+                  </div>
                 </div>
-                <div className="space-y-2 min-w-0">
-                  <Label>GSTIN</Label>
-                  <p className={`text-sm break-all ${business.gstin ? 'font-mono' : 'text-muted-foreground'}`}>{business.gstin || 'Not added'}</p>
+                <div className="flex justify-end">
+                  <Link to="/settings#company-profile" className="text-sm text-primary underline-offset-4 hover:underline">Edit in Settings</Link>
                 </div>
               </div>
-              <Link to="/settings#company-profile" className="inline-block text-sm text-primary underline-offset-4 hover:underline">Edit in Settings</Link>
 
               <Separator />
 
