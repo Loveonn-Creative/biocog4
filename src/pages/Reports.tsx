@@ -787,14 +787,14 @@ const Reports = () => {
                       <div>
                         <span>Gov-Ready Export</span>
                         <p className="text-sm font-normal text-muted-foreground mt-1">
-                          Auto-formatted MRV outputs for government registries
+                          Verified records, laid out for GCP, BRSR and CCTS
                         </p>
                       </div>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Export compliance ledger data mapped to government-required fields with evidence hashes, geo-tags (from GSTIN), and verification timestamps.
+                      Each compliance ledger carries its invoice fingerprint, supplier state (from GSTIN) and verification date. Use it to prepare your filing.
                     </p>
                     <div className="grid grid-cols-3 gap-3">
                       <Button
