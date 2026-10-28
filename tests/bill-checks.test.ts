@@ -90,6 +90,11 @@ describe('GSTIN checks', () => {
     expect(check(base({ accountGstin: null }), 'billed_to_you').result).toBe('not_checked');
     expect(check(base({ buyerGstin: null }), 'billed_to_you').result).toBe('not_checked');
   });
+  test('billed to you: another state registration of the same business passes; a misread GSTIN is not judged', () => {
+    const sameBusinessOtherState = '27AAACC1206D1Z' + gstinCheckChar('27AAACC1206D1Z');
+    expect(check(base({ buyerGstin: sameBusinessOtherState, accountGstin: VALID_2 }), 'billed_to_you').result).toBe('pass');
+    expect(check(base({ buyerGstin: '24AAACC1206D1ZN', accountGstin: VALID_2 }), 'billed_to_you').result).toBe('not_checked');
+  });
 });
 
 describe('totals add up', () => {

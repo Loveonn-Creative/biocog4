@@ -173,9 +173,15 @@ function billedToYou(buyer: unknown, account: string | null): BillCheck {
   const a = account ? normalizeGstinInput(account) : '';
   if (!b) return { id, label, result: 'not_checked', detail: 'No buyer GSTIN was read on this bill' };
   if (!a) return { id, label, result: 'not_checked', detail: 'No GSTIN is saved for this workspace' };
-  return b === a
-    ? { id, label, result: 'pass', detail: 'The buyer GSTIN matches the GSTIN saved for this workspace' }
-    : { id, label, result: 'flag', detail: 'The buyer GSTIN differs from the GSTIN saved for this workspace' };
+  // A misread or malformed GSTIN proves nothing either way.
+  if (gstinFault(b) || gstinFault(a)) return { id, label, result: 'not_checked', detail: 'A GSTIN could not be read reliably' };
+  if (b === a) return { id, label, result: 'pass', detail: 'The buyer GSTIN matches the GSTIN saved for this workspace' };
+  // Characters 3 to 12 are the PAN: the same business registered in another
+  // state (a branch or plant) is still this business.
+  if (b.slice(2, 12) === a.slice(2, 12)) return { id, label, result: 'pass', detail: 'The buyer GSTIN is another state registration of the same business (same PAN)' };
+  // Purchase bills can carry several GSTINs (buyer, ship-to, transporter), so
+  // a different one is a review point, never proof the bill is not yours.
+  return { id, label, result: 'flag', detail: 'The GSTIN read as buyer belongs to a different business; it may be a ship-to or other party on the bill' };
 }
 
 /** subtotal + tax against the total, within ₹1 or 0.5% of the total, whichever is larger. */
