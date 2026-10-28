@@ -620,3 +620,56 @@ describe('new Gemini secret name', () => {
     }
   });
 });
+
+describe('bill checks: stored evidence only', () => {
+  const withoutEvidence = (c: Row) => { const { evidence: _x, ...rest } = c; return rest; };
+
+  test('the reply is unchanged; the stored copy adds only cached_result.evidence', async () => {
+    db.profiles = [{ id: USERS['token-a'], gstin: '24AAACC1206D1ZM' }];
+    ocr = { ...diesel('1,250'), buyerGstin: '24AAACC1206D1ZM', subtotal: '3,975', taxAmount: '715' };
+    const r = await upload('ev-a');
+    expect(r.body.data.evidence).toBeUndefined();
+    const stored = db.documents[0].cached_result;
+    expect(JSON.stringify(withoutEvidence(stored))).toBe(JSON.stringify(r.body.data));
+    expect(db.documents[0].confidence).toBe(r.body.data.confidence);
+    const ev = stored.evidence;
+    expect(ev.version).toBe(1);
+    expect(ev.checks).toHaveLength(10);
+    const result = Object.fromEntries(ev.checks.map((c: Row) => [c.id, c.result]));
+    expect(result).toMatchObject({ supplier_gstin_valid: 'pass', buyer_gstin_valid: 'pass', billed_to_you: 'pass', totals_add_up: 'pass', old_bill: 'pass', electricity_period_overlap: 'not_checked', supplier_jump: 'not_checked', duplicates: 'pass' });
+    expect(JSON.stringify(ev)).not.toContain('24AAACC1206D1ZM');
+    expect(ev.confidenceReasons.reduce((s: number, x: Row) => s + x.points, 100)).toBe(stored.confidence);
+    // The emission row is as before, plus the factor citation in its notes.
+    expect(db.emissions[0]).toMatchObject({ activity_data: 1250, activity_unit: 'litre' });
+    expect(JSON.parse(db.emissions[0].verification_notes).factorCitation).toBe('BIOCOG_MVR_INDIA v1.0 (unchanged)');
+  });
+
+  test('the same file again replies with the stored result, without the evidence', async () => {
+    ocr = diesel('50');
+    await upload('ev-b');
+    expect(db.documents[0].cached_result.evidence).toBeDefined();
+    const r = await upload('ev-b');
+    expect(r.body.isDuplicate).toBe(true);
+    expect(r.body.data.evidence).toBeUndefined();
+  });
+
+  test('an overlapping electricity bill from the same supplier is flagged with the earlier document id', async () => {
+    const bill = (start: string, end: string, units: number) => ({
+      documentType: 'Electricity Bill', vendor: 'MSEDCL', supplierGstin: '27AAECM2933K1ZB', date: '2026-09-05', currency: 'INR', amount: '38,700',
+      billingPeriodStart: start, billingPeriodEnd: end, tariffCategory: 'LT-II Commercial',
+      unitsConsumedKwh: units, unitsConsumedUnit: 'kWh', unitsConsumedText: `Units Consumed: ${units} kWh`,
+      lineItems: [{ description: 'Units consumed', hsn_code: '2716', quantity: units, unit: 'kWh' }],
+    });
+    ocr = bill('2026-08-01', '2026-08-31', 4200);
+    await upload('ov-1');
+    ocr = bill('2026-08-15', '2026-09-14', 4300);
+    const r = await upload('ov-2');
+    expect(r.body.isDuplicate).toBeUndefined();
+    expect(db.emissions).toHaveLength(2);
+    const checks = db.documents[1].cached_result.evidence.checks;
+    const overlap = checks.find((c: Row) => c.id === 'electricity_period_overlap');
+    expect(overlap.result).toBe('flag');
+    expect(overlap.detail).toContain(db.documents[0].id);
+    expect(checks.find((c: Row) => c.id === 'line_prices').result).toBe('not_checked');
+  });
+});

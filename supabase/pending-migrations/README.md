@@ -424,3 +424,51 @@ Only the `report-allowance` edge function (service role) calls it. When the func
 Tested with `tests/run_report_downloads.sh`. It replays every migration and proves this file both without `intelligence_usage` (applies twice, rolls back to the identical catalog) and with it (widens the check, rolls back to the identical catalog and original check, re-applies, runs `tests/20261112100000_report_downloads.test.sql`: first download counted, repeats not counted, Excel and certificate counted apart, refused downloads not stored, new month, per account, malformed keys refused, purge, account deletion, no browser or anonymous access), then checks the rollback refuses while `report_download` counts exist and restores the identical catalog once they are deleted.
 
 Roll back with `rollback/20261112100000_report_downloads.rollback.sql`. It refuses while `report_download` counts exist; delete them first with `DELETE FROM public.intelligence_usage WHERE kind = 'report_download';`. After rollback every download is allowed.
+
+## 20261113100000_evidence_lock.sql (evidence lock and change history)
+
+Add-only. No existing row, policy or function body changes; edge functions using the service role work exactly as today.
+
+- **Evidence lock.** A `BEFORE UPDATE` trigger on `documents` refuses (error `42501`) any change from a browser session (anon or signed-in JWT) to `cached_result`, `document_hash`, `invoice_date`, `invoice_number`, `vendor`, `amount`, `currency`, `confidence`, `file_url` or `document_type`. No browser code updates documents. Service role and direct database sessions pass through `is_trusted_db_writer()`. Inserts and deletes are untouched.
+- **Change history.** `record_events` gets one row per UPDATE or DELETE on `documents` and `emissions`, listing only the fields that changed. Business fields keep old and new values (documents: vendor, invoice_number, invoice_date, amount, currency, confidence, document_type, document_hash, file_url; emissions: activity_data, activity_unit, emission_factor, co2_kg, verified, category, scope, verification_notes). For `cached_result` the previous read is kept in `old_values` (the new read stays on the row), so reading an invoice again never erases the earlier read. A delete keeps every business field, including `cached_result`, plus `document_id` for emissions. Other columns (user_id, session_id, raw_ocr_data and so on) are logged by name only; a column added later shows as `(other)` until the trigger lists it. Updates that change nothing write no row. `actor_kind` is `user` with `actor_id = auth.uid()` for a signed-in session, otherwise `system`; `reason` is `current_setting('app.change_reason', true)`, which server code can set before a write. Nothing from `financial_documents` is logged.
+- **Server only and append-only.** RLS on, no policies, all privileges revoked from anon and authenticated. A trigger refuses UPDATE, DELETE and TRUNCATE for every role, the owner included. Only the rollback removes rows, by dropping the table.
+- **Helper.** Reuses `is_trusted_db_writer()` from `20261011120000_protect_privileged_columns`. If it is missing, this file creates it with the identical definition and a comment marking it as its own; either order works. Do not run the `20261011120000` rollback while this is live: it drops the helper, and every documents update, service role included, would then fail.
+- **Write overhead (measured locally, 5,000-row updates).** Emissions: about 20 µs more per updated row. Documents with a 4 KB `cached_result`: about 75 µs more per updated row, and roughly 0.5 KB of history per row (the earlier read, compressed). Inserts cost nothing extra. Each trigger compares columns and does one insert; it reads no table.
+- **Known today, unchanged:** the replayed schema has no DELETE policy on `documents`, so the Dashboard's guest "reset" removes no documents under RLS; server deletes (delete-document, guest purge) do. The tests prove a guest delete passes the triggers and is logged when a delete policy allows it.
+
+**Before applying, check the live database (read-only, changes nothing):**
+
+```sql
+SELECT 'is_trusted_db_writer' AS item,
+       CASE WHEN to_regprocedure('public.is_trusted_db_writer()') IS NULL THEN 'missing' ELSE 'present' END AS detail
+UNION ALL
+SELECT 'record_events', CASE WHEN to_regclass('public.record_events') IS NULL THEN 'missing' ELSE 'present' END
+UNION ALL
+SELECT 'trigger ' || c.relname, t.tgname || CASE WHEN t.tgenabled = 'D' THEN ' (disabled)' ELSE '' END
+FROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE n.nspname = 'public' AND c.relname IN ('documents', 'emissions', 'profiles') AND NOT t.tgisinternal
+UNION ALL
+SELECT 'policy ' || tablename, policyname || ' (' || cmd || ' to ' || array_to_string(roles, ',') || ')'
+FROM pg_policies
+WHERE schemaname = 'public' AND tablename IN ('documents', 'emissions')
+ORDER BY 1, 2;
+```
+
+**Apply order**
+1. Run the check above. `record_events` should be missing; note whether `is_trusted_db_writer` and the emission guard triggers (`protect_emissions_verification_columns`, `guard_emissions_browser_writes`) are present.
+2. Apply this file once. It is safe to run again. `20261011120000` and `20261022100000` may be applied before or after it.
+3. Run the check again: `lock_documents_evidence`, `log_documents_change`, `log_emissions_change` and `record_events` should be present. Then upload one invoice signed in and verify it (core-flow runbook); `SELECT table_name, action, changed_fields, actor_kind, created_at FROM public.record_events ORDER BY id DESC LIMIT 5;` should show the verification as an emissions update.
+
+No edge function or website change ships with it.
+
+Tested with `tests/run_evidence_lock.sh`. It replays every migration and proves this file without the emission guards and with `20261011120000` and `20261022100000` applied first: applies twice, rolls back to the identical catalog, re-applies, runs `tests/20261113100000_evidence_lock.test.sql` (25 checks: browser insert still works; browser changes to all ten evidence fields refused and leave no history; service role re-read works and keeps the earlier read; changed fields only, actor and reason recorded; name-only logging; no-op updates not logged; emissions updates logged; guest delete by session and the cascaded emission delete logged; service role delete; anon and authenticated cannot read or write `record_events`; rows cannot be updated, deleted or truncated; no trigger on `financial_documents`), checks the rollback refuses while history exists and restores the identical catalog once confirmed, and that the rollback keeps the shared helper whenever the guards use it.
+
+Roll back with `rollback/20261113100000_evidence_lock.rollback.sql`. It refuses while `record_events` holds rows. Export the history first, then confirm in the same session:
+
+```sql
+SELECT * FROM public.record_events ORDER BY id;   -- download the result as CSV and keep it
+SET senseible.confirm_record_events_rollback = 'yes';
+-- then run the rollback file
+```
+
+The append-only trigger is dropped with the table, so no history row is ever updated or deleted on the way out. `is_trusted_db_writer()` is dropped only if this file created it and nothing else calls it.

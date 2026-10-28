@@ -436,6 +436,19 @@ export function publishedFactorFor(factorSource: string | null | undefined): num
   return null;
 }
 
+/**
+ * The published citation behind a factorSource this methodology version
+ * writes (the `source` defined with the factor above), e.g. 'IPCC 2006 V2
+ * Tables 1.2/1.4: LPG'. null for sources from other versions or methods.
+ */
+export function factorCitationFor(factorSource: string | null | undefined): string | null {
+  const [src, key] = String(factorSource ?? '').split(':');
+  if (src !== SRC || !key) return null;
+  if (key === 'INDIA_GRID_AVG') return INDIA_GRID_FACTOR_SOURCE;
+  if (key in FUEL_FACTORS) return FUEL_FACTORS[key as FuelType].source;
+  return null;
+}
+
 // Factors a source key carried before a correction. Rows saved with them stay
 // valid (they are not recalculated); new rows use the current value.
 const EARLIER_PUBLISHED: Partial<Record<FuelType, number[]>> = { CNG: [2.75] };
