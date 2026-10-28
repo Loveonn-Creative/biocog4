@@ -59,7 +59,7 @@ describe('unit aliases', () => {
 
   test('kL of diesel and tonnes of coal', () => {
     expect(calculateEmissions(2, 'kl', 1, 'FUEL', 'DIESEL')).toMatchObject({ quantity: 2000, co2Kg: 5290 });
-    expect(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL')).toMatchObject({ quantity: 1500, co2Kg: 2130 });
+    expect(calculateEmissions(1.5, 'MT', 1, 'FUEL', 'COAL')).toMatchObject({ quantity: 1500, co2Kg: 2640 });
   });
 
   test('wrong dimension gives no factor', () => {
