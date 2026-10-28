@@ -65,11 +65,11 @@ describe('signed-in uploads: the browser never writes documents or records', () 
     const index = src('src/pages/Index.tsx');
     const start = index.indexOf('const saveEmissionToDatabase = async');
     const fn = index.slice(start, index.indexOf('const processLongPdf', start));
-    const guardDoc = fn.indexOf("if (user && !documentId) {\n        toast.error(\"We couldn't save this bill. Upload it again.\");\n        return null;");
+    const guardDoc = fn.indexOf("if (user && !documentId) return null;");
     const docInsert = fn.indexOf(".from('documents')\n          .insert(");
     expect(guardDoc).toBeGreaterThan(0);
     expect(docInsert).toBeGreaterThan(guardDoc);
-    const guardRows = fn.indexOf("if (user) {\n        toast.error(\"We couldn't save this bill. Upload it again.\");\n        return null;");
+    const guardRows = fn.indexOf("if (user) return null;");
     const rowInsert = fn.indexOf(".from('emissions')\n        .insert(");
     expect(guardRows).toBeGreaterThan(0);
     expect(rowInsert).toBeGreaterThan(guardRows);

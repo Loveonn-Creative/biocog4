@@ -373,10 +373,8 @@ const Index = () => {
       
       // Signed in: the server saves the document and its records. The browser
       // never writes them, so an unchecked copy can never stand in for one.
-      if (user && !documentId) {
-        toast.error("We couldn't save this bill. Upload it again.");
-        return null;
-      }
+      // The caller shows the existing "Retry" message, so no second toast here.
+      if (user && !documentId) return null;
 
       // If no document found (shouldn't happen), create one
       if (!documentId) {
@@ -436,10 +434,7 @@ const Index = () => {
         return { documentId, emissionIds: [] };
       }
 
-      if (user) {
-        toast.error("We couldn't save this bill. Upload it again.");
-        return null;
-      }
+      if (user) return null;
 
       const { data: emissionData, error: emissionError } = await (await loadSupabase())
         .from('emissions')
