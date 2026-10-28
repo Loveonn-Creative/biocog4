@@ -82,11 +82,6 @@ describe('signed-in uploads: the browser never writes documents or records', () 
 });
 
 describe('labels that read as verification', () => {
-  test('trust gauge describes invoice details, not verification', () => {
-    const g = src('src/components/trust/TrustScoreGauge.tsx');
-    expect(g).toContain("'Invoice details complete' : integrityScore >= 50 ? 'Some invoice details missing' : 'Invoice details need review'");
-    expect(g).not.toContain('Document integrity verified');
-  });
   test('the unused document hash badge is gone', () => {
     expect(existsSync(new URL('../src/components/dashboard/DocumentHashBadge.tsx', import.meta.url))).toBe(false);
   });

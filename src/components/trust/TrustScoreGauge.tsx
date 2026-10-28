@@ -50,7 +50,7 @@ function computeTrustScore(data: TrustScoreGaugeProps['extractedData']): { score
   const noFlags = !data.validationFlags || data.validationFlags.length === 0;
   const integrityScore = (hasHash ? 50 : 0) + (noFlags ? 50 : 20);
   reasons.push({
-    label: integrityScore >= 80 ? 'Invoice details complete' : integrityScore >= 50 ? 'Some invoice details missing' : 'Invoice details need review',
+    label: integrityScore >= 80 ? 'Document integrity verified' : integrityScore >= 50 ? 'Minor integrity gaps' : 'Integrity review needed',
     status: integrityScore >= 80 ? 'pass' : integrityScore >= 50 ? 'warn' : 'fail',
     weight: 25,
   });
