@@ -2679,6 +2679,48 @@ export type Database = {
         }
         Relationships: []
       }
+      record_events: {
+        Row: {
+          action: string
+          actor_id: string | null
+          actor_kind: string
+          changed_fields: string[]
+          created_at: string
+          id: number
+          new_values: Json | null
+          old_values: Json | null
+          reason: string | null
+          record_id: string
+          table_name: string
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          actor_kind: string
+          changed_fields: string[]
+          created_at?: string
+          id?: number
+          new_values?: Json | null
+          old_values?: Json | null
+          reason?: string | null
+          record_id: string
+          table_name: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          actor_kind?: string
+          changed_fields?: string[]
+          created_at?: string
+          id?: number
+          new_values?: Json | null
+          old_values?: Json | null
+          reason?: string | null
+          record_id?: string
+          table_name?: string
+        }
+        Relationships: []
+      }
       reduction_periods: {
         Row: {
           created_at: string
