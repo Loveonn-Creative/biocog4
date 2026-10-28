@@ -59,6 +59,7 @@ const GuestImportPrompt = lazyPage(() => import("@/components/GuestImportPrompt"
 const Mission = lazyPage(() => import("./pages/Mission"));
 const EmissionFactors = lazyPage(() => import("./pages/EmissionFactors"));
 const Templates = lazyPage(() => import("./pages/Templates"));
+const Import = lazyPage(() => import("./pages/Import"));
 const CbamCost = lazyPage(() => import("./pages/CbamCost"));
 const About = lazyPage(() => import("./pages/About"));
 const Principles = lazyPage(() => import("./pages/Principles"));
@@ -288,6 +289,7 @@ const App = () => (
               <Route path="/emission-factors/:slug" element={<EmissionFactors />} />
               <Route path="/templates" element={<Templates />} />
               <Route path="/templates/:slug" element={<Templates />} />
+              <Route path="/import" element={<Import />} />
               <Route path="/cbam-suite" element={<CbamSuite />} />
               <Route path="/cbam-suite/supplier-pack" element={<CbamSupplierPack />} />
               <Route path="/cbam-cost" element={<CbamCost />} />

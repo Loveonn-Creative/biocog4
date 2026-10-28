@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
@@ -31,6 +32,7 @@ import { GUEST_MAX_BYTES } from '../../supabase/functions/_shared/guestScan';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
 import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
+import { handOffSpreadsheet, splitUploads, SPREADSHEET_ACCEPT } from '@/lib/import/handoff';
 interface FileStatus {
   file: File;
   status: 'pending' | 'processing' | 'success' | 'duplicate' | 'error';
@@ -88,8 +90,17 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
     });
   };
 
+  const navigate = useNavigate();
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFiles = Array.from(e.target.files || []);
+    // CSV and Excel sheets are checked row by row on /import and never sent
+    // to the invoice reader; PDFs and photos are queued as before.
+    const { reader: selectedFiles, sheets } = splitUploads(Array.from(e.target.files || []));
+    if (sheets.length) {
+      const openSheet = () => { if (isProcessing) return; handOffSpreadsheet(sheets[0]); navigate('/import'); };
+      if (selectedFiles.length === 0 && sheets.length === 1) { e.target.value = ''; openSheet(); return; }
+      toast.info(sheets.length > 1 ? `Spreadsheets open one at a time. We'll open ${sheets[0].name} first.` : 'Spreadsheets open on the import page.', { action: { label: 'Open spreadsheet', onClick: openSheet } });
+    }
+    if (selectedFiles.length === 0) { e.target.value = ''; return; }
     
     if (selectedFiles.length + files.length > maxFiles) {
       toast.error(`Maximum ${maxFiles} files allowed`);
@@ -103,7 +114,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
 
     setFiles(prev => [...prev, ...newFiles]);
     e.target.value = ''; // Reset input
-  }, [files.length, maxFiles]);
+  }, [files.length, maxFiles, navigate, isProcessing]);
 
   const removeFile = (index: number) => {
     setFiles(prev => prev.filter((_, i) => i !== index));
@@ -356,12 +367,12 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             Drop multiple invoices here or click to select
           </p>
           <p className="text-xs text-muted-foreground mt-1">
-            Up to {maxFiles} files • JPG, PNG, PDF
+            Up to {maxFiles} JPG, PNG or PDF files. Spreadsheets open on the import page.
           </p>
           <input
             type="file"
             multiple
-            accept="image/*,.pdf"
+            accept={`image/*,.pdf,${SPREADSHEET_ACCEPT}`}
             onChange={handleFileSelect}
             disabled={isProcessing}
             className="hidden"

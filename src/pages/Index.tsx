@@ -16,6 +16,7 @@ import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { HOME_ALSO_ON, HomeAlso } from "@/components/home/HomeAlso";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
+import { handOffSpreadsheet, isSpreadsheetFile } from "@/lib/import/handoff";
 import { resolveWorkspaceScope } from "@/lib/workspaceChoice";
 import { IDENTITY_CHANGED_EVENT } from "@/lib/identity";
 import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/workspaceScope";
@@ -798,6 +799,9 @@ const Index = () => {
 
 
   const handleFileSelect = (file: File) => {
+    // A CSV or Excel sheet is checked row by row on /import, in this browser;
+    // it never goes to the invoice reader.
+    if (isSpreadsheetFile(file)) { handOffSpreadsheet(file); navigate('/import'); return; }
     processDocument(file);
   };
 
@@ -810,7 +814,7 @@ const Index = () => {
     if (pendingHandled.current || sessionLoading || !(pending instanceof File)) return;
     pendingHandled.current = true;
     navigate(location.pathname, { replace: true, state: null });
-    processDocument(pending);
+    handleFileSelect(pending);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.state, sessionLoading]);
 

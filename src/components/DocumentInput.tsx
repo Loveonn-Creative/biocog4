@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Upload } from "lucide-react";
 import { toast } from "sonner";
+import { isSpreadsheetFile, SPREADSHEET_ACCEPT } from "@/lib/import/handoff";
 
 interface DocumentInputProps {
   onFileSelect: (file: File) => void;
@@ -25,8 +26,8 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
     if (!file) return;
-    if (file.type.includes("image") || file.type === "application/pdf") onFileSelect(file);
-    else toast.error("Upload a PDF or a photo (JPG, PNG, WEBP or HEIC) of the invoice or bill.");
+    if (file.type.includes("image") || file.type === "application/pdf" || isSpreadsheetFile(file)) onFileSelect(file);
+    else toast.error("Upload a PDF or photo of the bill, or a CSV or Excel (.xlsx) sheet.");
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +70,7 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
         <input
           ref={fileInputRef}
           type="file"
-          accept="image/*,application/pdf"
+          accept={`image/*,application/pdf,${SPREADSHEET_ACCEPT}`}
           onChange={handleFileChange}
           className="hidden"
         />
