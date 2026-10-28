@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from './useSession';
 import { useWorkspace } from './useWorkspace';
-import { applyScope, ownerColumns, realtimeFilter, scopeKey, type WorkspaceScope } from '@/lib/workspaceScope';
+import { applyScope, realtimeFilter, scopeKey, type WorkspaceScope } from '@/lib/workspaceScope';
 import { RECORDS_KEY, RECORDS_STALE_MS } from '@/lib/queryClient';
 import { useRealtimeRefresh } from '@/lib/sharedRealtime';
 
@@ -117,7 +117,6 @@ export function useEmissions() {
   const { scope, ready } = useWorkspace();
   const key = scopeKey(scope);
   const queryKey = emissionsQueryKey(key);
-  const qc = useQueryClient();
 
   const query = useQuery({
     queryKey,
@@ -137,33 +136,6 @@ export function useEmissions() {
   const refetchQuery = query.refetch;
   const refetch = useCallback(async () => { await refetchQuery(); }, [refetchQuery]);
 
-  const saveEmission = async (emissionData: { scope: number; category: string; co2_kg: number; document_id?: string; activity_data?: number; activity_unit?: string; emission_factor?: number; data_quality?: string }): Promise<Emission | null> => {
-    try {
-      const insertData = {
-        ...emissionData,
-        ...ownerColumns(scope),
-      };
-
-      const { data, error: insertError } = await supabase
-        .from('emissions')
-        .insert(insertData)
-        .select()
-        .single();
-
-      if (insertError) {
-        console.error('Error saving emission:', insertError);
-        return null;
-      }
-
-      const newEmission = data as Emission;
-      qc.setQueryData<Emission[]>(queryKey, prev => [newEmission, ...(prev ?? [])]);
-      return newEmission;
-    } catch (err) {
-      console.error('Save emission error:', err);
-      return null;
-    }
-  };
-
   const getUnverifiedEmissions = () => emissions.filter(e => !e.verified);
   const getVerifiedEmissions = () => emissions.filter(e => e.verified);
 
@@ -174,7 +146,6 @@ export function useEmissions() {
     isLoading: query.isPending || sessionLoading || !ready,
     error: query.isError ? 'Failed to load emissions' : null,
     refetch,
-    saveEmission,
     getUnverifiedEmissions,
     getVerifiedEmissions
   };

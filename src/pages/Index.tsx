@@ -19,7 +19,7 @@ import { buildEmissionRows } from "@/lib/mrvPersistence";
 import { handOffSpreadsheet, isSpreadsheetFile } from "@/lib/import/handoff";
 import { resolveWorkspaceScope } from "@/lib/workspaceChoice";
 import { IDENTITY_CHANGED_EVENT } from "@/lib/identity";
-import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/workspaceScope";
+import { CAPABILITY_REASON, type WorkspaceScope } from "@/lib/workspaceScope";
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages, chunkPagesFor } from '@/lib/pdfLimit';
@@ -30,7 +30,6 @@ import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } fro
 import { fileFingerprint, headerOf, retryablePartError, type SplitHeader } from '@/lib/longPdf';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
-import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
 import { getGuestResult, guestDocumentId, guestRowsFor, putGuestResult } from '@/lib/guestResults';
 import { SAMPLE_BILL_ENABLED, SAMPLE_BILL_RESULT } from '@/lib/sampleBill';
@@ -335,78 +334,30 @@ const Index = () => {
     return { documentId: data.documentId, emissionId: data.emissionIds[0], emissionIds: data.emissionIds };
   };
 
+  // Signed in only: finds the rows extract-document saved for this file. The
+  // browser never writes documents or emissions (guests keep results in this
+  // browser only), so an unchecked copy can never stand in for a stored read.
   const saveEmissionToDatabase = async (extractedData: ExtractedData, documentHash?: string): Promise<{ documentId: string; emissionId?: string; emissionIds: string[] } | null> => {
-    // CRITICAL: Validate session before saving
-    if (!user && !sessionId) {
-      console.error('[MRV] CRITICAL: No session_id or user_id available. Data cannot be saved!');
-      toast.error('Session expired. Please refresh the page and try again.');
-      return null;
-    }
+    if (!user || !documentHash) return null;
 
     try {
-      // First, find the document that was cached by the edge function
-      let documentId: string | null = null;
-      
-      if (documentHash) {
-        // Only this user's (or this guest session's) document. Another
-        // owner's row with the same hash is never matched or reassigned.
-        let lookup = (await loadSupabase())
-          .from('documents')
-          .select('id')
-          .eq('document_hash', documentHash);
-        // In an organisation workspace the invoice is the organisation's, whoever uploaded it.
-        const orgId = uploadOrganizationId();
-        lookup = orgId
-          ? lookup.eq('organization_id', orgId)
-          : user
-            ? lookup.eq('user_id', user.id)
-            : lookup.eq('session_id', sessionId).is('user_id', null);
-        const { data: existingDoc } = await lookup
-          .order('created_at', { ascending: false })
-          .limit(1)
-          .maybeSingle();
+      // Only this user's document (or, in an organisation workspace, the
+      // organisation's). Another owner's row with the same hash is never matched.
+      let lookup = (await loadSupabase())
+        .from('documents')
+        .select('id')
+        .eq('document_hash', documentHash);
+      const orgId = uploadOrganizationId();
+      lookup = orgId ? lookup.eq('organization_id', orgId) : lookup.eq('user_id', user.id);
+      const { data: existingDoc } = await lookup
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
 
-        if (existingDoc) {
-          documentId = existingDoc.id;
-        }
-      }
-      
-      // Signed in: the server saves the document and its records. The browser
-      // never writes them, so an unchecked copy can never stand in for one.
-      // The caller shows the existing "Retry" message, so no second toast here.
-      if (user && !documentId) return null;
+      // Not saved by the server: the caller shows the existing "Retry" message.
+      if (!existingDoc) return null;
+      const documentId: string = existingDoc.id;
 
-      // If no document found (shouldn't happen), create one
-      if (!documentId) {
-        console.warn('[MRV] No cached document found, creating new one');
-        const { data: docData, error: docError } = await (await loadSupabase())
-          .from('documents')
-          .insert({
-            ...(uploadScopeRef.current ? ownerColumns(uploadScopeRef.current) : { session_id: user ? null : sessionId, user_id: user?.id || null }),
-            document_type: extractedData.documentType,
-            vendor: extractedData.vendor,
-            // Only a valid YYYY-MM-DD date; an ambiguous one is never guessed.
-            invoice_date: parseInvoiceDate(extractedData.date),
-            invoice_number: extractedData.invoiceNumber,
-            amount: extractedData.amount,
-            currency: extractedData.currency || 'INR',
-            confidence: Math.min(extractedData.confidence ?? 0, 999.99),
-            document_hash: documentHash || null,
-            cached_result: extractedData,
-            cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-          } as any)
-          .select()
-          .single();
-
-        if (docError) {
-          console.error('[MRV] Document save error:', docError);
-          return null;
-        }
-        documentId = docData.id;
-      }
-
-      // ============= GAP 2 FIX: GUEST DEDUP CHECK =============
-      // Before inserting a new emission, check if one already exists for this document
       const { data: existingEmissions } = await (await loadSupabase())
         .from('emissions')
         .select('id')
@@ -422,40 +373,15 @@ const Index = () => {
         };
       }
 
-      const emissionRows = buildEmissionRows(extractedData, {
-        documentId,
-        sessionId: user ? null : sessionId,
-        userId: user?.id || null,
-      });
-
+      const emissionRows = buildEmissionRows(extractedData, { documentId, sessionId: null, userId: user.id });
       if (emissionRows.length === 0) {
         console.info('[MRV] No independently calculable line items; document retained for review without an emissions row');
         emitRecordsChanged('upload'); // History lists the document
         return { documentId, emissionIds: [] };
       }
 
-      if (user) return null;
-
-      const { data: emissionData, error: emissionError } = await (await loadSupabase())
-        .from('emissions')
-        .insert(emissionRows)
-        .select('id');
-
-      if (emissionError) {
-        console.error('[MRV] Emission save error:', emissionError);
-        if (emissionError.message?.includes('row-level security')) {
-          console.error('[MRV] RLS violation - check session_id:', sessionId, 'user_id:', user?.id);
-          toast.error('We could not save this to your account. Refresh the page and try again.');
-        }
-        return null;
-      }
-
-      const emissionIds = (emissionData || []).map((emission) => emission.id);
-      emitRecordsChanged('upload');
-      if (uploadScopeRef.current?.kind === 'organization') {
-        toast.success(`Saved to the ${uploadScopeRef.current.organizationName || 'organisation'} workspace`);
-      }
-      return { documentId, emissionId: emissionIds[0], emissionIds };
+      // The server kept the document but not its rows: nothing is written here.
+      return null;
     } catch (error) {
       console.error('Database save error:', error);
       return null;

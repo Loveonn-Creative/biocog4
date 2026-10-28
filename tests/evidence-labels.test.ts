@@ -65,14 +65,11 @@ describe('signed-in uploads: the browser never writes documents or records', () 
     const index = src('src/pages/Index.tsx');
     const start = index.indexOf('const saveEmissionToDatabase = async');
     const fn = index.slice(start, index.indexOf('const processLongPdf', start));
-    const guardDoc = fn.indexOf("if (user && !documentId) return null;");
-    const docInsert = fn.indexOf(".from('documents')\n          .insert(");
-    expect(guardDoc).toBeGreaterThan(0);
-    expect(docInsert).toBeGreaterThan(guardDoc);
-    const guardRows = fn.indexOf("if (user) return null;");
-    const rowInsert = fn.indexOf(".from('emissions')\n        .insert(");
-    expect(guardRows).toBeGreaterThan(0);
-    expect(rowInsert).toBeGreaterThan(guardRows);
+    expect(start).toBeGreaterThan(0);
+    // Guests never reach a database write; signed-in users only look up server rows.
+    expect(fn).toContain('if (!user || !documentHash) return null;');
+    expect(fn).toContain('if (!existingDoc) return null;');
+    expect(fn).not.toMatch(/\.(insert|upsert)\(/);
   });
   test('bulk upload never inserts from the browser', () => {
     const bulk = src('src/components/BulkUpload.tsx');

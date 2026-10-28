@@ -25,6 +25,8 @@ export interface EmissionRecord {
     invoice_date?: string | null;
     currency?: string | null;
     cached_result?: unknown;
+    file_url?: string | null;
+    created_at?: string | null;
   };
 }
 
@@ -146,6 +148,38 @@ export function isImportedDocument(cached: unknown): boolean {
   return !!c && typeof c === 'object' && (c as { source?: unknown }).source === 'import';
 }
 
+/**
+ * Documents created from this moment on must show they were read on the
+ * server before their records can be verified. From 2026-11-01 the browser
+ * writes no documents or emissions (server-only records; pending migration
+ * 20261114100000_server_only_records refuses browser inserts), so every new
+ * document comes from extract-document (cached_result.evidence, PR #382, and
+ * usually the original file in storage, file_url) or import-records
+ * (cached_result.source 'import', gated separately). Older documents are not
+ * re-checked, so no record verified or verifiable before keeps a new gap.
+ */
+export const SERVER_READ_REQUIRED_FROM = '2026-11-01T00:00:00Z';
+export const SERVER_READ_GAP = 'invoice read from the uploaded file';
+
+/** True when a stored document carries a mark only a server read writes. */
+export function hasServerReadMarker(doc: { cached_result?: unknown; file_url?: string | null } | null | undefined): boolean {
+  if (!doc) return false;
+  if (typeof doc.file_url === 'string' && doc.file_url.trim()) return true;
+  let c: unknown = doc.cached_result;
+  if (typeof c === 'string') { try { c = JSON.parse(c); } catch { return false; } }
+  if (!c || typeof c !== 'object') return false;
+  const evidence = (c as { evidence?: unknown }).evidence;
+  return (!!evidence && typeof evidence === 'object') || (c as { source?: unknown }).source === 'import';
+}
+
+/** A stored document created on or after the cutoff with no server-read mark. Guest previews carry no created_at and are not checked. */
+export function lacksServerRead(doc: EmissionRecord['documents'] | null | undefined): boolean {
+  if (!doc?.created_at) return false;
+  const created = Date.parse(doc.created_at);
+  if (!Number.isFinite(created) || created < Date.parse(SERVER_READ_REQUIRED_FROM)) return false;
+  return !hasServerReadMarker(doc);
+}
+
 export function evidenceGaps(emission: EmissionRecord & { document_id?: string | null }, repairOnly: boolean): string[] {
   const fields: string[] = [];
   const doc = emission.documents;
@@ -154,6 +188,7 @@ export function evidenceGaps(emission: EmissionRecord & { document_id?: string |
   // only from the uploaded bill (owner rule, October 2026).
   if (isImportedDocument(doc?.cached_result)) fields.push('bill: typed figures are verified only from the uploaded bill');
   if (!doc?.document_hash) fields.push('document fingerprint');
+  if (lacksServerRead(doc)) fields.push(SERVER_READ_GAP);
   if (!Number.isInteger(emission.scope) || emission.scope < 1 || emission.scope > 3) fields.push('scope');
   // Scope 3 is verified line by line in the supplier evidence trail
   // (approved, sourced factors; reconciled, deduplicated invoices), not

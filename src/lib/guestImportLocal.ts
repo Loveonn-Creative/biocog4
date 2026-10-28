@@ -1,7 +1,8 @@
 // Adding a guest's browser-held results to the account that just signed in.
 // Figures from the browser are never trusted: each kept file is read again by
 // extract-document as the signed-in user (plan allowance and duplicate rules
-// apply), and the records are built from that answer, exactly as an upload.
+// apply), which saves the document and its records on the server, exactly as
+// an upload. The browser only looks them up; it never writes them.
 
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { functionErrorStatus, getFunctionErrorMessage } from '@/lib/functionErrors';
@@ -37,6 +38,8 @@ export async function importLocalGuestResults(userId: string): Promise<LocalImpo
       out.skipped.push(`${name}: ${msg}`); continue;
     }
     if (!data?.success || !data?.data) { out.skipped.push(`${name}: ${data?.error || 'could not be read'}`); continue; }
+    // Saved by the server on this read (document and records).
+    if (data.serverSaved && data.documentId && Array.isArray(data.emissionIds)) { out.added += 1; continue; }
     // Every document this account holds for the same file: the invoice may
     // already be there (uploaded earlier, or moved from an older guest row).
     const { data: docs } = await supabase.from('documents').select('id, created_at').eq('document_hash', data.documentHash).eq('user_id', userId)
@@ -45,11 +48,10 @@ export async function importLocalGuestResults(userId: string): Promise<LocalImpo
     if (!doc?.id) { out.skipped.push(`${name}: could not be saved`); continue; }
     const { data: existing } = await supabase.from('emissions').select('id').in('document_id', (docs ?? []).map((d: { id: string }) => d.id)).limit(1);
     if (existing?.length) { out.alreadyThere += 1; continue; }
+    // Nothing to calculate: the document alone is the result. Otherwise the
+    // server kept the document without its records, so it was not saved.
     const rows = buildEmissionRows(data.data as PersistableExtraction, { documentId: doc.id, sessionId: null, userId });
-    if (rows.length) {
-      const { error: insErr } = await supabase.from('emissions').insert(rows);
-      if (insErr) { out.skipped.push(`${name}: could not be saved`); continue; }
-    }
+    if (rows.length) { out.skipped.push(`${name}: could not be saved`); continue; }
     out.added += 1;
   }
   return out;
