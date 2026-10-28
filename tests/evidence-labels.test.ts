@@ -77,7 +77,7 @@ describe('signed-in uploads: the browser never writes documents or records', () 
   test('bulk upload never inserts from the browser', () => {
     const bulk = src('src/components/BulkUpload.tsx');
     expect(bulk).not.toMatch(/\.insert\(/);
-    expect(bulk).toContain("throw new Error(\"We couldn't save this bill. Upload it again.\");");
+    expect(bulk).toContain("throw new Error(\"Unable to save this bill. Upload it again.\");");
   });
 });
 

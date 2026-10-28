@@ -258,7 +258,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             } else {
               // The server saves records; the browser never writes them. Only a
               // signed-in owner's document is found above, so guests never reach here.
-              throw new Error("We couldn't save this bill. Upload it again.");
+              throw new Error("Unable to save this bill. Upload it again.");
             }
           }
 
