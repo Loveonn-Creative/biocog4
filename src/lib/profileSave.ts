@@ -33,6 +33,24 @@ export function cleanProfileFields<T extends Record<string, unknown>>(fields: T)
 export const isSizeCheckError = (e: { code?: string; message?: string } | null | undefined) =>
   !!e && (e.code === '23514' && /profiles_size_check/.test(e.message ?? ''));
 
+/**
+ * The profiles columns for the fields a page changed, so a save never sends a
+ * value the page only displayed (an older tab would overwrite a newer value).
+ * Fields with no column (local-only settings) are left out. Pure.
+ */
+export function changedProfileColumns<T extends object>(
+  values: T,
+  changed: Iterable<keyof T>,
+  columns: Partial<Record<keyof T, string>>,
+): Record<string, unknown> {
+  const out: Record<string, unknown> = {};
+  for (const key of changed) {
+    const column = columns[key];
+    if (column) out[column] = values[key];
+  }
+  return out;
+}
+
 type Saver = (fields: Record<string, unknown>) => PromiseLike<{ error: { code?: string; message?: string } | null }>;
 
 /**

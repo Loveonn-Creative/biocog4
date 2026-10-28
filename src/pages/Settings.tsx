@@ -1,4 +1,4 @@
-import { saveProfileFields } from '@/lib/profileSave';
+import { changedProfileColumns, saveProfileFields } from '@/lib/profileSave';
 import { useState, useEffect } from 'react';
 import { refreshAccount } from '@/lib/queryClient';
 import { Helmet } from 'react-helmet-async';
@@ -50,12 +50,24 @@ const DEFAULT_PROFILE: CompanyProfile = {
 
 const SECTORS = COMPANY_SECTORS;
 
+// Settings is the one place business name and GSTIN are edited. Sector, size
+// and country are also on Profile, so a save sends only the columns changed
+// here; an older tab cannot overwrite a newer value it never touched.
+const PROFILE_COLUMNS = {
+  businessName: 'business_name',
+  gstin: 'gstin',
+  sector: 'sector',
+  size: 'size',
+  location: 'location',
+} as const;
+
 const Settings = () => {
   const { access: enterprise } = useEnterpriseAccess();
   const { user, sessionId } = useSession();
   const [profile, setProfile] = useState<CompanyProfile>(DEFAULT_PROFILE);
   const [isSaving, setIsSaving] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);
+  const [changedKeys, setChangedKeys] = useState<Set<keyof CompanyProfile>>(new Set());
   const { prefs, toggleFeature, isPremium, features } = useTrustLayerSettings();
   const financeDetail = useFinanceDetail();
   const scope3 = useScope3Visibility();
@@ -109,18 +121,17 @@ const Settings = () => {
     
     try {
       if (user?.id) {
-        const result = await saveProfileFields((fields) => supabase.from('profiles').upsert({ id: user.id, ...fields }), {
-          business_name: profile.businessName,
-          sector: profile.sector,
-          size: profile.size,
-          location: profile.location,
-          gstin: profile.gstin,
-          updated_at: new Date().toISOString(),
-        });
+        const columns = changedProfileColumns(profile, changedKeys, PROFILE_COLUMNS);
+        if (Object.keys(columns).length > 0) {
+          const result = await saveProfileFields((fields) => supabase.from('profiles').upsert({ id: user.id, ...fields }), {
+            ...columns,
+            updated_at: new Date().toISOString(),
+          });
 
-        if (!result.ok) throw new Error(result.error);
-        if (result.sizeSkipped) toast.info('Company size "Large" will save after our next update; everything else is saved.');
-        void refreshAccount(user.id);
+          if (!result.ok) throw new Error(result.error);
+          if (result.sizeSkipped) toast.info('Company size "Large" will save after our next update; everything else is saved.');
+          void refreshAccount(user.id);
+        }
         
         localStorage.setItem('senseible_profile_triggers', JSON.stringify({
           exportsToEU: profile.exportsToEU,
@@ -132,6 +143,7 @@ const Settings = () => {
       }
       
       setHasChanges(false);
+      setChangedKeys(new Set());
       toast.success('Profile saved successfully');
     } catch (error) {
       console.error('Save error:', error instanceof Error ? error.message : 'unknown');
@@ -143,6 +155,7 @@ const Settings = () => {
 
   const updateProfile = (key: keyof CompanyProfile, value: any) => {
     setProfile(prev => ({ ...prev, [key]: value }));
+    setChangedKeys(prev => new Set(prev).add(key));
     setHasChanges(true);
   };
 
@@ -189,7 +202,7 @@ const Settings = () => {
 
           {/* Company Details */}
 
-          <Card>
+          <Card id="company-profile" className="scroll-mt-24">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Building2 className="h-5 w-5" />

@@ -68,10 +68,10 @@ const roleOptions = [
   { value: 'other', label: 'Other' },
 ];
 
+// Business name and GSTIN are edited in Settings only; Profile shows them
+// read-only and never sends them, so a stale Profile tab cannot overwrite them.
 interface ProfileData {
-  business_name: string;
   phone: string;
-  gstin: string;
   location: string;
   sector: string;
   size: string;
@@ -86,10 +86,9 @@ const Profile = () => {
   const { tier, isPremium } = usePremiumStatus();
   const { hasOrganization } = useOrganization();
   
+  const [business, setBusiness] = useState({ name: '', gstin: '' });
   const [profile, setProfile] = useState<ProfileData>({
-    business_name: '',
     phone: '',
-    gstin: '',
     location: '',
     sector: '',
     size: '',
@@ -143,10 +142,9 @@ const Profile = () => {
         if (error) throw error;
 
         if (data) {
+          setBusiness({ name: data.business_name || '', gstin: data.gstin || '' });
           setProfile({
-            business_name: data.business_name || '',
             phone: data.phone || '',
-            gstin: data.gstin || '',
             location: data.location || '',
             sector: data.sector || '',
             size: data.size || '',
@@ -191,9 +189,7 @@ const Profile = () => {
     try {
       const consentChanged = profile.data_consent !== savedDataConsent;
       const result = await saveProfileFields((fields) => supabase.from('profiles').update(fields).eq('id', user.id), {
-          business_name: profile.business_name,
           phone: profile.phone,
-          gstin: profile.gstin,
           location: profile.location,
           sector: profile.sector,
           size: profile.size,
@@ -357,25 +353,16 @@ const Profile = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="business_name">Business Name</Label>
-                  <Input
-                    id="business_name"
-                    value={profile.business_name}
-                    onChange={(e) => setProfile({ ...profile, business_name: e.target.value })}
-                    placeholder="Your company name"
-                  />
+                <div className="space-y-2 min-w-0">
+                  <Label>Business</Label>
+                  <p className={`text-sm break-words ${business.name ? '' : 'text-muted-foreground'}`}>{business.name || 'Not added'}</p>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="gstin">GSTIN</Label>
-                  <Input
-                    id="gstin"
-                    value={profile.gstin}
-                    onChange={(e) => setProfile({ ...profile, gstin: e.target.value.toUpperCase() })}
-                    placeholder="22AAAAA0000A1Z5"
-                  />
+                <div className="space-y-2 min-w-0">
+                  <Label>GSTIN</Label>
+                  <p className={`text-sm break-all ${business.gstin ? 'font-mono' : 'text-muted-foreground'}`}>{business.gstin || 'Not added'}</p>
                 </div>
               </div>
+              <Link to="/settings#company-profile" className="inline-block text-sm text-primary underline-offset-4 hover:underline">Edit in Settings</Link>
 
               <Separator />
 
