@@ -56,10 +56,12 @@ export const FUEL_FACTORS: Record<FuelType, Factor> = {
   // gas: 56,100 kgCO2/TJ x 48.0 TJ/Gg = 2.693 kgCO2/kg, the same basis as PNG.
   CNG: { value: 2.69, unit: 'kg', source: 'IPCC 2006 V2 Tables 1.2/1.4: natural gas (CNG, per kg)' },
   // Was 2.42 (v1.0, unsourced). Indian coal default, used when the bill states
-  // no calorific value or grade (coalFactorFor): CEA CO2 Baseline Database
-  // v21.0/v22.0 Appendix B, Indian coal 90.6 gCO2/MJ (GCV basis, oxidation
-  // 0.98 included) x GCV 3,755 kcal/kg x 4.1868 kJ/kcal = 1.4244 kgCO2/kg.
-  COAL: { value: 1.42, unit: 'kg', source: 'CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg' },
+  // no calorific value or grade (coalFactorFor). Owner approved (October 2026):
+  // India's BUR-2 country-specific values for non-coking coal, Table 2.3,
+  // NCV 18.26 TJ/kt x carbon 26.28 tC/TJ x 44/12 = 1.7595 kgCO2/kg. The CEA
+  // power-station figure (3,755 kcal/kg, 1.42) understates the higher grades
+  // industrial buyers burn.
+  COAL: { value: 1.76, unit: 'kg', source: 'India Second Biennial Update Report to the UNFCCC (MoEFCC, 2018), Table 2.3, non-coking coal NCV 18.26 TJ/kt x 26.28 tC/TJ x 44/12 = 1.76 kgCO2/kg' },
   // Was 1.51. IPCC LPG: 63,100 kgCO2/TJ x 47.3 TJ/Gg = 2.985 kgCO2/kg.
   LPG: { value: 2.98, unit: 'kg', source: 'IPCC 2006 V2 Tables 1.2/1.4: LPG' },
   // Was 2.30. IPCC natural gas: 56,100 kgCO2/TJ x 48.0 TJ/Gg = 2.693 kgCO2/kg,
@@ -159,7 +161,7 @@ export const INDIA_GRID_FACTOR_SOURCE = INDIA_GRID_BY_FY.FY2025_26.source;
 //     Vol 2 Ch 1 Table 1.4, other bituminous coal).
 //  2. Named imported, bituminous or steam coal: IPCC other bituminous coal,
 //     25.8 TJ/Gg x 94,600 kgCO2/TJ = 2.4407 kgCO2/kg.
-//  3. Otherwise the Indian coal default, FUEL_FACTORS.COAL (1.42).
+//  3. Otherwise the Indian coal default, FUEL_FACTORS.COAL (1.76).
 // Lignite, anthracite, coking and sub-bituminous coal have their own factors,
 // which this set does not hold: such lines get no factor and are flagged.
 // The reader returns no calorific value field, so only the line text is read.

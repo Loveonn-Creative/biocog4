@@ -13,8 +13,8 @@
 --   Petrol  2.31 -> 2.176 kgCO2/L: IPCC 2006 Vol 2 Ch 1, NCV 44.3 TJ/Gg x
 --           69,300 kgCO2/TJ = 3.070 kgCO2/kg, at 1.411 kL per tonne (PPAC Ready
 --           Reckoner FY 2025-26, Table 9.2, Ministry of Petroleum and Natural Gas).
---   Coal    2.42 -> 1.42 kgCO2/kg, Indian coal default only: CEA v21.0/v22.0
---           Appendix B, 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal. A coal
+--   Coal    2.42 -> 1.76 kgCO2/kg, Indian coal default only: India BUR-2
+--           (2018) Table 2.3, non-coking coal 18.26 TJ/kt x 26.28 tC/TJ x 44/12. A coal
 --           row whose line text names a calorific value or a grade (GCV, NCV,
 --           kcal, MJ/kg, imported, bituminous, steam, lignite, anthracite,
 --           coking) is left as it is: its rule cannot be settled here.
@@ -83,7 +83,7 @@ CREATE TEMP TABLE _fc_fuel (factor_key text PRIMARY KEY, old_factors numeric[] N
 INSERT INTO _fc_fuel VALUES
   ('DIESEL', '{2.68}', 'litre', 2.645, 'IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 43.0 TJ/Gg x Table 1.4 74,100 kgCO2/TJ = 3.186 kgCO2/kg x 0.83 kg/L (CEA CO2 Baseline Database v22.0, Appendix B) = 2.645 kgCO2/L', NULL),
   ('PETROL', '{2.31}', 'litre', 2.176, 'IPCC 2006 Vol 2 Ch 1, Table 1.2 NCV 44.3 TJ/Gg x Table 1.4 69,300 kgCO2/TJ = 3.070 kgCO2/kg, at 1.411 kL per tonne (PPAC Ready Reckoner FY 2025-26, Table 9.2) = 2.176 kgCO2/L', NULL),
-  ('COAL', '{2.42}', 'kg', 1.42, 'CEA CO2 Baseline Database v22.0 (Aug 2026), Appendix B, Indian coal 90.6 gCO2/MJ x 3,755 kcal/kg x 4.1868 kJ/kcal = 1.42 kgCO2/kg', 'Indian coal average');
+  ('COAL', '{2.42}', 'kg', 1.76, 'India Second Biennial Update Report to the UNFCCC (MoEFCC, 2018), Table 2.3, non-coking coal NCV 18.26 TJ/kt x 26.28 tC/TJ x 44/12 = 1.76 kgCO2/kg', 'Indian coal average');
 
 -- One planned correction per matching row (the dry run builds the same view).
 CREATE TEMP VIEW _fc_plan AS
