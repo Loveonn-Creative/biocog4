@@ -279,3 +279,20 @@ describe('pending migration matches the code', () => {
     expect(dry).not.toMatch(/UPDATE public\.emissions|INSERT INTO public\./);
   });
 });
+
+describe('cement coal default (owner approved, BUR-2 Table 2.4)', () => {
+  test('20.15 TJ/kt x 26.08 tC/TJ x 44/12 = 1.93', () => {
+    expect(Math.round(20.15 * 26.08 * 44 / 12 / 1000 * 100) / 100).toBe(1.93);
+  });
+  test('a cement business gets 1.93 for coal with no grade or calorific value', () => {
+    expect(coalFactorFor('Coal', 'cement')).toMatchObject({ key: 'COAL_CEMENT', assumption: 'Cement coal average', factor: { value: 1.93 } });
+    expect(emission(calculateEmissions(2, 'MT', 1, 'FUEL', 'COAL', { description: 'Coal', sector: 'cement' }))).toMatchObject({ quantity: 2000, emissionFactor: 1.93, co2Kg: 3860 });
+  });
+  test('the bill still wins: stated calorific value and imported coal ignore the sector', () => {
+    expect(coalFactorFor('Steam coal GCV 5500 kcal/kg', 'cement')?.key).toBe('COAL_GCV_5500');
+    expect(coalFactorFor('Imported coal', 'cement')?.key).toBe('COAL_BITUMINOUS');
+  });
+  test('other sectors keep the Indian default', () => {
+    for (const s of ['steel', 'manufacturing', null, undefined]) expect(coalFactorFor('Coal', s)?.key).toBe('COAL');
+  });
+});

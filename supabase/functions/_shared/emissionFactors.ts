@@ -161,12 +161,17 @@ export const INDIA_GRID_FACTOR_SOURCE = INDIA_GRID_BY_FY.FY2025_26.source;
 //     Vol 2 Ch 1 Table 1.4, other bituminous coal).
 //  2. Named imported, bituminous or steam coal: IPCC other bituminous coal,
 //     25.8 TJ/Gg x 94,600 kgCO2/TJ = 2.4407 kgCO2/kg.
-//  3. Otherwise the Indian coal default, FUEL_FACTORS.COAL (1.76).
+//  3. Otherwise the Indian coal default, FUEL_FACTORS.COAL (1.76), or for a
+//     business whose sector is cement, COAL_CEMENT (1.93).
 // Lignite, anthracite, coking and sub-bituminous coal have their own factors,
 // which this set does not hold: such lines get no factor and are flagged.
 // The reader returns no calorific value field, so only the line text is read.
 // ---------------------------------------------------------------------------
 export const COAL_BITUMINOUS: Factor = { value: 2.44, unit: 'kg', source: 'IPCC 2006 Vol 2 Ch 1, other bituminous coal, Table 1.2 NCV 25.8 TJ/Gg x Table 1.4 94,600 kgCO2/TJ = 2.44 kgCO2/kg' };
+// Owner approved (October 2026): India BUR-2 (MoEFCC, 2018) Table 2.4, sector
+// specific values for non-coking coal used in cement, NCV 20.15 TJ/kt x carbon
+// 26.08 tC/TJ x 44/12 = 1.9269 kgCO2/kg.
+export const COAL_CEMENT: Factor = { value: 1.93, unit: 'kg', source: 'India Second Biennial Update Report to the UNFCCC (MoEFCC, 2018), Table 2.4, non-coking coal in cement, NCV 20.15 TJ/kt x 26.08 tC/TJ x 44/12 = 1.93 kgCO2/kg' };
 const KJ_PER_KCAL = 4.1868;
 const CEA_COAL_G_PER_MJ_GCV = 90.6;
 const IPCC_BITUMINOUS_KG_PER_TJ_NCV = 94600;
@@ -188,7 +193,7 @@ function coalCvFactor(basis: 'GCV' | 'NCV', kcal: number): Factor | null {
 }
 
 export interface CoalChoice {
-  /** factorSource key: COAL, COAL_BITUMINOUS, COAL_GCV_<kcal> or COAL_NCV_<kcal>. */
+  /** factorSource key: COAL, COAL_CEMENT, COAL_BITUMINOUS, COAL_GCV_<kcal> or COAL_NCV_<kcal>. */
   key: string;
   factor: Factor;
   /** Which rule applied, stored with the line. */
@@ -227,8 +232,12 @@ export function statedCoalCv(text: string | null | undefined): { basis: 'GCV' | 
 const COAL_OTHER_RANK = /(^|[^a-z])(lignite|anthracite|(?<!non[\s-]?)coking|sub[\s-]?bituminous)([^a-z]|$)/i;
 const COAL_BITUMINOUS_WORDS = /(^|[^a-z])(imported|bituminous|steam\s+coal)([^a-z]|$)/i;
 
-/** The coal factor for a line from its text, or null when the rule cannot be determined. */
-export function coalFactorFor(description: string | null | undefined): CoalChoice | null {
+/**
+ * The coal factor for a line from its text, or null when the rule cannot be
+ * determined. sector is the business's own sector (profile or organisation);
+ * it only chooses between the Indian defaults.
+ */
+export function coalFactorFor(description: string | null | undefined, sector?: string | null): CoalChoice | null {
   const text = String(description ?? '');
   const cv = statedCoalCv(text);
   if (cv) {
@@ -245,12 +254,14 @@ export function coalFactorFor(description: string | null | undefined): CoalChoic
   if (COAL_BITUMINOUS_WORDS.test(text)) {
     return { key: 'COAL_BITUMINOUS', factor: COAL_BITUMINOUS, assumption: 'Bituminous coal factor' };
   }
+  if (sector === 'cement') return { key: 'COAL_CEMENT', factor: COAL_CEMENT, assumption: 'Cement coal average' };
   return { key: 'COAL', factor: FUEL_FACTORS.COAL, assumption: 'Indian coal average' };
 }
 
 /** The coal factor a factorSource key names (COAL, COAL_BITUMINOUS, COAL_GCV_5500, ...), or null. */
 function coalFactorForKey(key: string): Factor | null {
   if (key === 'COAL') return FUEL_FACTORS.COAL;
+  if (key === 'COAL_CEMENT') return COAL_CEMENT;
   if (key === 'COAL_BITUMINOUS') return COAL_BITUMINOUS;
   const m = /^COAL_(GCV|NCV)_(\d{4})$/.exec(key);
   return m ? coalCvFactor(m[1] as 'GCV' | 'NCV', Number(m[2])) : null;
@@ -577,6 +588,7 @@ const GRID_DEPENDENT = new Set(['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY']);
  * of that financial year; omitted = today (an upload with no invoice date).
  * opts.activityDateFrom says which of the two it is, for the stored note.
  * opts.description: the line text, read for a coal calorific value or grade.
+ * opts.sector: the business's sector, which picks the cement coal default.
  */
 export function calculateEmissions(
   quantity: number,
@@ -584,13 +596,13 @@ export function calculateEmissions(
   scope: number,
   productCategory: string,
   fuelType?: string,
-  opts?: { gridCountry?: string | null; activityDate?: string | null; activityDateFrom?: 'invoice' | 'upload'; description?: string | null },
+  opts?: { gridCountry?: string | null; activityDate?: string | null; activityDateFrom?: 'invoice' | 'upload'; description?: string | null; sector?: string | null },
 ): EmissionCalc | AvoidedCalc | null {
   if (!Number.isFinite(quantity) || quantity <= 0 || !unit) return null;
   if (opts && 'gridCountry' in opts && GRID_DEPENDENT.has(productCategory) && !GRID_FACTOR_COUNTRIES.includes(String(opts.gridCountry ?? ''))) return null;
 
   if (scope === 1 && productCategory === 'FUEL' && fuelType === 'COAL') {
-    const choice = coalFactorFor(opts?.description);
+    const choice = coalFactorFor(opts?.description, opts?.sector);
     if (!choice) return null;
     const r = applyFactor(quantity, unit, choice.factor);
     if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:${choice.key}`, assumption: choice.assumption };

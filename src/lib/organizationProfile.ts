@@ -17,6 +17,12 @@ export interface OrganizationProfile {
 
 export const COMPANY_SECTORS = [
   { value: 'manufacturing', label: 'Manufacturing' },
+  { value: 'cement', label: 'Cement' },
+  { value: 'steel', label: 'Iron & Steel' },
+  { value: 'aluminium', label: 'Aluminium' },
+  { value: 'ceramics', label: 'Ceramics & Glass' },
+  { value: 'paper', label: 'Paper & Pulp' },
+  { value: 'fertiliser', label: 'Fertiliser' },
   { value: 'textile', label: 'Textile & Apparel' },
   { value: 'food_processing', label: 'Food Processing' },
   { value: 'chemicals', label: 'Chemicals & Pharma' },

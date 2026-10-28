@@ -678,6 +678,9 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     let isAuthenticated = false;
     // Country saved in Settings; decides which grid factor applies to electricity.
     let profileLocation: string | null = null;
+    // The business's sector (organisation profile in a workspace, else the
+    // account profile). It only picks the cement coal default.
+    let businessSector: string | null = null;
     let userTier = 'guest';
     let scanLimit: number | null = null; // signed-in users only
     let planCycle: 'monthly' | 'yearly' | null = null;
@@ -724,10 +727,20 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         const supabase = authClient;
         const { data: profile } = await supabase
           .from('profiles')
-          .select('subscription_tier, subscription_expires_at, location, gstin')
+          .select('subscription_tier, subscription_expires_at, location, gstin, sector')
           .eq('id', userId)
           .single();
         profileLocation = typeof profile?.location === 'string' ? profile.location : null;
+        businessSector = !organizationId && typeof profile?.sector === 'string' ? profile.sector : null;
+        if (organizationId) {
+          try {
+            const { data: org } = await supabase.from('organizations').select('metadata').eq('id', organizationId).maybeSingle();
+            const orgSector = (org?.metadata as { profile?: { sector?: unknown } } | null)?.profile?.sector;
+            businessSector = typeof orgSector === 'string' ? orgSector : null;
+          } catch {
+            businessSector = null; // no sector: the Indian coal default applies
+          }
+        }
         accountGstin = !organizationId && typeof profile?.gstin === 'string' && profile.gstin.trim() ? profile.gstin : null;
 
         // The active subscription rows are the record of the plan; the profile
@@ -1318,7 +1331,7 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
           classifiedItem.scope,
           classifiedItem.productCategory,
           classifiedItem.fuelType,
-          { gridCountry, ...factorDate, description: classifiedItem.description }
+          { gridCountry, ...factorDate, description: classifiedItem.description, sector: businessSector }
         );
         if (result?.kind === 'emission' && result.assumption) factorNotes.set(classifiedItem, result.assumption);
         if (!gridNoteAdded && classifiedItem.productCategory === 'ELECTRICITY' && supply.source === 'unknown') {

@@ -65,7 +65,7 @@ export interface ImportedRecord {
  */
 export function buildImportedRecord(
   values: Record<string, string>,
-  ctx: { gridCountry: string; gridSource: 'profile' | 'bill' | 'unknown'; line: number },
+  ctx: { gridCountry: string; gridSource: 'profile' | 'bill' | 'unknown'; line: number; sector?: string | null },
 ): ImportedRecord | null {
   const type = parseDocType(values.type ?? '') as DocType | null;
   const date = parseImportDate(values.date ?? '');
@@ -96,7 +96,7 @@ export function buildImportedRecord(
   const flags: string[] = [];
   // The row's date is its bill date: grid electricity takes that year's factor.
   const result = calculateEmissions(qty, unit, calc.scope, calc.productCategory, calc.fuelType, {
-    gridCountry: ctx.gridCountry, activityDate: date, activityDateFrom: 'invoice', description,
+    gridCountry: ctx.gridCountry, activityDate: date, activityDateFrom: 'invoice', description, sector: ctx.sector,
   });
   let co2Kg: number | null = null;
   if (result && result.kind === 'emission') {
