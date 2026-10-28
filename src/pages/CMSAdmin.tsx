@@ -125,7 +125,8 @@ const CMSAdmin = () => {
     
     try {
       const arrayBuffer = await file.arrayBuffer();
-      const workbook = XLSX.read(arrayBuffer);
+      // Values only: skip formulas, rich text/HTML, styles and macros.
+      const workbook = XLSX.read(arrayBuffer, { cellFormula: false, cellHTML: false, cellStyles: false, bookVBA: false });
       
       const allRows: ParsedRow[] = [];
       

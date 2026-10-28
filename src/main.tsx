@@ -25,6 +25,10 @@ const whenStyled = () => {
 if (css) {
   css.addEventListener("load", () => { css.rel = "stylesheet"; }, { once: true });
   css.addEventListener("error", start, { once: true });
+  // If a browser's Content-Security-Policy blocks the inline onload, a preload that
+  // finished before this script ran would never become a stylesheet; switch it
+  // here (the preloaded file is reused, not downloaded again).
+  if (css.rel !== "stylesheet") css.rel = "stylesheet";
 }
 whenStyled();
 
