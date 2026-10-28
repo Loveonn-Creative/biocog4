@@ -9,12 +9,12 @@
 export const ESG_SAMPLE_META = {
   path: '/esg-report-sample',
   title: 'Sample ESG Report for India: GRI, BRSR Core, TCFD',
-  description: 'See a real 64-page ESG report made with Senseible: GRI Content Index, BRSR Core map, TCFD climate risks and every emission factor shown. Free with a work email.',
+  description: 'See a 64-page sample ESG report made with Senseible: GRI Content Index, BRSR Core map, TCFD risks and every emission factor shown. Free with a work email.',
   h1: 'See what a buyer-ready ESG report looks like, page by page.',
   published: '2026-09-19',
 };
 
-export const ESG_SAMPLE_INTRO = 'Senseible’s own 2026 ESG report, built on the Senseible platform from utility bills, fuel invoices and payroll records. Mapped to GRI, BRSR Core, TCFD, the UN SDGs and the UN Global Compact, with every emission factor printed.';
+export const ESG_SAMPLE_INTRO = 'A 64-page sample ESG report, built the way Senseible builds them: from utility bills, fuel invoices and payroll records. Figures are illustrative. Mapped to GRI, BRSR Core, TCFD, the UN SDGs and the UN Global Compact, with every emission factor printed.';
 
 /** Short, quotable answer for search and AI answer engines. */
 export const ESG_SAMPLE_ANSWER = 'A credible ESG report for an Indian company covers environment, social and governance topics, shows Scope 1, 2 and 3 emissions with the factors and sources used, maps each disclosure to the frameworks readers ask for (GRI, BRSR Core, TCFD), and states its boundaries, gaps and assurance status. This 64-page sample shows all of that.';
