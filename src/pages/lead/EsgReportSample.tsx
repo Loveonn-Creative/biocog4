@@ -133,6 +133,7 @@ const EsgReportSample = () => {
                 <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-muted-foreground">They usually ask for</p>
                 <p className="mt-1 text-[17px] font-semibold">{active.frameworks}</p>
                 <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{active.why}</p>
+                {active.guide && <Link to={active.guide.to} className="mt-2 inline-block text-[14px] font-medium text-primary underline underline-offset-2">{active.guide.label}</Link>}
                 <ul className="mt-4 divide-y divide-border">
                   {active.sections.map(s => (
                     <li key={s.name} className="flex items-baseline justify-between gap-4 py-2.5 text-[15px]">

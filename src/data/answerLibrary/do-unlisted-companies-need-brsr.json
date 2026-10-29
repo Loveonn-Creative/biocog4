@@ -37,6 +37,7 @@
   ],
   "senseible": "Senseible drafts BRSR-format reports from your uploaded invoices and bills, so an unlisted company can answer a customer in the format it already uses. These drafts are self-declared, not assured.",
   "links": [
+    { "label": "BRSR and BRSR Core in plain words", "to": "/brsr-reporting" },
     {
       "label": "BRSR reporting requirements in India",
       "to": "/climate-intelligence/brsr-reporting-requirements-india"

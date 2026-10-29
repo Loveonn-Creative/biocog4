@@ -39,6 +39,7 @@
   ],
   "senseible": "Senseible calculates Scope 1 and Scope 2 from fuel and electricity invoices and keeps Scope 3 lines in a separate supplier evidence trail, so a supplier can answer a listed customer's request with sourced figures. Its BRSR output is a self-declared draft built from your uploaded data; the BRSR Core check must come from an independent provider.",
   "links": [
+    { "label": "BRSR and BRSR Core in plain words", "to": "/brsr-reporting" },
     { "label": "Senseible for listed companies", "to": "/enterprise" },
     { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" },
     { "label": "Can I report only Scope 1 and 2?", "to": "/answers/can-i-report-only-scope-1-and-2" },
