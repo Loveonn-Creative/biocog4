@@ -1,13 +1,16 @@
 // Shared chat-completion client for every AI edge function.
-// Provider order: GEMINI_API_KEY (primary) → Gemini_API_Key (secondary) →
-// the Lovable AI Gateway (LOVABLE_API_KEY). Each Gemini key is tried in
-// turn; the gateway is used only when every Gemini key is missing,
-// unreachable, slow to answer or returns an error. Any one key alone is
-// enough to run.
+// Provider order (owner, October 2026): Vertex AI on Google Cloud
+// (VERTEX_SERVICE_ACCOUNT, billed to the Cloud account and its credits) →
+// GEMINI_API_KEY (primary) → Gemini_API_Key (secondary) → the Lovable AI
+// Gateway (LOVABLE_API_KEY). Each provider is tried in turn; the next one is
+// used only when the previous is missing, unreachable, slow to answer or
+// returns an error. Any one provider alone is enough to run.
 // Callers keep the same OpenAI-compatible request and response shape, and the
 // Authorization header they pass is ignored: keys are only read here.
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
 const GATEWAY_URL = 'https://ai.gateway.lovable.dev/v1/chat/completions';
+const VERTEX_SCOPE = 'https://www.googleapis.com/auth/cloud-platform';
+const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
 // Time allowed for Gemini to start answering before we switch to the next
 // provider. Only the wait for response headers is bounded, so long streams
 // still run.
@@ -49,7 +52,84 @@ export function geminiKey(): string | undefined {
 
 /** True when at least one AI provider key is set. */
 export function aiConfigured(): boolean {
-  return Boolean(geminiKey() || Deno.env.get('LOVABLE_API_KEY'));
+  return Boolean(vertexConfig() || geminiKey() || Deno.env.get('LOVABLE_API_KEY'));
+}
+
+// ---- Vertex AI (Google Cloud) ----
+
+interface VertexConfig { email: string; privateKey: string; project: string; location: string; tokenUri: string }
+
+/**
+ * Vertex AI settings from the edge-function secrets: VERTEX_SERVICE_ACCOUNT is
+ * the service-account key JSON (role Vertex AI User); VERTEX_PROJECT_ID and
+ * VERTEX_LOCATION (default "global") are optional overrides. Null when unset
+ * or unreadable. Read here only; never logged, returned or sent to a browser.
+ */
+export function vertexConfig(): VertexConfig | null {
+  const raw = Deno.env.get('VERTEX_SERVICE_ACCOUNT')?.trim();
+  if (!raw) return null;
+  try {
+    const sa = JSON.parse(raw) as { client_email?: string; private_key?: string; project_id?: string; token_uri?: string };
+    const project = Deno.env.get('VERTEX_PROJECT_ID')?.trim() || sa.project_id;
+    if (!sa.client_email || !sa.private_key || !project) return null;
+    return {
+      email: sa.client_email,
+      privateKey: sa.private_key,
+      project,
+      location: Deno.env.get('VERTEX_LOCATION')?.trim() || 'global',
+      tokenUri: sa.token_uri || GOOGLE_TOKEN_URL,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** Vertex's OpenAI-compatible chat endpoint for the project and region. */
+export function vertexUrl(c: Pick<VertexConfig, 'project' | 'location'>): string {
+  const host = c.location === 'global' ? 'aiplatform.googleapis.com' : `${c.location}-aiplatform.googleapis.com`;
+  return `https://${host}/v1/projects/${c.project}/locations/${c.location}/endpoints/openapi/chat/completions`;
+}
+
+// Vertex model in the same tier as asked. VERTEX_MODEL_LITE / _PRO / _FLASH
+// override the defaults without a code change if Google renames a model.
+export function toVertexModel(model: unknown): string {
+  const m = String(model ?? '');
+  if (m.includes('lite')) return Deno.env.get('VERTEX_MODEL_LITE')?.trim() || 'google/gemini-3.1-flash-lite';
+  if (m.includes('pro')) return Deno.env.get('VERTEX_MODEL_PRO')?.trim() || 'google/gemini-3.1-pro-preview';
+  return Deno.env.get('VERTEX_MODEL_FLASH')?.trim() || 'google/gemini-3.8-flash';
+}
+
+const b64url = (bytes: Uint8Array | string) => {
+  const bin = typeof bytes === 'string' ? bytes : String.fromCharCode(...bytes);
+  return btoa(bin).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
+};
+
+// Access tokens last an hour; reuse one per instance until a minute before expiry.
+let vertexToken: { value: string; until: number; email: string } | null = null;
+
+async function vertexAccessToken(c: VertexConfig): Promise<string | null> {
+  if (vertexToken && vertexToken.email === c.email && Date.now() < vertexToken.until) return vertexToken.value;
+  try {
+    const pem = c.privateKey.replace(/\\n/g, '\n').replace(/-----[^-]+-----/g, '').replace(/\s+/g, '');
+    const der = Uint8Array.from(atob(pem), (ch) => ch.charCodeAt(0));
+    const key = await crypto.subtle.importKey('pkcs8', der, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['sign']);
+    const now = Math.floor(Date.now() / 1000);
+    const unsigned = `${b64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }))}.${b64url(JSON.stringify({ iss: c.email, scope: VERTEX_SCOPE, aud: c.tokenUri, iat: now, exp: now + 3600 }))}`;
+    const sig = new Uint8Array(await crypto.subtle.sign('RSASSA-PKCS1-v1_5', key, new TextEncoder().encode(unsigned)));
+    const res = await fetch(c.tokenUri, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: `${unsigned}.${b64url(sig)}` }).toString(),
+    });
+    if (!res.ok) { console.info('Vertex token refused', res.status); await res.body?.cancel(); return null; }
+    const data = await res.json() as { access_token?: string; expires_in?: number };
+    if (!data.access_token) return null;
+    vertexToken = { value: data.access_token, until: Date.now() + Math.max(60, (data.expires_in ?? 3600) - 60) * 1000, email: c.email };
+    return data.access_token;
+  } catch (e) {
+    console.info('Vertex token unavailable', (e as Error)?.name ?? 'error');
+    return null;
+  }
 }
 
 /** Safe user-facing message for a failed AI response status. */
@@ -90,8 +170,41 @@ async function tryGemini(key: string, body: Record<string, unknown>): Promise<Re
 // the primary cools down.
 const GEMINI_COOLDOWN_MS = 5 * 60_000;
 const geminiSkipUntil = new Map<number, number>();
-/** Test hook: forget any Gemini cooldown. */
-export function resetAiFallbackState(): void { geminiSkipUntil.clear(); }
+let vertexSkipUntil = 0;
+/** Test hook: forget any cooldown and cached Vertex token. */
+export function resetAiFallbackState(): void { geminiSkipUntil.clear(); vertexSkipUntil = 0; vertexToken = null; }
+
+// Vertex's answer, or null when it was skipped, never answered or had no token.
+// Refusals that will repeat (no access, unknown model, quota, outage) put
+// Vertex on the same cooldown as a Gemini key, so later requests go straight on.
+async function tryVertex(c: VertexConfig, body: Record<string, unknown>, hasNext: boolean): Promise<Response | null> {
+  if (hasNext && Date.now() < vertexSkipUntil) return null;
+  const token = await vertexAccessToken(c);
+  if (!token) { if (hasNext) vertexSkipUntil = Date.now() + GEMINI_COOLDOWN_MS; return null; }
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), GEMINI_HEADER_TIMEOUT_MS);
+  try {
+    const res = await fetch(vertexUrl(c), {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...body, model: toVertexModel(body.model) }),
+      signal: ctrl.signal,
+    });
+    clearTimeout(timer);
+    if (!res.ok) {
+      const s = res.status;
+      if (s === 401) vertexToken = null;
+      if (hasNext && (s === 401 || s === 403 || s === 404 || s === 402 || s === 429 || s >= 500)) vertexSkipUntil = Date.now() + GEMINI_COOLDOWN_MS;
+      console.info('AI fallback: trying next provider', 'after Vertex', s);
+    }
+    return res;
+  } catch (e) {
+    clearTimeout(timer);
+    if (hasNext) vertexSkipUntil = Date.now() + GEMINI_COOLDOWN_MS;
+    console.info('Vertex unreachable or slow', (e as Error)?.name ?? 'error');
+    return null;
+  }
+}
 
 // Try each Gemini key in order; returns the first usable response, or null
 // when every key is cooling down, unreachable or refused.
@@ -118,7 +231,16 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
   try { body = JSON.parse(String(init.body ?? '{}')); } catch { return json(400, 'Invalid AI request'); }
   const keys = geminiKeys();
   const lovable = Deno.env.get('LOVABLE_API_KEY');
-  if (!keys.length && !lovable) return json(503, 'AI is not configured');
+  const vertex = vertexConfig();
+  if (!vertex && !keys.length && !lovable) return json(503, 'AI is not configured');
+
+  if (vertex) {
+    const hasNext = keys.length > 0 || Boolean(lovable);
+    const res = await tryVertex(vertex, body, hasNext);
+    if (res?.ok) return res;
+    if (!hasNext) return res ?? json(503, aiErrorMessage(0));
+    await res?.body?.cancel();
+  }
 
   if (keys.length) {
     const res = await tryGeminiCascade(keys, body, Boolean(lovable));

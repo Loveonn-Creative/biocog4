@@ -3,14 +3,15 @@ import { afterEach, beforeEach, describe, expect, test } from 'bun:test';
 // aiFetch reads keys from Deno.env; give it a small stand-in.
 const env = new Map<string, string>();
 (globalThis as any).Deno = { env: { get: (k: string) => env.get(k) } };
-const { aiFetch, aiConfigured, toGatewayModel, toGeminiModel, resetAiFallbackState } = await import('../supabase/functions/_shared/aiFetch.ts');
+const { aiFetch, aiConfigured, toGatewayModel, toGeminiModel, toVertexModel, vertexUrl, resetAiFallbackState } = await import('../supabase/functions/_shared/aiFetch.ts');
 
 const realFetch = globalThis.fetch;
 let calls: { url: string; body: any; auth: string | null }[] = [];
 const reply = (status: number, body: unknown = { choices: [] }) => new Response(JSON.stringify(body), { status });
 const route = (handler: (url: string) => Response | Promise<Response>) => {
   globalThis.fetch = (async (url: string, init: RequestInit) => {
-    calls.push({ url, body: JSON.parse(String(init.body)), auth: new Headers(init.headers).get('Authorization') });
+    const raw = String(init.body ?? '');
+    calls.push({ url, body: raw.startsWith('{') ? JSON.parse(raw) : raw, auth: new Headers(init.headers).get('Authorization') });
     return handler(url);
   }) as typeof fetch;
 };
@@ -178,5 +179,77 @@ describe('Gemini key order', () => {
     calls = [];
     expect((await ask()).status).toBe(200);
     expect(calls[0].auth).toBe('Bearer s');
+  });
+});
+
+// A throwaway service account, generated per run: never a real key.
+const testKeyPair = await crypto.subtle.generateKey({ name: 'RSASSA-PKCS1-v1_5', modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: 'SHA-256' }, true, ['sign', 'verify']);
+const pkcs8 = new Uint8Array(await crypto.subtle.exportKey('pkcs8', testKeyPair.privateKey));
+const pem = `-----BEGIN PRIVATE KEY-----\n${btoa(String.fromCharCode(...pkcs8)).replace(/(.{64})/g, '$1\n')}\n-----END PRIVATE KEY-----\n`;
+const serviceAccount = JSON.stringify({ client_email: 'ai@test-project.iam.gserviceaccount.com', private_key: pem, project_id: 'test-project', token_uri: 'https://oauth2.googleapis.com/token' });
+const tokenReply = () => reply(200, { access_token: 'vt', expires_in: 3600 });
+const isToken = (url: string) => url.startsWith('https://oauth2.googleapis.com/token');
+const isVertex = (url: string) => url.includes('aiplatform.googleapis.com');
+
+describe('aiFetch with Vertex AI first', () => {
+  test('Vertex answers: Gemini and the gateway are never called', async () => {
+    env.set('VERTEX_SERVICE_ACCOUNT', serviceAccount); env.set('GEMINI_API_KEY', 'g'); env.set('LOVABLE_API_KEY', 'l');
+    route((url) => (isToken(url) ? tokenReply() : reply(200)));
+    expect(aiConfigured()).toBe(true);
+    expect((await ask()).status).toBe(200);
+    expect(calls).toHaveLength(2);
+    expect(isToken(calls[0].url)).toBe(true);
+    expect(String(calls[0].body)).toContain('grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer');
+    expect(calls[1].url).toBe('https://aiplatform.googleapis.com/v1/projects/test-project/locations/global/endpoints/openapi/chat/completions');
+    expect(calls[1].auth).toBe('Bearer vt');
+    expect(calls[1].body.model).toBe(toVertexModel('google/gemini-2.5-pro'));
+  });
+
+  test('the access token is reused across requests', async () => {
+    env.set('VERTEX_SERVICE_ACCOUNT', serviceAccount);
+    route((url) => (isToken(url) ? tokenReply() : reply(200)));
+    await ask(); await ask();
+    expect(calls.filter((c) => isToken(c.url))).toHaveLength(1);
+    expect(calls.filter((c) => isVertex(c.url))).toHaveLength(2);
+  });
+
+  for (const status of [403, 404, 429, 500]) {
+    test(`Vertex ${status}: falls back to Gemini, then skips Vertex for a while`, async () => {
+      env.set('VERTEX_SERVICE_ACCOUNT', serviceAccount); env.set('GEMINI_API_KEY', 'g'); env.set('LOVABLE_API_KEY', 'l');
+      route((url) => (isToken(url) ? tokenReply() : isVertex(url) ? reply(status, { error: 'x' }) : reply(200)));
+      expect((await ask()).status).toBe(200);
+      expect(calls.at(-1)!.url).toContain('generativelanguage.googleapis.com');
+      calls = [];
+      expect((await ask()).status).toBe(200);
+      expect(calls.some((c) => isVertex(c.url))).toBe(false);
+    });
+  }
+
+  test('token refused: goes straight to Gemini', async () => {
+    env.set('VERTEX_SERVICE_ACCOUNT', serviceAccount); env.set('GEMINI_API_KEY', 'g');
+    route((url) => (isToken(url) ? reply(400, { error: 'invalid_grant' }) : reply(200)));
+    expect((await ask()).status).toBe(200);
+    expect(calls.some((c) => isVertex(c.url))).toBe(false);
+    expect(calls.at(-1)!.url).toContain('generativelanguage.googleapis.com');
+  });
+
+  test('Vertex only, and it refuses: the caller sees its status', async () => {
+    env.set('VERTEX_SERVICE_ACCOUNT', serviceAccount);
+    route((url) => (isToken(url) ? tokenReply() : reply(429, { error: 'x' })));
+    expect((await ask()).status).toBe(429);
+  });
+
+  test('an unreadable service account is ignored', async () => {
+    env.set('VERTEX_SERVICE_ACCOUNT', '{not json'); env.set('GEMINI_API_KEY', 'g');
+    route(() => reply(200));
+    expect((await ask()).status).toBe(200);
+    expect(calls.map((c) => c.url)).toEqual([expect.stringContaining('generativelanguage.googleapis.com')]);
+  });
+
+  test('regional endpoint and model overrides', () => {
+    expect(vertexUrl({ project: 'p', location: 'asia-south1' })).toBe('https://asia-south1-aiplatform.googleapis.com/v1/projects/p/locations/asia-south1/endpoints/openapi/chat/completions');
+    env.set('VERTEX_MODEL_FLASH', 'google/gemini-x-flash');
+    expect(toVertexModel('google/gemini-2.5-flash')).toBe('google/gemini-x-flash');
+    expect(toVertexModel('google/gemini-2.5-flash-lite')).toBe('google/gemini-3.1-flash-lite');
   });
 });
