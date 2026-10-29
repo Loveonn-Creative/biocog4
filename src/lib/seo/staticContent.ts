@@ -12,6 +12,7 @@ import { whitePaperBlocks } from './whitePaperBlocks';
 import * as cci from '@/data/carbonCreditsIndia';
 import * as cbi from '@/data/cbamIndia';
 import * as sc from '@/data/softwareChooser';
+import * as gls from '@/data/greenLoanSchemes';
 import * as icd from '@/data/indiaClimateData';
 import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
@@ -176,6 +177,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
         '[Measure your footprint from one invoice](/) if it is the missing piece.',
         'Signed-in users on Essential and higher can prepare a full application with documents kept private.',
         '[How verified data is used in climate finance](/climate-finance)',
+        '[Compare green loan schemes for MSMEs](/msme-green-loan-schemes) by what the money is for.',
       ] },
       { p: 'Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.' },
     ],
@@ -395,6 +397,31 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { h2: 'Straight answers' },
       ...cbi.CBAM_INDIA_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
       { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector.' },
+    ],
+  },
+  '/msme-green-loan-schemes': {
+    h1: 'Green loan schemes for MSMEs in India',
+    blocks: [
+      { p: 'SIDBI and your bank lend for different projects, BEE cuts the interest on some, and RBI and CGTMSE rules change what a bank will do. Pick what the money is for (energy efficiency, rooftop solar, a machinery upgrade or working capital) and compare who each route suits, what it pays for and the papers the lender will want. Senseible does not lend, arrange or approve loans. Lenders and scheme bodies decide.' },
+      { h2: 'Ten routes, compared' },
+      { table: { head: ['Route', 'Who it suits', 'What it pays for', 'What the lender asks for', 'Terms'], rows: gls.SCHEMES.map(s => [
+        `${s.name} (${s.kind})`, s.suits, s.funds,
+        s.asks.length ? s.asks.map(a => gls.EVIDENCE.find(e => e.id === a)!.label).join('; ') : (s.asksNote ?? ''),
+        [...s.terms, s.check].join('; '),
+      ]) } },
+      { h2: 'Which routes fit which need' },
+      { ul: gls.NEEDS.map(n => `${n.label}: ${gls.arrange(n.id).fit.map(s => s.name).join(', ')}`) },
+      { h2: 'The same papers come up again and again' },
+      { ul: gls.evidenceTally(gls.SCHEMES).map(t => `${t.item.label}: asked by ${t.count} of ${gls.SCHEMES.length} routes${t.item.senseible ? `. ${t.item.senseible}.` : ''}`) },
+      { h2: 'From a pile of bills to a file a lender reads' },
+      { ol: [
+        'Upload your electricity bills and fuel invoices, as photos or PDFs.',
+        'Each bill is checked and kept as a record: each line shows the units used and how the emissions were worked out. The same bill is never counted twice.',
+        'Finance evidence on your dashboard counts verified records only, ready to show your bank.',
+      ] },
+      { p: 'Start with the free [green loan readiness check](/green-loan-check): a few one-tap questions and a checklist of what a credit team will ask for. It is not a loan decision. Signed in, you can prepare a [green loan application](/green-loan). See also [how credit teams use verified records](/climate-finance).' },
+      { h2: 'Questions owners ask' },
+      ...gls.GLS_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
     ],
   },
   '/carbon-accounting-software-india': {

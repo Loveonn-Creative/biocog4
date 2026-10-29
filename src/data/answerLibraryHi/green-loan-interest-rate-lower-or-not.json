@@ -30,6 +30,10 @@
   "senseible": "Senseible invoices और bills को तारीख और fingerprint वाले emission records में बदलता है, यही वह सबूत है जो lender आम तौर पर सबसे पहले देखना चाहता है।",
   "links": [
     {
+      "label": "MSME के लिए green loan schemes की तुलना",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "क्या renewable energy lending priority sector है?",
       "to": "/answers/is-renewable-energy-loan-priority-sector"
     },

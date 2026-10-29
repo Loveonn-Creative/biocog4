@@ -48,6 +48,7 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   // Green finance cluster
   '/green-finance': { slug: 'green-finance', alt: 'Green loans, sustainability-linked loans and green bonds backed by verified emissions' },
   '/green-loan-check': { slug: 'green-finance', alt: 'Green loan check for MSMEs: see what a lender will ask for' },
+  '/msme-green-loan-schemes': { slug: 'green-finance', alt: 'Green loan schemes for MSMEs in India, compared by what the money is for' },
   // Carbon accounting and scopes
   '/carbon-accounting': { slug: 'carbon-accounting', alt: 'Carbon accounting: a Scope 1, 2 and 3 GHG inventory from your bills and invoices' },
   '/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business': { slug: 'carbon-accounting', alt: 'Scope 1, 2 and 3 emissions: a small business guide' },
@@ -216,6 +217,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/green-loan-check': {
     title: 'Green Loan Check for MSMEs: 2-Minute Readiness',
     description: 'Answer six quick questions to see what a lender will ask for in a green loan application, and measure the carbon footprint most MSMEs are missing.',
+  },
+  '/msme-green-loan-schemes': {
+    title: 'Green Loan Schemes for MSMEs in India, Compared',
+    description: 'SIDBI 4E, Green Finance Scheme, FMAP, ADEETIE, MSE-GIFT, bank solar loans and CGTMSE: who each suits, what it funds and the papers lenders ask for.',
   },
   '/grants': {
     title: 'Climate Grants and Funding Applications',

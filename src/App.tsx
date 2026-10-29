@@ -69,6 +69,7 @@ const SoftwareChooser = lazyPage(() => import("./pages/SoftwareChooser"));
 const ClimateFinance = lazyPage(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazyPage(() => import("./pages/GreenLoan"));
 const GreenLoanCheck = lazyPage(() => import("./pages/GreenLoanCheck"));
+const GreenLoanSchemes = lazyPage(() => import("./pages/GreenLoanSchemes"));
 const WhitePaper = lazyPage(() => import("./pages/WhitePaper"));
 const IndiaClimateData = lazyPage(() => import("./pages/IndiaClimateData"));
 const Help = lazyPage(() => import("./pages/Help"));
@@ -252,6 +253,7 @@ const App = () => (
               <Route path="/climate-finance" element={<ClimateFinance />} />
               <Route path="/green-loan" element={<GreenLoan />} />
               <Route path="/green-loan-check" element={<GreenLoanCheck />} />
+              <Route path="/msme-green-loan-schemes" element={<GreenLoanSchemes />} />
               <Route path="/white-paper" element={<WhitePaper />} />
               <Route path="/india-climate-data" element={<IndiaClimateData />} />
               <Route path="/help" element={<Help />} />

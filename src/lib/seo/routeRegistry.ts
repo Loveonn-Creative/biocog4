@@ -50,6 +50,7 @@ import { HI_PAGES_REVIEWED, HI_PATHS, hindiPath } from './hiPages';
 import { HINDI_ANSWERS } from '@/data/answerLibraryHi';
 import { DATA_PACK, DE_META, KOSTEN_FAQ } from '@/data/de/cbamDe';
 import { CCI_FAQS, CCI_PATH } from '@/data/carbonCreditsIndia';
+import { GLS_FAQS, GLS_PATH } from '@/data/greenLoanSchemes';
 import { CBAM_INDIA_FAQS, CBAM_INDIA_PATH } from '@/data/cbamIndia';
 
 export * from './seoMeta';
@@ -350,9 +351,11 @@ function coreRoutes(): SeoRoute[] {
   const cciCrumbs = [{ name: 'Home', path: '/' }, { name: 'Carbon credits in India', path: CCI_PATH }];
   const cbamIndia = staticRoute(CBAM_INDIA_PATH, 'core', 0.9, { jsonLd: [breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'CBAM for Indian exporters', path: CBAM_INDIA_PATH }]), faqLd(CBAM_INDIA_FAQS)] });
   const carbonCreditsIndia = staticRoute(CCI_PATH, 'core', 0.8, { jsonLd: [breadcrumbLd(cciCrumbs), faqLd(CCI_FAQS)] });
+  const glsCrumbs = [{ name: 'Home', path: '/' }, { name: 'Green loan schemes for MSMEs', path: GLS_PATH }];
+  const greenLoanSchemes = staticRoute(GLS_PATH, 'core', 0.8, { breadcrumbs: glsCrumbs, jsonLd: [breadcrumbLd(glsCrumbs), faqLd(GLS_FAQS)] });
 
   return [
-    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, cbamIndia, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
+    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, cbamIndia, carbonCreditsIndia, greenLoanSchemes, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];

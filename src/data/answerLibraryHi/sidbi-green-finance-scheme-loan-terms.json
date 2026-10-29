@@ -46,6 +46,10 @@
   "senseible": "Senseible आपके बिजली bills और fuel invoices को तारीख वाली baseline और project के पहले-बाद के record में बदलता है, वही सबूत जो green loan appraisal और बाद की reporting माँगती है।",
   "links": [
     {
+      "label": "MSME के लिए green loan schemes की तुलना",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "SIDBI 4E loan की शर्तें",
       "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
     },

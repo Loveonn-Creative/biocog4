@@ -38,6 +38,10 @@
   "senseible": "Senseible reads twelve months of bills into energy per month and per unit of output, which gives the auditor and SIDBI the same baseline and makes the saving after commissioning easy to show.",
   "links": [
     {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "SIDBI energy efficiency loans overview",
       "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
     },

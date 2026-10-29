@@ -49,6 +49,10 @@
   "senseible": "Senseible turns your electricity bills and fuel invoices into a dated baseline and a before and after record of the project, the evidence a green loan appraisal and later reporting ask for.",
   "links": [
     {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "SIDBI 4E loan terms",
       "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
     },

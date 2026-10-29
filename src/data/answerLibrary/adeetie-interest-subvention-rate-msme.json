@@ -41,6 +41,10 @@
   "senseible": "Senseible keeps a dated, fingerprinted record of every electricity bill and fuel invoice before and after the project, which is the evidence trail you need when the yearly 10 percent saving is checked.",
   "links": [
     {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "ADEETIE scheme explained",
       "to": "/climate-intelligence/adeetie-scheme"
     },
