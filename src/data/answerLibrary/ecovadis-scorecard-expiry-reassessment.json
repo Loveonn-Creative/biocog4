@@ -1,0 +1,77 @@
+{
+  "slug": "ecovadis-scorecard-expiry-reassessment",
+  "q": "When does an EcoVadis scorecard expire, and when should I start the reassessment?",
+  "title": "EcoVadis scorecard expiry and reassessment",
+  "short": "An EcoVadis scorecard, and any medal or badge on it, is valid for 12 months from its publication date. A reassessment happens only if you choose to renew, and it creates a new scorecard with a new date. Start early enough that the new one is published before the old one lapses.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian suppliers already rated by EcoVadis",
+  "sections": [
+    {
+      "h": "What expires, and when",
+      "ul": [
+        "The scorecard: 12 months from publication. The validity date is on your scorecard.",
+        "The medal or badge: same 12 months. It cannot outlive the scorecard it came with.",
+        "Your documents do not all expire at the same pace. EcoVadis treats policies and actions as valid for 8 years, reported figures such as energy and emissions for 2 years, and certificates until their own expiry date."
+      ]
+    },
+    {
+      "h": "Why the old figures will hurt you",
+      "p": [
+        "A reassessment re-checks the age of everything you uploaded last time. Your ISO 14001 certificate may still be live and your energy policy may be fine for years, but the electricity and fuel figures you used will drop out once they pass two years. Last year's numbers are the first thing to refresh."
+      ]
+    },
+    {
+      "h": "Work back from the expiry date",
+      "ol": [
+        "Note the publication date on your current scorecard. Expiry is 12 months later.",
+        "Leave time for EcoVadis's review after you submit; analysts spend more than 15 hours reviewing each questionnaire and its documents.",
+        "Three months before expiry, close your latest financial year's electricity and fuel data and convert it to Scope 1 and 2.",
+        "Open last year's improvement areas on the scorecard and gather proof of what you did about each.",
+        "Check which documents carry over. Some plans re-use documents and your corrective action plan from the last assessment, where eligible."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Tiruppur knitwear exporter",
+    "lines": [
+      "Scorecard published 10 December 2025. Valid until 10 December 2026.",
+      "Energy figures used: FY 2023-24. These are near the two-year limit, so treat them as stale for the reassessment.",
+      "September 2026: FY 2025-26 bills and diesel invoices turned into new Scope 1 and 2 totals.",
+      "October 2026: proof uploaded for last year's improvement areas, such as an LED retrofit with before and after units.",
+      "Submit early November 2026, leaving weeks for review before 10 December."
+    ],
+    "note": "Dates are an example; your own validity date is on your scorecard."
+  },
+  "senseible": "Senseible turns a fresh year of electricity bills and fuel invoices into Scope 1 and 2 totals, with each line tied to its bill, so the figures you re-upload are current. It does not handle the EcoVadis renewal itself.",
+  "links": [
+    {
+      "label": "Refresh your carbon figure",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Why energy figures get no credit",
+      "to": "/answers/ecovadis-energy-ghg-95-percent-coverage"
+    },
+    {
+      "label": "What score wins a medal",
+      "to": "/answers/ecovadis-medal-score-needed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure document (2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis, medals and badges",
+      "url": "https://ecovadis.com/suppliers/ecovadis-medals-and-badges/"
+    },
+    {
+      "label": "EcoVadis, plans and pricing for rated companies",
+      "url": "https://ecovadis.com/plans-pricing/"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Re-check scorecard validity and the document validity periods (8 years, 2 years) in each EcoVadis methodology edition."
+}

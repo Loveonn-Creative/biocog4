@@ -1,0 +1,74 @@
+{
+  "slug": "do-i-have-to-pay-for-ecovadis",
+  "q": "Do I have to pay EcoVadis to answer my buyer's assessment?",
+  "title": "Do I have to pay for EcoVadis?",
+  "short": "Usually yes. A full EcoVadis Sustainability Rating needs a subscription plan, priced by your company size and country, and a fee may apply even when your buyer sent the invite. Check the plans page for your size band, and ask your buyer which plan they need before you pick one.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian MSME suppliers invited to EcoVadis by a buyer",
+  "sections": [
+    {
+      "h": "Who pays whom",
+      "p": [
+        "Your buyer pays EcoVadis to rate its suppliers. You, as the rated company, choose your own plan to be assessed. The two are separate, so an invite from a large customer does not mean the customer has paid for you.",
+        "EcoVadis lists the price after you pick your company size (up to 25, 26 to 99, 100 to 999, or 1,000 or more employees) and your country. Plans run for 1 or 3 years."
+      ]
+    },
+    {
+      "h": "The plans, and what each one changes for you",
+      "ul": [
+        "Carbon Rating: carbon questions only, giving a carbon scorecard. Offered by partner invitation, so you get it only if your buyer invites you to it. Not available to companies with 25 or fewer employees.",
+        "Basic: the full sustainability assessment and scorecard, shared inside the EcoVadis network only. No access to the medal or badge image.",
+        "Premium: adds benchmarking, public use of a medal or badge if you earn one, and sharing outside the EcoVadis network.",
+        "Select: adds a priority, fast-tracked review and a pre-filled questionnaire where eligible.",
+        "Corporate: for groups that want to share documents and manage scorecards across several entities."
+      ]
+    },
+    {
+      "h": "How not to overpay",
+      "ol": [
+        "Ask your buyer one question in writing: which EcoVadis plan or scorecard do you need from us? If they only need to see your scorecard and they are on EcoVadis, sharing inside the network may be enough.",
+        "If the request is about carbon only, ask whether they can invite you to the Carbon Rating instead of the full assessment.",
+        "Pay for a fast-tracked review only if your buyer's date really needs it.",
+        "Have your documents ready before you subscribe. A scorecard is valid for 12 months from publication, so a weak first attempt costs you a year at that score."
+      ]
+    },
+    {
+      "h": "When a medal is the reason to pay more",
+      "p": [
+        "If your buyer, or your sales team, wants to show a medal on tenders and your website, Basic will not do it. That needs Premium or above, and a medal is never guaranteed: it depends on your percentile and the eligibility rules."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not sell or replace an EcoVadis plan. Before you subscribe, it can turn your electricity bills and fuel invoices into a first Scope 1 and 2 figure with the source bill behind each line, so you know what you can document.",
+  "links": [
+    {
+      "label": "Get your first carbon figure",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "What score wins a medal",
+      "to": "/answers/ecovadis-medal-score-needed"
+    },
+    {
+      "label": "Can I say no to EcoVadis?",
+      "to": "/answers/decline-ecovadis-assessment-request"
+    },
+    {
+      "label": "EcoVadis carbon scorecard levels",
+      "to": "/answers/ecovadis-carbon-scorecard-levels"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, plans and pricing for rated companies",
+      "url": "https://ecovadis.com/plans-pricing/"
+    },
+    {
+      "label": "EcoVadis, medals and badges",
+      "url": "https://ecovadis.com/suppliers/ecovadis-medals-and-badges/"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "EcoVadis changes plan names, features and eligibility; re-check the plans page every six months. Never quote prices."
+}

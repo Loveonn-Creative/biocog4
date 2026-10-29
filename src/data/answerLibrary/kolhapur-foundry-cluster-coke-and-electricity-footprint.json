@@ -1,0 +1,91 @@
+{
+  "slug": "kolhapur-foundry-cluster-coke-and-electricity-footprint",
+  "q": "How big is the Kolhapur foundry cluster's carbon footprint, and how many units already melt on induction?",
+  "title": "Kolhapur foundry cluster carbon footprint",
+  "short": "About 1.2 million tonnes of CO2 a year, an estimate from the 1,185 million kWh and 128,111 tonnes of coke TERI recorded for Kolhapur. About 70% of its roughly 300 foundries melt on induction. On grid power, induction melting is not lower carbon than a cupola yet.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Foundry owners in Kolhapur and Sangli districts, including Shiroli, Gokul Shirgaon and Kagal",
+  "sections": [
+    {
+      "h": "The cluster's energy",
+      "ul": [
+        "About 300 foundries: 250 to 275 in Kolhapur district across eight industrial areas, and 20 to 25 in Miraj and Palus in Sangli.",
+        "About 600,000 tonnes of grey and SG iron castings a year, roughly 7% to 8% of India's output, with about 30% exported.",
+        "1,185 million kWh of electricity and 128,111 tonnes of coke a year, from a 2012 study. Energy is 15% to 20% of the cost of a casting.",
+        "About 70% of foundries melt in induction furnaces and 30% in cupolas. SG iron work is pushing the shift."
+      ]
+    },
+    {
+      "h": "In tonnes of CO2",
+      "p": [
+        "Electricity gives about 800,000 tonnes and coke about 387,000, so roughly 1.19 million tonnes a year. Do not divide that by 600,000 tonnes and call it a benchmark. The energy and tonnage come from different estimates, and the result, about 1,975 kWh a tonne, sits far above the 1,000 to 1,200 kWh per tonne of good castings that induction units report. Your own bills are the only defensible figure."
+      ]
+    },
+    {
+      "h": "Why the induction shift has not cut CO2 yet",
+      "p": [
+        "Kolhapur induction units use 600 to 700 kWh a tonne to melt. A cupola runs at a coke to metal ratio of 1:8 to 1:9. On today's grid factor, induction melting emits slightly more per tonne of metal than a cupola. It wins on smoke, start-up and SG iron quality. It wins on carbon only when the power is renewable, or when the furnace's temperature and frequency control and harmonic losses are fixed."
+      ]
+    },
+    {
+      "h": "Who asks, and what to keep",
+      "ul": [
+        "Tractor, engine and auto buyers, in India and abroad, ask for kg CO2 per tonne of good castings.",
+        "CBAM covers cast pipe fittings under CN 7307, but most machine castings sit outside it. Check each export code.",
+        "Lenders for furnace upgrades want kWh per tonne before and after.",
+        "Keep a melt log (kWh or coke per heat), monthly power bills, coke invoices, and good castings despatched, not metal poured."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: melting only, per tonne of metal",
+    "lines": [
+      "Induction at 600 kWh: 600 x 0.675 = 405 kg CO2",
+      "Induction at 700 kWh: 700 x 0.675 = 473 kg CO2",
+      "Cupola at 1:8 coke: 125 kg coke x 3.02 = 378 kg CO2",
+      "Cupola at 1:9 coke: 111 kg coke x 3.02 = 336 kg CO2",
+      "Whole induction unit at 1,100 kWh per tonne of good castings: 1,100 x 0.675 = 743 kg CO2"
+    ],
+    "note": "Estimates. Coke at 3.02 t CO2 per tonne is the IPCC 2006 default for coke oven coke; Kolhapur coke at 5,500 to 6,500 kcal per kg may differ. Grid factor for FY 2025-26."
+  },
+  "senseible": "Senseible reads power bills and coke invoices into a monthly Scope 1 and 2 record for the foundry. Add your good castings and it gives the kg CO2 per tonne buyers ask for, traced to the bills.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "What buyers ask Kolhapur foundries for",
+      "to": "/answers/kolhapur-foundry-castings-buyer-carbon-data"
+    },
+    {
+      "label": "Are cast iron castings covered by CBAM?",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    },
+    {
+      "label": "Green loan for a Kolhapur foundry",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile report: Kolhapur foundry cluster (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/brouchres/Cluster-Profile-Report-Kolhapur-(Foundry)-Cluster.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Cluster energy is from a 2012 study quoted in TERI's profile. Update if a newer Kolhapur profile is published."
+}

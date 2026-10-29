@@ -1,0 +1,75 @@
+{
+  "slug": "ecovadis-questionnaire-deadline",
+  "q": "How long do I get to complete the EcoVadis questionnaire?",
+  "title": "EcoVadis questionnaire deadline: a plan",
+  "short": "Your submission deadline is shown on the questionnaire in your EcoVadis account, and your buyer may give you an earlier date of its own. Work to the earlier one. Most of the time goes on finding dated, readable documents, not typing answers, so start with the paperwork.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian MSME owners filling an EcoVadis questionnaire without a sustainability team",
+  "sections": [
+    {
+      "h": "Two dates, and why the gap matters",
+      "p": [
+        "The date in your EcoVadis account is when the questionnaire must be submitted. Your buyer's email may say something different, because they want your scorecard in time for their own supplier review. After you submit, EcoVadis analysts spend more than 15 hours reviewing your answers and documents before the scorecard is published, so ask your buyer whether their date means submitted or published."
+      ]
+    },
+    {
+      "h": "What eats the time",
+      "ul": [
+        "Policies that exist only in someone's head. EcoVadis treats a missing document as a missing system, so an unwritten safety or ethics rule scores like no rule.",
+        "Scanned files. Documents must be machine-readable, dated, clearly your company's, and in PDF, DOCX, XLSX, JPG or PNG under 30 MB.",
+        "The 55-file cap. You cannot upload every certificate you own, so combine and choose.",
+        "Linking. A document only counts when it is attached to the answer it supports."
+      ]
+    },
+    {
+      "h": "A ten-working-day plan for a small team",
+      "ol": [
+        "Day 1: Log in, read the questionnaire set-up (sites, size, industry) and confirm both deadlines with your buyer.",
+        "Days 2 to 3: Collect what already exists: ISO certificates, factory licence, safety records, HR policies, the code of conduct you signed for this buyer.",
+        "Days 3 to 4: Pull 12 months of electricity bills and fuel invoices for every site and turn them into Scope 1 and 2 totals.",
+        "Days 5 to 6: Write the short policies you lack: environment and energy, health and safety, anti-bribery, supplier conduct. Date and sign each one.",
+        "Days 7 to 8: Fill the answers and attach each document to the right question.",
+        "Day 9: Re-read every answer that says yes and check a document backs it.",
+        "Day 10: Submit, and tell your buyer the date you submitted."
+      ]
+    },
+    {
+      "h": "If you will miss the date",
+      "p": [
+        "Tell your buyer before the deadline, not after, with the date you can submit and what is holding you up. A paid plan with a fast-tracked review exists, but it speeds up EcoVadis's review, not your paperwork."
+      ]
+    }
+  ],
+  "senseible": "Day 3 to 4 is where Senseible helps: upload the bills and fuel invoices and get Scope 1 and 2 totals with the source document behind each line, ready to attach. Senseible does not fill or submit the EcoVadis questionnaire.",
+  "links": [
+    {
+      "label": "Turn bills into Scope 1 and 2",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Why energy figures get no credit",
+      "to": "/answers/ecovadis-energy-ghg-95-percent-coverage"
+    },
+    {
+      "label": "Do I have to pay for EcoVadis?",
+      "to": "/answers/do-i-have-to-pay-for-ecovadis"
+    },
+    {
+      "label": "Carbon evidence EcoVadis asks for",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure document (2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis, plans and pricing for rated companies",
+      "url": "https://ecovadis.com/plans-pricing/"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Re-check EcoVadis's document rules, the 55-file limit and the analyst review time with each methodology edition."
+}

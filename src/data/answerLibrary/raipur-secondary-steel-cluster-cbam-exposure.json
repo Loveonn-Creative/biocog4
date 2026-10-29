@@ -1,0 +1,87 @@
+{
+  "slug": "raipur-secondary-steel-cluster-cbam-exposure",
+  "q": "Raipur's 316 MSME steel units: how coal-heavy is the cluster, and what CBAM data will EU buyers need?",
+  "title": "Raipur steel cluster: coal and CBAM exposure",
+  "short": "TERI counts 316 operating secondary steel units around Raipur using 3.65 million toe a year, 3.06 of it coal, and emitting about 17.75 million t CO2 (2023-24). Sponge iron, billets, bars and wire are CBAM goods, so a Raipur figure travels down the chain to every EU-bound tonne.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Sponge iron plants, induction furnaces, re-rolling mills and wire units in Urla, Siltara and the Raipur belt",
+  "sections": [
+    {
+      "h": "Who makes what in the 316",
+      "ul": [
+        "Sponge iron (DRI): 45 operating plants, 24 of them PAT designated consumers. About 5.34 million t a year.",
+        "Induction furnaces: 69 units melting sponge iron and scrap into billets.",
+        "Re-rolling mills: 115 units making TMT, CTD bars, angles and channels.",
+        "Ferro-alloy plants: 21 units.",
+        "Wire drawing: 111 units, plus about 30 foundries and forges."
+      ]
+    },
+    {
+      "h": "Where the carbon sits",
+      "p": [
+        "DRI plants use 3.00 of the cluster's 3.65 million toe and put out 13.29 of its 17.75 million t CO2. Each tonne of sponge iron takes 0.95 to 1.05 t of non-coking coal, about 4.8 to 5.3 Gcal in all. Re-rolling mills, by contrast, are 0.20 million toe and 1.03 million t CO2.",
+        "So the number an EU buyer cares about is mostly made in the rotary kiln, even when the exporter is a rolling mill three steps downstream."
+      ]
+    },
+    {
+      "h": "What CBAM covers here",
+      "ul": [
+        "Covered: sponge iron (7203), billets and other semis (7206, 7207), bars and rods (7213, 7214), sections (7216), wire (7217).",
+        "Ferro-alloys: only ferro-manganese, ferro-chromium and ferro-nickel are covered. Ferro-silicon and silico-manganese are not, so check the CN code before you assume.",
+        "Indirect emissions from electricity are not charged for iron and steel, so the coal and other carbon you burn carry the figure."
+      ]
+    },
+    {
+      "h": "The chain your figure has to pass through",
+      "ol": [
+        "The DRI plant works out direct emissions by mass balance: carbon in coal, minus carbon leaving in the sponge iron, char and dust.",
+        "The induction furnace adds that DRI figure, pro rata, to its own direct emissions per tonne of billet.",
+        "The rolling mill adds the billet figure to its reheating furnace fuel per tonne of bar.",
+        "The EU importer declares it, or falls back on the Commission's default values with a mark-up of 10% for 2026, 20% for 2027 and 30% from 2028."
+      ]
+    },
+    {
+      "h": "Cleaner moves the report backs",
+      "ul": [
+        "Waste heat power from kiln off-gas, which carries about 40% of kiln heat input; TERI puts the viable floor at about 200 tpd of DRI.",
+        "Pellets in place of lump ore, producer gas at the kiln discharge end, and better kiln lining.",
+        "For mills: hot charging and gas in the reheating furnace."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Coal invoices with lab analysis (fixed carbon, ash, GCV) per lot.",
+        "Ore, pellet and dolomite receipts; tonnes of sponge iron, char and dust out.",
+        "For billets and bars: tonnes charged from each supplier and that supplier's figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: coal behind one tonne of Raipur sponge iron",
+    "lines": [
+      "Cluster coal: 5.63 million t for 5.34 million t of DRI = 1.054 t of coal per tonne",
+      "At Senseible's Indian coal factor: 1.054 x 1.76 = 1.86 t CO2 per tonne of DRI",
+      "At TERI's own conversion: 11.83 million t CO2 / 5.34 million t = 2.22 t CO2 per tonne",
+      "Under CBAM, carbon leaving in char and dust is then subtracted, so a plant's own figure can come in lower than either"
+    ],
+    "note": "Cluster averages from TERI (2023-24 data). A plant's coal analysis and output records set its real figure; the gap between the two lines shows why a lab report on your coal is worth having."
+  },
+  "senseible": "Senseible reads coal, gas and power invoices into dated installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator shows certificate cost from 2026 to 2034. It does not verify emissions or file CBAM declarations.",
+  "links": [
+    { "label": "CBAM for exporters", "to": "/cbam" },
+    { "label": "Raipur sponge iron in CBAM", "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions" },
+    { "label": "Raipur TMT bars: the CBAM figure", "to": "/answers/raipur-rolling-mill-tmt-bars-cbam-figure" },
+    { "label": "India default values: ferro-alloys", "to": "/answers/cbam-default-value-india-ferro-alloys" },
+    { "label": "Green loan for a steel MSME", "to": "/climate-intelligence/green-loan-steel-msme-ludhiana-raipur" }
+  ],
+  "sources": [
+    { "label": "TERI, Situational Analysis of Raipur Secondary Steel Cluster (2024, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/Raipur%20Cluster%20Report.pdf" },
+    { "label": "SAMEEEKSHA, Raipur secondary steel cluster summary (2023-24 data)", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=311&Itemid=502" },
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Implementing Regulation (EU) 2025/2621, default values", "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng" }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Re-check the default value mark-ups and any change to CBAM product scope each January."
+}

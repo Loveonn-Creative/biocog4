@@ -1,0 +1,72 @@
+{
+  "slug": "cdp-allocate-emissions-to-customer-question",
+  "q": "How do I answer CDP's question asking me to allocate emissions to my customer?",
+  "title": "CDP 7.26: giving a customer its emissions",
+  "short": "In CDP's corporate questionnaire (2025 numbering), question 7.26 asks you to give each customer who requested your response a share of your emissions for what you sold them that year. You fill one row per scope: the method, the quantity supplied, the tonnes, and how sure you are. Questions 7.27 and 7.28 then ask what made it hard.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian suppliers answering a CDP Supply Chain request from a customer",
+  "sections": [
+    {
+      "h": "The 7.26 table, column by column",
+      "ul": [
+        "Requesting member: already filled in. Check it is the right customer for this reporting year.",
+        "Scope of emissions: Scope 1, Scope 2 location-based, Scope 2 market-based, or Scope 3. One scope per row, so most suppliers fill two rows per customer. You only need to allocate one Scope 2 figure.",
+        "Allocation level: company wide, business unit, facility or commodity. If you pick facility, name it.",
+        "Allocation method: mass, volume, energy content, chemical content, number of units, area or another physical factor, or the market value of what they bought.",
+        "Unit and quantity supplied: the tonnes, kilograms, pieces or rupees you sold this customer. If your goods share no common unit, CDP asks for market value, in the currency you chose in question 1.7.",
+        "Emissions in tonnes CO2e, then uncertainty in plus or minus per cent, your major emission sources, and whether a third party checked the allocation.",
+        "Two text boxes: how you identified the emission sources and what you assumed, and a reference for any published or industry average data you used."
+      ]
+    },
+    {
+      "h": "Rules that trip suppliers up",
+      "ul": [
+        "Allocate only the emissions you reported earlier in the same response (questions 7.6, 7.7 and 7.8). A different total here is the first thing a reviewer spots.",
+        "What you allocate becomes your customer's Scope 3. Which Scope 3 category it falls in is their call, not yours.",
+        "If you allocate by facility or subsidiary, the same breakdown must appear in your Scope 1 and 2 split by subsidiary (7.23.1), with the names written the same way.",
+        "If you pick \"allocation not necessary\" because you have primary data per customer, the calculation columns disappear. Use it only if you truly metered that customer's work."
+      ]
+    },
+    {
+      "h": "Physical or market value",
+      "p": [
+        "CDP counts mass, volume, units and area as physical allocation and market value as economic allocation, and points to Chapter 8 of the GHG Protocol Scope 3 Standard for the choice. If you make one kind of product, use tonnes or pieces: it follows the energy you actually used. Use market value only when you sell this customer a mix of goods with no common unit. Revenue loads more emissions onto a customer who pays a higher price for the same steel or cloth."
+      ]
+    },
+    {
+      "h": "7.27 and 7.28: say what is hard, honestly",
+      "p": [
+        "7.27 gives fixed reasons, such as too many product lines to cost each one, a customer base too large to track, or the need to disclose commercially sensitive data, plus \"no challenges\". Add what would help, for example a sub-meter on the line that runs this customer's parts. 7.28 asks whether you plan to get better at allocation. A short, dated plan beats \"No\" with \"lack of internal resources\"."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a forging unit, one customer, FY 2025-26",
+    "lines": [
+      "Furnace oil 1,50,000 L x 2.97 kg/L = 445.5 t CO2",
+      "DG diesel 20,000 L x 2.645 kg/L = 52.9 t CO2",
+      "Scope 1 = 498.4 t CO2",
+      "Grid electricity 12,00,000 kWh x 0.675 kg/kWh = 810 t CO2 (Scope 2, location-based)",
+      "Output 3,000 t of forgings; this customer bought 450 t, which is 15%",
+      "Row 1: Scope 1, company wide, mass, 450 metric tons, 498.4 x 0.15 = 74.8 t CO2e",
+      "Row 2: Scope 2 location-based, company wide, mass, 450 metric tons, 810 x 0.15 = 121.5 t CO2e"
+    ],
+    "note": "Example figures. Grid factor from the CEA CO2 Baseline Database version 22.0; fuel factors from IPCC 2006 defaults. State both in the explanation box."
+  },
+  "senseible": "Upload a year of fuel invoices and electricity bills and Senseible works out your Scope 1 and Scope 2 with every factor and source shown, so the total you split in 7.26 matches the bills behind it.",
+  "links": [
+    { "label": "Check your supplier evidence", "to": "/scope-3-supplier-evidence" },
+    { "label": "Choosing a key for one customer", "to": "/answers/allocate-my-emissions-to-one-customer" },
+    { "label": "A CDP supply chain request arrived", "to": "/answers/cdp-supply-chain-request-what-to-do" },
+    { "label": "Mass or value allocation", "to": "/answers/buyer-asks-mass-or-value-allocation" }
+  ],
+  "sources": [
+    { "label": "CDP, Full Corporate Questionnaire guidance, Module 7, questions 7.26 to 7.28 (April 2025)", "url": "https://cdn.cdp.net/cdp-production/cms/guidance_docs/pdfs/000/005/688/original/Full_Corporate_Questionnaire_Module_7.pdf" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Chapter 8 on allocation", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "CEA CO2 Baseline Database for the Indian power sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2: Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Question numbers are from CDP's 2025 guidance. Check numbering against the current cycle's Module 7 guidance each April."
+}

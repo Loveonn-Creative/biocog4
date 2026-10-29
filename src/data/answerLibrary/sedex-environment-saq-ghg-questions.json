@@ -1,0 +1,62 @@
+{
+  "slug": "sedex-environment-saq-ghg-questions",
+  "q": "What does the Sedex environment self-assessment questionnaire ask about emissions?",
+  "title": "Sedex environment SAQ: the carbon part",
+  "short": "Sedex's Environment Self-Assessment Questionnaire, launched in August 2024, asks for your environmental commitments, legal compliance, permits, management systems, Scope 1, 2 and 3 greenhouse gas emissions, and how you manage energy, waste, chemicals, air, water, biodiversity and deforestation. Answer the carbon part from twelve months of fuel and electricity bills.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters on Sedex whose buyer has asked them to complete the environment self-assessment",
+  "sections": [
+    {
+      "h": "Self-assessment first, audit later",
+      "p": [
+        "The ESAQ is a form you fill in yourself on Sedex. A SMETA 4-pillar audit is different: an auditor walks your site and checks records. Your buyer can compare your ESAQ with your other Sedex questionnaires and use it in Sedex's risk tools, so treat it as the first thing they read about you, and expect an auditor to test the same figures later.",
+        "Why it arrived now: Sedex built the ESAQ to line up with SBTi, CDP and ISSB, and with rules your buyer faces, such as the EU's CSRD and CSDDD, Germany's supply chain act and California's SB-253 and SB-261. Your buyer needs your figures for their own filings."
+      ]
+    },
+    {
+      "h": "Have these on your desk before you start",
+      "ol": [
+        "Consent to Establish and Consent to Operate from the State Pollution Control Board, hazardous waste authorisation and any groundwater permit, with expiry dates.",
+        "Your environmental policy, who owns it, and any target you have set.",
+        "Scope 1 records: DG diesel invoices and run logs, boiler or furnace fuel invoices, canteen LPG, company vehicle fuel, refrigerant top-ups.",
+        "Scope 2 records: every electricity connection on site for twelve months, in kWh, plus rooftop solar generation readings.",
+        "Scope 3: what you can estimate, such as yarn or fabric bought by weight and inbound freight by tonne-km. Where you have not calculated a category, say so plainly."
+      ]
+    },
+    {
+      "h": "Answers that survive the audit",
+      "ul": [
+        "Every total traces back to a bill. A round number typed from memory is the first thing an auditor questions.",
+        "One boundary for everything: if a second shed or a job-work unit is excluded, name it and give the reason.",
+        "Diesel bought in cash or by a contractor still counts. Find the slips.",
+        "A solar or green power claim needs a generation meter reading or the supplier's certificate behind it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a knitwear unit's Scope 1 and 2 for FY 2025-26",
+    "lines": [
+      "DG diesel 18,000 L x 2.645 kg/L = 47.6 t CO2",
+      "Canteen and dryer LPG 6,000 kg x 2.98 kg/kg = 17.9 t CO2",
+      "Scope 1 = 65.5 t CO2",
+      "Grid electricity 9,00,000 kWh x 0.675 kg/kWh = 607.5 t CO2 (Scope 2, location-based)",
+      "Scope 1 and 2 = 673.0 t CO2",
+      "Garments shipped: 6,00,000 kg, so 673.0 t / 6,00,000 kg = 1.12 kg CO2 per kg of garments"
+    ],
+    "note": "Example figures. Electricity is 90% of this unit's total, so twelve clean months of power bills matter most. Grid factor from the CEA CO2 Baseline Database version 22.0; fuel factors from IPCC 2006 defaults."
+  },
+  "senseible": "Upload your electricity bills and fuel invoices and Senseible returns Scope 1 and 2 with each factor and source shown, so the figures you type into the ESAQ are the ones an auditor can trace back to paper.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "What a SMETA auditor checks", "to": "/answers/sedex-smeta-environment-carbon-questions" },
+    { "label": "Questions a customer audit asks", "to": "/answers/customer-audit-climate-questions-to-prepare" }
+  ],
+  "sources": [
+    { "label": "Sedex, Environment Self-Assessment Questionnaire announcement (August 2024, updated March 2025)", "url": "https://www.sedex.com/blog/elevate-your-environmental-performance-with-sedexs-environment-self-assessment-questionnaire/" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "CEA CO2 Baseline Database for the Indian power sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2: Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-29"
+}

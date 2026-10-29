@@ -1,0 +1,89 @@
+{
+  "slug": "ecovadis-medal-score-needed",
+  "q": "What EcoVadis score do I need for a bronze, silver or gold medal?",
+  "title": "EcoVadis medal: what score do you need?",
+  "short": "There is no fixed score. Medals go by percentile against every company EcoVadis rated in the previous 12 months, across all industries: Bronze is the top 35%, Silver top 15%, Gold top 5%, Platinum top 1%. Any one of the four theme scores below 30 rules out a medal, whatever your total.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSME exporters whose buyer asks for an EcoVadis medal",
+  "sections": [
+    {
+      "h": "Why nobody can give you a cut-off number",
+      "p": [
+        "Your percentile is worked out on the day your scorecard is published, against all companies rated in the 12 months before it. The same score can win Silver one year and Bronze the next if other companies improve. Anyone quoting a fixed score for Gold is guessing.",
+        "The score itself is absolute, 0 to 100, and EcoVadis gives it a label: Insufficient 0 to 24, Partial 25 to 44, Good 45 to 64, Advanced 65 to 84, Outstanding 85 to 100."
+      ]
+    },
+    {
+      "h": "The rules that block a medal even with a high total",
+      "ul": [
+        "Any theme below 30: Environment, Labor and Human Rights, Ethics or Sustainable Procurement. A strong environment score cannot carry a weak ethics score.",
+        "Bad press: a 360 Watch score of 0 in one theme, or 25 in two, unless you have had no negative finding in the past 3 years (5 years for Ethics).",
+        "Excluded businesses: tobacco, weapons, coal or lignite mining, and companies with more than 20% of revenue from coal.",
+        "The medal belongs to the rated company only. Your parent, sister company or another plant cannot use it."
+      ]
+    },
+    {
+      "h": "If you fall short of Bronze",
+      "p": [
+        "EcoVadis has two badges for companies without a medal. Committed needs a score of at least 45. Fast Mover needs 34 to 44 with a gain of at least 6 points on your previous assessment within 18 months. Both are valid for 12 months, like the medal."
+      ]
+    },
+    {
+      "h": "Small firms are not scored like multinationals",
+      "p": [
+        "EcoVadis adds a size factor to each theme score: +13.75 for companies with 1 to 25 employees, +15 for 26 to 99, +10 for 100 to 999, and nothing for 1,000 or more. A 60-person forging unit is expected to show fewer formal systems than a listed group to reach the same score."
+      ]
+    },
+    {
+      "h": "Check what your buyer actually wants before you chase a medal",
+      "ol": [
+        "Ask whether the requirement is a medal, a minimum score, or simply a published scorecard shared with them.",
+        "If they only need to see the scorecard inside EcoVadis, the medal image may not matter to them. Public use of a medal or badge needs a Premium, Select or Corporate plan.",
+        "Find your weakest theme first. Lifting it above 30 matters more than adding points where you are already strong."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 70-person auto parts supplier in Pune",
+    "lines": [
+      "Overall score 58: label Good.",
+      "Theme scores: Environment 66, Ethics 52, Sustainable Procurement 41, Labor and Human Rights 28.",
+      "Labor and Human Rights is below 30, so no medal, whatever the percentile.",
+      "Score 58 is above 45, so the Committed badge is open, if the other badge rules are met.",
+      "Fix for next time: a dated health and safety policy, training records and an incident log could lift Labor above 30."
+    ],
+    "note": "Scores are invented to show how the rules combine; EcoVadis applies them at publication."
+  },
+  "senseible": "Senseible cannot raise your EcoVadis score or fill the questionnaire. It turns your electricity bills and fuel invoices into Scope 1 and 2 figures with the bill behind every line, so the environment evidence you upload holds up.",
+  "links": [
+    {
+      "label": "Share figures your buyer can trace",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Carbon evidence EcoVadis asks for",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "Do I have to pay for EcoVadis?",
+      "to": "/answers/do-i-have-to-pay-for-ecovadis"
+    },
+    {
+      "label": "When a scorecard and medal expire",
+      "to": "/answers/ecovadis-scorecard-expiry-reassessment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure document (2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis, medals and badges",
+      "url": "https://ecovadis.com/suppliers/ecovadis-medals-and-badges/"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "EcoVadis can change medal percentiles, eligibility rules and size factors with each methodology edition; re-check the methodology document and medals page every six months."
+}

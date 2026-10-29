@@ -1,0 +1,82 @@
+{
+  "slug": "firozabad-glass-cluster-gas-use-and-carbon",
+  "q": "How much gas does the Firozabad glass cluster burn, and what does that mean for pot, tank and muffle furnace units?",
+  "title": "Firozabad glass cluster: gas and CO2",
+  "short": "TERI's cluster profile puts Firozabad's gas use at about 879,000 scm a day, roughly 658,000 tonnes of CO2 a year. A typical tank furnace burns 52,000 scm a day (about 107 t CO2). An open or closed pot furnace burns 3,500 scm (about 7 t). Most muffles still burn coal.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Tank furnace, pot furnace and muffle furnace owners in the Firozabad glass cluster, Uttar Pradesh",
+  "sections": [
+    {
+      "h": "The furnaces behind the number",
+      "ul": [
+        "About 55 tank furnaces at 25 to 40 tonnes a day make container glass, tableware, bulb shells and tubes, and about 80% of the cluster's glass.",
+        "About 115 pot furnaces, 90 open and 25 closed, at 4 to 7 tonnes a day make bangles, rods, beads and mouth blown ware.",
+        "An estimated 400 muffle furnaces anneal bangles. Most burn coal and firewood, because piped gas does not reach many of them.",
+        "Total glass melt was about 3,100 tonnes a day, about 70% of glass made by small and medium firms in India."
+      ]
+    },
+    {
+      "h": "Cluster energy and CO2",
+      "p": [
+        "Total energy was about 310,000 tonnes of oil equivalent a year, of which gas was 264,663. The rest was coal, pet coke, LPG, kerosene and diesel. Gas alone, at 879,280 scm a day, is about 321 million scm a year, or about 658,000 tonnes of CO2 at 2.05 kg per scm. Melting takes 0.20 to 0.35 scm per kg of glass melt, depending on the furnace. That is 0.41 to 0.72 kg CO2 per kg from fuel, before CO2 from soda ash and limestone in the batch."
+      ]
+    },
+    {
+      "h": "What it means for each kind of unit",
+      "ul": [
+        "Tank unit: the furnace is 60% to 70% of the unit's energy. An improved design with better refractories, burners, regenerator and controls saves 30% to 35%, about 48 million scm a year if every tank switched.",
+        "Pot unit: most pot furnaces were already rebuilt to the efficient design. The next saving is in the reheating (sekai) furnace, where a recuperator saves about 25% of its gas.",
+        "Muffle unit: on coal, your figure depends on tonnes of coal bought, so keep every coal invoice. A gas muffle uses about 240 scm a day.",
+        "Annealing lehrs in tank units can save 40% to 50% when replaced."
+      ]
+    },
+    {
+      "h": "Who asks, and what to keep",
+      "p": [
+        "Glass is not a CBAM product, so EU buyers ask for a footprint per kg or per piece rather than a declaration. Lenders for furnace rebuilds want gas per tonne before and after. Keep monthly gas bills with quota and above-quota quantities, tonnes of good glass drawn, batch recipes, and for muffles, coal and firewood purchases."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day of gas, by furnace type",
+    "lines": [
+      "Tank furnace: 52,000 scm x 2.05 = 106,600 kg CO2",
+      "Pot furnace: 3,500 scm x 2.05 = 7,175 kg CO2",
+      "Gas muffle: 240 scm x 2.05 = 492 kg CO2",
+      "Tank furnace after a 30% saving: 36,400 scm x 2.05 = 74,620 kg CO2, about 32 t a day less"
+    ],
+    "note": "Gas per day is from TERI's cluster profile. CO2 uses 2.05 kg per scm and excludes batch carbonate CO2. Use your own gas bills."
+  },
+  "senseible": "Senseible reads gas and electricity bills into a monthly record for each furnace site, so a tank or pot unit can show gas per tonne from its own bills.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Gas evidence buyers ask Firozabad units for",
+      "to": "/answers/firozabad-glass-unit-gas-evidence-for-buyers"
+    },
+    {
+      "label": "Batch carbonates and process CO2",
+      "to": "/answers/firozabad-glass-batch-carbonates-process-co2"
+    },
+    {
+      "label": "Financing a Firozabad glass furnace",
+      "to": "/climate-intelligence/finance-glass-furnace-firozabad"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Firozabad glass industries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Firozabad_Glass_Uttar_Pradesh.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Figures are from TERI's 2015 profile; its two unit tables differ slightly (45 to 55 tank, 300 to 400 muffle). Update if a newer SAMEEEKSHA profile is published."
+}

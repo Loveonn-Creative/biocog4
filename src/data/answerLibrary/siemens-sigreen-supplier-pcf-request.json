@@ -1,0 +1,71 @@
+{
+  "slug": "siemens-sigreen-supplier-pcf-request",
+  "q": "Siemens asked us to share product carbon footprints through SiGREEN. What is it, and what do we enter?",
+  "title": "A SiGREEN request: what footprint to send",
+  "short": "SiGREEN is Siemens' tool for requesting and exchanging product carbon footprints along a supply chain. A customer using it wants the CO2e of one unit of the part you sell them, built from your own measured data rather than industry averages. Prepare the materials per unit, your energy per unit and the factor behind each.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian component and material suppliers asked to enter product footprints in SiGREEN",
+  "sections": [
+    {
+      "h": "What SiGREEN is, in Siemens' words",
+      "ul": [
+        "Launched by Siemens in November 2021 to query, calculate and pass on the actual carbon footprint of a product.",
+        "Built to use real data from where emissions happen in the supply chain, rather than industry average values.",
+        "Your footprint is combined with your customer's own production emissions to give their product's footprint.",
+        "Data is exchanged directly between customer and supplier, not stored centrally, so you do not have to reveal your own suppliers or other sensitive details."
+      ]
+    },
+    {
+      "h": "What one footprint needs",
+      "ol": [
+        "The declared unit: one piece, one kg or one metre, exactly as the customer buys it. Confirm it and the boundary in the request before you calculate.",
+        "Materials bought per unit, including the scrap you cut off, with the emission factor for each: your material supplier's own footprint if they gave one, otherwise a published factor you name.",
+        "Energy per unit: electricity and fuel for the line that makes this part, divided by the units it made in the same period.",
+        "Freight to your gate if the request includes it.",
+        "The period, the sources of every factor, and what you left out."
+      ]
+    },
+    {
+      "h": "Why your own numbers matter here",
+      "p": [
+        "SiGREEN is built around measured supplier data. A spend-based estimate is a fair start when nothing else exists, but it moves with price, not with what you burn, so it cannot show the improvement when you switch to lower-carbon steel or add solar. A sub-meter on the line, a year of fuel invoices and your steel mill's declared footprint are what make your number yours."
+      ]
+    },
+    {
+      "h": "Before you press submit",
+      "ul": [
+        "The unit in your answer matches the unit on the purchase order.",
+        "Material weights match the bill of materials and your purchase invoices, scrap included.",
+        "Keep the workings and the bills. A customer can ask how you got the figure, and next year's number should use the same method.",
+        "Do not send a revenue-based split of your plant total as a product footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one powder-coated steel enclosure",
+    "lines": [
+      "Steel bought per unit: 3.2 kg (2.8 kg in the part, 0.4 kg scrap)",
+      "Steel factor from the mill's declaration: 2.0 kg CO2e per kg (use your mill's own figure)",
+      "Material: 3.2 x 2.0 = 6.40 kg CO2e",
+      "Line sub-meter: 18,000 kWh for 6,000 enclosures = 3 kWh each; 3 x 0.675 = 2.03 kg CO2e",
+      "Coating oven LPG: 1,200 kg x 2.98 = 3,576 kg CO2 for 6,000 enclosures = 0.60 kg CO2e each",
+      "Footprint to your gate: 6.40 + 2.03 + 0.60 = 9.03 kg CO2e per enclosure, of which material is 71%"
+    ],
+    "note": "Example figures, except the factors: grid electricity from the CEA CO2 Baseline Database version 22.0 for FY 2025-26, LPG from IPCC 2006 defaults."
+  },
+  "senseible": "Senseible's product carbon footprint calculator takes your materials, energy bills and units made and shows the per-unit figure with each factor and source, ready to copy into the customer's form.",
+  "links": [
+    { "label": "Product carbon footprint calculator", "to": "/calculators" },
+    { "label": "What to send for a footprint request", "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send" },
+    { "label": "Splitting factory electricity by product", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "Why buyers reject footprints", "to": "/answers/why-buyer-rejected-product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "Siemens press release, SiGreen and the Estainium network (22 November 2021)", "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:771556df-3959-4d53-a660-94f88305d8e2/HQDIPR202111226347EN.pdf" },
+    { "label": "Siemens, SiGREEN and supply chain carbon footprints (Siemens Xcelerator insight)", "url": "https://www.siemens.com/en-us/company/insights/digital-transformation-siemens-xcelerator-carbon-footprint/" },
+    { "label": "ISO 14067:2018 Carbon footprint of products (iso.org)", "url": "https://www.iso.org" },
+    { "label": "CEA CO2 Baseline Database for the Indian power sector, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-29"
+}

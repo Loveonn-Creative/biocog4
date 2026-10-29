@@ -1,0 +1,91 @@
+{
+  "slug": "rajkot-foundry-cluster-carbon-footprint",
+  "q": "How much coke, power and oil do Rajkot's grey iron foundries use, and what is one unit's share?",
+  "title": "Rajkot foundry cluster carbon footprint",
+  "short": "TERI recorded 297 million kWh, 31,500 tonnes of coke and 1,296 kL of furnace oil for Rajkot's roughly 700 grey iron foundries in 2014 to 15. That is about 300,000 tonnes of CO2, an estimate. A 1,000 tonne a year induction unit is about a quarter of one percent of it.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Grey and SG iron foundry owners in Rajkot, Aji, Shapar, Metoda and Kuvadwa",
+  "sections": [
+    {
+      "h": "Rajkot's foundries in numbers",
+      "ul": [
+        "About 700 grey iron foundries: about 10 large, 50 medium, the rest small and micro, making about 1,500 tonnes of castings a day (about 0.46 million tonnes a year).",
+        "Customers are OEMs in pumps, auto, electric motors, compressors, machine tools and farm machinery.",
+        "Energy in 2014 to 15: 297 million kWh (25,550 toe), 31,500 tonnes of coke (18,900 toe) and 1,296 kL of furnace oil (1,210 toe), 45,660 toe in all.",
+        "About 12 oil-fired furnaces were still running, each melting about 45 tonnes a month on about 9,000 litres of oil."
+      ]
+    },
+    {
+      "h": "The cluster in CO2",
+      "p": [
+        "Electricity gives about 200,000 tonnes, coke about 95,000 and furnace oil about 3,800, so roughly 300,000 tonnes a year. That is about 0.65 tonnes per tonne of castings across the cluster. Electricity is two thirds of it, which is why the induction units' power bills, not the cupolas, now set Rajkot's footprint."
+      ]
+    },
+    {
+      "h": "Three melting routes, three numbers",
+      "ul": [
+        "Induction: 650 to 850 kWh per tonne of iron melted. That is 439 to 574 kg CO2 on today's grid factor.",
+        "Cupola: coke at 10% to 15% of metal melted, 302 to 453 kg CO2 per tonne. A divided blast cupola pays back in about a year on coke alone.",
+        "Oil-fired: about 200 litres a tonne, about 594 kg CO2, the highest of the three. These units are moving to induction.",
+        "Yield of 50% to 80% and rejections of 3% to 10% move the per tonne figure more than the furnace choice. TERI puts good castings at 1,100 to 1,350 kWh a tonne for many units."
+      ]
+    },
+    {
+      "h": "Who asks, and what to keep",
+      "p": [
+        "OEM buyers that export pumps and engines ask for kg CO2 per tonne of good castings. EU CBAM reaches only castings declared under covered codes such as pipe fittings. Keep monthly power bills, coke and oil invoices, a melt log, and despatch records in tonnes of good castings."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one unit's share of Rajkot",
+    "lines": [
+      "Cluster: 297,000,000 kWh x 0.675 = 200,475 t; 31,500 t coke x 3.02 = 95,130 t; 1,296,000 L oil x 2.97 = 3,849 t",
+      "Cluster total: about 299,450 t CO2",
+      "Induction unit, 1,000 t good castings on 1,100,000 kWh: 1,100,000 x 0.675 = 742.5 t CO2",
+      "Share: 742.5 / 299,450 = 0.25%",
+      "Oil-fired unit: 9,000 L / 45 t = 200 L a tonne; 200 x 2.97 = 594 kg CO2 a tonne melted"
+    ],
+    "note": "Estimates. Coke at 3.02 t CO2 per tonne is the IPCC 2006 default for coke oven coke; grid factor for FY 2025-26. Use your own bills."
+  },
+  "senseible": "Senseible reads your power bills and coke and oil invoices into a monthly record for the foundry, so you can answer an OEM with your own kg CO2 per tonne, traced to the bills.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Rajkot cupola castings: CBAM method",
+      "to": "/answers/rajkot-foundry-cupola-castings-cbam"
+    },
+    {
+      "label": "Foundry footprint per good casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Are cast iron castings covered by CBAM?",
+      "to": "/answers/are-cast-iron-castings-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Cluster profile: Rajkot foundries (SAMEEEKSHA)",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Rajkot_Foundries_Gujarat.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Cluster energy is for 2014 to 15. Update if a newer Rajkot profile is published."
+}
