@@ -21,12 +21,13 @@ export function toGeminiModel(model: unknown): string {
   return 'gemini-flash-latest';
 }
 
-// The gateway gets a model it is known to serve, in the same tier as asked.
+// The gateway gets a current (non-deprecated) model in the same tier as asked.
+// The 2.5 family is deprecated on the gateway and raises warnings.
 export function toGatewayModel(model: unknown): string {
   const m = String(model ?? '');
-  if (m.includes('lite')) return 'google/gemini-2.5-flash-lite';
-  if (m.includes('pro')) return 'google/gemini-2.5-pro';
-  return 'google/gemini-2.5-flash';
+  if (m.includes('lite')) return 'google/gemini-3.1-flash-lite';
+  if (m.includes('pro')) return 'google/gemini-3.1-pro-preview';
+  return 'google/gemini-3.8-flash';
 }
 
 /**

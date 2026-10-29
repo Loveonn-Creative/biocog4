@@ -43,7 +43,7 @@ describe('aiFetch provider order', () => {
       expect((await ask()).status).toBe(200);
       expect(calls).toHaveLength(2);
       expect(calls[1].url).toContain('ai.gateway.lovable.dev');
-      expect(calls[1].body.model).toBe('google/gemini-2.5-pro');
+      expect(calls[1].body.model).toBe('google/gemini-3.1-pro-preview');
       expect(calls[1].auth).toBe('Bearer l');
     });
   }
@@ -96,11 +96,12 @@ describe('aiFetch provider order', () => {
     expect((await ask()).status).toBe(429);
   });
 
-  test('gateway models stay in the asked tier', () => {
-    expect(toGatewayModel('google/gemini-2.5-flash')).toBe('google/gemini-2.5-flash');
-    expect(toGatewayModel('google/gemini-3.6-flash')).toBe('google/gemini-2.5-flash');
-    expect(toGatewayModel('google/gemini-2.5-pro')).toBe('google/gemini-2.5-pro');
-    expect(toGatewayModel('google/gemini-2.5-flash-lite')).toBe('google/gemini-2.5-flash-lite');
+  test('gateway models stay in the asked tier and are never deprecated 2.5 ids', () => {
+    expect(toGatewayModel('google/gemini-2.5-flash')).toBe('google/gemini-3.8-flash');
+    expect(toGatewayModel('google/gemini-3.6-flash')).toBe('google/gemini-3.8-flash');
+    expect(toGatewayModel('google/gemini-2.5-pro')).toBe('google/gemini-3.1-pro-preview');
+    expect(toGatewayModel('google/gemini-2.5-flash-lite')).toBe('google/gemini-3.1-flash-lite');
+    expect(toGatewayModel(undefined)).toBe('google/gemini-3.8-flash');
   });
 });
 
