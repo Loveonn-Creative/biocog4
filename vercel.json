@@ -194,7 +194,11 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/supplier-request/:token",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/supplier-share/:requestId",
       "destination": "/index.html"
     }
   ],

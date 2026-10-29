@@ -45,13 +45,14 @@ export const ESG_SAMPLE_TAKEAWAYS = [
 ];
 
 export type AskerId = 'listed_customer' | 'eu_buyer' | 'lender' | 'global';
-export const ESG_SAMPLE_ASKERS: { id: AskerId; label: string; frameworks: string; why: string; sections: { name: string; page: number }[] }[] = [
+export const ESG_SAMPLE_ASKERS: { id: AskerId; label: string; frameworks: string; why: string; sections: { name: string; page: number }[]; guide?: { label: string; to: string } }[] = [
   {
     id: 'listed_customer',
     label: 'A listed Indian customer',
     frameworks: 'BRSR and BRSR Core',
     why: 'Listed companies report value-chain data under SEBI’s BRSR. The BRSR Core map shows which section answers each code.',
     sections: [{ name: 'BRSR Core disclosure map', page: 54 }, { name: 'GHG emissions analysis', page: 15 }, { name: 'Energy management', page: 17 }, { name: 'Water stewardship', page: 19 }, { name: 'Waste and circular economy', page: 21 }],
+    guide: { label: 'What BRSR and BRSR Core ask for, in plain words', to: '/brsr-reporting' },
   },
   {
     id: 'eu_buyer',

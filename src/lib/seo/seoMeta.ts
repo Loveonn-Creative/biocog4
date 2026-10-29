@@ -250,6 +250,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Carbon Credits in India: How to Earn Them, What It Takes',
     description: 'Find your route into India\'s carbon market in three taps: CCTS targets, offset projects, ESCerts or RECs, what each needs, and BEE\'s fees before you earn.',
   },
+  '/brsr-reporting': {
+    title: 'BRSR Reporting and BRSR Core, Explained in Plain Words',
+    description: 'Who must file BRSR, what the nine BRSR Core attributes ask, the 2025 value chain rules, and the bills behind your energy and emissions figures.',
+  },
   '/carbon-accounting-software-india': {
     title: 'How to Choose Carbon Accounting Software in India',
     description: 'Weigh what matters, get a checklist of questions for every vendor demo, and score your shortlist: Indian bills, GST invoices, BRSR, CBAM and audit trail.',

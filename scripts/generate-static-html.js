@@ -296,6 +296,10 @@ async function main() {
     writeFile(path.join(DIST_DIR, pattern, 'index.html'), html);
     shells++;
   }
+  // Unknown addresses: the host serves 404.html with a real 404 status (no
+  // catch-all rewrite), so search engines drop them, while the app still boots
+  // and shows its own not-found page. Only token routes are rewritten in vercel.json.
+  writeFile(path.join(DIST_DIR, '404.html'), renderAppShell(template, chunkMap['*'] || []).replace('<title>Senseible</title>', '<title>Page not found | Senseible</title>'));
   // In-app prefetching reads the same map (src/lib/routePrefetch.ts).
   writeFile(path.join(DIST_DIR, 'route-chunks.json'), JSON.stringify(compactChunkMap(chunkMap)));
   fs.rmSync(path.join(DIST_DIR, '.vite'), { recursive: true, force: true });
