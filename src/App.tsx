@@ -66,6 +66,7 @@ const Principles = lazyPage(() => import("./pages/Principles"));
 const CarbonCredits = lazyPage(() => import("./pages/CarbonCredits"));
 const CarbonCreditsIndia = lazyPage(() => import("./pages/CarbonCreditsIndia"));
 const SoftwareChooser = lazyPage(() => import("./pages/SoftwareChooser"));
+const BrsrReporting = lazyPage(() => import("./pages/BrsrReporting"));
 const ClimateFinance = lazyPage(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazyPage(() => import("./pages/GreenLoan"));
 const GreenLoanCheck = lazyPage(() => import("./pages/GreenLoanCheck"));
@@ -124,6 +125,7 @@ const CompetitorComparison = lazyPage(() => import("./pages/CompetitorComparison
 const Grants = lazyPage(() => import("./pages/Grants"));
 const DecarbonizeIndia = lazyPage(() => import("./pages/DecarbonizeIndia"));
 const CbamIndia = lazyPage(() => import("./pages/CbamIndia"));
+const CbamDeclarant = lazyPage(() => import("./pages/CbamDeclarant"));
 const CBAMCalculator = lazyPage(() => import("./pages/CBAMCalculator"));
 const NetZero = lazyPage(() => import("./pages/NetZero"));
 const Solutions = lazyPage(() => import("./pages/Solutions"));
@@ -250,6 +252,7 @@ const App = () => (
               <Route path="/carbon-credits" element={<CarbonCredits />} />
               <Route path="/carbon-credits-india" element={<CarbonCreditsIndia />} />
               <Route path="/carbon-accounting-software-india" element={<SoftwareChooser />} />
+              <Route path="/brsr-reporting" element={<BrsrReporting />} />
               <Route path="/climate-finance" element={<ClimateFinance />} />
               <Route path="/green-loan" element={<GreenLoan />} />
               <Route path="/green-loan-check" element={<GreenLoanCheck />} />
@@ -286,6 +289,7 @@ const App = () => (
               <Route path="/grants" element={<Grants />} />
               <Route path="/decarbonize-india" element={<DecarbonizeIndia />} />
               <Route path="/cbam" element={<CbamIndia />} />
+              <Route path="/cbam-authorised-declarant" element={<CbamDeclarant />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
               <Route path="/emission-factors" element={<EmissionFactors />} />
               <Route path="/emission-factors/:slug" element={<EmissionFactors />} />

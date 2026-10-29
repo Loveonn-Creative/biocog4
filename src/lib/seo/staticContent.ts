@@ -11,8 +11,10 @@ import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { whitePaperBlocks } from './whitePaperBlocks';
 import * as cci from '@/data/carbonCreditsIndia';
 import * as cbi from '@/data/cbamIndia';
+import * as cbd from '@/data/cbamDeclarant';
 import * as sc from '@/data/softwareChooser';
 import * as gls from '@/data/greenLoanSchemes';
+import * as brsr from '@/data/brsrHub';
 import * as icd from '@/data/indiaClimateData';
 import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
@@ -199,7 +201,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
         'Attributed emissions per process; precursors added at supplier values or EU default values with the year\'s mark-up.',
         'SEE = attributed emissions plus embedded precursor emissions, divided by the activity level. Indirect emissions count for cement and fertilisers.',
       ] },
-      { p: 'Your workbook stays on your device. [Quick CBAM estimate](/cbam-calculator) · [Supplier data pack](/cbam-suite/supplier-pack)' },
+      { p: 'Your workbook stays on your device. [Quick CBAM estimate](/cbam-calculator) · [Supplier data pack](/cbam-suite/supplier-pack) · [Who files for your buyer](/cbam-authorised-declarant)' },
     ],
   },
   '/cbam-suite/supplier-pack': {
@@ -331,7 +333,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { h2: esg.ESG_SAMPLE_TAKEAWAYS_TITLE },
       { ul: esg.ESG_SAMPLE_TAKEAWAYS.map(t => `${t.text} (${t.pages})`) },
       { h2: 'Who is asking you for ESG data?' },
-      { ul: esg.ESG_SAMPLE_ASKERS.map(a => `${a.label}: usually ${a.frameworks}. ${a.why} See ${a.sections.map(s => `${s.name} (page ${s.page})`).join(', ')}.`) },
+      { ul: esg.ESG_SAMPLE_ASKERS.map(a => `${a.label}: usually ${a.frameworks}. ${a.why} See ${a.sections.map(s => `${s.name} (page ${s.page})`).join(', ')}.${a.guide ? ` [${a.guide.label}](${a.guide.to}).` : ''}`) },
       { h2: 'How it compares with the usual ways to get a report' },
       { ul: esg.ESG_SAMPLE_COMPARE.rows.map(r => `${r.label}: ${esg.ESG_SAMPLE_COMPARE.columns.map((c, i) => `${c}, ${r.cells[i].toLowerCase()}`).join('; ')}.`) },
       { h2: 'How to get the report' },
@@ -396,7 +398,57 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { ul: cbi.VERIFIER_CHECKS },
       { h2: 'Straight answers' },
       ...cbi.CBAM_INDIA_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
-      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector.' },
+      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector. Not sure who files for your buyer? [Who must be the authorised CBAM declarant](/cbam-authorised-declarant).' },
+    ],
+  },
+  '/cbam-authorised-declarant': {
+    h1: 'Who files CBAM for your shipment, and what they need from you',
+    blocks: [
+      { p: 'Since 1 January 2026, if your EU buyer imports more than 50 tonnes a year of steel, aluminium, cement and fertilisers combined, the goods enter only through an authorised CBAM declarant. That is always a company in the EU, never the Indian exporter. It declares the emissions in your goods: your plant\'s verified figure, or an EU default if you send nothing.' },
+      { h2: 'Who holds the status' },
+      { ul: [
+        `Your buyer clears import (DAP, DPU), over 50 tonnes a year: ${cbd.findDeclarant('buyer', 'over', false).who} ${cbd.findDeclarant('buyer', 'over', false).body}`,
+        `You clear import (DDP), over 50 tonnes a year: ${cbd.findDeclarant('seller', 'over', false).who} ${cbd.findDeclarant('seller', 'over', false).body}`,
+        `50 tonnes or less a year, no hydrogen or electricity: ${cbd.findDeclarant('buyer', 'under', false).body}`,
+      ] },
+      { h2: '50 tonnes is your buyer\'s total, not yours' },
+      { p: 'Counted per importer, per calendar year, by weight of goods across steel, aluminium, cement and fertilisers together. Hydrogen and electricity have no threshold.' },
+      { h2: 'Key dates' },
+      { ul: cbd.DECLARANT_MILESTONES.map(m => `${m.when}: ${m.what}`) },
+      { h2: 'The main lines the declarant needs from you' },
+      { ul: cbd.PACK_ROWS },
+      { p: `Send nothing and the declarant files the EU default value for India, with a mark-up of ${cbd.MARKUP_SCHEDULE} (${cbd.FERT_PCT} for fertilisers). Actual values must be verified by an accredited CBAM verifier and carry no mark-up.` },
+      { h2: 'Straight answers' },
+      ...cbd.CBAM_DECLARANT_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+      { p: '[Build your CBAM data in the CBAM suite](/cbam-suite), [see the supplier pack](/cbam-suite/supplier-pack), [estimate your cost](/cbam-calculator) or [see CBAM cost per tonne by sector](/cbam-cost).' },
+    ],
+  },
+  [brsr.BRSR_HUB_PATH]: {
+    h1: 'BRSR in plain words, and the bills behind your energy and emissions figures.',
+    blocks: [
+      { p: 'Who has to file, what BRSR Core checks, what changed for the value chain in 2025, and where each environment figure comes from.' },
+      { h2: 'Where does your company sit?' },
+      { p: 'SEBI goes by market capitalisation rank.' },
+      { ul: brsr.RUNGS.map(r => `${r.label}: BRSR: ${r.brsr} BRSR Core check: ${r.core} Value chain disclosure: ${r.valueChain}`) },
+      { h2: 'BRSR Core: nine attributes an independent provider checks' },
+      { p: 'Since March 2025 the check can be an assessment or an assurance, by a provider with no conflict of interest.' },
+      ...brsr.ATTRIBUTES.flatMap(a => [
+        { h3: `${a.n}. ${a.name}` } as Block,
+        { p: `Asks for: ${a.asks.join('; ')}. Proved by: ${a.records}${a.fromBills ? ` ${a.fromBills}` : ''}` } as Block,
+      ]),
+      { h2: 'Value chain rules, then and now' },
+      { ul: brsr.RULE_ROWS.map(r => `${r.what}: July 2023, ${r.y2023}. March 2025, now: ${r.y2025}`) },
+      { h3: 'If you supply a listed company' },
+      { ul: brsr.SUPPLIER_LINES },
+      { p: '[BRSR supplier questionnaire template](/templates/brsr-supplier-questionnaire). [See how enterprises collect figures from many suppliers](/enterprise).' },
+      { h2: "From last year's bills to four BRSR figures" },
+      { ul: brsr.BILL_DOCS.map(d => `${d.name}: ${d.qty.toLocaleString('en-IN')} ${d.unit}, feeding Scope ${d.scope} and total energy.`) },
+      { p: 'Units from your own diesel generator are not electricity. Count the diesel once, under Scope 1, and leave its units out of Scope 2.' },
+      { p: 'Senseible reads the units, litres and kilograms off each bill, keeps the factor and its source on every line, and drafts the BRSR energy and emissions fields from them. [See a sample report with its BRSR Core map](/esg-report-sample).' },
+      { h2: 'Find the answer for your exact line' },
+      ...brsr.NEEDS.flatMap(g => [{ h3: g.label } as Block, { ul: g.items.map(i => `[${i.q}](/answers/${i.slug})`) } as Block]),
+      { h2: 'Short answers' },
+      ...brsr.BRSR_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
     ],
   },
   '/msme-green-loan-schemes': {

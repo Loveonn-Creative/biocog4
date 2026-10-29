@@ -62,6 +62,7 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   '/enterprise/pricing': { slug: 'enterprise', alt: 'Enterprise pricing: pay as you add suppliers' },
   '/enterprise': { slug: 'enterprise', alt: 'Every supplier’s emissions in one record: Scope 3 for enterprise buyers' },
   '/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026': { slug: 'credit-pricing', alt: 'How carbon credits are actually priced in 2026, voluntary and compliance markets' },
+  '/cbam-authorised-declarant': { slug: 'cbam-calculator', alt: 'Authorised CBAM declarant: who files for your shipment and what they need from you' },
   '/cbam': { slug: 'cbam-calculator', alt: 'CBAM for Indian exporters: pay on your real number, not the EU default' },
   '/carbon-credits-india': { slug: 'credit-pricing', alt: 'Carbon credits in India: find the route that fits you' },
   '/carbon-accounting-software-india': { slug: 'calculators', alt: 'Choose carbon accounting software in India with your own scorecard' },
@@ -254,6 +255,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Carbon Credits in India: How to Earn Them, What It Takes',
     description: 'Find your route into India\'s carbon market in three taps: CCTS targets, offset projects, ESCerts or RECs, what each needs, and BEE\'s fees before you earn.',
   },
+  '/brsr-reporting': {
+    title: 'BRSR Reporting and BRSR Core, Explained in Plain Words',
+    description: 'Who must file BRSR, what the nine BRSR Core attributes ask, the 2025 value chain rules, and the bills behind your energy and emissions figures.',
+  },
   '/carbon-accounting-software-india': {
     title: 'How to Choose Carbon Accounting Software in India',
     description: 'Weigh what matters, get a checklist of questions for every vendor demo, and score your shortlist: Indian bills, GST invoices, BRSR, CBAM and audit trail.',
@@ -261,6 +266,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/net-zero': {
     title: 'Net-Zero Roadmap Builder for MSMEs',
     description: 'Turn an emissions baseline into a sector-specific net-zero roadmap with reduction tasks you can track. Free five-step planner for MSMEs.',
+  },
+  '/cbam-authorised-declarant': {
+    title: 'Authorised CBAM Declarant: What Indian Exporters Send',
+    description: 'Who must be the authorised CBAM declarant, by when, how the 50-tonne threshold counts, and the verified plant data an Indian supplier sends the EU declarant.',
   },
   '/cbam-suite': {
     title: 'CBAM Suite: Embedded Emissions Report for Installations',

@@ -22,6 +22,10 @@ const libraryGroups = (rows: AnswerIndexRow[]) => (Object.keys(LIBRARY_TOPICS) a
   .map((t) => ({ key: `lib-${t}` as GroupKey, ...LIBRARY_TOPICS[t] }));
 const ANSWER_ITEMS: HubItem[] = answers.map((a) => ({ slug: a.slug, q: a.q, text: `${a.q} ${a.title} ${a.short}`, group: a.topic as GroupKey }));
 const libraryItems = (rows: AnswerIndexRow[]): HubItem[] => rows.map((e) => ({ slug: e.slug, q: e.q, text: `${e.q} ${e.title}`, group: `lib-${e.topic}` as GroupKey }));
+// A group can point to its guide page, so readers new to the topic start there.
+const GROUP_GUIDES: Partial<Record<GroupKey, { lead: string; label: string; to: string }>> = {
+  'lib-regulation': { lead: 'If BRSR is new to you, start with', label: 'BRSR and BRSR Core in plain words', to: '/brsr-reporting' },
+};
 // Long groups show this many until opened, so the hub stays scannable.
 const PREVIEW = 8;
 // Only loaded for an /answers address that has no page.
@@ -116,10 +120,14 @@ const Hub = () => {
           const items = results.filter(a => a.group === g.key);
           const all = open.has(g.key) || !!query.trim() || topic !== 'all';
           const shown = all ? items : items.slice(0, PREVIEW);
+          const guide = GROUP_GUIDES[g.key];
           return (
           <div key={g.key} className="mb-12">
             <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-primary">{g.label}</h2>
             <p className="mt-1 text-sm text-muted-foreground">{g.line}</p>
+            {guide && (
+              <p className="mt-2 text-sm text-muted-foreground">{guide.lead} <Link to={guide.to} className="font-medium text-primary underline underline-offset-2">{guide.label}</Link>.</p>
+            )}
             <ul className="mt-4 divide-y divide-border border-y border-border">
               {shown.map(a => (
                 <li key={a.slug}>

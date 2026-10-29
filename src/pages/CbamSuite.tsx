@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { analyticsEvents } from '@/lib/analytics';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Calculator, Package, RotateCcw, Upload } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calculator, Landmark, Package, RotateCcw, Upload } from 'lucide-react';
 import { MinimalNav } from '@/components/MinimalNav';
 import { Footer } from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
@@ -180,6 +180,7 @@ export default function CbamSuite() {
             <input ref={fileRef} type="file" accept="application/json,.json" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) void onImportFile(f); e.target.value = ''; }} />
             <Link to="/cbam-suite/supplier-pack" className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"><Package className="h-4 w-4" /> Supplier pack</Link>
             <Link to="/cbam-calculator" className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"><Calculator className="h-4 w-4" /> Quick estimate</Link>
+            <Link to="/cbam-authorised-declarant" className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"><Landmark className="h-4 w-4" /> Who files for your buyer</Link>
             <CbamTalkButton page="cbam-suite" label="Talk to us" className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 font-semibold text-foreground hover:border-primary/50" />
           </div>
           <AnimatePresence>

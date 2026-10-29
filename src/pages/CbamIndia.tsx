@@ -116,6 +116,7 @@ export default function CbamIndia() {
           <ol className="cbi-miles">
             {CBAM_MILESTONES.map((m) => <li key={m.when}><b>{m.when}</b><span>{m.what}</span></li>)}
           </ol>
+          <p className="cbi-sub">Your buyer needs that status before your goods land. <Link to="/cbam-authorised-declarant" className="font-semibold text-foreground underline decoration-primary/50 underline-offset-4 hover:decoration-primary">Who has to be the authorised declarant, and what they need from you</Link>.</p>
         </section>
 
         {/* 3. Data at source: every meter feeds one ledger */}

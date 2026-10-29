@@ -41,6 +41,7 @@
   ],
   "senseible": "Senseible builds the Scope 1, Scope 2 and energy figures from the bills and invoices behind them, so an assurer or assessor can open the source document for each number. It does not cover water, waste, safety, wages or the governance indicators, and it does not provide assurance or assessment.",
   "links": [
+    { "label": "BRSR and BRSR Core in plain words", "to": "/brsr-reporting" },
     { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" },
     { "label": "BRSR Core: assurance or assessment?", "to": "/answers/brsr-core-assurance-or-assessment-which" },
     { "label": "BRSR emission intensity adjusted for PPP", "to": "/answers/brsr-emission-intensity-per-rupee-ppp" },

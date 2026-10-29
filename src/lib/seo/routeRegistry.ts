@@ -52,6 +52,8 @@ import { DATA_PACK, DE_META, KOSTEN_FAQ } from '@/data/de/cbamDe';
 import { CCI_FAQS, CCI_PATH } from '@/data/carbonCreditsIndia';
 import { GLS_FAQS, GLS_PATH } from '@/data/greenLoanSchemes';
 import { CBAM_INDIA_FAQS, CBAM_INDIA_PATH } from '@/data/cbamIndia';
+import { CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH } from '@/data/cbamDeclarant';
+import { BRSR_FAQS, BRSR_HUB_PATH } from '@/data/brsrHub';
 
 export * from './seoMeta';
 export { blocksToHtml, blocksToMarkdown, escapeHtml } from './render';
@@ -350,12 +352,17 @@ function coreRoutes(): SeoRoute[] {
 
   const cciCrumbs = [{ name: 'Home', path: '/' }, { name: 'Carbon credits in India', path: CCI_PATH }];
   const cbamIndia = staticRoute(CBAM_INDIA_PATH, 'core', 0.9, { jsonLd: [breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'CBAM for Indian exporters', path: CBAM_INDIA_PATH }]), faqLd(CBAM_INDIA_FAQS)] });
+  const declarantCrumbs = [{ name: 'Home', path: '/' }, { name: 'CBAM for Indian exporters', path: CBAM_INDIA_PATH }, { name: 'Authorised CBAM declarant', path: CBAM_DECLARANT_PATH }];
+  const cbamDeclarant = staticRoute(CBAM_DECLARANT_PATH, 'core', 0.8, { breadcrumbs: declarantCrumbs, jsonLd: [breadcrumbLd(declarantCrumbs), faqLd(CBAM_DECLARANT_FAQS)] });
   const carbonCreditsIndia = staticRoute(CCI_PATH, 'core', 0.8, { jsonLd: [breadcrumbLd(cciCrumbs), faqLd(CCI_FAQS)] });
   const glsCrumbs = [{ name: 'Home', path: '/' }, { name: 'Green loan schemes for MSMEs', path: GLS_PATH }];
   const greenLoanSchemes = staticRoute(GLS_PATH, 'core', 0.8, { breadcrumbs: glsCrumbs, jsonLd: [breadcrumbLd(glsCrumbs), faqLd(GLS_FAQS)] });
 
+  const brsrCrumbs = [{ name: 'Home', path: '/' }, { name: 'BRSR reporting', path: BRSR_HUB_PATH }];
+  const brsrHub = staticRoute(BRSR_HUB_PATH, 'core', 0.8, { breadcrumbs: brsrCrumbs, jsonLd: [breadcrumbLd(brsrCrumbs), faqLd(BRSR_FAQS)] });
+
   return [
-    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, cbamIndia, carbonCreditsIndia, greenLoanSchemes, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
+    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, cbamIndia, cbamDeclarant, carbonCreditsIndia, brsrHub, greenLoanSchemes, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];
@@ -480,7 +487,7 @@ function answerRoutes(): SeoRoute[] {
       { ul: answers.filter(a => a.topic === t).map(a => `[${a.q}](/answers/${a.slug})`) } as Block,
     ]).concat((Object.keys(LIBRARY_TOPICS) as LibraryTopic[]).flatMap(t => {
       const group = answerLibraryAll.filter(a => a.topic === t);
-      return group.length ? [{ h2: LIBRARY_TOPICS[t].label } as Block, { ul: group.map(a => `[${a.q}](/answers/${a.slug})`) } as Block] : [];
+      return group.length ? [{ h2: LIBRARY_TOPICS[t].label } as Block, ...(t === 'regulation' ? [{ p: `If BRSR is new to you, start with [BRSR and BRSR Core in plain words](${BRSR_HUB_PATH}).` } as Block] : []), { ul: group.map(a => `[${a.q}](/answers/${a.slug})`) } as Block] : [];
     })),
     breadcrumbs: hubCrumbs, jsonLd: [breadcrumbLd(hubCrumbs), faqLd(answers.map(a => ({ question: a.q, answer: a.short })))],
     priority: 0.7, changefreq: 'monthly',

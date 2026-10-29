@@ -35,6 +35,10 @@
   "senseible": "Senseible fuel, बिजली और खरीद के invoices को तारीख और fingerprint वाले installation records में बदलता है, जो उन actual emissions की शुरुआत है जो EU importer माँगता है। यह CBAM declarations नहीं भरता और emissions verify नहीं करता।",
   "links": [
     {
+      "label": "आपकी shipment के लिए कौन file करता है, और उसे आपसे क्या चाहिए",
+      "to": "/cbam-authorised-declarant"
+    },
+    {
       "label": "जाँचें कि आपके buyer के पास यह दर्जा है",
       "to": "/answers/check-eu-buyer-is-authorised-cbam-declarant"
     },
