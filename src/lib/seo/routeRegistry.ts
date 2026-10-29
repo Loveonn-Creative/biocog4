@@ -51,6 +51,7 @@ import { HINDI_ANSWERS } from '@/data/answerLibraryHi';
 import { DATA_PACK, DE_META, KOSTEN_FAQ } from '@/data/de/cbamDe';
 import { CCI_FAQS, CCI_PATH } from '@/data/carbonCreditsIndia';
 import { CBAM_INDIA_FAQS, CBAM_INDIA_PATH } from '@/data/cbamIndia';
+import { CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH } from '@/data/cbamDeclarant';
 
 export * from './seoMeta';
 export { blocksToHtml, blocksToMarkdown, escapeHtml } from './render';
@@ -349,10 +350,12 @@ function coreRoutes(): SeoRoute[] {
 
   const cciCrumbs = [{ name: 'Home', path: '/' }, { name: 'Carbon credits in India', path: CCI_PATH }];
   const cbamIndia = staticRoute(CBAM_INDIA_PATH, 'core', 0.9, { jsonLd: [breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'CBAM for Indian exporters', path: CBAM_INDIA_PATH }]), faqLd(CBAM_INDIA_FAQS)] });
+  const declarantCrumbs = [{ name: 'Home', path: '/' }, { name: 'CBAM for Indian exporters', path: CBAM_INDIA_PATH }, { name: 'Authorised CBAM declarant', path: CBAM_DECLARANT_PATH }];
+  const cbamDeclarant = staticRoute(CBAM_DECLARANT_PATH, 'core', 0.8, { breadcrumbs: declarantCrumbs, jsonLd: [breadcrumbLd(declarantCrumbs), faqLd(CBAM_DECLARANT_FAQS)] });
   const carbonCreditsIndia = staticRoute(CCI_PATH, 'core', 0.8, { jsonLd: [breadcrumbLd(cciCrumbs), faqLd(CCI_FAQS)] });
 
   return [
-    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, cbamIndia, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
+    home, pricing, careers, cbamSuite, cbamSupplierPack, guidesHub, cbamIndia, cbamDeclarant, carbonCreditsIndia, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample, indiaClimateData,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];

@@ -11,6 +11,7 @@ import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { whitePaperBlocks } from './whitePaperBlocks';
 import * as cci from '@/data/carbonCreditsIndia';
 import * as cbi from '@/data/cbamIndia';
+import * as cbd from '@/data/cbamDeclarant';
 import * as sc from '@/data/softwareChooser';
 import * as icd from '@/data/indiaClimateData';
 import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
@@ -197,7 +198,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
         'Attributed emissions per process; precursors added at supplier values or EU default values with the year\'s mark-up.',
         'SEE = attributed emissions plus embedded precursor emissions, divided by the activity level. Indirect emissions count for cement and fertilisers.',
       ] },
-      { p: 'Your workbook stays on your device. [Quick CBAM estimate](/cbam-calculator) · [Supplier data pack](/cbam-suite/supplier-pack)' },
+      { p: 'Your workbook stays on your device. [Quick CBAM estimate](/cbam-calculator) · [Supplier data pack](/cbam-suite/supplier-pack) · [Who files for your buyer](/cbam-authorised-declarant)' },
     ],
   },
   '/cbam-suite/supplier-pack': {
@@ -394,7 +395,29 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { ul: cbi.VERIFIER_CHECKS },
       { h2: 'Straight answers' },
       ...cbi.CBAM_INDIA_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
-      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector.' },
+      { p: 'Start your CBAM data in the CBAM suite, estimate your cost with the CBAM calculator, or see CBAM cost by sector. Not sure who files for your buyer? [Who must be the authorised CBAM declarant](/cbam-authorised-declarant).' },
+    ],
+  },
+  '/cbam-authorised-declarant': {
+    h1: 'Who files CBAM for your shipment, and what they need from you',
+    blocks: [
+      { p: 'Since 1 January 2026, if your EU buyer imports more than 50 tonnes a year of steel, aluminium, cement and fertilisers combined, the goods enter only through an authorised CBAM declarant. That is always a company in the EU, never the Indian exporter. It declares the emissions in your goods: your plant\'s verified figure, or an EU default if you send nothing.' },
+      { h2: 'Who holds the status' },
+      { ul: [
+        `Your buyer clears import (DAP, DPU), over 50 tonnes a year: ${cbd.findDeclarant('buyer', 'over', false).who} ${cbd.findDeclarant('buyer', 'over', false).body}`,
+        `You clear import (DDP), over 50 tonnes a year: ${cbd.findDeclarant('seller', 'over', false).who} ${cbd.findDeclarant('seller', 'over', false).body}`,
+        `50 tonnes or less a year, no hydrogen or electricity: ${cbd.findDeclarant('buyer', 'under', false).body}`,
+      ] },
+      { h2: '50 tonnes is your buyer\'s total, not yours' },
+      { p: 'Counted per importer, per calendar year, by weight of goods across steel, aluminium, cement and fertilisers together. Hydrogen and electricity have no threshold.' },
+      { h2: 'Key dates' },
+      { ul: cbd.DECLARANT_MILESTONES.map(m => `${m.when}: ${m.what}`) },
+      { h2: 'The main lines the declarant needs from you' },
+      { ul: cbd.PACK_ROWS },
+      { p: `Send nothing and the declarant files the EU default value for India, with a mark-up of ${cbd.MARKUP_SCHEDULE} (${cbd.FERT_PCT} for fertilisers). Actual values must be verified by an accredited CBAM verifier and carry no mark-up.` },
+      { h2: 'Straight answers' },
+      ...cbd.CBAM_DECLARANT_FAQS.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+      { p: '[Build your CBAM data in the CBAM suite](/cbam-suite), [see the supplier pack](/cbam-suite/supplier-pack), [estimate your cost](/cbam-calculator) or [see CBAM cost per tonne by sector](/cbam-cost).' },
     ],
   },
   '/carbon-accounting-software-india': {
