@@ -78,7 +78,7 @@ export const ADDONS: Addon[] = [
   { id: 'fasttrack', name: 'Fast-track Verification', price: '₹2,999 per report', amount: 2999, cadence: 'per-report', unit: 'reports' },
   { id: 'streaming', name: 'Real-time Data Streaming', price: '₹1,499/month', amount: 1499, cadence: 'monthly' },
   // Run by our team on request (owner, Oct 2026); not sold on the profile, so addonPurchases.ts does not charge it.
-  { id: 'simulator', name: 'Green Financing Simulator', price: '₹5,999 per run', amount: 5999, cadence: 'per-run', unit: 'runs', note: 'Your green finance readiness odds' },
+  { id: 'simulator', name: 'Green Financing Simulator', price: '₹5,999 per run', amount: 5999, cadence: 'per-run', unit: 'runs', note: 'Green finance readiness odds' },
 ];
 
 export interface AddonTotals { planPerMonth: number | null; monthly: number; oneTime: number; lines: Array<{ name: string; amount: number; when: string }> }
