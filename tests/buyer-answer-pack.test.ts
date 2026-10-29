@@ -49,12 +49,12 @@ describe('buyer answer pack', () => {
 
   it('fills period, organisation and Scope 1 with top sources', () => {
     const p = buildBuyerAnswerPack(sampleDataset);
-    expect(row(p, 1, 'What period')!.answer).toBe('1 Apr 2025 to 31 Mar 2026');
+    expect(row(p, 1, 'Reporting period')!.answer).toBe('1 Apr 2025 to 31 Mar 2026');
     expect(row(p, 2, 'GSTIN')!.answer).toBe('27ABCDE1234F1Z5');
     expect(row(p, 2, 'Sector')!.answer).toBe('Iron and steel casting');
     expect(row(p, 3, 'Gross Scope 1')!).toMatchObject({ answer: '11.26 tCO2e', tonnes: 11.26 });
     expect(row(p, 3, 'Gross Scope 1')!.basis).toStartWith('2 verified records');
-    expect(row(p, 3, 'Main Scope 1')!.answer).toBe('Diesel (DG set): 8.00 tCO2e (71%); LPG: 3.26 tCO2e (29%)');
+    expect(row(p, 3, 'Scope 1 by fuel')!.answer).toBe('Diesel (DG set): 8.00 tCO2e (71%); LPG: 3.26 tCO2e (29%)');
   });
 
   it('leaves GSTIN out when there is none and marks a missing sector', () => {
@@ -67,30 +67,30 @@ describe('buyer answer pack', () => {
     for (const scope2 of [undefined, null, { ...sampleScope2, instruments: [] }, { ...sampleScope2, enabled: false }]) {
       const p = buildBuyerAnswerPack(sampleDataset, { scope2 });
       expect(row(p, 4, 'Gross Scope 2 emissions, location-based')!.answer).toBe('28.40 tCO2e');
-      const m = row(p, 4, 'Market-based')!;
-      expect(m.answer).toBe('Not available: no renewable purchase records uploaded');
+      const m = row(p, 4, 'Gross Scope 2 emissions, market-based, and')!;
+      expect(m.answer).toBe('Not reported: no renewable electricity certificate, power purchase agreement or green tariff on record');
       expect(m.answer).toBe(NO_INSTRUMENTS);
       expect(m.filled).toBe(false);
-      expect(row(p, 4, 'Share of electricity')).toBeUndefined();
+      expect(row(p, 4, 'Renewable electricity share')).toBeUndefined();
     }
   });
 
   it('gives market-based Scope 2 and renewable share when instruments exist', () => {
     const p = buildBuyerAnswerPack(sampleDataset, { scope2: sampleScope2 });
     expect(row(p, 4, 'Gross Scope 2 emissions, market-based')!).toMatchObject({ answer: 'FY 2025-26: 17.04 tCO2e', tonnes: 17.04, filled: true });
-    expect(row(p, 4, 'Share of electricity')!.answer).toBe('FY 2025-26: 40% (16,000 of 40,000 kWh)');
-    expect(row(p, 4, 'Market-based Scope 2 and')).toBeUndefined();
+    expect(row(p, 4, 'Renewable electricity share')!.answer).toBe('FY 2025-26: 40% (16,000 of 40,000 kWh)');
+    expect(row(p, 4, 'Gross Scope 2 emissions, market-based, and')).toBeUndefined();
   });
 
   it('lists Scope 3 by GHG category, only categories with records', () => {
     const p = buildBuyerAnswerPack(sampleDataset);
     const s3 = section(p, 5).rows;
-    expect(s3.map((r) => r.question)).toEqual(['Category 4: Upstream transportation and distribution', 'Total Scope 3 on record']);
+    expect(s3.map((r) => r.question)).toEqual(['Category 4: Upstream transportation and distribution', 'Total Scope 3 emissions']);
     expect(s3[0].answer).toBe('4.20 tCO2e');
     // The invoice-line results win when they exist.
     const lines = buildBuyerAnswerPack(sampleDataset, { scope3: { enabled: true, categories: [{ category: 1, kg: 2500, lines: 3 }, { category: 4, kg: 1700, lines: 2 }, { category: 6, kg: 0, lines: 0 }] } });
-    expect(section(lines, 5).rows.map((r) => r.question)).toEqual(['Category 1: Purchased goods and services', 'Category 4: Upstream transportation and distribution', 'Total Scope 3 on record']);
-    expect(section(lines, 5).rows[0].basis).toBe('3 verified invoice lines × approved factors');
+    expect(section(lines, 5).rows.map((r) => r.question)).toEqual(['Category 1: Purchased goods and services', 'Category 4: Upstream transportation and distribution', 'Total Scope 3 emissions']);
+    expect(section(lines, 5).rows[0].basis).toBe('3 verified invoice lines × published emission factors');
   });
 
   it('never guesses a category and says when there is no Scope 3', () => {
@@ -115,6 +115,11 @@ describe('buyer answer pack', () => {
     expect(row(p, 7, 'Who verified')!.answer).toBe('Senseible, expert-supervised');
     expect(row(p, 7, 'What verified means')!.answer).toBe(VERIFIED_MEANS);
     expect(VERIFIED_MEANS).toContain('rule checks passed against the source document; it is not third-party assurance');
+    expect(row(p, 7, 'Third-party verification or assurance')!.answer).toBe('None');
+    // Totals count verified records only; the pending one is named, not hidden.
+    expect(section(p, 7).note).toBe('The Scope 1, 2 and 3 figures count verified records only. 1 record (2.00 tCO2e) is not verified yet and left out.');
+    expect(row(p, 4, 'Total Scope 1 and 2')!).toMatchObject({ answer: '39.66 tCO2e', tonnes: 39.66 });
+    expect(row(p, 9, 'Emissions intensity')!.answer).toContain('Divide 43.86 tCO2e by your revenue');
     expect(row(p, 8, 'Emissions reduction target')!.answer).toBe('30% cut from 43.86 tCO2e by 31 Mar 2031');
     const noTarget = buildBuyerAnswerPack({ ...sampleDataset, target: null, verification: null });
     expect(row(noTarget, 8, 'Emissions reduction target')!).toMatchObject({ answer: 'No target set', filled: false });
@@ -124,7 +129,7 @@ describe('buyer answer pack', () => {
   it('names the questions the records cannot answer', () => {
     const p = buildBuyerAnswerPack(sampleDataset);
     expect(section(p, 9).rows.map((r) => r.question)).toEqual([
-      'Emissions intensity per unit of revenue', 'Gases other than CO2 (methane, nitrous oxide, refrigerants)', 'Governance, climate policy and risk',
+      'Emissions intensity per unit of revenue', 'Refrigerant leaks (HFCs) and process emissions', 'Governance, climate policy and risk',
     ]);
     expect(section(p, 9).rows.every((r) => !r.filled)).toBe(true);
   });

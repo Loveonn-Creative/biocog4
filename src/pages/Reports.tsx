@@ -774,7 +774,7 @@ const Reports = () => {
                     <div>
                       <span>Buyer answer pack</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
-                        Your answers to CDP, EcoVadis and customer emissions questions, from your own records.
+                        Ready answers for your buyer's emissions questionnaire (CDP, EcoVadis, customer portals): Scope 1, 2 and 3, method and verification, from your own bills.
                       </p>
                     </div>
                   </CardTitle>

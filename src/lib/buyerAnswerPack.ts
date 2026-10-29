@@ -46,7 +46,7 @@ export interface BuyerPackExtras {
 // Senseible instead of "the platform" (banned in report copy); who verified is
 // "Senseible, expert-supervised" as in frameworkReports.ts and the certificate.
 export const VERIFIED_MEANS = '"Verified" means Senseible\'s rule checks passed against the source document; it is not third-party assurance.';
-export const NO_INSTRUMENTS = 'Not available: no renewable purchase records uploaded';
+export const NO_INSTRUMENTS = 'Not reported: no renewable electricity certificate, power purchase agreement or green tariff on record';
 const GASES = 'CO2 only. Methane and nitrous oxide from fuels add under 1% and are not included.';
 const DRAFT_NOTE = 'PRE-VERIFICATION: these answers come from records read from your documents that are not verified yet. Verify them before you send this to a buyer.';
 const FOOTER = 'Prepared by Senseible from your own documents. Not a statutory filing, assurance or certification statement.';
@@ -109,16 +109,16 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
   sections.push({
     title: '1. Reporting period',
     rows: [{
-      question: 'What period do these figures cover?',
+      question: 'Reporting period',
       answer: periodLabel,
-      basis: 'Earliest and latest invoice or bill date in your records',
+      basis: 'First and last invoice or bill date among the records counted',
       filled: Boolean(ds.periodStart && ds.periodEnd),
     }],
   });
 
   // 2. Organisation basics
   const orgRows: PackRow[] = [
-    { question: 'Organisation name', answer: ds.organizationName, basis: 'Your business details in Senseible', filled: true },
+    { question: 'Company name', answer: ds.organizationName, basis: 'Your business details in Senseible', filled: true },
     ds.sector
       ? { question: 'Sector', answer: ds.sector, basis: 'Your business details in Senseible', filled: true }
       : { question: 'Sector', answer: 'Not recorded in your business details', basis: 'Your business details in Senseible', filled: false },
@@ -137,13 +137,13 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
   }];
   if (s1.length) {
     s1Rows.push({
-      question: 'Main Scope 1 sources',
+      question: 'Scope 1 by fuel',
       answer: s1.slice(0, 3).map((c) => `${c.category}: ${tonnes(c.co2Kg)} (${pct(c.co2Kg, ds.scope1Kg)})`).join('; '),
       basis: 'Grouped by the fuel named on each invoice',
       filled: true,
     });
   }
-  sections.push({ title: '3. Scope 1: fuel burned on site', rows: s1Rows });
+  sections.push({ title: '3. Scope 1: fuel you burn', rows: s1Rows });
 
   // 4. Scope 2
   const s2Rows: PackRow[] = [{
@@ -151,6 +151,12 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
     answer: tonnes(ds.scope2Kg),
     tonnes: tNum(ds.scope2Kg),
     basis: `${records(countIn(2))} (electricity bills) × grid average factor for the bill's year`,
+    filled: true,
+  }, {
+    question: 'Total Scope 1 and 2 emissions, location-based',
+    answer: tonnes(ds.scope1Kg + ds.scope2Kg),
+    tonnes: tNum(ds.scope1Kg + ds.scope2Kg),
+    basis: 'Scope 1 plus Scope 2 above',
     filled: true,
   }];
   const s2 = extras.scope2;
@@ -168,7 +174,7 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
       filled: years.some((y) => y.market!.kg !== null),
     });
     s2Rows.push({
-      question: 'Share of electricity from renewable sources',
+      question: 'Renewable electricity share',
       answer: years.length
         ? years.map((y) => `${fyLabel(y.year)}: ${pct(y.market!.instrumentKwh, y.market!.kwh)} (${fmt(y.market!.instrumentKwh, 0)} of ${fmt(y.market!.kwh, 0)} kWh)`).join('; ')
         : 'Not calculated yet for any year',
@@ -177,9 +183,9 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
     });
   } else {
     s2Rows.push({
-      question: 'Market-based Scope 2 and renewable share',
+      question: 'Gross Scope 2 emissions, market-based, and renewable electricity share',
       answer: NO_INSTRUMENTS,
-      basis: 'No certificate, power purchase agreement or green tariff on record',
+      basis: 'Renewable electricity records',
       filled: false,
     });
   }
@@ -194,7 +200,7 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
       question: `Category ${c.category}: ${SCOPE3_CATEGORIES[c.category] ?? 'Other'}`,
       answer: tonnes(c.kg),
       tonnes: tNum(c.kg),
-      basis: `${plural(c.lines, 'verified invoice line')} × approved factors`,
+      basis: `${plural(c.lines, 'verified invoice line')} × published emission factors`,
       filled: true,
     }));
     s3Note = `From verified invoice lines. ${s3Note}`;
@@ -221,7 +227,7 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
   }
   if (s3Rows.length) {
     s3Rows.push({
-      question: 'Total Scope 3 on record',
+      question: 'Total Scope 3 emissions',
       answer: tonnes(ds.scope3Kg),
       tonnes: tNum(ds.scope3Kg),
       basis: `${records(countIn(3))} × published emission factors`,
@@ -262,15 +268,15 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
   const verifiedKg = verified.reduce((a, e) => a + e.co2Kg, 0);
   const qRows: PackRow[] = [
     {
-      question: 'Share of records verified',
+      question: 'Share of records verified by Senseible',
       answer: `${verified.length} of ${plural(all, 'record')} (${pct(verified.length, all)})`,
       basis: 'Verification status on each record',
       filled: all > 0,
     },
     {
-      question: 'Share of emissions verified',
+      question: 'Share of emissions verified by Senseible',
       answer: `${pct(verifiedKg, allKg)} of recorded tCO2e`,
-      basis: 'Verified tCO2e of all tCO2e on record',
+      basis: 'Verified tCO2e out of all tCO2e on record',
       filled: all > 0,
     },
   ];
@@ -279,9 +285,15 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
   }
   qRows.push(
     { question: 'What verified means', answer: VERIFIED_MEANS, basis: 'Senseible verification', filled: true },
-    { question: 'Third-party assurance', answer: 'None', basis: 'No assurance statement on record', filled: true },
+    { question: 'Third-party verification or assurance', answer: 'None', basis: 'No independent assurance statement on record', filled: true },
   );
-  sections.push({ title: '7. Data quality and verification', rows: qRows });
+  // Non-draft totals count verified records only; say what is left out.
+  const pending = ds.evidence.filter((e) => e.verificationStatus !== 'verified');
+  const pendingKg = pending.reduce((a, e) => a + e.co2Kg, 0);
+  const qNote = !draft && pending.length
+    ? `The Scope 1, 2 and 3 figures count verified records only. ${plural(pending.length, 'record')} (${tonnes(pendingKg)}) ${pending.length === 1 ? 'is' : 'are'} not verified yet and left out.`
+    : undefined;
+  sections.push({ title: '7. Data quality and verification', rows: qRows, note: qNote });
 
   // 8. Targets
   sections.push({
@@ -290,18 +302,18 @@ export function buildBuyerAnswerPack(ds: ReportDataset, extras: BuyerPackExtras 
       ? {
           question: 'Emissions reduction target',
           answer: `${fmt(ds.target.targetReductionPct, 0)}% cut from ${tonnes(ds.target.baselineCo2Kg)} by ${date(ds.target.targetDate, ds.locale)}`,
-          basis: 'Set by you in Net Zero. Not externally validated',
+          basis: 'Your own target in Senseible; not validated by SBTi',
           filled: true,
         }
-      : { question: 'Emissions reduction target', answer: 'No target set', basis: 'Nothing recorded in Net Zero', filled: false }],
+      : { question: 'Emissions reduction target', answer: 'No target set', basis: 'No target in your Senseible records', filled: false }],
   });
 
   // 9. Questions the records cannot answer
   sections.push({
     title: '9. Questions this pack cannot answer from your records',
     rows: [
-      { question: 'Emissions intensity per unit of revenue', answer: 'Revenue is not recorded, so intensity cannot be worked out.', basis: 'Not in your records', filled: false },
-      { question: 'Gases other than CO2 (methane, nitrous oxide, refrigerants)', answer: 'Not measured. Every figure here is CO2.', basis: 'Not in your records', filled: false },
+      { question: 'Emissions intensity per unit of revenue', answer: `Not calculated: revenue is not in your records. Divide ${tonnes(ds.scope1Kg + ds.scope2Kg + ds.scope3Kg)} by your revenue for the same period.`, basis: 'Not in your records', filled: false },
+      { question: 'Refrigerant leaks (HFCs) and process emissions', answer: 'Not counted. Refrigerant top-ups and process gases are not in your records.', basis: 'Not in your records', filled: false },
       { question: 'Governance, climate policy and risk', answer: 'Board oversight, policies and climate risks are yours to answer.', basis: 'Not in your records', filled: false },
     ],
   });
@@ -332,20 +344,20 @@ export async function generateBuyerPackPDF(pack: BuyerAnswerPack): Promise<void>
   const newPage = () => { doc.addPage(); y = 22; };
 
   doc.setFillColor(24, 60, 42);
-  doc.rect(0, 0, pageWidth, 42, 'F');
+  doc.rect(0, 0, pageWidth, 36, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
-  doc.text(pack.draft ? 'Pre-verification: Buyer answer pack' : 'Buyer answer pack', margin, 20);
+  doc.text(pack.draft ? 'Pre-verification: Buyer answer pack' : 'Buyer answer pack', margin, 17);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
-  doc.text(doc.splitTextToSize(pdfSafe(`${pack.organizationName} · ${pack.periodLabel}`), width), margin, 30);
-  y = 52;
+  doc.text(doc.splitTextToSize(pdfSafe(`${pack.organizationName} · ${pack.periodLabel}`), width), margin, 26);
+  y = 46;
 
   doc.setTextColor(45);
   doc.setFontSize(9);
   const intro = doc.splitTextToSize(
-    'The emissions questions buyers ask in CDP, customer portals and supplier questionnaires, answered from your own records in the order they usually come. Copy each answer with its basis.',
+    'Answers to the emissions questions in CDP, customer portals and supplier questionnaires, from your own invoices and bills, in the order buyers usually ask them. Paste each answer with its basis.',
     width,
   );
   doc.text(intro, margin, y);
@@ -412,7 +424,7 @@ export async function generateBuyerPackPDF(pack: BuyerAnswerPack): Promise<void>
       doc.text(lines, margin, y + 2);
       y += lines.length * 4 + 2;
     }
-    y += 7;
+    y += 5;
   });
 
   const pages = doc.getNumberOfPages();
