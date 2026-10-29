@@ -33,6 +33,7 @@
   ],
   "senseible": "Senseible keeps your Scope 1 and 2 records for the financial year with each line tied to its bill or invoice, so you can send totals to a customer and show the documents if an assessor asks.",
   "links": [
+    { "label": "BRSR and BRSR Core in plain words", "to": "/brsr-reporting" },
     {
       "label": "BRSR value chain data request for MSME suppliers",
       "to": "/answers/brsr-value-chain-data-request-msme-supplier"
