@@ -1,0 +1,90 @@
+{
+  "slug": "ireda-rooftop-solar-loan-minimum-size",
+  "q": "Can my factory get an IREDA loan for rooftop solar?",
+  "title": "IREDA rooftop solar loan: minimum size",
+  "short": "Rarely on its own. IREDA's rooftop solar scheme, in its financing norms updated to 1 October 2026, needs at least 5,000 kWp in one application, whether a single roof owner applies directly or an aggregator bundles many roofs. A factory roof is usually far smaller, so the realistic route is through an aggregator or installer.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factory owners pricing rooftop solar, and installers deciding where to finance a portfolio",
+  "sections": [
+    {
+      "h": "The size rule, and which document to trust",
+      "p": [
+        "IREDA's Financing Norms and Schemes, issue 35, updated up to 1 October 2026, set the minimum project capacity for its rooftop scheme for industrial, commercial and institutional roofs at 5,000 kWp. IREDA's older standalone sheet for the same scheme still says 1,000 kWp. The dated norms are the newer official document, so plan on 5,000 kWp and ask IREDA to confirm before you build a proposal around the lower figure."
+      ]
+    },
+    {
+      "h": "Two ways in",
+      "ul": [
+        "Direct category: one roof owner's projects only, at least 5,000 kWp in the application. Only a large campus or industrial estate owner reaches this.",
+        "Aggregator category: one project or many bundled together, at least 5,000 kWp in total, and no single roof under 20 kWp. Roofs owned by different parties can only come in this way.",
+        "Roofs in one application should normally sit within one state or distribution company area and run on one revenue model, such as captive use, net metering or a power purchase agreement."
+      ]
+    },
+    {
+      "h": "What an aggregator will ask you for",
+      "ol": [
+        "The legal document showing you own the roof, or your lease.",
+        "A roof lease that gives the system owner and IREDA free access for the loan period, and no termination during it except for force majeure or performance, or a termination payment at least equal to the loan outstanding.",
+        "Structural load, seismic and wind load reports from an engineer empanelled with your local authority.",
+        "A no-objection letter from any lender that already holds a charge on your building.",
+        "Twelve months of electricity bills, to size the plant against what you actually use."
+      ]
+    },
+    {
+      "h": "The loan the aggregator gets",
+      "ul": [
+        "70 percent of project cost with at least 30 percent from the promoter; IREDA may go to 75 percent based on creditworthiness and track record.",
+        "Repayment up to 10 years, after a 12-month moratorium from commissioning, with construction finished within 12 months of first disbursement.",
+        "A lender's engineer reviews the project before sanction, during construction and at commissioning, and compares actual performance with what was promised.",
+        "IREDA is a lender and does not give subsidy; ask MNRE about government support."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 200 kW factory roof against the 5,000 kWp rule",
+    "lines": [
+      "Yearly output: 200 kW x 1,400 kWh per kW (assumed yield) = 2,80,000 kWh",
+      "CO2 avoided: 2,80,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 1,89,000 kg, about 189 tonnes a year",
+      "Share of IREDA's minimum: 200 / 5,000 = 4 percent",
+      "Roofs of this size an aggregator needs for one application: 5,000 / 200 = 25",
+      "As a sub-project, 200 kW clears the 20 kWp floor comfortably"
+    ],
+    "note": "Use the installer's site estimate for yield. On its own, a roof this size is a bank, SIDBI or installer-financed project; inside an aggregator's portfolio it can be IREDA-financed."
+  },
+  "senseible": "Whoever finances the plant, the sizing and the lender's performance check start from your bills. Senseible's green loan readiness check reads them into monthly units and CO2, the figures an installer and lender use to size the plant and confirm the saving. Senseible does not lend.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "What banks ask for on a solar loan",
+      "to": "/answers/rooftop-solar-loan-msme-what-banks-ask"
+    },
+    {
+      "label": "SIDBI green finance for solar installers",
+      "to": "/answers/sidbi-green-finance-for-solar-installers-aggregators"
+    },
+    {
+      "label": "Rooftop solar payback for a factory",
+      "to": "/answers/rooftop-solar-payback-for-a-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026, chapter IX Loan Scheme for Financing Rooftop Solar PV (5,000 kWp minimum, 20 kWp sub-projects, 70 to 75% loan, 10 years plus 12 months moratorium)",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    },
+    {
+      "label": "IREDA, Loan products FAQ: IREDA is a financial institution and does not provide any subsidy",
+      "url": "https://www.ireda.in/IredaWebPortal/loan-products/faq"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check IREDA's latest Financing Norms on ireda.in every quarter, especially the rooftop minimum capacity."
+}

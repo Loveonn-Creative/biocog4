@@ -1,0 +1,72 @@
+{
+  "slug": "decline-ecovadis-assessment-request",
+  "q": "Can I say no to my buyer's EcoVadis request, and what happens if I do?",
+  "title": "Can I say no to an EcoVadis request?",
+  "short": "Yes. EcoVadis says a rating is never done without the company's consent, and any company can refuse to be assessed. What happens next is your buyer's call, not EcoVadis's. Ask what their policy is for suppliers who decline, and offer the carbon and policy evidence they actually need.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian MSME suppliers weighing whether to accept an EcoVadis invitation",
+  "sections": [
+    {
+      "h": "What saying no really risks",
+      "p": [
+        "EcoVadis will not rate you without your consent and involvement. The risk is commercial: a buyer may make a scorecard a condition for new orders or for staying on its approved supplier list, or may treat it as one input among many. Only your buyer can tell you which, so ask in writing before you decide."
+      ]
+    },
+    {
+      "h": "Good reasons to push back",
+      "ul": [
+        "The buyer is a small share of your sales and the plan fee is large against that business.",
+        "Your company has 25 or fewer employees and the request is about carbon. The EcoVadis carbon scorecard is not available at that size, so ask what else they will accept.",
+        "You were rated last year and the scorecard is still valid. Ask whether sharing it is enough.",
+        "The request arrived with a deadline you cannot meet honestly. A rushed first attempt stays on your scorecard for 12 months."
+      ]
+    },
+    {
+      "h": "Before you decline, offer this instead",
+      "ol": [
+        "A one-page Scope 1 and 2 summary for your last financial year, with the method, the emission factors and the bills behind it.",
+        "Your signed policies: environment and energy, health and safety, anti-bribery, and the buyer's own supplier code if you signed it.",
+        "Any certificates you hold, such as ISO 14001, ISO 45001 or ZED.",
+        "A date by which you would take part in EcoVadis, if the relationship grows."
+      ]
+    },
+    {
+      "h": "A reply you can adapt",
+      "p": [
+        "\"Thank you for the EcoVadis invitation. We are not able to complete the assessment this cycle. To support your supplier review, we are attaching our FY 2025-26 Scope 1 and 2 emissions with the bills they were calculated from, and our signed environment and safety policies. Please tell us whether this meets your requirement, or what your policy is for suppliers who do not take part.\""
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the Scope 1 and 2 summary in step 1 from your electricity bills and fuel invoices, with every line traceable to its bill, so a decline still comes with real evidence. It does not answer EcoVadis for you.",
+  "links": [
+    {
+      "label": "Build a carbon figure to send instead",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Do I have to pay for EcoVadis?",
+      "to": "/answers/do-i-have-to-pay-for-ecovadis"
+    },
+    {
+      "label": "Buyer sends its own carbon format",
+      "to": "/answers/buyer-sends-own-carbon-questionnaire-format"
+    },
+    {
+      "label": "One carbon record for several buyers",
+      "to": "/answers/one-carbon-dataset-for-several-buyers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Sustainability Rating methodology disclosure document (2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/04/EcoVadis-Sustainability-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis, plans and pricing for rated companies",
+      "url": "https://ecovadis.com/plans-pricing/"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Re-check EcoVadis's consent statement and carbon scorecard size rule with each methodology edition."
+}

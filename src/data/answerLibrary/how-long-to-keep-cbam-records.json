@@ -2,7 +2,7 @@
   "slug": "how-long-to-keep-cbam-records",
   "q": "How long do importers and non-EU producers have to keep CBAM emissions records?",
   "title": "How long to keep CBAM records",
-  "short": "The CBAM Regulation asks authorised declarants to keep their records until the end of the fourth year after the year the declaration was or should have been submitted, and non-EU operators to keep verified emissions records for four years. For 2026 imports declared in 2027, plan on keeping evidence to at least the end of 2031.",
+  "short": "Non-EU operators, including Indian plants, keep monitoring records and supporting documents for at least six years, says the Commission's Guidance No. 1. The EU declarant keeps its records until the end of the fourth year after the declaration year: for 2026 imports declared in 2027, to the end of 2031.",
   "topic": "regulation",
   "intent": "check",
   "audience": "EU importers, Indian exporters",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "h": "What the Indian producer should keep",
+      "h": "What the Indian producer keeps, for at least six years",
       "ul": [
         "Fuel invoices, electricity bills and meter readings used for the reported period.",
         "Production records by product (CN code) and records of precursors bought in.",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "h": "Indian rules can require longer",
+      "h": "Indian rules may run longer",
       "p": [
         "GST law requires books and records to be kept for 72 months from the due date of the annual return, and the Companies Act asks for books of account for eight years. The same fuel and electricity invoices serve all three purposes, so keep them for the longest period that applies to you."
       ]
@@ -32,20 +32,43 @@
     {
       "h": "Put it in the contract",
       "p": [
-        "Your EU buyer carries the legal duty but depends on your data. Agree in writing how long you will keep the evidence, how fast you will produce it if an authority asks, and who pays for a re-verification. A clause that matches the four-year review window protects both sides."
+        "Your EU buyer carries the legal duty but depends on your data. Agree in writing how long you will keep the evidence, how fast you will produce it if an authority asks, and who pays for a re-verification. A clause that commits you to the six-year retention the Commission expects of operators, which also outlasts the declarant's own four-year window, protects both sides."
       ]
     }
   ],
   "senseible": "Senseible keeps each source file under your account with its SHA-256 fingerprint and a hash-chained ledger of entries, so you can show later that a record was not altered. It is not a CBAM registry and does not file or store declarations for the EU importer.",
   "links": [
-    { "label": "CBAM verification for non-EU producers", "to": "/climate-intelligence/cbam-verification-non-eu-producer" },
-    { "label": "Documents needed for carbon verification", "to": "/climate-intelligence/documents-needed-carbon-verification" },
-    { "label": "CBAM clauses for an export contract", "to": "/answers/what-cbam-clause-to-put-in-export-contract" }
+    {
+      "label": "What your EU declarant needs from you",
+      "to": "/cbam-authorised-declarant"
+    },
+    {
+      "label": "CBAM verification for non-EU producers",
+      "to": "/climate-intelligence/cbam-verification-non-eu-producer"
+    },
+    {
+      "label": "Documents needed for carbon verification",
+      "to": "/climate-intelligence/documents-needed-carbon-verification"
+    },
+    {
+      "label": "CBAM clauses for an export contract",
+      "to": "/answers/what-cbam-clause-to-put-in-export-contract"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, record-keeping provisions for declarants and operators", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
-    { "label": "European Commission, CBAM legislation and guidance", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, record-keeping provisions for declarants and operators",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (14 August 2026), section 2.4.1, operators keep records for at least six years",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
   ],
-  "reviewed": "2026-10-15",
-  "reviewNote": "Retention periods are taken from the CBAM Regulation as amended in 2025; recheck the consolidated text and any implementing acts for changes."
+  "reviewed": "2026-10-29",
+  "reviewNote": "Operator retention of at least six years is from Guidance No. 1, section 2.4.1 (14 August 2026). The declarant's period is from the CBAM Regulation as amended in 2025; recheck the consolidated text and implementing acts for changes."
 }

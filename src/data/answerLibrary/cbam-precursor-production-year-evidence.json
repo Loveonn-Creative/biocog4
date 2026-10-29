@@ -1,0 +1,76 @@
+{
+  "slug": "cbam-precursor-production-year-evidence",
+  "q": "What evidence proves a precursor was made in an earlier year for CBAM?",
+  "title": "Proving a precursor's production year",
+  "short": "By default a precursor counts as made in the same year as your finished good. To claim an earlier year, give your verifier evidence it can check: a dated delivery note or invoice, the producer's written confirmation, a trader's FIFO confirmation, or a steel mill certificate or aluminium certificate of analysis linked to the material by a physical marker.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian re-rollers, forgers, fabricators and extruders who stock bought steel or aluminium across the year end",
+  "sections": [
+    {
+      "h": "Why the year matters",
+      "p": [
+        "The year decides which supplier verification report applies and which default value and mark-up you use. Billets delivered in December and rolled in January can belong to the earlier year, but only with evidence. Without it, the billets are treated as made in the year you rolled them."
+      ]
+    },
+    {
+      "h": "Evidence a verifier can accept",
+      "ul": [
+        "Delivery note, or invoice showing the delivery date, for a delivery in the earlier year.",
+        "A delivery early in the new year, where the normal transit time from the producing plant shows the material left that plant in the previous year.",
+        "Written confirmation of the production year from the plant that made it.",
+        "A trader's or warehouse's confirmation of origin, where it assigns deliveries clearly or keeps strict first-in first-out books.",
+        "Steel: a mill certificate with the heat number, tied to the material by a physical marker such as a tag or stencil.",
+        "Aluminium: a certificate of analysis, or of weight and analysis, tied to the material the same way.",
+        "Other markings that trace back to the producer's records and are hard to tamper with, at the verifier's judgement."
+      ]
+    },
+    {
+      "h": "Claims a verifier must reject",
+      "ul": [
+        "A precursor said to be made in a later year than your finished good. That is impossible, so it is rejected automatically.",
+        "Any production year before 2026. No actual verified figures or default mark-ups exist for those years, so evidence is disregarded. In 2026 all older stock is treated as made in 2026.",
+        "Bought-through-a-trader material where nobody can say which plant made it."
+      ]
+    },
+    {
+      "h": "Set this up before 31 December",
+      "ol": [
+        "Keep the heat number or batch tag on each bundle until it is consumed, and record it on the issue slip.",
+        "File mill certificates by heat number, not by invoice date.",
+        "Take a stock count of each precursor at the year end and value it by production year.",
+        "Ask each supplier for the verification report of the year you are claiming, not just the latest one.",
+        "Agree with traders, in the purchase order, that they will confirm origin and keep FIFO records."
+      ]
+    },
+    {
+      "h": "The same logic for your own shipments",
+      "p": [
+        "Your EU importer faces the same rule. Goods cleared in January 2027 are presumed made in 2027, but if your dispatch records show they were produced on 30 November 2026, the importer may use your 2026 verified figures instead. Put the production date on the packing list."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 t of billets, CN 7207 11 14, delivered 22 December 2026, rolled in January 2027, no supplier report",
+    "lines": [
+      "India default value for CN 7207 11 14: 4.270 t CO2e per tonne",
+      "No year evidence, treated as 2027: 4.270 x 1.20 = 5.124 t per tonne, so 500 x 5.124 = 2,562 t CO2e",
+      "Verifier accepts the delivery invoice as proof of 2026: 4.270 x 1.10 = 4.697 t per tonne, so 500 x 4.697 = 2,348.5 t CO2e",
+      "Embedded emissions saved by keeping one dated invoice: 2,562 minus 2,348.5 = 213.5 t CO2e"
+    ],
+    "note": "Mark-ups are 10% for 2026 and 20% for 2027. The free allocation adjustment also depends on the year and is left out here."
+  },
+  "senseible": "Senseible reads purchase invoices and delivery documents into dated records with the supplier, quantity and file fingerprint, so you can show the verifier when each lot arrived. Its CBAM Suite then carries purchased precursors by CN code into the operator report. It does not issue your supplier's verification report.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "Precursor mass balance, FIFO and stocks", "to": "/answers/cbam-precursor-mass-balance-fifo-stocks" },
+    { "label": "India default values for billets", "to": "/answers/cbam-default-value-india-billets-ingots" },
+    { "label": "Precursor without a verification report", "to": "/answers/cbam-precursor-supplier-no-verification-report-defaults" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 7.2 and 7.4.1", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 4.25, 5.17 and 5.18", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" }
+  ],
+  "reviewed": "2026-10-29"
+}

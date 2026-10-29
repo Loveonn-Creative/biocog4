@@ -1,0 +1,83 @@
+{
+  "slug": "panipat-textile-cluster-fuels-and-carbon",
+  "q": "Panipat's textile units burn biomass and pet coke: what is the cluster's carbon picture?",
+  "title": "Panipat textile cluster: fuels and carbon",
+  "short": "In TERI's 2014-15 survey, Panipat's 3,095 textile MSMEs used 305,950 toe a year, 97% of it heat. Biomass was 77% of energy and pet coke 20%, yet pet coke made most of the fossil CO2, about 250,000 t a year by estimate. Which fuel feeds your heater decides your number.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Home furnishing, blanket, floor covering, dyeing and yarn units in Panipat's Sector 25, Sector 29 and the industrial area",
+  "sections": [
+    {
+      "h": "The cluster TERI surveyed",
+      "ul": [
+        "Home furnishing: 1,915 units, about 195,360 toe a year, mostly heat for washing, ageing and printing.",
+        "Dyeing and printing: 500 units, about 108,536 toe.",
+        "Floor covering: 330 units; yarn processing and looms: 350 units. Both run mostly on electricity.",
+        "About 65% of units are micro. Panipat makes about three-quarters of India's blankets."
+      ]
+    },
+    {
+      "h": "Two fuels, very different carbon",
+      "p": [
+        "Micro and small units fire their 1.5 tph boilers on wood and upla. Medium units with dyeing, printing and stenters run thermic fluid heaters of 5 to 25 lakh kcal an hour, mostly on pet coke.",
+        "Pet coke is fossil carbon: at IPCC defaults, each tonne releases about 3.17 t CO2. CO2 from wood is reported separately from the scopes under the GHG Protocol, with only its methane and nitrous oxide in Scope 1. That is why a fifth of the cluster's energy made most of its fossil CO2."
+      ]
+    },
+    {
+      "h": "Fuel rules have moved since the survey",
+      "p": [
+        "Panipat is in the National Capital Region, where rules on which fuels industry may burn have tightened since 2014-15. Before you plan or report a boiler or heater fuel, check what is approved for your area with the Haryana State Pollution Control Board, and report the fuel you actually burn, not the cluster's old mix."
+      ]
+    },
+    {
+      "h": "Who asks for this",
+      "ul": [
+        "Overseas buyers of blankets, rugs and furnishings who count their supply chain emissions.",
+        "Lenders financing a boiler, heater or stenter upgrade, who want the fuel saving in numbers.",
+        "Buyers checking recycled-fibre claims, who also look at energy per kg."
+      ]
+    },
+    {
+      "h": "Moves TERI's profile points to",
+      "ul": [
+        "Three-pass boilers in place of single-pass ones, with economisers on the flue gas.",
+        "Air preheaters and control on thermic fluid heaters, and VFDs on circulation pumps that run at full speed after the stenter reaches temperature.",
+        "Heat recovery from hot dye liquor drained at 90 to 95 °C, and proper condensate return."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Fuel purchases by weight and type, with wood and pet coke on separate lines.",
+        "Electricity bills and generator diesel invoices.",
+        "Kg or pieces produced each month."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: where Panipat's fossil CO2 came from in 2014-15",
+    "lines": [
+      "Pet coke energy: 20% of 305,950 toe = 61,190 toe x 41.868 GJ = 2,561,900 GJ",
+      "Pet coke burnt: 2,561,900 GJ / 32.5 GJ per tonne = 78,830 t",
+      "Pet coke CO2: 78,830 t x 3.17 = 249,900 t",
+      "Electricity: 85 million kWh x 0.675 = 57,375 t",
+      "Pet coke is about 81% of these two lines; TERI's own total for the cluster was 383,470 t CO2"
+    ],
+    "note": "Built from TERI's 2014-15 shares with IPCC default values for pet coke (32.5 GJ per tonne, 97.5 kg CO2 per GJ) and the FY 2025-26 grid factor. TERI's total used its own factor set. Your invoices give your figure."
+  },
+  "senseible": "Upload your fuel invoices and electricity bills and Senseible gives your Scope 1 and 2 figure with each fuel on its own line, fossil and biomass kept apart, so the number you show a buyer or bank matches the fuel you actually burn.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Panipat exporters: EU buyer data", "to": "/answers/panipat-home-furnishing-exporter-eu-buyer-data" },
+    { "label": "Green finance for Panipat recyclers", "to": "/climate-intelligence/green-finance-textile-recycling-panipat" },
+    { "label": "Panipat shoddy yarn electricity per kg", "to": "/answers/panipat-shoddy-yarn-mill-electricity-per-kg" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy Profile: Panipat Textile Cluster (2016, SAMEEEKSHA)", "url": "https://sameeeksha.org/pdf/clusterprofile/PanipatTextileCluster.pdf" },
+    { "label": "SAMEEEKSHA, Panipat textile cluster summary", "url": "https://sameeeksha.org/index.php?option=com_content&view=article&id=190&Itemid=502" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy (Tables 1.2 and 1.4)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-29"
+}

@@ -2,38 +2,52 @@
   "slug": "indian-fiscal-year-vs-cbam-reporting-period",
   "q": "My plant keeps accounts April to March. Which reporting period do I use for CBAM embedded emissions data?",
   "title": "April to March accounts and CBAM periods",
-  "short": "Your EU importer declares by calendar year, January to December, so plan to give calendar-year figures. The safest route is to keep fuel, power and production data month by month, then total January to December. Use your April to March year for installation data only if the current CBAM rules and your verifier accept it, and say so.",
+  "short": "The calendar year, 1 January to 31 December. In the definitive period the Commission's guidance for operators and verifiers says an installation's CBAM reporting period is always the calendar year in which the goods were made. Keep fuel, power and production month by month, and read meters and count stock on both 1 January and 1 April.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian plant accountants and exporters",
   "sections": [
     {
-      "h": "What is fixed and what is not",
+      "h": "What is fixed",
       "ul": [
-        "Fixed: the authorised declarant's annual CBAM declaration covers goods imported in a calendar year. For 2026 imports it is due by 30 September 2027.",
-        "Less settled: the period over which an installation measures its emissions. Commission guidance for operators in the transitional period allowed a fiscal year in place of the calendar year under conditions. Check whether the definitive-period implementing rules keep that option before relying on it."
+        "Your reporting period as an operator: the calendar year of production. Guidance No. 1 ties this to the definition of reporting period in the Methodology Act.",
+        "Verification of a year cannot finish before January of the next year, because the verifier needs data up to 31 December.",
+        "Your importer's CBAM declaration covers goods imported in the previous calendar year and is due by 30 September. For 2026 imports, that is 30 September 2027, and the guidance suggests importers want verified reports by mid-August.",
+        "No reporting period before 2026 is accepted."
       ]
     },
     {
-      "h": "Why monthly data solves the problem",
+      "h": "One line in the Q&A says otherwise",
       "p": [
-        "If you hold fuel, electricity and production by month, you can produce any 12-month total: your April to March books for Indian reporting, and January to December for CBAM. You avoid prorating a whole fiscal year, which goes wrong when output or the fuel mix changes across the year, for example after a furnace conversion in October."
+        "The Commission's CBAM Questions and Answers, updated 15 October 2026, still says a different reference period such as a financial year may be used if it covers at least three consecutive months, is representative and is applied consistently. The definitive-period guidance documents for operators and for verifiers both say calendar year, always. Plan on the calendar year. If you want to rely on the Q&A line, get your verifier's agreement in writing before you collect a year of data that way."
+      ]
+    },
+    {
+      "h": "Two periods, one set of meter readings",
+      "p": [
+        "The verification guidance uses exactly this case as its example: CBAM runs January to December while another system runs April to March. A gas meter read only on 1 April, or a coal pile counted only at the March close, leaves a hole in the CBAM year. Read the meters and take stock on both 1 January and 1 April, and monthly if you can, so no month has to be guessed."
+      ]
+    },
+    {
+      "h": "The 31 December cut-off",
+      "p": [
+        "Counting coal, precursors and finished goods at midnight on 31 December is rarely practical. Verifiers may accept a cut-off up to one or two working days away, for example 30 December at 18:00, if you fix the time in advance, measure emissions, production and stocks as close to it as you can, document it, and start the next year from the same point."
       ]
     },
     {
       "h": "Steps for a plant on April to March books",
       "ol": [
         "Split every fuel invoice and electricity bill into the month it relates to, not the month it was paid.",
-        "Record production in tonnes for each month for each CBAM product.",
+        "Record production in tonnes for each month for each CBAM product, counting only goods that meet sale specifications.",
         "For a calendar year, take January to March from one fiscal year and April to December from the next.",
-        "Compute specific embedded emissions: total attributed emissions divided by tonnes produced in the same months.",
-        "Write the period and method in the data you send the importer, and keep the monthly workings for the verifier."
+        "Work out specific embedded emissions: total attributed emissions divided by tonnes produced in the same months.",
+        "Write the period, the cut-off and the method in your monitoring plan, and keep the monthly workings for the verifier."
       ]
     },
     {
       "h": "Bills that straddle months",
       "p": [
-        "An electricity bill for 15 December to 14 January covers two calendar years. Split it by days or by meter readings if you have them. Small differences between methods are acceptable if you use one method consistently and record it."
+        "An electricity bill for 15 December to 14 January covers two calendar years. Split it by meter readings if you have them, otherwise by days. Use one method consistently and record it."
       ]
     }
   ],
@@ -47,17 +61,19 @@
     ],
     "note": "Illustrative figures for direct emissions only."
   },
-  "senseible": "Senseible stores each record against its billing period, so emissions can be totalled for any 12-month window, calendar or fiscal. It does not record production tonnes from your books or attribute emissions to CBAM products for you.",
+  "senseible": "Senseible stores each record against its billing period, so emissions can be totalled for any 12-month window, calendar or fiscal, and its CBAM Suite builds the calendar-year operator report by production process. You still enter production tonnes from your own books.",
   "links": [
-    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
-    { "label": "Embedded emissions for steel under CBAM", "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam" },
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "When to start verification", "to": "/answers/cbam-verification-when-to-start-timeline" },
     { "label": "Financial or calendar year footprint?", "to": "/answers/carbon-footprint-financial-or-calendar-year" },
     { "label": "Split a bill across months", "to": "/answers/split-electricity-bill-across-months-for-carbon" }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2023/956, consolidated text (Article 6 and Annex IV)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
-    { "label": "European Commission, CBAM legislation and guidance", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.5 (step 2), 4.1 and 7.7", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (14 August 2026), sections 2.4.1 and 2.4.5", "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 4.14", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "Regulation (EU) 2023/956, consolidated text (Article 6)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
   ],
-  "reviewed": "2026-10-15",
-  "reviewNote": "Confirm whether the definitive-period implementing rules let operators use a non-calendar reporting period for installation data."
+  "reviewed": "2026-10-29",
+  "reviewNote": "The Commission Q&A (question 4.14) conflicts with the definitive-period guidance on financial years; recheck the next Q&A update and remove the note once they agree."
 }

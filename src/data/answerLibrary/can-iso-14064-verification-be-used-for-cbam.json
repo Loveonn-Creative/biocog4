@@ -1,0 +1,58 @@
+{
+  "slug": "can-iso-14064-verification-be-used-for-cbam",
+  "q": "Can our ISO 14064 verification statement be used for CBAM?",
+  "title": "ISO 14064 verification and CBAM",
+  "short": "No. CBAM accepts only a verification by a verifier accredited for CBAM by an EU national accreditation body, at reasonable assurance, checked against the EU Methodology Act. The Commission says ISO 14064-3 is not specific enough for CBAM. Your ISO work still helps: the meters, invoices and controls behind it are the evidence a CBAM verifier samples.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian exporters who already hold an ISO 14064 verified inventory and an EU buyer asking for CBAM data",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "What is checked. ISO 14064: your company or site inventory, usually tonnes per year by scope. CBAM: specific embedded emissions per tonne of each good by CN code, plus precursors and the free allocation figures.",
+        "Rulebook. ISO 14064: ISO 14064-1, often read alongside the GHG Protocol. CBAM: the EU Methodology Act, Regulation (EU) 2025/2547, and nothing else.",
+        "Assurance. ISO 14064: limited or reasonable, as agreed. CBAM: reasonable only. Limited assurance is not enough.",
+        "Who may verify. ISO 14064: any verification body, many of them accredited to ISO 14065 by their own national body. CBAM: a verifier accredited for CBAM by an EU national accreditation body and registered in the CBAM Registry.",
+        "Monitoring plan. ISO 14064: not required in this form. CBAM: the verifier first assesses your monitoring plan against the Methodology Act.",
+        "Period. ISO 14064: often your April to March year. CBAM: the calendar year.",
+        "Output. ISO 14064: a statement in any format. CBAM: a verification report issued in the CBAM Registry, in English."
+      ]
+    },
+    {
+      "h": "How to tell which assurance you hold",
+      "p": [
+        "Read the opinion paragraph. Reasonable assurance is worded positively: the statement is free of material misstatement. Limited assurance uses a double negative: nothing has come to our attention that causes us to believe it is misstated. If yours reads like the second, it would not meet CBAM even if everything else matched."
+      ]
+    },
+    {
+      "h": "What carries over",
+      "ul": [
+        "Fuel invoices, electricity bills and meter readings already organised for one auditor.",
+        "Calibration records for weighbridges and flow meters.",
+        "A data flow you can explain and controls such as a second person checking entries.",
+        "An inventory boundary that helps you draw the installation boundary, which the CBAM verifier confirms separately."
+      ]
+    },
+    {
+      "h": "What you must add",
+      "ol": [
+        "A monitoring plan that follows the Methodology Act, covering every source stream, each production process and the goods made in it.",
+        "Production in tonnes by CN code for the year, counting only goods that meet sale specifications, and the precursors used in each process.",
+        "Calendar year totals, with stock taken as close as possible to 31 December.",
+        "A verifier accredited for CBAM for your sector. Your ISO verifier may also hold CBAM accreditation; ask for the certificate."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM Suite starts from the same fuel and electricity records your ISO inventory uses and turns them into the CBAM operator emissions report by production process and CN code. Senseible does not issue ISO or CBAM verification statements.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "Is an ISO 14064-1 inventory worth it?", "to": "/answers/iso-14064-1-verified-inventory-worth-it-msme" },
+    { "label": "CBAM verifier scopes by sector", "to": "/answers/cbam-verifier-accreditation-scopes-by-sector" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 1.1 (Figure 1), 3.4, 3.6, 4.1, 4.15 and 7.7", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 5.2 and 5.7", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-29"
+}

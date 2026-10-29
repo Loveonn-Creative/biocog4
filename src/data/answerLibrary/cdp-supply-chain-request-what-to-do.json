@@ -2,7 +2,7 @@
   "slug": "cdp-supply-chain-request-what-to-do",
   "q": "A customer sent me a CDP supply chain request. Do I have to respond, and what does it cost?",
   "title": "CDP supply chain request: respond or not?",
-  "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. CDP charges responders an annual administration fee that depends on company size and region; check the current fee on cdp.net before you register.",
+  "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. If only customers requested you, CDP generally charges you no admin fee. The fee applies if an investor group also requested you or you disclose on your own.",
   "topic": "regulation",
   "intent": "decision",
   "audience": "Indian MSME suppliers to multinationals",
@@ -23,10 +23,11 @@
       ]
     },
     {
-      "h": "What the fee covers and how to check it",
+      "h": "When CDP charges a fee, and when it does not",
       "p": [
-        "CDP's responder fee is an administration charge for using the platform and receiving your score and feedback. It is set per reporting cycle, and the amount differs by organisation size and region, with lower or waived fees for some smaller companies.",
-        "The fee is listed in CDP's fee policy on cdp.net and is shown when you register for the cycle. Some customers pay or reimburse it for priority suppliers, so ask before you pay."
+        "CDP's admin fee is generally waived if you were requested only by Supply Chain members (your customers), Banks Program members, Private Markets members or the RE100 initiative. A supplier asked only by its customers usually discloses without paying CDP.",
+        "The fee applies if CDP's Capital Markets signatories, its investor group, also requested you, or if you choose to disclose without being asked. It is the same for the SME and full questionnaires, it is not refundable, and CDP offers a lower Essential tier for organisations headquartered outside the regions it lists, India included.",
+        "The CDP Portal shows who requested you. Check that list before you register, and ask CDP's Help Center if you are unsure whether a fee applies."
       ]
     },
     {
@@ -72,10 +73,14 @@
       "url": "https://www.cdp.net"
     },
     {
+      "label": "CDP, disclosure FAQs: admin fee and exemptions",
+      "url": "https://www.cdp.net/en/faqs"
+    },
+    {
       "label": "GHG Protocol Corporate Standard",
       "url": "https://ghgprotocol.org/corporate-standard"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "CDP sets its responder fees and questionnaire each cycle; check cdp.net for the current year."
+  "reviewed": "2026-10-29",
+  "reviewNote": "CDP sets its admin fee rules, exemptions and questionnaire each cycle; re-check the fee section of CDP's FAQs for the current year."
 }

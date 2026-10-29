@@ -10,7 +10,7 @@
     {
       "h": "A separate scorecard from your sustainability score",
       "p": [
-        "Your EcoVadis sustainability scorecard gives a 0 to 100 score across four themes. The carbon scorecard sits beside it and grades only carbon management, with strengths and improvement areas listed. A buyer counting its Scope 3 emissions reads it to see whether your figures can be trusted and whether you are cutting them.",
+        "Your EcoVadis sustainability scorecard gives a 0 to 100 score across four themes. The carbon scorecard sits beside it and grades only carbon management, with strengths and improvement areas listed. A buyer counting its Scope 3 emissions reads it to judge how far along you are in managing carbon.",
         "You can get it through the full sustainability plans, or through a Carbon Rating plan that covers carbon questions only and is offered when a buyer invites you."
       ]
     },
@@ -34,7 +34,7 @@
         "Measure: a full year of Scope 1 and 2 from electricity bills and fuel invoices, for every site, with the documents.",
         "Act: record actions with dates and numbers, such as a solar rooftop, a boiler fuel switch or an LED retrofit with before and after units.",
         "Commit: write a dated reduction target with a base year, signed by the owner.",
-        "Repeat: measure again next year and show the change. Your level can only move at a reassessment."
+        "Repeat: measure again next year and show the change. Your level is updated when you are reassessed."
       ]
     }
   ],

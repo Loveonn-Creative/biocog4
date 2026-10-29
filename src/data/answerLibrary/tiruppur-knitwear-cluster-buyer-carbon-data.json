@@ -50,7 +50,7 @@
     {
       "h": "Records to keep",
       "ul": [
-        "TANGEDCO bills and generator diesel invoices, month by month.",
+        "Electricity bills and generator diesel invoices, month by month.",
         "Wood and husk purchases by weight, with how you converted loads or carts if bought that way.",
         "Kg processed per month from the job-work register, matched to the same months."
       ]
@@ -67,7 +67,7 @@
     ],
     "note": "Uses BEE's 2010-11 averages, IPCC defaults for wood and the FY 2025-26 grid factor. A unit burning furnace oil or diesel instead of wood would show a much larger Scope 1 line."
   },
-  "senseible": "Senseible reads your TANGEDCO bills and fuel invoices into a per-unit record your exporter can pass up to the brand, with wood kept on its own line and every figure traced to the document behind it.",
+  "senseible": "Senseible reads your electricity bills and fuel invoices into a per-unit record your exporter can pass up to the brand, with wood kept on its own line and every figure traced to the document behind it.",
   "links": [
     { "label": "Supplier evidence for buyers", "to": "/scope-3-supplier-evidence" },
     { "label": "Tiruppur dyeing unit: firewood boiler", "to": "/answers/tiruppur-dyeing-unit-firewood-boiler-emissions" },

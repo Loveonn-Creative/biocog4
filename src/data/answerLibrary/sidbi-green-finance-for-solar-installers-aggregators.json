@@ -1,0 +1,98 @@
+{
+  "slug": "sidbi-green-finance-for-solar-installers-aggregators",
+  "q": "Can a solar installer or aggregator get SIDBI green finance for MSME projects?",
+  "title": "SIDBI green finance for solar installers",
+  "short": "Yes. SIDBI's Green Finance Scheme names service providers such as RESCOs, ESCOs, EPC contractors and vendors, and aggregators with an established MSME linkage, as eligible borrowers. It funds up to 75 percent of project cost, up to ₹100 crore, with repayment set to the project and SIDBI's environmental and social rules applying.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Solar EPC contractors, RESCOs and ESCOs that build projects on MSME roofs and need debt to fund them",
+  "sections": [
+    {
+      "h": "Who counts as eligible",
+      "ul": [
+        "Manufacturers and service providers on the supply side of green projects, including RESCOs, ESCOs, EPC contractors and vendors.",
+        "MSMEs on the demand side, the units that use the solar or efficiency equipment.",
+        "Projects in energy efficiency, renewable energy, compressed biogas, water and wastewater, solid waste and e-mobility.",
+        "Every borrower must comply with SIDBI's Environment and Social Management Framework."
+      ]
+    },
+    {
+      "h": "Showing an established MSME linkage",
+      "p": [
+        "SIDBI's page does not define the phrase. The plain way to show it is a book of signed contracts with Udyam-registered MSME customers: RESCO power purchase agreements, roof leases, EPC orders and the Udyam numbers that go with them. Completed projects with a few years of billing behind them count for more than proposals not yet signed. Ask the SIDBI branch what it will accept before you apply."
+      ]
+    },
+    {
+      "h": "Terms",
+      "ul": [
+        "Up to 75 percent of total project cost, maximum ₹100 crore.",
+        "Repayment tenure set to the project, which suits RESCO cash flows that arrive monthly over many years.",
+        "Rupee or foreign currency term loan, fixed or floating rate.",
+        "May be covered under risk sharing facilities such as CGTMSE or PRSF.",
+        "No interest rate is published; it comes in the sanction letter."
+      ]
+    },
+    {
+      "h": "SIDBI GFS or IREDA's rooftop scheme",
+      "ul": [
+        "Size: IREDA's rooftop scheme needs at least 5,000 kWp per application and 20 kWp per roof, under its norms updated to 1 October 2026. SIDBI's GFS page states no minimum capacity.",
+        "Share of cost: GFS up to 75 percent; IREDA 70 percent, up to 75 percent on creditworthiness.",
+        "Tenure: GFS set per project; IREDA up to 10 years after a 12-month moratorium.",
+        "A growing installer with a few megawatts can start with GFS and look at IREDA once a single application clears 5,000 kWp."
+      ]
+    },
+    {
+      "h": "Evidence for each roof",
+      "p": [
+        "Lenders financing a portfolio want to know each plant is sized to real demand and performs as promised. For every customer, keep twelve months of grid bills before installation and the bills and generation after. That shows the plant is not oversized, supports the payments under a power purchase agreement, and gives the CO2 avoided per site that lenders increasingly report."
+      ]
+    }
+  ],
+  "example": {
+    "title": "An installer funds 30 factory roofs of 200 kW",
+    "lines": [
+      "Portfolio: 30 x 200 kW = 6,000 kW",
+      "Portfolio cost from your EPC estimates: ₹24 crore (illustrative)",
+      "Maximum GFS loan: 75 percent = ₹18 crore; your equity ₹6 crore",
+      "Yearly output: 6,000 kW x 1,400 kWh per kW (assumed yield) = 84,00,000 kWh",
+      "CO2 avoided: 84,00,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 56,70,000 kg, about 5,670 tonnes a year",
+      "IREDA check: 6,000 kWp clears its 5,000 kWp minimum, so both lenders are open to you"
+    ],
+    "note": "The CO2 figure counts only solar units that replace grid units at each factory; net-metered exports are counted separately."
+  },
+  "senseible": "Senseible reads each customer's electricity bills into monthly units and CO2, before and after installation, so you can hand a lender a per-roof record instead of a spreadsheet of estimates. The green loan readiness check shows what is missing. Senseible does not lend.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "SIDBI Green Finance Scheme terms",
+      "to": "/answers/sidbi-green-finance-scheme-loan-terms"
+    },
+    {
+      "label": "IREDA rooftop solar loan: minimum size",
+      "to": "/answers/ireda-rooftop-solar-loan-minimum-size"
+    },
+    {
+      "label": "Who claims Scope 2 under a RESCO model",
+      "to": "/answers/resco-opex-solar-who-claims-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, Green Finance page, Green Finance Scheme key features, eligibility and FAQs: service providers (RESCOs, ESCOs, EPCs, vendors) and aggregators with an established MSME linkage, 75%, ₹100 crore (page last updated 07-10-2026)",
+      "url": "https://www.sidbi.in/en/green-finance"
+    },
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026, chapter IX rooftop solar scheme",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check on sidbi.in every quarter."
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "cbam-verifier-accreditation-scopes-by-sector",
+  "q": "Can any CBAM verifier verify our plant, or does it need our sector?",
+  "title": "CBAM verifier scopes: does yours fit?",
+  "short": "It needs your sector. CBAM verifiers are accredited for numbered activity groups, such as I for cement or VIII for iron, steel and aluminium products. A verifier without the group covering your goods may not verify your plant, and other verifiers check this scope before relying on its report.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian CBAM goods producers comparing verifier quotes",
+  "sections": [
+    {
+      "h": "The groups on a CBAM accreditation certificate",
+      "ul": [
+        "I: calcined clay, cement clinker, cement, aluminous cement.",
+        "II: hydrogen, ammonia.",
+        "III: nitric acid.",
+        "IV: urea, mixed fertilisers.",
+        "V: sintered ore, pig iron, DRI, crude steel.",
+        "VI: ferro-alloys (FeMn, FeCr, FeNi).",
+        "VII: unwrought aluminium.",
+        "VIII: iron or steel products, aluminium products.",
+        "L: carbon capture, use and storage. LI: electricity imported into the EU. LII: indirect emissions."
+      ]
+    },
+    {
+      "h": "Match your plant before you match the price",
+      "ul": [
+        "Re-rolling mill making bars, coil or pipes from bought billets or slabs: VIII.",
+        "Sponge iron plant with an electric furnace and a rolling mill: V for the DRI and crude steel, VIII for the rolled products.",
+        "Ferro-alloy smelter: VI.",
+        "Aluminium smelter casting ingots: VII. Extruder making profiles from bought billet: VIII.",
+        "Cement or clinker plant: I, which always comes with LII, because indirect emissions count for cement.",
+        "Urea or NPK plant: IV with LII; an ammonia unit adds II.",
+        "Sinter plant: V with LII. Steel goods other than sintered ore do not count indirect emissions, so LII is not needed for them."
+      ]
+    },
+    {
+      "h": "Indirect emissions cannot stand alone",
+      "p": [
+        "No verifier can be accredited for LII by itself. It comes only together with group I, II, III, IV or V, and a body granting those groups must check the verifier's competence on indirect emissions too. If your goods carry indirect emissions and you buy electricity under a power purchase agreement or over a direct line, ask whether the team has checked smart meter data, single line diagrams and PPAs before."
+      ]
+    },
+    {
+      "h": "It also matters for your suppliers",
+      "p": [
+        "When you use a supplier's verified figure for a precursor, your verifier checks that the supplier's verifier held a valid accreditation for that sector at the time. A Raipur sponge iron supplier verified by a firm accredited only for group VIII would not pass. Ask your precursor suppliers for their verifier's scope as well as the report."
+      ]
+    },
+    {
+      "h": "Three questions for every quote",
+      "ol": [
+        "Which activity groups are on your CBAM certificate, and which national accreditation body issued it?",
+        "Will the accreditation still be valid when you issue our verification report?",
+        "Will the lead auditor speak English and will one auditor on the team speak our language? The Commission requires both."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM Suite records your production processes and goods by CN code, which makes it clear which activity groups your verifier must hold before you ask for quotes. Senseible is not a CBAM verifier and does not issue verification reports.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "Checks on a precursor supplier's report", "to": "/answers/cbam-verifier-checks-precursor-supplier-report" },
+    { "label": "Finding a CBAM accredited verifier", "to": "/answers/how-to-find-cbam-accredited-verifier" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1.2, 9.2.3 and 9.2.4 (Table 11)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 5.6 and 5.19", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-29"
+}

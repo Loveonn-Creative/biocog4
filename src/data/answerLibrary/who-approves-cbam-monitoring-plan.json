@@ -1,0 +1,61 @@
+{
+  "slug": "who-approves-cbam-monitoring-plan",
+  "q": "Who approves a CBAM monitoring plan for an Indian plant?",
+  "title": "Who approves a CBAM monitoring plan?",
+  "short": "Nobody approves it in advance. No EU or Indian authority signs off a CBAM plan. Your accredited CBAM verifier assesses the plan against the EU Methodology Act, usually as the first step of verification, and records the result in the verification report or a separate assessment report you can show later verifiers.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian plant heads and energy managers writing their first CBAM monitoring plan",
+  "sections": [
+    {
+      "h": "Why CBAM works differently from the EU ETS",
+      "p": [
+        "In the EU emissions trading system, a government authority approves each plant's monitoring plan, and the verifier then only checks that the plant followed it. Under CBAM that split is not possible, so the Commission puts both jobs on the verifier: first judge whether the plan meets the Methodology Act, then check the year's data against it. That is why CBAM verifiers need extra competence beyond EU ETS verifiers."
+      ]
+    },
+    {
+      "h": "Two ways your verifier can do it",
+      "ul": [
+        "Inside the annual verification. Cheapest for a first year and for plants that change a lot, because one site visit serves both. The verifier states in the report that the plan was assessed and whether it complies.",
+        "As a separate assignment. You get a separate quote, a separate site visit and a separate assessment report. It suits stable plants, and you may even use a different verifier for the plan and for the yearly data.",
+        "Either way, ask for the plan to be assessed early in the year, before the verifier starts on data after 31 December. A plan found wrong in March of the following year can mean a whole year of data collected the wrong way."
+      ]
+    },
+    {
+      "h": "You do not pay for it every year",
+      "p": [
+        "Once a verifier finds your plan compliant, later verifiers, including a new firm you switch to, may rely on that finding and only check the plan is current and followed. The Commission suggests a plant that rarely changes could have its plan reassessed every two to five years. Keep the assessment statement or report with the plan's version number and date."
+      ]
+    },
+    {
+      "h": "Changes that send the plan back for assessment",
+      "ul": [
+        "Starting or closing a production process or route, such as adding an induction furnace line.",
+        "A change in energy supply, such as moving from grid power to a captive plant.",
+        "New pipes or conveyors linking processes for fuel, materials, heat or waste gases.",
+        "Starting or stopping use of the bubble approach.",
+        "Changing precursors or suppliers where you use actual figures.",
+        "Switching between calculation and stack measurement, or adding new fuels, materials or meters.",
+        "Update the plan without undue delay and apply it at once. Minor changes can wait in a change log for the next verification."
+      ]
+    },
+    {
+      "h": "Write it so it survives staff changes",
+      "p": [
+        "Name posts, not people: shift in-charge, not whoever holds the post today. Identify meters by position and type, for example the ultrasonic flow meter on the PNG line to reheating furnace 2 with its range, not by serial number, so a like-for-like replacement does not force a plan change."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM Suite holds the parts a verifier reads in a monitoring plan, your source streams, production processes, goods by CN code and precursors, in one workbook with a dated change log. Senseible does not assess or approve monitoring plans; only your accredited CBAM verifier can.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "Minimum elements of a monitoring plan", "to": "/answers/cbam-monitoring-plan-minimum-elements-list" },
+    { "label": "Update the plan after a plant change", "to": "/answers/cbam-monitoring-plan-update-after-plant-change" },
+    { "label": "When to start verification", "to": "/answers/cbam-verification-when-to-start-timeline" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 3.6, 5.1, 5.2 and 5.4", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 1, introduction to CBAM concepts (14 August 2026), section 2.4.1", "url": "https://taxation-customs.ec.europa.eu/document/download/031abf60-21a9-4822-b258-ac8b111d8358_en?filename=Guidance%20No.%201%20-%20Introduction%20to%20CBAM%20concepts.pdf" }
+  ],
+  "reviewed": "2026-10-29"
+}

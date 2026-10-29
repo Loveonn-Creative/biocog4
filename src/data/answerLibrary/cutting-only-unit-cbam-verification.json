@@ -1,0 +1,65 @@
+{
+  "slug": "cutting-only-unit-cbam-verification",
+  "q": "We only cut, slit or weld bought steel. Do we still need CBAM verification?",
+  "title": "Cutting-only units and CBAM verification",
+  "short": "Only if you want your EU buyer to use actual figures instead of defaults. Cutting, welding, plating and finishing emissions are left out of CBAM, but the verifier still checks that you do nothing else, that precursor tonnes are counted before cutting, and where your coil came from. Your monitoring plan can be very short.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian slitting lines, cut-to-length units, steel service centres and fabricators, and aluminium cutting shops",
+  "sections": [
+    {
+      "h": "Which steps are left out",
+      "ul": [
+        "Iron or steel products: plating, cutting, welding and finishing.",
+        "Aluminium products: cutting, welding and finishing.",
+        "Bending, roll forming, pressing and cold rolling are not on these lists. Cold rolling, forging and wire drawing are named inside the steel boundary. If you do any forming, do not assume the cutting-only treatment applies."
+      ]
+    },
+    {
+      "h": "What the verifier still checks",
+      "ol": [
+        "That the unit really carries out only the excluded steps. The site visit rules still apply.",
+        "That precursor mass is taken as it enters, before cutting. Edge trim and offcuts carry zero emissions, so your figure per tonne shipped rises above the coil's.",
+        "Where each coil or sheet came from: EU material counts as zero, Indian material needs the India default or a valid supplier verification report, and material of unknown origin takes the Annex IV default.",
+        "That supplier reports cover the right year and come from a verifier accredited for that sector."
+      ]
+    },
+    {
+      "h": "A short monitoring plan is allowed",
+      "p": [
+        "The Commission's steel and aluminium guidance says the plan can be very concise, because there are no combustion, process or indirect emissions to monitor. The excluded steps need not appear as source streams or in the emissions report. What it must cover: list of goods by CN code, how you weigh coil in and product out, how you link coil numbers to supplier documents, and how you collect supplier reports."
+      ]
+    },
+    {
+      "h": "Run the numbers before you hire a verifier",
+      "p": [
+        "With default values for the coil, your actual figure comes out higher than the default your buyer could use for the finished strip, because the yield loss pushes it up. Verification pays only if your coil supplier gives you a verified figure low enough to beat the default after yield loss. Ask for that report first."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: slitting 1,000 t of Indian hot-rolled coil (CN 7208) in 2026 into 960 t of strip (CN 7211)",
+    "lines": [
+      "Coil without a supplier report: India default 4.280 x 1.10 mark-up = 4.708 t CO2e per tonne",
+      "Embedded in the coil: 1,000 x 4.708 = 4,708 t CO2e, all carried into 960 t of strip",
+      "Your actual figure: 4,708 / 960 = 4.904 t CO2e per tonne of strip",
+      "Buyer simply using the India default for CN 7211: 4.280 x 1.10 = 4.708 t per tonne",
+      "Break-even: your supplier's verified coil figure must be below 4.708 x 0.96 = 4.52 t per tonne for actual data to help"
+    ],
+    "note": "Assumes 4% edge trim and no other precursors. The free allocation adjustment is left out."
+  },
+  "senseible": "Senseible's CBAM Suite records coil bought by supplier and CN code, product shipped and scrap, and works out your figure per tonne with defaults or your supplier's verified values, so you can see the break-even before paying for verification. Senseible is not a CBAM verifier.",
+  "links": [
+    { "label": "What your EU declarant needs from you", "to": "/cbam-authorised-declarant" },
+    { "label": "Service centre slitting CBAM figure", "to": "/answers/steel-service-centre-slitting-coil-cbam-figure" },
+    { "label": "India default values for hot-rolled steel", "to": "/answers/cbam-default-value-india-hot-rolled-steel" },
+    { "label": "Checks on a precursor supplier's report", "to": "/answers/cbam-verifier-checks-precursor-supplier-report" }
+  ],
+  "sources": [
+    { "label": "European Commission, CBAM Guidance No. 5d, iron and steel (sections 2.2.3.8 and 3.1.1)", "url": "https://taxation-customs.ec.europa.eu/document/download/3eb64513-8255-4c71-875a-bd0a8c7ff772_en?filename=Guidance%20No.%205d%20-%20Sector-specific%20guidance%20document%20on%20iron%20and%20steel.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 5e, aluminium (section 3.1.1)", "url": "https://taxation-customs.ec.europa.eu/document/download/590e983b-c937-41ea-bb9f-810c29e70e1e_en?filename=Guidance%20No.%205e%20-%20Sector-specific%20guidance%20document%20on%20aluminium.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), section 4.9, footnote 74", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" }
+  ],
+  "reviewed": "2026-10-29"
+}

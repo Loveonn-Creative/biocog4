@@ -70,7 +70,7 @@
   },
   "senseible": "Senseible reads coal, gas and power invoices into dated installation records, the starting point for the actual emissions your EU importer asks for, and its CBAM cost calculator shows certificate cost from 2026 to 2034. It does not verify emissions or file CBAM declarations.",
   "links": [
-    { "label": "CBAM for exporters", "to": "/cbam" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
     { "label": "Raipur sponge iron in CBAM", "to": "/answers/raipur-sponge-iron-cbam-embedded-emissions" },
     { "label": "Raipur TMT bars: the CBAM figure", "to": "/answers/raipur-rolling-mill-tmt-bars-cbam-figure" },
     { "label": "India default values: ferro-alloys", "to": "/answers/cbam-default-value-india-ferro-alloys" },

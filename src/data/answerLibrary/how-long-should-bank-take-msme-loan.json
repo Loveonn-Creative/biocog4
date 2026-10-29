@@ -2,76 +2,84 @@
   "slug": "how-long-should-bank-take-msme-loan",
   "q": "How long can a bank take to decide on my MSME loan application?",
   "title": "How long a bank can take on an MSME loan",
-  "short": "There is no single legal deadline. RBI tells banks to set timelines for deciding MSME loan applications, disclose them and monitor applications pending beyond them. Many banks publish two weeks for limits up to Rs 5 lakh, three weeks up to Rs 25 lakh and six weeks above, counted from a complete application.",
+  "short": "For a micro or small enterprise asking for up to Rs 25 lakh, RBI says the credit decision shall not take more than 14 working days. For larger loans the bank's own Board-approved sanction time norms apply, and every bank must publish its timelines on a separate MSME tab on its website.",
   "topic": "markets",
   "intent": "check",
-  "audience": "MSME owners waiting on a term loan or working capital application",
+  "audience": "MSME owners waiting on a term loan or working capital decision, and branch officers handling them",
   "sections": [
     {
-      "h": "What the RBI rules require",
+      "h": "The rule",
+      "p": [
+        "RBI's Master Direction on lending to the MSME sector, updated on 9 February 2026, says the timeline for credit decisions on loans up to Rs 25 lakh to micro and small enterprise borrowers shall not be more than 14 working days. Above that amount, the bank follows its Board-approved sanction time norms. The direction is addressed to scheduled commercial banks, other than regional rural banks; if your lender is an NBFC, a cooperative bank or a regional rural bank, ask which rule it follows.",
+        "A medium enterprise is outside the 14-day line, which is written for micro and small units. Its timeline is the bank's own published norm."
+      ]
+    },
+    {
+      "h": "Your proof of the date",
       "ul": [
-        "Banks must lay down a procedure and timelines for disposing of MSME loan proposals and monitor applications pending beyond them, under the RBI Master Direction on lending to the MSME sector.",
-        "Banks must disclose their timelines for conveying credit decisions, on their website, notice boards and product literature.",
-        "Under the RBI Fair Practices Code for lenders, the bank must acknowledge your application, and if it rejects it, tell you the main reasons in writing."
+        "Every MSME application, on paper or online, must get an automatic acknowledgement with a unique application serial number from the bank's Credit Proposal Tracking System. Status updates are also meant to reach you automatically. Keep that number.",
+        "Banks must give you an indicative checklist of documents when you apply. Ask for it on day one, submit everything on it, and get the branch to confirm by email that the file is complete. RBI's text does not say when the 14 days start, so a complete file with a dated acknowledgement removes the argument."
       ]
     },
     {
-      "h": "When the clock starts",
+      "h": "Where your bank's numbers are",
       "p": [
-        "Timelines run from a complete application. A bank that keeps asking for documents has not started counting. Ask the branch to confirm in writing, by email is fine, that the file is complete and the date. That one line is what you will need if you complain later."
+        "Banks must show all MSME credit information, including timelines for credit decisions and the document checklist, under a separate tab on their website. They must also publish, each quarter, how many applications stayed pending beyond their sanction time norms, within a month of the quarter ending. If your loan is above Rs 25 lakh, that tab is where your deadline is written."
       ]
     },
     {
-      "h": "How to find your bank's number",
+      "h": "If the bank goes past it",
       "ol": [
-        "Search the bank's website for its MSE lending policy or Fair Practices Code; the timelines are usually in a table by loan size.",
-        "Ask the branch for the timeline that applies to your limit.",
-        "Note your application or reference number from the acknowledgement."
-      ],
-      "p": [
-        "Policies differ. Central Bank of India and DBS Bank India publish two weeks up to Rs 5 lakh, three weeks up to Rs 25 lakh and six weeks above. Canara Bank gives 15 days up to Rs 5 lakh and 30 days above at branch level. Bank of Maharashtra gives 14 working days up to Rs 25 lakh. Your own bank's document is the one that counts."
+        "Write to the branch manager with your application serial number, the date your file was complete and the timeline that applies.",
+        "Escalate to the bank's grievance redressal or nodal officer named on its website.",
+        "If there is no reply within 30 days, or the reply does not resolve it, complain under the Reserve Bank Integrated Ombudsman Scheme, 2021 at cms.rbi.org.in."
       ]
     },
     {
-      "h": "If the bank misses it",
-      "ol": [
-        "Write to the branch manager quoting the published timeline and your application date.",
-        "Escalate to the bank's grievance redressal officer or nodal officer named on its website.",
-        "If there is no reply within 30 days, or you are not satisfied, file a complaint under the RBI Integrated Ombudsman Scheme, 2021 at cms.rbi.org.in."
-      ]
-    },
-    {
-      "h": "What a delay does not mean",
+      "h": "What the deadline does and does not give you",
       "p": [
-        "Missing a timeline does not oblige the bank to approve the loan. The credit decision stays with the lender. What you can enforce is a decision, and written reasons if it is a no."
+        "It gives you a decision, not a yes. If the bank rejects the loan, it must tell you the main reasons in writing within its sanction time norms. Use those reasons: a rejection for missing evidence can be fixed and resubmitted, which is common with green and energy loans where the bank wants proof of the saving."
       ]
     }
   ],
-  "senseible": "For a green or energy loan, Senseible's green loan readiness check and finance application put your energy and carbon records in the form a lender asks for. The credit decision and its timing stay with the lender.",
+  "example": {
+    "title": "Same unit, three applications",
+    "lines": [
+      "Rs 18 lakh term loan for a new machine, small enterprise: decision within 14 working days",
+      "Rs 60 lakh loan for a rooftop solar plant, same unit: the bank's Board-approved norm, read it on the bank's MSME tab",
+      "Rs 18 lakh loan to a medium enterprise: the bank's Board-approved norm",
+      "14 working days in calendar terms: roughly three weeks once Sundays and the second and fourth Saturdays are taken out, longer if bank holidays fall in between"
+    ]
+  },
+  "senseible": "For a green or energy loan, the usual cause of a slow file is evidence the bank asks for late. Senseible's green loan readiness check puts your energy use and carbon figures from bills into the form a lender asks for, so you can hand them over with the application. The decision and its timing stay with the bank.",
   "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
     {
       "label": "Collateral-free MSME loan limit",
       "to": "/answers/cgtmse-collateral-free-loan-limit"
     },
     {
-      "label": "SIDBI energy efficiency loans",
-      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+      "label": "What a CMA report is",
+      "to": "/answers/what-is-a-cma-report-bank-loan"
     },
     {
-      "label": "Green loan readiness check",
-      "to": "/green-loan-check"
+      "label": "SIDBI machinery loans compared",
+      "to": "/answers/sidbi-machinery-loan-replace-old-machines"
     }
   ],
   "sources": [
     {
-      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, 24 July 2017, as updated (rbi.org.in)",
-      "url": "https://www.rbi.org.in"
+      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises (MSME) Sector, updated 9 February 2026, paragraphs 4.4 (14 working days up to Rs 25 lakh, website tab) and 4.7 (Credit Proposal Tracking System, checklist, pendency disclosure, reasons for rejection)",
+      "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11060"
     },
     {
-      "label": "RBI Fair Practices Code for Lenders and Reserve Bank Integrated Ombudsman Scheme, 2021 (rbi.org.in)",
+      "label": "RBI, Reserve Bank Integrated Ombudsman Scheme, 2021 (rbi.org.in)",
       "url": "https://www.rbi.org.in"
     }
   ],
-  "reviewed": "2026-10-19",
-  "reviewNote": "Bank figures as published on 19 October 2026 in Central Bank of India's MSME Banking page, DBS Bank India's loan disposal guidelines for MSEs, Canara Bank's MSME time norms and Bank of Maharashtra's time frame for disposal of MSME proposals; banks revise these. Check the current RBI Master Direction and your bank's policy."
+  "reviewed": "2026-10-29",
+  "reviewNote": "Check the current RBI Master Direction on MSME lending every quarter; the 14-day limit and the Rs 25 lakh threshold may be revised."
 }

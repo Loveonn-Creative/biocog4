@@ -1,0 +1,72 @@
+{
+  "slug": "surat-textile-processing-units-buyer-carbon-data",
+  "q": "What carbon data do brands ask Surat dyeing and printing houses for?",
+  "title": "Surat processing houses: buyer carbon data",
+  "short": "Brands and garment makers want your boiler coal or lignite, stenter gas and electricity for a year, divided by metres or kg processed, with the invoices behind each line. In BEE's study of Surat's processing houses, boiler coal was most of the carbon, so that line gets checked first.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dyeing, printing and finishing houses in the Surat textile cluster and the garment makers who buy from them",
+  "sections": [
+    {
+      "h": "Why coal decides your answer",
+      "p": [
+        "BEE's manual for the cluster counts about 400 processing houses: 146 small (under 50,000 metres a day), 168 medium and 86 large (over 1 lakh metres a day). Lignite and imported coal fire the boilers, natural gas runs stenters and gas generators, and a few units burn groundnut husk briquettes or wood.",
+        "Across the cluster the manual lists 23 lakh t of imported coal, 3,147 lakh scm of gas and 725.7 GWh of electricity. In tonnes of CO2, coal is far ahead of the other two, so a buyer looking at your figure looks hardest at the coal line."
+      ]
+    },
+    {
+      "h": "What a brand or garment maker will ask for",
+      "ul": [
+        "Coal, lignite and biomass burnt, by weight, from purchase invoices and the stock register.",
+        "PNG or gas bills in scm for stenters, printing and any gas generator.",
+        "Grid electricity in kWh.",
+        "Metres processed in the same months, and kg as well if you run very different fabrics.",
+        "A per-order split if they buy a share of your output, with the basis you used."
+      ]
+    },
+    {
+      "h": "Lignite needs its own factor",
+      "p": [
+        "Imported coal at Senseible's default is 2.44 kg CO2 per kg. Lignite is wetter and carries less carbon per tonne, so applying a coal factor to it overstates your figure. Use the calorific value and carbon content from your supplier's test report. Without one, the IPCC default works out near 1.2 kg CO2 per kg (11.9 GJ per tonne at 101 kg CO2 per GJ), labelled as a default."
+      ]
+    },
+    {
+      "h": "Who is asking, honestly",
+      "p": [
+        "If your fabric goes only to traders, you may never get a request. When one comes, it is usually from a garment exporter whose overseas brand counts supply chain emissions, or from a listed Indian retailer. Since SEBI's March 2025 circular, value chain disclosure is voluntary even for the top 250 listed companies, so a retailer may ask but cannot cite SEBI to make you answer."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Coal and lignite invoices with weighbridge slips and test reports.",
+        "Gas bills and electricity bills, month by month.",
+        "Daily production register in metres, totalled to the same months as the bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: BEE's three typical Surat units, per metre",
+    "lines": [
+      "Unit 1: 7,200 t imported coal x 2.44 = 17,568 t; 12.86 lakh scm gas x 2.05 = 2,636 t; 10.78 lakh kWh x 0.675 = 728 t; total 20,932 t for 153 lakh m = 1.37 kg CO2 per metre",
+      "Unit 2: 8,822 t coal = 21,526 t; 13.79 lakh scm = 2,827 t; 6.33 lakh kWh = 427 t; total 24,780 t for 150 lakh m = 1.65 kg per metre",
+      "Unit 3: 2,727 t coal = 6,654 t; 6.12 lakh scm = 1,255 t; 22.25 lakh kWh = 1,502 t; total 9,410 t for 115 lakh m = 0.82 kg per metre",
+      "Coal per metre runs from 0.24 to 0.59 kg across the three, which is where the spread comes from"
+    ],
+    "note": "Annual figures from BEE's Surat manual with Senseible's default factors and the FY 2025-26 grid factor. Your own invoices and production register give your number; heavier fabrics will always look worse per metre than per kg."
+  },
+  "senseible": "Senseible reads coal, gas and electricity invoices into a fingerprinted record with the factor behind each line and keeps it ready to share as supplier evidence, so the figure you send a garment maker can be traced back to the bill.",
+  "links": [
+    { "label": "Supplier evidence for buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Surat processing house fuel per metre", "to": "/answers/surat-processing-house-fuel-per-metre" },
+    { "label": "Dye house emissions per metre", "to": "/answers/dye-house-emissions-per-metre-of-fabric" },
+    { "label": "Narol coal boiler emissions", "to": "/answers/narol-textile-processing-coal-boiler-emissions" }
+  ],
+  "sources": [
+    { "label": "BEE, Manual on Energy Conservation Measures in Textile Cluster, Surat (BEE SME programme, SAMEEEKSHA copy)", "url": "https://sameeeksha.org/pdf/clusterprofile/Surat_textile_cluster.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" },
+    { "label": "SEBI circular, 28 March 2025, BRSR Core and value chain", "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html" }
+  ],
+  "reviewed": "2026-10-29"
+}
