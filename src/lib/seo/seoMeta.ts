@@ -61,6 +61,7 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   '/enterprise/pricing': { slug: 'enterprise', alt: 'Enterprise pricing: pay as you add suppliers' },
   '/enterprise': { slug: 'enterprise', alt: 'Every supplier’s emissions in one record: Scope 3 for enterprise buyers' },
   '/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026': { slug: 'credit-pricing', alt: 'How carbon credits are actually priced in 2026, voluntary and compliance markets' },
+  '/cbam-authorised-declarant': { slug: 'cbam-calculator', alt: 'Authorised CBAM declarant: who files for your shipment and what they need from you' },
   '/cbam': { slug: 'cbam-calculator', alt: 'CBAM for Indian exporters: pay on your real number, not the EU default' },
   '/carbon-credits-india': { slug: 'credit-pricing', alt: 'Carbon credits in India: find the route that fits you' },
   '/carbon-accounting-software-india': { slug: 'calculators', alt: 'Choose carbon accounting software in India with your own scorecard' },
@@ -260,6 +261,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/net-zero': {
     title: 'Net-Zero Roadmap Builder for MSMEs',
     description: 'Turn an emissions baseline into a sector-specific net-zero roadmap with reduction tasks you can track. Free five-step planner for MSMEs.',
+  },
+  '/cbam-authorised-declarant': {
+    title: 'Authorised CBAM Declarant: What Indian Exporters Send',
+    description: 'Who must be the authorised CBAM declarant, by when, how the 50-tonne threshold counts, and the verified plant data an Indian supplier sends the EU declarant.',
   },
   '/cbam-suite': {
     title: 'CBAM Suite: Embedded Emissions Report for Installations',

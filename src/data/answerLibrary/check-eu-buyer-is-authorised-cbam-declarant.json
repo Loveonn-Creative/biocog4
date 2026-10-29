@@ -39,6 +39,10 @@
   "senseible": "Senseible reads fuel, electricity and purchase invoices into dated, fingerprinted installation records, the starting point for the actual emissions an EU importer asks for. It does not file CBAM declarations or verify emissions.",
   "links": [
     {
+      "label": "What your buyer's declarant needs from you",
+      "to": "/cbam-authorised-declarant"
+    },
+    {
       "label": "What an authorised declarant is",
       "to": "/answers/what-is-an-authorised-cbam-declarant"
     },

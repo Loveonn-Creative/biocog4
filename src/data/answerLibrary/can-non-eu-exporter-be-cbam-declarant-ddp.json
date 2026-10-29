@@ -39,6 +39,7 @@
   ],
   "senseible": "Senseible does not act as a declarant or customs representative and does not advise on contract terms. It keeps the fuel and production records behind your embedded emissions, and its CBAM calculator gives an estimate of the certificate cost to discuss with whoever declares.",
   "links": [
+    { "label": "Find who files for your shipment", "to": "/cbam-authorised-declarant" },
     { "label": "Become a CBAM authorised declarant", "to": "/climate-intelligence/become-cbam-authorised-declarant" },
     { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
     { "label": "CBAM clause for an export contract", "to": "/answers/what-cbam-clause-to-put-in-export-contract" },
