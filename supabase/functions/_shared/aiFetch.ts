@@ -1,11 +1,14 @@
 // Shared chat-completion client for every AI edge function.
-// Provider order: GEMINI_API_KEY (primary) → Gemini_API_Key (secondary) →
-// the Lovable AI Gateway (LOVABLE_API_KEY). Each Gemini key is tried in
-// turn; the gateway is used only when every Gemini key is missing,
-// unreachable, slow to answer or returns an error. Any one key alone is
-// enough to run.
+// Provider order (owner, October 2026): Agent Platform on Google Cloud
+// (VERTEX_API_KEY, billed to the Cloud account and its credits) →
+// GEMINI_API_KEY (primary) → Gemini_API_Key (secondary) → the Lovable AI
+// Gateway (LOVABLE_API_KEY). Each provider is tried in turn; the next is used
+// only when the previous is missing, unreachable, slow to answer or returns
+// an error. Any one provider alone is enough to run.
 // Callers keep the same OpenAI-compatible request and response shape, and the
 // Authorization header they pass is ignored: keys are only read here.
+import { vertexApiKey, vertexChat } from './vertexGemini.ts';
+
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
 const GATEWAY_URL = 'https://ai.gateway.lovable.dev/v1/chat/completions';
 // Time allowed for Gemini to start answering before we switch to the next
@@ -49,7 +52,7 @@ export function geminiKey(): string | undefined {
 
 /** True when at least one AI provider key is set. */
 export function aiConfigured(): boolean {
-  return Boolean(geminiKey() || Deno.env.get('LOVABLE_API_KEY'));
+  return Boolean(vertexApiKey() || geminiKey() || Deno.env.get('LOVABLE_API_KEY'));
 }
 
 /** Safe user-facing message for a failed AI response status. */
@@ -90,8 +93,23 @@ async function tryGemini(key: string, body: Record<string, unknown>): Promise<Re
 // the primary cools down.
 const GEMINI_COOLDOWN_MS = 5 * 60_000;
 const geminiSkipUntil = new Map<number, number>();
-/** Test hook: forget any Gemini cooldown. */
-export function resetAiFallbackState(): void { geminiSkipUntil.clear(); }
+let vertexSkipUntil = 0;
+/** Test hook: forget any cooldown. */
+export function resetAiFallbackState(): void { geminiSkipUntil.clear(); vertexSkipUntil = 0; }
+
+// Agent Platform first. A refusal that will repeat (key refused, unknown
+// model, quota, outage) or no answer puts it on the same cooldown as a Gemini
+// key, so later requests go straight to the next provider.
+async function tryVertex(key: string, body: Record<string, unknown>, hasNext: boolean): Promise<Response | null> {
+  if (hasNext && Date.now() < vertexSkipUntil) return null;
+  const res = await vertexChat(key, body, GEMINI_HEADER_TIMEOUT_MS);
+  const s = res?.status ?? 0;
+  if (!res?.ok) {
+    if (hasNext && (s === 0 || s === 401 || s === 403 || s === 404 || s === 402 || s === 429 || s >= 500)) vertexSkipUntil = Date.now() + GEMINI_COOLDOWN_MS;
+    if (hasNext) console.info('AI fallback: trying next provider', 'after Agent Platform', s || 'no response');
+  }
+  return res;
+}
 
 // Try each Gemini key in order; returns the first usable response, or null
 // when every key is cooling down, unreachable or refused.
@@ -118,7 +136,16 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
   try { body = JSON.parse(String(init.body ?? '{}')); } catch { return json(400, 'Invalid AI request'); }
   const keys = geminiKeys();
   const lovable = Deno.env.get('LOVABLE_API_KEY');
-  if (!keys.length && !lovable) return json(503, 'AI is not configured');
+  const vertex = vertexApiKey();
+  if (!vertex && !keys.length && !lovable) return json(503, 'AI is not configured');
+
+  if (vertex) {
+    const hasNext = keys.length > 0 || Boolean(lovable);
+    const res = await tryVertex(vertex, body, hasNext);
+    if (res?.ok) return res;
+    if (!hasNext) return res ?? json(503, aiErrorMessage(0));
+    await res?.body?.cancel();
+  }
 
   if (keys.length) {
     const res = await tryGeminiCascade(keys, body, Boolean(lovable));
