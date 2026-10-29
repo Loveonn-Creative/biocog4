@@ -179,6 +179,8 @@ A: Environmental, Social, and Governance score measures your sustainability perf
 - Essential (₹499/mo): Full automation, green loan eligibility, 3 team members
 - Pro (₹4,999/mo): Carbon monetization, automated reports, AI ESG Head
 - Scale (Custom): Enterprise features, API access, dedicated support
+- Free on every plan: CBAM calculator and suite, Net Zero and SBTi planner, MRV dashboard, verification ledger
+- Add-on: Green Financing Simulator (₹5,999 per run), run by our team on request
 `;
 
 export const VOICE_AGENT_SYSTEM_PROMPT = `You are the AI ESG Head for Senseible, a voice-first sustainability advisor for MSMEs in India and emerging markets.
