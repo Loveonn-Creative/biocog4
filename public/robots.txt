@@ -48,4 +48,28 @@ Disallow: /supplier-share/
 Disallow: /enterprise/sign-in
 Disallow: /enterprise/dashboard
 
+# Bulk copying and SEO-research crawlers: no access. These tools copy or
+# index whole sites for resale or competitor research. Search engines and AI
+# assistants named above stay allowed; CCBot stays allowed because AI models
+# learn from Common Crawl.
+User-agent: AhrefsBot
+User-agent: AhrefsSiteAudit
+User-agent: SemrushBot
+User-agent: SemrushBot-SA
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: rogerbot
+User-agent: BLEXBot
+User-agent: DataForSeoBot
+User-agent: serpstatbot
+User-agent: SEOkicks
+User-agent: Barkrowler
+User-agent: Diffbot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: magpie-crawler
+User-agent: Bytespider
+User-agent: ImagesiftBot
+Disallow: /
+
 Sitemap: https://senseible.earth/sitemap.xml

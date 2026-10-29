@@ -139,7 +139,10 @@ async function main() {
   }
   if (!robots.includes(`Sitemap: ${R.SITE_URL}/sitemap.xml`)) fail('robots.txt', 'missing Sitemap line');
   // No page we ask Google to index may sit under a Disallow rule (rules match by prefix).
-  const disallow = [...robots.matchAll(/^Disallow:\s*(\S+)/gm)].map(m => m[1]);
+  // Only the group that names Googlebot governs search; other groups (bulk
+  // copying bots) may disallow everything.
+  const searchGroup = robots.split(/\n\s*\n/).find(g => /^User-agent:\s*Googlebot\s*$/mi.test(g)) || '';
+  const disallow = [...searchGroup.matchAll(/^Disallow:\s*(\S+)/gm)].map(m => m[1]);
   for (const url of expected) {
     const p = url.slice(R.SITE_URL.length) || '/';
     const rule = disallow.find(d => p.startsWith(d));
