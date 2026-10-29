@@ -350,7 +350,7 @@ serve(async (req) => {
             : supabase.from('emissions').update({ verified: true }).in('id', replayIds).eq('user_id', userId))
           : { error: null };
         if (statusError) throw statusError;
-        const analysis = replayAnalysis(previous.ai_analysis);
+        const analysis: Record<string, any> = replayAnalysis(previous.ai_analysis);
         if (replayed.failed.length) {
           analysis.flags = [...new Set([...(Array.isArray(analysis.flags) ? analysis.flags : []), ...replayed.failed.flatMap((f) => f.flags)])];
           analysis.verifiedEmissionIds = replayIds;
