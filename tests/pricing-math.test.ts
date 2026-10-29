@@ -31,3 +31,12 @@ describe('pricing page arithmetic', () => {
     expect(addonTotals('snapshot', 'yearly', { dashboard: -2 }).monthly).toBe(0);
   });
 });
+
+describe("green financing simulator add-on", () => {
+  test("counts each run once, as a one-time item", () => {
+    const t = addonTotals("pro", "monthly", { simulator: 2 });
+    expect(t.oneTime).toBe(11998);
+    expect(t.monthly).toBe(0);
+    expect(t.lines).toEqual([{ name: "Green Financing Simulator × 2", amount: 11998, when: "for those runs" }]);
+  });
+});

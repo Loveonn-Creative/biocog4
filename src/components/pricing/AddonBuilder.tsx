@@ -27,12 +27,13 @@ export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCy
       <ul className="grid gap-3 sm:grid-cols-2" aria-label="Add-ons">
         {ADDONS.map((a) => {
           const q = qty[a.id] ?? 0;
-          const countable = a.cadence === 'per-pack' || a.cadence === 'per-report';
+          const countable = a.cadence === 'per-pack' || a.cadence === 'per-report' || a.cadence === 'per-run';
           return (
             <li key={a.id} className={`pr-token rounded-2xl border p-4 transition-colors ${q ? 'border-primary bg-primary/5' : 'border-border bg-card'}`} data-on={q ? 'true' : 'false'}>
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-medium">{a.name}</p>
+                  {a.note && <p className="text-xs text-muted-foreground">{a.note}</p>}
                   <p className="text-sm text-muted-foreground">{a.price}</p>
                 </div>
                 {countable ? (
@@ -48,7 +49,7 @@ export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCy
                   </button>
                 )}
               </div>
-              {countable && <p className="mt-2 text-xs text-muted-foreground">{a.unit}</p>}
+              {countable && !a.note && <p className="mt-2 text-xs text-muted-foreground">{a.unit}</p>}
             </li>
           );
         })}
