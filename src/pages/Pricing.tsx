@@ -49,7 +49,23 @@ interface PricingTier {
   ctaVariant: 'default' | 'outline' | 'secondary';
   popular?: boolean;
   features: string[];
+  /** Grouped card lines (owner-approved layout B, Oct 2026); the classic `features` list stays as the fallback. */
+  groups?: Array<{ title?: string; items: string[] }>;
 }
+
+/**
+ * Kill switch for the grouped Pro and Scale cards and the free-tools strip.
+ * Set to 'classic' to show the previous feature lists exactly as before.
+ */
+const PLAN_CARD_LAYOUT: 'grouped' | 'classic' = 'grouped';
+
+/** Free tools every plan gets, shown under the plan cards in the grouped layout. */
+const FREE_ON_EVERY_PLAN: Array<{ label: string; to: string }> = [
+  { label: 'CBAM calculator and suite', to: '/cbam-suite' },
+  { label: 'Net Zero and SBTi planner', to: '/net-zero' },
+  { label: 'MRV dashboard', to: '/mrv-dashboard' },
+  { label: 'Verification ledger', to: '/verify' },
+];
 
 interface PartnerTier {
   id: string;
@@ -348,6 +364,12 @@ const Pricing = () => {
         'All Reporting Frameworks',
         'Eligible for add-ons and limited custom builds',
       ],
+      groups: [
+        { items: ['Everything in Essential'] },
+        { title: 'Get finance-ready', items: ['Green Financing Readiness + Lender-ready View', 'Monetization Signal + Incentives Finder'] },
+        { title: 'Reports and intelligence', items: ['Automated ESG Reports, All Frameworks', 'Biocog Intelligence + AI ESG Head'] },
+        { title: 'Team and support', items: ['10 Team Members', 'WhatsApp Chat + Email Support', 'Add-ons + Limited Custom Builds'] },
+      ],
     },
     {
       id: 'scale',
@@ -372,6 +394,12 @@ const Pricing = () => {
         'Dedicated Onboarding',
         'Priority SLA',
         'Team seats sized to your quote',
+      ],
+      groups: [
+        { items: ['Everything in Pro'] },
+        { title: 'Get finance-ready', items: ['Financing Ecosystem Access', 'Credit Monetization Setup', 'Full Finance Exports'] },
+        { title: 'Reports and intelligence', items: ['Biocog Superintelligence', 'Multi-entity Support'] },
+        { title: 'Team and support', items: ['API & Integrations (Custom Build)', 'Dedicated Onboarding + Priority SLA', 'Team seats sized to your quote'] },
       ],
     },
   ];
@@ -767,18 +795,53 @@ const Pricing = () => {
                     )}
 
                     {/* Features */}
-                    <ul className="space-y-2">
-                      {tier.features.map((feature, fidx) => (
-                        <li key={fidx} className="flex items-start gap-2 text-sm">
-                          <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {PLAN_CARD_LAYOUT === 'grouped' && tier.groups ? (
+                      <div className="space-y-3">
+                        {tier.groups.map((g, gidx) => (
+                          <div key={gidx}>
+                            {g.title && <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-primary">{g.title}</p>}
+                            <ul className="space-y-2">
+                              {g.items.map((feature) => (
+                                <li key={feature} className="flex items-start gap-2 text-sm">
+                                  <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <ul className="space-y-2">
+                        {tier.features.map((feature, fidx) => (
+                          <li key={fidx} className="flex items-start gap-2 text-sm">
+                            <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </CardContent>
                 </Card>
               ))}
             </div>
+
+            {PLAN_CARD_LAYOUT === 'grouped' && (
+              <div className="mx-auto mt-8 max-w-5xl rounded-2xl border border-dashed border-border bg-card/60 px-4 py-4 sm:px-6">
+                <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-5">
+                  <p className="shrink-0 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">Free on every plan</p>
+                  <ul className="flex flex-wrap justify-center gap-2">
+                    {FREE_ON_EVERY_PLAN.map((f) => (
+                      <li key={f.to}>
+                        <Link to={f.to} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-sm transition-colors hover:border-primary/50">
+                          <Check className="h-3.5 w-3.5 text-success" />{f.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
           </section>
         )}
 

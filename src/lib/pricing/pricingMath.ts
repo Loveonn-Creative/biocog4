@@ -65,8 +65,8 @@ export function invoicesToSlider(n: number): number {
 
 // ---- Add-ons ----
 
-export type AddonCadence = 'monthly' | 'one-time' | 'per-report' | 'per-pack';
-export interface Addon { id: string; name: string; price: string; amount: number; cadence: AddonCadence; unit?: string }
+export type AddonCadence = 'monthly' | 'one-time' | 'per-report' | 'per-pack' | 'per-run';
+export interface Addon { id: string; name: string; price: string; amount: number; cadence: AddonCadence; unit?: string; note?: string }
 
 /** Labels and prices exactly as published; amount and cadence drive the builder. */
 export const ADDONS: Addon[] = [
@@ -77,6 +77,8 @@ export const ADDONS: Addon[] = [
   { id: 'audit', name: 'Expert Climate Audit', price: '₹7,999 one-time', amount: 7999, cadence: 'one-time' },
   { id: 'fasttrack', name: 'Fast-track Verification', price: '₹2,999 per report', amount: 2999, cadence: 'per-report', unit: 'reports' },
   { id: 'streaming', name: 'Real-time Data Streaming', price: '₹1,499/month', amount: 1499, cadence: 'monthly' },
+  // Run by our team on request (owner, Oct 2026); not sold on the profile, so addonPurchases.ts does not charge it.
+  { id: 'simulator', name: 'Green Financing Simulator', price: '₹5,999 per run', amount: 5999, cadence: 'per-run', unit: 'runs', note: 'Your green finance readiness odds' },
 ];
 
 export interface AddonTotals { planPerMonth: number | null; monthly: number; oneTime: number; lines: Array<{ name: string; amount: number; when: string }> }
@@ -94,7 +96,7 @@ export function addonTotals(plan: PlanTier, cycle: BillingCycle, qty: Record<str
     if (!q) continue;
     const amount = a.amount * q;
     if (a.cadence === 'monthly' || a.cadence === 'per-pack') { monthly += amount; lines.push({ name: a.cadence === 'per-pack' ? `${a.name} × ${q}` : a.name, amount, when: 'a month' }); }
-    else { oneTime += amount; lines.push({ name: q > 1 ? `${a.name} × ${q}` : a.name, amount, when: a.cadence === 'per-report' ? 'for those reports' : 'once' }); }
+    else { oneTime += amount; lines.push({ name: q > 1 ? `${a.name} × ${q}` : a.name, amount, when: a.cadence === 'per-report' ? 'for those reports' : a.cadence === 'per-run' ? 'for those runs' : 'once' }); }
   }
   return { planPerMonth, monthly, oneTime, lines };
 }
