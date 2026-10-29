@@ -64,7 +64,7 @@ const MsmeCarbonNumber = () => {
   const mailto = `mailto:?subject=${encodeURIComponent(asker === "self" ? "My carbon number" : "Our carbon number: reply to send")}&body=${encodeURIComponent(`${reply}\n\n${info.title}:\n${info.needs.map(n => `- ${n}`).join("\n")}\n\nWork it out again: https://senseible.earth${MSME_CARBON_META.path}`)}`;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-clip bg-background text-foreground">
       <SEOHead
         title={MSME_CARBON_META.title}
         description={MSME_CARBON_META.description}

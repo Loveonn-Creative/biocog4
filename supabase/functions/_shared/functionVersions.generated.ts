@@ -2,7 +2,7 @@
 // Fingerprint of each function's own source, answered on GET ?__version.
 export const FUNCTION_VERSIONS: Record<string, string> = {
   "extract-document": "8bf621276a1a7698",
-  "verify-carbon": "d70cba797fe1c028",
+  "verify-carbon": "a58a63be866afa41",
   "intelligence-chat": "382f8c51e550cb0f",
   "scope2-engine": "21cf48f476edaad7",
   "scope3-trail": "2e78ad404e957223",
