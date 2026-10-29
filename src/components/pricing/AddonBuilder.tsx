@@ -33,7 +33,6 @@ export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCy
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-medium">{a.name}</p>
-                  {a.note && <p className="text-xs text-muted-foreground">{a.note}</p>}
                   <p className="text-sm text-muted-foreground">{a.price}</p>
                 </div>
                 {countable ? (
@@ -49,7 +48,7 @@ export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCy
                   </button>
                 )}
               </div>
-              {countable && !a.note && <p className="mt-2 text-xs text-muted-foreground">{a.unit}</p>}
+              {countable && a.cadence !== 'per-run' && <p className="mt-2 text-xs text-muted-foreground">{a.unit}</p>}
             </li>
           );
         })}
