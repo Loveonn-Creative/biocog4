@@ -20,7 +20,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { 
   FileBarChart, Download, Award, Loader2, FileSpreadsheet, 
   Building2, Shield, CheckCircle, AlertCircle, Calendar, 
-  ChevronDown, Settings, RefreshCw, Crown, Landmark, Clock
+  ChevronDown, Settings, RefreshCw, Crown, Landmark, Clock, ClipboardList
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
@@ -31,6 +31,8 @@ import {
   FRAMEWORKS,
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
+import { useScope2Summary } from '@/hooks/useScope2';
+import { useScope3Summary } from '@/hooks/useScope3Trail';
 import { grossKg, periodDateOf } from '@/lib/emissionLedger';
 // PDF and Excel engines load on first download, not with the page.
 import type { ReportDataset } from '@/lib/frameworkReports';
@@ -122,6 +124,11 @@ const Reports = () => {
     methodologyVersion,
     isLoading: evidenceLoading,
   } = useReportEvidence();
+
+  // Market-based Scope 2 and Scope 3 by GHG category for the Buyer answer pack.
+  // Both read existing records only and report nothing until their tables exist.
+  const { data: scope2Summary } = useScope2Summary();
+  const { data: scope3Summary } = useScope3Summary(!!user);
 
   // Initialize selected frameworks from auto-detected
   useEffect(() => {
@@ -385,6 +392,31 @@ const Reports = () => {
     } catch (err) {
       console.error('Framework report error:', err);
       toast.error('Failed to generate report');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  // Buyer answer pack: the same records, answered in questionnaire order.
+  // Counts toward the same monthly allowance as every report download. The id
+  // matches BUYER_PACK_REPORT in buyerAnswerPack.ts, which loads on first use.
+  const BUYER_PACK_REPORT = 'BUYER_PACK';
+  const downloadBuyerPack = async (kind: ReportFileKind) => {
+    if (isEmpty) {
+      toast.error('Add a bill or invoice first; reports are built from your records');
+      return;
+    }
+    setIsGenerating(true);
+    try {
+      if (!(await mayDownload(BUYER_PACK_REPORT, kind))) return;
+      const { buildBuyerAnswerPack, generateBuyerPackPDF, generateBuyerPackExcel } = await import('@/lib/buyerAnswerPack');
+      const pack = buildBuyerAnswerPack(dataset, { scope2: scope2Summary ?? null, scope3: scope3Summary ?? null });
+      await (kind === 'pdf' ? generateBuyerPackPDF(pack) : generateBuyerPackExcel(pack));
+      analyticsEvents.reportExport(BUYER_PACK_REPORT, kind);
+      toast.success('Buyer answer pack downloaded');
+    } catch (err) {
+      console.error('Buyer answer pack error:', err);
+      toast.error('Could not create the buyer answer pack. Try again.');
     } finally {
       setIsGenerating(false);
     }
@@ -731,6 +763,44 @@ const Reports = () => {
                     Coverage is computed from your recorded emissions, targets and evidence. Disclosures without
                     supporting records are printed as declared gaps, never estimated.
                   </p>
+                </CardContent>
+              </Card>
+
+              {/* Buyer answer pack (buyerAnswerPack.ts): questionnaire answers from the same records */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <ClipboardList className="h-4 w-4 shrink-0 text-primary" />
+                    <div>
+                      <span>Buyer answer pack</span>
+                      <p className="text-sm font-normal text-muted-foreground mt-1">
+                        Your answers to CDP, EcoVadis and customer emissions questions, from your own records.
+                      </p>
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex gap-2 flex-wrap">
+                    <Button
+                      size="sm"
+                      className="gap-2"
+                      disabled={isGenerating || isEmpty}
+                      onClick={() => downloadBuyerPack('pdf')}
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                      PDF
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="gap-2"
+                      disabled={isGenerating || isEmpty}
+                      onClick={() => downloadBuyerPack('xlsx')}
+                    >
+                      <FileSpreadsheet className="h-3.5 w-3.5" />
+                      Excel
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
