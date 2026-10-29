@@ -1274,6 +1274,42 @@ export type Database = {
         }
         Relationships: []
       }
+      emissions_factor_backup_20261115: {
+        Row: {
+          backed_up_at: string
+          emission_id: string
+          new_co2_kg: number
+          new_emission_factor: number
+          new_verification_notes: string
+          old_co2_kg: number
+          old_emission_factor: number
+          old_verification_notes: string | null
+          rule: string
+        }
+        Insert: {
+          backed_up_at?: string
+          emission_id: string
+          new_co2_kg: number
+          new_emission_factor: number
+          new_verification_notes: string
+          old_co2_kg: number
+          old_emission_factor: number
+          old_verification_notes?: string | null
+          rule: string
+        }
+        Update: {
+          backed_up_at?: string
+          emission_id?: string
+          new_co2_kg?: number
+          new_emission_factor?: number
+          new_verification_notes?: string
+          old_co2_kg?: number
+          old_emission_factor?: number
+          old_verification_notes?: string | null
+          rule?: string
+        }
+        Relationships: []
+      }
       enterprise_access: {
         Row: {
           company_name: string
