@@ -33,6 +33,10 @@
   "senseible": "Senseible turns invoices and bills into dated, fingerprinted emission records, the evidence a lender usually asks to see first.",
   "links": [
     {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "Is renewable energy lending priority sector?",
       "to": "/answers/is-renewable-energy-loan-priority-sector"
     },

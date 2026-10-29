@@ -38,6 +38,10 @@
   "senseible": "Senseible project से पहले और बाद के हर बिजली bill और fuel invoice का तारीख और fingerprint वाला record रखता है, वही सबूत जो सालाना 10 percent बचत की जाँच के समय चाहिए।",
   "links": [
     {
+      "label": "MSME के लिए green loan schemes की तुलना",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "ADEETIE scheme, आसान भाषा में",
       "to": "/climate-intelligence/adeetie-scheme"
     },

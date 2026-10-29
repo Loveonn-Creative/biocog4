@@ -38,6 +38,10 @@
   "senseible": "Senseible's green loan readiness check organises the energy and emissions evidence lenders ask for, from your bills and invoices. It does not arrange SIDBI loans or confirm scheme eligibility.",
   "links": [
     {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    },
+    {
       "label": "ADEETIE scheme explained",
       "to": "/climate-intelligence/adeetie-scheme"
     },

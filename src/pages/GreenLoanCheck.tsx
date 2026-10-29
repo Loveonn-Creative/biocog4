@@ -148,6 +148,7 @@ export default function GreenLoanCheck() {
                 </li>
               ))}
             </ul>
+            <p className="mt-5 text-sm text-muted-foreground">Not sure where to apply? <Link to="/msme-green-loan-schemes" className="font-medium text-primary hover:underline">Compare SIDBI, ADEETIE and bank green loans</Link> by what the money is for.</p>
             <div className="mt-6 rounded-2xl border border-border p-4">
               <p className="font-medium">Your estimate</p>
               <p className="mt-1 text-sm text-muted-foreground">A loan size estimate needs your net profit, turnover and financial statements, so it is not shown from these quick answers. Submit the green loan application and your Estimate appears there, with every assumption listed.</p>

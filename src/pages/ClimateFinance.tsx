@@ -66,7 +66,10 @@ const ClimateFinance = () => {
           <p className="text-xs text-muted-foreground -mt-12 mb-16 max-w-2xl">
             Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
           </p>
-          <GreenLoanEntry className="-mt-8 mb-16" />
+          <GreenLoanEntry className="-mt-8 mb-6" />
+          <p className="text-sm text-muted-foreground mb-16 max-w-2xl">
+            Weighing SIDBI, ADEETIE or a bank solar loan? <Link to="/msme-green-loan-schemes" className="text-primary font-medium hover:underline">See which green loan scheme fits your project</Link>.
+          </p>
 
           {/* 1. Lender mechanics: inspect the record the way a lender does */}
           <section className="mb-20">
