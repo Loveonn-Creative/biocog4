@@ -179,3 +179,32 @@ describe('copy gate: buyer answer pack', async () => {
     });
   }
 });
+
+// Free-tool files: each renders on one page, carries the data file's terms
+// and passes the same copy gate as the reports.
+describe('copy gate: BRSR reply sheet (/brsr-reporting)', async () => {
+  const { drawSendable } = await import('../src/lib/leadMagnets/sendableFile');
+  const { brsrReplyFile, brsrReplyCsv } = await import('../src/lib/leadMagnets/brsrReplySheet');
+  const { REPLY_ROWS } = await import('../src/data/brsrHub');
+  for (const company of [undefined, 'Shree Ganesh Castings']) {
+    it(`PDF ${company ? 'with' : 'without'} a company name`, () => {
+      captured.length = 0;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      drawSendable(doc, brsrReplyFile({ company, customer: company && 'Bharat Forge', date: new Date('2026-10-30') }));
+      expect(doc.getNumberOfPages()).toBe(1);
+      const text = captured.join(' ').replace(/\s+/g, ' ');
+      expect(text).toContain('The sustainability team');
+      for (const r of REPLY_ROWS) { expect(text).toContain(r.ask); expect(text).toContain(r.proof.split(' ').slice(0, 3).join(' ')); }
+      if (company) expect(text).toContain(company); else expect(text).not.toContain('From:');
+      check('BRSR reply sheet PDF', [...captured]);
+    });
+  }
+  it('CSV', () => {
+    const csv = brsrReplyCsv({ company: '=HYPERLINK("x")' });
+    expect(csv).toContain(`"'=HYPERLINK(""x"")"`); // a typed name never runs as a formula
+    const lines = csv.trim().split('\r\n');
+    expect(lines).toContain('What you asked for,Value,Unit,Paper that proves it');
+    expect(lines.length).toBe(13 + REPLY_ROWS.length);
+    check('BRSR reply sheet CSV', brsrReplyCsv({ company: 'Shree Ganesh Castings' }).split('\r\n'));
+  });
+});
