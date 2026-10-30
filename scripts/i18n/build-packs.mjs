@@ -237,7 +237,7 @@ async function callBatch(api, locale, strings) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', apikey: api.key, Authorization: `Bearer ${api.key}` },
         body: JSON.stringify({ locale, strings }),
-        signal: AbortSignal.timeout(120000),
+        signal: AbortSignal.timeout(180000),
       });
       if (res.ok) return (await res.json())?.translations ?? {};
       if (res.status < 500 && res.status !== 429) throw new Error(`HTTP ${res.status}`);
@@ -261,11 +261,16 @@ async function translateLocale(api, data, locale) {
   let stopped = null;
   let lowYield = 0;
   let calls = 0;
+  let errors = 0;
   const worker = async () => {
     while (!stopped && next < batches.length) {
       const batch = batches[next++];
       let map;
-      try { map = await callBatch(api, locale, batch); } catch (e) { stopped = `error: ${e.message}`; break; }
+      try { map = await callBatch(api, locale, batch); errors = 0; } catch (e) {
+        // A slow call is skipped (asked again on the next run); repeated failures stop the run.
+        if (++errors >= 3) stopped = `error: ${e.message}`;
+        continue;
+      }
       calls++;
       let changed = 0;
       for (const s of batch) {
