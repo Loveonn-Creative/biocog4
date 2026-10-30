@@ -166,6 +166,7 @@ async function collect() {
   await Promise.all(Array.from({ length: PARALLEL }, worker));
   await browser.close();
   writeJson(SOURCES, data);
+  writeSiteStrings(data);
   return data;
 }
 
@@ -205,6 +206,13 @@ function writePacks(locale, data, translations) {
     if (Object.keys(pack).length === 0) continue;
     writeJson(join(dir, `${key}.json`), sortObj(pack));
   }
+}
+
+// Every collected string, public: translate-batch gives exactly these one shared
+// daily allowance, so packs can be built without the per-address cap.
+const SITE_STRINGS = join(ROOT, 'public/i18n/site-strings.json');
+function writeSiteStrings(data) {
+  writeJson(SITE_STRINGS, allStrings(data).sort());
 }
 
 function allStrings(data) {
@@ -338,7 +346,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const data = readJson(SOURCES, null);
     if (!data) throw new Error('No collected strings yet. Run: node scripts/i18n/build-packs.mjs collect');
     if (cmd === 'translate') return translate(data);
-    if (cmd === 'write') { for (const l of LOCALE_ORDER) writePacks(l, data, existingTranslations(l)); return report(data); }
+    if (cmd === 'write') { writeSiteStrings(data); for (const l of LOCALE_ORDER) writePacks(l, data, existingTranslations(l)); return report(data); }
     return report(data);
   };
   run().catch((e) => { console.error(e.message); process.exit(1); });

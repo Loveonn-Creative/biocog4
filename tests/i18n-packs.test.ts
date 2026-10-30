@@ -210,3 +210,20 @@ describe('embedded code is never translated', () => {
     expect(readFileSync('scripts/i18n/build-packs.mjs', 'utf8')).toContain("n.tagName === 'style' || n.tagName === 'script'");
   });
 });
+
+describe('site-text allowance for building packs', () => {
+  const { readFileSync } = require('fs');
+  test('site-strings.json lists exactly the collected strings', () => {
+    const data = JSON.parse(readFileSync('scripts/i18n/data/sources.json', 'utf8'));
+    const all = new Set<string>();
+    for (const r of Object.values<any>(data.routes)) for (const s of r.strings) all.add(s);
+    const site: string[] = JSON.parse(readFileSync('public/i18n/site-strings.json', 'utf8'));
+    expect(site).toEqual([...all].sort());
+  });
+  test('only batches made entirely of site text use the shared allowance', () => {
+    const src = readFileSync('supabase/functions/translate-batch/index.ts', 'utf8');
+    expect(src).toContain('missing.every((m) => site.has(m.source))');
+    expect(src).toContain('siteOnly ? SITE_AI_CALLS_PER_DAY : AI_CALLS_PER_ADDRESS_PER_DAY');
+    expect(src).toContain('const AI_CALLS_PER_ADDRESS_PER_DAY = 400;');
+  });
+});
