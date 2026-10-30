@@ -11,9 +11,9 @@ export const HELD_GUIDES: readonly GuideId[] = ['dmrv', 'tenders'];
 export const GUIDE_META: Record<GuideId, { path: string; title: string; description: string; h1: string }> = {
   'carbon-accounting': {
     path: '/best-carbon-accounting-software',
-    title: 'Best Carbon Accounting Software, Compared',
+    title: 'Best Carbon Accounting Software for 2027',
     description: 'Fifteen carbon accounting tools checked on Scope 2 methods, Scope 3 coverage, bill reading, audit trail, factors, disclosure outputs and security.',
-    h1: 'Carbon accounting software, compared',
+    h1: 'Best carbon accounting software for 2027',
   },
   'dmrv': {
     path: '/best-digital-mrv-platforms',
@@ -23,39 +23,39 @@ export const GUIDE_META: Record<GuideId, { path: string; title: string; descript
   },
   'supplier-emissions': {
     path: '/best-supplier-emissions-software',
-    title: 'Best Scope 3 Supplier Emissions Software, Compared',
+    title: 'Best Scope 3 Supplier Emissions Software for 2027',
     description: 'Thirteen supplier emissions tools checked on what suppliers send, who pays, labelled estimates, hotspots, data quality and ERP links. Pick your supplier base.',
-    h1: 'Supplier emissions software, compared',
+    h1: 'Best supplier emissions software for 2027',
   },
   'carbon-compliance': {
     path: '/best-carbon-compliance-software',
-    title: 'Best Carbon Compliance Software: CSRD, ISSB, BRSR',
+    title: 'Best Carbon Compliance Software for 2027',
     description: 'Compliance tools checked on CSRD, ISSB, BRSR, India’s CCTS, California SB 253, built-in Scope 1 to 3, audit trail and XBRL. Pick the rules you report under.',
-    h1: 'Carbon compliance software, compared',
+    h1: 'Best carbon compliance software for 2027',
   },
   'cbam': {
     path: '/best-cbam-software',
     title: 'Best CBAM Software for 2027, Compared',
     description: 'CBAM certificate sales start in February 2027. Fourteen CBAM tools for EU importers and non-EU exporters, checked from CN codes and plant data to certificates.',
-    h1: 'CBAM software for 2027, compared',
+    h1: 'Best CBAM software for 2027',
   },
   'brsr': {
     path: '/best-brsr-software',
-    title: 'Best BRSR and BRSR Core Software, Compared',
+    title: 'Best BRSR and BRSR Core Software for 2027',
     description: 'BRSR tools checked on the full SEBI format, BRSR Core evidence, value chain data, Indian factors, XBRL, the March 2025 rule changes and published prices.',
-    h1: 'BRSR software, compared',
+    h1: 'Best BRSR and BRSR Core software for 2027',
   },
   'carbon-credits': {
     path: '/carbon-credit-platforms',
-    title: 'Carbon Credit Platforms: Registries and Exchanges',
+    title: 'Best Carbon Credit Platforms for 2027',
     description: 'Carbon credit registries, marketplaces, exchanges and India’s new scheme, checked on serial numbers, buying, public records, labels, fees and small buyers.',
-    h1: 'Carbon credit platforms, compared',
+    h1: 'Best carbon credit platforms for 2027',
   },
   'green-loans': {
     path: '/green-loans-msme-india',
-    title: 'Green Loans for MSMEs in India: Lenders Compared',
+    title: 'Best Green Loans for Indian MSMEs in 2027',
     description: 'SIDBI, IREDA, RBI rules and NBFC green lenders compared for Indian MSMEs: what each funds, loan limits, your share, who qualifies, tenure and papers asked for.',
-    h1: 'Green loans for MSMEs in India, compared',
+    h1: 'Best green loans for Indian MSMEs in 2027',
   },
   'tenders': {
     path: '/sustainability-tender-platforms',

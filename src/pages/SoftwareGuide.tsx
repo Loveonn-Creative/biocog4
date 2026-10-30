@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META, canonicalUrl } from "@/lib/seo/seoMeta";
 import {
-  GUIDE_BY_ID, GUIDE_BY_PATH, MARK_LABEL, formatDay, itemListLd, lastChecked, rankFor, researchRanked,
+  GUIDE_BY_ID, GUIDE_BY_PATH, MARK_LABEL, itemListLd, lastChecked, rankFor,
   type Fit, type Guide, type Mark, type Situation,
 } from "@/data/softwareGuides";
 import "./softwareGuides.css";
@@ -177,25 +177,24 @@ export default function SoftwareGuide({ path }: { path: string }) {
     if (!sit) return g.criteria;
     return [...g.criteria].sort((a, b) => (sit.weights[b.id] ?? 0) - (sit.weights[a.id] ?? 0));
   }, [g, sit]);
-  const checked = formatDay(lastChecked(g.id));
   const ld = useMemo(() => JSON.stringify(itemListLd(g, canonicalUrl)), [g]);
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead title={meta.title} description={meta.description} canonical={path} type="article" keywords={g.keywords}
+        article={{ publishedTime: lastChecked(g.id), modifiedTime: lastChecked(g.id) }}
         breadcrumbs={[{ name: "Home", url: "/" }, { name: g.h1, url: path }]} />
       <Helmet><script type="application/ld+json">{ld}</script></Helmet>
       <MinimalNav />
       <main className="sg">
         <header className="sg-hero">
-          <p className="sg-eyebrow">Buyer’s guide <span aria-hidden="true">·</span> <time dateTime={lastChecked(g.id)}>Checked {checked}</time></p>
           <h1 className="sg-title">{g.h1}</h1>
           <p className="sg-lede">{g.lede}</p>
           <p className="sg-disclosure">{g.disclosure}</p>
         </header>
 
         <section className="sg-pick" aria-label="Your situation">
-          <p className="sg-pick-q" id="sg-pick-q">Which one is you?</p>
+          <p className="sg-pick-q" id="sg-pick-q">Your situation</p>
           <div className="sg-chips" role="radiogroup" aria-labelledby="sg-pick-q">
             {g.situations.map(s => (
               <button key={s.id} type="button" role="radio" aria-checked={sitId === s.id} className="sg-chip"
@@ -205,9 +204,7 @@ export default function SoftwareGuide({ path }: { path: string }) {
             ))}
           </div>
           <p className="sg-pick-sum" aria-live="polite">
-            {sit
-              ? <>Ranked for you. Weighed most: {weighedMost(g, sit).join(", ")}. <button type="button" className="sg-clear" onClick={() => setSitId(null)}>Show the plain list</button></>
-              : <>{ranked.length} {ranked.length === 1 ? "entry" : "entries"}, ordered by how many of the checks below each one meets{researchRanked(g.id) ? ", placed lower where its pages describe rules that no longer apply" : ""}.</>}
+            {sit && <>Weighed most: {weighedMost(g, sit).join(", ")}. <button type="button" className="sg-clear" onClick={() => setSitId(null)}>Show all</button></>}
           </p>
         </section>
 
@@ -226,7 +223,7 @@ export default function SoftwareGuide({ path }: { path: string }) {
 
         <section className="sg-section">
           <h2 className="sg-h2">Side by side</h2>
-          <p className="sg-sub">{sit ? "Columns that matter for you are shaded." : "Pick your situation above and the columns that matter for you are shaded."} The notes behind each mark are in each tool’s details above.</p>
+          {sit && <p className="sg-sub">Shaded columns matter most for you.</p>}
           <p className="sg-legend">
             <span><MarkDot m="yes" /> Yes</span><span><MarkDot m="partly" /> Partly</span><span><MarkDot m="no" /> No</span><span><MarkDot m="unknown" /> Not stated on its site</span>
           </p>
@@ -235,7 +232,6 @@ export default function SoftwareGuide({ path }: { path: string }) {
 
         <section className="sg-section">
           <h2 className="sg-h2">How to choose</h2>
-          <p className="sg-sub">The checks behind every mark above, and the question to put to each vendor.</p>
           <ol className="sg-choose">
             {choose.map(c => (
               <li key={c.id} className={sit && sit.weights[c.id] ? "is-key" : undefined}>

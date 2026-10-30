@@ -92,7 +92,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'carbon-accounting',
     ...GUIDE_META['carbon-accounting'],
-    lede: 'Most tools here cover Scope 1, 2 and 3. The difference shows when an auditor asks where a number came from, or when your data sits in bills instead of an ERP. Pick your situation and the list re-orders by fit.',
+    lede: 'Most tools here cover Scope 1, 2 and 3. The difference shows when an auditor asks where a number came from, or when your data sits in bills instead of an ERP.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 's12_location_market', short: 'Scope 2 both ways', label: 'Scope 1 and 2, with location-based and market-based Scope 2', ask: 'Show me one electricity bill calculated both ways.' },
@@ -129,7 +129,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'dmrv',
     ...GUIDE_META['dmrv'],
-    lede: 'Digital MRV is meant to shorten the months between monitoring and issuance. Some tools here measure land from space, one turns a registry methodology into a workflow, and two are pilots run by the registries themselves. Pick what you need to prove.',
+    lede: 'Digital MRV is meant to shorten the months between monitoring and issuance. Some tools here measure land from space, one turns a registry methodology into a workflow, and two are pilots run by the registries themselves.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'satellite_remote_sensing', short: 'Satellite', label: 'Satellite or remote-sensing measurement (biomass, soil carbon, land use)', ask: 'Which satellites, at what resolution, and how was the model calibrated?' },
@@ -161,7 +161,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'supplier-emissions',
     ...GUIDE_META['supplier-emissions'],
-    lede: 'Your Scope 3 sits with suppliers, and many of them will never fill in a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how clearly they label estimates. Pick your supplier base and the list re-orders by fit.',
+    lede: 'Your Scope 3 sits with suppliers, and many of them will not fill in a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how clearly they label estimates.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'supplier_request_portal', short: 'Request portal', label: 'Sends data requests to suppliers through a portal or campaign, with reminders', ask: 'How does a supplier with no login respond, and who chases them?' },
@@ -195,7 +195,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'carbon-compliance',
     ...GUIDE_META['carbon-compliance'],
-    lede: 'CSRD, ISSB, BRSR, India’s carbon market and California’s SB 253 ask for overlapping numbers in different formats. The right tool covers the rules you actually face, with an audit trail that holds up. Pick the rules you report under.',
+    lede: 'CSRD, ISSB, BRSR, India’s carbon market and California’s SB 253 ask for overlapping numbers in different formats. The tools differ on which rules they cover and whether an auditor can trace each number.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'csrd', short: 'CSRD', label: 'CSRD and ESRS reporting', ask: 'Does it run double materiality on the current CSRD scope?' },
@@ -223,7 +223,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'cbam',
     ...GUIDE_META['cbam'],
-    lede: 'CBAM certificates go on sale in February 2027, yet several tools below still describe the quarterly reports that ended in 2025. Exporters need an operator report their EU buyer will accept. Importers need a declaration and a certificate budget. Pick your side of the border.',
+    lede: 'CBAM certificates go on sale in February 2027, yet several tools below still describe the quarterly reports that ended in 2025. Exporters must give their EU buyer emissions data it can use. Importers must file a declaration and budget for certificates.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'goods', short: 'All six sectors', label: 'Covers all six CBAM sectors by CN code', ask: 'Which of our CN codes does it cover today?' },
@@ -274,7 +274,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'brsr',
     ...GUIDE_META['brsr'],
-    lede: 'In March 2025 SEBI let companies choose assessment or assurance for BRSR Core and made value chain disclosure voluntary from FY 2025-26. Some tools still describe the old rules. Pick where you sit and the list re-orders by fit.',
+    lede: 'In March 2025 SEBI let companies choose assessment or assurance for BRSR Core and made value chain disclosure voluntary from FY 2025-26. Some tools still describe the old rules.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'full_brsr', short: 'Full BRSR', label: 'Full BRSR in SEBI format: all nine principles, essential and leadership indicators', ask: 'Does it produce all nine principles, or only the environment section?' },
@@ -309,7 +309,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'carbon-credits',
     ...GUIDE_META['carbon-credits'],
-    lede: 'Registries record credits, exchanges and marketplaces sell them, developers create them, and India’s own scheme is new. Mixing these up is how buyers pay for the wrong thing. Pick what you want to do.',
+    lede: 'Registries record credits, exchanges and marketplaces sell them, developers create them, and India’s own scheme, the CCTS, is new. Buyers who mix these up can pay for the wrong thing.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'registry_issuance', short: 'Registry', label: 'Issues or tracks credits with unique serial numbers, so a tonne cannot be sold twice', ask: 'Where is the serial number kept, and who can see it retired?' },
@@ -345,8 +345,8 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'green-loans',
     ...GUIDE_META['green-loans'],
-    lede: 'SIDBI, IREDA and NBFC green lenders each fund different green projects, with different limits and paperwork, and most do not publish a rate. Pick what the money is for and see who lends for it, how much, and what they ask.',
-    disclosure: `${DISCLOSURE} Senseible does not lend, arrange or approve loans.`,
+    lede: 'SIDBI, IREDA and NBFC green lenders each fund different green projects, with different limits and paperwork, and many do not publish a rate.',
+    disclosure: 'Senseible’s loan-readiness check is listed here. Senseible does not lend, arrange or approve loans.',
     criteria: [
       { id: 'what_it_funds', short: 'What it funds', label: 'Which green projects it pays for', ask: 'Is our exact equipment or project on the eligible list?' },
       { id: 'ticket_size', short: 'Loan limits', label: 'Published loan or cover limits', ask: 'What is the minimum and maximum, and does our project fit?' },
@@ -386,7 +386,7 @@ const ALL_GUIDES: Guide[] = [
   {
     id: 'tenders',
     ...GUIDE_META['tenders'],
-    lede: 'EU tender notices can carry green procurement criteria. UK central government contracts above £5 million a year ask bidders for a Carbon Reduction Plan. These are the official, free places to find those tenders. Pick where you want to bid.',
+    lede: 'EU tender notices can carry green procurement criteria. UK central government contracts above £5 million a year ask bidders for a Carbon Reduction Plan. These are the official, free places to find those tenders.',
     disclosure: 'Senseible is not a tender platform and is not on this list.',
     criteria: [
       { id: 'coverage', short: 'Coverage', label: 'Whose tenders it covers', ask: 'Which buyers publish here, and above what value?' },

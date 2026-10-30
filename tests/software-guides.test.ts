@@ -60,7 +60,7 @@ describe('software guides', () => {
         expect(g.disclosure).toContain('not a tender platform');
       } else {
         expect(ours.length).toBe(1);
-        expect(g.disclosure.startsWith('Senseible makes one of the tools on this list.')).toBe(true);
+        expect(g.disclosure).toMatch(g.id === 'green-loans' ? /^Senseible’s loan-readiness check is listed here\./ : /^Senseible makes one of the tools on this list\./);
       }
     }
     const credits = productsFor('carbon-credits').find(p => p.isSenseible)!;
@@ -123,14 +123,15 @@ describe('software guides', () => {
     expect(readFileSync('src/pages/SoftwareGuide.tsx', 'utf8')).not.toMatch(/[—–]/);
   });
 
-  test('titles and descriptions fit search limits; CBAM says 2027 for a reason', () => {
+  test('titles and descriptions fit search limits; headlines say 2027 (owner, 30 October 2026)', () => {
     for (const g of GUIDES) {
       const m = STATIC_PAGE_META[g.path];
       expect(m).toBeTruthy();
       expect(fitTitle(m.title).length).toBeLessThanOrEqual(60);
       expect(m.description.length).toBeGreaterThanOrEqual(70);
       expect(m.description.length).toBeLessThanOrEqual(160);
-      if (/2027/.test(m.title)) expect(g.id).toBe('cbam');
+      expect(m.title).toContain('2027');
+      expect(g.h1).toContain('2027');
     }
     expect(STATIC_PAGE_META['/best-cbam-software'].description).toContain('February 2027');
   });
