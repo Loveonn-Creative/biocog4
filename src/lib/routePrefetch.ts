@@ -4,6 +4,8 @@
 // <link rel="modulepreload">: a failed fetch is silent, unlike import(),
 // whose failure would trigger the stale-build reload in chunkRecovery.ts.
 
+import { prefetchPack } from '@/lib/i18n/packs';
+
 interface ChunkMap { files: string[]; routes: Record<string, number[]> }
 
 let mapPromise: Promise<ChunkMap | null> | null = null;
@@ -68,7 +70,13 @@ const internalPath = (el: EventTarget | null): string | null => {
  * current page is idle. Returns a cleanup function.
  */
 export function installRoutePrefetch(likelyPaths: () => string[]): () => void {
-  const onIntent = (e: Event) => { const p = internalPath(e.target); if (p) void prefetchPath(p); };
+  const onIntent = (e: Event) => {
+    const p = internalPath(e.target);
+    if (!p) return;
+    void prefetchPath(p);
+    // The language pack too, so a translated page opens already translated.
+    if (prefetchAllowed()) prefetchPack(p);
+  };
   document.addEventListener('pointerover', onIntent, { passive: true });
   document.addEventListener('touchstart', onIntent, { passive: true });
   document.addEventListener('focusin', onIntent);

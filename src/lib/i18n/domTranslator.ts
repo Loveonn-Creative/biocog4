@@ -124,9 +124,11 @@ function walk(locale: string, root: Node) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
     acceptNode(node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
+        // Accept (and descend into) elements so their placeholder, title,
+        // aria-label and alt are translated too, not only the root's.
         return shouldSkip(node as Element)
           ? NodeFilter.FILTER_REJECT
-          : NodeFilter.FILTER_SKIP; // descend but don't visit as text
+          : NodeFilter.FILTER_ACCEPT;
       }
       return NodeFilter.FILTER_ACCEPT;
     },
