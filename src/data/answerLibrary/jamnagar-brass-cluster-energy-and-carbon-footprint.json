@@ -1,0 +1,91 @@
+{
+  "slug": "jamnagar-brass-cluster-energy-and-carbon-footprint",
+  "q": "How much energy does the Jamnagar brass cluster use, and which step in the chain emits most?",
+  "title": "Jamnagar brass cluster: energy and carbon",
+  "short": "BEE counted about 3,500 brass units in Jamnagar using about 50,770 tonnes of oil equivalent a year, with foundries using the most. Per kg of brass, though, extrusion and electroplating emit more than coal-fired melting: about 0.66 and 0.67 kg CO2, against about 0.28 to 0.39 kg.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brass foundry, extrusion, machining and electroplating unit owners in Jamnagar, Gujarat",
+  "sections": [
+    {
+      "h": "The cluster in BEE's count",
+      "ul": [
+        "About 3,500 units in Shankartekri, MP Shah Udyognagar, Patel Colony and Dared: 2,100 machining, 900 foundry, 350 electroplating and 150 extrusion units.",
+        "Yearly energy in tonnes of oil equivalent: foundries 29,061, extrusion 15,822, machining 4,967 and electroplating 919, about 50,770 in all.",
+        "Most foundries melt scrap in graphite crucibles set in coal-fired pit furnaces, at about 0.16 kg of coal per kg of brass. Extrusion units melt in induction furnaces and reheat billets in oil-fired furnaces.",
+        "Much of the scrap is imported, from the USA, Singapore, the Gulf and Europe."
+      ]
+    },
+    {
+      "h": "Which step emits most per kg",
+      "p": [
+        "Foundries lead the cluster total because there are 900 of them and they burn coal. Per kg of metal, the electric steps are heavier. Extrusion uses about 0.81 kWh per kg plus furnace oil, machining 0.54 kWh and electroplating 0.99 kWh. A plated, machined part made from extruded rod carries about 1.7 kg CO2 per kg from these three steps alone, before scrap losses and the metal itself."
+      ]
+    },
+    {
+      "h": "No CBAM, but buyers still ask",
+      "p": [
+        "Brass is not a CBAM product, so no EU declaration is due on brass parts. Export buyers of fittings, hardware and electrical parts still ask for kg CO2 per kg or per piece, and often for recycled content. Jamnagar's scrap-based melting is a real point in your favour if your scrap purchase records support it."
+      ]
+    },
+    {
+      "h": "The moves that pay here",
+      "ul": [
+        "Coal pit furnaces run at about 11% efficiency. BEE worked out that a gas-fired furnace at about 17% would cut fuel cost per tonne and pay back in under a year, and that better insulation would save about 19 kg of coal per tonne.",
+        "Extrusion: induction melting is about 34% of the plant's energy and reheating about 22%. Both are worth sub-metering.",
+        "Machining and plating run on electricity only, so rooftop solar cuts their CO2 directly.",
+        "BEE found no unit tracking fuel or power daily. A monthly log of coal, oil and kWh against kg produced is the record buyers ask for."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: kg CO2 per kg of brass, by step",
+    "lines": [
+      "Foundry, 200 to 400 tpa: 0.16 kg coal x 1.76 = 0.28 kg (0.39 kg if imported coal at 2.44)",
+      "Extrusion, 500 to 1,000 tpa: 0.81 kWh x 0.675 = 0.547, plus 0.037 L furnace oil x 2.97 = 0.110; total 0.657 kg",
+      "Machining: 0.54 kWh x 0.675 = 0.365 kg",
+      "Electroplating: 0.99 kWh x 0.675 = 0.668 kg",
+      "Extruded, machined and plated part: 0.657 + 0.365 + 0.668 = 1.69 kg CO2 per kg"
+    ],
+    "note": "Energy per kg is from BEE's Jamnagar manual; oil per kg is 37,000 litres over 1,000 tonnes. CO2 figures are estimates on Indian factors for FY 2025-26. Use your own bills and output."
+  },
+  "senseible": "Senseible reads coal, furnace oil and electricity invoices into a monthly record for each unit, so a foundry, extruder or plater can give a buyer its own kg CO2 per kg instead of a cluster average.",
+  "links": [
+    {
+      "label": "Your carbon number for buyers and banks",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "Do Jamnagar brass parts fall under CBAM?",
+      "to": "/answers/jamnagar-brass-parts-exporter-cbam-check"
+    },
+    {
+      "label": "Brass component footprint per kg",
+      "to": "/answers/brass-component-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Brass melting: oil vs induction",
+      "to": "/answers/brass-melting-oil-vs-induction-furnace-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Manual on energy conservation measures, Jamnagar brass cluster",
+      "url": "https://sameeeksha.org/pdf/clusterprofile/Brass_cluster_Jamnagar.pdf"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 22.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Figures are from BEE's SME programme manual (about 2010). Update if a newer Jamnagar profile is published."
+}

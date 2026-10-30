@@ -2,57 +2,83 @@
   "slug": "sidbi-4e-loan-terms-and-eligibility",
   "q": "SIDBI का 4E energy efficiency loan कितना ढकता है, और कौन योग्य है?",
   "title": "SIDBI 4E loan: कितना और किसे",
-  "short": "SIDBI की 4E scheme energy efficiency project का 90 percent तक उधार देती है, कम से कम ₹10 lakh का loan, या अगर आप 20 percent नकद collateral SIDBI fixed deposit के रूप में रखें तो 100 percent तक। Detailed रास्ते के लिए एक साल का कामकाज और BEE-certified auditors से detailed energy audit चाहिए।",
+  "short": "SIDBI का 4E loan energy efficiency project को ₹15 crore तक देता है: 25 percent fixed deposit रखें तो 100 percent, या अपना हिस्सा लगाएँ तो 75 percent तक। तीन साल का कामकाज, cash profit और energy या emissions में कटौती दिखानी होगी।",
   "sections": [
     {
-      "h": "4E किसके लिए पैसा देता है",
+      "h": "अगर आपने पुरानी शर्तें पढ़ी हैं",
       "p": [
-        "4E energy efficiency के उपायों के लिए शुरू से आख़िर तक पैसा देता है: उपकरण और मशीनरी की खरीद, लगाना, civil works और commissioning। आम projects वे हैं जिनकी audit सिफ़ारिश करता है, जैसे efficient motors और pumps, compressors, furnace upgrades और waste heat recovery।"
+        "कई guides अभी भी 4E को 90 percent funding बताते हैं, कम से कम ₹10 lakh का loan, एक साल के कामकाज और detailed audit के बाद, या 20 percent deposit पर 100 percent। SIDBI के green finance page पर अब ये शर्तें नहीं हैं। नीचे दी गई मौजूदा शर्तों के हिसाब से plan करें, और sanction letter में इनकी पुष्टि करें।"
       ]
     },
     {
-      "h": "आवेदन के दो तरीके",
+      "h": "SIDBI दो तरीकों से पैसा देता है",
       "ul": [
-        "Detailed Appraisal Mode: unit कम से कम एक साल से चल रही हो और BEE-certified Energy Auditors वाली किसी technical agency या consultant से Detailed Energy Audit हुआ हो। Project लागत का 90 percent तक पैसा, कम से कम ₹10 lakh का loan।",
-        "Quick Dispensation Mode: कम से कम 20 percent के SIDBI fixed deposit को नकद collateral रखकर 100 percent तक पैसा। Unit का कम से कम तीन साल का कामकाज और audited balance sheets के आधार पर पिछले दो साल में cash profit होना चाहिए।"
+        "Fixed deposit वाला रास्ता: ₹15 crore तक के loan पर project का 100 percent, और security के तौर पर 25 percent fixed deposit में रखना होगा।",
+        "Promoter contribution वाला रास्ता: ₹15 crore तक, लेकिन project लागत के 75 percent से ज़्यादा नहीं, यानी कम से कम एक चौथाई आप खुद लगाएँगे।",
+        "दोनों में: 84 महीने तक में भुगतान, साथ में 12 महीने तक का moratorium।",
+        "किस चीज़ के लिए पैसा: efficiency उपायों के उपकरण और मशीनरी, लगाना, छोटे civil works और commissioning।"
       ]
     },
     {
-      "h": "दोनों तरीकों की शर्तें",
+      "h": "कौन योग्य है",
       "ul": [
-        "Udyam registration, संतोषजनक credit history और किसी bank या financial institution का कोई default नहीं।",
-        "SIDBI के Environment and Social Management Framework का पालन।",
-        "भुगतान की अवधि, किसी moratorium सहित, scheme में तय नहीं बल्कि sanction की शर्तों में तय होती है।"
+        "Manufacturing या services की MSME जो कम से कम तीन साल से चल रही हो, और पिछले तीनों financial years में हर साल cash profit रहा हो।",
+        "ऐसा project जो energy efficiency में सुधार या greenhouse gas emissions में कटौती साबित करे।",
+        "SIDBI के Environment and Social Management Framework का पालन, इसलिए pollution consents और कामगारों की सुरक्षा पर सवालों की उम्मीद रखें।"
       ]
     },
     {
-      "h": "Audit सही करवाना",
+      "h": "वह शर्त जिस पर file टिकती है",
       "p": [
-        "Detailed रास्ता audit पर टिका है, इसलिए audit report आपके आवेदन का मुख्य हिस्सा है। इसमें baseline energy खपत, हर उपाय की लागत, उम्मीद की गई बचत और payback होना चाहिए। जो व्यक्ति BEE-certified energy auditor नहीं है, उसका audit बताई गई शर्त पूरी नहीं करेगा, इसलिए study के पैसे देने से पहले auditor का certificate number जाँचें।"
+        "तीन साल का record हाँ या ना वाली बात है। असली फ़ैसला energy वाली शर्त पर होता है। SIDBI को भरोसे लायक पहले और बाद की तस्वीर चाहिए: unit आज कितनी energy लेती है, bills से नापकर, और नए उपकरण चलने के बाद कितनी लेगी। Auditor की report उम्मीद की गई बचत बताती है; बारह महीने के bills और production records वह baseline देते हैं जिससे उस बचत को नापा जाता है। अगर साल भर में अलग अलग products बनाते हैं, तो सिर्फ़ कुल units नहीं, प्रति tonne या प्रति piece energy दिखाएँ, ताकि busy महीना project की नाकामी जैसा न लगे।"
+      ]
+    },
+    {
+      "h": "आवेदन से पहले क्या तैयार रखें",
+      "ol": [
+        "Udyam registration और हर lender के साथ साफ़ repayment record।",
+        "बारह महीने के बिजली bills और fuel invoices, उन्हीं महीनों के production के साथ।",
+        "हर मशीन के लिए supplier quotes, और पुराने व नए उपकरण की rated energy खपत।",
+        "Energy audit या technical note जिसमें kWh या fuel में सालाना उम्मीद की गई बचत हो।",
+        "Environmental और social जाँच के लिए आपके pollution control consents और safety records।",
+        "तय करें कि कौन सा रास्ता चाहिए: पैसा deposit में बंद रहे, या पैसा project में लगे।"
       ]
     }
   ],
-  "senseible": "Senseible बारह महीने के bills को हर महीने की और output की प्रति unit energy में पढ़ता है, जिससे auditor और SIDBI को एक ही baseline मिलती है और commissioning के बाद की बचत दिखाना आसान होता है।",
+  "example": {
+    "title": "₹2 crore का compressor और furnace retrofit",
+    "lines": [
+      "Project लागत: ₹2 crore, supplier quotes से",
+      "Fixed deposit वाला रास्ता: loan ₹2 crore, ₹50 lakh fixed deposit में (25 percent)",
+      "Promoter वाला रास्ता: loan ₹1.5 crore तक (75 percent), ₹50 lakh आप project में लगाते हैं",
+      "Audit से उम्मीद की गई बचत: साल में 3,00,000 kWh",
+      "बचा CO2: 3,00,000 kWh x 0.675 kg प्रति kWh (CEA grid factor, FY 2025-26) = 2,02,500 kg, यानी साल में लगभग 202 tonne",
+      "भुगतान: 84 महीने तक, साथ में 12 महीने तक का moratorium"
+    ],
+    "note": "यहाँ दोनों रास्तों में लगभग ₹50 lakh अपना पैसा लगता है; फ़र्क बस इतना है कि वह deposit में रहता है जो वापस मिलता है, या मशीनों में जाता है। SIDBI का page यह नहीं बताता कि 25 percent loan पर नापा जाता है या project पर; 100 percent funding पर दोनों बराबर हैं। Commissioning के बाद के bills पुष्टि करने तक बचत auditor का अनुमान ही है।"
+  },
+  "senseible": "Senseible आपके पिछले बारह महीने के बिजली bills और fuel invoices को हर महीने की energy और CO2 baseline में पढ़ता है, जहाँ से SIDBI को 4E वाली कटौती दिखाना शुरू होता है, फिर commissioning के बाद के bills उससे मिलाता है। Loan का फ़ैसला SIDBI करता है।",
   "links": [
     {
       "label": "MSME के लिए green loan schemes की तुलना",
       "to": "/msme-green-loan-schemes"
     },
     {
-      "label": "SIDBI energy efficiency loans का परिचय",
-      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
-    },
-    {
       "label": "SIDBI Green Finance Scheme की शर्तें",
       "to": "/answers/sidbi-green-finance-scheme-loan-terms"
+    },
+    {
+      "label": "SIDBI machinery loans की तुलना",
+      "to": "/answers/sidbi-machinery-loan-replace-old-machines"
     },
     {
       "label": "MSME energy auditor कैसे रखे",
       "to": "/answers/how-to-hire-an-energy-auditor-msme"
     },
     {
-      "label": "ADEETIE interest subvention",
-      "to": "/answers/adeetie-interest-subvention-rate-msme"
+      "label": "Green loan से पहले carbon baseline",
+      "to": "/answers/carbon-baseline-before-green-loan-application"
     }
-  ]
+  ],
+  "reviewNote": "Scheme की शर्तें बदलती रहती हैं; हर तिमाही sidbi.in पर दोबारा जाँचें। SIDBI का page यह नहीं बताता कि 12 महीने का moratorium 84 महीनों के अंदर है या नहीं।"
 }

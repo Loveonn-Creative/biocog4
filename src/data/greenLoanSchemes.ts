@@ -16,7 +16,8 @@
 //   cgtmse:    cgtmse-collateral-free-loan-limit, credit-guarantee-for-msme-green-loans-india
 // Evidence items: the lists above plus energy-efficiency-loan-detailed-project-report,
 // green-loan-show-money-spent-on-project and green-loan-reporting-after-disbursement.
-// Facts reviewed in those pages on 15 to 23 October 2026.
+// Facts reviewed in those pages on 15 to 23 October 2026; SIDBI routes (4e, gfs,
+// machinery) rechecked on sidbi.in on 29 October 2026.
 
 export const GLS_PATH = '/msme-green-loan-schemes';
 
@@ -50,7 +51,7 @@ export const EVIDENCE: Evidence[] = [
   { id: 'audit', label: 'Energy audit and project report', senseible: null },
   { id: 'quotes', label: 'Equipment quotes or list', senseible: null },
   { id: 'credit', label: 'Clean credit history, no defaults', senseible: null },
-  { id: 'financials', label: 'Three years running with cash profit (4E quick route, SPEED)', senseible: null },
+  { id: 'financials', label: 'Three years running with cash profit (4E, SPEED)', senseible: null },
   { id: 'consents', label: 'Pollution consents and worker safety', senseible: null },
   { id: 'esg', label: 'Due diligence checklist and ESG rating', senseible: null },
   { id: 'monitoring', label: 'Monitoring visits after the loan', senseible: null },
@@ -93,20 +94,20 @@ export const SCHEMES: Scheme[] = [
   {
     id: '4e', name: 'SIDBI 4E (End to End Energy Efficiency)', kind: 'SIDBI direct loan',
     needs: ['efficiency', 'machinery'],
-    suits: 'A unit running for a year with a detailed audit by BEE-certified auditors, or running three years with cash profit in the last two and a 20% deposit.',
+    suits: 'A unit running three years with cash profit in each of the last three, that can show the project cuts energy use or emissions.',
     funds: 'The measures the audit recommends, end to end: equipment, installation, civil works and commissioning.',
     asks: ['bills', 'production', 'audit', 'quotes', 'udyam', 'credit', 'consents', 'financials'],
-    terms: ['Detailed route (a year running, with the audit): up to 90% of project cost, minimum loan ₹10 lakh', 'Quick route (three years running, cash profit in the last two): up to 100% if you keep at least 20% as a SIDBI fixed deposit', CHECK_TERMS],
+    terms: ['Up to ₹15 crore: 100% of the project if you keep 25% as a fixed deposit, or up to 75% with your own share', 'Repaid over up to 84 months, with up to 12 months moratorium', CHECK_TERMS],
     check: 'Ask on sidbi.in or at your SIDBI branch whether 4E is open.',
     more: { label: '4E cover and eligibility', to: '/answers/sidbi-4e-loan-terms-and-eligibility' },
   },
   {
     id: 'gfs', name: 'SIDBI Green Finance Scheme', kind: 'SIDBI direct loan',
     needs: ['solar', 'efficiency'],
-    suits: 'Udyam-registered MSMEs with a clean credit record. Covers more kinds of green project than 4E, and larger loans.',
-    funds: 'Rooftop or ground solar for own use, energy efficiency, efficient buildings, waste and wastewater, cleaner production.',
+    suits: 'New and existing Udyam-registered MSMEs with a clean credit record, and installers or aggregators serving MSMEs. Covers more kinds of green project than 4E, and larger loans.',
+    funds: 'Rooftop or ground solar for own use, energy efficiency, efficient buildings, compressed biogas, waste and wastewater, cleaner production, e-mobility.',
     asks: ['udyam', 'credit', 'consents'],
-    terms: ['Up to 100% of the project', 'Up to ₹20 crore for an MSME, repaid over up to 10 years', 'Rate and security: in your sanction letter, so get it before you order equipment'],
+    terms: ['Up to 75% of the project', 'Up to ₹100 crore, repaid over a period set to the project', 'Rate and security: in your sanction letter, so get it before you order equipment'],
     check: 'Check on sidbi.in (Green finance) or apply on SIDBI\'s online portal.',
     more: { label: 'Green Finance Scheme terms', to: '/answers/sidbi-green-finance-scheme-loan-terms' },
   },
@@ -142,12 +143,12 @@ export const SCHEMES: Scheme[] = [
     more: { label: 'What banks ask for on solar', to: '/answers/rooftop-solar-loan-msme-what-banks-ask' },
   },
   {
-    id: 'machinery', name: 'SIDBI machinery loans (EXPRESS, SPEED)', kind: 'SIDBI direct loan',
+    id: 'machinery', name: 'SIDBI machinery loans (EXPRESS, SPEED, UDAY)', kind: 'SIDBI direct loan',
     needs: ['machinery'],
-    suits: 'A unit buying new machines, to add capacity or replace old ones, in its existing line of business. Second-hand machines do not qualify.',
-    funds: 'New equipment for modernisation. It does not ask whether the machine saves energy.',
+    suits: 'A unit buying machines to set up, add capacity or replace old ones. Second-hand machines only under SPEED, within SIDBI\'s guidelines.',
+    funds: 'Machines for a new unit, more capacity or modernisation. It does not ask whether the machine saves energy.',
     asks: ['udyam', 'credit', 'financials'],
-    terms: ['EXPRESS: up to ₹3 crore and 100% of cost, repaid over up to 60 months', 'SPEED: up to ₹1 crore new to SIDBI, ₹2 crore existing, repaid over 2 to 5 years', CHECK_TERMS],
+    terms: ['EXPRESS: up to ₹3 crore and 100% of cost with 25% as a fixed deposit, repaid over up to 60 months', 'SPEED: up to ₹15 crore, repaid over up to 84 months', 'UDAY (under three years running): up to ₹50 lakh, repaid over up to 60 months', CHECK_TERMS],
     check: 'Check on sidbi.in (Machinery loan).',
     more: { label: 'Replacing old machines', to: '/answers/sidbi-machinery-loan-replace-old-machines' },
   },

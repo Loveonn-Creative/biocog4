@@ -2,39 +2,55 @@
   "slug": "sidbi-machinery-loan-replace-old-machines",
   "q": "Can I use a SIDBI machinery loan to replace old, energy-hungry machines?",
   "title": "SIDBI machinery loan for new machines",
-  "short": "Yes, if the new machine belongs to your existing line of business. SIDBI's machinery loans fund new equipment for modernisation and technology upgrades: EXPRESS up to ₹3 crore and 100 percent of cost; SPEED up to 100 percent, capped at ₹1 crore for new customers and ₹2 crore for existing ones. Second-hand machines are not eligible.",
+  "short": "Yes. SIDBI's machinery loans fund equipment for new units, expansion and modernisation through three schemes: EXPRESS up to ₹3 crore and UDAY up to ₹50 lakh, both repaid over up to 60 months, and SPEED up to ₹15 crore over up to 84 months. How long you have been running decides which one you can use.",
   "topic": "markets",
   "intent": "decision",
   "audience": "MSME owners replacing old motors, compressors, furnaces or production machines",
   "sections": [
     {
-      "h": "The two schemes",
+      "h": "Three schemes, side by side",
       "ul": [
-        "EXPRESS: a digitally assessed term loan with quick sanction, up to ₹3 crore, covering up to 100 percent of machinery cost, repayable over up to 60 months.",
-        "SPEED: up to 100 percent of machinery cost, maximum ₹1 crore for enterprises new to SIDBI and ₹2 crore for existing customers, repayable over 2 to 5 years including a 3 to 6 month moratorium. Needs at least three years of operations with stable sales and cash profits in the past two years."
+        "EXPRESS: for units running at least three years, with Udyam and GST registration. Up to ₹3 crore, up to 100 percent of cost with 25 percent security as a fixed deposit, repaid over up to 60 months. Assessed digitally, with an in-principle offer straight away.",
+        "SPEED: for units running at least three years with cash profit in the last three financial years. Up to ₹15 crore: 100 percent with 25 percent kept as a fixed deposit, or up to 75 percent of project cost with your own contribution. Repaid over up to 84 months, with up to 12 months moratorium.",
+        "UDAY: for new units and units under three years old. Up to ₹50 lakh, up to 100 percent with 25 to 30 percent security as a fixed deposit, repaid over up to 60 months including up to 9 months moratorium.",
+        "All three need a clean record: no defaults to any bank or financial institution."
       ]
     },
     {
-      "h": "Who qualifies",
+      "h": "Second-hand machines",
       "p": [
-        "Udyam-registered MSMEs with a satisfactory operating track record and credit history. The machine must relate to your existing line of business, and second-hand or refurbished machinery is not eligible."
+        "SPEED now allows second-hand or refurbished machines, subject to SIDBI's standard guidelines. EXPRESS and UDAY are described for new machinery. If you are buying a used press or furnace, ask before you pay a deposit to the seller."
       ]
     },
     {
-      "h": "Machinery loan or a green loan",
+      "h": "Machinery loan or SIDBI's 4E loan",
       "p": [
-        "A machinery loan does not ask whether the machine saves energy. If the replacement is mainly an efficiency upgrade backed by an energy audit, SIDBI's 4E scheme or Green Finance Scheme may fit better and lets you show the project as green. If you are adding capacity and the new machine happens to be efficient, the machinery loan is simpler."
+        "SPEED and SIDBI's 4E energy efficiency loan have the same structure: up to ₹15 crore, 100 percent against a 25 percent deposit or 75 percent with your own share, up to 84 months. The difference is what you must prove. SPEED does not ask whether the machine saves energy. 4E requires you to establish an energy efficiency gain or an emissions cut, and in return the loan counts as green finance, which helps if a buyer or a later lender asks how your projects were funded. If the replacement is mainly about saving power or fuel and you can show it from your bills, 4E is worth the extra paperwork."
       ]
     },
     {
       "h": "How to apply",
       "p": [
-        "Apply online through the Apply Now option on SIDBI's website, which opens its loan portal, or through a referral partner registered with SIDBI if you want help with the form."
+        "Apply online through the Apply Now option on SIDBI's website, which opens its loan portal, or ask your nearest SIDBI branch or a referral partner registered with SIDBI to help with the form."
       ]
     }
   ],
-  "senseible": "Senseible compares energy per unit of output before and after a machine change from your bills and production records, so you can see whether the new machine delivered the saving you paid for.",
+  "example": {
+    "title": "Two units, two different schemes",
+    "lines": [
+      "Unit A, running 2 years, replacing an old compressor for ₹40 lakh: only UDAY fits (under three years, up to ₹50 lakh); fixed deposit at 25 to 30 percent = ₹10 lakh to ₹12 lakh",
+      "Unit B, running 6 years, replacing three induction furnaces for ₹4 crore: above the EXPRESS cap of ₹3 crore, so SPEED or 4E",
+      "Unit B's expected saving: 150 kWh per tonne x 6,000 tonnes a year = 9,00,000 kWh (assumed figures; use your supplier's guarantee)",
+      "CO2 avoided: 9,00,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 6,07,500 kg, about 607 tonnes a year"
+    ],
+    "note": "With a saving that size, Unit B can apply under 4E on the same money terms as SPEED and show the project as green, provided its bills and melt records back up the before and after."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices from before and after a machine change into monthly energy and CO2 records: the before and after 4E asks for, and a quick check that the new machine delivered the saving you paid for. SIDBI decides the loan.",
   "links": [
+    {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    },
     {
       "label": "SIDBI 4E loan terms",
       "to": "/answers/sidbi-4e-loan-terms-and-eligibility"
@@ -50,9 +66,18 @@
   ],
   "sources": [
     {
-      "label": "SIDBI, Machinery Loan FAQs: EXPRESS and SPEED amounts, eligibility, repayment, second-hand exclusion",
+      "label": "SIDBI, Machinery Loan page, EXPRESS, SPEED and UDAY key features, eligibility and FAQs: amounts, fixed deposit security, repayment, second-hand machines under SPEED",
       "url": "https://www.sidbi.in/en/machinery-loan"
+    },
+    {
+      "label": "SIDBI, Green Finance page, 4E Scheme key features and eligibility",
+      "url": "https://www.sidbi.in/en/green-finance"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
     }
   ],
-  "reviewed": "2026-10-23"
+  "reviewed": "2026-10-29",
+  "reviewNote": "Scheme terms change; re-check on sidbi.in every quarter."
 }

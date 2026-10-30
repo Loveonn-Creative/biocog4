@@ -109,7 +109,7 @@ export const CalculatorShell = ({
           {/* Hero */}
           <header className="mb-8 text-center">
             <Badge variant="outline" className="mb-3 border-primary/30 text-primary">
-              <Calculator className="w-3 h-3 mr-1" /> Free tool
+              <Calculator className="w-3 h-3 mr-1" /> No sign-up
             </Badge>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 font-display">{h1}</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">{intro}</p>

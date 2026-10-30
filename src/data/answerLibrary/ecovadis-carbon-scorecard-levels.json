@@ -1,0 +1,73 @@
+{
+  "slug": "ecovadis-carbon-scorecard-levels",
+  "q": "What is the EcoVadis carbon scorecard, and what do its levels mean?",
+  "title": "EcoVadis carbon scorecard levels explained",
+  "short": "The carbon scorecard rates how well you manage emissions on five levels: Insufficient, Beginner, Intermediate, Advanced and Leader. The level is based on your carbon governance, actions and reporting. Companies with 25 or fewer employees cannot get one.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSME suppliers whose buyer asks for an EcoVadis carbon scorecard",
+  "sections": [
+    {
+      "h": "A separate scorecard from your sustainability score",
+      "p": [
+        "Your EcoVadis sustainability scorecard gives a 0 to 100 score across four themes. The carbon scorecard sits beside it and grades only carbon management, with strengths and improvement areas listed. A buyer counting its Scope 3 emissions reads it to judge how far along you are in managing carbon.",
+        "You can get it through the full sustainability plans, or through a Carbon Rating plan that covers carbon questions only and is offered when a buyer invites you."
+      ]
+    },
+    {
+      "h": "Where companies actually sit",
+      "p": [
+        "EcoVadis's 2026 analysis of about 56,000 companies rated on carbon shows the climb gets harder at each step. On reassessment, 43% of Insufficient companies moved up to Beginner and 32% of Beginners moved to Intermediate, but only 16% of Intermediate companies reached Advanced."
+      ]
+    },
+    {
+      "h": "What separates the lower levels",
+      "ul": [
+        "Beginner: 81% of companies at this level have taken first actions on Scope 1 and 2, but only 9% have a target or plan.",
+        "Intermediate: 68% have a carbon target or plan. In these figures, a written target is what most separates Beginner from Intermediate.",
+        "Getting past Intermediate: EcoVadis found five actions that predict a breakthrough: tying management pay to emission cuts, working with your own suppliers on reductions, collecting primary Scope 3 data from them, adopting a dated transition plan and setting a budget for it."
+      ]
+    },
+    {
+      "h": "A realistic path for a 60-person unit",
+      "ol": [
+        "Measure: a full year of Scope 1 and 2 from electricity bills and fuel invoices, for every site, with the documents.",
+        "Act: record actions with dates and numbers, such as a solar rooftop, a boiler fuel switch or an LED retrofit with before and after units.",
+        "Commit: write a dated reduction target with a base year, signed by the owner.",
+        "Repeat: measure again next year and show the change. Your level is updated when you are reassessed."
+      ]
+    }
+  ],
+  "senseible": "Senseible covers the Measure step: a year of Scope 1 and 2 by site and billing period, each figure tied to its bill. Its team can draft your carbon answers from those records, you review and submit, and EcoVadis alone sets the level.",
+  "links": [
+    {
+      "label": "Share figures your buyer can trace",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Do I have to pay for EcoVadis?",
+      "to": "/answers/do-i-have-to-pay-for-ecovadis"
+    },
+    {
+      "label": "Carbon evidence EcoVadis asks for",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "CDP without an emissions target",
+      "to": "/answers/cdp-no-emissions-target-how-to-answer"
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, the carbon maturity ladder (2026 Carbon Action Report findings)",
+      "url": "https://ecovadis.com/blog/carbon-maturity-ladder/"
+    },
+    {
+      "label": "EcoVadis, plans and pricing for rated companies (Carbon Rating plan)",
+      "url": "https://ecovadis.com/plans-pricing/"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Level distribution figures come from EcoVadis's 2026 Carbon Action Report; replace them when the next report is published, and re-check Carbon Rating plan eligibility."
+}

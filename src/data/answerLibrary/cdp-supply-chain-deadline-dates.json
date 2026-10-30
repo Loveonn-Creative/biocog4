@@ -1,0 +1,74 @@
+{
+  "slug": "cdp-supply-chain-deadline-dates",
+  "q": "When is the deadline to answer a customer's CDP supply chain request?",
+  "title": "CDP supply chain deadlines by date",
+  "short": "Your customer's request runs on CDP's yearly cycle. In 2026 it opened in June, the scoring deadline was 16 September and the questionnaire closed on 28 October. Submit by the scoring deadline or you may get no score. The next cycle's dates are set in CDP's terms of disclosure for that year.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME suppliers asked to disclose through CDP by a customer",
+  "sections": [
+    {
+      "h": "The 2026 cycle on one line",
+      "ol": [
+        "June: the disclosure cycle opens in the CDP Portal. You can see which customers requested you.",
+        "16 September: scoring deadline. Responses submitted by this date are scored.",
+        "Up to 30 September: a response submitted after the scoring deadline can ask for an on-demand score. A fee may apply and only a limited number are granted.",
+        "28 October: questionnaire closes. CDP may still choose to score a response submitted between the scoring deadline and closure, but does not have to."
+      ]
+    },
+    {
+      "h": "The deadline that matters to your customer",
+      "p": [
+        "Ask whether your customer needs your score or only your answers; if it is the score, 16 September is your real deadline. A response sent after 16 September may not be scored at all. Changes you make after the scoring deadline are not scored either, so the version you submit by then is the one that counts.",
+        "CDP can move any of these dates and tells disclosers by email or in the Portal. Watch both."
+      ]
+    },
+    {
+      "h": "If the request reached you after the window closed",
+      "p": [
+        "The 2026 questionnaire closed on 28 October 2026. Use the months before the next cycle to get a full financial year of Scope 1 and 2 figures ready, decide whether you will use the SME or full questionnaire, and tell your customer which cycle you will answer in. The next year's exact dates appear in CDP's terms of disclosure and on its Disclosure Hub when that cycle is announced."
+      ]
+    },
+    {
+      "h": "Work back from 16 September",
+      "ul": [
+        "April to May: close the financial year's electricity bills and fuel invoices; convert them to Scope 1 and 2.",
+        "June: register in the Portal and confirm questionnaire version and public or non-public response. A non-public response cannot score an A.",
+        "July to August: draft answers on governance, targets and reduction actions.",
+        "First week of September: internal review and submit, a week clear of the deadline."
+      ]
+    }
+  ],
+  "senseible": "For the April to May step, Senseible turns a financial year of electricity bills and fuel invoices into Scope 1 and 2 totals, each tied to its bill. Its team can then draft the CDP answers from them for you to review and submit before the window closes.",
+  "links": [
+    {
+      "label": "Get your Scope 1 and 2 ready",
+      "to": "/msme-carbon-number"
+    },
+    {
+      "label": "CDP request: respond or not, and cost",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "CDP SME or full questionnaire?",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Who sees my CDP response",
+      "to": "/answers/cdp-supply-chain-who-sees-my-response"
+    },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "CDP, terms of disclosure for the 2026 corporate questionnaire",
+      "url": "https://www.cdp.net/en/terms-of-disclosure"
+    },
+    {
+      "label": "CDP, disclosure FAQs",
+      "url": "https://www.cdp.net/en/faqs"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Dates are for CDP's 2026 cycle. When CDP publishes the next cycle's terms of disclosure, replace the scoring deadline, on-demand score date and closure date."
+}

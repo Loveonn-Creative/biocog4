@@ -1,0 +1,89 @@
+{
+  "slug": "howrah-foundry-cluster-castings-carbon-data",
+  "q": "Howrah foundries ship over a million tonnes of castings a year: what carbon data does a unit there need?",
+  "title": "Howrah foundries: what carbon data you need",
+  "short": "Coke per tonne melted, electricity, and tonnes of good castings by product, month by month. TERI's 2025 profile puts Howrah's roughly 320 foundries at 356,512 tonnes of CO2 a year, 77% from coke. If you export cast iron pipes or fittings to the EU, CBAM makes this data a customs matter.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Cupola and induction foundry owners in Howrah: Liluah, Salkia, Belgachia, Dasnagar, Jangalpur, Santragachi",
+  "sections": [
+    {
+      "h": "Howrah in TERI's 2025 profile",
+      "ul": [
+        "About 320 operating foundries: about 200 micro, 80 small and 40 medium. Micro units are 62% of foundries but 24% of output.",
+        "More than one million tonnes of castings a year: manhole covers, sanitary pipes and fittings, pump and valve bodies, counterweights, jute mill spares, railway and mining parts.",
+        "93,984 tonnes of coke and 117 million kWh a year, 66,446 toe. TERI puts the CO2 at 356,512 tonnes, 273,493 from coke.",
+        "Most units melt in divided blast cupolas at 100 to 140 kg of coke per tonne of metal on high ash coke from Dhanbad. A few induction units use 600 to 650 kWh a tonne."
+      ]
+    },
+    {
+      "h": "Which buyers will ask",
+      "ul": [
+        "EU importers of cast iron pipes (CN 7303) and pipe fittings (7307). These goods are in CBAM, and from 2026 the importer pays for embedded emissions. Without your actual data it must use default values, which carry a mark-up.",
+        "Manhole covers and gratings under 7325 are outside CBAM today, but municipal and export buyers increasingly ask for a footprint per tonne.",
+        "Pump, valve and railway customers who report Scope 3 ask their foundries for kg CO2 per tonne."
+      ]
+    },
+    {
+      "h": "The records to start keeping",
+      "ol": [
+        "A melt log for each heat: charging coke, metal charged, metal tapped. TERI recommends this as a no-cost saving too.",
+        "Coke invoices in tonnes, with ash content where the dealer states it.",
+        "Monthly electricity bills, and a sub-meter on any induction furnace.",
+        "Pig iron and scrap purchases by supplier, because CBAM counts the pig iron you charge.",
+        "Despatches in tonnes of good castings, split by product code. Payment by weight does not tell you this."
+      ]
+    },
+    {
+      "h": "The cheapest cut",
+      "p": [
+        "Moving from 110 kg to about 80 kg of coke per tonne, which TERI expects from a well-run divided blast cupola, saves about a quarter of melting CO2. The payback is about a year. Old SCR induction furnaces can be replaced with IGBT ones, which pay back in two to three years."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a micro cupola foundry melting 120 t a month",
+    "lines": [
+      "At 110 kg coke a tonne: 13.2 t coke x 3.02 = 39.9 t CO2 a month",
+      "At 80 kg coke a tonne: 9.6 t coke x 3.02 = 29.0 t CO2 a month",
+      "Saving: about 10.9 t CO2 a month, about 130 t a year",
+      "Cluster average: 356,512 t / about 1,008,000 t of castings = about 0.35 t CO2 a tonne"
+    ],
+    "note": "Coke at 3.02 t CO2 per tonne is the IPCC 2006 default; TERI's own cluster total implies about 2.9 for Howrah's high ash coke. 120 t a month is an example; the cluster tonnage is the sum of TERI's production table."
+  },
+  "senseible": "Senseible reads coke and electricity invoices into dated records for the embedded emissions an EU importer needs for covered pipes and fittings, built from your actual figures. The CBAM calculator shows what default values would cost your importer instead.",
+  "links": [
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "Howrah foundry: cupola to induction",
+      "to": "/answers/howrah-foundry-cupola-to-induction-co2"
+    },
+    {
+      "label": "CBAM for ductile iron pipes (7303)",
+      "to": "/answers/cbam-cn-7303-ductile-iron-pipes"
+    },
+    {
+      "label": "Are manhole covers covered by CBAM?",
+      "to": "/answers/are-cast-iron-manhole-covers-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TERI, Energy profile: Howrah foundry cluster (2025)",
+      "url": "https://sameeeksha.org/pdf/Howrah%20Foundry%20Cluster%20profile.pdf"
+    },
+    {
+      "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-29",
+  "reviewNote": "Check CBAM Annex I coverage of 7325 if the downstream extension is adopted."
+}
