@@ -7,6 +7,7 @@
 // React concerns so it can be shared by toast helpers, form validators, etc.
 
 import { loadSupabase } from "@/integrations/supabase/lazyClient";
+import { LONG_TEXT_CHARS, isTranslatable, splitLongText, splitSpacing } from "./textRules";
 
 type Locale = string;
 
@@ -57,11 +58,16 @@ function lsSave(locale: Locale, map: Record<string, string>) {
     try { localStorage.removeItem(LS_PREFIX + locale); } catch {}
   }
 }
+// Once per locale. Tracked separately from the memory size because a
+// language pack may seed memory before the first lookup.
+const hydrated = new Set<Locale>();
 function hydrateFromStorage(locale: Locale) {
+  if (hydrated.has(locale)) return;
+  hydrated.add(locale);
   const mem = getMem(locale);
-  if (mem.size > 0) return;
   const stored = lsLoad(locale);
-  for (const [k, v] of Object.entries(stored)) mem.set(k, v);
+  // Pack entries already in memory win over older stored ones.
+  for (const [k, v] of Object.entries(stored)) if (!mem.has(k)) mem.set(k, v);
 }
 
 // ---------- Batching queue ----------
@@ -73,12 +79,56 @@ function scheduleFlush() {
   flushTimer = window.setTimeout(flushAll, 120);
 }
 
+// While a language pack is loading, cache misses wait for it instead of
+// going to the network: most of them are in the pack. Capped so a slow or
+// missing pack never blocks the runtime path for long.
+const PACK_WAIT_MS = 4000;
+let packGate: Promise<unknown> | null = null;
+
+/** Hold runtime translation requests until `loading` settles (or 4 s). */
+export function holdRuntimeFor(loading: Promise<unknown>) {
+  const capped = Promise.race([
+    loading.catch(() => undefined),
+    new Promise(resolve => setTimeout(resolve, PACK_WAIT_MS)),
+  ]);
+  const gate = packGate ? Promise.all([packGate, capped]) : capped;
+  packGate = gate;
+  void gate.then(() => {
+    if (packGate === gate) packGate = null;
+    if (Object.values(pending).some(set => set.size > 0)) scheduleFlush();
+  });
+}
+
+/**
+ * Put known translations (a language pack) into the memory cache. Strings
+ * already waiting on the network are answered from here instead.
+ */
+export function seedTranslations(locale: Locale, entries: Record<string, string>) {
+  const mem = getMem(locale);
+  let added = 0;
+  for (const [src, dst] of Object.entries(entries)) {
+    if (typeof dst !== "string" || !dst || mem.get(src) === dst) continue;
+    mem.set(src, dst);
+    getInflight(locale).delete(src);
+    pending[locale]?.delete(src);
+    added++;
+  }
+  if (added > 0) notify();
+  return added;
+}
+
 async function flushAll() {
   flushTimer = null;
+  if (packGate) return; // re-armed when the pack settles
   const locales = Object.keys(pending);
   for (const locale of locales) {
     const set = pending[locale];
     if (!set || set.size === 0) continue;
+    const mem = getMem(locale);
+    for (const s of Array.from(set)) {
+      if (mem.has(s)) { set.delete(s); getInflight(locale).delete(s); }
+    }
+    if (set.size === 0) continue;
     const batch = Array.from(set).slice(0, 50);
     for (const s of batch) set.delete(s);
     if (set.size > 0) scheduleFlush(); // re-arm for leftovers
@@ -163,17 +213,20 @@ export function translateSync(locale: Locale, text: string): string {
   if (!text || typeof text !== "string") return text;
   if (locale === "en" || !SUPPORTED_LOCALES.has(locale)) return text;
   if (!runtimeAllowed) return text;
-  const trimmed = text.trim();
-  if (trimmed.length === 0) return text;
-  // Skip pure numeric/symbolic tokens
-  if (/^[\d\s.,%:/+\-]+$/.test(trimmed)) return text;
-  // Skip strings with no letters at all (emoji, punctuation, code-ish)
-  if (!/\p{L}/u.test(trimmed)) return text;
-  // Skip pure identifiers / code tokens (GSTIN, HSN, SHA hashes, ISO codes)
-  if (/^[A-Z0-9_\-]{4,}$/.test(trimmed)) return text;
-  // Skip emails and URLs
-  if (/^\S+@\S+\.\S+$/.test(trimmed)) return text;
-  if (/^https?:\/\//i.test(trimmed)) return text;
+  // Skip rules (numbers, symbols, identifiers, emails, URLs) live in textRules.ts.
+  if (!isTranslatable(text)) return text;
+
+  // Long text: the server drops strings over 600 characters, so translate
+  // each sentence through the cache and rejoin with the original spacing.
+  const pieces = text.length > LONG_TEXT_CHARS ? splitLongText(text) : null;
+  if (pieces && pieces.length > 1) {
+    return pieces
+      .map(piece => {
+        const [lead, core, tail] = splitSpacing(piece);
+        return `${lead}${translateSync(locale, core)}${tail}`;
+      })
+      .join("");
+  }
 
   hydrateFromStorage(locale);
   const mem = getMem(locale);
