@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Copy, Download, Ship } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -9,15 +9,17 @@ import { CBAM_SECTORS } from "@/lib/cbamEngine";
 import { markupFor, type CbamSector } from "@/lib/cbam/official";
 import {
   CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH, DECLARANT_MILESTONES, FERT_PCT, FIRST_DECLARATION_ISO, MARKUP_SCHEDULE, PACK_ROWS, THRESHOLD_TONNES,
-  findDeclarant, type Clears, type Volume,
+  type Clears,
 } from "@/data/cbamDeclarant";
+import { CHECKLIST_FILE_NAME, buyerMessage, cbamChecklistFile } from "@/lib/leadMagnets/cbamBuyerKit";
+import { downloadSendablePdf } from "@/lib/leadMagnets/sendableFile";
 import "./cbamDeclarant.css";
 
 // /cbam-authorised-declarant. For Indian exporters (and their EU buyers) asking
 // who the authorised CBAM declarant is and what it needs from the supplier.
 // Sources live in src/data/cbamDeclarant.ts. Default values and mark-ups come
 // from src/lib/cbam/official.ts through the CBAM engine.
-// Sections: a who-files finder, a 50-tonne fill line, a dated clock with a
+// Sections: a shipment path from plant to declarant, a 50-tonne fill line, a dated clock with a
 // today marker, a default-or-actual swap, and a supplier pack that fills in.
 
 const prefersReduced = () => typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -32,19 +34,6 @@ function useInView<T extends Element>(): [React.RefObject<T>, boolean] {
     return () => io.disconnect();
   }, [seen]);
   return [ref, seen];
-}
-
-function Choice<T extends string>({ label, value, options, onChange }: { label: string; value: T; options: { v: T; l: string }[]; onChange: (v: T) => void }) {
-  return (
-    <fieldset className="cbd-q">
-      <legend>{label}</legend>
-      <div className="cbd-opts">
-        {options.map((o) => (
-          <button key={o.v} type="button" className="cbd-opt" aria-pressed={o.v === value} onClick={() => onChange(o.v)}>{o.l}</button>
-        ))}
-      </div>
-    </fieldset>
-  );
 }
 
 export default function CbamDeclarant() {
@@ -80,37 +69,117 @@ export default function CbamDeclarant() {
   );
 }
 
-/* 1. Who files for this shipment: three answers, one result. */
+/* The message to the EU buyer (or the EU representative under DDP), and the checklist for the declarant and verifier. */
+function BuyerMessage({ clears }: { clears: Clears }) {
+  const [company, setCompany] = useState("");
+  const [status, setStatus] = useState<"" | "copied" | "selected" | "failed">("");
+  const box = useRef<HTMLTextAreaElement>(null);
+  const text = buyerMessage({ clears, company });
+  const who = clears === "buyer" ? "EU buyer" : "EU representative";
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setStatus("copied");
+    } catch {
+      // No clipboard access (older browser, embedded view): select the text so one keypress copies it.
+      const el = box.current;
+      if (el) { el.focus(); el.select(); el.setSelectionRange(0, text.length); }
+      setStatus("selected");
+    }
+  };
+  const pdf = async () => {
+    try { await downloadSendablePdf(cbamChecklistFile({ clears, company }), CHECKLIST_FILE_NAME); setStatus(""); }
+    catch { setStatus("failed"); }
+  };
+  return (
+    <div className="cbd-msg">
+      <p className="cbd-msg-k">Your message to the {who}</p>
+      <label className="cbd-msg-name">
+        <span>Your company name <small>(optional)</small></span>
+        <input type="text" value={company} onChange={(e) => { setCompany(e.target.value); setStatus(""); }} maxLength={80} autoComplete="organization" />
+      </label>
+      <textarea ref={box} className="cbd-msg-text" readOnly value={text} rows={9} aria-label={`Message to your ${who}`} />
+      <div className="cbd-msg-btns">
+        <button type="button" className="cbd-btn cbd-msg-copy" onClick={copy}><Copy className="h-4 w-4" aria-hidden="true" /> Copy the message to your {who}</button>
+        <button type="button" className="cbd-text-link" onClick={pdf}><Download className="h-4 w-4" aria-hidden="true" /> Download the data checklist</button>
+      </div>
+      <p className="cbd-msg-note" aria-live="polite">
+        {status === "copied" ? "Copied. Paste it into your email."
+          : status === "selected" ? "Copy is blocked here, so the text is selected. Press Ctrl+C, or long-press and tap Copy."
+          : status === "failed" ? "The checklist did not download. Try again."
+          : "The checklist is one page for the declarant and the verifier. No sign-up."}
+      </p>
+    </div>
+  );
+}
+
+/* 1. One shipment, India to the EU: tap a stop to see what happens there and what you send. */
+type StopId = "plant" | "customs" | "declarant";
 function Hero() {
   const [clears, setClears] = useState<Clears>("buyer");
-  const [volume, setVolume] = useState<Volume>("over");
-  const [h2, setH2] = useState<"no" | "yes">("no");
-  const a = findDeclarant(clears, volume, h2 === "yes");
+  const [at, setAt] = useState<StopId>("declarant");
+  const ddp = clears === "seller";
+  // Lines follow PACK_ROWS (plant, goods, emissions; free allocation and verifier) and
+  // findDeclarant(clears, "over"): who holds the status, and the account-number check.
+  const files = ddp ? "An EU customs representative, or an EU company of your own, files the declaration. Your Indian company cannot." : "Your buyer, or its customs representative, files the declaration.";
+  const stops: { id: StopId; name: string; sub: string; data: boolean; happens: string; send: string[] }[] = [
+    { id: "plant", name: "Your plant", sub: "India", data: true,
+      happens: "The goods are made, and their emissions are counted by product and period.",
+      send: [PACK_ROWS[0], "Your goods by CN code (the EU's 8\u2011digit product code), with how each is made", "Emissions per tonne of each good, from fuel (direct) and electricity (indirect)"] },
+    { id: "customs", name: "EU customs", sub: "Port of entry", data: false,
+      happens: `Above ${THRESHOLD_TONNES} tonnes a year, customs releases the goods only to an authorised CBAM declarant.`,
+      send: [ddp
+        ? "Only a company based in the EU can be a declarant. Under DDP that is an indirect customs representative who agrees to take the role, or an EU company of your own."
+        : "Ask your buyer for its CBAM account number and the EU country that authorised it. There is no public register to check."] },
+    { id: "declarant", name: "Declarant", sub: "Files CBAM", data: true,
+      happens: `${files} It reports the emissions from making your goods: your verified figure, or the EU default with a mark-up if you send nothing.`,
+      send: ["Your verifier's name and their report", "Free allocation per tonne, which cuts the certificates your buyer owes"] },
+  ];
+  const idx = stops.findIndex((s) => s.id === at);
+  const stop = stops[idx];
   return (
     <section className="cbd-hero">
       <div>
         <p className="cbd-eyebrow">Authorised CBAM declarant</p>
         <h1 className="cbd-title">Who files CBAM for your shipment, and what they need from you</h1>
-        <p className="cbd-lede">Since 1 January 2026, if your EU buyer imports more than 50 tonnes a year of steel, aluminium, cement and fertilisers combined, the goods enter only through an authorised CBAM declarant. That is always a company in the EU, never the Indian exporter. It declares the emissions in your goods: your plant's verified figure, or an EU default if you send nothing.</p>
+        <p className="cbd-lede">Since 1 January 2026, once your EU buyer imports more than {THRESHOLD_TONNES} tonnes a year of steel, aluminium, cement and fertilisers combined, the goods clear only through an authorised CBAM declarant. That is a company in the EU, never you. It still needs your plant's figures.</p>
         <Link to="/cbam-suite" className="cbd-btn cbd-btn-primary cbd-hero-cta">Build my CBAM data <ArrowRight className="h-4 w-4" /></Link>
         <p className="cbd-cta-note">Free. Builds your emissions report, the file a verifier checks and the pack for your buyer.</p>
       </div>
 
-      <div className="cbd-finder" aria-label="Find who files for your shipment">
-        <p className="cbd-finder-head">Your shipment</p>
-        <Choice<Clears> label="Who clears the goods into the EU?" value={clears} onChange={setClears}
-          options={[{ v: "buyer", l: "My buyer (most terms)" }, { v: "seller", l: "We do (DDP)" }]} />
-        <Choice<Volume> label={clears === "seller" ? "Your total into the EU this year" : "Your buyer's total this year, from all suppliers"} value={volume} onChange={setVolume}
-          options={[{ v: "under", l: "50 t or less" }, { v: "over", l: "Over 50 t" }]} />
-        <Choice<"no" | "yes"> label={clears === "seller" ? "Do you import any hydrogen or electricity?" : "Does your buyer import any hydrogen or electricity?"} value={h2} onChange={setH2}
-          options={[{ v: "no", l: "No" }, { v: "yes", l: "Yes" }]} />
-        <div className="cbd-answer" aria-live="polite" key={a.who + a.body}>
-          <span className="cbd-answer-k">Holds the status</span>
-          <p className="cbd-answer-who">{a.who}</p>
-          <p>{a.body}</p>
-          <p className="cbd-answer-ask">{a.ask}</p>
+      <div className="cbd-route" aria-label="One shipment, India to the EU">
+        <div className="cbd-route-top">
+          <p className="cbd-route-head">One shipment, India to the EU</p>
+          <div className="cbd-clears" role="group" aria-label="Who clears the goods into the EU?">
+            <button type="button" aria-pressed={clears === "buyer"} onClick={() => setClears("buyer")}>Buyer clears</button>
+            <button type="button" aria-pressed={clears === "seller"} onClick={() => setClears("seller")}>We ship DDP</button>
+          </div>
+        </div>
+        <div className="cbd-path" style={{ "--at": idx } as React.CSSProperties}>
+          <span className="cbd-path-line" aria-hidden="true"><i /></span>
+          <span className="cbd-ship" aria-hidden="true"><Ship className="h-4 w-4" /></span>
+          <ol>
+            {stops.map((s) => (
+              <li key={s.id}>
+                <button type="button" className="cbd-stop-btn" aria-pressed={s.id === at} onClick={() => setAt(s.id)}>
+                  <span className="cbd-dot" aria-hidden="true" />
+                  <span className="cbd-stop-name">{s.name}</span>
+                  <span className="cbd-stop-sub">{s.sub}</span>
+                  <span className="cbd-stop-tag" data-data={s.data}>{s.data ? "You send" : "Nothing from you"}</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="cbd-here" aria-live="polite" key={at + clears}>
+          <p className="cbd-here-k">What happens here</p>
+          <p className="cbd-here-v">{stop.happens}</p>
+          <p className="cbd-here-k">Your part</p>
+          <ul className="cbd-here-send">{stop.send.map((x) => <li key={x}>{x}</li>)}</ul>
         </div>
       </div>
+
+      <BuyerMessage clears={clears} />
     </section>
   );
 }
