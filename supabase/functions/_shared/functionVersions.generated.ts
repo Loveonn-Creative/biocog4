@@ -14,5 +14,5 @@ export const FUNCTION_VERSIONS: Record<string, string> = {
   "verify-razorpay-payment": "1422ed66d53ed646",
   "razorpay-webhook": "90a7c2f2a76eae9b",
   "report-allowance": "62638174457e5df6",
-  "import-records": "1c493c41b3172567"
+  "import-records": "6360b146dbdcaf99"
 };
