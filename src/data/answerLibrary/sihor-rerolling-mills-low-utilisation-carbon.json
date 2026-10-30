@@ -1,0 +1,67 @@
+{
+  "slug": "sihor-rerolling-mills-low-utilisation-carbon",
+  "q": "Sihor's re-rolling mills run at about 28% of capacity: what does that do to carbon per tonne?",
+  "title": "Sihor mills: low utilisation and CO2",
+  "short": "It raises it. A coal-fired pusher furnace burns fuel to reach and hold temperature whether or not steel is moving, so idle hours land on fewer tonnes. TERI put Sihor at 1.33 million t from 5.2 million t of capacity in 2015 to 16, on 114,304 t of coal and 162 million kWh: about 416,304 t CO2.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Steel re-rolling mill owners in Sihor and Bhavnagar rolling ship plate, billets and ingots",
+  "sections": [
+    {
+      "h": "Sihor in TERI's numbers",
+      "ul": [
+        "About 120 re-rolling mills, about 90 operating, with 5.2 million t of installed capacity (3.9 million t at operating mills).",
+        "Output 1.33 million t in 2015 to 16, which TERI reports as 28% of capacity.",
+        "Feed: plates from the Alang and Sosiya ship breaking yards, plus billets and ingots from local melting units. Products: angles, flats, squares, rounds and TMT bars.",
+        "Coal-fired pusher hearth furnaces of 3.5 to 10 t an hour, with pulverised coal; most mills bypass the furnace's temperature control and have no waste heat recovery.",
+        "Energy: 114,304 t of coal and 162 million kWh, 77,974 toe. The furnace takes 80% to 85% of a mill's energy."
+      ]
+    },
+    {
+      "h": "Why fewer tonnes mean more CO2 per tonne",
+      "p": [
+        "Part of a furnace's coal goes into steel, rising with tonnes rolled. Part goes into heating the refractory after a stop, holding the soaking zone while the mill waits for plates or power, and losses through walls and flue gas at 650 to 800 °C. That second part barely changes with output. A mill that rolls one shift and banks the furnace overnight, or runs ten days and stops five, spreads that fixed coal over fewer tonnes."
+      ]
+    },
+    {
+      "h": "Find your own fixed coal in an afternoon",
+      "ol": [
+        "List coal consumed and tonnes rolled for each of the last 12 months, from stock registers, not purchases.",
+        "Take your highest-output month and your lowest.",
+        "Coal per extra tonne = (coal in high month minus coal in low month) / (tonnes in high month minus tonnes in low month).",
+        "Fixed coal a month = coal in the low month minus coal per extra tonne x tonnes in the low month.",
+        "That fixed coal is what continuous rolling, a recuperator or better furnace insulation can cut."
+      ]
+    },
+    {
+      "h": "For CBAM and buyers",
+      "p": [
+        "For bars sold to the EU, your furnace coal is the main part of the CBAM figure and electricity is not counted for steel. Ship plate feed is usually treated like scrap. Buyers asking for a product footprint count your power as well. Either way, a figure per tonne from a slow month will look worse than one from a busy month, so report the annual figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two months at one 6 t an hour mill",
+    "lines": [
+      "Busy month: 3,000 t rolled on 330 t of coal; slow month: 1,200 t on 150 t of coal",
+      "Coal per extra tonne: (330 minus 150) / (3,000 minus 1,200) = 0.10 t",
+      "Fixed coal: 150 minus 0.10 x 1,200 = 30 t a month",
+      "Coal per tonne: busy 330 / 3,000 = 110 kg; slow 150 / 1,200 = 125 kg, 14% more",
+      "Cluster average from TERI: 416,304 t CO2 / 1.33 million t = about 313 kg CO2 per tonne rolled"
+    ],
+    "note": "The two months are example figures. The cluster average uses TERI's own emission estimate for 2015 to 16."
+  },
+  "senseible": "Senseible reads coal and power invoices into monthly records next to your tonnes rolled, so you can see coal per tonne month by month and show a buyer the annual figure, traced to the bills.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Sihor mill CO2 per tonne of bars", "to": "/answers/sihor-rerolling-mill-reheating-furnace-co2" },
+    { "label": "Ship plate bars and CBAM", "to": "/answers/bhavnagar-ship-plate-re-rolling-cbam-figure" },
+    { "label": "TMT bar mill CO2 per tonne", "to": "/answers/tmt-bar-re-rolling-mill-co2-per-tonne" }
+  ],
+  "sources": [
+    { "label": "TERI, Energy profile: Bhavnagar (Sihor) steel re-rolling mill cluster (SAMEEEKSHA, 2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/BhavnagarCluster.pdf" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated, Annex II", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster data is for 2015 to 16. Update if a newer Sihor profile is published."
+}

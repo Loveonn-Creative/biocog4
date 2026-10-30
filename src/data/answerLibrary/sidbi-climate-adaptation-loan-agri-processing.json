@@ -1,0 +1,86 @@
+{
+  "slug": "sidbi-climate-adaptation-loan-agri-processing",
+  "q": "Can an agri-processing MSME get a climate adaptation loan from SIDBI?",
+  "title": "SIDBI climate adaptation loan: agri units",
+  "short": "Yes. SIDBI's agriculture adaptation assessment for its Green Climate Fund programme covers agro-processors, cold stores and storage operators. A rice mill, pulse mill or oil unit with boilers or wastewater is Category B and needs a site-specific plan; small dry grading and packing is Category C. Either way, the project must show a direct link to a climate risk.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Rice, pulse and oil mills, fruit and vegetable processors, cold store and warehouse owners, and FPO-linked processing units",
+  "sections": [
+    {
+      "h": "What counts as adaptation for a processor",
+      "ul": [
+        "Energy-efficient mills, grinders and sorters: Category B or C depending on the unit.",
+        "Solar dryers and solar-powered processing: Category C.",
+        "Dehydration units and climate-controlled preservation: Category B.",
+        "Water recycling and low-water processing, and effluent treatment or ZLD: Category C.",
+        "Automated grading and sorting: Category C or B.",
+        "Integrated processing and storage facilities: Category B.",
+        "Composting, biomass recovery and bioenergy from processing residues: Category C."
+      ]
+    },
+    {
+      "h": "Cold storage and warehousing",
+      "ul": [
+        "Solar cold storage units and hybrid refrigeration: Category B or C.",
+        "High-efficiency compressors, variable speed drives and smart cooling: Category C.",
+        "Ammonia and CO2 refrigeration systems: Category C.",
+        "Flood-resistant, insulated or raised warehouses, and modular cold storage: Category C.",
+        "Solar PV with battery backup for cold chains: Category B."
+      ]
+    },
+    {
+      "h": "The test SIDBI adds for adaptation",
+      "p": [
+        "During appraisal SIDBI screens each project for a direct and material link to an identified climate risk, such as heat, humidity or erratic rain spoiling produce, and for outcomes it can measure. The indicators it names include reduction in post-harvest losses in percent, climate-resilient storage capacity created in tonnes, and water conserved in cubic metres a year. Every project is first checked against the programme's exclusion list, and high-risk Category A projects are not financed."
+      ]
+    },
+    {
+      "h": "Your CPCB colour",
+      "ul": [
+        "Parboiled rice mills with soaking and steam or drier: Orange; raw rice mills and hullers: Green.",
+        "Pulse and dal mills, dry flour mills and cold storage: Green.",
+        "Vegetable oil with solvent extraction or refining: Orange; ghani and extraction mills without boiler or refining: Green.",
+        "Cashew processing, starch and sago, and fish processing: Orange; sugar: Red."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Putting adaptation outcomes in numbers for a solar cold room (assumed figures)",
+    "lines": [
+      "Produce handled: 2,000 tonnes of tomatoes and onions a season",
+      "Losses now: 12 percent x 2,000 tonnes = 240 tonnes spoiled",
+      "Losses expected with cold storage: 4 percent x 2,000 tonnes = 80 tonnes",
+      "Reduction in post-harvest losses: 12 minus 4 = 8 percentage points, or 160 tonnes saved",
+      "Climate-resilient storage capacity created: the cold room's rated capacity, for example 500 tonnes"
+    ],
+    "note": "Use your own loss records, such as rejection and dumping registers from the last two seasons. A loss figure you can trace is worth more than a high one."
+  },
+  "senseible": "Senseible does not measure produce losses. Where the project also changes energy use, such as a solar cold room cutting grid or diesel backup, it reads your power bills and diesel invoices into monthly energy and CO2 figures from before and after. SIDBI decides the loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Solar cold rooms for farm produce",
+      "to": "/answers/solar-cold-room-for-farm-produce-emissions"
+    },
+    {
+      "label": "Solar dryers in agro-processing",
+      "to": "/answers/solar-dryer-agro-processing-co2"
+    },
+    {
+      "label": "What SIDBI will not finance",
+      "to": "/answers/what-sidbi-will-not-finance-exclusion-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Direct Financing, Agriculture Sector (Adaptation Segment) (9 September 2026): technology tables with indicative categories, adaptation screening and indicators, CPCB classification table",
+      "url": "https://www.sidbi.in/assets/front/pdf/Adaption_Agriculture_Sector_final_clean_english.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "SIDBI revises its sector assessments; re-check the Green Pathways e-series page every quarter."
+}

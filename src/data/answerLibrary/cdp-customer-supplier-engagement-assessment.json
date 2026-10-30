@@ -1,0 +1,75 @@
+{
+  "slug": "cdp-customer-supplier-engagement-assessment",
+  "q": "Why does my customer care so much about my CDP response?",
+  "title": "Why your customer chases your CDP response",
+  "short": "Because CDP grades your customer on how it works with suppliers. In CDP's 2024 Supplier Engagement Assessment, supplier engagement carried 35% and Scope 3 emissions, including verification, 20%. Your response shows that engagement and gives the customer real figures for its purchased goods line.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSME suppliers asked by a large customer to answer CDP",
+  "sections": [
+    {
+      "h": "How your customer is graded",
+      "p": [
+        "Every company answering CDP's full corporate questionnaire gets a Supplier Engagement Assessment on top of its climate score. CDP builds it from answers the customer already gives, weighted like this in 2024:"
+      ],
+      "ul": [
+        "Supplier engagement: 35%.",
+        "Scope 3 emissions, including verification: 20%.",
+        "Risk management processes: 15%.",
+        "Governance and business strategy: 15%.",
+        "Targets: 15%.",
+        "The total percentage becomes a grade: A at 76% to 100%, B at 56% to 65%, down to F at 0%. Without reporting any supplier engagement, the customer cannot score above D."
+      ]
+    },
+    {
+      "h": "The parts that land on your desk",
+      "ul": [
+        "Share of spend engaged: your customer earns points by the type of engagement (collecting information, building capacity, financial incentives, innovation together) and by how much of its spend or Scope 3 that engagement covers. Covering more than half earns 2 points for that type; half or less earns 1.",
+        "Purchased goods and services: full points only when the customer reports this category as calculated, with a figure and the method. Supplier data is what moves it off rough averages.",
+        "Contract clauses: climate requirements written into supplier contracts earn full points; requirements outside contracts earn partial. A requirement to set a science-based target earns more, as does checking compliance and acting on non-compliance.",
+        "Targets: a Scope 3 purchased goods target and a target for engaging suppliers both score."
+      ]
+    },
+    {
+      "h": "What this means for you",
+      "ol": [
+        "Expect the requests to repeat each year, and to arrive as contract clauses as well as questionnaires.",
+        "Expect questions about your own target. Your customer scores higher if it can show suppliers are asked to set science-based ones.",
+        "Ask what support comes with the request. Training and financial incentives are engagement types your customer can claim, so it has a reason to offer them.",
+        "Send real figures, with the method, rather than a blank. A blank usually leaves your share of its spend on an industry average."
+      ]
+    },
+    {
+      "h": "Whose score this is",
+      "p": [
+        "The Supplier Engagement Assessment grades your customer, not you. Companies answering CDP's SME questionnaire are not eligible for one. CDP keeps these scores private unless the company earns an A, and a place on CDP's Supplier Engagement Leaderboard needs a public response."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A customer close to the 50% line",
+    "lines": [
+      "Your customer collects emissions data from suppliers covering 48% of its spend: 1 of 3 points for information collection.",
+      "Your firm is 4% of its spend and has not answered.",
+      "If you answer, coverage rises to 48% + 4% = 52%: 2 of 3 points for that type, the most the spend share can give.",
+      "That is why one mid-sized supplier's response can get a follow-up call from the customer's procurement head."
+    ],
+    "note": "Spend shares are invented; the 50% line and points are from CDP's 2024 methodology."
+  },
+  "senseible": "Senseible turns your fuel invoices and electricity bills into Scope 1 and 2 figures, each with the factor and the bill behind it, that you can enter in CDP or send to the customer directly. It does not submit to CDP for you.",
+  "links": [
+    { "label": "Send figures your customer can trace", "to": "/scope-3-supplier-evidence" },
+    { "label": "A CDP supply chain request: what to do", "to": "/answers/cdp-supply-chain-request-what-to-do" },
+    { "label": "Who sees your CDP response", "to": "/answers/cdp-supply-chain-who-sees-my-response" },
+    { "label": "Climate clauses in buyer contracts", "to": "/answers/climate-clause-in-buyer-contract-what-to-check" },
+    { "label": "When a buyer asks for your target", "to": "/answers/buyer-asks-supplier-reduction-target" }
+  ],
+  "sources": [
+    {
+      "label": "CDP, 2024 Supplier Engagement Assessment scoring introduction",
+      "url": "https://cdn.cdp.net/cdp-production/cms/guidance_docs/pdfs/000/005/569/original/2024_Supplier_Engagement_Assessment_Scoring_Introduction.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Weights and thresholds are from CDP's 2024 methodology; check the current Supplier Engagement Assessment documents on cdp.net each cycle."
+}

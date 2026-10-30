@@ -1,0 +1,70 @@
+{
+  "slug": "what-cbam-verifier-checks-cement-plant-india",
+  "q": "What does a CBAM verifier check at an Indian cement or clinker plant?",
+  "title": "CBAM verifier checks at a cement plant",
+  "short": "Kiln fuels and raw meal calcination, discarded bypass or kiln dust, grey versus white clinker, the clinker content of each cement checked against your customers' orders, proof behind any zero-rated biomass, and electricity, which counts for cement. The verifier must be accredited for scope I together with LII, indirect emissions.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian integrated cement plants, clinker exporters and grinding units supplying EU importers",
+  "sections": [
+    {
+      "h": "Confirm the verifier's scope before anything else",
+      "p": [
+        "Clinker, cement, aluminous cement and calcined clay sit in CBAM accreditation scope I. Because electricity counts for these goods, a verifier cannot hold scope I without scope LII, indirect emissions. A firm accredited only for steel or aluminium cannot sign your report."
+      ]
+    },
+    {
+      "h": "Kiln and raw mill",
+      "ul": [
+        "Kiln and non-kiln fuels: coal, pet coke, alternative fuels, startup oil, each with its own quantity and carbon content.",
+        "Process CO2 from calcination of limestone and other carbonates in the raw meal.",
+        "Bypass dust or cement kiln dust leaving the kiln system, added back with a correction for how far it was calcined.",
+        "Lab results for fuel and raw meal from an ISO/IEC 17025 accredited lab, or one with equivalent competence, and a sampling plan with enough samples."
+      ]
+    },
+    {
+      "h": "Alternative fuels and biomass",
+      "p": [
+        "Biomass burnt in the kiln is zero-rated only if it meets the EU renewable energy directive (RED II) criteria. The verifier looks for a written procedure and proofs of sustainability from a certification scheme the Commission recognises. Without them, the CO2 from rice husk, agro-waste or the biomass share of RDF is counted, not zero-rated. The fossil share of RDF, such as plastic, always counts."
+      ]
+    },
+    {
+      "h": "Clinker type and clinker content",
+      "ul": [
+        "White clinker means at most 0.4% Fe2O3, 0.003% Cr2O3 and 0.03% Mn2O3 by mass. Everything else is grey. The benchmark is indicator B for white and A for grey.",
+        "Other hydraulic cements under CN 2523 90 00 that blend white clinker with grey clinker or calcined clay take a weighted benchmark that reflects the mix.",
+        "Cement is reported per tonne of clinker content, and the clinker to cement ratio goes to your importer. The verifier may compare it with your customers' purchase orders, so an order for a high-slag cement next to a reported 90% ratio will be questioned.",
+        "Gypsum, slag and fly ash carry zero embedded emissions in the cement calculation."
+      ]
+    },
+    {
+      "h": "Electricity: grid, captive or WHR",
+      "p": [
+        "Grid power for kiln fans and mills is counted at the default factor. To use your own captive plant's or waste heat power's actual figure, the verifier needs a single line diagram showing the direct technical link, and smart meter data at least hourly for both production and delivery."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the clinker balance a verifier reruns at a grinding unit",
+    "lines": [
+      "Opening clinker stock 6,000 t + clinker received 140,000 t = 146,000 t available",
+      "Closing clinker stock 8,000 t, so clinker ground: 146,000 minus 8,000 = 138,000 t",
+      "Cement despatched and in stock, net of change: 200,000 t",
+      "Clinker content: 138,000 / 200,000 = 69%",
+      "If the importer was told 75%, the embedded emissions sent per tonne of cement are overstated by the gap, and the verifier will raise it as a misstatement"
+    ],
+    "note": "Example tonnages. Clinker received from your own kiln or another plant also needs its own verified figure or the default."
+  },
+  "senseible": "Senseible reads coal, pet coke, alternative fuel and power invoices into dated records, and its CBAM Suite builds them into a verifier-ready file, checked in-house line by line. The verification is done by an accredited verifier, Senseible's partner or one you appoint.",
+  "links": [
+    { "label": "Build your cement CBAM file", "to": "/cbam-suite" },
+    { "label": "White or grey clinker benchmark", "to": "/answers/cbam-white-or-grey-clinker-benchmark" },
+    { "label": "Captive power in cement CBAM", "to": "/answers/cement-plant-captive-power-cbam-indirect-emissions" },
+    { "label": "Kiln bypass dust correction", "to": "/answers/cement-kiln-bypass-dust-calcination-correction" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.4.2 (Table 4), 5.3, 7.5, 7.7, 9.2.3 and 9.2.4 (Table 11)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 5a, cement (14 August 2026), sections 2 and 3.1, Table 3-1", "url": "https://taxation-customs.ec.europa.eu/document/download/f87a2022-9dcb-45cb-a415-4c460e5ad672_en?filename=Guidance%20No.%205a%20-%20Sector-specific%20guidance%20document%20on%20cement.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "ireda-rooftop-solar-third-party-ppa-conditions",
+  "q": "What does IREDA require for a rooftop solar project selling power under a private PPA?",
+  "title": "IREDA rooftop solar under a private PPA",
+  "short": "When a developer finances solar on your roof through IREDA and sells you the power, IREDA's norms reach you too: a bank guarantee or revolving letter of credit covering two billing cycles, a roof lease that cannot end mid-loan without paying off the loan, and, as the buyer, a profitable record for the last two financial years.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factory owners offered zero-investment rooftop solar on a power purchase agreement, and the developers financing those portfolios",
+  "sections": [
+    {
+      "h": "Why the developer is asking you for this",
+      "p": [
+        "IREDA lends to the developer, usually under its aggregator category, which needs at least 5,000 kWp in one application with no roof under 20 kWp. The norms then set conditions on every roof lease and private PPA inside that portfolio, so the developer passes them to you as the roof owner and power buyer."
+      ]
+    },
+    {
+      "h": "What the PPA must contain",
+      "ul": [
+        "A payment security mechanism: a bank guarantee or a revolving letter of credit for two billing cycles, assignable to IREDA.",
+        "For portfolios that cross state or discom boundaries on private PPAs: a lock-in of at least 10 years, with the PPA, payment security and termination payments assigned to IREDA.",
+        "One revenue model for all roofs in the application."
+      ]
+    },
+    {
+      "h": "What the roof lease must contain",
+      "ul": [
+        "The legal document proving your ownership of the roof.",
+        "Free access to the roof for the system owner, its contractor and IREDA while the loan runs.",
+        "No termination during the loan except for force majeure or performance; if a termination clause is kept, the termination payment must at least equal the loan outstanding when it is invoked.",
+        "A no-objection letter from any lender with a charge on your building, so IREDA gets an exclusive charge on the solar assets."
+      ]
+    },
+    {
+      "h": "What you must show as the power buyer",
+      "p": [
+        "Under a third-party PPA the norms ask that the offtaker be profitable in its profit and loss accounts for the last two financial years, and set a test of more than 80 percent of sanctioned load demand. The clause is loosely worded, so ask the developer how IREDA applies it to your connection before you sign."
+      ]
+    },
+    {
+      "h": "How long the developer can repay",
+      "p": [
+        "Up to 10 years with a 12-month moratorium from commissioning, and construction within 12 months of first disbursement. Up to 15 years is allowed where at least 80 percent of the private offtakers are rated A- or above. If your company holds a credit rating, the developer may ask for it, since it counts towards the longer repayment."
+      ]
+    }
+  ],
+  "example": {
+    "title": "One factory inside a developer's portfolio (assumed figures)",
+    "lines": [
+      "Sanctioned load 600 kW; highest recorded demand on the last 12 bills 510 kW",
+      "510 / 600 = 85 percent, above the 80 percent mark",
+      "Monthly solar bill from the developer: ₹5 lakh (assumed), so a two-cycle letter of credit = 2 x ₹5 lakh = ₹10 lakh",
+      "Portfolio of 10 buyers seeking 15-year repayment: at least 80% x 10 = 8 buyers rated A- or above"
+    ],
+    "note": "Use your own bills and the developer's quoted tariff. Whether IREDA reads the 80 percent test against demand or units is the question to settle first."
+  },
+  "senseible": "Your electricity bills already show sanctioned load, recorded demand and units each month. Senseible reads them into a 12-month table the developer can use to size the plant and check the 80 percent test, and its green loan check lists what lenders ask next. Senseible does not lend.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "IREDA rooftop solar loan: minimum size",
+      "to": "/answers/ireda-rooftop-solar-loan-minimum-size"
+    },
+    {
+      "label": "Opex solar: who claims scope 2",
+      "to": "/answers/resco-opex-solar-who-claims-scope-2"
+    },
+    {
+      "label": "Leasing your roof to a solar developer",
+      "to": "/answers/lease-roof-to-solar-developer-scope-2-claim"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026, chapter IX rooftop solar scheme: roof lease and private PPA guidelines, payment security for 2 billing cycles, offtaker test, 10-year lock-in, repayment and security creation",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Scheme terms change; re-check chapter IX of IREDA's latest Financing Norms every quarter."
+}

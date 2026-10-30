@@ -1,0 +1,75 @@
+{
+  "slug": "what-cbam-verifier-checks-aluminium-plant-india",
+  "q": "What does a CBAM verifier check at an Indian aluminium smelter or extruder?",
+  "title": "CBAM verifier checks at an aluminium plant",
+  "short": "At a smelter: anode carbon, fuels and PFCs from anode effects, using one of the two PFC methods with documented measurement. At a remelter or extruder: furnace fuel, scrap tonnes and the pre-consumer share, alloy content and proof of where bought billet came from. Power is not counted. The verifier needs scope VII, VIII or both.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian primary smelters, secondary remelters, billet casters and extruders exporting aluminium goods to the EU",
+  "sections": [
+    {
+      "h": "Smelter or remelter: which verifier scope",
+      "ul": [
+        "Unwrought aluminium (CN 7601: ingot, billet, slab): scope VII.",
+        "Aluminium products (bars, profiles, wire, sheet, foil, tubes, structures): scope VIII.",
+        "A plant that casts billet and extrudes it needs a verifier holding both. Ask for the accreditation certificate before you sign."
+      ]
+    },
+    {
+      "h": "At a primary smelter",
+      "ul": [
+        "CO2 from prebaked anodes or anode paste consumed in the pots, and from every fuel burnt on site.",
+        "PFCs (CF4 and C2F6) from anode effects, worked out by the slope method from anode effect minutes per cell-day, or the overvoltage method from anode effect overvoltage. The verifier checks that the pot-line measurement systems behind either method are written into the monitoring plan.",
+        "Benchmark indicator K, primary aluminium, applied to your goods."
+      ]
+    },
+    {
+      "h": "At a remelter, billet caster or extruder",
+      "ul": [
+        "Fuel for scrap preparation, melting, holding, homogenising, billet reheating and ageing, from invoices and tank or cylinder stock.",
+        "Scrap, pre-consumer or post-consumer, carries zero embedded emissions. Bought ingot or billet does not: each lot needs its supplier's verified figure or the default value.",
+        "Benchmark indicator L, secondary aluminium, where scrap is the main input.",
+        "The figures your EU buyer must declare: tonnes of scrap per tonne of product, the share of that scrap that is pre-consumer, and total alloying elements where they exceed 1%."
+      ]
+    },
+    {
+      "h": "Proof of production year for bought metal",
+      "p": [
+        "By default a bought ingot or billet is taken as made in the same year as your goods. To use an earlier year, the verifier may accept a certificate of analysis, or of weight and analysis, if it is clearly linked to the metal, for example by a physical marker. A delivery note dated in the earlier year also works. Evidence from before 2026 is disregarded."
+      ]
+    },
+    {
+      "h": "What the verifier will not count",
+      "p": [
+        "Electricity. Aluminium goods are in Annex II of the CBAM Regulation, so neither grid power nor a captive coal plant enters the embedded emissions. The verifier still reads your power data while checking the energy balance, and buyers asking for a product footprint will still want it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: scrap-based extruder, 2026 profiles under CN 7604 10 90",
+    "lines": [
+      "Furnace oil for melting, holding and billet reheating: 285 L per tonne of profiles x 2.97 kg = 846 kg CO2 per tonne",
+      "Scrap charged: zero embedded emissions",
+      "Electricity: not counted",
+      "Actual figure: about 0.85 t CO2 per tonne",
+      "India default for profiles, 3.444 t, plus the 10% mark-up for 2026: 3.444 x 1.10 = 3.788 t",
+      "On 500 t sent to the EU: (3.788 minus 0.85) x 500 = 1,469 t CO2e less for your buyer to declare"
+    ],
+    "note": "285 L per tonne is an estimate from the TERI profile of Rajkot's extrusion units, with all their fuel taken as furnace oil. Use your own logs. Certificates surrendered also depend on the free allocation adjustment, left out here."
+  },
+  "senseible": "Senseible reads furnace oil, gas and scrap invoices into dated records and its CBAM Suite builds the verifier-ready file by CN code, every number checked in-house first. An accredited verifier signs it off, Senseible's partner or yours.",
+  "links": [
+    { "label": "Build your aluminium CBAM file", "to": "/cbam-suite" },
+    { "label": "Does aluminium CBAM count electricity", "to": "/answers/does-aluminium-cbam-count-electricity" },
+    { "label": "Primary or secondary billet for extruders", "to": "/answers/aluminium-extruder-primary-or-secondary-billet-cbam" },
+    { "label": "India default values for aluminium", "to": "/answers/cbam-default-value-india-aluminium" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1.2, 2.4.2 (Table 4), 5.3, 7.2 and 9.2.4 (Table 11)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Guidance No. 5e, aluminium (14 August 2026), sections 2 and 3.1, Table 3-4", "url": "https://taxation-customs.ec.europa.eu/document/download/590e983b-c937-41ea-bb9f-810c29e70e1e_en?filename=Guidance%20No.%205e%20-%20Sector-specific%20guidance%20document%20on%20aluminium.pdf" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 4.25 on mark-ups", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "TERI, Cluster profile: Rajkot aluminium foundries (SAMEEEKSHA, 2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-aluminium-foundries.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

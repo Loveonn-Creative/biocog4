@@ -1,0 +1,70 @@
+{
+  "slug": "ecovadis-carbon-advanced-leader-requirements",
+  "q": "What does it take to reach Advanced or Leader on the EcoVadis carbon rating?",
+  "title": "EcoVadis carbon: reaching Advanced or Leader",
+  "short": "Advanced, scores 51 to 75, means a comprehensive GHG system that includes publicly reported, third-party verified emissions. Leader, 76 to 100, adds formal absolute Scope 1 and 2 reduction targets and evidence of a science-aligned target, such as SBTi validation. EcoVadis calls third-party verified documents indispensable for the higher levels.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian manufacturers at Beginner or Intermediate on the EcoVadis carbon scorecard",
+  "sections": [
+    {
+      "h": "The five levels and their score ranges",
+      "ul": [
+        "Insufficient: 0, no information on how you manage emissions.",
+        "Beginner: 1 to 20, a few basic elements or reporting practices.",
+        "Intermediate: 21 to 50, core GHG management practices in place.",
+        "Advanced: 51 to 75, a comprehensive system, including public reporting of third-party verified emissions.",
+        "Leader: 76 to 100, everything Advanced needs, plus formal absolute Scope 1 and 2 reduction targets and evidence of science-aligned targets."
+      ]
+    },
+    {
+      "h": "What Advanced asks you to show",
+      "ol": [
+        "An inventory covering at least 95% of the assessed scope. EcoVadis does not credit emissions or energy data below that, so one plant left out can undo the rest.",
+        "A verification statement from an independent verifier for those emissions. EcoVadis records whether data is verified; it does not verify it.",
+        "Public reporting: the verified figures in a report anyone can read, such as a sustainability report on your website.",
+        "Figures from your last two reporting cycles. Older reporting data no longer counts."
+      ]
+    },
+    {
+      "h": "What Leader adds",
+      "ul": [
+        "Absolute targets for Scope 1 and Scope 2. An intensity target alone, such as kg CO2e per piece, does not meet the Leader wording.",
+        "Evidence the target is science-aligned. EcoVadis names SBTi validation as the example and calls a validated science-based target a mandatory prerequisite for Leader.",
+        "If you have no target yet, check whether SBTi's SME route fits your size before you choose a target year."
+      ]
+    },
+    {
+      "h": "Documents that get rejected",
+      "p": [
+        "Every claim needs a document, and EcoVadis rejects documents that are undated, do not name your company, are incomplete, are scanned images rather than digital text, or are 30 MB or larger. An assessment takes at most 55 files, so combine where you can: one inventory report rather than twelve monthly sheets."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Where the points sit for a 120-person forging unit",
+    "lines": [
+      "EcoVadis's formula for small and medium companies outside office work: Targets 25% + Scope 1 and 2 actions 25% + (performance review 30%, reporting practices 20%, monitoring coverage 20%, monitoring system 30%) x 50%.",
+      "So out of 100: Targets 25, Scope 1 and 2 actions 25, performance review 15, monitoring system 15, reporting practices 10, monitoring coverage 10.",
+      "Leave the second plant out of the inventory and coverage falls below 95%: up to 10 points at risk.",
+      "Reporting practices, where verification counts, is 10 points: small in the formula, but EcoVadis defines Advanced as including verified public reporting."
+    ],
+    "note": "Weights from EcoVadis's Carbon Rating methodology v2.0; the indicator scores themselves are set by EcoVadis analysts."
+  },
+  "senseible": "Senseible builds Scope 1 and 2 for every site from your bills, which is what the 95% coverage rule checks. Its Verified status means its rule checks passed against your bills, not independent verification, so for Advanced you still hire an independent verifier.",
+  "links": [
+    { "label": "How Senseible checks each figure", "to": "/trust" },
+    { "label": "EcoVadis carbon scorecard levels", "to": "/answers/ecovadis-carbon-scorecard-levels" },
+    { "label": "Getting a footprint verified", "to": "/answers/buyer-asks-third-party-verified-footprint" },
+    { "label": "SBTi's SME route", "to": "/answers/sbti-sme-route-eligibility" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Carbon Rating methodology disclosure document (v2.0, 2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/05/EcoVadis-Carbon-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items-1.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Re-check level ranges, weights and the Leader prerequisite in each new EcoVadis Carbon Rating methodology version."
+}

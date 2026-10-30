@@ -1,0 +1,90 @@
+{
+  "slug": "ireda-compressed-biogas-loan-satat-conditions",
+  "q": "What does IREDA need to fund a compressed biogas plant under SATAT?",
+  "title": "IREDA loan for a CBG plant under SATAT",
+  "short": "Two signed contracts come first: a CBG sale agreement with an oil marketing company carrying a 100 percent offtake guarantee, and a registered feedstock supply agreement, each running longer than the loan. IREDA then lends up to 70 percent of project cost, repaid over up to 10 years or 80 percent of the sale contract's life, whichever is shorter.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Entrepreneurs holding a SATAT letter of intent and planning a compressed biogas plant on crop residue, press mud, dung or municipal waste",
+  "sections": [
+    {
+      "h": "Contracts IREDA wants before it lends",
+      "ol": [
+        "A contract agreement with an oil marketing company for sale of CBG with a 100 percent offtake guarantee, for a term longer than the loan.",
+        "Legally binding feedstock agreements, with adequate stamp duty and registered at the competent authority's office, covering raw material supply for the whole loan tenure. These must be in place before disbursement.",
+        "All statutory clearances for building and running the plant."
+      ]
+    },
+    {
+      "h": "The loan in numbers",
+      "ul": [
+        "Minimum loan ₹50 lakh, in IREDA's Financing Norms updated to 1 October 2026.",
+        "Up to 70 percent of project cost, with a 70:30 debt to equity ratio and a fixed asset coverage ratio of at least 1.25.",
+        "At least half of the promoters' contribution brought in upfront as pure equity.",
+        "Repayment up to 10 years, excluding moratorium and construction, or 80 percent of the CBG sale contract's life, whichever is less. Moratorium up to 1 year; construction period up to 1.5 years.",
+        "Interest under IREDA's policy, set when the loan is sanctioned."
+      ]
+    },
+    {
+      "h": "Security",
+      "ul": [
+        "Mortgage of the plant's immovable assets and hypothecation of movable assets, existing and future.",
+        "A trust and retention account into which oil marketing company payments are deposited, plus a debt service reserve built up under IREDA's norms.",
+        "One or more collateral options: urban residential or commercial land, a pledge of at least 51 percent of shares, personal or corporate guarantees, or a bank guarantee or fixed deposit of at least 10 percent of the IREDA loan."
+      ]
+    },
+    {
+      "h": "How IREDA tests the cash flow",
+      "p": [
+        "Income from by-products such as manure may be counted, but the plant must still show an annual debt service coverage of at least 1.0 and an average of at least 1.10 over the loan without any by-product sales that are not under contract. Any central or state subsidy is adjusted against the loan, and any interest subsidy is passed on to the project. A lender's independent engineer monitors construction, and you report production and sales to IREDA every month."
+      ]
+    },
+    {
+      "h": "If a bank lends alongside IREDA",
+      "p": [
+        "IREDA's CBG page notes that RBI includes loans to start-ups of up to ₹50 crore for CBG plants in priority sector lending. Securities and terms can be aligned with a lead lender to IREDA's satisfaction."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A ₹30 crore plant with a 10-year sale agreement (assumed figures)",
+    "lines": [
+      "Largest IREDA loan: 70% x ₹30 crore = ₹21 crore",
+      "Promoters' share: ₹30 crore minus ₹21 crore = ₹9 crore, of which at least 50% = ₹4.5 crore as upfront equity",
+      "Repayment cap from the contract: 80% x 10 years = 8 years, shorter than the 10-year limit, so 8 years applies",
+      "Bank guarantee or fixed deposit, if chosen as collateral: at least 10% x ₹21 crore = ₹2.1 crore"
+    ],
+    "note": "The sale agreement must also outlast the whole loan. Ask IREDA how it counts the contract's life against moratorium and construction before you sign the offtake terms."
+  },
+  "senseible": "IREDA asks for production and sales every month for the life of the loan. Senseible reads feedstock purchase invoices, power bills and CBG sale invoices into monthly records, the same records a methane-avoidance carbon credit claim would start from. Senseible does not lend.",
+  "links": [
+    {
+      "label": "Carbon credits for Indian projects",
+      "to": "/carbon-credits"
+    },
+    {
+      "label": "CBG sold under SATAT and carbon credits",
+      "to": "/answers/cbg-sold-under-satat-and-carbon-credits"
+    },
+    {
+      "label": "Green loans for biogas plants",
+      "to": "/answers/green-loan-for-biogas-plant"
+    },
+    {
+      "label": "IREDA biomass pellet loan terms",
+      "to": "/answers/ireda-biomass-pellet-plant-loan-terms"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Compressed Bio Gas (CBG) sector page: SATAT loan scheme eligibility, tenure, 70% limit, upfront equity, security, DSCR test, monthly reporting, RBI priority sector note",
+      "url": "https://www.ireda.in/IredaWebPortal/loan-products/sectors/cbg"
+    },
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026, chapter XXVIII CBG under SATAT: ₹50 lakh minimum loan, registered feedstock agreements before disbursement, 1.25 fixed asset coverage",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Scheme terms change; re-check IREDA's CBG page and latest Financing Norms every quarter."
+}

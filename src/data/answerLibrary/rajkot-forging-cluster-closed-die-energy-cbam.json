@@ -1,0 +1,68 @@
+{
+  "slug": "rajkot-forging-cluster-closed-die-energy-cbam",
+  "q": "Where does Rajkot's forging energy go, and what does CBAM need from a forging exporter?",
+  "title": "Rajkot forging energy and CBAM",
+  "short": "Mostly into closed die forging: 47,342 of the cluster's 62,365 toe a year, about 76%, largely furnace oil in box furnaces. For CBAM, only forgings under covered codes such as flanges (7307) or forged articles (7326) count, and the figure is your bought bar plus your furnace fuel. Electricity is left out.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Closed die forging and ring rolling units in Rajkot, Shapar-Veraval, Lodhika and Aji exporting to the EU",
+  "sections": [
+    {
+      "h": "The cluster's energy, by fuel and by process",
+      "ul": [
+        "About 140 units: 90 closed die forging (about 268,500 t a year) and 50 ring rolling (about 165,700 t).",
+        "62,365 toe a year: furnace oil 25,163 kL (40%), electricity 262.8 million kWh (36%), natural gas 16.1 million scm (22%), plus LDO and briquettes.",
+        "Closed die forging units use 47,342 toe; ring rolling units 15,024.",
+        "Closed die shops heat billets in oil-fired box furnaces at 100 to 200 litres per tonne. Ring rollers mostly use induction heaters at 450 to 500 kWh per tonne."
+      ]
+    },
+    {
+      "h": "Is your forging a CBAM good?",
+      "ul": [
+        "Flanges and pipe fittings under 7307, forged articles not further worked under 7326 19, and forged bars in chapter 72: covered.",
+        "Crown wheels, gears and shafts under 8483, axle and steering parts under 8708, bearing races under 8482: not covered today.",
+        "Most Rajkot output goes to auto and engineering OEMs, so ask each EU buyer for the CN code before building any CBAM data."
+      ]
+    },
+    {
+      "h": "What the CBAM figure is made of",
+      "ol": [
+        "The bars or billets you bought, at each mill's verified figure per tonne or the default value, multiplied by the tonnes of bar used per tonne of good forgings.",
+        "Fuel burnt in your forging and heat treatment furnaces: oil, LDO, gas or LPG.",
+        "Nothing for electricity, because iron and steel goods count direct emissions only."
+      ]
+    },
+    {
+      "h": "Why the furnace choice moves the CBAM figure",
+      "p": [
+        "A billet heated in an oil furnace adds its oil to the CBAM figure. The same billet heated by induction adds nothing, because power is not counted for steel. Your buyers' product footprint requests still count that electricity, so the switch helps CBAM more than it helps a full footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of flanges, CN 7307 91 00, shipped in 2026",
+    "lines": [
+      "Bar used: 1.15 t per tonne of flanges; mill's verified figure 2.50 t CO2e per tonne of bar: 1.15 x 2.50 = 2.875 t",
+      "Box furnace: 150 L furnace oil per tonne x 2.97 kg = 0.446 t",
+      "Actual figure: 2.875 + 0.446 = 3.32 t CO2e per tonne",
+      "India default for 7307 91 00 with the 2026 mark-up: 4.280 x 1.10 = 4.708 t",
+      "Gap on 100 t: (4.708 minus 3.32) x 100 = about 139 t CO2e"
+    ],
+    "note": "The yield of 1.15 and the mill figure of 2.50 are examples; 150 L is the middle of TERI's range. Without a verified bar figure, your bar enters at its default too."
+  },
+  "senseible": "Senseible reads bar purchase invoices, furnace oil and gas bills into dated records per month, and its CBAM tools turn them into a per-tonne figure by CN code with the bar supplier's data kept beside it.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Are steel forgings covered", "to": "/answers/are-steel-forgings-covered-by-cbam" },
+    { "label": "Induction heater vs oil furnace", "to": "/answers/induction-billet-heater-vs-oil-fired-forging-furnace" },
+    { "label": "Mill certificate CO2 for a forging", "to": "/answers/steel-mill-certificate-co2-for-forged-part" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Rajkot forging industries (SAMEEEKSHA, 2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/Rajkot-Forging-Industries-Gujarat.pdf" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated, Annexes I and II", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 4.25 on mark-ups", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI profile data is from 2016. Recheck the default values and whether the 2028 downstream extension brings machined parts in."
+}

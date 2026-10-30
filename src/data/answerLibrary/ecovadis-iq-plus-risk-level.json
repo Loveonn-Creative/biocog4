@@ -1,0 +1,67 @@
+{
+  "slug": "ecovadis-iq-plus-risk-level",
+  "q": "Our buyer has an EcoVadis risk level for us though we never filled anything. How?",
+  "title": "EcoVadis risk level without a questionnaire",
+  "short": "That is EcoVadis IQ Plus. It rates suppliers without contacting them, from your industry and country plus your buyer's own spend and criticality data, on six levels from Very Low to Very High. Policies and certificates on your website can only lower it. Results refresh twice a year.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSME suppliers whose buyer quotes an EcoVadis risk level",
+  "sections": [
+    {
+      "h": "How the level is built",
+      "ul": [
+        "Sustainability risk, 70%: for each theme, half from your industry's typical impacts and half from your country's risk indicators, such as water stress and rule of law. Sustainable procurement has no country part.",
+        "Procurement risk, 30%: your buyer's own data, such as how much it spends with you and how critical you are. If the buyer gives none, sustainability risk counts 100%.",
+        "Scan risk: an adjustment from your public documents, explained below. It can only lower the result.",
+        "EcoVadis does not tell you it has rated you, and nobody visits."
+      ]
+    },
+    {
+      "h": "The one part you control: your website",
+      "p": [
+        "EcoVadis's Doc Scan tool reads your company website for policies and certificates. Each document is scored on its type, how recent it is and how many issues it covers. Certificates count for up to 4 years and policies for up to 8.",
+        "The scan risk drops one level if a sustainability report is available. If the scan risk ends Very Low or Low, your overall risk falls by two levels. If nothing is found, the scan has no effect, so a missing website does not raise your risk."
+      ]
+    },
+    {
+      "h": "What to publish, and how",
+      "ol": [
+        "An environmental policy, a health and safety policy, a code of ethics or anti-bribery policy, and a supplier code, each dated and signed.",
+        "Current certificates, such as ISO 14001 and ISO 45001, with expiry dates visible.",
+        "A sustainability report with your energy, emissions and safety figures for the year.",
+        "Your company's legal name in the text of each PDF, and digital text rather than scanned images, so the tool can read it."
+      ]
+    },
+    {
+      "h": "What each level means for you",
+      "p": [
+        "At Very Low or Low, EcoVadis tells the buyer a full rating is not urgent. From Medium Low upward it recommends the buyer engage you, including through a full EcoVadis rating, and at High and Very High it calls that critical or essential. So a rating invitation may follow; fix what you can before it arrives."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Surat dyeing unit's level",
+    "lines": [
+      "Textile wet processing in India, a large share of the buyer's fabric spend: initial overall risk Medium High (4).",
+      "Website today: a product brochure, no policies. Scan finds nothing, so no change: Medium High.",
+      "After publishing a dated environment policy, safety policy, ISO 14001 certificate and a short sustainability report: scan risk Low.",
+      "Overall risk falls two levels to Low (2) at the next twice-yearly update."
+    ],
+    "note": "The starting level and scan result are invented; the two-level drop for a Low scan risk is EcoVadis's published rule."
+  },
+  "senseible": "IQ Plus reads public documents, not emission figures, so Senseible does not change the level directly. The energy and emissions figures in a short sustainability report can come from Senseible, worked out from your bills with the bill behind each one.",
+  "links": [
+    { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
+    { "label": "If your buyer sends Vitals next", "to": "/answers/ecovadis-vitals-questionnaire" },
+    { "label": "Saying no to an EcoVadis request", "to": "/answers/decline-ecovadis-assessment-request" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, IQ Plus methodology disclosure document (v3.0)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/05/EcoVadis-IQ-Plus-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items-1.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Re-check the risk weights and scan risk adjustments in each new IQ Plus methodology version."
+}

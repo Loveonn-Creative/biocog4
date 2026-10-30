@@ -1,0 +1,80 @@
+{
+  "slug": "ecovadis-carbon-data-reliability-levels",
+  "q": "How does EcoVadis grade how reliable my carbon figures are?",
+  "title": "How EcoVadis grades your carbon figures",
+  "short": "Each carbon figure you report gets one of four levels: Low, Medium, High or Third-Party Verified. EcoVadis checks evidence first, then accounting rigor, then plausibility against industry benchmarks. High needs documented, GHG Protocol-aligned figures; only figures checked by an independent auditor reach the top level.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian MSME suppliers reporting emissions to buyers through EcoVadis",
+  "sections": [
+    {
+      "h": "The three checks, in order",
+      "ol": [
+        "Evidence: is the figure backed by a document, such as an inventory report, a CDP response or a sustainability report?",
+        "Rigor: was it calculated in line with the GHG Protocol, and has it been verified by a third party?",
+        "Plausibility: does it look realistic against benchmarks for your industry, or does it stand out as a statistical outlier?"
+      ]
+    },
+    {
+      "h": "What each level tells your buyer",
+      "ul": [
+        "Third-Party Verified: checked by an independent auditor. Recommended for external reporting and Scope 3.",
+        "High: documented and GHG Protocol-aligned. Also recommended for external reporting and Scope 3, so a buyer can use it in place of an industry average.",
+        "Medium: partly follows good practice. Fit for internal tracking only.",
+        "Low: not enough evidence, or fails the statistical checks. Not for external reporting; needs correction.",
+        "EcoVadis notes it identifies verified data but does not act as the auditor."
+      ]
+    },
+    {
+      "h": "Why an Indian supplier's figure stalls at Low or Medium",
+      "ul": [
+        "A total with no inventory document behind it.",
+        "No year, boundary or method stated, so rigor cannot be judged.",
+        "Factors not named. Say which grid factor and which fuel factors you used, and where they come from.",
+        "Generator diesel or a second site left out, so the total looks low for your industry and output.",
+        "Scope 2 given as one number. Since May 2026 EcoVadis asks for location-based and market-based separately, and grades the reliability of each."
+      ]
+    },
+    {
+      "h": "Moving a figure from Medium to High",
+      "ol": [
+        "Write a short inventory report: year, sites covered, method (GHG Protocol), each fuel and electricity line with quantity, factor and source.",
+        "Keep the bills behind every line, in case a reviewer asks.",
+        "Add a sentence explaining anything unusual, such as a new furnace or a month of shutdown, so the plausibility check has context.",
+        "For Third-Party Verified, have the inventory verified by an independent body and upload the statement."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Inventory lines that pass evidence and rigor",
+    "lines": [
+      "Grid electricity: 9,00,000 kWh x 0.675 kg CO2/kWh (CEA, FY 2025-26) = 607.5 t CO2.",
+      "Diesel for generators: 40,000 L x 2.645 kg/L (IPCC) = 105.8 t CO2.",
+      "Piped natural gas: 3,00,000 scm x 2.05 kg/scm = 615.0 t CO2.",
+      "Total Scope 1 and 2: 1,328.3 t CO2, with 24 monthly power bills, 18 diesel invoices and 12 gas bills behind it."
+    ],
+    "note": "Quantities are invented; factors are the ones Senseible applies."
+  },
+  "senseible": "Senseible's records give the first two checks what they look for: each figure tied to its bill, with the factor and its source. Its Verified status means its rule checks passed; it is not independent verification, so on its own it cannot earn EcoVadis's Third-Party Verified level.",
+  "links": [
+    { "label": "How Senseible checks each figure", "to": "/trust" },
+    { "label": "Carbon evidence EcoVadis asks for", "to": "/answers/ecovadis-carbon-questions-what-evidence" },
+    { "label": "Location and market-based Scope 2", "to": "/answers/buyer-asks-location-and-market-based-scope-2" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Carbon Data Reliability Levels",
+      "url": "https://ecovadis.com/solutions/ecovadis-carbon-data-reliability-levels/"
+    },
+    {
+      "label": "EcoVadis Help Center, Methodology Updates Q1 2026 (Scope 2 split and reliability levels)",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/34621845310994-Methodology-Updates-Q1-2026"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian power sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}

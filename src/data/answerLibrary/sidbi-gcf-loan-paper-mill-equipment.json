@@ -1,0 +1,85 @@
+{
+  "slug": "sidbi-gcf-loan-paper-mill-equipment",
+  "q": "Which paper mill upgrades qualify for SIDBI's Green Climate Fund loan?",
+  "title": "SIDBI GCF loan: paper mill upgrades",
+  "short": "SIDBI's September 2026 assessment for pulp and paper lists 43 technologies its Green Climate Fund programme can finance, from high-efficiency refiners, shoe presses and drum pulpers to fluidised bed boiler conversions and condensate recovery. Mill equipment is Category B and needs a site-specific plan; effluent treatment, ZLD and captive solar are low-risk Category C.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Owners and engineers of agro-residue, wood and waste-paper based paper and board mills",
+  "sections": [
+    {
+      "h": "The list, by mill section",
+      "ul": [
+        "Pulping: high concentration pulper, hi-consistency pulper, drum pulpers, bleached chemi-thermo-mechanical pulp, extended delignification for wood cooking.",
+        "Refining and screening: high-efficiency refiner, low consistency refining, multi-functional combined screen, and punched metal and slit screens with a maceration machine for waste paper.",
+        "Pressing and drying: shoe press, high-concentration size press, pocket ventilation, dryer bars inside the dryers.",
+        "Drives: VFDs replacing Dyna drives, AC drives for the paper machine and winder, rewinders with VFD controls, vacuum blowers.",
+        "Steam and heat: conversion from stoker to fluidised bed boiler, boilers fired on paper sludge and other solid waste, heat recovery boilers, steam recompression heat pump, cascaded condensate recovery, seven-effect falling film evaporator, oxyfuel burner.",
+        "Chemical recovery and washing: recovery unit for spent liquor, black liquor gasification, modern brownstock washers, screw washer.",
+        "All of the above are Category B. Category C: captive solar within the mill, electric vehicles and charging, effluent treatment or ZLD, rainwater harvesting and green buildings."
+      ]
+    },
+    {
+      "h": "Your mill's CPCB colour",
+      "ul": [
+        "Agro and wood based pulp and paper, bleached or unbleached: Red.",
+        "Waste-paper based with bleaching: Red.",
+        "Waste-paper based without bleaching, 15 tonnes a day or more: Red; below 15 tonnes a day: Orange.",
+        "Corrugated boxes and paper products without pulping or boilers: White."
+      ]
+    },
+    {
+      "h": "What SIDBI checks before sanction",
+      "p": [
+        "Before sanction SIDBI's officer and environmental expert verify that your Consent to Establish, Consent to Operate and factory licence are valid. Category B projects then go through detailed due diligence and carry a site-specific environmental and social management plan. A Red category mill with a lapsed consent should renew it before applying, because a lapsed consent stops the file before the upgrade is even assessed."
+      ]
+    },
+    {
+      "h": "Choosing what to put in the application",
+      "p": [
+        "The list is indicative, and the final category is decided case by case after a site visit. Pick the upgrade whose saving you can show from your own records: refiners, drives and vacuum systems show up in the power bill, while boiler conversions and condensate recovery show up in coal or biomass per tonne of paper."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Low consistency refining at a 60 tonne a day kraft mill (assumed figures)",
+    "lines": [
+      "Mill type: waste-paper kraft, unbleached, 60 tonnes a day, so Red category (15 tonnes a day or more)",
+      "Refining power: 80 kWh per tonne now, 60 kWh per tonne after (use the supplier's guarantee)",
+      "Power saved: 20 kWh x 60 tonnes x 330 days = 3,96,000 kWh a year",
+      "CO2 avoided: 3,96,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 2,67,300 kg, about 267 tonnes a year"
+    ],
+    "note": "If the refiners are not separately metered, a month of sub-meter readings before the change gives the before figure SIDBI will want."
+  },
+  "senseible": "Senseible reads your power bills and coal or biomass invoices into kWh and fuel per tonne of paper, month by month: the baseline a refiner, drive or boiler upgrade is measured against, and the after figure once it runs. SIDBI decides the loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Paper mill carbon footprint per tonne",
+      "to": "/answers/paper-mill-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Is a paper mill covered by CCTS?",
+      "to": "/answers/is-a-paper-mill-covered-by-ccts"
+    },
+    {
+      "label": "Finance for ETP or ZLD upgrades",
+      "to": "/answers/green-loan-for-etp-or-zld-upgrade"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Direct Finance, Pulp and Paper sector (2 September 2026): 43-item technology list with categories, CPCB classification table, pre-sanction consent checks",
+      "url": "https://www.sidbi.in/assets/front/pdf/Pulp_and_Paper_English.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "SIDBI revises its sector assessments; re-check the Green Pathways e-series page every quarter."
+}

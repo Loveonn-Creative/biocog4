@@ -1,0 +1,74 @@
+{
+  "slug": "ludhiana-knitwear-cluster-boiler-fuels-buyer-data",
+  "q": "Ludhiana's knitwear MSMEs: what do their boilers burn, and what will export buyers ask for?",
+  "title": "Ludhiana knitwear boilers and buyer data",
+  "short": "Wood, rice husk, pet coke and diesel, raising steam for dyeing yarn and fabric, across a cluster of about 14,000 MSMEs, 70% of them micro. Export buyers ask for fuel and power use by month, Scope 1 and 2 totals, and output, so pet coke against husk is the choice that moves your number most.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Knitwear makers, dyers and processors in Ludhiana selling to export brands or exporters",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "About 14,000 MSME units: 9,800 micro, 2,800 small and 1,400 medium.",
+        "Knitwear makers and exporters at the core, backed by spinners, dyers and job knitters.",
+        "Dyeing, processing and spinning units use the most energy; printing uses less.",
+        "Electricity runs compressors, motors and lighting. Steam for dyeing comes from boilers burning wood, rice husk, pet coke or HSD."
+      ]
+    },
+    {
+      "h": "What a buyer's supplier form usually asks",
+      "ul": [
+        "Fuel burnt each month by type, in tonnes or litres, and electricity in kWh, for the last full year.",
+        "Scope 1 and Scope 2 totals in tonnes CO2e, and the factors used.",
+        "Output in kg or pieces, so they can work out a figure per unit.",
+        "Any solar or renewable power, with bills or certificates.",
+        "For biomass: where it comes from and whether it is a residue, such as husk, or wood."
+      ]
+    },
+    {
+      "h": "How each boiler fuel is counted",
+      "ul": [
+        "Pet coke and HSD: fossil CO2 in Scope 1. Pet coke is about 3.17 t CO2 per tonne on IPCC defaults.",
+        "Rice husk and wood: the CO2 is biogenic and reported separately, outside the scopes. Methane and nitrous oxide from burning stay in Scope 1, a few tonnes CO2e per 100 t.",
+        "Buying steam from a neighbour: Scope 2, using the supplier's fuel data."
+      ]
+    },
+    {
+      "h": "Get ready in a month",
+      "ol": [
+        "Collect 12 months of fuel bills and weighbridge slips for husk, wood and coke, and every power bill.",
+        "Note boiler-house stock at each month end, so you count fuel burnt, not fuel bought.",
+        "Record kg of fabric dyed or pieces made each month.",
+        "Keep a supplier note for husk or wood showing its source.",
+        "Fix boiler losses first: SIDBI-supported energy audits in the cluster found boilers the biggest saving: an estimated Rs 26.6 lakh a year at one unit for a Rs 4.5 lakh investment."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of pet coke against 100 t of rice husk",
+    "lines": [
+      "Pet coke: 100 t x 32.5 GJ per t = 3.25 TJ x 97.5 t CO2 per TJ = 317 t CO2 in Scope 1",
+      "Rice husk: 100 t x 11.6 GJ per t = 1.16 TJ",
+      "Husk methane: 1.16 x 30 kg = 34.8 kg x 27 = 0.94 t CO2e; nitrous oxide: 1.16 x 4 kg = 4.6 kg x 273 = 1.27 t CO2e",
+      "Husk Scope 1: about 2.2 t CO2e; biogenic CO2 reported separately: 1.16 x 100 = 116 t",
+      "Husk gives less heat per tonne, so you need about 2.8 t of husk for the heat of 1 t of pet coke; even then Scope 1 stays near 6 t against 317"
+    ],
+    "note": "IPCC 2006 default net calorific values and factors for manufacturing, with AR6 warming potentials (27 for non-fossil methane, 273 for nitrous oxide). Use your fuel's own lab values if you have them."
+  },
+  "senseible": "Senseible reads fuel invoices and power bills into a monthly record traced to each document, so the fuel, power and Scope 1 and 2 figures a buyer's form asks for come from your own papers.",
+  "links": [
+    { "label": "Supplier evidence for your buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Biomass or waste fuel in a boiler", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },
+    { "label": "Carbon per garment for a hosiery unit", "to": "/answers/ludhiana-hosiery-unit-carbon-per-garment" },
+    { "label": "Biomass supplier evidence", "to": "/answers/biomass-fuel-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA, Cluster profile: Ludhiana knitwear cluster (2011)", "url": "https://sameeeksha.org/pdf/clusterprofile/Ludhiana_knitwear_cluster.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Tables 1.2, 1.4 and 2.3", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "IPCC AR6 WG1, global warming potentials", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster profile is from 2011. Update if a newer Ludhiana knitwear profile is published."
+}

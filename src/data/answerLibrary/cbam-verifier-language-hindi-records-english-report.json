@@ -1,0 +1,79 @@
+{
+  "slug": "cbam-verifier-language-hindi-records-english-report",
+  "q": "Our records are in Hindi or Gujarati. Can a CBAM verifier work with them, and in what language is the report?",
+  "title": "CBAM verifier language and your records",
+  "short": "Yes. Every CBAM verification team must include at least one auditor who can communicate in your language, or use an interpreter at the verifier's own risk. The lead auditor and the independent reviewer work in English, and the verification report is issued in English. Only the English version counts for your EU buyer.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian CBAM goods producers whose logbooks, registers and staff work in Hindi, Gujarati, Marathi, Tamil, Odia or another language",
+  "sections": [
+    {
+      "h": "What the rules require of the team",
+      "ul": [
+        "One CBAM lead auditor who can communicate effectively in English.",
+        "At least one CBAM auditor who can communicate effectively in the operator's language.",
+        "An independent reviewer, who checks the draft report before it is signed, able to work in English.",
+        "An interpreter is allowed. The verifier carries that risk and remains responsible for translation quality."
+      ]
+    },
+    {
+      "h": "What this means on the shop floor",
+      "p": [
+        "Your furnace operator can explain the shift log in Gujarati and your store keeper can walk the auditor through a Hindi stock register. You do not have to translate every logbook. The auditor who speaks the language reads them, interviews staff and records the evidence for the team."
+      ]
+    },
+    {
+      "h": "What to have in English anyway",
+      "ul": [
+        "The emissions report, in the Commission's Excel template, since the lead auditor, the reviewer and your buyer all read it.",
+        "The monitoring plan, so the lead auditor and reviewer can check it against the rules without waiting for translation.",
+        "For a first verification of an unregistered operator: your company registration certificate, ideally in the original with an English courtesy translation, and company details in Latin characters.",
+        "Short English notes on any register a sampled figure comes from, so the reviewer can follow the trail."
+      ]
+    },
+    {
+      "h": "Ask before you sign the contract",
+      "ol": [
+        "Name the auditor on the team who speaks your plant's language.",
+        "If an interpreter will be used, who supplies and pays for them.",
+        "Whether the site visit plan allows time for interviews in your language."
+      ]
+    },
+    {
+      "h": "The report",
+      "p": [
+        "The verifier may draft the report in another language and translate it, but must tell you that the English version is the legally relevant one. Importers and EU authorities read only that version, so check the English text, especially the statement and the findings list, before you send it to buyers."
+      ]
+    }
+  ],
+  "senseible": "Senseible links each figure to the original invoice or bill with its quantity, unit and factor, so the auditor who reads your language and the lead auditor who reads English follow the same trail. Every figure is checked in-house; the verification itself is done by an accredited verifier, Senseible's partner or yours.",
+  "links": [
+    {
+      "label": "Prepare your verifier file",
+      "to": "/cbam-suite"
+    },
+    {
+      "label": "Invoices in a regional language",
+      "to": "/answers/invoice-in-regional-language-carbon-records"
+    },
+    {
+      "label": "Checks before a verifier accepts",
+      "to": "/answers/cbam-verifier-pre-contract-checks-before-accepting"
+    },
+    {
+      "label": "What the verification report contains",
+      "to": "/answers/cbam-verification-report-what-it-contains"
+    }
+  ],
+  "sources": [
+    {
+      "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 5.19",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf"
+    },
+    {
+      "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.2, 4.15 (footnote 76), 7.1 and Annex II (Table 12)",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}

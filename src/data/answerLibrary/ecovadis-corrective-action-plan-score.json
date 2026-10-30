@@ -1,0 +1,66 @@
+{
+  "slug": "ecovadis-corrective-action-plan-score",
+  "q": "Will an EcoVadis corrective action plan improve our score?",
+  "title": "Does an EcoVadis action plan lift your score?",
+  "short": "Not by itself. EcoVadis does not review your Corrective Action Plan, and it does not change your current scorecard. Only a reassessment, which is a completely new analysis, can raise the score. The plan still matters: buyers watch it, and the documents you add carry into your next questionnaire.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME suppliers with a published EcoVadis scorecard",
+  "sections": [
+    {
+      "h": "What the plan does do",
+      "ul": [
+        "Every improvement area on your sustainability or carbon scorecard appears as a corrective action marked Not started.",
+        "Your buyers see each action's status and your action plan, but not documents you mark Private.",
+        "A buyer can request a specific action, with an optional due date and a message. Each buyer sees only its own requests."
+      ]
+    },
+    {
+      "h": "What carries into the reassessment",
+      "ul": [
+        "Every document you upload to the plan goes into your Document library, and you keep access to the plan even after the scorecard or subscription expires.",
+        "Basic plan: you must link those documents to the right questions yourself during the reassessment.",
+        "Premium plan or higher: you see which questionnaire question each action relates to, why earlier documents were rejected, and can link new documents to the answer now, ready for the reassessment."
+      ]
+    },
+    {
+      "h": "Which action to take first",
+      "p": [
+        "Priority reflects impact on your score. On the carbon scorecard, the reporting area weighs 50%, so high-priority reporting actions come first. Two that EcoVadis gives as examples: set up a company-level GHG inventory under the GHG Protocol or another standard, and monitor emissions for your entire scope."
+      ]
+    },
+    {
+      "h": "Keep the statuses honest",
+      "ol": [
+        "Move an action to In progress as soon as you start collecting documents. Buyers read it as movement.",
+        "Fill in the action plan: who owns it, the due date, the steps. You can edit it only while the status is In progress.",
+        "Archive actions you will not take. Leaving them at Not started suggests you plan to.",
+        "Reply to buyer requests in the chat on the action, so the conversation stays with the evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Pune sheet-metal supplier's year",
+    "lines": [
+      "March 2026: scorecard published. Carbon improvement area: set up a company-level GHG inventory.",
+      "April 2026: the buyer requests that action with a due date of 30 September. Status moved to In progress, owner and steps added.",
+      "July 2026: FY 2025-26 inventory for both plants uploaded and linked. Status: Completed.",
+      "Score until then: unchanged. The new inventory counts only when the reassessment runs, planned for February 2027."
+    ],
+    "note": "Dates are an example; your scorecard shows your own improvement areas."
+  },
+  "senseible": "The carbon action most suppliers see first is a company-level GHG inventory. Senseible builds Scope 1 and 2 for every site from your bills, a document you can upload against that action and reuse at reassessment.",
+  "links": [
+    { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
+    { "label": "Scorecard expiry and reassessment", "to": "/answers/ecovadis-scorecard-expiry-reassessment" },
+    { "label": "Carbon evidence EcoVadis asks for", "to": "/answers/ecovadis-carbon-questions-what-evidence" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis Help Center, How to use the Corrective Action Plan feature",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/360025780871-How-to-use-the-Corrective-Action-Plan-feature"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}
