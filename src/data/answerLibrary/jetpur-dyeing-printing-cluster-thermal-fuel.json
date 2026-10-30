@@ -1,0 +1,70 @@
+{
+  "slug": "jetpur-dyeing-printing-cluster-thermal-fuel",
+  "q": "Jetpur's dyeing and printing units get 84% of their energy from heat: what does the cluster burn?",
+  "title": "Jetpur printers: what the cluster burns",
+  "short": "Mostly biomass briquettes and lignite. TERI's 2015 profile puts Jetpur's 1,120 dyeing and printing units at 101,387 toe a year: 140,880 t of briquettes, 90,000 t of lignite, 6,420 t of wood and 111.7 million kWh. Lignite and grid power are the fossil CO2; briquettes and wood are biogenic.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cold table, hot table and process house printing units in Jetpur, Rajkot district",
+  "sections": [
+    {
+      "h": "Who burns what",
+      "ul": [
+        "880 micro units printing up to 3,000 m a day, 220 small units up to 20,000 m, and 20 medium units up to 100,000 m, plus about 500 ancillary units. Together about 2 million metres of printed cloth a day.",
+        "Cotton sarees still lead; khanga and kitange cloth for African buyers is the big export line.",
+        "70 to 80% of micro and small units print on job work, on cloth that traders supply.",
+        "Cold table units run on power alone. Hot table units fire thermic fluid heaters with wood. Process houses with flat-bed printing machines burn lignite and briquettes in boilers and thermopacs."
+      ]
+    },
+    {
+      "h": "Typical units from TERI's profile",
+      "ul": [
+        "Cold table: 15,003 kWh a year, 7.4 toe per million metres.",
+        "Hot table: 91,430 kWh and 107 t of wood, 45.3 toe per million metres.",
+        "Hot table with an automatic printing machine: 223,890 kWh and 318 t of briquettes, 63.7 toe per million metres.",
+        "Process house: 2.86 million kWh, 4,500 t of lignite and 4,500 t of briquettes, 209 toe per million metres."
+      ]
+    },
+    {
+      "h": "Turning the fuel into CO2",
+      "p": [
+        "Lignite counts in full in Scope 1. Without your own lab report, the IPCC default works out to about 1.20 t CO2 per tonne; with a report, use its carbon content. Briquettes and wood are biogenic: report their CO2 separately, outside Scope 1. Grid power is Scope 2. So two process houses with the same output can show very different fossil figures depending on their lignite to briquette mix."
+      ]
+    },
+    {
+      "h": "Savings TERI listed",
+      "ul": [
+        "Economiser plus condensate recovery on process house boilers, feed water up to 90 °C: about 10% fuel.",
+        "Waste heat recovery on hot table thermopacs: 5 to 8%. Better insulation on heaters and pipes: 3 to 5%.",
+        "Solar water heaters for colour and gum preparation: 4 to 6%. A switch to natural gas: 7 to 10%.",
+        "Keep fuel covered. Most units store it in the open, and wet fuel burns badly."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: TERI's typical process house",
+    "lines": [
+      "Lignite: 4,500 t x 1.202 = 5,409 t CO2",
+      "Power: 2,858,965 kWh x 0.675 = 1,930 t CO2",
+      "Fossil total about 7,339 t; the 4,500 t of briquettes are reported separately as biogenic",
+      "Output: 3,756 toe at 209 toe per million metres = about 18 million metres a year",
+      "Per metre: 7,339,000 kg / 18,000,000 m = about 0.41 kg CO2",
+      "If the 10% fuel saving comes off lignite: 450 t less, about 541 t CO2 a year"
+    ],
+    "note": "Lignite at the IPCC 2006 default (11.9 GJ per t x 101 kg CO2 per GJ); power at Senseible's FY 2025-26 grid factor. TERI's figures are from 2015."
+  },
+  "senseible": "Each month's power bills and fuel slips become records in Senseible, and the unit gets its carbon number. It does not guess a lignite factor: lignite lines are flagged rather than given a made-up number, while power is counted straight away and briquettes are treated as biogenic.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Jetpur unit boiler CO2", "to": "/answers/jetpur-dyeing-printing-unit-coal-boiler-co2" },
+    { "label": "Briquette for a tonne of coal", "to": "/answers/how-much-briquette-replaces-a-tonne-of-coal" },
+    { "label": "Lignite power and CO2", "to": "/answers/barmer-lignite-power-plant-co2-per-kwh" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Jetpur textile industries (SAMEEEKSHA, 2015)", "url": "https://sameeeksha.org/pdf/clusterprofile/Jetpur_Textiles_Gujarat.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 1, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard, chapters 4 and 9", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2015. Recheck if a newer Jetpur profile is published."
+}

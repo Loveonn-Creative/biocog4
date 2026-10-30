@@ -1,0 +1,63 @@
+{
+  "slug": "can-cbam-verifier-outsource-work-to-indian-branch",
+  "q": "Can an EU CBAM verifier send staff from an Indian branch to verify us?",
+  "title": "CBAM verifier using an Indian branch",
+  "short": "Partly. An accredited CBAM verifier may outsource some verification work to another body, such as a local branch or subsidiary, with your consent and a binding contract. It keeps full responsibility and may not outsource the independent review or the issuing of the report. Hiring an individual expert is not outsourcing.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian plants offered a CBAM verification by an EU accredited verifier that plans to use its Indian branch or a local partner",
+  "sections": [
+    {
+      "h": "What the rules allow",
+      "p": [
+        "The Commission's Questions and Answers say an accredited CBAM verifier may outsource certain verification activities to another body within the limits of the accreditation rules and EN ISO 14065. The verifier needs a written procedure for outsourcing, independent evidence that the branch meets the ISO requirements on competence, impartiality and confidentiality and knows the CBAM rules, and a legally enforceable contract with it. You, the operator, must agree."
+      ]
+    },
+    {
+      "h": "What only the accredited verifier can do",
+      "ul": [
+        "Carry full responsibility for the verification and the report, whatever the branch did.",
+        "Run the independent review of the draft report and evidence.",
+        "Issue the verification report.",
+        "Make sure the whole team meets the impartiality and independence rules for your plant."
+      ]
+    },
+    {
+      "h": "An individual expert is different",
+      "p": [
+        "If the verifier contracts a person, say a process engineer who knows rotary kilns or ammonia units, to join its team under its own management system, that is not outsourcing. Your consent rules for outsourcing do not apply, but the person still has to be independent of your plant."
+      ]
+    },
+    {
+      "h": "Before you sign the consent",
+      "ul": [
+        "Ask which activities go to the branch, by name: site visit, data sampling, interviews.",
+        "Ask who the CBAM lead auditor is and which company employs them.",
+        "Check the branch has not advised you or prepared your figures. A verifier must stay out of developing your monitoring and reporting.",
+        "Expect the verifier's accreditation body to check the outsourced work, possibly at the branch's own premises, during its surveillance."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: who may do what on one engagement",
+    "lines": [
+      "Site visit and data sampling at your plant: the Indian branch, under contract, with your written consent",
+      "Strategic analysis, risk analysis and verification plan: the accredited verifier, which may use the branch's input",
+      "Independent review of the draft: the accredited verifier's own reviewer only",
+      "Creating and issuing the report in the CBAM Registry: the accredited verifier only"
+    ],
+    "note": "An example split. The verifier's contract and procedures set the actual split, within the rules."
+  },
+  "senseible": "Senseible prepares your CBAM file and the evidence index the verifier's team works from, wherever its staff sit, and checks every figure in-house. Senseible's check is not an accredited verification: an accredited verifier, the one Senseible partners with or your own, does that.",
+  "links": [
+    { "label": "Prepare the verifier's file", "to": "/cbam-suite" },
+    { "label": "Who cannot verify you", "to": "/answers/verifier-independence-who-cannot-verify" },
+    { "label": "Can our consultant verify us", "to": "/answers/can-our-cbam-consultant-also-verify-us" },
+    { "label": "Bodies accrediting Indian verifiers", "to": "/answers/which-eu-bodies-accredit-cbam-verifiers-from-india" }
+  ],
+  "sources": [
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 5.8", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.12 and 8.4", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30"
+}

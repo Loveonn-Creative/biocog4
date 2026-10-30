@@ -1,0 +1,68 @@
+{
+  "slug": "jaipur-foundry-cluster-export-castings-carbon",
+  "q": "Jaipur's 110 foundries: what does the cluster emit, and what carbon data do export buyers expect?",
+  "title": "Jaipur foundries: export carbon data",
+  "short": "TERI's 2016 profile counts 110 foundries, nine export-oriented, making about 216,000 t of castings on 20,630 toe a year: 163 million kWh, 9,200 t of coke and 330 t of LPG. An export buyer wants a figure per tonne of good castings, split by melting route, with coke and power records behind it.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Foundry owners in Vishwakarma, Jhotwara and Jetpura industrial areas, Jaipur, especially those selling castings abroad",
+  "sections": [
+    {
+      "h": "Who makes what",
+      "ul": [
+        "80 cupola and 30 induction foundries. The induction units are 27% of the foundries but make about two-thirds of the output.",
+        "Agricultural implements about 40% of production, PHED about 25%, automobile 15%, others 20%.",
+        "Products include CID joints, sanitary and pipe fittings, auto parts, engine and machine parts and grinding media.",
+        "Turnover about Rs 850 crore, roughly 10% of it exports. Most cupola foundries are over 30 years old."
+      ]
+    },
+    {
+      "h": "Two routes, two footprints",
+      "p": [
+        "Cupolas use 100 to 150 kg of low ash coke per tonne of molten metal, mostly in conventional single blast designs. Induction furnaces, mostly SCR type, use 600 to 750 kWh per tonne. Per tonne melted, the two land closer than most owners expect, which is why a buyer asks which route made its parts. The worked example below shows the arithmetic."
+      ]
+    },
+    {
+      "h": "What an export buyer's supplier form usually asks",
+      "ol": [
+        "Your Scope 1, mainly coke and LPG, and Scope 2, grid power, for the reporting year.",
+        "Tonnes of good castings shipped in the same year.",
+        "A figure per tonne of good castings, stating whether it is cupola or induction metal.",
+        "The pig iron and scrap you charge, which sit in your own upstream emissions.",
+        "Whether CBAM applies depends on the CN code the EU importer declares, so ask for it before building any CBAM figure."
+      ]
+    },
+    {
+      "h": "Where the figure comes down",
+      "ul": [
+        "A properly designed divided blast cupola runs at about 80 kg of coke per tonne, 25 to 30% less than the cluster's existing designs.",
+        "IGBT induction furnaces reach about 550 kWh per tonne against 750 or more for old ones.",
+        "Rejections of about 10% can drop below 5% with process control, and every rejected casting is metal melted twice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of molten iron, four ways",
+    "lines": [
+      "Cupola at 125 kg of coke: 0.125 x 3.02 = 0.378 t CO2",
+      "Well designed divided blast cupola at 80 kg: 0.080 x 3.02 = 0.242 t CO2",
+      "SCR induction at 675 kWh: 675 x 0.675 = 456 kg, 0.456 t CO2",
+      "IGBT induction at 550 kWh: 550 x 0.675 = 371 kg, 0.371 t CO2",
+      "Rejections at 10% mean 1 / 0.9 = 1.11 t melted per good tonne; at 5%, 1.05 t"
+    ],
+    "note": "Coke at the IPCC 2006 default for coke oven coke (28.2 GJ per t x 107 kg CO2 per GJ); power at Senseible's FY 2025-26 grid factor. Furnace ranges are TERI's 2016 figures. Blower power, runners and risers, and the pig iron charged are left out."
+  },
+  "senseible": "Senseible reads your coke bills, JVVNL power bills and despatch records and turns them into the per-tonne figure, by melting route, that an export buyer's supplier form asks for, each line traceable to its bill.",
+  "links": [
+    { "label": "Supplier evidence for buyers", "to": "/scope-3-supplier-evidence" },
+    { "label": "Are cast iron castings in CBAM", "to": "/answers/are-cast-iron-castings-covered-by-cbam" },
+    { "label": "Footprint per tonne of good casting", "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting" },
+    { "label": "Cupola coke emissions per tonne", "to": "/answers/cupola-furnace-coke-emissions-per-tonne" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Jaipur foundries (SAMEEEKSHA, 2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/Jaipur-Foundries-Rajasthan.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 1, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2016. Recheck if a newer Jaipur foundry profile is published."
+}

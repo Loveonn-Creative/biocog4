@@ -1,0 +1,65 @@
+{
+  "slug": "chennai-aluminium-die-casting-cluster-cbam",
+  "q": "Chennai aluminium die casters: what is the cluster's energy use, and do CBAM rules reach their parts?",
+  "title": "Chennai die casters: energy and CBAM",
+  "short": "About 12,340 toe a year in TERI's 2015 profile: 110 million kWh and 3,200 kL of diesel for roughly 60,000 t of castings. CBAM reaches a casting only if your EU buyer declares it under a covered aluminium code, and even then your electricity is left out; only fuel and the alloy you melt count.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Pressure and gravity die casting units in Thirumudivakkam and Ambattur, Chennai, supplying auto and engineering buyers",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "More than 200 aluminium casting units, about 120 pressure die casting and 60 gravity die casting.",
+        "Capacity about 100,000 t a year, used at close to 60%, so about 60,000 t of castings.",
+        "ADC-12 is the main alloy; LM-6 and others for some parts. Large buyers often supply their own billets to hold the specification.",
+        "Products: oil pump, gearbox, water pump and starter motor parts, motor covers, flanges, engineering and utensil items."
+      ]
+    },
+    {
+      "h": "Where the energy goes",
+      "ul": [
+        "Electricity is over 75% of the cluster's energy. Resistance crucible furnaces use 530 to 550 kWh per tonne of molten metal.",
+        "Counting die casting, trimming and rejections, a unit uses 1,050 to 2,000 kWh per tonne of good castings.",
+        "Melting and holding take about 60% of a unit's energy, PDC machines about 20%, compressed air close to 8%.",
+        "Larger units bulk melt in diesel reverberatory furnaces at 80 to 100 L per tonne, or 60 to 80 L with a monolithic lining, then hold in electric furnaces."
+      ]
+    },
+    {
+      "h": "Does CBAM reach your parts?",
+      "ul": [
+        "CBAM lists covered aluminium goods by CN code. Many die castings are declared as parts of the vehicle, pump or motor they fit, so the code your EU importer declares decides, not the metal.",
+        "If a part is covered, its figure is the embedded emissions of the alloy ingot or billet you melt plus the fuel you burn. Aluminium goods count direct emissions only, so electricity is not added."
+      ]
+    },
+    {
+      "h": "Why your OEM's number and the CBAM number differ",
+      "p": [
+        "A buyer's product footprint counts your power, so an all-electric die caster has a real footprint for its OEM even where CBAM would add nothing for melting. A diesel bulk melter is the opposite: its fuel counts both ways. Keep both numbers from the same records rather than building two sets."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of good castings, two ways of counting",
+    "lines": [
+      "Electric route: 1,500 kWh per tonne of good castings x 0.675 = about 1.01 t CO2, all of it Scope 2",
+      "Diesel bulk melting: 90 L per tonne melted x 2.645 kg = 238 kg CO2, Scope 1",
+      "For an OEM's footprint: both count, plus the alloy you bought",
+      "For CBAM, if the part is covered: the 238 kg of diesel counts, the 1.01 t of power does not, and the alloy enters at its supplier's figure or the default"
+    ],
+    "note": "1,500 kWh is the middle of TERI's 1,050 to 2,000 range and 90 L the middle of 80 to 100 (2014-15 data), at Senseible's factors. Alloy figures are not included."
+  },
+  "senseible": "From your TANGEDCO bills, diesel and ingot invoices, Senseible builds monthly records, and its CBAM tools give the per-tonne figure for any part your buyer declares under a covered code, without the power, alongside the full footprint your OEM asks for.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Are aluminium castings in CBAM", "to": "/answers/are-aluminium-castings-covered-by-cbam" },
+    { "label": "Die casting footprint per kg", "to": "/answers/aluminium-die-casting-carbon-footprint-per-kg" },
+    { "label": "Fuel to melt aluminium scrap", "to": "/answers/aluminium-scrap-melting-fuel-per-tonne" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Chennai aluminium casting industries (SAMEEEKSHA, 2015; data 2014-15)", "url": "https://sameeeksha.org/pdf/clusterprofile/Chennai_aluminium_casting.pdf" },
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 2.1 and 9.2.3", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "TERI data is from 2014-15. Recheck whether any extension of CBAM to downstream goods brings aluminium vehicle and machine parts in."
+}

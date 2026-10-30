@@ -1,0 +1,68 @@
+{
+  "slug": "solapur-textile-cluster-wood-fuel-carbon",
+  "q": "Solapur textile units burn wood for their steam and hot water: what is the cluster's carbon footprint?",
+  "title": "Solapur textiles: wood fuel and carbon",
+  "short": "Small in fossil CO2, large in wood. A 2011 SAMEEEKSHA profile counts about 600 units with 12,000 looms burning 32,000 t of wood and groundnut husk briquettes and using 7.4 million kWh a year. That power is about 5,000 t CO2 at today's grid factor; the wood's CO2 is reported apart, as biogenic.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Chaddar and towel makers in MIDC, Gandhi Nagar, Bhavani Peth, Bhadravathi Peth and New Paccha Peth, Solapur",
+  "sections": [
+    {
+      "h": "The cluster in the 2011 profile",
+      "ul": [
+        "About 600 units: 350 integrated, from yarn to finished chaddar or towel, and 250 that only weave on power looms.",
+        "12,000 looms making about 162 million metres of fabric a year, sold in India and abroad.",
+        "Most units have run for 20 to 30 years. Energy is 8 to 10% of production cost.",
+        "Steam, hot water and hot oil come from 95 boilers, about 250 chulhas and thermic fluid heaters, fired with wood and groundnut husk briquettes."
+      ]
+    },
+    {
+      "h": "Read the profile's shares with care",
+      "p": [
+        "The profile puts wood at 60% of the cluster's energy and electricity at 40%, against a total of over 16,600 toe. Its own quantities do not support that split: 7.4 million kWh is only about 640 toe. Work from the tonnes and kWh, which are what your bills show, not from the percentages."
+      ]
+    },
+    {
+      "h": "How wood shows up in a buyer's footprint",
+      "ul": [
+        "CO2 from burning wood or briquettes is biogenic. Under the GHG Protocol it is reported separately, outside Scope 1.",
+        "Any coal or lignite you burn counts in Scope 1 in full.",
+        "Grid electricity is Scope 2.",
+        "A towel buyer comparing suppliers will see a low fossil figure for a wood-fired unit, as long as you show the wood tonnes alongside it."
+      ]
+    },
+    {
+      "h": "Where the wood and power go, and what saves them",
+      "ul": [
+        "Improved chulhas for soap stock hot water, where the old ones run at 6 to 10% efficiency: about 5,000 t of wood a year across the cluster.",
+        "Economisers on about 55 of the 95 boilers: about 7% fuel, 660 t of wood. Energy efficient boilers in about 20 units: 800 t.",
+        "Solar water heaters for the 55 to 80 °C water dyeing needs.",
+        "VFDs on about 500 doubling machines, 40 ID fans and 10 oil pumps: about 2.5 million kWh a year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the cluster's numbers at today's factors",
+    "lines": [
+      "Electricity: 7.4 million kWh x 0.675 = 4,995 t CO2, Scope 2",
+      "Per metre: 4,995,000 kg / 162,000,000 m = about 0.031 kg CO2 per metre from power",
+      "Wood: 32,000 t x 1.747 t CO2 per t = about 55,900 t of biogenic CO2, reported separately",
+      "The VFD saving alone: 2.5 million kWh x 0.675 = about 1,690 t, a third of the power CO2"
+    ],
+    "note": "2011 data; the cluster has changed since. Grid factor is Senseible's for FY 2025-26. Wood at the IPCC 2006 default (15.6 GJ per t x 112 kg CO2 per GJ), which assumes a standard moisture; wetter wood gives less CO2 per tonne."
+  },
+  "senseible": "Senseible gives each unit its own carbon number from power bills and fuel purchase slips, with wood and briquettes treated as biogenic rather than added to fossil Scope 1, ready to hand to a towel or chaddar buyer.",
+  "links": [
+    { "label": "Get your carbon number", "to": "/msme-carbon-number" },
+    { "label": "Solapur unit boiler CO2", "to": "/answers/solapur-textile-unit-steam-boiler-co2" },
+    { "label": "Briquette for a tonne of coal", "to": "/answers/how-much-briquette-replaces-a-tonne-of-coal" },
+    { "label": "Firewood boiler CO2", "to": "/answers/cambodia-garment-factory-firewood-boiler-co2" }
+  ],
+  "sources": [
+    { "label": "SAMEEEKSHA newsletter, March 2011, Cluster profile: Solapur textile cluster (BEE SME programme)", "url": "https://sameeeksha.org/newsletter/Vol_March_2011.pdf" },
+    { "label": "GHG Protocol Corporate Standard, chapters 4 and 9", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 1, Tables 1.2 and 1.4", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Data is from 2011. Replace with a newer Solapur profile when SAMEEEKSHA or BEE publishes one."
+}

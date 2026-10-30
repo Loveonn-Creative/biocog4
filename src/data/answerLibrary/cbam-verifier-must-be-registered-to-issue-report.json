@@ -1,0 +1,65 @@
+{
+  "slug": "cbam-verifier-must-be-registered-to-issue-report",
+  "q": "Why can't our accredited verifier issue the CBAM report yet?",
+  "title": "Accredited but not yet able to issue",
+  "short": "Accreditation alone is not enough. A verifier can generate a CBAM verification report only once it is registered in the CBAM Registry, and must apply within two months of accreditation to the authority in its accreditation body's country. Until then, or if its accreditation lapses, the report cannot be issued.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters whose chosen CBAM verifier has its accreditation but has not issued the report, and EU importers waiting for it",
+  "sections": [
+    {
+      "h": "Why the Registry is the gate",
+      "p": [
+        "Every CBAM verification report is created inside the CBAM Registry, which keeps reports authentic and lets your buyer attach them to its declaration. The Commission's guidance is plain: a verifier cannot issue a verification report without access to the Registry. If your plant is not registered, the verifier still creates the report there and downloads a signed PDF for you."
+      ]
+    },
+    {
+      "h": "What the verifier has to do",
+      "ol": [
+        "Apply for registration within two months of receiving its CBAM accreditation, to the national competent authority of the EU country where its accreditation body sits.",
+        "Give its name and accreditation ID, its CBAM scopes, its country, the start and expiry dates of the accreditation, any sanctions, and a copy of the certificate.",
+        "Keep that record current: a change of scope or a sanction must be updated. A verifier without active accreditation loses the ability to generate reports."
+      ]
+    },
+    {
+      "h": "What to ask your verifier now",
+      "ul": [
+        "The date its CBAM accreditation was granted, and the date it applied for Registry registration.",
+        "Whether the registration is complete. You cannot look this up yourself: the Registry is closed to the public and to unregistered operators.",
+        "Whether the accreditation's expiry date falls after the day it will sign your report.",
+        "Whether its registered scopes cover your goods.",
+        "Cross-check against the list of accredited verifiers the Commission publishes, and the accreditation body's own public list."
+      ]
+    },
+    {
+      "h": "If the wait runs long",
+      "p": [
+        "Your buyer's first annual declaration, for goods imported in 2026, is due by 30 September 2027. Without a verified report by then, it must use default values for your goods. The guidance lets a verifier sign your contract and start preliminary steps even before it is accredited, so keep that work moving and agree with your buyer now what happens if registration slips."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one verifier's path to issuing",
+    "lines": [
+      "15 October 2026: CBAM accreditation granted by an EU accreditation body",
+      "By 15 December 2026: last day to apply for Registry registration, two months later",
+      "Meanwhile: the contract and the preliminary verification steps, which the guidance allows even before accreditation, keep going",
+      "Registration confirmed: only now can the verifier generate your report in the Registry",
+      "Report issued well before 30 September 2027, so your buyer can use your actual figures"
+    ],
+    "note": "Example dates, except the two month rule and the 30 September 2027 deadline."
+  },
+  "senseible": "Senseible builds your verifier-ready CBAM file and checks every figure in-house while the verifier's registration goes through, so the verification itself can move fast once it can. The report can come only from an accredited, registered verifier: the one Senseible partners with, or your own.",
+  "links": [
+    { "label": "Get your file verifier-ready", "to": "/cbam-suite" },
+    { "label": "Bodies accrediting Indian verifiers", "to": "/answers/which-eu-bodies-accredit-cbam-verifiers-from-india" },
+    { "label": "Finding an accredited verifier", "to": "/answers/how-to-find-cbam-accredited-verifier" },
+    { "label": "When verifiers become available", "to": "/answers/when-are-cbam-accredited-verifiers-available" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.15 and 10.2", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), questions 5.10 and 5.12", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Recheck whether the Commission's published list of accredited verifiers shows Registry status."
+}
