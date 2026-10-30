@@ -21,9 +21,9 @@
       ]
     },
     {
-      "h": "Default value",
+      "h": "The India default value for CN 7208",
       "p": [
-        "The Commission sets default values by CN code and country of origin in the annex to Implementing Regulation (EU) 2025/2621, with a mark-up that rises over the first years. We do not quote the figure here. Open the annex, find your code and India, and treat it as the number your buyer pays on if you send nothing usable."
+        "4.280 t CO2e per tonne, direct emissions only. The India table marks it (C), the blast furnace and basic oxygen furnace route, which decides the benchmark deducted against it. The importer adds a mark-up of 10% for goods imported in 2026, 20% in 2027 and 30% from 2028, so a 2026 tonne goes in at 4.708. That is the figure your buyer pays on if you send nothing usable."
       ]
     },
     {
@@ -59,6 +59,10 @@
     {
       "label": "Where official default values sit",
       "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "Default values for Indian flat steel",
+      "to": "/answers/cbam-default-value-india-hot-rolled-steel"
     }
   ],
   "sources": [
@@ -71,13 +75,28 @@
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
     },
     {
-      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "label": "Implementing Regulation (EU) 2025/2621, default values (India, CN 7208), as corrected by Implementing Regulation (EU) 2026/1740",
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
     },
     {
       "label": "European Commission, CBAM definitive regime",
       "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, Guidance No. 4, calculation of the free allocation adjustment (14 August 2026), Tables 2-1 and 2-2",
+      "url": "https://taxation-customs.ec.europa.eu/document/download/3aa2c730-4f1b-4524-8f71-d9cfe4880ac7_en?filename=Guidance%20No.%204%20-%20CBAM%20calculation%20of%20the%20free%20allocation%20adjustment%20to%20the%20number%20of%20CBAM%20certificates%20to%20be%20surrendered.pdf"
     }
   ],
-  "reviewed": "2026-10-23"
+  "reviewed": "2026-10-30",
+  "example": {
+    "title": "1,000 t of HR coil imported in Q3 2026 on the default",
+    "lines": [
+      "Default with the 2026 mark-up: 4.280 x 1.10 = 4.708 t CO2e per tonne",
+      "Free allocation adjustment: 0.975 (CBAM factor) x 1.0 (correction factor) x 1.370 (benchmark, CN 7208, BF/BOF route) = 1.336",
+      "Certificates owed: 4.708 minus 1.336 = 3.372 per tonne, 3,372 for the shipment",
+      "Cost at the Q3 2026 price of EUR 82.32: about EUR 278 per tonne, about EUR 277,600 for the shipment"
+    ],
+    "note": "The correction factor of 1.0 is the Commission's listed value in Guidance No. 4; if the final 2026 value is lower, the deduction shrinks and the cost rises."
+  },
+  "reviewNote": "Default values, benchmarks and the certificate price are set by the Commission; re-check the default values annex after any correcting act and the price each quarter."
 }
