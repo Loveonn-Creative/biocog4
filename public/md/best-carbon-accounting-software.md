@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/best-carbon-accounting-software
 
-Every tool here promises Scope 1, 2 and 3. The difference shows when an auditor asks where a number came from, or when your data sits in bills instead of an ERP. Pick your situation and the list re-orders by fit.
+Most tools here cover Scope 1, 2 and 3. The difference shows when an auditor asks where a number came from, or when your data sits in bills instead of an ERP. Pick your situation and the list re-orders by fit.
 
 Senseible makes one of the tools on this list. Checked 29 October 2026.
 
@@ -13,7 +13,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Pro: companies with low to medium complexity answering customer or investor footprint requests; Advanced: enterprises and financial institutions (PCAF financed emissions).
 - Best for: Teams that need a free starting footprint now and an enterprise upgrade path later.
 - Pricing: Pro: free. Advanced: on request.
-- Strengths: A genuinely free Scope 1 to 3 plan that covers all 15 Scope 3 categories. States SOC 2 Type II and ISO 27001 compliance.
+- Strengths: A free Scope 1 to 3 plan that covers all 15 Scope 3 categories. States SOC 2 Type II and ISO 27001 compliance.
 - Limits: Free plan is one user; framework metric exports and the methodology report are paid add-ons. No document reading of bills or invoices found; data comes in through forms, uploads or APIs.
 
 ### 2. Senseible
@@ -30,13 +30,13 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Large multi-site enterprises that already run IBM or need an ESG data warehouse.
 - Pricing: On request; an online calculator gives an indicative figure. Bundles by data volume: Essentials (up to 1,000 accounts), Standard (1,001 to 5,000), Premium (5,001 to 15,000+), plus modules.
 - Strengths: Market-based Scope 2 handled automatically with residual mix factors. Scales to very large data volumes and ERP feeds.
-- Limits: No published price; final price set in a sales process. Heavy enterprise tool; no small-company plan found.
+- Limits: No published price; final price set in a sales process. Built for large enterprises; no small-company plan found.
 
 ### 4. The Sustainability Cloud (TSC NetZero)
 
 - Who it is for: SMEs to enterprises; plans by facilities and users; country selector includes India, US, UK, Germany, Canada, Australia, South Africa, UAE, Mexico.
 - Best for: Indian companies that want low-cost Scope 1 and 2 now and BRSR/CBAM modules later.
-- Pricing: India prices: Free ₹0 (1 facility, 1 user); Business Basic ₹3,599/month (1 facility, 5 users); Business Standard ₹7,199/month (5 facilities, 10 users); Business Premium ₹11,999/month (5 facilities, 25 users); Enterprise custom. Monthly or annual billing (annual saves 16%). Free and paid SME plans cover Scope 1 and 2.
+- Pricing: India prices: Free ₹0 (1 facility, 1 user); Business Basic ₹3,599 a month (1 facility, 5 users); Business Standard ₹7,199 a month (5 facilities, 10 users); Business Premium ₹11,999 a month (5 facilities, 25 users); Enterprise custom. Monthly or annual billing (annual saves 16%). Free and paid SME plans cover Scope 1 and 2.
 - Strengths: Published rupee prices with a free Scope 1 and 2 plan. Wide framework list including BRSR, CBAM and PACT exchange.
 - Limits: SME plans are manual entry and Scope 1 and 2 only; Scope 3 needs higher tiers. Security certification not stated on its site.
 
@@ -60,9 +60,9 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 
 - Who it is for: Salesforce customers; Growth edition; add-ons for Enterprise, Unlimited and Performance editions.
 - Best for: Salesforce customers who want ESG data in the same system as their CRM.
-- Pricing: Net Zero Cloud Growth: on request (contact us). Published add-ons (USD): CRM Analytics $165/user/month (billed annually); External Engagement Management $60K/org/year; Agentforce for Net Zero Cloud $150/user/month; Multi-Organization Support $24k/org/year; User Add-On $25/user/month.
+- Pricing: Net Zero Cloud Growth: on request. Published add-ons: CRM Analytics US$165 per user a month (billed annually); External Engagement Management US$60K per org a year; Agentforce for Net Zero Cloud US$150 per user a month; Multi-Organization Support US$24K per org a year; User Add-On US$25 per user a month.
 - Strengths: Document reader, audit trail and REC management listed in the base edition. Fits companies already running Salesforce.
-- Limits: Core edition price not published; supplier data model is a $60K/org/year add-on. Value depends on being a Salesforce customer.
+- Limits: Core edition price not published; the supplier data add-on is US$60K per org a year. Value depends on being a Salesforce customer.
 
 ### 8. Greenly
 
@@ -86,7 +86,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Large companies standardised on Microsoft cloud that want sustainability data next to their other business data.
 - Pricing: Essentials: US$4,000 per tenant per month. Premium: US$12,000 per tenant per month. Some features need other Microsoft licences.
 - Strengths: Published list prices. Names BRSR among its preparatory report standards.
-- Limits: All Scope 3 categories only on the US$12,000/month Premium tier. Depends on other Microsoft licences for some features.
+- Limits: All Scope 3 categories only on the US$12,000 a month Premium tier. Depends on other Microsoft licences for some features.
 
 ### 11. Climes Carbon-OS
 
@@ -94,7 +94,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Indian listed companies preparing BRSR Core assurance.
 - Pricing: On request.
 - Strengths: Built for BRSR Core assurance with a document-level evidence ledger. Covers CBAM, PCAF and product footprints on one ledger.
-- Limits: No published pricing. Early-stage public detail on ingestion and security.
+- Limits: No published pricing. Little public detail on data intake and security.
 
 ### 12. SAP Sustainability Footprint Management
 
@@ -109,7 +109,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Large industrial companies; EHS, product stewardship and supply chain buyers.
 - Best for: Industrial firms that want consultants and an EHS-grade system together.
 - Pricing: On request.
-- Strengths: Deep LCA-based factor library (Managed LCA Content). Software plus consultants for building the inventory.
+- Strengths: LCA-based factor library (Managed LCA Content). Software plus consultants for building the inventory.
 - Limits: Much of the Scope 3 work is sold as consulting rather than self-serve software. No published pricing.
 
 ### 14. Plan A
@@ -117,8 +117,8 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Companies setting science-based decarbonisation plans; founded 2017.
 - Best for: European mid-size companies that want a science-led reduction plan with the footprint.
 - Pricing: On request.
-- Strengths: States GHG Protocol and TÜV Rheinland certification of the software. Strong decarbonisation and target-setting focus.
-- Limits: Ownership change in progress; check status before buying. No published pricing.
+- Strengths: States GHG Protocol and TÜV Rheinland certification of the software. Built around decarbonisation plans and target setting.
+- Limits: Its site shows Diginex branding; confirm who owns it before signing. No published pricing.
 
 ### 15. Sprih
 

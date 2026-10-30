@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/best-supplier-emissions-software
 
-Your Scope 3 sits with suppliers, and most of them will never fill a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how honestly they label estimates. Pick your supplier base and the list re-orders by fit.
+Your Scope 3 sits with suppliers, and many of them will never fill in a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how clearly they label estimates. Pick your supplier base and the list re-orders by fit.
 
 Senseible makes one of the tools on this list. Checked 29 October 2026.
 
@@ -62,7 +62,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Manufacturers in chemicals, automotive and industrials that need supplier product footprints.
 - Pricing: On request ('custom price' on Pro, Teams and Enterprise). Annual licences paid upfront; Pro 1 user and 2,000 material components; Teams up to 10 users and 4,000; Enterprise 50,000.
 - Strengths: Product-level supplier data with TfS, Catena-X and PACT exchange. Combines BoM, ERP and supplier data.
-- Limits: Product-centric; heavy for companies that only need a corporate Scope 3 figure. No published price.
+- Limits: Built around product footprints rather than a single corporate Scope 3 figure. No published price.
 
 ### 8. Watershed Supply Chain
 
@@ -110,7 +110,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Salesforce shops that want supplier ESG data in their CRM.
 - Pricing: External Engagement Management add-on: US$60K per org a year, billed annually, on top of Net Zero Cloud (on request).
 - Strengths: Published add-on price. Supplier data in the same system as CRM accounts.
-- Limits: Expensive add-on; base edition price not published. Supplier features thin on the pricing page.
+- Limits: The supplier add-on is US$60K per org a year; base edition price not published. Few supplier features described on the pricing page.
 
 ## Side by side
 

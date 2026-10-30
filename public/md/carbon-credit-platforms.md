@@ -20,15 +20,15 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 
 - Who it is for: Project developers who register projects and issue credits; buyers and brokers who hold, transfer and retire credits. Any account holder passes KYC checks. Worldwide.
 - Best for: Developers issuing VCS credits and buyers who want to hold and retire them in their own name.
-- Pricing: Account opening USD 750 and annual maintenance USD 750 per account; VCU issuance levy USD 0.23 per claimed tCO2e; VCU transfer, retirement and cancellation USD 0.02 per VCU each (Verra Program Fee Schedule v1.1).
+- Pricing: Account opening US$750 and annual maintenance US$750 per account; VCU issuance levy US$0.23 per claimed tonne of CO2e; VCU transfer, retirement and cancellation US$0.02 per VCU each (Verra Program Fee Schedule v1.1).
 - Strengths: Unit-level labels and VVB tracked at each verification in the new registry. Full fee schedule is public, so costs can be planned.
-- Limits: Not a place to buy at a quoted price; you need a seller or broker. Every account pays USD 750 a year, heavy for a small buyer.
+- Limits: Not a place to buy at a quoted price; you need a seller or broker. Every account pays US$750 a year, whatever its size.
 
 ### 3. Indian Carbon Market (Carbon Credit Trading Scheme)
 
 - Who it is for: Obligated entities (compliance market) and non-obligated entities (offset market) in India.
 - Best for: Indian obligated industries and offset project owners preparing for CCTS.
-- Pricing: Prices are set on the power exchanges; fees not published in what we checked.
+- Pricing: Prices are set on the power exchanges; fees not published.
 - Strengths: The only route to India's compliance certificates. Regulated by CERC with registry cross-checks on sale bids.
 - Limits: Start of trading not confirmed on an official page when checked. Registry fees and rules sit with BEE and Grid Controller of India; check them directly.
 

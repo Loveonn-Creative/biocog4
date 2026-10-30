@@ -92,7 +92,7 @@ export const GUIDES: Guide[] = [
   {
     id: 'carbon-accounting',
     ...GUIDE_META['carbon-accounting'],
-    lede: 'Every tool here promises Scope 1, 2 and 3. The difference shows when an auditor asks where a number came from, or when your data sits in bills instead of an ERP. Pick your situation and the list re-orders by fit.',
+    lede: 'Most tools here cover Scope 1, 2 and 3. The difference shows when an auditor asks where a number came from, or when your data sits in bills instead of an ERP. Pick your situation and the list re-orders by fit.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 's12_location_market', short: 'Scope 2 both ways', label: 'Scope 1 and 2, with location-based and market-based Scope 2', ask: 'Show me one electricity bill calculated both ways.' },
@@ -161,7 +161,7 @@ export const GUIDES: Guide[] = [
   {
     id: 'supplier-emissions',
     ...GUIDE_META['supplier-emissions'],
-    lede: 'Your Scope 3 sits with suppliers, and most of them will never fill a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how honestly they label estimates. Pick your supplier base and the list re-orders by fit.',
+    lede: 'Your Scope 3 sits with suppliers, and many of them will never fill in a carbon questionnaire. These tools differ on what they ask suppliers for, who pays, and how clearly they label estimates. Pick your supplier base and the list re-orders by fit.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'supplier_request_portal', short: 'Request portal', label: 'Sends data requests to suppliers through a portal or campaign, with reminders', ask: 'How does a supplier with no login respond, and who chases them?' },
@@ -274,7 +274,7 @@ export const GUIDES: Guide[] = [
   {
     id: 'brsr',
     ...GUIDE_META['brsr'],
-    lede: 'SEBI changed BRSR Core in March 2025: assessment or assurance, and value chain disclosure made voluntary from FY 2025-26. Some tools still describe the old rules. Pick where you sit and the list re-orders by fit.',
+    lede: 'In March 2025 SEBI let companies choose assessment or assurance for BRSR Core and made value chain disclosure voluntary from FY 2025-26. Some tools still describe the old rules. Pick where you sit and the list re-orders by fit.',
     disclosure: DISCLOSURE,
     criteria: [
       { id: 'full_brsr', short: 'Full BRSR', label: 'Full BRSR in SEBI format: all nine principles, essential and leadership indicators', ask: 'Does it produce all nine principles, or only the environment section?' },
@@ -345,7 +345,7 @@ export const GUIDES: Guide[] = [
   {
     id: 'green-loans',
     ...GUIDE_META['green-loans'],
-    lede: 'SIDBI, IREDA, banks and NBFCs each lend for different green projects, with different limits and paperwork, and most do not publish a rate. Pick what the money is for and see who lends for it, how much, and what they ask.',
+    lede: 'SIDBI, IREDA and NBFC green lenders each fund different green projects, with different limits and paperwork, and most do not publish a rate. Pick what the money is for and see who lends for it, how much, and what they ask.',
     disclosure: `${DISCLOSURE} Senseible does not lend, arrange or approve loans.`,
     criteria: [
       { id: 'what_it_funds', short: 'What it funds', label: 'Which green projects it pays for', ask: 'Is our exact equipment or project on the eligible list?' },
@@ -424,7 +424,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "status": null,
    "bestFor": "Teams that need a free starting footprint now and an enterprise upgrade path later.",
    "strengths": [
-    "A genuinely free Scope 1 to 3 plan that covers all 15 Scope 3 categories.",
+    "A free Scope 1 to 3 plan that covers all 15 Scope 3 categories.",
     "States SOC 2 Type II and ISO 27001 compliance."
    ],
    "limits": [
@@ -628,7 +628,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    ],
    "limits": [
     "No published price; final price set in a sales process.",
-    "Heavy enterprise tool; no small-company plan found."
+    "Built for large enterprises; no small-company plan found."
    ],
    "caps": {
     "s12_location_market": {
@@ -698,7 +698,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Names BRSR among its preparatory report standards."
    ],
    "limits": [
-    "All Scope 3 categories only on the US$12,000/month Premium tier.",
+    "All Scope 3 categories only on the US$12,000 a month Premium tier.",
     "Depends on other Microsoft licences for some features."
    ],
    "caps": {
@@ -747,7 +747,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "vendor": "Salesforce",
    "site": "https://www.salesforce.com/net-zero/",
    "who": "Salesforce customers; Growth edition; add-ons for Enterprise, Unlimited and Performance editions.",
-   "pricing": "Net Zero Cloud Growth: on request (contact us). Published add-ons (USD): CRM Analytics $165/user/month (billed annually); External Engagement Management $60K/org/year; Agentforce for Net Zero Cloud $150/user/month; Multi-Organization Support $24k/org/year; User Add-On $25/user/month.",
+   "pricing": "Net Zero Cloud Growth: on request. Published add-ons: CRM Analytics US$165 per user a month (billed annually); External Engagement Management US$60K per org a year; Agentforce for Net Zero Cloud US$150 per user a month; Multi-Organization Support US$24K per org a year; User Add-On US$25 per user a month.",
    "free": null,
    "status": null,
    "bestFor": "Salesforce customers who want ESG data in the same system as their CRM.",
@@ -756,7 +756,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Fits companies already running Salesforce."
    ],
    "limits": [
-    "Core edition price not published; supplier data model is a $60K/org/year add-on.",
+    "Core edition price not published; the supplier data add-on is US$60K per org a year.",
     "Value depends on being a Salesforce customer."
    ],
    "caps": {
@@ -873,7 +873,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "status": "A Blackstone portfolio company, per Sphera.",
    "bestFor": "Industrial firms that want consultants and an EHS-grade system together.",
    "strengths": [
-    "Deep LCA-based factor library (Managed LCA Content).",
+    "LCA-based factor library (Managed LCA Content).",
     "Software plus consultants for building the inventory."
    ],
    "limits": [
@@ -1008,14 +1008,14 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "who": "Companies setting science-based decarbonisation plans; founded 2017.",
    "pricing": "On request.",
    "free": null,
-   "status": "Ownership change reported (Diginex). Check status before buying.",
+   "status": null,
    "bestFor": "European mid-size companies that want a science-led reduction plan with the footprint.",
    "strengths": [
     "States GHG Protocol and TÜV Rheinland certification of the software.",
-    "Strong decarbonisation and target-setting focus."
+    "Built around decarbonisation plans and target setting."
    ],
    "limits": [
-    "Ownership change in progress; check status before buying.",
+    "Its site shows Diginex branding; confirm who owns it before signing.",
     "No published pricing."
    ],
    "caps": {
@@ -1211,7 +1211,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    ],
    "limits": [
     "No published pricing.",
-    "Early-stage public detail on ingestion and security."
+    "Little public detail on data intake and security."
    ],
    "caps": {
     "s12_location_market": {
@@ -1263,7 +1263,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "vendor": "The Sustainability Cloud",
    "site": "https://www.thesustainabilitycloud.com/",
    "who": "SMEs to enterprises; plans by facilities and users; country selector includes India, US, UK, Germany, Canada, Australia, South Africa, UAE, Mexico.",
-   "pricing": "India prices: Free ₹0 (1 facility, 1 user); Business Basic ₹3,599/month (1 facility, 5 users); Business Standard ₹7,199/month (5 facilities, 10 users); Business Premium ₹11,999/month (5 facilities, 25 users); Enterprise custom. Monthly or annual billing (annual saves 16%). Free and paid SME plans cover Scope 1 and 2.",
+   "pricing": "India prices: Free ₹0 (1 facility, 1 user); Business Basic ₹3,599 a month (1 facility, 5 users); Business Standard ₹7,199 a month (5 facilities, 10 users); Business Premium ₹11,999 a month (5 facilities, 25 users); Enterprise custom. Monthly or annual billing (annual saves 16%). Free and paid SME plans cover Scope 1 and 2.",
    "free": "Free plan (Scope 1 and 2, 1 facility, 1 user); free trial offered on paid SME plans.",
    "status": null,
    "bestFor": "Indian companies that want low-cost Scope 1 and 2 now and BRSR/CBAM modules later.",
@@ -1666,7 +1666,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Dynamic baselines with matched control areas."
    ],
    "limits": [
-    "Its 'leading' claims are the vendor's own; no independent validation found.",
+    "No independent validation found.",
     "Nature-based and biochar only."
    ],
    "caps": {
@@ -1784,7 +1784,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "bestFor": "Companies that need verifiable emissions evidence for lenders or buyers, not carbon project developers.",
    "strengths": [
     "Document-level fingerprints and factor sources for company emissions evidence.",
-    "Cheap entry for small firms."
+    "Low entry price for small firms."
    ],
    "limits": [
     "Not a crediting dMRV: no registry methodology, issuance or project monitoring.",
@@ -1975,7 +1975,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Combines BoM, ERP and supplier data."
    ],
    "limits": [
-    "Product-centric; heavy for companies that only need a corporate Scope 3 figure.",
+    "Built around product footprints rather than a single corporate Scope 3 figure.",
     "No published price."
    ],
    "caps": {
@@ -2547,8 +2547,8 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Supplier data in the same system as CRM accounts."
    ],
    "limits": [
-    "Expensive add-on; base edition price not published.",
-    "Supplier features thin on the pricing page."
+    "The supplier add-on is US$60K per org a year; base edition price not published.",
+    "Few supplier features described on the pricing page."
    ],
    "caps": {
     "supplier_request_portal": {
@@ -2676,7 +2676,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "bestFor": "Indian listed groups that report to BRSR Core and also face CSRD or ISSB requests.",
    "strengths": [
     "Covers Indian (BRSR, CCTS) and global (CSRD, ISSB) frameworks with question mapping across them.",
-    "XBRL output for BRSR Core and deep plant-system integrations."
+    "XBRL output for BRSR Core and plant-system integrations (SCADA, DCS, BMS, IoT)."
    ],
    "limits": [
     "No SB 253 coverage found.",
@@ -2962,7 +2962,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "bestFor": "US-linked companies and financial firms preparing for California and ISSB.",
    "strengths": [
     "Free starting plan with Scope 1 to 3.",
-    "Strong US coverage (SB 253, SB 261) and financed emissions."
+    "US coverage (SB 253, SB 261) and financed emissions."
    ],
    "limits": [
     "Framework reports are GHG-metric reports; no India coverage found.",
@@ -3343,7 +3343,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "site": "https://senseible.earth",
    "who": "MSMEs and suppliers in India that need emission records from their own bills; not a multi-framework disclosure suite.",
    "pricing": SENSEIBLE_PRICE,
-   "free": "Free Snapshot plan (10 invoice scans a month); free CBAM cost calculator",
+   "free": "Free Snapshot plan (10 invoice scans a month) and a free CBAM cost calculator.",
    "status": null,
    "bestFor": "Suppliers and MSMEs answering a listed customer's emissions request, not compliance teams filing several frameworks.",
    "strengths": [
@@ -3351,7 +3351,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Low published prices with a free plan."
    ],
    "limits": [
-    "Not a disclosure suite: no CSRD, ISSB, SB 253 or CCTS modules.",
+    "Not a multi-framework disclosure suite; reports are self-declared drafts from your own records.",
     "BRSR coverage limited to energy and emissions fields."
    ],
    "caps": {
@@ -3411,7 +3411,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "site": "https://senseible.earth",
    "who": "Indian producers and exporters of CBAM goods, especially steel and aluminium, and MSMEs; the operator side, not the EU declarant.",
    "pricing": SENSEIBLE_CBAM_PRICE,
-   "free": "Free Snapshot plan (10 invoice scans a month); free CBAM cost calculator",
+   "free": "Free Snapshot plan (10 invoice scans a month) and a free CBAM cost calculator.",
    "status": null,
    "bestFor": "Indian steel, aluminium, cement or fertiliser plants that need to hand an EU buyer a verifier-ready operator report.",
    "strengths": [
@@ -3880,7 +3880,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "status": null,
    "bestFor": "Indian engineering exporters that want hands-on help as much as software.",
    "strengths": [
-    "Strong supplier-collection track record shown in named case studies.",
+    "Supplier data collection shown in named case studies.",
     "Combines software, training and on-site support."
    ],
    "limits": [
@@ -4013,7 +4013,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "status": null,
    "bestFor": "Tally-based Indian MSMEs that want ledger data pulled in automatically, once it reflects definitive-period rules.",
    "strengths": [
-    "Only tool seen with a Tally plugin for Indian MSME ledgers.",
+    "Tally plugin that pulls in Indian MSME ledger data.",
     "Published starting price."
    ],
    "limits": [
@@ -4071,7 +4071,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "status": null,
    "bestFor": "Large manufacturers already using carbmee for Scope 3 that also import CBAM goods.",
    "strengths": [
-    "Strong ERP and procurement-data ingestion for large manufacturers.",
+    "Takes ERP and procurement data for large manufacturers.",
     "The same software covers corporate, supply-chain and product footprints."
    ],
    "limits": [
@@ -4139,7 +4139,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     "Large supplier emissions database for sourcing comparisons."
    ],
    "limits": [
-    "CBAM page reflects transitional rules (quarterly XML) and wrongly says defaults can no longer be used.",
+    "CBAM page describes transitional rules (quarterly XML) and says default values can no longer be used, though the Commission publishes them for the definitive period.",
     "No prices published."
    ],
    "caps": {
@@ -4639,7 +4639,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "site": "https://senseible.earth",
    "who": "Unlisted suppliers asked for figures by a listed customer, and listed companies needing Scope 1, Scope 2 and energy figures traced to bills.",
    "pricing": SENSEIBLE_PRICE,
-   "free": "Free Snapshot plan (10 invoice scans a month); free CBAM cost calculator",
+   "free": "Free Snapshot plan (10 invoice scans a month) and a free CBAM cost calculator.",
    "status": null,
    "bestFor": "Suppliers and smaller listed companies that need defensible Scope 1, 2 and energy figures for BRSR.",
    "strengths": [
@@ -5019,7 +5019,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "vendor": "Verra",
    "site": "https://verra.org",
    "who": "Project developers who register projects and issue credits; buyers and brokers who hold, transfer and retire credits. Any account holder passes KYC checks. Worldwide.",
-   "pricing": "Account opening USD 750 and annual maintenance USD 750 per account; VCU issuance levy USD 0.23 per claimed tCO2e; VCU transfer, retirement and cancellation USD 0.02 per VCU each (Verra Program Fee Schedule v1.1).",
+   "pricing": "Account opening US$750 and annual maintenance US$750 per account; VCU issuance levy US$0.23 per claimed tonne of CO2e; VCU transfer, retirement and cancellation US$0.02 per VCU each (Verra Program Fee Schedule v1.1).",
    "free": "Public view is open; accounts are paid.",
    "status": "Moving to a new registry system (transition page updated 26 July 2026).",
    "bestFor": "Developers issuing VCS credits and buyers who want to hold and retire them in their own name.",
@@ -5029,7 +5029,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    ],
    "limits": [
     "Not a place to buy at a quoted price; you need a seller or broker.",
-    "Every account pays USD 750 a year, heavy for a small buyer."
+    "Every account pays US$750 a year, whatever its size."
    ],
    "caps": {
     "registry_issuance": {
@@ -5046,7 +5046,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "quality_labels": {
      "v": "partly",
-     "note": "Administrators add and remove labels at unit level; fee schedule lists label fees (e.g. GHG reduction and removal labels)."
+     "note": "Administrators add and remove labels at unit level; fee schedule lists label fees, for example GHG reduction and removal labels."
     },
     "published_fees": {
      "v": "yes",
@@ -5062,7 +5062,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "small_business_access": {
      "v": "partly",
-     "note": "No minimum size stated, but a USD 750 opening fee plus USD 750 a year applies to every account."
+     "note": "No minimum size stated, but a US$750 opening fee plus US$750 a year applies to every account."
     }
    },
    "rating": null,
@@ -5115,7 +5115,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "quality_labels": {
      "v": "yes",
-     "note": "Homepage states CORSIA, ICVCM and ISEAL endorsement; fee schedule lists an Article 6 label including CORSIA at USD 0.05 per credit."
+     "note": "Homepage states CORSIA, ICVCM and ISEAL endorsement; fee schedule lists an Article 6 label including CORSIA at US$0.05 per credit."
     },
     "published_fees": {
      "v": "yes",
@@ -5279,7 +5279,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "vendor": "Government of India: BEE (administrator), Grid Controller of India (registry), CERC (regulator)",
    "site": "https://www.cercind.gov.in/current_reg.html",
    "who": "Obligated entities (compliance market) and non-obligated entities (offset market) in India.",
-   "pricing": "Prices are set on the power exchanges; fees not published in what we checked.",
+   "pricing": "Prices are set on the power exchanges; fees not published.",
    "free": null,
    "status": "CERC trading regulations notified 27 February 2026. Check the exchanges for when trading starts.",
    "bestFor": "Indian obligated industries and offset project owners preparing for CCTS.",
@@ -5731,7 +5731,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "financing_share": {
      "v": "yes",
-     "note": "Up to 75% for new clients meeting DSCR thresholds (Financing Norms 1 Oct 2026)."
+     "note": "Up to 75% for new clients meeting DSCR thresholds (Financing Norms, 1 October 2026)."
     },
     "eligibility": {
      "v": "yes",
@@ -5892,7 +5892,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "who": "Borrowers of deposit-taking NBFCs that raise green deposits.",
    "pricing": null,
    "free": null,
-   "status": "in force",
+   "status": "In force.",
    "bestFor": "Borrowers comparing NBFC green products against bank and SIDBI routes.",
    "strengths": [
     "NBFCs may lend green whether or not they raise green deposits.",
@@ -6028,7 +6028,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "green_filter": {
      "v": "partly",
-     "note": "eForms notices carry Green Procurement (BT-774), Green Procurement Criteria (BT-805) and Clean Vehicles Directive fields; a dedicated green filter on the website was not confirmed."
+     "note": "eForms notices carry Green Procurement (BT-774), Green Procurement Criteria (BT-805) and Clean Vehicles Directive fields; no dedicated green filter found on the website."
     },
     "free_access": {
      "v": "yes",
@@ -6036,7 +6036,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "alerts": {
      "v": "unknown",
-     "note": "Account login exists; alerts not confirmed."
+     "note": "Account login exists; alerts not stated."
     },
     "api_or_bulk_data": {
      "v": "yes",
@@ -6089,7 +6089,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "caps": {
     "coverage": {
      "v": "yes",
-     "note": "Above and below threshold UK procurements from 24 Feb 2025 (below threshold in Scotland excluded); full contract life cycle."
+     "note": "Above and below threshold UK procurements from 24 February 2025 (below threshold in Scotland excluded); full contract life cycle."
     },
     "green_filter": {
      "v": "unknown"
@@ -6110,7 +6110,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "emission_evidence_in_bids": {
      "v": "yes",
-     "note": "Central government contracts above GBP 5 million a year must ask bidders for a Carbon Reduction Plan with current Scope 1 and 2 and a defined subset of Scope 3 emissions (PPN 006)."
+     "note": "Central government contracts above £5 million a year must ask bidders for a Carbon Reduction Plan with current Scope 1 and 2 and a defined subset of Scope 3 emissions (PPN 006)."
     }
    },
    "rating": null,
@@ -6147,11 +6147,11 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
    "caps": {
     "coverage": {
      "v": "yes",
-     "note": "Below-threshold contracts over GBP 12,000 incl VAT (GBP 30,000 outside central government) for England and non-devolved territories, per Find a Tender."
+     "note": "Below-threshold contracts over £12,000 including VAT (£30,000 outside central government) for England and non-devolved territories, per Find a Tender."
     },
     "green_filter": {
      "v": "no",
-     "note": "Keyword and region search only seen."
+     "note": "Keyword and region search only."
     },
     "free_access": {
      "v": "yes"
@@ -6161,7 +6161,7 @@ const RAW_PRODUCTS: Record<GuideId, RawProduct[]> = {
     },
     "api_or_bulk_data": {
      "v": "partly",
-     "note": "Content under Open Government Licence; API not confirmed."
+     "note": "Content under Open Government Licence; API not stated."
     },
     "india_relevance": {
      "v": "partly",
@@ -6206,6 +6206,11 @@ export const MARK_LABEL: Record<Mark, string> = { yes: 'Yes', partly: 'Partly', 
 /** Equal-weight count of criteria met (yes 1, partly 0.5). */
 export function baseScore(g: Guide, p: Product): number {
   return g.criteria.reduce((s, c) => s + MARK_VALUE[p.caps[c.id]?.v ?? 'unknown'], 0);
+}
+
+/** True when the category's order comes from the research rank rather than a plain count. */
+export function researchRanked(id: GuideId): boolean {
+  return RAW_PRODUCTS[id].every(p => p.researchRank != null);
 }
 
 /** Default order: the research rank where the category has one, else criteria met. Ties keep list order. */

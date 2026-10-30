@@ -22,7 +22,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Indian ARR, REDD+ and agroforestry developers preparing for the Indian Carbon Market.
 - Pricing: On request.
 - Strengths: India-specific forest models and Indian Carbon Market alignment. Dynamic baselines with matched control areas.
-- Limits: Its 'leading' claims are the vendor's own; no independent validation found. Nature-based and biochar only.
+- Limits: No independent validation found. Nature-based and biochar only.
 
 ### 3. PramaanOne
 
@@ -60,7 +60,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: MSMEs, exporters and enterprises proving their own Scope 1, 2 and 3 figures to lenders, buyers and auditors.
 - Best for: Companies that need verifiable emissions evidence for lenders or buyers, not carbon project developers.
 - Pricing: Free Snapshot plan. Paid plans from ₹499 a month billed yearly, plus GST. Scale on request.
-- Strengths: Document-level fingerprints and factor sources for company emissions evidence. Cheap entry for small firms.
+- Strengths: Document-level fingerprints and factor sources for company emissions evidence. Low entry price for small firms.
 - Limits: Not a crediting dMRV: no registry methodology, issuance or project monitoring. Verification is Senseible's own expert-supervised check, not independent assurance.
 
 ## Side by side

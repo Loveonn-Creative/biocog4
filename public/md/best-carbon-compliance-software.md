@@ -13,7 +13,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Indian listed enterprises and exporters; also banks (PCAF) and EU importers (CBAM).
 - Best for: Indian listed groups that report to BRSR Core and also face CSRD or ISSB requests.
 - Pricing: On request for reporting modules (CBAM importer prices are published separately).
-- Strengths: Covers Indian (BRSR, CCTS) and global (CSRD, ISSB) frameworks with question mapping across them. XBRL output for BRSR Core and deep plant-system integrations.
+- Strengths: Covers Indian (BRSR, CCTS) and global (CSRD, ISSB) frameworks with question mapping across them. XBRL output for BRSR Core and plant-system integrations (SCADA, DCS, BMS, IoT).
 - Limits: No SB 253 coverage found. Some CBAM pages still describe transitional quarterly reports.
 
 ### 2. Carbon-OS
@@ -45,7 +45,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Businesses of all sizes; financial institutions (PCAF).
 - Best for: US-linked companies and financial firms preparing for California and ISSB.
 - Pricing: Free plan; paid plan on request.
-- Strengths: Free starting plan with Scope 1 to 3. Strong US coverage (SB 253, SB 261) and financed emissions.
+- Strengths: Free starting plan with Scope 1 to 3. US coverage (SB 253, SB 261) and financed emissions.
 - Limits: Framework reports are GHG-metric reports; no India coverage found. Several features marked 'coming soon' on the pricing page.
 
 ### 6. osapiens HUB Disclosures and Reporting
@@ -94,7 +94,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Suppliers and MSMEs answering a listed customer's emissions request, not compliance teams filing several frameworks.
 - Pricing: Free Snapshot plan. Paid plans from ₹499 a month billed yearly, plus GST. Scale on request.
 - Strengths: Every figure traced to a bill with factor and source. Low published prices with a free plan.
-- Limits: Not a disclosure suite: no CSRD, ISSB, SB 253 or CCTS modules. BRSR coverage limited to energy and emissions fields.
+- Limits: Not a multi-framework disclosure suite; reports are self-declared drafts from your own records. BRSR coverage limited to energy and emissions fields.
 
 ## Side by side
 

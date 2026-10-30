@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { STATIC_PAGE_META, canonicalUrl } from "@/lib/seo/seoMeta";
 import {
-  GUIDE_BY_ID, GUIDE_BY_PATH, MARK_LABEL, formatDay, itemListLd, lastChecked, rankFor,
+  GUIDE_BY_ID, GUIDE_BY_PATH, MARK_LABEL, formatDay, itemListLd, lastChecked, rankFor, researchRanked,
   type Fit, type Guide, type Mark, type Situation,
 } from "@/data/softwareGuides";
 import "./softwareGuides.css";
@@ -207,7 +207,7 @@ export default function SoftwareGuide({ path }: { path: string }) {
           <p className="sg-pick-sum" aria-live="polite">
             {sit
               ? <>Ranked for you. Weighed most: {weighedMost(g, sit).join(", ")}. <button type="button" className="sg-clear" onClick={() => setSitId(null)}>Show the plain list</button></>
-              : <>{ranked.length} {ranked.length === 1 ? "entry" : "entries"}, ordered by how many of the checks below each one meets.</>}
+              : <>{ranked.length} {ranked.length === 1 ? "entry" : "entries"}, ordered by how many of the checks below each one meets{researchRanked(g.id) ? ", placed lower where its pages describe rules that no longer apply" : ""}.</>}
           </p>
         </section>
 

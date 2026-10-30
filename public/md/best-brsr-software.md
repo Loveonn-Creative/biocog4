@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/best-brsr-software
 
-SEBI changed BRSR Core in March 2025: assessment or assurance, and value chain disclosure made voluntary from FY 2025-26. Some tools still describe the old rules. Pick where you sit and the list re-orders by fit.
+In March 2025 SEBI let companies choose assessment or assurance for BRSR Core and made value chain disclosure voluntary from FY 2025-26. Some tools still describe the old rules. Pick where you sit and the list re-orders by fit.
 
 Senseible makes one of the tools on this list. Checked 29 October 2026.
 

@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/green-loans-msme-india
 
-SIDBI, IREDA, banks and NBFCs each lend for different green projects, with different limits and paperwork, and most do not publish a rate. Pick what the money is for and see who lends for it, how much, and what they ask.
+SIDBI, IREDA and NBFC green lenders each fund different green projects, with different limits and paperwork, and most do not publish a rate. Pick what the money is for and see who lends for it, how much, and what they ask.
 
 Senseible makes one of the tools on this list. Senseible does not lend, arrange or approve loans. Checked 29 October 2026.
 

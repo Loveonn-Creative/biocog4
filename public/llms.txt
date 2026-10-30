@@ -1393,8 +1393,8 @@ Every page below has a Markdown mirror: replace the path with /md/{path}.md (the
 
 ## Comparisons
 
-- [Carbon accounting software, compared](https://senseible.earth/best-carbon-accounting-software): Fifteen carbon accounting tools checked on eight things buyers ask: Scope 2 methods, Scope 3 coverage, bill reading, audit trail, factors, security, prices.
-- [Digital MRV platforms, compared](https://senseible.earth/best-digital-mrv-platforms): Digital MRV tools and registry pilots for carbon projects, checked on satellite data, ground truth, registry methods, tamper-proof records and verifier support.
+- [Carbon accounting software, compared](https://senseible.earth/best-carbon-accounting-software): Fifteen carbon accounting tools checked on Scope 2 methods, Scope 3 coverage, bill reading, audit trail, factors, disclosure outputs and security.
+- [Digital MRV platforms, compared](https://senseible.earth/best-digital-mrv-platforms): Digital MRV tools and registry pilots for carbon projects, checked on satellite data, ground truth, registry methods, tamper-evident records, verifier support.
 - [Supplier emissions software, compared](https://senseible.earth/best-supplier-emissions-software): Thirteen supplier emissions tools checked on what suppliers send, who pays, labelled estimates, hotspots, data quality and ERP links. Pick your supplier base.
 - [Carbon compliance software, compared](https://senseible.earth/best-carbon-compliance-software): Compliance tools checked on CSRD, ISSB, BRSR, India’s CCTS, California SB 253, built-in Scope 1 to 3, audit trail and XBRL. Pick the rules you report under.
 - [CBAM software for 2027, compared](https://senseible.earth/best-cbam-software): CBAM certificate sales start in February 2027. Fourteen CBAM tools for EU importers and non-EU exporters, checked from CN codes and plant data to certificates.

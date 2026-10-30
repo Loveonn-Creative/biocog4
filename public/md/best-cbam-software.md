@@ -69,7 +69,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Indian exporters in steel, aluminium, fasteners, machinery and automotive parts; mid-sized firms and large exporters.
 - Best for: Indian engineering exporters that want hands-on help as much as software.
 - Pricing: On request.
-- Strengths: Strong supplier-collection track record shown in named case studies. Combines software, training and on-site support.
+- Strengths: Supplier data collection shown in named case studies. Combines software, training and on-site support.
 - Limits: Still describes quarterly CBAM reports. Verification claims rest on ISO certificates, not a named CBAM accreditation.
 
 ### 9. CarbonNeeti
@@ -85,7 +85,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Indian manufacturers and traders exporting steel, aluminium, fertilisers and chemicals; MSMEs on Tally.
 - Best for: Tally-based Indian MSMEs that want ledger data pulled in automatically, once it reflects definitive-period rules.
 - Pricing: NetZerra Enterprise from ₹1,50,000 a year; may scale with facility throughput.
-- Strengths: Only tool seen with a Tally plugin for Indian MSME ledgers. Published starting price.
+- Strengths: Tally plugin that pulls in Indian MSME ledger data. Published starting price.
 - Limits: Built around quarterly XML reports that no longer apply. Penalty figures on the page are not explained against the regulation.
 
 ### 11. carbmee EIS (CBAM)
@@ -93,7 +93,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Who it is for: Enterprise manufacturers with complex supply chains.
 - Best for: Large manufacturers already using carbmee for Scope 3 that also import CBAM goods.
 - Pricing: On request.
-- Strengths: Strong ERP and procurement-data ingestion for large manufacturers. The same software covers corporate, supply-chain and product footprints.
+- Strengths: Takes ERP and procurement data for large manufacturers. The same software covers corporate, supply-chain and product footprints.
 - Limits: Page states non-compliance penalties are a percentage of turnover and puts packaging in CBAM scope; neither matches the CBAM Regulation's goods list or per-tonne penalties. Few CBAM-specific functions described.
 
 ### 12. Greenly CBAM
@@ -102,7 +102,7 @@ Senseible makes one of the tools on this list. Checked 29 October 2026.
 - Best for: Existing Greenly customers with a few CBAM suppliers, after checking its CBAM rules are current.
 - Pricing: On request.
 - Strengths: Automated supplier requests when new products or suppliers appear. Large supplier emissions database for sourcing comparisons.
-- Limits: CBAM page reflects transitional rules (quarterly XML) and wrongly says defaults can no longer be used. No prices published.
+- Limits: CBAM page describes transitional rules (quarterly XML) and says default values can no longer be used, though the Commission publishes them for the definitive period. No prices published.
 
 ### 13. Karbon (CBAM services)
 

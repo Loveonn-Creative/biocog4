@@ -9,13 +9,13 @@ export const GUIDE_META: Record<GuideId, { path: string; title: string; descript
   'carbon-accounting': {
     path: '/best-carbon-accounting-software',
     title: 'Best Carbon Accounting Software, Compared',
-    description: 'Fifteen carbon accounting tools checked on eight things buyers ask: Scope 2 methods, Scope 3 coverage, bill reading, audit trail, factors, security, prices.',
+    description: 'Fifteen carbon accounting tools checked on Scope 2 methods, Scope 3 coverage, bill reading, audit trail, factors, disclosure outputs and security.',
     h1: 'Carbon accounting software, compared',
   },
   'dmrv': {
     path: '/best-digital-mrv-platforms',
     title: 'Best Digital MRV (dMRV) Platforms, Compared',
-    description: 'Digital MRV tools and registry pilots for carbon projects, checked on satellite data, ground truth, registry methods, tamper-proof records and verifier support.',
+    description: 'Digital MRV tools and registry pilots for carbon projects, checked on satellite data, ground truth, registry methods, tamper-evident records, verifier support.',
     h1: 'Digital MRV platforms, compared',
   },
   'supplier-emissions': {
