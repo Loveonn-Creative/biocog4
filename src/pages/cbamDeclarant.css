@@ -15,8 +15,26 @@
 .cbd-sub { margin-top: .6rem; max-width: 42rem; color: hsl(var(--muted-foreground)); }
 
 /* 1. Shipment path: plant, EU customs, declarant. The ship moves to the stop you tap. */
+/* Message to the EU buyer: the text the exporter sends, with copy and checklist actions */
+.cbd-msg { margin-top: 0; max-width: 34rem; display: grid; gap: .7rem; padding: 1.1rem; border-radius: 1.1rem; border: 1px dashed hsl(var(--primary) / .45); background: hsl(var(--primary) / .04); }
+.cbd-msg-k { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: hsl(var(--primary)); }
+.cbd-msg-name { display: grid; gap: .3rem; font-size: .85rem; font-weight: 600; }
+.cbd-msg-name small { font-weight: 400; color: hsl(var(--muted-foreground)); }
+.cbd-msg-name input { width: 100%; min-height: 2.75rem; padding: 0 .8rem; border-radius: .7rem; border: 1px solid hsl(var(--input)); background: hsl(var(--card)); font-size: 1rem; font-weight: 400; }
+.cbd-msg-text { width: 100%; min-height: 11rem; padding: .75rem .85rem; border-radius: .7rem; border: 1px solid hsl(var(--input)); background: hsl(var(--card)); font-size: .85rem; line-height: 1.5; resize: vertical; color: hsl(var(--foreground)); }
+.cbd-msg-name input:focus-visible, .cbd-msg-text:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 1px; }
+.cbd-msg-btns { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: center; }
+.cbd-msg-copy { background: hsl(var(--foreground)); border-color: hsl(var(--foreground)); color: hsl(var(--background)); text-align: left; }
+.cbd-msg-copy:hover { transform: translateY(-1px); }
+.cbd-msg-note { font-size: .82rem; color: hsl(var(--muted-foreground)); }
 .cbd-hero { display: grid; gap: 2rem; align-items: start; }
-@media (min-width: 960px) { .cbd-hero { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+@media (min-width: 960px) {
+  .cbd-msg { margin-top: 1.75rem; }
+  .cbd-hero { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; column-gap: 3rem; row-gap: 0; }
+  .cbd-hero > :first-child { grid-column: 1; grid-row: 1; }
+  .cbd-hero > .cbd-route { grid-column: 2; grid-row: 1 / span 2; }
+  .cbd-hero > .cbd-msg { grid-column: 1; grid-row: 2; align-self: start; }
+}
 .cbd-route { min-width: 0; border-radius: 1.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); padding: 1.1rem; display: grid; gap: 1.1rem; }
 @media (min-width: 640px) { .cbd-route { padding: 1.6rem; } }
 .cbd-route-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; }
@@ -129,6 +147,7 @@
 .cbd-close h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; line-height: 1.2; max-width: 40rem; text-wrap: balance; }
 
 @media (prefers-reduced-motion: reduce) {
+  .cbd-msg-copy:hover { transform: none; }
   .cbd *, .cbd *::before, .cbd *::after { animation: none !important; transition: none !important; }
   .cbd-sheet li { opacity: 1; transform: none; }
 }

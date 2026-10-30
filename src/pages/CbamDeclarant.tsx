@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Check, Ship } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Copy, Download, Ship } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -11,6 +11,8 @@ import {
   CBAM_DECLARANT_FAQS, CBAM_DECLARANT_PATH, DECLARANT_MILESTONES, FERT_PCT, FIRST_DECLARATION_ISO, MARKUP_SCHEDULE, PACK_ROWS, THRESHOLD_TONNES,
   type Clears,
 } from "@/data/cbamDeclarant";
+import { CHECKLIST_FILE_NAME, buyerMessage, cbamChecklistFile } from "@/lib/leadMagnets/cbamBuyerKit";
+import { downloadSendablePdf } from "@/lib/leadMagnets/sendableFile";
 import "./cbamDeclarant.css";
 
 // /cbam-authorised-declarant. For Indian exporters (and their EU buyers) asking
@@ -64,6 +66,50 @@ export default function CbamDeclarant() {
       </main>
       <Footer />
     </>
+  );
+}
+
+/* The message to the EU buyer (or the EU representative under DDP), and the checklist for the declarant and verifier. */
+function BuyerMessage({ clears }: { clears: Clears }) {
+  const [company, setCompany] = useState("");
+  const [status, setStatus] = useState<"" | "copied" | "selected" | "failed">("");
+  const box = useRef<HTMLTextAreaElement>(null);
+  const text = buyerMessage({ clears, company });
+  const who = clears === "buyer" ? "EU buyer" : "EU representative";
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setStatus("copied");
+    } catch {
+      // No clipboard access (older browser, embedded view): select the text so one keypress copies it.
+      const el = box.current;
+      if (el) { el.focus(); el.select(); el.setSelectionRange(0, text.length); }
+      setStatus("selected");
+    }
+  };
+  const pdf = async () => {
+    try { await downloadSendablePdf(cbamChecklistFile({ clears, company }), CHECKLIST_FILE_NAME); setStatus(""); }
+    catch { setStatus("failed"); }
+  };
+  return (
+    <div className="cbd-msg">
+      <p className="cbd-msg-k">Your message to the {who}</p>
+      <label className="cbd-msg-name">
+        <span>Your company name <small>(optional)</small></span>
+        <input type="text" value={company} onChange={(e) => { setCompany(e.target.value); setStatus(""); }} maxLength={80} autoComplete="organization" />
+      </label>
+      <textarea ref={box} className="cbd-msg-text" readOnly value={text} rows={9} aria-label={`Message to your ${who}`} />
+      <div className="cbd-msg-btns">
+        <button type="button" className="cbd-btn cbd-msg-copy" onClick={copy}><Copy className="h-4 w-4" aria-hidden="true" /> Copy the message to your {who}</button>
+        <button type="button" className="cbd-text-link" onClick={pdf}><Download className="h-4 w-4" aria-hidden="true" /> Download the data checklist</button>
+      </div>
+      <p className="cbd-msg-note" aria-live="polite">
+        {status === "copied" ? "Copied. Paste it into your email."
+          : status === "selected" ? "Copy is blocked here, so the text is selected. Press Ctrl+C, or long-press and tap Copy."
+          : status === "failed" ? "The checklist did not download. Try again."
+          : "The checklist is one page for the declarant and the verifier. No sign-up."}
+      </p>
+    </div>
   );
 }
 
@@ -132,6 +178,8 @@ function Hero() {
           <ul className="cbd-here-send">{stop.send.map((x) => <li key={x}>{x}</li>)}</ul>
         </div>
       </div>
+
+      <BuyerMessage clears={clears} />
     </section>
   );
 }
