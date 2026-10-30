@@ -310,7 +310,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ahmedabad-chemical-cluster-gas-carbon-footprint",
   "q": "What is the carbon footprint of Ahmedabad's chemical units in Vatva, Naroda and Odhav, and how does one unit compare?",
   "title": "Ahmedabad chemical units: carbon footprint",
-  "short": "TERI's BEE study puts Ahmedabad's 750 chemical units at 144,624 toe a year, 73% natural gas. That is roughly 488,000 t CO2 at today's factors (estimate). A typical dyes and pigments unit uses about 532 toe, close to 1,540 t CO2 a year, two-thirds of it from gas.",
+  "short": "A typical dyes and pigments unit in Vatva uses about 532 toe a year, close to 1,540 t CO2, nearly three-quarters of it from natural gas. Across Ahmedabad's 750 chemical units, TERI's BEE study counted 144,624 toe in 2020-21, roughly 488,000 t CO2 at today's factors (estimate).",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -5630,7 +5630,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cdp-allocate-emissions-to-customer-question",
   "q": "How do I answer CDP's question asking me to allocate emissions to my customer?",
   "title": "CDP 7.26: giving a customer its emissions",
-  "short": "In CDP's corporate questionnaire (2025 numbering), question 7.26 asks you to give each customer who requested your response a share of your emissions for what you sold them that year. You fill one row per scope: the method, the quantity supplied, the tonnes, and how sure you are. Questions 7.27 and 7.28 then ask what made it hard.",
+  "short": "Your customer requested you through CDP, and question 7.26 of the corporate questionnaire (2025 numbering) asks you to give it a share of your emissions for what you sold it that year. You fill one row per scope: method, quantity supplied, tonnes and how sure you are. 7.27 and 7.28 ask what made it hard and how you will improve.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
  },
@@ -5654,7 +5654,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cdp-sme-questionnaire-a-score",
   "q": "Can a small supplier get an A on CDP's SME questionnaire?",
   "title": "Can an SME get an A on CDP?",
-  "short": "Yes, from 2026. CDP added an A score for climate change to the SME questionnaire this year. Only climate is scored: the new forests and water questions are not scored in 2026. The 2026 scoring deadline was 16 September, and scores reach disclosers the week of 30 November.",
+  "short": "Yes, from 2026: CDP added an A score for climate change to the SME questionnaire, though CDP says an SME A is not equivalent to a full questionnaire A. Only climate is scored in 2026. The scoring deadline was 16 September, and scores reach disclosers the week of 30 November.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
  },
@@ -5670,7 +5670,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cdp-supply-chain-deadline-dates",
   "q": "When is the deadline to answer a customer's CDP supply chain request?",
   "title": "CDP supply chain deadlines by date",
-  "short": "CDP runs one cycle a year. In 2026 it opened in June, the scoring deadline was 16 September and the questionnaire closed on 28 October. Submit by the scoring deadline or you may get no score. The next cycle's dates are set in CDP's terms of disclosure for that year.",
+  "short": "Your customer's request runs on CDP's yearly cycle. In 2026 it opened in June, the scoring deadline was 16 September and the questionnaire closed on 28 October. Submit by the scoring deadline or you may get no score. The next cycle's dates are set in CDP's terms of disclosure for that year.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
  },
@@ -6646,7 +6646,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "coimbatore-foundry-cluster-energy-per-tonne-castings",
   "q": "What do Coimbatore foundries use per tonne of castings, and how does one unit compare with the cluster?",
   "title": "Coimbatore foundries: energy per tonne",
-  "short": "TERI found Coimbatore induction foundries use about 1,000 to 1,200 kWh per tonne of good castings, 600 to 700 of it in melting. A 1,000 tonne a year unit uses about 1.1 million kWh, about 743 t CO2. If you are above 1,200 kWh a tonne, look at your furnace and your rejections first.",
+  "short": "Between 1,000 and 1,200 kWh per tonne of good castings, 600 to 700 of it in melting, is what TERI measured in Coimbatore's induction foundries. A 1,000 tonne a year unit uses about 1.1 million kWh, about 743 t CO2. Above 1,200, look at your furnace and your rejections first.",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -7998,7 +7998,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "do-i-have-to-pay-for-ecovadis",
   "q": "Do I have to pay EcoVadis to answer my buyer's assessment?",
   "title": "Do I have to pay for EcoVadis?",
-  "short": "Usually yes. A full EcoVadis Sustainability Rating needs a subscription plan, priced by your company size and country, and a fee may apply even when your buyer sent the invite. Check the plans page for your size band, and ask your buyer which plan they need before you pick one.",
+  "short": "Usually yes. EcoVadis says companies its customers invite must buy their own subscription, priced by company size and country, so your buyer's invite does not cover it. Check the plans page for your size band, and ask your buyer which plan or scorecard they need before you pick one.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
  },
@@ -10326,7 +10326,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "firozabad-glass-cluster-gas-use-and-carbon",
   "q": "How much gas does the Firozabad glass cluster burn, and what does that mean for pot, tank and muffle furnace units?",
   "title": "Firozabad glass cluster: gas and CO2",
-  "short": "TERI's cluster profile puts Firozabad's gas use at about 879,000 scm a day, roughly 658,000 tonnes of CO2 a year. A typical tank furnace burns 52,000 scm a day (about 107 t CO2). An open or closed pot furnace burns 3,500 scm (about 7 t). Most muffles still burn coal.",
+  "short": "A Firozabad tank furnace burns about 52,000 scm of gas a day, roughly 107 t CO2. A pot furnace, open or closed, burns 3,500 scm, about 7 t. Across the cluster TERI counted about 879,000 scm a day, roughly 658,000 tonnes of CO2 a year. Most muffles still burn coal.",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -12710,7 +12710,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "how-long-to-keep-cbam-records",
   "q": "How long do importers and non-EU producers have to keep CBAM emissions records?",
   "title": "How long to keep CBAM records",
-  "short": "Non-EU operators, including Indian plants, keep monitoring records and supporting documents for at least six years, says the Commission's Guidance No. 1. The EU declarant keeps its records until the end of the fourth year after the declaration year: for 2026 imports declared in 2027, to the end of 2031.",
+  "short": "Non-EU operators, including Indian plants, keep monitoring records and supporting documents for at least six years after the reporting period, says the Commission's Guidance No. 1. The EU declarant keeps its records until the end of the fourth year after the declaration year: for 2026 imports declared in 2027, to the end of 2031.",
   "topic": "regulation",
   "reviewed": "2026-10-29"
  },
@@ -14590,7 +14590,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "jalandhar-hand-tools-cluster-energy-carbon",
   "q": "How much energy per tonne do Jalandhar hand tool makers use, and what does it mean for EU buyers?",
   "title": "Jalandhar hand tools: energy and CO2 per tonne",
-  "short": "TERI's cluster brief puts Jalandhar's 950 hand tool units at 19,829 toe a year for about 50,000 t of tools, 0.399 toe per tonne. That is about 2.2 t CO2 per tonne of tools at today's factors (estimate), mostly from grid power, before the steel itself.",
+  "short": "Making a tonne of hand tools in Jalandhar takes about 0.399 toe, roughly 2.2 t CO2 at today's factors (estimate), most of it from grid power and before the steel itself. That is TERI's average across 950 units making about 50,000 t of tools a year.",
   "topic": "product",
   "reviewed": "2026-10-29"
  },
@@ -15894,7 +15894,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "ludhiana-forging-cluster-furnace-oil-per-tonne",
   "q": "How much furnace oil do Ludhiana forging units burn per tonne, and what does induction heating save?",
   "title": "Ludhiana forging: furnace oil per tonne",
-  "short": "TERI found Ludhiana micro forges burn 150 to 170 litres of furnace oil a tonne, and medium units 100 to 130. An induction billet heater uses 400 to 500 kWh a tonne. On today's grid factor that cuts CO2 whenever your oil furnace uses more than about 102 litres a tonne.",
+  "short": "If your forging furnace burns more than about 102 litres of furnace oil a tonne, an induction billet heater at 450 kWh a tonne cuts your CO2 on today's grid. TERI found Ludhiana micro forges at 150 to 170 litres a tonne and medium units at 100 to 130, so most micro units clear that bar easily.",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -16086,7 +16086,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "mandi-gobindgarh-rerolling-cluster-coal-and-power",
   "q": "How much coal and power do Mandi Gobindgarh's re-rolling mills use, and what does a typical mill emit?",
   "title": "Mandi Gobindgarh mills: coal, power and CO2",
-  "short": "TERI's cluster profile puts Mandi Gobindgarh's rolling mills at 70,909 tonnes of coal and 110 million kWh a year (2014-15). A typical mill uses about 345 toe a year, roughly 440 t of coal and 680,000 kWh, which works out to about 1,240 t CO2 a year (estimate).",
+  "short": "A typical Mandi Gobindgarh rolling mill uses about 345 toe a year, roughly 440 t of coal and 680,000 kWh. That comes to about 1,240 t CO2 a year (estimate), nearly two-thirds of it from coal in the reheating furnace. Together the town's mills burnt 70,909 t of coal and 110 million kWh in 2014-15.",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -17110,7 +17110,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "nbfc-green-deposit-loan-msme",
   "q": "Can an NBFC lend me green deposit money for a solar or efficiency project?",
   "title": "NBFC green deposit loans for MSME projects",
-  "short": "Yes, if the NBFC takes deposits and your project is on RBI's green list, such as solar, LED lighting, efficiency retrofits or electric vehicles. RBI's 2025 directions for deposit-taking NBFCs and housing finance companies send green deposit money only to listed green activities, and an NBFC may also fund green projects without green deposits.",
+  "short": "Yes, if the NBFC takes deposits and your project is on RBI's green list, such as solar, LED lighting, building efficiency retrofits or electric vehicles. RBI's 2025 directions for deposit-taking NBFCs and housing finance companies send green deposit money only to listed green activities, and an NBFC may also fund green projects without green deposits.",
   "topic": "markets",
   "reviewed": "2026-10-29"
  },
@@ -17886,7 +17886,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "panipat-textile-cluster-fuels-and-carbon",
   "q": "Panipat's textile units burn biomass and pet coke: what is the cluster's carbon picture?",
   "title": "Panipat textile cluster: fuels and carbon",
-  "short": "In TERI's 2014-15 survey, Panipat's 3,095 textile MSMEs used 305,950 toe a year, 97% of it heat. Biomass was 77% of energy and pet coke 20%, yet pet coke made most of the fossil CO2, about 250,000 t a year by estimate. Which fuel feeds your heater decides your number.",
+  "short": "Pet coke was only a fifth of Panipat's textile energy in TERI's 2014-15 survey, yet it made most of the fossil CO2, about 250,000 t a year by estimate. Biomass was 77% of the 305,950 toe used by 3,095 MSMEs. Which fuel feeds your boiler or heater decides your number.",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -19470,7 +19470,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "rajkot-foundry-cluster-carbon-footprint",
   "q": "How much coke, power and oil do Rajkot's grey iron foundries use, and what is one unit's share?",
   "title": "Rajkot foundry cluster carbon footprint",
-  "short": "TERI recorded 297 million kWh, 31,500 tonnes of coke and 1,296 kL of furnace oil for Rajkot's roughly 700 grey iron foundries in 2014 to 15. That is about 300,000 tonnes of CO2, an estimate. A 1,000 tonne a year induction unit is about a quarter of one percent of it.",
+  "short": "Two thirds of Rajkot's foundry CO2 now comes from induction power bills, not cupola coke. TERI recorded 297 million kWh, 31,500 tonnes of coke and 1,296 kL of furnace oil for about 700 grey iron foundries in 2014 to 15, roughly 300,000 tonnes of CO2 (estimate).",
   "topic": "accounting",
   "reviewed": "2026-10-29"
  },
@@ -21412,11 +21412,11 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
  },
  {
   "slug": "siemens-sigreen-supplier-pcf-request",
-  "q": "Siemens asked us to share product carbon footprints through SiGREEN. What is it, and what do we enter?",
-  "title": "A SiGREEN request: what footprint to send",
-  "short": "SiGREEN is Siemens' tool for requesting and exchanging product carbon footprints along a supply chain. A customer using it wants the CO2e of one unit of the part you sell them, built from your own measured data rather than industry averages. Prepare the materials per unit, your energy per unit and the factor behind each.",
+  "q": "A customer asked us to share product carbon footprints through SiGREEN, now Mattermaps. What is it, and what do we enter?",
+  "title": "SiGREEN, now Mattermaps: what to send",
+  "short": "SiGREEN, the product carbon footprint exchange Siemens launched in 2021, was sold to Makersite and renamed Mattermaps on 4 June 2026. The request is the same: your customer wants the CO2e of one unit of the part you sell, built from your own measured data. Prepare materials per unit, energy per unit and the factor behind each.",
   "topic": "product",
-  "reviewed": "2026-10-29"
+  "reviewed": "2026-10-30"
  },
  {
   "slug": "sihor-rerolling-mill-reheating-furnace-co2",
@@ -22726,7 +22726,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "surat-textile-processing-units-buyer-carbon-data",
   "q": "What carbon data do brands ask Surat dyeing and printing houses for?",
   "title": "Surat processing houses: buyer carbon data",
-  "short": "Brands and garment makers want your boiler coal or lignite, stenter gas and electricity for a year, divided by metres or kg processed, with the invoices behind each line. In BEE's study of Surat's processing houses, boiler coal was most of the carbon, so that line gets checked first.",
+  "short": "Brands and garment makers want your boiler coal or lignite, stenter gas and electricity for a year, divided by metres or kg processed, with the invoices behind each line. In BEE's study of Surat's processing houses, boiler coal was most of the carbon, so that is the line to get right.",
   "topic": "product",
   "reviewed": "2026-10-29"
  },
