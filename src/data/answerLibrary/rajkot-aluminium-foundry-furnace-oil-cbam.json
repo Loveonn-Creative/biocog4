@@ -1,0 +1,72 @@
+{
+  "slug": "rajkot-aluminium-foundry-furnace-oil-cbam",
+  "q": "Rajkot aluminium foundries run mostly on furnace oil: does CBAM reach their castings and extrusions?",
+  "title": "Rajkot aluminium units: oil and CBAM",
+  "short": "Extrusions and window frames, yes: CN 7604 and 7610 are covered. Castings only when declared under 7616, not as machine or vehicle parts. Rajkot's about 60 aluminium units use about 2,775 toe a year, 64% of it furnace oil, and its 20 extruders alone burn 1,974 toe. That oil is your CBAM figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Aluminium sand casting, gravity die casting and extrusion units in Rajkot, Lodhika, Aji and Shapar-Veraval",
+  "sections": [
+    {
+      "h": "Rajkot's aluminium units in numbers",
+      "ul": [
+        "About 60 units: 21 sand casting (790 t a year), 19 gravity die casting (2,628 t) and 20 extrusion (6,252 t), about 9,670 t in all.",
+        "Energy about 2,775 toe a year: furnace oil 1,807 kL (1,784 toe, 64%), electricity 5.7 million kWh, coke 756 t, LPG 36 t.",
+        "Extrusion units use 1,974 toe, sand casting 207 and GDC 594.",
+        "Main input is scrap and LM-grade ingot. Extruders melt scrap in oil-fired furnaces into billets, then reheat billets in box furnaces at 450 to 500 °C."
+      ]
+    },
+    {
+      "h": "Which of your goods CBAM reaches",
+      "ul": [
+        "Profiles, tubes, tracks and sections under CN 7604 and 7608: covered.",
+        "Window and door frames under 7610: covered.",
+        "Generic cast articles under 7616 99 10: covered.",
+        "Pistons, engine parts and compressor parts classed in chapters 84 or 87: not covered today.",
+        "Your EU importer's CN code decides, and importers bringing in 50 t or less of CBAM goods a year are exempt."
+      ]
+    },
+    {
+      "h": "Why furnace oil is nearly the whole figure",
+      "p": [
+        "Aluminium counts direct emissions only, so your power bills stay out. Scrap carries zero embedded emissions. For a scrap-based extruder that leaves the oil burnt in the melting, holding and reheating furnaces. Bought LM-grade ingot or billet is different: each lot brings its maker's figure, or the default value, as a precursor."
+      ]
+    },
+    {
+      "h": "What to keep from this month",
+      "ul": [
+        "Furnace oil invoices and tank dips at month start and end, per furnace if you can.",
+        "Scrap and ingot purchases in tonnes, with supplier and whether scrap is pre-consumer or post-consumer.",
+        "Despatch tonnes by CN code, counting only goods that meet sale specifications.",
+        "Any recuperator or furnace relining, with dates, so a drop in oil per tonne is explained."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a typical Rajkot extrusion unit",
+    "lines": [
+      "Thermal energy: 88 toe a year; at the cluster's 1,807 kL per 1,784 toe, about 89 kL of furnace oil",
+      "CO2: 89,000 L x 2.97 kg = about 264 t a year",
+      "Output: 6,252 t / 20 units = about 313 t of profiles a year",
+      "Direct figure: 264 / 313 = about 0.85 t CO2 per tonne, scrap at zero, power not counted",
+      "India default for profiles with the 2026 mark-up: 3.444 x 1.10 = 3.788 t per tonne"
+    ],
+    "note": "Estimate from TERI's 2016 averages, with all thermal energy taken as furnace oil. A unit buying ingot instead of scrap adds that ingot's figure. Use your own logs."
+  },
+  "senseible": "Senseible reads your furnace oil, scrap and ingot invoices into monthly records and its CBAM tools turn them into the per-tonne figure by CN code that your EU importer asks for, traced to each bill.",
+  "links": [
+    { "label": "CBAM for Indian exporters", "to": "/cbam" },
+    { "label": "Are aluminium castings covered", "to": "/answers/are-aluminium-castings-covered-by-cbam" },
+    { "label": "Fuel per tonne in a scrap furnace", "to": "/answers/aluminium-scrap-melting-fuel-per-tonne" },
+    { "label": "Aluminium windows and doors", "to": "/answers/are-aluminium-windows-and-doors-covered-by-cbam" }
+  ],
+  "sources": [
+    { "label": "TERI, Cluster profile: Rajkot aluminium foundries (SAMEEEKSHA, 2016)", "url": "https://sameeeksha.org/pdf/clusterprofile/rajkot-aluminium-foundries.pdf" },
+    { "label": "CBAM Regulation (EU) 2023/956, consolidated, Annexes I and II", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Regulation (EU) 2025/2083, 50 tonne threshold", "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj" },
+    { "label": "European Commission, default values file (version of 6 August 2026), India sheet", "url": "https://taxation-customs.ec.europa.eu/document/download/1c05d211-80cb-4aaa-8ef0-e08005a95d7e_en?filename=DV%20correcting%20act_final%20update_06.08.xlsx" },
+    { "label": "European Commission, CBAM Guidance No. 5e, aluminium (scrap at zero embedded emissions)", "url": "https://taxation-customs.ec.europa.eu/document/download/590e983b-c937-41ea-bb9f-810c29e70e1e_en?filename=Guidance%20No.%205e%20-%20Sector-specific%20guidance%20document%20on%20aluminium.pdf" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster energy is from TERI's 2016 profile. Recheck the default values and the 2028 downstream extension proposal."
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "ireda-in-principle-loan-sanction",
+  "q": "What is an IREDA in-principle loan sanction and what does it cost?",
+  "title": "IREDA in-principle sanction: cost and use",
+  "short": "It is a conditional letter IREDA gives when a government approval, or a co-lender in a consortium, needs IREDA's backing before final appraisal. It does not bind IREDA to lend. It costs an extra ₹1 lakh plus taxes, non-refundable, on top of the registration fee, and lapses 120 days after issue.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Promoters of renewable energy, energy efficiency and bioenergy projects who need IREDA's support on paper before a state approval or a bank's sanction",
+  "sections": [
+    {
+      "h": "When IREDA gives one",
+      "p": [
+        "IREDA's policy covers two situations: a regulatory or government approval that is linked to a lender's in-principle sanction, or other lenders in a consortium whose own sanction is linked to IREDA's. It applies to every IREDA sector and scheme. You have to submit documentary evidence of why you need the letter, so keep the approving authority's or co-lender's request on file and attach it."
+      ]
+    },
+    {
+      "h": "What IREDA reviews first",
+      "ul": [
+        "A complete loan application with the registration fee and documents.",
+        "Your detailed project report, project information memorandum or feasibility report.",
+        "A basic financial viability analysis of the project.",
+        "Your eligibility under IREDA's general Financing Norms, and room within IREDA's exposure limits."
+      ]
+    },
+    {
+      "h": "What it costs",
+      "ul": [
+        "Registration fee per application: ₹1 lakh for loans up to ₹20 crore, ₹2.5 lakh above ₹20 crore up to ₹125 crore, ₹5 lakh above ₹125 crore up to ₹250 crore, ₹10 lakh above ₹250 crore, each plus taxes and non-refundable.",
+        "In-principle fee: a further ₹1 lakh plus taxes, non-refundable, paid before the letter is issued.",
+        "IREDA's interest rate is set at final sanction under its own grading, not in the in-principle letter."
+      ]
+    },
+    {
+      "h": "Two clocks to manage",
+      "p": [
+        "The letter is valid for 120 days from its date. Your loan application itself is valid for six months from registration, after which you file afresh with a new fee. Time the request so the approval or co-lender sanction it supports lands inside those 120 days."
+      ]
+    },
+    {
+      "h": "What the letter does not settle",
+      "p": [
+        "IREDA keeps its full right to due diligence at final sanction. Your account must be standard at that point, KYC for the company and promoters is done during detailed appraisal, and all other terms follow IREDA's Financing Norms. Do not order equipment against an in-principle letter alone."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A ₹12 crore loan where a state agency asks for IREDA's letter",
+    "lines": [
+      "Registration fee (loan up to ₹20 crore): ₹1,00,000 plus taxes",
+      "In-principle fee: ₹1,00,000 plus taxes",
+      "Paid before the letter arrives: ₹2,00,000 plus taxes, none of it refundable",
+      "Letter dated 1 December 2026: 120 days runs to 31 March 2027",
+      "Application registered 1 November 2026: valid for six months, to about the end of April 2027"
+    ],
+    "note": "Dates and loan size are illustrative. If the state approval is likely to take longer than four months, ask IREDA about timing before you pay the extra fee."
+  },
+  "senseible": "IREDA's viability check starts from your project report. Where the project cuts fuel or power at a running unit, Senseible reads your bills into monthly energy and CO2 figures so the report's baseline matches your own records. Senseible does not lend; IREDA decides the sanction.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "What IREDA's energy efficiency loan funds",
+      "to": "/answers/ireda-energy-efficiency-loan-what-it-funds"
+    },
+    {
+      "label": "IREDA loans for proprietors and partnerships",
+      "to": "/answers/ireda-loan-for-proprietorship-or-partnership"
+    },
+    {
+      "label": "Green loan schemes for MSMEs, compared",
+      "to": "/msme-green-loan-schemes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IREDA, Policy for granting of In-Principle Loan Sanction to Applicants: when it is given, documents reviewed, ₹1 lakh plus taxes fee, 120-day validity",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/schemes/scheme-18.pdf"
+    },
+    {
+      "label": "IREDA, Financing Norms and Schemes, issue 35, updated up to 01.10.2026: chapter 10 schedule of fees (registration fee bands, six-month application validity) and the in-principle sanction policy",
+      "url": "https://www.ireda.in/IredaWebPortal/documents/loan-products/financing-norms-01-10-2026.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Fees change with each issue of IREDA's Financing Norms; re-check the schedule of fees every quarter."
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "ecovadis-vitals-questionnaire",
+  "q": "My buyer sent an EcoVadis Vitals questionnaire, not a full rating. What is it?",
+  "title": "EcoVadis Vitals questionnaire explained",
+  "short": "Vitals is EcoVadis's free, short risk questionnaire. It covers Environment, Labor and Human Rights, Ethics and Sustainable Procurement, takes about 30 minutes, and gives your buyer a risk level, not a score or a medal. Your answers stay confidential; the buyer sees the risk level and the documents you attach.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSME suppliers invited to EcoVadis Vitals by a customer",
+  "sections": [
+    {
+      "h": "Vitals or a full rating: what is different",
+      "ul": [
+        "Cost: Vitals is free for you. A full EcoVadis rating needs your own paid subscription.",
+        "Time: Vitals takes about 30 minutes, and every question is mandatory. Progress saves, so you can stop and come back.",
+        "Result: a company-specific sustainability risk level, with how well you meet your buyer's requirements. No 0 to 100 score, no medal, no badge.",
+        "What the buyer sees: your risk level and the documents you attached. Not your individual answers.",
+        "Reuse: you can update the result and share it with another buyer who invites you."
+      ]
+    },
+    {
+      "h": "The documents Vitals asks for",
+      "p": [
+        "Attaching documents is optional, but EcoVadis says they can significantly improve your result, because each one is reviewed after you submit."
+      ],
+      "ul": [
+        "Environmental policy, and ISO 14001 or EMAS certificate.",
+        "Labor and human rights policy, employee health and safety policy, and ISO 45001 or SA8000 certificate.",
+        "Sustainable procurement policy, and FSC or PEFC chain of custody certificate.",
+        "Ethics policy, and ISO 27001 or ISO 37001 certificate."
+      ]
+    },
+    {
+      "h": "Why a document gets ignored",
+      "ul": [
+        "Wrong type: an ISO 50001 certificate attached where the question asks for ISO 14001 or EMAS is not counted.",
+        "Company name only in the logo. Put the name in the body text.",
+        "A policy more than 8 years old, or a certificate past its expiry date.",
+        "A file of 30 MB or more. EcoVadis recommends PDF, PNG, JPG or JPEG.",
+        "A long document with no page range showing where the relevant part is."
+      ]
+    },
+    {
+      "h": "After you submit",
+      "p": [
+        "The result appears on your Vitals dashboard shortly after submission. EcoVadis describes Vitals as a high-level screen and the full rating as the deep assessment, so a buyer may later invite you to a full rating. Keep the documents you prepared; they are the base of a full rating."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A 40-person Rajkot casting supplier checks its documents",
+    "lines": [
+      "ISO 14001 certificate valid to 2027, company name printed in the text: attach.",
+      "Health and safety policy dated 2016: over 8 years old in 2026, so reissue it with a 2026 date and sign it.",
+      "No ethics policy: write a one-page code covering bribery and gifts, dated and signed, or answer honestly without one.",
+      "Quality manual of 120 pages that includes the environment policy: attach it with the page range, for example pages 14 to 16."
+    ],
+    "note": "An example of the checks; EcoVadis's review decides what counts."
+  },
+  "senseible": "Vitals asks for policies and certificates, not emission figures, so Senseible has little to add here. If your buyer follows up with a carbon data request or a full rating, Senseible turns your bills into Scope 1 and 2 figures with the bill behind each one.",
+  "links": [
+    { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
+    { "label": "Do I have to pay for EcoVadis?", "to": "/answers/do-i-have-to-pay-for-ecovadis" },
+    { "label": "Saying no to an EcoVadis request", "to": "/answers/decline-ecovadis-assessment-request" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Vitals",
+      "url": "https://ecovadis.com/solutions/iq/vitals/"
+    },
+    {
+      "label": "EcoVadis Help Center, What is the purpose and benefit of Vitals?",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/14962464927506-What-is-the-purpose-and-benefit-of-Vitals"
+    },
+    {
+      "label": "EcoVadis Help Center, Preparing documents for the EcoVadis Vitals questionnaire",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/14962929371922-Preparing-documents-for-the-EcoVadis-Vitals-questionnaire"
+    },
+    {
+      "label": "EcoVadis Help Center, How does EcoVadis review the documents I attached to the Vitals questionnaire?",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/14963174859282-How-does-EcoVadis-review-the-documents-I-attached-to-the-Vitals-questionnaire"
+    }
+  ],
+  "reviewed": "2026-10-30"
+}

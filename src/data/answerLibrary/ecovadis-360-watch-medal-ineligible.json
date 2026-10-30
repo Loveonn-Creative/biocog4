@@ -1,0 +1,73 @@
+{
+  "slug": "ecovadis-360-watch-medal-ineligible",
+  "q": "Can negative news stop us getting an EcoVadis medal?",
+  "title": "Can bad news block an EcoVadis medal?",
+  "short": "Yes. If EcoVadis's 360 Watch scores you 0 in any theme, or 25 in two themes, you cannot get a medal whatever your total, unless you have had no negative finding in the past 3 years (5 for Ethics). EcoVadis writes to you before publication, and you can reply with context.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME suppliers being rated by EcoVadis after a pollution notice, accident or labour dispute",
+  "sections": [
+    {
+      "h": "What 360 Watch reads",
+      "p": [
+        "360 Watch is the part of the rating EcoVadis builds without you. Analysts collect outside information about your company and score it by severity, using the OECD due diligence framework for adverse impacts. Every source used is listed on your scorecard."
+      ],
+      "ul": [
+        "News reports in the media.",
+        "NGO and trade union reports, and grievance mechanisms.",
+        "Government databases.",
+        "Compliance and sanctions screening databases, which can flag sanctions breaches and links to politically exposed persons.",
+        "Sources EcoVadis judges not credible are rejected and do not affect the rating."
+      ]
+    },
+    {
+      "h": "How much it weighs, even with clean news",
+      "p": [
+        "In each theme, reporting and 360 Watch together carry 35% of the score, and 360 Watch is 60% of that: about 21% of every theme. For companies with 1 to 25 employees, it is 20% of the Ethics and Sustainable Procurement themes.",
+        "No negative news is not neutral. EcoVadis treats the absence of controversies as a sign your systems work and gives a default 360 Watch score that adds points."
+      ]
+    },
+    {
+      "h": "When EcoVadis writes to you",
+      "p": [
+        "If your 360 Watch score would be 0 in one theme or 25 in two, EcoVadis sends an official letter before the scorecard is published. You can give explanation or context for each finding, and EcoVadis may lower the severity it first assigned."
+      ],
+      "ol": [
+        "List each finding, its date and which theme it hit.",
+        "For each, gather what happened next: a revoked closure direction, a compliance report, compensation paid, a court or labour office outcome.",
+        "Show what changed in your systems, with dated documents: a new procedure, training records, an effluent upgrade.",
+        "If a news item is about a different company with a similar name, say so. EcoVadis counts a 360 news item that does not belong to your legal entity as a factual error, which you can also raise in the two business days before publication."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Ludhiana forging unit with two findings",
+    "lines": [
+      "Finding 1, March 2025: a state pollution control board notice on air emissions. Theme: Environment.",
+      "Finding 2, November 2025: a news report of a worker injury. Theme: Labor and Human Rights.",
+      "Suppose each theme's 360 Watch score comes out at 25: two themes at 25, so no medal, whatever the total.",
+      "Both findings are under 3 years old, so the clean-record exception does not apply.",
+      "Reply to the letter: the board's later compliance order, the stack monitoring reports, the injury investigation and the new guarding procedure with training records."
+    ],
+    "note": "Findings and scores are invented to show how the rule works; EcoVadis sets the severity."
+  },
+  "senseible": "Senseible cannot change what 360 Watch finds; it reads outside sources. It can put your energy and emissions figures in order, each tied to its bill, for the Environment answers that make up most of that theme's score.",
+  "links": [
+    { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
+    { "label": "What score wins a medal", "to": "/answers/ecovadis-medal-score-needed" },
+    { "label": "Scorecard expiry and reassessment", "to": "/answers/ecovadis-scorecard-expiry-reassessment" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Medals methodology disclosure document (2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/06/EcoVadis-Medals-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items.pdf"
+    },
+    {
+      "label": "EcoVadis Help Center, Methodology Updates Q1 2026 (scorecard pre-publication and factual errors)",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/34621845310994-Methodology-Updates-Q1-2026"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Re-check the 360 Watch ineligibility thresholds and exceptions in each new EcoVadis Medals methodology edition."
+}

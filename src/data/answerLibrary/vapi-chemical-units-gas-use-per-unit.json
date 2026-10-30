@@ -1,0 +1,68 @@
+{
+  "slug": "vapi-chemical-units-gas-use-per-unit",
+  "q": "How much gas does a normal Vapi dye, API or chemical unit burn a year?",
+  "title": "Gas use per unit in Vapi chemicals",
+  "short": "A typical Vapi dyes and pigments unit uses about 334 toe of heat a year, roughly 380,000 scm of gas if it all comes from gas. API units average 126 toe, about 145,000 scm, and other chemical units 218 toe, about 250,000 scm. Natural gas is about 76% of the cluster's energy (estimate).",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Dyes and pigments, API and specialty chemical MSMEs in Vapi GIDC phases 1 to 3 and Sarigam",
+  "sections": [
+    {
+      "h": "The cluster",
+      "ul": [
+        "300+ chemical units, about 277 operating.",
+        "By count: dyes and pigments 46%, other chemicals 36%, API and pharmaceuticals 18%. Total output about 621,000 t a year.",
+        "Gas comes from Gujarat Gas, power from DGVCL, and HSD runs backup generators.",
+        "Cluster energy: 93 million scm of gas (81,032 toe), 207 million kWh and 1,486 kL of LDO, FO and HSD."
+      ]
+    },
+    {
+      "h": "Typical unit, by type",
+      "ul": [
+        "Dyes and pigments: 408 toe a year, 334 of it heat. Range 320 to 470 toe.",
+        "API and pharmaceuticals: 249 toe, 126 heat and 123 electricity. Range 51 to 455 toe.",
+        "Other chemicals: 261 toe, 218 heat. Range 152 to 370 toe.",
+        "Heat goes to thermic fluid heaters at 180 to 200 °C for dryers and jackets, and to boilers for low pressure steam."
+      ]
+    },
+    {
+      "h": "Gas is not the only boiler fuel",
+      "p": [
+        "TERI found most units running on gas and power, but its report also names coal as the main fuel in IBR boilers of 1 to 5 t an hour. If your steam comes from coal, use coal consumed from your stock register, not the gas figures here."
+      ]
+    },
+    {
+      "h": "Check your unit against the band",
+      "ol": [
+        "Add your Gujarat Gas bills for 12 months in scm.",
+        "Divide by about 1,148 scm per toe, the ratio in TERI's cluster table, to get toe of heat.",
+        "Compare with your type's band. A dye unit far above 470 toe should look at thermic fluid heater and boiler losses; far below may mean bills are missing.",
+        "Work out CO2 on your own numbers: scm x 2.05 kg for gas, kWh x 0.675 kg for grid power."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year at a typical unit of each type",
+    "lines": [
+      "Dyes and pigments: 334 toe x 1,148 = about 383,000 scm x 2.05 kg = 786 t CO2; power 74 toe = 860,000 kWh x 0.675 = 581 t; total about 1,370 t",
+      "API: 126 toe = about 145,000 scm, 296 t; power 123 toe = 1.43 million kWh, 965 t; total about 1,260 t",
+      "Other chemicals: 218 toe = about 250,000 scm, 513 t; power 43 toe = 500,000 kWh, 338 t; total about 850 t",
+      "An API unit's footprint is mostly its power bill; a dye unit's is mostly its gas bill"
+    ],
+    "note": "Estimates from TERI's 2020 typical-unit table, with all heat taken as gas and power converted at 860 kcal per kWh. PNG at 2.05 kg CO2 per scm; grid factor for FY 2025-26."
+  },
+  "senseible": "Senseible reads your Gujarat Gas and DGVCL bills into a monthly Scope 1 and 2 record, so you see your unit's own gas and power figures against these bands, traced to each bill.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Coal boilers in Vapi dye units", "to": "/answers/vapi-ankleshwar-dye-unit-boiler-coal-emissions" },
+    { "label": "Are Vapi chemicals covered by CBAM", "to": "/answers/vapi-ankleshwar-chemicals-covered-by-cbam" },
+    { "label": "CETP fees: which scope", "to": "/answers/vapi-chemical-unit-cetp-fee-which-scope" }
+  ],
+  "sources": [
+    { "label": "TERI for BEE, Cluster profile report: Vapi chemical cluster (SAMEEEKSHA, 2020)", "url": "https://sameeeksha.org/pdf/clusterprofile/Vapi%20chemical%20cluster.pdf" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 22.0", "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en" }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Cluster data is from TERI's 2020 profile. Update if BEE publishes a newer Vapi study."
+}

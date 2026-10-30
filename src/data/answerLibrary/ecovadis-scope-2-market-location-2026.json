@@ -1,0 +1,73 @@
+{
+  "slug": "ecovadis-scope-2-market-location-2026",
+  "q": "EcoVadis now asks for Scope 2 location-based and market-based. What changed?",
+  "title": "EcoVadis now wants two Scope 2 figures",
+  "short": "From 7 May 2026, EcoVadis replaced its single Scope 2 field with two: total location-based and total market-based Scope 2. The scoring weight did not change, but strengths, improvement areas and data reliability now follow the evidence behind each figure, so report both, with documents.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian MSME suppliers filling the EcoVadis questionnaire or Carbon Action Manager",
+  "sections": [
+    {
+      "h": "What changed in the questionnaire",
+      "ul": [
+        "Removed: Total gross Scope 2 GHG emissions (market- or location-based).",
+        "Added: Total gross location-based Scope 2 GHG emissions.",
+        "Added: Total gross market-based Scope 2 GHG emissions.",
+        "Applies to the Sustainability Rating and the Carbon Action Manager, for all company sizes.",
+        "EcoVadis says the scoring impact is unchanged, but each figure now gets its own reliability level: Low, Medium, High or Third-Party Verified."
+      ]
+    },
+    {
+      "h": "Working out each figure in India",
+      "ul": [
+        "Location-based: all grid kWh you consumed x the CEA grid factor for that financial year, 0.675 kg CO2 per kWh for FY 2025-26.",
+        "Market-based: kWh covered by contracts or certificates you can prove, such as retired renewable energy certificates, a green tariff or a renewable open access supply, at their own factor. The rest at a residual mix factor if one is available; otherwise the grid factor, stated as such.",
+        "Rooftop solar you generate and use yourself is not bought electricity. It lowers grid kWh in both figures, and is not a certificate to count again.",
+        "No green contracts at all: both figures come out the same. Report both anyway and say why they match."
+      ]
+    },
+    {
+      "h": "Evidence to attach for each",
+      "ol": [
+        "Location-based: the year's electricity bills for every connection, and the factor with its source.",
+        "Market-based: certificate retirement statements, green tariff bills or open access invoices for the exact kWh you claim, matching the reporting year.",
+        "A short note of the method: which kWh were covered by what, and which factor the rest used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Coimbatore foundry with part green power",
+    "lines": [
+      "Grid electricity FY 2025-26: 12,00,000 kWh.",
+      "Location-based: 12,00,000 x 0.675 = 8,10,000 kg = 810 t CO2.",
+      "Certificates retired for 4,00,000 kWh, counted at zero.",
+      "Remaining 8,00,000 kWh at the grid factor, stated as such: 8,00,000 x 0.675 = 5,40,000 kg = 540 t CO2.",
+      "Enter 810 t as location-based and 540 t as market-based, with bills and retirement statements attached."
+    ],
+    "note": "Quantities are invented. Check your buyer accepts the certificate type before counting it."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from your electricity bills and market-based Scope 2 when you add your certificate or green tariff records, so both EcoVadis fields come from the same documents.",
+  "links": [
+    { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
+    { "label": "Location and market-based Scope 2 explained", "to": "/answers/buyer-asks-location-and-market-based-scope-2" },
+    { "label": "Do RE100 and CDP accept Indian RECs?", "to": "/answers/do-re100-and-cdp-accept-indian-recs" },
+    { "label": "How EcoVadis grades your figures", "to": "/answers/ecovadis-carbon-data-reliability-levels" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis Help Center, Methodology Updates Q1 2026 (32.9 Scope 2 market- and location-based reporting)",
+      "url": "https://support.ecovadis.com/hc/en-us/articles/34621845310994-Methodology-Updates-Q1-2026"
+    },
+    {
+      "label": "GHG Protocol, Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian power sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Update the CEA grid factor when a new baseline database version is published."
+}

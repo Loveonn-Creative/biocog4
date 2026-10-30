@@ -1,0 +1,83 @@
+{
+  "slug": "sidbi-gcf-loan-plastic-processing-machines",
+  "q": "Which plastic processing machines can get SIDBI's Green Climate Fund loan?",
+  "title": "SIDBI GCF loan: plastic processing machines",
+  "short": "SIDBI's July 2026 assessment for plastic units lists 49 technologies its Green Climate Fund programme can finance. Machines such as servo motor injection moulders, slow speed granulators, heater mixers with VFDs and blown film plants with VFDs are Category B, which brings a site-specific environmental plan. Captive rooftop solar, EVs and effluent treatment are Category C.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Owners of injection moulding, extrusion, film, blow moulding and recycling units planning a machine upgrade",
+  "sections": [
+    {
+      "h": "Machines on SIDBI's plastic list",
+      "ul": [
+        "Injection moulding: servo motor plastic injection machine, injection moulding machine with variable pump, microprocessor-controlled fully automatic injection moulding machines, PET moulding machine.",
+        "Extrusion: multi-layer film extruder, blown film plant with VFD, extrusion lamination plant with VFD, conical twin screw extruder with VFD, thermoforming sheet extrusion machine with VFD, plate extruder line.",
+        "Blow moulding: microprocessor-controlled fully automatic extrusion or injection blow moulding machine, 3D blow moulding machine with PLC control.",
+        "Auxiliary and finishing: slow speed granulator, scrap grinder, high speed heater mixer with VFD and screw conveyor, water pelletising system, PLC-controlled hydraulic press, infra-red heaters, bag making and strap band machines.",
+        "Lamination and surface treatment: solventless lamination machine, corona treater with IGBT technology, flex lamination machine.",
+        "All of the above are Category B. Category C: captive solar within your premises, electric vehicles, charging or battery swap within your premises, effluent treatment or ZLD, rainwater harvesting and green buildings."
+      ]
+    },
+    {
+      "h": "What Category B means for your application",
+      "ul": [
+        "You fill SIDBI's environmental and social due diligence checklist, as every borrower under the programme does.",
+        "SIDBI's officer and environmental expert visit the site, and the loan carries a site-specific environmental and social management plan with monitoring and reporting.",
+        "The category in the list is the machine's typical risk. The final category is decided case by case; the same machine in a greenfield unit or a new location is categorised after site and legal screening.",
+        "The list is indicative. Other machines can be considered if they fit the programme's scope and pass screening. Anything with irreversible or unprecedented impacts is excluded."
+      ]
+    },
+    {
+      "h": "Risks SIDBI checks in plastic units",
+      "ul": [
+        "Chemicals and additives: exposure to substances such as benzene, styrene and phthalates.",
+        "Noise from extruders, mixers and blowers, and from grinders and shredders.",
+        "Musculoskeletal injuries from repeated bending, lifting and reaching in finishing and packing.",
+        "Missing EPR compliance records for units that use plastic packaging.",
+        "Effluent load: if you discharge to a common treatment plant, SIDBI checks whether it can take the extra load, and may defer or exclude the project if it cannot.",
+        "Plastic waste processing is in CPCB's Orange category, so a recycler's consent to operate is checked first."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Replacing a hydraulic injection moulder with a servo machine (assumed figures)",
+    "lines": [
+      "Average draw: old hydraulic machine 22 kW, servo replacement 13 kW (use your supplier's measured figures)",
+      "Running hours: 20 hours x 300 days = 6,000 hours a year",
+      "Power saved: (22 minus 13) kW x 6,000 hours = 54,000 kWh a year",
+      "CO2 avoided: 54,000 kWh x 0.675 kg per kWh (CEA grid factor, FY 2025-26) = 36,450 kg, about 36 tonnes a year"
+    ],
+    "note": "A meter reading on the old machine for a typical week makes the before figure far stronger than a catalogue comparison."
+  },
+  "senseible": "The climate case for a servo or VFD machine is the power it saves. Senseible reads your electricity bills from before and after the change into monthly kWh and CO2, so the saving in the loan file comes from your own meter. SIDBI decides the loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    },
+    {
+      "label": "Cross-sector technologies SIDBI can fund",
+      "to": "/answers/fmap-eligible-energy-efficiency-technologies"
+    },
+    {
+      "label": "SIDBI's due diligence checklist",
+      "to": "/answers/sidbi-environmental-due-diligence-checklist"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Direct Finance, Plastic Sector (28 July 2026): 49-item technology list with categories, Category B and C definitions, sector risks, CPCB classification table",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESIA_and_ESMP%20_Plastic_Direct_Finance.pdf"
+    },
+    {
+      "label": "CEA, CO2 Baseline Database for the Indian Power Sector, version 22.0: 0.675 kg CO2 per kWh for FY 2025-26",
+      "url": "https://cea.nic.in/cdm-co2-baseline-view?mappingId=234&lang=en"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "SIDBI revises its sector assessments; re-check the Green Pathways e-series page every quarter."
+}

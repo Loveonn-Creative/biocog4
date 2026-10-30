@@ -1,0 +1,73 @@
+{
+  "slug": "what-cbam-verifier-checks-during-site-visit",
+  "q": "What does a CBAM verifier check during the site visit?",
+  "title": "What a CBAM verifier checks on site",
+  "short": "That your plant matches your monitoring plan: the installation boundary, each production process, every fuel, material and emission source, and the links between them. The verifier watches meters and weighbridges working, interviews the people who record data, and traces sample figures from a reading or lab result through to the report.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Plant heads and accounts teams at Indian steel, aluminium, cement and fertiliser units expecting a CBAM verifier",
+  "sections": [
+    {
+      "h": "Why it has to be your plant, not your head office",
+      "p": [
+        "For a stationary plant the site is always the installation itself. A meeting at the Mumbai or Delhi office does not count, because the verifier can only reach reasonable assurance by comparing the plan with what is physically there."
+      ]
+    },
+    {
+      "h": "Walking the boundary",
+      "ul": [
+        "The plot plan and process flow diagram in your monitoring plan, held up against the real layout.",
+        "Every source stream: coal yard, oil tanks, gas line, LPG bank, raw material and precursor stocks.",
+        "Every emission source: furnaces, kilns, boilers, DG sets, flares.",
+        "Technical connections in and out: power from a captive plant, steam or heat shared with a neighbour, waste gas sent elsewhere.",
+        "Lines that make non-CBAM goods, and how their fuel and power are kept out of your CBAM figures."
+      ]
+    },
+    {
+      "h": "At the meters and in the lab",
+      "ul": [
+        "Instruments in use and their readings, compared with the logbook entry for the same moment.",
+        "Calibration and maintenance logs for weighbridges, flow meters and energy meters.",
+        "Sampling and lab analysis for fuel carbon content or product composition."
+      ]
+    },
+    {
+      "h": "The walk-through: one figure, start to finish",
+      "p": [
+        "The verifier picks figures and follows each one back: meter reading or delivery note, entry in the register or ERP, monthly sheet, emissions report. Expect them to open purchase and sales records, stock registers, the fuel or energy management system and any software you use. They also check who cross-checks the data, whether a second person reviews it, and who covers when the regular clerk is on leave."
+      ]
+    },
+    {
+      "h": "Prepare the week before",
+      "ol": [
+        "Print the current monitoring plan and mark any change since it was last assessed.",
+        "Keep meters, the weighbridge and stockyards open to walk, with safety passes ready.",
+        "Keep the shift in-charge, store keeper, lab chemist and accounts person who books fuel available for interviews.",
+        "Pull three months of delivery notes, invoices and meter logs, so any figure can be traced on the spot."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: tracing one month of furnace oil",
+    "lines": [
+      "Opening tank dip, 1 March: 18,000 L",
+      "Tanker deliveries in March, from delivery notes and invoices: 3 x 12,000 L = 36,000 L",
+      "Closing tank dip, 31 March: 14,000 L",
+      "Consumed: 18,000 + 36,000 minus 14,000 = 40,000 L",
+      "The verifier checks 40,000 L against the March sheet and the report. If the sheet shows 36,000 L, the invoices were booked as consumption and the stock change is missing."
+    ],
+    "note": "Example quantities. The same check runs for coal, gas and every precursor you buy."
+  },
+  "senseible": "Senseible keeps every fuel invoice, delivery note and power bill as a dated, fingerprinted record tied to the figure it supports, and checks those figures in-house, so a verifier's trace ends in one click. The site visit and the verification are done by an accredited verifier, Senseible's partner or yours.",
+  "links": [
+    { "label": "Get your plant file ready", "to": "/cbam-suite" },
+    { "label": "When a virtual visit is allowed", "to": "/answers/cbam-virtual-site-visit-when-allowed" },
+    { "label": "Can the site visit be waived", "to": "/answers/can-cbam-verifier-waive-site-visit" },
+    { "label": "Meter calibration certificates", "to": "/answers/verifier-asks-meter-calibration-certificates" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.7.1 and 4.9 (footnote 73)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, Annex VI point 1(c)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-30"
+}

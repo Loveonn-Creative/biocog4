@@ -1,0 +1,80 @@
+{
+  "slug": "cdp-sme-forests-module-commodities",
+  "q": "CDP's SME questionnaire now has a forests module. Does it apply to a leather or food exporter?",
+  "title": "CDP SME forests module: does it apply to you?",
+  "short": "Only if you produce or source one of CDP's seven commodities: timber products, palm oil, cattle products, soy, rubber, cocoa or coffee. A tannery buying cattle hides or a snack maker using palm oil qualifies. You opt in at questionnaire setup, and SME forests answers are not scored in 2026.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME exporters of leather, food, rubber, furniture and paper products answering a CDP request",
+  "sections": [
+    {
+      "h": "Which exporters the seven commodities reach",
+      "ul": [
+        "Cattle products: tanneries and leather goods makers buying cattle hides or finished leather. CDP's list names cattle; if most of your hides are buffalo, ask your customer how it wants them reported.",
+        "Palm oil: biscuit, snack, confectionery and soap makers.",
+        "Soy: soya meal and oil exporters, and food makers using soy protein or lecithin.",
+        "Cocoa and coffee: chocolate makers, coffee curers and exporters.",
+        "Rubber: makers of rubber goods, footwear soles, belting and gloves.",
+        "Timber products: furniture, plywood, paper, corrugated boxes and pallets."
+      ]
+    },
+    {
+      "h": "What the forests module asks",
+      "p": [
+        "The commodity questions sit in Module 14, SME Introduction, under produced and sourced commodities, and in Module 21, SME Environmental performance: Forests. They are a shorter version of the full corporate questionnaire's forests module."
+      ],
+      "ul": [
+        "Which of the seven commodities you produce or source, and any you leave out of reporting.",
+        "Volumes of each commodity.",
+        "Where it comes from.",
+        "Any no-deforestation or no-conversion target.",
+        "Deforestation- and conversion-free metrics, and how you worked them out.",
+        "If a CDP Supply Chain customer asked you about forests: certified volumes, and emission cuts or removals from land use management."
+      ]
+    },
+    {
+      "h": "Should you opt in this year?",
+      "ol": [
+        "Read your customer's request. If it names forests, answer the module; that customer will read it even though CDP does not score it.",
+        "If the request covers climate only, you can leave forests out. The questions appear only if you choose forests at setup.",
+        "If you source one of the seven commodities but have no origin data yet, start collecting now. Volumes and origin are the base of every later question.",
+        "Water is a separate new module, Module 22, also unscored for SMEs in 2026. Choose it only if water matters to your operations or your customer asked."
+      ]
+    },
+    {
+      "h": "Records that answer the volume and origin questions",
+      "ul": [
+        "Purchase invoices showing the commodity, quantity in tonnes or kilograms, and supplier.",
+        "Supplier addresses or dispatch documents showing the state or country of origin.",
+        "Certificates for any certified volumes, with the certificate number and the quantity it covers.",
+        "A one-page note of which product lines use the commodity, so the exclusions you declare make sense."
+      ]
+    }
+  ],
+  "example": {
+    "title": "A Kanpur tannery working out its forests answers",
+    "lines": [
+      "Raw cattle hides bought in FY 2025-26: 1,180 t across 14 supplier invoices.",
+      "By supplier address: 826 t from Uttar Pradesh (70%), 354 t from West Bengal (30%).",
+      "Certified volume: none, so the certified volume answer is zero, stated as measured.",
+      "No deforestation target yet: answer no, and explain that origin is now recorded by supplier."
+    ],
+    "note": "Figures are invented to show the layout; your own invoices set the volumes."
+  },
+  "senseible": "Senseible reads the quantity and supplier on each purchase invoice, so the commodity volumes you enter can be traced to the bills behind them. It does not judge deforestation risk, choose your CDP modules or submit your response.",
+  "links": [
+    { "label": "Get your carbon number from bills", "to": "/msme-carbon-number" },
+    { "label": "Can an SME score an A on CDP?", "to": "/answers/cdp-sme-questionnaire-a-score" },
+    { "label": "CDP water questions for textile units", "to": "/answers/cdp-water-security-textile-exporter" },
+    { "label": "EUDR data a buyer may ask for", "to": "/answers/eudr-due-diligence-statement-supplier-data" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "CDP, SME Questionnaire Overview 2026 (forests and water modules)",
+      "url": "https://cdn.cdp.net/cdp-production/cms/guidance_docs/pdfs/000/005/684/original/CDP_SME_Questionnaire_Overview_2025.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "CDP said SME forests and water answers are unscored in 2026; check the next SME overview for scoring and module numbers."
+}

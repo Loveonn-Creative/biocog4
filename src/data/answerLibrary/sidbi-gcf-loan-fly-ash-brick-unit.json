@@ -1,0 +1,84 @@
+{
+  "slug": "sidbi-gcf-loan-fly-ash-brick-unit",
+  "q": "Can a brick or fly ash block unit get SIDBI's Green Climate Fund loan?",
+  "title": "SIDBI GCF loan for brick and fly ash units",
+  "short": "Yes, both can. SIDBI's September 2026 assessment for brick units lists 70 technologies. Fly ash brick machines, hydraulic and vibro-hydraulic presses, vacuum extruders and steam curing chambers are low-risk Category C. Kiln projects, including zig-zag, Hoffmann and tunnel kilns, are Category B, which brings a site-specific environmental plan and closer checks.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Clay brick kiln owners and fly ash brick, block and paver manufacturers looking at SIDBI's concessional climate finance",
+  "sections": [
+    {
+      "h": "What a fly ash or block unit can finance (Category C)",
+      "ul": [
+        "Moulding: fly ash brick machine, concrete brick machine, solid and hollow block machines, interlocking brick and paver block machines, hydraulic press, vibro-hydraulic press and hydraulic power pack.",
+        "Preparation and storage: pan and paddle mixers, clay crushers and pug mills, fly ash, cement and lime silos, hopper feeders and conveyors.",
+        "Curing and drying: sprinkler or mist curing, steam curing chamber, steam curing tunnel, drying chamber and tunnel dryer.",
+        "Shaping and control: brick extruder, vacuum extruder, wire-cut system, PLC control panel, automatic stackers and palletising.",
+        "Yard and logistics: electric forklifts, electric trucks, solar yard lighting, dust suppression and water sprinkling."
+      ]
+    },
+    {
+      "h": "Kiln projects are Category B",
+      "p": [
+        "Zig-zag, fixed chimney Bull's trench, Bull's trench, Hoffmann and tunnel kilns, kiln car systems, dust collection systems and DG sets all sit in Category B. SIDBI describes fixed chimney Bull's trench kilns as low in energy efficiency and high in coal use. For a kiln project its officer checks kiln and chimney compliance, whether particulate, sulphur and nitrogen oxides, carbon monoxide and dust may exceed limits, where your clay comes from, transport emissions, and shelter, hygiene and sanitation for seasonal migrant workers. A project that cannot meet the norms even after mitigation is excluded or deferred."
+      ]
+    },
+    {
+      "h": "Your CPCB colour sets the consent work",
+      "ul": [
+        "Fly ash bricks or blocks without a boiler: Green.",
+        "Fly ash bricks or blocks with a boiler: Orange.",
+        "Brick kilns on coal or biomass, and gas-fired tunnel kilns: Orange.",
+        "AAC blocks on coal at 12 tonnes a day or more: Red; below that, or on biomass or gas: Orange."
+      ]
+    },
+    {
+      "h": "How far a typical kiln is from good practice",
+      "p": [
+        "SIDBI's assessment, drawing on the Ministry of MSME's cluster studies, puts Ludhiana's fixed chimney kilns at 1.27 MJ per kg of fired brick against an optimal 0.9 to 1.2 MJ per kg. That gap is the saving a kiln upgrade has to show."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Closing the Ludhiana gap at one kiln (assumed brick weight and season)",
+    "lines": [
+      "Output: 40,000 bricks a day x 3 kg fired weight (assumed) = 1,20,000 kg a day",
+      "Energy now: 1,20,000 kg x 1.27 MJ = 1,52,400 MJ; at 1.0 MJ per kg, inside SIDBI's optimal range = 1,20,000 MJ",
+      "Saving: 32,400 MJ = 32.4 GJ a day",
+      "CO2 avoided: 32.4 GJ x 94.6 kg per GJ (IPCC default for other bituminous coal) = 3,065 kg a day",
+      "Over a 150-day firing season (assumed): 3,065 kg x 150 = 4,59,750 kg, about 460 tonnes"
+    ],
+    "note": "Weigh a sample of your fired bricks and count your firing days; both change the answer more than any other input."
+  },
+  "senseible": "SIDBI judges a kiln upgrade on fuel use. Senseible reads coal and biomass purchase invoices and power bills into fuel per lakh bricks and CO2 for each season, the before figure a new kiln or press line is measured against. SIDBI decides the loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Brick kiln emissions per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Fly ash brick carbon footprint",
+      "to": "/answers/fly-ash-brick-carbon-footprint-per-1000"
+    },
+    {
+      "label": "SIDBI FMAP programme",
+      "to": "/answers/sidbi-fmap-green-climate-fund-programme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SIDBI, GCF-FMAP ESIA and ESMP, Brick Kiln sector (1 September 2026): 70-item technology list with categories, CPCB classification table, kiln due diligence checks, Ludhiana specific energy",
+      "url": "https://www.sidbi.in/assets/front/pdf/ESIA_ESMP_Brick_Kiln_English.pdf"
+    },
+    {
+      "label": "IPCC, 2006 Guidelines for National Greenhouse Gas Inventories, Volume 2 Energy: default CO2 factor for other bituminous coal, 94,600 kg per TJ",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "SIDBI revises its sector assessments; re-check the Green Pathways e-series page every quarter."
+}

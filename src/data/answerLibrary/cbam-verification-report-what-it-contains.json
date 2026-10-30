@@ -1,0 +1,66 @@
+{
+  "slug": "cbam-verification-report-what-it-contains",
+  "q": "What does a CBAM verification report contain?",
+  "title": "What a CBAM verification report contains",
+  "short": "One central verification statement, positive or negative, followed by the findings behind it: misstatements, non-conformities and recommendations still open when the report was signed. It must be issued in English, created in the CBAM Registry, and reaches unregistered plants as an electronically signed PDF that your EU buyer uploads.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian steel, aluminium, cement, fertiliser and hydrogen exporters receiving their first CBAM verification report, and the EU importers who rely on it",
+  "sections": [
+    {
+      "h": "Read the statement first",
+      "p": [
+        "The statement is chosen from a fixed list in the accreditation and verification rules. Only the first one lets your buyer use your figures."
+      ],
+      "ul": [
+        "Verified as satisfactory, without comments: nothing open.",
+        "Verified as satisfactory, with comments: usable, but non-material misstatements, minor non-conformities or recommendations are listed and must be dealt with before next year. If those small items together become material, the report cannot be used.",
+        "Material misstatements not corrected before the report was issued: negative.",
+        "Scope of verification too limited: negative, for example when only monthly totals survive and the primary readings are gone.",
+        "Non-conformities that leave too much doubt for reasonable assurance: negative, for example meters never calibrated year after year."
+      ]
+    },
+    {
+      "h": "The findings list, and what each line costs you",
+      "ul": [
+        "Non-material misstatement: stays between you and the verifier, who will raise next year's risk and expect a better monitoring plan.",
+        "Non-conformity with the plan or the rules: update the plan and hand it over at the latest during the next verification. Left uncorrected, it can be escalated to material in a later year.",
+        "Recommendation for improvement: the verifier checks next year whether you acted on it. Write down why if you did not."
+      ]
+    },
+    {
+      "h": "English only counts",
+      "p": [
+        "The verifier may work with you in another language and translate the report, but only the English version is legally relevant for importers and EU authorities. Read the English text before you forward it."
+      ]
+    },
+    {
+      "h": "How it reaches your buyer",
+      "ol": [
+        "The verifier uploads your emissions report and creates the verification report in the CBAM Registry.",
+        "If your company is registered in the Registry, the report arrives there directly.",
+        "If not, the verifier downloads an electronically signed PDF with the statement and a summary of verified emissions and sends it to you.",
+        "You send that PDF and your full emissions report, the Excel file, to each EU declarant, who uploads both to the CBAM Declarants Portal."
+      ]
+    },
+    {
+      "h": "Before it is signed",
+      "p": [
+        "An independent reviewer inside the verification body checks the draft report and the evidence before it is issued. Any change after that review goes back to the reviewer. Declarants file by 30 September and the Commission's guidance suggests they want reports by mid-August, so plan the review into your timeline."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the verifier-ready file behind your emissions report, with every figure traced to its invoice or log and checked in-house before the verifier sees it, so fewer findings reach the report. The statement itself comes only from an accredited verifier, Senseible's partner or one you choose.",
+  "links": [
+    { "label": "Build the file for your verifier", "to": "/cbam-suite" },
+    { "label": "If the statement is negative", "to": "/answers/cbam-negative-verification-statement-what-next" },
+    { "label": "The 5% materiality level", "to": "/answers/cbam-verification-materiality-5-percent" },
+    { "label": "Documents to give your verifier", "to": "/answers/cbam-documents-to-give-your-verifier" }
+  ],
+  "sources": [
+    { "label": "European Commission, Guidance on CBAM verification and accreditation (24 August 2026), sections 4.14, 4.15 (Table 6 and footnote 76) and 4.16 (Table 7)", "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf" },
+    { "label": "European Commission, CBAM Questions and Answers (15 October 2026), question 5.19", "url": "https://taxation-customs.ec.europa.eu/document/download/013fa763-5dce-4726-a204-69fec04d5ce2_en?filename=CBAM_Questions%20and%20Answers.pdf" },
+    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, Article 10a(5)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-30"
+}

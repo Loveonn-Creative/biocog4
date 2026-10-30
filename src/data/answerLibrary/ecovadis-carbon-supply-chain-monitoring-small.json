@@ -1,0 +1,71 @@
+{
+  "slug": "ecovadis-carbon-supply-chain-monitoring-small",
+  "q": "Does EcoVadis mark a small supplier down for not collecting its own suppliers' carbon data?",
+  "title": "EcoVadis carbon: is your supplier data scored?",
+  "short": "Not if you are a small or medium manufacturer. In EcoVadis's carbon rating, Supply Chain Monitoring, gathering primary carbon data from your own suppliers, is scored only for companies with 1,000 or more employees. For 26 to 999 employee firms outside office work, Scope 3 actions are not in the formula either.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME manufacturers with an EcoVadis carbon scorecard",
+  "sections": [
+    {
+      "h": "Three formulas, by size and type of work",
+      "ul": [
+        "Small (26 to 99) and medium (100 to 999), non-office work such as manufacturing: Targets, Scope 1 and 2 actions, performance review, reporting practices, monitoring coverage and monitoring system. No Scope 3 actions, no supply chain monitoring, no governance or action plan indicators.",
+        "Small and medium, office-based work: Scope 3 actions count, at 40% of the actions layer, which is 10 points in 100. Supply chain monitoring and governance still do not.",
+        "Large, 1,000 or more: every indicator, including supply chain monitoring at 15% of the reporting layer (7.5 points) and Scope 3 actions at 10 points."
+      ]
+    },
+    {
+      "h": "Where a small manufacturer's 100 points actually are",
+      "ul": [
+        "Targets: 25.",
+        "Scope 1 and 2 actions: 25. Energy efficiency, fuel switching, renewable electricity, with dates and numbers.",
+        "Performance review: 15.",
+        "Monitoring system: 15. How you collect and add up your energy and emissions data.",
+        "Reporting practices: 10. Standards used and whether the figures are verified.",
+        "Monitoring coverage: 10. Whether your inventory covers at least 95% of the business."
+      ]
+    },
+    {
+      "h": "Why your buyer still asks you for Scope 3 data",
+      "p": [
+        "If your buyer has 1,000 or more employees, supply chain monitoring is part of its own carbon score, and you are the supplier whose primary data it needs. Your own score does not depend on collecting data from your suppliers, but your buyer's does depend on getting data from you. Answer its request with your Scope 1 and 2 and the product-level share it asks for."
+      ]
+    },
+    {
+      "h": "How to spend the effort",
+      "ol": [
+        "Get Scope 1 and 2 right for every site, with the bills behind it. That feeds monitoring system and coverage.",
+        "Record each energy action with before and after units.",
+        "Write a dated reduction target signed by the owner.",
+        "Keep Scope 3 simple: report purchased goods or freight if you have them, but do not build a supplier data programme for the score's sake."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Same actions, different credit",
+    "lines": [
+      "A 60-person Tiruppur dyeing unit asks its yarn suppliers for emissions data and gets answers covering 70% of its yarn spend.",
+      "Under the small non-office formula, that work earns 0 points: neither Scope 3 actions nor supply chain monitoring is scored.",
+      "A 1,500-person apparel group doing the same could earn up to 10 points for Scope 3 actions and 7.5 for supply chain monitoring.",
+      "The same unit replacing a coal boiler with a biomass or electric one counts under Scope 1 and 2 actions, an indicator worth 25 points."
+    ],
+    "note": "Weights from EcoVadis's Carbon Rating methodology v2.0; indicator scores are set by EcoVadis analysts."
+  },
+  "senseible": "For a small manufacturer, Senseible's main use here is Scope 1 and 2 for every site from your bills, which sits in the scored part. If your buyer wants Scope 3 or product-level figures, purchased goods lines go to a separate supplier evidence trail.",
+  "links": [
+    { "label": "Send figures your buyer can trace", "to": "/scope-3-supplier-evidence" },
+    { "label": "Reaching Advanced or Leader", "to": "/answers/ecovadis-carbon-advanced-leader-requirements" },
+    { "label": "EcoVadis carbon scorecard levels", "to": "/answers/ecovadis-carbon-scorecard-levels" },
+    { "label": "When a buyer asks for your Scope 3", "to": "/answers/buyer-asks-for-my-scope-3" },
+    { "label": "Questionnaire support", "to": "/esg-ratings" }
+  ],
+  "sources": [
+    {
+      "label": "EcoVadis, Carbon Rating methodology disclosure document (v2.0, 2026)",
+      "url": "https://ecovadis.com/wp-content/uploads/2026/05/EcoVadis-Carbon-Rating-Methodology-disclosure-document-for-the-public-rating-users-and-rated-items-1.pdf"
+    }
+  ],
+  "reviewed": "2026-10-30",
+  "reviewNote": "Re-check which indicators apply by size and activity in each new EcoVadis Carbon Rating methodology version."
+}
